@@ -1,0 +1,78 @@
+{
+  "title": "Promptotyping: A Qualitative Analysis of LLM-Assisted Development",
+  "subtitle": "Learning from Practice-Based Experiments",
+  "authors": [
+    {
+      "name": "Christopher Pollin",
+      "affiliation": "DHCraft.org",
+      "role": "Primary Researcher"
+    }
+  ],
+  "version": "3.0",
+  "date": "January 2025",
+  "type": "interactive-paper",
+  "abstract": "This paper presents Promptotyping, a flexible methodology for LLM-assisted software development, through qualitative analysis of real-world experiments. Rather than proposing theoretical frameworks or quantitative metrics, we document patterns observed across multiple implementation cases. The methodology emerged organically from practice, revealing that successful LLM collaboration depends more on expert guidance and clear documentation than on rigid processes. Through case studies including the Stefan Zweig Digital annotation tool and the self-reflexive development of this methodology, we identify key principles: documentation-first development, optional phase structures, critical expert involvement, and natural progression from exploratory to systematic approaches. Our findings suggest that the most effective methodologies are those that practitioners adapt to their specific contexts rather than follow prescriptively.",
+  "keywords": [
+    "LLM-assisted development",
+    "qualitative methodology",
+    "practice-based research",
+    "software engineering",
+    "expert-in-the-loop"
+  ],
+  "chapters": [
+    {
+      "id": "introduction",
+      "number": 1,
+      "title": "Introduction: From Practice to Method",
+      "content_file": "data/chapters/01-introduction.json"
+    },
+    {
+      "id": "methodology",
+      "number": 2,
+      "title": "The Six-Phase Framework",
+      "content_file": "data/chapters/02-methodology.json",
+      "interactive": true
+    },
+    {
+      "id": "use-cases",
+      "number": 3,
+      "title": "Case Studies from Practice",
+      "content_file": "data/chapters/03-use-cases.json",
+      "embed_cases": ["stefan-zweig", "promptotyping-self", "methodology-evolution"]
+    },
+    {
+      "id": "patterns",
+      "number": 4,
+      "title": "Observed Patterns and Principles",
+      "content_file": "data/chapters/04-patterns.json",
+      "analyze_cases": true
+    },
+    {
+      "id": "discussion",
+      "number": 5,
+      "title": "Discussion: When Structure Helps and Hinders",
+      "content_file": "data/chapters/05-discussion.json"
+    },
+    {
+      "id": "conclusion",
+      "number": 6,
+      "title": "Conclusion: Toward Honest Methodologies",
+      "content_file": "data/chapters/06-conclusion.json"
+    }
+  ],
+  "use_cases": [
+    "stefan-zweig",
+    "promptotyping-self",
+    "methodology-evolution"
+  ],
+  "interactive_features": [
+    "expandable_cases",
+    "phase_filter",
+    "pattern_analysis",
+    "case_comparison"
+  ],
+  "citation": {
+    "style": "academic",
+    "format": "Pollin, C. (2025). Promptotyping: A Qualitative Analysis of LLM-Assisted Development. Interactive Paper v3.0. DHCraft.org"
+  }
+}

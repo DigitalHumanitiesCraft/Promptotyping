@@ -1,0 +1,63 @@
+{
+  "chapter_id": "introduction",
+  "title": "Introduction: From Practice to Method",
+  "sections": [
+    {
+      "type": "text",
+      "content": "Promptotyping emerged not from theoretical consideration but from practical necessity. As developers began integrating Large Language Models into their workflows, patterns emerged. Some approaches led to clarity and progress, others to confusion and technical debt. This methodology represents an attempt to codify what works, based on actual experience rather than speculation."
+    },
+    {
+      "type": "text",
+      "content": "Unlike traditional software engineering methodologies that begin with formal models and theoretical frameworks, Promptotyping evolved through experimentation. Each principle, each phase, each recommendation comes from observed practice. When we say 'documentation first helps,' it's because we've seen the alternative fail repeatedly."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "The Problem Space"
+    },
+    {
+      "type": "text",
+      "content": "Working with LLMs presents unique challenges. They generate plausible-looking code that may contain subtle errors. They confidently suggest complex architectures when simple solutions suffice. They lack domain context unless explicitly provided. Without structure, LLM-assisted development becomes what we call 'promptware' – seemingly functional but ultimately unmaintainable code."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "Origins and Evolution"
+    },
+    {
+      "type": "text",
+      "content": "The methodology began with a simple observation: successful LLM interactions followed patterns. Developers who wrote clear context got better results. Those who broke complex tasks into phases encountered fewer problems. Expert review caught issues before they propagated. These weren't revolutionary insights – they were basic software engineering principles applied to a new context."
+    },
+    {
+      "type": "callout",
+      "style": "insight",
+      "content": "The first version of Promptotyping was itself an over-engineered academic paper. Through community feedback and honest reflection, it evolved into something simpler and more useful. This meta-evolution demonstrates the methodology's core principle: start with something, then refine based on real experience."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "What This Paper Offers"
+    },
+    {
+      "type": "text",
+      "content": "Rather than proposing another theoretical framework, this paper presents patterns observed across multiple real projects. We document what happened, what worked, what failed, and what we learned. No invented metrics, no false precision, no academic abstraction for its own sake."
+    },
+    {
+      "type": "text",
+      "content": "The case studies that follow aren't cherry-picked successes. They include confusion, false starts, and over-engineering. The Stefan Zweig Digital case shows how expert intervention prevented unnecessary complexity. The self-reflexive development of this methodology reveals the challenge of avoiding abstraction. The evolution from version 1 to version 3 demonstrates how community feedback grounds methodology in reality."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "A Note on Honesty"
+    },
+    {
+      "type": "text",
+      "content": "Previous versions of this methodology claimed specific productivity improvements and time reductions. These numbers were, at best, contextual observations inflated into universal claims. We've removed them. What remains are qualitative observations: developers report feeling more confident, projects tend to have clearer structure, expert involvement consistently prevents over-engineering. These aren't measurable in percentages, but they're real."
+    },
+    {
+      "type": "text",
+      "content": "This honesty extends to the methodology itself. Not every project needs all six phases. Sometimes, writing a clear prompt and generating code is sufficient. The methodology works best when adapted to context rather than followed dogmatically. If that seems like common sense rather than innovation, that's because it is. Sometimes the best methodologies simply remind us to apply what we already know."
+    }
+  ]
+}

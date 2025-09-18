@@ -12,7 +12,8 @@
       "Bash(then mv .claude_code/subagents/promptotyping-researcher.md archive/tools/)",
       "Bash(fi)",
       "Bash(cp:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []

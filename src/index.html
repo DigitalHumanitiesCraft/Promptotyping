@@ -3,350 +3,437 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Promptotyping: A Practical Guide for LLM-Assisted Development</title>
-    <meta name="description" content="A straightforward methodology for building software with Large Language Models. Write clear documentation first, work in phases, get expert review.">
-    <meta name="keywords" content="LLM, software development, prompt engineering, methodology, practical guide">
-    <meta name="author" content="Promptotyping Contributors">
+    <title>Promptotyping: Interactive Academic Paper</title>
+    <meta name="description" content="An interactive, data-driven academic paper presenting Promptotyping methodology through qualitative case studies">
+    <meta name="author" content="Christopher Pollin">
 
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.8;
             color: #333;
+            background: #fff;
+            padding: 20px;
         }
-        h1 { font-size: 28px; margin: 40px 0 20px 0; }
-        h2 { font-size: 22px; margin: 35px 0 15px 0; color: #2c3e50; }
-        h3 { font-size: 18px; margin: 25px 0 12px 0; color: #34495e; }
-        p { margin: 15px 0; }
-        .key-point {
+
+        #paper-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Header Styles */
+        .paper-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #333;
+        }
+
+        .paper-header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #000;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .authors {
+            margin: 20px 0;
+        }
+
+        .author {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        .author-name {
+            font-weight: bold;
+        }
+
+        .author-affiliation {
+            color: #666;
+            font-size: 14px;
+            display: block;
+        }
+
+        .paper-meta {
+            font-size: 14px;
+            color: #777;
+            margin-top: 15px;
+        }
+
+        .paper-meta span {
+            margin: 0 10px;
+        }
+
+        /* Abstract */
+        .abstract {
             background: #f8f9fa;
-            border-left: 4px solid #3498db;
+            padding: 25px;
+            margin: 30px 0;
+            border-left: 4px solid #4a5568;
+        }
+
+        .abstract h2 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .abstract p {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+
+        .keywords {
+            font-size: 14px;
+            color: #666;
+            margin-top: 15px;
+        }
+
+        /* Table of Contents */
+        .table-of-contents {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            padding: 20px;
+            margin: 30px 0;
+        }
+
+        .table-of-contents h2 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .table-of-contents ol {
+            padding-left: 25px;
+        }
+
+        .table-of-contents li {
+            margin: 8px 0;
+        }
+
+        .table-of-contents a {
+            color: #2c5282;
+            text-decoration: none;
+        }
+
+        .table-of-contents a:hover {
+            text-decoration: underline;
+        }
+
+        /* Chapters */
+        .chapter {
+            margin: 40px 0;
+            padding-top: 20px;
+        }
+
+        .chapter h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #2d3748;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+
+        .chapter h3 {
+            font-size: 20px;
+            margin: 25px 0 15px 0;
+            color: #4a5568;
+        }
+
+        .chapter h4 {
+            font-size: 18px;
+            margin: 20px 0 10px 0;
+            color: #718096;
+        }
+
+        .chapter p {
+            text-align: justify;
+            margin: 15px 0;
+        }
+
+        /* Callouts */
+        .callout {
             padding: 15px;
             margin: 20px 0;
+            border-left: 4px solid;
+            background: #f7fafc;
         }
-        .warning {
-            background: #fff3cd;
-            border-left: 4px solid #f39c12;
-            padding: 15px;
+
+        .callout-insight {
+            border-color: #4299e1;
+            background: #ebf8ff;
+        }
+
+        .callout-warning {
+            border-color: #f6ad55;
+            background: #fffdf7;
+        }
+
+        /* Use Cases */
+        .use-case-summary, .use-case-detailed {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            background: #fff;
+        }
+
+        .use-case-detailed {
+            background: #f7fafc;
+        }
+
+        .use-case-header {
+            border-bottom: 1px solid #cbd5e0;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .use-case-header h4 {
+            color: #2d3748;
+            margin: 0;
+        }
+
+        .case-meta {
+            font-size: 14px;
+            color: #718096;
+            margin-top: 5px;
+        }
+
+        .case-meta span {
+            margin-right: 15px;
+        }
+
+        .use-case-section {
             margin: 20px 0;
         }
-        code {
-            background: #f4f4f4;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-family: 'Courier New', monospace;
+
+        .use-case-section h5 {
+            font-size: 16px;
+            color: #4a5568;
+            margin-bottom: 10px;
+            font-weight: bold;
         }
-        ul, ol { margin: 15px 0; padding-left: 30px; }
-        li { margin: 8px 0; }
-        table {
+
+        .use-case-section.highlighted {
+            background: #fef5e7;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+
+        .critical-interventions .intervention {
+            margin: 15px 0;
+            padding: 10px;
+            background: #fff;
+            border-left: 3px solid #f6ad55;
+        }
+
+        .intervention strong {
+            color: #744210;
+        }
+
+        .impact {
+            color: #22543d;
+            font-style: italic;
+            margin-top: 5px;
+        }
+
+        .lessons-learned ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .lessons-learned li {
+            margin: 15px 0;
+            padding: 10px;
+            background: #fff;
+            border-left: 3px solid #48bb78;
+        }
+
+        /* Buttons */
+        button {
+            background: #4299e1;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            margin: 10px 0;
+        }
+
+        button:hover {
+            background: #3182ce;
+        }
+
+        .collapse-case {
+            background: #718096;
+        }
+
+        .collapse-case:hover {
+            background: #4a5568;
+        }
+
+        /* Tables */
+        .comparison-table {
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
         }
-        th, td {
-            border: 1px solid #ddd;
+
+        .comparison-table th,
+        .comparison-table td {
+            border: 1px solid #e2e8f0;
             padding: 10px;
             text-align: left;
         }
-        th {
-            background: #f4f4f4;
-            font-weight: 600;
+
+        .comparison-table th {
+            background: #edf2f7;
+            font-weight: bold;
         }
-        .example {
-            background: #f9f9f9;
-            border: 1px solid #e0e0e0;
-            padding: 15px;
+
+        .comparison-table td {
+            background: #fff;
+        }
+
+        /* Pattern Analysis */
+        .pattern-analysis {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 8px;
             margin: 20px 0;
-            border-radius: 5px;
         }
-        .phase-optional {
-            color: #7f8c8d;
+
+        .pattern-field {
+            margin: 15px 0;
+        }
+
+        .pattern-field h6 {
             font-size: 14px;
-            font-style: italic;
+            color: #4a5568;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        .paper-footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 2px solid #e2e8f0;
+        }
+
+        .paper-footer h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .citation {
+            background: #f7fafc;
+            padding: 15px;
+            border-left: 3px solid #4a5568;
+            margin: 20px 0;
+        }
+
+        /* Error Message */
+        .error-message {
+            background: #fed7d7;
+            color: #742a2a;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .paper-header h1 {
+                font-size: 24px;
+            }
+
+            .subtitle {
+                font-size: 16px;
+            }
+
+            .chapter h2 {
+                font-size: 20px;
+            }
+
+            .comparison-table {
+                font-size: 12px;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 5px;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                font-size: 11pt;
+                line-height: 1.6;
+            }
+
+            .table-of-contents {
+                page-break-after: always;
+            }
+
+            .chapter {
+                page-break-before: auto;
+            }
+
+            button {
+                display: none;
+            }
+
+            .use-case-detailed {
+                background: #fff;
+                border: 1px solid #000;
+            }
+        }
+
+        /* Loading State */
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #718096;
+        }
+
+        .loading::after {
+            content: '...';
+            animation: dots 1.5s steps(4, end) infinite;
+        }
+
+        @keyframes dots {
+            0%, 20% { content: '.'; }
+            40% { content: '..'; }
+            60% { content: '...'; }
+            80%, 100% { content: ''; }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Promptotyping: A Practical Guide for LLM-Assisted Development</h1>
-        <p style="font-size: 18px; color: #555;">Version 3.0 - Simplified Edition</p>
-    </header>
+    <div id="paper-container">
+        <div class="loading">Loading interactive paper</div>
+    </div>
 
-    <section>
-        <h2>Executive Summary</h2>
-        <div class="key-point">
-            <p><strong>Promptotyping is a flexible methodology for building software with Large Language Models (LLMs).</strong> It applies basic software engineering principles to LLM interaction: write clear documentation first, work in phases when helpful, get expert review, and use version control. Most projects see 20-40% productivity improvements when using structured approaches to LLM assistance.</p>
-        </div>
-    </section>
-
-    <section>
-        <h2>Core Principles</h2>
-
-        <h3>1. Write Clear Documentation First</h3>
-        <p>Define what you're building before asking LLMs to build it. This isn't revolutionary—it's README-driven development applied to AI assistance. Clear specifications lead to better outputs.</p>
-
-        <h3>2. Work in Phases (When It Helps)</h3>
-        <p>Separate context, requirements, and implementation for clarity. Not every project needs all phases. A simple script might only need context and code. Use what makes sense.</p>
-
-        <h3>3. Get Expert Review</h3>
-        <p>Domain experts should validate AI outputs. They catch hallucinations, prevent overengineering, and ensure the solution actually solves the problem. In the Stefan Zweig case, the expert prevented building a multi-user system when a single-user tool sufficed.</p>
-
-        <h3>4. Use Version Control</h3>
-        <p>Commit at natural boundaries to enable experimentation. Git already does this well. No need for elaborate "savepoint protocols"—just commit when you have something working.</p>
-
-        <h3>5. Start Simple, Evolve Naturally</h3>
-        <p>Begin with exploratory prompts, develop systematic approaches over time. This progression from "vibing" to structured prompting is natural and healthy. Don't force it.</p>
-
-        <h3>6. Be Concise but Clear</h3>
-        <p>Optimize prompts for both human and LLM understanding. Each token costs money and time. Remove redundancy while preserving meaning. No Shannon entropy calculations required.</p>
-    </section>
-
-    <section>
-        <h2>The Six Phases (Use What You Need)</h2>
-
-        <p>These phases are <strong>optional components</strong>, not rigid requirements. Most projects use 2-4 phases. Pick what helps.</p>
-
-        <h3>Phase 1: CONTEXT</h3>
-        <p>Write a clear README describing what you're building and why. Include:</p>
-        <ul>
-            <li>What problem does this solve?</li>
-            <li>What are the constraints?</li>
-            <li>What does success look like?</li>
-        </ul>
-        <p class="phase-optional">Skip if: You already have clear requirements or are building something trivial.</p>
-
-        <h3>Phase 2: DATA</h3>
-        <p>Define your data structures and relationships. Include:</p>
-        <ul>
-            <li>Core data types</li>
-            <li>How data flows through the system</li>
-            <li>What needs to be preserved vs. what can be derived</li>
-        </ul>
-        <p class="phase-optional">Skip if: You're not dealing with complex data or the structure is obvious.</p>
-
-        <h3>Phase 3: EXPLORATION</h3>
-        <p>Try different approaches with quick prototypes. Ask the LLM for alternatives. Test assumptions.</p>
-        <p class="phase-optional">Skip if: The solution approach is well-understood or time is critical.</p>
-
-        <h3>Phase 4: REQUIREMENTS</h3>
-        <p>List what the system must do. Be specific about acceptance criteria.</p>
-        <p class="phase-optional">Skip if: Requirements are already documented or extremely simple.</p>
-
-        <h3>Phase 5: IMPLEMENTATION</h3>
-        <p>Plan the technical approach. Choose technologies, define architecture, specify algorithms.</p>
-        <p class="phase-optional">Skip if: Moving directly from requirements to code is clearer.</p>
-
-        <h3>Phase 6: PROTOTYPE</h3>
-        <p>Generate the actual code with the LLM. Test incrementally. Refine based on results.</p>
-        <p class="phase-optional">This is usually the only mandatory phase—you need code eventually.</p>
-
-        <div class="example">
-            <strong>Example: Simple Web Form</strong><br>
-            Only needs: CONTEXT ("Build a contact form") → PROTOTYPE (generate code)<br><br>
-
-            <strong>Example: Complex Data Pipeline</strong><br>
-            Benefits from: CONTEXT → DATA → EXPLORATION → REQUIREMENTS → PROTOTYPE
-        </div>
-    </section>
-
-    <section>
-        <h2>Real-World Results</h2>
-
-        <h3>Honest Performance Metrics</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>Metric</th>
-                    <th>Realistic Range</th>
-                    <th>Notes</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Productivity Gain</td>
-                    <td>20-40%</td>
-                    <td>Depends heavily on task type and developer experience</td>
-                </tr>
-                <tr>
-                    <td>Time to First Prototype</td>
-                    <td>30-50% faster</td>
-                    <td>LLMs excel at initial code generation</td>
-                </tr>
-                <tr>
-                    <td>Bug Rate</td>
-                    <td>Mixed</td>
-                    <td>Often more surface bugs, fewer architectural issues</td>
-                </tr>
-                <tr>
-                    <td>Maintenance Burden</td>
-                    <td>Varies widely</td>
-                    <td>LLM code often needs significant refactoring</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h3>The Stefan Zweig Case: What Really Happened</h3>
-        <p>The reported "98.8% time reduction" came primarily from requirement changes, not methodology:</p>
-        <ul>
-            <li><strong>Original estimate:</strong> Multi-user system with authentication, database, synchronization (2 weeks)</li>
-            <li><strong>What was built:</strong> Single-user tool with localStorage (2 hours)</li>
-            <li><strong>Real factor:</strong> Expert prevented overengineering by questioning assumptions</li>
-        </ul>
-        <p>The lesson: Having domain experts who prevent scope creep is valuable, whether using LLMs or not.</p>
-    </section>
-
-    <section>
-        <h2>When NOT to Use This Methodology</h2>
-
-        <div class="warning">
-            <strong>Skip Promptotyping when:</strong>
-            <ul>
-                <li>Writing simple scripts or utilities (just write the code)</li>
-                <li>The problem is well-understood with established solutions</li>
-                <li>You don't have LLM access or token budget</li>
-                <li>The overhead exceeds the benefit (most projects under 1 hour)</li>
-                <li>Working with sensitive data that can't be shared with LLMs</li>
-                <li>The team resists structured approaches</li>
-            </ul>
-        </div>
-
-        <h3>Common Failure Modes</h3>
-        <ul>
-            <li><strong>Over-documentation:</strong> Spending more time writing phases than coding</li>
-            <li><strong>Phase rigidity:</strong> Following all phases when 2-3 would suffice</li>
-            <li><strong>LLM hallucinations:</strong> Accepting generated code without understanding it</li>
-            <li><strong>Expert absence:</strong> No domain knowledge to catch errors</li>
-            <li><strong>Prompt sprawl:</strong> Conversations becoming too long to manage</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Practical Tips</h2>
-
-        <h3>For Individual Developers</h3>
-        <ol>
-            <li>Start with just CONTEXT → PROTOTYPE for your first project</li>
-            <li>Add phases only when you feel their absence</li>
-            <li>Keep prompt conversations under 10 exchanges when possible</li>
-            <li>Always understand the code before committing it</li>
-            <li>Use multiple LLMs for different strengths (Claude for analysis, GPT-4 for generation)</li>
-        </ol>
-
-        <h3>For Teams</h3>
-        <ol>
-            <li>Designate one person as the "Expert Reviewer" per feature</li>
-            <li>Share successful prompts and patterns</li>
-            <li>Document which phases work for which project types</li>
-            <li>Track actual metrics, not wishful thinking</li>
-            <li>Allow developers to adapt the methodology to their workflow</li>
-        </ol>
-
-        <h3>For Organizations</h3>
-        <ol>
-            <li>Run a pilot with volunteers, not mandates</li>
-            <li>Measure real productivity, not perceived benefits</li>
-            <li>Provide LLM access and training</li>
-            <li>Accept that some developers work better without structure</li>
-            <li>Focus on outcomes, not process compliance</li>
-        </ol>
-    </section>
-
-    <section>
-        <h2>The Simplified Method in Practice</h2>
-
-        <div class="example">
-            <h3>Example: Building a REST API</h3>
-
-            <p><strong>Without Promptotyping:</strong><br>
-            "Build me a REST API for a todo app with Node.js"</p>
-
-            <p><strong>With Promptotyping (minimal):</strong></p>
-            <ol>
-                <li><strong>CONTEXT:</strong> "Building a REST API for a todo app. Need CRUD operations, SQLite for simplicity, authentication via JWT. Must handle 100 concurrent users."</li>
-
-                <li><strong>DATA:</strong> "Todo: id, title, description, completed, user_id, created_at, updated_at. User: id, email, password_hash."</li>
-
-                <li><strong>PROTOTYPE:</strong> "Generate Express.js API with these endpoints: POST /auth/register, POST /auth/login, GET /todos, POST /todos, PUT /todos/:id, DELETE /todos/:id"</li>
-            </ol>
-
-            <p><strong>Result:</strong> Clear, focused specification leads to better initial code. Total time: 5 minutes of planning saves 30 minutes of debugging.</p>
-        </div>
-    </section>
-
-    <section>
-        <h2>Conclusion</h2>
-
-        <p>Promptotyping works because it applies basic software engineering principles to LLM interaction:</p>
-        <ul>
-            <li>Clear specifications produce better outputs</li>
-            <li>Phased approaches help manage complexity (when needed)</li>
-            <li>Expert review catches errors</li>
-            <li>Version control enables experimentation</li>
-        </ul>
-
-        <p>You don't need cognitive load theory, dual epistemologies, or Shannon entropy to use LLMs effectively. You need clear thinking, domain expertise, and the wisdom to know when structure helps and when it hinders.</p>
-
-        <p>The methodology is intentionally flexible. Use all six phases for complex projects, or just write a clear prompt for simple ones. The goal is better software built faster, not process compliance.</p>
-
-        <div class="key-point">
-            <strong>Remember:</strong> The best methodology is one that developers actually use. Keep it simple, make it flexible, and focus on results over process.
-        </div>
-    </section>
-
-    <section>
-        <h2>Quick Reference Card</h2>
-
-        <div style="background: #f0f8ff; padding: 20px; border-radius: 10px; margin: 30px 0;">
-            <h3 style="margin-top: 0;">Promptotyping in One Minute</h3>
-
-            <p><strong>For simple tasks:</strong><br>
-            Write a clear prompt → Generate code → Test → Ship</p>
-
-            <p><strong>For complex tasks:</strong><br>
-            1. CONTEXT: What are we building and why?<br>
-            2. DATA: What information do we manage?<br>
-            3. EXPLORATION: What approaches might work?<br>
-            4. REQUIREMENTS: What must it do?<br>
-            5. IMPLEMENTATION: How will we build it?<br>
-            6. PROTOTYPE: Generate and refine the code</p>
-
-            <p><strong>Always:</strong><br>
-            ✓ Have an expert review outputs<br>
-            ✓ Understand the code before using it<br>
-            ✓ Use version control<br>
-            ✓ Keep it simple</p>
-
-            <p><strong>Never:</strong><br>
-            ✗ Follow all phases if unnecessary<br>
-            ✗ Trust LLM output blindly<br>
-            ✗ Spend more time on process than coding<br>
-            ✗ Ignore what already works for you</p>
-        </div>
-    </section>
-
-    <section>
-        <h2>Essential References</h2>
-        <ol>
-            <li>GitHub Copilot Research (2024). "Measuring Developer Productivity with AI Assistance"</li>
-            <li>Stack Overflow Survey (2024). "AI Tool Usage in Software Development"</li>
-            <li>Fowler, M. (2019). "Refactoring: Improving the Design of Existing Code" (2nd ed.)</li>
-            <li>Hunt, A. & Thomas, D. (2019). "The Pragmatic Programmer" (20th Anniversary Edition)</li>
-            <li>Nielsen, J. (1993). "Usability Engineering" - For the "Keep It Simple" principle</li>
-        </ol>
-    </section>
-
-    <footer style="margin-top: 60px; padding-top: 20px; border-top: 1px solid #e0e0e0; color: #666; font-size: 14px;">
-        <p><strong>About This Document</strong><br>
-        This is the simplified version of Promptotyping v3.0, reduced from 50+ pages to focus on practical application. The methodology was developed through real-world use in both commercial and academic projects.</p>
-
-        <p><strong>License</strong><br>
-        CC BY 4.0 - Share and adapt freely with attribution</p>
-
-        <p><strong>Contribute</strong><br>
-        Submit improvements at github.com/promptotyping</p>
-    </footer>
+    <script src="js/paper-engine.js"></script>
 </body>
 </html>

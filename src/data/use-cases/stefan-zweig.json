@@ -1,0 +1,160 @@
+{
+  "id": "stefan-zweig",
+  "title": "Stefan Zweig Digital Annotation Tool",
+  "summary": "A two-hour experiment that demonstrated how expert intervention prevents over-engineering",
+  "date": "May 2025",
+  "duration": "2 hours",
+  "participants": {
+    "developer": "Christopher Pollin",
+    "llm": "Claude 4 Sonnet",
+    "domain_expert": "Self (Digital Humanities background since 2017)"
+  },
+  "context": {
+    "project_background": "Stefan Zweig Digital is a digital estate reconstruction at the Literary Archive Salzburg",
+    "problem_statement": "Researchers needed a tool to annotate correspondence metadata from XML-structured data in GAMS",
+    "initial_scope": "Timeline visualization of letters with ability to add research annotations",
+    "constraints": [
+      "Single researcher use",
+      "No database infrastructure",
+      "Browser-based solution",
+      "Must work with existing XML data structure"
+    ]
+  },
+  "process": {
+    "phases_used": [
+      {
+        "phase": "CONTEXT",
+        "description": "Established as single-page application rather than web app to prevent framework complexity"
+      },
+      {
+        "phase": "EXPLORATION",
+        "description": "Tested approach with XML data sample and screenshot of original design"
+      },
+      {
+        "phase": "PROTOTYPE",
+        "description": "Direct generation of HTML/CSS/JS in fragments to avoid token limits"
+      }
+    ],
+    "phases_skipped": [
+      {
+        "phase": "DATA",
+        "reason": "XML structure was already defined by GAMS"
+      },
+      {
+        "phase": "REQUIREMENTS",
+        "reason": "Requirements emerged through conversation"
+      },
+      {
+        "phase": "IMPLEMENTATION",
+        "reason": "Moved directly from exploration to code"
+      }
+    ],
+    "critical_interventions": [
+      {
+        "moment": "When Claude suggested AI-assisted features",
+        "intervention": "Explicitly requested simple version without AI, collaboration, or visualization features",
+        "impact": "Prevented scope creep and maintained simplicity"
+      },
+      {
+        "moment": "Technology choice",
+        "intervention": "Specified 'Single Page Application' to trigger single HTML file instead of React",
+        "impact": "Avoided framework complexity"
+      },
+      {
+        "moment": "Storage solution",
+        "intervention": "Chose localStorage over suggested database",
+        "impact": "Eliminated backend complexity"
+      }
+    ],
+    "iterations": "Not documented in detail",
+    "challenges": [
+      {
+        "issue": "CORS restrictions on GAMS API",
+        "solution": "Fallback to local demo-data.xml"
+      },
+      {
+        "issue": "Manual code synchronization",
+        "description": "Described as 'tedious copying with lots of micromanagement'"
+      },
+      {
+        "issue": "Token limitations",
+        "solution": "Generated code in fragments"
+      }
+    ]
+  },
+  "implementation": {
+    "technical_approach": "Three files: index.html with embedded JavaScript, style.css, demo-data.xml",
+    "key_features": [
+      "Timeline visualization with year grouping",
+      "Separate section for undated documents",
+      "Filter options (All, With Date, Without Date, Annotated, Not Processed)",
+      "Search across title, tags, and notes",
+      "Annotation system with status, tags, and research notes",
+      "LocalStorage persistence",
+      "JSON export/import functionality",
+      "Links to IIIF Mirador for original documents"
+    ],
+    "lines_of_code": "Approximately 500-600 lines total",
+    "external_dependencies": "None"
+  },
+  "outcomes": {
+    "success_factors": [
+      "Working prototype achieved in single session",
+      "Met actual user needs without unnecessary features",
+      "No maintenance burden due to zero dependencies"
+    ],
+    "limitations": [
+      "Not production-ready",
+      "CORS workaround required",
+      "Manual synchronization between changes and LLM",
+      "No collaborative features"
+    ],
+    "artifacts": {
+      "demo": "https://dhcraft.org/excellence/promptotyping/szd-annotation-timeline/",
+      "blog_post": "https://dhcraft.org/excellence/blog/Critical-Vibing-Claude-4/",
+      "code_repository": "Not publicly available"
+    }
+  },
+  "lessons_learned": [
+    {
+      "insight": "Expert domain knowledge is crucial for preventing over-engineering",
+      "evidence": "Developer's familiarity with digital humanities needs guided simplification"
+    },
+    {
+      "insight": "Constraining to single-file output prevents framework escalation",
+      "evidence": "Avoiding 'web app' terminology led to simpler solution"
+    },
+    {
+      "insight": "LLMs tend toward feature creep without firm guidance",
+      "evidence": "Claude suggested AI features, collaboration, and visualization unnecessarily"
+    },
+    {
+      "insight": "Promptotyping is not 'democratization of programming'",
+      "evidence": "Required both domain expertise and technical knowledge to succeed"
+    }
+  ],
+  "methodological_reflection": {
+    "approach_used": "Vibe-Check / Structured Vibe Coding",
+    "expert_role": "Critical-Expert-in-the-Loop preventing solutionism",
+    "phase_flexibility": "Only 3 of 6 phases used, demonstrating adaptability",
+    "documentation_quality": "Partial - this was an early experiment before formal methodology",
+    "reproducibility": "Low - process not fully documented for replication"
+  },
+  "quotes": [
+    {
+      "text": "Single Page Application statt Web App triggert single HTML file mit JS/CSS statt React",
+      "context": "On strategic prompt formulation"
+    },
+    {
+      "text": "Lästiges Herumkopieren mit viel Mikromanagement",
+      "context": "On manual synchronization challenge"
+    }
+  ],
+  "not_documented": [
+    "Exact number of prompts and iterations",
+    "Specific error messages and debugging steps",
+    "Time distribution within the 2 hours",
+    "Complete prompt sequence",
+    "Rejected approaches or dead ends"
+  ]
+}
