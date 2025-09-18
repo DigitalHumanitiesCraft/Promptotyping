@@ -1,0 +1,536 @@
+/* Tutorial System Styles - Academic Foundation */
+
+/* Theory Section */
+.theory-section {
+    padding: var(--spacing-2xl) 0;
+    background: white;
+}
+
+.theory-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin: var(--spacing-xl) 0;
+}
+
+.theory-card {
+    background: var(--light-color);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    border: 2px solid transparent;
+    transition: var(--transition);
+}
+
+.theory-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.theory-icon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.theory-card h3 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.research-stat {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: white;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    color: var(--success-color);
+    font-size: 0.875rem;
+}
+
+.theory-details {
+    background: var(--light-color);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    margin-top: var(--spacing-xl);
+}
+
+.theory-details h3 {
+    color: var(--dark-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.theory-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.theory-details li {
+    padding: var(--spacing-sm) 0;
+    padding-left: var(--spacing-lg);
+    position: relative;
+}
+
+.theory-details li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--success-color);
+    font-weight: bold;
+}
+
+/* Research Badges */
+.research-badges {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    margin: var(--spacing-lg) 0;
+    flex-wrap: wrap;
+}
+
+.badge {
+    background: rgba(255, 255, 255, 0.2);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+}
+
+/* Tutorial Section */
+.tutorial-section {
+    padding: var(--spacing-2xl) 0;
+    background: var(--light-color);
+}
+
+.section-description {
+    text-align: center;
+    font-size: 1.125rem;
+    color: var(--text-color);
+    margin-bottom: var(--spacing-xl);
+}
+
+/* Learning Paths */
+.learning-paths {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin: var(--spacing-xl) 0;
+}
+
+.path-card {
+    background: white;
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: var(--transition);
+    border: 3px solid transparent;
+    position: relative;
+}
+
+.path-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.path-card.beginner:hover {
+    border-color: var(--success-color);
+}
+
+.path-card.intermediate:hover {
+    border-color: var(--warning-color);
+}
+
+.path-card.advanced:hover {
+    border-color: var(--danger-color);
+}
+
+.path-card h3 {
+    margin-bottom: var(--spacing-sm);
+}
+
+.path-card ul {
+    list-style: none;
+    padding: 0;
+    margin: var(--spacing-md) 0;
+}
+
+.path-card li {
+    padding: var(--spacing-xs) 0;
+    font-size: 0.9rem;
+}
+
+.path-card li::before {
+    content: "→ ";
+    color: var(--primary-color);
+}
+
+.cognitive-load {
+    display: inline-block;
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.cognitive-load.low {
+    background: var(--success-color);
+    color: white;
+}
+
+.cognitive-load.medium {
+    background: var(--warning-color);
+    color: white;
+}
+
+.cognitive-load.high {
+    background: var(--danger-color);
+    color: white;
+}
+
+/* Tutorial Container */
+.tutorial-container {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+}
+
+.tutorial-header {
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+}
+
+.tutorial-meta {
+    display: flex;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-md);
+    font-size: 0.875rem;
+}
+
+.path-indicator {
+    background: var(--primary-color);
+    color: white;
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-sm);
+}
+
+.cognitive-indicator {
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-sm);
+    background: var(--light-color);
+}
+
+.cognitive-indicator.overload {
+    background: var(--danger-color);
+    color: white;
+}
+
+.progress-indicator {
+    margin-left: auto;
+}
+
+/* Tutorial Content Sections */
+.theory-section,
+.practice-section,
+.tips-section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.theory-visual,
+.phase-flow,
+.doc-flow,
+.checkpoint-visual,
+.cognitive-monitor {
+    background: var(--light-color);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    margin: var(--spacing-md) 0;
+}
+
+.load-meter {
+    height: 40px;
+    background: var(--border-color);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    margin-bottom: var(--spacing-md);
+}
+
+.load-bar {
+    height: 100%;
+    background: linear-gradient(to right, var(--success-color), var(--warning-color));
+    display: flex;
+    align-items: center;
+    padding: 0 var(--spacing-md);
+    color: white;
+    font-weight: 600;
+}
+
+/* Phase Flow Visualization */
+.phase-flow {
+    display: flex;
+    gap: var(--spacing-md);
+    overflow-x: auto;
+    padding: var(--spacing-md);
+}
+
+.phase-item {
+    min-width: 120px;
+    padding: var(--spacing-md);
+    background: white;
+    border-radius: var(--radius-md);
+    text-align: center;
+    font-size: 0.875rem;
+    border: 2px solid var(--border-color);
+}
+
+.phase-item.active {
+    border-color: var(--primary-color);
+    background: var(--primary-color);
+    color: white;
+}
+
+.phase-item small {
+    display: block;
+    font-size: 0.75rem;
+    opacity: 0.8;
+    margin-top: var(--spacing-xs);
+}
+
+/* Model Comparison Table */
+.model-comparison {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--spacing-md) 0;
+}
+
+.model-comparison th {
+    background: var(--primary-color);
+    color: white;
+    padding: var(--spacing-sm);
+    text-align: left;
+}
+
+.model-comparison td {
+    padding: var(--spacing-sm);
+    border: 1px solid var(--border-color);
+}
+
+.model-comparison tr:nth-child(even) {
+    background: var(--light-color);
+}
+
+/* Interactive Elements */
+.project-wizard,
+.data-builder,
+.model-selector,
+.token-optimizer,
+.savepoint-manager {
+    background: var(--light-color);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    margin: var(--spacing-md) 0;
+}
+
+textarea {
+    width: 100%;
+    padding: var(--spacing-md);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    resize: vertical;
+}
+
+.validation-result,
+.model-feedback,
+.optimization-result {
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    margin-top: var(--spacing-md);
+}
+
+.validation-result.success,
+.model-feedback.success {
+    background: var(--success-color);
+    color: white;
+}
+
+.validation-result.warning {
+    background: var(--warning-color);
+    color: white;
+}
+
+.model-feedback.error {
+    background: var(--danger-color);
+    color: white;
+}
+
+/* Tutorial Navigation */
+.tutorial-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-lg);
+    border-top: 2px solid var(--border-color);
+}
+
+.savepoint-btn {
+    background: var(--secondary-color);
+    color: white;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.savepoint-btn:hover {
+    background: var(--primary-color);
+}
+
+/* Tutorial Stats */
+.tutorial-stats {
+    margin-top: var(--spacing-2xl);
+    text-align: center;
+}
+
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+}
+
+.stat-item {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: var(--text-color);
+}
+
+/* Checkpoint Timeline */
+.checkpoint-timeline {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: var(--spacing-lg) 0;
+}
+
+.checkpoint-timeline::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--border-color);
+    z-index: 0;
+}
+
+.checkpoint {
+    position: relative;
+    text-align: center;
+    z-index: 1;
+}
+
+.checkpoint span {
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto var(--spacing-sm);
+    background: white;
+    border: 3px solid var(--border-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.checkpoint[data-state="complete"] span {
+    background: var(--success-color);
+    border-color: var(--success-color);
+    color: white;
+}
+
+.checkpoint[data-state="current"] span {
+    background: var(--warning-color);
+    border-color: var(--warning-color);
+    color: white;
+}
+
+.checkpoint label {
+    font-size: 0.75rem;
+    color: var(--text-color);
+}
+
+/* Notifications */
+.tutorial-notification {
+    position: fixed;
+    bottom: var(--spacing-lg);
+    right: var(--spacing-lg);
+    background: var(--success-color);
+    color: white;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    z-index: 1000;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .learning-paths,
+    .theory-grid,
+    .stat-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .phase-flow {
+        flex-direction: column;
+    }
+
+    .tutorial-navigation {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .tutorial-navigation button {
+        width: 100%;
+    }
+
+    .model-comparison {
+        font-size: 0.75rem;
+    }
+
+    .research-badges {
+        justify-content: flex-start;
+    }
+}

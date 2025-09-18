@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python:*)",
+      "WebSearch",
+      "WebFetch(domain:dhcraft.org)",
+      "Bash(while read file)",
+      "Bash(do echo \"=== $file ===\")",
+      "Bash(head:*)",
+      "Bash(done)",
+      "Bash(if [ -f \".claude_code/subagents/promptotyping-researcher.md\" ])",
+      "Bash(then mv .claude_code/subagents/promptotyping-researcher.md archive/tools/)",
+      "Bash(fi)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

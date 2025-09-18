@@ -1,0 +1,323 @@
+/* Responsive Styles for Promptotyping Webpage */
+
+/* Tablet View (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .phases-timeline {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .principles-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .warning-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .resources-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile View (max-width: 768px) */
+@media (max-width: 768px) {
+    /* Navigation */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background: white;
+        flex-direction: column;
+        padding: var(--spacing-xl);
+        box-shadow: var(--shadow-lg);
+        transition: var(--transition);
+        z-index: 999;
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+        z-index: 1000;
+    }
+
+    .mobile-menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .mobile-menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    /* Hero Section */
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-description {
+        font-size: 1.125rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-actions .btn {
+        width: 200px;
+    }
+
+    /* Phases */
+    .phases-timeline {
+        grid-template-columns: 1fr;
+    }
+
+    .phase-card {
+        padding: var(--spacing-md);
+    }
+
+    /* Principles */
+    .principles-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Examples Tabs */
+    .examples-tabs {
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .tab-button {
+        flex-shrink: 0;
+    }
+
+    /* Wizard */
+    .wizard-container {
+        padding: var(--spacing-lg);
+    }
+
+    .wizard-actions {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .wizard-actions button {
+        width: 100%;
+    }
+
+    /* Resources */
+    .resources-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    /* Modal */
+    .modal-content {
+        width: 95%;
+        padding: var(--spacing-lg);
+    }
+
+    /* Typography adjustments */
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.375rem; }
+    h4 { font-size: 1.125rem; }
+}
+
+/* Small Mobile View (max-width: 480px) */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+
+    .hero {
+        padding: var(--spacing-xl) 0;
+    }
+
+    .hero-title {
+        font-size: 1.75rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .phases-section,
+    .principles-section,
+    .examples-section,
+    .resources-section {
+        padding: var(--spacing-xl) 0;
+    }
+
+    .phase-card {
+        padding: var(--spacing-sm);
+    }
+
+    .phase-number {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+    }
+
+    .principle-card {
+        padding: var(--spacing-md);
+    }
+
+    .principle-icon {
+        font-size: 1.5rem;
+    }
+
+    .warning-box {
+        padding: var(--spacing-md);
+    }
+
+    .example-content {
+        padding: var(--spacing-md);
+    }
+
+    .quick-start-steps li {
+        padding-left: var(--spacing-xl);
+    }
+
+    pre {
+        padding: var(--spacing-sm);
+        font-size: 0.75rem;
+    }
+
+    .resource-card {
+        padding: var(--spacing-md);
+    }
+
+    .btn, .btn-primary, .btn-secondary {
+        padding: var(--spacing-xs) var(--spacing-md);
+        font-size: 0.875rem;
+    }
+
+    .modal-content {
+        padding: var(--spacing-md);
+    }
+}
+
+/* Landscape Orientation Adjustments */
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero {
+        padding: var(--spacing-lg) 0;
+    }
+
+    .hero-title {
+        font-size: 1.75rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .phases-timeline {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* High Resolution Displays */
+@media (-webkit-min-device-pixel-ratio: 2),
+       (min-resolution: 192dpi) {
+    /* Ensure crisp borders and shadows */
+    .phase-card,
+    .principle-card,
+    .resource-card {
+        border: 1px solid var(--border-color);
+    }
+}
+
+/* Print-specific adjustments handled in print.css */
+
+/* Accessibility - Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --light-color: #1f2937;
+        --dark-color: #f9fafb;
+        --text-color: #e5e7eb;
+        --border-color: #374151;
+        --shadow-sm: 0 1px 3px rgba(255,255,255,0.1);
+        --shadow-md: 0 4px 6px rgba(255,255,255,0.08);
+        --shadow-lg: 0 10px 25px rgba(255,255,255,0.05);
+    }
+
+    body {
+        background: #111827;
+    }
+
+    .site-header {
+        background: #1f2937;
+    }
+
+    .phase-card {
+        background: #1f2937;
+    }
+
+    .principle-card,
+    .resource-card {
+        background: #1f2937;
+    }
+
+    .warning-box {
+        background: #7c2d12;
+        border-color: #f59e0b;
+    }
+
+    .warning-risks,
+    .warning-prevention {
+        background: #1f2937;
+    }
+
+    .example-content {
+        background: #1f2937;
+    }
+
+    pre {
+        background: #111827;
+    }
+
+    .modal-content {
+        background: #1f2937;
+    }
+
+    .wizard-container {
+        background: #1f2937;
+    }
+}
