@@ -1,0 +1,141 @@
+{
+  "chapter_id": "patterns",
+  "title": "Observed Patterns and Principles",
+  "sections": [
+    {
+      "type": "text",
+      "content": "Across multiple experiments and implementations, certain patterns emerge consistently. These aren't laws but observations—tendencies that practitioners might recognize in their own work."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "Pattern 1: Expert Intervention Prevents Complexity"
+    },
+    {
+      "type": "text",
+      "content": "In every documented case, expert involvement prevented unnecessary complexity. The Stefan Zweig tool avoided becoming a multi-user database system. The Promptotyping documentation avoided academic bloat. This pattern is so consistent it approaches a principle: LLMs tend toward feature creep without firm guidance."
+    },
+    {
+      "type": "text",
+      "content": "The expert doesn't need to be external. You can be your own expert by stepping back and asking: 'Do we really need this?' The difficulty lies in maintaining critical distance while immersed in development."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "Pattern 2: Constraints Enable Creativity"
+    },
+    {
+      "type": "text",
+      "content": "Counter-intuitively, restrictions improve LLM output. 'Build a tool' produces generic solutions. 'Build a single HTML file with embedded JavaScript that works offline' produces focused, creative solutions. Constraints force LLMs out of their training data's beaten paths."
+    },
+    {
+      "type": "callout",
+      "style": "insight",
+      "content": "Strategic constraint in the Stefan Zweig case: Specifying 'Single Page Application' instead of 'web app' triggered an entirely different solution path—simpler, more maintainable, actually delivered."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "Pattern 3: Documentation-First Clarifies Thinking"
+    },
+    {
+      "type": "text",
+      "content": "Writing documentation before code sounds backwards but works forwards. The act of explaining what you're building clarifies what you're actually trying to achieve. Half the time, the solution becomes obvious once the problem is properly stated."
+    },
+    {
+      "type": "text",
+      "content": "This isn't about comprehensive documentation. A paragraph of clear context often suffices. The value isn't in the document but in the thinking required to produce it."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "Pattern 4: Natural Progression from Chaos to Structure"
+    },
+    {
+      "type": "text",
+      "content": "Developers using LLMs naturally progress through stages: initial excitement and chaotic experimentation ('vibing'), then growing frustration with inconsistent results, finally developing personal patterns and practices. This progression is healthy and shouldn't be forced."
+    },
+    {
+      "type": "text",
+      "content": "The methodology accelerates this progression by providing structure when needed, but forcing structure too early kills the explorative joy that makes LLM collaboration valuable."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "Pattern 5: Version Control as Experimentation Enabler"
+    },
+    {
+      "type": "text",
+      "content": "Frequent commits transform LLM development. Knowing you can roll back enables bold experimentation. 'Let's try something completely different' becomes safe. This isn't unique to LLM development, but LLMs make radical pivots so easy that version control becomes essential."
+    },
+    {
+      "type": "text",
+      "content": "The pattern: Commit before each major LLM interaction. Not after you've cleaned up the code, but before, capturing the working state. This creates a trail of working versions, each a potential branch point."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "Pattern 6: Partial Adoption Works"
+    },
+    {
+      "type": "text",
+      "content": "No case study used all six phases for every feature. The Stefan Zweig case used three phases. Even the self-reflexive Promptotyping documentation skipped phases for certain sections. This isn't methodology failure—it's appropriate adaptation."
+    },
+    {
+      "type": "text",
+      "content": "The pattern: Start minimal, add phases when their absence causes problems. If you're not sure whether you need a phase, you probably don't."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "Pattern 7: Meta-Learning Through Practice"
+    },
+    {
+      "type": "text",
+      "content": "The methodology itself evolved through application. Version 1 was over-engineered. Community feedback and practical application stripped away unnecessary complexity. The methodology eating its own dog food revealed its strengths and weaknesses."
+    },
+    {
+      "type": "text",
+      "content": "This suggests a meta-pattern: Methodologies should be tested through self-application. If a documentation methodology can't document itself, something's wrong."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "Anti-Patterns to Avoid"
+    },
+    {
+      "type": "text",
+      "content": "Equally instructive are the anti-patterns—what consistently fails:"
+    },
+    {
+      "type": "text",
+      "content": "• Skipping context and jumping straight to code generation leads to solving the wrong problem elegantly."
+    },
+    {
+      "type": "text",
+      "content": "• Accepting LLM suggestions without understanding them creates unmaintainable code."
+    },
+    {
+      "type": "text",
+      "content": "• Over-specifying implementation details constrains LLMs unnecessarily—specify outcomes, not methods."
+    },
+    {
+      "type": "text",
+      "content": "• Treating the methodology as rigid law rather than flexible framework."
+    },
+    {
+      "type": "text",
+      "content": "• Continuing conversations beyond 10-15 exchanges—start fresh rather than debug confused context."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "content": "The Core Insight"
+    },
+    {
+      "type": "callout",
+      "style": "insight",
+      "content": "Successful LLM collaboration isn't about prompt engineering or token optimization. It's about clear thinking, domain expertise, and knowing when to accept, reject, or redirect AI suggestions. The methodology simply provides structure for what good developers do naturally—think before coding, understand before accepting, simplify before shipping."
+    }
+  ]
+}

@@ -85,6 +85,25 @@ class PaperEngine {
                 ${this.renderChapters()}
             </main>
             ${this.renderFooter()}
+            ${this.renderNavigationSidebar()}
+        `;
+    }
+
+    renderNavigationSidebar() {
+        return `
+            <nav class="nav-sidebar" id="nav-sidebar">
+                <h4>Quick Navigation</h4>
+                <ul>
+                    ${this.paperData.chapters.map(chapter => `
+                        <li>
+                            <a href="#chapter-${chapter.id}" data-nav-chapter="${chapter.id}">
+                                ${chapter.number}. ${chapter.title.length > 25 ?
+                                    chapter.title.substring(0, 25) + '...' : chapter.title}
+                            </a>
+                        </li>
+                    `).join('')}
+                </ul>
+            </nav>
         `;
     }
 
@@ -442,15 +461,47 @@ class PaperEngine {
             }
 
             // Smooth scroll to chapters
-            if (e.target.dataset.chapter) {
+            if (e.target.dataset.chapter || e.target.dataset.navChapter) {
                 e.preventDefault();
-                const chapterId = e.target.dataset.chapter;
+                const chapterId = e.target.dataset.chapter || e.target.dataset.navChapter;
                 const element = document.getElementById(`chapter-${chapterId}`);
                 if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             }
         });
+
+        // Track scroll position for navigation highlighting
+        this.setupScrollTracking();
+    }
+
+    setupScrollTracking() {
+        const chapters = document.querySelectorAll('.chapter');
+        const navLinks = document.querySelectorAll('.nav-sidebar a');
+
+        const observerOptions = {
+            rootMargin: '-20% 0px -70% 0px'
+        };
+
+        const observerCallback = (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const chapterId = entry.target.id.replace('chapter-', '');
+
+                    // Update navigation
+                    navLinks.forEach(link => {
+                        if (link.dataset.navChapter === chapterId) {
+                            link.classList.add('active');
+                        } else {
+                            link.classList.remove('active');
+                        }
+                    });
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+        chapters.forEach(chapter => observer.observe(chapter));
     }
 
     expandCase(caseId) {
