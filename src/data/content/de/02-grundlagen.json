@@ -1,0 +1,78 @@
+{
+  "chapter_id": "grundlagen",
+  "title": "Theoretische Grundlagen",
+  "sections": [
+    {
+      "id": "llm-phaenomene",
+      "type": "heading",
+      "level": 2,
+      "content": "2.1 LLM-spezifische Phänomene"
+    },
+    {
+      "type": "callout",
+      "style": "important",
+      "title": "Context Rot",
+      "content": "Die Chroma-Studie (2025) dokumentiert Performance-Degradation von LLMs bei längeren Eingaben. LLM werden mit zunehmender Input-Länge unzuverlässiger. Diese Degradation tritt bei verschiedenen Aufgabentypen auf. Die Position der Information im Context beeinflusst die Verarbeitung. Anfang und Ende werden bevorzugt verarbeitet, mittlere Abschnitte werden übersehen. Diese 'Lost in the Middle' Problematik erfordert systematisches Context-Management."
+    },
+    {
+      "type": "callout",
+      "style": "warning",
+      "title": "Halluzinationen",
+      "content": "Generierung plausibel klingender aber falscher Details. Modelle neigen zur Generierung falscher Informationen, die oberflächlich korrekt erscheinen. Diese Halluzinationen erfordern systematische Verifikation durch Domänenexperten."
+    },
+    {
+      "type": "callout",
+      "style": "warning",
+      "title": "Sycophancy",
+      "content": "Dokumentierte Tendenz von LLMs, Nutzerannahmen unkritisch zu bestätigen statt zu korrigieren. Dies macht kritische Überprüfung und Multi-Modell-Verifikation notwendig."
+    },
+    {
+      "id": "wissenschaftliche-basis",
+      "type": "heading",
+      "level": 2,
+      "content": "2.2 Wissenschaftliche Basis"
+    },
+    {
+      "type": "text",
+      "content": "Promptotyping integriert etablierte Konzepte aus verschiedenen Disziplinen:"
+    },
+    {
+      "type": "definition-list",
+      "items": [
+        {
+          "term": "Spiral Model (Boehm, 1988)",
+          "definition": "Risikogetriebene, iterative Entwicklung mit definierten Checkpoints. Promptotyping adaptiert dies durch Savepoints nach jeder Phase."
+        },
+        {
+          "term": "Cognitive Load Theory (Sweller, 1988)",
+          "definition": "Zerlegung komplexer Aufgaben in handhabbare Einheiten. Die Phasenstruktur implementiert diese Zerlegung systematisch."
+        },
+        {
+          "term": "Checkpoint-Theorie (Chandy-Lamport, 1985)",
+          "definition": "Anforderungen an konsistente Systemzustände. Promptotyping-Dokumente erfüllen Kriterien für Konsistenz, Vollständigkeit und Wiederherstellbarkeit."
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Diese Synthese aus Requirements Engineering, User-Centered Design und Scholar-Centered Design strukturiert den vierphasigen Prozess aus Spezifikation, Generation, Validation und Iteration."
+    },
+    {
+      "type": "three-column",
+      "columns": [
+        {
+          "title": "Requirements Engineering",
+          "content": "Systematische Anforderungsspezifikation"
+        },
+        {
+          "title": "User-Centered Design",
+          "content": "Iterative Entwicklung mit kontinuierlichem Feedback"
+        },
+        {
+          "title": "Scholar-Centered Design",
+          "content": "Wissenschaftliche Nachvollziehbarkeit und epistemologische Anforderungen"
+        }
+      ]
+    }
+  ]
+}

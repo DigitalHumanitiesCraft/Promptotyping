@@ -1,0 +1,406 @@
+/* Interactive Components for Promptotyping v4.0 */
+
+/* Phase Navigator - THE KEY VISUAL */
+.phase-navigator {
+    margin: var(--space-2xl) 0;
+    padding: var(--space-xl);
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 12px;
+    overflow-x: auto;
+}
+
+.phase-flow {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    min-width: fit-content;
+    padding: var(--space-lg);
+}
+
+.phase-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-width: 180px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid;
+    position: relative;
+}
+
+.phase-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.phase-header {
+    padding: var(--space-md);
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 6px 6px 0 0;
+    font-family: var(--font-sans);
+}
+
+.phase-content {
+    padding: var(--space-md);
+}
+
+.phase-description {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-sm);
+    line-height: 1.4;
+}
+
+.phase-document {
+    font-size: 0.8rem;
+    color: var(--accent-blue);
+    font-family: var(--font-mono);
+    margin: var(--space-xs) 0;
+}
+
+.phase-tokens {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: var(--space-xs);
+}
+
+.phase-arrow {
+    font-size: 1.5rem;
+    color: var(--accent-blue);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.6; transform: translateX(0); }
+    50% { opacity: 1; transform: translateX(4px); }
+}
+
+.phase-prompt {
+    margin-top: var(--space-sm);
+}
+
+.phase-prompt summary {
+    cursor: pointer;
+    color: var(--accent-blue);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.phase-prompt pre {
+    margin-top: var(--space-sm);
+    background: var(--bg-tertiary);
+    padding: var(--space-sm);
+    border-radius: 4px;
+    font-size: 0.75rem;
+    overflow-x: auto;
+}
+
+.phase-note {
+    background: #fff3cd;
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin-top: var(--space-sm);
+    border-left: 3px solid #ffc107;
+}
+
+/* Vibe Coding Comparison - DRAMATIC VISUAL */
+.comparison {
+    margin: var(--space-2xl) 0;
+    position: relative;
+}
+
+.comparison h3 {
+    text-align: center;
+    margin-bottom: var(--space-lg);
+    font-size: 1.5rem;
+    background: linear-gradient(90deg, #e74c3c, #3498db);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.comparison-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+    position: relative;
+}
+
+.comparison-content::before {
+    content: "VS";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--bg-tertiary);
+    z-index: 1;
+    background: white;
+    padding: var(--space-sm);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.comparison-left,
+.comparison-right {
+    padding: var(--space-lg);
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+.comparison-left {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.comparison-right {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+}
+
+.comparison-left h4,
+.comparison-right h4 {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-md);
+    font-family: var(--font-sans);
+}
+
+.comparison-left ul,
+.comparison-right ul {
+    list-style: none;
+}
+
+.comparison-left li,
+.comparison-right li {
+    padding: var(--space-xs) 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.comparison-left li::before,
+.comparison-right li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* 90% Principle Progress Bar - VISUAL IMPACT */
+.progress-bar {
+    height: 60px;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    background: var(--bg-tertiary);
+}
+
+.progress-segment {
+    float: left;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.progress-segment:first-child {
+    background: linear-gradient(90deg, #11998e, #38ef7d);
+}
+
+.progress-segment:last-child {
+    background: linear-gradient(90deg, #fc4a1a, #f7b733);
+}
+
+.segment-label {
+    z-index: 2;
+    font-size: 0.9rem;
+}
+
+/* Journal Visualizer - CENTRAL INNOVATION */
+.journal-entry {
+    background: white;
+    border-left: 4px solid var(--accent-blue);
+    padding: var(--space-lg);
+    margin: var(--space-lg) 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.journal-entry:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    transform: translateX(4px);
+}
+
+.journal-entry h3 {
+    color: var(--accent-blue);
+    font-family: var(--font-sans);
+    margin-bottom: var(--space-md);
+    font-size: 1.1rem;
+}
+
+.journal-entry .context {
+    background: var(--bg-secondary);
+    padding: var(--space-sm);
+    border-radius: 4px;
+    margin-bottom: var(--space-md);
+    font-style: italic;
+}
+
+.journal-entry .prompt-container {
+    background: #282c34;
+    color: #abb2bf;
+    padding: var(--space-md);
+    border-radius: 4px;
+    margin: var(--space-md) 0;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+}
+
+.journal-entry .validation {
+    border-left: 3px solid #28a745;
+    padding-left: var(--space-md);
+    margin: var(--space-md) 0;
+}
+
+.journal-entry .insights {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: var(--space-md);
+    border-radius: 4px;
+    margin-top: var(--space-md);
+}
+
+/* Toolkit Cards - PRACTICAL FOCUS */
+.toolkit-info {
+    background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+    padding: var(--space-lg);
+    border-radius: 8px;
+    margin-top: var(--space-xl);
+}
+
+.toolkit-info h3 {
+    color: white;
+    margin-bottom: var(--space-md);
+}
+
+.toolkit-list {
+    list-style: none;
+    background: white;
+    border-radius: 4px;
+    padding: var(--space-md);
+}
+
+.toolkit-list li {
+    padding: var(--space-xs) 0;
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+}
+
+/* Language Switcher - SMOOTH TRANSITIONS */
+.language-switcher {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: white;
+    border-radius: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 4px;
+    display: flex;
+}
+
+.lang-btn {
+    padding: 8px 16px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border-radius: 20px;
+    color: var(--text-secondary);
+}
+
+.lang-btn.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+/* Animated Background for Hero */
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.hero {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    color: white;
+    padding: var(--space-2xl) 0;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Floating Action Button for Toolkit */
+.fab-toolkit {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.fab-toolkit:hover {
+    transform: scale(1.1) rotate(15deg);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Interactive Hover Effects */
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Smooth Scroll Indicator */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #11998e, #38ef7d);
+    z-index: 1001;
+    transition: width 0.1s ease;
+}
