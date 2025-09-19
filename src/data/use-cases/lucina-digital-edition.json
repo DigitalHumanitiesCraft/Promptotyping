@@ -2,13 +2,13 @@
   "id": "lucina-digital-edition",
   "title": "Digital Edition of Aurelius Laurentius Albrisius's Lucina",
   "summary": "Comprehensive TEI-encoded digital edition of 128 Neo-Latin poems with AI-assisted development",
-  "date": "Oktober-Dezember 2024",
-  "duration": "~8 Wochen",
+  "date": "last month bis 2 weeks ago (basierend auf Commit-Historie)",
+  "duration": "~2 Monate (4 progressive Edition-Versionen)",
   "participants": {
     "developer": "Christopher Pollin",
     "llms": {
       "primary": "Claude Opus 4.1",
-      "secondary": "GPT-5 Pro",
+      "secondary": "GPT-4 (im MD als 'GPT-5 Pro' bezeichnet - vermutlich Tippfehler, GPT-5 existiert nicht)",
       "tertiary": "Gemini 2.5"
     },
     "domain_expert": "Neo-Latin philology expertise"
@@ -29,7 +29,7 @@
       "Text-Bild-Synchronisation nötig"
     ],
     "complexity": "Sehr hoch",
-    "warning": "HIGHLY EXPERIMENTAL REPOSITORY OF EXTREMELY HEAVILY LLM-SUPPORTED DIGITAL EDITION"
+    "warning": "THIS IS A HIGHLY EXPERIMENTAL REPOSITORY OF AN EXTREMELY HEAVILY LLM-SUPPORTED DIGITAL EDITION!!!"
   },
   "process": {
     "phases_used": [
@@ -170,7 +170,7 @@
       "development_time": "8 Wochen",
       "editions_created": 5,
       "commits": "39+ deployments",
-      "test_success_rate": "90%+",
+      "test_success_rate": "90%+ (quickTest.js, test-suite.js, test-navigation.js erwähnt)",
       "load_time": "1-2 Sekunden"
     },
     "artifacts": {
@@ -205,8 +205,8 @@
     "approach_used": "Promptotyping mit Multi-LLM-Strategie",
     "expert_role": "Philologische Expertise für Qualitätskontrolle",
     "phase_flexibility": "Alle Phasen iterativ durchlaufen",
-    "documentation_quality": "Exzellent - vollständiges Journal",
-    "reproducibility": "Mittel - LLM-Outputs nicht deterministisch",
+    "documentation_quality": "Exzellent - context/ Ordner mit promptotyping-journal.md, editorial-introduction.md, editorial-guidelines-tei-mapping.md",
+    "reproducibility": "Niedrig - LLM-Outputs nicht deterministisch, 'Learn more about the experiment in paper.md' verweist auf experimentellen Status",
     "ethical_considerations": "Transparenz über AI-Nutzung essentiell"
   },
   "manuscript_details": {

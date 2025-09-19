@@ -1,0 +1,195 @@
+{
+  "id": "projekt-name",
+  "title": "Vollständiger Projekttitel",
+  "summary": "Kurze Zusammenfassung in einem Satz",
+  "date": "Monat Jahr",
+  "duration": "z.B. 2 Stunden / 3 Wochen / 2 Monate",
+  "participants": {
+    "developer": "Name",
+    "llm": "Claude / GPT-4 / Gemini / Kombination",
+    "domain_expert": "Fachgebiet / Rolle"
+  },
+  "context": {
+    "project_background": "Worum ging es? Historischer/fachlicher Kontext",
+    "problem_statement": "Welches Problem sollte gelöst werden?",
+    "initial_scope": "Was war das ursprüngliche Ziel?",
+    "resources": {
+      "data": "Welche Daten lagen vor?",
+      "apis": "Welche APIs/Services?",
+      "expertise": "Welche Vorkenntnisse?"
+    },
+    "constraints": [
+      "Technische Einschränkung 1",
+      "Zeitliche Einschränkung 2",
+      "Ressourcen-Einschränkung 3"
+    ],
+    "complexity": "Niedrig / Mittel / Hoch / Sehr hoch"
+  },
+  "process": {
+    "phases_used": [
+      {
+        "phase": "CONTEXT",
+        "description": "Was wurde in dieser Phase gemacht?",
+        "artifacts": ["README.md", "andere Dateien"]
+      },
+      {
+        "phase": "DATA",
+        "description": "Datenstrukturierung und Dokumentation",
+        "artifacts": ["DATA.md"]
+      },
+      {
+        "phase": "EXPLORATION",
+        "description": "Optionale Explorationsphase",
+        "discoveries": "Was wurde entdeckt?"
+      },
+      {
+        "phase": "REQUIREMENTS",
+        "description": "Anforderungsdefinition",
+        "artifacts": ["REQUIREMENTS.md"]
+      },
+      {
+        "phase": "IMPLEMENTATION",
+        "description": "Umsetzungsstrategie",
+        "artifacts": ["INSTRUCTIONS.md"]
+      },
+      {
+        "phase": "PROTOTYPE",
+        "description": "Prototyp-Entwicklung",
+        "result": "Was kam dabei heraus?"
+      }
+    ],
+    "phases_skipped": [
+      {
+        "phase": "PHASE_NAME",
+        "reason": "Warum wurde diese Phase übersprungen?"
+      }
+    ],
+    "initial_prompts": [
+      {
+        "content": "Wörtlicher erster Prompt an das LLM",
+        "timestamp": "Prompt 1",
+        "response_summary": "Kurze Zusammenfassung der Antwort"
+      },
+      {
+        "content": "Zweiter wichtiger Prompt",
+        "timestamp": "Prompt 2",
+        "response_summary": "Was hat das LLM geantwortet?"
+      }
+    ],
+    "critical_interventions": [
+      {
+        "moment": "Wann war die Intervention nötig?",
+        "intervention": "Was wurde korrigiert/verhindert?",
+        "impact": "Welche Auswirkung hatte das?",
+        "quote": "Optional: Wörtliches Zitat"
+      }
+    ],
+    "technical_decisions": [
+      {
+        "title": "Entscheidung 1",
+        "description": "Was wurde entschieden?",
+        "rationale": "Warum diese Entscheidung?"
+      }
+    ],
+    "iterations": [
+      {
+        "iteration": 1,
+        "focus": "Fokus dieser Iteration",
+        "result": "Ergebnis"
+      }
+    ],
+    "challenges": [
+      {
+        "issue": "Problem/Herausforderung",
+        "solution": "Wie wurde es gelöst?",
+        "impact": "Auswirkung auf das Projekt"
+      }
+    ]
+  },
+  "implementation": {
+    "technical_approach": "Technischer Ansatz (z.B. Single-Page App)",
+    "architecture": "Architektur-Beschreibung",
+    "key_features": [
+      "Feature 1",
+      "Feature 2",
+      "Feature 3"
+    ],
+    "code_metrics": {
+      "lines_of_code": "~1000",
+      "files_created": 10,
+      "external_dependencies": 3,
+      "build_time": "Optional"
+    },
+    "technical_stack": {
+      "frontend": "HTML/CSS/JavaScript",
+      "backend": "Node.js / Python / keine",
+      "database": "PostgreSQL / MongoDB / localStorage",
+      "visualization": "Chart.js / D3.js / keine",
+      "deployment": "GitHub Pages / Heroku / lokal"
+    }
+  },
+  "outcomes": {
+    "success_factors": [
+      "Was hat gut funktioniert?",
+      "Erfolg 2",
+      "Erfolg 3"
+    ],
+    "limitations": [
+      "Was funktioniert nicht?",
+      "Limitation 2",
+      "Was fehlt noch?"
+    ],
+    "metrics": {
+      "development_time": "Gesamtzeit",
+      "prompts_used": "Anzahl Prompts (geschätzt)",
+      "features_delivered": 10,
+      "custom_metric": "Projektspezifische Metrik"
+    },
+    "artifacts": {
+      "demo": "https://link-zur-demo.com",
+      "repository": "https://github.com/...",
+      "blog_post": "Optional: Blog-Artikel",
+      "documentation": "Link zur Doku"
+    }
+  },
+  "lessons_learned": [
+    {
+      "insight": "Wichtige Erkenntnis",
+      "evidence": "Beweis/Beispiel dafür",
+      "transferability": "Wie ist das auf andere Projekte übertragbar?"
+    },
+    {
+      "insight": "Weitere Erkenntnis",
+      "evidence": "Konkretes Beispiel",
+      "transferability": "Allgemeine Anwendbarkeit"
+    }
+  ],
+  "methodological_reflection": {
+    "approach_used": "Welcher Promptotyping-Ansatz?",
+    "expert_role": "Rolle des Domain Experts",
+    "phase_flexibility": "Wie wurden Phasen angepasst?",
+    "documentation_quality": "Niedrig / Mittel / Hoch / Exzellent",
+    "reproducibility": "Wie reproduzierbar ist das Projekt?"
+  },
+  "quotes": [
+    {
+      "text": "Interessantes oder wichtiges Zitat",
+      "context": "In welchem Kontext?",
+      "speaker": "Wer hat das gesagt?"
+    }
+  ],
+  "not_documented": [
+    "Was wurde NICHT dokumentiert?",
+    "Fehlende Information 2",
+    "Was ist verloren gegangen?"
+  ],
+  "future_work": [
+    "Geplante Erweiterung 1",
+    "Mögliche Verbesserung 2",
+    "Zukünftige Features"
+  ],
+  "custom_section": {
+    "note": "Füge projektspezifische Sections hinzu",
+    "examples": "historical_context, innovation_highlights, etc."
+  }
+}

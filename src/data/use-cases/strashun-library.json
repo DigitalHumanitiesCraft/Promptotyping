@@ -2,8 +2,8 @@
   "id": "strashun-library",
   "title": "Strashun Library Digital Archive",
   "summary": "Comprehensive digital humanities platform for 5,310 lending records from historic Jewish library (1902-1940)",
-  "date": "Oktober-November 2024",
-  "duration": "~4 Wochen",
+  "date": "Zeitraum nicht dokumentiert",
+  "duration": "Unbekannt (vermutlich mehrere Wochen)",
   "participants": {
     "developer": "Christopher Pollin",
     "llm": "Claude (primary)",
@@ -14,7 +14,7 @@
     "problem_statement": "Historische Bibliotheksdaten mit extremer Sparsity (99.7%) und unvollständigen Aufzeichnungen mussten für Forschung zugänglich gemacht werden",
     "initial_scope": "Interaktive Exploration von Ausleihmustern und Lesekultur im jüdischen Vilna vor dem Zweiten Weltkrieg",
     "resources": {
-      "data": "4 CSV-Dateien mit Ausleihaufzeichnungen aus verschiedenen Zeitperioden",
+      "data": "4 CSV-Dateien (Transcription - Pilot - *.csv) mit hebräischen/jiddischen/lateinischen Einträgen",
       "expertise": "Kenntnisse in jüdischer Geschichte und Bibliothekswissenschaft",
       "challenges": "Mehrsprachigkeit (Hebräisch, Jiddisch, Lateinische Schrift)"
     },
@@ -123,7 +123,7 @@
       "RTL-Text Support für Hebräisch/Jiddisch"
     ],
     "code_metrics": {
-      "javascript_size": "~100KB (modular)",
+      "javascript_size": "app-core.js (12KB), app-views.js (28KB), app-init.js (8KB), charts.js (18KB), timeline.js (22KB), ego-network.js (25KB)",
       "data_size": "2.8MB JSON (von 4MB+ CSV)",
       "processing_time": "3-5 Sekunden für 5,310 Transaktionen",
       "memory_usage": "<200MB während Processing"
@@ -154,12 +154,16 @@
       "books": 2897,
       "ghost_records": 1636,
       "time_periods": 4,
-      "data_completeness": "93.71%"
+      "data_completeness": "93.71%",
+      "gender_identification": "4.35% weiblich, 95.65% männlich (vermutlicher Recording Bias)",
+      "power_law_distribution": "2% der Leser = 30% der Transaktionen",
+      "seasonal_pattern": "86% aller Ausleihen in November-Dezember",
+      "usage_decline": "93% Rückgang 1902-1940"
     },
     "artifacts": {
       "demo": "https://chpollin.github.io/strashun/web-prototype",
       "repository": "https://github.com/chpollin/strashun",
-      "documentation": "PAPER.md mit akademischer Dokumentation"
+      "documentation": "PAPER.md mit akademischer Dokumentation, REQUIREMENTS.md vorhanden, data_quality_report.json und data_summary.txt zeigen systematische Validierung"
     }
   },
   "lessons_learned": [
@@ -188,7 +192,7 @@
     "approach_used": "Strukturiertes Promptotyping mit Daten-Pipeline",
     "expert_role": "Digital Humanities Expertise für historische Kontextualisierung",
     "phase_flexibility": "Alle Phasen außer PROTOTYPE explizit genutzt",
-    "documentation_quality": "Exzellent - akademische Dokumentation in PAPER.md",
+    "documentation_quality": "Exzellent - PAPER.md, REQUIREMENTS.md vorhanden, strukturierte Daten-Pipeline mit Quality Reports",
     "reproducibility": "Sehr hoch - vollständige Pipeline dokumentiert"
   },
   "historical_significance": {

@@ -582,11 +582,21 @@
             document.getElementById('case-title').textContent = data.title;
             document.title = `Use Case: ${data.title} - Promptotyping`;
 
+            // Show warning if experimental
+            if (data.context?.warning) {
+                const warningHtml = `
+                    <div style="background: #fff3cd; border: 2px solid #ffc107; padding: 1rem; margin: 1rem 0; border-radius: 4px;">
+                        <strong>⚠️ Hinweis:</strong> ${data.context.warning}
+                    </div>
+                `;
+                document.querySelector('header').insertAdjacentHTML('beforeend', warningHtml);
+            }
+
             // Update metadata
             document.getElementById('development-info').textContent =
                 `${data.date || 'N/A'}, ${data.duration || 'N/A'}`;
             document.getElementById('model-info').textContent =
-                data.participants?.llm || 'N/A';
+                data.participants?.llm || data.participants?.llms?.primary || 'N/A';
             document.getElementById('complexity').textContent =
                 data.context?.complexity || 'Medium';
 
@@ -607,6 +617,9 @@
 
             // Render implementation
             renderImplementation(data.implementation);
+
+            // Render additional metrics
+            renderAdditionalMetrics(data.outcomes?.metrics);
 
             // Render limitations
             renderLimitations(data.outcomes?.limitations);
@@ -763,6 +776,16 @@
                 `;
             }
 
+            // Add test files if available
+            if (implementation.test_files) {
+                statsHtml += `
+                    <div class="stat-card">
+                        <div class="stat-number">${implementation.test_files.length}</div>
+                        <div class="stat-label">Test Files</div>
+                    </div>
+                `;
+            }
+
             statsContainer.innerHTML = statsHtml;
 
             // Render implementation details
@@ -783,6 +806,37 @@
             }
 
             detailsContainer.innerHTML = detailsHtml;
+        }
+
+        function renderAdditionalMetrics(metrics) {
+            if (!metrics) return;
+
+            // Check for special metrics
+            const specialMetrics = ['gender_identification', 'power_law_distribution', 'seasonal_pattern', 'usage_decline', 'data_completeness'];
+            const hasSpecialMetrics = specialMetrics.some(m => metrics[m]);
+
+            if (!hasSpecialMetrics) return;
+
+            // Create a special metrics section
+            const resultsSection = document.getElementById('result-section');
+            let metricsHtml = '<h3>Spezielle Metriken</h3><ul style="list-style: none; padding: 0;">';
+
+            specialMetrics.forEach(metric => {
+                if (metrics[metric]) {
+                    const label = metric.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+                    metricsHtml += `<li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">
+                        <strong>${label}:</strong> ${metrics[metric]}
+                    </li>`;
+                }
+            });
+
+            metricsHtml += '</ul>';
+
+            // Insert after stats grid
+            const statsGrid = document.getElementById('stats-grid');
+            if (statsGrid) {
+                statsGrid.insertAdjacentHTML('afterend', metricsHtml);
+            }
         }
 
         function renderLimitations(limitations) {
