@@ -1,0 +1,282 @@
+{
+  "id": "stefan-zweig",
+  "title": "Stefan Zweig Digital Annotation Tool",
+  "summary": "A two-hour experiment that demonstrated how expert intervention prevents over-engineering",
+  "date": "Mai 2025",
+  "duration": "2 Stunden",
+  "participants": {
+    "developer": "Christopher Pollin",
+    "llm": "Claude 4 Sonnet",
+    "domain_expert": "Self (Digital Humanities background since 2017)"
+  },
+  "context": {
+    "project_background": "Stefan Zweig Digital ist eine digitale Nachlassrekonstruktion am Literaturarchiv Salzburg",
+    "problem_statement": "Forscher benötigten ein Tool zur Annotation von Korrespondenz-Metadaten aus XML-strukturierten Daten in GAMS",
+    "initial_scope": "Timeline-Visualisierung von Briefen mit der Möglichkeit, Forschungsannotationen hinzuzufügen",
+    "resources": {
+      "data": "XML-TEI kodierte Briefe in GAMS Repository",
+      "apis": "GAMS REST API (mit CORS-Einschränkungen)",
+      "expertise": "8 Jahre Digital Humanities Erfahrung"
+    },
+    "constraints": [
+      "Einzelner Forscher als Nutzer",
+      "Keine Datenbankinfrastruktur",
+      "Browser-basierte Lösung",
+      "Muss mit bestehender XML-Datenstruktur funktionieren"
+    ],
+    "complexity": "Niedrig bis Mittel"
+  },
+  "process": {
+    "phases_used": [
+      {
+        "phase": "CONTEXT",
+        "description": "Etabliert als Single-Page Application statt Web App zur Vermeidung von Framework-Komplexität",
+        "decision": "Bewusste Wortwahl 'Single Page Application' triggert einfache HTML-Generierung"
+      },
+      {
+        "phase": "EXPLORATION",
+        "description": "Test-Ansatz mit XML-Datenbeispiel und Screenshot des ursprünglichen Designs",
+        "artifacts": ["Screenshot der gewünschten UI", "Sample XML mit 5 Briefen"]
+      },
+      {
+        "phase": "PROTOTYPE",
+        "description": "Direkte Generierung von HTML/CSS/JS in Fragmenten zur Vermeidung von Token-Limits",
+        "approach": "Stückweise Generierung mit manueller Zusammenführung"
+      }
+    ],
+    "phases_skipped": [
+      {
+        "phase": "DATA",
+        "reason": "XML-Struktur war bereits durch GAMS definiert"
+      },
+      {
+        "phase": "REQUIREMENTS",
+        "reason": "Requirements entstanden durch Konversation"
+      },
+      {
+        "phase": "IMPLEMENTATION",
+        "reason": "Direkt von Exploration zu Code gewechselt"
+      }
+    ],
+    "initial_prompts": [
+      {
+        "content": "Ich brauche eine Single Page Application (nicht Web App!) für die Annotation von Briefen aus dem Stefan Zweig Digital Projekt. Die Briefe liegen als XML vor. Hier ist ein Beispiel: [XML-Daten]. Die App soll eine Timeline zeigen mit der Möglichkeit, Notizen und Tags hinzuzufügen.",
+        "timestamp": "Prompt 1",
+        "response_summary": "Claude generierte initiale HTML-Struktur mit Timeline-Visualisierung"
+      },
+      {
+        "content": "Bitte keine KI-Features, keine Kollaboration, keine komplexen Visualisierungen. Einfach nur: Timeline, Filter, Annotationen mit localStorage.",
+        "timestamp": "Prompt 2 (Intervention)",
+        "response_summary": "Vereinfachte Version ohne überflüssige Features"
+      },
+      {
+        "content": "Die CORS-Policy blockiert den Zugriff auf GAMS. Implementiere einen Fallback mit lokalen Demo-Daten.",
+        "timestamp": "Prompt 5",
+        "response_summary": "Fallback-Mechanismus mit demo-data.xml implementiert"
+      }
+    ],
+    "critical_interventions": [
+      {
+        "moment": "Als Claude KI-unterstützte Features vorschlug",
+        "intervention": "Explizit einfache Version ohne KI, Kollaboration oder Visualisierungs-Features angefordert",
+        "impact": "Verhinderte Scope Creep und erhielt Einfachheit",
+        "quote": "Bitte keine KI-Features!"
+      },
+      {
+        "moment": "Technologie-Wahl",
+        "intervention": "Spezifizierte 'Single Page Application' um einzelne HTML-Datei statt React zu triggern",
+        "impact": "Vermeidung von Framework-Komplexität",
+        "quote": "Single Page Application statt Web App triggert single HTML file mit JS/CSS statt React"
+      },
+      {
+        "moment": "Speicherlösung",
+        "intervention": "Wählte localStorage statt vorgeschlagener Datenbank",
+        "impact": "Eliminierte Backend-Komplexität",
+        "rationale": "Einzelnutzer-Tool benötigt keine Server-Infrastruktur"
+      }
+    ],
+    "technical_decisions": [
+      {
+        "title": "Architektur: Drei-Datei-Ansatz",
+        "description": "index.html mit eingebettetem JavaScript, style.css, demo-data.xml",
+        "rationale": "Minimale Komplexität, keine Build-Tools erforderlich"
+      },
+      {
+        "title": "Datenpersistenz: localStorage",
+        "description": "Alle Annotationen werden im Browser localStorage gespeichert",
+        "rationale": "Keine Server-Infrastruktur nötig, sofortige Verfügbarkeit"
+      },
+      {
+        "title": "XML-Parsing: Native Browser APIs",
+        "description": "Verwendung von DOMParser für XML-Verarbeitung",
+        "rationale": "Keine externen Bibliotheken erforderlich"
+      }
+    ],
+    "iterations": [
+      {
+        "iteration": 1,
+        "focus": "Basis-HTML-Struktur und Timeline",
+        "result": "Funktionierende Timeline mit Jahr-Gruppierung"
+      },
+      {
+        "iteration": 2,
+        "focus": "Annotations-System",
+        "result": "Modal-Dialog für Annotationen mit Tags und Notizen"
+      },
+      {
+        "iteration": 3,
+        "focus": "Filter und Suche",
+        "result": "Multi-Kriterien-Filter implementiert"
+      },
+      {
+        "iteration": 4,
+        "focus": "CORS-Workaround",
+        "result": "Fallback zu lokalen Demo-Daten"
+      },
+      {
+        "iteration": 5,
+        "focus": "Export/Import",
+        "result": "JSON-Export der Annotationen hinzugefügt"
+      }
+    ],
+    "challenges": [
+      {
+        "issue": "CORS-Einschränkungen auf GAMS API",
+        "solution": "Fallback zu lokaler demo-data.xml",
+        "impact": "Tool funktioniert offline mit Demo-Daten"
+      },
+      {
+        "issue": "Manuelle Code-Synchronisation",
+        "description": "Beschrieben als 'lästiges Herumkopieren mit viel Mikromanagement'",
+        "impact": "Zeitaufwendig aber machbar"
+      },
+      {
+        "issue": "Token-Limitierungen",
+        "solution": "Code in Fragmenten generiert",
+        "workaround": "Stückweise Generierung und manuelle Zusammenführung"
+      }
+    ]
+  },
+  "implementation": {
+    "technical_approach": "Drei Dateien: index.html mit eingebettetem JavaScript, style.css, demo-data.xml",
+    "architecture": "Client-only Single Page Application ohne Framework",
+    "key_features": [
+      "Timeline-Visualisierung mit Jahr-Gruppierung",
+      "Separater Bereich für undatierte Dokumente",
+      "Filter-Optionen (Alle, Mit Datum, Ohne Datum, Annotiert, Nicht bearbeitet)",
+      "Suche über Titel, Tags und Notizen",
+      "Annotations-System mit Status, Tags und Forschungsnotizen",
+      "LocalStorage-Persistenz",
+      "JSON-Export/Import-Funktionalität",
+      "Links zu IIIF Mirador für Originaldokumente"
+    ],
+    "code_metrics": {
+      "lines_of_code": "~600",
+      "files_created": 3,
+      "external_dependencies": 0,
+      "build_tools": 0
+    },
+    "technical_stack": {
+      "frontend": "Vanilla HTML/CSS/JavaScript",
+      "storage": "Browser localStorage",
+      "data_format": "XML (TEI)",
+      "styling": "Custom CSS, keine Frameworks"
+    }
+  },
+  "outcomes": {
+    "success_factors": [
+      "Funktionierender Prototyp in einer Sitzung erreicht",
+      "Erfüllte tatsächliche Nutzerbedürfnisse ohne unnötige Features",
+      "Keine Wartungslast durch null Dependencies"
+    ],
+    "limitations": [
+      "Nicht produktionsreif",
+      "CORS-Workaround erforderlich",
+      "Manuelle Synchronisation zwischen Änderungen und LLM",
+      "Keine kollaborativen Features",
+      "Keine Versionierung der Annotationen",
+      "Keine Backup-Strategie außer manuellem Export"
+    ],
+    "metrics": {
+      "development_time": "2 Stunden",
+      "prompts_used": "~8-10 (nicht exakt dokumentiert)",
+      "code_generated": "~600 Zeilen",
+      "features_delivered": 8,
+      "features_rejected": 5
+    },
+    "artifacts": {
+      "demo": "https://dhcraft.org/excellence/promptotyping/szd-annotation-timeline/",
+      "blog_post": "https://dhcraft.org/excellence/blog/Critical-Vibing-Claude-4/",
+      "code_repository": "Nicht öffentlich verfügbar",
+      "documentation": "Minimal, hauptsächlich Code-Kommentare"
+    }
+  },
+  "lessons_learned": [
+    {
+      "insight": "Experten-Domänenwissen ist entscheidend zur Verhinderung von Over-Engineering",
+      "evidence": "Entwicklers Vertrautheit mit Digital Humanities Bedürfnissen führte zur Vereinfachung",
+      "transferability": "Gilt für alle domänenspezifischen Anwendungen"
+    },
+    {
+      "insight": "Beschränkung auf Single-File-Output verhindert Framework-Eskalation",
+      "evidence": "Vermeidung von 'Web App'-Terminologie führte zu einfacherer Lösung",
+      "transferability": "Wortwahl in Prompts hat massive Auswirkungen"
+    },
+    {
+      "insight": "LLMs tendieren zu Feature Creep ohne feste Führung",
+      "evidence": "Claude schlug KI-Features, Kollaboration und Visualisierung unnötigerweise vor",
+      "transferability": "Konstante Intervention nötig um Fokus zu behalten"
+    },
+    {
+      "insight": "Promptotyping ist keine 'Demokratisierung der Programmierung'",
+      "evidence": "Benötigte sowohl Domänen-Expertise als auch technisches Wissen zum Erfolg",
+      "transferability": "Expertise bleibt kritisch für Qualität"
+    },
+    {
+      "insight": "90-Prozent-Prinzip bestätigt",
+      "evidence": "Prototyp funktionierte nach 2 Stunden, aber Produktionsreife würde Wochen benötigen",
+      "transferability": "Schnelle Prototypen vs. lange Produktionsentwicklung"
+    }
+  ],
+  "methodological_reflection": {
+    "approach_used": "Vibe-Check / Strukturiertes Vibe Coding",
+    "expert_role": "Critical-Expert-in-the-Loop verhindert Solutionismus",
+    "phase_flexibility": "Nur 3 von 6 Phasen verwendet, zeigt Anpassungsfähigkeit",
+    "documentation_quality": "Partial - dies war ein frühes Experiment vor formaler Methodologie",
+    "reproducibility": "Niedrig - Prozess nicht vollständig für Replikation dokumentiert",
+    "verification": "Keine Multi-Model-Verifikation durchgeführt"
+  },
+  "quotes": [
+    {
+      "text": "Single Page Application statt Web App triggert single HTML file mit JS/CSS statt React",
+      "context": "Über strategische Prompt-Formulierung",
+      "speaker": "Christopher Pollin"
+    },
+    {
+      "text": "Lästiges Herumkopieren mit viel Mikromanagement",
+      "context": "Über manuelle Synchronisations-Herausforderung",
+      "speaker": "Christopher Pollin"
+    },
+    {
+      "text": "Bitte keine KI-Features!",
+      "context": "Critical Intervention gegen Feature Creep",
+      "speaker": "Christopher Pollin"
+    }
+  ],
+  "not_documented": [
+    "Exakte Anzahl der Prompts und Iterationen",
+    "Spezifische Fehlermeldungen und Debugging-Schritte",
+    "Zeitverteilung innerhalb der 2 Stunden",
+    "Komplette Prompt-Sequenz",
+    "Verworfene Ansätze oder Sackgassen",
+    "Performance-Metriken des finalen Tools"
+  ],
+  "future_work": [
+    "Integration mit GAMS API nach CORS-Lösung",
+    "Kollaborative Features für Team-Forschung",
+    "Versionierung der Annotationen",
+    "Automatisches Backup zu Cloud-Storage",
+    "Erweiterte Visualisierungen",
+    "Integration mit anderen DH-Tools"
+  ]
+}

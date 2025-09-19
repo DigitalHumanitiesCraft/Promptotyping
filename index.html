@@ -659,8 +659,11 @@
             'case-study-grid': (item) => `
                 <div style="display: grid; gap: 1rem; margin: 2rem 0;">
                     ${item.studies.map(study => `
-                        <div style="background: var(--bg-secondary); padding: 1rem; border-radius: 8px;">
-                            <h4 style="font-family: var(--font-sans);">${study.title}</h4>
+                        <div style="background: var(--bg-secondary); padding: 1rem; border-radius: 8px; ${study.link ? 'cursor: pointer; transition: transform 0.2s;' : ''}"
+                             ${study.link ? `onclick="window.location.href='${study.link}'"` : ''}>
+                            <h4 style="font-family: var(--font-sans);">
+                                ${study.link ? `<a href="${study.link}" style="color: var(--accent-blue); text-decoration: none;">${study.title} →</a>` : study.title}
+                            </h4>
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; font-size: 0.9rem;">
                                 <div><strong>Domain:</strong> ${study.domain}</div>
                                 <div><strong>Complexity:</strong> ${study.complexity}</div>

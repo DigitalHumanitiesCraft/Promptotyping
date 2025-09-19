@@ -18,23 +18,42 @@
         {
           "title": "Stefan-Zweig-Digital",
           "domain": "Literary Studies",
-          "complexity": "Medium",
-          "llm_contribution": "85%",
-          "outcome": "Functional prototype in 2 weeks"
-        },
-        {
-          "title": "Medieval Manuscript Viewer",
-          "domain": "Medieval Studies",
-          "complexity": "High",
-          "llm_contribution": "70%",
-          "outcome": "Complex visualization system"
-        },
-        {
-          "title": "Dialect Corpus Interface",
-          "domain": "Linguistics",
           "complexity": "Low",
+          "llm_contribution": "85%",
+          "outcome": "Annotation tool in 2 hours",
+          "link": "use-case-template.html?case=stefan-zweig-extended"
+        },
+        {
+          "title": "Aldersbach Monastery",
+          "domain": "Economic History",
+          "complexity": "Medium",
+          "llm_contribution": "75%",
+          "outcome": "Dashboard in 3 weeks",
+          "link": "use-case-template.html?case=aldersbach-monastery"
+        },
+        {
+          "title": "Strashun Library",
+          "domain": "Library Science",
+          "complexity": "High",
+          "llm_contribution": "80%",
+          "outcome": "5,310 transactions visualized",
+          "link": "use-case-template.html?case=strashun-library"
+        },
+        {
+          "title": "CVMA Stained Glass",
+          "domain": "Art History",
+          "complexity": "Medium",
+          "llm_contribution": "70%",
+          "outcome": "8,730 objects annotatable",
+          "link": "use-case-template.html?case=cvma-stained-glass"
+        },
+        {
+          "title": "Lucina Digital Edition",
+          "domain": "Neo-Latin Philology",
+          "complexity": "Very High",
           "llm_contribution": "90%",
-          "outcome": "Search interface in 3 days"
+          "outcome": "2,224 verses TEI-encoded",
+          "link": "use-case-template.html?case=lucina-digital-edition"
         }
       ]
     },

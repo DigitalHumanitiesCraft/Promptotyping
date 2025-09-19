@@ -1,0 +1,213 @@
+{
+  "id": "strashun-library",
+  "title": "Strashun Library Digital Archive",
+  "summary": "Comprehensive digital humanities platform for 5,310 lending records from historic Jewish library (1902-1940)",
+  "date": "Oktober-November 2024",
+  "duration": "~4 Wochen",
+  "participants": {
+    "developer": "Christopher Pollin",
+    "llm": "Claude (primary)",
+    "domain_expert": "Jewish Studies & Digital Humanities expertise"
+  },
+  "context": {
+    "project_background": "Digitalisierung der Ausleihaufzeichnungen der Strashun-Bibliothek in Vilna, einer der bedeutendsten jüdischen Bibliotheken Osteuropas vor dem Holocaust",
+    "problem_statement": "Historische Bibliotheksdaten mit extremer Sparsity (99.7%) und unvollständigen Aufzeichnungen mussten für Forschung zugänglich gemacht werden",
+    "initial_scope": "Interaktive Exploration von Ausleihmustern und Lesekultur im jüdischen Vilna vor dem Zweiten Weltkrieg",
+    "resources": {
+      "data": "4 CSV-Dateien mit Ausleihaufzeichnungen aus verschiedenen Zeitperioden",
+      "expertise": "Kenntnisse in jüdischer Geschichte und Bibliothekswissenschaft",
+      "challenges": "Mehrsprachigkeit (Hebräisch, Jiddisch, Lateinische Schrift)"
+    },
+    "constraints": [
+      "Extreme Datensparsity (99.7%)",
+      "28-jährige Lücke in den Aufzeichnungen (1905-1933)",
+      "61.5% der Bücher sind 'Ghost Records' ohne Metadaten",
+      "Multilinguale Herausforderungen"
+    ],
+    "complexity": "Hoch"
+  },
+  "process": {
+    "phases_used": [
+      {
+        "phase": "DATA",
+        "description": "ETL-Pipeline in Python für Datenkonsolidierung und -standardisierung",
+        "artifacts": ["prepare_data.py", "data_quality_report.json"]
+      },
+      {
+        "phase": "REQUIREMENTS",
+        "description": "Detaillierte Anforderungen in REQUIREMENTS.md dokumentiert",
+        "artifacts": ["REQUIREMENTS.md mit 15 funktionalen Anforderungen"]
+      },
+      {
+        "phase": "EXPLORATION",
+        "description": "Analyse der Datensparsity und Entwicklung neuer Visualisierungsansätze",
+        "innovation": "Ego-Network Ansatz für sparse data visualization"
+      },
+      {
+        "phase": "IMPLEMENTATION",
+        "description": "Modulare JavaScript-Architektur mit klarer Trennung",
+        "artifacts": ["app-core.js", "app-views.js", "visualization modules"]
+      }
+    ],
+    "critical_interventions": [
+      {
+        "moment": "Umgang mit 99.7% Datensparsity",
+        "intervention": "Entwicklung von Ego-Networks statt globaler Netzwerkvisualisierung",
+        "impact": "Sinnvolle Visualisierung trotz extremer Sparsity möglich",
+        "innovation": "Neue methodologische Ansätze für sparse historical data"
+      },
+      {
+        "moment": "Ghost Records Management",
+        "intervention": "Beibehaltung unvollständiger Aufzeichnungen als historische Evidenz",
+        "impact": "21.2% der Transaktionen mit 'ghost books' bleiben analysierbar",
+        "rationale": "Datenverlust ist selbst historische Information"
+      },
+      {
+        "moment": "Zeitliche Diskontinuität",
+        "intervention": "28-jährige Lücke explizit visualisiert statt komprimiert",
+        "impact": "Historische Disruption wird als bedeutsame Daten sichtbar",
+        "significance": "WWI und politische Umwälzungen werden erkennbar"
+      }
+    ],
+    "technical_decisions": [
+      {
+        "title": "Pre-computed Aggregations",
+        "description": "Alle Netzwerk-Layouts und Statistiken werden vorab berechnet",
+        "rationale": "Performance-Optimierung für 5,310 Transaktionen"
+      },
+      {
+        "title": "Vanilla JavaScript",
+        "description": "Keine Framework-Dependencies",
+        "rationale": "Maximale Kompatibilität und Langlebigkeit"
+      },
+      {
+        "title": "JSON als Datenformat",
+        "description": "Transformation von CSV zu strukturiertem JSON",
+        "rationale": "Optimale Performance im Browser"
+      }
+    ],
+    "iterations": [
+      {
+        "iteration": 1,
+        "focus": "Datenprocessing Pipeline",
+        "result": "ETL-Script konsolidiert 4 CSV-Dateien"
+      },
+      {
+        "iteration": 2,
+        "focus": "Browse & Search Interface",
+        "result": "Volltext-Suche mit RTL-Support"
+      },
+      {
+        "iteration": 3,
+        "focus": "Visualisierungen",
+        "result": "Charts, Timeline, Network implementiert"
+      },
+      {
+        "iteration": 4,
+        "focus": "Ego-Networks",
+        "result": "Innovative Lösung für Sparse Data"
+      }
+    ]
+  },
+  "implementation": {
+    "technical_approach": "Single-Page Application mit modularem JavaScript und pre-processing",
+    "architecture": "Frontend-only mit Python ETL-Pipeline",
+    "key_features": [
+      "Advanced Search mit Debouncing (300ms)",
+      "Filtering nach Periode, Gender, Sprache, Aktivitätslevel",
+      "Statistische Charts (Bar, Pie, Line, Radar)",
+      "Network-Visualisierung mit Ego-Networks",
+      "Timeline-Analyse mit expliziter Gap-Visualisierung",
+      "CSV/JSON Export gefilteter Daten",
+      "Deep Linking für teilbare URLs",
+      "RTL-Text Support für Hebräisch/Jiddisch"
+    ],
+    "code_metrics": {
+      "javascript_size": "~100KB (modular)",
+      "data_size": "2.8MB JSON (von 4MB+ CSV)",
+      "processing_time": "3-5 Sekunden für 5,310 Transaktionen",
+      "memory_usage": "<200MB während Processing"
+    },
+    "technical_stack": {
+      "frontend": "Vanilla JavaScript ES6+",
+      "visualization": "Chart.js 4.4.0, Vis.js Network 9.1.2",
+      "styling": "Tailwind CSS 3.x (CDN)",
+      "data_processing": "Python (pandas, numpy)",
+      "deployment": "GitHub Pages"
+    }
+  },
+  "outcomes": {
+    "success_factors": [
+      "Innovative Lösung für extreme Datensparsity",
+      "Bewahrung historischer Evidenz trotz Unvollständigkeit",
+      "Performance-optimierte Lösung für große Datensätze",
+      "Multilinguale Unterstützung erfolgreich implementiert"
+    ],
+    "limitations": [
+      "Ghost Records können nicht vollständig analysiert werden",
+      "Gender-Bias in historischen Aufzeichnungen",
+      "Keine Normalisierung der Namensvarianten"
+    ],
+    "metrics": {
+      "transactions": 5310,
+      "borrowers": 1587,
+      "books": 2897,
+      "ghost_records": 1636,
+      "time_periods": 4,
+      "data_completeness": "93.71%"
+    },
+    "artifacts": {
+      "demo": "https://chpollin.github.io/strashun/web-prototype",
+      "repository": "https://github.com/chpollin/strashun",
+      "documentation": "PAPER.md mit akademischer Dokumentation"
+    }
+  },
+  "lessons_learned": [
+    {
+      "insight": "Sparse Data erfordert neue Visualisierungsansätze",
+      "evidence": "Ego-Networks erfolgreicher als globale Netzwerke bei 99.7% Sparsity",
+      "transferability": "Methodologie anwendbar auf andere historische Netzwerkdaten"
+    },
+    {
+      "insight": "Datenverlust ist selbst wertvolle Information",
+      "evidence": "Ghost Records zeigen Sammlungsverluste und historische Disruption",
+      "transferability": "Unvollständigkeit sollte dokumentiert, nicht versteckt werden"
+    },
+    {
+      "insight": "Pre-computation essentiell für Performance",
+      "evidence": "Netzwerk-Layouts und Aggregationen vorab berechnet",
+      "transferability": "ETL-Pipeline-Ansatz für große historische Datensätze"
+    },
+    {
+      "insight": "Temporal Gaps sind bedeutsame Daten",
+      "evidence": "28-jährige Lücke visualisiert WWI und politische Umwälzungen",
+      "transferability": "Historische Diskontinuität sollte explizit dargestellt werden"
+    }
+  ],
+  "methodological_reflection": {
+    "approach_used": "Strukturiertes Promptotyping mit Daten-Pipeline",
+    "expert_role": "Digital Humanities Expertise für historische Kontextualisierung",
+    "phase_flexibility": "Alle Phasen außer PROTOTYPE explizit genutzt",
+    "documentation_quality": "Exzellent - akademische Dokumentation in PAPER.md",
+    "reproducibility": "Sehr hoch - vollständige Pipeline dokumentiert"
+  },
+  "historical_significance": {
+    "library_founder": "Mattityahu Strashun (1817-1885)",
+    "cultural_importance": "Premier-Zentrum jüdischen intellektuellen Lebens in Osteuropa",
+    "destruction": "Sammlung größtenteils im Holocaust zerstört",
+    "research_value": "Seltener Einblick in Lesekultur des Vorkriegs-Vilna",
+    "findings": [
+      "Hebräische Periodika dominierten die meistgeliehenen Werke",
+      "86% aller Ausleihen in November-Dezember",
+      "93% Rückgang der Bibliotheksnutzung 1902-1940",
+      "Power-law Distribution: 2% der Leser = 30% der Transaktionen"
+    ]
+  },
+  "innovation_highlights": [
+    "Ego-Network-Visualisierung für Sparse Data",
+    "Ghost Records als historische Evidenz",
+    "Explizite Gap-Visualisierung",
+    "Reading Fingerprints für individuelle Muster",
+    "Adaptive Visualisierung nach Nutzertyp"
+  ]
+}

@@ -18,23 +18,42 @@
         {
           "title": "Stefan-Zweig-Digital",
           "domain": "Literaturwissenschaft",
-          "complexity": "Mittel",
-          "llm_contribution": "85%",
-          "outcome": "Funktionaler Prototyp in 2 Wochen"
-        },
-        {
-          "title": "Medieval Manuscript Viewer",
-          "domain": "Mediävistik",
-          "complexity": "Hoch",
-          "llm_contribution": "70%",
-          "outcome": "Komplexes Visualisierungssystem"
-        },
-        {
-          "title": "Dialect Corpus Interface",
-          "domain": "Linguistik",
           "complexity": "Niedrig",
+          "llm_contribution": "85%",
+          "outcome": "Annotation Tool in 2 Stunden",
+          "link": "use-case-template.html?case=stefan-zweig-extended"
+        },
+        {
+          "title": "Aldersbach Monastery",
+          "domain": "Wirtschaftsgeschichte",
+          "complexity": "Mittel",
+          "llm_contribution": "75%",
+          "outcome": "Dashboard in 3 Wochen",
+          "link": "use-case-template.html?case=aldersbach-monastery"
+        },
+        {
+          "title": "Strashun Library",
+          "domain": "Bibliothekswissenschaft",
+          "complexity": "Hoch",
+          "llm_contribution": "80%",
+          "outcome": "5,310 Transaktionen visualisiert",
+          "link": "use-case-template.html?case=strashun-library"
+        },
+        {
+          "title": "CVMA Stained Glass",
+          "domain": "Kunstgeschichte",
+          "complexity": "Mittel",
+          "llm_contribution": "70%",
+          "outcome": "8,730 Objekte annotierbar",
+          "link": "use-case-template.html?case=cvma-stained-glass"
+        },
+        {
+          "title": "Lucina Digital Edition",
+          "domain": "Neulateinische Philologie",
+          "complexity": "Sehr hoch",
           "llm_contribution": "90%",
-          "outcome": "Suchinterface in 3 Tagen"
+          "outcome": "2,224 Verse TEI-kodiert",
+          "link": "use-case-template.html?case=lucina-digital-edition"
         }
       ]
     },

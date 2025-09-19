@@ -1,0 +1,251 @@
+{
+  "id": "lucina-digital-edition",
+  "title": "Digital Edition of Aurelius Laurentius Albrisius's Lucina",
+  "summary": "Comprehensive TEI-encoded digital edition of 128 Neo-Latin poems with AI-assisted development",
+  "date": "Oktober-Dezember 2024",
+  "duration": "~8 Wochen",
+  "participants": {
+    "developer": "Christopher Pollin",
+    "llms": {
+      "primary": "Claude Opus 4.1",
+      "secondary": "GPT-5 Pro",
+      "tertiary": "Gemini 2.5"
+    },
+    "domain_expert": "Neo-Latin philology expertise"
+  },
+  "context": {
+    "project_background": "Digitale Edition von Madrid BN Mss. 6028, einem seltenen illuminierten Manuskript aus dem 15. Jahrhundert mit 128 lateinischen elegischen Gedichten",
+    "problem_statement": "Bisher unzugängliches Renaissance-Manuskript sollte durch moderne digitale Edition verfügbar gemacht werden",
+    "initial_scope": "TEI-kodierte Edition mit Faksimiles, Prosopographie und wissenschaftlichem Apparat",
+    "resources": {
+      "manuscript": "176 Pergamentfolios (220×145mm)",
+      "digitization": "120+ hochauflösende JPG-Scans",
+      "metadata": "Humanistische Handschrift, Pavia 1474"
+    },
+    "constraints": [
+      "Lateinische Elegien erfordern metrische Analyse",
+      "Prosopographische Daten aus historischem Kontext",
+      "TEI P5 Compliance erforderlich",
+      "Text-Bild-Synchronisation nötig"
+    ],
+    "complexity": "Sehr hoch",
+    "warning": "HIGHLY EXPERIMENTAL REPOSITORY OF EXTREMELY HEAVILY LLM-SUPPORTED DIGITAL EDITION"
+  },
+  "process": {
+    "phases_used": [
+      {
+        "phase": "CONTEXT",
+        "description": "Promptotyping-Journal dokumentiert vollständigen Prozess",
+        "artifacts": ["promptotyping-journal.md", "editorial-guidelines-tei-mapping.md"]
+      },
+      {
+        "phase": "DATA",
+        "description": "Manuskript-Transkription und TEI-Strukturierung",
+        "innovation": "Multi-LLM-Ansatz für verschiedene Aufgaben"
+      },
+      {
+        "phase": "EXPLORATION",
+        "description": "4 iterative Edition-Versionen entwickelt",
+        "progression": "Proof-of-concept → Production version"
+      },
+      {
+        "phase": "IMPLEMENTATION",
+        "description": "Single-Page Application mit TEI-Processing",
+        "architecture": "Vanilla JavaScript mit XML-Parser"
+      },
+      {
+        "phase": "TESTING",
+        "description": "Umfassende Test-Suites generiert",
+        "coverage": "90%+ Success Rate"
+      }
+    ],
+    "llm_division_of_labor": [
+      {
+        "model": "Claude Opus 4.1",
+        "tasks": ["Interface-Entwicklung", "TEI-Encoding", "JavaScript-Architektur"],
+        "strength": "Code-Generierung und Strukturierung"
+      },
+      {
+        "model": "GPT-5 Pro",
+        "tasks": ["Datenkorrekturen", "Enhancements", "Fehleranalyse"],
+        "strength": "Detailarbeit und Debugging"
+      },
+      {
+        "model": "Gemini 2.5",
+        "tasks": ["Large-scale Text-Processing", "Metrische Analyse", "Batch-Operations"],
+        "strength": "Massenverarbeitung und Pattern-Recognition"
+      }
+    ],
+    "critical_interventions": [
+      {
+        "moment": "Metrische Annotation",
+        "intervention": "LLM-gestützte Analyse elegischer Distichen",
+        "impact": "2,224 Verse vollständig metrisch annotiert",
+        "models": "Gemini 2.5 für Batch-Processing"
+      },
+      {
+        "moment": "Prosopographie-Extraktion",
+        "intervention": "Automatisierte Personen- und Ortsextraktion",
+        "impact": "106 Personen, 57 Orte, 109+ Beziehungen identifiziert",
+        "validation": "Manuelle Überprüfung historischer Korrektheit"
+      },
+      {
+        "moment": "Text-Bild-Synchronisation",
+        "intervention": "Intersection Observer API für scroll-sync",
+        "impact": "Real-time 60fps Synchronisation erreicht",
+        "innovation": "Automatische Seiten-Erkennung"
+      }
+    ],
+    "iterations": [
+      {
+        "version": "edition-1",
+        "focus": "Proof-of-concept",
+        "result": "Basis-Funktionalität etabliert"
+      },
+      {
+        "version": "edition-2",
+        "focus": "Page synchronization",
+        "result": "Text-Bild-Verknüpfung implementiert"
+      },
+      {
+        "version": "edition-3",
+        "focus": "Architectural refinement",
+        "result": "Performance-Optimierung"
+      },
+      {
+        "version": "edition-4",
+        "focus": "Production version",
+        "result": "Vollständige wissenschaftliche Edition"
+      },
+      {
+        "version": "edition-5",
+        "focus": "UI/UX improvements",
+        "result": "Professionelle Benutzeroberfläche"
+      }
+    ]
+  },
+  "implementation": {
+    "technical_approach": "Single-Page Application mit TEI-XML Processing",
+    "architecture": "Static Site mit client-side XML parsing",
+    "key_features": [
+      "Complete Transcription: 2,224 Verse vollständig transkribiert",
+      "Manuscript Facsimiles: 120+ hochauflösende Bilder",
+      "Text-Image Sync: Automatische Synchronisation",
+      "Advanced Search: Volltext mit Highlighting",
+      "Prosopographical Database: 106 Personen, 57 Orte",
+      "TEI P5 Compliant: Vollständig standardkonform",
+      "Cross-References: Klickbare Index-Verweise",
+      "Responsive Design: Akademisches Interface"
+    ],
+    "code_metrics": {
+      "verses_encoded": 2224,
+      "persons_identified": 106,
+      "places_mapped": 57,
+      "relationships": "109+",
+      "images_digitized": "120+",
+      "tei_file_size": "~500KB"
+    },
+    "technical_stack": {
+      "frontend": "Vanilla JavaScript ES6",
+      "data_format": "TEI P5 XML",
+      "styling": "Custom CSS",
+      "deployment": "GitHub Pages",
+      "dependencies": "None - fully self-contained"
+    }
+  },
+  "outcomes": {
+    "success_factors": [
+      "Erste digitale Edition dieses Manuskripts",
+      "Vollständige TEI-Kodierung erreicht",
+      "Multi-LLM-Workflow erfolgreich",
+      "Hochperformante Text-Bild-Synchronisation"
+    ],
+    "limitations": [
+      "Englische Übersetzung noch nicht integriert",
+      "Kommentar-System nicht implementiert",
+      "Kritischer Apparat minimal",
+      "IIIF-Manifest noch nicht generiert"
+    ],
+    "metrics": {
+      "development_time": "8 Wochen",
+      "editions_created": 5,
+      "commits": "39+ deployments",
+      "test_success_rate": "90%+",
+      "load_time": "1-2 Sekunden"
+    },
+    "artifacts": {
+      "demo": "https://chpollin.github.io/diged-neolat/docs/edition-4/web/",
+      "repository": "https://github.com/chpollin/diged-neolat",
+      "documentation": "paper.md mit Methodologie"
+    }
+  },
+  "lessons_learned": [
+    {
+      "insight": "Multi-LLM-Ansatz maximiert Stärken verschiedener Modelle",
+      "evidence": "Claude für Code, GPT für Details, Gemini für Batch-Processing",
+      "transferability": "Task-spezifische LLM-Auswahl erhöht Effizienz"
+    },
+    {
+      "insight": "Iterative Editions-Entwicklung reduziert Komplexität",
+      "evidence": "5 Versionen mit graduellen Verbesserungen",
+      "transferability": "Schrittweise Verfeinerung besser als Big-Bang"
+    },
+    {
+      "insight": "LLM-generierte Tests erhöhen Qualität",
+      "evidence": "Umfassende Test-Suites mit 90%+ Success",
+      "transferability": "AI kann robuste Teststrategien entwickeln"
+    },
+    {
+      "insight": "Promptotyping-Journal essentiell für Nachvollziehbarkeit",
+      "evidence": "Vollständige Dokumentation des AI-Prozesses",
+      "transferability": "Transparenz kritisch für wissenschaftliche Akzeptanz"
+    }
+  },
+  "methodological_reflection": {
+    "approach_used": "Promptotyping mit Multi-LLM-Strategie",
+    "expert_role": "Philologische Expertise für Qualitätskontrolle",
+    "phase_flexibility": "Alle Phasen iterativ durchlaufen",
+    "documentation_quality": "Exzellent - vollständiges Journal",
+    "reproducibility": "Mittel - LLM-Outputs nicht deterministisch",
+    "ethical_considerations": "Transparenz über AI-Nutzung essentiell"
+  },
+  "manuscript_details": {
+    "shelfmark": "Madrid BN Mss. 6028",
+    "date_completed": "2. August 1474",
+    "place": "Pavia",
+    "material": "176 Pergamentfolios",
+    "dimensions": "220×145mm",
+    "script": "Humanistische Hand",
+    "illumination": "Initialen illuminiert",
+    "content_structure": {
+      "praefatio": "18 Zeilen - Widmung an Cicco Simonetta",
+      "book_1": "47 Gedichte - Liebeselegien mit Lucina",
+      "book_2": "37 Gedichte - Gelegenheitsdichtung",
+      "book_3": "44 Gedichte - Religiöse und philosophische Werke"
+    }
+  },
+  "author_biography": {
+    "name": "Aurelius Laurentius Albrisius",
+    "dates": "ca. 1440-1445 – nach 1474",
+    "origin": "Cremona",
+    "title": "Poeta laureatus (gekrönt von Kaiser Friedrich III, 1468/69)",
+    "position": "Priester und Tutor der Söhne von Cicco Simonetta",
+    "context": "Mitglied des humanistischen Kreises am Sforza-Hof in Mailand",
+    "style": "Neo-lateinische elegische Tradition, beeinflusst von Ovid"
+  },
+  "innovation_highlights": [
+    "Erste digitale Edition dieses Manuskripts",
+    "Pionierarbeit in AI-gestützter Editionsphilologie",
+    "Multi-LLM-Workflow-Dokumentation",
+    "Vollständige Transparenz über AI-Nutzung",
+    "Test-Driven Development mit LLM-generierten Tests"
+  ],
+  "future_roadmap": [
+    "English translation integration",
+    "Commentary system implementation",
+    "Enhanced critical apparatus display",
+    "Export capabilities (PDF, citations)",
+    "IIIF manifest generation",
+    "API endpoints for data access"
+  ]
+}

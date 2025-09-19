@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Use Case: [Title] - Promptotyping</title>
+    <meta name="description" content="Detailed documentation of a Promptotyping use case">
+
+    <!-- Professional Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Source+Sans+Pro:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --text-primary: #1a1a1a;
+            --text-secondary: #4a4a4a;
+            --text-muted: #767676;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --bg-tertiary: #f0f2f4;
+            --accent-blue: #0066cc;
+            --accent-green: #28a745;
+            --accent-orange: #ff6b35;
+            --border-color: #d4d4d4;
+
+            --font-serif: 'Crimson Text', Georgia, serif;
+            --font-sans: 'Source Sans Pro', -apple-system, sans-serif;
+            --font-mono: 'JetBrains Mono', Consolas, monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-serif);
+            font-size: 18px;
+            line-height: 1.65;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Navigation Bar */
+        .nav-bar {
+            background: var(--bg-secondary);
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-back {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-back:hover {
+            text-decoration: underline;
+        }
+
+        /* Header */
+        header {
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-family: var(--font-sans);
+        }
+
+        .case-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+        }
+
+        .meta-item {
+            font-family: var(--font-sans);
+        }
+
+        .meta-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.25rem;
+        }
+
+        .meta-value {
+            font-size: 1rem;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Section Headers */
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin: 3rem 0 1.5rem;
+            font-family: var(--font-sans);
+            color: var(--text-primary);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem;
+            font-family: var(--font-sans);
+            color: var(--text-secondary);
+        }
+
+        /* Content */
+        p {
+            margin-bottom: 1.2rem;
+        }
+
+        ul, ol {
+            margin: 1rem 0 1.5rem 2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Prompt Blocks */
+        .prompt-block {
+            margin: 2rem 0;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .prompt-header {
+            background: var(--bg-tertiary);
+            padding: 1rem 1.5rem;
+            font-family: var(--font-sans);
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .prompt-number {
+            color: var(--accent-blue);
+        }
+
+        .prompt-content {
+            padding: 1.5rem;
+            background: var(--bg-primary);
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .prompt-response {
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Critical Intervention */
+        .intervention {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .intervention-title {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            color: #856404;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Technical Decision */
+        .decision {
+            background: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .decision-title {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            color: #0c5460;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Results Section */
+        .results-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .result-card {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .result-card h4 {
+            font-family: var(--font-sans);
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        /* Limitations */
+        .limitation-list {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .limitation-list ul {
+            margin: 0.5rem 0 0 1.5rem;
+        }
+
+        /* Insights */
+        .insight {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .insight-text {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        .insight-evidence {
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        /* Code Blocks */
+        pre {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        code {
+            font-family: var(--font-mono);
+            font-size: 0.9em;
+            background: var(--bg-tertiary);
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+        }
+
+        /* Links Section */
+        .links-section {
+            margin: 3rem 0;
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+        }
+
+        .links-grid {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .link-item {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .link-item a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-family: var(--font-sans);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .link-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Phase Timeline */
+        .phase-timeline {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            overflow-x: auto;
+            padding: 1rem 0;
+        }
+
+        .phase-item {
+            min-width: 120px;
+            text-align: center;
+        }
+
+        .phase-bubble {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin: 0 auto 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+        }
+
+        .phase-used {
+            background: var(--accent-green);
+        }
+
+        .phase-skipped {
+            background: var(--text-muted);
+        }
+
+        .phase-name {
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .phase-arrow {
+            color: var(--text-muted);
+        }
+
+        /* Stats Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent-blue);
+            font-family: var(--font-sans);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-family: var(--font-sans);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .phase-timeline {
+                flex-direction: column;
+            }
+
+            .phase-arrow {
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <div class="nav-content">
+            <a href="index.html" class="nav-back">← Zurück zur Übersicht</a>
+            <span id="reading-time" style="font-family: var(--font-sans); color: var(--text-muted); font-size: 0.9rem;">~15 min Lesezeit</span>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1 id="case-title">Use Case Title</h1>
+
+            <div class="case-meta">
+                <div class="meta-item">
+                    <div class="meta-label">Entwicklung</div>
+                    <div class="meta-value" id="development-info">Datum, Dauer</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Modell</div>
+                    <div class="meta-value" id="model-info">LLM Model</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Komplexität</div>
+                    <div class="meta-value" id="complexity">Medium</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Status</div>
+                    <div class="meta-value" id="status">Prototyp</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Kontext Section -->
+        <section id="context-section">
+            <h2>Kontext</h2>
+            <div id="context-content">
+                <!-- Dynamically filled -->
+            </div>
+        </section>
+
+        <!-- Promptotyping Process -->
+        <section id="process-section">
+            <h2>Promptotyping-Prozess</h2>
+
+            <!-- Phase Timeline -->
+            <div class="phase-timeline" id="phase-timeline">
+                <!-- Dynamically generated -->
+            </div>
+
+            <h3>Initiale Prompts</h3>
+            <div id="prompts-container">
+                <!-- Dynamically filled with prompt blocks -->
+            </div>
+
+            <h3>Critical Interventions</h3>
+            <div id="interventions-container">
+                <!-- Dynamically filled -->
+            </div>
+
+            <h3>Technische Entscheidungen</h3>
+            <div id="decisions-container">
+                <!-- Dynamically filled -->
+            </div>
+        </section>
+
+        <!-- Ergebnis Section -->
+        <section id="result-section">
+            <h2>Ergebnis</h2>
+
+            <div class="stats-grid" id="stats-grid">
+                <!-- Dynamically filled with stats -->
+            </div>
+
+            <h3>Implementierung</h3>
+            <div id="implementation-details">
+                <!-- Dynamically filled -->
+            </div>
+
+            <div class="limitation-list">
+                <h3>Limitationen</h3>
+                <ul id="limitations-list">
+                    <!-- Dynamically filled -->
+                </ul>
+            </div>
+        </section>
+
+        <!-- Erkenntnisse Section -->
+        <section id="insights-section">
+            <h2>Erkenntnisse</h2>
+            <div id="insights-container">
+                <!-- Dynamically filled -->
+            </div>
+        </section>
+
+        <!-- Links Section -->
+        <section class="links-section">
+            <h3>Weiterführende Links</h3>
+            <div class="links-grid" id="links-grid">
+                <!-- Dynamically filled -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>Teil der Promptotyping v4.0 Dokumentation • <a href="index.html">Zur Hauptseite</a></p>
+        </footer>
+    </div>
+
+    <script>
+        // Load use case data from URL parameter
+        async function loadUseCase() {
+            const params = new URLSearchParams(window.location.search);
+            const caseId = params.get('case') || 'stefan-zweig';
+
+            try {
+                const response = await fetch(`src/data/use-cases/${caseId}.json`);
+                const data = await response.json();
+                renderUseCase(data);
+            } catch (error) {
+                console.error('Error loading use case:', error);
+                document.querySelector('.container').innerHTML = `
+                    <div style="text-align: center; padding: 4rem;">
+                        <h2>Use Case nicht gefunden</h2>
+                        <p>Der angeforderte Use Case konnte nicht geladen werden.</p>
+                        <a href="index.html" style="color: var(--accent-blue);">Zurück zur Übersicht</a>
+                    </div>
+                `;
+            }
+        }
+
+        function renderUseCase(data) {
+            // Update title and meta
+            document.getElementById('case-title').textContent = data.title;
+            document.title = `Use Case: ${data.title} - Promptotyping`;
+
+            // Update metadata
+            document.getElementById('development-info').textContent =
+                `${data.date || 'N/A'}, ${data.duration || 'N/A'}`;
+            document.getElementById('model-info').textContent =
+                data.participants?.llm || 'N/A';
+            document.getElementById('complexity').textContent =
+                data.context?.complexity || 'Medium';
+
+            // Render context
+            renderContext(data.context);
+
+            // Render phase timeline
+            renderPhaseTimeline(data.process);
+
+            // Render prompts (if available)
+            renderPrompts(data.prompts || data.process?.initial_prompts);
+
+            // Render interventions
+            renderInterventions(data.process?.critical_interventions);
+
+            // Render technical decisions
+            renderDecisions(data.process?.technical_decisions);
+
+            // Render implementation
+            renderImplementation(data.implementation);
+
+            // Render limitations
+            renderLimitations(data.outcomes?.limitations);
+
+            // Render insights
+            renderInsights(data.lessons_learned);
+
+            // Render links
+            renderLinks(data.outcomes?.artifacts);
+        }
+
+        function renderContext(context) {
+            if (!context) return;
+
+            const container = document.getElementById('context-content');
+            let html = '';
+
+            if (context.problem_statement) {
+                html += `<p><strong>Problem:</strong> ${context.problem_statement}</p>`;
+            }
+
+            if (context.initial_scope) {
+                html += `<p><strong>Ziel:</strong> ${context.initial_scope}</p>`;
+            }
+
+            if (context.constraints && context.constraints.length > 0) {
+                html += `
+                    <p><strong>Rahmenbedingungen:</strong></p>
+                    <ul>
+                        ${context.constraints.map(c => `<li>${c}</li>`).join('')}
+                    </ul>
+                `;
+            }
+
+            container.innerHTML = html;
+        }
+
+        function renderPhaseTimeline(process) {
+            if (!process) return;
+
+            const container = document.getElementById('phase-timeline');
+            const allPhases = ['CONTEXT', 'DATA', 'EXPLORATION', 'REQUIREMENTS', 'IMPLEMENTATION', 'PROTOTYPE'];
+
+            const usedPhases = process.phases_used?.map(p => p.phase) || [];
+
+            let html = '';
+            allPhases.forEach((phase, idx) => {
+                const isUsed = usedPhases.includes(phase);
+                html += `
+                    <div class="phase-item">
+                        <div class="phase-bubble ${isUsed ? 'phase-used' : 'phase-skipped'}">
+                            ${idx + 1}
+                        </div>
+                        <div class="phase-name">${phase}</div>
+                    </div>
+                `;
+                if (idx < allPhases.length - 1) {
+                    html += '<span class="phase-arrow">→</span>';
+                }
+            });
+
+            container.innerHTML = html;
+        }
+
+        function renderPrompts(prompts) {
+            if (!prompts || prompts.length === 0) return;
+
+            const container = document.getElementById('prompts-container');
+            let html = '';
+
+            prompts.forEach((prompt, idx) => {
+                html += `
+                    <div class="prompt-block">
+                        <div class="prompt-header">
+                            <span class="prompt-number">Prompt #${idx + 1}</span>
+                            ${prompt.timestamp ? `<span>${prompt.timestamp}</span>` : ''}
+                        </div>
+                        <div class="prompt-content">${prompt.content || prompt}</div>
+                        ${prompt.response ? `
+                            <div class="prompt-response">
+                                <strong>Antwort:</strong><br>
+                                ${prompt.response}
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html || '<p style="color: var(--text-muted);">Keine detaillierten Prompts dokumentiert.</p>';
+        }
+
+        function renderInterventions(interventions) {
+            if (!interventions || interventions.length === 0) return;
+
+            const container = document.getElementById('interventions-container');
+            let html = '';
+
+            interventions.forEach(intervention => {
+                html += `
+                    <div class="intervention">
+                        <div class="intervention-title">
+                            ⚠️ ${intervention.moment}
+                        </div>
+                        <p><strong>Intervention:</strong> ${intervention.intervention}</p>
+                        <p><strong>Impact:</strong> ${intervention.impact}</p>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        function renderDecisions(decisions) {
+            if (!decisions || decisions.length === 0) return;
+
+            const container = document.getElementById('decisions-container');
+            let html = '';
+
+            decisions.forEach(decision => {
+                html += `
+                    <div class="decision">
+                        <div class="decision-title">${decision.title || 'Technische Entscheidung'}</div>
+                        <p>${decision.description}</p>
+                        ${decision.rationale ? `<p><strong>Begründung:</strong> ${decision.rationale}</p>` : ''}
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html || '<p style="color: var(--text-muted);">Keine spezifischen technischen Entscheidungen dokumentiert.</p>';
+        }
+
+        function renderImplementation(implementation) {
+            if (!implementation) return;
+
+            // Render stats
+            const statsContainer = document.getElementById('stats-grid');
+            let statsHtml = '';
+
+            if (implementation.lines_of_code) {
+                statsHtml += `
+                    <div class="stat-card">
+                        <div class="stat-number">${implementation.lines_of_code}</div>
+                        <div class="stat-label">Lines of Code</div>
+                    </div>
+                `;
+            }
+
+            if (implementation.files_created) {
+                statsHtml += `
+                    <div class="stat-card">
+                        <div class="stat-number">${implementation.files_created}</div>
+                        <div class="stat-label">Files Created</div>
+                    </div>
+                `;
+            }
+
+            statsContainer.innerHTML = statsHtml;
+
+            // Render implementation details
+            const detailsContainer = document.getElementById('implementation-details');
+            let detailsHtml = '';
+
+            if (implementation.technical_approach) {
+                detailsHtml += `<p>${implementation.technical_approach}</p>`;
+            }
+
+            if (implementation.key_features && implementation.key_features.length > 0) {
+                detailsHtml += `
+                    <h4>Implementierte Features:</h4>
+                    <ul>
+                        ${implementation.key_features.map(f => `<li>${f}</li>`).join('')}
+                    </ul>
+                `;
+            }
+
+            detailsContainer.innerHTML = detailsHtml;
+        }
+
+        function renderLimitations(limitations) {
+            if (!limitations || limitations.length === 0) return;
+
+            const container = document.getElementById('limitations-list');
+            container.innerHTML = limitations.map(l => `<li>${l}</li>`).join('');
+        }
+
+        function renderInsights(insights) {
+            if (!insights || insights.length === 0) return;
+
+            const container = document.getElementById('insights-container');
+            let html = '';
+
+            insights.forEach(insight => {
+                html += `
+                    <div class="insight">
+                        <div class="insight-text">"${insight.insight}"</div>
+                        ${insight.evidence ? `
+                            <div class="insight-evidence">
+                                <strong>Evidenz:</strong> ${insight.evidence}
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        function renderLinks(artifacts) {
+            if (!artifacts) return;
+
+            const container = document.getElementById('links-grid');
+            let html = '';
+
+            if (artifacts.demo) {
+                html += `
+                    <div class="link-item">
+                        <a href="${artifacts.demo}" target="_blank">
+                            🔗 Live Demo
+                        </a>
+                    </div>
+                `;
+            }
+
+            if (artifacts.code_repository) {
+                html += `
+                    <div class="link-item">
+                        <a href="${artifacts.code_repository}" target="_blank">
+                            📦 Repository
+                        </a>
+                    </div>
+                `;
+            }
+
+            if (artifacts.blog_post) {
+                html += `
+                    <div class="link-item">
+                        <a href="${artifacts.blog_post}" target="_blank">
+                            📝 Blog Post
+                        </a>
+                    </div>
+                `;
+            }
+
+            container.innerHTML = html || '<p style="color: var(--text-muted);">Keine externen Links verfügbar.</p>';
+        }
+
+        // Initialize on page load
+        window.addEventListener('DOMContentLoaded', loadUseCase);
+    </script>
+</body>
+</html>
