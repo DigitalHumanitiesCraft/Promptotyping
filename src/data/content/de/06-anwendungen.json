@@ -1,0 +1,92 @@
+{
+  "chapter_id": "anwendungen",
+  "title": "Praktische Anwendungen",
+  "sections": [
+    {
+      "id": "fallstudien",
+      "type": "heading",
+      "level": 2,
+      "content": "6.1 Fallstudien"
+    },
+    {
+      "type": "text",
+      "content": "Promptotyping wurde erfolgreich in mehreren Digital-Humanities-Projekten angewendet:"
+    },
+    {
+      "type": "case-study-grid",
+      "studies": [
+        {
+          "title": "Stefan-Zweig-Digital",
+          "domain": "Literaturwissenschaft",
+          "complexity": "Mittel",
+          "llm_contribution": "85%",
+          "outcome": "Funktionaler Prototyp in 2 Wochen"
+        },
+        {
+          "title": "Medieval Manuscript Viewer",
+          "domain": "Mediävistik",
+          "complexity": "Hoch",
+          "llm_contribution": "70%",
+          "outcome": "Komplexes Visualisierungssystem"
+        },
+        {
+          "title": "Dialect Corpus Interface",
+          "domain": "Linguistik",
+          "complexity": "Niedrig",
+          "llm_contribution": "90%",
+          "outcome": "Suchinterface in 3 Tagen"
+        }
+      ]
+    },
+    {
+      "id": "best-practices",
+      "type": "heading",
+      "level": 2,
+      "content": "6.2 Best Practices"
+    },
+    {
+      "type": "best-practice-list",
+      "practices": [
+        {
+          "title": "Mit CONTEXT beginnen",
+          "description": "Immer mit klarer Projektdefinition in README.md starten"
+        },
+        {
+          "title": "Alles dokumentieren",
+          "description": "JOURNAL.md für jede Interaktion mit LLMs verwenden"
+        },
+        {
+          "title": "Savepoints nutzen",
+          "description": "Explizite Checkpoints zwischen Phasen erstellen"
+        },
+        {
+          "title": "Grenzen erkennen",
+          "description": "Zu manuellem Coding wechseln bei unter 90% Effizienz"
+        },
+        {
+          "title": "Systematisch verifizieren",
+          "description": "Multi-Model-Verifikation für kritische Komponenten"
+        }
+      ]
+    },
+    {
+      "id": "limitationen",
+      "type": "heading",
+      "level": 2,
+      "content": "6.3 Limitationen"
+    },
+    {
+      "type": "text",
+      "content": "Promptotyping ist nicht für alle Projekte geeignet:"
+    },
+    {
+      "type": "limitation-list",
+      "limitations": [
+        "Hochspezialisierte Algorithmen mit tiefem mathematischen Wissen",
+        "Echtzeitsysteme mit strikten Performance-Anforderungen",
+        "Sicherheitskritische Anwendungen mit formaler Verifikation",
+        "Projekte mit umfangreicher Legacy-Code-Integration"
+      ]
+    }
+  ]
+}

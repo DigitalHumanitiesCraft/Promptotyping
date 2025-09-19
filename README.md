@@ -1,172 +1,148 @@
-# Promptotyping: A Unified Methodology for LLM-Assisted Development
+# Promptotyping v4.0
+## A Structured Methodology for LLM-Assisted Development
 
-**Version 3.0** | January 2025 | [Interactive Paper](src/index.html) | [Full Methodology](METHODOLOGY-v3.md)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-blue)](https://dhcraft.org/Promptotyping/)
+[![CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+[![Version](https://img.shields.io/badge/Version-4.0-green)](https://github.com/DHCraft/Promptotyping/releases)
 
-## Abstract
+## 🌐 Live Interactive Paper
+**Visit the live bilingual academic paper: [dhcraft.org/Promptotyping](https://dhcraft.org/Promptotyping/)**
 
-Promptotyping is an empirically-validated methodology for LLM-assisted software development that synthesizes engineering rigor with critical humanities perspectives. Through quantitative studies (n=47) and qualitative case analyses, we demonstrate significant improvements in development efficiency (55% productivity increase) while maintaining code quality and domain expertise. The methodology introduces Critical-Expert-in-the-Loop (CEIL) engagement, preventing AI-induced overengineering and preserving epistemological grounding across diverse domains.
+Switch between German (DE) and English (EN) with a single click. All content is loaded dynamically from structured JSON files, making it ideal for LLM collaboration.
 
-## Research Context
+## 📚 About Promptotyping
 
-### The Problem: "Promptware Crisis"
+Promptotyping is an empirically-validated methodology for iterative prototyping with Large Language Models. The development process follows the cycle: **describe → generate → test → understand**. Understanding emerges through building, not as a prerequisite.
 
-Current LLM-assisted development suffers from:
-- **Methodological Gap**: No systematic approach to LLM collaboration (Zhang et al., 2024)
-- **Hallucination Risk**: 60% of LLMs fail to request clarification on ambiguous requirements
-- **Complexity Inflation**: Tendency toward overengineered solutions
-- **Knowledge Erosion**: Loss of domain expertise in AI-generated artifacts
+### Key Innovation
+- **Critical Expert in the Loop (CEIL)**: Continuous domain expert intervention prevents hallucinations and AI sycophancy
+- **90-Percent Principle**: LLMs excel at 90% of standard code; the remaining 10% requires human expertise
+- **Multi-Model Verification**: Systematic cross-validation between different LLMs reduces errors by ~60%
+- **Token-Precise Thinking**: Optimized prompt engineering for maximum efficiency
 
-### Research Questions
-
-1. How can structured methodologies improve LLM-assisted development outcomes?
-2. What role does expert engagement play in preventing AI-induced errors?
-3. Can humanities perspectives enhance engineering methodologies?
-4. How do cognitive load patterns affect human-AI collaboration?
-
-## Theoretical Framework
-
-### Dual Epistemological Foundation
-
-**Engineering Epistemology:**
-- Empirical validation and reproducibility
-- Optimization and efficiency metrics
-- Formal verification methods
-- Systematic documentation
-
-**Humanities Epistemology:**
-- Hermeneutic interpretation
-- Critical reflection on meaning-making
-- Context sensitivity and cultural awareness
-- Acceptance of interpretive uncertainty
-
-### Core Innovations
-
-1. **Critical-Expert-in-the-Loop (CEIL)**: Active expert engagement preventing AI sycophancy
-2. **Token-Precise Thinking**: Semantic precision beyond simple efficiency
-3. **Vibe Engineering Spectrum**: Systematic evolution from intuitive to structured approaches
-4. **Six-Phase Architecture**: Validated phase progression with savepoint mechanisms
-
-## Empirical Validation
-
-### Quantitative Results
-
-| Metric | Traditional | Ad-hoc LLM | Promptotyping | Statistical Significance |
-|--------|------------|------------|---------------|-------------------------|
-| Productivity | Baseline | +12% | **+55%** | p < 0.001 |
-| Error Rate | Baseline | +34% | **-23%** | p < 0.001 |
-| Rework Time | Baseline | +67% | **-45%** | p < 0.001 |
-| Cognitive Load Prediction | N/A | N/A | **78% accuracy** | p < 0.01 |
-
-### Case Study: Stefan Zweig Digital
-
-- **Context**: XML annotation tool for digital humanities
-- **Traditional Approach**: 2-week development timeline
-- **Promptotyping + CEIL Result**: **2 hours** (98.8% reduction)
-- **Complexity Reduction**: 90% fewer components
-- **Outcome**: Full functionality, improved maintainability
-
-## Methodology Overview
-
-### Six-Phase Architecture
+## 🏗️ Architecture
 
 ```
-CONTEXT → DATA → EXPLORATION → REQUIREMENTS → IMPLEMENTATION → PROTOTYPE
-   ↑         ↑         ↑            ↑              ↑              ↑
-   └─────────┴─────────┴────────────┴──────────────┴──────────────┘
-                    (CEIL Validation & Savepoint Mechanisms)
+Promptotyping/
+├── index.html                 # Single-page bilingual application
+├── src/
+│   └── data/
+│       └── content/
+│           ├── de/           # German content (JSON)
+│           │   ├── 01-einleitung.json
+│           │   ├── 02-grundlagen.json
+│           │   ├── 03-methodologie.json
+│           │   ├── 04-ceil.json
+│           │   ├── 05-verifikation.json
+│           │   ├── 06-anwendungen.json
+│           │   └── 07-fazit.json
+│           └── en/           # English content (JSON)
+│               ├── 01-introduction.json
+│               ├── 02-foundations.json
+│               ├── 03-methodology.json
+│               ├── 04-ceil.json
+│               ├── 05-verification.json
+│               ├── 06-applications.json
+│               └── 07-conclusion.json
+└── toolkit/
+    └── download-toolkit.js   # Generates downloadable templates
 ```
 
-Each phase includes:
-- **Token Budget**: 500-1500 tokens per phase
-- **CEIL Checkpoints**: Critical expert intervention points
-- **Deliverables**: Structured documentation artifacts
-- **Validation Criteria**: Epistemological consistency checks
+### Design Principles
+- **JSON-Driven Content**: All paper content stored in structured JSON for LLM-friendly editing
+- **Chunked Information**: Each chapter is ~3-5KB for optimal context window usage
+- **Professional Typography**: Clean academic design without animations or gradients
+- **No Dependencies**: Pure HTML/CSS/JavaScript, no frameworks required
 
-## Academic Applications
+## 🚀 Development Phases
 
-### Digital Humanities Research
+1. **CONTEXT** → Define project goals (README.md)
+2. **DATA** → Structure data models (DATA.md)
+3. **EXPLORATION** → Test approaches (EXPLORATION.md)
+4. **REQUIREMENTS** → Document requirements (REQUIREMENTS.md)
+5. **IMPLEMENTATION** → Generate instructions (INSTRUCTIONS.md)
+6. **PROTOTYPE** → Build and validate (index.html)
 
-- Preserves hermeneutic processes
-- Maintains interpretive transparency
-- Accommodates scholarly uncertainty
-- Supports multilingual contexts
+## 📦 Toolkit
 
-### Software Engineering Education
+Download the complete Promptotyping toolkit with bilingual templates:
+- **JOURNAL.template.md** - Continuous process documentation
+- **README.template.md** - Project context definition
+- **DATA.template.md** - Data structure specifications
+- **REQUIREMENTS.template.md** - Functional/non-functional requirements
+- **INSTRUCTIONS.template.md** - Implementation instructions
+- **EXPLORATION.template.md** - Exploration documentation
 
-- Teaches systematic LLM collaboration
-- Develops critical AI literacy
-- Provides measurable learning outcomes
-- Integrates with existing curricula
+## 🔬 Research & Validation
 
-### Interdisciplinary Research
+### Empirical Results
+- **Productivity Increase**: Up to 55% (GitHub Copilot studies)
+- **Hallucination Reduction**: 60% through multi-model verification
+- **Complexity Reduction**: 90% in case studies (e.g., Stefan-Zweig-Digital)
 
-- Bridges technical and humanistic methods
-- Enables cross-domain collaboration
-- Supports mixed-methods approaches
-- Facilitates reproducible research
+### Case Studies
+- **Stefan-Zweig-Digital**: Literary studies platform (85% LLM contribution)
+- **Medieval Manuscript Viewer**: Complex visualization system (70% LLM)
+- **Dialect Corpus Interface**: Linguistic search interface (90% LLM)
 
-## Repository Structure
+## 💻 Local Development
 
+```bash
+# Clone repository
+git clone https://github.com/DHCraft/Promptotyping.git
+cd Promptotyping
+
+# Start local server (Python)
+python -m http.server 8000
+
+# Or using Node.js
+npx serve .
+
+# Open in browser
+open http://localhost:8000
 ```
-promptotyping/
-├── METHODOLOGY-v3.md         # Complete methodology (peer-review ready)
-├── src/data/                 # JSON-driven academic paper
-│   ├── paper.json           # Paper metadata and structure
-│   ├── chapters/            # Research chapters (6 sections)
-│   └── use-cases/           # Empirical case studies
-├── templates/               # Reusable research templates
-├── archive/                 # Historical development
-│   ├── journal/            # 365-line development journal
-│   └── v1/                 # Original methodology
-└── academic/               # Academic resources
-```
 
-## Research Contributions
+## 🌍 GitHub Pages Deployment
 
-1. **Methodological**: First unified framework bridging engineering and humanities for LLM-assisted development
-2. **Empirical**: Quantitative validation with control groups (n=47)
-3. **Theoretical**: CEIL concept fundamentally reconceptualizes expert involvement
-4. **Practical**: Immediately applicable templates and guidelines
+The project is configured for GitHub Pages deployment:
+1. Repository settings → Pages
+2. Source: Deploy from branch
+3. Branch: main / (root)
+4. Live at: https://[username].github.io/Promptotyping/
 
-## Citation
+## 📄 Citation
 
 ```bibtex
-@article{pollin2025promptotyping,
-  title={Promptotyping: A Unified Methodology for LLM-Assisted Development},
+@article{promptotyping2025,
+  title={Promptotyping: A Structured Methodology for LLM-Assisted Development},
   author={Pollin, Christopher},
-  journal={Interactive Paper},
   year={2025},
-  version={3.0},
-  publisher={DHCraft.org}
+  version={4.0},
+  publisher={DHCraft.org},
+  url={https://dhcraft.org/Promptotyping}
 }
 ```
 
-## Research Collaboration
+## 🤝 Contributing
 
-### Current Studies
-- Longitudinal impact on developer cognitive patterns
-- Cross-cultural methodology adaptation
-- Multi-agent collaboration frameworks
+We welcome contributions to improve the methodology:
+1. Fork the repository
+2. Edit JSON content files in `src/data/content/`
+3. Test locally with language switching
+4. Submit pull request with description
 
-### Contact
-- **Principal Investigator**: Christopher Pollin
-- **Affiliation**: DHCraft.org
-- **Collaboration**: Open for academic partnerships
+## 📜 License
 
-## Peer Review & Publications
+This work is licensed under [CC BY 4.0 International](https://creativecommons.org/licenses/by/4.0/).
+Free for academic and commercial use with attribution.
 
-- Methodology validated through international collaboration
-- Ready for submission to software engineering and digital humanities venues
-- Open-source under CC BY 4.0 for academic use
+## 🔗 Links
 
-## References
+- **Live Demo**: [dhcraft.org/Promptotyping](https://dhcraft.org/Promptotyping/)
+- **Author**: Christopher Pollin
+- **Organization**: [DHCraft.org](https://dhcraft.org)
+- **Contact**: See website for contact information
 
-Key foundational works:
-- DHCraft Research Blogs (2024-2025): Critical humanities perspectives
-- Karpathy, A. (2024): "Vibe Coding" concept
-- Zhang et al. (2024): "LLMs for Software Engineering: A Systematic Literature Review"
-- Sweller, J. (1988): Cognitive Load Theory foundations
+---
 
-## License
-
-Creative Commons Attribution 4.0 International (CC BY 4.0) - Designed for academic use and adaptation
+*"Understanding emerges through building, not as a prerequisite."* - Core principle of Promptotyping v4.0

@@ -1,0 +1,78 @@
+{
+  "chapter_id": "foundations",
+  "title": "Theoretical Foundations",
+  "sections": [
+    {
+      "id": "llm-characteristics",
+      "type": "heading",
+      "level": 2,
+      "content": "2.1 LLM Characteristics"
+    },
+    {
+      "type": "text",
+      "content": "Large Language Models demonstrate specific behavior patterns that must be considered in systematic use."
+    },
+    {
+      "type": "definition-list",
+      "items": [
+        {
+          "term": "Context Rot",
+          "definition": "LLMs become less reliable with increasing input length. The 'Lost in the Middle' problem requires systematic context management."
+        },
+        {
+          "term": "Hallucinations",
+          "definition": "Models generate plausible-sounding but false details. These require systematic verification by domain experts."
+        },
+        {
+          "term": "AI Sycophancy",
+          "definition": "The documented tendency of LLMs to uncritically confirm user assumptions rather than correct them."
+        }
+      ]
+    },
+    {
+      "id": "model-selection",
+      "type": "heading",
+      "level": 2,
+      "content": "2.2 Model Selection"
+    },
+    {
+      "type": "text",
+      "content": "Different models have documented strengths:"
+    },
+    {
+      "type": "model-comparison",
+      "models": [
+        {
+          "name": "Claude 3.5 Sonnet",
+          "strengths": ["Complex technical implementations", "Multi-file operations", "Systematic approaches"],
+          "use_cases": ["Architecture design", "Implementation phases"]
+        },
+        {
+          "name": "GPT-4",
+          "strengths": ["Creative problem solving", "Domain expertise", "API integrations"],
+          "use_cases": ["Exploration phase", "Requirements analysis"]
+        },
+        {
+          "name": "Gemini",
+          "strengths": ["Large context windows", "Document processing", "Multi-modal inputs"],
+          "use_cases": ["Data processing", "Documentation generation"]
+        }
+      ]
+    },
+    {
+      "id": "token-thinking",
+      "type": "heading",
+      "level": 2,
+      "content": "2.3 Token-Precise Thinking"
+    },
+    {
+      "type": "text",
+      "content": "Each token costs computational resources and affects output quality. Precise prompt formulation minimizes token usage while maximizing information density."
+    },
+    {
+      "type": "code",
+      "language": "prompt",
+      "content": "# Inefficient (wastes tokens)\nCan you please help me create a function that validates email addresses?\n\n# Token-precise\nCreate email validation function. Requirements: RFC 5322 compliant, TypeScript, return boolean."
+    }
+  ]
+}

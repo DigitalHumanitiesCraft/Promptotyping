@@ -1,0 +1,113 @@
+{
+  "chapter_id": "methodology",
+  "title": "The Promptotyping Methodology",
+  "sections": [
+    {
+      "id": "development-phases",
+      "type": "heading",
+      "level": 2,
+      "content": "3.1 Development Phases"
+    },
+    {
+      "type": "phase-flow",
+      "phases": [
+        {
+          "name": "CONTEXT",
+          "description": "Define project context and goals",
+          "document": "README.md",
+          "color": "#e3f2fd"
+        },
+        {
+          "name": "DATA",
+          "description": "Structure data and models",
+          "document": "DATA.md",
+          "color": "#f3e5f5"
+        },
+        {
+          "name": "EXPLORATION",
+          "description": "Test approaches and validate concepts",
+          "document": "EXPLORATION.md",
+          "color": "#e8f5e9"
+        },
+        {
+          "name": "REQUIREMENTS",
+          "description": "Document functional and non-functional requirements",
+          "document": "REQUIREMENTS.md",
+          "color": "#fff3e0"
+        },
+        {
+          "name": "IMPLEMENTATION",
+          "description": "Systematic code generation",
+          "document": "INSTRUCTIONS.md",
+          "color": "#fce4ec"
+        },
+        {
+          "name": "PROTOTYPE",
+          "description": "Integrate and validate components",
+          "document": "index.html",
+          "color": "#e0f2f1"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Each phase produces specific artifacts. Transitions occur through explicit savepoints. Documentation happens continuously in JOURNAL.md."
+    },
+    {
+      "id": "journal-principle",
+      "type": "heading",
+      "level": 2,
+      "content": "3.2 The JOURNAL.md Principle"
+    },
+    {
+      "type": "text",
+      "content": "JOURNAL.md represents continuous process documentation. Every prompt, output, and decision is recorded. This creates reproducibility and enables learning from patterns."
+    },
+    {
+      "type": "code",
+      "language": "markdown",
+      "content": "## [Date] - Phase: EXPLORATION\n\n### Context\nTesting authentication approaches for single-page application\n\n### Approach\n**Model:** Claude 3.5 Sonnet\n**Prompt:** Design JWT authentication flow for SPA without backend\n\n### Result\nGenerated localStorage-based mock authentication\n\n### Validation\n- Method: Manual testing\n- Issues: No actual security\n- Decision: Adequate for prototype phase\n\n### CEIL Intervention\nExpert reduced complexity from OAuth to simple localStorage"
+    },
+    {
+      "id": "90-percent-principle",
+      "type": "heading",
+      "level": 2,
+      "content": "3.3 The 90-Percent Principle"
+    },
+    {
+      "type": "text",
+      "content": "LLMs excel at generating 90 percent of standard code. The remaining 10 percent requires human expertise. This boundary must be explicitly recognized and documented."
+    },
+    {
+      "type": "progress-indicator",
+      "items": [
+        {
+          "label": "Boilerplate code",
+          "percentage": 95,
+          "color": "#4caf50"
+        },
+        {
+          "label": "Business logic",
+          "percentage": 85,
+          "color": "#2196f3"
+        },
+        {
+          "label": "Domain-specific algorithms",
+          "percentage": 60,
+          "color": "#ff9800"
+        },
+        {
+          "label": "Performance optimization",
+          "percentage": 30,
+          "color": "#f44336"
+        }
+      ]
+    },
+    {
+      "type": "callout",
+      "style": "warning",
+      "title": "Critical Boundary",
+      "content": "When generation quality drops below 90%, manual implementation becomes more efficient. This point varies by domain and must be learned through experience."
+    }
+  ]
+}

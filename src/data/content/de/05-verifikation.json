@@ -1,0 +1,80 @@
+{
+  "chapter_id": "verifikation",
+  "title": "Multi-Model-Verifikation",
+  "sections": [
+    {
+      "id": "kreuzvalidierung",
+      "type": "heading",
+      "level": 2,
+      "content": "5.1 Kreuzvalidierung"
+    },
+    {
+      "type": "text",
+      "content": "Verschiedene Modelle generieren unterschiedliche Lösungen für dasselbe Problem. Systematischer Vergleich offenbart Stärken, Schwächen und Halluzinationen."
+    },
+    {
+      "type": "workflow",
+      "title": "Verifikations-Workflow",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Initiale Generierung",
+          "description": "Lösung mit primärem Modell generieren"
+        },
+        {
+          "number": 2,
+          "title": "Alternative Generierung",
+          "description": "Alternative mit anderem Modell generieren"
+        },
+        {
+          "number": 3,
+          "title": "Vergleich",
+          "description": "Unterschiede und Gemeinsamkeiten identifizieren"
+        },
+        {
+          "number": 4,
+          "title": "Synthese",
+          "description": "Beste Aspekte beider Ansätze kombinieren"
+        },
+        {
+          "number": 5,
+          "title": "Expertenvalidierung",
+          "description": "CEIL-Review der synthetisierten Lösung"
+        }
+      ]
+    },
+    {
+      "id": "verifikationsmuster",
+      "type": "heading",
+      "level": 2,
+      "content": "5.2 Verifikationsmuster"
+    },
+    {
+      "type": "text",
+      "content": "Spezifische Muster haben sich als effektiv für die Verifikation erwiesen:"
+    },
+    {
+      "type": "pattern-list",
+      "patterns": [
+        {
+          "name": "Implementierung-Dokumentation-Split",
+          "description": "Ein Modell implementiert, ein anderes dokumentiert. Offenbart Verständnislücken."
+        },
+        {
+          "name": "Adversarial Review",
+          "description": "Ein Modell reviewt kritisch den Code eines anderen. Deckt versteckte Annahmen auf."
+        },
+        {
+          "name": "Parallele Entwicklung",
+          "description": "Mehrere Modelle lösen dasselbe Problem unabhängig. Zeigt Lösungsraum."
+        }
+      ]
+    },
+    {
+      "type": "callout",
+      "style": "insight",
+      "title": "Empirischer Befund",
+      "content": "Multi-Model-Verifikation reduziert die Halluzinationsrate um etwa 60% bei technischen Implementierungen. Die verbleibenden 40% erfordern Domänenexperten-Validierung."
+    }
+  ]
+}

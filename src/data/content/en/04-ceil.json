@@ -1,0 +1,95 @@
+{
+  "chapter_id": "ceil",
+  "title": "Critical Expert in the Loop (CEIL)",
+  "sections": [
+    {
+      "id": "role-definition",
+      "type": "heading",
+      "level": 2,
+      "content": "4.1 Role Definition"
+    },
+    {
+      "type": "text",
+      "content": "The Critical Expert in the Loop principle ensures continuous review by domain specialists. Unlike classical Expert-in-the-Loop, continuous intervention occurs. Every output is validated against domain standards."
+    },
+    {
+      "type": "comparison",
+      "title": "Expert-in-the-Loop Evolution",
+      "left": {
+        "title": "Classical Expert-in-the-Loop",
+        "items": [
+          "Validates at checkpoints",
+          "Reviews completed work",
+          "Provides feedback for iteration",
+          "Focus on correctness",
+          "Periodic engagement"
+        ]
+      },
+      "right": {
+        "title": "Critical Expert-in-the-Loop (CEIL)",
+        "items": [
+          "Actively shapes development trajectory",
+          "Prevents problems proactively",
+          "Provides epistemological grounding",
+          "Focus on avoiding AI sycophancy",
+          "Continuous critical engagement"
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "content": "Two roles exist:"
+    },
+    {
+      "type": "definition-list",
+      "items": [
+        {
+          "term": "Critical Expert and Developer",
+          "definition": "Digital Humanities developer with domain expertise, technical skills, and prompting competence."
+        },
+        {
+          "term": "Critical Expert",
+          "definition": "Domain expert without technical specialization."
+        }
+      ]
+    },
+    {
+      "id": "intervention-strategies",
+      "type": "heading",
+      "level": 2,
+      "content": "4.2 Intervention Strategies"
+    },
+    {
+      "type": "text",
+      "content": "CEIL systematically reduces complexity. Example Stefan-Zweig-Digital: Initially proposed multi-user system with database was reduced to single-page application with localStorage."
+    },
+    {
+      "type": "callout",
+      "style": "example",
+      "title": "Stefan-Zweig-Digital Intervention",
+      "content": "LLM proposal: Multi-user system with PostgreSQL, authentication, role management, cloud deployment\n\nCEIL intervention: Single-page application, localStorage, no server infrastructure\n\nResult: 90% complexity reduction, 100% functionality for actual needs"
+    },
+    {
+      "type": "text",
+      "content": "The intervention directly addresses hallucinations and sycophancy. Outputs are validated against professional standards. False details are identified and corrected. Confirmations are questioned."
+    },
+    {
+      "type": "checklist",
+      "title": "CEIL Intervention Points",
+      "items": [
+        "Context formulation in CONTEXT phase",
+        "Data interpretation in DATA phase",
+        "Exploration guidance in EXPLORATION phase",
+        "Requirements validation in REQUIREMENTS phase",
+        "Implementation review in IMPLEMENTATION phase",
+        "Prototype assessment in PROTOTYPE phase"
+      ]
+    },
+    {
+      "type": "callout",
+      "style": "important",
+      "title": "Core Principle",
+      "content": "Models tend to generate plausible-sounding but potentially false details. These hallucinations require systematic verification. Additionally, expert validation addresses sycophancy, the documented tendency of LLMs to uncritically confirm user assumptions rather than correct them."
+    }
+  ]
+}
