@@ -51,11 +51,14 @@ async function renderPaperContent() {
     const paperMarkdown = await response.text();
     const html = marked.parse(paperMarkdown);
 
-    // Wrap content in a reading area div
+    // Wrap content in a reading area div + add sidebar
     mainContent.innerHTML = `
       <div class="reading-area">
         ${html}
       </div>
+      <aside class="meta-sidebar">
+        <!-- Tutorial content will be loaded dynamically -->
+      </aside>
     `;
 
     // Add IDs to H2 elements for chapter navigation
@@ -91,6 +94,9 @@ Das vollständige Paper konnte nicht geladen werden. Bitte stellen Sie sicher, d
       <div class="reading-area">
         ${html}
       </div>
+      <aside class="meta-sidebar">
+        <!-- Tutorial content will be loaded dynamically -->
+      </aside>
     `;
   }
 }
