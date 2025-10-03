@@ -342,9 +342,9 @@ td:last-child {
 /* === Main Content === */
 .main-content {
   display: grid;
-  grid-template-columns: 1fr 800px 320px;
+  grid-template-columns: 1fr 800px 320px 1fr;
   gap: 2.5rem;
-  max-width: 1500px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: var(--spacing-2xl) var(--spacing-xl) 4rem;
   position: relative;
@@ -362,7 +362,6 @@ td:last-child {
 
 .meta-sidebar {
   grid-column: 3;
-  grid-row: 1;
   position: sticky;
   top: 80px;
   height: fit-content;
