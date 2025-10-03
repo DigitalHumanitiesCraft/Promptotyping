@@ -398,6 +398,135 @@ tr:hover {
   background: #0e7490;
 }
 
+/* === Paper Meta Card === */
+.paper-meta-card {
+  margin: 3rem 0;
+  padding: var(--spacing-xl);
+  background: linear-gradient(to bottom, #f8fafc 0%, #ffffff 100%);
+  border: 2px solid var(--color-border);
+  border-left: 6px solid var(--color-primary);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.meta-abstract {
+  margin-bottom: var(--spacing-xl);
+}
+
+.meta-abstract h3 {
+  margin: 0 0 var(--spacing-md) 0;
+  font-size: var(--text-xl);
+  color: var(--color-primary);
+}
+
+.abstract-short {
+  margin: 0 0 var(--spacing-md) 0;
+  line-height: 1.8;
+  font-size: var(--text-base);
+  color: var(--color-text);
+}
+
+.abstract-full {
+  margin-top: var(--spacing-md);
+}
+
+.abstract-full p {
+  margin: 0 0 var(--spacing-md) 0;
+  line-height: 1.8;
+  color: var(--color-text-muted);
+}
+
+.read-more-btn {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  font-weight: 500;
+  font-size: var(--text-sm);
+  font-family: var(--font-base);
+  cursor: pointer;
+  padding: 0.5rem 0;
+  transition: color 0.2s;
+}
+
+.read-more-btn:hover {
+  color: var(--color-primary-hover);
+  text-decoration: underline;
+}
+
+.meta-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-lg) 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.meta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.25rem;
+  background: white;
+  border: 2px solid var(--color-border);
+  border-radius: 6px;
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: var(--text-sm);
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.meta-btn:hover {
+  border-color: var(--color-primary);
+  background: #f0f7ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(37, 99, 235, 0.1);
+}
+
+.meta-btn.primary {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+}
+
+.meta-btn.primary:hover {
+  background: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+}
+
+.btn-icon {
+  font-size: 1.125rem;
+}
+
+.meta-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.info-label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.info-item span:last-child {
+  font-size: var(--text-base);
+  color: var(--color-text);
+}
+
 /* === Slide Panel === */
 .slide-panel {
   position: fixed;

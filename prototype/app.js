@@ -347,6 +347,19 @@ function capitalize(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
+function toggleAbstract() {
+  const fullAbstract = document.getElementById('abstract-full');
+  const btn = event.target;
+
+  if (fullAbstract.style.display === 'none') {
+    fullAbstract.style.display = 'block';
+    btn.textContent = 'Weniger lesen ↑';
+  } else {
+    fullAbstract.style.display = 'none';
+    btn.textContent = 'Mehr lesen →';
+  }
+}
+
 // === Console Info ===
 console.log('%c✨ Interactive Paper - Promptotyping', 'font-size: 16px; font-weight: bold; color: #2563eb;');
 console.log('%cGenerated with Claude Code & Promptotyping Method', 'color: #737373;');

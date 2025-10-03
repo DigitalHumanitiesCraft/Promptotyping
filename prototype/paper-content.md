@@ -3,17 +3,63 @@
 
 ---
 
-## Abstract
+<div class="paper-meta-card">
+  <div class="meta-abstract">
+    <h3>Abstract</h3>
+    <p class="abstract-short">
+      Large Language Models transformieren die Softwareentwicklung fundamental. Dieser Praxisbericht präsentiert <strong>Promptotyping</strong> als strukturierten Ansatz für explorative Entwicklung in den Digital Humanities. Die Methode entstand iterativ aus sieben Projekten über fünf Monate und operiert in sechs dokumentierten Phasen mit Expertenvalidierung.
+    </p>
+    <div class="abstract-full" id="abstract-full" style="display: none;">
+      <p>
+        Während GitHub Copilot Studien allgemeine Produktivitätssteigerungen dokumentieren und wissenschaftliche Publikationen zu LLM-assistierter Entwicklung von 7 (2020) auf über 160 (2023) stiegen, fehlen strukturierte Methoden für den wissenschaftlichen Einsatz. Das "Vibe Coding" ermöglicht zwar schnelles Prototyping durch vague Prompts, führt jedoch zu undokumentierten Systemen deren spätere Nachvollziehbarkeit problematisch ist.
+      </p>
+      <p>
+        Die Validierung erfolgte mehrstufig durch technische Expertenprüfung, fachliche Domänenvalidierung sowie automatisierte Verifikation. Verschiedene LLMs wurden entsprechend ihrer beobachteten Stärken eingesetzt. Ein strukturiertes Journal dokumentiert den Entwicklungsprozess und bewahrt erfolgreiche Prompt-Patterns.
+      </p>
+      <p>
+        Die Projekte variierten von zweistündigen Proof-of-Concepts bis zu 25-stündigen digitalen Editionen. In unserer Erfahrung zeigten Projekte mit fünf bis sieben Dokumenten die beste Balance zwischen Struktur und Flexibilität. Workshop-Teilnehmer ohne Programmiererfahrung erstellten funktionale Prototypen in sechs bis acht Stunden.
+      </p>
+      <p>
+        Promptotyping adressiert spezifische LLM-Herausforderungen durch phasenweise Dokumentaufteilung und mehrstufige Validierung. Die Methode macht implizites Wissen explizit und teilbar. Sie systematisiert die explorative Entwicklung mit LLMs und ermöglicht niedrigschwellige technische Entwicklung bei gleichzeitiger Wahrung wissenschaftlicher Standards durch strukturierte Dokumentation.
+      </p>
+    </div>
+    <button class="read-more-btn" onclick="toggleAbstract()">Mehr lesen →</button>
+  </div>
 
-Large Language Models transformieren die Softwareentwicklung fundamental. Während GitHub Copilot Studien allgemeine Produktivitätssteigerungen dokumentieren und wissenschaftliche Publikationen zu LLM-assistierter Entwicklung von 7 (2020) auf über 160 (2023) stiegen, fehlen strukturierte Methoden für den wissenschaftlichen Einsatz. Das "Vibe Coding" ermöglicht zwar schnelles Prototyping durch vague Prompts, führt jedoch zu undokumentierten Systemen deren spätere Nachvollziehbarkeit problematisch ist.
+  <div class="meta-actions">
+    <a href="https://github.com/chpollin/Promptotyping/raw/main/paper-draft.pdf" class="meta-btn primary" target="_blank" rel="noopener">
+      <span class="btn-icon">📄</span>
+      <span>PDF Download</span>
+    </a>
+    <a href="https://github.com/chpollin/Promptotyping" class="meta-btn" target="_blank" rel="noopener">
+      <span class="btn-icon">💻</span>
+      <span>GitHub Repository</span>
+    </a>
+    <a href="https://github.com/chpollin/Promptotyping/tree/main/use%20cases" class="meta-btn" target="_blank" rel="noopener">
+      <span class="btn-icon">📦</span>
+      <span>Data & Attachments</span>
+    </a>
+  </div>
 
-Dieser Praxisbericht präsentiert Promptotyping als strukturierten Ansatz für explorative Entwicklung. Die Methode entstand iterativ aus sieben Digital Humanities-Projekten über fünf Monate. Sie operiert in sechs dokumentierten Phasen. Jede Phase fungiert als Savepoint mit Expertenvalidierung. Die Phasen produzieren Markdown-Dokumente, die als externes Arbeitsgedächtnis fungieren. Die kritische IMPLEMENTATION-Phase dokumentiert Datentransformationen und half in unseren Projekten, typische Fehlerquellen zu vermeiden.
-
-Die Validierung erfolgte mehrstufig durch technische Expertenprüfung, fachliche Domänenvalidierung sowie automatisierte Verifikation. Verschiedene LLMs wurden entsprechend ihrer beobachteten Stärken eingesetzt. Ein strukturiertes Journal dokumentiert den Entwicklungsprozess und bewahrt erfolgreiche Prompt-Patterns.
-
-Die Projekte variierten von zweistündigen Proof-of-Concepts bis zu 25-stündigen digitalen Editionen. In unserer Erfahrung zeigten Projekte mit fünf bis sieben Dokumenten die beste Balance zwischen Struktur und Flexibilität. Workshop-Teilnehmer ohne Programmiererfahrung erstellten funktionale Prototypen in sechs bis acht Stunden.
-
-Promptotyping adressiert spezifische LLM-Herausforderungen durch phasenweise Dokumentaufteilung und mehrstufige Validierung. Die Methode macht implizites Wissen explizit und teilbar. Sie systematisiert die explorative Entwicklung mit LLMs und ermöglicht niedrigschwellige technische Entwicklung bei gleichzeitiger Wahrung wissenschaftlicher Standards durch strukturierte Dokumentation.
+  <div class="meta-info">
+    <div class="info-item">
+      <span class="info-label">Autor:</span>
+      <span>Christopher Pollin</span>
+    </div>
+    <div class="info-item">
+      <span class="info-label">Zeitraum:</span>
+      <span>Oktober 2024 - Januar 2025</span>
+    </div>
+    <div class="info-item">
+      <span class="info-label">Projekte:</span>
+      <span>7 Digital Humanities Anwendungen</span>
+    </div>
+    <div class="info-item">
+      <span class="info-label">Methode:</span>
+      <span>6-Phasen Promptotyping Prozess</span>
+    </div>
+  </div>
+</div>
 
 ---
 
