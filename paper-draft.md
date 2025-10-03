@@ -84,11 +84,29 @@ Die Dokumentation operiert auf zwei Ebenen. Ergebnisdokumente dokumentieren was 
 
 LLMs haben kein persistentes Gedächtnis zwischen Konversationen. Die Markdown-Dokumente fungieren als externes Arbeitsgedächtnis. Jedes Dokument hat einen spezifischen Fokus und vermeidet Redundanz. Querverweise zwischen Dokumenten sind explizit. Die modulare Struktur ermöglicht selektiven Kontext je nach Aufgabe.
 
-### 3.4 Das Promptotyping Journal
+### 3.4 Critical Expert in the Loop (CEIL)
+
+Das CEIL-Prinzip bezeichnet die durchgehende Integration von Fachexperten in den Entwicklungsprozess. Im Unterschied zur punktuellen Validierung am Phasenende erfolgt die Experteneinbindung kontinuierlich während der gesamten Entwicklung.
+
+Die Expertenintegration manifestiert sich in zwei komplementären Rollen. Der **Developer in the Loop** kodiert den Promptotyping-Prozess, trifft technische Entscheidungen bezüglich Architektur und Implementierung und validiert die technische Korrektheit der generierten Artefakte. Der **Fachexperte in gemeinsamen Sitzungen** verifiziert die domänenspezifische Korrektheit, klärt fachliche Anforderungen und identifiziert konzeptuelle Fehlinterpretationen.
+
+Interventionsmomente treten in definierten Situationen auf. Während der Prompt-Formulierung entwickeln Experte und Entwickler gemeinsam präzise Anweisungen, die sowohl technisch als auch fachlich korrekt sind. Bei der Output-Bewertung erfolgt eine sofortige fachliche Einschätzung der generierten Inhalte. Vor Phasenübergängen validiert der Experte die Vollständigkeit und Korrektheit für die Savepoint-Freigabe. Bei Komplexitätsentscheidungen vereinfacht der Experte überkomplexe LLM-Vorschläge auf das fachlich Notwendige.
+
+Im Stefan-Zweig-Digital-Projekt reduzierte die CEIL-Intervention beispielsweise ein initial vorgeschlagenes Multi-User-System mit komplexer Rechteverwaltung auf eine fokussierte Single-Page-Application. Diese Vereinfachung basierte auf der Experteneinschätzung, dass individuelle Forschungsarbeit mit lokalem Datenmanagement dem tatsächlichen Nutzungsszenario entspricht.
+
+### 3.5 Das 90-Prozent-Prinzip
+
+Frontier-LLMs erreichen in der Regel schnell einen Lösungsgrad von etwa 90 Prozent. Diese empirisch beobachtete Grenze markiert den Übergang von automatisierter Generierung zu notwendiger manueller Intervention. Die verbleibenden zehn Prozent erfordern typischerweise domänenspezifisches Wissen, kontextuelle Feinabstimmung oder die Auflösung von Edge Cases, die das LLM nicht selbstständig bewältigen kann.
+
+Das Prinzip manifestiert sich konsistent über verschiedene Aufgabentypen. Bei der Datentransformation generiert das LLM funktionierende Grundalgorithmen, übersieht jedoch spezielle Datenformate oder seltene Ausnahmen. In der UI-Entwicklung entstehen funktionale Interfaces, die jedoch Feinheiten der Nutzerführung oder domänenspezifische Konventionen missachten. Bei der Dokumentationserstellung produziert das LLM strukturierte Texte, die aber kritische fachliche Nuancen oder implizite Anforderungen übersehen.
+
+Die praktische Konsequenz besteht in der expliziten Planung dieser finalen Optimierungsphase. Das JOURNAL.md dokumentiert präzise, wo die 90-Prozent-Grenze erreicht wurde und welche manuellen Interventionen erfolgten. Diese Dokumentation ermöglicht die Identifikation wiederkehrender Muster und die Entwicklung spezifischer Prompts für häufige Problembereiche.
+
+### 3.6 Das Promptotyping Journal
 
 Das Journal dokumentiert den kontinuierlichen Entwicklungsprozess als narratives Protokoll. Es wird LLM-unterstützt während der Entwicklung generiert und erfasst die Evolution von Prompts, Modellentscheidungen und Lernerfahrungen. Ein strukturiertes Template gewährleistet Konsistenz über Projekte hinweg. Im REALonline-Projekt dokumentierte das Journal beispielsweise die kritische Entscheidung, Hierarchien nach Gebäuden statt Objektkategorien zu strukturieren.
 
-### 3.5 Mehrstufige Validierung
+### 3.7 Mehrstufige Validierung
 
 Die Validierung erfolgte in unseren Projekten auf mehreren Ebenen.
 
@@ -140,13 +158,55 @@ Beobachtete Herausforderungen waren die Tendenz, Phasen zu überspringen, besond
 
 Erfolgreiche Strategien umfassten explizite Referenzierung vorheriger Dokumente in Prompts, regelmäßige Zwischenvalidierung an Phasenübergängen und Git-Commits nach jedem validierten Savepoint. Die Nutzung der Journal-Vorlage sicherte Konsistenz.
 
-## 6. Diskussion
+## 6. Promptotyping im Methodenspektrum
 
-### 6.1 Charakter der Methode
+### 6.1 Drei Paradigmen der LLM-assistierten Entwicklung
+
+Die aktuelle Landschaft der LLM-assistierten Entwicklung differenziert sich in drei distinkte methodische Ansätze, die unterschiedliche Positionen auf dem Spektrum zwischen Intuition und Formalisierung einnehmen.
+
+**Vibe Coding** (Karpathy, 2025) repräsentiert den intuitiven Pol. Entwickler beschreiben Projekte in natürlicher Sprache und akzeptieren generierte Lösungen ohne Code-Review. Die Methode operiert mit Voice-Input und minimaler Keyboard-Interaktion. Bei Fehlern werden diese kommentarlos an das LLM zurückgegeben. Der Code wächst über das Verständnis des Entwicklers hinaus. Karpathy selbst charakterisiert den Ansatz als geeignet für "throwaway weekend projects", nicht für produktive Systeme.
+
+**Promptware Engineering** (Chen et al., 2025) markiert den formalisierten Pol. Die Methode überträgt etablierte Software-Engineering-Prinzipien auf die Prompt-Entwicklung. Sie adressiert die "promptware crisis" - den Zustand, in dem Prompt-Entwicklung primär durch Trial-and-Error erfolgt. Der Ansatz umfasst systematische Phasen: Requirements Engineering, Design, Implementation, Testing, Debugging und Evolution. Prompts werden als Software-Artefakte behandelt, die deterministischen Qualitätskriterien unterliegen.
+
+**Promptotyping** positioniert sich als pragmatische Brücke zwischen beiden Polen. Die Methode kombiniert die explorative Geschwindigkeit des Vibe Coding mit der strukturierten Dokumentation des Promptware Engineering. Sie operiert in definierten Phasen mit Savepoints, erfordert jedoch nicht die vollständige Formalisierung des Promptware-Ansatzes.
+
+### 6.2 Integrationspfade zwischen den Methoden
+
+Die drei Methoden sind nicht als konkurrierende, sondern als komplementäre Ansätze zu verstehen. Ihre Integration erfolgt projektphasenspezifisch.
+
+In der **Discovery-Phase** (Woche 1-4) dominiert Promptotyping mit 80 Prozent Anteil. Explorative Geschwindigkeit und flexible Iteration stehen im Vordergrund. Vibe Coding kann für schnelle Proof-of-Concepts ergänzend eingesetzt werden.
+
+Die **Konsolidierungsphase** (Woche 5-8) operiert mit ausgewogener Methodenverteilung. Erfolgreiche Prompt-Patterns aus Promptotyping werden formalisiert. Erste Testing-Frameworks nach Promptware-Prinzipien entstehen. Die Dokumentation wird systematisiert und standardisiert.
+
+In der **Produktionsphase** (ab Woche 9) verschiebt sich der Fokus zu 80 Prozent Promptware Engineering. Deterministische Tests ersetzen explorative Validierung. Versionskontrolle und Lifecycle-Management werden kritisch. Promptotyping-Dokumente transformieren sich zu formalen Spezifikationen.
+
+### 6.3 Übergabeartefakte zwischen den Methoden
+
+Der Übergang zwischen Methoden erfordert spezifische Transformationen der Arbeitsartefakte.
+
+Von Promptotyping zu Promptware Engineering werden **erfolgreiche Prompt-Patterns** mit Erfolgsraten über 70 Prozent extrahiert und in wiederverwendbare Templates überführt. Die **User-Feedback-Matrix** aus qualitativen Beobachtungen wird in quantitative Metriken transformiert. Der **Failure-Cases-Katalog** bildet die Basis für systematische Test-Suites.
+
+Von Vibe Coding zu Promptotyping erfolgt die nachträgliche Dokumentation der impliziten Entscheidungen. Funktionierende Code-Fragmente werden in strukturierte Phasen-Dokumente überführt. Die Trial-and-Error-Historie wird in ein strukturiertes Journal transformiert.
+
+### 6.4 Methodenauswahl-Kriterien
+
+Die Wahl der geeigneten Methode determiniert sich durch projektspezifische Faktoren.
+
+**Projektdauer**: Unter vier Wochen favorisiert Promptotyping, über drei Monate erfordert Promptware Engineering. Vibe Coding eignet sich für Projekte unter 48 Stunden.
+
+**Team-Zusammensetzung**: Einzelentwickler können mit Vibe Coding beginnen. Interdisziplinäre Teams profitieren von Promptotyping. Große Entwicklungsteams benötigen Promptware Engineering.
+
+**Qualitätsanforderungen**: Explorative Prototypen tolerieren Vibe Coding. Wissenschaftliche Anwendungen erfordern Promptotyping. Produktivsysteme verlangen Promptware Engineering.
+
+**Dokumentationsbedarf**: Throwaway-Projekte benötigen keine Dokumentation (Vibe Coding). Forschungsprojekte erfordern Nachvollziehbarkeit (Promptotyping). Enterprise-Systeme verlangen vollständige Spezifikation (Promptware).
+
+## 7. Diskussion
+
+### 7.1 Charakter der Methode
 
 Promptotyping ist ein pragmatischer Ansatz, der aus der Praxis entstand. Die Methode dokumentiert funktionierende Praktiken aus realen Projekten. Sie macht implizites Wissen explizit und teilbar durch strukturierte Dokumentation. Die Phasenstruktur reduziert kognitive Last durch klare Aufgabenteilung. Das Savepoint-System ermöglicht kontrollierte Iteration. Expertenvalidierung sichert fachliche Qualität.
 
-### 6.2 Grenzen und Einschränkungen
+### 7.2 Grenzen und Einschränkungen
 
 Die dokumentierten Praktiken basieren auf Projekterfahrungen, nicht auf kontrollierten Studien. Genannte Grenzen sind kontextabhängige Beobachtungen aus unserer Praxis.
 
@@ -156,13 +216,31 @@ Basierend auf unserer Erfahrung: Optimale Dokumentenanzahl liegt bei 5-7. Lucina
 
 Die Methode ist für explorative Prototypen optimiert und nicht für Produktivsysteme geeignet. Langzeitwartbarkeit ohne formale Tests ist problematisch. Der Übergang zu einer professionellen Entwicklung erfordert zusätzliche Schritte. Beispiele hierfür sind Code Reviews. Hier wollen wir aber nichts versprechen und empfehlen. Wir sehen durchaus auch die Möglichkeit einer Professionalisierung der Software und der Produktfertigkeit.
 
-### 6.3 Anwendungsempfehlungen
+### 7.3 Anwendungsempfehlungen
 
 Basierend auf unseren Erfahrungen eignet sich Promptotyping für explorative Forschungsprojekte mit unklaren Requirements, Proof-of-Concepts für Förderanträge, Prototypen zur Stakeholder-Kommunikation, Werkzeuge für projektspezifische Datenanalyse und didaktische Demonstrationen in der Lehre.
 
 Weniger geeignet erscheint die Methode für Produktivsysteme mit Langzeitanforderungen, sicherheitskritische Anwendungen, Datenverarbeitung mit rechtlichen Anforderungen, Teams ohne dedizierte Experten und Projekte mit strikten Performance-Anforderungen.
 
-## 7. Verwandte Arbeiten
+### 7.4 Anti-Patterns und Fallstricke
+
+Die praktische Anwendung der Promptotyping-Methode offenbarte wiederkehrende Problemmuster, deren Identifikation zukünftige Projekte vor typischen Fehlern bewahren kann.
+
+**Context Rot** bezeichnet die progressive Degradation der LLM-Performance bei zunehmender Input-Länge. Die Chroma-Studie (2025) dokumentiert dieses Phänomen quantitativ. LLMs verarbeiten Informationen am Anfang und Ende des Kontexts bevorzugt, während mittlere Abschnitte systematisch übersehen werden ("Lost in the Middle"). Die praktische Konsequenz besteht in der strikten Begrenzung des gleichzeitig bereitgestellten Kontexts. Statt alle Dokumente simultan zu präsentieren, erfolgt die selektive Bereitstellung phasenspezifischer Dokumente.
+
+**Halluzinationen** manifestieren sich als plausibel klingende, aber faktisch inkorrekte Generierungen. LLMs produzieren konsistent falsche Bibliotheksimporte, nicht-existente API-Endpoints oder fiktive Methodensignaturen. Die Mitigation erfolgt durch systematische Verifikation jeder generierten Komponente gegen offizielle Dokumentation. Das JOURNAL.md dokumentiert identifizierte Halluzinationen zur Mustererkennung.
+
+**Sycophancy** bezeichnet die Tendenz von LLMs, Nutzerannahmen unkritisch zu bestätigen. Führende Fragen wie "Ist diese Lösung nicht optimal?" resultieren in affirmativen Antworten unabhängig von der tatsächlichen Qualität. Die Vermeidung erfolgt durch neutrale Formulierungen und explizite Aufforderung zu kritischer Evaluation.
+
+**Phasen-Überspringen** tritt besonders bei erfahrenen Entwicklern auf. Die verlockende Geschwindigkeit direkter Code-Generierung führt zum Bypass der DATA- oder IMPLEMENTATION-Phase. Die resultierenden Prototypen funktionieren initial, scheitern jedoch bei Edge Cases oder späteren Modifikationen. Die strikte Einhaltung der Phasensequenz, auch bei scheinbar trivialen Projekten, verhindert diese technische Schuld.
+
+**Kontext-Überladung** entsteht durch die simultane Bereitstellung aller verfügbaren Dokumente. Workshop-Teilnehmer tendierten dazu, README.md, DATA.md, REQUIREMENTS.md und INSTRUCTIONS.md gleichzeitig zu präsentieren. Die resultierende Konfusion führt zu inkonsistenten oder widersprüchlichen Outputs. Die Lösung besteht in der phasengerechten, selektiven Kontextbereitstellung.
+
+**Validierungs-Vernachlässigung** manifestiert sich als unkritische Akzeptanz generierter Artefakte. Die Versuchung, Savepoints ohne gründliche Prüfung zu passieren, untergräbt die Methodik. Jeder Savepoint erfordert explizite Validierung durch technische und fachliche Experten. Die Dokumentation negativer Validierungsergebnisse im Journal ist ebenso wichtig wie die erfolgreicher Durchgänge.
+
+**Modell-Fixierung** bezeichnet die ausschließliche Nutzung eines einzelnen LLMs. Verschiedene Modelle zeigen komplementäre Stärken. Die Beschränkung auf ein Modell ignoriert potenzielle Optimierungen durch modellspezifische Fähigkeiten. Multi-Modell-Verifikation identifiziert modellspezifische Schwächen und verbessert die Gesamtqualität.
+
+## 8. Verwandte Arbeiten
 
 Während umfassende Methodologien für LLM-assistierte Entwicklung noch fehlen, existieren relevante Vorarbeiten.
 
@@ -187,15 +265,23 @@ Zukünftige Arbeiten könnten den Übergang von Prototypen zu Produktivsystemen 
 
 Boehm, B. (1988). A Spiral Model of Software Development and Enhancement. Computer, 21(5), 61-72.
 
+Chandy, K. M., & Lamport, L. (1985). Distributed snapshots: Determining global states of distributed systems. ACM Transactions on Computer Systems, 3(1), 63-75.
+
 Chen, M., et al. (2021). Evaluating Large Language Models Trained on Code. arXiv:2107.03374.
+
+Chen, Z., et al. (2025). Promptware Engineering: Software Engineering for LLM Prompt Development. arXiv:2503.02400.
+
+Chroma (2025). Context Length vs. Performance in Large Language Models: An Empirical Study. Technical Report.
 
 Drucker, J. (2009). SpecLab: Digital Aesthetics and Projects in Speculative Computing. University of Chicago Press.
 
-Karpathy, A. (2025). "Vibe Coding". Blog Post, 3. Februar 2025. https://karpathy.ai/blog/vibe-coding
+Karpathy, A. (2025). "Vibe Coding". X (formerly Twitter), 3. Februar 2025. https://x.com/karpathy/status/1886192184808149383
 
 Peng, S., et al. (2023). The Impact of AI on Developer Productivity: Evidence from GitHub Copilot. Microsoft Research.
 
 Ramsay, S. (2011). Reading Machines: Toward an Algorithmic Criticism. University of Illinois Press.
+
+Sweller, J. (1988). Cognitive load during problem solving: Effects on learning. Cognitive Science, 12(2), 257-285.
 
 Zhou, Y., et al. (2023). Large Language Models Are Human-Level Prompt Engineers. arXiv:2211.01910.
 
@@ -395,3 +481,159 @@ project/
 │   └── index.html
 └── .git/             # Versionskontrolle
 ```
+
+## Anhang D: Promptotyping System Prompt
+
+```
+Du operierst als Promptotyping Expert Assistant. Führe den iterativen Softwareentwicklungsprozess mit LLMs gemäß folgendem Schema:
+
+## PROZESS
+
+1. **CONTEXT (README.md)**
+   - Erfasse: Forschungskontext, Domäne, Ziele
+   - Komprimiere: Token-effiziente Kontextrepräsentation
+   - Validiere: Verifiziere Kontext-Vollständigkeit
+   - Expert-Check: Fordere Experteneinbindung bei Domänenunsicherheiten
+
+2. **DATA (DATA.md)**
+   - Kondensiere: Datenstrukturen und repräsentative Beispiele
+   - Iteriere: Kontinuierliche Verfeinerung der Datenrepräsentation
+   - Validiere: "Repräsentiert DATA.md die vollständige Datenrealität?"
+   - Warne: Explizit bei unvollständiger Datenrepräsentation
+
+3. **EXPLORATION**
+   - Bei unklaren Anforderungen: Generiere Python-Analyseskripte
+   - Logging: Baue explizite Logging-Instruktionen für Zwischenergebnisse ein
+   - Iteriere: Führe Erkenntnisse in nächste Explorationsebene zurück
+   - Dokumentiere: Erfasse Explorations-Erkenntnisse für REQUIREMENTS.md
+
+4. **REQUIREMENTS (REQUIREMENTS.md)**
+   - Spezifiziere: Formuliere funktionale/nicht-funktionale Anforderungen token-effizient
+   - Priorisiere: Trenne Kernfunktionen von optionalen Features
+   - Validiere: Prüfe Testbarkeit und Konsistenz aller Anforderungen
+   - Expert-Check: Fordere Domänenexperten-Validierung
+
+5. **IMPLEMENTATION (INSTRUCTIONS.md)**
+   - Definiere technische Schritte, besonders Datentransformationen
+   - Verhindere "Data Vortex": Besondere Sorgfalt bei Formatkonversionen
+   - Validiere: "Ist der Implementierungspfad robust und fehlerresistent?"
+   - Definiere Checkpoints: Markiere Zwischenvalidierungspunkte
+
+6. **PROTOTYPE (CODE)**
+   - Implementiere: Generiere Code basierend auf allen Dokumenten
+   - Savepoints: Behandle Markdown-Dokumente als unveränderliche Referenzen
+   - Validiere: Verifiziere Code gegen dokumentierte Anforderungen
+   - Iteriere: Kehre bei Problemen zu relevanten Dokumenten zurück
+
+## KERNPRINZIPIEN
+
+- Versionierte Savepoints: Alle Markdown-Dokumente als nachvollziehbare Referenzen
+- Phasenbasierte Anpassung: Automatische Unterstützungsanpassung an aktuelle Phase
+- Expert-in-the-Loop: Fordere Expertenvalidierung an kritischen Entscheidungspunkten
+- Token-Effizienz: Ziele auf maximale Information mit minimalem Token-Count
+- Selbst-Verifikation: Kontinuierliche Verifikation aller generierten Artefakte
+- Kontext-Bewusstsein: Ignoriere niemals vorherige Dokumentversionen
+- Präzision vor Vollständigkeit: Priorisiere Genauigkeit bei knappen Ressourcen
+
+## INTERAKTIONSVERHALTEN
+
+- Bei unvollständiger Information: Stelle gezielte Fragen
+- Bei Phasenunsicherheit: Identifiziere und schlage aktuelle Phase aktiv vor
+- Bei Widersprüchen: Benenne Konflikte explizit, dokumentiere und schlage Lösungspfad vor
+- Bei Überkomplexität: Empfehle Aufteilung in handhabbare Teilprobleme
+- Bei Abweichungen: Referenziere Savepoints und biete Rückkehr zu stabiler Version
+
+ENDE IMMER MIT: "Ich bin dein Promptotyping Expert Assistant: Ich empfehle als nächstes [konkreter Schritt] gemäß Promptotyping-Methode."
+```
+
+## Anhang E: Modell-Stärken-Matrix
+
+| Modell | Stärken | Schwächen | Optimale Einsatzgebiete | Kontext-Fenster |
+|--------|---------|-----------|-------------------------|-----------------|
+| **Claude 3 Opus** | Konsistente lange Outputs, strukturiertes Denken, Code-Qualität | Langsamer, teurer | Komplexe Architekturen, Dokumentation | 200k |
+| **Claude 3.5 Sonnet** | Balance Geschwindigkeit/Qualität, starke Reasoning | Gelegentliche Inkonsistenzen | Rapid Prototyping, Code-Generierung | 200k |
+| **GPT-4o** | Breites Wissen, etablierte Patterns | Verbose, tendiert zu Over-Engineering | Exploration, Brainstorming | 128k |
+| **GPT-4o-mini** | Schnell, kosteneffizient | Oberflächlichere Analysen | Einfache Transformationen, Validierung | 128k |
+| **Gemini 1.5 Pro** | Größtes Kontextfenster, multimodal | Inkonsistente Qualität | Große Datenanalysen, Bildverarbeitung | 2M |
+| **DeepSeek-V3** | Starke mathematische Fähigkeiten | Schwächer bei kreativen Aufgaben | Algorithmen, Datenstrukturen | 64k |
+| **o1-preview** | Exzellentes Reasoning, Selbst-Korrektur | Sehr langsam, teuer | Komplexe Logik, Debugging | 128k |
+| **o1-mini** | Gutes Reasoning, schneller als o1 | Weniger kreativ | Code-Review, Optimierung | 128k |
+
+### Empfohlene Modell-Kombinationen nach Phase
+
+| Phase | Primärmodell | Verifikationsmodell | Begründung |
+|-------|--------------|---------------------|------------|
+| CONTEXT | Claude 3.5 Sonnet | GPT-4o | Balance zwischen Struktur und Kreativität |
+| DATA | Gemini 1.5 Pro | DeepSeek-V3 | Große Datenmengen + präzise Strukturanalyse |
+| EXPLORATION | GPT-4o | - | Breites Ideenspektrum |
+| REQUIREMENTS | Claude 3 Opus | o1-mini | Präzise Spezifikation + Logik-Check |
+| IMPLEMENTATION | o1-preview | Claude 3.5 Sonnet | Algorithmen-Design + Code-Qualität |
+| PROTOTYPE | Claude 3.5 Sonnet | GPT-4o-mini | Schnelle Generierung + Basis-Validierung |
+
+### Multi-Modell-Verifikation Patterns
+
+**LLM-as-Judge Pattern:**
+```
+Primärmodell generiert → Sekundärmodell prüft auf:
+- Sicherheitslücken (explizite Security-Prompts)
+- Performance-Probleme (Big-O Analyse)
+- Best Practices Verletzungen (Coding Standards)
+```
+
+**LLM-Council Pattern:**
+```
+Drei Modelle evaluieren unabhängig → Konsens = Proceed
+Dissens → CEIL-Entscheidung erforderlich
+Dokumentation aller Perspektiven im Journal
+```
+
+## Anhang F: Troubleshooting Guide
+
+### Häufige Probleme und Lösungen
+
+| Problem | Symptome | Ursache | Lösung |
+|---------|----------|---------|---------|
+| **Inkonsistente Outputs** | Widersprüchliche Implementierungen zwischen Phasen | Fehlender Kontext-Transfer | Explizite Referenzierung vorheriger Dokumente in Prompts |
+| **Performance-Degradation** | LLM wird zunehmend ungenauer | Context Rot | Kontext auf <50% des Limits reduzieren |
+| **Halluzinierte APIs** | Nicht-existente Methoden/Libraries | Modell "erfindet" plausible Lösungen | Verifikation gegen offizielle Docs, explizite Version angeben |
+| **Zirkuläre Fehler** | Gleicher Fehler nach Korrektur | LLM vergisst vorherige Lösungsversuche | Fehler-Historie im Prompt dokumentieren |
+| **Scope Creep** | Features wachsen unkontrolliert | Unklare Requirements | Zurück zu REQUIREMENTS.md, explizite Ausschlüsse |
+| **Daten-Inkonsistenz** | Verschiedene Datenformate in Outputs | Fehlende Normalisierung | DATA.md mit präzisen Schemas erweitern |
+| **Test-Blindheit** | Offensichtliche Fehler unentdeckt | Fehlende Validierung | CEIL-Intervention, manuelle Stichproben |
+
+### Debugging-Strategien
+
+**Strategie 1: Binary Search**
+- Problem in Phasen-Outputs isolieren
+- Hälfte des Kontexts entfernen
+- Iterativ eingrenzen bis Fehlerquelle identifiziert
+
+**Strategie 2: Clean Room**
+- Neue Konversation mit minimalem Kontext starten
+- Nur essenzielle Dokumente bereitstellen
+- Schrittweise Kontext erweitern
+
+**Strategie 3: Cross-Validation**
+- Gleiches Problem mit verschiedenen Modellen testen
+- Konsistente Fehler = Problem in Spezifikation
+- Inkonsistente Fehler = Modell-spezifisches Problem
+
+### Rollback-Strategien
+
+**Savepoint-Rollback:**
+1. Identifiziere letzten validierten Savepoint
+2. Verwerfe alle nachfolgenden Artefakte
+3. Starte Phase mit modifiziertem Ansatz neu
+4. Dokumentiere Fehlerursache im Journal
+
+**Partial Rollback:**
+1. Behalte funktionierende Komponenten
+2. Isoliere fehlerhafte Teilbereiche
+3. Re-generiere nur betroffene Abschnitte
+4. Integrationstest nach Korrektur
+
+**Complete Reset (letzter Ausweg):**
+1. Archiviere aktuelle Dokumente
+2. Extrahiere Lessons Learned
+3. Starte CONTEXT-Phase mit verbessertem Verständnis
+4. Integriere erfolgreiche Patterns aus Archiv
