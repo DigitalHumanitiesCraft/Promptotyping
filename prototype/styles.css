@@ -249,9 +249,9 @@ td:last-child {
 /* === Narrative Navigation === */
 .narrative-nav {
   position: fixed;
-  left: max(2rem, calc((100vw - 900px) / 2 - 350px));
+  left: max(1rem, calc((100vw - 1200px) / 2 - 300px));
   top: 100px;
-  width: 350px;
+  width: 280px;
   max-height: calc(100vh - 150px);
   overflow-y: auto;
   overflow-x: visible;
@@ -342,9 +342,9 @@ td:last-child {
 /* === Main Content === */
 .main-content {
   display: grid;
-  grid-template-columns: 1fr 700px 280px;
-  gap: 3rem;
-  max-width: 1400px;
+  grid-template-columns: 1fr 800px 320px;
+  gap: 2.5rem;
+  max-width: 1500px;
   margin: 0 auto;
   padding: var(--spacing-2xl) var(--spacing-xl) 4rem;
   position: relative;
@@ -626,7 +626,8 @@ td:last-child {
   align-items: center;
   justify-content: center;
   gap: 0.4rem;
-  padding: 0.75rem 1rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
   background: white;
   border: 1.5px solid var(--color-border);
   border-radius: 6px;
