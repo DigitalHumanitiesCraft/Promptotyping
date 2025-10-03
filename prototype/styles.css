@@ -262,27 +262,24 @@ tr:hover {
 }
 
 .nav-label {
-  opacity: 0;
-  transform: translateX(-10px);
   transition: all 0.2s;
   white-space: nowrap;
-  font-size: 0.875rem;
-  line-height: 1.3;
-  font-weight: 500;
-  background: rgba(26, 26, 26, 0.95);
-  color: white;
-  padding: 0.5rem 0.875rem;
-  border-radius: 6px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  max-width: 300px;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  font-weight: 400;
+  color: #a3a3a3;
+  max-width: 200px;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.nav-point:hover .nav-label,
 .nav-point.active .nav-label {
-  opacity: 1;
-  transform: translateX(0);
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.nav-point:hover .nav-label {
+  color: var(--color-text);
 }
 
 .nav-point.active .nav-dot {
