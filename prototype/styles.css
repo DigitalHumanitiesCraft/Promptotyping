@@ -5,20 +5,27 @@
 
 /* === CSS Variables === */
 :root {
-  /* Colors - Minimal Palette */
-  --color-bg: #fafafa;
-  --color-text: #1a1a1a;
-  --color-text-muted: #737373;
-  --color-border: #e5e5e5;
-  --color-primary: #2563eb;
-  --color-primary-hover: #1d4ed8;
-  --color-accent: #0891b2;
+  /* Base Colors - Academic Palette */
+  --color-bg: #f8f9fa;
+  --color-text: #1a202c;
+  --color-text-muted: #64748b;
+  --color-border: #e2e8f0;
 
-  /* Category Colors */
-  --color-experimental: #f97316;
-  --color-minimal: #eab308;
-  --color-optimal: #22c55e;
-  --color-complex: #a855f7;
+  /* Primary - Deep Academic Blue */
+  --color-primary: #1e40af;
+  --color-primary-hover: #1e3a8a;
+  --color-primary-light: #dbeafe;
+  --color-primary-subtle: #eff6ff;
+
+  /* Accent - Sophisticated Indigo */
+  --color-accent: #4f46e5;
+  --color-accent-hover: #4338ca;
+
+  /* Semantic Colors - Muted Academic Tones */
+  --color-experimental: #dc2626;
+  --color-minimal: #ca8a04;
+  --color-optimal: #16a34a;
+  --color-complex: #7c3aed;
 
   /* Typography */
   --font-base: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -99,7 +106,7 @@ h3 {
   font-size: 1.25rem;
   margin-top: 2.5rem;
   font-weight: 600;
-  color: #2d3748;
+  color: var(--color-text);
 }
 
 h4 {
@@ -178,7 +185,7 @@ th, td {
 
 th {
   font-weight: 600;
-  background: #f8fafc;
+  background: var(--color-bg);
   border-bottom: 2px solid var(--color-border);
   font-size: var(--text-sm);
   text-transform: uppercase;
@@ -195,7 +202,7 @@ tbody tr:nth-child(odd) {
 }
 
 tbody tr:hover {
-  background: #f0f7ff;
+  background: var(--color-primary-subtle);
   transition: background 0.15s ease;
 }
 
@@ -498,14 +505,14 @@ td:last-child {
 }
 
 .card-explore:hover {
-  background: #0e7490;
+  background: var(--color-accent-hover);
 }
 
 /* === Paper Meta Card === */
 .paper-meta-card {
   margin: 2.5rem 0;
   padding: 1.5rem;
-  background: linear-gradient(to bottom, #f8fafc 0%, #ffffff 100%);
+  background: linear-gradient(to bottom, var(--color-bg) 0%, #ffffff 100%);
   border: 1.5px solid var(--color-border);
   border-left: 4px solid var(--color-primary);
   border-radius: 8px;
@@ -585,9 +592,9 @@ td:last-child {
 
 .meta-btn:hover {
   border-color: var(--color-primary);
-  background: #f0f7ff;
+  background: var(--color-primary-subtle);
   transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.12);
+  box-shadow: 0 2px 8px rgba(30, 64, 175, 0.12);
 }
 
 .meta-btn.primary {
