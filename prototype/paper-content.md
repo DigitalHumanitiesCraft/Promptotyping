@@ -41,26 +41,28 @@
       <span>Data & Attachments</span>
     </a>
   </div>
+</div>
 
+<aside class="meta-sidebar">
   <div class="meta-info">
     <div class="info-item">
-      <span class="info-label">Autor:</span>
-      <span>Christopher Pollin</span>
+      <span class="info-label">Autor</span>
+      <span class="info-value">Christopher Pollin</span>
     </div>
     <div class="info-item">
-      <span class="info-label">Zeitraum:</span>
-      <span>Oktober 2024 - Januar 2025</span>
+      <span class="info-label">Zeitraum</span>
+      <span class="info-value">Oktober 2024 - Januar 2025</span>
     </div>
     <div class="info-item">
-      <span class="info-label">Projekte:</span>
-      <span>7 Digital Humanities Anwendungen</span>
+      <span class="info-label">Projekte</span>
+      <span class="info-value">7 Digital Humanities Anwendungen</span>
     </div>
     <div class="info-item">
-      <span class="info-label">Methode:</span>
-      <span>6-Phasen Promptotyping Prozess</span>
+      <span class="info-label">Methode</span>
+      <span class="info-value">6-Phasen Promptotyping Prozess</span>
     </div>
   </div>
-</div>
+</aside>
 
 ---
 
