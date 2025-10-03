@@ -2,9 +2,8 @@
 
 <p class="subtitle">Ein Praxisbericht zur strukturierten LLM-assistierten Entwicklung in den Digital Humanities</p>
 
-<div class="hero-metric">
-  <span class="hero-number">90%</span>
-  <p class="hero-caption">LLM-Leistungsgrenze in komplexen Projekten – das 90-Prozent-Prinzip beschreibt die beobachtete Performance-Schwelle</p>
+<div class="hero-logo">
+  <img src="../assets/promptotyping-logo.png" alt="Promptotyping - Markdown-Dokument mit Datenbank und Fragezeichen Symbol" />
 </div>
 
 ---
@@ -34,23 +33,20 @@
 
   <div class="meta-actions">
     <a href="#einleitung" class="meta-btn primary">
-      <span class="btn-icon">📖</span>
-      <span>Was ist Promptotyping?</span>
+      <span class="btn-label">Was ist Promptotyping?</span>
     </a>
     <a href="#methodik" class="meta-btn">
-      <span class="btn-icon">⚙️</span>
-      <span>Wie funktioniert es?</span>
+      <span class="btn-label">Wie funktioniert es?</span>
     </a>
     <a href="#fallstudien" class="meta-btn">
-      <span class="btn-icon">🔬</span>
-      <span>Wo wurde es erprobt?</span>
+      <span class="btn-label">Wo wurde es erprobt?</span>
     </a>
   </div>
 
   <div class="meta-downloads">
-    <a href="https://github.com/chpollin/Promptotyping/raw/main/paper-draft.pdf" class="download-link" target="_blank" rel="noopener">📄 PDF</a>
-    <a href="https://github.com/chpollin/Promptotyping" class="download-link" target="_blank" rel="noopener">💻 GitHub</a>
-    <a href="https://github.com/chpollin/Promptotyping/tree/main/use%20cases" class="download-link" target="_blank" rel="noopener">📦 Daten</a>
+    <a href="https://github.com/chpollin/Promptotyping/raw/main/paper-draft.pdf" class="download-link" target="_blank" rel="noopener">PDF</a>
+    <a href="https://github.com/chpollin/Promptotyping" class="download-link" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://github.com/chpollin/Promptotyping/tree/main/use%20cases" class="download-link" target="_blank" rel="noopener">Daten</a>
   </div>
 </div>
 
