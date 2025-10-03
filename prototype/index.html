@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Interaktives wissenschaftliches Paper über Promptotyping - eine strukturierte Methode für LLM-assistierte Entwicklung in den Digital Humanities">
+  <meta name="author" content="Christopher Pollin">
+  <title>Promptotyping in den Digital Humanities - Ein Praxisbericht</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Fixed Header with Progress -->
+  <header class="header">
+    <span class="header-title">Promptotyping</span>
+    <div class="header-progress">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+  </header>
+
+  <!-- Narrative Navigation -->
+  <nav class="narrative-nav" id="narrative-nav" aria-label="Kapitel-Navigation">
+    <!-- Will be populated by JavaScript -->
+  </nav>
+
+  <!-- Main Content Area -->
+  <main class="main-content" id="main-content">
+    <!-- Paper content will be injected here by JavaScript -->
+  </main>
+
+  <!-- Slide-In Panels Container -->
+  <div id="slide-panels"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

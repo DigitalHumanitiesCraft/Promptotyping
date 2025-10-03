@@ -1,148 +1,134 @@
-# Promptotyping v4.0
-## A Structured Methodology for LLM-Assisted Development
+# Interactive Paper: Promptotyping in den Digital Humanities
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-blue)](https://dhcraft.org/Promptotyping/)
-[![CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
-[![Version](https://img.shields.io/badge/Version-4.0-green)](https://github.com/DHCraft/Promptotyping/releases)
+## Projektübersicht
 
-## 🌐 Live Interactive Paper
-**Visit the live bilingual academic paper: [dhcraft.org/Promptotyping](https://dhcraft.org/Promptotyping/)**
+Eine interaktive Single-Page-Anwendung, die das wissenschaftliche Paper "Promptotyping: Ein Praxisbericht zur strukturierten LLM-assistierten Entwicklung in den Digital Humanities" als lebendiges, exploratives Narrativ präsentiert.
 
-Switch between German (DE) and English (EN) with a single click. All content is loaded dynamically from structured JSON files, making it ideal for LLM collaboration.
+## Zielgruppe
 
-## 📚 About Promptotyping
+- **Digital Humanities-Forschende** ohne oder mit geringen Programmierkenntnissen
+- **Softwareentwickler:innen** interessiert an LLM-assistierter Entwicklung
+- **Wissenschaftler:innen** und **Studierende** aus Geschichts-, Literatur- und Kulturwissenschaften
+- **Workshop-Teilnehmer:innen** die Promptotyping erlernen möchten
 
-Promptotyping is an empirically-validated methodology for iterative prototyping with Large Language Models. The development process follows the cycle: **describe → generate → test → understand**. Understanding emerges through building, not as a prerequisite.
+## Hauptziel
 
-### Key Innovation
-- **Critical Expert in the Loop (CEIL)**: Continuous domain expert intervention prevents hallucinations and AI sycophancy
-- **90-Percent Principle**: LLMs excel at 90% of standard code; the remaining 10% requires human expertise
-- **Multi-Model Verification**: Systematic cross-validation between different LLMs reduces errors by ~60%
-- **Token-Precise Thinking**: Optimized prompt engineering for maximum efficiency
+Das interaktive Paper soll die abstrakte Promptotyping-Methode durch direkte Exploration der sieben Use Cases erfahrbar machen. Leser:innen können selbst nachvollziehen, wie strukturierte LLM-Entwicklung funktioniert, indem sie mit den realen Projekten interagieren.
 
-## 🏗️ Architecture
+## Kernfunktionalitäten (User Stories)
+
+### Als Leser:in möchte ich...
+
+1. **Das Paper als Narrativ erleben**
+   - Den wissenschaftlichen Text in einer ansprechenden, scrollbaren Form lesen
+   - Zwischen linearem Lesen und explorativer Navigation wechseln können
+   - Den Fortschritt durch das Paper visuell wahrnehmen
+
+2. **Die Use Cases explorieren**
+   - Die sechs Use Cases (REALonline, Lucina Edition, CVMA, Kriminalmuseum, Aldersbach, Stefan Zweig) als interaktive Elemente im Textfluss erleben
+   - Direkt im Paper mit den Live-Demos interagieren (embedded iframes oder Vorschauen)
+   - Die Promptotyping-Dokumente (README, DATA.md, REQUIREMENTS.md etc.) zu jedem Projekt einsehen
+
+3. **Die Promptotyping-Phasen verstehen**
+   - Durch interaktive Visualisierungen die 6 Phasen (CONTEXT → DATA → EXPLORATION → REQUIREMENTS → IMPLEMENTATION → PROTOTYPE) nachvollziehen
+   - Zu jedem Use Case sehen, welche Dokumente in welcher Phase entstanden
+   - Die Entwicklungszeiten und Iterationen pro Projekt vergleichen
+
+4. **Projektvergleiche durchführen**
+   - Alle sieben Projekte nach verschiedenen Kriterien filtern (Zeitaufwand, Anzahl Dokumente, Komplexität)
+   - Die Tabelle aus dem Paper interaktiv sortieren und explorieren
+   - Muster zwischen erfolgreichen und problematischen Projekten erkennen
+
+5. **Praktische Hilfsmittel nutzen**
+   - Das Journal-Template (Anhang A) direkt herunterladen
+   - Die Beispiel-Prompts (Anhang B) kopieren und für eigene Projekte verwenden
+   - Checklisten und Best Practices als Referenz verwenden
+
+## Technische Rahmenbedingungen
+
+### Constraints
+- **Browser-only**: Single Page Application ohne Backend
+- **Keine Installation**: Direkt im Browser lauffähig
+- **Performance**: Schnelle Ladezeiten auch bei vielen eingebetteten Demos
+- **Responsive**: Optimiert für Desktop, Tablet und Mobile
+- **Accessibility**: WCAG 2.1 AA-konform
+- **Open Source**: Vollständig auf GitHub verfügbar
+
+### Technologie-Stack (Empfehlung)
+- Vanilla JavaScript oder leichtgewichtiges Framework (Vue.js, Svelte)
+- Markdown-Parser für Paper-Content
+- CSS Grid/Flexbox für responsives Layout
+- LocalStorage für User-Präferenzen (z.B. Leseposition, Favoriten)
+- Optional: Chart.js oder D3.js für Visualisierungen
+
+## Fachliche Constraints
+
+- **Wissenschaftliche Integrität**: Korrekte Darstellung der Methode und Use Cases
+- **Nachvollziehbarkeit**: Alle Aussagen müssen auf das Paper oder die Use Cases zurückführbar sein
+- **Zitationsstandards**: Korrekte Literaturangaben nach wissenschaftlichen Standards
+- **Transparenz**: Links zu allen Original-Repositories und Demos
+
+## Abgrenzung (Out of Scope)
+
+- Keine Content-Management-Funktionalität (Paper-Content ist statisch)
+- Keine User-Accounts oder Authentifizierung
+- Keine kollaborativen Features (Kommentare, Annotationen durch andere)
+- Keine automatische Generierung von Promptotyping-Dokumenten (rein informativ)
+
+## Erfolgsmetriken
+
+Das interaktive Paper ist erfolgreich, wenn:
+- Leser:innen die Promptotyping-Methode nachvollziehen können ohne das PDF lesen zu müssen
+- Die Use Cases als konkrete Anwendungsbeispiele verstanden werden
+- Workshop-Teilnehmer:innen das Tool als Lernressource nutzen
+- Die Dokumentation (Templates, Prompts) praktisch angewendet wird
+
+## Glossar
+
+| Begriff | Definition |
+|---------|-----------|
+| **Promptotyping** | Strukturierte Methode für LLM-assistierte Softwareentwicklung in 6 Phasen |
+| **Use Case** | Konkretes Digital Humanities-Projekt, das mit Promptotyping entwickelt wurde |
+| **Savepoint** | Validierter Meilenstein am Ende jeder Promptotyping-Phase |
+| **LLM-as-Judge** | Validierungsmethode, bei der ein zweites LLM den generierten Code prüft |
+| **Vibe Coding** | Intuitive Entwicklung mit LLMs ohne strukturierte Dokumentation (Gegenpol zu Promptotyping) |
+| **Context Memory** | Externe Wissensbasis durch Markdown-Dokumente + Git-Commits |
+| **Co-Intelligence** | Iterative Zusammenarbeit zwischen Mensch und KI (siehe CVMA SPARQL-Beispiel) |
+
+## Repository-Struktur
 
 ```
-Promptotyping/
-├── index.html                 # Single-page bilingual application
-├── src/
-│   └── data/
-│       └── content/
-│           ├── de/           # German content (JSON)
-│           │   ├── 01-einleitung.json
-│           │   ├── 02-grundlagen.json
-│           │   ├── 03-methodologie.json
-│           │   ├── 04-ceil.json
-│           │   ├── 05-verifikation.json
-│           │   ├── 06-anwendungen.json
-│           │   └── 07-fazit.json
-│           └── en/           # English content (JSON)
-│               ├── 01-introduction.json
-│               ├── 02-foundations.json
-│               ├── 03-methodology.json
-│               ├── 04-ceil.json
-│               ├── 05-verification.json
-│               ├── 06-applications.json
-│               └── 07-conclusion.json
-└── toolkit/
-    └── download-toolkit.js   # Generates downloadable templates
+interactive-paper/
+├── README.md              # Diese Datei (CONTEXT)
+├── DATA.md               # Datenstrukturen für Use Cases
+├── REQUIREMENTS.md       # Funktionale Spezifikation
+├── DESIGN.md            # UI/UX Design
+├── INSTRUCTIONS.md      # Implementierungsplan
+├── JOURNAL.md           # Entwicklungsprotokoll
+├── paper-draft.md       # Wissenschaftlicher Content (Quelle)
+├── use cases/           # Use Case Beschreibungen
+│   ├── imareal-room-object.md
+│   ├── diged-neolat.md
+│   ├── km.md
+│   ├── stained-glass.md
+│   ├── aldersbach.md
+│   └── szd.md
+└── prototype/           # Finale Anwendung
+    ├── index.html
+    ├── styles.css
+    └── app.js
 ```
 
-### Design Principles
-- **JSON-Driven Content**: All paper content stored in structured JSON for LLM-friendly editing
-- **Chunked Information**: Each chapter is ~3-5KB for optimal context window usage
-- **Professional Typography**: Clean academic design without animations or gradients
-- **No Dependencies**: Pure HTML/CSS/JavaScript, no frameworks required
+## Nächste Schritte
 
-## 🚀 Development Phases
+1. ✅ CONTEXT-Phase abgeschlossen (README.md)
+2. 🔄 DATA-Phase: Strukturierung der Use Case-Daten
+3. ⏳ EXPLORATION: Technische Machbarkeit verschiedener Interaktionskonzepte
+4. ⏳ REQUIREMENTS: Formale Anforderungsspezifikation
+5. ⏳ DESIGN: UI/UX Konzept und Wireframes
+6. ⏳ IMPLEMENTATION: Detaillierte Entwicklungsanweisungen
+7. ⏳ PROTOTYPE: Code-Generierung
 
-1. **CONTEXT** → Define project goals (README.md)
-2. **DATA** → Structure data models (DATA.md)
-3. **EXPLORATION** → Test approaches (EXPLORATION.md)
-4. **REQUIREMENTS** → Document requirements (REQUIREMENTS.md)
-5. **IMPLEMENTATION** → Generate instructions (INSTRUCTIONS.md)
-6. **PROTOTYPE** → Build and validate (index.html)
+## Lizenz
 
-## 📦 Toolkit
-
-Download the complete Promptotyping toolkit with bilingual templates:
-- **JOURNAL.template.md** - Continuous process documentation
-- **README.template.md** - Project context definition
-- **DATA.template.md** - Data structure specifications
-- **REQUIREMENTS.template.md** - Functional/non-functional requirements
-- **INSTRUCTIONS.template.md** - Implementation instructions
-- **EXPLORATION.template.md** - Exploration documentation
-
-## 🔬 Research & Validation
-
-### Empirical Results
-- **Productivity Increase**: Up to 55% (GitHub Copilot studies)
-- **Hallucination Reduction**: 60% through multi-model verification
-- **Complexity Reduction**: 90% in case studies (e.g., Stefan-Zweig-Digital)
-
-### Case Studies
-- **Stefan-Zweig-Digital**: Literary studies platform (85% LLM contribution)
-- **Medieval Manuscript Viewer**: Complex visualization system (70% LLM)
-- **Dialect Corpus Interface**: Linguistic search interface (90% LLM)
-
-## 💻 Local Development
-
-```bash
-# Clone repository
-git clone https://github.com/DHCraft/Promptotyping.git
-cd Promptotyping
-
-# Start local server (Python)
-python -m http.server 8000
-
-# Or using Node.js
-npx serve .
-
-# Open in browser
-open http://localhost:8000
-```
-
-## 🌍 GitHub Pages Deployment
-
-The project is configured for GitHub Pages deployment:
-1. Repository settings → Pages
-2. Source: Deploy from branch
-3. Branch: main / (root)
-4. Live at: https://[username].github.io/Promptotyping/
-
-## 📄 Citation
-
-```bibtex
-@article{promptotyping2025,
-  title={Promptotyping: A Structured Methodology for LLM-Assisted Development},
-  author={Pollin, Christopher},
-  year={2025},
-  version={4.0},
-  publisher={DHCraft.org},
-  url={https://dhcraft.org/Promptotyping}
-}
-```
-
-## 🤝 Contributing
-
-We welcome contributions to improve the methodology:
-1. Fork the repository
-2. Edit JSON content files in `src/data/content/`
-3. Test locally with language switching
-4. Submit pull request with description
-
-## 📜 License
-
-This work is licensed under [CC BY 4.0 International](https://creativecommons.org/licenses/by/4.0/).
-Free for academic and commercial use with attribution.
-
-## 🔗 Links
-
-- **Live Demo**: [dhcraft.org/Promptotyping](https://dhcraft.org/Promptotyping/)
-- **Author**: Christopher Pollin
-- **Organization**: [DHCraft.org](https://dhcraft.org)
-- **Contact**: See website for contact information
-
----
-
-*"Understanding emerges through building, not as a prerequisite."* - Core principle of Promptotyping v4.0
+Open Source (MIT License) - Alle Promptotyping-Dokumente und Code frei verwendbar.

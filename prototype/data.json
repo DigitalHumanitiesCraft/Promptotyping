@@ -1,0 +1,187 @@
+{
+  "useCases": [
+    {
+      "id": "szd",
+      "title": "Stefan Zweig Digital Annotation Tool",
+      "context": "Timeline-basiertes Annotationstool für die digitale Nachlassrekonstruktion Stefan Zweig Digital des Literaturarchivs Salzburg.",
+      "timeInvestment": 2,
+      "documentCount": 0,
+      "iteration": 1,
+      "scope": "Korrespondenzdaten aus Stefan Zweig Digital",
+      "category": "experimental",
+      "repository": "https://github.com/DigitalHumanitiesCraft/excellence/tree/main/promptotyping/szd-annotation-timeline",
+      "demo": "https://dhcraft.org/excellence/promptotyping/szd-annotation-timeline/",
+      "blog": "https://dhcraft.org/excellence/blog/Critical-Vibing-Claude-4/",
+      "llms": ["Claude 4 Sonnet"],
+      "tools": ["Claude Code"],
+      "tags": ["Timeline", "Annotations", "Vibe Coding", "Critical-Expert-in-the-Loop"],
+      "documents": [],
+      "processNotes": [
+        "Experimentelles 'Vibe Coding' mit strukturiertem Ansatz als Critical-Expert-in-the-Loop",
+        "Von Konzept zu funktionierendem Prototyp in nur 2 Stunden",
+        "Screenshot der originalen Stefan Zweig Digital Website als Design-Referenz verwendet",
+        "Bewusste Komplexitätsreduktion durch Verzicht auf KI-Unterstützung, Kollaboration und erweiterte Visualisierungen"
+      ]
+    },
+    {
+      "id": "realonline",
+      "title": "REALonline Rauminventar-Analyse Dashboard",
+      "context": "Mittelalterliche Rauminventare aus der REALonline-Datenbank für Sachkulturforscher explorierbar machen.",
+      "timeInvestment": 5,
+      "documentCount": 6,
+      "iteration": 1,
+      "scope": "Österreichische und norditalienische Adelshaushalte, Spätmittelalter",
+      "category": "optimal",
+      "repository": "https://github.com/chpollin/imareal-room-object",
+      "demo": "https://chpollin.github.io/imareal-room-object/",
+      "llms": ["Claude Opus 4.1", "Claude Sonnet 4.5"],
+      "tools": ["Claude Desktop", "Claude Code"],
+      "tags": ["Treemap", "Visualisierung", "Neo4j", "Close Reading"],
+      "documents": [
+        {"type": "DATA", "filename": "DATA.md", "phase": "DATA", "description": "Datenstruktur-Dokumentation"},
+        {"type": "OTHER", "filename": "DATA-CONTEXT.md", "phase": "CONTEXT", "description": "Historischer Kontext der Daten"},
+        {"type": "DESIGN", "filename": "DESIGN.md", "phase": "IMPLEMENTATION", "description": "UX/UI Spezifikation"},
+        {"type": "INSTRUCTIONS", "filename": "INSTRUCTIONS.md", "phase": "IMPLEMENTATION", "description": "Implementierungs-Anweisungen"},
+        {"type": "JOURNAL", "filename": "JOURNAL.md", "phase": "PROTOTYPE", "description": "Promptotyping-Journal"},
+        {"type": "REQUIREMENTS", "filename": "REQUIREMENTS.md", "phase": "REQUIREMENTS", "description": "Anforderungs-Spezifikation"}
+      ],
+      "processNotes": [
+        "JOURNAL.md erstmals als aktives Dokument eingesetzt. Claude Sonnet 4.5 dokumentierte selbstständig mit",
+        "Verwendung des Promptotyping Systems-Prompts, damit Claude Sonnet 4.5 die Dokumente selbstständig anlegt",
+        "Die visuelle Rückkopplung zwischen Entwickler und LLM durch Screenshots verbessert das UI iterativ",
+        "GitHub Commits fungieren als konkrete Savepoints zwischen Phasen"
+      ]
+    },
+    {
+      "id": "km",
+      "title": "Hans Gross Kriminalmuseum Digital Archive",
+      "context": "Digitales Archiv der kriminalistischen Sammlung mit dualen Interface-Paradigmen für traditionelle Suche und räumliche Exploration.",
+      "timeInvestment": 10,
+      "documentCount": 3,
+      "iteration": 2,
+      "scope": "3.892 Objekte (1.657 Karteikarten + 2.235 Objekte)",
+      "category": "minimal",
+      "repository": "https://github.com/chpollin/km",
+      "demo": [
+        "https://chpollin.github.io/km/index.html",
+        "https://chpollin.github.io/km/collection-explorer.html"
+      ],
+      "llms": ["Claude Opus 4.0", "Claude Sonnet 4.5"],
+      "tools": ["Claude Code"],
+      "tags": ["Canvas", "QuadTree", "TEI", "LIDO", "Spatial Search"],
+      "documents": [
+        {"type": "OTHER", "filename": "CLAUDE-1.md", "phase": "CONTEXT", "description": "Dokumentation des Standes für das LLM"},
+        {"type": "DATA", "filename": "DATA.md", "phase": "DATA", "description": "Datenstruktur-Dokumentation"},
+        {"type": "DESIGN", "filename": "DESIGN.md", "phase": "IMPLEMENTATION", "description": "UX/UI Spezifikation"}
+      ],
+      "processNotes": [
+        "Zwei separate Promptotyping-Iterationen im Abstand von 2 Monaten",
+        "Erste Iteration: 8 Stunden an einem Tag",
+        "Zweite Iteration: 2 Stunden hochfrequente Feinarbeit mit Claude Sonnet 4.5",
+        "Minimale Dokumentationsstruktur - mehr Vibe Coding als Promptotyping"
+      ]
+    },
+    {
+      "id": "lucina",
+      "title": "Lucina Digital Edition (diged-neolat)",
+      "context": "Madrid BN Mss. 6028 mit neulateinischen Gedichten aus 1474 als wissenschaftliche digitale Edition mit TEI-Konformität.",
+      "timeInvestment": 25,
+      "documentCount": 11,
+      "iteration": 5,
+      "scope": "128 Gedichte, 2.224 Verse",
+      "category": "complex",
+      "repository": "https://github.com/chpollin/diged-neolat",
+      "demo": [
+        "https://chpollin.github.io/diged-neolat/edition-2/web/",
+        "https://chpollin.github.io/diged-neolat/edition-3/web/",
+        "https://chpollin.github.io/diged-neolat/edition-4/web/",
+        "https://chpollin.github.io/diged-neolat/edition-5/web/"
+      ],
+      "video": "https://youtu.be/0DtX0pLv4TA",
+      "llms": ["Claude Opus 4.1", "Gemini 2.5 Pro", "GPT-5"],
+      "tools": ["Claude Code", "Oxygen Editor"],
+      "tags": ["TEI", "Digital Edition", "Prosopography", "Multi-LLM", "Metrische Analyse"],
+      "documents": [
+        {"type": "OTHER", "filename": "commits.md", "phase": "PROTOTYPE", "description": "Entwicklungshistorie und Versionsdokumentation"},
+        {"type": "OTHER", "filename": "digital-edition-guide.md", "phase": "CONTEXT", "description": "Leitfaden für digitale Editionen"},
+        {"type": "OTHER", "filename": "editorial-guidelines-tei-mapping.md", "phase": "DATA", "description": "TEI-Mapping und Kodierungsrichtlinien"},
+        {"type": "OTHER", "filename": "editorial-introduction.md", "phase": "CONTEXT", "description": "Editorische Einführung und Projektkontext"},
+        {"type": "JOURNAL", "filename": "promptotyping-journal.md", "phase": "PROTOTYPE", "description": "Dokumentation des Promptotyping-Prozesses"},
+        {"type": "DATA", "filename": "data.md", "phase": "DATA", "description": "Datenspezifikation (mehrere Versionen)"},
+        {"type": "REQUIREMENTS", "filename": "requirements.md", "phase": "REQUIREMENTS", "description": "Anforderungen (mehrere Versionen)"},
+        {"type": "DESIGN", "filename": "DESIGN.md", "phase": "IMPLEMENTATION", "description": "UI/UX Design (Iteration 3)"},
+        {"type": "INSTRUCTIONS", "filename": "instructions.md", "phase": "IMPLEMENTATION", "description": "Implementierungsanweisungen"},
+        {"type": "OTHER", "filename": "project.md", "phase": "CONTEXT", "description": "Projektübersicht"},
+        {"type": "OTHER", "filename": "paper.md", "phase": "PROTOTYPE", "description": "Zusammenführung aller Inhalte"}
+      ],
+      "processNotes": [
+        "Mehrere Promptotyping Iterationen mit eigenen Promptotyping Documents (Edition 2-5)",
+        "2 Meetings mit Domänenexpertin und Einarbeitung von Expertinnen-Feedback",
+        "Multi-LLM-Workflow und LLM as a Judge Ansatz",
+        "Metrische Analyse ohne Expertenwissen umgesetzt auf Basis einer Deep Research Ausarbeitung",
+        "Erstmals sehr ausführliches Promptotyping Journal"
+      ]
+    },
+    {
+      "id": "cvma",
+      "title": "CVMA Stained Glass Annotation Tool",
+      "context": "Wissenschaftliches Annotations-Tool für mittelalterliche Glasfenster-Artefakte aus dem Corpus Vitrearum Medii Aevi mit SPARQL-Integration.",
+      "timeInvestment": 8,
+      "documentCount": 5,
+      "iteration": 2,
+      "scope": "29MB CVMA JSON-LD Datensatz",
+      "category": "optimal",
+      "repository": "https://github.com/chpollin/stained-glass-metadata-annotation-tool",
+      "demo": "https://chpollin.github.io/stained-glass-metadata-annotation-tool/docs/version-2/",
+      "slides": "https://docs.google.com/presentation/d/1wjVx-yLqZXBjw1me-Ap1q6agE_Vj0Te_5CFN3PmW0kk/edit?usp=sharing",
+      "llms": ["Claude Opus 4.1"],
+      "tools": ["Claude Chat", "Claude Code", "Python"],
+      "tags": ["SPARQL", "Knowledge Graph", "NFDI4Culture", "Co-Intelligence", "JSON-LD"],
+      "documents": [
+        {"type": "DATA", "filename": "DATA.md", "phase": "DATA", "description": "CVMA JSON-LD Datenstruktur-Dokumentation"},
+        {"type": "DESIGN", "filename": "DESIGN.md", "phase": "IMPLEMENTATION", "description": "UX/UI Spezifikation für Annotations-Interface"},
+        {"type": "INSTRUCTIONS", "filename": "IMPLEMENTATION.md", "phase": "IMPLEMENTATION", "description": "Technische Implementierungs-Details"},
+        {"type": "REQUIREMENTS", "filename": "REQUIREMENTS.md", "phase": "REQUIREMENTS", "description": "Anforderungs-Spezifikation für Annotations-Tool"},
+        {"type": "README", "filename": "README.md", "phase": "CONTEXT", "description": "Projektdokumentation"}
+      ],
+      "processNotes": [
+        "Zwei Promptotyping-Iterationen (version-1 und version-2)",
+        "Claude Opus 4.1 performte exzellent mit SPARQL-Queries",
+        "Iterative Query-Verfeinerung basierend auf Claude's Output - Beispiel für Co-Intelligence Konzept",
+        "Nahtlose Transition von Original-Datenquellen zur Demo-Applikation",
+        "Python-Scripts für Verarbeitung der umfangreichen JSON-LD Datenstrukturen"
+      ]
+    },
+    {
+      "id": "aldersbach",
+      "title": "Aldersbach Monastery Financial Dashboard",
+      "context": "Interaktives Dashboard zur Exploration historischer Finanztransaktionen der Zisterzienserabtei Aldersbach aus dem Jahr 1557.",
+      "timeInvestment": 8,
+      "documentCount": 7,
+      "iteration": 1,
+      "scope": "1000+ Transaktionen, 2.3MB Datensatz",
+      "category": "optimal",
+      "repository": "https://github.com/chpollin/depcha-aldersbach",
+      "demo": "https://chpollin.github.io/depcha-aldersbach/",
+      "llms": ["Claude Opus 4.0"],
+      "tools": ["Claude Chat"],
+      "tags": ["RDF/XML", "Währungskonversion", "Mittelhochdeutsch", "Finanzdaten"],
+      "documents": [
+        {"type": "DATA", "filename": "data.md", "phase": "DATA", "description": "RDF/XML Schema-Dokumentation für Finanztransaktionen"},
+        {"type": "OTHER", "filename": "architecture.md", "phase": "IMPLEMENTATION", "description": "System-Architektur und technische Entscheidungen"},
+        {"type": "OTHER", "filename": "technical-specifications.md", "phase": "IMPLEMENTATION", "description": "Detaillierte technische Spezifikationen"},
+        {"type": "OTHER", "filename": "user-stories.md", "phase": "REQUIREMENTS", "description": "Anforderungen aus Nutzerperspektive"},
+        {"type": "OTHER", "filename": "testing-strategy.md", "phase": "IMPLEMENTATION", "description": "Test-Ansatz und Validierung"},
+        {"type": "OTHER", "filename": "FIXES.md", "phase": "PROTOTYPE", "description": "Dokumentation von Bugfixes und Lösungen"},
+        {"type": "README", "filename": "README.md", "phase": "CONTEXT", "description": "Umfassende Projektdokumentation"}
+      ],
+      "processNotes": [
+        "Umfassende Dokumentationsstruktur mit mehreren spezialisierten Markdown-Dokumenten",
+        "Iterative Fehlerkorrektur dokumentiert in FIXES.md",
+        "Test-driven Development mit dedicated testing-strategy.md",
+        "Performance-Optimierung für große Datensätze mit Pagination (50 Transaktionen pro Seite)",
+        "Historische Währungskonversion mit approximativen Raten implementiert"
+      ]
+    }
+  ]
+}
