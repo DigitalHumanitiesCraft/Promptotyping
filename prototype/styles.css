@@ -151,8 +151,7 @@ blockquote {
 table {
   width: 100%;
   border-collapse: collapse;
-  margin: 2rem -2rem;
-  max-width: calc(100% + 4rem);
+  margin: 2rem 0;
 }
 
 th, td {
@@ -173,12 +172,12 @@ th {
 
 th:first-child,
 td:first-child {
-  padding-left: 2rem;
+  padding-left: 1rem;
 }
 
 th:last-child,
 td:last-child {
-  padding-right: 2rem;
+  padding-right: 1rem;
 }
 
 tr:hover {
@@ -210,9 +209,9 @@ tr:hover {
 /* === Narrative Navigation === */
 .narrative-nav {
   position: fixed;
-  left: max(2rem, calc((100vw - 900px) / 2 - 300px));
+  left: max(2rem, calc((100vw - 900px) / 2 - 350px));
   top: 100px;
-  width: 300px;
+  width: 350px;
   max-height: calc(100vh - 150px);
   overflow-y: auto;
   overflow-x: visible;
