@@ -234,6 +234,7 @@ tr:hover {
   width: 3px;
   background: var(--color-border);
   border-radius: 2px;
+  z-index: 0;
 }
 
 .nav-point {
@@ -246,6 +247,7 @@ tr:hover {
   color: var(--color-text-muted);
   font-size: var(--text-sm);
   transition: all 0.2s;
+  z-index: 1;
 }
 
 .nav-dot {
