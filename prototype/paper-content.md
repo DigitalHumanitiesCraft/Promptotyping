@@ -1,5 +1,6 @@
 # Promptotyping
-## Ein Praxisbericht zur strukturierten LLM-assistierten Entwicklung in den Digital Humanities
+
+<p class="subtitle">Ein Praxisbericht zur strukturierten LLM-assistierten Entwicklung in den Digital Humanities</p>
 
 ---
 

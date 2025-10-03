@@ -70,23 +70,36 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: var(--text-4xl);
+  font-size: 2.75rem;
   font-weight: 700;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+  margin-bottom: 3rem;
+  line-height: 1.6;
+  max-width: 700px;
 }
 
 h2 {
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   margin-top: 4rem;
   margin-bottom: 2rem;
   font-weight: 700;
   letter-spacing: -0.02em;
+  color: var(--color-text);
 }
 
 h3 {
-  font-size: 1.4rem;
+  font-size: 1.25rem;
   margin-top: 2.5rem;
   font-weight: 600;
+  color: #2d3748;
 }
 
 h4 {
@@ -152,17 +165,20 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin: 2rem 0;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 th, td {
   text-align: left;
-  padding: 0.875rem 1rem;
+  padding: 1rem 1.25rem;
   border-bottom: 1px solid var(--color-border);
 }
 
 th {
   font-weight: 600;
-  background: var(--color-bg);
+  background: #f8fafc;
   border-bottom: 2px solid var(--color-border);
   font-size: var(--text-sm);
   text-transform: uppercase;
@@ -170,18 +186,31 @@ th {
   color: var(--color-text-muted);
 }
 
+tbody tr:nth-child(even) {
+  background: #fafafa;
+}
+
+tbody tr:nth-child(odd) {
+  background: white;
+}
+
+tbody tr:hover {
+  background: #f0f7ff;
+  transition: background 0.15s ease;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
 th:first-child,
 td:first-child {
-  padding-left: 1rem;
+  padding-left: 1.5rem;
 }
 
 th:last-child,
 td:last-child {
-  padding-right: 1rem;
-}
-
-tr:hover {
-  background: rgba(0, 0, 0, 0.02);
+  padding-right: 1.5rem;
 }
 
 /* === Header === */
@@ -374,10 +403,21 @@ tr:hover {
 
 .card-meta {
   display: flex;
-  gap: var(--spacing-md);
-  font-size: var(--text-sm);
+  gap: 0.75rem;
+  font-size: 0.8125rem;
   color: var(--color-text-muted);
-  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.card-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.625rem;
+  background: #f5f5f5;
+  border-radius: 4px;
+  font-weight: 500;
 }
 
 .card-explore {
@@ -505,7 +545,7 @@ tr:hover {
 
 .meta-info {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 0;
   border: 1px solid var(--color-border);
   border-radius: 6px;
@@ -514,9 +554,9 @@ tr:hover {
 
 .info-item {
   display: grid;
-  grid-template-columns: 140px 1fr;
-  gap: var(--spacing-md);
-  padding: var(--spacing-md) var(--spacing-lg);
+  grid-template-columns: 160px 1fr;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-md) var(--spacing-xl);
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -528,7 +568,7 @@ tr:hover {
   background: white;
 }
 
-.info-item:nth-last-child(-n+2) {
+.info-item:last-child {
   border-bottom: none;
 }
 
