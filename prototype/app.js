@@ -96,6 +96,9 @@ function renderUseCaseCards() {
 
     const card = createUseCaseCard(useCase);
     placeholder.replaceWith(card);
+
+    // Add observer for use case cards to update tutorial
+    observeUseCaseForTutorial(card, useCase);
   });
 }
 
@@ -107,7 +110,6 @@ function createUseCaseCard(useCase) {
     <div class="card-content">
       <div class="card-header">
         <h4>${useCase.title}</h4>
-        <span class="category-badge ${useCase.category}">${capitalize(useCase.category)}</span>
       </div>
       <div class="card-meta">
         <span>⏱️ ${useCase.timeInvestment}h</span>
@@ -206,7 +208,6 @@ function createPanel(useCase) {
       <div class="panel-header">
         <h2>${useCase.title}</h2>
         <div class="panel-meta">
-          <span class="category-badge ${useCase.category}">${capitalize(useCase.category)}</span>
           <span class="meta-text">${useCase.timeInvestment}h • ${useCase.documentCount} Docs • Iteration ${useCase.iteration}</span>
         </div>
       </div>
@@ -431,13 +432,43 @@ function initTutorialSidebar() {
   updateTutorialSidebar('einleitung');
 }
 
-function updateTutorialSidebar(chapterId) {
-  if (currentChapter === chapterId) return;
+function updateTutorialSidebar(chapterId, useCase = null) {
+  if (currentChapter === chapterId && !useCase) return;
   currentChapter = chapterId;
 
   const sidebar = document.querySelector('.meta-sidebar');
   if (!sidebar) return;
 
+  // If use case is provided, show process notes
+  if (useCase) {
+    const processNotes = useCase.processNotes || [];
+    const notesContent = processNotes.length > 0
+      ? processNotes.map(note => `• ${note}`).join('\n\n')
+      : 'Keine Prozessnotizen für diesen Use Case verfügbar.';
+
+    // Fade out
+    sidebar.style.opacity = '0';
+
+    setTimeout(() => {
+      sidebar.innerHTML = `
+        <div class="tutorial-card">
+          <div class="tutorial-header">
+            <span class="tutorial-icon">📝</span>
+            <h4 class="tutorial-title">Prozessnotizen: ${useCase.title}</h4>
+          </div>
+          <div class="tutorial-content">
+            ${formatMarkdown(notesContent)}
+          </div>
+        </div>
+      `;
+
+      // Fade in
+      sidebar.style.opacity = '1';
+    }, 200);
+    return;
+  }
+
+  // Otherwise show regular tutorial
   const tutorial = tutorialData[chapterId];
   if (!tutorial) return;
 
@@ -470,6 +501,26 @@ function formatMarkdown(text) {
     .replace(/\n\n/g, '</p><p>')
     .replace(/^(.+)$/gm, '<p>$1</p>')
     .replace(/<p><\/p>/g, '');
+}
+
+// === Observer for Use Case Cards ===
+function observeUseCaseForTutorial(card, useCase) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Update tutorial with use case process notes
+          updateTutorialSidebar(`usecase-${useCase.id}`, useCase);
+        }
+      });
+    },
+    {
+      rootMargin: '-100px 0px -60% 0px',
+      threshold: 0.5
+    }
+  );
+
+  observer.observe(card);
 }
 
 // === Console Info ===

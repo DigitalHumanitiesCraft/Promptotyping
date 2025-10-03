@@ -6,7 +6,8 @@
       "Bash(git commit:*)",
       "Bash(python:*)",
       "Read(//c/Users/Chrisi/**)",
-      "Read(//c/Users/Chrisi/Documents/**)"
+      "Read(//c/Users/Chrisi/Documents/**)",
+      "Bash(git push:*)"
     ],
     "deny": [],
     "ask": []

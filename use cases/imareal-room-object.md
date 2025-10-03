@@ -12,6 +12,7 @@ Mittelalterliche Rauminventare aus der REALonline-Datenbank sollten für Sachkul
 
 - Claude Opus 4.1 (Claude Desktop) für konzeptuelle Arbeit (Close Reading, Design-Analyse)
 - Claude Sonnet 4.5 (Claude Code) für Implementation (Code-Generierung, Datenverarbeitung).
+
 ## Notizen zum Prozess
 
 * Trotz mehrfacher Feedbackschleifen (Screenshot + Konsole) gibt es Probleme beim Umsetzen der Treemap.
