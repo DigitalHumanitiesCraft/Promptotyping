@@ -50,10 +50,6 @@
   </div>
 </div>
 
-<aside class="meta-sidebar">
-  <!-- Tutorial content will be loaded dynamically via JavaScript -->
-</aside>
-
 ---
 
 ## 1. Einleitung
