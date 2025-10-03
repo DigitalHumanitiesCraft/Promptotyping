@@ -50,7 +50,13 @@ async function renderPaperContent() {
 
     const paperMarkdown = await response.text();
     const html = marked.parse(paperMarkdown);
-    mainContent.innerHTML = html;
+
+    // Wrap content in a reading area div
+    mainContent.innerHTML = `
+      <div class="reading-area">
+        ${html}
+      </div>
+    `;
 
     // Add IDs to H2 elements for chapter navigation
     addChapterIds();
@@ -81,14 +87,18 @@ Das vollständige Paper konnte nicht geladen werden. Bitte stellen Sie sicher, d
 `;
 
     const html = marked.parse(fallbackMarkdown);
-    mainContent.innerHTML = html;
+    mainContent.innerHTML = `
+      <div class="reading-area">
+        ${html}
+      </div>
+    `;
   }
 }
 
 // === Render Use Case Cards ===
 function renderUseCaseCards() {
   useCasesData.forEach(useCase => {
-    const placeholder = document.querySelector(`[data-id="${useCase.id}"]`);
+    const placeholder = document.querySelector(`.reading-area [data-id="${useCase.id}"]`);
     if (!placeholder) {
       console.warn(`Placeholder for ${useCase.id} not found`);
       return;
@@ -279,7 +289,7 @@ document.addEventListener('keydown', (e) => {
 // === Narrative Navigation ===
 function initNarrativeNav() {
   const nav = document.getElementById('narrative-nav');
-  const headings = document.querySelectorAll('#main-content h2');
+  const headings = document.querySelectorAll('.reading-area h2');
 
   if (headings.length === 0) {
     console.warn('No H2 headings found for navigation');
@@ -334,7 +344,7 @@ function initNarrativeNav() {
 }
 
 function updateActiveNavPoint() {
-  const headings = document.querySelectorAll('#main-content h2');
+  const headings = document.querySelectorAll('.reading-area h2');
   const navPoints = document.querySelectorAll('.nav-point');
 
   let activeIndex = 0;
@@ -382,7 +392,7 @@ function addChapterIds() {
     '8. Fazit': 'fazit'
   };
 
-  const h2Elements = document.querySelectorAll('#main-content h2');
+  const h2Elements = document.querySelectorAll('.reading-area h2');
   h2Elements.forEach(h2 => {
     const text = h2.textContent.trim();
     const id = chapterMap[text];
@@ -405,7 +415,7 @@ async function loadTutorialData() {
 }
 
 function initTutorialSidebar() {
-  const chapters = document.querySelectorAll('h2[id]');
+  const chapters = document.querySelectorAll('.reading-area h2[id]');
 
   // Create Intersection Observer
   const observer = new IntersectionObserver(

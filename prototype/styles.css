@@ -351,16 +351,13 @@ td:last-child {
   align-items: start;
 }
 
-/* Reading area background */
-.main-content > *:nth-child(2) {
+/* Reading area */
+.reading-area {
+  grid-column: 2;
   background: white;
   padding: 2.5rem;
   border-radius: 12px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-}
-
-.main-content > *:not(.meta-sidebar) {
-  grid-column: 2;
 }
 
 .meta-sidebar {
