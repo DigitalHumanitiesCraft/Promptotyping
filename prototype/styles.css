@@ -210,9 +210,9 @@ tr:hover {
 /* === Narrative Navigation === */
 .narrative-nav {
   position: fixed;
-  left: max(2rem, calc((100vw - 900px) / 2 - 220px));
+  left: max(2rem, calc((100vw - 900px) / 2 - 300px));
   top: 100px;
-  width: 220px;
+  width: 300px;
   max-height: calc(100vh - 150px);
   overflow-y: auto;
   overflow-x: visible;
