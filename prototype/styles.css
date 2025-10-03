@@ -178,7 +178,6 @@ tr:hover {
   border-bottom: 1px solid var(--color-border);
   display: flex;
   align-items: center;
-  justify-content: space-between;
   padding: 0 var(--spacing-xl);
   z-index: 100;
   backdrop-filter: blur(10px);
@@ -188,21 +187,6 @@ tr:hover {
   font-weight: 600;
   font-size: var(--text-lg);
   color: var(--color-text);
-}
-
-.header-progress {
-  width: 200px;
-  height: 3px;
-  background: var(--color-border);
-  border-radius: 2px;
-  overflow: hidden;
-}
-
-.progress-bar {
-  height: 100%;
-  background: var(--color-primary);
-  width: 0%;
-  transition: width 0.3s ease;
 }
 
 /* === Narrative Navigation === */
@@ -579,10 +563,6 @@ tr:hover {
 @media (max-width: 768px) {
   .header {
     padding: 0 var(--spacing-md);
-  }
-
-  .header-progress {
-    width: 100px;
   }
 
   .main-content {

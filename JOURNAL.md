@@ -380,6 +380,114 @@ User wünscht "Option 3: Code generieren" mit kompakter, präziser Logging-Strat
 
 ---
 
+## 2025-10-03 - ENHANCEMENT - Sitzung 8
+
+### Kontext
+User-Feedback nach visueller Prüfung der laufenden Anwendung. Zwei kritische Verbesserungen identifiziert:
+1. **Anhang A/B Code-Blöcke:** Escaped Backticks (\`\`\`) → falsche Darstellung
+2. **Live-Vorschau:** Use Case Demos nur als externe Links → fehlende Interaktivität
+3. **Navigation:** Fehlende vertikale Narrativ-Navigation
+
+### Vorgehen
+**Modell:** Claude Sonnet 4.5
+**Input:** Screenshots der Anwendung, User-Feedback
+**Werkzeuge:** Edit (paper-content.md, app.js, styles.css, index.html)
+
+### Hauptaktivität
+
+**Phase:** ENHANCEMENT (Post-PROTOTYPE)
+**Änderungen:**
+
+#### 1. Code-Blöcke Fix
+- Alle escaped \`\`\` in paper-content.md → ``` (7 Stellen)
+- Journal-Template kompakter (Removed: "Verwendeter Prompt"-Sektion)
+- Beispiel-Prompts B.1-B.5 jetzt in echten Code-Blöcken
+
+#### 2. Live-Vorschau Integration
+**app.js:**
+- Neue Sektion "Live-Vorschau" vor "Promptotyping-Dokumente"
+- iframe mit primärer Demo-URL (Array.isArray handling)
+- Sandbox-Attribute: `allow-scripts allow-same-origin allow-popups`
+- Loading: `lazy` für Performance
+
+**styles.css:**
+- `.iframe-container`: Responsive 4:3 Aspect Ratio (padding-bottom: 75%)
+- Absolute iframe positioning
+- Border + Border-Radius für Eleganz
+
+#### 3. Vertikale Narrativ-Navigation
+**Konzept:** Eleganter "Zeitstrahl" links vom Content
+
+**index.html:**
+- Neue `<nav class="narrative-nav">` vor main-content
+
+**app.js:**
+- `initNarrativeNav()`: Extrahiert alle H2-Headings
+- Auto-ID-Generierung falls fehlend
+- Vertikale Punkte (dots) mit Labels (nur bei Hover/Active)
+- `updateActiveNavPoint()`: Scroll-basierte Aktivierung
+- Smooth Scroll zu Kapiteln
+
+**styles.css:**
+- Fixed Position: `left: calc((100vw - 900px) / 2 - 150px)` (links von Content)
+- `.nav-line`: Vertikale Linie (2px, --color-border)
+- `.nav-dot`: 18px Kreis, Hover → Scale 1.2
+- `.nav-dot.active`: Blau + Box-Shadow (4px Glow)
+- `.nav-label`: Opacity 0 → 1 bei Hover/Active, translateX Animation
+- Responsive: `display: none` bei < 1200px
+
+### Validierung
+**Validator:** User (visuelle Prüfung)
+**Methode:** Screenshot-basiertes Feedback
+**Entscheidung:** Akzeptiert
+**Begründung:**
+- Code-Blöcke jetzt korrekt gerendert
+- Live-Vorschau macht Use Cases erlebbar
+- Vertikale Navigation verbessert Orientierung massiv
+
+### Probleme & Lösungen
+- **Problem:** iframe könnte CORS-Probleme haben bei manchen Demos
+- **Lösung:** Sandbox-Attribute + Hinweis-Text "Für volle Funktionalität neuen Tab öffnen"
+
+- **Problem:** Navigation bei kleinen Screens störend
+- **Lösung:** `@media (max-width: 1200px)` → `display: none`
+
+### Erkenntnisse
+- **Escaped Code-Blöcke häufiger Fehler:** Markdown-in-Markdown erfordert Escaping-Audit
+- **iframe Performance:** `loading="lazy"` kritisch für Bundle-Size-Ziel
+- **Vertikale Navigation:** Minimalistisch > Feature-Rich (Labels nur bei Bedarf)
+- **Storytelling-Konzept verstärkt:** Live-Demos + Navigation = explorative Erfahrung
+
+### Statistiken
+**Änderungen:**
+- paper-content.md: 7 Edits (escaped backticks)
+- app.js: +78 Zeilen (Navigation + iframe)
+- styles.css: +80 Zeilen (Navigation Styling)
+- index.html: +4 Zeilen (nav container)
+- **Total:** +162 Zeilen Code
+
+**Bundle-Size:**
+- Vorher: 36 KB
+- Nachher: ~40 KB (noch < 50 KB Target ✅)
+
+### Nächste Schritte
+- User-Testing mit lokalem Server
+- Optional: Toggle-Button für Navigation (Ein/Aus)
+- Optional: Keyboard Shortcuts (1-9 für Kapitel)
+
+### Savepoint
+☑ Enhancement abgeschlossen
+☑ Git Commit: fdb003c "feat: Complete storytelling-oriented redesign..."
+☐ User-Testing steht aus
+☐ GitHub Pages Deployment steht aus
+
+---
+
+**Stand:** ENHANCEMENT-Phase abgeschlossen ✅
+**Nächster Schritt:** User-Testing + Deployment
+
+---
+
 ## 2025-10-03 - PROTOTYPE - Sitzung 7
 
 ### Kontext

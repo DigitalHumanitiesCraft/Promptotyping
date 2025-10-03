@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     await renderPaperContent();
     renderUseCaseCards();
     initNarrativeNav();
-    initScrollProgress();
   } catch (error) {
     console.error('Initialization error:', error);
     document.getElementById('main-content').innerHTML =
@@ -341,18 +340,6 @@ function updateActiveNavPoint() {
 
   navPoints.forEach((point, index) => {
     point.classList.toggle('active', index === activeIndex);
-  });
-}
-
-// === Scroll Progress ===
-function initScrollProgress() {
-  const progressBar = document.getElementById('progress-bar');
-
-  window.addEventListener('scroll', () => {
-    const scrollTop = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const progress = Math.min(Math.max((scrollTop / docHeight) * 100, 0), 100);
-    progressBar.style.width = `${progress}%`;
   });
 }
 
