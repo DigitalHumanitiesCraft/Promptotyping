@@ -92,10 +92,10 @@
       "category": "complex",
       "repository": "https://github.com/chpollin/diged-neolat",
       "demo": [
-        "https://chpollin.github.io/diged-neolat/edition-2/web/",
-        "https://chpollin.github.io/diged-neolat/edition-3/web/",
+        "https://chpollin.github.io/diged-neolat/edition-5/web/",
         "https://chpollin.github.io/diged-neolat/edition-4/web/",
-        "https://chpollin.github.io/diged-neolat/edition-5/web/"
+        "https://chpollin.github.io/diged-neolat/edition-3/web/",
+        "https://chpollin.github.io/diged-neolat/edition-2/web/"
       ],
       "video": "https://youtu.be/0DtX0pLv4TA",
       "llms": ["Claude Opus 4.1", "Gemini 2.5 Pro", "GPT-5"],
