@@ -181,6 +181,20 @@ function createPanel(useCase) {
     <div class="panel-content">
       <button class="panel-close" aria-label="Schließen">✕</button>
 
+      <section class="live-preview-section">
+        <div class="iframe-container">
+          <iframe
+            src="${primaryDemo}"
+            title="${useCase.title} - Live Demo"
+            loading="lazy"
+            sandbox="allow-scripts allow-same-origin allow-popups"
+          ></iframe>
+        </div>
+        <div class="iframe-hint">
+          💡 Die Demo wird in einem sicheren iframe geladen. Für volle Funktionalität öffnen Sie die Demo in einem neuen Tab.
+        </div>
+      </section>
+
       <div class="panel-header">
         <h2>${useCase.title}</h2>
         <div class="panel-meta">
@@ -194,21 +208,6 @@ function createPanel(useCase) {
           <h3>Kontext</h3>
           <p>${useCase.context}</p>
           ${useCase.scope ? `<p><strong>Umfang:</strong> ${useCase.scope}</p>` : ''}
-        </section>
-
-        <section class="live-preview-section">
-          <h3>Live-Vorschau</h3>
-          <div class="iframe-container">
-            <iframe
-              src="${primaryDemo}"
-              title="${useCase.title} - Live Demo"
-              loading="lazy"
-              sandbox="allow-scripts allow-same-origin allow-popups"
-            ></iframe>
-          </div>
-          <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-top: 0.5rem;">
-            💡 Hinweis: Die Demo wird in einem sicheren iframe geladen. Für volle Funktionalität öffnen Sie die Demo in einem neuen Tab.
-          </p>
         </section>
 
         ${useCase.documents.length > 0 ? `

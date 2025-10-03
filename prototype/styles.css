@@ -404,14 +404,16 @@ tr:hover {
   top: 0;
   right: 0;
   bottom: 0;
-  width: 500px;
+  width: 800px;
   max-width: 90vw;
   background: white;
   box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
-  padding: var(--spacing-xl);
+  padding: 0;
   transform: translateX(100%);
   transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .slide-panel.active .panel-content {
@@ -422,28 +424,34 @@ tr:hover {
   position: absolute;
   top: var(--spacing-md);
   right: var(--spacing-md);
-  background: none;
+  background: rgba(255, 255, 255, 0.95);
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
-  color: var(--color-text-muted);
-  width: 2rem;
-  height: 2rem;
+  color: var(--color-text);
+  width: 2.5rem;
+  height: 2.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 4px;
-  transition: background 0.2s;
+  border-radius: 50%;
+  transition: all 0.2s;
   line-height: 1;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .panel-close:hover {
-  background: var(--color-bg);
+  background: white;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .panel-header {
-  margin-bottom: var(--spacing-xl);
-  padding-right: 2rem;
+  padding: var(--spacing-xl);
+  padding-right: 3rem;
+  border-bottom: 1px solid var(--color-border);
+  flex-shrink: 0;
 }
 
 .panel-header h2 {
@@ -463,8 +471,21 @@ tr:hover {
   color: var(--color-text-muted);
 }
 
+.panel-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--spacing-xl);
+}
+
 .panel-body section {
   margin-bottom: var(--spacing-xl);
+  padding-bottom: var(--spacing-xl);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.panel-body section:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
 }
 
 .panel-body h3 {
@@ -530,16 +551,16 @@ tr:hover {
 
 /* === Live Preview (iframe) === */
 .live-preview-section {
-  margin: var(--spacing-xl) 0;
+  flex-shrink: 0;
+  background: var(--color-bg);
+  border-bottom: 2px solid var(--color-border);
 }
 
 .iframe-container {
   position: relative;
   width: 100%;
-  padding-bottom: 75%; /* 4:3 Aspect Ratio */
-  background: var(--color-bg);
-  border: 2px solid var(--color-border);
-  border-radius: 8px;
+  height: 60vh;
+  background: white;
   overflow: hidden;
 }
 
@@ -550,6 +571,17 @@ tr:hover {
   width: 100%;
   height: 100%;
   border: none;
+}
+
+.iframe-hint {
+  padding: 0.75rem var(--spacing-xl);
+  background: #fffbeb;
+  border-bottom: 1px solid var(--color-border);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 /* === Responsive === */
@@ -580,6 +612,10 @@ tr:hover {
 
   .panel-content {
     width: 100vw;
+  }
+
+  .iframe-container {
+    height: 50vh;
   }
 }
 
