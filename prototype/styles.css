@@ -356,53 +356,90 @@ td:last-child {
   position: sticky;
   top: 80px;
   height: fit-content;
+  transition: opacity 0.3s ease;
 }
 
-.meta-sidebar .meta-info {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
+/* Tutorial Card - Cloud Style */
+.tutorial-card {
   background: white;
-  border: 2px solid var(--color-border);
-  border-left: 4px solid var(--color-primary);
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 2px solid #dbeafe;
+  border-radius: 20px;
+  padding: 1.75rem;
+  box-shadow:
+    0 4px 12px rgba(30, 64, 175, 0.08),
+    0 0 0 1px rgba(30, 64, 175, 0.05);
+  position: relative;
 }
 
-.meta-sidebar .info-item {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  padding: 1.25rem 1.5rem;
-  border-bottom: 1px solid var(--color-border);
-}
-
-.meta-sidebar .info-item:nth-child(odd) {
-  background: #fafafa;
-}
-
-.meta-sidebar .info-item:nth-child(even) {
+.tutorial-card::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  right: 40px;
+  width: 30px;
+  height: 15px;
   background: white;
-}
-
-.meta-sidebar .info-item:last-child {
+  border: 2px solid #dbeafe;
   border-bottom: none;
+  border-radius: 50% 50% 0 0;
 }
 
-.meta-sidebar .info-label {
-  font-size: 0.75rem;
+.tutorial-card::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  right: 70px;
+  width: 20px;
+  height: 10px;
+  background: white;
+  border: 2px solid #dbeafe;
+  border-bottom: none;
+  border-radius: 50% 50% 0 0;
+}
+
+.tutorial-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--color-primary-light);
+}
+
+.tutorial-icon {
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.tutorial-title {
+  margin: 0;
+  font-size: 1rem;
   font-weight: 600;
-  color: var(--color-text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  color: var(--color-primary);
 }
 
-.meta-sidebar .info-value {
-  font-size: 0.9375rem;
+.tutorial-content {
+  font-size: 0.875rem;
+  line-height: 1.7;
   color: var(--color-text);
-  font-weight: 400;
-  line-height: 1.5;
+}
+
+.tutorial-content p {
+  margin: 0 0 0.875rem 0;
+}
+
+.tutorial-content p:last-child {
+  margin-bottom: 0;
+}
+
+.tutorial-content strong {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.tutorial-content em {
+  color: var(--color-text-muted);
+  font-style: italic;
 }
 
 /* === Use Case Card === */

@@ -1,0 +1,37 @@
+{
+  "einleitung": {
+    "icon": "💭",
+    "title": "Gedanken zur Entstehung",
+    "content": "Diese Methode entstand nicht am Schreibtisch, sondern aus der Not heraus. Nach dem dritten Projekt, bei dem ich meinen eigenen Code nach zwei Wochen nicht mehr verstand, wurde mir klar: **Wir brauchen Struktur**.\n\nMein wichtigster Tipp: Starte *immer* mit einem JOURNAL.md. Dokumentiere jeden Prompt, jeden Fehler, jede Iteration. Das fühlt sich anfangs übertrieben an, spart aber später Stunden."
+  },
+  "entwicklung": {
+    "icon": "🔬",
+    "title": "Aus der Projektpraxis",
+    "content": "Das Stefan-Zweig-Projekt war der Wendepunkt. Ein Timeline-Tool in 2 Stunden gebaut – und nach 14 Tagen völlig unverständlich.\n\nDie REALonline-Arbeit zeigte dann: **Expertenvalidierung ist alles**. Der Historiker korrigierte unsere Annahmen komplett. Hätten wir ohne Dokumentation neu anfangen müssen.\n\n**Lesson learned**: 5-7 Dokumente sind der Sweet Spot. Weniger = Chaos. Mehr = Overhead."
+  },
+  "methodik": {
+    "icon": "⚙️",
+    "title": "Wie ich wirklich arbeite",
+    "content": "Die 6 Phasen klingen theoretisch, aber in der Praxis:\n\n**CONTEXT**: 15-30 Min. Braindump. Wirklich *alles* aufschreiben.\n\n**DATA**: Hier scheitern 80% der Projekte. Schlechte Daten = schlechtes Ergebnis.\n\n**IMPLEMENTATION**: Mein Geheimnis – ich dokumentiere *während* ich prompte, nicht danach.\n\n**Tipp**: Claude Sonnet für Architektur, GPT-4 für Code-Details. Jedes LLM hat Stärken."
+  },
+  "fallstudien": {
+    "icon": "📊",
+    "title": "Häufigste Fehler",
+    "content": "Was ich in Workshops immer wieder sehe:\n\n1. **Zu früh coden** – Die DATA-Phase wird übersprungen\n2. **Keine Validierung** – Code läuft, aber löst das falsche Problem\n3. **Versionskontrolle vergessen** – \"Wie war das nochmal in Version 3?\"\n\n**Pro-Tipp**: Nutze die Use-Case-Placeholders! Sie zwingen dich, über Integration nachzudenken, *bevor* du Stunden investierst."
+  },
+  "workshop": {
+    "icon": "🎓",
+    "title": "Workshop-Erfahrungen",
+    "content": "Das Überraschendste: **Nicht-Programmierer sind oft besser**.\n\nWarum? Sie dokumentieren präziser, weil sie dem Code nicht trauen. Programmierer denken \"Ich versteh das schon\" – und tun es zwei Wochen später nicht mehr.\n\nIn 6-8 Stunden schaffen Anfänger funktionale Prototypen. Der Trick: Klein starten, iterieren, dokumentieren."
+  },
+  "diskussion": {
+    "icon": "🤔",
+    "title": "Was ich anders machen würde",
+    "content": "Ehrlich? Die Methode ist noch jung.\n\n**Offene Fragen:**\n- Funktioniert es bei Teams >3 Personen?\n- Wie skaliert es bei komplexeren Systemen?\n- Brauchen wir mehr formale Validierung?\n\nAber: **Perfekt ist der Feind von gut**. Lieber mit Promptotyping starten als gar nicht dokumentieren.\n\nMein nächstes Experiment: KI-gestützte Validierung der Dokumente selbst."
+  },
+  "fazit": {
+    "icon": "✨",
+    "title": "Mein Aufruf an dich",
+    "content": "Du musst Promptotyping nicht 1:1 übernehmen.\n\nNimm was passt. Vielleicht nur das JOURNAL. Oder die 6-Phasen-Struktur.\n\n**Das Wichtigste**: Mach dein implizites Wissen explizit. Schreib auf, wie du mit LLMs arbeitest. Teile es.\n\nDie DH-Community braucht genau das: Praktiker, die zeigen *wie* es wirklich geht, nicht nur *dass* es geht.\n\n**Starte heute. Starte klein. Aber starte.**"
+  }
+}

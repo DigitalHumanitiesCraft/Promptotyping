@@ -6,14 +6,18 @@
 // === Global State ===
 let useCasesData = [];
 let currentPanel = null;
+let tutorialData = {};
+let currentChapter = 'einleitung';
 
 // === Initialization ===
 document.addEventListener('DOMContentLoaded', async () => {
   try {
     await loadData();
+    await loadTutorialData();
     await renderPaperContent();
     renderUseCaseCards();
     initNarrativeNav();
+    initTutorialSidebar();
   } catch (error) {
     console.error('Initialization error:', error);
     document.getElementById('main-content').innerHTML =
@@ -47,6 +51,10 @@ async function renderPaperContent() {
     const paperMarkdown = await response.text();
     const html = marked.parse(paperMarkdown);
     mainContent.innerHTML = html;
+
+    // Add IDs to H2 elements for chapter navigation
+    addChapterIds();
+
     console.log('✅ Loaded complete paper from paper-content.md');
 
   } catch (error) {
@@ -358,6 +366,110 @@ function toggleAbstract() {
     fullAbstract.style.display = 'none';
     btn.textContent = 'Mehr lesen →';
   }
+}
+
+// === Chapter ID Assignment ===
+function addChapterIds() {
+  const chapterMap = {
+    '1. Einleitung': 'einleitung',
+    '2. Entwicklung des Ansatzes': 'entwicklung',
+    '3. Die Promptotyping-Methode': 'methodik',
+    '4. Fallstudie: REALonline Rauminventare': 'fallstudien',
+    '5. Workshop-Validierung': 'workshop',
+    '6. Diskussion': 'diskussion',
+    '7. Verwandte Arbeiten': 'diskussion', // Same tutorial as Diskussion
+    '8. Fazit': 'fazit'
+  };
+
+  const h2Elements = document.querySelectorAll('#main-content h2');
+  h2Elements.forEach(h2 => {
+    const text = h2.textContent.trim();
+    const id = chapterMap[text];
+    if (id) {
+      h2.id = id;
+    }
+  });
+}
+
+// === Tutorial Sidebar Functions ===
+async function loadTutorialData() {
+  try {
+    const response = await fetch('tutorial-sidebar.json');
+    if (!response.ok) throw new Error('Failed to load tutorial-sidebar.json');
+    tutorialData = await response.json();
+  } catch (error) {
+    console.error('Error loading tutorial data:', error);
+    tutorialData = {};
+  }
+}
+
+function initTutorialSidebar() {
+  const chapters = document.querySelectorAll('h2[id]');
+
+  // Create Intersection Observer
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const chapterId = entry.target.id;
+          updateTutorialSidebar(chapterId);
+        }
+      });
+    },
+    {
+      rootMargin: '-100px 0px -60% 0px',
+      threshold: 0
+    }
+  );
+
+  // Observe all H2 elements
+  chapters.forEach(chapter => {
+    observer.observe(chapter);
+  });
+
+  // Initial load
+  updateTutorialSidebar('einleitung');
+}
+
+function updateTutorialSidebar(chapterId) {
+  if (currentChapter === chapterId) return;
+  currentChapter = chapterId;
+
+  const sidebar = document.querySelector('.meta-sidebar');
+  if (!sidebar) return;
+
+  const tutorial = tutorialData[chapterId];
+  if (!tutorial) return;
+
+  // Fade out
+  sidebar.style.opacity = '0';
+
+  setTimeout(() => {
+    sidebar.innerHTML = `
+      <div class="tutorial-card">
+        <div class="tutorial-header">
+          <span class="tutorial-icon">${tutorial.icon}</span>
+          <h4 class="tutorial-title">${tutorial.title}</h4>
+        </div>
+        <div class="tutorial-content">
+          ${formatMarkdown(tutorial.content)}
+        </div>
+      </div>
+    `;
+
+    // Fade in
+    sidebar.style.opacity = '1';
+  }, 200);
+}
+
+function formatMarkdown(text) {
+  // Simple markdown formatting
+  return text
+    .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*([^*]+)\*/g, '<em>$1</em>')
+    .replace(/\n\n/g, '</p><p>')
+    .replace(/^(.+)$/gm, '<p>$1</p>')
+    .replace(/<p><\/p>/g, '');
 }
 
 // === Console Info ===
