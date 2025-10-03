@@ -65,6 +65,9 @@ async function renderPaperContent() {
     addChapterIds();
 
     console.log('✅ Loaded complete paper from paper-content.md');
+    console.log('📊 Grid children:', mainContent.children.length);
+    console.log('📍 Reading area:', mainContent.querySelector('.reading-area'));
+    console.log('📍 Meta sidebar:', mainContent.querySelector('.meta-sidebar'));
 
   } catch (error) {
     console.warn('⚠️ Could not load paper-content.md, using fallback:', error.message);
