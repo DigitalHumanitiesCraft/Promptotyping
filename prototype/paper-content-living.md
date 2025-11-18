@@ -1,158 +1,111 @@
-# Jenseits von „Vibe Coding"
-## Promptotyping als wissenschaftliche Methode
+# Promptotyping
+<p class="subtitle">Ein Praxisbericht zur strukturierten LLM-assistierten Entwicklung in den Digital Humanities</p>
 
-**Warum KI in den Digital Humanities weniger Intuition und mehr Context Engineering erfordert.**
+---
+
+## Abstract
+
+Large Language Models transformieren die Softwareentwicklung fundamental. Während GitHub Copilot Studien allgemeine Produktivitätssteigerungen dokumentieren, fehlen strukturierte Methoden für den wissenschaftlichen Einsatz. Das von Karpathy (2025) geprägte "Vibe Coding" ermöglicht zwar schnelles Prototyping, führt jedoch oft zu unwartbaren Systemen.
+
+Dieser Praxisbericht präsentiert **Promptotyping** als strukturierten Gegenentwurf. Die Methode entstand iterativ aus sieben Digital Humanities-Projekten und operiert in sechs dokumentierten Phasen. Sie adressiert spezifische LLM-Risiken wie **Context Rot** und **Sycophancy** durch systematische Dokumentation ("Source Available Literacy") und den **Critical Expert in the Loop**.
 
 ---
 
 ## 1. Einleitung
 
-Die Softwareentwicklung durchläuft einen fundamentalen Wandel. Andrej Karpathy prägte den Begriff „Vibe Coding" für eine Praxis, bei der Code intuitiv und ohne tiefes Verständnis generiert wird. In der Wissenschaft führt dies jedoch zu Problemen mit Reproduzierbarkeit und Halluzinationen.
+Digital Humanities-Forschende benötigen spezialisierte Werkzeuge, verfügen aber selten über Ressourcen für professionelle Softwareentwicklung. Generative KI verspricht hier Abhilfe, birgt aber epistemische Risiken. Andrej Karpathy beschreibt "Vibe Coding" als Praxis, bei der Code intuitiv ("based on vibes") generiert wird. In der Wissenschaft, wo Reproduzierbarkeit zentral ist, ist dieser Ansatz problematisch.
 
-Wir brauchen einen Gegenentwurf: **Promptotyping**.
-
-<div class="module-placeholder" data-module="code-comparison"></div>
+Wir schlagen **Promptotyping** vor: Eine Methode, die die Geschwindigkeit von Vibe Coding mit der Struktur von Software-Engineering verbindet.
 
 ---
 
 ## 2. Die epistemische Herausforderung
 
-Large Language Models (LLMs) sind probabilistische Systeme. Sie leiden unter „Context Rot" – dem Vergessen von Informationen in der Mitte langer Eingaben. Einfaches Prompt Engineering reicht nicht aus; es bedarf des **Context Engineering**.
+LLMs sind keine Wissensdatenbanken, sondern probabilistische Systeme. Sie leiden unter spezifischen Schwächen, die wir nicht ignorieren dürfen, sondern methodisch abfangen müssen.
 
-### Was ist Context Rot?
+### 2.1 Context Rot ("Lost in the Middle")
 
-Context Rot beschreibt das Phänomen, dass LLMs Informationen in der Mitte längerer Kontexte schlechter verarbeiten als am Anfang oder Ende. Die Aufmerksamkeitsmechanismen der Transformer-Architektur führen dazu, dass mit steigender Token-Anzahl die mittleren Informationen "vergessen" werden.
+Aktuelle Studien (Chroma, 2025; Hong et al., 2025) belegen, dass die Leistung von LLMs bei langen Eingaben nicht linear bleibt. Informationen in der Mitte des Kontextfensters werden mit höherer Wahrscheinlichkeit ignoriert oder halluziniert.
+
+**Interaktive Simulation:**
+Testen Sie hier, wie die Abrufgenauigkeit (Recall) bei steigender Token-Anzahl sinkt und warum wir Projekte in kleine Markdown-Dateien zerlegen müssen.
 
 <div class="module-placeholder" data-module="context-rot-viz"></div>
 
-**Implikationen für die Wissenschaft:**
-- Lange Forschungsdokumente werden unzuverlässig verarbeitet
-- Kritische Details in der Mitte gehen verloren
-- Reproduzierbarkeit leidet unter variablem Kontextverständnis
+### 2.2 Sycophancy (Das "Yes-Man"-Problem)
+
+Modelle tendieren dazu, Nutzerannahmen unkritisch zu bestätigen, um "hilfreich" zu wirken (Chen et al., 2025). Dies ist fatal, wenn Forschende mit falschen Hypothesen in den Dialog treten.
+
+**Interaktive Simulation:**
+Versuchen Sie im folgenden Terminal, das Modell durch suggestive Fragen ("Bestechung" oder Autoritäts-Bias) zu falschen Aussagen zu verleiten.
+
+<div class="module-placeholder" data-module="sycophancy-trap"></div>
 
 ---
 
 ## 3. Die Methode: Promptotyping
 
-Promptotyping ist ein strukturierter Prozess in vier Phasen:
+Promptotyping strukturiert die Entwicklung in sechs konsekutive Phasen. Jede Phase endet mit einem **Savepoint** (validiertes Artefakt).
 
-1. **Preparation**: Domänenwissen dokumentieren
-2. **Exploration**: Anforderungen im Dialog entwickeln
-3. **Distillation**: Kontext in Markdown-Dateien auslagern
-4. **Implementation**: Iterative Umsetzung mit LLM-Unterstützung
+### 3.1 Das Phasenmodell
 
-### Das externe Gedächtnis
+1. **CONTEXT (README.md)**: Erfasst Projektziele und Constraints.
+2. **DATA (DATA.md)**: Spezifiziert Datenstrukturen und Ontologien.
+3. **EXPLORATION**: Experimentelle Phase zur technischen Klärung (Wegwerf-Code).
+4. **REQUIREMENTS**: Formalisierung der Anforderungen basierend auf Exploration.
+5. **IMPLEMENTATION (INSTRUCTIONS.md)**: Detaillierte Anweisungen. Kritischste Phase zur Vermeidung von Fehlern.
+6. **PROTOTYPE**: Generierung des finalen Codes.
 
-Zentral ist die Auslagerung von Kontext in standardisierte Markdown-Dateien, um dem Modell ein "externes Gedächtnis" zu geben. Diese Dateien folgen einer klaren Struktur:
+### 3.2 Dokumentation als externes Gedächtnis
 
-- **DATA.md**: Datenstruktur und Ontologie
-- **REQUIREMENTS.md**: Funktionale Anforderungen
-- **DESIGN.md**: UI/UX-Spezifikationen
-- **JOURNAL.md**: Entwicklungsdokumentation
-- **INSTRUCTIONS.md**: Implementierungsanweisungen
+Da LLMs kein persistentes Gedächtnis haben, fungieren die Markdown-Dokumente als "externer Hippocampus".
+
+**Interaktive Exploration:**
+Untersuchen Sie hier die Struktur eines realen "Promptotyping Vaults" und navigieren Sie durch die Dokumente, die als Context Injection dienen.
 
 <div class="module-placeholder" data-module="vault-explorer"></div>
 
-### Source Available Literacy
+---
 
-Die Markdown-Dateien sind nicht nur Dokumentation, sondern **epistemische Infrastruktur**. Sie machen den Entstehungsprozess nachvollziehbar und ermöglichen wissenschaftliche Quellenkritik am Code.
+## 4. Fallstudien
+
+Die Methode wurde in sieben Projekten validiert. Hier eine Auswahl der Ergebnisse:
+
+<div class="use-case-placeholder" data-id="realonline"></div>
+<div class="use-case-placeholder" data-id="lucina"></div>
+<div class="use-case-placeholder" data-id="cvma"></div>
+
+In unserer Erfahrung zeigten Projekte mit **5 bis 7 Dokumenten** die beste Balance. Weniger führte zu Chaos (siehe Stefan Zweig Digital), mehr zu administrativem Overhead (siehe Lucina).
 
 ---
 
-## 4. Qualitätssicherung: Der Critical Expert in the Loop
+## 5. Methodische Einordnung
 
-Der **Critical Expert in the Loop (CEIL)** ist das zentrale Qualitätssicherungsprinzip. Anders als beim "Human in the Loop" geht es nicht nur um Supervision, sondern um:
+### 5.1 Vibe Coding vs. Agentic Coding
 
-- **Deterministische Validierung**: Automatisierte Tests prüfen Korrektheit
-- **Fachliche Prüfung**: Domänenexpertise bewertet semantische Korrektheit
-- **Iterative Verfeinerung**: Fehler werden systematisch dokumentiert und behoben
+Die aktuelle Forschung unterscheidet zwei Pole:
+* **Vibe Coding** (Karpathy, 2025): Intuitiv, schnell, menschzentriert, aber fehleranfällig.
+* **Agentic Coding** (Sapkota et al., 2025): Autonome Agenten planen und testen selbstständig.
 
-### Die Sycophancy-Falle
-
-Ein kritisches Problem ist die Tendenz von LLMs zur **Sycophancy** – dem Versuch, dem Nutzer nach dem Mund zu reden. Dies ist besonders problematisch, wenn Forschende unbewusst fehlerhafte Annahmen einbringen.
-
-<div class="module-placeholder" data-module="sycophancy-trap"></div>
-
-**Gegenmaßnahmen:**
-- Explizite Fehlersuche in Prompts verlangen
-- Multiple LLMs als "Judges" einsetzen
-- Deterministisches Testing erzwingt Korrektheit
-- Kritische Distanz zum LLM-Output wahren
+**Promptotyping** positioniert sich als pragmatische Brücke. Es nutzt die Geschwindigkeit von Vibe Coding in der *Exploration*, verlangt aber die Strenge von Agentic Coding in der *Implementation* durch den **Critical Expert in the Loop**.
 
 ---
 
-## 5. Von der Implementierung zur Kontextualisierung
+## 6. Fazit
 
-Promptotyping transformiert Softwareentwicklung fundamental:
+Promptotyping ist keine Software, sondern eine Haltung. Es verschiebt die Kompetenz von "Code schreiben" zu "Kontext kuratieren" (**Context Engineering**).
 
-**Traditionelle Entwicklung:**
-- Problem → Design → Implementation → Testing
-
-**Promptotyping:**
-- Problem → Kontextualisierung → Requirements Engineering → LLM-Implementation → CEIL-Validierung
-
-Die eigentliche Arbeit verschiebt sich von der Implementierung zur **Anforderungs- und Kontextualisierungsaufgabe**. Der Entwickler wird zum "Context Engineer".
-
-### Context Engineering als neue Quellenkritik
-
-In den Digital Humanities ist Quellenkritik zentral. Context Engineering erweitert dieses Prinzip:
-
-- **Traditionelle Quellenkritik**: Wer hat wann welches Dokument mit welcher Intention erstellt?
-- **Context Engineering**: Welcher Kontext wurde dem LLM gegeben? Welche Annahmen sind implizit? Wie wurde validiert?
-
-Die Promptotyping-Dokumente werden zur "digitalen Quellenlage" der Software.
+Die Zukunft der Digital Humanities liegt nicht im blinden Vertrauen auf KI ("Vibe"), sondern in der Fähigkeit, KI durch strukturierte Sprache präzise zu steuern.
 
 ---
 
-## 6. Fallstudien
+## Literatur
 
-Die Methode wurde in sieben Digital Humanities-Projekten entwickelt und validiert:
-
-<div data-id="realonline"></div>
-<div data-id="lucina"></div>
-<div data-id="cvma"></div>
-<div data-id="aldersbach"></div>
-<div data-id="km"></div>
-<div data-id="szd"></div>
-
----
-
-## 7. Fazit: Jenseits der Intuition
-
-„Vibe Coding" mag für Prototypen funktionieren, aber Wissenschaft braucht Methode. Promptotyping bietet einen strukturierten Ansatz, der:
-
-- **Reproduzierbarkeit** durch externe Kontextdokumentation ermöglicht
-- **Qualität** durch Critical Expert in the Loop sichert
-- **Transparenz** durch Source Available Literacy schafft
-- **Effizienz** durch strukturiertes Requirements Engineering erhöht
-
-Context Engineering ist die neue Kernkompetenz für wissenschaftliche Softwareentwicklung mit LLMs. Es verbindet klassische geisteswissenschaftliche Methoden (Quellenkritik, Hermeneutik) mit moderner KI-Entwicklung.
-
-**Die Zukunft gehört nicht dem intuitive "Vibing", sondern dem methodischen "Promptotyping".**
-
----
-
-<div class="paper-meta-card">
-  <div class="meta-abstract">
-    <h3>Paper-Metadaten</h3>
-    <p><strong>Autor:</strong> Christopher Pollin</p>
-    <p><strong>Institution:</strong> Zentrum für Informationsmodellierung, Universität Graz</p>
-    <p><strong>Kontext:</strong> Praxisbericht aus 5 Monaten LLM-assistierter Entwicklung</p>
-    <p><strong>Projekte:</strong> 7 Digital Humanities Anwendungen</p>
-    <p><strong>Entwicklungszeit:</strong> ~60 Stunden gesamte Implementierung</p>
-  </div>
-  <div class="meta-actions">
-    <a href="https://github.com/DigitalHumanitiesCraft/excellence" class="meta-btn primary" target="_blank">
-      <span>💻</span>
-      <span class="btn-label">GitHub Repository</span>
-    </a>
-    <a href="https://dhcraft.org/excellence/" class="meta-btn" target="_blank">
-      <span>🌐</span>
-      <span class="btn-label">Project Website</span>
-    </a>
-    <a href="#contact" class="meta-btn">
-      <span>📧</span>
-      <span class="btn-label">Kontakt</span>
-    </a>
-  </div>
-</div>
+* Bamman, D., et al. (2024). *The Impact of Language Models on the Humanities, and Vice-Versa*. IDEALS.
+* Chen, W., et al. (2025). *From Yes-Men to Truth-Tellers: Addressing Sycophancy in Large Language Models*. arXiv preprint.
+* Chen, Z., et al. (2025). *Promptware Engineering: Software Engineering for LLM Prompt Development*. arXiv:2503.02400.
+* Chroma (2025). *Context Rot: How Increasing Input Tokens Impacts LLM Performance*. Technical Report.
+* Karpathy, A. (2025). "Vibe Coding". Blog Post, Feb 2025.
+* MDPI (2025). *AI-Driven Innovations in Software Engineering: A Review of Current Practices and Future Directions*. Applied Sciences, 15(3).
+* Pollin, C. (2025). *Promptotyping: Von der Idee zur Anwendung*. Digital Humanities Craft Blog.
+* Sapkota, R., et al. (2025). *Vibe Coding vs. Agentic Coding: Fundamentals and Practical Implications of Agentic AI*. arXiv:2505.19443.
