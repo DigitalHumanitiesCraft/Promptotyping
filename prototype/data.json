@@ -1,6 +1,37 @@
 {
   "useCases": [
     {
+      "id": "herdata",
+      "title": "HerData: Goethes Frauen",
+      "context": "Sichtbarmachung von 448 Frauen in Goethes Briefwechsel. Hybrid-Ansatz aus CMIF-Daten und kuratierter SNDB.",
+      "timeInvestment": 60,
+      "documentCount": 10,
+      "iteration": 22,
+      "scope": "1.793 Briefe, 227 Orte, 448 Biografien",
+      "category": "optimal",
+      "repository": "https://github.com/chpollin/HerData",
+      "demo": "https://chpollin.github.io/HerData/",
+      "llms": ["Claude 3.5 Sonnet"],
+      "tools": ["MapLibre", "ECharts", "Cytoscape.js", "Python Pipeline"],
+      "tags": ["Provenance", "Hybrid-Data", "Critical-Expert", "Network-Analysis"],
+      "documents": [
+        {"type": "DATA", "filename": "DATA.md", "phase": "DATA", "description": "Datenarchitektur & Hybrid-Ansatz"},
+        {"type": "DECISIONS", "filename": "DECISIONS.md", "phase": "CONTEXT", "description": "ADR-008: Qualität vor Quantität"},
+        {"type": "JOURNAL", "filename": "JOURNAL.md", "phase": "PROTOTYPE", "description": "22 Entwicklungssessions"},
+        {"type": "REQUIREMENTS", "filename": "REQUIREMENTS.md", "phase": "REQUIREMENTS", "description": "Dualer Zeitfilter Spec"},
+        {"type": "CONTEXT", "filename": "CONTEXT.md", "phase": "CONTEXT", "description": "Projektkontext PROPYLÄEN"},
+        {"type": "OTHER", "filename": "data-model.md", "phase": "DATA", "description": "Datenmodell-Spezifikation"},
+        {"type": "OTHER", "filename": "wissenskorb.md", "phase": "DATA", "description": "Externe Ressourcen & Referenzen"}
+      ],
+      "processNotes": [
+        "Provenance-System trackt XML-Quellen für 11 Felder - 3.695 Provenienz-Einträge",
+        "Entscheidung gegen Vollbestand (3.617 Personen, 34% GND) für kuratierten Satz (448 Frauen, 60.3% GND)",
+        "Implementierung eines dualen Zeitfilters (Briefe vs. Leben)",
+        "Deep Grounding statt Vibe Coding - jedes Datenfeld dokumentiert Herkunft",
+        "22 Sessions dokumentiert in JOURNAL.md als externes Arbeitsgedächtnis"
+      ]
+    },
+    {
       "id": "szd",
       "title": "Stefan Zweig Digital Annotation Tool",
       "context": "Timeline-basiertes Annotationstool für die digitale Nachlassrekonstruktion Stefan Zweig Digital des Literaturarchivs Salzburg.",
