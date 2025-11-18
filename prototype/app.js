@@ -45,10 +45,16 @@ async function renderPaperContent() {
   const mainContent = document.getElementById('main-content');
 
   try {
-    // Try to load the Living Paper content first
-    let response = await fetch('./paper-content-living.md');
+    // Try to load the real paper content first
+    let response = await fetch('./paper-content-real.md');
 
-    // Fallback to original paper content if Living Paper not available
+    // Fallback to Living Paper if real content not available
+    if (!response.ok) {
+      console.warn('paper-content-real.md not found, falling back to paper-content-living.md');
+      response = await fetch('./paper-content-living.md');
+    }
+
+    // Final fallback to original paper content
     if (!response.ok) {
       console.warn('paper-content-living.md not found, falling back to paper-content.md');
       response = await fetch('./paper-content.md');

@@ -7,7 +7,9 @@
       "Bash(python:*)",
       "Read(//c/Users/Chrisi/**)",
       "Read(//c/Users/Chrisi/Documents/**)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(timeout 3 bash -c 'sleep 2 && curl -s http://localhost:8000/ | head -20')",
+      "Bash(curl:*)"
     ],
     "deny": [],
     "ask": []
