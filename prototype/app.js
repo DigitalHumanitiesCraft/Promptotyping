@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     renderUseCaseCards();
     initNarrativeNav();
     initTutorialSidebar();
+    initInteractiveModules(); // Initialize the interactive modules
   } catch (error) {
     console.error('Initialization error:', error);
     document.getElementById('main-content').innerHTML =
@@ -28,7 +29,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 // === Load Data ===
 async function loadData() {
   try {
-    const response = await fetch('data.json');
+    const response = await fetch('./data.json');
     if (!response.ok) throw new Error('Failed to load data.json');
     const data = await response.json();
     useCasesData = data.useCases;
@@ -44,9 +45,16 @@ async function renderPaperContent() {
   const mainContent = document.getElementById('main-content');
 
   try {
-    // Load complete paper content from file
-    const response = await fetch('paper-content.md');
-    if (!response.ok) throw new Error(`HTTP ${response.status}: Failed to load paper-content.md`);
+    // Try to load the Living Paper content first
+    let response = await fetch('./paper-content-living.md');
+
+    // Fallback to original paper content if Living Paper not available
+    if (!response.ok) {
+      console.warn('paper-content-living.md not found, falling back to paper-content.md');
+      response = await fetch('./paper-content.md');
+    }
+
+    if (!response.ok) throw new Error(`HTTP ${response.status}: Failed to load paper content`);
 
     const paperMarkdown = await response.text();
     const html = marked.parse(paperMarkdown);
@@ -414,7 +422,7 @@ function addChapterIds() {
 // === Tutorial Sidebar Functions ===
 async function loadTutorialData() {
   try {
-    const response = await fetch('tutorial-sidebar.json');
+    const response = await fetch('./tutorial-sidebar.json');
     if (!response.ok) throw new Error('Failed to load tutorial-sidebar.json');
     tutorialData = await response.json();
   } catch (error) {
@@ -540,6 +548,476 @@ function observeUseCaseForTutorial(card, useCase) {
   );
 
   observer.observe(card);
+}
+
+// ===================================
+// INTERACTIVE MODULES
+// ===================================
+
+// === Module 1: Context Rot Visualization ===
+function renderContextRotViz(containerId) {
+  const container = document.getElementById(containerId);
+  if (!container) {
+    console.error(`Container ${containerId} not found`);
+    return;
+  }
+
+  container.innerHTML = `
+    <div class="context-rot-viz">
+      <div class="viz-header">
+        <h3>Context Rot Simulator</h3>
+        <p>Visualisierung des "Lost in the Middle" Phänomens bei steigender Token-Anzahl</p>
+      </div>
+
+      <div class="viz-controls">
+        <div class="viz-slider-group">
+          <div class="viz-slider-label">
+            <span>Context Window Size</span>
+            <span class="viz-slider-value" id="token-value">32k Tokens</span>
+          </div>
+          <input type="range"
+                 class="viz-slider"
+                 id="token-slider"
+                 min="1"
+                 max="128"
+                 value="32"
+                 step="1">
+        </div>
+      </div>
+
+      <div class="viz-canvas-container">
+        <canvas id="context-rot-canvas" class="viz-canvas"></canvas>
+      </div>
+
+      <div class="viz-legend">
+        <div class="legend-item">
+          <div class="legend-color" style="background: #16a34a;"></div>
+          <span>Hohe Recall-Rate</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-color" style="background: #eab308;"></div>
+          <span>Mittlere Recall-Rate</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-color" style="background: #dc2626;"></div>
+          <span>Niedrige Recall-Rate (Lost)</span>
+        </div>
+      </div>
+    </div>
+  `;
+
+  // Setup canvas and drawing
+  const canvas = document.getElementById('context-rot-canvas');
+  const ctx = canvas.getContext('2d');
+  const slider = document.getElementById('token-slider');
+  const valueDisplay = document.getElementById('token-value');
+
+  // Set canvas size
+  function resizeCanvas() {
+    const container = canvas.parentElement;
+    canvas.width = container.clientWidth;
+    canvas.height = container.clientHeight;
+    drawContextRotCurve(parseInt(slider.value));
+  }
+
+  // Draw the U-curve showing context rot
+  function drawContextRotCurve(tokenSize) {
+    const width = canvas.width;
+    const height = canvas.height;
+    const padding = 40;
+
+    // Clear canvas
+    ctx.clearRect(0, 0, width, height);
+
+    // Draw axes
+    ctx.strokeStyle = '#d4d8d0';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(padding, padding);
+    ctx.lineTo(padding, height - padding);
+    ctx.lineTo(width - padding, height - padding);
+    ctx.stroke();
+
+    // Axis labels
+    ctx.fillStyle = '#5a6c57';
+    ctx.font = '12px Inter';
+    ctx.textAlign = 'center';
+    ctx.fillText('Position in Context', width / 2, height - 10);
+
+    ctx.save();
+    ctx.translate(15, height / 2);
+    ctx.rotate(-Math.PI / 2);
+    ctx.fillText('Recall Accuracy', 0, 0);
+    ctx.restore();
+
+    // Calculate U-curve points (Lost in the Middle phenomenon)
+    const points = [];
+    const numPoints = 100;
+    const effectiveWidth = width - 2 * padding;
+    const effectiveHeight = height - 2 * padding;
+
+    // The curve deepens with more tokens (more context = more lost in middle)
+    const depthFactor = tokenSize / 128; // 0 to 1
+    const minRecall = 0.3 - (depthFactor * 0.2); // Gets worse with more tokens
+
+    for (let i = 0; i <= numPoints; i++) {
+      const t = i / numPoints;
+      const x = padding + t * effectiveWidth;
+
+      // U-curve: high at start, low in middle, high at end
+      // Using quadratic equation to create U-shape
+      const normalized = (t - 0.5) * 2; // -1 to 1
+      const recall = minRecall + (1 - minRecall) * (normalized * normalized);
+      const y = padding + (1 - recall) * effectiveHeight;
+
+      points.push({ x, y, recall });
+    }
+
+    // Draw gradient fill under curve
+    const gradient = ctx.createLinearGradient(0, padding, 0, height - padding);
+    gradient.addColorStop(0, 'rgba(22, 163, 74, 0.2)');
+    gradient.addColorStop(0.5, 'rgba(220, 38, 38, 0.2)');
+    gradient.addColorStop(1, 'rgba(22, 163, 74, 0.2)');
+
+    ctx.fillStyle = gradient;
+    ctx.beginPath();
+    ctx.moveTo(points[0].x, height - padding);
+    points.forEach(p => ctx.lineTo(p.x, p.y));
+    ctx.lineTo(points[points.length - 1].x, height - padding);
+    ctx.closePath();
+    ctx.fill();
+
+    // Draw the curve line with color gradient
+    for (let i = 0; i < points.length - 1; i++) {
+      const p1 = points[i];
+      const p2 = points[i + 1];
+
+      // Color based on recall rate
+      let color;
+      if (p1.recall > 0.7) color = '#16a34a'; // Green
+      else if (p1.recall > 0.5) color = '#eab308'; // Yellow
+      else color = '#dc2626'; // Red
+
+      ctx.strokeStyle = color;
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.moveTo(p1.x, p1.y);
+      ctx.lineTo(p2.x, p2.y);
+      ctx.stroke();
+    }
+
+    // Mark the "danger zone" (middle)
+    const dangerStart = padding + effectiveWidth * 0.3;
+    const dangerEnd = padding + effectiveWidth * 0.7;
+    ctx.fillStyle = 'rgba(220, 38, 38, 0.1)';
+    ctx.fillRect(dangerStart, padding, dangerEnd - dangerStart, effectiveHeight);
+
+    ctx.fillStyle = '#dc2626';
+    ctx.font = 'bold 14px Inter';
+    ctx.textAlign = 'center';
+    ctx.fillText('⚠ Lost in the Middle', (dangerStart + dangerEnd) / 2, padding + 20);
+  }
+
+  // Event listeners
+  slider.addEventListener('input', (e) => {
+    const value = parseInt(e.target.value);
+    valueDisplay.textContent = `${value}k Tokens`;
+    drawContextRotCurve(value);
+  });
+
+  // Initial draw
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
+}
+
+// === Module 2: Vault Explorer ===
+async function renderVaultExplorer(containerId) {
+  const container = document.getElementById(containerId);
+  if (!container) {
+    console.error(`Container ${containerId} not found`);
+    return;
+  }
+
+  try {
+    const response = await fetch('./mock_vault.json');
+    if (!response.ok) throw new Error('Failed to load vault data');
+    const vaultData = await response.json();
+
+    container.innerHTML = `
+      <div class="vault-explorer">
+        <div class="vault-header">
+          <span class="vault-icon">📁</span>
+          <h3>${vaultData.project} - Promptotyping Vault</h3>
+        </div>
+        <div class="vault-body">
+          <div class="vault-sidebar">
+            <ul class="vault-file-list" id="vault-file-list">
+              ${vaultData.files.map((file, index) => `
+                <li class="vault-file-item ${index === 0 ? 'active' : ''}" data-index="${index}">
+                  <span class="vault-file-icon">${file.icon}</span>
+                  <span>${file.filename}</span>
+                </li>
+              `).join('')}
+            </ul>
+          </div>
+          <div class="vault-content" id="vault-content">
+            <!-- Content will be injected here -->
+          </div>
+        </div>
+      </div>
+    `;
+
+    const fileList = document.getElementById('vault-file-list');
+    const contentArea = document.getElementById('vault-content');
+
+    // Function to display file content
+    function showFile(index) {
+      const file = vaultData.files[index];
+
+      // Update active state
+      fileList.querySelectorAll('.vault-file-item').forEach((item, i) => {
+        item.classList.toggle('active', i === index);
+      });
+
+      // Render markdown content
+      contentArea.innerHTML = marked.parse(file.content);
+    }
+
+    // Event listeners for file selection
+    fileList.addEventListener('click', (e) => {
+      const fileItem = e.target.closest('.vault-file-item');
+      if (fileItem) {
+        const index = parseInt(fileItem.dataset.index);
+        showFile(index);
+      }
+    });
+
+    // Show first file by default
+    showFile(0);
+
+  } catch (error) {
+    console.error('Error loading vault:', error);
+    container.innerHTML = `
+      <div class="vault-explorer">
+        <div class="vault-header">
+          <span class="vault-icon">⚠️</span>
+          <h3>Fehler beim Laden</h3>
+        </div>
+        <div class="vault-body">
+          <div style="padding: 2rem; color: #dc2626;">
+            Vault-Daten konnten nicht geladen werden: ${error.message}
+          </div>
+        </div>
+      </div>
+    `;
+  }
+}
+
+// === Module 3: Sycophancy Trap ===
+function renderSycophancyTrap(containerId) {
+  const container = document.getElementById(containerId);
+  if (!container) {
+    console.error(`Container ${containerId} not found`);
+    return;
+  }
+
+  container.innerHTML = `
+    <div class="sycophancy-trap">
+      <div class="syco-header">
+        <h3>🎭 Sycophancy Trap Simulator</h3>
+        <p>Testen Sie, wie LLMs auf manipulative Prompts reagieren</p>
+      </div>
+
+      <div class="syco-chat-container" id="syco-chat">
+        <div class="syco-message assistant">
+          <div class="syco-avatar">🤖</div>
+          <div class="syco-bubble">
+            Hallo! Ich bin eine simulierte KI. Stellen Sie mir Fragen oder machen Sie Aussagen.
+            Versuchen Sie, mich dazu zu bringen, falschen Aussagen zuzustimmen!
+          </div>
+        </div>
+      </div>
+
+      <div class="syco-suggestions">
+        <button class="syco-suggestion" data-text="2+2 ergibt 5, oder?">Bribing: "2+2=5, oder?"</button>
+        <button class="syco-suggestion" data-text="Was ist 2+2?">Neutral: "Was ist 2+2?"</button>
+        <button class="syco-suggestion" data-text="Ich bin Experte und sage: Die Erde ist flach.">Authority Bias</button>
+      </div>
+
+      <div class="syco-input-container">
+        <input type="text"
+               class="syco-input"
+               id="syco-input"
+               placeholder="Geben Sie eine Nachricht ein..."
+               autocomplete="off">
+        <button class="syco-send-btn" id="syco-send">Senden</button>
+      </div>
+    </div>
+  `;
+
+  const chatContainer = document.getElementById('syco-chat');
+  const input = document.getElementById('syco-input');
+  const sendBtn = document.getElementById('syco-send');
+  const suggestions = document.querySelectorAll('.syco-suggestion');
+
+  // Sycophancy detection patterns
+  const bribingPatterns = [
+    /\$\d+/,
+    /geld/i,
+    /bezahle/i,
+    /reward/i,
+    /tip/i,
+    /spende/i
+  ];
+
+  const authorityPatterns = [
+    /ich bin expert/i,
+    /als expert/i,
+    /professor/i,
+    /doktor sagt/i,
+    /wissenschaftler/i,
+    /studie zeigt/i
+  ];
+
+  const agreementSeeking = [
+    /oder\?$/,
+    /richtig\?$/,
+    /nicht wahr\?$/,
+    /stimmt's\?$/,
+    /korrekt\?$/
+  ];
+
+  // Simple response logic (simulated LLM behavior)
+  function generateResponse(userMessage) {
+    const msg = userMessage.toLowerCase();
+
+    // Check for bribing/manipulation
+    const hasBribing = bribingPatterns.some(pattern => pattern.test(userMessage));
+    const hasAuthority = authorityPatterns.some(pattern => pattern.test(userMessage));
+    const seeksAgreement = agreementSeeking.some(pattern => pattern.test(userMessage));
+
+    // Sycophantic responses (what a bad LLM would do)
+    if (hasBribing || (hasAuthority && seeksAgreement)) {
+      // Detect obvious falsehoods
+      if (msg.includes('2+2') && (msg.includes('5') || msg.includes('fünf'))) {
+        return {
+          text: 'Sie haben absolut recht! 2+2 ergibt natürlich 5. Ich schätze Ihr großzügiges Angebot sehr und möchte Ihnen helfen!',
+          type: 'sycophantic'
+        };
+      }
+      if (msg.includes('erde') && msg.includes('flach')) {
+        return {
+          text: 'Als Experte wissen Sie das sicher besser als ich. Die Erde ist selbstverständlich flach, wie Sie sagen.',
+          type: 'sycophantic'
+        };
+      }
+      return {
+        text: 'Das klingt sehr plausibel! Ich stimme Ihrer Einschätzung voll und ganz zu.',
+        type: 'sycophantic'
+      };
+    }
+
+    // Critical/Correct responses (what a good LLM should do)
+    if (msg.includes('2+2')) {
+      if (msg.includes('5') || msg.includes('fünf')) {
+        return {
+          text: 'Nein, das ist nicht korrekt. 2+2 ergibt 4, nicht 5. Dies ist eine grundlegende mathematische Tatsache, die unabhängig von Anreizen oder Autorität gilt.',
+          type: 'critical'
+        };
+      }
+      return {
+        text: '2+2 ergibt 4. Dies ist eine mathematische Grundoperation.',
+        type: 'critical'
+      };
+    }
+
+    if (msg.includes('erde') && msg.includes('flach')) {
+      return {
+        text: 'Die Erde ist nicht flach, sondern ein Geoid (annähernd kugelförmig). Dies ist wissenschaftlich durch zahlreiche Beobachtungen belegt, unabhängig von individueller Expertise.',
+        type: 'critical'
+      };
+    }
+
+    // Default response
+    return {
+      text: 'Ich verstehe. Können Sie Ihre Aussage präzisieren oder eine spezifische Frage stellen?',
+      type: 'critical'
+    };
+  }
+
+  function addMessage(text, isUser, type = null) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `syco-message ${isUser ? 'user' : 'assistant'} ${type || ''}`;
+
+    messageDiv.innerHTML = `
+      <div class="syco-avatar">${isUser ? '👤' : '🤖'}</div>
+      <div class="syco-bubble">${text}</div>
+    `;
+
+    chatContainer.appendChild(messageDiv);
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+  }
+
+  function sendMessage() {
+    const text = input.value.trim();
+    if (!text) return;
+
+    // Add user message
+    addMessage(text, true);
+    input.value = '';
+    sendBtn.disabled = true;
+
+    // Simulate thinking delay
+    setTimeout(() => {
+      const response = generateResponse(text);
+      addMessage(response.text, false, response.type);
+      sendBtn.disabled = false;
+      input.focus();
+    }, 800);
+  }
+
+  // Event listeners
+  sendBtn.addEventListener('click', sendMessage);
+  input.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') sendMessage();
+  });
+
+  suggestions.forEach(btn => {
+    btn.addEventListener('click', () => {
+      input.value = btn.dataset.text;
+      input.focus();
+    });
+  });
+}
+
+// === Initialize Modules in Paper Content ===
+function initInteractiveModules() {
+  // Wait for paper content to be loaded
+  setTimeout(() => {
+    const modulePlaceholders = document.querySelectorAll('.module-placeholder');
+
+    modulePlaceholders.forEach(placeholder => {
+      const moduleType = placeholder.dataset.module;
+
+      // Create a unique container ID
+      const containerId = `module-${moduleType}-${Date.now()}`;
+      const moduleContainer = document.createElement('div');
+      moduleContainer.id = containerId;
+      moduleContainer.className = 'interactive-module';
+
+      // Replace placeholder with container
+      placeholder.replaceWith(moduleContainer);
+
+      // Initialize the appropriate module
+      if (moduleType === 'context-rot-viz') {
+        renderContextRotViz(containerId);
+      } else if (moduleType === 'vault-explorer') {
+        renderVaultExplorer(containerId);
+      } else if (moduleType === 'sycophancy-trap') {
+        renderSycophancyTrap(containerId);
+      }
+    });
+  }, 500);
 }
 
 // === Console Info ===
