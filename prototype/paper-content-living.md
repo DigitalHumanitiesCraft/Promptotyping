@@ -1,111 +1,98 @@
-# Promptotyping
-<p class="subtitle">Ein Praxisbericht zur strukturierten LLM-assistierten Entwicklung in den Digital Humanities</p>
+# Jenseits von „Vibe Coding"
+## Promptotyping als wissenschaftliche Methode
 
----
-
-## Abstract
-
-Large Language Models transformieren die Softwareentwicklung fundamental. Während GitHub Copilot Studien allgemeine Produktivitätssteigerungen dokumentieren, fehlen strukturierte Methoden für den wissenschaftlichen Einsatz. Das von Karpathy (2025) geprägte "Vibe Coding" ermöglicht zwar schnelles Prototyping, führt jedoch oft zu unwartbaren Systemen.
-
-Dieser Praxisbericht präsentiert **Promptotyping** als strukturierten Gegenentwurf. Die Methode entstand iterativ aus sieben Digital Humanities-Projekten und operiert in sechs dokumentierten Phasen. Sie adressiert spezifische LLM-Risiken wie **Context Rot** und **Sycophancy** durch systematische Dokumentation ("Source Available Literacy") und den **Critical Expert in the Loop**.
+**Warum KI in den Digital Humanities weniger Intuition und mehr Context Engineering erfordert.**
 
 ---
 
 ## 1. Einleitung
 
-Digital Humanities-Forschende benötigen spezialisierte Werkzeuge, verfügen aber selten über Ressourcen für professionelle Softwareentwicklung. Generative KI verspricht hier Abhilfe, birgt aber epistemische Risiken. Andrej Karpathy beschreibt "Vibe Coding" als Praxis, bei der Code intuitiv ("based on vibes") generiert wird. In der Wissenschaft, wo Reproduzierbarkeit zentral ist, ist dieser Ansatz problematisch.
+Die Softwareentwicklung durchläuft einen fundamentalen Wandel. Andrej Karpathy prägte den Begriff „Vibe Coding" für eine Praxis, bei der Code intuitiv und ohne tiefes Verständnis generiert wird. In der Wissenschaft führt dies jedoch zu Problemen mit Reproduzierbarkeit und Halluzinationen.
 
-Wir schlagen **Promptotyping** vor: Eine Methode, die die Geschwindigkeit von Vibe Coding mit der Struktur von Software-Engineering verbindet.
+Wir brauchen einen Gegenentwurf: **Promptotyping**.
 
 ---
 
 ## 2. Die epistemische Herausforderung
 
-LLMs sind keine Wissensdatenbanken, sondern probabilistische Systeme. Sie leiden unter spezifischen Schwächen, die wir nicht ignorieren dürfen, sondern methodisch abfangen müssen.
-
-### 2.1 Context Rot ("Lost in the Middle")
-
-Aktuelle Studien (Chroma, 2025; Hong et al., 2025) belegen, dass die Leistung von LLMs bei langen Eingaben nicht linear bleibt. Informationen in der Mitte des Kontextfensters werden mit höherer Wahrscheinlichkeit ignoriert oder halluziniert.
-
-**Interaktive Simulation:**
-Testen Sie hier, wie die Abrufgenauigkeit (Recall) bei steigender Token-Anzahl sinkt und warum wir Projekte in kleine Markdown-Dateien zerlegen müssen.
+Large Language Models (LLMs) sind probabilistische Systeme. Sie leiden unter „Context Rot" – dem Vergessen von Informationen in der Mitte langer Eingaben (Chroma, 2025).
 
 <div class="module-placeholder" data-module="context-rot-viz"></div>
 
-### 2.2 Sycophancy (Das "Yes-Man"-Problem)
-
-Modelle tendieren dazu, Nutzerannahmen unkritisch zu bestätigen, um "hilfreich" zu wirken (Chen et al., 2025). Dies ist fatal, wenn Forschende mit falschen Hypothesen in den Dialog treten.
-
-**Interaktive Simulation:**
-Versuchen Sie im folgenden Terminal, das Modell durch suggestive Fragen ("Bestechung" oder Autoritäts-Bias) zu falschen Aussagen zu verleiten.
-
-<div class="module-placeholder" data-module="sycophancy-trap"></div>
+**Das Problem:** Wenn wir einem LLM unstrukturierte Projektdaten geben, "vergisst" es Details in der Mitte. Wir müssen Informationen kuratieren.
 
 ---
 
-## 3. Die Methode: Promptotyping
+## 3. Die Methode am Beispiel HerData
 
-Promptotyping strukturiert die Entwicklung in sechs konsekutive Phasen. Jede Phase endet mit einem **Savepoint** (validiertes Artefakt).
+Promptotyping strukturiert die Entwicklung in Phasen. Wir demonstrieren dies am Projekt **HerData**, einer Plattform zur Sichtbarmachung von Frauen in Goethes Korrespondenz.
 
-### 3.1 Das Phasenmodell
+### Phase: Distillation (Das externe Gedächtnis)
 
-1. **CONTEXT (README.md)**: Erfasst Projektziele und Constraints.
-2. **DATA (DATA.md)**: Spezifiziert Datenstrukturen und Ontologien.
-3. **EXPLORATION**: Experimentelle Phase zur technischen Klärung (Wegwerf-Code).
-4. **REQUIREMENTS**: Formalisierung der Anforderungen basierend auf Exploration.
-5. **IMPLEMENTATION (INSTRUCTIONS.md)**: Detaillierte Anweisungen. Kritischste Phase zur Vermeidung von Fehlern.
-6. **PROTOTYPE**: Generierung des finalen Codes.
-
-### 3.2 Dokumentation als externes Gedächtnis
-
-Da LLMs kein persistentes Gedächtnis haben, fungieren die Markdown-Dokumente als "externer Hippocampus".
+Statt dem Modell 15.000 Briefe roh zu geben (was zu Context Rot führt), haben wir im Projekt HerData eine **Hybrid-Strategie** entwickelt und in `DATA.md` dokumentiert: Ein kuratierter Kern von 448 Frauen mit hoher Datendichte wird mit den Rohdaten verknüpft.
 
 **Interaktive Exploration:**
-Untersuchen Sie hier die Struktur eines realen "Promptotyping Vaults" und navigieren Sie durch die Dokumente, die als Context Injection dienen.
+Untersuchen Sie hier den echten **HerData Vault**. Sehen Sie in `DECISIONS.md`, wie wir uns gegen den Vollbestand (Quantität) und für den kuratierten Export (Qualität) entschieden haben.
 
 <div class="module-placeholder" data-module="vault-explorer"></div>
 
+### Source Available Literacy
+
+Die Dateien im Vault sind keine tote Dokumentation, sondern der **Bauplan**. `JOURNAL.md` enthält die Entwicklungshistorie über 22 Sessions, die den Code generierten.
+
 ---
 
-## 4. Fallstudien
+## 4. Qualitätssicherung: Der Critical Expert
 
-Die Methode wurde in sieben Projekten validiert. Hier eine Auswahl der Ergebnisse:
+KI neigt zu **Sycophancy** (dem Nutzer nach dem Mund reden).
 
+<div class="module-placeholder" data-module="sycophancy-trap"></div>
+
+### Lösung: Provenance Tracking
+
+Im HerData-Projekt haben wir das "Sycophancy"-Risiko durch ein striktes **Provenance-System** gelöst. Der *Critical Expert* verlässt sich nicht auf den Output, sondern prüft die Herkunft.
+
+Wie in `DATA.md` dokumentiert, speichert das System für jedes Feld (z.B. Geburtsdatum) den exakten XML-Pfad der Quelle. **3.695 Provenienz-Einträge** dokumentieren die Herkunft jedes Datenpunkts. Das ist "Deep Grounding" statt "Vibe Coding".
+
+---
+
+## 5. Fallstudien
+
+Die Methode wurde in sieben Projekten validiert. HerData ist das Flaggschiff-Projekt, das zeigt, wie 14.856 Zeilen Code in 22 Sessions entstehen können.
+
+<div class="use-case-placeholder" data-id="herdata"></div>
 <div class="use-case-placeholder" data-id="realonline"></div>
 <div class="use-case-placeholder" data-id="lucina"></div>
-<div class="use-case-placeholder" data-id="cvma"></div>
-
-In unserer Erfahrung zeigten Projekte mit **5 bis 7 Dokumenten** die beste Balance. Weniger führte zu Chaos (siehe Stefan Zweig Digital), mehr zu administrativem Overhead (siehe Lucina).
-
----
-
-## 5. Methodische Einordnung
-
-### 5.1 Vibe Coding vs. Agentic Coding
-
-Die aktuelle Forschung unterscheidet zwei Pole:
-* **Vibe Coding** (Karpathy, 2025): Intuitiv, schnell, menschzentriert, aber fehleranfällig.
-* **Agentic Coding** (Sapkota et al., 2025): Autonome Agenten planen und testen selbstständig.
-
-**Promptotyping** positioniert sich als pragmatische Brücke. Es nutzt die Geschwindigkeit von Vibe Coding in der *Exploration*, verlangt aber die Strenge von Agentic Coding in der *Implementation* durch den **Critical Expert in the Loop**.
 
 ---
 
 ## 6. Fazit
 
-Promptotyping ist keine Software, sondern eine Haltung. Es verschiebt die Kompetenz von "Code schreiben" zu "Kontext kuratieren" (**Context Engineering**).
+Promptotyping transformiert Forschende von "Autoren" zu "Architekten".
 
-Die Zukunft der Digital Humanities liegt nicht im blinden Vertrauen auf KI ("Vibe"), sondern in der Fähigkeit, KI durch strukturierte Sprache präzise zu steuern.
+Das Projekt HerData beweist: Wenn wir den Kontext beherrschen (**Context Engineering**) und die Qualität sichern (**Critical Expert**), wird KI zum mächtigen Werkzeug der Digital Humanities.
+
+**Die Zukunft gehört nicht dem intuitiven "Vibing", sondern dem methodischen "Promptotyping".**
 
 ---
 
-## Literatur
-
-* Bamman, D., et al. (2024). *The Impact of Language Models on the Humanities, and Vice-Versa*. IDEALS.
-* Chen, W., et al. (2025). *From Yes-Men to Truth-Tellers: Addressing Sycophancy in Large Language Models*. arXiv preprint.
-* Chen, Z., et al. (2025). *Promptware Engineering: Software Engineering for LLM Prompt Development*. arXiv:2503.02400.
-* Chroma (2025). *Context Rot: How Increasing Input Tokens Impacts LLM Performance*. Technical Report.
-* Karpathy, A. (2025). "Vibe Coding". Blog Post, Feb 2025.
-* MDPI (2025). *AI-Driven Innovations in Software Engineering: A Review of Current Practices and Future Directions*. Applied Sciences, 15(3).
-* Pollin, C. (2025). *Promptotyping: Von der Idee zur Anwendung*. Digital Humanities Craft Blog.
-* Sapkota, R., et al. (2025). *Vibe Coding vs. Agentic Coding: Fundamentals and Practical Implications of Agentic AI*. arXiv:2505.19443.
+<div class="paper-meta-card">
+  <div class="meta-abstract">
+    <h3>Paper-Metadaten</h3>
+    <p><strong>Autor:</strong> Christopher Pollin</p>
+    <p><strong>Institution:</strong> Zentrum für Informationsmodellierung, Universität Graz</p>
+    <p><strong>Kontext:</strong> Praxisbericht aus 22 Sessions LLM-assistierter Entwicklung (HerData)</p>
+    <p><strong>Technik:</strong> Vanilla JS, MapLibre GL JS, ECharts, Cytoscape.js, Python Pipeline</p>
+    <p><strong>Entwicklungszeit:</strong> 60 Stunden über 22 Sessions (HerData)</p>
+  </div>
+  <div class="meta-actions">
+    <a href="https://github.com/chpollin/HerData" class="meta-btn primary" target="_blank">
+      <span>💻</span>
+      <span class="btn-label">GitHub Repository</span>
+    </a>
+    <a href="https://chpollin.github.io/HerData/" class="meta-btn" target="_blank">
+      <span>🌐</span>
+      <span class="btn-label">Live Demo (HerData)</span>
+    </a>
+  </div>
+</div>
