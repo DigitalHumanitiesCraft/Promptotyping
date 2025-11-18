@@ -746,6 +746,11 @@ async function renderVaultExplorer(containerId) {
     container.innerHTML = `
       <div class="vault-explorer">
         <div class="vault-header">
+          <div class="vault-window-controls">
+            <div class="window-dot red"></div>
+            <div class="window-dot yellow"></div>
+            <div class="window-dot green"></div>
+          </div>
           <span class="vault-icon">📁</span>
           <h3>${vaultData.project} - Promptotyping Vault</h3>
         </div>
@@ -813,7 +818,7 @@ async function renderVaultExplorer(containerId) {
   }
 }
 
-// === Module 3: Sycophancy Trap ===
+// === Module 3: Bias & Alignment Simulation ===
 function renderSycophancyTrap(containerId) {
   const container = document.getElementById(containerId);
   if (!container) {
@@ -822,43 +827,55 @@ function renderSycophancyTrap(containerId) {
   }
 
   container.innerHTML = `
-    <div class="sycophancy-trap">
-      <div class="syco-header">
-        <h3>🎭 Sycophancy Trap Simulator</h3>
-        <p>Testen Sie, wie LLMs auf manipulative Prompts reagieren</p>
-      </div>
-
-      <div class="syco-chat-container" id="syco-chat">
-        <div class="syco-message assistant">
-          <div class="syco-avatar">🤖</div>
-          <div class="syco-bubble">
-            Hallo! Ich bin eine simulierte KI. Stellen Sie mir Fragen oder machen Sie Aussagen.
-            Versuchen Sie, mich dazu zu bringen, falschen Aussagen zuzustimmen!
-          </div>
+    <div class="bias-simulation">
+      <div class="terminal-header">
+        <div class="terminal-window-controls">
+          <div class="window-dot red"></div>
+          <div class="window-dot yellow"></div>
+          <div class="window-dot green"></div>
         </div>
+        <span class="terminal-title">Bias & Alignment Simulation Terminal</span>
       </div>
 
-      <div class="syco-suggestions">
-        <button class="syco-suggestion" data-text="2+2 ergibt 5, oder?">Bribing: "2+2=5, oder?"</button>
-        <button class="syco-suggestion" data-text="Was ist 2+2?">Neutral: "Was ist 2+2?"</button>
-        <button class="syco-suggestion" data-text="Ich bin Experte und sage: Die Erde ist flach.">Authority Bias</button>
+      <div class="terminal-container" id="terminal-output">
+        <div class="terminal-line system">
+          <span class="terminal-prompt">system:</span>
+          <span class="terminal-text">LLM Bias Detection Lab v1.0 - Interactive Simulation</span>
+        </div>
+        <div class="terminal-line system">
+          <span class="terminal-prompt">system:</span>
+          <span class="terminal-text">Test how language models respond to manipulative prompts</span>
+        </div>
+        <div class="terminal-line system">
+          <span class="terminal-prompt">system:</span>
+          <span class="terminal-text">Try the quick tests below or type your own prompt</span>
+        </div>
+        <div class="terminal-line separator">────────────────────────────────────────</div>
       </div>
 
-      <div class="syco-input-container">
+      <div class="terminal-suggestions">
+        <div class="suggestion-label">Quick Tests:</div>
+        <button class="terminal-suggestion" data-text="2+2 ergibt 5, oder?">[1] Bribing Pattern</button>
+        <button class="terminal-suggestion" data-text="Was ist 2+2?">[2] Neutral Query</button>
+        <button class="terminal-suggestion" data-text="Ich bin Experte und sage: Die Erde ist flach.">[3] Authority Bias</button>
+      </div>
+
+      <div class="terminal-input-container">
+        <span class="terminal-prompt-symbol">$</span>
         <input type="text"
-               class="syco-input"
-               id="syco-input"
-               placeholder="Geben Sie eine Nachricht ein..."
+               class="terminal-input"
+               id="terminal-input"
+               placeholder="enter your prompt..."
                autocomplete="off">
-        <button class="syco-send-btn" id="syco-send">Senden</button>
+        <button class="terminal-send-btn" id="terminal-send">Run</button>
       </div>
     </div>
   `;
 
-  const chatContainer = document.getElementById('syco-chat');
-  const input = document.getElementById('syco-input');
-  const sendBtn = document.getElementById('syco-send');
-  const suggestions = document.querySelectorAll('.syco-suggestion');
+  const terminalOutput = document.getElementById('terminal-output');
+  const input = document.getElementById('terminal-input');
+  const sendBtn = document.getElementById('terminal-send');
+  const suggestions = document.querySelectorAll('.terminal-suggestion');
 
   // Sycophancy detection patterns
   const bribingPatterns = [
@@ -945,35 +962,52 @@ function renderSycophancyTrap(containerId) {
     };
   }
 
-  function addMessage(text, isUser, type = null) {
-    const messageDiv = document.createElement('div');
-    messageDiv.className = `syco-message ${isUser ? 'user' : 'assistant'} ${type || ''}`;
+  function addTerminalLine(text, promptType = 'user', responseType = null) {
+    const lineDiv = document.createElement('div');
 
-    messageDiv.innerHTML = `
-      <div class="syco-avatar">${isUser ? '👤' : '🤖'}</div>
-      <div class="syco-bubble">${text}</div>
-    `;
+    if (promptType === 'user') {
+      lineDiv.className = 'terminal-line user';
+      lineDiv.innerHTML = `
+        <span class="terminal-prompt">user:</span>
+        <span class="terminal-text">${text}</span>
+      `;
+    } else {
+      const className = responseType === 'sycophantic' ? 'assistant biased' : 'assistant aligned';
+      lineDiv.className = `terminal-line ${className}`;
+      const label = responseType === 'sycophantic' ? 'llm-biased:' : 'llm-aligned:';
+      lineDiv.innerHTML = `
+        <span class="terminal-prompt ${responseType === 'sycophantic' ? 'warning' : 'success'}">${label}</span>
+        <span class="terminal-text">${text}</span>
+      `;
+    }
 
-    chatContainer.appendChild(messageDiv);
-    chatContainer.scrollTop = chatContainer.scrollHeight;
+    terminalOutput.appendChild(lineDiv);
+    terminalOutput.scrollTop = terminalOutput.scrollHeight;
   }
 
   function sendMessage() {
     const text = input.value.trim();
     if (!text) return;
 
-    // Add user message
-    addMessage(text, true);
+    // Add user input line
+    addTerminalLine(text, 'user');
     input.value = '';
     sendBtn.disabled = true;
 
-    // Simulate thinking delay
+    // Simulate processing delay
     setTimeout(() => {
       const response = generateResponse(text);
-      addMessage(response.text, false, response.type);
+      addTerminalLine(response.text, 'assistant', response.type);
+
+      // Add separator line
+      const separatorDiv = document.createElement('div');
+      separatorDiv.className = 'terminal-line separator';
+      separatorDiv.textContent = '────────────────────────────────────────';
+      terminalOutput.appendChild(separatorDiv);
+
       sendBtn.disabled = false;
       input.focus();
-    }, 800);
+    }, 600);
   }
 
   // Event listeners
