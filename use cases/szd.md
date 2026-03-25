@@ -1,14 +1,21 @@
+---
+type: use-case
+tags: [promptotyping, digital-humanities, original]
+status: complete
+created: 2025-10-01
+---
+
 # Use Case: Stefan Zweig Digital Annotation Tool
 
 ## Kontext
 
 Timeline-basiertes Annotationstool für die digitale Nachlassrekonstruktion Stefan Zweig Digital des Literaturarchivs Salzburg. Das Tool ermöglicht Forscher:innen die Annotation von Korrespondenzdaten mit Forschungsstatus, Tags und Notizen. Direkt-Integration mit dem GAMS (Geisteswissenschaftliches Asset Management System) für Zugriff auf XML-strukturierte Metadaten. Browserbasierte Single Page Application ohne externe Abhängigkeiten. LocalStorage-basierte Datenhaltung mit JSON Export/Import für individuelle Forschungsarbeit. Experimentelle Form des Promptotyping als "strukturiertes Vibe Coding" mit Critical-Expert-in-the-Loop Ansatz demonstriert die Möglichkeiten von LLM-gestützter Rapid-Prototyping für Digital Humanities Tools.
 
-- **Stand:** 1. Promptotyping Iteration (experimentell)
-- **Zeitinvestition (geschätzt):** 2 h
-- **Umfang:** Korrespondenzdaten aus Stefan Zweig Digital (XML-Metadaten mit Titel, Datum, Ersteller, Mitwirkende)
-- **Repository:** [github.com/DigitalHumanitiesCraft/excellence](https://github.com/DigitalHumanitiesCraft/excellence/tree/main/promptotyping/szd-annotation-timeline)
-- **Demo:** [dhcraft.org/excellence/promptotyping/szd-annotation-timeline](https://dhcraft.org/excellence/promptotyping/szd-annotation-timeline/)
+- Stand: 1. Promptotyping Iteration (experimentell)
+- Zeitinvestition (geschätzt): 2 h
+- Umfang: Korrespondenzdaten aus Stefan Zweig Digital (XML-Metadaten mit Titel, Datum, Ersteller, Mitwirkende)
+- Repository: [github.com/DigitalHumanitiesCraft/excellence](https://github.com/DigitalHumanitiesCraft/excellence/tree/main/promptotyping/szd-annotation-timeline)
+- Demo: [dhcraft.org/excellence/promptotyping/szd-annotation-timeline](https://dhcraft.org/excellence/promptotyping/szd-annotation-timeline/)
 - Blog: https://dhcraft.org/excellence/blog/Critical-Vibing-Claude-4/
 
 ## LLMs und Tools
@@ -29,5 +36,9 @@ Timeline-basiertes Annotationstool für die digitale Nachlassrekonstruktion Stef
 ## Promptotyping Documents
 
 - Keine separaten Promptotyping Documents erstellt (experimenteller Ansatz)
-- Alle Anforderungen in einem einzigen strukturierten Prompt mit XML-Beispieldaten
-- README.md mit Projektdokumentation (nachträglich erstellt)
+- Alle Anforderungen in einem einzigen strukturierten Prompt mit XML-Beispieldaten (K/A)
+- README.md (K) — Projektdokumentation (nachträglich erstellt)
+
+## Use Case Type
+
+Data exploration (early experiment, 2h development)

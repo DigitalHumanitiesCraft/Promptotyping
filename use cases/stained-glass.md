@@ -1,14 +1,21 @@
+---
+type: use-case
+tags: [promptotyping, museum, original]
+status: complete
+created: 2025-09-01
+---
+
 # Use Case: CVMA Stained Glass Annotation Tool
 
 ## Kontext
 Wissenschaftliches Annotations-Tool für mittelalterliche Glasfenster-Artefakte aus dem Corpus Vitrearum Medii Aevi (CVMA). Integration der hochqualitativen Datenmodellierung aus dem NFDI4Culture Knowledge Graph ermöglicht nahtlose Transformation in eine benutzerfreundliche Forschungsanwendung. Multi-Kriterien-Filterung nach Periode, geographischer Lage, ikonographischen Subjekten und Elementtypen. Sechs Annotationskategorien mit Export/Import-Funktionalität für wissenschaftliche Auswertungen. SPARQL-basierter Datenexport aus dem Knowledge Graph mit iterativer Query-Optimierung demonstriert Co-Intelligence zwischen Mensch und KI. Python-basierte Datenverarbeitung von JSON-LD Strukturen (29MB CVMA Datensatz) für optimale Performance.
 
-- **Stand:** 2. Promptotyping Iteration
-- **Zeitinvestition (geschätzt):** 8 h
-- **Umfang:** CVMA JSON-LD Datensatz mit Glasfenster-Metadaten
-- **Repository:** [github.com/chpollin/stained-glass-metadata-annotation-tool](https://github.com/chpollin/stained-glass-metadata-annotation-tool)
-- **Demo:** [chpollin.github.io/stained-glass-metadata-annotation-tool/docs/version-2](https://chpollin.github.io/stained-glass-metadata-annotation-tool/docs/version-2/)
-- **Slides:** [Google Presentation](https://docs.google.com/presentation/d/1wjVx-yLqZXBjw1me-Ap1q6agE_Vj0Te_5CFN3PmW0kk/edit?usp=sharing)
+- Stand: 2. Promptotyping Iteration
+- Zeitinvestition (geschätzt): 8 h
+- Umfang: CVMA JSON-LD Datensatz mit Glasfenster-Metadaten
+- Repository: [github.com/chpollin/stained-glass-metadata-annotation-tool](https://github.com/chpollin/stained-glass-metadata-annotation-tool)
+- Demo: [chpollin.github.io/stained-glass-metadata-annotation-tool/docs/version-2](https://chpollin.github.io/stained-glass-metadata-annotation-tool/docs/version-2/)
+- Slides: [Google Presentation](https://docs.google.com/presentation/d/1wjVx-yLqZXBjw1me-Ap1q6agE_Vj0Te_5CFN3PmW0kk/edit?usp=sharing)
 
 ## LLMs und Tools
 
@@ -28,8 +35,12 @@ Wissenschaftliches Annotations-Tool für mittelalterliche Glasfenster-Artefakte 
 
 ## Promptotyping Documents
 
-- **DATA.md** - Umfassende CVMA JSON-LD Datenstruktur-Dokumentation
-- **DESIGN.md** - UX/UI Spezifikation für Annotations-Interface
-- **IMPLEMENTATION.md** - Technische Implementierungs-Details
-- **REQUIREMENTS.md** - Anforderungs-Spezifikation für Annotations-Tool
-- **README.md** - Projektdokumentation
+- DATA.md (K) — CVMA JSON-LD Datenstruktur-Dokumentation
+- DESIGN.md (K/A) — UX/UI Spezifikation für Annotations-Interface
+- IMPLEMENTATION.md (A) — Technische Implementierungs-Details
+- REQUIREMENTS.md (K) — Anforderungs-Spezifikation für Annotations-Tool
+- README.md (K) — Projektdokumentation
+
+## Use Case Type
+
+Data exploration (annotation tool for structured metadata)
