@@ -5,7 +5,7 @@ project:
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 status: active
 language: de
-version: 0.1
+version: 0.2
 created: 2026-05-09
 updated: 2026-05-09
 authors: [Christopher Pollin]
@@ -17,8 +17,12 @@ template:
   name: Vorlage Specification
   version: 0.1
   url: https://dhcraft.org/Promptotyping/#vorlage-specification-v0.1
-topics: ["[[Requirements Engineering]]", "[[Decision Records]]", "[[Information Visualisation]]"]
-related: [INDEX, project, data, architecture, design, journal]
+topics: ["[[Requirements Engineering]]", "[[Decision Records]]"]
+knowledge-sources:
+  standards:
+    Schema.org ScholarlyArticle: https://schema.org/ScholarlyArticle
+    YAML Frontmatter: https://yaml.org/spec/1.2.2/
+related: [INDEX, project, architecture, design, journal]
 ---
 
 # Specification
@@ -37,7 +41,20 @@ Jeder Absatz im Paper trägt eine Phasen-Klasse (Preparation, Exploration & Mapp
 Acht Vorlagen sind unter versionierten Ankern adressierbar (`#vorlage-data-v0.2`, `#vorlage-journal-v0.1`, ...). Pro Vorlage existiert ein Latest-Alias (`#vorlage-data` zeigt auf neueste Version). Akzeptanzkriterium: `https://dhcraft.org/Promptotyping/#vorlage-data-v0.2` springt zur Vorlage und öffnet automatisch das Side-Panel mit der vollen Vorlagen-Spec.
 
 ### A4 — Subpath-URL-Aliase
-Maschinenlesbare Subpath-URLs wie `/vorlagen/data/v0.2` rewriten auf den entsprechenden Anker. Akzeptanzkriterium: `https://dhcraft.org/Promptotyping/vorlagen/data/v0.2` lädt dieselbe Single-Page mit Auto-Scroll zum Anker `#vorlage-data-v0.2`. Implementation per `index.html`-Routing oder GitHub-Pages-Konfiguration.
+Maschinenlesbare Subpath-URLs rewriten auf die entsprechenden Anker. Konvention für alle Anker-Typen:
+
+| Anker-Typ | Anker-Form | Subpath-Alias |
+|---|---|---|
+| Vorlage versioniert | `#vorlage-{name}-{version}` | `/vorlagen/{name}/{version}` |
+| Vorlage Latest | `#vorlage-{name}` | `/vorlagen/{name}` |
+| Konzept | `#konzept-{name}` | `/konzepte/{name}` |
+| Case Study | `#case-{name}` | `/case-studies/{name}` |
+| Konvention | `#konvention-{version}` | `/konvention/{version}` |
+| Glossar | `#glossar` | `/glossar` |
+| Literatur | `#literatur` | `/literatur` |
+| Paper-Sektion | `#paper-section-{n}` | `/paper/{n}` |
+
+Akzeptanzkriterium: `https://dhcraft.org/Promptotyping/vorlagen/data/v0.2` lädt dieselbe Single-Page mit Auto-Scroll zum Anker `#vorlage-data-v0.2`. Implementation per `404.html`-Trick (siehe [architecture.md](architecture.md)).
 
 ### A5 — `template:`-Frontmatter-Feld als Maschinenadresse
 Promptotyping-Repos können in ihren `knowledge/`-Dokumenten ein Frontmatter-Feld `template: { name, version, url }` führen, dessen `url` auf einen Vorlagen-Anker dieser Site zeigt. Akzeptanzkriterium: Ein Coding-Agent, der einen `template:`-URI sieht, kann ihn aufrufen und bekommt die maßgebliche Vorlagen-Spezifikation gerendert.
@@ -50,6 +67,8 @@ Im Paper-Lesefluss (Section 4) erscheinen kompakte Case-Study-Karten (Name, Genr
 
 ### A8 — YouTube-Videos eingebettet
 Teil 1 als Hero-Embed oben (vor Paper-Section 1). Teil 2 in Paper-Section 4 als didaktischer Anker bei der VetMedAI-Wissensbilanz. Akzeptanzkriterium: Beide Videos laufen aus der `youtube-nocookie.com`-Variante (Datenschutz), kein Tracking ohne Consent.
+
+Phasen-Provenance-Lane bei Hero-Video: Das Hero-Video hat keine Phasen-Klasse — die Lane beginnt mit dem ersten Paper-Absatz. Begründung: Das Video ist Meta-Material *über* die Methode, nicht ein Methode-Schritt selbst. Eine Lane an einem Video-Embed wäre ohnehin visuell sinnlos (kein Text, an dem sie verankern könnte). Bei Teil 2 in Section 4 gilt dasselbe: das Video sitzt zwischen zwei Absätzen, die ihre eigene Phasen-Klasse tragen.
 
 ### A9 — DHCraft-Designsystem konsequent
 Hellgrau `#d5d5d5` als Akzent, Schwarz auf Weiß, Inter als Font, Consolas für Code. Keine Akzentlinien, keine Farbflut, keine dekorativen Elemente. Phasen-Provenance-Lane in monochromen Stufen `#2a2a2a` bis `#b8b8b8`. Mobile-Layout kollabiert Side-Panels zu Bottom-Sheets, Phasen-Lane wird zur Top-Bar.
@@ -103,11 +122,11 @@ Geordnete Liste am Seitenende. Inline-Verweise im Paper als Anker-Sprung-Ziel. P
 
 **Kontext.** Coding-Agenten parsen URLs strukturell. `#vorlage-data-v0.2` sieht wie ein Anker aus; `/vorlagen/data/v0.2` wie ein Pfad. Beides sollte funktionieren.
 
-**Wahl.** Subpath-URLs sind Aliase, die per `index.html`-Routing auf Anker geleitet werden.
+**Wahl.** Subpath-URLs sind Aliase, die per `404.html`-Routing auf Anker geleitet werden (siehe [architecture.md](architecture.md), Sektion URL-Routing).
 
-**Begründung.** Robust für Coding-Agenten, lesbar für Menschen.
+**Begründung.** Robust für Coding-Agenten, die strukturelle URL-Pfade kennen. Lesbar für Menschen. Anker-Form bleibt der kanonische Weg, Subpath-Form ist die Bequemlichkeitsschicht.
 
-**Effekt.** Routing-Logik in JavaScript (auf `DOMContentLoaded` prüft die URL und scrollt zum Anker).
+**Effekt.** Eine zusätzliche `404.html`-Datei im Repo-Root mit JavaScript-basiertem Pfad-zu-Anker-Mapping. Konvention für alle Anker-Typen ist in A4 dokumentiert.
 
 ### ADR-4: Phasen-Provenance-Lane als ästhetischer Kniff
 
@@ -147,7 +166,7 @@ Geordnete Liste am Seitenende. Inline-Verweise im Paper als Anker-Sprung-Ziel. P
 
 **Begründung.** Zeigt unmittelbar, wie Repos die Site nutzen. Macht die Maschinenlesbarkeit konkret.
 
-**Effekt.** ~100 Zeilen JS, eingebettet in die Vorlagen-Sektion.
+**Effekt.** Ein eigenständiges JS-Modul `assets/js/modules/frontmatter-inspector.js`, eingebettet in die Vorlagen-Sektion. Implementations-Details in [architecture.md](architecture.md).
 
 ### ADR-8: Case-Study-Filter als Modul
 
@@ -157,7 +176,7 @@ Geordnete Liste am Seitenende. Inline-Verweise im Paper als Anker-Sprung-Ziel. P
 
 **Begründung.** Praktisch nötig bei 24+ Karten. Sortierung optional.
 
-**Effekt.** ~50 Zeilen JS, eingebettet in die Case-Study-Sektion.
+**Effekt.** Ein eigenständiges JS-Modul `assets/js/modules/case-study-filter.js`. Datenquelle ist `data/case-studies.json`.
 
 ## Was nicht in dieser Spec steht
 

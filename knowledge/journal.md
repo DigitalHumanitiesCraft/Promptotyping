@@ -5,7 +5,7 @@ project:
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 status: active
 language: de
-version: 0.1
+version: 0.2
 created: 2026-05-09
 updated: 2026-05-09
 authors: [Christopher Pollin]
@@ -17,27 +17,24 @@ template:
   name: Vorlage Journal
   version: 0.1
   url: https://dhcraft.org/Promptotyping/#vorlage-journal-v0.1
-related: [INDEX, project, data, specification, architecture, design]
+related: [INDEX, project, specification, architecture, design]
 ---
 
 # Journal
 
 Chronologische Dokumentation des Refactor-Verlaufs.
 
-## 2026-05-09 — Phase 0 abgeschlossen, Phase 2 und 3 durchlaufen
+## 2026-05-09 — Phasen 0, 2, 3 in einer Session, danach Critical-Expert-Korrektur
 
 ### Ziel der Session
 
-Plan-Dokument im Vault unter `C:\Users\Chrisi\.claude\plans\ich-m-chte-dass-du-lovely-kazoo.md` umsetzen. Phasen 0, 2, 3 in einer zusammenhängenden Session, beginnend im Vault, dann ins Repo wechselnd.
+Plan-Dokument im Vault unter `C:\Users\Chrisi\.claude\plans\ich-m-chte-dass-du-lovely-kazoo.md` umsetzen. Phasen 0, 2, 3 in einer zusammenhängenden Session, beginnend im Vault, dann ins Repo wechselnd. Anschließend Critical-Expert-Prüfung der angelegten Wissensbasis.
 
 ### Phase 0 — Vault-Reparatur
 
-Korrektur der Source-of-Truth-Formulierung in mehreren Vault-Dokumenten. Die Aussage *"Promptotyping Documents sind die Source of Truth, Code ist deterministisch erzeugbar"* wurde im Wissensdokument [Promptotyping](Applied%20Generative%20AI/Promptotyping.md) als methodisch ungenau identifiziert — das Pollin-2026-Paper formuliert wörtlich: *"the Promptotyping Documents ... are the primary artifact. The prototype is a functional by-product that may be discarded and regenerated from the documents."* Die paper-konforme Aussage trägt damit weniger als die "Source of Truth"-Rhetorik suggeriert.
+Korrektur der Source-of-Truth-Formulierung in mehreren Vault-Dokumenten. Die Aussage *"Promptotyping Documents sind die Source of Truth, Code ist deterministisch erzeugbar"* wurde im Wissensdokument `Applied Generative AI/Promptotyping.md` als methodisch ungenau identifiziert — das Pollin-2026-Paper formuliert wörtlich: *"the Promptotyping Documents ... are the primary artifact. The prototype is a functional by-product that may be discarded and regenerated from the documents."* Die paper-konforme Aussage trägt damit weniger als die "Source of Truth"-Rhetorik suggeriert.
 
-Korrigiert:
-- `Applied Generative AI/Promptotyping.md` (Summary, Synthese)
-- `Projects/Promptotyping/Vibe Coding, Promptotyping und AI Stewardship.md` (vier Stellen, plus Wikilinks zur atomaren Quelle eingefügt)
-- `Patreon/Proto-AGI rollt schneller heran als erwartet.md` (eine Stelle)
+Korrigiert in drei Vault-Dateien (sieben Stellen): `Applied Generative AI/Promptotyping.md` (Summary, Synthese), `Projects/Promptotyping/Vibe Coding, Promptotyping und AI Stewardship.md` (vier Stellen, plus zwei Wikilinks zur atomaren Quelle), `Patreon/Proto-AGI rollt schneller heran als erwartet.md` (eine Stelle).
 
 Bewusst nicht angetastet: Vault-Operationen-Dokumente (verwenden "Source of Truth" für Repos/Schemas in anderer Bedeutung), historische Vortragsfolien (Leipzig 2025-12-02, Stand-Snapshot), VetMedAI-Archiv-Glossar.
 
@@ -49,58 +46,95 @@ Entscheidung mit dem Critical Expert: **Radikaler Schnitt statt Archivierung**. 
 
 Gelöscht:
 - Top-Level: `README.md`, `DATA.md`, `DESIGN.md`, `INSTRUCTIONS.md`, `JOURNAL.md`, `REQUIREMENTS.md`, `paper-content.md`, `paper-draft.md`, `CHANGELOG_SESSION.md`, `install.sh` (VoiceMode-Installer, fremder Inhalt), `go` (leere Datei)
-- Verzeichnisse: `herdata-knowledge/`, `paper-knowledge/`, `prototype/`, `public/`, `use cases/`, `.claude/worktrees/`, `_archive/` (zwischendrin angelegt, dann obsolet)
+- Verzeichnisse: `herdata-knowledge/`, `paper-knowledge/`, `prototype/`, `public/`, `use cases/`, `.claude/worktrees/`
 
-Behalten:
-- `assets/promptotyping-logo.png` — Logo bleibt
-- `.claude/` (außer worktrees), `.git/`
+Behalten: `assets/promptotyping-logo.png`, `.claude/` (außer worktrees), `.git/`.
 
-Gesichert als Schablone für späteren Aufbau:
-- `prototype/data.json` → `c:\tmp\promptotyping-old-data-schablone.json` (18 Case-Studies-JSON aus Living Paper, dient als Struktur-Vorlage für die neue `data/case-studies.json`)
+Gesichert als Schablone: `prototype/data.json` → `c:\tmp\promptotyping-old-data-schablone.json` (18 Case-Studies-JSON aus Living Paper, dient als Format-Vorlage für die neue `data/case-studies.json`).
 
-### Phase 3 — knowledge/-Wissensbasis befüllt
+### Phase 3 — knowledge/-Wissensbasis erste Fassung
 
-Sieben Promptotyping-Documents nach den Vault-Vorlagen geschrieben. Jedes Dokument trägt das Frontmatter-Pflichtkern aus der Konvention plus das neu eingeführte `template:`-Feld, das auf die zukünftigen Site-Anker zeigt.
+Sieben Promptotyping-Documents nach den Vault-Vorlagen geschrieben:
+1. `INDEX.md` (Vorlage Index v0.1)
+2. `project.md` (Vorlage Projekt-Wissensdokument v0.1)
+3. `data.md` (Vorlage Datengrundlage v0.2)
+4. `specification.md` (Vorlage Specification v0.1)
+5. `architecture.md` (Vorlage Architecture v0.1)
+6. `design.md` (Vorlage Design v0.1)
+7. `journal.md` (Vorlage Journal v0.1)
 
-Documents in der Reihenfolge des Schreibens:
-1. `INDEX.md` (nach Vorlage Index v0.1) — Navigation, Begriffslexikon, Verhältnis zur Vault-Wissensbasis
-2. `project.md` (nach Vorlage Projekt-Wissensdokument v0.1) — Identität, Adressaten, Scope, Outcome
-3. `data.md` (nach Vorlage Datengrundlage v0.2) — Substrat (Pollin 2026, Vault-Vorlagen, Case Studies, Videos), Spiegel-Pipeline, vier strukturelle Grenzen
-4. `specification.md` (nach Vorlage Specification v0.1) — 10 Anforderungen, Funktionsumfang pro Sektion, 8 ADRs
-5. `architecture.md` (nach Vorlage Architecture v0.1) — Vanilla-Stack, Datenfluss, URL-Routing, Subpath-Aliase via 404.html
-6. `design.md` (nach Vorlage Design v0.1) — DHCraft-Designsystem, ausführliche Phasen-Provenance-Lane-Spezifikation, Side-Panel-Verhalten
-7. `journal.md` (dieses Dokument) — Genese ab Refactor-Start
+Plus `CLAUDE.md` im Repo-Root als Action-Layer und neue knappe `README.md`.
 
-### Beobachtungen aus Phase 3
+Erster Commit auf `main` (`fe2d479`): 74 Dateien, +1.136 / −19.001 Zeilen.
 
-**Die `template:`-Feld-Adressierung wird wirklich substantiell**. Jedes der sieben Documents zeigt im Frontmatter auf seinen zukünftigen Site-Anker (`https://dhcraft.org/Promptotyping/#vorlage-data-v0.2` etc.). Die Adressierung ist meta-rekursiv: Die Wissensbasis dieses Repos verlinkt auf Vorlagen, die noch nicht existieren — die Site, die sie hosten wird, ist erst zu bauen. Das ist die Probe aufs Exempel der Methode: Wenn beim Implementieren der Site die Anker tatsächlich an den geplanten Stellen entstehen, hat die Wissensbasis Vorhersagekraft. Falls nicht, wird sie korrigiert.
+### Critical-Expert-Prüfung der Wissensbasis
 
-**Vorlage Datengrundlage v0.2 in der Praxis getestet**. Der `data.md` trägt die vier Pflichtsektionen (Gegenstand, Quellen, Modell, Grenzen) plus zwei optionale (Verhältnis zur externen Datenquelle, Workflow). Die optionale Sektion `Verzerrungen` trägt für dieses Projekt nicht — das ist gemäß Vorlage v0.2 explizit zulässig und dokumentiert. Das ist ein guter Validierungsfall: Die Vorlage funktioniert für Methodik-Material, nicht nur für historische Daten.
+Nach Anlage der Wissensbasis Prüfung gegen die Vorlagen-Konvention. Ergebnis: substanzielle Inkonsistenzen in mehreren Dokumenten. Die Prüfung folgt der Maßgabe der Konvention — *"Trigger pro optionaler Sektion prüfen"* — und stellt fest, dass auch die Vorlagen-Wahl als Ganzes triggerbedingt ist.
 
-**Specification mit 8 ADRs**. Die Promptotyping-Methode rät zu Decision Records statt eingebauten Begründungen — und tatsächlich: Die ADR-Form trägt das Reasoning besser als versteckte Implizita. Speziell ADR-6 (Vault-Explorer-Modul ganz weglassen) hätte ohne ADR-Form als beiläufige Designentscheidung später unklar gewirkt.
+Befunde:
 
-### Dead Ends und Korrekturen
+**Hauptbefund: Vorlage Datengrundlage trägt nicht.** Die Vorlage selbst sagt im Geltungsbereich: *"Die Vorlage trägt, sobald das Projekt Daten verarbeitet oder produziert. Bei reinen Tool-, Bibliotheks- oder Methoden-Repos entfällt sie; das Identitätsdokument trägt die Materialgrundlage dann selbst in einer kompakten Sektion."* Das Promptotyping-Repo verarbeitet keine Forschungsdaten — es spiegelt Wissen. Die Vorlage Datengrundlage hätte also nicht angewendet werden dürfen. Die Materialgrundlage gehört in `project.md`.
 
-**Erste Source-of-Truth-Korrektur war Symptombehandlung**. Ich hatte zunächst nur die Formulierungen ersetzt, ohne zu prüfen, ob die anderen Vault-Dokumente auch betroffen sind. Der Critical Expert wies darauf hin, dass bei sauberer Vault-Architektur nur ein Wissensdokument die Definition trägt und alle anderen verlinken. Korrektur: Wikilinks zu `[[Promptotyping]]` in den anderen Vault-Stellen ergänzt, Definitions-Texte aber kompakt gelassen (Aggregat-Dokumente brauchen Kurzform, sonst sind es Linklisten).
+**Weitere Befunde**:
+- Stand-Inkonsistenz zwischen `project.md` (sagte "Phase 3 läuft mit Anlage dieses Dokuments") und `journal.md` (sagte "Phase 3 abgeschlossen") — bei Lektüre nach Session-Ende verwirrend
+- Begriffslexikon in `INDEX.md` ohne mehrere konstitutive Begriffe (Frontmatter-Inspector, Case-Study-Filter, Subpath-Alias, Genre)
+- "Lese-Reihenfolge" in `INDEX.md` ohne Selbst-Erwähnung als Einstiegspunkt
+- A4 in `specification.md` nur für Vorlagen-Subpaths, nicht für andere Anker-Typen (Konzepte, Case Studies, Glossar)
+- A8 in `specification.md` ungelöste Frage zur Phasen-Klasse des Hero-Videos
+- ADR-7 in `specification.md` mit unsauberer Zeilenschätzung "~100 Zeilen JS"
+- Vault-Pfade in `data.md` falsch (relative Pfade `../../obsidian/`, real wäre `..\..\..\..\obsidian\`)
+- Custom-Extension für marked.js in `architecture.md` erwähnt, aber nicht spezifiziert
+- Lazy-Loading-Behauptung in `architecture.md` ohne Implementations-Spezifikation (IntersectionObserver fehlte)
+- JSON-Schema für `data/case-studies.json` in `architecture.md` nicht definiert
+- Spacing-System in `design.md` als "4px-Grid" beschrieben, faktisch 8px-Grid mit 4px-Halbschritt
+- Mobile-Layout in `design.md` nur erwähnt, nicht spezifiziert
+- Phasen-Klassen-Lücken (Code-Blöcke, Listen, Tabellen) in `design.md` nicht festgehalten
+- Frontmatter-Inkonsistenz: `topics:` und `knowledge-sources:` nicht überall sinnvoll gesetzt
+- `template:`-Feld zeigt auf nicht-existierende Anker (bewusst meta-rekursiv, aber funktional kaputt bis Sprint 1+2)
+- Selbstgefällige Aussagen in `journal.md` ("Das ist die Probe aufs Exempel der Methode")
 
-**Plan-Iteration**. Der initiale Plan war zu groß — sechs Top-Level-Sektionen, drei interaktive Module, zweisprachig, voller knowledge/-Aufwand. Nach Critical-Expert-Feedback radikal reduziert: Single-Page interaktives Paper, deutsch zuerst, zwei sinnvolle Module, knappe knowledge/-Wissensbasis. Aufwand-Schätzung sank von 33-44h auf 25-35h.
+### Phase 3.5 — Refactor der Wissensbasis (Vorlagen-Trigger-Korrektur)
 
-**Ästhetischer Kniff**. Erster Vorschlag (Knowledge Trace mit Vier-Phasen-Farbcodierung) wurde abgelehnt, weil ich die Methode falsch zitiert hatte ("Documents als Source of Truth", paper-konform aber: "primary artifact"). Korrigiert. Phasen-Provenance-Lane bleibt der Kniff, aber die Begründung wurde paper-konform reformuliert.
+Lösung für den Hauptbefund: **`data.md` löschen, Inhalt in `project.md` als Materialgrundlage-Sektion integrieren**. Sechs Documents statt sieben. Die Vorlage selbst empfiehlt diesen Weg explizit ("das Identitätsdokument trägt die Materialgrundlage dann selbst").
+
+Lösung für die anderen Befunde:
+- `project.md` Stand auf "Phase 3 abgeschlossen" gesetzt, konsistent mit `journal.md`
+- `INDEX.md` Begriffslexikon um sieben Begriffe erweitert (Frontmatter-Inspector, Case-Study-Filter, Subpath-Alias, Genre, `template:`-Feld plus Schärfung von "Vorlage" um Trigger-Logik)
+- `INDEX.md` Lese-Reihenfolge schärft Selbst-Erwähnung
+- `specification.md` A4 mit voller Subpath-Konvention für alle Anker-Typen (Tabelle)
+- `specification.md` A8 mit expliziter Phasen-Klassen-Behandlung für Hero-Video
+- `specification.md` ADR-7 ohne Zeilenschätzung, verweist auf `architecture.md` für Implementation
+- `architecture.md` mit vollständiger Custom-Extension-Spezifikation (Tokenizer + Renderer für marked.js v9)
+- `architecture.md` mit IntersectionObserver-basiertem Lazy-Loading-Code
+- `architecture.md` mit JSON-Schema für `data/case-studies.json`
+- `architecture.md` mit `404.html`-Routing-Code für alle Anker-Typen
+- `design.md` Spacing-System als "8px-Grid mit 4px-Halbschritt" korrigiert
+- `design.md` Mobile-Layout vollständig spezifiziert (Top-Bar mit IntersectionObserver, Bottom-Sheet mit Drag-Handle)
+- `design.md` Phasen-Klassen-Lücken explizit dokumentiert (Code-Blöcke etc. ohne Lane)
+- Alle Documents auf `version: 0.2` gehoben (Repo-weite Schema-Version)
+- Frontmatter-Konsistenz: `topics:` und `knowledge-sources:` selektiv ergänzt wo sinnvoll, weggelassen wo nicht trägt
+- `journal.md` Selbst-Lob entfernt, Beobachtungen sachlich formuliert
+
+### Beobachtungen
+
+**Die Critical-Expert-Prüfung war nötig**, nicht überflüssig. Eine LLM-generierte Wissensbasis kann substanziell, aber nicht selbstkonsistent sein. Die Prüfung fand zwölf inhaltliche Schwächen, eine davon strukturell (Vorlagen-Trigger). Ohne Prüfung wäre Phase 4 mit einer falsch fundierten Specification gestartet — speziell die fehlende JSON-Schema-Spezifikation und die fehlende Custom-Extension-Implementation hätten Sprint 1 oder 2 blockiert.
+
+**Vorlagen tragen nicht automatisch.** Die Methode verlangt Trigger-Prüfung pro Sektion und pro Vorlage. Die Vorlage Datengrundlage v0.2 hat einen klaren Trigger formuliert ("Daten verarbeitet oder produziert"). Beim ersten Anlauf habe ich diesen Trigger ignoriert — vermutlich, weil "data.md" als Dateiname so etabliert ist, dass die Frage nach dem Trigger nicht aktiv gestellt wurde. Der Critical Expert hat sie gestellt.
+
+**`template:`-Feld ist meta-rekursiv konstruktiv.** Die Verlinkung auf zukünftige Site-Anker zwingt, das Anker-Schema vor der Implementation festzulegen. In `specification.md` wird die Konvention für *alle* Anker-Typen definiert, was Sprint 1+2 die Arbeit erleichtert.
 
 ### Stand am Ende der Session
 
-Repo-Verzeichnis nach `ls -la`:
+Repo-Verzeichnis nach Refactor:
 ```
-.claude/      .git/      assets/     knowledge/    CLAUDE.md (folgt)    README.md (folgt)
+.claude/    .git/    assets/    knowledge/    CLAUDE.md    README.md
 ```
 
-`knowledge/` enthält sieben Documents, alle mit konsistentem Frontmatter, alle mit `template:`-Feld auf zukünftige Site-Anker. Die Wissensbasis ist die Specification, aus der Phase 4 Sprint 1 startet.
+`knowledge/` enthält **sechs** Documents (nicht sieben), alle auf `version: 0.2`. Die Wissensbasis ist die Specification, aus der Phase 4 Sprint 1 startet — diesmal mit gerechtfertigter Vorlagen-Wahl, vollständigem JSON-Schema, spezifizierter Custom-Extension und konsistentem Anker-Schema.
 
 ### Nächste Schritte
 
-1. `CLAUDE.md` im Repo-Root als Action-Layer schreiben
-2. Neue knappe `README.md` im Repo-Root
-3. Erster Commit auf `main` mit Message "Refactor: Repo zu interaktivem Paper, knowledge/-Wissensbasis angelegt, alter Stand entfernt"
-4. Phase 4 Sprint 1 in eigener Session: Site-Skeleton, Paper-Lesefluss, Phasen-Provenance-Lane
+1. Zweiter Commit auf `main` mit der Refactor-Korrektur
+2. Phase 4 Sprint 1 in eigener Session: Site-Skeleton, Paper-Lesefluss, Phasen-Provenance-Lane
 
-Die Session endet hier. Phase 4 wird in einer eigenen Repo-fokussierten Claude-Code-Session weitergeführt.
+Phase 4 wird in einer eigenen Repo-fokussierten Claude-Code-Session weitergeführt.

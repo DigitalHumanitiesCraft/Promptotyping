@@ -5,7 +5,7 @@ project:
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 status: active
 language: de
-version: 0.1
+version: 0.2
 created: 2026-05-09
 updated: 2026-05-09
 authors: [Christopher Pollin]
@@ -18,7 +18,13 @@ template:
   version: 0.1
   url: https://dhcraft.org/Promptotyping/#vorlage-design-v0.1
 topics: ["[[Information Visualisation]]", "[[Scholar-Centered Design]]", "[[Typography]]"]
-related: [INDEX, project, data, specification, architecture, journal]
+knowledge-sources:
+  standards:
+    CSS3: https://www.w3.org/Style/CSS/
+    WCAG 2.1 AA: https://www.w3.org/WAI/WCAG21/quickref/?levels=aa
+  vocabularies:
+    Inter Font: https://rsms.me/inter/
+related: [INDEX, project, specification, architecture, journal]
 ---
 
 # Design
@@ -40,27 +46,27 @@ Drei Begründungen:
 ### Farbe
 
 ```
-Hintergrund:    #ffffff
-Text:           #1a1a1a
-Akzent (Hover): #d5d5d5
-Code-Hintergrund: #f5f5f5
-Border (Side-Panel): #e0e0e0
+Hintergrund:        #ffffff
+Text:               #1a1a1a
+Akzent (Hover):     #d5d5d5
+Akzent (subtler):   #e0e0e0   (Borders)
+Code-Hintergrund:   #f5f5f5
 ```
 
 Phasen-Provenance-Lane (siehe Sektion unten):
 ```
-Preparation:    #2a2a2a    (dunkelster Ton)
-Exploration:    #525252
-Distillation:   #8a8a8a
-Implementation: #b8b8b8    (hellster Ton, vor Weiß)
+Preparation:        #2a2a2a    (dunkelster Ton)
+Exploration:        #525252
+Distillation:       #8a8a8a
+Implementation:     #b8b8b8    (hellster Ton, vor Weiß)
 ```
 
-Kein Teal, kein Türkis, kein Akzent in Bunt. (Unterschied zu DHCraft-Slides, wo Teal für Datum erlaubt war — auf der Site nicht nötig.)
+Kein Teal, kein Türkis, kein Akzent in Bunt. Anders als bei den DHCraft-Slides, wo Teal für Datum verwendet wurde, kommt auf der Site keine Akzentfarbe vor. Die monochrome Strenge ist Programm.
 
 ### Typografie
 
-- **Inter** für Fließtext, alle Gewichte (Regular 400, Medium 500, Semibold 600, Bold 700). Über Google Fonts (oder lokal hostbar — Entscheidung beim Implementieren).
-- **Consolas** für Code, monospace, System-Font (kein Download nötig).
+- **Inter** für Fließtext, alle Gewichte (Regular 400, Medium 500, Semibold 600, Bold 700). Über Google Fonts oder lokal hostbar (Phase-1-Entscheidung: Google Fonts wegen Subset-Optimierung; bei DSGVO-Bedenken Wechsel auf lokal).
+- **Consolas** für Code, monospace, System-Font (kein Download).
 - **Größen**:
   - Body: `1rem` (16px)
   - H1 Paper-Titel: `2.25rem`, weight 700
@@ -73,19 +79,31 @@ Kein Teal, kein Türkis, kein Akzent in Bunt. (Unterschied zu DHCraft-Slides, wo
 
 ### Spacing
 
-Vertikales Spacing folgt 4px-Grid: `0.25rem`, `0.5rem`, `1rem`, `1.5rem`, `2rem`, `3rem`, `4rem`. Lese-Spalte hat horizontalen Padding `1.5rem` mobile, `2rem` desktop.
+Vertikales Spacing folgt einem **8px-Basisgrid mit zusätzlichem 4px-Halbschritt** für Feinabstimmung. Alle Werte als rem-Vielfache:
+
+| rem | px | Verwendung |
+|---|---|---|
+| 0.25rem | 4px | Mikro-Spacing (Hover-States, dünne Linien) |
+| 0.5rem | 8px | Inline-Spacing zwischen verwandten Elementen |
+| 1rem | 16px | Standard-Absatz-Spacing, Listen-Einrückung |
+| 1.5rem | 24px | Lese-Spalten-Padding mobile |
+| 2rem | 32px | Lese-Spalten-Padding desktop, Sektions-Innenabstand |
+| 3rem | 48px | Sektions-Außenabstand |
+| 4rem | 64px | Hero-Abstände, große Übergänge |
+
+(Die Vorgängerversion v0.1 dieser Spec sprach von "4px-Grid", war aber tatsächlich 8px-Grid mit 4px-Halbschritt. Bezeichnung in v0.2 korrigiert.)
 
 ### Layout
 
 Drei-Spalten-Grid auf Desktop:
 ```
-| Inhaltsverzeichnis | Lesefluss | Side-Panel  |
-| 240px (sticky)     | 720px max | 360px slide |
+| Inhaltsverzeichnis | Lesefluss      | Side-Panel  |
+| 240px (sticky)     | 720px max      | 360px slide |
 ```
 
-Die Inhaltsverzeichnis-Spalte links zeigt aktuelle Paper-Sektion, scrollt sticky mit. Die Lese-Spalte zentriert. Die Side-Panel-Spalte rechts ist standardmäßig zugeklappt (off-screen rechts), schiebt herein bei Klick auf einen Trigger (Begriff, Vorlage, Case Study).
+Die Inhaltsverzeichnis-Spalte links zeigt aktuelle Paper-Sektion, scrollt sticky mit. Die Lese-Spalte zentriert. Die Side-Panel-Spalte rechts ist standardmäßig zugeklappt (off-screen rechts), schiebt herein bei Klick auf einen Trigger.
 
-Mobile: Inhaltsverzeichnis als Hamburger-Menü oben, Lesefluss volle Breite, Side-Panel als Bottom-Sheet (von unten herein).
+Mobile (<768px): Inhaltsverzeichnis als Hamburger-Menü oben, Lesefluss volle Breite (mit `1.5rem` horizontal padding), Side-Panel als Bottom-Sheet.
 
 ## Phasen-Provenance-Lane
 
@@ -103,7 +121,7 @@ Links neben jedem Paper-Absatz erscheint eine vertikale Markierung:
 
 ### Wie es funktioniert
 
-Im Markdown-Quelltext der Paper-Sektionen wird jeder Absatz mit einem Klassen-Tag versehen:
+Im Markdown-Quelltext der Paper-Sektionen wird jeder Absatz mit einem Klassen-Tag versehen (Pandoc-style, geparst von Custom marked.js-Extension — siehe [architecture.md](architecture.md), Sektion *Custom-Extension*):
 
 ```markdown
 {:.phase-preparation}
@@ -119,7 +137,7 @@ The Distillation phase compresses the knowledge gained during Exploration...
 Implementation iterates on the artifact, with the LLM as collaborator and the Critical Expert as validator...
 ```
 
-Die marked.js-Custom-Extension parst den Tag und produziert beim Render:
+Die marked.js-Custom-Extension produziert beim Render:
 ```html
 <p class="phase-preparation">The Preparation phase...</p>
 ```
@@ -153,17 +171,59 @@ CSS rendert die Lane:
 .phase-implementation { --lane-color: #b8b8b8; }
 ```
 
+### Absätze ohne Phasen-Klasse
+
+Code-Blöcke, Listen, Zitate, Tabellen, Hero-Video-Embed haben **keine Phasen-Klasse und keine Lane-Markierung**. Konsequenz: Die Lane ist über den Lesefluss nicht durchgängig, sondern unterbrochen an strukturellen Elementen. Das ist akzeptabel und sinnvoll, weil:
+
+- Phasen-Zuordnung für Code-Blöcke ist methodisch leer (Code ist kein Phase-Statement, sondern ein Beispiel innerhalb eines Phase-Statements)
+- Listen und Tabellen tragen oft Phase-übergreifende Information
+- Hero-Video ist Meta-Material *über* die Methode, nicht ein Methode-Schritt
+
+Die Lane bekommt damit ihren eigenen Rhythmus: lange durchgehende Strecken in Fließtext, Pausen an strukturellen Elementen. Das ist visuell ruhig und funktional sinnvoll.
+
 ### Interaktion
 
-**Hover**: Tooltip erscheint rechts neben der Lane mit Phasennamen plus "Springe zu allen Absätzen dieser Phase". Tooltip hat dezenten Schatten, Hellgrau-Border, kein Pfeil.
+**Hover**: Tooltip erscheint rechts neben der Lane mit Phasennamen plus "Springe zu allen Absätzen dieser Phase". Tooltip hat dezenten Schatten, Hellgrau-Border, kein Pfeil. Erscheint nach 300ms Verzögerung, um versehentliche Anzeige beim Über-Hovern zu vermeiden.
 
 **Klick**: Aktiviert Phasen-Filter-Modus. Im Filter-Modus werden Absätze, die nicht zur ausgewählten Phase gehören, auf `opacity: 0.25` reduziert. Eine kleine Filter-Indikator-Leiste oben (sticky) zeigt: "Filter: Distillation. [Filter aufheben]".
 
 **Klick auf Filter aufheben**: zurück zum Normalzustand, alle Absätze auf `opacity: 1`.
 
-### Mobile
+### Mobile Phasen-Indikator
 
-Auf Mobile wird die Lane zur **Top-Bar**: Eine schmale horizontale Leiste oben am Bildschirm zeigt vier Phasen-Indikatoren als horizontale Streifen-Reihe. Beim Scrollen aktualisiert sich die Position des "aktuellen Absatzes" — die zugehörige Phase wird hervorgehoben (volle Breite, andere drei verkleinert). Klick auf einen Indikator springt zum nächsten Absatz dieser Phase.
+Auf Mobile (<768px) wird die Lane zur **Top-Bar**: eine schmale horizontale Leiste oben (Höhe `2rem`), sticky beim Scrollen. Sie zeigt vier nebeneinanderliegende Streifen in den vier Phasen-Tönen. Jeder Streifen nimmt 25% der Bildschirmbreite ein.
+
+```
+[████████ Preparation] [████████ Exploration] [████████ Distillation] [████████ Implementation]
+```
+
+Beim Scrollen ermittelt JavaScript via IntersectionObserver, welcher Absatz im Viewport am meisten Platz einnimmt. Die zugehörige Phase wird hervorgehoben — der zugehörige Streifen verbreitert sich auf 40% der Breite, die anderen drei teilen sich die restlichen 60%. Übergang in 200ms.
+
+```css
+.mobile-phase-bar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  height: 2rem;
+  z-index: 10;
+}
+
+.mobile-phase-bar > div {
+  flex: 1;
+  transition: flex 200ms ease-out;
+}
+
+.mobile-phase-bar > div.active {
+  flex: 1.6; /* 40% statt 25% */
+}
+
+.mobile-phase-bar .preparation { background: #2a2a2a; }
+.mobile-phase-bar .exploration { background: #525252; }
+.mobile-phase-bar .distillation { background: #8a8a8a; }
+.mobile-phase-bar .implementation { background: #b8b8b8; }
+```
+
+Klick auf einen Streifen springt zum nächsten Absatz dieser Phase im Lesefluss.
 
 ### Was die Lane *nicht* tut
 
@@ -196,9 +256,44 @@ Rechtes Panel, slidet von rechts herein bei Klick auf einen Trigger.
 - Body: gerenderter Markdown-Inhalt (gleiche Typografie wie Lesefluss, kleinere Schriftgröße)
 - Footer (optional): Copy-Button für Frontmatter-Block, Repo-Link, etc.
 
-### Mobile
+### Mobile Bottom-Sheet
 
 Auf Mobile wird das Panel zum **Bottom-Sheet**: Slide-in von unten, max. 80% Bildschirmhöhe, Drag-Handle oben zum Schließen. Hintergrund halbtransparent abgedunkelt (`rgba(0,0,0,0.3)`).
+
+```css
+@media (max-width: 768px) {
+  .side-panel {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-height: 80vh;
+    transform: translateY(100%);
+    transition: transform 200ms ease-out;
+    border-radius: 0.5rem 0.5rem 0 0;
+    z-index: 20;
+  }
+
+  .side-panel.open {
+    transform: translateY(0);
+  }
+
+  .side-panel-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 200ms;
+    pointer-events: none;
+    z-index: 19;
+  }
+
+  .side-panel-backdrop.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+```
 
 ## Interaktionsmuster
 
@@ -248,7 +343,7 @@ HerData-Genre
 └────────────────────────┘  └────────────────────────┘
 ```
 
-Karten haben Border `#e0e0e0`, kein Schatten, padding `1rem`, hover-state mit hellgrauem Hintergrund. "Mehr →"-Button nur bei den acht Tiefenseiten-Case-Studies sichtbar.
+Karten haben Border `#e0e0e0`, kein Schatten, padding `1rem`, Hover-State mit hellgrauem Hintergrund. "Mehr →"-Button nur bei den acht Tiefenseiten-Case-Studies sichtbar.
 
 ## Action-Layer-Anbindung
 
@@ -267,6 +362,6 @@ Die Knowledge-Action-Komposition: `design.md` ist Wertequelle, `CLAUDE.md` ist V
 - Kein Parallax
 - Keine Lottie-Illustrationen
 - Keine Typografie-Animationen (variable Fonts mit Animationen)
-- Keine Dark Mode (Phase 1 nur Light Mode)
+- Kein Dark Mode (Phase 1 nur Light Mode)
 - Keine WebGL, keine 3D-Effekte
 - Keine Sound-Effekte

@@ -5,7 +5,7 @@ project:
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 status: active
 language: de
-version: 0.1
+version: 0.2
 created: 2026-05-09
 updated: 2026-05-09
 authors: [Christopher Pollin]
@@ -17,14 +17,12 @@ template:
   name: Vorlage Projekt-Wissensdokument
   version: 0.1
   url: https://dhcraft.org/Promptotyping/#vorlage-project-v0.1
-topics: ["[[Promptotyping]]", "[[Context Engineering]]", "[[Information Visualisation]]"]
+topics: ["[[Promptotyping]]", "[[Context Engineering]]"]
 knowledge-sources:
   institutions:
     Digital Humanities Craft OG: https://dhcraft.org
     University of Graz: https://www.uni-graz.at
-  standards:
-    Markdown: https://daringfireball.net/projects/markdown/
-related: [INDEX, data, specification, architecture, design, journal]
+related: [INDEX, specification, architecture, design, journal]
 ---
 
 # Project
@@ -41,6 +39,24 @@ Drei Adressatengruppen:
 - **Reviewer und Reproduzierende**, die ein Promptotyping-Repo gegen die Methode prüfen wollen. Sie kommen über die Konvention oder über eine konkrete Vorlagen-Adresse.
 - **Coding-Agenten**, die `template:`-URIs aus Repo-Frontmatter-Feldern auflösen. Sie kommen über versionierte Anker und brauchen die Vorlagen als Maschinenlesbar-Endpunkt.
 
+## Materialgrundlage
+
+Das Methodik-Repo verarbeitet keine Forschungsdaten — es spiegelt Wissen. Dadurch entfällt die Vorlage Datengrundlage (siehe [journal.md](journal.md), Eintrag 2026-05-09 zur Vorlagen-Trigger-Korrektur). Die Materialgrundlage steht stattdessen kompakt hier.
+
+Vier Quelltypen speisen die Site:
+
+**Pollin 2026 Paper.** Der wissenschaftliche Methodentext, im Vault als `Pollin 2026 - Promptotyping A Context Engineering Method for Building Research Artifacts with Frontier LLMs.md`. Status `draft`, Sprache Englisch, sechs Sektionen plus Abstract und Referenzen. Wird als Lesefluss-Substrat gespiegelt, sektioniert und mit Phasen-Provenance-Markierung pro Absatz versehen.
+
+**Vault-Vorlagen und Konvention.** Acht Vorlagen unter `Vault Operations/Vorlagen Promptotyping Documents/` (Index, Projekt-Wissensdokument, Datengrundlage, Specification, User Stories, Architecture, Design, Journal) plus die Konvention unter `Vault Operations/Konventionen/Konvention Promptotyping Documents.md`. Erste Vorlage in Version 0.2 (Datengrundlage), die anderen sieben in Version 0.1. Konvention in Version 0.1. Werden ins Repo gespiegelt, beim Spiegeln werden Vault-interne Wikilinks durch Site-Anker oder Inline-Erklärungen ersetzt.
+
+**Case-Study-Sammlung.** 24+ dokumentierte Case Studies, im Vault unter `Projects/Promptotyping/Case Studies/`. Jede Case Study trägt typischerweise: Repo-URL, Live-Demo-URL falls vorhanden, Status, Hauptaussage, methodische Aspekte. Acht davon werden als Tiefenseiten gerendert (HerData, Klawiter-Rescue, zbz-ocr-tei, M3GIM, Notker-Edition, CorrespExplorer, VetMedAI-Wissensbilanz, Agentic Edition Pipeline), die übrigen als Karten in der Listenübersicht.
+
+**YouTube-Videos zur Methode.**
+- Teil 1, Methodik-Erklärung: https://youtu.be/8sUe4Jkh3uQ (42:11, vier Phasen, Distillation, Context Window Management, Promptotyping Documents, EIL, Sycophancy)
+- Teil 2, Live-Demo mit Claude Code: https://youtu.be/hd_a-NBO_S4 (76 Excel-Dokumente zu funktionalem Dashboard, Thinking Matrix, Context Compression, iterative Fehlerkorrektur)
+
+Die alte Living-Paper-JSON (`prototype/data.json` mit 18 Case-Studies-Einträgen aus November 2025) ist als Struktur-Schablone in `c:\tmp\promptotyping-old-data-schablone.json` gesichert. Sie dient als Format-Vorlage für die neue `data/case-studies.json`, deren Inhalte aber frisch aus dem Vault generiert werden.
+
 ## Worum es im Refactor geht
 
 Der bestehende Stand des Repos (November 2025) ist methodisch überholt: Sechs-Phasen-Modell statt vier, sieben alte Use Cases statt zwanzig, Living Paper v0.2 mit dekorativen interaktiven Modulen, kein adressierbares Vorlagen-System. Der Refactor löscht diesen Stand und baut die Site komplett neu — aus dem Vault-Wissen heraus, mit dem Pollin-2026-Paper als Lesefluss-Substrat, mit acht versionierten Vorlagen als Anker, mit kuratierten Case Studies als Karten im Paper-Text.
@@ -54,21 +70,19 @@ Der bestehende Stand des Repos (November 2025) ist methodisch überholt: Sechs-P
 
 ## Stand und Phase
 
-Status: **Phase 2 abgeschlossen** (Repo-Inventur, Altmaterial gelöscht, knowledge/-Ordner angelegt). Phase 3 (knowledge/-Wissensbasis befüllen) läuft mit Anlage dieses Dokuments. Phase 4 (Implementation in fünf Sprints) folgt.
+Status: **Phase 3 abgeschlossen** (Wissensbasis befüllt, nach Critical-Expert-Prüfung um Vorlagen-Trigger-Korrektur überarbeitet). Phase 4 (Implementation in Sprints) folgt in eigenen Repo-Sessions.
 
 ## Beziehung zum Vault
 
-Diese Wissensbasis ist eine **Spiegelung mit Eigenleben**. Die Vault-Vorlagen, von denen sie geleitet wird, sind im Vault Source of Truth. Was hier dokumentiert wird, ist die *Anwendung* dieser Vorlagen auf das konkrete Refactor-Projekt — also welche Trigger ziehen, welche optionalen Sektionen relevant sind, welche Designentscheidungen für dieses Projekt gefällt werden. Das ist nicht redundant zur Vault-Vorlage, sondern komplementär: die Vorlage beschreibt den Strukturraum, dieses Dokument trägt die Belegung.
+Diese Wissensbasis ist eine **Spiegelung mit Eigenleben**. Die Vault-Vorlagen, von denen sie geleitet wird, sind im Vault Source of Truth. Was hier dokumentiert wird, ist die *Anwendung* dieser Vorlagen auf das konkrete Refactor-Projekt — also welche Trigger ziehen, welche Vorlagen für dieses Projekt gar nicht passen (siehe Vorlagen-Trigger-Korrektur), welche Designentscheidungen für dieses Projekt gefällt werden. Das ist nicht redundant zur Vault-Vorlage, sondern komplementär: die Vorlage beschreibt den Strukturraum, dieses Dokument trägt die Belegung.
 
 ## Erwartetes Outcome
 
-- `https://dhcraft.org/Promptotyping/` rendert das Pollin-2026-Paper als scrollbares interaktives Paper
-- Phasen-Provenance-Lane macht die methodische Verteilung des Papers visuell ablesbar
-- Acht Vorlagen sind unter versionierten Ankern adressierbar (`#vorlage-data-v0.2` etc.)
+- `https://dhcraft.org/Promptotyping/` rendert das Pollin-2026-Paper als scrollbares interaktives Paper mit Phasen-Provenance-Lane
+- Acht Vorlagen sind unter versionierten Ankern adressierbar (`#vorlage-data-v0.2` etc.) plus Latest-Aliase
 - Subpath-Aliase (`/vorlagen/data/v0.2`) für Maschinenlesbarkeit
-- Acht Case-Study-Tiefenseiten plus Listenübersicht aller 24+ Case Studies
-- Glossar als Hover- und Side-Panel-Quelle
-- Literaturverzeichnis als Anker-Liste
+- Acht Case-Study-Tiefenseiten plus filterbare Listenübersicht aller 24+ Case Studies
+- Glossar als Hover- und Side-Panel-Quelle, Literaturverzeichnis als Anker-Liste
 - Repos können `template: { url: "https://dhcraft.org/Promptotyping/#vorlage-data-v0.2" }` in ihre Frontmatters schreiben und damit auf eine permanente, versionierte Spezifikation verweisen
 
 ## Anschluss
