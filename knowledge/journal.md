@@ -16,7 +16,8 @@ method:
 template:
   name: Vorlage Journal
   version: 0.1
-  url: https://dhcraft.org/Promptotyping/#vorlage-journal-v0.1
+  url: https://dhcraft.org/Promptotyping/promptotyping-document/journal
+  alias: https://dhcraft.org/Promptotyping/#promptotyping-document-journal
 related: [INDEX, project, specification, architecture, design]
 ---
 
@@ -138,3 +139,58 @@ Repo-Verzeichnis nach Refactor:
 2. Phase 4 Sprint 1 in eigener Session: Site-Skeleton, Paper-Lesefluss, Phasen-Provenance-Lane
 
 Phase 4 wird in einer eigenen Repo-fokussierten Claude-Code-Session weitergeführt.
+
+## 2026-05-09 — Sprint-1-Vorbereitung und URL-Schema-Korrektur
+
+### Pollin-2026-Sektionierung
+
+Das Pollin-2026-Paper liegt im Repo nicht mehr als ein Stück, sondern als sieben Section-Files unter `_content/paper/01-introduction.md` … `_content/paper/07-conclusion.md`. Die References-Sektion sitzt separat als `_content/literatur.md` unter eigenem Anker. Damit ist Sprint 1 das Substrat zum Lesefluss-Render bereitgestellt; Phasen-Klassen-Tags pro Absatz kommen in Sprint 1 oder 2 dazu.
+
+### URL-Schema-Korrektur für Promptotyping-Document-Vorlagen
+
+Erste Anlauf-Form (vor dieser Korrektur):
+
+- Subpath `/vorlagen/{name}/{version}` (z.B. `/vorlagen/datengrundlage/v0.2`)
+- Hash `#vorlage-{name}-{version}`
+
+Diese Form hatte zwei Probleme. Erstens schreibt sie eine Versions-Angabe in jede Frontmatter-`url:` der Repos hinein. Bei jedem Vorlagen-Refactor müssten alle Repos, die per `template:`-URI verlinken, ihre URLs nachziehen — oder der Verweis zeigt auf eine veraltete Fassung. Das ist Pflege-Aufwand pro Repo bei jedem Vorlagen-Refactor. Zweitens ist `vorlagen/` der deutsche Slug, während der Hauptbegriff der Site "Promptotyping Document" ist — eine englische Konzept-Bezeichnung aus Pollin 2026 Section 3.3, die auch in den `template:`-URIs der Repos in englischer Form lebt. Der Slug-Wechsel zwischen Konzept und URL macht die Adressierung gegenüber der Konzept-Quelle inkonsistent.
+
+Korrektur in dieser Session:
+
+- Subpath `/promptotyping-document/{slug}` (Latest, kanonisch)
+- Hash `#promptotyping-document-{slug}` (Latest, gleichwertig)
+- Snapshot-Adressierung bei späteren Versions-Sprüngen über Hash-Sub-Anker `#promptotyping-document-{slug}-v{version}` bzw. Subpath `/promptotyping-document/{slug}#v{version}` — kein eigener Subpath pro Version mehr.
+
+Acht Slugs: `data`, `index`, `project`, `specification`, `architecture`, `design`, `journal`, `user-stories`. Der Latest-Anker ist primärer und einziger Adresspunkt, solange keine Version eines Vorlagen-Slugs ablöst. Alle Repos, die `template:`-URIs in der Latest-Form pflegen, bekommen bei einem späteren Versions-Sprung automatisch die neue Vorlage; wer eine konkrete Version festschreiben will, hängt einen Sub-Anker an.
+
+### Versions-Konsistenz: alle Vorlagen v0.1
+
+Beim ersten Anlauf war die Annahme, die Vorlage Datengrundlage sei v0.2, die anderen sieben v0.1. Das war ein Vault-internes Artefakt — der heutige Refactor ist die erste öffentliche Fassung der Vorlagen, also sind alle acht einheitlich v0.1. Snapshot-Sub-Anker werden erst bei einem späteren Versions-Sprung relevant; heute existieren nur Latest-Anker.
+
+### Eigene Wissensbasis konsistent mit `template:`-Feld
+
+Die sechs `knowledge/`-Documents im Repo (`INDEX.md`, `project.md`, `specification.md`, `architecture.md`, `design.md`, `journal.md`) tragen das `template:`-Feld in der neuen Latest-Form, mit `url:` als Subpath und `alias:` als Hash. Damit demonstriert die Site die Methode an sich selbst (Akzeptanzkriterium A12): wer das Frontmatter eines dieser Files in den Frontmatter-Inspector pastet, sieht die zugehörige Vorlagen-Spezifikation gerendert — sobald Sprint 1+2 die Inhalte unter den Ankern ausliefert.
+
+### `specification.md` und `architecture.md` angepasst
+
+Die Anpassungen im Detail:
+
+- A4-Tabelle in `specification.md` mit der neuen Anker- und Subpath-Konvention
+- A5 mit Latest-URL im `template:`-Schema-Beispiel
+- A11 mit Default-Frontmatter-Verweis und Snapshot-Fallback
+- A12 mit angepasster Akzeptanz-Inspektion (`/promptotyping-document/{slug}` + Hash-Form)
+- ADR-2 in `specification.md` neu gefasst: Latest primär, Snapshot über Hash-Sub-Anker
+- ADR-3 mit Begründung für Latest-Adressierung und englischen Slug
+- ADR-7 mit Latest-Default-Frontmatter
+- 404.html-Routing in `architecture.md` parst `/promptotyping-document/{slug}` und übernimmt einen vorhandenen `#v...`-Hash als Snapshot-Sub-Anker
+- Frontmatter-Inspector-Default-Frontmatter auf Latest-URL umgestellt
+- Datenfluss-Block und Verzeichnis-Struktur auf `_content/promptotyping-document/` umbenannt
+- `data/vorlagen.json` zu `data/promptotyping-documents.json`
+
+### Sub-Agent-parallele Bearbeitung
+
+Vault-seitig laufen parallel zwei Stränge in einer eigenen Sub-Agent-Session: Anpassung der Vault-Konvention für `template:`-Felder und Erweiterung der acht Vault-Vorlagen um den `template:`-Befüll-Block. Diese Vault-Änderungen liegen außerhalb des Repo-Scopes; sie kommen über die Vault-Spiegelung in den Sprint-2- bis Sprint-4-Iterationen ins Repo.
+
+### Nächster Schritt
+
+Sprint 1 in eigener Repo-Session: Site-Skeleton, Paper-Lesefluss, Phasen-Provenance-Lane.

@@ -16,7 +16,8 @@ method:
 template:
   name: Vorlage Index
   version: 0.1
-  url: https://dhcraft.org/Promptotyping/#vorlage-index-v0.1
+  url: https://dhcraft.org/Promptotyping/promptotyping-document/index
+  alias: https://dhcraft.org/Promptotyping/#promptotyping-document-index
 related: [project, specification, architecture, design, journal]
 ---
 
@@ -64,9 +65,9 @@ Begriffe, die in dieser Wissensbasis konstitutiv vorkommen. Die kanonischen Defi
 
 **Phasen-Provenance-Lane**: Ästhetischer Designkniff der neuen Site. Linke Schmalspalte zeigt während des Lesens des Papers an jedem Absatz eine monochrome Markierung (Schwarz bis Hellgrau) entsprechend der Promptotyping-Phase, die der Absatz beschreibt. Macht die methodische Verteilung des Papers visuell ablesbar.
 
-**Anker-Schema**: System der stabilen URL-Anker auf der Single-Page-Site. Pro Vorlage, Konzept, Case Study und Begriff existiert ein permanent stabiler Anker (`#vorlage-data-v0.2`, `#case-herdata`, `#konzept-eil`). Repos, die per Frontmatter-Feld `template:` verlinken, adressieren diese Anker.
+**Anker-Schema**: System der stabilen URL-Anker auf der Single-Page-Site. Pro Vorlage, Konzept, Case Study und Begriff existiert ein permanent stabiler Anker (`#promptotyping-document-data`, `#case-herdata`, `#konzept-eil`). Bei späteren Versions-Sprüngen einer Vorlage kommen Snapshot-Sub-Anker dazu (`#promptotyping-document-data-v0.1`). Repos, die per Frontmatter-Feld `template:` verlinken, adressieren diese Anker.
 
-**Subpath-Alias**: Maschinenlesbare URL-Form (`/vorlagen/data/v0.2`), die per `404.html`-Routing auf den entsprechenden Anker geleitet wird. Robust für Coding-Agenten, die strukturelle URL-Pfade kennen, lesbar für Menschen.
+**Subpath-Alias**: Maschinenlesbare URL-Form (`/promptotyping-document/data`), die per `404.html`-Routing auf den entsprechenden Anker geleitet wird. Robust für Coding-Agenten, die strukturelle URL-Pfade kennen, lesbar für Menschen.
 
 **Side-Panel**: Rechtes, sliding-in-Panel der Single-Page. Kontextspezifische Tiefe — Glossar-Eintrag, Vorlagen-Spezifikation, Literatur-Detail —, das sich auf Klick öffnet, ohne den Lesefluss zu unterbrechen. Auf Mobile als Bottom-Sheet.
 
@@ -78,7 +79,7 @@ Begriffe, die in dieser Wissensbasis konstitutiv vorkommen. Die kanonischen Defi
 
 **Critical Expert in the Loop (EIL)**: Rolle, die LLM-Output an definierten Stellen verifiziert. Drei Dimensionen: Domänenexpertise, technisches Modellverständnis, metakognitive Wachsamkeit. Im Refactor selbst ist Christopher Pollin der Critical Expert.
 
-**`template:`-Feld**: Frontmatter-Feld in Promptotyping-Documents, das auf die maßgebliche Vorlagen-Spezifikation auf dieser Site zeigt. Format: `template: { name, version, url }`. Die `url` ist ein versionierter Anker oder Subpath-Alias.
+**`template:`-Feld**: Frontmatter-Feld in Promptotyping-Documents, das auf die maßgebliche Vorlagen-Spezifikation auf dieser Site zeigt. Format: `template: { name, version, url, alias }`. Die `url` ist die Latest-Subpath-Form (`/promptotyping-document/{slug}`), `alias` der Latest-Hash-Anker. Snapshot-Adressierung über Hash-Sub-Anker.
 
 ## Verhältnis zur Vault-Wissensbasis
 

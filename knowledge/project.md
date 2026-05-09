@@ -16,7 +16,8 @@ method:
 template:
   name: Vorlage Projekt-Wissensdokument
   version: 0.1
-  url: https://dhcraft.org/Promptotyping/#vorlage-project-v0.1
+  url: https://dhcraft.org/Promptotyping/promptotyping-document/project
+  alias: https://dhcraft.org/Promptotyping/#promptotyping-document-project
 topics: ["[[Promptotyping]]", "[[Context Engineering]]"]
 knowledge-sources:
   institutions:
@@ -47,7 +48,7 @@ Vier Quelltypen speisen die Site:
 
 **Pollin 2026 Paper.** Der wissenschaftliche Methodentext, im Vault als `Pollin 2026 - Promptotyping A Context Engineering Method for Building Research Artifacts with Frontier LLMs.md`. Status `draft`, Sprache Englisch, sechs Sektionen plus Abstract und Referenzen. Wird als Lesefluss-Substrat gespiegelt, sektioniert und mit Phasen-Provenance-Markierung pro Absatz versehen.
 
-**Vault-Vorlagen und Konvention.** Acht Vorlagen unter `Vault Operations/Vorlagen Promptotyping Documents/` (Index, Projekt-Wissensdokument, Datengrundlage, Specification, User Stories, Architecture, Design, Journal) plus die Konvention unter `Vault Operations/Konventionen/Konvention Promptotyping Documents.md`. Erste Vorlage in Version 0.2 (Datengrundlage), die anderen sieben in Version 0.1. Konvention in Version 0.1. Werden ins Repo gespiegelt, beim Spiegeln werden Vault-interne Wikilinks durch Site-Anker oder Inline-Erklärungen ersetzt.
+**Vault-Vorlagen und Konvention.** Acht Vorlagen unter `Vault Operations/Vorlagen Promptotyping Documents/` (Index, Projekt-Wissensdokument, Datengrundlage, Specification, User Stories, Architecture, Design, Journal) plus die Konvention unter `Vault Operations/Konventionen/Konvention Promptotyping Documents.md`. Alle Vorlagen einheitlich in Version 0.1 — der heutige Refactor ist die erste öffentliche Fassung. Konvention in Version 0.1. Werden ins Repo gespiegelt, beim Spiegeln werden Vault-interne Wikilinks durch Site-Anker oder Inline-Erklärungen ersetzt.
 
 **Case-Study-Sammlung.** 24+ dokumentierte Case Studies, im Vault unter `Projects/Promptotyping/Case Studies/`. Jede Case Study trägt typischerweise: Repo-URL, Live-Demo-URL falls vorhanden, Status, Hauptaussage, methodische Aspekte. Acht davon werden als Tiefenseiten gerendert (HerData, Klawiter-Rescue, zbz-ocr-tei, M3GIM, Notker-Edition, CorrespExplorer, VetMedAI-Wissensbilanz, Agentic Edition Pipeline), die übrigen als Karten in der Listenübersicht.
 
@@ -79,11 +80,11 @@ Diese Wissensbasis ist eine **Spiegelung mit Eigenleben**. Die Vault-Vorlagen, v
 ## Erwartetes Outcome
 
 - `https://dhcraft.org/Promptotyping/` rendert das Pollin-2026-Paper als scrollbares interaktives Paper mit Phasen-Provenance-Lane
-- Acht Vorlagen sind unter versionierten Ankern adressierbar (`#vorlage-data-v0.2` etc.) plus Latest-Aliase
-- Subpath-Aliase (`/vorlagen/data/v0.2`) für Maschinenlesbarkeit
+- Acht Vorlagen sind unter Latest-Ankern adressierbar (`#promptotyping-document-data` etc.); Snapshot-Sub-Anker bei späteren Versions-Sprüngen
+- Subpath-Aliase (`/promptotyping-document/data`) für Maschinenlesbarkeit
 - Acht Case-Study-Tiefenseiten plus filterbare Listenübersicht aller 24+ Case Studies
 - Glossar als Hover- und Side-Panel-Quelle, Literaturverzeichnis als Anker-Liste
-- Repos können `template: { url: "https://dhcraft.org/Promptotyping/#vorlage-data-v0.2" }` in ihre Frontmatters schreiben und damit auf eine permanente, versionierte Spezifikation verweisen
+- Repos können `template: { url: "https://dhcraft.org/Promptotyping/promptotyping-document/data" }` in ihre Frontmatters schreiben und damit auf die kanonische Latest-Spezifikation verweisen
 
 ## Anschluss
 

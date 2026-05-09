@@ -16,7 +16,8 @@ method:
 template:
   name: Vorlage Specification
   version: 0.1
-  url: https://dhcraft.org/Promptotyping/#vorlage-specification-v0.1
+  url: https://dhcraft.org/Promptotyping/promptotyping-document/specification
+  alias: https://dhcraft.org/Promptotyping/#promptotyping-document-specification
 topics: ["[[Requirements Engineering]]", "[[Decision Records]]"]
 knowledge-sources:
   standards:
@@ -32,32 +33,49 @@ Anforderungen, Funktionsumfang und Entscheidungen für den Refactor zum interakt
 ## Anforderungen
 
 ### A1 — Paper als Lesefluss
-Das Pollin-2026-Paper ist im Lesefluss vorhanden, sektioniert in sechs Markdown-Dateien, gerendert in einer zentralen Lese-Spalte (max. 720px). Akzeptanzkriterium: Wer auf https://dhcraft.org/Promptotyping/ kommt, kann das Paper von Abstract bis Schluss durchscrollen, Inhaltsverzeichnis links als sticky Sidebar.
+Das Pollin-2026-Paper ist im Lesefluss vorhanden, sektioniert in sieben Markdown-Dateien (eine pro H2-Section), die References-Sektion separat als `literatur.md`. Gerendert in einer zentralen Lese-Spalte (max. 720px). Akzeptanzkriterium: Wer auf https://dhcraft.org/Promptotyping/ kommt, kann das Paper von Abstract bis Conclusion durchscrollen, Inhaltsverzeichnis links als sticky Sidebar.
+
+Substrat liegt in `_content/paper/01-introduction.md` … `_content/paper/07-conclusion.md` und `_content/literatur.md`.
 
 ### A2 — Phasen-Provenance-Lane
 Jeder Absatz im Paper trägt eine Phasen-Klasse (Preparation, Exploration & Mapping, Distillation, Implementation), die sich als monochrome vertikale Markierung am linken Absatzrand zeigt. Akzeptanzkriterium: Beim Scrollen erscheint links ein vertikales Streifen-Muster, das die methodische Verteilung des Papers ablesbar macht. Hover auf einen Strich öffnet einen Tooltip mit Phasennamen plus "Springe zu allen Absätzen dieser Phase". Klick aktiviert Phasen-Filter, der nicht-zugeordnete Absätze ausgraut.
 
 ### A3 — Adressierbare Vorlagen
-Acht Vorlagen sind unter versionierten Ankern adressierbar (`#vorlage-data-v0.2`, `#vorlage-journal-v0.1`, ...). Pro Vorlage existiert ein Latest-Alias (`#vorlage-data` zeigt auf neueste Version). Akzeptanzkriterium: `https://dhcraft.org/Promptotyping/#vorlage-data-v0.2` springt zur Vorlage und öffnet automatisch das Side-Panel mit der vollen Vorlagen-Spec.
+Acht Vorlagen sind unter Latest-Ankern adressierbar (`#promptotyping-document-data`, `#promptotyping-document-journal`, ...). Bei späteren Versions-Sprüngen werden zusätzliche Snapshot-Anker derselben Vorlagen-Sektion vergeben (`#promptotyping-document-data-v0.1`); heute, mit allen Vorlagen auf v0.1, ist der Latest-Anker primärer und einziger Adresspunkt. Akzeptanzkriterium: `https://dhcraft.org/Promptotyping/#promptotyping-document-data` springt zur Vorlage und öffnet automatisch das Side-Panel mit der vollen Vorlagen-Spec.
 
-### A4 — Subpath-URL-Aliase
-Maschinenlesbare Subpath-URLs rewriten auf die entsprechenden Anker. Konvention für alle Anker-Typen:
+### A4 — Doppelte kanonische URL-Form: Subpath und Hash
+Jeder adressierbare Inhalt der Site existiert unter zwei gleichberechtigten URL-Formen — Subpath für Maschinen und URL-strukturierte Lesbarkeit, Hash-Anker als interne Anker und Fallback. Beide sind kanonisch, nicht eine Alias der anderen. Beide sind permanent stabil. Konvention für alle Anker-Typen:
 
-| Anker-Typ | Anker-Form | Subpath-Alias |
+| Anker-Typ | Hash-Anker | Subpath-URL |
 |---|---|---|
-| Vorlage versioniert | `#vorlage-{name}-{version}` | `/vorlagen/{name}/{version}` |
-| Vorlage Latest | `#vorlage-{name}` | `/vorlagen/{name}` |
+| Promptotyping-Document Latest | `#promptotyping-document-{slug}` | `/promptotyping-document/{slug}` |
+| Promptotyping-Document Snapshot | `#promptotyping-document-{slug}-v{version}` | `/promptotyping-document/{slug}#v{version}` |
 | Konzept | `#konzept-{name}` | `/konzepte/{name}` |
 | Case Study | `#case-{name}` | `/case-studies/{name}` |
 | Konvention | `#konvention-{version}` | `/konvention/{version}` |
 | Glossar | `#glossar` | `/glossar` |
 | Literatur | `#literatur` | `/literatur` |
-| Paper-Sektion | `#paper-section-{n}` | `/paper/{n}` |
+| Paper-Sektion | `#abschnitt-{n}-{slug}` | `/paper/{n}-{slug}` |
 
-Akzeptanzkriterium: `https://dhcraft.org/Promptotyping/vorlagen/data/v0.2` lädt dieselbe Single-Page mit Auto-Scroll zum Anker `#vorlage-data-v0.2`. Implementation per `404.html`-Trick (siehe [architecture.md](architecture.md)).
+Slug-Set für Promptotyping-Documents: `data`, `index`, `project`, `specification`, `architecture`, `design`, `journal`, `user-stories`. Heute, mit allen Vorlagen einheitlich auf v0.1, ist der Latest-Anker primärer und einziger Adresspunkt. Snapshot-Anker werden erst bei einem Versions-Sprung pro Vorlage vergeben — als zusätzlicher Hash-Sub-Anker auf derselben Vorlagen-Sektion, nicht als eigener Subpath.
+
+Beispiel Paper-Sektion: `#abschnitt-3-four-phases` ↔ `/paper/3-four-phases`. Subsection-Anker (z.B. `#phase-distillation` für Section 3.3) sind innerhalb der Paper-Sektion verfügbar, ohne eigenen Subpath.
+
+Akzeptanzkriterium: `https://dhcraft.org/Promptotyping/promptotyping-document/data` und `https://dhcraft.org/Promptotyping/#promptotyping-document-data` führen beide zur selben gerenderten Vorlage. Subpath-Form geht per `404.html`-Trick auf den Hash (siehe [architecture.md](architecture.md)). Welche Form verwendet wird, bleibt der zitierenden Stelle überlassen — beide sind stabil.
 
 ### A5 — `template:`-Frontmatter-Feld als Maschinenadresse
-Promptotyping-Repos können in ihren `knowledge/`-Dokumenten ein Frontmatter-Feld `template: { name, version, url }` führen, dessen `url` auf einen Vorlagen-Anker dieser Site zeigt. Akzeptanzkriterium: Ein Coding-Agent, der einen `template:`-URI sieht, kann ihn aufrufen und bekommt die maßgebliche Vorlagen-Spezifikation gerendert.
+Promptotyping-Repos führen in ihren `knowledge/`-Dokumenten ein Frontmatter-Feld `template:` mit einem Block aus `name`, `version`, `url` (Subpath-Form, kanonisch) und optional `alias` (Hash-Form, gleichwertig). Die `url` zeigt auf die Latest-Adresse der Vorlage, die `alias`-Form auf den dazugehörigen Hash-Anker. Dieses Feld macht die Vorlagen-Adresse maschinenlesbar.
+
+Schema:
+```yaml
+template:
+  name: Vorlage Datengrundlage
+  version: 0.1
+  url: https://dhcraft.org/Promptotyping/promptotyping-document/data
+  alias: https://dhcraft.org/Promptotyping/#promptotyping-document-data
+```
+
+Akzeptanzkriterium: Ein Coding-Agent, der einen `template:`-URI sieht, kann ihn aufrufen und bekommt die maßgebliche Vorlagen-Spezifikation gerendert. Die Site selbst trägt das Feld in ihren eigenen `knowledge/`-Dokumenten — sie demonstriert die Methode an sich selbst (siehe A12).
 
 ### A6 — Glossar als Hover- und Klick-Quelle
 Jeder konstitutive Begriff im Paper-Lesefluss ist als Glossar-Trigger markiert (gepunktete Unterlinie). Hover zeigt Kurzdefinition als Tooltip, Klick öffnet rechtes Side-Panel mit voller Glossar-Definition, Quellenangaben, Verweisen ins Paper. Akzeptanzkriterium: Mindestens 30 Begriffe sind verlinkt und zugänglich; das Glossar selbst ist auch als eigener Anker `#glossar` direkt erreichbar.
@@ -74,7 +92,19 @@ Phasen-Provenance-Lane bei Hero-Video: Das Hero-Video hat keine Phasen-Klasse �
 Hellgrau `#d5d5d5` als Akzent, Schwarz auf Weiß, Inter als Font, Consolas für Code. Keine Akzentlinien, keine Farbflut, keine dekorativen Elemente. Phasen-Provenance-Lane in monochromen Stufen `#2a2a2a` bis `#b8b8b8`. Mobile-Layout kollabiert Side-Panels zu Bottom-Sheets, Phasen-Lane wird zur Top-Bar.
 
 ### A10 — Vanilla Tech-Stack
-Kein Framework, kein Build-Step. HTML5/CSS3/JS, marked.js v9.1.6 vendoriert. GitHub-Pages-natives Hosting. Akzeptanzkriterium: `git clone` und Browser öffnen reicht, um die Site lokal zu rendern (per `python -m http.server` oder Live-Server).
+Kein Framework, kein Build-Step. HTML5/CSS3/JS, marked.js v9.1.6 vendoriert, js-yaml v4.1.0 vendoriert für Frontmatter-Parsing im Frontmatter-Inspector (siehe A11 und [architecture.md](architecture.md)). GitHub-Pages-natives Hosting. Akzeptanzkriterium: `git clone` und Browser öffnen reicht, um die Site lokal zu rendern (per `python -m http.server` oder Live-Server).
+
+### A11 — Frontmatter-Inspector als interaktive Selbstdemonstration
+Modul in der Vorlagen-Sektion mit Texteingabe (Textarea) für YAML-Frontmatter eines fremden `knowledge/`-Dokuments. Der Inspector parst den eingegebenen Block, extrahiert `template.url` (oder `template.alias`), validiert die URL gegen das Site-Anker-Schema und öffnet das Side-Panel mit der gerenderten Vorlage. Ein Beispiel-Frontmatter mit Latest-URL (`/promptotyping-document/data`) ist als Default-Wert vorbefüllt, sodass der Mechanismus sofort sichtbar wird.
+
+Akzeptanzkriterium: Wer ein `template:`-Frontmatter aus einem realen Promptotyping-Repo (z.B. dem `data.md` aus `chpollin/zbz-ocr-tei`) ins Eingabefeld pastet, sieht rechts im Side-Panel die maßgebliche Vorlagen-Spezifikation. Bei ungültiger URL: Hinweis auf das erwartete Schema. Wenn ein Snapshot-Anker (`#promptotyping-document-{slug}-v{version}`) auf eine nicht vorhandene Version zeigt: Fallback auf den Latest-Anker mit Warnhinweis.
+
+Implementations-Details in [architecture.md](architecture.md), Sektion Frontmatter-Inspector.
+
+### A12 — Cross-Repo-Konsistenz: Site bewirbt nicht, sondern demonstriert
+Die Site selbst — `knowledge/INDEX.md`, `knowledge/project.md`, `knowledge/specification.md`, `knowledge/architecture.md`, `knowledge/design.md`, `knowledge/journal.md` — trägt das `template:`-Feld konsequent. Jedes dieser Dokumente verlinkt auf seine eigene Vorlagen-URL der Live-Site (Subpath-Form kanonisch, Hash-Form als alias).
+
+Akzeptanzkriterium: Eine `grep template: knowledge/*.md`-Inspektion zeigt sechs Treffer, alle mit beiden URL-Formen (`url:` als Latest-Subpath `/promptotyping-document/{slug}`, `alias:` als Latest-Hash `#promptotyping-document-{slug}`), alle nach Site-Anker-Schema. Sobald die Site Sprint 1+2 abgeschlossen hat, sind diese URLs aufrufbar — und die Site demonstriert ihre eigene Methode, ohne sie nur zu beschreiben.
 
 ## Funktionsumfang pro Site-Sektion
 
@@ -108,25 +138,25 @@ Geordnete Liste am Seitenende. Inline-Verweise im Paper als Anker-Sprung-Ziel. P
 
 **Effekt.** Site-Größe wächst, aber Lazy-Loading der Side-Panel-Inhalte hält die initiale Last gering. SEO via OpenGraph-Tags und sektionsweise Crawling.
 
-### ADR-2: Versionierte Vorlagen-Anker plus Latest-Alias
+### ADR-2: Latest-Anker primär, Snapshot-Sub-Anker bei Versions-Sprüngen
 
-**Kontext.** Vorlagen werden refaktoriert (z.B. `data` v0.1 → v0.2). Repos, die per `template:`-URI verlinken, brauchen Stabilität.
+**Kontext.** Vorlagen können künftig refaktoriert werden (z.B. `data` v0.1 → v0.2). Repos, die per `template:`-URI verlinken, brauchen Stabilität — aber nicht unbedingt eine permanent eigene URL pro Version.
 
-**Wahl.** Pro Vorlagen-Version eigener Anker (`#vorlage-data-v0.2`). Latest-Alias `#vorlage-data` zeigt auf neueste Version.
+**Wahl.** Pro Vorlage gibt es einen Latest-Anker (`#promptotyping-document-data`, Subpath `/promptotyping-document/data`). Bei einem späteren Versions-Sprung wird ein Snapshot-Sub-Anker auf derselben Vorlagen-Sektion vergeben (`#promptotyping-document-data-v0.1`, Subpath `/promptotyping-document/data#v0.1`). Der Latest-Anker zeigt immer auf die aktuelle Version. Heute, mit allen Vorlagen einheitlich auf v0.1, gibt es nur Latest-Anker.
 
-**Begründung.** Stabilität für Repos, die explizit eine Version brauchen. Bequemlichkeit für Repos, die immer den aktuellen Stand wollen. Beide Anker existieren parallel.
+**Begründung.** Repos verlinken in der überwältigenden Mehrzahl der Fälle "die aktuelle Vorlage". Eine Latest-URL ohne Versions-Suffix ist für sie der natürliche Adresspunkt; bei einem Versions-Sprung kommen sie automatisch auf die neue Fassung. Wer explizit eine bestimmte Version zitieren will, hängt einen Sub-Anker an. Das ergibt eine kompakte URL-Sammlung statt eines Versions-Karthese pro Vorlage.
 
-**Effekt.** URL-Sammlung wächst (acht Vorlagen × n Versionen), aber bleibt überschaubar. Alte Versionen werden im Vorlagen-Index als "frühere Version" markiert.
+**Effekt.** Acht stabile URLs für die acht Vorlagen-Slugs. Alte Versionen werden bei einem Versions-Sprung in einer Versions-Liste auf der Vorlagen-Seite verlinkt, mit Snapshot-Sub-Anker als Adresspunkt. Frühere Anlauf-Form `#vorlage-{name}-{version}` mit eigener Subpath-Hierarchie ist verworfen — siehe Eintrag 2026-05-09 in [journal.md](journal.md).
 
-### ADR-3: Subpath-Aliase für Maschinenlesbarkeit
+### ADR-3: Beide URL-Formen kanonisch (Subpath und Hash gleichberechtigt), Slug englisch, Latest ohne Versions-Suffix
 
-**Kontext.** Coding-Agenten parsen URLs strukturell. `#vorlage-data-v0.2` sieht wie ein Anker aus; `/vorlagen/data/v0.2` wie ein Pfad. Beides sollte funktionieren.
+**Kontext.** Coding-Agenten parsen URLs strukturell. `#promptotyping-document-data` sieht wie ein Anker aus; `/promptotyping-document/data` wie ein Pfad. Beides sollte funktionieren — und keiner der beiden Formen darf den anderen als "minderwertig" markieren, sonst wird die Adressierbarkeit asymmetrisch. Zwei zusätzliche Entscheidungen sind in dieselbe Logik eingebettet: (a) Pfad-Slug englisch, weil "Promptotyping Document" der konzeptuelle Begriff aus Pollin 2026 Section 3.3 ist und in der englischen Form auch in den `template:`-URIs der Repos lebt; ein deutsches `vorlagen/` würde die Bezeichnung gegenüber der Konzept-Quelle inkonsistent machen. (b) Versions-Suffix in der Latest-URL entfällt — siehe ADR-2.
 
-**Wahl.** Subpath-URLs sind Aliase, die per `404.html`-Routing auf Anker geleitet werden (siehe [architecture.md](architecture.md), Sektion URL-Routing).
+**Wahl.** Beide URL-Formen sind kanonisch und gleichberechtigt. Subpath-Form ist primär in `template:`-Frontmatter-URLs (`url:`), Hash-Form als `alias:`. Site rendert dieselben Inhalte unter beiden URLs. Slug-Sektion ist `/promptotyping-document/{slug}`, einheitlich für alle acht Vorlagen-Slugs. Latest-Adressierung ohne Versions-Suffix; Snapshot-Adressierung über Hash-Sub-Anker (siehe ADR-2).
 
-**Begründung.** Robust für Coding-Agenten, die strukturelle URL-Pfade kennen. Lesbar für Menschen. Anker-Form bleibt der kanonische Weg, Subpath-Form ist die Bequemlichkeitsschicht.
+**Begründung.** Subpath-Form ist robust für Coding-Agenten, die strukturelle URL-Pfade kennen. Hash-Form ist robust für Browser-interne Navigation (kein Server-Roundtrip). Wer das `template:`-Feld liest, bekommt mit `url` und `alias` zwei stabile Endpunkte. Wer eine URL kopiert, bekommt eine, die in beiden Formen funktioniert. Englischer Slug-Begriff hält die Adressierung in einer Sprache mit der Konzept-Quelle. Latest ohne Versions-Suffix erspart Repos den Pflege-Aufwand pro Vorlagen-Refactor — sie bleiben automatisch auf der aktuellen Vorlage.
 
-**Effekt.** Eine zusätzliche `404.html`-Datei im Repo-Root mit JavaScript-basiertem Pfad-zu-Anker-Mapping. Konvention für alle Anker-Typen ist in A4 dokumentiert.
+**Effekt.** Eine zusätzliche `404.html`-Datei im Repo-Root mit JavaScript-basiertem Pfad-zu-Anker-Mapping rewritet Subpath auf Hash. Konvention für alle Anker-Typen ist in A4 dokumentiert. Site-eigene `knowledge/`-Documents tragen beide Formen (A12). Frühere Anlauf-Form `/vorlagen/{name}/{version}` ist verworfen — siehe Eintrag 2026-05-09 in [journal.md](journal.md).
 
 ### ADR-4: Phasen-Provenance-Lane als ästhetischer Kniff
 
@@ -158,15 +188,15 @@ Geordnete Liste am Seitenende. Inline-Verweise im Paper als Anker-Sprung-Ziel. P
 
 **Effekt.** Drei Module-Dateien fallen weg, Code wird einfacher, Site bleibt fokussiert auf Lesen plus zwei sinnvolle Module: Frontmatter-Inspector und Case-Study-Filter.
 
-### ADR-7: Frontmatter-Inspector als Modul
+### ADR-7: Frontmatter-Inspector als Paste-Live-Render-Modul
 
-**Kontext.** Die `template:`-URI-Auflösung ist ein zentrales Feature, aber für einen externen Leser unsichtbar. Wer noch nie ein Promptotyping-Repo gesehen hat, versteht nicht, wozu die versionierten Anker da sind.
+**Kontext.** Die `template:`-URI-Auflösung ist ein zentrales Feature, aber für einen externen Leser unsichtbar. Wer noch nie ein Promptotyping-Repo gesehen hat, versteht nicht, wozu die Latest- und Snapshot-Anker da sind. Eine reine URL-Eingabe würde nur den Anker-Klick replizieren, ohne die Mechanik der Frontmatter-Indirektion sichtbar zu machen.
 
-**Wahl.** Kleine interaktive Komponente in der Vorlagen-Sektion: Texteingabe für `template:`-URI, rendert die referenzierte Vorlage live darunter.
+**Wahl.** Texteingabe (Textarea) für ganzen YAML-Frontmatter-Block, nicht nur die URL. Inspector parst, extrahiert `template.url` (oder `alias`), validiert gegen Anker-Schema, öffnet Side-Panel mit gerenderter Vorlage. Default-Wert ist ein Beispiel-Frontmatter mit korrekt gesetztem `template:`-Feld in der Latest-Form (`url: /promptotyping-document/data`, `alias: #promptotyping-document-data`).
 
-**Begründung.** Zeigt unmittelbar, wie Repos die Site nutzen. Macht die Maschinenlesbarkeit konkret.
+**Begründung.** Zeigt unmittelbar, wie Repos die Site nutzen — der ganze Mechanismus (Frontmatter mit `template:` → URL-Auflösung → Vorlagen-Render) wird in einem Schritt sichtbar. Macht die Maschinenlesbarkeit konkret. Beim Paste eines realen Frontmatters aus einem fremden Repo entsteht der Aha-Effekt: das ist nicht Theorie, das funktioniert jetzt.
 
-**Effekt.** Ein eigenständiges JS-Modul `assets/js/modules/frontmatter-inspector.js`, eingebettet in die Vorlagen-Sektion. Implementations-Details in [architecture.md](architecture.md).
+**Effekt.** Ein eigenständiges JS-Modul `assets/js/modules/frontmatter-inspector.js`. Vendoriert wird js-yaml v4.1.0 unter `assets/vendor/js-yaml.min.js` für robustes YAML-Parsing. Implementations-Details in [architecture.md](architecture.md).
 
 ### ADR-8: Case-Study-Filter als Modul
 

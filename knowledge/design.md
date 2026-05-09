@@ -16,7 +16,8 @@ method:
 template:
   name: Vorlage Design
   version: 0.1
-  url: https://dhcraft.org/Promptotyping/#vorlage-design-v0.1
+  url: https://dhcraft.org/Promptotyping/promptotyping-document/design
+  alias: https://dhcraft.org/Promptotyping/#promptotyping-document-design
 topics: ["[[Information Visualisation]]", "[[Scholar-Centered Design]]", "[[Typography]]"]
 knowledge-sources:
   standards:
@@ -248,7 +249,7 @@ Rechtes Panel, slidet von rechts herein bei Klick auf einen Trigger.
 - Beim Öffnen: Slide-in von rechts in 200ms, ease-out
 - Beim Schließen: Slide-out in 200ms, ease-in. ESC-Taste schließt. Klick außerhalb des Panels schließt.
 - Mehrere Panels: Nur eines zur Zeit. Neuer Trigger ersetzt das Panel-Inhalt.
-- URL-Update: Wenn ein Panel geöffnet wird, ändert sich der URL-Hash entsprechend (`#vorlage-data-v0.2`). Browser-Back schließt das Panel.
+- URL-Update: Wenn ein Panel geöffnet wird, ändert sich der URL-Hash entsprechend (`#promptotyping-document-data`). Browser-Back schließt das Panel.
 
 ### Inhalt
 

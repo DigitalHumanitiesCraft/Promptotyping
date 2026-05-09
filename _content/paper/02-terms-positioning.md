@@ -1,0 +1,66 @@
+---
+section: 2
+title: Terms and Positioning
+anchor: abschnitt-2-terms-positioning
+source: Pollin 2026
+source-lines: 32-82
+subsections:
+  - { id: 2.1, anchor: konzept-context-engineering, title: Context Engineering }
+  - { id: 2.2, anchor: konzept-vibe-coding, title: Vibe Coding }
+  - { id: 2.3, anchor: konzept-context-rot, title: Context Rot }
+  - { id: 2.4, anchor: konzept-co-intelligence-eil, title: Co-Intelligence and the Critical Expert in the Loop }
+  - { id: 2.5, anchor: konzept-positioning-related, title: Positioning Against Related Approaches }
+  - { id: 2.6, anchor: konzept-why-now, title: Why Now — The Technical Trajectory }
+---
+
+# 2. Terms and Positioning
+
+## 2.1 Context Engineering
+
+Context Engineering refers to the systematic design and management of contextual information provided to LLMs at inference time (Mei et al. 2025). The survey by Mei et al. analyses over 1,400 papers and establishes a taxonomy spanning context retrieval, context processing, context management, and system-level integration through RAG, memory systems, and multi-agent architectures. Promptotyping is a domain-specific instance of context engineering, optimised for the task of mapping research data to functional artifacts.
+
+The term gained broader recognition through industry discourse. Karpathy described context engineering as "the careful practice of populating the context window with precisely the right information" (cited in MIT Technology Review 2025). The shift from prompt engineering to context engineering reflects that production-grade LLM applications require systematic information architecture rather than individual prompt optimisation (Zhang et al. 2025).
+
+## 2.2 Vibe Coding
+
+Karpathy coined the term _Vibe Coding_ in February 2025 to describe a practice where code is generated through natural language instructions and accepted without thorough review. Sarkar and Drosos (2025) provide the first empirical study, analysing over eight hours of curated video to identify iterative goal-satisfaction cycles and what they call "material disengagement" — practitioners orchestrating code production through AI while maintaining selective oversight. Fawzy et al. (2025) conducted a grey literature review of 101 sources and found a "speed-quality trade-off paradox" in which practitioners valued rapid output but perceived the resulting code as unreliable.
+
+Promptotyping shares Vibe Coding's premise that LLMs can generate functional code from natural language. It differs in three respects. First, it precedes code generation with structured preparation and exploration phases. Second, it produces persistent documentation — Promptotyping Documents — that make the reasoning behind design decisions explicit and reusable. Third, it integrates systematic verification at defined checkpoints. Vibe Coding is not rejected but understood as an exploratory mode within Promptotyping, useful for probing the possibility space before committing to an implementation path.
+
+## 2.3 Context Rot
+
+Hong et al. (2025) demonstrate empirically that LLM performance degrades as input length increases, even on tasks as simple as text retrieval. Their evaluation across 18 models, including GPT-4.1, Claude 4, and Gemini 2.5, reveals non-uniform performance as context grows. This finding contradicts the intuitive assumption that more information yields better results and provides the technical rationale for the Distillation phase in Promptotyping, where the principle is maximum information with minimum tokens.
+
+## 2.4 Co-Intelligence and the Critical Expert in the Loop
+
+Mollick (2024) introduces _Co-Intelligence_ as a framework for human-LLM collaboration that emphasises amplification over automation. Wachter (2025) makes a parallel distinction between _Automation_ and _Augmentation_ from a humanities perspective and calls for "second-order observation" — reflection not only on outputs but on the process of producing them.
+
+We operationalise these ideas through the concept of the _Critical Expert in the Loop_ (Pollin 2025c). The term distinguishes this role from the generic _Human in the Loop_ by requiring both domain expertise and awareness of LLM-specific failure modes. The Critical Expert functions as the cognitive agent whose existing knowledge structures determine what information can be produced from the available data — a role that the DIKW hierarchy presupposes but does not operationalise (Rowley 2007; Pollin 2025b, Ch. 3). Two failure modes are particularly relevant.
+
+_Sycophancy_ is the tendency of LLMs to agree with user assumptions rather than challenge them (Sharma et al. 2023; Malmqvist 2025). Chen et al. (2025) show compliance rates up to 100% with illogical medical requests in frontier models. Fanous et al. (2025) find sycophantic behaviour in 58% of cases across three frontier models. The Critical Expert must recognise that the absence of disagreement from the model does not constitute validation.
+
+_Confabulation_ (commonly called hallucination) is the generation of plausible but false outputs (Summerfield 2025). In research contexts, this is particularly dangerous when the output involves contextualisation, periodisation, or attribution — domains where plausibility and accuracy can diverge.
+
+The Critical Expert's task extends beyond verifying outputs. The more consequential blind spot lies in the _possibility space that was not explored_ — the questions not asked, the alternatives not generated. This metareflective capacity distinguishes the Critical Expert from a reviewer who merely checks correctness.
+
+## 2.5 Positioning Against Related Approaches
+
+Promptotyping is not Rapid Prototyping with LLM assistance. In Rapid Prototyping, the prototype is the deliverable. In Promptotyping, the Promptotyping Documents — the structured knowledge about data, requirements, and implementation decisions — are the primary artifact. The prototype is a functional by-product that may be discarded and regenerated from the documents.
+
+Promptotyping is not User-Centred Design, though it builds on its outputs. The _Scholar-Centred Design_ approach developed in Pollin (2025b) generates user stories, personas, and epics from collaborative sessions with domain experts, drawing on Marchionini's (2006) exploratory search framework and Bates' (1989) berrypicking model of evolving information needs. The mechanism is concrete: in the DEPCHA project, deep-dive sessions with historians of different source types produced structured requirements that could not have been derived from the data alone (Pollin 2025b, Ch. 4.6). Sessions with Tomasek on the Wheaton Day Book surfaced the need for representing agency in economic exchanges (the class _AgentMention_); sessions on tax records revealed the need for collective economic actors without individual identification (the class _Group_); analysis of the Rentrechnung (1718) established the basis for representing economic resources such as grazing rights (the class _Right_). These requirements, translated into personas, epics, and user stories, produced exactly the kind of structured context that Promptotyping Documents encode — and they culminated in a research artifact: the Bookkeeping Ontology (Pollin 2025b). The ontology emerged through a process of deep-dive sessions → contrasting personas → epics → user stories → formal knowledge model. This is the same sequence that Promptotyping now systematises for LLM-assisted production. The ontology was built manually; today, the same process would be promptotypable. This demonstrates that the method is not bound to a specific output type — interfaces, pipelines, ontologies, and data models are different manifestations of the same context transformation mechanism.
+
+Promptotyping is not Agentic Coding, though it uses agentic coding tools. Multi-agent systems like Claude Code are implementation instruments within the method, not the method itself.
+
+## 2.6 Why Now: The Technical Trajectory
+
+Promptotyping became viable as a research method because of convergent advances across three dimensions of LLM development, each of which contributes distinct capabilities to the method.
+
+The first dimension is _pre-training at scale_. Kaplan et al. (2020) established that language model performance improves as a predictable power-law function of model size, dataset size, and compute budget. Hoffmann et al. (2022) refined this finding, showing that training data and model parameters should be scaled in proportion — a result that redirected the field toward larger, higher-quality training corpora. Wei et al. (2022a) documented that sufficiently large models exhibit _emergent abilities_ — capabilities not present in smaller models that appear discontinuously at scale, including multi-step reasoning, code generation, and instruction following. Schaeffer et al. (2024) challenged the discontinuity claim, arguing that the appearance of emergence depends on evaluation metrics, but the practical consequence — that current frontier models can generate functional code, manipulate structured data formats, and reason about domain-specific standards — is not in dispute. Chollet (2019; 2023) offers a complementary interpretation: pre-training deposits a vast repertoire of latent "vector programs" in the model's weights, each encoding a pattern of data transformation. The more diverse the training data, the more programs are available for composition at inference time. This is not general intelligence but a form of broad, interpolative program synthesis — sufficient for the kinds of structured transformations that Promptotyping requires.
+
+The second dimension is _post-training alignment_. Through reinforcement learning from human feedback (RLHF) and constitutional AI methods, models are fine-tuned to follow instructions, use tools, maintain consistent behaviour across long interactions, and produce outputs that align with user intent (Anthropic 2025). For Promptotyping, the relevant consequence is that models can operate as collaborative agents — reading repository structures, following project-specific rules defined in configuration files, and generating code that conforms to documented requirements — rather than producing isolated text completions. The Distillation phase (Section 3.3) is effective precisely because post-training enables models to treat structured Markdown documents as actionable specifications.
+
+The third dimension is _agentic scaling_. Since late 2025, tools like Claude Code (Anthropic 2025) have reached a capability threshold where LLM agents can autonomously navigate file systems, execute scripts, run tests, interpret error messages, and iterate on their own outputs within a repository. Jimenez et al. (2024) introduced the SWE-bench benchmark for evaluating software engineering agents on real GitHub issues; Yang et al. (2024) demonstrated that specialised agent-computer interfaces significantly improve performance on such tasks. Snell et al. (2025) showed that scaling compute at inference time — allowing the model more reasoning steps — can be more effective than scaling model parameters, providing the technical basis for the extended reasoning chains that complex Promptotyping projects require. The current trajectory points toward multi-agent systems where multiple LLM instances collaborate within a project — a pattern already observed in the Kulturpool Explorer (Section 4), where two Claude Code instances worked in parallel on data harvesting and design research.
+
+These three dimensions compound. A model with broad pre-trained knowledge (dimension one), fine-tuned for tool use and instruction following (dimension two), operating within an agentic environment that gives it access to a full repository (dimension three), can function as a research development partner in ways that were not possible before 2025. The empirical evidence from Dell'Acqua et al. (2025), who studied 758 management consultants using GPT-4, suggests that this capability is _jagged_ rather than uniform: tasks that fall within the model's capability frontier see significant productivity gains (+12.2% more tasks completed, 25.1% faster, higher quality), while tasks outside the frontier see degraded performance (19% fewer correct solutions). For Digital Humanities — a field characterised by computer-based work with semantically structured research data in established standards (TEI-XML, RDF, JSON-LD, CMIF) — the relevant tasks fall predominantly within this frontier.
+
+This trajectory is not static. The documented progression from a two-hour experiment in May 2025 to a six-week pipeline processing 4,150 pages in early 2026 (Section 4) reflects not only the author's growing methodological expertise but also measurable improvements in model capabilities across this period. The method evolves with the models — a property that is simultaneously its strength and a source of instability, since practices optimised for one model generation may require adjustment for the next.
