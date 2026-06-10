@@ -1,0 +1,1111 @@
+/* Promptotyping Site DHCraft design system. Black on white, single grey accent,
+   Inter for text, Consolas for code, monochrome phase lane. */
+
+/* Inter self-hosted (no Google Fonts / external CDN: the site promises no
+   tracking). Four static weights; font-display: swap with system fallback. */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/inter-latin-400-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/inter-latin-500-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/inter-latin-600-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/inter-latin-700-normal.woff2") format("woff2");
+}
+
+:root {
+  /* Color */
+  --bg: #ffffff;
+  --text: #1a1a1a;
+  --accent: #d5d5d5;
+  --border: #e0e0e0;
+  --code-bg: #f5f5f5;
+  --glossar-underline: #888888;
+
+  /* Phase lane tones */
+  --phase-preparation: #2a2a2a;
+  --phase-exploration: #525252;
+  --phase-distillation: #8a8a8a;
+  --phase-implementation: #b8b8b8;
+
+  /* Type */
+  --font-text: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-code: Consolas, "SFMono-Regular", Menlo, Monaco, "Liberation Mono", monospace;
+
+  /* Spacing: 8px grid with 4px half-step */
+  --space-1: 0.25rem; /* 4px */
+  --space-2: 0.5rem;  /* 8px */
+  --space-4: 1rem;    /* 16px */
+  --space-6: 1.5rem;  /* 24px */
+  --space-8: 2rem;    /* 32px */
+  --space-12: 3rem;   /* 48px */
+  --space-16: 4rem;   /* 64px */
+
+  /* Layout */
+  --toc-width: 240px;
+  --read-width: 720px;
+  --panel-width: 360px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-text);
+  font-weight: 400;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  text-decoration-color: var(--text);
+}
+
+/* Layout grid */
+
+.layout {
+  display: grid;
+  grid-template-columns: var(--toc-width) minmax(0, 1fr);
+  gap: var(--space-8);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-8);
+}
+
+/* Table of contents */
+
+/* On desktop the nav list is always visible regardless of open state. */
+.toc-nav-list {
+  display: block;
+}
+
+.toc {
+  position: sticky;
+  top: var(--space-8);
+  align-self: start;
+  height: calc(100vh - var(--space-16));
+  overflow-y: auto;
+  padding: var(--space-8) 0;
+  font-size: 0.875rem;
+}
+
+.toc-title {
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--phase-exploration);
+  margin: 0 0 var(--space-4);
+}
+
+.toc ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.toc li {
+  margin: 0;
+}
+
+.toc a {
+  display: block;
+  padding: var(--space-1) 0;
+  text-decoration: none;
+  color: var(--phase-exploration);
+  border-left: 2px solid transparent;
+  padding-left: var(--space-2);
+  transition: color 150ms ease-out, border-color 150ms ease-out;
+}
+
+.toc a:hover {
+  color: var(--text);
+}
+
+.toc a.active {
+  color: var(--text);
+  font-weight: 600;
+  border-left-color: var(--text);
+}
+
+.toc .toc-sub {
+  padding-left: var(--space-4);
+  font-size: 0.8125rem;
+}
+
+/* Reading column */
+
+.content {
+  width: 100%;
+  max-width: var(--read-width);
+  margin: 0 auto;
+  padding: var(--space-12) 0 var(--space-16);
+}
+
+.content h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: var(--space-12) 0 var(--space-4);
+}
+
+.content h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: var(--space-12) 0 var(--space-4);
+}
+
+.content h3 {
+  font-size: 1.375rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: var(--space-8) 0 var(--space-2);
+}
+
+.content h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: var(--space-6) 0 var(--space-2);
+}
+
+.content p {
+  margin: 0 0 var(--space-4);
+}
+
+.content ul,
+.content ol {
+  margin: 0 0 var(--space-4);
+  padding-left: var(--space-4);
+}
+
+.content li {
+  margin: var(--space-1) 0;
+}
+
+.content blockquote {
+  margin: 0 0 var(--space-4);
+  padding-left: var(--space-4);
+  border-left: 2px solid var(--border);
+  color: var(--phase-exploration);
+}
+
+.content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 var(--space-4);
+  font-size: 0.9375rem;
+}
+
+.content th,
+.content td {
+  text-align: left;
+  padding: var(--space-2);
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.content th {
+  font-weight: 600;
+}
+
+/* Code */
+
+.content code {
+  font-family: var(--font-code);
+  font-size: 0.9375rem;
+  background: var(--code-bg);
+  padding: 0.1em 0.3em;
+  border-radius: 2px;
+}
+
+.content pre {
+  background: var(--code-bg);
+  padding: var(--space-4);
+  overflow-x: auto;
+  border-radius: 2px;
+  line-height: 1.4;
+  margin: 0 0 var(--space-4);
+}
+
+.content pre code {
+  background: none;
+  padding: 0;
+  font-size: 0.9375rem;
+}
+
+/* Footnotes (marked renders as raw text; keep readable) */
+
+.content sup {
+  font-size: 0.75rem;
+}
+
+/* Hero */
+
+.hero {
+  max-width: var(--read-width);
+  margin: 0 auto;
+  padding: var(--space-16) 0 var(--space-8);
+  text-align: center;
+}
+
+.hero-logo {
+  max-width: 180px;
+  height: auto;
+  margin: 0 auto var(--space-8);
+  display: block;
+}
+
+.hero h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0 0 var(--space-4);
+}
+
+.hero-lead {
+  font-size: 1.125rem;
+  color: var(--phase-exploration);
+  max-width: 600px;
+  margin: 0 auto var(--space-8);
+}
+
+/* YouTube click-to-load facade */
+
+.video-embed {
+  position: relative;
+  width: 100%;
+  max-width: var(--read-width);
+  margin: 0 auto var(--space-8);
+  aspect-ratio: 16 / 9;
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.video-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.video-facade {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  cursor: pointer;
+  background: var(--code-bg);
+  border: 0;
+  width: 100%;
+  font-family: var(--font-text);
+  color: var(--text);
+  padding: var(--space-8);
+}
+
+.video-facade:hover {
+  background: var(--accent);
+}
+
+.video-facade-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.video-facade-note {
+  font-size: 0.875rem;
+  color: var(--phase-exploration);
+  max-width: 480px;
+}
+
+.video-facade-play {
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: var(--space-2) var(--space-6);
+  border: 1px solid var(--text);
+  border-radius: 2px;
+  transition: background 150ms ease-out, color 150ms ease-out;
+}
+
+.video-facade:hover .video-facade-play {
+  background: var(--text);
+  color: var(--bg);
+}
+
+/* Phase provenance lane: monochrome vertical marker on left edge of paragraphs */
+
+.phase-preparation,
+.phase-exploration,
+.phase-distillation,
+.phase-implementation {
+  position: relative;
+  padding-left: var(--space-6);
+}
+
+.phase-preparation::before,
+.phase-exploration::before,
+.phase-distillation::before,
+.phase-implementation::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10%;
+  bottom: 10%;
+  width: 4px;
+  background: var(--lane-color);
+}
+
+.phase-preparation { --lane-color: var(--phase-preparation); }
+.phase-exploration { --lane-color: var(--phase-exploration); }
+.phase-distillation { --lane-color: var(--phase-distillation); }
+.phase-implementation { --lane-color: var(--phase-implementation); }
+
+/* Phase filter mode: dim non-matching paragraphs */
+
+.content.phase-filtered .phase-preparation,
+.content.phase-filtered .phase-exploration,
+.content.phase-filtered .phase-distillation,
+.content.phase-filtered .phase-implementation {
+  opacity: 0.25;
+  transition: opacity 150ms ease-out;
+}
+
+.content.phase-filtered .phase-active {
+  opacity: 1;
+}
+
+/* Phase lane tooltip */
+
+.phase-tooltip {
+  position: fixed;
+  z-index: 30;
+  background: var(--bg);
+  border: 1px solid var(--accent);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: var(--space-2) var(--space-4);
+  font-size: 0.8125rem;
+  max-width: 240px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 150ms ease-out;
+}
+
+.phase-tooltip.visible {
+  opacity: 1;
+}
+
+.phase-tooltip-name {
+  font-weight: 600;
+}
+
+.phase-tooltip-action {
+  color: var(--phase-exploration);
+}
+
+/* Filter indicator bar */
+
+.filter-bar {
+  position: sticky;
+  top: 0;
+  z-index: 15;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-2) var(--space-4);
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  font-size: 0.875rem;
+}
+
+.filter-bar.visible {
+  display: flex;
+}
+
+.filter-bar button {
+  font-family: var(--font-text);
+  font-size: 0.875rem;
+  background: none;
+  border: 1px solid var(--text);
+  border-radius: 2px;
+  padding: var(--space-1) var(--space-4);
+  cursor: pointer;
+  color: var(--text);
+}
+
+.filter-bar button:hover {
+  background: var(--text);
+  color: var(--bg);
+}
+
+/* Section placeholders (lazy load targets) */
+
+.paper-section {
+  scroll-margin-top: var(--space-8);
+}
+
+.paper-section-placeholder {
+  min-height: 200px;
+}
+
+.section-loading {
+  color: var(--phase-distillation);
+  font-size: 0.875rem;
+  padding: var(--space-8) 0;
+}
+
+/* Phase provenance lane legend: one unobtrusive line before the first paper
+   section, so the grey markers in the reading column are legible. */
+
+.phase-legend {
+  max-width: var(--read-width);
+  margin: 0 auto var(--space-8);
+  padding: var(--space-4) 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  font-size: 0.8125rem;
+  color: var(--phase-exploration);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-6);
+}
+
+.phase-legend-intro {
+  flex-basis: 100%;
+  margin: 0 0 var(--space-1);
+}
+
+.phase-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.phase-legend-swatch {
+  width: 0.75rem;
+  height: 0.75rem;
+  flex: 0 0 auto;
+  display: inline-block;
+}
+
+.phase-legend-swatch.preparation { background: var(--phase-preparation); }
+.phase-legend-swatch.exploration { background: var(--phase-exploration); }
+.phase-legend-swatch.distillation { background: var(--phase-distillation); }
+.phase-legend-swatch.implementation { background: var(--phase-implementation); }
+
+/* Placeholder sections (content arrives in later work packages). They keep the
+   anchor scheme and TOC complete without visible empty boxes. */
+
+.placeholder-section {
+  scroll-margin-top: var(--space-8);
+}
+
+/* Side panel: slides in from the right on a trigger. Reusable shell driven by
+   openSidePanel() in app.js; used by Vorlagen, Glossar, Cases in later sprints. */
+
+.side-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: var(--panel-width);
+  max-width: 90vw;
+  background: var(--bg);
+  border-left: 1px solid var(--border);
+  box-shadow: -2px 0 12px rgba(0, 0, 0, 0.06);
+  transform: translateX(100%);
+  transition: transform 200ms ease-out;
+  z-index: 25;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.side-panel.open {
+  transform: translateX(0);
+}
+
+.side-panel-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-6) var(--space-6) var(--space-4);
+  border-bottom: 1px solid var(--border);
+}
+
+.side-panel-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.side-panel-close {
+  font-family: var(--font-text);
+  font-size: 1.25rem;
+  line-height: 1;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  color: var(--text);
+  padding: 0 var(--space-1);
+}
+
+.side-panel-body {
+  overflow-y: auto;
+  padding: var(--space-6);
+  font-size: 0.9375rem;
+}
+
+.side-panel-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 200ms ease-out;
+  pointer-events: none;
+  z-index: 24;
+}
+
+.side-panel-backdrop.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Card style (Vorlagen rows, Case-Study cards in later sprints) */
+
+.card {
+  border: 1px solid var(--border);
+  padding: var(--space-4);
+  margin: 0 0 var(--space-4);
+  background: var(--bg);
+  transition: background 150ms ease-out;
+}
+
+.card:hover {
+  background: var(--code-bg);
+}
+
+/* Glossar trigger (Sprint 2+, styling already defined) */
+
+.glossar-trigger {
+  border-bottom: 1px dotted var(--glossar-underline);
+  cursor: help;
+}
+
+.glossar-trigger:hover {
+  background: var(--code-bg);
+}
+
+/* Anchored headings (Praxis H3, etc.) keep clear of the sticky filter bar. */
+
+.anchored-heading {
+  scroll-margin-top: var(--space-12);
+}
+
+.glossar-entry,
+.konzept-alias {
+  scroll-margin-top: var(--space-12);
+}
+
+/* Vorlagen table: clickable rows open the side panel. */
+
+.vorlagen-table tbody tr.vorlage-row {
+  cursor: pointer;
+  transition: background 150ms ease-out;
+}
+
+.vorlagen-table tbody tr.vorlage-row:hover,
+.vorlagen-table tbody tr.vorlage-row:focus {
+  background: var(--code-bg);
+  outline: none;
+}
+
+.vorlagen-table tbody tr.vorlage-row:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: -2px;
+}
+
+.vorlagen-machine-note {
+  font-size: 0.875rem;
+  color: var(--phase-exploration);
+}
+
+/* Frontmatter-Inspector */
+
+.frontmatter-inspector {
+  border: 1px solid var(--border);
+  padding: var(--space-6);
+  margin: var(--space-8) 0;
+}
+
+.frontmatter-inspector h3 {
+  margin-top: 0;
+}
+
+.frontmatter-inspector textarea {
+  width: 100%;
+  font-family: var(--font-code);
+  font-size: 0.875rem;
+  line-height: 1.4;
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: var(--space-4);
+  resize: vertical;
+}
+
+.inspector-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.inspector-resolve,
+.case-card-more,
+.panel-copy,
+.code-copy {
+  font-family: var(--font-text);
+  font-size: 0.875rem;
+  background: none;
+  border: 1px solid var(--text);
+  border-radius: 2px;
+  padding: var(--space-1) var(--space-4);
+  cursor: pointer;
+  color: var(--text);
+  transition: background 150ms ease-out, color 150ms ease-out;
+}
+
+.inspector-resolve:hover,
+.case-card-more:hover,
+.panel-copy:hover,
+.code-copy:hover {
+  background: var(--text);
+  color: var(--bg);
+}
+
+.inspector-status {
+  font-size: 0.875rem;
+}
+
+.inspector-status-error {
+  color: var(--phase-preparation);
+}
+
+.inspector-status-warn {
+  color: var(--phase-exploration);
+}
+
+.inspector-status-ok {
+  color: var(--phase-distillation);
+}
+
+/* Side-panel footer: copy button, machine-url link, frontmatter preview */
+
+.panel-footer {
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.panel-frontmatter {
+  flex-basis: 100%;
+  margin: var(--space-4) 0 0;
+}
+
+.panel-frontmatter code {
+  white-space: pre;
+}
+
+/* Code copy button: positioned over the top-right of a pre block. */
+
+.skills-block pre {
+  position: relative;
+}
+
+.code-copy {
+  position: absolute;
+  top: var(--space-2);
+  right: var(--space-2);
+  background: var(--bg);
+}
+
+/* Case-study filter bar and cards */
+
+.case-filter-bar {
+  margin: var(--space-6) 0;
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--border);
+}
+
+.case-filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.case-chip {
+  font-family: var(--font-text);
+  font-size: 0.8125rem;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: var(--space-1) var(--space-2);
+  cursor: pointer;
+  color: var(--phase-exploration);
+  transition: background 150ms ease-out, color 150ms ease-out, border-color 150ms ease-out;
+}
+
+.case-chip:hover {
+  border-color: var(--text);
+  color: var(--text);
+}
+
+.case-chip.active {
+  background: var(--text);
+  color: var(--bg);
+  border-color: var(--text);
+}
+
+.case-filter-secondary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-6);
+  font-size: 0.875rem;
+}
+
+.case-filter-control {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.case-filter-control select {
+  font-family: var(--font-text);
+  font-size: 0.875rem;
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.case-group {
+  margin: var(--space-8) 0;
+}
+
+.case-group-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--phase-exploration);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: var(--space-2);
+}
+
+.case-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-4);
+}
+
+.case-card {
+  border: 1px solid var(--border);
+  padding: var(--space-4);
+  background: var(--bg);
+  transition: background 150ms ease-out;
+  scroll-margin-top: var(--space-12);
+}
+
+.case-card:hover {
+  background: var(--code-bg);
+}
+
+.case-card-name {
+  margin: 0 0 var(--space-2);
+  font-size: 1.0625rem;
+}
+
+.case-card-summary {
+  margin: 0 0 var(--space-2);
+  font-size: 0.875rem;
+}
+
+.case-card-meta {
+  margin: 0 0 var(--space-2);
+  font-size: 0.8125rem;
+  color: var(--phase-exploration);
+}
+
+.case-card-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.case-card-links a {
+  font-size: 0.875rem;
+}
+
+.case-empty {
+  color: var(--phase-exploration);
+  font-size: 0.875rem;
+}
+
+/* Glossar list */
+
+.glossar-entry {
+  margin: var(--space-6) 0;
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--border);
+}
+
+.glossar-term {
+  margin: 0 0 var(--space-2);
+}
+
+.glossar-kurz {
+  font-weight: 500;
+  margin: 0 0 var(--space-2);
+}
+
+.glossar-voll {
+  margin: 0 0 var(--space-2);
+}
+
+.glossar-quelle {
+  font-size: 0.8125rem;
+  color: var(--phase-exploration);
+  margin: 0;
+}
+
+/* Glossar trigger tooltip (hover in the reading column) */
+
+.glossar-tooltip {
+  position: absolute;
+  z-index: 30;
+  background: var(--bg);
+  border: 1px solid var(--accent);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: var(--space-2) var(--space-4);
+  font-size: 0.8125rem;
+  max-width: 280px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 150ms ease-out;
+}
+
+.glossar-tooltip.visible {
+  opacity: 1;
+}
+
+/* Inline citation links jump to the literature section. */
+
+.citation-link {
+  text-decoration-style: dotted;
+}
+
+/* 404 error message */
+
+#error-message {
+  display: none;
+  max-width: var(--read-width);
+  margin: var(--space-16) auto;
+  padding: 0 var(--space-8);
+}
+
+/* Mobile phase bar: four-strip sticky top-bar replacing the left lane on mobile */
+
+.mobile-phase-bar {
+  display: none;
+}
+
+/* Hamburger TOC toggle (mobile only, hidden on desktop) */
+
+.toc-toggle {
+  display: none;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 0 var(--space-6);
+  }
+
+  /* TOC becomes a collapsible drawer. The toggle button is always visible. */
+  .toc-toggle {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    width: 100%;
+    background: none;
+    border: 0;
+    border-bottom: 1px solid var(--border);
+    padding: var(--space-4) 0;
+    font-family: var(--font-text);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text);
+    cursor: pointer;
+    text-align: left;
+  }
+
+  /* Hide the desktop toc-title on mobile; the toggle button serves that purpose */
+  .toc-title {
+    display: none;
+  }
+
+  .toc-toggle-icon {
+    font-size: 1rem;
+    line-height: 1;
+    transition: transform 150ms ease-out;
+  }
+
+  .toc-toggle[aria-expanded="true"] .toc-toggle-icon {
+    transform: rotate(90deg);
+  }
+
+  .toc {
+    position: static;
+    height: auto;
+    padding: 0;
+    border-bottom: 0;
+    overflow: hidden;
+  }
+
+  .toc-nav-list {
+    padding: var(--space-4) 0 var(--space-6);
+    border-bottom: 1px solid var(--border);
+    display: none;
+  }
+
+  .toc-nav-list.open {
+    display: block;
+  }
+
+  .content {
+    padding: var(--space-8) 0;
+  }
+
+  .hero {
+    padding: var(--space-8) 0;
+  }
+
+  /* Side panel becomes a bottom sheet on mobile. */
+  .side-panel {
+    top: auto;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: none;
+    max-height: 80vh;
+    border-left: 0;
+    border-top: 1px solid var(--border);
+    border-radius: 0.5rem 0.5rem 0 0;
+    transform: translateY(100%);
+  }
+
+  .side-panel.open {
+    transform: translateY(0);
+  }
+
+  /* Drag handle at top of bottom sheet */
+  .side-panel::before {
+    content: "";
+    display: block;
+    width: 2.5rem;
+    height: 0.25rem;
+    background: var(--border);
+    border-radius: 2px;
+    margin: var(--space-2) auto var(--space-1);
+    flex-shrink: 0;
+  }
+
+  /* Mobile phase bar: sticky strip of four phase tones */
+  .mobile-phase-bar {
+    display: flex;
+    position: sticky;
+    top: 0;
+    height: 2rem;
+    z-index: 10;
+  }
+
+  .mobile-phase-bar > button {
+    flex: 1;
+    border: 0;
+    cursor: pointer;
+    padding: 0;
+    transition: flex 200ms ease-out;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: var(--font-text);
+    font-size: 0.625rem;
+    font-weight: 600;
+    color: var(--bg);
+    opacity: 0.85;
+  }
+
+  .mobile-phase-bar > button.active {
+    flex: 1.6;
+    opacity: 1;
+  }
+
+  .mobile-phase-bar .preparation  { background: var(--phase-preparation); }
+  .mobile-phase-bar .exploration  { background: var(--phase-exploration); }
+  .mobile-phase-bar .distillation { background: var(--phase-distillation); }
+  .mobile-phase-bar .implementation { background: var(--phase-implementation); color: var(--text); }
+}

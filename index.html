@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Promptotyping. Eine Context-Engineering-Methode</title>
+  <meta name="description" content="Promptotyping ist eine iterative Context-Engineering-Methode in vier Phasen, um aus Daten und Frontier-LLMs Forschungsartefakte zu erzeugen. Interaktive Methodik-Site zum Paper Pollin 2026.">
+
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://dhcraft.org/Promptotyping/">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Promptotyping. Eine Context-Engineering-Methode">
+  <meta property="og:description" content="Iterative Context-Engineering-Methode in vier Phasen, um aus Daten und Frontier-LLMs Forschungsartefakte zu erzeugen.">
+  <meta property="og:url" content="https://dhcraft.org/Promptotyping/">
+  <meta property="og:image" content="https://dhcraft.org/Promptotyping/assets/promptotyping-logo.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "name": "Promptotyping. Eine Context-Engineering-Methode",
+    "description": "Promptotyping ist eine iterative Context-Engineering-Methode in vier Phasen, um aus Daten und Frontier-LLMs Forschungsartefakte zu erzeugen.",
+    "url": "https://dhcraft.org/Promptotyping/",
+    "author": {
+      "@type": "Person",
+      "name": "Christopher Pollin",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Digital Humanities Craft OG"
+      }
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Digital Humanities Craft OG",
+      "url": "https://dhcraft.org"
+    },
+    "inLanguage": "de"
+  }
+  </script>
+
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Phase filter indicator (sticky, hidden until a phase filter is active) -->
+  <div class="filter-bar" id="filter-bar">
+    <span id="filter-label">Filter</span>
+    <button type="button" id="filter-clear">Filter aufheben</button>
+  </div>
+
+  <!-- Hero: logo, title, method core statement, part-1 video as click-to-load facade -->
+  <header class="hero">
+    <img class="hero-logo" src="assets/promptotyping-logo.png" alt="Promptotyping Logo">
+    <h1>Promptotyping</h1>
+    <p class="hero-lead">Eine iterative Context-Engineering-Methode in vier Phasen, um aus Daten und Frontier-LLMs Forschungsartefakte zu erzeugen. Strukturierter Kontext vor Code, Verifikation vor Vertrauen, Dokumentation vor Geschwindigkeit.</p>
+    <div class="video-embed" id="hero-video">
+      <button type="button" class="video-facade" aria-label="Video laden: Einfuehrung in Promptotyping, Teil 1" data-youtube="8sUe4Jkh3uQ" data-title="Einfuehrung in Promptotyping, Teil 1">
+        <span class="video-facade-title">Einfuehrung in Promptotyping, Teil 1</span>
+        <span class="video-facade-note">Klick laedt das Video von youtube-nocookie.com. Vor dem Klick wird keine Verbindung zu YouTube aufgebaut und es findet kein Tracking statt.</span>
+        <span class="video-facade-play">Video laden</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile phase bar: sticky top strip showing four phase tones (hidden on desktop) -->
+  <div class="mobile-phase-bar" id="mobile-phase-bar" role="navigation" aria-label="Phasen-Navigation">
+    <button type="button" class="preparation" data-phase="phase-preparation" aria-label="Zur naechsten Preparation-Passage springen">Preparation</button>
+    <button type="button" class="exploration" data-phase="phase-exploration" aria-label="Zur naechsten Exploration-Passage springen">Exploration</button>
+    <button type="button" class="distillation" data-phase="phase-distillation" aria-label="Zur naechsten Distillation-Passage springen">Distillation</button>
+    <button type="button" class="implementation" data-phase="phase-implementation" aria-label="Zur naechsten Implementation-Passage springen">Implementation</button>
+  </div>
+
+  <div class="layout">
+
+    <!-- Sticky table of contents (hamburger toggle on mobile) -->
+    <nav class="toc" aria-label="Inhaltsverzeichnis">
+      <button type="button" class="toc-toggle" id="toc-toggle" aria-expanded="false" aria-controls="toc-nav-list">
+        <span class="toc-toggle-icon">&#9658;</span>
+        <span>Inhalt</span>
+      </button>
+      <p class="toc-title">Inhalt</p>
+      <ul id="toc-nav-list" class="toc-nav-list">
+        <li><a href="#ueberblick" data-target="ueberblick">Ueberblick</a></li>
+        <li><a href="#abschnitt-1-introduction" data-target="abschnitt-1-introduction">Paper</a></li>
+        <li class="toc-sub"><a href="#abschnitt-1-introduction" data-target="abschnitt-1-introduction">1. Introduction</a></li>
+        <li class="toc-sub"><a href="#abschnitt-2-terms-positioning" data-target="abschnitt-2-terms-positioning">2. Terms and Positioning</a></li>
+        <li class="toc-sub"><a href="#abschnitt-3-four-phases" data-target="abschnitt-3-four-phases">3. The Four Phases</a></li>
+        <li class="toc-sub"><a href="#abschnitt-4-projects" data-target="abschnitt-4-projects">4. Projects and Evidence</a></li>
+        <li class="toc-sub"><a href="#abschnitt-5-epistemic-infrastructure" data-target="abschnitt-5-epistemic-infrastructure">5. Epistemic Infrastructure</a></li>
+        <li class="toc-sub"><a href="#abschnitt-6-discussion" data-target="abschnitt-6-discussion">6. Discussion</a></li>
+        <li class="toc-sub"><a href="#abschnitt-7-conclusion" data-target="abschnitt-7-conclusion">7. Conclusion</a></li>
+        <li><a href="#vorlagen" data-target="vorlagen">Vorlagen</a></li>
+        <li><a href="#use-cases" data-target="use-cases">Use Cases</a></li>
+        <li><a href="#praxis" data-target="praxis">Praxis</a></li>
+        <li><a href="#skills" data-target="skills">Skills</a></li>
+        <li><a href="#glossar" data-target="glossar">Glossar</a></li>
+        <li><a href="#konvention-v0.1" data-target="konvention-v0.1">Konvention</a></li>
+        <li><a href="#literatur" data-target="literatur">Literatur</a></li>
+      </ul>
+    </nav>
+
+    <!-- Central reading column -->
+    <main class="content" id="content">
+
+      <!-- Ueberblick: German method overview. Inhalt folgt in spaeterem Arbeitspaket -->
+      <section class="placeholder-section" id="ueberblick"></section>
+
+      <!-- Phase provenance lane legend, right before the first paper section -->
+      <div class="phase-legend" id="phase-legend">
+        <p class="phase-legend-intro">Die grauen Striche links der Absaetze markieren, welcher der vier Promptotyping-Phasen ein Absatz zugeordnet ist. Absaetze ohne Strich sind keiner einzelnen Phase eindeutig zuzuordnen.</p>
+        <span class="phase-legend-item"><span class="phase-legend-swatch preparation"></span>Preparation</span>
+        <span class="phase-legend-item"><span class="phase-legend-swatch exploration"></span>Exploration und Mapping</span>
+        <span class="phase-legend-item"><span class="phase-legend-swatch distillation"></span>Distillation</span>
+        <span class="phase-legend-item"><span class="phase-legend-swatch implementation"></span>Implementation</span>
+      </div>
+
+      <!-- Paper sections. Section 1 loads immediately, the rest lazily. -->
+      <section class="paper-section" id="abschnitt-1-introduction"></section>
+      <section class="paper-section paper-section-placeholder" id="abschnitt-2-terms-positioning"></section>
+      <section class="paper-section paper-section-placeholder" id="abschnitt-3-four-phases"></section>
+
+      <!-- Vorlagen (Promptotyping Documents). Inhalt folgt in spaeterem Arbeitspaket -->
+      <section class="placeholder-section" id="vorlagen"></section>
+
+      <section class="paper-section paper-section-placeholder" id="abschnitt-4-projects"></section>
+
+      <!-- Use Cases / Case Studies. Inhalt folgt in spaeterem Arbeitspaket -->
+      <section class="placeholder-section" id="use-cases"></section>
+
+      <section class="paper-section paper-section-placeholder" id="abschnitt-5-epistemic-infrastructure"></section>
+      <section class="paper-section paper-section-placeholder" id="abschnitt-6-discussion"></section>
+      <section class="paper-section paper-section-placeholder" id="abschnitt-7-conclusion"></section>
+
+      <!-- Praxis. Inhalt folgt in spaeterem Arbeitspaket -->
+      <section class="placeholder-section" id="praxis"></section>
+      <!-- Skills. Inhalt folgt in spaeterem Arbeitspaket -->
+      <section class="placeholder-section" id="skills"></section>
+      <!-- Glossar. Inhalt folgt in spaeterem Arbeitspaket -->
+      <section class="placeholder-section" id="glossar"></section>
+      <!-- Konvention (Promptotyping Documents). Inhalt folgt in spaeterem Arbeitspaket -->
+      <section class="placeholder-section" id="konvention-v0.1"></section>
+
+      <!-- Literatur (References) -->
+      <section class="paper-section paper-section-placeholder" id="literatur"></section>
+
+    </main>
+  </div>
+
+  <!-- Reusable side-panel shell (openSidePanel in app.js fills and reveals it) -->
+  <div class="side-panel-backdrop" id="side-panel-backdrop"></div>
+  <aside class="side-panel" id="side-panel" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="side-panel-title">
+    <div class="side-panel-header">
+      <h2 class="side-panel-title" id="side-panel-title"></h2>
+      <button type="button" class="side-panel-close" id="side-panel-close" aria-label="Panel schliessen">&times;</button>
+    </div>
+    <div class="side-panel-body" id="side-panel-body"></div>
+  </aside>
+
+  <script src="assets/vendor/marked.min.js"></script>
+  <script src="assets/vendor/js-yaml.min.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/modules/frontmatter-inspector.js"></script>
+  <script src="assets/js/modules/case-study-filter.js"></script>
+  <script>
+    // Wire up the hero video facade (the part-2 video is wired in app.js).
+    (function () {
+      var facade = document.querySelector("#hero-video .video-facade");
+      if (!facade) { return; }
+      facade.addEventListener("click", function () {
+        var id = facade.getAttribute("data-youtube");
+        var title = facade.getAttribute("data-title");
+        var iframe = document.createElement("iframe");
+        iframe.src = "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&rel=0";
+        iframe.setAttribute("title", title);
+        iframe.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture");
+        iframe.setAttribute("allowfullscreen", "");
+        var wrap = document.getElementById("hero-video");
+        wrap.innerHTML = "";
+        wrap.appendChild(iframe);
+      });
+    })();
+  </script>
+</body>
+</html>

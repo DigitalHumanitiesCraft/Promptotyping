@@ -53,7 +53,7 @@ Die Site soll ruhig sein. Konkret bedeutet das beim Coden:
 
 ## Phasen-Provenance-Lane: Implementierungsregel
 
-Beim Spiegeln des Pollin-2026-Papers ins `_content/paper/`-Verzeichnis: jeder Absatz braucht eine Phasen-Klasse.
+Beim Spiegeln des Pollin-2026-Papers ins `_content/paper/`-Verzeichnis: Fließtext-Absätze, die erkennbar eine der vier Phasen behandeln, bekommen eine Phasen-Klasse. Absätze ohne klare dominante Phase (Einleitung, Positionierung, Diskussion, Schluss) bleiben ohne Klasse — lieber weniger, dafür belastbare Zuordnungen (Entscheidung 2026-06-10, ersetzt die frühere Jeder-Absatz-Regel).
 
 ```markdown
 {:.phase-preparation}    Absätze über Vorbereitung, User Stories, Daten-Inventur
@@ -66,13 +66,15 @@ Wenn ein Absatz nicht eindeutig zuordenbar ist (z.B. allgemeine Methode-Beschrei
 
 ## URL-Anker-Schema (Pflicht-Konvention, Stand ADR-2/ADR-3)
 
-- Vorlagen (Promptotyping Documents): Subpath `/promptotyping-document/{slug}` (Latest, kanonisch), gleichwertig Hash `#promptotyping-document-{slug}`. Acht Slugs: `data`, `index`, `project`, `specification`, `architecture`, `design`, `journal`, `user-stories`. Snapshots erst bei Versionssprung über Sub-Anker `#promptotyping-document-{slug}-v{version}` bzw. `/promptotyping-document/{slug}#v{version}` — kein eigener Subpath pro Version. (Das ältere Schema `#vorlage-{name}-{version}` ist obsolet, siehe journal.md 2026-05-09 „URL-Schema-Korrektur".)
+- Vorlagen (Promptotyping Documents): Subpath `/promptotyping-document/{slug}` (Latest, kanonisch), gleichwertig Hash `#promptotyping-document-{slug}`. Neun Slugs: `data`, `index`, `project`, `specification`, `architecture`, `design`, `journal`, `user-stories`, `action-layer` (Entwurf, ADR-9). Snapshots erst bei Versionssprung über Sub-Anker `#promptotyping-document-{slug}-v{version}` bzw. `/promptotyping-document/{slug}#v{version}` — kein eigener Subpath pro Version. (Das ältere Schema `#vorlage-{name}-{version}` ist obsolet, siehe journal.md 2026-05-09 „URL-Schema-Korrektur".)
+- Maschinenadresse (ADR-10): Für HTTP-Abruf ohne JavaScript ist die statische Markdown-URL kanonisch, Muster `https://dhcraft.org/Promptotyping/_content/promptotyping-document/{slug}.md`. Die Subpath-Auflösung läuft über `404.html` und setzt JavaScript voraus. `.nojekyll` im Repo-Root ist Pflicht, sonst publiziert GitHub Pages `_content/` nicht.
 - Konzepte: `#konzept-{name}` (z.B. `#konzept-eil`, `#konzept-asymmetric-amplification`)
 - Case Studies: `#case-{name}` (z.B. `#case-herdata`, `#case-klawiter-rescue`)
 - Konvention: `#konvention-v0.1`
 - Glossar: `#glossar`
 - Literatur: `#literatur`
-- Paper-Sektionen: `#paper-section-1` bis `#paper-section-7` (sieben Section-Files unter `_content/paper/`)
+- Paper-Sektionen: `#abschnitt-{n}-{slug}` (z.B. `#abschnitt-3-four-phases`; sieben Section-Files unter `_content/paper/`)
+- Überblick: `#ueberblick`; Use Cases: `#use-cases`; Praxis-Einträge: `#praxis-{slug}`; Skills: `#skills-{slug}` (A13 bis A15)
 
 Anker dürfen nicht ohne Diskussion umbenannt werden — Repos können auf sie als `template:`-URI verlinken.
 
@@ -106,5 +108,5 @@ Niemals stillschweigend divergieren lassen.
 Commits, an denen Claude beteiligt war, tragen am Ende:
 
 ```
-Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>
+Co-Authored-By: Claude <tatsächlich verwendetes Modell> <noreply@anthropic.com>
 ```

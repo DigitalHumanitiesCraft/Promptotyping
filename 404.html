@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Promptotyping. Eine Context-Engineering-Methode</title>
+  <meta name="description" content="Promptotyping ist eine iterative Context-Engineering-Methode in vier Phasen, um aus Daten und Frontier-LLMs Forschungsartefakte zu erzeugen. Interaktive Methodik-Site zum Paper Pollin 2026.">
+
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://dhcraft.org/Promptotyping/">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Promptotyping. Eine Context-Engineering-Methode">
+  <meta property="og:description" content="Iterative Context-Engineering-Methode in vier Phasen, um aus Daten und Frontier-LLMs Forschungsartefakte zu erzeugen.">
+  <meta property="og:url" content="https://dhcraft.org/Promptotyping/">
+  <meta property="og:image" content="https://dhcraft.org/Promptotyping/assets/promptotyping-logo.png">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script>
+    // Subpath-to-hash routing. GitHub Pages serves 404.html for any path that
+    // is not a real file; this prelude maps the requested subpath onto the
+    // canonical hash anchor and rewrites the URL, so the single-page app loads
+    // the right section. Mirrors PromptotypingApp.resolveTemplateUrl in app.js.
+    (function () {
+      // Preserve a snapshot suffix (e.g. v0.1) so
+      // /promptotyping-document/data#v0.1 stays addressable.
+      var incomingHash = window.location.hash.replace(/^#/, "");
+      var path = window.location.pathname
+        .replace(/^\/Promptotyping\//, "")
+        .replace(/^\//, "")
+        .replace(/\/$/, "");
+      var segments = path.split("/");
+
+      var anchor = null;
+      if (segments[0] === "promptotyping-document" && segments[1]) {
+        anchor = /^v[\d.]+$/.test(incomingHash)
+          ? "promptotyping-document-" + segments[1] + "-" + incomingHash
+          : "promptotyping-document-" + segments[1];
+      } else if (segments[0] === "konzepte" && segments[1]) {
+        anchor = "konzept-" + segments[1];
+      } else if (segments[0] === "case-studies" && segments[1]) {
+        anchor = "case-" + segments[1];
+      } else if (segments[0] === "konvention" && segments[1]) {
+        anchor = "konvention-" + segments[1];
+      } else if (segments[0] === "paper" && segments[1]) {
+        anchor = "abschnitt-" + segments[1];
+      } else if (segments[0] === "praxis" && segments[1]) {
+        anchor = "praxis-" + segments[1];
+      } else if (segments[0] === "skills" && segments[1]) {
+        anchor = "skills-" + segments[1];
+      } else if (segments[0] === "ueberblick") {
+        anchor = "ueberblick";
+      } else if (segments[0] === "use-cases") {
+        anchor = "use-cases";
+      } else if (segments[0] === "glossar") {
+        anchor = "glossar";
+      } else if (segments[0] === "literatur") {
+        anchor = "literatur";
+      }
+
+      if (anchor) {
+        window.history.replaceState({}, "", "/Promptotyping/#" + anchor);
+      } else {
+        window.__promptotyping404 = true;
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- Real 404: shown only when the path matched no anchor type -->
+  <div id="error-message">
+    <h1>Seite nicht gefunden</h1>
+    <p>Diese Adresse existiert nicht. Zurueck zur <a href="/Promptotyping/">Startseite</a>.</p>
+  </div>
+
+  <div class="filter-bar" id="filter-bar">
+    <span id="filter-label">Filter</span>
+    <button type="button" id="filter-clear">Filter aufheben</button>
+  </div>
+
+  <header class="hero">
+    <img class="hero-logo" src="assets/promptotyping-logo.png" alt="Promptotyping Logo">
+    <h1>Promptotyping</h1>
+    <p class="hero-lead">Eine iterative Context-Engineering-Methode in vier Phasen, um aus Daten und Frontier-LLMs Forschungsartefakte zu erzeugen. Strukturierter Kontext vor Code, Verifikation vor Vertrauen, Dokumentation vor Geschwindigkeit.</p>
+    <div class="video-embed" id="hero-video">
+      <button type="button" class="video-facade" aria-label="Video laden: Einfuehrung in Promptotyping, Teil 1" data-youtube="8sUe4Jkh3uQ" data-title="Einfuehrung in Promptotyping, Teil 1">
+        <span class="video-facade-title">Einfuehrung in Promptotyping, Teil 1</span>
+        <span class="video-facade-note">Klick laedt das Video von youtube-nocookie.com. Vor dem Klick wird keine Verbindung zu YouTube aufgebaut und es findet kein Tracking statt.</span>
+        <span class="video-facade-play">Video laden</span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-phase-bar" id="mobile-phase-bar" role="navigation" aria-label="Phasen-Navigation">
+    <button type="button" class="preparation" data-phase="phase-preparation" aria-label="Zur naechsten Preparation-Passage springen">Preparation</button>
+    <button type="button" class="exploration" data-phase="phase-exploration" aria-label="Zur naechsten Exploration-Passage springen">Exploration</button>
+    <button type="button" class="distillation" data-phase="phase-distillation" aria-label="Zur naechsten Distillation-Passage springen">Distillation</button>
+    <button type="button" class="implementation" data-phase="phase-implementation" aria-label="Zur naechsten Implementation-Passage springen">Implementation</button>
+  </div>
+
+  <div class="layout">
+
+    <nav class="toc" aria-label="Inhaltsverzeichnis">
+      <button type="button" class="toc-toggle" id="toc-toggle" aria-expanded="false" aria-controls="toc-nav-list">
+        <span class="toc-toggle-icon">&#9658;</span>
+        <span>Inhalt</span>
+      </button>
+      <p class="toc-title">Inhalt</p>
+      <ul id="toc-nav-list" class="toc-nav-list">
+        <li><a href="#ueberblick" data-target="ueberblick">Ueberblick</a></li>
+        <li><a href="#abschnitt-1-introduction" data-target="abschnitt-1-introduction">Paper</a></li>
+        <li class="toc-sub"><a href="#abschnitt-1-introduction" data-target="abschnitt-1-introduction">1. Introduction</a></li>
+        <li class="toc-sub"><a href="#abschnitt-2-terms-positioning" data-target="abschnitt-2-terms-positioning">2. Terms and Positioning</a></li>
+        <li class="toc-sub"><a href="#abschnitt-3-four-phases" data-target="abschnitt-3-four-phases">3. The Four Phases</a></li>
+        <li class="toc-sub"><a href="#abschnitt-4-projects" data-target="abschnitt-4-projects">4. Projects and Evidence</a></li>
+        <li class="toc-sub"><a href="#abschnitt-5-epistemic-infrastructure" data-target="abschnitt-5-epistemic-infrastructure">5. Epistemic Infrastructure</a></li>
+        <li class="toc-sub"><a href="#abschnitt-6-discussion" data-target="abschnitt-6-discussion">6. Discussion</a></li>
+        <li class="toc-sub"><a href="#abschnitt-7-conclusion" data-target="abschnitt-7-conclusion">7. Conclusion</a></li>
+        <li><a href="#vorlagen" data-target="vorlagen">Vorlagen</a></li>
+        <li><a href="#use-cases" data-target="use-cases">Use Cases</a></li>
+        <li><a href="#praxis" data-target="praxis">Praxis</a></li>
+        <li><a href="#skills" data-target="skills">Skills</a></li>
+        <li><a href="#glossar" data-target="glossar">Glossar</a></li>
+        <li><a href="#konvention-v0.1" data-target="konvention-v0.1">Konvention</a></li>
+        <li><a href="#literatur" data-target="literatur">Literatur</a></li>
+      </ul>
+    </nav>
+
+    <main class="content" id="content">
+      <section class="placeholder-section" id="ueberblick"></section>
+
+      <div class="phase-legend" id="phase-legend">
+        <p class="phase-legend-intro">Die grauen Striche links der Absaetze markieren, welcher der vier Promptotyping-Phasen ein Absatz zugeordnet ist. Absaetze ohne Strich sind keiner einzelnen Phase eindeutig zuzuordnen.</p>
+        <span class="phase-legend-item"><span class="phase-legend-swatch preparation"></span>Preparation</span>
+        <span class="phase-legend-item"><span class="phase-legend-swatch exploration"></span>Exploration und Mapping</span>
+        <span class="phase-legend-item"><span class="phase-legend-swatch distillation"></span>Distillation</span>
+        <span class="phase-legend-item"><span class="phase-legend-swatch implementation"></span>Implementation</span>
+      </div>
+
+      <section class="paper-section" id="abschnitt-1-introduction"></section>
+      <section class="paper-section paper-section-placeholder" id="abschnitt-2-terms-positioning"></section>
+      <section class="paper-section paper-section-placeholder" id="abschnitt-3-four-phases"></section>
+      <section class="placeholder-section" id="vorlagen"></section>
+      <section class="paper-section paper-section-placeholder" id="abschnitt-4-projects"></section>
+      <section class="placeholder-section" id="use-cases"></section>
+      <section class="paper-section paper-section-placeholder" id="abschnitt-5-epistemic-infrastructure"></section>
+      <section class="paper-section paper-section-placeholder" id="abschnitt-6-discussion"></section>
+      <section class="paper-section paper-section-placeholder" id="abschnitt-7-conclusion"></section>
+      <section class="placeholder-section" id="praxis"></section>
+      <section class="placeholder-section" id="skills"></section>
+      <section class="placeholder-section" id="glossar"></section>
+      <section class="placeholder-section" id="konvention-v0.1"></section>
+      <section class="paper-section paper-section-placeholder" id="literatur"></section>
+    </main>
+  </div>
+
+  <div class="side-panel-backdrop" id="side-panel-backdrop"></div>
+  <aside class="side-panel" id="side-panel" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="side-panel-title">
+    <div class="side-panel-header">
+      <h2 class="side-panel-title" id="side-panel-title"></h2>
+      <button type="button" class="side-panel-close" id="side-panel-close" aria-label="Panel schliessen">&times;</button>
+    </div>
+    <div class="side-panel-body" id="side-panel-body"></div>
+  </aside>
+
+  <script src="assets/vendor/marked.min.js"></script>
+  <script src="assets/vendor/js-yaml.min.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/modules/frontmatter-inspector.js"></script>
+  <script src="assets/js/modules/case-study-filter.js"></script>
+  <script>
+    (function () {
+      if (window.__promptotyping404) {
+        var err = document.getElementById("error-message");
+        if (err) { err.style.display = "block"; }
+      }
+      var facade = document.querySelector("#hero-video .video-facade");
+      if (!facade) { return; }
+      facade.addEventListener("click", function () {
+        var id = facade.getAttribute("data-youtube");
+        var title = facade.getAttribute("data-title");
+        var iframe = document.createElement("iframe");
+        iframe.src = "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&rel=0";
+        iframe.setAttribute("title", title);
+        iframe.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture");
+        iframe.setAttribute("allowfullscreen", "");
+        var wrap = document.getElementById("hero-video");
+        wrap.innerHTML = "";
+        wrap.appendChild(iframe);
+      });
+    })();
+  </script>
+</body>
+</html>

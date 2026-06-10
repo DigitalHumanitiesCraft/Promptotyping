@@ -229,3 +229,48 @@ Der Vorlagen-Sweep wurde auf Operator-Anweisung (keine Multi-Agent-Workflows meh
 2. ADR Anker-Namespace Action-Layer-Vorlage vor Sprint-2-Spiegelung
 3. Sprint 1 in eigener Repo-Session: Site-Skeleton, Paper-Lesefluss, Phasen-Provenance-Lane
 4. Die ungecommitteten Repo-Änderungen dieser Session committen (CLAUDE.md, project.md, journal.md)
+
+## 2026-06-10 — Phase 4: Site komplett implementiert (orchestrierte Session, Plan-Review, Kuratierung)
+
+### Ziel der Session
+
+Operator-Auftrag: die ideale Methodik-Site ausarbeiten und umsetzen — Paper, Vorlagen, Use Cases, Skills, Best Practices, Dokumentation. Auf Operator-Anweisung lief Phase 4 als eine orchestrierte Session mit vier Subagenten-Arbeitspaketen (Skeleton, Content-Spiegelung, Module/Sektionen, Politur) statt der geplanten fünf Einzel-Sessions; die Sprint-Schnitte blieben als Arbeitspakete erhalten. Alle Commits direkt auf main (Operator-Entscheidung, bestätigt).
+
+### Plan-Review vor der Implementierung
+
+Auf Operator-Wunsch wurde der Implementierungsplan vor dem Bau reviewt. Befunde:
+
+1. **`.nojekyll` fehlte im Plan.** GitHub Pages publiziert Unterstrich-Verzeichnisse ohne diese Datei nicht; `_content/` wäre live unerreichbar gewesen, die Site tot. Behoben.
+2. **Subpath-URLs erfüllen den Maschinenzweck nicht.** GitHub Pages liefert für Subpaths die 404.html mit HTTP-Status 404; Inhalt entsteht erst nach JavaScript-Ausführung. Ein Agent per HTTP-Abruf bekommt eine Fehlerseite. Entscheidung: statische Markdown-URL unter `_content/` als dokumentierte Maschinenadresse (ADR-10, `machine-url`-Frontmatter, Site-Anmerkung in konvention.md).
+3. **Genre-Taxonomie war Insider-Vokabular.** Operator-Entscheidung: Use-Case-Typologie (Paper 4.3) als Primärfilter, Interface-Typ und Demo sekundär; Genre raus aus der UI (ADR-8-Nachtrag).
+4. **Lücken gegenüber dem Auftrag:** Überblick (A13), Praxis (A14), Skills (A15) als neue Sektionen spezifiziert und gebaut; Konvention bekam ihren Sektionsbesitzer.
+5. **Phasen-Lane:** Mechanismus (Inline-Tags plus marked-Extension) bestätigt; Klassifizierungs-Policy geändert auf ehrlich statt flächendeckend — nur Absätze mit erkennbarer Phasenzuordnung tragen Tags, Legende am Paper-Anfang ergänzt. Endstand: 23 getaggte Absätze, alle in Section 3; Sections 1, 2, 4 bis 7 bewusst ohne Tags. Critical-Expert-Nachprüfung durch den Operator offen.
+6. Inter lokal gehostet statt Google Fonts (Tracking-Versprechen der Site).
+
+### Kuratierung der Use-Case-Galerie (Operator-Entscheidung)
+
+18 von 26 Vault-Case-Studies in der Galerie; ausgeschlossen wegen fehlender Kundenfreigabe bzw. Vermittlungsformat: VetMedAI-Wissensbilanz, Agentic Edition Pipeline, SuGW, wiiw-patent-analysis, wiiw-figaro-subagents, drei Screencast-Fälle. Sieben Tiefenseiten (coOCR-HTR ersetzt VetMedAI und Agentic Edition Pipeline; SuGW als Ersatz verworfen, da vom Kunden nicht freigegeben). Das vollständige Evidenz-Korpus bleibt im Paper dokumentiert; die Galerie sagt das explizit. ADR-9 entschieden: Action-Layer-Vorlage als neunter Slug `action-layer` (function before filename), Status Entwurf.
+
+### Gebaut
+
+- **Skeleton:** index.html, 404.html (Routing inkl. neuer Anker-Typen), style.css (DHCraft-Designsystem, lokale Inter-Fonts), app.js (marked-Extension, Lazy Loading, Lane-Interaktion, TOC-Scroll-Spy, Side-Panel-Gerüst), Vendor marked 9.1.6 und js-yaml 4.1.0, .nojekyll, Click-to-Load-Videos.
+- **Content-Spiegelung:** neun Vorlagen-Mirrors mit machine-url, konvention.md mit Site-Anmerkung, Glossar (42 Einträge, md plus json), case-studies.json (18 Einträge, Use-Case-Schema v0.3), sieben Tiefenseiten, praxis.md (neun Methodenerweiterungen), skills/ (Coding- und Writing-Prompt verbatim), MANIFEST.md als Spiegelungs-Provenienz.
+- **Module/Sektionen:** ueberblick.md plus Render, Vorlagen-Tabelle mit Side-Panels und Copy-Buttons, promptotyping-documents.json, Frontmatter-Inspector (A11), Use-Case-Galerie mit Filter, Praxis-/Skills-/Glossar-/Konventions-Sektionen, Glossar-Trigger im Paper, Literatur-Sprunglinks, Konzept-Alias-Anker.
+- **Politur:** Mobile (Hamburger-TOC, Bottom-Sheet, Phasen-Top-Bar), SEO (OpenGraph, JSON-LD ScholarlyArticle, canonical), Accessibility (Fokus-Management, aria-pressed, Keyboard-Trigger), Konsistenz-Checks (TOC, Anker, fetch-Pfade, IDs).
+
+### Befunde
+
+- Ein abgebrochener Erstlauf des Content-Agenten hatte eine ungefilterte case-studies.json (27 Einträge inkl. aller ausgeschlossenen) und zwei verbotene Tiefenseiten hinterlassen; der Zweitlauf hat das erkannt und bereinigt. Lehre: Bei wiederholten Agentenläufen auf demselben Working Tree den Altbestand explizit in den Auftrag schreiben.
+- CLAUDE.md führte noch das obsolete Paper-Anker-Schema `#paper-section-{n}` und die Jeder-Absatz-Lane-Regel; beides auf den Spec-Stand gezogen.
+- Emoji-Scan über das gesamte Repo (alle Unicode-Emoji-Bereiche): null Treffer.
+
+### Stand
+
+Phase 4 abgeschlossen, Site lokal vollständig funktionsfähig und verifiziert (node --check, HTTP-Smoke-Tests, Headless-Render mit 9 Vorlagen-Zeilen, 18 Karten, 42 Glossar-Einträgen). HANDOVER-SPRINT-1.md gelöscht (Zweck erfüllt). Nicht gepusht; Push auf main ist operator-gated.
+
+### Nächste Schritte
+
+1. Operator: Push auf main, dann Live-Test des 404-Subpath-Routings und der GitHub-Pages-Auslieferung von `_content/` (lokal nicht testbar)
+2. CEIL-Review: Phasen-Klassifizierung (23 Absätze, Section 3), gespiegelte Inhalte (Überblick, Praxis, Glossar, Tiefenseiten), Vorlage Action-Layer Freigabe
+3. Vault-seitig: Maschinenadresse (ADR-10) in die Vault-Konvention übernehmen; Sweep-Folgearbeiten (Journal v0.2) wie oben
+4. Logo-Optimierung (1.1 MB PNG, og:image)

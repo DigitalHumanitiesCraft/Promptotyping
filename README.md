@@ -9,12 +9,15 @@
 Dieses Repo rendert die Site auf GitHub Pages. Aufbau:
 
 - `knowledge/` — Wissensbasis (Specification der Site selbst, sechs Promptotyping-Documents nach den Vault-Vorlagen)
-- `_content/` — Markdown-Inhalte (Pollin 2026 Paper, Vorlagen, Case Studies, Glossar, Literatur) — wird in Phase 4 angelegt
-- `assets/` — CSS, JS, Logo
-- `data/` — JSON-Datenfutter — wird in Phase 4 angelegt
-- `index.html` — Site-Einstieg — wird in Phase 4 angelegt
-- `404.html` — Subpath-Routing-Fallback — wird in Phase 4 angelegt
+- `_content/` — Markdown-Inhalte (Pollin 2026 Paper, neun Vorlagen, Use-Case-Tiefenseiten, Glossar, Praxis, Skills, Konvention, Literatur)
+- `assets/` — CSS, JS, Vendor-Bibliotheken, lokale Fonts, Logo
+- `data/` — JSON-Datenfutter (Case Studies, Glossar, Vorlagen)
+- `index.html` — Site-Einstieg (Single-Page mit Phasen-Provenance-Lane)
+- `404.html` — Subpath-Routing-Fallback
+- `.nojekyll` — Pflichtdatei, damit GitHub Pages `_content/` ausliefert
 - `CLAUDE.md` — Action-Layer für Coding-Sessions
+
+Maschinenlesbarer Zugriff: Vorlagen und Inhalte sind als statisches Markdown abrufbar, Muster `https://dhcraft.org/Promptotyping/_content/promptotyping-document/{slug}.md` (Details in `knowledge/specification.md`, ADR-10).
 
 ## Methodisches
 
@@ -36,12 +39,12 @@ Browser auf http://localhost:8000.
 
 ## Stand
 
-Refactor zu interaktivem Paper, Mai 2026.
+Refactor zu interaktivem Paper, Mai bis Juni 2026.
 
 - Phase 0 (Vault-Reparatur): abgeschlossen
 - Phase 2 (Repo-Inventur, Bereinigung): abgeschlossen
 - Phase 3 (`knowledge/`-Wissensbasis befüllen): abgeschlossen, einschließlich Critical-Expert-Refactor (Vorlagen-Trigger-Korrektur)
-- Phase 4 (Implementation in fünf Sprints): folgt in eigenen Repo-Sessions
+- Phase 4 (Implementation): abgeschlossen 2026-06-10; offen sind Human Review der Phasen-Klassifizierung und der gespiegelten Inhalte sowie der Live-Test nach Deploy
 
 Verlauf in [knowledge/journal.md](knowledge/journal.md).
 

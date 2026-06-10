@@ -56,8 +56,12 @@ Jeder adressierbare Inhalt der Site existiert unter zwei gleichberechtigten URL-
 | Glossar | `#glossar` | `/glossar` |
 | Literatur | `#literatur` | `/literatur` |
 | Paper-Sektion | `#abschnitt-{n}-{slug}` | `/paper/{n}-{slug}` |
+| Überblick | `#ueberblick` | `/ueberblick` |
+| Use Cases | `#use-cases` | `/use-cases` |
+| Praxis-Eintrag | `#praxis-{slug}` | `/praxis/{slug}` |
+| Skill | `#skills-{slug}` | `/skills/{slug}` |
 
-Slug-Set für Promptotyping-Documents: `data`, `index`, `project`, `specification`, `architecture`, `design`, `journal`, `user-stories`. Heute, mit allen Vorlagen einheitlich auf v0.1, ist der Latest-Anker primärer und einziger Adresspunkt. Snapshot-Anker werden erst bei einem Versions-Sprung pro Vorlage vergeben — als zusätzlicher Hash-Sub-Anker auf derselben Vorlagen-Sektion, nicht als eigener Subpath.
+Slug-Set für Promptotyping-Documents: `data`, `index`, `project`, `specification`, `architecture`, `design`, `journal`, `user-stories`, `action-layer` (Entwurf, ADR-9). Versionsstand: `specification` v0.2, `action-layer` v0.1-Entwurf, übrige v0.1; der Latest-Anker ist primärer und einziger Adresspunkt. Snapshot-Anker werden erst bei einem Versions-Sprung pro Vorlage vergeben — als zusätzlicher Hash-Sub-Anker auf derselben Vorlagen-Sektion, nicht als eigener Subpath.
 
 Beispiel Paper-Sektion: `#abschnitt-3-four-phases` ↔ `/paper/3-four-phases`. Subsection-Anker (z.B. `#phase-distillation` für Section 3.3) sind innerhalb der Paper-Sektion verfügbar, ohne eigenen Subpath.
 
@@ -80,8 +84,8 @@ Akzeptanzkriterium: Ein Coding-Agent, der einen `template:`-URI sieht, kann ihn 
 ### A6 — Glossar als Hover- und Klick-Quelle
 Jeder konstitutive Begriff im Paper-Lesefluss ist als Glossar-Trigger markiert (gepunktete Unterlinie). Hover zeigt Kurzdefinition als Tooltip, Klick öffnet rechtes Side-Panel mit voller Glossar-Definition, Quellenangaben, Verweisen ins Paper. Akzeptanzkriterium: Mindestens 30 Begriffe sind verlinkt und zugänglich; das Glossar selbst ist auch als eigener Anker `#glossar` direkt erreichbar.
 
-### A7 — Case-Studies-Karten und Tiefenseiten
-Im Paper-Lesefluss (Section 4) erscheinen kompakte Case-Study-Karten (Name, Genre, Demo-Link, ein Satz). 24+ Case Studies insgesamt, davon acht mit Tiefenseite im Side-Panel (HerData, Klawiter-Rescue, zbz-ocr-tei, M3GIM, Notker-Edition, CorrespExplorer, VetMedAI-Wissensbilanz, Agentic Edition Pipeline). Listenübersicht aller 24+ als sortier- und filterbare Tabelle.
+### A7 — Use-Case-Galerie: kuratierte Case-Study-Karten und Tiefenseiten
+Eigene Sektion `#use-cases` mit kuratierter Galerie öffentlich dokumentierter Projekte (Operator-Entscheidung 2026-06-10): 18 Case Studies, klassifiziert und gefiltert nach der Use-Case-Typologie des Papers (Section 4.3), sekundär nach Interface-Typ (Section 5.3) und Demo-Verfügbarkeit. Das interne Genre-Vokabular (HerData-Genre, Klawiter-Typ usw.) erscheint nicht in der öffentlichen UI. Sieben Cases tragen eine Tiefenseite im Side-Panel (HerData, Klawiter-Rescue, zbz-ocr-tei, M3GIM, Notker-Edition, CorrespExplorer, coOCR-HTR). Kuratierungskriterium: fehlende Kundenfreigabe oder Vermittlungsformat statt Forschungsartefakt führt zum Ausschluss (ausgeschlossen: VetMedAI-Wissensbilanz, Agentic Edition Pipeline, SuGW, beide wiiw-Fälle, drei Screencast-Fälle); das vollständige Evidenz-Korpus bleibt im Paper (Section 4) dokumentiert. Datenquelle `data/case-studies.json`, Ausschlüsse dokumentiert in `_content/MANIFEST.md`.
 
 ### A8 — YouTube-Videos eingebettet
 Teil 1 als Hero-Embed oben (vor Paper-Section 1). Teil 2 in Paper-Section 4 als didaktischer Anker bei der VetMedAI-Wissensbilanz. Akzeptanzkriterium: Beide Videos laufen aus der `youtube-nocookie.com`-Variante (Datenschutz), kein Tracking ohne Consent.
@@ -106,16 +110,28 @@ Die Site selbst — `knowledge/INDEX.md`, `knowledge/project.md`, `knowledge/spe
 
 Akzeptanzkriterium: Eine `grep template: knowledge/*.md`-Inspektion zeigt sechs Treffer, alle mit beiden URL-Formen (`url:` als Latest-Subpath `/promptotyping-document/{slug}`, `alias:` als Latest-Hash `#promptotyping-document-{slug}`), alle nach Site-Anker-Schema. Sobald die Site Sprint 1+2 abgeschlossen hat, sind diese URLs aufrufbar — und die Site demonstriert ihre eigene Methode, ohne sie nur zu beschreiben.
 
+### A13 — Methoden-Überblick als Einstieg
+Deutschsprachige Sektion `#ueberblick` zwischen Hero und Paper: was Promptotyping ist (Kernsatz), die vier Phasen kompakt mit den Lane-Farbproben, die drei Dokumenttypen mit Diagnostik-Regel, die zwei Modi, Wegweiser in Paper, Vorlagen, Use Cases, Praxis und Skills. Begründung: Die Site ist auch Präsentation der Methode; ohne Überblick landet jeder Besucher direkt in einem englischen akademischen Paper. Substrat: `_content/ueberblick.md`. Akzeptanzkriterium: Ein Besucher ohne Vorkenntnisse versteht in zwei Minuten, was die Methode ist und wo er ansetzt.
+
+### A14 — Praxis-Sektion (Methodenerweiterungen)
+Sektion `#praxis` mit den empirisch gewachsenen Methodenerweiterungen aus der Vault-Wissensbasis (Verification Milestones, Promptotyping Interfaces, Subagents und Rollensimulation, Skript-vs-LLM-Trennung, Knowledge Curation, Demo-Repo-Reduktion, Claims-Verifikation, Epistemischer Status von User Stories, Vorlagen-Katalog). Jeder Eintrag trägt einen stabilen Anker `#praxis-{slug}` und nennt seinen dokumentierten Herkunftsfall; Link auf `#case-{id}` nur, wenn der Fall in der kuratierten Galerie ist. Substrat: `_content/praxis.md`.
+
+### A15 — Skills und System Prompts
+Sektion `#skills` mit den wiederverwendbaren System Prompts (Coding, Writing) als unveränderte, kopierbare Originaltexte plus Einordnung der Action-Layer-Praxis (CLAUDE.md, Custom Commands, System Prompts). Anker `#skills-coding`, `#skills-writing`. Substrat: `_content/skills/`. Verweis auf die Action-Layer-Vorlage (A16).
+
+### A16 — Neunte Vorlage: Action-Layer (Entwurf)
+Die Vorlage Action-Layer (`CLAUDE.md`, empirisch destilliert aus dem 35-Repo-Sweep 2026-06) wird als neunter Slug `action-layer` publiziert, sichtbar als "Entwurf, in Erprobung" gekennzeichnet. Anker-Namespace-Entscheidung in ADR-9.
+
 ## Funktionsumfang pro Site-Sektion
 
 ### Methode (Paper-Sektionen 1-3)
 Das Paper-Narrativ als Lesefluss. Phasen-Provenance-Lane an jedem Absatz. Begriffe als Glossar-Trigger. Vorlagen-Tabelle im Section-3-Kontext (wenn Promptotyping Documents erklärt werden) als eingebettete Tabelle mit Klick-Links zu Side-Panel-Specs. Hero-Video Teil 1 oben.
 
-### Vorlagen (eingebettet in Paper-Section 3, plus eigener Sektionsanker `#vorlagen`)
-Tabelle aller acht Vorlagen mit Funktion, Empfohlenem Dateinamen, Promptotyping-Typ, Version. Klick auf Eintrag öffnet Side-Panel mit voller Spec inkl. Frontmatter-Schema, Sektionsstruktur, befüllbarem Block, Copy-Button. Pro Vorlage ein versionierter Anker plus Latest-Alias.
+### Vorlagen (eigene Sektion `#vorlagen`)
+Tabelle aller neun Vorlagen mit Funktion, Empfohlenem Dateinamen, Promptotyping-Typ, Version, Status. Klick auf Eintrag öffnet Side-Panel mit voller Spec inkl. Frontmatter-Schema, Sektionsstruktur, Copy-Button für den template:-Block und Rohtext-Link (Maschinenadresse, ADR-10). Pro Vorlage ein Latest-Anker, Snapshot-Anker bei Versionssprüngen.
 
-### Case Studies (Paper-Section 4)
-24+ kompakte Karten im Section-4-Lesefluss, gruppiert nach Genre. Pro Karte: Name, Genre, ein Satz, Demo-Link, Repo-Link. Acht Karten haben "Mehr →"-Button für Tiefenseite im Side-Panel. Filter-Bar oben (Genre, Status, Demo verfügbar). VetMedAI-Wissensbilanz mit Teil-2-Video eingebettet.
+### Use Cases (eigene Sektion `#use-cases`)
+18 kuratierte Karten, gruppiert und gefiltert nach Use-Case-Typologie (A7, ADR-8-Nachtrag). Pro Karte: Name, Use Case, ein Satz, Demo-/Repo-/Video-Link soweit belegt. Sieben Karten mit Tiefenseite im Side-Panel. Teil-2-Video eingebettet in Paper-Section 4.
 
 ### Konzepte (eingebettet in Paper-Section 5-6, plus Anker)
 Fünf Konzepte (Asymmetric Amplification, Epistemic Infrastructure, Critical-Expert-in-the-Loop, Scholar-Centered Design, Context Engineering) sind im Paper-Lesefluss erwähnt und mit Glossar-Anker verknüpft. Volldefinition im Glossar-Side-Panel.
@@ -207,6 +223,26 @@ Geordnete Liste am Seitenende. Inline-Verweise im Paper als Anker-Sprung-Ziel. P
 **Begründung.** Praktisch nötig bei 24+ Karten. Sortierung optional.
 
 **Effekt.** Ein eigenständiges JS-Modul `assets/js/modules/case-study-filter.js`. Datenquelle ist `data/case-studies.json`.
+
+**Nachtrag 2026-06-10 (Operator-Entscheidung, ersetzt die Filter-Taxonomie).** Primärfilter ist die Use-Case-Typologie des Papers (Section 4.3), Sekundärfilter Interface-Typ und Demo-Verfügbarkeit. Das Genre-Vokabular ist internes Arbeitsvokabular, kommt im Paper nicht vor und ist für externe Besucher unverständlich; es erscheint nicht in der öffentlichen UI. Galerie kuratiert auf 18 Einträge (A7).
+
+### ADR-9: Action-Layer-Vorlage als neunter Slug unter `/promptotyping-document/`
+
+**Kontext.** Die Vorlage Action-Layer adressiert die `CLAUDE.md` im Repo-Root, nicht ein Dokument in `knowledge/`. Offen war (Journal 2026-06-09), ob sie einen eigenen Anker-Typ braucht.
+
+**Wahl.** Neunter Slug `action-layer` im bestehenden Namespace `/promptotyping-document/`.
+
+**Begründung.** Die eigene Regel "function before filename": Die Vorlage beschreibt die Funktion Action-Layer einer Promptotyping-Wissensbasis; wo die Datei liegt, ändert nichts an ihrer Zugehörigkeit zum Vorlagen-Katalog. Ein eigener Anker-Typ würde das Adress-Schema fragmentieren.
+
+**Effekt.** `_content/promptotyping-document/action-layer.md`, Status "Entwurf, in Erprobung", Anker `#promptotyping-document-action-layer`.
+
+### ADR-10: Statische Markdown-URL als Maschinenadresse, `.nojekyll` als Bedingung
+
+**Kontext.** Plan-Review 2026-06-10, zwei Befunde. Erstens: GitHub Pages publiziert Unterstrich-Verzeichnisse ohne `.nojekyll` nicht; `_content/` wäre live unerreichbar gewesen. Zweitens: Die Subpath-URLs erfüllen den erklärten Zweck "robust für Coding-Agenten" nicht, weil GitHub Pages dafür die `404.html` mit HTTP-Status 404 liefert und der Inhalt erst nach JavaScript-Ausführung entsteht; ein HTTP-Abruf ohne Browser bekommt eine Fehlerseite.
+
+**Wahl.** `.nojekyll` im Repo-Root. Die statische Markdown-URL `https://dhcraft.org/Promptotyping/_content/promptotyping-document/{slug}.md` ist die dokumentierte Maschinenadresse (Frontmatter-Feld `machine-url` der Mirrors, Anmerkung in `_content/konvention.md`, Hinweis in der Vorlagen-Sektion). Subpath- und Hash-Form bleiben die menschenlesbaren Adressen; das `template:`-Feld (url/alias) bleibt unverändert.
+
+**Effekt.** Agenten erhalten unter der Maschinenadresse das Markdown mit HTTP 200 ohne JavaScript. Die Vault-Konvention soll die Maschinenadresse beim nächsten Konventions-Update übernehmen (offener Punkt, Vault-seitig).
 
 ## Was nicht in dieser Spec steht
 

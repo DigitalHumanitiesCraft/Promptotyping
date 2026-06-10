@@ -73,9 +73,9 @@ Begriffe, die in dieser Wissensbasis konstitutiv vorkommen. Die kanonischen Defi
 
 **Frontmatter-Inspector**: Modul auf der Vorlagen-Sektion, das einen `template:`-URI in Echtzeit auflöst und die referenzierte Vorlage live darunter rendert. Demonstriert, wie Repos die Site nutzen.
 
-**Case-Study-Filter**: Modul in der Case-Study-Sektion, das die 24+ Karten nach Genre, Status, Demo-Verfügbarkeit filterbar macht.
+**Case-Study-Filter**: Modul in der Use-Case-Sektion, das die 18 kuratierten Karten nach Use-Case-Typologie (primär), Interface-Typ und Demo-Verfügbarkeit filterbar macht (ADR-8-Nachtrag 2026-06-10).
 
-**Genre (Case Study)**: Klassifikation einer Case Study nach methodischem Typ: HerData-Genre (eigene Datenproduktion mit Normdaten), Editions-Genre (TEI-Korpus), Externdaten-Genre (fremde Daten als Input), Klawiter-Typ (mehrstufige Rekonstruktion aus Legacy-Systemen), Sonderfall.
+**Genre (Case Study)**: Historisches internes Arbeitsvokabular (HerData-Genre, Editions-Genre, Externdaten-Genre, Klawiter-Typ, Sonderfall). Seit 2026-06-10 nicht mehr in der öffentlichen UI; die Site klassifiziert nach der Use-Case-Typologie des Papers (Section 4.3).
 
 **Critical Expert in the Loop (EIL)**: Rolle, die LLM-Output an definierten Stellen verifiziert. Drei Dimensionen: Domänenexpertise, technisches Modellverständnis, metakognitive Wachsamkeit. Im Refactor selbst ist Christopher Pollin der Critical Expert.
 

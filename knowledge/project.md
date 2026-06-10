@@ -71,7 +71,7 @@ Der bestehende Stand des Repos (November 2025) ist methodisch überholt: Sechs-P
 
 ## Stand und Phase
 
-Status: **Phase 3.5 abgeschlossen** (Wissensbasis befüllt, CEIL-Refactor mit zwölf behobenen Befunden, repo-weit auf Schema-Version 0.2; Sprint-1-Substrat bereit: Paper sektioniert, `HANDOVER-SPRINT-1.md` im Root). Phase 4 (Implementation in fünf Sprints) folgt in eigenen Repo-Sessions; Sprint 1 ist der nächste Schritt.
+Status: **Phase 4 implementiert** (2026-06-10, orchestrierte Session mit vier Subagenten-Arbeitspaketen auf Operator-Anweisung; ersetzt die geplanten fünf Einzel-Sessions). Site vollständig gebaut: Paper-Lesefluss mit Phasen-Provenance-Lane, neun Vorlagen mit Side-Panels und Frontmatter-Inspector, kuratierte Use-Case-Galerie (18 Cases, 7 Tiefenseiten), Überblick-, Praxis-, Skills-, Glossar- (42 Einträge), Konventions- und Literatur-Sektion, Mobile-Layout, SEO. Spezifikations-Erweiterungen A13 bis A16 und ADR-9/ADR-10 dokumentiert. Offen: Human Review der Phasen-Klassifizierung und der gespiegelten Inhalte (CEIL), Live-Test des 404-Routings nach Deploy, Logo-Optimierung (1.1 MB PNG).
 
 ## Beziehung zum Vault
 
@@ -80,9 +80,9 @@ Diese Wissensbasis ist eine **Spiegelung mit Eigenleben**. Die Vault-Vorlagen, v
 ## Erwartetes Outcome
 
 - `https://dhcraft.org/Promptotyping/` rendert das Pollin-2026-Paper als scrollbares interaktives Paper mit Phasen-Provenance-Lane
-- Acht Vorlagen sind unter Latest-Ankern adressierbar (`#promptotyping-document-data` etc.); Snapshot-Sub-Anker bei späteren Versions-Sprüngen
-- Subpath-Aliase (`/promptotyping-document/data`) für Maschinenlesbarkeit
-- Acht Case-Study-Tiefenseiten plus filterbare Listenübersicht aller 24+ Case Studies
+- Neun Vorlagen sind unter Latest-Ankern adressierbar (`#promptotyping-document-data` etc.); Snapshot-Sub-Anker bei späteren Versions-Sprüngen
+- Subpath-Aliase (`/promptotyping-document/data`) für Menschen; statische Markdown-URLs unter `_content/` als Maschinenadresse (ADR-10)
+- Sieben Case-Study-Tiefenseiten plus filterbare, kuratierte Use-Case-Galerie (18 Cases, A7)
 - Glossar als Hover- und Side-Panel-Quelle, Literaturverzeichnis als Anker-Liste
 - Repos können `template: { url: "https://dhcraft.org/Promptotyping/promptotyping-document/data" }` in ihre Frontmatters schreiben und damit auf die kanonische Latest-Spezifikation verweisen
 
