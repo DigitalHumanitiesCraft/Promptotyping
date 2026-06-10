@@ -7,7 +7,7 @@ status: active
 language: de
 version: 0.2
 created: 2026-05-09
-updated: 2026-05-09
+updated: 2026-06-09
 authors: [Christopher Pollin]
 generated-with: Claude Code mit Claude Opus 4.7
 method:
@@ -194,3 +194,38 @@ Vault-seitig laufen parallel zwei Stränge in einer eigenen Sub-Agent-Session: A
 ### Nächster Schritt
 
 Sprint 1 in eigener Repo-Session: Site-Skeleton, Paper-Lesefluss, Phasen-Provenance-Lane.
+
+## 2026-06-09 — Vault-Abgleich, Paper-Kanonizität, Konsistenz-Korrekturen, Vorlagen-Sweep gestartet
+
+### Ziel der Session
+
+Zusammenführung der Promptotyping-Bestände (Vault, Repo, flüchtige Bestände, System-Prompt-Entwurf) vor Sprint 1. Session lief vault-seitig mit gezielten Repo-Korrekturen; Scope-Ausnahme auf explizite Operator-Anweisung.
+
+### Befunde und Entscheidungen
+
+**Konventionsänderung User Stories im Vault nachgezogen.** Die am 2026-05-30 beschlossene Änderung (Epics und User Stories als Default-Sektion in `specification.md`, separate `user-stories.md` nur als dokumentierte Ausnahme großer Editionsprojekte) war im Vault noch nicht umgesetzt — Konvention, Vorlage Specification und Vorlage User Stories trugen den alten Default. Nachgezogen: Vorlage Specification auf Vorlagen-Version 0.2 (neue Sektion Epics und User Stories mit Validierungsstatus und Ableitung), Vorlage User Stories auf Ausnahme-Trigger, Konvention und Kataloge entsprechend. Konsequenz für die Site: Latest der Specification ist v0.2; da v0.1 nie publiziert wurde, ist ein v0.1-Snapshot-Anker vermutlich entbehrlich (Operator-Entscheidung beim Spiegeln in Sprint 2–4). Der Journal-Eintrag „Versions-Konsistenz: alle Vorlagen v0.1" (2026-05-09) ist damit überholt.
+
+**Paper-Kanonizität entschieden.** Die sektionierte Fassung in `_content/paper/` ist die kanonische Arbeitsfassung des Pollin-2026-Papers; das Vault-Dokument trägt seit heute einen Verweisbanner als Lesefassung. Begründung: Die Sprints arbeiten auf `_content/`, eine Doppelquelle hätte bei der anstehenden Paper-Weiterarbeit zwangsläufig divergiert.
+
+**CLAUDE.md-Anker-Schema korrigiert.** Die Sektion URL-Anker-Schema führte noch das obsolete Schema `#vorlage-{name}-{version}` und „Paper-Sektionen 1 bis 6" — beides Stand vor der URL-Schema-Korrektur vom 2026-05-09 und im Widerspruch zu den `template:`-Feldern der eigenen knowledge-Documents. Auf ADR-2/ADR-3-Stand gebracht (`/promptotyping-document/{slug}`, sieben Paper-Sektionen). Kein neues ADR nötig, nur Nachzug einer dokumentierten Entscheidung.
+
+**project.md aktualisiert.** Stand auf Phase 3.5, Materialgrundlage auf die realen Vorlagen-Versionen (sieben v0.1, Specification v0.2), Paper-Absatz auf die Kanonizitäts-Entscheidung.
+
+**Vault-seitig persistiert.** Der System-Prompt-Entwurf des Operators ist als `Projects/Promptotyping/Promptotyping-Site – Wissensdokument.md` im Vault gesichert (gegen Repo-Stand verifiziert, `human-reviewed: false`); ACTIVE-WORK führt den Site-Strang mit Sprint-1-Task.
+
+**Vorlagen-Sweep gestartet.** Multi-Agent-Workflow über 35 lokale Promptotyping-Repos (Reader pro Repo → drei Synthesizer → adversariale Beleg-Verifikation) mit drei Zielen: Neuentwurf Vorlage CLAUDE.md/Action-Layer (größte Kataloglücke; Trennung Methodenkern vs. Tool-Spezifik), Schärfung Vorlage Journal (learnings, Context Memory, Session-Ende-Disziplin), empirische Validierung der Specification v0.2. Ergebnisse fließen als Belegbasis-Dokument und Vorlagen-Entwürfe (`human-reviewed: false`) in den Vault; Publikation über die Spiegelung in Sprint 2–4. Offenes ADR dabei: Anker-Namespace für die Action-Layer-Vorlage (neunter Slug unter `/promptotyping-document/` vs. eigener Typ), da `CLAUDE.md` im Repo-Root liegt, nicht in `knowledge/`.
+
+### Stand
+
+Phase 3.5 abgeschlossen, Sprint-1-Substrat bereit, Wissensbasis und Action-Layer konsistent. Sweep läuft.
+
+### Nachtrag (gleicher Tag, Sessionabschluss)
+
+Der Vorlagen-Sweep wurde auf Operator-Anweisung (keine Multi-Agent-Workflows mehr) vor der Verifikationsphase abgebrochen. Aus dem Workflow-Journal geborgen: alle 35 Reader-Ergebnisse plus die Synthesen Action-Layer und Specification; die Journal-Synthese wurde solo aus den Reader-Befunden nachgezogen, ersatzweise zur ausgefallenen adversarialen Prüfung wurden zwölf zentrale Belege per Stichprobe gegen die Repos verifiziert (alle bestätigt). Ergebnisse im Vault persistiert: neue Vorlage Action-Layer (`CLAUDE.md`, Entwurf, neunte Vorlage im Katalog), Belegbasis-Dokument „Action-Layer- und Journal-Praxis in Promptotyping-Repos 2026-06" (mit Journal-v0.2-Kandidaten und Specification-v0.3-Befunden), zwei zwingende Korrekturen in Vorlage Specification v0.2 (Beispiel-Sektion war doppelt veraltet: HerData konsolidiert, sugw führt `user-stories.md`; Begriffe-Definition formal/narrativ bereinigt). Rohdaten flüchtig unter `C:/tmp/promptotyping-vorlagen-sweep/`. Konsequenz für die Site: Die Sprint-2–4-Spiegelung umfasst neun Vorlagen; der Anker für die Action-Layer-Vorlage bleibt offen bis zum ADR Anker-Namespace.
+
+### Nächste Schritte
+
+1. Sweep-Ergebnisse human-reviewen (CEIL): Vorlage Action-Layer und Belegbasis freigeben, Vorlage Journal auf v0.2 heben
+2. ADR Anker-Namespace Action-Layer-Vorlage vor Sprint-2-Spiegelung
+3. Sprint 1 in eigener Repo-Session: Site-Skeleton, Paper-Lesefluss, Phasen-Provenance-Lane
+4. Die ungecommitteten Repo-Änderungen dieser Session committen (CLAUDE.md, project.md, journal.md)

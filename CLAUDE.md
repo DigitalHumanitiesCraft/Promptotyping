@@ -64,15 +64,15 @@ Beim Spiegeln des Pollin-2026-Papers ins `_content/paper/`-Verzeichnis: jeder Ab
 
 Wenn ein Absatz nicht eindeutig zuordenbar ist (z.B. allgemeine Methode-Beschreibung), klassifiziere nach der dominanten methodischen Funktion. Frage Christopher (Critical Expert) bei Unklarheit.
 
-## URL-Anker-Schema (Pflicht-Konvention)
+## URL-Anker-Schema (Pflicht-Konvention, Stand ADR-2/ADR-3)
 
-- Vorlagen: `#vorlage-{name}-{version}` plus Latest-Alias `#vorlage-{name}` (z.B. `#vorlage-data-v0.2`, `#vorlage-data`)
+- Vorlagen (Promptotyping Documents): Subpath `/promptotyping-document/{slug}` (Latest, kanonisch), gleichwertig Hash `#promptotyping-document-{slug}`. Acht Slugs: `data`, `index`, `project`, `specification`, `architecture`, `design`, `journal`, `user-stories`. Snapshots erst bei Versionssprung über Sub-Anker `#promptotyping-document-{slug}-v{version}` bzw. `/promptotyping-document/{slug}#v{version}` — kein eigener Subpath pro Version. (Das ältere Schema `#vorlage-{name}-{version}` ist obsolet, siehe journal.md 2026-05-09 „URL-Schema-Korrektur".)
 - Konzepte: `#konzept-{name}` (z.B. `#konzept-eil`, `#konzept-asymmetric-amplification`)
 - Case Studies: `#case-{name}` (z.B. `#case-herdata`, `#case-klawiter-rescue`)
 - Konvention: `#konvention-v0.1`
 - Glossar: `#glossar`
 - Literatur: `#literatur`
-- Paper-Sektionen: `#paper-section-1` bis `#paper-section-6`
+- Paper-Sektionen: `#paper-section-1` bis `#paper-section-7` (sieben Section-Files unter `_content/paper/`)
 
 Anker dürfen nicht ohne Diskussion umbenannt werden — Repos können auf sie als `template:`-URI verlinken.
 

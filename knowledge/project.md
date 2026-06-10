@@ -7,7 +7,7 @@ status: active
 language: de
 version: 0.2
 created: 2026-05-09
-updated: 2026-05-09
+updated: 2026-06-09
 authors: [Christopher Pollin]
 generated-with: Claude Code mit Claude Opus 4.7
 method:
@@ -46,9 +46,9 @@ Das Methodik-Repo verarbeitet keine Forschungsdaten — es spiegelt Wissen. Dadu
 
 Vier Quelltypen speisen die Site:
 
-**Pollin 2026 Paper.** Der wissenschaftliche Methodentext, im Vault als `Pollin 2026 - Promptotyping A Context Engineering Method for Building Research Artifacts with Frontier LLMs.md`. Status `draft`, Sprache Englisch, sechs Sektionen plus Abstract und Referenzen. Wird als Lesefluss-Substrat gespiegelt, sektioniert und mit Phasen-Provenance-Markierung pro Absatz versehen.
+**Pollin 2026 Paper.** Der wissenschaftliche Methodentext. Seit 2026-06-09 ist die sektionierte Fassung in `_content/paper/01-introduction.md` … `07-conclusion.md` (plus `literatur.md`) die **kanonische Arbeitsfassung**; das Vault-Dokument `Pollin 2026 - Promptotyping A Context Engineering Method for Building Research Artifacts with Frontier LLMs.md` ist Lesefassung mit Verweisbanner. Status `draft`, Sprache Englisch, sieben Sektionen plus Abstract und Referenzen. Wird im Lesefluss gerendert und mit Phasen-Provenance-Markierung pro Absatz versehen.
 
-**Vault-Vorlagen und Konvention.** Acht Vorlagen unter `Vault Operations/Vorlagen Promptotyping Documents/` (Index, Projekt-Wissensdokument, Datengrundlage, Specification, User Stories, Architecture, Design, Journal) plus die Konvention unter `Vault Operations/Konventionen/Konvention Promptotyping Documents.md`. Alle Vorlagen einheitlich in Version 0.1 — der heutige Refactor ist die erste öffentliche Fassung. Konvention in Version 0.1. Werden ins Repo gespiegelt, beim Spiegeln werden Vault-interne Wikilinks durch Site-Anker oder Inline-Erklärungen ersetzt.
+**Vault-Vorlagen und Konvention.** Acht Vorlagen unter `Vault Operations/Vorlagen Promptotyping Documents/` (Index, Projekt-Wissensdokument, Datengrundlage, Specification, User Stories, Architecture, Design, Journal) plus die Konvention unter `Vault Operations/Konventionen/Konvention Promptotyping Documents.md`. Vorlagen-Versionen: sieben in 0.1, Specification in 0.2 (Konventionsänderung 2026-05-30, im Vault nachgezogen 2026-06-09: Epics und User Stories als Default-Sektion in `specification.md`; Vorlage User Stories bleibt als dokumentierte Ausnahme großer Editionsprojekte). Da v0.1 der Specification nie publiziert wurde, startet die Site mit v0.2 als Latest; ob ein v0.1-Snapshot-Anker angeboten wird, ist Operator-Entscheidung beim Spiegeln. Konvention in Version 0.1. Werden ins Repo gespiegelt, beim Spiegeln werden Vault-interne Wikilinks durch Site-Anker oder Inline-Erklärungen ersetzt.
 
 **Case-Study-Sammlung.** 24+ dokumentierte Case Studies, im Vault unter `Projects/Promptotyping/Case Studies/`. Jede Case Study trägt typischerweise: Repo-URL, Live-Demo-URL falls vorhanden, Status, Hauptaussage, methodische Aspekte. Acht davon werden als Tiefenseiten gerendert (HerData, Klawiter-Rescue, zbz-ocr-tei, M3GIM, Notker-Edition, CorrespExplorer, VetMedAI-Wissensbilanz, Agentic Edition Pipeline), die übrigen als Karten in der Listenübersicht.
 
@@ -71,7 +71,7 @@ Der bestehende Stand des Repos (November 2025) ist methodisch überholt: Sechs-P
 
 ## Stand und Phase
 
-Status: **Phase 3 abgeschlossen** (Wissensbasis befüllt, nach Critical-Expert-Prüfung um Vorlagen-Trigger-Korrektur überarbeitet). Phase 4 (Implementation in Sprints) folgt in eigenen Repo-Sessions.
+Status: **Phase 3.5 abgeschlossen** (Wissensbasis befüllt, CEIL-Refactor mit zwölf behobenen Befunden, repo-weit auf Schema-Version 0.2; Sprint-1-Substrat bereit: Paper sektioniert, `HANDOVER-SPRINT-1.md` im Root). Phase 4 (Implementation in fünf Sprints) folgt in eigenen Repo-Sessions; Sprint 1 ist der nächste Schritt.
 
 ## Beziehung zum Vault
 
