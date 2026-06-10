@@ -10,11 +10,11 @@ machine-url: https://dhcraft.org/Promptotyping/_content/promptotyping-document/d
 
 # Vorlage Design
 
-Diese Vorlage strukturiert das Gestalt-Dokument einer Promptotyping-Wissensbasis. Das resultierende Dokument heißt typischerweise `design.md` und liegt im `knowledge/`-Ordner des Repos. Es ist deklaratives Knowledge — es beschreibt Designhaltung, Designsystem, Interaktionsmuster und Visualisierungslogik. Die Sozialisierung des Coding-Agenten auf der ästhetischen Schicht (siehe Glossar, [Agent-Sozialisierung](#glossar)) entsteht durch Komposition: `CLAUDE.md` (im Repo-Root, Action) verweist auf `design.md` als Wertequelle. Das Knowledge bleibt deklarativ, der Action-Layer übersetzt es in Imperative.
+Diese Vorlage strukturiert das Gestalt-Dokument einer Promptotyping-Wissensbasis. Das resultierende Dokument heißt typischerweise `design.md` und liegt im `knowledge/`-Ordner des Repos. Es ist deklaratives Knowledge; es beschreibt Designhaltung, Designsystem, Interaktionsmuster und Visualisierungslogik. Die Sozialisierung des Coding-Agenten auf der ästhetischen Schicht (siehe Glossar, [Agent-Sozialisierung](#glossar)) entsteht durch Komposition: `CLAUDE.md` (im Repo-Root, Action) verweist auf `design.md` als Wertequelle. Das Knowledge bleibt deklarativ, der Action-Layer übersetzt es in Imperative.
 
 ## Geltungsbereich
 
-Die Vorlage trägt, sobald das Projekt eine UI hat — also visuelle Oberflächen, mit denen ein Mensch interagiert. Bei reinen Pipeline-, Datenmodell- oder Bibliotheks-Repos entfällt sie. Sie trägt nicht für reine Style-Guides oder Designsystem-Spezifikationen ohne Projektbezug — diese sind eigene Artefakte.
+Die Vorlage trägt, sobald das Projekt eine UI hat, also visuelle Oberflächen, mit denen ein Mensch interagiert. Bei reinen Pipeline-, Datenmodell- oder Bibliotheks-Repos entfällt sie. Sie trägt nicht für reine Style-Guides oder Designsystem-Spezifikationen ohne Projektbezug; diese sind eigene Artefakte.
 
 ## Funktion des Dokuments
 
@@ -28,7 +28,7 @@ Drei Prinzipien tragen das Dokument.
 
 Erstens trennt es Gestalt von Bauweise und Substanz. Wie etwas aussieht, ist nicht wie es technisch realisiert ist (`architecture.md`) und nicht was es leisten soll (`specification.md`). Eine Vermischung lässt jede UI-Änderung in alle drei Dokumente einsickern.
 
-Zweitens verweist es auf den Code als Source of Truth, statt Token-Werte zu kopieren. Konkrete Hex-Werte, Schriftgrößen, Spacing-Tokens stehen in der Token-Datei (typischerweise `tokens.css` oder ähnlich). Das Dokument beschreibt das System, nicht die Werte — sonst veraltet es bei jedem Token-Refactor.
+Zweitens verweist es auf den Code als Source of Truth, statt Token-Werte zu kopieren. Konkrete Hex-Werte, Schriftgrößen, Spacing-Tokens stehen in der Token-Datei (typischerweise `tokens.css` oder ähnlich). Das Dokument beschreibt das System, nicht die Werte; sonst veraltet es bei jedem Token-Refactor.
 
 Drittens bleibt es deklarativ. Designhaltung, Tokens-Kategorien, Interaktionsmuster werden beschrieben, nicht als Imperative an den Agenten formuliert. Die imperative Übersetzung passiert im Action-Layer (`CLAUDE.md` im Repo-Root), der auf dieses Dokument als Wertequelle verweist. Wer Imperativ-Sätze in das Designdokument schreibt, verletzt die Knowledge/Action-Trennung.
 
@@ -36,7 +36,7 @@ Drittens bleibt es deklarativ. Designhaltung, Tokens-Kategorien, Interaktionsmus
 
 Das Dokument folgt dem Frontmatter-Schema aus der [Konvention Promptotyping Documents](#konvention-v0.1) (Pflichtkern: `title, project, method, status, created, updated`). Spezifisch für Design:
 
-- `topics:` typisch sind Information Visualisation und Scholar-Centered Design. Sie verorten den Agenten in den Wissensfeldern, die ihm bei UI-Generierung Halt geben — Tufte, Munzner, Bertin als Hintergrund statt generische UI-Patterns. Bei nicht-visualisierungslastigen Frontends statt Information Visualisation ein anderes UX-Wissensfeld wie Interaction Design.
+- `topics:` typisch sind Information Visualisation und Scholar-Centered Design. Sie verorten den Agenten in den Wissensfeldern, die ihm bei UI-Generierung Halt geben: Tufte, Munzner, Bertin als Hintergrund statt generische UI-Patterns. Bei nicht-visualisierungslastigen Frontends statt Information Visualisation ein anderes UX-Wissensfeld wie Interaction Design.
 - `knowledge-sources:` selten genutzt, weil Designentscheidungen meist projekt-intern getroffen werden. Wenn ein etabliertes Designsystem (Material, Carbon, IBM Design Language) als Bezug dient, wird es hier als URI hinterlegt.
 - `related:` typischerweise `specification`, `architecture`.
 
@@ -48,7 +48,7 @@ Funktion: in zwei bis drei Sätzen die Designhaltung benennen. Inhalt: Charakter
 
 ### Designhaltung
 
-Funktion: das ästhetische Wertesystem explizit machen. Inhalt: drei bis fünf Sätze über die grundlegende Haltung — etwa "das Interface positioniert sich als Forschungswerkzeug, nicht als Dashboard. Datenqualität wird nicht kaschiert; Lücken stehen so da, wie sie im Bestand sind". Diese Sektion ist später die Quelle, aus der die Action-Prinzipien für den Agenten abgeleitet werden.
+Funktion: das ästhetische Wertesystem explizit machen. Inhalt: drei bis fünf Sätze über die grundlegende Haltung, etwa "das Interface positioniert sich als Forschungswerkzeug, nicht als Dashboard. Datenqualität wird nicht kaschiert; Lücken stehen so da, wie sie im Bestand sind". Diese Sektion ist später die Quelle, aus der die Action-Prinzipien für den Agenten abgeleitet werden.
 
 ### Designsystem
 
@@ -56,7 +56,7 @@ Funktion: die strukturellen Bestandteile benennen. Inhalt: Tokens (Farben, Typog
 
 ### Interaktionsmuster
 
-Funktion: das Verhalten der Anwendung beschreiben. Inhalt: wie funktionieren Filter, Navigation, Profile, Detailansichten. Beschreibt die Logik der Interaktion, nicht die Implementation — etwa "Filter wirken kumulativ, der gefilterte Zustand wird durch Akzent-Färbung der Stat-Cards sichtbar", nicht "in `applyFilters()` wird die Klasse `is-filtered` gesetzt".
+Funktion: das Verhalten der Anwendung beschreiben. Inhalt: wie funktionieren Filter, Navigation, Profile, Detailansichten. Beschreibt die Logik der Interaktion, nicht die Implementation, etwa "Filter wirken kumulativ, der gefilterte Zustand wird durch Akzent-Färbung der Stat-Cards sichtbar", nicht "in `applyFilters()` wird die Klasse `is-filtered` gesetzt".
 
 ### Visualisierungslogik
 
@@ -64,7 +64,7 @@ Funktion: bei Datenvisualisierungen die methodische Wahl dokumentieren. Inhalt: 
 
 ### Anbindung an den Action-Layer
 
-Funktion: dokumentieren, dass und wie `CLAUDE.md` (im Repo-Root) auf dieses Dokument verweist. Inhalt: ein knapper Hinweis, dass die imperative Übersetzung der Designhaltung in der `CLAUDE.md` liegt — typischerweise als Sektion "Designprinzipien" mit drei bis acht imperativ formulierten Sätzen, die aus der Designhaltung abgeleitet sind. Beispielhaft: aus dem Satz "Datenqualität wird nicht kaschiert" wird in CLAUDE.md "Lücken in den Daten werden visuell markiert, nicht ausgeblendet". Das Designdokument selbst trägt keine Imperative; es liefert die Wertequelle, aus der der Action-Layer schöpft.
+Funktion: dokumentieren, dass und wie `CLAUDE.md` (im Repo-Root) auf dieses Dokument verweist. Inhalt: ein knapper Hinweis, dass die imperative Übersetzung der Designhaltung in der `CLAUDE.md` liegt, typischerweise als Sektion "Designprinzipien" mit drei bis acht imperativ formulierten Sätzen, die aus der Designhaltung abgeleitet sind. Beispielhaft: aus dem Satz "Datenqualität wird nicht kaschiert" wird in CLAUDE.md "Lücken in den Daten werden visuell markiert, nicht ausgeblendet". Das Designdokument selbst trägt keine Imperative; es liefert die Wertequelle, aus der der Action-Layer schöpft.
 
 ## Was nicht reingehört
 
@@ -148,7 +148,7 @@ Diese Imperative gehören in `CLAUDE.md`, nicht in dieses Dokument. Hier stehen 
 
 ## Anwendung als Prompt-Template
 
-Strukturanker beim Aufsetzen des Designsystems. Der Agent erhält den Template-Block und füllt zuerst Designhaltung und Designsystem aus, weil die imperative Übersetzung im Action-Layer (`CLAUDE.md`) aus diesen abgeleitet wird. Die Imperative entstehen typischerweise nach drei bis fünf UI-Iterationen — vorher sind sie spekulativ, weil die tragenden Prinzipien noch nicht durch Praxis validiert sind.
+Strukturanker beim Aufsetzen des Designsystems. Der Agent erhält den Template-Block und füllt zuerst Designhaltung und Designsystem aus, weil die imperative Übersetzung im Action-Layer (`CLAUDE.md`) aus diesen abgeleitet wird. Die Imperative entstehen typischerweise nach drei bis fünf UI-Iterationen; vorher sind sie spekulativ, weil die tragenden Prinzipien noch nicht durch Praxis validiert sind.
 
 Review-Folie für ein bestehendes Design-Dokument. Ein vorhandenes `design.md` wird gegen die Vorlage gehalten, um zu prüfen, ob die Designhaltung deklarativ und schärfbar formuliert ist, ob die imperative Übersetzung in `CLAUDE.md` (nicht im Designdokument selbst) lebt, ob Token-Werte fehlen statt im Dokument zu stehen, und ob Interaktionsmuster die Logik beschreiben statt Implementation zu zitieren.
 

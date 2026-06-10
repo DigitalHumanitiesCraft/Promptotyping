@@ -10,15 +10,15 @@ machine-url: https://dhcraft.org/Promptotyping/_content/promptotyping-document/u
 
 # Vorlage User Stories
 
-Diese Vorlage strukturiert das User-Stories-Dokument einer Promptotyping-Wissensbasis für den Ausnahmefall der ausgelagerten Datei. Seit der Konventionsänderung 2026-05-30 ist der Default, Epics und User Stories als eigene Sektion in `specification.md` zu führen ([Vorlage Specification](#promptotyping-document-specification), ab Vorlagen-Version 0.2); die Strukturprinzipien dieser Vorlage gelten dort unverändert. Eine separate Datei — typischerweise `user-stories.md`, alternativ `scholar-user-stories.md` bei Forschungsprojekten — ist die dokumentierte Ausnahme für große Projekte, deren Substanz-Funktion gespalten wird.
+Diese Vorlage strukturiert das User-Stories-Dokument einer Promptotyping-Wissensbasis für den Ausnahmefall der ausgelagerten Datei. Seit der Konventionsänderung 2026-05-30 ist der Default, Epics und User Stories als eigene Sektion in `specification.md` zu führen ([Vorlage Specification](#promptotyping-document-specification), ab Vorlagen-Version 0.2); die Strukturprinzipien dieser Vorlage gelten dort unverändert. Eine separate Datei (typischerweise `user-stories.md`, alternativ `scholar-user-stories.md` bei Forschungsprojekten) ist die dokumentierte Ausnahme für große Projekte, deren Substanz-Funktion gespalten wird.
 
 ## Geltungsbereich
 
-Die Vorlage trägt als separate Datei nur, wenn die Substanz-Funktion des Projekts gespalten wird — typischerweise bei großen Editionsprojekten, deren `specification.md` sonst unlesbar würde (dokumentierte Ausnahme, Konventionsänderung 2026-05-30). Default ist die Sektion Epics und User Stories in `specification.md`. Inhaltliche Voraussetzung bleibt in beiden Formen: Das Projekt hat eine UI und mehrere Nutzer-Personas oder Forschungsoperationen sind unterscheidbar; bei reinen Pipeline- oder Tool-Repos entfällt die Funktion, weil dort kein Anwendungsszenario im Sinne von Forschungsoperationen existiert. Sie trägt nicht für Personas oder Empathy Maps — diese sind eigene UX-Artefakte und gehören gegebenenfalls in eine `personas.md`. Sie trägt auch nicht für formale funktionale Anforderungen — diese gehören in `specification.md`.
+Die Vorlage trägt als separate Datei nur, wenn die Substanz-Funktion des Projekts gespalten wird, typischerweise bei großen Editionsprojekten, deren `specification.md` sonst unlesbar würde (dokumentierte Ausnahme, Konventionsänderung 2026-05-30). Default ist die Sektion Epics und User Stories in `specification.md`. Inhaltliche Voraussetzung bleibt in beiden Formen: Das Projekt hat eine UI und mehrere Nutzer-Personas oder Forschungsoperationen sind unterscheidbar; bei reinen Pipeline- oder Tool-Repos entfällt die Funktion, weil dort kein Anwendungsszenario im Sinne von Forschungsoperationen existiert. Sie trägt nicht für Personas oder Empathy Maps; diese sind eigene UX-Artefakte und gehören gegebenenfalls in eine `personas.md`. Sie trägt auch nicht für formale funktionale Anforderungen; diese gehören in `specification.md`.
 
 ## Funktion des Dokuments
 
-Das Dokument beantwortet "wer benutzt das System wie und warum". Es übersetzt die formalen Anforderungen aus `specification.md` in narrative Anwendungsszenarien — Sätze im Format „Als [Rolle] möchte ich [Ziel], damit [Nutzen]". Adressiert sind drei Lesergruppen: ein Forschender oder Anwender, der prüfen will, ob das System sein Anliegen unterstützt; ein UX-Designer, der die Interaktion gegen Szenarien testet; ein Coding-Agent, der eine neue Funktion baut und prüfen muss, welche Szenarien sie betrifft.
+Das Dokument beantwortet "wer benutzt das System wie und warum". Es übersetzt die formalen Anforderungen aus `specification.md` in narrative Anwendungsszenarien, Sätze im Format „Als [Rolle] möchte ich [Ziel], damit [Nutzen]". Adressiert sind drei Lesergruppen: ein Forschender oder Anwender, der prüfen will, ob das System sein Anliegen unterstützt; ein UX-Designer, der die Interaktion gegen Szenarien testet; ein Coding-Agent, der eine neue Funktion baut und prüfen muss, welche Szenarien sie betrifft.
 
 Im Promptotyping-Kontext sind User Stories die Brücke zwischen Scholar-Centered Design (siehe Glossar) und Implementation. Sie entstehen typischerweise in der Preparation- oder Exploration-Phase aus Sessions mit Domänenexperten und werden iterativ verfeinert.
 
@@ -62,7 +62,7 @@ Pro Story:
 - Story im Format „Als [Rolle], die …, will ich …, damit …", in einem Satz oder einem kurzen Absatz.
 - Ableitung als Bullet-Liste: Anforderung in `specification.md`, Komponente in `architecture.md` oder `design.md`, Begriffe aus `INDEX.md`.
 
-Die Stories sind nicht durchnummeriert — sie sind nicht IDs, sondern Beschreibungen. Sortierung innerhalb der Gruppen erfolgt nach inhaltlicher Logik, nicht nach Nummer.
+Die Stories sind nicht durchnummeriert; sie sind nicht IDs, sondern Beschreibungen. Sortierung innerhalb der Gruppen erfolgt nach inhaltlicher Logik, nicht nach Nummer.
 
 ## Was nicht reingehört
 

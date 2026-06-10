@@ -71,7 +71,7 @@ Der bestehende Stand des Repos (November 2025) ist methodisch überholt: Sechs-P
 
 ## Stand und Phase
 
-Status: **Phase 4 implementiert** (2026-06-10, orchestrierte Session mit vier Subagenten-Arbeitspaketen auf Operator-Anweisung; ersetzt die geplanten fünf Einzel-Sessions). Site vollständig gebaut: Paper-Lesefluss mit Phasen-Provenance-Lane, neun Vorlagen mit Side-Panels und Frontmatter-Inspector, kuratierte Use-Case-Galerie (18 Cases, 7 Tiefenseiten), Überblick-, Praxis-, Skills-, Glossar- (42 Einträge), Konventions- und Literatur-Sektion, Mobile-Layout, SEO. Spezifikations-Erweiterungen A13 bis A16 und ADR-9/ADR-10 dokumentiert. Offen: Human Review der Phasen-Klassifizierung und der gespiegelten Inhalte (CEIL), Live-Test des 404-Routings nach Deploy, Logo-Optimierung (1.1 MB PNG).
+Status: **Phase 4 implementiert, Operator-Review-Eingriffe umgesetzt** (2026-06-10). Site vollständig gebaut: Paper-Lesefluss, neun Vorlagen mit Side-Panels und Frontmatter-Inspector, kuratierte Use-Case-Galerie (18 Cases, 7 Tiefenseiten), Überblick-, Praxis-, Skills-, Arbeitsumgebung-, Glossar- (42 Einträge), Konventions- und Literatur-Sektion, Mobile-Layout, SEO. Nach dem Erstdeploy auf Operator-Entscheidung: Phasen-Provenance-Lane vollständig entfernt (Tags werden nur noch gestrippt), Sticky-Header und Footer ergänzt, Hero rein typografisch (Icon in die Vorlagen-Sektion verschoben), alle sechs Prozessvideos als Click-to-load-Facade integriert, neue Arbeitsumgebung-Sektion. Spezifikations-Erweiterungen A13 bis A18 und ADR-9/ADR-10 dokumentiert. Offen: Human Review der gespiegelten Inhalte (CEIL), Browser-Sichtprüfung, Live-Test des 404-Routings nach Deploy, Logo-Optimierung (1.1 MB PNG).
 
 ## Beziehung zum Vault
 
@@ -79,7 +79,7 @@ Diese Wissensbasis ist eine **Spiegelung mit Eigenleben**. Die Vault-Vorlagen, v
 
 ## Erwartetes Outcome
 
-- `https://dhcraft.org/Promptotyping/` rendert das Pollin-2026-Paper als scrollbares interaktives Paper mit Phasen-Provenance-Lane
+- `https://dhcraft.org/Promptotyping/` rendert das Pollin-2026-Paper als scrollbares interaktives Paper
 - Neun Vorlagen sind unter Latest-Ankern adressierbar (`#promptotyping-document-data` etc.); Snapshot-Sub-Anker bei späteren Versions-Sprüngen
 - Subpath-Aliase (`/promptotyping-document/data`) für Menschen; statische Markdown-URLs unter `_content/` als Maschinenadresse (ADR-10)
 - Sieben Case-Study-Tiefenseiten plus filterbare, kuratierte Use-Case-Galerie (18 Cases, A7)

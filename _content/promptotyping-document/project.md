@@ -71,7 +71,7 @@ Wissensquellen. `knowledge-sources` als verschachteltes Mapping, das externe Wis
 
 Das Feld `knowledge-sources` ist das Strukturmerkmal, das die Vorlage von generischen READMEs unterscheidet. Es macht das Dokument LOD-anschlussfähig: Jede aufgelistete Quelle ist durch eine URI eindeutig identifiziert und beim Auflösen direkt erreichbar. Bei Bedarf kann eine URI auch als Namespace zur semantischen Auszeichnung anderer Inhalte des Dokuments verwendet werden.
 
-Topics. Optional, als Wikilinks zu Vault-Konzepten. Beim Identitätsdokument typischerweise sparsam — Scholar-Centered Design oder das überfachliche Forschungsfeld, soweit es das Projekt-Befüllen leitet. Wenn keine eindeutige Verortung trägt, weglassen.
+Topics. Optional, als Wikilinks zu Vault-Konzepten. Beim Identitätsdokument typischerweise sparsam, etwa Scholar-Centered Design oder das überfachliche Forschungsfeld, soweit es das Projekt-Befüllen leitet. Wenn keine eindeutige Verortung trägt, weglassen.
 
 ## Abschnitte im Detail
 

@@ -69,6 +69,7 @@ Sieben Tiefenseiten unter `_content/case-studies/{id}.md`, je aus der zugehoerig
 | Datei | Vault-Quelle |
 |---|---|
 | `praxis.md` | Promptotyping MOC, Sektion Methodenerweiterungen |
+| `arbeitsumgebung.md` | neu formuliert (Obsidian-Vault als Wissensumgebung, Promptotyping Agent Interface, AI Harness und Skills) |
 | `skills/index.md` | neu formuliert (Action-Layer-Praxis), verweist auf coding/writing und Vorlage Action-Layer |
 | `skills/coding.md` | System Prompts/Promptotyping System Prompt for Coding.md (Prompttext verbatim) |
 | `skills/writing.md` | System Prompts/Promptotyping System Prompt for Writing.md (Prompttext verbatim) |
@@ -93,7 +94,7 @@ Die Herkunftsfaelle wiiw-figaro, vault-kuration und sugw treten in `praxis.md` a
 ## Luecken und offene Punkte
 
 - Ohne `demo_url`: teicrafter, coocr-htr, kulturpool-explorer, zbz-ocr-tei, austrian-university-dashboard. Diese fuenf haben in den Quellen keine hinterlegte Live-Demo (teiCrafter und coocr-htr nur Repo/Video, zbz-ocr-tei intern, kulturpool nur Video, austrian-university-dashboard nur Video).
-- Ohne `repo_url`: austrian-university-dashboard (im Paper als "—" gefuehrt).
+- Ohne `repo_url`: austrian-university-dashboard (im Paper ohne Repository-Eintrag gefuehrt).
 - Mit `video_url`: diged-neolat, coocr-htr, kulturpool-explorer, klawiter-rescue, austrian-university-dashboard. Alle uebrigen ohne in den Quellen belegtes Video.
 - `insight: null`: szd-htr (nicht Teil der Paper-Tabelle 4.1, daher kein dort formulierter methodischer Beitrag). Alle uebrigen 17 tragen einen Beitrag aus Tabelle 4.1.
 - Use-Case-Zuordnung szd und stained-glass als data-modelling-capture folgt Paper 4.3 (CVMA und SZD als fruehe Instanzen der Datenmodellierung und Erfassung), waehrend die Interface-Type-Spalte "Capture" lautet; die Galerie trennt useCase (Ort im Datenlebenszyklus) von interfaceTypes (epistemische Funktion). Diese Trennung ist die einzige nicht-triviale Zuordnungsentscheidung.

@@ -14,7 +14,7 @@ Diese Vorlage strukturiert das Process-Dokument einer Promptotyping-Wissensbasis
 
 ## Geltungsbereich
 
-Die Vorlage trägt für jedes Promptotyping-Repo, weil die Genese-Funktion in der [Konvention Promptotyping Documents](#konvention-v0.1) als immer-relevant geführt wird. Sie trägt nicht für reine Veröffentlichungs-Repos ohne aktive Entwicklung — dort ist ein Journal nachträglich rekonstruiert wertlos. Sie trägt auch nicht für Sitzungsprotokolle oder Meeting-Mitschriften; das sind andere Dokumenttypen.
+Die Vorlage trägt für jedes Promptotyping-Repo, weil die Genese-Funktion in der [Konvention Promptotyping Documents](#konvention-v0.1) als immer-relevant geführt wird. Sie trägt nicht für reine Veröffentlichungs-Repos ohne aktive Entwicklung; dort ist ein Journal nachträglich rekonstruiert wertlos. Sie trägt auch nicht für Sitzungsprotokolle oder Meeting-Mitschriften; das sind andere Dokumenttypen.
 
 ## Funktion des Dokuments
 
@@ -24,9 +24,9 @@ Das Journal ist die Process-Schicht der Wissensbasis. Es beantwortet "wie haben 
 
 Drei Prinzipien tragen das Dokument.
 
-Erstens werden Einträge nicht im Nachhinein umgeschrieben. Wenn eine spätere Erkenntnis zeigt, dass eine frühere Entscheidung falsch war, wird nicht der alte Eintrag geändert, sondern ein neuer Eintrag mit Verweis auf den alten korrigiert. Das Journal ist die einzige Wissensquelle, in der alte Stände verfügbar bleiben — ohne diese Eigenschaft verliert es seinen Process-Charakter.
+Erstens werden Einträge nicht im Nachhinein umgeschrieben. Wenn eine spätere Erkenntnis zeigt, dass eine frühere Entscheidung falsch war, wird nicht der alte Eintrag geändert, sondern ein neuer Eintrag mit Verweis auf den alten korrigiert. Das Journal ist die einzige Wissensquelle, in der alte Stände verfügbar bleiben; ohne diese Eigenschaft verliert es seinen Process-Charakter.
 
-Zweitens dokumentiert das Journal Sackgassen mit Begründung. Was versucht und verworfen wurde, ist genauso wertvoll wie was umgesetzt wurde — Sackgassen verhindern, dass spätere Sessions denselben Pfad noch einmal gehen. Eine Sackgasse ohne Begründung ist eine vergessene, keine dokumentierte.
+Zweitens dokumentiert das Journal Sackgassen mit Begründung. Was versucht und verworfen wurde, ist genauso wertvoll wie was umgesetzt wurde; Sackgassen verhindern, dass spätere Sessions denselben Pfad noch einmal gehen. Eine Sackgasse ohne Begründung ist eine vergessene, keine dokumentierte.
 
 Drittens trennt das Journal Genese von Ergebnis. Was am Ende einer Session steht, gehört nicht ins Journal, sondern in `specification.md` oder `architecture.md`. Was am Anfang stand und welche Schritte zum Ergebnis führten, gehört ins Journal. Diese Trennung verhindert Doppelpflege.
 
@@ -36,7 +36,7 @@ Das Journal folgt dem Frontmatter-Schema aus der [Konvention Promptotyping Docum
 
 - `topics:` entfällt typischerweise. Das Journal ist Process-Dokument und trägt keine domänen-thematische Verortung; die thematischen Topics leben in den Knowledge-Geschwistern.
 - `related:` listet typischerweise `project`, `specification` und gegebenenfalls `decisions`, weil diese Dokumente die im Journal dokumentierte Genese als Ergebnis tragen.
-- `knowledge-sources:` entfällt — das Journal trägt keine externen Anschlüsse.
+- `knowledge-sources:` entfällt; das Journal trägt keine externen Anschlüsse.
 - `updated:` wird bei jedem neuen Eintrag aktualisiert; das Feld ist eines der am häufigsten geänderten in der Wissensbasis.
 
 ## Abschnitte im Detail
@@ -47,7 +47,7 @@ Funktion: in zwei bis drei Sätzen klar machen, was das Journal dokumentiert und
 
 ### Einträge
 
-Funktion: chronologische Dokumentation des Arbeitsverlaufs. Inhalt: pro Eintrag ein Datum als Heading (`### YYYY-MM-DD Sessiontitel`), darunter Ziel, Verlauf, Ergebnis, Dead Ends. Reihenfolge der Einträge: neueste zuerst oder älteste zuerst — entscheidend ist Konsistenz innerhalb des Journals. Bei langen Projekten kann eine Aggregierung zu monatlichen Zwischenüberschriften die Lesbarkeit verbessern.
+Funktion: chronologische Dokumentation des Arbeitsverlaufs. Inhalt: pro Eintrag ein Datum als Heading (`### YYYY-MM-DD Sessiontitel`), darunter Ziel, Verlauf, Ergebnis, Dead Ends. Reihenfolge der Einträge: neueste zuerst oder älteste zuerst; entscheidend ist Konsistenz innerhalb des Journals. Bei langen Projekten kann eine Aggregierung zu monatlichen Zwischenüberschriften die Lesbarkeit verbessern.
 
 Pro Eintrag:
 
@@ -127,13 +127,13 @@ Review-Folie für ein bestehendes Journal. Ein vorhandenes Journal wird gegen di
 
 ## Beispiel
 
-HerData führt ein Journal, das die Promptotyping-Iterationen als zusammenhängende Erzählung verdichtet. Charakteristisch ist der erste Satz nach dem Lead: "Es ist keine vollständige Session-Chronik — einzelne Commits stehen in der Git-History — sondern ein lesbarer Rückblick." Diese Negation positioniert das Journal explizit gegen Git-Log und gibt dem Leser den richtigen Erwartungshorizont.
+HerData führt ein Journal, das die Promptotyping-Iterationen als zusammenhängende Erzählung verdichtet. Charakteristisch ist der erste Satz nach dem Lead: "Es ist keine vollständige Session-Chronik (einzelne Commits stehen in der Git-History), sondern ein lesbarer Rückblick." Diese Negation positioniert das Journal explizit gegen Git-Log und gibt dem Leser den richtigen Erwartungshorizont.
 
 ## Begriffe
 
 - Eintrag: einzelne datierte Einheit im Journal, deckt eine Session oder eine inhaltlich abgegrenzte Phase ab.
 - Dead End: dokumentierter Versuch, der nicht zum Ziel führte, mit Begründung warum er verworfen wurde.
-- Process-Memory: Eigenschaft eines Dokuments, vergangene Arbeitsstände auch nach späteren Korrekturen lesbar zu halten — die definierende Eigenschaft eines Journals.
+- Process-Memory: Eigenschaft eines Dokuments, vergangene Arbeitsstände auch nach späteren Korrekturen lesbar zu halten; die definierende Eigenschaft eines Journals.
 
 ## Related
 

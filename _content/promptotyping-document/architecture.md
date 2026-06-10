@@ -14,7 +14,7 @@ Diese Vorlage strukturiert das Bauweise-Dokument einer Promptotyping-Wissensbasi
 
 ## Geltungsbereich
 
-Die Vorlage trägt, sobald das System mehr als ein triviales Frontend ist — sobald also Pipeline-Stufen, Modulgrenzen, Datenflüsse oder Sicherheitsannahmen dokumentiert werden müssen. Bei einseitigen Static-Site-Repos ohne Build-Schritt entfällt sie; eine knappe Architektur-Sektion in `specification.md` reicht dann. Sie trägt nicht für Code-Dokumentation auf Funktions- oder Klassenebene — diese liegt im Code (Docstrings, Kommentare, JSDoc).
+Die Vorlage trägt, sobald das System mehr als ein triviales Frontend ist, sobald also Pipeline-Stufen, Modulgrenzen, Datenflüsse oder Sicherheitsannahmen dokumentiert werden müssen. Bei einseitigen Static-Site-Repos ohne Build-Schritt entfällt sie; eine knappe Architektur-Sektion in `specification.md` reicht dann. Sie trägt nicht für Code-Dokumentation auf Funktions- oder Klassenebene; diese liegt im Code (Docstrings, Kommentare, JSDoc).
 
 Bei größeren Systemen zerfällt eine monolithische `architecture.md` in mehrere Dokumente. Typische Spaltungen, die in der Praxis vorkommen: `pipeline.md` für den Datenfluss durch Verarbeitungsstufen, `infrastruktur.md` für Deployment und CI/CD, `engines.md` für externe Modelle und APIs (OCR-Modelle, LLM-Endpunkte, NER-Tools). Die Strukturprinzipien und das Frontmatter-Schema dieser Vorlage gelten dann pro Datei; jede Datei trägt einen abgegrenzten Aspekt der Bauweise-Funktion. Maßgabe ist, dass jeder Aspekt an genau einer auffindbaren Stelle abgedeckt ist.
 
@@ -28,7 +28,7 @@ Drei Prinzipien tragen das Dokument.
 
 Erstens trennt es Wie von Was und Aussehen. Welche Anforderungen das System erfüllt, gehört in `specification.md`. Wie die UI gestaltet ist, gehört in `design.md`. Wie es technisch realisiert ist, gehört hier hin. Diese Trennung verhindert, dass eine Architekturänderung auch eine Spec- und Design-Anpassung erzwingt.
 
-Zweitens beschreibt es Modulgrenzen, nicht Implementationen. Was eine Komponente leistet und woran sie aufhört, ist Architektur; wie sie intern arbeitet, ist Code. Eine Beschreibung, die in den Code hineingreift, veraltet schneller als sie nutzt. Im Promptotyping-Kontext ist die Modulgrenze die Stelle, an der der Coding-Agent Hilfe braucht — sie zu beschreiben heißt, dem Agenten zu sagen, wo er aufhören soll, weiterzubauen.
+Zweitens beschreibt es Modulgrenzen, nicht Implementationen. Was eine Komponente leistet und woran sie aufhört, ist Architektur; wie sie intern arbeitet, ist Code. Eine Beschreibung, die in den Code hineingreift, veraltet schneller als sie nutzt. Im Promptotyping-Kontext ist die Modulgrenze die Stelle, an der der Coding-Agent Hilfe braucht; sie zu beschreiben heißt, dem Agenten zu sagen, wo er aufhören soll, weiterzubauen.
 
 Drittens trägt es Sicherheit und Barrierefreiheit als Hauptbestandteile, nicht als Anhang. Sicherheitsannahmen und Barrierefreiheits-Maßnahmen sind Architekturentscheidungen, nicht nachträgliche Compliance-Sektionen. Sie stehen im Hauptteil oder gar nicht.
 
@@ -48,7 +48,7 @@ Funktion: in zwei bis drei Sätzen das Architekturmuster benennen. Inhalt: Chara
 
 ### Stack
 
-Funktion: die eingesetzten Technologien benennen und begründen. Inhalt: Sprachen, Frameworks, Build-Tooling, Plattformen. Pro Wahl ein Begründungssatz, soweit nicht trivial — etwa "Vanilla JavaScript ohne Framework, weil das Projekt ein Forschungsfrontend ist und Pflegeaufwand minimiert werden soll". Versionsangaben sparsam: Major-Version reicht, Minor-Versionen sind im `package.json` oder `requirements.txt`.
+Funktion: die eingesetzten Technologien benennen und begründen. Inhalt: Sprachen, Frameworks, Build-Tooling, Plattformen. Pro Wahl ein Begründungssatz, soweit nicht trivial, etwa "Vanilla JavaScript ohne Framework, weil das Projekt ein Forschungsfrontend ist und Pflegeaufwand minimiert werden soll". Versionsangaben sparsam: Major-Version reicht, Minor-Versionen sind im `package.json` oder `requirements.txt`.
 
 ### Komponenten
 
@@ -56,7 +56,7 @@ Funktion: die Hauptmodule und ihre Verantwortung. Inhalt: pro Komponente Zweck, 
 
 ### Datenfluss
 
-Funktion: zeigen, wie Daten von Quelle zu Anzeige fließen. Inhalt: Pipeline-Stufen mit klaren Übergängen — etwa "XML-Quellen → Python-Pipeline → JSON-Export → JavaScript-Frontend". Pro Stufe das Format, das produziert wird, und die Stelle, wo die Validierung erfolgt. Bei mehrstufigen Pipelines hilft eine ASCII-Skizze oder ein verlinktes Diagramm. In großen Pipelines kann diese Sektion zu einer eigenen Datei `pipeline.md` ausgelagert werden; Komponenten und Datenfluss verschmelzen dann zu einer Stufentabelle, die pro Stufe Skript, Input-Format, Output-Format und Verantwortung trägt.
+Funktion: zeigen, wie Daten von Quelle zu Anzeige fließen. Inhalt: Pipeline-Stufen mit klaren Übergängen, etwa "XML-Quellen → Python-Pipeline → JSON-Export → JavaScript-Frontend". Pro Stufe das Format, das produziert wird, und die Stelle, wo die Validierung erfolgt. Bei mehrstufigen Pipelines hilft eine ASCII-Skizze oder ein verlinktes Diagramm. In großen Pipelines kann diese Sektion zu einer eigenen Datei `pipeline.md` ausgelagert werden; Komponenten und Datenfluss verschmelzen dann zu einer Stufentabelle, die pro Stufe Skript, Input-Format, Output-Format und Verantwortung trägt.
 
 ### Externe Modelle und Services
 
@@ -184,7 +184,7 @@ Review-Folie für eine bestehende Architektur. Ein vorhandenes `architecture.md`
 
 ## Beispiel
 
-Monolithischer Fall — HerData führt `architecture.md` mit den Sektionen Stack, Komponenten, Datenfluss, Sicherheit, Barrierefreiheit, Repository-Struktur, Build und Deployment. Charakteristisch ist die Lead-Begründung: "HerData ist eine statische Web-Anwendung mit einer Python-Pipeline für die Datenaufbereitung und einem Vanilla-JavaScript-Frontend ohne Framework. Diese Schlichtheit ist bewusst gewählt: sie reduziert Pflegeaufwand, Lade-Komplexität und Fehlerrisiken auf das Minimum, das ein Forschungs-Frontend braucht." Der Lead trägt die wesentliche Architekturentscheidung (bewusste Schlichtheit) und ihre Begründung in zwei Sätzen.
+Monolithischer Fall: HerData führt `architecture.md` mit den Sektionen Stack, Komponenten, Datenfluss, Sicherheit, Barrierefreiheit, Repository-Struktur, Build und Deployment. Charakteristisch ist die Lead-Begründung: "HerData ist eine statische Web-Anwendung mit einer Python-Pipeline für die Datenaufbereitung und einem Vanilla-JavaScript-Frontend ohne Framework. Diese Schlichtheit ist bewusst gewählt: sie reduziert Pflegeaufwand, Lade-Komplexität und Fehlerrisiken auf das Minimum, das ein Forschungs-Frontend braucht." Der Lead trägt die wesentliche Architekturentscheidung (bewusste Schlichtheit) und ihre Begründung in zwei Sätzen.
 
 Beispiel-Frontmatter aus HerData/`architecture.md`:
 
@@ -213,12 +213,12 @@ related: [data, design, features, maintenance]
 ---
 ```
 
-Gespaltener Fall — zbz-ocr-tei führt die Bauweise-Funktion in drei Dokumenten: `PIPELINE.md` (7-stufige OCR-zu-TEI-Pipeline mit Skripten, Input- und Output-Pfaden, Stage-Status), `INFRASTRUKTUR.md` (Azure-API-Zugang, Podman-Container, GitLab-CI, ZBZ-Deployment), `ENGINES.md` (Mistral Document AI, DeepSeek, Gemini, Docling als OCR- und Layout-Engines mit Endpunkten und Limits). Diese Spaltung ist die Praxisform des Geltungsbereich-Hinweises oben: bei mehrstufigen ML-Pipelines mit mehreren externen Modellen reicht eine Datei nicht, weil die einzelnen Aspekte je eigenen Aktualisierungsrhythmus tragen.
+Gespaltener Fall: zbz-ocr-tei führt die Bauweise-Funktion in drei Dokumenten: `PIPELINE.md` (7-stufige OCR-zu-TEI-Pipeline mit Skripten, Input- und Output-Pfaden, Stage-Status), `INFRASTRUKTUR.md` (Azure-API-Zugang, Podman-Container, GitLab-CI, ZBZ-Deployment), `ENGINES.md` (Mistral Document AI, DeepSeek, Gemini, Docling als OCR- und Layout-Engines mit Endpunkten und Limits). Diese Spaltung ist die Praxisform des Geltungsbereich-Hinweises oben: bei mehrstufigen ML-Pipelines mit mehreren externen Modellen reicht eine Datei nicht, weil die einzelnen Aspekte je eigenen Aktualisierungsrhythmus tragen.
 
 ## Begriffe
 
 - Stack: die Gesamtheit der eingesetzten Technologien (Sprachen, Frameworks, Plattformen, Tooling).
-- Modulgrenze: die Schnittstelle, an der eine Komponente endet und eine andere beginnt — die zentrale Information einer Architekturbeschreibung.
+- Modulgrenze: die Schnittstelle, an der eine Komponente endet und eine andere beginnt; die zentrale Information einer Architekturbeschreibung.
 - Datenfluss: der Weg, den Daten von der Quelle bis zur Anzeige durchlaufen, mit Formaten und Validierungspunkten an jedem Übergang.
 
 ## Related

@@ -98,6 +98,66 @@ a:hover {
   text-decoration-color: var(--text);
 }
 
+/* Sticky site header */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.site-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-2) var(--space-8);
+}
+
+.site-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.site-brand-logo {
+  display: inline-flex;
+  line-height: 0;
+  text-decoration: none;
+}
+
+.site-brand-logo img {
+  display: block;
+}
+
+.site-brand-word {
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  font-size: 0.875rem;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: var(--text);
+}
+
+.site-nav a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--text);
+  text-underline-offset: 2px;
+}
+
 /* Layout grid */
 
 .layout {
@@ -118,9 +178,9 @@ a:hover {
 
 .toc {
   position: sticky;
-  top: var(--space-8);
+  top: var(--space-16);
   align-self: start;
-  height: calc(100vh - var(--space-16));
+  height: calc(100vh - var(--space-16) - var(--space-12));
   overflow-y: auto;
   padding: var(--space-8) 0;
   font-size: 0.875rem;
@@ -287,13 +347,6 @@ a:hover {
   text-align: center;
 }
 
-.hero-logo {
-  max-width: 180px;
-  height: auto;
-  margin: 0 auto var(--space-8);
-  display: block;
-}
-
 .hero h1 {
   font-size: 2.25rem;
   font-weight: 700;
@@ -374,116 +427,10 @@ a:hover {
   color: var(--bg);
 }
 
-/* Phase provenance lane: monochrome vertical marker on left edge of paragraphs */
-
-.phase-preparation,
-.phase-exploration,
-.phase-distillation,
-.phase-implementation {
-  position: relative;
-  padding-left: var(--space-6);
-}
-
-.phase-preparation::before,
-.phase-exploration::before,
-.phase-distillation::before,
-.phase-implementation::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 10%;
-  bottom: 10%;
-  width: 4px;
-  background: var(--lane-color);
-}
-
-.phase-preparation { --lane-color: var(--phase-preparation); }
-.phase-exploration { --lane-color: var(--phase-exploration); }
-.phase-distillation { --lane-color: var(--phase-distillation); }
-.phase-implementation { --lane-color: var(--phase-implementation); }
-
-/* Phase filter mode: dim non-matching paragraphs */
-
-.content.phase-filtered .phase-preparation,
-.content.phase-filtered .phase-exploration,
-.content.phase-filtered .phase-distillation,
-.content.phase-filtered .phase-implementation {
-  opacity: 0.25;
-  transition: opacity 150ms ease-out;
-}
-
-.content.phase-filtered .phase-active {
-  opacity: 1;
-}
-
-/* Phase lane tooltip */
-
-.phase-tooltip {
-  position: fixed;
-  z-index: 30;
-  background: var(--bg);
-  border: 1px solid var(--accent);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  padding: var(--space-2) var(--space-4);
-  font-size: 0.8125rem;
-  max-width: 240px;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 150ms ease-out;
-}
-
-.phase-tooltip.visible {
-  opacity: 1;
-}
-
-.phase-tooltip-name {
-  font-weight: 600;
-}
-
-.phase-tooltip-action {
-  color: var(--phase-exploration);
-}
-
-/* Filter indicator bar */
-
-.filter-bar {
-  position: sticky;
-  top: 0;
-  z-index: 15;
-  display: none;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-4);
-  padding: var(--space-2) var(--space-4);
-  background: var(--bg);
-  border-bottom: 1px solid var(--border);
-  font-size: 0.875rem;
-}
-
-.filter-bar.visible {
-  display: flex;
-}
-
-.filter-bar button {
-  font-family: var(--font-text);
-  font-size: 0.875rem;
-  background: none;
-  border: 1px solid var(--text);
-  border-radius: 2px;
-  padding: var(--space-1) var(--space-4);
-  cursor: pointer;
-  color: var(--text);
-}
-
-.filter-bar button:hover {
-  background: var(--text);
-  color: var(--bg);
-}
-
 /* Section placeholders (lazy load targets) */
 
 .paper-section {
-  scroll-margin-top: var(--space-8);
+  scroll-margin-top: var(--space-16);
 }
 
 .paper-section-placeholder {
@@ -496,51 +443,11 @@ a:hover {
   padding: var(--space-8) 0;
 }
 
-/* Phase provenance lane legend: one unobtrusive line before the first paper
-   section, so the grey markers in the reading column are legible. */
-
-.phase-legend {
-  max-width: var(--read-width);
-  margin: 0 auto var(--space-8);
-  padding: var(--space-4) 0;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  font-size: 0.8125rem;
-  color: var(--phase-exploration);
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--space-2) var(--space-6);
-}
-
-.phase-legend-intro {
-  flex-basis: 100%;
-  margin: 0 0 var(--space-1);
-}
-
-.phase-legend-item {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-}
-
-.phase-legend-swatch {
-  width: 0.75rem;
-  height: 0.75rem;
-  flex: 0 0 auto;
-  display: inline-block;
-}
-
-.phase-legend-swatch.preparation { background: var(--phase-preparation); }
-.phase-legend-swatch.exploration { background: var(--phase-exploration); }
-.phase-legend-swatch.distillation { background: var(--phase-distillation); }
-.phase-legend-swatch.implementation { background: var(--phase-implementation); }
-
 /* Placeholder sections (content arrives in later work packages). They keep the
    anchor scheme and TOC complete without visible empty boxes. */
 
 .placeholder-section {
-  scroll-margin-top: var(--space-8);
+  scroll-margin-top: var(--space-16);
 }
 
 /* Side panel: slides in from the right on a trigger. Reusable shell driven by
@@ -643,12 +550,12 @@ a:hover {
 /* Anchored headings (Praxis H3, etc.) keep clear of the sticky filter bar. */
 
 .anchored-heading {
-  scroll-margin-top: var(--space-12);
+  scroll-margin-top: var(--space-16);
 }
 
 .glossar-entry,
 .konzept-alias {
-  scroll-margin-top: var(--space-12);
+  scroll-margin-top: var(--space-16);
 }
 
 /* Vorlagen table: clickable rows open the side panel. */
@@ -708,6 +615,7 @@ a:hover {
 
 .inspector-resolve,
 .case-card-more,
+.case-card-video-toggle,
 .panel-copy,
 .code-copy {
   font-family: var(--font-text);
@@ -723,6 +631,7 @@ a:hover {
 
 .inspector-resolve:hover,
 .case-card-more:hover,
+.case-card-video-toggle:hover,
 .panel-copy:hover,
 .code-copy:hover {
   background: var(--text);
@@ -864,7 +773,7 @@ a:hover {
   padding: var(--space-4);
   background: var(--bg);
   transition: background 150ms ease-out;
-  scroll-margin-top: var(--space-12);
+  scroll-margin-top: var(--space-16);
 }
 
 .case-card:hover {
@@ -901,6 +810,94 @@ a:hover {
 .case-empty {
   color: var(--phase-exploration);
   font-size: 0.875rem;
+}
+
+/* Inline video host under a case card (facade loads in place). */
+
+.case-card-video {
+  margin-top: var(--space-2);
+}
+
+.case-card-video .video-embed {
+  margin: 0;
+}
+
+/* Vorlagen section icon (the promptotyping mark, moved out of the hero). */
+
+.vorlagen-icon {
+  width: 100px;
+  height: auto;
+  display: block;
+  margin: 0 0 var(--space-4);
+}
+
+/* Use-case reference block at the end of paper section 4. */
+
+.usecase-reference {
+  border: 1px solid var(--border);
+  padding: var(--space-6);
+  margin: var(--space-8) 0;
+  background: var(--code-bg);
+}
+
+.usecase-reference p {
+  margin: 0 0 var(--space-2);
+}
+
+.usecase-reference p:last-child {
+  margin-bottom: 0;
+}
+
+.usecase-reference-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  font-size: 0.875rem;
+}
+
+/* Site footer */
+
+.site-footer {
+  background: var(--code-bg);
+  border-top: 1px solid var(--border);
+  margin-top: var(--space-16);
+}
+
+.site-footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-8);
+  font-size: 0.875rem;
+}
+
+.site-footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  margin-bottom: var(--space-4);
+}
+
+.site-footer-brand img {
+  display: block;
+}
+
+.site-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.site-footer-license {
+  margin: 0 0 var(--space-2);
+}
+
+.site-footer-machine {
+  margin: 0;
+  color: var(--phase-exploration);
 }
 
 /* Glossar list */
@@ -965,12 +962,6 @@ a:hover {
   padding: 0 var(--space-8);
 }
 
-/* Mobile phase bar: four-strip sticky top-bar replacing the left lane on mobile */
-
-.mobile-phase-bar {
-  display: none;
-}
-
 /* Hamburger TOC toggle (mobile only, hidden on desktop) */
 
 .toc-toggle {
@@ -984,6 +975,20 @@ a:hover {
     grid-template-columns: 1fr;
     gap: 0;
     padding: 0 var(--space-6);
+  }
+
+  /* Hide the section nav on narrow viewports; mobile navigation runs through
+     the TOC hamburger toggle. The brand stays visible. */
+  .site-nav {
+    display: none;
+  }
+
+  .site-header-inner {
+    padding: var(--space-2) var(--space-6);
+  }
+
+  .site-footer-inner {
+    padding: var(--space-8) var(--space-6);
   }
 
   /* TOC becomes a collapsible drawer. The toggle button is always visible. */
@@ -1074,38 +1079,4 @@ a:hover {
     margin: var(--space-2) auto var(--space-1);
     flex-shrink: 0;
   }
-
-  /* Mobile phase bar: sticky strip of four phase tones */
-  .mobile-phase-bar {
-    display: flex;
-    position: sticky;
-    top: 0;
-    height: 2rem;
-    z-index: 10;
-  }
-
-  .mobile-phase-bar > button {
-    flex: 1;
-    border: 0;
-    cursor: pointer;
-    padding: 0;
-    transition: flex 200ms ease-out;
-    overflow: hidden;
-    white-space: nowrap;
-    font-family: var(--font-text);
-    font-size: 0.625rem;
-    font-weight: 600;
-    color: var(--bg);
-    opacity: 0.85;
-  }
-
-  .mobile-phase-bar > button.active {
-    flex: 1.6;
-    opacity: 1;
-  }
-
-  .mobile-phase-bar .preparation  { background: var(--phase-preparation); }
-  .mobile-phase-bar .exploration  { background: var(--phase-exploration); }
-  .mobile-phase-bar .distillation { background: var(--phase-distillation); }
-  .mobile-phase-bar .implementation { background: var(--phase-implementation); color: var(--text); }
 }

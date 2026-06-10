@@ -34,6 +34,22 @@
   var labelMap = {};
   var state = { useCase: "all", interfaceType: "all", demoOnly: false };
 
+  /* Extract the bare YouTube id from a watch/short/embed URL. */
+  function youtubeIdOf(url) {
+    if (!url) { return null; }
+    var m = /(?:youtu\.be\/|v=|embed\/)([\w-]{6,})/.exec(url);
+    return m ? m[1] : null;
+  }
+
+  /* Build a click-to-load facade via the shared app helper, falling back to a
+     plain external link if the helper is unavailable. */
+  function buildFacade(youtubeId, title) {
+    if (typeof App.buildVideoFacade === "function") {
+      return App.buildVideoFacade(youtubeId, title);
+    }
+    return linkEl("Video auf YouTube", "https://www.youtube.com/watch?v=" + youtubeId);
+  }
+
   function textEl(tag, className, text) {
     var el = document.createElement(tag);
     if (className) { el.className = className; }
@@ -81,7 +97,29 @@
     links.className = "case-card-links";
     if (cs.demo_url) { links.appendChild(linkEl("Demo", cs.demo_url)); }
     if (cs.repo_url) { links.appendChild(linkEl("Repo", cs.repo_url)); }
-    if (cs.video_url) { links.appendChild(linkEl("Video", cs.video_url)); }
+
+    // Video affordance: a button that loads the facade inline under the card,
+    // so every case with a video_url is playable without leaving the page.
+    var videoId = youtubeIdOf(cs.video_url);
+    var videoHost = null;
+    if (videoId) {
+      videoHost = document.createElement("div");
+      videoHost.className = "case-card-video";
+      var videoBtn = textEl("button", "case-card-video-toggle", "Video");
+      videoBtn.type = "button";
+      videoBtn.setAttribute("aria-expanded", "false");
+      videoBtn.addEventListener("click", function () {
+        if (videoHost.childNodes.length) {
+          videoHost.innerHTML = "";
+          videoBtn.setAttribute("aria-expanded", "false");
+          return;
+        }
+        videoHost.appendChild(buildFacade(videoId, cs.name + " (Prozessvideo)"));
+        videoBtn.setAttribute("aria-expanded", "true");
+      });
+      links.appendChild(videoBtn);
+    }
+
     if (cs.deep_page) {
       var more = textEl("button", "case-card-more", "Mehr");
       more.type = "button";
@@ -89,14 +127,26 @@
       links.appendChild(more);
     }
     if (links.childNodes.length) { card.appendChild(links); }
+    if (videoHost) { card.appendChild(videoHost); }
 
     return card;
+  }
+
+  /* After the panel HTML is set, prepend a click-to-load video facade if the
+     case carries a video_url, so the deep page is playable in place. */
+  function injectDeepPageVideo(cs) {
+    var videoId = youtubeIdOf(cs.video_url);
+    if (!videoId) { return; }
+    var body = document.getElementById("side-panel-body");
+    if (!body || body.querySelector(".video-embed")) { return; }
+    body.insertBefore(buildFacade(videoId, cs.name + " (Prozessvideo)"), body.firstChild);
   }
 
   function openDeepPage(cs) {
     if (typeof App.openSidePanel !== "function") { return; }
     if (deepCache[cs.id]) {
       App.openSidePanel(cs.name, deepCache[cs.id]);
+      injectDeepPageVideo(cs);
       window.location.hash = "case-" + cs.id;
       return;
     }
@@ -111,6 +161,7 @@
         var html = window.marked.parse(body);
         deepCache[cs.id] = html;
         App.openSidePanel(cs.name, html);
+        injectDeepPageVideo(cs);
         window.location.hash = "case-" + cs.id;
       })
       .catch(function (err) {

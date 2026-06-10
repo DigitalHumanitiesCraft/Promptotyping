@@ -1,6 +1,6 @@
 # CLAUDE.md — Action-Layer für Coding-Sessions in diesem Repo
 
-Dieses Repo ist `DigitalHumanitiesCraft/Promptotyping`, die öffentliche Methodik-Site für Promptotyping. Es rendert auf https://dhcraft.org/Promptotyping/ als interaktives Paper mit Phasen-Provenance-Lane, Inline-Glossar, eingebetteten Vorlagen und Case-Study-Karten.
+Dieses Repo ist `DigitalHumanitiesCraft/Promptotyping`, die öffentliche Methodik-Site für Promptotyping. Es rendert auf https://dhcraft.org/Promptotyping/ als interaktives Paper mit Inline-Glossar, eingebetteten Vorlagen und Case-Study-Karten.
 
 ## Beim Session-Start lesen
 
@@ -21,10 +21,9 @@ Die Wissensbasis im `knowledge/`-Ordner ist die Specification, aus der die Imple
 
 Die Site soll ruhig sein. Konkret bedeutet das beim Coden:
 
-- **Verwende keine Farben außer denen im Designsystem definierten**: `#ffffff` (Hintergrund), `#1a1a1a` (Text), `#d5d5d5` (Akzent), `#f5f5f5` (Code-Hintergrund), `#e0e0e0` (Border), und die vier Phasen-Töne `#2a2a2a`, `#525252`, `#8a8a8a`, `#b8b8b8`. Kein Teal, kein Türkis, kein Bunt.
+- **Verwende keine Farben außer denen im Designsystem definierten**: `#ffffff` (Hintergrund), `#1a1a1a` (Text), `#d5d5d5` (Akzent), `#f5f5f5` (Code-Hintergrund), `#e0e0e0` (Border) sowie die vier Grautöne `#2a2a2a`, `#525252`, `#8a8a8a`, `#b8b8b8` (ehemals Phasen-Töne, jetzt allgemeine Grau-Akzente für Sekundärtext). Kein Teal, kein Türkis, kein Bunt.
 - **Schriften: Inter für Text, Consolas für Code, sonst keine.** Keine zweite Sans-Serif, keine Display-Schrift, keine Brand-Schrift.
 - **Animationen: nur Slide-in/out für Side-Panels (200ms ease-out), keine anderen.** Keine Scroll-Linked-Animationen, kein Parallax, keine Hover-Bouncing-Effekte.
-- **Phasen-Provenance-Lane: monochrom.** Niemals Phasen-Farben in Bunt umfärben. Die vier Töne sind festgelegt.
 - **Keine dekorativen Elemente.** Wenn ein UI-Element keine Funktion hat, gehört es nicht hin.
 
 ## Repo-Struktur (Pflicht-Konvention)
@@ -51,18 +50,9 @@ Die Site soll ruhig sein. Konkret bedeutet das beim Coden:
 - **Browser-natives `location.hash` für Routing**, kein History-API-Hacking, kein React-Router.
 - **GitHub Pages serviert direkt aus dem Repo-Root.** Kein `_site`, kein `docs/`, kein Jekyll-Build.
 
-## Phasen-Provenance-Lane: Implementierungsregel
+## Phasen-Provenance-Lane: entfernt (Operator-Entscheidung 2026-06-10)
 
-Beim Spiegeln des Pollin-2026-Papers ins `_content/paper/`-Verzeichnis: Fließtext-Absätze, die erkennbar eine der vier Phasen behandeln, bekommen eine Phasen-Klasse. Absätze ohne klare dominante Phase (Einleitung, Positionierung, Diskussion, Schluss) bleiben ohne Klasse — lieber weniger, dafür belastbare Zuordnungen (Entscheidung 2026-06-10, ersetzt die frühere Jeder-Absatz-Regel).
-
-```markdown
-{:.phase-preparation}    Absätze über Vorbereitung, User Stories, Daten-Inventur
-{:.phase-exploration}    Absätze über Möglichkeitsraum-Sondierung, Dead Ends
-{:.phase-distillation}   Absätze über Context Compression, Markdown-Verdichtung
-{:.phase-implementation} Absätze über LLM-Iteration, Multi-Agent-Workflows
-```
-
-Wenn ein Absatz nicht eindeutig zuordenbar ist (z.B. allgemeine Methode-Beschreibung), klassifiziere nach der dominanten methodischen Funktion. Frage Christopher (Critical Expert) bei Unklarheit.
+Die Phasen-Provenance-Lane wurde nach dem Erstdeploy auf Operator-Entscheidung vollständig entfernt (Legende, Mobile-Phase-Bar, Hover-Tooltip, Filter-Modus aus HTML, CSS und JavaScript). Die `{:.phase-*}`-Tags im Paper-Markdown werden von der marked-Extension in `app.js` nur noch gestrippt: ein getaggter Absatz rendert als gewöhnlicher Absatz ohne Klasse und ohne sichtbaren Effekt. Lege keine neuen `{:.phase-*}`-Tags an und reaktiviere die Lane nicht; wer sie wiederbeleben will, beginnt einen Neu-Diskurs mit dem Critical Expert.
 
 ## URL-Anker-Schema (Pflicht-Konvention, Stand ADR-2/ADR-3)
 
@@ -74,7 +64,7 @@ Wenn ein Absatz nicht eindeutig zuordenbar ist (z.B. allgemeine Methode-Beschrei
 - Glossar: `#glossar`
 - Literatur: `#literatur`
 - Paper-Sektionen: `#abschnitt-{n}-{slug}` (z.B. `#abschnitt-3-four-phases`; sieben Section-Files unter `_content/paper/`)
-- Überblick: `#ueberblick`; Use Cases: `#use-cases`; Praxis-Einträge: `#praxis-{slug}`; Skills: `#skills-{slug}` (A13 bis A15)
+- Überblick: `#ueberblick`; Use Cases: `#use-cases`; Praxis-Einträge: `#praxis-{slug}`; Skills: `#skills-{slug}` (A13 bis A15); Arbeitsumgebung: `#arbeitsumgebung`, Subpath `/arbeitsumgebung` (A17)
 
 Anker dürfen nicht ohne Diskussion umbenannt werden — Repos können auf sie als `template:`-URI verlinken.
 

@@ -1,24 +1,21 @@
 /* Promptotyping Site main logic. Vanilla JS, no build step.
    Loads paper sections as Markdown, renders via marked.js with a custom
-   phase-class paragraph extension, drives the phase provenance lane and the
-   TOC scroll-spy. */
+   tag-stripper extension for legacy {:.phase-*} markers, drives the
+   TOC scroll-spy and the reusable side panel. */
 
 (function () {
   "use strict";
 
-  var ACCEPTED_PHASE_CLASSES = [
+  /* Legacy phase tags ({:.phase-*}) are recognised only to strip them. The
+     provenance lane was removed on 2026-06-10 by operator decision; the
+     extension stays as a defensive stripper so any residual tag renders as a
+     plain paragraph with no visible effect. */
+  var STRIPPABLE_PHASE_CLASSES = [
     "phase-preparation",
     "phase-exploration",
     "phase-distillation",
     "phase-implementation"
   ];
-
-  var PHASE_LABELS = {
-    "phase-preparation": "Preparation",
-    "phase-exploration": "Exploration und Mapping",
-    "phase-distillation": "Distillation",
-    "phase-implementation": "Implementation"
-  };
 
   /* Paper sections in reading order. anchor matches the {n}-{slug} frontmatter
      id, exposed as the section element id "abschnitt-{n}-{slug}". */
@@ -59,22 +56,22 @@
         tokenizer: function (src) {
           var match = /^\{:\.([a-z-]+)\}\n([\s\S]+?)(?:\n\n|$)/.exec(src);
           if (match) {
-            // Only the four phase classes are accepted; anything else falls
+            // Only the legacy phase tags are stripped here; anything else falls
             // through to the standard paragraph tokenizer.
-            if (ACCEPTED_PHASE_CLASSES.indexOf(match[1]) === -1) {
+            if (STRIPPABLE_PHASE_CLASSES.indexOf(match[1]) === -1) {
               return undefined;
             }
             return {
               type: "classedParagraph",
               raw: match[0],
-              className: match[1],
               tokens: this.lexer.inline(match[2])
             };
           }
         },
         renderer: function (token) {
+          // Strip the tag: render a plain paragraph, no class, no lane effect.
           var inner = this.parser.parseInline(token.tokens);
-          return '<p class="' + token.className + '">' + inner + "</p>\n";
+          return "<p>" + inner + "</p>\n";
         }
       }]
     });
@@ -125,6 +122,7 @@
         el.classList.remove("paper-section-placeholder");
         if (section.id === SECTION4_VIDEO.sectionId) {
           injectSection4Video(el);
+          injectUseCaseReference(el);
         }
         // Post-processing: glossar triggers and citation links. Literatur is the
         // citation target itself, so it is excluded from both passes.
@@ -188,6 +186,30 @@
     }
   }
 
+  /* Append a compact reference block to the end of section 4, pointing the
+     in-text projects at the curated use-case gallery (original project vision:
+     case studies as cards within the paper text). Designsystem only. */
+  function injectUseCaseReference(sectionEl) {
+    if (sectionEl.querySelector(".usecase-reference")) {
+      return;
+    }
+    var block = document.createElement("aside");
+    block.className = "usecase-reference";
+    block.innerHTML =
+      "<p>Die in diesem Abschnitt genannten Projekte sind in der kuratierten " +
+      '<a href="#use-cases">Use-Case-Galerie</a> dokumentiert, gruppiert danach, wo im ' +
+      "Forschungsdaten-Lebenszyklus die Methode operiert. Jede Karte traegt einen stabilen " +
+      "Anker und, soweit belegt, Links zu Repository, Demo und Prozessvideo.</p>" +
+      '<p class="usecase-reference-links">' +
+      '<a href="#case-herdata">HerData</a>' +
+      '<a href="#case-klawiter-rescue">Klawiter Bibliography Rescue</a>' +
+      '<a href="#case-coocr-htr">coOCR-HTR</a>' +
+      '<a href="#case-m3gim">M3GIM</a>' +
+      '<a href="#use-cases">Zur vollstaendigen Galerie</a>' +
+      "</p>";
+    sectionEl.appendChild(block);
+  }
+
   /* ---- Lazy loading via IntersectionObserver ---- */
 
   function setupLazyLoading() {
@@ -232,8 +254,8 @@
       return;
     }
     // Static section anchors (ueberblick, use-cases, praxis-*, skills-*,
-    // konvention-*) scroll directly without loading paper sections.
-    if (/^(ueberblick|use-cases|praxis|skills|konvention)/.test(hash)) {
+    // arbeitsumgebung, konvention-*) scroll directly without loading paper sections.
+    if (/^(ueberblick|use-cases|praxis|skills|arbeitsumgebung|konvention)/.test(hash)) {
       var staticEl = document.getElementById(hash);
       if (staticEl) {
         staticEl.scrollIntoView();
@@ -263,135 +285,6 @@
       }
     }
     return null;
-  }
-
-  /* ---- Phase provenance lane interaction ---- */
-
-  var tooltipEl = null;
-
-  function ensureTooltip() {
-    if (!tooltipEl) {
-      tooltipEl = document.createElement("div");
-      tooltipEl.className = "phase-tooltip";
-      document.body.appendChild(tooltipEl);
-    }
-    return tooltipEl;
-  }
-
-  function phaseClassOf(el) {
-    for (var i = 0; i < ACCEPTED_PHASE_CLASSES.length; i++) {
-      if (el.classList.contains(ACCEPTED_PHASE_CLASSES[i])) {
-        return ACCEPTED_PHASE_CLASSES[i];
-      }
-    }
-    return null;
-  }
-
-  /* The lane marker is a ::before pseudo-element on the left edge; only hover
-     events that land in that left gutter should open the tooltip. */
-  function isInLaneGutter(el, clientX) {
-    var rect = el.getBoundingClientRect();
-    return clientX >= rect.left && clientX <= rect.left + 24;
-  }
-
-  function setupPhaseLane(contentEl) {
-    var hoverTimer = null;
-
-    contentEl.addEventListener("mousemove", function (e) {
-      var p = e.target.closest && e.target.closest("p");
-      var phase = p ? phaseClassOf(p) : null;
-      if (!phase || !isInLaneGutter(p, e.clientX)) {
-        hideTooltip();
-        if (hoverTimer) {
-          clearTimeout(hoverTimer);
-          hoverTimer = null;
-        }
-        return;
-      }
-      var x = e.clientX;
-      var y = e.clientY;
-      if (!hoverTimer) {
-        hoverTimer = setTimeout(function () {
-          showTooltip(phase, x, y);
-          hoverTimer = null;
-        }, 300);
-      }
-    });
-
-    contentEl.addEventListener("mouseleave", function () {
-      hideTooltip();
-      if (hoverTimer) {
-        clearTimeout(hoverTimer);
-        hoverTimer = null;
-      }
-    });
-
-    contentEl.addEventListener("click", function (e) {
-      var p = e.target.closest && e.target.closest("p");
-      if (!p) {
-        return;
-      }
-      var phase = phaseClassOf(p);
-      if (phase && isInLaneGutter(p, e.clientX)) {
-        toggleFilter(phase);
-      }
-    });
-  }
-
-  function showTooltip(phase, x, y) {
-    var tip = ensureTooltip();
-    tip.innerHTML =
-      '<span class="phase-tooltip-name">' + PHASE_LABELS[phase] + "</span><br>" +
-      '<span class="phase-tooltip-action">Klick filtert alle Absaetze dieser Phase.</span>';
-    tip.style.left = (x + 16) + "px";
-    tip.style.top = (y + 12) + "px";
-    tip.classList.add("visible");
-  }
-
-  function hideTooltip() {
-    if (tooltipEl) {
-      tooltipEl.classList.remove("visible");
-    }
-  }
-
-  var activeFilter = null;
-
-  function toggleFilter(phase) {
-    var contentEl = document.getElementById("content");
-    var filterBar = document.getElementById("filter-bar");
-    var filterLabel = document.getElementById("filter-label");
-
-    if (activeFilter === phase) {
-      clearFilter();
-      return;
-    }
-    activeFilter = phase;
-    hideTooltip();
-
-    var all = contentEl.querySelectorAll(
-      ".phase-preparation, .phase-exploration, .phase-distillation, .phase-implementation"
-    );
-    all.forEach(function (el) {
-      if (el.classList.contains(phase)) {
-        el.classList.add("phase-active");
-      } else {
-        el.classList.remove("phase-active");
-      }
-    });
-    contentEl.classList.add("phase-filtered");
-    filterLabel.textContent = "Filter: " + PHASE_LABELS[phase];
-    filterBar.classList.add("visible");
-  }
-
-  function clearFilter() {
-    var contentEl = document.getElementById("content");
-    var filterBar = document.getElementById("filter-bar");
-    activeFilter = null;
-    contentEl.classList.remove("phase-filtered");
-    contentEl.querySelectorAll(".phase-active").forEach(function (el) {
-      el.classList.remove("phase-active");
-    });
-    filterBar.classList.remove("visible");
   }
 
   /* ---- TOC scroll-spy ---- */
@@ -470,9 +363,12 @@
     if (segments[0] === "literatur") {
       return "literatur";
     }
+    if (segments[0] === "arbeitsumgebung") {
+      return "arbeitsumgebung";
+    }
     // Already a hash-form anchor passed without leading '#'.
     if (/^(promptotyping-document|konzept|case|konvention|abschnitt)-/.test(rest) ||
-        rest === "glossar" || rest === "literatur") {
+        rest === "glossar" || rest === "literatur" || rest === "arbeitsumgebung") {
       return rest;
     }
     return null;
@@ -770,6 +666,8 @@
 
         el.classList.remove("placeholder-section");
         el.innerHTML =
+          '<img class="vorlagen-icon" src="assets/promptotyping-logo.png" ' +
+          'alt="Promptotyping-Marke" width="100" height="100">' +
           "<h2>Vorlagen</h2>" +
           "<p>Neun ausfuellbare Vorlagen fuer die Promptotyping Documents im <code>knowledge/</code>-Ordner " +
           "eines Repos. Jede Vorlage adressiert eine Funktion, nicht einen festen Dateinamen. Ein Klick auf " +
@@ -1182,108 +1080,11 @@
     });
   }
 
-  /* ---- Mobile phase bar ---- */
-
-  function setupMobilePhaseBar() {
-    var bar = document.getElementById("mobile-phase-bar");
-    if (!bar) {
-      return;
-    }
-    var buttons = Array.prototype.slice.call(bar.querySelectorAll("button[data-phase]"));
-
-    // IntersectionObserver tracks which phase paragraph is most visible.
-    var currentPhase = null;
-    var observer = new IntersectionObserver(function (entries) {
-      var best = null;
-      var bestRatio = 0;
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting && entry.intersectionRatio > bestRatio) {
-          bestRatio = entry.intersectionRatio;
-          best = entry.target;
-        }
-      });
-      if (best) {
-        var phase = null;
-        ACCEPTED_PHASE_CLASSES.forEach(function (cls) {
-          if (best.classList.contains(cls)) {
-            phase = cls;
-          }
-        });
-        if (phase && phase !== currentPhase) {
-          currentPhase = phase;
-          buttons.forEach(function (btn) {
-            btn.classList.toggle("active", btn.getAttribute("data-phase") === phase);
-          });
-        }
-      }
-    }, { threshold: [0, 0.25, 0.5, 0.75, 1] });
-
-    // Observe phase paragraphs as they are rendered (sections load lazily).
-    function observePhaseEls() {
-      var contentEl = document.getElementById("content");
-      if (!contentEl) {
-        return;
-      }
-      ACCEPTED_PHASE_CLASSES.forEach(function (cls) {
-        contentEl.querySelectorAll("." + cls).forEach(function (el) {
-          if (!el.dataset.mobileObserved) {
-            el.dataset.mobileObserved = "1";
-            observer.observe(el);
-          }
-        });
-      });
-    }
-
-    // Re-observe after each section renders. Use a MutationObserver on #content.
-    var mutObs = new MutationObserver(observePhaseEls);
-    var contentEl = document.getElementById("content");
-    if (contentEl) {
-      mutObs.observe(contentEl, { childList: true, subtree: true });
-    }
-    observePhaseEls();
-
-    // Click: jump to the next paragraph of that phase in the reading flow.
-    buttons.forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        var phase = btn.getAttribute("data-phase");
-        var contentEl2 = document.getElementById("content");
-        if (!contentEl2) {
-          return;
-        }
-        var els = Array.prototype.slice.call(contentEl2.querySelectorAll("." + phase));
-        if (!els.length) {
-          return;
-        }
-        // Find the first element below the current scroll position.
-        var scrollY = window.scrollY || window.pageYOffset;
-        var target = null;
-        for (var i = 0; i < els.length; i++) {
-          var rect = els[i].getBoundingClientRect();
-          if (rect.top > 48) { // 48px accounts for the bar height
-            target = els[i];
-            break;
-          }
-        }
-        if (!target) {
-          target = els[0]; // wrap around
-        }
-        target.scrollIntoView({ behavior: "smooth", block: "start" });
-      });
-    });
-  }
-
   function init() {
     configureMarked();
     setupSidePanel();
     setupTocToggle();
-    setupMobilePhaseBar();
-    setupPhaseLane(document.getElementById("content"));
     setupGlossarInteraction(document.getElementById("content"));
-
-    var clearBtn = document.getElementById("filter-clear");
-    if (clearBtn) {
-      clearBtn.addEventListener("click", clearFilter);
-    }
 
     // Glossar must be loaded before paper sections render, so the trigger
     // post-processing can mark terms. Render the static sections in parallel,
@@ -1300,7 +1101,8 @@
         el.insertBefore(note, el.firstChild ? el.firstChild.nextSibling : null);
       }),
       renderPraxis(),
-      renderSkills()
+      renderSkills(),
+      renderMarkdownInto("arbeitsumgebung", "_content/arbeitsumgebung.md")
     ]);
     renderUseCasesHost();
 
@@ -1338,7 +1140,8 @@
     resolveTemplateUrl: resolveTemplateUrl,
     openTemplatePanel: openTemplatePanel,
     openSidePanel: openSidePanel,
-    closeSidePanel: closeSidePanel
+    closeSidePanel: closeSidePanel,
+    buildVideoFacade: buildVideoFacade
   };
 
   if (document.readyState === "loading") {

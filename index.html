@@ -43,15 +43,29 @@
 </head>
 <body>
 
-  <!-- Phase filter indicator (sticky, hidden until a phase filter is active) -->
-  <div class="filter-bar" id="filter-bar">
-    <span id="filter-label">Filter</span>
-    <button type="button" id="filter-clear">Filter aufheben</button>
-  </div>
+  <!-- Sticky site header: brand left, section nav and repo link right -->
+  <header class="site-header">
+    <div class="site-header-inner">
+      <div class="site-brand">
+        <a class="site-brand-logo" href="https://dhcraft.org" aria-label="Digital Humanities Craft">
+          <img src="assets/img/dhcraft-logo.svg" alt="Digital Humanities Craft" width="28" height="28">
+        </a>
+        <a class="site-brand-word" href="#" aria-label="Zum Seitenanfang">Promptotyping</a>
+      </div>
+      <nav class="site-nav" aria-label="Hauptnavigation">
+        <a href="#abschnitt-1-introduction">Paper</a>
+        <a href="#vorlagen">Vorlagen</a>
+        <a href="#use-cases">Use Cases</a>
+        <a href="#praxis">Praxis</a>
+        <a href="#skills">Skills</a>
+        <a href="#glossar">Glossar</a>
+        <a href="https://github.com/DigitalHumanitiesCraft/Promptotyping" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
 
-  <!-- Hero: logo, title, method core statement, part-1 video as click-to-load facade -->
+  <!-- Hero: title, method core statement, part-1 video as click-to-load facade -->
   <header class="hero">
-    <img class="hero-logo" src="assets/promptotyping-logo.png" alt="Promptotyping Logo">
     <h1>Promptotyping</h1>
     <p class="hero-lead">Eine iterative Context-Engineering-Methode in vier Phasen, um aus Daten und Frontier-LLMs Forschungsartefakte zu erzeugen. Strukturierter Kontext vor Code, Verifikation vor Vertrauen, Dokumentation vor Geschwindigkeit.</p>
     <div class="video-embed" id="hero-video">
@@ -62,14 +76,6 @@
       </button>
     </div>
   </header>
-
-  <!-- Mobile phase bar: sticky top strip showing four phase tones (hidden on desktop) -->
-  <div class="mobile-phase-bar" id="mobile-phase-bar" role="navigation" aria-label="Phasen-Navigation">
-    <button type="button" class="preparation" data-phase="phase-preparation" aria-label="Zur naechsten Preparation-Passage springen">Preparation</button>
-    <button type="button" class="exploration" data-phase="phase-exploration" aria-label="Zur naechsten Exploration-Passage springen">Exploration</button>
-    <button type="button" class="distillation" data-phase="phase-distillation" aria-label="Zur naechsten Distillation-Passage springen">Distillation</button>
-    <button type="button" class="implementation" data-phase="phase-implementation" aria-label="Zur naechsten Implementation-Passage springen">Implementation</button>
-  </div>
 
   <div class="layout">
 
@@ -94,6 +100,7 @@
         <li><a href="#use-cases" data-target="use-cases">Use Cases</a></li>
         <li><a href="#praxis" data-target="praxis">Praxis</a></li>
         <li><a href="#skills" data-target="skills">Skills</a></li>
+        <li><a href="#arbeitsumgebung" data-target="arbeitsumgebung">Arbeitsumgebung</a></li>
         <li><a href="#glossar" data-target="glossar">Glossar</a></li>
         <li><a href="#konvention-v0.1" data-target="konvention-v0.1">Konvention</a></li>
         <li><a href="#literatur" data-target="literatur">Literatur</a></li>
@@ -105,15 +112,6 @@
 
       <!-- Ueberblick: German method overview. Inhalt folgt in spaeterem Arbeitspaket -->
       <section class="placeholder-section" id="ueberblick"></section>
-
-      <!-- Phase provenance lane legend, right before the first paper section -->
-      <div class="phase-legend" id="phase-legend">
-        <p class="phase-legend-intro">Die grauen Striche links der Absaetze markieren, welcher der vier Promptotyping-Phasen ein Absatz zugeordnet ist. Absaetze ohne Strich sind keiner einzelnen Phase eindeutig zuzuordnen.</p>
-        <span class="phase-legend-item"><span class="phase-legend-swatch preparation"></span>Preparation</span>
-        <span class="phase-legend-item"><span class="phase-legend-swatch exploration"></span>Exploration und Mapping</span>
-        <span class="phase-legend-item"><span class="phase-legend-swatch distillation"></span>Distillation</span>
-        <span class="phase-legend-item"><span class="phase-legend-swatch implementation"></span>Implementation</span>
-      </div>
 
       <!-- Paper sections. Section 1 loads immediately, the rest lazily. -->
       <section class="paper-section" id="abschnitt-1-introduction"></section>
@@ -136,6 +134,8 @@
       <section class="placeholder-section" id="praxis"></section>
       <!-- Skills. Inhalt folgt in spaeterem Arbeitspaket -->
       <section class="placeholder-section" id="skills"></section>
+      <!-- Arbeitsumgebung. Inhalt folgt in spaeterem Arbeitspaket -->
+      <section class="placeholder-section" id="arbeitsumgebung"></section>
       <!-- Glossar. Inhalt folgt in spaeterem Arbeitspaket -->
       <section class="placeholder-section" id="glossar"></section>
       <!-- Konvention (Promptotyping Documents). Inhalt folgt in spaeterem Arbeitspaket -->
@@ -156,6 +156,21 @@
     </div>
     <div class="side-panel-body" id="side-panel-body"></div>
   </aside>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <a class="site-footer-brand" href="https://dhcraft.org" target="_blank" rel="noopener">
+        <img src="assets/img/dhcraft-logo.svg" alt="" width="24" height="24" aria-hidden="true">
+        <span>Digital Humanities Craft OG</span>
+      </a>
+      <nav class="site-footer-links" aria-label="Footer">
+        <a href="https://github.com/DigitalHumanitiesCraft/Promptotyping" target="_blank" rel="noopener">Repository</a>
+        <a href="https://www.youtube.com/@DigitalHumanitiesCraft" target="_blank" rel="noopener">YouTube-Kanal</a>
+      </nav>
+      <p class="site-footer-license">Inhalte: CC BY 4.0. Code: MIT.</p>
+      <p class="site-footer-machine">Diese Seite hat eine Maschinenadresse: Jeder Inhalt liegt als statisches Markdown unter <code>_content/</code> und ist ohne JavaScript abrufbar (Muster in der <code>CLAUDE.md</code>, ADR-10).</p>
+    </div>
+  </footer>
 
   <script src="assets/vendor/marked.min.js"></script>
   <script src="assets/vendor/js-yaml.min.js"></script>

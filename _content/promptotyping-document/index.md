@@ -14,21 +14,21 @@ Diese Vorlage strukturiert das Navigationsdokument einer Promptotyping-Wissensba
 
 ## Geltungsbereich
 
-Die Vorlage trägt, sobald die Wissensbasis mehr als drei Dokumente enthält. Bei kleineren Repos ist ein Index überflüssig und kann in das Identitätsdokument (`project.md` oder `README.md`) integriert werden. Sie trägt nicht für projektübergreifende Übersichten oder MOCs im Vault — dafür gilt der Vault-Standard.
+Die Vorlage trägt, sobald die Wissensbasis mehr als drei Dokumente enthält. Bei kleineren Repos ist ein Index überflüssig und kann in das Identitätsdokument (`project.md` oder `README.md`) integriert werden. Sie trägt nicht für projektübergreifende Übersichten oder MOCs im Vault; dafür gilt der Vault-Standard.
 
 ## Funktion des Dokuments
 
-Das Indexdokument adressiert drei Lesergruppen gleichzeitig: einen menschlichen Reviewer, einen neu aufgesetzten Coding-Agenten und den Projekt-Verantwortlichen, der nach Wochen zurückkommt. Es beantwortet vier Fragen: was liegt hier, in welcher Reihenfolge soll ich lesen, welche Begriffe sind in dieser Wissensbasis konstitutiv und wie sind sie definiert, was bedeutet es wenn ein erwartetes Dokument fehlt. Es ist gleichzeitig Navigationsknoten und Begriffslexikon — das eine Dokument, in dem ein Coding-Agent die für das Projekt definierende Begrifflichkeit findet, ohne dass er die Geschwister-Dokumente vollständig lesen muss.
+Das Indexdokument adressiert drei Lesergruppen gleichzeitig: einen menschlichen Reviewer, einen neu aufgesetzten Coding-Agenten und den Projekt-Verantwortlichen, der nach Wochen zurückkommt. Es beantwortet vier Fragen: was liegt hier, in welcher Reihenfolge soll ich lesen, welche Begriffe sind in dieser Wissensbasis konstitutiv und wie sind sie definiert, was bedeutet es wenn ein erwartetes Dokument fehlt. Es ist gleichzeitig Navigationsknoten und Begriffslexikon, das eine Dokument, in dem ein Coding-Agent die für das Projekt definierende Begrifflichkeit findet, ohne dass er die Geschwister-Dokumente vollständig lesen muss.
 
 ## Strukturprinzipien
 
 Vier Prinzipien tragen das Dokument.
 
-Erstens speichert der Index nicht, er zeigt. Jede Information, die im Index zusammengefasst wird, muss im verlinkten Geschwister-Dokument selbst stehen — sonst entstehen Wahrheitskonflikte zwischen Index und Quelle. Ausnahme: die Begriffsdefinitionen, die hier kanonisch leben, weil das Glossar zentralisiert ist.
+Erstens speichert der Index nicht, er zeigt. Jede Information, die im Index zusammengefasst wird, muss im verlinkten Geschwister-Dokument selbst stehen, sonst entstehen Wahrheitskonflikte zwischen Index und Quelle. Ausnahme: die Begriffsdefinitionen, die hier kanonisch leben, weil das Glossar zentralisiert ist.
 
 Zweitens liefert der Index Lesepfade, nicht nur eine Liste. Eine flache Aufzählung der Dokumente ist eine Datei-Übersicht, keine Lesehilfe. Lesepfade ordnen Dokumente nach Anliegen ("Onboarding", "Reproduktion", "Architektur-Review") und schicken den Leser durch die Wissensbasis in einer Reihenfolge, die der Aufgabe angemessen ist.
 
-Drittens trägt der Index die kanonischen Begriffe des Projekts. Begriffe sind dort definiert, wo sie gebraucht werden — der Index ist die einzige Stelle, an der die definierenden Begriffe vault-weit konsistent gepflegt sind. Geschwister-Dokumente verlinken auf einzelne Begriffe (`[[INDEX#Erschließungsform]]`), statt sie selbst zu definieren. Bei sehr vielen Begriffen (mehr als 15 bis 20) ist die Auslagerung in ein eigenes `glossar.md` zulässig; in der Regel reicht eine Sektion im Index.
+Drittens trägt der Index die kanonischen Begriffe des Projekts. Begriffe sind dort definiert, wo sie gebraucht werden; der Index ist die einzige Stelle, an der die definierenden Begriffe vault-weit konsistent gepflegt sind. Geschwister-Dokumente verlinken auf einzelne Begriffe (`[[INDEX#Erschließungsform]]`), statt sie selbst zu definieren. Bei sehr vielen Begriffen (mehr als 15 bis 20) ist die Auslagerung in ein eigenes `glossar.md` zulässig; in der Regel reicht eine Sektion im Index.
 
 Viertens markiert der Index, was fehlt. Wenn eine Funktion (zum Beispiel Datengrundlage oder Bauweise) für das Projekt nicht relevant ist und kein Dokument dafür existiert, sagt der Index das ausdrücklich. Eine Lücke ohne Erwähnung wirkt wie ein Versehen; eine begründete Lücke ist eine Designentscheidung.
 
@@ -36,7 +36,7 @@ Viertens markiert der Index, was fehlt. Wenn eine Funktion (zum Beispiel Datengr
 
 Das Indexdokument folgt dem Frontmatter-Schema aus der [Konvention Promptotyping Documents](#konvention-v0.1) (Pflichtkern: `title, project, method, status, created, updated`). Spezifisch für den Index:
 
-- `topics:` üblicherweise leer — der Index ist Meta-Dokument der Wissensbasis und trägt keine domänen-thematische Verortung.
+- `topics:` üblicherweise leer; der Index ist Meta-Dokument der Wissensbasis und trägt keine domänen-thematische Verortung.
 - `related:` listet alle Geschwister-Dokumente, die der Index anbindet. Dies ist die einzige Stelle in der Wissensbasis, an der `related:` vollständig sein muss.
 - `knowledge-sources:` entfällt, weil der Index keine inhaltliche Substanz trägt.
 
@@ -52,15 +52,15 @@ Funktion: tabellarische Übersicht aller Geschwister-Dokumente mit ihrer Funktio
 
 ### Lesepfade
 
-Funktion: Reihenfolgenempfehlungen für unterschiedliche Anliegen. Inhalt: zwei bis vier Pfade in Prosa oder als Liste — etwa "Onboarding eines neuen Mitarbeiters: project → data → specification → architecture", "Reproduktion eines Datenexports: data → architecture → journal", "Verstehen einer Designentscheidung: specification (Decisions-Sektion) → journal → design". Jeder Pfad ist begründet.
+Funktion: Reihenfolgenempfehlungen für unterschiedliche Anliegen. Inhalt: zwei bis vier Pfade in Prosa oder als Liste, etwa "Onboarding eines neuen Mitarbeiters: project → data → specification → architecture", "Reproduktion eines Datenexports: data → architecture → journal", "Verstehen einer Designentscheidung: specification (Decisions-Sektion) → journal → design". Jeder Pfad ist begründet.
 
 ### Konvention
 
-Funktion: Verweis auf die Konvention, nach der die Wissensbasis gepflegt wird. Inhalt: Link auf die [Konvention Promptotyping Documents](#konvention-v0.1) (auf dieser Site oder die Repo-Variante davon), plus ein Satz darüber, was der Verweis dem Leser bringt — typischerweise "die Konvention erklärt das Frontmatter-Schema und die Lese-Heuristik, gegen die jedes Dokument lesbar ist".
+Funktion: Verweis auf die Konvention, nach der die Wissensbasis gepflegt wird. Inhalt: Link auf die [Konvention Promptotyping Documents](#konvention-v0.1) (auf dieser Site oder die Repo-Variante davon), plus ein Satz darüber, was der Verweis dem Leser bringt, typischerweise "die Konvention erklärt das Frontmatter-Schema und die Lese-Heuristik, gegen die jedes Dokument lesbar ist".
 
 ### Begriffe
 
-Funktion: kanonische Definitionen der projekt-konstitutiven Begriffe, alphabetisch sortiert. Inhalt: pro Begriff ein Absatz mit Definition, Abgrenzung und gegebenenfalls einer Notiz zu häufigen Verwechslungen. Verwendet wird dort, wo der Begriff in den Geschwister-Dokumenten auftaucht — Wikilinks von dort hierher, nicht andersherum. Begriffe, die nur in einem einzigen Dokument vorkommen, gehören nicht hierher; das Glossar ist für Begriffe, die in mehreren Dokumenten konsistent verwendet werden sollen. Bei mehr als 15 bis 20 Begriffen lohnt die Auslagerung in ein eigenes `glossar.md`, dann verweist der Index nur darauf.
+Funktion: kanonische Definitionen der projekt-konstitutiven Begriffe, alphabetisch sortiert. Inhalt: pro Begriff ein Absatz mit Definition, Abgrenzung und gegebenenfalls einer Notiz zu häufigen Verwechslungen. Verwendet wird dort, wo der Begriff in den Geschwister-Dokumenten auftaucht; Wikilinks von dort hierher, nicht andersherum. Begriffe, die nur in einem einzigen Dokument vorkommen, gehören nicht hierher; das Glossar ist für Begriffe, die in mehreren Dokumenten konsistent verwendet werden sollen. Bei mehr als 15 bis 20 Begriffen lohnt die Auslagerung in ein eigenes `glossar.md`, dann verweist der Index nur darauf.
 
 ### Was fehlt und warum
 
@@ -164,9 +164,9 @@ Review-Folie für eine bestehende Wissensbasis. Ein vorhandener Index wird gegen
 
 ## Beispiel
 
-HerData führt `INDEX.md` mit Lead, Dokumentenmatrix, Lesepfad-Sektionen und Konventionsverweis. Charakteristisch ist der Schlusssatz im Lead: "Konkrete Zahlen erscheinen ausschliesslich in der Anwendung selbst — in den Stat-Cards der Hauptansichten und im Meta-Block der `persons.json`." Diese Negation ist die Praxisform der „Was fehlt und warum"-Sektion. HerData führt die Begriffe-Sektion noch nicht — der Refactor sollte sie ergänzen, weil Termini wie „Erwähnt", „Erwähnung", „Brief", „Person" projekt-konstitutiv sind und in mehreren Dokumenten konsistent verwendet werden.
+HerData führt `INDEX.md` mit Lead, Dokumentenmatrix, Lesepfad-Sektionen und Konventionsverweis. Charakteristisch ist der Schlusssatz im Lead: "Konkrete Zahlen erscheinen ausschliesslich in der Anwendung selbst, in den Stat-Cards der Hauptansichten und im Meta-Block der `persons.json`." Diese Negation ist die Praxisform der „Was fehlt und warum"-Sektion. HerData führt die Begriffe-Sektion noch nicht; der Refactor sollte sie ergänzen, weil Termini wie „Erwähnt", „Erwähnung", „Brief", „Person" projekt-konstitutiv sind und in mehreren Dokumenten konsistent verwendet werden.
 
-sugw-Edition trägt das Glossar als eigenständiges Dokument `glossar.md` mit zwölf Begriffen (Erschließungsform, Event, Faksimile, Gesamtnennung, Individuelle Person, Menschen-Event, Quelle, Quellenkorpus, Rechtsgeschäft, Regest, Rolle, Volltext). Das ist die Auslagerungs-Variante, die die Konvention oberhalb von 15 bis 20 Begriffen empfiehlt — bei zwölf wäre eine Index-Sektion auch zulässig, sugw hat sich für die Auslagerung entschieden, weil das Glossar als UI-Tooltip-Quelle im Frontend dient und damit auch maschinen-konsumiert wird.
+sugw-Edition trägt das Glossar als eigenständiges Dokument `glossar.md` mit zwölf Begriffen (Erschließungsform, Event, Faksimile, Gesamtnennung, Individuelle Person, Menschen-Event, Quelle, Quellenkorpus, Rechtsgeschäft, Regest, Rolle, Volltext). Das ist die Auslagerungs-Variante, die die Konvention oberhalb von 15 bis 20 Begriffen empfiehlt; bei zwölf wäre eine Index-Sektion auch zulässig, sugw hat sich für die Auslagerung entschieden, weil das Glossar als UI-Tooltip-Quelle im Frontend dient und damit auch maschinen-konsumiert wird.
 
 ## Begriffe
 

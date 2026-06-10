@@ -274,3 +274,25 @@ Phase 4 abgeschlossen, Site lokal vollständig funktionsfähig und verifiziert (
 2. CEIL-Review: Phasen-Klassifizierung (23 Absätze, Section 3), gespiegelte Inhalte (Überblick, Praxis, Glossar, Tiefenseiten), Vorlage Action-Layer Freigabe
 3. Vault-seitig: Maschinenadresse (ADR-10) in die Vault-Konvention übernehmen; Sweep-Folgearbeiten (Journal v0.2) wie oben
 4. Logo-Optimierung (1.1 MB PNG, og:image)
+
+## 2026-06-10 — Operator-Review nach Erstdeploy
+
+Nach dem ersten Deploy hat der Operator die Site gesichtet und mehrere Eingriffe beauftragt. Umgesetzt in dieser Session (alles auf main, nicht committet):
+
+- **Phasen-Provenance-Lane entfernt.** Auf Operator-Entscheidung ist die Lane vollständig ausgebaut: Legende, Mobile-Phase-Bar, Hover-Tooltip und Filter-Modus raus aus HTML, CSS und JavaScript. Die marked-Extension bleibt als reiner Tag-Stripper, der `{:.phase-*}`-Tags entfernt, ohne sie zu rendern. Die `{:.phase-*}`-Zeilen sind aus `paper/03-four-phases.md` und `ueberblick.md` gelöscht. Spec A2 als entfernt markiert, ADR-4-Begründung als Provenienz erhalten.
+- **Site-Header und Site-Footer.** Sticky weißer Header (DHCraft-Logo plus Wortmarke links, Sektions-Nav und GitHub-Link rechts; Nav auf schmalen Viewports ausgeblendet, Mobile-Navigation über TOC-Toggle). Footer mit Träger-Hinweis, Repo- und YouTube-Link, Lizenzzeile und Maschinenadresse-Hinweis. Sticky-Offset über `scroll-margin-top` auf den Sektionen berücksichtigt. DHCraft-Logo als `assets/img/dhcraft-logo.svg` vendoriert.
+- **Hero und Icon.** Hero rein typografisch; die `promptotyping-logo.png` aus dem Hero entfernt und dezent in den Kopf der Vorlagen-Sektion verschoben. `og:image` unverändert.
+- **Video-Integration vollständig.** Alle sechs Prozessvideos ohne Verlassen der Seite abspielbar: Hero (Teil 1) und Section-4-Injektion (Teil 2) als Facade, Klawiter und coOCR-HTR als Facade in ihren Tiefenseiten (aus `video_url` der case-studies.json), Lucina und Kulturpool als Video-Affordanz auf den Galerie-Karten. Click-to-load durchgängig über youtube-nocookie.com.
+- **Use-Case-Verweis.** Am Ende von Paper-Section 4 ein kompakter Verweisblock auf die kuratierte Galerie (Beispiel-Links plus Link auf `#use-cases`).
+- **Neue Sektion Arbeitsumgebung** (`#arbeitsumgebung`, zwischen Skills und Glossar): Obsidian-Vault als Wissensumgebung, Promptotyping Agent Interface, AI Harness und Skills. Substrat `_content/arbeitsumgebung.md`, registriert in app.js, index.html, 404.html-Routing und TOC. Spec A17.
+- **Überblick überarbeitet.** Satz über die grauen Striche entfernt; Abschnitt "Zwei Modi" ersetzt durch "Artefakte und Skalierung" (Methode artefakt-offen, Skalierung von der Chat-Session bis zum AI Harness).
+- **Stilbereinigung.** Em/En-Dashes in den bearbeiteten deutschen Texten (ueberblick.md, MANIFEST.md, Tiefenseiten) durch Umformulierung entfernt; englischer Paper-Text unangetastet. MANIFEST um arbeitsumgebung.md ergänzt.
+
+### Stand
+
+Operator-Review-Eingriffe umgesetzt, JS syntaxgeprüft (node --check), case-studies.json valide. Nicht committet, nicht gepusht (operator-gated).
+
+### Nächste Schritte
+
+1. Operator: Sichtprüfung im Browser (Header sticky, Anker-Offset, alle sechs Videos, mobile Nav), dann Commit und Push auf main
+2. Logo-Optimierung (1.1 MB PNG) weiterhin offen

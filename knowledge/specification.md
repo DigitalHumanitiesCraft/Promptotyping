@@ -37,8 +37,10 @@ Das Pollin-2026-Paper ist im Lesefluss vorhanden, sektioniert in sieben Markdown
 
 Substrat liegt in `_content/paper/01-introduction.md` … `_content/paper/07-conclusion.md` und `_content/literatur.md`.
 
-### A2 — Phasen-Provenance-Lane
-Jeder Absatz im Paper trägt eine Phasen-Klasse (Preparation, Exploration & Mapping, Distillation, Implementation), die sich als monochrome vertikale Markierung am linken Absatzrand zeigt. Akzeptanzkriterium: Beim Scrollen erscheint links ein vertikales Streifen-Muster, das die methodische Verteilung des Papers ablesbar macht. Hover auf einen Strich öffnet einen Tooltip mit Phasennamen plus "Springe zu allen Absätzen dieser Phase". Klick aktiviert Phasen-Filter, der nicht-zugeordnete Absätze ausgraut.
+### A2 — Phasen-Provenance-Lane (entfernt, Operator-Entscheidung 2026-06-10)
+~~Jeder Absatz im Paper trägt eine Phasen-Klasse (Preparation, Exploration & Mapping, Distillation, Implementation), die sich als monochrome vertikale Markierung am linken Absatzrand zeigt. Hover auf einen Strich öffnet einen Tooltip mit Phasennamen; Klick aktiviert einen Phasen-Filter.~~
+
+Entfernt nach dem Erstdeploy auf Operator-Entscheidung (2026-06-10). Die Lane (Legende, Mobile-Phase-Bar, Hover-Tooltip, Filter-Modus) ist aus HTML, CSS und JavaScript ausgebaut. Die `{:.phase-*}`-Tags im Paper-Markdown werden von der marked-Extension nur noch gestrippt (reiner Tag-Stripper, kein Lane-Rendering). Begründung: visuell ruhiger Lesefluss ohne Provenance-Spalte. Die ADR-4-Begründung bleibt als Entscheidungs-Provenienz erhalten, ist aber nicht mehr umgesetzt.
 
 ### A3 — Adressierbare Vorlagen
 Acht Vorlagen sind unter Latest-Ankern adressierbar (`#promptotyping-document-data`, `#promptotyping-document-journal`, ...). Bei späteren Versions-Sprüngen werden zusätzliche Snapshot-Anker derselben Vorlagen-Sektion vergeben (`#promptotyping-document-data-v0.1`); heute, mit allen Vorlagen auf v0.1, ist der Latest-Anker primärer und einziger Adresspunkt. Akzeptanzkriterium: `https://dhcraft.org/Promptotyping/#promptotyping-document-data` springt zur Vorlage und öffnet automatisch das Side-Panel mit der vollen Vorlagen-Spec.
@@ -121,6 +123,12 @@ Sektion `#skills` mit den wiederverwendbaren System Prompts (Coding, Writing) al
 
 ### A16 — Neunte Vorlage: Action-Layer (Entwurf)
 Die Vorlage Action-Layer (`CLAUDE.md`, empirisch destilliert aus dem 35-Repo-Sweep 2026-06) wird als neunter Slug `action-layer` publiziert, sichtbar als "Entwurf, in Erprobung" gekennzeichnet. Anker-Namespace-Entscheidung in ADR-9.
+
+### A17 Arbeitsumgebung-Sektion (Operator-Entscheidung 2026-06-10)
+Sektion `#arbeitsumgebung` zwischen Skills und Glossar mit drei kurzen Abschnitten: Obsidian-Vault als Wissensumgebung (Vault als Analyseeinheit, `CLAUDE.md` als Action Document, Dateisystem als Schnittstelle), Promptotyping Agent Interface (experimentelles Browser-Interface zum Beobachten, Steuern, Mitschreiben; Vault-als-Zentrum; Status in Entwicklung) und AI Harness und Skills (Claude Code als Harness, Verweis auf `#skills`, Prozessvideos auf dem YouTube-Kanal). Substrat: `_content/arbeitsumgebung.md`. Routing `/arbeitsumgebung` über `404.html`, Anker im URL-Schema (A4) ergänzt.
+
+### A18 Site-Header, Site-Footer, Hero und Video-Integration (Operator-Entscheidung 2026-06-10)
+Sticky weißer Site-Header mit DHCraft-Logo und Wortmarke links, Sektions-Nav und GitHub-Link rechts; Nav-Links auf schmalen Viewports ausgeblendet (mobile Navigation über den TOC-Toggle). Site-Footer mit Hintergrund `#f5f5f5`, Träger-Hinweis, Repo- und YouTube-Link, Lizenzzeile und Maschinenadresse-Hinweis. Hero rein typografisch: die `promptotyping-logo.png` wandert aus dem Hero in den Kopf der Vorlagen-Sektion (`#vorlagen`). Alle sechs Prozessvideos sind ohne Verlassen der Seite abspielbar: Hero (Teil 1) und Section-4-Injektion (Teil 2) als Facade, Klawiter und coOCR-HTR als Facade in ihren Tiefenseiten (aus `video_url`), Lucina und Kulturpool als Video-Affordanz auf den Galerie-Karten. Click-to-load-Facade durchgängig über `youtube-nocookie.com`, kein Tracking vor dem Klick.
 
 ## Funktionsumfang pro Site-Sektion
 

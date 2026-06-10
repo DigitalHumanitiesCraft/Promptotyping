@@ -15,7 +15,7 @@ Die strukturelle Trennung dieser Schicht von der Wissensbasis ist in der [Vorlag
 
 Zwei System Prompts stehen hier zum Kopieren bereit:
 
-- [Promptotyping System Prompt for Coding](#skills-coding) — fuer Sessions, in denen aus Forschungsdaten ein Forschungsartefakt (Interface, Pipeline, Edition, Datenmodell) gebaut wird.
-- [Promptotyping System Prompt for Writing](#skills-writing) — fuer die akademische Textproduktion, in der jede Behauptung an eine Quelle rueckbindbar bleibt.
+- [Promptotyping System Prompt for Coding](#skills-coding): fuer Sessions, in denen aus Forschungsdaten ein Forschungsartefakt (Interface, Pipeline, Edition, Datenmodell) gebaut wird.
+- [Promptotyping System Prompt for Writing](#skills-writing): fuer die akademische Textproduktion, in der jede Behauptung an eine Quelle rueckbindbar bleibt.
 
 Beide folgen demselben Aufbau: vier Phasen (Preparation, Exploration und Mapping, Distillation, Implementation), drei Dokumenttypen (Knowledge, Process, Action) und ein Diagnoseraster, das Fehlerbilder auf den jeweils zustaendigen Dokumenttyp zurueckfuehrt.

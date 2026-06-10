@@ -16,13 +16,10 @@ subsections:
 
 ## 3.1 Preparation
 
-{:.phase-preparation}
 The Preparation phase collects and structures all materials before technical decisions are made. This includes research data in their original formats, documentation of standards and data models, research questions and problem statements, and domain knowledge — whether from publications, expert interviews, or prior project experience. The phase forces precise articulation of project goals before LLM use; vagueness here cascades through all subsequent phases.
 
-{:.phase-preparation}
 The phase typically begins with requirements engineering — articulating user stories, data-to-question mappings, and analytical perspectives, whether from the researcher's own domain knowledge or from collaborative Scholar-Centred Design sessions (Section 2.5). In the DEPCHA project, deep-dive sessions with historians of different source types (tax registers, monastic accounts, merchant day books) surfaced recurring representation needs that could not have been derived from the data alone (Pollin 2025b). In simpler projects, the researcher serves as both domain expert and requirements analyst.
 
-{:.phase-preparation}
 Across all documented projects, a consistent repository architecture has emerged. This is not prescribed but has proven stable across diverse project types:
 
 ```
@@ -35,47 +32,34 @@ project-root/
 └── CLAUDE.md / .cursorrules  # Agent configuration
 ```
 
-{:.phase-preparation}
 The `CLAUDE.md` file at the repository root deserves particular attention. It configures the agent's relationship to the project by defining workflow conventions, security constraints, code style preferences, and project-specific rules. In mature projects, this file functions as what we call _agent socialisation_ — not merely instructing the agent what to do but embedding it with a value system that guides decisions in unforeseen situations. A `DESIGN.md` file serves a similar dual function: it documents design rationale for human readers while simultaneously configuring the agent's aesthetic and interaction decisions.
 
-{:.phase-preparation}
 The Preparation phase ends when the repository structure exists, source data is accessible, initial research questions are formulated, and requirements are documented — not as a comprehensive specification but as a structured starting point for exploration.
 
 ## 3.2 Exploration and Mapping
 
-{:.phase-exploration}
 The Exploration phase is a systematic investigation of the interface between data and research context. The central question is: can the abstract research question be concretely mapped to the available data structure? The LLM is used to generate mapping hypotheses — which data fields correspond to which analytical categories, which visualisation types fit the data characteristics, and where the data is insufficient for the intended purpose.
 
-{:.phase-exploration}
 This phase has an epistemic dimension beyond efficiency. The LLM generates options that the researcher would not have designed independently. In the CorrespExplorer (Section 4), six visualisation types were explored — map, timeline, Sankey diagram, force-directed graph, matrix heatmap, and chord diagram — before two were discarded as unsuitable for the data and the research question. The researcher's role was not to generate these options but to evaluate them against domain criteria. This is a different cognitive mode than classical software development, where one must conceive a solution before implementing it. In the DHd Landscape project (Section 4), the initial idea was deliberately vague ("look at DH labs, build an information visualisation"); the structure — scope, data sources, technology, interface paradigm — emerged through conversational exploration with the LLM.
 
-{:.phase-exploration}
 Understanding what the data _cannot_ support is as valuable as knowing what is possible. Dead ends are positive findings, not failures — they prevent reinvestigating failed approaches in later phases.
 
-{:.phase-exploration}
 The Exploration phase ends when there is a clear understanding of what is feasible, what is not, and why — documented sufficiently that the reasoning is recoverable.
 
 ## 3.3 Distillation
 
-{:.phase-distillation}
 The Distillation phase compresses the knowledge gained during Exploration into structured Markdown documents optimised for LLM processing. The core principle, motivated by the empirical findings on Context Rot (Hong et al. 2025), is _maximum information with minimum tokens_. Hong et al. demonstrate that LLM performance degrades non-uniformly as input length increases, even on simple retrieval tasks. This finding provides the technical rationale for aggressive compression: documents must be structured so that the most critical information occupies the positions where model attention is highest (typically the beginning and end of the context), while redundancies are eliminated.
 
-{:.phase-distillation}
 The process of compression is not neutral. Context Rot describes, in information-theoretic terms, noise in the communication channel between document and model. Distillation is an encoding strategy that optimises the signal-to-noise ratio within this channel. What makes this consequential is that the encoding decisions are epistemic decisions: they determine what information will be available to the model in subsequent processing steps and what will not. A Knowledge Document is therefore not a summary of what was learned during Exploration but a translation — a selective transformation that shapes the possibility space of all downstream outputs.
 
-{:.phase-distillation}
 This principle is most visible in the extraction of context knowledge through media change. Context information is initially bound in a medium — a digitised manuscript, a screenshot, a handwritten source. Through the LLM as extraction instrument (typically operating as a vision model), it is transferred into a different medium: a structured Markdown document, a specification, a data model. This extraction is neither lossless nor neutral. What a vision model recognises in a digitised page depends on the prompt. The same screenshot yields a layout document, a colour table, or a component structure depending on the question asked. The extraction produces the knowledge it appears merely to transcribe.
 
-{:.phase-distillation}
 The `knowledge/` directory of a Promptotyping repository functions as a simplified research vault — structurally analogous to a personal Obsidian-style knowledge graph but project-centred and reduced in scope. What constitutes the vault is not a fixed catalogue of files but four operative principles: Markdown with frontmatter, wikilinks as connective tissue, function before filename, and curatable as a network rather than a table of contents. The number of documents varies with project complexity — three in a small tool repository, sixteen in a multi-stage pipeline like ZBZ OCR/TEI, forty-one in VetMedAI Wissensbilanz. Promptotyping does not invent a new document genre; it ports the research vault into the repository, where the same Markdown-and-wikilink practice that researchers cultivate for their personal knowledge becomes the working memory of an agentic project. This portability is also a pedagogical asset: practitioners who already maintain a research vault have internalised the relevant reading heuristic — function over filename, link over hierarchy — and recognise the `knowledge/` folder as a familiar object in a new operative role.
 
-{:.phase-distillation}
 Within this vault, three structural commitments shape what counts as a well-formed Promptotyping knowledge base, independently of how many documents a particular project carries. The first is _function before filename_: a document is identified by the function it serves, not by the filename it bears. The same function — say, describing the project's data substrate — may be carried by `data.md` in one repository, `corpus.md` in an edition project, or `material.md` in another; conversely, the same filename may carry different functions across projects, as `pipeline.md` does in projects where it documents technical realisation versus those where it documents the build sequence. The Critical Expert reads the function, not the listing. The second commitment is _inclusion by trigger, not by checklist_: each function is included in a project only when a trigger criterion holds for that project. Identity is always present; description of material is present when the project processes data; description of form is present when the project has a user interface; navigation infrastructure is present when the vault grows beyond a small set of documents. A small tool repository may consolidate identity, material, and substance into a single `project.md`; a multi-stage pipeline may split substance across `requirements.md`, `features.md`, and `decisions.md`, and split construction across `architecture.md` and `pipeline.md`. What matters is that every function relevant to the project is addressed at exactly one findable location — not that a prescribed set of files is present. The third commitment is _diagnostic decoupling_: the diagnostic question "where do I look when output is wrong?" is answered by the document type (Knowledge for incorrect content, Action for incorrect form, Process for unclear decision logic), not by the function. Function says where information lives; type says how to read it.
 
-{:.phase-distillation}
 These three commitments are descriptive of the practice that has emerged across the documented projects, not a normative catalogue. The set of functions that a Promptotyping vault may carry is open: as new project types enter the practice, new functions accrue (an editorial-guidelines function in scholarly editions, an organisational function in multi-agent projects — Section 3.5 — that did not exist in earlier projects). What persists is the form of the argument, not the count of its instances.
 
-{:.phase-distillation}
 Three analytically distinct types of Promptotyping Documents have emerged across all documented projects.
 
 **Knowledge Documents** are declarative. They describe what is known about the data, the domain, and the research context. Examples include `DATA.md` (data structure, field definitions, relationships between datasets, example records), `REQUIREMENTS.md` (user stories with acceptance criteria, functional and non-functional requirements), `editorial-guidelines.md` (annotation conventions for digital editions), and `mapping.md` (correspondence rules between source formats and target structures). These documents are curated by the Critical Expert and constitute the primary persistent artifact of the context engineering process — the knowledge they encode survives changes in code, model versions, and implementation tools.
@@ -96,27 +80,20 @@ The Distillation phase ends when the documents compress project knowledge suffic
 
 ## 3.4 Implementation
 
-{:.phase-implementation}
 The Implementation phase is iterative development with the LLM, using the Promptotyping Documents and the data as context. The approach differs fundamentally from classical software development: the researcher does not write code but steers its generation through structured context and evaluative feedback. Section 4 illustrates these practices across projects of increasing complexity.
 
-{:.phase-implementation}
 The primary implementation instrument is a multi-agent coding tool operating within the project repository. In the documented projects, this is typically Claude Code (Anthropic 2025), though the method is not bound to a specific tool. The agent has access to the full repository through the file system: code, research data, knowledge documents, and scripts. In mature projects, the agent functions not only as a code generator but as the primary interface to the repository: the researcher asks questions through natural language, and the agent answers by reading knowledge documents, navigating files, and executing commands. In the Medieval Legal Transactions project (Section 4), the editor's workflow is entirely mediated through the agent — placing new TEI-XML documents, validating schemas, running regression tests, building the frontend, and verifying results in the browser.
 
 A precondition for effective Promptotyping is that the research data carries semantic structure. All documented projects work with semantically enriched formats such as TEI-XML, RDF, JSON-LD, CMIF, LIDO, and PAGE XML. The LLM can work productively with this data because standards and ontologies already encode domain meaning — they provide the shared vocabulary that bridges between the researcher's intent (expressed in Promptotyping Documents) and the generated code. Unstructured data can be used but requires significantly more effort in the Distillation phase to make the structure explicit.
 
-{:.phase-implementation}
 Implementation follows an iterative cycle with three feedback mechanisms. _Deterministic feedback_ comes from schema validation (TEI-XML against RelaxNG, Schematron), test suites, linting, and build processes — automated checks that produce unambiguous pass/fail results. _Visual feedback_ comes from screenshots of Promptotyping Interfaces, which the LLM can interpret through multimodal capabilities to identify layout errors, rendering problems, or incorrect data mappings. _Expert feedback_ comes from the Critical Expert's evaluation of whether the output is factually correct, domain-appropriate, and aligned with the research question — the only mechanism that can detect confabulation or assess whether the right questions are being asked.
 
-{:.phase-implementation}
 At defined points in the pipeline, progress is paused for systematic verification at what we term _Verification Milestones_. These milestones combine all three feedback mechanisms and serve both human experts and AI agents. Their function is to interrupt the error cascade that characterises multi-stage automated pipelines, where mistakes at one stage propagate and become harder to identify downstream. We call the browser-based tools built for this purpose _Promptotyping Interfaces_: static HTML/CSS/JavaScript applications that render intermediate or final results for human inspection. Five categories have emerged, described in Section 5.3.
 
-{:.phase-implementation}
 Complex projects benefit from running multiple agent instances in parallel. In the Kulturpool Explorer, two Claude Code instances worked simultaneously — one on data harvesting (API exploration, data transformation), the other on design research (visual references, interaction patterns, information architecture) — with knowledge merged into shared documents before the implementation began. This is not delegation in the classical sense but _parallel context exploration_, where each agent develops a different facet of the project simultaneously. The cognitive demands of monitoring parallel agents are significant and explicitly noted in the process documentation as unsustainable for extended periods (Section 6.4).
 
-{:.phase-implementation}
 The `journal.md` documents each implementation cycle chronologically. Git commits function as implicit Process Documents, marking verified states and enabling rollbacks. New knowledge produced during implementation — unexpected data characteristics, performance constraints, design refinements — is written back into the Promptotyping Documents, which are living artifacts rather than static specifications. The output of an Implementation cycle is a functional prototype. Multiple iterations are typical; the Lucina digital edition went through five iterations with separate documentation per iteration and a multi-LLM workflow (Claude for structure, Gemini for long contexts, GPT for corrections).
 
-{:.phase-implementation}
 The Implementation phase does not have a single exit criterion but a spectrum: from a rapid functional prototype (the Stefan Zweig annotation tool in two hours) to a production-grade system (the ZBZ pipeline with 30+ scripts and Verification Interfaces at nine pipeline stages). What determines the appropriate stopping point is the research question, not the technical possibilities.
 
 ## 3.5 Two Modes: Promptotyping a Tool and Promptotyping a Research Project

@@ -12,7 +12,7 @@ machine-url: https://dhcraft.org/Promptotyping/_content/promptotyping-document/a
 
 > Status: Entwurf, in Erprobung. Diese neunte Vorlage ist seit 2026-06-09 im Katalog, ihre Freigabe durch den Critical Expert steht noch aus. Sie wurde empirisch aus einem Sweep über 35 Repos destilliert; einzelne Festlegungen (besonders der Verzicht auf YAML-Frontmatter und die kanonische Adressform) sind noch zu ratifizieren.
 
-Diese Vorlage strukturiert das Action-Dokument eines Promptotyping-Repos. Das resultierende Dokument heißt `CLAUDE.md` und liegt im Repo-Root, nicht im `knowledge/`-Ordner. Es sozialisiert den Coding-Agenten: imperative Regeln, die auf die deklarative Wissensbasis verweisen, plus ein klar abgegrenzter, austauschbarer Werkzeug-Block. Der Action-Layer trägt kein Wissen — er routet zu Wissen und übersetzt es in Imperative.
+Diese Vorlage strukturiert das Action-Dokument eines Promptotyping-Repos. Das resultierende Dokument heißt `CLAUDE.md` und liegt im Repo-Root, nicht im `knowledge/`-Ordner. Es sozialisiert den Coding-Agenten: imperative Regeln, die auf die deklarative Wissensbasis verweisen, plus ein klar abgegrenzter, austauschbarer Werkzeug-Block. Der Action-Layer trägt kein Wissen; er routet zu Wissen und übersetzt es in Imperative.
 
 ## Geltungsbereich
 
@@ -20,7 +20,7 @@ Die Vorlage trägt für jedes Promptotyping-Repo, weil die Funktion Agent-Sozial
 
 ## Funktion des Dokuments
 
-CLAUDE.md ist der Action-Layer der Wissensbasis: imperativ, verhaltenssteuernd, vom Werkzeug bei jedem Sessionstart automatisch injiziert. Es beantwortet "wie soll der Agent sich in diesem Repo verhalten, auch ästhetisch". Adressiert ist ausschließlich der Coding-Agent; Menschen lesen `README.md` und `knowledge/`. Diagnoseraster der Konvention: formal falscher Output, Stilbruch, ignoriertes Verbot — hier prüfen. Inhaltlich falscher Output — Knowledge prüfen, nicht hier nachbessern.
+CLAUDE.md ist der Action-Layer der Wissensbasis: imperativ, verhaltenssteuernd, vom Werkzeug bei jedem Sessionstart automatisch injiziert. Es beantwortet "wie soll der Agent sich in diesem Repo verhalten, auch ästhetisch". Adressiert ist ausschließlich der Coding-Agent; Menschen lesen `README.md` und `knowledge/`. Diagnoseraster der Konvention: formal falscher Output, Stilbruch, ignoriertes Verbot, hier prüfen. Inhaltlich falscher Output: Knowledge prüfen, nicht hier nachbessern.
 
 ## Strukturprinzipien
 
@@ -37,7 +37,7 @@ Drittens Distillation. CLAUDE.md ist ein knapper Pointer und trägt nur, was wed
 Abweichend von den `knowledge/`-Vorlagen trägt CLAUDE.md kein YAML-Frontmatter. Begründung: Das Dokument wird vom Werkzeug als roher Prompt-Kontext injiziert, und in der gesamten Belegbasis (35 Repos) führt keine einzige CLAUDE.md Frontmatter. Die Vorlagen-Provenienz steht stattdessen als HTML-Kommentar in der ersten Zeile:
 
 ```markdown
-<!-- template: Vorlage Action-Layer v0.1 — URL folgt nach ADR Anker-Namespace -->
+<!-- template: Vorlage Action-Layer v0.1, URL folgt nach ADR Anker-Namespace -->
 ```
 
 Die kanonische URL ist offen, bis der Anker-Namespace auf der Promptotyping-Site entschieden ist (neunter Slug unter `/promptotyping-document/` oder eigener Typ `/action-layer/`); die Entscheidung braucht einen ADR in der `specification.md` des Site-Repos. Diese Frontmatter-Abweichung vom `template:`-Pflichtkern der Konvention ist vom Critical Expert zu ratifizieren.
@@ -56,9 +56,9 @@ Funktion: Routing in die deklarative Wissensbasis. Inhalt: Verweis auf `knowledg
 
 Funktion: der portable Methodenkern als Regelliste. Vier Pflicht-Regeln, projektspezifisch konkretisiert:
 
-- Journal-Pflicht. Beim Wiedereinstieg zuerst den letzten Eintrag in `knowledge/journal.md` lesen; am Ende jeder Session mit nicht-trivialen Änderungen einen Eintrag anhängen (Struktur nach der [Vorlage Journal](#promptotyping-document-journal): Ziel, Verlauf, Ergebnis, Dead Ends). Die Regel gehört hierher, nicht nur in die Journal-Konvention — Repos ohne kodifizierte Pflicht führen das Journal nur zufällig.
+- Journal-Pflicht. Beim Wiedereinstieg zuerst den letzten Eintrag in `knowledge/journal.md` lesen; am Ende jeder Session mit nicht-trivialen Änderungen einen Eintrag anhängen (Struktur nach der [Vorlage Journal](#promptotyping-document-journal): Ziel, Verlauf, Ergebnis, Dead Ends). Die Regel gehört hierher, nicht nur in die Journal-Konvention; Repos ohne kodifizierte Pflicht führen das Journal nur zufällig.
 - Verifikation und CEIL. Keine erfundenen Werte, Begriffe oder Zitate; bei fehlendem Wissen nachfragen statt raten. Projektspezifische Checkpoints benennen: was wird wann dem Critical Expert vorgelegt, was läuft nie ohne Freigabe. Wo maschinelle Prüfungen existieren (Tests, Validierungsskripte, Datenverträge), sind sie als Pflichtlauf zu nennen.
-- Wahrheitshierarchie. Vorrangregel pro Konfliktklasse: welche Quelle ist kanonisch, welche abgeleitet (TEI vor JSON, Spec vor Code, Speicherstand vor Gedächtnis für Zahlen). Schlusssatz: niemals stillschweigend divergieren lassen — Widersprüche melden.
+- Wahrheitshierarchie. Vorrangregel pro Konfliktklasse: welche Quelle ist kanonisch, welche abgeleitet (TEI vor JSON, Spec vor Code, Speicherstand vor Gedächtnis für Zahlen). Schlusssatz: niemals stillschweigend divergieren lassen, Widersprüche melden.
 - Quantitäten-Regel. Keine volatilen Zahlen in dieser Datei oder in Knowledge-Dokumenten; stattdessen lebende Quelle benennen (Report, Snapshot, `journal.md` für Stand und offene Punkte).
 
 ### Designprinzipien
@@ -71,7 +71,7 @@ Funktion: Negativliste gegen Feature-Drift und Werkzeug-Fehlgriffe. Inhalt: was 
 
 ### Bekannte Grenzen
 
-Funktion: epistemischer Status, optional. Inhalt: ehrliche Grenzen von System, Modell oder Daten, die der Agent kennen muss, um Lücken nicht als Bugs zu behandeln; unbestätigte Inferenzen ausdrücklich als solche markiert, bis Klärung vorliegt. Keine Erfolgsprosa, keine Zahlen (Quantitäten-Regel gilt auch hier — qualitative Beschreibung plus Verweis auf die messende Quelle).
+Funktion: epistemischer Status, optional. Inhalt: ehrliche Grenzen von System, Modell oder Daten, die der Agent kennen muss, um Lücken nicht als Bugs zu behandeln; unbestätigte Inferenzen ausdrücklich als solche markiert, bis Klärung vorliegt. Keine Erfolgsprosa, keine Zahlen (Quantitäten-Regel gilt auch hier: qualitative Beschreibung plus Verweis auf die messende Quelle).
 
 ### Werkzeug (austauschbarer Block)
 
@@ -98,11 +98,11 @@ Maschinengebundene absolute Pfade gehören, wenn überhaupt, nur hierher und wer
 Der folgende Block ist als Template gedacht.
 
 ````markdown
-<!-- template: Vorlage Action-Layer v0.1 — URL folgt nach ADR Anker-Namespace -->
+<!-- template: Vorlage Action-Layer v0.1, URL folgt nach ADR Anker-Namespace -->
 
-# CLAUDE.md — [Projektname]
+# CLAUDE.md: [Projektname]
 
-[Ein Absatz: was das Projekt ist, in einem Satz. Methode: Promptotyping — die Documents in `knowledge/` sind das primäre Artefakt, Code ist regenerierbares Nebenprodukt. Rollenverteilung Mensch/Agent, falls klärungsbedürftig.]
+[Ein Absatz: was das Projekt ist, in einem Satz. Methode: Promptotyping, die Documents in `knowledge/` sind das primäre Artefakt, Code ist regenerierbares Nebenprodukt. Rollenverteilung Mensch/Agent, falls klärungsbedürftig.]
 
 ## Wissensbasis
 
@@ -118,9 +118,9 @@ Die Wissensbasis liegt in `knowledge/`, Einstieg über `knowledge/INDEX.md`. Lie
 ## Arbeitsregeln
 
 - Journal-Pflicht: Am Ende jeder Session mit nicht-trivialen Änderungen einen Eintrag in `knowledge/journal.md` anhängen (Ziel, Verlauf, Ergebnis, Dead Ends). Beim Wiedereinstieg zuerst den letzten Eintrag lesen.
-- Nichts erfinden: [projektspezifische Regel — welche Werte, Begriffe, Zitate nur aus welchen Quellen stammen dürfen]. Bei fehlendem Wissen nachfragen, nicht raten.
+- Nichts erfinden: [projektspezifische Regel: welche Werte, Begriffe, Zitate nur aus welchen Quellen stammen dürfen]. Bei fehlendem Wissen nachfragen, nicht raten.
 - Checkpoints: [was wird wann dem Critical Expert vorgelegt; was läuft nie ohne Freigabe; welche Prüfläufe sind Pflicht].
-- Wahrheitshierarchie: Bei Widerspruch gilt [kanonische Quelle] vor [abgeleiteter Quelle]. [Weitere Vorrangregeln.] Niemals stillschweigend divergieren lassen — Widersprüche melden.
+- Wahrheitshierarchie: Bei Widerspruch gilt [kanonische Quelle] vor [abgeleiteter Quelle]. [Weitere Vorrangregeln.] Niemals stillschweigend divergieren lassen, Widersprüche melden.
 - Keine volatilen Zahlen in dieser Datei oder in Knowledge-Dokumenten. Aktuelle Zahlen → [lebende Quelle]. Stand und offene Aufgaben → `knowledge/journal.md`.
 
 ## Designprinzipien
@@ -146,8 +146,6 @@ Was du nicht tun sollst:
 
 [Optional. Grenzen von System, Modell oder Daten, qualitativ beschrieben. Unbestätigte Inferenzen als solche markieren, bis Klärung vorliegt.]
 
----
-
 ## Werkzeug (austauschbarer Block: Claude Code)
 
 <!-- Toolgebunden. Bei Portierung zu einem anderen Agenten wird nur dieser Block ersetzt; alles oberhalb bleibt unverändert. -->
@@ -155,7 +153,7 @@ Was du nicht tun sollst:
 ### Befehle
 
 - Build/Pipeline: [`befehl`]
-- Tests: [`befehl`] — [wann Pflicht, z.B. vor jedem Commit]
+- Tests: [`befehl`], [wann Pflicht, z.B. vor jedem Commit]
 - [weitere]
 
 ### Konventionen

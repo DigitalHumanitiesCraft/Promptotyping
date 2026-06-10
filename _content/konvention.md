@@ -20,7 +20,7 @@ Die Konvention gilt für Markdown-Dateien im `knowledge/`-Ordner (oder gleichwer
 
 ## Funktionen einer Promptotyping-Wissensbasis
 
-Eine Wissensbasis im `knowledge/`-Ordner deckt eine Reihe von Funktionen ab. Welche Funktionen relevant sind und wie viele Dateien sie tragen, hängt vom Projekt ab. Die Konvention beschreibt diese Funktionen, nicht eine feste Dokumentenliste — ein Agent, der ein neues Repo aufsetzt, prüft das Triggerkriterium pro Funktion und entscheidet, welche Dokumente er anlegt.
+Eine Wissensbasis im `knowledge/`-Ordner deckt eine Reihe von Funktionen ab. Welche Funktionen relevant sind und wie viele Dateien sie tragen, hängt vom Projekt ab. Die Konvention beschreibt diese Funktionen, nicht eine feste Dokumentenliste: ein Agent, der ein neues Repo aufsetzt, prüft das Triggerkriterium pro Funktion und entscheidet, welche Dokumente er anlegt.
 
 | Funktion | Frage, die sie beantwortet | Trigger | Typischer Träger |
 |---|---|---|---|
@@ -40,7 +40,7 @@ Standard-Dateinamen sind kleingeschrieben (`project.md`, `data.md`, `specificati
 
 ## Vorlagen-Katalog
 
-Für die Funktionen, die in der Praxis wiederkehren, liegen ausfüllbare Vorlagen als Promptotyping-Document-Sektionen dieser Site. Der Katalog ist offen — eine Vorlage entsteht, sobald ein Funktions-Träger sich in mindestens zwei Repos in vergleichbarer Form wiederholt. Aktuell enthalten:
+Für die Funktionen, die in der Praxis wiederkehren, liegen ausfüllbare Vorlagen als Promptotyping-Document-Sektionen dieser Site. Der Katalog ist offen: eine Vorlage entsteht, sobald ein Funktions-Träger sich in mindestens zwei Repos in vergleichbarer Form wiederholt. Aktuell enthalten:
 
 | Vorlage | Funktion | Empfohlener Dateiname |
 |---|---|---|
@@ -54,19 +54,19 @@ Für die Funktionen, die in der Praxis wiederkehren, liegen ausfüllbare Vorlage
 | [Vorlage Design](#promptotyping-document-design) | Gestalt | `design.md` |
 | [Vorlage Journal](#promptotyping-document-journal) | Genese | `journal.md` |
 
-Eine Vorlage trägt eine Funktion, nicht einen festen Dateinamen — wer das Repo-Dokument anders nennen will (zum Beispiel `material.md` statt `data.md` oder `corpus.md` für ein Editionsprojekt), nutzt dieselbe Vorlage. Die Frontmatter-Schemas und Strukturprinzipien tragen unabhängig vom konkreten Dateinamen.
+Eine Vorlage trägt eine Funktion, nicht einen festen Dateinamen: wer das Repo-Dokument anders nennen will (zum Beispiel `material.md` statt `data.md` oder `corpus.md` für ein Editionsprojekt), nutzt dieselbe Vorlage. Die Frontmatter-Schemas und Strukturprinzipien tragen unabhängig vom konkreten Dateinamen.
 
 Konventionsänderung 2026-05-30: Epics und User Stories ziehen als eigene Sektion in `specification.md`; eine separate `user-stories.md` ist seitdem die dokumentierte Ausnahme für große Projekte (typischerweise Editionsprojekte), deren Substanz-Funktion ohnehin gespalten wird. Die [Vorlage Specification](#promptotyping-document-specification) (ab Vorlagen-Version 0.2) trägt die Sektion, die [Vorlage User Stories](#promptotyping-document-user-stories) bleibt für den Ausnahmefall im Katalog.
 
-Wenn ein Repo eine Funktion abdeckt, für die noch keine Vorlage existiert (zum Beispiel `editorial-guidelines.md` in Editionsprojekten oder `pipeline.md` in mehrstufigen Datenprojekten), bleibt das Dokument zunächst freihändig — die Konvention liefert das Frontmatter-Vokabular und die Strukturprinzipien, das reicht für den Anfang. Sobald ein zweites Repo dieselbe Funktion in vergleichbarer Form trägt, lohnt sich eine eigene Vorlage.
+Wenn ein Repo eine Funktion abdeckt, für die noch keine Vorlage existiert (zum Beispiel `editorial-guidelines.md` in Editionsprojekten oder `pipeline.md` in mehrstufigen Datenprojekten), bleibt das Dokument zunächst freihändig; die Konvention liefert das Frontmatter-Vokabular und die Strukturprinzipien, das reicht für den Anfang. Sobald ein zweites Repo dieselbe Funktion in vergleichbarer Form trägt, lohnt sich eine eigene Vorlage.
 
 Aktuell als Kandidatenfunktion im Ideenstadium geführt wird "Stand-zur-Zeit für Dritte" (`report.md`). Die Funktion adressiert externe Empfänger und friert einen Projektstand zu einem festen Zeitpunkt ein. Stil, Struktur und Lebenszyklus weichen an mehreren Punkten bewusst vom internen Promptotyping-Stil ab (volatile Quantitäten erlaubt, Tabellen liberaler einsetzbar, keine negative Selbstdefinition). Erste Referenzimplementierung in zbz-ocr-tei, eine bindende Vorlage Report entsteht beim zweiten Vorkommen.
 
 ## Vorlagen-Adressierbarkeit über `template:`-Feld
 
-Jede Vorlage hat eine permanente, öffentliche Adresse auf der Promptotyping-Site (https://dhcraft.org/Promptotyping/). Repos verlinken auf die maßgebliche Vorlagen-Spezifikation über ein `template:`-Feld im Frontmatter. Dadurch wird das Dokument selbst — und nicht der Vorlagen-Spiegel im Vault — die kanonische Quelle: ein Coding-Agent, der einen `template:`-URI sieht, kann die volle Spezifikation aufrufen, ohne den Vault zu kennen.
+Jede Vorlage hat eine permanente, öffentliche Adresse auf der Promptotyping-Site (https://dhcraft.org/Promptotyping/). Repos verlinken auf die maßgebliche Vorlagen-Spezifikation über ein `template:`-Feld im Frontmatter. Dadurch wird das Dokument selbst, und nicht der Vorlagen-Spiegel im Vault, die kanonische Quelle: ein Coding-Agent, der einen `template:`-URI sieht, kann die volle Spezifikation aufrufen, ohne den Vault zu kennen.
 
-Das Feld trägt drei Pflicht-Subfelder (`name`, `version`, `url`) und ein optionales (`alias`). Default ist Latest-Adressierung — `url:` und `alias:` zeigen auf die jeweils aktuelle Fassung der Vorlagen-Sektion auf der Site, ohne Versions-Suffix. Zwei URL-Formen sind kanonisch und gleichberechtigt: `url:` ist die Subpath-Form (maschinen-freundlich), `alias:` ist die Hash-Form (browser-nativer Anker auf derselben Seite). Beide werden gleich aufgelöst; Repos können bei Bedarf eine der beiden Formen weglassen.
+Das Feld trägt drei Pflicht-Subfelder (`name`, `version`, `url`) und ein optionales (`alias`). Default ist Latest-Adressierung: `url:` und `alias:` zeigen auf die jeweils aktuelle Fassung der Vorlagen-Sektion auf der Site, ohne Versions-Suffix. Zwei URL-Formen sind kanonisch und gleichberechtigt: `url:` ist die Subpath-Form (maschinen-freundlich), `alias:` ist die Hash-Form (browser-nativer Anker auf derselben Seite). Beide werden gleich aufgelöst; Repos können bei Bedarf eine der beiden Formen weglassen.
 
 ```yaml
 template:
@@ -84,7 +84,7 @@ Das Feld gehört in den Pflichtkern für Repo-`knowledge/`-Dokumente. Vault-Spie
 
 Action-Dokumente liegen im Repo-Root, nicht im `knowledge/`-Ordner. Standard ist `CLAUDE.md` als Agent-Konfiguration; sie sollte explizit auf den `knowledge/`-Ordner verweisen, damit der Agent die Wissensbasis als Kontext nimmt. Struktur und Befüllung beschreibt die [Vorlage Action-Layer](#promptotyping-document-action-layer) (seit 2026-06-09, Entwurfsstatus bis zur Freigabe). `RULES.md`, `INSTRUCTIONS.md`, `cloud-commands.md` sind Forschungsleitstelle-spezifisch (mehrere parallele Agenten mit differenzierten Rollen) und kein Standard für gewöhnliche Promptotyping-Repos.
 
-Auf der ästhetischen Schicht erfolgt die Agent-Sozialisierung dadurch, dass `CLAUDE.md` das `design.md` als Wertequelle einbindet — etwa über eine Sektion "Designprinzipien" mit imperativ formulierten Sätzen, die aus der Designhaltung abgeleitet sind, oder durch die Anweisung, vor UI-Generierung das `design.md` zu lesen. Das `design.md` selbst bleibt deklaratives Knowledge Document; die imperative Übersetzung gehört in den Action-Layer. Diese Aufgabenteilung folgt der Lese-Heuristik weiter unten und vermeidet, dass ein Knowledge-Dokument seinen analytischen Typ wechselt.
+Auf der ästhetischen Schicht erfolgt die Agent-Sozialisierung dadurch, dass `CLAUDE.md` das `design.md` als Wertequelle einbindet, etwa über eine Sektion "Designprinzipien" mit imperativ formulierten Sätzen, die aus der Designhaltung abgeleitet sind, oder durch die Anweisung, vor UI-Generierung das `design.md` zu lesen. Das `design.md` selbst bleibt deklaratives Knowledge Document; die imperative Übersetzung gehört in den Action-Layer. Diese Aufgabenteilung folgt der Lese-Heuristik weiter unten und vermeidet, dass ein Knowledge-Dokument seinen analytischen Typ wechselt.
 
 ## Klassifikation der Dokumenttypen
 
@@ -96,13 +96,13 @@ Process Documents sind chronologisch oder analytisch. Sie dokumentieren den Arbe
 
 Action Documents sind imperativ. Sie beschreiben, was Agenten tun können. Beispiele: `instructions.md`, `rules.md`, `CLAUDE.md`. Sie steuern das Modellverhalten.
 
-`design.md` ist deklarativ und damit Knowledge — es beschreibt Designhaltung, Designsystem und Interaktionsmuster. Die Sozialisierung des Coding-Agenten auf der ästhetischen Schicht ist ein Lese-Effekt, der entsteht, wenn ein Action-Dokument (typischerweise `CLAUDE.md`) auf das `design.md` verweist und die imperativen Designprinzipien dort führt. Knowledge bleibt Knowledge, Action bleibt Action; die ästhetische Steuerung kommt aus der Komposition zweier Dokumente, nicht aus einem Hybridtyp.
+`design.md` ist deklarativ und damit Knowledge: es beschreibt Designhaltung, Designsystem und Interaktionsmuster. Die Sozialisierung des Coding-Agenten auf der ästhetischen Schicht ist ein Lese-Effekt, der entsteht, wenn ein Action-Dokument (typischerweise `CLAUDE.md`) auf das `design.md` verweist und die imperativen Designprinzipien dort führt. Knowledge bleibt Knowledge, Action bleibt Action; die ästhetische Steuerung kommt aus der Komposition zweier Dokumente, nicht aus einem Hybridtyp.
 
 Die Klassifikation ist analytisch, nicht rigide, und wird nicht im Frontmatter geführt. Sie liefert ein Diagnoseraster: Output inhaltlich falsch → Knowledge prüfen. Output formal falsch → Action prüfen. Entscheidungslogik unklar → Process prüfen.
 
 ## Lese-Heuristik (Funktion → Typ → Diagnose)
 
-Statt eines `type:`-Feldes im Frontmatter trägt die Funktion eines Dokuments den Typ implizit. Die folgende Heuristik erlaubt einem Agenten, ohne Frontmatter-Lookup zu entscheiden, welches Dokument er bei welchem Fehlerbild zuerst prüft. Die Heuristik verbindet die Funktion mit typischen Dateinamen — wenn ein Repo andere Dateinamen führt, gilt die Funktion, nicht der Name.
+Statt eines `type:`-Feldes im Frontmatter trägt die Funktion eines Dokuments den Typ implizit. Die folgende Heuristik erlaubt einem Agenten, ohne Frontmatter-Lookup zu entscheiden, welches Dokument er bei welchem Fehlerbild zuerst prüft. Die Heuristik verbindet die Funktion mit typischen Dateinamen; wenn ein Repo andere Dateinamen führt, gilt die Funktion, nicht der Name.
 
 | Funktion | Typ | Typische Dateinamen | Bei welchem Fehlerbild zuerst prüfen |
 |---|---|---|---|
@@ -162,21 +162,21 @@ Das Frontmatter folgt einem reduzierten Pflichtkern und zwei optionalen Schichte
 
 ### Zur `version:`-Semantik
 
-Der Refactor in HerData (`13f9880`) führt `version: 0.2` durchgängig in allen acht Dokumenten — gleicher Wert über die ganze Wissensbasis hinweg. Damit ist `version:` nicht dokument-individuell zu verstehen, sondern als Repo-weite Schema-Version: alle Dokumente werden gemeinsam auf eine Stufe geliftet, und der Wert markiert den Refactor-Stand. Bei jedem Knowledge-Vault-Refactor wird die Version repo-weit erhöht.
+Der Refactor in HerData (`13f9880`) führt `version: 0.2` durchgängig in allen acht Dokumenten, gleicher Wert über die ganze Wissensbasis hinweg. Damit ist `version:` nicht dokument-individuell zu verstehen, sondern als Repo-weite Schema-Version: alle Dokumente werden gemeinsam auf eine Stufe geliftet, und der Wert markiert den Refactor-Stand. Bei jedem Knowledge-Vault-Refactor wird die Version repo-weit erhöht.
 
 ### Zur `knowledge-sources:`-Semantik
 
 `knowledge-sources` ist das Strukturmerkmal, das Promptotyping-Knowledge-Documents von generischen READMEs unterscheidet. Es macht das Dokument LOD-anschlussfähig: Jede aufgelistete Quelle ist durch eine URI eindeutig identifiziert. Die zweite Ebene gruppiert nach Quellentyp, die dritte Ebene listet Label und URI.
 
-Selektive Verwendung. Im HerData-Refactor wird `knowledge-sources:` nur in `project.md`, `data.md` und `architecture.md` geführt — also dort, wo externe Anschlüsse die inhaltliche Substanz tragen. In `design.md`, `decisions.md`, `features.md` und `JOURNAL.md` fehlt es bewusst. Diese Selektivität ist die korrekte Praxis: Das Feld gehört dort hin, wo es trägt, nicht überall.
+Selektive Verwendung. Im HerData-Refactor wird `knowledge-sources:` nur in `project.md`, `data.md` und `architecture.md` geführt, also dort, wo externe Anschlüsse die inhaltliche Substanz tragen. In `design.md`, `decisions.md`, `features.md` und `JOURNAL.md` fehlt es bewusst. Diese Selektivität ist die korrekte Praxis: Das Feld gehört dort hin, wo es trägt, nicht überall.
 
 ### Zur `topics:`-Semantik
 
-`topics` ist das Feld, in dem ein Dokument seine Wissensfelder benennt — die Felder, in denen ein Coding-Agent oder Reviewer beim Lesen und Befüllen kontextuell verortet sein soll. Anders als `tags`, die ein Dokument klassifizieren, richten Topics den Lesekontext aus: sie sagen dem Agenten "in dieser Wissensumgebung lies und arbeite", nicht "so ist dieses Dokument zu sortieren".
+`topics` ist das Feld, in dem ein Dokument seine Wissensfelder benennt, also die Felder, in denen ein Coding-Agent oder Reviewer beim Lesen und Befüllen kontextuell verortet sein soll. Anders als `tags`, die ein Dokument klassifizieren, richten Topics den Lesekontext aus: sie sagen dem Agenten "in dieser Wissensumgebung lies und arbeite", nicht "so ist dieses Dokument zu sortieren".
 
 Topics werden als Wikilinks zu Vault-Konzepten geschrieben, nicht als Strings. Damit ist die Verlinkung in den Vault-Wissensbestand explizit: ein `design.md` mit `topics: ["[[Information Visualisation]]", "[[Scholar-Centered Design]]"]` schickt den Agenten beim UI-Design-Reasoning in genau diese Konzeptdokumente, statt generische UI-Patterns zu aktivieren. Repos ohne Vault-Spiegel können die Wikilinks als reine Kennungen behandeln; bei Vault-Synchronisation lösen sie sich auf.
 
-Vokabular ist projekt-frei. Eine konvention-weit kontrollierte Topic-Liste gibt es nicht — jedes Repo wählt seine Topics aus dem eigenen Wissensumfeld. Konvention nur: kebab-case oder Capital Case wie der Vault-Dokument-Name.
+Vokabular ist projekt-frei. Eine konvention-weit kontrollierte Topic-Liste gibt es nicht; jedes Repo wählt seine Topics aus dem eigenen Wissensumfeld. Konvention nur: kebab-case oder Capital Case wie der Vault-Dokument-Name.
 
 Verbindlichkeit ist optional. Topics werden geführt, wo ein klares Wissensfeld relevant ist (Datenmodellierung, Information Visualisation, Requirements Engineering); sie entfallen, wo das Dokument keine domänen-thematische Verortung trägt (`INDEX.md`, `journal.md` typischerweise ohne Topics).
 
@@ -203,23 +203,23 @@ Promptotyping Documents folgen dem Distillation-Prinzip aus dem Methoden-Paper: 
 
 Beim Aufsetzen eines neuen Promptotyping-Repos:
 
-1. Funktionen prüfen — welche der oben gelisteten Funktionen sind für dieses Projekt relevant (Triggerkriterium pro Funktion anwenden)?
-2. Funktionen auf Dokumente abbilden — kleine Projekte fassen mehrere Funktionen in einem Dokument zusammen, große Projekte spalten eine Funktion in mehrere Dokumente.
+1. Funktionen prüfen: welche der oben gelisteten Funktionen sind für dieses Projekt relevant (Triggerkriterium pro Funktion anwenden)?
+2. Funktionen auf Dokumente abbilden: kleine Projekte fassen mehrere Funktionen in einem Dokument zusammen, große Projekte spalten eine Funktion in mehrere Dokumente.
 3. Pro Dokument den passenden Template-Block aus dem Vorlagen-Katalog kopieren und befüllen. Wo keine Vorlage existiert, dient die Konvention als alleinige Richtschnur.
 
-Beim Refactoring eines Knowledge-Ordners — Checkliste:
+Beim Refactoring eines Knowledge-Ordners, Checkliste:
 
 - Trägt jedes Dokument den Pflichtkern (`title, project, method, status, created, updated`)?
 - Ist `version:` repo-weit konsistent?
 - Sind verschachtelte Felder (`project:`, `method:`, `knowledge-sources:`) sauber strukturiert (kein flaches `method-url:` etc.)?
-- Wird `knowledge-sources:` selektiv eingesetzt — dort, wo externe Anschlüsse tragen, sonst weggelassen?
+- Wird `knowledge-sources:` selektiv eingesetzt, dort, wo externe Anschlüsse tragen, sonst weggelassen?
 - Sind die drei Strukturprinzipien (Trennung, Standards-im-Hauptteil, negative Selbstdefinition) im Dokument erkennbar?
 
 ## Anmerkung der Site (2026-06-10)
 
 Dieser Abschnitt ist eine Ergänzung der Site, nicht Teil der Vault-Konvention v0.1. Er klärt, wie die Vorlagen-Adressen für Maschinen und für Menschen aufzulösen sind.
 
-Für Maschinen — Coding-Agenten, die per HTTP ohne JavaScript-Ausführung abrufen — ist die kanonische Abrufform jeder Vorlage die statische Markdown-URL unter `_content/`. Sie liefert den rohen Markdown-Text direkt aus dem GitHub-Pages-Repo-Root, ohne dass das Single-Page-JavaScript der Site laufen muss. Muster:
+Für Maschinen (Coding-Agenten, die per HTTP ohne JavaScript-Ausführung abrufen) ist die kanonische Abrufform jeder Vorlage die statische Markdown-URL unter `_content/`. Sie liefert den rohen Markdown-Text direkt aus dem GitHub-Pages-Repo-Root, ohne dass das Single-Page-JavaScript der Site laufen muss. Muster:
 
 ```
 https://dhcraft.org/Promptotyping/_content/promptotyping-document/{slug}.md

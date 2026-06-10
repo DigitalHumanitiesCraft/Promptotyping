@@ -16,9 +16,9 @@ Diese Vorlage strukturiert das Substanz-Dokument einer Promptotyping-Wissensbasi
 
 Die Vorlage trägt für jedes Promptotyping-Repo, weil die Substanz-Funktion in der [Konvention Promptotyping Documents](#konvention-v0.1) als immer-relevant geführt wird. Bei sehr kleinen Projekten kann sie in `project.md` integriert werden.
 
-Spaltung als Norm. Die Praxis in untersuchten Repos zeigt, dass größere Projekte die Substanz-Funktion regelmäßig in mehrere Dokumente aufteilen — `requirements.md`, `features.md`, `decisions.md` plus thematische Vertiefungen wie `analyse.md` oder `exploration.md`. Diese Spaltung ist nicht falsch, sondern Reaktion auf die Größe der Substanz. Diese Vorlage beschreibt das Idealbild der Konsolidierung in einer `specification.md`; bei der Anwendung in einem realen Repo entscheidet die Projektgröße, ob konsolidiert oder gespalten wird. Die Strukturprinzipien und das Frontmatter-Schema gelten dann pro Datei.
+Spaltung als Norm. Die Praxis in untersuchten Repos zeigt, dass größere Projekte die Substanz-Funktion regelmäßig in mehrere Dokumente aufteilen: `requirements.md`, `features.md`, `decisions.md` plus thematische Vertiefungen wie `analyse.md` oder `exploration.md`. Diese Spaltung ist nicht falsch, sondern Reaktion auf die Größe der Substanz. Diese Vorlage beschreibt das Idealbild der Konsolidierung in einer `specification.md`; bei der Anwendung in einem realen Repo entscheidet die Projektgröße, ob konsolidiert oder gespalten wird. Die Strukturprinzipien und das Frontmatter-Schema gelten dann pro Datei.
 
-Anwendungsszenarien sind integriert. User Stories aus Anwender-Perspektive im Format „Als [Rolle], die …, will ich …, damit …" gehören seit der Konventionsänderung 2026-05-30 als eigene Sektion (Epics plus User Stories) in `specification.md`. Eine separate `user-stories.md` (siehe [Vorlage User Stories](#promptotyping-document-user-stories)) ist die dokumentierte Ausnahme für große Projekte — typischerweise Editionsprojekte —, deren Substanz-Funktion ohnehin gespalten wird; in dem Fall gelten die Strukturprinzipien der Vorlage User Stories für die ausgelagerte Datei.
+Anwendungsszenarien sind integriert. User Stories aus Anwender-Perspektive im Format „Als [Rolle], die …, will ich …, damit …" gehören seit der Konventionsänderung 2026-05-30 als eigene Sektion (Epics plus User Stories) in `specification.md`. Eine separate `user-stories.md` (siehe [Vorlage User Stories](#promptotyping-document-user-stories)) ist die dokumentierte Ausnahme für große Projekte (typischerweise Editionsprojekte), deren Substanz-Funktion ohnehin gespalten wird; in dem Fall gelten die Strukturprinzipien der Vorlage User Stories für die ausgelagerte Datei.
 
 ## Funktion des Dokuments
 
@@ -34,7 +34,7 @@ Erstens trennen die Sektionen nach Aktualisierungsrhythmus. Anforderungen sind s
 
 Zweitens ist jede Entscheidung viergliedrig: Kontext, Wahl, Begründung, Effekt. Eine Entscheidung ohne Begründung ist eine Annahme; eine ohne Effekt-Beobachtung ist eine Behauptung. Das ADR-Format (Architecture Decision Record) ist die etablierte Form für diese Viergliedrigkeit; sie wird hier auf alle Decisions angewandt, nicht nur auf Architekturentscheidungen.
 
-Drittens werden Decisions nicht überschrieben. Wenn eine Entscheidung revidiert wird, bekommt sie einen neuen Eintrag, der auf die alte verweist. Die alte bleibt sichtbar, weil ihr Kontext und ihre Begründung weiterhin Teil der Projektgeschichte sind. Diese Regel teilt sich das Dokument mit dem Journal — beide tragen historische Stände, statt sie zu ersetzen.
+Drittens werden Decisions nicht überschrieben. Wenn eine Entscheidung revidiert wird, bekommt sie einen neuen Eintrag, der auf die alte verweist. Die alte bleibt sichtbar, weil ihr Kontext und ihre Begründung weiterhin Teil der Projektgeschichte sind. Diese Regel teilt sich das Dokument mit dem Journal: beide tragen historische Stände, statt sie zu ersetzen.
 
 ## Frontmatter-Schema
 
@@ -62,11 +62,11 @@ Funktion: dokumentieren, wer das System wie und warum nutzt. Inhalt: Epics als t
 
 ### Funktionsumfang
 
-Funktion: die aktuelle Gestalt des Systems beschreiben. Inhalt: pro Ansicht oder Modul Zweck, Datengrundlage, Interaktion, Grenzen — vier Felder, die jedes Feature in derselben Form vergleichbar machen. Reihenfolge der Features folgt der Anwendungslogik (Einstieg, Hauptansichten, Detailansichten, Sonderansichten), nicht alphabetisch. Diese Sektion wird pro Release refaktoriert.
+Funktion: die aktuelle Gestalt des Systems beschreiben. Inhalt: pro Ansicht oder Modul Zweck, Datengrundlage, Interaktion, Grenzen, vier Felder, die jedes Feature in derselben Form vergleichbar machen. Reihenfolge der Features folgt der Anwendungslogik (Einstieg, Hauptansichten, Detailansichten, Sonderansichten), nicht alphabetisch. Diese Sektion wird pro Release refaktoriert.
 
 ### Entscheidungen
 
-Funktion: die Designentscheidungen mit Kontext, Wahl, Begründung, Effekt festhalten. Inhalt: ADR-artige Einträge, monoton wachsend, neueste oben oder neueste unten — entscheidend ist Konsistenz innerhalb des Dokuments. Pro Eintrag eine Überschrift mit Identifier (`### ADR-007 Akzent-Farbe von Forest Green auf Academic Blue`) und vier Felder. Bei Revision wird ein neuer Eintrag mit Verweis angelegt; der alte bleibt stehen.
+Funktion: die Designentscheidungen mit Kontext, Wahl, Begründung, Effekt festhalten. Inhalt: ADR-artige Einträge, monoton wachsend, neueste oben oder neueste unten; entscheidend ist Konsistenz innerhalb des Dokuments. Pro Eintrag eine Überschrift mit Identifier (`### ADR-007 Akzent-Farbe von Forest Green auf Academic Blue`) und vier Felder. Bei Revision wird ein neuer Eintrag mit Verweis angelegt; der alte bleibt stehen.
 
 Pro Entscheidung:
 
@@ -191,15 +191,15 @@ Effekt. [Was wurde seitdem beobachtet.]
 
 ## Anwendung als Prompt-Template
 
-Strukturanker beim Aufsetzen der Substanz-Dokumentation. Anforderungen entstehen früh — typischerweise in der Preparation- und Exploration-Phase aus Scholar-Centered-Design-Sessions oder Requirements-Engineering. Funktionsumfang füllt sich iterativ während der Implementation. Entscheidungen werden in dem Moment eingetragen, in dem sie getroffen werden, nicht nachträglich rekonstruiert (siehe Glossar-Eintrag Critical-Expert-in-the-Loop).
+Strukturanker beim Aufsetzen der Substanz-Dokumentation. Anforderungen entstehen früh, typischerweise in der Preparation- und Exploration-Phase aus Scholar-Centered-Design-Sessions oder Requirements-Engineering. Funktionsumfang füllt sich iterativ während der Implementation. Entscheidungen werden in dem Moment eingetragen, in dem sie getroffen werden, nicht nachträglich rekonstruiert (siehe Glossar-Eintrag Critical-Expert-in-the-Loop).
 
 Review-Folie für eine bestehende Specification. Ein vorhandenes `specification.md` (oder die getrennten Dateien `requirements.md`, `features.md`, `decisions.md`) wird gegen die Vorlage gehalten, um zu prüfen, ob die drei Sektionen sauber getrennt sind, ob jede Entscheidung viergliedrig ist (Kontext, Wahl, Begründung, Effekt), ob revidierte Decisions als neue Einträge mit Verweis stehen statt als Edits am alten, und ob keine Architektur- oder Designdetails hineingewachsen sind.
 
 ## Beispiel
 
-HerData hat die früher getrennten Dateien `features.md` und `decisions.md` in eine konsolidierte `specification.md` überführt — mit Drift zwischen den Dateien als dokumentiertem Grund. Die Entscheidungs-Sektion arbeitet mit dem viergliedrigen Schema "Kontext, Wahl, Begründung, Effekt"; ein Beispiel ist die Akzent-Farbe-Entscheidung, die als ADR den Wechsel von Forest Green auf Academic Blue mit Konflikt-Begründung dokumentiert. HerData ist damit der Referenzfall der Konsolidierungs-Norm.
+HerData hat die früher getrennten Dateien `features.md` und `decisions.md` in eine konsolidierte `specification.md` überführt, mit Drift zwischen den Dateien als dokumentiertem Grund. Die Entscheidungs-Sektion arbeitet mit dem viergliedrigen Schema "Kontext, Wahl, Begründung, Effekt"; ein Beispiel ist die Akzent-Farbe-Entscheidung, die als ADR den Wechsel von Forest Green auf Academic Blue mit Konflikt-Begründung dokumentiert. HerData ist damit der Referenzfall der Konsolidierungs-Norm.
 
-sugw-Edition hat das frühere `requirements.md` ebenfalls in `specification.md` aufgehen lassen, führt aber die Anwendungsszenarien weiterhin als separate `knowledge/user-stories.md` mit Ableitung — der Referenzfall für die dokumentierte Ausnahme der ausgelagerten Story-Datei (siehe [Vorlage User Stories](#promptotyping-document-user-stories), Konventionsänderung 2026-05-30). Beide Beispiele gegen die Repos verifiziert am 2026-06-09.
+sugw-Edition hat das frühere `requirements.md` ebenfalls in `specification.md` aufgehen lassen, führt aber die Anwendungsszenarien weiterhin als separate `knowledge/user-stories.md` mit Ableitung, der Referenzfall für die dokumentierte Ausnahme der ausgelagerten Story-Datei (siehe [Vorlage User Stories](#promptotyping-document-user-stories), Konventionsänderung 2026-05-30). Beide Beispiele gegen die Repos verifiziert am 2026-06-09.
 
 ## Begriffe
 
