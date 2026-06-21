@@ -296,3 +296,16 @@ Operator-Review-Eingriffe umgesetzt, JS syntaxgeprüft (node --check), case-stud
 
 1. Operator: Sichtprüfung im Browser (Header sticky, Anker-Offset, alle sechs Videos, mobile Nav), dann Commit und Push auf main
 2. Logo-Optimierung (1.1 MB PNG) weiterhin offen
+
+## 2026-06-21 — Logo-Optimierung (autonome Politur in ruhender Lane)
+
+Die order-promptotyping hat die eine buildbare Politur freigegeben: die Optimierung des 1.1-MB-PNG-Logos und seiner og:image-Referenz, reversibel und intern, autonom erledigbar. Umgesetzt:
+
+- **Befund.** `assets/promptotyping-logo.png` war 1.154.138 B, 1024×1024 RGBA, 56.457 Unique-Colors und 102 Alpha-Stufen (Gradient-Flammen, weiche Kanten). Eine Datei bedient zwei Rollen: og:image (1024²) und die `.vorlagen-icon` im Vorlagen-Kopf, die per CSS nur 100px breit angezeigt wird (`style.css:827`).
+- **Kandidatenmessung.** Fünf Varianten erzeugt und gegen das Original per MAE (mittlerer Absolutfehler je Kanal, 0–255) gemessen: Lossless-RGBA 1.060.733 B / MAE 0; Quant256-FASTOCTREE-1024 123.268 B / MAE 0,94; Quant256-600 40.625 B / MAE 0,95 (vs. herunterskaliert); WebP-q90-1024 157.076 B / MAE 9,35; WebP-lossless 731.562 B / MAE 0.
+- **Entscheidung.** Quant256-FASTOCTREE @1024 mit Floyd-Steinberg-Dithering, in-place gespeichert. 89 % kleiner (1.154.138 → 123.268 B) bei MAE 0,94, visuell verifiziert (Read des Kandidaten: kein Banding, scharfe Kanten, Flammen-Gradienten erhalten). Begründung aus der Persona: PNG bleibt PNG (og:image-Crawler-Kompatibilität maximal), Dimension bleibt 1024² (kein Auflösungsverlust für og oder Icon-Retina), Dateiname und Pfad bleiben (alle drei Referenzen — index.html, 404.html, app.js:669 — bleiben gültig, keine Markup-Migration). Downscale auf 600² und WebP verworfen: ersteres senkt extern sichtbare og-Auflösung, letzteres ist für og:image bei manchen Crawlern unsicher und hatte höheren Fehler.
+- **og:image-Referenz.** In index.html und 404.html die technischen Deskriptoren `og:image:type` (image/png), `og:image:width` (1024) und `og:image:height` (1024) ergänzt — Crawler rendern Karten zuverlässiger und ohne Nachladen der Maße. `og:image:alt` und eine Twitter-Card bewusst nicht gesetzt: das ist Inhalts- bzw. Feature-Scope, gehört in die Wachphase, nicht in eine reversible Politur.
+
+### Stand
+
+Logo-Politur abgeschlossen und nach main gesichert. Lane bleibt ruhend. Weckpunkt unverändert: Operator-Verdikt aus dem CEIL-Review (gespiegelte Inhalte, Phasen-Klassifizierung) und der Browser-/Subpath-Sichtprüfung. Keine weitere substantielle Arbeit bis dahin.
