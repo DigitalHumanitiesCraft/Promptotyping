@@ -48,6 +48,12 @@ Refactor zu interaktivem Paper, Mai bis Juni 2026.
 
 Verlauf in [knowledge/journal.md](knowledge/journal.md).
 
+## Zitation
+
+Pollin, Christopher; Steiner, Christian: Promptotyping. Zenodo. https://doi.org/10.5281/zenodo.14160875 (Concept-DOI, zeigt immer auf die aktuelle Version)
+
+Methodenartikel: Pollin, Christopher: Promptotyping. Zwischen Vibe Coding, Vibe Research und Context Engineering. In: L.I.S.A. Wissenschaftsportal der Gerda Henkel Stiftung, 17.01.2026, https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin
+
 ## Lizenz
 
 Inhalte: CC BY 4.0
