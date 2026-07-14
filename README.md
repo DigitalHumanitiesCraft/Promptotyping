@@ -1,5 +1,7 @@
 # Promptotyping
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14160875.svg)](https://doi.org/10.5281/zenodo.14160875)
+
 Öffentliche Methodik-Site für Promptotyping, eine iterative Context-Engineering-Methode in vier Phasen, um aus Daten und Frontier-LLMs Forschungsartefakte zu erzeugen.
 
 **Live**: https://dhcraft.org/Promptotyping/
