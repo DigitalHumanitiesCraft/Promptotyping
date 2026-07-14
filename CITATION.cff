@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use the Promptotyping method, please cite it as below."
+title: "Promptotyping: Zwischen Vibe Coding, Vibe Research und Context Engineering"
+authors:
+  - family-names: Pollin
+    given-names: Christopher
+    orcid: "https://orcid.org/0000-0002-4879-129X"
+    affiliation: "Digital Humanities Craft OG"
+  - family-names: Steiner
+    given-names: Christian
+    orcid: "https://orcid.org/0000-0002-6658-4622"
+    affiliation: "Digital Humanities Craft OG"
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.14160875
+    description: "Concept DOI, resolves to the latest Zenodo version"
+  - type: url
+    value: "https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin"
+    description: "Published method paper (Pollin 2026, L.I.S.A. Wissenschaftsportal)"
+url: "https://dhcraft.org/Promptotyping/"
+repository-code: "https://github.com/DigitalHumanitiesCraft/Promptotyping"
+keywords:
+  - promptotyping
+  - context engineering
+  - digital humanities
+  - methodology
