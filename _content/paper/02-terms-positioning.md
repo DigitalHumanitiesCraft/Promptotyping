@@ -10,7 +10,8 @@ subsections:
   - { id: 2.3, anchor: konzept-context-rot, title: Context Rot }
   - { id: 2.4, anchor: konzept-co-intelligence-eil, title: Co-Intelligence and the Critical Expert in the Loop }
   - { id: 2.5, anchor: konzept-positioning-related, title: Positioning Against Related Approaches }
-  - { id: 2.6, anchor: konzept-why-now, title: Why Now — The Technical Trajectory }
+  - { id: 2.6, anchor: konzept-genealogy-prism, title: Genealogy — From PRISM to Promptotyping }
+  - { id: 2.7, anchor: konzept-why-now, title: Why Now — The Technical Trajectory }
 ---
 
 # 2. Terms and Positioning
@@ -51,7 +52,17 @@ Promptotyping is not User-Centred Design, though it builds on its outputs. The _
 
 Promptotyping is not Agentic Coding, though it uses agentic coding tools. Multi-agent systems like Claude Code are implementation instruments within the method, not the method itself.
 
-## 2.6 Why Now: The Technical Trajectory
+## 2.6 Genealogy: From PRISM to Promptotyping
+
+Promptotyping has a second lineage, distinct from the tool-building practice that produced the first prototypes (Section 4). Before the method had a name, the author developed PRISM (Parameterized Recursive Insight Synthesis Matrix), a system-prompt framework that forced an LLM into structured pseudo-reasoning — parameterised thinking types set before analysis, a matrix that branched each step into rated alternatives, and a recursive descent into sub-problems.[^prism] PRISM was built in 2024–2025, and it was not designed offline and then tested. It was developed in dialogue with the model it was meant to steer.
+
+That development mode is the actual inheritance. The model functioned simultaneously as the tool being configured, the test environment in which each revision was tried, and the co-author that proposed the next iteration. The author first called this recursive arrangement _Promptseption_; it was later formalised, generalised beyond reasoning prompts, and renamed Promptotyping. The prompt was not the endpoint of the work but a research artifact produced through documented iteration — the same stance that the four phases later made explicit.
+
+The framework itself did not survive the models. PRISM's matrix was an external scaffold for a kind of reasoning that the models of its period could not perform natively; once frontier models acquired built-in extended thinking, the scaffold lost its function as a reasoning amplifier and retained only a secondary role as an output and documentation format. What survived was the process that made it, together with the insight it encoded almost incidentally: that a model's behaviour is configured through the context documents it is given, and that the thinking type, the focus, and the depth are variables set by a document rather than fixed properties of a prompt. This is the direct precursor of _agent socialisation_ (Section 3.1), where a `CLAUDE.md` or `DESIGN.md` configures not a single reasoning pass but an agent's standing disposition across an entire project. The parameterisation of a reasoning mode and the socialisation of a coding agent are the same move at two scales.
+
+[^prism]: The original PRISM specification was developed as a presentation deck (2024–2025) and taught in Pollin, "Advanced Prompt Engineering", LLM Summer School Digital Humanities 2025, Cologne, September 2025 (https://chpollin.github.io/llmdh/).
+
+## 2.7 Why Now: The Technical Trajectory
 
 Promptotyping became viable as a research method because of convergent advances across three dimensions of LLM development, each of which contributes distinct capabilities to the method.
 
