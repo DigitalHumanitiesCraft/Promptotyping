@@ -18,7 +18,7 @@ template:
   version: 0.2
   url: https://dhcraft.org/Promptotyping/promptotyping-document/index
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-index
-related: [project, specification, architecture, design, journal]
+related: [project, specification, architecture, design, journal, plan]
 ---
 
 # INDEX
@@ -27,7 +27,7 @@ Navigation und Begriffslexikon der Wissensbasis dieses Repos. Das Repo `DigitalH
 
 ## Wissensbasis-Inhalt
 
-Sechs Promptotyping-Documents:
+Sieben Promptotyping-Documents:
 
 - **INDEX** (dieses Dokument) — Navigation und Begriffslexikon
 - **[project.md](project.md)** — was die Site werden soll, wer die Adressaten sind, Materialgrundlage, Stand
@@ -35,6 +35,7 @@ Sechs Promptotyping-Documents:
 - **[architecture.md](architecture.md)** — wie die Site technisch gebaut wird: URL-Struktur, Tech-Stack, Modul-Inventar
 - **[design.md](design.md)** — wie die Site aussieht und sich verhält: DHCraft-Designsystem, Side-Panels, Typografie
 - **[journal.md](journal.md)** — chronologischer Verlauf des Refactors
+- **[plan.md](plan.md)** — vorwärts gerichtete Steuerung der Paper-Revision (Genealogie, Standardisierung) und der abgeleiteten Ausgaben (Blogpost, Site-Sektionen, Vault-Abgleich)
 
 Eine `data.md` existiert bewusst nicht. Die Vorlage Datengrundlage trägt für Methoden-Repos nicht; die Materialgrundlage steht in `project.md`. Begründung im Eintrag vom 2026-05-09 in [journal.md](journal.md).
 
@@ -48,6 +49,7 @@ Wer die Wissensbasis zum ersten Mal liest:
 4. **architecture.md** (wie sie technisch gebaut wird)
 5. **design.md** (wie sie aussieht)
 6. **journal.md** (was bisher passiert ist, einschließlich der Vorlagen-Trigger-Korrektur)
+7. **plan.md** (was als Nächstes ansteht: Paper-Revision und abgeleitete Ausgaben)
 
 Wer einen konkreten Aspekt sucht, geht direkt zum entsprechenden Dokument.
 
