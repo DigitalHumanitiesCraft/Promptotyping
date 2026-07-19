@@ -31,11 +31,11 @@ Quellinventar: alle sechs Ursprungs-Quellen plus der neu aufgenommene KE-Master-
 
 ## Offene Fäden
 
-1. **Paper-Session-Arbeit liegt uncommittet im Working Tree** (sechs Paper-Dateien, vier knowledge-Dateien, untracked `_content/paper/00-abstract.md`). Diese Lane hat sie nicht angefasst. Die Paper-Session muss ihre Sektion-6-Straffung abschließen und selbst committen.
+1. **Paper-Revision** ist auf Operator-Anweisung gesichert (Commit `896c2d0`, gepusht): Sektion-4-Zahlenkorrekturen, Genealogie-Umbau 2.6, `00-abstract.md`, Register-Updates. Offen bleibt die Sektion-6-Straffung mit Limitations-Passage; die nächste Paper-Session nimmt sie auf.
 2. **Befunde für die Paper-Session** in `vault/knowledge/state.md` § Open work: Fußnoten-Vorschlag 2.6 auf `prism-prompt-documented-by-january-2025`; der Blogpost 2025-04-24 stellt die Metadatenstandard-Frage nicht, die das 3.3-Narrativ ihm zuschreibt; llmdh-Site nennt „Advanced Prompting Techniques" statt „Advanced Prompt Engineering", datiert 8.–11. September 2025, kein wörtliches „Cologne"; drei Posit-Kandidaten.
 3. **Machine Review** wartet auf Operator-Freigabe des Fremdfamilien-Mechanismus; bis dahin bleibt alles `grounded`.
 4. **Offene Operator-Entscheidungen** E1 (Venue), E2-Rest (Zenodo-DOI fürs PRISM-Deck), E3 (Blogpost-Einstieg), Em-Dash-Register, Fork-Urheber-Nennung, Blog-Paper-Präzisierung.
-5. **Obsidian**: `ACTIVE-WORK.md` ist aktualisiert, liegt aber uncommittet im Obsidian-Repo; Commit gehört in eine Vault-Session. M12 (Atom Promptotyping, Promptotyping MOC, Korrektur des PRISM-Framework-Atoms) braucht ebenfalls eine echte Vault-Session.
+5. **Obsidian**: `ACTIVE-WORK.md` ist aktualisiert, committet und gepusht (`fb83b32` im Obsidian-Repo). Offen bleibt M12 (Atom Promptotyping, Promptotyping MOC, Korrektur des PRISM-Framework-Atoms); das braucht eine echte Vault-Session.
 6. **Ungeklärte Referenz**: die vom Operator erwähnte „Spezifikationsseite, die auf Google Docs angezeigt wird" konnte keinem Artefakt zugeordnet werden; Link oder Titel nachliefern.
 
 ## Der eine nächste Schritt
@@ -44,4 +44,4 @@ Die Paper-Session (oder ihre Nachfolgerin) konsumiert die Open-work-Notizen aus 
 
 ## Geteilt oder gehalten
 
-Geteilt mit der Paper-Lane: `_content/paper/*`, `knowledge/plan.md`, `knowledge/journal.md`, `knowledge/INDEX.md`, `knowledge/verification-paper-figures.md` (alle dort uncommittet, Eigentum der Paper-Lane). Exklusiv dieser Lane: alles unter `vault/`, `PLAN.md` im Root, diese Notiz. Lokal und ungesichert: `vault/_sources/*` (bewusst gitignored, Originale), der Obsidian-Edit.
+Beide Repos stehen sauber (`git status` clean, alles gepusht). Lokal und bewusst ungesichert bleibt nur `vault/_sources/*` (gitignored, Originale, aus den Quellen reproduzierbar).
