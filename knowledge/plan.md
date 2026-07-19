@@ -3,7 +3,7 @@ title: Plan
 project:
   name: Promptotyping Site
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
-status: draft
+status: active
 language: de
 version: 0.3
 created: 2026-07-19
@@ -15,7 +15,7 @@ method:
   url: https://dhcraft.org/Promptotyping/
 template:
   name: Vorlage Plan
-  version: 0.1
+  version: 0.2
   url: https://dhcraft.org/Promptotyping/promptotyping-document/plan
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-plan
 related: [INDEX, specification, journal]
@@ -69,7 +69,7 @@ Fertig bedeutet:
 **Entry-Bedingung:** keine (parallel zu P0 möglich).
 
 - Vollständige Lektüre von `_content/paper/01–07`, Abgleich mit dem Vault-Spiegel (Lesefassung).
-- Delta-Liste gegen die seither entstandenen Bestände: Vorlagen-Katalog und Konvention (Stand der Funktions-Umbenennung), Frontmatter-Befund der Repo-Exploration, FemPrompt-Verifikationsbefunde, PRISM-Genealogie aus dem Vault-Atom.
+- Delta-Liste gegen die seither entstandenen Bestände: Vorlagen-Katalog und Konvention (nach dem Vorlagen-Sweep vom 2026-07-19: englisches Funktionsvokabular, Vorlagen Verification und Integration, erweitertes Status-Vokabular), Frontmatter-Befund der Repo-Exploration, Inhaltsaudit-Befund vom 2026-07-19, FemPrompt-Verifikationsbefunde, PRISM-Genealogie aus dem Vault-Atom.
 - Priorisierung der Deltas nach den zwei Revisionsteilen des Zielbilds; alles Übrige wird als nicht-Gegenstand notiert.
 
 **Exit-Bedingung (M2):** Done when die priorisierte Revisionsliste vorliegt und vom Operator bestätigt ist (Zielbild 1).
@@ -110,7 +110,7 @@ Fertig bedeutet:
 
 **Entry-Bedingung:** M2.
 
-- Erweiterung der Sektion 3.3 (`03-four-phases.md`): Vorlagen-Katalog, reduzierter Frontmatter-Pflichtkern mit empirischer Korrektur-Begründung, `template:`-Feld mit maschinenlesbarer Adresse; Auflösung der Spannung zwischen der Formfreiheit des Blogbeitrags 2025 und dem Katalog über das Open-Catalog-Prinzip.
+- Erweiterung der Sektion 3.3 (`03-four-phases.md`): Vorlagen-Katalog, reduzierter Frontmatter-Pflichtkern mit empirischer Korrektur-Begründung, `template:`-Feld mit maschinenlesbarer Adresse, erweitertes Status-Vokabular und die Promotion der Verifikations-Funktion zur eigenen Vorlage; Auflösung der Spannung zwischen der Formfreiheit des Blogbeitrags 2025 und dem Katalog über das Open-Catalog-Prinzip. Zählbare Katalog-Bestände bleiben gemäß Volatilitäts-Regel draußen, beschrieben wird das Prinzip mit Verweis auf den lebenden Katalog.
 
 **Exit-Bedingung (M6):** Done when die Standardisierungsstufe beschrieben und gegen die Konvention konsistent ist.
 
@@ -161,11 +161,12 @@ Fertig bedeutet:
 
 #### Milestone 11 — Site-Sektionen
 
-**Entry-Bedingung:** M7.
+**Entry-Bedingung:** M7 für die Paper-Folgeänderungen; der Vorlagen-Sweep-Teil ist unabhängig davon vorziehbar.
 
 - `ueberblick.md` und `praxis.md` auf den revidierten Paper-Stand ziehen; die Paper-Sektionen der Site aktualisieren sich über `_content/paper/` mit.
+- Das im Journal (2026-07-19) dokumentierte offene Site-Update zum Vorlagen-Sweep umsetzen: Spiegel und Anker der sechs neuen Vorlagen (Testing, Plan, Report, Domänenwissen, Verification, Integration), englisches Funktionsvokabular in den Spiegeln `konvention` und `ueberblick`, Versionsstände der bestehenden Spiegel, Entwurfs-Kennzeichnung des Action-Layers entfernen (A16). Damit wird auch die `template:`-Adresse dieses Plans auflösbar, die bis dahin auf einen noch nicht gespiegelten Anker zeigt.
 
-**Exit-Bedingung (M11):** Done when die Site konsistent zum revidierten Paper ist (Anforderung A12 der `specification.md`, Cross-Repo-Konsistenz).
+**Exit-Bedingung (M11):** Done when die Site konsistent zum revidierten Paper und zum Vault-Vorlagen-Katalog ist (Anforderungen A3, A12, A16 der `specification.md`).
 
 #### Milestone 12 — Vault-Abgleich
 
@@ -185,7 +186,7 @@ Fertig bedeutet:
 | M3 — Zahlen geprüft | pending | |
 | M4 — Quellen datiert | pending | wartet auf E2 |
 | M5 — Genealogie-Abschnitt | pending | Materialbasis: Vault-Atom PRISM Framework (Stand 2026) |
-| M6 — Standardisierungsstufe | pending | Materialbasis: Konvention Promptotyping Documents (Stand 2026-06-29) |
+| M6 — Standardisierungsstufe | pending | Materialbasis: Konvention Promptotyping Documents (Stand 2026-07-19 nach Vorlagen-Sweep) |
 | M7 — Abstract und Durchsicht | pending | |
 | M8 — Novelty-Recherche | pending | |
 | M9 — Venue-Anpassung | pending | wartet auf E1 |

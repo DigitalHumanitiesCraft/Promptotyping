@@ -327,3 +327,17 @@ Die Wissensbasis stimmt wieder mit Site und Code überein. Offen bleibt das Site
 ### Dead Ends
 
 Keine.
+
+## 2026-07-19 — Plan-Workstream Paper-Revision angelegt
+
+### Ziel der Session
+
+Aus der Vault-Session (Diskussion PRISM-Genealogie, Delegations-These, Projektzuschnitt) den Steuerungs-Workstream für die Paper-Revision in der Wissensbasis verankern.
+
+### Verlauf
+
+`plan.md` nach Vorlage Plan angelegt und im INDEX registriert: Zielbild (additive Revision mit Genealogie- und Standardisierungs-Teil, danach abgeleitete Ausgaben Blogpost, Site, Vault-Abgleich; Grounded Vault und das integrative Vier-Schichten-Paper ausdrücklich ausgeklammert und als eigene Vorhaben geparkt), sieben Phasen mit zwölf Milestones, Status-Tracker, offene Entscheidungen E1–E3. Bei der Verifikation gegen den realen Stand fiel auf, dass der lokale Vault-Klon der Session hinter origin lag; nach dem Fast-Forward zeigte sich der Vorlagen-Sweep vom 2026-07-19 (englisches Funktionsvokabular, Vorlagen Verification und Integration, Status-Vokabular mit `active` und `snapshot`, Vorlage Plan auf 0.2). Das plan.md wurde entsprechend korrigiert: `status: active`, `template: version: 0.2`, Sweep-Stand in M2 und M6, das offene Site-Update zum Sweep als vorziehbarer Teil von M11 übernommen.
+
+### Dead Ends
+
+Die im Promptotyping MOC des Vaults notierten ungemergten `claude/*`-Branches existieren remote nicht mehr; der Sichtungspunkt entfiel (MOC-Korrektur in M12 eingeplant).
