@@ -1,0 +1,13 @@
+Grounded Vault — licensing
+
+This repository is dual-licensed by content area.
+
+1. Documentation, templates and examples (everything except tools/ and tests/)
+   are licensed under Creative Commons Attribution 4.0 International (CC BY 4.0).
+   Full text: https://creativecommons.org/licenses/by/4.0/legalcode
+   Attribution: Digital Humanities Craft, https://dhcraft.org
+
+2. Code in tools/ and tests/ is licensed under the MIT License.
+   Full text: see tools/LICENSE
+
+Copyright (c) 2026 Digital Humanities Craft

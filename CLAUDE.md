@@ -37,10 +37,13 @@ Die Site soll ruhig sein. Konkret bedeutet das beim Coden:
 ├── knowledge/                  # Wissensbasis (Specification)
 ├── _content/                   # Markdown-Inhalte (Paper, Vorlagen, Case Studies, Glossar, Literatur)
 ├── assets/                     # CSS, JS, Vendor, Fonts, Logo
-└── data/                       # JSON-Datenfutter
+├── data/                       # JSON-Datenfutter
+└── vault/                      # Grounded-Vault-Instanz: Provenienz-Schicht unter dem Paper (Operator-Entscheidung 2026-07-19)
 ```
 
 `assets/promptotyping-logo.png` bleibt erhalten. `_content/` und `data/` werden in den Implementierungs-Sprints angelegt.
+
+Der Ordner `vault/` ist eine Instanz des Grounded-Vault-Templates (`DigitalHumanitiesCraft/grounded-vault`) und verankert die tragenden Claims des Papers in `_content/paper/` quellenfest. Für jede Arbeit in `vault/` gilt dessen eigener Action-Layer `vault/CLAUDE.md`; das Python-Werkzeug `vault/tools/validate.py` gehört zum Vault und ist die einzige zulässige Ausnahme von der No-Build-Regel unten (es baut nichts für die Site, es prüft den Vault).
 
 ## Tech-Stack-Regeln
 
