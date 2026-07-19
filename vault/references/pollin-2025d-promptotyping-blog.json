@@ -1,0 +1,25 @@
+[
+  {
+    "id": "pollin-2025d",
+    "type": "post-weblog",
+    "title": "Promptotyping: Von der Idee zur Anwendung",
+    "container-title": "DHCraft Blog",
+    "author": [
+      {
+        "family": "Pollin",
+        "given": "Christopher"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025,
+          4,
+          24
+        ]
+      ]
+    },
+    "URL": "https://dhcraft.org/excellence/blog/Promptotyping/",
+    "language": "de"
+  }
+]
