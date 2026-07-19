@@ -365,3 +365,21 @@ Nicht Teil dieses Updates: die vollständige Neuspiegelung der Bodies der acht �
 ### Dead Ends
 
 Keine.
+
+## 2026-07-19 — Adversariale Verifikation der Sektion-4-Zahlen
+
+### Ziel der Session
+
+Milestone M3 des Plans: jede quantitative Angabe der Paper-Sektion 4 (Tabelle und Insights) gegen die realen Repositorien prüfen, mit Widerlegungsauftrag statt Bestätigungssuche. (Eintrag nachgetragen; die Session hatte das Journal nicht geführt, der Audit vom selben Tag hat die Lücke benannt.)
+
+### Verlauf
+
+Ein unabhängiger Agent prüfte sämtliche Zahlen über lokale Klone, Shallow-Clones und die GitHub-API. Befunde in drei Klassen: bestätigt, zu korrigieren (zehn Posten, nach Abweichungsgröße geordnet), nicht verifizierbar (Erfahrungswerte zu Dauer und Kosten, ein nicht mehr auffindbares Repository). Die Befunde wurden als eigenes Verifikationsdokument `verification-paper-figures.md` festgehalten, damit der Korrekturpass in einer späteren Session laufen kann.
+
+### Ergebnis
+
+Verifikationsdokument committet (2b95587). Die Korrekturen selbst blieben bewusst offen; die Momentaufnahme-Drift dreier weitergewachsener Repos (CorrespExplorer, M³GIM, ZBZ) wurde als editoriale Entscheidung (datieren oder aktualisieren) an den Operator gegeben.
+
+### Dead Ends
+
+Keine.

@@ -29,10 +29,10 @@ Dieser Plan steuert die Revision des Papers in `_content/paper/` zur einreichfä
 
 Fertig bedeutet:
 
-1. Das Paper in `_content/paper/01–07` liegt in revidierter, einreichfähiger Fassung vor. Die Revision ist additiv (Struktur und Argumentation bleiben) und integriert zwei neue Teile: einen Genealogie-Herkunftsabschnitt in Sektion 2 (PRISM als datierter Entstehungsort der Methode, Verschiebung der Prompt-Scaffolds zur dokumentgestützten Delegation) und die Standardisierungsstufe in Sektion 3.3 (funktionsorientierter Vorlagen-Katalog, Frontmatter-Pflichtkern, `template:`-Adressierung als Antwort auf die offene Metadatenstandard-Frage des Blogbeitrags 2025). Der Abstract ist entsprechend aktualisiert.
+1. Das Paper in `_content/paper/01–07` liegt in revidierter, einreichfähiger Fassung vor. Die Revision ist additiv (Struktur und Argumentation bleiben) und integriert zwei neue Teile: einen Genealogie-Herkunftsabschnitt in Sektion 2 (Dissertation als Ursprung der Methode, User Stories zu Interfaces und Mapping von Forschungsdaten und Kontext auf Artefakte; PRISM als Seitenlinie, die die Prozess-Einsicht der Kontextdokument-Konfiguration beiträgt; Operator-Korrektur der ursprünglichen PRISM-als-Entstehungsort-Prämisse am 2026-07-19) und die Standardisierungsstufe in Sektion 3.3 (funktionsorientierter Vorlagen-Katalog, Frontmatter-Pflichtkern, `template:`-Adressierung als Antwort auf die offene Metadatenstandard-Frage des Blogbeitrags 2025). Der Abstract ist entsprechend aktualisiert.
 2. Die tragenden empirischen Behauptungen, insbesondere die Projektangaben der Sektion-4-Tabelle, sind gegen die Repos geprüft; die Neuheitsbehauptungen sind gegen den aktuellen Diskurs (Context Engineering, agentische Methoden) recherchiert, und außenwirksame Claims stehen nur in der Form im Text, die die Prüfung lizenziert.
 3. Aus dem revidierten Paper sind die abgeleiteten Ausgaben erzeugt: ein deutscher Blogpost und die aktualisierten nicht-Paper-Sektionen der Site (`ueberblick.md`, `praxis.md`); das Vault-Atom [[Promptotyping]] und das Promptotyping MOC sind auf den Paper-Stand gezogen.
-4. Ausdrücklich nicht Gegenstand: Grounded Vault (eigenes Paper-Vorhaben, als Ideen-Dokument im Vault geparkt), das integrative Vier-Schichten-Paper (ebenfalls geparkt), eine Grounded-Vault-Instanziierung für die Paper-Arbeit, Repo-Hygiene jenseits der quellenrelevanten Bestände.
+4. Ausdrücklich nicht Gegenstand: das Grounded-Vault-Paper (eigenes Vorhaben, als Ideen-Dokument im Vault geparkt), das integrative Vier-Schichten-Paper (ebenfalls geparkt), Repo-Hygiene jenseits der quellenrelevanten Bestände. Die Grounded-Vault-Instanziierung für die Paper-Arbeit war hier ursprünglich ebenfalls ausgeschlossen; auf Operator-Anweisung vom 2026-07-19 ist sie umgesetzt und lebt als `vault/` im Repo-Root (Begründung und Parameter in `vault/knowledge/`).
 
 ## Phasen und Milestones
 
@@ -102,7 +102,7 @@ Fertig bedeutet:
 
 **Entry-Bedingung:** M2 und M4.
 
-- Herkunftsabschnitt in Sektion 2 (`02-terms-positioning.md`): PRISM als im LLM-Dialog entwickeltes Reasoning-Scaffold, Funktionsverlust durch native Reasoning-Modelle, Überleben des dialogisch-dokumentierenden Herstellungsprozesses als Promptotyping; die Einsicht, dass Modellverhalten über Kontextdokumente konfiguriert wird, als Kontinuitätslinie.
+- Herkunftsabschnitt in Sektion 2 (`02-terms-positioning.md`): Dissertation als Ursprung (User Stories zu Interfaces, Mapping von Forschungsdaten und Kontext auf Artefakte, Anschluss an 2.5); PRISM als Seitenlinie, im LLM-Dialog entwickeltes Reasoning-Scaffold mit Funktionsverlust durch native Reasoning-Modelle; die Einsicht, dass Modellverhalten über Kontextdokumente konfiguriert wird, als Beitrag der Seitenlinie. Namensgenese unabhängig von PRISM; die Promptseption-Umbenennungs-Erzählung ist gestrichen (Operator-Korrektur 2026-07-19).
 
 **Exit-Bedingung (M5):** Done when der Abschnitt eingepasst ist, ohne bestehende Argumentation umzubauen (Additivitäts-Vorgabe des Zielbilds).
 
@@ -185,7 +185,7 @@ Fertig bedeutet:
 | M2 — Delta-Liste | pending | |
 | M3 — Zahlen geprüft | pending | |
 | M4 — Quellen datiert | pending | wartet auf E2 |
-| M5 — Genealogie-Abschnitt | pending | Materialbasis: Vault-Atom PRISM Framework (Stand 2026) |
+| M5 — Genealogie-Abschnitt | in progress | Abschnitt geschrieben und am 2026-07-19 auf die korrigierte Gewichtung umgebaut (Dissertation Ursprung, PRISM Seitenlinie); wartet auf M4-Datierung. Achtung: das Vault-Atom PRISM Framework trägt die alte Übergewichtung, Korrektur in M12 |
 | M6 — Standardisierungsstufe | pending | Materialbasis: Konvention Promptotyping Documents (Stand 2026-07-19 nach Vorlagen-Sweep) |
 | M7 — Abstract und Durchsicht | pending | |
 | M8 — Novelty-Recherche | pending | |
@@ -199,7 +199,7 @@ Legende: completed, in progress, pending.
 ## Offene Entscheidungen und Abhängigkeiten
 
 - **E1 — Venue und finale Sprachprüfung.** Zieljournal oder Konferenz für die englische Einreichfassung. Decide before M9; bis dahin blockiert nur P5.
-- **E2 — Foliensatz-Auswahl.** Welche Foliensätze als Genealogie-Quellen ins Korpus gehen (Kandidaten: GM-DH-Workshopreihe, LLM Summer School, AGKI-Webinare, slides-generator-Decks) und wo das PRISM-Original-Deck datierbar vorliegt. Decide before M4.
+- **E2 — Foliensatz-Auswahl.** Nach dem Quellen-Inventar vom 2026-07-19 verengt: AGKI-Webinare und slides-generator-Decks scheiden aus (Operator bestätigt); GM-DH (`prompts/PRISM.md`, Commit 2025-01-21) und LLM Summer School (Köln, September 2025) stehen als Belege fest. Offen ist nur noch, ob das PRISM-Original-Deck einen Zenodo-DOI-Snapshot bekommt oder die GM-DH-Commit-Datierung genügt; durch die Genealogie-Umgewichtung trägt die Dissertation (Pollin 2025b) den Ursprungs-Claim, die PRISM-Datierung nur noch die Seitenlinie. Decide before M4.
 - **E3 — Blogpost-Einstieg.** Ob das Alltags-Generalisierungsbeispiel (Liedkomposition) den Blogpost eröffnet und ob die Diskussionssektion des Papers die Generalisierbarkeit in einem Satz erwähnt. Decide before M10; die Paper-Erwähnung before M7.
 - **Harte Abhängigkeiten.** M5 braucht M4 (keine Genealogie-Behauptung ohne datierte Quelle). M8 folgt auf M7, damit die Recherche gegen den revidierten Text läuft. M10 bis M12 brauchen M7, aber nicht M9; die abgeleiteten Ausgaben dürfen vor der Einreichung erscheinen, sofern der Operator es nicht anders entscheidet.
 

@@ -1,11 +1,23 @@
 ---
 title: Verification of Section 4 Figures
-project: Promptotyping
-method: Promptotyping
-status: complete
+project:
+  name: Promptotyping Site
+  repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
+status: snapshot
+language: en
+version: 0.3
 created: 2026-07-19
 updated: 2026-07-19
-template: https://dhcraft.org/Promptotyping/_content/promptotyping-document/verification.md
+authors: [Christopher Pollin]
+method:
+  name: Promptotyping
+  url: https://dhcraft.org/Promptotyping/
+template:
+  name: Vorlage Verification
+  version: 0.1
+  url: https://dhcraft.org/Promptotyping/promptotyping-document/verification
+  alias: https://dhcraft.org/Promptotyping/#promptotyping-document-verification
+related: [plan, journal]
 ---
 
 # Verification of Section 4 Figures
@@ -39,6 +51,10 @@ Ordered by size of deviation. Where a figure appears in both the table and an in
 ## Method note
 
 Several deviations are snapshot drift, the paper describes an earlier state of still-growing repos (CorrespExplorer, M³GIM, ZBZ commits). For those, dating the figure is as valid as updating it; the choice is editorial and should be made consistently across Section 4.
+
+## Grenzen
+
+This is a scoped snapshot verification (a findings register for one correction pass), narrower than the full Verification template it references. Its limits: repository states were read on 2026-07-19 via local clones, shallow clones, and the GitHub API, so later growth is invisible to it; test figures were counted as test functions in source, without executing a pytest collection; duration and cost figures are experiential values outside deterministic checking; the verification ran as a single adversarial agent without a second, independent pass.
 
 ## Related
 

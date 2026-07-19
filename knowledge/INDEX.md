@@ -18,7 +18,7 @@ template:
   version: 0.2
   url: https://dhcraft.org/Promptotyping/promptotyping-document/index
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-index
-related: [project, specification, architecture, design, journal, plan]
+related: [project, specification, architecture, design, journal, plan, verification-paper-figures]
 ---
 
 # INDEX
@@ -27,7 +27,7 @@ Navigation und Begriffslexikon der Wissensbasis dieses Repos. Das Repo `DigitalH
 
 ## Wissensbasis-Inhalt
 
-Sieben Promptotyping-Documents:
+Acht Promptotyping-Documents:
 
 - **INDEX** (dieses Dokument) — Navigation und Begriffslexikon
 - **[project.md](project.md)** — was die Site werden soll, wer die Adressaten sind, Materialgrundlage, Stand
@@ -36,6 +36,7 @@ Sieben Promptotyping-Documents:
 - **[design.md](design.md)** — wie die Site aussieht und sich verhält: DHCraft-Designsystem, Side-Panels, Typografie
 - **[journal.md](journal.md)** — chronologischer Verlauf des Refactors
 - **[plan.md](plan.md)** — vorwärts gerichtete Steuerung der Paper-Revision (Genealogie, Standardisierung) und der abgeleiteten Ausgaben (Blogpost, Site-Sektionen, Vault-Abgleich)
+- **[verification-paper-figures.md](verification-paper-figures.md)** — datierter Verifikationsbefund (Snapshot) zu den quantitativen Angaben der Paper-Sektion 4; nach vollständiger Einarbeitung vom Paper abgelöst
 
 Eine `data.md` existiert bewusst nicht. Die Vorlage Datengrundlage trägt für Methoden-Repos nicht; die Materialgrundlage steht in `project.md`. Begründung im Eintrag vom 2026-05-09 in [journal.md](journal.md).
 
@@ -51,7 +52,7 @@ Wer die Wissensbasis zum ersten Mal liest:
 6. **journal.md** (was bisher passiert ist, einschließlich der Vorlagen-Trigger-Korrektur)
 7. **plan.md** (was als Nächstes ansteht: Paper-Revision und abgeleitete Ausgaben)
 
-Wer einen konkreten Aspekt sucht, geht direkt zum entsprechenden Dokument.
+Wer einen konkreten Aspekt sucht, geht direkt zum entsprechenden Dokument. Das Verifikationsdokument `verification-paper-figures.md` steht als datierter Befund außerhalb dieser Lesekette; es wird aus dem Plan (Milestone M3) heraus konsultiert.
 
 ## Begriffslexikon
 
