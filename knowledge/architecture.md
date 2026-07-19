@@ -3,11 +3,11 @@ title: Architecture
 project:
   name: Promptotyping Site
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
-status: active
+status: complete
 language: de
-version: 0.2
+version: 0.3
 created: 2026-05-09
-updated: 2026-05-09
+updated: 2026-07-19
 authors: [Christopher Pollin]
 generated-with: Claude Code mit Claude Opus 4.7
 method:
@@ -15,7 +15,7 @@ method:
   url: https://dhcraft.org/Promptotyping/
 template:
   name: Vorlage Architecture
-  version: 0.1
+  version: 0.3
   url: https://dhcraft.org/Promptotyping/promptotyping-document/architecture
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-architecture
 topics: ["[[Web Standards]]", "[[Static Sites]]", "[[GitHub Pages]]"]
@@ -48,13 +48,13 @@ Bauplan der Site. Vanilla Tech-Stack, GitHub-Pages-natives Hosting, Single-Page 
 ## Komponenten
 
 ### `index.html`
-Einstiegspunkt. Lädt CSS, vendored JS, Custom JS. Enthält Skeleton mit drei Spalten (Inhaltsverzeichnis links, Lesefluss zentral, Side-Panel rechts) plus Phasen-Provenance-Lane als CSS-Schicht. Lädt initial das Paper aus `_content/paper/`.
+Einstiegspunkt. Lädt CSS, vendored JS, Custom JS. Enthält Skeleton mit drei Spalten (Inhaltsverzeichnis links, Lesefluss zentral, Side-Panel rechts). Lädt initial das Paper aus `_content/paper/`.
 
 ### `404.html`
 Subpath-Routing-Fallback. Identische Struktur wie `index.html`, aber mit zusätzlichem JavaScript am Anfang, das den angefragten Pfad parst und auf den entsprechenden Anker rewritet. Details in Sektion *URL-Routing*.
 
 ### `assets/css/style.css`
-DHCraft-Designsystem. CSS-Variablen für Farben, Schriften, Spacings. Phasen-Lane-CSS (`.phase-preparation` etc.). Side-Panel-Layout (transform-basierter Slider). Mobile-Breakpoints.
+DHCraft-Designsystem. CSS-Variablen für Farben, Schriften, Spacings. Side-Panel-Layout (transform-basierter Slider). Mobile-Breakpoints.
 
 ### `assets/js/app.js`
 Hauptlogik. Beim `DOMContentLoaded`:
@@ -68,7 +68,7 @@ Hauptlogik. Beim `DOMContentLoaded`:
 Paste-Live-Render-Modul in der Vorlagen-Sektion. Textarea für ganzen YAML-Frontmatter-Block, nicht nur die URL. Beim Eingeben (debounced, 300ms): js-yaml parst, extrahiert `template.url` (oder `template.alias`), validiert URL gegen Site-Anker-Schema, öffnet Side-Panel mit gerenderter Vorlage. Default-Wert ist ein Beispiel-Frontmatter mit korrekt gesetztem `template:`-Feld. Implementations-Details in Sektion *Frontmatter-Inspector-Implementation* unten.
 
 ### `assets/js/modules/case-study-filter.js`
-Komponente in der Case-Study-Sektion. Filter-Bar (Genre, Status, Demo-Verfügbarkeit) und Sortierung. Liest `data/case-studies.json` und filtert client-seitig.
+Komponente in der Case-Study-Sektion. Filter-Bar (Use-Case-Typologie primär, Interface-Typ, Demo-Verfügbarkeit; ADR-8-Nachtrag) und Sortierung. Liest `data/case-studies.json` und filtert client-seitig.
 
 ### `assets/vendor/marked.min.js`
 Vendored Markdown-Parser. Custom-Extension in `app.js` registriert für Klassen-Tags.
@@ -78,39 +78,11 @@ Vendored YAML-Parser (js-yaml v4.1.0). Verwendet im Frontmatter-Inspector, um ei
 
 ## Custom-Extension für marked.js
 
-marked.js parst out-of-the-box keinen Pandoc-style-Class-Syntax `{:.klassen-name}`. Diese Erweiterung ist nötig, weil die Phasen-Provenance-Lane Klassen pro Absatz braucht.
+marked.js parst out-of-the-box keinen Pandoc-style-Class-Syntax `{:.klassen-name}`. Das Paper-Markdown trägt `{:.phase-*}`-Tags als methodische Annotation; seit der Entfernung der Phasen-Provenance-Lane (A2 in [specification.md](specification.md), Operator-Entscheidung 2026-06-10) ist die Extension ein reiner Tag-Stripper, sie erkennt die Tags, um sie zu entfernen, und rendert keine Klassen mehr.
 
-**Implementierungsweg.** marked.js v9 unterstützt eine Tokenizer-API. Ein Tokenizer für Paragraph wird erweitert, der vor dem Standard-Paragraph-Match nach `{:.klassenname}\n` am Absatz-Anfang sucht. Wenn gefunden, wird die Klasse extrahiert und der Rest als normaler Paragraph getokenized. Der `paragraph`-Renderer-Hook fügt dann das `class="..."`-Attribut ans `<p>`-Element.
+**Implementierungsweg.** marked.js v9 unterstützt eine Tokenizer-API. Ein Tokenizer für Paragraph wird erweitert, der vor dem Standard-Paragraph-Match nach `{:.klassenname}\n` am Absatz-Anfang sucht. Wenn gefunden, wird das Tag verworfen und der Rest als normaler Paragraph getokenized; Source of Truth für den aktuellen Stand ist die `classedParagraph`-Extension in `assets/js/app.js`.
 
-```javascript
-// In assets/js/app.js
-marked.use({
-  extensions: [{
-    name: 'classedParagraph',
-    level: 'block',
-    start(src) { return src.match(/^\{:\.[a-z-]+\}/)?.index; },
-    tokenizer(src, tokens) {
-      const match = /^\{:\.([a-z-]+)\}\n([\s\S]+?)(?:\n\n|$)/.exec(src);
-      if (match) {
-        return {
-          type: 'classedParagraph',
-          raw: match[0],
-          className: match[1],
-          tokens: this.lexer.inline(match[2])
-        };
-      }
-    },
-    renderer(token) {
-      const inner = this.parser.parseInline(token.tokens);
-      return `<p class="${token.className}">${inner}</p>\n`;
-    }
-  }]
-});
-```
-
-**Akzeptierte Klassen** (validiert beim Tokenizer): `phase-preparation`, `phase-exploration`, `phase-distillation`, `phase-implementation`. Andere Klassen werden ignoriert (Fallback auf normalen Paragraph), um nicht versehentlich beliebige CSS-Klassen ins HTML einzuschleusen.
-
-**Absätze ohne Phasen-Klasse**: Code-Blöcke, Listen, Zitate, Tabellen. Sie haben keine Phasen-Lane-Markierung — die Lane ist also nicht durchgängig, sondern bedeckt nur Fließtext-Absätze. Das ist akzeptabel, weil Phasen-Zuordnung für strukturelle Elemente ohnehin keinen Sinn ergibt.
+**Erkannte Tags** (validiert beim Tokenizer): `phase-preparation`, `phase-exploration`, `phase-distillation`, `phase-implementation`. Andere Klassen-Tags werden ignoriert (Fallback auf normalen Paragraph), um nicht versehentlich beliebige Syntax zu konsumieren. Die Tags bleiben im Paper-Markdown erhalten, weil sie die methodische Phasen-Klassifizierung dokumentieren; nur ihr Rendering ist entfernt.
 
 ## Datenfluss
 
@@ -124,9 +96,9 @@ _content/                                       Markdown-Inhalte (gespiegelt aus
 ├── paper/06-discussion.md                      ← Pollin 2026 Section 6
 ├── paper/07-conclusion.md                      ← Pollin 2026 Section 7
 ├── literatur.md                                ← Pollin 2026 References (separater Anker)
-├── promptotyping-document/data.md              ← Vault: Vorlage Datengrundlage v0.1
-├── promptotyping-document/journal.md           ← Vault: Vorlage Journal v0.1
-├── ... (sechs weitere Vorlagen, ein Slug pro File)
+├── promptotyping-document/data.md              ← Vault: Vorlage Datengrundlage
+├── promptotyping-document/journal.md           ← Vault: Vorlage Journal
+├── ... (weitere Vorlagen-Spiegel, ein Slug pro File; Katalog in der Vault-Konvention)
 ├── case-studies/herdata.md                     ← Vault: Case Studies/herdata.md
 ├── ... (24+ weitere Case Studies)
 └── glossar.md                                  ← Synthese aus Vault-Wissensdokumenten
@@ -137,56 +109,13 @@ data/                                           JSON-Datenfutter für JavaScript
 └── case-studies.json                           ← strukturierte Form der Case-Study-Karten
 ```
 
-Status zum Sprint-1-Start: `_content/paper/01-…07-…md` und `_content/literatur.md` sind angelegt (8 Files, ohne Phasen-Klassen-Tags). Sektionen `_content/promptotyping-document/`, `_content/case-studies/`, `_content/glossar.md` werden in Sprint 2-4 angelegt.
+Beim manuellen Spiegeln: Markdown-Dateien werden gespiegelt, JSON-Dateien werden aus den Markdown-Frontmatters extrahiert. Die Spiegelungs-Provenienz dokumentiert `_content/MANIFEST.md`.
 
-Beim manuellen Spiegeln: Markdown-Dateien werden gespiegelt, JSON-Dateien werden aus den Markdown-Frontmatters extrahiert.
+## Struktur von `data/case-studies.json`
 
-## JSON-Schema für `data/case-studies.json`
+Source of Truth ist die Datei selbst (Schema-Version im Feld `version`, aktuell die Use-Case-Typologie-Fassung nach ADR-8). Top-Level: `version`, `generated`, `_meta`, `caseStudies`. Pro Case-Study-Eintrag: `id` (Anker-Name für `#case-{id}`), `name`, `summary`, `status`, `useCase` und `useCaseLabel` (Klassifikation nach der Use-Case-Typologie des Papers, Section 4.3), `interfaceTypes`, `artifact`, `data`, `insight`, `repo_url`, optional `demo_url` und `video_url`, sowie `deep_page` (ob die Case Study eine Tiefenseite im Side-Panel trägt; deren Markdown liegt unter `_content/case-studies/`). Das frühere interne Genre-Vokabular ist seit ADR-8 aus dem Schema entfernt und erscheint nicht in der öffentlichen UI.
 
-```json
-{
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "type": "object",
-  "required": ["version", "case_studies"],
-  "properties": {
-    "version": {"type": "string", "description": "Schema-Version, z.B. '0.2'"},
-    "generated": {"type": "string", "format": "date", "description": "Datum der Generierung"},
-    "case_studies": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "required": ["id", "name", "genre", "status"],
-        "properties": {
-          "id": {"type": "string", "description": "Anker-Name, z.B. 'herdata' (für #case-herdata)"},
-          "name": {"type": "string", "description": "Anzeige-Name, z.B. 'HerData'"},
-          "genre": {
-            "type": "string",
-            "enum": ["HerData-Genre", "Editions-Genre", "Externdaten-Genre", "Klawiter-Typ", "Sonderfall"]
-          },
-          "status": {
-            "type": "string",
-            "enum": ["aktiv", "abgeschlossen", "archiviert", "wartend"]
-          },
-          "summary": {"type": "string", "description": "Ein-Satz-Charakterisierung für die Karte"},
-          "repo_url": {"type": "string", "format": "uri"},
-          "demo_url": {"type": "string", "format": "uri", "description": "Optional"},
-          "vault_doc": {"type": "string", "description": "Pfad zur Vault-Quelle"},
-          "deep_page": {
-            "type": "boolean",
-            "description": "Ob diese Case Study eine Tiefenseite mit ausführlicher Charakterisierung hat"
-          },
-          "deep_content": {
-            "type": "string",
-            "description": "Markdown-Inhalt für die Tiefenseite, falls deep_page=true"
-          }
-        }
-      }
-    }
-  }
-}
-```
-
-Acht Case Studies haben `deep_page: true` (HerData, Klawiter-Rescue, zbz-ocr-tei, M3GIM, Notker-Edition, CorrespExplorer, VetMedAI-Wissensbilanz, Agentic Edition Pipeline). Die übrigen 16+ haben `deep_page: false` und erscheinen nur als Karten in der Listenübersicht.
+Sieben Case Studies tragen `deep_page: true` (HerData, Klawiter-Rescue, zbz-ocr-tei, M3GIM, Notker-Edition, CorrespExplorer, coOCR-HTR); die übrigen erscheinen nur als Karten in der Galerie (Kuratierung in A7 der [specification.md](specification.md)).
 
 ## URL-Routing
 
@@ -347,8 +276,8 @@ DigitalHumanitiesCraft/Promptotyping/
 │   └── journal.md
 ├── _content/                       # Markdown-Inhalte
 │   ├── paper/                      # 7 Section-Files (01-07)
-│   ├── promptotyping-document/     # 8 Vorlagen-Spiegel (ein File pro Slug)
-│   ├── case-studies/               # 24+ Case Studies
+│   ├── promptotyping-document/     # Vorlagen-Spiegel (ein File pro Slug)
+│   ├── case-studies/               # Tiefenseiten der Case Studies
 │   ├── glossar.md
 │   └── literatur.md                # References, eigener Anker
 ├── assets/

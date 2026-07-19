@@ -3,11 +3,11 @@ title: Specification
 project:
   name: Promptotyping Site
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
-status: active
+status: complete
 language: de
-version: 0.2
+version: 0.3
 created: 2026-05-09
-updated: 2026-05-09
+updated: 2026-07-19
 authors: [Christopher Pollin]
 generated-with: Claude Code mit Claude Opus 4.7
 method:
@@ -15,7 +15,7 @@ method:
   url: https://dhcraft.org/Promptotyping/
 template:
   name: Vorlage Specification
-  version: 0.1
+  version: 0.3
   url: https://dhcraft.org/Promptotyping/promptotyping-document/specification
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-specification
 topics: ["[[Requirements Engineering]]", "[[Decision Records]]"]
@@ -28,7 +28,7 @@ related: [INDEX, project, architecture, design, journal]
 
 # Specification
 
-Anforderungen, Funktionsumfang und Entscheidungen für den Refactor zum interaktiven Paper. Die Site rendert das Pollin-2026-Paper als scrollbare Single-Page mit Phasen-Provenance-Lane, Inline-Glossar, eingebetteten Vorlagen, Case-Study-Karten und Side-Panels.
+Anforderungen, Funktionsumfang und Entscheidungen für den Refactor zum interaktiven Paper. Die Site rendert das Pollin-2026-Paper als scrollbare Single-Page mit Inline-Glossar, eingebetteten Vorlagen, Case-Study-Karten und Side-Panels.
 
 ## Anforderungen
 
@@ -43,7 +43,7 @@ Substrat liegt in `_content/paper/01-introduction.md` … `_content/paper/07-con
 Entfernt nach dem Erstdeploy auf Operator-Entscheidung (2026-06-10). Die Lane (Legende, Mobile-Phase-Bar, Hover-Tooltip, Filter-Modus) ist aus HTML, CSS und JavaScript ausgebaut. Die `{:.phase-*}`-Tags im Paper-Markdown werden von der marked-Extension nur noch gestrippt (reiner Tag-Stripper, kein Lane-Rendering). Begründung: visuell ruhiger Lesefluss ohne Provenance-Spalte. Die ADR-4-Begründung bleibt als Entscheidungs-Provenienz erhalten, ist aber nicht mehr umgesetzt.
 
 ### A3 — Adressierbare Vorlagen
-Acht Vorlagen sind unter Latest-Ankern adressierbar (`#promptotyping-document-data`, `#promptotyping-document-journal`, ...). Bei späteren Versions-Sprüngen werden zusätzliche Snapshot-Anker derselben Vorlagen-Sektion vergeben (`#promptotyping-document-data-v0.1`); heute, mit allen Vorlagen auf v0.1, ist der Latest-Anker primärer und einziger Adresspunkt. Akzeptanzkriterium: `https://dhcraft.org/Promptotyping/#promptotyping-document-data` springt zur Vorlage und öffnet automatisch das Side-Panel mit der vollen Vorlagen-Spec.
+Die gespiegelten Vorlagen sind unter Latest-Ankern adressierbar (`#promptotyping-document-data`, `#promptotyping-document-journal`, ...). Bei Versions-Sprüngen werden zusätzliche Snapshot-Anker derselben Vorlagen-Sektion vergeben (`#promptotyping-document-data-v0.1`); der Latest-Anker bleibt der primäre Adresspunkt. Seit dem Vault-Vorlagen-Sweep vom 2026-07-19 tragen die Vorlagen unterschiedliche Versionen; die Spiegel ziehen mit dem nächsten Site-Update nach. Akzeptanzkriterium: `https://dhcraft.org/Promptotyping/#promptotyping-document-data` springt zur Vorlage und öffnet automatisch das Side-Panel mit der vollen Vorlagen-Spec.
 
 ### A4 — Doppelte kanonische URL-Form: Subpath und Hash
 Jeder adressierbare Inhalt der Site existiert unter zwei gleichberechtigten URL-Formen — Subpath für Maschinen und URL-strukturierte Lesbarkeit, Hash-Anker als interne Anker und Fallback. Beide sind kanonisch, nicht eine Alias der anderen. Beide sind permanent stabil. Konvention für alle Anker-Typen:
@@ -92,10 +92,8 @@ Eigene Sektion `#use-cases` mit kuratierter Galerie öffentlich dokumentierter P
 ### A8 — YouTube-Videos eingebettet
 Teil 1 als Hero-Embed oben (vor Paper-Section 1). Teil 2 in Paper-Section 4 als didaktischer Anker bei der VetMedAI-Wissensbilanz. Akzeptanzkriterium: Beide Videos laufen aus der `youtube-nocookie.com`-Variante (Datenschutz), kein Tracking ohne Consent.
 
-Phasen-Provenance-Lane bei Hero-Video: Das Hero-Video hat keine Phasen-Klasse — die Lane beginnt mit dem ersten Paper-Absatz. Begründung: Das Video ist Meta-Material *über* die Methode, nicht ein Methode-Schritt selbst. Eine Lane an einem Video-Embed wäre ohnehin visuell sinnlos (kein Text, an dem sie verankern könnte). Bei Teil 2 in Section 4 gilt dasselbe: das Video sitzt zwischen zwei Absätzen, die ihre eigene Phasen-Klasse tragen.
-
 ### A9 — DHCraft-Designsystem konsequent
-Hellgrau `#d5d5d5` als Akzent, Schwarz auf Weiß, Inter als Font, Consolas für Code. Keine Akzentlinien, keine Farbflut, keine dekorativen Elemente. Phasen-Provenance-Lane in monochromen Stufen `#2a2a2a` bis `#b8b8b8`. Mobile-Layout kollabiert Side-Panels zu Bottom-Sheets, Phasen-Lane wird zur Top-Bar.
+Hellgrau `#d5d5d5` als Akzent, Schwarz auf Weiß, Inter als Font, Consolas für Code. Keine Akzentlinien, keine Farbflut, keine dekorativen Elemente. Mobile-Layout kollabiert Side-Panels zu Bottom-Sheets.
 
 ### A10 — Vanilla Tech-Stack
 Kein Framework, kein Build-Step. HTML5/CSS3/JS, marked.js v9.1.6 vendoriert, js-yaml v4.1.0 vendoriert für Frontmatter-Parsing im Frontmatter-Inspector (siehe A11 und [architecture.md](architecture.md)). GitHub-Pages-natives Hosting. Akzeptanzkriterium: `git clone` und Browser öffnen reicht, um die Site lokal zu rendern (per `python -m http.server` oder Live-Server).
@@ -113,7 +111,7 @@ Die Site selbst — `knowledge/INDEX.md`, `knowledge/project.md`, `knowledge/spe
 Akzeptanzkriterium: Eine `grep template: knowledge/*.md`-Inspektion zeigt sechs Treffer, alle mit beiden URL-Formen (`url:` als Latest-Subpath `/promptotyping-document/{slug}`, `alias:` als Latest-Hash `#promptotyping-document-{slug}`), alle nach Site-Anker-Schema. Sobald die Site Sprint 1+2 abgeschlossen hat, sind diese URLs aufrufbar — und die Site demonstriert ihre eigene Methode, ohne sie nur zu beschreiben.
 
 ### A13 — Methoden-Überblick als Einstieg
-Deutschsprachige Sektion `#ueberblick` zwischen Hero und Paper: was Promptotyping ist (Kernsatz), die vier Phasen kompakt mit den Lane-Farbproben, die drei Dokumenttypen mit Diagnostik-Regel, die zwei Modi, Wegweiser in Paper, Vorlagen, Use Cases, Praxis und Skills. Begründung: Die Site ist auch Präsentation der Methode; ohne Überblick landet jeder Besucher direkt in einem englischen akademischen Paper. Substrat: `_content/ueberblick.md`. Akzeptanzkriterium: Ein Besucher ohne Vorkenntnisse versteht in zwei Minuten, was die Methode ist und wo er ansetzt.
+Deutschsprachige Sektion `#ueberblick` zwischen Hero und Paper: was Promptotyping ist (Kernsatz), die vier Phasen kompakt, die drei Dokumenttypen mit Diagnostik-Regel, die zwei Modi, Wegweiser in Paper, Vorlagen, Use Cases, Praxis und Skills. Begründung: Die Site ist auch Präsentation der Methode; ohne Überblick landet jeder Besucher direkt in einem englischen akademischen Paper. Substrat: `_content/ueberblick.md`. Akzeptanzkriterium: Ein Besucher ohne Vorkenntnisse versteht in zwei Minuten, was die Methode ist und wo er ansetzt.
 
 ### A14 — Praxis-Sektion (Methodenerweiterungen)
 Sektion `#praxis` mit den empirisch gewachsenen Methodenerweiterungen aus der Vault-Wissensbasis (Verification Milestones, Promptotyping Interfaces, Subagents und Rollensimulation, Skript-vs-LLM-Trennung, Knowledge Curation, Demo-Repo-Reduktion, Claims-Verifikation, Epistemischer Status von User Stories, Vorlagen-Katalog). Jeder Eintrag trägt einen stabilen Anker `#praxis-{slug}` und nennt seinen dokumentierten Herkunftsfall; Link auf `#case-{id}` nur, wenn der Fall in der kuratierten Galerie ist. Substrat: `_content/praxis.md`.
@@ -121,8 +119,8 @@ Sektion `#praxis` mit den empirisch gewachsenen Methodenerweiterungen aus der Va
 ### A15 — Skills und System Prompts
 Sektion `#skills` mit den wiederverwendbaren System Prompts (Coding, Writing) als unveränderte, kopierbare Originaltexte plus Einordnung der Action-Layer-Praxis (CLAUDE.md, Custom Commands, System Prompts). Anker `#skills-coding`, `#skills-writing`. Substrat: `_content/skills/`. Verweis auf die Action-Layer-Vorlage (A16).
 
-### A16 — Neunte Vorlage: Action-Layer (Entwurf)
-Die Vorlage Action-Layer (`CLAUDE.md`, empirisch destilliert aus dem 35-Repo-Sweep 2026-06) wird als neunter Slug `action-layer` publiziert, sichtbar als "Entwurf, in Erprobung" gekennzeichnet. Anker-Namespace-Entscheidung in ADR-9.
+### A16 — Neunte Vorlage: Action-Layer
+Die Vorlage Action-Layer (`CLAUDE.md`, empirisch destilliert aus dem 35-Repo-Sweep 2026-06) wird als neunter Slug `action-layer` publiziert. Anker-Namespace-Entscheidung in ADR-9. Die Vorlage ist seit 2026-07-19 im Vault freigegeben; die "Entwurf, in Erprobung"-Kennzeichnung auf der Site entfällt mit dem nächsten Site-Update.
 
 ### A17 Arbeitsumgebung-Sektion (Operator-Entscheidung 2026-06-10)
 Sektion `#arbeitsumgebung` zwischen Skills und Glossar mit drei kurzen Abschnitten: Obsidian-Vault als Wissensumgebung (Vault als Analyseeinheit, `CLAUDE.md` als Action Document, Dateisystem als Schnittstelle), Promptotyping Agent Interface (experimentelles Browser-Interface zum Beobachten, Steuern, Mitschreiben; Vault-als-Zentrum; Status in Entwicklung) und AI Harness und Skills (Claude Code als Harness, Verweis auf `#skills`, Prozessvideos auf dem YouTube-Kanal). Substrat: `_content/arbeitsumgebung.md`. Routing `/arbeitsumgebung` über `404.html`, Anker im URL-Schema (A4) ergänzt.
@@ -133,10 +131,10 @@ Sticky weißer Site-Header mit DHCraft-Logo und Wortmarke links, Sektions-Nav un
 ## Funktionsumfang pro Site-Sektion
 
 ### Methode (Paper-Sektionen 1-3)
-Das Paper-Narrativ als Lesefluss. Phasen-Provenance-Lane an jedem Absatz. Begriffe als Glossar-Trigger. Vorlagen-Tabelle im Section-3-Kontext (wenn Promptotyping Documents erklärt werden) als eingebettete Tabelle mit Klick-Links zu Side-Panel-Specs. Hero-Video Teil 1 oben.
+Das Paper-Narrativ als Lesefluss. Begriffe als Glossar-Trigger. Vorlagen-Tabelle im Section-3-Kontext (wenn Promptotyping Documents erklärt werden) als eingebettete Tabelle mit Klick-Links zu Side-Panel-Specs. Hero-Video Teil 1 oben.
 
 ### Vorlagen (eigene Sektion `#vorlagen`)
-Tabelle aller neun Vorlagen mit Funktion, Empfohlenem Dateinamen, Promptotyping-Typ, Version, Status. Klick auf Eintrag öffnet Side-Panel mit voller Spec inkl. Frontmatter-Schema, Sektionsstruktur, Copy-Button für den template:-Block und Rohtext-Link (Maschinenadresse, ADR-10). Pro Vorlage ein Latest-Anker, Snapshot-Anker bei Versionssprüngen.
+Tabelle aller gespiegelten Vorlagen mit Funktion, Empfohlenem Dateinamen, Promptotyping-Typ, Version, Status. Der Vault-Katalog führt seit 2026-07-19 sechs weitere freigegebene Vorlagen (Testing, Plan, Report, Domänenwissen, Verification, Integration) und das englische Funktionsvokabular; deren Spiegel, Anker und die Vokabular-Aktualisierung der Sektionen `konvention` und `ueberblick` entstehen mit dem nächsten Site-Update. Klick auf Eintrag öffnet Side-Panel mit voller Spec inkl. Frontmatter-Schema, Sektionsstruktur, Copy-Button für den template:-Block und Rohtext-Link (Maschinenadresse, ADR-10). Pro Vorlage ein Latest-Anker, Snapshot-Anker bei Versionssprüngen.
 
 ### Use Cases (eigene Sektion `#use-cases`)
 18 kuratierte Karten, gruppiert und gefiltert nach Use-Case-Typologie (A7, ADR-8-Nachtrag). Pro Karte: Name, Use Case, ein Satz, Demo-/Repo-/Video-Link soweit belegt. Sieben Karten mit Tiefenseite im Side-Panel. Teil-2-Video eingebettet in Paper-Section 4.

@@ -3,11 +3,11 @@ title: Design
 project:
   name: Promptotyping Site
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
-status: active
+status: complete
 language: de
-version: 0.2
+version: 0.3
 created: 2026-05-09
-updated: 2026-05-09
+updated: 2026-07-19
 authors: [Christopher Pollin]
 generated-with: Claude Code mit Claude Opus 4.7
 method:
@@ -15,7 +15,7 @@ method:
   url: https://dhcraft.org/Promptotyping/
 template:
   name: Vorlage Design
-  version: 0.1
+  version: 0.2
   url: https://dhcraft.org/Promptotyping/promptotyping-document/design
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-design
 topics: ["[[Information Visualisation]]", "[[Scholar-Centered Design]]", "[[Typography]]"]
@@ -34,13 +34,13 @@ Designhaltung, Designsystem, Interaktionsmuster für die interaktive-Paper-Site.
 
 ## Designhaltung
 
-Die Site soll **ruhig** sein. Sehr ruhig. Schwarz auf Weiß, eine Schrift, ein Akzent in Hellgrau, eine monochrome Phasen-Lane links. Keine Farbflut, keine Animationen außer minimalen Übergängen, keine dekorativen Linien, keine Akzent-Boxen.
+Die Site soll **ruhig** sein. Sehr ruhig. Schwarz auf Weiß, eine Schrift, ein Akzent in Hellgrau. Keine Farbflut, keine Animationen außer minimalen Übergängen, keine dekorativen Linien, keine Akzent-Boxen.
 
 Drei Begründungen:
 
 1. **Lesbarkeit ist die Hauptfunktion**. Ein wissenschaftliches Paper liest man, man durchscrollt es nicht. Alles, was vom Lesen ablenkt, ist störend.
 2. **DHCraft-Designsystem ist konsequent ruhig**. Die Hellgrau-Inter-Schwarz-Linie aus den Bibliotheksinformatik-Slides und HerData ist die etablierte Form. Die Site setzt sie fort.
-3. **Methode wird durch Form sichtbar, nicht durch Schmuck**. Die Phasen-Provenance-Lane (siehe unten) trägt Information durch Anwesenheit, nicht durch Auffälligkeit.
+3. **Methode wird durch Struktur sichtbar, nicht durch Schmuck**. Die Gliederung in Paper, Vorlagen, Use Cases und Praxis trägt die Methode; ein zusätzlicher visueller Kniff ist nicht nötig. Die frühere Phasen-Provenance-Lane wurde nach dem Erstdeploy auf Operator-Entscheidung entfernt (A2 in [specification.md](specification.md), 2026-06-10), zugunsten eines ungestörten Leseflusses.
 
 ## Designsystem
 
@@ -52,14 +52,6 @@ Text:               #1a1a1a
 Akzent (Hover):     #d5d5d5
 Akzent (subtler):   #e0e0e0   (Borders)
 Code-Hintergrund:   #f5f5f5
-```
-
-Phasen-Provenance-Lane (siehe Sektion unten):
-```
-Preparation:        #2a2a2a    (dunkelster Ton)
-Exploration:        #525252
-Distillation:       #8a8a8a
-Implementation:     #b8b8b8    (hellster Ton, vor Weiß)
 ```
 
 Kein Teal, kein Türkis, kein Akzent in Bunt. Anders als bei den DHCraft-Slides, wo Teal für Datum verwendet wurde, kommt auf der Site keine Akzentfarbe vor. Die monochrome Strenge ist Programm.
@@ -105,133 +97,6 @@ Drei-Spalten-Grid auf Desktop:
 Die Inhaltsverzeichnis-Spalte links zeigt aktuelle Paper-Sektion, scrollt sticky mit. Die Lese-Spalte zentriert. Die Side-Panel-Spalte rechts ist standardmäßig zugeklappt (off-screen rechts), schiebt herein bei Klick auf einen Trigger.
 
 Mobile (<768px): Inhaltsverzeichnis als Hamburger-Menü oben, Lesefluss volle Breite (mit `1.5rem` horizontal padding), Side-Panel als Bottom-Sheet.
-
-## Phasen-Provenance-Lane
-
-Der ästhetische Kniff der Site. Detaillierte Spezifikation, weil dies die einzige nicht-triviale visuelle Komponente ist.
-
-### Was es ist
-
-Links neben jedem Paper-Absatz erscheint eine vertikale Markierung:
-
-- **Position**: 12px links der Lese-Spalten-Kante, also außerhalb des Lesetextes
-- **Breite**: 4px
-- **Höhe**: ca. 80% der Absatzhöhe (10% oben und unten Padding)
-- **Farbe**: einer der vier Phasen-Töne (`#2a2a2a` bis `#b8b8b8`)
-- **Form**: gerade vertikale Linie, kein Radius, keine Kappung
-
-### Wie es funktioniert
-
-Im Markdown-Quelltext der Paper-Sektionen wird jeder Absatz mit einem Klassen-Tag versehen (Pandoc-style, geparst von Custom marked.js-Extension — siehe [architecture.md](architecture.md), Sektion *Custom-Extension*):
-
-```markdown
-{:.phase-preparation}
-The Preparation phase collects and structures all materials before technical decisions are made...
-
-{:.phase-exploration}
-The Exploration phase is a systematic investigation of the interface between data and research context...
-
-{:.phase-distillation}
-The Distillation phase compresses the knowledge gained during Exploration...
-
-{:.phase-implementation}
-Implementation iterates on the artifact, with the LLM as collaborator and the Critical Expert as validator...
-```
-
-Die marked.js-Custom-Extension produziert beim Render:
-```html
-<p class="phase-preparation">The Preparation phase...</p>
-```
-
-CSS rendert die Lane:
-```css
-.phase-preparation,
-.phase-exploration,
-.phase-distillation,
-.phase-implementation {
-  position: relative;
-  padding-left: 1.5rem;
-}
-
-.phase-preparation::before,
-.phase-exploration::before,
-.phase-distillation::before,
-.phase-implementation::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 10%;
-  bottom: 10%;
-  width: 4px;
-  background: var(--lane-color);
-}
-
-.phase-preparation { --lane-color: #2a2a2a; }
-.phase-exploration { --lane-color: #525252; }
-.phase-distillation { --lane-color: #8a8a8a; }
-.phase-implementation { --lane-color: #b8b8b8; }
-```
-
-### Absätze ohne Phasen-Klasse
-
-Code-Blöcke, Listen, Zitate, Tabellen, Hero-Video-Embed haben **keine Phasen-Klasse und keine Lane-Markierung**. Konsequenz: Die Lane ist über den Lesefluss nicht durchgängig, sondern unterbrochen an strukturellen Elementen. Das ist akzeptabel und sinnvoll, weil:
-
-- Phasen-Zuordnung für Code-Blöcke ist methodisch leer (Code ist kein Phase-Statement, sondern ein Beispiel innerhalb eines Phase-Statements)
-- Listen und Tabellen tragen oft Phase-übergreifende Information
-- Hero-Video ist Meta-Material *über* die Methode, nicht ein Methode-Schritt
-
-Die Lane bekommt damit ihren eigenen Rhythmus: lange durchgehende Strecken in Fließtext, Pausen an strukturellen Elementen. Das ist visuell ruhig und funktional sinnvoll.
-
-### Interaktion
-
-**Hover**: Tooltip erscheint rechts neben der Lane mit Phasennamen plus "Springe zu allen Absätzen dieser Phase". Tooltip hat dezenten Schatten, Hellgrau-Border, kein Pfeil. Erscheint nach 300ms Verzögerung, um versehentliche Anzeige beim Über-Hovern zu vermeiden.
-
-**Klick**: Aktiviert Phasen-Filter-Modus. Im Filter-Modus werden Absätze, die nicht zur ausgewählten Phase gehören, auf `opacity: 0.25` reduziert. Eine kleine Filter-Indikator-Leiste oben (sticky) zeigt: "Filter: Distillation. [Filter aufheben]".
-
-**Klick auf Filter aufheben**: zurück zum Normalzustand, alle Absätze auf `opacity: 1`.
-
-### Mobile Phasen-Indikator
-
-Auf Mobile (<768px) wird die Lane zur **Top-Bar**: eine schmale horizontale Leiste oben (Höhe `2rem`), sticky beim Scrollen. Sie zeigt vier nebeneinanderliegende Streifen in den vier Phasen-Tönen. Jeder Streifen nimmt 25% der Bildschirmbreite ein.
-
-```
-[████████ Preparation] [████████ Exploration] [████████ Distillation] [████████ Implementation]
-```
-
-Beim Scrollen ermittelt JavaScript via IntersectionObserver, welcher Absatz im Viewport am meisten Platz einnimmt. Die zugehörige Phase wird hervorgehoben — der zugehörige Streifen verbreitert sich auf 40% der Breite, die anderen drei teilen sich die restlichen 60%. Übergang in 200ms.
-
-```css
-.mobile-phase-bar {
-  position: sticky;
-  top: 0;
-  display: flex;
-  height: 2rem;
-  z-index: 10;
-}
-
-.mobile-phase-bar > div {
-  flex: 1;
-  transition: flex 200ms ease-out;
-}
-
-.mobile-phase-bar > div.active {
-  flex: 1.6; /* 40% statt 25% */
-}
-
-.mobile-phase-bar .preparation { background: #2a2a2a; }
-.mobile-phase-bar .exploration { background: #525252; }
-.mobile-phase-bar .distillation { background: #8a8a8a; }
-.mobile-phase-bar .implementation { background: #b8b8b8; }
-```
-
-Klick auf einen Streifen springt zum nächsten Absatz dieser Phase im Lesefluss.
-
-### Was die Lane *nicht* tut
-
-- Keine Animation beim Scrollen (kein Scroll-Linked-Animation)
-- Keine Farbverläufe innerhalb eines Strichs (jeder Strich ist einfarbig)
-- Keine zusätzlichen Beschriftungen direkt am Strich (Labels nur in Tooltip)
-- Kein Cursor-Change beim Hover über die Lane (Standard-Cursor)
 
 ## Side-Panels
 
@@ -317,22 +182,22 @@ Beim Hover erscheint nach 500ms ein Tooltip mit Kurzdefinition (max. 2 Zeilen). 
 
 ### Vorlagen-Tabelle
 
-Im Paper-Section-3-Bereich erscheint eine Tabelle aller acht Vorlagen:
+Im Paper-Section-3-Bereich erscheint eine Tabelle aller gespiegelten Vorlagen (Katalog und Funktionsnamen aus der Vault-Konvention, seit 2026-07-19 englisch):
 
 | Vorlage | Funktion | Datei | Typ | Version |
 |---|---|---|---|---|
-| Index | Navigation, Begriffslexikon | `INDEX.md` | Knowledge | 0.1 |
-| Project | Identität | `project.md` | Knowledge | 0.1 |
+| Index | Navigation, Begriffslexikon | `INDEX.md` | Knowledge | … |
+| Project | Charter | `project.md` | Knowledge | … |
 | ... | ... | ... | ... | ... |
 
 Klickbare Zeilen, beim Klick öffnet das Side-Panel mit der vollen Vorlagen-Spec.
 
 ### Case-Study-Karten
 
-Im Paper-Section-4-Bereich erscheinen Case-Study-Karten, gruppiert nach Genre:
+Im Paper-Section-4-Bereich erscheinen Case-Study-Karten, gruppiert nach der Use-Case-Typologie des Papers (ADR-8-Nachtrag; das interne Genre-Vokabular erscheint nicht in der öffentlichen UI):
 
 ```
-HerData-Genre
+Origin Point
 ┌────────────────────────┐  ┌────────────────────────┐
 │ HerData                │  │ M3GIM                  │
 │ ─                      │  │ ─                      │
@@ -344,7 +209,7 @@ HerData-Genre
 └────────────────────────┘  └────────────────────────┘
 ```
 
-Karten haben Border `#e0e0e0`, kein Schatten, padding `1rem`, Hover-State mit hellgrauem Hintergrund. "Mehr →"-Button nur bei den acht Tiefenseiten-Case-Studies sichtbar.
+Karten haben Border `#e0e0e0`, kein Schatten, padding `1rem`, Hover-State mit hellgrauem Hintergrund. "Mehr →"-Button nur bei Case Studies mit Tiefenseite sichtbar (`deep_page` in `data/case-studies.json`).
 
 ## Action-Layer-Anbindung
 

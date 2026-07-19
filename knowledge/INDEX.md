@@ -3,11 +3,11 @@ title: INDEX
 project:
   name: Promptotyping Site
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
-status: active
+status: complete
 language: de
-version: 0.2
+version: 0.3
 created: 2026-05-09
-updated: 2026-05-09
+updated: 2026-07-19
 authors: [Christopher Pollin]
 generated-with: Claude Code mit Claude Opus 4.7
 method:
@@ -15,7 +15,7 @@ method:
   url: https://dhcraft.org/Promptotyping/
 template:
   name: Vorlage Index
-  version: 0.1
+  version: 0.2
   url: https://dhcraft.org/Promptotyping/promptotyping-document/index
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-index
 related: [project, specification, architecture, design, journal]
@@ -31,9 +31,9 @@ Sechs Promptotyping-Documents:
 
 - **INDEX** (dieses Dokument) — Navigation und Begriffslexikon
 - **[project.md](project.md)** — was die Site werden soll, wer die Adressaten sind, Materialgrundlage, Stand
-- **[specification.md](specification.md)** — was die Site können muss: Anker-Schema, `template:`-Auflösung, Phasen-Provenance-Lane, Side-Panels
+- **[specification.md](specification.md)** — was die Site können muss: Anker-Schema, `template:`-Auflösung, Site-Sektionen, Side-Panels
 - **[architecture.md](architecture.md)** — wie die Site technisch gebaut wird: URL-Struktur, Tech-Stack, Modul-Inventar
-- **[design.md](design.md)** — wie die Site aussieht und sich verhält: DHCraft-Designsystem, Phasen-Lane-Spezifikation, Typografie
+- **[design.md](design.md)** — wie die Site aussieht und sich verhält: DHCraft-Designsystem, Side-Panels, Typografie
 - **[journal.md](journal.md)** — chronologischer Verlauf des Refactors
 
 Eine `data.md` existiert bewusst nicht. Die Vorlage Datengrundlage trägt für Methoden-Repos nicht; die Materialgrundlage steht in `project.md`. Begründung im Eintrag vom 2026-05-09 in [journal.md](journal.md).
@@ -59,11 +59,11 @@ Begriffe, die in dieser Wissensbasis konstitutiv vorkommen. Die kanonischen Defi
 
 **Promptotyping Document**: Strukturiertes Markdown-Dokument im `knowledge/`-Ordner eines Promptotyping-Repos. Drei analytische Typen: Knowledge (deklarativ), Process (chronologisch), Action (imperativ).
 
-**Vorlage**: Ausfüllbare Strukturvorgabe für eine spezifische Funktion einer Promptotyping-Wissensbasis (Identität, Material, Substanz, Bauweise, Gestalt, Genese, Navigation). Im Vault leben acht Vorlagen, in der öffentlichen Site werden sie als versionierte Anker zugänglich. Eine Vorlage trägt nur, wenn ihr Trigger erfüllt ist — die Vorlage Datengrundlage trägt z.B. nur, wenn das Projekt Daten verarbeitet oder produziert.
+**Vorlage**: Ausfüllbare Strukturvorgabe für eine spezifische Funktion einer Promptotyping-Wissensbasis. Die Funktionsnamen sind seit 2026-07-19 englisch (Navigation, Charter, Material, Specification, Architecture, Domain Knowledge, Design, Quality Assurance, Verification, Provenance, Planning, Reporting, Integration, Agent Instructions). Der Katalog lebt im Vault ([[Konvention Promptotyping Documents]]); die Site spiegelt die Vorlagen als versionierte Anker. Eine Vorlage trägt nur, wenn ihr Trigger erfüllt ist — die Vorlage Datengrundlage trägt z.B. nur, wenn das Projekt Daten verarbeitet oder produziert.
 
 **Konvention Promptotyping Documents**: Beschreibung der Funktionen einer Wissensbasis, des Frontmatter-Schemas und der Strukturprinzipien. Liegt im Vault unter `Vault Operations/Konventionen/`, wird in der öffentlichen Site als externe Spezifikation gespiegelt.
 
-**Phasen-Provenance-Lane**: Ästhetischer Designkniff der neuen Site. Linke Schmalspalte zeigt während des Lesens des Papers an jedem Absatz eine monochrome Markierung (Schwarz bis Hellgrau) entsprechend der Promptotyping-Phase, die der Absatz beschreibt. Macht die methodische Verteilung des Papers visuell ablesbar.
+**Phasen-Provenance-Lane**: Historischer Designkniff des Erstdeploys: eine linke Schmalspalte markierte jeden Paper-Absatz monochrom nach seiner Promptotyping-Phase. Nach dem Erstdeploy auf Operator-Entscheidung entfernt (2026-06-10, A2 in [specification.md](specification.md)); die `{:.phase-*}`-Tags im Paper-Markdown bleiben als methodische Annotation erhalten und werden beim Rendern gestrippt. Der Begriff bleibt im Lexikon, weil ADR-4 und Journal ihn als Entscheidungs-Provenienz tragen.
 
 **Anker-Schema**: System der stabilen URL-Anker auf der Single-Page-Site. Pro Vorlage, Konzept, Case Study und Begriff existiert ein permanent stabiler Anker (`#promptotyping-document-data`, `#case-herdata`, `#konzept-eil`). Bei späteren Versions-Sprüngen einer Vorlage kommen Snapshot-Sub-Anker dazu (`#promptotyping-document-data-v0.1`). Repos, die per Frontmatter-Feld `template:` verlinken, adressieren diese Anker.
 
@@ -89,5 +89,5 @@ Im konkreten Refactor wurde durch die Critical-Expert-Prüfung sichtbar, dass ni
 
 ## Related
 
-- Externe Konvention: dhcraft.org/Promptotyping/#konvention-v0.1 (Anker entsteht in Sprint 4)
-- Vault-Substrat: das Pollin-2026-Paper, die acht Vault-Vorlagen, die Vault-Konvention
+- Externe Konvention: dhcraft.org/Promptotyping/#konvention
+- Vault-Substrat: das Pollin-2026-Paper, der Vault-Vorlagen-Katalog, die Vault-Konvention

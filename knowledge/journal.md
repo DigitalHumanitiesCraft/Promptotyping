@@ -5,9 +5,9 @@ project:
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 status: active
 language: de
-version: 0.2
+version: 0.3
 created: 2026-05-09
-updated: 2026-06-09
+updated: 2026-07-19
 authors: [Christopher Pollin]
 generated-with: Claude Code mit Claude Opus 4.7
 method:
@@ -15,7 +15,7 @@ method:
   url: https://dhcraft.org/Promptotyping/
 template:
   name: Vorlage Journal
-  version: 0.1
+  version: 0.2
   url: https://dhcraft.org/Promptotyping/promptotyping-document/journal
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-journal
 related: [INDEX, project, specification, architecture, design]
@@ -309,3 +309,21 @@ Die order-promptotyping hat die eine buildbare Politur freigegeben: die Optimier
 ### Stand
 
 Logo-Politur abgeschlossen und nach main gesichert. Lane bleibt ruhend. Weckpunkt unverändert: Operator-Verdikt aus dem CEIL-Review (gespiegelte Inhalte, Phasen-Klassifizierung) und der Browser-/Subpath-Sichtprüfung. Keine weitere substantielle Arbeit bis dahin.
+
+## 2026-07-19 — Wissensbasis-Richtigstellung nach dem Vault-Inhaltsaudit
+
+### Ziel der Session
+
+Die Befunde des vault-weiten Inhaltsaudits vom 2026-07-19 für dieses Repo beheben: die Wissensbasis beschrieb die am 2026-06-10 entfernte Phasen-Provenance-Lane in mehreren Dokumenten weiter als aktiv, führte die Tiefenseiten in zwei alten Achter-Listen, ein veraltetes case-studies-Schema und gedriftete Frontmatter.
+
+### Verlauf
+
+Lane-Referenzen in INDEX, project, architecture und design auf den realen Stand gezogen: die Lane als historische Entscheidung mit Verweis auf A2 und ADR-4, die Lane-Spezifikationssektion in design.md entfernt, die marked-Extension als Tag-Stripper beschrieben. Auch die specification trug die Entfernung außerhalb von A2 nicht durch (Lead, A8, A9, A13, Funktionsumfang); nachgezogen. Tiefenseiten überall auf die kuratierten sieben (A7), Vorlagen-Zählungen auf zählfreie Formulierungen mit Verweis auf den Vault-Katalog umgestellt, das JSON-Schema in architecture.md durch eine Paraphrase der realen v0.3-Struktur (`caseStudies`, `useCase`, `interfaceTypes`) ersetzt. Frontmatter repo-weit auf `version: 0.3` gehoben, `status` auf das seit 2026-07-19 erweiterte Konventions-Vokabular normiert (Knowledge-Dokumente `complete`, Journal `active`), `template:`-Versionen auf den Stand des Vault-Vorlagen-Sweeps.
+
+### Ergebnis
+
+Die Wissensbasis stimmt wieder mit Site und Code überein. Offen bleibt das Site-Update zum Vault-Vorlagen-Sweep: englisches Funktionsvokabular in den Spiegeln `konvention` und `ueberblick`, Spiegel und Anker der sechs neuen Vorlagen (Testing, Plan, Report, Domänenwissen, Verification, Integration), Versionsstände der bestehenden Spiegel, Entwurfs-Kennzeichnung des Action-Layers entfernen (A16). Dokumentiert in specification (A3, A16, Sektion Vorlagen) und project (Stand-Nachtrag).
+
+### Dead Ends
+
+Keine.
