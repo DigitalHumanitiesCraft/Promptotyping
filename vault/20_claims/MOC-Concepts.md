@@ -11,3 +11,4 @@ Claims behind the paper's conceptual contributions: epistemic infrastructure, th
 
 - [[20_claims/deck-characterises-llms-as-jagged-alien]] — the method author's teaching deck labels LLMs a "Jagged Alien Intelligence", jagged in an uneven capability profile, alien in a non-human error distribution.
 - [[20_claims/deck-derives-context-and-verification-from-llm-profile]] — the same deck derives curated context, verification, and the harness argument from that LLM profile.
+- [[20_claims/dissertation-dikw-cognitive-agent-premise]] — the dissertation places a cognitive agent whose knowledge structures give data context and significance at the centre of information production.

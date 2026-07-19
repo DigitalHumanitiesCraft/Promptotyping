@@ -1,6 +1,6 @@
 ---
 type: claim
-topics: ["[[Evidence]]"]
+topics: ["[[Evidence]]", "[[Limitations]]"]
 status: grounded
 checked:
   validation: 2026-07-19
