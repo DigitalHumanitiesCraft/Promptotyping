@@ -1,7 +1,7 @@
 ---
 title: Vorlage Datengrundlage
 slug: data
-version: "0.1"
+version: "0.2"
 status: complete
 source: Vorlage Datengrundlage
 mirrored: 2026-06-10

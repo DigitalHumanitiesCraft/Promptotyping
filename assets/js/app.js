@@ -669,7 +669,7 @@
           '<img class="vorlagen-icon" src="assets/promptotyping-logo.png" ' +
           'alt="Promptotyping-Marke" width="100" height="100">' +
           "<h2>Vorlagen</h2>" +
-          "<p>Neun ausfuellbare Vorlagen fuer die Promptotyping Documents im <code>knowledge/</code>-Ordner " +
+          "<p>Ausfuellbare Vorlagen fuer die Promptotyping Documents im <code>knowledge/</code>-Ordner " +
           "eines Repos. Jede Vorlage adressiert eine Funktion, nicht einen festen Dateinamen. Ein Klick auf " +
           "eine Zeile oeffnet die volle Vorlagen-Spezifikation im Side-Panel.</p>" +
           '<table class="vorlagen-table"><thead><tr>' +

@@ -1,7 +1,7 @@
 ---
 title: Vorlage Design
 slug: design
-version: "0.1"
+version: "0.2"
 status: complete
 source: Vorlage Design
 mirrored: 2026-06-10

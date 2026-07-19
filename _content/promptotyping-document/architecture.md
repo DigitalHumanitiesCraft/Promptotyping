@@ -1,7 +1,7 @@
 ---
 title: Vorlage Architecture
 slug: architecture
-version: "0.1"
+version: "0.3"
 status: complete
 source: Vorlage Architecture
 mirrored: 2026-06-10

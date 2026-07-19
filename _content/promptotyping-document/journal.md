@@ -1,7 +1,7 @@
 ---
 title: Vorlage Journal
 slug: journal
-version: "0.1"
+version: "0.2"
 status: complete
 source: Vorlage Journal
 mirrored: 2026-06-10

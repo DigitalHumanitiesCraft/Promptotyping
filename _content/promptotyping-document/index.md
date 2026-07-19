@@ -1,7 +1,7 @@
 ---
 title: Vorlage Index
 slug: index
-version: "0.1"
+version: "0.2"
 status: complete
 source: Vorlage Index
 mirrored: 2026-06-10

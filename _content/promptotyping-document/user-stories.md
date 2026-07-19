@@ -1,7 +1,7 @@
 ---
 title: Vorlage User Stories
 slug: user-stories
-version: "0.1"
+version: "0.2"
 status: complete
 source: Vorlage User Stories
 mirrored: 2026-06-10

@@ -1,8 +1,8 @@
 {
-  "version": "0.1",
-  "generated": "2026-06-10",
+  "version": "0.2",
+  "generated": "2026-07-19",
   "_meta": {
-    "beschreibung": "Strukturierte Form der Vorlagen-Tabelle (Promptotyping Documents). Generiert aus den Frontmattern der neun Mirrors unter _content/promptotyping-document/ sowie der Funktions-, Dateinamen- und Typ-Zuordnung aus _content/konvention.md (Vorlagen-Katalog und Lese-Heuristik). Reihenfolge wie im Vorlagen-Katalog der Konvention.",
+    "beschreibung": "Strukturierte Form der Vorlagen-Tabelle (Promptotyping Documents). Generiert aus den Frontmattern der Mirrors unter _content/promptotyping-document/ sowie der Funktions-, Dateinamen- und Typ-Zuordnung aus _content/konvention.md (Vorlagen-Katalog und Lese-Heuristik). Reihenfolge wie im Vorlagen-Katalog der Konvention. Funktionsnamen seit 2026-07-19 englisch; die Vorlagen-Namen bleiben unveraendert, sie sind Identifikatoren.",
     "schema": {
       "slug": "URL-Anker-Fragment, ergibt mit #promptotyping-document- den Site-Anker",
       "title": "Anzeigename der Vorlage",
@@ -21,17 +21,17 @@
       "funktion": "Navigation plus Begriffslexikon",
       "datei": "INDEX.md",
       "typ": "Knowledge",
-      "version": "0.1",
+      "version": "0.2",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/index.md"
     },
     {
       "slug": "project",
       "title": "Vorlage Projekt-Wissensdokument",
-      "funktion": "Identitaet (ggf. zusaetzlich Material und Substanz)",
+      "funktion": "Charter (ggf. zusaetzlich Material und Specification)",
       "datei": "project.md oder README.md",
       "typ": "Knowledge",
-      "version": "0.1",
+      "version": "0.2",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/project.md"
     },
@@ -41,69 +41,129 @@
       "funktion": "Material",
       "datei": "data.md",
       "typ": "Knowledge",
-      "version": "0.1",
+      "version": "0.2",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/data.md"
     },
     {
       "slug": "specification",
       "title": "Vorlage Specification",
-      "funktion": "Substanz (formale Anforderungen, Epics und User Stories, Funktionsumfang, Entscheidungen)",
+      "funktion": "Specification (formale Anforderungen, Epics und User Stories, Funktionsumfang, Entscheidungen)",
       "datei": "specification.md",
       "typ": "Knowledge",
-      "version": "0.2",
+      "version": "0.3",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/specification.md"
     },
     {
       "slug": "user-stories",
       "title": "Vorlage User Stories",
-      "funktion": "Substanz (narrative Anwendungsszenarien als separate Datei; nur dokumentierte Ausnahme)",
+      "funktion": "Specification (narrative Anwendungsszenarien als separate Datei; nur dokumentierte Ausnahme)",
       "datei": "user-stories.md",
       "typ": "Knowledge",
-      "version": "0.1",
+      "version": "0.2",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/user-stories.md"
     },
     {
       "slug": "action-layer",
       "title": "Vorlage Action-Layer",
-      "funktion": "Agent-Sozialisierung",
+      "funktion": "Agent Instructions",
       "datei": "CLAUDE.md (Repo-Root)",
       "typ": "Action",
-      "version": "0.1",
-      "status": "Entwurf",
+      "version": "0.2",
+      "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/action-layer.md"
     },
     {
       "slug": "architecture",
       "title": "Vorlage Architecture",
-      "funktion": "Bauweise",
+      "funktion": "Architecture",
       "datei": "architecture.md",
       "typ": "Knowledge",
-      "version": "0.1",
+      "version": "0.3",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/architecture.md"
     },
     {
+      "slug": "domain-knowledge",
+      "title": "Vorlage Domaenenwissen",
+      "funktion": "Domain Knowledge (Begruendungsschicht und fachliches Regelwerk)",
+      "datei": "editorial-guidelines.md, methodik.md u. a.",
+      "typ": "Knowledge",
+      "version": "0.2",
+      "status": "complete",
+      "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/domain-knowledge.md"
+    },
+    {
       "slug": "design",
       "title": "Vorlage Design",
-      "funktion": "Gestalt",
+      "funktion": "Design",
       "datei": "design.md",
       "typ": "Knowledge",
-      "version": "0.1",
+      "version": "0.2",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/design.md"
     },
     {
-      "slug": "journal",
-      "title": "Vorlage Journal",
-      "funktion": "Genese",
-      "datei": "journal.md",
-      "typ": "Process",
+      "slug": "testing",
+      "title": "Vorlage Testing",
+      "funktion": "Quality Assurance",
+      "datei": "testing.md oder test-strategy.md",
+      "typ": "Knowledge",
+      "version": "0.2",
+      "status": "complete",
+      "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/testing.md"
+    },
+    {
+      "slug": "verification",
+      "title": "Vorlage Verification",
+      "funktion": "Verification (adversariale Pruefung eigener Claims gegen die Rohdaten)",
+      "datei": "verification.md",
+      "typ": "Knowledge",
       "version": "0.1",
       "status": "complete",
+      "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/verification.md"
+    },
+    {
+      "slug": "journal",
+      "title": "Vorlage Journal",
+      "funktion": "Provenance",
+      "datei": "journal.md",
+      "typ": "Process",
+      "version": "0.2",
+      "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/journal.md"
+    },
+    {
+      "slug": "plan",
+      "title": "Vorlage Plan",
+      "funktion": "Planning (vorwaerts)",
+      "datei": "plan.md oder roadmap.md",
+      "typ": "Process",
+      "version": "0.2",
+      "status": "complete",
+      "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/plan.md"
+    },
+    {
+      "slug": "report",
+      "title": "Vorlage Report",
+      "funktion": "Reporting",
+      "datei": "report.md oder status.md",
+      "typ": "Knowledge (Snapshot)",
+      "version": "0.2",
+      "status": "complete",
+      "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/report.md"
+    },
+    {
+      "slug": "integration",
+      "title": "Vorlage Integration",
+      "funktion": "Integration (projektuebergreifende Kontrakte und Handoffs)",
+      "datei": "integration.md",
+      "typ": "Knowledge",
+      "version": "0.1",
+      "status": "complete",
+      "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/integration.md"
     }
   ]
 }

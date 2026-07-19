@@ -1,7 +1,7 @@
 ---
 title: Vorlage Specification
 slug: specification
-version: "0.2"
+version: "0.3"
 status: complete
 source: Vorlage Specification
 mirrored: 2026-06-10

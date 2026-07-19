@@ -1,16 +1,14 @@
 ---
 title: Vorlage Action-Layer
 slug: action-layer
-version: "0.1"
-status: "Entwurf, in Erprobung"
+version: "0.2"
+status: complete
 source: Vorlage Action-Layer
 mirrored: 2026-06-10
 machine-url: https://dhcraft.org/Promptotyping/_content/promptotyping-document/action-layer.md
 ---
 
 # Vorlage Action-Layer
-
-> Status: Entwurf, in Erprobung. Diese neunte Vorlage ist seit 2026-06-09 im Katalog, ihre Freigabe durch den Critical Expert steht noch aus. Sie wurde empirisch aus einem Sweep über 35 Repos destilliert; einzelne Festlegungen (besonders der Verzicht auf YAML-Frontmatter und die kanonische Adressform) sind noch zu ratifizieren.
 
 Diese Vorlage strukturiert das Action-Dokument eines Promptotyping-Repos. Das resultierende Dokument heißt `CLAUDE.md` und liegt im Repo-Root, nicht im `knowledge/`-Ordner. Es sozialisiert den Coding-Agenten: imperative Regeln, die auf die deklarative Wissensbasis verweisen, plus ein klar abgegrenzter, austauschbarer Werkzeug-Block. Der Action-Layer trägt kein Wissen; er routet zu Wissen und übersetzt es in Imperative.
 
@@ -37,10 +35,10 @@ Drittens Distillation. CLAUDE.md ist ein knapper Pointer und trägt nur, was wed
 Abweichend von den `knowledge/`-Vorlagen trägt CLAUDE.md kein YAML-Frontmatter. Begründung: Das Dokument wird vom Werkzeug als roher Prompt-Kontext injiziert, und in der gesamten Belegbasis (35 Repos) führt keine einzige CLAUDE.md Frontmatter. Die Vorlagen-Provenienz steht stattdessen als HTML-Kommentar in der ersten Zeile:
 
 ```markdown
-<!-- template: Vorlage Action-Layer v0.1, URL folgt nach ADR Anker-Namespace -->
+<!-- template: Vorlage Action-Layer v0.2, https://dhcraft.org/Promptotyping/promptotyping-document/action-layer -->
 ```
 
-Die kanonische URL ist offen, bis der Anker-Namespace auf der Promptotyping-Site entschieden ist (neunter Slug unter `/promptotyping-document/` oder eigener Typ `/action-layer/`); die Entscheidung braucht einen ADR in der `specification.md` des Site-Repos. Diese Frontmatter-Abweichung vom `template:`-Pflichtkern der Konvention ist vom Critical Expert zu ratifizieren.
+Die kanonische Adresse ist der Slug `action-layer` unter `/promptotyping-document/` (ADR-9 der Site-`specification.md`), Latest-URL `https://dhcraft.org/Promptotyping/promptotyping-document/action-layer`. Die Frontmatter-Abweichung vom `template:`-Pflichtkern der Konvention (CLAUDE.md trägt kein YAML) ist mit der Freigabe der Vorlage am 2026-07-19 ratifiziert.
 
 ## Abschnitte im Detail
 
@@ -98,7 +96,7 @@ Maschinengebundene absolute Pfade gehören, wenn überhaupt, nur hierher und wer
 Der folgende Block ist als Template gedacht.
 
 ````markdown
-<!-- template: Vorlage Action-Layer v0.1, URL folgt nach ADR Anker-Namespace -->
+<!-- template: Vorlage Action-Layer v0.2, https://dhcraft.org/Promptotyping/promptotyping-document/action-layer -->
 
 # CLAUDE.md: [Projektname]
 

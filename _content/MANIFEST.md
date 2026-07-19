@@ -11,19 +11,27 @@ Inventar der Inhalts-Substrate, die am 2026-06-10 aus dem Obsidian-Vault (`C:/Us
 
 ## Vorlagen (Promptotyping Documents)
 
-Neun Vorlagen, gespiegelt nach `_content/promptotyping-document/{slug}.md`. Quelle jeweils im Vault unter `Vault Operations/Vorlagen Promptotyping Documents/`. Wikilinks wurden auf Site-Hash-Anker bzw. kurze Inline-Erklaerungen aufgeloest; Wikilinks innerhalb von Vorlagen-eigenen Frontmatter- und Beispielbloecken bleiben als verbatim Vorlagentext erhalten (sie illustrieren die Schreibweise eines Repos, sind keine Navigationslinks).
+Die Vorlagen sind nach `_content/promptotyping-document/{slug}.md` gespiegelt. Quelle jeweils im Vault unter `Vault Operations/Templates/Promptotyping/`. Wikilinks wurden auf Site-Hash-Anker bzw. kurze Inline-Erklaerungen aufgeloest; Wikilinks innerhalb von Vorlagen-eigenen Frontmatter- und Beispielbloecken bleiben als verbatim Vorlagentext erhalten (sie illustrieren die Schreibweise eines Repos, sind keine Navigationslinks).
+
+Nachtrag 2026-07-19 (Vault-Vorlagen-Sweep): Sechs weitere Vorlagen gespiegelt und verankert (Testing, Plan, Report, Domaenenwissen, Verification, Integration), die Funktionsnamen auf das englische Vokabular gezogen (Navigation, Charter, Material, Specification, Architecture, Domain Knowledge, Design, Quality Assurance, Provenance, Planning, Reporting, Agent Instructions, Verification, Integration; Vorlagen-NAMEN bleiben deutsch, sie sind Identifikatoren), die Versionsstaende der bestehenden Spiegel nachgezogen und die Entwurfs-Kennzeichnung des Action-Layers entfernt (freigegeben). Der Domaenenwissen-Slug ist `domain-knowledge`, wie im `template:`-Feld der Vault-Vorlage festgelegt (englischer Slug, ADR-3).
 
 | Datei | Vault-Quelle | Version |
 |---|---|---|
-| `promptotyping-document/data.md` | Vorlage Datengrundlage | 0.1 |
-| `promptotyping-document/index.md` | Vorlage Index | 0.1 |
-| `promptotyping-document/project.md` | Vorlage Projekt-Wissensdokument | 0.1 |
-| `promptotyping-document/specification.md` | Vorlage Specification | 0.2 |
-| `promptotyping-document/architecture.md` | Vorlage Architecture | 0.1 |
-| `promptotyping-document/design.md` | Vorlage Design | 0.1 |
-| `promptotyping-document/journal.md` | Vorlage Journal | 0.1 |
-| `promptotyping-document/user-stories.md` | Vorlage User Stories | 0.1 |
-| `promptotyping-document/action-layer.md` | Vorlage Action-Layer | 0.1 (Entwurf, in Erprobung) |
+| `promptotyping-document/index.md` | Vorlage Index | 0.2 |
+| `promptotyping-document/project.md` | Vorlage Projekt-Wissensdokument | 0.2 |
+| `promptotyping-document/data.md` | Vorlage Datengrundlage | 0.2 |
+| `promptotyping-document/specification.md` | Vorlage Specification | 0.3 |
+| `promptotyping-document/user-stories.md` | Vorlage User Stories | 0.2 |
+| `promptotyping-document/action-layer.md` | Vorlage Action-Layer | 0.2 |
+| `promptotyping-document/architecture.md` | Vorlage Architecture | 0.3 |
+| `promptotyping-document/domain-knowledge.md` | Vorlage Domaenenwissen | 0.2 |
+| `promptotyping-document/design.md` | Vorlage Design | 0.2 |
+| `promptotyping-document/testing.md` | Vorlage Testing | 0.2 |
+| `promptotyping-document/verification.md` | Vorlage Verification | 0.1 |
+| `promptotyping-document/journal.md` | Vorlage Journal | 0.2 |
+| `promptotyping-document/plan.md` | Vorlage Plan | 0.2 |
+| `promptotyping-document/report.md` | Vorlage Report | 0.2 |
+| `promptotyping-document/integration.md` | Vorlage Integration | 0.1 |
 
 Jede Datei traegt im Frontmatter `title, slug, version, status, source, mirrored, machine-url`.
 

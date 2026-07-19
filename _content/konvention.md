@@ -22,21 +22,28 @@ Die Konvention gilt für Markdown-Dateien im `knowledge/`-Ordner (oder gleichwer
 
 Eine Wissensbasis im `knowledge/`-Ordner deckt eine Reihe von Funktionen ab. Welche Funktionen relevant sind und wie viele Dateien sie tragen, hängt vom Projekt ab. Die Konvention beschreibt diese Funktionen, nicht eine feste Dokumentenliste: ein Agent, der ein neues Repo aufsetzt, prüft das Triggerkriterium pro Funktion und entscheidet, welche Dokumente er anlegt.
 
+Die Funktionsnamen sind seit 2026-07-19 englisch (Navigation, Charter, Material, Specification, Architecture, Domain Knowledge, Design, Quality Assurance, Provenance, Planning, Reporting, Agent Instructions, Verification, Integration). Die Vorlagen-Namen bleiben unverändert, auch wo sie deutsch sind (Vorlage Datengrundlage, Vorlage Domänenwissen), weil reale Repos sie in `template:`-Feldern referenzieren und die Site-Anker auf ihnen stehen; Vorlagen-Namen sind Identifikatoren, keine Funktionsbezeichnungen.
+
 | Funktion | Frage, die sie beantwortet | Trigger | Typischer Träger |
 |---|---|---|---|
 | Navigation | Was liegt hier, wie lese ich, welche Begriffe sind konstitutiv? | Wissensbasis hat mehr als drei Dokumente oder mehrere konstitutive Begriffe | `INDEX.md` (kombiniert Navigation und Begriffslexikon) |
-| Identität | Was ist dieses Projekt? | immer | `project.md` oder `README.md` |
+| Charter | Was ist dieses Projekt, für wen, mit welchem Ziel und welcher Materialgrundlage? | immer | `project.md` oder `README.md` |
 | Material | Was ist das verarbeitete oder produzierte Substrat? | Projekt verarbeitet oder produziert Daten | `data.md` |
-| Substanz | Was soll das System tun und warum? | immer | `specification.md` (Anforderungen, Epics und User Stories, Funktionsumfang, Entscheidungen); große Projekte spalten in `requirements.md` + `features.md` + `decisions.md`, große Editionsprojekte führen `user-stories.md` als dokumentierte Ausnahme separat |
-| Bauweise | Wie ist es technisch realisiert? | System geht über Static-Site hinaus | `architecture.md` |
-| Gestalt | Wie sieht es aus, wie verhält es sich ästhetisch? | Projekt hat eine UI | `design.md` |
-| Genese | Wie sind wir hierhin gekommen? | immer | `journal.md` |
-| Stand-zur-Zeit für Dritte | Was ist der korrekte Projektstand zum Stichtag X, kommuniziert an einen externen Adressaten? | Projektstatusbericht für externen Empfänger nötig (Auftraggeber, Förderer, Stakeholder) | `report.md` (oder genre-benannt `zwischenbericht.md`, `abschlussbericht.md`); Form noch im Ideenstadium |
-| Agent-Sozialisierung | Wie soll der Agent sich verhalten, auch ästhetisch? | immer | `CLAUDE.md` (im Repo-Root, nicht in `knowledge/`); referenziert `design.md` als Wertequelle |
+| Specification | Was soll das System tun und warum? | immer | `specification.md` (Anforderungen, Epics und User Stories, Funktionsumfang, Entscheidungen); ADR/Entscheidungen auslagerbar als `decisions.md`; narrative Szenarien als Sektion in `specification.md`, als separate `user-stories.md` (große Projekte) oder als „Acceptance Scenarios" in der spec (gleichwertig) |
+| Architecture | Wie ist es technisch realisiert? | System geht über Static-Site hinaus | `architecture.md` |
+| Domain Knowledge | Welches fachmethodische Wissen und welche Vorgaben gelten (das Warum und das fachliche Regelwerk)? | Forschungs-, Editions- oder Datenprojekt mit fachmethodischer Vorgabe- oder Theorieschicht | `editorial-guidelines.md`, `tei-mapping.md`, `methodik.md`, `forschungsrahmen.md`, `ontology.md`; Vorlage [Vorlage Domänenwissen](#promptotyping-document-domain-knowledge) |
+| Design | Wie sieht es aus, wie verhält es sich ästhetisch? | Projekt hat eine UI | `design.md` |
+| Quality Assurance | Was wird garantiert, was bewusst nicht, und wie wird es geprüft? | Projekt mit Tests, Verifikations- oder Akzeptanzprüfungen | `testing.md` (oder `test-strategy.md`); Vorlage [Vorlage Testing](#promptotyping-document-testing) |
+| Verification | Halten die eigenen empirischen und Neuheits-Claims einer adversarialen Prüfung gegen die Rohdaten stand? | Projekt erhebt empirische Befunde oder Neuheitsansprüche, die außenwirksam verwendet werden (Paper, Bericht, Übergabe) | `verification.md` (auch `verifikation.md`, `conformance-*.md`); Vorlage [Vorlage Verification](#promptotyping-document-verification) |
+| Provenance | Wie sind wir hierhin gekommen? | immer | `journal.md` |
+| Planning | Wohin und in welcher Reihenfolge geht es als Nächstes? | Projekt mit Phasen, Milestones oder Sprint-Steuerung | `plan.md` (oder `roadmap.md`); Vorlage [Vorlage Plan](#promptotyping-document-plan); Vorwärts-Pendant zur Provenance |
+| Reporting | Was ist der korrekte Projektstand zum Stichtag X, kommuniziert an einen externen Adressaten? | Projektstatusbericht für externen Empfänger (Auftraggeber, Förderer, Stakeholder); bei Auftragsprojekten Regelfall | `report.md` (oder `status.md`, kollisionsärmer; genre-benannt `zwischenbericht.md`, `abschlussbericht.md`; maschinelle Snapshots dürfen außerhalb `knowledge/` in `reports/` liegen); Vorlage [Vorlage Report](#promptotyping-document-report) |
+| Integration | Was liefert dieses Projekt einem anderen (oder erhält von ihm), in welchem Format, und woran wird die Erfüllung gemessen? | Projekt mit Datenaustausch, Kontrakt oder Handoff zu einem anderen Projekt oder einer anderen Lane | `integration.md`, `{gegenüber}-integration.md`; Vorlage [Vorlage Integration](#promptotyping-document-integration) |
+| Agent Instructions | Wie soll der Agent sich verhalten, auch ästhetisch? | immer | `CLAUDE.md` (im Repo-Root, nicht in `knowledge/`); referenziert `design.md` als Wertequelle |
 
-Die Funktionen können zusammengefasst werden, wenn das Projekt klein ist (ein triviales Tool-Repo trägt Identität, Material und Substanz oft in einer einzigen `project.md`), oder gespalten, wenn das Projekt groß ist (zbz-ocr-tei spaltet die Bauweise in Pipeline, Engines, CER-Methodik, TEI-Mapping). Maßgabe ist nicht Vollständigkeit, sondern dass jede für das Projekt relevante Funktion an genau einer auffindbaren Stelle abgedeckt ist.
+Die Funktionen können zusammengefasst werden, wenn das Projekt klein ist (ein triviales Tool-Repo trägt Charter, Material und Specification oft in einer einzigen `project.md`), oder gespalten, wenn das Projekt groß ist (zbz-ocr-tei spaltet die Architecture in Pipeline, Engines, CER-Methodik, TEI-Mapping). Maßgabe ist nicht Vollständigkeit, sondern dass jede für das Projekt relevante Funktion an genau einer auffindbaren Stelle abgedeckt ist.
 
-Standard-Dateinamen sind kleingeschrieben (`project.md`, `data.md`, `specification.md`, `architecture.md`, `design.md`, `journal.md`), Ausnahme `INDEX.md` als Großbuchstabe-Konvention für Hub-Dokumente. Repos mit anderen Dateinamenskonventionen (zum Beispiel zbz-ocr-tei mit Großbuchstaben-Namen wie `PIPELINE.md`) sind nicht falsch, aber profitieren weniger von der Lese-Heuristik weiter unten.
+Standard-Dateinamen sind kleingeschrieben (`project.md`, `data.md`, `specification.md`, `architecture.md`, `design.md`, `journal.md`, `plan.md`, `testing.md`, `verification.md`, `integration.md`, `report.md`), Ausnahme `INDEX.md` als Großbuchstabe-Konvention für Hub-Dokumente. Repos mit anderen Dateinamenskonventionen (zum Beispiel zbz-ocr-tei mit Großbuchstaben-Namen wie `PIPELINE.md`) sind nicht falsch, aber profitieren weniger von der Lese-Heuristik weiter unten.
 
 ## Vorlagen-Katalog
 
@@ -45,22 +52,28 @@ Für die Funktionen, die in der Praxis wiederkehren, liegen ausfüllbare Vorlage
 | Vorlage | Funktion | Empfohlener Dateiname |
 |---|---|---|
 | [Vorlage Index](#promptotyping-document-index) | Navigation plus Begriffslexikon | `INDEX.md` |
-| [Vorlage Projekt-Wissensdokument](#promptotyping-document-project) | Identität (ggf. zusätzlich Material und Substanz) | `project.md` oder `README.md` |
+| [Vorlage Projekt-Wissensdokument](#promptotyping-document-project) | Charter (ggf. zusätzlich Material und Specification) | `project.md` oder `README.md` |
 | [Vorlage Datengrundlage](#promptotyping-document-data) | Material | `data.md` |
-| [Vorlage Specification](#promptotyping-document-specification) | Substanz (formale Anforderungen, Epics und User Stories, Funktionsumfang, Entscheidungen) | `specification.md` |
-| [Vorlage User Stories](#promptotyping-document-user-stories) | Substanz (narrative Anwendungsszenarien als separate Datei; nur dokumentierte Ausnahme) | `user-stories.md` |
-| [Vorlage Action-Layer](#promptotyping-document-action-layer) | Agent-Sozialisierung (Entwurf, Freigabe ausstehend) | `CLAUDE.md` (Repo-Root) |
-| [Vorlage Architecture](#promptotyping-document-architecture) | Bauweise | `architecture.md` |
-| [Vorlage Design](#promptotyping-document-design) | Gestalt | `design.md` |
-| [Vorlage Journal](#promptotyping-document-journal) | Genese | `journal.md` |
+| [Vorlage Specification](#promptotyping-document-specification) | Specification (formale Anforderungen, Epics und User Stories, Funktionsumfang, Entscheidungen) | `specification.md` |
+| [Vorlage User Stories](#promptotyping-document-user-stories) | Specification (narrative Anwendungsszenarien als separate Datei; nur dokumentierte Ausnahme) | `user-stories.md` |
+| [Vorlage Action-Layer](#promptotyping-document-action-layer) | Agent Instructions | `CLAUDE.md` (Repo-Root) |
+| [Vorlage Architecture](#promptotyping-document-architecture) | Architecture (inkl. externe Modelle und Deployment als Sektionen; reguläre Auslagerung `pipeline.md`) | `architecture.md` |
+| [Vorlage Domänenwissen](#promptotyping-document-domain-knowledge) | Domain Knowledge (Begründungsschicht und fachliches Regelwerk) | `editorial-guidelines.md`, `methodik.md`, `tei-mapping.md` u. a. |
+| [Vorlage Design](#promptotyping-document-design) | Design | `design.md` |
+| [Vorlage Testing](#promptotyping-document-testing) | Quality Assurance | `testing.md` |
+| [Vorlage Verification](#promptotyping-document-verification) | Verification (adversariale Prüfung eigener Claims gegen die Rohdaten) | `verification.md` |
+| [Vorlage Journal](#promptotyping-document-journal) | Provenance | `journal.md` |
+| [Vorlage Plan](#promptotyping-document-plan) | Planning (vorwärts) | `plan.md` oder `roadmap.md` |
+| [Vorlage Report](#promptotyping-document-report) | Reporting | `report.md` |
+| [Vorlage Integration](#promptotyping-document-integration) | Integration (projektübergreifende Kontrakte und Handoffs) | `integration.md`, `{gegenüber}-integration.md` |
 
 Eine Vorlage trägt eine Funktion, nicht einen festen Dateinamen: wer das Repo-Dokument anders nennen will (zum Beispiel `material.md` statt `data.md` oder `corpus.md` für ein Editionsprojekt), nutzt dieselbe Vorlage. Die Frontmatter-Schemas und Strukturprinzipien tragen unabhängig vom konkreten Dateinamen.
 
-Konventionsänderung 2026-05-30: Epics und User Stories ziehen als eigene Sektion in `specification.md`; eine separate `user-stories.md` ist seitdem die dokumentierte Ausnahme für große Projekte (typischerweise Editionsprojekte), deren Substanz-Funktion ohnehin gespalten wird. Die [Vorlage Specification](#promptotyping-document-specification) (ab Vorlagen-Version 0.2) trägt die Sektion, die [Vorlage User Stories](#promptotyping-document-user-stories) bleibt für den Ausnahmefall im Katalog.
+Konventionsänderung 2026-05-30: Epics und User Stories ziehen als eigene Sektion in `specification.md`; eine separate `user-stories.md` ist seitdem die dokumentierte Ausnahme für große Projekte (typischerweise Editionsprojekte), deren Specification-Funktion ohnehin gespalten wird. Die [Vorlage Specification](#promptotyping-document-specification) (ab Vorlagen-Version 0.2) trägt die Sektion, die [Vorlage User Stories](#promptotyping-document-user-stories) bleibt für den Ausnahmefall im Katalog.
 
-Wenn ein Repo eine Funktion abdeckt, für die noch keine Vorlage existiert (zum Beispiel `editorial-guidelines.md` in Editionsprojekten oder `pipeline.md` in mehrstufigen Datenprojekten), bleibt das Dokument zunächst freihändig; die Konvention liefert das Frontmatter-Vokabular und die Strukturprinzipien, das reicht für den Anfang. Sobald ein zweites Repo dieselbe Funktion in vergleichbarer Form trägt, lohnt sich eine eigene Vorlage.
+Wenn ein Repo eine Funktion abdeckt, für die noch keine Vorlage existiert (zum Beispiel `cer-methodik.md` in OCR-Projekten oder `personas.md` als UX-Artefakt), bleibt das Dokument zunächst freihändig; die Konvention liefert das Frontmatter-Vokabular und die Strukturprinzipien, das reicht für den Anfang. Sobald ein zweites Repo dieselbe Funktion in vergleichbarer Form trägt, lohnt sich eine eigene Vorlage.
 
-Aktuell als Kandidatenfunktion im Ideenstadium geführt wird "Stand-zur-Zeit für Dritte" (`report.md`). Die Funktion adressiert externe Empfänger und friert einen Projektstand zu einem festen Zeitpunkt ein. Stil, Struktur und Lebenszyklus weichen an mehreren Punkten bewusst vom internen Promptotyping-Stil ab (volatile Quantitäten erlaubt, Tabellen liberaler einsetzbar, keine negative Selbstdefinition). Erste Referenzimplementierung in zbz-ocr-tei, eine bindende Vorlage Report entsteht beim zweiten Vorkommen.
+Verification und Integration waren seit 2026-06-13 Kandidatenfunktionen und sind am 2026-07-19 zu Vollfunktionen mit eigener Vorlage befördert worden, nachdem das Inhaltsaudit die Schwelle von zwei vergleichbaren Vorkommen bestätigt hat (Verification in kisug, FemPrompt und szd-htr-ocr-pipeline; Integration in teiCrafter und szd-htr-ocr-pipeline). Seit 2026-07-19 sind alle Vorlagen des Katalogs freigegeben (`status: complete`); ein Entwurfsstatus einer Vorlage stünde sichtbar in Katalog und Vorlage zugleich.
 
 ## Vorlagen-Adressierbarkeit über `template:`-Feld
 
@@ -82,9 +95,9 @@ Das Feld gehört in den Pflichtkern für Repo-`knowledge/`-Dokumente. Vault-Spie
 
 ## Action-Layer im Repo-Root
 
-Action-Dokumente liegen im Repo-Root, nicht im `knowledge/`-Ordner. Standard ist `CLAUDE.md` als Agent-Konfiguration; sie sollte explizit auf den `knowledge/`-Ordner verweisen, damit der Agent die Wissensbasis als Kontext nimmt. Struktur und Befüllung beschreibt die [Vorlage Action-Layer](#promptotyping-document-action-layer) (seit 2026-06-09, Entwurfsstatus bis zur Freigabe). `RULES.md`, `INSTRUCTIONS.md`, `cloud-commands.md` sind Forschungsleitstelle-spezifisch (mehrere parallele Agenten mit differenzierten Rollen) und kein Standard für gewöhnliche Promptotyping-Repos.
+Action-Dokumente liegen im Repo-Root, nicht im `knowledge/`-Ordner. Standard ist `CLAUDE.md` als Agent-Konfiguration; sie sollte explizit auf den `knowledge/`-Ordner verweisen, damit der Agent die Wissensbasis als Kontext nimmt. Struktur und Befüllung beschreibt die [Vorlage Action-Layer](#promptotyping-document-action-layer) (seit 2026-06-09, freigegeben 2026-07-19). `RULES.md`, `INSTRUCTIONS.md`, `cloud-commands.md` sind Forschungsleitstelle-spezifisch (mehrere parallele Agenten mit differenzierten Rollen) und kein Standard für gewöhnliche Promptotyping-Repos.
 
-Auf der ästhetischen Schicht erfolgt die Agent-Sozialisierung dadurch, dass `CLAUDE.md` das `design.md` als Wertequelle einbindet, etwa über eine Sektion "Designprinzipien" mit imperativ formulierten Sätzen, die aus der Designhaltung abgeleitet sind, oder durch die Anweisung, vor UI-Generierung das `design.md` zu lesen. Das `design.md` selbst bleibt deklaratives Knowledge Document; die imperative Übersetzung gehört in den Action-Layer. Diese Aufgabenteilung folgt der Lese-Heuristik weiter unten und vermeidet, dass ein Knowledge-Dokument seinen analytischen Typ wechselt.
+Auf der ästhetischen Schicht wirkt die Agent-Instructions-Funktion dadurch, dass `CLAUDE.md` das `design.md` als Wertequelle einbindet, etwa über eine Sektion "Designprinzipien" mit imperativ formulierten Sätzen, die aus der Designhaltung abgeleitet sind, oder durch die Anweisung, vor UI-Generierung das `design.md` zu lesen. Das `design.md` selbst bleibt deklaratives Knowledge Document; die imperative Übersetzung gehört in den Action-Layer. Diese Aufgabenteilung folgt der Lese-Heuristik weiter unten und vermeidet, dass ein Knowledge-Dokument seinen analytischen Typ wechselt.
 
 ## Klassifikation der Dokumenttypen
 
@@ -107,17 +120,22 @@ Statt eines `type:`-Feldes im Frontmatter trägt die Funktion eines Dokuments de
 | Funktion | Typ | Typische Dateinamen | Bei welchem Fehlerbild zuerst prüfen |
 |---|---|---|---|
 | Navigation | Knowledge | `INDEX.md`, `00_INDEX.md` | Reihenfolge unklar, Dokument nicht gefunden, Begriff falsch verwendet (Glossar lebt im Index) |
-| Identität | Knowledge | `project.md`, `README.md`, `PROJEKT.md` | Output inhaltlich falsch, Projektkontext unklar |
+| Charter | Knowledge | `project.md`, `README.md`, `PROJEKT.md` | Output inhaltlich falsch, Projektkontext unklar |
 | Material | Knowledge | `data.md`, `DATA.md`, `corpus.md`, `material.md` | Datenfelder verwechselt, Beispiele falsch zitiert |
-| Substanz (formal) | Knowledge | `specification.md`, `requirements.md`, `features.md`, `decisions.md` | Akzeptanzkriterium ignoriert, frühere Entscheidung revidiert, Funktion falsch dargestellt |
-| Substanz (narrativ) | Knowledge | `specification.md` (Sektion Epics und User Stories); bei Spaltung `user-stories.md`, `scholar-user-stories.md` | Anwendungsszenario missverstanden, Forschungsoperation ignoriert |
-| Bauweise | Knowledge | `architecture.md`, `pipeline.md`, `infrastruktur.md` | Falsche Annahmen über Komponenten, Datenfluss, Schichtgrenzen |
-| Gestalt | Knowledge | `design.md`, `DESIGN.md` | UI-Inkonsistenz, Designsystem-Bruch, Designhaltung unklar (für Agentenverhalten, das Designwerten widerspricht, zusätzlich `CLAUDE.md` prüfen) |
-| Genese | Process | `journal.md`, `JOURNAL.md`, `learnings.md` | Entscheidungslogik unklar, Wiederholung früherer Sackgassen |
-| Stand-zur-Zeit für Dritte | Knowledge (Snapshot) | `report.md`, `zwischenbericht.md`, `abschlussbericht.md` | Externer Stand-Anspruch unklar oder veraltet, Adressat nicht erkennbar, Belege fehlen |
-| Agent-Sozialisierung | Action | `CLAUDE.md`, `RULES.md`, `INSTRUCTIONS.md` (Repo-Root) | Stilbruch, Verbot ignoriert, formal falscher Output |
+| Specification (formal) | Knowledge | `specification.md`, `requirements.md`, `features.md`, `decisions.md` | Akzeptanzkriterium ignoriert, frühere Entscheidung revidiert, Funktion falsch dargestellt |
+| Specification (narrativ) | Knowledge | `specification.md` (Sektion Epics und User Stories); bei Spaltung `user-stories.md`, `scholar-user-stories.md` | Anwendungsszenario missverstanden, Forschungsoperation ignoriert |
+| Architecture | Knowledge | `architecture.md`, `pipeline.md`, `infrastruktur.md` | Falsche Annahmen über Komponenten, Datenfluss, Schichtgrenzen |
+| Domain Knowledge | Knowledge | `editorial-guidelines.md`, `tei-mapping.md`, `methodik.md`, `forschungsrahmen.md`, `ontology.md` | Fachregel oder Methode verletzt, Editionsrichtlinie ignoriert, Begründungsschicht fehlt |
+| Design | Knowledge | `design.md`, `DESIGN.md` | UI-Inkonsistenz, Designsystem-Bruch, Designhaltung unklar (für Agentenverhalten, das Designwerten widerspricht, zusätzlich `CLAUDE.md` prüfen) |
+| Quality Assurance | Knowledge | `testing.md`, `test-strategy.md` | Garantie unklar, Test fehlt oder schlägt fehl, Akzeptanzkriterium nicht geprüft |
+| Verification | Knowledge | `verification.md`, `verifikation.md`, `conformance-*.md` | Außenwirksamer Claim unbelegt, Kopfzahl nicht nachrechenbar, Neuheitsanspruch ungeprüft |
+| Provenance | Process | `journal.md`, `JOURNAL.md`, `learnings.md` | Entscheidungslogik unklar, Wiederholung früherer Sackgassen |
+| Planning | Process | `plan.md`, `roadmap.md` | Reihenfolge oder Phasengrenze unklar, nächster Schritt nicht erkennbar (vorwärts; Provenance ist rückwärts) |
+| Reporting | Knowledge (Snapshot) | `report.md`, `status.md`, `zwischenbericht.md`, `abschlussbericht.md` | Externer Stand-Anspruch unklar oder veraltet, Adressat nicht erkennbar, Belege fehlen |
+| Integration | Knowledge | `integration.md`, `{gegenüber}-integration.md`, `HANDOFF.md` | Schnittstellenformat missverstanden, Zuständigkeit an der Projektgrenze unklar, beide Seiten beschreiben den Kontrakt widersprüchlich |
+| Agent Instructions | Action | `CLAUDE.md`, `RULES.md`, `INSTRUCTIONS.md` (Repo-Root) | Stilbruch, Verbot ignoriert, formal falscher Output |
 
-Bei Repos mit projektsemantisch geprägten Dateinamen (zbz-ocr-tei führt zum Beispiel `TEI-MAPPING.md`, `CER-METHODIK.md`, `EDITION.md`) gilt: Der semantische Inhalt entscheidet über die Funktion, nicht der Dateiname. In der Regel handelt es sich dann um Knowledge Documents, die eine Spezialisierung der Funktionen Material oder Bauweise tragen.
+Bei Repos mit projektsemantisch geprägten Dateinamen (zbz-ocr-tei führt zum Beispiel `TEI-MAPPING.md`, `CER-METHODIK.md`, `EDITION.md`) gilt: Der semantische Inhalt entscheidet über die Funktion, nicht der Dateiname. In der Regel handelt es sich dann um Knowledge Documents, die eine Spezialisierung der Funktionen Material oder Architecture tragen.
 
 ## Frontmatter-Schema
 
