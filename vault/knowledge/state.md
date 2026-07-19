@@ -23,7 +23,7 @@ One row per source. Processing status: `new` → `ingested` → `distilled`.
 
 | Source | Type | Channel | Representation | Distillate | Status |
 |---|---|---|---|---|---|
-| GM-DH `prompts/PRISM.md` (public repo, commit 2025-01-21) | document | collection | — | — | new |
+| GM-DH `prompts/PRISM.md` (public repo, commit 2025-01-21) | document | collection | [[00_representation/documents/gm-dh-prism-prompt-2025-01]] | [[10_distillates/documents/gm-dh-prism-prompt-2025-01]] | distilled |
 | LLM Summer School DH 2025 site (chpollin.github.io/llmdh, Cologne, September 2025) | document | collection | — | — | new |
 | Dissertation (Pollin 2025b) | publication | collection | — | — | new |
 | Initial method description, blog post 2025 (Pollin 2025d) | publication | collection | — | — | new |
@@ -51,5 +51,6 @@ The deliverable is external (settled decision in [[knowledge/specification]]); f
 
 <!-- Short, current list; done items are deleted, decisions go to the journal. -->
 
-- First production cycle per SETUP.md: ingest the GM-DH PRISM source, distill it, build one Genealogy claim, anchor one footnote in paper Section 2.6.
+- Footnote suggestion for the paper session (Section 2.6, side-line dating): the sentence placing PRISM as the side line can carry a footnote grounded in [[20_claims/prism-prompt-documented-by-january-2025]]. The claim carries only that the PRISM prompt existed in its stated wording in the public GM-DH repository by 2025-01-21 (git-commit dating). It does not carry PRISM's influence on the dissertation or on the four-phase model; those links need their own claims or enter the paper as posits.
 - Ingest the remaining `new` sources of the inventory.
+- Machine review is operator-gated (mechanism per [[knowledge/specification]]); until released, documents stay `grounded` with `checked.validation` dates.
