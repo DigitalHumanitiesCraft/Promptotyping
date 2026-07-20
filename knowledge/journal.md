@@ -383,3 +383,23 @@ Verifikationsdokument committet (2b95587). Die Korrekturen selbst blieben bewuss
 ### Dead Ends
 
 Keine.
+
+## 2026-07-20 — System Prompts repo-kanonisch und optimiert
+
+### Ziel der Session
+
+Die zwei System Prompts (Coding, Writing) waren bislang Vault-Spiegelungen mit `source:`-Verweis. Auf Operator-Entscheidung werden sie repo-kanonisch; die Vault-Quellen entfallen. Zugleich inhaltliche Optimierung.
+
+### Verlauf
+
+`_content/skills/coding.md` und `writing.md` von der Mirror-Rolle auf kanonisch umgestellt: Frontmatter `source:` und `mirrored:` entfernt, `status: complete` und `updated: 2026-07-20` gesetzt, `machine-url` und `slug` unveraendert. Die Prompt-Bodies optimiert: die ueberholte Formulierung „Code is deterministically generatable / Documents as Source of Truth" durch die Paper-Fassung ersetzt (primary artifact, functional by-product, Pollin 2026 §2.5); die Dokumenttyp-Listen des Coding-Prompts auf den aktuellen Funktionskatalog gezogen (specification, architecture, design, domain-knowledge, verification als First-Class-Funktion, report), Hinweis auf Trigger-Logik und `template:`-Adressierung ergaenzt, kompakter Multi-Agent-Block (`.claude/agents/`, Organisationsdokument, §3.5) und ein Satz zu deterministisch generierten Knowledge Documents; im Writing-Prompt zusaetzlich `verification.md` aufgenommen. `_content/MANIFEST.md` fuer beide Skills von „Vault-Spiegelung" auf „kanonisch im Repo" korrigiert.
+
+Vault-seitig sind die zwei Quelldateien unter `Projects/Promptotyping/System Prompts/` geloescht und das Promptotyping MOC auf die Site-Anker `#skills-coding` und `#skills-writing` umgebogen (Commit im Obsidian-Repo).
+
+### Ergebnis
+
+Die Skills sind die maßgebliche Fassung der zwei System Prompts. Rendering unveraendert (Bodies im ```text-Block, `slug` und `machine-url` stabil).
+
+### Dead Ends
+
+Keine.

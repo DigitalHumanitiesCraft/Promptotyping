@@ -79,8 +79,8 @@ Sieben Tiefenseiten unter `_content/case-studies/{id}.md`, je aus der zugehoerig
 | `praxis.md` | Promptotyping MOC, Sektion Methodenerweiterungen |
 | `arbeitsumgebung.md` | neu formuliert (Obsidian-Vault als Wissensumgebung, Promptotyping Agent Interface, AI Harness und Skills) |
 | `skills/index.md` | neu formuliert (Action-Layer-Praxis), verweist auf coding/writing und Vorlage Action-Layer |
-| `skills/coding.md` | System Prompts/Promptotyping System Prompt for Coding.md (Prompttext verbatim) |
-| `skills/writing.md` | System Prompts/Promptotyping System Prompt for Writing.md (Prompttext verbatim) |
+| `skills/coding.md` | kanonisch im Repo (2026-07-20 aus dem Vault uebernommen und optimiert; frueher Vault-Spiegelung) |
+| `skills/writing.md` | kanonisch im Repo (2026-07-20 aus dem Vault uebernommen und optimiert; frueher Vault-Spiegelung) |
 
 ## Kuratierung: ausgeschlossene Case Studies
 
