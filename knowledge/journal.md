@@ -403,3 +403,19 @@ Die Skills sind die maßgebliche Fassung der zwei System Prompts. Rendering unve
 ### Dead Ends
 
 Keine.
+
+## 2026-07-20 — Wissensbasis-Currency (Slugs, Plan-Tracker, Handoff)
+
+### Ziel der Session
+
+Restdrift der Repo-Wissensbasis beheben, parallel zur Aktualisierung des Promptotyping-Wissens im Obsidian-Vault.
+
+### Verlauf
+
+`CLAUDE.md` URL-Anker-Schema von „Neun Slugs" auf fünfzehn gezogen (die sechs Sweep-Vorlagen Testing, Plan, Report, Domänenwissen, Verification, Integration ergänzt, Action-Layer-Entwurfsmarke entfernt). Den Status-Tracker in `plan.md` auf den realen Stand gebracht: M3 (Sektion-4-Zahlen) und M6 (Standardisierungsstufe) auf completed, die M5-Notiz um den erledigten PRISM-Atom-Punkt bereinigt, M12 (Vault-Abgleich) auf in progress mit dem heutigen Fortschritt (PRISM-Atom korrigiert, Promptotyping-Atom auf Paper-Stand, MOC aktualisiert). `HANDOFF.md` gelöscht, weil die Übergabenotiz vom 2026-07-19 inhaltlich überholt ist (Git-History sichert sie).
+
+Nicht angetastet: `verification-paper-figures.md` bleibt, weil die Grounded-Vault-Representation seine GitHub-URL als `source:`-Identifier trägt.
+
+### Dead Ends
+
+Keine.

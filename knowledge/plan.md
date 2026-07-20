@@ -7,7 +7,7 @@ status: active
 language: de
 version: 0.3
 created: 2026-07-19
-updated: 2026-07-19
+updated: 2026-07-20
 authors: [Christopher Pollin]
 generated-with: Claude Code mit Claude Fable 5
 method:
@@ -183,16 +183,16 @@ Fertig bedeutet:
 |---|---|---|
 | M1 — Quell-Repos gesichert | in progress | Repo-Klon erledigt (2026-07-19); Sichtung ergab: `claude/*`-Branches existieren remote nicht mehr, Sichtungspunkt gegenstandslos. Offen: KASKADE (7 untrackte Dateien, keine Historie), slides-generator (2 uncommittete Dateien), deepseek-ocr (2 ungepushte Commits, Relevanz prüfen) |
 | M2 — Delta-Liste | pending | |
-| M3 — Zahlen geprüft | pending | |
+| M3 — Zahlen geprüft | completed | Sektion-4-Zahlen adversarial gegen die Repos geprüft und korrigiert (2026-07-19); Befund in `verification-paper-figures.md`, am 2026-07-20 im Grounded Vault gegroundet |
 | M4 — Quellen datiert | pending | wartet auf E2 |
-| M5 — Genealogie-Abschnitt | in progress | Abschnitt geschrieben und am 2026-07-19 auf die korrigierte Gewichtung umgebaut (Dissertation Ursprung, PRISM Seitenlinie); wartet auf M4-Datierung. Achtung: das Vault-Atom PRISM Framework trägt die alte Übergewichtung, Korrektur in M12 |
-| M6 — Standardisierungsstufe | pending | Materialbasis: Konvention Promptotyping Documents (Stand 2026-07-19 nach Vorlagen-Sweep) |
+| M5 — Genealogie-Abschnitt | in progress | Abschnitt geschrieben und am 2026-07-19 auf die korrigierte Gewichtung umgebaut (Dissertation Ursprung, PRISM Seitenlinie); wartet auf M4-Datierung. Das Vault-Atom PRISM Framework ist am 2026-07-20 auf die korrigierte Gewichtung gezogen |
+| M6 — Standardisierungsstufe | completed | Sektion 3.3 um die Standardisierungsstufe erweitert (Vorlagen-Katalog, Frontmatter-Pflichtkern, `template:`-Adressierung, Status-Vokabular, Verifikations-Funktion); am 2026-07-20 im Grounded Vault gegroundet |
 | M7 — Abstract und Durchsicht | pending | |
 | M8 — Novelty-Recherche | pending | |
 | M9 — Venue-Anpassung | pending | wartet auf E1 |
 | M10 — Blogpost | pending | wartet auf E3 |
 | M11 — Site-Sektionen | pending | |
-| M12 — Vault-Abgleich | pending | Vault-Session erforderlich |
+| M12 — Vault-Abgleich | in progress | 2026-07-20: PRISM-Atom korrigiert, Promptotyping-Atom auf den Paper-Stand gezogen (Standardisierung, Zwei Modi, Interface-Typologie), MOC aktualisiert; offen die Parkdokumente (Grounded-Vault-Paper, Vier-Schichten-Paper) |
 
 Legende: completed, in progress, pending.
 
