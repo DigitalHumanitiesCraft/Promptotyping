@@ -37,6 +37,7 @@ Die Promptotyping-Documents dieser Wissensbasis:
 - **[journal.md](journal.md)** — chronologischer Verlauf des Refactors
 - **[paper.md](paper.md)** — der vollständige englische Papertext als ein Dokument, Arbeitsstand zur Operator-Lektüre; nach Freigabe Zerlegung in `_content/paper/`
 - **[paper-writing.md](paper-writing.md)** — das Wissen über das Schreiben des Papers: Arbeitsmodus, Kernaussagen, Sprachregeln, Entscheidungsstand, offene Prüfpunkte, Weg zur Einreichung
+- **[report.md](report.md)** — Stichtagsbericht des Lane-Durchgangs zur ZfdG-Einreichung (2026-07-23) mit Abnahme-Listen; Snapshot, nicht fortgeschrieben
 
 Das Paper-Schreiben folgt damit einem Zwei-Dokumente-Modell: der Text in `paper.md`, das Wissen darüber in `paper-writing.md`. Die früheren Steuerdokumente (plan, paper-outline, verification-paper-figures, Draft-Snapshot, Root-PLAN) sind dort zusammengeführt; ihre Volltexte trägt die Git-History.
 

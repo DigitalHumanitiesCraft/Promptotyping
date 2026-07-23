@@ -481,6 +481,24 @@ Drei Entwürfe erzeugt, uncommitted zur Operator-Verifikation: `_content/technol
 
 Nachtrag: Commit-Freigabe durch den Operator am 2026-07-23; damit ist die README-Neufassung englisch entschieden und `_content/MANIFEST.md` um beide neue Dateien ergänzt.
 
+## 2026-07-23 — Lane-Durchgang zur ZfdG-Einreichung (sieben Opus-Agenten)
+
+### Ziel der Session
+
+Venue-Entscheidung für das Paper und paralleler Lane-Betrieb, um die Einreichung inhaltlich, formal und infrastrukturell vorzubereiten; Konsolidierung als Forschungsbericht.
+
+### Verlauf
+
+E1 entschieden: ZfdG (nach Recherche-Abwägung gegen DHQ, IJDH, DSH, TGDK-SI). Sieben Opus-Subagenten: drei zur ZfdG-Venue-Analyse (KI-Cluster, FDM-Cluster, Stilprofil), vier als Lanes (A Paper-Durchgang mit Lucina→Notker-Ersatz, Sprachpass 3–7 und zehn verifizierten Referenzen, Commit `c07e65f`; B drei Site-Konzeptvarianten mit Empfehlung Hub-Variante; C LICENSE/Dual-Licensing, Commits `c28cb17`/`b0e933c`; E SDD-Datierung und Schöch-Anker, verifiziert). Koordinator-Verifikationen: ZfdG-Formalia an den offiziellen Seiten (Exposé-Pflicht, zweisprachiges Abstract je 750 Zeichen, Fußnoten-Kurzbeleg, CC BY-SA), vier tragende Zitate wörtlich am Volltext, Lane-Diffs am Git-Stand. Operator-Entscheidungen im Chat: britische Schreibung bleibt; PRISM vollständig aus 2.6 gestrichen (E2 damit entfallen); Berners-Lee-Passage bestätigt (Hörbuch, Gesamtzitation ohne Seitenzahl); organisatorische Punkte zurückgestellt. Scout-Nebenbefund mit Gewicht: die eigene ZfdG-Vorarbeit "When it was 2024" (2025_008) fehlte im Referenzverzeichnis, jetzt Kandidat höchster Priorität.
+
+### Ergebnis
+
+Konsolidierter Stichtagsbericht [report.md](report.md) mit sechzehn abnahmefertigen Feinschliff-Kandidaten, sieben offenen Operator-Punkten und der definierten Grounded-Vault-Nachzieh-Runde. `project.md`-Stand nachgezogen, INDEX um den Report ergänzt.
+
+### Dead Ends
+
+Keine; die amerikanische Schreibungs-Empfehlung des Stilprofils wurde vom Operator überstimmt (britisch bleibt), dokumentiert statt umgesetzt.
+
 ### Dead Ends
 
 Keine.
