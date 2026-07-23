@@ -4,7 +4,7 @@
 
 Promptotyping is an iterative context engineering method in four phases (Preparation, Exploration & Mapping, Distillation, Implementation) for building research artefacts from research data with frontier LLMs. The primary artefact is a set of versioned Promptotyping Documents that hold a project's requirements, data, decisions, and domain knowledge; the prototype is a functional by-product that can be discarded and regenerated from the documents. A Critical Expert in the Loop verifies LLM output at defined points.
 
-This repository is the public specification of the method. It renders as an interactive paper at **https://dhcraft.org/Promptotyping/** (German site, English paper) and serves the method's templates as stable, machine-readable addresses.
+This repository is the public specification of the method and the repository of the method paper, which is written here in [knowledge/paper.md](knowledge/paper.md). It renders as an interactive paper at **https://dhcraft.org/Promptotyping/** (German site, English paper) and serves the method's templates as stable, machine-readable addresses.
 
 ## The method in brief
 
@@ -101,9 +101,15 @@ Open http://localhost:8000. Development history is in [knowledge/journal.md](kno
 
 ## Citation
 
-Pollin, Christopher; Steiner, Christian: Promptotyping. Zenodo. https://doi.org/10.5281/zenodo.14160875 (concept DOI, always resolves to the current version)
+This is the repository of the method paper. Pollin, Christopher: Promptotyping. Translating Research Data into Research Artefacts with Context and Agentic Engineering (in preparation); the text is developed in [knowledge/paper.md](knowledge/paper.md), its evidence layer in [vault/](vault/).
 
-Method article: Pollin, Christopher: Promptotyping. Zwischen Vibe Coding, Vibe Research und Context Engineering. In: L.I.S.A. Wissenschaftsportal der Gerda Henkel Stiftung, 17.01.2026, https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin
+For the repository and site: Pollin, Christopher; Steiner, Christian: Promptotyping. Zenodo. https://doi.org/10.5281/zenodo.14160875 (concept DOI, always resolves to the current version)
+
+The method originates in the author's dissertation and was first published in blog form:
+
+- Pollin, Christopher: Modelling, Operationalising and Exploring Historical Information. Using Historical Financial Sources as an Example. Dissertation, University of Graz 2025. http://unipub.uni-graz.at/obvugrhs/12127700
+- Pollin, Christopher: Promptotyping. Von der Idee zur Anwendung. DHCraft Blog, 24.04.2025. https://dhcraft.org/excellence/blog/Promptotyping/
+- Pollin, Christopher: Promptotyping. Zwischen Vibe Coding, Vibe Research und Context Engineering. Blogpost, L.I.S.A. Wissenschaftsportal der Gerda Henkel Stiftung, 17.01.2026. https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin
 
 ## Licence
 
