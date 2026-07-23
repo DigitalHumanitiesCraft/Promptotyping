@@ -1,0 +1,39 @@
+[
+  {
+    "id": "abdurahman-2025",
+    "type": "article-journal",
+    "title": "A Primer for Evaluating Large Language Models in Social-Science Research",
+    "author": [
+      {
+        "family": "Abdurahman",
+        "given": "Suhaib"
+      },
+      {
+        "family": "Salkhordeh Ziabari",
+        "given": "Alireza"
+      },
+      {
+        "family": "Moore",
+        "given": "Alexander K."
+      },
+      {
+        "family": "Bartels",
+        "given": "Daniel M."
+      },
+      {
+        "family": "Dehghani",
+        "given": "Morteza"
+      }
+    ],
+    "container-title": "Advances in Methods and Practices in Psychological Science",
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "DOI": "10.1177/25152459251325174",
+    "URL": "https://doi.org/10.1177/25152459251325174"
+  }
+]

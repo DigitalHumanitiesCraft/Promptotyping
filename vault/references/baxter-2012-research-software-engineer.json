@@ -1,0 +1,41 @@
+[
+  {
+    "id": "baxter-2012",
+    "type": "speech",
+    "title": "The Research Software Engineer",
+    "author": [
+      {
+        "family": "Baxter",
+        "given": "Rob"
+      },
+      {
+        "family": "Chue Hong",
+        "given": "Neil"
+      },
+      {
+        "family": "Gorissen",
+        "given": "Dirk"
+      },
+      {
+        "family": "Hetherington",
+        "given": "James"
+      },
+      {
+        "family": "Todorov",
+        "given": "Ilian"
+      }
+    ],
+    "event": "Digital Research 2012",
+    "event-place": "Oxford, UK",
+    "issued": {
+      "date-parts": [
+        [
+          2012,
+          9,
+          10
+        ]
+      ]
+    },
+    "URL": "https://www.research.ed.ac.uk/en/publications/the-research-software-engineer/"
+  }
+]

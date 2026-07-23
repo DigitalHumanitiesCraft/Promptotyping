@@ -1,0 +1,46 @@
+[
+  {
+    "id": "fanous-2025",
+    "type": "report",
+    "title": "SycEval: Evaluating LLM Sycophancy",
+    "author": [
+      {
+        "family": "Fanous",
+        "given": "Aaron"
+      },
+      {
+        "family": "Goldberg",
+        "given": "Jacob"
+      },
+      {
+        "family": "Agarwal",
+        "given": "Ank A."
+      },
+      {
+        "family": "Lin",
+        "given": "Joanna"
+      },
+      {
+        "family": "Zhou",
+        "given": "Anson"
+      },
+      {
+        "family": "Daneshjou",
+        "given": "Roxana"
+      },
+      {
+        "family": "Koyejo",
+        "given": "Sanmi"
+      }
+    ],
+    "number": "arXiv:2502.08177",
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "URL": "https://arxiv.org/abs/2502.08177"
+  }
+]

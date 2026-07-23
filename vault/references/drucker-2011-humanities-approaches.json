@@ -1,0 +1,23 @@
+[
+  {
+    "id": "drucker-2011",
+    "type": "article-journal",
+    "title": "Humanities Approaches to Graphical Display",
+    "author": [
+      {
+        "family": "Drucker",
+        "given": "Johanna"
+      }
+    ],
+    "container-title": "Digital Humanities Quarterly",
+    "volume": "5",
+    "issue": "1",
+    "issued": {
+      "date-parts": [
+        [
+          2011
+        ]
+      ]
+    }
+  }
+]

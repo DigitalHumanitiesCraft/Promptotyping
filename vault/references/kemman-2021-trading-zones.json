@@ -1,0 +1,26 @@
+[
+  {
+    "id": "kemman-2021",
+    "type": "book",
+    "title": "Trading Zones of Digital History",
+    "author": [
+      {
+        "family": "Kemman",
+        "given": "Max"
+      }
+    ],
+    "collection-title": "Studies in Digital History and Hermeneutics",
+    "collection-number": "1",
+    "publisher": "De Gruyter Oldenbourg",
+    "publisher-place": "Berlin/Boston",
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    },
+    "DOI": "10.1515/9783110682106",
+    "URL": "https://doi.org/10.1515/9783110682106"
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "id": "whitelaw-2015",
+    "type": "article-journal",
+    "title": "Generous Interfaces for Digital Cultural Collections",
+    "author": [
+      {
+        "family": "Whitelaw",
+        "given": "Mitchell"
+      }
+    ],
+    "container-title": "Digital Humanities Quarterly",
+    "volume": "9",
+    "issue": "1",
+    "issued": {
+      "date-parts": [
+        [
+          2015
+        ]
+      ]
+    }
+  }
+]

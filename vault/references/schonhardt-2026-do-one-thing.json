@@ -1,0 +1,23 @@
+[
+  {
+    "id": "schonhardt-2026",
+    "type": "article-journal",
+    "title": "Do One Thing and Do It Well. Vier Prinzipien einer digitalen Editionspraxis im Spannungsfeld zwischen fachlichen Standards und Deep Learning",
+    "author": [
+      {
+        "family": "Schonhardt",
+        "given": "Michael"
+      }
+    ],
+    "container-title": "Zeitschrift für digitale Geisteswissenschaften",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "DOI": "10.17175/sb007_005",
+    "URL": "https://doi.org/10.17175/sb007_005"
+  }
+]

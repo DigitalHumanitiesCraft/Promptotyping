@@ -1,0 +1,26 @@
+[
+  {
+    "id": "berners-lee-2025",
+    "type": "book",
+    "title": "This Is for Everyone: The Unfinished Story of the World Wide Web",
+    "author": [
+      {
+        "family": "Berners-Lee",
+        "given": "Tim"
+      },
+      {
+        "family": "Witt",
+        "given": "Stephen"
+      }
+    ],
+    "publisher": "Farrar, Straus and Giroux",
+    "publisher-place": "New York",
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    }
+  }
+]

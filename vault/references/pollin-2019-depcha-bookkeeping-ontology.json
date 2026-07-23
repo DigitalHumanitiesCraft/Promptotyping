@@ -1,0 +1,25 @@
+[
+  {
+    "id": "pollin-2019",
+    "type": "paper-conference",
+    "title": "Digital Edition Publishing Cooperative for Historical Accounts and the Bookkeeping Ontology",
+    "author": [
+      {
+        "family": "Pollin",
+        "given": "Christopher"
+      }
+    ],
+    "container-title": "Proceedings of the Doctoral Symposium on Research on Online Databases in History (RODBH 2019)",
+    "collection-title": "CEUR Workshop Proceedings",
+    "volume": "2532",
+    "publisher-place": "Leipzig",
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    },
+    "URL": "http://ceur-ws.org/Vol-2532/paper1.pdf"
+  }
+]

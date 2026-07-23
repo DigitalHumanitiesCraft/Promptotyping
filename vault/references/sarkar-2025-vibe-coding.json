@@ -1,0 +1,27 @@
+[
+  {
+    "id": "sarkar-2025",
+    "type": "paper-conference",
+    "title": "Vibe Coding: Programming through Conversation with Artificial Intelligence",
+    "author": [
+      {
+        "family": "Sarkar",
+        "given": "Advait"
+      },
+      {
+        "family": "Drosos",
+        "given": "Ian"
+      }
+    ],
+    "container-title": "Proceedings of the 36th Annual Conference of the Psychology of Programming Interest Group (PPIG 2025)",
+    "number": "arXiv:2506.23253",
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "URL": "https://arxiv.org/abs/2506.23253"
+  }
+]

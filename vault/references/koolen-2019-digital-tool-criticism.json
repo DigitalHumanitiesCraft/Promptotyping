@@ -1,0 +1,32 @@
+[
+  {
+    "id": "koolen-2019",
+    "type": "article-journal",
+    "title": "Toward a Model for Digital Tool Criticism: Reflection as Integrative Practice",
+    "author": [
+      {
+        "family": "Koolen",
+        "given": "Marijn"
+      },
+      {
+        "family": "van Gorp",
+        "given": "Jasmijn"
+      },
+      {
+        "family": "van Ossenbruggen",
+        "given": "Jacco"
+      }
+    ],
+    "container-title": "Digital Scholarship in the Humanities",
+    "volume": "34",
+    "issue": "2",
+    "page": "368-385",
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "id": "schoech-2013",
+    "type": "article-journal",
+    "title": "Big? Smart? Clean? Messy? Data in the Humanities",
+    "author": [
+      {
+        "family": "Schöch",
+        "given": "Christof"
+      }
+    ],
+    "container-title": "Journal of Digital Humanities",
+    "volume": "2",
+    "issue": "3",
+    "issued": {
+      "date-parts": [
+        [
+          2013
+        ]
+      ]
+    }
+  }
+]

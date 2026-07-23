@@ -1,0 +1,23 @@
+[
+  {
+    "id": "borek-2016",
+    "type": "article-journal",
+    "title": "TaDiRAH: A Case Study in Pragmatic Classification",
+    "author": [
+      {
+        "family": "Borek",
+        "given": "Luise"
+      }
+    ],
+    "container-title": "Digital Humanities Quarterly",
+    "volume": "10",
+    "issue": "1",
+    "issued": {
+      "date-parts": [
+        [
+          2016
+        ]
+      ]
+    }
+  }
+]

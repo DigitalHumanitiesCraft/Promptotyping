@@ -1,0 +1,27 @@
+[
+  {
+    "id": "risam-2022",
+    "type": "article-journal",
+    "title": "Introduction: The Questions of Minimal Computing",
+    "author": [
+      {
+        "family": "Risam",
+        "given": "Roopika"
+      },
+      {
+        "family": "Gil",
+        "given": "Alex"
+      }
+    ],
+    "container-title": "Digital Humanities Quarterly",
+    "volume": "16",
+    "issue": "2",
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    }
+  }
+]

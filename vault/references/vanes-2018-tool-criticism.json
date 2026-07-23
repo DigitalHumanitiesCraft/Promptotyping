@@ -1,0 +1,34 @@
+[
+  {
+    "id": "vanes-2018",
+    "type": "paper-conference",
+    "title": "Tool Criticism: From Digital Methods to Digital Methodology",
+    "author": [
+      {
+        "family": "van Es",
+        "given": "Karin"
+      },
+      {
+        "family": "Wieringa",
+        "given": "Maranke"
+      },
+      {
+        "family": "Schäfer",
+        "given": "Mirko Tobias"
+      }
+    ],
+    "container-title": "Proceedings of the 2nd International Conference on Web Studies (WS.2 2018)",
+    "page": "24-27",
+    "publisher": "ACM",
+    "publisher-place": "New York",
+    "issued": {
+      "date-parts": [
+        [
+          2018
+        ]
+      ]
+    },
+    "DOI": "10.1145/3240431.3240436",
+    "URL": "https://doi.org/10.1145/3240431.3240436"
+  }
+]

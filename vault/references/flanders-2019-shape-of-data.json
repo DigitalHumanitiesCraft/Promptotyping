@@ -1,0 +1,28 @@
+[
+  {
+    "id": "flanders-2019",
+    "type": "book",
+    "title": "The Shape of Data in Digital Humanities: Modeling Texts and Text-Based Resources",
+    "editor": [
+      {
+        "family": "Flanders",
+        "given": "Julia"
+      },
+      {
+        "family": "Jannidis",
+        "given": "Fotis"
+      }
+    ],
+    "publisher": "Routledge",
+    "publisher-place": "London/New York",
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    },
+    "DOI": "10.4324/9781315552941",
+    "URL": "https://doi.org/10.4324/9781315552941"
+  }
+]

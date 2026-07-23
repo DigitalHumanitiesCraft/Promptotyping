@@ -1,0 +1,22 @@
+[
+  {
+    "id": "borgman-2015",
+    "type": "book",
+    "title": "Big Data, Little Data, No Data: Scholarship in the Networked World",
+    "author": [
+      {
+        "family": "Borgman",
+        "given": "Christine L."
+      }
+    ],
+    "publisher": "MIT Press",
+    "publisher-place": "Cambridge, MA",
+    "issued": {
+      "date-parts": [
+        [
+          2015
+        ]
+      ]
+    }
+  }
+]

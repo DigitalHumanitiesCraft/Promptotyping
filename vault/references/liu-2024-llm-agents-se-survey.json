@@ -1,0 +1,47 @@
+[
+  {
+    "id": "liu-2024",
+    "type": "report",
+    "title": "Large Language Model-Based Agents for Software Engineering: A Survey",
+    "author": [
+      {
+        "family": "Liu",
+        "given": "Junwei"
+      },
+      {
+        "family": "Wang",
+        "given": "Kaixin"
+      },
+      {
+        "family": "Chen",
+        "given": "Yixuan"
+      },
+      {
+        "family": "Peng",
+        "given": "Xin"
+      },
+      {
+        "family": "Chen",
+        "given": "Zhenpeng"
+      },
+      {
+        "family": "Zhang",
+        "given": "Lingming"
+      },
+      {
+        "family": "Lou",
+        "given": "Yiling"
+      }
+    ],
+    "number": "arXiv:2409.02977",
+    "note": "Accepted at ACM Transactions on Software Engineering and Methodology",
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "URL": "https://arxiv.org/abs/2409.02977"
+  }
+]

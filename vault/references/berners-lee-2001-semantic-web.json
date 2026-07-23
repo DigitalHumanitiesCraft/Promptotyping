@@ -1,0 +1,32 @@
+[
+  {
+    "id": "berners-lee-2001",
+    "type": "article-journal",
+    "title": "The Semantic Web",
+    "author": [
+      {
+        "family": "Berners-Lee",
+        "given": "Tim"
+      },
+      {
+        "family": "Hendler",
+        "given": "James"
+      },
+      {
+        "family": "Lassila",
+        "given": "Ora"
+      }
+    ],
+    "container-title": "Scientific American",
+    "volume": "284",
+    "issue": "5",
+    "page": "34-43",
+    "issued": {
+      "date-parts": [
+        [
+          2001
+        ]
+      ]
+    }
+  }
+]

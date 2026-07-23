@@ -1,0 +1,31 @@
+[
+  {
+    "id": "chuehong-2022",
+    "type": "report",
+    "title": "FAIR Principles for Research Software (FAIR4RS Principles) version 1.0",
+    "author": [
+      {
+        "family": "Chue Hong",
+        "given": "Neil P."
+      },
+      {
+        "family": "Katz",
+        "given": "Daniel S."
+      },
+      {
+        "family": "Barker",
+        "given": "Michelle"
+      }
+    ],
+    "publisher": "Research Data Alliance",
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    },
+    "DOI": "10.15497/RDA00068",
+    "URL": "https://doi.org/10.15497/RDA00068"
+  }
+]

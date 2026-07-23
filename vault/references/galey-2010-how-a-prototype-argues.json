@@ -1,0 +1,28 @@
+[
+  {
+    "id": "galey-2010",
+    "type": "article-journal",
+    "title": "How a Prototype Argues",
+    "author": [
+      {
+        "family": "Galey",
+        "given": "Alan"
+      },
+      {
+        "family": "Ruecker",
+        "given": "Stan"
+      }
+    ],
+    "container-title": "Literary and Linguistic Computing",
+    "volume": "25",
+    "issue": "4",
+    "page": "405-424",
+    "issued": {
+      "date-parts": [
+        [
+          2010
+        ]
+      ]
+    }
+  }
+]

@@ -1,0 +1,49 @@
+[
+  {
+    "id": "barbot-2024",
+    "type": "article-journal",
+    "title": "Contextualizing Research Tools & Services Through Workflows in the SSH Open Marketplace",
+    "author": [
+      {
+        "family": "Barbot",
+        "given": "Laure"
+      },
+      {
+        "family": "Dolinar",
+        "given": "Maja"
+      },
+      {
+        "family": "Gray",
+        "given": "Edward J."
+      },
+      {
+        "family": "Grisot",
+        "given": "Cristina"
+      },
+      {
+        "family": "Illmayer",
+        "given": "Klaus"
+      },
+      {
+        "family": "Kurzmeier",
+        "given": "Michael"
+      },
+      {
+        "family": "McGillivray",
+        "given": "Barbara"
+      }
+    ],
+    "container-title": "Journal of Open Humanities Data",
+    "volume": "10",
+    "page": "22",
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "DOI": "10.5334/johd.192",
+    "URL": "https://doi.org/10.5334/johd.192"
+  }
+]

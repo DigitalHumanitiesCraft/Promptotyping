@@ -1,0 +1,22 @@
+[
+  {
+    "id": "pierazzo-2015",
+    "type": "book",
+    "title": "Digital Scholarly Editing: Theories, Models and Methods",
+    "author": [
+      {
+        "family": "Pierazzo",
+        "given": "Elena"
+      }
+    ],
+    "publisher": "Ashgate",
+    "publisher-place": "Farnham",
+    "issued": {
+      "date-parts": [
+        [
+          2015
+        ]
+      ]
+    }
+  }
+]

@@ -1,0 +1,28 @@
+[
+  {
+    "id": "collins-1993",
+    "type": "article-journal",
+    "title": "Epistemic Forms and Epistemic Games: Structures and Strategies to Guide Inquiry",
+    "author": [
+      {
+        "family": "Collins",
+        "given": "Allan"
+      },
+      {
+        "family": "Ferguson",
+        "given": "William"
+      }
+    ],
+    "container-title": "Educational Psychologist",
+    "volume": "28",
+    "issue": "1",
+    "page": "25-42",
+    "issued": {
+      "date-parts": [
+        [
+          1993
+        ]
+      ]
+    }
+  }
+]

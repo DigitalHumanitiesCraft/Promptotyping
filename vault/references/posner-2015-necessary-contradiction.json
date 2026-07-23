@@ -1,0 +1,24 @@
+[
+  {
+    "id": "posner-2015",
+    "type": "post-weblog",
+    "title": "Humanities Data: A Necessary Contradiction",
+    "author": [
+      {
+        "family": "Posner",
+        "given": "Miriam"
+      }
+    ],
+    "container-title": "Miriam Posner's Blog",
+    "issued": {
+      "date-parts": [
+        [
+          2015,
+          6,
+          25
+        ]
+      ]
+    },
+    "URL": "https://miriamposner.com/blog/humanities-data-a-necessary-contradiction/"
+  }
+]

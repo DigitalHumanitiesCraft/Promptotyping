@@ -1,0 +1,23 @@
+[
+  {
+    "id": "mariani-2025",
+    "type": "article-journal",
+    "title": "PROV-A, a Web-Based Tool for Structuring Provenance as Linked Open Data",
+    "author": [
+      {
+        "family": "Mariani",
+        "given": "Fabio"
+      }
+    ],
+    "container-title": "Zeitschrift für digitale Geisteswissenschaften",
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "DOI": "10.17175/2025_012",
+    "URL": "https://doi.org/10.17175/2025_012"
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "mei-2025",
+    "type": "report",
+    "title": "A Survey of Context Engineering for Large Language Models",
+    "author": [
+      {
+        "family": "Mei",
+        "given": "Lingrui"
+      }
+    ],
+    "number": "arXiv:2507.13334",
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "URL": "https://arxiv.org/abs/2507.13334"
+  }
+]

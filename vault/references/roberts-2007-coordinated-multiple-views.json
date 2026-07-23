@@ -1,0 +1,26 @@
+[
+  {
+    "id": "roberts-2007",
+    "type": "paper-conference",
+    "title": "State of the Art: Coordinated & Multiple Views in Exploratory Visualization",
+    "author": [
+      {
+        "family": "Roberts",
+        "given": "Jonathan C."
+      }
+    ],
+    "container-title": "Fifth International Conference on Coordinated and Multiple Views in Exploratory Visualization (CMV 2007)",
+    "page": "61-71",
+    "publisher": "IEEE Computer Society",
+    "publisher-place": "Los Alamitos, CA",
+    "issued": {
+      "date-parts": [
+        [
+          2007
+        ]
+      ]
+    },
+    "DOI": "10.1109/CMV.2007.20",
+    "URL": "https://doi.org/10.1109/CMV.2007.20"
+  }
+]

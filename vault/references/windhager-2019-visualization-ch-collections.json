@@ -1,0 +1,24 @@
+[
+  {
+    "id": "windhager-2019",
+    "type": "article-journal",
+    "title": "Visualization of Cultural Heritage Collection Data: State of the Art and Future Challenges",
+    "author": [
+      {
+        "family": "Windhager",
+        "given": "Florian"
+      }
+    ],
+    "container-title": "IEEE Transactions on Visualization and Computer Graphics",
+    "volume": "25",
+    "issue": "6",
+    "page": "2311-2330",
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    }
+  }
+]

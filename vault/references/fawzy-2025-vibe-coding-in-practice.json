@@ -1,0 +1,30 @@
+[
+  {
+    "id": "fawzy-2025",
+    "type": "report",
+    "title": "Vibe Coding in Practice: Motivations, Challenges, and a Future Outlook – a Grey Literature Review",
+    "author": [
+      {
+        "family": "Fawzy",
+        "given": "Ahmed"
+      },
+      {
+        "family": "Tahir",
+        "given": "Amjed"
+      },
+      {
+        "family": "Blincoe",
+        "given": "Kelly"
+      }
+    ],
+    "number": "arXiv:2510.00328",
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "URL": "https://arxiv.org/abs/2510.00328"
+  }
+]

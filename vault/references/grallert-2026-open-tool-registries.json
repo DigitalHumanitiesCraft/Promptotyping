@@ -1,0 +1,44 @@
+[
+  {
+    "id": "grallert-2026",
+    "type": "article-journal",
+    "title": "Open Tool Registries! Resolving the Directory Paradox with Wikidata",
+    "author": [
+      {
+        "family": "Grallert",
+        "given": "Till"
+      },
+      {
+        "family": "Eckenstaler",
+        "given": "Sophie"
+      },
+      {
+        "family": "Schlesinger",
+        "given": "Claus-Michael"
+      },
+      {
+        "family": "Dresselhaus",
+        "given": "Nicole"
+      },
+      {
+        "family": "Trilling",
+        "given": "Isabell"
+      },
+      {
+        "family": "Stark",
+        "given": "Sophie"
+      }
+    ],
+    "container-title": "Digital Humanities Quarterly",
+    "volume": "20",
+    "issue": "1",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "URL": "https://dhq.digitalhumanities.org/vol/20/1/000838/000838.html"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "gruber-1993",
+    "type": "article-journal",
+    "title": "A Translation Approach to Portable Ontology Specifications",
+    "author": [
+      {
+        "family": "Gruber",
+        "given": "Thomas R."
+      }
+    ],
+    "container-title": "Knowledge Acquisition",
+    "volume": "5",
+    "issue": "2",
+    "page": "199-220",
+    "issued": {
+      "date-parts": [
+        [
+          1993
+        ]
+      ]
+    },
+    "DOI": "10.1006/knac.1993.1008",
+    "URL": "https://doi.org/10.1006/knac.1993.1008"
+  }
+]

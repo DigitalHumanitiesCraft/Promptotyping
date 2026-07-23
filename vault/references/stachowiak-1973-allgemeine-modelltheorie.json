@@ -1,0 +1,22 @@
+[
+  {
+    "id": "stachowiak-1973",
+    "type": "book",
+    "title": "Allgemeine Modelltheorie",
+    "author": [
+      {
+        "family": "Stachowiak",
+        "given": "Herbert"
+      }
+    ],
+    "publisher": "Springer",
+    "publisher-place": "Wien/New York",
+    "issued": {
+      "date-parts": [
+        [
+          1973
+        ]
+      ]
+    }
+  }
+]

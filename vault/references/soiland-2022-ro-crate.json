@@ -1,0 +1,26 @@
+[
+  {
+    "id": "soiland-2022",
+    "type": "article-journal",
+    "title": "Packaging Research Artefacts with RO-Crate",
+    "author": [
+      {
+        "family": "Soiland-Reyes",
+        "given": "Stian"
+      }
+    ],
+    "container-title": "Data Science",
+    "volume": "5",
+    "issue": "2",
+    "page": "97-138",
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    },
+    "DOI": "10.3233/DS-210053",
+    "URL": "https://doi.org/10.3233/DS-210053"
+  }
+]

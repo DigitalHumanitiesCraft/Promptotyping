@@ -1,0 +1,24 @@
+[
+  {
+    "id": "siemens-2009",
+    "type": "article-journal",
+    "title": "'It's a team if you use \"reply all\"': An Exploration of Research Teams in Digital Humanities Environments",
+    "author": [
+      {
+        "family": "Siemens",
+        "given": "Lynne"
+      }
+    ],
+    "container-title": "Literary and Linguistic Computing",
+    "volume": "24",
+    "issue": "2",
+    "page": "225-233",
+    "issued": {
+      "date-parts": [
+        [
+          2009
+        ]
+      ]
+    }
+  }
+]

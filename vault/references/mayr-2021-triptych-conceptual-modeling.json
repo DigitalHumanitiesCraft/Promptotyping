@@ -1,0 +1,30 @@
+[
+  {
+    "id": "mayr-2021",
+    "type": "article-journal",
+    "title": "The Triptych of Conceptual Modeling: A Framework for a Better Understanding of Conceptual Modeling",
+    "author": [
+      {
+        "family": "Mayr",
+        "given": "Heinrich C."
+      },
+      {
+        "family": "Thalheim",
+        "given": "Bernhard"
+      }
+    ],
+    "container-title": "Software and Systems Modeling",
+    "volume": "20",
+    "issue": "1",
+    "page": "7-24",
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    },
+    "DOI": "10.1007/s10270-020-00836-z",
+    "URL": "https://doi.org/10.1007/s10270-020-00836-z"
+  }
+]

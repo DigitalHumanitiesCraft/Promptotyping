@@ -1,0 +1,32 @@
+[
+  {
+    "id": "hinrichs-2019",
+    "type": "article-journal",
+    "title": "In Defense of Sandcastles: Research Thinking through Visualization in Digital Humanities",
+    "author": [
+      {
+        "family": "Hinrichs",
+        "given": "Uta"
+      },
+      {
+        "family": "Forlini",
+        "given": "Stefania"
+      },
+      {
+        "family": "Moynihan",
+        "given": "Bridget"
+      }
+    ],
+    "container-title": "Digital Scholarship in the Humanities",
+    "volume": "34",
+    "issue": "Supplement 1",
+    "page": "i80-i99",
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "id": "owens-2011",
+    "type": "article-journal",
+    "title": "Defining Data for Humanists: Text, Artifact, Information or Evidence?",
+    "author": [
+      {
+        "family": "Owens",
+        "given": "Trevor"
+      }
+    ],
+    "container-title": "Journal of Digital Humanities",
+    "volume": "1",
+    "issue": "1",
+    "issued": {
+      "date-parts": [
+        [
+          2011
+        ]
+      ]
+    }
+  }
+]

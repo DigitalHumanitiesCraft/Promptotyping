@@ -1,0 +1,24 @@
+[
+  {
+    "id": "pollin-2024",
+    "type": "dataset",
+    "title": "Workshopreihe \"Angewandte Generative KI in den (digitalen) Geisteswissenschaften\"",
+    "author": [
+      {
+        "family": "Pollin",
+        "given": "Christopher"
+      }
+    ],
+    "publisher": "Zenodo",
+    "version": "1.1.0",
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "DOI": "10.5281/zenodo.10647754",
+    "URL": "https://doi.org/10.5281/zenodo.10647754"
+  }
+]

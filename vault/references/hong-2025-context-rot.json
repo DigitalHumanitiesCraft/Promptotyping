@@ -1,0 +1,31 @@
+[
+  {
+    "id": "hong-2025",
+    "type": "report",
+    "title": "Context Rot: How Increasing Input Tokens Impacts LLM Performance",
+    "author": [
+      {
+        "family": "Hong",
+        "given": "Kelly"
+      },
+      {
+        "family": "Troynikov",
+        "given": "Anton"
+      },
+      {
+        "family": "Huber",
+        "given": "Jeff"
+      }
+    ],
+    "publisher": "Chroma",
+    "genre": "Technical Report",
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "URL": "https://research.trychroma.com/context-rot"
+  }
+]

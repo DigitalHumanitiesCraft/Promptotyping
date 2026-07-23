@@ -1,0 +1,38 @@
+[
+  {
+    "id": "miksa-2019",
+    "type": "article-journal",
+    "title": "Ten Principles for Machine-Actionable Data Management Plans",
+    "author": [
+      {
+        "family": "Miksa",
+        "given": "Tomasz"
+      },
+      {
+        "family": "Simms",
+        "given": "Stephanie"
+      },
+      {
+        "family": "Mietchen",
+        "given": "Daniel"
+      },
+      {
+        "family": "Jones",
+        "given": "Sarah"
+      }
+    ],
+    "container-title": "PLOS Computational Biology",
+    "volume": "15",
+    "issue": "3",
+    "page": "e1006750",
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    },
+    "DOI": "10.1371/journal.pcbi.1006750",
+    "URL": "https://doi.org/10.1371/journal.pcbi.1006750"
+  }
+]

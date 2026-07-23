@@ -1,0 +1,24 @@
+[
+  {
+    "id": "edmond-2005",
+    "type": "article-journal",
+    "title": "The Role of the Professional Intermediary in Expanding the Humanities Computing Base",
+    "author": [
+      {
+        "family": "Edmond",
+        "given": "Jennifer"
+      }
+    ],
+    "container-title": "Literary and Linguistic Computing",
+    "volume": "20",
+    "issue": "3",
+    "page": "367-380",
+    "issued": {
+      "date-parts": [
+        [
+          2005
+        ]
+      ]
+    }
+  }
+]

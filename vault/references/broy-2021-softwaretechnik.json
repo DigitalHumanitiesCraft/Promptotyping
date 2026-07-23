@@ -1,0 +1,26 @@
+[
+  {
+    "id": "broy-2021",
+    "type": "book",
+    "title": "Einführung in die Softwaretechnik",
+    "author": [
+      {
+        "family": "Broy",
+        "given": "Manfred"
+      },
+      {
+        "family": "Kuhrmann",
+        "given": "Marco"
+      }
+    ],
+    "publisher": "Springer Vieweg",
+    "publisher-place": "Berlin/Heidelberg",
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    }
+  }
+]

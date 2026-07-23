@@ -1,0 +1,25 @@
+[
+  {
+    "id": "ruecker-2015",
+    "type": "article-journal",
+    "title": "A Brief Taxonomy of Prototypes for the Digital Humanities",
+    "author": [
+      {
+        "family": "Ruecker",
+        "given": "Stan"
+      }
+    ],
+    "container-title": "Scholarly and Research Communication",
+    "volume": "6",
+    "issue": "2",
+    "issued": {
+      "date-parts": [
+        [
+          2015
+        ]
+      ]
+    },
+    "DOI": "10.22230/src.2015v6n2a222",
+    "URL": "https://doi.org/10.22230/src.2015v6n2a222"
+  }
+]

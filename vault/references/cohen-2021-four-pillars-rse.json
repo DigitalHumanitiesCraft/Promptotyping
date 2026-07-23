@@ -1,0 +1,44 @@
+[
+  {
+    "id": "cohen-2021",
+    "type": "article-journal",
+    "title": "The Four Pillars of Research Software Engineering",
+    "author": [
+      {
+        "family": "Cohen",
+        "given": "Jeremy"
+      },
+      {
+        "family": "Katz",
+        "given": "Daniel S."
+      },
+      {
+        "family": "Barker",
+        "given": "Michelle"
+      },
+      {
+        "family": "Chue Hong",
+        "given": "Neil"
+      },
+      {
+        "family": "Haines",
+        "given": "Robert"
+      },
+      {
+        "family": "Jay",
+        "given": "Caroline"
+      }
+    ],
+    "container-title": "IEEE Software",
+    "volume": "38",
+    "issue": "1",
+    "page": "97-105",
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    }
+  }
+]

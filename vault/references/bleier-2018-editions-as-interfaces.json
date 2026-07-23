@@ -1,0 +1,41 @@
+[
+  {
+    "id": "bleier-2018",
+    "type": "book",
+    "title": "Digital Scholarly Editions as Interfaces",
+    "editor": [
+      {
+        "family": "Bleier",
+        "given": "Roman"
+      },
+      {
+        "family": "Bürgermeister",
+        "given": "Martina"
+      },
+      {
+        "family": "Klug",
+        "given": "Helmut W."
+      },
+      {
+        "family": "Neuber",
+        "given": "Frederike"
+      },
+      {
+        "family": "Schneider",
+        "given": "Gerlinde"
+      }
+    ],
+    "collection-title": "Schriften des Instituts für Dokumentologie und Editorik",
+    "collection-number": "12",
+    "publisher": "BoD",
+    "publisher-place": "Norderstedt",
+    "issued": {
+      "date-parts": [
+        [
+          2018
+        ]
+      ]
+    },
+    "URL": "https://kups.ub.uni-koeln.de/9085/"
+  }
+]

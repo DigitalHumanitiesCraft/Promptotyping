@@ -1,0 +1,25 @@
+[
+  {
+    "id": "unsworth-2000",
+    "type": "speech",
+    "title": "Scholarly Primitives: What Methods Do Humanities Researchers Have in Common, and How Might Our Tools Reflect This?",
+    "author": [
+      {
+        "family": "Unsworth",
+        "given": "John"
+      }
+    ],
+    "event": "Humanities Computing: Formal Methods, Experimental Practice",
+    "event-place": "King's College London",
+    "issued": {
+      "date-parts": [
+        [
+          2000,
+          5,
+          13
+        ]
+      ]
+    },
+    "URL": "http://people.brandeis.edu/~unsworth/Kings.5-00/primitives.html"
+  }
+]

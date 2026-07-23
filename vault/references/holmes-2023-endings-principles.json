@@ -1,0 +1,28 @@
+[
+  {
+    "id": "holmes-2023",
+    "type": "article-journal",
+    "title": "From Tamagotchis to Pet Rocks: On Learning to Love Simplicity through the Endings Principles",
+    "author": [
+      {
+        "family": "Holmes",
+        "given": "Martin"
+      },
+      {
+        "family": "Takeda",
+        "given": "Joey"
+      }
+    ],
+    "container-title": "Digital Humanities Quarterly",
+    "volume": "17",
+    "issue": "1",
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "URL": "https://www.digitalhumanities.org/dhq/vol/17/1/000668/000668.html"
+  }
+]

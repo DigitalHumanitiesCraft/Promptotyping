@@ -1,0 +1,24 @@
+[
+  {
+    "id": "sacha-2014",
+    "type": "article-journal",
+    "title": "Knowledge Generation Model for Visual Analytics",
+    "author": [
+      {
+        "family": "Sacha",
+        "given": "Dominik"
+      }
+    ],
+    "container-title": "IEEE Transactions on Visualization and Computer Graphics",
+    "volume": "20",
+    "issue": "12",
+    "page": "1604-1613",
+    "issued": {
+      "date-parts": [
+        [
+          2014
+        ]
+      ]
+    }
+  }
+]

@@ -1,0 +1,31 @@
+[
+  {
+    "id": "sharma-2023",
+    "type": "report",
+    "title": "Towards Understanding Sycophancy in Language Models",
+    "author": [
+      {
+        "family": "Sharma",
+        "given": "Mrinank"
+      },
+      {
+        "family": "Tong",
+        "given": "Meg"
+      },
+      {
+        "family": "Korbak",
+        "given": "Tomasz"
+      }
+    ],
+    "number": "arXiv:2310.13548",
+    "note": "Published at ICLR 2024",
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "URL": "https://arxiv.org/abs/2310.13548"
+  }
+]

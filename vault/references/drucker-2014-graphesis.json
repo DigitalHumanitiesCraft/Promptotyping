@@ -1,0 +1,22 @@
+[
+  {
+    "id": "drucker-2014",
+    "type": "book",
+    "title": "Graphesis. Visual Forms of Knowledge Production",
+    "author": [
+      {
+        "family": "Drucker",
+        "given": "Johanna"
+      }
+    ],
+    "publisher": "Harvard University Press",
+    "publisher-place": "Cambridge, MA",
+    "issued": {
+      "date-parts": [
+        [
+          2014
+        ]
+      ]
+    }
+  }
+]

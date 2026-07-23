@@ -1,0 +1,21 @@
+[
+  {
+    "id": "collectionsasdata-2019",
+    "type": "webpage",
+    "title": "The Santa Barbara Statement on Collections as Data",
+    "author": [
+      {
+        "literal": "Collections as Data"
+      }
+    ],
+    "container-title": "Always Already Computational: Collections as Data",
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    },
+    "URL": "https://collectionsasdata.github.io/statement/"
+  }
+]
