@@ -37,3 +37,8 @@ Claims behind the paper's Section 2, the epistemic frame: exploration as researc
 - [[20_claims/fair-principles-findable-accessible-interoperable-reusable]] — The FAIR principles are a concise, measurable set for making data Findable, Accessible, Interoperable, and Reusable
 - [[20_claims/llm-based-agents-for-software-engineering]] — LLM-based agents, LLMs augmented with tool use, are applied to software engineering with demonstrated effectiveness
 
+- [[20_claims/exploratory-collection-visualisation-is-a-rich-design-space]] — Visualisation of cultural-heritage collections is a rich, surveyed design space for open-ended exploration
+- [[20_claims/digital-tool-criticism-demands-reflection-on-tools]] — Digital tool criticism demands reflection on the tools that shape research
+- [[20_claims/dh-projects-build-teams-to-hold-competences-together]] — Digital humanities projects assemble teams to hold domain and technical competences together
+- [[20_claims/research-software-engineers-are-scarce]] — Research software engineers are scarce and sit across a cultural gap between research and software development
+- [[20_claims/dh-intermediary-bridges-researchers-and-technical-staff]] — A professional intermediary bridges researchers and technical staff in digital-humanities institutions

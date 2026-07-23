@@ -25,26 +25,26 @@ Status values. `registered` (row exists) → `csl` (reference record in `referen
 | abdurahman-2025 | Abdurahman et al. 2025, LLM evaluation primer | 6.3 | A | claimed | [[10_distillates/publications/abdurahman-2025-primer-llm-evaluation]] | llm-reproducibility-transparency-recommendations |
 | andorfer-2026 | Andorfer 2026, static TEI editions (ZfdG) | 4.1, 4.3 | A | claimed | [[10_distillates/publications/andorfer-2026-static-tei-editions]] | digital-editing-converges-on-static-self-contained-artefact, static-client-side-editions-reach-tens-of-thousands-of-units |
 | barbot-2024 | Barbot et al. 2024, SSH Open Marketplace workflows | 4.2 | A | claimed | [[10_distillates/publications/barbot-2024-ssh-open-marketplace]] | ssh-open-marketplace-models-workflows-as-step-sequences |
-| baxter-2012 | Baxter et al. 2012, The Research Software Engineer | 1 | C | registered | | catalogue record only; talk text not public |
-| berners-lee-2001 | Berners-Lee/Hendler/Lassila 2001, The Semantic Web | 2.3 | C | registered | | Scientific American paywall |
-| berners-lee-2025 | Berners-Lee 2025, This Is for Everyone | 2.3 | B | registered | | operator heard audiobook; print copy needed for quotes |
+| baxter-2012 | Baxter et al. 2012, The Research Software Engineer | 1 | C | claimed (abstract-only) | [[10_distillates/publications/baxter-2012-research-software-engineer]] | research-software-engineers-are-scarce |
+| berners-lee-2001 | Berners-Lee/Hendler/Lassila 2001, The Semantic Web | 2.3 | A | claimed | [[10_distillates/publications/berners-lee-2001-semantic-web]] | semantic-web-envisioned-agents-over-machine-processable-data |
+| berners-lee-2025 | Berners-Lee 2025, This Is for Everyone | 2.3 | B | acquisition open | | no legitimate open copy; publisher essay carries the personal-agent line but not the agent-realisation claim; print copy needed |
 | bleier-2018 | Bleier et al. 2018, Editions as Interfaces | 4.2 | A | claimed | [[10_distillates/publications/bleier-2018-editions-interfaces]] | digital-edition-is-interface-gui-and-api, edition-interface-embodies-editorial-decisions |
 | borek-2016 | Borek et al. 2016, TaDiRAH (DHQ) | 4.2 | A | claimed | [[10_distillates/publications/borek-2016-tadirah]] | tadirah-classifies-dh-research-activities |
-| borgman-2015 | Borgman 2015, Big Data Little Data No Data | 2.3 | B | registered | | MIT Press book |
-| broy-2021 | Broy/Kuhrmann 2021, Softwaretechnik | 1 | B | registered | | Springer book |
+| borgman-2015 | Borgman 2015, Big Data Little Data No Data | 2.3 | B | acquisition open | | MIT Press book, no open copy found; operator copy needed |
+| broy-2021 | Broy/Kuhrmann 2021, Softwaretechnik | 1 | B | acquisition open | | Springer book, no open chapter; light definitional footnote use |
 | chuehong-2022 | Chue Hong et al. 2022, FAIR4RS | 4.1 | A | claimed | [[10_distillates/publications/chuehong-2022-fair4rs]] | fair4rs-provenance-and-identifier-principles |
 | cohen-2021 | Cohen et al. 2021, Four Pillars of RSE | 1 | A | claimed | [[10_distillates/publications/cohen-2021-four-pillars-rse]] | rse-institutionalised-intermediary-profession |
 | collectionsasdata-2019 | Santa Barbara Statement 2019 | fn [^posner] (2.3) | A | claimed | [[10_distillates/publications/collectionsasdata-2019-santa-barbara]] | collections-as-data-are-intentional, humanities-data-is-constructed-not-given |
-| collins-1993 | Collins/Ferguson 1993, Epistemic Forms | 4.2 | C | registered | | Taylor & Francis paywall |
+| collins-1993 | Collins/Ferguson 1993, Epistemic Forms | 4.2 | A | claimed | [[10_distillates/publications/collins-1993-epistemic-forms]] | epistemic-forms-are-target-knowledge-structures |
 | cremer-2025 | Cremer/Paulmann 2025, Quellen- und Datenkritik (ZfdG) | 2.3 | A | claimed | [[10_distillates/publications/cremer-2025-quellen-und-datenkritik]] | making-source-data-machine-addressable-is-interpretive-modelling |
 | drucker-2011 | Drucker 2011, Humanities Approaches (DHQ) | 2.1 | A | claimed | [[10_distillates/publications/drucker-2011-humanities-approaches]] | humanities-data-are-capta-not-given, inherited-visualisation-conventions-carry-positivist-assumptions |
-| drucker-2014 | Drucker 2014, Graphesis | 2.1 | B | registered | | Harvard UP book |
-| edmond-2005 | Edmond 2005, Professional Intermediary | 1, 2.4 | C | registered | | LLC/OUP paywall |
+| drucker-2014 | Drucker 2014, Graphesis | 2.1 | B | acquisition open | | no open copy; capta argument already carried by the drucker-2011 distillate |
+| edmond-2005 | Edmond 2005, Professional Intermediary | 1, 2.4 | C | claimed (abstract-only) | [[10_distillates/publications/edmond-2005-professional-intermediary]] | dh-intermediary-bridges-researchers-and-technical-staff |
 | fanous-2025 | Fanous et al. 2025, SycEval | 2.5 | A | claimed | [[10_distillates/publications/fanous-2025-syceval]] | fanous-frontier-models-sycophantic-in-most-cases, sycophancy-agreement-over-truth |
 | fawzy-2025 | Fawzy et al. 2025, Vibe Coding in Practice | 2.5 | A | claimed | [[10_distillates/publications/fawzy-2025-vibe-coding-in-practice]] | vibe-coding-speed-quality-tradeoff |
 | fischer-2025 | Fischer/Kimmel/Puppe 2025, Bildkarten (ZfdG) | 6.2 | A | claimed | [[10_distillates/publications/fischer-2025-bildkarten]] | glam-practice-layers-llm-extraction-with-deterministic-checks-and-expert-review |
-| flanders-2019 | Flanders/Jannidis 2019, Shape of Data | 2.3 | B | registered | | Routledge book |
-| galey-2010 | Galey/Ruecker 2010, How a Prototype Argues | 2.2 | C | registered | | LLC/OUP paywall |
+| flanders-2019 | Flanders/Jannidis 2019, Shape of Data | 2.3 | A | claimed (partial, editors' introduction) | [[10_distillates/publications/flanders-2019-shape-of-data]] | humanities-data-modelling-is-interpretive-shaping |
+| galey-2010 | Galey/Ruecker 2010, How a Prototype Argues | 2.2 | A | claimed | [[10_distillates/publications/galey-2010-how-a-prototype-argues]] | a-prototype-can-embody-a-peer-reviewable-argument |
 | grallert-2026 | Grallert et al. 2026, Open Tool Registries (DHQ) | 4.2, 6.3 | A | claimed | [[10_distillates/publications/grallert-2026-open-tool-registries]] | tadirah-most-adopted-yet-under-maintained, wikidata-tool-registries-as-commons |
 | gruber-1993 | Gruber 1993, Translation Approach to Ontology | 3.4 | A | claimed | [[10_distillates/publications/gruber-1993-ontolingua]] | ontologies-are-shared-vocabularies-for-reuse, ontology-is-explicit-specification-of-conceptualization |
 | hinrichs-2019 | Hinrichs et al. 2019, Sandcastles (DSH) | 2.1, 6.1 | A | claimed | [[10_distillates/publications/hinrichs-2019-sandcastles]] | discarded-visualisations-retain-epistemic-value, visualisation-is-research-process-not-means |
@@ -52,7 +52,7 @@ Status values. `registered` (row exists) → `csl` (reference record in `referen
 | hong-2025 | Hong et al. 2025, Context Rot | 2.3, 4.1 | A | claimed | [[10_distillates/publications/hong-2025-context-rot]] | context-rot-nonuniform-degradation-with-length |
 | kemman-2021 | Kemman 2021, Trading Zones | 1, 2.4 | A | claimed | [[10_distillates/publications/kemman-2021-trading-zones]] | digital-history-collaboration-is-a-trading-zone |
 | koenig-2026 | König 2026, Fertig vorerst (ZfdG) | 6.1 | A | claimed | [[10_distillates/publications/koenig-2026-fertig-vorerst]] | unfinishedness-is-an-epistemic-value-in-the-digital-humanities |
-| koolen-2019 | Koolen et al. 2019, Tool Criticism (DSH) | 2.2 | C | registered | | OUP paywall |
+| koolen-2019 | Koolen et al. 2019, Tool Criticism (DSH) | 2.2 | A | claimed | [[10_distillates/publications/koolen-2019-digital-tool-criticism]] | digital-tool-criticism-demands-reflection-on-tools |
 | lang-2026 | Lang/Suárez Cronauer 2026, Beyond Data Feminism (ZfdG) | 6.4 | A | claimed | [[10_distillates/publications/lang-2026-beyond-data-feminism]] | well-modelled-data-does-not-discharge-critical-data-work |
 | leipold-2026 | Leipold et al. 2026, WikiFAIR (ZfdG) | fn [^precedent] (4.1) | A | claimed | [[10_distillates/publications/leipold-2026-wikifair]] | shared-infrastructure-is-the-opposite-longevity-answer-to-the-self-contained-artefact |
 | liu-2024 | Liu et al. 2024, LLM Agents for SE Survey | 2.5 | A | claimed | [[10_distillates/publications/liu-2024-llm-agents-se-survey]] | llm-based-agents-for-software-engineering |
@@ -76,21 +76,21 @@ Status values. `registered` (row exists) → `csl` (reference record in `referen
 | risam-2022 | Risam/Gil 2022, Minimal Computing (DHQ) | 4.1 | A | claimed | [[10_distillates/publications/risam-2022-minimal-computing]] | minimal-computing-reduces-code-and-dependencies, minimal-computing-resists-scale-as-innovation |
 | roberts-2007 | Roberts 2007, Coordinated Multiple Views | 4.2 | A | claimed | [[10_distillates/publications/roberts-2007-coordinated-multiple-views]] | coordinated-multiple-views-enable-exploration |
 | ruecker-2015 | Ruecker 2015, Taxonomy of Prototypes | 2.2 | A | claimed | [[10_distillates/publications/ruecker-2015-taxonomy-prototypes]] | experimental-prototype-yields-knowledge-not-product |
-| sacha-2014 | Sacha et al. 2014, Knowledge Generation Model | 4.2 | C | registered | | IEEE paywall |
+| sacha-2014 | Sacha et al. 2014, Knowledge Generation Model | 4.2 | A | claimed | [[10_distillates/publications/sacha-2014-knowledge-generation-model]] | visual-analytics-process-models-describe-process-not-interfaces |
 | sarkar-2025 | Sarkar/Drosos 2025, Vibe Coding (PPIG) | 2.5 | A | claimed | [[10_distillates/publications/sarkar-2025-vibe-coding]] | sarkar-vibe-coding-material-disengagement |
 | schoech-2013 | Schöch 2013, Big Smart Clean Messy | 2.3 | A | claimed | [[10_distillates/publications/schoech-2013-big-smart-clean-messy]] | humanities-data-is-constructed-not-given, schoech-distinguishes-smart-and-big-data |
 | schonhardt-2026 | Schonhardt 2026, Do One Thing (ZfdG) | 4.2 | A | claimed | [[10_distillates/publications/schonhardt-2026-do-one-thing]] | do-one-thing-well-favours-small-specialised-tools-over-monolithic-platforms |
 | sharma-2023 | Sharma et al. 2023, Sycophancy | 2.5 | A | claimed | [[10_distillates/publications/sharma-2023-sycophancy]] | sycophancy-agreement-over-truth |
-| siemens-2009 | Siemens 2009, Reply All Teams | 1, 2.4 | C | registered | | OUP paywall |
+| siemens-2009 | Siemens 2009, Reply All Teams | 1, 2.4 | A | claimed | [[10_distillates/publications/siemens-2009-reply-all-teams]] | dh-projects-build-teams-to-hold-competences-together |
 | soiland-2022 | Soiland-Reyes et al. 2022, RO-Crate | 3.3 | A | claimed | [[10_distillates/publications/soiland-2022-ro-crate]] | ro-crate-packages-artefacts-with-machine-readable-metadata |
 | stachowiak-1973 | Stachowiak 1973, Allgemeine Modelltheorie | 3.4 | B | registered | | Springer print, German |
 | stanicka-2026 | Stanicka-Brzezicka 2026, Vocabularies (ZfdG) | 1, 6.2, fn [^stanicka] | A | claimed | [[10_distillates/publications/stanicka-2026-cross-linking-vocabularies]] | llm-vocabulary-test-2025-fell-short-of-thesaurus-interoperability, semantic-vocabulary-matching-stays-a-human-interpretive-task |
-| star-1989 | Star/Griesemer 1989, Boundary Objects | 2.4 | C | registered | | Sage paywall |
+| star-1989 | Star/Griesemer 1989, Boundary Objects | 2.4 | A | claimed | [[10_distillates/publications/star-1989-boundary-objects]] | boundary-objects-are-plastic-yet-robust-across-communities |
 | unsworth-2000 | Unsworth 2000, Scholarly Primitives | 4.2 | A | claimed | [[10_distillates/publications/unsworth-2000-scholarly-primitives]] | scholarly-primitives-classify-activities-not-interfaces |
-| vanes-2018 | van Es et al. 2018, Tool Criticism | 2.2 | C | registered | | ACM paywall |
+| vanes-2018 | van Es et al. 2018, Tool Criticism | 2.2 | A | claimed | [[10_distillates/publications/vanes-2018-tool-criticism]] | digital-tool-criticism-demands-reflection-on-tools |
 | whitelaw-2015 | Whitelaw 2015, Generous Interfaces (DHQ) | 2.1, 4.2 | A | claimed | [[10_distillates/publications/whitelaw-2015-generous-interfaces]] | generous-interfaces-reveal-collection-through-browsing, search-cannot-represent-collection-abundance |
 | wilkinson-2016 | Wilkinson et al. 2016, FAIR Principles | 2.3 | A | claimed | [[10_distillates/publications/wilkinson-2016-fair-principles]] | fair-emphasises-machine-actionability-of-data, fair-principles-findable-accessible-interoperable-reusable |
-| windhager-2019 | Windhager et al. 2019, Visualization of CH Collections | 2.1 | C | registered | | IEEE paywall |
+| windhager-2019 | Windhager et al. 2019, Visualization of CH Collections | 2.1 | A | claimed | [[10_distillates/publications/windhager-2019-visualization-ch-collections]] | exploratory-collection-visualisation-is-a-rich-design-space |
 
 ## Footnote-only resources (no intake)
 
