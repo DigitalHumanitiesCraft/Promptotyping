@@ -20,6 +20,7 @@ identifiers:
   - type: url
     value: "https://unipub.uni-graz.at/obvugrhs/12127700"
     description: "Dissertation in which the method originates (Pollin 2025, University of Graz)"
+license: MIT
 url: "https://dhcraft.org/Promptotyping/"
 repository-code: "https://github.com/DigitalHumanitiesCraft/Promptotyping"
 keywords:

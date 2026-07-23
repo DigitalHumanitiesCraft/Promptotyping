@@ -129,4 +129,4 @@ The method originates in the author's dissertation and was first published in bl
 
 ## Licence
 
-Code (HTML, CSS, JavaScript, and the Python tooling under [vault/tools/](vault/tools/)) is licensed under the MIT License, see [LICENSE](LICENSE). Content (Markdown under [_content/](_content/), [knowledge/](knowledge/), the Grounded Vault under [vault/](vault/), and the prose texts of the site) is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The split follows the carrier: source that runs is MIT, text that is read is CC BY 4.0. This repository contains no third-party research data.
+Code (HTML, CSS, JavaScript, and the Python tooling under [vault/tools/](vault/tools/)) is licensed under the MIT License, see [LICENSE](LICENSE). Content (Markdown under [_content/](_content/), [knowledge/](knowledge/), the Grounded Vault under [vault/](vault/), and the prose texts of the site) is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The split follows the carrier; source that runs is MIT, text that is read is CC BY 4.0. This repository contains no third-party research data.
