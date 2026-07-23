@@ -9,7 +9,7 @@ Bevor du eine Aufgabe in diesem Repo angehst, lies in dieser Reihenfolge:
 1. `knowledge/INDEX.md` — Navigation und Begriffslexikon
 2. `knowledge/project.md` — was die Site ist, wer die Adressaten sind
 3. Das jeweils aufgabenrelevante Dokument:
-   - Datenfragen → `knowledge/data.md`
+   - Paper-Arbeit → `knowledge/paper-writing.md` (Steuerung, Sprachregeln, Prüfpunkte), von dort `knowledge/paper.md` (der Text)
    - Was-soll-die-Site-können → `knowledge/specification.md`
    - Wie-ist-es-gebaut → `knowledge/architecture.md`
    - Wie-sieht-es-aus → `knowledge/design.md`
@@ -73,7 +73,7 @@ Anker dürfen nicht ohne Diskussion umbenannt werden — Repos können auf sie a
 
 ## Was du tun sollst
 
-- **Inkrementell arbeiten**: ein Sprint nach dem Plan, ein Commit pro abgeschlossenem Schritt
+- **Inkrementell arbeiten**: ein abgegrenzter Schritt nach dem in der Wissensbasis dokumentierten Stand, ein Commit pro abgeschlossenem Schritt
 - **Wissensbasis konsultieren**, bevor du eine Designentscheidung triffst
 - **Bei Unklarheit fragen** statt eigenmächtig entscheiden — speziell bei Scope, Reihenfolge, Architektur
 - **journal.md aktualisieren** am Ende jeder Session

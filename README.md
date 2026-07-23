@@ -10,11 +10,12 @@
 
 Dieses Repo rendert die Site auf GitHub Pages. Aufbau:
 
-- `knowledge/` — Wissensbasis (Specification der Site selbst, sechs Promptotyping-Documents nach den Vault-Vorlagen)
+- `knowledge/` — Wissensbasis (Specification der Site selbst nach den Vault-Vorlagen; enthält auch das Methodenpaper `paper.md` mit seinem Steuerdokument `paper-writing.md`)
 - `_content/` — Markdown-Inhalte (Pollin 2026 Paper, neun Vorlagen, Use-Case-Tiefenseiten, Glossar, Praxis, Skills, Konvention, Literatur)
 - `assets/` — CSS, JS, Vendor-Bibliotheken, lokale Fonts, Logo
 - `data/` — JSON-Datenfutter (Case Studies, Glossar, Vorlagen)
-- `index.html` — Site-Einstieg (Single-Page mit Phasen-Provenance-Lane)
+- `index.html` — Site-Einstieg (Single-Page)
+- `vault/` — Grounded-Vault-Instanz: die Evidenzschicht des Methodenpapers (Quellen, Destillate, Claims)
 - `404.html` — Subpath-Routing-Fallback
 - `.nojekyll` — Pflichtdatei, damit GitHub Pages `_content/` ausliefert
 - `CLAUDE.md` — Action-Layer für Coding-Sessions
@@ -27,7 +28,7 @@ Die Site ist gleichzeitig **Methodik-Spezifikation** und **Methodik-Anwendung**:
 
 ## Beziehung zum Pollin-2026-Paper
 
-Das wissenschaftliche Methodenpaper liegt im Vault des Autors (Christopher Pollin). Die Site spiegelt es als interaktiven Lesefluss mit Phasen-Provenance-Lane, eingebettetem Glossar und versionierten Vorlagen-Ankern.
+Das wissenschaftliche Methodenpaper entsteht in diesem Repo (`knowledge/paper.md`, Steuerung in `knowledge/paper-writing.md`); seine Evidenzschicht liegt als Grounded Vault unter `vault/`. Die Site spiegelt das Paper als interaktiven Lesefluss mit eingebettetem Glossar und versionierten Vorlagen-Ankern.
 
 ## Lokale Entwicklung
 

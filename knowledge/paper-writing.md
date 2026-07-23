@@ -91,12 +91,13 @@ Vom Operator entschieden (Sessions 2026-07-23):
 Jeder Punkt entspricht einem `[...]`-Marker im Text oder einer offenen Randbedingung; Auflösung heißt verifiziert, belegt oder gestrichen, mit Prüfvermerk hier.
 
 - Aldersbach-Fakten gegen das Projekt-Repo; Widerspruch zwischen worked example (3.4) und post-hoc-Dokumenten-Aussage (3.1/5).
-- Zenodo-DOI und Versionsstand der Workshopreihe 2023 (10.5281/zenodo.10647754).
-- Titel und zitierte Passage des Berners-Lee-Buchs 2025.
+- Erledigt 2026-07-23: Zenodo-Record der Workshopreihe verifiziert (v1.1.0, publiziert 2024-02-11, DOI 10.5281/zenodo.10647754); im Paper als Pollin 2024 zitiert.
+- Berners-Lee 2025: Titel und Verlag verifiziert (*This Is for Everyone: The Unfinished Story of the World Wide Web*, mit Stephen Witt, Farrar, Straus and Giroux); die zitierte Passage zum Agenten-Gedanken bleibt zu identifizieren (Buch liegt nicht vor).
 - RSE-Personallage-Beleg (Community-Survey) oder Inferenz-Markierung in 2.4.
 - Attribution der Übersetzungsmechanismus-Charakterisierung (Kollege fragen; keine Namensnennung Dritter im Paper, Rolle statt Name).
+- Erledigt 2026-07-23: Die L.I.S.A.-Publikation ist einzelautorschaftlich (verifiziert gegen die Artikelseite); im Paper als Pollin 2026 statt Pollin/Steiner 2026 zitiert. Der Pollin/Steiner-Eintrag betrifft nur die Zenodo-Concept-DOI der Site (10.5281/zenodo.14160875), ein anderes Objekt.
 - Exemplar-Zuordnungen in 5.2 und Audit-Exemplar.
-- Referenzen vervollständigen (Pollin/Steiner 2026, Pollin 2025c, Pollin 2025d, INKE-Referenz).
+- Referenzen vervollständigen. Erledigt 2026-07-23: Pollin 2024 (Zenodo), Pollin 2025d (CSL im Vault), Pollin 2026 (L.I.S.A.), Barbot et al. 2024, Mayr/Thalheim 2021, Miksa et al. 2019, Broy/Kuhrmann 2021, Macedo 2026, Berners-Lee-Titel. Offen: Pollin 2025c (Critical-Expert-Blogpost), INKE-Referenz, Endings Project, Hong et al., Mei et al., Sharma et al., Fanous et al., Sarkar/Drosos, Fawzy et al., Abdurahman et al., Grallert-Heftangabe, Diss-Seitenzahlen für Wheaton/Basel und Mayr/Thalheim-Vermittlung.
 - Datenvolumen-Grenze in 4.3 `[to verify]`.
 - Quantitäten-Bereinigung in Abstract und Sektion 5 (Regel 17).
 - Quell-Repos öffentlich nachvollziehbar sichern (Stand zuletzt: KASKADE ohne Historie, slides-generator uncommittet, deepseek-ocr ungepusht); Bedingung der Nachvollziehbarkeits-Aussage in Sektion 5.
@@ -107,6 +108,8 @@ Jeder Punkt entspricht einem `[...]`-Marker im Text oder einer offenen Randbedin
 ## Evaluationsfragen zum Einbau-Stand 2026-07-23
 
 Prüffragen nach dem Muster von Competency Questions; jede Frage muss mit Ja beantwortbar sein, bevor der Stand als konsolidiert gilt. Beantwortung im Chat oder als Vermerk hier.
+
+Vermerk 2026-07-23: Fragen 1, 2, 5, 7, 8, 9, 10 mit Ja beantwortet (Grep-Prüfung der Verbotsmuster, Fußnoten-Reihenfolge nach Korrektur, Referenzabgleich); Frage 6 mit Ja auf Basis des Dissertations-Bausteins (Kapitel 4.6, Personas und User-Story-Tabellen; Seitenzahlen beim Referenz-Finish nachtragen); Fragen 3 und 4 sind Operator-Lektüre vorbehalten.
 
 1. Trägt jede in den Sessions vom 2026-07-23 neu eingebaute Passage eine Referenz oder einen `[...]`-Marker, keine unbelegte Substanzbehauptung?
 2. Widerspricht das Semi-Formalitäts-Argument (3.3) an keiner Stelle der Tokenökonomie von 2.3, insbesondere qualifiziert der Substrat-Absatz "direct processability" gegen "passt in den Kontext"?
