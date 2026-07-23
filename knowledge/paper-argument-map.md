@@ -226,6 +226,8 @@ Rolle: zuliefernd → K-1b
 
 ## Sektion 3, die Methode
 
+Finaler Sektionsspiegel nach dem Umbau vom 2026-07-23. Die fünf Untersektionen sind 3.1 Status und Provenienz, 3.2 vier Phasen, 3.3 die Promptotyping-Dokumente (praktisch), 3.4 Dokumente als Konzeptmodelle, 3.5 Worked Example. Die Blockkürzel bleiben als Bestätigungsanker stehen, ihre Sektionszuordnung folgt diesem Spiegel. Sektion 3.4 realisieren die Konzeptmodell-Blöcke K-3.3a (Stachowiak), K-3.3b (Gruber-Identitätsformel), K-3.3d (Substrat und Semantic-Web-Inversion) sowie der DMP-Arm von K-3.3f. Sektion 3.3 tragen die praktischen Blöcke K-3.3c (Doppel-Adressierung) und K-3.3e (Dokumenttypen und Triage) mitsamt Metadaten- und RO-Crate-Praxis (RO-Crate-Arm von K-3.3f). Das Worked Example führt jetzt das Kürzel K-3.5a.
+
 **K-3.1a, Konsolidierungs-Epistemologie.**
 
 ```
@@ -336,7 +338,7 @@ vs. prospektiv-operative Beschreibung für den Agenten; Frontmatter → Zitation
 Status: unbestätigt
 Rolle: zuliefernd → K-3.3a
 
-**K-3.4a, Worked Example (SZD-HTR).**
+**K-3.5a, Worked Example (SZD-HTR).**
 
 ```
 Exploration liefert den entscheidenden Befund als Sackgasse:
@@ -377,7 +379,7 @@ statisches Artefakt: A per Konstruktion erfüllt
                      F scheitert per Default (kein PID, keine Releases, keine Metadaten)
 ──► Lücke = Publikationsarbeit, von der Methode separierbar
     (Release + DOI + Metadaten deterministisch aus Frontmatter)
-Beleg: auditierter Fall 3.4, Verification Document im Repo
+Beleg: auditierter Fall 3.5, Verification Document im Repo
 ```
 
 Status: unbestätigt
