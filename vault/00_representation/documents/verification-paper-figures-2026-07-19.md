@@ -9,11 +9,11 @@ metadata:
   creator: "verification agent under the method author's direction, Digital Humanities Craft"
   date: "2026-07-19"
   format: "text/markdown"
-  identifier: "https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/knowledge/verification-paper-figures.md"
+  identifier: "https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/7c209645b05492ce14c5aaafbe606235cb9b55e0/knowledge/verification-paper-figures.md"
   license: "no explicit license file for this document; public repository"
   confidential: false
 created: 2026-07-19
-updated: 2026-07-19
+updated: 2026-07-23
 checked:
   validation: 2026-07-19
 ---

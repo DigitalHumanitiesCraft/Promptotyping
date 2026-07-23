@@ -5,7 +5,7 @@ project:
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 status: complete
 language: de
-version: 0.4
+version: 0.5
 created: 2026-05-09
 updated: 2026-07-23
 authors: [Christopher Pollin]
@@ -18,7 +18,7 @@ template:
   version: 0.2
   url: https://dhcraft.org/Promptotyping/promptotyping-document/index
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-index
-related: [project, specification, architecture, design, journal, plan, verification-paper-figures]
+related: [project, specification, architecture, design, journal, paper, paper-writing]
 ---
 
 # INDEX
@@ -27,7 +27,7 @@ Navigation und Begriffslexikon der Wissensbasis dieses Repos. Das Repo `DigitalH
 
 ## Wissensbasis-Inhalt
 
-Elf Promptotyping-Documents:
+Die Promptotyping-Documents dieser Wissensbasis:
 
 - **INDEX** (dieses Dokument) — Navigation und Begriffslexikon
 - **[project.md](project.md)** — was die Site werden soll, wer die Adressaten sind, Materialgrundlage, Stand
@@ -35,11 +35,10 @@ Elf Promptotyping-Documents:
 - **[architecture.md](architecture.md)** — wie die Site technisch gebaut wird: URL-Struktur, Tech-Stack, Modul-Inventar
 - **[design.md](design.md)** — wie die Site aussieht und sich verhält: DHCraft-Designsystem, Side-Panels, Typografie
 - **[journal.md](journal.md)** — chronologischer Verlauf des Refactors
-- **[plan.md](plan.md)** — vorwärts gerichtete Steuerung von der Paper-v2 zur Einreichung und zu den abgeleiteten Ausgaben (Site-Zerlegung, Blogpost, Vault-Abgleich)
-- **[verification-paper-figures.md](verification-paper-figures.md)** — datierter Verifikationsbefund (Snapshot) zu den quantitativen Angaben der Paper-Sektion 4; nach vollständiger Einarbeitung vom Paper abgelöst
-- **[paper-outline.md](paper-outline.md)** — Gliederung und Einarbeitungsplan der Paper-Zusammenführung (Fassung `_content/paper/` plus Operator-Draft) zur v2
-- **[paper-draft-explorable-2026-07-23.md](paper-draft-explorable-2026-07-23.md)** — Snapshot des Operator-Drafts "Making Research Data Explorable", zweite Quelle der Zusammenführung
-- **[paper-v2-draft.md](paper-v2-draft.md)** — zusammengeführte Vollfassung des Papers als ein Dokument, Arbeitsstand zur Operator-Lektüre; nach Freigabe Zerlegung in `_content/paper/`
+- **[paper.md](paper.md)** — der vollständige englische Papertext als ein Dokument, Arbeitsstand zur Operator-Lektüre; nach Freigabe Zerlegung in `_content/paper/`
+- **[paper-writing.md](paper-writing.md)** — das Wissen über das Schreiben des Papers: Arbeitsmodus, Kernaussagen, Sprachregeln, Entscheidungsstand, offene Prüfpunkte, Weg zur Einreichung
+
+Das Paper-Schreiben folgt damit einem Zwei-Dokumente-Modell: der Text in `paper.md`, das Wissen darüber in `paper-writing.md`. Die früheren Steuerdokumente (plan, paper-outline, verification-paper-figures, Draft-Snapshot, Root-PLAN) sind dort zusammengeführt; ihre Volltexte trägt die Git-History.
 
 Eine `data.md` existiert bewusst nicht. Die Vorlage Datengrundlage trägt für Methoden-Repos nicht; die Materialgrundlage steht in `project.md`. Begründung im Eintrag vom 2026-05-09 in [journal.md](journal.md).
 
@@ -53,9 +52,9 @@ Wer die Wissensbasis zum ersten Mal liest:
 4. **architecture.md** (wie sie technisch gebaut wird)
 5. **design.md** (wie sie aussieht)
 6. **journal.md** (was bisher passiert ist, einschließlich der Vorlagen-Trigger-Korrektur)
-7. **plan.md** (was als Nächstes ansteht: Paper-Revision und abgeleitete Ausgaben)
+7. **paper-writing.md** (Stand und Steuerung der Paper-Arbeit; von dort in **paper.md**)
 
-Wer einen konkreten Aspekt sucht, geht direkt zum entsprechenden Dokument. Das Verifikationsdokument `verification-paper-figures.md` steht als datierter Befund außerhalb dieser Lesekette; es wird aus dem Plan (Milestone M3) heraus konsultiert.
+Wer einen konkreten Aspekt sucht, geht direkt zum entsprechenden Dokument.
 
 ## Begriffslexikon
 
