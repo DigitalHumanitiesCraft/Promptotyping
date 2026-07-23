@@ -477,6 +477,7 @@ Drei Entwürfe erzeugt, uncommitted zur Operator-Verifikation: `_content/technol
 - Vorlage Technology vault-first in den Katalog aufnehmen (echte Vault-Session); bis dahin ist der Slug `technology` nicht Teil des freigegebenen Katalogs und nicht in `data/promptotyping-documents.json`, `CLAUDE.md`-Anker-Schema und Vorlagen-Sektion der Site verdrahtet.
 - Site-Verdrahtung der Technology Baseline entscheiden (eigener Anker oder nur Maschinenadresse).
 - Folgeprojekt-Idee (Operator, 2026-07-23): Promptotyping-Wissensbasen über die `template:`-/Frontmatter-Metadaten repoübergreifend miteinander verknüpfen und als Kontextorganisation nutzen (Follow-your-nose über die Maschinenadressen). Bewusst kein Teil dieses Repos; bei Aufnahme eigener Diskurs.
+- Demo-Projekt-Idee (Operator, 2026-07-23, aus der ZfdG-Venue-Analyse entstanden): Publikationskorpora mehrerer DH-Zeitschriften über die Zeit mit Opus-Subagenten explorieren und clustern, Forschungsinteressen-Verschiebungen zwischen Zeiträumen empirisch aus den Daten extrahieren (Kategorienbildung datengetrieben statt vorab gesetzt) und statistisch in einem statischen Frontend darstellen. Typologisch ein Exploration-Interface nach Paper 4.2 und ein kanonischer Promptotyping-Anwendungsfall; als eigenes Repo zu starten, nicht hier.
 
 Nachtrag: Commit-Freigabe durch den Operator am 2026-07-23; damit ist die README-Neufassung englisch entschieden und `_content/MANIFEST.md` um beide neue Dateien ergänzt.
 
