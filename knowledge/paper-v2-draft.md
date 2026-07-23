@@ -1,21 +1,3 @@
----
-title: Paper v2 Working Draft (Merge)
-project:
-  name: Promptotyping Site
-  repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
-status: active
-language: en
-version: 2.0-draft
-created: 2026-07-23
-updated: 2026-07-23
-authors: [Christopher Pollin]
-generated-with: Claude Code mit Claude Fable 5
-method:
-  name: Promptotyping
-  url: https://dhcraft.org/Promptotyping/
-related: [paper-outline, paper-draft-explorable-2026-07-23, plan]
----
-
 # Promptotyping. Making Research Data Explorable through Iterative Context and Agentic Engineering
 
 Christopher Pollin (Digital Humanities Craft OG, Graz)
@@ -73,6 +55,8 @@ This arrangement has a history that is worth naming, because it connects the met
 The translation problem between domain scholars and programmers is a documented, persistent condition of the field. Edmond (2005) made the professional intermediary a figure of necessity; Siemens (2009) showed how much of digital humanities collaboration is the labour of keeping heterogeneous competences aligned; Kemman (2021) analysed digital history as a trading zone in which meaning must be continuously negotiated across disciplinary boundaries. Research Software Engineering is the institutionalised, contemporary form of the intermediary (Baxter et al. 2012; Cohen et al. 2021), and its existence sharpens the problem rather than dissolving it: RSE capacity concentrates at well-resourced institutions, and the long tail of small projects and individual researchers remains underserved [scarcity claim to be anchored in an RSE community survey or marked as inference].
 
 Promptotyping Documents intervene in this problem as boundary objects in the sense of Star and Griesemer (1989), objects plastic enough to serve the needs of different communities and robust enough to maintain identity across them. A data document is readable by the scholar, who can verify that the description of the sources is right, and actionable for an agentic tool, which derives parsing and interface logic from it. A requirements document phrased as user stories is at once a scholarly statement about research practice and a specification. The method thereby relocates the site of interdisciplinary translation. What Kemman describes as negotiation in conversation between two people becomes a versioned, inspectable artefact; the trading zone acquires a written constitution. This is itself a claim about how interdisciplinary knowledge can be stabilised, and it holds independently of any generative tooling; a Promptotyping document set would improve communication with a human Research Software Engineer too, a point Section 6.5 returns to. The generative setting makes the documents doubly load-bearing, because there the documents are the implementation's source rather than an aid to it.
+
+The generative setting also gives the word translation a second, mechanistic sense, and the doubling is not wordplay but the paper's theoretical core. LLMs can be understood as translation mechanisms: they translate between natural languages, they translate requirements into code, and, in the arrangement described here, they translate research data and research context into research artefacts [the characterisation of LLMs as translation mechanisms owes to a conversation with a colleague; attribution to be clarified]. Promptotyping, read through this lens, is the organisation of a chain of translations. Scholar-Centred Design translates research practice into user stories; Distillation translates data into token-efficient descriptions; the agent translates documents into code; the code translates data into a visible, addressable form. What the method adds to the raw capability of the model is that every step of this chain leaves a versioned, inspectable trace, and that the documents stand at each junction as the stable objects both sides can read. The two senses of translation meet exactly here: the interdisciplinary translation problem of Edmond, Siemens, and Kemman is answered by making the machine translation's inputs, the documents, serve simultaneously as the medium of the human translation.
 
 [Evidence anchor to be added: one documented case in which the document set structured communication with project partners, drawn from the edition or library projects.]
 
