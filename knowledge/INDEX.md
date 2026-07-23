@@ -35,7 +35,7 @@ Elf Promptotyping-Documents:
 - **[architecture.md](architecture.md)** — wie die Site technisch gebaut wird: URL-Struktur, Tech-Stack, Modul-Inventar
 - **[design.md](design.md)** — wie die Site aussieht und sich verhält: DHCraft-Designsystem, Side-Panels, Typografie
 - **[journal.md](journal.md)** — chronologischer Verlauf des Refactors
-- **[plan.md](plan.md)** — vorwärts gerichtete Steuerung der Paper-Revision (Genealogie, Standardisierung) und der abgeleiteten Ausgaben (Blogpost, Site-Sektionen, Vault-Abgleich)
+- **[plan.md](plan.md)** — vorwärts gerichtete Steuerung von der Paper-v2 zur Einreichung und zu den abgeleiteten Ausgaben (Site-Zerlegung, Blogpost, Vault-Abgleich)
 - **[verification-paper-figures.md](verification-paper-figures.md)** — datierter Verifikationsbefund (Snapshot) zu den quantitativen Angaben der Paper-Sektion 4; nach vollständiger Einarbeitung vom Paper abgelöst
 - **[paper-outline.md](paper-outline.md)** — Gliederung und Einarbeitungsplan der Paper-Zusammenführung (Fassung `_content/paper/` plus Operator-Draft) zur v2
 - **[paper-draft-explorable-2026-07-23.md](paper-draft-explorable-2026-07-23.md)** — Snapshot des Operator-Drafts "Making Research Data Explorable", zweite Quelle der Zusammenführung
