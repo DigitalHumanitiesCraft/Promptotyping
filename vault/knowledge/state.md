@@ -9,7 +9,7 @@ method:
 status: draft
 language: en
 created: "2026-07-19"
-updated: "2026-07-19"
+updated: "2026-07-23"
 related: [operations, journal]
 ---
 
@@ -56,6 +56,7 @@ The deliverable is external (settled decision in [[knowledge/specification]]); f
 
 - Footnote suggestion for the paper session (Section 2.6, side-line dating): the sentence placing PRISM as the side line can carry a footnote grounded in [[20_claims/prism-prompt-documented-by-january-2025]]. The claim carries only that the PRISM prompt existed in its stated wording in the public GM-DH repository by 2025-01-21 (git-commit dating). It does not carry PRISM's influence on the dissertation or on the four-phase model; those links need their own claims or enter the paper as posits.
 - Ingest the remaining `new` sources of the inventory.
+- Positioning anchors added to the paper on 2026-07-23 (FAIR in 2.3, FAIR4RS in 4.1 and 6.3, RO-Crate in 3.3, machine-actionable DMPs in 3.3, TaDiRAH/tool-registry passage in 4.2, Spec-Driven Development in 2.5/2.6). These rest on external publications carried as references, not on vault claims; no intake needed for the citations themselves. Two statements do need grounding when the sections are finalised: (1) the FAIR4RS audit finding for the szd-htr repository (no persistent identifier, no releases, no citation metadata; strong provenance) — intake as a handover source once the Verification Document exists in that repository; (2) the claim that verification and audit lack TaDiRAH counterparts — either anchor in a distillate of the TaDiRAH vocabulary or leave as a posit with the paper's own wording.
 - The standardisation stage of Section 3.3 is now grounded via [[20_claims/MOC-Method]]: the frontmatter-practice note (2026-05-09) and the knowledge-base content audit (2026-07-19) carry the six-field frontmatter core, the active/snapshot status extension, and the promotion of Verification to a document function.
 - Machine review is operator-gated (mechanism per [[knowledge/specification]]); until released, documents stay `grounded` with `checked.validation` dates.
 - Posit candidates for the paper session (claims deliberately not built; own conclusions stay posits): (1) that the PRISM side line contributed the process insight to Promptotyping, a cross-source synthesis without anchor, suggested footnote wording in the claim-cycle report of 2026-07-19; (2) that the dissertation is the origin of the method as a genealogical whole, the vault grounds the components ([[20_claims/dissertation-requirements-from-deep-dive-sessions]], [[20_claims/dissertation-requirements-feed-built-artifacts]], [[20_claims/bookkeeping-ontology-session-driven]], [[20_claims/dissertation-dikw-cognitive-agent-premise]]), the synthesis is the paper's argument; (3) the Cologne location of the summer school, supported only by the `uni-koeln.de` materials host.
