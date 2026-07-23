@@ -18,7 +18,7 @@ template:
   version: 0.2
   url: https://dhcraft.org/Promptotyping/promptotyping-document/index
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-index
-related: [project, specification, architecture, design, journal, paper, paper-writing]
+related: [project, specification, architecture, design, journal, paper, paper-writing, report, submission-zfdg]
 ---
 
 # INDEX
@@ -38,6 +38,7 @@ Die Promptotyping-Documents dieser Wissensbasis:
 - **[paper.md](paper.md)** — der vollständige englische Papertext als ein Dokument, Arbeitsstand zur Operator-Lektüre; nach Freigabe Zerlegung in `_content/paper/`
 - **[paper-writing.md](paper-writing.md)** — das Wissen über das Schreiben des Papers: Arbeitsmodus, Kernaussagen, Sprachregeln, Entscheidungsstand, offene Prüfpunkte, Weg zur Einreichung
 - **[report.md](report.md)** — Stichtagsbericht des Lane-Durchgangs zur ZfdG-Einreichung (2026-07-23) mit Abnahme-Listen; Snapshot, nicht fortgeschrieben
+- **[submission-zfdg.md](submission-zfdg.md)** — Einreichpaket für die ZfdG: Exposé mit Gliederung und Literaturauswahl, Kurz-Abstracts deutsch und englisch, Formalia-Checkliste
 
 Das Paper-Schreiben folgt damit einem Zwei-Dokumente-Modell: der Text in `paper.md`, das Wissen darüber in `paper-writing.md`. Die früheren Steuerdokumente (plan, paper-outline, verification-paper-figures, Draft-Snapshot, Root-PLAN) sind dort zusammengeführt; ihre Volltexte trägt die Git-History.
 
