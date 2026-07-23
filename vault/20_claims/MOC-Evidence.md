@@ -35,6 +35,10 @@ Claims of the paper's Section 4 evidence base: project figures, build states, an
 - [[20_claims/klawiter-test-count-2026-07-19]] — the Klawiter repository holds 247 test functions.
 - [[20_claims/medieval-test-count-2026-07-19]] — the Medieval repository holds 192 test functions and 6 knowledge documents.
 
+### Artefact-type audits
+
+- [[20_claims/szd-htr-fair4rs-audit-2026-07-23]] — the SZD-HTR FAIR4RS audit found accessibility and reusability largely fulfilled and findability unfulfilled.
+
 ### Not deterministically verifiable
 
 - [[20_claims/kulturpool-repo-unresolvable-2026-07-19]] — the Kulturpool repository was unresolvable and its object figure is an API-scale value.
