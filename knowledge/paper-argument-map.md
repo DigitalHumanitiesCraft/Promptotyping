@@ -16,7 +16,7 @@ related: [paper, paper-writing]
 
 Dieses Dokument ist das Konzeptmodell des Papers `paper.md`. Es hält jede tragende Argumentationslinie in kompakter Notation, eine Kette pro Block, mit Status. Es hat zwei Funktionen. Als Prüfinstrument bestätigt oder korrigiert der Operator jede Kette einzeln am Block-Kürzel. Als Generierungsgrundlage kann ein Agent aus dieser Map, den Sprachregeln in `paper-writing.md`, der Evidenztabelle und dem Referenzapparat das Paper neu schreiben; die Map ist die Spezifikation, der Papertext die Ausführung.
 
-Notation: `A ──► B` heißt, B folgt aus A oder wird durch A getragen. `∧` heißt, beide Bedingungen müssen gelten. Jeder Block trägt eine Statuszeile; `bestätigt` vergibt nur der Operator.
+Notation: `A ──► B` heißt, B folgt aus A oder wird durch A getragen. `∧` heißt, beide Bedingungen müssen gelten. Jeder Block trägt eine Statuszeile; `bestätigt` vergibt nur der Operator. Jeder Block trägt außerdem eine `Rolle:`-Zeile, die die Hierarchie als gerichteten Graph kodiert: `tragend` = Spine, den ein Abschnitt trägt; `zuliefernd → K-xxx` = liefert dem benannten Block zu. Zwei Top-Träger: K-1b (Möglichkeits-Claim) und K-2.4a (Übersetzungs-Doppelung, Titelträger). Eine bewusste Ausnahme der Sektion-2-Achse: K-2.5a liefert der Methodendefinition (K-3.2a) zu, der Sektion-2-Eröffnungsabsatz zählt 2.5 deshalb nicht unter die Prämissen der Doppelung.
 
 ## Kernsatz
 
@@ -40,6 +40,7 @@ Daten nur via Software zugänglich ──► generische Tools bleiben unter dem 
 ```
 
 Status: unbestätigt
+Rolle: zuliefernd → K-2.4a
 
 **K-1b, die Antwort und ihre Grenze.**
 
@@ -51,6 +52,7 @@ Beitrag: methodisch und konzeptionell; keine Vergleichsmessung (Limit 6.4)
 ```
 
 Status: unbestätigt
+Rolle: tragend (Claim-Träger)
 
 **K-1c, Capability vor Methode.**
 
@@ -63,6 +65,7 @@ Status: unbestätigt
 ```
 
 Status: unbestätigt
+Rolle: zuliefernd → K-1b
 
 **K-1d, Härtetest-Argument.**
 
@@ -73,6 +76,7 @@ Evidenzbasis = Humanities-Daten (heterogen, interpretativ, semantisch dicht, uns
 ```
 
 Status: unbestätigt
+Rolle: zuliefernd → K-1b
 
 ## Sektion 2, epistemischer Rahmen
 
@@ -85,6 +89,7 @@ InfoVis-Diskurs der DH: Exploration = Forschungsakt (generous interfaces, sandca
 ```
 
 Status: unbestätigt
+Rolle: zuliefernd → K-2.4a
 
 **K-2.1b, Drucker als Prüfstein.**
 
@@ -97,6 +102,7 @@ Antwort strukturell: Designentscheidungen ──► begründete, versionierte Do
 ```
 
 Status: unbestätigt
+Rolle: zuliefernd → K-2.4a
 
 **K-2.2a, Anti-Tool-Positivismus.**
 
@@ -107,6 +113,7 @@ Building as knowing (Prototyp argumentiert)  ∧  Werkzeugkritik als Korrektiv
 ```
 
 Status: unbestätigt
+Rolle: zuliefernd → K-2.4a
 
 **K-2.3a, Token-Ökonomie-Arrangement.**
 
@@ -119,6 +126,7 @@ Korpus geht nie durchs Kontextfenster, nur Destillate, User Stories, Design, Fee
 ```
 
 Status: unbestätigt
+Rolle: zuliefernd → K-2.4a
 
 **K-2.3b, Semantic-Web-Kontinuität.**
 
@@ -131,6 +139,7 @@ eigene Trajektorie: Diss produzierte RDF, damit exploriert wird; die Methode lie
 ```
 
 Status: unbestätigt
+Rolle: zuliefernd → K-2.4a
 
 **K-2.4a, Übersetzungs-Doppelung (theoretischer Kern).**
 
@@ -145,6 +154,7 @@ Mehrwert der Methode: jeder Kettenschritt hinterlässt versionierte, inspizierba
 ```
 
 Status: unbestätigt
+Rolle: tragend (Titelträger)
 
 **K-2.4b, Boundary Objects.**
 
@@ -156,6 +166,7 @@ generatives Setting macht Dokumente doppelt tragend: dort sind sie zugleich Quel
 ```
 
 Status: unbestätigt
+Rolle: zuliefernd → K-2.4a
 
 **K-2.5a, Positionierung im KI-Diskurs.**
 
@@ -172,6 +183,7 @@ Critical Expert: vorausgesetzte Rolle; Domänenexpertise ∧ Kenntnis der Fehler
 ```
 
 Status: unbestätigt
+Rolle: zuliefernd → K-3.2a
 
 **K-2.6a, Genealogie.**
 
@@ -186,6 +198,7 @@ konfiguriert ──► Vorläufer der Agent Socialisation (3.3)
 ```
 
 Status: unbestätigt
+Rolle: zuliefernd → K-2.4a
 
 **K-2.6b, DIKW-Prämisse (Einbau beschlossen 2026-07-23, noch nicht im Text).**
 
@@ -197,6 +210,7 @@ seine Wissensstrukturen geben Daten Kontext und Bedeutung
 ```
 
 Status: bestätigt (Richtung, 2026-07-23); Formulierung offen
+Rolle: zuliefernd → K-3.3a
 
 **K-2.6c, Externalisierungs-These (Pointe).**
 
@@ -208,6 +222,7 @@ ob es für Nicht-Hybride funktioniert = empirische Frage ──► Teaching Case
 ```
 
 Status: unbestätigt
+Rolle: zuliefernd → K-1b
 
 ## Sektion 3, die Methode
 
@@ -221,6 +236,7 @@ Dokumente teils nachträglich ──► definierte Form = konsolidierte Form
 ```
 
 Status: unbestätigt
+Rolle: zuliefernd → K-5.2a
 
 **K-3.2a, die vier Phasen und die Signatur.**
 
@@ -234,6 +250,7 @@ Exit: Akzeptanzkriterien ∧ Verifikationschecks erfüllt; Stopppunkt bestimmt d
 ```
 
 Status: unbestätigt
+Rolle: tragend → K-1b
 
 **K-3.3a, Dokumente als Konzeptmodelle (Stachowiak-Kette; Einbau beschlossen 2026-07-23).**
 
@@ -251,6 +268,7 @@ Forschungskontext ──(Mensch: verkürzt)──► Dokumente ──(Modell: ge
 ```
 
 Status: bestätigt (Richtung, 2026-07-23); Formulierung offen
+Rolle: tragend → K-2.4a
 
 **K-3.3b, Identitätsformel mit Gruber-Linie (Einbau beschlossen 2026-07-23).**
 
@@ -263,6 +281,7 @@ Linie: Ontologie = "explicit specification of a conceptualisation" (Gruber 1993)
 ```
 
 Status: bestätigt (Richtung, 2026-07-23); Formulierung offen
+Rolle: zuliefernd → K-3.3a
 
 **K-3.3c, Doppel-Adressierung als Schreibdisziplin.**
 
@@ -273,6 +292,7 @@ Dokument muss: lesbar (Scholar, Verifikation) ∧ ausführbar (Agent, Generierun
 ```
 
 Status: unbestätigt
+Rolle: zuliefernd → K-3.3a
 
 **K-3.3d, Substrat und Semantic-Web-Inversion (Einbau beschlossen 2026-07-23).**
 
@@ -286,6 +306,7 @@ Frontier-Modelle lesen semi-formale Struktur direkt
 ```
 
 Status: bestätigt (Richtung, 2026-07-23); Formulierung offen
+Rolle: zuliefernd → K-3.3a
 
 **K-3.3e, Dokumenttypen und Triage.**
 
@@ -299,6 +320,7 @@ zweite Achse: handkuratiert vs. deterministisch generiert
 ```
 
 Status: unbestätigt
+Rolle: zuliefernd → K-3.3a
 
 **K-3.3f, Verhältnis zur Forschungsdaten-Dokumentschicht.**
 
@@ -312,6 +334,7 @@ vs. prospektiv-operative Beschreibung für den Agenten; Frontmatter → Zitation
 ```
 
 Status: unbestätigt
+Rolle: zuliefernd → K-3.3a
 
 **K-3.4a, Worked Example (SZD-HTR).**
 
@@ -328,6 +351,7 @@ Verantwortung sich nicht delegieren lässt; keine Behauptung über Können der S
 ```
 
 Status: unbestätigt
+Rolle: zuliefernd → K-3.2a
 
 ## Sektion 4, der Artefakttyp
 
@@ -343,6 +367,7 @@ wie eine Edition ihre Editionsprinzipien)
 ```
 
 Status: unbestätigt
+Rolle: tragend → K-1b
 
 **K-4.1b, FAIR4RS-Messung.**
 
@@ -356,6 +381,7 @@ Beleg: auditierter Fall 3.4, Verification Document im Repo
 ```
 
 Status: unbestätigt
+Rolle: zuliefernd → K-4.1a
 
 **K-4.2a, Typologie nach epistemischer Funktion.**
 
@@ -370,6 +396,7 @@ Gegenstücke, Verification/Audit nicht
 ```
 
 Status: unbestätigt
+Rolle: zuliefernd → K-4.1a
 
 **K-4.3a, Grenze und Übergabepunkt.**
 
@@ -381,6 +408,7 @@ Dokumentset verliert an der Grenze nicht seinen Wert ──► es wird das Hando
 ```
 
 Status: unbestätigt
+Rolle: zuliefernd → K-1b
 
 ## Sektion 5, Evidenz
 
@@ -394,6 +422,7 @@ weil eine kuratierte Wissensschicht genau das ist, was anhaltende Praxis der Met
 ```
 
 Status: unbestätigt
+Rolle: zuliefernd → K-1b
 
 **K-5.2a, Formationsphase als Gruppe.**
 
@@ -405,6 +434,7 @@ SZD-2h (Critical Expert), CVMA (erster knowledge/-Ordner), imareal (Kontextgedä
 ```
 
 Status: unbestätigt
+Rolle: tragend → K-1b
 
 **K-5.4a, Teaching Cases als Transfertest.**
 
@@ -416,6 +446,7 @@ durch Dritte; davon gibt es noch wenig (ehrlich gezählt in 6.4)
 ```
 
 Status: unbestätigt
+Rolle: zuliefernd → K-1b
 
 **K-5.5a, Querbefunde.**
 
@@ -426,6 +457,7 @@ Befund 2: Artefaktqualität folgt der in die Dokumente investierten Domänenexpe
 ```
 
 Status: unbestätigt
+Rolle: zuliefernd → K-1b
 
 ## Sektion 6, Diskussion
 
@@ -439,6 +471,7 @@ die Dokumente verbinden beides (persistieren über Iterationen, begleiten das Pu
 ```
 
 Status: unbestätigt
+Rolle: zuliefernd → K-4.1a
 
 **K-6.2a, Verification.**
 
@@ -452,6 +485,7 @@ Verification ist nicht automatisierbar ──► ihr Aufwand ist der ehrliche Pr
 ```
 
 Status: unbestätigt
+Rolle: tragend → K-2.4a
 
 **K-6.3a, Reproduzierbarkeit.**
 
@@ -465,6 +499,7 @@ Findability ──► Registry-Anschluss (Wikidata-Registries ernten Frontmatter
 ```
 
 Status: unbestätigt
+Rolle: zuliefernd → K-6.2a
 
 **K-6.4a, fünf Limits.**
 
@@ -478,6 +513,7 @@ Status: unbestätigt
 ```
 
 Status: unbestätigt
+Rolle: zuliefernd → K-1b
 
 **K-6.5a, Transfer.**
 
@@ -491,6 +527,7 @@ Handover-Pfad ohne generatives Tooling: Dokumentset als Übergabeformat an RSE
 ```
 
 Status: unbestätigt
+Rolle: zuliefernd → K-1b
 
 ## Sektion 7, Konklusion
 
@@ -507,6 +544,7 @@ Schluss über die Daten: die 20-Jahres-Investition des Felds wird produktiv,
 ```
 
 Status: unbestätigt
+Rolle: tragend → K-2.4a
 
 ## Verwendung als Generierungsgrundlage
 
