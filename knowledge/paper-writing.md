@@ -104,6 +104,21 @@ Jeder Punkt entspricht einem `[...]`-Marker im Text oder einer offenen Randbedin
 - Positionierung der Fünf-Funktionen-Typologie (Sektion 4) gegenüber TaDiRAH und Workflow-Schemata (Session 2026-07-23, Web-Recherche verifiziert): TaDiRAH klassifiziert Aktivitäten, unsere Typologie Artefakt-Funktionen; Capture/Exploration/Edition haben partielle Entsprechungen, Verification und Audit fehlen in TaDiRAH, was die Typologie als Ergänzung motiviert. Zitationen: Borek et al. 2016 (DHQ 10.1, TaDiRAH-Grundlagenartikel; v2.0 als SKOS ab 2020/21, genaue v2-Zitation noch festlegen); TaDiRAH-Kritik und Genealogie aus Grallert et al., "Open Tool Registries! Resolving the Directory Paradox with Wikidata", DHQ 2026 (Preprint Zenodo 10.5281/zenodo.15094816), der Quelle des vom Operator eingebrachten Exzerpts. Für 3.2 der CRISP-DM-Kontrast (Chapman et al. 2000, sechs Phasen, De-facto-Standard): kein Äquivalent zur Distillation-Phase, der Verdichtung in eine kuratierte Spezifikation für einen maschinellen Akteur. SSH Open Marketplace als DH-Workflow-Erfassung (Schritte mit TaDiRAH-Annotation, JOHD 10.5334/johd.192), kennt ebenfalls nur Aktivitätsketten, kein Vokabular für steuernde Dokumente.
 - Spec-Driven-Development-Welle 2025/26 (GitHub Spec Kit, AWS Kiro, OpenSpec, BMAD, Tessl) für die Novelty-Positionierung sichten: gleiche Grundidee (Spezifikation als Source of Truth für Agenten), aber generisches Software-Engineering ohne Forschungsdaten-, Verifikations- und Epistemik-Schicht; Promptotyping-Definition (Dissertation, Blog Frühjahr 2025) datiert vor bzw. parallel zur SDD-Begriffsbildung. Gehört in die Novelty-Recherche (Weg zur Einreichung, Schritt Novelty) und ggf. als Absatz in 2.5 oder Discussion.
 
+## Evaluationsfragen zum Einbau-Stand 2026-07-23
+
+Prüffragen nach dem Muster von Competency Questions; jede Frage muss mit Ja beantwortbar sein, bevor der Stand als konsolidiert gilt. Beantwortung im Chat oder als Vermerk hier.
+
+1. Trägt jede in den Sessions vom 2026-07-23 neu eingebaute Passage eine Referenz oder einen `[...]`-Marker, keine unbelegte Substanzbehauptung?
+2. Widerspricht das Semi-Formalitäts-Argument (3.3) an keiner Stelle der Tokenökonomie von 2.3, insbesondere qualifiziert der Substrat-Absatz "direct processability" gegen "passt in den Kontext"?
+3. Sind Identitätsformel (Beschreibung = Spezifikation) und doppelter Adressat als ein Gedanke erzählt, ohne Dopplung zwischen den Absätzen von 3.3?
+4. Bleibt der Grounded Vault als "early, documented use" markiert, ohne Overclaim, und reaktiviert die Passage nicht das gestrichene Epistemic-Infrastructure-Kapitel?
+5. Stimmen die Fußnoten in Nummerierung, Textreihenfolge und Definition ([^1] Gephi, [^2] Claude Code, [^3] Frontier LLM, [^4] Specification, [^5] Spec Kit, [^6] Grounded Vault), und hat jedes benannte Tool eine Fußnote mit URL?
+6. Deckt die Dissertation die Intro-Verankerung wirklich (Wheaton-Persona sozialhistorisch, Basel-Persona wirtschaftshistorisch, dokumentierte User Stories)?
+7. Besteht der Gesamttext die Selbstprüfung gegen die Kernverbote auch in den neuen Passagen (Doppelpunkt-Konnektoren, Negativ-Appositionen, Ankündigungssätze, Etikettsätze)?
+8. Sind alle neuen Zitationen im Referenzverzeichnis vorhanden (Wilkinson, Chue Hong, Miksa, Soiland-Reyes, Grallert, Mayr/Thalheim, Broy/Kuhrmann, JOHD-Marker, SDD-Marker)?
+9. Zeigen 2.4 und 3.3 wechselseitig konsistent aufeinander (Formalisierung als der Schritt, den die Maschine übernimmt)?
+10. Sind die bestehenden Faktenmarker unangetastet und keiner durch die Einbauten stillschweigend aufgelöst worden?
+
 ## Verifikation der Projektzahlen
 
 Die quantitativen Angaben der Projekttabelle wurden am 2026-07-19 adversarial gegen die realen Repositories geprüft (lokale Clones, Shallow Clones, GitHub API, Einzelagent); die Korrekturen sind in die Tabelle eingearbeitet. Der vollständige Befund ist Quelle im Grounded Vault (`vault/_sources/verification-paper-figures-2026-07-19.md`, Claims im MOC-Evidence). Dauer- und Kostenangaben sind Erfahrungswerte und deterministisch nicht prüfbar; sie bleiben als solche gekennzeichnet. Spätere Repo-Stände weichen ab (Snapshot-Drift); die redaktionelle Regel ist Datierung der Zahl statt Nachführung.
