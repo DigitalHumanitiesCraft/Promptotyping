@@ -4,12 +4,12 @@ project:
   name: Promptotyping Site
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 status: complete
-language: de
-version: 0.3
+language: en
+version: 0.4
 created: 2026-05-09
-updated: 2026-07-19
+updated: 2026-07-23
 authors: [Christopher Pollin]
-generated-with: Claude Code mit Claude Opus 4.7
+generated-with: Claude Code with Claude Opus 4.8
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
@@ -28,51 +28,42 @@ related: [INDEX, project, architecture, design, journal]
 
 # Specification
 
-Anforderungen, Funktionsumfang und Entscheidungen für den Refactor zum interaktiven Paper. Die Site rendert das Pollin-2026-Paper als scrollbare Single-Page mit Inline-Glossar, eingebetteten Vorlagen, Case-Study-Karten und Side-Panels.
+What the site must do. The site renders the Pollin 2026 paper as a scrollable single page with an inline glossary, embedded templates, case-study cards, and side panels. This document states the requirements and the design decisions. How the site is built is in [architecture.md](architecture.md); how it looks and behaves is in [design.md](design.md).
 
-## Anforderungen
+## Requirements
 
-### A1 — Paper als Lesefluss
-Das Pollin-2026-Paper ist im Lesefluss vorhanden, sektioniert in sieben Markdown-Dateien (eine pro H2-Section), die References-Sektion separat als `literatur.md`. Gerendert in einer zentralen Lese-Spalte (max. 720px). Akzeptanzkriterium: Wer auf https://dhcraft.org/Promptotyping/ kommt, kann das Paper von Abstract bis Conclusion durchscrollen, Inhaltsverzeichnis links als sticky Sidebar.
+### A1 — Paper as reading flow
+The paper is present as a continuous reading flow, split into seven H2 section files (`_content/paper/01-introduction.md` … `07-conclusion.md`) plus an abstract file (`00-abstract.md`) prepended to section 1, with the references as `_content/literatur.md`. It renders in a central reading column with the table of contents as a sticky left sidebar. Acceptance criterion. A visitor to https://dhcraft.org/Promptotyping/ can scroll the paper from abstract to conclusion.
 
-Substrat liegt in `_content/paper/01-introduction.md` … `_content/paper/07-conclusion.md` und `_content/literatur.md`.
+### A2 — Phases provenance lane (removed)
+A left lane that marked each paragraph by its Promptotyping phase was removed after the first deploy (operator decision 2026-06-10). Legend, mobile phase bar, hover tooltip, and filter mode are gone from HTML, CSS, and JavaScript; the `{:.phase-*}` tags in the paper markdown are stripped by the marked extension and render nothing. The rationale survives as a decision record in ADR-4.
 
-### A2 — Phasen-Provenance-Lane (entfernt, Operator-Entscheidung 2026-06-10)
-~~Jeder Absatz im Paper trägt eine Phasen-Klasse (Preparation, Exploration & Mapping, Distillation, Implementation), die sich als monochrome vertikale Markierung am linken Absatzrand zeigt. Hover auf einen Strich öffnet einen Tooltip mit Phasennamen; Klick aktiviert einen Phasen-Filter.~~
+### A3 — Addressable templates
+The mirrored templates are addressable under latest anchors (`#promptotyping-document-data`, `#promptotyping-document-journal`, …). Opening such an anchor jumps to the template and opens the side panel with its full specification. Version snapshots receive an additional sub-anchor on the same template section (A4, ADR-2).
 
-Entfernt nach dem Erstdeploy auf Operator-Entscheidung (2026-06-10). Die Lane (Legende, Mobile-Phase-Bar, Hover-Tooltip, Filter-Modus) ist aus HTML, CSS und JavaScript ausgebaut. Die `{:.phase-*}`-Tags im Paper-Markdown werden von der marked-Extension nur noch gestrippt (reiner Tag-Stripper, kein Lane-Rendering). Begründung: visuell ruhiger Lesefluss ohne Provenance-Spalte. Die ADR-4-Begründung bleibt als Entscheidungs-Provenienz erhalten, ist aber nicht mehr umgesetzt.
+### A4 — Two canonical URL forms, subpath and hash
+Every addressable item exists under two equal canonical URL forms, a subpath for machines and structured human legibility, and a hash anchor for in-page navigation and fallback. Neither is an alias of the other; both are permanently stable. The subpath form resolves to the hash via `404.html` (see [architecture.md](architecture.md)). The convention for all anchor families:
 
-### A3 — Adressierbare Vorlagen
-Die gespiegelten Vorlagen sind unter Latest-Ankern adressierbar (`#promptotyping-document-data`, `#promptotyping-document-journal`, ...). Bei Versions-Sprüngen werden zusätzliche Snapshot-Anker derselben Vorlagen-Sektion vergeben (`#promptotyping-document-data-v0.1`); der Latest-Anker bleibt der primäre Adresspunkt. Seit dem Vault-Vorlagen-Sweep vom 2026-07-19 tragen die Vorlagen unterschiedliche Versionen; die Spiegel führen mit dem Site-Update vom 2026-07-19 die aktuellen Versionsstände (siehe A4). Akzeptanzkriterium: `https://dhcraft.org/Promptotyping/#promptotyping-document-data` springt zur Vorlage und öffnet automatisch das Side-Panel mit der vollen Vorlagen-Spec.
-
-### A4 — Doppelte kanonische URL-Form: Subpath und Hash
-Jeder adressierbare Inhalt der Site existiert unter zwei gleichberechtigten URL-Formen — Subpath für Maschinen und URL-strukturierte Lesbarkeit, Hash-Anker als interne Anker und Fallback. Beide sind kanonisch, nicht eine Alias der anderen. Beide sind permanent stabil. Konvention für alle Anker-Typen:
-
-| Anker-Typ | Hash-Anker | Subpath-URL |
+| Anchor family | Hash anchor | Subpath URL |
 |---|---|---|
-| Promptotyping-Document Latest | `#promptotyping-document-{slug}` | `/promptotyping-document/{slug}` |
-| Promptotyping-Document Snapshot | `#promptotyping-document-{slug}-v{version}` | `/promptotyping-document/{slug}#v{version}` |
-| Konzept | `#konzept-{name}` | `/konzepte/{name}` |
-| Case Study | `#case-{name}` | `/case-studies/{name}` |
-| Konvention | `#konvention-{version}` | `/konvention/{version}` |
-| Glossar | `#glossar` | `/glossar` |
-| Literatur | `#literatur` | `/literatur` |
-| Paper-Sektion | `#abschnitt-{n}-{slug}` | `/paper/{n}-{slug}` |
-| Überblick | `#ueberblick` | `/ueberblick` |
-| Use Cases | `#use-cases` | `/use-cases` |
-| Praxis-Eintrag | `#praxis-{slug}` | `/praxis/{slug}` |
+| Promptotyping-Document latest | `#promptotyping-document-{slug}` | `/promptotyping-document/{slug}` |
+| Promptotyping-Document snapshot | `#promptotyping-document-{slug}-v{version}` | `/promptotyping-document/{slug}#v{version}` |
+| Concept | `#konzept-{name}` | `/konzepte/{name}` |
+| Case study | `#case-{name}` | `/case-studies/{name}` |
+| Convention | `#konvention-{version}` | `/konvention/{version}` |
+| Glossary | `#glossar` | `/glossar` |
+| Literature | `#literatur` | `/literatur` |
+| Paper section | `#abschnitt-{n}-{slug}` | `/paper/{n}-{slug}` |
+| Overview | `#ueberblick` | `/ueberblick` |
+| Use cases | `#use-cases` | `/use-cases` |
+| Practice entry | `#praxis-{slug}` | `/praxis/{slug}` |
 | Skill | `#skills-{slug}` | `/skills/{slug}` |
 
-Slug-Set für Promptotyping-Documents seit dem Site-Update vom 2026-07-19: `index`, `project`, `data`, `specification`, `user-stories`, `action-layer` (ADR-9, seit 2026-07-19 freigegeben), `architecture`, `domain-knowledge`, `design`, `testing`, `verification`, `journal`, `plan`, `report`, `integration`. Der Domänenwissen-Slug ist `domain-knowledge` (englisch, ADR-3), so wie ihn das `template:`-Feld der Vault-Vorlage führt. Versionsstand aus dem Vault-Vorlagen-Sweep: `specification` und `architecture` v0.3; `verification` und `integration` v0.1; die übrigen v0.2 (kanonische Quelle sind die `version`-Felder der Spiegel und `data/promptotyping-documents.json`). Der Latest-Anker ist primärer und einziger Adresspunkt. Snapshot-Anker werden erst bei einem Versions-Sprung pro Vorlage vergeben — als zusätzlicher Hash-Sub-Anker auf derselben Vorlagen-Sektion, nicht als eigener Subpath.
+The slug set for Promptotyping-Documents is `index`, `project`, `data`, `specification`, `user-stories`, `action-layer` (ADR-9), `architecture`, `domain-knowledge` (English slug, ADR-3), `design`, `testing`, `verification`, `journal`, `plan`, `report`, `integration`. The canonical source of each version is the `version` field of the mirror and `data/promptotyping-documents.json`. The latest anchor is the primary and only address point; a snapshot sub-anchor is issued only when a template's version changes, as an additional hash fragment on the same section, without its own subpath. Paper subsection anchors (for example `#phase-distillation` within section 3.3) are available inside their section without a subpath. Acceptance criterion. `/promptotyping-document/data` and `#promptotyping-document-data` both lead to the same rendered template.
 
-Beispiel Paper-Sektion: `#abschnitt-3-four-phases` ↔ `/paper/3-four-phases`. Subsection-Anker (z.B. `#phase-distillation` für Section 3.3) sind innerhalb der Paper-Sektion verfügbar, ohne eigenen Subpath.
+### A5 — `template:` frontmatter field as machine address
+Promptotyping repos carry a `template:` block in their `knowledge/` documents with `name`, `version`, `url` (subpath form, canonical), and optional `alias` (hash form, equal). The `url` points to the latest address of the template. A coding agent that reads a `template:` URI can call it and receives the authoritative template specification.
 
-Akzeptanzkriterium: `https://dhcraft.org/Promptotyping/promptotyping-document/data` und `https://dhcraft.org/Promptotyping/#promptotyping-document-data` führen beide zur selben gerenderten Vorlage. Subpath-Form geht per `404.html`-Trick auf den Hash (siehe [architecture.md](architecture.md)). Welche Form verwendet wird, bleibt der zitierenden Stelle überlassen — beide sind stabil.
-
-### A5 — `template:`-Frontmatter-Feld als Maschinenadresse
-Promptotyping-Repos führen in ihren `knowledge/`-Dokumenten ein Frontmatter-Feld `template:` mit einem Block aus `name`, `version`, `url` (Subpath-Form, kanonisch) und optional `alias` (Hash-Form, gleichwertig). Die `url` zeigt auf die Latest-Adresse der Vorlage, die `alias`-Form auf den dazugehörigen Hash-Anker. Dieses Feld macht die Vorlagen-Adresse maschinenlesbar.
-
-Schema:
 ```yaml
 template:
   name: Vorlage Datengrundlage
@@ -81,189 +72,110 @@ template:
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-data
 ```
 
-Akzeptanzkriterium: Ein Coding-Agent, der einen `template:`-URI sieht, kann ihn aufrufen und bekommt die maßgebliche Vorlagen-Spezifikation gerendert. Die Site selbst trägt das Feld in ihren eigenen `knowledge/`-Dokumenten — sie demonstriert die Methode an sich selbst (siehe A12).
+### A6 — Glossary as hover and click source
+Every constitutive term in the paper reading flow is a glossary trigger with a dotted underline. Hover shows a short definition, click opens the right side panel with the full definition, sources, and paper references. The glossary is also reachable as its own anchor `#glossar`.
 
-### A6 — Glossar als Hover- und Klick-Quelle
-Jeder konstitutive Begriff im Paper-Lesefluss ist als Glossar-Trigger markiert (gepunktete Unterlinie). Hover zeigt Kurzdefinition als Tooltip, Klick öffnet rechtes Side-Panel mit voller Glossar-Definition, Quellenangaben, Verweisen ins Paper. Akzeptanzkriterium: Mindestens 30 Begriffe sind verlinkt und zugänglich; das Glossar selbst ist auch als eigener Anker `#glossar` direkt erreichbar.
+### A7 — Use-case gallery
+A dedicated `#use-cases` section holds a curated gallery of publicly documented projects (operator decision 2026-06-10), classified and filtered by the paper's use-case typology (section 4.3), secondarily by interface type (section 5.3) and demo availability. The internal genre vocabulary does not appear in the public UI. Selected cases carry a deep-dive page in the side panel (HerData, Klawiter-Rescue, zbz-ocr-tei, M3GIM, Notker-Edition, CorrespExplorer, coOCR-HTR). Missing client clearance or a mediation format rather than a research artefact excludes a case; the full evidence corpus stays documented in the paper (section 4). Data source `data/case-studies.json`, exclusions in `_content/MANIFEST.md`.
 
-### A7 — Use-Case-Galerie: kuratierte Case-Study-Karten und Tiefenseiten
-Eigene Sektion `#use-cases` mit kuratierter Galerie öffentlich dokumentierter Projekte (Operator-Entscheidung 2026-06-10): 18 Case Studies, klassifiziert und gefiltert nach der Use-Case-Typologie des Papers (Section 4.3), sekundär nach Interface-Typ (Section 5.3) und Demo-Verfügbarkeit. Das interne Genre-Vokabular (HerData-Genre, Klawiter-Typ usw.) erscheint nicht in der öffentlichen UI. Sieben Cases tragen eine Tiefenseite im Side-Panel (HerData, Klawiter-Rescue, zbz-ocr-tei, M3GIM, Notker-Edition, CorrespExplorer, coOCR-HTR). Kuratierungskriterium: fehlende Kundenfreigabe oder Vermittlungsformat statt Forschungsartefakt führt zum Ausschluss (ausgeschlossen: VetMedAI-Wissensbilanz, Agentic Edition Pipeline, SuGW, beide wiiw-Fälle, drei Screencast-Fälle); das vollständige Evidenz-Korpus bleibt im Paper (Section 4) dokumentiert. Datenquelle `data/case-studies.json`, Ausschlüsse dokumentiert in `_content/MANIFEST.md`.
+### A8 — Embedded YouTube videos
+Part 1 as a hero embed above the paper, part 2 in paper section 4 at the VetMedAI knowledge-balance case. Both run from the `youtube-nocookie.com` variant with no tracking before the click.
 
-### A8 — YouTube-Videos eingebettet
-Teil 1 als Hero-Embed oben (vor Paper-Section 1). Teil 2 in Paper-Section 4 als didaktischer Anker bei der VetMedAI-Wissensbilanz. Akzeptanzkriterium: Beide Videos laufen aus der `youtube-nocookie.com`-Variante (Datenschutz), kein Tracking ohne Consent.
+### A9 — DHCraft design system
+Light grey `#d5d5d5` accent, black on white, Inter for text, Consolas for code, no decorative elements. Side panels collapse to bottom sheets on mobile. Full token set and behaviour in [design.md](design.md).
 
-### A9 — DHCraft-Designsystem konsequent
-Hellgrau `#d5d5d5` als Akzent, Schwarz auf Weiß, Inter als Font, Consolas für Code. Keine Akzentlinien, keine Farbflut, keine dekorativen Elemente. Mobile-Layout kollabiert Side-Panels zu Bottom-Sheets.
+### A10 — Vanilla tech stack
+No framework, no build step. HTML5/CSS3/JS, marked.js v9.1.6 and js-yaml v4.1.0 vendored, GitHub-Pages-native hosting. Acceptance criterion. `git clone` and opening the site over a static server renders it locally. Details in [architecture.md](architecture.md).
 
-### A10 — Vanilla Tech-Stack
-Kein Framework, kein Build-Step. HTML5/CSS3/JS, marked.js v9.1.6 vendoriert, js-yaml v4.1.0 vendoriert für Frontmatter-Parsing im Frontmatter-Inspector (siehe A11 und [architecture.md](architecture.md)). GitHub-Pages-natives Hosting. Akzeptanzkriterium: `git clone` und Browser öffnen reicht, um die Site lokal zu rendern (per `python -m http.server` oder Live-Server).
+### A11 — Frontmatter-Inspector as interactive self-demonstration
+A module in the Vorlagen section with a textarea for the YAML frontmatter of a foreign `knowledge/` document. The inspector parses the block, extracts `template.url` (or `template.alias`), validates it against the site anchor schema, and opens the side panel with the rendered template. A default frontmatter with a latest URL is prefilled. On an invalid URL it shows the expected schema; when a snapshot anchor points to a missing version it falls back to the latest anchor with a warning. Implementation in [architecture.md](architecture.md).
 
-### A11 — Frontmatter-Inspector als interaktive Selbstdemonstration
-Modul in der Vorlagen-Sektion mit Texteingabe (Textarea) für YAML-Frontmatter eines fremden `knowledge/`-Dokuments. Der Inspector parst den eingegebenen Block, extrahiert `template.url` (oder `template.alias`), validiert die URL gegen das Site-Anker-Schema und öffnet das Side-Panel mit der gerenderten Vorlage. Ein Beispiel-Frontmatter mit Latest-URL (`/promptotyping-document/data`) ist als Default-Wert vorbefüllt, sodass der Mechanismus sofort sichtbar wird.
+### A12 — Cross-repo consistency, the site demonstrates rather than advertises
+The site's own `knowledge/` documents carry the `template:` field and each links to its own template URL on the live site, subpath form canonical, hash form as alias. The site demonstrates the method on itself.
 
-Akzeptanzkriterium: Wer ein `template:`-Frontmatter aus einem realen Promptotyping-Repo (z.B. dem `data.md` aus `chpollin/zbz-ocr-tei`) ins Eingabefeld pastet, sieht rechts im Side-Panel die maßgebliche Vorlagen-Spezifikation. Bei ungültiger URL: Hinweis auf das erwartete Schema. Wenn ein Snapshot-Anker (`#promptotyping-document-{slug}-v{version}`) auf eine nicht vorhandene Version zeigt: Fallback auf den Latest-Anker mit Warnhinweis.
+### A13 — Method overview as entry point
+A German `#ueberblick` section between hero and paper states what Promptotyping is, the four phases in brief, the three document types with the diagnostic rule, the two modes, and signposts into paper, templates, use cases, practice, and skills. Substrate `_content/ueberblick.md`. Without it a visitor lands directly in an English academic paper.
 
-Implementations-Details in [architecture.md](architecture.md), Sektion Frontmatter-Inspector.
+### A14 — Practice section (method extensions)
+A `#praxis` section with the empirically grown method extensions from the vault knowledge base (verification milestones, Promptotyping interfaces, subagents and role simulation, script-versus-LLM separation, knowledge curation, demo-repo reduction, claims verification, epistemic status of user stories, template catalog). Each entry has a stable anchor `#praxis-{slug}` and names its documented origin case. Substrate `_content/praxis.md`.
 
-### A12 — Cross-Repo-Konsistenz: Site bewirbt nicht, sondern demonstriert
-Die Site selbst — `knowledge/INDEX.md`, `knowledge/project.md`, `knowledge/specification.md`, `knowledge/architecture.md`, `knowledge/design.md`, `knowledge/journal.md` — trägt das `template:`-Feld konsequent. Jedes dieser Dokumente verlinkt auf seine eigene Vorlagen-URL der Live-Site (Subpath-Form kanonisch, Hash-Form als alias).
+### A15 — Skills and system prompts
+A `#skills` section with the reusable system prompts (coding, writing) as unchanged, copyable originals, plus the action-layer practice (CLAUDE.md, custom commands, system prompts). Anchors `#skills-coding`, `#skills-writing`. Substrate `_content/skills/`. Links to the action-layer template (A16).
 
-Akzeptanzkriterium: Eine `grep template: knowledge/*.md`-Inspektion zeigt sechs Treffer, alle mit beiden URL-Formen (`url:` als Latest-Subpath `/promptotyping-document/{slug}`, `alias:` als Latest-Hash `#promptotyping-document-{slug}`), alle nach Site-Anker-Schema. Sobald die Site Sprint 1+2 abgeschlossen hat, sind diese URLs aufrufbar — und die Site demonstriert ihre eigene Methode, ohne sie nur zu beschreiben.
+### A16 — Ninth template, Action-Layer
+The Action-Layer template (`CLAUDE.md`) is published under the slug `action-layer` (namespace decision ADR-9). It is released and carries mirror status `complete`, with no draft banner.
 
-### A13 — Methoden-Überblick als Einstieg
-Deutschsprachige Sektion `#ueberblick` zwischen Hero und Paper: was Promptotyping ist (Kernsatz), die vier Phasen kompakt, die drei Dokumenttypen mit Diagnostik-Regel, die zwei Modi, Wegweiser in Paper, Vorlagen, Use Cases, Praxis und Skills. Begründung: Die Site ist auch Präsentation der Methode; ohne Überblick landet jeder Besucher direkt in einem englischen akademischen Paper. Substrat: `_content/ueberblick.md`. Akzeptanzkriterium: Ein Besucher ohne Vorkenntnisse versteht in zwei Minuten, was die Methode ist und wo er ansetzt.
+### A17 — Working-environment section
+A `#arbeitsumgebung` section between skills and glossary with three short parts, the Obsidian vault as knowledge environment, the Promptotyping Agent Interface (experimental, in development), and the AI harness and skills (Claude Code as harness, links to `#skills` and the process videos). Substrate `_content/arbeitsumgebung.md`, routing `/arbeitsumgebung` via `404.html`.
 
-### A14 — Praxis-Sektion (Methodenerweiterungen)
-Sektion `#praxis` mit den empirisch gewachsenen Methodenerweiterungen aus der Vault-Wissensbasis (Verification Milestones, Promptotyping Interfaces, Subagents und Rollensimulation, Skript-vs-LLM-Trennung, Knowledge Curation, Demo-Repo-Reduktion, Claims-Verifikation, Epistemischer Status von User Stories, Vorlagen-Katalog). Jeder Eintrag trägt einen stabilen Anker `#praxis-{slug}` und nennt seinen dokumentierten Herkunftsfall; Link auf `#case-{id}` nur, wenn der Fall in der kuratierten Galerie ist. Substrat: `_content/praxis.md`.
+### A18 — Site header, footer, hero, video integration
+A sticky white header with the DHCraft logo and wordmark left, section nav and GitHub link right; nav links hidden on narrow viewports (mobile navigation via the TOC toggle). Footer on `#f5f5f5` with carrier note, repo and YouTube links, license line, and machine-address note. The hero is purely typographic; `promptotyping-logo.png` sits at the head of the Vorlagen section. All process videos play without leaving the page, as click-to-load facades over `youtube-nocookie.com`.
 
-### A15 — Skills und System Prompts
-Sektion `#skills` mit den wiederverwendbaren System Prompts (Coding, Writing) als unveränderte, kopierbare Originaltexte plus Einordnung der Action-Layer-Praxis (CLAUDE.md, Custom Commands, System Prompts). Anker `#skills-coding`, `#skills-writing`. Substrat: `_content/skills/`. Verweis auf die Action-Layer-Vorlage (A16).
+### A19 — Vorlagen hub
+The `#vorlagen` section is the coherent hub of the method specification (operator decision 2026-07-23). After the section head and a quiet text subnav (Katalog, Konvention, Maschinenzugriff, Technology Baseline, plain text links in the design-system greys) come four blocks with additive in-page sub-anchor IDs:
 
-### A16 — Neunte Vorlage: Action-Layer
-Die Vorlage Action-Layer (`CLAUDE.md`, empirisch destilliert aus dem 35-Repo-Sweep 2026-06) wird als Slug `action-layer` publiziert. Anker-Namespace-Entscheidung in ADR-9. Die Vorlage ist seit 2026-07-19 im Vault freigegeben; mit dem Site-Update vom 2026-07-19 ist die "Entwurf, in Erprobung"-Kennzeichnung auf der Site entfernt (Mirror-Status `complete`, Version 0.2, kein Entwurfs-Banner mehr).
+- `#vorlagen-katalog` — the clickable template table.
+- `#vorlagen-konvention` — a short abstract of the convention with a jump link to `#konvention-v0.1`; the convention itself is neither duplicated nor moved.
+- `#vorlagen-maschinenzugriff` — the Frontmatter-Inspector and the machine-address paragraph under one heading.
+- `#vorlagen-technology-baseline` — what a Technology Baseline is, that this repo carries one for the static-web-tool artefact family (status draft), with a link to the machine address `https://dhcraft.org/Promptotyping/_content/technology-baseline.md` and a repo-relative link.
 
-### A17 Arbeitsumgebung-Sektion (Operator-Entscheidung 2026-06-10)
-Sektion `#arbeitsumgebung` zwischen Skills und Glossar mit drei kurzen Abschnitten: Obsidian-Vault als Wissensumgebung (Vault als Analyseeinheit, `CLAUDE.md` als Action Document, Dateisystem als Schnittstelle), Promptotyping Agent Interface (experimentelles Browser-Interface zum Beobachten, Steuern, Mitschreiben; Vault-als-Zentrum; Status in Entwicklung) und AI Harness und Skills (Claude Code als Harness, Verweis auf `#skills`, Prozessvideos auf dem YouTube-Kanal). Substrat: `_content/arbeitsumgebung.md`. Routing `/arbeitsumgebung` über `404.html`, Anker im URL-Schema (A4) ergänzt.
+The sub-anchors are additive in-page fragments, no new top-level anchor, no new subpath, no change to `404.html`. The Technology template (slug `technology`) is not in `data/promptotyping-documents.json` and receives no catalog anchor; its vault-first release is pending. Acceptance criterion. Opening `#vorlagen` reaches all four blocks through the subnav, each block carries its sub-anchor as a directly addressable fragment.
 
-### A18 Site-Header, Site-Footer, Hero und Video-Integration (Operator-Entscheidung 2026-06-10)
-Sticky weißer Site-Header mit DHCraft-Logo und Wortmarke links, Sektions-Nav und GitHub-Link rechts; Nav-Links auf schmalen Viewports ausgeblendet (mobile Navigation über den TOC-Toggle). Site-Footer mit Hintergrund `#f5f5f5`, Träger-Hinweis, Repo- und YouTube-Link, Lizenzzeile und Maschinenadresse-Hinweis. Hero rein typografisch: die `promptotyping-logo.png` wandert aus dem Hero in den Kopf der Vorlagen-Sektion (`#vorlagen`). Alle sechs Prozessvideos sind ohne Verlassen der Seite abspielbar: Hero (Teil 1) und Section-4-Injektion (Teil 2) als Facade, Klawiter und coOCR-HTR als Facade in ihren Tiefenseiten (aus `video_url`), Lucina und Kulturpool als Video-Affordanz auf den Galerie-Karten. Click-to-load-Facade durchgängig über `youtube-nocookie.com`, kein Tracking vor dem Klick.
+## Function per site section
 
-### A19 Vorlagen-Hub (Operator-Entscheidung 2026-07-23)
-Die bestehende `#vorlagen`-Sektion wird zum zusammenhängenden Hub der Methoden-Spezifikation ausgebaut (Variante 2). Nach Sektionskopf und einer stillen Text-Unternavigation (Katalog, Konvention, Maschinenzugriff, Technology Baseline; reine Textlinks in den Grautönen des Designsystems, keine Buttons, keine neuen Farben, keine Animationen) folgen vier Blöcke mit additiven Sub-Anker-IDs innerhalb der Sektion:
+### Method (paper sections 1–3)
+The paper narrative as reading flow. Terms as glossary triggers. The template table in the section-3 context with click links to side-panel specs. Hero video part 1 above.
 
-- `#vorlagen-katalog` — die bestehende klickbare Vorlagen-Tabelle, unverändert.
-- `#vorlagen-konvention` — Kurzabriss (drei bis fünf Sätze), was die Konvention regelt, mit Sprunglink auf die bestehende Sektion `#konvention-v0.1`. Die Konvention selbst wird nicht dupliziert und nicht verschoben.
-- `#vorlagen-maschinenzugriff` — der bestehende Frontmatter-Inspector und der bestehende Maschinenadresse-Absatz, unter einer Überschrift zusammengezogen.
-- `#vorlagen-technology-baseline` — neuer Block: was eine Technology Baseline ist, dass dieses Repo eine für die Artefaktfamilie statisches Web-Tool führt (Status Entwurf), mit Link auf die Maschinenadresse `https://dhcraft.org/Promptotyping/_content/technology-baseline.md` und einem repo-relativen Link.
+### Vorlagen (`#vorlagen`)
+Table of all mirrored templates with function, recommended file name, Promptotyping type, version, and status (function column English, template names German as identifiers). A click opens the side panel with the full spec including frontmatter schema, section structure, a copy button for the `template:` block, and a raw-text link (machine address, ADR-10). One latest anchor per template, snapshot anchors on version changes. Built out as the specification hub per A19.
 
-Die Sub-Anker sind additive In-Page-Fragmente, kein neuer Top-Level-Anker, kein neuer Subpath, keine Änderung an `404.html`. Die Vorlage Technology (Slug `technology`) wird nicht in `data/promptotyping-documents.json` aufgenommen und bekommt keinen Katalog-Anker; ihre vault-first-Freigabe steht aus. Akzeptanzkriterium: Wer `#vorlagen` öffnet, erreicht über die Unternavigation die vier Blöcke; jeder Block trägt seinen Sub-Anker als direkt anspringbares Fragment, der Konvention-Block verlinkt auf `#konvention-v0.1`, und der Technology-Baseline-Block verlinkt auf die statische Markdown-Adresse des Baseline-Dokuments.
+### Use cases (`#use-cases`)
+Curated cards grouped and filtered by the use-case typology (A7, ADR-8 addendum). Each card names the project, use case, one sentence, and demo/repo/video links where cleared. Selected cards carry a deep-dive page in the side panel. Part-2 video embedded in paper section 4.
 
-## Funktionsumfang pro Site-Sektion
+### Concepts (embedded in paper sections 5–6, plus anchors)
+Five concepts (Asymmetric Amplification, Epistemic Infrastructure, Critical-Expert-in-the-Loop, Scholar-Centered Design, Context Engineering) are mentioned in the paper flow and linked to their glossary anchors, with full definitions in the glossary side panel.
 
-### Methode (Paper-Sektionen 1-3)
-Das Paper-Narrativ als Lesefluss. Begriffe als Glossar-Trigger. Vorlagen-Tabelle im Section-3-Kontext (wenn Promptotyping Documents erklärt werden) als eingebettete Tabelle mit Klick-Links zu Side-Panel-Specs. Hero-Video Teil 1 oben.
+### Glossary (`#glossar`)
+A dedicated section at the page end, alphabetically ordered. Per entry, term, short and full definition, source (with vault link), and paper references. Same data source as the hover tooltips.
 
-### Vorlagen (eigene Sektion `#vorlagen`)
-Tabelle aller gespiegelten Vorlagen mit Funktion, Empfohlenem Dateinamen, Promptotyping-Typ, Version, Status. Mit dem Site-Update vom 2026-07-19 sind die sechs im Vault-Katalog seit 2026-07-19 freigegebenen Vorlagen (Testing, Plan, Report, Domänenwissen mit Slug `domain-knowledge`, Verification, Integration) gespiegelt und verankert, das englische Funktionsvokabular in den Sektionen `konvention` und `ueberblick` nachgezogen und die Vorlagen-Tabelle in `data/promptotyping-documents.json` regeneriert (Funktion-Spalte englisch, Vorlagen-Namen deutsch als Identifikatoren). Klick auf Eintrag öffnet Side-Panel mit voller Spec inkl. Frontmatter-Schema, Sektionsstruktur, Copy-Button für den template:-Block und Rohtext-Link (Maschinenadresse, ADR-10). Pro Vorlage ein Latest-Anker, Snapshot-Anker bei Versionssprüngen. Seit der Operator-Entscheidung vom 2026-07-23 ist die Sektion zum Hub der Methoden-Spezifikation ausgebaut (A19): stille Text-Unternavigation und vier Blöcke mit den Sub-Ankern `#vorlagen-katalog`, `#vorlagen-konvention`, `#vorlagen-maschinenzugriff`, `#vorlagen-technology-baseline`.
+### Literature (`#literatur`)
+An ordered list at the page end. Inline references in the paper are anchor jump targets. Per entry, author, year, title, DOI/URL, anchor ID.
 
-### Use Cases (eigene Sektion `#use-cases`)
-18 kuratierte Karten, gruppiert und gefiltert nach Use-Case-Typologie (A7, ADR-8-Nachtrag). Pro Karte: Name, Use Case, ein Satz, Demo-/Repo-/Video-Link soweit belegt. Sieben Karten mit Tiefenseite im Side-Panel. Teil-2-Video eingebettet in Paper-Section 4.
+## Decisions (ADR)
 
-### Konzepte (eingebettet in Paper-Section 5-6, plus Anker)
-Fünf Konzepte (Asymmetric Amplification, Epistemic Infrastructure, Critical-Expert-in-the-Loop, Scholar-Centered Design, Context Engineering) sind im Paper-Lesefluss erwähnt und mit Glossar-Anker verknüpft. Volldefinition im Glossar-Side-Panel.
+### ADR-1 — Single page with anchor IDs
+**Context.** The site should work as an interactive paper; multi-page would cut the reading flow. **Choice.** Single page with stable anchor IDs. **Rationale.** Continuous reading flow, all methodical parts integrated inline, direct linking through permanent anchors. **Effect.** Site size grows, but lazy loading of side-panel content keeps the initial load small. SEO via OpenGraph tags and section-wise crawling.
 
-### Glossar (`#glossar`)
-Eigene Sektion am Seitenende, alphabetisch geordnet. Pro Eintrag: Begriff, Kurzdefinition, Volldefinition, Quellenangabe (mit Vault-Link), Verweise ins Paper. Selbe Datenquelle wie die Hover-Tooltips.
+### ADR-2 — Latest anchor primary, snapshot sub-anchor on version change
+**Context.** Templates may be refactored later (for example `data` v0.1 → v0.2). Repos linking by `template:` URI need stability without a permanent URL per version. **Choice.** One latest anchor per template (`#promptotyping-document-data`, subpath `/promptotyping-document/data`). A later version change adds a snapshot sub-anchor on the same section (`#promptotyping-document-data-v0.1`, subpath `/promptotyping-document/data#v0.1`); the latest anchor always points to the current version. **Rationale.** Repos overwhelmingly link "the current template", so a latest URL without a version suffix is the natural address point; on a version change they follow automatically. Whoever cites a specific version appends a sub-anchor. **Effect.** A compact URL collection, one stable latest URL per slug. The earlier form `#vorlage-{name}-{version}` with its own subpath hierarchy is discarded (see [journal.md](journal.md), 2026-05-09).
 
-### Literatur (`#literatur`)
-Geordnete Liste am Seitenende. Inline-Verweise im Paper als Anker-Sprung-Ziel. Pro Eintrag: Autor, Jahr, Titel, DOI/URL, Anker-ID.
+### ADR-3 — Both URL forms canonical, English slug, latest without version suffix
+**Context.** Coding agents parse URLs structurally. `#promptotyping-document-data` reads as an anchor, `/promptotyping-document/data` as a path; both must work and neither may rank below the other. Two decisions ride along, an English path slug (because "Promptotyping Document" is the concept term from Pollin 2026 section 3.3 and lives in the repos' `template:` URIs), and no version suffix in the latest URL (per ADR-2). **Choice.** Both forms canonical and equal. Subpath form primary in `template:` `url:`, hash form as `alias:`. The site renders the same content under both. Slug section `/promptotyping-document/{slug}` for all slugs. **Rationale.** Subpath is robust for agents that know structural paths, hash for in-browser navigation without a server roundtrip. An English slug keeps the addressing in one language with its concept source. **Effect.** A `404.html` with JavaScript path-to-anchor mapping rewrites subpath to hash. The site's own `knowledge/` documents carry both forms (A12). The earlier form `/vorlagen/{name}/{version}` is discarded (see [journal.md](journal.md), 2026-05-09).
 
-## Entscheidungen (ADR)
+### ADR-4 — Phases provenance lane as an aesthetic device (superseded by A2)
+**Context.** The site should carry a methodical statement of the paper visually rather than through ornament. **Choice.** A narrow left column with monochrome per-paragraph markers by phase class. **Rationale.** Made the paper's phase distribution legible and served as navigation, consistent with the black-grey-white design system. **Effect.** The Critical Expert had to assign each paragraph a phase during mirroring. The lane was removed after the first deploy (A2); this ADR remains as decision provenance.
 
-### ADR-1: Single-Page mit Anker-IDs statt multi-page
+### ADR-5 — Vanilla, no build
+**Context.** The prior repo state was already vanilla; tooling effort should stay minimal. **Choice.** HTML5/CSS3/JS without a build step, marked.js vendored. **Rationale.** GitHub-Pages-native hosting works without configuration, `git clone` suffices to run locally, no npm, no bundler, no TypeScript compile. **Effect.** No code splitting or tree shaking; re-evaluate if the JS grows past roughly 100KB.
 
-**Kontext.** Die Site soll als interaktives Paper funktionieren. Multi-page wäre die übliche Wahl, würde aber den Lesefluss zerschneiden.
+### ADR-6 — Drop the Vault-Explorer module entirely
+**Context.** The old Living Paper had three interactive modules, Context-Rot-Viz, Vault-Explorer, Sycophancy-Trap; the plan first kept the Vault-Explorer. **Choice.** Drop all three. **Rationale.** They are didactic gadgets rather than method necessities; two are animations that distract in a calm reading environment, and the Vault-Explorer would have needed a `mock_vault.json` substrate that does not pay off when the paper's own reading flow already shows the Promptotyping Documents. **Effect.** Simpler code, focused on reading plus two useful modules, Frontmatter-Inspector and Case-Study-Filter.
 
-**Wahl.** Single-Page mit stabilen Anker-IDs.
+### ADR-7 — Frontmatter-Inspector as paste-live-render module
+**Context.** The `template:` URI resolution is central but invisible to an outside reader; a plain URL input would only replicate the anchor click without showing the frontmatter indirection. **Choice.** A textarea for the whole YAML frontmatter block. The inspector parses, extracts `template.url` (or `alias`), validates against the anchor schema, and opens the side panel with the rendered template, prefilled with an example latest-form `template:` field. **Rationale.** Shows the whole mechanism in one step and makes machine readability concrete when a reader pastes a real foreign frontmatter. **Effect.** A standalone module `assets/js/modules/frontmatter-inspector.js`; js-yaml v4.1.0 vendored under `assets/vendor/js-yaml.min.js`. Details in [architecture.md](architecture.md).
 
-**Begründung.** Lesefluss durchgehend, alle methodischen Bestandteile inline integriert, keine Folgeseiten. Anker erlauben Direktverlinkung. Anker-IDs sind permanent stabil.
+### ADR-8 — Case-Study-Filter as module
+**Context.** Many case studies are hard to navigate without a filter. **Choice.** A filter bar above the cards. **Rationale.** Practically needed at the gallery size. **Effect.** A standalone module `assets/js/modules/case-study-filter.js`, data source `data/case-studies.json`. **Addendum 2026-06-10 (operator decision).** The primary filter is the paper's use-case typology (section 4.3), secondary filters are interface type and demo availability. The genre vocabulary is internal working vocabulary and does not appear in the public UI. The gallery is curated (A7).
 
-**Effekt.** Site-Größe wächst, aber Lazy-Loading der Side-Panel-Inhalte hält die initiale Last gering. SEO via OpenGraph-Tags und sektionsweise Crawling.
+### ADR-9 — Action-Layer template as ninth slug under `/promptotyping-document/`
+**Context.** The Action-Layer template addresses the repo-root `CLAUDE.md` rather than a `knowledge/` document; whether it needs its own anchor family was open (journal 2026-06-09). **Choice.** A ninth slug `action-layer` in the existing `/promptotyping-document/` namespace. **Rationale.** Function before filename. The template describes the action-layer function of a Promptotyping knowledge base; where the file sits does not change its membership in the catalog, and a separate anchor family would fragment the address schema. **Effect.** `_content/promptotyping-document/action-layer.md`, anchor `#promptotyping-document-action-layer`.
 
-### ADR-2: Latest-Anker primär, Snapshot-Sub-Anker bei Versions-Sprüngen
+### ADR-10 — Static markdown URL as machine address, `.nojekyll` as condition
+**Context.** Plan review 2026-06-10 found two things. GitHub Pages does not publish underscore directories without `.nojekyll`, so `_content/` would have been unreachable. And the subpath URLs did not meet their "robust for agents" purpose, because GitHub Pages serves `404.html` with HTTP status 404 and the content appears only after JavaScript, so a browserless HTTP fetch gets an error page. **Choice.** `.nojekyll` in the repo root. The static markdown URL `https://dhcraft.org/Promptotyping/_content/promptotyping-document/{slug}.md` is the documented machine address (mirror field `machine-url`, note in `_content/konvention.md`, note in the Vorlagen section). Subpath and hash stay the human-readable addresses; the `template:` field is unchanged. **Effect.** Agents get the markdown with HTTP 200 and no JavaScript. The vault convention is to adopt the machine address at its next update (open, vault-side).
 
-**Kontext.** Vorlagen können künftig refaktoriert werden (z.B. `data` v0.1 → v0.2). Repos, die per `template:`-URI verlinken, brauchen Stabilität — aber nicht unbedingt eine permanent eigene URL pro Version.
-
-**Wahl.** Pro Vorlage gibt es einen Latest-Anker (`#promptotyping-document-data`, Subpath `/promptotyping-document/data`). Bei einem späteren Versions-Sprung wird ein Snapshot-Sub-Anker auf derselben Vorlagen-Sektion vergeben (`#promptotyping-document-data-v0.1`, Subpath `/promptotyping-document/data#v0.1`). Der Latest-Anker zeigt immer auf die aktuelle Version. Heute, mit allen Vorlagen einheitlich auf v0.1, gibt es nur Latest-Anker.
-
-**Begründung.** Repos verlinken in der überwältigenden Mehrzahl der Fälle "die aktuelle Vorlage". Eine Latest-URL ohne Versions-Suffix ist für sie der natürliche Adresspunkt; bei einem Versions-Sprung kommen sie automatisch auf die neue Fassung. Wer explizit eine bestimmte Version zitieren will, hängt einen Sub-Anker an. Das ergibt eine kompakte URL-Sammlung statt eines Versions-Karthese pro Vorlage.
-
-**Effekt.** Acht stabile URLs für die acht Vorlagen-Slugs. Alte Versionen werden bei einem Versions-Sprung in einer Versions-Liste auf der Vorlagen-Seite verlinkt, mit Snapshot-Sub-Anker als Adresspunkt. Frühere Anlauf-Form `#vorlage-{name}-{version}` mit eigener Subpath-Hierarchie ist verworfen — siehe Eintrag 2026-05-09 in [journal.md](journal.md).
-
-### ADR-3: Beide URL-Formen kanonisch (Subpath und Hash gleichberechtigt), Slug englisch, Latest ohne Versions-Suffix
-
-**Kontext.** Coding-Agenten parsen URLs strukturell. `#promptotyping-document-data` sieht wie ein Anker aus; `/promptotyping-document/data` wie ein Pfad. Beides sollte funktionieren — und keiner der beiden Formen darf den anderen als "minderwertig" markieren, sonst wird die Adressierbarkeit asymmetrisch. Zwei zusätzliche Entscheidungen sind in dieselbe Logik eingebettet: (a) Pfad-Slug englisch, weil "Promptotyping Document" der konzeptuelle Begriff aus Pollin 2026 Section 3.3 ist und in der englischen Form auch in den `template:`-URIs der Repos lebt; ein deutsches `vorlagen/` würde die Bezeichnung gegenüber der Konzept-Quelle inkonsistent machen. (b) Versions-Suffix in der Latest-URL entfällt — siehe ADR-2.
-
-**Wahl.** Beide URL-Formen sind kanonisch und gleichberechtigt. Subpath-Form ist primär in `template:`-Frontmatter-URLs (`url:`), Hash-Form als `alias:`. Site rendert dieselben Inhalte unter beiden URLs. Slug-Sektion ist `/promptotyping-document/{slug}`, einheitlich für alle acht Vorlagen-Slugs. Latest-Adressierung ohne Versions-Suffix; Snapshot-Adressierung über Hash-Sub-Anker (siehe ADR-2).
-
-**Begründung.** Subpath-Form ist robust für Coding-Agenten, die strukturelle URL-Pfade kennen. Hash-Form ist robust für Browser-interne Navigation (kein Server-Roundtrip). Wer das `template:`-Feld liest, bekommt mit `url` und `alias` zwei stabile Endpunkte. Wer eine URL kopiert, bekommt eine, die in beiden Formen funktioniert. Englischer Slug-Begriff hält die Adressierung in einer Sprache mit der Konzept-Quelle. Latest ohne Versions-Suffix erspart Repos den Pflege-Aufwand pro Vorlagen-Refactor — sie bleiben automatisch auf der aktuellen Vorlage.
-
-**Effekt.** Eine zusätzliche `404.html`-Datei im Repo-Root mit JavaScript-basiertem Pfad-zu-Anker-Mapping rewritet Subpath auf Hash. Konvention für alle Anker-Typen ist in A4 dokumentiert. Site-eigene `knowledge/`-Documents tragen beide Formen (A12). Frühere Anlauf-Form `/vorlagen/{name}/{version}` ist verworfen — siehe Eintrag 2026-05-09 in [journal.md](journal.md).
-
-### ADR-4: Phasen-Provenance-Lane als ästhetischer Kniff
-
-**Kontext.** Die Site soll nicht nur Inhalt zeigen, sondern eine methodische Aussage des Papers visuell tragen. Bunte Animationen oder Parallax-Schmuck wären ornamental.
-
-**Wahl.** Linke Schmalspalte mit monochromen Markierungen pro Absatz, gemäß Phasen-Klasse.
-
-**Begründung.** Macht die methodische Verteilung des Papers visuell ablesbar. Dient als Navigation (Hover, Klick, Filter-Modus). Konsistent mit DHCraft-Designsystem (kein Bunt, nur Schwarz-Grau-Weiß).
-
-**Effekt.** Beim Spiegeln des Papers muss Christopher Pollin (Critical Expert) jeden Absatz einer Phase zuordnen. Aufwand 30-60 Minuten, einmalig.
-
-### ADR-5: Vanilla, kein Build
-
-**Kontext.** Bestehender Repo-Stand war auch Vanilla. Tooling-Aufwand soll minimal bleiben.
-
-**Wahl.** HTML5/CSS3/JS ohne Build-Step. marked.js vendoriert.
-
-**Begründung.** GitHub-Pages-natives Hosting funktioniert ohne Konfiguration. `git clone` reicht zum Ausführen lokal. Keine npm-Abhängigkeiten, kein Webpack, kein TypeScript-Compile.
-
-**Effekt.** Kein Code-Splitting, kein Tree-Shaking. Bei wachsender JS-Größe (über 100KB) ggf. später re-evaluieren.
-
-### ADR-6: Vault-Explorer-Modul ganz weglassen
-
-**Kontext.** Das alte Living Paper hatte drei interaktive Module: Context-Rot-Viz, Vault-Explorer, Sycophancy-Trap. Im Plan war zunächst nur Vault-Explorer zu erhalten.
-
-**Wahl.** Alle drei Module weglassen.
-
-**Begründung.** Die Module sind didaktische Spielereien, nicht methodische Notwendigkeit. Zwei der drei (Context-Rot-Viz, Sycophancy-Trap) sind Animationen, die in einer ruhigen Lese-Umgebung ablenken. Der Vault-Explorer hätte einen `mock_vault.json` als Substrat gebraucht — dieser Aufwand lohnt sich nicht, wenn der Lesefluss des Papers selbst die Promptotyping-Documents zeigt.
-
-**Effekt.** Drei Module-Dateien fallen weg, Code wird einfacher, Site bleibt fokussiert auf Lesen plus zwei sinnvolle Module: Frontmatter-Inspector und Case-Study-Filter.
-
-### ADR-7: Frontmatter-Inspector als Paste-Live-Render-Modul
-
-**Kontext.** Die `template:`-URI-Auflösung ist ein zentrales Feature, aber für einen externen Leser unsichtbar. Wer noch nie ein Promptotyping-Repo gesehen hat, versteht nicht, wozu die Latest- und Snapshot-Anker da sind. Eine reine URL-Eingabe würde nur den Anker-Klick replizieren, ohne die Mechanik der Frontmatter-Indirektion sichtbar zu machen.
-
-**Wahl.** Texteingabe (Textarea) für ganzen YAML-Frontmatter-Block, nicht nur die URL. Inspector parst, extrahiert `template.url` (oder `alias`), validiert gegen Anker-Schema, öffnet Side-Panel mit gerenderter Vorlage. Default-Wert ist ein Beispiel-Frontmatter mit korrekt gesetztem `template:`-Feld in der Latest-Form (`url: /promptotyping-document/data`, `alias: #promptotyping-document-data`).
-
-**Begründung.** Zeigt unmittelbar, wie Repos die Site nutzen — der ganze Mechanismus (Frontmatter mit `template:` → URL-Auflösung → Vorlagen-Render) wird in einem Schritt sichtbar. Macht die Maschinenlesbarkeit konkret. Beim Paste eines realen Frontmatters aus einem fremden Repo entsteht der Aha-Effekt: das ist nicht Theorie, das funktioniert jetzt.
-
-**Effekt.** Ein eigenständiges JS-Modul `assets/js/modules/frontmatter-inspector.js`. Vendoriert wird js-yaml v4.1.0 unter `assets/vendor/js-yaml.min.js` für robustes YAML-Parsing. Implementations-Details in [architecture.md](architecture.md).
-
-### ADR-8: Case-Study-Filter als Modul
-
-**Kontext.** 24+ Case Studies sind viel. Ohne Filter sind sie schwer zu navigieren.
-
-**Wahl.** Filter-Bar oberhalb der Case-Study-Karten: Genre (HerData / Editions / Externdaten / Klawiter-Typ / Sonderfall), Status (aktiv, abgeschlossen), Demo-Verfügbarkeit.
-
-**Begründung.** Praktisch nötig bei 24+ Karten. Sortierung optional.
-
-**Effekt.** Ein eigenständiges JS-Modul `assets/js/modules/case-study-filter.js`. Datenquelle ist `data/case-studies.json`.
-
-**Nachtrag 2026-06-10 (Operator-Entscheidung, ersetzt die Filter-Taxonomie).** Primärfilter ist die Use-Case-Typologie des Papers (Section 4.3), Sekundärfilter Interface-Typ und Demo-Verfügbarkeit. Das Genre-Vokabular ist internes Arbeitsvokabular, kommt im Paper nicht vor und ist für externe Besucher unverständlich; es erscheint nicht in der öffentlichen UI. Galerie kuratiert auf 18 Einträge (A7).
-
-### ADR-9: Action-Layer-Vorlage als neunter Slug unter `/promptotyping-document/`
-
-**Kontext.** Die Vorlage Action-Layer adressiert die `CLAUDE.md` im Repo-Root, nicht ein Dokument in `knowledge/`. Offen war (Journal 2026-06-09), ob sie einen eigenen Anker-Typ braucht.
-
-**Wahl.** Neunter Slug `action-layer` im bestehenden Namespace `/promptotyping-document/`.
-
-**Begründung.** Die eigene Regel "function before filename": Die Vorlage beschreibt die Funktion Action-Layer einer Promptotyping-Wissensbasis; wo die Datei liegt, ändert nichts an ihrer Zugehörigkeit zum Vorlagen-Katalog. Ein eigener Anker-Typ würde das Adress-Schema fragmentieren.
-
-**Effekt.** `_content/promptotyping-document/action-layer.md`, Status "Entwurf, in Erprobung", Anker `#promptotyping-document-action-layer`.
-
-### ADR-10: Statische Markdown-URL als Maschinenadresse, `.nojekyll` als Bedingung
-
-**Kontext.** Plan-Review 2026-06-10, zwei Befunde. Erstens: GitHub Pages publiziert Unterstrich-Verzeichnisse ohne `.nojekyll` nicht; `_content/` wäre live unerreichbar gewesen. Zweitens: Die Subpath-URLs erfüllen den erklärten Zweck "robust für Coding-Agenten" nicht, weil GitHub Pages dafür die `404.html` mit HTTP-Status 404 liefert und der Inhalt erst nach JavaScript-Ausführung entsteht; ein HTTP-Abruf ohne Browser bekommt eine Fehlerseite.
-
-**Wahl.** `.nojekyll` im Repo-Root. Die statische Markdown-URL `https://dhcraft.org/Promptotyping/_content/promptotyping-document/{slug}.md` ist die dokumentierte Maschinenadresse (Frontmatter-Feld `machine-url` der Mirrors, Anmerkung in `_content/konvention.md`, Hinweis in der Vorlagen-Sektion). Subpath- und Hash-Form bleiben die menschenlesbaren Adressen; das `template:`-Feld (url/alias) bleibt unverändert.
-
-**Effekt.** Agenten erhalten unter der Maschinenadresse das Markdown mit HTTP 200 ohne JavaScript. Die Vault-Konvention soll die Maschinenadresse beim nächsten Konventions-Update übernehmen (offener Punkt, Vault-seitig).
-
-## Was nicht in dieser Spec steht
-
-- **Englische Fassung**: eigenes Projekt nach Bewährung der deutschen
-- **CMS-Funktionalität**: Site ist statisch, Inhalte werden per Git verändert
-- **User-Accounts, Kommentare, Annotationen**: out of scope
-- **Automatisches Vault-Sync**: manuelle Spiegelung beim Refactor
-- **Print-Layout**: Browser-Print-CSS optional, kein Hauptfokus
+## Out of scope
+- **English site version.** A separate project after the German version proves out.
+- **CMS functionality.** The site is static, content changes through Git.
+- **User accounts, comments, annotations.** Out of scope.
+- **Automatic vault sync.** Manual mirroring on refactor.
+- **Print layout.** Browser print CSS optional, not a focus.

@@ -4,12 +4,12 @@ project:
   name: Promptotyping Site
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 status: complete
-language: de
-version: 0.3
+language: en
+version: 0.4
 created: 2026-05-09
-updated: 2026-07-19
+updated: 2026-07-23
 authors: [Christopher Pollin]
-generated-with: Claude Code mit Claude Opus 4.7
+generated-with: Claude Code with Claude Opus 4.8
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
@@ -28,71 +28,76 @@ related: [INDEX, specification, architecture, design, journal]
 
 # Project
 
-Refactor des Repos `DigitalHumanitiesCraft/Promptotyping` zu einem interaktiven Paper. Die Site auf https://dhcraft.org/Promptotyping/ wird zur öffentlichen Methodik-Spezifikation für Promptotyping — adressierbar, versioniert, lesbar als Paper-Narrativ und maschinenlesbar als Endpunkt für `template:`-URIs in Promptotyping-Repos.
+This document is the charter for the repository `DigitalHumanitiesCraft/Promptotyping`. The repository renders on https://dhcraft.org/Promptotyping/ as an interactive paper and serves as the public methodology specification for Promptotyping, addressable, versioned, readable as a paper narrative, and machine-readable as the endpoint that `template:` URIs in Promptotyping repositories resolve to.
 
-## Identität
+This English charter is part of an operator decision from 2026-07-23. The core knowledge documents (INDEX, project, specification, architecture, design) become English so the knowledge base can serve as the public showcase of the method applied to itself. The journal, the report, and the paper-writing document stay German.
 
-Die Site ist das öffentliche Pendant zur Promptotyping-Methode, wie sie im Pollin-2026-Paper formalisiert ist und im Vault als systematisches Wissen weiterentwickelt wird. Sie ist nicht das Paper selbst — sie ist eine *interaktive Lese- und Adressierungs-Schicht über dem Paper*, in die alle methodischen Bestandteile (Vorlagen, Konvention, Case Studies, Glossar, Literatur) eingelassen sind.
+## Identity
 
-Drei Adressatengruppen:
+The site is the public counterpart to the Promptotyping method as the Pollin 2026 paper formalises it and as the vault develops it into systematic knowledge. The site is an interactive reading and addressing layer over the paper, with every methodological component embedded in it (templates, convention, case studies, glossary, bibliography). It does not replace the paper.
 
-- **Forschende**, die Promptotyping anwenden wollen. Sie kommen über das Methode-Narrativ, lesen das Paper im Lesefluss, gehen mit konkreten Vorlagen weg.
-- **Reviewer und Reproduzierende**, die ein Promptotyping-Repo gegen die Methode prüfen wollen. Sie kommen über die Konvention oder über eine konkrete Vorlagen-Adresse.
-- **Coding-Agenten**, die `template:`-URIs aus Repo-Frontmatter-Feldern auflösen. Sie kommen über versionierte Anker und brauchen die Vorlagen als Maschinenlesbar-Endpunkt.
+Three audiences use it:
 
-## Materialgrundlage
+- **Researchers** who want to apply Promptotyping. They enter through the method narrative, read the paper in its flow, and leave with concrete templates.
+- **Reviewers and reproducers** who check a Promptotyping repository against the method. They enter through the convention or through a specific template address.
+- **Coding agents** that resolve `template:` URIs from repository frontmatter fields. They enter through versioned anchors and need the templates as a machine-readable endpoint.
 
-Das Methodik-Repo verarbeitet keine Forschungsdaten — es spiegelt Wissen. Dadurch entfällt die Vorlage Datengrundlage (siehe [journal.md](journal.md), Eintrag 2026-05-09 zur Vorlagen-Trigger-Korrektur). Die Materialgrundlage steht stattdessen kompakt hier.
+## Material basis
 
-Vier Quelltypen speisen die Site:
+The methodology repository processes no research data, it mirrors knowledge. That is why the Data template does not apply and no `data.md` exists (see [journal.md](journal.md), entry 2026-05-09 on the template-trigger correction). The material basis is stated compactly here instead.
 
-**Pollin 2026 Paper.** Der wissenschaftliche Methodentext. Seit 2026-06-09 ist die sektionierte Fassung in `_content/paper/01-introduction.md` … `07-conclusion.md` (plus `literatur.md`) die **kanonische Arbeitsfassung**; das Vault-Dokument `Pollin 2026 - Promptotyping A Context Engineering Method for Building Research Artifacts with Frontier LLMs.md` ist Lesefassung mit Verweisbanner. Status `draft`, Sprache Englisch, sieben Sektionen plus Abstract und Referenzen. Wird im Lesefluss gerendert; die `{:.phase-*}`-Tags im Markdown bleiben als methodische Annotation erhalten und werden beim Rendern gestrippt (Lane entfernt, A2 in [specification.md](specification.md)).
+Four source types feed the site.
 
-**Vault-Vorlagen und Konvention.** Der Vorlagen-Katalog unter `Vault Operations/Templates/Promptotyping/` plus die Konvention unter `Vault Operations/Konventionen/Konvention Promptotyping Documents.md`; beide sind im Vault Source of Truth. Seit dem Vorlagen-Sweep vom 2026-07-19 sind alle Vorlagen des Katalogs freigegeben, tragen englische Funktionsnamen und je eine eigene Versionshistorie. Beim Spiegeln ins Repo werden Vault-interne Wikilinks durch Site-Anker oder Inline-Erklärungen ersetzt; die gespiegelten Fassungen hinken dem Vault-Stand bis zum nächsten Site-Update nach (siehe Stand).
+**The Pollin 2026 paper.** The scholarly method text. It is written as a single English Markdown document [paper.md](paper.md) in a two-document model, with the writing knowledge held in [paper-writing.md](paper-writing.md). The current draft is complete for operator reading and carries no open markers. The chosen venue is the Zeitschrift für digitale Geisteswissenschaften (ZfdG), and the submission package (exposé, German and English short abstracts, formal checklist) lives in [submission-zfdg.md](submission-zfdg.md). The deployed site still renders the earlier decomposed sections under `_content/paper/`. Decomposition of the consolidated draft into those section files happens only after the operator releases it.
 
-**Case-Study-Sammlung.** 24+ dokumentierte Case Studies, im Vault unter `Projects/Promptotyping/Case Studies/`. Jede Case Study trägt typischerweise: Repo-URL, Live-Demo-URL falls vorhanden, Status, Hauptaussage, methodische Aspekte. Sieben davon werden als Tiefenseiten gerendert (HerData, Klawiter-Rescue, zbz-ocr-tei, M3GIM, Notker-Edition, CorrespExplorer, coOCR-HTR; Kuratierung in A7 der [specification.md](specification.md)), die übrigen als Karten in der Galerie.
+**Vault templates and convention.** The template catalogue under `Vault Operations/Templates/Promptotyping/` and the convention under `Vault Operations/Konventionen/Konvention Promptotyping Documents.md`, both source of truth in the vault. The template function names are English since the 2026-07-19 catalogue sweep. When a template is mirrored into the repository, vault-internal wikilinks are replaced by site anchors or inline explanations, and the mirrored versions lag the vault state until the next site update.
 
-**YouTube-Videos zur Methode.**
-- Teil 1, Methodik-Erklärung: https://youtu.be/8sUe4Jkh3uQ (42:11, vier Phasen, Distillation, Context Window Management, Promptotyping Documents, EIL, Sycophancy)
-- Teil 2, Live-Demo mit Claude Code: https://youtu.be/hd_a-NBO_S4 (76 Excel-Dokumente zu funktionalem Dashboard, Thinking Matrix, Context Compression, iterative Fehlerkorrektur)
+**The case-study collection.** Documented case studies in the vault under `Projects/Promptotyping/Case Studies/`. Each carries repository URL, live-demo URL where available, status, main claim, and methodological aspects. A curated subset renders as depth pages, the remainder as cards in the gallery. The curation and the exact selection are owned by [specification.md](specification.md) (A7).
 
-Die alte Living-Paper-JSON (`prototype/data.json` mit 18 Case-Studies-Einträgen aus November 2025) ist als Struktur-Schablone in `c:\tmp\promptotyping-old-data-schablone.json` gesichert. Sie dient als Format-Vorlage für die neue `data/case-studies.json`, deren Inhalte aber frisch aus dem Vault generiert werden.
+**Method videos on YouTube.**
 
-## Worum es im Refactor geht
+- Part 1, method explanation: https://youtu.be/8sUe4Jkh3uQ (four phases, distillation, context-window management, Promptotyping Documents, EIL, sycophancy)
+- Part 2, live demo with Claude Code: https://youtu.be/hd_a-NBO_S4 (a set of Excel documents turned into a functional dashboard, thinking matrix, context compression, iterative error correction)
 
-Der bestehende Stand des Repos (November 2025) ist methodisch überholt: Sechs-Phasen-Modell statt vier, sieben alte Use Cases statt zwanzig, Living Paper v0.2 mit dekorativen interaktiven Modulen, kein adressierbares Vorlagen-System. Der Refactor löscht diesen Stand und baut die Site komplett neu — aus dem Vault-Wissen heraus, mit dem Pollin-2026-Paper als Lesefluss-Substrat, mit den versionierten Vorlagen als Anker, mit kuratierten Case Studies als Karten im Paper-Text.
+## Scope
 
-## Worum es nicht geht
+The refactor deleted the outdated November 2025 state of the repository (six-phase model, seven old use cases, decorative Living-Paper modules, no addressable template system) and rebuilt the site from the vault knowledge, with the Pollin 2026 paper as reading substrate, the versioned templates as anchors, and curated case studies as cards in the paper text.
 
-- **Kein wissenschaftliches Paper neu schreiben**. Das Paper ist im Vault, wird gespiegelt und in Sektionen aufgeteilt, aber inhaltlich nicht verändert.
-- **Kein Methode-Refactor**. Die vier Phasen, die drei Dokumenttypen, der Vorlagen-Katalog und die Konzepte sind im Vault festgeschrieben. Die Site spiegelt sie, sie revidiert sie nicht.
-- **Kein Vault-Refactor**. Vault-Korrekturen erfolgen nur, wenn beim Spiegeln Diskrepanzen auffallen, und werden im Vault diskutiert, nicht im Repo entschieden.
-- **Keine Internationalisierung jetzt**. Site ist deutsch zuerst. Englische Fassung ist ein eigenes, späteres Projekt.
+Out of scope:
 
-## Stand und Phase
+- **No new scholarly paper.** The paper is authored under its own two-document model; the site mirrors and renders it.
+- **No method refactor.** The four phases, the three document types, the template catalogue, and the concepts are fixed in the vault. The site mirrors them and does not revise them.
+- **No vault refactor.** Vault corrections happen only when mirroring surfaces a discrepancy, and they are decided in the vault.
+- **No internationalisation of the whole site yet.** The site is German first. A full bilingual edition is a later project. The English core knowledge documents are the bounded exception the operator decided on 2026-07-23.
 
-Status: **Phase 4 implementiert, Operator-Review-Eingriffe umgesetzt** (2026-06-10). Site vollständig gebaut: Paper-Lesefluss, neun Vorlagen mit Side-Panels und Frontmatter-Inspector, kuratierte Use-Case-Galerie (18 Cases, 7 Tiefenseiten), Überblick-, Praxis-, Skills-, Arbeitsumgebung-, Glossar- (42 Einträge), Konventions- und Literatur-Sektion, Mobile-Layout, SEO. Nach dem Erstdeploy auf Operator-Entscheidung: Phasen-Provenance-Lane vollständig entfernt (Tags werden nur noch gestrippt), Sticky-Header und Footer ergänzt, Hero rein typografisch (Icon in die Vorlagen-Sektion verschoben), alle sechs Prozessvideos als Click-to-load-Facade integriert, neue Arbeitsumgebung-Sektion. Spezifikations-Erweiterungen A13 bis A18 und ADR-9/ADR-10 dokumentiert.
+## Current state
 
-Stand-Nachtrag (2026-07-19): Logo optimiert und Header/Footer auf die Watercolor-Marke umgestellt (Commits `fe5ef82`, `cc915dc`); die Wissensbasis ist nach dem Inhaltsaudit sachlich richtiggestellt (Lane-Referenzen, Tiefenseiten, Katalog-Stände). Offen: Human Review der gespiegelten Inhalte (CEIL), Browser-Sichtprüfung, Live-Test des 404-Routings, und das Site-Update zum Vault-Vorlagen-Sweep (englisches Funktionsvokabular in `konvention` und `ueberblick`, Spiegel und Anker der sechs neuen Vorlagen, Versionsstände der bestehenden Spiegel).
+Status is complete and deployed. The site renders the paper reading flow, the templates with side panels and the frontmatter inspector, the curated use-case gallery with its depth pages, and the overview, practice, skills, working-environment, glossary, convention, and bibliography sections, with mobile layout and SEO. What each of these must do and how it is built is owned by [specification.md](specification.md), [architecture.md](architecture.md), and [design.md](design.md); the header and footer run on the DHCraft watercolour mark.
 
-Stand-Nachtrag (2026-07-23): Das Methodenpaper entsteht als Zwei-Dokumente-Modell im Repo (`paper.md` / `paper-writing.md`), Zielvenue ist die ZfdG (E1 entschieden). README neu als englischsprachige Landkarte des Repos, MIT/CC-BY-Dual-Licensing mit LICENSE-Datei umgesetzt, Technology Baseline (`_content/technology-baseline.md`) und Vorlagen-Entwurf Technology (draft, vault-first ausstehend) angelegt. Laufender Mehrspur-Betrieb (Lanes) mit Forschungsbericht nach der Report-Vorlage; Verlauf und Lane-Zuschnitt in [journal.md](journal.md), Paper-Steuerung in [paper-writing.md](paper-writing.md).
+The phase-provenance lane was removed after the first deploy by operator decision. The `{:.phase-*}` tags remain in the paper Markdown as methodological annotation and are stripped at render time (A2 in [specification.md](specification.md)).
 
-## Beziehung zum Vault
+The FAIR infrastructure policy is dual licensing, MIT for code and CC BY 4.0 for documentation and Promptotyping documents, with third-party research data exempted per repository under its own rights statement. The repository root carries a MIT `LICENSE` and a `CITATION.cff`; the citation identity is Christopher Pollin, Digital Humanities Craft OG, ORCID 0000-0002-4879-129X.
 
-Diese Wissensbasis ist eine **Spiegelung mit Eigenleben**. Die Vault-Vorlagen, von denen sie geleitet wird, sind im Vault Source of Truth. Was hier dokumentiert wird, ist die *Anwendung* dieser Vorlagen auf das konkrete Refactor-Projekt — also welche Trigger ziehen, welche Vorlagen für dieses Projekt gar nicht passen (siehe Vorlagen-Trigger-Korrektur), welche Designentscheidungen für dieses Projekt gefällt werden. Das ist nicht redundant zur Vault-Vorlage, sondern komplementär: die Vorlage beschreibt den Strukturraum, dieses Dokument trägt die Belegung.
+The `vault/` folder is a Grounded-Vault instance (template `DigitalHumanitiesCraft/grounded-vault`) that anchors the paper's load-bearing claims to sources. Work inside it follows its own action layer `vault/CLAUDE.md`.
 
-## Erwartetes Outcome
+The refactor and paper work continue in a multi-lane setup with research reporting. The chronological course and the lane cuts live in [journal.md](journal.md), the paper steering in [paper-writing.md](paper-writing.md).
 
-- `https://dhcraft.org/Promptotyping/` rendert das Pollin-2026-Paper als scrollbares interaktives Paper
-- Die Vorlagen des Katalogs sind unter Latest-Ankern adressierbar (`#promptotyping-document-data` etc.); Snapshot-Sub-Anker bei späteren Versions-Sprüngen
-- Subpath-Aliase (`/promptotyping-document/data`) für Menschen; statische Markdown-URLs unter `_content/` als Maschinenadresse (ADR-10)
-- Sieben Case-Study-Tiefenseiten plus filterbare, kuratierte Use-Case-Galerie (18 Cases, A7)
-- Glossar als Hover- und Side-Panel-Quelle, Literaturverzeichnis als Anker-Liste
-- Repos können `template: { url: "https://dhcraft.org/Promptotyping/promptotyping-document/data" }` in ihre Frontmatters schreiben und damit auf die kanonische Latest-Spezifikation verweisen
+## Relationship to the vault
 
-## Anschluss
+This knowledge base is a **mirror with a life of its own**. The vault templates that guide it are source of truth for the templates themselves. What is documented here is the *application* of those templates to this concrete refactor project, which triggers fire, which templates do not apply, which design decisions are made for this project. That is complementary to the vault template, the template describes the structural space and this document carries the filling.
 
-- Vault-Wissensdokument [[Promptotyping]] — methodischer Kern
-- Vault-Konvention [[Konvention Promptotyping Documents]] — Strukturprinzipien
-- Vault-Vorlagen [[Vorlagen Promptotyping Documents]] — Vorlagen-Katalog
-- Pollin 2026 Paper — Lesefluss-Substrat
+## Expected outcome
+
+- `https://dhcraft.org/Promptotyping/` renders the Pollin 2026 paper as a scrollable interactive paper.
+- The catalogue templates are addressable under latest anchors (`#promptotyping-document-data` and so on), with snapshot sub-anchors added at later version jumps.
+- Subpath aliases (`/promptotyping-document/data`) serve humans; static Markdown URLs under `_content/` serve as the machine address (ADR-10).
+- Case-study depth pages plus a filterable, curated use-case gallery (A7).
+- Glossary as hover and side-panel source, bibliography as an anchor list.
+- Repositories can write `template: { url: "https://dhcraft.org/Promptotyping/promptotyping-document/data" }` into their frontmatter and thereby point at the canonical latest specification.
+
+## Links
+
+- Vault knowledge document [[Promptotyping]], the methodological core
+- Vault convention [[Konvention Promptotyping Documents]], the structural principles
+- Vault templates [[Vorlagen Promptotyping Documents]], the template catalogue
+- Pollin 2026 paper, the reading substrate

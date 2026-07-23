@@ -4,8 +4,8 @@ project:
   name: Promptotyping Site
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 status: complete
-language: de
-version: 0.5
+language: en
+version: 0.6
 created: 2026-05-09
 updated: 2026-07-23
 authors: [Christopher Pollin]
@@ -23,78 +23,72 @@ related: [project, specification, architecture, design, journal, paper, paper-wr
 
 # INDEX
 
-Navigation und Begriffslexikon der Wissensbasis dieses Repos. Das Repo `DigitalHumanitiesCraft/Promptotyping` rendert als interaktives Paper auf https://dhcraft.org/Promptotyping/ und ist die öffentliche Methodik-Site für Promptotyping. Die `knowledge/`-Wissensbasis ist die methodische Selbstanwendung — die Site wird zuerst als Promptotyping-Wissensbasis spezifiziert, dann implementiert.
+Navigation and glossary of this repository's knowledge base. The repository `DigitalHumanitiesCraft/Promptotyping` renders as an interactive paper at https://dhcraft.org/Promptotyping/ and is the public methodology site for Promptotyping. The `knowledge/` base is the method's self-application; the site is specified as a Promptotyping knowledge base first and implemented from it.
 
-## Wissensbasis-Inhalt
+## Language regime
 
-Die Promptotyping-Documents dieser Wissensbasis:
+By operator decision of 2026-07-23 the core knowledge documents (INDEX, project, specification, architecture, design) are English, since they are the public showcase of the self-application. The process and steering documents (journal, paper-writing, report, submission-zfdg) stay German as working instruments. The `template:` frontmatter blocks keep the German template names until the template catalogue itself renames them in the vault; the glossary below gives the English function names.
 
-- **INDEX** (dieses Dokument) — Navigation und Begriffslexikon
-- **[project.md](project.md)** — was die Site werden soll, wer die Adressaten sind, Materialgrundlage, Stand
-- **[specification.md](specification.md)** — was die Site können muss: Anker-Schema, `template:`-Auflösung, Site-Sektionen, Side-Panels
-- **[architecture.md](architecture.md)** — wie die Site technisch gebaut wird: URL-Struktur, Tech-Stack, Modul-Inventar
-- **[design.md](design.md)** — wie die Site aussieht und sich verhält: DHCraft-Designsystem, Side-Panels, Typografie
-- **[journal.md](journal.md)** — chronologischer Verlauf des Refactors
-- **[paper.md](paper.md)** — der vollständige englische Papertext als ein Dokument, Arbeitsstand zur Operator-Lektüre; nach Freigabe Zerlegung in `_content/paper/`
-- **[paper-writing.md](paper-writing.md)** — das Wissen über das Schreiben des Papers: Arbeitsmodus, Kernaussagen, Sprachregeln, Entscheidungsstand, offene Prüfpunkte, Weg zur Einreichung
-- **[report.md](report.md)** — Stichtagsbericht des Lane-Durchgangs zur ZfdG-Einreichung (2026-07-23) mit Abnahme-Listen; Snapshot, nicht fortgeschrieben
-- **[submission-zfdg.md](submission-zfdg.md)** — Einreichpaket für die ZfdG: Exposé mit Gliederung und Literaturauswahl, Kurz-Abstracts deutsch und englisch, Formalia-Checkliste
+## Contents
 
-Das Paper-Schreiben folgt damit einem Zwei-Dokumente-Modell: der Text in `paper.md`, das Wissen darüber in `paper-writing.md`. Die früheren Steuerdokumente (plan, paper-outline, verification-paper-figures, Draft-Snapshot, Root-PLAN) sind dort zusammengeführt; ihre Volltexte trägt die Git-History.
+- **INDEX** (this document). Navigation and glossary.
+- **[project.md](project.md)** — what the site is, its audiences, material basis, and current state (function: Charter).
+- **[specification.md](specification.md)** — what the site can do: anchor schema, `template:` resolution, sections, side panels, decision records (function: Specification).
+- **[architecture.md](architecture.md)** — how the site is built: URL structure, tech stack, module inventory (function: Architecture).
+- **[design.md](design.md)** — how the site looks and behaves: DHCraft design system, side panels, typography (function: Design).
+- **[journal.md](journal.md)** — chronological process record, German (function: Provenance).
+- **[paper.md](paper.md)** — the full English paper text as one document, complete draft for operator reading; headerless by design for copy-out. After release it is decomposed into `_content/paper/`.
+- **[paper-writing.md](paper-writing.md)** — the knowledge about writing the paper: working mode, core statements, language rules, decision state, checkpoints, German.
+- **[report.md](report.md)** — snapshot report of the lane run towards the ZfdG submission (2026-07-23), German; not updated further.
+- **[submission-zfdg.md](submission-zfdg.md)** — submission package for the Zeitschrift für digitale Geisteswissenschaften: exposé with outline and literature selection, short abstracts in German and English, formalities checklist; German.
 
-Eine `data.md` existiert bewusst nicht. Die Vorlage Datengrundlage trägt für Methoden-Repos nicht; die Materialgrundlage steht in `project.md`. Begründung im Eintrag vom 2026-05-09 in [journal.md](journal.md).
+The paper work follows a two-document model, the text in `paper.md` and the knowledge about it in `paper-writing.md`. A `data.md` deliberately does not exist; the Material template does not carry for method repositories, and the material basis lives in `project.md` (journal entry of 2026-05-09).
 
-## Lese-Reihenfolge
+## Reading order
 
-Wer die Wissensbasis zum ersten Mal liest:
+1. INDEX (orientation)
+2. **project.md** (what the site is)
+3. **specification.md** (what it can do)
+4. **architecture.md** (how it is built)
+5. **design.md** (how it looks)
+6. **journal.md** (what happened)
+7. **paper-writing.md** (state and steering of the paper work, leading into **paper.md**)
 
-1. INDEX (für Orientierung)
-2. **project.md** (was die Site werden soll, was als Material einfließt)
-3. **specification.md** (was die Site können muss)
-4. **architecture.md** (wie sie technisch gebaut wird)
-5. **design.md** (wie sie aussieht)
-6. **journal.md** (was bisher passiert ist, einschließlich der Vorlagen-Trigger-Korrektur)
-7. **paper-writing.md** (Stand und Steuerung der Paper-Arbeit; von dort in **paper.md**)
+## Glossary
 
-Wer einen konkreten Aspekt sucht, geht direkt zum entsprechenden Dokument.
+Terms constitutive for this knowledge base. Canonical definitions live in the linked vault knowledge documents; this is the short form relevant here.
 
-## Begriffslexikon
+**Promptotyping.** Iterative context-engineering method in four phases, Preparation, Exploration & Mapping, Distillation, Implementation, producing research artefacts from data and frontier LLMs. Promptotyping Documents are the primary artefact; the prototype is a functional by-product that can be discarded and regenerated from them.
 
-Begriffe, die in dieser Wissensbasis konstitutiv vorkommen. Die kanonischen Definitionen leben in den verlinkten Vault-Wissensdokumenten; hier nur die für das Refactor-Projekt relevante Kurzform.
+**Promptotyping Document.** Structured Markdown document in a repository's `knowledge/` folder. Three analytical types: Knowledge (declarative), Process (chronological), Action (imperative).
 
-**Promptotyping**: Iterative Context-Engineering-Methode in vier Phasen — Preparation, Exploration & Mapping, Distillation, Implementation —, um aus Daten und Frontier-LLMs Forschungsartefakte zu erzeugen. Promptotyping Documents sind das primäre Artefakt; der Prototyp ist ein funktionales Nebenprodukt, das verworfen und aus den Dokumenten regeneriert werden kann.
+**Template (Vorlage).** Fillable structural pattern for one function of a Promptotyping knowledge base. The function names have been English since 2026-07-19 (Navigation, Charter, Material, Specification, Architecture, Domain Knowledge, Design, Quality Assurance, Verification, Provenance, Planning, Reporting, Integration, Agent Instructions). The catalogue lives in the vault; the site mirrors the templates as versioned anchors. A template carries only where its trigger holds.
 
-**Promptotyping Document**: Strukturiertes Markdown-Dokument im `knowledge/`-Ordner eines Promptotyping-Repos. Drei analytische Typen: Knowledge (deklarativ), Process (chronologisch), Action (imperativ).
+**Konvention Promptotyping Documents.** The description of knowledge-base functions, the frontmatter schema, and the structural principles. Lives in the vault, mirrored on the public site as an external specification.
 
-**Vorlage**: Ausfüllbare Strukturvorgabe für eine spezifische Funktion einer Promptotyping-Wissensbasis. Die Funktionsnamen sind seit 2026-07-19 englisch (Navigation, Charter, Material, Specification, Architecture, Domain Knowledge, Design, Quality Assurance, Verification, Provenance, Planning, Reporting, Integration, Agent Instructions). Der Katalog lebt im Vault ([[Konvention Promptotyping Documents]]); die Site spiegelt die Vorlagen als versionierte Anker. Eine Vorlage trägt nur, wenn ihr Trigger erfüllt ist — die Vorlage Datengrundlage trägt z.B. nur, wenn das Projekt Daten verarbeitet oder produziert.
+**Anchor schema.** System of permanently stable URL anchors on the single-page site (`#promptotyping-document-data`, `#case-herdata`, `#konzept-eil`). Version snapshots add sub-anchors (`#promptotyping-document-data-v0.1`). Repositories linking via the `template:` field address these anchors; anchors are never renamed.
 
-**Konvention Promptotyping Documents**: Beschreibung der Funktionen einer Wissensbasis, des Frontmatter-Schemas und der Strukturprinzipien. Liegt im Vault unter `Vault Operations/Konventionen/`, wird in der öffentlichen Site als externe Spezifikation gespiegelt.
+**Subpath alias.** Machine-readable URL form (`/promptotyping-document/data`) routed to the anchor via `404.html`. The canonical machine address for HTTP retrieval without JavaScript is the static Markdown URL (`/_content/promptotyping-document/{slug}.md`).
 
-**Phasen-Provenance-Lane**: Historischer Designkniff des Erstdeploys: eine linke Schmalspalte markierte jeden Paper-Absatz monochrom nach seiner Promptotyping-Phase. Nach dem Erstdeploy auf Operator-Entscheidung entfernt (2026-06-10, A2 in [specification.md](specification.md)); die `{:.phase-*}`-Tags im Paper-Markdown bleiben als methodische Annotation erhalten und werden beim Rendern gestrippt. Der Begriff bleibt im Lexikon, weil ADR-4 und Journal ihn als Entscheidungs-Provenienz tragen.
+**Side panel.** Right sliding panel of the single page carrying context-specific depth; a bottom sheet on mobile.
 
-**Anker-Schema**: System der stabilen URL-Anker auf der Single-Page-Site. Pro Vorlage, Konzept, Case Study und Begriff existiert ein permanent stabiler Anker (`#promptotyping-document-data`, `#case-herdata`, `#konzept-eil`). Bei späteren Versions-Sprüngen einer Vorlage kommen Snapshot-Sub-Anker dazu (`#promptotyping-document-data-v0.1`). Repos, die per Frontmatter-Feld `template:` verlinken, adressieren diese Anker.
+**Frontmatter-Inspector.** Module on the templates section resolving a `template:` URI live and rendering the referenced template beneath it.
 
-**Subpath-Alias**: Maschinenlesbare URL-Form (`/promptotyping-document/data`), die per `404.html`-Routing auf den entsprechenden Anker geleitet wird. Robust für Coding-Agenten, die strukturelle URL-Pfade kennen, lesbar für Menschen.
+**Case-study filter.** Module of the use-case section filtering the curated cards by use-case typology (primary), interface type, and demo availability.
 
-**Side-Panel**: Rechtes, sliding-in-Panel der Single-Page. Kontextspezifische Tiefe — Glossar-Eintrag, Vorlagen-Spezifikation, Literatur-Detail —, das sich auf Klick öffnet, ohne den Lesefluss zu unterbrechen. Auf Mobile als Bottom-Sheet.
+**Phase provenance lane.** Historical design device of the first deploy, removed by operator decision 2026-06-10 (A2, ADR-4); the `{:.phase-*}` tags in the paper Markdown remain as methodological annotation and are stripped at render time.
 
-**Frontmatter-Inspector**: Modul auf der Vorlagen-Sektion, das einen `template:`-URI in Echtzeit auflöst und die referenzierte Vorlage live darunter rendert. Demonstriert, wie Repos die Site nutzen.
+**Critical Expert in the Loop (EIL).** The role that verifies LLM output at defined points; here Christopher Pollin is the Critical Expert.
 
-**Case-Study-Filter**: Modul in der Use-Case-Sektion, das die 18 kuratierten Karten nach Use-Case-Typologie (primär), Interface-Typ und Demo-Verfügbarkeit filterbar macht (ADR-8-Nachtrag 2026-06-10).
+**`template:` field.** Frontmatter field pointing to the authoritative template specification on this site. Format `template: { name, version, url, alias }`; `url` is the latest subpath form, `alias` the latest hash anchor.
 
-**Genre (Case Study)**: Historisches internes Arbeitsvokabular (HerData-Genre, Editions-Genre, Externdaten-Genre, Klawiter-Typ, Sonderfall). Seit 2026-06-10 nicht mehr in der öffentlichen UI; die Site klassifiziert nach der Use-Case-Typologie des Papers (Section 4.3).
+**Grounded Vault (`vault/`).** Instance of the Grounded Vault template carrying the provenance layer beneath the paper: sources, distillates, and claims with grounding anchors, validated by `vault/tools/validate.py`. Its own action layer `vault/CLAUDE.md` governs all work there.
 
-**Critical Expert in the Loop (EIL)**: Rolle, die LLM-Output an definierten Stellen verifiziert. Drei Dimensionen: Domänenexpertise, technisches Modellverständnis, metakognitive Wachsamkeit. Im Refactor selbst ist Christopher Pollin der Critical Expert.
+## Relation to the vault knowledge base
 
-**`template:`-Feld**: Frontmatter-Feld in Promptotyping-Documents, das auf die maßgebliche Vorlagen-Spezifikation auf dieser Site zeigt. Format: `template: { name, version, url, alias }`. Die `url` ist die Latest-Subpath-Form (`/promptotyping-document/{slug}`), `alias` der Latest-Hash-Anker. Snapshot-Adressierung über Hash-Sub-Anker.
-
-## Verhältnis zur Vault-Wissensbasis
-
-Diese Wissensbasis im Repo ist eine **Selbstanwendung** der Methode: das Methodik-Repo wendet die Methode auf sich selbst an. Die Vault-Vorlagen, von denen sie geleitet wird, sind die Source der Vorlagen-Spiegelung. Wenn beim Befüllen Diskrepanzen zwischen Vault-Vorlage und Repo-Mirror auffallen, fließen Korrekturen zuerst in den Vault zurück und dann ins Repo.
-
-Im konkreten Refactor wurde durch die Critical-Expert-Prüfung sichtbar, dass nicht jede Vorlage trägt — die Vorlage Datengrundlage greift nur, wenn das Projekt Daten verarbeitet. Methoden-Repos überspringen sie. Diese Erkenntnis floss als Anlass zur ausdrücklicheren Trigger-Prüfung in der Wissensbasis selbst zurück.
+This repository knowledge base is a self-application of the method. The vault templates guiding it are the source of the template mirror; discrepancies flow back to the vault first, then into the repo. The Critical Expert check made visible that not every template carries; method repositories skip the Material template, which sharpened the trigger rule in the convention itself.
 
 ## Related
 
-- Externe Konvention: dhcraft.org/Promptotyping/#konvention
-- Vault-Substrat: das Pollin-2026-Paper, der Vault-Vorlagen-Katalog, die Vault-Konvention
+- External convention: dhcraft.org/Promptotyping/#konvention
+- Vault substrate: the Pollin 2026 paper, the vault template catalogue, the vault convention
