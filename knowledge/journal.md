@@ -476,6 +476,7 @@ Drei Entwürfe erzeugt, uncommitted zur Operator-Verifikation: `_content/technol
 
 - Vorlage Technology vault-first in den Katalog aufnehmen (echte Vault-Session); bis dahin ist der Slug `technology` nicht Teil des freigegebenen Katalogs und nicht in `data/promptotyping-documents.json`, `CLAUDE.md`-Anker-Schema und Vorlagen-Sektion der Site verdrahtet.
 - Site-Verdrahtung der Technology Baseline entscheiden (eigener Anker oder nur Maschinenadresse).
+- Folgeprojekt-Idee (Operator, 2026-07-23): Promptotyping-Wissensbasen über die `template:`-/Frontmatter-Metadaten repoübergreifend miteinander verknüpfen und als Kontextorganisation nutzen (Follow-your-nose über die Maschinenadressen). Bewusst kein Teil dieses Repos; bei Aufnahme eigener Diskurs.
 
 Nachtrag: Commit-Freigabe durch den Operator am 2026-07-23; damit ist die README-Neufassung englisch entschieden und `_content/MANIFEST.md` um beide neue Dateien ergänzt.
 
