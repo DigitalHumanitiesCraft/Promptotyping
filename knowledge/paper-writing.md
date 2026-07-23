@@ -112,7 +112,7 @@ Prüffragen nach dem Muster von Competency Questions; jede Frage muss mit Ja bea
 2. Widerspricht das Semi-Formalitäts-Argument (3.3) an keiner Stelle der Tokenökonomie von 2.3, insbesondere qualifiziert der Substrat-Absatz "direct processability" gegen "passt in den Kontext"?
 3. Sind Identitätsformel (Beschreibung = Spezifikation) und doppelter Adressat als ein Gedanke erzählt, ohne Dopplung zwischen den Absätzen von 3.3?
 4. Bleibt der Grounded Vault als "early, documented use" markiert, ohne Overclaim, und reaktiviert die Passage nicht das gestrichene Epistemic-Infrastructure-Kapitel?
-5. Stimmen die Fußnoten in Nummerierung, Textreihenfolge und Definition ([^1] Gephi, [^2] Claude Code, [^3] Frontier LLM, [^4] Specification, [^5] Spec Kit, [^6] Grounded Vault), und hat jedes benannte Tool eine Fußnote mit URL?
+5. Stimmen die Fußnoten in Nummerierung, Textreihenfolge und Definition ([^1] Gephi, [^2] Frontier LLM, [^3] Claude Code, [^4] Specification, [^5] Spec Kit, [^6] Grounded Vault), und hat jedes benannte Tool eine Fußnote mit URL?
 6. Deckt die Dissertation die Intro-Verankerung wirklich (Wheaton-Persona sozialhistorisch, Basel-Persona wirtschaftshistorisch, dokumentierte User Stories)?
 7. Besteht der Gesamttext die Selbstprüfung gegen die Kernverbote auch in den neuen Passagen (Doppelpunkt-Konnektoren, Negativ-Appositionen, Ankündigungssätze, Etikettsätze)?
 8. Sind alle neuen Zitationen im Referenzverzeichnis vorhanden (Wilkinson, Chue Hong, Miksa, Soiland-Reyes, Grallert, Mayr/Thalheim, Broy/Kuhrmann, JOHD-Marker, SDD-Marker)?
