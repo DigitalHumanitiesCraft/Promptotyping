@@ -255,7 +255,7 @@
     }
     // Static section anchors (ueberblick, use-cases, praxis-*, skills-*,
     // arbeitsumgebung, konvention-*) scroll directly without loading paper sections.
-    if (/^(ueberblick|use-cases|praxis|skills|arbeitsumgebung|konvention)/.test(hash)) {
+    if (/^(ueberblick|use-cases|praxis|skills|arbeitsumgebung|konvention|vorlagen)/.test(hash)) {
       var staticEl = document.getElementById(hash);
       if (staticEl) {
         staticEl.scrollIntoView();
@@ -669,12 +669,40 @@
           '<img class="vorlagen-icon" src="assets/promptotyping-logo.png" ' +
           'alt="Promptotyping-Marke" width="100" height="100">' +
           "<h2>Vorlagen</h2>" +
+          "<p>Diese Sektion buendelt die Spezifikation der Methode, den ausfuellbaren Vorlagen-Katalog, " +
+          "die zugrunde liegende Konvention, den maschinellen Zugriff ueber das <code>template:</code>-Feld " +
+          "und die Technology Baseline fuer statische Web-Tools.</p>" +
+          '<nav class="vorlagen-subnav" aria-label="Spezifikations-Navigation">' +
+          '<a href="#vorlagen-katalog">Katalog</a>' +
+          '<a href="#vorlagen-konvention">Konvention</a>' +
+          '<a href="#vorlagen-maschinenzugriff">Maschinenzugriff</a>' +
+          '<a href="#vorlagen-technology-baseline">Technology Baseline</a>' +
+          "</nav>" +
+
+          '<div class="vorlagen-block" id="vorlagen-katalog">' +
+          "<h3>Katalog</h3>" +
           "<p>Ausfuellbare Vorlagen fuer die Promptotyping Documents im <code>knowledge/</code>-Ordner " +
           "eines Repos. Jede Vorlage adressiert eine Funktion, nicht einen festen Dateinamen. Ein Klick auf " +
           "eine Zeile oeffnet die volle Vorlagen-Spezifikation im Side-Panel.</p>" +
           '<table class="vorlagen-table"><thead><tr>' +
           "<th>Vorlage</th><th>Funktion</th><th>Empfohlene Datei</th><th>Typ</th><th>Version</th><th>Status</th>" +
           "</tr></thead><tbody>" + rows + "</tbody></table>" +
+          "</div>" +
+
+          '<div class="vorlagen-block" id="vorlagen-konvention">' +
+          "<h3>Konvention</h3>" +
+          "<p>Die Konvention Promptotyping Documents beschreibt, welche Funktionen eine Wissensbasis im " +
+          "<code>knowledge/</code>-Ordner eines Repos abdeckt, von der Navigation ueber Specification und " +
+          "Architecture bis zur Provenance. Sie legt das Frontmatter-Vokabular fest, mit dem ein Dokument " +
+          "seine Herkunft, seine Vorlage und seine Maschinenadresse deklariert, und ordnet jede Funktion " +
+          "einem der drei analytischen Dokumenttypen Knowledge, Process oder Action zu. Zu jeder Funktion " +
+          "nennt sie ein Triggerkriterium, nach dem ein Agent entscheidet, ob ein konkretes Repo das Dokument " +
+          "braucht. Der Vorlagen-Katalog oben ist der ausfuellbare Auszug dieser Funktionen. Die vollstaendige " +
+          'Konvention steht <a href="#konvention-v0.1">weiter unten auf dieser Seite</a>.</p>' +
+          "</div>" +
+
+          '<div class="vorlagen-block" id="vorlagen-maschinenzugriff">' +
+          "<h3>Maschinenzugriff</h3>" +
           renderInspector() +
           '<p class="vorlagen-machine-note">Fuer Maschinen ist die kanonische Abrufform jeder Vorlage die ' +
           'statische Markdown-URL unter <code>_content/</code>. Sie liefert den rohen Markdown-Text direkt ' +
@@ -682,7 +710,24 @@
           "<code>https://dhcraft.org/Promptotyping/_content/promptotyping-document/{slug}.md</code>. Die im " +
           "<code>template:</code>-Feld gefuehrten Subpath- und Hash-Formen sind die menschenlesbaren Adressen; " +
           "ihre Subpath-Aufloesung setzt JavaScript voraus. Wer den Rohtext deterministisch und ohne " +
-          "Browser-Umgebung braucht, verwendet die statische <code>_content/</code>-Markdown-URL.</p>";
+          "Browser-Umgebung braucht, verwendet die statische <code>_content/</code>-Markdown-URL.</p>" +
+          "</div>" +
+
+          '<div class="vorlagen-block" id="vorlagen-technology-baseline">' +
+          "<h3>Technology Baseline</h3>" +
+          "<p>Eine Technology Baseline traegt das projektunabhaengige Technologie-Wissen fuer einen " +
+          "wiederkehrenden Artefakttyp, damit eine einzelne Projektinstanz in ihrer <code>architecture.md</code> " +
+          "nur noch ihre Abweichungen dokumentiert statt die Stack-Argumentation neu zu fuehren. Dieses Repo " +
+          "fuehrt eine solche Baseline fuer den haeufigsten Artefakttyp der Methode, das selbststaendige " +
+          "statische Web-Tool aus HTML, CSS und JavaScript ohne Build-Step. Sie haelt die Regeln fest, kein " +
+          "Build, Vanilla als Default, vendorierte Bibliotheken nur unter einer Kompromissregel, keine externen " +
+          "Laufzeitaufrufe, und begruendet sie aus Generierbarkeit, Publizierbarkeit und Haltbarkeit. " +
+          "Status Entwurf.</p>" +
+          '<p class="vorlagen-tb-links">' +
+          '<a href="https://dhcraft.org/Promptotyping/_content/technology-baseline.md" target="_blank" rel="noopener">Maschinenadresse</a>' +
+          '<a href="_content/technology-baseline.md" target="_blank" rel="noopener">Im Repo abrufen</a>' +
+          "</p>" +
+          "</div>";
 
         wireVorlagenRows(el);
       })

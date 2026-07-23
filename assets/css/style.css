@@ -558,6 +558,38 @@ a:hover {
   scroll-margin-top: var(--space-16);
 }
 
+/* Vorlagen hub: silent text sub-navigation and additive sub-anchor blocks. */
+
+.vorlagen-subnav {
+  margin: var(--space-6) 0 var(--space-8);
+  font-size: 0.9375rem;
+}
+
+.vorlagen-subnav a {
+  color: var(--phase-exploration);
+}
+
+.vorlagen-subnav a:hover {
+  color: var(--text);
+}
+
+.vorlagen-subnav a:not(:last-child)::after {
+  content: " \00b7 ";
+  color: var(--phase-distillation);
+}
+
+.vorlagen-block {
+  scroll-margin-top: var(--space-16);
+  margin-top: var(--space-12);
+}
+
+.vorlagen-tb-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+  font-size: 0.875rem;
+}
+
 /* Vorlagen table: clickable rows open the side panel. */
 
 .vorlagen-table tbody tr.vorlage-row {

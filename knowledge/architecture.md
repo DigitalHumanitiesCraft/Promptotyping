@@ -64,6 +64,8 @@ Hauptlogik. Beim `DOMContentLoaded`:
 4. URL-Hash auswerten und ggf. Side-Panel öffnen
 5. IntersectionObserver für Lazy-Loading der unteren Paper-Sektionen registrieren
 
+Die Funktion `renderVorlagen()` in `app.js` baut die `#vorlagen`-Sektion als Hub (A19, Operator-Entscheidung 2026-07-23): Sektionskopf, eine stille Text-Unternavigation und vier Blöcke mit additiven Sub-Anker-IDs — `#vorlagen-katalog` (die klickbare Vorlagen-Tabelle aus `data/promptotyping-documents.json`, per `wireVorlagenRows` verdrahtet), `#vorlagen-konvention` (Kurzabriss mit Sprunglink auf `#konvention-v0.1`), `#vorlagen-maschinenzugriff` (Frontmatter-Inspector via `renderInspector()` plus Maschinenadresse-Absatz) und `#vorlagen-technology-baseline` (Baseline-Beschreibung mit Link auf `_content/technology-baseline.md`). Die Sub-Anker sind reine In-Page-Fragmente ohne Subpath-Routing; `handleInitialHash` in `app.js` scrollt einen `vorlagen`-präfigierten Hash direkt an, ohne die Paper-Sektionen zu laden. `404.html` bleibt unberührt.
+
 ### `assets/js/modules/frontmatter-inspector.js`
 Paste-Live-Render-Modul in der Vorlagen-Sektion. Textarea für ganzen YAML-Frontmatter-Block, nicht nur die URL. Beim Eingeben (debounced, 300ms): js-yaml parst, extrahiert `template.url` (oder `template.alias`), validiert URL gegen Site-Anker-Schema, öffnet Side-Panel mit gerenderter Vorlage. Default-Wert ist ein Beispiel-Frontmatter mit korrekt gesetztem `template:`-Feld. Implementations-Details in Sektion *Frontmatter-Inspector-Implementation* unten.
 
