@@ -2,35 +2,94 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14160875.svg)](https://doi.org/10.5281/zenodo.14160875)
 
-Öffentliche Methodik-Site für Promptotyping, eine iterative Context-Engineering-Methode in vier Phasen, um aus Daten und Frontier-LLMs Forschungsartefakte zu erzeugen.
+Promptotyping is an iterative context engineering method in four phases (Preparation, Exploration & Mapping, Distillation, Implementation) for building research artefacts from research data with frontier LLMs. The primary artefact is a set of versioned Promptotyping Documents that hold a project's requirements, data, decisions, and domain knowledge; the prototype is a functional by-product that can be discarded and regenerated from the documents. A Critical Expert in the Loop verifies LLM output at defined points.
 
-**Live**: https://dhcraft.org/Promptotyping/
+This repository is the public specification of the method. It renders as an interactive paper at **https://dhcraft.org/Promptotyping/** (German site, English paper) and serves the method's templates as stable, machine-readable addresses.
 
-## Was hier liegt
+## The method in brief
 
-Dieses Repo rendert die Site auf GitHub Pages. Aufbau:
+The four phases move from gathering raw material (Preparation) over probing what the data affords (Exploration & Mapping) and condensing the findings into token-efficient Markdown documents (Distillation) to iterative, verified development with an agentic coding tool (Implementation). The documents fall into three analytical types with a diagnostic rule attached. Knowledge Documents are declarative (data, domain, architecture); when output is factually wrong, check these first. Process Documents are chronological (journal, plan); check these when decision logic is unclear. Action Documents are imperative (`CLAUDE.md`); check these when output is formally wrong.
 
-- `knowledge/` — Wissensbasis (Specification der Site selbst nach den Vault-Vorlagen; enthält auch das Methodenpaper `paper.md` mit seinem Steuerdokument `paper-writing.md`)
-- `_content/` — Markdown-Inhalte (Pollin 2026 Paper, neun Vorlagen, Use-Case-Tiefenseiten, Glossar, Praxis, Skills, Konvention, Literatur)
-- `assets/` — CSS, JS, Vendor-Bibliotheken, lokale Fonts, Logo
-- `data/` — JSON-Datenfutter (Case Studies, Glossar, Vorlagen)
-- `index.html` — Site-Einstieg (Single-Page)
-- `vault/` — Grounded-Vault-Instanz: die Evidenzschicht des Methodenpapers (Quellen, Destillate, Claims)
-- `404.html` — Subpath-Routing-Fallback
-- `.nojekyll` — Pflichtdatei, damit GitHub Pages `_content/` ausliefert
-- `CLAUDE.md` — Action-Layer für Coding-Sessions
+The full argument is the method paper rendered on the site; a German overview is at [dhcraft.org/Promptotyping/#ueberblick](https://dhcraft.org/Promptotyping/#ueberblick).
 
-Maschinenlesbarer Zugriff: Vorlagen und Inhalte sind als statisches Markdown abrufbar, Muster `https://dhcraft.org/Promptotyping/_content/promptotyping-document/{slug}.md` (Details in `knowledge/specification.md`, ADR-10).
+## What is in this repository
 
-## Methodisches
+| Content | Location | On the site |
+|---|---|---|
+| Method paper (English, in progress) | [knowledge/paper.md](knowledge/paper.md), steering in [knowledge/paper-writing.md](knowledge/paper-writing.md) | published sections under [_content/paper/](_content/paper/) |
+| Evidence layer of the paper (Grounded Vault) | [vault/](vault/) | — |
+| Promptotyping Document templates | [_content/promptotyping-document/](_content/promptotyping-document/) | [#vorlagen](https://dhcraft.org/Promptotyping/#vorlagen) |
+| Convention (frontmatter schema, structure) | [_content/konvention.md](_content/konvention.md) | [#konvention](https://dhcraft.org/Promptotyping/#konvention) |
+| Technology baseline for static research tools (draft) | [_content/technology-baseline.md](_content/technology-baseline.md) | — |
+| Curated case studies | [data/case-studies.json](data/case-studies.json), depth pages in [_content/case-studies/](_content/case-studies/) | [#use-cases](https://dhcraft.org/Promptotyping/#use-cases) |
+| Method extensions from practice | [_content/praxis.md](_content/praxis.md) | [#praxis](https://dhcraft.org/Promptotyping/#praxis) |
+| Reusable system prompts (coding, writing) | [_content/skills/](_content/skills/) | [#skills](https://dhcraft.org/Promptotyping/#skills) |
+| Glossary | [data/glossar.json](data/glossar.json), [_content/glossar.md](_content/glossar.md) | [#glossar](https://dhcraft.org/Promptotyping/#glossar) |
+| Site knowledge base (self-application) | [knowledge/](knowledge/) | — |
 
-Die Site ist gleichzeitig **Methodik-Spezifikation** und **Methodik-Anwendung**: Sie wendet Promptotyping auf sich selbst an. Die Wissensbasis im `knowledge/`-Ordner folgt den Vorlagen, die die Site selbst publiziert. Eine `data.md` existiert bewusst nicht, weil die Vorlage Datengrundlage nur für Projekte trägt, die Daten verarbeiten — die Materialgrundlage dieses Methoden-Repos steht in `knowledge/project.md`.
+### Templates
 
-## Beziehung zum Pollin-2026-Paper
+Fifteen templates structure the documents of a Promptotyping knowledge base. Each is addressable under a stable latest URL of the pattern `https://dhcraft.org/Promptotyping/promptotyping-document/{slug}` and readable as raw Markdown under the machine address pattern below. A template applies only when its trigger holds; a methods repository without data processing, like this one, skips `data`, and the reasoning is documented in its knowledge base.
 
-Das wissenschaftliche Methodenpaper entsteht in diesem Repo (`knowledge/paper.md`, Steuerung in `knowledge/paper-writing.md`); seine Evidenzschicht liegt als Grounded Vault unter `vault/`. Die Site spiegelt das Paper als interaktiven Lesefluss mit eingebettetem Glossar und versionierten Vorlagen-Ankern.
+| Slug | Function | Type |
+|---|---|---|
+| [index](_content/promptotyping-document/index.md) | Navigation and glossary of the knowledge base | Knowledge |
+| [project](_content/promptotyping-document/project.md) | Charter | Knowledge |
+| [data](_content/promptotyping-document/data.md) | Material | Knowledge |
+| [specification](_content/promptotyping-document/specification.md) | Specification (requirements, decisions) | Knowledge |
+| [user-stories](_content/promptotyping-document/user-stories.md) | Specification (narrative scenarios) | Knowledge |
+| [action-layer](_content/promptotyping-document/action-layer.md) | Agent instructions (`CLAUDE.md`) | Action |
+| [architecture](_content/promptotyping-document/architecture.md) | Architecture | Knowledge |
+| [domain-knowledge](_content/promptotyping-document/domain-knowledge.md) | Domain knowledge and reasoning layer | Knowledge |
+| [design](_content/promptotyping-document/design.md) | Design | Knowledge |
+| [testing](_content/promptotyping-document/testing.md) | Quality assurance | Knowledge |
+| [verification](_content/promptotyping-document/verification.md) | Adversarial verification of claims | Knowledge |
+| [journal](_content/promptotyping-document/journal.md) | Provenance | Process |
+| [plan](_content/promptotyping-document/plan.md) | Planning | Process |
+| [report](_content/promptotyping-document/report.md) | Reporting | Knowledge (snapshot) |
+| [integration](_content/promptotyping-document/integration.md) | Cross-project contracts and handoffs | Knowledge |
 
-## Lokale Entwicklung
+Template versions live in the mirrors' frontmatter and in [data/promptotyping-documents.json](data/promptotyping-documents.json); a sixteenth template (`technology`, for reusable technology baselines) exists as a [draft](_content/promptotyping-document/technology.md) pending catalogue inclusion.
+
+## Machine access
+
+Repositories that apply the method declare which template a document follows in a `template:` frontmatter field:
+
+```yaml
+template:
+  name: Vorlage Datengrundlage
+  version: 0.2
+  url: https://dhcraft.org/Promptotyping/promptotyping-document/data
+  alias: https://dhcraft.org/Promptotyping/#promptotyping-document-data
+```
+
+The `url` resolves in a browser via `404.html` routing and requires JavaScript. For HTTP retrieval without JavaScript, the canonical machine address is the static Markdown file:
+
+```
+https://dhcraft.org/Promptotyping/_content/promptotyping-document/{slug}.md
+```
+
+`.nojekyll` in the repository root is required for GitHub Pages to publish `_content/`. Details in [knowledge/specification.md](knowledge/specification.md) (A4, A5, ADR-10).
+
+## Self-application
+
+The site is both specification and application of the method. The knowledge base in [knowledge/](knowledge/) follows the templates the site publishes, each document carrying the `template:` field that points back to its own specification. The paper's supporting claims are anchored in the Grounded Vault under [vault/](vault/), which links every claim to a source with provenance.
+
+## Repository layout
+
+```
+index.html        single-page entry, renders the interactive paper
+404.html          subpath-to-hash routing fallback
+knowledge/        knowledge base of the site itself, plus the method paper
+_content/         Markdown content (paper sections, templates, case studies, glossary)
+assets/           CSS, JS, vendored libraries, fonts, logo
+data/             JSON data (case studies, glossary, template table)
+vault/            Grounded Vault instance, evidence layer of the paper
+```
+
+No framework, no build step; marked.js and js-yaml are vendored. The reasoning is documented in the [technology baseline](_content/technology-baseline.md).
+
+## Local development
 
 ```bash
 git clone https://github.com/DigitalHumanitiesCraft/Promptotyping.git
@@ -38,26 +97,14 @@ cd Promptotyping
 python -m http.server 8000
 ```
 
-Browser auf http://localhost:8000.
+Open http://localhost:8000. Development history is in [knowledge/journal.md](knowledge/journal.md).
 
-## Stand
+## Citation
 
-Refactor zu interaktivem Paper, Mai bis Juni 2026.
+Pollin, Christopher; Steiner, Christian: Promptotyping. Zenodo. https://doi.org/10.5281/zenodo.14160875 (concept DOI, always resolves to the current version)
 
-- Phase 0 (Vault-Reparatur): abgeschlossen
-- Phase 2 (Repo-Inventur, Bereinigung): abgeschlossen
-- Phase 3 (`knowledge/`-Wissensbasis befüllen): abgeschlossen, einschließlich Critical-Expert-Refactor (Vorlagen-Trigger-Korrektur)
-- Phase 4 (Implementation): abgeschlossen 2026-06-10; offen sind Human Review der Phasen-Klassifizierung und der gespiegelten Inhalte sowie der Live-Test nach Deploy
+Method article: Pollin, Christopher: Promptotyping. Zwischen Vibe Coding, Vibe Research und Context Engineering. In: L.I.S.A. Wissenschaftsportal der Gerda Henkel Stiftung, 17.01.2026, https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin
 
-Verlauf in [knowledge/journal.md](knowledge/journal.md).
+## Licence
 
-## Zitation
-
-Pollin, Christopher; Steiner, Christian: Promptotyping. Zenodo. https://doi.org/10.5281/zenodo.14160875 (Concept-DOI, zeigt immer auf die aktuelle Version)
-
-Methodenartikel: Pollin, Christopher: Promptotyping. Zwischen Vibe Coding, Vibe Research und Context Engineering. In: L.I.S.A. Wissenschaftsportal der Gerda Henkel Stiftung, 17.01.2026, https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin
-
-## Lizenz
-
-Inhalte: CC BY 4.0
-Code: MIT
+Content: CC BY 4.0. Code: MIT.

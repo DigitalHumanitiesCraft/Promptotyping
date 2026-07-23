@@ -35,6 +35,8 @@ Nachtrag 2026-07-19 (Vault-Vorlagen-Sweep): Sechs weitere Vorlagen gespiegelt un
 
 Jede Datei traegt im Frontmatter `title, slug, version, status, source, mirrored, machine-url`.
 
+Nachtrag 2026-07-23: `promptotyping-document/technology.md` liegt als Entwurf (Vorlage Technology, v0.1, status draft) im Vorlagen-Ordner. Die Datei ist kein Vault-Spiegel, sondern eine Repo-Erstfassung; die vault-first-Aufnahme in den Katalog steht aus. Bis dahin ist der Slug nicht Teil des freigegebenen Katalogs und nicht in `data/promptotyping-documents.json`, im `CLAUDE.md`-Anker-Schema oder in der Vorlagen-Sektion der Site verdrahtet. Zusaetzlich traegt `technology-baseline.md` (repo-kanonisch, status draft) die Technology Baseline fuer die Artefaktfamilie der statischen Web-Tools, die operative Langform der technischen Guidelines aus dem Methodenpaper (Sektion 4.1); Site-Verdrahtung offen, erreichbar ueber die Maschinenadresse.
+
 ## Konvention
 
 | Datei | Vault-Quelle | Version |

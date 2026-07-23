@@ -459,3 +459,26 @@ Nicht angetastet: `verification-paper-figures.md` bleibt, weil die Grounded-Vaul
 ### Dead Ends
 
 Keine.
+
+## 2026-07-23 — Technology Baseline, Vorlagen-Entwurf Technology, README-Neufassung
+
+### Ziel der Session
+
+Aus der Operator-Frage nach einem README, das das Repo als Methoden-Spezifikation abbildet, entstand die Idee eines projektunabhängigen Technologie-Wissensdokuments (Meta-Wissen zu statischen Webseiten als Forschungstools, Vanilla-Argumentation, Abhängigkeits-Politik, Nachhaltigkeit). Zusätzlich Abgleich des Papers gegen einen früheren Outline-Entwurf des Operators ("Making Research Data Explorable", Abstract plus Gliederung).
+
+### Verlauf
+
+Abgleich alter Entwurf gegen `paper.md`: alle tragenden Referenzziele des Entwurfs sind im heutigen Paper vorhanden (Drucker, Whitelaw, Hinrichs, Windhager, Galey/Ruecker, Koolen, Edmond, Siemens, Kemman, Star/Griesemer, Boundary Objects), die Übersetzungsthese ist vom Sektionsthema (2.4 des Entwurfs) zum Titel- und Theoriekern aufgestiegen, die Speed/Feasibility-Rahmung ist auf Operator-Entscheidung durch den Möglichkeits-Claim ersetzt. Die im Entwurf vorgesehenen technischen Guidelines (Sektion 4) existieren im Paper nur komprimiert (4.1); ihre operative Langform fehlte bislang und ist genau das heute konzipierte Baseline-Dokument.
+
+Drei Entwürfe erzeugt, uncommitted zur Operator-Verifikation: `_content/technology-baseline.md` (Technology Baseline für die Artefaktfamilie statisches Web-Tool, deutsch, aligned mit Paper 4.1/4.3 einschließlich der Vier-Kriterien-Kompromissregel), `_content/promptotyping-document/technology.md` (Vorlagen-Entwurf Technology, Version 0.1, status draft; strukturiert Baseline-Dokumente als wiederverwendbare Knowledge Documents mit Referenz- und Abweichungsmechanismus), `README.md` neu als Landkarte des Repos (Methode kompakt, Inhalts-Inventar, Vorlagen-Tabelle ohne volatile Versionsspalte, Maschinenzugriff mit `template:`-Schema und Maschinenadresse, Selbstanwendung).
+
+### Offen
+
+- Vorlage Technology vault-first in den Katalog aufnehmen (echte Vault-Session); bis dahin ist der Slug `technology` nicht Teil des freigegebenen Katalogs und nicht in `data/promptotyping-documents.json`, `CLAUDE.md`-Anker-Schema und Vorlagen-Sektion der Site verdrahtet.
+- Site-Verdrahtung der Technology Baseline entscheiden (eigener Anker oder nur Maschinenadresse).
+
+Nachtrag: Commit-Freigabe durch den Operator am 2026-07-23; damit ist die README-Neufassung englisch entschieden und `_content/MANIFEST.md` um beide neue Dateien ergänzt.
+
+### Dead Ends
+
+Keine.
