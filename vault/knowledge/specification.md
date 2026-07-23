@@ -9,7 +9,7 @@ method:
 status: draft
 language: en
 created: "2026-07-19"
-updated: "2026-07-19"
+updated: "2026-07-23"
 related: [index, schema, operations]
 ---
 
@@ -26,7 +26,7 @@ This vault grounds the Promptotyping paper. The deliverable is the paper maintai
 | Parameter | Value |
 |---|---|
 | Topic | The evidence base of the Promptotyping paper |
-| Topic backbone | Genealogy, Method, Evidence, Concepts, Limitations |
+| Topic backbone | Genealogy, Method, Evidence, Concepts, Limitations, Frame, ArtefactVerification |
 | Active source types | document, publication, data |
 | Deliverable genre | scholarly synthesis |
 | Chapter register | see [[knowledge/state]] |
@@ -46,3 +46,5 @@ English scholarly prose in the register of the paper. Figures follow the paper's
 - 2026-07-19: Vault instantiated from the Grounded Vault template on operator instruction; the parking of a paper-work instantiation recorded in the Promptotyping repo's plan is lifted.
 - 2026-07-19: The deliverable stays canonical in `_content/paper/` at the root of this repository; `30_deliverable/` holds no copy. The chapter register in [[knowledge/state]] maps sections to claims. Deviation from the template default, to avoid drift between two copies of the paper.
 - 2026-07-19: Topic backbone set to Genealogy, Method, Evidence, Concepts, Limitations.
+- 2026-07-23: Scope extended by operator decision to full bibliography traceability. Every work the paper cites in its References is registered in [[knowledge/register-paper-sources]], and every accessible one is ingested as a publication source, distilled towards the statements the paper takes from it, and grounded through claims. Footnote-only resources (tools, videos, standards, repositories) stay outside intake, since the `source-type` vocabulary does not cover them and the paper uses them as tool evidence rather than as statement support.
+- 2026-07-23: Topic backbone extended by Frame (the Section 2 discourses) and ArtefactVerification (Sections 4 and 6.2), to give the bibliography claims reachable topic maps.
