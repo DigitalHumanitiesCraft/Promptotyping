@@ -5,11 +5,11 @@ project:
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 status: complete
 language: de
-version: 0.3
+version: 0.4
 created: 2026-05-09
-updated: 2026-07-19
+updated: 2026-07-23
 authors: [Christopher Pollin]
-generated-with: Claude Code mit Claude Opus 4.7
+generated-with: Claude Code mit Claude Fable 5
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
@@ -27,7 +27,7 @@ Navigation und Begriffslexikon der Wissensbasis dieses Repos. Das Repo `DigitalH
 
 ## Wissensbasis-Inhalt
 
-Acht Promptotyping-Documents:
+Elf Promptotyping-Documents:
 
 - **INDEX** (dieses Dokument) — Navigation und Begriffslexikon
 - **[project.md](project.md)** — was die Site werden soll, wer die Adressaten sind, Materialgrundlage, Stand
@@ -37,6 +37,9 @@ Acht Promptotyping-Documents:
 - **[journal.md](journal.md)** — chronologischer Verlauf des Refactors
 - **[plan.md](plan.md)** — vorwärts gerichtete Steuerung der Paper-Revision (Genealogie, Standardisierung) und der abgeleiteten Ausgaben (Blogpost, Site-Sektionen, Vault-Abgleich)
 - **[verification-paper-figures.md](verification-paper-figures.md)** — datierter Verifikationsbefund (Snapshot) zu den quantitativen Angaben der Paper-Sektion 4; nach vollständiger Einarbeitung vom Paper abgelöst
+- **[paper-outline.md](paper-outline.md)** — Gliederung und Einarbeitungsplan der Paper-Zusammenführung (Fassung `_content/paper/` plus Operator-Draft) zur v2
+- **[paper-draft-explorable-2026-07-23.md](paper-draft-explorable-2026-07-23.md)** — Snapshot des Operator-Drafts "Making Research Data Explorable", zweite Quelle der Zusammenführung
+- **[paper-v2-draft.md](paper-v2-draft.md)** — zusammengeführte Vollfassung des Papers als ein Dokument, Arbeitsstand zur Operator-Lektüre; nach Freigabe Zerlegung in `_content/paper/`
 
 Eine `data.md` existiert bewusst nicht. Die Vorlage Datengrundlage trägt für Methoden-Repos nicht; die Materialgrundlage steht in `project.md`. Begründung im Eintrag vom 2026-05-09 in [journal.md](journal.md).
 

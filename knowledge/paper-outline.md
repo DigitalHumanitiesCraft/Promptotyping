@@ -83,7 +83,7 @@ Möglichkeitsbehauptung in der weichen Form: Einzelforscher und kleine Teams kö
 
 ## Entscheidungsstand
 
-Vom Operator entschieden (Sessions 2026-07-23): Prototypen statt "bauen"; Datenkonditionierung mit Zwei-Achsen-Differenzierung; Effizienz-Disclaimer auf einen Satz; kein Superlativ, Schwierigkeitsprofil und positionale Begründung; RSE einarbeiten (vier Stellen); Tool-Positivismus-Absage; Semantic-Web-Linie mit Inferenz-Bremse; Workshop-2023-Wegpunkt; Profession-Schutzklausel.
+Vom Operator entschieden (Sessions 2026-07-23): Prototypen statt "bauen"; Datenkonditionierung mit Zwei-Achsen-Differenzierung; Effizienz-Disclaimer auf einen Satz; kein Superlativ, Schwierigkeitsprofil und positionale Begründung; RSE einarbeiten (vier Stellen); Tool-Positivismus-Absage; Semantic-Web-Linie mit Inferenz-Bremse; Workshop-2023-Wegpunkt; Profession-Schutzklausel; das Konzept epistemic infrastructure fliegt aus dem Paper (Promptotyping und der `knowledge/`-Ordner sind nur Teil einer epistemischen Infrastruktur, das Konzept bekommt keine eigene Sektion; die Interface-Typologie steht ohne den Infrastruktur-Überbau in 4.2).
 
 Als Empfehlung umgesetzt, revidierbar nach Lektüre der v2:
 

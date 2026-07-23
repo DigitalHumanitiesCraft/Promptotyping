@@ -5,11 +5,11 @@ project:
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 status: active
 language: de
-version: 0.3
+version: 0.4
 created: 2026-05-09
-updated: 2026-07-19
+updated: 2026-07-23
 authors: [Christopher Pollin]
-generated-with: Claude Code mit Claude Opus 4.7
+generated-with: Claude Code mit Claude Fable 5
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
@@ -24,6 +24,12 @@ related: [INDEX, project, specification, architecture, design]
 # Journal
 
 Chronologische Dokumentation des Refactor-Verlaufs.
+
+## 2026-07-23 — Paper-Zusammenführung zur v2
+
+Der Operator übergab einen neuen vollständigen Working Draft v1 des Papers ("Making Research Data Explorable through Iterative Context and Agentic Engineering") mit eigenem Theorierahmen (Exploration als Forschung, Drucker, boundary objects, Möglichkeitsbehauptung). In mehreren Diskussionsrunden wurde die Zusammenführung mit der bestehenden Fassung `_content/paper/00–07` entschieden und gesteuert; die Entscheidungen sind in `paper-outline.md` (Entscheidungsstand) festgehalten. Wesentliche Weichenstellungen: Prototypen statt "bauen", Zwei-Achsen-Differenzierung von Semantikreichtum und Tokenökonomie der Forschungsdaten ("das Modell liest über die Daten und schreibt Code, der die Daten liest"), Research Software Engineering als vierte Antwort auf das Übersetzungsproblem und als Übergabepunkt, Semantic-Web-Linie bis Berners-Lee 2025 mit Inferenz-Bremse, Absage an Tool-Positivismus und Deskilling-Lesart, kein Superlativ, Funktions-Typologie (Verification, Exploration, Edition, Capture, Audit) als die Typologie des Papers, Konzept epistemic infrastructure aus dem Paper entfernt.
+
+Angelegt: `paper-draft-explorable-2026-07-23.md` (Snapshot des Operator-Drafts), `paper-outline.md` (Gliederung und Einarbeitungsplan), `paper-v2-draft.md` (zusammengeführte Vollfassung als ein Dokument, wartet auf Operator-Lektüre). Das Zielbild von `plan.md` (additive Revision) ist durch die Zusammenführung überholt und nach Freigabe der v2 anzupassen; M3-Verifikationszahlen und M6-Standardisierungsstufe sind in die v2 eingeflossen.
 
 ## 2026-05-09 — Phasen 0, 2, 3 in einer Session, danach Critical-Expert-Korrektur
 
