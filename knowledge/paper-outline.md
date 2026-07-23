@@ -36,7 +36,7 @@ Die nächste Vollfassung entsteht als ein einzelnes englisches Markdown-Dokument
 
 ## Gliederung der v2
 
-**Titel:** "Promptotyping. Making Research Data Explorable through Iterative Context and Agentic Engineering" [Draft, Operator-Titel; Alternative "A Context Engineering Method for Building Research Artifacts with Frontier LLMs" bleibt als Option im Entscheidungsstand].
+**Titel:** "Promptotyping. Translating Research Data into Research Artefacts with Context and Agentic Engineering" (Operator-Entscheidung 2026-07-23; "iterative" entfällt, "Explorable" durch die Übersetzungs-Lesart ersetzt, die zugleich der theoretische Kern in Sektion 2.4 ist).
 
 **Abstract** [Neu, zuletzt schreiben].
 
