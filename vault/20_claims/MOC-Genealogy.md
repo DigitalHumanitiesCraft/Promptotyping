@@ -2,7 +2,7 @@
 type: moc
 topic: "Genealogy"
 created: 2026-07-19
-updated: 2026-07-19
+updated: 2026-07-23
 ---
 
 # MOC: Genealogy
@@ -17,3 +17,10 @@ Claims about the method's origin and side lines: the dissertation as origin (use
 - [[20_claims/promptotyping-documentation-over-software]] — from its first description the method set documentation of requirements above finished software (also under Method).
 - [[20_claims/prism-configures-reasoning-via-parameterised-document]] — the PRISM prompt configures reasoning through a parameterised context document with rated alternatives and recursive descent.
 - [[20_claims/prism-taught-summer-school-2025-09]] — PRISM featured in the Day 2 advanced-prompting session of the September 2025 LLM summer school.
+
+Added with the bibliography-traceability sweep of 2026-07-23:
+
+- [[20_claims/szd-experiment-structured-vibe-coding]] — The Stefan Zweig Digital experiment produced a tool in two hours and turned on reducing complexity
+- [[20_claims/field-literature-records-llm-code-generation-and-tei-agent-line-by-2024]] — The field's own literature records LLM code generation for edition publishing systems in September 2024 and the teiCrafter, teiModeler, teiVerifier line of TEI-generation tools
+- [[20_claims/deep-dive-process-documented-2019]] — The deep-dive process and the Group class were documented in 2019, ahead of the dissertation
+- [[20_claims/applied-genai-dh-workshop-series-2024]] — An applied-generative-AI-in-the-humanities workshop series was released as a versioned archive by February 2024
