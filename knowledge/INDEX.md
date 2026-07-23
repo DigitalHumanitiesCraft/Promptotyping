@@ -18,7 +18,7 @@ template:
   version: 0.2
   url: https://dhcraft.org/Promptotyping/promptotyping-document/index
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-index
-related: [project, specification, architecture, design, journal, paper, paper-writing, report, submission-zfdg]
+related: [project, specification, architecture, design, journal, paper, paper-writing, report, submission-zfdg, revision-knowledge]
 ---
 
 # INDEX
@@ -41,6 +41,7 @@ By operator decision of 2026-07-23 the core knowledge documents (INDEX, project,
 - **[paper-writing.md](paper-writing.md)** — the knowledge about writing the paper: working mode, core statements, language rules, decision state, checkpoints, German.
 - **[report.md](report.md)** — snapshot report of the lane run towards the ZfdG submission (2026-07-23), German; not updated further.
 - **[submission-zfdg.md](submission-zfdg.md)** — submission package for the Zeitschrift für digitale Geisteswissenschaften: exposé with outline and literature selection, short abstracts in German and English, formalities checklist; German.
+- **[revision-knowledge.md](revision-knowledge.md)** — steering knowledge for the paper revision: problem fields from an external review as hypotheses, working principles, four-phase process with operator gate; German. Audit reports land as `revision-audit-{a0..a3}.md`, operator decisions as `revision-decisions.md`.
 
 The paper work follows a two-document model, the text in `paper.md` and the knowledge about it in `paper-writing.md`. A `data.md` deliberately does not exist; the Material template does not carry for method repositories, and the material basis lives in `project.md` (journal entry of 2026-05-09).
 
