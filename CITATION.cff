@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use the Promptotyping method, please cite it as below."
-title: "Promptotyping: Zwischen Vibe Coding, Vibe Research und Context Engineering"
+title: "Promptotyping"
 authors:
   - family-names: Pollin
     given-names: Christopher
@@ -16,7 +16,10 @@ identifiers:
     description: "Concept DOI, resolves to the latest Zenodo version"
   - type: url
     value: "https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin"
-    description: "Published method paper (Pollin 2026, L.I.S.A. Wissenschaftsportal)"
+    description: "Blog post introducing the method (Pollin 2026, L.I.S.A. Wissenschaftsportal)"
+  - type: url
+    value: "https://unipub.uni-graz.at/obvugrhs/12127700"
+    description: "Dissertation in which the method originates (Pollin 2025, University of Graz)"
 url: "https://dhcraft.org/Promptotyping/"
 repository-code: "https://github.com/DigitalHumanitiesCraft/Promptotyping"
 keywords:
