@@ -499,6 +499,27 @@ Konsolidierter Stichtagsbericht [report.md](report.md) mit sechzehn abnahmeferti
 
 Keine; die amerikanische Schreibungs-Empfehlung des Stilprofils wurde vom Operator überstimmt (britisch bleibt), dokumentiert statt umgesetzt.
 
+## 2026-07-23 — Fertigstellung des Papers: Umbau, Finalrunde, Politur, Einreichpaket
+
+### Kontext
+
+Fortsetzung nach Kontext-Kompaktierung. Der laufende Umbau-Agent (Lane A-3) hatte die Kompaktierung nicht überlebt und die Sektion 3.3 halb zerlegt hinterlassen (Stachowiak/Gruber-Absätze gelöscht, neue 3.4 nie eingefügt); das Material war aus dem Git-HEAD vollständig rekonstruierbar.
+
+### Verlauf
+
+Vier Opus-Runden auf `paper.md`, jeweils vom Koordinator gegen den realen Dateistand verifiziert:
+
+1. **Umbau vollendet + Finalrunde A-4** (`cc34357`, `75747f8`): neue Sektion 3.4 „Documents as Conceptual Models" mit Brückensatz Repräsentations-/Übersetzungskette, Worked Example nach 3.5, alle Querverweise; operator-freigegebener Abstract und Introduction wortgleich eingesetzt (skriptgeprüft), Verflüssigung über Sektionen 2–7, Listen-Umbauten 4.1/5.3, Satzteilungen 3.3/4.2/5.2.
+2. **Finalrunde Marker und Apparat** (`e8b41bd`): alle Klammermarker aufgelöst (Berners-Lee ohne Seitenangabe, Attributions- und Anker-Klammer 2.4 gestrichen, 4.3 qualitativ, 5.1 umformuliert; Operator-Regel: nie Seitenzahlen); Referenzen bibliographisch verifiziert und vervollständigt (Opus-Recherche, u.a. Grallert final in DHQ 20.1 mit sechster Autorin, Liu bei TOSEM angenommen und in 2.5 zitiert); Fußnoten Karpathy/Notker/teiCrafter; Video-Absatz 3.2 (Iterationspraktiken, beide Einführungsvideos); Ethik-Absatz 6.4 (asymmetrische Amplifikation, bewusste kritische Auseinandersetzung mit proprietären Frontier-Systemen, Pollin 2026a/b umbuchstabiert); Acknowledgements (Selbstanwendung, Modelle, Verantwortungsklausel); Audit-Fallblock aus 5.3 auf Operator-Entscheidung entfernt (FemPrompt bleibt im Inventar).
+3. **Politur** (`f5fb3cd`): fünf Redundanzschnitte (Token-Ökonomie auf 2.3 zentriert, Double Addressee, Kapazitätsmauer, Evidenz-Vorbehalt, Drucker-Bullet), drei leere Etikettsätze gestrichen, Commit-Zahlen und „22 universities" als flüchtige Aktivitätsquantitäten entfernt, Standards-Fußnoten nach Operator-Regel (TEI, XML, RDF, OWL, TaDiRAH; RiC-O/CMIF in bestehenden Fußnoten; Alltagsformate ausgenommen, Regeln 20/21 in paper-writing.md), Glossen Kurrent/Reasoning-Model/vendored, Kursiv-Regel normalisiert, 3.4 und 5.2 strukturell geteilt; 5.2-Formationsphase konzeptionell kollektiv gefasst (Komponenten-zu-Projekt-Zuordnung bewusst nicht behauptet); ZBZ-Fußnote (öffentliches Frontend, Repo pending Partner-Freigabe) und Teaching-Case-Belege (ACDH-CH AI Winter School 17.02.2026 mit OSF-Datensatz; Museumsbund-Workshop NHM Wien 24.04.2026 mit Referenz-Screencast) aus dem Vault recherchiert und verifiziert.
+4. **Koordinator-Nachtrag**: Bookkeeping Ontology mit Pollin 2019 (RODBH, CEUR-WS) zitiert, DEPCHA-Fußnote; Kreuzcheck der Selbstzitationen gegen chpollin.github.io ohne Lücken.
+
+Parallel: ZfdG-Einreichpaket `submission-zfdg.md` (`a8025bf`) mit Exposé (487 Wörter), Kurz-Abstracts DE 731 / EN 739 Zeichen (Limits programmatisch verifiziert), Formalia-Checkliste; Review-Modus-Entscheidung auf Operator-Wunsch aus dem Repo in die Vault-ACTIVE-WORK verlagert.
+
+### Ergebnis
+
+`paper.md` ist vollständiger Draft zur Operator-Lektüre: null offene Marker, 28 balancierte Fußnoten, verifizierte Referenzen, End-Verifikation gegen die vier Kernverbote bestanden. Google-Docs-Übergabe über die headerlose Datei.
+
 ### Dead Ends
 
-Keine.
+Der 2.4-Evidenz-Anker (Dokumentenset als Partner-Kommunikation) wurde gegen den dokumentierten Bestand geprüft und nicht gefunden; die Klammer wurde ersatzlos gestrichen statt überclaimt.
