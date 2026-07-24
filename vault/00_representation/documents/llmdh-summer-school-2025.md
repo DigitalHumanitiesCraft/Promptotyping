@@ -34,7 +34,7 @@ Summer School on Large Language Models for Digital Humanities Research, Septembe
 
 ## Section 2 — Prompt Engineering & AI Engineering (Day 2)
 
-Advanced Prompting Techniques. 14:00-15:30. PRISM, Kaskade and other advanced prompting techniques ^advanced
+Advanced Prompting Techniques. 14:00-15:30. Advanced prompting techniques ^advanced
 
 ## Resources
 

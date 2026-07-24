@@ -193,8 +193,6 @@ Diss: SCD (UCD + RE) ──► Personas, User Stories ──► Datenmodelle, Bo
 ──► Frontier-Modelle ändern Kostenstruktur genau dieses letzten Schritts
 ──► requirements.md = Fortsetzung von SCD; data.md = Fortsetzung der Datenmodellierung
 ──► Herkunft aus den Humanities; SDD konvergierte später von der anderen Seite
-Seitenlinie PRISM ──► Prozesseinsicht: Modellverhalten wird über Kontextdokumente
-konfiguriert ──► Vorläufer der Agent Socialisation (3.3)
 ```
 
 Status: unbestätigt

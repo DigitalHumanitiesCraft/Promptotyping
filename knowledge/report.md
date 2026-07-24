@@ -27,11 +27,11 @@ Stichtagsbericht zum parallelen Lane-Durchgang vom 2026-07-23 mit dem Ziel, das 
 
 ## Tätigkeiten im Berichtszeitraum
 
-Sieben Opus-Subagenten in zwei Wellen, dazu Koordinator-Arbeit (Fable 5). Welle 1, ZfdG-Venue-Analyse: KI-Workflow-Cluster (sechs Artikel), FDM-Cluster (sechs Artikel), Stil- und Formprofil (sechs Beiträge plus offizielle Vorgabenseiten). Welle 2, Lanes: A Paper-Durchgang (Lucina-Ausbau, Sprachpass 3–7, Referenzen), B Site-Konzeptvarianten (read-only), C FAIR-Infrastruktur (LICENSE, Licence-Abschnitt), E Novelty- und Schöch-Recherche (read-only). Koordinator: Venue-Entscheidung ZfdG dokumentiert, Formalia und tragende Zitate an Originalquellen gegengeprüft, PRISM-Streichung in 2.6 ausgeführt, `project.md`-Stand nachgezogen, Entscheidungen in `paper-writing.md` eingetragen.
+Sieben Opus-Subagenten in zwei Wellen, dazu Koordinator-Arbeit (Fable 5). Welle 1, ZfdG-Venue-Analyse: KI-Workflow-Cluster (sechs Artikel), FDM-Cluster (sechs Artikel), Stil- und Formprofil (sechs Beiträge plus offizielle Vorgabenseiten). Welle 2, Lanes: A Paper-Durchgang (Lucina-Ausbau, Sprachpass 3–7, Referenzen), B Site-Konzeptvarianten (read-only), C FAIR-Infrastruktur (LICENSE, Licence-Abschnitt), E Novelty- und Schöch-Recherche (read-only). Koordinator: Venue-Entscheidung ZfdG dokumentiert, Formalia und tragende Zitate an Originalquellen gegengeprüft, Streichung der Reasoning-Prompt-Seitenlinie in 2.6 ausgeführt, `project.md`-Stand nachgezogen, Entscheidungen in `paper-writing.md` eingetragen.
 
 ## Status quo
 
-**Paper** (`knowledge/paper.md`): Introduction und Sektion 2 waren durch; der Sprachpass 3–7 ist gelaufen, das Edition-Exemplar 5.3 ist die Notker-Edition (faktenverifiziert am realen Repo `DigitalHumanitiesCraft/notker-edition`), Lucina ist vollständig entfernt, PRISM ist vollständig entfernt, zehn von elf offenen Referenzen sind quellengeprüft gefüllt. Es bleiben die in [paper-writing.md](paper-writing.md) geführten Prüfpunkte, darunter Abstract-Neufassung (zuletzt), Quantitäten-Bereinigung, Diss-Seitenzahlen, Grallert-Heftangabe.
+**Paper** (`knowledge/paper.md`): Introduction und Sektion 2 waren durch; der Sprachpass 3–7 ist gelaufen, das Edition-Exemplar 5.3 ist die Notker-Edition (faktenverifiziert am realen Repo `DigitalHumanitiesCraft/notker-edition`), Lucina ist vollständig entfernt, die Reasoning-Prompt-Seitenlinie ist vollständig entfernt, zehn von elf offenen Referenzen sind quellengeprüft gefüllt. Es bleiben die in [paper-writing.md](paper-writing.md) geführten Prüfpunkte, darunter Abstract-Neufassung (zuletzt), Quantitäten-Bereinigung, Diss-Seitenzahlen, Grallert-Heftangabe.
 
 **Repository**: LICENSE (MIT plus CC-BY-4.0-Inhaltsklausel), präziser Licence-Abschnitt, `CITATION.cff` konsistent mit `license: MIT`, README als Landkarte inklusive Paper-Abschnitt, Videos, Use-Case-Verweis. Technology Baseline und Vorlagen-Entwurf Technology liegen als publizierte Entwürfe.
 
@@ -97,7 +97,7 @@ Operator-Entscheidungen (zurückgestellt am 2026-07-23, hier geführt bis zur En
 Arbeitsschritte ohne Operator-Input (nächste Sessions):
 
 - Einarbeitung der abgenommenen Kandidaten (Lane-A-Folgeauftrag), danach Abstract-Neufassung und Quantitäten-Bereinigung, dann Exposé-Entwurf (deutsch oder englisch, max. 1.000 Wörter).
-- Grounded-Vault-Nachzieh-Runde: Chapter-Register auf das Zwei-Dokumente-Modell, drei dort notierte Paper-Korrekturen (llmdh-Fußnotenwortlaut "Advanced Prompting Techniques" und Datum 8.–11.09.2025; Köln-Standort nur host-gestützt; Metadatenstandard-Frage nicht im Blogpost 2025 belegt, Formulierung in 3.3 weichziehen), SDD-Datierung als Quelle, PRISM-Fußnotenvorschlag als obsolet markieren.
+- Grounded-Vault-Nachzieh-Runde: Chapter-Register auf das Zwei-Dokumente-Modell, drei dort notierte Paper-Korrekturen (llmdh-Fußnotenwortlaut "Advanced Prompting Techniques" und Datum 8.–11.09.2025; Köln-Standort nur host-gestützt; Metadatenstandard-Frage nicht im Blogpost 2025 belegt, Formulierung in 3.3 weichziehen), SDD-Datierung als Quelle.
 - Echte Vault-Session (Obsidian): Vorlage Technology und Vorlage Publication in den Katalog, Konventions-Update Maschinenadresse, Paper-Stand-Abgleich.
 - Site-Umsetzung der bestätigten Variante, danach Site-QA-Lane.
 

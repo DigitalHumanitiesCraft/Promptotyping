@@ -25,6 +25,10 @@ related: [INDEX, project, specification, architecture, design]
 
 Chronologische Dokumentation des Refactor-Verlaufs.
 
+## 2026-07-24 — Reasoning-Prompt-Seitenlinie vollständig getilgt (Operator-Entscheidung)
+
+Der Operator hat entschieden, dass die Reasoning-Prompt-Seitenlinie im Promptotyping-Projekt nicht mehr gebraucht wird und komplett zu tilgen ist. Aus dem Paper waren die Passage in 2.6 und ihre Fußnote bereits am 2026-07-23 gestrichen; jetzt sind auch die abgeleiteten Split-Dateien unter `_content/paper/` (Abstract, 2.6, Projekt-Insight in 4) und der Grounded Vault bereinigt. Im Vault wurden das Quelldokument, sein Distillat und die drei Genealogie-Claims gelöscht, die MOC-Genealogy und die Register nachgezogen, die Summer-School-Quelle wegen ihres eigenständigen Gehalts erhalten und von der Seitenlinie befreit. In den Steuerdokumenten (`paper-writing.md`, `report.md`) ist der Eigenname entfernt, der historische Vorgang bleibt als Streichung dokumentiert. Der Vault-Validator läuft sauber.
+
 ## 2026-07-23 — Subagenten-Runde: Sektion-2-Hierarchisierung, Gelenk-Konsistenz, Forschungsdaten-Definition
 
 Vierte Session des Tages. Aus den Prüfrunden über die Argument-Map (Paper-spricht-Simulation, Selbstkritik der Sektion 2) wurden fünf Verbesserungsergebnisse destilliert und über vier parallele Opus-Subagenten als Empfehlungen ausgearbeitet, danach auf Operator-Anweisung ("alles sofort Umsetzbare") eingebaut. Umgesetzt: (1) Forschungsdaten-Definition am Anfang von 2.3, Borgman 2015 als disziplinneutraler Genus, Schöch 2013 über die Dissertation als Humanities-Differentia; dabei Nebenbefund korrigiert, das Schwierigkeitsprofil in Sektion 1 zitierte verkürzt drei Faktoren, die Diss führt vier (human agency, context sensitivity, multiperspectivity, uncertainty, S. 35). (2) Gelenk-Konsistenz, der offene Scarcity-Marker in 2.4 ist als markierte Inferenz mit Sektion-1-Rückverweis aufgelöst, die Härtetest-Selbstbeschränkung steht jetzt an der Erstnennung in Sektion 1, der unbelegte Wirksamkeits-Komparativ in 4.2 ist ins belegte Flattening-Argument umgeformt. (3) Träger-Wechsel-Formel, 2.3 trägt die Auflösung der Spannung zwischen Semantic-Web-Kontinuität und Inversionsthese (die Explikationsarbeit zahlt aus, die Semantik überlebt den Trägerwechsel, entbehrlich wird nur das Format als alleiniger Träger), 3.3 verweist zurück. (4) Sektion-2-Hierarchisierung, Eröffnungsabsatz mit der Übersetzungs-Doppelung als Achse, drei ergänzte Einlösungssätze, gestraffte 2.4-Naht; die Argument-Map trägt jetzt eine Rolle-Zeile je Block (zwei Top-Träger K-1b und K-2.4a). (5) Die Selbstanwendungs-Episode bleibt auf Agent-Empfehlung außerhalb des Papertexts, dokumentiert in `paper-writing.md`. Referenzen Borgman und Schöch gesetzt.
@@ -35,7 +39,7 @@ Die Selbstanwendungs-Passage (Argument-Map-Episode als Beleg in 5.1 oder 6.2) wu
 
 ### Offen aus der Session
 
-Die Verbreiterung der Schöch-Schulter (Entwicklung des Humanities-Data-Begriffs 2013 bis 2025, Kandidaten Flanders/Jannidis 2019, Owens, Posner, Collections as Data/Padilla, Borgman-Humanities-Kapitel, Edmond 2020) war als Recherche-Subagent unterwegs und ist beim Sessionende noch nicht eingegangen; der Prüfpunkt steht in `paper-writing.md`. Ebenso offen die PRISM-Kürzungsentscheidung (Option A empfohlen) und die Operator-Durchsicht der Argument-Map-Blöcke.
+Die Verbreiterung der Schöch-Schulter (Entwicklung des Humanities-Data-Begriffs 2013 bis 2025, Kandidaten Flanders/Jannidis 2019, Owens, Posner, Collections as Data/Padilla, Borgman-Humanities-Kapitel, Edmond 2020) war als Recherche-Subagent unterwegs und ist beim Sessionende noch nicht eingegangen; der Prüfpunkt steht in `paper-writing.md`. Ebenso offen die Operator-Durchsicht der Argument-Map-Blöcke.
 
 ## 2026-07-23 — Theoriekette Modellierung, Argument-Map als Konzeptmodell des Papers
 
@@ -372,7 +376,7 @@ Keine.
 
 ### Ziel der Session
 
-Aus der Vault-Session (Diskussion PRISM-Genealogie, Delegations-These, Projektzuschnitt) den Steuerungs-Workstream für die Paper-Revision in der Wissensbasis verankern.
+Aus der Vault-Session (Diskussion Genealogie und Seitenlinie, Delegations-These, Projektzuschnitt) den Steuerungs-Workstream für die Paper-Revision in der Wissensbasis verankern.
 
 ### Verlauf
 
@@ -452,7 +456,7 @@ Restdrift der Repo-Wissensbasis beheben, parallel zur Aktualisierung des Prompto
 
 ### Verlauf
 
-`CLAUDE.md` URL-Anker-Schema von „Neun Slugs" auf fünfzehn gezogen (die sechs Sweep-Vorlagen Testing, Plan, Report, Domänenwissen, Verification, Integration ergänzt, Action-Layer-Entwurfsmarke entfernt). Den Status-Tracker in `plan.md` auf den realen Stand gebracht: M3 (Sektion-4-Zahlen) und M6 (Standardisierungsstufe) auf completed, die M5-Notiz um den erledigten PRISM-Atom-Punkt bereinigt, M12 (Vault-Abgleich) auf in progress mit dem heutigen Fortschritt (PRISM-Atom korrigiert, Promptotyping-Atom auf Paper-Stand, MOC aktualisiert). `HANDOFF.md` gelöscht, weil die Übergabenotiz vom 2026-07-19 inhaltlich überholt ist (Git-History sichert sie).
+`CLAUDE.md` URL-Anker-Schema von „Neun Slugs" auf fünfzehn gezogen (die sechs Sweep-Vorlagen Testing, Plan, Report, Domänenwissen, Verification, Integration ergänzt, Action-Layer-Entwurfsmarke entfernt). Den Status-Tracker in `plan.md` auf den realen Stand gebracht: M3 (Sektion-4-Zahlen) und M6 (Standardisierungsstufe) auf completed, die M5-Notiz um den erledigten Seitenlinien-Atom-Punkt bereinigt, M12 (Vault-Abgleich) auf in progress mit dem heutigen Fortschritt (Seitenlinien-Atom korrigiert, Promptotyping-Atom auf Paper-Stand, MOC aktualisiert). `HANDOFF.md` gelöscht, weil die Übergabenotiz vom 2026-07-19 inhaltlich überholt ist (Git-History sichert sie).
 
 Nicht angetastet: `verification-paper-figures.md` bleibt, weil die Grounded-Vault-Representation seine GitHub-URL als `source:`-Identifier trägt.
 
@@ -489,7 +493,7 @@ Venue-Entscheidung für das Paper und paralleler Lane-Betrieb, um die Einreichun
 
 ### Verlauf
 
-E1 entschieden: ZfdG (nach Recherche-Abwägung gegen DHQ, IJDH, DSH, TGDK-SI). Sieben Opus-Subagenten: drei zur ZfdG-Venue-Analyse (KI-Cluster, FDM-Cluster, Stilprofil), vier als Lanes (A Paper-Durchgang mit Lucina→Notker-Ersatz, Sprachpass 3–7 und zehn verifizierten Referenzen, Commit `c07e65f`; B drei Site-Konzeptvarianten mit Empfehlung Hub-Variante; C LICENSE/Dual-Licensing, Commits `c28cb17`/`b0e933c`; E SDD-Datierung und Schöch-Anker, verifiziert). Koordinator-Verifikationen: ZfdG-Formalia an den offiziellen Seiten (Exposé-Pflicht, zweisprachiges Abstract je 750 Zeichen, Fußnoten-Kurzbeleg, CC BY-SA), vier tragende Zitate wörtlich am Volltext, Lane-Diffs am Git-Stand. Operator-Entscheidungen im Chat: britische Schreibung bleibt; PRISM vollständig aus 2.6 gestrichen (E2 damit entfallen); Berners-Lee-Passage bestätigt (Hörbuch, Gesamtzitation ohne Seitenzahl); organisatorische Punkte zurückgestellt. Scout-Nebenbefund mit Gewicht: die eigene ZfdG-Vorarbeit "When it was 2024" (2025_008) fehlte im Referenzverzeichnis, jetzt Kandidat höchster Priorität.
+E1 entschieden: ZfdG (nach Recherche-Abwägung gegen DHQ, IJDH, DSH, TGDK-SI). Sieben Opus-Subagenten: drei zur ZfdG-Venue-Analyse (KI-Cluster, FDM-Cluster, Stilprofil), vier als Lanes (A Paper-Durchgang mit Lucina→Notker-Ersatz, Sprachpass 3–7 und zehn verifizierten Referenzen, Commit `c07e65f`; B drei Site-Konzeptvarianten mit Empfehlung Hub-Variante; C LICENSE/Dual-Licensing, Commits `c28cb17`/`b0e933c`; E SDD-Datierung und Schöch-Anker, verifiziert). Koordinator-Verifikationen: ZfdG-Formalia an den offiziellen Seiten (Exposé-Pflicht, zweisprachiges Abstract je 750 Zeichen, Fußnoten-Kurzbeleg, CC BY-SA), vier tragende Zitate wörtlich am Volltext, Lane-Diffs am Git-Stand. Operator-Entscheidungen im Chat: britische Schreibung bleibt; die Reasoning-Prompt-Seitenlinie vollständig aus 2.6 gestrichen (E2 damit entfallen); Berners-Lee-Passage bestätigt (Hörbuch, Gesamtzitation ohne Seitenzahl); organisatorische Punkte zurückgestellt. Scout-Nebenbefund mit Gewicht: die eigene ZfdG-Vorarbeit "When it was 2024" (2025_008) fehlte im Referenzverzeichnis, jetzt Kandidat höchster Priorität.
 
 ### Ergebnis
 

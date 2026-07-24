@@ -59,4 +59,3 @@ The author's doctoral dissertation formulates scholar-centred design, walks the 
 
 - [[20_claims/MOC-Genealogy]]
 - [[20_claims/MOC-Concepts]]
-- [[10_distillates/documents/gm-dh-prism-prompt-2025-01]]

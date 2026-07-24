@@ -44,4 +44,5 @@ The DHCraft blog post of 24 April 2025 is the first public description that name
 
 ## Related
 
-- [[10_distillates/documents/gm-dh-prism-prompt-2025-01]]
+- [[20_claims/MOC-Genealogy]]
+- [[20_claims/MOC-Method]]
