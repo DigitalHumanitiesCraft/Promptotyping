@@ -149,7 +149,7 @@ The video-documented sessions show the iteration in operational detail. Implemen
 
 ### 3.3 The Promptotyping Documents
 
-The documents are the method's primary artefact. A recurring core set has stabilised across the documented projects, maintained in a `knowledge/` folder within the repository:
+A recurring core set of documents has stabilised across the documented projects, maintained in a `knowledge/` folder within the repository:
 
 - **`data.md`** describes the structure, semantics, formats, and idiosyncrasies of the research data, including its gaps and uncertainties. Typically produced by compressing exploratory data analysis into a compact description; from samples of the actual JSON, XML, or CSV, iterations extract and condense the structure.
 - **`requirements.md`** (in some projects `specification.md` or `user-stories.md`) holds functional and non-functional requirements, represented as user stories of scholarly work with acceptance criteria, the direct continuation of Scholar-Centred Design (Section 2.6).
