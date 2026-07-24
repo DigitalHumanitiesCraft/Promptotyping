@@ -5,9 +5,9 @@ project:
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 status: active
 language: de
-version: 0.4
+version: 0.5
 created: 2026-05-09
-updated: 2026-07-23
+updated: 2026-07-24
 authors: [Christopher Pollin]
 generated-with: Claude Code mit Claude Fable 5
 method:
@@ -24,6 +24,14 @@ related: [INDEX, project, specification, architecture, design]
 # Journal
 
 Chronologische Dokumentation des Refactor-Verlaufs.
+
+## 2026-07-24 — Wissensbasis auf den revidierten Papertext nachgezogen
+
+Nach dem Gesamtdurchgang der Revision (Rahmenwechsel, Auflösung von 3.4, neuer Abstract, überarbeiteter Evidenzteil, Begriffsauflösung von *instrument* zu *research artefact*) stand die Wissensbasis noch auf dem alten Text. Die tragende Entscheidung dieses Durchgangs ist die Trennung von kanonischem Text und ausgeliefertem Schnitt. Kanonisch ist `knowledge/paper.md`; die Zerlegung unter `_content/paper/` ist der Vor-Revisions-Stand der Site und wird erst bei der Freigabe neu geschnitten. `specification.md` (A1) und `architecture.md` halten das fest, einschließlich der Sektion Epistemic Infrastructure, die nur noch im ausgelieferten Schnitt existiert. Daraus folgte die Streichung der Zuordnung, die die Use-Case-Typologie der Galerie an eine Papersektion band, weil das Paper nur die fünf epistemischen Funktionen führt; die Neubasierung der Galerie ist als Site-Arbeit vermerkt. `INDEX.md` führt jetzt den tatsächlichen Bestand samt Revisionsdokumenten, und die zurückgenommene Primärartefakt-Definition ist durch die Beschreibung des `knowledge/`-Ordners als kuratiertes Wissensartefakt mit benannter Deckungsgrenze ersetzt. `submission-zfdg.md` ist aus dem revidierten Text neu gezogen, beide Kurz-Abstracts innerhalb der 750-Zeichen-Grenze, Exposé und Gliederung nach dem neuen Sektionsspiegel, die Zugänglichkeitszusage der Projekte auf den realen Zustand mit drei geschlossenen Repositorien umgestellt. `paper-argument-map.md` läuft auf einen Top-Träger (K-1b) zusammen, K-2.4a begründet nur noch die Dokumentform, die Blockkürzel bleiben als Bestätigungsanker erhalten. `report.md` bekommt einen datierten Nachtrag statt einer Fortschreibung. `revision-knowledge.md` bleibt als historisches Steuerwissen stehen, weil seine Prozessregeln, die Operator-Vorgaben und die Folgearbeit außerhalb des Papertexts weiterbinden; die dort vorgesehene `revision-decisions.md` ist nie entstanden, die Entscheidungen liegen in Chat, Commit-Nachrichten und `paper-writing.md`. Der Konsistenzpass fand keine toten Verweise zwischen den Dokumenten. Außerhalb der Wissensbasis steht die zurückgenommene These weiter im `README.md` und in den Site-Inhalten unter `_content/`; beides gehört in den Site-Durchgang nach der Freigabe.
+
+### Offen (Operator)
+
+Sichtbarkeit der drei geschlossenen Repositorien (ZBZ-Pipeline, HerData, mittelalterliche Rechtsgeschäfte), Freigabe von Lehr- und Workshop-Material für die Belegschicht, der Titel (seine dokumentierte Begründung über die Übersetzungs-Doppelung ist mit der Revision entfallen), und das Herkunftsfeld im Schema der Belegschicht.
 
 ## 2026-07-24 — Reasoning-Prompt-Seitenlinie vollständig getilgt (Operator-Entscheidung)
 
