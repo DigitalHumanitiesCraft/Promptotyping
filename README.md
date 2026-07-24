@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14160875.svg)](https://doi.org/10.5281/zenodo.14160875)
 
-Promptotyping is an iterative context engineering method in four phases (Preparation, Exploration & Mapping, Distillation, Implementation) for building research artefacts from research data with frontier LLMs. The primary artefact is a set of versioned Promptotyping Documents that hold a project's requirements, data, decisions, and domain knowledge; the prototype is a functional by-product that can be discarded and regenerated from the documents. A Critical Expert in the Loop verifies LLM output at defined points.
+Promptotyping is an iterative context engineering method in four phases (Preparation, Exploration & Mapping, Distillation, Implementation) for building research artefacts from research data with frontier LLMs. The working material is a `knowledge/` folder of versioned Promptotyping Documents holding a project's requirements, data, decisions, and domain knowledge, a curated knowledge artefact written partly by the model and partly by the verifying expert, from which the implementation is derived. It outlasts the individual session and is the part of the process that can be read, checked, criticised, and cited; decisions taken while building hold in it only as far as they are written back. A Critical Expert in the Loop verifies LLM output at defined points.
 
 This repository is the public specification of the method and the repository of the method paper, which is written here in [knowledge/paper.md](knowledge/paper.md). It renders as an interactive paper at **https://dhcraft.org/Promptotyping/** (German site, English paper) and serves the method's templates as stable, machine-readable addresses.
 

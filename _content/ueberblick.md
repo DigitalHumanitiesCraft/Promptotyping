@@ -7,7 +7,7 @@ machine-url: https://dhcraft.org/Promptotyping/_content/ueberblick.md
 
 # Ueberblick
 
-Promptotyping ist eine iterative Context-Engineering-Methode in vier Phasen, um aus Forschungsdaten und Frontier-LLMs Forschungsartefakte zu erzeugen: Interfaces, Pipelines, Editionen, Datenmodelle, Tools. Das primaere Artefakt sind dabei nicht der Prototyp, sondern die Promptotyping Documents, die den Kontext eines Projekts strukturiert festhalten. Der Prototyp ist ein funktionales Nebenprodukt, das verworfen und aus den Dokumenten regeneriert werden kann. Der Unterschied zum Vibe Coding liegt im strukturierten Vorgehen, in der aktiven Anforderungsanalyse und in der expliziten Wissensdokumentation.
+Promptotyping ist eine iterative Context-Engineering-Methode in vier Phasen, um aus Forschungsdaten und Frontier-LLMs Forschungsartefakte zu erzeugen: Interfaces, Pipelines, Editionen, Datenmodelle, Tools. Der `knowledge/`-Ordner ist dabei ein kuratiertes Wissensartefakt, teils modellgeneriert, teils von der pruefenden Fachperson kuratiert, gehalten in einem Format, das Agenten unmittelbar verarbeiten. Er haelt das Domaenenwissen und die Spezifikation, aus denen implementiert wird, ueberdauert die einzelne Sitzung und ist der Teil des Prozesses, der geprueft, kritisiert und zitiert werden kann. Was beim Bauen an weiteren Entscheidungen anfaellt, halten die Dokumente so weit, wie es zurueckgeschrieben wird. Der Unterschied zum Vibe Coding liegt im strukturierten Vorgehen, in der aktiven Anforderungsanalyse und in der expliziten Wissensdokumentation.
 
 Diese Seite rendert das Methoden-Paper (Pollin 2026) als durchgehenden Lesefluss; konstitutive Begriffe sind im Text als Glossar-Trigger markiert.
 
