@@ -1,0 +1,11 @@
+[
+  {
+    "id": "example2024metering",
+    "type": "article-journal",
+    "title": "Water Metering in Community Gardens: A Fictional Review",
+    "author": [{ "family": "Example", "given": "A." }],
+    "issued": { "date-parts": [[2024]] },
+    "container-title": "Journal of Fictional Examples",
+    "URL": "https://example.org/metering-review"
+  }
+]
