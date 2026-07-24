@@ -7,7 +7,7 @@ status: grounded
 checked:
   validation: 2026-07-19
 created: 2026-07-19
-updated: 2026-07-19
+updated: 2026-07-24
 ---
 
 # Distillate: Section 4 figures verification (2026-07-19)
@@ -33,7 +33,7 @@ The adversarial verification of paper Section 4 records which quantitative figur
 - On 2026-07-19 the VetMedAI knowledge base holds about 31 content documents in `knowledge/` (34 Markdown files including the README). [[00_representation/documents/verification-paper-figures-2026-07-19#^c5]] ^s15
 - On 2026-07-19 the HerData repository README states 15,312 letters as the full corpus of letters to Goethe, the paper's 1,793-letter figure is not documented in the repository, and it is plausibly the women-related subset. [[00_representation/documents/verification-paper-figures-2026-07-19#^c6]] ^s16
 - On 2026-07-19 the M³GIM repository holds about 127 E-entries. [[00_representation/documents/verification-paper-figures-2026-07-19#^c7]] ^s17
-- On 2026-07-19 the CorrespExplorer repository holds 13 knowledge files and 34 unique US-IDs. [[00_representation/documents/verification-paper-figures-2026-07-19#^c8]] ^s18
+- On 2026-07-19 the CorrespExplorer repository holds 13 knowledge files and 37 unique US-IDs. [[00_representation/documents/verification-paper-figures-2026-07-19#^c8]] ^s18
 - On 2026-07-19 the Klawiter repository holds 247 test functions, and the figure of 264 is reachable only as a parametrised collection count. [[00_representation/documents/verification-paper-figures-2026-07-19#^c9]] ^s19
 - On 2026-07-19 the Medieval Legal Transactions repository holds 192 test functions across 10 files and a knowledge folder of 6 content documents plus a README, with the exact regression collection count requiring a pytest run. [[00_representation/documents/verification-paper-figures-2026-07-19#^c10]] ^s20
 - On 2026-07-19 the linked Kulturpool Explorer repository `chpollin/vkm-explorer` returns 404, and the about 19,000 objects figure is an API-scale value rather than a repository count. [[00_representation/documents/verification-paper-figures-2026-07-19#^nv1]] ^s21

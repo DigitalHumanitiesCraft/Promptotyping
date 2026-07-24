@@ -13,7 +13,7 @@ metadata:
   license: "no explicit license file for this document; public repository"
   confidential: false
 created: 2026-07-19
-updated: 2026-07-23
+updated: 2026-07-24
 checked:
   validation: 2026-07-19
 ---
@@ -37,7 +37,7 @@ Ordered by size of deviation. Where a figure appears in both the table and an in
 5. **VetMedAI, "41 documents".** Real: ~31 content documents in `knowledge/` (34 md including README). "Largest knowledge base" still holds at 31. ^c5
 6. **HerData, "1,793 letters".** Not documented in the repo; README states 15,312 letters (full corpus of letters to Goethe). 1,793 is plausibly the women-related subset. Qualify the reference unit or verify against the frontend filter before the figure stays. ^c6
 7. **M³GIM, "49 documented decisions".** Real: ~127 E-entries by now. Date the figure as a snapshot or update it. ^c7
-8. **CorrespExplorer, "7 documents" and "37 user stories".** Real today: 13 knowledge files, 34 unique US-IDs. Keep 7 only if marked as the historical first-vault state; correct 37 to 34. ^c8
+8. **CorrespExplorer, "7 documents" and "37 user stories".** Real today: 13 knowledge files, 37 unique US-IDs. Keep 7 only if marked as the historical first-vault state; the user-story figure of 37 stands as the paper had it. Corrected on 2026-07-24, see below. ^c8
 9. **Klawiter, "264 tests".** Real: 247 test functions; 264 reachable only as parametrised collection count. Set 247 or state the counting rule. ^c9
 10. **Medieval, "381 regression tests" and "8 knowledge documents".** 192 test functions in 10 files; exact collection count needs a pytest run. Knowledge folder holds 6 content documents plus README. Re-count 381 via pytest collect or soften; correct 8 to 6. ^c10
 
@@ -53,6 +53,12 @@ Several deviations are snapshot drift, the paper describes an earlier state of s
 ## Grenzen
 
 This is a scoped snapshot verification (a findings register for one correction pass), narrower than the full Verification template it references. Its limits: repository states were read on 2026-07-19 via local clones, shallow clones, and the GitHub API, so later growth is invisible to it; test figures were counted as test functions in source, without executing a pytest collection; duration and cost figures are experiential values outside deterministic checking; the verification ran as a single adversarial agent without a second, independent pass. ^lim
+
+## Correction 2026-07-24
+
+Finding 8 carried its two figures the wrong way round and is corrected here against the repository artefact. As written on 2026-07-19 the finding read "Real today: 13 knowledge files, 34 unique US-IDs. Keep 7 only if marked as the historical first-vault state; correct 37 to 34." The record verification of 2026-07-24 recounted the artefact and found 37 heading-level user-story identifiers, US-01 through US-37 without gaps, in `docs/knowledge/user-stories.md` of the CorrespExplorer repository. That file was last changed on 2025-12-18 and the repository's last commit dates to 2025-12-19, so no state can have moved between the two checks. The figure 34 was never a state of the repository; 37 was the correct count on both dates and is the figure the paper had before this finding was applied to it. ^corr1
+
+The correction is entered in this file rather than in a successor representation because the defect is a transposition inside one finding and not a revision of the source's subject matter, and because the anchors of this block carry the inversion into the distillate, the claim built on it, and the paper. The affected chain is `^c8` to `10_distillates/documents/verification-paper-figures-2026-07-19#^s18` to `20_claims/correspexplorer-knowledge-userstory-count-2026-07-19`. ^corr2
 
 ## Related
 
