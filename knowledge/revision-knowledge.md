@@ -2,9 +2,9 @@
 title: Revisionswissen Promptotyping-Paper
 project: promptotyping-paper
 method: promptotyping
-status: draft
+status: complete
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-24
 ---
 
 # Revisionswissen: Promptotyping-Paper
@@ -14,6 +14,34 @@ die gemeinsame Spezifikation der Revisionsaufträge. Dieses Dokument
 ist Steering-Wissen, kein fertiger Auftrag: Es hält Befunde,
 Prinzipien und Prozessarchitektur fest; die konkreten Aufträge werden
 im Dialog mit dem Operator daraus entwickelt.
+
+## Stand 2026-07-24
+
+Die hier beschriebene Vier-Phasen-Revision ist durchlaufen; das
+Dokument steht ab hier als historisches Steuerwissen. Phase A liegt
+als `revision-audit-a0.md` bis `revision-audit-a3.md` sowie als
+`revision-audit-a4-record-verification.md` und
+`revision-audit-a5-vault-coverage.md` vor, ergänzt um
+`revision-frame-proposal.md` und `revision-research-sdd.md`. Phase B
+lief als Chat-Entscheidungen des Operators, festgehalten in den
+Commit-Nachrichten und im Entscheidungsstand von `paper-writing.md`;
+die in Abschnitt 6 vorgesehene Datei `revision-decisions.md` ist nie
+entstanden. Phase C und D sind im Gesamtdurchgang vom 2026-07-24
+umgesetzt.
+
+Erhalten bleibt das Dokument, weil drei seiner Teile weiter binden.
+Die Prozessregeln aus Abschnitt 6 (ankerfreie Audit-Aufträge, freies
+Lektorat vor dem Kontakt mit den Problemfeldern, Steelman-Pflicht mit
+harter Operator-Schranke) sind in `paper-writing.md` als Vorgabe für
+alle künftigen Prüfaufträge an diesem Paper übernommen und verweisen
+hierher. Die Operator-Vorgaben in Abschnitt 3 gelten unverändert. Die
+Folgearbeit in Abschnitt 7 ist offen und außerhalb des Papertexts zu
+lösen, insbesondere ein öffentlich dokumentierter End-to-End-Fall
+einer dritten Person und dokumentierte Fehlschläge als eigene
+Evidenzklasse; das Paper hält seit der Revision ausdrücklich fest,
+dass Fehlschläge nicht systematisch dokumentiert wurden. Die
+Problemfelder in Abschnitt 2 sind weiterhin als Hypothesen zu lesen,
+wie sie beantwortet wurden, halten die Audit-Berichte fest.
 
 ## 1. Ausgangslage
 

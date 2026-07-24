@@ -5,9 +5,9 @@ project:
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 status: snapshot
 language: de
-version: 0.1
+version: 0.2
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-24
 authors: [Christopher Pollin]
 generated-with: Claude Code mit Claude Fable 5 (Koordination) und Claude Opus 4.7 (Lanes)
 method:
@@ -24,6 +24,12 @@ related: [paper-writing, journal, project]
 # Report Lane-Durchgang ZfdG-Einreichung
 
 Stichtagsbericht zum parallelen Lane-Durchgang vom 2026-07-23 mit dem Ziel, das Promptotyping-Paper sauber formuliert, kontextualisiert und formal passgenau zur ZfdG-Einreichung zu führen. Der Bericht konsolidiert sieben Opus-Agenten-Ergebnisse nach Koordinator-Verifikation und trägt die Abnahme-Listen für den Operator. Steuerdokument des Papers bleibt [paper-writing.md](paper-writing.md); dieser Bericht ist Momentaufnahme, seine offenen Punkte wandern nach Abnahme dorthin beziehungsweise nach ACTIVE-WORK.
+
+## Nachtrag 2026-07-24
+
+Der Bericht beschreibt den Stand vor der Revision und wird darüber hinaus nicht fortgeschrieben. Was aus seinen Abnahme-Listen geworden ist, in Kürze. Die Feinschliff-Kandidaten sind bis auf den als optional geführten Bayerschmidt-Vorschlag und die Formalia des Punkts 16 eingearbeitet; der Belegdurchgang dazu steht im Entscheidungsstand von [paper-writing.md](paper-writing.md). Die Site-Variante 2 ist als `#vorlagen`-Hub umgesetzt und in `specification.md` (A19) spezifiziert; die vault-first-Freigabe der Vorlage Technology steht weiter aus. Die Notker-Fußnote ist gesetzt. Die Erfahrungswerte sind teilweise erledigt, indem Aktivitätsquantitäten aus dem Papertext entfernt wurden; Dauer- und Kostenangaben bleiben als Erfahrungswerte und als Operator-Bestätigung offen.
+
+Die Revision vom 2026-07-24 hat den Text danach an tragenden Stellen geändert, unter anderem Abstract, Rahmung, Sektionsschnitt und Evidenzteil. Die Aussagen dieses Berichts über den Papertext beziehen sich auf den Stand davor. Offen und operatorabhängig sind jetzt die Sichtbarkeit der drei geschlossenen Repositorien, die Freigabe von Lehr- und Workshop-Material für die Belegschicht, der Titel, das Herkunftsfeld im Schema der Belegschicht, der ZfdG-Review-Modus und die Attribution der Übersetzungsmechanismus-Anregung.
 
 ## Tätigkeiten im Berichtszeitraum
 
