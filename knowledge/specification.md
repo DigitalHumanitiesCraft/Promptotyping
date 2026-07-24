@@ -5,9 +5,9 @@ project:
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 status: complete
 language: en
-version: 0.4
+version: 0.5
 created: 2026-05-09
-updated: 2026-07-23
+updated: 2026-07-24
 authors: [Christopher Pollin]
 generated-with: Claude Code with Claude Opus 4.8
 method:
@@ -33,7 +33,9 @@ What the site must do. The site renders the Pollin 2026 paper as a scrollable si
 ## Requirements
 
 ### A1 — Paper as reading flow
-The paper is present as a continuous reading flow, split into seven H2 section files (`_content/paper/01-introduction.md` … `07-conclusion.md`) plus an abstract file (`00-abstract.md`) prepended to section 1, with the references as `_content/literatur.md`. It renders in a central reading column with the table of contents as a sticky left sidebar. Acceptance criterion. A visitor to https://dhcraft.org/Promptotyping/ can scroll the paper from abstract to conclusion.
+The canonical paper text is [paper.md](paper.md) in this knowledge base. The site renders a decomposition of it as a continuous reading flow, one file per H2 section under `_content/paper/` plus an abstract file prepended to section 1, with the references as `_content/literatur.md`. It renders in a central reading column with the table of contents as a sticky left sidebar. Acceptance criterion. A visitor to https://dhcraft.org/Promptotyping/ can scroll the paper from abstract to conclusion.
+
+The deployed decomposition predates the revision round of 2026-07-24 and no longer matches the canonical text. Its section-5 file is titled Epistemic Infrastructure, a section the paper does not carry any more, and the abstract file holds the superseded abstract. Which files exist, how they are numbered, and which anchors they receive follows from the canonical text and is re-cut when the operator releases the revised paper for decomposition; until then the deployed cut is the state described here and in [architecture.md](architecture.md), and it is not the specification of the paper.
 
 ### A2 — Phases provenance lane (removed)
 A left lane that marked each paragraph by its Promptotyping phase was removed after the first deploy (operator decision 2026-06-10). Legend, mobile phase bar, hover tooltip, and filter mode are gone from HTML, CSS, and JavaScript; the `{:.phase-*}` tags in the paper markdown are stripped by the marked extension and render nothing. The rationale survives as a decision record in ADR-4.
@@ -76,10 +78,12 @@ template:
 Every constitutive term in the paper reading flow is a glossary trigger with a dotted underline. Hover shows a short definition, click opens the right side panel with the full definition, sources, and paper references. The glossary is also reachable as its own anchor `#glossar`.
 
 ### A7 — Use-case gallery
-A dedicated `#use-cases` section holds a curated gallery of publicly documented projects (operator decision 2026-06-10), classified and filtered by the paper's use-case typology (section 4.3), secondarily by interface type (section 5.3) and demo availability. The internal genre vocabulary does not appear in the public UI. Selected cases carry a deep-dive page in the side panel (HerData, Klawiter-Rescue, zbz-ocr-tei, M3GIM, Notker-Edition, CorrespExplorer, coOCR-HTR). Missing client clearance or a mediation format rather than a research artefact excludes a case; the full evidence corpus stays documented in the paper (section 4). Data source `data/case-studies.json`, exclusions in `_content/MANIFEST.md`.
+A dedicated `#use-cases` section holds a curated gallery of publicly documented projects (operator decision 2026-06-10), classified and filtered by a use-case typology, secondarily by interface type and demo availability. The internal genre vocabulary does not appear in the public UI. Selected cases carry a deep-dive page in the side panel (HerData, Klawiter-Rescue, zbz-ocr-tei, M3GIM, Notker-Edition, CorrespExplorer, coOCR-HTR). Missing client clearance or a mediation format rather than a research artefact excludes a case; the full evidence corpus stays documented in the paper, whose evidence section carries the project inventory. Data source `data/case-studies.json`, exclusions in `_content/MANIFEST.md`.
+
+The use-case vocabulary of the gallery (data production, data exploration, data rescue and transformation, and so on) is the site's own ordering and was once attributed to a paper section. The paper orders artefacts by the five epistemic functions instead, Verification, Exploration, Edition, Capture, and Audit, and carries no use-case typology; the interface-type filter is the one that maps onto it. Re-basing the gallery classification on the five functions, or declaring the use-case vocabulary as the site's own, is open work for the next site update.
 
 ### A8 — Embedded YouTube videos
-Part 1 as a hero embed above the paper, part 2 in paper section 4 at the VetMedAI knowledge-balance case. Both run from the `youtube-nocookie.com` variant with no tracking before the click.
+Part 1 as a hero embed above the paper, part 2 at the VetMedAI knowledge-balance case, which sits in the projects section of the deployed decomposition and in the evidence section of the canonical text. Both run from the `youtube-nocookie.com` variant with no tracking before the click.
 
 ### A9 — DHCraft design system
 Light grey `#d5d5d5` accent, black on white, Inter for text, Consolas for code, no decorative elements. Side panels collapse to bottom sheets on mobile. Full token set and behaviour in [design.md](design.md).
@@ -123,6 +127,8 @@ The sub-anchors are additive in-page fragments, no new top-level anchor, no new 
 
 ## Function per site section
 
+The paper-section numbers below refer to the deployed decomposition (A1). They are re-drawn against the canonical text when it is decomposed.
+
 ### Method (paper sections 1–3)
 The paper narrative as reading flow. Terms as glossary triggers. The template table in the section-3 context with click links to side-panel specs. Hero video part 1 above.
 
@@ -132,8 +138,8 @@ Table of all mirrored templates with function, recommended file name, Promptotyp
 ### Use cases (`#use-cases`)
 Curated cards grouped and filtered by the use-case typology (A7, ADR-8 addendum). Each card names the project, use case, one sentence, and demo/repo/video links where cleared. Selected cards carry a deep-dive page in the side panel. Part-2 video embedded in paper section 4.
 
-### Concepts (embedded in paper sections 5–6, plus anchors)
-Five concepts (Asymmetric Amplification, Epistemic Infrastructure, Critical-Expert-in-the-Loop, Scholar-Centered Design, Context Engineering) are mentioned in the paper flow and linked to their glossary anchors, with full definitions in the glossary side panel.
+### Concepts (embedded in the paper flow, plus anchors)
+Concepts named in the paper flow are linked to their glossary anchors, with full definitions in the glossary side panel. Asymmetric Amplification, Critical-Expert-in-the-Loop, Scholar-Centered Design, and Context Engineering are carried by the canonical text. Epistemic Infrastructure is not; the concept was removed from the paper on 2026-07-23 and survives as a glossary entry and as a vault concept, which the deployed decomposition does not yet reflect.
 
 ### Glossary (`#glossar`)
 A dedicated section at the page end, alphabetically ordered. Per entry, term, short and full definition, source (with vault link), and paper references. Same data source as the hover tooltips.
@@ -165,7 +171,7 @@ An ordered list at the page end. Inline references in the paper are anchor jump 
 **Context.** The `template:` URI resolution is central but invisible to an outside reader; a plain URL input would only replicate the anchor click without showing the frontmatter indirection. **Choice.** A textarea for the whole YAML frontmatter block. The inspector parses, extracts `template.url` (or `alias`), validates against the anchor schema, and opens the side panel with the rendered template, prefilled with an example latest-form `template:` field. **Rationale.** Shows the whole mechanism in one step and makes machine readability concrete when a reader pastes a real foreign frontmatter. **Effect.** A standalone module `assets/js/modules/frontmatter-inspector.js`; js-yaml v4.1.0 vendored under `assets/vendor/js-yaml.min.js`. Details in [architecture.md](architecture.md).
 
 ### ADR-8 — Case-Study-Filter as module
-**Context.** Many case studies are hard to navigate without a filter. **Choice.** A filter bar above the cards. **Rationale.** Practically needed at the gallery size. **Effect.** A standalone module `assets/js/modules/case-study-filter.js`, data source `data/case-studies.json`. **Addendum 2026-06-10 (operator decision).** The primary filter is the paper's use-case typology (section 4.3), secondary filters are interface type and demo availability. The genre vocabulary is internal working vocabulary and does not appear in the public UI. The gallery is curated (A7).
+**Context.** Many case studies are hard to navigate without a filter. **Choice.** A filter bar above the cards. **Rationale.** Practically needed at the gallery size. **Effect.** A standalone module `assets/js/modules/case-study-filter.js`, data source `data/case-studies.json`. **Addendum 2026-06-10 (operator decision).** The primary filter is the use-case typology, secondary filters are interface type and demo availability; A7 records that the paper no longer carries the use-case typology. The genre vocabulary is internal working vocabulary and does not appear in the public UI. The gallery is curated (A7).
 
 ### ADR-9 — Action-Layer template as ninth slug under `/promptotyping-document/`
 **Context.** The Action-Layer template addresses the repo-root `CLAUDE.md` rather than a `knowledge/` document; whether it needs its own anchor family was open (journal 2026-06-09). **Choice.** A ninth slug `action-layer` in the existing `/promptotyping-document/` namespace. **Rationale.** Function before filename. The template describes the action-layer function of a Promptotyping knowledge base; where the file sits does not change its membership in the catalog, and a separate anchor family would fragment the address schema. **Effect.** `_content/promptotyping-document/action-layer.md`, anchor `#promptotyping-document-action-layer`.

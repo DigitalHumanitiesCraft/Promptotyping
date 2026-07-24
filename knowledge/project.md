@@ -5,9 +5,9 @@ project:
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 status: complete
 language: en
-version: 0.4
+version: 0.5
 created: 2026-05-09
-updated: 2026-07-23
+updated: 2026-07-24
 authors: [Christopher Pollin]
 generated-with: Claude Code with Claude Opus 4.8
 method:
@@ -48,7 +48,7 @@ The methodology repository processes no research data, it mirrors knowledge. Tha
 
 Four source types feed the site.
 
-**The Pollin 2026 paper.** The scholarly method text. It is written as a single English Markdown document [paper.md](paper.md) in a two-document model, with the writing knowledge held in [paper-writing.md](paper-writing.md). The current draft is complete for operator reading and carries no open markers. The chosen venue is the Zeitschrift für digitale Geisteswissenschaften (ZfdG), and the submission package (exposé, German and English short abstracts, formal checklist) lives in [submission-zfdg.md](submission-zfdg.md). The deployed site still renders the earlier decomposed sections under `_content/paper/`. Decomposition of the consolidated draft into those section files happens only after the operator releases it.
+**The Pollin 2026 paper.** The scholarly method text. It is written as a single English Markdown document [paper.md](paper.md) in a two-document model, with the writing knowledge held in [paper-writing.md](paper-writing.md) and the argument in compact notation in [paper-argument-map.md](paper-argument-map.md). The draft is complete for operator reading and carries no open markers. A revision round on 2026-07-24 retired the translation doubling as the paper's theoretical core and the claim that the documents are the primary artefact, dissolved section 3.4 into 2.4 and 3.3, replaced the abstract, and reworked the evidence sections; the title still stands as it was and is with the operator. The chosen venue is the Zeitschrift für digitale Geisteswissenschaften (ZfdG), and the submission package (exposé, German and English short abstracts, formal checklist) lives in [submission-zfdg.md](submission-zfdg.md). The deployed site still renders the earlier decomposed sections under `_content/paper/`, a cut that predates the revision. Decomposition of the consolidated draft into section files happens only after the operator releases it.
 
 **Vault templates and convention.** The template catalogue under `Vault Operations/Templates/Promptotyping/` and the convention under `Vault Operations/Konventionen/Konvention Promptotyping Documents.md`, both source of truth in the vault. The template function names are English since the 2026-07-19 catalogue sweep. When a template is mirrored into the repository, vault-internal wikilinks are replaced by site anchors or inline explanations, and the mirrored versions lag the vault state until the next site update.
 

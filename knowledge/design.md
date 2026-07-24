@@ -5,9 +5,9 @@ project:
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 status: complete
 language: en
-version: 0.4
+version: 0.5
 created: 2026-05-09
-updated: 2026-07-23
+updated: 2026-07-24
 authors: [Christopher Pollin]
 generated-with: Claude Code with Claude Opus 4.8
 method:
@@ -143,7 +143,7 @@ Glossary-defined terms render with a dotted grey underline (`1px dotted #888888`
 
 ### Vorlagen table
 
-Paper section 3 renders a table of all mirrored templates (catalogue and function names follow the Vault convention, English since 2026-07-19). Rows carry `.vorlage-row`, are clickable and keyboard-focusable, and open the side panel with the full template spec; the focus-visible state draws a 2px outline.
+The method section of the reading flow renders a table of all mirrored templates (catalogue and function names follow the Vault convention, English since 2026-07-19). Rows carry `.vorlage-row`, are clickable and keyboard-focusable, and open the side panel with the full template spec; the focus-visible state draws a 2px outline.
 
 The Vorlagen hub adds three silent styling blocks:
 
@@ -153,7 +153,7 @@ The Vorlagen hub adds three silent styling blocks:
 
 ### Case-study cards
 
-Paper section 4 renders case-study cards in a responsive grid (`auto-fill, minmax(280px, 1fr)`), grouped by the paper's use-case typology; the internal genre vocabulary stays out of the public UI. Each card has a `#e0e0e0` border, no shadow, 1rem padding, and a `#f5f5f5` hover fill. A "Mehr" button appears only for case studies that carry a depth page. A filter bar above the grid offers selectable chips and a secondary select control.
+The use-case gallery renders case-study cards in a responsive grid (`auto-fill, minmax(280px, 1fr)`), grouped by the use-case typology of A7; the internal genre vocabulary stays out of the public UI. Each card has a `#e0e0e0` border, no shadow, 1rem padding, and a `#f5f5f5` hover fill. A "Mehr" button appears only for case studies that carry a depth page. A filter bar above the grid offers selectable chips and a secondary select control.
 
 ## Motion and elevation
 
