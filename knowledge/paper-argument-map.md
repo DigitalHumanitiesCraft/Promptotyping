@@ -8,7 +8,7 @@ method:
   url: https://dhcraft.org/Promptotyping/
 status: draft
 created: "2026-07-23"
-updated: "2026-07-23"
+updated: "2026-07-24"
 related: [paper, paper-writing]
 ---
 
@@ -16,7 +16,9 @@ related: [paper, paper-writing]
 
 Dieses Dokument ist das Konzeptmodell des Papers `paper.md`. Es hält jede tragende Argumentationslinie in kompakter Notation, eine Kette pro Block, mit Status. Es hat zwei Funktionen. Als Prüfinstrument bestätigt oder korrigiert der Operator jede Kette einzeln am Block-Kürzel. Als Generierungsgrundlage kann ein Agent aus dieser Map, den Sprachregeln in `paper-writing.md`, der Evidenztabelle und dem Referenzapparat das Paper neu schreiben; die Map ist die Spezifikation, der Papertext die Ausführung.
 
-Notation: `A ──► B` heißt, B folgt aus A oder wird durch A getragen. `∧` heißt, beide Bedingungen müssen gelten. Jeder Block trägt eine Statuszeile; `bestätigt` vergibt nur der Operator. Jeder Block trägt außerdem eine `Rolle:`-Zeile, die die Hierarchie als gerichteten Graph kodiert: `tragend` = Spine, den ein Abschnitt trägt; `zuliefernd → K-xxx` = liefert dem benannten Block zu. Zwei Top-Träger: K-1b (Möglichkeits-Claim) und K-2.4a (Übersetzungs-Doppelung, Titelträger). Eine bewusste Ausnahme der Sektion-2-Achse: K-2.5a liefert der Methodendefinition (K-3.2a) zu, der Sektion-2-Eröffnungsabsatz zählt 2.5 deshalb nicht unter die Prämissen der Doppelung.
+Notation: `A ──► B` heißt, B folgt aus A oder wird durch A getragen. `∧` heißt, beide Bedingungen müssen gelten. Jeder Block trägt eine Statuszeile; `bestätigt` vergibt nur der Operator. Jeder Block trägt außerdem eine `Rolle:`-Zeile, die die Hierarchie als gerichteten Graph kodiert: `tragend` = Spine, den ein Abschnitt trägt; `zuliefernd → K-xxx` = liefert dem benannten Block zu.
+
+Stand nach der Revision vom 2026-07-24. Ein Top-Träger, K-1b (Möglichkeits-Claim). Die Blöcke der Sektion 2, die zuvor der Übersetzungs-Doppelung zugeliefert haben, liefern jetzt ihm zu. K-2.4a trägt die Doppelung nicht mehr als These; der Block begründet die Dokumentform und fundiert sie modelltheoretisch. K-2.5a liefert weiterhin der Methodendefinition K-3.2a zu.
 
 ## Kernsatz
 
@@ -25,7 +27,7 @@ Wer seinen Forschungskontext explizit genug beschreibt, hat spezifiziert;
 das Frontier-Modell übernimmt die Formalisierung; der Scholar verifiziert.
 ```
 
-Titelthese: Promptotyping übersetzt Forschungsdaten in Forschungsartefakte, mit Context Engineering und Agentic Engineering. Das Wort Übersetzung ist doppelt gemeint (K-2.4a).
+Das Paper erhebt keine theoretische Leitaussage. Es beschreibt die Methode, ordnet sie ein und erdet sie mit seiner Evidenz. Der Titel steht unverändert und ist Operator-Entscheidung; `Translating` trägt im alltagssprachlichen Sinn, seine dokumentierte Begründung über die Doppelung ist entfallen.
 
 ## Sektion 1, Problemaufriss
 
@@ -33,14 +35,14 @@ Titelthese: Promptotyping übersetzt Forschungsdaten in Forschungsartefakte, mit
 
 ```
 Daten nur via Software zugänglich ──► generische Tools bleiben unter dem Datenmodell
-──► modellgerechte Instrumente müssen gebaut werden ──► Baukapazität fehlt
+──► modellgerechte Forschungsartefakte müssen gebaut werden ──► Baukapazität fehlt
 ──► dahinter: Übersetzungsproblem Scholar ↔ Programmierer (20 Jahre dokumentiert)
 ──► alle bisherigen Antworten installieren einen menschlichen Übersetzer
 ──► keine erreicht Einzelforscher und Kleinprojekte verlässlich   [Inferenz, als solche markiert]
 ```
 
 Status: unbestätigt
-Rolle: zuliefernd → K-2.4a
+Rolle: zuliefernd → K-1b
 
 **K-1b, die Antwort und ihre Grenze.**
 
@@ -89,7 +91,7 @@ InfoVis-Diskurs der DH: Exploration = Forschungsakt (generous interfaces, sandca
 ```
 
 Status: unbestätigt
-Rolle: zuliefernd → K-2.4a
+Rolle: zuliefernd → K-1b
 
 **K-2.1b, Drucker als Prüfstein.**
 
@@ -102,18 +104,19 @@ Antwort strukturell: Designentscheidungen ──► begründete, versionierte Do
 ```
 
 Status: unbestätigt
-Rolle: zuliefernd → K-2.4a
+Rolle: zuliefernd → K-1b
 
 **K-2.2a, Anti-Tool-Positivismus.**
 
 ```
 Building as knowing (Prototyp argumentiert)  ∧  Werkzeugkritik als Korrektiv
 ──► eigenes Korrektiv: Forschungsprobleme sind keine Tooling-Probleme
-──► epistemisches Zentrum = modellierte Daten + Dokumente; Tool = abgeleitet, verwerfbar
+──► epistemisches Zentrum = modellierte Daten + Dokumente; Tool = abgeleitetes Artefakt
+verwerfbar ist die einzelne Iteration, ihr Ertrag geht in die Dokumente zurück (6.1)
 ```
 
 Status: unbestätigt
-Rolle: zuliefernd → K-2.4a
+Rolle: zuliefernd → K-1b
 
 **K-2.3a, Token-Ökonomie-Arrangement.**
 
@@ -126,7 +129,7 @@ Korpus geht nie durchs Kontextfenster, nur Destillate, User Stories, Design, Fee
 ```
 
 Status: unbestätigt
-Rolle: zuliefernd → K-2.4a
+Rolle: zuliefernd → K-1b
 
 **K-2.3b, Semantic-Web-Kontinuität.**
 
@@ -139,22 +142,25 @@ eigene Trajektorie: Diss produzierte RDF, damit exploriert wird; die Methode lie
 ```
 
 Status: unbestätigt
-Rolle: zuliefernd → K-2.4a
+Rolle: zuliefernd → K-1b
 
-**K-2.4a, Übersetzungs-Doppelung (theoretischer Kern).**
+**K-2.4a, warum die Beschreibung ein versioniertes Dokument ist (Sektion 2.4 nach der Zusammenlegung).**
 
 ```
-Übersetzungsproblem (menschlich, 20 Jahre)      ──┐
-                                                  ├──► treffen sich in den Dokumenten
-LLM = Übersetzungsmechanismus (Kontext → Code)  ──┘
-Die Inputs der Maschinenübersetzung SIND das Medium der menschlichen Übersetzung.
-Kette: SCD übersetzt Praxis→User Stories; Distillation Daten→Beschreibung;
-       Agent Dokumente→Code; Code Daten→sichtbare Form
-Mehrwert der Methode: jeder Kettenschritt hinterlässt versionierte, inspizierbare Spur
+Antworten des Felds installieren je einen menschlichen Übersetzer
+──► Dokumente greifen als Boundary Objects ein (K-2.4b)
+∧ zweite Last im generativen Setting: das Dokument ist zugleich Quelle der Implementation
+──► ein Gespräch mit dem Modell hinterlässt kein prüfbares Objekt,
+    dieselbe Aussage über die Quellen muss dem Scholar und dem Agenten vorliegen
+──► modelltheoretische Fundierung (K-3.3a, K-3.3b) sitzt hier
+──► Formalisierungskosten sinken; die Abbildung läuft stochastisch
+    ──► Verification (6.2)
+Die Doppelung des Worts Übersetzung begründet nur noch die Dokumentform,
+sie ist nicht mehr theoretischer Kern (Operator-Entscheidung 2026-07-24).
 ```
 
 Status: unbestätigt
-Rolle: tragend (Titelträger)
+Rolle: zuliefernd → K-1b
 
 **K-2.4b, Boundary Objects.**
 
@@ -174,9 +180,12 @@ Rolle: zuliefernd → K-2.4a
 Context Engineering: Methode = domänenspezifische Instanz
 Vibe Coding: gleiche Prämisse, Differenz = Vorbereitung + Dokumente + Verifikation;
              überlebt intern als explorativer Modus
-Spec-Driven Development: Konvergenz bestätigt Prämisse (Dokumente > Prompts);
-             Differenz = Objekt (Forschungsartefakt aus modellierten Daten)
-             ∧ Bindung an Verifikationspflichten (6.2); Definition prädatiert das Label
+Spec-Driven Development: Promptotyping gehört zur Bewegung und teilt ihre Kernbindungen;
+             die Differenzen sind Gradunterschiede (Datendokument beschreibt vorgängige
+             Quellen mit eigener Semantik und Unsicherheit; Review bindet an die
+             wissenschaftlichen Prüfpflichten 6.2; Autorität des Adressaten liegt hier
+             im Gegenstand, dort im Auftrag)
+             Zeitgleichheit bei eigenständiger Genese ist der kleinere Punkt
 Context Rot: technische Begründung der Distillation
 Critical Expert: vorausgesetzte Rolle; Domänenexpertise ∧ Kenntnis der Fehlermodi
              (Sycophancy, Konfabulation); prüft auch den NICHT explorierten Möglichkeitsraum
@@ -189,16 +198,16 @@ Rolle: zuliefernd → K-3.2a
 
 ```
 Diss: SCD (UCD + RE) ──► Personas, User Stories ──► Datenmodelle, Bookkeeping Ontology
-∧ Erfahrung der Wand: wohlmodellierte Daten, kein Instrument (Baukapazität)
+∧ Erfahrung der Wand: wohlmodellierte Daten, kein Forschungsartefakt (Baukapazität)
 ──► Frontier-Modelle ändern Kostenstruktur genau dieses letzten Schritts
 ──► requirements.md = Fortsetzung von SCD; data.md = Fortsetzung der Datenmodellierung
 ──► Herkunft aus den Humanities; SDD konvergierte später von der anderen Seite
 ```
 
 Status: unbestätigt
-Rolle: zuliefernd → K-2.4a
+Rolle: zuliefernd → K-1b
 
-**K-2.6b, DIKW-Prämisse (Einbau beschlossen 2026-07-23, noch nicht im Text).**
+**K-2.6b, DIKW-Prämisse (in 2.6 eingebaut 2026-07-23).**
 
 ```
 Diss-Prämisse: kognitiver Agent im Zentrum der Passage Daten→Wissen;
@@ -224,7 +233,7 @@ Rolle: zuliefernd → K-1b
 
 ## Sektion 3, die Methode
 
-Finaler Sektionsspiegel nach dem Umbau vom 2026-07-23. Die fünf Untersektionen sind 3.1 Status und Provenienz, 3.2 vier Phasen, 3.3 die Promptotyping-Dokumente (praktisch), 3.4 Dokumente als Konzeptmodelle, 3.5 Worked Example. Die Blockkürzel bleiben als Bestätigungsanker stehen, ihre Sektionszuordnung folgt diesem Spiegel. Sektion 3.4 realisieren die Konzeptmodell-Blöcke K-3.3a (Stachowiak), K-3.3b (Gruber-Identitätsformel), K-3.3d (Substrat und Semantic-Web-Inversion) sowie der DMP-Arm von K-3.3f. Sektion 3.3 tragen die praktischen Blöcke K-3.3c (Doppel-Adressierung) und K-3.3e (Dokumenttypen und Triage) mitsamt Metadaten- und RO-Crate-Praxis (RO-Crate-Arm von K-3.3f). Das Worked Example führt jetzt das Kürzel K-3.5a.
+Sektionsspiegel nach der Revision vom 2026-07-24. Sektion 3 hat vier Untersektionen, 3.1 Status und Provenienz, 3.2 vier Phasen, 3.3 die Promptotyping-Dokumente, 3.4 Worked Example. Die frühere 3.4 (Dokumente als Konzeptmodelle) ist aufgelöst. Ihre Konzeptmodell-Blöcke K-3.3a (Stachowiak) und K-3.3b (Gruber-Identitätsformel) realisiert jetzt Sektion 2.4; K-3.3d (Substrat und Semantic-Web-Inversion) und der DMP-Arm von K-3.3f stehen in 3.3, zusammen mit K-3.3c (Doppel-Adressierung), K-3.3e (Dokumenttypen und Triage) und der Metadatenpraxis. Der RO-Crate-Arm von K-3.3f ist mit dem Absatz gestrichen. Das Worked Example steht in 3.4 und führt weiter das Kürzel K-3.5a; die Blockkürzel bleiben als Bestätigungsanker stehen, ihre Sektionszuordnung folgt diesem Spiegel.
 
 **K-3.1a, Konsolidierungs-Epistemologie.**
 
@@ -252,7 +261,7 @@ Exit: Akzeptanzkriterien ∧ Verifikationschecks erfüllt; Stopppunkt bestimmt d
 Status: unbestätigt
 Rolle: tragend → K-1b
 
-**K-3.3a, Dokumente als Konzeptmodelle (Stachowiak-Kette; Einbau beschlossen 2026-07-23).**
+**K-3.3a, Dokumente als Konzeptmodelle (Stachowiak-Kette; steht in 2.4).**
 
 ```
 Forschungskontext ──(Mensch: verkürzt)──► Dokumente ──(Modell: generiert)──► Artefakt
@@ -268,9 +277,9 @@ Forschungskontext ──(Mensch: verkürzt)──► Dokumente ──(Modell: ge
 ```
 
 Status: bestätigt (Richtung, 2026-07-23); Formulierung offen
-Rolle: tragend → K-2.4a
+Rolle: zuliefernd → K-2.4a
 
-**K-3.3b, Identitätsformel mit Gruber-Linie (Einbau beschlossen 2026-07-23).**
+**K-3.3b, Identitätsformel mit Gruber-Linie (steht in 2.4).**
 
 ```
 Beschreibung, explizit genug  =  Spezifikation
@@ -283,18 +292,24 @@ Linie: Ontologie = "explicit specification of a conceptualisation" (Gruber 1993)
 Status: bestätigt (Richtung, 2026-07-23); Formulierung offen
 Rolle: zuliefernd → K-3.3a
 
-**K-3.3c, Doppel-Adressierung als Schreibdisziplin.**
+**K-3.3c, Doppel-Adressierung als Schreibdisziplin, und die Deckungsgrenze des `knowledge/`-Ordners.**
 
 ```
 Dokument muss: lesbar (Scholar, Verifikation) ∧ ausführbar (Agent, Generierung)
 ──► was dem Modell zu vage ist, ist meist auch als wissenschaftliche
     Dokumentation zu vage; die Maschine erzwingt Qualität, die dem Menschen dient
+`knowledge/` = kuratiertes Wissensartefakt (teils Modell, teils Critical Expert),
+überdauert die Sitzung, ist lesbar, prüfbar, kritisierbar, zitierbar
+Deckungsgrenze: das Bauen nimmt laufend Entscheidungen auf; die Dokumente halten
+davon so viel, wie zurückgeschrieben wird ──► Vollständigkeit hängt an dieser Disziplin
+(die frühere These Dokumente = primäres Artefakt, Prototyp = regenerierbares
+Nebenprodukt ist zurückgenommen, Operator-Entscheidung 2026-07-24)
 ```
 
 Status: unbestätigt
 Rolle: zuliefernd → K-3.3a
 
-**K-3.3d, Substrat und Semantic-Web-Inversion (Einbau beschlossen 2026-07-23).**
+**K-3.3d, Substrat und Semantic-Web-Inversion (steht in 3.3).**
 
 ```
 Markdown-Wissensstrukturen: nativ prozessierbar, menschenlesbar, versionierbar
@@ -329,18 +344,19 @@ DMPs enden als Compliance-Dokumente ──► Ruf nach machine-actionable DMPs
 Promptotyping Documents sind machine-actionable im stärkeren, operativen Sinn:
 ein Agent implementiert daraus in jeder Session;
 ein Dokument, mit dem kein Agent arbeiten kann, wird genau deshalb revidiert
-RO-Crate-Kontrast: retrospektive Beschreibung fürs Repositorium
-vs. prospektiv-operative Beschreibung für den Agenten; Frontmatter → Zitationsmetadaten (4.1)
+Frontmatter → Zitationsmetadaten, die Harvester lesen (4.1)
 ```
 
 Status: unbestätigt
 Rolle: zuliefernd → K-3.3a
 
-**K-3.5a, Worked Example (SZD-HTR).**
+**K-3.5a, Worked Example (SZD-HTR; steht in 3.4).**
 
 ```
-Exploration liefert den entscheidenden Befund als Sackgasse:
-Selbsteinschätzung des Modells ist wertlos
+Exploration stellt die Frage, wo die Prüfung der Ausgabe hingehört;
+der Record antwortet aus einem zweiten Pipeline-Projekt, dessen agentengestützte
+Screening-Stufe per dokumentierter Projektentscheidung abgeschafft wurde,
+nachdem kein Mensch die dort verzeichneten Freigaben erteilt hatte
 ──► Distillation kodiert externe Prüfung in Dokumente
     (Verification-Konzept, Annotationsprotokoll, TEI-gesteuerte Promptvarianten)
 ──► Drei-Status-Review: human > agent > unchecked (= Autoritätsordnung 6.2 als Praxis)
@@ -377,7 +393,7 @@ statisches Artefakt: A per Konstruktion erfüllt
                      F scheitert per Default (kein PID, keine Releases, keine Metadaten)
 ──► Lücke = Publikationsarbeit, von der Methode separierbar
     (Release + DOI + Metadaten deterministisch aus Frontmatter)
-Beleg: auditierter Fall 3.5, Verification Document im Repo
+Beleg: auditierter Fall 3.4, Verification Document im Repo
 ```
 
 Status: unbestätigt
@@ -415,8 +431,15 @@ Rolle: zuliefernd → K-1b
 **K-5.1a, Präsentationsprinzip.**
 
 ```
-Evidenz = dokumentierte Projekte, zwei Auflösungen (Tabelle + ein Fall pro Funktion)
-alle Zahlen gegen öffentliche Repos verifiziert; Protokoll = eigenes Verification Document
+Evidenz = dokumentierte Projekte, zwei Auflösungen (Tabelle + ein Fall je Funktion,
+vier der fünf Funktionen ausgearbeitet)
+Auswahlregel: Methode ganz durch das Projekt geführt ∧ Repository mit Dokumenten,
+Code und Daten hinterlassen, Öffentlichkeit des Repos nicht gefordert
+──► video-dokumentierte Lehrdemonstrationen bleiben draußen
+Fehlschläge wurden nicht systematisch dokumentiert; das Schweigen ist eine
+Eigenschaft der Aufzeichnung und wird als solche benannt
+Zahlen gegen die Repos geprüft (adversarialer Agentendurchlauf, Juli 2026);
+Protokoll = eigenes Verification Document, auf den Commit gepinnt
 Evidenzschicht = Grounded Vault (Companion); der Companion ist Teil des Arguments,
 weil eine kuratierte Wissensschicht genau das ist, was anhaltende Praxis der Methode produziert
 ```
@@ -424,25 +447,31 @@ weil eine kuratierte Wissensschicht genau das ist, was anhaltende Praxis der Met
 Status: unbestätigt
 Rolle: zuliefernd → K-1b
 
-**K-5.2a, Formationsphase als Gruppe.**
+**K-5.2a, Formationsphase als Gruppe (steht seit der Revision in 2.6).**
 
 ```
-2023–früh 2025 als Prosagruppe: teiCrafter (Ursprung), Wheaton (erster Promptotyp),
-SZD-2h (Critical Expert), CVMA (erster knowledge/-Ordner), imareal (Kontextgedächtnis)
-──► jedes Projekt steuerte eine Komponente bei; Evidenzgewicht liegt in der Genealogie
+2023–früh 2025 als Prosagruppe: teiCrafter (Ursprungspunkt, Vibe-Coding ohne Methode),
+Wheaton (erster Promptotyp), dazu die Restgruppe (SZD-Metadaten-Experiment, CVMA, imareal)
+──► dort traten die Komponenten der späteren Methode zuerst in der Praxis auf,
+    ohne Abbildung Komponente → Projekt (das Vokabular postdatiert die Praxis)
+──► Evidenzgewicht liegt in der Genealogie
 ──► konsolidierte Methode wird von den reifen Fällen der Tabelle validiert
 ```
 
 Status: unbestätigt
-Rolle: tragend → K-1b
+Rolle: zuliefernd → K-3.1a
 
-**K-5.4a, Teaching Cases als Transfertest.**
+**K-5.4a, Lehr- und Kooperationsfälle als Transfertest.**
 
 ```
-Workshops + Kooperationen zeigen: Methode ist kommunizierbar,
+Workshops zeigen: Methode ist kommunizierbar,
 Teilnehmer produzieren reale Dokumente und Prototypen
-ausdrücklich keine empirische Validierung; stärkste Einzelevidenz = Community-Fork
-durch Dritte; davon gibt es noch wenig (ehrlich gezählt in 6.4)
+Kooperationsfälle als eigene Evidenzklasse: dort, wo die Verifikationslast auftritt,
+liegt die spezifizierende und verifizierende Rolle bei der Domänenexpertin
+(offene Editionsentscheidung; Korpus-Übergabe mit unverifizierten Strömen)
+ausdrücklich keine empirische Validierung; die Stütze liegt außerhalb der
+Belegschicht (Kursakten; Teilnehmerarbeiten nicht publizierbar)
+stärkste Einzelevidenz Dritter = Community-Fork; davon gibt es noch wenig (6.4)
 ```
 
 Status: unbestätigt
@@ -452,8 +481,11 @@ Rolle: zuliefernd → K-1b
 
 ```
 Befund 1: technische Uniformität (teils Guidelines, plausibel teils Modell-Bias; offenes Problem)
-Befund 2: Artefaktqualität folgt der in die Dokumente investierten Domänenexpertise
-──► Evidenz für die zentrale Prämisse: der Wert entsteht beim Modellieren und Spezifizieren
+Befund 2: Artefaktqualität ko-variiert mit der in die Dokumente investierten
+Domänenexpertise, angeboten als Inferenz aus selbst gebauten Fällen;
+der Record hält am anderen Pol begrenzten Ertrag bei dünnen Dokumenten
+und keinen ausgewiesenen Fehlschlag
+──► stützt die Prämisse, dass der Wert beim Modellieren und Spezifizieren entsteht
 ```
 
 Status: unbestätigt
@@ -461,13 +493,13 @@ Rolle: zuliefernd → K-1b
 
 ## Sektion 6, Diskussion
 
-**K-6.1a, Sandburg und Archiv.**
+**K-6.1a, Prozess und Publikation.**
 
 ```
-scheinbarer Widerspruch: Impermanenz als Tugend (2.1) vs. Bauen für Langlebigkeit (4)
-Auflösung: Prozess vs. Publikation
-Verwerfbarkeit regiert das Machen, Dauerhaftigkeit das Gemachte;
-die Dokumente verbinden beides (persistieren über Iterationen, begleiten das Publizierte)
+im Prozess ist der Promptotyp verwerfbar in Hinrichs' Sinn (König 2026 als
+deutschsprachiger Nachbarbegriff der Unfertigkeit)
+was publiziert wird, steht unter anderen Pflichten, weil es in den Record eintritt
+──► Endings-konformes Format, Provenienzdeklaration, versionierte Dokumente (4.1)
 ```
 
 Status: unbestätigt
@@ -485,7 +517,7 @@ Verification ist nicht automatisierbar ──► ihr Aufwand ist der ehrliche Pr
 ```
 
 Status: unbestätigt
-Rolle: tragend → K-2.4a
+Rolle: tragend → K-1b
 
 **K-6.3a, Reproduzierbarkeit.**
 
@@ -493,7 +525,10 @@ Rolle: tragend → K-2.4a
 Modelle nicht-deterministisch ──► binäre Artefakt-Identität unerreichbar
 Reproduzierbarkeit hängt an: Dokumenten + Entscheidungsspur + deterministischer Schicht
 (Skripte und generierte Docs laufen identisch)
-Claim eng: menschliche Entscheidungen sind rekonstruierbar; LLM-Reasoning bleibt opak
+Claim reicht genau so weit wie die menschlichen Entscheidungen, die das Projekt
+geformt haben; diese macht der Record rekonstruierbar
+Gegenposition aus dem Editionsdiskurs (freie, lokal lauffähige Modelle als
+Reproduzierbarkeitsbedingung) wird benannt und über diese Verortung beantwortet
 FAIR4RS-Relokation: wiederverwendbares Objekt = Dokumentset + Daten (Code = Derivat)
 Findability ──► Registry-Anschluss (Wikidata-Registries ernten Frontmatter-Metadaten)
 ```
@@ -544,8 +579,8 @@ Schluss über die Daten: die 20-Jahres-Investition des Felds wird produktiv,
 ```
 
 Status: unbestätigt
-Rolle: tragend → K-2.4a
+Rolle: tragend → K-1b
 
 ## Verwendung als Generierungsgrundlage
 
-Ein Agent, der das Paper aus dieser Map neu schreibt, braucht zusätzlich: `paper-writing.md` (Sprachregeln, Prüfkatalog, Entscheidungen), die verifizierte Evidenztabelle und den Referenzapparat aus `paper.md`, die Fußnotenkonvention (jedes exemplarisch genutzte Projekt erhält eine Fußnote mit Repo-URL, Ein-Satz-Funktion und zitierten Dokumentpfaden). Ketten mit Status `unbestätigt` dürfen im Wortlaut variieren, ihre Logik ist bindend; Ketten mit Status `bestätigt` sind inhaltlich fixiert. Offene Marker (`[to verify]`, Attributionen) stehen in `paper-writing.md` und bleiben im Text sichtbar, bis der Operator sie schließt.
+Ein Agent, der das Paper aus dieser Map neu schreibt, braucht zusätzlich: `paper-writing.md` (Sprachregeln, Prüfkatalog, Entscheidungen), die verifizierte Evidenztabelle und den Referenzapparat aus `paper.md`, die Fußnotenkonvention (jedes exemplarisch genutzte Projekt erhält eine Fußnote mit Repo-URL, Ein-Satz-Funktion und zitierten Dokumentpfaden). Ketten mit Status `unbestätigt` dürfen im Wortlaut variieren, ihre Logik ist bindend; Ketten mit Status `bestätigt` sind inhaltlich fixiert. Der Papertext trägt keinen offenen Marker mehr; die verbliebenen operatorabhängigen Punkte, darunter Titel, Sichtbarkeit der geschlossenen Repositorien und die Attribution der Übersetzungsmechanismus-Anregung, stehen in `paper-writing.md`.
