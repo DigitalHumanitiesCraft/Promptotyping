@@ -36,6 +36,7 @@ Claims behind the paper's Section 2, the epistemic frame: exploration as researc
 - [[20_claims/rse-institutionalised-intermediary-profession]] — The Research Software Engineering movement institutionalised the domain-technical intermediary as a recognised profession
 - [[20_claims/fair-principles-findable-accessible-interoperable-reusable]] — The FAIR principles are a concise, measurable set for making data Findable, Accessible, Interoperable, and Reusable
 - [[20_claims/llm-based-agents-for-software-engineering]] — LLM-based agents, LLMs augmented with tool use, are applied to software engineering with demonstrated effectiveness
+- [[20_claims/ontology-derivation-yields-structure-and-exposes-model-defects]] — Deriving a domain description from a formal vocabulary yields its structural layer and exposes modelling defects, while subject matter, graph shape, absences and reliability stay outside it
 
 - [[20_claims/exploratory-collection-visualisation-is-a-rich-design-space]] — Visualisation of cultural-heritage collections is a rich, surveyed design space for open-ended exploration
 - [[20_claims/digital-tool-criticism-demands-reflection-on-tools]] — Digital tool criticism demands reflection on the tools that shape research
