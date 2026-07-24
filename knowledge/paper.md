@@ -246,18 +246,18 @@ The table's projects run from early 2025 to early 2026, each traceable through a
 |Project|Data|Interface Type(s)|Methodological Contribution|
 |---|---|---|---|
 |Hans Gross Kriminalmuseum|TEI + LIDO, 3,892 objects|Exploration|Dual paradigm: search + spatial exploration|
-|CorrespExplorer|CMIF/TEI, 11,576 letters|Exploration|First complete vault (7 docs, 46 journal phases, 74+ tests)|
+|CorrespExplorer|CMIF/TEI, 11,576 letters|Exploration|First complete document set of the record, with journal and test suite|
 |HerData|TEI/Wikidata, 1,793 women-related letters (of 15,312)|Exploration|Gender-focused network with bias transparency section|
-|coOCR-HTR|OCR/HTR outputs|Verification|Prototype in one day, 567 tests, community fork (ÖAW)|
-|VetMedAI Wissensbilanz|~80 Excel files|Exploration|Largest knowledge base (~30 documents)|
-|Kulturpool Explorer|Kulturpool API, ~19k objects|Exploration|Parallel agent orchestration (2 instances)|
+|coOCR-HTR|OCR/HTR outputs|Verification|Prototype under a regression suite; the record's one community fork (ÖAW)|
+|VetMedAI Wissensbilanz|~80 Excel files|Exploration|Hand-curated knowledge base over a heterogeneous spreadsheet corpus|
+|Kulturpool Explorer|Kulturpool API, ~19k objects|Exploration|Parallel agent orchestration|
 |wiiw Patent Analysis|Patent cooperation CSV|Exploration|Promptotyping outside DH|
-|Medieval Legal Transactions|~3,600 TEI-XML (~3,100 released)|Edition|Agentic edition workflow (~190-test regression suite)|
-|M³GIM|RiC-O/JSON-LD, archival data|Exploration, Capture|Data model evolves through interface (49 decisions)|
-|ZBZ OCR/TEI Pipeline|286 PDFs, ~4,150 pages|Verification, Edition|Full pipeline infrastructure (13 knowledge docs, nine verified stages)|
+|Medieval Legal Transactions|~3,600 TEI-XML (~3,100 released)|Edition|Agentic edition workflow under a regression suite|
+|M³GIM|RiC-O/JSON-LD, archival data|Exploration, Capture|Data model evolves through the interface, carried by a decision register|
+|ZBZ OCR/TEI Pipeline|286 PDFs, ~4,150 pages|Verification, Edition|Full pipeline infrastructure with a verification interface at each stage|
 |Notker Edition|DOCX, Psalm 2 (13 verses)|Edition|Layer-toggle edition, IIIF, TEI-first|
-|Klawiter Bibliography Rescue|MediaWiki SQL/BLOB, 6,296 entries|Verification, Capture|Data rescue: 7-stage pipeline + curation interface (1 day, ~250 tests)|
-|FemPrompt SozArb|326 academic papers|Audit|Beyond DH: literature review infrastructure (505-file vault)|
+|Klawiter Bibliography Rescue|MediaWiki SQL/BLOB, 6,296 entries|Verification, Capture|Data rescue: staged pipeline + curation interface under a test suite|
+|FemPrompt SozArb|326 academic papers|Audit|Beyond DH: literature review infrastructure with a generated vault|
 
 The companion carries the repository URLs and video references that the table omits.
 
