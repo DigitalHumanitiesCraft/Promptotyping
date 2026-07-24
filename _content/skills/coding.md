@@ -91,7 +91,7 @@ Iterative development using the Promptotyping Documents as context.
 
 ## CORE PRINCIPLES
 
-- Promptotyping Documents are the primary artifact; the prototype is a functional by-product that may be discarded and regenerated from the documents (Pollin 2026, §2.5)
+- The `knowledge/` folder is the curated knowledge artefact the implementation derives from; decisions taken while building hold only as far as they are written back into it (Pollin 2026)
 - Semantic data as precondition: structured formats (TEI, RDF, JSON-LD) enable effective mapping
 - Verification over trust: deterministic checks (schema validation, test suites) before expert judgement
 - Token efficiency: compress context, avoid redundancy, refactor documents periodically

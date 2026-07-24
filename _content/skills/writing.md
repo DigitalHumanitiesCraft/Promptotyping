@@ -97,7 +97,7 @@ Generate text from the document set. Iterate.
 
 ## CORE PRINCIPLES
 
-- The Promptotyping Documents are the primary artifact; the text is their expression and can be regenerated from them (Pollin 2026, §2.5)
+- The `knowledge/` folder is the curated knowledge artefact the text derives from; decisions taken while writing hold only as far as they are written back into it (Pollin 2026)
 - Source integrity: never fabricate citations or evidence
 - Anti-slop vigilance: every revision removes AI artifacts
 - Token efficiency: compress context, avoid redundancy
