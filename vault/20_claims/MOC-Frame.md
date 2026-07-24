@@ -37,6 +37,10 @@ Claims behind the paper's Section 2, the epistemic frame: exploration as researc
 - [[20_claims/fair-principles-findable-accessible-interoperable-reusable]] — The FAIR principles are a concise, measurable set for making data Findable, Accessible, Interoperable, and Reusable
 - [[20_claims/llm-based-agents-for-software-engineering]] — LLM-based agents, LLMs augmented with tool use, are applied to software engineering with demonstrated effectiveness
 - [[20_claims/ontology-derivation-yields-structure-and-exposes-model-defects]] — Deriving a domain description from a formal vocabulary yields its structural layer and exposes modelling defects, while subject matter, graph shape, absences and reliability stay outside it
+- [[20_claims/sdd-data-artefacts-describe-the-system-under-construction]] — The data artefacts of Spec-Driven-Development frameworks describe the system under construction, and none describes external sources or their semantics
+- [[20_claims/sdd-review-examines-internal-coherence]] — Review is a core commitment across the wave, and what it examines is internal coherence, coverage and code quality
+- [[20_claims/sdd-no-subject-matter-verification-role]] — No framework of the wave defines a checking role through subject-matter competence
+- [[20_claims/sdd-specifications-address-non-developers]] — Spec-Driven-Development specifications are addressed beyond developers, so the delimitation cannot rest on a developers-only readership
 
 - [[20_claims/exploratory-collection-visualisation-is-a-rich-design-space]] — Visualisation of cultural-heritage collections is a rich, surveyed design space for open-ended exploration
 - [[20_claims/digital-tool-criticism-demands-reflection-on-tools]] — Digital tool criticism demands reflection on the tools that shape research
