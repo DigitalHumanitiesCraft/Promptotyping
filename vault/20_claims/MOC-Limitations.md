@@ -2,7 +2,7 @@
 type: moc
 topic: "Limitations"
 created: 2026-07-19
-updated: 2026-07-23
+updated: 2026-07-24
 ---
 
 # MOC: Limitations
@@ -20,3 +20,8 @@ Added with the bibliography-traceability sweep of 2026-07-23:
 - [[20_claims/llms-amplify-research-not-automate-it]] — LLMs amplify computer-based research work rather than automate research, and do so asymmetrically
 - [[20_claims/llm-reproducibility-transparency-recommendations]] — Reproducible LLM-based research requires transparency of prompts, model versions and settings against model non-determinism
 - [[20_claims/edition-ai-benchmarks-lacking-and-reproducibility-favours-local-models]] — Benchmarks for AI-generated edition tasks are lacking, and a reproducibility standard from within digital editing calls for free, locally runnable models
+
+Added with the Phase C revision round of 2026-07-24, from the corpus and claim-evidence audits:
+
+- [[20_claims/record-does-not-separate-document-depth-from-verification-effort]] — the project-internal confound behind the document-quality observation, grounding the second confound named in the paper's limits
+- [[20_claims/unassisted-non-hybrid-artefact-production-is-unsupported]] — the ceiling of the transfer evidence, grounding the falsification offer on the non-hybrid axis

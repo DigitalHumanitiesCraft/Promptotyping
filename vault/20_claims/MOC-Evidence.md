@@ -2,7 +2,7 @@
 type: moc
 topic: "Evidence"
 created: 2026-07-19
-updated: 2026-07-19
+updated: 2026-07-24
 ---
 
 # MOC: Evidence
@@ -48,3 +48,7 @@ Claims of the paper's Section 4 evidence base: project figures, build states, an
 
 - [[20_claims/section4-verification-single-agent-snapshot-2026-07-19]] — the verification was a single-agent snapshot with test figures counted as source functions.
 - [[20_claims/section4-deviations-are-snapshot-drift-2026-07-19]] — several deviations are snapshot drift where dating a figure equals updating it.
+
+### What the record does not carry
+
+- [[20_claims/record-has-no-failure-case-and-a-bounded-yield-pole]] — no documented failure case stands behind the negative pole of the document-quality observation; the pole the record carries is bounded yield (also Limitations).

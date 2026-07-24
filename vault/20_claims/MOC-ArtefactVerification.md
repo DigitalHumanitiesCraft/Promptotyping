@@ -2,7 +2,7 @@
 type: moc
 topic: "ArtefactVerification"
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-24
 ---
 
 # MOC: ArtefactVerification
@@ -31,3 +31,6 @@ Claims behind the paper's Sections 4, 6.1, and 6.2: the self-contained static ar
 - [[20_claims/coordinated-multiple-views-enable-exploration]] — Coordinated and multiple views let users understand data through different linked representations
 - [[20_claims/static-client-side-editions-reach-tens-of-thousands-of-units]] — A statically published TEI edition of over 16,000 pre-rendered units processes and stores without size trouble on ordinary hardware
 
+Added with the Phase C revision round of 2026-07-24:
+
+- [[20_claims/szd-htr-confabulated-reading-in-hasty-kurrent]] — a single documented transcription reading in which real words stand for the source word, the occasion the worked example gives for external quality signals
