@@ -29,9 +29,9 @@ Claims of the paper's Section 4 evidence base: project figures, build states, an
 - [[20_claims/zbz-knowledge-doc-count-2026-07-19]] — the ZBZ knowledge base holds 13 content documents plus an index, without the named Action Documents.
 - [[20_claims/vetmedai-excel-count-2026-07-19]] — the VetMedAI README states 79 Excel files.
 - [[20_claims/vetmedai-knowledge-doc-count-2026-07-19]] — the VetMedAI knowledge base holds about 31 content documents.
-- [[20_claims/herdata-letter-count-2026-07-19]] — HerData documents 15,312 letters and the paper's 1,793 figure is undocumented.
+- [[20_claims/herdata-letter-count-2026-07-19]] — HerData documents 15,312 letters, and the recount of 2026-07-24 confirms the 1,793 figure in the repository data.
 - [[20_claims/m3gim-decision-count-2026-07-19]] — the M³GIM repository holds about 127 decision entries.
-- [[20_claims/correspexplorer-knowledge-userstory-count-2026-07-19]] — CorrespExplorer holds 13 knowledge files and 34 unique user-story IDs.
+- [[20_claims/correspexplorer-knowledge-userstory-count-2026-07-19]] — CorrespExplorer holds 13 knowledge files and 37 unique user-story IDs.
 - [[20_claims/klawiter-test-count-2026-07-19]] — the Klawiter repository holds 247 test functions.
 - [[20_claims/medieval-test-count-2026-07-19]] — the Medieval repository holds 192 test functions and 6 knowledge documents.
 
