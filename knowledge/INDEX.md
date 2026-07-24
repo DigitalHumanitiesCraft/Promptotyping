@@ -5,9 +5,9 @@ project:
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 status: complete
 language: en
-version: 0.6
+version: 0.7
 created: 2026-05-09
-updated: 2026-07-23
+updated: 2026-07-24
 authors: [Christopher Pollin]
 generated-with: Claude Code mit Claude Fable 5
 method:
@@ -18,7 +18,7 @@ template:
   version: 0.2
   url: https://dhcraft.org/Promptotyping/promptotyping-document/index
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-index
-related: [project, specification, architecture, design, journal, paper, paper-writing, report, submission-zfdg, revision-knowledge]
+related: [project, specification, architecture, design, journal, paper, paper-writing, paper-argument-map, report, submission-zfdg, revision-knowledge]
 ---
 
 # INDEX
@@ -27,7 +27,7 @@ Navigation and glossary of this repository's knowledge base. The repository `Dig
 
 ## Language regime
 
-By operator decision of 2026-07-23 the core knowledge documents (INDEX, project, specification, architecture, design) are English, since they are the public showcase of the self-application. The process and steering documents (journal, paper-writing, report, submission-zfdg) stay German as working instruments. The `template:` frontmatter blocks keep the German template names until the template catalogue itself renames them in the vault; the glossary below gives the English function names.
+By operator decision of 2026-07-23 the core knowledge documents (INDEX, project, specification, architecture, design) are English, since they are the public showcase of the self-application. The process and steering documents stay German as working instruments, which covers journal, paper-writing, paper-argument-map, report, submission-zfdg, and the revision documents. The `template:` frontmatter blocks keep the German template names until the template catalogue itself renames them in the vault; the glossary below gives the English function names.
 
 ## Contents
 
@@ -37,13 +37,17 @@ By operator decision of 2026-07-23 the core knowledge documents (INDEX, project,
 - **[architecture.md](architecture.md)** — how the site is built: URL structure, tech stack, module inventory (function: Architecture).
 - **[design.md](design.md)** — how the site looks and behaves: DHCraft design system, side panels, typography (function: Design).
 - **[journal.md](journal.md)** — chronological process record, German (function: Provenance).
-- **[paper.md](paper.md)** — the full English paper text as one document, complete draft for operator reading; headerless by design for copy-out. After release it is decomposed into `_content/paper/`.
+- **[paper.md](paper.md)** — the full English paper text as one document, the canonical text after the revision round of 2026-07-24; headerless by design for copy-out. After release it is decomposed into `_content/paper/`, whose currently deployed cut still carries the pre-revision section structure.
 - **[paper-writing.md](paper-writing.md)** — the knowledge about writing the paper: working mode, core statements, language rules, decision state, checkpoints, German.
-- **[report.md](report.md)** — snapshot report of the lane run towards the ZfdG submission (2026-07-23), German; not updated further.
+- **[paper-argument-map.md](paper-argument-map.md)** — the concept model of the paper, one argument chain per block in compact notation with confirmation status, German. Serves the operator as a review instrument and an agent as a generation basis.
+- **[report.md](report.md)** — snapshot report of the lane run towards the ZfdG submission (2026-07-23), German; carries a dated addendum on what the revision round settled and is not otherwise updated.
 - **[submission-zfdg.md](submission-zfdg.md)** — submission package for the Zeitschrift für digitale Geisteswissenschaften: exposé with outline and literature selection, short abstracts in German and English, formalities checklist; German.
-- **[revision-knowledge.md](revision-knowledge.md)** — steering knowledge for the paper revision: problem fields from an external review as hypotheses, working principles, four-phase process with operator gate; German. Audit reports land as `revision-audit-{a0..a3}.md`, operator decisions as `revision-decisions.md`.
+- **[revision-knowledge.md](revision-knowledge.md)** — steering knowledge of the revision phase that ran on the finished draft, kept as a historical document with a dated status note; German.
+- **`revision-audit-a0.md`** to **`revision-audit-a3.md`**, **`revision-audit-a4-record-verification.md`**, **`revision-audit-a5-vault-coverage.md`** — the read-only audit reports of the revision phase, German.
+- **`revision-frame-proposal.md`** — the mapping and drafts for retiring the translation doubling as the paper's theoretical core, German.
+- **`revision-research-sdd.md`** — the sourced examination of the Spec-Driven-Development delimitation, German.
 
-The paper work follows a two-document model, the text in `paper.md` and the knowledge about it in `paper-writing.md`. A `data.md` deliberately does not exist; the Material template does not carry for method repositories, and the material basis lives in `project.md` (journal entry of 2026-05-09).
+The paper work follows a two-document model, the text in `paper.md` and the knowledge about it in `paper-writing.md`; the argument map is the third, optional layer over both. The operator decisions of the revision phase were taken in chat and recorded in the commit messages and in `paper-writing.md`; the `revision-decisions.md` that the process description in `revision-knowledge.md` foresees was never written. A `data.md` deliberately does not exist; the Material template does not carry for method repositories, and the material basis lives in `project.md` (journal entry of 2026-05-09).
 
 ## Reading order
 
@@ -54,12 +58,15 @@ The paper work follows a two-document model, the text in `paper.md` and the know
 5. **design.md** (how it looks)
 6. **journal.md** (what happened)
 7. **paper-writing.md** (state and steering of the paper work, leading into **paper.md**)
+8. **paper-argument-map.md** (the paper's argument in compact notation, for review or regeneration)
+
+The revision documents are consulted per task rather than read in order. They hold the audits, the frame proposal, and the delimitation research of the revision phase.
 
 ## Glossary
 
 Terms constitutive for this knowledge base. Canonical definitions live in the linked vault knowledge documents; this is the short form relevant here.
 
-**Promptotyping.** Iterative context-engineering method in four phases, Preparation, Exploration & Mapping, Distillation, Implementation, producing research artefacts from data and frontier LLMs. Promptotyping Documents are the primary artefact; the prototype is a functional by-product that can be discarded and regenerated from them.
+**Promptotyping.** Iterative context-engineering method in four phases, Preparation, Exploration & Mapping, Distillation, Implementation, producing research artefacts from data and frontier LLMs. The `knowledge/` folder is the curated knowledge artefact of a project, holding the domain knowledge and the specification the implementation is derived from; its coverage ends where decisions taken during building are not written back into it. A single iteration of a prototype stays cheap to abandon, and what it taught goes into the documents.
 
 **Promptotyping Document.** Structured Markdown document in a repository's `knowledge/` folder. Three analytical types: Knowledge (declarative), Process (chronological), Action (imperative).
 
