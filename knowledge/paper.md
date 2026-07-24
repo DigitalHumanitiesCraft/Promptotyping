@@ -272,7 +272,7 @@ The worked cases below cover four of the five functions. The audit function stay
 **Verification: the ZBZ OCR/TEI pipeline.**[^zbz]
 
 - **Source data:** 286 PDF scans, approximately 4,150 pages of estate materials of the Zentralbibliothek Zürich.
-- **Documents:** 13 knowledge documents governing a nine-stage pipeline, and over 30 Python scripts generated and maintained entirely through the agent.
+- **Documents:** 13 knowledge documents governing a nine-stage pipeline, and a Python codebase generated and maintained entirely through the agent, whose generation the repository's commit history carries.
 - **Artefact:** Verification Interfaces at each pipeline stage, with multi-source OCR comparison and layout overlay, plus an Edition Interface as reader.
 - **Epistemic yield:** the interfaces interrupt the error cascade that characterises multi-stage automated pipelines, and expert judgement is applied at defined milestones, where it discriminates. OCR processing cost less than 10 EUR. The initial build took approximately six weeks, and development has continued since.
 - **Limits:** the pipeline is the project where the method stops being lightweight, without crossing the technical boundary of Section 4.3, since the artefact stays static and client-side. Thirteen documents and nine stages are infrastructure, and Section 6.4 counts the cost.
