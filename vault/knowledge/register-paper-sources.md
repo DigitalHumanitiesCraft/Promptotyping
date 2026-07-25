@@ -51,6 +51,8 @@ Status values. `registered` (row exists) → `csl` (reference record in `referen
 | hinrichs-2019 | Hinrichs et al. 2019, Sandcastles (DSH) | 2.1, 6.1 | A | claimed | [[10_distillates/publications/hinrichs-2019-sandcastles]] | discarded-visualisations-retain-epistemic-value, visualisation-is-research-process-not-means |
 | holmes-2023 | Holmes/Takeda 2023, Endings (DHQ) | 4.1 | A | claimed | [[10_distillates/publications/holmes-2023-endings-principles]] | endings-durability-through-static-no-dependencies, endings-static-artefacts-minimise-maintenance |
 | hong-2025 | Hong et al. 2025, Context Rot | 2.3, 4.1 | A | claimed | [[10_distillates/publications/hong-2025-context-rot]] | context-rot-nonuniform-degradation-with-length |
+| ieee-1012-2016 | IEEE Std 1012-2016, Verification and Validation | 6.2 (note) | C | csl | | paywalled; cited for the normative V&V definitions the paper departs from, definitions cross-checked against ISO 9000:2015 |
+| iso-9000-2015 | ISO 9000:2015, Quality Management Systems, Vocabulary | 6.2 (note) | C | csl | | paywalled; clauses 3.8.12 and 3.8.13 carry the verification and validation definitions, quoted from the ISO Online Browsing Platform |
 | kemman-2021 | Kemman 2021, Trading Zones | 1, 2.4 | A | claimed | [[10_distillates/publications/kemman-2021-trading-zones]] | digital-history-collaboration-is-a-trading-zone |
 | koenig-2026 | König 2026, Fertig vorerst (ZfdG) | 6.1 | A | claimed | [[10_distillates/publications/koenig-2026-fertig-vorerst]] | unfinishedness-is-an-epistemic-value-in-the-digital-humanities |
 | koolen-2019 | Koolen et al. 2019, Tool Criticism (DSH) | 2.2 | A | claimed | [[10_distillates/publications/koolen-2019-digital-tool-criticism]] | digital-tool-criticism-demands-reflection-on-tools |

@@ -1,0 +1,24 @@
+[
+  {
+    "id": "iso-9000-2015",
+    "type": "standard",
+    "title": "Quality Management Systems. Fundamentals and Vocabulary",
+    "number": "ISO 9000:2015",
+    "author": [
+      {
+        "literal": "International Organization for Standardization"
+      }
+    ],
+    "publisher": "International Organization for Standardization",
+    "publisher-place": "Geneva",
+    "edition": "4",
+    "issued": {
+      "date-parts": [
+        [
+          2015
+        ]
+      ]
+    },
+    "URL": "https://www.iso.org/standard/45481.html"
+  }
+]

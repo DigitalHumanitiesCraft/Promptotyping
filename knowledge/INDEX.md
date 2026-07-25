@@ -18,7 +18,7 @@ template:
   version: 0.2
   url: https://dhcraft.org/Promptotyping/promptotyping-document/index
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-index
-related: [project, specification, architecture, design, journal, paper, paper-writing, paper-argument-map, report, submission-zfdg, revision-knowledge]
+related: [project, specification, architecture, design, journal, paper, paper-writing, paper-argument-map, paper-terminology, report, submission-zfdg, revision-knowledge]
 ---
 
 # INDEX
@@ -40,6 +40,7 @@ By operator decision of 2026-07-23 the core knowledge documents (INDEX, project,
 - **[paper.md](paper.md)** — the full English paper text as one document, the canonical text after the revision round of 2026-07-24; headerless by design for copy-out. After release it is decomposed into `_content/paper/`, whose currently deployed cut still carries the pre-revision section structure.
 - **[paper-writing.md](paper-writing.md)** — the knowledge about writing the paper: working mode, core statements, language rules, decision state, checkpoints, German.
 - **[paper-argument-map.md](paper-argument-map.md)** — the concept model of the paper, one argument chain per block in compact notation with confirmation status, German. Serves the operator as a review instrument and an agent as a generation basis.
+- **[paper-terminology.md](paper-terminology.md)** — working sheet of the terminology pass: every term with its English original form, its definition in the current text, its source, and a status code; German. Carries the open operator decisions of the pass.
 - **[report.md](report.md)** — snapshot report of the lane run towards the ZfdG submission (2026-07-23), German; carries a dated addendum on what the revision round settled and is not otherwise updated.
 - **[submission-zfdg.md](submission-zfdg.md)** — submission package for the Zeitschrift für digitale Geisteswissenschaften: exposé with outline and literature selection, short abstracts in German and English, formalities checklist; German.
 - **[revision-knowledge.md](revision-knowledge.md)** — steering knowledge of the revision phase that ran on the finished draft, kept as a historical document with a dated status note; German.
