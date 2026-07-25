@@ -613,3 +613,11 @@ Der Operator beantwortete vier der offenen Fragen, und die Antworten stehen im P
 **Das ZfdG-Paket ist auf dem heutigen Stand.** Beide Kurzabstracts führen die offene Artefakt-Gattung und das Begriffspaar Verifikation und Validierung, die Gliederung nennt 6.2 unter dem neuen Titel, und die Modellierungstheorie im Exposé nennt jetzt Mayr und Thalheim statt Gruber, wie der Papertext. Beide Abstracts bleiben unter der Grenze von 750 Zeichen, geprüft mit 748 und 726.
 
 **Der Vault kennt die Inventarpflicht.** `schema.md` führt sie beim Schichtenmodell, `operations.md` beim Prüfvertrag der Validierung, zusammen mit dem Grundsatz, dass ein Lauf ohne Fehler noch kein Erfolgskriterium ist, solange die Instanz ihren Erwartungswert an Warnungen nicht deklariert hat.
+
+### Zwei nachgeholte Distillate, und was sie am Papertext korrigieren
+
+Die beiden Quellen, die den Forschungsdatenbegriff in 2.3 tragen, waren nur als CSL-Record geführt. Beide sind jetzt beschafft, archiviert, quellenfest destilliert und mit je einem Claim an den Papertext gebunden. Der neue Inventarcheck meldete beide sofort als registerlos und die beiden Claims als von keiner Topic Map erreichbar, was er soll; nach dem Nachtrag läuft der Vault wieder auf null Fehler bei der einen erwarteten Warnung.
+
+**Geiger 2023 sagt weniger, als die Zitation ihm zuschrieb.** Der Glossareintrag verweigert eine einheitliche Definition ausdrücklich und hält die Uneinheitlichkeit für einen Vorzug, weil der Begriff als diskursives Brückenkonzept arbeitet. Was er trägt, sind drei funktionale Selektionskriterien, das Begründungs-, das Wahrheits- und das Reproduktionskriterium. Genau diese drei stehen im Papersatz, jeweils als Pflicht, die die Daten einlösen; die Zuschreibung hält also, nur ist der Beleg ein Kriterienkatalog und keine Definition. Das steht als offene Frage im Distillat.
+
+**Pichler und Reiter 2022 tragen die Hälfte des Wortes nicht, das im Papertext stand.** Die Operationalisierung war dort als Überführung in "observable and validatable instances" gefasst. Der Aufsatz definiert sie als Entwicklung einer Messung für einen Begriff und ist gegenüber der Validität im strengen Sinn ausdrücklich skeptisch, weil viele Begriffe kontextabhängig oder gar nicht präzise genug definiert sind. Der Satz führt jetzt die Definition der Quelle.

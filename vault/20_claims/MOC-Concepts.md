@@ -17,6 +17,8 @@ Added with the bibliography-traceability sweep of 2026-07-23:
 
 - [[20_claims/critical-expert-in-the-loop-double-reflection-loop]] — The Critical Expert in the Loop operates a double reflection loop against LLM failure modes
 - [[20_claims/unfinishedness-is-an-epistemic-value-in-the-digital-humanities]] — In the field's German-language discourse, unfinishedness is an epistemic value: the provisional expresses the dynamics of scholarly knowledge
+- [[20_claims/research-data-is-defined-by-the-function-it-serves]] — What makes data research data is the function it serves, justification, truth claim, reproduction, not a list of data types
+- [[20_claims/operationalisation-develops-a-measurement-for-a-concept]] — Operationalisation develops a measurement that assigns instances to a concept, and its choices govern what the results can mean
 - [[20_claims/boundary-objects-are-plastic-yet-robust-across-communities]] — Boundary objects are plastic enough to adapt to local needs yet robust enough to maintain identity across communities
 - [[20_claims/epistemic-forms-are-target-knowledge-structures]] — Epistemic forms are target structures that guide knowledge-building activity
 - [[20_claims/a-prototype-can-embody-a-peer-reviewable-argument]] — A prototype can embody a peer-reviewable scholarly argument
