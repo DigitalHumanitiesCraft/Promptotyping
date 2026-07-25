@@ -185,8 +185,11 @@
         },
         tokenizer: function (src) {
           // One definition: its own line plus any continuation line that neither
-          // is blank nor starts the next definition.
-          var match = /^\[\^([^\]\s]+)\]:[ \t]*([^\n]*(?:\n(?!\s*$|\[\^)[^\n]*)*)(?:\n+|$)/.exec(src);
+          // is blank nor starts the next definition. The blank-line guard must
+          // be anchored per line; an unanchored \s*$ only ever matches the end
+          // of the whole document, which let a trailing definition swallow the
+          // rest of the paper.
+          var match = /^\[\^([^\]\s]+)\]:[ \t]*([^\n]*(?:\n(?![ \t]*(?:\n|$)|\[\^)[^\n]*)*)(?:\n+|$)/.exec(src);
           if (!match) {
             return undefined;
           }
@@ -526,9 +529,14 @@
     if (segments[0] === "arbeitsumgebung") {
       return "arbeitsumgebung";
     }
+    if (segments[0] === "anwendung" || segments[0] === "artefakt" ||
+        segments[0] === "verifikation") {
+      return segments[0];
+    }
     // Already a hash-form anchor passed without leading '#'.
     if (/^(promptotyping-document|konzept|case|konvention|abschnitt)-/.test(rest) ||
         rest === "glossar" || rest === "literatur" || rest === "arbeitsumgebung" ||
+        rest === "anwendung" || rest === "artefakt" || rest === "verifikation" ||
         rest === "paper") {
       return rest;
     }
@@ -1302,6 +1310,9 @@
     var ready = Promise.all([
       renderGlossar(),
       renderMarkdownInto("ueberblick", "_content/ueberblick.md"),
+      renderMarkdownInto("anwendung", "_content/anwendung.md"),
+      renderMarkdownInto("artefakt", "_content/artefakt.md"),
+      renderMarkdownInto("verifikation", "_content/verifikation.md"),
       renderVorlagen(),
       renderMarkdownInto("konvention-v0.1", "_content/konvention.md", function (el) {
         var note = document.createElement("p");
