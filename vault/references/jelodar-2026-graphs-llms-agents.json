@@ -1,0 +1,44 @@
+[
+  {
+    "id": "jelodar-2026",
+    "type": "article",
+    "title": "Integrating Graphs, Large Language Models, and Agents: Reasoning and Retrieval",
+    "author": [
+      {
+        "family": "Jelodar",
+        "given": "Hamed"
+      },
+      {
+        "family": "Bai",
+        "given": "Samita"
+      },
+      {
+        "family": "Meymani",
+        "given": "Mohammad"
+      },
+      {
+        "family": "Hamedi",
+        "given": "Parisa"
+      },
+      {
+        "family": "Razavi-Far",
+        "given": "Roozbeh"
+      },
+      {
+        "family": "Ghorbani",
+        "given": "Ali"
+      }
+    ],
+    "number": "arXiv:2604.15951",
+    "issued": {
+      "date-parts": [
+        [
+          2026,
+          4,
+          17
+        ]
+      ]
+    },
+    "URL": "https://arxiv.org/abs/2604.15951"
+  }
+]
