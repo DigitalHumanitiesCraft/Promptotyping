@@ -699,3 +699,13 @@ Die beiden Site-Agenten wurden gestoppt, bevor sie ihre Pakete abschließen konn
 **AP2 Konsistenzdurchgang** hat die dringende Arbeit erledigt, die toten Repo-Links sind aus Galerie und Tiefenseiten entfernt. Nicht erledigt ist der gesamte Glossarteil, `data/glossar.json` und `_content/glossar.md` sind unberührt. Offen bleiben damit die Dokumenttypologie im Glossar, der Phasenname, der zurückgenommene Primärartefakt-Anspruch, die Fünfzig-Prozent-Angabe, Asymmetric Amplification, Sycophancy, die Sektionsverweise in sechsundzwanzig Einträgen, die Vorlagenzahl, die Interface-Typologie, der Eintrag zur entfernten Phase Lane sowie die Quellenliste in `_meta`, die noch auf die gelöschten Spiegeldateien zeigt. Ebenso offen sind `_content/literatur.md` und die Zahlendifferenzen der Case Studies.
 
 Da die Site ohnehin auf Englisch umgestellt wird, ist zu prüfen, ob der Glossarteil dieses Pakets direkt in der Übersetzung erledigt wird statt zweimal.
+
+## 2026-07-25, zweite Sitzung — Kritik-Durchgang am Paper und Umsetzung
+
+Der Operator hat eine konstruktive Kritik des Gesamttexts angefordert. Fünfzehn Befunde, im Chat einzeln entschieden, die Entscheidungen und ihre Umsetzung stehen vollständig in `paper-writing.md`. Die vier folgenreichsten: der Titel bleibt, weil die Übersetzung von Daten in Artefakte tragendes Argument ist und am 2026-07-24 allein die Gleichsetzung mit der Vermittlung zwischen Fachwissenschaft und Entwicklung gestrichen wurde; die früheren Sektionen 2.1 und 2.2 sind zusammengezogen, womit alles Folgende in Sektion 2 eine Nummer nach unten rückt; der Artefaktbegriff in Sektion 1 ist auf das eingeschränkt, was das Inventar belegt; und die Lehrfälle in 5.4 beanspruchen nur noch Kommunizierbarkeit.
+
+Ein Befund ist ausdrücklich abgelehnt worden. Ein Negativfall wird nicht geschrieben. Die Offenlegung in 5.1 bleibt die Stelle, an der die Lücke benannt ist, und die abgeschaffte agentenbasierte Screening-Stufe steht ohnehin in 3.4.
+
+Neu belegt ist die Eröffnungsprämisse. Carver et al. 2022 tragen den gemessenen Unterdeckungsbefund, die Zuspitzung auf den Long Tail bleibt markierte Inferenz. Quelle, Distillat und Claim liegen im Grounded Vault, dessen Sektionsverweise mit umnummeriert sind; die Repräsentationsschicht blieb unangetastet.
+
+Offen für die nächste Sitzung: die Site rendert `knowledge/paper.md` direkt, also erbt sie die neue Sektionsstruktur automatisch, aber das Inhaltsverzeichnis in `index.html` und `404.html` führt die Sektionen von Hand und muss auf die fünf Untersektionen der 2 gezogen werden. Ebenso offen bleibt der Glossarteil aus der vorigen Sitzung.

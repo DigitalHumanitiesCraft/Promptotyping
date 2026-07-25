@@ -82,6 +82,8 @@ Rolle: zuliefernd → K-1b
 
 ## Sektion 2, epistemischer Rahmen
 
+Sektionsspiegel nach der Revision vom 2026-07-25. Die früheren Sektionen 2.1 (Exploration als Forschung) und 2.2 (Werkzeuge als epistemische Artefakte) sind zu einer Sektion 2.1 zusammengezogen, „Exploration, Building, and Their Correctives"; jede folgende Sektion trägt eine Nummer weniger, also 2.2 LLMs und Forschungsdaten, 2.3 Übersetzungsproblem und Konzeptmodelle, 2.4 Position im KI-Diskurs, 2.5 Genealogie. Die Blockkürzel bleiben nach der Konvention dieses Dokuments als Bestätigungsanker unverändert stehen, ihre Sektionszuordnung folgt diesem Spiegel. K-2.1a, K-2.1b und K-2.2a realisiert damit gemeinsam die neue Sektion 2.1; K-2.3a und K-2.3b stehen in 2.2, K-2.4a und K-2.4b in 2.3, K-2.5a in 2.4, die K-2.6-Blöcke in 2.5.
+
 **K-2.1a, Exploration ist Forschung.**
 
 ```
