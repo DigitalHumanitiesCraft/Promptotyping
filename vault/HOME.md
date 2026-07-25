@@ -9,7 +9,7 @@ Human entry point of this vault. The vault carries the provenance layer beneath 
 ## Explore the knowledge
 
 - Topic maps: [[20_claims/MOC-Genealogy]], [[20_claims/MOC-Method]], [[20_claims/MOC-Evidence]], [[20_claims/MOC-Concepts]], [[20_claims/MOC-Limitations]], [[20_claims/MOC-Frame]], [[20_claims/MOC-ArtefactVerification]]
-- [[glossary/]] — the project's terms.
+- [[glossary/]] — one entry per term the paper sets on its own authority, with the discarded alternative where a fixing departs from established use. Terms an external source grounds stay in the distillates and claims.
 
 ## Understand the machine room
 

@@ -43,6 +43,7 @@ A document is split only when its sections develop divergent update rhythms or d
 - **Source type**: a class of sources defined by representation, distillation operation and grounding anchor.
 - **Distillate**: the condensation of exactly one source into its core statements, each carrying a grounding anchor into that source.
 - **Claim**: an atomic, source-independent statement, synthesized from one or more distillates; the layer where source types converge.
+- **Glossary entry**: one term the deliverable sets on its own authority, held in `glossary/` with the discarded alternative and the reason where the fixing departs from established use. A term an external source grounds belongs in a distillate and a claim, not here, and an entry without an anchor is itself the statement that no source carries the term.
 - **Grounding**: the anchor relation between a claim and its source locations. A structural property an agent can produce; it carries no truth assertion.
 - **Evidence**: a grounding relation that has passed human expert verification. Relational and deliberately rare; a fresh vault contains grounding, evidence arises only through review.
 - **Provenance chain**: the unbroken anchor path from a deliverable sentence through claims and distillates to source locations. A break anywhere is a defect that validation detects.
