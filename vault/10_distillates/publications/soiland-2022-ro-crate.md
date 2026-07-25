@@ -13,7 +13,7 @@ updated: 2026-07-23
 
 # Distillate: Packaging research artefacts with RO-Crate (Soiland-Reyes et al. 2022)
 
-RO-Crate is a lightweight, community-driven way to package research artefacts with machine-readable metadata using Schema.org/JSON-LD; knowledge/paper.md 3.3 names it the nearest FAIR-infrastructure relative of the method's frontmatter self-description practice.
+RO-Crate is a lightweight, community-driven way to package research artefacts with machine-readable metadata using Schema.org/JSON-LD; it entered the vault as the nearest FAIR-infrastructure relative of the method's frontmatter self-description practice in Section 3.3; the revised paper text no longer names RO-Crate, so the distillate stands as background for that passage rather than as the ground of a cited claim.
 
 ## Core statements
 
@@ -32,7 +32,7 @@ RO-Crate is a lightweight, community-driven way to package research artefacts wi
 
 ## Open questions
 
-- knowledge/paper.md 3.3 contrasts RO-Crate as *retrospective* description of a finished package against the frontmatter/`template:` layer as *prospective*, operative description. That directional contrast is the paper's own analysis, not a statement of Soiland-Reyes et al.
+- An earlier state of knowledge/paper.md 3.3 contrasted RO-Crate as *retrospective* description of a finished package against the frontmatter/`template:` layer as *prospective*, operative description. That directional contrast was the paper's own analysis, not a statement of Soiland-Reyes et al., and the current text carries neither the contrast nor the reference.
 
 ## Related
 

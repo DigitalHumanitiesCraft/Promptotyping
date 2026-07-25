@@ -13,7 +13,7 @@ updated: 2026-07-23
 
 # Distillate: Context Rot (Hong et al. 2025)
 
-A Chroma technical report showing that LLM performance degrades non-uniformly as input length grows, even on simple tasks; the paper cites it in Section 2.3 and Section 3.3 as the empirical rationale for the Distillation phase, whose principle is maximum information with minimum tokens.
+A Chroma technical report showing that LLM performance degrades non-uniformly as input length grows, even on simple tasks; the paper cites it in Section 2.3 and names the effect in Section 2.5 as the empirical rationale for the Distillation phase, whose principle is maximum information with minimum tokens.
 
 ## Core statements
 

@@ -9,8 +9,8 @@ method:
 status: draft
 language: en
 created: "2026-07-19"
-updated: "2026-07-19"
-related: [specification, schema, operations, state, journal]
+updated: "2026-07-25"
+related: [specification, schema, operations, state, journal, register-paper-sources]
 ---
 
 # Index
@@ -23,7 +23,7 @@ Navigation and terminology of the vault. Human readers start at [[HOME]]; agents
 - **Produce or check content**: [[knowledge/schema]] for what a well-formed artifact is, [[knowledge/operations]] for the chain that produces it.
 - **Understand a past decision**: [[knowledge/journal]], append-only, newest last.
 
-## The six knowledge documents
+## The knowledge documents
 
 | Document | Holds | Changes |
 |---|---|---|
@@ -32,6 +32,7 @@ Navigation and terminology of the vault. Human readers start at [[HOME]]; agents
 | [[knowledge/schema]] | layer model, document types, anchor mechanics, audit trail | rarely, by decision |
 | [[knowledge/operations]] | the chains: acquire, ingest, distill, claims, chapters, query, check | rarely, by decision |
 | [[knowledge/state]] | source inventory, chapter register, everything volatile | constantly |
+| [[knowledge/register-paper-sources]] | per-work register of the bibliography-traceability sweep | with the sweep |
 | [[knowledge/journal]] | decision history | append-only |
 
 A document is split only when its sections develop divergent update rhythms or divergent readers.

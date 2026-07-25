@@ -4,11 +4,11 @@ Human entry point of this vault. The vault carries the provenance layer beneath 
 
 ## Read the deliverable
 
-- The paper lives canonically in this repository under `_content/paper/`; the chapter register in [[knowledge/state]] maps its sections to the claims here.
+- The paper lives canonically in this repository as `knowledge/paper.md`; `_content/paper/` is the derived publication form the site renders, regenerated from the canonical text only after release. The chapter register in [[knowledge/state]] maps the paper's sections to the claims here.
 
 ## Explore the knowledge
 
-- Topic maps: [[20_claims/MOC-Genealogy]], [[20_claims/MOC-Method]], [[20_claims/MOC-Evidence]], [[20_claims/MOC-Concepts]], [[20_claims/MOC-Limitations]]
+- Topic maps: [[20_claims/MOC-Genealogy]], [[20_claims/MOC-Method]], [[20_claims/MOC-Evidence]], [[20_claims/MOC-Concepts]], [[20_claims/MOC-Limitations]], [[20_claims/MOC-Frame]], [[20_claims/MOC-ArtefactVerification]]
 - [[glossary/]] — the project's terms.
 
 ## Understand the machine room

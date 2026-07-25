@@ -6,7 +6,7 @@ project:
 status: active
 language: en
 created: "2026-07-23"
-updated: "2026-07-23"
+updated: "2026-07-25"
 related: [state, specification]
 ---
 
@@ -17,6 +17,8 @@ Working register of the bibliography-traceability sweep (operator decision 2026-
 Access classes. **A** openly readable online (agent-ingestible). **B** operator-supplied local copy required (place in `_sources/`). **C** not accessible (paywall or print without local copy); no distillate is faked, the paper's citation stands on its own and the row keeps the gap visible.
 
 Status values. `registered` (row exists) → `csl` (reference record in `references/`) → `ingested` (source in `_sources/`) → `distilled` (distillate with quote-checked statements) → `claimed` (≥1 claim grounded and MOC-listed).
+
+Paper roles name the sections of `knowledge/paper.md` in which the work is cited, and they were re-checked against that file on 2026-07-25 after the revision that merged the former Section 3.4 into 2.4 and moved the data-management-plan passage to 3.3. A work the revision dropped from the References keeps its row with the role marked `orphaned`, so that its distillate and claims stay findable as checked material without a current use in the paper.
 
 ## Cited works
 
@@ -39,7 +41,7 @@ Status values. `registered` (row exists) → `csl` (reference record in `referen
 | cremer-2025 | Cremer/Paulmann 2025, Quellen- und Datenkritik (ZfdG) | 2.3 | A | claimed | [[10_distillates/publications/cremer-2025-quellen-und-datenkritik]] | making-source-data-machine-addressable-is-interpretive-modelling |
 | drucker-2011 | Drucker 2011, Humanities Approaches (DHQ) | 2.1 | A | claimed | [[10_distillates/publications/drucker-2011-humanities-approaches]] | humanities-data-are-capta-not-given, inherited-visualisation-conventions-carry-positivist-assumptions |
 | drucker-2014 | Drucker 2014, Graphesis | 2.1 | B | acquisition open | | no open copy; capta argument already carried by the drucker-2011 distillate |
-| edmond-2005 | Edmond 2005, Professional Intermediary | 1, 2.4 | C | claimed (abstract-only) | [[10_distillates/publications/edmond-2005-professional-intermediary]] | dh-intermediary-bridges-researchers-and-technical-staff |
+| edmond-2005 | Edmond 2005, Professional Intermediary | 1 | C | claimed (abstract-only) | [[10_distillates/publications/edmond-2005-professional-intermediary]] | dh-intermediary-bridges-researchers-and-technical-staff |
 | fanous-2025 | Fanous et al. 2025, SycEval | 2.5 | A | claimed | [[10_distillates/publications/fanous-2025-syceval]] | fanous-frontier-models-sycophantic-in-most-cases, sycophancy-agreement-over-truth |
 | fawzy-2025 | Fawzy et al. 2025, Vibe Coding in Practice | 2.5 | A | claimed | [[10_distillates/publications/fawzy-2025-vibe-coding-in-practice]] | vibe-coding-speed-quality-tradeoff |
 | fischer-2025 | Fischer/Kimmel/Puppe 2025, Bildkarten (ZfdG) | 6.2 | A | claimed | [[10_distillates/publications/fischer-2025-bildkarten]] | glam-practice-layers-llm-extraction-with-deterministic-checks-and-expert-review |
@@ -47,10 +49,10 @@ Status values. `registered` (row exists) → `csl` (reference record in `referen
 | galey-2010 | Galey/Ruecker 2010, How a Prototype Argues | 2.2 | A | claimed | [[10_distillates/publications/galey-2010-how-a-prototype-argues]] | a-prototype-can-embody-a-peer-reviewable-argument |
 | geiger-2023 | Geiger 2023, Daten / Forschungsdaten (ZfdG Working Papers) | 2.3 | A | csl | | operator-supplied definition, distillate open |
 | grallert-2026 | Grallert et al. 2026, Open Tool Registries (DHQ) | 4.2, 6.3 | A | claimed | [[10_distillates/publications/grallert-2026-open-tool-registries]] | tadirah-most-adopted-yet-under-maintained, wikidata-tool-registries-as-commons |
-| gruber-1993 | Gruber 1993, Translation Approach to Ontology | 3.4 | A | claimed | [[10_distillates/publications/gruber-1993-ontolingua]] | ontologies-are-shared-vocabularies-for-reuse, ontology-is-explicit-specification-of-conceptualization |
+| gruber-1993 | Gruber 1993, Translation Approach to Ontology | 2.4 | A | claimed | [[10_distillates/publications/gruber-1993-ontolingua]] | ontologies-are-shared-vocabularies-for-reuse, ontology-is-explicit-specification-of-conceptualization |
 | hinrichs-2019 | Hinrichs et al. 2019, Sandcastles (DSH) | 2.1, 6.1 | A | claimed | [[10_distillates/publications/hinrichs-2019-sandcastles]] | discarded-visualisations-retain-epistemic-value, visualisation-is-research-process-not-means |
 | holmes-2023 | Holmes/Takeda 2023, Endings (DHQ) | 4.1 | A | claimed | [[10_distillates/publications/holmes-2023-endings-principles]] | endings-durability-through-static-no-dependencies, endings-static-artefacts-minimise-maintenance |
-| hong-2025 | Hong et al. 2025, Context Rot | 2.3, 4.1 | A | claimed | [[10_distillates/publications/hong-2025-context-rot]] | context-rot-nonuniform-degradation-with-length |
+| hong-2025 | Hong et al. 2025, Context Rot | 2.3 | A | claimed | [[10_distillates/publications/hong-2025-context-rot]] | context-rot-nonuniform-degradation-with-length |
 | ieee-1012-2016 | IEEE Std 1012-2016, Verification and Validation | 6.2 (note) | C | csl | | paywalled; cited for the normative V&V definitions the paper departs from, definitions cross-checked against ISO 9000:2015 |
 | iso-9000-2015 | ISO 9000:2015, Quality Management Systems, Vocabulary | 6.2 (note) | C | csl | | paywalled; clauses 3.8.12 and 3.8.13 carry the verification and validation definitions, quoted from the ISO Online Browsing Platform |
 | kemman-2021 | Kemman 2021, Trading Zones | 1, 2.4 | A | claimed | [[10_distillates/publications/kemman-2021-trading-zones]] | digital-history-collaboration-is-a-trading-zone |
@@ -61,21 +63,21 @@ Status values. `registered` (row exists) → `csl` (reference record in `referen
 | liu-2024 | Liu et al. 2024, LLM Agents for SE Survey | 2.5 | A | claimed | [[10_distillates/publications/liu-2024-llm-agents-se-survey]] | llm-based-agents-for-software-engineering |
 | macedo-2026 | Macedo 2026, From Prompt to Process | 2.5 | A | claimed | [[10_distillates/publications/macedo-2026-from-prompt-to-process]] | macedo-first-process-taxonomy-sdd-frameworks, sdd-frameworks-converge-on-specification-over-prompt |
 | mariani-2025 | Mariani 2025, PROV-A (ZfdG) | fn [^precedent] (4.1) | A | claimed | [[10_distillates/publications/mariani-2025-prov-a]] | client-side-provenance-tool-is-a-precedent-for-server-free-artefacts |
-| mayr-2021 | Mayr/Thalheim 2021, Triptych of Conceptual Modeling | 3.4 | A | claimed | [[10_distillates/publications/mayr-2021-triptych-conceptual-modeling]] | conceptual-model-links-language-and-domain-concepts |
+| mayr-2021 | Mayr/Thalheim 2021, Triptych of Conceptual Modeling | 2.4 | A | claimed | [[10_distillates/publications/mayr-2021-triptych-conceptual-modeling]] | conceptual-model-links-language-and-domain-concepts |
 | mei-2025 | Mei et al. 2025, Context Engineering Survey | 2.5 | A | claimed | [[10_distillates/publications/mei-2025-context-engineering]] | context-engineering-systematic-inference-context |
-| miksa-2019 | Miksa et al. 2019, Machine-Actionable DMPs | 3.4 | A | claimed | [[10_distillates/publications/miksa-2019-machine-actionable-dmps]] | madmps-demand-documents-infrastructure-can-act-on, traditional-dmps-are-unused-compliance-documents |
+| miksa-2019 | Miksa et al. 2019, Machine-Actionable DMPs | 3.3 | A | claimed | [[10_distillates/publications/miksa-2019-machine-actionable-dmps]] | madmps-demand-documents-infrastructure-can-act-on, traditional-dmps-are-unused-compliance-documents |
 | owens-2011 | Owens 2011, Defining Data for Humanists | 2.3 | A | claimed | [[10_distillates/publications/owens-2011-defining-data]] | humanities-data-is-constructed-not-given, owens-data-holds-evidentiary-value |
 | pichler-2022 | Pichler/Reiter 2022, Operationalization (Journal of Cultural Analytics) | 2.3 | A | csl | | operator-supplied definition, distillate open |
 | pierazzo-2015 | Pierazzo 2015, Digital Scholarly Editing | 4.2 | A | claimed | [[10_distillates/publications/pierazzo-2015-digital-editing]] | edition-interface-embodies-editorial-decisions |
 | pollin-2019 | Pollin 2019, DEPCHA and Bookkeeping Ontology | 2.6 | A | claimed | [[10_distillates/publications/pollin-2019-depcha-bookkeeping]] | deep-dive-process-documented-2019, ontologies-are-shared-vocabularies-for-reuse |
 | pollin-2024 | Pollin 2024, Workshopreihe (Zenodo) | 1 | A | claimed | [[10_distillates/publications/pollin-2024-workshopreihe]] | applied-genai-dh-workshop-series-2024 |
 | pollin-2025a | Pollin et al. 2025a, When it was 2024 (ZfdG) | 2.6, 6.2, 6.3 | A | claimed | [[10_distillates/publications/pollin-2025a-when-it-was-2024]] | edition-ai-benchmarks-lacking-and-reproducibility-favours-local-models, field-literature-records-llm-code-generation-and-tei-agent-line-by-2024 |
-| pollin-2025b | Pollin 2025b, Dissertation | 1, 2.3, 2.6, 3.4 | A | **claimed** | [[10_distillates/publications/pollin-2025b-dissertation]] | see MOC-Genealogy, MOC-Concepts |
+| pollin-2025b | Pollin 2025b, Dissertation | 1, 2.3, 2.4, 2.6 | A | **claimed** | [[10_distillates/publications/pollin-2025b-dissertation]] | see MOC-Genealogy, MOC-Concepts |
 | pollin-2025c | Pollin 2025c, Critical Vibing blog | 2.5 | A | claimed | [[10_distillates/publications/pollin-2025c-critical-vibing]] | critical-expert-in-the-loop-double-reflection-loop, szd-experiment-structured-vibe-coding |
 | pollin-2025d | Pollin 2025d, Promptotyping blog | 1 | A | **claimed** | [[10_distillates/publications/pollin-2025d-promptotyping-blog]] | see MOC-Genealogy |
 | pollin-2026a | Pollin 2026a, Asymmetric Amplification blog | 6.4 | A | claimed | [[10_distillates/publications/pollin-2026a-asymmetric-amplification]] | llms-amplify-research-not-automate-it |
 | pollin-2026b | Pollin 2026b, L.I.S.A. positioning | 1 | A | claimed | [[10_distillates/publications/pollin-2026b-lisa-positioning]] | llms-amplify-research-not-automate-it, promptotyping-documents-are-the-primary-artifact, promptotyping-is-a-four-phase-context-engineering-technique, reproducibility-shifts-to-documented-justification |
-| posner-2015 | Posner 2015, Necessary Contradiction blog | 1, 2.3 | A | claimed | [[10_distillates/publications/posner-2015-necessary-contradiction]] | humanities-data-is-constructed-not-given, reproducibility-shifts-to-documented-justification |
+| posner-2015 | Posner 2015, Necessary Contradiction blog | fn [^posner] (2.3) | A | claimed | [[10_distillates/publications/posner-2015-necessary-contradiction]] | humanities-data-is-constructed-not-given, reproducibility-shifts-to-documented-justification |
 | risam-2022 | Risam/Gil 2022, Minimal Computing (DHQ) | 4.1 | A | claimed | [[10_distillates/publications/risam-2022-minimal-computing]] | minimal-computing-reduces-code-and-dependencies, minimal-computing-resists-scale-as-innovation |
 | roberts-2007 | Roberts 2007, Coordinated Multiple Views | 4.2 | A | claimed | [[10_distillates/publications/roberts-2007-coordinated-multiple-views]] | coordinated-multiple-views-enable-exploration |
 | ruecker-2015 | Ruecker 2015, Taxonomy of Prototypes | 2.2 | A | claimed | [[10_distillates/publications/ruecker-2015-taxonomy-prototypes]] | experimental-prototype-yields-knowledge-not-product |
@@ -84,10 +86,10 @@ Status values. `registered` (row exists) → `csl` (reference record in `referen
 | schoech-2013 | Schöch 2013, Big Smart Clean Messy | 2.3 | A | claimed | [[10_distillates/publications/schoech-2013-big-smart-clean-messy]] | humanities-data-is-constructed-not-given, schoech-distinguishes-smart-and-big-data |
 | schonhardt-2026 | Schonhardt 2026, Do One Thing (ZfdG) | 4.2 | A | claimed | [[10_distillates/publications/schonhardt-2026-do-one-thing]] | do-one-thing-well-favours-small-specialised-tools-over-monolithic-platforms |
 | sharma-2023 | Sharma et al. 2023, Sycophancy | 2.5 | A | claimed | [[10_distillates/publications/sharma-2023-sycophancy]] | sycophancy-agreement-over-truth |
-| siemens-2009 | Siemens 2009, Reply All Teams | 1, 2.4 | A | claimed | [[10_distillates/publications/siemens-2009-reply-all-teams]] | dh-projects-build-teams-to-hold-competences-together |
-| soiland-2022 | Soiland-Reyes et al. 2022, RO-Crate | 3.3 | A | claimed | [[10_distillates/publications/soiland-2022-ro-crate]] | ro-crate-packages-artefacts-with-machine-readable-metadata |
-| stachowiak-1973 | Stachowiak 1973, Allgemeine Modelltheorie | 3.4 | B | registered | | Springer print, German |
-| stanicka-2026 | Stanicka-Brzezicka 2026, Vocabularies (ZfdG) | 1, 6.2, fn [^stanicka] | A | claimed | [[10_distillates/publications/stanicka-2026-cross-linking-vocabularies]] | llm-vocabulary-test-2025-fell-short-of-thesaurus-interoperability, semantic-vocabulary-matching-stays-a-human-interpretive-task |
+| siemens-2009 | Siemens 2009, Reply All Teams | 1 | A | claimed | [[10_distillates/publications/siemens-2009-reply-all-teams]] | dh-projects-build-teams-to-hold-competences-together |
+| soiland-2022 | Soiland-Reyes et al. 2022, RO-Crate | orphaned, was 3.3 | A | claimed, no longer cited | [[10_distillates/publications/soiland-2022-ro-crate]] | ro-crate-packages-artefacts-with-machine-readable-metadata |
+| stachowiak-1973 | Stachowiak 1973, Allgemeine Modelltheorie | 2.4 | B | registered | | Springer print, German |
+| stanicka-2026 | Stanicka-Brzezicka 2026, Vocabularies (ZfdG) | 6.2, fn [^stanicka] | A | claimed | [[10_distillates/publications/stanicka-2026-cross-linking-vocabularies]] | llm-vocabulary-test-2025-fell-short-of-thesaurus-interoperability, semantic-vocabulary-matching-stays-a-human-interpretive-task |
 | star-1989 | Star/Griesemer 1989, Boundary Objects | 2.4 | A | claimed | [[10_distillates/publications/star-1989-boundary-objects]] | boundary-objects-are-plastic-yet-robust-across-communities |
 | unsworth-2000 | Unsworth 2000, Scholarly Primitives | 4.2 | A | claimed | [[10_distillates/publications/unsworth-2000-scholarly-primitives]] | scholarly-primitives-classify-activities-not-interfaces |
 | vanes-2018 | van Es et al. 2018, Tool Criticism | 2.2 | A | claimed | [[10_distillates/publications/vanes-2018-tool-criticism]] | digital-tool-criticism-demands-reflection-on-tools |

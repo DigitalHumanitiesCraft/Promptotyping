@@ -13,7 +13,7 @@ updated: 2026-07-23
 
 # Distillate: Humanities Data, A Necessary Contradiction (Posner 2015)
 
-Posner argues that calling humanities source material "data" imports assumptions of discreteness, tractability, and reproducibility that clash with how humanists engage evidence; knowledge/paper.md cites this in Sections 1 and 2.3 as a marker of the tension the method operates in.
+Posner argues that calling humanities source material "data" imports assumptions of discreteness, tractability, and reproducibility that clash with how humanists engage evidence; knowledge/paper.md cites this in the Section 2.3 footnote as a marker of the tension the method operates in.
 
 ## Core statements
 
@@ -32,7 +32,7 @@ Posner argues that calling humanities source material "data" imports assumptions
 
 ## Open questions
 
-- Posner's reproducibility scepticism (^s4) sits close to the paper's Section 6.1 move, which reframes reproducibility as a documented decision trail rather than identical repetition; the paper's reframing is its own, not Posner's.
+- Posner's reproducibility scepticism (^s4) sits close to the paper's Section 6.3 move, which reframes reproducibility as a documented decision trail rather than identical repetition; the paper's reframing is its own, not Posner's.
 
 ## Related
 

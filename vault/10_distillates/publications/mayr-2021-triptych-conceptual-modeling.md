@@ -13,7 +13,7 @@ updated: 2026-07-23
 
 # Distillate: The triptych of conceptual modeling (Mayr & Thalheim 2021)
 
-Mayr and Thalheim characterise the conceptual model as a link between a language dimension of terms and an encyclopedic dimension of domain notions; knowledge/paper.md 3.4 borrows this modelling vocabulary to argue that a Promptotyping Document is a conceptual model of the project.
+Mayr and Thalheim characterise the conceptual model as a link between a language dimension of terms and an encyclopedic dimension of domain notions; knowledge/paper.md 2.4 borrows this modelling vocabulary to argue that a Promptotyping Document is a conceptual model of the project.
 
 ## Core statements
 
@@ -30,7 +30,7 @@ Mayr and Thalheim characterise the conceptual model as a link between a language
 
 ## Open questions
 
-- The publisher full text was inaccessible to intake (auth wall / HTTP 403); only the abstract could be quote-checked. knowledge/paper.md 3.4 attributes to Mayr & Thalheim the specific characterisation of a conceptual model as *semi-formal* and resting on the *shared vocabulary of a community of practice* (pp. 57-59, operator-verified per knowledge/state.md). That body passage is not reproduced in this distillate; the grounded statement here is confined to the abstract-level "link between linguistic terms and encyclopedic notions", which supports the paper's claim only in part. A later intake with the full text should add the pp. 57-59 statements.
+- The publisher full text was inaccessible to intake (auth wall / HTTP 403); only the abstract could be quote-checked. knowledge/paper.md 2.4 attributes to Mayr & Thalheim the specific characterisation of a conceptual model as *semi-formal* and resting on the *shared vocabulary of a community of practice* (pp. 57-59, operator-verified per knowledge/state.md). That body passage is not reproduced in this distillate; the grounded statement here is confined to the abstract-level "link between linguistic terms and encyclopedic notions", which supports the paper's claim only in part. A later intake with the full text should add the pp. 57-59 statements.
 
 ## Related
 

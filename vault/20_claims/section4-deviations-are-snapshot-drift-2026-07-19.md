@@ -7,14 +7,14 @@ checked:
 grounding:
   - "[[10_distillates/documents/verification-paper-figures-2026-07-19#^s26]]"
 created: 2026-07-19
-updated: 2026-07-19
+updated: 2026-07-25
 ---
 
-# Several Section 4 deviations are snapshot drift, where dating a figure is as valid as updating it.
+# Several Section 5 deviations are snapshot drift, where dating a figure is as valid as updating it.
 
 ## Statement
 
-Several Section 4 deviations are snapshot drift, arising because the paper describes an earlier state of still-growing repositories. For these figures, dating the figure to its build snapshot is as valid a correction as updating it to the current count.
+Several Section 5 deviations are snapshot drift, arising because the paper describes an earlier state of still-growing repositories. For these figures, dating the figure to its build snapshot is as valid a correction as updating it to the current count. The evidence section carried the number 4 when the verification ran on 2026-07-19 and carries the number 5 since the revision; the section references above were corrected on 2026-07-25, and the file name keeps the old number so that existing anchors resolve.
 
 ## Support
 

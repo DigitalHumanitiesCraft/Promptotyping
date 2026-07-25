@@ -9,7 +9,7 @@ method:
 status: draft
 language: en
 created: "2026-07-19"
-updated: "2026-07-23"
+updated: "2026-07-25"
 related: [index, schema, operations]
 ---
 
@@ -19,7 +19,7 @@ Purpose, parameters and settled decisions of this vault instance. The invariant 
 
 ## Purpose
 
-This vault grounds the Promptotyping paper. The deliverable is the paper maintained canonically in this repository under `_content/paper/`; this vault carries the provenance layer beneath it, anchoring the paper's load-bearing claims to the source material that supports them, from the Section 4 project figures through the genealogy claims to the novelty claims of the discussion. The evidence obligation follows the paper's own verification practice, adversarial checking against the public project repositories, so that the paper workstream's verification milestones (figures check M3, source dating M4, novelty research M8) read and write this vault instead of leaving their findings in session-local documents.
+This vault grounds the Promptotyping paper. The deliverable is the paper maintained canonically in this repository as `knowledge/paper.md`, from which `_content/paper/` is derived as the publication form the site renders, regenerated only after release; this vault carries the provenance layer beneath it, anchoring the paper's load-bearing claims to the source material that supports them, from the Section 4 project figures through the genealogy claims to the novelty claims of the discussion. The evidence obligation follows the paper's own verification practice, adversarial checking against the public project repositories, so that the paper workstream's verification milestones (figures check M3, source dating M4, novelty research M8) read and write this vault instead of leaving their findings in session-local documents.
 
 ## Parameters
 
@@ -44,7 +44,9 @@ English scholarly prose in the register of the paper. Figures follow the paper's
 <!-- One line per decision with date; the reasoning behind each lives in the journal. -->
 
 - 2026-07-19: Vault instantiated from the Grounded Vault template on operator instruction; the parking of a paper-work instantiation recorded in the Promptotyping repo's plan is lifted.
-- 2026-07-19: The deliverable stays canonical in `_content/paper/` at the root of this repository; `30_deliverable/` holds no copy. The chapter register in [[knowledge/state]] maps sections to claims. Deviation from the template default, to avoid drift between two copies of the paper.
+- 2026-07-19: The deliverable stays canonical at the root of this repository; `30_deliverable/` holds no copy. The chapter register in [[knowledge/state]] maps sections to claims. Deviation from the template default, to avoid drift between two copies of the paper.
+- 2026-07-25: The footnote contract of the deliverable layer does not take effect in this instance, and what stands in its place is weaker. `_check_chapter` in `tools/validate.py` checks footnote keywords, the claim mirror and the posit count against the chapter files in `30_deliverable/`. That folder is empty because the deliverable is external, and the paper's own footnotes are ordinary literature notes rather than claim anchors, so the check reports green without having examined anything. In its place this instance runs `tools/coverage.py`, which reads `knowledge/paper.md`, proposes its empirical statements as candidates and reports which of them no claim in `20_claims/` matches. That comparison is lexical, over rare shared tokens and figures. A hit says that some claim uses similar wording; it says nothing about whether the claim supports the statement, and a miss can be a wording difference. The output is a warning that directs reading and carries no verdict. Machine checking of the provenance chain from a paper sentence to its claim therefore does not exist in this instance, and the whole weight of that step rests on the verification role.
+- 2026-07-25: The canonical deliverable file is `knowledge/paper.md`. `_content/paper/` holds the section files the site renders and is the derived publication form, regenerated from the canonical text after release. Where the two diverge, `knowledge/paper.md` decides. Correction of the 2026-07-19 wording, which named the derived form as canonical.
 - 2026-07-19: Topic backbone set to Genealogy, Method, Evidence, Concepts, Limitations.
 - 2026-07-23: Scope extended by operator decision to full bibliography traceability. Every work the paper cites in its References is registered in [[knowledge/register-paper-sources]], and every accessible one is ingested as a publication source, distilled towards the statements the paper takes from it, and grounded through claims. Footnote-only resources (tools, videos, standards, repositories) stay outside intake, since the `source-type` vocabulary does not cover them and the paper uses them as tool evidence rather than as statement support.
 - 2026-07-23: Topic backbone extended by Frame (the Section 2 discourses) and ArtefactVerification (Sections 4 and 6.2), to give the bibliography claims reachable topic maps.

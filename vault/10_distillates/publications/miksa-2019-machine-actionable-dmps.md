@@ -13,7 +13,7 @@ updated: 2026-07-23
 
 # Distillate: Ten principles for machine-actionable DMPs (Miksa et al. 2019)
 
-Miksa et al. diagnose the traditional data management plan as an unused static compliance document and call for machine-actionable DMPs that infrastructure can act on; knowledge/paper.md 3.4 uses this contrast to locate Promptotyping Documents as machine-actionable in a stronger, operative sense.
+Miksa et al. diagnose the traditional data management plan as an unused static compliance document and call for machine-actionable DMPs that infrastructure can act on; knowledge/paper.md 3.3 uses this contrast to locate Promptotyping Documents as machine-actionable in a stronger, operative sense.
 
 ## Core statements
 

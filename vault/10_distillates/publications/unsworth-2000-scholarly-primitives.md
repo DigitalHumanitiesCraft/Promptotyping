@@ -13,7 +13,7 @@ updated: 2026-07-23
 
 # Distillate: Scholarly Primitives (Unsworth 2000)
 
-Unsworth proposes a short list of basic scholarly functions common across disciplines and media as a basis for tool building; knowledge/paper.md Section 5.3 cites the primitives as a classification of research activities to mark the gap its interface typology fills.
+Unsworth proposes a short list of basic scholarly functions common across disciplines and media as a basis for tool building; knowledge/paper.md Section 4.2 cites the primitives as a classification of research activities to mark the gap its interface typology fills.
 
 ## Core statements
 
@@ -32,8 +32,8 @@ Unsworth proposes a short list of basic scholarly functions common across discip
 
 ## Open questions
 
-- Unsworth classifies research activities, not the epistemic work that interfaces enable; the paper's Section 5.3 marks precisely this difference, so the source grounds the contrast the typology is set against, not the typology itself.
+- Unsworth classifies research activities, not the epistemic work that interfaces enable; the paper's Section 4.2 marks precisely this difference, so the source grounds the contrast the typology is set against, not the typology itself.
 
 ## Related
 
-- [[10_distillates/publications/borek-2016-tadirah]] — the activity taxonomy the paper pairs with Unsworth in Section 5.3.
+- [[10_distillates/publications/borek-2016-tadirah]] — the activity taxonomy the paper pairs with Unsworth in Section 4.2.

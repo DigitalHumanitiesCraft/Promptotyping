@@ -2,14 +2,14 @@
 type: moc
 topic: "Evidence"
 created: 2026-07-19
-updated: 2026-07-24
+updated: 2026-07-25
 ---
 
 # MOC: Evidence
 
-Claims of the paper's Section 4 evidence base: project figures, build states, and growth statements, each anchored to the project repositories or to the adversarial verification findings of 2026-07-19.
+Claims of the paper's Section 5 evidence base: project figures, build states, and growth statements, each anchored to the project repositories or to the adversarial verification findings of 2026-07-19.
 
-### Confirmed Section 4 figures (verified 2026-07-19)
+### Confirmed Section 5 figures (verified 2026-07-19)
 
 - [[20_claims/wheaton-figures-verified-2026-07-19]] — Wheaton's 1,124 transactions and 718 individuals held against the repository.
 - [[20_claims/hans-gross-figures-verified-2026-07-19]] — the Hans Gross figure of 3,892 objects held against the repository.

@@ -32,7 +32,7 @@ The statement sets principles for making cultural-heritage collections available
 
 ## Open questions
 
-- The statement's "designed for everyone serve no one" (^s3) rhymes with the paper's Section 5 argument for question-specific interfaces over a monolithic dashboard, but the statement speaks of collections, not generated interfaces; the transfer is the paper's.
+- The statement's "designed for everyone serve no one" (^s3) rhymes with the paper's Section 4.2 argument for question-specific interfaces over a monolithic dashboard, but the statement speaks of collections, not generated interfaces; the transfer is the paper's.
 
 ## Related
 

@@ -13,7 +13,7 @@ updated: 2026-07-23
 
 # Distillate: In defense of sandcastles (Hinrichs, Forlini & Moynihan 2019)
 
-The paper introduces the sandcastle to frame visualisation as a research process in its own right, whose discarded iterations still generate knowledge; knowledge/paper.md draws on it in Section 2.1 and grounds the disposability argument of Section 6.1 in Hinrichs' sense.
+The paper introduces the sandcastle to frame visualisation as a research process in its own right, whose discarded iterations still generate knowledge; knowledge/paper.md draws on it in Section 2.1, and Section 6.1 calls promptotypes provisional in exactly Hinrichs' sense.
 
 ## Core statements
 
@@ -32,7 +32,7 @@ The paper introduces the sandcastle to frame visualisation as a research process
 
 ## Open questions
 
-- The disposability the paper reads off Hinrichs concerns visualisations in the research process; the paper distinguishes this from the durable published artefact (Section 6.1), a distinction Hinrichs does not draw.
+- The provisionality the paper reads off Hinrichs concerns visualisations in the research process; Section 6.1 sets against it what a project publishes into the scholarly record, under the obligations of Section 4.1, a distinction Hinrichs does not draw.
 
 ## Related
 
