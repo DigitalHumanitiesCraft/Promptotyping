@@ -1,0 +1,22 @@
+[
+  {
+    "id": "summerfield-2025",
+    "type": "book",
+    "title": "These Strange New Minds: How AI Learned to Talk and What It Means",
+    "author": [
+      {
+        "family": "Summerfield",
+        "given": "Christopher"
+      }
+    ],
+    "publisher": "Viking",
+    "publisher-place": "New York",
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    }
+  }
+]
