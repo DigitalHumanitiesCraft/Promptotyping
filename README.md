@@ -2,13 +2,13 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14160875.svg)](https://doi.org/10.5281/zenodo.14160875)
 
-Promptotyping is an iterative context engineering method in four phases (Preparation, Exploration & Mapping, Distillation, Implementation) for building research artefacts from research data with frontier LLMs. The working material is a `knowledge/` folder of versioned Promptotyping Documents holding a project's requirements, data, decisions, and domain knowledge, a curated knowledge artefact written partly by the model and partly by the verifying expert, from which the implementation is derived. It outlasts the individual session and is the part of the process that can be read, checked, criticised, and cited; decisions taken while building hold in it only as far as they are written back. A Critical Expert in the Loop verifies LLM output at defined points.
+Promptotyping is an iterative context engineering method in four phases (Preparation, Exploration, Distillation, Implementation) for building research artefacts from research data with frontier LLMs. The working material is a `knowledge/` folder of versioned Promptotyping Documents holding a project's requirements, data, decisions, and domain knowledge, a curated knowledge artefact written partly by the model and partly by the verifying expert, from which the implementation is derived. It outlasts the individual session and is the part of the process that can be read, checked, criticised, and cited; decisions taken while building hold in it only as far as they are written back. A Critical Expert in the Loop verifies LLM output at defined points.
 
 This repository is the public specification of the method and the repository of the method paper, which is written here in [knowledge/paper.md](knowledge/paper.md). It renders as an interactive paper at **https://dhcraft.org/Promptotyping/** (German site, English paper) and serves the method's templates as stable, machine-readable addresses.
 
 ## The method in brief
 
-The four phases move from gathering raw material (Preparation) over probing what the data affords (Exploration & Mapping) and condensing the findings into token-efficient Markdown documents (Distillation) to iterative, verified development with an agentic coding tool (Implementation). The documents fall into three analytical types with a diagnostic rule attached. Knowledge Documents are declarative (data, domain, architecture); when output is factually wrong, check these first. Process Documents are chronological (journal, plan); check these when decision logic is unclear. Action Documents are imperative (`CLAUDE.md`); check these when output is formally wrong.
+The four phases move from gathering raw material (Preparation) over probing what the data affords (Exploration) and condensing the findings into token-efficient Markdown documents (Distillation) to iterative, verified development with an agentic coding tool (Implementation). Knowledge Document is the general term for a document of this kind, and it specialises into three types according to the kind of knowledge it holds, each with a diagnostic rule attached. Declarative Documents hold knowledge about the subject matter (data, domain, architecture); when output is factually wrong, check these first. Process Documents hold knowledge about the course of the work (journal, plan); check these when decision logic is unclear. Action Documents hold knowledge about how to act (`CLAUDE.md`); check these when output is formally wrong.
 
 The full argument is the method paper; a German overview is at [dhcraft.org/Promptotyping/#ueberblick](https://dhcraft.org/Promptotyping/#ueberblick).
 
@@ -43,21 +43,21 @@ The templates of the catalogue structure the documents of a Promptotyping knowle
 
 | Slug | Function | Type |
 |---|---|---|
-| [index](_content/promptotyping-document/index.md) | Navigation and glossary of the knowledge base | Knowledge |
-| [project](_content/promptotyping-document/project.md) | Charter | Knowledge |
-| [data](_content/promptotyping-document/data.md) | Material | Knowledge |
-| [specification](_content/promptotyping-document/specification.md) | Specification (requirements, decisions) | Knowledge |
-| [user-stories](_content/promptotyping-document/user-stories.md) | Specification (narrative scenarios) | Knowledge |
+| [index](_content/promptotyping-document/index.md) | Navigation and glossary of the knowledge base | Declarative |
+| [project](_content/promptotyping-document/project.md) | Charter | Declarative |
+| [data](_content/promptotyping-document/data.md) | Material | Declarative |
+| [specification](_content/promptotyping-document/specification.md) | Specification (requirements, decisions) | Declarative |
+| [user-stories](_content/promptotyping-document/user-stories.md) | Specification (narrative scenarios) | Declarative |
 | [action-layer](_content/promptotyping-document/action-layer.md) | Agent instructions (`CLAUDE.md`) | Action |
-| [architecture](_content/promptotyping-document/architecture.md) | Architecture | Knowledge |
-| [domain-knowledge](_content/promptotyping-document/domain-knowledge.md) | Domain knowledge and reasoning layer | Knowledge |
-| [design](_content/promptotyping-document/design.md) | Design | Knowledge |
-| [testing](_content/promptotyping-document/testing.md) | Quality assurance | Knowledge |
-| [verification](_content/promptotyping-document/verification.md) | Adversarial verification of claims | Knowledge |
+| [architecture](_content/promptotyping-document/architecture.md) | Architecture | Declarative |
+| [domain-knowledge](_content/promptotyping-document/domain-knowledge.md) | Domain knowledge and reasoning layer | Declarative |
+| [design](_content/promptotyping-document/design.md) | Design | Declarative |
+| [testing](_content/promptotyping-document/testing.md) | Quality assurance | Declarative |
+| [verification](_content/promptotyping-document/verification.md) | Adversarial verification of claims | Declarative |
 | [journal](_content/promptotyping-document/journal.md) | Provenance | Process |
 | [plan](_content/promptotyping-document/plan.md) | Planning | Process |
-| [report](_content/promptotyping-document/report.md) | Reporting | Knowledge (snapshot) |
-| [integration](_content/promptotyping-document/integration.md) | Cross-project contracts and handoffs | Knowledge |
+| [report](_content/promptotyping-document/report.md) | Reporting | Declarative (snapshot) |
+| [integration](_content/promptotyping-document/integration.md) | Cross-project contracts and handoffs | Declarative |
 
 Template versions live in the mirrors' frontmatter and in [data/promptotyping-documents.json](data/promptotyping-documents.json); a further template (`technology`, for reusable technology baselines) exists as a [draft](_content/promptotyping-document/technology.md) pending catalogue inclusion.
 

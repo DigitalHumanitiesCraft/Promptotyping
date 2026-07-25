@@ -1,7 +1,8 @@
 /* Promptotyping Site main logic. Vanilla JS, no build step.
-   Loads paper sections as Markdown, renders via marked.js with a custom
-   tag-stripper extension for legacy {:.phase-*} markers, drives the
-   TOC scroll-spy and the reusable side panel. */
+   Renders the canonical paper (knowledge/paper.md) and the static content
+   files via marked.js, extended with a footnote apparatus, heading ids and a
+   tag-stripper for legacy {:.phase-*} markers, drives the TOC scroll-spy and
+   the reusable side panel. */
 
 (function () {
   "use strict";
@@ -17,28 +18,121 @@
     "phase-implementation"
   ];
 
-  /* Paper sections in reading order. anchor matches the {n}-{slug} frontmatter
-     id, exposed as the section element id "abschnitt-{n}-{slug}". */
-  var SECTIONS = [
-    { id: "abschnitt-1-introduction", file: "_content/paper/01-introduction.md" },
-    { id: "abschnitt-2-terms-positioning", file: "_content/paper/02-terms-positioning.md" },
-    { id: "abschnitt-3-four-phases", file: "_content/paper/03-four-phases.md" },
-    { id: "abschnitt-4-projects", file: "_content/paper/04-projects.md" },
-    { id: "abschnitt-5-epistemic-infrastructure", file: "_content/paper/05-epistemic-infrastructure.md" },
-    { id: "abschnitt-6-discussion", file: "_content/paper/06-discussion.md" },
-    { id: "abschnitt-7-conclusion", file: "_content/paper/07-conclusion.md" },
-    { id: "literatur", file: "_content/literatur.md" }
-  ];
+  /* The paper is rendered from its canonical source, so the site text cannot
+     drift away from the knowledge base. */
+  var PAPER_FILE = "knowledge/paper.md";
+  var PAPER_HOST_ID = "paper";
 
-  /* Part-2 video is embedded inside section 4 (VetMedAI Wissensbilanz). */
-  var SECTION4_VIDEO = {
-    sectionId: "abschnitt-4-projects",
+  /* Published anchors of the pre-revision section cut, mapped onto the section
+     of the current structure that succeeds them. Renaming them is not allowed
+     (CLAUDE.md, URL anchor scheme), so they stay as alias targets. */
+  var PAPER_ANCHOR_ALIASES = {
+    "abschnitt-2-terms-positioning": "abschnitt-2-the-epistemic-frame",
+    "abschnitt-3-four-phases": "abschnitt-3-the-method",
+    "abschnitt-4-projects": "abschnitt-5-evidence-the-documented-projects",
+    "abschnitt-5-epistemic-infrastructure": "abschnitt-4-the-artefact-type"
+  };
+
+  /* Headings whose slug is overridden, so a published anchor keeps resolving. */
+  var HEADING_ID_OVERRIDES = {
+    "references": "literatur"
+  };
+
+  /* Part-2 video sits with the project inventory that lists the demonstrated case. */
+  var PAPER_VIDEO = {
     youtubeId: "hd_a-NBO_S4",
     title: "Promptotyping Teil 2 (Claude Code)",
     anchorText: "VetMedAI Wissensbilanz"
   };
 
-  var loadedSections = {};
+  /* ---- Footnote apparatus ----
+     marked v9 has no footnote support. Two extensions cover the Pandoc-style
+     syntax: a block tokenizer that consumes the definition lines "[^name]: text"
+     and a inline tokenizer that turns each "[^name]" marker into a numbered
+     reference. Numbers follow the order of first occurrence in the text; the
+     apparatus is appended after the parse, since the definitions may stand
+     anywhere in the source. */
+
+  var footnoteDefs = {};       // name -> raw markdown of the definition
+  var footnoteOrder = [];      // names in order of first reference
+  var footnoteRefCount = {};   // name -> number of references seen
+  var footnoteSuppress = false; // true while the apparatus itself is rendered
+
+  function resetFootnotes() {
+    footnoteDefs = {};
+    footnoteOrder = [];
+    footnoteRefCount = {};
+  }
+
+  function footnoteNumber(name) {
+    var idx = footnoteOrder.indexOf(name);
+    if (idx === -1) {
+      footnoteOrder.push(name);
+      idx = footnoteOrder.length - 1;
+    }
+    return idx + 1;
+  }
+
+  function footnoteRefId(num, occurrence) {
+    return "fnref-" + num + (occurrence > 1 ? "-" + occurrence : "");
+  }
+
+  function renderFootnoteApparatus() {
+    if (!footnoteOrder.length) {
+      return "";
+    }
+    var items = footnoteOrder.map(function (name, i) {
+      var num = i + 1;
+      var body = footnoteDefs[name];
+      var html;
+      if (typeof body === "string") {
+        footnoteSuppress = true;
+        html = marked.parseInline(body);
+        footnoteSuppress = false;
+      } else {
+        html = "<em>Fussnotendefinition fehlt (" + escapeHtml(name) + ").</em>";
+      }
+      var backs = "";
+      for (var k = 1; k <= (footnoteRefCount[name] || 0); k++) {
+        backs += ' <a class="footnote-back" href="#' + footnoteRefId(num, k) +
+          '" aria-label="Zurueck zur Textstelle">↩</a>';
+      }
+      return '<li class="footnote-item" id="fn-' + num + '">' + html + backs + "</li>";
+    }).join("");
+
+    return '<section class="paper-section footnotes" id="fussnoten">' +
+      "<h2>Notes</h2>" +
+      '<ol class="footnote-list">' + items + "</ol></section>";
+  }
+
+  /* ---- Heading ids ----
+     Only enabled while the paper is parsed: the static content files render
+     into sections that already own ids like #ueberblick, and a heading of the
+     same slug would duplicate them. */
+
+  var headingIdsEnabled = false;
+  var headingIdsUsed = {};
+
+  function headingId(plainText) {
+    var text = String(plainText).replace(/<[^>]*>/g, "").trim();
+    var numbered = /^(\d+(?:\.\d+)*)\.?\s+([\s\S]*)$/.exec(text);
+    var id = numbered
+      ? "abschnitt-" + numbered[1].replace(/\./g, "-") + "-" + slugify(numbered[2])
+      : slugify(text);
+    if (HEADING_ID_OVERRIDES[id]) {
+      id = HEADING_ID_OVERRIDES[id];
+    }
+    return id;
+  }
+
+  function uniqueHeadingId(id) {
+    if (!headingIdsUsed[id]) {
+      headingIdsUsed[id] = 1;
+      return id;
+    }
+    headingIdsUsed[id] += 1;
+    return id + "-" + headingIdsUsed[id];
+  }
 
   /* ---- marked.js configuration ---- */
 
@@ -46,6 +140,15 @@
     marked.use({
       gfm: true,
       breaks: false,
+      renderer: {
+        heading: function (text, level, raw) {
+          if (!headingIdsEnabled) {
+            return "<h" + level + ">" + text + "</h" + level + ">\n";
+          }
+          var id = uniqueHeadingId(headingId(raw || text));
+          return "<h" + level + ' id="' + id + '">' + text + "</h" + level + ">\n";
+        }
+      },
       extensions: [{
         name: "classedParagraph",
         level: "block",
@@ -73,8 +176,73 @@
           var inner = this.parser.parseInline(token.tokens);
           return "<p>" + inner + "</p>\n";
         }
+      }, {
+        name: "footnoteDef",
+        level: "block",
+        start: function (src) {
+          var m = src.match(/^\[\^[^\]\s]+\]:/m);
+          return m ? m.index : undefined;
+        },
+        tokenizer: function (src) {
+          // One definition: its own line plus any continuation line that neither
+          // is blank nor starts the next definition.
+          var match = /^\[\^([^\]\s]+)\]:[ \t]*([^\n]*(?:\n(?!\s*$|\[\^)[^\n]*)*)(?:\n+|$)/.exec(src);
+          if (!match) {
+            return undefined;
+          }
+          footnoteDefs[match[1]] = match[2].replace(/\n[ \t]*/g, " ").trim();
+          return { type: "footnoteDef", raw: match[0] };
+        },
+        renderer: function () {
+          // The definition is not rendered in place; it feeds the apparatus.
+          return "";
+        }
+      }, {
+        name: "footnoteRef",
+        level: "inline",
+        start: function (src) {
+          var i = src.indexOf("[^");
+          return i === -1 ? undefined : i;
+        },
+        tokenizer: function (src) {
+          if (footnoteSuppress) {
+            return undefined;
+          }
+          var match = /^\[\^([^\]\s]+)\]/.exec(src);
+          if (!match) {
+            return undefined;
+          }
+          var name = match[1];
+          var num = footnoteNumber(name);
+          footnoteRefCount[name] = (footnoteRefCount[name] || 0) + 1;
+          return {
+            type: "footnoteRef",
+            raw: match[0],
+            num: num,
+            occurrence: footnoteRefCount[name]
+          };
+        },
+        renderer: function (token) {
+          return '<sup class="footnote-ref" id="' + footnoteRefId(token.num, token.occurrence) +
+            '"><a href="#fn-' + token.num + '">' + token.num + "</a></sup>";
+        }
       }]
     });
+  }
+
+  /* Render the canonical paper: footnote state and heading ids are scoped to
+     this one parse, the apparatus is appended after it. */
+  function renderPaperMarkdown(markdown) {
+    resetFootnotes();
+    headingIdsUsed = {};
+    headingIdsEnabled = true;
+    var html;
+    try {
+      html = marked.parse(markdown);
+    } finally {
+      headingIdsEnabled = false;
+    }
+    return html + renderFootnoteApparatus();
   }
 
   /* ---- Section loading and rendering ---- */
@@ -88,53 +256,84 @@
     });
   }
 
-  /* Strip the leading YAML frontmatter block before rendering. */
+  /* Normalise line endings and strip a leading YAML frontmatter block.
+     knowledge/paper.md is headerless and starts with its H1. */
   function stripFrontmatter(text) {
-    return text.replace(/^---\n[\s\S]*?\n---\n?/, "");
+    return text.replace(/\r\n?/g, "\n").replace(/^---\n[\s\S]*?\n---\n?/, "");
   }
 
-  function loadAndRenderSection(sectionId) {
-    if (loadedSections[sectionId]) {
+  /* ---- Paper view ---- */
+
+  function renderPaper() {
+    var host = document.getElementById(PAPER_HOST_ID);
+    if (!host) {
       return Promise.resolve();
     }
-    loadedSections[sectionId] = true;
-
-    var section = null;
-    for (var i = 0; i < SECTIONS.length; i++) {
-      if (SECTIONS[i].id === sectionId) {
-        section = SECTIONS[i];
-        break;
-      }
-    }
-    if (!section) {
-      return Promise.resolve();
-    }
-
-    var el = document.getElementById(sectionId);
-    if (!el) {
-      return Promise.resolve();
-    }
-
-    return fetchMarkdown(section.file)
+    return fetchMarkdown(PAPER_FILE)
       .then(function (text) {
-        var html = marked.parse(stripFrontmatter(text));
-        el.innerHTML = html;
-        el.classList.remove("paper-section-placeholder");
-        if (section.id === SECTION4_VIDEO.sectionId) {
-          injectSection4Video(el);
-          injectUseCaseReference(el);
-        }
-        // Post-processing: glossar triggers and citation links. Literatur is the
-        // citation target itself, so it is excluded from both passes.
-        if (section.id !== "literatur") {
-          decorateGlossarTriggers(el);
-          decorateCitations(el);
-        }
+        host.innerHTML = renderPaperMarkdown(stripFrontmatter(text));
+        sectionizePaper(host);
+        addPaperAnchorAliases(host);
+        injectPaperVideo(host);
+        injectUseCaseReference(host);
+        // Post-processing per section. The reference list is the citation target
+        // itself and the apparatus carries the source notes, so both stay out.
+        host.querySelectorAll(".paper-section").forEach(function (section) {
+          if (section.id === "literatur" || section.id === "fussnoten") {
+            return;
+          }
+          decorateGlossarTriggers(section);
+          decorateCitations(section);
+        });
       })
       .catch(function (err) {
-        el.innerHTML = '<p class="section-loading">' + err.message + "</p>";
-        loadedSections[sectionId] = false;
+        host.innerHTML = '<p class="section-loading">' + err.message + "</p>";
       });
+  }
+
+  /* Group the flat rendered paper into one section element per H2, so every
+     top-level section is an addressable and observable block. The heading id
+     moves to the section; the reading order of the DOM is preserved. */
+  function sectionizePaper(host) {
+    var nodes = Array.prototype.slice.call(host.childNodes);
+    var current = null;
+    nodes.forEach(function (node) {
+      // The footnote apparatus already is a section; it closes the grouping.
+      if (node.nodeType === 1 && node.classList && node.classList.contains("paper-section")) {
+        current = null;
+        host.appendChild(node);
+        return;
+      }
+      if (node.nodeType === 1 && node.nodeName === "H2") {
+        current = document.createElement("section");
+        current.className = "paper-section";
+        if (node.id) {
+          current.id = node.id;
+          node.removeAttribute("id");
+        }
+        host.appendChild(current);
+      }
+      if (current) {
+        current.appendChild(node);
+      }
+    });
+  }
+
+  /* Empty anchor targets for the published pre-revision section anchors. */
+  function addPaperAnchorAliases(host) {
+    Object.keys(PAPER_ANCHOR_ALIASES).forEach(function (alias) {
+      if (document.getElementById(alias)) {
+        return;
+      }
+      var target = document.getElementById(PAPER_ANCHOR_ALIASES[alias]);
+      if (!target || !host.contains(target)) {
+        return;
+      }
+      var span = document.createElement("span");
+      span.className = "anchor-alias";
+      span.id = alias;
+      target.insertBefore(span, target.firstChild);
+    });
   }
 
   /* ---- YouTube click-to-load facade ---- */
@@ -167,30 +366,43 @@
     return wrap;
   }
 
-  /* Place the part-2 video right before the VetMedAI Wissensbilanz mention in
-     section 4, falling back to the section end if the anchor text is absent. */
-  function injectSection4Video(sectionEl) {
-    var video = buildVideoFacade(SECTION4_VIDEO.youtubeId, SECTION4_VIDEO.title);
-    var paragraphs = sectionEl.querySelectorAll("p");
+  /* Place the part-2 video after the block that names the demonstrated case
+     (the project inventory), falling back to the end of the evidence section. */
+  function injectPaperVideo(host) {
+    if (host.querySelector(".video-embed")) {
+      return;
+    }
+    var evidence = evidenceSection(host);
+    if (!evidence) {
+      return;
+    }
+    var video = buildVideoFacade(PAPER_VIDEO.youtubeId, PAPER_VIDEO.title);
+    var blocks = evidence.querySelectorAll("p, table");
     var target = null;
-    for (var i = 0; i < paragraphs.length; i++) {
-      if (paragraphs[i].textContent.indexOf("VetMedAI Wissensbilanz") !== -1) {
-        target = paragraphs[i];
+    for (var i = 0; i < blocks.length; i++) {
+      if (blocks[i].textContent.indexOf(PAPER_VIDEO.anchorText) !== -1) {
+        target = blocks[i];
         break;
       }
     }
     if (target) {
-      target.parentNode.insertBefore(video, target);
+      target.parentNode.insertBefore(video, target.nextSibling);
     } else {
-      sectionEl.appendChild(video);
+      evidence.appendChild(video);
     }
   }
 
-  /* Append a compact reference block to the end of section 4, pointing the
-     in-text projects at the curated use-case gallery (original project vision:
-     case studies as cards within the paper text). Designsystem only. */
-  function injectUseCaseReference(sectionEl) {
-    if (sectionEl.querySelector(".usecase-reference")) {
+  function evidenceSection(host) {
+    return document.getElementById(PAPER_ANCHOR_ALIASES["abschnitt-4-projects"]) ||
+      host.querySelector(".paper-section");
+  }
+
+  /* Append a compact reference block to the end of the evidence section,
+     pointing the in-text projects at the curated use-case gallery (original
+     project vision: case studies as cards within the paper text). */
+  function injectUseCaseReference(host) {
+    var sectionEl = evidenceSection(host);
+    if (!sectionEl || sectionEl.querySelector(".usecase-reference")) {
       return;
     }
     var block = document.createElement("aside");
@@ -210,81 +422,21 @@
     sectionEl.appendChild(block);
   }
 
-  /* ---- Lazy loading via IntersectionObserver ---- */
+  /* ---- Hash handling ----
+     Everything is rendered before this runs, so a hash either opens a panel or
+     scrolls to an element that exists. */
 
-  function setupLazyLoading() {
-    // First section loads immediately; the rest are observed.
-    loadAndRenderSection(SECTIONS[0].id);
-
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          var id = entry.target.id;
-          loadAndRenderSection(id);
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { rootMargin: "200px" });
-
-    document.querySelectorAll(".paper-section-placeholder").forEach(function (el) {
-      observer.observe(el);
-    });
-  }
-
-  /* Hash deep-link edge case: load the targeted section (and everything above
-     it, so scroll position is stable) immediately, then scroll to it. */
-  function loadAllUpTo(sectionId) {
-    var loads = [];
-    for (var i = 0; i < SECTIONS.length; i++) {
-      loads.push(loadAndRenderSection(SECTIONS[i].id));
-      if (SECTIONS[i].id === sectionId) {
-        break;
-      }
-    }
-    return Promise.all(loads);
-  }
-
-  function handleInitialHash() {
-    var hash = window.location.hash.replace(/^#/, "");
+  function handleHash(hash) {
     if (!hash) {
       return;
     }
-    // Vorlagen/glossar/konzept anchors live in already-rendered sections.
     if (handleSpecialAnchor(hash)) {
       return;
     }
-    // Static section anchors (ueberblick, use-cases, praxis-*, skills-*,
-    // arbeitsumgebung, konvention-*) scroll directly without loading paper sections.
-    if (/^(ueberblick|use-cases|praxis|skills|arbeitsumgebung|konvention|vorlagen)/.test(hash)) {
-      var staticEl = document.getElementById(hash);
-      if (staticEl) {
-        staticEl.scrollIntoView();
-        return;
-      }
+    var el = document.getElementById(hash);
+    if (el) {
+      el.scrollIntoView();
     }
-    // Map a subsection anchor (e.g. phase-distillation) to its parent section
-    // by scanning rendered content after load is not possible yet; instead load
-    // up to the parent paper section if the hash is a known section id, else
-    // load everything so any inline anchor resolves.
-    var sectionId = sectionIdForHash(hash);
-    var target = sectionId || SECTIONS[SECTIONS.length - 1].id;
-    loadAllUpTo(target).then(function () {
-      var el = document.getElementById(hash);
-      if (el) {
-        el.scrollIntoView();
-      }
-    });
-  }
-
-  /* Resolve a hash to a top-level paper section id if it is one; subsection
-     anchors live inside rendered Markdown and are handled after full load. */
-  function sectionIdForHash(hash) {
-    for (var i = 0; i < SECTIONS.length; i++) {
-      if (SECTIONS[i].id === hash) {
-        return SECTIONS[i].id;
-      }
-    }
-    return null;
   }
 
   /* ---- TOC scroll-spy ---- */
@@ -295,17 +447,25 @@
       return;
     }
 
+    var paperHost = document.getElementById(PAPER_HOST_ID);
+
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          var id = entry.target.id;
-          links.forEach(function (link) {
-            link.classList.toggle("active", link.getAttribute("data-target") === id);
-          });
+        if (!entry.isIntersecting) {
+          return;
         }
+        var id = entry.target.id;
+        // A paper section also marks the parent "Paper" entry.
+        var inPaper = !!(paperHost && paperHost.contains(entry.target));
+        links.forEach(function (link) {
+          var target = link.getAttribute("data-target");
+          link.classList.toggle("active",
+            target === id || (inPaper && target === PAPER_HOST_ID));
+        });
       });
     }, { rootMargin: "-40% 0px -55% 0px" });
 
+    // Sections of the paper carry the sub-entries; the other sections their own.
     document.querySelectorAll(".paper-section, .placeholder-section").forEach(function (el) {
       if (el.id) {
         observer.observe(el);
@@ -354,8 +514,8 @@
     if (segments[0] === "konvention" && segments[1]) {
       return "konvention-" + segments[1];
     }
-    if (segments[0] === "paper" && segments[1]) {
-      return "abschnitt-" + segments[1];
+    if (segments[0] === "paper") {
+      return segments[1] ? "abschnitt-" + segments[1] : "paper";
     }
     if (segments[0] === "glossar") {
       return "glossar";
@@ -368,7 +528,8 @@
     }
     // Already a hash-form anchor passed without leading '#'.
     if (/^(promptotyping-document|konzept|case|konvention|abschnitt)-/.test(rest) ||
-        rest === "glossar" || rest === "literatur" || rest === "arbeitsumgebung") {
+        rest === "glossar" || rest === "literatur" || rest === "arbeitsumgebung" ||
+        rest === "paper") {
       return rest;
     }
     return null;
@@ -778,7 +939,7 @@
       "<h2>Use Cases</h2>" +
       "<p>Eine kuratierte Auswahl oeffentlich dokumentierter Projekte, gruppiert danach, wo im " +
       "Forschungsdaten-Lebenszyklus die Methode operiert. Das vollstaendige Evidenz-Korpus steht im " +
-      '<a href="#abschnitt-4-projects">Paper, Abschnitt 4</a>.</p>' +
+      '<a href="#abschnitt-5-evidence-the-documented-projects">Paper, Abschnitt 5</a>.</p>' +
       '<div class="case-filter-host"></div>' +
       '<div class="case-list-host"></div>';
   }
@@ -1154,29 +1315,18 @@
     ready.then(function () {
       // Host markup for the two modules is now in the DOM; let them boot.
       document.dispatchEvent(new Event("promptotyping:sections-ready"));
-      setupLazyLoading();
+      // The paper renders after the glossar, so its terms can be marked.
+      return renderPaper();
+    }).then(function () {
       setupScrollSpy();
-      handleInitialHash();
+      handleHash(window.location.hash.replace(/^#/, ""));
     });
 
     window.addEventListener("hashchange", function () {
       if (suppressHashChange) {
         return;
       }
-      var hash = window.location.hash.replace(/^#/, "");
-      if (!hash) {
-        return;
-      }
-      if (handleSpecialAnchor(hash)) {
-        return;
-      }
-      var sectionId = sectionIdForHash(hash) || SECTIONS[SECTIONS.length - 1].id;
-      loadAllUpTo(sectionId).then(function () {
-        var el = document.getElementById(hash);
-        if (el) {
-          el.scrollIntoView();
-        }
-      });
+      handleHash(window.location.hash.replace(/^#/, ""));
     });
   }
 

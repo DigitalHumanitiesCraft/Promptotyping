@@ -21,10 +21,11 @@ Die Entwicklung erfolgte in drei grossen Iterationsschritten ueber Claude Code m
 
 ## Methodischer Beitrag
 
-HerData zeigt zwei Promptotyping-typische Muster. Erstens den Knowledge-Vault als Source of Truth: ein zehnteiliger Ordner deutscher Knowledge-Dokumente ist zugleich Entwicklungsbasis fuer die LLM-Sessions und oeffentliche Projektdokumentation, jedes Dokument mit maschinenlesbarer Provenienz im Frontmatter. Zweitens eine Content-Schicht fuer nicht-technische Pflege, ueber die Datenpartnerinnen redaktionelle Texte direkt pflegen koennen, ohne Code anzufassen. Der methodische Kernbeitrag ist die Map-Bias-Transparenzsektion: die systematische Verzerrung der Daten wird vor der Nutzung explizit gemacht, statt sie hinter der Visualisierung zu verbergen.
+HerData zeigt zwei Promptotyping-typische Muster. Erstens die Wissensbasis als Source of Truth: ein Ordner deutschsprachiger Promptotyping Documents ist zugleich Entwicklungsbasis fuer die LLM-Sessions und oeffentliche Projektdokumentation, jedes Dokument mit maschinenlesbarer Provenienz im Frontmatter. Zweitens eine Content-Schicht fuer nicht-technische Pflege, ueber die Datenpartnerinnen redaktionelle Texte direkt pflegen koennen, ohne Code anzufassen. Der methodische Kernbeitrag ist die Map-Bias-Transparenzsektion: die systematische Verzerrung der Daten wird vor der Nutzung explizit gemacht, statt sie hinter der Visualisierung zu verbergen.
 
 ## Links
 
-- Repository: https://github.com/chpollin/HerData
+Das Repository ist zum Stand der Publikation geschlossen.
+
 - Demo: https://chpollin.github.io/HerData
 - Use-Case-Typ: Datenexploration (#case-herdata)

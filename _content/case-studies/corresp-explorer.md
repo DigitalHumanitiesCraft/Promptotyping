@@ -17,11 +17,11 @@ Datengrundlage ist die CMIF-XML-Struktur (TEI-basiert) von correspSearch. Drei M
 
 ## Vorgehen
 
-Die Entwicklung erfolgte in etwa zwei Nachmittagen mit Claude Opus 4.5 ueber Claude Code. Die Wissensbasis umfasst sieben Dokumente, darunter eine Spezifikation mit siebenunddreissig User Stories und Akzeptanzkriterien, ein Journal mit sechsundvierzig Entwicklungsphasen und eine Test-Suite. Statt eines monolithischen Dashboards wurden zwoelf komplementaere Ansichten gewaehlt. Tests dienten als Context-Feedback: generieren, ausfuehren, Fehler zurueck ins Kontextfenster.
+Die Entwicklung erfolgte in etwa zwei Nachmittagen mit Claude Opus 4.5 ueber Claude Code. Es ist der erste vollstaendige Dokumentensatz des Korpus, mit User Stories samt Akzeptanzkriterien, einem Designdokument, einem phasenweise gefuehrten Journal und einer browserbasierten Test-Suite. Statt eines monolithischen Dashboards wurden zwoelf komplementaere Ansichten gewaehlt. Tests dienten als Context-Feedback: generieren, ausfuehren, Fehler zurueck ins Kontextfenster.
 
 ## Methodischer Beitrag
 
-CorrespExplorer ist der erste Fall mit einem vollstaendigen Promptotyping-Vault und liefert drei methodische Beobachtungen. Erstens FAIR-Daten als Promptotyping-Enabler: die Output-Qualitaet korreliert direkt mit der FAIR-Konformitaet der Daten. Zweitens Context Rot als praktisches Problem, das bei etwa fuenfzig Prozent Kontextfenster-Fuellung sichtbar wurde und die Destillation der Dokumentation erzwang. Drittens Sycophancy in der Praxis: das Modell stimmte suboptimalen Entscheidungen zu, sobald sie als Vorschlag formuliert waren, was eine explizite Aufforderung zur Kritik in den Prompts noetig machte.
+CorrespExplorer ist der erste Fall mit einem vollstaendigen Promptotyping-Dokumentensatz und liefert drei methodische Beobachtungen. Erstens FAIR-Daten als Promptotyping-Enabler: die Output-Qualitaet korreliert direkt mit der FAIR-Konformitaet der Daten. Zweitens Context Rot als praktisches Problem; die Prozessdokumentation haelt eine Kontextdegradation deutlich innerhalb des beworbenen Kontextfensters fest, qualitativ beobachtet und nicht gemessen, was die Destillation der Dokumentation erzwang. Drittens Sycophancy in der Praxis: das Modell stimmte suboptimalen Entscheidungen zu, sobald sie als Vorschlag formuliert waren, was eine explizite Aufforderung zur Kritik in den Prompts noetig machte.
 
 ## Links
 

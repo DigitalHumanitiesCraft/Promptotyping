@@ -17,7 +17,7 @@ Datenursprung ist eine DOCX-Probeseite zu Psalm 2 mit dreizehn Versen. Eine rege
 
 ## Vorgehen
 
-Die Edition ist eine Single-File-Webanwendung ohne Framework und ohne Build-Step. Sieben orthogonale Toggles steuern vier Textschichten und drei Darstellungsmodi, die Farblogik folgt der Textfunktion. Ein konfigurierbares Slot-System mit Pool-Registry erlaubt, Inhalte flexibel anzuordnen. Der Zustand wird vollstaendig als URL-Hash kodiert. Bemerkenswert ist die reibungslose Uebergabe zwischen zwei Claude-Code-Sessions verschiedener Bearbeiter mit dem Action-Layer als einzigem Kontext-Anker.
+Die Edition ist eine Single-File-Webanwendung ohne Framework und ohne Build-Step. Orthogonale Toggles schalten die drei funktionalen Textschichten, Psalmzitat, althochdeutsche Uebersetzung und Kommentar, unabhaengig voneinander sowie die Darstellungsmodi; die Farblogik folgt der Textfunktion. Ein konfigurierbares Drei-Slot-Layout erlaubt, Quellenapparat, Faksimile und Vergleichsansichten flexibel anzuordnen. Der Zustand wird vollstaendig als URL-Hash kodiert. Bemerkenswert ist die reibungslose Uebergabe zwischen zwei Claude-Code-Sessions verschiedener Bearbeiter mit dem Action-Layer als einzigem Kontext-Anker.
 
 ## Methodischer Beitrag
 

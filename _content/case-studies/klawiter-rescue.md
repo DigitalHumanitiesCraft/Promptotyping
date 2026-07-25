@@ -17,7 +17,7 @@ Ausgangspunkt sind SQL-Dumps und binaere BLOB-Dateien (363 MB) ohne externe Abha
 
 ## Vorgehen
 
-Eine siebenstufige Pipeline fuehrt von Extraktion ueber Encoding-Reparatur, Parsing, optionale LLM-Anreicherung, Klassifikation und JSON-LD-Erzeugung zur Validierung. Die LLM-Anreicherung ist optional und fuellt Metadaten-Luecken; das Verfahren ist deterministisch zuerst angelegt. Das Frontend ist eine Vanilla-JavaScript-Static-Site ohne Build-Step in der SZD-Designsprache. Die Qualitaetssicherung umfasst eine Test-Suite mit LLM-as-a-Judge-Validierung und Round-Trip-Verifikation.
+Eine gestufte Pipeline fuehrt von Extraktion ueber Encoding-Reparatur, Parsing, Normalisierung, optionale LLM-Anreicherung, Klassifikation und JSON-LD-Erzeugung zur Validierung. Die LLM-Anreicherung ist optional und fuellt Metadaten-Luecken; das Verfahren ist deterministisch zuerst angelegt. Das Frontend ist eine Vanilla-JavaScript-Static-Site ohne Build-Step in der SZD-Designsprache. Die Qualitaetssicherung umfasst eine Test-Suite mit LLM-as-a-Judge-Validierung und Round-Trip-Verifikation.
 
 ## Methodischer Beitrag
 

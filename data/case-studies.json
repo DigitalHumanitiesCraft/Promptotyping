@@ -2,8 +2,8 @@
   "version": "0.3",
   "generated": "2026-06-10",
   "_meta": {
-    "beschreibung": "Case-Study-Daten der Promptotyping-Methodik-Site. Quellen: Vault Projects/Promptotyping/Case Studies/, die Use-Case-Tabellen im Promptotyping MOC und die Projekt-Tabelle in _content/paper/04-projects.md. Klassifiziert nach der Use-Case-Typologie aus Pollin 2026, Abschnitt 4.3 (das interne Genre-Vokabular erscheint bewusst nicht).",
-    "kuratierung": "Kuratierte Auswahl der oeffentlich praesentierbaren Projekte (18 Eintraege), nicht das vollstaendige Evidenz-Korpus des Papers (20 Projekte in Tabelle 4.1). Ausgeschlossen sind acht Faelle wegen fehlender Kundenfreigabe bzw. weil sie ein Vermittlungsformat statt eines Forschungsartefakts sind: vetmedai-wissensbilanz, agentic-edition-pipeline, wiiw-patent-analysis, wiiw-figaro-subagents, sugw, vault-kuration-screencast, wissensorganisation-nano-banana, wissens-projektmanagement-obsidian-claude-code-screencast.",
+    "beschreibung": "Case-Study-Daten der Promptotyping-Methodik-Site. Quellen: die Fallbeschreibungen im Vault, die Methodenerweiterungen im Promptotyping MOC und das Projekt-Inventar in Pollin 2026, Abschnitt 5.2. Die useCase-Werte sind ein site-eigenes Ordnungsraster; das Paper ordnet die Projekte nach der Interface-Typologie aus Abschnitt 4.2.",
+    "kuratierung": "Kuratierte Auswahl der oeffentlich praesentierbaren Projekte, nicht das vollstaendige Evidenz-Korpus des Papers. Ausgeschlossen sind Faelle wegen fehlender Kundenfreigabe bzw. weil sie ein Vermittlungsformat statt eines Forschungsartefakts sind: vetmedai-wissensbilanz, agentic-edition-pipeline, wiiw-patent-analysis, wiiw-figaro-subagents, sugw, vault-kuration-screencast, wissensorganisation-nano-banana, wissens-projektmanagement-obsidian-claude-code-screencast.",
     "schema": {
       "id": "Anker-Slug, ergibt zusammen mit #case- den Site-Anker (z.B. herdata -> #case-herdata)",
       "name": "Anzeigename",
@@ -13,11 +13,11 @@
       "summary": "deutscher Ein-Satz-Ueberblick",
       "data": "Datengrundlage, kurz",
       "artifact": "erzeugtes Artefakt, kurz",
-      "interfaceTypes": "Array aus verification, exploration, edition, capture, audit; leer wenn keines belegt (aus der Interface-Type-Spalte der Paper-Tabelle 4.1)",
+      "interfaceTypes": "Array aus verification, exploration, edition, capture, audit; leer wenn keines belegt (aus der Interface-Type-Spalte des Projekt-Inventars, Pollin 2026, Abschnitt 5.2)",
       "repo_url": "Repository-URL oder null",
       "demo_url": "Live-Demo-URL oder null",
       "video_url": "YouTube-URL oder null",
-      "insight": "methodischer Beitrag laut Paper-Tabelle 4.1, sonst null",
+      "insight": "methodischer Beitrag laut Projekt-Inventar (Pollin 2026, Abschnitt 5.2), sonst null",
       "deep_page": "true fuer die sieben Tiefenseiten, sonst false"
     },
     "use_case_labels": {
@@ -158,7 +158,7 @@
       "repo_url": "https://github.com/DigitalHumanitiesCraft/CorrespExplorer",
       "demo_url": "https://dhcraft.org/CorrespExplorer",
       "video_url": null,
-      "insight": "Erster vollstaendiger Vault (7 Dokumente, 46 Journal-Phasen, 74+ Tests)",
+      "insight": "Erster vollstaendiger Dokumentensatz des Korpus, mit Journal und Test-Suite",
       "deep_page": true
     },
     {
@@ -187,7 +187,7 @@
       "data": "TEI/Wikidata Briefkorpus (CMIF, SNDB)",
       "artifact": "Korrespondenz-Karte (Frauen in Goethes Korrespondenz)",
       "interfaceTypes": ["exploration"],
-      "repo_url": "https://github.com/chpollin/HerData",
+      "repo_url": null,
       "demo_url": "https://chpollin.github.io/HerData",
       "video_url": null,
       "insight": "Gender-fokussiertes Netzwerk mit Map-Bias-Transparenzsektion",
@@ -206,7 +206,7 @@
       "repo_url": "https://github.com/DigitalHumanitiesCraft/co-ocr-htr",
       "demo_url": null,
       "video_url": "https://youtu.be/VJyhVc_ujeA",
-      "insight": "Prototyp an einem Tag, 567 Tests, Community-Fork (OEAW)",
+      "insight": "Prototyp unter einer Regressions-Suite; der einzige Community-Fork des Korpus (OEAW)",
       "deep_page": true
     },
     {
@@ -238,7 +238,7 @@
       "repo_url": "https://github.com/DigitalHumanitiesCraft/m3gim",
       "demo_url": "https://dhcraft.org/m3gim",
       "video_url": null,
-      "insight": "Datenmodell entwickelt sich durch das Interface (49 Entscheidungen)",
+      "insight": "Datenmodell entwickelt sich durch das Interface, getragen von einem Entscheidungsregister",
       "deep_page": true
     },
     {
@@ -251,10 +251,10 @@
       "data": "PDF-Korpus (286 PDFs, rund 4.150 Seiten)",
       "artifact": "Kuratierte TEI-XML-Edition mit Verification-Interfaces",
       "interfaceTypes": ["verification", "edition"],
-      "repo_url": "https://github.com/chpollin/zbz-ocr-tei",
+      "repo_url": null,
       "demo_url": null,
       "video_url": null,
-      "insight": "Volle epistemische Infrastruktur (16 Knowledge-Dokumente)",
+      "insight": "Vollstaendige Pipeline-Infrastruktur mit einem Verifikations-Interface pro Stufe",
       "deep_page": true
     },
     {
@@ -286,7 +286,7 @@
       "repo_url": "https://github.com/chpollin/klawiter-rescue",
       "demo_url": "https://chpollin.github.io/klawiter-rescue",
       "video_url": "https://youtu.be/KG35VGVctJw",
-      "insight": "Datenrettung: 7-stufige Pipeline plus EIL-Kurationsinterface (1 Tag, 264 Tests)",
+      "insight": "Datenrettung: gestufte Pipeline plus Kurationsinterface unter einer Test-Suite",
       "deep_page": true
     },
     {
@@ -302,7 +302,7 @@
       "repo_url": "https://github.com/chpollin/FemPrompt_SozArb",
       "demo_url": "https://chpollin.github.io/FemPrompt_SozArb/",
       "video_url": null,
-      "insight": "Jenseits DH: Literature-Review-Infrastruktur (505-Datei-Vault)",
+      "insight": "Jenseits DH: Literature-Review-Infrastruktur mit generierter Wissensbasis",
       "deep_page": false
     },
     {
