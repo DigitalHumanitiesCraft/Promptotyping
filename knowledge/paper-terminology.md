@@ -74,7 +74,7 @@ Statuscodes:
 
 **Ontology as explicit specification** `[S]`, §2.4. Ontologie als explizite Spezifikation einer Konzeptualisierung (Gruber 1993); ein Promptotyping-Dokumentensatz ist genau das in natürlicher Sprache, am semi-formalen Ende des Repräsentationsspektrums.
 
-**Boundary Object** `[S]`, §2.4, §6.5, §7. Objekt, plastisch genug für die Bedürfnisse verschiedener Gemeinschaften und robust genug, seine Identität über sie hinweg zu wahren (Star und Griesemer 1989).
+**Boundary Object** `[entfernt]`, ehemals §2.4, §6.5, §7. Am 2026-07-25 auf Operator-Entscheidung aus dem Paper entfernt, weil die Quelle die Zirkulation eines Objekts zwischen sozialen Welten beschreibt und nicht das Verhältnis von Forscherin und Modell. Die Stelle trägt jetzt die Trading Zone allein. Distillat und Claim bleiben im Vault als verwaistes, geprüftes Material.
 
 **Trading Zone** `[Q]`, §1, §2.4. Zone, in der Historikerinnen und computationale Expertinnen geteilte Bedeutung aushandeln (Kemman 2021). Der Ursprung bei Galison 1997 ist im Paper nicht belegt; Kandidat ungeprüft.
 

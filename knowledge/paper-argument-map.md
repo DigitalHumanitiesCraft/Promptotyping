@@ -148,7 +148,7 @@ Rolle: zuliefernd → K-1b
 
 ```
 Antworten des Felds installieren je einen menschlichen Übersetzer
-──► Dokumente greifen als Boundary Objects ein (K-2.4b)
+──► Dokumente greifen als schriftliche Form der Übersetzung ein (K-2.4b)
 ∧ zweite Last im generativen Setting: das Dokument ist zugleich Quelle der Implementation
 ──► ein Gespräch mit dem Modell hinterlässt kein prüfbares Objekt,
     dieselbe Aussage über die Quellen muss dem Scholar und dem Agenten vorliegen
@@ -162,11 +162,13 @@ sie ist nicht mehr theoretischer Kern (Operator-Entscheidung 2026-07-24).
 Status: unbestätigt
 Rolle: zuliefernd → K-1b
 
-**K-2.4b, Boundary Objects.**
+**K-2.4b, die Übersetzung in schriftlicher Form.**
 
 ```
-Dokument = plastisch genug für beide Communities ∧ robust genug für Identität
+Dokument = eine Aussage, aus der Scholar und Agent je ihre Seite lesen
 ──► Trading Zone bekommt eine schriftliche Verfassung
+Der Boundary-Object-Begriff ist hier entfallen (Operator-Entscheidung 2026-07-25);
+die Trading Zone trägt die Stelle allein.
 gilt auch ohne LLM ──► verbesserte Kommunikation auch mit menschlichem RSE (6.5)
 generatives Setting macht Dokumente doppelt tragend: dort sind sie zugleich Quelle der Implementation
 ```
@@ -572,8 +574,8 @@ Rolle: zuliefernd → K-1b
 Claim 1: versionierte Dokumente können die Übersetzung Daten→Artefakt tragen;
          wissenschaftliche Arbeit konzentriert sich, wo Verantwortung liegt
          (Modellieren, Spezifizieren, Verifizieren)
-Claim 2: dieselben Dokumente stabilisieren als Boundary Objects die
-         interdisziplinäre Übersetzung, gegenüber Agenten wie Menschen
+Claim 2: dieselben Dokumente stabilisieren die interdisziplinäre Übersetzung
+         in prüfbarer Form, gegenüber Agenten wie Menschen
 Schluss über die Daten: die 20-Jahres-Investition des Felds wird produktiv,
 über einen anderen Mechanismus als das SW ihn vorsah, auf das Ziel hin, das es benannte
 ```
