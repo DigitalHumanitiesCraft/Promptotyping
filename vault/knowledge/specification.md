@@ -10,6 +10,7 @@ status: draft
 language: en
 created: "2026-07-19"
 updated: "2026-07-25"
+expected-warnings: [W-NO-DELIVERABLE]
 related: [index, schema, operations]
 ---
 

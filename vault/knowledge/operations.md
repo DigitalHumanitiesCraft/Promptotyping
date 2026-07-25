@@ -79,7 +79,7 @@ Three instances check the vault. The architecture fixes their contracts; the mec
 - Record: `checked.validation: <date>` on every file that passes.
 - Reference mechanism: `python tools/validate.py .` (checks frontmatter per type, anchor resolution, statement IDs, quotation identity where a source text is available, computation declarations, MOC reachability, bidirectional contested links, chapter mirror and footnote keywords, status discipline, inventory completeness). `--run-computations` re-runs data anchors and compares results.
 - Inventory duty: every representation and distillate is listed in the source inventory of [[knowledge/state]] or in [[knowledge/register-paper-sources]]. A document that no register carries is invisible to every check that reads a register, so the validator raises `E-INVENTORY` on it.
-- A run that reports zero errors is not by itself the success criterion. The instance declares in [[knowledge/specification]] which warnings it expects, and any warning beyond that set is a finding rather than background noise.
+- A run that reports zero errors is not by itself the success criterion. The instance declares its expected warnings under `expected-warnings` in the frontmatter of [[knowledge/specification]], here `W-NO-DELIVERABLE`; every other warning is printed with an asterisk and counted apart, and a declaration that no longer fires is reported as `W-STALE-EXPECTATION`.
 
 ### Contract: machine review
 

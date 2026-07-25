@@ -1,11 +1,9 @@
 """Fixture tests for tools/validate.py against the shipped example instances.
 
 examples/minimal is the positive fixture and must pass clean; examples/broken
-carries one specimen per defect class and every class must be caught. Two tests
-run against this vault itself, because the expected state of a real instance is
-part of what the validator has to get right: no errors, and the one warning the
-empty deliverable folder produces (decision of 2026-07-25 in
-knowledge/specification.md).
+carries one specimen per defect class and every class must be caught. The
+warning tests use temporary vaults, because a warning states that a check found
+no subject, which neither shipped fixture can show.
 """
 
 import sys
@@ -30,8 +28,23 @@ EXPECTED_BROKEN_CODES = {
     "E-MIRROR",  # frontmatter mirror out of sync
     "E-COMPUTATION",  # computation script missing
     "E-QUOTE",  # intake-time quotation check not recorded
-    "E-INVENTORY",  # document in neither inventory register
+    "E-INVENTORY",  # document in no inventory register
 }
+
+SPECIFICATION = """---
+title: Specification
+expected-warnings: [{expected}]
+---
+
+# Specification
+"""
+
+
+def _declare_expected_warnings(root: Path, expected: str) -> None:
+    (root / "knowledge").mkdir(exist_ok=True)
+    (root / "knowledge" / "specification.md").write_text(
+        SPECIFICATION.format(expected=expected), encoding="utf-8"
+    )
 
 
 def test_minimal_is_clean() -> None:
@@ -42,6 +55,11 @@ def test_minimal_is_clean() -> None:
 def test_minimal_computations_reproduce() -> None:
     report = validate(MINIMAL, run_computations=True)
     assert report.errors == [], report.errors
+
+
+def test_minimal_raises_no_warning() -> None:
+    report = validate(MINIMAL)
+    assert report.warnings == [], report.warnings
 
 
 def test_broken_catches_every_defect_class() -> None:
@@ -56,18 +74,35 @@ def test_broken_reports_no_false_alarms_outside_expected_classes() -> None:
     assert not unexpected, f"unexpected error classes: {unexpected}"
 
 
-def test_instance_is_clean_and_warns_about_the_empty_deliverable() -> None:
+def test_instance_is_clean_and_its_one_warning_is_declared() -> None:
     report = validate(REPO)
     assert report.errors == [], report.errors
     assert {code for code, _, _ in report.warnings} == {"W-NO-DELIVERABLE"}
+    assert report.unexpected_warnings() == []
 
 
-def test_a_vault_without_registers_says_the_inventory_check_did_not_run(
-    tmp_path: Path,
-) -> None:
+def test_an_empty_vault_says_which_checks_had_no_subject(tmp_path: Path) -> None:
     report = validate(tmp_path)
     assert report.errors == []
     assert {code for code, _, _ in report.warnings} == {
         "W-NO-INVENTORY",
         "W-NO-DELIVERABLE",
     }
+
+
+def test_a_declared_warning_is_not_reported_as_unexpected(tmp_path: Path) -> None:
+    _declare_expected_warnings(tmp_path, "W-NO-INVENTORY, W-NO-DELIVERABLE")
+    report = validate(tmp_path)
+    assert report.unexpected_warnings() == []
+
+
+def test_an_undeclared_warning_stays_unexpected(tmp_path: Path) -> None:
+    _declare_expected_warnings(tmp_path, "W-NO-INVENTORY")
+    report = validate(tmp_path)
+    assert [code for code, _, _ in report.unexpected_warnings()] == ["W-NO-DELIVERABLE"]
+
+
+def test_a_declaration_that_no_longer_fires_is_reported(tmp_path: Path) -> None:
+    _declare_expected_warnings(tmp_path, "W-NO-INVENTORY, W-NO-DELIVERABLE, W-GONE")
+    report = validate(tmp_path)
+    assert "W-STALE-EXPECTATION" in {code for code, _, _ in report.warnings}

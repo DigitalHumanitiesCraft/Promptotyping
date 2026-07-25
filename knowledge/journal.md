@@ -647,3 +647,15 @@ Der Operator bezeugt aus eigener Rezeption des Hörbuchs, dass Berners-Lee in de
 Der Absatz zum Semantic Web in 2.3 sagt, dass das Arrangement dieses Papers ohne formale Inferenz auskommt und explizite Semantik als Kontext aufnimmt. Daran hängt jetzt eine Fußnote von zwei Sätzen, die die engere Kopplung benennt, die anderswo verfolgt wird, und sie als zweite Route kennzeichnet, auf der die Investition eines Fachs in explizite Semantik produktiv wird. Sie eröffnet keine Diskussion über Modellevaluation und keine über neurosymbolische Systeme; die Operator-Vorgabe war ausdrücklich, das Thema nicht aufzumachen.
 
 Die erste Fassung war zu lang und stützte sich auf zwei Arbeiten von 2024, was der Operator zurecht als veraltet zurückwies. Sie steht jetzt auf einer Übersichtsarbeit vom April 2026, die Graphen, Modelle und Agenten zusammen behandelt und die Integrationswege nach Prompting, Augmentierung, Training und Agenten ordnet.
+
+### Rückfluss ins Grounded-Vault-Template
+
+Die drei Befunde dieser Instanz stehen jetzt im Template (`DigitalHumanitiesCraft/grounded-vault`, Commit `f74a014`), test-first umgesetzt, neun Tests grün, Ruff sauber.
+
+**Der Inventarcheck** ist portiert, samt der beiden Fixtures, der Registerdatei im positiven Beispiel und dem nicht verzeichneten Dokument im kaputten. Das Template führt als Standardregister `knowledge/state.md`; diese Instanz führt zwei, weil sie das Quellenregister zusätzlich hat.
+
+**Die Warnungen sind deklarierbar geworden.** Eine Instanz trägt ihre bekannten Warnungen unter `expected-warnings` in das Frontmatter der Specification ein. Alles darüber wird mit Stern gedruckt und getrennt gezählt, und eine Deklaration, die nicht mehr auslöst, meldet sich als `W-STALE-EXPECTATION`, was die umgekehrte Drift fängt, wenn ein Vertrag später doch greift. Diese Instanz deklariert `W-NO-DELIVERABLE`.
+
+**Die Fixture-Anweisung ist korrigiert.** Das Template wies Instanzen an, `examples/` zu löschen, und lieferte gleichzeitig die Testsuite, die genau gegen diese Fixtures läuft. Der Setup-Schritt nennt jetzt den Grund, sie zu behalten.
+
+Validator und Tests dieser Instanz sind auf den Template-Stand gezogen, damit die beiden nicht auseinanderlaufen; die Instanz hat einundzwanzig Tests, weil sie zusätzlich gegen den realen Vault prüft.
