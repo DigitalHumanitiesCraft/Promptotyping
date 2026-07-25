@@ -1,0 +1,29 @@
+[
+  {
+    "id": "pichler-2022",
+    "type": "article-journal",
+    "title": "From Concepts to Texts and Back: Operationalization as a Core Activity of Digital Humanities",
+    "author": [
+      {
+        "family": "Pichler",
+        "given": "Axel"
+      },
+      {
+        "family": "Reiter",
+        "given": "Nils"
+      }
+    ],
+    "container-title": "Journal of Cultural Analytics",
+    "volume": "7",
+    "issue": "4",
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    },
+    "DOI": "10.22148/001c.57195",
+    "URL": "https://doi.org/10.22148/001c.57195"
+  }
+]

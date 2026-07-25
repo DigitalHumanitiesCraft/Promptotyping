@@ -1,0 +1,27 @@
+[
+  {
+    "id": "geiger-2023",
+    "type": "chapter",
+    "title": "Daten / Forschungsdaten",
+    "author": [
+      {
+        "family": "Geiger",
+        "given": "Jonathan D."
+      }
+    ],
+    "container-title": "Begriffe der Digital Humanities. Ein diskursives Glossar",
+    "collection-title": "Zeitschrift für digitale Geisteswissenschaften / Working Papers",
+    "collection-number": "2",
+    "publisher-place": "Wolfenbüttel",
+    "version": "2.0",
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "DOI": "10.17175/wp_2023_003_v2",
+    "URL": "https://doi.org/10.17175/wp_2023_003_v2"
+  }
+]
