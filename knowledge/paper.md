@@ -403,8 +403,8 @@ This text was produced with its own method. The paper grew through several Promp
 - Lang, Sarah, and Elena Suárez Cronauer. "Beyond Data Feminism. Towards Ethical Data Work in the (Digital) Humanities." *Zeitschrift für digitale Geisteswissenschaften* (2026). https://doi.org/10.17175/wp_2026
 - Leipold, Frieder, Lily Baumeister, Isabella Limmer, Miriam Siebert, Max Kristen, and Chiara Franceschini. "Mapping Hospital Heritage with WikiFAIR. A Proposal for Research Data Management." *Zeitschrift für digitale Geisteswissenschaften* (2026). https://doi.org/10.17175/2026_008
 - Liu, Junwei, Kaixin Wang, Yixuan Chen, Xin Peng, Zhenpeng Chen, Lingming Zhang, and Yiling Lou. "Large Language Model-Based Agents for Software Engineering: A Survey." arXiv:2409.02977 (2024). Accepted at ACM Transactions on Software Engineering and Methodology.
-- Mei, Lingrui, et al. "A Survey of Context Engineering for Large Language Models." arXiv:2507.13334 (2025).
 - Macedo, Sanderson Oliveira de. "From Prompt to Process: a Process Taxonomy and Comparative Assessment of Frameworks Supporting AI Software Development Agents." arXiv:2606.04967 (2026).
+- Mei, Lingrui, et al. "A Survey of Context Engineering for Large Language Models." arXiv:2507.13334 (2025).
 - Mariani, Fabio. "PROV-A, a Web-Based Tool for Structuring Provenance as Linked Open Data." *Zeitschrift für digitale Geisteswissenschaften* (2025). https://doi.org/10.17175/2025_012
 - Mayr, Heinrich C., and Bernhard Thalheim. "The Triptych of Conceptual Modeling: A Framework for a Better Understanding of Conceptual Modeling." *Software and Systems Modeling* 20, no. 1 (2021): 7–24. https://doi.org/10.1007/s10270-020-00836-z
 - Miksa, Tomasz, Stephanie Simms, Daniel Mietchen, and Sarah Jones. "Ten Principles for Machine-Actionable Data Management Plans." *PLOS Computational Biology* 15, no. 3 (2019): e1006750. https://doi.org/10.1371/journal.pcbi.1006750

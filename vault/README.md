@@ -12,7 +12,7 @@ The numbering covers the chain and nothing else, and three content folders stand
 
 `knowledge/` steers this vault and is not a second copy of the repository's own knowledge base one level up. It holds the rulebook, the operations playbook, the parameters and settled decisions of this instance, the volatile state, the vault's own journal, and the register of paper sources.
 
-`tools/` holds the validator and the coverage script, `tests/` the suite that proves the validator catches anything at all, and `examples/` the fixtures that suite runs against. The template ships the fixtures and instructs an instance to delete them; this instance keeps them for that reason, and the validator ignores them because it reads only the content folders at the root it is given.
+`tools/` holds three read-only scripts. `validate.py` checks the vault against its schema, `coverage.py` reports which statements of the paper no claim covers, and `bibliography.py` renders the paper's References section from the CSL records in `references/`; with `--compare` the latter names the differences between the two stocks in both directions, so that the hand-maintained section and the records stay comparable without a second copy of the bibliography. None of the three writes to the paper. `tests/` holds the suite that proves the validator catches anything at all and that the bibliography rules hold, and `examples/` the fixtures the validator tests run against. The template ships the fixtures and instructs an instance to delete them; this instance keeps them for that reason, and the validator ignores them because it reads only the content folders at the root it is given.
 
 ## License
 

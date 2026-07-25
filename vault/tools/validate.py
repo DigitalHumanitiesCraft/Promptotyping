@@ -3,8 +3,13 @@
 Implements the validation contract from knowledge/operations.md: frontmatter
 conformance per document type, anchor resolution, statement IDs, quotation
 recording, computation declarations, MOC reachability, bidirectional contested
-links, chapter mirror and footnote keywords, and status discipline. The rules
-themselves are defined in knowledge/schema.md; this script only enforces them.
+links, chapter mirror and footnote keywords, status discipline, and the
+inventory obligation of representations and distillates. The rules themselves
+are defined in knowledge/schema.md; this script only enforces them.
+
+Two warnings report that a check found nothing to check rather than passing
+silently: an instance without an inventory register, and one whose deliverable
+folder holds no chapter, where the footnote contract has no subject.
 
 Usage:
     python tools/validate.py <vault-root> [--run-computations]
@@ -40,6 +45,12 @@ TYPE_FOLDER = {
     "chapter": "30_deliverable",
     "glossary": "glossary",
 }
+
+INVENTORY_REGISTERS = (
+    "knowledge/state.md",
+    "knowledge/register-paper-sources.md",
+)
+INVENTORIED_FOLDERS = ("00_representation", "10_distillates")
 
 SOURCE_TYPES = frozenset({"document", "publication", "data"})
 CHANNELS = frozenset({"handover", "collection", "import", "deep-research"})
@@ -443,6 +454,46 @@ def _check_chapter(doc: Doc, docs: dict[str, Doc], root: Path, report: Report) -
         paragraph = []
 
 
+def _check_inventory(root: Path, docs: dict[str, Doc], report: Report) -> None:
+    """Every representation and distillate is named in one of the two registers.
+
+    The registers divide the work, publications in the source register and
+    project documents in the state document, so either one counts as proof of
+    record. A document listed in neither is invisible to the inventory and grew
+    unnoticed, which is the defect this check exists for.
+    """
+    registers = [root / name for name in INVENTORY_REGISTERS if (root / name).is_file()]
+    if not registers:
+        report.warn(
+            "W-NO-INVENTORY",
+            "knowledge/",
+            "no inventory register found; the inventory obligation was not checked",
+        )
+        return
+    listed = {
+        target
+        for path in registers
+        for target, _ in _link_targets(path.read_text(encoding="utf-8"))
+    }
+    for doc in docs.values():
+        if doc.rel.startswith(INVENTORIED_FOLDERS) and doc.rel not in listed:
+            report.error(
+                "E-INVENTORY",
+                doc.rel,
+                f"named in neither {' nor '.join(INVENTORY_REGISTERS)}",
+            )
+
+
+def _check_deliverable_present(docs: dict[str, Doc], report: Report) -> None:
+    """A validator must not report green on a contract that had no subject."""
+    if not any(doc.fm.get("type") == "chapter" for doc in docs.values()):
+        report.warn(
+            "W-NO-DELIVERABLE",
+            "30_deliverable/",
+            "no chapter document; the footnote contract does not take effect in this instance",
+        )
+
+
 def _check_moc_reachability(docs: dict[str, Doc], report: Report) -> None:
     mocs = [d for d in docs.values() if d.fm.get("type") == "moc"]
     listed = {target for moc in mocs for target, _ in _link_targets(moc.body)}
@@ -485,6 +536,8 @@ def validate(root: Path, run_computations: bool = False) -> Report:
             if block is not None or any(target.startswith(f) for f in CONTENT_FOLDERS):
                 _resolve_anchor(target, block, docs, root, doc, report)
     _check_moc_reachability(docs, report)
+    _check_inventory(root, docs, report)
+    _check_deliverable_present(docs, report)
     return report
 
 
