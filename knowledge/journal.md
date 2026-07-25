@@ -629,3 +629,11 @@ Operator-Entscheidung vom 2026-07-25. Der Begriff war durch eine Agentenrecherch
 Die Trading Zone bleibt und trägt allein. Sie ist im Feld des Operators verankert, über Kemman und über die digitale Hermeneutik der Luxemburger Richtung, und war schon in der Dissertation in Gebrauch. Der Satz, dass die Trading Zone eine geschriebene Verfassung bekommt, hing an Star ohnehin nicht.
 
 Im Vault bleiben Distillat und Claim als geprüftes Material und sind als verwaist markiert. Der CSL-Record bleibt ebenfalls, weil der Validator ihn als Quellensatz des Distillats verlangt; er hat jetzt keinen Eintrag im Literaturverzeichnis mehr, was der Bibliographievergleich als zweiten Record ohne Papereintrag meldet, neben soiland-2022. Das ist der erwartete Zustand.
+
+### Zitierweise, Seitenangaben wandern in den Vault
+
+Operator-Entscheidung vom 2026-07-25. Der Papertext führt Autor und Jahr, der Lokator sitzt in der Registerzeile des Vaults und, wo ein wörtliches Zitat geprüft wurde, im Distillat. Betroffen waren zwei Stellen, die Seitenangabe zur allgemeinen Modelltheorie und die zur Trading-Zone-Definition; beide stehen jetzt im Register. Die Regel steht in `paper-writing.md` unter Zitierweise.
+
+Die Seitenangabe 129–131 zu den drei Modelleigenschaften ist damit zugleich bestätigt. Sie stammt aus dem Lehrmaterial, in das der Operator die Passage übernommen hat, und ist keine Vermutung; die Registerzeile hält Bestätigung und Herkunft fest.
+
+**Zwei Operatorkopien sind keine.** Broy und Kuhrmann werden einmal zitiert, für den Spezifikationsbegriff des Requirements Engineering, ohne Lokator, ohne Zitat und mit der ausdrücklichen Feststellung, dass formale Vollständigkeit nicht beansprucht wird. Ein solcher Lehrbuchverweis trägt keine prüfbare Aussage, also braucht er kein Exemplar. Drucker 2014 steht neben Drucker 2011 als zweiter Ort desselben Capta-Arguments, das im Distillat zu 2011 wörtlich geprüft vorliegt; die Sekundärliteratur bestätigt, dass das Argument im Buch wiederkehrt. Beide Zeilen sind auf `no copy needed` umgestellt, mit Begründung. Offen bleibt damit als Operatorkopie nur Borgman.

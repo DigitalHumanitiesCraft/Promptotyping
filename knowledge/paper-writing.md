@@ -69,6 +69,10 @@ Gilt für den gesamten Papertext; die vier Kernverbote der globalen Stilregeln g
 20. Kursiv und Fett konsistent. Kursiv nur für übernommene Diskursterme bei ihrer Ersteinführung (die Einträge in 2.5) und die fünf Interface-Kategorien in 4.2. Fett nur für strukturelle Label (Phasen in 3.2, Dokumenttypen in 3.3, Fall-Label in 5.3). Ein Term, dessen Ersteinführung vor 2.5 liegt (context engineering steht schon im Titel, Abstract und Intro recte), bleibt an der 2.5-Stelle recte statt kursiv.
 21. Fußnoten-Konvention für technische Standards (Erweiterung von Regel 18, Operator 2026-07-23). Technische Standards erhalten bei Ersterwähnung eine Fußnote mit Ein-Satz-Definition und Link zur maßgeblichen Dokumentation, einheitlich (TEI, XML, RDF, OWL, TaDiRAH; RiC-O und CMIF innerhalb der bestehenden Projekt-Fußnoten). Alltagsformate erhalten keine Fußnote (CSV, JSON, HTML, CSS, JavaScript, Markdown). Abkürzungen ohne Standard-Charakter werden inline bei Erstnennung ausgeschrieben nach dem Muster „Vollform (ABK)" (OCR, HTR).
 
+## Zitierweise
+
+Der Papertext führt Autor und Jahr, keine Seitenangaben. Der Lokator gehört in die Registerzeile des Vaults (`vault/knowledge/register-paper-sources.md`) und, wo ein wörtliches Zitat geprüft wurde, in das Distillat. Grund: das Paper argumentiert auf der Ebene der Aussage, und die Nachweisebene liegt im Companion, der dafür gebaut ist. Operator-Entscheidung 2026-07-25; dabei sind die Seitenangaben zu Stachowiak und Kemman aus dem Fließtext in den Vault gewandert.
+
 ## Entscheidungsstand
 
 Vom Operator entschieden (Sessions 2026-07-23):
