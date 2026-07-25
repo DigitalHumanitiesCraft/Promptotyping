@@ -1,0 +1,46 @@
+[
+  {
+    "id": "pan-2024",
+    "type": "article-journal",
+    "title": "Unifying Large Language Models and Knowledge Graphs: A Roadmap",
+    "author": [
+      {
+        "family": "Pan",
+        "given": "Shirui"
+      },
+      {
+        "family": "Luo",
+        "given": "Linhao"
+      },
+      {
+        "family": "Wang",
+        "given": "Yufei"
+      },
+      {
+        "family": "Chen",
+        "given": "Chen"
+      },
+      {
+        "family": "Wang",
+        "given": "Jiapu"
+      },
+      {
+        "family": "Wu",
+        "given": "Xindong"
+      }
+    ],
+    "container-title": "IEEE Transactions on Knowledge and Data Engineering",
+    "volume": "36",
+    "issue": "7",
+    "page": "3580-3599",
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "DOI": "10.1109/TKDE.2024.3352100",
+    "URL": "https://doi.org/10.1109/TKDE.2024.3352100"
+  }
+]

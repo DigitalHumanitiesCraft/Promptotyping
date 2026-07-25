@@ -1,0 +1,30 @@
+[
+  {
+    "id": "edge-2024",
+    "type": "article",
+    "title": "From Local to Global: A Graph RAG Approach to Query-Focused Summarization",
+    "author": [
+      {
+        "family": "Edge",
+        "given": "Darren"
+      },
+      {
+        "family": "Trinh",
+        "given": "Ha"
+      },
+      {
+        "family": "Cheng",
+        "given": "Newman"
+      }
+    ],
+    "number": "arXiv:2404.16130",
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "URL": "https://arxiv.org/abs/2404.16130"
+  }
+]

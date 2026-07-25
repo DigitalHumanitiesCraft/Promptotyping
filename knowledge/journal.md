@@ -641,3 +641,9 @@ Die Seitenangabe 129–131 zu den drei Modelleigenschaften ist damit zugleich be
 ### Berners-Lee, zurückgeholt in abgeschwächter Form
 
 Der Operator bezeugt aus eigener Rezeption des Hörbuchs, dass Berners-Lee in den heutigen agentischen Systemen eine Bewegung auf die Agentenidee seiner Vision zu sieht. Der Satz in 2.3 führt das jetzt wieder, in der schwächeren Fassung, die genau diese Bewegung behauptet und keine Einlösung. Grundlage ist die Operator-Bezeugung, nicht ein Lokator; die Registerzeile hält beides fest, den Weg der Rezeption und den Umstand, dass der Satz bis zu einer Textausgabe auf der Bezeugung ruht. Die Abschwächung war vorher zu weit gegangen, weil sie den Satz auf das reduzierte, was der Verlagsessay trägt, und damit eine gelesene Aussage der Quelle unterschlug.
+
+### Eine Fußnote zur Kopplung von Modellen und formalen Wissensstrukturen
+
+Der Absatz zum Semantic Web in 2.3 sagt, dass das Arrangement dieses Papers ohne formale Inferenz auskommt und explizite Semantik als Kontext aufnimmt. Daran hängt jetzt eine Fußnote, die die engere Kopplung benennt, die anderswo verfolgt wird, Wissensgraphen zur Erdung von Modellausgaben und Modelle zum Bau und zur Vervollständigung von Graphen (Pan et al. 2024) sowie Retrieval über einen aus dem Korpus gebauten Graphen für Fragen, die flaches Retrieval offenlässt (Edge et al. 2024). Sie hält fest, dass ein großer Teil der Leistung im agentischen Harness sitzt, in den Werkzeugen und den Prüfungen über deren Ausgaben, und dass diese Linie eine zweite Route ist, auf der die Investition eines Fachs in explizite Semantik produktiv wird.
+
+Die Fußnote ist bewusst ein Zeiger. Sie eröffnet keine Diskussion über Modellevaluation und keine über neurosymbolische Systeme; die Operator-Vorgabe war ausdrücklich, das Thema nicht aufzumachen. Beide Werke haben CSL-Records und Registerzeilen mit diesem Vermerk.
