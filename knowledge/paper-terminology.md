@@ -76,7 +76,7 @@ Statuscodes:
 
 **Boundary Object** `[entfernt]`, ehemals §2.4, §6.5, §7. Am 2026-07-25 auf Operator-Entscheidung aus dem Paper entfernt, weil die Quelle die Zirkulation eines Objekts zwischen sozialen Welten beschreibt und nicht das Verhältnis von Forscherin und Modell. Die Stelle trägt jetzt die Trading Zone allein. Distillat und Claim bleiben im Vault als verwaistes, geprüftes Material.
 
-**Trading Zone** `[Q]`, §1, §2.4. Zone, in der Historikerinnen und computationale Expertinnen geteilte Bedeutung aushandeln (Kemman 2021). Der Ursprung bei Galison 1997 ist im Paper nicht belegt; Kandidat ungeprüft.
+**Trading Zone** `[Q]`, §1, §2.4. Arena, in der zwei Gemeinschaften mit verschiedenen Praktiken ein gemeinsames Unternehmen lokal, aber nicht global koordinieren; Kemman (2021) überträgt den Begriff auf die digitale Geschichtswissenschaft und führt den Broker ein, der zwischen den Gemeinschaften übersetzt. Der Ursprung bei Galison steht seit 2026-07-25 im Papertext, belegt über Kemman 2021, S. 4, weil Galison selbst nicht gelesen ist. Das Paper zieht die Konstellation auf eine Rolle zusammen, den Critical Expert, was sein eigener Zug ist und nicht Kemmans.
 
 **Translation Problem** `[S]`, §1, §2.4. Zwei Jahrzehnte dokumentierte Vermittlungslücke zwischen Fachwissenschaft und Softwareentwicklung, mit dem professionellen Intermediär (Edmond 2005), den Teamstrukturen (Siemens 2009) und den Trading Zones (Kemman 2021) als den Antworten, die jeweils einen menschlichen Übersetzer installieren.
 
