@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "stand": "2026-06-10",
+    "stand": "2026-07-25",
     "version": "0.1",
     "beschreibung": "Glossar der konstitutiven Begriffe des Promptotyping-Papers und der Methodik-Site. Diese JSON ist die massgebliche Datenquelle fuer die Site (Tooltips und Side-Panel); _content/glossar.md ist die lesbare Form derselben Inhalte und inhaltsgleich.",
     "schema": "Array von Eintraegen mit Feldern: slug (URL-Anker-Fragment, ergibt zusammen mit #konzept- bzw. #glossar- den Site-Anker), begriff (Anzeigeform), kurz (ein Satz deutsch fuer Tooltips), voll (ein Absatz Volldefinition), quelle (Paper-Section-Anker oder Literatur-Referenz)",
@@ -24,28 +24,35 @@
       "slug": "promptotyping-document",
       "begriff": "Promptotyping Document",
       "kurz": "Strukturiertes, LLM-optimiertes Markdown-Dokument im knowledge/-Ordner eines Promptotyping-Repos.",
-      "voll": "Ein Promptotyping Document ist ein strukturiertes, LLM-optimiertes Markdown-Dokument im knowledge/-Ordner eines Promptotyping-Repos, das Kontext verdichtet und destilliert. Es gibt drei analytische Typen: Knowledge (deklarativ), Process (chronologisch oder analytisch) und Action (imperativ). Diese Dokumente sind keine klassische Dokumentation, sondern kontextangepasste Artefakte des Context Engineering, die LLM-gestuetzt erzeugt, aber von Experten kuratiert werden.",
+      "voll": "Ein Promptotyping Document ist ein strukturiertes, LLM-optimiertes Markdown-Dokument im knowledge/-Ordner eines Promptotyping-Repos, das Kontext verdichtet und destilliert. Jedes Promptotyping Document ist ein Knowledge Document, und drei analytische Typen unterscheiden sich nach der Art des Wissens, das sie tragen, Declarative Documents fuer Sachwissen, Process Documents fuer Prozesswissen und Action Documents fuer Handlungswissen. Diese Dokumente sind keine klassische Dokumentation, sondern kontextangepasste Artefakte des Context Engineering, die LLM-gestuetzt erzeugt, aber von Experten kuratiert werden.",
       "quelle": "Pollin 2026, Abschnitt 3.3; knowledge/INDEX.md"
     },
     {
       "slug": "knowledge-document",
       "begriff": "Knowledge Document",
-      "kurz": "Deklaratives Promptotyping Document, das Daten, Domaene und Forschungskontext beschreibt.",
-      "voll": "Ein Knowledge Document ist deklarativ und beschreibt Daten, Domaene und Forschungskontext eines Projekts. Beispiele sind README.md, project.md, data.md, requirements.md, architecture.md, design.md und editorial-guidelines.md. Knowledge Documents erweitern den epistemischen Horizont des Modells. Diagnostik: ist der Output inhaltlich falsch, wird zuerst das Knowledge Document geprueft.",
+      "kurz": "Oberbegriff fuer ein Dokument, das Wissen festhaelt; jedes Promptotyping Document ist eines.",
+      "voll": "Ein Knowledge Document ist ein Dokument, das Wissen so festhaelt, dass Menschen und Agenten es lesen und darauf handeln koennen. Der Begriff ist allgemein und nicht an Promptotyping gebunden; im Promptotyping heissen diese Dokumente Promptotyping Documents, wenn sie im knowledge/-Ordner eines Projekts liegen. Nach der Art des Wissens, das sie tragen, zerfallen sie in drei Spezialisierungen, Declarative Documents fuer Sachwissen, Process Documents fuer Prozesswissen und Action Documents fuer Handlungswissen.",
+      "quelle": "Pollin 2026, Abschnitt 3.3"
+    },
+    {
+      "slug": "declarative-document",
+      "begriff": "Declarative Document",
+      "kurz": "Knowledge Document, das Sachwissen ueber Daten, Domaene und Forschungskontext traegt.",
+      "voll": "Ein Declarative Document ist die Spezialisierung des Knowledge Document auf Sachwissen. Es beschreibt, was ueber Daten, Domaene und Forschungskontext bekannt ist. Beispiele sind README.md, project.md, data.md, requirements.md, architecture.md, design.md, editorial-guidelines.md, Mapping-Regeln und Verifikationsdokumente. Declarative Documents werden vom Critical Expert kuratiert und bilden das bleibende Artefakt des Context Engineering, weil das Wissen, das sie kodieren, Aenderungen an Code, Modellversionen und Werkzeugen ueberdauert. Diagnostik: ist der Output inhaltlich falsch, wird zuerst das Declarative Document geprueft. Die Site fuehrte diesen Typ bis Juli 2026 unter dem Namen Knowledge Document; der Name wanderte auf den Oberbegriff.",
       "quelle": "Pollin 2026, Abschnitt 3.3; Konvention Promptotyping Documents"
     },
     {
       "slug": "process-document",
       "begriff": "Process Document",
-      "kurz": "Chronologisches oder analytisches Promptotyping Document, das den Arbeitsprozess dokumentiert.",
-      "voll": "Ein Process Document ist chronologisch oder analytisch und dokumentiert den Arbeitsprozess. Beispiele sind journal.md, learnings.md und plan.md. Process Documents werden kontinuierlich aktualisiert. Diagnostik: ist die Entscheidungslogik unklar, wird zuerst das Process Document geprueft. Die VetMedAI-Wissensbilanz fuehrte Learnings als eigenstaendigen Process-Document-Typ ein.",
+      "kurz": "Knowledge Document, das Prozesswissen ueber den Verlauf der Arbeit traegt.",
+      "voll": "Ein Process Document ist die Spezialisierung des Knowledge Document auf Prozesswissen. Es haelt den Verlauf der Arbeit fest, chronologisch oder analytisch. Beispiele sind journal.md, learnings.md und plan.md. Zusammen mit der git-Historie bilden sie ein Context Memory, das verlaessliche Sitzungsfortsetzung erlaubt, wobei das Journal das Warum dokumentiert und die Commits das Was. Diagnostik: ist die Entscheidungslogik unklar, wird zuerst das Process Document geprueft. Die VetMedAI-Wissensbilanz fuehrte Learnings als eigenstaendigen Process-Document-Typ ein.",
       "quelle": "Pollin 2026, Abschnitt 3.3; knowledge/INDEX.md"
     },
     {
       "slug": "action-document",
       "begriff": "Action Document",
-      "kurz": "Imperatives Promptotyping Document, das beschreibt, was Agenten tun koennen.",
-      "voll": "Ein Action Document ist imperativ und beschreibt, was Agenten tun koennen. Beispiele sind instructions.md, rules.md, cloud-commands.md und CLAUDE.md. Action Documents steuern das Modellverhalten und liegen typischerweise im Repo-Root. Diagnostik: ist der Output formal falsch, wird zuerst das Action Document geprueft.",
+      "kurz": "Knowledge Document, das Handlungswissen darueber traegt, was Agenten im Projekt tun duerfen.",
+      "voll": "Ein Action Document ist die Spezialisierung des Knowledge Document auf Handlungswissen. Es beschreibt, was Agenten im Projekt tun duerfen und wie. Dazu gehoeren der Action-Layer, die Teststrategie, die Technologie-Baseline und in Mehr-Agenten-Projekten die Rollendefinitionen und Orchestrierungsregeln. Beispiele sind instructions.md, rules.md, cloud-commands.md und CLAUDE.md; sie liegen typischerweise im Repo-Root. Diagnostik: ist der Output formal falsch, wird zuerst das Action Document geprueft.",
       "quelle": "Pollin 2026, Abschnitt 3.3; Konvention Promptotyping Documents"
     },
     {
@@ -143,7 +150,7 @@
       "slug": "knowledge-action-komposition",
       "begriff": "Knowledge-Action-Komposition",
       "kurz": "Strukturprinzip, das Knowledge und Action trennt und gemeinsam Coding-Agenten sozialisiert.",
-      "voll": "Die Knowledge-Action-Komposition ist das Strukturprinzip, mit dem deklaratives Wissen und imperative Steuerung getrennt bleiben und gemeinsam einen Coding-Agenten sozialisieren. Konkret bleibt design.md ein deklaratives Knowledge Document, waehrend CLAUDE.md als Action Document darauf als Wertequelle verweist und die Designhaltung in imperative Prinzipien uebersetzt. Die aesthetische und faktische Steuerung entsteht aus der Komposition zweier Dokumente, nicht aus einem Hybridtyp.",
+      "voll": "Die Knowledge-Action-Komposition ist das Strukturprinzip, mit dem deklaratives Wissen und imperative Steuerung getrennt bleiben und gemeinsam einen Coding-Agenten sozialisieren. Konkret bleibt design.md ein Declarative Document, waehrend CLAUDE.md als Action Document darauf als Wertequelle verweist und die Designhaltung in imperative Prinzipien uebersetzt. Die aesthetische und faktische Steuerung entsteht aus der Komposition zweier Dokumente, nicht aus einem Hybridtyp.",
       "quelle": "Vault Knowledge-Action-Komposition; Konvention Promptotyping Documents"
     },
     {

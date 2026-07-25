@@ -23,7 +23,7 @@ Die Funktion trägt nicht für die Architektur eines einzelnen Projekts; die geh
 
 Das Dokument beantwortet, mit welchen Technologien Artefakte einer Familie gebaut werden und warum diese Regeln so lauten. Adressiert sind drei Lesergruppen. Ein Forschender oder Reviewer prüft, ob die Technologiewahl eines Projekts begründet ist, ohne die Begründung in jedem Repo suchen zu müssen. Ein Coding-Agent liest die Baseline als Vorgabe, bevor er ein Artefakt der Familie generiert oder regeneriert; die Regeln sind für ihn direkte Constraints. Der Methodenverantwortliche pflegt die Regeln an einer Stelle statt in jedem Repo.
 
-Der Dokumenttyp ist Knowledge (deklarativ). Die Baseline sagt, was gilt und warum; wie ein Agent sich beim Bauen verhält, bleibt Action-Layer.
+Der Dokumenttyp ist Declarative. Die Baseline sagt, was gilt und warum; wie ein Agent sich beim Bauen verhält, bleibt Action-Layer.
 
 ## Strukturprinzipien
 

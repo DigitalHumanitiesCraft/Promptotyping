@@ -97,21 +97,21 @@ Das Feld gehört in den Pflichtkern für Repo-`knowledge/`-Dokumente. Vault-Spie
 
 Action-Dokumente liegen im Repo-Root, nicht im `knowledge/`-Ordner. Standard ist `CLAUDE.md` als Agent-Konfiguration; sie sollte explizit auf den `knowledge/`-Ordner verweisen, damit der Agent die Wissensbasis als Kontext nimmt. Struktur und Befüllung beschreibt die [Vorlage Action-Layer](#promptotyping-document-action-layer) (seit 2026-06-09, freigegeben 2026-07-19). `RULES.md`, `INSTRUCTIONS.md`, `cloud-commands.md` sind Forschungsleitstelle-spezifisch (mehrere parallele Agenten mit differenzierten Rollen) und kein Standard für gewöhnliche Promptotyping-Repos.
 
-Auf der ästhetischen Schicht wirkt die Agent-Instructions-Funktion dadurch, dass `CLAUDE.md` das `design.md` als Wertequelle einbindet, etwa über eine Sektion "Designprinzipien" mit imperativ formulierten Sätzen, die aus der Designhaltung abgeleitet sind, oder durch die Anweisung, vor UI-Generierung das `design.md` zu lesen. Das `design.md` selbst bleibt deklaratives Knowledge Document; die imperative Übersetzung gehört in den Action-Layer. Diese Aufgabenteilung folgt der Lese-Heuristik weiter unten und vermeidet, dass ein Knowledge-Dokument seinen analytischen Typ wechselt.
+Auf der ästhetischen Schicht wirkt die Agent-Instructions-Funktion dadurch, dass `CLAUDE.md` das `design.md` als Wertequelle einbindet, etwa über eine Sektion "Designprinzipien" mit imperativ formulierten Sätzen, die aus der Designhaltung abgeleitet sind, oder durch die Anweisung, vor UI-Generierung das `design.md` zu lesen. Das `design.md` selbst bleibt ein Declarative Document; die imperative Übersetzung gehört in den Action-Layer. Diese Aufgabenteilung folgt der Lese-Heuristik weiter unten und vermeidet, dass ein Dokument seinen analytischen Typ wechselt.
 
 ## Klassifikation der Dokumenttypen
 
-Promptotyping unterscheidet drei Dokumenttypen analytisch (Pollin 2026, Sektion 3.3).
+Promptotyping unterscheidet drei Dokumenttypen analytisch (Pollin 2026, Sektion 3.3). Alle drei sind Knowledge Documents, spezialisiert nach der Art des Wissens, das sie tragen.
 
-Knowledge Documents sind deklarativ. Sie beschreiben Daten, Domäne und Forschungskontext. Beispiele: `README.md`, `project.md`, `data.md`, `requirements.md`, `architecture.md`, `design.md`, `editorial-guidelines.md`. Sie erweitern den epistemischen Horizont des Modells.
+Declarative Documents tragen Sachwissen. Sie beschreiben, was über Daten, Domäne und Forschungskontext bekannt ist. Beispiele sind `README.md`, `project.md`, `data.md`, `requirements.md`, `architecture.md`, `design.md`, `editorial-guidelines.md`, Mapping-Regeln und Verifikationsdokumente. Sie erweitern den epistemischen Horizont des Modells und überdauern als kuratierte Schicht die Änderungen an Code, Modellversionen und Werkzeugen. Bis Juli 2026 hieß dieser Typ hier Knowledge Document; der Name ist auf den Oberbegriff gewandert.
 
-Process Documents sind chronologisch oder analytisch. Sie dokumentieren den Arbeitsprozess. Beispiele: `JOURNAL.md`, `learnings.md`, `plan.md`. Sie werden kontinuierlich aktualisiert.
+Process Documents tragen Prozesswissen. Sie halten den Verlauf der Arbeit fest, chronologisch oder analytisch. Beispiele sind `JOURNAL.md`, `learnings.md`, `plan.md`. Sie werden kontinuierlich aktualisiert und bilden zusammen mit der git-Historie das Context Memory.
 
-Action Documents sind imperativ. Sie beschreiben, was Agenten tun können. Beispiele: `instructions.md`, `rules.md`, `CLAUDE.md`. Sie steuern das Modellverhalten.
+Action Documents tragen Handlungswissen. Sie beschreiben, was Agenten im Projekt tun dürfen und wie. Beispiele sind `instructions.md`, `rules.md`, `CLAUDE.md`, dazu Teststrategie, Technologie-Baseline und in Mehr-Agenten-Projekten die Rollen- und Orchestrierungsregeln. Sie steuern das Modellverhalten.
 
-`design.md` ist deklarativ und damit Knowledge: es beschreibt Designhaltung, Designsystem und Interaktionsmuster. Die Sozialisierung des Coding-Agenten auf der ästhetischen Schicht ist ein Lese-Effekt, der entsteht, wenn ein Action-Dokument (typischerweise `CLAUDE.md`) auf das `design.md` verweist und die imperativen Designprinzipien dort führt. Knowledge bleibt Knowledge, Action bleibt Action; die ästhetische Steuerung kommt aus der Komposition zweier Dokumente, nicht aus einem Hybridtyp.
+`design.md` ist deklarativ und damit ein Declarative Document, weil es Designhaltung, Designsystem und Interaktionsmuster beschreibt. Die Sozialisierung des Coding-Agenten auf der ästhetischen Schicht ist ein Lese-Effekt, der entsteht, wenn ein Action Document (typischerweise `CLAUDE.md`) auf das `design.md` verweist und die imperativen Designprinzipien dort führt. Deklaratives bleibt deklarativ, Action bleibt Action; die ästhetische Steuerung kommt aus der Komposition zweier Dokumente, nicht aus einem Hybridtyp.
 
-Die Klassifikation ist analytisch, nicht rigide, und wird nicht im Frontmatter geführt. Sie liefert ein Diagnoseraster: Output inhaltlich falsch → Knowledge prüfen. Output formal falsch → Action prüfen. Entscheidungslogik unklar → Process prüfen.
+Die Klassifikation ist analytisch, nicht rigide, und wird nicht im Frontmatter geführt. Sie liefert ein Diagnoseraster. Ist der Output inhaltlich falsch, wird zuerst das Declarative Document geprüft. Ist er formal falsch, das Action Document. Ist die Entscheidungslogik unklar, das Process Document.
 
 ## Lese-Heuristik (Funktion → Typ → Diagnose)
 
@@ -119,23 +119,23 @@ Statt eines `type:`-Feldes im Frontmatter trägt die Funktion eines Dokuments de
 
 | Funktion | Typ | Typische Dateinamen | Bei welchem Fehlerbild zuerst prüfen |
 |---|---|---|---|
-| Navigation | Knowledge | `INDEX.md`, `00_INDEX.md` | Reihenfolge unklar, Dokument nicht gefunden, Begriff falsch verwendet (Glossar lebt im Index) |
-| Charter | Knowledge | `project.md`, `README.md`, `PROJEKT.md` | Output inhaltlich falsch, Projektkontext unklar |
-| Material | Knowledge | `data.md`, `DATA.md`, `corpus.md`, `material.md` | Datenfelder verwechselt, Beispiele falsch zitiert |
-| Specification (formal) | Knowledge | `specification.md`, `requirements.md`, `features.md`, `decisions.md` | Akzeptanzkriterium ignoriert, frühere Entscheidung revidiert, Funktion falsch dargestellt |
-| Specification (narrativ) | Knowledge | `specification.md` (Sektion Epics und User Stories); bei Spaltung `user-stories.md`, `scholar-user-stories.md` | Anwendungsszenario missverstanden, Forschungsoperation ignoriert |
-| Architecture | Knowledge | `architecture.md`, `pipeline.md`, `infrastruktur.md` | Falsche Annahmen über Komponenten, Datenfluss, Schichtgrenzen |
-| Domain Knowledge | Knowledge | `editorial-guidelines.md`, `tei-mapping.md`, `methodik.md`, `forschungsrahmen.md`, `ontology.md` | Fachregel oder Methode verletzt, Editionsrichtlinie ignoriert, Begründungsschicht fehlt |
-| Design | Knowledge | `design.md`, `DESIGN.md` | UI-Inkonsistenz, Designsystem-Bruch, Designhaltung unklar (für Agentenverhalten, das Designwerten widerspricht, zusätzlich `CLAUDE.md` prüfen) |
-| Quality Assurance | Knowledge | `testing.md`, `test-strategy.md` | Garantie unklar, Test fehlt oder schlägt fehl, Akzeptanzkriterium nicht geprüft |
-| Verification | Knowledge | `verification.md`, `verifikation.md`, `conformance-*.md` | Außenwirksamer Claim unbelegt, Kopfzahl nicht nachrechenbar, Neuheitsanspruch ungeprüft |
+| Navigation | Declarative | `INDEX.md`, `00_INDEX.md` | Reihenfolge unklar, Dokument nicht gefunden, Begriff falsch verwendet (Glossar lebt im Index) |
+| Charter | Declarative | `project.md`, `README.md`, `PROJEKT.md` | Output inhaltlich falsch, Projektkontext unklar |
+| Material | Declarative | `data.md`, `DATA.md`, `corpus.md`, `material.md` | Datenfelder verwechselt, Beispiele falsch zitiert |
+| Specification (formal) | Declarative | `specification.md`, `requirements.md`, `features.md`, `decisions.md` | Akzeptanzkriterium ignoriert, frühere Entscheidung revidiert, Funktion falsch dargestellt |
+| Specification (narrativ) | Declarative | `specification.md` (Sektion Epics und User Stories); bei Spaltung `user-stories.md`, `scholar-user-stories.md` | Anwendungsszenario missverstanden, Forschungsoperation ignoriert |
+| Architecture | Declarative | `architecture.md`, `pipeline.md`, `infrastruktur.md` | Falsche Annahmen über Komponenten, Datenfluss, Schichtgrenzen |
+| Domain Knowledge | Declarative | `editorial-guidelines.md`, `tei-mapping.md`, `methodik.md`, `forschungsrahmen.md`, `ontology.md` | Fachregel oder Methode verletzt, Editionsrichtlinie ignoriert, Begründungsschicht fehlt |
+| Design | Declarative | `design.md`, `DESIGN.md` | UI-Inkonsistenz, Designsystem-Bruch, Designhaltung unklar (für Agentenverhalten, das Designwerten widerspricht, zusätzlich `CLAUDE.md` prüfen) |
+| Quality Assurance | Declarative | `testing.md`, `test-strategy.md` | Garantie unklar, Test fehlt oder schlägt fehl, Akzeptanzkriterium nicht geprüft |
+| Verification | Declarative | `verification.md`, `verifikation.md`, `conformance-*.md` | Außenwirksamer Claim unbelegt, Kopfzahl nicht nachrechenbar, Neuheitsanspruch ungeprüft |
 | Provenance | Process | `journal.md`, `JOURNAL.md`, `learnings.md` | Entscheidungslogik unklar, Wiederholung früherer Sackgassen |
 | Planning | Process | `plan.md`, `roadmap.md` | Reihenfolge oder Phasengrenze unklar, nächster Schritt nicht erkennbar (vorwärts; Provenance ist rückwärts) |
-| Reporting | Knowledge (Snapshot) | `report.md`, `status.md`, `zwischenbericht.md`, `abschlussbericht.md` | Externer Stand-Anspruch unklar oder veraltet, Adressat nicht erkennbar, Belege fehlen |
-| Integration | Knowledge | `integration.md`, `{gegenüber}-integration.md`, `HANDOFF.md` | Schnittstellenformat missverstanden, Zuständigkeit an der Projektgrenze unklar, beide Seiten beschreiben den Kontrakt widersprüchlich |
+| Reporting | Declarative (Snapshot) | `report.md`, `status.md`, `zwischenbericht.md`, `abschlussbericht.md` | Externer Stand-Anspruch unklar oder veraltet, Adressat nicht erkennbar, Belege fehlen |
+| Integration | Declarative | `integration.md`, `{gegenüber}-integration.md`, `HANDOFF.md` | Schnittstellenformat missverstanden, Zuständigkeit an der Projektgrenze unklar, beide Seiten beschreiben den Kontrakt widersprüchlich |
 | Agent Instructions | Action | `CLAUDE.md`, `RULES.md`, `INSTRUCTIONS.md` (Repo-Root) | Stilbruch, Verbot ignoriert, formal falscher Output |
 
-Bei Repos mit projektsemantisch geprägten Dateinamen (zbz-ocr-tei führt zum Beispiel `TEI-MAPPING.md`, `CER-METHODIK.md`, `EDITION.md`) gilt: Der semantische Inhalt entscheidet über die Funktion, nicht der Dateiname. In der Regel handelt es sich dann um Knowledge Documents, die eine Spezialisierung der Funktionen Material oder Architecture tragen.
+Bei Repos mit projektsemantisch geprägten Dateinamen (zbz-ocr-tei führt zum Beispiel `TEI-MAPPING.md`, `CER-METHODIK.md`, `EDITION.md`) gilt: Der semantische Inhalt entscheidet über die Funktion, nicht der Dateiname. In der Regel handelt es sich dann um Declarative Documents, die eine Spezialisierung der Funktionen Material oder Architecture tragen.
 
 ## Frontmatter-Schema
 

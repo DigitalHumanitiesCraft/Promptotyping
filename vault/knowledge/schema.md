@@ -30,6 +30,8 @@ This document is the stable rulebook of the vault. It defines the layer model, t
 | Claims | `20_claims/` | atomic cross-source statements, topic maps | grounding anchors into distillate statements |
 | Deliverable | `30_deliverable/` | one file per chapter | footnote anchors into claims, posits marked |
 
+Every representation and every distillate is also listed in a register, the source inventory in [[knowledge/state]] or the register of paper sources, and the validator raises `E-INVENTORY` on one that is not. Without the register row a document is invisible to every check and every overview that reads a register, so it can be complete and conformant and still be missed.
+
 Two rules keep the chain honest. Anchors are minted only at the layer they belong to; a representation mints block IDs, a distillate mints statement IDs, and no higher layer creates anchors into material below its direct predecessor. And each layer references only the layer directly beneath it; the deliverable binds to claims, claims bind to distillate statements, distillates bind to representation blocks.
 
 ## Controlled vocabularies

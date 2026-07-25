@@ -1,0 +1,30 @@
+[
+  {
+    "id": "lambert-2024",
+    "type": "article",
+    "title": "Tülu 3: Pushing Frontiers in Open Language Model Post-Training",
+    "author": [
+      {
+        "family": "Lambert",
+        "given": "Nathan"
+      },
+      {
+        "family": "Morrison",
+        "given": "Jacob"
+      },
+      {
+        "family": "Pyatkin",
+        "given": "Valentina"
+      }
+    ],
+    "number": "arXiv:2411.15124",
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "URL": "https://arxiv.org/abs/2411.15124"
+  }
+]

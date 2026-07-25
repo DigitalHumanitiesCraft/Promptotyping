@@ -1,0 +1,26 @@
+[
+  {
+    "id": "baier-2008",
+    "type": "book",
+    "title": "Principles of Model Checking",
+    "author": [
+      {
+        "family": "Baier",
+        "given": "Christel"
+      },
+      {
+        "family": "Katoen",
+        "given": "Joost-Pieter"
+      }
+    ],
+    "publisher": "MIT Press",
+    "publisher-place": "Cambridge, MA",
+    "issued": {
+      "date-parts": [
+        [
+          2008
+        ]
+      ]
+    }
+  }
+]
