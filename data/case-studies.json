@@ -3,7 +3,7 @@
   "generated": "2026-06-10",
   "_meta": {
     "beschreibung": "Case-Study-Daten der Promptotyping-Methodik-Site. Quellen: die Fallbeschreibungen im Vault, die Methodenerweiterungen im Promptotyping MOC und das Projekt-Inventar in Pollin 2026, Abschnitt 5.2. Die useCase-Werte sind ein site-eigenes Ordnungsraster; das Paper ordnet die Projekte nach der Interface-Typologie aus Abschnitt 4.2.",
-    "kuratierung": "Kuratierte Auswahl der oeffentlich praesentierbaren Projekte, nicht das vollstaendige Evidenz-Korpus des Papers. Ausgeschlossen sind Faelle wegen fehlender Kundenfreigabe bzw. weil sie ein Vermittlungsformat statt eines Forschungsartefakts sind: vetmedai-wissensbilanz, agentic-edition-pipeline, wiiw-patent-analysis, wiiw-figaro-subagents, sugw, vault-kuration-screencast, wissensorganisation-nano-banana, wissens-projektmanagement-obsidian-claude-code-screencast.",
+    "kuratierung": "Kuratierte Auswahl der oeffentlich praesentierbaren Projekte, nicht das vollstaendige Evidenz-Korpus des Papers. Ausgeschlossen sind Faelle wegen fehlender Kundenfreigabe bzw. weil sie ein Vermittlungsformat statt eines Forschungsartefakts sind: vetmedai-wissensbilanz, agentic-edition-pipeline, wiiw-patent-analysis, wiiw-figaro-subagents, sugw, vault-kuration-screencast, wissensorganisation-nano-banana, wissens-projektmanagement-obsidian-claude-code-screencast. Die Galerie folgt einem eigenen Ordnungsraster und spiegelt das Evidenzkorpus des Papers nicht. Sie fuehrt deshalb auch Faelle, die das Paper bewusst nicht mehr fuehrt, unter ihnen die Aldersbacher Klosterrechnungen (aus dem Paper genommen, weil zu alt) und Lucina (im Paper nicht verwendet); beide bleiben hier, weil sie didaktisch tragen, der Multi-LLM-Workflow im Lucina-Fall in keinem anderen dokumentiert ist und die Galerie ohnehin kuratiert statt vollstaendig ist. Operator-Entscheidung 2026-07-25.",
     "schema": {
       "id": "Anker-Slug, ergibt zusammen mit #case- den Site-Anker (z.B. herdata -> #case-herdata)",
       "name": "Anzeigename",
@@ -58,7 +58,9 @@
       "summary": "Erstes oeffentlich dokumentiertes Promptotyping-Experiment: ein timeline-basiertes Annotationstool fuer Korrespondenzdaten von Stefan Zweig Digital, in etwa zwei Stunden gebaut.",
       "data": "XML-Korrespondenzmetadaten aus Stefan Zweig Digital",
       "artifact": "Timeline-Annotationstool als Single Page Application",
-      "interfaceTypes": ["capture"],
+      "interfaceTypes": [
+        "capture"
+      ],
       "repo_url": "https://github.com/DigitalHumanitiesCraft/excellence/tree/main/promptotyping/szd-annotation-timeline",
       "demo_url": "https://dhcraft.org/excellence/promptotyping/szd-annotation-timeline/",
       "video_url": null,
@@ -74,7 +76,9 @@
       "summary": "VLM-basierte HTR/OCR-Pipeline fuer den Stefan-Zweig-Nachlass am Literaturarchiv Salzburg, die Promptotyping im Produktionsmassstab ueber zahlreiche dokumentierte Sessions demonstriert.",
       "data": "Digitalisierter Nachlass (Korrespondenzen, Lebensdokumente, Werke, Aufsatzablage)",
       "artifact": "HTR/OCR-Pipeline mit Faksimile-Text-Viewer und Statistik-Dashboard",
-      "interfaceTypes": ["verification"],
+      "interfaceTypes": [
+        "verification"
+      ],
       "repo_url": "https://github.com/chpollin/szd-htr-ocr-pipeline",
       "demo_url": "https://chpollin.github.io/szd-htr-ocr-pipeline/",
       "video_url": null,
@@ -90,7 +94,9 @@
       "summary": "Interaktives Dashboard zur Exploration historischer Finanztransaktionen der Zisterzienserabtei Aldersbach nach dem DEPCHA-Datenmodell.",
       "data": "TEI-XML/RDF, Klosterrechnungen",
       "artifact": "Dashboard fuer kloesterliche Finanzdaten",
-      "interfaceTypes": ["exploration"],
+      "interfaceTypes": [
+        "exploration"
+      ],
       "repo_url": "https://github.com/chpollin/depcha-aldersbach",
       "demo_url": "https://chpollin.github.io/depcha-aldersbach",
       "video_url": null,
@@ -106,7 +112,9 @@
       "summary": "Wissenschaftliches Annotationstool fuer mittelalterliche Glasfenster-Artefakte aus dem Corpus Vitrearum Medii Aevi, mit SPARQL-basierter Extraktion aus dem NFDI4Culture Knowledge Graph.",
       "data": "JSON-LD (NFDI4Culture, CVMA)",
       "artifact": "Annotationstool fuer Glasfenster-Metadaten",
-      "interfaceTypes": ["capture"],
+      "interfaceTypes": [
+        "capture"
+      ],
       "repo_url": "https://github.com/chpollin/stained-glass-metadata-annotation-tool",
       "demo_url": "https://chpollin.github.io/stained-glass-metadata-annotation-tool/docs/version-2/",
       "video_url": null,
@@ -122,7 +130,9 @@
       "summary": "Dashboard zur Exploration mittelalterlicher Rauminventare aus der REALonline-Datenbank fuer die Sachkulturforschung.",
       "data": "REALonline-Metadaten (Raum-Objekt-Beziehungen)",
       "artifact": "Raum-Objekt-Visualisierungsdashboard",
-      "interfaceTypes": ["exploration"],
+      "interfaceTypes": [
+        "exploration"
+      ],
       "repo_url": "https://github.com/chpollin/imareal-room-object",
       "demo_url": "https://chpollin.github.io/imareal-room-object/",
       "video_url": null,
@@ -138,7 +148,9 @@
       "summary": "Digitales Archiv der kriminalistischen Sammlung mit zwei Interface-Paradigmen: traditionelle Suche und Canvas-basierte raeumliche Exploration.",
       "data": "TEI plus LIDO Objektkorpus",
       "artifact": "Digitales Archiv (Suche plus raeumliche Exploration)",
-      "interfaceTypes": ["exploration"],
+      "interfaceTypes": [
+        "exploration"
+      ],
       "repo_url": "https://github.com/chpollin/km",
       "demo_url": "https://chpollin.github.io/km/index.html",
       "video_url": null,
@@ -154,7 +166,9 @@
       "summary": "Vollstaendiges Forschungstool zur interaktiven Visualisierung von Korrespondenz-Metadaten im CMIF-Format ueber zwoelf koordinierte Ansichten.",
       "data": "CMIF/TEI Briefkorpus",
       "artifact": "Koordinierte Visualisierungs-Views (12 Ansichten)",
-      "interfaceTypes": ["exploration"],
+      "interfaceTypes": [
+        "exploration"
+      ],
       "repo_url": "https://github.com/DigitalHumanitiesCraft/CorrespExplorer",
       "demo_url": "https://dhcraft.org/CorrespExplorer",
       "video_url": null,
@@ -170,7 +184,9 @@
       "summary": "Wissenschaftliche digitale Edition neulateinischer Gedichte in fuenf Iterationen mit Multi-LLM-Workflow.",
       "data": "Lateinische Gedichtsammlung, DOCX zu TEI",
       "artifact": "TEI-P5 scholarly edition (iterativ)",
-      "interfaceTypes": ["edition"],
+      "interfaceTypes": [
+        "edition"
+      ],
       "repo_url": "https://github.com/chpollin/diged-neolat",
       "demo_url": "https://chpollin.github.io/diged-neolat/edition-5/web/",
       "video_url": "https://youtu.be/0DtX0pLv4TA",
@@ -186,7 +202,9 @@
       "summary": "Statische Webanwendung zur prosopographischen Visualisierung weiblicher Korrespondentinnen Goethes mit ausdruecklicher Map-Bias-Reflexion vor der Nutzung.",
       "data": "TEI/Wikidata Briefkorpus (CMIF, SNDB)",
       "artifact": "Korrespondenz-Karte (Frauen in Goethes Korrespondenz)",
-      "interfaceTypes": ["exploration"],
+      "interfaceTypes": [
+        "exploration"
+      ],
       "repo_url": null,
       "demo_url": "https://chpollin.github.io/HerData",
       "video_url": null,
@@ -202,7 +220,9 @@
       "summary": "Browser-basierte Workbench fuer Expert-in-the-Loop-Transkriptionsworkflows, die OCR/HTR-Outputs neben Quellbildern rendert; an einem Arbeitstag prototypisiert.",
       "data": "OCR/HTR-Outputs",
       "artifact": "Browser-basierte Korrektur-Workbench",
-      "interfaceTypes": ["verification"],
+      "interfaceTypes": [
+        "verification"
+      ],
       "repo_url": "https://github.com/DigitalHumanitiesCraft/co-ocr-htr",
       "demo_url": null,
       "video_url": "https://youtu.be/VJyhVc_ujeA",
@@ -218,7 +238,9 @@
       "summary": "Statisches Sammlungsinterface fuer rund 19.000 Objekte aus der Kulturpool-API, gebaut mit paralleler Agent-Orchestrierung.",
       "data": "Kulturpool API",
       "artifact": "Sammlungsinterface (parallele Agent-Orchestrierung)",
-      "interfaceTypes": ["exploration"],
+      "interfaceTypes": [
+        "exploration"
+      ],
       "repo_url": "https://github.com/chpollin/vkm-explorer",
       "demo_url": null,
       "video_url": "https://youtu.be/tQBaaVhPu5U",
@@ -234,7 +256,10 @@
       "summary": "Digitale Sammlung und Multi-View-Exploration des Ira-Malaniuk-Archivs, bei der das Interface die Grenzen des sich noch entwickelnden Datenmodells sichtbar macht.",
       "data": "RiC-O/JSON-LD, Archivdaten",
       "artifact": "Multi-View Archive Explorer (8 Tabs)",
-      "interfaceTypes": ["exploration", "capture"],
+      "interfaceTypes": [
+        "exploration",
+        "capture"
+      ],
       "repo_url": "https://github.com/DigitalHumanitiesCraft/m3gim",
       "demo_url": "https://dhcraft.org/m3gim",
       "video_url": null,
@@ -250,7 +275,10 @@
       "summary": "LLM-gestuetzte OCR- und TEI-Pipeline fuer den Jeanne-Hersch-Nachlass der Zentralbibliothek Zuerich, die das umfangreichste Promptotyping-Beispiel mit voller epistemischer Infrastruktur darstellt.",
       "data": "PDF-Korpus (286 PDFs, rund 4.150 Seiten)",
       "artifact": "Kuratierte TEI-XML-Edition mit Verification-Interfaces",
-      "interfaceTypes": ["verification", "edition"],
+      "interfaceTypes": [
+        "verification",
+        "edition"
+      ],
       "repo_url": null,
       "demo_url": null,
       "video_url": null,
@@ -266,7 +294,9 @@
       "summary": "Digitale Edition des Notker-Psalmenkommentars (Psalm 2), die verschraenkte Textschichten ueber orthogonale Toggles einzeln sichtbar und steuerbar macht.",
       "data": "DOCX, Psalm 2",
       "artifact": "Layer-Toggle-Edition (Textschicht-Controls, IIIF)",
-      "interfaceTypes": ["edition"],
+      "interfaceTypes": [
+        "edition"
+      ],
       "repo_url": "https://github.com/DigitalHumanitiesCraft/notker-edition",
       "demo_url": "https://dhcraft.org/notker-edition",
       "video_url": null,
@@ -282,7 +312,10 @@
       "summary": "Extraktion und Restrukturierung der Klawiter-Bibliographie aus einer stillgelegten MediaWiki-Datenbank in strukturiertes JSON-LD mit statischer Web-Oberflaeche.",
       "data": "MediaWiki SQL/BLOB-Dump",
       "artifact": "JSON-LD-Bibliographie plus statisches Frontend (SZD-Oekosystem)",
-      "interfaceTypes": ["verification", "capture"],
+      "interfaceTypes": [
+        "verification",
+        "capture"
+      ],
       "repo_url": "https://github.com/chpollin/klawiter-rescue",
       "demo_url": "https://chpollin.github.io/klawiter-rescue",
       "video_url": "https://youtu.be/KG35VGVctJw",
@@ -298,7 +331,9 @@
       "summary": "Systematisches Literature Review zu AI Literacy und LLM-Bias in der Sozialen Arbeit, mit fuenfstufiger Pipeline und dualem Bewertungsdesign zwischen menschlichen Experten und LLM.",
       "data": "Akademischer Paper-Korpus (326 Paper)",
       "artifact": "Evidence Companion plus Obsidian-Vault",
-      "interfaceTypes": ["audit"],
+      "interfaceTypes": [
+        "audit"
+      ],
       "repo_url": "https://github.com/chpollin/FemPrompt_SozArb",
       "demo_url": "https://chpollin.github.io/FemPrompt_SozArb/",
       "video_url": null,
@@ -314,7 +349,9 @@
       "summary": "Interaktives Dashboard fuer oesterreichische Universitaetsstatistik, das als didaktische Baseline jede Phase der Methode im Video durchlaeuft.",
       "data": "Excel-Korpus (76 Dateien)",
       "artifact": "Interaktives Dashboard (didaktische Baseline)",
-      "interfaceTypes": ["exploration"],
+      "interfaceTypes": [
+        "exploration"
+      ],
       "repo_url": null,
       "demo_url": null,
       "video_url": "https://youtu.be/8sUe4Jkh3uQ",

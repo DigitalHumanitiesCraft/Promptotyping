@@ -1,0 +1,3946 @@
+{
+ "_meta": {
+  "beschreibung": "Claim-Schicht des Grounded Vault unter dem Paper. Erzeugt aus vault/20_claims und vault/10_distillates durch vault/tools/build_site_index.py; nicht von Hand pflegen.",
+  "quelle": "vault/",
+  "generator": "vault/tools/build_site_index.py"
+ },
+ "topics": [
+  {
+   "slug": "MOC-ArtefactVerification",
+   "topic": "ArtefactVerification",
+   "title": "MOC: ArtefactVerification",
+   "description": "Added with the Phase C revision round of 2026-07-24:",
+   "claims": [
+    "ssh-open-marketplace-models-workflows-as-step-sequences",
+    "client-side-provenance-tool-is-a-precedent-for-server-free-artefacts",
+    "tadirah-most-adopted-yet-under-maintained",
+    "semantic-vocabulary-matching-stays-a-human-interpretive-task",
+    "digital-edition-is-interface-gui-and-api",
+    "minimal-computing-resists-scale-as-innovation",
+    "digital-editing-converges-on-static-self-contained-artefact",
+    "fair4rs-provenance-and-identifier-principles",
+    "glam-practice-layers-llm-extraction-with-deterministic-checks-and-expert-review",
+    "wikidata-tool-registries-as-commons",
+    "edition-interface-embodies-editorial-decisions",
+    "llm-vocabulary-test-2025-fell-short-of-thesaurus-interoperability",
+    "minimal-computing-reduces-code-and-dependencies",
+    "shared-infrastructure-is-the-opposite-longevity-answer-to-the-self-contained-artefact",
+    "endings-durability-through-static-no-dependencies",
+    "scholarly-primitives-classify-activities-not-interfaces",
+    "endings-static-artefacts-minimise-maintenance",
+    "do-one-thing-well-favours-small-specialised-tools-over-monolithic-platforms",
+    "tadirah-classifies-dh-research-activities",
+    "coordinated-multiple-views-enable-exploration",
+    "static-client-side-editions-reach-tens-of-thousands-of-units",
+    "szd-htr-confabulated-reading-in-hasty-kurrent"
+   ]
+  },
+  {
+   "slug": "MOC-Concepts",
+   "topic": "Concepts",
+   "title": "MOC: Concepts",
+   "description": "Added from the video distillates of 2026-07-25:",
+   "claims": [
+    "deck-characterises-llms-as-jagged-alien",
+    "deck-derives-context-and-verification-from-llm-profile",
+    "dissertation-dikw-cognitive-agent-premise",
+    "critical-expert-in-the-loop-double-reflection-loop",
+    "unfinishedness-is-an-epistemic-value-in-the-digital-humanities",
+    "research-data-is-defined-by-the-function-it-serves",
+    "operationalisation-develops-a-measurement-for-a-concept",
+    "boundary-objects-are-plastic-yet-robust-across-communities",
+    "epistemic-forms-are-target-knowledge-structures",
+    "a-prototype-can-embody-a-peer-reviewable-argument",
+    "humanities-data-modelling-is-interpretive-shaping",
+    "visual-analytics-process-models-describe-process-not-interfaces",
+    "expert-role-carries-a-domain-and-a-development-judgement"
+   ]
+  },
+  {
+   "slug": "MOC-Evidence",
+   "topic": "Evidence",
+   "title": "MOC: Evidence",
+   "description": "### What the record does not carry",
+   "claims": [
+    "wheaton-figures-verified-2026-07-19",
+    "hans-gross-figures-verified-2026-07-19",
+    "correspexplorer-figures-verified-2026-07-19",
+    "lucina-figures-verified-2026-07-19",
+    "coocr-htr-figures-verified-2026-07-19",
+    "austrian-dashboard-universities-verified-2026-07-19",
+    "zbz-figures-verified-2026-07-19",
+    "notker-figures-verified-2026-07-19",
+    "klawiter-entries-verified-2026-07-19",
+    "femprompt-figures-verified-2026-07-19",
+    "medieval-xml-count-2026-07-19",
+    "zbz-commit-count-2026-07-19",
+    "zbz-knowledge-doc-count-2026-07-19",
+    "vetmedai-excel-count-2026-07-19",
+    "vetmedai-knowledge-doc-count-2026-07-19",
+    "herdata-letter-count-2026-07-19",
+    "m3gim-decision-count-2026-07-19",
+    "correspexplorer-knowledge-userstory-count-2026-07-19",
+    "klawiter-test-count-2026-07-19",
+    "medieval-test-count-2026-07-19",
+    "szd-htr-fair4rs-audit-2026-07-23",
+    "kulturpool-repo-unresolvable-2026-07-19",
+    "duration-cost-figures-experiential",
+    "section4-verification-single-agent-snapshot-2026-07-19",
+    "section4-deviations-are-snapshot-drift-2026-07-19",
+    "record-has-no-failure-case-and-a-bounded-yield-pole"
+   ]
+  },
+  {
+   "slug": "MOC-Frame",
+   "topic": "Frame",
+   "title": "MOC: Frame",
+   "description": "Claims behind the paper's Section 2, the epistemic frame: exploration as research, the nature of humanities data, the translation problem, and the surrounding AI discourse (Vibe Coding, Spec-Driven Development, context engineering, model failure modes). Added with the bibliography-traceability sweep of 2026-07-23.",
+   "claims": [
+    "fair-emphasises-machine-actionability-of-data",
+    "making-source-data-machine-addressable-is-interpretive-modelling",
+    "schoech-distinguishes-smart-and-big-data",
+    "sarkar-vibe-coding-material-disengagement",
+    "humanities-data-is-constructed-not-given",
+    "context-rot-nonuniform-degradation-with-length",
+    "search-cannot-represent-collection-abundance",
+    "generous-interfaces-reveal-collection-through-browsing",
+    "humanities-data-are-capta-not-given",
+    "discarded-visualisations-retain-epistemic-value",
+    "collections-as-data-are-intentional",
+    "inherited-visualisation-conventions-carry-positivist-assumptions",
+    "experimental-prototype-yields-knowledge-not-product",
+    "sycophancy-agreement-over-truth",
+    "macedo-first-process-taxonomy-sdd-frameworks",
+    "visualisation-is-research-process-not-means",
+    "vibe-coding-speed-quality-tradeoff",
+    "fanous-frontier-models-sycophantic-in-most-cases",
+    "context-engineering-systematic-inference-context",
+    "digital-history-collaboration-is-a-trading-zone",
+    "owens-data-holds-evidentiary-value",
+    "sdd-frameworks-converge-on-specification-over-prompt",
+    "rse-institutionalised-intermediary-profession",
+    "fair-principles-findable-accessible-interoperable-reusable",
+    "llm-based-agents-for-software-engineering",
+    "ontology-derivation-yields-structure-and-exposes-model-defects",
+    "sdd-data-artefacts-describe-the-system-under-construction",
+    "sdd-review-examines-internal-coherence",
+    "sdd-no-subject-matter-verification-role",
+    "sdd-specifications-address-non-developers",
+    "exploratory-collection-visualisation-is-a-rich-design-space",
+    "digital-tool-criticism-demands-reflection-on-tools",
+    "dh-projects-build-teams-to-hold-competences-together",
+    "institutional-research-software-support-falls-short-of-need",
+    "research-software-engineers-are-scarce",
+    "dh-intermediary-bridges-researchers-and-technical-staff"
+   ]
+  },
+  {
+   "slug": "MOC-Genealogy",
+   "topic": "Genealogy",
+   "title": "MOC: Genealogy",
+   "description": "Added with the bibliography-traceability sweep of 2026-07-23:",
+   "claims": [
+    "dissertation-requirements-from-deep-dive-sessions",
+    "dissertation-requirements-feed-built-artifacts",
+    "bookkeeping-ontology-session-driven",
+    "promptotyping-named-first-described-2025-04",
+    "promptotyping-documentation-over-software",
+    "szd-experiment-structured-vibe-coding",
+    "field-literature-records-llm-code-generation-and-tei-agent-line-by-2024",
+    "deep-dive-process-documented-2019",
+    "applied-genai-dh-workshop-series-2024",
+    "semantic-web-envisioned-agents-over-machine-processable-data"
+   ]
+  },
+  {
+   "slug": "MOC-Limitations",
+   "topic": "Limitations",
+   "title": "MOC: Limitations",
+   "description": "Added from the video distillates of 2026-07-25:",
+   "claims": [
+    "section4-verification-single-agent-snapshot-2026-07-19",
+    "duration-cost-figures-experiential",
+    "well-modelled-data-does-not-discharge-critical-data-work",
+    "llms-amplify-research-not-automate-it",
+    "llm-reproducibility-transparency-recommendations",
+    "edition-ai-benchmarks-lacking-and-reproducibility-favours-local-models",
+    "record-does-not-separate-document-depth-from-verification-effort",
+    "unassisted-non-hybrid-artefact-production-is-unsupported",
+    "milestone-check-deferred-in-the-recorded-session"
+   ]
+  },
+  {
+   "slug": "MOC-Method",
+   "topic": "Method",
+   "title": "MOC: Method",
+   "description": "Added from the video distillates of 2026-07-25, the operational record of one taught session:",
+   "claims": [
+    "promptotyping-documentation-over-software",
+    "promptotyping-documents-form-freedom",
+    "frontmatter-core-reduced-to-six-fields",
+    "status-vocabulary-adds-active-and-snapshot",
+    "verification-promoted-to-document-function",
+    "madmps-demand-documents-infrastructure-can-act-on",
+    "ontologies-are-shared-vocabularies-for-reuse",
+    "conceptual-model-links-language-and-domain-concepts",
+    "promptotyping-is-a-four-phase-context-engineering-technique",
+    "promptotyping-documents-are-the-primary-artifact",
+    "ro-crate-packages-artefacts-with-machine-readable-metadata",
+    "reproducibility-shifts-to-documented-justification",
+    "ontology-is-explicit-specification-of-conceptualization",
+    "traditional-dmps-are-unused-compliance-documents",
+    "milestone-check-deferred-in-the-recorded-session",
+    "exploration-resumed-inside-an-implementation-milestone",
+    "implementation-plan-cuts-work-into-checkable-milestones",
+    "overengineering-check-cuts-the-specification-before-implementation",
+    "radical-design-request-widens-the-interface-option-space",
+    "interface-defect-is-reported-through-the-element-identifier",
+    "expert-role-carries-a-domain-and-a-development-judgement"
+   ]
+  }
+ ],
+ "claims": [
+  {
+   "slug": "a-prototype-can-embody-a-peer-reviewable-argument",
+   "title": "A digital prototype can embody a contestable argument and stand as peer-reviewable research.",
+   "statement": "Building an experimental digital prototype can convey an argument the way a book edition reifies a theory, so that digital artefacts carry meaning rather than mere utility and can stand, in their own right, as peer-reviewable and contestable contributions to knowledge. This grounds the paper's Section 2.1 claim that building is a way of knowing and that producing prototypes is itself a research act.",
+   "status": "grounded",
+   "topics": [
+    "Concepts"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "galey-2010-how-a-prototype-argues",
+     "path": "10_distillates/publications/galey-2010-how-a-prototype-argues",
+     "statement": "s1"
+    },
+    {
+     "distillate": "galey-2010-how-a-prototype-argues",
+     "path": "10_distillates/publications/galey-2010-how-a-prototype-argues",
+     "statement": "s2"
+    },
+    {
+     "distillate": "galey-2010-how-a-prototype-argues",
+     "path": "10_distillates/publications/galey-2010-how-a-prototype-argues",
+     "statement": "s3"
+    }
+   ]
+  },
+  {
+   "slug": "applied-genai-dh-workshop-series-2024",
+   "title": "An applied-generative-AI-in-the-humanities workshop series was released as a versioned archive by February 2024.",
+   "statement": "By 11 February 2024 the author had archived a versioned software release (v1.1.0) of a workshop series titled \"Angewandte Generative KI in den (digitalen) Geisteswissenschaften\" (Applied Generative AI in the (Digital) Humanities) on Zenodo. This dates a teaching lineage of applied generative AI in the humanities to no later than early 2024. The claim carries only the existence, title, and versioned-release date of the deposit; the series' content and scope live in the linked GM-DH repository, a separate source.",
+   "status": "grounded",
+   "topics": [
+    "Genealogy"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "pollin-2024-workshopreihe",
+     "path": "10_distillates/publications/pollin-2024-workshopreihe",
+     "statement": "s1"
+    },
+    {
+     "distillate": "pollin-2024-workshopreihe",
+     "path": "10_distillates/publications/pollin-2024-workshopreihe",
+     "statement": "s2"
+    }
+   ]
+  },
+  {
+   "slug": "austrian-dashboard-universities-verified-2026-07-19",
+   "title": "The Austrian Dashboard figure of 22 universities held against the repository as verified on 2026-07-19.",
+   "statement": "The Austrian Dashboard case study's stated figure of 22 universities matched the project repository when the Section 5 verification checked it on 2026-07-19. Checked against the deliverable on 2026-07-25, Section 5.4 still names the dashboard as a didactic baseline case and states no number of universities. The drift audit places that absence before the revision rounds of 2026-07-24 and 2026-07-25, since the deliverable already offered no point of attachment for the figure when the vault was built, so this is not a figure the deliverable dropped. The claim stands as a checked finding about the repository.",
+   "status": "grounded",
+   "topics": [
+    "Evidence"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "verification-paper-figures-2026-07-19",
+     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "statement": "s6"
+    }
+   ]
+  },
+  {
+   "slug": "bookkeeping-ontology-session-driven",
+   "title": "The Bookkeeping Ontology took shape from representation needs surfaced in the sessions, with the classes Group, Right, and AgentMention traceable to named source sessions.",
+   "statement": "The collaborative requirements sessions surfaced recurring representation needs that shaped the Bookkeeping Ontology. Three of its classes trace to named sources. The class Group arose in tax-record sessions, where entries such as '4 farmers pay a tax' motivated a representation for collective economic actors without individual identification. The class Right arose in the Rentrechnung (1718) sessions, where entries on grazing rights established the basis for a representation of economic resources. The class AgentMention, together with the property by, arose in Wheaton Day Book sessions, where entries such as 'ax dlvd By Puffer' grounded a representation of agency in economic exchanges.",
+   "status": "grounded",
+   "topics": [
+    "Genealogy"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "pollin-2025b-dissertation",
+     "path": "10_distillates/publications/pollin-2025b-dissertation",
+     "statement": "s7"
+    },
+    {
+     "distillate": "pollin-2025b-dissertation",
+     "path": "10_distillates/publications/pollin-2025b-dissertation",
+     "statement": "s8"
+    },
+    {
+     "distillate": "pollin-2025b-dissertation",
+     "path": "10_distillates/publications/pollin-2025b-dissertation",
+     "statement": "s9"
+    },
+    {
+     "distillate": "pollin-2025b-dissertation",
+     "path": "10_distillates/publications/pollin-2025b-dissertation",
+     "statement": "s10"
+    }
+   ]
+  },
+  {
+   "slug": "boundary-objects-are-plastic-yet-robust-across-communities",
+   "title": "A boundary object adapts to each community's local needs while keeping a common identity across them.",
+   "statement": "A boundary object is plastic enough to serve the different local needs of the communities that use it, yet robust enough to keep a common identity across their sites, and its creation and management is the key process by which coherence holds across intersecting social worlds. It grounded the paper's Section 2.3 move to read Promptotyping Documents as boundary objects between the scholar and the coding agent. On 2026-07-25 the operator removed the concept from the paper, because the source carries the circulation of an object between social worlds and not the relation between a scholar and a model, and because the paper's own claim stands without it. The claim stays as checked material and has no current use in the paper.",
+   "status": "grounded",
+   "topics": [
+    "Concepts"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "star-1989-boundary-objects",
+     "path": "10_distillates/publications/star-1989-boundary-objects",
+     "statement": "s1"
+    },
+    {
+     "distillate": "star-1989-boundary-objects",
+     "path": "10_distillates/publications/star-1989-boundary-objects",
+     "statement": "s3"
+    }
+   ]
+  },
+  {
+   "slug": "client-side-provenance-tool-is-a-precedent-for-server-free-artefacts",
+   "title": "A same-venue provenance tool runs entirely in the browser without server-side architecture, a precedent for the server-free artefact type.",
+   "statement": "A web-based provenance tool published in the same venue structures and publishes Linked Open Data as a client-side application that runs entirely in the user's browser, deliberately avoiding server-side architecture, hosting, database, and maintenance, which benefits resource-limited contexts. This grounds the paper's Section 4.1 footnote that a client-side precedent for the self-contained artefact type already exists in the field.",
+   "status": "grounded",
+   "topics": [
+    "ArtefactVerification"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "mariani-2025-prov-a",
+     "path": "10_distillates/publications/mariani-2025-prov-a",
+     "statement": "s1"
+    },
+    {
+     "distillate": "mariani-2025-prov-a",
+     "path": "10_distillates/publications/mariani-2025-prov-a",
+     "statement": "s2"
+    }
+   ]
+  },
+  {
+   "slug": "collections-as-data-are-intentional",
+   "title": "Providing collections as data is an intentional, community-scoped act, not a default.",
+   "statement": "Cultural-heritage institutions have rarely designed collections or access with computational use in mind; treating collections as data signals a deliberate intention to change that. Such provision is scoped to identified user communities rather than to everyone, so stewards must be intentional about who a collection is designed for.",
+   "status": "grounded",
+   "topics": [
+    "Frame"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "collectionsasdata-2019-santa-barbara",
+     "path": "10_distillates/publications/collectionsasdata-2019-santa-barbara",
+     "statement": "s2"
+    },
+    {
+     "distillate": "collectionsasdata-2019-santa-barbara",
+     "path": "10_distillates/publications/collectionsasdata-2019-santa-barbara",
+     "statement": "s3"
+    }
+   ]
+  },
+  {
+   "slug": "conceptual-model-links-language-and-domain-concepts",
+   "title": "A conceptual model links a language dimension of terms to an encyclopedic dimension of domain notions.",
+   "statement": "Mayr and Thalheim characterise the conceptual model as a link between the dimension of linguistic terms and the encyclopedic dimension of notions. This is the modelling-theory characterisation the paper borrows to call a Promptotyping Document a conceptual model of the project. The stronger paper claim, that such a model is semi-formal and rests on a community of practice's shared vocabulary (pp. 57-59), is operator-verified at page level but not grounded here, since the source body text was inaccessible to intake.",
+   "status": "grounded",
+   "topics": [
+    "Method"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "mayr-2021-triptych-conceptual-modeling",
+     "path": "10_distillates/publications/mayr-2021-triptych-conceptual-modeling",
+     "statement": "s2"
+    }
+   ]
+  },
+  {
+   "slug": "context-engineering-systematic-inference-context",
+   "title": "Context engineering is the systematic design and optimisation of the information a model receives at inference, beyond prompt design.",
+   "statement": "Context engineering is a formal discipline defined as the systematic optimisation of the information payload supplied to an LLM at inference, resting on the premise that model performance is fundamentally determined by that context. It supersedes individual prompt optimisation. The paper adopts this definition in Sections 1 and 2.5 and positions Promptotyping as a domain-specific instance optimised for mapping research data onto artifacts.",
+   "status": "grounded",
+   "topics": [
+    "Frame"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "mei-2025-context-engineering",
+     "path": "10_distillates/publications/mei-2025-context-engineering",
+     "statement": "s1"
+    },
+    {
+     "distillate": "mei-2025-context-engineering",
+     "path": "10_distillates/publications/mei-2025-context-engineering",
+     "statement": "s2"
+    }
+   ]
+  },
+  {
+   "slug": "context-rot-nonuniform-degradation-with-length",
+   "title": "LLM performance degrades non-uniformly as input length grows, even on simple tasks, with input length isolated as the cause.",
+   "statement": "An evaluation of 18 models, including GPT-4.1, Claude 4, Gemini 2.5 and Qwen3, shows that models do not use their context uniformly; performance grows increasingly unreliable as input length increases, even under minimal task conditions, and the effect is attributable to input length because task complexity was held constant. This is the empirical rationale for the paper's Distillation phase in Sections 2.3 and 2.5, whose principle is maximum information with minimum tokens.",
+   "status": "grounded",
+   "topics": [
+    "Frame"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "hong-2025-context-rot",
+     "path": "10_distillates/publications/hong-2025-context-rot",
+     "statement": "s2"
+    },
+    {
+     "distillate": "hong-2025-context-rot",
+     "path": "10_distillates/publications/hong-2025-context-rot",
+     "statement": "s3"
+    },
+    {
+     "distillate": "hong-2025-context-rot",
+     "path": "10_distillates/publications/hong-2025-context-rot",
+     "statement": "s4"
+    }
+   ]
+  },
+  {
+   "slug": "coocr-htr-figures-verified-2026-07-19",
+   "title": "coOCR-HTR's stated Section 5 figures held against the repository as verified on 2026-07-19.",
+   "statement": "The coOCR-HTR case study's stated figures held against the project repository when the Section 5 verification checked them on 2026-07-19, covering 567 tests per self-documentation, about 17,000 lines of production JavaScript at an actual 17,762, 197 commits, and 67 fork commits. Checked against the deliverable on 2026-07-25, none of these figures is reported there any longer; the claim stands as a checked finding about the repository.",
+   "status": "grounded",
+   "topics": [
+    "Evidence"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "verification-paper-figures-2026-07-19",
+     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "statement": "s5"
+    }
+   ]
+  },
+  {
+   "slug": "coordinated-multiple-views-enable-exploration",
+   "title": "Coordinated and multiple views let users understand data through different linked representations.",
+   "statement": "Coordinated and Multiple Views is an exploratory visualisation technique whose premise is that users understand their data better when they interact with it through several different, coordinated representations. Insight is formed through the interaction, which is why an exploration interface built on coordinated views functions as a primary research artifact rather than a presentation layer.",
+   "status": "grounded",
+   "topics": [
+    "ArtefactVerification"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "roberts-2007-coordinated-multiple-views",
+     "path": "10_distillates/publications/roberts-2007-coordinated-multiple-views",
+     "statement": "s1"
+    }
+   ]
+  },
+  {
+   "slug": "correspexplorer-figures-verified-2026-07-19",
+   "title": "CorrespExplorer's stated Section 5 figures held against the repository as verified on 2026-07-19.",
+   "statement": "The CorrespExplorer case study's stated figures, 11,576 letters and 12 coordinated views, matched the project repository when the Section 5 verification checked them on 2026-07-19.",
+   "status": "grounded",
+   "topics": [
+    "Evidence"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "verification-paper-figures-2026-07-19",
+     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "statement": "s3"
+    }
+   ]
+  },
+  {
+   "slug": "correspexplorer-knowledge-userstory-count-2026-07-19",
+   "title": "The CorrespExplorer repository holds 13 knowledge files and 37 unique user-story IDs as verified on 2026-07-19.",
+   "statement": "As verified on 2026-07-19, the CorrespExplorer repository holds 13 knowledge files and 37 unique US-IDs. The figures of 7 documents and 34 user stories that the paper carried until 2026-07-24 describe an earlier state; the paper no longer reports either count.",
+   "status": "grounded",
+   "topics": [
+    "Evidence"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "verification-paper-figures-2026-07-19",
+     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "statement": "s18"
+    }
+   ]
+  },
+  {
+   "slug": "critical-expert-in-the-loop-double-reflection-loop",
+   "title": "The Critical Expert in the Loop operates a double reflection loop against LLM failure modes.",
+   "statement": "The Critical Vibing blog introduces the Critical Expert in the Loop as the reflective role that neither Human-in-the-Loop nor Expert-in-the-Loop covers. It requires a double reflection loop, human review together with elicited machine self-critique, precisely because LLMs exhibit failure modes such as sycophancy, their tendency to agree uncritically with the user.",
+   "status": "grounded",
+   "topics": [
+    "Concepts"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "pollin-2025c-critical-vibing",
+     "path": "10_distillates/publications/pollin-2025c-critical-vibing",
+     "statement": "s2"
+    },
+    {
+     "distillate": "pollin-2025c-critical-vibing",
+     "path": "10_distillates/publications/pollin-2025c-critical-vibing",
+     "statement": "s3"
+    },
+    {
+     "distillate": "pollin-2025c-critical-vibing",
+     "path": "10_distillates/publications/pollin-2025c-critical-vibing",
+     "statement": "s4"
+    }
+   ]
+  },
+  {
+   "slug": "deck-characterises-llms-as-jagged-alien",
+   "title": "The method author's teaching material characterises LLMs as a \"Jagged Alien Intelligence\", jagged in an uneven capability profile and alien in a non-human error distribution.",
+   "statement": "The workshop deck used by the method author states, as of the 2026-07-19 snapshot, that LLMs are a \"Jagged Alien Intelligence\". The deck spells this out in two directions. Jagged names the finding that strength and weakness lie unpredictably next to each other, with the term traced to the jagged-frontier coinage of Mollick and co-authors 2023 and the jagged-intelligence coinage of Karpathy 2024. Alien names the finding that the errors fall where human errors would not, attributed to Summerfield, and located on the mechanism level through the Anthropic 2025 attribution-graph work in which the model computes internally by parallel heuristics while reporting the written method. The deck fills the label with named components, unreliable token-level arithmetic, spelling and counting, a statistical, confabulating, biased, black-box method, reasoning as thinking tokens rather than verified inference, and sycophancy as the tendency to confirm rather than contradict. The claim records what the teaching material asserts and dates; it makes no assertion about whether the characterisation holds of LLMs, which would require external sources.",
+   "status": "grounded",
+   "topics": [
+    "Concepts"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "ke-master-deck-2026-07-19",
+     "path": "10_distillates/documents/ke-master-deck-2026-07-19",
+     "statement": "s1"
+    },
+    {
+     "distillate": "ke-master-deck-2026-07-19",
+     "path": "10_distillates/documents/ke-master-deck-2026-07-19",
+     "statement": "s2"
+    },
+    {
+     "distillate": "ke-master-deck-2026-07-19",
+     "path": "10_distillates/documents/ke-master-deck-2026-07-19",
+     "statement": "s3"
+    },
+    {
+     "distillate": "ke-master-deck-2026-07-19",
+     "path": "10_distillates/documents/ke-master-deck-2026-07-19",
+     "statement": "s4"
+    }
+   ]
+  },
+  {
+   "slug": "deck-derives-context-and-verification-from-llm-profile",
+   "title": "The teaching material derives its practice consequences, curated context with verification and the harness argument, from the jagged-alien LLM profile.",
+   "statement": "The workshop deck does not leave its LLM characterisation as description. As of the 2026-07-19 snapshot it draws two practice consequences from the jagged-alien profile. First, from the unpredictable capability profile it derives the need for curated context and verification, the need the workshop then develops. Second, it marks tool-use, context window and knowledge cut-off as system properties rather than capability jags, names tool-use as the first remedy that compensates some of the named weaknesses, and frames compensating model weaknesses through the environment as the harness argument. The claim records the derivation the material states and dates; it makes no assertion about whether the consequences are correct, which would require external sources.",
+   "status": "grounded",
+   "topics": [
+    "Concepts"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "ke-master-deck-2026-07-19",
+     "path": "10_distillates/documents/ke-master-deck-2026-07-19",
+     "statement": "s2"
+    },
+    {
+     "distillate": "ke-master-deck-2026-07-19",
+     "path": "10_distillates/documents/ke-master-deck-2026-07-19",
+     "statement": "s5"
+    }
+   ]
+  },
+  {
+   "slug": "deep-dive-process-documented-2019",
+   "title": "The deep-dive process and the Group class were documented in 2019, ahead of the dissertation.",
+   "statement": "The DEPCHA conference paper of 2019 already documents the iterative, collaborative deep-dive process in which the project team discussed source phenomena with domain experts, and records that the classes bk:Group and bk:Tax were added to the Bookkeeping Ontology through it, prompted by an entry for an unspecified collective (four farmers and a baker who equally pay a tax). This dates the session-driven ontology mechanism to 2019, independently of and earlier than its later account in the 2025 dissertation.",
+   "status": "grounded",
+   "topics": [
+    "Genealogy"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "pollin-2019-depcha-bookkeeping",
+     "path": "10_distillates/publications/pollin-2019-depcha-bookkeeping",
+     "statement": "s2"
+    },
+    {
+     "distillate": "pollin-2019-depcha-bookkeeping",
+     "path": "10_distillates/publications/pollin-2019-depcha-bookkeeping",
+     "statement": "s3"
+    }
+   ]
+  },
+  {
+   "slug": "dh-intermediary-bridges-researchers-and-technical-staff",
+   "title": "A dedicated Digital Humanities Intermediary bridges the gap between researchers and technical staff.",
+   "statement": "Edmond models humanities digital development as a value chain in which critical gaps open when the only actors are the researcher and technical support staff, and proposes a dedicated Digital Humanities Intermediary to supply non-specifically-technical skills and support at critical moments. This grounds the paper's Section 1 point that the field answered its translation problem by installing a professional intermediary between scholarly requirements and technical implementation.",
+   "status": "grounded",
+   "topics": [
+    "Frame"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "edmond-2005-professional-intermediary",
+     "path": "10_distillates/publications/edmond-2005-professional-intermediary",
+     "statement": "s1"
+    },
+    {
+     "distillate": "edmond-2005-professional-intermediary",
+     "path": "10_distillates/publications/edmond-2005-professional-intermediary",
+     "statement": "s2"
+    }
+   ]
+  },
+  {
+   "slug": "dh-projects-build-teams-to-hold-competences-together",
+   "title": "Digital-humanities projects build teams to hold their diverse competences together.",
+   "statement": "Digital-humanities research coordinates academics, students, programmers, and librarians in teams defined by common tasks and shared accountability, with success resting on clear task definition and durable working relationships. This grounds the paper's Section 1 point that team-building is one of the field's documented answers to the translation problem between domain scholars and programmers, an answer bound to project funding and staffing.",
+   "status": "grounded",
+   "topics": [
+    "Frame"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "siemens-2009-reply-all-teams",
+     "path": "10_distillates/publications/siemens-2009-reply-all-teams",
+     "statement": "s1"
+    },
+    {
+     "distillate": "siemens-2009-reply-all-teams",
+     "path": "10_distillates/publications/siemens-2009-reply-all-teams",
+     "statement": "s2"
+    }
+   ]
+  },
+  {
+   "slug": "digital-editing-converges-on-static-self-contained-artefact",
+   "title": "Digital scholarly editing arrives from its own sustainability discourse at the self-contained static web artefact as the durable publication form.",
+   "statement": "Independently of any generative tooling, digital scholarly editing has reached the same target form the paper defaults to: a standalone static website whose pages exist as plain HTML needing no server-side execution or database, rendered from TEI-XML by deterministic XSLT templates, with longevity tied to the publishing institution rather than to a technology or a single developer. This is the paper's Section 4.1 evidence that the artefact type it proposes is the field's own answer to the longevity problem; the generation path differs, deterministic XSLT there and document-driven generation in a promptotype, while the target artefact agrees.",
+   "status": "grounded",
+   "topics": [
+    "ArtefactVerification"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "andorfer-2026-static-tei-editions",
+     "path": "10_distillates/publications/andorfer-2026-static-tei-editions",
+     "statement": "s1"
+    },
+    {
+     "distillate": "andorfer-2026-static-tei-editions",
+     "path": "10_distillates/publications/andorfer-2026-static-tei-editions",
+     "statement": "s2"
+    },
+    {
+     "distillate": "andorfer-2026-static-tei-editions",
+     "path": "10_distillates/publications/andorfer-2026-static-tei-editions",
+     "statement": "s4"
+    }
+   ]
+  },
+  {
+   "slug": "digital-edition-is-interface-gui-and-api",
+   "title": "The digital scholarly edition is itself an interface, addressed as GUI for humans and API for machines.",
+   "statement": "Understanding a digital scholarly edition as an interface means understanding it as a connection point between documents and users, whether human or machine. Editions present two interface types accordingly, a Graphical User Interface for human readers and an Application Programming Interface for machine-to-machine exchange, so the edition mediates simultaneously to human and machine addressees.",
+   "status": "grounded",
+   "topics": [
+    "ArtefactVerification"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "bleier-2018-editions-interfaces",
+     "path": "10_distillates/publications/bleier-2018-editions-interfaces",
+     "statement": "s1"
+    },
+    {
+     "distillate": "bleier-2018-editions-interfaces",
+     "path": "10_distillates/publications/bleier-2018-editions-interfaces",
+     "statement": "s2"
+    }
+   ]
+  },
+  {
+   "slug": "digital-history-collaboration-is-a-trading-zone",
+   "title": "Collaboration between historians and computational experts is a trading zone.",
+   "statement": "Kemman analyses digital-history collaborations as trading zones, adapting Galison's concept of an arena in which radically different activities are locally, but not globally, coordinated. Two communities with different practices coordinate a joint enterprise locally, which Kemman analyses along three dimensions: engagement, power relations, and changing practices.",
+   "status": "grounded",
+   "topics": [
+    "Frame"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "kemman-2021-trading-zones",
+     "path": "10_distillates/publications/kemman-2021-trading-zones",
+     "statement": "s1"
+    },
+    {
+     "distillate": "kemman-2021-trading-zones",
+     "path": "10_distillates/publications/kemman-2021-trading-zones",
+     "statement": "s2"
+    },
+    {
+     "distillate": "kemman-2021-trading-zones",
+     "path": "10_distillates/publications/kemman-2021-trading-zones",
+     "statement": "s3"
+    }
+   ]
+  },
+  {
+   "slug": "digital-tool-criticism-demands-reflection-on-tools",
+   "title": "Digital tool criticism demands reflection on how a tool shapes research material and method.",
+   "statement": "Digital tool criticism holds that tools are not neutral instruments: choosing one requires reflecting on how it affords a method appropriate to the research question, and a rigorous inquiry into research tools must be an essential part of the research process, the move from digital methods to digital methodology. This grounds the paper's Section 2.1 corrective, that scholars must reflect on what a tool does to their material, which the paper then turns on its own method.",
+   "status": "grounded",
+   "topics": [
+    "Frame"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "koolen-2019-digital-tool-criticism",
+     "path": "10_distillates/publications/koolen-2019-digital-tool-criticism",
+     "statement": "s2"
+    },
+    {
+     "distillate": "vanes-2018-tool-criticism",
+     "path": "10_distillates/publications/vanes-2018-tool-criticism",
+     "statement": "s1"
+    },
+    {
+     "distillate": "vanes-2018-tool-criticism",
+     "path": "10_distillates/publications/vanes-2018-tool-criticism",
+     "statement": "s2"
+    }
+   ]
+  },
+  {
+   "slug": "discarded-visualisations-retain-epistemic-value",
+   "title": "Sandcastle visualisations are never failures; even when discarded they generate knowledge.",
+   "statement": "Hinrichs et al. hold that, approached critically, visualisation sandcastles are never failures: building them is a dynamic knowledge-generation process, and even a discarded visualisation promotes reflection. This is the disposability-with-epistemic-value the paper reads off Hinrichs for the research process.",
+   "status": "grounded",
+   "topics": [
+    "Frame"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "hinrichs-2019-sandcastles",
+     "path": "10_distillates/publications/hinrichs-2019-sandcastles",
+     "statement": "s3"
+    },
+    {
+     "distillate": "hinrichs-2019-sandcastles",
+     "path": "10_distillates/publications/hinrichs-2019-sandcastles",
+     "statement": "s4"
+    }
+   ]
+  },
+  {
+   "slug": "dissertation-dikw-cognitive-agent-premise",
+   "title": "The dissertation places a cognitive agent whose knowledge structures give data context and significance at the centre of information production.",
+   "statement": "In the dissertation's account of the DIKW hierarchy the involvement of a cognitive agent, equated with human agency, is among the factors that distinguish versions of the model. Following Rowley, the ascent from signals to structured knowledge is tied to human agency, so that greater involvement of the cognitive agent yields the cognitive structures that give data its context and significance. Information, on this account, represents reality and reflects the relationship between a system or cognitive agent and its external environment.",
+   "status": "grounded",
+   "topics": [
+    "Concepts"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "pollin-2025b-dissertation",
+     "path": "10_distillates/publications/pollin-2025b-dissertation",
+     "statement": "s11"
+    },
+    {
+     "distillate": "pollin-2025b-dissertation",
+     "path": "10_distillates/publications/pollin-2025b-dissertation",
+     "statement": "s12"
+    },
+    {
+     "distillate": "pollin-2025b-dissertation",
+     "path": "10_distillates/publications/pollin-2025b-dissertation",
+     "statement": "s13"
+    }
+   ]
+  },
+  {
+   "slug": "dissertation-requirements-feed-built-artifacts",
+   "title": "The requirements captured under Scholar-Centred Design fed the dissertation's built research artifacts.",
+   "statement": "The requirements captured in the scholar-centred process informed the artifacts the dissertation built, among them the interface design, the TEI XML and ontology modelling, and the workflows for RDF data transformation and creation. Within scholar-centred design user-centred design carried two complementary roles, deepening the domain understanding that advances the Bookkeeping Ontology and producing the practical interfaces and visualisations historians need for historical financial records.",
+   "status": "grounded",
+   "topics": [
+    "Genealogy"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "pollin-2025b-dissertation",
+     "path": "10_distillates/publications/pollin-2025b-dissertation",
+     "statement": "s2"
+    },
+    {
+     "distillate": "pollin-2025b-dissertation",
+     "path": "10_distillates/publications/pollin-2025b-dissertation",
+     "statement": "s5"
+    }
+   ]
+  },
+  {
+   "slug": "dissertation-requirements-from-deep-dive-sessions",
+   "title": "Scholar-Centred Design in the dissertation captured structured requirements from deep-dive sessions with domain-expert historians between 2017 and 2020.",
+   "statement": "The dissertation formulates scholar-centred design as a systematic, iterative methodology that folds scholars' practices, needs, and expertise into the development of scholarly tools. Under this methodology the DEPCHA requirements were elicited between 2017 and 2020 in \"deep dive\" sessions with domain-expert historians working on concrete financial sources. The elicitation captured the requirements as personas, epics, and user stories, with the personas derived from the deep-dive interviews and the user stories written in a fixed role-goal-reason template.",
+   "status": "grounded",
+   "topics": [
+    "Genealogy"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "pollin-2025b-dissertation",
+     "path": "10_distillates/publications/pollin-2025b-dissertation",
+     "statement": "s1"
+    },
+    {
+     "distillate": "pollin-2025b-dissertation",
+     "path": "10_distillates/publications/pollin-2025b-dissertation",
+     "statement": "s3"
+    },
+    {
+     "distillate": "pollin-2025b-dissertation",
+     "path": "10_distillates/publications/pollin-2025b-dissertation",
+     "statement": "s4"
+    },
+    {
+     "distillate": "pollin-2025b-dissertation",
+     "path": "10_distillates/publications/pollin-2025b-dissertation",
+     "statement": "s6"
+    }
+   ]
+  },
+  {
+   "slug": "do-one-thing-well-favours-small-specialised-tools-over-monolithic-platforms",
+   "title": "The Unix \"do one thing well\" principle, applied to digital editing, argues for small, specialised tools chained through standard formats against monolithic platforms.",
+   "statement": "Applied to digital scholarly editing, the Unix philosophy of doing one thing well argues against the monolithic platform and for a chain of small, specialised, exchangeable filters whose text-level input and output stay addressable, connected through standard formats. This underwrites the paper's Section 4.2 design philosophy, that the epistemic function determines the interface and that a question-specific tool preserves the model-specific detail a one-size-fits-all dashboard flattens.",
+   "status": "grounded",
+   "topics": [
+    "ArtefactVerification"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "schonhardt-2026-do-one-thing",
+     "path": "10_distillates/publications/schonhardt-2026-do-one-thing",
+     "statement": "s1"
+    },
+    {
+     "distillate": "schonhardt-2026-do-one-thing",
+     "path": "10_distillates/publications/schonhardt-2026-do-one-thing",
+     "statement": "s2"
+    },
+    {
+     "distillate": "schonhardt-2026-do-one-thing",
+     "path": "10_distillates/publications/schonhardt-2026-do-one-thing",
+     "statement": "s3"
+    }
+   ]
+  },
+  {
+   "slug": "duration-cost-figures-experiential",
+   "title": "The duration and cost figures of Section 5 are experiential values outside deterministic checking.",
+   "statement": "The duration and cost figures of Section 5 are experiential values that lie outside deterministic checking, so the verification supports no verdict on their accuracy and treats them as reported experience. Checked against the deliverable on 2026-07-25, no duration or cost figures are reported there any longer, and the deliverable states expressly that it offers no comparative measurements of development time or cost; the claim stands as a checked finding about what the verification could and could not decide.",
+   "status": "grounded",
+   "topics": [
+    "Evidence",
+    "Limitations"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "verification-paper-figures-2026-07-19",
+     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "statement": "s22"
+    }
+   ]
+  },
+  {
+   "slug": "edition-ai-benchmarks-lacking-and-reproducibility-favours-local-models",
+   "title": "Benchmarks for AI-generated edition tasks are lacking, and a reproducibility standard from within digital editing calls for free, locally runnable models.",
+   "statement": "The field lacks benchmarks to rigorously evaluate the quality and accuracy of AI-generated results for its specific tasks, and it voices a reproducibility standard, citing Reiter's point that evaluating non-local, API-based models is product testing rather than model evaluation, that free and locally runnable models are a condition of comprehensible, reproducible, and open research. This grounds two of the paper's discussion moves: in Section 6.2 the method answers the missing-benchmark problem by assigning the check to the human and the deterministic layer, and in Section 6.3 it locates reproducibility in the documents and pipeline against the standard's presupposition of local models, a tension the paper marks as real.",
+   "status": "grounded",
+   "topics": [
+    "Limitations"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "pollin-2025a-when-it-was-2024",
+     "path": "10_distillates/publications/pollin-2025a-when-it-was-2024",
+     "statement": "s3"
+    },
+    {
+     "distillate": "pollin-2025a-when-it-was-2024",
+     "path": "10_distillates/publications/pollin-2025a-when-it-was-2024",
+     "statement": "s4"
+    },
+    {
+     "distillate": "pollin-2025a-when-it-was-2024",
+     "path": "10_distillates/publications/pollin-2025a-when-it-was-2024",
+     "statement": "s5"
+    }
+   ]
+  },
+  {
+   "slug": "edition-interface-embodies-editorial-decisions",
+   "title": "The interface of a digital edition embodies editorial decisions and is bound to its data model.",
+   "statement": "The interface of a digital scholarly edition is not a neutral display layer. It builds meaning and includes editorial decisions and principles, acting as a regulative principle that selects the reading an editor considers most correct. An edition's interface, whether GUI or API, is always closely linked to the underlying data model and the editorial principles expressed in it, which makes interface design itself a form of editorial and interpretive work.",
+   "status": "grounded",
+   "topics": [
+    "ArtefactVerification"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "pierazzo-2015-digital-editing",
+     "path": "10_distillates/publications/pierazzo-2015-digital-editing",
+     "statement": "s1"
+    },
+    {
+     "distillate": "pierazzo-2015-digital-editing",
+     "path": "10_distillates/publications/pierazzo-2015-digital-editing",
+     "statement": "s2"
+    },
+    {
+     "distillate": "bleier-2018-editions-interfaces",
+     "path": "10_distillates/publications/bleier-2018-editions-interfaces",
+     "statement": "s3"
+    }
+   ]
+  },
+  {
+   "slug": "endings-durability-through-static-no-dependencies",
+   "title": "The Endings Principles secure digital longevity by building static sites free of server-side and external dependencies.",
+   "statement": "Holmes and Takeda, reporting Project Endings, prescribe static standalone websites with no server-side software (no databases, PHP, or Python) and no dependence on external libraries or services, having rescued over a dozen projects from software obsolescence by reconstituting them this way.",
+   "status": "grounded",
+   "topics": [
+    "ArtefactVerification"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "holmes-2023-endings-principles",
+     "path": "10_distillates/publications/holmes-2023-endings-principles",
+     "statement": "s1"
+    },
+    {
+     "distillate": "holmes-2023-endings-principles",
+     "path": "10_distillates/publications/holmes-2023-endings-principles",
+     "statement": "s2"
+    },
+    {
+     "distillate": "holmes-2023-endings-principles",
+     "path": "10_distillates/publications/holmes-2023-endings-principles",
+     "statement": "s3"
+    }
+   ]
+  },
+  {
+   "slug": "endings-static-artefacts-minimise-maintenance",
+   "title": "Endings-compliant artefacts function without JavaScript or CSS and require no ongoing tending, turning \"Tamagotchis\" into \"Pet Rocks\".",
+   "statement": "The Endings aim is to convert high-maintenance \"Tamagotchi\" projects into zero-maintenance \"Pet Rocks\"; to that end every page should still function even without JavaScript or CSS support. Durability is achieved by removing what must be tended.",
+   "status": "grounded",
+   "topics": [
+    "ArtefactVerification"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "holmes-2023-endings-principles",
+     "path": "10_distillates/publications/holmes-2023-endings-principles",
+     "statement": "s4"
+    },
+    {
+     "distillate": "holmes-2023-endings-principles",
+     "path": "10_distillates/publications/holmes-2023-endings-principles",
+     "statement": "s5"
+    }
+   ]
+  },
+  {
+   "slug": "epistemic-forms-are-target-knowledge-structures",
+   "title": "Epistemic forms are target knowledge structures that organise inquiry by the kind of knowledge produced.",
+   "statement": "Collins and Ferguson define an epistemic form as a target structure that guides inquiry by organising knowledge and the relations among its concepts, paired with an epistemic game of rules and strategies for building that form. This grounds the paper's Section 4.2 use of epistemic forms as the principle for classifying research-data interfaces by the kind of knowledge they help construct, rather than by data format or technique.",
+   "status": "grounded",
+   "topics": [
+    "Concepts"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "collins-1993-epistemic-forms",
+     "path": "10_distillates/publications/collins-1993-epistemic-forms",
+     "statement": "s1"
+    },
+    {
+     "distillate": "collins-1993-epistemic-forms",
+     "path": "10_distillates/publications/collins-1993-epistemic-forms",
+     "statement": "s2"
+    }
+   ]
+  },
+  {
+   "slug": "experimental-prototype-yields-knowledge-not-product",
+   "title": "An experimental prototype produces generalised knowledge rather than a product.",
+   "statement": "Ruecker distinguishes three kinds of prototype by the project they support, intended for experiment, development, and provocation. In an experimental prototype the goal is not to create a product but to produce generalised knowledge about an idea the prototype embodies. This category grounds the positioning of a prototype as a knowledge-bearing object distinct from a production deliverable.",
+   "status": "grounded",
+   "topics": [
+    "Frame"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "ruecker-2015-taxonomy-prototypes",
+     "path": "10_distillates/publications/ruecker-2015-taxonomy-prototypes",
+     "statement": "s1"
+    },
+    {
+     "distillate": "ruecker-2015-taxonomy-prototypes",
+     "path": "10_distillates/publications/ruecker-2015-taxonomy-prototypes",
+     "statement": "s2"
+    }
+   ]
+  },
+  {
+   "slug": "expert-role-carries-a-domain-and-a-development-judgement",
+   "title": "The recorded practice carries two expert judgements in the loop, one over the subject matter and one over the development side.",
+   "statement": "At the point where the tool analyses the screenshots of the running interface, the author places the Critical Expert in the Loop and gives that role the question whether what is shown is actually right; the analysis the tool returns is hallucinated content that could well be correct, and the problem stays. Where a remaining defect at a range element has to be addressed, the author names an Expert Developer in the Loop, because addressing the element by its identifier and passing it as a hash presupposes HTML-specific knowledge. The two are told apart by what each has to know, domain competence for the judgement over the display and web-technical competence for the judgement over the fix. The source is the method's author speaking about a session he conducted alone, so the separation is one he draws, and the recording shows both judgements held by the same person.",
+   "status": "grounded",
+   "topics": [
+    "Concepts",
+    "Method"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "promptotyping-video-2-live-demo",
+     "path": "10_distillates/documents/promptotyping-video-2-live-demo",
+     "statement": "s32"
+    },
+    {
+     "distillate": "promptotyping-video-2-live-demo",
+     "path": "10_distillates/documents/promptotyping-video-2-live-demo",
+     "statement": "s33"
+    }
+   ]
+  },
+  {
+   "slug": "exploration-resumed-inside-an-implementation-milestone",
+   "title": "Exploration is taken up again inside an implementation milestone and forces an update of the data document.",
+   "statement": "In the aggregation step of the recorded session the tool at first writes no scripts for the very numerous spreadsheets, and the author interrupts the run in the middle. His finding is that the exploration phase was not thorough enough, and his explicit order is to update the `data.md` and work the new knowledge back into it. The session needed that second pass over the `data.md` because of the number of documents. The re-entry happens after the document set already existed and while a milestone of the implementation plan is running, so the return goes into the phase the new knowledge belongs to rather than into the specification alone. The witness is the method's author on his own recorded practice.",
+   "status": "grounded",
+   "topics": [
+    "Method"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "promptotyping-video-2-live-demo",
+     "path": "10_distillates/documents/promptotyping-video-2-live-demo",
+     "statement": "s26"
+    },
+    {
+     "distillate": "promptotyping-video-2-live-demo",
+     "path": "10_distillates/documents/promptotyping-video-2-live-demo",
+     "statement": "s27"
+    },
+    {
+     "distillate": "promptotyping-video-2-live-demo",
+     "path": "10_distillates/documents/promptotyping-video-2-live-demo",
+     "statement": "s39"
+    }
+   ]
+  },
+  {
+   "slug": "exploratory-collection-visualisation-is-a-rich-design-space",
+   "title": "Exploratory visualisation of cultural-heritage collections spans a rich, diverse design space beyond search and grid interfaces.",
+   "statement": "A survey of information-visualisation approaches to cultural-heritage collections documents a widening spectrum of interactive visualisation types that give visual access to collections as complex information spaces, with a notable diversity of interaction and representation techniques. This grounds the paper's Section 2.1 point about the richness of the exploratory-visualisation design space for cultural heritage, against which it sets how rarely projects can afford to build such interfaces.",
+   "status": "grounded",
+   "topics": [
+    "Frame"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "windhager-2019-visualization-ch-collections",
+     "path": "10_distillates/publications/windhager-2019-visualization-ch-collections",
+     "statement": "s1"
+    },
+    {
+     "distillate": "windhager-2019-visualization-ch-collections",
+     "path": "10_distillates/publications/windhager-2019-visualization-ch-collections",
+     "statement": "s2"
+    },
+    {
+     "distillate": "windhager-2019-visualization-ch-collections",
+     "path": "10_distillates/publications/windhager-2019-visualization-ch-collections",
+     "statement": "s3"
+    }
+   ]
+  },
+  {
+   "slug": "fair-emphasises-machine-actionability-of-data",
+   "title": "The FAIR principles place specific emphasis on machines' ability to find and use data, and extend to the tools and workflows that produced it.",
+   "statement": "Distinct from initiatives focused on the human scholar, FAIR puts specific emphasis on enhancing machines' ability to automatically find and use data, in addition to human reuse; the authors intend the principles to apply not only to data but also to the algorithms, tools, and workflows that led to it. This is the explicit, machine-readable form the paper reads from the context side for LLM generation.",
+   "status": "grounded",
+   "topics": [
+    "Frame"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "wilkinson-2016-fair-principles",
+     "path": "10_distillates/publications/wilkinson-2016-fair-principles",
+     "statement": "s3"
+    },
+    {
+     "distillate": "wilkinson-2016-fair-principles",
+     "path": "10_distillates/publications/wilkinson-2016-fair-principles",
+     "statement": "s4"
+    }
+   ]
+  },
+  {
+   "slug": "fair-principles-findable-accessible-interoperable-reusable",
+   "title": "The FAIR principles are a concise, measurable set for making data Findable, Accessible, Interoperable, and Reusable.",
+   "statement": "Wilkinson et al. state the FAIR Data Principles as a concise, measurable set of guidelines for enhancing the reusability of data holdings, under the four headings Findable, Accessible, Interoperable, and Reusable.",
+   "status": "grounded",
+   "topics": [
+    "Frame"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "wilkinson-2016-fair-principles",
+     "path": "10_distillates/publications/wilkinson-2016-fair-principles",
+     "statement": "s1"
+    },
+    {
+     "distillate": "wilkinson-2016-fair-principles",
+     "path": "10_distillates/publications/wilkinson-2016-fair-principles",
+     "statement": "s2"
+    }
+   ]
+  },
+  {
+   "slug": "fair4rs-provenance-and-identifier-principles",
+   "title": "The FAIR4RS principles require detailed provenance under Reusable (R1.2) and a persistent identifier under Findable (F1).",
+   "statement": "The community standard for research software, FAIR4RS, places detailed provenance under its Reusable principle (R1.2) and a globally unique, persistent identifier under its Findable principle (F1). These two principles are the yardstick the paper applies to the promptotype-as-artifact in Sections 4.1 and 6.3: the provenance requirement is what the method's journal and documents satisfy as a by-product, while the persistent-identifier requirement is the findability condition that unpublished prototypes typically fail.",
+   "status": "grounded",
+   "topics": [
+    "ArtefactVerification"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "chuehong-2022-fair4rs",
+     "path": "10_distillates/publications/chuehong-2022-fair4rs",
+     "statement": "s2"
+    },
+    {
+     "distillate": "chuehong-2022-fair4rs",
+     "path": "10_distillates/publications/chuehong-2022-fair4rs",
+     "statement": "s4"
+    }
+   ]
+  },
+  {
+   "slug": "fanous-frontier-models-sycophantic-in-most-cases",
+   "title": "The SycEval benchmark measured sycophantic behaviour in 58% of cases across three frontier models.",
+   "statement": "In the SycEval evaluation of ChatGPT-4o, Claude-Sonnet and Gemini-1.5-Pro on mathematics and medical-advice tasks, sycophantic behaviour occurred in 58.19% of cases. This is the quantitative anchor for the paper's Section 2.4 statement that frontier models behave sycophantically in a majority of cases, supporting the claim that the absence of model disagreement is no validation.",
+   "status": "grounded",
+   "topics": [
+    "Frame"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "fanous-2025-syceval",
+     "path": "10_distillates/publications/fanous-2025-syceval",
+     "statement": "s2"
+    }
+   ]
+  },
+  {
+   "slug": "femprompt-figures-verified-2026-07-19",
+   "title": "FemPrompt's stated Section 5 figures held against the repository as verified on 2026-07-19.",
+   "statement": "The FemPrompt case study's stated figures held against the project repository when the Section 5 verification checked them on 2026-07-19, covering 326 papers, a 505-file vault, and a 68 percent to 42 percent split as documented in-repo. Checked against the deliverable on 2026-07-25, the 326 papers are still reported there, while the vault file count and the split are not; for those two the claim stands as a checked finding about the repository.",
+   "status": "grounded",
+   "topics": [
+    "Evidence"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "verification-paper-figures-2026-07-19",
+     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "statement": "s10"
+    }
+   ]
+  },
+  {
+   "slug": "field-literature-records-llm-code-generation-and-tei-agent-line-by-2024",
+   "title": "The field's own literature records LLM code generation for edition publishing systems in September 2024 and the teiCrafter, teiModeler, teiVerifier line of TEI-generation tools.",
+   "statement": "A trace of the working mode the paper consolidates is on record in the field's literature: code generation to set up technical systems for edition publishing was demonstrated in September 2024, and a line of interacting agents, teiCrafter for TEI annotation, teiModeler for the target text model, and teiVerifier for encoding verification, was described in the same survey. This grounds the paper's Section 2.5 genealogy waypoint, an early public instance predating the consolidated method.",
+   "status": "grounded",
+   "topics": [
+    "Genealogy"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "pollin-2025a-when-it-was-2024",
+     "path": "10_distillates/publications/pollin-2025a-when-it-was-2024",
+     "statement": "s1"
+    },
+    {
+     "distillate": "pollin-2025a-when-it-was-2024",
+     "path": "10_distillates/publications/pollin-2025a-when-it-was-2024",
+     "statement": "s2"
+    }
+   ]
+  },
+  {
+   "slug": "frontmatter-core-reduced-to-six-fields",
+   "title": "The mandatory Promptotyping frontmatter core was reduced to the six fields the practice actually carries.",
+   "statement": "The standardisation of Promptotyping frontmatter did not impose a rich schema but reduced the mandatory core to six fields (title, created, updated, status, project, method) after a real refactor wave, dropping the type and dependencies fields from the recommendations. The type field in particular was demoted from a mandatory field to a reading heuristic, because the refactor introduced it in no document.",
+   "status": "grounded",
+   "topics": [
+    "Method"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "frontmatter-practice-2026-05",
+     "path": "10_distillates/documents/frontmatter-practice-2026-05",
+     "statement": "s2"
+    },
+    {
+     "distillate": "frontmatter-practice-2026-05",
+     "path": "10_distillates/documents/frontmatter-practice-2026-05",
+     "statement": "s3"
+    }
+   ]
+  },
+  {
+   "slug": "generous-interfaces-reveal-collection-through-browsing",
+   "title": "Generous interfaces reveal a collection's scale and complexity through rich, browsable representations.",
+   "statement": "Whitelaw's generous interface offers rich, navigable representations of a collection that invite exploration and support browsing, and in revealing the collection's complexity it enriches interpretation by exposing relationships and structures within it.",
+   "status": "grounded",
+   "topics": [
+    "Frame"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "whitelaw-2015-generous-interfaces",
+     "path": "10_distillates/publications/whitelaw-2015-generous-interfaces",
+     "statement": "s3"
+    },
+    {
+     "distillate": "whitelaw-2015-generous-interfaces",
+     "path": "10_distillates/publications/whitelaw-2015-generous-interfaces",
+     "statement": "s4"
+    }
+   ]
+  },
+  {
+   "slug": "glam-practice-layers-llm-extraction-with-deterministic-checks-and-expert-review",
+   "title": "GLAM practice brackets non-deterministic LLM extraction with deterministic regex post-checks and an expert correction interface.",
+   "statement": "A published archival-cataloguing workflow combines LLM extraction from image cards with deterministic post-checks by regular expression, moving misassigned fixed-structure entries automatically, and a purpose-built correction interface where an expert checks, adjusts, deletes, and completes the extracted fields. This is the layering the paper's Section 6.2 invokes: where output fidelity is not decidable by a closed feedback loop, the non-deterministic step is checked by deterministic rules and, above that, by human review.",
+   "status": "grounded",
+   "topics": [
+    "ArtefactVerification"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "fischer-2025-bildkarten",
+     "path": "10_distillates/publications/fischer-2025-bildkarten",
+     "statement": "s1"
+    },
+    {
+     "distillate": "fischer-2025-bildkarten",
+     "path": "10_distillates/publications/fischer-2025-bildkarten",
+     "statement": "s2"
+    },
+    {
+     "distillate": "fischer-2025-bildkarten",
+     "path": "10_distillates/publications/fischer-2025-bildkarten",
+     "statement": "s3"
+    },
+    {
+     "distillate": "fischer-2025-bildkarten",
+     "path": "10_distillates/publications/fischer-2025-bildkarten",
+     "statement": "s4"
+    }
+   ]
+  },
+  {
+   "slug": "hans-gross-figures-verified-2026-07-19",
+   "title": "The Hans Gross figure of 3,892 objects held against the repository as verified on 2026-07-19.",
+   "statement": "The Hans Gross case study's stated figure of 3,892 objects matched the project repository when the Section 5 verification checked it on 2026-07-19.",
+   "status": "grounded",
+   "topics": [
+    "Evidence"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "verification-paper-figures-2026-07-19",
+     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "statement": "s2"
+    }
+   ]
+  },
+  {
+   "slug": "herdata-letter-count-2026-07-19",
+   "title": "The HerData repository documents a corpus of 15,312 letters to Goethe, and the 1,793-letter figure names a subset within it.",
+   "statement": "As verified on 2026-07-19, the HerData repository README states 15,312 letters as the full corpus of letters to Goethe. That check found no documentation for the paper's 1,793-letter figure and read it as plausibly the women-related subset of the corpus. Whether the figure is that subset the README leaves open, and the check of 2026-07-19 supports no verdict on it.",
+   "status": "grounded",
+   "topics": [
+    "Evidence"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "verification-paper-figures-2026-07-19",
+     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "statement": "s16"
+    }
+   ]
+  },
+  {
+   "slug": "humanities-data-are-capta-not-given",
+   "title": "Humanities data are constructed capta, actively taken, rather than given data.",
+   "statement": "Drucker holds that humanistic knowledge is situated and constructed, so what looks like given data must be understood as capta, actively taken; the conventions built to express observer-independent knowledge need reworking to express interpretation.",
+   "status": "grounded",
+   "topics": [
+    "Frame"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "drucker-2011-humanities-approaches",
+     "path": "10_distillates/publications/drucker-2011-humanities-approaches",
+     "statement": "s1"
+    },
+    {
+     "distillate": "drucker-2011-humanities-approaches",
+     "path": "10_distillates/publications/drucker-2011-humanities-approaches",
+     "statement": "s2"
+    }
+   ]
+  },
+  {
+   "slug": "humanities-data-is-constructed-not-given",
+   "title": "Humanities data is a selectively constructed abstraction, not a given.",
+   "statement": "In the humanities, data is not a neutral given but a manufactured, selectively constructed abstraction that stands in for an object of inquiry. Its production requires choices about what to collect and how to encode it, and calling source material \"data\" imports assumptions of discreteness, tractability, and reproducibility that sit uneasily with humanistic ways of knowing. Even providing heritage collections as data is an intentional act rather than a passive exposure of what already exists.",
+   "status": "grounded",
+   "topics": [
+    "Frame"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "owens-2011-defining-data",
+     "path": "10_distillates/publications/owens-2011-defining-data",
+     "statement": "s1"
+    },
+    {
+     "distillate": "schoech-2013-big-smart-clean-messy",
+     "path": "10_distillates/publications/schoech-2013-big-smart-clean-messy",
+     "statement": "s2"
+    },
+    {
+     "distillate": "posner-2015-necessary-contradiction",
+     "path": "10_distillates/publications/posner-2015-necessary-contradiction",
+     "statement": "s1"
+    },
+    {
+     "distillate": "collectionsasdata-2019-santa-barbara",
+     "path": "10_distillates/publications/collectionsasdata-2019-santa-barbara",
+     "statement": "s2"
+    }
+   ]
+  },
+  {
+   "slug": "humanities-data-modelling-is-interpretive-shaping",
+   "title": "Humanities data models represent the interpretive shaping choices scholars make about their material.",
+   "statement": "Data models in the digital humanities represent the shaping choices scholars make when they represent and analyse their material, and modelling makes explicit the assumptions a scholar holds about the nature of a text or artefact. This grounds the paper's Section 2.2 point that the contributors to Flanders and Jannidis treat humanities data as the product of interpretive modelling rather than as given.",
+   "status": "grounded",
+   "topics": [
+    "Concepts"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "flanders-2019-shape-of-data",
+     "path": "10_distillates/publications/flanders-2019-shape-of-data",
+     "statement": "s1"
+    },
+    {
+     "distillate": "flanders-2019-shape-of-data",
+     "path": "10_distillates/publications/flanders-2019-shape-of-data",
+     "statement": "s2"
+    }
+   ]
+  },
+  {
+   "slug": "implementation-plan-cuts-work-into-checkable-milestones",
+   "title": "The implementation plan cuts the work into milestones that can be checked independently of each other.",
+   "statement": "The author states the intent behind the implementation plan as giving the LLM concrete milestones that can be checked independently. He expects that cut to happen by itself to some degree while holding the more precise specification to be the better one, and he says that concrete requirements for how a milestone is to be tested could be worked into the plan far more strongly than he did here. The plan of the recorded session holds eight milestones, and they are carried out one after another. What the source gives is the author's account of one worked session and the intent he attaches to the practice.",
+   "status": "grounded",
+   "topics": [
+    "Method"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "promptotyping-video-2-live-demo",
+     "path": "10_distillates/documents/promptotyping-video-2-live-demo",
+     "statement": "s17"
+    },
+    {
+     "distillate": "promptotyping-video-2-live-demo",
+     "path": "10_distillates/documents/promptotyping-video-2-live-demo",
+     "statement": "s24"
+    },
+    {
+     "distillate": "promptotyping-video-2-live-demo",
+     "path": "10_distillates/documents/promptotyping-video-2-live-demo",
+     "statement": "s39"
+    }
+   ]
+  },
+  {
+   "slug": "inherited-visualisation-conventions-carry-positivist-assumptions",
+   "title": "Visualisation tools borrowed from the sciences carry assumptions of observer-independent, certain knowledge.",
+   "statement": "Drucker argues that visualisation methods imported from the natural and social sciences embed assumptions of knowledge as observer-independent and certain rather than observer-dependent and interpretative, so their default conventions are unsuited to humanistic material without critical reworking.",
+   "status": "grounded",
+   "topics": [
+    "Frame"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "drucker-2011-humanities-approaches",
+     "path": "10_distillates/publications/drucker-2011-humanities-approaches",
+     "statement": "s3"
+    }
+   ]
+  },
+  {
+   "slug": "institutional-research-software-support-falls-short-of-need",
+   "title": "The research software support institutions provide falls short of what researchers need.",
+   "statement": "Across a survey of 1,149 researchers, primarily in the United States, the research-software-engineering, financial, and infrastructure support that institutions provide is inadequate to the respondents' needs, funding for software development activities is overwhelmingly reported as insufficient, and fewer than a third rate any surveyed dimension of support as sufficient. This grounds the paper's Section 1 premise that the institutionalised intermediary answer does not meet demand where it exists. The paper's further step, that the shortfall is larger still for individual researchers and small projects outside institutional attachment, is marked in the text as an inference and is not carried by this source.",
+   "status": "grounded",
+   "topics": [
+    "Frame"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "carver-2022-state-of-practice",
+     "path": "10_distillates/publications/carver-2022-state-of-practice",
+     "statement": "s1"
+    },
+    {
+     "distillate": "carver-2022-state-of-practice",
+     "path": "10_distillates/publications/carver-2022-state-of-practice",
+     "statement": "s2"
+    },
+    {
+     "distillate": "carver-2022-state-of-practice",
+     "path": "10_distillates/publications/carver-2022-state-of-practice",
+     "statement": "s3"
+    },
+    {
+     "distillate": "carver-2022-state-of-practice",
+     "path": "10_distillates/publications/carver-2022-state-of-practice",
+     "statement": "s4"
+    }
+   ]
+  },
+  {
+   "slug": "interface-defect-is-reported-through-the-element-identifier",
+   "title": "A defect in the running interface is reported to the LLM through the identifier of the element.",
+   "statement": "The author addresses a remaining user-interface error at a range element by naming the element's ID, on the ground that the ID is an identifier for the LLM as well, by which the element can be found. He adds that passing it with a hash would be cleaner. The fault is therefore stated in the terms the tool operates in rather than as a description of what looks wrong, and the knowledge that move takes is HTML-specific. The claim rests on one location in one recording by the method's author.",
+   "status": "grounded",
+   "topics": [
+    "Method"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "promptotyping-video-2-live-demo",
+     "path": "10_distillates/documents/promptotyping-video-2-live-demo",
+     "statement": "s33"
+    }
+   ]
+  },
+  {
+   "slug": "klawiter-entries-verified-2026-07-19",
+   "title": "Klawiter's stated Section 5 figures held against the repository as verified on 2026-07-19.",
+   "statement": "The Klawiter case study's stated figures, 6,296 entries and the existence of a 7-stage pipeline, matched the project repository when the Section 5 verification checked them on 2026-07-19. Checked against the deliverable on 2026-07-25, the 6,296 entries are still reported there, while the number of pipeline stages is not; for that figure the claim stands as a checked finding about the repository.",
+   "status": "grounded",
+   "topics": [
+    "Evidence"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "verification-paper-figures-2026-07-19",
+     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "statement": "s9"
+    }
+   ]
+  },
+  {
+   "slug": "klawiter-test-count-2026-07-19",
+   "title": "The Klawiter repository holds 247 test functions as verified on 2026-07-19.",
+   "statement": "As verified on 2026-07-19, the Klawiter repository holds 247 test functions. The paper's figure of 264 is reachable only as the parametrised collection count, so the counting rule decides which number applies. Checked against the deliverable on 2026-07-25, no test count is reported there any longer; the claim stands as a checked finding about the repository.",
+   "status": "grounded",
+   "topics": [
+    "Evidence"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "verification-paper-figures-2026-07-19",
+     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "statement": "s19"
+    }
+   ]
+  },
+  {
+   "slug": "kulturpool-repo-unresolvable-2026-07-19",
+   "title": "The Kulturpool Explorer repository was unresolvable and its object figure is an API-scale value as verified on 2026-07-19.",
+   "statement": "As verified on 2026-07-19, the linked Kulturpool Explorer repository `chpollin/vkm-explorer` returned a 404, so its state could not be checked. The paper's figure of about 19,000 objects is an API-scale value rather than a repository count, which is the part that remains supportable.",
+   "status": "grounded",
+   "topics": [
+    "Evidence"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "verification-paper-figures-2026-07-19",
+     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "statement": "s21"
+    }
+   ]
+  },
+  {
+   "slug": "llm-based-agents-for-software-engineering",
+   "title": "LLM-based agents, LLMs augmented with tool use, are applied to software engineering with demonstrated effectiveness.",
+   "statement": "LLM-based agents extend standalone LLMs with the ability to perceive and use external tools and resources, and a systematic survey documents their application to software engineering with demonstrated effectiveness. This is the reference behind the paper's Section 2.4 mention of the LLM-based agents that Spec-Driven-Development frameworks orchestrate.",
+   "status": "grounded",
+   "topics": [
+    "Frame"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "liu-2024-llm-agents-se-survey",
+     "path": "10_distillates/publications/liu-2024-llm-agents-se-survey",
+     "statement": "s1"
+    },
+    {
+     "distillate": "liu-2024-llm-agents-se-survey",
+     "path": "10_distillates/publications/liu-2024-llm-agents-se-survey",
+     "statement": "s2"
+    }
+   ]
+  },
+  {
+   "slug": "llm-reproducibility-transparency-recommendations",
+   "title": "Reproducible LLM-based research requires transparency of prompts, model versions and settings against model non-determinism.",
+   "statement": "A methodological primer for LLM use in social science makes transparency of prompts, code, data, model versions and settings the precondition for replicable results, and grounds this in the non-deterministic and continuously evolving nature of the models. The paper cites these recommendations in Section 6.3 as convergent with its own relocation of reproducibility onto the documents, the process record and the deterministic pipeline rather than the non-reproducible token sequence.",
+   "status": "grounded",
+   "topics": [
+    "Concepts"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "abdurahman-2025-primer-llm-evaluation",
+     "path": "10_distillates/publications/abdurahman-2025-primer-llm-evaluation",
+     "statement": "s2"
+    },
+    {
+     "distillate": "abdurahman-2025-primer-llm-evaluation",
+     "path": "10_distillates/publications/abdurahman-2025-primer-llm-evaluation",
+     "statement": "s3"
+    }
+   ]
+  },
+  {
+   "slug": "llm-vocabulary-test-2025-fell-short-of-thesaurus-interoperability",
+   "title": "A 2025 test of GPT-4 and DeepL Write on specialist vocabulary lacked the terminological precision and hierarchical embedding required for thesaurus-level interoperability.",
+   "statement": "Prompt-based queries to GPT-4 and DeepL Write, tested between April and June 2025 on specialist art and architecture terms, yielded at best general definitions and lacked the terminological precision, conceptual differentiation, and hierarchical embedding that thesaurus-level interoperability requires. This grounds the paper's Section 6.2 footnote evidence that current models do not reach the interpretive precision the task demands.",
+   "status": "grounded",
+   "topics": [
+    "ArtefactVerification"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "stanicka-2026-cross-linking-vocabularies",
+     "path": "10_distillates/publications/stanicka-2026-cross-linking-vocabularies",
+     "statement": "s3"
+    }
+   ]
+  },
+  {
+   "slug": "llms-amplify-research-not-automate-it",
+   "title": "LLMs amplify computer-based research work rather than automate research, and do so asymmetrically.",
+   "statement": "Current LLMs do not automate the research process; they massively amplify computer-based research work, everything done on a screen with data, code, text, and literature, strengthening the abilities of experts who bring domain knowledge and AI literacy. This amplification is deeply asymmetric: it benefits those with access, competence, and resources and widens existing gaps rather than democratising research.",
+   "status": "grounded",
+   "topics": [
+    "Limitations"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "pollin-2026a-asymmetric-amplification",
+     "path": "10_distillates/publications/pollin-2026a-asymmetric-amplification",
+     "statement": "s1"
+    },
+    {
+     "distillate": "pollin-2026a-asymmetric-amplification",
+     "path": "10_distillates/publications/pollin-2026a-asymmetric-amplification",
+     "statement": "s2"
+    },
+    {
+     "distillate": "pollin-2026b-lisa-positioning",
+     "path": "10_distillates/publications/pollin-2026b-lisa-positioning",
+     "statement": "s5"
+    }
+   ]
+  },
+  {
+   "slug": "lucina-figures-verified-2026-07-19",
+   "title": "Lucina's stated Section 5 figures held against the repository as verified on 2026-07-19.",
+   "statement": "The Lucina case study's stated figures, 128 neo-Latin poems and 5 iterations, matched the project repository when the Section 5 verification checked them on 2026-07-19. Checked against the deliverable on 2026-07-25, neither the figures nor the project appear there. The drift audit places that absence before the revision rounds of 2026-07-24 and 2026-07-25, since the deliverable already offered no point of attachment for these figures when the vault was built, so this is not a figure the deliverable dropped. The claim stands as a checked finding about the repository.",
+   "status": "grounded",
+   "topics": [
+    "Evidence"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "verification-paper-figures-2026-07-19",
+     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "statement": "s4"
+    }
+   ]
+  },
+  {
+   "slug": "m3gim-decision-count-2026-07-19",
+   "title": "The M³GIM repository holds about 127 decision entries as verified on 2026-07-19.",
+   "statement": "As verified on 2026-07-19, the M³GIM repository holds about 127 E-entries, above the paper's figure of 49 documented decisions, which reflects continued growth of the repository. Checked against the deliverable on 2026-07-25, no decision count is reported there any longer; the claim stands as a checked finding about the repository.",
+   "status": "grounded",
+   "topics": [
+    "Evidence"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "verification-paper-figures-2026-07-19",
+     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "statement": "s17"
+    }
+   ]
+  },
+  {
+   "slug": "macedo-first-process-taxonomy-sdd-frameworks",
+   "title": "A first process taxonomy of agentic software-development frameworks exists, scoring them on six dimensions.",
+   "statement": "Macedo 2026 supplies the first study centred on the operational frameworks that turn LLM and agent capabilities into a development process, contributing a six-dimension process taxonomy, specification, context, roles, execution, validation and portability, with a scoring rubric. This is the source behind the paper's Section 2.4 statement that a first process taxonomy of the Spec-Driven-Development frameworks now exists.",
+   "status": "grounded",
+   "topics": [
+    "Frame"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "macedo-2026-from-prompt-to-process",
+     "path": "10_distillates/publications/macedo-2026-from-prompt-to-process",
+     "statement": "s2"
+    },
+    {
+     "distillate": "macedo-2026-from-prompt-to-process",
+     "path": "10_distillates/publications/macedo-2026-from-prompt-to-process",
+     "statement": "s3"
+    }
+   ]
+  },
+  {
+   "slug": "madmps-demand-documents-infrastructure-can-act-on",
+   "title": "Machine-actionable DMPs demand documents that infrastructure can act on, exchange, and embed in workflows.",
+   "statement": "Miksa et al. call for machine-actionable DMPs that exchange information across research tools and systems and embed in existing workflows, and present ten principles to put maDMPs into practice. The document becomes something infrastructure acts on, not a text left unread.",
+   "status": "grounded",
+   "topics": [
+    "Method"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "miksa-2019-machine-actionable-dmps",
+     "path": "10_distillates/publications/miksa-2019-machine-actionable-dmps",
+     "statement": "s3"
+    },
+    {
+     "distillate": "miksa-2019-machine-actionable-dmps",
+     "path": "10_distillates/publications/miksa-2019-machine-actionable-dmps",
+     "statement": "s4"
+    }
+   ]
+  },
+  {
+   "slug": "making-source-data-machine-addressable-is-interpretive-modelling",
+   "title": "Source data legible only as PDF layout becomes machine-addressable only through explicit markup, and the categorisation this requires is itself interpretive.",
+   "statement": "Where a source exists as human-readable layout, its structure must be reconstructed before it computes: a PDF table readable to the eye cannot be processed until markup makes each cell explicit. The categorial differentiation this modelling introduces, normalising entries under shared categories, is not neutral cleaning but forms new distinctions that count as part of a historical interpretation, and even the visualisation of the result is an expression of interpretation rather than a mere representation of the data. This grounds the paper's Section 2.2 claim that semantic explicitness is a condition of computation and that data construction is interpretive labour in its own right.",
+   "status": "grounded",
+   "topics": [
+    "Frame"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "cremer-2025-quellen-und-datenkritik",
+     "path": "10_distillates/publications/cremer-2025-quellen-und-datenkritik",
+     "statement": "s2"
+    },
+    {
+     "distillate": "cremer-2025-quellen-und-datenkritik",
+     "path": "10_distillates/publications/cremer-2025-quellen-und-datenkritik",
+     "statement": "s3"
+    },
+    {
+     "distillate": "cremer-2025-quellen-und-datenkritik",
+     "path": "10_distillates/publications/cremer-2025-quellen-und-datenkritik",
+     "statement": "s4"
+    }
+   ]
+  },
+  {
+   "slug": "medieval-test-count-2026-07-19",
+   "title": "The Medieval Legal Transactions repository holds 192 test functions and 6 knowledge documents as verified on 2026-07-19.",
+   "statement": "As verified on 2026-07-19, the Medieval Legal Transactions repository holds 192 test functions across 10 files and a knowledge folder of 6 content documents plus a README. The paper's figure of 381 regression tests is a collection count whose exact value needs a pytest run, and its figure of 8 knowledge documents overstates the current 6. Checked against the deliverable on 2026-07-25, neither a test count nor a knowledge document count is reported there any longer; the claim stands as a checked finding about the repository.",
+   "status": "grounded",
+   "topics": [
+    "Evidence"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "verification-paper-figures-2026-07-19",
+     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "statement": "s20"
+    }
+   ]
+  },
+  {
+   "slug": "medieval-xml-count-2026-07-19",
+   "title": "The Medieval Legal Transactions repository holds 3,611 XML files with 3,092 in done folders as verified on 2026-07-19.",
+   "statement": "As verified on 2026-07-19, the Medieval Legal Transactions repository holds 3,611 XML files under `sources/` and 3,092 in `done/` folders, and no figure of 6,400 was found in the repository.",
+   "status": "grounded",
+   "topics": [
+    "Evidence"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "verification-paper-figures-2026-07-19",
+     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "statement": "s11"
+    }
+   ]
+  },
+  {
+   "slug": "milestone-check-deferred-in-the-recorded-session",
+   "title": "In the recorded session the run advances to the next milestone on a bare continuation instruction, and the artefact is inspected several milestones later.",
+   "statement": "The recorded live demonstration works the milestones of the implementation plan one after another, and when a run stops, one of the two moves the author names is the bare `continue` that carries the procedure on inside the plan. Inspection of what was built enters afterwards, through screenshots handed to the tool because it never sees the web page, and through the browser console. At that point several milestones already stand. The claim covers the observed course of one session. Whether a verification is owed per milestone is a rule the source does not state, and the claim asserts nothing about it. Both videos are one witness, the method's author giving an account of his own practice, so this is a recorded case without independent confirmation.",
+   "status": "grounded",
+   "topics": [
+    "Method",
+    "Limitations"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "promptotyping-video-2-live-demo",
+     "path": "10_distillates/documents/promptotyping-video-2-live-demo",
+     "statement": "s28"
+    },
+    {
+     "distillate": "promptotyping-video-2-live-demo",
+     "path": "10_distillates/documents/promptotyping-video-2-live-demo",
+     "statement": "s31"
+    },
+    {
+     "distillate": "promptotyping-video-2-live-demo",
+     "path": "10_distillates/documents/promptotyping-video-2-live-demo",
+     "statement": "s39"
+    },
+    {
+     "distillate": "promptotyping-video-2-live-demo",
+     "path": "10_distillates/documents/promptotyping-video-2-live-demo",
+     "statement": "s40"
+    }
+   ]
+  },
+  {
+   "slug": "minimal-computing-reduces-code-and-dependencies",
+   "title": "Minimal computing means reducing computation literally: less code, fewer bytes, less processing.",
+   "statement": "For Risam and Gil, reduction in minimal computing is meant literally, as less code or fewer bytes and, in turn, less computational processing time or capacity. This is the reductive commitment the paper draws on for the fewest-moving-parts artefact.",
+   "status": "grounded",
+   "topics": [
+    "ArtefactVerification"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "risam-2022-minimal-computing",
+     "path": "10_distillates/publications/risam-2022-minimal-computing",
+     "statement": "s3"
+    }
+   ]
+  },
+  {
+   "slug": "minimal-computing-resists-scale-as-innovation",
+   "title": "Minimal computing is a constraint-driven mode of DH praxis that resists equating innovation with scale.",
+   "statement": "Risam and Gil define minimal computing as digital humanities work undertaken under a set of constraints, and as a mode of thinking about DH praxis that resists the idea that innovation is defined by newness, scale, or scope.",
+   "status": "grounded",
+   "topics": [
+    "ArtefactVerification"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "risam-2022-minimal-computing",
+     "path": "10_distillates/publications/risam-2022-minimal-computing",
+     "statement": "s1"
+    },
+    {
+     "distillate": "risam-2022-minimal-computing",
+     "path": "10_distillates/publications/risam-2022-minimal-computing",
+     "statement": "s2"
+    }
+   ]
+  },
+  {
+   "slug": "notker-figures-verified-2026-07-19",
+   "title": "Notker's stated Section 5 figures held against the repository as verified on 2026-07-19.",
+   "statement": "The Notker case study's stated figures, Psalm 2 with 13 verses and 6 text-layer controls, matched the project repository when the Section 5 verification checked them on 2026-07-19. Checked against the deliverable on 2026-07-25, Psalm 2 with its thirteen verses is still reported there, while the count of text-layer controls is not; for that figure the claim stands as a checked finding about the repository.",
+   "status": "grounded",
+   "topics": [
+    "Evidence"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "verification-paper-figures-2026-07-19",
+     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "statement": "s8"
+    }
+   ]
+  },
+  {
+   "slug": "ontologies-are-shared-vocabularies-for-reuse",
+   "title": "A shared ontology is a common vocabulary that enables reuse of formally represented knowledge.",
+   "statement": "Defining a common vocabulary for a shared domain of discourse supports the sharing and reuse of formally represented knowledge. In applied practice this holds concretely: the Bookkeeping Ontology's shared vocabulary eases communication within a project team and can be reused by other projects, so the model is criticised and extended through reuse.",
+   "status": "grounded",
+   "topics": [
+    "Concepts"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "gruber-1993-ontolingua",
+     "path": "10_distillates/publications/gruber-1993-ontolingua",
+     "statement": "s3"
+    },
+    {
+     "distillate": "pollin-2019-depcha-bookkeeping",
+     "path": "10_distillates/publications/pollin-2019-depcha-bookkeeping",
+     "statement": "s4"
+    }
+   ]
+  },
+  {
+   "slug": "ontology-derivation-yields-structure-and-exposes-model-defects",
+   "title": "Deriving a domain description from a formal vocabulary yields its structural layer and exposes modelling defects, while subject matter, graph shape, absences and reliability stay outside it.",
+   "statement": "In a documented project whose namespace was formalised as an ontology, the domain document of the knowledge base could be derived from that formal source for its structural layer, the class hierarchy, the permitted connections between classes, the typed date properties and the ordering of the controlled vocabularies. What did not derive was the subject matter and research question, the shape the graph actually takes in the data, deliberate absences, and the reliability of a given entry, and part of what did derive rested on prose annotations carried inside the ontology. The finding that reached furthest was diagnostic: having to state a domain, a range and a value range for every term made modelling problems visible that had gone unnoticed. This grounds the Section 2.2 passage on what ontology-based data buys the method's context layer.",
+   "status": "grounded",
+   "topics": [
+    "Frame"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "m3gim-vocab-derivation-2026-07-24",
+     "path": "10_distillates/documents/m3gim-vocab-derivation-2026-07-24",
+     "statement": "s2"
+    },
+    {
+     "distillate": "m3gim-vocab-derivation-2026-07-24",
+     "path": "10_distillates/documents/m3gim-vocab-derivation-2026-07-24",
+     "statement": "s4"
+    },
+    {
+     "distillate": "m3gim-vocab-derivation-2026-07-24",
+     "path": "10_distillates/documents/m3gim-vocab-derivation-2026-07-24",
+     "statement": "s5"
+    },
+    {
+     "distillate": "m3gim-vocab-derivation-2026-07-24",
+     "path": "10_distillates/documents/m3gim-vocab-derivation-2026-07-24",
+     "statement": "s7"
+    }
+   ]
+  },
+  {
+   "slug": "ontology-is-explicit-specification-of-conceptualization",
+   "title": "An ontology is an explicit specification of a conceptualization.",
+   "statement": "In Gruber's canonical definition, an ontology is an explicit specification of a conceptualization, where a conceptualization is an abstract, simplified view of the world one wishes to represent for some purpose. The definition ties the formal artifact to a deliberate, purpose-driven abstraction of a domain.",
+   "status": "grounded",
+   "topics": [
+    "Concepts"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "gruber-1993-ontolingua",
+     "path": "10_distillates/publications/gruber-1993-ontolingua",
+     "statement": "s1"
+    },
+    {
+     "distillate": "gruber-1993-ontolingua",
+     "path": "10_distillates/publications/gruber-1993-ontolingua",
+     "statement": "s2"
+    }
+   ]
+  },
+  {
+   "slug": "operationalisation-develops-a-measurement-for-a-concept",
+   "title": "Operationalisation is the development of a measurement that assigns instances to a concept, and the choices it makes govern what the results can mean.",
+   "statement": "Operationalisation develops the steps that assign the instantiations of a concept unambiguously to that concept and thereby measure it, which is what carries a theoretical concept over into something detectable in data. Merely applying an existing measurement is not operationalisation in this sense. The choices made in it are consequential, because they govern which results can be reached and how those results may be read against the original research question. This grounds the paper's Section 2.2 sentence that operationalisation is the step through which a humanities abstraction becomes computable.",
+   "status": "grounded",
+   "topics": [
+    "Concepts"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "pichler-2022-operationalization",
+     "path": "10_distillates/publications/pichler-2022-operationalization",
+     "statement": "s1"
+    },
+    {
+     "distillate": "pichler-2022-operationalization",
+     "path": "10_distillates/publications/pichler-2022-operationalization",
+     "statement": "s2"
+    },
+    {
+     "distillate": "pichler-2022-operationalization",
+     "path": "10_distillates/publications/pichler-2022-operationalization",
+     "statement": "s5"
+    }
+   ]
+  },
+  {
+   "slug": "overengineering-check-cuts-the-specification-before-implementation",
+   "title": "A check for overengineering cuts the specification back to a minimal scope before the agent implements.",
+   "statement": "When the architecture document arrives with a folder structure holding very many files, the author asks whether a minimum viable product can be built from it first, and he calls having the architecture shown before any code a good strategy against the volume of unnecessary code the system produces. His order is then to look at everything again from another, honestly constructive perspective, to check whether the result is overengineered and whether the documents fit together. The tool returns points of criticism and inconsistencies, among them the tendency the author names as typical, an unrequested dark mode a minimum viable product does not need, and keyboard shortcuts are ruled out with it. The documents come back simplified, the scope reduced to line charts and bar charts, which the author accepts for the first iteration. His summary of the session records a second pass over the architecture, user-interface and user-story documents whose purpose was a state that is not overengineered. The check sits between the document set and the build, and it is recorded once, in one session by the method's author.",
+   "status": "grounded",
+   "topics": [
+    "Method"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "promptotyping-video-2-live-demo",
+     "path": "10_distillates/documents/promptotyping-video-2-live-demo",
+     "statement": "s12"
+    },
+    {
+     "distillate": "promptotyping-video-2-live-demo",
+     "path": "10_distillates/documents/promptotyping-video-2-live-demo",
+     "statement": "s13"
+    },
+    {
+     "distillate": "promptotyping-video-2-live-demo",
+     "path": "10_distillates/documents/promptotyping-video-2-live-demo",
+     "statement": "s15"
+    },
+    {
+     "distillate": "promptotyping-video-2-live-demo",
+     "path": "10_distillates/documents/promptotyping-video-2-live-demo",
+     "statement": "s18"
+    },
+    {
+     "distillate": "promptotyping-video-2-live-demo",
+     "path": "10_distillates/documents/promptotyping-video-2-live-demo",
+     "statement": "s39"
+    }
+   ]
+  },
+  {
+   "slug": "owens-data-holds-evidentiary-value",
+   "title": "Data is not itself evidence but a multifaceted object that can be mobilised as evidence.",
+   "statement": "Data is not in and of itself a kind of evidence. It is a multifaceted object, readable as constructed artifact, as authored text, and as computer-processable information, that can be mobilised as evidence in support of an argument. The evidentiary status is conferred by the argument, not carried intrinsically by the data.",
+   "status": "grounded",
+   "topics": [
+    "Frame"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "owens-2011-defining-data",
+     "path": "10_distillates/publications/owens-2011-defining-data",
+     "statement": "s3"
+    },
+    {
+     "distillate": "owens-2011-defining-data",
+     "path": "10_distillates/publications/owens-2011-defining-data",
+     "statement": "s2"
+    }
+   ]
+  },
+  {
+   "slug": "promptotyping-documentation-over-software",
+   "title": "From its first description Promptotyping set the documentation of requirements above finished software as its aim.",
+   "statement": "The first public description sets the method's aim as documenting requirements quickly and precisely for subsequent implementation by an LLM. Producing finished software directly is not the aim; the documentation is the primary artifact of the work. These documents carry comprehensive context, among it the domain background, information on the data used, and technical formalizations.",
+   "status": "grounded",
+   "topics": [
+    "Method",
+    "Genealogy"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "pollin-2025d-promptotyping-blog",
+     "path": "10_distillates/publications/pollin-2025d-promptotyping-blog",
+     "statement": "s3"
+    },
+    {
+     "distillate": "pollin-2025d-promptotyping-blog",
+     "path": "10_distillates/publications/pollin-2025d-promptotyping-blog",
+     "statement": "s4"
+    }
+   ]
+  },
+  {
+   "slug": "promptotyping-documents-are-the-primary-artifact",
+   "title": "The Promptotyping Documents are the primary artifact; the code is a regenerable mapping.",
+   "statement": "In the L.I.S.A. positioning, the Promptotyping Documents are distilled knowledge that keeps context explicit and are the actual artifact of the context engineering, enabling continued work even when the code is regenerated. The process focuses on one task, mapping research data onto interfaces, and what distinguishes Promptotyping from Vibe Coding is its structured procedure and active requirements analysis interwoven with documentation and implementation. Checked against the deliverable on 2026-07-25, the primary-artefact formula has been withdrawn there; what the deliverable now carries is that the documents are what is maintained and the artefact is regenerated from them. The claim stands as a checked statement about the L.I.S.A. positioning without a current use in the deliverable.",
+   "status": "grounded",
+   "topics": [
+    "Method"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "pollin-2026b-lisa-positioning",
+     "path": "10_distillates/publications/pollin-2026b-lisa-positioning",
+     "statement": "s3"
+    },
+    {
+     "distillate": "pollin-2026b-lisa-positioning",
+     "path": "10_distillates/publications/pollin-2026b-lisa-positioning",
+     "statement": "s4"
+    },
+    {
+     "distillate": "pollin-2026b-lisa-positioning",
+     "path": "10_distillates/publications/pollin-2026b-lisa-positioning",
+     "statement": "s2"
+    }
+   ]
+  },
+  {
+   "slug": "promptotyping-documents-form-freedom",
+   "title": "The first description declared the Promptotyping Documents form-free, with none strictly prescribed.",
+   "statement": "The first public description treats the documents as flexible orientation aids to be adapted to project requirements and declares none of them strictly prescribed. It thereby establishes the form freedom of the documents as a design stance from the outset.",
+   "status": "grounded",
+   "topics": [
+    "Method"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "pollin-2025d-promptotyping-blog",
+     "path": "10_distillates/publications/pollin-2025d-promptotyping-blog",
+     "statement": "s7"
+    }
+   ]
+  },
+  {
+   "slug": "promptotyping-is-a-four-phase-context-engineering-technique",
+   "title": "Promptotyping is an iterative four-phase context-engineering technique with form-free documents.",
+   "statement": "The L.I.S.A. article defines Promptotyping as an iterative context-engineering technique in four phases, developing research artifacts such as interfaces, tools, or workflows together with frontier LLMs. The Promptotyping Documents that carry the context adapt to the domain and have no fixed formal prescription. This four-phase framing is a different axis from the three-stage framing of the earlier Critical Vibing blog, which names integrated components rather than process phases.",
+   "status": "grounded",
+   "topics": [
+    "Method"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "pollin-2026b-lisa-positioning",
+     "path": "10_distillates/publications/pollin-2026b-lisa-positioning",
+     "statement": "s1"
+    },
+    {
+     "distillate": "pollin-2026b-lisa-positioning",
+     "path": "10_distillates/publications/pollin-2026b-lisa-positioning",
+     "statement": "s7"
+    }
+   ]
+  },
+  {
+   "slug": "promptotyping-named-first-described-2025-04",
+   "title": "The method was named Promptotyping and first publicly described on 2025-04-24 as an iterative, document-based method in four phases oriented on User-Centred Design.",
+   "statement": "The DHCraft blog post introduces the method under the name Promptotyping and presents it as a systematic development of the earlier Vibe Coding approach. It defines Promptotyping as a prompt-engineering method whose requirements are developed iteratively through targeted prompting strategies and continuously refined in clearly structured documents, and it describes the process as running in four iterative, mutually building phases oriented on User-Centred Design. This is the method's first public description; the CSL record for pollin-2025d carries its publication date as 2025-04-24.",
+   "status": "grounded",
+   "topics": [
+    "Genealogy"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "pollin-2025d-promptotyping-blog",
+     "path": "10_distillates/publications/pollin-2025d-promptotyping-blog",
+     "statement": "s1"
+    },
+    {
+     "distillate": "pollin-2025d-promptotyping-blog",
+     "path": "10_distillates/publications/pollin-2025d-promptotyping-blog",
+     "statement": "s2"
+    },
+    {
+     "distillate": "pollin-2025d-promptotyping-blog",
+     "path": "10_distillates/publications/pollin-2025d-promptotyping-blog",
+     "statement": "s6"
+    }
+   ]
+  },
+  {
+   "slug": "radical-design-request-widens-the-interface-option-space",
+   "title": "A deliberately outlandish design request widens the space of interface options the session considers.",
+   "statement": "At the close of the recorded session the author orders a design in the style of Frank Herbert's Dune, classes the step as unprofessional, and states that trying radically different things with such interfaces can yield interface elements and designs nobody had thought of, which widens the possibility space and lets the first iteration teach something for the next phase. A single prompt produces the science-fiction interface, whose sense he leaves open, and he names the exploration of the possibility space as what Promptotyping is about. The claim carries the widening as the source states it. That the tool's defaults reproduce design conventions is not stated in this source; the nearest thing it carries is the unrequested dark mode as a typical addition. The witness is the method's author on his own session.",
+   "status": "grounded",
+   "topics": [
+    "Method"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "promptotyping-video-2-live-demo",
+     "path": "10_distillates/documents/promptotyping-video-2-live-demo",
+     "statement": "s36"
+    },
+    {
+     "distillate": "promptotyping-video-2-live-demo",
+     "path": "10_distillates/documents/promptotyping-video-2-live-demo",
+     "statement": "s37"
+    }
+   ]
+  },
+  {
+   "slug": "record-does-not-separate-document-depth-from-verification-effort",
+   "title": "The documented record separates neither document depth from verification effort nor either of them from the attention a project received overall.",
+   "statement": "Document depth and verification effort in the documented projects are the same practitioner's investment, and the corpus audit of 2026-07-23 found them co-varying throughout, with deep document sets present even in the one-day builds and no project pairing deep documents with demonstrably low verification. The observation that artefact quality co-varies with the expertise invested in the documents therefore cannot be attributed to document depth alone; the total attention a project received remains an equally consistent reading of the same record.",
+   "status": "grounded",
+   "topics": [
+    "Limitations"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "revision-audit-a2-2026-07-23",
+     "path": "10_distillates/documents/revision-audit-a2-2026-07-23",
+     "statement": "s1"
+    },
+    {
+     "distillate": "revision-audit-a2-2026-07-23",
+     "path": "10_distillates/documents/revision-audit-a2-2026-07-23",
+     "statement": "s2"
+    }
+   ]
+  },
+  {
+   "slug": "record-has-no-failure-case-and-a-bounded-yield-pole",
+   "title": "The record carries no documented failure case, and at its negative pole stands bounded yield where the documents stayed thin.",
+   "statement": "The project inventory and the worked cases present successes only, so a statement that failures cluster where documentation was vague has no documented case behind it. What the record does carry at the negative pole is bounded yield, the case in which a single design document is all that stands between an artefact and the visualisation conventions a model reproduces by default. A ranking of the projects by documentation depth does not carry this pole, because the verified count places the case in question at thirteen knowledge files, the same order of magnitude as the deeply documented cases, while the paper's lower figure describes an earlier build state.",
+   "status": "grounded",
+   "topics": [
+    "Evidence"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "revision-audit-a2-2026-07-23",
+     "path": "10_distillates/documents/revision-audit-a2-2026-07-23",
+     "statement": "s3"
+    },
+    {
+     "distillate": "verification-paper-figures-2026-07-19",
+     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "statement": "s18"
+    }
+   ]
+  },
+  {
+   "slug": "reproducibility-shifts-to-documented-justification",
+   "title": "In LLM-assisted work reproducibility shifts from identical repetition to traceable justification.",
+   "statement": "Reproducibility is reframed from identical repetition to a traceable, documented justification, comparable to qualitative research. This reframing meets a prior condition of the humanities, where reproducible research in the strong sense has limited currency because the scholar's subject position is bound to the scholarship. Checked against the deliverable on 2026-07-25, the reframing itself is still in use there, in the reproducibility passage that locates reproducibility in the documents, the process record, and the deterministic pipeline. The Posner half has lost its use, because the deliverable cites Posner only in the footnote closing Section 2.2, on humanities data as a necessary contradiction, and says nothing about reproducibility at that place. For that half the claim stands as a checked statement without a current use in the deliverable.",
+   "status": "grounded",
+   "topics": [
+    "Method"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "pollin-2026b-lisa-positioning",
+     "path": "10_distillates/publications/pollin-2026b-lisa-positioning",
+     "statement": "s6"
+    },
+    {
+     "distillate": "posner-2015-necessary-contradiction",
+     "path": "10_distillates/publications/posner-2015-necessary-contradiction",
+     "statement": "s4"
+    }
+   ]
+  },
+  {
+   "slug": "research-data-is-defined-by-the-function-it-serves",
+   "title": "What makes data research data is the function it serves, not a list of data types.",
+   "statement": "The German-language digital humanities have no uniform definition of research data, and the functional route decides the question instead: data of a research process counts as research data where it is needed to justify the findings, to sustain their claim to truth, or to reproduce the individual steps. This grounds the paper's Section 2.2 sentence that research data is constituted by the function it serves, with grounding, examination of validity claims, and reproduction as the three duties named there. The source withholds a definition on purpose and offers these criteria as selection criteria, so the claim carries the functional cut and not a definition attributed to this source.",
+   "status": "grounded",
+   "topics": [
+    "Concepts"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "geiger-2023-daten-forschungsdaten",
+     "path": "10_distillates/publications/geiger-2023-daten-forschungsdaten",
+     "statement": "s1"
+    },
+    {
+     "distillate": "geiger-2023-daten-forschungsdaten",
+     "path": "10_distillates/publications/geiger-2023-daten-forschungsdaten",
+     "statement": "s4"
+    }
+   ]
+  },
+  {
+   "slug": "research-software-engineers-are-scarce",
+   "title": "Software engineers who combine research experience with domain knowledge are scarce.",
+   "statement": "Research software engineers who hold both research experience and domain knowledge are in very short supply, for want of institutional homes and career paths, and the fallback of contract programmers typically fails because they lack research experience and underrate the cultural gap between business and academia. This grounds the paper's Section 1 premise that the intermediary answer, even once institutionalised as a profession, does not reach the individual researcher or small project as a matter of course.",
+   "status": "grounded",
+   "topics": [
+    "Frame"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "baxter-2012-research-software-engineer",
+     "path": "10_distillates/publications/baxter-2012-research-software-engineer",
+     "statement": "s1"
+    },
+    {
+     "distillate": "baxter-2012-research-software-engineer",
+     "path": "10_distillates/publications/baxter-2012-research-software-engineer",
+     "statement": "s2"
+    }
+   ]
+  },
+  {
+   "slug": "ro-crate-packages-artefacts-with-machine-readable-metadata",
+   "title": "RO-Crate packages research artefacts with their metadata as a machine-readable Schema.org/JSON-LD archive.",
+   "statement": "RO-Crate is an open, lightweight, community-driven approach that packages research artefacts with their metadata in machine-readable form, based on Schema.org annotations in JSON-LD; an RO-Crate is a structured archive of all items that contributed to a research outcome, with their identifiers, provenance, relations, and annotations. Orphaned by the revision of 2026-07-24, when the operator removed the RO-Crate delimitation from the document layer of the deliverable; noted in the claim itself on 2026-07-25, having stood until then only in the vault's state register. The claim stands as a checked statement without a current use in the deliverable.",
+   "status": "grounded",
+   "topics": [
+    "Method"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "soiland-2022-ro-crate",
+     "path": "10_distillates/publications/soiland-2022-ro-crate",
+     "statement": "s1"
+    },
+    {
+     "distillate": "soiland-2022-ro-crate",
+     "path": "10_distillates/publications/soiland-2022-ro-crate",
+     "statement": "s2"
+    },
+    {
+     "distillate": "soiland-2022-ro-crate",
+     "path": "10_distillates/publications/soiland-2022-ro-crate",
+     "statement": "s3"
+    }
+   ]
+  },
+  {
+   "slug": "rse-institutionalised-intermediary-profession",
+   "title": "The Research Software Engineering movement institutionalised the domain-technical intermediary as a recognised profession.",
+   "statement": "The Research Software Engineering movement recognises and supports the people who build research software, treating them as critical members of research teams and establishing research software work as a realistic professional career with dedicated roles. This grounds the paper's Section 1 point that the field answered its translation problem between scholars and programmers by institutionalising a human intermediary as a profession, the answer Promptotyping reaches differently.",
+   "status": "grounded",
+   "topics": [
+    "Frame"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "cohen-2021-four-pillars-rse",
+     "path": "10_distillates/publications/cohen-2021-four-pillars-rse",
+     "statement": "s1"
+    },
+    {
+     "distillate": "cohen-2021-four-pillars-rse",
+     "path": "10_distillates/publications/cohen-2021-four-pillars-rse",
+     "statement": "s2"
+    },
+    {
+     "distillate": "cohen-2021-four-pillars-rse",
+     "path": "10_distillates/publications/cohen-2021-four-pillars-rse",
+     "statement": "s3"
+    }
+   ]
+  },
+  {
+   "slug": "sarkar-vibe-coding-material-disengagement",
+   "title": "The first empirical study of vibe coding describes it as an iterative goal-satisfaction cycle under selective human oversight.",
+   "statement": "The first empirical study of vibe coding, based on over eight hours of think-aloud video, characterises the practice as an iterative goal-satisfaction cycle of prompting, rapid evaluation and manual editing, and as an early form of material disengagement in which practitioners orchestrate AI-produced code while keeping selective, strategic oversight. This grounds the paper's Section 2.4 treatment of vibe coding as an exploratory mode retained inside the method rather than rejected.",
+   "status": "grounded",
+   "topics": [
+    "Frame"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "sarkar-2025-vibe-coding",
+     "path": "10_distillates/publications/sarkar-2025-vibe-coding",
+     "statement": "s1"
+    },
+    {
+     "distillate": "sarkar-2025-vibe-coding",
+     "path": "10_distillates/publications/sarkar-2025-vibe-coding",
+     "statement": "s2"
+    },
+    {
+     "distillate": "sarkar-2025-vibe-coding",
+     "path": "10_distillates/publications/sarkar-2025-vibe-coding",
+     "statement": "s4"
+    }
+   ]
+  },
+  {
+   "slug": "schoech-distinguishes-smart-and-big-data",
+   "title": "Schöch separates smart data from big data along structure, cleanliness, and volume.",
+   "statement": "Schöch posits two core types of humanities data. Smart data is structured or semi-structured, explicit, enriched with markup and metadata, and clean, and is therefore small in volume because its creation depends on human agency. Big data, by contrast, is relatively unstructured, messy, and large. The distinction turns on how the data is created, modelled, and analysed, not on volume alone.",
+   "status": "grounded",
+   "topics": [
+    "Frame"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "schoech-2013-big-smart-clean-messy",
+     "path": "10_distillates/publications/schoech-2013-big-smart-clean-messy",
+     "statement": "s4"
+    },
+    {
+     "distillate": "schoech-2013-big-smart-clean-messy",
+     "path": "10_distillates/publications/schoech-2013-big-smart-clean-messy",
+     "statement": "s5"
+    }
+   ]
+  },
+  {
+   "slug": "scholarly-primitives-classify-activities-not-interfaces",
+   "title": "Unsworth's scholarly primitives classify research activities, not the epistemic work interfaces enable.",
+   "statement": "Unsworth's scholarly primitives are basic functions common to scholarly activity across disciplines, over time, and independent of theoretical orientation, listed as discovering, annotating, comparing, referring, sampling, illustrating, and representing. They classify what researchers do, an activity taxonomy, rather than the epistemic function that a research interface performs. This is the distinction against which an interface typology by epistemic function is set.",
+   "status": "grounded",
+   "topics": [
+    "ArtefactVerification"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "unsworth-2000-scholarly-primitives",
+     "path": "10_distillates/publications/unsworth-2000-scholarly-primitives",
+     "statement": "s1"
+    },
+    {
+     "distillate": "unsworth-2000-scholarly-primitives",
+     "path": "10_distillates/publications/unsworth-2000-scholarly-primitives",
+     "statement": "s2"
+    }
+   ]
+  },
+  {
+   "slug": "sdd-data-artefacts-describe-the-system-under-construction",
+   "title": "The data artefacts of Spec-Driven-Development frameworks describe the system under construction, and none of them describes external sources or their semantics.",
+   "statement": "Spec Kit produces a dedicated data-model artefact in its planning phase and Kiro's design document carries data flow diagrams, interfaces and database schemas, and in both cases the described object is the system being built, derived from its requirements. BMAD-METHOD and OpenSpec list no artefact whose purpose is describing external data sources at all, and Kiro's persistent context files cover product purpose, technology stack and project structure without touching sources. The difference the paper's Section 2.4 states is therefore one of the object of description rather than the presence of a data artefact.",
+   "status": "grounded",
+   "topics": [
+    "Frame"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "sdd-spec-kit-2026-07-24",
+     "path": "10_distillates/documents/sdd-spec-kit-2026-07-24",
+     "statement": "s3"
+    },
+    {
+     "distillate": "sdd-spec-kit-2026-07-24",
+     "path": "10_distillates/documents/sdd-spec-kit-2026-07-24",
+     "statement": "s4"
+    },
+    {
+     "distillate": "sdd-kiro-2026-07-24",
+     "path": "10_distillates/documents/sdd-kiro-2026-07-24",
+     "statement": "s3"
+    },
+    {
+     "distillate": "sdd-kiro-2026-07-24",
+     "path": "10_distillates/documents/sdd-kiro-2026-07-24",
+     "statement": "s8"
+    },
+    {
+     "distillate": "sdd-bmad-method-2026-07-24",
+     "path": "10_distillates/documents/sdd-bmad-method-2026-07-24",
+     "statement": "s10"
+    },
+    {
+     "distillate": "sdd-openspec-2026-07-24",
+     "path": "10_distillates/documents/sdd-openspec-2026-07-24",
+     "statement": "s7"
+    }
+   ]
+  },
+  {
+   "slug": "sdd-frameworks-converge-on-specification-over-prompt",
+   "title": "Across agentic software-development frameworks the isolated prompt loses centrality and persistent specification artifacts coordinate the agents.",
+   "statement": "The comparative assessment of agentic software-development frameworks finds that, where a process is adopted, the isolated prompt loses centrality and persistent artifacts, work contracts, traceability and human review become the coordinating mechanisms, with Spec Kit treating specifications as the central artifact feeding plans, tasks and implementation. This grounds the paper's Section 2.4 observation that the Spec-Driven-Development wave corroborates the premise that documents govern agents better than prompts do.",
+   "status": "grounded",
+   "topics": [
+    "Frame"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "macedo-2026-from-prompt-to-process",
+     "path": "10_distillates/publications/macedo-2026-from-prompt-to-process",
+     "statement": "s4"
+    },
+    {
+     "distillate": "macedo-2026-from-prompt-to-process",
+     "path": "10_distillates/publications/macedo-2026-from-prompt-to-process",
+     "statement": "s5"
+    }
+   ]
+  },
+  {
+   "slug": "sdd-no-subject-matter-verification-role",
+   "title": "No framework of the Spec-Driven-Development wave defines a checking role through subject-matter competence.",
+   "statement": "Where the wave names the person who checks, it names a software role. Spec Kit names the developer reviewing the agent's focused changes; Kiro leaves its approval gate unattributed; BMAD, the most role-rich of the four, carries its analyst, architect and reviewer as agent skills invoked inside the tool rather than as definitions of human competence; OpenSpec defines no such role either. This is the difference that Section 2.4 rests on when it installs the Critical Expert in the Loop, a role defined by domain competence together with knowledge of the model's failure modes.",
+   "status": "grounded",
+   "topics": [
+    "Frame"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "sdd-spec-kit-2026-07-24",
+     "path": "10_distillates/documents/sdd-spec-kit-2026-07-24",
+     "statement": "s7"
+    },
+    {
+     "distillate": "sdd-kiro-2026-07-24",
+     "path": "10_distillates/documents/sdd-kiro-2026-07-24",
+     "statement": "s10"
+    },
+    {
+     "distillate": "sdd-bmad-method-2026-07-24",
+     "path": "10_distillates/documents/sdd-bmad-method-2026-07-24",
+     "statement": "s3"
+    },
+    {
+     "distillate": "sdd-bmad-method-2026-07-24",
+     "path": "10_distillates/documents/sdd-bmad-method-2026-07-24",
+     "statement": "s4"
+    },
+    {
+     "distillate": "sdd-openspec-2026-07-24",
+     "path": "10_distillates/documents/sdd-openspec-2026-07-24",
+     "statement": "s7"
+    }
+   ]
+  },
+  {
+   "slug": "sdd-review-examines-internal-coherence",
+   "title": "Review is a core commitment across the Spec-Driven-Development wave, and what it examines is internal coherence, coverage and code quality.",
+   "statement": "Every framework in the wave carries a review step and several make it an explicit obligation of the human. Spec Kit assigns verification to the person steering and runs machine-side consistency, coverage and checklist analysis; Kiro defaults to approval gates between phases and offers a requirements analysis for inconsistencies, ambiguities and gaps; BMAD runs a readiness gate before implementation and a code review after it; OpenSpec has the agent write and the human review the plan. In each case the object of the check is the artefact's own coherence and the quality of the code, and no framework binds the check to correspondence with a subject matter outside the specification.",
+   "status": "grounded",
+   "topics": [
+    "Frame"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "sdd-spec-kit-2026-07-24",
+     "path": "10_distillates/documents/sdd-spec-kit-2026-07-24",
+     "statement": "s6"
+    },
+    {
+     "distillate": "sdd-spec-kit-2026-07-24",
+     "path": "10_distillates/documents/sdd-spec-kit-2026-07-24",
+     "statement": "s8"
+    },
+    {
+     "distillate": "sdd-kiro-2026-07-24",
+     "path": "10_distillates/documents/sdd-kiro-2026-07-24",
+     "statement": "s5"
+    },
+    {
+     "distillate": "sdd-kiro-2026-07-24",
+     "path": "10_distillates/documents/sdd-kiro-2026-07-24",
+     "statement": "s6"
+    },
+    {
+     "distillate": "sdd-bmad-method-2026-07-24",
+     "path": "10_distillates/documents/sdd-bmad-method-2026-07-24",
+     "statement": "s7"
+    },
+    {
+     "distillate": "sdd-openspec-2026-07-24",
+     "path": "10_distillates/documents/sdd-openspec-2026-07-24",
+     "statement": "s5"
+    }
+   ]
+  },
+  {
+   "slug": "sdd-specifications-address-non-developers",
+   "title": "Spec-Driven-Development specifications are addressed beyond developers, so the delimitation cannot rest on a developers-only readership.",
+   "statement": "Early releases of Spec Kit's specification template stated its readership expressly as business stakeholders and required the specification to be written for non-technical readers, and the release current at retrieval carries no audience statement at all. Kiro names product and engineering alignment as the collaborative reach of its specifications, OpenSpec has one team own specifications that other teams read, and BMAD addresses its documents to the agents of the following phase. A claim that both sides of an industry specification are developers is therefore not available, and the difference Section 2.4 states lies in the kind of authority the reader holds over the subject matter.",
+   "status": "grounded",
+   "topics": [
+    "Frame"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "sdd-spec-kit-2026-07-24",
+     "path": "10_distillates/documents/sdd-spec-kit-2026-07-24",
+     "statement": "s11"
+    },
+    {
+     "distillate": "sdd-spec-kit-2026-07-24",
+     "path": "10_distillates/documents/sdd-spec-kit-2026-07-24",
+     "statement": "s12"
+    },
+    {
+     "distillate": "sdd-kiro-2026-07-24",
+     "path": "10_distillates/documents/sdd-kiro-2026-07-24",
+     "statement": "s9"
+    },
+    {
+     "distillate": "sdd-bmad-method-2026-07-24",
+     "path": "10_distillates/documents/sdd-bmad-method-2026-07-24",
+     "statement": "s9"
+    },
+    {
+     "distillate": "sdd-openspec-2026-07-24",
+     "path": "10_distillates/documents/sdd-openspec-2026-07-24",
+     "statement": "s6"
+    }
+   ]
+  },
+  {
+   "slug": "search-cannot-represent-collection-abundance",
+   "title": "The search box, the default interface to digital collections, is ungenerous and cannot represent their abundance.",
+   "statement": "Whitelaw argues that search, the dominant interface to digitised cultural collections, is incapable of representing their abundance; it is ungenerous, withholding information and demanding a query before it shows anything.",
+   "status": "grounded",
+   "topics": [
+    "Frame"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "whitelaw-2015-generous-interfaces",
+     "path": "10_distillates/publications/whitelaw-2015-generous-interfaces",
+     "statement": "s1"
+    },
+    {
+     "distillate": "whitelaw-2015-generous-interfaces",
+     "path": "10_distillates/publications/whitelaw-2015-generous-interfaces",
+     "statement": "s2"
+    }
+   ]
+  },
+  {
+   "slug": "section4-deviations-are-snapshot-drift-2026-07-19",
+   "title": "Several Section 5 deviations are snapshot drift, where dating a figure is as valid as updating it.",
+   "statement": "Several Section 5 deviations are snapshot drift, arising because the paper describes an earlier state of still-growing repositories. For these figures, dating the figure to its build snapshot is as valid a correction as updating it to the current count. The evidence section carried the number 4 when the verification ran on 2026-07-19 and carries the number 5 since the revision; the section references above were corrected on 2026-07-25, and the file name keeps the old number so that existing anchors resolve.",
+   "status": "grounded",
+   "topics": [
+    "Evidence"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "verification-paper-figures-2026-07-19",
+     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "statement": "s26"
+    }
+   ]
+  },
+  {
+   "slug": "section4-verification-single-agent-snapshot-2026-07-19",
+   "title": "The Section 5 verification was a single-agent snapshot with test figures counted as source functions.",
+   "statement": "The Section 5 verification ran as a single adversarial agent without a second independent pass, read repository states on 2026-07-19 via local clones, shallow clones, and the GitHub API so that later growth stays invisible to it, and counted test figures as test functions in source without executing a pytest collection. These bounds set how far its verdicts reach. The evidence section carried the number 4 when the verification ran and carries the number 5 since the revision; the section references above were corrected on 2026-07-25, and the file name keeps the old number so that existing anchors resolve.",
+   "status": "grounded",
+   "topics": [
+    "Evidence",
+    "Limitations"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "verification-paper-figures-2026-07-19",
+     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "statement": "s23"
+    },
+    {
+     "distillate": "verification-paper-figures-2026-07-19",
+     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "statement": "s24"
+    },
+    {
+     "distillate": "verification-paper-figures-2026-07-19",
+     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "statement": "s25"
+    }
+   ]
+  },
+  {
+   "slug": "semantic-vocabulary-matching-stays-a-human-interpretive-task",
+   "title": "Semantic matching between vocabularies remains a human-driven interpretive task, and AI becomes meaningful only where grounded in curated, context-rich data.",
+   "statement": "Mapping between vocabularies requires more than algorithmic matching; it demands interpretive judgement and deep domain understanding, and AI becomes meaningful and trustworthy only where it is grounded in curated, context-rich data. This grounds the paper's Section 6.2 boundary: interpretation and contextualisation stay in the expert zone, and the method reaches the same limit from vocabulary work that the documented edition project reaches from entity identification.",
+   "status": "grounded",
+   "topics": [
+    "ArtefactVerification"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "stanicka-2026-cross-linking-vocabularies",
+     "path": "10_distillates/publications/stanicka-2026-cross-linking-vocabularies",
+     "statement": "s1"
+    },
+    {
+     "distillate": "stanicka-2026-cross-linking-vocabularies",
+     "path": "10_distillates/publications/stanicka-2026-cross-linking-vocabularies",
+     "statement": "s2"
+    }
+   ]
+  },
+  {
+   "slug": "semantic-web-envisioned-agents-over-machine-processable-data",
+   "title": "The Semantic Web's founding vision was software agents acting over machine-processable, meaningful data.",
+   "statement": "The 2001 founding statement defines the Semantic Web as an extension of the web in which information carries well-defined meaning, and envisions software agents that move across pages to carry out sophisticated tasks over that content. This grounds the paper's Section 2.2 point that the field invested for two decades in agents operating over semantically described data, the end Promptotyping reaches through a different mechanism.",
+   "status": "grounded",
+   "topics": [
+    "Genealogy"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "berners-lee-2001-semantic-web",
+     "path": "10_distillates/publications/berners-lee-2001-semantic-web",
+     "statement": "s1"
+    },
+    {
+     "distillate": "berners-lee-2001-semantic-web",
+     "path": "10_distillates/publications/berners-lee-2001-semantic-web",
+     "statement": "s2"
+    }
+   ]
+  },
+  {
+   "slug": "shared-infrastructure-is-the-opposite-longevity-answer-to-the-self-contained-artefact",
+   "title": "The field also answers the longevity problem the opposite way, integrating project data into shared Wikidata so a maintained collective platform carries preservation.",
+   "statement": "Against the same limited-hosting-lifetime problem that motivates the self-contained static artefact, one strand of the field pursues the inverse answer: rather than removing dependencies, it integrates project research data directly into the Wikimedia Foundation's shared infrastructure, so that a maintained collective platform carries preservation and the data stays public after the project ends. This grounds the second half of the paper's Section 4.1 footnote precedent, where the static artefact instead reaches longevity by carrying no dependencies to maintain.",
+   "status": "grounded",
+   "topics": [
+    "ArtefactVerification"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "leipold-2026-wikifair",
+     "path": "10_distillates/publications/leipold-2026-wikifair",
+     "statement": "s1"
+    },
+    {
+     "distillate": "leipold-2026-wikifair",
+     "path": "10_distillates/publications/leipold-2026-wikifair",
+     "statement": "s2"
+    },
+    {
+     "distillate": "leipold-2026-wikifair",
+     "path": "10_distillates/publications/leipold-2026-wikifair",
+     "statement": "s3"
+    }
+   ]
+  },
+  {
+   "slug": "ssh-open-marketplace-models-workflows-as-step-sequences",
+   "title": "The SSH Open Marketplace records research workflows as step-by-step sequences pointing to the tools, services, and datasets usable at each stage.",
+   "statement": "Barbot et al. describe the SSH Open Marketplace, a discovery platform for contextualised social-sciences-and-humanities resources, whose workflows are step-by-step research scenarios: a series of actions performed with the help of tools, services, and datasets, pointing to the resources usable at each stage.",
+   "status": "grounded",
+   "topics": [
+    "ArtefactVerification"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "barbot-2024-ssh-open-marketplace",
+     "path": "10_distillates/publications/barbot-2024-ssh-open-marketplace",
+     "statement": "s1"
+    },
+    {
+     "distillate": "barbot-2024-ssh-open-marketplace",
+     "path": "10_distillates/publications/barbot-2024-ssh-open-marketplace",
+     "statement": "s3"
+    },
+    {
+     "distillate": "barbot-2024-ssh-open-marketplace",
+     "path": "10_distillates/publications/barbot-2024-ssh-open-marketplace",
+     "statement": "s4"
+    }
+   ]
+  },
+  {
+   "slug": "static-client-side-editions-reach-tens-of-thousands-of-units",
+   "title": "A statically published TEI edition of over 16,000 pre-rendered units processes and stores without size trouble on ordinary hardware.",
+   "statement": "The scale reachable on the pre-rendered, self-contained side is documented at over 16,000 edition units, each a single TEI-XML file, with the denormalised serialisation at 25 MB raising no difficulty in processing on a common machine or in storage within GitHub's 100 MB file limit. This grounds the paper's Section 4.3 order-of-magnitude claim about the pre-rendered side of the client-side bound. The 25 MB figure is the person-register serialisation, not the whole edition's source XML, and the report states no measured browser-memory ceiling for interactive data volume; the number bounds build and storage rather than runtime.",
+   "status": "grounded",
+   "topics": [
+    "ArtefactVerification"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "andorfer-2026-static-tei-editions",
+     "path": "10_distillates/publications/andorfer-2026-static-tei-editions",
+     "statement": "s5"
+    },
+    {
+     "distillate": "andorfer-2026-static-tei-editions",
+     "path": "10_distillates/publications/andorfer-2026-static-tei-editions",
+     "statement": "s6"
+    }
+   ]
+  },
+  {
+   "slug": "status-vocabulary-adds-active-and-snapshot",
+   "title": "The Promptotyping status vocabulary was extended with active and snapshot to name the continuously updated process document and the dated snapshot.",
+   "statement": "The July 2026 audit found the status field not in use as a maturity field across the repositories, with a dozen free values in circulation and two meanings the canon did not name: the continuously updated process document and the dated snapshot. On the strength of that finding the status vocabulary was extended with active (for ongoing process documents) and snapshot (for dated documents), and the free values are normalised onto the extended set rather than enforced against the whole practice.",
+   "status": "grounded",
+   "topics": [
+    "Method"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "knowledge-base-content-audit-2026-07-19",
+     "path": "10_distillates/documents/knowledge-base-content-audit-2026-07-19",
+     "statement": "s2"
+    },
+    {
+     "distillate": "knowledge-base-content-audit-2026-07-19",
+     "path": "10_distillates/documents/knowledge-base-content-audit-2026-07-19",
+     "statement": "s4"
+    }
+   ]
+  },
+  {
+   "slug": "sycophancy-agreement-over-truth",
+   "title": "LLMs exhibit sycophancy, matching the user's stated beliefs over the truthful answer rather than challenging them.",
+   "statement": "Sycophancy is a documented and general behaviour of current LLM assistants: they tend to produce responses that agree with the user's stated or implied beliefs rather than the truthful answer. It is traced to human-feedback finetuning and shown consistently across multiple production assistants. This is the failure mode the paper's Critical-Expert-in-the-Loop role is built to counter in Section 2.4.",
+   "status": "grounded",
+   "topics": [
+    "Frame"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "sharma-2023-sycophancy",
+     "path": "10_distillates/publications/sharma-2023-sycophancy",
+     "statement": "s1"
+    },
+    {
+     "distillate": "sharma-2023-sycophancy",
+     "path": "10_distillates/publications/sharma-2023-sycophancy",
+     "statement": "s2"
+    },
+    {
+     "distillate": "fanous-2025-syceval",
+     "path": "10_distillates/publications/fanous-2025-syceval",
+     "statement": "s1"
+    }
+   ]
+  },
+  {
+   "slug": "szd-experiment-structured-vibe-coding",
+   "title": "The Stefan Zweig Digital experiment produced a tool in two hours and turned on reducing complexity.",
+   "statement": "The first publicly documented Promptotyping experiment built a working timeline annotation tool for the Stefan Zweig Digital project in about two hours. Two moves are recorded as decisive: precise technical terminology steered the architecture, where \"Single Page Application\" triggers a single HTML file with embedded JavaScript and CSS while \"Web App\" would steer toward a React implementation; and the Critical Expert's key intervention was to reduce complexity, asking for a simple version without the AI support, collaboration, and visualisation the model had proposed.",
+   "status": "grounded",
+   "topics": [
+    "Genealogy"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "pollin-2025c-critical-vibing",
+     "path": "10_distillates/publications/pollin-2025c-critical-vibing",
+     "statement": "s5"
+    },
+    {
+     "distillate": "pollin-2025c-critical-vibing",
+     "path": "10_distillates/publications/pollin-2025c-critical-vibing",
+     "statement": "s7"
+    },
+    {
+     "distillate": "pollin-2025c-critical-vibing",
+     "path": "10_distillates/publications/pollin-2025c-critical-vibing",
+     "statement": "s6"
+    }
+   ]
+  },
+  {
+   "slug": "szd-htr-confabulated-reading-in-hasty-kurrent",
+   "title": "A transcription of a hastily written Kurrent manuscript carried an invented plausible reading that the transcribed text does not betray.",
+   "statement": "In the error typology of the SZD-HTR pipeline one transcription of a hastily written Kurrent manuscript renders the source word \"Laufenden\" as \"Langentour Kantgewalt\", a reading composed of real words that gives no sign of the error in the text itself. This is a single documented reading at object level, taken from a dated evaluation whose figures the source marks as historical, and it carries no statement about how the transcription model behaves in general or about how well any self-reported signal is calibrated. Checked against the deliverable on 2026-07-25, the passage of the worked example that carried this reading is gone; the worked example names the transcription experiments on hastily written Kurrent without citing an individual reading. The claim stands as a checked statement without a current use in the deliverable.",
+   "status": "grounded",
+   "topics": [
+    "ArtefactVerification"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "szd-htr-evaluation-results-2026-06-10",
+     "path": "10_distillates/documents/szd-htr-evaluation-results-2026-06-10",
+     "statement": "s1"
+    },
+    {
+     "distillate": "szd-htr-evaluation-results-2026-06-10",
+     "path": "10_distillates/documents/szd-htr-evaluation-results-2026-06-10",
+     "statement": "s3"
+    }
+   ]
+  },
+  {
+   "slug": "szd-htr-fair4rs-audit-2026-07-23",
+   "title": "The SZD-HTR repository's FAIR4RS audit of 2026-07-23 found accessibility and reusability largely fulfilled and findability unfulfilled.",
+   "statement": "A criterion-by-criterion audit of the SZD-HTR repository against the FAIR4RS principles v1.0, run on 2026-07-23, found accessibility fulfilled by construction, reusability largely fulfilled with detailed provenance as the strongest point, and every findability principle unfulfilled at the snapshot; the audit's verdict names the findability gap publication work. This is the audit the paper's Section 4.1 FAIR4RS passage rests on.",
+   "status": "grounded",
+   "topics": [
+    "Evidence"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "szd-htr-fair4rs-audit-2026-07-23",
+     "path": "10_distillates/documents/szd-htr-fair4rs-audit-2026-07-23",
+     "statement": "s2"
+    },
+    {
+     "distillate": "szd-htr-fair4rs-audit-2026-07-23",
+     "path": "10_distillates/documents/szd-htr-fair4rs-audit-2026-07-23",
+     "statement": "s3"
+    },
+    {
+     "distillate": "szd-htr-fair4rs-audit-2026-07-23",
+     "path": "10_distillates/documents/szd-htr-fair4rs-audit-2026-07-23",
+     "statement": "s4"
+    },
+    {
+     "distillate": "szd-htr-fair4rs-audit-2026-07-23",
+     "path": "10_distillates/documents/szd-htr-fair4rs-audit-2026-07-23",
+     "statement": "s5"
+    }
+   ]
+  },
+  {
+   "slug": "tadirah-classifies-dh-research-activities",
+   "title": "TaDiRAH is the digital humanities' taxonomy of research activities, organising DH work under top-level research goals.",
+   "statement": "TaDiRAH, the Taxonomy of Digital Research Activities in the Humanities, classifies digital humanities work by research activity, with eight top-level categories representing broad research goals and finer methods, techniques, and objects below. It classifies activities, not the artefacts or interfaces that carry them.",
+   "status": "grounded",
+   "topics": [
+    "ArtefactVerification"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "borek-2016-tadirah",
+     "path": "10_distillates/publications/borek-2016-tadirah",
+     "statement": "s1"
+    },
+    {
+     "distillate": "borek-2016-tadirah",
+     "path": "10_distillates/publications/borek-2016-tadirah",
+     "statement": "s3"
+    }
+   ]
+  },
+  {
+   "slug": "tadirah-most-adopted-yet-under-maintained",
+   "title": "TaDiRAH is the digital humanities' most widely adopted classification scheme, yet it is under-maintained and has been dormant for years.",
+   "statement": "Grallert et al. document that TaDiRAH has become the most widely adopted classification scheme in the digital humanities, while its development depends on voluntary labour and the vocabulary has been dormant for a number of years. Wide adoption and fragile maintenance hold together.",
+   "status": "grounded",
+   "topics": [
+    "ArtefactVerification"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "grallert-2026-open-tool-registries",
+     "path": "10_distillates/publications/grallert-2026-open-tool-registries",
+     "statement": "s4"
+    },
+    {
+     "distillate": "grallert-2026-open-tool-registries",
+     "path": "10_distillates/publications/grallert-2026-open-tool-registries",
+     "statement": "s5"
+    }
+   ]
+  },
+  {
+   "slug": "traditional-dmps-are-unused-compliance-documents",
+   "title": "Traditional data management plans are static compliance documents that do not support data-management activities.",
+   "statement": "Miksa et al. diagnose the conventional DMP, a static document created before a project begins, as widely seen as an administrative exercise rather than an integral part of research practice, one that does not support data-management activities.",
+   "status": "grounded",
+   "topics": [
+    "Method"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "miksa-2019-machine-actionable-dmps",
+     "path": "10_distillates/publications/miksa-2019-machine-actionable-dmps",
+     "statement": "s1"
+    },
+    {
+     "distillate": "miksa-2019-machine-actionable-dmps",
+     "path": "10_distillates/publications/miksa-2019-machine-actionable-dmps",
+     "statement": "s2"
+    }
+   ]
+  },
+  {
+   "slug": "unassisted-non-hybrid-artefact-production-is-unsupported",
+   "title": "The record supports teachability and guided producibility, and leaves unassisted artefact production by non-hybrid scholars open.",
+   "statement": "The evidence carries four graded levels, from the hybrid practitioner's own documented projects through the teaching cases to guided non-developer prototypes and a single external fork. Its ceiling is reached before the unassisted production of epistemically valuable research artefacts by domain experts without a programming background, which stays an open question the teaching cases open instead of closing. The transferability hedge of the paper covers disciplines with schema-regular data and leaves this second axis uncovered, which is where a falsification offer belongs.",
+   "status": "grounded",
+   "topics": [
+    "Limitations"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "revision-audit-a1-2026-07-23",
+     "path": "10_distillates/documents/revision-audit-a1-2026-07-23",
+     "statement": "s1"
+    },
+    {
+     "distillate": "revision-audit-a1-2026-07-23",
+     "path": "10_distillates/documents/revision-audit-a1-2026-07-23",
+     "statement": "s2"
+    },
+    {
+     "distillate": "revision-audit-a1-2026-07-23",
+     "path": "10_distillates/documents/revision-audit-a1-2026-07-23",
+     "statement": "s3"
+    }
+   ]
+  },
+  {
+   "slug": "unfinishedness-is-an-epistemic-value-in-the-digital-humanities",
+   "title": "In the field's German-language discourse, unfinishedness is an epistemic value: the provisional expresses the dynamics of scholarly knowledge.",
+   "statement": "The digital humanities have an explicit discourse that reads the provisional not as a deficit but as a knowledge-fostering value, understanding digital knowledge objects as process rather than finished product and provisionality in digital practice as a resource for insight. This grounds the paper's Section 6.1 claim that the promptotype's disposability sits within a recognised epistemic value of unfinishedness, so that the tension between the disposable process and the durable published artefact dissolves once making and made are distinguished.",
+   "status": "grounded",
+   "topics": [
+    "Concepts"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "koenig-2026-fertig-vorerst",
+     "path": "10_distillates/publications/koenig-2026-fertig-vorerst",
+     "statement": "s1"
+    },
+    {
+     "distillate": "koenig-2026-fertig-vorerst",
+     "path": "10_distillates/publications/koenig-2026-fertig-vorerst",
+     "statement": "s2"
+    },
+    {
+     "distillate": "koenig-2026-fertig-vorerst",
+     "path": "10_distillates/publications/koenig-2026-fertig-vorerst",
+     "statement": "s3"
+    }
+   ]
+  },
+  {
+   "slug": "verification-promoted-to-document-function",
+   "title": "Adversarial self-verification of a project's own claims was promoted to a distinct Promptotyping document function.",
+   "statement": "The July 2026 audit extracted a Verification skeleton empirically from the repositories that already carried the pattern and found it template-ready, while noting that no knowledge base yet checked its own contribution claims systematically. On the strength of the audit the Verification template was released as its own document function alongside Integration and Action-Layer, giving adversarial self-verification of a project's own claims a fixed place in the Promptotyping document typology.",
+   "status": "grounded",
+   "topics": [
+    "Method"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "knowledge-base-content-audit-2026-07-19",
+     "path": "10_distillates/documents/knowledge-base-content-audit-2026-07-19",
+     "statement": "s3"
+    },
+    {
+     "distillate": "knowledge-base-content-audit-2026-07-19",
+     "path": "10_distillates/documents/knowledge-base-content-audit-2026-07-19",
+     "statement": "s4"
+    }
+   ]
+  },
+  {
+   "slug": "vetmedai-excel-count-2026-07-19",
+   "title": "The VetMedAI repository README states 79 Excel files as verified on 2026-07-19.",
+   "statement": "As verified on 2026-07-19, the README of the VetMedAI / Austrian Dashboard repository states 79 Excel files in both of its mentions, above the paper's figure of 76. Checked against the deliverable on 2026-07-25, the figure of 76 is no longer reported there; the deliverable now gives approximately 80 Excel files, which the verified count of 79 supports.",
+   "status": "grounded",
+   "topics": [
+    "Evidence"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "verification-paper-figures-2026-07-19",
+     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "statement": "s14"
+    }
+   ]
+  },
+  {
+   "slug": "vetmedai-knowledge-doc-count-2026-07-19",
+   "title": "The VetMedAI knowledge base holds about 31 content documents as verified on 2026-07-19.",
+   "statement": "As verified on 2026-07-19, the VetMedAI knowledge base holds about 31 content documents in `knowledge/`, which is 34 Markdown files when the README is counted, below the paper's figure of 41. Checked against the deliverable on 2026-07-25, no knowledge document count is reported there any longer; the claim stands as a checked finding about the repository.",
+   "status": "grounded",
+   "topics": [
+    "Evidence"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "verification-paper-figures-2026-07-19",
+     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "statement": "s15"
+    }
+   ]
+  },
+  {
+   "slug": "vibe-coding-speed-quality-tradeoff",
+   "title": "Empirical review finds vibe coding fast and accessible but perceived as unreliable, a speed-quality trade-off.",
+   "statement": "A systematic grey-literature review of practitioner accounts finds that vibe coding is motivated by speed and accessibility yet yields code its own practitioners perceive as fast but flawed, lowering barriers at the cost of reliability and maintainability. This is the empirical support for the paper's Section 2.4 positioning, where Promptotyping shares the generation premise of vibe coding but adds preparation, persistent documentation and verification.",
+   "status": "grounded",
+   "topics": [
+    "Frame"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "fawzy-2025-vibe-coding-in-practice",
+     "path": "10_distillates/publications/fawzy-2025-vibe-coding-in-practice",
+     "statement": "s1"
+    },
+    {
+     "distillate": "fawzy-2025-vibe-coding-in-practice",
+     "path": "10_distillates/publications/fawzy-2025-vibe-coding-in-practice",
+     "statement": "s2"
+    }
+   ]
+  },
+  {
+   "slug": "visual-analytics-process-models-describe-process-not-interfaces",
+   "title": "Sacha's knowledge generation model describes the visual-analytics process by integrating existing frameworks.",
+   "statement": "Sacha and colleagues propose a knowledge generation model that ties together diverse visual-analytics frameworks and gives a high-level description of the human and computer processes inside such systems. This grounds the paper's Section 4.2 use of the model as the process framework that comes closest to an epistemic account of visual analytics, yet describes the process rather than classifying interfaces by the epistemic function they serve.",
+   "status": "grounded",
+   "topics": [
+    "Concepts"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "sacha-2014-knowledge-generation-model",
+     "path": "10_distillates/publications/sacha-2014-knowledge-generation-model",
+     "statement": "s1"
+    },
+    {
+     "distillate": "sacha-2014-knowledge-generation-model",
+     "path": "10_distillates/publications/sacha-2014-knowledge-generation-model",
+     "statement": "s2"
+    }
+   ]
+  },
+  {
+   "slug": "visualisation-is-research-process-not-means",
+   "title": "Visualisation in the humanities is a research process in its own right, not merely an instrument serving research.",
+   "statement": "Hinrichs, Forlini and Moynihan introduce the sandcastle to reframe visualisation as a research process in its own right, against the predominant DH terminology of prototypes and tools that casts visualisations as a means to an end in the service of humanities research.",
+   "status": "grounded",
+   "topics": [
+    "Frame"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "hinrichs-2019-sandcastles",
+     "path": "10_distillates/publications/hinrichs-2019-sandcastles",
+     "statement": "s1"
+    },
+    {
+     "distillate": "hinrichs-2019-sandcastles",
+     "path": "10_distillates/publications/hinrichs-2019-sandcastles",
+     "statement": "s2"
+    }
+   ]
+  },
+  {
+   "slug": "well-modelled-data-does-not-discharge-critical-data-work",
+   "title": "Provenance and the interests a dataset encodes remain the scholar's responsibility; well-modelled data does not discharge critical data work.",
+   "statement": "Because data emerges from structures of power and reflects societal hierarchies, the critical examination of how a dataset came to be, its provenance, who made its metadata, and whose interests it serves, remains the scholar's responsibility, and the AI turn makes this critical data work more rather than less crucial. This grounds the paper's Section 6.4 limit: FAIR-grade, well-modelled data eases generation but does not relieve the scholar of interrogating the data's origin and encoded interests.",
+   "status": "grounded",
+   "topics": [
+    "Limitations"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "lang-2026-beyond-data-feminism",
+     "path": "10_distillates/publications/lang-2026-beyond-data-feminism",
+     "statement": "s2"
+    },
+    {
+     "distillate": "lang-2026-beyond-data-feminism",
+     "path": "10_distillates/publications/lang-2026-beyond-data-feminism",
+     "statement": "s3"
+    },
+    {
+     "distillate": "lang-2026-beyond-data-feminism",
+     "path": "10_distillates/publications/lang-2026-beyond-data-feminism",
+     "statement": "s4"
+    }
+   ]
+  },
+  {
+   "slug": "wheaton-figures-verified-2026-07-19",
+   "title": "Wheaton's stated Section 5 figures held against the repository as verified on 2026-07-19.",
+   "statement": "The Wheaton case study's stated figures, 1,124 transactions and 718 individuals, matched the project repository when the Section 5 verification checked them on 2026-07-19. Checked against the deliverable on 2026-07-25, neither figure is reported there any longer; the deliverable names the Wheaton Day Book without counts. The claim stands as a checked finding about the repository.",
+   "status": "grounded",
+   "topics": [
+    "Evidence"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "verification-paper-figures-2026-07-19",
+     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "statement": "s1"
+    }
+   ]
+  },
+  {
+   "slug": "wikidata-tool-registries-as-commons",
+   "title": "Community-curated tool registries on Wikidata answer the directory paradox by treating tool data as a maintained commons.",
+   "statement": "Grallert et al. argue that curated tool directories inevitably go stale in fast-moving fields (the directory paradox), and propose open, community-curated registries that act as authority files and knowledge bases of a field's methodological practices, with Wikidata as the data store positioning tool data as part of the commons. This is the registry infrastructure the paper points to for the findability of small generated instruments.",
+   "status": "grounded",
+   "topics": [
+    "ArtefactVerification"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "grallert-2026-open-tool-registries",
+     "path": "10_distillates/publications/grallert-2026-open-tool-registries",
+     "statement": "s1"
+    },
+    {
+     "distillate": "grallert-2026-open-tool-registries",
+     "path": "10_distillates/publications/grallert-2026-open-tool-registries",
+     "statement": "s2"
+    },
+    {
+     "distillate": "grallert-2026-open-tool-registries",
+     "path": "10_distillates/publications/grallert-2026-open-tool-registries",
+     "statement": "s6"
+    }
+   ]
+  },
+  {
+   "slug": "zbz-commit-count-2026-07-19",
+   "title": "The ZBZ repository shows 305 commits spanning 2026-01-29 to 2026-07-09 as verified on 2026-07-19.",
+   "statement": "As verified on 2026-07-19, the ZBZ repository shows 305 commits spanning 2026-01-29 to 2026-07-09, a wider range than the paper's 128 commits over six weeks. Checked against the deliverable on 2026-07-25, no commit count is reported there any longer; the claim stands as a checked finding about the repository.",
+   "status": "grounded",
+   "topics": [
+    "Evidence"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "verification-paper-figures-2026-07-19",
+     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "statement": "s12"
+    }
+   ]
+  },
+  {
+   "slug": "zbz-figures-verified-2026-07-19",
+   "title": "ZBZ's stated Section 5 volume figures held against the repository as verified on 2026-07-19.",
+   "statement": "The ZBZ case study's stated volume figures held against the project repository when the Section 5 verification checked them on 2026-07-19, covering 286 PDFs, about 4,150 pages at an actual 4,117, and more than 30 Python scripts at an actual 98. Checked against the deliverable on 2026-07-25, the 286 PDFs and the approximately 4,150 pages are still reported there, while the script count is not; for that figure the claim stands as a checked finding about the repository.",
+   "status": "grounded",
+   "topics": [
+    "Evidence"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "verification-paper-figures-2026-07-19",
+     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "statement": "s7"
+    }
+   ]
+  },
+  {
+   "slug": "zbz-knowledge-doc-count-2026-07-19",
+   "title": "The ZBZ knowledge base holds 13 content documents plus an index as verified on 2026-07-19.",
+   "statement": "As verified on 2026-07-19, the ZBZ knowledge base holds 13 content documents plus an index, and the 3 Action Documents the paper names were not found in the repository. Checked against the deliverable on 2026-07-25, neither a knowledge document count nor the Action Documents are reported there any longer; the claim stands as a checked finding about the repository.",
+   "status": "grounded",
+   "topics": [
+    "Evidence"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "verification-paper-figures-2026-07-19",
+     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "statement": "s13"
+    }
+   ]
+  }
+ ],
+ "distillates": [
+  {
+   "slug": "frontmatter-practice-2026-05",
+   "title": "Distillate: Frontmatter practice across Promptotyping repositories (May 2026)",
+   "kind": "documents",
+   "reference": "",
+   "summary": "## Related",
+   "path": "vault/10_distillates/documents/frontmatter-practice-2026-05.md"
+  },
+  {
+   "slug": "ke-master-deck-2026-07-19",
+   "title": "Distillate: Knowledge und Context Engineering deck, LLM-characterisation slide",
+   "kind": "documents",
+   "reference": "",
+   "summary": "## Related",
+   "path": "vault/10_distillates/documents/ke-master-deck-2026-07-19.md"
+  },
+  {
+   "slug": "knowledge-base-content-audit-2026-07-19",
+   "title": "Distillate: Knowledge-base content audit (July 2026)",
+   "kind": "documents",
+   "reference": "",
+   "summary": "## Related",
+   "path": "vault/10_distillates/documents/knowledge-base-content-audit-2026-07-19.md"
+  },
+  {
+   "slug": "llmdh-summer-school-2025",
+   "title": "Distillate: LLM Summer School for DH 2025 (course site)",
+   "kind": "documents",
+   "reference": "",
+   "summary": "## Related",
+   "path": "vault/10_distillates/documents/llmdh-summer-school-2025.md"
+  },
+  {
+   "slug": "m3gim-vocab-derivation-2026-07-24",
+   "title": "Distillate: Deriving a domain document from a formal vocabulary (M³GIM)",
+   "kind": "documents",
+   "reference": "",
+   "summary": "## Related",
+   "path": "vault/10_distillates/documents/m3gim-vocab-derivation-2026-07-24.md"
+  },
+  {
+   "slug": "promptotyping-video-1-introduction",
+   "title": "Distillate: Introduction to Promptotyping, video 1",
+   "kind": "documents",
+   "reference": "",
+   "summary": "## Related",
+   "path": "vault/10_distillates/documents/promptotyping-video-1-introduction.md"
+  },
+  {
+   "slug": "promptotyping-video-2-live-demo",
+   "title": "Distillate: Promptotyping live demonstration, video 2",
+   "kind": "documents",
+   "reference": "",
+   "summary": "## Related",
+   "path": "vault/10_distillates/documents/promptotyping-video-2-live-demo.md"
+  },
+  {
+   "slug": "revision-audit-a1-2026-07-23",
+   "title": "Distillate: Revision audit A1, transfer claim (2026-07-23)",
+   "kind": "documents",
+   "reference": "",
+   "summary": "## Related",
+   "path": "vault/10_distillates/documents/revision-audit-a1-2026-07-23.md"
+  },
+  {
+   "slug": "revision-audit-a2-2026-07-23",
+   "title": "Distillate: Revision audit A2, corpus audit (2026-07-23)",
+   "kind": "documents",
+   "reference": "",
+   "summary": "## Related",
+   "path": "vault/10_distillates/documents/revision-audit-a2-2026-07-23.md"
+  },
+  {
+   "slug": "sdd-bmad-method-2026-07-24",
+   "title": "Distillate: BMAD-METHOD",
+   "kind": "documents",
+   "reference": "",
+   "summary": "## Related",
+   "path": "vault/10_distillates/documents/sdd-bmad-method-2026-07-24.md"
+  },
+  {
+   "slug": "sdd-kiro-2026-07-24",
+   "title": "Distillate: AWS Kiro",
+   "kind": "documents",
+   "reference": "",
+   "summary": "## Related",
+   "path": "vault/10_distillates/documents/sdd-kiro-2026-07-24.md"
+  },
+  {
+   "slug": "sdd-openspec-2026-07-24",
+   "title": "Distillate: OpenSpec",
+   "kind": "documents",
+   "reference": "",
+   "summary": "## Related",
+   "path": "vault/10_distillates/documents/sdd-openspec-2026-07-24.md"
+  },
+  {
+   "slug": "sdd-spec-kit-2026-07-24",
+   "title": "Distillate: GitHub Spec Kit",
+   "kind": "documents",
+   "reference": "",
+   "summary": "## Related",
+   "path": "vault/10_distillates/documents/sdd-spec-kit-2026-07-24.md"
+  },
+  {
+   "slug": "szd-htr-evaluation-results-2026-06-10",
+   "title": "Distillate: SZD-HTR evaluation results, error typology (2026-06-10)",
+   "kind": "documents",
+   "reference": "",
+   "summary": "## Related",
+   "path": "vault/10_distillates/documents/szd-htr-evaluation-results-2026-06-10.md"
+  },
+  {
+   "slug": "szd-htr-fair4rs-audit-2026-07-23",
+   "title": "Distillate: SZD-HTR FAIR4RS audit (2026-07-23)",
+   "kind": "documents",
+   "reference": "",
+   "summary": "## Core statements",
+   "path": "vault/10_distillates/documents/szd-htr-fair4rs-audit-2026-07-23.md"
+  },
+  {
+   "slug": "verification-paper-figures-2026-07-19",
+   "title": "Distillate: Section 4 figures verification (2026-07-19)",
+   "kind": "documents",
+   "reference": "",
+   "summary": "## Related",
+   "path": "vault/10_distillates/documents/verification-paper-figures-2026-07-19.md"
+  },
+  {
+   "slug": "abdurahman-2025-primer-llm-evaluation",
+   "title": "Distillate: A Primer for Evaluating LLMs in Social-Science Research (Abdurahman et al. 2025)",
+   "kind": "publications",
+   "reference": "abdurahman-2025",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/abdurahman-2025-primer-llm-evaluation.md"
+  },
+  {
+   "slug": "andorfer-2026-static-tei-editions",
+   "title": "Distillate: Digital editions as static websites (Andorfer 2026)",
+   "kind": "publications",
+   "reference": "andorfer-2026",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/andorfer-2026-static-tei-editions.md"
+  },
+  {
+   "slug": "barbot-2024-ssh-open-marketplace",
+   "title": "Distillate: Workflows in the SSH Open Marketplace (Barbot et al. 2024)",
+   "kind": "publications",
+   "reference": "barbot-2024",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/barbot-2024-ssh-open-marketplace.md"
+  },
+  {
+   "slug": "baxter-2012-research-software-engineer",
+   "title": "Distillate: The Research Software Engineer (Baxter et al. 2012)",
+   "kind": "publications",
+   "reference": "baxter-2012",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/baxter-2012-research-software-engineer.md"
+  },
+  {
+   "slug": "berners-lee-2001-semantic-web",
+   "title": "Distillate: The Semantic Web (Berners-Lee, Hendler and Lassila 2001)",
+   "kind": "publications",
+   "reference": "berners-lee-2001",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/berners-lee-2001-semantic-web.md"
+  },
+  {
+   "slug": "bleier-2018-editions-interfaces",
+   "title": "Distillate: Digital Scholarly Editions as Interfaces (Bleier et al. 2018)",
+   "kind": "publications",
+   "reference": "bleier-2018",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/bleier-2018-editions-interfaces.md"
+  },
+  {
+   "slug": "borek-2016-tadirah",
+   "title": "Distillate: TaDiRAH pragmatic classification (Borek et al. 2016)",
+   "kind": "publications",
+   "reference": "borek-2016",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/borek-2016-tadirah.md"
+  },
+  {
+   "slug": "carver-2022-state-of-practice",
+   "title": "Distillate: State of the practice for research software in the United States (Carver et al. 2022)",
+   "kind": "publications",
+   "reference": "carver-2022",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/carver-2022-state-of-practice.md"
+  },
+  {
+   "slug": "chuehong-2022-fair4rs",
+   "title": "Distillate: FAIR Principles for Research Software (Chue Hong et al. 2022)",
+   "kind": "publications",
+   "reference": "chuehong-2022",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/chuehong-2022-fair4rs.md"
+  },
+  {
+   "slug": "cohen-2021-four-pillars-rse",
+   "title": "Distillate: The Four Pillars of Research Software Engineering (Cohen et al. 2021)",
+   "kind": "publications",
+   "reference": "cohen-2021",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/cohen-2021-four-pillars-rse.md"
+  },
+  {
+   "slug": "collectionsasdata-2019-santa-barbara",
+   "title": "Distillate: The Santa Barbara Statement on Collections as Data (2019)",
+   "kind": "publications",
+   "reference": "collectionsasdata-2019",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/collectionsasdata-2019-santa-barbara.md"
+  },
+  {
+   "slug": "collins-1993-epistemic-forms",
+   "title": "Distillate: Epistemic Forms and Epistemic Games (Collins and Ferguson 1993)",
+   "kind": "publications",
+   "reference": "collins-1993",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/collins-1993-epistemic-forms.md"
+  },
+  {
+   "slug": "cremer-2025-quellen-und-datenkritik",
+   "title": "Distillate: Differentiation processes in digital source and data criticism (Cremer / Paulmann 2025)",
+   "kind": "publications",
+   "reference": "cremer-2025",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/cremer-2025-quellen-und-datenkritik.md"
+  },
+  {
+   "slug": "drucker-2011-humanities-approaches",
+   "title": "Distillate: Humanities approaches to graphical display (Drucker 2011)",
+   "kind": "publications",
+   "reference": "drucker-2011",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/drucker-2011-humanities-approaches.md"
+  },
+  {
+   "slug": "edmond-2005-professional-intermediary",
+   "title": "Distillate: The Role of the Professional Intermediary (Edmond 2005)",
+   "kind": "publications",
+   "reference": "edmond-2005",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/edmond-2005-professional-intermediary.md"
+  },
+  {
+   "slug": "fanous-2025-syceval",
+   "title": "Distillate: SycEval — Evaluating LLM Sycophancy (Fanous et al. 2025)",
+   "kind": "publications",
+   "reference": "fanous-2025",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/fanous-2025-syceval.md"
+  },
+  {
+   "slug": "fawzy-2025-vibe-coding-in-practice",
+   "title": "Distillate: Vibe Coding in Practice (Fawzy et al. 2025)",
+   "kind": "publications",
+   "reference": "fawzy-2025",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/fawzy-2025-vibe-coding-in-practice.md"
+  },
+  {
+   "slug": "fischer-2025-bildkarten",
+   "title": "Distillate: Semi-automatic cataloguing of image cards (Fischer / Kimmel / Puppe 2025)",
+   "kind": "publications",
+   "reference": "fischer-2025",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/fischer-2025-bildkarten.md"
+  },
+  {
+   "slug": "flanders-2019-shape-of-data",
+   "title": "Distillate: The Shape of Data in Digital Humanities (Flanders and Jannidis 2019)",
+   "kind": "publications",
+   "reference": "flanders-2019",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/flanders-2019-shape-of-data.md"
+  },
+  {
+   "slug": "galey-2010-how-a-prototype-argues",
+   "title": "Distillate: How a Prototype Argues (Galey and Ruecker 2010)",
+   "kind": "publications",
+   "reference": "galey-2010",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/galey-2010-how-a-prototype-argues.md"
+  },
+  {
+   "slug": "geiger-2023-daten-forschungsdaten",
+   "title": "Distillate: Daten / Forschungsdaten (Geiger 2023)",
+   "kind": "publications",
+   "reference": "geiger-2023",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/geiger-2023-daten-forschungsdaten.md"
+  },
+  {
+   "slug": "grallert-2026-open-tool-registries",
+   "title": "Distillate: Open tool registries on Wikidata (Grallert et al. 2026)",
+   "kind": "publications",
+   "reference": "grallert-2026",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/grallert-2026-open-tool-registries.md"
+  },
+  {
+   "slug": "gruber-1993-ontolingua",
+   "title": "Distillate: A Translation Approach to Portable Ontology Specifications (Gruber 1993)",
+   "kind": "publications",
+   "reference": "gruber-1993",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/gruber-1993-ontolingua.md"
+  },
+  {
+   "slug": "hinrichs-2019-sandcastles",
+   "title": "Distillate: In defense of sandcastles (Hinrichs, Forlini & Moynihan 2019)",
+   "kind": "publications",
+   "reference": "hinrichs-2019",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/hinrichs-2019-sandcastles.md"
+  },
+  {
+   "slug": "holmes-2023-endings-principles",
+   "title": "Distillate: The Endings Principles (Holmes & Takeda 2023)",
+   "kind": "publications",
+   "reference": "holmes-2023",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/holmes-2023-endings-principles.md"
+  },
+  {
+   "slug": "hong-2025-context-rot",
+   "title": "Distillate: Context Rot (Hong et al. 2025)",
+   "kind": "publications",
+   "reference": "hong-2025",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/hong-2025-context-rot.md"
+  },
+  {
+   "slug": "kemman-2021-trading-zones",
+   "title": "Distillate: Trading Zones of Digital History (Kemman 2021)",
+   "kind": "publications",
+   "reference": "kemman-2021",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/kemman-2021-trading-zones.md"
+  },
+  {
+   "slug": "koenig-2026-fertig-vorerst",
+   "title": "Distillate: Finished, for now. Unfinishedness as epistemic value (König 2026)",
+   "kind": "publications",
+   "reference": "koenig-2026",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/koenig-2026-fertig-vorerst.md"
+  },
+  {
+   "slug": "koolen-2019-digital-tool-criticism",
+   "title": "Distillate: Toward a Model for Digital Tool Criticism (Koolen, van Gorp and van Ossenbruggen 2019)",
+   "kind": "publications",
+   "reference": "koolen-2019",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/koolen-2019-digital-tool-criticism.md"
+  },
+  {
+   "slug": "lang-2026-beyond-data-feminism",
+   "title": "Distillate: Beyond Data Feminism. Towards ethical data work (Lang / Suárez Cronauer 2026)",
+   "kind": "publications",
+   "reference": "lang-2026",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/lang-2026-beyond-data-feminism.md"
+  },
+  {
+   "slug": "leipold-2026-wikifair",
+   "title": "Distillate: Mapping hospital heritage with WikiFAIR (Leipold et al. 2026)",
+   "kind": "publications",
+   "reference": "leipold-2026",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/leipold-2026-wikifair.md"
+  },
+  {
+   "slug": "liu-2024-llm-agents-se-survey",
+   "title": "Distillate: LLM-Based Agents for Software Engineering — A Survey (Liu et al. 2024)",
+   "kind": "publications",
+   "reference": "liu-2024",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/liu-2024-llm-agents-se-survey.md"
+  },
+  {
+   "slug": "macedo-2026-from-prompt-to-process",
+   "title": "Distillate: From Prompt to Process (Macedo 2026)",
+   "kind": "publications",
+   "reference": "macedo-2026",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/macedo-2026-from-prompt-to-process.md"
+  },
+  {
+   "slug": "mariani-2025-prov-a",
+   "title": "Distillate: PROV-A, a web-based tool for provenance as Linked Open Data (Mariani 2025)",
+   "kind": "publications",
+   "reference": "mariani-2025",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/mariani-2025-prov-a.md"
+  },
+  {
+   "slug": "mayr-2021-triptych-conceptual-modeling",
+   "title": "Distillate: The triptych of conceptual modeling (Mayr & Thalheim 2021)",
+   "kind": "publications",
+   "reference": "mayr-2021",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/mayr-2021-triptych-conceptual-modeling.md"
+  },
+  {
+   "slug": "mei-2025-context-engineering",
+   "title": "Distillate: A Survey of Context Engineering for LLMs (Mei et al. 2025)",
+   "kind": "publications",
+   "reference": "mei-2025",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/mei-2025-context-engineering.md"
+  },
+  {
+   "slug": "miksa-2019-machine-actionable-dmps",
+   "title": "Distillate: Ten principles for machine-actionable DMPs (Miksa et al. 2019)",
+   "kind": "publications",
+   "reference": "miksa-2019",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/miksa-2019-machine-actionable-dmps.md"
+  },
+  {
+   "slug": "owens-2011-defining-data",
+   "title": "Distillate: Defining Data for Humanists (Owens 2011)",
+   "kind": "publications",
+   "reference": "owens-2011",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/owens-2011-defining-data.md"
+  },
+  {
+   "slug": "pichler-2022-operationalization",
+   "title": "Distillate: From Concepts to Texts and Back (Pichler and Reiter 2022)",
+   "kind": "publications",
+   "reference": "pichler-2022",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/pichler-2022-operationalization.md"
+  },
+  {
+   "slug": "pierazzo-2015-digital-editing",
+   "title": "Distillate: Digital Scholarly Editing (Pierazzo 2015)",
+   "kind": "publications",
+   "reference": "pierazzo-2015",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/pierazzo-2015-digital-editing.md"
+  },
+  {
+   "slug": "pollin-2019-depcha-bookkeeping",
+   "title": "Distillate: DEPCHA and the Bookkeeping Ontology (Pollin 2019)",
+   "kind": "publications",
+   "reference": "pollin-2019",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/pollin-2019-depcha-bookkeeping.md"
+  },
+  {
+   "slug": "pollin-2024-workshopreihe",
+   "title": "Distillate: Workshop series \"Applied Generative AI in the (Digital) Humanities\" (Pollin 2024)",
+   "kind": "publications",
+   "reference": "pollin-2024",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/pollin-2024-workshopreihe.md"
+  },
+  {
+   "slug": "pollin-2025a-when-it-was-2024",
+   "title": "Distillate: When it was 2024. Generative AI in digital scholarly editions (Pollin et al. 2025a)",
+   "kind": "publications",
+   "reference": "pollin-2025a",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/pollin-2025a-when-it-was-2024.md"
+  },
+  {
+   "slug": "pollin-2025b-dissertation",
+   "title": "Distillate: Pollin dissertation (2025)",
+   "kind": "publications",
+   "reference": "pollin-2025b",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/pollin-2025b-dissertation.md"
+  },
+  {
+   "slug": "pollin-2025c-critical-vibing",
+   "title": "Distillate: Promptotyping with Claude Sonnet 4, the Critical Expert in the Loop (Pollin 2025c)",
+   "kind": "publications",
+   "reference": "pollin-2025c",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/pollin-2025c-critical-vibing.md"
+  },
+  {
+   "slug": "pollin-2025d-promptotyping-blog",
+   "title": "Distillate: Promptotyping blog post (Pollin 2025d)",
+   "kind": "publications",
+   "reference": "pollin-2025d",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/pollin-2025d-promptotyping-blog.md"
+  },
+  {
+   "slug": "pollin-2026a-asymmetric-amplification",
+   "title": "Distillate: Asymmetric Amplification (Pollin 2026a)",
+   "kind": "publications",
+   "reference": "pollin-2026a",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/pollin-2026a-asymmetric-amplification.md"
+  },
+  {
+   "slug": "pollin-2026b-lisa-positioning",
+   "title": "Distillate: Promptotyping between Vibe Coding, Vibe Research and Context Engineering (Pollin 2026b)",
+   "kind": "publications",
+   "reference": "pollin-2026b",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/pollin-2026b-lisa-positioning.md"
+  },
+  {
+   "slug": "posner-2015-necessary-contradiction",
+   "title": "Distillate: Humanities Data, A Necessary Contradiction (Posner 2015)",
+   "kind": "publications",
+   "reference": "posner-2015",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/posner-2015-necessary-contradiction.md"
+  },
+  {
+   "slug": "risam-2022-minimal-computing",
+   "title": "Distillate: The questions of minimal computing (Risam & Gil 2022)",
+   "kind": "publications",
+   "reference": "risam-2022",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/risam-2022-minimal-computing.md"
+  },
+  {
+   "slug": "roberts-2007-coordinated-multiple-views",
+   "title": "Distillate: Coordinated and Multiple Views (Roberts 2007)",
+   "kind": "publications",
+   "reference": "roberts-2007",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/roberts-2007-coordinated-multiple-views.md"
+  },
+  {
+   "slug": "ruecker-2015-taxonomy-prototypes",
+   "title": "Distillate: A Brief Taxonomy of Prototypes for the Digital Humanities (Ruecker 2015)",
+   "kind": "publications",
+   "reference": "ruecker-2015",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/ruecker-2015-taxonomy-prototypes.md"
+  },
+  {
+   "slug": "sacha-2014-knowledge-generation-model",
+   "title": "Distillate: Knowledge Generation Model for Visual Analytics (Sacha et al. 2014)",
+   "kind": "publications",
+   "reference": "sacha-2014",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/sacha-2014-knowledge-generation-model.md"
+  },
+  {
+   "slug": "sarkar-2025-vibe-coding",
+   "title": "Distillate: Vibe Coding — Programming through Conversation with AI (Sarkar and Drosos 2025)",
+   "kind": "publications",
+   "reference": "sarkar-2025",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/sarkar-2025-vibe-coding.md"
+  },
+  {
+   "slug": "schoech-2013-big-smart-clean-messy",
+   "title": "Distillate: Big? Smart? Clean? Messy? Data in the Humanities (Schöch 2013)",
+   "kind": "publications",
+   "reference": "schoech-2013",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/schoech-2013-big-smart-clean-messy.md"
+  },
+  {
+   "slug": "schonhardt-2026-do-one-thing",
+   "title": "Distillate: Do one thing and do it well (Schonhardt 2026)",
+   "kind": "publications",
+   "reference": "schonhardt-2026",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/schonhardt-2026-do-one-thing.md"
+  },
+  {
+   "slug": "sharma-2023-sycophancy",
+   "title": "Distillate: Towards Understanding Sycophancy in Language Models (Sharma et al. 2023)",
+   "kind": "publications",
+   "reference": "sharma-2023",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/sharma-2023-sycophancy.md"
+  },
+  {
+   "slug": "siemens-2009-reply-all-teams",
+   "title": "Distillate: 'It's a team if you use \"reply all\"' (Siemens 2009)",
+   "kind": "publications",
+   "reference": "siemens-2009",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/siemens-2009-reply-all-teams.md"
+  },
+  {
+   "slug": "soiland-2022-ro-crate",
+   "title": "Distillate: Packaging research artefacts with RO-Crate (Soiland-Reyes et al. 2022)",
+   "kind": "publications",
+   "reference": "soiland-2022",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/soiland-2022-ro-crate.md"
+  },
+  {
+   "slug": "stanicka-2026-cross-linking-vocabularies",
+   "title": "Distillate: Cross-linking of vocabularies, and the AI perspective (Stanicka-Brzezicka 2026)",
+   "kind": "publications",
+   "reference": "stanicka-2026",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/stanicka-2026-cross-linking-vocabularies.md"
+  },
+  {
+   "slug": "star-1989-boundary-objects",
+   "title": "Distillate: Institutional Ecology, 'Translations' and Boundary Objects (Star and Griesemer 1989)",
+   "kind": "publications",
+   "reference": "star-1989",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/star-1989-boundary-objects.md"
+  },
+  {
+   "slug": "unsworth-2000-scholarly-primitives",
+   "title": "Distillate: Scholarly Primitives (Unsworth 2000)",
+   "kind": "publications",
+   "reference": "unsworth-2000",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/unsworth-2000-scholarly-primitives.md"
+  },
+  {
+   "slug": "vanes-2018-tool-criticism",
+   "title": "Distillate: Tool Criticism: From Digital Methods to Digital Methodology (van Es, Wieringa and Schäfer 2018)",
+   "kind": "publications",
+   "reference": "vanes-2018",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/vanes-2018-tool-criticism.md"
+  },
+  {
+   "slug": "whitelaw-2015-generous-interfaces",
+   "title": "Distillate: Generous interfaces for digital cultural collections (Whitelaw 2015)",
+   "kind": "publications",
+   "reference": "whitelaw-2015",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/whitelaw-2015-generous-interfaces.md"
+  },
+  {
+   "slug": "wilkinson-2016-fair-principles",
+   "title": "Distillate: The FAIR guiding principles (Wilkinson et al. 2016)",
+   "kind": "publications",
+   "reference": "wilkinson-2016",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/wilkinson-2016-fair-principles.md"
+  },
+  {
+   "slug": "windhager-2019-visualization-ch-collections",
+   "title": "Distillate: Visualization of Cultural Heritage Collection Data (Windhager et al. 2019)",
+   "kind": "publications",
+   "reference": "windhager-2019",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/windhager-2019-visualization-ch-collections.md"
+  }
+ ]
+}

@@ -533,14 +533,116 @@
         segments[0] === "verifikation") {
       return segments[0];
     }
+    if (segments[0] === "vault") {
+      return segments[1] ? "vault-" + segments[1] : "vault";
+    }
     // Already a hash-form anchor passed without leading '#'.
     if (/^(promptotyping-document|konzept|case|konvention|abschnitt)-/.test(rest) ||
         rest === "glossar" || rest === "literatur" || rest === "arbeitsumgebung" ||
         rest === "anwendung" || rest === "artefakt" || rest === "verifikation" ||
+        rest === "vault" || /^vault-/.test(rest) ||
         rest === "paper") {
       return rest;
     }
     return null;
+  }
+
+
+  /* ---- Vault sub-view ----
+     The Grounded Vault under the paper, read from the generated index
+     data/vault.json (vault/tools/build_site_index.py). The section lists the
+     topic maps with their claims; a claim opens in the side panel with its
+     statement and its grounding anchors, and the anchors link to the distillate
+     Markdown in the repository. */
+
+  var vaultClaimsBySlug = {};
+  var vaultDistillatesBySlug = {};
+
+  function renderVault() {
+    var el = document.getElementById("vault");
+    if (!el) {
+      return Promise.resolve();
+    }
+    return fetch("data/vault.json")
+      .then(function (res) {
+        if (!res.ok) {
+          throw new Error("Konnte vault.json nicht laden (" + res.status + ").");
+        }
+        return res.json();
+      })
+      .then(function (data) {
+        (data.claims || []).forEach(function (c) { vaultClaimsBySlug[c.slug] = c; });
+        (data.distillates || []).forEach(function (d) { vaultDistillatesBySlug[d.slug] = d; });
+
+        var blocks = (data.topics || []).map(function (topic) {
+          var items = topic.claims.map(function (slug) {
+            var claim = vaultClaimsBySlug[slug];
+            if (!claim) {
+              return "";
+            }
+            return '<li class="vault-claim-item" id="vault-' + slug + '">' +
+              '<button type="button" class="vault-claim" data-claim="' + slug + '">' +
+              escapeHtml(claim.title) + "</button>" +
+              '<span class="vault-claim-meta">' + claim.grounding.length +
+              (claim.grounding.length === 1 ? " Anker" : " Anker") + "</span></li>";
+          }).join("");
+          return '<section class="vault-topic" id="vault-topic-' +
+            topic.topic.toLowerCase() + '">' +
+            "<h3>" + escapeHtml(topic.topic) + "</h3>" +
+            '<p class="vault-topic-desc">' + escapeHtml(topic.description) + "</p>" +
+            '<ul class="vault-claim-list">' + items + "</ul></section>";
+        }).join("");
+
+        el.classList.remove("placeholder-section");
+        el.innerHTML =
+          "<h2>Vault</h2>" +
+          "<p>Die Belegschicht unter dem Paper. Quellen werden zu Distillaten mit " +
+          "zitatgepruefeten Einzelaussagen verdichtet, und aus diesen Aussagen sind die " +
+          "Claims gebaut, auf denen die tragenden Saetze des Papers stehen. Die Anker " +
+          "loesen nur nach unten auf, von der Behauptung zur Quelle. Ein Claim oeffnet " +
+          "sich mit seiner Aussage und seinen Ankern im Seitenpanel.</p>" +
+          '<p class="vault-repo-note"><a href="vault/" target="_blank" rel="noopener">' +
+          "Vault im Repository</a></p>" +
+          '<div class="vault-topics">' + blocks + "</div>";
+
+        el.addEventListener("click", function (ev) {
+          var btn = ev.target.closest(".vault-claim");
+          if (btn) {
+            openVaultClaim(btn.getAttribute("data-claim"));
+          }
+        });
+      })
+      .catch(function (err) {
+        el.innerHTML = '<p class="section-loading">' + err.message + "</p>";
+      });
+  }
+
+  function openVaultClaim(slug) {
+    var claim = vaultClaimsBySlug[slug];
+    if (!claim) {
+      return;
+    }
+    var anchors = claim.grounding.map(function (g) {
+      var dist = vaultDistillatesBySlug[g.distillate];
+      var label = dist ? dist.title : g.distillate;
+      var href = dist ? dist.path : null;
+      var stmt = g.statement ? ' <span class="vault-anchor-id">' + escapeHtml(g.statement) + "</span>" : "";
+      return "<li>" + (href
+        ? '<a href="' + href + '" target="_blank" rel="noopener">' + escapeHtml(label) + "</a>"
+        : escapeHtml(label)) + stmt + "</li>";
+    }).join("");
+
+    var contested = claim.contestedWith.length
+      ? '<p class="vault-panel-contested">Widerstreitend mit ' +
+        claim.contestedWith.map(escapeHtml).join(", ") + "</p>"
+      : "";
+
+    openSidePanel(claim.title,
+      '<p class="vault-panel-status">Status ' + escapeHtml(claim.status) +
+      (claim.topics.length ? " &middot; " + claim.topics.map(escapeHtml).join(", ") : "") + "</p>" +
+      "<p>" + escapeHtml(claim.statement) + "</p>" +
+      contested +
+      "<h3>Grundlage</h3><ul class=\"vault-anchor-list\">" + anchors + "</ul>");
   }
 
   /* ---- Reusable side panel ---- */
@@ -1332,6 +1434,8 @@
       document.dispatchEvent(new Event("promptotyping:sections-ready"));
       // The paper renders after the glossar, so its terms can be marked.
       return renderPaper();
+    }).then(function () {
+      return renderVault();
     }).then(function () {
       setupScrollSpy();
       handleHash(window.location.hash.replace(/^#/, ""));

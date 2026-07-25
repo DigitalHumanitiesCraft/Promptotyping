@@ -43,7 +43,7 @@ Die Site soll ruhig sein. Konkret bedeutet das beim Coden:
 
 `assets/promptotyping-logo.png` bleibt erhalten. `_content/` und `data/` werden in den Implementierungs-Sprints angelegt.
 
-Der Ordner `vault/` ist eine Instanz des Grounded-Vault-Templates (`DigitalHumanitiesCraft/grounded-vault`) und verankert die tragenden Claims des Papers in `knowledge/paper.md` quellenfest. Für jede Arbeit in `vault/` gilt dessen eigener Action-Layer `vault/CLAUDE.md`; das Python-Werkzeug `vault/tools/validate.py` gehört zum Vault und ist die einzige zulässige Ausnahme von der No-Build-Regel unten (es baut nichts für die Site, es prüft den Vault).
+Der Ordner `vault/` ist eine Instanz des Grounded-Vault-Templates (`DigitalHumanitiesCraft/grounded-vault`) und verankert die tragenden Claims des Papers in `knowledge/paper.md` quellenfest. Für jede Arbeit in `vault/` gilt dessen eigener Action-Layer `vault/CLAUDE.md`; die Python-Werkzeuge unter `vault/tools/` gehören zum Vault und sind die zulässigen Ausnahmen von der No-Build-Regel unten. `validate.py` prüft den Vault. `build_site_index.py` erzeugt `data/vault.json` für die Vault-Ansicht der Site; das Ergebnis wird committet, die Site holt zur Laufzeit eine statische Datei, und ein Build-Schritt zur Auslieferzeit entsteht nicht. Wer die Claim-Schicht ändert, führt das Skript nach.
 
 ## Tech-Stack-Regeln
 
@@ -63,6 +63,7 @@ Die Phasen-Provenance-Lane wurde nach dem Erstdeploy auf Operator-Entscheidung v
 - Maschinenadresse (ADR-10): Für HTTP-Abruf ohne JavaScript ist die statische Markdown-URL kanonisch, Muster `https://dhcraft.org/Promptotyping/_content/promptotyping-document/{slug}.md`. Die Subpath-Auflösung läuft über `404.html` und setzt JavaScript voraus. `.nojekyll` im Repo-Root ist Pflicht, sonst publiziert GitHub Pages `_content/` nicht.
 - Konzepte: `#konzept-{name}` (z.B. `#konzept-eil`, `#konzept-asymmetric-amplification`)
 - Case Studies: `#case-{name}` (z.B. `#case-herdata`, `#case-klawiter-rescue`)
+- Vault: `#vault` für die Ansicht, `#vault-{claim-slug}` für einen einzelnen Claim; Subpath `/vault` und `/vault/{claim-slug}`. Die Slugs sind die Dateinamen unter `vault/20_claims/`.
 - Konvention: `#konvention-v0.1`
 - Glossar: `#glossar`
 - Literatur: `#literatur`
@@ -83,7 +84,7 @@ Anker dürfen nicht ohne Diskussion umbenannt werden — Repos können auf sie a
 - **Nicht aus dem Vault zitieren ohne Markdown-Link.** Vault-interne Wikilinks (`[[CLAUDE]]`) bedeuten im Repo nichts.
 - **Nicht das alte Living-Paper-Material reaktivieren.** Alles, was im November-2025-Stand war, ist gelöscht. Wer alte Module wiederbeleben will, beginnt einen Neu-Diskurs.
 - **Keine englische Fassung in Phase 1.** Site ist deutsch, Pollin-Paper bleibt englisch im Lesefluss. Vollständige Zweisprachigkeit ist späteres Projekt.
-- **Keine Module außer Frontmatter-Inspector und Case-Study-Filter.** Vault-Explorer, Context-Rot-Viz, Sycophancy-Trap sind explizit nicht in Scope.
+- **Keine Module außer Frontmatter-Inspector, Case-Study-Filter und Vault-Ansicht.** Die Vault-Ansicht ist seit der Operator-Entscheidung 2026-07-25 in Scope (`knowledge/plan-site.md`, AP4); Context-Rot-Viz und Sycophancy-Trap bleiben es nicht.
 - **Keine Branches.** Alle Änderungen direkt auf `main`. (Das ist Christopher Pollins explizite Wahl, dokumentiert in journal.md.)
 
 ## Bei Konflikt zwischen Vault und Repo
