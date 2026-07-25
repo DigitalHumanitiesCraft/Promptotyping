@@ -63,7 +63,6 @@
   /* Layout */
   --header-height: 3.25rem;
   --nav-width: 250px;
-  --rail-width: 200px;
   --read-width: 820px;
   --panel-width: 360px;
 }
@@ -193,43 +192,15 @@ a:hover {
   color: var(--text);
 }
 
-/* Drawer toggle: mobile only. */
-.docs-nav-toggle {
-  display: none;
-  background: none;
-  border: 0;
-  padding: var(--space-2);
-  cursor: pointer;
-  color: var(--text);
-}
-
-.docs-nav-toggle-bars,
-.docs-nav-toggle-bars::before,
-.docs-nav-toggle-bars::after {
-  display: block;
-  width: 18px;
-  height: 1.5px;
-  background: currentColor;
-}
-
-.docs-nav-toggle-bars::before,
-.docs-nav-toggle-bars::after {
-  content: "";
-  position: relative;
-}
-
-.docs-nav-toggle-bars::before { top: -5px; }
-.docs-nav-toggle-bars::after { top: 3.5px; }
-
 /* ---- Documentation shell ----
-   Three tracks: the page tree, the page, the on-this-page rail. The outer
-   tracks are sticky and scroll independently of the reading column. */
+   Two tracks: the page tree and the page. The tree is sticky below the header
+   and scrolls independently of the reading column. */
 
 .docs-shell {
   display: grid;
-  grid-template-columns: var(--nav-width) minmax(0, 1fr) var(--rail-width);
-  gap: var(--space-8);
-  max-width: 1400px;
+  grid-template-columns: var(--nav-width) minmax(0, 1fr);
+  gap: var(--space-12);
+  max-width: 1240px;
   margin: 0 auto;
   padding: 0 var(--space-6);
 }
@@ -282,68 +253,20 @@ a:hover {
   color: var(--text);
 }
 
+.docs-nav-part {
+  display: inline-block;
+  min-width: 1.2em;
+  color: var(--phase-distillation);
+  font-variant-numeric: tabular-nums;
+}
+
+.docs-nav a.is-active .docs-nav-part {
+  color: var(--phase-exploration);
+}
+
 .docs-nav a.is-active {
   color: var(--text);
   font-weight: 600;
-  border-left-color: var(--text);
-}
-
-.docs-nav-backdrop {
-  display: none;
-}
-
-/* ---- On-this-page rail ---- */
-
-.docs-rail {
-  position: sticky;
-  top: var(--header-height);
-  align-self: start;
-  max-height: calc(100vh - var(--header-height));
-  overflow-y: auto;
-  padding: var(--space-8) 0;
-  font-size: 0.8125rem;
-}
-
-.docs-rail-title {
-  margin: 0 0 var(--space-2);
-  font-size: 0.6875rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--phase-distillation);
-}
-
-.docs-rail ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  border-left: 1px solid var(--border);
-}
-
-.docs-rail li {
-  margin: 0;
-}
-
-.docs-rail li.lvl-3 a {
-  padding-left: var(--space-6);
-}
-
-.docs-rail a {
-  display: block;
-  padding: 0.25rem var(--space-4);
-  margin-left: -1px;
-  border-left: 2px solid transparent;
-  text-decoration: none;
-  color: var(--phase-exploration);
-  transition: color 150ms ease-out, border-color 150ms ease-out;
-}
-
-.docs-rail a:hover {
-  color: var(--text);
-}
-
-.docs-rail a.is-active {
-  color: var(--text);
   border-left-color: var(--text);
 }
 
@@ -439,6 +362,14 @@ a:hover {
 .spec-index a:hover {
   text-decoration: underline;
   text-decoration-color: var(--text);
+}
+
+.spec-index-part {
+  display: inline-block;
+  min-width: 1.2em;
+  color: var(--phase-distillation);
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
 }
 
 .spec-index-note {
@@ -1185,19 +1116,7 @@ a:hover {
   padding: 0 var(--space-8);
 }
 
-/* Tablet: the rail folds away first, the tree stays. */
-
-@media (max-width: 1180px) {
-  .docs-shell {
-    grid-template-columns: var(--nav-width) minmax(0, 1fr);
-  }
-
-  .docs-rail {
-    display: none;
-  }
-}
-
-/* Mobile: the tree becomes an overlay drawer. */
+/* Mobile: the tree stacks above the page and stays visible. */
 
 @media (max-width: 860px) {
   .docs-shell {
@@ -1205,35 +1124,18 @@ a:hover {
     padding: 0 var(--space-6);
   }
 
-  .docs-nav-toggle {
-    display: block;
-  }
-
   .docs-nav {
-    position: fixed;
-    top: var(--header-height);
-    left: 0;
-    bottom: 0;
-    z-index: 26;
-    width: 17rem;
-    max-width: 85vw;
-    background: var(--bg);
+    position: static;
     max-height: none;
-    padding: var(--space-6);
-    transform: translateX(-100%);
-    transition: transform 200ms ease-out;
+    overflow: visible;
+    padding: calc(var(--header-height) + var(--space-8)) 0 var(--space-6);
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
   }
 
-  body.nav-open .docs-nav {
-    transform: translateX(0);
-  }
-
-  body.nav-open .docs-nav-backdrop {
-    display: block;
-    position: fixed;
-    inset: var(--header-height) 0 0 0;
-    z-index: 25;
-    background: rgba(0, 0, 0, 0.3);
+  /* The tree carries the top offset on mobile, so the page must not add it. */
+  .content {
+    margin-top: 0;
   }
 
   .site-footer-inner {

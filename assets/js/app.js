@@ -55,15 +55,15 @@
   var PAGES = [
     { id: "ueberblick", label: "Ueberblick", group: "Spezifikation",
       note: "Was die Methode ist und wofuer sie gilt" },
-    { id: "anwendung", label: "Anwendung", group: "Spezifikation",
+    { id: "anwendung", label: "Anwendung", group: "Spezifikation", part: "1",
       note: "Die vier Phasen in Handlungsaufloesung" },
-    { id: "vorlagen", label: "Vorlagen", group: "Spezifikation",
-      note: "Der Dokumentsatz und seine Ausloeser" },
-    { id: "konvention-v0.1", label: "Konvention", group: "Spezifikation",
+    { id: "vorlagen", label: "Vorlagen", group: "Spezifikation", part: "2",
+      note: "Der vollstaendige Dokumentsatz und seine Ausloeser" },
+    { id: "konvention-v0.1", label: "Konvention", group: "Spezifikation", part: "3",
       note: "Frontmatter, Adressierung, Lese-Heuristik" },
-    { id: "artefakt", label: "Artefakt und Grenze", group: "Spezifikation",
+    { id: "artefakt", label: "Artefakt und Grenze", group: "Spezifikation", part: "4",
       note: "Artefakttyp und Uebergabepunkt" },
-    { id: "verifikation", label: "Verifikation", group: "Spezifikation",
+    { id: "verifikation", label: "Verifikation", group: "Spezifikation", part: "5",
       note: "Pruefarten, Pruefebenen, Autonomiezonen" },
 
     { id: "glossar", label: "Glossar", group: "Referenz",
@@ -538,7 +538,6 @@
       });
       activePage = page;
       markNavActive(page);
-      buildRail(page);
       document.title = pageTitle(page);
     }
     scrollToAnchor(anchor && anchor !== page ? anchor : null);
@@ -601,7 +600,8 @@
       html += '<div class="spec-index-group"><p class="spec-index-title">' +
         escapeHtml(group) + "</p><ul>";
       pages.forEach(function (p) {
-        html += '<li><a href="#' + p.id + '">' + escapeHtml(p.label) + "</a>" +
+        var num = p.part ? '<span class="spec-index-part">' + p.part + "</span>" : "";
+        html += '<li><a href="#' + p.id + '">' + num + escapeHtml(p.label) + "</a>" +
           '<span class="spec-index-note">' + escapeHtml(p.note || "") + "</span></li>";
       });
       html += "</ul></div>";
@@ -632,17 +632,13 @@
       }
       html += '<p class="docs-nav-group">' + escapeHtml(group) + "</p><ul>";
       pages.forEach(function (p) {
+        var num = p.part ? '<span class="docs-nav-part">' + p.part + "</span>" : "";
         html += '<li><a href="#' + p.id + '" data-page="' + p.id + '">' +
-          escapeHtml(p.label) + "</a></li>";
+          num + escapeHtml(p.label) + "</a></li>";
       });
       html += "</ul>";
     });
     nav.innerHTML = html;
-    nav.addEventListener("click", function (e) {
-      if (e.target.tagName === "A") {
-        closeNavDrawer();
-      }
-    });
   }
 
   function markNavActive(page) {
@@ -653,72 +649,6 @@
         a.setAttribute("aria-current", "page");
       } else {
         a.removeAttribute("aria-current");
-      }
-    });
-  }
-
-  /* ---- On-this-page rail ----
-     Built from the active page's headings. The paper carries its H2s as
-     section elements, so those are read off the sections instead. */
-
-  function buildRail(page) {
-    var rail = document.getElementById("docs-rail");
-    var host = document.getElementById(page);
-    if (!rail || !host) {
-      return;
-    }
-    var items = [];
-    if (page === PAPER_HOST_ID) {
-      host.querySelectorAll(".paper-section").forEach(function (s) {
-        var h = s.querySelector("h2");
-        if (s.id && h) {
-          items.push({ id: s.id, text: h.textContent, level: 2 });
-        }
-      });
-    } else {
-      host.querySelectorAll("h2, h3").forEach(function (h) {
-        if (!h.id) {
-          h.id = page + "--" + slugify(h.textContent);
-        }
-        items.push({ id: h.id, text: h.textContent, level: h.tagName === "H3" ? 3 : 2 });
-      });
-    }
-    if (items.length < 2) {
-      rail.innerHTML = "";
-      rail.classList.add("is-empty");
-      return;
-    }
-    rail.classList.remove("is-empty");
-    rail.innerHTML = '<p class="docs-rail-title">Auf dieser Seite</p><ul>' +
-      items.map(function (i) {
-        return '<li class="lvl-' + i.level + '"><a href="#' + i.id + '">' +
-          escapeHtml(i.text) + "</a></li>";
-      }).join("") + "</ul>";
-    setupRailSpy(host, items, rail);
-  }
-
-  function setupRailSpy(host, items, rail) {
-    if (!window.IntersectionObserver) {
-      return;
-    }
-    var links = {};
-    rail.querySelectorAll("a").forEach(function (a) {
-      links[a.getAttribute("href").slice(1)] = a;
-    });
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) {
-          return;
-        }
-        Object.keys(links).forEach(function (id) {
-          links[id].classList.toggle("is-active", id === entry.target.id);
-        });
-      });
-    }, { rootMargin: "-15% 0px -70% 0px" });
-    items.forEach(function (i) {
-      var el = document.getElementById(i.id);
-      if (el) {
-        observer.observe(el);
       }
     });
   }
@@ -1646,36 +1576,12 @@
 
   /* ---- Init ---- */
 
-  /* ---- Sidebar drawer (mobile) ---- */
-
-  function closeNavDrawer() {
-    document.body.classList.remove("nav-open");
-    var btn = document.getElementById("docs-nav-toggle");
-    if (btn) {
-      btn.setAttribute("aria-expanded", "false");
-    }
-  }
-
-  function setupNavToggle() {
-    var btn = document.getElementById("docs-nav-toggle");
-    var backdrop = document.getElementById("docs-nav-backdrop");
-    if (btn) {
-      btn.addEventListener("click", function () {
-        var open = document.body.classList.toggle("nav-open");
-        btn.setAttribute("aria-expanded", open ? "true" : "false");
-      });
-    }
-    if (backdrop) {
-      backdrop.addEventListener("click", closeNavDrawer);
-    }
-  }
 
   function init() {
     configureMarked();
     mountPages();
     buildNav();
     setupSidePanel();
-    setupNavToggle();
     setupGlossarInteraction(document.getElementById("content"));
 
     // Show the routed page immediately, so the shell is never a blank frame
@@ -1726,7 +1632,6 @@
     }).then(function () {
       // Rebuild the rail now that the active page actually has headings, then
       // resolve the initial hash against the fully rendered DOM.
-      buildRail(activePage);
       handleHash(window.location.hash.replace(/^#/, ""));
     });
 

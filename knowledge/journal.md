@@ -763,3 +763,15 @@ Die Startseite ist zur Spezifikationsfront umgeschrieben. Sie trägt Titel, Gelt
 Ein Fund am Rande: beim Prüfen der Tiefenlinks stellte sich heraus, dass ein Sprung auf ein Ziel weit unten in der Seite zu kurz landet, weil die Webfonts unter dem ersten Scroll nachladen und das Layout verschieben. Der Sprung läuft jetzt zweimal, einmal sofort und einmal nach `document.fonts.ready`.
 
 Geprüft im Browser: alle vierzehn Seiten rendern, dreizehn Routenklassen lösen auf die richtige Seite auf, darunter `#abschnitt-3-the-method`, `#case-herdata`, `#promptotyping-document-data`, `#praxis-knowledge-curation`, `#vault-{slug}` und `#konzept-eil`. Screenshots geprüft für Startseite, Vorlagen, Paper, Vault und die Mobilansicht. Nicht verifizierbar blieb die Scrollposition tiefer Anker im Screenshot, weil Chrome headless nach einem programmatischen Scroll ein leeres Bild liefert; die Seitenauflösung dieser Anker ist über den DOM geprüft.
+
+### Nachtrag zur sechsten Sitzung
+
+Drei Korrekturen nach dem ersten Blick des Operators auf die neue Shell.
+
+Die einklappbare Seitenleiste entfällt. Der Baum ist immer sichtbar, auf schmalen Viewports steht er als Block über der Seite. Damit sind Hamburger-Schaltfläche, Overlay-Drawer und Backdrop aus HTML, CSS und JavaScript entfernt.
+
+Die Leiste „Auf dieser Seite" entfällt ebenfalls. Das Raster ist damit zweispalig, der Baum und die Seite.
+
+Das Markenzeichen im Kopf ist vom DHCraft-Aquarell auf das Promptotyping-Logo gewechselt. DHCraft bleibt im Fußbereich, wo es als Träger hingehört.
+
+Dazu eine strukturelle Klärung: Die fünf Teile der Spezifikation im engeren Sinn, Anwendung, Vorlagen, Konvention, Artefakt und Grenze, Verifikation, tragen jetzt eine führende Nummer. Der Baum zeigt die Spezifikation damit als geordnetes Dokument statt als Reihe gleichrangiger Geschwister. Referenz, Praxis und Paper bleiben eigene Gruppen daneben.
