@@ -9,7 +9,9 @@
       "Read(//c/Users/Chrisi/Documents/**)",
       "Bash(git push:*)",
       "Bash(timeout 3 bash -c 'sleep 2 && curl -s http://localhost:8000/ | head -20')",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "PowerShell($l = Get-Content c:\\\\Users\\\\Chrisi\\\\Documents\\\\GitHub\\\\Promptotyping\\\\knowledge\\\\paper.md; foreach\\($n in 216,232\\){ $line=$l[$n-1]; foreach\\($p in '16,000','TaDiRAH-annotated'\\){ $i=$line.IndexOf\\($p\\); if\\($i -ge 0\\){ \"Z$n :: \" + $line.Substring\\([Math]::Max\\(0,$i-180\\),[Math]::Min\\(360,$line.Length-[Math]::Max\\(0,$i-180\\)\\)\\) } } })",
+      "Bash(pdftotext -q __TRACKED_VAR__/webfetch-1784837096220-fpnypv.pdf star-1989.txt)"
     ],
     "deny": [],
     "ask": []
