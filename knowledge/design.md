@@ -102,9 +102,13 @@ Vertical spacing follows an 8px base grid with a 4px half-step for fine adjustme
 
 ### Layout
 
-Desktop uses a two-column grid inside a 1200px container: a sticky table of contents (`--toc-width: 240px`) and a reading column (`minmax(0, 1fr)` with `--read-width: 720px` max, centred). The side panel is not a grid track; it is a `position: fixed` overlay of `--panel-width: 360px` that slides in from the right over the content.
+The site is laid out as specification documentation, in the manner of a library reference or a published ontology. One page is visible at a time, the sidebar tree is the table of contents, and the URL hash names the page. The former single scroll column, which carried all sections and the whole paper below one another, was replaced on 2026-07-25 by operator decision.
 
-The TOC column shows the current paper section and scrolls sticky, with the active entry marked by a left border and bold weight. Below 768px the grid collapses to a single column with 1.5rem horizontal padding, the TOC becomes a collapsible hamburger drawer, and the side panel becomes a bottom sheet.
+Desktop uses a three-track grid inside a 1400px container: the page tree (`--nav-width: 250px`), the page (`minmax(0, 1fr)` with `--read-width: 820px` max, centred), and the on-this-page rail (`--rail-width: 200px`). Both outer tracks are sticky below the fixed header (`--header-height: 3.25rem`) and scroll independently. The side panel stays outside the grid as a `position: fixed` overlay of `--panel-width: 360px`.
+
+The tree groups the pages under Spezifikation, Referenz, Praxis and Paper; the active page is marked by a left border and bold weight. The rail is built from the active page's H2 and H3 headings, or from the paper's section elements, and marks the heading in view. Below 1180px the rail folds away and the tree stays. Below 860px the tree becomes an overlay drawer behind a hamburger toggle, tables scroll inside their own box, and the side panel becomes a bottom sheet.
+
+The start page is the specification front: title, one-sentence scope, a keyed status table (Fassung, Stand, kanonische Adresse, Maschinenadresse, Evidenz, Lizenz), and a generated index of the specification. The index is derived from the same page registry as the sidebar, so the two cannot diverge.
 
 ## Side panels
 

@@ -46,7 +46,7 @@ Die Paperansicht rendert `knowledge/paper.md` zur Laufzeit. Die sieben Dateien u
 
 ## Stand 2026-07-25
 
-AP1 bis AP7 sind umgesetzt und im Browser getrieben geprueft. Die Lesespalte fuehrt die Methode zuerst und das Paper zuletzt, womit der Rollenwechsel vollzogen ist. Offen aus dem Zielzustand bleibt allein der Pflichtkern der Konvention, der laut Punkt 5 auf eine Fassung zu entscheiden ist; die Wissensbasis fuehrt ihn heute mit sechs Feldern, die Konvention beschreibt ihn daneben. Das ist eine Operator-Entscheidung und keine Implementierungsluecke.
+AP1 bis AP8 sind umgesetzt und im Browser getrieben geprueft. Die Lesespalte fuehrt die Methode zuerst und das Paper zuletzt, womit der Rollenwechsel vollzogen ist. Offen aus dem Zielzustand bleibt allein der Pflichtkern der Konvention, der laut Punkt 5 auf eine Fassung zu entscheiden ist; die Wissensbasis fuehrt ihn heute mit sechs Feldern, die Konvention beschreibt ihn daneben. Das ist eine Operator-Entscheidung und keine Implementierungsluecke.
 
 ## Arbeitspakete
 
@@ -63,6 +63,8 @@ AP1 bis AP7 sind umgesetzt und im Browser getrieben geprueft. Die Lesespalte fue
 **AP6 Beispiel-Workflow.** Wartet auf die Video-Transkripte. Erledigt 2026-07-25 aus den bereinigten Videoskripten der Vault-Repraesentationsschicht.
 
 **AP7 Vorlagen.** Fertigkeitskriterium pro Vorlage, Katalogisierung von `technology`, Angleichung der Versionsfelder in den Fülltemplates. Teilweise erledigt 2026-07-25: das Fertigkeitskriterium steht als eigene Spalte im Katalog. Die Vorlage `technology` bleibt offen, weil der Vorlagenkatalog vault-first gepflegt wird und eine echte Vault-Sitzung braucht.
+
+**AP8 Umbau zur Spezifikationsdokumentation.** Operator-Entscheidung 2026-07-25, nachgereicht zum Zielzustand. AP1 bis AP7 haben Inhalt und Reihenfolge umgebaut, die Darstellung blieb die einer Paper-Publikation, eine durchgehende Scroll-Spalte mit Hero und Video an der Spitze. Die Site ist stattdessen als Spezifikationsdokumentation zu bauen, wie sie eine Programmbibliothek oder eine publizierte Ontologie fuehrt: eine Seite zur Zeit, ein Navigationsbaum als Inhaltsverzeichnis, eine Startseite, die die Spezifikation selbst ist, und alles Weitere als eigene Unterseiten. Betrifft `index.html`, `404.html`, `assets/css/style.css`, `assets/js/app.js` und `_content/ueberblick.md`. Erledigt 2026-07-25.
 
 ## Reihenfolge
 

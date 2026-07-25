@@ -743,3 +743,23 @@ Das Glossar hat eine eigene Navigation bekommen, eine Zeile mit den Anfangsbuchs
 Der Plan ist auf Stand gezogen. AP1 bis AP7 sind umgesetzt, offen aus dem Zielzustand bleibt allein der Pflichtkern der Konvention, den Punkt 5 auf eine Fassung entschieden haben will; das ist eine Operator-Entscheidung.
 
 Geprüft im gerenderten DOM: vierzehn Sektionen in der geplanten Reihenfolge, die Workflow-Seite gefüllt, fünfzehn Trigger-Zellen im Katalog, zwölf Sprungmarken im Glossar, hundertsiebenunddreißig Claim-Einträge in der Vault-Ansicht, zehn Papersektionen, keine leere Sektion, keine Ladefehler.
+
+## 2026-07-25, sechste Sitzung — AP8, Umbau zur Spezifikationsdokumentation
+
+Der Operator hat nach der fünften Sitzung festgestellt, dass das Frontend weiterhin aussieht wie vorher. Das war zutreffend und lag am Plan selbst. AP1 bis AP7 haben Inhalt, Reihenfolge und Rollenverhältnis umgebaut, ein visueller Umbau stand in keinem der sieben Pakete. Die Stylesheet-Änderungen der letzten Commits waren additiv, für die Vault-Ansicht, die Trigger-Spalte und die Buchstaben-Navigation; Kopfzeile, Typografie, Spaltenlayout und Seitenleiste stammten unverändert aus dem Erstdeploy. Es war ein anderer Text im gleichen Gehäuse.
+
+Die Zielvorgabe kam dann präzise: eine Spezifikationsdokumentation, wie sie eine Programmbibliothek oder eine publizierte Ontologie führt. Die Startseite ist die Spezifikation, alles Weitere sind eigene Unterseiten. Das ist als AP8 in den Plan aufgenommen.
+
+Umgesetzt ist damit ein Wechsel des Seitenmodells. Bisher lagen vierzehn Sektionen und das gesamte Paper in einer durchgehenden Scroll-Spalte, darüber ein zentrierter Titel mit Video. Jetzt ist eine Seite zur Zeit sichtbar, der Navigationsbaum in der Seitenleiste ist das Inhaltsverzeichnis, und rechts steht eine Leiste mit den Überschriften der aktiven Seite. Der Baum gruppiert nach Spezifikation, Referenz, Praxis und Paper.
+
+Tragend dafür ist ein Seitenregister in `app.js`. Aus derselben Liste entstehen die Seitencontainer, der Navigationsbaum, die Routenauflösung und der erzeugte Spezifikationsindex auf der Startseite. `index.html` und `404.html` tragen deshalb überhaupt keine Navigationsmarkierung mehr und können nicht auseinanderlaufen, was bisher eine offene Fehlerquelle war und in der vierten Sitzung schon einmal zugeschlagen hat.
+
+Die Ankerkompatibilität ist die eigentliche Arbeit an dieser Umstellung. Ein Hash wählt jetzt zuerst eine Seite und dann ein Element darin. Die Auflösung läuft über die exakte Seiten-Kennung, sonst über eine Präfixtabelle, sonst über den DOM-Vorfahren des Elements. Die nicht aktiven Seiten bleiben im DOM, nur ausgeblendet, sodass jeder publizierte Anker weiter auflöst, gleich welche Seite gerade zu sehen ist.
+
+Das Hero-Video ist entfallen. Teil 1 der Videoeinführung sitzt jetzt auf der Seite Beispiel-Workflow, wo der Fall ohnehin durchgeführt wird.
+
+Die Startseite ist zur Spezifikationsfront umgeschrieben. Sie trägt Titel, Geltungssatz, eine Statustabelle mit Fassung, Stand, kanonischer Adresse, Maschinenadresse, Evidenzverweis und Lizenz, und darunter den erzeugten Index der Spezifikation. Ihr alter Satz, die Seite rendere das Paper als durchgehenden Lesefluss, war seit der Aufteilung falsch und ist ersetzt.
+
+Ein Fund am Rande: beim Prüfen der Tiefenlinks stellte sich heraus, dass ein Sprung auf ein Ziel weit unten in der Seite zu kurz landet, weil die Webfonts unter dem ersten Scroll nachladen und das Layout verschieben. Der Sprung läuft jetzt zweimal, einmal sofort und einmal nach `document.fonts.ready`.
+
+Geprüft im Browser: alle vierzehn Seiten rendern, dreizehn Routenklassen lösen auf die richtige Seite auf, darunter `#abschnitt-3-the-method`, `#case-herdata`, `#promptotyping-document-data`, `#praxis-knowledge-curation`, `#vault-{slug}` und `#konzept-eil`. Screenshots geprüft für Startseite, Vorlagen, Paper, Vault und die Mobilansicht. Nicht verifizierbar blieb die Scrollposition tiefer Anker im Screenshot, weil Chrome headless nach einem programmatischen Scroll ein leeres Bild liefert; die Seitenauflösung dieser Anker ist über den DOM geprüft.

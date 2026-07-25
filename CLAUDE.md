@@ -57,6 +57,14 @@ Der Ordner `vault/` ist eine Instanz des Grounded-Vault-Templates (`DigitalHuman
 
 Die Phasen-Provenance-Lane wurde nach dem Erstdeploy auf Operator-Entscheidung vollständig entfernt (Legende, Mobile-Phase-Bar, Hover-Tooltip, Filter-Modus aus HTML, CSS und JavaScript). Die `{:.phase-*}`-Tags im Paper-Markdown werden von der marked-Extension in `app.js` nur noch gestrippt: ein getaggter Absatz rendert als gewöhnlicher Absatz ohne Klasse und ohne sichtbaren Effekt. Lege keine neuen `{:.phase-*}`-Tags an und reaktiviere die Lane nicht; wer sie wiederbeleben will, beginnt einen Neu-Diskurs mit dem Critical Expert.
 
+## Seitenmodell: Spezifikationsdokumentation (Operator-Entscheidung 2026-07-25)
+
+Die Site ist eine Spezifikationsdokumentation, wie sie eine Programmbibliothek oder eine publizierte Ontologie führt. Es ist **eine Seite zur Zeit sichtbar**; der Navigationsbaum in der Seitenleiste ist das Inhaltsverzeichnis, rechts steht die Leiste mit den Überschriften der aktiven Seite. Die durchgehende Scroll-Spalte mit Hero und Video an der Spitze ist abgelöst und wird nicht reaktiviert.
+
+Einzige Quelle für Seitencontainer, Navigationsbaum, Routenauflösung und den Spezifikationsindex der Startseite ist das Register `PAGES` in `assets/js/app.js`. Eine neue Seite wird dort eingetragen, nicht in `index.html`. **Schreibe keine Navigationsmarkierung in `index.html` oder `404.html`**; beide tragen nur die Shell, und genau das hält sie synchron.
+
+Die nicht aktiven Seiten bleiben als `display: none` im DOM. Das ist die Bedingung dafür, dass jeder publizierte Anker weiter auflöst, gleich welche Seite gerade zu sehen ist. Lazy-Mounting einzelner Seiten würde das brechen.
+
 ## URL-Anker-Schema (Pflicht-Konvention, Stand ADR-2/ADR-3)
 
 - Vorlagen (Promptotyping Documents): Subpath `/promptotyping-document/{slug}` (Latest, kanonisch), gleichwertig Hash `#promptotyping-document-{slug}`. Fünfzehn Slugs: `data`, `index`, `project`, `specification`, `architecture`, `design`, `journal`, `user-stories`, `action-layer` (ADR-9), `testing`, `plan`, `report`, `domain-knowledge`, `verification`, `integration`. Snapshots erst bei Versionssprung über Sub-Anker `#promptotyping-document-{slug}-v{version}` bzw. `/promptotyping-document/{slug}#v{version}` — kein eigener Subpath pro Version. (Das ältere Schema `#vorlage-{name}-{version}` ist obsolet, siehe journal.md 2026-05-09 „URL-Schema-Korrektur".)

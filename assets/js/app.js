@@ -45,6 +45,87 @@
     anchorText: "VetMedAI Wissensbilanz"
   };
 
+  /* ---- Page registry ----
+     The site is a specification documentation: one page is visible at a time,
+     the sidebar tree is the table of contents, and the hash names the page.
+     This registry is the single source for the page hosts, the sidebar and the
+     route resolution, so index.html and 404.html carry no navigation markup and
+     cannot drift apart. */
+
+  var PAGES = [
+    { id: "ueberblick", label: "Ueberblick", group: "Spezifikation",
+      note: "Was die Methode ist und wofuer sie gilt" },
+    { id: "anwendung", label: "Anwendung", group: "Spezifikation",
+      note: "Die vier Phasen in Handlungsaufloesung" },
+    { id: "vorlagen", label: "Vorlagen", group: "Spezifikation",
+      note: "Der Dokumentsatz und seine Ausloeser" },
+    { id: "konvention-v0.1", label: "Konvention", group: "Spezifikation",
+      note: "Frontmatter, Adressierung, Lese-Heuristik" },
+    { id: "artefakt", label: "Artefakt und Grenze", group: "Spezifikation",
+      note: "Artefakttyp und Uebergabepunkt" },
+    { id: "verifikation", label: "Verifikation", group: "Spezifikation",
+      note: "Pruefarten, Pruefebenen, Autonomiezonen" },
+
+    { id: "glossar", label: "Glossar", group: "Referenz",
+      note: "Termverzeichnis der Methode" },
+    { id: "vault", label: "Vault", group: "Referenz",
+      note: "Claims und Distillate unter dem Paper" },
+
+    { id: "workflow", label: "Beispiel-Workflow", group: "Praxis",
+      note: "Ein durchgefuehrter Fall von Rohdaten bis Artefakt" },
+    { id: "use-cases", label: "Use Cases", group: "Praxis",
+      note: "Dokumentierte Projekte" },
+    { id: "praxis", label: "Best Practices", group: "Praxis",
+      note: "Handgriffe aus der Anwendung" },
+    { id: "skills", label: "Skills", group: "Praxis",
+      note: "Wiederverwendbare Agentenanweisungen" },
+    { id: "arbeitsumgebung", label: "Arbeitsumgebung", group: "Praxis",
+      note: "Werkzeuge um die Methode herum" },
+
+    { id: "paper", label: "Paper", group: "Paper",
+      note: "Warum die Methode so gebaut ist" }
+  ];
+
+  var PAGE_GROUPS = ["Spezifikation", "Referenz", "Praxis", "Paper"];
+  var HOME_PAGE = "ueberblick";
+
+  /* Sub-anchor prefixes and their owning page. Order matters only in that the
+     exact page id is tried first. */
+  var ANCHOR_OWNER = [
+    [/^abschnitt-/, "paper"],
+    [/^(abstract|acknowledgements|literatur|fussnoten|fn-|fnref-)/, "paper"],
+    [/^case-/, "use-cases"],
+    [/^praxis-/, "praxis"],
+    [/^skills-/, "skills"],
+    [/^(glossar-|konzept-)/, "glossar"],
+    [/^vault-/, "vault"],
+    [/^promptotyping-document-/, "vorlagen"],
+    [/^konvention-/, "konvention-v0.1"]
+  ];
+
+  function isPageId(id) {
+    return PAGES.some(function (p) { return p.id === id; });
+  }
+
+  /* Which page owns an anchor. Falls back to the DOM, so an anchor that only
+     the rendered content knows about still resolves. */
+  function pageForAnchor(anchor) {
+    if (!anchor) {
+      return HOME_PAGE;
+    }
+    if (isPageId(anchor)) {
+      return anchor;
+    }
+    for (var i = 0; i < ANCHOR_OWNER.length; i++) {
+      if (ANCHOR_OWNER[i][0].test(anchor)) {
+        return ANCHOR_OWNER[i][1];
+      }
+    }
+    var el = document.getElementById(anchor);
+    var host = el && el.closest ? el.closest(".doc-page") : null;
+    return host ? host.id : null;
+  }
+
   /* ---- Footnote apparatus ----
      marked v9 has no footnote support. Two extensions cover the Pandoc-style
      syntax: a block tokenizer that consumes the definition lines "[^name]: text"
@@ -275,6 +356,7 @@
     return fetchMarkdown(PAPER_FILE)
       .then(function (text) {
         host.innerHTML = renderPaperMarkdown(stripFrontmatter(text));
+        host.classList.remove("placeholder-section");
         sectionizePaper(host);
         addPaperAnchorAliases(host);
         injectPaperVideo(host);
@@ -425,52 +507,217 @@
     sectionEl.appendChild(block);
   }
 
-  /* ---- Hash handling ----
-     Everything is rendered before this runs, so a hash either opens a panel or
-     scrolls to an element that exists. */
+  /* ---- Routing ----
+     A hash names either a page or an anchor inside one. Switching pages is a
+     visibility change; everything is rendered once at boot, so every published
+     anchor keeps resolving no matter which page is showing. */
 
-  function handleHash(hash) {
-    if (!hash) {
+  var activePage = null;
+
+  function scrollToAnchor(anchor) {
+    var el = anchor && document.getElementById(anchor);
+    if (!el) {
+      window.scrollTo(0, 0);
       return;
     }
-    if (handleSpecialAnchor(hash)) {
-      return;
-    }
-    var el = document.getElementById(hash);
-    if (el) {
-      el.scrollIntoView();
+    el.scrollIntoView();
+    // Web fonts and late images reflow the page after this first scroll, which
+    // leaves a deep link short of its target. Repeat once they have settled.
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(function () {
+        requestAnimationFrame(function () { el.scrollIntoView(); });
+      });
     }
   }
 
-  /* ---- TOC scroll-spy ---- */
+  function showPage(id, anchor) {
+    var page = isPageId(id) ? id : HOME_PAGE;
+    if (page !== activePage) {
+      document.querySelectorAll(".doc-page").forEach(function (el) {
+        el.classList.toggle("is-active", el.id === page);
+      });
+      activePage = page;
+      markNavActive(page);
+      buildRail(page);
+      document.title = pageTitle(page);
+    }
+    scrollToAnchor(anchor && anchor !== page ? anchor : null);
+  }
 
-  function setupScrollSpy() {
-    var links = Array.prototype.slice.call(document.querySelectorAll(".toc a[data-target]"));
-    if (!links.length) {
+  function pageTitle(id) {
+    var entry = PAGES.filter(function (p) { return p.id === id; })[0];
+    return id === HOME_PAGE || !entry
+      ? "Promptotyping. Spezifikation der Methode"
+      : entry.label + " — Promptotyping";
+  }
+
+  function handleHash(hash) {
+    if (handleSpecialAnchor(hash)) {
       return;
     }
+    var page = pageForAnchor(hash);
+    if (!page) {
+      return;
+    }
+    showPage(page, hash);
+  }
 
-    var paperHost = document.getElementById(PAPER_HOST_ID);
+  /* ---- Page hosts ----
+     Mounted before any rendering runs, so the render functions find their
+     targets by id exactly as before. */
 
+  function mountPages() {
+    var main = document.getElementById("content");
+    if (!main) {
+      return;
+    }
+    PAGES.forEach(function (p) {
+      var el = document.createElement("section");
+      // The paper host keeps its own class: renderPaper sectionizes into it.
+      el.className = "doc-page placeholder-section" + (p.id === PAPER_HOST_ID ? " paper" : "");
+      el.id = p.id;
+      main.appendChild(el);
+    });
+  }
+
+  /* ---- Specification index ----
+     The start page carries an index of the specification, generated from the
+     page registry so it cannot fall behind the sidebar. Placed after the status
+     table, the way an ontology document leads with its term index. */
+
+  function buildSpecIndex(host) {
+    if (host.querySelector(".spec-index")) {
+      return;
+    }
+    var anchorEl = host.querySelector("table");
+    var html = "";
+    PAGE_GROUPS.forEach(function (group) {
+      var pages = PAGES.filter(function (p) {
+        return p.group === group && p.id !== HOME_PAGE;
+      });
+      if (!pages.length) {
+        return;
+      }
+      html += '<div class="spec-index-group"><p class="spec-index-title">' +
+        escapeHtml(group) + "</p><ul>";
+      pages.forEach(function (p) {
+        html += '<li><a href="#' + p.id + '">' + escapeHtml(p.label) + "</a>" +
+          '<span class="spec-index-note">' + escapeHtml(p.note || "") + "</span></li>";
+      });
+      html += "</ul></div>";
+    });
+    var block = document.createElement("section");
+    block.className = "spec-index";
+    block.innerHTML = '<h2 id="inhalt-der-spezifikation">Inhalt der Spezifikation</h2>' +
+      '<div class="spec-index-cols">' + html + "</div>";
+    if (anchorEl && anchorEl.nextSibling) {
+      host.insertBefore(block, anchorEl.nextSibling);
+    } else {
+      host.appendChild(block);
+    }
+  }
+
+  /* ---- Sidebar tree ---- */
+
+  function buildNav() {
+    var nav = document.getElementById("docs-nav");
+    if (!nav) {
+      return;
+    }
+    var html = "";
+    PAGE_GROUPS.forEach(function (group) {
+      var pages = PAGES.filter(function (p) { return p.group === group; });
+      if (!pages.length) {
+        return;
+      }
+      html += '<p class="docs-nav-group">' + escapeHtml(group) + "</p><ul>";
+      pages.forEach(function (p) {
+        html += '<li><a href="#' + p.id + '" data-page="' + p.id + '">' +
+          escapeHtml(p.label) + "</a></li>";
+      });
+      html += "</ul>";
+    });
+    nav.innerHTML = html;
+    nav.addEventListener("click", function (e) {
+      if (e.target.tagName === "A") {
+        closeNavDrawer();
+      }
+    });
+  }
+
+  function markNavActive(page) {
+    document.querySelectorAll("#docs-nav a[data-page]").forEach(function (a) {
+      var on = a.getAttribute("data-page") === page;
+      a.classList.toggle("is-active", on);
+      if (on) {
+        a.setAttribute("aria-current", "page");
+      } else {
+        a.removeAttribute("aria-current");
+      }
+    });
+  }
+
+  /* ---- On-this-page rail ----
+     Built from the active page's headings. The paper carries its H2s as
+     section elements, so those are read off the sections instead. */
+
+  function buildRail(page) {
+    var rail = document.getElementById("docs-rail");
+    var host = document.getElementById(page);
+    if (!rail || !host) {
+      return;
+    }
+    var items = [];
+    if (page === PAPER_HOST_ID) {
+      host.querySelectorAll(".paper-section").forEach(function (s) {
+        var h = s.querySelector("h2");
+        if (s.id && h) {
+          items.push({ id: s.id, text: h.textContent, level: 2 });
+        }
+      });
+    } else {
+      host.querySelectorAll("h2, h3").forEach(function (h) {
+        if (!h.id) {
+          h.id = page + "--" + slugify(h.textContent);
+        }
+        items.push({ id: h.id, text: h.textContent, level: h.tagName === "H3" ? 3 : 2 });
+      });
+    }
+    if (items.length < 2) {
+      rail.innerHTML = "";
+      rail.classList.add("is-empty");
+      return;
+    }
+    rail.classList.remove("is-empty");
+    rail.innerHTML = '<p class="docs-rail-title">Auf dieser Seite</p><ul>' +
+      items.map(function (i) {
+        return '<li class="lvl-' + i.level + '"><a href="#' + i.id + '">' +
+          escapeHtml(i.text) + "</a></li>";
+      }).join("") + "</ul>";
+    setupRailSpy(host, items, rail);
+  }
+
+  function setupRailSpy(host, items, rail) {
+    if (!window.IntersectionObserver) {
+      return;
+    }
+    var links = {};
+    rail.querySelectorAll("a").forEach(function (a) {
+      links[a.getAttribute("href").slice(1)] = a;
+    });
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) {
           return;
         }
-        var id = entry.target.id;
-        // A paper section also marks the parent "Paper" entry.
-        var inPaper = !!(paperHost && paperHost.contains(entry.target));
-        links.forEach(function (link) {
-          var target = link.getAttribute("data-target");
-          link.classList.toggle("active",
-            target === id || (inPaper && target === PAPER_HOST_ID));
+        Object.keys(links).forEach(function (id) {
+          links[id].classList.toggle("is-active", id === entry.target.id);
         });
       });
-    }, { rootMargin: "-40% 0px -55% 0px" });
-
-    // Sections of the paper carry the sub-entries; the other sections their own.
-    document.querySelectorAll(".paper-section, .placeholder-section").forEach(function (el) {
-      if (el.id) {
+    }, { rootMargin: "-15% 0px -70% 0px" });
+    items.forEach(function (i) {
+      var el = document.getElementById(i.id);
+      if (el) {
         observer.observe(el);
       }
     });
@@ -1373,22 +1620,22 @@
      these anchors live in already-rendered sections (no lazy paper load). */
   function handleSpecialAnchor(hash) {
     if (/^promptotyping-document-/.test(hash)) {
+      showPage("vorlagen");
       openTemplatePanel(hash);
-      var row = document.getElementById(hash);
-      if (row) { row.scrollIntoView(); }
+      scrollToAnchor(hash);
       return true;
     }
     if (/^glossar-/.test(hash)) {
-      var gEl = document.getElementById(hash);
-      if (gEl) { gEl.scrollIntoView(); }
+      showPage("glossar");
+      scrollToAnchor(hash);
       return true;
     }
     if (/^konzept-/.test(hash)) {
       var alias = hash.replace(/^konzept-/, "");
       var slug = KONZEPT_ALIASES[alias] || alias;
-      var target = document.getElementById("glossar-" + slug);
-      if (target) {
-        target.scrollIntoView();
+      if (document.getElementById("glossar-" + slug)) {
+        showPage("glossar");
+        scrollToAnchor("glossar-" + slug);
       } else {
         openGlossarPanel(slug);
       }
@@ -1399,42 +1646,60 @@
 
   /* ---- Init ---- */
 
-  /* ---- TOC hamburger (mobile) ---- */
+  /* ---- Sidebar drawer (mobile) ---- */
 
-  function setupTocToggle() {
-    var btn = document.getElementById("toc-toggle");
-    var list = document.getElementById("toc-nav-list");
-    if (!btn || !list) {
-      return;
+  function closeNavDrawer() {
+    document.body.classList.remove("nav-open");
+    var btn = document.getElementById("docs-nav-toggle");
+    if (btn) {
+      btn.setAttribute("aria-expanded", "false");
     }
-    btn.addEventListener("click", function () {
-      var isOpen = list.classList.contains("open");
-      list.classList.toggle("open", !isOpen);
-      btn.setAttribute("aria-expanded", isOpen ? "false" : "true");
-    });
-    // Close TOC when a link inside it is activated.
-    list.addEventListener("click", function (e) {
-      if (e.target.tagName === "A") {
-        list.classList.remove("open");
-        btn.setAttribute("aria-expanded", "false");
-      }
-    });
+  }
+
+  function setupNavToggle() {
+    var btn = document.getElementById("docs-nav-toggle");
+    var backdrop = document.getElementById("docs-nav-backdrop");
+    if (btn) {
+      btn.addEventListener("click", function () {
+        var open = document.body.classList.toggle("nav-open");
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+    }
+    if (backdrop) {
+      backdrop.addEventListener("click", closeNavDrawer);
+    }
   }
 
   function init() {
     configureMarked();
+    mountPages();
+    buildNav();
     setupSidePanel();
-    setupTocToggle();
+    setupNavToggle();
     setupGlossarInteraction(document.getElementById("content"));
+
+    // Show the routed page immediately, so the shell is never a blank frame
+    // while the content files are still in flight.
+    showPage(pageForAnchor(window.location.hash.replace(/^#/, "")) || HOME_PAGE);
 
     // Glossar must be loaded before paper sections render, so the trigger
     // post-processing can mark terms. Render the static sections in parallel,
     // then start the paper lazy loading and resolve the initial hash.
     var ready = Promise.all([
       renderGlossar(),
-      renderMarkdownInto("ueberblick", "_content/ueberblick.md"),
+      renderMarkdownInto("ueberblick", "_content/ueberblick.md", buildSpecIndex),
       renderMarkdownInto("anwendung", "_content/anwendung.md"),
-      renderMarkdownInto("workflow", "_content/workflow.md"),
+      renderMarkdownInto("workflow", "_content/workflow.md", function (el) {
+        // Part 1 introduces the method and the four phases; it sits with the
+        // worked case rather than in a hero above the specification.
+        var intro = el.querySelector("p");
+        var video = buildVideoFacade("8sUe4Jkh3uQ", "Einfuehrung in Promptotyping, Teil 1");
+        if (intro && intro.nextSibling) {
+          el.insertBefore(video, intro.nextSibling);
+        } else {
+          el.appendChild(video);
+        }
+      }),
       renderMarkdownInto("artefakt", "_content/artefakt.md"),
       renderMarkdownInto("verifikation", "_content/verifikation.md"),
       renderVorlagen(),
@@ -1459,7 +1724,9 @@
     }).then(function () {
       return renderVault();
     }).then(function () {
-      setupScrollSpy();
+      // Rebuild the rail now that the active page actually has headings, then
+      // resolve the initial hash against the fully rendered DOM.
+      buildRail(activePage);
       handleHash(window.location.hash.replace(/^#/, ""));
     });
 

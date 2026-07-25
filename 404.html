@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Promptotyping. Eine Context-Engineering-Methode</title>
-  <meta name="description" content="Promptotyping ist eine iterative Context-Engineering-Methode in vier Phasen, um aus Daten und Frontier-LLMs Forschungsartefakte zu erzeugen. Interaktive Methodik-Site zum Paper Pollin 2026.">
+  <title>Promptotyping. Spezifikation der Methode</title>
+  <meta name="description" content="Spezifikationsdokumentation der Promptotyping-Methode: vier Phasen, Dokumentsatz, Konvention, Artefakttyp und Verifikation, mit Referenz, Praxis und dem Methoden-Paper.">
 
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://dhcraft.org/Promptotyping/">
 
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Promptotyping. Eine Context-Engineering-Methode">
+  <meta property="og:title" content="Promptotyping. Spezifikation der Methode">
   <meta property="og:description" content="Iterative Context-Engineering-Methode in vier Phasen, um aus Daten und Frontier-LLMs Forschungsartefakte zu erzeugen.">
   <meta property="og:url" content="https://dhcraft.org/Promptotyping/">
   <meta property="og:image" content="https://dhcraft.org/Promptotyping/assets/promptotyping-logo.png">
@@ -24,7 +24,7 @@
     // Subpath-to-hash routing. GitHub Pages serves 404.html for any path that
     // is not a real file; this prelude maps the requested subpath onto the
     // canonical hash anchor and rewrites the URL, so the single-page app loads
-    // the right section. Mirrors PromptotypingApp.resolveTemplateUrl in app.js.
+    // the right page. Mirrors PromptotypingApp.resolveTemplateUrl in app.js.
     (function () {
       // Preserve a snapshot suffix (e.g. v0.1) so
       // /promptotyping-document/data#v0.1 stays addressable.
@@ -34,6 +34,25 @@
         .replace(/^\//, "")
         .replace(/\/$/, "");
       var segments = path.split("/");
+
+      // Paths that are a page of their own, addressed by their bare slug.
+      var PAGE_PATHS = {
+        ueberblick: "ueberblick",
+        anwendung: "anwendung",
+        workflow: "workflow",
+        artefakt: "artefakt",
+        verifikation: "verifikation",
+        vorlagen: "vorlagen",
+        konvention: "konvention-v0.1",
+        "use-cases": "use-cases",
+        praxis: "praxis",
+        skills: "skills",
+        arbeitsumgebung: "arbeitsumgebung",
+        glossar: "glossar",
+        vault: "vault",
+        paper: "paper",
+        literatur: "literatur"
+      };
 
       var anchor = null;
       if (segments[0] === "promptotyping-document" && segments[1]) {
@@ -52,16 +71,10 @@
         anchor = "praxis-" + segments[1];
       } else if (segments[0] === "skills" && segments[1]) {
         anchor = "skills-" + segments[1];
-      } else if (segments[0] === "ueberblick") {
-        anchor = "ueberblick";
-      } else if (segments[0] === "use-cases") {
-        anchor = "use-cases";
-      } else if (segments[0] === "arbeitsumgebung") {
-        anchor = "arbeitsumgebung";
-      } else if (segments[0] === "glossar") {
-        anchor = "glossar";
-      } else if (segments[0] === "literatur") {
-        anchor = "literatur";
+      } else if (segments[0] === "vault" && segments[1]) {
+        anchor = "vault-" + segments[1];
+      } else if (PAGE_PATHS[segments[0]] && !segments[1]) {
+        anchor = PAGE_PATHS[segments[0]];
       }
 
       if (anchor) {
@@ -72,7 +85,9 @@
     })();
   </script>
 </head>
-<body>
+<body class="docs">
+
+  <a class="skip-link" href="#content">Zum Inhalt springen</a>
 
   <!-- Real 404: shown only when the path matched no anchor type -->
   <div id="error-message">
@@ -80,97 +95,30 @@
     <p>Diese Adresse existiert nicht. Zurueck zur <a href="/Promptotyping/">Startseite</a>.</p>
   </div>
 
-  <header class="site-header">
-    <div class="site-header-inner">
-      <div class="site-brand">
-        <a class="site-brand-logo" href="https://dhcraft.org" aria-label="Digital Humanities Craft">
-          <img src="assets/img/dhcraft-logo-watercolor.png" alt="Digital Humanities Craft" width="24" height="28">
-        </a>
-        <a class="site-brand-word" href="/Promptotyping/" aria-label="Zum Seitenanfang">Promptotyping</a>
-      </div>
-      <nav class="site-nav" aria-label="Hauptnavigation">
+  <header class="docs-header">
+    <div class="docs-header-inner">
+      <button type="button" class="docs-nav-toggle" id="docs-nav-toggle"
+              aria-expanded="false" aria-controls="docs-nav">
+        <span class="docs-nav-toggle-bars" aria-hidden="true"></span>
+        <span class="visually-hidden">Navigation</span>
+      </button>
+      <a class="docs-brand" href="/Promptotyping/#ueberblick">
+        <img src="assets/img/dhcraft-logo-watercolor.png" alt="" width="24" height="28" aria-hidden="true">
+        <span class="docs-brand-word">Promptotyping</span>
+        <span class="docs-brand-kind">Spezifikation</span>
+      </a>
+      <nav class="docs-header-links" aria-label="Extern">
         <a href="/Promptotyping/#paper">Paper</a>
-        <a href="/Promptotyping/#vorlagen">Vorlagen</a>
-        <a href="/Promptotyping/#use-cases">Use Cases</a>
-        <a href="/Promptotyping/#praxis">Praxis</a>
-        <a href="/Promptotyping/#skills">Skills</a>
-        <a href="/Promptotyping/#glossar">Glossar</a>
-        <a href="https://github.com/DigitalHumanitiesCraft/Promptotyping" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/DigitalHumanitiesCraft/Promptotyping" target="_blank" rel="noopener">Repository</a>
       </nav>
     </div>
   </header>
 
-  <header class="hero">
-    <h1>Promptotyping</h1>
-    <p class="hero-lead">Eine iterative Context-Engineering-Methode in vier Phasen, um aus Daten und Frontier-LLMs Forschungsartefakte zu erzeugen. Strukturierter Kontext vor Code, Verifikation vor Vertrauen, Dokumentation vor Geschwindigkeit.</p>
-    <div class="video-embed" id="hero-video">
-      <button type="button" class="video-facade" aria-label="Video laden: Einfuehrung in Promptotyping, Teil 1" data-youtube="8sUe4Jkh3uQ" data-title="Einfuehrung in Promptotyping, Teil 1">
-        <span class="video-facade-title">Einfuehrung in Promptotyping, Teil 1</span>
-        <span class="video-facade-note">Klick laedt das Video von youtube-nocookie.com. Vor dem Klick wird keine Verbindung zu YouTube aufgebaut und es findet kein Tracking statt.</span>
-        <span class="video-facade-play">Video laden</span>
-      </button>
-    </div>
-  </header>
-
-  <div class="layout">
-
-    <nav class="toc" aria-label="Inhaltsverzeichnis">
-      <button type="button" class="toc-toggle" id="toc-toggle" aria-expanded="false" aria-controls="toc-nav-list">
-        <span class="toc-toggle-icon">&#9658;</span>
-        <span>Inhalt</span>
-      </button>
-      <p class="toc-title">Inhalt</p>
-      <ul id="toc-nav-list" class="toc-nav-list">
-        <li><a href="#ueberblick" data-target="ueberblick">Ueberblick</a></li>
-        <li><a href="#anwendung" data-target="anwendung">Anwendung</a></li>
-        <li><a href="#workflow" data-target="workflow">Beispiel-Workflow</a></li>
-        <li><a href="#artefakt" data-target="artefakt">Artefakt und Grenze</a></li>
-        <li><a href="#verifikation" data-target="verifikation">Verifikation</a></li>
-        <li><a href="#vorlagen" data-target="vorlagen">Vorlagen</a></li>
-        <li><a href="#konvention-v0.1" data-target="konvention-v0.1">Konvention</a></li>
-        <li><a href="#use-cases" data-target="use-cases">Use Cases</a></li>
-        <li><a href="#praxis" data-target="praxis">Praxis</a></li>
-        <li><a href="#skills" data-target="skills">Skills</a></li>
-        <li><a href="#arbeitsumgebung" data-target="arbeitsumgebung">Arbeitsumgebung</a></li>
-        <li><a href="#glossar" data-target="glossar">Glossar</a></li>
-        <li><a href="#vault" data-target="vault">Vault</a></li>
-        <li><a href="#paper" data-target="paper">Paper</a></li>
-        <li class="toc-sub"><a href="#abschnitt-1-introduction" data-target="abschnitt-1-introduction">1. Introduction</a></li>
-        <li class="toc-sub"><a href="#abschnitt-2-the-epistemic-frame" data-target="abschnitt-2-the-epistemic-frame">2. The Epistemic Frame</a></li>
-        <li class="toc-sub"><a href="#abschnitt-3-the-method" data-target="abschnitt-3-the-method">3. The Method</a></li>
-        <li class="toc-sub"><a href="#abschnitt-4-the-artefact-type" data-target="abschnitt-4-the-artefact-type">4. The Artefact Type</a></li>
-        <li class="toc-sub"><a href="#abschnitt-5-evidence-the-documented-projects" data-target="abschnitt-5-evidence-the-documented-projects">5. Evidence</a></li>
-        <li class="toc-sub"><a href="#abschnitt-6-discussion" data-target="abschnitt-6-discussion">6. Discussion</a></li>
-        <li class="toc-sub"><a href="#abschnitt-7-conclusion" data-target="abschnitt-7-conclusion">7. Conclusion</a></li>
-        <li class="toc-sub"><a href="#literatur" data-target="literatur">Literatur</a></li>
-        <li class="toc-sub"><a href="#fussnoten" data-target="fussnoten">Notes</a></li>
-      </ul>
-    </nav>
-
-    <main class="content" id="content">
-      <!-- Method first, paper last. The site says what Promptotyping is and how
-           it is applied; the paper says why it is built that way and whether it
-           holds (Zielzustand in knowledge/plan-site.md). -->
-      <section class="placeholder-section" id="ueberblick"></section>
-      <section class="placeholder-section" id="anwendung"></section>
-      <section class="placeholder-section" id="workflow"></section>
-      <section class="placeholder-section" id="artefakt"></section>
-      <section class="placeholder-section" id="verifikation"></section>
-      <section class="placeholder-section" id="vorlagen"></section>
-      <section class="placeholder-section" id="konvention-v0.1"></section>
-      <section class="placeholder-section" id="use-cases"></section>
-      <section class="placeholder-section" id="praxis"></section>
-      <section class="placeholder-section" id="skills"></section>
-      <section class="placeholder-section" id="arbeitsumgebung"></section>
-      <section class="placeholder-section" id="glossar"></section>
-      <section class="placeholder-section" id="vault"></section>
-
-      <!-- Paper. Rendered at runtime from the canonical knowledge/paper.md;
-           app.js splits it into one section per H2 and appends the footnote
-           apparatus, so the published #abschnitt-* anchors keep resolving. -->
-      <div class="paper" id="paper"></div>
-
-    </main>
+  <div class="docs-shell">
+    <nav class="docs-nav" id="docs-nav" aria-label="Dokumentation"></nav>
+    <div class="docs-nav-backdrop" id="docs-nav-backdrop"></div>
+    <main class="docs-main content" id="content" tabindex="-1"></main>
+    <aside class="docs-rail" id="docs-rail" aria-label="Auf dieser Seite"></aside>
   </div>
 
   <div class="side-panel-backdrop" id="side-panel-backdrop"></div>
@@ -208,20 +156,6 @@
         var err = document.getElementById("error-message");
         if (err) { err.style.display = "block"; }
       }
-      var facade = document.querySelector("#hero-video .video-facade");
-      if (!facade) { return; }
-      facade.addEventListener("click", function () {
-        var id = facade.getAttribute("data-youtube");
-        var title = facade.getAttribute("data-title");
-        var iframe = document.createElement("iframe");
-        iframe.src = "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&rel=0";
-        iframe.setAttribute("title", title);
-        iframe.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture");
-        iframe.setAttribute("allowfullscreen", "");
-        var wrap = document.getElementById("hero-video");
-        wrap.innerHTML = "";
-        wrap.appendChild(iframe);
-      });
     })();
   </script>
 </body>

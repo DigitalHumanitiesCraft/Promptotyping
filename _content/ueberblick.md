@@ -5,11 +5,24 @@ mirrored: 2026-06-10
 machine-url: https://dhcraft.org/Promptotyping/_content/ueberblick.md
 ---
 
-# Ueberblick
+# Promptotyping
 
-Promptotyping ist eine iterative Context-Engineering-Methode in vier Phasen, um aus Forschungsdaten und Frontier-LLMs Forschungsartefakte zu erzeugen, im Regelfall Software, die an die Daten eines Projekts gebunden ist und diese explorierbar, analysierbar oder editierbar macht. Der `knowledge/`-Ordner ist dabei ein kuratiertes Wissensartefakt, teils modellgeneriert, teils von der pruefenden Fachperson kuratiert, gehalten in einem Format, das Agenten unmittelbar verarbeiten. Er haelt das Domaenenwissen und die Spezifikation, aus denen implementiert wird, ueberdauert die einzelne Sitzung und ist der Teil des Prozesses, der geprueft, kritisiert und zitiert werden kann. Was beim Bauen an weiteren Entscheidungen anfaellt, halten die Dokumente so weit, wie es zurueckgeschrieben wird. Der Unterschied zum Vibe Coding liegt im strukturierten Vorgehen, in der aktiven Anforderungsanalyse und in der expliziten Wissensdokumentation.
+Spezifikation einer iterativen Context-Engineering-Methode in vier Phasen, um aus Forschungsdaten und Frontier-LLMs Forschungsartefakte zu erzeugen.
 
-Diese Seite rendert das Methoden-Paper (Pollin 2026) als durchgehenden Lesefluss; konstitutive Begriffe sind im Text als Glossar-Trigger markiert.
+| | |
+|---|---|
+| Fassung | 0.1 |
+| Stand | 2026-07-25 |
+| Kanonische Adresse | `https://dhcraft.org/Promptotyping/` |
+| Maschinenadresse | `_content/ueberblick.md` |
+| Begruendung und Evidenz | [Paper](#paper) |
+| Lizenz | Inhalte CC BY 4.0, Code MIT |
+
+## Was die Methode ist
+
+Promptotyping erzeugt Forschungsartefakte, im Regelfall Software, die an die Daten eines Projekts gebunden ist und diese explorierbar, analysierbar oder editierbar macht. Der `knowledge/`-Ordner ist dabei ein kuratiertes Wissensartefakt, teils modellgeneriert, teils von der pruefenden Fachperson kuratiert, gehalten in einem Format, das Agenten unmittelbar verarbeiten. Er haelt das Domaenenwissen und die Spezifikation, aus denen implementiert wird, ueberdauert die einzelne Sitzung und ist der Teil des Prozesses, der geprueft, kritisiert und zitiert werden kann. Was beim Bauen an weiteren Entscheidungen anfaellt, halten die Dokumente so weit, wie es zurueckgeschrieben wird. Der Unterschied zum Vibe Coding liegt im strukturierten Vorgehen, in der aktiven Anforderungsanalyse und in der expliziten Wissensdokumentation.
+
+Diese Seite ist die Spezifikation der Methode. Sie sagt, was Promptotyping ist und wie es angewendet wird. Warum die Methode so gebaut ist und ob sie traegt, sagt das [Paper](#paper).
 
 ## Die vier Phasen
 
