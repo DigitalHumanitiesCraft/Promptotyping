@@ -13,7 +13,7 @@ updated: 2026-07-23
 
 # Distillate: From Prompt to Process (Macedo 2026)
 
-A process taxonomy and comparative assessment of six agentic software-development frameworks; the paper cites it in Section 2.5 as the first process taxonomy of the Spec-Driven-Development wave and for the convergence that specifications, not isolated prompts, govern coding agents.
+A process taxonomy and comparative assessment of six agentic software-development frameworks; the paper cites it in Section 2.4 as the first process taxonomy of the Spec-Driven-Development wave and for the convergence that specifications, not isolated prompts, govern coding agents.
 
 ## Core statements
 

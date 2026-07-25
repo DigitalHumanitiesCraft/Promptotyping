@@ -13,7 +13,7 @@ updated: 2026-07-23
 
 # Distillate: Defining Data for Humanists (Owens 2011)
 
-Owens argues that data is a manufactured, multifaceted object that humanists can read as artifact, text, and processable information, and that it holds evidentiary value without being evidence in itself; knowledge/paper.md Section 2.3 uses this as one anchor of its data-critique.
+Owens argues that data is a manufactured, multifaceted object that humanists can read as artifact, text, and processable information, and that it holds evidentiary value without being evidence in itself; knowledge/paper.md Section 2.2 uses this as one anchor of its data-critique.
 
 ## Core statements
 

@@ -15,7 +15,7 @@ updated: 2026-07-23
 
 ## Statement
 
-A trace of the working mode the paper consolidates is on record in the field's literature: code generation to set up technical systems for edition publishing was demonstrated in September 2024, and a line of interacting agents, teiCrafter for TEI annotation, teiModeler for the target text model, and teiVerifier for encoding verification, was described in the same survey. This grounds the paper's Section 2.6 genealogy waypoint, an early public instance predating the consolidated method.
+A trace of the working mode the paper consolidates is on record in the field's literature: code generation to set up technical systems for edition publishing was demonstrated in September 2024, and a line of interacting agents, teiCrafter for TEI annotation, teiModeler for the target text model, and teiVerifier for encoding verification, was described in the same survey. This grounds the paper's Section 2.5 genealogy waypoint, an early public instance predating the consolidated method.
 
 ## Support
 

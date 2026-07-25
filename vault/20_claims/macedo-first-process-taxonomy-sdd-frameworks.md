@@ -15,7 +15,7 @@ updated: 2026-07-23
 
 ## Statement
 
-Macedo 2026 supplies the first study centred on the operational frameworks that turn LLM and agent capabilities into a development process, contributing a six-dimension process taxonomy, specification, context, roles, execution, validation and portability, with a scoring rubric. This is the source behind the paper's Section 2.5 statement that a first process taxonomy of the Spec-Driven-Development frameworks now exists.
+Macedo 2026 supplies the first study centred on the operational frameworks that turn LLM and agent capabilities into a development process, contributing a six-dimension process taxonomy, specification, context, roles, execution, validation and portability, with a scoring rubric. This is the source behind the paper's Section 2.4 statement that a first process taxonomy of the Spec-Driven-Development frameworks now exists.
 
 ## Support
 

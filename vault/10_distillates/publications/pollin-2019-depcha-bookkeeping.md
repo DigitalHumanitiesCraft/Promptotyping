@@ -13,7 +13,7 @@ updated: 2026-07-23
 
 # Distillate: DEPCHA and the Bookkeeping Ontology (Pollin 2019)
 
-The paper documents the Bookkeeping Ontology as a conceptual model built with domain experts in an iterative "deep-dive" process, and records the Group class arising from an unspecified-collective entry; knowledge/paper.md Section 2.6 uses DEPCHA and the ontology in the method's genealogy. This 2019 conference paper independently dates the deep-dive process and the Group class ahead of the 2025 dissertation.
+The paper documents the Bookkeeping Ontology as a conceptual model built with domain experts in an iterative "deep-dive" process, and records the Group class arising from an unspecified-collective entry; knowledge/paper.md Section 2.5 uses DEPCHA and the ontology in the method's genealogy. This 2019 conference paper independently dates the deep-dive process and the Group class ahead of the 2025 dissertation.
 
 ## Core statements
 

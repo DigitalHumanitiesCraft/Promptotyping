@@ -13,7 +13,7 @@ updated: 2026-07-23
 
 # Distillate: Differentiation processes in digital source and data criticism (Cremer / Paulmann 2025)
 
-Working the Bavarian COVID-19 penalty catalogues, the article shows that tabular source data legible to the eye in a PDF becomes machine-addressable only once markup makes each cell explicit, and that the categorial modelling introduced along the way is itself an interpretive act; it grounds the paper's Section 2.3 point about semantic explicitness and the constructedness of data.
+Working the Bavarian COVID-19 penalty catalogues, the article shows that tabular source data legible to the eye in a PDF becomes machine-addressable only once markup makes each cell explicit, and that the categorial modelling introduced along the way is itself an interpretive act; it grounds the paper's Section 2.2 point about semantic explicitness and the constructedness of data.
 
 ## Core statements
 

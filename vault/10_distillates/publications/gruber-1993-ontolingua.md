@@ -13,7 +13,7 @@ updated: 2026-07-23
 
 # Distillate: A Translation Approach to Portable Ontology Specifications (Gruber 1993)
 
-Gruber gives the canonical definition of an ontology as an explicit specification of a conceptualization and frames ontologies as shared vocabularies enabling reuse of formally represented knowledge; knowledge/paper.md Section 2.4 uses this in its modelling-theory chain. Quotes are checked against the author-hosted PDF of the Knowledge Systems Laboratory report (KSL 92-71, revised 1993), which reprints the article; page numbers follow the journal version (Knowledge Acquisition 5(2):199-220).
+Gruber gives the canonical definition of an ontology as an explicit specification of a conceptualization and frames ontologies as shared vocabularies enabling reuse of formally represented knowledge; knowledge/paper.md Section 2.3 uses this in its modelling-theory chain. Quotes are checked against the author-hosted PDF of the Knowledge Systems Laboratory report (KSL 92-71, revised 1993), which reprints the article; page numbers follow the journal version (Knowledge Acquisition 5(2):199-220).
 
 ## Core statements
 

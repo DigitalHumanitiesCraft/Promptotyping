@@ -12,7 +12,7 @@ updated: 2026-07-24
 
 # Distillate: GitHub Spec Kit
 
-Spec Kit is the Spec-Driven-Development framework the paper names by title in Section 2.5. Its own documentation fixes what the framework claims for its artefact set, its verification arrangement, its role model and its intended readership, and therefore bounds what the delimitation may assert about it.
+Spec Kit is the Spec-Driven-Development framework the paper names by title in Section 2.4. Its own documentation fixes what the framework claims for its artefact set, its verification arrangement, its role model and its intended readership, and therefore bounds what the delimitation may assert about it.
 
 ## Core statements
 

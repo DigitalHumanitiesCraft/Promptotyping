@@ -13,7 +13,7 @@ updated: 2026-07-23
 
 # Distillate: LLM-Based Agents for Software Engineering — A Survey (Liu et al. 2024)
 
-A systematic survey of LLM-based agents applied to software engineering; the paper cites it in Section 2.5 as the reference for the agents that Spec-Driven Development frameworks orchestrate. Quotations are taken from the arXiv abstract page.
+A systematic survey of LLM-based agents applied to software engineering; the paper cites it in Section 2.4 as the reference for the agents that Spec-Driven Development frameworks orchestrate. Quotations are taken from the arXiv abstract page.
 
 ## Core statements
 

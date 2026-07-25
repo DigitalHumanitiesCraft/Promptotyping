@@ -16,7 +16,7 @@ updated: 2026-07-23
 
 ## Statement
 
-Digital tool criticism holds that tools are not neutral instruments: choosing one requires reflecting on how it affords a method appropriate to the research question, and a rigorous inquiry into research tools must be an essential part of the research process, the move from digital methods to digital methodology. This grounds the paper's Section 2.2 corrective, that scholars must reflect on what a tool does to their material, which the paper then turns on its own method.
+Digital tool criticism holds that tools are not neutral instruments: choosing one requires reflecting on how it affords a method appropriate to the research question, and a rigorous inquiry into research tools must be an essential part of the research process, the move from digital methods to digital methodology. This grounds the paper's Section 2.1 corrective, that scholars must reflect on what a tool does to their material, which the paper then turns on its own method.
 
 ## Support
 

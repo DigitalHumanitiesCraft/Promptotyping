@@ -15,7 +15,7 @@ updated: 2026-07-23
 
 ## Statement
 
-A systematic grey-literature review of practitioner accounts finds that vibe coding is motivated by speed and accessibility yet yields code its own practitioners perceive as fast but flawed, lowering barriers at the cost of reliability and maintainability. This is the empirical support for the paper's Section 2.5 positioning, where Promptotyping shares the generation premise of vibe coding but adds preparation, persistent documentation and verification.
+A systematic grey-literature review of practitioner accounts finds that vibe coding is motivated by speed and accessibility yet yields code its own practitioners perceive as fast but flawed, lowering barriers at the cost of reliability and maintainability. This is the empirical support for the paper's Section 2.4 positioning, where Promptotyping shares the generation premise of vibe coding but adds preparation, persistent documentation and verification.
 
 ## Support
 

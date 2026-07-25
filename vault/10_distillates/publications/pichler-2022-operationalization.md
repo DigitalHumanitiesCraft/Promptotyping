@@ -13,7 +13,7 @@ updated: 2026-07-25
 
 # Distillate: From Concepts to Texts and Back (Pichler and Reiter 2022)
 
-The article makes operationalisation the core activity of the digital humanities and fixes it as the development of a measurement for a given concept. knowledge/paper.md takes the term from here in Section 2.3, for the step through which a humanities abstraction becomes computable. The article carries no paragraph numbers, so quotes are located by section.
+The article makes operationalisation the core activity of the digital humanities and fixes it as the development of a measurement for a given concept. knowledge/paper.md takes the term from here in Section 2.2, for the step through which a humanities abstraction becomes computable. The article carries no paragraph numbers, so quotes are located by section.
 
 ## Core statements
 
@@ -39,7 +39,7 @@ The article makes operationalisation the core activity of the digital humanities
 
 ## Open questions
 
-- The paper's Section 2.3 renders the term as making concepts "observable and validatable" instances. The article carries the observable half and is expressly sceptical about validity in the strict sense, so the paper's wording claims slightly more than the source.
+- The paper's Section 2.2 renders the term as making concepts "observable and validatable" instances. The article carries the observable half and is expressly sceptical about validity in the strict sense, so the paper's wording claims slightly more than the source.
 
 ## Related
 

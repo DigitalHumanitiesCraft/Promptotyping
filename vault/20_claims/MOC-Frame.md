@@ -43,5 +43,6 @@ Claims behind the paper's Section 2, the epistemic frame: exploration as researc
 - [[20_claims/exploratory-collection-visualisation-is-a-rich-design-space]] — Visualisation of cultural-heritage collections is a rich, surveyed design space for open-ended exploration
 - [[20_claims/digital-tool-criticism-demands-reflection-on-tools]] — Digital tool criticism demands reflection on the tools that shape research
 - [[20_claims/dh-projects-build-teams-to-hold-competences-together]] — Digital humanities projects assemble teams to hold domain and technical competences together
+- [[20_claims/institutional-research-software-support-falls-short-of-need]] — The research software support institutions provide falls short of what researchers need
 - [[20_claims/research-software-engineers-are-scarce]] — Research software engineers are scarce and sit across a cultural gap between research and software development
 - [[20_claims/dh-intermediary-bridges-researchers-and-technical-staff]] — A professional intermediary bridges researchers and technical staff in digital-humanities institutions

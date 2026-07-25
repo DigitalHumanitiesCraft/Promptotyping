@@ -13,7 +13,7 @@ updated: 2026-07-23
 
 # Distillate: Vibe Coding in Practice (Fawzy et al. 2025)
 
-A systematic grey-literature review of practitioner accounts of vibe coding; the paper cites it in Section 2.5 for the empirical finding that vibe coding is fast but perceived as unreliable, the speed-quality trade-off it names the paradox.
+A systematic grey-literature review of practitioner accounts of vibe coding; the paper cites it in Section 2.4 for the empirical finding that vibe coding is fast but perceived as unreliable, the speed-quality trade-off it names the paradox.
 
 ## Core statements
 

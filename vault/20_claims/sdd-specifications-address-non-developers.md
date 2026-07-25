@@ -18,7 +18,7 @@ updated: 2026-07-24
 
 ## Statement
 
-Early releases of Spec Kit's specification template stated its readership expressly as business stakeholders and required the specification to be written for non-technical readers, and the release current at retrieval carries no audience statement at all. Kiro names product and engineering alignment as the collaborative reach of its specifications, OpenSpec has one team own specifications that other teams read, and BMAD addresses its documents to the agents of the following phase. A claim that both sides of an industry specification are developers is therefore not available, and the difference Section 2.5 states lies in the kind of authority the reader holds over the subject matter.
+Early releases of Spec Kit's specification template stated its readership expressly as business stakeholders and required the specification to be written for non-technical readers, and the release current at retrieval carries no audience statement at all. Kiro names product and engineering alignment as the collaborative reach of its specifications, OpenSpec has one team own specifications that other teams read, and BMAD addresses its documents to the agents of the following phase. A claim that both sides of an industry specification are developers is therefore not available, and the difference Section 2.4 states lies in the kind of authority the reader holds over the subject matter.
 
 ## Support
 

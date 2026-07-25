@@ -1,0 +1,41 @@
+[
+  {
+    "id": "carver-2022",
+    "type": "article-journal",
+    "title": "A survey of the state of the practice for research software in the United States",
+    "author": [
+      {
+        "family": "Carver",
+        "given": "Jeffrey C."
+      },
+      {
+        "family": "Weber",
+        "given": "Nic"
+      },
+      {
+        "family": "Ram",
+        "given": "Karthik"
+      },
+      {
+        "family": "Gesing",
+        "given": "Sandra"
+      },
+      {
+        "family": "Katz",
+        "given": "Daniel S."
+      }
+    ],
+    "container-title": "PeerJ Computer Science",
+    "volume": "8",
+    "page": "e963",
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    },
+    "DOI": "10.7717/peerj-cs.963",
+    "URL": "https://doi.org/10.7717/peerj-cs.963"
+  }
+]

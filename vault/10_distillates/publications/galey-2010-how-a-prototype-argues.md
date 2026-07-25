@@ -13,7 +13,7 @@ updated: 2026-07-23
 
 # Distillate: How a Prototype Argues (Galey and Ruecker 2010)
 
-Galey and Ruecker argue that an experimental digital prototype can convey an argument the way an edition of a book reifies a theory, so that digital artefacts carry meaning and can stand as peer-reviewable, contestable contributions to knowledge; knowledge/paper.md Section 2.2 uses this to ground its claim that building is a way of knowing and that producing prototypes is itself a research act. Quotes are checked against the copy of the published article hosted on a research-group site; the abstract sits on the first page (p. 405).
+Galey and Ruecker argue that an experimental digital prototype can convey an argument the way an edition of a book reifies a theory, so that digital artefacts carry meaning and can stand as peer-reviewable, contestable contributions to knowledge; knowledge/paper.md Section 2.1 uses this to ground its claim that building is a way of knowing and that producing prototypes is itself a research act. Quotes are checked against the copy of the published article hosted on a research-group site; the abstract sits on the first page (p. 405).
 
 ## Core statements
 

@@ -15,7 +15,7 @@ updated: 2026-07-23
 
 ## Statement
 
-LLM-based agents extend standalone LLMs with the ability to perceive and use external tools and resources, and a systematic survey documents their application to software engineering with demonstrated effectiveness. This is the reference behind the paper's Section 2.5 mention of the LLM-based agents that Spec-Driven-Development frameworks orchestrate.
+LLM-based agents extend standalone LLMs with the ability to perceive and use external tools and resources, and a systematic survey documents their application to software engineering with demonstrated effectiveness. This is the reference behind the paper's Section 2.4 mention of the LLM-based agents that Spec-Driven-Development frameworks orchestrate.
 
 ## Support
 

@@ -16,7 +16,7 @@ updated: 2026-07-23
 
 ## Statement
 
-Sycophancy is a documented and general behaviour of current LLM assistants: they tend to produce responses that agree with the user's stated or implied beliefs rather than the truthful answer. It is traced to human-feedback finetuning and shown consistently across multiple production assistants. This is the failure mode the paper's Critical-Expert-in-the-Loop role is built to counter in Section 2.5.
+Sycophancy is a documented and general behaviour of current LLM assistants: they tend to produce responses that agree with the user's stated or implied beliefs rather than the truthful answer. It is traced to human-feedback finetuning and shown consistently across multiple production assistants. This is the failure mode the paper's Critical-Expert-in-the-Loop role is built to counter in Section 2.4.
 
 ## Support
 

@@ -13,7 +13,7 @@ updated: 2026-07-23
 
 # Distillate: Promptotyping with Claude Sonnet 4, the Critical Expert in the Loop (Pollin 2025c)
 
-The blog post of 27 May 2025 introduces the Critical Expert in the Loop with its double reflection loop and documents the two-hour Stefan Zweig Digital experiment as structured Vibe Coding; knowledge/paper.md uses it in Section 2.5, where the Critical Expert in the Loop is defined. The post glosses Promptotyping as a three-stage framework, which differs from the four-phase description elsewhere.
+The blog post of 27 May 2025 introduces the Critical Expert in the Loop with its double reflection loop and documents the two-hour Stefan Zweig Digital experiment as structured Vibe Coding; knowledge/paper.md uses it in Section 2.4, where the Critical Expert in the Loop is defined. The post glosses Promptotyping as a three-stage framework, which differs from the four-phase description elsewhere.
 
 ## Core statements
 

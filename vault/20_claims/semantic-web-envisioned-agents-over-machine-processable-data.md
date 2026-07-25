@@ -15,7 +15,7 @@ updated: 2026-07-23
 
 ## Statement
 
-The 2001 founding statement defines the Semantic Web as an extension of the web in which information carries well-defined meaning, and envisions software agents that move across pages to carry out sophisticated tasks over that content. This grounds the paper's Section 2.3 point that the field invested for two decades in agents operating over semantically described data, the end Promptotyping reaches through a different mechanism.
+The 2001 founding statement defines the Semantic Web as an extension of the web in which information carries well-defined meaning, and envisions software agents that move across pages to carry out sophisticated tasks over that content. This grounds the paper's Section 2.2 point that the field invested for two decades in agents operating over semantically described data, the end Promptotyping reaches through a different mechanism.
 
 ## Support
 

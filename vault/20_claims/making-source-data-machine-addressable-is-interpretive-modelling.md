@@ -16,7 +16,7 @@ updated: 2026-07-23
 
 ## Statement
 
-Where a source exists as human-readable layout, its structure must be reconstructed before it computes: a PDF table readable to the eye cannot be processed until markup makes each cell explicit. The categorial differentiation this modelling introduces, normalising entries under shared categories, is not neutral cleaning but forms new distinctions that count as part of a historical interpretation, and even the visualisation of the result is an expression of interpretation rather than a mere representation of the data. This grounds the paper's Section 2.3 claim that semantic explicitness is a condition of computation and that data construction is interpretive labour in its own right.
+Where a source exists as human-readable layout, its structure must be reconstructed before it computes: a PDF table readable to the eye cannot be processed until markup makes each cell explicit. The categorial differentiation this modelling introduces, normalising entries under shared categories, is not neutral cleaning but forms new distinctions that count as part of a historical interpretation, and even the visualisation of the result is an expression of interpretation rather than a mere representation of the data. This grounds the paper's Section 2.2 claim that semantic explicitness is a condition of computation and that data construction is interpretive labour in its own right.
 
 ## Support
 

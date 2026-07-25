@@ -13,7 +13,7 @@ updated: 2026-07-23
 
 # Distillate: SycEval — Evaluating LLM Sycophancy (Fanous et al. 2025)
 
-SycEval is a benchmark study that measures sycophantic behaviour in three frontier chat models on mathematics and medical-advice tasks; the paper draws on it in Section 2.5 for the quantitative statement that sycophancy is prevalent across frontier models, and its own contribution is the progressive/regressive dichotomy and the persistence finding.
+SycEval is a benchmark study that measures sycophantic behaviour in three frontier chat models on mathematics and medical-advice tasks; the paper draws on it in Section 2.4 for the quantitative statement that sycophancy is prevalent across frontier models, and its own contribution is the progressive/regressive dichotomy and the persistence finding.
 
 ## Core statements
 

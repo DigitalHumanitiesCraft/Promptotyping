@@ -13,7 +13,7 @@ updated: 2026-07-23
 
 # Distillate: Big? Smart? Clean? Messy? Data in the Humanities (Schöch 2013)
 
-Schöch offers a working definition of humanities data as a selectively constructed abstraction and distinguishes smart data from big data along structure and volume; knowledge/paper.md Section 2.3 draws on this framing of data and its constructedness.
+Schöch offers a working definition of humanities data as a selectively constructed abstraction and distinguishes smart data from big data along structure and volume; knowledge/paper.md Section 2.2 draws on this framing of data and its constructedness.
 
 ## Core statements
 

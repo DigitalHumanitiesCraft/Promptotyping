@@ -19,7 +19,7 @@ updated: 2026-07-24
 
 ## Statement
 
-Spec Kit produces a dedicated data-model artefact in its planning phase and Kiro's design document carries data flow diagrams, interfaces and database schemas, and in both cases the described object is the system being built, derived from its requirements. BMAD-METHOD and OpenSpec list no artefact whose purpose is describing external data sources at all, and Kiro's persistent context files cover product purpose, technology stack and project structure without touching sources. The difference the paper's Section 2.5 states is therefore one of the object of description rather than the presence of a data artefact.
+Spec Kit produces a dedicated data-model artefact in its planning phase and Kiro's design document carries data flow diagrams, interfaces and database schemas, and in both cases the described object is the system being built, derived from its requirements. BMAD-METHOD and OpenSpec list no artefact whose purpose is describing external data sources at all, and Kiro's persistent context files cover product purpose, technology stack and project structure without touching sources. The difference the paper's Section 2.4 states is therefore one of the object of description rather than the presence of a data artefact.
 
 ## Support
 

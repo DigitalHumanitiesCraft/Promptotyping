@@ -13,7 +13,7 @@ updated: 2026-07-23
 
 # Distillate: Vibe Coding — Programming through Conversation with AI (Sarkar and Drosos 2025)
 
-The first empirical study of vibe coding, based on think-aloud video of extended sessions; the paper cites it in Section 2.5 for the iterative goal-satisfaction cycle and the notion of material disengagement, the exploratory mode Promptotyping subsumes.
+The first empirical study of vibe coding, based on think-aloud video of extended sessions; the paper cites it in Section 2.4 for the iterative goal-satisfaction cycle and the notion of material disengagement, the exploratory mode Promptotyping subsumes.
 
 ## Core statements
 

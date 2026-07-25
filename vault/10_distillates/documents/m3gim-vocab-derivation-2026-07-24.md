@@ -12,7 +12,7 @@ updated: 2026-07-24
 
 # Distillate: Deriving a domain document from a formal vocabulary (M³GIM)
 
-The report documents an experiment inside one of the paper's documented projects, in which the project's own namespace was formalised as an ontology and the domain document of its knowledge base was then derived from that formal source. It bounds what Section 2.3 may claim about ontology-based data as a ground for the method's context layer.
+The report documents an experiment inside one of the paper's documented projects, in which the project's own namespace was formalised as an ontology and the domain document of its knowledge base was then derived from that formal source. It bounds what Section 2.2 may claim about ontology-based data as a ground for the method's context layer.
 
 ## Core statements
 

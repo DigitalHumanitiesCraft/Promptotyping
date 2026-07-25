@@ -13,7 +13,7 @@ updated: 2026-07-23
 
 # Distillate: Toward a Model for Digital Tool Criticism (Koolen, van Gorp and van Ossenbruggen 2019)
 
-Koolen and colleagues propose a model for digital tool criticism as reflective, integrative practice, holding that choosing a tool requires reflecting on how it affords a method appropriate to the research question; knowledge/paper.md Section 2.2 cites digital tool criticism as the corrective that demands scholars reflect on what a tool does to their material. Quotes are checked against the open PDF in the VU Amsterdam institutional repository; the abstract sits on the first page (p. 368).
+Koolen and colleagues propose a model for digital tool criticism as reflective, integrative practice, holding that choosing a tool requires reflecting on how it affords a method appropriate to the research question; knowledge/paper.md Section 2.1 cites digital tool criticism as the corrective that demands scholars reflect on what a tool does to their material. Quotes are checked against the open PDF in the VU Amsterdam institutional repository; the abstract sits on the first page (p. 368).
 
 ## Core statements
 

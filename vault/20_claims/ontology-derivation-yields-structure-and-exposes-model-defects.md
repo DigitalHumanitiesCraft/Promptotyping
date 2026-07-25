@@ -17,7 +17,7 @@ updated: 2026-07-24
 
 ## Statement
 
-In a documented project whose namespace was formalised as an ontology, the domain document of the knowledge base could be derived from that formal source for its structural layer, the class hierarchy, the permitted connections between classes, the typed date properties and the ordering of the controlled vocabularies. What did not derive was the subject matter and research question, the shape the graph actually takes in the data, deliberate absences, and the reliability of a given entry, and part of what did derive rested on prose annotations carried inside the ontology. The finding that reached furthest was diagnostic: having to state a domain, a range and a value range for every term made modelling problems visible that had gone unnoticed. This grounds the Section 2.3 passage on what ontology-based data buys the method's context layer.
+In a documented project whose namespace was formalised as an ontology, the domain document of the knowledge base could be derived from that formal source for its structural layer, the class hierarchy, the permitted connections between classes, the typed date properties and the ordering of the controlled vocabularies. What did not derive was the subject matter and research question, the shape the graph actually takes in the data, deliberate absences, and the reliability of a given entry, and part of what did derive rested on prose annotations carried inside the ontology. The finding that reached furthest was diagnostic: having to state a domain, a range and a value range for every term made modelling problems visible that had gone unnoticed. This grounds the Section 2.2 passage on what ontology-based data buys the method's context layer.
 
 ## Support
 

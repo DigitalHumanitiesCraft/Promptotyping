@@ -16,7 +16,7 @@ updated: 2026-07-23
 
 ## Statement
 
-Building an experimental digital prototype can convey an argument the way a book edition reifies a theory, so that digital artefacts carry meaning rather than mere utility and can stand, in their own right, as peer-reviewable and contestable contributions to knowledge. This grounds the paper's Section 2.2 claim that building is a way of knowing and that producing prototypes is itself a research act.
+Building an experimental digital prototype can convey an argument the way a book edition reifies a theory, so that digital artefacts carry meaning rather than mere utility and can stand, in their own right, as peer-reviewable and contestable contributions to knowledge. This grounds the paper's Section 2.1 claim that building is a way of knowing and that producing prototypes is itself a research act.
 
 ## Support
 

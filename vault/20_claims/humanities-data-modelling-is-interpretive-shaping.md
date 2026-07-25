@@ -15,7 +15,7 @@ updated: 2026-07-25
 
 ## Statement
 
-Data models in the digital humanities represent the shaping choices scholars make when they represent and analyse their material, and modelling makes explicit the assumptions a scholar holds about the nature of a text or artefact. This grounds the paper's Section 2.3 point that the contributors to Flanders and Jannidis treat humanities data as the product of interpretive modelling rather than as given.
+Data models in the digital humanities represent the shaping choices scholars make when they represent and analyse their material, and modelling makes explicit the assumptions a scholar holds about the nature of a text or artefact. This grounds the paper's Section 2.2 point that the contributors to Flanders and Jannidis treat humanities data as the product of interpretive modelling rather than as given.
 
 ## Support
 

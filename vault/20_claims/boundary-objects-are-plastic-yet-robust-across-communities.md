@@ -15,7 +15,7 @@ updated: 2026-07-25
 
 ## Statement
 
-A boundary object is plastic enough to serve the different local needs of the communities that use it, yet robust enough to keep a common identity across their sites, and its creation and management is the key process by which coherence holds across intersecting social worlds. It grounded the paper's Section 2.4 move to read Promptotyping Documents as boundary objects between the scholar and the coding agent. On 2026-07-25 the operator removed the concept from the paper, because the source carries the circulation of an object between social worlds and not the relation between a scholar and a model, and because the paper's own claim stands without it. The claim stays as checked material and has no current use in the paper.
+A boundary object is plastic enough to serve the different local needs of the communities that use it, yet robust enough to keep a common identity across their sites, and its creation and management is the key process by which coherence holds across intersecting social worlds. It grounded the paper's Section 2.3 move to read Promptotyping Documents as boundary objects between the scholar and the coding agent. On 2026-07-25 the operator removed the concept from the paper, because the source carries the circulation of an object between social worlds and not the relation between a scholar and a model, and because the paper's own claim stands without it. The claim stays as checked material and has no current use in the paper.
 
 ## Support
 

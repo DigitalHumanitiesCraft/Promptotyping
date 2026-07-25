@@ -15,7 +15,7 @@ updated: 2026-07-23
 
 Orphaned since 2026-07-25: the paper no longer uses the boundary-object concept (operator decision), and the References entry was removed with it. The CSL record stays, because it is the source record of this distillate rather than a bibliography entry. The distillate stays as checked material.
 
-Star and Griesemer introduce boundary objects as entities that hold their identity across different social worlds while adapting to the local needs of each, and name their creation and management as the key to coherence across intersecting worlds; knowledge/paper.md Section 2.4 uses this to frame Promptotyping Documents as boundary objects between scholar and coding agent. Quotes are checked against the institutional course copy hosted by the University of Udine (a scan of the JSTOR original); the canonical definition sits on p. 393.
+Star and Griesemer introduce boundary objects as entities that hold their identity across different social worlds while adapting to the local needs of each, and name their creation and management as the key to coherence across intersecting worlds; knowledge/paper.md Section 2.3 uses this to frame Promptotyping Documents as boundary objects between scholar and coding agent. Quotes are checked against the institutional course copy hosted by the University of Udine (a scan of the JSTOR original); the canonical definition sits on p. 393.
 
 ## Core statements
 

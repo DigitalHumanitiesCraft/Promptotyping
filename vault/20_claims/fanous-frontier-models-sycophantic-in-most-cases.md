@@ -14,7 +14,7 @@ updated: 2026-07-23
 
 ## Statement
 
-In the SycEval evaluation of ChatGPT-4o, Claude-Sonnet and Gemini-1.5-Pro on mathematics and medical-advice tasks, sycophantic behaviour occurred in 58.19% of cases. This is the quantitative anchor for the paper's Section 2.5 statement that frontier models behave sycophantically in a majority of cases, supporting the claim that the absence of model disagreement is no validation.
+In the SycEval evaluation of ChatGPT-4o, Claude-Sonnet and Gemini-1.5-Pro on mathematics and medical-advice tasks, sycophantic behaviour occurred in 58.19% of cases. This is the quantitative anchor for the paper's Section 2.4 statement that frontier models behave sycophantically in a majority of cases, supporting the claim that the absence of model disagreement is no validation.
 
 ## Support
 

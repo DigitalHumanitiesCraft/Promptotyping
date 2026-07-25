@@ -16,7 +16,7 @@ updated: 2026-07-25
 
 ## Statement
 
-Operationalisation develops the steps that assign the instantiations of a concept unambiguously to that concept and thereby measure it, which is what carries a theoretical concept over into something detectable in data. Merely applying an existing measurement is not operationalisation in this sense. The choices made in it are consequential, because they govern which results can be reached and how those results may be read against the original research question. This grounds the paper's Section 2.3 sentence that operationalisation is the step through which a humanities abstraction becomes computable.
+Operationalisation develops the steps that assign the instantiations of a concept unambiguously to that concept and thereby measure it, which is what carries a theoretical concept over into something detectable in data. Merely applying an existing measurement is not operationalisation in this sense. The choices made in it are consequential, because they govern which results can be reached and how those results may be read against the original research question. This grounds the paper's Section 2.2 sentence that operationalisation is the step through which a humanities abstraction becomes computable.
 
 ## Support
 

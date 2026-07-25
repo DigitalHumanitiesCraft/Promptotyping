@@ -12,7 +12,7 @@ updated: 2026-07-24
 
 # Distillate: OpenSpec
 
-OpenSpec belongs to the six-framework comparison set of Macedo 2026 and carries the wave's arrangement in its leanest form, plain Markdown requirements with scenarios, reviewed by the human before code is written. It widens the evidence base for the Section 2.5 delimitation beyond the three frameworks the paper names.
+OpenSpec belongs to the six-framework comparison set of Macedo 2026 and carries the wave's arrangement in its leanest form, plain Markdown requirements with scenarios, reviewed by the human before code is written. It widens the evidence base for the Section 2.4 delimitation beyond the three frameworks the paper names.
 
 ## Core statements
 
