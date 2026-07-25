@@ -659,3 +659,43 @@ Die drei Befunde dieser Instanz stehen jetzt im Template (`DigitalHumanitiesCraf
 **Die Fixture-Anweisung ist korrigiert.** Das Template wies Instanzen an, `examples/` zu löschen, und lieferte gleichzeitig die Testsuite, die genau gegen diese Fixtures läuft. Der Setup-Schritt nennt jetzt den Grund, sie zu behalten.
 
 Validator und Tests dieser Instanz sind auf den Template-Stand gezogen, damit die beiden nicht auseinanderlaufen; die Instanz hat einundzwanzig Tests, weil sie zusätzlich gegen den realen Vault prüft.
+
+## 2026-07-25, Nachmittag: Videos als Quellen, vier Operatorentscheidungen, Umbau der Site beschlossen
+
+### Die beiden Videos werden Quellen
+
+Die Rohtranskripte der beiden Einführungsvideos vom Jänner 2026 lagen im Repo-Root. Sie sind zu lesbaren Skripten mit Zeitmarken aufbereitet (`knowledge/skriptum-video-1.md`, `knowledge/skriptum-video-2.md`) und anschließend in den Vault aufgenommen worden, bis einschließlich der Destillate. Die Rohfassungen liegen in `vault/_sources/`, die Repräsentationen mit Block-IDs unter `00_representation/documents/`, die Destillate tragen zusammen 84 Statements. Claims wurden bewusst nicht gebaut, weil sie an den Entscheidungen hingen, die unten stehen. Validator ohne Fehler bei der deklarierten Warnung, 21 Tests grün.
+
+Der Ertrag ist größer als erwartet. Die drei Praktiken, die Abschnitt 3.2 bisher unbelegt behauptete, haben jetzt Anker. Dazu kommt operatives Wissen, das im publizierten Material fehlte, unter anderem die Begründung des Screenshot- und Konsolen-Rückkanals, die Fehleradressierung über den Identifier, das Journal als Ersatz des Commits, die Thinking Matrix als Konsistenzprüfung, die Zweischritt-Destillation mit Reasoning-Auftrag, die Formatökonomie zwischen XLSX und CSV und das Experteninterview als Preparation-Schritt.
+
+### Vier Operatorentscheidungen
+
+**Milestone-Verifikation als Norm mit benannter Ausnahme.** Das Paper behauptete, der Critical Expert verifiziere jeden Milestone vor dem nächsten, während der Mitschnitt zeigt, wie der Lauf auf eine bloße Fortsetzungsanweisung weitergeht und die Prüfung erst mehrere Milestones später kommt. Statt den Anspruch zu halten oder ihn zu streichen, führt Abschnitt 3.2 jetzt beides: die Prüfung ist pro Milestone geschuldet, der Aufschub ist eine Operatorentscheidung mit Preis, und er hinterlässt eine Prüfschuld, die vor Verwendung oder Übergabe einzulösen und im Prozessdokument festzuhalten ist.
+
+**Die Iteration greift in jede frühere Phase zurück.** Bisher kannte der Text eine Rücksprungstelle, von der Implementation in die Distillation. Abschnitt 3.2 beschreibt den Wiedereintritt jetzt nach der Art der neuen Erkenntnis, in die Distillation bei falscher Spezifikation, in die Exploration bei einem Datenbefund, in die Preparation bei neuen Quellen. Die Begründung des Operators: eine iterative Context-Engineering-Methode, die nur eine Rücksprungstelle kennt, unterbietet ihren eigenen Namen.
+
+**Zwei Urteile in der Rolle.** Das Video führt einen Expert Developer in the Loop neben dem Critical Expert. Statt einer zweiten Rolle benennt Abschnitt 2.5 jetzt zwei Urteile innerhalb der Rolle, das fachliche über Forschungsfrage, Datentreue und Kontextualisierung und das entwicklungsseitige über Workflow, Technologie und Artefaktform. Im hybriden Fall fallen sie zusammen, bei zwei Personen sind sie die beiden Seiten der Trading Zone, und die Dokumente sind die schriftliche Form der Übersetzung dazwischen. Damit hat der zweite Claim des Papers seine Prüfstelle im Methodenteil, statt von der Einleitung in die Diskussion zu springen.
+
+**Konvention auf den Paperstand.** Der Pflichtkern geht von acht auf sechs Felder, und das Status-Vokabular wird über alle fünfzehn Fülltemplates vereinheitlicht. Umsetzung nach Abschluss des laufenden Konsistenzdurchgangs.
+
+### Sprachentscheidung
+
+Die Site wird vollständig englisch. Damit fällt die Regel, die eine englische Fassung aus Phase 1 ausschloss. Begründung: Paper, Vault, README, Template-Slugs und Maschinenadressen sind bereits englisch, und die Übertragbarkeitsbehauptung von Abschnitt 6.5 ist mit einer ausschließlich deutschen Spezifikation nicht einlösbar. Deutsch bleiben das Unterrichtsmaterial, das als solches ausgewiesen wird, und die Vorlagennamen, die Identifikatoren in fremden Frontmatter-Blöcken sind.
+
+### Weitere Papereingriffe
+
+Die LLM-Terminologie ist an sechsundvierzig Stellen gesetzt, mit Regel 22 im Prüfkatalog. Abschnitt 2.6 trägt jetzt die kompaktierte Bookkeeping Ontology als den Schritt zwischen dem formalen und dem semi-formalen Ende des Spektrums, nach Operatorauskunft eine Arbeit aus der Dissertationszeit. Das Datum des Asymmetric-Amplification-Posts ist geprüft und in die Referenz gesetzt. Die vierundneunzig URLs aus Paper, Literaturliste und README sind erreichbar; die beiden Repositories, die die Galerie verlinkt, antworten mit 404 und bestätigen die Angabe des Papers.
+
+### Umbau der Site
+
+Der Plan liegt in `knowledge/plan-site.md`. Die Site wird von der Paper-Publikation zur Spezifikation der Methode. Der Papertext bleibt als eigene Ansicht und wird künftig direkt aus `knowledge/paper.md` gerendert, womit die Spiegelung unter `_content/paper/` entfällt und die größte Driftklasse strukturell verschwindet. Glossar und Vault bekommen je eine Unteransicht.
+
+### Abbruch zweier Agenten und was daraus offen bleibt
+
+Die beiden Site-Agenten wurden gestoppt, bevor sie ihre Pakete abschließen konnten. Der Zustand ist geprüft und der Arbeitsbaum ist wieder in sich stimmig, aber die Pakete sind unvollständig.
+
+**AP1 Paperansicht** hatte `app.js` vollständig umgebaut, `index.html` und `404.html` jedoch nur angefangen, sodass die Seite ein Element mit der ID `paper` erwartete, das es nicht gab. Der Rest ist von Hand nachgezogen worden: der Paper-Host in beiden Dateien, das Inhaltsverzeichnis auf die kanonische Gliederung, der Wegfall der eigenständigen Literatur-Sektion, die im Papertext selbst liegt, und die Entfernung der sieben gespiegelten Sektionsdateien. Geprüft ist, dass jedes Ziel des Inhaltsverzeichnisses einer erzeugten oder statischen ID entspricht, dass keine ID doppelt vorkommt und dass kein Codepfad mehr auf `_content/paper/` zeigt. Nicht geprüft ist das Rendering im Browser, also Fußnotenapparat, Sektionierung und Ankerauflösung im laufenden Betrieb. Das ist der erste Punkt der nächsten Sitzung.
+
+**AP2 Konsistenzdurchgang** hat die dringende Arbeit erledigt, die toten Repo-Links sind aus Galerie und Tiefenseiten entfernt. Nicht erledigt ist der gesamte Glossarteil, `data/glossar.json` und `_content/glossar.md` sind unberührt. Offen bleiben damit die Dokumenttypologie im Glossar, der Phasenname, der zurückgenommene Primärartefakt-Anspruch, die Fünfzig-Prozent-Angabe, Asymmetric Amplification, Sycophancy, die Sektionsverweise in sechsundzwanzig Einträgen, die Vorlagenzahl, die Interface-Typologie, der Eintrag zur entfernten Phase Lane sowie die Quellenliste in `_meta`, die noch auf die gelöschten Spiegeldateien zeigt. Ebenso offen sind `_content/literatur.md` und die Zahlendifferenzen der Case Studies.
+
+Da die Site ohnehin auf Englisch umgestellt wird, ist zu prüfen, ob der Glossarteil dieses Pakets direkt in der Übersetzung erledigt wird statt zweimal.
