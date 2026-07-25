@@ -2,7 +2,7 @@
 type: moc
 topic: "Limitations"
 created: 2026-07-19
-updated: 2026-07-24
+updated: 2026-07-25
 ---
 
 # MOC: Limitations
@@ -25,3 +25,7 @@ Added with the Phase C revision round of 2026-07-24, from the corpus and claim-e
 
 - [[20_claims/record-does-not-separate-document-depth-from-verification-effort]] — the project-internal confound behind the document-quality observation, grounding the second confound named in the paper's limits
 - [[20_claims/unassisted-non-hybrid-artefact-production-is-unsupported]] — the ceiling of the transfer evidence, grounding the falsification offer on the non-hybrid axis
+
+Added from the video distillates of 2026-07-25:
+
+- [[20_claims/milestone-check-deferred-in-the-recorded-session]] — the recorded run continues on a bare instruction and the inspection follows several milestones later, the case behind the deferred check (also under Method)

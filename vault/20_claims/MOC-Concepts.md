@@ -2,7 +2,7 @@
 type: moc
 topic: "Concepts"
 created: 2026-07-19
-updated: 2026-07-23
+updated: 2026-07-25
 ---
 
 # MOC: Concepts
@@ -24,3 +24,7 @@ Added with the bibliography-traceability sweep of 2026-07-23:
 - [[20_claims/a-prototype-can-embody-a-peer-reviewable-argument]] — A prototype can embody a peer-reviewable scholarly argument
 - [[20_claims/humanities-data-modelling-is-interpretive-shaping]] — Humanities data modelling is interpretive shaping of the objects of study
 - [[20_claims/visual-analytics-process-models-describe-process-not-interfaces]] — Visual-analytics process models describe the knowledge-generation process rather than interface categories
+
+Added from the video distillates of 2026-07-25:
+
+- [[20_claims/expert-role-carries-a-domain-and-a-development-judgement]] — the recorded practice carries a subject-matter judgement over the display and a development-side judgement over the fix (also under Method)

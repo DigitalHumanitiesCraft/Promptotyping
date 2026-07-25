@@ -40,6 +40,29 @@ This vault grounds the Promptotyping paper. The deliverable is the paper maintai
 
 English scholarly prose in the register of the paper. Figures follow the paper's three-class rule; exact numbers only where they carry an argument and are verified, tilde-rounded orders of magnitude for scale descriptors, volatile process metrics dated or stated qualitatively. Citation display is author-year against the CSL records in `references/`. Terminology follows the glossary of the Promptotyping site (https://dhcraft.org/Promptotyping/#glossar).
 
+### Rules for every text in this vault
+
+Sharpened on operator instruction, 2026-07-25. These four are the frequent failures and hold in English as they do in the paper.
+
+1. No dash and no colon as a connector, for emphasis, or ahead of a summary or a run of examples. A colon stands only before a quotation, a code block, or a list whose items sit on their own lines.
+2. No trailing negative apposition in the pattern "X, not Y" or "not X, but Y". State the point positively and give the excluded alternative its own sentence if it is needed at all. The licensed exception is Drucker's "capta rather than given data", because it quotes the source.
+3. No triadic figures, anaphora, or rhetorical parallelism. An antithesis stands only where it carries content.
+4. No sentence that reifies what preceded it and appends a verdict ("This gap is systematic", "the tension is real"), and no paragraph engineered to land on a closing line.
+
+Beyond those: write LLM where an LLM is meant, since "model" carries the data model, the conceptual model, and Stachowiak's model concept in this project. Name real conflicts instead of smoothing them. Carry no volatile quantity into a durable document.
+
+### Distillate statements
+
+A statement is one assertion, anchored to one location, and it stands on its own without the quotation beside it. The quotation licenses exactly that assertion and nothing broader; where the source hedges, the statement hedges with it, and where the source is categorical, the statement does not soften it. Statements are never merged across sources, and they carry no evaluation of the source. Where a source says less than the paper takes from it, or says it differently, that goes under Open questions and is left standing there.
+
+### Claims
+
+A claim is one atomic assertion in the affirmative present, phrased as what is the case, while its anchors carry who says so. A claim earns its existence by being the form the deliverable needs; a restatement of a single distillate statement in other words is not a claim. Where sources conflict irreconcilably, both claims are stated positively, both marked contested, and both linked to each other.
+
+### Registers and knowledge documents
+
+Descriptive, one line per entry, no narration of the work that produced the entry. Decisions belong in the journal with their date, state belongs in the state register, and neither is retold in the other.
+
 ## Settled decisions
 
 <!-- One line per decision with date; the reasoning behind each lives in the journal. -->

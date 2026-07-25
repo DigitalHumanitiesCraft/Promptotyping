@@ -2,7 +2,7 @@
 type: moc
 topic: "Method"
 created: 2026-07-19
-updated: 2026-07-23
+updated: 2026-07-25
 ---
 
 # MOC: Method
@@ -26,3 +26,13 @@ Added with the bibliography-traceability sweep of 2026-07-23:
 - [[20_claims/reproducibility-shifts-to-documented-justification]] — In LLM-assisted work reproducibility shifts from identical repetition to traceable justification
 - [[20_claims/ontology-is-explicit-specification-of-conceptualization]] — An ontology is an explicit specification of a conceptualization
 - [[20_claims/traditional-dmps-are-unused-compliance-documents]] — Traditional data management plans are static compliance documents that do not support data-management activities
+
+Added from the video distillates of 2026-07-25, the operational record of one taught session:
+
+- [[20_claims/milestone-check-deferred-in-the-recorded-session]] — the run advances on a bare continuation instruction and the artefact is inspected several milestones later (also under Limitations)
+- [[20_claims/exploration-resumed-inside-an-implementation-milestone]] — exploration is taken up again inside a running milestone and forces an update of the `data.md`
+- [[20_claims/implementation-plan-cuts-work-into-checkable-milestones]] — the plan cuts the work into milestones that can be checked independently
+- [[20_claims/overengineering-check-cuts-the-specification-before-implementation]] — a check for overengineering cuts the specification back to a minimal scope before the build
+- [[20_claims/radical-design-request-widens-the-interface-option-space]] — a deliberately outlandish design request widens the space of interface options
+- [[20_claims/interface-defect-is-reported-through-the-element-identifier]] — a defect is reported to the LLM through the identifier of the element
+- [[20_claims/expert-role-carries-a-domain-and-a-development-judgement]] — the loop carries a subject-matter and a development-side judgement (also under Concepts)
