@@ -530,7 +530,7 @@
       return "arbeitsumgebung";
     }
     if (segments[0] === "anwendung" || segments[0] === "artefakt" ||
-        segments[0] === "verifikation") {
+        segments[0] === "verifikation" || segments[0] === "workflow") {
       return segments[0];
     }
     if (segments[0] === "vault") {
@@ -540,6 +540,7 @@
     if (/^(promptotyping-document|konzept|case|konvention|abschnitt)-/.test(rest) ||
         rest === "glossar" || rest === "literatur" || rest === "arbeitsumgebung" ||
         rest === "anwendung" || rest === "artefakt" || rest === "verifikation" ||
+        rest === "workflow" ||
         rest === "vault" || /^vault-/.test(rest) ||
         rest === "paper") {
       return rest;
@@ -928,6 +929,7 @@
             'tabindex="0" role="button" data-slug="' + d.slug + '">' +
             "<td>" + escapeHtml(d.title) + "</td>" +
             "<td>" + escapeHtml(d.funktion) + "</td>" +
+            '<td class="vorlagen-trigger">' + escapeHtml(d.trigger || "") + "</td>" +
             "<td><code>" + escapeHtml(d.datei) + "</code></td>" +
             "<td>" + escapeHtml(d.typ) + "</td>" +
             "<td>" + escapeHtml(d.version) + "</td>" +
@@ -956,7 +958,7 @@
           "eines Repos. Jede Vorlage adressiert eine Funktion, nicht einen festen Dateinamen. Ein Klick auf " +
           "eine Zeile oeffnet die volle Vorlagen-Spezifikation im Side-Panel.</p>" +
           '<table class="vorlagen-table"><thead><tr>' +
-          "<th>Vorlage</th><th>Funktion</th><th>Empfohlene Datei</th><th>Typ</th><th>Version</th><th>Status</th>" +
+          "<th>Vorlage</th><th>Funktion</th><th>Traegt, wenn</th><th>Empfohlene Datei</th><th>Typ</th><th>Version</th><th>Status</th>" +
           "</tr></thead><tbody>" + rows + "</tbody></table>" +
           "</div>" +
 
@@ -1112,11 +1114,30 @@
             '" data-glossar="' + slug + '"></span>';
         }).join("");
 
+        // Sub-navigation: one entry per initial, so the list is navigable
+        // without scrolling through it.
+        var seen = {};
+        var initials = [];
+        glossarEntries.forEach(function (e) {
+          var letter = e.begriff.charAt(0).toUpperCase();
+          if (!seen[letter]) {
+            seen[letter] = e.slug;
+            initials.push(letter);
+          }
+        });
+        var jumpBar = '<nav class="glossar-jump" aria-label="Glossar nach Anfangsbuchstabe">' +
+          initials.map(function (letter) {
+            return '<a href="#glossar-' + seen[letter] + '">' + letter + "</a>";
+          }).join("") + "</nav>";
+
         el.classList.remove("placeholder-section");
         el.innerHTML =
           "<h2>Glossar</h2>" +
-          "<p>Konstitutive Begriffe des Promptotyping-Papers und der Methodik-Site, alphabetisch geordnet. " +
-          "Im Paper-Lesefluss ist das erste Vorkommen eines Begriffs als Trigger markiert.</p>" +
+          "<p>Begriffe der Promptotyping-Methode und der Methodik-Site, alphabetisch geordnet. " +
+          "Im Paper-Lesefluss ist das erste Vorkommen eines Begriffs als Trigger markiert. " +
+          "Begriffe, die der Papertext nicht fuehrt, weisen sich in der Quellenzeile als " +
+          "Site-Vokabular aus.</p>" +
+          jumpBar +
           aliasAnchors +
           '<div class="glossar-list">' + items + "</div>";
       })
@@ -1413,6 +1434,7 @@
       renderGlossar(),
       renderMarkdownInto("ueberblick", "_content/ueberblick.md"),
       renderMarkdownInto("anwendung", "_content/anwendung.md"),
+      renderMarkdownInto("workflow", "_content/workflow.md"),
       renderMarkdownInto("artefakt", "_content/artefakt.md"),
       renderMarkdownInto("verifikation", "_content/verifikation.md"),
       renderVorlagen(),

@@ -1189,3 +1189,37 @@ a:hover {
   font-size: 0.8125rem;
   color: var(--phase-distillation);
 }
+
+/* Template catalogue: the trigger column carries a sentence, so it wraps. */
+
+.vorlagen-trigger {
+  font-size: 0.8125rem;
+  color: var(--phase-exploration);
+  max-width: 22rem;
+  white-space: normal;
+}
+
+/* Glossary sub-navigation: one quiet link per initial. */
+
+.glossar-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: var(--space-6) 0;
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--border);
+}
+
+.glossar-jump a {
+  font-family: var(--font-code);
+  font-size: 0.8125rem;
+  color: var(--phase-exploration);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
+}
+
+.glossar-jump a:hover,
+.glossar-jump a:focus-visible {
+  color: var(--text);
+  border-bottom-color: var(--glossar-underline);
+}

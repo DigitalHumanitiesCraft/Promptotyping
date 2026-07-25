@@ -2,7 +2,7 @@
   "version": "0.2",
   "generated": "2026-07-19",
   "_meta": {
-    "beschreibung": "Strukturierte Form der Vorlagen-Tabelle (Promptotyping Documents). Generiert aus den Frontmattern der Mirrors unter _content/promptotyping-document/ sowie der Funktions-, Dateinamen- und Typ-Zuordnung aus _content/konvention.md (Vorlagen-Katalog und Lese-Heuristik). Reihenfolge wie im Vorlagen-Katalog der Konvention. Funktionsnamen seit 2026-07-19 englisch; die Vorlagen-Namen bleiben unveraendert, sie sind Identifikatoren.",
+    "beschreibung": "Strukturierte Form der Vorlagen-Tabelle (Promptotyping Documents). Generiert aus den Frontmattern der Mirrors unter _content/promptotyping-document/ sowie der Funktions-, Dateinamen- und Typ-Zuordnung aus _content/konvention.md (Vorlagen-Katalog und Lese-Heuristik). Reihenfolge wie im Vorlagen-Katalog der Konvention. Funktionsnamen seit 2026-07-19 englisch; die Vorlagen-Namen bleiben unveraendert, sie sind Identifikatoren. Das Feld trigger traegt das Kriterium, unter dem die Vorlage einschlaegig ist, aus derselben Funktionstabelle.",
     "schema": {
       "slug": "URL-Anker-Fragment, ergibt mit #promptotyping-document- den Site-Anker",
       "title": "Anzeigename der Vorlage",
@@ -11,7 +11,8 @@
       "typ": "Analytischer Dokumenttyp: Declarative, Process oder Action, die drei Spezialisierungen des Knowledge Document nach der Art des getragenen Wissens (konvention.md, Lese-Heuristik)",
       "version": "Vorlagen-Version",
       "status": "Reifegrad der Vorlage",
-      "machineUrl": "statische .md-URL fuer maschinelle Abrufung ohne JavaScript"
+      "machineUrl": "statische .md-URL fuer maschinelle Abrufung ohne JavaScript",
+      "trigger": "Bedingung, unter der die Funktion dieser Vorlage traegt; uebernommen aus der Funktionstabelle in _content/konvention.md"
     }
   },
   "documents": [
@@ -23,7 +24,8 @@
       "typ": "Declarative",
       "version": "0.2",
       "status": "complete",
-      "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/index.md"
+      "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/index.md",
+      "trigger": "Wissensbasis hat mehr als drei Dokumente oder mehrere konstitutive Begriffe"
     },
     {
       "slug": "project",
@@ -33,7 +35,8 @@
       "typ": "Declarative",
       "version": "0.2",
       "status": "complete",
-      "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/project.md"
+      "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/project.md",
+      "trigger": "immer"
     },
     {
       "slug": "data",
@@ -43,7 +46,8 @@
       "typ": "Declarative",
       "version": "0.2",
       "status": "complete",
-      "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/data.md"
+      "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/data.md",
+      "trigger": "Projekt verarbeitet oder produziert Daten"
     },
     {
       "slug": "specification",
@@ -53,7 +57,8 @@
       "typ": "Declarative",
       "version": "0.3",
       "status": "complete",
-      "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/specification.md"
+      "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/specification.md",
+      "trigger": "immer"
     },
     {
       "slug": "user-stories",
@@ -63,7 +68,8 @@
       "typ": "Declarative",
       "version": "0.2",
       "status": "complete",
-      "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/user-stories.md"
+      "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/user-stories.md",
+      "trigger": "immer"
     },
     {
       "slug": "action-layer",
@@ -73,7 +79,8 @@
       "typ": "Action",
       "version": "0.2",
       "status": "complete",
-      "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/action-layer.md"
+      "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/action-layer.md",
+      "trigger": "immer"
     },
     {
       "slug": "architecture",
@@ -83,7 +90,8 @@
       "typ": "Declarative",
       "version": "0.3",
       "status": "complete",
-      "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/architecture.md"
+      "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/architecture.md",
+      "trigger": "System geht über Static-Site hinaus"
     },
     {
       "slug": "domain-knowledge",
@@ -93,7 +101,8 @@
       "typ": "Declarative",
       "version": "0.2",
       "status": "complete",
-      "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/domain-knowledge.md"
+      "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/domain-knowledge.md",
+      "trigger": "Forschungs-, Editions- oder Datenprojekt mit fachmethodischer Vorgabe- oder Theorieschicht"
     },
     {
       "slug": "design",
@@ -103,7 +112,8 @@
       "typ": "Declarative",
       "version": "0.2",
       "status": "complete",
-      "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/design.md"
+      "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/design.md",
+      "trigger": "Projekt hat eine UI"
     },
     {
       "slug": "testing",
@@ -113,7 +123,8 @@
       "typ": "Declarative",
       "version": "0.2",
       "status": "complete",
-      "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/testing.md"
+      "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/testing.md",
+      "trigger": "Projekt mit Tests, Verifikations- oder Akzeptanzprüfungen"
     },
     {
       "slug": "verification",
@@ -123,7 +134,8 @@
       "typ": "Declarative",
       "version": "0.1",
       "status": "complete",
-      "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/verification.md"
+      "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/verification.md",
+      "trigger": "Projekt erhebt empirische Befunde oder Neuheitsansprüche, die außenwirksam verwendet werden (Paper, Bericht, Übergabe)"
     },
     {
       "slug": "journal",
@@ -133,7 +145,8 @@
       "typ": "Process",
       "version": "0.2",
       "status": "complete",
-      "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/journal.md"
+      "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/journal.md",
+      "trigger": "immer"
     },
     {
       "slug": "plan",
@@ -143,7 +156,8 @@
       "typ": "Process",
       "version": "0.2",
       "status": "complete",
-      "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/plan.md"
+      "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/plan.md",
+      "trigger": "Projekt mit Phasen, Milestones oder Sprint-Steuerung"
     },
     {
       "slug": "report",
@@ -153,7 +167,8 @@
       "typ": "Declarative (Snapshot)",
       "version": "0.2",
       "status": "complete",
-      "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/report.md"
+      "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/report.md",
+      "trigger": "Projektstatusbericht für externen Empfänger (Auftraggeber, Förderer, Stakeholder); bei Auftragsprojekten Regelfall"
     },
     {
       "slug": "integration",
@@ -163,7 +178,8 @@
       "typ": "Declarative",
       "version": "0.1",
       "status": "complete",
-      "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/integration.md"
+      "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/integration.md",
+      "trigger": "Projekt mit Datenaustausch, Kontrakt oder Handoff zu einem anderen Projekt oder einer anderen Lane"
     }
   ]
 }

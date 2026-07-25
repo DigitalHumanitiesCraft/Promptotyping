@@ -731,3 +731,15 @@ AP4 macht die Belegschicht öffentlich. Sieben Topic Maps mit ihren Claims, ein 
 Alles headless getrieben und geprüft: zehn Papersektionen, dreißig Fußnoten gegen dreißig Referenzen, vierundvierzig Glossar-Trigger, sieben Topic Maps mit hundertsiebenunddreißig Claim-Einträgen, keine leere Sektion, keine Ladefehler, und ein Klick auf einen Claim öffnet das Panel mit korrekten Ankerzielen.
 
 Die Case-Study-Frage ist entschieden. Aldersbach und Lucina bleiben in der Galerie, und die Kuratierungsnotiz sagt jetzt ausdrücklich, dass die Galerie ein eigenes Raster fährt und Fälle führt, die das Paper nicht mehr führt.
+
+## 2026-07-25, fünfte Sitzung — AP6, AP7 und die Glossar-Navigation
+
+AP7 ist zur Hälfte erledigt. Der Vorlagen-Katalog trägt jetzt eine Spalte „Trägt, wenn", die pro Vorlage das Kriterium nennt, unter dem ihre Funktion einschlägig ist. Die Kriterien standen bereits in der Funktionstabelle der Konvention und sind von dort abgeleitet, nicht neu erfunden; die Zuordnung läuft über das Funktionsfeld der Vorlage. Die zweite Hälfte, die Katalogisierung der Vorlage `technology`, bleibt liegen. Der Vorlagenkatalog wird vault-first gepflegt, und eine neue Vorlage im Repo anzulegen, ohne dass die Vault-Vorlage existiert, würde genau die stillschweigende Divergenz erzeugen, die die CLAUDE.md verbietet. Das braucht eine echte Vault-Sitzung.
+
+AP6 ist umgesetzt und war nicht mehr blockiert. Die beiden Videoskripte liegen seit der Vault-Sitzung vom selben Tag als bereinigte Repräsentationen mit Block-IDs vor, womit das Material da war, auf das der Plan gewartet hat. Die Seite führt den Fall durch die vier Phasen und hebt drei Stellen heraus, an denen die Aufzeichnung methodisch mehr zeigt als eine Beschreibung: die nachgeholte Exploration mitten in der Implementierung, die aufgeschobene Milestone-Prüfung mit ihrer Verifikationsschuld, und das Design-Experiment als bewusstes Abtasten des Möglichkeitsraums. Die Dateizahl ist bewusst qualitativ gehalten, weil die Quelle selbst zwei verschiedene Zahlen führt und keine davon gegroundet ist.
+
+Das Glossar hat eine eigene Navigation bekommen, eine Zeile mit den Anfangsbuchstaben, die auf den jeweils ersten Eintrag springen. Damit ist auch Punkt 11 des Zielzustands erfüllt.
+
+Der Plan ist auf Stand gezogen. AP1 bis AP7 sind umgesetzt, offen aus dem Zielzustand bleibt allein der Pflichtkern der Konvention, den Punkt 5 auf eine Fassung entschieden haben will; das ist eine Operator-Entscheidung.
+
+Geprüft im gerenderten DOM: vierzehn Sektionen in der geplanten Reihenfolge, die Workflow-Seite gefüllt, fünfzehn Trigger-Zellen im Katalog, zwölf Sprungmarken im Glossar, hundertsiebenunddreißig Claim-Einträge in der Vault-Ansicht, zehn Papersektionen, keine leere Sektion, keine Ladefehler.

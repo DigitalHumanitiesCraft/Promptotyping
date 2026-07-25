@@ -44,21 +44,25 @@ Die Site sagt, was Promptotyping ist und wie man es anwendet. Das Paper sagt, wa
 
 Die Paperansicht rendert `knowledge/paper.md` zur Laufzeit. Die sieben Dateien unter `_content/paper/` entfallen. Damit ist der Papertext auf der Site definitionsgemäß der kanonische Stand, und die größte Driftklasse existiert nicht mehr. Voraussetzungen: eine Fußnoten-Extension für marked, Heading-IDs im Renderer, und die Ablösung der sieben Sektionsanker auf die neue Ansicht.
 
+## Stand 2026-07-25
+
+AP1 bis AP7 sind umgesetzt und im Browser getrieben geprueft. Die Lesespalte fuehrt die Methode zuerst und das Paper zuletzt, womit der Rollenwechsel vollzogen ist. Offen aus dem Zielzustand bleibt allein der Pflichtkern der Konvention, der laut Punkt 5 auf eine Fassung zu entscheiden ist; die Wissensbasis fuehrt ihn heute mit sechs Feldern, die Konvention beschreibt ihn daneben. Das ist eine Operator-Entscheidung und keine Implementierungsluecke.
+
 ## Arbeitspakete
 
-**AP1 Paperansicht.** Fußnoten-Extension, Heading-IDs, Rendering aus `knowledge/paper.md`, Sektionsnavigation, Ankerkompatibilität für `#abschnitt-*`, Rückbau der sieben Sektionsdateien und ihres Ladepfads. Betrifft `index.html`, `assets/js/app.js`, `assets/css/style.css`, `404.html`.
+**AP1 Paperansicht.** Fußnoten-Extension, Heading-IDs, Rendering aus `knowledge/paper.md`, Sektionsnavigation, Ankerkompatibilität für `#abschnitt-*`, Rückbau der sieben Sektionsdateien und ihres Ladepfads. Betrifft `index.html`, `assets/js/app.js`, `assets/css/style.css`, `404.html`. Erledigt 2026-07-25; ein Fehler im Fussnoten-Tokenizer, der den Papertext nach Sektion 1 abschnitt, wurde beim Browser-Check gefunden und behoben.
 
-**AP2 Konsistenzdurchgang im publizierten Material.** Die in der Analyse belegten Abweichungen in `_content/` und `data/`. Enthält die dringende Entfernung der beiden toten Repo-Links. Betrifft keine JavaScript-Datei.
+**AP2 Konsistenzdurchgang im publizierten Material.** Die in der Analyse belegten Abweichungen in `_content/` und `data/`. Enthält die dringende Entfernung der beiden toten Repo-Links. Betrifft keine JavaScript-Datei. Erledigt 2026-07-25, zusammen mit AP5.
 
-**AP3 Neue Inhaltsseiten.** Anwendung, Artefakt und Grenze, Verifikation. Schreibarbeit gegen den kanonischen Papertext, danach Einbau.
+**AP3 Neue Inhaltsseiten.** Anwendung, Artefakt und Grenze, Verifikation. Schreibarbeit gegen den kanonischen Papertext, danach Einbau. Erledigt 2026-07-25.
 
-**AP4 Vault-Unteransicht.** Neues Modul, das die Vault-Schichten lesbar macht. Setzt AP1 voraus, weil beide `app.js` und `index.html` anfassen.
+**AP4 Vault-Unteransicht.** Neues Modul, das die Vault-Schichten lesbar macht. Setzt AP1 voraus, weil beide `app.js` und `index.html` anfassen. Erledigt 2026-07-25; Index generiert durch `vault/tools/build_site_index.py`.
 
-**AP5 Glossar-Unteransicht.** Eigene Navigation über die Begriffe, Quelle bleibt `data/glossar.json`, inhaltlich gegen den kanonischen Papertext nachgezogen.
+**AP5 Glossar-Unteransicht.** Eigene Navigation über die Begriffe, Quelle bleibt `data/glossar.json`, inhaltlich gegen den kanonischen Papertext nachgezogen. Erledigt 2026-07-25, inhaltlich neu geerdet und um eine Buchstaben-Navigation ergaenzt.
 
-**AP6 Beispiel-Workflow.** Wartet auf die Video-Transkripte.
+**AP6 Beispiel-Workflow.** Wartet auf die Video-Transkripte. Erledigt 2026-07-25 aus den bereinigten Videoskripten der Vault-Repraesentationsschicht.
 
-**AP7 Vorlagen.** Fertigkeitskriterium pro Vorlage, Katalogisierung von `technology`, Angleichung der Versionsfelder in den Fülltemplates.
+**AP7 Vorlagen.** Fertigkeitskriterium pro Vorlage, Katalogisierung von `technology`, Angleichung der Versionsfelder in den Fülltemplates. Teilweise erledigt 2026-07-25: das Fertigkeitskriterium steht als eigene Spalte im Katalog. Die Vorlage `technology` bleibt offen, weil der Vorlagenkatalog vault-first gepflegt wird und eine echte Vault-Sitzung braucht.
 
 ## Reihenfolge
 
