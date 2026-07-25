@@ -55,13 +55,12 @@ Promptotyping/
 ├── CLAUDE.md                       # action layer
 ├── knowledge/                      # this knowledge base (specification)
 ├── _content/                       # Markdown content
-│   ├── paper/                      # section files of the deployed (pre-revision) cut
 │   ├── promptotyping-document/     # one template mirror per slug
 │   ├── case-studies/               # case-study deep pages
 │   ├── skills/                     # index, coding, writing
 │   ├── ueberblick.md, konvention.md, praxis.md
 │   ├── arbeitsumgebung.md, technology-baseline.md
-│   ├── glossar.md, literatur.md
+│   ├── glossar.md               # generated from data/glossar.json
 │   └── MANIFEST.md                 # mirror provenance
 ├── assets/
 │   ├── css/style.css
@@ -97,7 +96,7 @@ A subpath request is served by `404.html`, so it carries HTTP status 404 even th
 
 **marked configuration and the phase-tag stripper.** `configureMarked` calls `marked.use` with `gfm: true`, `breaks: false`, and one block-level extension named `classedParagraph`. marked.js does not parse the Pandoc-style class syntax `{:.class}` out of the box. The paper Markdown still carries `{:.phase-*}` tags as a methodological annotation, and the provenance lane that once rendered them was removed on 2026-06-10 by operator decision. The extension recognises a `{:.class}` tag at the start of a paragraph and strips only the four legacy classes `phase-preparation`, `phase-exploration`, `phase-distillation`, and `phase-implementation`, rendering the paragraph as a plain `<p>` with no class. Any other class tag falls through to the standard paragraph tokenizer. Do not add new `{:.phase-*}` tags; the lane is not to be revived (see `CLAUDE.md`).
 
-**Paper sections and lazy loading.** `SECTIONS` lists the seven paper files (`_content/paper/01-introduction.md` through `07-conclusion.md`) plus `_content/literatur.md`, keyed to the `abschnitt-*` element ids. This file set is the decomposition of the pre-revision paper and stays deployed until the operator releases the revised text; the canonical text is `knowledge/paper.md`, and re-decomposition re-cuts the files, the ids, and this list with it (A1 in [specification.md](specification.md)). `loadAndRenderSection` fetches a file, strips its YAML frontmatter, renders it, and de-duplicates via a `loadedSections` guard. The first section loads immediately; the rest are `paper-section-placeholder` shells observed by an IntersectionObserver with a 200px root margin. Section 4 additionally receives the part-2 YouTube facade before the "VetMedAI Wissensbilanz" mention and a compact use-case reference block linking into the gallery. Every rendered section except `literatur` is post-processed by `decorateGlossarTriggers` and `decorateCitations`.
+**Paper rendering.** The paper view fetches `knowledge/paper.md`, the canonical text, strips a leading YAML block if one is present, and renders it in one pass; the mirrored cut under `_content/paper/` no longer exists, and with it the largest class of drift. `sectionizePaper` groups the flat output into one `.paper-section` per H2, moving the heading id onto the section so every top-level section stays addressable and observable. `addPaperAnchorAliases` keeps the older `#abschnitt-*` anchors resolving, and `HEADING_ID_MAP` maps `references` onto the `literatur` id so the table of contents entry still lands on the paper's own reference list. The reference list and the footnote apparatus are excluded from `decorateGlossarTriggers` and `decorateCitations`, because the one is the citation target itself and the other carries the source notes.
 
 **Glossar.** `renderGlossar` loads `data/glossar.json`, sorts entries, renders the glossar section, and emits empty `konzept-*` alias anchors (via `KONZEPT_ALIASES`) so `#konzept-{name}` routing resolves into the matching entry. `decorateGlossarTriggers` walks the text nodes of a rendered section and wraps the first occurrence of each term (longest term first, word-boundary check, skipping links, code, and headings) in a keyboard-accessible `.glossar-trigger`. `setupGlossarInteraction` shows a tooltip on hover after a delay and opens the side panel on click or Enter/Space.
 
@@ -122,13 +121,12 @@ A subpath request is served by `404.html`, so it carries HTTP status 404 even th
 `_content/` holds the Markdown, mirrored from the vault and the paper source; `data/` holds the JSON that JavaScript consumes directly.
 
 ```
-_content/paper/01-introduction.md … 07-conclusion.md   ← paper sections
-_content/literatur.md                                   ← references (own anchor)
+knowledge/paper.md                                      ← the paper, rendered from its canonical source
 _content/promptotyping-document/{slug}.md               ← template mirrors, one file per slug
 _content/case-studies/{id}.md                           ← case-study deep pages
 _content/skills/{index,coding,writing}.md               ← skills content
 _content/{ueberblick,konvention,praxis,arbeitsumgebung,technology-baseline}.md
-_content/glossar.md                                     ← glossar prose
+_content/glossar.md                                     ← glossar prose, generated from data/glossar.json
 _content/MANIFEST.md                                    ← mirror provenance
 
 data/glossar.json                 ← glossar entries (structured)

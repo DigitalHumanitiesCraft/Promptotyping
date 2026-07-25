@@ -48,7 +48,7 @@ The bibliography-traceability sweep of 2026-07-23 added the paper's cited public
 
 ## Section register
 
-The deliverable is external and single-file (settled decision in [[knowledge/specification]]); the canonical text is `knowledge/paper.md` at the root of this repository, and `_content/paper/` is the derived publication form the site renders. Headings below are taken from that file. The writing status of the paper is tracked in the repository's `knowledge/paper-writing.md` and is deliberately not mirrored here.
+The deliverable is external and single-file (settled decision in [[knowledge/specification]]); the canonical text is `knowledge/paper.md` at the root of this repository, which the site renders directly. Headings below are taken from that file. The writing status of the paper is tracked in the repository's `knowledge/paper-writing.md` and is deliberately not mirrored here.
 
 | Section | Heading | Notes |
 |---|---|---|

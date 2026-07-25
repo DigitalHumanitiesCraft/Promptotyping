@@ -43,7 +43,7 @@ Die Site soll ruhig sein. Konkret bedeutet das beim Coden:
 
 `assets/promptotyping-logo.png` bleibt erhalten. `_content/` und `data/` werden in den Implementierungs-Sprints angelegt.
 
-Der Ordner `vault/` ist eine Instanz des Grounded-Vault-Templates (`DigitalHumanitiesCraft/grounded-vault`) und verankert die tragenden Claims des Papers in `_content/paper/` quellenfest. Für jede Arbeit in `vault/` gilt dessen eigener Action-Layer `vault/CLAUDE.md`; das Python-Werkzeug `vault/tools/validate.py` gehört zum Vault und ist die einzige zulässige Ausnahme von der No-Build-Regel unten (es baut nichts für die Site, es prüft den Vault).
+Der Ordner `vault/` ist eine Instanz des Grounded-Vault-Templates (`DigitalHumanitiesCraft/grounded-vault`) und verankert die tragenden Claims des Papers in `knowledge/paper.md` quellenfest. Für jede Arbeit in `vault/` gilt dessen eigener Action-Layer `vault/CLAUDE.md`; das Python-Werkzeug `vault/tools/validate.py` gehört zum Vault und ist die einzige zulässige Ausnahme von der No-Build-Regel unten (es baut nichts für die Site, es prüft den Vault).
 
 ## Tech-Stack-Regeln
 
@@ -66,7 +66,7 @@ Die Phasen-Provenance-Lane wurde nach dem Erstdeploy auf Operator-Entscheidung v
 - Konvention: `#konvention-v0.1`
 - Glossar: `#glossar`
 - Literatur: `#literatur`
-- Paper-Sektionen: `#abschnitt-{n}-{slug}` (z.B. `#abschnitt-3-four-phases`; sieben Section-Files unter `_content/paper/`)
+- Paper-Sektionen: `#abschnitt-{n}-{slug}` (z.B. `#abschnitt-3-the-method`). Die Site rendert `knowledge/paper.md` direkt und erzeugt die Anker beim Rendern; unter `_content/paper/` liegt nichts mehr.
 - Überblick: `#ueberblick`; Use Cases: `#use-cases`; Praxis-Einträge: `#praxis-{slug}`; Skills: `#skills-{slug}` (A13 bis A15); Arbeitsumgebung: `#arbeitsumgebung`, Subpath `/arbeitsumgebung` (A17)
 
 Anker dürfen nicht ohne Diskussion umbenannt werden — Repos können auf sie als `template:`-URI verlinken.

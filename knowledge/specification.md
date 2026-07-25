@@ -33,7 +33,7 @@ What the site must do. The site renders the Pollin 2026 paper as a scrollable si
 ## Requirements
 
 ### A1 — Paper as reading flow
-The canonical paper text is [paper.md](paper.md) in this knowledge base. The site renders a decomposition of it as a continuous reading flow, one file per H2 section under `_content/paper/` plus an abstract file prepended to section 1, with the references as `_content/literatur.md`. It renders in a central reading column with the table of contents as a sticky left sidebar. Acceptance criterion. A visitor to https://dhcraft.org/Promptotyping/ can scroll the paper from abstract to conclusion.
+The canonical paper text is [paper.md](paper.md) in this knowledge base. The site renders that file directly as a continuous reading flow, grouped into one section per H2 at render time, so the deployed text is the canonical text by construction. It renders in a central reading column with the table of contents as a sticky left sidebar. Acceptance criterion. A visitor to https://dhcraft.org/Promptotyping/ can scroll the paper from abstract to conclusion.
 
 The deployed decomposition predates the revision round of 2026-07-24 and no longer matches the canonical text. Its section-5 file is titled Epistemic Infrastructure, a section the paper does not carry any more, and the abstract file holds the superseded abstract. Which files exist, how they are numbered, and which anchors they receive follows from the canonical text and is re-cut when the operator releases the revised paper for decomposition; until then the deployed cut is the state described here and in [architecture.md](architecture.md), and it is not the specification of the paper.
 

@@ -960,7 +960,11 @@
     "epistemic-infrastructure": "epistemic-infrastructure",
     "scholar-centered-design": "scholar-centered-design",
     "context-rot": "context-rot",
-    "co-intelligence-eil": "co-intelligence"
+    "co-intelligence-eil": "co-intelligence",
+    "agentic-engineering": "agentic-engineering",
+    "spec-driven-development": "spec-driven-development",
+    "verification-validation": "verification-validation",
+    "forschungsartefakt": "forschungsartefakt"
   };
 
   function renderGlossar() {

@@ -7,7 +7,7 @@ machine-url: https://dhcraft.org/Promptotyping/_content/MANIFEST.md
 
 # MANIFEST
 
-Inventar der Inhalts-Substrate, die am 2026-06-10 aus dem Obsidian-Vault (`C:/Users/Chrisi/Documents/obsidian`, nur gelesen) in dieses Repo gespiegelt wurden. Geschrieben wurde ausschliesslich unter `_content/` (ausser `_content/paper/` und `_content/literatur.md`) und `data/`. Inhaltssprache deutsch mit englischen Fachbegriffen; Original-Prompts und Vorlagen-Texte unveraendert.
+Inventar der Inhalts-Substrate, die am 2026-06-10 aus dem Obsidian-Vault (`C:/Users/Chrisi/Documents/obsidian`, nur gelesen) in dieses Repo gespiegelt wurden. Geschrieben wurde ausschliesslich unter `_content/` und `data/`. Inhaltssprache deutsch mit englischen Fachbegriffen; Original-Prompts und Vorlagen-Texte unveraendert.
 
 ## Vorlagen (Promptotyping Documents)
 
@@ -49,8 +49,8 @@ Mit Site-Ergaenzung "Anmerkung der Site (2026-06-10)" zur Maschinen- vs. Mensche
 
 | Datei | Quelle |
 |---|---|
-| `glossar.md` | data/glossar.json (lesbare Form) |
-| `data/glossar.json` | paper/02-terms-positioning, paper/04-projects, paper/05-epistemic-infrastructure, knowledge/INDEX.md, Vault-Konzeptdokumente |
+| `glossar.md` | data/glossar.json (erzeugte lesbare Form) |
+| `data/glossar.json` | knowledge/paper.md, knowledge/INDEX.md, knowledge/specification.md, Konvention Promptotyping Documents, Vault-Konzeptdokumente |
 
 42 Eintraege (Anforderung A6: mindestens 30). `.md` und `.json` inhaltsgleich gehalten; die JSON ist die massgebliche Datenquelle.
 

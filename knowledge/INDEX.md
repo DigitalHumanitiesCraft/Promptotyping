@@ -37,7 +37,7 @@ By operator decision of 2026-07-23 the core knowledge documents (INDEX, project,
 - **[architecture.md](architecture.md)** — how the site is built: URL structure, tech stack, module inventory (function: Architecture).
 - **[design.md](design.md)** — how the site looks and behaves: DHCraft design system, side panels, typography (function: Design).
 - **[journal.md](journal.md)** — chronological process record, German (function: Provenance).
-- **[paper.md](paper.md)** — the full English paper text as one document, the canonical text after the revision round of 2026-07-24; headerless by design for copy-out. After release it is decomposed into `_content/paper/`, whose currently deployed cut still carries the pre-revision section structure.
+- **[paper.md](paper.md)** — the full English paper text as one document, the canonical text after the revision rounds of 2026-07-24 and 2026-07-25; headerless by design for copy-out. The site renders this file directly, so the deployed text is the canonical text.
 - **[paper-writing.md](paper-writing.md)** — the knowledge about writing the paper: working mode, core statements, language rules, decision state, checkpoints, German.
 - **[paper-argument-map.md](paper-argument-map.md)** — the concept model of the paper, one argument chain per block in compact notation with confirmation status, German. Serves the operator as a review instrument and an agent as a generation basis.
 - **[paper-terminology.md](paper-terminology.md)** — working sheet of the terminology pass: every term with its English original form, its definition in the current text, its source, and a status code; German. Carries the open operator decisions of the pass.

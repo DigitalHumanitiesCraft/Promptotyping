@@ -20,7 +20,7 @@ Purpose, parameters and settled decisions of this vault instance. The invariant 
 
 ## Purpose
 
-This vault grounds the Promptotyping paper. The deliverable is the paper maintained canonically in this repository as `knowledge/paper.md`, from which `_content/paper/` is derived as the publication form the site renders, regenerated only after release; this vault carries the provenance layer beneath it, anchoring the paper's load-bearing claims to the source material that supports them, from the Section 4 project figures through the genealogy claims to the novelty claims of the discussion. The evidence obligation follows the paper's own verification practice, adversarial checking against the public project repositories, so that the paper workstream's verification milestones (figures check M3, source dating M4, novelty research M8) read and write this vault instead of leaving their findings in session-local documents.
+This vault grounds the Promptotyping paper. The deliverable is the paper maintained canonically in this repository as `knowledge/paper.md`, which the site renders directly the site renders, regenerated only after release; this vault carries the provenance layer beneath it, anchoring the paper's load-bearing claims to the source material that supports them, from the Section 4 project figures through the genealogy claims to the novelty claims of the discussion. The evidence obligation follows the paper's own verification practice, adversarial checking against the public project repositories, so that the paper workstream's verification milestones (figures check M3, source dating M4, novelty research M8) read and write this vault instead of leaving their findings in session-local documents.
 
 ## Parameters
 
