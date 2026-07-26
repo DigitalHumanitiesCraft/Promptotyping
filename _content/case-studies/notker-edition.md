@@ -2,6 +2,7 @@
 title: Notker Edition
 id: notker-edition
 paper: "5.2, Table 1"
+source: Projects/Promptotyping/Case Studies/notker-edition.md
 ---
 
 # Notker Edition
@@ -24,8 +25,8 @@ The case shows data production as an edition problem with a pronounced layer-tog
 
 ## Limits
 
-The edition rests on a sample page. What the pipeline demonstrates is that the layering of this psalm can be carried from a word-processor file into TEI and made controllable, and how the arrangement behaves across the whole commentary is not part of the case.
+The edition rests on a sample page. It shows that the layering of this psalm can be carried from a word-processor file into TEI and made controllable; how the arrangement behaves across the whole commentary lies outside the case.
 
-The artefact is a promptotype for an application, so it argues for the feasibility of an edition rather than delivering one. The editorial decisions it presents were taken for a demonstration, and an edition of the full commentary would have to take them again under the weight of the whole text.
+The artefact is a promptotype for a funding application and argues the feasibility of an edition. The editorial decisions it presents were taken for a demonstration, and an edition of the full commentary would have to take them again under the weight of the whole text.
 
-The review workflow was checked against a verified build, which decides that the corrections arrived in the TEI. Whether the corrections were right stays with the commissioning scholar, and the case documents the path rather than the judgement.
+The review workflow was checked against a verified build, which decides that the corrections arrived in the TEI. Whether the corrections were right stays with the commissioning scholar.

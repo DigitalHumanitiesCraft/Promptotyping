@@ -2,6 +2,7 @@
 title: CorrespExplorer
 id: corresp-explorer
 paper: "5.2, Table 1"
+source: Projects/Promptotyping/Case Studies/corresp-explorer.md
 ---
 
 # CorrespExplorer
@@ -24,8 +25,8 @@ The case yields three observations. FAIR data act as an enabler, since output qu
 
 ## Limits
 
-The result rests on a standard. What the case shows about the ease of the translation holds for data that is standardised, documented and machine-readable, and it says nothing about the idiosyncratic spreadsheet or the undocumented database that much research data actually looks like.
+What the case shows about the ease of the translation holds for data that is standardised, documented and machine-readable. It says nothing about the idiosyncratic spreadsheet or the undocumented database that much research data actually is.
 
-The context rot observation is qualitative. The documentation records that output quality fell inside the advertised window, and it carries no measurement, no token count and no controlled comparison. It is a report of what the builder noticed, and it grounds the practice of distillation rather than a claim about the model.
+The context rot observation is qualitative. The documentation records that output quality fell inside the advertised window and carries no measurement, no token count and no controlled comparison. It grounds the practice of distillation; about the model it establishes nothing.
 
-The sycophancy observation has the same status. It was countered by prompting, and whether the countermeasure worked was judged by the same person who wrote the prompt.
+The sycophancy observation has the same status. It was countered by prompting, and whether the countermeasure worked was judged by the person who wrote the prompt.

@@ -26,6 +26,6 @@ The central contribution is that the interface exposes the limits of the data mo
 
 The model was moving while the capture was running, so the material and the vocabulary that describes it were produced in the same motion. The decision register records where the vocabulary was extended, and it cannot establish that earlier entries were revisited under the later vocabulary.
 
-Making the limits of a model visible through an interface presupposes a reader who recognises a gap as a gap. The interface shows what the model cannot express as an absence, and an absence is only informative to someone who expected the thing that is missing.
+The interface shows what the model cannot express as an absence, which informs only a reader who expected the missing thing.
 
-The project is a feasibility study. What it demonstrates is that the arrangement carries far enough to justify a follow-up, and the sustained operation that a full project would require is outside what the case shows.
+The project is a feasibility study. It shows that the arrangement carries far enough to justify a follow-up, and the sustained operation a full project demands lies outside the case.

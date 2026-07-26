@@ -1,7 +1,7 @@
 ---
 title: Vorlage Journal
 slug: journal
-version: "0.2"
+version: "0.3"
 status: complete
 source: Vorlage Journal
 mirrored: 2026-06-10
@@ -24,7 +24,9 @@ Das Journal ist die Process-Schicht der Wissensbasis. Es beantwortet "wie haben 
 
 Drei Prinzipien tragen das Dokument.
 
-Erstens werden Einträge nicht im Nachhinein umgeschrieben. Wenn eine spätere Erkenntnis zeigt, dass eine frühere Entscheidung falsch war, wird nicht der alte Eintrag geändert, sondern ein neuer Eintrag mit Verweis auf den alten korrigiert. Das Journal ist die einzige Wissensquelle, in der alte Stände verfügbar bleiben; ohne diese Eigenschaft verliert es seinen Process-Charakter.
+Erstens bleibt die Aussage eines Eintrags unangetastet. Zeigt eine spätere Erkenntnis, dass eine frühere Entscheidung falsch war, korrigiert ein neuer Eintrag mit Verweis auf den alten; der alte behält seinen Wortlaut in der Sache. Das Journal ist die einzige Wissensquelle, in der alte Stände verfügbar bleiben, und ohne diese Eigenschaft verliert es seinen Process-Charakter.
+
+Davon zu unterscheiden ist die Verdichtung. Ein Journal wächst mit jeder Sitzung, und ein Dokument, das nur wächst, wird unlesbar und teuer, weil es bei jeder Sitzung ins Kontextfenster geladen wird. Das Journal wird deshalb periodisch verdichtet, destilliert und formal vereinheitlicht. Erlaubt sind dabei Umformulierung, das Zusammenführen paralleler Einträge, das Streichen von Wiederholung und von Vorhaben, die längst erledigt oder überholt sind, und die Angleichung an das Schema dieser Vorlage. Nicht erlaubt ist der Verlust von Wissen; jede Entscheidung, jede Sackgasse, jede Begründung und jeder benannte Dateiname überlebt die Verdichtung. Der Eingriff wird im Lead mit seinem Datum offengelegt, sodass ein Leser weiß, dass die Form jünger ist als die Einträge.
 
 Zweitens dokumentiert das Journal Sackgassen mit Begründung. Was versucht und verworfen wurde, ist genauso wertvoll wie was umgesetzt wurde; Sackgassen verhindern, dass spätere Sessions denselben Pfad noch einmal gehen. Eine Sackgasse ohne Begründung ist eine vergessene, keine dokumentierte.
 

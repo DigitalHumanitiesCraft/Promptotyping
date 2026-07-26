@@ -154,7 +154,7 @@
       "funktion": "Provenance",
       "datei": "journal.md",
       "typ": "Process",
-      "version": "0.2",
+      "version": "0.3",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/journal.md",
       "trigger": "always"

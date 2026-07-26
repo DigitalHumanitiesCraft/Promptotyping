@@ -2,6 +2,7 @@
 title: coOCR-HTR
 id: coocr-htr
 paper: "5.2, Table 1"
+source: Projects/Promptotyping/Case Studies/coocr-htr.md
 ---
 
 # coOCR-HTR
@@ -24,8 +25,8 @@ The case shows that the step from prototype to production-grade research softwar
 
 ## Limits
 
-The verification interface tells a reader where the model was uncertain, and it does not establish that a transcription is correct. The judgement stays with the expert, and the workbench only ensures that the judgement has a defined place.
+The workbench shows where the model was uncertain. Establishing that a transcription is correct stays with the expert, and what the interface adds is a defined place for that judgement.
 
-The LLM-as-a-judge step in the hybrid validation ranks below human verification for the reasons Section 6.2 of the paper gives, since the documented biases of that arrangement apply here as well. Where a deterministic rule decides, it decides, and everything the rules cannot reach inherits that caveat.
+The LLM-as-a-judge step in the hybrid validation ranks below human verification for the reasons Section 6.2 of the paper gives, since the documented biases of that arrangement apply here. Everything the deterministic rules cannot reach inherits that caveat.
 
-The case rests on a single expert working in his own domain. What it demonstrates about the speed of the step to production software is bound to that condition, and the record holds no comparable case where the builder lacked the domain competence.
+The case rests on a single expert working in his own domain, so what it shows about the speed of the step to production software is bound to that condition. The record holds no comparable case where the builder lacked the domain competence.

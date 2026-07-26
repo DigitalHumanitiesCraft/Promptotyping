@@ -2,6 +2,7 @@
 title: HerData
 id: herdata
 paper: "5.2, Table 1"
+source: Projects/Promptotyping/Case Studies/herdata.md
 ---
 
 # HerData
@@ -26,6 +27,6 @@ Two patterns typical of the method appear. The knowledge base is the source of t
 
 Nothing about this case can be inspected from outside. The repository is closed, and the demo that the site once advertised answers with an error and has been taken down, which the verification record holds as an operator matter. Every statement on this page rests on the local working copy.
 
-The curated set is a deliberate restriction, and it bounds what the visualisation can show. A map built on selected persons carries the selection into every pattern a reader believes to see in it. The map-bias section names that condition, and naming it does not remove it.
+The curated set is a deliberate restriction and bounds what the visualisation can show. A map built on selected persons carries the selection into every pattern a reader believes to see in it, and the map-bias section names that condition without removing it.
 
 The enrichment steps that match letters through GND and attach coordinates were not audited against an independent source. What the pipeline asserts about a person rests on the reconciliation it performed.

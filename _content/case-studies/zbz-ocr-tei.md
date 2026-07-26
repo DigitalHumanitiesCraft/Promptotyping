@@ -2,6 +2,7 @@
 title: ZBZ OCR/TEI Pipeline
 id: zbz-ocr-tei
 paper: "5.2, Table 1"
+source: Projects/Promptotyping/Case Studies/zbz-ocr-tei.md
 ---
 
 # ZBZ OCR/TEI Pipeline
@@ -28,6 +29,6 @@ The defining feature is a full pipeline infrastructure with one verification int
 
 The repository is closed and waiting on the release of the partner institution. The verification front end is public, so the interfaces the case argues for can be inspected while the knowledge base behind them cannot.
 
-The abolished screening stage is the sharpest finding of the case and it is a negative one. An agent that records release states which no human assigns produces a provenance layer that documents nothing, and the arrangement certified its own output for as long as it ran. The pipeline is better without it, and the episode shows how quietly such a stage passes as a check.
+The abolished screening stage is the sharpest finding of the case, and it is a negative one. An agent that records release states which no human assigns produces a provenance layer documenting nothing, and the arrangement certified its own output for as long as it ran. It went unnoticed because a stage that produces records reads as a check.
 
-An oversized CLI reference in the action layer produced drift waves with every change to the pipeline, since each change invalidated a description that was carried a second time. The lesson is bounded to the case only in its form. Any action layer that duplicates an interface instead of pointing at it inherits the problem.
+An oversized CLI reference in the action layer produced drift waves with every change to the pipeline, since each change invalidated a description that was carried a second time. Any action layer duplicating an interface instead of pointing at it inherits the problem.
