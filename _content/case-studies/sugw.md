@@ -12,11 +12,11 @@ The project edits the prosopographic database of medieval Viennese legal transac
 
 ## Data
 
-The corpus is 3,611 TEI-XML documents, of which 3,092 sit in the subdirectories marked as done, alongside an extensive CSV dataset. The counts come from the repository's own generated validation report and from a recount of the source tree.
+The corpus is a large set of TEI-XML documents, most of them in the subdirectories marked as done, alongside an extensive CSV dataset. The repository's generated validation report holds the current counts.
 
 ## Approach
 
-The repository separates knowledge documents, sources, pipeline, edition and frontend. The pipeline is 14 transformers and 2 validators, covered by a regression suite, and the edition is rendered through Jinja2 templates into a static frontend.
+The repository separates knowledge documents, sources, pipeline, edition and frontend. The pipeline is a chain of transformers and validators covered by a regression suite, and the edition is rendered through Jinja2 templates into a static frontend.
 
 What distinguishes the case is its working mode. The agent navigates the repository, reads the knowledge documents, runs validation, corrects what it finds, updates the registers and commits. The researcher asks a question of the repository and the agent answers by reading it, so the agent becomes the interface to the edition. Validation stays deterministic, a Relax NG schema decides conformance, and the LLM works on the errors the schema reports.
 
@@ -30,6 +30,6 @@ The case is the record's clearest instance of the division of labour the method 
 
 ## Limits
 
-The corpus is not schema-valid, and the project says so. The generated validation report of 16 May 2026 records that a minority of the files validate against the toolbox schema while the majority do not, with several thousand schema errors and a comparable number of referential-integrity findings. The report frames these as residual annotation issues in the source corpus, deliberately surfaced for editorial triage. Read as a defect that is the worst figure in the record. Read as a property it is the point, because the pipeline makes the state of the source visible. A pipeline that suppressed those errors would deliver a clean-looking edition over unclean data.
+The corpus is not schema-valid, and the project says so. The generated validation report records that a minority of the files validate against the toolbox schema while the majority do not, and it carries the schema errors and referential-integrity findings behind that. The report frames these as residual annotation issues in the source corpus, deliberately surfaced for editorial triage. Read as a defect that is the worst figure in the record. Read as a property it is the point, because the pipeline makes the state of the source visible. A pipeline that suppressed those errors would deliver a clean-looking edition over unclean data.
 
-The repository is not public and the test deployment does not currently answer, so the figures above rest on the generated report and on the video documentation. No reader can open the corpus itself. Five of the seven knowledge documents carry no frontmatter, which puts most of the knowledge base outside the addressing mechanism the convention describes.
+The repository is not public and the test deployment does not currently answer, so the figures above rest on the generated report and on the video documentation. No reader can open the corpus itself. Most of the knowledge documents carry no frontmatter, which puts the knowledge base outside the addressing mechanism the convention describes.

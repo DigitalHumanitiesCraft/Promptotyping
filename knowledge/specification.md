@@ -86,6 +86,8 @@ That criterion replaced an earlier curation whose exclusion notes had gone stale
 
 A case carries a depth page unless nothing about it may be published, in which case the card holds display name, use case, interface types and methodological contribution and leaves data basis, repository and demo empty. Every depth page carries the same five sections, context and research question, data, approach, methodological contribution, and limits. The limits section is compulsory, because a case report that names only what worked argues for the method instead of documenting it. Addresses live on the card alone, so a depth page never repeats them.
 
+Two things stay out of a depth page. Volatile quantities, meaning any figure that moves as the project continues, which covers document counts, file counts, test counts, corpus sizes and the number of views an interface offers; the page states the matter qualitatively or points at the source of truth that holds the current figure. And narrative detail that carries no argument, the session story and the anecdote about how a defect was found. Fixed defining figures stay, a period such as 2010 to 2018 among them.
+
 The use-case vocabulary of the gallery (data production, data exploration, data rescue and transformation, and so on) is the site's own ordering and was once attributed to a paper section. The paper orders artefacts by the five epistemic functions instead, Verification, Exploration, Edition, Capture, and Audit, and carries no use-case typology; the interface-type filter is the one that maps onto it. Re-basing the gallery classification on the five functions, or declaring the use-case vocabulary as the site's own, is open work for the next site update.
 
 ### A8 — Embedded YouTube videos
