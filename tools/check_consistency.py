@@ -8,6 +8,8 @@ CLAUDE.md and the files on disk. Two sources for one statement drift, and on
 verification function asks for, applied to the site that specifies it.
 
 Run from the repository root:  python tools/check_consistency.py
+Add --check-urls to also resolve every address the gallery publishes. That pass
+is opt-in because it needs the network and this script runs before every commit.
 Exit code 0 when every check passes, 1 otherwise.
 """
 
@@ -15,12 +17,19 @@ import json
 import pathlib
 import re
 import sys
+import urllib.error
+import urllib.request
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 CATALOGUE = ROOT / "data" / "promptotyping-documents.json"
 CONVENTION = ROOT / "_content" / "konvention.md"
 TEMPLATE_DIR = ROOT / "_content" / "promptotyping-document"
 CLAUDE_MD = ROOT / "CLAUDE.md"
+CASES = ROOT / "data" / "case-studies.json"
+CASE_DIR = ROOT / "_content" / "case-studies"
+
+# The five epistemic functions of the paper's interface typology (section 4.2).
+INTERFACE_TYPES = {"verification", "exploration", "edition", "capture", "audit"}
 
 # Templates written but deliberately not wired into the catalogue, with the
 # reason. A slug may sit here or in the catalogue, never in neither. Empty
@@ -128,6 +137,80 @@ def check_claude_md_slugs(documents):
              % ", ".join(sorted(missing)))
 
 
+def load_cases():
+    return json.loads(CASES.read_text(encoding="utf-8"))
+
+
+def check_gallery(data):
+    """The gallery's own conditions: files, closed vocabularies, labels.
+
+    The gallery is the part of the site that ages fastest, because every card
+    points at a repository, a demo or a video that someone else may move.
+    """
+    cases = data["caseStudies"]
+    labels = data["_meta"]["use_case_labels"]
+
+    with_text = {c["id"] for c in cases if c.get("deep_page")}
+    on_disk = {p.stem for p in CASE_DIR.glob("*.md")}
+    for case_id in sorted(with_text - on_disk):
+        fail("gallery", "%s claims a depth page, no _content/case-studies/%s.md"
+             % (case_id, case_id))
+    for case_id in sorted(on_disk - with_text):
+        fail("gallery", "_content/case-studies/%s.md exists but no card claims it"
+             % case_id)
+
+    seen = set()
+    for case in cases:
+        case_id = case["id"]
+        if case_id in seen:
+            fail("gallery", "duplicate card id %s" % case_id)
+        seen.add(case_id)
+
+        use_case = case.get("useCase")
+        if use_case not in labels:
+            fail("gallery", "%s carries useCase %r, not in use_case_labels"
+                 % (case_id, use_case))
+        elif case.get("useCaseLabel") != labels[use_case]:
+            fail("gallery", "%s label %r does not match use_case_labels[%r]"
+                 % (case_id, case.get("useCaseLabel"), use_case))
+
+        for kind in case.get("interfaceTypes") or []:
+            if kind not in INTERFACE_TYPES:
+                fail("gallery", "%s carries interface type %r, not one of the five"
+                     % (case_id, kind))
+
+
+def urls_of(cases):
+    for case in cases:
+        for field in ("repo_url", "demo_url", "video_url"):
+            url = case.get(field)
+            if url:
+                yield case["id"], field, url
+
+
+def check_urls(data):
+    """Resolve every address the gallery publishes.
+
+    A dead link in the gallery is a claim the site cannot keep. Two of them sat
+    there until the consistency pass of 2026-07-25 found them by hand.
+    """
+    for case_id, field, url in urls_of(data["caseStudies"]):
+        request = urllib.request.Request(url, method="HEAD", headers={
+            "User-Agent": "Promptotyping-consistency-check",
+        })
+        try:
+            with urllib.request.urlopen(request, timeout=20) as response:
+                status = response.status
+        except urllib.error.HTTPError as error:
+            status = error.code
+        except Exception as error:  # network, DNS, TLS, redirect loop
+            fail("urls", "%s %s %s does not resolve (%s)"
+                 % (case_id, field, url, type(error).__name__))
+            continue
+        if status >= 400:
+            fail("urls", "%s %s %s answers %d" % (case_id, field, url, status))
+
+
 def main():
     documents = load_catalogue()
     conv_types = convention_function_types()
@@ -136,11 +219,21 @@ def main():
     check_files_exist(documents)
     check_claude_md_slugs(documents)
 
+    cases = load_cases()
+    check_gallery(cases)
+
+    groups = 4
+    if "--check-urls" in sys.argv:
+        check_urls(cases)
+        groups = 5
+    else:
+        note("URL resolution skipped; run with --check-urls to include it")
+
     for message in notes:
         print("note:  %s" % message)
     for message in failures:
         print("FAIL:  %s" % message)
-    print("%d check group(s), %d failure(s)" % (3, len(failures)))
+    print("%d check group(s), %d failure(s)" % (groups, len(failures)))
     return 1 if failures else 0
 
 

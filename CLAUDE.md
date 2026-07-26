@@ -54,7 +54,7 @@ Der Ordner `vault/` ist eine Instanz des Grounded-Vault-Templates (`DigitalHuman
 
 - **Vanilla HTML5/CSS3/JS, kein Framework, kein Build-Step.** Wenn du dabei bist, npm zu verwenden, halte inne. Falsche Richtung.
 - **Die Site-Logik liegt in zehn einfachen Skripten unter `assets/js/`**, jedes eine IIFE, die `window.PromptotypingApp` erweitert. Kein ES-Modul, kein `import`. Verhaltensrelevant ist allein, dass `app.js` als letzte der zehn geladen wird und die beiden Shell-deklarierten Module danach folgen. `404.html` ist ein Rumpf ohne Site-Skript und leitet per `location.replace` auf `index.html` weiter; die Shell existiert genau einmal.
-- **`python tools/check_consistency.py` läuft vor jedem Commit, der Katalog, Konvention oder Vorlagenordner anfasst.** Es meldet, wenn dieselbe Aussage an zwei Orten auseinanderläuft. Was es prüft, steht in `knowledge/verification.md`.
+- **`python tools/check_consistency.py` läuft vor jedem Commit, der Katalog, Konvention, Vorlagenordner oder die Use-Case-Galerie anfasst.** Es meldet, wenn dieselbe Aussage an zwei Orten auseinanderläuft. Wer eine Adresse in `data/case-studies.json` anfasst, läuft es zusätzlich mit `--check-urls`; diese Gruppe braucht das Netz und ist deshalb nicht im Standardlauf. Was es prüft, steht in `knowledge/verification.md`.
 - **marked.js v9.1.6 vendoriert** in `assets/vendor/marked.min.js`. Kein CDN.
 - **Custom-Extensions für marked.js** sind erlaubt (z.B. für Klassen-Tags `{:.phase-preparation}`), bleiben aber in `assets/js/markdown.js`, wo die marked-Konfiguration insgesamt liegt.
 - **Browser-natives `location.hash` für Routing**, kein History-API-Hacking, kein React-Router.

@@ -188,7 +188,7 @@
         "exploration"
       ],
       "repo_url": null,
-      "demo_url": "https://chpollin.github.io/HerData",
+      "demo_url": null,
       "video_url": null,
       "insight": "Gender-focused network with a map-bias transparency section",
       "deep_page": true
@@ -223,8 +223,8 @@
       "interfaceTypes": [
         "exploration"
       ],
-      "repo_url": "https://github.com/chpollin/vkm-explorer",
-      "demo_url": null,
+      "repo_url": "https://github.com/chpollin/kulturpool-demo",
+      "demo_url": "https://chpollin.github.io/kulturpool-demo/",
       "video_url": "https://youtu.be/tQBaaVhPu5U",
       "insight": "Parallel agent orchestration (2 Claude Code instances)",
       "deep_page": false

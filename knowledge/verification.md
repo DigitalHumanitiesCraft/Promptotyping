@@ -57,6 +57,24 @@ The dividing line is the one part 5 draws. Where a rule decides, a script runs i
 
 **Verdict, 2026-07-26.** Passes.
 
+### V4. The gallery holds its own conditions
+
+**Claim.** Every card claiming a depth page has a file under `_content/case-studies/`, and every file there is claimed by a card. Card ids are unique. Every `useCase` value stands in `_meta.use_case_labels` and its label matches the entry there. Every `interfaceTypes` value is one of the paper's five epistemic functions.
+
+**Why it matters.** A card claiming a depth page that does not exist opens an empty panel; a file no card claims is content nobody can reach. The two closed vocabularies carry meaning beyond their own list, because the interface types are the typology of section 4.2 and the use-case values drive the filter and the colour of the card edge. A value outside the list fails silently in both directions.
+
+**Verdict, 2026-07-26.** Passes.
+
+### V5. Every address the gallery publishes resolves
+
+**Claim.** Every `repo_url`, `demo_url` and `video_url` on a card answers with an HTTP status below 400.
+
+**Why it matters.** A dead link is a claim the site cannot keep, and the gallery is the fastest-ageing part of the site because it points at repositories and hosts outside this one. Two dead links sat there until the consistency pass of 2026-07-25 found them by reading.
+
+**Procedure.** A `HEAD` request per address, twenty-second timeout. The pass is opt-in behind `--check-urls`, because the script runs before every commit and fifty network round trips would make that unusable; the default run reports the skip as a note rather than passing silently.
+
+**Verdict, 2026-07-26.** Passes after two corrections the check itself found on its first run. The Kulturpool card pointed at `chpollin/vkm-explorer`, a repository that does not exist; the project lives at `chpollin/kulturpool-demo`, which is public and whose Pages site answers, so the card gained a working demo address as well. The HerData card advertised a demo at `chpollin.github.io/HerData` that answers 404, and the repository behind it is private with no Pages site, so the demo is unpublished rather than misaddressed. The address is removed, since a dead link claims more than no link does. Republishing it is an operator action.
+
 ## What is not checked automatically, and why
 
 - **Whether a page says what the paper says.** The contradictions of 2026-07-26 were found by reading `knowledge/paper.md` against the site, not by any script. Agreement in substance is not decidable by rule, and the four findings of that reading are recorded in `knowledge/journal.md`.
