@@ -20,14 +20,33 @@ import sys
 import urllib.error
 import urllib.request
 
-ROOT = pathlib.Path(__file__).resolve().parent.parent
+TOOLS = pathlib.Path(__file__).resolve().parent
+ROOT = TOOLS.parent
 CATALOGUE = ROOT / "data" / "promptotyping-documents.json"
 CONVENTION = ROOT / "_content" / "konvention.md"
 TEMPLATE_DIR = ROOT / "_content" / "promptotyping-document"
 CLAUDE_MD = ROOT / "CLAUDE.md"
+README = ROOT / "README.md"
 CASES = ROOT / "data" / "case-studies.json"
 CASE_DIR = ROOT / "_content" / "case-studies"
 PAPER = ROOT / "knowledge" / "paper.md"
+CONTENT_DIR = ROOT / "_content"
+PRAXIS = CONTENT_DIR / "praxis.md"
+GLOSSAR_JSON = ROOT / "data" / "glossar.json"
+GLOSSAR_MD = CONTENT_DIR / "glossar.md"
+VAULT_JSON = ROOT / "data" / "vault.json"
+KNOWLEDGE_DIR = ROOT / "knowledge"
+VAULT_SOURCES = ROOT / "vault" / "_sources"
+JS_DIR = ROOT / "assets" / "js"
+NOT_FOUND = ROOT / "404.html"
+
+# The site's own base, as the template: fields and the prose spell it.
+SITE_BASE = "dhcraft.org/Promptotyping/"
+
+# tools/ is a folder of scripts rather than a package, so the generator is
+# reached by path. The mirror check runs it rather than restating its rules.
+sys.path.insert(0, str(TOOLS))
+import build_glossar  # noqa: E402
 
 # The header row of the project inventory, Table 1 in section 5.2. Parsing keys
 # on this line rather than on a position, so inserting a section cannot move it.
@@ -53,8 +72,17 @@ def note(message):
     notes.append(message)
 
 
+def load_json(path):
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def read_text(path):
+    """File text with line endings normalised, the way a browser reads it."""
+    return path.read_text(encoding="utf-8").replace("\r\n", "\n")
+
+
 def load_catalogue():
-    return json.loads(CATALOGUE.read_text(encoding="utf-8"))["documents"]
+    return load_json(CATALOGUE)["documents"]
 
 
 def convention_function_types():
@@ -143,7 +171,7 @@ def check_claude_md_slugs(documents):
 
 
 def load_cases():
-    return json.loads(CASES.read_text(encoding="utf-8"))
+    return load_json(CASES)
 
 
 def check_gallery(data):
@@ -282,30 +310,488 @@ def check_urls(data):
             fail("urls", "%s %s %s answers %d" % (case_id, field, url, status))
 
 
+def check_glossar_mirror():
+    """_content/glossar.md is what tools/build_glossar.py renders.
+
+    Part 5 states that a generated document is rendered by a script. The mirror
+    was kept by hand until 2026-07-26, which is the one place on the site where
+    that rule was broken; the generator now decides what the file says.
+    """
+    expected = build_glossar.build()
+    difference = build_glossar.first_difference(expected, read_text(GLOSSAR_MD))
+    if difference:
+        fail("glossar", "_content/glossar.md is not what build_glossar.py renders "
+                        "from data/glossar.json; %s" % difference)
+
+
+# ---------------------------------------------------------------------------
+# Anchor resolution
+#
+# The failure class this group exists for: a value that is at once display text
+# and identifier. Translating a heading moves its anchor, renaming a card moves
+# its card id, and nothing complains, because both sides read plausibly on their
+# own. The English pass of 2026-07-26 hit it three times.
+#
+# The declared side is read out of the same tables the site reads at run time.
+# Restating any of those lists in Python would create the second copy whose
+# drift this group is meant to catch, so every table below is parsed from its
+# source file.
+# ---------------------------------------------------------------------------
+
+CLOSING = {"{": "}", "[": "]"}
+
+
+def js_literal(text, name):
+    """Source of the object or array literal assigned to `var name`.
+
+    Scans for the matching bracket while skipping string contents, so a nested
+    object or a bracket inside a string cannot end the literal early.
+    """
+    match = re.search(r"\bvar\s+%s\s*=\s*([\[{])" % re.escape(name), text)
+    if not match:
+        return None
+    opener = match.group(1)
+    closer = CLOSING[opener]
+    depth = 0
+    quote = None
+    i = match.start(1)
+    while i < len(text):
+        char = text[i]
+        if quote:
+            if char == "\\":
+                i += 2
+                continue
+            if char == quote:
+                quote = None
+        elif char in "\"'":
+            quote = char
+        elif char == opener:
+            depth += 1
+        elif char == closer:
+            depth -= 1
+            if depth == 0:
+                return text[match.start(1):i + 1]
+        i += 1
+    return None
+
+
+def js_string_map(text, name):
+    """String key/value pairs of a flat JS object literal, quoted keys or bare."""
+    source = js_literal(text, name)
+    if source is None:
+        fail("anchors", "no object literal %s found in the JavaScript" % name)
+        return {}
+    pairs = re.findall(r'(?:"([^"]*)"|([A-Za-z_$][\w$.-]*))\s*:\s*"([^"]*)"', source)
+    return {(quoted or bare): value for quoted, bare, value in pairs}
+
+
+def js_string_list(text, name):
+    source = js_literal(text, name)
+    return re.findall(r'"([^"]*)"', source) if source else []
+
+
+def registry_pages(registry_js):
+    """The page ids of PAGES, in registry order."""
+    source = js_literal(registry_js, "PAGES") or ""
+    return re.findall(r'\{\s*id:\s*"([^"]+)"', source)
+
+
+def anchor_families(registry_js):
+    """ANCHOR_FAMILIES as (prefix, page, segment); segment is None for null."""
+    source = js_literal(registry_js, "ANCHOR_FAMILIES") or ""
+    out = []
+    for prefix, page, segment in re.findall(
+            r'\{\s*prefix:\s*"([^"]+)",\s*page:\s*"([^"]+)",'
+            r'\s*segment:\s*(?:"([^"]+)"|null)\s*\}', source):
+        out.append((prefix, page, segment or None))
+    return out
+
+
+def paper_anchor_pattern(registry_js):
+    """The PAPER_ANCHOR regex of registry.js, reused rather than restated."""
+    match = re.search(r"var PAPER_ANCHOR = /(.+?)/;", registry_js)
+    return re.compile(match.group(1)) if match else re.compile(r"^$")
+
+
+def slugify(text):
+    """Port of slugify in assets/js/core.js."""
+    lowered = text.lower()
+    for umlaut, replacement in (("ä", "ae"), ("ö", "oe"), ("ü", "ue"), ("ß", "ss")):
+        lowered = lowered.replace(umlaut, replacement)
+    return re.sub(r"[^a-z0-9]+", "-", lowered).strip("-")
+
+
+def heading_id(text, overrides):
+    """Port of headingId in assets/js/markdown.js, overrides included."""
+    plain = re.sub(r"<[^>]*>", "", text).strip()
+    numbered = re.match(r"^(\d+(?:\.\d+)*)\.?\s+([\s\S]*)$", plain)
+    if numbered:
+        anchor = "abschnitt-" + numbered.group(1).replace(".", "-") + "-" + \
+            slugify(numbered.group(2))
+    else:
+        anchor = slugify(plain)
+    return overrides.get(anchor, anchor)
+
+
+def unique_ids(ids):
+    """Port of uniqueHeadingId: the nth repeat of an id gets the suffix -n."""
+    used = {}
+    out = []
+    for anchor in ids:
+        if anchor not in used:
+            used[anchor] = 1
+            out.append(anchor)
+            continue
+        used[anchor] += 1
+        out.append("%s-%d" % (anchor, used[anchor]))
+    return out
+
+
+def markdown_headings(path, levels):
+    """Heading texts of a Markdown file, fenced code blocks skipped."""
+    out = []
+    fenced = False
+    for line in read_text(path).split("\n"):
+        if re.match(r"^\s*(```|~~~)", line):
+            fenced = not fenced
+            continue
+        if fenced:
+            continue
+        match = re.match(r"^(#{1,6})\s+(.*?)\s*#*\s*$", line)
+        if match and len(match.group(1)) in levels:
+            out.append(match.group(2))
+    return out
+
+
+def plain_inline(text):
+    """Markdown inline markup removed, the way textContent sees a heading.
+
+    The praxis anchors are built from the rendered heading, the paper anchors
+    from the raw Markdown; only this path needs the stripping.
+    """
+    text = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", text)
+    return text.replace("`", "").replace("**", "").replace("*", "").replace("_", "")
+
+
+def declared_anchors(js_texts):
+    """Every anchor the site mounts, gathered from the tables that mount it."""
+    by_name = {pathlib.PurePosixPath(k).name: v for k, v in js_texts.items()}
+    overrides = js_string_map(by_name["markdown.js"], "HEADING_ID_OVERRIDES")
+    konzept_aliases = js_string_map(by_name["pages-glossar.js"], "KONZEPT_ALIASES")
+    praxis_aliases = js_string_map(by_name["pages-content.js"], "PRAXIS_ALIASES")
+    paper_aliases = js_string_map(by_name["pages-paper.js"], "PAPER_ANCHOR_ALIASES")
+
+    anchors = set(registry_pages(by_name["registry.js"]))
+
+    for doc in load_json(CATALOGUE)["documents"]:
+        anchors.add("promptotyping-document-" + doc["slug"])
+    glossar_slugs = [e["slug"] for e in load_json(GLOSSAR_JSON)["eintraege"]]
+    anchors.update("glossar-" + slug for slug in glossar_slugs)
+    # handleSpecialAnchor maps #konzept-x through KONZEPT_ALIASES and falls back
+    # to x itself, so a bare glossary slug is addressable as a concept too.
+    anchors.update("konzept-" + alias for alias in konzept_aliases)
+    anchors.update("konzept-" + slug for slug in glossar_slugs)
+    for case in load_json(CASES)["caseStudies"]:
+        anchors.add("case-" + case["id"])
+    vault = load_json(VAULT_JSON)
+    anchors.update("vault-" + claim["slug"] for claim in vault["claims"])
+    anchors.update("vault-topic-" + topic["slug"] for topic in vault["topics"])
+
+    praxis_ids = ["praxis-" + slugify(plain_inline(h))
+                  for h in markdown_headings(PRAXIS, (2, 3))]
+    anchors.update(praxis_ids)
+    anchors.update(praxis_aliases)
+
+    paper_ids = unique_ids([heading_id(h, overrides)
+                            for h in markdown_headings(PAPER, (1, 2, 3, 4, 5, 6))])
+    anchors.update(paper_ids)
+    anchors.update(paper_aliases)
+
+    # Block anchors written as literals in the JavaScript, plus the host ids
+    # that a *_ID constant names.
+    for text in js_texts.values():
+        anchors.update(re.findall(r'\bid="([a-z][a-z0-9-]*)"', text))
+        anchors.update(re.findall(r'\bvar [A-Z][A-Z0-9_]*_ID = "([a-z][a-z0-9-]*)"', text))
+
+    # An alias whose target does not exist is a dead anchor that reports nothing.
+    for alias, target in sorted(praxis_aliases.items()):
+        if target not in praxis_ids:
+            fail("anchors", "PRAXIS_ALIASES sends %s to #%s; no praxis heading "
+                            "carries that anchor" % (alias, target))
+    for alias, target in sorted(paper_aliases.items()):
+        if target not in paper_ids:
+            fail("anchors", "PAPER_ANCHOR_ALIASES sends %s to #%s; no paper heading "
+                            "carries that anchor" % (alias, target))
+    for alias, target in sorted(konzept_aliases.items()):
+        if target not in glossar_slugs:
+            fail("anchors", "KONZEPT_ALIASES sends konzept-%s to the glossary entry "
+                            "%s, which data/glossar.json does not hold" % (alias, target))
+
+    return anchors
+
+
+# Anchor families the code mints per item at render time rather than declaring:
+# figures, reference-list entries and the footnote apparatus. A link into one of
+# them is checked by its prefix, since the item set follows from the paper text.
+GENERATED_PREFIXES = ("figure-", "ref-", "fn-", "fnref-")
+
+
+def is_declared(anchor, anchors):
+    return anchor in anchors or anchor.startswith(GENERATED_PREFIXES)
+
+
+def resolve_site_url(url, page_ids, families, paper_anchor):
+    """Port of resolveTemplateUrl in assets/js/registry.js."""
+    rest = re.sub(r"^https?://", "", url)
+    if rest.startswith(SITE_BASE):
+        rest = rest[len(SITE_BASE):]
+    rest = rest.lstrip("/")
+    if rest.startswith("#"):
+        return rest[1:] or None
+
+    suffix = ""
+    if "#" in rest:
+        rest, suffix = rest.split("#", 1)
+    rest = rest.rstrip("/")
+    segments = rest.split("/")
+
+    for prefix, _page, segment in families:
+        if segment and segment == segments[0] and len(segments) > 1 and segments[1]:
+            anchor = prefix + segments[1]
+            if segment == "promptotyping-document" and re.match(r"^v[\d.]+$", suffix):
+                anchor += "-" + suffix
+            return anchor
+    if len(segments) > 1 and segments[1]:
+        return None
+    if rest in page_ids:
+        return rest
+    if rest == "konvention":
+        return "konvention-v0.1"
+    if paper_anchor.search(rest) or any(rest.startswith(p) for p, _, _ in families):
+        return rest
+    return None
+
+
+def content_anchor_links():
+    """The ](#anchor) links a human wrote into the Markdown under _content/."""
+    for path in sorted(CONTENT_DIR.glob("**/*.md")):
+        for anchor in re.findall(r"\]\(#([^)\s]+)\)", read_text(path)):
+            yield path.relative_to(ROOT).as_posix(), anchor
+
+
+def js_anchor_links(js_texts):
+    """Literal href="#..." strings in the site scripts.
+
+    An href assembled at run time carries no literal to check and is skipped;
+    the anchor it builds is covered on the declared side instead.
+    """
+    for name, text in sorted(js_texts.items()):
+        for anchor in re.findall(r'href="#([a-z0-9][a-z0-9.-]*)"', text):
+            yield name, anchor
+
+
+def template_field_urls():
+    """The template: url and alias of every frontmatter block that carries one."""
+    paths = sorted(KNOWLEDGE_DIR.glob("*.md"))
+    if VAULT_SOURCES.is_dir():
+        paths += sorted(VAULT_SOURCES.glob("*.md"))
+    for path in paths:
+        frontmatter = re.match(r"^---\n(.*?)\n---", read_text(path), re.S)
+        if not frontmatter:
+            continue
+        block = re.search(r"^template:\n((?:[ \t]+.*\n?)*)", frontmatter.group(1), re.M)
+        if not block:
+            continue
+        for field, url in re.findall(r"^[ \t]+(url|alias):[ \t]*(\S+)", block.group(1), re.M):
+            yield path.relative_to(ROOT).as_posix(), field, url.strip("\"'")
+
+
+def prose_site_urls():
+    """Site addresses named in the two prose documents of the repository root.
+
+    Both spell out the anchor scheme, so the placeholder forms ({slug}, {n}) are
+    the schema itself and carry nothing to resolve.
+    """
+    for path in (CLAUDE_MD, README):
+        text = read_text(path)
+        name = path.relative_to(ROOT).as_posix()
+        for token in re.findall(r"`(#[^`]+)`", text):
+            if "{" not in token:
+                yield name, token
+        for token in re.findall(r"(?:https?://)?dhcraft\.org/Promptotyping/[^\s`)\]\"'<>]*",
+                                text):
+            token = re.sub(r"^https?://", "", token).rstrip(".,;:")
+            if "{" in token or "*" in token or token.rstrip("/") == SITE_BASE.rstrip("/"):
+                continue
+            yield name, token
+
+
+def check_subpath_tables(page_ids, families, paper_anchor):
+    """404.html and registry.js resolve the same subpath vocabulary.
+
+    404.html states the mapping, because the shell scripts are not loaded there;
+    registry.js derives it from the page registry. Where 404.html resolves an
+    address that registry.js does not, a deep link works on arrival and breaks
+    in the frontmatter inspector. The other direction is allowed and reported as
+    a note, since registry.js also accepts hash forms no subpath produces.
+    """
+    text = read_text(NOT_FOUND)
+    page_paths = js_string_map(text, "PAGE_PATHS")
+    prefixes = js_string_map(text, "PREFIXES")
+
+    for segment, target in sorted(page_paths.items()):
+        resolved = resolve_site_url(segment, page_ids, families, paper_anchor)
+        if resolved != target:
+            fail("anchors", "404.html routes /%s to #%s, registry.js resolves it to %s"
+                 % (segment, target, "#" + resolved if resolved else "nothing"))
+
+    by_segment = {segment: prefix for prefix, _page, segment in families if segment}
+    for segment, prefix in sorted(prefixes.items()):
+        if by_segment.get(segment) != prefix:
+            fail("anchors", "404.html maps the subpath /%s/ to the anchor prefix %r; "
+                            "ANCHOR_FAMILIES in registry.js says %r"
+                 % (segment, prefix, by_segment.get(segment)))
+
+    # The permitted direction: registry.js also accepts the paper's unnumbered
+    # anchors and the apparatus, which have no subpath form of their own.
+    covered = set(page_paths) | set(page_paths.values())
+    surplus = sorted(set(page_ids) - covered)
+    literals = re.findall(r"[a-z][a-z-]*", paper_anchor.pattern)
+    surplus += sorted(set(literals) - covered)
+    if surplus:
+        note("registry.js resolves addresses 404.html has no subpath for: %s"
+             % ", ".join(surplus))
+
+
+def check_anchors():
+    """Every anchor a hand-written reference names is one the site mounts."""
+    js_texts = {p.relative_to(ROOT).as_posix(): read_text(p)
+                for p in sorted(JS_DIR.glob("**/*.js"))}
+    registry_js = read_text(JS_DIR / "registry.js")
+    page_ids = registry_pages(registry_js)
+    families = anchor_families(registry_js)
+    paper_anchor = paper_anchor_pattern(registry_js)
+
+    anchors = declared_anchors(js_texts)
+
+    for where, anchor in content_anchor_links():
+        if not is_declared(anchor, anchors):
+            fail("anchors", "%s links to #%s; nothing on the site declares that anchor"
+                 % (where, anchor))
+    for where, anchor in js_anchor_links(js_texts):
+        if not is_declared(anchor, anchors):
+            fail("anchors", "%s links to #%s; nothing on the site declares that anchor"
+                 % (where, anchor))
+
+    for where, field, url in template_field_urls():
+        anchor = resolve_site_url(url, page_ids, families, paper_anchor)
+        if anchor is None:
+            fail("anchors", "%s: template.%s %s resolves to no anchor" % (where, field, url))
+        elif not is_declared(anchor, anchors):
+            fail("anchors", "%s: template.%s %s resolves to #%s, which nothing declares"
+                 % (where, field, url, anchor))
+
+    for where, token in prose_site_urls():
+        anchor = resolve_site_url(token, page_ids, families, paper_anchor)
+        if anchor is None:
+            fail("anchors", "%s names %s, which resolves to no anchor" % (where, token))
+        elif not is_declared(anchor, anchors):
+            fail("anchors", "%s names %s, which resolves to #%s, and nothing declares it"
+                 % (where, token, anchor))
+
+    check_subpath_tables(page_ids, families, paper_anchor)
+
+
+# ---------------------------------------------------------------------------
+# File and symbol bindings
+#
+# Statements of the form "`PAGES` in `assets/js/registry.js`" bind a function to
+# a file and a name. A cut through the code moves the name and leaves the
+# sentence standing; four of them pointed at the wrong file on 2026-07-26.
+# ---------------------------------------------------------------------------
+
+SYMBOL_BINDING = re.compile(
+    r"`([A-Za-z_][A-Za-z0-9_.$]*)(?:\([^`]*\))?`\s+in\s+`([^`]+\.(?:js|py))`")
+
+# Chronological and dated records are exempt. A journal entry, a plan and an
+# archived audit are correct as of their date and are not rewritten when the
+# code moves afterwards; holding them against today's code would ask a record to
+# stop being a record. The statuses come from the vocabulary INDEX.md defines.
+DATED_STATUSES = ("archived", "snapshot")
+PROCESS_DOCUMENTS = ("journal.md", "plan-site.md")
+
+
+def is_dated_record(path):
+    if path.name in PROCESS_DOCUMENTS:
+        return True
+    frontmatter = re.match(r"^---\n(.*?)\n---", read_text(path), re.S)
+    if not frontmatter:
+        return False
+    status = re.search(r"^status:\s*(\S+)", frontmatter.group(1), re.M)
+    return bool(status) and status.group(1) in DATED_STATUSES
+
+
+def locate_code_file(named):
+    """The file a prose statement means, by path or by bare file name."""
+    direct = ROOT / named
+    if direct.is_file():
+        return [direct]
+    return [p for p in ROOT.glob("**/" + pathlib.PurePosixPath(named).name)
+            if ".git" not in p.parts]
+
+
+def check_symbol_bindings():
+    """Every prose statement binding a symbol to a code file still holds."""
+    paths = [CLAUDE_MD] + sorted(KNOWLEDGE_DIR.glob("*.md"))
+    for path in paths:
+        if path != CLAUDE_MD and is_dated_record(path):
+            continue
+        where = path.relative_to(ROOT).as_posix()
+        for symbol, named in SYMBOL_BINDING.findall(read_text(path)):
+            found = locate_code_file(named)
+            if not found:
+                fail("bindings", "%s puts %s in %s, which is not a file of this repository"
+                     % (where, symbol, named))
+                continue
+            if len(found) > 1:
+                fail("bindings", "%s names %s, which matches %d files; state the path"
+                     % (where, named, len(found)))
+                continue
+            if not re.search(r"\b%s\b" % re.escape(symbol), read_text(found[0])):
+                fail("bindings", "%s puts %s in %s; the file does not carry that name"
+                     % (where, symbol, named))
+
+
 def main():
     documents = load_catalogue()
     conv_types = convention_function_types()
-
-    check_types_agree(documents, conv_types)
-    check_files_exist(documents)
-    check_claude_md_slugs(documents)
-
     cases = load_cases()
-    check_gallery(cases)
-    check_evidence_reachable(cases)
 
-    groups = 5
+    # The groups are counted rather than stated, so adding one cannot leave a
+    # stale number behind.
+    groups = [
+        lambda: check_types_agree(documents, conv_types),
+        lambda: check_files_exist(documents),
+        lambda: check_claude_md_slugs(documents),
+        lambda: check_gallery(cases),
+        lambda: check_evidence_reachable(cases),
+        check_glossar_mirror,
+        check_anchors,
+        check_symbol_bindings,
+    ]
     if "--check-urls" in sys.argv:
-        check_urls(cases)
-        groups = 6
+        groups.append(lambda: check_urls(cases))
     else:
         note("URL resolution skipped; run with --check-urls to include it")
+
+    for group in groups:
+        group()
 
     for message in notes:
         print("note:  %s" % message)
     for message in failures:
         print("FAIL:  %s" % message)
-    print("%d check group(s), %d failure(s)" % (groups, len(failures)))
+    print("%d check group(s), %d failure(s)" % (len(groups), len(failures)))
     return 1 if failures else 0
 
 

@@ -5,7 +5,7 @@ project:
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 status: active
 language: en
-version: 0.1
+version: 0.2
 created: 2026-07-26
 updated: 2026-07-26
 authors: [Christopher Pollin]
@@ -29,7 +29,7 @@ The dividing line is the one part 5 draws. Where a rule decides, a script runs i
 
 ## What is checked automatically
 
-`tools/check_consistency.py`, run from the repository root, exits non-zero on any failure.
+`tools/check_consistency.py`, run from the repository root, exits non-zero on any failure. It reaches for the second script in `tools/`, the glossary generator `build_glossar.py`, rather than restating its rules, so V7 below cannot drift from the generator it guards.
 
 ### V1. The catalogue and the convention agree on the document type
 
@@ -59,11 +59,11 @@ The dividing line is the one part 5 draws. Where a rule decides, a script runs i
 
 ### V4. The gallery holds its own conditions
 
-**Claim.** Every card claiming a depth page has a file under `_content/case-studies/`, and every file there is claimed by a card. Card ids are unique. Every `useCase` value stands in `_meta.use_case_labels` and its label matches the entry there. Every `interfaceTypes` value is one of the paper's five epistemic functions.
+**Claim.** Every card claiming a depth page has a file under `_content/case-studies/`, and every file there is claimed by a card. Card ids are unique. Every `role` value stands in `_meta.role_labels`. Every `interfaceTypes` value is one of the paper's five epistemic functions. A card claims a row of Table 1 exactly when its role is `evidence`.
 
-**Why it matters.** A card claiming a depth page that does not exist opens an empty panel; a file no card claims is content nobody can reach. The two closed vocabularies carry meaning beyond their own list, because the interface types are the typology of section 4.2 and the use-case values drive the filter and the colour of the card edge. A value outside the list fails silently in both directions.
+**Why it matters.** A card claiming a depth page that does not exist opens an empty panel; a file no card claims is content nobody can reach. The two closed vocabularies carry meaning beyond their own list. The role decides which group heading a card appears under, and a role outside `role_labels` drops the card out of the gallery without a message. The interface types are the typology of section 4.2, and the first of them sets the hue of the card edge and the filter chips, so a value outside the five fails silently in both directions.
 
-**Verdict, 2026-07-26.** Passes.
+**Verdict, 2026-07-26.** Passes. The description in this document named `useCase` and `_meta.use_case_labels` until the same date, which the vocabulary change of 2026-07-26 had replaced by `role` and `role_labels` without the text following.
 
 ### V5. Every project the paper offers as evidence is reachable
 
@@ -85,12 +85,44 @@ The dividing line is the one part 5 draws. Where a rule decides, a script runs i
 
 **Verdict, 2026-07-26.** Passes after two corrections the check itself found on its first run. The Kulturpool card pointed at `chpollin/vkm-explorer`, a repository that does not exist; the project lives at `chpollin/kulturpool-demo`, which is public and whose Pages site answers, so the card gained a working demo address as well. The HerData card advertised a demo at `chpollin.github.io/HerData` that answers 404, and the repository behind it is private with no Pages site, so the demo is unpublished rather than misaddressed. The address is removed, since a dead link claims more than no link does. Republishing it is an operator action.
 
+### V7. The glossary mirror is what the generator renders
+
+**Claim.** `_content/glossar.md` is byte for byte the output of `tools/build_glossar.py` over `data/glossar.json`.
+
+**Why it matters.** The glossary stands twice, as the data source the site fetches at run time and as the Markdown file a reader or a machine retrieves under the address the frontmatter publishes. Part 5 requires that a generated document is rendered by a script, and this file was the one place on the site where the rule was broken; the mirror was edited by hand. Two hand-kept copies of the same term diverge quietly, and the tooltip then says something other than the page.
+
+**Procedure.** The generator holds the non-derivable head of the file, meaning the frontmatter, the H1 and the lead paragraph, and renders one block per entry from `begriff`, `kurz`, `voll` and `quelle` in the order of the JSON array. Any further field in an entry stays in the data and is not rendered. The check calls the generator and reports the first line at which the file on disk departs from it. Writing the file is a separate run of `tools/build_glossar.py` without arguments.
+
+**Verdict, 2026-07-26.** Passes. Both files were byte-identical with the generator output when the generator was written, which is what established that the body is fully derivable.
+
+### V8. Every anchor a hand-written reference names is one the site mounts
+
+**Claim.** Every anchor named in a `](#…)` link under `_content/`, in a literal `href="#…"` in the site scripts, in a `template:` url or alias in `knowledge/` and `vault/_sources/`, or in the prose of `CLAUDE.md` and `README.md`, is declared somewhere. Every alias table points at a target that exists. Every subpath `404.html` resolves is resolved the same way by `registry.js`.
+
+**Why it matters.** This is the failure class where a value is display text and identifier at once. A heading is translated, a card is renamed, and the anchor moves with it while the sentence that links there stays. Nothing reports it, because both sides read plausibly on their own, and a foreign repository may already carry the old address in a `template:` field. The English pass of 2026-07-26 hit the class three times. The subpath comparison covers the second copy of the routing vocabulary; `404.html` states it because the shell scripts are not loaded there, so an address it resolves and `registry.js` does not works on arrival and breaks in the frontmatter inspector.
+
+**Procedure.** The declared side is read out of the tables the site itself reads, `PAGES` and `ANCHOR_FAMILIES` in `assets/js/registry.js`, the slugs of the four data files, the alias tables in `markdown.js`, `pages-content.js`, `pages-glossar.js` and `pages-paper.js`, and the literal block ids in the scripts. `slugify` and the heading-id generator with its collision suffix are ported into the check, and the heading anchors of `_content/praxis.md` and `knowledge/paper.md` are derived with them. Restating any of those tables as a Python literal would create the second copy whose drift the group exists to catch, so each is parsed from its source file. The reference side takes only literal addresses; an href assembled at run time carries no literal to decide. The permitted direction of the subpath comparison, addresses `registry.js` resolves that have no subpath form, is reported as a note.
+
+**Verdict, 2026-07-26.** Passes after the one failure of its first run at the real repository was corrected. `_content/promptotyping-document/user-stories.md` linked to `#praxis-user-story-status`, an anchor no practice heading has ever carried; the section is reachable as `#praxis-the-epistemic-status-of-user-stories`, with the pre-English form held alive in `PRAXIS_ALIASES`. The link predates the English pass and survived it, since it was wrong from the start and had nothing to do with a translation, which is the case the group exists for. The note names the five addresses `registry.js` resolves beyond the subpath table, the paper's unnumbered anchors and the footnote apparatus.
+
+### V9. Every prose statement binding a symbol to a code file still holds
+
+**Claim.** Wherever `CLAUDE.md` or a knowledge document says that a named symbol lives in a named code file, that file is in this repository and carries that name.
+
+**Why it matters.** The action layer and the architecture document route the next agent to a file by name. A cut through the code moves the symbol and leaves the sentence standing, and the next session then reads a file that no longer holds what it was sent for. Four such statements were wrong after the ten-file cut of 2026-07-26, three of them pointing at `app.js`.
+
+**Procedure.** Match the pattern of a backticked identifier followed by `in` and a backticked path ending in `.js` or `.py`. A bare file name is resolved against the repository, and an ambiguous name is reported so the statement gets a path. Chronological and dated records are exempt, which covers `journal.md` and `plan-site.md` by name and every document whose status is `archived` or `snapshot`.
+
+**Verdict, 2026-07-26.** Passes, with the four corrected statements as its regression case.
+
 ## What is not checked automatically, and why
 
 - **Whether a page says what the paper says.** The contradictions of 2026-07-26 were found by reading `knowledge/paper.md` against the site, not by any script. Agreement in substance is not decidable by rule, and the four findings of that reading are recorded in `knowledge/journal.md`.
-- **Whether the anchors resolve in the browser.** Checked by hand against the rendered DOM during the refactor of 2026-07-26, by comparing the union of element ids over every page and deep link before and after. Worth automating, since it is rule-decidable; not automated yet.
+- **Whether the anchors resolve in the browser.** V8 decides the anchor set from the sources, which is a static reading of what the code would mount. Whether the element actually appears in the DOM depends on the render order, on a fetch that may fail and on the routing that reveals the page, and none of that is visible to a file reader. The check of 2026-07-26 against the rendered DOM, comparing the union of element ids over every page and deep link before and after the refactor, stays the instrument for that question.
+- **What V8 cannot see by construction.** An href or an id assembled at run time carries no literal, so a concatenated address is skipped on the reference side and its family is covered by prefix on the declared side. An anchor named outside the sources it reads goes unnoticed, which includes every foreign repository carrying a `template:` URI and every link in a slide deck, a mail or a published PDF; those are exactly the addresses the no-renaming rule protects, and the check cannot enumerate them. A link that resolves to the wrong but existing anchor passes, since only existence is decidable here. The praxis anchors are derived from the raw Markdown heading while the site derives them from the rendered heading, so an inline link or emphasis inside a practice heading would move the real anchor away from the computed one.
+- **Why the records are exempt from V9.** A journal entry, a plan and an archived audit are correct as of the date they carry. Holding them against today's code would ask a record to stop being a record, and correcting them would falsify the process history the paper rests on. `knowledge/journal.md` and `knowledge/plan-site.md` are named in the check; the nine archived audit records and the snapshot report are recognised by their `status`. Two of the archived records additionally cite files of other repositories, which this repository cannot decide at all.
 - **The experience values.** The record's duration and effort figures rest on the operator's memory and cannot be recomputed. They are marked as such where they appear.
 
 ## Outstanding
 
-The nine glossary terms that occur nowhere outside the glossary. The site's own term index reports them, which makes the finding visible without deciding it; whether each is site vocabulary worth keeping is a judgement.
+The term index reported a set of glossary terms as occurring nowhere outside the glossary, and the reading of 2026-07-26 found the report half an artefact of its own method. Every one of those terms is a long nominal phrase, which never occurs in running prose as the word sequence the glossary heads it with, so the index could not have found them however widely the concept was used. The entries now carry an optional `suchform`, the shorter wording under which the term actually appears, and the index searches it alongside the term. What the index reports after that change is a genuine gap, and no term is currently in that state.
