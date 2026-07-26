@@ -516,28 +516,6 @@ a:hover {
   color: var(--grey-2);
 }
 
-/* Figures are monochrome line drawings on a white plate. They take the full
-   reading column and sit tight above their caption paragraph. */
-.content img {
-  display: block;
-  width: 100%;
-  height: auto;
-  margin: var(--space-8) 0 var(--space-2);
-}
-
-/* Inverting the plate is cheaper than a second file and keeps the theme a
-   token swap; the brightness lift lands the inverted white on the page
-   background instead of pure black. */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .content img {
-    filter: invert(1) brightness(1.07);
-  }
-}
-
-:root[data-theme="dark"] .content img {
-  filter: invert(1) brightness(1.07);
-}
-
 /* The row rule is the one horizontal line the system keeps unconditionally: it
    carries the eye across the columns. */
 .content table {
