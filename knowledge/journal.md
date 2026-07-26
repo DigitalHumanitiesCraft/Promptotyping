@@ -811,3 +811,27 @@ Ausgearbeitet sind ferner die beiden ZfdG-Kurzabstracts, deutsch und englisch, b
 Operator-Entscheidung 2026-07-26: keine Attribution der Übersetzungsmechanismus-Anregung, der Punkt entfällt ganz. Er ist aus allen laufenden Listen entfernt, aus `entscheidungen-offen.md`, aus der Liste der zurückgestellten Punkte in `report.md` samt dessen Lead, aus den offenen Prüfpunkten und dem Entscheidungsstand in `paper-writing.md` und aus dem Schlussabschnitt der Argument-Map.
 
 Der Punkt war ohnehin gegenstandslos, was meine Empfehlung übersehen hatte. `revision-frame-proposal.md` hält bereits fest, dass er sich mit dem Rahmenwechsel ersatzlos erledigt, weil die Charakterisierung „LLMs operate as translation mechanisms" aus Abstract, Sektion 1 und 2.4 verschwunden ist. Gegen den heutigen Papertext geprüft: die Wendung kommt null Mal vor. Die verbliebenen Übersetzungsstellen tragen die Übersetzung von Forschungsdaten in Forschungsartefakte und die zwischen Fachperson und Entwicklung, beides Argumente des Operators. Die Acknowledgements bleiben unverändert.
+
+## 2026-07-26, zweite Runde — Farbsystem, Dunkelmodus, Kopf und Fuß
+
+Vier Gestaltungsentscheidungen des Operators, davon eine an mich delegiert.
+
+**Dichte zweistufig.** Die Spezifikationsprosa behält die ruhige Satzweise, weil sie gelesen wird. Glossar, Vault, Vorlagen und Use Cases tragen `.is-reference` und sind dichter gesetzt, weil sie gescannt werden.
+
+**Dunkelmodus.** Das Stylesheet löst jede Farbe über ein Token auf, also ist das Thema ein Token-Tausch und nichts weiter. Systemwunsch als Voreinstellung, `data-theme` am Wurzelelement gewinnt, ein Inline-Prelude im Head setzt die gespeicherte Wahl vor dem ersten Paint, damit niemand einen weißen Blitz sieht.
+
+**Kopf entschlackt, Fuß ausgebaut.** Der Paper-Link im Kopf ist entfallen, er steht im Baum; rechts stehen Repository und der Umschalter. Der Fuß ist vierspaltig, Träger und Lizenz, Adressen, Stand der Spezifikation, Maschinenzugriff.
+
+**Icons nur ohne Text.** Ein eigener Satz als Inline-SVG, 16px, 1.5px Strich, `currentColor`, keine Füllflächen, keine Abhängigkeit.
+
+**Farbe, an mich delegiert, mit dem Auftrag zu begründen.** Entschieden ist die Kombination aus Funktionsspektrum und Signatur. Die Begründung steht nicht auf Geschmack. Nach Bertins Semiologie ist der Farbton selektiv und assoziativ und die einzige Farbvariable, die für qualitative Information taugt; verschiedene Farbtöne behaupten eine Verschiedenheit der Art. Die fünf epistemischen Funktionen aus Abschnitt 4.2 sind genau das, eine Nominalskala mit fünf Werten. Die fünf Teile der Spezifikation sind dagegen eine Rangfolge, weshalb Variante C auf der Sachebene ausscheidet und nicht nach Geschmack. WCAG 2.1, Erfolgskriterium 1.4.1 auf Stufe A, verlangt, dass Farbe nie das einzige Mittel ist; die Kategorie steht deshalb immer als Wort neben ihrer Marke. Die Signaturlinie trägt keine Information und fällt unter keine der beiden Bedingungen, weshalb genau sie die laute sein darf. Damit ist die Vorgabe des Operators aufgelöst, unbunte solide Seite plus ein intensiver Farbklecks: was informiert, bleibt gedämpft und lesbar, was signiert, wird prismatisch.
+
+Die fünf Töne sind aus dem Aquarell des Promptotyping-Logos gezogen, damit die Palette nicht erfunden ist. Für den Dunkelmodus sind sie aufgehellt.
+
+**Zwei Altlasten mitbehoben.** Die vier Grautöne hießen in `style.css` noch `--phase-*`, ein Rest der 2026-06-10 entfernten Phasen-Lane; sie heißen jetzt `--grey-1` bis `--grey-4`. Die Glossar-Unterstreichung stand auf `#888888` statt auf dem erlaubten `#8a8a8a`. Beide Punkte waren in `design.md` als Reconciliation-Flags vermerkt und sind dort gestrichen.
+
+**Der h1-Defekt ist behoben.** Glossar, Vault, Vorlagen und Use Cases trugen ihren Seitentitel als `h2`, ein Erbe aus der Zeit als Sektionen einer Spalte. Folge war, dass die Statuszeile über dem Titel landete und diese vier Seiten keine Seitenüberschrift hatten.
+
+**Zur Suche.** Der Operator hat die Volltextsuche nicht abgelehnt, sondern eine Begründung verlangt. Ich kann sie nicht geben. Von den drei Adressaten in `project.md` kommen Reviewer über eine konkrete Adresse und Agents über `template:`-URIs, beide suchen nie; Anwendende lesen den Fluss. Die einzige Stelle, an der die Navigation wirklich zu grob ist, ist das Paper mit knapp achtzehntausend Wörtern und zehn Überschriften. Vorgeschlagen sind daher ein Begriffsregister, das die Glossar-Dekoration als Nebenprodukt abwirft, und ein Inhaltsverzeichnis auf der Paperseite. Beide offen.
+
+Geprüft im Browser, hell und dunkel: vierzehn Seiten, sechzehn `h1`, keine Ladefehler, siebzehn Karten mit Funktionskante, die fünf Funktionsmarken auf der Artefakt-Seite, die Signaturlinie in beiden Themen.

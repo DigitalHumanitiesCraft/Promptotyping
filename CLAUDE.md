@@ -21,7 +21,9 @@ Die Wissensbasis im `knowledge/`-Ordner ist die Specification, aus der die Imple
 
 Die Site soll ruhig sein. Konkret bedeutet das beim Coden:
 
-- **Verwende keine Farben außer denen im Designsystem definierten**: `#ffffff` (Hintergrund), `#1a1a1a` (Text), `#d5d5d5` (Akzent), `#f5f5f5` (Code-Hintergrund), `#e0e0e0` (Border) sowie die vier Grautöne `#2a2a2a`, `#525252`, `#8a8a8a`, `#b8b8b8` (ehemals Phasen-Töne, jetzt allgemeine Grau-Akzente für Sekundärtext). Kein Teal, kein Türkis, kein Bunt.
+- **Verwende keine Farben außer den im Designsystem definierten Tokens.** Unbunt sind `--bg`, `--text`, `--accent`, `--border`, `--code-bg` und die vier Grautöne `--grey-1` bis `--grey-4`. Schreibe nie einen Hex-Wert ins Stylesheet außerhalb des Token-Blocks; der Dunkelmodus ist ein reiner Token-Tausch und bricht sonst.
+- **Farbe bedeutet genau eine Sache**, die epistemische Funktion eines Artefakts, also die fünf Interface-Kategorien aus Abschnitt 4.2 (`--fn-verification`, `--fn-exploration`, `--fn-edition`, `--fn-capture`, `--fn-audit`). Das ist eine Nominalskala, und dort ist der Farbton nach Bertin die richtige Kodierung. Sie erscheint auf der Artefakt-Seite und an der Kartenkante der Use Cases, sonst nirgends. **Die Kategorie steht immer auch als Wort daneben** (WCAG 2.1, Erfolgskriterium 1.4.1, Stufe A). Färbe insbesondere nicht die fünf Teile der Spezifikation ein, das ist eine Rangfolge und keine Verschiedenheit der Art.
+- **`--signature`** ist der eine laute Ort, ein prismatischer Verlauf als 2px-Band am Fuß der Kopfzeile, einmal pro Seite. Er trägt keine Information und darf deshalb laut sein. Verwende ihn nirgends sonst.
 - **Schriften: Inter für Text, Consolas für Code, sonst keine.** Keine zweite Sans-Serif, keine Display-Schrift, keine Brand-Schrift.
 - **Animationen: nur Slide-in/out für Side-Panels (200ms ease-out), keine anderen.** Keine Scroll-Linked-Animationen, kein Parallax, keine Hover-Bouncing-Effekte.
 - **Keine dekorativen Elemente.** Wenn ein UI-Element keine Funktion hat, gehört es nicht hin.

@@ -591,13 +591,91 @@
     if (!main) {
       return;
     }
+    var REFERENCE_PAGES = ["glossar", "vault", "vorlagen", "use-cases"];
     PAGES.forEach(function (p) {
       var el = document.createElement("section");
       // The paper host keeps its own class: renderPaper sectionizes into it.
-      el.className = "doc-page placeholder-section" + (p.id === PAPER_HOST_ID ? " paper" : "");
+      el.className = "doc-page placeholder-section" +
+        (p.id === PAPER_HOST_ID ? " paper" : "") +
+        (REFERENCE_PAGES.indexOf(p.id) !== -1 ? " is-reference" : "");
       el.id = p.id;
       main.appendChild(el);
     });
+  }
+
+  /* ---- Theme ----
+     The stored choice wins over the system preference. The document class is
+     set in an inline prelude before first paint; this only wires the toggle. */
+
+  var THEME_KEY = "promptotyping-theme";
+
+  function currentTheme() {
+    var set = document.documentElement.getAttribute("data-theme");
+    if (set) {
+      return set;
+    }
+    return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark" : "light";
+  }
+
+  function setupThemeToggle() {
+    var btn = document.getElementById("theme-toggle");
+    if (!btn) {
+      return;
+    }
+    var label = function () {
+      btn.setAttribute("title", currentTheme() === "dark"
+        ? "Auf helles Schema wechseln" : "Auf dunkles Schema wechseln");
+    };
+    label();
+    btn.addEventListener("click", function () {
+      var next = currentTheme() === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      try {
+        localStorage.setItem(THEME_KEY, next);
+      } catch (e) {
+        // Private mode: the choice holds for this page load only.
+      }
+      label();
+    });
+  }
+
+  /* ---- Epistemic function marks ----
+     The five interface categories of paper section 4.2 are the one nominal
+     scale on this site, so they are the one place a hue carries meaning. */
+
+  var FUNCTION_SLUGS = ["verification", "exploration", "edition", "capture", "audit"];
+
+  function functionVar(name) {
+    var slug = String(name).trim().toLowerCase();
+    return FUNCTION_SLUGS.indexOf(slug) === -1 ? null : "var(--fn-" + slug + ")";
+  }
+
+  /* Artefakt page: the bullet list of the five functions carries its hue on
+     the marker, the category name stays in the text beside it. */
+  function markFunctionList(host) {
+    var lists = host.querySelectorAll("ul");
+    for (var i = 0; i < lists.length; i++) {
+      var items = lists[i].querySelectorAll(":scope > li");
+      var hits = 0;
+      items.forEach(function (li) {
+        var b = li.querySelector("strong");
+        if (b && functionVar(b.textContent.replace(/\.$/, ""))) {
+          hits += 1;
+        }
+      });
+      if (hits < 3) {
+        continue;
+      }
+      lists[i].classList.add("fn-list");
+      items.forEach(function (li) {
+        var b = li.querySelector("strong");
+        var v = b && functionVar(b.textContent.replace(/\.$/, ""));
+        if (v) {
+          li.style.setProperty("--fn", v);
+        }
+      });
+    }
   }
 
   /* ---- Page status line ----
@@ -840,7 +918,7 @@
 
         el.classList.remove("placeholder-section");
         el.innerHTML =
-          "<h2>Vault</h2>" +
+          "<h1>Vault</h1>" +
           "<p>Die Belegschicht unter dem Paper. Quellen werden zu Distillaten mit " +
           "zitatgepruefeten Einzelaussagen verdichtet, und aus diesen Aussagen sind die " +
           "Claims gebaut, auf denen die tragenden Saetze des Papers stehen. Die Anker " +
@@ -1186,7 +1264,7 @@
         el.innerHTML =
           '<img class="vorlagen-icon" src="assets/promptotyping-logo.png" ' +
           'alt="Promptotyping-Marke" width="100" height="100">' +
-          "<h2>Vorlagen</h2>" +
+          "<h1>Vorlagen</h1>" +
           "<p>Diese Sektion buendelt die Spezifikation der Methode, den ausfuellbaren Vorlagen-Katalog, " +
           "die zugrunde liegende Konvention, den maschinellen Zugriff ueber das <code>template:</code>-Feld " +
           "und die Technology Baseline fuer statische Web-Tools.</p>" +
@@ -1293,7 +1371,7 @@
     el.classList.remove("placeholder-section");
     el.setAttribute("data-component", "case-study-filter");
     el.innerHTML =
-      "<h2>Use Cases</h2>" +
+      "<h1>Use Cases</h1>" +
       "<p>Eine kuratierte Auswahl oeffentlich dokumentierter Projekte, gruppiert danach, wo im " +
       "Forschungsdaten-Lebenszyklus die Methode operiert. Das vollstaendige Evidenz-Korpus steht im " +
       '<a href="#abschnitt-5-evidence-the-documented-projects">Paper, Abschnitt 5</a>.</p>' +
@@ -1377,7 +1455,7 @@
 
         el.classList.remove("placeholder-section");
         el.innerHTML =
-          "<h2>Glossar</h2>" +
+          "<h1>Glossar</h1>" +
           "<p>Begriffe der Promptotyping-Methode und der Methodik-Site, alphabetisch geordnet. " +
           "Im Paper-Lesefluss ist das erste Vorkommen eines Begriffs als Trigger markiert. " +
           "Begriffe, die der Papertext nicht fuehrt, weisen sich in der Quellenzeile als " +
@@ -1650,6 +1728,7 @@
     mountPages();
     buildNav();
     setupSidePanel();
+    setupThemeToggle();
     setupGlossarInteraction(document.getElementById("content"));
 
     // Show the routed page immediately, so the shell is never a blank frame
@@ -1674,7 +1753,7 @@
           el.appendChild(video);
         }
       }),
-      renderMarkdownInto("artefakt", "_content/artefakt.md"),
+      renderMarkdownInto("artefakt", "_content/artefakt.md", markFunctionList),
       renderMarkdownInto("verifikation", "_content/verifikation.md"),
       renderVorlagen(),
       renderMarkdownInto("konvention-v0.1", "_content/konvention.md", function (el) {
@@ -1716,6 +1795,7 @@
   window.PromptotypingApp = {
     resolveTemplateUrl: resolveTemplateUrl,
     openTemplatePanel: openTemplatePanel,
+    functionVar: functionVar,
     openSidePanel: openSidePanel,
     closeSidePanel: closeSidePanel,
     buildVideoFacade: buildVideoFacade

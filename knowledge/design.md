@@ -56,12 +56,44 @@ The permitted palette is fixed. Six core tokens plus four general grey accents, 
 --grey-4:    #b8b8b8   lightest grey (reserved, currently unused)
 ```
 
-No teal, no turquoise, no chromatic accent anywhere. Unlike the DHCraft slides, where teal marked dates, the site uses no accent colour at all.
+Both reconciliation flags this document used to carry are settled. The four grey tokens are named `--grey-1` to `--grey-4`, and the glossary underline is `#8a8a8a`.
 
-Two reconciliation flags against the current stylesheet:
+### Colour that carries meaning
 
-- The four grey tokens are still named `--phase-preparation`, `--phase-exploration`, `--phase-distillation`, and `--phase-implementation` in `style.css`, a legacy of the removed phase lane. They now carry no phase semantics and act as general grey accents; the token names should be renamed on the next CSS pass.
-- The glossary underline uses `--glossar-underline: #888888`, one step off the permitted `#8a8a8a`. Reconcile to `#8a8a8a`.
+Operator decision of 2026-07-26: the site stays unchromatic and serious, with one deliberate colour system on top. Two rules bound it.
+
+Colour encodes exactly one thing, the epistemic function of an artefact, that is the five interface categories of paper section 4.2. Bertin classes hue as selective and associative and as the only colour variable suited to qualitative information, which makes it the correct encoding for a nominal scale of five values, and it makes it the wrong encoding for the five parts of the specification, which are a rank order. The five hues are muted and derived from the watercolour of the Promptotyping logo, so a category name stays readable beside its mark.
+
+```
+--fn-exploration:  #216a4e
+--fn-capture:      #7a8b1f
+--fn-edition:      #d0a022
+--fn-verification: #c9661c
+--fn-audit:        #9b3a6b
+```
+
+They appear in two places, the function list on the Artefakt page and the left edge of a use-case card. The category always stands there as a word as well, because WCAG 2.1 success criterion 1.4.1 on level A forbids colour as the only visual means of conveying information.
+
+The signature is the counterpart. A prismatic gradient runs as a two-pixel band along the foot of the header, once per page. It encodes nothing, which is precisely why it may be the loud one; it marks identity rather than a category and therefore falls under neither rule above.
+
+```
+--signature: linear-gradient(90deg, #00b37e, #b6ff1a 22%, #ffd400 45%,
+             #ff6a00 70%, #ff2ea6)
+```
+
+Beyond these two, no element carries a hue.
+
+### Dark theme
+
+The stylesheet resolves every colour through a token, so the theme is a token swap. The system preference applies by default, a `data-theme` attribute on the root element overrides it, and an inline prelude in the head applies the stored choice before first paint so a dark reader never sees a white flash. The choice is kept in `localStorage` under `promptotyping-theme`.
+
+```
+--bg #131313   --text #e9e9e9   --accent #3d3d3d
+--border #2e2e2e   --code-bg #1c1c1c
+--grey-1 #d4d4d4   --grey-2 #a6a6a6   --grey-3 #7d7d7d   --grey-4 #5a5a5a
+```
+
+The five function hues lighten in the dark theme so they keep their contrast against `#131313`. The watercolour footer mark is dimmed to 85 per cent rather than shipped as a second file.
 
 Subtle overlay shadows exist on floating surfaces and are part of the system: the side panel carries `-2px 0 12px rgba(0,0,0,0.06)`, tooltips carry `0 2px 8px rgba(0,0,0,0.08)`, and the mobile backdrop dims with `rgba(0,0,0,0.3)`. Cards carry no shadow.
 
@@ -77,7 +109,7 @@ Sizes (base `font-size: 16px`):
 | Element | Size | Weight |
 |---|---|---|
 | Body | 1rem (16px) | 400 |
-| H1 (paper title / hero) | 2.25rem | 700 |
+| H1 (page title) | 2.25rem | 700 |
 | H2 (section heading) | 1.75rem | 600 |
 | H3 | 1.375rem | 600 |
 | H4 | 1.125rem | 600 |
@@ -85,6 +117,8 @@ Sizes (base `font-size: 16px`):
 | Side-panel body | 0.9375rem | — |
 
 Line height is 1.6 for body text, 1.4 for code, and 1.3 for headings.
+
+Density is two-tiered (operator decision 2026-07-26). Specification prose keeps the calm setting because it is read. The directories are scanned rather than read, so the four reference pages Glossar, Vault, Vorlagen and Use Cases carry `.is-reference` and set 0.9375rem at line height 1.45, with correspondingly smaller headings and tables.
 
 ### Spacing
 
@@ -165,11 +199,14 @@ The use-case gallery renders case-study cards in a responsive grid (`auto-fill, 
 
 The only movement animation is the side-panel slide, 200ms `ease-out`. Interactive elements additionally carry short 150ms `ease-out` colour and background transitions as hover feedback (TOC links, cards, buttons, chips, the video facade, the tooltip fade, the TOC-toggle icon rotation). The `CLAUDE.md` rule "only side-panel slide, no others" governs decorative and scroll-linked motion, which stays banned; the 150ms hover transitions are permitted micro-affordances. The wording in `CLAUDE.md` should be tightened to name this micro-exception explicitly.
 
+## Icons
+
+Icons appear only where a control carries no text, currently the theme toggle, the panel close, the copy button and the mark on an outbound link. They are inline SVG at 16 pixels with a 1.5-pixel stroke in `currentColor` and no fills, carried in the markup rather than in a font or a sprite file. Navigation entries, headings and groups carry no icons, because there the label is the thing.
+
 ## What the design is not
 
 - No custom cursor
 - No parallax, no scroll-linked animation
 - No Lottie or WebGL, no 3D effects
 - No typography animation (animated variable fonts)
-- No dark mode (light mode only in this phase)
 - No sound effects

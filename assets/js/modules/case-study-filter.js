@@ -91,6 +91,15 @@
       });
       meta.textContent = "Interface: " + labels.join(", ");
       card.appendChild(meta);
+      // The card edge carries the hue of the first epistemic function; the
+      // category itself stays readable in the line above (WCAG 1.4.1).
+      var fn = window.PromptotypingApp && window.PromptotypingApp.functionVar
+        ? window.PromptotypingApp.functionVar(cs.interfaceTypes[0])
+        : null;
+      if (fn) {
+        card.classList.add("has-fn");
+        card.style.setProperty("--fn", fn);
+      }
     }
 
     var links = document.createElement("div");

@@ -91,7 +91,7 @@ template:
 
 Snapshot-Adressierung. Falls in Zukunft eine `v0.2` oder höher erscheint, bleiben ältere Fassungen über Hash-Anker auf derselben Vorlagen-Seite erreichbar (`#v0.1`, `#v0.2` usw.). Repos pflegen ihr `template:`-Feld einmalig auf die Vorlage und folgen damit per Default der Latest-Fassung; wer auf eine bestimmte Schnappschuss-Version festnageln will, hängt explizit `#v0.1` an die `url:` und `-v0.1` an den `alias:`.
 
-Das Feld gehört in den Pflichtkern für Repo-`knowledge/`-Dokumente. Vault-Spiegel-Dokumente führen es nicht.
+Das Feld gehört in die empfohlene Schicht und wird gesetzt, sobald für das Dokument eine Katalogvorlage existiert. Vault-Spiegel-Dokumente führen es nicht. Warum es trotz seiner funktionalen Bedeutung nicht im Pflichtkern steht, begründet das Frontmatter-Schema.
 
 ## Action-Layer im Repo-Root
 
@@ -139,7 +139,7 @@ Bei Repos mit projektsemantisch geprägten Dateinamen (zbz-ocr-tei führt zum Be
 
 ## Frontmatter-Schema
 
-Das Frontmatter folgt einem reduzierten Pflichtkern und zwei optionalen Schichten. Der Kern ist so klein wie möglich, weil sich empirisch im HerData-Refactor gezeigt hat, dass weniger Felder konsistenter gepflegt werden.
+Das Frontmatter folgt einem reduzierten Pflichtkern und zwei optionalen Schichten. Der Kern ist so klein wie möglich, weil weniger Felder konsistenter gepflegt werden. Eine Querschau über 490 Dokumente mit Frontmatter in 40 Wissensbasen (Stand 2026-07-26) hat das bestätigt und den Schnitt korrigiert. Die sechs Kernfelder treten als stabiles Bündel auf, `method` ist dabei das bindende Feld, und praktisch jedes Dokument, das es führt, führt auch die übrigen fünf. Alle sechs zusammen tragen 233 der 490 Dokumente. Das ist knapp die Hälfte, und daraus folgt die Regel für jede künftige Erweiterung. Ein Feld rückt nur in den Kern, wenn die Praxis es bereits flächendeckend trägt.
 
 ### Pflichtkern
 
@@ -148,27 +148,30 @@ Das Frontmatter folgt einem reduzierten Pflichtkern und zwei optionalen Schichte
 | `title` | string | Menschenlesbarer Dokumenttitel |
 | `project` | object | Verschachtelt mit `name` und `repository` |
 | `method` | object | Verschachtelt mit `name` und `url`; üblicherweise `Promptotyping` |
-| `template` | object | Verschachtelt mit `name`, `version`, `url`, optional `alias`; siehe Sektion *Vorlagen-Adressierbarkeit* |
 | `status` | enum | `draft`, `active`, `archived` |
 | `created` | date YYYY-MM-DD | Anlagedatum |
 | `updated` | date YYYY-MM-DD | Letztes inhaltliches Update |
-| `zweck` | string | Ein Klartext-Satz, was das Dokument leistet; verständlich ohne Repo-Kontext |
+
+Das frühere Pflichtfeld `zweck` entfällt. Es kam in keinem einzigen der erhobenen Dokumente vor. Seine Funktion bleibt erhalten und wandert unter dem etablierten Namen `description` in die empfohlene Schicht; damit verschwindet zugleich der letzte deutsche Feldname in einem sonst englischen Vokabular. Das frühere Pflichtfeld `template` wandert ebenfalls in die empfohlene Schicht, weil es 79 der 490 Dokumente führen und ein Pflichtstatus die Fehlkonstruktion der Acht-Felder-Fassung wiederholen würde.
 
 ### Empfohlen
 
 | Feld | Typ | Zweck |
 |---|---|---|
+| `description` | string | Ein Klartext-Satz, was das Dokument leistet; verständlich ohne Repo-Kontext |
+| `template` | object | Verschachtelt mit `name`, `version`, `url`, optional `alias`; siehe Sektion *Vorlagen-Adressierbarkeit*. Zu setzen, sobald eine Katalogvorlage existiert |
+| `authors` | list | Personen mit kuratorischer Verantwortung. Trägt ausschließlich Menschen, auch wenn ein LLM den Text erzeugt hat; die Verantwortung liegt bei dem, der den Auftrag gibt |
+| `generated-with` | string | Harness und LLM in der Form `Harness (LLM)`, bei mehreren LLMs kommagetrennt in der Klammer. Entfällt, wenn ohne LLM entstanden |
 | `topics` | list (Wikilinks) | Wissensfelder, die das Dokument-Befüllen oder -Lesen kontextualisieren |
 | `language` | string | Sprachcode (`de`, `en`) |
 | `version` | string | Repo-Schema-Version, repo-weit gemeinsam erhöht |
-| `authors` | list | Personen oder Rollen mit kuratorischer Verantwortung |
-| `generated-with` | string | Werkzeug, falls das Dokument LLM-gestützt entstanden ist |
 | `related` | list | Querverweise auf Geschwister-Dokumente desselben Repos |
 
 ### Kontextabhängig
 
 | Feld | Typ | Zweck |
 |---|---|---|
+| `output-of` | string | Der Befehl, der dieses Dokument erzeugt. Nur bei maschinell erzeugten Dokumenten; siehe Sektion *Provenienz im Frontmatter* |
 | `knowledge-sources` | nested map | Externe Wissensquellen als URI-Mapping, gruppiert nach Typ (`institutions`, `standards`, `methods`, `vocabularies`) |
 | `tags` | list | Optional, nur falls vault-übergreifende domänen-thematische Suche relevant ist; tragen keine strukturelle Information |
 | `iteration` | integer | Nur bei iterierten Dokumenten |

@@ -39,13 +39,32 @@
   --accent: #d5d5d5;
   --border: #e0e0e0;
   --code-bg: #f5f5f5;
-  --glossar-underline: #888888;
+  --glossar-underline: #8a8a8a;
 
-  /* Phase lane tones */
-  --phase-preparation: #2a2a2a;
-  --phase-exploration: #525252;
-  --phase-distillation: #8a8a8a;
-  --phase-implementation: #b8b8b8;
+  /* General grey accents. Formerly the phase-lane tones; the lane was removed
+     on 2026-06-10 and the names carry no phase semantics. */
+  --grey-1: #2a2a2a;
+  --grey-2: #525252;
+  --grey-3: #8a8a8a;
+  --grey-4: #b8b8b8;
+
+  /* Epistemic function hues. The five interface categories of paper section
+     4.2 are a nominal scale with five values, and hue is the visual variable
+     Bertin classes as selective and associative, so it is the correct encoding
+     there. Muted, derived from the watercolour of the Promptotyping logo, so
+     the category name stays readable beside the mark; WCAG 1.4.1 forbids
+     colour as the only carrier, and the word always stands next to the dot.
+     Nowhere else on the site does a hue mean anything. */
+  --fn-exploration: #216a4e;
+  --fn-capture: #7a8b1f;
+  --fn-edition: #d0a022;
+  --fn-verification: #c9661c;
+  --fn-audit: #9b3a6b;
+
+  /* Signature. Carries no information, which is why it is the loud one: it
+     marks identity, not a category. Exactly one occurrence per page. */
+  --signature: linear-gradient(90deg, #00b37e, #b6ff1a 22%, #ffd400 45%,
+    #ff6a00 70%, #ff2ea6);
 
   /* Type */
   --font-text: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -65,6 +84,55 @@
   --nav-width: 250px;
   --read-width: 820px;
   --panel-width: 360px;
+}
+
+/* ---- Dark theme ----
+   The stylesheet resolves every colour through a token, so the theme is a
+   token swap and nothing else. `data-theme` on the root element wins over the
+   system preference, which is what the toggle sets. */
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #131313;
+    --text: #e9e9e9;
+    --accent: #3d3d3d;
+    --border: #2e2e2e;
+    --code-bg: #1c1c1c;
+    --glossar-underline: #7d7d7d;
+    --grey-1: #d4d4d4;
+    --grey-2: #a6a6a6;
+    --grey-3: #7d7d7d;
+    --grey-4: #5a5a5a;
+    --fn-exploration: #4fbf8f;
+    --fn-capture: #b7c94a;
+    --fn-edition: #e8bf50;
+    --fn-verification: #e8894a;
+    --fn-audit: #cf7aa6;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #131313;
+  --text: #e9e9e9;
+  --accent: #3d3d3d;
+  --border: #2e2e2e;
+  --code-bg: #1c1c1c;
+  --glossar-underline: #7d7d7d;
+  --grey-1: #d4d4d4;
+  --grey-2: #a6a6a6;
+  --grey-3: #7d7d7d;
+  --grey-4: #5a5a5a;
+  --fn-exploration: #4fbf8f;
+  --fn-capture: #b7c94a;
+  --fn-edition: #e8bf50;
+  --fn-verification: #e8894a;
+  --fn-audit: #cf7aa6;
+}
+
+/* The watercolour logo is a light-background mark; dim it rather than ship a
+   second file. */
+:root[data-theme="dark"] .site-footer-brand img {
+  opacity: 0.85;
 }
 
 *,
@@ -171,7 +239,7 @@ a:hover {
   font-size: 0.75rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--phase-distillation);
+  color: var(--grey-3);
   border-left: 1px solid var(--border);
   padding-left: var(--space-2);
 }
@@ -185,11 +253,50 @@ a:hover {
 
 .docs-header-links a {
   text-decoration: none;
-  color: var(--phase-exploration);
+  color: var(--grey-2);
 }
 
 .docs-header-links a:hover {
   color: var(--text);
+}
+
+/* Signature band: the one loud moment, at the foot of the header. It encodes
+   nothing, so it is exempt from the rule that a hue must mean something. */
+.docs-header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: var(--signature);
+}
+
+/* Icon buttons. Icons appear only where a control carries no text. */
+.icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  color: var(--grey-2);
+  cursor: pointer;
+  transition: color 150ms ease-out, border-color 150ms ease-out;
+}
+
+.icon-button:hover {
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.icon-button svg {
+  width: 16px;
+  height: 16px;
+  display: block;
 }
 
 /* ---- Documentation shell ----
@@ -222,7 +329,7 @@ a:hover {
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--phase-distillation);
+  color: var(--grey-3);
 }
 
 .docs-nav-group:first-child {
@@ -245,7 +352,7 @@ a:hover {
   margin-left: -1px;
   border-left: 2px solid transparent;
   text-decoration: none;
-  color: var(--phase-exploration);
+  color: var(--grey-2);
   transition: color 150ms ease-out, border-color 150ms ease-out;
 }
 
@@ -256,18 +363,83 @@ a:hover {
 .docs-nav-part {
   display: inline-block;
   min-width: 1.2em;
-  color: var(--phase-distillation);
+  color: var(--grey-3);
   font-variant-numeric: tabular-nums;
 }
 
 .docs-nav a.is-active .docs-nav-part {
-  color: var(--phase-exploration);
+  color: var(--grey-2);
 }
 
 .docs-nav a.is-active {
   color: var(--text);
   font-weight: 600;
   border-left-color: var(--text);
+}
+
+/* ---- Epistemic function marks ----
+   The hue always sits beside the category name, never alone (WCAG 1.4.1). */
+
+.fn-mark {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--fn, var(--grey-3));
+  margin-right: var(--space-2);
+  flex: none;
+}
+
+.content .fn-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.content .fn-list > li {
+  position: relative;
+  padding-left: var(--space-4);
+}
+
+.content .fn-list > li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--fn, var(--grey-3));
+}
+
+.case-card.has-fn {
+  border-left: 3px solid var(--fn, var(--border));
+}
+
+/* ---- Reference density ----
+   Specification prose keeps the calm setting because it is read. The
+   directories are scanned, so they are set tighter. */
+
+.doc-page.is-reference {
+  font-size: 0.9375rem;
+  line-height: 1.45;
+}
+
+.doc-page.is-reference h2 {
+  font-size: 1.5rem;
+  margin-top: var(--space-8);
+}
+
+.doc-page.is-reference h3 {
+  font-size: 1.1875rem;
+  margin-top: var(--space-6);
+}
+
+.doc-page.is-reference p {
+  margin-bottom: var(--space-2);
+}
+
+.doc-page.is-reference table {
+  font-size: 0.875rem;
 }
 
 /* ---- Page ----
@@ -306,11 +478,11 @@ a:hover {
   padding-bottom: var(--space-4);
   border-bottom: 1px solid var(--border);
   font-size: 0.8125rem;
-  color: var(--phase-exploration);
+  color: var(--grey-2);
 }
 
 .page-status-key {
-  color: var(--phase-distillation);
+  color: var(--grey-3);
 }
 
 .page-status code {
@@ -333,7 +505,7 @@ a:hover {
 #ueberblick > table:first-of-type th,
 #ueberblick > table:first-of-type td:first-child {
   width: 14rem;
-  color: var(--phase-exploration);
+  color: var(--grey-2);
 }
 
 /* ---- Specification index ---- */
@@ -363,7 +535,7 @@ a:hover {
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--phase-distillation);
+  color: var(--grey-3);
 }
 
 .spec-index ul {
@@ -390,7 +562,7 @@ a:hover {
 .spec-index-part {
   display: inline-block;
   min-width: 1.2em;
-  color: var(--phase-distillation);
+  color: var(--grey-3);
   font-weight: 400;
   font-variant-numeric: tabular-nums;
 }
@@ -399,7 +571,7 @@ a:hover {
   display: block;
   font-size: 0.8125rem;
   line-height: 1.4;
-  color: var(--phase-exploration);
+  color: var(--grey-2);
 }
 
 .content h1 {
@@ -448,7 +620,7 @@ a:hover {
   margin: 0 0 var(--space-4);
   padding-left: var(--space-4);
   border-left: 2px solid var(--border);
-  color: var(--phase-exploration);
+  color: var(--grey-2);
 }
 
 .content table {
@@ -549,7 +721,7 @@ a:hover {
 
 .video-facade-note {
   font-size: 0.875rem;
-  color: var(--phase-exploration);
+  color: var(--grey-2);
   max-width: 480px;
 }
 
@@ -583,7 +755,7 @@ a:hover {
 }
 
 .section-loading {
-  color: var(--phase-distillation);
+  color: var(--grey-3);
   font-size: 0.875rem;
   padding: var(--space-8) 0;
 }
@@ -711,7 +883,7 @@ a:hover {
 }
 
 .vorlagen-subnav a {
-  color: var(--phase-exploration);
+  color: var(--grey-2);
 }
 
 .vorlagen-subnav a:hover {
@@ -720,7 +892,7 @@ a:hover {
 
 .vorlagen-subnav a:not(:last-child)::after {
   content: " \00b7 ";
-  color: var(--phase-distillation);
+  color: var(--grey-3);
 }
 
 .vorlagen-block {
@@ -755,7 +927,7 @@ a:hover {
 
 .vorlagen-machine-note {
   font-size: 0.875rem;
-  color: var(--phase-exploration);
+  color: var(--grey-2);
 }
 
 /* Frontmatter-Inspector */
@@ -820,15 +992,15 @@ a:hover {
 }
 
 .inspector-status-error {
-  color: var(--phase-preparation);
+  color: var(--grey-1);
 }
 
 .inspector-status-warn {
-  color: var(--phase-exploration);
+  color: var(--grey-2);
 }
 
 .inspector-status-ok {
-  color: var(--phase-distillation);
+  color: var(--grey-3);
 }
 
 /* Side-panel footer: copy button, machine-url link, frontmatter preview */
@@ -888,7 +1060,7 @@ a:hover {
   border-radius: 2px;
   padding: var(--space-1) var(--space-2);
   cursor: pointer;
-  color: var(--phase-exploration);
+  color: var(--grey-2);
   transition: background 150ms ease-out, color 150ms ease-out, border-color 150ms ease-out;
 }
 
@@ -934,7 +1106,7 @@ a:hover {
 .case-group-title {
   font-size: 1.125rem;
   font-weight: 600;
-  color: var(--phase-exploration);
+  color: var(--grey-2);
   border-bottom: 1px solid var(--border);
   padding-bottom: var(--space-2);
 }
@@ -970,7 +1142,7 @@ a:hover {
 .case-card-meta {
   margin: 0 0 var(--space-2);
   font-size: 0.8125rem;
-  color: var(--phase-exploration);
+  color: var(--grey-2);
 }
 
 .case-card-links {
@@ -985,7 +1157,7 @@ a:hover {
 }
 
 .case-empty {
-  color: var(--phase-exploration);
+  color: var(--grey-2);
   font-size: 0.875rem;
 }
 
@@ -1041,10 +1213,35 @@ a:hover {
 }
 
 .site-footer-inner {
-  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-8);
+  max-width: 1240px;
   margin: 0 auto;
-  padding: var(--space-8);
+  padding: var(--space-12) var(--space-6);
   font-size: 0.875rem;
+}
+
+.site-footer-col h2 {
+  margin: 0 0 var(--space-2);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--grey-3);
+}
+
+.site-footer-col p {
+  margin: 0 0 var(--space-1);
+  color: var(--grey-2);
+}
+
+.site-footer-col a {
+  color: var(--grey-2);
+}
+
+.site-footer-col a:hover {
+  color: var(--text);
 }
 
 .site-footer-brand {
@@ -1074,7 +1271,7 @@ a:hover {
 
 .site-footer-machine {
   margin: 0;
-  color: var(--phase-exploration);
+  color: var(--grey-2);
 }
 
 /* Glossar list */
@@ -1100,7 +1297,7 @@ a:hover {
 
 .glossar-quelle {
   font-size: 0.8125rem;
-  color: var(--phase-exploration);
+  color: var(--grey-2);
   margin: 0;
 }
 
@@ -1230,7 +1427,7 @@ a:hover {
 }
 
 .vault-topic-desc {
-  color: var(--phase-exploration);
+  color: var(--grey-2);
   margin: 0 0 var(--space-4);
 }
 
@@ -1269,14 +1466,14 @@ a:hover {
 .vault-claim-meta,
 .vault-repo-note {
   font-size: 0.8125rem;
-  color: var(--phase-distillation);
+  color: var(--grey-3);
   white-space: nowrap;
 }
 
 .vault-panel-status,
 .vault-panel-contested {
   font-size: 0.8125rem;
-  color: var(--phase-exploration);
+  color: var(--grey-2);
   margin: 0 0 var(--space-4);
 }
 
@@ -1291,14 +1488,14 @@ a:hover {
 .vault-anchor-id {
   font-family: var(--font-code);
   font-size: 0.8125rem;
-  color: var(--phase-distillation);
+  color: var(--grey-3);
 }
 
 /* Template catalogue: the trigger column carries a sentence, so it wraps. */
 
 .vorlagen-trigger {
   font-size: 0.8125rem;
-  color: var(--phase-exploration);
+  color: var(--grey-2);
   max-width: 22rem;
   white-space: normal;
 }
@@ -1317,7 +1514,7 @@ a:hover {
 .glossar-jump a {
   font-family: var(--font-code);
   font-size: 0.8125rem;
-  color: var(--phase-exploration);
+  color: var(--grey-2);
   text-decoration: none;
   border-bottom: 1px solid var(--accent);
 }
