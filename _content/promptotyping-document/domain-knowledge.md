@@ -119,7 +119,7 @@ template:
 language: [de | en]
 version: [Repo-Schema-Version]
 authors: [Autor 1, Autor 2]
-generated-with: [Werkzeug, falls relevant]
+generated-with: [Harness (LLM), falls relevant]
 topics: ["[[TEI]]", "[[Editorial Guidelines]]"]
 knowledge-sources:
   standards:
@@ -208,7 +208,7 @@ template:
 language: [de | en]
 version: [Repo-Schema-Version]
 authors: [Autor 1, Autor 2]
-generated-with: [Werkzeug, falls relevant]
+generated-with: [Harness (LLM), falls relevant]
 topics: ["[[Mobility Studies]]", "[[Explainable AI]]"]
 related: [project, data, specification]
 ---

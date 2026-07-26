@@ -125,7 +125,7 @@ updated: [YYYY-MM-DD]
 language: [de | en]
 version: [Repo-Schema-Version]
 authors: [Autor 1, Autor 2]
-generated-with: [Werkzeug, falls relevant]
+generated-with: [Harness (LLM), falls relevant]
 topics: ["[[Software Testing]]", "[[Regression]]"]
 related: [architecture, specification, data]
 ---

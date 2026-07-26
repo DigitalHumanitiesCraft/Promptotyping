@@ -133,7 +133,7 @@ version: 0.1
 created: [YYYY-MM-DD]
 updated: [YYYY-MM-DD]
 authors: [Autor 1, Autor 2]
-generated-with: [Werkzeug, falls relevant]
+generated-with: [Harness (LLM), falls relevant]
 method:
   name: [Methodenname]
   url: [Methodendokumentation]

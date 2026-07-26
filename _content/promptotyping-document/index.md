@@ -90,7 +90,7 @@ version: [Repo-Schema-Version]
 created: [YYYY-MM-DD]
 updated: [YYYY-MM-DD]
 authors: [Autor 1, Autor 2]
-generated-with: [Werkzeug, falls relevant]
+generated-with: [Harness (LLM), falls relevant]
 method:
   name: Promptotyping
   url: https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin

@@ -71,7 +71,7 @@ version: 0.1
 created: [YYYY-MM-DD]
 updated: [YYYY-MM-DD]
 authors: [Autor]
-generated-with: [Werkzeug, falls relevant]
+generated-with: [Harness (LLM), falls relevant]
 machine-url: [statische URL dieses Dokuments]
 ---
 
