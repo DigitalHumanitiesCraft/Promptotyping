@@ -2,8 +2,8 @@
   "version": "0.3",
   "generated": "2026-06-10",
   "_meta": {
-    "beschreibung": "Case-study data of the Promptotyping methodology site. The sources are the case descriptions in the vault, the method extensions in the Promptotyping MOC and the project inventory in Pollin 2026, Section 5.2. The useCase values are an ordering grid of the site's own; the paper orders the projects by the interface typology of Section 4.2.",
-    "kuratierung": "Admission is decided by what a card lets a reader check. Every project in Table 1 of the paper has a card, because a reader who comes from section 5.2 to verify a claim has to find the project; the paper_row field carries that link and tools/check_consistency.py holds it in both directions (operator decision 2026-07-26). Beyond the evidence inventory the gallery also carries the projects the method grew out of, which section 2.6 needs, and the teaching formats, which the teachability argument of section 5.4 rests on. A project that supports no claim of the paper has no card. Three exclusion notes of the earlier curation were checked on 2026-07-26 and did not hold: vetmed-wissensbilanz and wiiw-patent-analysis-demo are public repositories with working demos, and sugw is the paper's Medieval Legal Transactions and publicly video-documented, so all three entered the gallery. The Aldersbach monastic accounts stay although the paper dropped the case as too old, because the genealogy is what they carry (operator decision 2026-07-25).",
+    "beschreibung": "Case-study data of the Promptotyping methodology site. The sources are the case descriptions in the vault, the method extensions in the Promptotyping MOC and the project inventory in Pollin 2026, Section 5.2. The gallery groups by the role a case plays for the paper and orders within a block by the interface typology of Section 4.2, which is the typology the paper itself uses.",
+    "kuratierung": "Admission is decided by what a card lets a reader check. Every project in Table 1 of the paper has a card, because a reader who comes from section 5.2 to verify a claim has to find the project; the paper_row field carries that link and tools/check_consistency.py holds it in both directions (operator decision 2026-07-26). Beyond the evidence inventory the gallery also carries the projects the method grew out of, which section 2.6 needs, and the teaching formats, which the teachability argument of section 5.4 rests on. A project that supports no claim of the paper has no card. Three exclusion notes of the earlier curation were checked on 2026-07-26 and did not hold: vetmed-wissensbilanz and wiiw-patent-analysis-demo are public repositories with working demos, and sugw is the paper's Medieval Legal Transactions and publicly video-documented, so all three entered the gallery. The Aldersbach monastic accounts stay although the paper dropped the case as too old, because the genealogy is what they carry (operator decision 2026-07-25). Outside the gallery stays the agentic edition pipeline, which is meta-tooling and a template rather than a single research artefact.",
     "schema": {
       "id": "anchor slug, forming the site anchor together with #case- (e.g. herdata -> #case-herdata)",
       "name": "display name",
@@ -316,7 +316,7 @@
         "edition"
       ],
       "repo_url": null,
-      "demo_url": null,
+      "demo_url": "https://chpollin.github.io/zbz-ocr-tei/",
       "video_url": null,
       "insight": "Full pipeline infrastructure with one verification interface per stage",
       "deep_page": true,
@@ -390,7 +390,7 @@
       ],
       "repo_url": null,
       "demo_url": null,
-      "video_url": "https://youtu.be/8sUe4Jkh3uQ",
+      "video_url": "https://youtu.be/hd_a-NBO_S4",
       "insight": "Teaching baseline (full process on video)",
       "deep_page": false,
       "paper_row": null

@@ -120,5 +120,5 @@ This repository knowledge base is a self-application of the method. The vault te
 
 ## Related
 
-- External convention: dhcraft.org/Promptotyping/#konvention
+- External convention: dhcraft.org/Promptotyping/#konvention-v0.1
 - Vault substrate: the Pollin 2026 paper, the vault template catalogue, the vault convention

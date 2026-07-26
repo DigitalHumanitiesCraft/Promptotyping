@@ -7,109 +7,22 @@ machine-url: https://dhcraft.org/Promptotyping/_content/MANIFEST.md
 
 # MANIFEST
 
-Inventar der Inhalts-Substrate, die am 2026-06-10 aus dem Obsidian-Vault (`C:/Users/Chrisi/Documents/obsidian`, nur gelesen) in dieses Repo gespiegelt wurden. Geschrieben wurde ausschliesslich unter `_content/` und `data/`. Inhaltssprache deutsch mit englischen Fachbegriffen; Original-Prompts und Vorlagen-Texte unveraendert.
+Provenienz der Spiegelung. Die Inhalte unter `_content/` und `data/` stammen teils aus dem Obsidian-Vault (`C:/Users/Chrisi/Documents/obsidian`, nur gelesen), teils sind sie im Repo entstanden. Dieses Dokument hält fest, nach welchen Regeln gespiegelt wird und auf welcher Seite die Source of Truth liegt.
 
-## Vorlagen (Promptotyping Documents)
+Welche Datei welche Vault-Quelle hat und wann sie zuerst gespiegelt wurde, steht im Frontmatter der Datei selbst, in den Feldern `source` und `mirrored`. Die Versionsstände der Vorlagen führt `data/promptotyping-documents.json`, den Verlauf der Spiegelungssitzungen `knowledge/journal.md`. Dieses Dokument wiederholt beides nicht.
 
-Die Vorlagen sind nach `_content/promptotyping-document/{slug}.md` gespiegelt. Quelle jeweils im Vault unter `Vault Operations/Templates/Promptotyping/`. Wikilinks wurden auf Site-Hash-Anker bzw. kurze Inline-Erklaerungen aufgeloest; Wikilinks innerhalb von Vorlagen-eigenen Frontmatter- und Beispielbloecken bleiben als verbatim Vorlagentext erhalten (sie illustrieren die Schreibweise eines Repos, sind keine Navigationslinks).
+## Spiegelungsregeln
 
-Nachtrag 2026-07-19 (Vault-Vorlagen-Sweep): Sechs weitere Vorlagen gespiegelt und verankert (Testing, Plan, Report, Domaenenwissen, Verification, Integration), die Funktionsnamen auf das englische Vokabular gezogen (Navigation, Charter, Material, Specification, Architecture, Domain Knowledge, Design, Quality Assurance, Provenance, Planning, Reporting, Agent Instructions, Verification, Integration; Vorlagen-NAMEN bleiben deutsch, sie sind Identifikatoren), die Versionsstaende der bestehenden Spiegel nachgezogen und die Entwurfs-Kennzeichnung des Action-Layers entfernt (freigegeben). Der Domaenenwissen-Slug ist `domain-knowledge`, wie im `template:`-Feld der Vault-Vorlage festgelegt (englischer Slug, ADR-3).
+- Vault-interne Wikilinks werden beim Spiegeln auf Site-Anker oder kurze Inline-Erklärungen aufgelöst. Innerhalb der Frontmatter- und Beispielblöcke einer Vorlage bleiben Wikilinks verbatim erhalten; sie illustrieren die Schreibweise eines Repos und sind keine Navigationslinks.
+- Original-Prompts und Vorlagentexte werden unverändert übernommen.
+- `mirrored` hält die Erstspiegelung fest und wird bei einem Sweep nicht fortgeschrieben. Eine Vorlage, deren Version über den Stand ihrer Erstspiegelung hinausgewachsen ist, driftet deshalb nicht.
 
-| Datei | Vault-Quelle | Version |
-|---|---|---|
-| `promptotyping-document/index.md` | Vorlage Index | 0.2 |
-| `promptotyping-document/project.md` | Vorlage Projekt-Wissensdokument | 0.2 |
-| `promptotyping-document/data.md` | Vorlage Datengrundlage | 0.2 |
-| `promptotyping-document/specification.md` | Vorlage Specification | 0.3 |
-| `promptotyping-document/user-stories.md` | Vorlage User Stories | 0.2 |
-| `promptotyping-document/action-layer.md` | Vorlage Action-Layer | 0.2 |
-| `promptotyping-document/architecture.md` | Vorlage Architecture | 0.3 |
-| `promptotyping-document/domain-knowledge.md` | Vorlage Domaenenwissen | 0.2 |
-| `promptotyping-document/design.md` | Vorlage Design | 0.2 |
-| `promptotyping-document/testing.md` | Vorlage Testing | 0.2 |
-| `promptotyping-document/verification.md` | Vorlage Verification | 0.1 |
-| `promptotyping-document/journal.md` | Vorlage Journal | 0.2 |
-| `promptotyping-document/plan.md` | Vorlage Plan | 0.2 |
-| `promptotyping-document/report.md` | Vorlage Report | 0.2 |
-| `promptotyping-document/integration.md` | Vorlage Integration | 0.1 |
+## Wo die Source of Truth liegt
 
-Jede Datei traegt im Frontmatter `title, slug, version, status, source, mirrored, machine-url`. Das Feld `mirrored` haelt die Erstspiegelung fest und wird bei einem Sweep nicht fortgeschrieben; welche Datei wann nachgezogen wurde, steht in den Nachtraegen dieses Dokuments und die erreichte Fassung in der Versionsspalte.
+**Vault-Spiegel.** Die Vorlagen unter `_content/promptotyping-document/` mit Ausnahme von `technology.md`, dazu `konvention.md` und `praxis.md`.
 
-Nachtrag 2026-07-26: `promptotyping-document/technology.md` (Vorlage Technology, v0.1) ist in den Katalog aufgenommen und im Repo kanonisch. Die Datei hat kein Vault-Original, fuehrt deshalb kein `source`- und kein `mirrored`-Feld und steht in der Tabelle oben nicht; sie ist die sechzehnte Vorlage. Verdrahtet in `data/promptotyping-documents.json`, in den drei Tabellen von `konvention.md` und in der Slug-Liste der `CLAUDE.md`. Der Dokumenttyp ist bei der Aufnahme von Declarative auf Action korrigiert, weil der Papertext die Technology Baseline in Abschnitt 3.3 unter den Action Documents fuehrt. Der Vault zieht in einer eigenen Sitzung nach.
+**Aus dem Vault hervorgegangen, seit dem 2026-07-26 repo-kanonisch.** Die Tiefenseiten unter `_content/case-studies/` gehen auf die Vault-Case-Studies unter `Projects/Promptotyping/Case Studies/` zurück, soweit dort eine gleichnamige Case Study liegt. Sie sind englisch und auf die Bauart nach A7 neu geschrieben und führen seither weder `source` noch `mirrored`, weil ein Spiegeldatum für einen neu geschriebenen Text falsch wäre.
 
-Zusaetzlich traegt `technology-baseline.md` (repo-kanonisch, status draft) die Technology Baseline fuer die Artefaktfamilie der statischen Web-Tools, die operative Langform der technischen Guidelines aus dem Methodenpaper (Sektion 4.1). Sie ist das ausgefuellte Dokument zur Vorlage und ueber den Block Maschinenzugriff der Vorlagen-Seite erreichbar.
+**Repo-kanonisch.** `promptotyping-document/technology.md` hat kein Vault-Original und führt deshalb weder `source` noch `mirrored`; der Vault zieht in einer eigenen Sitzung nach. `technology-baseline.md` ist das dazu ausgefüllte Dokument, die operative Langform der technischen Guidelines aus Sektion 4.1 des Methodenpapers. `skills/coding.md` und `skills/writing.md` sind seit dem 2026-07-20 repo-kanonisch, zuvor waren sie Vault-Spiegel. `arbeitsumgebung.md` und `skills/index.md` sind bei der Spiegelung im Repo neu formuliert worden und haben kein Vault-Original.
 
-## Konvention
-
-| Datei | Vault-Quelle | Version |
-|---|---|---|
-| `konvention.md` | Konvention Promptotyping Documents | 0.2 |
-
-Mit Site-Ergaenzung "Anmerkung der Site (2026-06-10)" zur Maschinen- vs. Menschen-Abrufform der Vorlagen. Dieser Abschnitt ist Site-Ergaenzung, nicht Teil der Vault-Konvention v0.1.
-
-Die Repo-Fassung ist seit dem 2026-07-26 in zwei Punkten dem Vault voraus. Sie fuehrt den Sechser-Pflichtkern samt Provenienz-Sektion und DCMI-Anschluss, und sie ist englisch, waehrend das Vault-Original deutsch ist. Beides ist eine bewusste repo-first-Ausfuehrung und in `knowledge/journal.md` benannt; der Nachzug gehoert in eine echte Vault-Sitzung. Dasselbe gilt fuer `praxis.md` gegen die Sektion Methodenerweiterungen des Promptotyping MOC.
-
-## Glossar
-
-| Datei | Quelle |
-|---|---|
-| `glossar.md` | data/glossar.json (erzeugte lesbare Form) |
-| `data/glossar.json` | knowledge/paper.md, knowledge/INDEX.md, knowledge/specification.md, Konvention Promptotyping Documents, Vault-Konzeptdokumente |
-
-42 Eintraege (Anforderung A6: mindestens 30). `.md` und `.json` inhaltsgleich gehalten; die JSON ist die massgebliche Datenquelle.
-
-## Case Studies
-
-| Datei | Quelle |
-|---|---|
-| `data/case-studies.json` | Vault Case Studies, MOC-Use-Case-Tabellen, paper/04-projects.md |
-
-17 kuratierte Eintraege, Version 0.3. Klassifiziert nach der Use-Case-Typologie (Pollin 2026, Abschnitt 4.3); das interne Genre-Vokabular erscheint nicht.
-
-Sieben Tiefenseiten unter `_content/case-studies/{id}.md`, je aus der zugehoerigen Vault-Case-Study destilliert (Kontext und Forschungsfrage, Daten, Vorgehen, methodischer Beitrag, Links):
-
-| Datei | Vault-Quelle |
-|---|---|
-| `case-studies/herdata.md` | Case Studies/herdata.md |
-| `case-studies/klawiter-rescue.md` | Case Studies/klawiter-rescue.md |
-| `case-studies/zbz-ocr-tei.md` | Case Studies/zbz-ocr-tei.md |
-| `case-studies/m3gim.md` | Case Studies/m3gim.md |
-| `case-studies/notker-edition.md` | Case Studies/notker-edition.md |
-| `case-studies/corresp-explorer.md` | Case Studies/corresp-explorer.md |
-| `case-studies/coocr-htr.md` | Case Studies/coocr-htr.md |
-
-## Praxis und Skills
-
-| Datei | Vault-Quelle |
-|---|---|
-| `praxis.md` | Promptotyping MOC, Sektion Methodenerweiterungen |
-| `arbeitsumgebung.md` | neu formuliert (Obsidian-Vault als Wissensumgebung, Promptotyping Agent Interface, AI Harness und Skills) |
-| `skills/index.md` | neu formuliert (Action-Layer-Praxis), verweist auf coding/writing und Vorlage Action-Layer |
-| `skills/coding.md` | kanonisch im Repo (2026-07-20 aus dem Vault uebernommen und optimiert; frueher Vault-Spiegelung) |
-| `skills/writing.md` | kanonisch im Repo (2026-07-20 aus dem Vault uebernommen und optimiert; frueher Vault-Spiegelung) |
-
-## Kuratierung: ausgeschlossene Case Studies
-
-Neun Faelle sind bewusst nicht in der Galerie. Kuratierungskriterien sind fehlende Kundenfreigabe, Vermittlungsformat statt Forschungsartefakt und, seit dem 2026-07-26, die bewusste Nichtfuehrung im Papertext. Sie erscheinen nirgends als Galerie-Eintrag, Link-Ziel `#case-{id}` oder Tiefenseite.
-
-| Ausgeschlossen | Kriterium |
-|---|---|
-| vetmedai-wissensbilanz | fehlende Kundenfreigabe |
-| agentic-edition-pipeline | Meta-Tooling/Template, kein Einzel-Forschungsartefakt fuer die Galerie |
-| wiiw-patent-analysis | fehlende Kundenfreigabe |
-| wiiw-figaro-subagents | fehlende Kundenfreigabe |
-| sugw | fehlende Kundenfreigabe |
-| vault-kuration-screencast | Vermittlungsformat (Screencast) |
-| wissensorganisation-nano-banana | Vermittlungsformat (Screencast) |
-| wissens-projektmanagement-obsidian-claude-code-screencast | Vermittlungsformat (Screencast) |
-| diged-neolat (Lucina Digital Edition) | im Papertext bewusst nicht gefuehrt, aus der Galerie entfernt 2026-07-26 |
-
-Die Herkunftsfaelle wiiw-figaro, vault-kuration und sugw treten in `praxis.md` als Methoden-Herkunftsfaelle auf, dort als Projektname im Fliesstext ohne Galerie-Link.
-
-## Luecken und offene Punkte
-
-- Ohne `demo_url`: teicrafter, coocr-htr, kulturpool-explorer, zbz-ocr-tei, austrian-university-dashboard. Diese fuenf haben in den Quellen keine hinterlegte Live-Demo (teiCrafter und coocr-htr nur Repo/Video, zbz-ocr-tei intern, kulturpool nur Video, austrian-university-dashboard nur Video).
-- Ohne `repo_url`: austrian-university-dashboard (im Paper ohne Repository-Eintrag gefuehrt).
-- Mit `video_url`: coocr-htr, kulturpool-explorer, klawiter-rescue, austrian-university-dashboard. Alle uebrigen ohne in den Quellen belegtes Video.
-- `insight: null`: szd-htr (nicht Teil der Paper-Tabelle 4.1, daher kein dort formulierter methodischer Beitrag). Alle uebrigen tragen einen Beitrag aus Tabelle 4.1.
-- Use-Case-Zuordnung szd und stained-glass als data-modelling-capture folgt Paper 4.3 (CVMA und SZD als fruehe Instanzen der Datenmodellierung und Erfassung), waehrend die Interface-Type-Spalte "Capture" lautet; die Galerie trennt useCase (Ort im Datenlebenszyklus) von interfaceTypes (epistemische Funktion). Diese Trennung ist die einzige nicht-triviale Zuordnungsentscheidung.
+**Repo dem Vault voraus.** `konvention.md` führt seit dem 2026-07-26 den Sechser-Pflichtkern samt Provenienz-Sektion und DCMI-Anschluss und ist englisch, während das Vault-Original deutsch ist; dasselbe gilt für `praxis.md` gegen die Sektion Methodenerweiterungen des Promptotyping MOC. Beides ist bewusste repo-first-Ausführung, der Nachzug gehört in eine Vault-Sitzung. Der Abschnitt „Anmerkung der Site" in `konvention.md` ist Site-Ergänzung und nicht Teil der Vault-Konvention.
