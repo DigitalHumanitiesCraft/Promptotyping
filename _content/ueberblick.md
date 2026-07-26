@@ -16,7 +16,7 @@ Specification of an iterative context-engineering method in four phases for turn
 | | |
 |---|---|
 | Version | 0.2 |
-| Last changed | 2026-07-26 |
+| Last changed | 26 July 2026 |
 | Canonical address | `https://dhcraft.org/Promptotyping/` |
 | Machine address | `_content/ueberblick.md` |
 | Rationale and evidence | [Paper](#paper) |

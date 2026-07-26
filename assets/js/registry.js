@@ -195,7 +195,7 @@
           ? "normative, part of the specification"
           : "informative"],
         ["Version", fm.version || null],
-        ["Updated", fm.updated || fm.mirrored || null]
+        ["Updated", A.formatDate(fm.updated || fm.mirrored || null)]
       ];
       var html = fields.filter(function (f) { return f[1]; }).map(function (f) {
         return '<span class="page-status-item"><span class="page-status-key">' +
@@ -419,7 +419,7 @@
     var version = document.getElementById("footer-version");
     var updated = document.getElementById("footer-updated");
     if (version && fm.version) { version.textContent = "Version " + fm.version; }
-    if (updated && fm.updated) { updated.textContent = "Updated " + fm.updated; }
+    if (updated && fm.updated) { updated.textContent = "Updated " + A.formatDate(fm.updated); }
   }
 
   A.addPageStatusLines = addPageStatusLines;

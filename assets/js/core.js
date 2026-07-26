@@ -156,12 +156,31 @@
     return suppressHashChange;
   }
 
+  /* ISO dates are how the frontmatter stores a date and how a machine reads it.
+     A reader gets it spelled out. Anything that is not a plain ISO date passes
+     through untouched, so a range or a note is never mangled. */
+  var MONTHS = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"];
+
+  function formatDate(value) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(value || "").trim());
+    if (!m) {
+      return value;
+    }
+    var month = MONTHS[parseInt(m[2], 10) - 1];
+    if (!month) {
+      return value;
+    }
+    return parseInt(m[3], 10) + " " + month + " " + m[1];
+  }
+
   /* Frontmatter of the rendered content pages, keyed by page id. Written by
      renderMarkdownInto, read by the page status line. */
   A.pageFrontmatter = {};
 
   A.escapeHtml = escapeHtml;
   A.slugify = slugify;
+  A.formatDate = formatDate;
   A.fetchMarkdown = fetchMarkdown;
   A.fetchJson = fetchJson;
   A.showLoadError = showLoadError;

@@ -1642,7 +1642,7 @@ a:hover {
 /* The tree carries the numbered specification under a heading and every other
    page as a flat list; the gap is what keeps the two from reading as one list
    in which five entries happen to be numbered. */
-.docs-nav-rest {
+.docs-nav ul.docs-nav-rest {
   margin-top: var(--space-6);
 }
 
