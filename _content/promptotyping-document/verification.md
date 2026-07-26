@@ -40,6 +40,8 @@ Pflichtkern der Konvention (`title`, `project`, `method`, `status`, `created`, `
 - `scope:` was geprüft wird, aus `empirical-claims`, `novelty-claims`, `conformance`, `provenance`, `quality` (mehrere Werte möglich).
 - `prüfstand:` Pfad oder Bezeichnung der Referenzquelle, gegen die geprüft wird (Rohdaten-Ordner, Volltexte, Ground Truth).
 - `verdict-vocabulary:` Verweis auf die Sektion, die das Vokabular definiert, oder Kurzform (`fünfstufig`, `dreistufig`).
+- `output-of:` trägt den Befehl, der das Dokument erzeugt, und wird gesetzt, sobald ein Prüfskript den Befund aus den Prüfläufen rendert. Steht das Feld, wird das Dokument nicht von Hand bearbeitet und eine Korrektur geht an das Skript. Bleibt die Prosa des Dokuments menschlich verantwortet und nur das Befundregister maschinell gefüllt, wandert das Register in eine eigene Datei und das Feld steht dort.
+- `authors:` trägt ausschließlich Menschen, auch wenn ein LLM den Text erzeugt hat; `generated-with:` nennt Harness und LLM im Format `Harness (LLM)`, etwa `Claude Code (Claude Opus 5)`. Zu allen drei Feldern siehe Sektion *Provenienz im Frontmatter* der [Konvention Promptotyping Documents](#konvention-v0.1).
 - `related:` typischerweise `data`, `journal`, `report`, `testing`.
 
 ## Abschnitte im Detail

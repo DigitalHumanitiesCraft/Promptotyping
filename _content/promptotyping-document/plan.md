@@ -48,7 +48,7 @@ Das Dokument folgt dem reduzierten Pflichtkern aus der [Konvention Promptotyping
 - `topics:` entfällt typischerweise. Der Plan ist Process-Dokument und trägt keine domänen-thematische Verortung; die thematischen Topics leben in den Knowledge-Geschwistern.
 - `knowledge-sources:` entfällt; der Plan trägt keine externen Anschlüsse.
 - `updated:` wird bei jedem Abschluss eines Milestones aktualisiert; das Feld ist neben dem Journal eines der am häufigsten geänderten in der Wissensbasis.
-- Empfohlen zusätzlich `language`, `version` (repo-weit konsistent), `authors` und `generated-with`, falls das Dokument LLM-gestützt entstanden ist.
+- Empfohlen zusätzlich `language`, `version` (repo-weit konsistent), `authors` und `generated-with`, falls das Dokument LLM-gestützt entstanden ist. `authors` trägt ausschließlich Menschen, `generated-with` das Format `Harness (LLM)`, etwa `Claude Code (Claude Opus 5)`. Siehe Sektion *Provenienz im Frontmatter* der Konvention.
 
 ## Abschnitte im Detail
 

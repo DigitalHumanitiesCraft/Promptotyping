@@ -37,7 +37,7 @@ Drittens benennt es die Grenzen der Artefaktfamilie. Wo das Format endet (Datenv
 
 ## Frontmatter-Schema
 
-Das Dokument folgt dem reduzierten Frontmatter-Pflichtkern aus der [Konvention Promptotyping Documents](#konvention-v0.1); `title`, `status`, `created`, `updated`. Da die Baseline projektübergreifend gilt, entfällt der `project:`-Block oder benennt das tragende Methodik-Repo. Empfohlen sind `language`, `version`, `authors` beziehungsweise `generated-with` und `machine-url`, weil die Baseline gerade für maschinelle Abrufung gebaut ist.
+Das Dokument folgt dem reduzierten Frontmatter-Pflichtkern aus der [Konvention Promptotyping Documents](#konvention-v0.1); `title`, `status`, `created`, `updated`. Da die Baseline projektübergreifend gilt, entfällt der `project:`-Block oder benennt das tragende Methodik-Repo. Empfohlen sind `language`, `version`, `authors` beziehungsweise `generated-with` und `machine-url`, weil die Baseline gerade für maschinelle Abrufung gebaut ist. `authors` trägt ausschließlich Menschen, auch wenn ein LLM den Text erzeugt hat; `generated-with` nennt Harness und LLM im Format `Harness (LLM)`, etwa `Claude Code (Claude Opus 5)`. Siehe Sektion *Provenienz im Frontmatter* der Konvention.
 
 ## Abschnitte im Detail
 

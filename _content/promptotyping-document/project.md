@@ -63,7 +63,7 @@ Identifikation. `title` als menschenlesbarer Titel; `project` als verschachtelte
 
 Status und Versionierung. `status` mit Werten wie `active`, `draft`, `archived`; `language` als Sprachcode; `version` als Versionsnummer; `created` und `updated` als Datumswerte im Format `YYYY-MM-DD`.
 
-Verantwortung. `authors` als Liste; `generated-with` als Werkzeugangabe, falls das Dokument LLM-gestützt entstanden ist.
+Verantwortung. `authors` als Liste, die ausschließlich Menschen trägt, auch wenn ein LLM den Text erzeugt hat; `generated-with` als Werkzeugangabe im Format `Harness (LLM)`, etwa `Claude Code (Claude Opus 5)`, falls das Dokument LLM-gestützt entstanden ist. Siehe Sektion *Provenienz im Frontmatter* der [Konvention Promptotyping Documents](#konvention-v0.1).
 
 Methodologie. `method` als verschachteltes Feld mit `name` und `url`, das die methodologische Rahmung benennt.
 

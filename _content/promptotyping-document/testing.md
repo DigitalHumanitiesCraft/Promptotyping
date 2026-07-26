@@ -44,7 +44,7 @@ Das Dokument folgt dem reduzierten Pflichtkern der aktuellen Konvention (Stand 2
 - `status:` meint die Dokument-Maturity (`idea`, `draft`, `stub`, `complete`, `reviewed`, `archived`; seit 2026-07-19 auch `active` für fortlaufende Prozessdokumente und `snapshot` für Stichtagsdokumente), nicht den operativen Projektstatus. Ein Testing-Dokument mit gepflegtem Stand-Block kann `snapshot`-Semantik tragen; maßgeblich ist das Vokabular der Konvention.
 - `topics:` typisch sind `[[Software Testing]]`, `[[Regression]]`, `[[Test-Driven Development]]`, `[[Data Validation]]`, `[[Evaluation]]`. Bei Editions- und OCR-Projekten zusätzlich domänennahe Topics wie `[[TEI XML]]`. Sie verorten den Agenten in den Wissensfeldern, in denen Teststrategie reasoning braucht.
 - `version:` repo-weit konsistent, gemeinsam mit den Geschwister-Dokumenten erhöht.
-- `authors:` plus `generated-with:`, falls LLM-gestützt entstanden.
+- `authors:` trägt ausschließlich Menschen, auch wenn ein LLM den Text erzeugt hat; `generated-with:` daneben im Format `Harness (LLM)`, etwa `Claude Code (Claude Opus 5)`, falls LLM-gestützt entstanden. Siehe Sektion *Provenienz im Frontmatter* der Konvention.
 - `related:` typischerweise `architecture`, `specification`, `data`; die Dokumente, gegen die die Tests messen.
 
 ## Abschnitte im Detail

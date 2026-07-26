@@ -19,7 +19,9 @@ updated: 2026-07-26
 
 Alles, was in Site, Paper und Konvention noch nicht entschieden oder noch nicht ausgeführt ist, ausgearbeitet bis zu dem Punkt, an dem eine Zustimmung genügt. Jeder Eintrag trägt Sachstand mit Beleg, Optionen, Empfehlung und die konkrete Umsetzung.
 
-Die Einträge zerfallen in drei Klassen. Teil A führt, was bereits entschieden ist und nur nicht ausgeführt wurde; dort ist keine neue Entscheidung nötig, sondern eine Reihenfolge. Teil B führt die offenen Punkte an der Site. Teil C führt Paper und Einreichung.
+Die Einträge zerfallen in drei Klassen. Teil A führt, was bereits entschieden und noch nicht oder nur teilweise ausgeführt ist; dort ist keine neue Entscheidung nötig, sondern eine Reihenfolge. Teil B führt die offenen Punkte an der Site. Teil C führt Paper und Einreichung.
+
+Ein ausgeführter Eintrag bleibt mit seiner Begründung stehen und trägt den Ausführungsvermerk im Titel, damit die Entscheidung nachlesbar bleibt, wenn jemand später fragt, warum die Sache so und nicht anders liegt.
 
 Steuerdokumente bleiben [plan-site.md](plan-site.md) für die Site und [paper-writing.md](paper-writing.md) für das Paper. Dieses Dokument sammelt, was dort verstreut als offen vermerkt ist, und arbeitet es aus.
 
@@ -37,23 +39,27 @@ Ausgeführt ist davon nichts. Die `CLAUDE.md` trägt weiterhin die gegenteilige 
 
 1. Die publizierten Anker sind deutsch (`#ueberblick`, `#vorlagen`, `#konvention-v0.1`, `#arbeitsumgebung`). Sie dürfen laut `CLAUDE.md` nicht ohne Diskussion umbenannt werden, weil fremde Repos sie als `template:`-URI führen. Empfehlung: Anker bleiben deutsch, Beschriftungen werden englisch. Ein Anker ist ein Identifikator und kein Text; die Vorlagen-Slugs sind aus demselben Grund bereits englisch, während die Vorlagennamen deutsch geblieben sind. Der Preis ist eine sichtbare Inkonsistenz zwischen Adresse und Beschriftung, der Gewinn ist, dass keine publizierte Adresse bricht.
 2. Das Unterrichtsmaterial soll deutsch bleiben und „als solches ausgewiesen" werden. Auf der Site gibt es heute keine Seite, die Unterrichtsmaterial führt. Empfehlung: den Punkt zurückstellen, bis es eine solche Seite gibt, und ihn nicht vorsorglich bauen.
-3. Die Konvention ist ein Vault-Spiegel. Eine englische Fassung im Repo, während der Vault deutsch bleibt, ist genau die stillschweigende Divergenz, die die `CLAUDE.md` verbietet. Empfehlung: die Konvention wird zuletzt übersetzt, gemeinsam mit dem Vault-Original in einer echten Vault-Sitzung.
+3. Die Konvention ist ein Vault-Spiegel. Eine englische Fassung im Repo, während der Vault deutsch bleibt, ist genau die stillschweigende Divergenz, die die `CLAUDE.md` verbietet. Empfehlung: die Konvention wird zuletzt übersetzt, gemeinsam mit dem Vault-Original in einer echten Vault-Sitzung. Seit dem 2026-07-26 divergieren Repo-Spiegel und Vault-Original ohnehin schon inhaltlich (A2), sodass die Vault-Sitzung beide Nachzüge in einem Durchgang erledigt.
 
 **Empfehlung zur Reihenfolge.** Zuerst die `CLAUDE.md`-Regel auf die Entscheidung ziehen, damit der Widerspruch nicht weiterwirkt. Dann die Shell, also Register, Gruppen, Statuszeile, Bedienelemente, weil das wenig Text und viel sichtbare Wirkung ist. Dann die fünf eigenständig geschriebenen Seiten Einstieg, Anwendung, Artefakt, Verifikation und Beispiel-Workflow, deren Quelle der englische Papertext ohnehin ist. Dann die Datendateien. Zuletzt die Vault-Spiegel Konvention, Praxis und Arbeitsumgebung in einer Vault-Sitzung.
 
-### A2. Der Pflichtkern der Konvention geht auf sechs Felder
+### A2. Der Pflichtkern der Konvention geht auf sechs Felder — ausgeführt 2026-07-26, Vault-Nachzug offen
 
 **Sachstand.** Der Operator hat am 2026-07-25 entschieden, dass der Pflichtkern von acht auf sechs Felder geht und das Statusvokabular über alle fünfzehn Fülltemplates vereinheitlicht wird (journal.md, „Konvention auf den Paperstand"). Der Papertext führt die sechs bereits namentlich, in Abschnitt 3.3: `title`, `project`, `method`, `status`, `created`, `updated`. Die Begründung steht dort ebenfalls, eine Erhebung der realen Wissensbasen fand kein einziges Repositorium, das den Achter-Kern vollständig erfüllt, und eine Anforderung, die die Praxis stillschweigend übergeht, dokumentiert nichts.
 
-`_content/konvention.md` führt weiterhin acht. Die beiden Felder, die fallen, sind damit `template` und `zweck`.
+Die beiden Felder, die fallen, sind `template` und `zweck`.
 
-**Was daran noch zu entscheiden ist.** Der Wegfall von `template` aus dem Pflichtkern ist nicht folgenlos. Das ganze Adressierungskonzept der Site hängt an diesem Feld, ADR-3, der Frontmatter-Inspector und die Maschinenadresse nach ADR-10. Ein Repo ohne `template:` ist für den Inspector unsichtbar. Der Papertext selbst sagt im selben Absatz, eine Wissensbasis erkläre ihre Methode über dieses Feld.
+**Die Begründung für den Verbleib von `template` in der empfohlenen Schicht.** Der Wegfall von `template` aus dem Pflichtkern ist nicht folgenlos. Das ganze Adressierungskonzept der Site hängt an diesem Feld, ADR-3, der Frontmatter-Inspector und die Maschinenadresse nach ADR-10. Ein Repo ohne `template:` ist für den Inspector unsichtbar. Der Papertext selbst sagt im selben Absatz, eine Wissensbasis erkläre ihre Methode über dieses Feld.
 
-Empfehlung: `template` fällt aus dem Pflichtkern und steht an die Spitze der empfohlenen Schicht, mit einem Satz, der die Folge benennt. Wer das Feld führt, ist über den Inspector adressierbar und maschinell anschließbar; wer es weglässt, verliert diese Eigenschaft und sonst nichts. Damit bleibt die Erhebung respektiert, ohne dass die Adressierbarkeit unbegründet als Beiwerk erscheint. `zweck` fällt ersatzlos, weil sein Inhalt in der Praxis im ersten Absatz des Dokuments steht.
+Deshalb fällt `template` aus dem Pflichtkern und steht an der Spitze der empfohlenen Schicht, mit einem Satz, der die Folge benennt. Wer das Feld führt, ist über den Inspector adressierbar und maschinell anschließbar; wer es weglässt, verliert diese Eigenschaft und sonst nichts. Damit bleibt die Erhebung respektiert, ohne dass die Adressierbarkeit unbegründet als Beiwerk erscheint. `zweck` fällt ersatzlos, weil sein Inhalt in der Praxis im ersten Absatz des Dokuments steht.
 
-**Umsetzung.** Im Vault-Original der Konvention die Pflichtkern-Tabelle auf sechs Zeilen kürzen, `template` als erste Zeile der empfohlenen Tabelle mit dem Folgesatz aufnehmen, `zweck` streichen. Dann ins Repo spiegeln. Vault-first, also eine echte Vault-Sitzung. Danach die fünfzehn Fülltemplates auf das vereinheitlichte Statusvokabular ziehen, ebenfalls vault-first.
+**Ausgeführt am 2026-07-26, repo-first.** `_content/konvention.md` führt die Pflichtkern-Tabelle mit sechs Zeilen, `template` als erste Zeile der empfohlenen Tabelle mit dem Folgesatz zur Inspector-Adressierbarkeit, und einen Satz, der den Zweck des Dokuments auf den ersten Absatz unter der H1 legt. `zweck` kommt in der Datei nicht mehr vor. Die Prüffragen der Konvention nennen den Sechser-Kern. Neu dazugekommen sind in derselben Runde die Sektion zur Provenienz im Frontmatter (`authors` nur für Menschen, `generated-with` im Format `Harness (LLM)`, `output-of` für den erzeugenden Befehl) und der Anschluss der Feldnamen an DCMI Metadata Terms.
 
-**Prüfstelle nach der Ausführung.** Die sechs Wissensdokumente dieses Repos führen `template:` selbst und demonstrieren die Methode an sich selbst (Akzeptanzkriterium A12). Sie behalten das Feld, es ist dann empfohlen und nicht mehr verlangt.
+Der Sweep über die fünfzehn Fülltemplates entfiel, weil sie den Sechser-Kern bereits korrekt führten. Entfernt wurden stattdessen zwölf historische Rückbezüge auf das entfallene `zweck:`-Feld aus drei Vorlagen. Der Papertext ist in 3.3 mitgezogen, weil er den Sechser-Kern als das führte, was die Praxis trägt; die zweite Erhebung fand ihn in etwa der Hälfte der Dokumente erfüllt, und der Text sagt das jetzt.
+
+**Offen bleibt der Vault-Nachzug.** Konvention und Fülltemplates sind Vault-Spiegel, und der Schreibschutz-Hook blockt eine Repo-Sitzung an den Vault-Originalen. Repo und Vault divergieren damit bis auf Weiteres, was die `CLAUDE.md` nur deshalb nicht verletzt, weil die Divergenz hier benannt ist. Der Nachzug gehört in eine echte Vault-Sitzung, gemeinsam mit der englischen Fassung nach A1, weil beide dieselben Dateien anfassen.
+
+**Prüfstelle nach dem Nachzug.** Die sechs Wissensdokumente dieses Repos führen `template:` selbst und demonstrieren die Methode an sich selbst (Akzeptanzkriterium A12). Sie behalten das Feld, es ist jetzt empfohlen und nicht mehr verlangt.
 
 ## Teil B. Offen an der Site
 
@@ -111,9 +117,9 @@ Meine Entwürfe sind ersatzlos gestrichen. Sie waren enger an der Formulierung d
 
 **Empfehlung.** Ausführen, aber mit einer Grenze, die die Regel selbst nicht zieht. Eine Fußnote pro Werkzeug lohnt dort, wo das Werkzeug für die Leserschaft der Zeitschrift nicht selbsterklärend ist. Für in den Digital Humanities eingeführte Werkzeuge genügt der Name. Die Auswahl lege ich vor, bevor ich sie setze, weil eine Fußnote zu viel den Apparat aufbläht und eine zu wenig gegen die eigene Regel verstößt.
 
-### C5. Die sieben zurückgestellten Punkte aus dem Forschungsbericht
+### C5. Die sechs zurückgestellten Punkte aus dem Forschungsbericht
 
-`knowledge/report.md` führt sie seit dem 2026-07-23. Sachstand und Empfehlung je Punkt.
+`knowledge/report.md` führt sie seit dem 2026-07-23 unter „Operator-Entscheidungen", dort als Liste von eins bis sechs. Eine frühere Fassung dieses Eintrags sprach von sieben; die Zahl ist gegen die Quelle geprüft und korrigiert. Sachstand und Empfehlung je Punkt.
 
 1. **Abnahme der Feinschliff-Kandidaten 1–16.** Weitgehend erledigt, eingearbeitet sind alle bis auf den als optional geführten Bayerschmidt-Vorschlag und die Formalia von Punkt 16. Empfehlung: den Punkt schließen und die beiden Reste einzeln entscheiden.
 2. **Review-Modus ZfdG, geschlossen oder offen öffentlich.** Reine Operator-Entscheidung ohne Vorarbeit meinerseits. Empfehlung: offen öffentlich, weil der Beitrag Nachvollziehbarkeit zum Thema hat und ein offenes Review dazu passt.
@@ -130,9 +136,9 @@ Dann B1, weil es die Startseite fertig macht und keine andere Entscheidung berü
 
 Dann C3 und C4, weil sie den Papertext einreichfähig machen und ohne Operator-Input laufen, mit Ausnahme der Werkzeugauswahl.
 
-Dann eine echte Vault-Sitzung für A2 und B3, die beide dort hängen.
+Dann eine echte Vault-Sitzung, die drei Dinge in einem Durchgang erledigt, den Nachzug der Konvention und der drei geänderten Fülltemplates nach A2, die Aufnahme der Vorlage `technology` nach B3 und die englische Fassung der Vault-Spiegel nach A1.
 
-Dann der Sprachdurchgang der Site nach A1 in der dort genannten Ordnung.
+Dann der Sprachdurchgang der übrigen Site nach A1 in der dort genannten Ordnung.
 
 C1 und C2 sind erledigt; vor der Einreichung ist allein zu prüfen, ob eine spätere Änderung am Papertext die Abstracts einholt.
 
