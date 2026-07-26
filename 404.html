@@ -25,7 +25,10 @@
     // Subpath-to-hash routing. GitHub Pages serves 404.html for any path that
     // is not a real file. This file maps the requested subpath onto the
     // canonical hash anchor and hands over to index.html, so the shell exists
-    // exactly once and cannot drift. Mirrors resolveTemplateUrl in app.js.
+    // exactly once and cannot drift. The same address set is resolved a second
+    // time by resolveTemplateUrl in assets/js/registry.js for the inspector;
+    // that side derives its vocabulary from the page registry, this one states
+    // it, because the shell script is not loaded here.
     (function () {
       // Preserve a snapshot suffix (e.g. v0.1) so
       // /promptotyping-document/data#v0.1 stays addressable.

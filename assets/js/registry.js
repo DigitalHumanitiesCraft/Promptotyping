@@ -48,22 +48,47 @@
   var HOME_PAGE = "ueberblick";
   var PAPER_HOST_ID = "paper";
 
-  /* Sub-anchor prefixes and their owning page. Order matters only in that the
-     exact page id is tried first. */
-  var ANCHOR_OWNER = [
-    [/^abschnitt-/, "paper"],
-    [/^(abstract|acknowledgements|literatur|fussnoten|fn-|fnref-)/, "paper"],
-    [/^case-/, "use-cases"],
-    [/^praxis-/, "praxis"],
-    [/^skills-/, "skills"],
-    [/^(glossar-|konzept-)/, "glossar"],
-    [/^vault-/, "vault"],
-    [/^promptotyping-document-/, "vorlagen"],
-    [/^konvention-/, "konvention-v0.1"]
+  /* Sub-anchor families. Each carries the anchor prefix, the page that owns
+     every anchor under it, and the URL segment that addresses the family as a
+     subpath, or null where the family has no subpath form. This is the single
+     source for the route resolution and for resolveTemplateUrl below, which is
+     why the segment name sits here rather than in a table of its own. */
+  var ANCHOR_FAMILIES = [
+    { prefix: "abschnitt-", page: "paper", segment: "paper" },
+    { prefix: "case-", page: "use-cases", segment: "case-studies" },
+    { prefix: "praxis-", page: "praxis", segment: "praxis" },
+    { prefix: "skills-", page: "skills", segment: "skills" },
+    { prefix: "glossar-", page: "glossar", segment: null },
+    { prefix: "konzept-", page: "glossar", segment: "konzepte" },
+    { prefix: "vault-", page: "vault", segment: "vault" },
+    { prefix: "promptotyping-document-", page: "vorlagen", segment: "promptotyping-document" },
+    { prefix: "konvention-", page: "konvention-v0.1", segment: "konvention" }
   ];
+
+  /* Anchors of the paper that are not a family: the unnumbered sections and the
+     apparatus. */
+  var PAPER_ANCHOR = /^(abstract|acknowledgements|literatur|fussnoten|fn-|fnref-)/;
 
   function isPageId(id) {
     return PAGES.some(function (p) { return p.id === id; });
+  }
+
+  function familyForAnchor(anchor) {
+    for (var i = 0; i < ANCHOR_FAMILIES.length; i++) {
+      if (anchor.indexOf(ANCHOR_FAMILIES[i].prefix) === 0) {
+        return ANCHOR_FAMILIES[i];
+      }
+    }
+    return null;
+  }
+
+  function familyForSegment(segment) {
+    for (var i = 0; i < ANCHOR_FAMILIES.length; i++) {
+      if (ANCHOR_FAMILIES[i].segment && ANCHOR_FAMILIES[i].segment === segment) {
+        return ANCHOR_FAMILIES[i];
+      }
+    }
+    return null;
   }
 
   /* Which page owns an anchor. Falls back to the DOM, so an anchor that only
@@ -75,10 +100,12 @@
     if (isPageId(anchor)) {
       return anchor;
     }
-    for (var i = 0; i < ANCHOR_OWNER.length; i++) {
-      if (ANCHOR_OWNER[i][0].test(anchor)) {
-        return ANCHOR_OWNER[i][1];
-      }
+    if (PAPER_ANCHOR.test(anchor)) {
+      return PAPER_HOST_ID;
+    }
+    var family = familyForAnchor(anchor);
+    if (family) {
+      return family.page;
     }
     var el = document.getElementById(anchor);
     var host = el && el.closest ? el.closest(".doc-page") : null;
@@ -325,12 +352,17 @@
     showPage(page, hash, moveFocus);
   }
 
-  /* ---- Template URL resolution (shared with 404.html and the inspector) ---- */
+  /* ---- Template URL resolution (used by the frontmatter inspector; 404.html
+     states the same mapping in its own tables, since the shell scripts are not
+     loaded there) ---- */
 
   var SITE_BASE = "https://dhcraft.org/Promptotyping/";
 
   /* Map a Subpath or Hash template URL to its canonical hash anchor.
-     Returns the anchor string without the leading '#', or null if no match. */
+     Returns the anchor string without the leading '#', or null if no match.
+     The two tables it reads are the ones routing already reads, PAGES for the
+     bare page slugs and ANCHOR_FAMILIES for the prefixed families, so the
+     subpath vocabulary is stated once. */
   function resolveTemplateUrl(url) {
     var rest = url;
     if (rest.indexOf(SITE_BASE) === 0) {
@@ -353,45 +385,30 @@
     rest = rest.replace(/\/$/, "");
     var segments = rest.split("/");
 
-    if (segments[0] === "promptotyping-document" && segments[1]) {
-      var base = "promptotyping-document-" + segments[1];
-      return /^v[\d.]+$/.test(hashSuffix) ? base + "-" + hashSuffix : base;
+    // Prefixed family: /paper/{n-slug}, /konzepte/{name}, /vault/{claim}, ...
+    var family = familyForSegment(segments[0]);
+    if (family && segments[1]) {
+      var anchor = family.prefix + segments[1];
+      // Only templates mint snapshot anchors, and only in the form -v{n}.
+      if (family.segment === "promptotyping-document" && /^v[\d.]+$/.test(hashSuffix)) {
+        anchor += "-" + hashSuffix;
+      }
+      return anchor;
     }
-    if (segments[0] === "konzepte" && segments[1]) {
-      return "konzept-" + segments[1];
+    if (segments[1]) {
+      return null;
     }
-    if (segments[0] === "case-studies" && segments[1]) {
-      return "case-" + segments[1];
+    // Bare page slug.
+    if (isPageId(rest)) {
+      return rest;
     }
-    if (segments[0] === "konvention" && segments[1]) {
-      return "konvention-" + segments[1];
+    // The convention page is the one page whose id carries a version that its
+    // address does not.
+    if (rest === "konvention") {
+      return "konvention-v0.1";
     }
-    if (segments[0] === "paper") {
-      return segments[1] ? "abschnitt-" + segments[1] : "paper";
-    }
-    if (segments[0] === "glossar") {
-      return "glossar";
-    }
-    if (segments[0] === "literatur") {
-      return "literatur";
-    }
-    if (segments[0] === "arbeitsumgebung") {
-      return "arbeitsumgebung";
-    }
-    if (segments[0] === "anwendung" || segments[0] === "artefakt" ||
-        segments[0] === "verifikation" || segments[0] === "workflow") {
-      return segments[0];
-    }
-    if (segments[0] === "vault") {
-      return segments[1] ? "vault-" + segments[1] : "vault";
-    }
-    // Already a hash-form anchor passed without leading '#'.
-    if (/^(promptotyping-document|konzept|case|konvention|abschnitt)-/.test(rest) ||
-        rest === "glossar" || rest === "literatur" || rest === "arbeitsumgebung" ||
-        rest === "anwendung" || rest === "artefakt" || rest === "verifikation" ||
-        rest === "workflow" ||
-        rest === "vault" || /^vault-/.test(rest) ||
-        rest === "paper") {
+    // Already a hash-form anchor passed without a leading '#'.
+    if (PAPER_ANCHOR.test(rest) || familyForAnchor(rest)) {
       return rest;
     }
     return null;

@@ -35,6 +35,16 @@
       "([^\\p{L}\\p{N}]|$)", "u");
   }
 
+  /* The forms an entry is searched under. A long nominal phrase never occurs in
+     running text as the word sequence the glossary heads it with, so an entry
+     may carry an optional shorter `suchform` in data/glossar.json; a hit on
+     either form counts. Entries without the field behave as before. */
+  function searchForms(entry) {
+    return [entry.begriff, entry.suchform].map(function (t) {
+      return t ? searchForm(t) : "";
+    }).filter(function (t) { return t; });
+  }
+
   /* One lowercased text snapshot per page, taken once. The paper alone is well
      over a hundred kilobytes, so the terms are matched against these strings
      rather than walking the DOM per term. */
@@ -56,9 +66,10 @@
 
   function buildRows(entries, pages) {
     return entries.map(function (entry) {
-      var term = searchForm(entry.begriff);
-      var pattern = term ? termPattern(term) : null;
-      var hits = pattern ? pages.filter(function (p) { return pattern.test(p.text); }) : [];
+      var patterns = searchForms(entry).map(termPattern);
+      var hits = patterns.length ? pages.filter(function (p) {
+        return patterns.some(function (re) { return re.test(p.text); });
+      }) : [];
       var links = hits.map(function (p) {
         return '<a href="#' + p.id + '">' + escapeHtml(p.label) + "</a>";
       }).join("");
