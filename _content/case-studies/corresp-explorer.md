@@ -1,30 +1,31 @@
 ---
 title: CorrespExplorer
 id: corresp-explorer
-source: Projects/Promptotyping/Case Studies/corresp-explorer.md
-mirrored: 2026-06-10
+paper: "5.2, Table 1"
 ---
 
 # CorrespExplorer
 
-## Kontext und Forschungsfrage
+## Context and research question
 
-CorrespExplorer ist ein vollstaendiges Forschungstool fuer die interaktive Visualisierung von Korrespondenz-Metadaten im CMIF-Format. Die Leitfrage ist, wie sich FAIR-konforme Briefdaten auf forschungszentrierte Interfaces abbilden lassen. Das Projekt entstand als Fork eines frueheren Brief-Projekts (HerData) und demonstriert, wie strukturierte Forschungsdaten und Scholar-Centered-Design-Anforderungen durch Context Engineering in funktionale Prototypen ueberfuehrt werden.
+CorrespExplorer is a research tool for the interactive visualisation of correspondence metadata in CMIF format. The question is how FAIR-conformant letter data can be carried onto scholar-centred interfaces. The project began as a fork of an earlier letter project, HerData, and it shows how structured research data and scholar-centred design requirements pass into functional prototypes through context engineering.
 
-## Daten
+## Data
 
-Datengrundlage ist die CMIF-XML-Struktur (TEI-basiert) von correspSearch. Drei Modi erschliessen die Daten: Upload lokaler CMIF-Dateien, direkte Abfrage der correspSearch-API und Testdaten aus dem Hugo-Schuchardt-Archiv. Die FAIR-Konformitaet des CMIF-Standards ist die epistemische Voraussetzung: Das LLM versteht die Datenstruktur ohne aufwaendige Erklaerung, weil sie standardisiert, semantisch dokumentiert und maschinenlesbar ist.
+The basis is the CMIF-XML structure of correspSearch, which is TEI-based. Three modes open the data, upload of local CMIF files, direct queries against the correspSearch API, and test data from the Hugo Schuchardt archive. The FAIR conformance of the CMIF standard is the epistemic precondition of the case. The model understands the data structure without laborious explanation because that structure is standardised, semantically documented and machine-readable.
 
-## Vorgehen
+## Approach
 
-Die Entwicklung erfolgte in etwa zwei Nachmittagen mit Claude Opus 4.5 ueber Claude Code. Es ist der erste vollstaendige Dokumentensatz des Korpus, mit User Stories samt Akzeptanzkriterien, einem Designdokument, einem phasenweise gefuehrten Journal und einer browserbasierten Test-Suite. Statt eines monolithischen Dashboards wurden zwoelf komplementaere Ansichten gewaehlt. Tests dienten als Context-Feedback: generieren, ausfuehren, Fehler zurueck ins Kontextfenster.
+Development took about two afternoons through Claude Code. This is the first complete document set in the record, with user stories and their acceptance criteria, a design document, a journal kept by phase, and a browser-based test suite. Instead of one monolithic dashboard the project chose a set of complementary views, each answering a different question of the data. Tests served as context feedback, generate, run, and return the errors into the context window.
 
-## Methodischer Beitrag
+## Methodological contribution
 
-CorrespExplorer ist der erste Fall mit einem vollstaendigen Promptotyping-Dokumentensatz und liefert drei methodische Beobachtungen. Erstens FAIR-Daten als Promptotyping-Enabler: die Output-Qualitaet korreliert direkt mit der FAIR-Konformitaet der Daten. Zweitens Context Rot als praktisches Problem; die Prozessdokumentation haelt eine Kontextdegradation deutlich innerhalb des beworbenen Kontextfensters fest, qualitativ beobachtet und nicht gemessen, was die Destillation der Dokumentation erzwang. Drittens Sycophancy in der Praxis: das Modell stimmte suboptimalen Entscheidungen zu, sobald sie als Vorschlag formuliert waren, was eine explizite Aufforderung zur Kritik in den Prompts noetig machte.
+The case yields three observations. FAIR data act as an enabler, since output quality tracks the FAIR conformance of the input. Context rot appears as a practical problem, because the process documentation records a degradation well inside the advertised context window, observed qualitatively rather than measured, which forced the distillation of the documentation. Sycophancy appears in practice, since the model agreed with suboptimal decisions as soon as they were phrased as a proposal, which made an explicit demand for criticism necessary in the prompts.
 
-## Links
+## Limits
 
-- Repository: https://github.com/DigitalHumanitiesCraft/CorrespExplorer
-- Demo: https://dhcraft.org/CorrespExplorer
-- Use-Case-Typ: Datenexploration (#case-corresp-explorer)
+The result rests on a standard. What the case shows about the ease of the translation holds for data that is standardised, documented and machine-readable, and it says nothing about the idiosyncratic spreadsheet or the undocumented database that much research data actually looks like.
+
+The context rot observation is qualitative. The documentation records that output quality fell inside the advertised window, and it carries no measurement, no token count and no controlled comparison. It is a report of what the builder noticed, and it grounds the practice of distillation rather than a claim about the model.
+
+The sycophancy observation has the same status. It was countered by prompting, and whether the countermeasure worked was judged by the same person who wrote the prompt.

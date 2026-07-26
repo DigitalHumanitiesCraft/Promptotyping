@@ -1,30 +1,31 @@
 ---
 title: coOCR-HTR
 id: coocr-htr
-source: Projects/Promptotyping/Case Studies/coocr-htr.md
-mirrored: 2026-06-10
+paper: "5.2, Table 1"
 ---
 
 # coOCR-HTR
 
-## Kontext und Forschungsfrage
+## Context and research question
 
-coOCR-HTR ist eine browser-basierte Workbench fuer Expert-in-the-Loop-Transkriptionsworkflows. Die Leitfrage ist nicht, ein fertiges Korrektur-Werkzeug zu liefern, sondern zu verstehen und zu pruefen, ob ein bestimmter Transkriptionsprozess ueberhaupt traegt. Der Fall steht damit fuer den Use Case Prozessvisualisierung: das Interface ist ein schneller Prototyp, der einen Arbeitsablauf sichtbar und testbar macht, und der Promptotype ist ausdruecklich kein Endprodukt, sondern ein Mittel, um die epistemische Asymmetrie von OCR- und HTR-Outputs zu adressieren.
+coOCR-HTR is a browser-based workbench for expert-in-the-loop transcription workflows. The question it answers is whether a particular transcription process holds at all, and the workbench exists to make that process visible and testable. The artefact is a means of addressing the epistemic asymmetry between machine transcription and human correction, and it was never meant as a finished correction tool.
 
-## Daten
+## Data
 
-Verarbeitet werden OCR- und HTR-Outputs, die in der Workbench neben den Quellbildern gerendert werden. Die Gegenueberstellung von maschinell erzeugter Transkription und Faksimile ist der Kern des Werkzeugs: Sie macht die Stellen sichtbar, an denen das Modell unsicher ist oder Woerter erfindet, statt eine Luecke zu markieren. Die hybride Validierung kombiniert deterministische Regeln mit einem LLM-as-a-Judge-Schritt.
+The workbench processes OCR and HTR outputs and renders them beside the source images. That juxtaposition is the core of the tool, because it exposes the places where the model is uncertain or invents a word instead of marking a gap. Validation is hybrid, deterministic rules decide what a rule can decide, and an LLM-as-a-judge step handles the rest.
 
-## Vorgehen
+## Approach
 
-Der Prototyp entstand an einem einzigen Arbeitstag mit Promptotyping und wurde anschliessend konsolidiert. Die Entwicklung lief ueber Claude Code, die Validierung stuetzte sich auf Vision-Language-Modelle. Aus dem Eintags-Prototyp wuchs ueber zwei Monate eine umfangreichere Produktions-Codebasis mit mehreren hundert Tests, mehreren LLM-Providern, hybrider Validierung, vollstaendiger Internationalisierung und Progressive-Web-App-Unterstuetzung, ohne npm-Produktionsabhaengigkeiten. Ein Community-Fork von Seiten der Oesterreichischen Akademie der Wissenschaften wurde integriert.
+The prototype was built in a single working day with Promptotyping and consolidated afterwards. Development ran through Claude Code, and validation drew on vision-language models. Over the following two months the one-day prototype grew into a production-grade codebase with a regression suite, several LLM providers, hybrid validation, full internationalisation and progressive web app support, without npm production dependencies. A community fork from the Austrian Academy of Sciences was integrated, the only external contribution in the record.
 
-## Methodischer Beitrag
+## Methodological contribution
 
-coOCR-HTR belegt, dass der Sprung vom Prototyp zur produktionsnahen Forschungssoftware in Wochen statt Monaten moeglich ist, wenn eine einzelne fachkundige Person mit methodischer Literalitaet arbeitet. Der zweite Beitrag ist die Operationalisierung des Editor-in-the-Loop: Die Workbench verschiebt die menschliche Pruefung an genau die Stellen, an denen das Modell unzuverlaessig ist, und macht die epistemische Asymmetrie zwischen maschineller Transkription und menschlicher Korrektur zum gestaltenden Prinzip des Interfaces. Als Prozessvisualisierung dient das Werkzeug primaer dem Verstehen eines Workflows, nicht seiner endgueltigen Produktivsetzung.
+The case shows that the step from prototype to production-grade research software can be measured in weeks when a single domain-competent person works with methodological literacy. Its second contribution is the operationalisation of the expert in the loop. The workbench moves human checking to exactly those places where the model is unreliable, which turns the epistemic asymmetry between machine transcription and human correction into the design principle of the interface.
 
-## Links
+## Limits
 
-- Repository: https://github.com/DigitalHumanitiesCraft/co-ocr-htr
-- Video: https://youtu.be/VJyhVc_ujeA
-- Use-Case-Typ: Prozessvisualisierung (#case-coocr-htr)
+The verification interface tells a reader where the model was uncertain, and it does not establish that a transcription is correct. The judgement stays with the expert, and the workbench only ensures that the judgement has a defined place.
+
+The LLM-as-a-judge step in the hybrid validation ranks below human verification for the reasons Section 6.2 of the paper gives, since the documented biases of that arrangement apply here as well. Where a deterministic rule decides, it decides, and everything the rules cannot reach inherits that caveat.
+
+The case rests on a single expert working in his own domain. What it demonstrates about the speed of the step to production software is bound to that condition, and the record holds no comparable case where the builder lacked the domain competence.

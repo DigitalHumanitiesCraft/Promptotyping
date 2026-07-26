@@ -1,30 +1,31 @@
 ---
 title: M3GIM
 id: m3gim
-source: Projects/Promptotyping/Case Studies/m3gim.md
-mirrored: 2026-06-10
+paper: "5.2, Table 1"
 ---
 
 # M3GIM
 
-## Kontext und Forschungsfrage
+## Context and research question
 
-M3GIM ist die digitale Sammlung und Multi-View-Exploration des Ira-Malaniuk-Archivs an der KUG Graz. Die Forschungsfrage betrifft die Mobilitaet einer Saengerin: wie sich Stationen, Beziehungen, Werke und Orte einer biografischen Laufbahn modellieren und erkunden lassen. Das Projekt ist als Machbarkeitsstudie fuer ein FWF-Folgeprojekt gefoerdert.
+M3GIM is the digital collection and multi-view exploration of the Ira Malaniuk archive at the University of Music and Performing Arts Graz. The research question concerns the mobility of a singer, how the stations, relations, works and places of a biographical career can be modelled and explored. The project is funded as a feasibility study for a follow-up application.
 
-## Daten
+## Data
 
-Modelliert werden Archivdaten des Universitaetsarchivs in RiC-O 1.1, ergaenzt um m3gim-spezifische Erweiterungen und AgRelOn, ausgeliefert als JSON-LD mit Wikidata-Reconciliation. Das Datenmodell ist dreischichtig. Charakteristisch ist, dass das Datenmodell waehrend der Erfassung noch in Entwicklung war: Komposit-Typen und neue Rollenwerte, die im kontrollierten Vokabular fehlten, mussten nachgezogen werden, und die Folio-Granularitaet erwies sich als die wichtigste strukturelle Innovation des Erfassungsteams.
+The archival data of the university archive is modelled in RiC-O 1.1, extended by project-specific additions and by AgRelOn, and delivered as JSON-LD with Wikidata reconciliation. The data model is layered. What marks the case is that the model was still under development while the material was being captured. Composite types and role values missing from the controlled vocabulary had to be added as they appeared, and folio granularity turned out to be the most important structural innovation the capture team introduced.
 
-## Vorgehen
+## Approach
 
-Die Wissensbasis umfasst neun Dokumente, die Architekturentscheidungen sind durchnummeriert dokumentiert. Das Explorationsinterface besteht aus acht Tabs (Archiv, Indizes, Mobilitaet, Zeitfluss, Matrix, Kosmos, Lebenspartitur, Wissenskorb), gebaut mit Vanilla JS und D3.js ohne Build-Tool. Eine Python-Pipeline durchlaeuft Exploration, Validierung, Transformation, View-Build und Reconciliation. Die zweite Ausbauphase folgte einem TDD-Workflow.
+The knowledge base carries a document per concern and a numbered register of architectural decisions. The exploration interface is a set of tabs, among them the archive itself, indices, mobility, a time flow, a matrix and a knowledge basket, built with vanilla JavaScript and D3.js without a build tool. A Python pipeline runs exploration, validation, transformation, view build and reconciliation. The second phase of the build followed a test-driven workflow.
 
-## Methodischer Beitrag
+## Methodological contribution
 
-Der zentrale Beitrag ist die Erkenntnis, dass das Interface die Grenzen des Datenmodells offenlegt. Das Interface zeigt, was das aktuelle Modell ausdruecken kann und was nicht, und wird damit zum Instrument iterativer Modellverfeinerung statt zur Praesentation eines fertigen Modells. Forschende lernen die Modellierungsentscheidungen durch die Visualisierung kennen, nicht allein durch Dokumentation. M3GIM ist die hoch-semantische Variante des Standalone-Forschungsdaten-Musters (JSON-LD als Knowledge Graph), HerData die niedrig-semantische.
+The central contribution is that the interface exposes the limits of the data model. It shows what the current model can express and what it cannot, which turns it into an instrument of iterative model refinement instead of a presentation of a finished model. Researchers come to understand the modelling decisions through the visualisation rather than through documentation alone. M3GIM is the semantically rich variant of the standalone research data pattern, with JSON-LD as a knowledge graph, where HerData is the plain variant.
 
-## Links
+## Limits
 
-- Repository: https://github.com/DigitalHumanitiesCraft/m3gim
-- Demo: https://dhcraft.org/m3gim
-- Use-Case-Typ: Datenmodellierung und Erfassung (#case-m3gim)
+The model was moving while the capture was running, so the material and the vocabulary that describes it were produced in the same motion. The decision register records where the vocabulary was extended, and it cannot establish that earlier entries were revisited under the later vocabulary.
+
+Making the limits of a model visible through an interface presupposes a reader who recognises a gap as a gap. The interface shows what the model cannot express as an absence, and an absence is only informative to someone who expected the thing that is missing.
+
+The project is a feasibility study. What it demonstrates is that the arrangement carries far enough to justify a follow-up, and the sustained operation that a full project would require is outside what the case shows.

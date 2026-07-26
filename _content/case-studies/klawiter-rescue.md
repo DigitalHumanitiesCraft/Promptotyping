@@ -1,31 +1,31 @@
 ---
 title: Klawiter Bibliography Rescue
 id: klawiter-rescue
-source: Projects/Promptotyping/Case Studies/klawiter-rescue.md
-mirrored: 2026-06-10
+paper: "5.2, Table 1"
 ---
 
 # Klawiter Bibliography Rescue
 
-## Kontext und Forschungsfrage
+## Context and research question
 
-Das Projekt extrahiert und restrukturiert die Klawiter-Bibliographie, eine der umfassendsten bibliographischen Ressourcen zu Stefan Zweig, aus einer stillgelegten MediaWiki-Datenbank. Die Frage ist, wie sich ueber Jahrzehnte kompiliertes bibliographisches Wissen aus einem nicht mehr betriebenen Legacy-System retten und in eine nachhaltige, anschlussfaehige Form ueberfuehren laesst. Die Bibliographie ist integraler Bestandteil des Stefan-Zweig-Digital-Oekosystems und dient als Rezeptionsschicht in der SZDO-Nachlass-Ontologie.
+The project extracts and restructures the Klawiter bibliography, one of the most comprehensive bibliographical resources on Stefan Zweig, out of a decommissioned MediaWiki database. The question is how bibliographical knowledge compiled over decades can be rescued from a legacy system that no longer runs and carried into a sustainable, connectable form. The bibliography belongs to the Stefan Zweig Digital ecosystem, where it serves as the reception layer of the estate ontology.
 
-## Daten
+## Data
 
-Ausgangspunkt sind SQL-Dumps und binaere BLOB-Dateien (363 MB) ohne externe Abhaengigkeiten. Der MediaWiki-SQL-Dump und acht BLOB-Dateien wurden direkt mit der Python Standard Library geparst, ohne MySQL. Die Daten umfassen Eintraege in mehr als 40 Sprachen und sechzehn Entitaetstypen. Ein eigener Pipeline-Schritt reparierte Mojibake-Encoding-Fehler.
+The point of origin is a set of SQL dumps and binary BLOB files with no external dependencies. Both were parsed directly with the Python standard library, without MySQL. The material covers entries in more than forty languages and a fixed set of entity types inherited from the source system. A dedicated pipeline stage repaired mojibake encoding damage that the legacy database had accumulated.
 
-## Vorgehen
+## Approach
 
-Eine gestufte Pipeline fuehrt von Extraktion ueber Encoding-Reparatur, Parsing, Normalisierung, optionale LLM-Anreicherung, Klassifikation und JSON-LD-Erzeugung zur Validierung. Die LLM-Anreicherung ist optional und fuellt Metadaten-Luecken; das Verfahren ist deterministisch zuerst angelegt. Das Frontend ist eine Vanilla-JavaScript-Static-Site ohne Build-Step in der SZD-Designsprache. Die Qualitaetssicherung umfasst eine Test-Suite mit LLM-as-a-Judge-Validierung und Round-Trip-Verifikation.
+A staged pipeline runs from extraction through encoding repair, parsing, normalisation, optional LLM enrichment, classification and JSON-LD generation to validation. The enrichment is optional and fills gaps in the metadata, and the procedure is laid out deterministically first. The front end is a vanilla JavaScript static site without a build step, in the design language of the Stefan Zweig ecosystem. Quality assurance combines a test suite with an LLM-as-a-judge validation and a round-trip verification against the source.
 
-## Methodischer Beitrag
+## Methodological contribution
 
-Klawiter-Rescue ist der paradigmatische Fall der Datenrettung und Transformation: aus einem Legacy-System wird strukturiertes, anschlussfaehiges Wissen. Methodisch zentral sind das Blended Vocabulary aus Schema.org, Dublin Core und einem projektspezifischen Namespace sowie die Provenance-Spur pro Wert, weil Werte aus Regex, LLM und Reconciliation kombiniert sind. JSON-LD als Ausgabeformat ermoeglicht die direkte Integration in die SZDO-Work-Layer. Das EIL-Kurationsinterface macht die Extraktionsqualitaet pruefbar.
+This is the paradigmatic case of data rescue and transformation, where a legacy system becomes structured and connectable knowledge. Two devices carry it. The blended vocabulary draws on Schema.org, Dublin Core and a project-specific namespace, and a provenance trail per value records where that value came from, which is necessary because values are combined from regular expressions, from the model and from reconciliation. JSON-LD as the output format allows direct integration into the work layer of the estate ontology, and the curation interface makes the extraction quality checkable by the expert.
 
-## Links
+## Limits
 
-- Repository: https://github.com/chpollin/klawiter-rescue
-- Demo: https://chpollin.github.io/klawiter-rescue
-- Video: https://youtu.be/KG35VGVctJw
-- Use-Case-Typ: Datenrettung und Transformation (#case-klawiter-rescue)
+The provenance trail per value exists because the values are of mixed origin, and it records that origin rather than the correctness of the value. A field filled by the optional enrichment carries the same weight in the output as a field parsed deterministically, and only the trail distinguishes them.
+
+The LLM-as-a-judge step in the quality assurance ranks below human verification for the reasons Section 6.2 of the paper gives. The round-trip verification is the stronger check of the two, because it decides against the source rather than by judgement.
+
+Whether the extraction is complete cannot be established from inside the project. The source system is decommissioned, so the pipeline output is compared against the dump and not against the bibliography as its compiler maintained it.

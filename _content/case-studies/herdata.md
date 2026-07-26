@@ -1,31 +1,31 @@
 ---
 title: HerData
 id: herdata
-source: Projects/Promptotyping/Case Studies/herdata.md
-mirrored: 2026-06-10
+paper: "5.2, Table 1"
 ---
 
 # HerData
 
-## Kontext und Forschungsfrage
+## Context and research question
 
-HerData ist eine statische Webanwendung zur Visualisierung und prosopographischen Aufbereitung weiblicher Korrespondentinnen Goethes. Die Leitfrage ist, wie sich Frauen in Goethes Briefwechsel sichtbar machen lassen, ohne die Repraesentationsgrenzen der Quelle zu verschweigen. Charakteristisch fuer HerData als Promptotyping-Fall ist die epistemische Sichtbarkeit: eine Map-Bias-Sektion thematisiert Datenvollstaendigkeit und Repraesentationsgrenzen, bevor die Visualisierung genutzt wird.
+HerData is a static web application for the visualisation and prosopographical treatment of Goethe's female correspondents. The question is how women in Goethe's correspondence can be made visible without concealing the representational limits of the source. What marks the case is epistemic visibility, since a map-bias section addresses data completeness and representational limits before the visualisation is used.
 
-## Daten
+## Data
 
-Grundlage sind CMIF-Briefmetadaten der PROPYLAEEN-Plattform (TEI-XML, CC BY 4.0) und ein kuratierter SNDB-Personenexport des Goethe- und Schiller-Archivs der Klassik Stiftung Weimar. Eine vierstufige Python-Pipeline (Identifikation, Brief-Matching ueber GND, Anreicherung mit Geokoordinaten und AgRelOn-Beziehungen, JSON-Export) erzeugt einen standalone JSON-Datensatz, der die Datenhaltung des Projekts vollstaendig traegt. Bewusst wurde gegen den Vollbestand und fuer einen kuratierten Satz entschieden, weil Qualitaet und Provenienz Vorrang vor Vollstaendigkeit haben.
+The basis is CMIF letter metadata from the PROPYLÄEN platform, TEI-XML under CC BY 4.0, together with a curated person export from the Goethe and Schiller Archive of the Klassik Stiftung Weimar. A four-stage Python pipeline runs identification, letter matching through GND, enrichment with geocoordinates and AgRelOn relations, and JSON export, and it produces a standalone JSON dataset that carries the whole data holding of the project. The decision went deliberately against the full holdings and for a curated set, because quality and provenance rank ahead of completeness here.
 
-## Vorgehen
+## Approach
 
-Die Entwicklung erfolgte in drei grossen Iterationsschritten ueber Claude Code mit wechselnden Frontier-Modellen. Eine erste Version etablierte die Grundarchitektur, ein Review-Meeting lieferte die strategische Weichenstellung (erst Core-Features stabilisieren, dann experimentelle Features; Forschungsfragen schaerfen; Rohdaten-Validierungsfenster ergaenzen), eine dritte Iteration schloss die Tester-Feedback-Runde der Klassik Stiftung Weimar und einen Refactoring-Pass auf v1.0-Reife ein. Ein Vanilla-JavaScript-Frontend ueberfuehrt den Datensatz in sechs koordinierte Bereiche: Karte, Brief-Explorer, Geschichten, Wissenskorb, Orte und About.
+Development ran in three large iterations through Claude Code with changing frontier models. A first version established the architecture. A review meeting set the strategic course, stabilise the core features before the experimental ones, sharpen the research questions, and add a validation window onto the raw data. A third iteration closed the tester feedback round of the Klassik Stiftung Weimar and a refactoring pass. A vanilla JavaScript front end carries the dataset into coordinated areas, among them a map, a letter explorer, narrative entries and a knowledge basket.
 
-## Methodischer Beitrag
+## Methodological contribution
 
-HerData zeigt zwei Promptotyping-typische Muster. Erstens die Wissensbasis als Source of Truth: ein Ordner deutschsprachiger Promptotyping Documents ist zugleich Entwicklungsbasis fuer die LLM-Sessions und oeffentliche Projektdokumentation, jedes Dokument mit maschinenlesbarer Provenienz im Frontmatter. Zweitens eine Content-Schicht fuer nicht-technische Pflege, ueber die Datenpartnerinnen redaktionelle Texte direkt pflegen koennen, ohne Code anzufassen. Der methodische Kernbeitrag ist die Map-Bias-Transparenzsektion: die systematische Verzerrung der Daten wird vor der Nutzung explizit gemacht, statt sie hinter der Visualisierung zu verbergen.
+Two patterns typical of the method appear. The knowledge base is the source of truth, since one folder of Promptotyping Documents is at once the working basis for the model sessions and the public project documentation, each document carrying machine-readable provenance in its frontmatter. A content layer allows non-technical maintenance, so the data partners edit editorial text without touching code. The core methodological contribution is the map-bias section, which makes the systematic distortion of the data explicit before use instead of hiding it behind the visualisation.
 
-## Links
+## Limits
 
-Das Repository ist zum Stand der Publikation geschlossen.
+Nothing about this case can be inspected from outside. The repository is closed, and the demo that the site once advertised answers with an error and has been taken down, which the verification record holds as an operator matter. Every statement on this page rests on the local working copy.
 
-- Demo: https://chpollin.github.io/HerData
-- Use-Case-Typ: Datenexploration (#case-herdata)
+The curated set is a deliberate restriction, and it bounds what the visualisation can show. A map built on selected persons carries the selection into every pattern a reader believes to see in it. The map-bias section names that condition, and naming it does not remove it.
+
+The enrichment steps that match letters through GND and attach coordinates were not audited against an independent source. What the pipeline asserts about a person rests on the reconciliation it performed.
