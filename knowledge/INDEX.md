@@ -27,7 +27,7 @@ Navigation and glossary of this repository's knowledge base. The repository `Dig
 
 ## Language regime
 
-By operator decision of 2026-07-23 the core knowledge documents (INDEX, project, specification, architecture, design) are English, since they are the public showcase of the self-application. The process and steering documents stay German as working instruments, which covers journal, paper-writing, paper-argument-map, paper-terminology, plan-site, report, submission-zfdg, the two video scripts, and the revision documents. The `template:` frontmatter blocks keep the German template names until the template catalogue itself renames them in the vault; the glossary below gives the English function names.
+By operator decision of 2026-07-23 the core knowledge documents (INDEX, project, specification, architecture, design) are English, since they are the public showcase of the self-application. The process and steering documents stay German as working instruments, which covers journal, paper-writing, paper-argument-map, paper-terminology, plan-site, report, submission-zfdg, the two video scripts, and revision. The `template:` frontmatter blocks keep the German template names until the template catalogue itself renames them in the vault; the glossary below gives the English function names.
 
 ## Status vocabulary
 
@@ -50,25 +50,17 @@ By operator decision of 2026-07-23 the core knowledge documents (INDEX, project,
 - **[skriptum-video-1.md](skriptum-video-1.md)** and **[skriptum-video-2.md](skriptum-video-2.md)** — the cleaned scripts of the two introductory videos, German. They are the source from which the worked-workflow page was written and, through their representations in the vault, the ground of the claims that rest on the videos.
 - **[report.md](report.md)** — snapshot report of the lane run towards the ZfdG submission (2026-07-23), German; carries a dated addendum on what the revision round settled and is not otherwise updated.
 - **[submission-zfdg.md](submission-zfdg.md)** — submission package for the Zeitschrift für digitale Geisteswissenschaften: exposé with outline and literature selection, short abstracts in German and English, formalities checklist; German.
-- **[revision.md](revision.md)** — the consolidated revision round: what was carried into the paper and where it now sits, which findings hold a source for a statement in the text, which negative findings protect the text from being weakened, and what stayed open; German (function: Verification).
+- **[revision.md](revision.md)** — the revision round in one document, since the consolidation of 2026-07-26. It carries the steering knowledge that binds future review commissions, what was carried into the paper and where it now sits, the evidence layer with its counting methods and provenance grades, the negative findings that protect the text from being weakened, and what stayed open; German (function: Verification).
 
 The paper work follows a two-document model, the text in `paper.md` and the knowledge about it in `paper-writing.md`; the argument map is the third, optional layer over both. A `data.md` deliberately does not exist; the Material template does not carry for method repositories, and the material basis lives in `project.md` (journal entry of 2026-05-09).
 
-### Archive
+### The revision round
 
-Nine working records of the revision round that ran on the finished draft in July 2026. They are closed and are not written on further; each carries `status: archived` and a dated archive note. Read [revision.md](revision.md) first, and reach for a record here only when the exact wording of one finding is needed. They stay in this folder because the evidence layer under `vault/` cites four of them by their present path.
+Nine working records of the revision round that ran on the finished draft in July 2026 were consolidated into [revision.md](revision.md) on 2026-07-26 and deleted. That document now carries the steering knowledge that binds future review commissions, every finding with its origin and its checked implementation state, the evidence layer with its counting methods, and the open points. The wording of a single record is in the git history at commit `07a736c`, the last state that carries them.
 
-- **[revision-knowledge.md](revision-knowledge.md)** — the steering knowledge of the round, with the operator's non-negotiable constraints and the four-phase process architecture.
-- **[revision-audit-a0.md](revision-audit-a0.md)** — free critical editing pass, five leverage findings.
-- **[revision-audit-a1.md](revision-audit-a1.md)** — claim-evidence check of the transfer claim, with the graded depth of what the evidence covers.
-- **[revision-audit-a2.md](revision-audit-a2.md)** — corpus audit on circularity and the surplus of explicit semantics.
-- **[revision-audit-a3.md](revision-audit-a3.md)** — editorial audit, diffs with a word-count balance.
-- **[revision-audit-a4-record-verification.md](revision-audit-a4-record-verification.md)** — every empirical statement of the paper checked against the repository artefacts it comes from.
-- **[revision-audit-a5-vault-coverage.md](revision-audit-a5-vault-coverage.md)** — coverage and provenance grades of the evidence layer in `vault/`.
-- **[revision-frame-proposal.md](revision-frame-proposal.md)** — mapping and drafts for retiring the translation doubling as the paper's theoretical core.
-- **[revision-research-sdd.md](revision-research-sdd.md)** — the sourced examination of the Spec-Driven-Development delimitation.
+Two of them live on in the evidence layer regardless. Audits A1 and A2 are ingested into `vault/` as commit-pinned representations with distillates, and three claims rest on them; a pinned anchor points at a commit rather than at a present path, which is why the deletion left the chain intact.
 
-The `revision-decisions.md` that the process description in `revision-knowledge.md` foresees never entered the repository; the operator decisions were taken in chat and recorded in the commit messages and in `paper-writing.md`.
+The `revision-decisions.md` that the process description of the round foresaw never entered the repository; the operator decisions were taken in chat and recorded in the commit messages and in `paper-writing.md`.
 
 ## Reading order
 
@@ -82,7 +74,6 @@ The `revision-decisions.md` that the process description in `revision-knowledge.
 8. **paper-argument-map.md** (the paper's argument in compact notation, for review or regeneration)
 9. **revision.md** (what the revision round settled and what it left open)
 
-The archived records are consulted per task rather than read in order.
 
 ## Glossary
 

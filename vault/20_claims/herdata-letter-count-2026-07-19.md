@@ -22,7 +22,7 @@ As verified on 2026-07-19, the HerData repository README states 15,312 letters a
 
 ## Correction
 
-Revised on 2026-07-24. Until this revision the claim carried the 1,793-letter figure as undocumented in the repository. The record verification of 2026-07-24 counted the figure directly in the repository data rather than in the README and confirmed it exactly, so the negative verdict does not stand and was withdrawn from the statement. The 2026-07-19 check had generalised from what the README says to what the repository documents, which is the narrower reading the statement now carries. The confirming count is recorded in `knowledge/revision-audit-a4-record-verification.md`, section 5.2-e, of the paper repository. That document is not ingested into this vault, so the confirmation is named here rather than in Support; regrounding this claim on it is open.
+Revised on 2026-07-24. Until this revision the claim carried the 1,793-letter figure as undocumented in the repository. The record verification of 2026-07-24 counted the figure directly in the repository data rather than in the README and confirmed it exactly, so the negative verdict does not stand and was withdrawn from the statement. The 2026-07-19 check had generalised from what the README says to what the repository documents, which is the narrower reading the statement now carries. The confirming count is recorded in `knowledge/revision.md` of the paper repository, which consolidated the record verification on 2026-07-26; the audit it came from stands at commit `07a736c` as `knowledge/revision-audit-a4-record-verification.md`, section 5.2-e. Neither document is ingested into this vault, so the confirmation is named here rather than in Support; regrounding this claim on it is open.
 
 ## Related
 
