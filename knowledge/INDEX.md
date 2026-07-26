@@ -5,9 +5,9 @@ project:
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 status: complete
 language: en
-version: 0.7
+version: 0.8
 created: 2026-05-09
-updated: 2026-07-24
+updated: 2026-07-26
 authors: [Christopher Pollin]
 generated-with: Claude Code mit Claude Fable 5
 method:
@@ -42,6 +42,8 @@ By operator decision of 2026-07-23 the core knowledge documents (INDEX, project,
 - **[paper-argument-map.md](paper-argument-map.md)** — the concept model of the paper, one argument chain per block in compact notation with confirmation status, German. Serves the operator as a review instrument and an agent as a generation basis.
 - **[paper-terminology.md](paper-terminology.md)** — working sheet of the terminology pass: every term with its English original form, its definition in the current text, its source, and a status code; German. Carries the open operator decisions of the pass.
 - **[entscheidungen-offen.md](entscheidungen-offen.md)** — everything still undecided or decided but not carried out, across site, paper, and convention, worked out to the point where an assent suffices; German.
+- **[plan-site.md](plan-site.md)** — the work packages of the rebuild from paper publication to specification documentation, with the target state; German (function: Planning).
+- **`skriptum-video-1.md`** and **`skriptum-video-2.md`** — the cleaned scripts of the two introductory videos, the source of the worked-workflow page and of several claims in the vault; German.
 - **[report.md](report.md)** — snapshot report of the lane run towards the ZfdG submission (2026-07-23), German; carries a dated addendum on what the revision round settled and is not otherwise updated.
 - **[submission-zfdg.md](submission-zfdg.md)** — submission package for the Zeitschrift für digitale Geisteswissenschaften: exposé with outline and literature selection, short abstracts in German and English, formalities checklist; German.
 - **[revision-knowledge.md](revision-knowledge.md)** — steering knowledge of the revision phase that ran on the finished draft, kept as a historical document with a dated status note; German.

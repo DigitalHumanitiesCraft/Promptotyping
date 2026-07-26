@@ -37,9 +37,9 @@ Design stance, design system, and interaction patterns for the specification doc
 
 ## Design stance
 
-The site is calm. Black on white, one typeface, a single light-grey accent. No colour flood, no decorative lines, no accent boxes, and no motion beyond the side-panel slide and short hover feedback.
+The site is calm. Black on white, one typeface, a single light-grey accent. No colour flood, no decorative lines, no accent boxes, and no motion beyond the side-panel slide and short hover feedback. Since 2026-07-26 two bounded colour systems sit on top of that ground without loosening it, described under Colour that carries meaning.
 
-Two reasons carry that stance. Reading is the primary function; a scholarly paper is read rather than scrolled past, so anything that competes with the text is a defect. And the method is made visible through structure, through the division into paper, templates, use cases, and practice, so no additional visual device is needed. The earlier phase-provenance lane was removed after the first deploy by operator decision (A2 in [specification.md](specification.md), 2026-06-10) in favour of an undisturbed reading flow.
+Two reasons carry that stance. Reading is the primary function; a scholarly paper is read rather than scrolled past, so anything that competes with the text is a defect. And the method is made visible through structure, through the division of the tree into specification, reference, evidence, tools, and paper, so no additional visual device is needed. The earlier phase-provenance lane was removed after the first deploy by operator decision (A2 in [specification.md](specification.md), 2026-06-10) in favour of an undisturbed reading flow.
 
 ## Design system
 
@@ -135,7 +135,7 @@ Vertical spacing follows an 8px base grid with a 4px half-step for fine adjustme
 | `--space-6` | 1.5rem | 24px | mobile reading-column padding |
 | `--space-8` | 2rem | 32px | desktop reading-column padding, section inset |
 | `--space-12` | 3rem | 48px | section outset |
-| `--space-16` | 4rem | 64px | hero spacing, large transitions |
+| `--space-16` | 4rem | 64px | large transitions, page foot |
 
 ### Layout
 
@@ -145,7 +145,7 @@ Desktop uses a two-track grid inside a 1240px container: the page tree (`--nav-w
 
 The tree groups the pages under Spezifikation, Referenz, Belege, Werkzeuge und Praxis, and Paper; the active page is marked by a left border and bold weight. The five parts of the specification proper carry a leading number, so the sidebar shows the specification as an ordered document rather than a list of siblings. The tree is never collapsible; below 860px it stacks above the page and stays visible, tables scroll inside their own box, and the side panel becomes a bottom sheet. An on-this-page rail was built and removed the same day by operator decision.
 
-The header carries the wordmark and the kind marker, with no mark beside it. The DHCraft watercolour was tried there and dropped, because a chromatic detail image at 22 pixels contradicts the monochrome system; the carrier mark stays in the footer.
+The header carries the wordmark and the kind marker, with no mark beside it, and the signature band along its foot. Both the DHCraft watercolour and the Promptotyping logo were tried in that slot and dropped, because a chromatic detail image at 22 pixels reads as a smudge and would put a hue on the page that means nothing. The carrier mark stays in the footer, which is a four-column grid carrying carrier and licence, addresses, the state of the specification, and the machine-access note.
 
 The start page is the specification front: title, one-sentence scope, a keyed status table (Fassung, Stand, kanonische Adresse, Maschinenadresse, Evidenz, Lizenz), and a generated index of the specification. Every other page carries a one-line status under its title at 0.8125rem, keys in `#8a8a8a` and values in `#525252`, separated from the body by a hairline. The index is derived from the same page registry as the sidebar, so the two cannot diverge.
 

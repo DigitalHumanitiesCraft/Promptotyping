@@ -10,7 +10,7 @@ machine-url: https://dhcraft.org/Promptotyping/_content/promptotyping-document/p
 
 # Vorlage Plan
 
-Diese Vorlage strukturiert das vorwärts gerichtete Process-Dokument einer Promptotyping-Wissensbasis. Das resultierende Dokument heißt typischerweise `plan.md` oder `roadmap.md` und liegt im `knowledge/`-Ordner des Repos. Es ist das ausdrückliche Gegenstück zum rückblickenden `journal.md`: während das Journal dokumentiert, wie sich das Projekt zum aktuellen Stand gearbeitet hat, ordnet der Plan die noch ausstehende Arbeit in eine Sequenz aus Phasen und Milestones mit Entry- und Exit-Bedingungen, die gegen die `specification.md` verankert sind. Der erste Absatz des resultierenden Dokuments trägt den Zweck in einem Satz; es gibt kein eigenes `zweck:`-Frontmatter-Feld.
+Diese Vorlage strukturiert das vorwärts gerichtete Process-Dokument einer Promptotyping-Wissensbasis. Das resultierende Dokument heißt typischerweise `plan.md` oder `roadmap.md` und liegt im `knowledge/`-Ordner des Repos. Es ist das ausdrückliche Gegenstück zum rückblickenden `journal.md`: während das Journal dokumentiert, wie sich das Projekt zum aktuellen Stand gearbeitet hat, ordnet der Plan die noch ausstehende Arbeit in eine Sequenz aus Phasen und Milestones mit Entry- und Exit-Bedingungen, die gegen die `specification.md` verankert sind. Der erste Absatz des resultierenden Dokuments trägt den Zweck in einem Satz.
 
 ## Geltungsbereich
 
@@ -38,7 +38,7 @@ Drittens dürfen im Status-Tracker volatile Zahlen stehen. Anders als Wissens-, 
 
 ## Frontmatter-Schema
 
-Das Dokument folgt dem reduzierten Pflichtkern aus der [Konvention Promptotyping Documents](#konvention-v0.1) (Stand 2026-06-13): `title`, `project` (Objekt mit `name` und `repository`), `method` (Objekt mit `name` und `url`), `status`, `created`, `updated`. Es gibt kein `zweck:`-Feld mehr; der Zweck lebt als erster Absatz unter der H1, in einem Satz, verständlich ohne Repo-Kontext. Die Vorlage stellt sicher, dass dieser erste Absatz den Zweck trägt.
+Das Dokument folgt dem reduzierten Pflichtkern aus der [Konvention Promptotyping Documents](#konvention-v0.1) (Stand 2026-06-13): `title`, `project` (Objekt mit `name` und `repository`), `method` (Objekt mit `name` und `url`), `status`, `created`, `updated`. Der Zweck lebt als erster Absatz unter der H1, in einem Satz, verständlich ohne Repo-Kontext. Die Vorlage stellt sicher, dass dieser erste Absatz den Zweck trägt.
 
 `status:` meint die Dokument-Maturity (`idea`, `draft`, `stub`, `complete`, `reviewed`, `archived`; seit 2026-07-19 auch `active` für fortlaufende Prozessdokumente und `snapshot` für Stichtagsdokumente), nicht den operativen Projektstatus. Für einen laufend fortgeschriebenen Plan ist `active` der passende Wert; der operative Fortschritt steht im Status-Tracker, nicht im Frontmatter.
 
@@ -94,7 +94,7 @@ Funktion: regeln, was passiert, wenn von der geplanten Reihenfolge abgewichen wi
 
 ## Vorlage zum Befüllen
 
-Der folgende Block ist als Template gedacht. Der erste Absatz nach dem Frontmatter trägt den Zweck; es gibt kein `zweck:`-Feld.
+Der folgende Block ist als Template gedacht. Der erste Absatz nach dem Frontmatter trägt den Zweck.
 
 ````markdown
 ---

@@ -41,6 +41,7 @@ Das Dokument folgt dem Frontmatter-Schema aus der [Konvention Promptotyping Docu
 - `topics:` typisch sind Verweise auf Wissensfelder wie Data Modelling, Normdata, Controlled Vocabularies. Bei Editions-Repos zusätzlich TEI, Prosopography o.ä. Sie verorten den Agenten in den Wissensfeldern, die für Materialdokumentation tragen.
 - `knowledge-sources:` ist hier zentral und sollte gepflegt sein. Mindestens `institutions:` (datenproduzierende Institutionen mit URI) und `standards:` (eingesetzte Datenstandards, Vokabulare, Ontologien mit URI). Optional `vocabularies:` für kontrollierte Vokabulare und `datasets:` für referenzierte externe Datensätze.
 - `related:` typischerweise `project`, `architecture`, `specification`; die drei Dokumente, die auf die Datengrundlage aufbauen.
+- `output-of:` trägt den Befehl, der das Dokument erzeugt, und wird gesetzt, sobald ein Skript die Korpusbeschreibung aus den Quelldaten rendert. Das ist bei großen oder heterogenen Beständen der Regelfall. Steht das Feld, wird das Dokument nicht von Hand bearbeitet und eine Korrektur geht an das Skript. Siehe Sektion *Provenienz im Frontmatter* der Konvention.
 - `updated:` wird bei jedem neuen Datenexport aktualisiert.
 
 ## Sektionsstruktur

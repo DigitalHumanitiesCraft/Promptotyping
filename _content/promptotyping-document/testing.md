@@ -10,7 +10,7 @@ machine-url: https://dhcraft.org/Promptotyping/_content/promptotyping-document/t
 
 # Vorlage Testing
 
-Diese Vorlage strukturiert das Quality-Assurance-Dokument einer Promptotyping-Wissensbasis. Das resultierende Dokument heißt typischerweise `testing.md` (alternativ `test-strategy.md` oder `tests.md`, je nach Projektsprache und Schwerpunkt) und liegt im `knowledge/`-Ordner des Repos. Es trägt die Teststrategie: welche Garantien das System nachweislich hält, welche Lücken bewusst offen bleiben, und wie ein Dritter die Tests selbst laufen lässt. Der erste Absatz unter der H1 trägt den Zweck des konkreten Dokuments in einem Satz; bei der teiCrafter-Fassung ist das die Aussage "Testing-first, der Maßstab wird vor den Features gebaut, die er beurteilt". Die Vorlage stellt sicher, dass dieser zweck-tragende erste Absatz vorhanden ist, denn ein eigenes `zweck:`-Frontmatter-Feld gibt es in der reduzierten Konvention (Stand 2026-06-13) nicht mehr.
+Diese Vorlage strukturiert das Quality-Assurance-Dokument einer Promptotyping-Wissensbasis. Das resultierende Dokument heißt typischerweise `testing.md` (alternativ `test-strategy.md` oder `tests.md`, je nach Projektsprache und Schwerpunkt) und liegt im `knowledge/`-Ordner des Repos. Es trägt die Teststrategie: welche Garantien das System nachweislich hält, welche Lücken bewusst offen bleiben, und wie ein Dritter die Tests selbst laufen lässt. Der erste Absatz unter der H1 trägt den Zweck des konkreten Dokuments in einem Satz; bei der teiCrafter-Fassung ist das die Aussage "Testing-first, der Maßstab wird vor den Features gebaut, die er beurteilt". Die Vorlage stellt sicher, dass dieser zweck-tragende erste Absatz vorhanden ist.
 
 ## Geltungsbereich
 
@@ -38,7 +38,7 @@ Drittens bindet es Tests an die Projektziele zurück. Eine Testsuite ist kein Se
 
 ## Frontmatter-Schema
 
-Das Dokument folgt dem reduzierten Pflichtkern der aktuellen Konvention (Stand 2026-06-13): `title`, `project` (Objekt mit `name` und `repository`), `method` (Objekt mit `name` und `url`), `status`, `created`, `updated`. Es gibt kein `zweck:`-Feld mehr; der Zweck lebt als erster Absatz unter der H1. Das Dokument deklariert seine Funktion über diesen ersten Absatz, nicht über den Dateinamen; `testing.md`, `test-strategy.md` und `tests.md` sind gleichwertige Träger derselben Funktion.
+Das Dokument folgt dem reduzierten Pflichtkern der aktuellen Konvention (Stand 2026-06-13): `title`, `project` (Objekt mit `name` und `repository`), `method` (Objekt mit `name` und `url`), `status`, `created`, `updated`. Der Zweck lebt als erster Absatz unter der H1. Das Dokument deklariert seine Funktion über diesen ersten Absatz, nicht über den Dateinamen; `testing.md`, `test-strategy.md` und `tests.md` sind gleichwertige Träger derselben Funktion.
 
 - `template:` empfohlen, als Block mit `name`, `version`, `url` und optional `alias`, dort wo diese Vorlage angewandt wurde. teiCrafter führt das Feld bereits kanonisch mit der dhcraft.org-URL.
 - `status:` meint die Dokument-Maturity (`idea`, `draft`, `stub`, `complete`, `reviewed`, `archived`; seit 2026-07-19 auch `active` für fortlaufende Prozessdokumente und `snapshot` für Stichtagsdokumente), nicht den operativen Projektstatus. Ein Testing-Dokument mit gepflegtem Stand-Block kann `snapshot`-Semantik tragen; maßgeblich ist das Vokabular der Konvention.
@@ -51,7 +51,7 @@ Das Dokument folgt dem reduzierten Pflichtkern der aktuellen Konvention (Stand 2
 
 ### Lead
 
-Funktion: in ein bis drei Sätzen die Teststrategie in ihrem Kern benennen und damit den Zweck tragen. Inhalt: das tragende Prinzip (Testing-first, Output-testen-statt-Code-testen, vier Säulen), die Architektur der Prüfung (headless Proofs plus Validierungs-Harness, oder pytest plus Verifikations-Set plus manuelle Sichtprüfung), und der eine Satz, der das Dokument zusammenfasst. teiCrafter führt hier "Testing-first. Der Maßstab wird vor den Features gebaut, die er beurteilt"; M3GIM führt "Die Test-Suite validiert den Output der Pipeline, nicht den Pipeline-Code". Dieser Absatz ersetzt das frühere `zweck:`-Feld.
+Funktion: in ein bis drei Sätzen die Teststrategie in ihrem Kern benennen und damit den Zweck tragen. Inhalt: das tragende Prinzip (Testing-first, Output-testen-statt-Code-testen, vier Säulen), die Architektur der Prüfung (headless Proofs plus Validierungs-Harness, oder pytest plus Verifikations-Set plus manuelle Sichtprüfung), und der eine Satz, der das Dokument zusammenfasst. teiCrafter führt hier "Testing-first. Der Maßstab wird vor den Features gebaut, die er beurteilt"; M3GIM führt "Die Test-Suite validiert den Output der Pipeline, nicht den Pipeline-Code".
 
 ### Teststrategie und Test-Taxonomie
 
@@ -103,7 +103,7 @@ Funktion: den Belegstand der Suite zum Stichtag festhalten. Inhalt: eine Tabelle
 
 ## Vorlage zum Befüllen
 
-Der folgende Block ist als Template gedacht. Optionale Sektionen, die nicht zutreffen, werden vor dem Commit gelöscht, nicht leer geführt. Es gibt kein `zweck:`-Feld; der erste Absatz unter der H1 trägt den Zweck in einem Satz.
+Der folgende Block ist als Template gedacht. Optionale Sektionen, die nicht zutreffen, werden vor dem Commit gelöscht, nicht leer geführt. Der erste Absatz unter der H1 trägt den Zweck in einem Satz.
 
 ````markdown
 ---
@@ -132,7 +132,7 @@ related: [architecture, specification, data]
 
 # Testing
 
-<!-- Erster Absatz = Zweck in einem Satz. Tragendes Prinzip (Testing-first, Output-testen, vier Säulen), Architektur der Prüfung, der eine zusammenfassende Satz. Ersetzt das frühere zweck-Feld. -->
+<!-- Erster Absatz = Zweck in einem Satz. Tragendes Prinzip (Testing-first, Output-testen, vier Säulen), Architektur der Prüfung, der eine zusammenfassende Satz. -->
 
 [Lead-Absatz]
 

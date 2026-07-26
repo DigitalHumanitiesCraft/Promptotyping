@@ -7,7 +7,7 @@ status: active
 language: de
 version: 0.1
 created: 2026-07-23
-updated: 2026-07-25
+updated: 2026-07-26
 authors: [Christopher Pollin]
 generated-with: Claude Code mit Claude Fable 5
 method:

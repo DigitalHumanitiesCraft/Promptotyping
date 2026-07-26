@@ -12,7 +12,7 @@ template:
   url: https://dhcraft.org/Promptotyping/promptotyping-document/plan
 status: active
 created: "2026-07-26"
-updated: "2026-07-26"
+updated: 2026-07-26
 ---
 
 # Offene Entscheidungen
@@ -71,53 +71,33 @@ Empfehlung: `template` fällt aus dem Pflichtkern und steht an die Spitze der em
 
 **Umsetzung.** In `_content/ueberblick.md` beide Abschnitte entfernen, den Absatz zur Skalierung nach `_content/anwendung.md` unter „Zwei Modi" verschieben, in „Wo ansetzen" einen Verweis auf Teil 3 ergänzen. Danach trägt die Startseite Titel, Geltungssatz, Statustabelle, Index, „Was die Methode ist" und „Wo ansetzen". Das ist die Form, die eine Spezifikationsfront hat.
 
-### B2. Das Markenzeichen im Kopf
+### B2. Das Markenzeichen im Kopf — entschieden 2026-07-26
 
-**Sachstand.** Der Kopf trägt heute die Wortmarke und den Gattungsvermerk, ohne Zeichen. Zwei Zeichen wurden versucht und wieder entfernt, das DHCraft-Aquarell und `assets/promptotyping-logo.png`. Beide sind detailreiche Bilder mit mehreren Farbfeldern, die auf zweiundzwanzig Pixeln zum Fleck werden und als einziger Farbpunkt einer sonst monochromen Seite stehen.
+Der Kopf trägt die Wortmarke und den Gattungsvermerk, ohne Zeichen. Zwei Zeichen wurden versucht und wieder entfernt, das DHCraft-Aquarell und `assets/promptotyping-logo.png`. Beide sind detailreiche Bilder mit mehreren Farbfeldern, die auf zweiundzwanzig Pixeln zum Fleck werden. Nach der Farbentscheidung desselben Tages kommt ein zweites Argument dazu: eine Marke im Kopf wäre ein Farbort, der nichts bedeutet, während die Site Farbe sonst genau einer Sache vorbehält. Die Signaturlinie am Fuß der Kopfzeile nimmt die Rolle des Farbklecks ein.
 
-**Optionen.** Es bleibt bei der Wortmarke, oder es entsteht eine einfarbige Marke, die als kleines Zeichen gezeichnet ist.
-
-**Empfehlung.** Es bleibt bei der Wortmarke. Publizierte Spezifikationen führen im Kopf üblicherweise Wortmarke und Gattung, und die Designregel dieses Repos verbietet dekorative Elemente ohne Funktion. Ein Zeichen im Kopf leistet hier nichts, was die Wortmarke nicht leistet.
-
-**Falls doch ein Zeichen gewünscht ist**, ist dies die Spezifikation dafür. Eine SVG-Datei `assets/img/promptotyping-mark.svg`, einfarbig in `currentColor`, gezeichnet auf einem Raster von 24 mal 24 Einheiten mit einer Strichstärke von 2 Einheiten und einem Sicherheitsabstand von 2 Einheiten zum Rand. Kein Text, keine Füllfläche unter 3 Einheiten Kantenlänge, keine Farbe. Motivisch trägt das vorhandene Logo drei Elemente, Dokument, Datenzylinder und Fragezeichen; für eine Marke dieser Größe ist eines davon zu wählen, und das Dokument ist das tragende, weil die Methode dokumentgetrieben ist. Geprüft wird die Marke, indem sie bei 22 Pixeln neben der Wortmarke steht und in Graustufen noch als Form erkennbar ist. Das ist Gestaltungsarbeit und keine Codearbeit; ich kann die Datei anlegen, aber das Urteil über die Form liegt beim Operator.
+Falls doch ein Zeichen gewünscht wird, ist dies die Spezifikation. Eine SVG-Datei `assets/img/promptotyping-mark.svg`, einfarbig in `currentColor`, auf einem Raster von 24 mal 24 Einheiten, Strichstärke 2, Sicherheitsabstand 2 zum Rand, kein Text, keine Füllfläche unter 3 Einheiten Kantenlänge. Von den drei Motiven des vorhandenen Logos, Dokument, Datenzylinder, Fragezeichen, trägt das Dokument, weil die Methode dokumentgetrieben ist. Prüfbedingung: die Marke steht bei 22 Pixeln neben der Wortmarke und bleibt in Graustufen als Form erkennbar.
 
 ### B3. Die Vorlagen `technology` und `publication`
 
-**Sachstand.** Der Vorlagenkatalog führt fünfzehn Vorlagen. `knowledge/report.md` nennt unter den Arbeitsschritten für eine echte Vault-Sitzung zwei weitere, `technology` und `publication`; die Freigabe von `technology` steht seit dem 2026-07-23 aus. Der Katalog wird vault-first gepflegt, also existiert die Vorlage erst, wenn sie im Vault existiert.
+**Sachstand, korrigiert am 2026-07-26.** Eine frühere Fassung dieses Eintrags hat die Vorlage `technology` als ungeschrieben geführt und ihre Spezifikation ausgearbeitet. Das war falsch. `_content/promptotyping-document/technology.md` existiert seit dem 2026-07-23 als Repo-Erstfassung mit Geltungsbereich, Abgrenzung gegen `architecture.md` und Action-Layer und einem Triggerkriterium. `_content/MANIFEST.md` hält den Zustand korrekt fest, die Datei ist kein Vault-Spiegel, und der Slug ist bewusst nicht in `data/promptotyping-documents.json`, nicht im Anker-Schema der `CLAUDE.md` und nicht in der Vorlagen-Seite verdrahtet.
 
-Material für `technology` liegt im Repo bereits, `_content/technology-baseline.md` mit Status `draft`. Es beschreibt die statische Webseite als Forschungstool und ist inhaltlich der Kern dessen, was die Vorlage tragen soll.
+Offen ist damit nicht das Schreiben, sondern die Aufnahme. Der Katalog wird vault-first gepflegt; solange die Vault-Vorlage fehlt, wäre ein Katalogeintrag im Repo die stillschweigende Divergenz, die die `CLAUDE.md` verbietet.
 
-**Was die Vorlage tragen soll.** Ausgearbeitet, damit die Vault-Sitzung nur noch ausführt. Funktion: die verbindliche Technologie-Grundlinie eines Projekts, also welche Technologien gesetzt sind, welche ausgeschlossen, und woran eine Abweichung zu begründen ist. Typ: Action Document, weil sie Handlungswissen darüber trägt, was ein Agent im Projekt bauen darf. Empfohlene Datei: `technology.md`. Auslöser: sobald ein Projekt mehr als eine Implementierungsentscheidung trifft, die über die einzelne Sitzung hinaus gelten soll. Abschnitte: Geltungsbereich, gesetzte Technologien mit Begründung, ausgeschlossene Technologien mit Begründung, Abweichungsregel, Übergabepunkt zum Research Software Engineering.
+**Umsetzung.** Echte Vault-Sitzung, Vorlage aus der vorhandenen Repo-Fassung im Vault anlegen, danach die Repo-Fassung dagegen abgleichen und von `draft` auf `complete` ziehen, Eintrag in `data/promptotyping-documents.json` mit Funktion und Trigger, Zeile in der Vorlagen-Tabelle des `MANIFEST`, Slug `technology` in die Slug-Liste der `CLAUDE.md`.
 
-`publication` ist weniger weit gediehen. Funktion wäre der Weg vom Artefakt zur zitierbaren Veröffentlichung, also Release, persistenter Identifikator und Zitationsmetadaten. Abschnitt 4.1 des Papers beschreibt genau diese Lücke als den Punkt, an dem die Methode gegen FAIR4RS scheitert. Empfehlung: `technology` jetzt, `publication` zurückstellen, bis der FAIR4RS-Weg an einem realen Projekt einmal gegangen ist. Eine Vorlage für einen Weg, den noch niemand gegangen ist, wäre geraten.
-
-**Umsetzung.** Echte Vault-Sitzung, Vorlage anlegen, danach Spiegelung nach `_content/promptotyping-document/technology.md`, Eintrag in `data/promptotyping-documents.json` mit Funktion und Trigger, Zeile in `_content/MANIFEST.md`, Slug `technology` in die Slug-Liste der `CLAUDE.md`.
+`publication` ist weniger weit gediehen. Funktion wäre der Weg vom Artefakt zur zitierbaren Veröffentlichung, also Release, persistenter Identifikator und Zitationsmetadaten. Abschnitt 4.1 des Papers beschreibt genau diese Lücke als den Punkt, an dem die Methode gegen FAIR4RS scheitert. Empfehlung: zurückstellen, bis der FAIR4RS-Weg an einem realen Projekt einmal gegangen ist. Eine Vorlage für einen Weg, den noch niemand gegangen ist, wäre geraten.
 
 ## Teil C. Offen an Paper und Einreichung
 
-### C1. Das zweisprachige ZfdG-Abstract
+### C1 und C2. Abstracts und Exposé — vorhanden, Korrektur vom 2026-07-26
 
-**Sachstand.** Die ZfdG verlangt ein Abstract deutsch und englisch zu je höchstens 750 Zeichen (paper-writing.md, Randbedingungen der Einreichfassung). Der Papertext trägt ein englisches Abstract von vier Absätzen, das für den Fließtext gedacht ist und die Grenze deutlich überschreitet. Beide Kurzfassungen fehlen.
+**Korrektur.** Die erste Fassung dieses Dokuments hat beide Punkte als offen geführt und zwei Abstracts neu entworfen. Das war falsch, und der Fehler war vermeidbar: `knowledge/submission-zfdg.md` trägt seit dem 2026-07-25 das vollständige Einreichpaket und ist in `INDEX.md` gelistet. Ich habe es nicht konsultiert.
 
-**Ausgearbeiteter Vorschlag, englisch.**
+**Sachstand, gemessen.** Das deutsche Abstract hat 748 Zeichen, das englische 726, beide unter der Grenze von 750. Das Exposé hat 779 Wörter, unter der Grenze von 1.000, mit Literaturauswahl und vorläufiger Gliederung. Dazu führt das Dokument eine Formalia-Checkliste gegen die Vorgaben der Zeitschrift.
 
-> Digital research data is accessible only through software, and a generic tool cannot serve the specific questions a project asks of its own material. This paper introduces Promptotyping, an iterative, document-driven method of context engineering for agentic coding tools, through which researchers translate structured research data into research artefacts. The working material is a small set of versioned Markdown documents holding requirements, data descriptions, and design decisions, from which an LLM-based agent derives the artefact. The documents are what the method maintains, and the artefact is regenerated from them. Documented projects and teaching cases provide the evidence. The contribution is methodological and conceptual.
+**Was daran wirklich offen ist.** Der Stand des Pakets ist der 2026-07-25, also nach der Begriffsarbeit desselben Tages. Der Papertext hat sich danach nicht mehr tragend geändert, die Revision lag davor. Zu prüfen bleibt allein, ob eine spätere Änderung am Papertext die Abstracts einholt; `paper-writing.md` verlangt das ohnehin als Prüfpunkt vor der Einreichung. Ein Neuentwurf ist nicht nötig.
 
-**Ausgearbeiteter Vorschlag, deutsch.**
-
-> Digitale Forschungsdaten sind nur über Software zugänglich, und ein generisches Werkzeug trägt die spezifischen Fragen nicht, die ein Projekt an sein Material stellt. Der Beitrag führt Promptotyping ein, eine iterative, dokumentgetriebene Methode des Context Engineering für agentische Coding-Werkzeuge, mit der Forschende strukturierte Forschungsdaten in Forschungsartefakte übersetzen. Arbeitsmaterial ist ein kleiner Satz versionierter Markdown-Dokumente mit Anforderungen, Datenbeschreibungen und Designentscheidungen, aus dem ein LLM-gestützter Agent das Artefakt ableitet. Gepflegt werden die Dokumente, das Artefakt wird aus ihnen neu erzeugt. Evidenz sind dokumentierte Projekte und Lehrfälle. Der Beitrag ist methodisch und konzeptuell.
-
-Beide liegen unter der Grenze. Beide verzichten auf volatile Zahlen, halten die britische Schreibung der englischen Fassung und wiederholen keinen Satz des Fließtext-Abstracts wörtlich, was Regel 9 des Prüfkatalogs verlangt.
-
-**Offen bleibt die Entscheidung**, ob die deutsche Fassung eine Übersetzung der englischen ist oder eigenständig formuliert. Der Vorschlag oben ist eine enge Übersetzung. Empfehlung: so belassen. Bei einem Abstract dieser Länge ist Deckungsgleichheit ein Vorzug.
-
-### C2. Das Exposé
-
-**Sachstand.** Die ZfdG verlangt vor dem Artikel ein Exposé von höchstens 1.000 Wörtern samt Literaturliste und vorläufigem Inhaltsverzeichnis. Es ist nicht geschrieben. Die Sprache ist nicht festgelegt.
-
-**Empfehlung.** Englisch, weil der Artikel englisch eingereicht wird und das Exposé den Artikel vertritt. Aufbau in fünf Teilen, Problem und Lücke, Beitrag, Methode und Materialbasis, Evidenz mit ihren Grenzen, Anschluss an die Zeitschrift. Der letzte Teil ist der, den ein Exposé gewinnt oder verliert; die ZfdG-Venue-Analyse liegt vor und nennt die inhaltlichen Anschlussstellen. Das Inhaltsverzeichnis fällt aus der bestehenden Gliederung, die Literaturliste aus dem Referenzverzeichnis.
-
-Das ist Schreibarbeit von etwa einer Sitzung, und sie setzt voraus, dass der Papertext steht. Empfehlung zur Reihenfolge: nach C3 und C4.
+Meine Entwürfe sind ersatzlos gestrichen. Sie waren enger an der Formulierung des Fließtext-Abstracts, was Regel 9 des Prüfkatalogs gerade vermeiden will, während die vorhandenen Fassungen eigenständig komprimieren.
 
 ### C3. Die verbliebenen Referenzen
 
@@ -154,6 +134,6 @@ Dann eine echte Vault-Sitzung für A2 und B3, die beide dort hängen.
 
 Dann der Sprachdurchgang der Site nach A1 in der dort genannten Ordnung.
 
-Dann C1 und C2, das Doppelabstract und das Exposé, als letzte Schritte vor der Einreichung.
+C1 und C2 sind erledigt; vor der Einreichung ist allein zu prüfen, ob eine spätere Änderung am Papertext die Abstracts einholt.
 
 Operatorabhängig und außerhalb dieser Ordnung bleiben die Punkte 2, 4 und 5 aus C5.

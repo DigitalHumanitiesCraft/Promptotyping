@@ -8,7 +8,7 @@ method:
   url: https://dhcraft.org/Promptotyping/
 status: draft
 created: "2026-07-23"
-updated: "2026-07-24"
+updated: 2026-07-26
 related: [paper, paper-writing]
 ---
 

@@ -5,9 +5,9 @@ project:
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 status: active
 language: de
-version: 0.5
+version: 0.6
 created: 2026-05-09
-updated: 2026-07-24
+updated: 2026-07-26
 authors: [Christopher Pollin]
 generated-with: Claude Code mit Claude Fable 5
 method:
@@ -835,3 +835,17 @@ Die fünf Töne sind aus dem Aquarell des Promptotyping-Logos gezogen, damit die
 **Zur Suche.** Der Operator hat die Volltextsuche nicht abgelehnt, sondern eine Begründung verlangt. Ich kann sie nicht geben. Von den drei Adressaten in `project.md` kommen Reviewer über eine konkrete Adresse und Agents über `template:`-URIs, beide suchen nie; Anwendende lesen den Fluss. Die einzige Stelle, an der die Navigation wirklich zu grob ist, ist das Paper mit knapp achtzehntausend Wörtern und zehn Überschriften. Vorgeschlagen sind daher ein Begriffsregister, das die Glossar-Dekoration als Nebenprodukt abwirft, und ein Inhaltsverzeichnis auf der Paperseite. Beide offen.
 
 Geprüft im Browser, hell und dunkel: vierzehn Seiten, sechzehn `h1`, keine Ladefehler, siebzehn Karten mit Funktionskante, die fünf Funktionsmarken auf der Artefakt-Seite, die Signaturlinie in beiden Themen.
+
+### Nachtrag: Refactor der Markdown-Dokumente
+
+Ein Konsistenzdurchgang durch `knowledge/` und `_content/`, angestoßen vom Operator. Er hat zwei Fehler in meinem eigenen Dokument vom selben Tag zutage gefördert.
+
+**Fehler eins.** `entscheidungen-offen.md` hat unter B3 die Vorlage `technology` als ungeschrieben geführt und ihre Spezifikation ausgearbeitet. Die Vorlage existiert seit dem 2026-07-23 als Repo-Erstfassung unter `_content/promptotyping-document/technology.md`, mit Geltungsbereich, Abgrenzung und Triggerkriterium, und `_content/MANIFEST.md` hält das korrekt fest. Offen ist nicht das Schreiben, sondern die vault-first-Aufnahme in den Katalog. Der Eintrag ist entsprechend neu geschrieben.
+
+**Fehler zwei, der schwerere.** C1 und C2 haben das zweisprachige ZfdG-Abstract und das Exposé als fehlend geführt, und ich habe zwei Abstracts neu entworfen. `knowledge/submission-zfdg.md` trägt das vollständige Einreichpaket seit dem 2026-07-25 und ist in `INDEX.md` gelistet; ich habe es nicht konsultiert. Gemessen: deutsches Abstract 748 Zeichen, englisches 726, beide unter 750; Exposé 779 Wörter, unter 1.000. Meine Entwürfe sind ersatzlos gestrichen, sie lagen näher am Fließtext-Abstract, als Regel 9 des Prüfkatalogs erlaubt. Offen bleibt allein die Prüfung, ob eine spätere Änderung am Papertext die Abstracts einholt.
+
+Beide Fehler haben dieselbe Ursache. Ich habe die verstreuten Offen-Vermerke der Steuerdokumente eingesammelt, ohne sie gegen den Dateibestand zu halten. Ein Vermerk, der einmal zutraf, bleibt stehen, wenn niemand ihn löscht; das Einsammeln solcher Vermerke reproduziert genau diese Drift, wenn es nicht geprüft wird.
+
+**Weiter im Durchgang.** `specification.md` A9 und A18 auf den Stand nach der Gestaltungsrunde gezogen, A22 für Farbsystem und Dunkelmodus ergänzt. In `design.md` die Haltungsabsätze präzisiert, die noch von einer durchgehend unbunten Site und von der alten Vierteilung Paper, Vorlagen, Use Cases, Praxis sprachen, und den Spacing-Vermerk zum entfernten Hero. Das `MANIFEST` sagt jetzt, dass `mirrored` die Erstspiegelung hält und bei einem Sweep nicht fortgeschrieben wird, was die scheinbare Drift der fünfzehn Vorlagen-Spiegel erklärt. `INDEX.md` um `plan-site.md` und die beiden Videoskripte ergänzt, die ungelistet waren.
+
+**Frontmatter.** Sieben Wissensdokumente trugen ein `updated`, das älter war als ihre letzte inhaltliche Änderung; die vier substanziell geänderten sind zusätzlich in der Version gehoben. B2, das Markenzeichen, ist als entschieden markiert, mit dem Argument aus der Farbentscheidung, dass eine Marke im Kopf ein Farbort wäre, der nichts bedeutet.

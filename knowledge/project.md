@@ -7,7 +7,7 @@ status: complete
 language: en
 version: 0.5
 created: 2026-05-09
-updated: 2026-07-24
+updated: 2026-07-25
 authors: [Christopher Pollin]
 generated-with: Claude Code with Claude Opus 4.8
 method:

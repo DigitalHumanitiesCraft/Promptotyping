@@ -139,7 +139,7 @@ Bei Repos mit projektsemantisch geprägten Dateinamen (zbz-ocr-tei führt zum Be
 
 ## Frontmatter-Schema
 
-Das Frontmatter folgt einem reduzierten Pflichtkern und zwei optionalen Schichten. Der Kern ist so klein wie möglich, weil weniger Felder konsistenter gepflegt werden. Eine Querschau über 490 Dokumente mit Frontmatter in 40 Wissensbasen (Stand 2026-07-26) hat das bestätigt und den Schnitt korrigiert. Die sechs Kernfelder treten als stabiles Bündel auf, `method` ist dabei das bindende Feld, und praktisch jedes Dokument, das es führt, führt auch die übrigen fünf. Alle sechs zusammen tragen 233 der 490 Dokumente. Das ist knapp die Hälfte, und daraus folgt die Regel für jede künftige Erweiterung. Ein Feld rückt nur in den Kern, wenn die Praxis es bereits flächendeckend trägt.
+Das Frontmatter folgt einem reduzierten Pflichtkern und zwei optionalen Schichten. Der Kern ist so klein wie möglich, weil weniger Felder konsistenter gepflegt werden. Ein Feld rückt nur dann in den Kern, wenn die Praxis es bereits flächendeckend trägt.
 
 ### Pflichtkern
 
@@ -152,13 +152,14 @@ Das Frontmatter folgt einem reduzierten Pflichtkern und zwei optionalen Schichte
 | `created` | date YYYY-MM-DD | Anlagedatum |
 | `updated` | date YYYY-MM-DD | Letztes inhaltliches Update |
 
-Das frühere Pflichtfeld `zweck` entfällt. Es kam in keinem einzigen der erhobenen Dokumente vor. Seine Funktion bleibt erhalten und wandert unter dem etablierten Namen `description` in die empfohlene Schicht; damit verschwindet zugleich der letzte deutsche Feldname in einem sonst englischen Vokabular. Das frühere Pflichtfeld `template` wandert ebenfalls in die empfohlene Schicht, weil es 79 der 490 Dokumente führen und ein Pflichtstatus die Fehlkonstruktion der Acht-Felder-Fassung wiederholen würde.
+Den Zweck des Dokuments trägt der erste Absatz unter der H1, in einem Satz und ohne Repo-Kontext verständlich.
+
+`template` steht in der empfohlenen Schicht, und der Verzicht hat eine Folge, die zu kennen ist. Wer das Feld führt, ist über den Frontmatter-Inspector adressierbar und maschinell anschließbar. Wer es weglässt, verliert diese Eigenschaft und sonst nichts.
 
 ### Empfohlen
 
 | Feld | Typ | Zweck |
 |---|---|---|
-| `description` | string | Ein Klartext-Satz, was das Dokument leistet; verständlich ohne Repo-Kontext |
 | `template` | object | Verschachtelt mit `name`, `version`, `url`, optional `alias`; siehe Sektion *Vorlagen-Adressierbarkeit*. Zu setzen, sobald eine Katalogvorlage existiert |
 | `authors` | list | Personen mit kuratorischer Verantwortung. Trägt ausschließlich Menschen, auch wenn ein LLM den Text erzeugt hat; die Verantwortung liegt bei dem, der den Auftrag gibt |
 | `generated-with` | string | Harness und LLM in der Form `Harness (LLM)`, bei mehreren LLMs kommagetrennt in der Klammer. Entfällt, wenn ohne LLM entstanden |
@@ -180,6 +181,43 @@ Das frühere Pflichtfeld `zweck` entfällt. Es kam in keinem einzigen der erhobe
 | `verification-milestone` | string | Verknüpfter Verification Milestone aus der Pipeline |
 | `aliases` | list | Alternative Benennungen für Verlinkung |
 | `dependencies` | list (Wikilinks) | Nur bei Repos mit explizitem Vorgängergraph (zbz-ocr-tei-Pattern); sonst entfällt |
+
+### Provenienz im Frontmatter
+
+Drei Felder halten fest, wie ein Dokument entstanden ist. Sie beantworten zusammen eine einzige Frage, aus der beim nächsten Zugriff eine Handlung folgt, nämlich ob das Dokument beim nächsten Lauf überschrieben wird.
+
+`authors` nennt die Menschen, die den Inhalt verantworten. Ein LLM steht dort nie, gleichgültig wie viel Text es beigetragen hat, weil die Verantwortung bei dem liegt, der den Auftrag erteilt und das Ergebnis prüft. Die Erhebung fand hierzu zwei Verstöße, die beim nächsten Durchgang zu bereinigen sind.
+
+`generated-with` nennt Harness und LLM in der Form `Claude Code (Claude Opus 5)`, bei mehreren LLMs kommagetrennt innerhalb der Klammer. Das feste Format löst einen realen Konflikt auf, weil im Bestand `Claude Code mit Claude Opus 4.8` und `Claude Code with Claude Opus 4.8` nebeneinander stehen und dieselbe Aussage in zwei Sprachen tragen. Die Klammer ist sprachneutral.
+
+`output-of` trägt den Befehl, der das Dokument erzeugt, und wird nur gesetzt, wenn dieser Befehl es reproduziert. Steht das Feld, wird das Dokument nicht von Hand bearbeitet und eine Korrektur geht an die Quelle. Fehlt es, verantwortet ein Mensch den Text unmittelbar. Der Wert ist ein ausführbarer Befehl und damit offen für Skripte, Make-Targets und Kommandozeilenwerkzeuge gleichermaßen.
+
+```yaml
+authors: [Christopher Pollin]
+generated-with: Claude Code (Claude Opus 5)
+output-of: python tools/render_data.py
+```
+
+Nicht in den Header gehört die Abfolge der Arbeitsschritte. Ob ein Skript einen Rumpf erzeugt hat, ein LLM darüber iteriert und ein Mensch anschließend redigiert hat, ist der Verlauf der Arbeit und damit Prozesswissen. Es gehört ins Journal.
+
+### Anschluss an Dublin Core
+
+Die Feldnamen tragen keine Namespace-Präfixe. Ein Doppelpunkt im YAML-Schlüssel erzwingt Quoting und erhöht die Pflegehürde dort, wo sie ohnehin reißt, und ein Teil der Felder hat gar keine Entsprechung, sodass ein gemischtes Vokabular entstünde. Die Semantik wird deshalb hier festgehalten statt im Schlüssel. Acht Felder entsprechen einem DCMI Metadata Term wörtlich; ein Generator, der aus dem Frontmatter `CITATION.cff` oder `codemeta.json` rendert, kann sich darauf stützen. Ein neuntes Mapping läuft nicht über ein Feld. `dcterms:description` wird aus dem ersten Absatz unter der H1 gewonnen, weil dort seit der Reduktion des Kerns der Zweck des Dokuments steht.
+
+| Feld | DCMI Term | Definition an der Quelle |
+|---|---|---|
+| `title` | `dcterms:title` | A name given to the resource |
+| `authors` | `dcterms:creator` | An entity responsible for making the resource |
+| `language` | `dcterms:language` | A language of the resource |
+| `created` | `dcterms:created` | Date of creation of the resource |
+| `updated` | `dcterms:modified` | Date on which the resource was changed |
+| `related` | `dcterms:relation` | A related resource |
+| `project` | `dcterms:isPartOf` | A related resource in which the described resource is physically or logically included |
+| `template` | `dcterms:conformsTo` | An established standard to which the described resource conforms |
+
+Der Treffer bei `template` trägt am weitesten. Das Verhältnis eines Dokuments zu seiner Vorlage ist genau das, was `dcterms:conformsTo` bezeichnet, womit die Vorlagen-Adressierbarkeit eine standardkonforme Aussage wird statt einer Hauskonvention.
+
+Vier Felder bleiben ohne Entsprechung. Für `status` und `method` führen die DCMI Metadata Terms nichts Passendes; `dcterms:instructionalMethod` ist pädagogisch gemeint und trägt hier nicht. Für `generated-with` und `output-of` wäre PROV der naheliegende Anschluss, doch `prov:wasGeneratedBy` hat als Range eine `prov:Activity` und nicht ein Werkzeug, sodass ein Feld mit einem Befehl als Wert nicht unmittelbar darauf abbildet. Ein sauberes PROV-Mapping bliebe auszuarbeiten und steht hier bewusst offen.
 
 ### Zur `version:`-Semantik
 

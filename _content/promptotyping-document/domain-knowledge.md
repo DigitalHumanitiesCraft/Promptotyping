@@ -10,7 +10,7 @@ machine-url: https://dhcraft.org/Promptotyping/_content/promptotyping-document/d
 
 # Vorlage Domänenwissen
 
-Diese Vorlage strukturiert das Domänen- und Methodenwissen-Dokument einer Promptotyping-Wissensbasis. Das resultierende Dokument heißt je nach Untertyp typischerweise `editorial-guidelines.md`, `tei-mapping.md`, `ontology.md` oder `kodiermanual.md` (domänenspezifisches Regelwerk) beziehungsweise `forschungsrahmen.md`, `methodik.md`, `research.md` oder `theory.md` (Methoden- und Begründungsschicht). Es liegt im `knowledge/`-Ordner des Repos und trägt die fachmethodische Vorgabe- und Theorieschicht: die Regeln, nach denen das Material ausgezeichnet oder berechnet wird, und die Begründung, warum diese Regeln so und nicht anders lauten. Diese Schicht ist in vielen DH-, Editions- und Forschungsprojekten der eigentliche wissenschaftliche Wert, den der ansonsten software-zentrierte Katalog ([Vorlage Specification](#promptotyping-document-specification), [Vorlage Architecture](#promptotyping-document-architecture), [Vorlage Datengrundlage](#promptotyping-document-data)) nicht abbildet. Der erste Absatz des resultierenden Dokuments trägt den Zweck in einem Satz; ein eigenes `zweck:`-Feld im Frontmatter entfällt.
+Diese Vorlage strukturiert das Domänen- und Methodenwissen-Dokument einer Promptotyping-Wissensbasis. Das resultierende Dokument heißt je nach Untertyp typischerweise `editorial-guidelines.md`, `tei-mapping.md`, `ontology.md` oder `kodiermanual.md` (domänenspezifisches Regelwerk) beziehungsweise `forschungsrahmen.md`, `methodik.md`, `research.md` oder `theory.md` (Methoden- und Begründungsschicht). Es liegt im `knowledge/`-Ordner des Repos und trägt die fachmethodische Vorgabe- und Theorieschicht: die Regeln, nach denen das Material ausgezeichnet oder berechnet wird, und die Begründung, warum diese Regeln so und nicht anders lauten. Diese Schicht ist in vielen DH-, Editions- und Forschungsprojekten der eigentliche wissenschaftliche Wert, den der ansonsten software-zentrierte Katalog ([Vorlage Specification](#promptotyping-document-specification), [Vorlage Architecture](#promptotyping-document-architecture), [Vorlage Datengrundlage](#promptotyping-document-data)) nicht abbildet. Der erste Absatz des resultierenden Dokuments trägt den Zweck in einem Satz.
 
 ## Geltungsbereich
 
@@ -43,7 +43,7 @@ Drittens verweist es auf die maschinenlesbare Quelle statt sie zu duplizieren. W
 
 ## Frontmatter-Schema
 
-Das Dokument folgt dem reduzierten Frontmatter-Pflichtkern aus der [Konvention Promptotyping Documents](#konvention-v0.1) (Stand 2026-06-13): `title`, `project` (Objekt mit `name` und `repository`), `method` (Objekt mit `name` und `url`), `status`, `created`, `updated`. Kein `zweck:`-Feld; der Zweck lebt als erster Absatz unter der H1. `status` meint die Dokument-Maturity (`idea`, `draft`, `stub`, `complete`, `reviewed`, `archived`; seit 2026-07-19 auch `active` für fortlaufende Prozessdokumente und `snapshot` für Stichtagsdokumente), nicht den operativen Projektstatus. Empfohlen sind `template` (als Block mit `name`, `version`, `url`, `alias`, wo diese Vorlage angewandt wurde), `language`, `version` (repoweit konsistent), `authors` beziehungsweise `generated-with`, `topics` und `related`. Spezifisch für Domänenwissen:
+Das Dokument folgt dem reduzierten Frontmatter-Pflichtkern aus der [Konvention Promptotyping Documents](#konvention-v0.1) (Stand 2026-06-13): `title`, `project` (Objekt mit `name` und `repository`), `method` (Objekt mit `name` und `url`), `status`, `created`, `updated`. Der Zweck lebt als erster Absatz unter der H1. `status` meint die Dokument-Maturity (`idea`, `draft`, `stub`, `complete`, `reviewed`, `archived`; seit 2026-07-19 auch `active` für fortlaufende Prozessdokumente und `snapshot` für Stichtagsdokumente), nicht den operativen Projektstatus. Empfohlen sind `template` (als Block mit `name`, `version`, `url`, `alias`, wo diese Vorlage angewandt wurde), `language`, `version` (repoweit konsistent), `authors` beziehungsweise `generated-with`, `topics` und `related`. Spezifisch für Domänenwissen:
 
 - `topics:` verortet den Agenten im fachlichen Wissensfeld und ist hier besonders tragend. Bei Untertyp (b) typisch `[[TEI]]`, `[[Editorial Guidelines]]`, `[[Critical Apparatus]]`, je nach Sprache und Korpus zusätzlich Sprach- oder Periodenkonzepte (`[[Old High German]]`). Bei Ontologie-Projekten `[[RDF]]`, `[[OWL]]`, das eingesetzte Vokabular (`[[RiC-O]]`, `[[CIDOC CRM]]`). Bei Untertyp (a) die Theoriefelder (`[[Mobility Studies]]`, `[[Explainable AI]]`, `[[Historical Information]]`).
 - `knowledge-sources:` ist hier zentral und sollte gepflegt sein. Mindestens `standards:` (eingesetzte Standards, Schemata, Guidelines mit URI: TEI P5, ISO-Codes, WCAG, fachliche Editionsrichtlinien) und, wo zutreffend, `vocabularies:` (kontrollierte Vokabulare, Normdaten-Autoritäten) sowie `datasets:` oder `institutions:` für referenzierte Referenzprojekte. Bei Untertyp (a) tragen die akademischen Primärquellen entweder hier als `standards:`-Anschlüsse oder, sprechender, in der Dokumentsektion `Quellen`.
@@ -57,7 +57,7 @@ Die Sektionsstruktur unterscheidet sich nach Untertyp. Gemeinsam ist der Lead-Ab
 
 ### Lead (beide Untertypen, Pflicht)
 
-Funktion: in einem Satz den Zweck des Dokuments tragen, dann in einem bis drei Sätzen den Geltungsbereich der Regeln beziehungsweise des Rahmens. Inhalt: was das Dokument festlegt oder begründet, für welches Korpus oder welche Pipeline-Stufe es gilt, wozu es als Referenz dient (manuelle Nachbearbeitung, Skalierung auf den Gesamtbestand, Kommunikation mit dem Auftraggeber). Dieser Absatz ersetzt das frühere `zweck:`-Frontmatter-Feld.
+Funktion: in einem Satz den Zweck des Dokuments tragen, dann in einem bis drei Sätzen den Geltungsbereich der Regeln beziehungsweise des Rahmens. Inhalt: was das Dokument festlegt oder begründet, für welches Korpus oder welche Pipeline-Stufe es gilt, wozu es als Referenz dient (manuelle Nachbearbeitung, Skalierung auf den Gesamtbestand, Kommunikation mit dem Auftraggeber).
 
 ### Untertyp (a): Methoden- und Begründungsschicht
 
@@ -95,7 +95,7 @@ Funktion: in einem Satz den Zweck des Dokuments tragen, dann in einem bis drei S
 
 ## Vorlage zum Befüllen
 
-Zwei Blöcke, einer pro Untertyp. Der erste deckt das domänenspezifische Regelwerk (b) ab, der zweite die Methoden- und Begründungsschicht (a) im Promptotyping-Frontmatter; eine Variante des zweiten Blocks zeigt die Vault-Atom-Struktur für den Fall, dass das Dokument primär als Wissensatom gelesen wird. Optionale Sektionen, die nicht zutreffen, werden vor dem Commit gelöscht, nicht leer gelassen. Kein `zweck:`-Feld: der erste Absatz trägt den Zweck.
+Zwei Blöcke, einer pro Untertyp. Der erste deckt das domänenspezifische Regelwerk (b) ab, der zweite die Methoden- und Begründungsschicht (a) im Promptotyping-Frontmatter; eine Variante des zweiten Blocks zeigt die Vault-Atom-Struktur für den Fall, dass das Dokument primär als Wissensatom gelesen wird. Optionale Sektionen, die nicht zutreffen, werden vor dem Commit gelöscht, nicht leer gelassen. Der erste Absatz trägt den Zweck.
 
 ### Untertyp (b): Regelwerk
 

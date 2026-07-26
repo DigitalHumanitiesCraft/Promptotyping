@@ -33,7 +33,7 @@ Nachtrag 2026-07-19 (Vault-Vorlagen-Sweep): Sechs weitere Vorlagen gespiegelt un
 | `promptotyping-document/report.md` | Vorlage Report | 0.2 |
 | `promptotyping-document/integration.md` | Vorlage Integration | 0.1 |
 
-Jede Datei traegt im Frontmatter `title, slug, version, status, source, mirrored, machine-url`.
+Jede Datei traegt im Frontmatter `title, slug, version, status, source, mirrored, machine-url`. Das Feld `mirrored` haelt die Erstspiegelung fest und wird bei einem Sweep nicht fortgeschrieben; welche Datei wann nachgezogen wurde, steht in den Nachtraegen dieses Dokuments und die erreichte Fassung in der Versionsspalte.
 
 Nachtrag 2026-07-23: `promptotyping-document/technology.md` liegt als Entwurf (Vorlage Technology, v0.1, status draft) im Vorlagen-Ordner. Die Datei ist kein Vault-Spiegel, sondern eine Repo-Erstfassung; die vault-first-Aufnahme in den Katalog steht aus. Bis dahin ist der Slug nicht Teil des freigegebenen Katalogs und nicht in `data/promptotyping-documents.json`, im `CLAUDE.md`-Anker-Schema oder in der Vorlagen-Sektion der Site verdrahtet. Zusaetzlich traegt `technology-baseline.md` (repo-kanonisch, status draft) die Technology Baseline fuer die Artefaktfamilie der statischen Web-Tools, die operative Langform der technischen Guidelines aus dem Methodenpaper (Sektion 4.1); Site-Verdrahtung offen, erreichbar ueber die Maschinenadresse.
 

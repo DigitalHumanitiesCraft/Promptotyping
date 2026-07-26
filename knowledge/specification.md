@@ -5,9 +5,9 @@ project:
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 status: complete
 language: en
-version: 0.5
+version: 0.6
 created: 2026-05-09
-updated: 2026-07-24
+updated: 2026-07-26
 authors: [Christopher Pollin]
 generated-with: Claude Code with Claude Opus 4.8
 method:
@@ -86,7 +86,7 @@ The use-case vocabulary of the gallery (data production, data exploration, data 
 Part 1 on the Beispiel-Workflow page, where the worked case runs, part 2 at the VetMedAI knowledge-balance case, which sits in the projects section of the deployed decomposition and in the evidence section of the canonical text. Both run from the `youtube-nocookie.com` variant with no tracking before the click.
 
 ### A9 — DHCraft design system
-Light grey `#d5d5d5` accent, black on white, Inter for text, Consolas for code, no decorative elements. Side panels collapse to bottom sheets on mobile. Full token set and behaviour in [design.md](design.md).
+Black on white, Inter for text, Consolas for code, no decorative elements. Unchromatic throughout, with two bounded exceptions decided on 2026-07-26: five muted hues that encode the epistemic function of an artefact, and one prismatic signature band that encodes nothing. A dark theme applies the system preference and can be overridden by a toggle. Side panels collapse to bottom sheets on mobile. Full token set, the grounds for the colour rules, and behaviour in [design.md](design.md).
 
 ### A10 — Vanilla tech stack
 No framework, no build step. HTML5/CSS3/JS, marked.js v9.1.6 and js-yaml v4.1.0 vendored, GitHub-Pages-native hosting. Acceptance criterion. `git clone` and opening the site over a static server renders it locally. Details in [architecture.md](architecture.md).
@@ -113,10 +113,13 @@ The Action-Layer template (`CLAUDE.md`) is published under the slug `action-laye
 A `#arbeitsumgebung` section between skills and glossary with three short parts, the Obsidian vault as knowledge environment, the Promptotyping Agent Interface (experimental, in development), and the AI harness and skills (Claude Code as harness, links to `#skills` and the process videos). Substrate `_content/arbeitsumgebung.md`, routing `/arbeitsumgebung` via `404.html`.
 
 ### A18 — Site header, footer, video integration
-A thin fixed header carrying the wordmark plus the kind marker `Spezifikation` left, and the two outbound links Paper and Repository right. No mark sits beside the wordmark; the DHCraft watercolour was tried there and dropped, because a chromatic detail image at 22 pixels contradicts the monochrome system. The carrier mark stays in the footer, which sits on `#f5f5f5` with repo and YouTube links, license line, and machine-address note. `promptotyping-logo.png` sits at the head of the Vorlagen page. All process videos play without leaving the page, as click-to-load facades over `youtube-nocookie.com`.
+A thin fixed header carrying the wordmark plus the kind marker `Spezifikation` left, and the theme toggle plus the Repository link right; the Paper link was dropped on 2026-07-26 because the tree carries it. No mark sits beside the wordmark. Both the DHCraft watercolour and `promptotyping-logo.png` were tried there and dropped, because a chromatic detail image at 22 pixels reads as a smudge and would be the only hue on the page that means nothing. The signature band runs along the foot of the header. The footer is a four-column grid on `--code-bg`, carrying carrier and licence, addresses, the state of the specification, and the machine-access note; the carrier mark stays there. `promptotyping-logo.png` sits at the head of the Vorlagen page. All process videos play without leaving the page, as click-to-load facades over `youtube-nocookie.com`.
 
 ### A21 — Page status line
 Every page except the start page carries one line under its title stating whether it binds (`normativ, Teil der Spezifikation` or `informativ`), its version, its date, and the machine address of its substrate. Geltung comes from the page registry in `app.js`, the remaining fields from the frontmatter of the substrate file or, for the generated pages, from the registry. Added 2026-07-26.
+
+### A22 — Colour that carries meaning, and the dark theme
+Colour encodes exactly one thing, the epistemic function of an artefact, that is the five interface categories of A-level section 4.2 of the paper. The hue appears on the function list of the Artefakt page and on the left edge of a use-case card, and the category always stands there as a word as well. One prismatic signature band sits at the foot of the header, once per page, and encodes nothing. The dark theme is a token swap that follows the system preference, is overridden by a toggle, and is applied before first paint from `localStorage`. Grounds and token values in [design.md](design.md). Added 2026-07-26.
 
 ### A19 — Vorlagen hub
 The `#vorlagen` section is the coherent hub of the method specification (operator decision 2026-07-23). After the section head and a quiet text subnav (Katalog, Konvention, Maschinenzugriff, Technology Baseline, plain text links in the design-system greys) come four blocks with additive in-page sub-anchor IDs:
