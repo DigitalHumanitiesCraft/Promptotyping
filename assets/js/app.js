@@ -35,9 +35,28 @@
     A.setupThemeToggle();
     A.setupGlossarInteraction(document.getElementById("content"));
 
+    // GitHub Pages has no server-side routing, so 404.html catches every
+    // subpath, normalises it and hands it over as ?p=. Translating it here,
+    // through the resolver the frontmatter inspector already uses, keeps the
+    // subpath vocabulary in one place. replaceState fires no hashchange and so
+    // does not collide with the listener below, and it has to happen before
+    // promptotyping:sections-ready, where modules read location.hash.
+    var handedOver = new URLSearchParams(window.location.search).get("p");
+    var unresolved = null;
+    if (handedOver) {
+      var anchor = A.resolveTemplateUrl(handedOver + window.location.hash);
+      history.replaceState(null, "",
+        window.location.pathname + (anchor ? "#" + anchor : ""));
+      unresolved = anchor ? null : handedOver;
+    }
+
     // Show the routed page immediately, so the shell is never a blank frame
     // while the content files are still in flight.
-    A.showPage(A.pageForAnchor(window.location.hash.replace(/^#/, "")) || A.HOME_PAGE);
+    if (unresolved) {
+      A.showNotFound(unresolved);
+    } else {
+      A.showPage(A.pageForAnchor(window.location.hash.replace(/^#/, "")) || A.HOME_PAGE);
+    }
 
     // Glossar must be loaded before paper sections render, so the trigger
     // post-processing can mark terms. Render the static sections in parallel,
@@ -83,8 +102,12 @@
     }).then(function () {
       A.addPageStatusLines();
       A.fillFooterState();
-      // Resolve the initial hash against the fully rendered DOM.
-      A.handleHash(window.location.hash.replace(/^#/, ""));
+      // Resolve the initial hash against the fully rendered DOM. An address
+      // that resolved to nothing left the hash empty, and re-resolving it here
+      // would replace the not-found state with the start page.
+      if (!unresolved) {
+        A.handleHash(window.location.hash.replace(/^#/, ""));
+      }
       // Everything addressable is in the DOM now; the term index reads it.
       document.dispatchEvent(new Event("promptotyping:content-ready"));
     });

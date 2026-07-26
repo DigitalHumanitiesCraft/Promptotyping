@@ -3,7 +3,7 @@
   "generated": "2026-06-10",
   "_meta": {
     "beschreibung": "Case-study data of the Promptotyping methodology site. The sources are the case descriptions in the vault, the method extensions in the Promptotyping MOC and the project inventory in Pollin 2026, Section 5.2. The gallery groups by the role a case plays for the paper and orders within a block by the interface typology of Section 4.2, which is the typology the paper itself uses.",
-    "kuratierung": "Admission is decided by what a card lets a reader check. Every project in Table 1 of the paper has a card, because a reader who comes from section 5.2 to verify a claim has to find the project; the paper_row field carries that link and tools/check_consistency.py holds it in both directions (operator decision 2026-07-26). Beyond the evidence inventory the gallery also carries the projects the method grew out of, which section 2.6 needs, and the teaching formats, which the teachability argument of section 5.4 rests on. A project that supports no claim of the paper has no card. Three exclusion notes of the earlier curation were checked on 2026-07-26 and did not hold: vetmed-wissensbilanz and wiiw-patent-analysis-demo are public repositories with working demos, and sugw is the paper's Medieval Legal Transactions and publicly video-documented, so all three entered the gallery. The Aldersbach monastic accounts stay although the paper dropped the case as too old, because the genealogy is what they carry (operator decision 2026-07-25). Outside the gallery stays the agentic edition pipeline, which is meta-tooling and a template rather than a single research artefact.",
+    "kuratierung": "Admission is decided by what a card lets a reader check. Every project in Table 1 of the paper has a card, because a reader who comes from section 5.2 to verify a claim has to find the project; the paper_row field carries that link and tools/check_consistency.py holds it in both directions (operator decision 2026-07-26). Beyond the evidence inventory the gallery also carries the projects the method grew out of, which section 2.5 needs, and the teaching formats, which the teachability argument of section 5.4 rests on. A project that supports no claim of the paper has no card. Three exclusion notes of the earlier curation were checked on 2026-07-26 and did not hold: vetmed-wissensbilanz and wiiw-patent-analysis-demo are public repositories with working demos, and sugw is the paper's Medieval Legal Transactions and publicly video-documented, so all three entered the gallery. The Aldersbach monastic accounts stay although the paper dropped the case as too old, because the genealogy is what they carry (operator decision 2026-07-25). Outside the gallery stays the agentic edition pipeline, which is meta-tooling and a template rather than a single research artefact.",
     "schema": {
       "id": "anchor slug, forming the site anchor together with #case- (e.g. herdata -> #case-herdata)",
       "name": "display name",
@@ -28,7 +28,7 @@
     },
     "role_notes": {
       "evidence": "Carries a row of the project inventory in Pollin 2026, Section 5.2. A claim of that section can be checked against these.",
-      "genealogy": "Built before the method had its vocabulary. Section 2.6 reads them as the ground it grew from.",
+      "genealogy": "Built before the method had its vocabulary. Section 2.5 reads them as the ground it grew from.",
       "teaching": "Recorded sessions and teaching builds. The teachability argument of Section 5.4 rests on this kind of material.",
       "further": "Documented applications the paper does not carry. They stand on their repositories alone."
     }
@@ -38,16 +38,18 @@
       "id": "teicrafter",
       "name": "teiCrafter",
       "role": "genealogy",
-      "status": "completed",
-      "summary": "Hackathon prototype (2023) that showed an LLM can produce TEI-XML from transcribed texts and that triggered the development of Promptotyping as a structured method.",
-      "data": "Transcribed historical texts",
-      "artifact": "TEI-XML annotation (hackathon prototype)",
-      "interfaceTypes": [],
+      "status": "active",
+      "summary": "Idea of 2023, a Custom GPT that converted plain text to TEI-XML (P5) from a mapping rule under editor-in-the-loop control, with no software written for it; the same idea was taken up in 2026 and built as a browser-based lossless TEI editor once the agentic tooling carried it.",
+      "data": "Plain text and transcriptions in 2023, arbitrary TEI-XML in the editor since 2026",
+      "artifact": "Custom GPT without implemented software (2023), browser-based lossless TEI editor (2026)",
+      "interfaceTypes": [
+        "edition"
+      ],
       "repo_url": "https://github.com/DigitalHumanitiesCraft/teiCrafter",
-      "demo_url": null,
+      "demo_url": "https://dhcraft.org/teiCrafter/",
       "video_url": null,
-      "insight": "Origin point (2023), vibe coding without a method",
-      "deep_page": false,
+      "insight": "Origin point of the method as a prompt-configured idea; what separates 2023 from 2026 is the maturity of the coding tooling that made the same idea buildable",
+      "deep_page": true,
       "paper_row": null
     },
     {
@@ -65,7 +67,7 @@
       "demo_url": "https://dhcraft.org/excellence/promptotyping/szd-annotation-timeline/",
       "video_url": null,
       "insight": "Critical Expert in the Loop (two-hour experiment, first blog post)",
-      "deep_page": false,
+      "deep_page": true,
       "paper_row": null
     },
     {
@@ -83,7 +85,7 @@
       "demo_url": "https://chpollin.github.io/szd-htr-ocr-pipeline/",
       "video_url": null,
       "insight": "Worked example of Section 3.4; the record's production-scale pipeline",
-      "deep_page": false,
+      "deep_page": true,
       "paper_row": "SZD-HTR Pipeline"
     },
     {
@@ -101,7 +103,7 @@
       "demo_url": "https://chpollin.github.io/depcha-aldersbach",
       "video_url": null,
       "insight": "First Promptotyping Documents (post hoc)",
-      "deep_page": false,
+      "deep_page": true,
       "paper_row": null
     },
     {
@@ -119,7 +121,7 @@
       "demo_url": "https://chpollin.github.io/stained-glass-metadata-annotation-tool/docs/version-2/",
       "video_url": null,
       "insight": "First knowledge/ folder, SPARQL-based extraction",
-      "deep_page": false,
+      "deep_page": true,
       "paper_row": null
     },
     {
@@ -137,7 +139,7 @@
       "demo_url": "https://chpollin.github.io/imareal-room-object/",
       "video_url": null,
       "insight": "Context memory, journal plus git history for session resumption",
-      "deep_page": false,
+      "deep_page": true,
       "paper_row": null
     },
     {
@@ -145,7 +147,7 @@
       "name": "Hans Gross Kriminalmuseum Digital Archive",
       "role": "evidence",
       "status": "completed",
-      "summary": "Digital archive of the criminological collection with two interface paradigms, traditional search and canvas-based spatial exploration.",
+      "summary": "Digital archive of the criminological collection that pairs traditional search with canvas-based spatial exploration.",
       "data": "TEI plus LIDO object corpus",
       "artifact": "Digital archive (search plus spatial exploration)",
       "interfaceTypes": [
@@ -155,7 +157,7 @@
       "demo_url": "https://chpollin.github.io/km/index.html",
       "video_url": null,
       "insight": "Dual paradigm, search plus canvas-based spatial exploration",
-      "deep_page": false,
+      "deep_page": true,
       "paper_row": "Hans Gross Kriminalmuseum"
     },
     {
@@ -163,9 +165,9 @@
       "name": "CorrespExplorer",
       "role": "evidence",
       "status": "completed",
-      "summary": "Full research tool for the interactive visualisation of correspondence metadata in CMIF format across twelve coordinated views.",
+      "summary": "Full research tool for the interactive visualisation of correspondence metadata in CMIF format across a set of coordinated views.",
       "data": "CMIF/TEI letter corpus",
-      "artifact": "Coordinated visualisation views (12 views)",
+      "artifact": "Coordinated visualisation views",
       "interfaceTypes": [
         "exploration"
       ],
@@ -218,8 +220,8 @@
       "role": "evidence",
       "status": "completed",
       "summary": "Dashboard over the intellectual-capital reports of the Austrian universities, built as the first use case of the VetMedAI project and observed by workshop participants as it was made.",
-      "data": "~80 Excel files, Austrian university performance metrics",
-      "artifact": "Dashboard with seven visualisation types and a dual-mode analysis",
+      "data": "Excel corpus of Austrian university performance metrics",
+      "artifact": "Dashboard with a range of visualisation types and a dual-mode analysis",
       "interfaceTypes": [
         "exploration"
       ],
@@ -235,7 +237,7 @@
       "name": "Kulturpool Explorer",
       "role": "evidence",
       "status": "completed",
-      "summary": "Static collection interface for around 19,000 objects from the Kulturpool API, built with parallel agent orchestration.",
+      "summary": "Static collection interface over the object records of the Kulturpool API, built with parallel agent orchestration.",
       "data": "Kulturpool API",
       "artifact": "Collection interface (parallel agent orchestration)",
       "interfaceTypes": [
@@ -245,7 +247,7 @@
       "demo_url": "https://chpollin.github.io/kulturpool-demo/",
       "video_url": "https://youtu.be/tQBaaVhPu5U",
       "insight": "Parallel agent orchestration (2 Claude Code instances)",
-      "deep_page": false,
+      "deep_page": true,
       "paper_row": "Kulturpool Explorer"
     },
     {
@@ -255,7 +257,7 @@
       "status": "completed",
       "summary": "Network dashboard over international patent cooperation from 2010 to 2018, built during a workshop at an economic research institute and the record's case for the method outside the humanities.",
       "data": "Patent cooperation CSV, 2010 to 2018",
-      "artifact": "Four-tab network dashboard with centrality measures and yearly snapshots",
+      "artifact": "Network dashboard with centrality measures and yearly snapshots",
       "interfaceTypes": [
         "exploration"
       ],
@@ -272,8 +274,8 @@
       "role": "evidence",
       "status": "active",
       "summary": "Agentic edition workflow for the prosopographic database of medieval Viennese legal transactions, in which the agent navigates the repository, validates, corrects and commits, while person identification across documents stays outside its reach.",
-      "data": "~3,600 TEI-XML documents (~3,100 released) with an extensive CSV dataset",
-      "artifact": "Static edition frontend rendered from a pipeline of 14 transformers and 2 validators",
+      "data": "TEI-XML documents of the transaction database, released in part, with an extensive CSV dataset",
+      "artifact": "Static edition frontend rendered from a pipeline of transformers and validators",
       "interfaceTypes": [
         "edition"
       ],
@@ -291,7 +293,7 @@
       "status": "completed",
       "summary": "Digital collection and multi-view exploration of the Ira Malaniuk archive, where the interface makes the limits of the still-developing data model visible.",
       "data": "RiC-O/JSON-LD, archival data",
-      "artifact": "Multi-view archive explorer (8 tabs)",
+      "artifact": "Multi-view archive explorer",
       "interfaceTypes": [
         "exploration",
         "capture"
@@ -309,7 +311,7 @@
       "role": "evidence",
       "status": "active",
       "summary": "LLM-supported OCR and TEI pipeline for the Jeanne Hersch papers at the Zentralbibliothek Zuerich, the most extensive Promptotyping example with a full epistemic infrastructure.",
-      "data": "PDF corpus (286 PDFs, around 4,150 pages)",
+      "data": "PDF corpus of the Jeanne Hersch papers",
       "artifact": "Curated TEI-XML edition with verification interfaces",
       "interfaceTypes": [
         "verification",
@@ -364,8 +366,8 @@
       "name": "FemPrompt SozArb",
       "role": "evidence",
       "status": "completed",
-      "summary": "Systematic literature review on AI literacy and LLM bias in social work, with a five-stage pipeline and a dual assessment design between human experts and an LLM.",
-      "data": "Academic paper corpus (326 papers)",
+      "summary": "Systematic literature review on AI literacy and LLM bias in social work, with a staged pipeline and a dual assessment design between human experts and an LLM.",
+      "data": "Academic paper corpus on AI literacy and LLM bias",
       "artifact": "Evidence companion plus Obsidian vault",
       "interfaceTypes": [
         "audit"
@@ -374,7 +376,7 @@
       "demo_url": "https://chpollin.github.io/FemPrompt_SozArb/",
       "video_url": null,
       "insight": "Beyond DH, literature review infrastructure with a generated knowledge base",
-      "deep_page": false,
+      "deep_page": true,
       "paper_row": "FemPrompt SozArb"
     },
     {
@@ -383,7 +385,7 @@
       "role": "teaching",
       "status": "completed",
       "summary": "Interactive dashboard for Austrian university statistics that runs through every phase of the method on video as a teaching baseline.",
-      "data": "Excel corpus (76 files)",
+      "data": "Excel corpus of Austrian university statistics",
       "artifact": "Interactive dashboard (teaching baseline)",
       "interfaceTypes": [
         "exploration"
@@ -392,7 +394,7 @@
       "demo_url": null,
       "video_url": "https://youtu.be/hd_a-NBO_S4",
       "insight": "Teaching baseline (full process on video)",
-      "deep_page": false,
+      "deep_page": true,
       "paper_row": null
     },
     {

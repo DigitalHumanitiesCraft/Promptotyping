@@ -22,70 +22,26 @@
   <link rel="stylesheet" href="assets/css/style.css">
 
   <script>
-    // Subpath-to-hash routing. GitHub Pages serves 404.html for any path that
-    // is not a real file. This file maps the requested subpath onto the
-    // canonical hash anchor and hands over to index.html, so the shell exists
-    // exactly once and cannot drift. The same address set is resolved a second
-    // time by resolveTemplateUrl in assets/js/registry.js for the inspector;
-    // that side derives its vocabulary from the page registry, this one states
-    // it, because the shell script is not loaded here.
+    // Subpath handover. GitHub Pages serves 404.html for any path that is not a
+    // real file, which makes this file the only router the site has. It states
+    // no address vocabulary of its own: it normalises the requested path and
+    // hands it to the application as ?p=, and resolveTemplateUrl in
+    // assets/js/registry.js translates it once, from the page registry. The
+    // incoming hash is passed through untouched, because the snapshot form
+    // /promptotyping-document/data#v0.1 carries its version there.
     (function () {
-      // Preserve a snapshot suffix (e.g. v0.1) so
-      // /promptotyping-document/data#v0.1 stays addressable.
-      var incomingHash = window.location.hash.replace(/^#/, "");
       var path = window.location.pathname
         .replace(/^\/Promptotyping\//, "")
         .replace(/^\//, "")
         .replace(/\/$/, "");
-      var segments = path.split("/");
-
-      // Paths that are a page of their own, addressed by their bare slug.
-      var PAGE_PATHS = {
-        ueberblick: "ueberblick",
-        anwendung: "anwendung",
-        workflow: "workflow",
-        artefakt: "artefakt",
-        verifikation: "verifikation",
-        vorlagen: "vorlagen",
-        konvention: "konvention-v0.1",
-        "use-cases": "use-cases",
-        praxis: "praxis",
-        skills: "skills",
-        arbeitsumgebung: "arbeitsumgebung",
-        glossar: "glossar",
-        vault: "vault",
-        paper: "paper",
-        literatur: "literatur"
-      };
-
-      // Prefixed families: the first segment names the family, the second the
-      // item.
-      var PREFIXES = {
-        "promptotyping-document": "promptotyping-document-",
-        konzepte: "konzept-",
-        "case-studies": "case-",
-        konvention: "konvention-",
-        paper: "abschnitt-",
-        praxis: "praxis-",
-        skills: "skills-",
-        vault: "vault-"
-      };
-
-      var anchor = null;
-      if (PREFIXES[segments[0]] && segments[1]) {
-        anchor = PREFIXES[segments[0]] + segments[1];
-        if (segments[0] === "promptotyping-document" && /^v[\d.]+$/.test(incomingHash)) {
-          anchor += "-" + incomingHash;
-        }
-      } else if (PAGE_PATHS[segments[0]] && !segments[1]) {
-        anchor = PAGE_PATHS[segments[0]];
+      // Nothing to hand over: the not-found body below stays.
+      if (!path) {
+        return;
       }
-
-      if (anchor) {
-        // replace() rather than assign(), so the unresolved subpath leaves no
-        // history entry to return to.
-        window.location.replace("/Promptotyping/#" + anchor);
-      }
+      // replace() rather than assign(), so the unresolved subpath leaves no
+      // history entry to return to.
+      window.location.replace("/Promptotyping/?p=" + encodeURIComponent(path) +
+        window.location.hash);
     })();
   </script>
 </head>

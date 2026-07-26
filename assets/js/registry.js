@@ -47,6 +47,10 @@
 
   var HOME_PAGE = "ueberblick";
   var PAPER_HOST_ID = "paper";
+  /* Host for an address that resolved to nothing. It is a page host like any
+     other, but deliberately not a registry entry: it has no place in the
+     sidebar tree, in the specification index or in the term index. */
+  var NOT_FOUND_PAGE = "not-found";
 
   /* Sub-anchor families. Each carries the anchor prefix, the page that owns
      every anchor under it, and the URL segment that addresses the family as a
@@ -133,6 +137,38 @@
       el.setAttribute("tabindex", "-1");
       main.appendChild(el);
     });
+    mountNotFound(main);
+  }
+
+  /* Since 404.html hands every unresolved subpath to the application, the
+     not-found state is a state of this page rather than a second document. */
+  function mountNotFound(main) {
+    var el = document.createElement("section");
+    el.className = "doc-page";
+    el.id = NOT_FOUND_PAGE;
+    el.setAttribute("tabindex", "-1");
+    el.innerHTML = "<h1>Address not found</h1>" +
+      "<p>This address does not resolve to a page of this specification. " +
+      'Start at the <a href="#' + HOME_PAGE + '">overview</a>, or pick a page ' +
+      "from the navigation tree.</p>";
+    main.appendChild(el);
+  }
+
+  function showNotFound(path) {
+    var host = document.getElementById(NOT_FOUND_PAGE);
+    if (!host) {
+      return;
+    }
+    var line = host.querySelector(".not-found-address");
+    if (path && !line) {
+      line = document.createElement("p");
+      line.className = "not-found-address";
+      host.querySelector("h1").insertAdjacentElement("afterend", line);
+    }
+    if (line) {
+      line.innerHTML = "<code>" + A.escapeHtml(path || "") + "</code>";
+    }
+    showPage(NOT_FOUND_PAGE);
   }
 
   /* ---- Sidebar tree ---- */
@@ -293,6 +329,9 @@
   }
 
   function pageTitle(id) {
+    if (id === NOT_FOUND_PAGE) {
+      return "Address not found — Promptotyping";
+    }
     var entry = PAGES.filter(function (p) { return p.id === id; })[0];
     return id === HOME_PAGE || !entry
       ? "Promptotyping. Specification of the Method"
@@ -300,7 +339,7 @@
   }
 
   function showPage(id, anchor, moveFocus) {
-    var page = isPageId(id) ? id : HOME_PAGE;
+    var page = isPageId(id) || id === NOT_FOUND_PAGE ? id : HOME_PAGE;
     var changed = page !== activePage;
     if (changed) {
       document.querySelectorAll(".doc-page").forEach(function (el) {
@@ -352,9 +391,11 @@
     showPage(page, hash, moveFocus);
   }
 
-  /* ---- Template URL resolution (used by the frontmatter inspector; 404.html
-     states the same mapping in its own tables, since the shell scripts are not
-     loaded there) ---- */
+  /* ---- Template URL resolution ----
+     The one place a subpath is translated into an anchor. The frontmatter
+     inspector reads it, and so does the boot in app.js for the path that
+     404.html hands over as ?p=, so the subpath vocabulary stands exactly
+     once. */
 
   var SITE_BASE = "https://dhcraft.org/Promptotyping/";
 
@@ -440,6 +481,7 @@
   A.addPageStatusLines = addPageStatusLines;
   A.fillFooterState = fillFooterState;
   A.showPage = showPage;
+  A.showNotFound = showNotFound;
   A.handleHash = handleHash;
   A.resolveTemplateUrl = resolveTemplateUrl;
 })(window.PromptotypingApp = window.PromptotypingApp || {});

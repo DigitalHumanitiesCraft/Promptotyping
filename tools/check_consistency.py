@@ -626,41 +626,50 @@ def prose_site_urls():
             yield name, token
 
 
-def check_subpath_tables(page_ids, families, paper_anchor):
-    """404.html and registry.js resolve the same subpath vocabulary.
+HANDOVER_PARAM = "p"
 
-    404.html states the mapping, because the shell scripts are not loaded there;
-    registry.js derives it from the page registry. Where 404.html resolves an
-    address that registry.js does not, a deep link works on arrival and breaks
-    in the frontmatter inspector. The other direction is allowed and reported as
-    a note, since registry.js also accepts hash forms no subpath produces.
+
+def check_subpath_handover(page_ids, families, paper_anchor):
+    """The one subpath vocabulary resolves, and 404.html states none of its own.
+
+    Since 2026-07-26 the router hands the requested path to the application as a
+    query parameter and resolveTemplateUrl in registry.js translates it. Two
+    things can break that silently. The parameter name is written in one file and
+    read in another, and a slug reintroduced into 404.html would restore the
+    duplicate table the handover removed.
     """
     text = read_text(NOT_FOUND)
-    page_paths = js_string_map(text, "PAGE_PATHS")
-    prefixes = js_string_map(text, "PREFIXES")
+    app = read_text(JS_DIR / "app.js")
 
-    for segment, target in sorted(page_paths.items()):
-        resolved = resolve_site_url(segment, page_ids, families, paper_anchor)
-        if resolved != target:
-            fail("anchors", "404.html routes /%s to #%s, registry.js resolves it to %s"
-                 % (segment, target, "#" + resolved if resolved else "nothing"))
+    written = re.search(r'\?%s=" \+' % HANDOVER_PARAM, text)
+    read = re.search(r'\.get\("(%s)"\)' % HANDOVER_PARAM, app)
+    if not written:
+        fail("anchors", "404.html no longer hands the path over as ?%s=" % HANDOVER_PARAM)
+    if not read:
+        fail("anchors", "app.js no longer reads the handover parameter ?%s=" % HANDOVER_PARAM)
 
-    by_segment = {segment: prefix for prefix, _page, segment in families if segment}
-    for segment, prefix in sorted(prefixes.items()):
-        if by_segment.get(segment) != prefix:
-            fail("anchors", "404.html maps the subpath /%s/ to the anchor prefix %r; "
-                            "ANCHOR_FAMILIES in registry.js says %r"
-                 % (segment, prefix, by_segment.get(segment)))
+    vocabulary = set(page_ids) | {s for _p, _pg, s in families if s}
+    for literal in sorted(set(re.findall(r'"([a-z][a-z0-9.-]{2,})"', text)) & vocabulary):
+        fail("anchors", "404.html names the address %r; the handover exists so the "
+                        "subpath vocabulary stands only in registry.js" % literal)
 
-    # The permitted direction: registry.js also accepts the paper's unnumbered
-    # anchors and the apparatus, which have no subpath form of their own.
-    covered = set(page_paths) | set(page_paths.values())
-    surplus = sorted(set(page_ids) - covered)
-    literals = re.findall(r"[a-z][a-z-]*", paper_anchor.pattern)
-    surplus += sorted(set(literals) - covered)
-    if surplus:
-        note("registry.js resolves addresses 404.html has no subpath for: %s"
-             % ", ".join(surplus))
+    # A self-test of the Python rebuild below, which every other anchor check
+    # runs through. It holds resolve_site_url against the declarations it reads
+    # out of registry.js, so a rebuild that stops understanding a declaration
+    # shows up here instead of turning the checks above into silent passes. That
+    # the JavaScript resolver agrees is the browser half of the verification.
+    for page in sorted(page_ids):
+        if resolve_site_url(page, page_ids, families, paper_anchor) != page:
+            fail("anchors", "the subpath /%s does not resolve to #%s" % (page, page))
+    for prefix, _page, segment in families:
+        if not segment:
+            continue
+        resolved = resolve_site_url(segment + "/probe", page_ids, families, paper_anchor)
+        if resolved != prefix + "probe":
+            fail("anchors", "the subpath /%s/probe resolves to %s, not to #%sprobe"
+                 % (segment, "#" + resolved if resolved else "nothing", prefix))
+    if resolve_site_url("konvention", page_ids, families, paper_anchor) != "konvention-v0.1":
+        fail("anchors", "the subpath /konvention no longer resolves to #konvention-v0.1")
 
 
 def check_anchors():
@@ -699,7 +708,7 @@ def check_anchors():
             fail("anchors", "%s names %s, which resolves to #%s, and nothing declares it"
                  % (where, token, anchor))
 
-    check_subpath_tables(page_ids, families, paper_anchor)
+    check_subpath_handover(page_ids, families, paper_anchor)
 
 
 # ---------------------------------------------------------------------------
