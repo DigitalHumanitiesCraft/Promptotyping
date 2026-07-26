@@ -47,7 +47,7 @@ The dividing line is the one part 5 draws. Where a rule decides, a script runs i
 
 **Why it matters.** A catalogue entry without a file is a dead address that a foreign repository may already carry in a `template:` field. A file without an entry is either an oversight or a deliberate hold, and only the second is acceptable.
 
-**Verdict, 2026-07-26.** Passes, with `technology` reported as held back pending its vault-first adoption (`knowledge/entscheidungen-offen.md`, B3).
+**Verdict, 2026-07-26.** Passes, with sixteen slugs on both sides and nothing held back. `technology` entered the catalogue on 2026-07-26; until then it was the one held-back slug, reported by the check as a note. The `HELD_BACK` map stays in the script as the mechanism for the next such case, since a file without an entry has to be either an oversight or a stated hold, and the script is what forces the choice.
 
 ### V3. The action layer lists the catalogue's slugs
 

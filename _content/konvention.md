@@ -36,7 +36,7 @@ One document carries one function. A small tool repository may therefore consoli
 
 A knowledge base in the `knowledge/` folder covers a range of functions. Which functions are relevant, and how many files carry them, depends on the project. The convention describes these functions rather than a fixed list of documents, so that an agent setting up a new repository checks the trigger criterion per function and decides which documents to create.
 
-The function names have been English since 2026-07-19 (Navigation, Charter, Material, Specification, Architecture, Domain Knowledge, Design, Quality Assurance, Provenance, Planning, Reporting, Agent Instructions, Verification, Integration). The template names remain unchanged even where they are German (Vorlage Datengrundlage, Vorlage Domänenwissen), because real repositories reference them in `template:` fields and the site anchors rest on them. Template names are identifiers rather than designations of function.
+The function names have been English since 2026-07-19 (Navigation, Charter, Material, Specification, Architecture, Technology Baseline, Domain Knowledge, Design, Quality Assurance, Provenance, Planning, Reporting, Agent Instructions, Verification, Integration). The template names remain unchanged even where they are German (Vorlage Datengrundlage, Vorlage Domänenwissen), because real repositories reference them in `template:` fields and the site anchors rest on them. Template names are identifiers rather than designations of function.
 
 | Function | Question it answers | Trigger | Typical carrier |
 |---|---|---|---|
@@ -45,6 +45,7 @@ The function names have been English since 2026-07-19 (Navigation, Charter, Mate
 | Material | What is the substrate that is processed or produced? | project processes or produces data | `data.md` |
 | Specification | What is the system to do and why? | always | `specification.md` (requirements, epics and user stories, functional scope, decisions); ADRs and decisions can be split out as `decisions.md`; narrative scenarios as a section in `specification.md`, as a separate `user-stories.md` for large projects, or as "Acceptance Scenarios" in the spec (equivalent) |
 | Architecture | How is it technically realised? | system goes beyond a static site | `architecture.md` |
+| Technology Baseline | With which technologies is a whole family of artefacts built, and why do the rules read as they do? | several projects build the same artefact type and the stack rationale is reusable; held centrally and referenced by the instances | `technology-baseline.md`; template [Vorlage Technology](#promptotyping-document-technology) |
 | Domain Knowledge | Which scholarly-methodological knowledge and which stipulations apply (the why and the domain rulebook)? | research, edition or data project with a layer of methodological stipulation or theory | `editorial-guidelines.md`, `tei-mapping.md`, `methodik.md`, `forschungsrahmen.md`, `ontology.md`; template [Vorlage Domänenwissen](#promptotyping-document-domain-knowledge) |
 | Design | What does it look like, how does it behave aesthetically? | project has a UI | `design.md` |
 | Quality Assurance | What is guaranteed, what deliberately is not, and how is it checked? | project with tests, verification or acceptance checks | `testing.md` (or `test-strategy.md`); template [Vorlage Testing](#promptotyping-document-testing) |
@@ -61,7 +62,11 @@ Standard file names are lower case (`project.md`, `data.md`, `specification.md`,
 
 ## Template catalogue
 
-For the functions that recur in practice, fillable templates lie as Promptotyping Document sections of this site. The catalogue is open, and a template arises as soon as a carrier of a function recurs in comparable form in at least two repositories. The current stock is the following.
+For the functions that recur in practice, fillable templates lie as Promptotyping Document sections of this site. The catalogue is open, and a template arises as soon as a carrier of a function recurs in comparable form in at least two repositories.
+
+One function escapes that count by construction. A centrally held document is written once for a whole family of projects and referenced from each of them, so a second carrier never appears however many projects rely on it. For such a function the admission criterion is the second referencing project rather than the second document, and Technology Baseline is the case in the current stock. The recurrence the rule looks for is the recurrence of the need, which a reference demonstrates as well as a copy does.
+
+The current stock is the following.
 
 | Template | Function | Recommended file name |
 |---|---|---|
@@ -72,6 +77,7 @@ For the functions that recur in practice, fillable templates lie as Promptotypin
 | [Vorlage User Stories](#promptotyping-document-user-stories) | Specification (narrative usage scenarios in a separate file; documented exception only) | `user-stories.md` |
 | [Vorlage Action-Layer](#promptotyping-document-action-layer) | Agent Instructions | `CLAUDE.md` (repository root) |
 | [Vorlage Architecture](#promptotyping-document-architecture) | Architecture (including external models and deployment as sections; regular split-out `pipeline.md`) | `architecture.md` |
+| [Vorlage Technology](#promptotyping-document-technology) | Technology Baseline (rules and rationale for a whole artefact family, held centrally) | `technology-baseline.md` |
 | [Vorlage Domänenwissen](#promptotyping-document-domain-knowledge) | Domain Knowledge (layer of rationale and domain rulebook) | `editorial-guidelines.md`, `methodik.md`, `tei-mapping.md` and others |
 | [Vorlage Design](#promptotyping-document-design) | Design | `design.md` |
 | [Vorlage Testing](#promptotyping-document-testing) | Quality Assurance | `testing.md` |
@@ -140,6 +146,7 @@ Instead of a `type:` field in the frontmatter, a document's function carries its
 | Decision record | Process | `decisions.md` where it lifts the standing decisions out of the running journal | a decision already taken is reopened, the current rule is not findable outside the log |
 | Specification (narrative) | Declarative | `specification.md` (section on epics and user stories); where split, `user-stories.md`, `scholar-user-stories.md` | usage scenario misunderstood, research operation ignored |
 | Architecture | Declarative | `architecture.md`, `pipeline.md`, `infrastruktur.md` | false assumptions about components, data flow, layer boundaries |
+| Technology Baseline | Action | `technology-baseline.md` | generated artefact breaks a family-wide technology rule (build step, forbidden dependency, wrong hosting form), or a deviation stands without a rationale in the instance's `architecture.md` |
 | Domain Knowledge | Declarative | `editorial-guidelines.md`, `tei-mapping.md`, `methodik.md`, `forschungsrahmen.md`, `ontology.md` | domain rule or method violated, editorial guideline ignored, layer of rationale missing |
 | Design | Declarative | `design.md`, `DESIGN.md` | UI inconsistency, break in the design system, design stance unclear (for agent behaviour that contradicts design values, check `CLAUDE.md` as well) |
 | Quality Assurance | Action | `testing.md`, `test-strategy.md` | guarantee unclear, test missing or failing, acceptance criterion unchecked |

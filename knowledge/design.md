@@ -88,7 +88,7 @@ Beyond these two, no element carries a hue.
 
 ### Dark theme
 
-The stylesheet resolves every colour through a token, so the theme is a token swap. The system preference applies by default, a `data-theme` attribute on the root element overrides it, and an inline prelude in the head applies the stored choice before first paint so a dark reader never sees a white flash. The choice is kept in `localStorage` under `promptotyping-theme`.
+The stylesheet resolves every colour through a token, so the theme is a token swap. Light is the first view (A29, operator decision 2026-07-26). The inline prelude in the head always writes a `data-theme` attribute on the root element, the stored choice where one exists and `light` otherwise, before first paint, so a reader who chose dark never sees a white flash. The stylesheet still carries the `prefers-color-scheme` block, and the always-set attribute overrides it, so the system preference no longer decides what a first-time visitor sees. The choice is kept in `localStorage` under `promptotyping-theme`.
 
 ```
 --bg #131313   --text #e9e9e9   --accent #3d3d3d
@@ -182,7 +182,7 @@ Below 768px the panel becomes a bottom sheet: full width, `max-height: 80vh`, a 
 
 ### Glossary trigger
 
-Glossary-defined terms render with a dotted grey underline (`1px dotted var(--glossar-underline)`) and `cursor: help`. Hover fills the background with `#f5f5f5`. A hover tooltip with a short definition appears after a delay handled in `app.js`; a click opens the side panel with the full definition. The tooltip surface fades in over `opacity 150ms`.
+Glossary-defined terms render with a dotted grey underline (`1px dotted var(--glossar-underline)`) and `cursor: help`. Hover fills the background with `#f5f5f5`. A tooltip appears after a 400ms delay, handled in `pages-glossar.js`, and carries the term, the short definition and a link to the full entry; a click toggles the same tooltip, which is the only way in on a touch device. The tooltip surface fades in over `opacity 150ms`. The side panel that used to open on click is out of this flow since 2026-07-26 (A29 sits beside this in [specification.md](specification.md), the decision itself is A6).
 
 ### Vorlagen table
 

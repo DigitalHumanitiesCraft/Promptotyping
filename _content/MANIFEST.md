@@ -35,7 +35,9 @@ Nachtrag 2026-07-19 (Vault-Vorlagen-Sweep): Sechs weitere Vorlagen gespiegelt un
 
 Jede Datei traegt im Frontmatter `title, slug, version, status, source, mirrored, machine-url`. Das Feld `mirrored` haelt die Erstspiegelung fest und wird bei einem Sweep nicht fortgeschrieben; welche Datei wann nachgezogen wurde, steht in den Nachtraegen dieses Dokuments und die erreichte Fassung in der Versionsspalte.
 
-Nachtrag 2026-07-23: `promptotyping-document/technology.md` liegt als Entwurf (Vorlage Technology, v0.1, status draft) im Vorlagen-Ordner. Die Datei ist kein Vault-Spiegel, sondern eine Repo-Erstfassung; die vault-first-Aufnahme in den Katalog steht aus. Bis dahin ist der Slug nicht Teil des freigegebenen Katalogs und nicht in `data/promptotyping-documents.json`, im `CLAUDE.md`-Anker-Schema oder in der Vorlagen-Sektion der Site verdrahtet. Zusaetzlich traegt `technology-baseline.md` (repo-kanonisch, status draft) die Technology Baseline fuer die Artefaktfamilie der statischen Web-Tools, die operative Langform der technischen Guidelines aus dem Methodenpaper (Sektion 4.1); Site-Verdrahtung offen, erreichbar ueber die Maschinenadresse.
+Nachtrag 2026-07-26: `promptotyping-document/technology.md` (Vorlage Technology, v0.1) ist in den Katalog aufgenommen und im Repo kanonisch. Die Datei hat kein Vault-Original, fuehrt deshalb kein `source`- und kein `mirrored`-Feld und steht in der Tabelle oben nicht; sie ist die sechzehnte Vorlage. Verdrahtet in `data/promptotyping-documents.json`, in den drei Tabellen von `konvention.md` und in der Slug-Liste der `CLAUDE.md`. Der Dokumenttyp ist bei der Aufnahme von Declarative auf Action korrigiert, weil der Papertext die Technology Baseline in Abschnitt 3.3 unter den Action Documents fuehrt. Der Vault zieht in einer eigenen Sitzung nach.
+
+Zusaetzlich traegt `technology-baseline.md` (repo-kanonisch, status draft) die Technology Baseline fuer die Artefaktfamilie der statischen Web-Tools, die operative Langform der technischen Guidelines aus dem Methodenpaper (Sektion 4.1). Sie ist das ausgefuellte Dokument zur Vorlage und ueber den Block Maschinenzugriff der Vorlagen-Seite erreichbar.
 
 ## Konvention
 

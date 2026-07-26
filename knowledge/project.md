@@ -92,7 +92,7 @@ This knowledge base is a **mirror with a life of its own**. The vault templates 
 - The catalogue templates are addressable under latest anchors (`#promptotyping-document-data` and so on), with snapshot sub-anchors added at later version jumps.
 - Subpath aliases (`/promptotyping-document/data`) serve humans; static Markdown URLs under `_content/` serve as the machine address (ADR-10).
 - Case-study depth pages plus a filterable, curated use-case gallery (A7).
-- Glossary as hover and side-panel source, bibliography as an anchor list.
+- Glossary as a tooltip over the reading flow, with the full entry one link away; bibliography as an anchor list in which every entry carries its own address.
 - Repositories can write `template: { url: "https://dhcraft.org/Promptotyping/promptotyping-document/data" }` into their frontmatter and thereby point at the canonical latest specification.
 
 ## Links

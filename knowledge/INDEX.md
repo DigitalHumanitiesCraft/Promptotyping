@@ -18,7 +18,7 @@ template:
   version: 0.2
   url: https://dhcraft.org/Promptotyping/promptotyping-document/index
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-index
-related: [project, specification, architecture, design, journal, paper, paper-writing, paper-argument-map, paper-terminology, entscheidungen-offen, plan-site, report, submission-zfdg, revision, skriptum-video-1, skriptum-video-2]
+related: [project, specification, architecture, design, journal, paper, paper-writing, paper-argument-map, paper-terminology, plan-site, report, submission-zfdg, revision, skriptum-video-1, skriptum-video-2]
 ---
 
 # INDEX
@@ -27,7 +27,7 @@ Navigation and glossary of this repository's knowledge base. The repository `Dig
 
 ## Language regime
 
-By operator decision of 2026-07-23 the core knowledge documents (INDEX, project, specification, architecture, design) are English, since they are the public showcase of the self-application. The process and steering documents stay German as working instruments, which covers journal, paper-writing, paper-argument-map, paper-terminology, entscheidungen-offen, plan-site, report, submission-zfdg, the two video scripts, and the revision documents. The `template:` frontmatter blocks keep the German template names until the template catalogue itself renames them in the vault; the glossary below gives the English function names.
+By operator decision of 2026-07-23 the core knowledge documents (INDEX, project, specification, architecture, design) are English, since they are the public showcase of the self-application. The process and steering documents stay German as working instruments, which covers journal, paper-writing, paper-argument-map, paper-terminology, plan-site, report, submission-zfdg, the two video scripts, and the revision documents. The `template:` frontmatter blocks keep the German template names until the template catalogue itself renames them in the vault; the glossary below gives the English function names.
 
 ## Status vocabulary
 
@@ -46,7 +46,6 @@ By operator decision of 2026-07-23 the core knowledge documents (INDEX, project,
 - **[paper-writing.md](paper-writing.md)** — the knowledge about writing the paper: working mode, core statements, language rules, decision state, checkpoints, German.
 - **[paper-argument-map.md](paper-argument-map.md)** — the concept model of the paper, one argument chain per block in compact notation with confirmation status, German. Serves the operator as a review instrument and an agent as a generation basis.
 - **[paper-terminology.md](paper-terminology.md)** — working sheet of the terminology pass: every term with its English original form, its definition in the current text, its source, and a status code; German. Carries the open operator decisions of the pass.
-- **[entscheidungen-offen.md](entscheidungen-offen.md)** — everything still undecided or decided but not carried out, across site, paper, and convention, worked out to the point where an assent suffices; German.
 - **[plan-site.md](plan-site.md)** — the work packages of the rebuild from paper publication to specification documentation, with the target state; German (function: Planning).
 - **[skriptum-video-1.md](skriptum-video-1.md)** and **[skriptum-video-2.md](skriptum-video-2.md)** — the cleaned scripts of the two introductory videos, German. They are the source from which the worked-workflow page was written and, through their representations in the vault, the ground of the claims that rest on the videos.
 - **[report.md](report.md)** — snapshot report of the lane run towards the ZfdG submission (2026-07-23), German; carries a dated addendum on what the revision round settled and is not otherwise updated.
@@ -93,7 +92,7 @@ Terms constitutive for this knowledge base. Canonical definitions live in the li
 
 **Promptotyping Document.** Structured Markdown document in a repository's `knowledge/` folder. All of them are Knowledge Documents, specialised by the kind of knowledge they carry into three analytical types, Declarative (subject matter), Process (chronological), Action (imperative). Until July 2026 the declarative type itself was called Knowledge Document; the name moved to the umbrella term (see `paper-terminology.md`).
 
-**Template (Vorlage).** Fillable structural pattern for one function of a Promptotyping knowledge base. The function names have been English since 2026-07-19 (Navigation, Charter, Material, Specification, Architecture, Domain Knowledge, Design, Quality Assurance, Verification, Provenance, Planning, Reporting, Integration, Agent Instructions). The catalogue lives in the vault; the site mirrors the templates as versioned anchors. A template carries only where its trigger holds.
+**Template (Vorlage).** Fillable structural pattern for one function of a Promptotyping knowledge base. The function names have been English since 2026-07-19 (Navigation, Charter, Material, Specification, Architecture, Technology Baseline, Domain Knowledge, Design, Quality Assurance, Verification, Provenance, Planning, Reporting, Integration, Agent Instructions). The catalogue lives in the vault; the site mirrors the templates as versioned anchors. A template carries only where its trigger holds.
 
 **Konvention Promptotyping Documents.** The description of knowledge-base functions, the frontmatter schema, and the structural principles. Lives in the vault, mirrored on the public site as an external specification.
 

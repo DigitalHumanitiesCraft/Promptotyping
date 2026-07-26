@@ -94,6 +94,17 @@
       "trigger": "system goes beyond a static site"
     },
     {
+      "slug": "technology",
+      "title": "Vorlage Technology",
+      "funktion": "Technology Baseline (rules and rationale for a whole artefact family, held centrally)",
+      "datei": "technology-baseline.md",
+      "typ": "Action",
+      "version": "0.1",
+      "status": "complete",
+      "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/technology.md",
+      "trigger": "several projects build the same artefact type and the stack rationale is reusable"
+    },
+    {
       "slug": "domain-knowledge",
       "title": "Vorlage Domaenenwissen",
       "funktion": "Domain Knowledge (rationale layer and domain rule set)",

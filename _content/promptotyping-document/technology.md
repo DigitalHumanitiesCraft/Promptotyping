@@ -2,8 +2,7 @@
 title: Vorlage Technology
 slug: technology
 version: "0.1"
-status: draft
-source: Entwurf im Repo, vault-first-Aufnahme in den Katalog ausstehend
+status: complete
 machine-url: https://dhcraft.org/Promptotyping/_content/promptotyping-document/technology.md
 ---
 
@@ -23,7 +22,9 @@ Die Funktion trägt nicht für die Architektur eines einzelnen Projekts; die geh
 
 Das Dokument beantwortet, mit welchen Technologien Artefakte einer Familie gebaut werden und warum diese Regeln so lauten. Adressiert sind drei Lesergruppen. Ein Forschender oder Reviewer prüft, ob die Technologiewahl eines Projekts begründet ist, ohne die Begründung in jedem Repo suchen zu müssen. Ein Coding-Agent liest die Baseline als Vorgabe, bevor er ein Artefakt der Familie generiert oder regeneriert; die Regeln sind für ihn direkte Constraints. Der Methodenverantwortliche pflegt die Regeln an einer Stelle statt in jedem Repo.
 
-Der Dokumenttyp ist Declarative. Die Baseline sagt, was gilt und warum; wie ein Agent sich beim Bauen verhält, bleibt Action-Layer.
+Der Dokumenttyp ist Action. Die Zuordnung folgt der Diagnosefrage der Typologie, welcher Dokumenttyp nachzuziehen ist, wenn der Output nicht stimmt. Generiert ein Agent ein Artefakt der Familie mit einem Build-Schritt und einer npm-Abhängigkeit, ist der Output formal falsch, und nachzuziehen ist die Baseline. Die Baseline steht damit neben Action-Layer und Teststrategie und unterscheidet sich von beiden durch ihren Geltungsbereich, sie gilt für eine Artefaktfamilie statt für ein Projekt.
+
+Der Grund, warum die Zuordnung nicht offensichtlich ist, liegt in der Form. Die Baseline formuliert Regeln mit Begründung und nicht Anweisungen im Imperativ, was sie oberflächlich wie ein deklaratives Dokument aussehen lässt. Maßgeblich ist aber, dass ihre Sätze das Bauen binden und nicht einen Sachverhalt des Projekts beschreiben.
 
 ## Strukturprinzipien
 
@@ -56,7 +57,7 @@ Das Dokument folgt dem reduzierten Frontmatter-Pflichtkern aus der [Konvention P
 ## Was nicht reingehört
 
 - Projektspezifischer Stack und Modulstruktur; das gehört in die `architecture.md` der Instanz.
-- Imperative Bau-Anweisungen an den Agenten; das ist Action-Layer.
+- Projektspezifische Anweisung an den Agenten; das ist Action-Layer. Beide Dokumente sind Action-Dokumente, und die Grenze läuft über den Geltungsbereich. Was für jedes Artefakt der Familie gilt, steht in der Baseline; was nur in diesem Repo gilt, steht im Action-Layer.
 - Designsystem und visuelle Vorgaben; die gehören in `design.md` ([Vorlage Design](#promptotyping-document-design)) beziehungsweise ein zentrales Designsystem-Dokument.
 - Fachmethodische Regelwerke; die gehören ins Domänenwissen ([Vorlage Domänenwissen](#promptotyping-document-domain-knowledge)).
 
@@ -106,6 +107,14 @@ machine-url: [statische URL dieses Dokuments]
 [Autor, Jahr, Titel, DOI/URL.]
 ````
 
+## Anwendung als Prompt-Template
+
+Strukturanker beim Aufschreiben einer Baseline. Der Agent erhält den Template-Block und befüllt ihn aus dem, was die Repositorien der Familie faktisch tun, also aus den Stacks, den Abhängigkeitslisten, der Hosting-Form und den vorhandenen `architecture.md`-Dokumenten. Der entscheidende Arbeitsschritt liegt danach und ist nicht delegierbar. Eine Regel, die der Agent aus dem Bestand abliest, ist eine Beobachtung; zur Regel wird sie erst, wenn der Fachverantwortliche sie vertritt. Die Begründungen verlangen deshalb Verifikation durch den Critical Expert, und die Abweichungskriterien ebenso, weil sie festlegen, wann ein Projekt vom Default abrücken darf.
+
+Vorgabe an den bauenden Agenten. Die Baseline wird über ihre Maschinenadresse in den Kontext geladen, bevor ein Artefakt der Familie generiert oder regeneriert wird; ihre Regeln sind für den Lauf Constraints. Verweist der Action-Layer eines Projekts auf die Baseline, genügt dort die Adresse und die Nennung der Abweichungen.
+
+Review-Folie für ein bestehendes Artefakt. Ein ausgeliefertes Artefakt wird gegen die Baseline gehalten, Regel für Regel. Jede Abweichung, die in der `architecture.md` der Instanz nicht mit Begründung steht, ist ein Review-Befund; das ist die Prüfform, die das zweite Strukturprinzip einlöst.
+
 ## Beispiel
 
 Das Methodik-Repo führt `_content/technology-baseline.md` als Baseline für die Familie der selbstständigen statischen Web-Tools; Warum-Sektion mit Minimal Computing und Endings-Prinzipien, sieben Regeln einschließlich der Kompromissregel mit vier Kriterien, FAIR4RS-Messung mit dem Findability-Befund, Grenzen mit RSE-Übergabepunkt und der Anwendungsmechanismus über die Maschinenadresse.
@@ -118,7 +127,7 @@ Das Methodik-Repo führt `_content/technology-baseline.md` als Baseline für die
 
 ## Versionshistorie
 
-- 0.1 (2026-07-23): Entwurf, empirisch aus der Technology Baseline des Methodik-Repos. Vault-first-Aufnahme in den Vorlagen-Katalog ausstehend; bis dahin ist dieser Entwurf nicht Teil des freigegebenen Katalogs.
+- 0.1 (2026-07-26): Aufnahme in den Vorlagen-Katalog. Empirisch aus der Technology Baseline des Methodik-Repos entstanden (Erstentwurf 2026-07-23). Der Dokumenttyp ist bei der Aufnahme von Declarative auf Action korrigiert, weil der kanonische Papertext die Technology Baseline in Abschnitt 3.3 unter den Action Documents führt und die Diagnosefrage der Typologie zum selben Ergebnis kommt. Die Vorlage ist im Repo kanonisch und hat kein Vault-Original.
 
 ## Related
 

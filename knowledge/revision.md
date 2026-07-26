@@ -13,7 +13,7 @@ generated-with: Claude Code (Claude Opus 5)
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
-related: [INDEX, paper, paper-writing, journal, entscheidungen-offen]
+related: [INDEX, paper, paper-writing, journal]
 ---
 
 # Revision

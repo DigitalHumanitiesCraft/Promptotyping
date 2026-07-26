@@ -23,10 +23,9 @@ TEMPLATE_DIR = ROOT / "_content" / "promptotyping-document"
 CLAUDE_MD = ROOT / "CLAUDE.md"
 
 # Templates written but deliberately not wired into the catalogue, with the
-# reason. A slug may sit here or in the catalogue, never in neither.
-HELD_BACK = {
-    "technology": "vault-first adoption pending, see knowledge/entscheidungen-offen.md B3",
-}
+# reason. A slug may sit here or in the catalogue, never in neither. Empty
+# since 2026-07-26, when technology entered the catalogue.
+HELD_BACK = {}
 
 failures = []
 notes = []

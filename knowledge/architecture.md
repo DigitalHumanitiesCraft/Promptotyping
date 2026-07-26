@@ -49,7 +49,7 @@ How the site is built. A single HTML page holds empty section shells; vanilla Ja
 ```
 Promptotyping/
 ├── index.html                      # site entry, empty section shells
-├── 404.html                        # subpath-routing fallback (copy of index with a routing prelude)
+├── 404.html                        # subpath-routing stub, resolves and redirects to index.html
 ├── .nojekyll                       # forces GitHub Pages to publish _content/
 ├── README.md
 ├── CLAUDE.md                       # action layer
@@ -64,11 +64,12 @@ Promptotyping/
 │   └── MANIFEST.md                 # mirror provenance
 ├── assets/
 │   ├── css/style.css
-│   ├── js/app.js
+│   ├── js/                         # ten core scripts, app.js loads last
 │   ├── js/modules/frontmatter-inspector.js
 │   ├── js/modules/case-study-filter.js
 │   ├── js/modules/term-index.js
 │   ├── vendor/marked.min.js, vendor/js-yaml.min.js
+│   ├── figures/                    # paper figures plus PROVENANCE.md
 │   ├── img/dhcraft-logo-watercolor.png
 │   └── promptotyping-logo.png
 ├── data/                           # glossar.json, promptotyping-documents.json, case-studies.json
@@ -99,14 +100,14 @@ Calls across file boundaries go through the namespace at call time, so no load o
 
 1. `configureMarked()` registers the marked configuration and the phase-tag extension.
 2. `mountPages()` and `buildNav()` build the page hosts and the sidebar tree from `PAGES`.
-3. `setupSidePanel()`, `setupThemeToggle()` and `setupGlossarInteraction()` wire the reusable slide-in panel, the theme control and the glossar hover/click delegation. The sidebar has no toggle; it is always visible.
+3. `setupSidePanel()`, `setupThemeToggle()` and `setupGlossarInteraction()` wire the reusable slide-in panel, the theme control and the glossar tooltip delegation. The sidebar has no toggle; it is always visible.
 4. `showPage()` activates the routed page immediately, so the shell is never a blank frame while the content files are still in flight.
 5. A `Promise.all` renders the static pages in parallel. `renderGlossar` must finish before the paper sections, because their glossar triggers cannot be marked otherwise.
 6. `loadLateModules` injects and awaits the module scripts the shell does not declare, then `promptotyping:sections-ready` fires, so no module can miss its boot event. Paper renders, then vault, then `addPageStatusLines`, then `handleHash` against the fully rendered DOM, and last `promptotyping:content-ready`, the event at which every addressable piece of content stands in the DOM. The term index listens for the second event, because it scans the rendered pages rather than a data file alone.
 
 **marked configuration and the phase-tag stripper** (`markdown.js`)**.** `configureMarked` calls `marked.use` with `gfm: true`, `breaks: false`, and one block-level extension named `classedParagraph`. marked.js does not parse the Pandoc-style class syntax `{:.class}` out of the box. The paper Markdown still carries `{:.phase-*}` tags as a methodological annotation, and the provenance lane that once rendered them was removed on 2026-06-10 by operator decision. The extension recognises a `{:.class}` tag at the start of a paragraph and strips only the four legacy classes `phase-preparation`, `phase-exploration`, `phase-distillation`, and `phase-implementation`, rendering the paragraph as a plain `<p>` with no class. Any other class tag falls through to the standard paragraph tokenizer. Do not add new `{:.phase-*}` tags; the lane is not to be revived (see `CLAUDE.md`).
 
-**Paper rendering** (`pages-paper.js`)**.** The paper view fetches `knowledge/paper.md`, the canonical text, strips a leading YAML block if one is present, and renders it in one pass; the mirrored cut under `_content/paper/` no longer exists, and with it the largest class of drift. `sectionizePaper` groups the flat output into one `.paper-section` per H2, moving the heading id onto the section so every top-level section stays addressable and observable. `buildPaperToc` then builds the two-level table of contents (A23) from the section ids and the H3 ids and puts it directly after the H1, so the status line inserted later lands between title and contents. `addPaperAnchorAliases` keeps the older `#abschnitt-*` anchors resolving, and `HEADING_ID_MAP` maps `references` onto the `literatur` id so the table of contents entry still lands on the paper's own reference list. The reference list and the footnote apparatus are excluded from `decorateGlossarTriggers` and `decorateCitations`, because the one is the citation target itself and the other carries the source notes.
+**Paper rendering** (`pages-paper.js`)**.** The paper view fetches `knowledge/paper.md`, the canonical text, strips a leading YAML block if one is present, and renders it in one pass; the mirrored cut under `_content/paper/` no longer exists, and with it the largest class of drift. `sectionizePaper` groups the flat output into one `.paper-section` per H2, moving the heading id onto the section so every top-level section stays addressable and observable. `buildPaperToc` then builds the two-level table of contents (A23) from the section ids and the H3 ids and puts it directly after the H1, so the status line inserted later lands between title and contents. `addPaperAnchorAliases` keeps the older `#abschnitt-*` anchors resolving, and `HEADING_ID_MAP` maps `references` onto the `literatur` id so the table of contents entry still lands on the paper's own reference list. The reference list and the footnote apparatus are excluded from `decorateGlossarTriggers` and `decorateCitations`, because the one is the citation target itself and the other carries the source notes. `attachFigures` runs first and joins an image to the caption paragraph that follows it into one `<figure>` with a `<figcaption>` and the id `figure-{n}`, keyed on a leading bold `Figure {n}.`; a caption without an image before it stays a paragraph, which is how an undrawn figure degrades. `indexReferences` and `markReferenceLinks` then build the reference anchors of A30, and `decorateCitations` resolves each citation against that map, falling back to `#literatur` where no entry matches.
 
 **Method pages** (`app.js` boot)**.** `anwendung`, `workflow`, `artefakt` and `verifikation` are static content pages rendered by `renderMarkdownInto` from `_content/{slug}.md`, resolvable as subpaths of the same name. The first three are written against the canonical paper; `workflow` walks the video-documented session through the four phases, is sourced from the cleaned scripts in the vault's representation layer, and carries the part-1 video, which used to sit in the hero above the paper. Since 2026-07-25 the sidebar tree puts the specification first and the paper last, so the site answers what Promptotyping is and how it is applied before it argues why (`knowledge/plan-site.md`).
 
@@ -114,7 +115,7 @@ Calls across file boundaries go through the namespace at call time, so no load o
 
 **Template catalogue.** Each row carries a `trigger` field, the condition under which the template's function applies, derived from the function table in `_content/konvention.md` and held in `data/promptotyping-documents.json`.
 
-**Glossar** (`pages-glossar.js`)**.** `renderGlossar` loads `data/glossar.json`, sorts entries, renders the glossar section, and emits empty `konzept-*` alias anchors (via `KONZEPT_ALIASES`) so `#konzept-{name}` routing resolves into the matching entry. A sub-navigation of initials heads the section, one link per first letter to the first entry under it. `decorateGlossarTriggers` walks the text nodes of a rendered section and wraps the first occurrence of each term (longest term first, word-boundary check, skipping links, code, and headings) in a keyboard-accessible `.glossar-trigger`. `setupGlossarInteraction` shows a tooltip on hover after a delay and opens the side panel on click or Enter/Space.
+**Glossar** (`pages-glossar.js`)**.** `renderGlossar` loads `data/glossar.json`, sorts entries, renders the glossar section, and emits empty `konzept-*` alias anchors (via `KONZEPT_ALIASES`) so `#konzept-{name}` routing resolves into the matching entry. A sub-navigation of initials heads the section, one link per first letter to the first entry under it. `decorateGlossarTriggers` walks the text nodes of a rendered section and wraps the first occurrence of each term (longest term first, word-boundary check, skipping links, code, and headings) in a keyboard-accessible `.glossar-trigger`. `setupGlossarInteraction` shows a tooltip after a 400ms hover delay and toggles the same tooltip on click or Enter/Space (A6). The tooltip is one element appended to `document.body` and repositioned per trigger, clamped to the viewport, and it stays open while the pointer moves into it so the link to the full entry stays reachable. The side panel is no longer part of this path.
 
 **Citations** (`pages-paper.js`)**.** `decorateCitations` walks text nodes and turns parenthetical "Author Year" references into jump links to `#literatur`, matching an author with optional "et al." or a joined co-author and a four-digit year with an optional disambiguation letter.
 
