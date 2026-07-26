@@ -1,389 +1,389 @@
 ---
-title: Glossar
+title: Glossary
 slug: glossar
 version: "0.2"
 status: complete
-source: data/glossar.json (massgebliche Datenquelle); erzeugt, nicht von Hand gepflegt
-mirrored: 2026-07-25
+source: data/glossar.json (authoritative data source); generated, not maintained by hand
+mirrored: 2026-07-26
 machine-url: https://dhcraft.org/Promptotyping/_content/glossar.md
 ---
 
-# Glossar
+# Glossary
 
-Begriffe der Promptotyping-Methode und der Methodik-Site. Die massgebliche Datenquelle ist `data/glossar.json`; diese Datei wird daraus erzeugt und ist inhaltsgleich. Pro Eintrag stehen eine Kurzdefinition fuer Tooltips, eine Volldefinition und die Quelle. Begriffe, die der Papertext nicht fuehrt, sind in der Quellenzeile als Site-Vokabular ausgewiesen.
+Terms of the Promptotyping method and of the methodology site. The authoritative data source is `data/glossar.json`; this file is generated from it and carries the same content. Each entry gives a short definition for tooltips, a full definition and the source. Terms the paper text does not carry are marked as site vocabulary in their source line.
 
 ### Action Document
 
-Knowledge Document, das Handlungswissen darueber traegt, was Agenten im Projekt tun duerfen.
+Knowledge document that holds knowledge about what agents may do within the project.
 
-Ein Action Document ist die Spezialisierung des Knowledge Document auf Handlungswissen. Es beschreibt, was Agenten im Projekt tun duerfen und wie. Dazu gehoeren der Action-Layer, die Teststrategie, die Technologie-Baseline und in Mehr-Agenten-Projekten die Rollendefinitionen und Orchestrierungsregeln. Beispiele sind instructions.md, rules.md, cloud-commands.md und CLAUDE.md; sie liegen typischerweise im Repo-Root. Diagnostik: ist der Output formal falsch, wird zuerst das Action Document geprueft.
+An Action Document is the specialisation of the knowledge document towards knowledge about how to act. It describes what agents may do within the project and how. It covers the action layer, the testing strategy, the technology baseline, and in multi-agent projects the role definitions and orchestration rules. Examples are instructions.md, rules.md, cloud-commands.md and CLAUDE.md, which typically sit in the repository root. For diagnostic use, formally wrong output sends the reader to the Action Document first.
 
-Quelle: Paper, Abschnitt 3.3; Konvention Promptotyping Documents
+Source: Paper, Section 3.3; Konvention Promptotyping Documents
 
-### Action-Layer
+### Action Layer
 
-Das imperative CLAUDE.md im Repo-Root, das den Coding-Agenten sozialisiert.
+The imperative CLAUDE.md in the repository root that socialises the coding agent.
 
-Der Action-Layer ist das imperative Dokument im Repo-Root, gewoehnlich CLAUDE.md, das den Coding-Agenten sozialisiert. Er routet zu Wissen und uebersetzt es in Imperative, traegt aber selbst kein Wissen. Er besteht aus einem portablen Methodenkern (Wissensbasis-Routing, Journal-Pflicht, Verifikationsregeln, Designprinzipien, Scope, Wahrheitshierarchie) und einem austauschbaren Werkzeug-Block (Befehle, Hooks, Permissions, Plattform-Konventionen).
+The action layer is the imperative document in the repository root, usually CLAUDE.md, that socialises the coding agent. It routes to knowledge and translates it into imperatives while carrying no knowledge itself. It consists of a portable method core (knowledge-base routing, journal obligation, verification rules, design principles, scope, truth hierarchy) and an exchangeable tooling block (commands, hooks, permissions, platform conventions).
 
-Quelle: Paper, Abschnitt 3.3; Vorlage Action-Layer
+Source: Paper, Section 3.3; Vorlage Action-Layer
 
-### Agent-Sozialisierung
+### Agent Socialisation
 
-Aesthetische und verhaltensbezogene Praegung eines Coding-Agenten durch die Komposition aus design.md und CLAUDE.md.
+Aesthetic and behavioural shaping of a coding agent through the composition of design.md and CLAUDE.md.
 
-Agent-Sozialisierung bezeichnet die aesthetische und verhaltensbezogene Praegung eines Coding-Agenten, die als Lese-Effekt entsteht, wenn ein Action-Dokument im Repositoriums-Wurzelverzeichnis auf ein deklaratives Designdokument verweist. Das Designrationale wird in dieser Uebersetzung zum Aequivalent von Werten in einem Agentenprofil, an denen der Agent auch in unvorhergesehenen Situationen entscheidet. Knowledge bleibt Knowledge und Action bleibt Action; die Sozialisierung entsteht aus dem Zusammenspiel.
+Agent socialisation denotes the aesthetic and behavioural shaping of a coding agent that arises as a reading effect when an action document in the repository root points at a declarative design document. In that translation the design rationale becomes the equivalent of values in an agent profile, from which the agent decides even in unforeseen situations. Knowledge stays knowledge and action stays action; the socialisation arises from the interplay.
 
-Quelle: Paper, Abschnitt 3.3; Vault Agent-Sozialisierung
+Source: Paper, Section 3.3; Vault Agent-Sozialisierung
 
 ### Agentic Coding
 
-LLM-Agenten, die autonom Dateisysteme navigieren, Skripte ausfuehren, Tests laufen lassen und iterieren.
+LLM agents that navigate file systems autonomously, run scripts, execute tests and iterate.
 
-Agentic Coding bezeichnet den Einsatz von LLM-Agenten wie Claude Code, die ein Repository navigieren, Skripte ausfuehren, Tests laufen lassen, Fehlermeldungen interpretieren und auf den eigenen Ausgaben iterieren. Zwischen Mitte 2023 und Ende 2025 ist die Codefaehigkeit der Frontier-LLMs mit solchen agentischen Harnessen zusammengelaufen, was die Implementation-Phase der Methode traegt. Was sich damit aendert, ist die Spanne, ueber die ein Agent ohne menschlichen Eingriff arbeitet, und damit, wie viel Absicht vorab schriftlich vorliegen muss. Mehr-Agenten-Betrieb ist ein Werkzeug der Methode und nicht die Methode.
+Agentic coding denotes the use of LLM agents such as Claude Code that navigate a repository, run scripts, execute tests, interpret error messages and iterate on their own outputs. Between mid-2023 and late 2025 the coding capability of frontier LLMs converged with such agentic harnesses, which is what carries the Implementation phase of the method. What this changes is the span over which an agent works without human intervention, and with it how much intent has to exist in writing beforehand. Multi-agent operation remains one of the tools the method uses.
 
-Quelle: Paper, Abschnitt 2.4; Anthropic 2025
+Source: Paper, Section 2.4; Anthropic 2025
 
 ### Agentic Engineering
 
-Entwicklungspraxis, in der LLM-Agenten die ausfuehrende Instanz sind und die menschliche Arbeit zu Spezifizieren, Steuern und Verifizieren wird.
+Development practice in which LLM agents are the executing instance and the human work becomes specifying, steering and verifying.
 
-Agentic Engineering benennt die Entwicklungspraxis, in der LLM-Agenten die ausfuehrende Instanz sind und die menschliche Arbeit sich auf Spezifizieren, Steuern und Verifizieren verlagert. Ein Agent ist in diesem Sinn ein Sprachmodell, das ueber mehrere Schritte auf ein Ziel hinarbeitet, indem es Werkzeuge in einer Umgebung aufruft und deren Antworten in den eigenen Kontext zurueckninmt, ohne Schritt fuer Schritt angewiesen zu werden. Vier Merkmale spannen einen Gradienten auf, Werkzeugzugriff, Rueckmeldung der Umgebung, Zielverfolgung ueber mehrere Schritte und die Spanne der Autonomie zwischen zwei menschlichen Eingriffen. Chat hat keines davon, Chat mit Werkzeugen die ersten beiden, eine agentische Coding-Umgebung alle vier. Methodisch zaehlt die Spanne der Autonomie, weil sie bestimmt, wie viel Absicht vor Arbeitsbeginn schriftlich vorliegen muss.
+Agentic Engineering names the development practice in which LLM agents are the executing instance and the human work shifts to specifying, steering and verifying. An agent in this sense is a language model that works towards a goal across several steps by calling tools in an environment and taking their responses back into its own context, without being instructed step by step. Four features span a gradient, tool access, the feedback of the environment's response, goal pursuit across several steps, and the span of autonomy between two human interventions. Chat has none of them, chat with tools has the first two, and an agentic coding environment has all four. The span of autonomy is what matters methodologically, because it determines how much intent has to exist in writing before work begins.
 
-Quelle: Paper, Abschnitt 2.4
+Source: Paper, Section 2.4
 
-### Anker-Schema
+### Anchor Scheme
 
-System stabiler URL-Anker, ueber die Vorlagen, Konzepte, Case Studies und Begriffe der Site adressiert werden.
+System of stable URL anchors through which the site addresses templates, concepts, case studies and terms.
 
-Das Anker-Schema ist das System der permanent stabilen URL-Anker auf der Single-Page-Site. Pro Vorlage, Konzept, Case Study und Begriff existiert ein stabiler Anker, etwa #promptotyping-document-data, #konzept-eil oder #case-herdata. Jeder adressierbare Inhalt existiert in zwei gleichberechtigten, kanonischen Formen: einem Hash-Anker und einer Subpath-URL. Repos, die per Frontmatter-Feld template: verlinken, adressieren diese Anker; sie duerfen nicht ohne Diskussion umbenannt werden.
+The anchor scheme is the system of permanently stable URL anchors on the single-page site. One stable anchor exists per template, concept, case study and term, among them #promptotyping-document-data, #konzept-eil and #case-herdata. Every addressable content item exists in two equally canonical forms, a hash anchor and a subpath URL. Repositories that link through the frontmatter field template: address these anchors, so they may not be renamed without discussion.
 
-Quelle: knowledge/specification.md, Anforderung A4
+Source: knowledge/specification.md, requirement A4
 
 ### Asymmetric Amplification
 
-LLMs verstaerken computergestuetzte Forschungsarbeit entlang bestehender Gefaelle von Expertise, Zugang und epistemischer Selektivitaet.
+LLMs amplify computer-based research work along existing gradients of expertise, access and epistemic selectivity.
 
-Asymmetric Amplification benennt die Dynamik, dass LLMs computergestuetzte Forschungsarbeit nicht automatisieren, sondern entlang bestehender Gefaelle verstaerken, entlang von Expertise, Zugang und epistemischer Selektivitaet (Pollin 2026a). Trainingskorpora bevorzugen englischsprachiges, digitalisiertes, gut publiziertes Wissen; dieselbe Technologie erzeugt Autonomie dort, wo Verifikationskompetenz vorhanden ist, und Abhaengigkeit dort, wo sie fehlt. Eine auf diesen Systemen gebaute Methode erbt das Problem und loest es nicht. Im Paper traegt der Begriff die ethische Dimension der Zugangsgrenze.
+Asymmetric amplification names the dynamic by which LLMs amplify computer-based research work along existing gradients of expertise, access and epistemic selectivity (Pollin 2026a). Training corpora privilege English-language, digitised, well-published knowledge, and the same technology produces autonomy where verification competence exists and dependence where it is absent. A method built on these systems inherits the problem and cannot solve it. In the paper the term carries the ethical dimension of the access limit.
 
-Quelle: Paper, Abschnitt 6.4; Pollin 2026a
+Source: Paper, Section 6.4; Pollin 2026a
 
-### Claims-Verifikation als Dokumentfunktion
+### Claim Verification as a Document Function
 
-Adversariale Pruefung der eigenen empirischen und Neuheitsbehauptungen als eigene Knowledge Documents.
+Adversarial checking of a project's own empirical and novelty claims in dedicated knowledge documents.
 
-Claims-Verifikation als Dokumentfunktion bezeichnet die Pruefung der eigenen empirischen und Neuheitsbehauptungen in einem eigenen Dokument, das festhaelt, welche Behauptung gegen welche Evidenz mit welchem Verfahren geprueft wurde und mit welchem Befund. Drei Bausteine tragen sie, das Nachrechnen aller Kopfzahlen aus den Rohdaten durch eine unabhaengige Instanz mit Quellpfad pro Zahl, die Recherche gegen die eigene Neuheitsbehauptung mit dem Ziel der Widerlegung und ein Konformitaets-Audit gegen die beanspruchten Standards. Aussenwirksame Behauptungen duerfen nur in der Form verwendet werden, die diese Dokumente lizenzieren. Das Muster entstand in FemPrompt SozArb und ist inzwischen eine eigene Dokumentfunktion des Katalogs.
+Claim verification as a document function denotes the checking of a project's own empirical and novelty claims in a dedicated document that records what claim was checked, against what evidence, by what procedure, and with what verdict. Three building blocks carry it, the recomputation of every headline figure from the raw data by an independent instance with a source path per figure, research against the project's own novelty claim with the aim of refuting it, and a conformance audit against the standards claimed. Claims used externally may be used only in the form these documents license. The pattern emerged in FemPrompt SozArb and is now a document function of the catalogue in its own right.
 
-Quelle: Paper, Abschnitt 3.3 und 5.1
+Source: Paper, Sections 3.3 and 5.1
 
 ### Co-Intelligence
 
-Rahmen fuer Mensch-LLM-Zusammenarbeit, der Verstaerkung statt Automatisierung betont.
+Framework for human-LLM collaboration that emphasises amplification over automation.
 
-Co-Intelligence (Mollick 2024) ist ein Rahmen fuer die Zusammenarbeit von Mensch und LLM, der Amplifikation gegenueber Automatisierung betont. Die Site fuehrt den Begriff als Vorlaeufer der eigenen Rollenbestimmung; im Papertext kommt er nicht vor, weil dort der Critical Expert in the Loop und die Asymmetric Amplification die Arbeit uebernehmen, die dieser Rahmen leistet.
+Co-Intelligence (Mollick 2024) is a framework for the collaboration of human and LLM that emphasises amplification over automation. The site carries the term as a precursor of its own account of the role. The paper text does not carry it, because there the Critical Expert in the Loop and asymmetric amplification do the work this framework performs.
 
-Quelle: Site-Vokabular, im Papertext nicht gefuehrt; Mollick 2024
+Source: Site vocabulary, not carried in the paper text; Mollick 2024
+
+### Confabulation
+
+Generation of plausible but false outputs by LLMs, commonly called hallucination.
+
+Confabulation, commonly called hallucination, is the generation of plausible but false outputs (Summerfield 2025). The LLM fills a gap with what fits rather than reporting what it lacks. In research contexts this is particularly dangerous where the output concerns contextualisation, periodisation or attribution, domains in which plausibility and correctness can come apart. Confabulation belongs beside sycophancy to the structural failure modes the Critical Expert in the Loop addresses.
+
+Source: Paper, Section 2.4; Summerfield 2025
 
 ### Context Engineering
 
-Systematische Gestaltung und Verwaltung der Kontextinformation, die LLMs zur Inferenzzeit erhalten.
+Systematic design and management of the contextual information LLMs receive at inference time.
 
-Context Engineering bezeichnet die systematische Gestaltung und Verwaltung der kontextuellen Information, die LLMs zur Inferenzzeit bereitgestellt wird (Mei et al. 2025). Es umfasst Context Retrieval, Context Processing, Context Management und die Integration ueber RAG, Memory-Systeme und Multi-Agent-Architekturen. Der Wechsel vom Prompt Engineering zum Context Engineering spiegelt wider, dass produktionsreife LLM-Anwendungen eine systematische Informationsarchitektur statt einzelner Prompt-Optimierung verlangen. Promptotyping ist eine domaenenspezifische Auspraegung des Context Engineering.
+Context engineering denotes the systematic design and management of the contextual information provided to LLMs at inference time (Mei et al. 2025). It covers context retrieval, context processing, context management and integration through RAG, memory systems and multi-agent architectures. The shift from prompt engineering to context engineering reflects that production-grade LLM applications require a systematic information architecture beyond individual prompt optimisation. Promptotyping is a domain-specific instance of context engineering.
 
-Quelle: Paper, Abschnitt 2.4; Mei et al. 2025
+Source: Paper, Section 2.4; Mei et al. 2025
 
 ### Context Memory
 
-Zusammenspiel von Journal und Git-Historie, das die Wiederaufnahme von Sessions ermoeglicht.
+Interplay of journal and git history that enables reliable session resumption.
 
-Context Memory bezeichnet das Zusammenspiel von Journal und Git-Historie, das die zuverlaessige Wiederaufnahme von Sessions ermoeglicht, wobei das Journal das Warum der Entscheidungen dokumentiert und die Commits das Was festhalten. Die Process Documents der Methode tragen diese Funktion. Beobachtet wurde das Muster unter anderem im imareal-room-object-Dashboard, wo der Agent selbstaendig im Journal dokumentierte.
+Context memory denotes the interplay of journal and git history that enables reliable session resumption, where the journal documents why decisions were taken and the commits document what was done. The Process Documents of the method carry this function. The pattern was observed among others in the imareal-room-object dashboard, where the agent documented in the journal on its own initiative.
 
-Quelle: Paper, Abschnitt 3.3
+Source: Paper, Section 3.3
 
 ### Context Rot
 
-Abnahme der LLM-Leistung mit wachsender Kontextlaenge, auch bei einfachen Aufgaben.
+Decline of LLM performance as context length grows, even on simple tasks.
 
-Context Rot bezeichnet die empirisch belegte Abnahme der LLM-Leistung mit wachsender Eingabelaenge, selbst bei einfachen Aufgaben wie dem Wiederauffinden von Text (Hong et al. 2025). Die Untersuchung ueber achtzehn Modelle zeigt nicht-uniforme Leistung bei wachsendem Kontext und widerlegt die Annahme, dass mehr Information zu besseren Ergebnissen fuehrt. Context Rot liefert die technische Begruendung fuer die Distillation-Phase, deren Prinzip maximale Information bei minimalen Tokens lautet. Im CorrespExplorer wurde die Degradation deutlich innerhalb des beworbenen Kontextfensters beobachtet, qualitativ und ohne Messung.
+Context rot denotes the empirically documented decline of LLM performance as input length grows, even on simple tasks such as retrieving text (Hong et al. 2025). The study across eighteen models shows non-uniform performance under growing context and refutes the assumption that more information yields better results. Context rot supplies the technical rationale for the Distillation phase, whose principle is maximum information with minimum tokens. In CorrespExplorer the degradation was observed well inside the advertised context window, qualitatively and without measurement.
 
-Quelle: Paper, Abschnitt 2.4; Hong et al. 2025
+Source: Paper, Section 2.4; Hong et al. 2025
 
 ### Critical Expert in the Loop (EIL)
 
-Rolle, die LLM-Output an definierten Stellen verifiziert und Domaenenexpertise mit Wissen ueber LLM-Fehlermodi verbindet.
+Role that verifies LLM output at defined points and combines domain expertise with knowledge of LLM failure modes.
 
-Der Critical Expert in the Loop ist die Rolle, die LLM-Output an definierten Stellen verifiziert. Anders als der generische Human in the Loop verlangt sie zugleich Domaenenexpertise und Bewusstsein fuer LLM-spezifische Fehlermodi sowie metakognitive Wachsamkeit. Der Critical Expert prueft nicht nur die Korrektheit von Outputs; die folgenreichere blinde Stelle liegt im nicht explorierten Moeglichkeitsraum, also in den nicht gestellten Fragen und nicht erzeugten Alternativen. Diese metareflexive Kapazitaet unterscheidet ihn von einem Reviewer, der nur Korrektheit prueft.
+The Critical Expert in the Loop is the role that verifies LLM output at defined points. Unlike the generic human in the loop it requires domain expertise together with awareness of LLM-specific failure modes and metacognitive vigilance. The Critical Expert's task extends beyond checking the correctness of outputs. The more consequential blind spot lies in the possibility space that was not explored, in the questions not asked and the alternatives not generated. This metareflexive capacity distinguishes the role from a reviewer who checks correctness alone.
 
-Quelle: Paper, Abschnitt 2.4; Pollin 2025c
+Source: Paper, Section 2.4; Pollin 2025c
 
 ### Declarative Document
 
-Knowledge Document, das Sachwissen ueber Daten, Domaene und Forschungskontext traegt.
+Knowledge document that holds knowledge about data, domain and research context.
 
-Ein Declarative Document ist die Spezialisierung des Knowledge Document auf Sachwissen. Es beschreibt, was ueber Daten, Domaene und Forschungskontext bekannt ist. Beispiele sind README.md, project.md, data.md, requirements.md, architecture.md, design.md, editorial-guidelines.md, Mapping-Regeln und Verifikationsdokumente. Declarative Documents werden vom Critical Expert kuratiert und bilden das bleibende Artefakt des Context Engineering, weil das Wissen, das sie kodieren, Aenderungen an Code, Modellversionen und Werkzeugen ueberdauert. Diagnostik: ist der Output inhaltlich falsch, wird zuerst das Declarative Document geprueft. Die Site fuehrte diesen Typ bis Juli 2026 unter dem Namen Knowledge Document; der Name wanderte auf den Oberbegriff.
+A Declarative Document is the specialisation of the knowledge document towards knowledge about the subject matter. It describes what is known about the data, the domain and the research context. Examples are README.md, project.md, data.md, requirements.md, architecture.md, design.md, editorial guidelines, mapping rules and verification documents. Declarative Documents are curated by the Critical Expert and constitute the persistent artefact of context engineering, because the knowledge they encode survives changes in code, model versions and tools. For diagnostic use, factually wrong output sends the reader to the Declarative Document first. The site carried this type under the name Knowledge Document until July 2026, when the name moved to the generic term.
 
-Quelle: Paper, Abschnitt 3.3; Konvention Promptotyping Documents
+Source: Paper, Section 3.3; Konvention Promptotyping Documents
 
-### Demo-Repo-Reduktion
+### Demo Repository Reduction
 
-Didaktisches Muster, in dem das Demo-Repository bewusst nicht vorkonfiguriert ist.
+Teaching pattern in which the demo repository is deliberately left unconfigured.
 
-Die Demo-Repo-Reduktion ist ein didaktisches Muster fuer Promptotyping-Workshops, in dem Teilnehmende die Methode an einem realen Projekt selbst nachbauen. Das Demo-Repository ist bewusst nicht vorkonfiguriert: Initialzustand mit Rohdaten, knapper idea.md und leerem knowledge/-Ordner, ohne CLAUDE.md, ohne Custom Commands, ohne Output-Struktur. Der Lerngewinn entsteht aus dem Aufbau der Promptotyping-Architektur unter Anleitung, nicht aus dem Lesen einer fertigen. Erprobt im SuGW- und im ZBZ-Workshop.
+Demo repository reduction is a teaching pattern for Promptotyping workshops in which participants rebuild the method themselves on a real project. The demo repository is deliberately left unconfigured, an initial state with raw data, a terse idea.md and an empty knowledge/ folder, without CLAUDE.md, without custom commands and without an output structure. The learning gain comes from building the Promptotyping architecture under guidance rather than from reading a finished one. Tested in the SuGW and the ZBZ workshop.
 
-Quelle: Site-Vokabular, im Papertext nicht gefuehrt; Promptotyping MOC
+Source: Site vocabulary, not carried in the paper text; Promptotyping MOC
 
 ### Distillation
 
-Phase und Schreibprinzip der Context Compression: maximale Information bei minimalen Tokens.
+Phase and writing principle of context compression, maximum information with minimum tokens.
 
-Distillation ist die dritte Promptotyping-Phase und zugleich das Schreibprinzip der Promptotyping Documents, Context Compression mit dem Ziel maximaler Information bei minimalen Tokens. Sie verdichtet, was die Exploration gelehrt hat, in den Dokumentsatz. Die Verdichtung ist nicht neutral; Kodierungsentscheidungen sind epistemische Entscheidungen, die festlegen, welche Information allen folgenden Schritten zur Verfuegung steht. Die technische Begruendung liefert Context Rot. Die Phase endet, wenn eine neue Agenteninstanz allein aus Dokumenten und Daten die Projektlogik aufnehmen koennte.
+Distillation is the third Promptotyping phase and at the same time the writing principle of the Promptotyping Documents, context compression aimed at maximum information with minimum tokens. It compresses what Exploration taught into the document set. The compression is not neutral; encoding decisions are epistemic decisions that determine what information will be available to all downstream steps. Context rot supplies the technical rationale. The phase ends when a new agent instance, given only the documents and the data, could take up the project's logic.
 
-Quelle: Paper, Abschnitt 3.2; Hong et al. 2025
+Source: Paper, Section 3.2; Hong et al. 2025
 
 ### Epistemic Infrastructure
 
-Site-Begriff fuer das Zusammenspiel aus Verifikationsstellen, Interfaces, Dokumenten und Versionsgeschichte in komplexen Pipelines.
+Site term for the interplay of verification points, interfaces, documents and version history in complex pipelines.
 
-Epistemic Infrastructure bezeichnet das Zusammenspiel, das in komplexen Promptotyping-Pipelines entsteht, wenn Verifikationsstellen, Interfaces, Promptotyping Documents, Versionsgeschichte und agentische Werkzeuge ineinandergreifen und den Erkenntnisprozess ueber Sessions hinweg nachvollziehbar halten. Im ZBZ-OCR-TEI-Projekt und in FemPrompt SozArb traegt das Repository selbst diese Funktion. Der Begriff ist aus dem Papertext bewusst entfernt worden, weil die Methode nur einen Teil einer epistemischen Infrastruktur stellt; die Site fuehrt ihn als beschreibendes Vokabular fuer diese Faelle weiter.
+Epistemic infrastructure denotes the interplay that arises in complex Promptotyping pipelines when verification points, interfaces, Promptotyping Documents, version history and agentic tooling mesh and keep the process of inquiry traceable across sessions. In the ZBZ OCR/TEI project and in FemPrompt SozArb the repository itself carries this function. The term was deliberately removed from the paper text, because the method supplies only one part of an epistemic infrastructure; the site keeps it as descriptive vocabulary for these cases.
 
-Quelle: Site-Vokabular, im Papertext nicht gefuehrt; Vault Epistemic Infrastructure
+Source: Site vocabulary, not carried in the paper text; Vault Epistemic Infrastructure
 
 ### Exploration
 
-Zweite Promptotyping-Phase: die Schnittstelle zwischen Daten und Forschungskontext sondieren und Sackgassen dokumentieren.
+Second Promptotyping phase, probing the interface between data and research context and documenting the dead ends.
 
-Exploration ist die zweite Promptotyping-Phase, auf der Site frueher Exploration und Mapping genannt. Sie sondiert die Schnittstelle zwischen Daten und Forschungskontext mit der Leitfrage, ob sich die abstrakte Forschungsfrage konkret auf die verfuegbare Datenstruktur abbilden laesst. Die Forschenden inspizieren die Daten, eigens geschriebene Skripte durchlaufen den Korpus und rendern kompakte Aggregationen, und das LLM erzeugt Mapping-Hypothesen, die an fachlichen Kriterien geprueft werden. Zu verstehen, was die Daten nicht hergeben, ist genauso wertvoll wie zu wissen, was geht. Die Phase endet mit einem dokumentierten Verstaendnis davon, was moeglich ist, was nicht und warum, und sie entfaellt, wo die Daten vertraut sind und Preparation diese Fragen bereits geklaert hat.
+Exploration is the second Promptotyping phase, formerly called Exploration and Mapping on the site. It probes the interface between data and research context under the guiding question whether the abstract research question can be mapped concretely onto the available data structure. The researcher inspects the data, scripts written for the purpose traverse the corpus and render compact aggregations, and the LLM generates mapping hypotheses that are evaluated against domain criteria. Understanding what the data cannot support is as valuable as knowing what is possible. The phase ends with a documented understanding of what is feasible, what is not and why, and it is skipped where the data is familiar and Preparation has settled these questions.
 
-Quelle: Paper, Abschnitt 3.2
+Source: Paper, Section 3.2
 
-### Forschungsartefakt
+### Frontmatter Inspector
 
-Projektgebundene Software, die auf den eigenen Daten arbeitet und sie explorierbar, analysierbar oder editierbar macht.
+Site module that resolves a template: URI in real time and renders the referenced template live.
 
-Ein Forschungsartefakt im Sinne der Methode ist das, wozu die Dokumente fuer den Forschungskontext eines Projekts gemacht werden, Software, die an die Daten dieses Projekts gebunden ist und auf ihnen arbeitet, sodass sie explorierbar, analysierbar oder editierbar werden. Seine wissenschaftliche Geltung kommt aus dieser Bindung, weil die Unterscheidungen, die es bewahrt, die des Datenmodells dieses Projekts sind. Dieselbe Ableitung bringt die Formen hervor, die daneben stehen, die vorgelagerte Verarbeitungspipeline und die aus den Quelldaten gerenderte Beschreibung. Die Voreinstellung ist ein selbstgenuegsames statisches Web-Werkzeug.
+The Frontmatter Inspector is a module of the templates section that accepts a whole YAML frontmatter block, extracts template.url or template.alias, validates the URL against the anchor scheme and opens the side panel with the rendered template. It demonstrates the frontmatter indirection concretely, since pasting a real frontmatter from another repository makes visible how repositories use the site as a machine-readable endpoint.
 
-Quelle: Paper, Abschnitt 1 und 4.1
-
-### Frontmatter-Inspector
-
-Site-Modul, das einen template:-URI in Echtzeit aufloest und die referenzierte Vorlage live rendert.
-
-Der Frontmatter-Inspector ist ein Modul der Vorlagen-Sektion, das einen ganzen YAML-Frontmatter-Block entgegennimmt, template.url oder template.alias extrahiert, die URL gegen das Anker-Schema validiert und das Side-Panel mit der gerenderten Vorlage oeffnet. Er demonstriert die Frontmatter-Indirektion konkret: das Einfuegen eines realen Frontmatters aus einem fremden Repo macht sichtbar, wie Repos die Site als maschinenlesbaren Endpunkt nutzen.
-
-Quelle: knowledge/specification.md, Anforderung A11 und ADR-7
+Source: knowledge/specification.md, requirement A11 and ADR-7
 
 ### Implementation
 
-Vierte Promptotyping-Phase: iterative Entwicklung mit den Promptotyping Documents als Kontext.
+Fourth Promptotyping phase, iterative development with the Promptotyping Documents as context.
 
-Implementation ist die vierte Promptotyping-Phase. Der Dokumentsatz geht an ein agentisches Coding-Werkzeug, das im Projekt-Repository arbeitet, und die Forschenden steuern die Codeerzeugung ueber strukturierten Kontext und bewertendes Feedback. Drei Mechanismen tragen die Rueckkopplung, deterministisches Feedback aus Schema-Validierung, Testsuiten und Builds, visuelles Feedback aus Screenshots des laufenden Artefakts und Expertenfeedback aus dem fachlichen Urteil. Ist das Artefakt falsch, war die Spezifikation falsch oder unvollstaendig, und korrigiert wird die Spezifikation; neues Wissen fliesst in die Dokumente zurueck, die damit lebende Dokumente bleiben.
+Implementation is the fourth Promptotyping phase. The document set is handed to an agentic coding tool operating inside the project repository, and the researcher steers the generation of code through structured context and evaluative feedback. Three mechanisms carry the loop, deterministic feedback from schema validation, test suites and builds, visual feedback from screenshots of the running artefact, and expert feedback from domain judgement. When the artefact is wrong, the specification was wrong or incomplete, and it is the specification that is fixed; new knowledge goes back into the documents, which thereby stay living artefacts.
 
-Quelle: Paper, Abschnitt 3.2
+Source: Paper, Section 3.2
 
 ### Informed Vibe Coding
 
-Vibe Coding auf der Basis von Computer Literacy und Computational Thinking als Kompetenzvoraussetzung.
+Vibe coding grounded in computer literacy and computational thinking as competence prerequisites.
 
-Informed Vibe Coding bezeichnet Vibe Coding, das auf einem Drei-Schichten-Kompetenzmodell aufsetzt: Computer Literacy, dann Computational Thinking, dann Informed Vibe Coding. Es grenzt die kompetente, methodisch reflektierte Form der LLM-gestuetzten Entwicklung von der naiven ab. Die untere Schicht traegt die obere: ohne grundlegendes technisches Verstaendnis bleibt Vibe Coding blind gegenueber den Konsequenzen der erzeugten Loesung.
+Informed Vibe Coding denotes vibe coding that rests on a three-layer competence model, computer literacy, then computational thinking, then informed vibe coding. It separates the competent, methodologically reflected form of LLM-supported development from the naive one. The lower layer carries the upper one, since without basic technical understanding vibe coding stays blind to the consequences of the generated solution.
 
-Quelle: Site-Vokabular, im Papertext nicht gefuehrt; Vault Informed Vibe Coding
+Source: Site vocabulary, not carried in the paper text; Vault Informed Vibe Coding
 
-### Interface-Typologie
+### Interface Typology
 
-Klassifikation der epistemischen Funktion erzeugter Interfaces: Verification, Exploration, Edition, Capture, Audit.
+Classification of generated interfaces by epistemic function, verification, exploration, edition, capture and audit.
 
-Die Interface-Typologie klassifiziert die erzeugten Interfaces nach der epistemischen Funktion, die sie erfuellen, weil Datenformat und Visualisierungstechnik sich als schwaechere Ordnungsprinzipien erwiesen haben. Verification-Interfaces pruefen Zwischenergebnisse einer Pipeline an definierten Stellen. Exploration-Interfaces erschliessen bestehende strukturierte Daten ueber koordinierte Ansichten. Edition-Interfaces praesentieren wissenschaftliche Editionen mit Faksimile-Synchronisation und Korrekturmoeglichkeit. Capture-Interfaces unterstuetzen strukturierte Eingabe, Annotation und Metadatenerzeugung. Audit-Interfaces machen einen ganzen Forschungsprozess nachvollziehbar. Die Kategorien schliessen einander nicht aus; ein Pipeline-Projekt kombiniert sie.
+The interface typology sorts the generated interfaces by the epistemic function they serve, data format and visualisation technique having proved weaker ordering principles. Verification Interfaces check pipeline outputs at defined milestones. Exploration Interfaces open up existing structured data through coordinated multiple views. Edition Interfaces render scholarly editions with facsimile synchronisation and editorial correction. Capture Interfaces support structured input, annotation and metadata creation. Audit Interfaces make an entire research process inspectable. The categories are not mutually exclusive; a pipeline project combines them.
 
-Quelle: Paper, Abschnitt 4.2
+Source: Paper, Section 4.2
 
 ### Knowledge Curation
 
-Systematische Pflege des vernetzten Wissensmodells auf der Vault- und der Repo-Schicht.
+Systematic maintenance of the networked knowledge model at the vault layer and at the repository layer.
 
-Knowledge Curation ist die systematische Pflege des vernetzten Wissensmodells auf zwei Schichten: dem persoenlichen Vault als Second Brain und den projektspezifischen Knowledge Vaults in Repos. Sie kennt drei Operationstypen (skriptbasiert, semantisch, strukturell) und behandelt Verlinkungen als navigierbare Kontextpfade fuer agentische Systeme. Als Querschnittspraxis sorgt sie dafuer, dass Promptotyping ueber Sessions hinaus akkumuliert.
+Knowledge curation is the systematic maintenance of the networked knowledge model on two layers, the personal vault as a second brain and the project-specific knowledge vaults in repositories. It knows three types of operation (script-based, semantic, structural) and treats links as navigable context paths for agentic systems. As a cross-cutting practice it is what makes Promptotyping accumulate beyond the individual session.
 
-Quelle: Site-Vokabular, im Papertext nicht gefuehrt; Promptotyping MOC
+Source: Site vocabulary, not carried in the paper text; Promptotyping MOC
 
 ### Knowledge Document
 
-Oberbegriff fuer ein Dokument, das Wissen festhaelt; jedes Promptotyping Document ist eines.
+Generic term for a document that holds knowledge; every Promptotyping Document is one.
 
-Ein Knowledge Document ist ein Dokument, das Wissen so festhaelt, dass Menschen und Agenten es lesen und darauf handeln koennen. Der Begriff ist allgemein und nicht an Promptotyping gebunden; im Promptotyping heissen diese Dokumente Promptotyping Documents, wenn sie im knowledge/-Ordner eines Projekts liegen. Nach der Art des Wissens, das sie tragen, zerfallen sie in drei Spezialisierungen, Declarative Documents fuer Sachwissen, Process Documents fuer Prozesswissen und Action Documents fuer Handlungswissen.
+A knowledge document holds knowledge in a form that people and agents can read and act on. The term is general and not bound to Promptotyping; within Promptotyping such documents are called Promptotyping Documents when they sit in the knowledge/ folder of a project. By the kind of knowledge they hold they fall into three specialisations, Declarative Documents for knowledge about the subject matter, Process Documents for knowledge about the course of the work, and Action Documents for knowledge about how to act.
 
-Quelle: Paper, Abschnitt 3.3
+Source: Paper, Section 3.3
 
-### Knowledge-Action-Komposition
+### Knowledge-Action Composition
 
-Strukturprinzip, das Knowledge und Action trennt und gemeinsam Coding-Agenten sozialisiert.
+Structural principle that keeps knowledge and action separate and socialises coding agents through their combination.
 
-Die Knowledge-Action-Komposition ist das Strukturprinzip, mit dem deklaratives Wissen und imperative Steuerung getrennt bleiben und gemeinsam einen Coding-Agenten sozialisieren. Konkret bleibt design.md ein Declarative Document, waehrend CLAUDE.md als Action Document darauf als Wertequelle verweist und die Designhaltung in imperative Prinzipien uebersetzt. Die aesthetische und faktische Steuerung entsteht aus der Komposition zweier Dokumente, nicht aus einem Hybridtyp.
+The knowledge-action composition is the structural principle by which declarative knowledge and imperative steering stay separate and together socialise a coding agent. Concretely, design.md stays a Declarative Document while CLAUDE.md as an Action Document points at it as a source of values and translates the design stance into imperative principles. The aesthetic and factual steering arises from the composition of two documents rather than from a hybrid type.
 
-Quelle: Site-Vokabular, im Papertext nicht gefuehrt; Konvention Promptotyping Documents
-
-### Konfabulation
-
-Erzeugung plausibler, aber falscher Outputs durch LLMs, gemeinhin Halluzination genannt.
-
-Konfabulation, gemeinhin Halluzination genannt, ist die Erzeugung plausibler, aber falscher Outputs (Summerfield 2025). In Forschungskontexten ist sie besonders gefaehrlich, wenn der Output Kontextualisierung, Periodisierung oder Zuschreibung betrifft, also Domaenen, in denen Plausibilitaet und Korrektheit auseinanderfallen koennen. Konfabulation gehoert neben Sycophancy zu den strukturellen Fehlermodi, die der Critical Expert in the Loop adressiert.
-
-Quelle: Paper, Abschnitt 2.4; Summerfield 2025
+Source: Site vocabulary, not carried in the paper text; Konvention Promptotyping Documents
 
 ### Konvention Promptotyping Documents
 
-Deskriptive Beschreibung der Funktionen einer Wissensbasis, des Frontmatter-Schemas und der Strukturprinzipien.
+Descriptive account of the functions of a knowledge base, of the frontmatter schema and of the structural principles.
 
-Die Konvention Promptotyping Documents beschreibt deskriptiv, welche Funktionen eine Wissensbasis im knowledge/-Ordner abdeckt, welches Frontmatter-Vokabular gilt und welche Strukturprinzipien tragen. Sie schreibt keine feste Dokumentenliste vor, sondern liefert Triggerkriterien pro Funktion, sodass ein Coding-Agent selbst entscheiden kann, welche Dokumente ein Repo braucht. Sie ist aus der HerData-Referenzimplementierung abgeleitet und auf der Site als externe Spezifikation gespiegelt.
+The Konvention Promptotyping Documents describes descriptively which functions a knowledge base in the knowledge/ folder covers, which frontmatter vocabulary applies and which structural principles hold. It prescribes no fixed list of documents and instead supplies trigger criteria per function, so that a coding agent can decide for itself which documents a repository needs. It is derived from the HerData reference implementation and mirrored on the site as an external specification.
 
-Quelle: Konvention Promptotyping Documents (#konvention-v0.1)
+Source: Konvention Promptotyping Documents (#konvention-v0.1)
 
-### Phasen-Provenance-Lane
+### Phase Provenance Lane
 
-Entferntes Designelement der Site, das pro Absatz die beschriebene Promptotyping-Phase am Rand markierte.
+Removed design element of the site that marked the Promptotyping phase described by each paragraph in the margin.
 
-Die Phasen-Provenance-Lane war ein Designelement des ersten Deploys. Eine linke Schmalspalte zeigte an jedem Absatz eine monochrome Markierung in vier Graustufen, entsprechend der Promptotyping-Phase, die der Absatz beschrieb, und machte die methodische Verteilung des Papers visuell ablesbar. Sie ist im Juni 2026 durch Operator-Entscheidung vollstaendig entfernt worden, samt Legende, Tooltip und Filtermodus (ADR-4). Die Phasen-Tags im Paper-Markdown werden seither beim Rendern nur noch entfernt. Der Eintrag bleibt, damit die Entscheidung nachvollziehbar ist.
+The phase provenance lane was a design element of the first deploy. A narrow left column showed a monochrome mark in four shades of grey at every paragraph, corresponding to the Promptotyping phase the paragraph described, and made the methodological distribution of the paper visually legible. It was removed in full by operator decision in June 2026, together with legend, tooltip and filter mode (ADR-4). Since then the phase tags in the paper Markdown are only stripped at render time. The entry remains so that the decision stays traceable.
 
-Quelle: knowledge/specification.md, ADR-4 (entferntes Feature)
+Source: knowledge/specification.md, ADR-4 (removed feature)
 
 ### Preparation
 
-Erste Promptotyping-Phase: alle Rohmaterialien zusammentragen, bevor technische Entscheidungen fallen.
+First Promptotyping phase, collecting all raw materials before technical decisions are made.
 
-Preparation ist die erste Promptotyping-Phase. Alle relevanten Materialien werden zusammengetragen, bevor technische Entscheidungen fallen, also Forschungsdaten in ihren Originalformaten, Dokumentation zu Standards und Datenmodellen, Forschungsfragen und Domaenenwissen. Die Phase beginnt typischerweise mit Requirements Engineering, dem Artikulieren von User Stories und der Zuordnung von Daten zu Fragen. Unschaerfe an dieser Stelle setzt sich durch alle folgenden Phasen fort. Sie endet, wenn die Repositoriumsstruktur steht, die Quelldaten zugaenglich sind und erste Anforderungen dokumentiert vorliegen.
+Preparation is the first Promptotyping phase. All relevant materials are collected before technical decisions are made, research data in original formats, documentation of standards and data models, research questions and domain knowledge. The phase typically begins with requirements engineering, articulating user stories and mapping data to questions. Vagueness at this point cascades through all subsequent phases. It ends when the repository structure exists, the source data is accessible and initial requirements are documented.
 
-Quelle: Paper, Abschnitt 3.2
+Source: Paper, Section 3.2
 
 ### Process Document
 
-Knowledge Document, das Prozesswissen ueber den Verlauf der Arbeit traegt.
+Knowledge document that holds knowledge about the course of the work.
 
-Ein Process Document ist die Spezialisierung des Knowledge Document auf Prozesswissen. Es haelt den Verlauf der Arbeit fest, chronologisch oder analytisch. Beispiele sind journal.md, learnings.md und plan.md. Zusammen mit der git-Historie bilden sie ein Context Memory, das verlaessliche Sitzungsfortsetzung erlaubt, wobei das Journal das Warum dokumentiert und die Commits das Was. Diagnostik: ist die Entscheidungslogik unklar, wird zuerst das Process Document geprueft. Die VetMedAI-Wissensbilanz fuehrte Learnings als eigenstaendigen Process-Document-Typ ein.
+A Process Document is the specialisation of the knowledge document towards knowledge about the course of the work. It records how the work proceeded, chronologically or analytically. Examples are journal.md, learnings.md and plan.md. Together with the git history they form a context memory that enables reliable session resumption, where the journal documents why and the commits document what. For diagnostic use, unclear decision logic sends the reader to the Process Document first. The VetMedAI-Wissensbilanz project introduced learnings as a Process Document type of its own.
 
-Quelle: Paper, Abschnitt 3.3; Konvention Promptotyping Documents
+Source: Paper, Section 3.3; Konvention Promptotyping Documents
 
 ### Promptotyping
 
-Iterative, dokumentgetriebene Context-Engineering-Methode in vier Phasen, die Forschungsdaten in Forschungsartefakte uebersetzt.
+Iterative, document-driven context-engineering method in four phases that translates research data into research artefacts.
 
-Promptotyping ist eine iterative, dokumentgetriebene Context-Engineering-Methode in vier Phasen (Preparation, Exploration, Distillation, Implementation), mit der Forschende ihre strukturierten Forschungsdaten in Forschungsartefakte uebersetzen. Das Arbeitsmaterial ist ein kleiner Satz versionierter Markdown-Dokumente, die Anforderungen, Datenbeschreibungen und Designentscheidungen tragen; aus ihnen leitet ein LLM-gestuetzter Agent das Artefakt ab. Die Dokumente sind das, was die Methode pflegt, und das Artefakt wird aus ihnen regeneriert. Der Unterschied zu Vibe Coding liegt in der strukturierten Vorbereitung, den persistenten Dokumenten und der Verifikation an definierten Pruefpunkten.
+Promptotyping is an iterative, document-driven context-engineering method in four phases (Preparation, Exploration, Distillation, Implementation) with which researchers translate their structured research data into research artefacts. Its working material is a small set of versioned Markdown documents carrying requirements, data descriptions and design decisions, from which an LLM-supported agent derives the artefact. The documents are what the method maintains, and the artefact is regenerated from them. What separates it from vibe coding is the structured preparation, the persistent documents and the verification at defined checkpoints.
 
-Quelle: Paper, Abschnitt 3.2; knowledge/INDEX.md
+Source: Paper, Section 3.2; knowledge/INDEX.md
 
 ### Promptotyping Document
 
-Strukturiertes, LLM-optimiertes Markdown-Dokument im knowledge/-Ordner eines Promptotyping-Repos.
+Structured, LLM-optimised Markdown document in the knowledge/ folder of a Promptotyping repository.
 
-Ein Promptotyping Document ist ein strukturiertes, LLM-optimiertes Markdown-Dokument im knowledge/-Ordner eines Promptotyping-Repos, das Kontext verdichtet und destilliert. Jedes Promptotyping Document ist ein Knowledge Document, und drei analytische Typen unterscheiden sich nach der Art des Wissens, das sie tragen, Declarative Documents fuer Sachwissen, Process Documents fuer Prozesswissen und Action Documents fuer Handlungswissen. Diese Dokumente sind keine klassische Dokumentation, sondern kontextangepasste Artefakte des Context Engineering, die LLM-gestuetzt erzeugt, aber von Experten kuratiert werden.
+A Promptotyping Document is a structured, LLM-optimised Markdown document in the knowledge/ folder of a Promptotyping repository that compresses and distils context. Every Promptotyping Document is a knowledge document, and three analytical types differ by the kind of knowledge they hold, Declarative Documents for knowledge about the subject matter, Process Documents for knowledge about the course of the work, and Action Documents for knowledge about how to act. These documents are context-adapted artefacts of context engineering, generated with LLM support and curated by experts. Classical documentation is a different genre.
 
-Quelle: Paper, Abschnitt 3.3; knowledge/INDEX.md
+Source: Paper, Section 3.3; knowledge/INDEX.md
 
 ### Promptotyping Interface
 
-Browser-basiertes Validierungstool, das Zwischenergebnisse sichtbar, vergleichbar und korrigierbar macht.
+Browser-based validation tool that makes intermediate results visible, comparable and correctable.
 
-Promptotyping Interfaces sind die browser-basierten Artefakte der Methode, in der Regel selbstgenuegsame statische HTML-, CSS- und JavaScript-Werkzeuge mit eingebetteten oder aus Flachdateien geladenen Forschungsdaten. Sie machen Daten und Zwischenergebnisse sichtbar, vergleichbar und korrigierbar. Im ZBZ-OCR-TEI-Projekt rendert ein Pipeline-Viewer Faksimile, Layout-Overlay und OCR/TEI nebeneinander. Nach der epistemischen Funktion, die sie erfuellen, ordnet die Interface-Typologie sie in fuenf Kategorien.
+Promptotyping Interfaces are the browser-based artefacts of the method, as a rule self-contained static HTML, CSS and JavaScript tools with research data embedded or loaded from flat files. They make data and intermediate results visible, comparable and correctable. In the ZBZ OCR/TEI project a pipeline viewer renders facsimile, layout overlay and OCR/TEI side by side. The interface typology sorts them into five categories by the epistemic function they serve.
 
-Quelle: Paper, Abschnitt 4.1 und 4.2
+Source: Paper, Sections 4.1 and 4.2
 
-### Scholar-Centered Design
+### Research Artefact
 
-Gestaltungsansatz, bei dem sich das System den Arbeitspraktiken der Forschenden anpasst.
+Project-bound software that works on a project's own data and makes it explorable, analysable or editable.
 
-Scholar-Centered Design ist ein in Pollin (2025b) entwickelter Gestaltungsansatz, bei dem sich das System den Arbeitspraktiken der Forschenden anpasst, statt umgekehrt. Es erzeugt User Stories, Personas und Epics aus kollaborativen Sitzungen mit Domaenenexperten und stuetzt sich auf Marchioninis exploratory search und Bates berrypicking model. Im DEPCHA-Projekt fuehrten Deep-Dive-Sitzungen zu strukturierten Anforderungen, die aus den Daten allein nicht ableitbar waren. Es liefert die strukturierten Kontexte, die Promptotyping fuer die LLM-gestuetzte Produktion nutzt.
+A research artefact in the sense of the method is what the documents are made for in the research context of a project, software bound to that project's data and working on it so that the data becomes explorable, analysable or editable. Its scholarly standing comes from that binding, because the distinctions it preserves are the ones the project's data model carries. The same derivation brings forth the forms that stand beside it, the processing pipeline upstream of the artefact and the description rendered from the source data. The default is a self-contained static web tool.
 
-Quelle: Paper, Abschnitt 2.5; Pollin 2025b
+Source: Paper, Sections 1 and 4.1
 
-### Side-Panel
+### Scholar-Centred Design
 
-Rechtes, einschiebendes Panel der Single-Page mit kontextspezifischer Tiefe ohne Unterbrechung des Leseflusses.
+Design approach in which the system adapts to the working practices of researchers.
 
-Das Side-Panel ist das rechte, einschiebende Panel der Single-Page-Site. Es traegt kontextspezifische Tiefe, etwa einen Glossar-Eintrag, eine Vorlagen-Spezifikation, eine Case-Study-Tiefenseite oder ein Literatur-Detail, und oeffnet sich auf Klick, ohne den Lesefluss zu unterbrechen. Auf Mobilgeraeten erscheint es als Bottom-Sheet.
+Scholar-Centred Design is a design approach developed in Pollin (2025b) in which the system adapts to the working practices of researchers rather than the other way round. It produces user stories, personas and epics from collaborative sessions with domain experts and draws on Marchionini's exploratory search and Bates' berrypicking model. In the DEPCHA project deep-dive sessions produced structured requirements that could not have been derived from the data alone. It supplies the structured contexts that Promptotyping uses for LLM-supported production.
 
-Quelle: knowledge/specification.md
+Source: Paper, Section 2.5; Pollin 2025b
 
-### Skript-vs-LLM-Trennung
+### Script versus LLM Division
 
-Aufteilung von Aufgaben nach Eindeutigkeit: algorithmisch Eindeutiges in Skripte, semantisch Interpretierendes ans LLM.
+Assignment of tasks by unambiguity, algorithmically unambiguous work to scripts, semantically interpretive work to the LLM.
 
-Die Skript-vs-LLM-Trennung weist algorithmisch eindeutige Aufgaben Skripten zu und semantisch interpretierende Aufgaben dem LLM. Die Trennlinie verlaeuft entlang der Eindeutigkeit und nicht entlang der Komplexitaet. In der Methode erscheint sie zweimal, als deterministisch generierte Dokumente, die aus den Quelldaten gerendert und neben der kuratierten Schicht committet werden, und als Aufloesung der Token-Oekonomie, bei der das LLM ueber die Daten liest und Code schreibt, der die Daten liest.
+The script versus LLM division assigns algorithmically unambiguous tasks to scripts and semantically interpretive tasks to the LLM. The dividing line runs along unambiguity rather than along complexity. It appears twice in the method, as deterministically generated documents that are rendered from the source data and committed alongside the curated layer, and as the resolution of the token economy, where the LLM reads over the data and writes code that reads the data.
 
-Quelle: Paper, Abschnitt 3.3; Promptotyping MOC
+Source: Paper, Section 3.3; Promptotyping MOC
+
+### Side Panel
+
+Right-hand sliding panel of the site that carries context-specific depth without interrupting the reading flow.
+
+The side panel is the right-hand sliding panel of the single-page site. It carries context-specific depth, a glossary entry, a template specification, a case-study deep page or a literature detail, and it opens on click without interrupting the reading flow. On mobile devices it appears as a bottom sheet.
+
+Source: knowledge/specification.md
 
 ### Spec-Driven Development
 
-Korrektiv der Softwareindustrie gegen ungeprueft uebernommene Generierung, mit der Spezifikation als Wahrheitsquelle fuer Agenten.
+The software industry's corrective to unreviewed generation, with the specification as the source of truth for agents.
 
-Spec-Driven Development benennt das Korrektiv, das die Softwareindustrie selbst gegen die Zuverlaessigkeitsprobleme ungeprueft uebernommener Generierung entwickelt hat. Durch 2024 und 2025 sind agentische Coding-Frameworks darauf zusammengelaufen, Spezifikationen als Wahrheitsquelle zu pflegen, aus denen LLM-gestuetzte Agenten implementieren, unter ihnen Tessl, BMAD, AWS Kiro, OpenSpec und GitHub Spec Kit. Promptotyping gehoert zu dieser Bewegung und teilt ihre Kernfestlegungen, den versionierten Dokumentsatz als steuernde Einheit, die Trennung von Absicht und Implementierung und einen menschlichen Pruefpunkt zwischen Erzeugung und Uebernahme. Drei Dinge, die dort am Rand liegen, sind hier konstitutiv. Die Datenschicht beschreibt Quellen, die dem Artefakt vorausgehen und eigene Semantik und eigene Unsicherheit tragen, statt das im Bau befindliche System. Die Spezifikation ist an wissenschaftliche Verifikationspflichten gebunden. Und der Critical Expert in the Loop ist als Rolle installiert, die fachliche Autoritaet ueber den Gegenstand hat.
+Spec-Driven Development names the corrective the software industry developed against the reliability problems of unreviewed generation. Through 2024 and 2025 agentic coding frameworks converged on maintaining specifications as the source of truth from which LLM-supported agents implement, among them Tessl, BMAD, AWS Kiro, OpenSpec and GitHub Spec Kit. Promptotyping belongs to this movement and shares its core commitments, the versioned document set as the governing unit, the separation of intent from implementation, and a human checkpoint between generation and acceptance. Three things that sit at the periphery there are constitutive here. The data layer describes sources that precede the artefact and carry their own semantics and their own uncertainty, in place of the system under construction. The specification is bound to scholarly verification duties. And the Critical Expert in the Loop is installed as a role holding domain authority over the subject matter.
 
-Quelle: Paper, Abschnitt 2.4
+Source: Paper, Section 2.4
 
-### Standalone-Forschungsdaten als Promptotyping-Muster
+### Standalone Research Data as a Promptotyping Pattern
 
-Wiederkehrendes Strukturmerkmal: statische Webseite plus standalone Forschungsdatensatz im Repo.
+Recurring structural feature, a static website plus a standalone research dataset in the repository.
 
-Standalone-Forschungsdaten als Promptotyping-Muster bezeichnet das wiederkehrende Strukturmerkmal, dass ein Promptotyping-Artefakt aus einer statischen Webseite und einem standalone Forschungsdatensatz im Repo besteht. Es tritt in zwei Spielarten auf: als JSON-LD-Knowledge-Graph mit hoher RDF-Semantik, etwa in M3GIM, oder als Datenstruktur-JSON als reine Datenquelle mit externen IDs als Strings, etwa in HerData. Der Datensatz traegt die Datenhaltung des Projekts vollstaendig.
+Standalone research data as a Promptotyping pattern denotes the recurring structural feature that a Promptotyping artefact consists of a static website and a standalone research dataset in the repository. It appears in two variants, as a JSON-LD knowledge graph with strong RDF semantics, as in M3GIM, or as a data-structure JSON serving as a plain data source with external identifiers as strings, as in HerData. The dataset carries the whole data holding of the project.
 
-Quelle: Site-Vokabular, im Papertext nicht gefuehrt; Promptotyping MOC
+Source: Site vocabulary, not carried in the paper text; Promptotyping MOC
 
-### Subagents und Rollensimulation
+### Sub-Agents and Role Simulation
 
-Spezialisierte Agentenrollen mit differenzierten Berechtigungen oder, ohne vorab definierte Rollen, eine Simulation in einer Session.
+Specialised agent roles with differentiated permissions or, without predefined roles, a simulation of them within one session.
 
-Subagents sind definierte Agentenrollen mit abgestufter Berechtigung, etwa eine nur lesende Analyse, eine schreibende Implementierung und eine Synthese. Sie werden nur geladen, wenn die Definitionen vor Sessionstart existieren; sonst laeuft eine Rollensimulation innerhalb einer Session. Die Methode kennt diesen Mehr-Agenten-Modus als zweiten Betriebsmodus neben der Voreinstellung aus einer forschenden Person und einer Agenteninstanz, und die Belege liegen ueberwiegend beim ersten. Im wiiw-FIGARO-Projekt wurden drei Rollen so getrennt, dass der Analyseagent nur Leserechte hatte.
+Sub-agents are defined agent roles with graded permissions, for instance a read-only analysis, a writing implementation and a synthesis. They load only if the definitions exist before the session starts; otherwise a role simulation runs within a single session. The method knows this multi-agent mode as a second mode of operation beside the default of one researcher and one agent instance, and the evidence lies overwhelmingly with the first. In the wiiw FIGARO project three roles were separated so that the analysis agent held read permissions only.
 
-Quelle: Paper, Abschnitt 3.2; Promptotyping MOC
+Source: Paper, Section 3.2; Promptotyping MOC
 
 ### Sycophancy
 
-Tendenz von LLMs, Nutzerannahmen zuzustimmen, statt sie zu hinterfragen.
+Tendency of LLMs to agree with user assumptions instead of challenging them.
 
-Sycophancy ist die Tendenz von LLMs, den Annahmen der Nutzenden zuzustimmen, statt sie infrage zu stellen (Sharma et al. 2023; Fanous et al. 2025). Sie ist neben Konfabulation einer der beiden strukturellen Fehlermodi, die der Critical Expert in the Loop adressiert. Der Critical Expert muss erkennen, dass ausbleibender Widerspruch des LLM keine Validierung darstellt. Im CorrespExplorer stimmte das LLM suboptimalen Entscheidungen zu, sobald sie als Vorschlag formuliert waren.
+Sycophancy is the tendency of LLMs to agree with the assumptions of their users instead of challenging them (Sharma et al. 2023; Fanous et al. 2025). Beside confabulation it is one of the two structural failure modes the Critical Expert in the Loop addresses. The Critical Expert has to recognise that an absence of contradiction from the LLM constitutes no validation. In CorrespExplorer the LLM agreed with suboptimal decisions as soon as they were phrased as a proposal.
 
-Quelle: Paper, Abschnitt 2.4; Sharma et al. 2023; Fanous et al. 2025
+Source: Paper, Section 2.4; Sharma et al. 2023; Fanous et al. 2025
 
-### template:-Feld
+### Template (Promptotyping Document)
 
-Frontmatter-Feld in Promptotyping Documents, das auf die massgebliche Vorlagen-Spezifikation auf der Site zeigt.
+Fillable structural specification for one function of a Promptotyping knowledge base.
 
-Das template:-Feld ist ein Frontmatter-Feld in Promptotyping Documents, das auf die massgebliche Vorlagen-Spezifikation auf der Methodik-Site verweist. Es traegt name, version, url (Subpath-Form, kanonisch) und optional alias (Hash-Form, gleichwertig). Ein Coding-Agent, der das Feld antrifft, kann die vollstaendige Vorlage abrufen, ohne das Projekt vorher zu kennen. Dieselben Frontmatter-Felder lassen sich in Zitationsmetadaten rendern, die Harvester lesen.
+A template is a fillable structural specification for one function of a Promptotyping knowledge base. The function names have been English since July 2026, among them Navigation, Charter, Material, Specification, Architecture, Domain Knowledge, Design, Quality Assurance, Verification, Provenance, Planning, Reporting, Integration and Agent Instructions. The catalogue is open; a template arises once a function carrier repeats comparably across at least two repositories, and its requirements are checked against the empirical record instead of prescribed in advance. A template carries a function and no fixed file name, and it holds only where its trigger is met.
 
-Quelle: Paper, Abschnitt 3.3; knowledge/specification.md, Anforderung A5
+Source: Konvention Promptotyping Documents; knowledge/INDEX.md
 
-### User Story (epistemischer Status)
+### template: field
 
-Jede User Story ist eine Hypothese ueber den Anwender, bis der benannte Anwender sie bestaetigt.
+Frontmatter field in Promptotyping Documents that points at the authoritative template specification on the site.
 
-Im Promptotyping-Kontext ist jede User Story eine Hypothese ueber den Anwender, bis der benannte Anwender sie bestaetigt hat. Im agentischen Kontext entfaellt das implementierende Gespraech, das falsche Stories im Team korrigieren wuerde; unvalidierte Stories muessen deshalb als Annahmen markiert sein und einen Beobachtungspunkt tragen. Acht Pruefkriterien fuer user-stories.md, vier maschinell pruefbar und drei nur menschlich einloesbar, leiten sich aus QUS (Lucassen et al. 2016) und dem FemPrompt-Fall ab.
+The template: field is a frontmatter field in Promptotyping Documents that refers to the authoritative template specification on the methodology site. It carries name, version, url (subpath form, canonical) and optionally alias (hash form, equivalent). A coding agent that encounters the field can retrieve the full template without prior knowledge of the project. The same frontmatter fields can be rendered into citation metadata that harvesters read.
 
-Quelle: Site-Vokabular, im Papertext nicht gefuehrt; Lucassen et al. 2016
+Source: Paper, Section 3.3; knowledge/specification.md, requirement A5
+
+### User Story (Epistemic Status)
+
+Every user story is a hypothesis about the user until the named user confirms it.
+
+In the Promptotyping context every user story is a hypothesis about the user until the named user has confirmed it. In the agentic setting the implementing conversation that would correct wrong stories within a team falls away, so unvalidated stories have to be marked as assumptions and carry an observation point. Eight review criteria for user-stories.md, four of them machine-checkable and three redeemable only by a human, derive from QUS (Lucassen et al. 2016) and the FemPrompt case.
+
+Source: Site vocabulary, not carried in the paper text; Lucassen et al. 2016
+
+### Verification and Validation
+
+Verification is the check by domain expertise, validation the check by a formal rule.
+
+The method distinguishes two kinds of check. Validation is what a formal rule decides, a schema, a test or a constraint, and it runs unsupervised because the feedback loop is closed. Verification is what domain expertise decides against the sources and against scholarly judgement, and it does not delegate. The pair operates at three levels, data fidelity, requirement satisfaction and design conformance, and each level has its own zone of agent autonomy. This settlement departs deliberately from the norm of software engineering, where verification names the check against the specification and validation the check against intended use. It follows instead the word roots, verus for a truth claim that a judgement must carry, and validus for what holds under a rule that has been set.
+
+Source: Paper, Section 6.2
 
 ### Verification Milestone
 
-Definierter Checkpoint im Workflow, an dem Domaenenexpertise systematisch angewendet wird.
+Defined checkpoint in the workflow at which domain expertise is applied systematically.
 
-Verification Milestones sind definierte Checkpoints im Workflow, an denen fachliche Expertise systematisch angewendet wird. Sie machen den Critical Expert in the Loop zum Prozessschritt: an einem Milestone wird angehalten, mit deterministischen Werkzeugen validiert und durch Expertenurteil verifiziert, und erst dann geht es weiter. Die Implementation-Phase schreitet in solchen kleinen, pruefbaren Schritten fort. Wird die Pruefung aufgeschoben, entsteht eine Verifikationsschuld, die vor Nutzung oder Uebergabe zu begleichen ist. Im ZBZ-OCR-TEI-Projekt dient ein Interface an jeder Pipeline-Stufe als solcher Milestone.
+Verification milestones are defined checkpoints in the workflow at which domain expertise is applied systematically. They turn the Critical Expert in the Loop into a process step, since at a milestone the work stops, is validated with deterministic tools and verified by expert judgement before it continues. The Implementation phase advances in such small, checkable steps. Where the check is deferred, a verification debt arises that has to be settled before use or handover. In the ZBZ OCR/TEI project an interface at every pipeline stage serves as such a milestone.
 
-Quelle: Paper, Abschnitt 3.2 und 6.2
-
-### Verification und Validation
-
-Verification ist die Pruefung durch die fachliche Expertise, Validation die Pruefung durch eine formale Regel.
-
-Die Methode unterscheidet zwei Pruefarten. Validation ist das, was eine formale Regel entscheidet, ein Schema, ein Test oder eine Constraint, und sie laeuft unbeaufsichtigt, weil die Rueckkopplung geschlossen ist. Verification ist das, was die fachliche Expertise gegen die Quellen und gegen wissenschaftliches Urteil entscheidet, und sie delegiert nicht. Das Paar arbeitet auf drei Ebenen, Datentreue, Anforderungserfuellung und Designkonformitaet, und jede Ebene hat ihre eigene Zone der Agenten-Autonomie. Diese Festlegung weicht bewusst von der Norm des Software Engineering ab, wo Verification die Pruefung gegen die Spezifikation und Validation die Pruefung gegen den beabsichtigten Gebrauch benennt; sie folgt stattdessen den Wortwurzeln, verus fuer einen Wahrheitsanspruch, den ein Urteil tragen muss, und validus fuer das, was unter einer gesetzten Regel gilt.
-
-Quelle: Paper, Abschnitt 6.2
+Source: Paper, Sections 3.2 and 6.2
 
 ### Vibe Coding
 
-Praxis, bei der Code per natuerlicher Sprache erzeugt und ohne gruendliche Pruefung uebernommen wird.
+Practice of generating code through natural language and accepting it without thorough review.
 
-Vibe Coding bezeichnet eine Praxis, bei der Code durch Anweisungen in natuerlicher Sprache erzeugt und ohne gruendliche Pruefung uebernommen wird (Karpathy 2025). Sarkar und Drosos (2025) beschreiben iterative Zielerfuellungszyklen und material disengagement. Promptotyping teilt die Praemisse, dass LLMs aus natuerlicher Sprache funktionalen Code erzeugen koennen, unterscheidet sich aber durch vorgelagerte Preparation- und Exploration-Phasen, persistente Dokumentation und systematische Verifikation. Vibe Coding wird nicht abgelehnt, sondern als explorativer Modus innerhalb von Promptotyping verstanden.
+Vibe Coding denotes a practice in which code is generated through instructions in natural language and accepted without thorough review (Karpathy 2025). Sarkar and Drosos (2025) describe iterative goal-satisfaction cycles and material disengagement. Promptotyping shares the premise that LLMs can generate functional code from natural language, and it differs through the upstream Preparation and Exploration phases, persistent documentation and systematic verification. Vibe Coding survives inside Promptotyping as an exploratory mode.
 
-Quelle: Paper, Abschnitt 2.4; Karpathy 2025; Sarkar und Drosos 2025
-
-### Vorlage (Promptotyping Document)
-
-Ausfuellbare Strukturvorgabe fuer eine spezifische Funktion einer Promptotyping-Wissensbasis.
-
-Eine Vorlage ist eine ausfuellbare Strukturvorgabe fuer eine Funktion einer Promptotyping-Wissensbasis. Die Funktionsnamen sind seit Juli 2026 englisch, unter ihnen Navigation, Charter, Material, Specification, Architecture, Domain Knowledge, Design, Quality Assurance, Verification, Provenance, Planning, Reporting, Integration und Agent Instructions. Der Katalog ist offen; eine Vorlage entsteht, sobald sich ein Funktionstraeger in mindestens zwei Repositorien vergleichbar wiederholt, und ihre Anforderungen werden am empirischen Bestand geprueft statt vorab vorgeschrieben. Eine Vorlage traegt eine Funktion und keinen festen Dateinamen, und sie traegt nur, wo ihr Trigger erfuellt ist.
-
-Quelle: Konvention Promptotyping Documents; knowledge/INDEX.md
+Source: Paper, Section 2.4; Karpathy 2025; Sarkar and Drosos 2025

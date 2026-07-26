@@ -198,6 +198,10 @@ The Vorlagen hub adds three silent styling blocks:
 
 The use-case gallery renders case-study cards in a responsive grid (`auto-fill, minmax(280px, 1fr)`), grouped by the use-case typology of A7; the internal genre vocabulary stays out of the public UI. Each card has a `#e0e0e0` border, no shadow, 1rem padding, and a `#f5f5f5` hover fill. A "Mehr" button appears only for case studies that carry a depth page. A filter bar above the grid offers selectable chips and a secondary select control.
 
+### Labels
+
+Labels are English, in the British spelling the paper uses. A label names the thing and stays as short as it can. The five interface categories keep their English identifiers, and the category still stands as a word beside its hue (WCAG 2.1, 1.4.1).
+
 ### Term index
 
 The term index heads the glossary page as a table of term and target pages. The filter field above it is a plain input in a `--border` frame with no icon and no placeholder decoration. Target pages are links in the dominant grey, the term links into its own glossary entry, and a term that occurs nowhere outside the glossary says so in words rather than by a symbol. The index carries no colour; it distinguishes nothing that a hue would encode.
@@ -212,7 +216,9 @@ The only movement animation is the side-panel slide, 200ms `ease-out`. Interacti
 
 ## Icons
 
-Icons appear only where a control carries no text, currently the theme toggle, the panel close, the copy button and the mark on an outbound link. They are inline SVG at 16 pixels with a 1.5-pixel stroke in `currentColor` and no fills, carried in the markup rather than in a font or a sprite file. Navigation entries, headings and groups carry no icons, because there the label is the thing.
+Icons appear only where a control carries no text, currently the theme toggle, the panel close, the copy button, the mark on an outbound link and the repository link in the header. They are inline SVG at 16 pixels with a 1.5-pixel stroke in `currentColor` and no fills, carried in the markup rather than in a font or a sprite file. Navigation entries, headings and groups carry no icons, because there the label is the thing.
+
+A destination mark is the one case that sits beside a label. The GitHub and YouTube glyphs in the footer identify where a link goes, the way the carrier watercolour in the same row does, and they do not stand in for a missing label the way an icon button does. They are set at 14 pixels in `currentColor` and never in the brand colour, which would put two hues on the page that say nothing about epistemic function.
 
 ## What the design is not
 

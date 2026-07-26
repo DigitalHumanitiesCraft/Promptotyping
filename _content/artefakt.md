@@ -1,65 +1,65 @@
 ---
-title: Artefakt und Grenze
+title: The artefact and its boundary
 slug: artefakt
 status: complete
-language: de
-version: "0.1"
+language: en
+version: "0.2"
 created: 2026-07-25
-updated: 2026-07-25
-source: knowledge/paper.md, Abschnitt 4
+updated: 2026-07-26
+source: knowledge/paper.md, section 4
 machine-url: https://dhcraft.org/Promptotyping/_content/artefakt.md
 ---
 
-# Artefakt und Grenze
+# The artefact and its boundary
 
-Ein Werkzeug bedient viele Projekte auf dem Allgemeinheitsgrad, den sie alle teilen. Ein Forschungsartefakt ist an ein Projekt gebunden, und daher kommt seine wissenschaftliche Geltung, weil die Unterscheidungen, die es bewahrt, die des Datenmodells dieses Projekts sind. Was die Methode herstellt, ist Software, die auf den Daten eines Projekts arbeitet und sie explorierbar, analysierbar oder editierbar macht.
+A tool serves many projects at the level of generality all of them share. A research artefact is bound to one project, and that is where its scholarly standing comes from, because the distinctions it preserves are the ones that project's data model carries. What the method produces is software that operates on the data of one project and makes it explorable, analysable or editable.
 
-## Die Voreinstellung, ein selbstgenuegsames statisches Web-Tool
+## The default, a self-contained static web tool
 
-Die Artefakte sind als Voreinstellung selbstgenuegsame statische Web-Werkzeuge, also ein Satz HTML-, CSS- und JavaScript-Dateien mit eingebetteten oder aus Flachdateien geladenen Forschungsdaten, lauffaehig auf jedem statischen Host und aus einem lokalen Ordner heraus. Drei Eigenschaften tragen diese Wahl.
+The artefacts are, by deliberate default, self-contained static web tools, a set of HTML, CSS and JavaScript files with the research data embedded or loaded from flat files, runnable on any static host and from a local folder. Three properties carry this choice.
 
-- **Generierbarkeit.** Statische Artefakte erzeugen die heutigen agentischen Werkzeuge in einem Durchgang, was die Ableitung von den Dokumenten zum Artefakt pruefbar haelt.
-- **Publizierbarkeit.** Sie gehen ohne Infrastruktur online, was der Ressourcenlage der Forschenden entspricht, an die sich die Methode richtet.
-- **Haltbarkeit.** Minimal Computing und das Endings Project argumentieren, dass die digitalen Artefakte mit den wenigsten beweglichen Teilen die besten Ueberlebenschancen haben, ohne serverseitige Abhaengigkeiten und ohne Build-Ketten, die verrotten. Die digitale Editionswissenschaft kommt von ihrer Seite zum selben Ergebnis, wenn sie TEI-XML-Editionen als statische Webseiten publiziert.
+- **Generability.** Current agentic tools produce static artefacts in one pass, which keeps the derivation from documents to artefact inspectable.
+- **Publishability.** They go online without infrastructure, which matches the resource situation of the researchers the method addresses.
+- **Durability.** Minimal computing and the Endings Project argue that the digital artefacts with the fewest moving parts have the best chances of survival, without server-side dependencies and without build chains that rot. Digital scholarly editing reaches the same conclusion from its own side when it publishes TEI-XML editions as static websites.
 
-## Technische Regeln
+## Technical rules
 
-Aus diesen Eigenschaften folgen die Regeln, die der Action-Layer eines Projekts an den Agenten weitergibt. Die ausgearbeitete Fassung liegt in der [Technology Baseline](_content/technology-baseline.md).
+From these properties follow the rules that a project's action layer passes on to the agent. The elaborated version lies in the [technology baseline](_content/technology-baseline.md).
 
-- **Vanilla JavaScript ist die Voreinstellung.** Frameworks altern schnell, widersetzen sich der Inspektion und bringen nichts, was ein exploratives Artefakt braucht.
-- **Eine einzelne Bibliothek darf vendoriert werden**, also ins Repositorium kopiert und mit ihm versioniert, ohne Paketmanager, und nur wo ein Problem algorithmisch tief ist. Dafuer gilt eine Kompromissregel mit vier Kriterien, das Problem liegt jenseits einer vertretbaren eigenen Implementierung, die Bibliothek ist in sich geschlossen und ohne Build-Schritt vendorierbar, ihre Lizenz erlaubt die Weitergabe, und der Weg zu ihrer Entfernung ist dokumentiert.
-- **Schwere Berechnung wird vorberechnet.** Das Artefakt liefert abgeleitete Daten aus, die Pipelines bleiben ihm vorgelagert.
-- **Keine externen Aufrufe zur Laufzeit.** Das Artefakt muss offline funktionieren, was zugleich eine Haltbarkeits-, eine Datenschutz- und eine Sicherheitseigenschaft ist.
-- **Jedes Artefakt traegt eine Provenienzerklaerung**, die sagt, dass es erzeugt wurde, aus welchen Dokumenten, mit welchen LLMs und Werkzeugen, und wie es geprueft wurde. Das Artefakt legt seine Herstellungsbedingungen offen, wie eine Edition ihre Editionsprinzipien offenlegt.
+- **Vanilla JavaScript is the default.** Frameworks age fast, resist inspection, and add nothing an exploratory artefact needs.
+- **A single library may be vendored**, meaning copied into the repository and versioned with it, without a package manager, and only where a problem is algorithmically deep. A compromise rule with four criteria governs this. The problem lies beyond a reasonable implementation of one's own, the library is self-contained and vendorable without a build step, its licence permits redistribution, and its removal path is documented.
+- **Heavy computation is precomputed.** The artefact ships derived data, and the pipelines stay upstream of it.
+- **No external calls at runtime.** The artefact must work offline, which is at once a longevity, a privacy and a security property.
+- **Every artefact carries a provenance declaration** stating that it was generated, from which documents, with which LLMs and tools, and how it was verified. The artefact discloses its conditions of production the way an edition discloses its editorial principles.
 
-## Nebenformen
+## Side forms
 
-Die Voreinstellung gilt, solange ihre Bedingungen gelten, und der Record zeigt die Nebenformen, wo eine davon bricht. Laeuft ein Verarbeitungsschritt nicht im Browser, nimmt er die Gestalt einer generierten Pipeline an, die dem Artefakt vorgelagert ist. Soll eine Beschreibung aus den Quelldaten selbst gerendert werden, nimmt sie die Gestalt eines deterministisch erzeugten Dokuments an. Beide werden auf demselben Weg aus dem Dokumentsatz abgeleitet.
+The default holds as long as its conditions hold, and the record shows the side forms where one of them breaks. Where a processing step does not run in the browser, it takes shape as a generated pipeline upstream of the artefact. Where a description is to be rendered from the source data itself, it takes shape as a deterministically generated document. Both are derived from the document set in the same way.
 
-## Fuenf Funktionen, nach denen sich die Interfaces ordnen
+## Five functions by which the interfaces sort
 
-Die browserbasierten Interfaces der dokumentierten Projekte ordnen sich nach der epistemischen Funktion, die sie erfuellen. Datenformat und Visualisierungstechnik haben sich als schwaechere Ordnungsprinzipien erwiesen.
+The browser-based interfaces of the documented projects sort by the epistemic function they serve. Data format and visualisation technique have proved weaker as ordering principles.
 
-- **Verification.** Prueft Zwischenergebnisse einer Pipeline an definierten Stellen und macht sie vergleichbar und korrigierbar, bevor Fehler weiterlaufen. Der Musterfall ist ein Vergleichsviewer fuer mehrere Texterkennungsquellen mit Layout-Overlay.
-- **Exploration.** Erschliesst bestehende strukturierte Forschungsdaten ueber koordinierte Ansichten. Hier ist das Interface das primaere Forschungsartefakt, das Mittel, durch das die Daten analytisch zugaenglich werden.
-- **Edition.** Stellt wissenschaftliche digitale Editionen dar, mit Faksimile-Synchronisation, TEI-Textanzeige und Korrekturmoeglichkeiten. Interface-Entscheidungen sind in Editionen editorische Entscheidungen.
-- **Capture.** Unterstuetzt strukturierte Eingabe, Annotation oder Metadatenerzeugung. Solche Interfaces erzeugen neue Daten und formen dabei das Datenmodell mit, weil sichtbar wird, was das Modell ausdruecken kann und was nicht.
-- **Audit.** Macht einen ganzen Forschungsprozess nachvollziehbar, indem der Weg zu den Ergebnissen neben den Ergebnissen dargestellt wird, mit Vergleichen, Abweichungsfaellen und Kennzahlen.
+- **Verification.** Checks the intermediate results of a pipeline at defined points and makes them comparable and correctable before errors propagate. The paradigmatic case is a comparison viewer for several text-recognition sources with layout overlay.
+- **Exploration.** Opens up existing structured research data through coordinated views. Here the interface is the primary research artefact, the means through which the data becomes analytically accessible.
+- **Edition.** Renders scholarly digital editions, with facsimile synchronisation, TEI text display and editorial correction. Interface decisions in editions are editorial decisions.
+- **Capture.** Supports structured input, annotation or metadata creation. Such interfaces produce new data and shape the data model in doing so, because they reveal what the model can and cannot express.
+- **Audit.** Makes an entire research process inspectable by rendering the path to the results alongside the results, with comparisons, divergence cases and statistics.
 
-Die Kategorien schliessen einander nicht aus. Ein Pipeline-Projekt kombiniert Verification-Interfaces an seinen Stufen, ein Edition-Interface als Leseansicht und Capture-Elemente in seinem Kurationseditor. Was die Typologie sichtbar macht, ist die Abhaengigkeit des Interface-Designs von der epistemischen Funktion. Ein TEI-XML-Datensatz verlangt je nach Forschungsfrage ein Edition-Interface, ein Exploration-Interface oder beides, und darin liegt der empirische Grund, warum das monolithische Dashboard fuer alle Faelle scheitert.
+The categories are not mutually exclusive. A pipeline project combines Verification Interfaces at its stages, an Edition Interface as its reader, and Capture elements in its curation editor. What the typology makes visible is how interface design depends on epistemic function. A TEI-XML dataset requires an Edition Interface, an Exploration Interface, or both, depending on the research question, and there lies the empirical reason why the monolithic dashboard for all cases fails.
 
-## Grenzen des Formats
+## Limits of the format
 
-Die Grenzen gehoeren zur Definition des Artefakttyps.
+The limits are part of the definition of the artefact type.
 
-Die clientseitige Verarbeitung begrenzt das Datenvolumen, und die Grenze verschiebt sich mit dem Stack. Wo sie praktisch liegt, haengt von Browserspeicher und Datenformat ab, und die Pipelines bleiben ihr vorgelagert. Mit flachen JSON- oder CSV-Dateien bleibt der Bereich bescheiden, waehrend eine statisch publizierte TEI-Edition mit ueber sechzehntausend Editionseinheiten zeigt, welche Groessenordnung auf der vorgerenderten Seite erreichbar ist. Spaltenorientierte Formate mit WebAssembly-Abfragemaschinen verschieben den clientseitigen Bereich um Groessenordnungen, waehrend das Artefakt statisch und selbstgenuegsam bleibt, zum Preis einer vendorierten Maschine, die die Kompromissregel decken muss. Jenseits der Grenze tragen Vorberechnung und Stichproben mehr von der Last.
+Client-side processing bounds the data volume, and the bound moves with the stack. Where it lies in practice depends on browser memory and data format, and the pipelines stay upstream of it. With flat JSON or CSV files the range stays modest, while a statically published TEI edition of over sixteen thousand edition units shows the order of magnitude reachable on the pre-rendered side. Columnar formats with WebAssembly query engines shift the client-side range by orders of magnitude while the artefact stays static and self-contained, at the price of a vendored engine that the compromise rule must cover. Beyond the bound, precomputation and sampling carry more of the load.
 
-Statische Artefakte unterstuetzen keine kollaborativen oder serververmittelten Arbeitsablaeufe, und Persistenz jenseits des Browsers liegt ausserhalb ihres Zwecks.
+Static artefacts support no collaborative or server-mediated workflows, and persistence beyond the browser lies outside their purpose.
 
-## Der Uebergabepunkt
+## The handover point
 
-Waechst ein Projekt ueber den Prototyp hinaus, aendert sich das Pflichtenregime, unter dem das Artefakt steht. Kein einzelnes Mass am Artefakt zeigt diesen Wechsel an, weil er entlang mehrerer Achsen laeuft, die unabhaengig voneinander kippen. Die Achsen, denen der Record begegnet ist, sind die Pflicht zur Wartung ueber die eigene Laufzeit des Projekts hinaus, die Nutzung durch Dritte mit einer Erwartung an Unterstuetzung, der Mehrbenutzerbetrieb ueber gemeinsamen Zustand, die Verantwortung fuer Daten, die anderen gehoeren, und der institutionelle Betrieb mit einer Zusage zur Verfuegbarkeit.
+Where a project grows beyond the prototype, the regime of obligations the artefact stands under changes. No single measure of the artefact shows this change, because it runs along several axes that tip independently of one another. The axes the record has met are the duty of maintenance beyond a project's own run time, use by third parties with an expectation of support, multi-user operation over shared state, responsibility for data belonging to others, and institutional deployment with a commitment to availability.
 
-Kippt eine dieser Achsen, gelten fuer das Artefakt die Standards des Research Software Engineering, mit ihren Anforderungen an Tests, Nachhaltigkeit und Wartung, und sie gelten nach dem, was das Artefakt geworden ist, unabhaengig davon, womit es gebaut wurde.
+Where one of these axes tips, the standards of Research Software Engineering apply to the artefact, with their demands on testing, sustainability and maintenance, and they apply according to what the artefact has become, irrespective of what it was built with.
 
-Der Dokumentsatz verliert an dieser Grenze nicht seinen Wert. Er wird zum Uebergabepaket. Ein Projekt, das den Uebergabepunkt erreicht, gibt einer Research-Software-Engineering-Kraft eine versionierte Spezifikation in die Hand, mit Datenbeschreibung, User Stories, Akzeptanzkriterien, Designbegruendung und Prozessprotokoll. Die Dokumente dienen einer menschlichen Entwicklungskraft genauso wie einem Agenten.
+The document set does not lose its value at this boundary. It becomes the handover package. A project that reaches the handover point puts a versioned specification into the hands of a Research Software Engineer, with data description, user stories, acceptance criteria, design rationale and process record. The documents serve a human developer exactly as they serve an agent.

@@ -1,8 +1,25 @@
-/* Promptotyping Site DHCraft design system. Black on white, single grey accent,
-   Inter for text, Consolas for code, monochrome phase lane. */
+/* Promptotyping Site design system. Black on white, one grey accent, Inter for
+   text, Consolas for code. Cascade order, and the only order the file may have:
 
-/* Inter self-hosted (no Google Fonts / external CDN: the site promises no
-   tracking). Four static weights; font-display: swap with system fallback. */
+     1  Fonts
+     2  Design tokens          the sole place a literal colour may stand
+     3  Theme                  dark is a token swap and nothing else
+     4  Reset and base
+     5  Layout shell           header, page tree, page host, reading column
+     6  Content typography     everything marked-up Markdown produces
+     7  Components             built in JavaScript, in the order they render
+     8  States and utilities
+     9  Responsive
+
+   Component rules come after content typography, so a component that restyles a
+   Markdown element wins on order rather than on an appended selector. */
+
+/* ============================================================
+   1  Fonts
+   Inter self-hosted (no Google Fonts, no external CDN: the site promises no
+   tracking). Four static weights; font-display: swap with a system fallback.
+   ============================================================ */
+
 @font-face {
   font-family: "Inter";
   font-style: normal;
@@ -32,8 +49,14 @@
   src: url("../fonts/inter-latin-700-normal.woff2") format("woff2");
 }
 
+/* ============================================================
+   2  Design tokens
+   No literal colour value may appear below this block. The dark theme swaps
+   these tokens and would break on any hard-coded colour further down.
+   ============================================================ */
+
 :root {
-  /* Color */
+  /* Colour */
   --bg: #ffffff;
   --text: #1a1a1a;
   --accent: #d5d5d5;
@@ -46,7 +69,6 @@
   --grey-1: #2a2a2a;
   --grey-2: #525252;
   --grey-3: #8a8a8a;
-  --grey-4: #b8b8b8;
 
   /* Epistemic function hues. The five interface categories of paper section
      4.2 are a nominal scale with five values, and hue is the visual variable
@@ -54,7 +76,8 @@
      there. Muted, derived from the watercolour of the Promptotyping logo, so
      the category name stays readable beside the mark; WCAG 1.4.1 forbids
      colour as the only carrier, and the word always stands next to the dot.
-     Nowhere else on the site does a hue mean anything. */
+     Referenced from app.js as var(--fn-{slug}), so grep for the full token
+     name finds nothing. Nowhere else on the site does a hue mean anything. */
   --fn-exploration: #216a4e;
   --fn-capture: #7a8b1f;
   --fn-edition: #d0a022;
@@ -86,10 +109,12 @@
   --panel-width: 360px;
 }
 
-/* ---- Dark theme ----
-   The stylesheet resolves every colour through a token, so the theme is a
-   token swap and nothing else. `data-theme` on the root element wins over the
-   system preference, which is what the toggle sets. */
+/* ============================================================
+   3  Theme
+   `data-theme` on the root element wins over the system preference, which is
+   what the toggle sets. The two blocks carry the same values; plain CSS cannot
+   share a declaration list across a media query and an attribute selector.
+   ============================================================ */
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -102,7 +127,6 @@
     --grey-1: #d4d4d4;
     --grey-2: #a6a6a6;
     --grey-3: #7d7d7d;
-    --grey-4: #5a5a5a;
     --fn-exploration: #4fbf8f;
     --fn-capture: #b7c94a;
     --fn-edition: #e8bf50;
@@ -121,7 +145,6 @@
   --grey-1: #d4d4d4;
   --grey-2: #a6a6a6;
   --grey-3: #7d7d7d;
-  --grey-4: #5a5a5a;
   --fn-exploration: #4fbf8f;
   --fn-capture: #b7c94a;
   --fn-edition: #e8bf50;
@@ -134,6 +157,10 @@
 :root[data-theme="dark"] .site-footer-brand img {
   opacity: 0.85;
 }
+
+/* ============================================================
+   4  Reset and base
+   ============================================================ */
 
 *,
 *::before,
@@ -194,6 +221,37 @@ a:hover {
   top: var(--space-2);
 }
 
+/* Icon buttons. Icons appear only where a control carries no text. */
+.icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  color: var(--grey-2);
+  cursor: pointer;
+  transition: color 150ms ease-out, border-color 150ms ease-out;
+}
+
+.icon-button:hover {
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.icon-button svg {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+/* ============================================================
+   5  Layout shell
+   ============================================================ */
+
 /* ---- Documentation header ----
    A thin fixed bar. It carries identity and the two outbound links; the
    navigation itself is the sidebar tree below. */
@@ -207,6 +265,18 @@ a:hover {
   height: var(--header-height);
   background: var(--bg);
   border-bottom: 1px solid var(--border);
+}
+
+/* Signature band: the one loud moment, at the foot of the header. It encodes
+   nothing, so it is exempt from the rule that a hue must mean something. */
+.docs-header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: var(--signature);
 }
 
 .docs-header-inner {
@@ -260,48 +330,11 @@ a:hover {
   color: var(--text);
 }
 
-/* Signature band: the one loud moment, at the foot of the header. It encodes
-   nothing, so it is exempt from the rule that a hue must mean something. */
-.docs-header::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -1px;
-  height: 2px;
-  background: var(--signature);
-}
-
-/* Icon buttons. Icons appear only where a control carries no text. */
-.icon-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2rem;
-  height: 2rem;
-  padding: 0;
-  background: none;
-  border: 1px solid transparent;
-  border-radius: 2px;
-  color: var(--grey-2);
-  cursor: pointer;
-  transition: color 150ms ease-out, border-color 150ms ease-out;
-}
-
-.icon-button:hover {
-  color: var(--text);
-  border-color: var(--border);
-}
-
-.icon-button svg {
-  width: 16px;
-  height: 16px;
-  display: block;
-}
-
-/* ---- Documentation shell ----
+/* ---- Shell grid ----
    Two tracks: the page tree and the page. The tree is sticky below the header
-   and scrolls independently of the reading column. */
+   and scrolls independently of the reading column. The page track is
+   minmax(0, 1fr) so a wide table or code block scrolls inside its own box
+   instead of widening the track; the responsive block keeps that floor. */
 
 .docs-shell {
   display: grid;
@@ -311,6 +344,8 @@ a:hover {
   margin: 0 auto;
   padding: 0 var(--space-6);
 }
+
+/* ---- Page tree ---- */
 
 .docs-nav {
   position: sticky;
@@ -360,6 +395,12 @@ a:hover {
   color: var(--text);
 }
 
+.docs-nav a.is-active {
+  color: var(--text);
+  font-weight: 600;
+  border-left-color: var(--text);
+}
+
 .docs-nav-part {
   display: inline-block;
   min-width: 1.2em;
@@ -371,24 +412,166 @@ a:hover {
   color: var(--grey-2);
 }
 
-.docs-nav a.is-active {
-  color: var(--text);
-  font-weight: 600;
-  border-left-color: var(--text);
+/* ---- Page host and reading column ----
+   One page is visible at a time; the others stay in the DOM so every published
+   anchor keeps resolving. */
+
+.doc-page {
+  display: none;
 }
+
+.doc-page.is-active {
+  display: block;
+}
+
+.content {
+  width: 100%;
+  max-width: var(--read-width);
+  margin: var(--header-height) auto 0;
+  padding: var(--space-12) var(--space-4) var(--space-16);
+}
+
+.doc-page > h1:first-child,
+.doc-page > *:first-child > h1:first-child {
+  margin-top: 0;
+}
+
+/* Reference density. Specification prose keeps the calm setting because it is
+   read; the directories are scanned, so they are set tighter. */
+
+.doc-page.is-reference {
+  font-size: 0.9375rem;
+  line-height: 1.45;
+}
+
+.doc-page.is-reference h2 {
+  font-size: 1.5rem;
+  margin-top: var(--space-8);
+}
+
+.doc-page.is-reference h3 {
+  font-size: 1.1875rem;
+  margin-top: var(--space-6);
+}
+
+.doc-page.is-reference p {
+  margin-bottom: var(--space-2);
+}
+
+.doc-page.is-reference table {
+  font-size: 0.875rem;
+}
+
+/* ============================================================
+   6  Content typography
+   Everything the Markdown renderer produces inside .content.
+   ============================================================ */
+
+.content h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: var(--space-12) 0 var(--space-4);
+}
+
+.content h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: var(--space-12) 0 var(--space-4);
+}
+
+.content h3 {
+  font-size: 1.375rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: var(--space-8) 0 var(--space-2);
+}
+
+.content h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: var(--space-6) 0 var(--space-2);
+}
+
+.content p {
+  margin: 0 0 var(--space-4);
+}
+
+.content ul,
+.content ol {
+  margin: 0 0 var(--space-4);
+  padding-left: var(--space-4);
+}
+
+.content li {
+  margin: var(--space-1) 0;
+}
+
+.content blockquote {
+  margin: 0 0 var(--space-4);
+  padding-left: var(--space-4);
+  border-left: 2px solid var(--border);
+  color: var(--grey-2);
+}
+
+/* The row rule is the one horizontal line the system keeps unconditionally: it
+   carries the eye across the columns. */
+.content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 var(--space-4);
+  font-size: 0.9375rem;
+}
+
+.content th,
+.content td {
+  text-align: left;
+  padding: var(--space-2);
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.content th {
+  font-weight: 600;
+}
+
+.content code {
+  font-family: var(--font-code);
+  font-size: 0.9375rem;
+  background: var(--code-bg);
+  padding: 0.1em 0.3em;
+  border-radius: 2px;
+}
+
+.content pre {
+  background: var(--code-bg);
+  padding: var(--space-4);
+  overflow-x: auto;
+  border-radius: 2px;
+  line-height: 1.4;
+  margin: 0 0 var(--space-4);
+}
+
+.content pre code {
+  background: none;
+  padding: 0;
+  font-size: 0.9375rem;
+}
+
+/* Footnote markers; marked renders the apparatus as ordinary text. */
+.content sup {
+  font-size: 0.75rem;
+}
+
+/* ============================================================
+   7  Components
+   ============================================================ */
 
 /* ---- Epistemic function marks ----
-   The hue always sits beside the category name, never alone (WCAG 1.4.1). */
-
-.fn-mark {
-  display: inline-block;
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 50%;
-  background: var(--fn, var(--grey-3));
-  margin-right: var(--space-2);
-  flex: none;
-}
+   The hue always sits beside the category name, never alone (WCAG 1.4.1). It
+   arrives as an inline --fn set by JavaScript; the grey is the fallback. */
 
 .content .fn-list {
   list-style: none;
@@ -415,57 +598,6 @@ a:hover {
   border-left: 3px solid var(--fn, var(--border));
 }
 
-/* ---- Reference density ----
-   Specification prose keeps the calm setting because it is read. The
-   directories are scanned, so they are set tighter. */
-
-.doc-page.is-reference {
-  font-size: 0.9375rem;
-  line-height: 1.45;
-}
-
-.doc-page.is-reference h2 {
-  font-size: 1.5rem;
-  margin-top: var(--space-8);
-}
-
-.doc-page.is-reference h3 {
-  font-size: 1.1875rem;
-  margin-top: var(--space-6);
-}
-
-.doc-page.is-reference p {
-  margin-bottom: var(--space-2);
-}
-
-.doc-page.is-reference table {
-  font-size: 0.875rem;
-}
-
-/* ---- Page ----
-   One page is visible at a time; the others stay in the DOM so every published
-   anchor keeps resolving. */
-
-.doc-page {
-  display: none;
-}
-
-.doc-page.is-active {
-  display: block;
-}
-
-.content {
-  width: 100%;
-  max-width: var(--read-width);
-  margin: var(--header-height) auto 0;
-  padding: var(--space-12) var(--space-4) var(--space-16);
-}
-
-.doc-page > h1:first-child,
-.doc-page > *:first-child > h1:first-child {
-  margin-top: 0;
-}
-
 /* ---- Page status line ----
    One line under the page title: does it bind, which version, when last
    changed, and the machine address of its substrate. */
@@ -489,7 +621,7 @@ a:hover {
   font-size: 0.75rem;
 }
 
-/* ---- Specification status block ----
+/* ---- Start page: status block and specification index ----
    The first table on the start page is the status header, keyed left. */
 
 #ueberblick > table:first-of-type {
@@ -507,8 +639,6 @@ a:hover {
   width: 14rem;
   color: var(--grey-2);
 }
-
-/* ---- Specification index ---- */
 
 .spec-index {
   margin: var(--space-12) 0;
@@ -573,201 +703,105 @@ a:hover {
   color: var(--grey-2);
 }
 
-.content h1 {
-  font-size: 2.25rem;
-  font-weight: 700;
-  line-height: 1.3;
-  margin: var(--space-12) 0 var(--space-4);
-}
-
-.content h2 {
-  font-size: 1.75rem;
-  font-weight: 600;
-  line-height: 1.3;
-  margin: var(--space-12) 0 var(--space-4);
-}
-
-.content h3 {
-  font-size: 1.375rem;
-  font-weight: 600;
-  line-height: 1.3;
-  margin: var(--space-8) 0 var(--space-2);
-}
-
-.content h4 {
-  font-size: 1.125rem;
-  font-weight: 600;
-  line-height: 1.3;
-  margin: var(--space-6) 0 var(--space-2);
-}
-
-.content p {
-  margin: 0 0 var(--space-4);
-}
-
-.content ul,
-.content ol {
-  margin: 0 0 var(--space-4);
-  padding-left: var(--space-4);
-}
-
-.content li {
-  margin: var(--space-1) 0;
-}
-
-.content blockquote {
-  margin: 0 0 var(--space-4);
-  padding-left: var(--space-4);
-  border-left: 2px solid var(--border);
-  color: var(--grey-2);
-}
-
-.content table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 0 0 var(--space-4);
-  font-size: 0.9375rem;
-}
-
-.content th,
-.content td {
-  text-align: left;
-  padding: var(--space-2);
-  border-bottom: 1px solid var(--border);
-  vertical-align: top;
-}
-
-.content th {
-  font-weight: 600;
-}
-
-/* Code */
-
-.content code {
-  font-family: var(--font-code);
-  font-size: 0.9375rem;
-  background: var(--code-bg);
-  padding: 0.1em 0.3em;
-  border-radius: 2px;
-}
-
-.content pre {
-  background: var(--code-bg);
-  padding: var(--space-4);
-  overflow-x: auto;
-  border-radius: 2px;
-  line-height: 1.4;
-  margin: 0 0 var(--space-4);
-}
-
-.content pre code {
-  background: none;
-  padding: 0;
-  font-size: 0.9375rem;
-}
-
-/* Footnotes (marked renders as raw text; keep readable) */
-
-.content sup {
-  font-size: 0.75rem;
-}
-
-/* YouTube click-to-load facade */
-
-.video-embed {
-  position: relative;
-  width: 100%;
-  max-width: var(--read-width);
-  margin: 0 auto var(--space-8);
-  aspect-ratio: 16 / 9;
-  background: var(--code-bg);
-  border: 1px solid var(--border);
-  overflow: hidden;
-}
-
-.video-embed iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-  display: block;
-}
-
-.video-facade {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-4);
-  cursor: pointer;
-  background: var(--code-bg);
-  border: 0;
-  width: 100%;
-  font-family: var(--font-text);
-  color: var(--text);
-  padding: var(--space-8);
-}
-
-.video-facade:hover {
-  background: var(--accent);
-}
-
-.video-facade-title {
-  font-size: 1.125rem;
-  font-weight: 600;
-}
-
-.video-facade-note {
-  font-size: 0.875rem;
-  color: var(--grey-2);
-  max-width: 480px;
-}
-
-.video-facade-play {
-  font-size: 0.875rem;
-  font-weight: 600;
-  padding: var(--space-2) var(--space-6);
-  border: 1px solid var(--text);
-  border-radius: 2px;
-  transition: background 150ms ease-out, color 150ms ease-out;
-}
-
-.video-facade:hover .video-facade-play {
-  background: var(--text);
-  color: var(--bg);
-}
-
-/* Section placeholders (lazy load targets) */
-
-/* Every anchor target clears the fixed header. */
-[id] {
-  scroll-margin-top: calc(var(--header-height) + var(--space-4));
-}
+/* ---- Paper: sections and table of contents ----
+   The paper is the longest page and its only entry into its own structure.
+   Two levels, quiet, static; the removed on-this-page rail is not coming back. */
 
 .paper-section {
   scroll-margin-top: calc(var(--header-height) + var(--space-4));
 }
 
-.paper-section-placeholder {
-  min-height: 200px;
+.paper-toc {
+  margin: 0 0 var(--space-12);
+  padding: var(--space-4) 0 var(--space-8);
+  border-bottom: 1px solid var(--border);
 }
 
-.section-loading {
+.paper-toc-title {
+  margin: 0 0 var(--space-4);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--grey-3);
+}
+
+.paper-toc-list,
+.paper-toc-sub {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.paper-toc-list {
+  columns: 2;
+  column-gap: var(--space-8);
+}
+
+.paper-toc-list > li {
+  break-inside: avoid;
+  margin: 0 0 var(--space-4);
+}
+
+.paper-toc-list > li > a {
+  display: block;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.paper-toc-sub {
+  margin-top: var(--space-1);
+}
+
+.paper-toc-sub a {
+  display: block;
+  padding-left: var(--space-4);
   font-size: 0.875rem;
-  padding: var(--space-8) 0;
+  line-height: 1.5;
+  color: var(--grey-2);
+  text-decoration: none;
 }
 
-/* Placeholder sections (content arrives in later work packages). They keep the
-   anchor scheme and TOC complete without visible empty boxes. */
-
-.placeholder-section {
-  scroll-margin-top: var(--space-16);
+.paper-toc a:hover,
+.paper-toc a:focus-visible {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
 }
 
-/* Side panel: slides in from the right on a trigger. Reusable shell driven by
-   openSidePanel() in app.js; used by Vorlagen, Glossar, Cases in later sprints. */
+/* Inline citation links jump to the literature section. */
+.citation-link {
+  text-decoration-style: dotted;
+}
+
+/* Use-case reference block at the end of paper section 4. The fill marks the
+   block off, so it carries no frame. */
+
+.usecase-reference {
+  padding: var(--space-6);
+  margin: var(--space-8) 0;
+  background: var(--code-bg);
+}
+
+.usecase-reference p {
+  margin: 0 0 var(--space-2);
+}
+
+.usecase-reference p:last-child {
+  margin-bottom: 0;
+}
+
+.usecase-reference-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  font-size: 0.875rem;
+}
+
+/* ---- Side panel ----
+   Slides in from the right on a trigger. One reusable shell driven by
+   openSidePanel() in app.js; the mobile bottom sheet is in the responsive
+   block. */
 
 .side-panel {
   position: fixed;
@@ -791,6 +825,7 @@ a:hover {
   transform: translateX(0);
 }
 
+/* The body scrolls under this header, so the line marks a real edge. */
 .side-panel-header {
   display: flex;
   align-items: flex-start;
@@ -838,21 +873,57 @@ a:hover {
   pointer-events: auto;
 }
 
-/* Card style (Vorlagen rows, Case-Study cards in later sprints) */
+/* Side-panel footer: copy button, machine-url link, frontmatter preview. The
+   line separates the appended controls from the rendered document. */
 
-.card {
-  border: 1px solid var(--border);
-  padding: var(--space-4);
-  margin: 0 0 var(--space-4);
-  background: var(--bg);
-  transition: background 150ms ease-out;
+.panel-footer {
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
 }
 
-.card:hover {
-  background: var(--code-bg);
+.panel-frontmatter {
+  flex-basis: 100%;
+  margin: var(--space-4) 0 0;
 }
 
-/* Glossar trigger (Sprint 2+, styling already defined) */
+.panel-frontmatter code {
+  white-space: pre;
+}
+
+/* ---- Text buttons ----
+   One outlined button shape for every text control on the site. */
+
+.inspector-resolve,
+.case-card-more,
+.case-card-video-toggle,
+.panel-copy,
+.code-copy {
+  font-family: var(--font-text);
+  font-size: 0.875rem;
+  background: none;
+  border: 1px solid var(--text);
+  border-radius: 2px;
+  padding: var(--space-1) var(--space-4);
+  cursor: pointer;
+  color: var(--text);
+  transition: background 150ms ease-out, color 150ms ease-out;
+}
+
+.inspector-resolve:hover,
+.case-card-more:hover,
+.case-card-video-toggle:hover,
+.panel-copy:hover,
+.code-copy:hover {
+  background: var(--text);
+  color: var(--bg);
+}
+
+/* ---- Glossary ---- */
 
 .glossar-trigger {
   border-bottom: 1px dotted var(--glossar-underline);
@@ -863,18 +934,195 @@ a:hover {
   background: var(--code-bg);
 }
 
-/* Anchored headings (Praxis H3, etc.) keep clear of the sticky filter bar. */
-
-.anchored-heading {
-  scroll-margin-top: var(--space-16);
+.glossar-tooltip {
+  position: absolute;
+  z-index: 30;
+  background: var(--bg);
+  border: 1px solid var(--accent);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: var(--space-2) var(--space-4);
+  font-size: 0.8125rem;
+  max-width: 280px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 150ms ease-out;
 }
 
-.glossar-entry,
-.konzept-alias {
-  scroll-margin-top: var(--space-16);
+.glossar-tooltip.visible {
+  opacity: 1;
 }
 
-/* Vorlagen hub: silent text sub-navigation and additive sub-anchor blocks. */
+/* Sub-navigation: one quiet link per initial. */
+.glossar-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: var(--space-6) 0;
+  padding-bottom: var(--space-4);
+}
+
+.glossar-jump a {
+  font-family: var(--font-code);
+  font-size: 0.8125rem;
+  color: var(--grey-2);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.glossar-jump a:hover,
+.glossar-jump a:focus-visible {
+  color: var(--text);
+  border-bottom-color: var(--glossar-underline);
+}
+
+.glossar-entry {
+  margin: var(--space-6) 0;
+  padding-bottom: var(--space-4);
+}
+
+.glossar-term {
+  margin: 0 0 var(--space-2);
+}
+
+.glossar-kurz {
+  font-weight: 500;
+  margin: 0 0 var(--space-2);
+}
+
+.glossar-voll {
+  margin: 0 0 var(--space-2);
+}
+
+.glossar-quelle {
+  font-size: 0.8125rem;
+  color: var(--grey-2);
+  margin: 0;
+}
+
+/* ---- Term index ----
+   Register term -> pages at the head of the glossary page, built in the
+   browser. The line under it separates the register from the entries. */
+
+.term-index {
+  margin: 0 0 var(--space-12);
+  padding-bottom: var(--space-8);
+  border-bottom: 1px solid var(--border);
+}
+
+.term-index-controls {
+  margin: var(--space-4) 0;
+}
+
+.term-index-filter {
+  width: 100%;
+  max-width: 18rem;
+  padding: var(--space-2);
+  font-family: var(--font-text);
+  font-size: 0.875rem;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 0;
+}
+
+.term-index-filter:focus-visible {
+  outline: 2px solid var(--grey-3);
+  outline-offset: 1px;
+}
+
+.term-index-table th[scope="row"] {
+  width: 40%;
+  font-weight: 500;
+}
+
+.term-index-pages a {
+  display: inline-block;
+  margin-right: var(--space-4);
+  color: var(--grey-2);
+}
+
+.term-index-none {
+  color: var(--grey-3);
+}
+
+/* ---- Vault sub-view ----
+   Topic maps with their claims; the claim detail opens in the side panel. */
+
+.vault-topic {
+  margin: var(--space-8) 0;
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--border);
+}
+
+.vault-topic:last-child {
+  border-bottom: none;
+}
+
+.vault-topic-desc {
+  color: var(--grey-2);
+  margin: 0 0 var(--space-4);
+}
+
+.vault-claim-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.vault-claim-item {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-4);
+  padding: var(--space-2) 0;
+}
+
+.vault-claim {
+  flex: 1;
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+}
+
+.vault-claim:hover,
+.vault-claim:focus-visible {
+  border-bottom-color: var(--glossar-underline);
+}
+
+.vault-claim-meta,
+.vault-repo-note {
+  font-size: 0.8125rem;
+  color: var(--grey-3);
+  white-space: nowrap;
+}
+
+.vault-panel-status,
+.vault-panel-contested {
+  font-size: 0.8125rem;
+  color: var(--grey-2);
+  margin: 0 0 var(--space-4);
+}
+
+.vault-anchor-list {
+  padding-left: var(--space-4);
+}
+
+.vault-anchor-list li {
+  margin-bottom: var(--space-2);
+}
+
+.vault-anchor-id {
+  font-family: var(--font-code);
+  font-size: 0.8125rem;
+  color: var(--grey-3);
+}
+
+/* ---- Templates hub ----
+   Quiet text sub-navigation, additive sub-anchor blocks, clickable rows. */
 
 .vorlagen-subnav {
   margin: var(--space-6) 0 var(--space-8);
@@ -895,7 +1143,6 @@ a:hover {
 }
 
 .vorlagen-block {
-  scroll-margin-top: var(--space-16);
   margin-top: var(--space-12);
 }
 
@@ -905,8 +1152,6 @@ a:hover {
   gap: var(--space-6);
   font-size: 0.875rem;
 }
-
-/* Vorlagen table: clickable rows open the side panel. */
 
 .vorlagen-table tbody tr.vorlage-row {
   cursor: pointer;
@@ -924,12 +1169,28 @@ a:hover {
   outline-offset: -2px;
 }
 
+/* The trigger column carries a sentence, so it wraps. */
+.vorlagen-trigger {
+  font-size: 0.8125rem;
+  color: var(--grey-2);
+  max-width: 22rem;
+  white-space: normal;
+}
+
 .vorlagen-machine-note {
   font-size: 0.875rem;
   color: var(--grey-2);
 }
 
-/* Frontmatter-Inspector */
+/* The Promptotyping mark, moved out of the removed hero. */
+.vorlagen-icon {
+  width: 100px;
+  height: auto;
+  display: block;
+  margin: 0 0 var(--space-4);
+}
+
+/* ---- Frontmatter inspector ---- */
 
 .frontmatter-inspector {
   border: 1px solid var(--border);
@@ -961,35 +1222,12 @@ a:hover {
   flex-wrap: wrap;
 }
 
-.inspector-resolve,
-.case-card-more,
-.case-card-video-toggle,
-.panel-copy,
-.code-copy {
-  font-family: var(--font-text);
-  font-size: 0.875rem;
-  background: none;
-  border: 1px solid var(--text);
-  border-radius: 2px;
-  padding: var(--space-1) var(--space-4);
-  cursor: pointer;
-  color: var(--text);
-  transition: background 150ms ease-out, color 150ms ease-out;
-}
-
-.inspector-resolve:hover,
-.case-card-more:hover,
-.case-card-video-toggle:hover,
-.panel-copy:hover,
-.code-copy:hover {
-  background: var(--text);
-  color: var(--bg);
-}
-
 .inspector-status {
   font-size: 0.875rem;
 }
 
+/* The three status classes are composed in JavaScript as
+   "inspector-status-" + kind, so the full name appears in no source file. */
 .inspector-status-error {
   color: var(--grey-1);
 }
@@ -1002,28 +1240,7 @@ a:hover {
   color: var(--grey-3);
 }
 
-/* Side-panel footer: copy button, machine-url link, frontmatter preview */
-
-.panel-footer {
-  margin-top: var(--space-6);
-  padding-top: var(--space-4);
-  border-top: 1px solid var(--border);
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--space-4);
-}
-
-.panel-frontmatter {
-  flex-basis: 100%;
-  margin: var(--space-4) 0 0;
-}
-
-.panel-frontmatter code {
-  white-space: pre;
-}
-
-/* Code copy button: positioned over the top-right of a pre block. */
+/* ---- Skills: copy button over a code block ---- */
 
 .skills-block pre {
   position: relative;
@@ -1036,8 +1253,10 @@ a:hover {
   background: var(--bg);
 }
 
-/* Case-study filter bar and cards */
+/* ---- Case studies: filter bar and cards ---- */
 
+/* The controls sit above the grid they act on, so the line marks the edge of
+   the control zone. */
 .case-filter-bar {
   margin: var(--space-6) 0;
   padding-bottom: var(--space-4);
@@ -1106,7 +1325,6 @@ a:hover {
   font-size: 1.125rem;
   font-weight: 600;
   color: var(--grey-2);
-  border-bottom: 1px solid var(--border);
   padding-bottom: var(--space-2);
 }
 
@@ -1121,7 +1339,6 @@ a:hover {
   padding: var(--space-4);
   background: var(--bg);
   transition: background 150ms ease-out;
-  scroll-margin-top: var(--space-16);
 }
 
 .case-card:hover {
@@ -1160,8 +1377,7 @@ a:hover {
   font-size: 0.875rem;
 }
 
-/* Inline video host under a case card (facade loads in place). */
-
+/* Inline video host under a case card (the facade loads in place). */
 .case-card-video {
   margin-top: var(--space-2);
 }
@@ -1170,44 +1386,77 @@ a:hover {
   margin: 0;
 }
 
-/* Vorlagen section icon (the promptotyping mark, moved out of the hero). */
+/* ---- YouTube click-to-load facade ---- */
 
-.vorlagen-icon {
-  width: 100px;
-  height: auto;
-  display: block;
-  margin: 0 0 var(--space-4);
-}
-
-/* Use-case reference block at the end of paper section 4. */
-
-.usecase-reference {
-  border: 1px solid var(--border);
-  padding: var(--space-6);
-  margin: var(--space-8) 0;
+.video-embed {
+  position: relative;
+  width: 100%;
+  max-width: var(--read-width);
+  margin: 0 auto var(--space-8);
+  aspect-ratio: 16 / 9;
   background: var(--code-bg);
+  border: 1px solid var(--border);
+  overflow: hidden;
 }
 
-.usecase-reference p {
-  margin: 0 0 var(--space-2);
+.video-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
 }
 
-.usecase-reference p:last-child {
-  margin-bottom: 0;
-}
-
-.usecase-reference-links {
+.video-facade {
+  position: absolute;
+  inset: 0;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: var(--space-4);
-  font-size: 0.875rem;
+  cursor: pointer;
+  background: var(--code-bg);
+  border: 0;
+  width: 100%;
+  font-family: var(--font-text);
+  color: var(--text);
+  padding: var(--space-8);
 }
 
-/* Site footer */
+.video-facade:hover {
+  background: var(--accent);
+}
+
+.video-facade-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.video-facade-note {
+  font-size: 0.875rem;
+  color: var(--grey-2);
+  max-width: 480px;
+}
+
+.video-facade-play {
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: var(--space-2) var(--space-6);
+  border: 1px solid var(--text);
+  border-radius: 2px;
+  transition: background 150ms ease-out, color 150ms ease-out;
+}
+
+.video-facade:hover .video-facade-play {
+  background: var(--text);
+  color: var(--bg);
+}
+
+/* ---- Site footer ----
+   The fill is the boundary, so the footer carries no top rule. */
 
 .site-footer {
   background: var(--code-bg);
-  border-top: 1px solid var(--border);
   margin-top: var(--space-16);
 }
 
@@ -1257,76 +1506,48 @@ a:hover {
   display: block;
 }
 
-.site-footer-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-4);
-  margin-bottom: var(--space-4);
-}
-
-.site-footer-license {
-  margin: 0 0 var(--space-2);
-}
-
 .site-footer-machine {
   margin: 0;
   color: var(--grey-2);
 }
 
-/* Glossar list */
-
-.glossar-entry {
-  margin: var(--space-6) 0;
-  padding-bottom: var(--space-4);
+.site-footer-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
 }
 
-.glossar-term {
-  margin: 0 0 var(--space-2);
+.site-footer-mark svg {
+  width: 14px;
+  height: 14px;
+  flex: none;
 }
 
-.glossar-kurz {
-  font-weight: 500;
-  margin: 0 0 var(--space-2);
+/* ============================================================
+   8  States and utilities
+   ============================================================ */
+
+/* Every anchor target clears the fixed header. This is the single rule for it:
+   every element the router scrolls to carries an id, so no component restates
+   its own scroll-margin. */
+[id] {
+  scroll-margin-top: calc(var(--header-height) + var(--space-4));
 }
 
-.glossar-voll {
-  margin: 0 0 var(--space-2);
+/* A page switch moves the focus onto the page host so the keyboard continues in
+   the content. The host is never tabbed to, so it shows no ring. */
+.doc-page:focus {
+  outline: none;
 }
 
-.glossar-quelle {
-  font-size: 0.8125rem;
-  color: var(--grey-2);
-  margin: 0;
+/* Load and error states inside a not-yet-rendered section. */
+.section-loading {
+  color: var(--grey-3);
+  font-size: 0.875rem;
+  padding: var(--space-8) 0;
 }
 
-/* Glossar trigger tooltip (hover in the reading column) */
-
-.glossar-tooltip {
-  position: absolute;
-  z-index: 30;
-  background: var(--bg);
-  border: 1px solid var(--accent);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  padding: var(--space-2) var(--space-4);
-  font-size: 0.8125rem;
-  max-width: 280px;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 150ms ease-out;
-}
-
-.glossar-tooltip.visible {
-  opacity: 1;
-}
-
-/* Inline citation links jump to the literature section. */
-
-.citation-link {
-  text-decoration-style: dotted;
-}
-
-/* 404 error message */
-
+/* 404 error message, revealed by the routing prelude. */
 #error-message {
   display: none;
   max-width: var(--read-width);
@@ -1334,11 +1555,17 @@ a:hover {
   padding: 0 var(--space-8);
 }
 
-/* Mobile: the tree stacks above the page and stays visible. */
+/* ============================================================
+   9  Responsive
+   Below 860px the tree stacks above the page and stays visible.
+   ============================================================ */
 
 @media (max-width: 860px) {
+  /* minmax(0, …) keeps the single track from growing to the min-content width
+     of a wide table or code block; without it the whole page scrolls sideways
+     instead of the box. */
   .docs-shell {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     padding: 0 var(--space-6);
   }
 
@@ -1354,13 +1581,6 @@ a:hover {
   /* The tree carries the top offset on mobile, so the page must not add it. */
   .content {
     margin-top: 0;
-  }
-
-  .site-footer-inner {
-    padding: var(--space-8) var(--space-6);
-  }
-
-  .content {
     padding: var(--space-8) 0;
   }
 
@@ -1372,7 +1592,10 @@ a:hover {
     overflow-x: auto;
   }
 
-  .content code {
+  /* Long identifiers and full URLs are single unbreakable words; without this
+     they set the min-content width of the reading column. */
+  .content code,
+  .content a {
     overflow-wrap: anywhere;
   }
 
@@ -1381,7 +1604,15 @@ a:hover {
     display: none;
   }
 
-  /* Side panel becomes a bottom sheet on mobile. */
+  .paper-toc-list {
+    columns: 1;
+  }
+
+  .site-footer-inner {
+    padding: var(--space-8) var(--space-6);
+  }
+
+  /* Side panel becomes a bottom sheet. */
   .side-panel {
     top: auto;
     left: 0;
@@ -1399,7 +1630,7 @@ a:hover {
     transform: translateY(0);
   }
 
-  /* Drag handle at top of bottom sheet */
+  /* Drag handle at the top of the bottom sheet. */
   .side-panel::before {
     content: "";
     display: block;
@@ -1410,247 +1641,4 @@ a:hover {
     margin: var(--space-2) auto var(--space-1);
     flex-shrink: 0;
   }
-}
-
-/* Vault sub-view: topic maps with their claims, claim detail in the side panel. */
-
-.vault-topic {
-  margin: var(--space-8) 0;
-  padding-bottom: var(--space-4);
-  border-bottom: 1px solid var(--border);
-}
-
-.vault-topic:last-child {
-  border-bottom: none;
-}
-
-.vault-topic-desc {
-  color: var(--grey-2);
-  margin: 0 0 var(--space-4);
-}
-
-.vault-claim-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.vault-claim-item {
-  display: flex;
-  align-items: baseline;
-  gap: var(--space-4);
-  padding: var(--space-2) 0;
-  scroll-margin-top: var(--space-16);
-}
-
-.vault-claim {
-  flex: 1;
-  background: none;
-  border: none;
-  padding: 0;
-  font: inherit;
-  color: var(--text);
-  text-align: left;
-  cursor: pointer;
-  border-bottom: 1px solid transparent;
-}
-
-.vault-claim:hover,
-.vault-claim:focus-visible {
-  border-bottom-color: var(--glossar-underline);
-}
-
-.vault-claim-meta,
-.vault-repo-note {
-  font-size: 0.8125rem;
-  color: var(--grey-3);
-  white-space: nowrap;
-}
-
-.vault-panel-status,
-.vault-panel-contested {
-  font-size: 0.8125rem;
-  color: var(--grey-2);
-  margin: 0 0 var(--space-4);
-}
-
-.vault-anchor-list {
-  padding-left: var(--space-4);
-}
-
-.vault-anchor-list li {
-  margin-bottom: var(--space-2);
-}
-
-.vault-anchor-id {
-  font-family: var(--font-code);
-  font-size: 0.8125rem;
-  color: var(--grey-3);
-}
-
-/* Template catalogue: the trigger column carries a sentence, so it wraps. */
-
-.vorlagen-trigger {
-  font-size: 0.8125rem;
-  color: var(--grey-2);
-  max-width: 22rem;
-  white-space: normal;
-}
-
-/* Glossary sub-navigation: one quiet link per initial. */
-
-.glossar-jump {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-  margin: var(--space-6) 0;
-  padding-bottom: var(--space-4);
-  border-bottom: 1px solid var(--border);
-}
-
-.glossar-jump a {
-  font-family: var(--font-code);
-  font-size: 0.8125rem;
-  color: var(--grey-2);
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-}
-
-.glossar-jump a:hover,
-.glossar-jump a:focus-visible {
-  color: var(--text);
-  border-bottom-color: var(--glossar-underline);
-}
-
-/* ---- Paper table of contents ----
-   The paper is the longest page and its only entry into its own structure.
-   Two levels, quiet, static; the removed on-this-page rail is not coming back. */
-
-.paper-toc {
-  margin: 0 0 var(--space-12);
-  padding: var(--space-4) 0 var(--space-8);
-  border-bottom: 1px solid var(--border);
-}
-
-.paper-toc-title {
-  margin: 0 0 var(--space-4);
-  font-size: 0.6875rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--grey-3);
-}
-
-.paper-toc-list,
-.paper-toc-sub {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.paper-toc-list {
-  columns: 2;
-  column-gap: var(--space-8);
-}
-
-.paper-toc-list > li {
-  break-inside: avoid;
-  margin: 0 0 var(--space-4);
-}
-
-.paper-toc-list > li > a {
-  display: block;
-  font-weight: 500;
-  text-decoration: none;
-}
-
-.paper-toc-sub {
-  margin-top: var(--space-1);
-}
-
-.paper-toc-sub a {
-  display: block;
-  padding-left: var(--space-4);
-  font-size: 0.875rem;
-  line-height: 1.5;
-  color: var(--grey-2);
-  text-decoration: none;
-}
-
-.paper-toc a:hover,
-.paper-toc a:focus-visible {
-  color: var(--text);
-  text-decoration: underline;
-  text-decoration-color: var(--accent);
-}
-
-@media (max-width: 860px) {
-  .paper-toc-list {
-    columns: 1;
-  }
-}
-
-/* ---- Page focus target ----
-   A page switch moves the focus onto the page host so the keyboard continues in
-   the content. The host is never tabbed to, so it shows no ring. */
-
-.doc-page:focus {
-  outline: none;
-}
-
-/* ---- Term index ----
-   Register term -> pages on the glossary page, built in the browser. */
-
-.term-index {
-  margin: 0 0 var(--space-12);
-  padding-bottom: var(--space-8);
-  border-bottom: 1px solid var(--border);
-}
-
-.term-index-controls {
-  margin: var(--space-4) 0;
-}
-
-.term-index-filter {
-  width: 100%;
-  max-width: 18rem;
-  padding: var(--space-2);
-  font-family: var(--font-text);
-  font-size: 0.875rem;
-  color: var(--text);
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 0;
-}
-
-.term-index-filter:focus-visible {
-  outline: 2px solid var(--grey-3);
-  outline-offset: 1px;
-}
-
-.term-index-table th[scope="row"] {
-  width: 40%;
-  font-weight: 500;
-}
-
-.term-index-pages a {
-  display: inline-block;
-  margin-right: var(--space-4);
-  color: var(--grey-2);
-}
-
-.term-index-none {
-  color: var(--grey-3);
-}
-
-.site-footer-mark {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-}
-
-.site-footer-mark svg {
-  width: 14px;
-  height: 14px;
-  flex: none;
 }

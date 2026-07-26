@@ -41,9 +41,11 @@ Nachtrag 2026-07-23: `promptotyping-document/technology.md` liegt als Entwurf (V
 
 | Datei | Vault-Quelle | Version |
 |---|---|---|
-| `konvention.md` | Konvention Promptotyping Documents | 0.1 |
+| `konvention.md` | Konvention Promptotyping Documents | 0.2 |
 
 Mit Site-Ergaenzung "Anmerkung der Site (2026-06-10)" zur Maschinen- vs. Menschen-Abrufform der Vorlagen. Dieser Abschnitt ist Site-Ergaenzung, nicht Teil der Vault-Konvention v0.1.
+
+Die Repo-Fassung ist seit dem 2026-07-26 in zwei Punkten dem Vault voraus. Sie fuehrt den Sechser-Pflichtkern samt Provenienz-Sektion und DCMI-Anschluss, und sie ist englisch, waehrend das Vault-Original deutsch ist. Beides ist eine bewusste repo-first-Ausfuehrung und in `knowledge/journal.md` benannt; der Nachzug gehoert in eine echte Vault-Sitzung. Dasselbe gilt fuer `praxis.md` gegen die Sektion Methodenerweiterungen des Promptotyping MOC.
 
 ## Glossar
 

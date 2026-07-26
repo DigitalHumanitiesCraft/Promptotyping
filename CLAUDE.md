@@ -40,6 +40,7 @@ Die Site soll ruhig sein. Konkret bedeutet das beim Coden:
 ├── _content/                   # Markdown-Inhalte (Paper, Vorlagen, Case Studies, Glossar, Literatur)
 ├── assets/                     # CSS, JS, Vendor, Fonts, Logo
 ├── data/                       # JSON-Datenfutter
+├── tools/                      # Prüfskripte der Site (check_consistency.py)
 └── vault/                      # Grounded-Vault-Instanz: Provenienz-Schicht unter dem Paper (Operator-Entscheidung 2026-07-19)
 ```
 
@@ -50,6 +51,8 @@ Der Ordner `vault/` ist eine Instanz des Grounded-Vault-Templates (`DigitalHuman
 ## Tech-Stack-Regeln
 
 - **Vanilla HTML5/CSS3/JS, kein Framework, kein Build-Step.** Wenn du dabei bist, npm zu verwenden, halte inne. Falsche Richtung.
+- **Die Site-Logik liegt in zehn einfachen Skripten unter `assets/js/`**, jedes eine IIFE, die `window.PromptotypingApp` erweitert. Kein ES-Modul, kein `import`. Verhaltensrelevant ist allein, dass `app.js` als letzte der zehn geladen wird und die beiden Shell-deklarierten Module danach folgen. `404.html` ist ein Rumpf ohne Site-Skript und leitet per `location.replace` auf `index.html` weiter; die Shell existiert genau einmal.
+- **`python tools/check_consistency.py` läuft vor jedem Commit, der Katalog, Konvention oder Vorlagenordner anfasst.** Es meldet, wenn dieselbe Aussage an zwei Orten auseinanderläuft. Was es prüft, steht in `knowledge/verification.md`.
 - **marked.js v9.1.6 vendoriert** in `assets/vendor/marked.min.js`. Kein CDN.
 - **Custom-Extensions für marked.js** sind erlaubt (z.B. für Klassen-Tags `{:.phase-preparation}`), bleiben aber in `assets/js/app.js`.
 - **Browser-natives `location.hash` für Routing**, kein History-API-Hacking, kein React-Router.
@@ -71,6 +74,7 @@ Die nicht aktiven Seiten bleiben als `display: none` im DOM. Das ist die Bedingu
 
 - Vorlagen (Promptotyping Documents): Subpath `/promptotyping-document/{slug}` (Latest, kanonisch), gleichwertig Hash `#promptotyping-document-{slug}`. Fünfzehn Slugs: `data`, `index`, `project`, `specification`, `architecture`, `design`, `journal`, `user-stories`, `action-layer` (ADR-9), `testing`, `plan`, `report`, `domain-knowledge`, `verification`, `integration`. Snapshots erst bei Versionssprung über Sub-Anker `#promptotyping-document-{slug}-v{version}` bzw. `/promptotyping-document/{slug}#v{version}` — kein eigener Subpath pro Version. (Das ältere Schema `#vorlage-{name}-{version}` ist obsolet, siehe journal.md 2026-05-09 „URL-Schema-Korrektur".)
 - Maschinenadresse (ADR-10): Für HTTP-Abruf ohne JavaScript ist die statische Markdown-URL kanonisch, Muster `https://dhcraft.org/Promptotyping/_content/promptotyping-document/{slug}.md`. Die Subpath-Auflösung läuft über `404.html` und setzt JavaScript voraus. `.nojekyll` im Repo-Root ist Pflicht, sonst publiziert GitHub Pages `_content/` nicht.
+- Praxis-Anker entstehen zur Laufzeit aus den Überschriften. Wer eine Überschrift übersetzt oder umformuliert, verschiebt damit ihre Adresse; sechs Slugs sind am 2026-07-26 gewandert und werden von `PRAXIS_ALIASES` in `assets/js/registry.js` am Leben gehalten. Jede weitere Änderung einer ankertragenden Überschrift braucht denselben Alias.
 - Konzepte: `#konzept-{name}` (z.B. `#konzept-eil`, `#konzept-asymmetric-amplification`)
 - Case Studies: `#case-{name}` (z.B. `#case-herdata`, `#case-klawiter-rescue`)
 - Vault: `#vault` für die Ansicht, `#vault-{claim-slug}` für einen einzelnen Claim; Subpath `/vault` und `/vault/{claim-slug}`. Die Slugs sind die Dateinamen unter `vault/20_claims/`.
@@ -93,8 +97,8 @@ Anker dürfen nicht ohne Diskussion umbenannt werden — Repos können auf sie a
 
 - **Nicht aus dem Vault zitieren ohne Markdown-Link.** Vault-interne Wikilinks (`[[CLAUDE]]`) bedeuten im Repo nichts.
 - **Nicht das alte Living-Paper-Material reaktivieren.** Alles, was im November-2025-Stand war, ist gelöscht. Wer alte Module wiederbeleben will, beginnt einen Neu-Diskurs.
-- **Keine deutschen Neuanlagen mehr.** Die Site wird vollständig englisch (Operator-Entscheidung 2026-07-25, journal.md „Sprachentscheidung"). Der Durchgang ist noch nicht gelaufen, der Bestand ist also überwiegend deutsch; neue Seiten und neue Beschriftungen entstehen aber englisch. Die publizierten Anker bleiben deutsch, weil fremde Repos sie als `template:`-URI führen. Deutsch bleiben ausserdem die Vorlagennamen als Identifikatoren und das Unterrichtsmaterial. Reihenfolge und offene Teilfragen des Durchgangs stehen in `knowledge/entscheidungen-offen.md`, A1.
-- **Keine Module außer Frontmatter-Inspector, Case-Study-Filter und Vault-Ansicht.** Die Vault-Ansicht ist seit der Operator-Entscheidung 2026-07-25 in Scope (`knowledge/plan-site.md`, AP4); Context-Rot-Viz und Sycophancy-Trap bleiben es nicht.
+- **Die Site ist englisch.** Der Durchgang ist am 2026-07-26 gelaufen (Operator-Entscheidung 2026-07-25, journal.md, Sprachentscheidung). Englisch sind Shell, Bedienelemente, die neun Seitentexte direkt unter `_content/` und die Textfelder der drei Datendateien. Deutsch geblieben sind die fünfzehn Vorlagen samt Technology-Entwurf, weil sie Vault-Spiegel sind und ihre Übersetzung in eine Vault-Sitzung gehört, sowie die drei Dateien unter `_content/skills/` als Unterrichtsmaterial. Offen sind die sieben Fall-Tiefenseiten unter `_content/case-studies/`. Die publizierten Anker bleiben deutsch, weil fremde Repos sie als `template:`-URI führen, ebenso die Vorlagennamen als Identifikatoren.
+- **Keine Module außer Frontmatter-Inspector, Case-Study-Filter, Begriffsregister und Vault-Ansicht.** Das Begriffsregister (A25, seit 2026-07-26) vertritt die abgelehnte Volltextsuche. Die Vault-Ansicht ist seit der Operator-Entscheidung 2026-07-25 in Scope (`knowledge/plan-site.md`, AP4); Context-Rot-Viz und Sycophancy-Trap bleiben es nicht.
 - **Keine Branches.** Alle Änderungen direkt auf `main`. (Das ist Christopher Pollins explizite Wahl, dokumentiert in journal.md.)
 
 ## Bei Konflikt zwischen Vault und Repo

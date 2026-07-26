@@ -1,82 +1,82 @@
 ---
-title: Technology Baseline. Statische Webseite als Forschungstool
+title: Technology Baseline. The static website as a research tool
 slug: technology-baseline
 status: draft
-language: de
-version: 0.1
+language: en
+version: 0.2
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-26
 authors: [Christopher Pollin]
-generated-with: Claude Code mit Claude Fable 5
+generated-with: Claude Code (Claude Fable 5)
 machine-url: https://dhcraft.org/Promptotyping/_content/technology-baseline.md
 ---
 
-# Technology Baseline. Statische Webseite als Forschungstool
+# Technology Baseline. The static website as a research tool
 
-Dieses Dokument trägt das projektunabhängige Technologie-Wissen für den häufigsten Artefakttyp der Methode, das selbstständige statische Web-Tool. Es ist die Begründungsschicht, auf die die `architecture.md` einer Projektinstanz verweist, statt die Stack-Argumentation in jedem Repo neu zu führen; die Instanz dokumentiert dann nur ihre Abweichungen. Die wissenschaftliche Kurzform der Argumentation steht im Methodenpaper (Pollin 2026, Sektion 4); dieses Dokument ist die operative Langform mit den konkreten Regeln.
+This document carries the project-independent technology knowledge for the method's most frequent artefact type, the self-contained static web tool. It is the layer of rationale that the `architecture.md` of a project instance refers to instead of restating the stack argument in every repository, and the instance then documents only its deviations. The scholarly short form of the argument stands in the method paper (Pollin 2026, section 4); this document is the operative long form with the concrete rules.
 
-## Warum die statische Form
+## Why the static form
 
-Ein Promptotyping-Artefakt ist im Regelfall ein Satz aus HTML-, CSS- und JavaScript-Dateien, mit den Forschungsdaten eingebettet oder aus flachen Dateien geladen, lauffähig aus einem lokalen Ordner und deploybar auf jedem statischen Host. Drei Eigenschaften begründen diesen Default.
+A Promptotyping artefact is as a rule a set of HTML, CSS and JavaScript files, with the research data embedded or loaded from flat files, runnable from a local folder and deployable on any static host. Three properties ground this default.
 
-Erstens die Generierbarkeit. Statische Artefakte sind für agentische Coding-Werkzeuge in einem Durchgang erzeugbar; die Ableitung von den Promptotyping Documents zum Artefakt bleibt dadurch inspizierbar. Jede zusätzliche Schicht (Build-Kette, Server-Komponente, Datenbank) verlängert die Ableitung und entzieht Teile davon der Prüfung.
+The first is generability. Static artefacts can be produced by agentic coding tools in a single pass, which keeps the derivation from the Promptotyping Documents to the artefact inspectable. Every additional layer, whether a build chain, a server component or a database, lengthens the derivation and withdraws parts of it from inspection.
 
-Zweitens die Publizierbarkeit. Ein statisches Artefakt braucht keine Infrastruktur. GitHub Pages oder jeder Webspace genügt; das entspricht der Ressourcenlage der Einzelforschenden und kleinen Projekte, die die Methode adressiert.
+The second is publishability. A static artefact needs no infrastructure. GitHub Pages or any web space suffices, which matches the resource situation of the individual researchers and small projects the method addresses.
 
-Drittens die Haltbarkeit. Der Nachhaltigkeitsdiskurs des Feldes, Minimal Computing (Risam/Gil 2022) und die Endings-Prinzipien, kommt zum selben Befund; digitale Artefakte überleben am wahrscheinlichsten mit den wenigsten beweglichen Teilen, ohne serverseitige Abhängigkeiten und ohne Build-Ketten, die verrotten. Ein statisches Artefakt von 2026 rendert auch dann noch, wenn niemand es mehr wartet.
+The third is durability. The field's own sustainability discourse, minimal computing (Risam and Gil 2022) and the Endings principles, arrives at the same finding. Digital artefacts survive most reliably with the fewest moving parts, without server-side dependencies and without build chains that rot. A static artefact from 2026 still renders once nobody maintains it any more.
 
-## Die Regeln
+## The rules
 
-### Kein Build-Step
+### No build step
 
-`git clone` und Browser öffnen genügt, um das Artefakt lokal auszuführen; ein lokaler Webserver (`python -m http.server`) ist die einzige zulässige Voraussetzung, weil Browser `fetch` auf `file://`-URLs blockieren. Ausgeschlossen sind npm-Abhängigkeiten, Bundler, Transpiler und CSS-Präprozessoren. Die Begründung liegt im Verfall der Werkzeugketten; eine Build-Konfiguration von heute läuft in wenigen Jahren nicht mehr, und jede Toolchain-Reparatur ist Wartungsarbeit, die ein Forschungsprototyp nicht bekommt. Projektinterne Skripte, die den Vault oder die Daten prüfen, sind davon unberührt; sie bauen nichts für die Auslieferung.
+`git clone` and opening the browser suffices to run the artefact locally. A local web server (`python -m http.server`) is the only admissible prerequisite, because browsers block `fetch` on `file://` URLs. npm dependencies, bundlers, transpilers and CSS preprocessors are excluded. The reason lies in the decay of tool chains, since a build configuration written today stops running within a few years, and every toolchain repair is maintenance work a research prototype does not get. Project-internal scripts that check the vault or the data are untouched by this, because they build nothing for delivery.
 
-### Vanilla JavaScript als Default
+### Vanilla JavaScript as the default
 
-Kein Framework. Frameworks altern schnell, widersetzen sich der Inspektion durch Nachnutzende und bieten nichts, was ein exploratives Forschungsinstrument braucht; natives DOM, `fetch`, ES-Module und `location.hash` decken den Bedarf. Hinzu kommt ein methodenspezifisches Argument. Weil das primäre Artefakt die Promptotyping Documents sind und der Prototyp aus ihnen regeneriert werden kann, muss die Zielsprache der Regeneration langfristig stabil sein; die Browser-Plattform ist die stabilste Laufzeitumgebung, die es gibt, ein Framework-API ist es nicht.
+No framework. Frameworks age fast, resist inspection by those who reuse the artefact, and offer nothing an exploratory research instrument needs; the native DOM, `fetch`, ES modules and `location.hash` cover the demand. A method-specific argument comes on top. Because the prototype can be regenerated from the Promptotyping Documents, the target language of the regeneration has to stay stable over the long term, and the browser platform is the most stable runtime environment there is, while a framework API is not.
 
-### Kompromissregel für Bibliotheken
+### Compromise rule for libraries
 
-Wo ein Problem algorithmisch tief ist, darf eine einzelne Bibliothek lokal vendoriert werden. Vier Kriterien müssen zusammen erfüllt sein:
+Where a problem is algorithmically deep, a single library may be vendored locally. Four criteria have to hold together:
 
-1. Das Problem liegt ernsthaft außerhalb einer vernünftigen Vanilla-Implementierung (Markdown-Parsing, YAML-Parsing, Kartenrendering, komplexe Diagramme).
-2. Die Bibliothek ist selbstständig und ohne Build-Step als einzelne Datei vendorierbar.
-3. Die Lizenz erlaubt die Weiterverteilung.
-4. Der Entfernungspfad ist dokumentiert; es steht im Repo, was ausfällt, wenn die Bibliothek entfernt wird, und wie das Artefakt dann degradiert.
+1. The problem lies seriously beyond a reasonable vanilla implementation (Markdown parsing, YAML parsing, map rendering, complex charts).
+2. The library is self-contained and vendorable as a single file without a build step.
+3. The licence permits redistribution.
+4. The removal path is documented; the repository states what fails if the library is removed and how the artefact then degrades.
 
-Vendoriert heißt im Repo liegend, nie per CDN geladen; ein CDN ist eine externe Laufzeitabhängigkeit und verletzt die Offline-Regel. Diese Site selbst führt zwei Bibliotheken unter dieser Regel, marked.js für Markdown-Rendering und js-yaml für das Frontmatter-Parsing des Frontmatter-Inspectors.
+Vendored means lying in the repository, never loaded from a CDN, since a CDN is an external runtime dependency and violates the offline rule. This site itself carries two libraries under this rule, marked.js for Markdown rendering and js-yaml for the frontmatter parsing of the frontmatter inspector.
 
-### Vorberechnung statt Laufzeitlast
+### Precomputation instead of runtime load
 
-Schwere Berechnung läuft vor der Auslieferung; das Artefakt shippt abgeleitete Daten, typischerweise als JSON, und die Pipelines bleiben upstream im Repo. Der Browser rendert und filtert, er berechnet keine Analysen. Das hält das Artefakt schnell, macht die Berechnung als Skript prüfbar und trennt deterministische Arbeit (Skript) von generativer Arbeit (LLM), eine Trennung, die auch methodisch gilt; was ein Skript deterministisch kann, macht kein Modell.
+Heavy computation runs before delivery. The artefact ships derived data, typically as JSON, and the pipelines stay upstream in the repository. The browser renders and filters, and it computes no analyses. This keeps the artefact fast, makes the computation inspectable as a script, and separates deterministic work (script) from generative work (LLM), a separation that holds methodologically as well, since no model does what a script can do deterministically.
 
-### Keine externen Aufrufe zur Laufzeit
+### No external calls at runtime
 
-Das Artefakt funktioniert offline. Keine externen APIs, keine Web-Fonts von Fremdservern, keine Analytics, keine CDN-Ressourcen. Die Regel ist zugleich eine Haltbarkeits-, eine Datenschutz- und eine Sicherheitseigenschaft; jeder externe Endpunkt ist ein Ausfallpunkt, ein Tracking-Vektor und eine Angriffsfläche. Wo eingebettete Fremdinhalte unvermeidlich sind (Videos), gilt Click-to-load mit datenschutzfreundlicher Variante (`youtube-nocookie.com`); vor dem Klick verlässt keine Anfrage die Seite.
+The artefact works offline. No external APIs, no web fonts from third-party servers, no analytics, no CDN resources. The rule is at once a longevity, a privacy and a security property, since every external endpoint is a point of failure, a tracking vector and an attack surface. Where embedded third-party content is unavoidable, as with videos, click-to-load applies with a privacy-preserving variant (`youtube-nocookie.com`), and before the click no request leaves the page.
 
-### Sicherheit an den Vertrauensgrenzen
+### Security at the trust boundaries
 
-Statische Artefakte haben eine kleine, aber reale Angriffsfläche. Keine Secrets, Tokens oder Zugangsdaten im Client-Code, auch nicht in der Git-History. Nutzereingaben (Paste-Felder, URL-Parameter, Hash-Fragmente) werden validiert, bevor sie in DOM oder Routing gelangen; `innerHTML` mit ungeprüftem Input ist ausgeschlossen. Personenbezogene Daten Dritter gehören weder in die ausgelieferten Daten noch in Beispieldatensätze; wo Forschungsdaten Personen betreffen, klärt die Instanz die Rechtslage vor der Publikation.
+Static artefacts have a small but real attack surface. No secrets, tokens or credentials in client code, including the git history. User input from paste fields, URL parameters and hash fragments is validated before it reaches the DOM or the routing, and `innerHTML` with unchecked input is excluded. Personal data of third parties belongs neither in the delivered data nor in example datasets; where research data concerns persons, the instance settles the legal position before publication.
 
-### Provenienz-Deklaration
+### Provenance declaration
 
-Jedes Artefakt legt seine Produktionsbedingungen offen, so wie eine Edition ihre Editionsrichtlinien offenlegt. Es deklariert, dass es generiert wurde, aus welchen Dokumenten, mit welchen Modellen und Werkzeugen, und wie es verifiziert wurde. Träger sind das Frontmatter der Promptotyping Documents (`generated-with`, `method`, `template`) und eine sichtbare Stelle im Artefakt selbst (Footer oder Impressum). Für die Zitierbarkeit kommen `CITATION.cff` und `codemeta.json` ins Repo, deterministisch aus dem Frontmatter ableitbar; eine Zenodo-DOI setzt ein Release voraus.
+Every artefact discloses its conditions of production, the way an edition discloses its editorial guidelines. It declares that it was generated, from which documents, with which models and tools, and how it was verified. The carriers are the frontmatter of the Promptotyping Documents (`generated-with`, `method`, `template`) and a visible place in the artefact itself, in the footer or the imprint. For citability, `CITATION.cff` and `codemeta.json` go into the repository, derivable deterministically from the frontmatter; a Zenodo DOI presupposes a release.
 
-## Nachhaltigkeit und FAIR4RS
+## Sustainability and FAIR4RS
 
-Gegen die FAIR4RS-Prinzipien (Chue Hong et al. 2022) gemessen ist der Artefakttyp ungleichmäßig, und das Muster ist lehrreich. Accessibility hält konstruktionsbedingt; Artefakt und Quelltext sind über HTTPS ohne proprietäre Werkzeuge abrufbar. Reusability ist die Stärke der Methode; die detaillierte Provenienz, die R1.2 verlangt, entsteht in Journal, Dokumenten und Repo-History als Nebenprodukt des Arbeitens. Findability fällt im Default durch; ohne persistenten Identifikator, versionierte Releases und maschinenlesbare Zitationsmetadaten bleibt ein Prototyp unauffindbar. Diese Lücke ist Publikationsarbeit und vom Artefakt trennbar; ein archiviertes Release mit DOI und generierte Zitationsmetadaten schließen sie, ohne das Artefakt anzufassen.
+Measured against the FAIR4RS principles (Chue Hong et al. 2022) the artefact type is uneven, and the pattern is instructive. Accessibility holds by construction, since artefact and source are retrievable over HTTPS without proprietary tooling. Reusability is the method's strength, since the detailed provenance that R1.2 demands arises in journal, documents and repository history as a by-product of working. Findability fails by default, since without a persistent identifier, versioned releases and machine-readable citation metadata a prototype stays unfindable. That gap is publication work and separable from the artefact, and an archived release with a DOI together with generated citation metadata closes it without touching the artefact.
 
-## Grenzen des Formats und Übergabepunkt
+## Limits of the format and the handover point
 
-Die Grenzen gehören zur Definition des Artefakttyps. Clientseitige Verarbeitung begrenzt das Datenvolumen; mit flachen JSON- oder CSV-Dateien liegt der komfortable Bereich in der Größenordnung von zehntausend Records, spaltenorientierte Formate mit WebAssembly-Query-Engines verschieben ihn um Größenordnungen, um den Preis einer vendorierten Engine, die die Kompromissregel abdecken muss. Kollaborative oder serververmittelte Workflows, Schreib-Persistenz jenseits des Browsers und Authentifizierung liegen außerhalb des Formats. Wo ein Projekt über diese Grenzen hinauswächst, ist es dem Prototyping entwachsen und in der Softwareentwicklung angekommen; ab dort trägt Research Software Engineering mit seinen Standards für Testing, Wartung und Betrieb, und der Dokumentensatz der Methode wird zum Übergabepaket.
+The limits are part of the definition of the artefact type. Client-side processing bounds the data volume, and the bound moves with the data format and the memory of the reading machine. With flat JSON or CSV files it is reached early, and the answer is to move work upstream, so that a script precomputes, aggregates or samples and the artefact loads the result. Columnar formats with WebAssembly query engines shift the bound by orders of magnitude, at the price of a vendored engine that the compromise rule must cover. Collaborative or server-mediated workflows, write persistence beyond the browser, and authentication lie outside the format. Where a project grows past these limits it has outgrown prototyping and arrived in software development; from there Research Software Engineering carries it with its standards for testing, maintenance and operation, and the method's document set becomes the handover package.
 
-## Anwendung in einer Projektinstanz
+## Application in a project instance
 
-Die `architecture.md` eines Projekts verweist auf dieses Dokument als Baseline und führt nur, was projektspezifisch ist; den konkreten Stack, die Datenformate, die Modul-Struktur und jede Abweichung von den Regeln mit Begründung. Eine Abweichung ohne dokumentierte Begründung ist ein Befund für das Review. Der Verweis nutzt die Maschinenadresse dieses Dokuments (`machine-url` im Frontmatter), damit auch ein Coding-Agent die Baseline auflösen kann.
+The `architecture.md` of a project refers to this document as its baseline and carries only what is project-specific, meaning the concrete stack, the data formats, the module structure, and every deviation from the rules with its reason. A deviation without a documented reason is a finding for the review. The reference uses this document's machine address (`machine-url` in the frontmatter), so that a coding agent can resolve the baseline as well.
 
-## Quellen
+## Sources
 
-- Pollin, Christopher: Promptotyping. Translating Research Data into Research Artefacts with Context and Agentic Engineering. 2026 (in Vorbereitung), Sektion 4.
+- Pollin, Christopher: Promptotyping. Translating Research Data into Research Artefacts with Context and Agentic Engineering. 2026 (in preparation), section 4.
 - Risam, Roopika; Gil, Alex: Introduction. The Questions of Minimal Computing. In: Digital Humanities Quarterly 16,2 (2022). https://www.digitalhumanities.org/dhq/vol/16/2/000646/000646.html
 - The Endings Project: Principles for Digital Longevity. https://endings.uvic.ca/principles.html
 - Chue Hong, Neil P.; Katz, Daniel S.; Barker, Michelle et al.: FAIR Principles for Research Software (FAIR4RS Principles). Research Data Alliance 2022. https://doi.org/10.15497/RDA00068

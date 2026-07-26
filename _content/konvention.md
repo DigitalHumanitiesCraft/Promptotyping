@@ -1,85 +1,99 @@
 ---
-title: Konvention Promptotyping Documents
+title: Convention Promptotyping Documents
 slug: konvention
-version: "0.1"
+version: "0.2"
 status: complete
+language: en
 source: Konvention Promptotyping Documents
+updated: 2026-07-26
 mirrored: 2026-06-10
 machine-url: https://dhcraft.org/Promptotyping/_content/konvention.md
 ---
 
-# Konvention Promptotyping Documents
+# Convention Promptotyping Documents
 
 ## Summary
 
-Promptotyping Documents sind die Markdown-Dokumente im `knowledge/`-Ordner eines Promptotyping-Repos. Diese Konvention beschreibt deskriptiv, welche Funktionen eine solche Wissensbasis abdeckt, welches Frontmatter-Vokabular gilt und welche Strukturprinzipien tragen. Welche und wie viele Dokumente ein konkretes Repo führt, hängt vom Projekt ab und wird vom Agenten anhand der Triggerkriterien pro Funktion entschieden. Sie ist abgeleitet aus der Praxis in HerData (Stand Refactor `13f9880`, 2026-05-09), die als Referenzimplementierung dient. Die ausfüllbaren Vorlagen sind als Promptotyping-Document-Sektionen dieser Site adressierbar (siehe Vorlagen-Katalog unten). Die empirische Belegbasis steht im Vault-Dokument Frontmatter-Praxis in Promptotyping-Repos 2026-05.
+Promptotyping Documents are the Markdown documents in the `knowledge/` folder of a Promptotyping repository. This convention describes, descriptively, which functions such a knowledge base covers, which frontmatter vocabulary applies, and which structural principles carry it. Which documents and how many a concrete repository holds depends on the project and is decided by the agent from the trigger criteria per function. The convention is derived from the practice in HerData (state of refactor `13f9880`, 2026-05-09), which serves as the reference implementation. The fillable templates are addressable as Promptotyping Document sections of this site (see the template catalogue below). The empirical basis is held in the vault document on frontmatter practice in Promptotyping repositories, 2026-05.
 
-## Geltungsbereich
+## Scope
 
-Die Konvention gilt für Markdown-Dateien im `knowledge/`-Ordner (oder gleichwertig benannten Ordner) eines Promptotyping-Repos. Sie gilt nicht für Vault-Spiegeldokumente, die einem getrennten Vault-Standard folgen. Repo-Frontmatter und Vault-Frontmatter sind zwei getrennte Vokabulare; ein Vault-Spiegel eines Repo-Dokuments übernimmt das Repo-Frontmatter nicht ungefiltert.
+The convention applies to Markdown files in the `knowledge/` folder, or an equivalently named folder, of a Promptotyping repository. It does not apply to vault mirror documents, which follow a separate vault standard. Repository frontmatter and vault frontmatter are two separate vocabularies, and a vault mirror of a repository document does not take over the repository frontmatter unfiltered.
 
-## Funktionen einer Promptotyping-Wissensbasis
+## What a Promptotyping Document is
 
-Eine Wissensbasis im `knowledge/`-Ordner deckt eine Reihe von Funktionen ab. Welche Funktionen relevant sind und wie viele Dateien sie tragen, hängt vom Projekt ab. Die Konvention beschreibt diese Funktionen, nicht eine feste Dokumentenliste: ein Agent, der ein neues Repo aufsetzt, prüft das Triggerkriterium pro Funktion und entscheidet, welche Dokumente er anlegt.
+A Promptotyping Document is a knowledge document, a structured unit of knowledge distilled from raw material and optimised as a context artefact for work shared between people and language models. Three properties make it one.
 
-Die Funktionsnamen sind seit 2026-07-19 englisch (Navigation, Charter, Material, Specification, Architecture, Domain Knowledge, Design, Quality Assurance, Provenance, Planning, Reporting, Agent Instructions, Verification, Integration). Die Vorlagen-Namen bleiben unverändert, auch wo sie deutsch sind (Vorlage Datengrundlage, Vorlage Domänenwissen), weil reale Repos sie in `template:`-Feldern referenzieren und die Site-Anker auf ihnen stehen; Vorlagen-Namen sind Identifikatoren, keine Funktionsbezeichnungen.
+- **Dually readable.** The same text is comprehensible to the scholar and usable as context by the model. This is the property the whole method rests on, because reading is how the scholar verifies, and that same text is what the artefact is derived from.
+- **Compact.** Maximum information at minimum tokens, which is the writing principle of the Distillation phase and the answer to the degradation of model performance under growing context.
+- **Portable.** A Markdown file that can be linked and exchanged across knowledge systems, versioned in git, readable by people and machines without conversion.
 
-| Funktion | Frage, die sie beantwortet | Trigger | Typischer Träger |
+Dual readability disciplines the writing. A data description too vague for a model to work against is usually also too vague to count as scholarly documentation, which is why the demand tightens the text instead of adding a second obligation to it.
+
+One document carries one function. A small tool repository may therefore consolidate several functions into one file, and a multi-stage pipeline may split them further; what stays constant is the function, not the file name. The functions below are the recurring ones, each with the condition under which it applies.
+
+## Functions of a Promptotyping knowledge base
+
+A knowledge base in the `knowledge/` folder covers a range of functions. Which functions are relevant, and how many files carry them, depends on the project. The convention describes these functions rather than a fixed list of documents, so that an agent setting up a new repository checks the trigger criterion per function and decides which documents to create.
+
+The function names have been English since 2026-07-19 (Navigation, Charter, Material, Specification, Architecture, Domain Knowledge, Design, Quality Assurance, Provenance, Planning, Reporting, Agent Instructions, Verification, Integration). The template names remain unchanged even where they are German (Vorlage Datengrundlage, Vorlage Domänenwissen), because real repositories reference them in `template:` fields and the site anchors rest on them. Template names are identifiers rather than designations of function.
+
+| Function | Question it answers | Trigger | Typical carrier |
 |---|---|---|---|
-| Navigation | Was liegt hier, wie lese ich, welche Begriffe sind konstitutiv? | Wissensbasis hat mehr als drei Dokumente oder mehrere konstitutive Begriffe | `INDEX.md` (kombiniert Navigation und Begriffslexikon) |
-| Charter | Was ist dieses Projekt, für wen, mit welchem Ziel und welcher Materialgrundlage? | immer | `project.md` oder `README.md` |
-| Material | Was ist das verarbeitete oder produzierte Substrat? | Projekt verarbeitet oder produziert Daten | `data.md` |
-| Specification | Was soll das System tun und warum? | immer | `specification.md` (Anforderungen, Epics und User Stories, Funktionsumfang, Entscheidungen); ADR/Entscheidungen auslagerbar als `decisions.md`; narrative Szenarien als Sektion in `specification.md`, als separate `user-stories.md` (große Projekte) oder als „Acceptance Scenarios" in der spec (gleichwertig) |
-| Architecture | Wie ist es technisch realisiert? | System geht über Static-Site hinaus | `architecture.md` |
-| Domain Knowledge | Welches fachmethodische Wissen und welche Vorgaben gelten (das Warum und das fachliche Regelwerk)? | Forschungs-, Editions- oder Datenprojekt mit fachmethodischer Vorgabe- oder Theorieschicht | `editorial-guidelines.md`, `tei-mapping.md`, `methodik.md`, `forschungsrahmen.md`, `ontology.md`; Vorlage [Vorlage Domänenwissen](#promptotyping-document-domain-knowledge) |
-| Design | Wie sieht es aus, wie verhält es sich ästhetisch? | Projekt hat eine UI | `design.md` |
-| Quality Assurance | Was wird garantiert, was bewusst nicht, und wie wird es geprüft? | Projekt mit Tests, Verifikations- oder Akzeptanzprüfungen | `testing.md` (oder `test-strategy.md`); Vorlage [Vorlage Testing](#promptotyping-document-testing) |
-| Verification | Halten die eigenen empirischen und Neuheits-Claims einer adversarialen Prüfung gegen die Rohdaten stand? | Projekt erhebt empirische Befunde oder Neuheitsansprüche, die außenwirksam verwendet werden (Paper, Bericht, Übergabe) | `verification.md` (auch `verifikation.md`, `conformance-*.md`); Vorlage [Vorlage Verification](#promptotyping-document-verification) |
-| Provenance | Wie sind wir hierhin gekommen? | immer | `journal.md` |
-| Planning | Wohin und in welcher Reihenfolge geht es als Nächstes? | Projekt mit Phasen, Milestones oder Sprint-Steuerung | `plan.md` (oder `roadmap.md`); Vorlage [Vorlage Plan](#promptotyping-document-plan); Vorwärts-Pendant zur Provenance |
-| Reporting | Was ist der korrekte Projektstand zum Stichtag X, kommuniziert an einen externen Adressaten? | Projektstatusbericht für externen Empfänger (Auftraggeber, Förderer, Stakeholder); bei Auftragsprojekten Regelfall | `report.md` (oder `status.md`, kollisionsärmer; genre-benannt `zwischenbericht.md`, `abschlussbericht.md`; maschinelle Snapshots dürfen außerhalb `knowledge/` in `reports/` liegen); Vorlage [Vorlage Report](#promptotyping-document-report) |
-| Integration | Was liefert dieses Projekt einem anderen (oder erhält von ihm), in welchem Format, und woran wird die Erfüllung gemessen? | Projekt mit Datenaustausch, Kontrakt oder Handoff zu einem anderen Projekt oder einer anderen Lane | `integration.md`, `{gegenüber}-integration.md`; Vorlage [Vorlage Integration](#promptotyping-document-integration) |
-| Agent Instructions | Wie soll der Agent sich verhalten, auch ästhetisch? | immer | `CLAUDE.md` (im Repo-Root, nicht in `knowledge/`); referenziert `design.md` als Wertequelle |
+| Navigation | What lies here, how do I read it, which terms are constitutive? | knowledge base has more than three documents or several constitutive terms | `INDEX.md` (combines navigation and term glossary) |
+| Charter | What is this project, for whom, with what goal and what material basis? | always | `project.md` or `README.md` |
+| Material | What is the substrate that is processed or produced? | project processes or produces data | `data.md` |
+| Specification | What is the system to do and why? | always | `specification.md` (requirements, epics and user stories, functional scope, decisions); ADRs and decisions can be split out as `decisions.md`; narrative scenarios as a section in `specification.md`, as a separate `user-stories.md` for large projects, or as "Acceptance Scenarios" in the spec (equivalent) |
+| Architecture | How is it technically realised? | system goes beyond a static site | `architecture.md` |
+| Domain Knowledge | Which scholarly-methodological knowledge and which stipulations apply (the why and the domain rulebook)? | research, edition or data project with a layer of methodological stipulation or theory | `editorial-guidelines.md`, `tei-mapping.md`, `methodik.md`, `forschungsrahmen.md`, `ontology.md`; template [Vorlage Domänenwissen](#promptotyping-document-domain-knowledge) |
+| Design | What does it look like, how does it behave aesthetically? | project has a UI | `design.md` |
+| Quality Assurance | What is guaranteed, what deliberately is not, and how is it checked? | project with tests, verification or acceptance checks | `testing.md` (or `test-strategy.md`); template [Vorlage Testing](#promptotyping-document-testing) |
+| Verification | Do the project's own empirical and novelty claims survive an adversarial check against the raw data? | project makes empirical findings or novelty claims that are used externally (paper, report, handover) | `verification.md` (also `verifikation.md`, `conformance-*.md`); template [Vorlage Verification](#promptotyping-document-verification) |
+| Provenance | How did we get here? | always | `journal.md` |
+| Planning | Where does it go next, and in what order? | project with phases, milestones or sprint steering | `plan.md` (or `roadmap.md`); template [Vorlage Plan](#promptotyping-document-plan); forward counterpart to Provenance |
+| Reporting | What is the correct state of the project on date X, communicated to an external addressee? | project status report for an external recipient (client, funder, stakeholder); the regular case in commissioned projects | `report.md` (or `status.md`, which collides less; genre-named `zwischenbericht.md`, `abschlussbericht.md`; machine-generated snapshots may lie outside `knowledge/` in `reports/`); template [Vorlage Report](#promptotyping-document-report) |
+| Integration | What does this project deliver to another one, or receive from it, in what format, and how is fulfilment measured? | project with data exchange, contract or handoff to another project or lane | `integration.md`, `{counterpart}-integration.md`; template [Vorlage Integration](#promptotyping-document-integration) |
+| Agent Instructions | How is the agent to behave, aesthetically included? | always | `CLAUDE.md` (in the repository root, not in `knowledge/`); references `design.md` as its source of values |
 
-Die Funktionen können zusammengefasst werden, wenn das Projekt klein ist (ein triviales Tool-Repo trägt Charter, Material und Specification oft in einer einzigen `project.md`), oder gespalten, wenn das Projekt groß ist (zbz-ocr-tei spaltet die Architecture in Pipeline, Engines, CER-Methodik, TEI-Mapping). Maßgabe ist nicht Vollständigkeit, sondern dass jede für das Projekt relevante Funktion an genau einer auffindbaren Stelle abgedeckt ist.
+The functions can be merged where the project is small (a trivial tool repository often carries Charter, Material and Specification in a single `project.md`), or split where the project is large (zbz-ocr-tei splits Architecture into pipeline, engines, CER methodology and TEI mapping). The measure is that every function relevant to the project is covered at exactly one findable place, and completeness is beside the point.
 
-Standard-Dateinamen sind kleingeschrieben (`project.md`, `data.md`, `specification.md`, `architecture.md`, `design.md`, `journal.md`, `plan.md`, `testing.md`, `verification.md`, `integration.md`, `report.md`), Ausnahme `INDEX.md` als Großbuchstabe-Konvention für Hub-Dokumente. Repos mit anderen Dateinamenskonventionen (zum Beispiel zbz-ocr-tei mit Großbuchstaben-Namen wie `PIPELINE.md`) sind nicht falsch, aber profitieren weniger von der Lese-Heuristik weiter unten.
+Standard file names are lower case (`project.md`, `data.md`, `specification.md`, `architecture.md`, `design.md`, `journal.md`, `plan.md`, `testing.md`, `verification.md`, `integration.md`, `report.md`), with `INDEX.md` as the upper-case convention for hub documents. Repositories with other file-naming conventions, for instance zbz-ocr-tei with upper-case names such as `PIPELINE.md`, are not wrong, and they profit less from the reading heuristic below.
 
-## Vorlagen-Katalog
+## Template catalogue
 
-Für die Funktionen, die in der Praxis wiederkehren, liegen ausfüllbare Vorlagen als Promptotyping-Document-Sektionen dieser Site. Der Katalog ist offen: eine Vorlage entsteht, sobald ein Funktions-Träger sich in mindestens zwei Repos in vergleichbarer Form wiederholt. Aktuell enthalten:
+For the functions that recur in practice, fillable templates lie as Promptotyping Document sections of this site. The catalogue is open, and a template arises as soon as a carrier of a function recurs in comparable form in at least two repositories. The current stock is the following.
 
-| Vorlage | Funktion | Empfohlener Dateiname |
+| Template | Function | Recommended file name |
 |---|---|---|
-| [Vorlage Index](#promptotyping-document-index) | Navigation plus Begriffslexikon | `INDEX.md` |
-| [Vorlage Projekt-Wissensdokument](#promptotyping-document-project) | Charter (ggf. zusätzlich Material und Specification) | `project.md` oder `README.md` |
+| [Vorlage Index](#promptotyping-document-index) | Navigation plus term glossary | `INDEX.md` |
+| [Vorlage Projekt-Wissensdokument](#promptotyping-document-project) | Charter (possibly Material and Specification as well) | `project.md` or `README.md` |
 | [Vorlage Datengrundlage](#promptotyping-document-data) | Material | `data.md` |
-| [Vorlage Specification](#promptotyping-document-specification) | Specification (formale Anforderungen, Epics und User Stories, Funktionsumfang, Entscheidungen) | `specification.md` |
-| [Vorlage User Stories](#promptotyping-document-user-stories) | Specification (narrative Anwendungsszenarien als separate Datei; nur dokumentierte Ausnahme) | `user-stories.md` |
-| [Vorlage Action-Layer](#promptotyping-document-action-layer) | Agent Instructions | `CLAUDE.md` (Repo-Root) |
-| [Vorlage Architecture](#promptotyping-document-architecture) | Architecture (inkl. externe Modelle und Deployment als Sektionen; reguläre Auslagerung `pipeline.md`) | `architecture.md` |
-| [Vorlage Domänenwissen](#promptotyping-document-domain-knowledge) | Domain Knowledge (Begründungsschicht und fachliches Regelwerk) | `editorial-guidelines.md`, `methodik.md`, `tei-mapping.md` u. a. |
+| [Vorlage Specification](#promptotyping-document-specification) | Specification (formal requirements, epics and user stories, functional scope, decisions) | `specification.md` |
+| [Vorlage User Stories](#promptotyping-document-user-stories) | Specification (narrative usage scenarios in a separate file; documented exception only) | `user-stories.md` |
+| [Vorlage Action-Layer](#promptotyping-document-action-layer) | Agent Instructions | `CLAUDE.md` (repository root) |
+| [Vorlage Architecture](#promptotyping-document-architecture) | Architecture (including external models and deployment as sections; regular split-out `pipeline.md`) | `architecture.md` |
+| [Vorlage Domänenwissen](#promptotyping-document-domain-knowledge) | Domain Knowledge (layer of rationale and domain rulebook) | `editorial-guidelines.md`, `methodik.md`, `tei-mapping.md` and others |
 | [Vorlage Design](#promptotyping-document-design) | Design | `design.md` |
 | [Vorlage Testing](#promptotyping-document-testing) | Quality Assurance | `testing.md` |
-| [Vorlage Verification](#promptotyping-document-verification) | Verification (adversariale Prüfung eigener Claims gegen die Rohdaten) | `verification.md` |
+| [Vorlage Verification](#promptotyping-document-verification) | Verification (adversarial check of a project's own claims against the raw data) | `verification.md` |
 | [Vorlage Journal](#promptotyping-document-journal) | Provenance | `journal.md` |
-| [Vorlage Plan](#promptotyping-document-plan) | Planning (vorwärts) | `plan.md` oder `roadmap.md` |
+| [Vorlage Plan](#promptotyping-document-plan) | Planning (forward) | `plan.md` or `roadmap.md` |
 | [Vorlage Report](#promptotyping-document-report) | Reporting | `report.md` |
-| [Vorlage Integration](#promptotyping-document-integration) | Integration (projektübergreifende Kontrakte und Handoffs) | `integration.md`, `{gegenüber}-integration.md` |
+| [Vorlage Integration](#promptotyping-document-integration) | Integration (cross-project contracts and handoffs) | `integration.md`, `{counterpart}-integration.md` |
 
-Eine Vorlage trägt eine Funktion, nicht einen festen Dateinamen: wer das Repo-Dokument anders nennen will (zum Beispiel `material.md` statt `data.md` oder `corpus.md` für ein Editionsprojekt), nutzt dieselbe Vorlage. Die Frontmatter-Schemas und Strukturprinzipien tragen unabhängig vom konkreten Dateinamen.
+A template carries a function rather than a fixed file name. Anyone who wants to name the repository document differently, for instance `material.md` instead of `data.md` or `corpus.md` for an edition project, uses the same template. The frontmatter schemas and structural principles hold independently of the concrete file name.
 
-Konventionsänderung 2026-05-30: Epics und User Stories ziehen als eigene Sektion in `specification.md`; eine separate `user-stories.md` ist seitdem die dokumentierte Ausnahme für große Projekte (typischerweise Editionsprojekte), deren Specification-Funktion ohnehin gespalten wird. Die [Vorlage Specification](#promptotyping-document-specification) (ab Vorlagen-Version 0.2) trägt die Sektion, die [Vorlage User Stories](#promptotyping-document-user-stories) bleibt für den Ausnahmefall im Katalog.
+Convention change of 2026-05-30: epics and user stories move into `specification.md` as a section of their own, and a separate `user-stories.md` has since been the documented exception for large projects, typically edition projects, whose Specification function is split anyway. The [Vorlage Specification](#promptotyping-document-specification) carries the section from template version 0.2 onwards, and the [Vorlage User Stories](#promptotyping-document-user-stories) stays in the catalogue for the exceptional case.
 
-Wenn ein Repo eine Funktion abdeckt, für die noch keine Vorlage existiert (zum Beispiel `cer-methodik.md` in OCR-Projekten oder `personas.md` als UX-Artefakt), bleibt das Dokument zunächst freihändig; die Konvention liefert das Frontmatter-Vokabular und die Strukturprinzipien, das reicht für den Anfang. Sobald ein zweites Repo dieselbe Funktion in vergleichbarer Form trägt, lohnt sich eine eigene Vorlage.
+Where a repository covers a function for which no template yet exists, for instance `cer-methodik.md` in OCR projects or `personas.md` as a UX artefact, the document stays freehand for the time being; the convention supplies the frontmatter vocabulary and the structural principles, which suffices for a start. As soon as a second repository carries the same function in comparable form, a template of its own becomes worthwhile.
 
-Verification und Integration waren seit 2026-06-13 Kandidatenfunktionen und sind am 2026-07-19 zu Vollfunktionen mit eigener Vorlage befördert worden, nachdem das Inhaltsaudit die Schwelle von zwei vergleichbaren Vorkommen bestätigt hat (Verification in kisug, FemPrompt und szd-htr-ocr-pipeline; Integration in teiCrafter und szd-htr-ocr-pipeline). Seit 2026-07-19 sind alle Vorlagen des Katalogs freigegeben (`status: complete`); ein Entwurfsstatus einer Vorlage stünde sichtbar in Katalog und Vorlage zugleich.
+Verification and Integration were candidate functions from 2026-06-13 and were promoted on 2026-07-19 to full functions with a template of their own, after the content audit confirmed the threshold of two comparable occurrences (Verification in kisug, FemPrompt and szd-htr-ocr-pipeline; Integration in teiCrafter and szd-htr-ocr-pipeline). Since 2026-07-19 all templates in the catalogue are released (`status: complete`), and a draft status of a template would stand visibly in catalogue and template alike.
 
-## Vorlagen-Adressierbarkeit über `template:`-Feld
+## Template addressability through the `template:` field
 
-Jede Vorlage hat eine permanente, öffentliche Adresse auf der Promptotyping-Site (https://dhcraft.org/Promptotyping/). Repos verlinken auf die maßgebliche Vorlagen-Spezifikation über ein `template:`-Feld im Frontmatter. Dadurch wird das Dokument selbst, und nicht der Vorlagen-Spiegel im Vault, die kanonische Quelle: ein Coding-Agent, der einen `template:`-URI sieht, kann die volle Spezifikation aufrufen, ohne den Vault zu kennen.
+Every template has a permanent public address on the Promptotyping site (https://dhcraft.org/Promptotyping/). Repositories link to the authoritative template specification through a `template:` field in the frontmatter. The document itself thereby becomes the canonical source rather than the template mirror in the vault, since a coding agent that sees a `template:` URI can retrieve the full specification without knowing the vault.
 
-Das Feld trägt drei Pflicht-Subfelder (`name`, `version`, `url`) und ein optionales (`alias`). Default ist Latest-Adressierung: `url:` und `alias:` zeigen auf die jeweils aktuelle Fassung der Vorlagen-Sektion auf der Site, ohne Versions-Suffix. Zwei URL-Formen sind kanonisch und gleichberechtigt: `url:` ist die Subpath-Form (maschinen-freundlich), `alias:` ist die Hash-Form (browser-nativer Anker auf derselben Seite). Beide werden gleich aufgelöst; Repos können bei Bedarf eine der beiden Formen weglassen.
+The field carries three mandatory subfields (`name`, `version`, `url`) and one optional subfield (`alias`). The default is latest addressing, so `url:` and `alias:` point at the current version of the template section on the site, without a version suffix. Two URL forms are canonical and equivalent, `url:` as the subpath form (machine-friendly) and `alias:` as the hash form (a browser-native anchor on the same page). Both resolve identically, and repositories may omit one of the two forms where they prefer.
 
 ```yaml
 template:
@@ -89,108 +103,109 @@ template:
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-data
 ```
 
-Snapshot-Adressierung. Falls in Zukunft eine `v0.2` oder höher erscheint, bleiben ältere Fassungen über Hash-Anker auf derselben Vorlagen-Seite erreichbar (`#v0.1`, `#v0.2` usw.). Repos pflegen ihr `template:`-Feld einmalig auf die Vorlage und folgen damit per Default der Latest-Fassung; wer auf eine bestimmte Schnappschuss-Version festnageln will, hängt explizit `#v0.1` an die `url:` und `-v0.1` an den `alias:`.
+Snapshot addressing. Should a `v0.2` or higher appear in future, older versions stay reachable through hash anchors on the same template page (`#v0.1`, `#v0.2` and so on). Repositories maintain their `template:` field once, pointing at the template, and thereby follow the latest version by default; anyone who wants to pin a particular snapshot version appends `#v0.1` to the `url:` and `-v0.1` to the `alias:`.
 
-Das Feld gehört in die empfohlene Schicht und wird gesetzt, sobald für das Dokument eine Katalogvorlage existiert. Vault-Spiegel-Dokumente führen es nicht. Warum es trotz seiner funktionalen Bedeutung nicht im Pflichtkern steht, begründet das Frontmatter-Schema.
+The field belongs to the recommended layer and is set as soon as a catalogue template exists for the document. Vault mirror documents do not carry it. Why it stands outside the mandatory core despite its functional weight is explained by the frontmatter schema.
 
-## Action-Layer im Repo-Root
+## Action layer in the repository root
 
-Action-Dokumente liegen im Repo-Root, nicht im `knowledge/`-Ordner. Standard ist `CLAUDE.md` als Agent-Konfiguration; sie sollte explizit auf den `knowledge/`-Ordner verweisen, damit der Agent die Wissensbasis als Kontext nimmt. Struktur und Befüllung beschreibt die [Vorlage Action-Layer](#promptotyping-document-action-layer) (seit 2026-06-09, freigegeben 2026-07-19). `RULES.md`, `INSTRUCTIONS.md`, `cloud-commands.md` sind Forschungsleitstelle-spezifisch (mehrere parallele Agenten mit differenzierten Rollen) und kein Standard für gewöhnliche Promptotyping-Repos.
+Action documents lie in the repository root rather than in the `knowledge/` folder. The standard is `CLAUDE.md` as the agent configuration, and it should refer explicitly to the `knowledge/` folder so that the agent takes the knowledge base as context. Structure and filling are described by the [Vorlage Action-Layer](#promptotyping-document-action-layer) (since 2026-06-09, released 2026-07-19). `RULES.md`, `INSTRUCTIONS.md` and `cloud-commands.md` are specific to the research control-room setup with several parallel agents in differentiated roles, and they are no standard for ordinary Promptotyping repositories.
 
-Auf der ästhetischen Schicht wirkt die Agent-Instructions-Funktion dadurch, dass `CLAUDE.md` das `design.md` als Wertequelle einbindet, etwa über eine Sektion "Designprinzipien" mit imperativ formulierten Sätzen, die aus der Designhaltung abgeleitet sind, oder durch die Anweisung, vor UI-Generierung das `design.md` zu lesen. Das `design.md` selbst bleibt ein Declarative Document; die imperative Übersetzung gehört in den Action-Layer. Diese Aufgabenteilung folgt der Lese-Heuristik weiter unten und vermeidet, dass ein Dokument seinen analytischen Typ wechselt.
+On the aesthetic layer the Agent Instructions function takes effect through `CLAUDE.md` binding in `design.md` as its source of values, for instance through a section on design principles with imperatively formulated sentences derived from the design stance, or through the instruction to read `design.md` before generating any UI. The `design.md` itself stays a Declarative Document, and the imperative translation belongs in the action layer. This division follows the reading heuristic below and prevents a document from changing its analytical type.
 
-## Klassifikation der Dokumenttypen
+## Classification of the document types
 
-Promptotyping unterscheidet drei Dokumenttypen analytisch (Pollin 2026, Sektion 3.3). Alle drei sind Knowledge Documents, spezialisiert nach der Art des Wissens, das sie tragen.
+Promptotyping distinguishes three document types analytically (Pollin 2026, section 3.3). All three are knowledge documents, specialised by the kind of knowledge they hold.
 
-Declarative Documents tragen Sachwissen. Sie beschreiben, was über Daten, Domäne und Forschungskontext bekannt ist. Beispiele sind `README.md`, `project.md`, `data.md`, `requirements.md`, `architecture.md`, `design.md`, `editorial-guidelines.md`, Mapping-Regeln und Verifikationsdokumente. Sie erweitern den epistemischen Horizont des Modells und überdauern als kuratierte Schicht die Änderungen an Code, Modellversionen und Werkzeugen. Bis Juli 2026 hieß dieser Typ hier Knowledge Document; der Name ist auf den Oberbegriff gewandert.
+Declarative Documents hold knowledge about the subject matter. They describe what is known about the data, the domain and the research context. Examples are `README.md`, `project.md`, `data.md`, `requirements.md`, `architecture.md`, `design.md`, `editorial-guidelines.md`, mapping rules and verification documents. They extend the model's epistemic horizon and outlast, as a curated layer, the changes to code, model versions and tools. Until July 2026 this type was called Knowledge Document here; the name has moved to the superordinate term.
 
-Process Documents tragen Prozesswissen. Sie halten den Verlauf der Arbeit fest, chronologisch oder analytisch. Beispiele sind `JOURNAL.md`, `learnings.md`, `plan.md`. Sie werden kontinuierlich aktualisiert und bilden zusammen mit der git-Historie das Context Memory.
+Process Documents hold knowledge about the course of the work. They record the progress of the work, chronologically or analytically. Examples are `JOURNAL.md`, `learnings.md`, `plan.md`. They are updated continuously and form, together with the git history, the context memory.
 
-Action Documents tragen Handlungswissen. Sie beschreiben, was Agenten im Projekt tun dürfen und wie. Beispiele sind `instructions.md`, `rules.md`, `CLAUDE.md`, dazu Teststrategie, Technologie-Baseline und in Mehr-Agenten-Projekten die Rollen- und Orchestrierungsregeln. Sie steuern das Modellverhalten.
+Action Documents hold knowledge about how to act. They describe what agents may do within the project and how. Examples are `instructions.md`, `rules.md`, `CLAUDE.md`, along with the testing strategy, the technology baseline, and in multi-agent projects the role and orchestration rules. They steer the model's behaviour.
 
-`design.md` ist deklarativ und damit ein Declarative Document, weil es Designhaltung, Designsystem und Interaktionsmuster beschreibt. Die Sozialisierung des Coding-Agenten auf der ästhetischen Schicht ist ein Lese-Effekt, der entsteht, wenn ein Action Document (typischerweise `CLAUDE.md`) auf das `design.md` verweist und die imperativen Designprinzipien dort führt. Deklaratives bleibt deklarativ, Action bleibt Action; die ästhetische Steuerung kommt aus der Komposition zweier Dokumente, nicht aus einem Hybridtyp.
+`design.md` is declarative and thus a Declarative Document, because it describes design stance, design system and interaction patterns. The socialisation of the coding agent on the aesthetic layer is a reading effect that arises when an Action Document, typically `CLAUDE.md`, refers to the `design.md` and carries the imperative design principles there. The declarative stays declarative and the action stays action; the aesthetic steering comes from the composition of two documents rather than from a hybrid type.
 
-Die Klassifikation ist analytisch, nicht rigide, und wird nicht im Frontmatter geführt. Sie liefert ein Diagnoseraster. Ist der Output inhaltlich falsch, wird zuerst das Declarative Document geprüft. Ist er formal falsch, das Action Document. Ist die Entscheidungslogik unklar, das Process Document.
+The classification is analytical rather than rigid, and it is not carried in the frontmatter. It supplies a diagnostic grid. Where the output is factually wrong, the Declarative Document is checked first. Where it is formally wrong, the Action Document. Where the decision logic is unclear, the Process Document.
 
-## Lese-Heuristik (Funktion → Typ → Diagnose)
+## Reading heuristic (function to type to diagnosis)
 
-Statt eines `type:`-Feldes im Frontmatter trägt die Funktion eines Dokuments den Typ implizit. Die folgende Heuristik erlaubt einem Agenten, ohne Frontmatter-Lookup zu entscheiden, welches Dokument er bei welchem Fehlerbild zuerst prüft. Die Heuristik verbindet die Funktion mit typischen Dateinamen; wenn ein Repo andere Dateinamen führt, gilt die Funktion, nicht der Name.
+Instead of a `type:` field in the frontmatter, a document's function carries its type implicitly. The following heuristic lets an agent decide without a frontmatter lookup which document to check first for a given failure pattern. The heuristic connects the function with typical file names; where a repository carries other file names, the function applies rather than the name.
 
-| Funktion | Typ | Typische Dateinamen | Bei welchem Fehlerbild zuerst prüfen |
+| Function | Type | Typical file names | Which failure pattern to check it for first |
 |---|---|---|---|
-| Navigation | Declarative | `INDEX.md`, `00_INDEX.md` | Reihenfolge unklar, Dokument nicht gefunden, Begriff falsch verwendet (Glossar lebt im Index) |
-| Charter | Declarative | `project.md`, `README.md`, `PROJEKT.md` | Output inhaltlich falsch, Projektkontext unklar |
-| Material | Declarative | `data.md`, `DATA.md`, `corpus.md`, `material.md` | Datenfelder verwechselt, Beispiele falsch zitiert |
-| Specification (formal) | Declarative | `specification.md`, `requirements.md`, `features.md`, `decisions.md` | Akzeptanzkriterium ignoriert, frühere Entscheidung revidiert, Funktion falsch dargestellt |
-| Specification (narrativ) | Declarative | `specification.md` (Sektion Epics und User Stories); bei Spaltung `user-stories.md`, `scholar-user-stories.md` | Anwendungsszenario missverstanden, Forschungsoperation ignoriert |
-| Architecture | Declarative | `architecture.md`, `pipeline.md`, `infrastruktur.md` | Falsche Annahmen über Komponenten, Datenfluss, Schichtgrenzen |
-| Domain Knowledge | Declarative | `editorial-guidelines.md`, `tei-mapping.md`, `methodik.md`, `forschungsrahmen.md`, `ontology.md` | Fachregel oder Methode verletzt, Editionsrichtlinie ignoriert, Begründungsschicht fehlt |
-| Design | Declarative | `design.md`, `DESIGN.md` | UI-Inkonsistenz, Designsystem-Bruch, Designhaltung unklar (für Agentenverhalten, das Designwerten widerspricht, zusätzlich `CLAUDE.md` prüfen) |
-| Quality Assurance | Declarative | `testing.md`, `test-strategy.md` | Garantie unklar, Test fehlt oder schlägt fehl, Akzeptanzkriterium nicht geprüft |
-| Verification | Declarative | `verification.md`, `verifikation.md`, `conformance-*.md` | Außenwirksamer Claim unbelegt, Kopfzahl nicht nachrechenbar, Neuheitsanspruch ungeprüft |
-| Provenance | Process | `journal.md`, `JOURNAL.md`, `learnings.md` | Entscheidungslogik unklar, Wiederholung früherer Sackgassen |
-| Planning | Process | `plan.md`, `roadmap.md` | Reihenfolge oder Phasengrenze unklar, nächster Schritt nicht erkennbar (vorwärts; Provenance ist rückwärts) |
-| Reporting | Declarative (Snapshot) | `report.md`, `status.md`, `zwischenbericht.md`, `abschlussbericht.md` | Externer Stand-Anspruch unklar oder veraltet, Adressat nicht erkennbar, Belege fehlen |
-| Integration | Declarative | `integration.md`, `{gegenüber}-integration.md`, `HANDOFF.md` | Schnittstellenformat missverstanden, Zuständigkeit an der Projektgrenze unklar, beide Seiten beschreiben den Kontrakt widersprüchlich |
-| Agent Instructions | Action | `CLAUDE.md`, `RULES.md`, `INSTRUCTIONS.md` (Repo-Root) | Stilbruch, Verbot ignoriert, formal falscher Output |
+| Navigation | Declarative | `INDEX.md`, `00_INDEX.md` | order unclear, document not found, term used wrongly (the glossary lives in the index) |
+| Charter | Declarative | `project.md`, `README.md`, `PROJEKT.md` | output factually wrong, project context unclear |
+| Material | Declarative | `data.md`, `DATA.md`, `corpus.md`, `material.md` | data fields confused, examples cited wrongly |
+| Specification (formal) | Declarative | `specification.md`, `requirements.md`, `features.md`, `decisions.md` as an ADR split-out | acceptance criterion ignored, earlier decision revised, function misrepresented |
+| Decision record | Process | `decisions.md` where it lifts the standing decisions out of the running journal | a decision already taken is reopened, the current rule is not findable outside the log |
+| Specification (narrative) | Declarative | `specification.md` (section on epics and user stories); where split, `user-stories.md`, `scholar-user-stories.md` | usage scenario misunderstood, research operation ignored |
+| Architecture | Declarative | `architecture.md`, `pipeline.md`, `infrastruktur.md` | false assumptions about components, data flow, layer boundaries |
+| Domain Knowledge | Declarative | `editorial-guidelines.md`, `tei-mapping.md`, `methodik.md`, `forschungsrahmen.md`, `ontology.md` | domain rule or method violated, editorial guideline ignored, layer of rationale missing |
+| Design | Declarative | `design.md`, `DESIGN.md` | UI inconsistency, break in the design system, design stance unclear (for agent behaviour that contradicts design values, check `CLAUDE.md` as well) |
+| Quality Assurance | Action | `testing.md`, `test-strategy.md` | guarantee unclear, test missing or failing, acceptance criterion unchecked |
+| Verification | Declarative | `verification.md`, `verifikation.md`, `conformance-*.md` | externally used claim unsupported, headline figure not recomputable, novelty claim unchecked |
+| Provenance | Process | `journal.md`, `JOURNAL.md`, `learnings.md` | decision logic unclear, earlier dead ends repeated |
+| Planning | Process | `plan.md`, `roadmap.md` | order or phase boundary unclear, next step not recognisable (forward; Provenance is backward) |
+| Reporting | Declarative (snapshot) | `report.md`, `status.md`, `zwischenbericht.md`, `abschlussbericht.md` | external claim about the state unclear or outdated, addressee not recognisable, evidence missing |
+| Integration | Declarative | `integration.md`, `{counterpart}-integration.md`, `HANDOFF.md` | interface format misunderstood, responsibility at the project boundary unclear, the two sides describe the contract inconsistently |
+| Agent Instructions | Action | `CLAUDE.md`, `RULES.md`, `INSTRUCTIONS.md` (repository root) | break in style, prohibition ignored, formally wrong output |
 
-Bei Repos mit projektsemantisch geprägten Dateinamen (zbz-ocr-tei führt zum Beispiel `TEI-MAPPING.md`, `CER-METHODIK.md`, `EDITION.md`) gilt: Der semantische Inhalt entscheidet über die Funktion, nicht der Dateiname. In der Regel handelt es sich dann um Declarative Documents, die eine Spezialisierung der Funktionen Material oder Architecture tragen.
+In repositories with file names shaped by project semantics, where zbz-ocr-tei carries `TEI-MAPPING.md`, `CER-METHODIK.md` and `EDITION.md`, the semantic content decides the function rather than the file name. As a rule these are Declarative Documents carrying a specialisation of the Material or Architecture function.
 
-## Frontmatter-Schema
+## Frontmatter schema
 
-Das Frontmatter folgt einem reduzierten Pflichtkern und zwei optionalen Schichten. Der Kern ist so klein wie möglich, weil weniger Felder konsistenter gepflegt werden. Ein Feld rückt nur dann in den Kern, wenn die Praxis es bereits flächendeckend trägt.
+The frontmatter follows a reduced mandatory core and two optional layers. The core is as small as possible, because fewer fields are maintained more consistently. A field moves into the core only where the practice already carries it across the board.
 
-### Pflichtkern
+### Mandatory core
 
-| Feld | Typ | Zweck |
+| Field | Type | Purpose |
 |---|---|---|
-| `title` | string | Menschenlesbarer Dokumenttitel |
-| `project` | object | Verschachtelt mit `name` und `repository` |
-| `method` | object | Verschachtelt mit `name` und `url`; üblicherweise `Promptotyping` |
+| `title` | string | Human-readable document title |
+| `project` | object | Nested with `name` and `repository` |
+| `method` | object | Nested with `name` and `url`; usually `Promptotyping` |
 | `status` | enum | `draft`, `active`, `archived` |
-| `created` | date YYYY-MM-DD | Anlagedatum |
-| `updated` | date YYYY-MM-DD | Letztes inhaltliches Update |
+| `created` | date YYYY-MM-DD | Date of creation |
+| `updated` | date YYYY-MM-DD | Last substantive update |
 
-Den Zweck des Dokuments trägt der erste Absatz unter der H1, in einem Satz und ohne Repo-Kontext verständlich.
+The purpose of the document is carried by the first paragraph under the H1, in one sentence and understandable without repository context.
 
-`template` steht in der empfohlenen Schicht, und der Verzicht hat eine Folge, die zu kennen ist. Wer das Feld führt, ist über den Frontmatter-Inspector adressierbar und maschinell anschließbar. Wer es weglässt, verliert diese Eigenschaft und sonst nichts.
+`template` sits in the recommended layer, and doing without it has a consequence worth knowing. Whoever carries the field is addressable through the frontmatter inspector and connectable by machine. Whoever omits it loses that property and nothing else.
 
-### Empfohlen
+### Recommended
 
-| Feld | Typ | Zweck |
+| Field | Type | Purpose |
 |---|---|---|
-| `template` | object | Verschachtelt mit `name`, `version`, `url`, optional `alias`; siehe Sektion *Vorlagen-Adressierbarkeit*. Zu setzen, sobald eine Katalogvorlage existiert |
-| `authors` | list | Personen mit kuratorischer Verantwortung. Trägt ausschließlich Menschen, auch wenn ein LLM den Text erzeugt hat; die Verantwortung liegt bei dem, der den Auftrag gibt |
-| `generated-with` | string | Harness und LLM in der Form `Harness (LLM)`, bei mehreren LLMs kommagetrennt in der Klammer. Entfällt, wenn ohne LLM entstanden |
-| `topics` | list (Wikilinks) | Wissensfelder, die das Dokument-Befüllen oder -Lesen kontextualisieren |
-| `language` | string | Sprachcode (`de`, `en`) |
-| `version` | string | Repo-Schema-Version, repo-weit gemeinsam erhöht |
-| `related` | list | Querverweise auf Geschwister-Dokumente desselben Repos |
+| `template` | object | Nested with `name`, `version`, `url`, optionally `alias`; see the section on template addressability. To be set as soon as a catalogue template exists |
+| `authors` | list | Persons with curatorial responsibility. Carries humans exclusively, even where an LLM produced the text; responsibility lies with whoever commissions it |
+| `generated-with` | string | Harness and LLM in the form `Harness (LLM)`, several LLMs comma-separated inside the brackets. Omitted where the document arose without an LLM |
+| `topics` | list (wikilinks) | Fields of knowledge that contextualise the filling or reading of the document |
+| `language` | string | Language code (`de`, `en`) |
+| `version` | string | Repository schema version, raised jointly across the repository |
+| `related` | list | Cross-references to sibling documents in the same repository |
 
-### Kontextabhängig
+### Context-dependent
 
-| Feld | Typ | Zweck |
+| Field | Type | Purpose |
 |---|---|---|
-| `output-of` | string | Der Befehl, der dieses Dokument erzeugt. Nur bei maschinell erzeugten Dokumenten; siehe Sektion *Provenienz im Frontmatter* |
-| `knowledge-sources` | nested map | Externe Wissensquellen als URI-Mapping, gruppiert nach Typ (`institutions`, `standards`, `methods`, `vocabularies`) |
-| `tags` | list | Optional, nur falls vault-übergreifende domänen-thematische Suche relevant ist; tragen keine strukturelle Information |
-| `iteration` | integer | Nur bei iterierten Dokumenten |
-| `baseline` | Wikilink | Vorgängerdokument der aktuellen Iteration |
-| `feedback-source` | string | Quelle, aus der die Iteration entstand |
-| `verification-milestone` | string | Verknüpfter Verification Milestone aus der Pipeline |
-| `aliases` | list | Alternative Benennungen für Verlinkung |
-| `dependencies` | list (Wikilinks) | Nur bei Repos mit explizitem Vorgängergraph (zbz-ocr-tei-Pattern); sonst entfällt |
+| `output-of` | string | The command that produces this document. Only for machine-generated documents; see the section on provenance in the frontmatter |
+| `knowledge-sources` | nested map | External knowledge sources as a URI mapping, grouped by type (`institutions`, `standards`, `methods`, `vocabularies`) |
+| `tags` | list | Optional, only where a cross-vault thematic search by domain is relevant; carries no structural information |
+| `iteration` | integer | Only for iterated documents |
+| `baseline` | wikilink | Predecessor document of the current iteration |
+| `feedback-source` | string | The source the iteration arose from |
+| `verification-milestone` | string | Associated verification milestone from the pipeline |
+| `aliases` | list | Alternative designations for linking |
+| `dependencies` | list (wikilinks) | Only in repositories with an explicit predecessor graph (the zbz-ocr-tei pattern); otherwise omitted |
 
-### Provenienz im Frontmatter
+### Provenance in the frontmatter
 
-Drei Felder halten fest, wie ein Dokument entstanden ist. Sie beantworten zusammen eine einzige Frage, aus der beim nächsten Zugriff eine Handlung folgt, nämlich ob das Dokument beim nächsten Lauf überschrieben wird.
+Three fields record how a document came about. Together they answer a single question from which an action follows at the next access, namely whether the document will be overwritten on the next run.
 
-`authors` nennt die Menschen, die den Inhalt verantworten. Ein LLM steht dort nie, gleichgültig wie viel Text es beigetragen hat, weil die Verantwortung bei dem liegt, der den Auftrag erteilt und das Ergebnis prüft. Die Erhebung fand hierzu zwei Verstöße, die beim nächsten Durchgang zu bereinigen sind.
+`authors` names the humans who are responsible for the content. An LLM never stands there, however much text it contributed, because responsibility lies with whoever commissions the work and checks the result. The survey found two violations of this, to be cleaned up on the next pass.
 
-`generated-with` nennt Harness und LLM in der Form `Claude Code (Claude Opus 5)`, bei mehreren LLMs kommagetrennt innerhalb der Klammer. Das feste Format löst einen realen Konflikt auf, weil im Bestand `Claude Code mit Claude Opus 4.8` und `Claude Code with Claude Opus 4.8` nebeneinander stehen und dieselbe Aussage in zwei Sprachen tragen. Die Klammer ist sprachneutral.
+`generated-with` names harness and LLM in the form `Claude Code (Claude Opus 5)`, several LLMs comma-separated inside the brackets. The fixed format resolves a real conflict, since the existing stock holds `Claude Code mit Claude Opus 4.8` beside `Claude Code with Claude Opus 4.8`, carrying the same statement in two languages. The bracket is language-neutral.
 
-`output-of` trägt den Befehl, der das Dokument erzeugt, und wird nur gesetzt, wenn dieser Befehl es reproduziert. Steht das Feld, wird das Dokument nicht von Hand bearbeitet und eine Korrektur geht an die Quelle. Fehlt es, verantwortet ein Mensch den Text unmittelbar. Der Wert ist ein ausführbarer Befehl und damit offen für Skripte, Make-Targets und Kommandozeilenwerkzeuge gleichermaßen.
+`output-of` carries the command that produces the document, and it is set only where that command reproduces it. Where the field stands, the document is not edited by hand and a correction goes to the source. Where it is missing, a human is responsible for the text directly. The value is an executable command and is therefore open to scripts, make targets and command-line tools alike.
 
 ```yaml
 authors: [Christopher Pollin]
@@ -198,13 +213,13 @@ generated-with: Claude Code (Claude Opus 5)
 output-of: python tools/render_data.py
 ```
 
-Nicht in den Header gehört die Abfolge der Arbeitsschritte. Ob ein Skript einen Rumpf erzeugt hat, ein LLM darüber iteriert und ein Mensch anschließend redigiert hat, ist der Verlauf der Arbeit und damit Prozesswissen. Es gehört ins Journal.
+What does not belong in the header is the sequence of working steps. Whether a script produced a skeleton, an LLM iterated over it and a human then edited it is the course of the work and thus process knowledge. It belongs in the journal.
 
-### Anschluss an Dublin Core
+### Connection to Dublin Core
 
-Die Feldnamen tragen keine Namespace-Präfixe. Ein Doppelpunkt im YAML-Schlüssel erzwingt Quoting und erhöht die Pflegehürde dort, wo sie ohnehin reißt, und ein Teil der Felder hat gar keine Entsprechung, sodass ein gemischtes Vokabular entstünde. Die Semantik wird deshalb hier festgehalten statt im Schlüssel. Acht Felder entsprechen einem DCMI Metadata Term wörtlich; ein Generator, der aus dem Frontmatter `CITATION.cff` oder `codemeta.json` rendert, kann sich darauf stützen. Ein neuntes Mapping läuft nicht über ein Feld. `dcterms:description` wird aus dem ersten Absatz unter der H1 gewonnen, weil dort seit der Reduktion des Kerns der Zweck des Dokuments steht.
+The field names carry no namespace prefixes. A colon in a YAML key forces quoting and raises the maintenance hurdle exactly where it already breaks, and some of the fields have no counterpart at all, so a mixed vocabulary would arise. The semantics is therefore recorded here instead of in the key. Eight fields correspond to a DCMI Metadata Term literally, and a generator that renders `CITATION.cff` or `codemeta.json` from the frontmatter can rely on that. A ninth mapping does not run through a field. `dcterms:description` is taken from the first paragraph under the H1, because since the reduction of the core the purpose of the document stands there.
 
-| Feld | DCMI Term | Definition an der Quelle |
+| Field | DCMI Term | Definition at the source |
 |---|---|---|
 | `title` | `dcterms:title` | A name given to the resource |
 | `authors` | `dcterms:creator` | An entity responsible for making the resource |
@@ -215,81 +230,81 @@ Die Feldnamen tragen keine Namespace-Präfixe. Ein Doppelpunkt im YAML-Schlüsse
 | `project` | `dcterms:isPartOf` | A related resource in which the described resource is physically or logically included |
 | `template` | `dcterms:conformsTo` | An established standard to which the described resource conforms |
 
-Der Treffer bei `template` trägt am weitesten. Das Verhältnis eines Dokuments zu seiner Vorlage ist genau das, was `dcterms:conformsTo` bezeichnet, womit die Vorlagen-Adressierbarkeit eine standardkonforme Aussage wird statt einer Hauskonvention.
+The match at `template` carries furthest. The relation of a document to its template is exactly what `dcterms:conformsTo` designates, which turns template addressability into a standard-conformant statement instead of a house convention.
 
-Vier Felder bleiben ohne Entsprechung. Für `status` und `method` führen die DCMI Metadata Terms nichts Passendes; `dcterms:instructionalMethod` ist pädagogisch gemeint und trägt hier nicht. Für `generated-with` und `output-of` wäre PROV der naheliegende Anschluss, doch `prov:wasGeneratedBy` hat als Range eine `prov:Activity` und nicht ein Werkzeug, sodass ein Feld mit einem Befehl als Wert nicht unmittelbar darauf abbildet. Ein sauberes PROV-Mapping bliebe auszuarbeiten und steht hier bewusst offen.
+Four fields remain without a counterpart. For `status` and `method` the DCMI Metadata Terms hold nothing suitable, and `dcterms:instructionalMethod` is meant pedagogically and does not carry here. For `generated-with` and `output-of` PROV would be the obvious connection, yet `prov:wasGeneratedBy` has a `prov:Activity` as its range rather than a tool, so a field with a command as its value does not map onto it directly. A clean PROV mapping remains to be worked out and is deliberately left open here.
 
-### Zur `version:`-Semantik
+### On the semantics of `version:`
 
-Der Refactor in HerData (`13f9880`) führt `version: 0.2` durchgängig in allen acht Dokumenten, gleicher Wert über die ganze Wissensbasis hinweg. Damit ist `version:` nicht dokument-individuell zu verstehen, sondern als Repo-weite Schema-Version: alle Dokumente werden gemeinsam auf eine Stufe geliftet, und der Wert markiert den Refactor-Stand. Bei jedem Knowledge-Vault-Refactor wird die Version repo-weit erhöht.
+The refactor in HerData (`13f9880`) carries `version: 0.2` throughout all eight documents, the same value across the whole knowledge base. `version:` is therefore to be understood as a repository-wide schema version rather than as document-individual. All documents are lifted to one level together, and the value marks the state of the refactor. At every knowledge-vault refactor the version is raised repository-wide.
 
-### Zur `knowledge-sources:`-Semantik
+### On the semantics of `knowledge-sources:`
 
-`knowledge-sources` ist das Strukturmerkmal, das Promptotyping-Knowledge-Documents von generischen READMEs unterscheidet. Es macht das Dokument LOD-anschlussfähig: Jede aufgelistete Quelle ist durch eine URI eindeutig identifiziert. Die zweite Ebene gruppiert nach Quellentyp, die dritte Ebene listet Label und URI.
+`knowledge-sources` is the structural feature that distinguishes Promptotyping knowledge documents from generic READMEs. It makes the document connectable to linked open data, since every source listed is uniquely identified by a URI. The second level groups by source type, the third level lists label and URI.
 
-Selektive Verwendung. Im HerData-Refactor wird `knowledge-sources:` nur in `project.md`, `data.md` und `architecture.md` geführt, also dort, wo externe Anschlüsse die inhaltliche Substanz tragen. In `design.md`, `decisions.md`, `features.md` und `JOURNAL.md` fehlt es bewusst. Diese Selektivität ist die korrekte Praxis: Das Feld gehört dort hin, wo es trägt, nicht überall.
+Selective use. In the HerData refactor `knowledge-sources:` is carried only in `project.md`, `data.md` and `architecture.md`, that is, where external connections carry the substance. In `design.md`, `decisions.md`, `features.md` and `JOURNAL.md` it is deliberately absent. This selectivity is the correct practice, since the field belongs where it carries and nowhere else.
 
-### Zur `topics:`-Semantik
+### On the semantics of `topics:`
 
-`topics` ist das Feld, in dem ein Dokument seine Wissensfelder benennt, also die Felder, in denen ein Coding-Agent oder Reviewer beim Lesen und Befüllen kontextuell verortet sein soll. Anders als `tags`, die ein Dokument klassifizieren, richten Topics den Lesekontext aus: sie sagen dem Agenten "in dieser Wissensumgebung lies und arbeite", nicht "so ist dieses Dokument zu sortieren".
+`topics` is the field in which a document names its fields of knowledge, the fields in which a coding agent or reviewer is to be situated while reading and filling it. Unlike `tags`, which classify a document, topics align the reading context. They tell the agent to read and work in this knowledge environment, and they say nothing about how the document is to be sorted.
 
-Topics werden als Wikilinks zu Vault-Konzepten geschrieben, nicht als Strings. Damit ist die Verlinkung in den Vault-Wissensbestand explizit: ein `design.md` mit `topics: ["[[Information Visualisation]]", "[[Scholar-Centered Design]]"]` schickt den Agenten beim UI-Design-Reasoning in genau diese Konzeptdokumente, statt generische UI-Patterns zu aktivieren. Repos ohne Vault-Spiegel können die Wikilinks als reine Kennungen behandeln; bei Vault-Synchronisation lösen sie sich auf.
+Topics are written as wikilinks to vault concepts rather than as strings. The link into the vault's body of knowledge is thereby explicit. A `design.md` with `topics: ["[[Information Visualisation]]", "[[Scholar-Centered Design]]"]` sends the agent into exactly those concept documents when reasoning about UI design, instead of activating generic UI patterns. Repositories without a vault mirror can treat the wikilinks as plain identifiers; on vault synchronisation they resolve.
 
-Vokabular ist projekt-frei. Eine konvention-weit kontrollierte Topic-Liste gibt es nicht; jedes Repo wählt seine Topics aus dem eigenen Wissensumfeld. Konvention nur: kebab-case oder Capital Case wie der Vault-Dokument-Name.
+The vocabulary is project-free. There is no convention-wide controlled topic list, and every repository chooses its topics from its own knowledge environment. The only convention is kebab-case or Capital Case, as in the vault document name.
 
-Verbindlichkeit ist optional. Topics werden geführt, wo ein klares Wissensfeld relevant ist (Datenmodellierung, Information Visualisation, Requirements Engineering); sie entfallen, wo das Dokument keine domänen-thematische Verortung trägt (`INDEX.md`, `journal.md` typischerweise ohne Topics).
+Bindingness is optional. Topics are carried where a clear field of knowledge is relevant (data modelling, information visualisation, requirements engineering); they are omitted where the document carries no thematic placement by domain, typically in `INDEX.md` and `journal.md`.
 
-## Strukturprinzipien
+## Structural principles
 
-Drei Prinzipien sollten in jedem Promptotyping Document erkennbar sein.
+Three principles should be recognisable in every Promptotyping Document.
 
-Trennung Tun, Nicht-Tun, Substanzherkunft. Beschreibung dessen, was das Dokument liefert, ist getrennt von der bewussten Negation und von der Herkunft des verwendeten Materials. Diese Dreiteilung verhindert eine ununterscheidbare Mischung aus Beschreibung, Selbstüberhöhung und Datenherkunft.
+Separation of doing, not-doing and the origin of substance. The description of what the document delivers is kept apart from the deliberate negation and from the origin of the material used. This tripartition prevents an indistinguishable mixture of description, self-aggrandisement and data provenance.
 
-Standards als Hauptbestandteil. Eingesetzte Standards, Vokabulare, Ontologien gehören in den Hauptteil eines Knowledge Documents, nicht in einen Anhang. Anschlussfähigkeit an externes Wissen ist Teil der Projektidentität.
+Standards as a main component. Standards, vocabularies and ontologies in use belong in the main body of a knowledge document rather than in an appendix. Connectability to external knowledge is part of the project's identity.
 
-Negative Selbstdefinition. Was bewusst nicht geleistet wird, wird genauso explizit benannt wie das, was geleistet wird. Diese Auslassung ist konstitutiv und sollte erhalten bleiben.
+Negative self-definition. What is deliberately not delivered is named as explicitly as what is delivered. This omission is constitutive and should be preserved.
 
-## Distillation als Schreibprinzip
+## Distillation as a writing principle
 
-Promptotyping Documents folgen dem Distillation-Prinzip aus dem Methoden-Paper: maximale Information mit minimalen Tokens (Hong et al. 2025; Pollin 2026, Sektion 3.3). Konkret bedeutet das:
+Promptotyping Documents follow the distillation principle from the method paper, maximum information with minimum tokens (Hong et al. 2025; Pollin 2026, section 3.3). Concretely this means:
 
-- Ein Dokument trägt eine abgegrenzte Funktion, kein Sammelsurium.
-- Redundanzen zwischen Dokumenten werden über Wikilinks (`related:`) abgebildet, nicht durch Wiederholung.
-- Der wichtigste Inhalt steht in den ersten Sätzen und am Schluss, nicht in der Mitte.
-- Periodisches Refactoring (Konsolidierung über Prompts) ist erwartet, nicht Ausnahme.
+- A document carries one bounded function.
+- Redundancies between documents are represented through wikilinks (`related:`).
+- The most important content stands in the first sentences and at the close.
+- Periodic refactoring, meaning consolidation through prompts, belongs to the routine.
 
-## Anwendung
+## Application
 
-Beim Aufsetzen eines neuen Promptotyping-Repos:
+When setting up a new Promptotyping repository:
 
-1. Funktionen prüfen: welche der oben gelisteten Funktionen sind für dieses Projekt relevant (Triggerkriterium pro Funktion anwenden)?
-2. Funktionen auf Dokumente abbilden: kleine Projekte fassen mehrere Funktionen in einem Dokument zusammen, große Projekte spalten eine Funktion in mehrere Dokumente.
-3. Pro Dokument den passenden Template-Block aus dem Vorlagen-Katalog kopieren und befüllen. Wo keine Vorlage existiert, dient die Konvention als alleinige Richtschnur.
+1. Check the functions. Which of the functions listed above are relevant to this project (apply the trigger criterion per function)?
+2. Map the functions onto documents. Small projects merge several functions into one document, large projects split one function across several documents.
+3. Copy the matching template block from the catalogue per document and fill it in. Where no template exists, the convention alone serves as the guide.
 
-Beim Refactoring eines Knowledge-Ordners, Checkliste:
+When refactoring a knowledge folder, checklist:
 
-- Trägt jedes Dokument den Pflichtkern (`title, project, method, status, created, updated`)?
-- Ist `version:` repo-weit konsistent?
-- Sind verschachtelte Felder (`project:`, `method:`, `knowledge-sources:`) sauber strukturiert (kein flaches `method-url:` etc.)?
-- Wird `knowledge-sources:` selektiv eingesetzt, dort, wo externe Anschlüsse tragen, sonst weggelassen?
-- Sind die drei Strukturprinzipien (Trennung, Standards-im-Hauptteil, negative Selbstdefinition) im Dokument erkennbar?
+- Does every document carry the mandatory core (`title, project, method, status, created, updated`)?
+- Is `version:` consistent across the repository?
+- Are nested fields (`project:`, `method:`, `knowledge-sources:`) cleanly structured, with no flat `method-url:` and the like?
+- Is `knowledge-sources:` used selectively, where external connections carry, and omitted otherwise?
+- Are the three structural principles (separation, standards in the main body, negative self-definition) recognisable in the document?
 
-## Anmerkung der Site (2026-06-10)
+## Note by the site (2026-06-10)
 
-Dieser Abschnitt ist eine Ergänzung der Site, nicht Teil der Vault-Konvention v0.1. Er klärt, wie die Vorlagen-Adressen für Maschinen und für Menschen aufzulösen sind.
+This section is an addition by the site and no part of the vault convention v0.1. It clarifies how the template addresses are to be resolved for machines and for humans.
 
-Für Maschinen (Coding-Agenten, die per HTTP ohne JavaScript-Ausführung abrufen) ist die kanonische Abrufform jeder Vorlage die statische Markdown-URL unter `_content/`. Sie liefert den rohen Markdown-Text direkt aus dem GitHub-Pages-Repo-Root, ohne dass das Single-Page-JavaScript der Site laufen muss. Muster:
+For machines, meaning coding agents that retrieve over HTTP without executing JavaScript, the canonical retrieval form of every template is the static Markdown URL under `_content/`. It delivers the raw Markdown text directly from the GitHub Pages repository root, without the site's single-page JavaScript having to run. The pattern:
 
 ```
 https://dhcraft.org/Promptotyping/_content/promptotyping-document/{slug}.md
 ```
 
-Konkret etwa `https://dhcraft.org/Promptotyping/_content/promptotyping-document/data.md` für die Vorlage Datengrundlage. Diese Adresse ist auch im `machine-url`-Frontmatter-Feld jeder gespiegelten Vorlage hinterlegt.
+Concretely, for instance `https://dhcraft.org/Promptotyping/_content/promptotyping-document/data.md` for the Vorlage Datengrundlage. This address is also recorded in the `machine-url` frontmatter field of every mirrored template.
 
-Die im `template:`-Feld geführten Subpath- und Hash-Formen (`/promptotyping-document/{slug}` und `#promptotyping-document-{slug}`) sind die menschenlesbaren Adressen. Sie führen auf die gerenderte Vorlage in der interaktiven Single-Page. Die Subpath-Auflösung setzt JavaScript voraus: Ein Aufruf von `/promptotyping-document/{slug}` wird über die `404.html` des Repos per JavaScript auf den entsprechenden Hash-Anker umgeschrieben. Ein Agent, der diese Form ohne JavaScript abruft, erhält daher nicht den Vorlagentext, sondern den Routing-Fallback. Wer den Rohtext deterministisch und ohne Browser-Umgebung braucht, verwendet die statische `_content/`-Markdown-URL.
+The subpath and hash forms carried in the `template:` field (`/promptotyping-document/{slug}` and `#promptotyping-document-{slug}`) are the human-readable addresses. They lead to the rendered template in the interactive single page. Subpath resolution presupposes JavaScript, since a call to `/promptotyping-document/{slug}` is rewritten by JavaScript through the repository's `404.html` onto the corresponding hash anchor. An agent that retrieves this form without JavaScript therefore receives the routing fallback instead of the template text. Whoever needs the raw text deterministically and without a browser environment uses the static `_content/` Markdown URL.
 
-## Verhältnis zum Vault-Frontmatter
+## Relation to the vault frontmatter
 
-Der Vault-Standard schreibt ein eigenes Frontmatter-Minimum mit einer geschlossenen `type:`-Liste fest. Diese Konvention erweitert das Vokabular nur für den Repo-Kontext: Im Repo-`knowledge/`-Ordner gilt der hier beschriebene Pflichtkern statt des Vault-Minimums.
+The vault standard fixes a frontmatter minimum of its own with a closed `type:` list. This convention extends the vocabulary for the repository context alone, so that in the repository's `knowledge/` folder the mandatory core described here applies instead of the vault minimum.
 
-Wenn ein Repo-Dokument als Vault-Spiegel angelegt wird (zum Beispiel eine Methodendokumentation, die im Vault als Wissensdokument geführt wird), wird das Frontmatter angepasst: vault-konformes `type:` wird gesetzt, repo-spezifische Felder (`project`, `version`, `knowledge-sources`) entfallen oder werden in Prosa überführt.
+Where a repository document is created as a vault mirror, for instance a piece of method documentation held in the vault as a knowledge document, the frontmatter is adjusted. A vault-conformant `type:` is set, and repository-specific fields (`project`, `version`, `knowledge-sources`) are dropped or carried over into prose.

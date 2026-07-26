@@ -1,49 +1,49 @@
 ---
-title: Verifikation
+title: Verification
 slug: verifikation
 status: complete
-language: de
-version: "0.1"
+language: en
+version: "0.2"
 created: 2026-07-25
-updated: 2026-07-25
-source: knowledge/paper.md, Abschnitt 2.4 und 6.2
+updated: 2026-07-26
+source: knowledge/paper.md, sections 2.4 and 6.2
 machine-url: https://dhcraft.org/Promptotyping/_content/verifikation.md
 ---
 
-# Verifikation
+# Verification
 
-Der naheliegende Einwand gegen erzeugte Forschungsartefakte ist die Qualitaet. Die Antwort der Methode ist eine in den Dokumenten verankerte Pruefung. Sie ist systematisch noetig, weil die Abbildung vom halbformalen Dokumentsatz auf das laufende Artefakt stochastisch ausgefuehrt wird und ihre Treue damit nicht durch Konstruktion gesichert ist.
+The obvious objection to generated research artefacts is quality. The method answers with a check anchored in the documents. That check is systematically necessary because the mapping from the semi-formal document set onto the running artefact is executed stochastically, so its fidelity is not secured by construction.
 
-## Zwei Pruefarten
+## Two kinds of check
 
-Die Methode unterscheidet, was eine Regel entscheidet, von dem, wofuer eine Person einsteht.
+The method separates what a rule decides from what a person vouches for.
 
-- **Validation** ist das, was eine formale Regel entscheidet, ein Schema, ein Test oder eine Constraint. Sie laeuft unbeaufsichtigt, weil die Rueckkopplung geschlossen ist und der Agent das Ergebnis selbst ablesen kann.
-- **Verification** ist das, was die fachliche Expertise gegen die Quellen und gegen wissenschaftliches Urteil entscheidet. Sie delegiert nicht.
+- **Validation** is what a formal rule decides, a schema, a test or a constraint. It runs unsupervised, because the feedback loop is closed and the agent can read the result itself.
+- **Verification** is what domain expertise decides against the sources and against scholarly judgement. It does not delegate.
 
-Diese Festlegung weicht bewusst von der Norm des Software Engineering ab, wo Verification die Pruefung gegen die Spezifikation und Validation die Pruefung gegen den beabsichtigten Gebrauch benennt. Sie folgt stattdessen den Wortwurzeln, *verus* fuer einen Wahrheitsanspruch, den ein Urteil tragen muss, und *validus* fuer das, was unter einer gesetzten Regel gilt. Die Abweichung gilt fuer die Pruefung erzeugter Ausgaben und laesst den gewoehnlichen Sinn unberuehrt, in dem Faelle eine Methode validieren.
+This usage departs deliberately from the norm of software engineering, where verification names the check against the specification and validation the check against intended use. It follows the word roots instead, *verus* for a truth claim a judgement has to carry, and *validus* for what holds under a rule that has been set. The departure applies to the checking of generated output and leaves untouched the ordinary sense in which cases validate a method.
 
-## Drei Pruefebenen mit ihren Autonomiezonen
+## Three levels of checking with their zones of autonomy
 
-Das Paar arbeitet auf drei Ebenen, und jede traegt eine eigene Zone der Agenten-Autonomie.
+The pair operates at three levels, and each carries its own zone of agent autonomy.
 
-**Datentreue.** Ob die Darstellungen des Artefakts den Quelldaten entsprechen, wird durch Stichproben geprueft und ueberall dort, wo Korrektheit deterministisch entscheidbar ist, durch Schema-Validierung, Testsuiten und Builds, die der Agent unbeaufsichtigt laufen laesst. Wo Treue so nicht entscheidbar ist, etwa bei Texterkennungsergebnissen, Annotationen und Transformationen, kann eine adversariale maschinelle Pruefung dazwischentreten, also eine LLM-Instanz mit dem Auftrag, eine Ausgabe gegen ihre Quellen anzugreifen. Diese Instanz wird fallweise freigegeben und rangiert in der Autoritaet unterhalb der menschlichen Verifikation.
+**Data fidelity.** Whether the artefact's renderings match the source data is checked by sampling, and wherever correctness is deterministically decidable, by schema validation, test suites and builds that the agent runs unsupervised. Where fidelity is not decidable that way, as in text-recognition results, annotations and transformations, an adversarial machine review can be interposed, an LLM instructed to attack an output against its sources. That instance is released case by case and ranks below human verification in authority.
 
-**Anforderungserfuellung.** Geprueft wird gegen die Akzeptanzkriterien der Anforderungen, wozu User Stories mit Akzeptanzkriterien da sind. Dies ist die Ebene, die die Methode begonnen hat, an eine Agenteninstanz zu delegieren, die das laufende Artefakt gegen diese Kriterien bedient.
+**Requirement satisfaction.** The check runs against the acceptance criteria of the requirements, which is what user stories with acceptance criteria are for. This is the level the method has begun to delegate to an agent instance that operates the running artefact against those criteria.
 
-**Designkonformitaet.** Sie bleibt in der Zone der Fachperson und wird geprueft, indem das Artefakt gegen das Designdokument gelesen wird. Hier wird Tool Criticism zur Routinehandlung, weil die expliziten Annahmen des Werkzeugs einmal schriftlich vorliegen. Interpretation, Kontextualisierung und das Urteil darueber, ob die richtigen Fragen gestellt werden, bleiben ebenfalls hier. Ob eine in einem Dokument genannte Person dieselbe ist wie eine aehnlich benannte in einem anderen, ist ein Akt historischer Kontextualisierung und in den dokumentierten Projekten ausdruecklich als Entscheidung der Fachperson vermerkt.
+**Design conformance.** It stays in the domain expert's zone and is checked by reading the artefact against the design document. Here tool criticism becomes a routine act, because the tool's explicit assumptions are in writing for once. Interpretation, contextualisation and the judgement of whether the right questions are being asked remain here too. Determining whether a person named in one document is the same as a similarly named person in another is an act of historical contextualisation, and the documented projects mark it explicitly as a decision reserved for the domain expert.
 
-## Der Critical Expert in the Loop
+## The Critical Expert in the Loop
 
-Die Rolle, die diese Pflichten traegt, ist der Critical Expert in the Loop. Sie unterscheidet sich vom generischen Human in the Loop dadurch, dass sie zugleich fachliche Expertise und Kenntnis der LLM-spezifischen Fehlermodi verlangt. Zwei Fehlermodi sind in heutigen LLMs strukturell.
+The role that carries these duties is the Critical Expert in the Loop. It differs from the generic human in the loop by requiring domain expertise together with awareness of LLM-specific failure modes. Two failure modes are structural in current LLMs.
 
-- **Sycophancy** ist die Tendenz, den Annahmen der Nutzenden zuzustimmen, statt sie infrage zu stellen. Ausbleibender Widerspruch ist damit keine Bestaetigung.
-- **Konfabulation** ist die Erzeugung plausibler, aber falscher Ausgaben. Der Begriff trifft das Verhalten genauer als Halluzination, weil das LLM eine Luecke mit dem fuellt, was passt, und den Mangel nicht meldet.
+- **Sycophancy** is the tendency to agree with user assumptions instead of challenging them. Absence of objection is therefore no confirmation.
+- **Confabulation** is the generation of plausible but false output. The term fits the behaviour more closely than hallucination, because the LLM fills a gap with what fits and does not report what it lacks.
 
-Die Aufgabe der Rolle reicht ueber das Pruefen von Ausgaben hinaus in den nicht explorierten Moeglichkeitsraum, also in die nicht gestellten Fragen und die nicht erzeugten Alternativen.
+The role's task extends beyond checking outputs into the unexplored possibility space, into the questions not asked and the alternatives not generated.
 
-In dieser Rolle sitzen zwei Arten von Urteil, die sich trennen, sobald zwei Personen sie halten. Das eine entscheidet, ob das Artefakt die Forschungsfrage beantwortet, ob die Daten richtig dargestellt sind und was eine Darstellung an Kontext braucht, bevor sie gelesen werden darf. Das andere entscheidet ueber Arbeitsablauf, Technologie und die Gestalt des Artefakts, und es ist dieses Urteil, das einen Fehler in den Begriffen an den Agenten meldet, in denen der Agent arbeitet, also ueber die Kennung eines Elements. Wo beide Urteile bei einer Person zusammenfallen, ist das der hybride Fall. Wo das zweite fehlt, liegt die Grenze dessen, was die Methode erreicht.
+Two kinds of judgement sit in this role, and they separate as soon as two people hold it. One decides whether the artefact answers the research question, whether the data is represented correctly, and what a figure needs by way of context before it may be read. The other decides workflow, technology and the form of the artefact, and it is this judgement that reports a fault to the agent in the terms the agent works in, by element identifier. Where both judgements coincide in one person, that is the hybrid case. Where the second is absent lies the boundary of what the method reaches.
 
-## Was die Methode nicht leistet
+## What the method does not do
 
-Verifikation automatisiert sie nicht, und sie soll das auch nicht vorgeben. Verifikation ist genau die wissenschaftliche Arbeit, die die Verantwortungsteilung dem Menschen zuweist, und ihre Kosten sind der ehrliche Preis der Methode. Fuer die Bewertung KI-erzeugter Ergebnisse in editionswissenschaftlichen Aufgaben fehlen bis heute Benchmarks. Die Methode antwortet auf anderem Grund, indem sie die Pruefung dem Critical Expert und der deterministischen Schicht zuweist, sodass die Verifikation nicht auf einen Benchmark wartet, den es noch nicht gibt.
+It does not make verification automatic, and it should not pretend to. Verification is precisely the scholarly labour that the division of responsibility assigns to the human, and its cost is the honest price of the method. Benchmarks for evaluating AI-generated results in digital-edition tasks are still lacking. The method answers on other ground, assigning the check to the Critical Expert and to the deterministic layer, so that verification does not wait on a benchmark that does not yet exist.

@@ -1,57 +1,57 @@
 ---
-title: Beispiel-Workflow. Von einem Stapel Excel-Dateien zum Dashboard
+title: Worked workflow. From a stack of Excel files to a dashboard
 slug: workflow
 status: complete
-language: de
-version: "0.1"
+language: en
+version: "0.2"
 created: 2026-07-25
-updated: 2026-07-25
-source: die beiden Einfuehrungsvideos, bereinigte Skripte im Grounded Vault
+updated: 2026-07-26
+source: the two introductory videos, cleaned scripts in the Grounded Vault
 machine-url: https://dhcraft.org/Promptotyping/_content/workflow.md
 ---
 
-# Beispiel-Workflow
+# Worked workflow
 
-Ein durchgefuehrter Fall, von den Rohdaten bis zum laufenden Artefakt, aufgezeichnet als Screencast einer Arbeitssitzung. Ausgangsmaterial ist ein grosser Satz Excel-Dateien aus einem oeffentlichen Berichtswesen, Ergebnis ist ein statisches Dashboard. Der Fall ist ein didaktischer Basisfall ohne oeffentliches Repositorium, gewaehlt, weil er die Schleife vollstaendig zeigt und nicht, weil er ein schwieriges Forschungsproblem loest. Die beiden Videos sind [Teil 1 zur Methode und den vier Phasen](https://youtu.be/8sUe4Jkh3uQ) und [Teil 2 mit der durchgehenden Demonstration](https://youtu.be/hd_a-NBO_S4).
+A completed case, from raw data to the running artefact, recorded as a screencast of one working session. The starting material is a large set of Excel files from a public reporting system, and the result is a static dashboard. The case is a didactic base case without a public repository, chosen because it shows the loop in full, and it solves no difficult research problem. The two videos are [part 1 on the method and the four phases](https://youtu.be/8sUe4Jkh3uQ) and [part 2 with the continuous demonstration](https://youtu.be/hd_a-NBO_S4).
 
 ## Preparation
 
-Die Vorbereitung besteht hier allein darin, die Excel-Dateien in einem `data`-Ordner zusammenzutragen. Mehr braucht der Fall nicht, weil das Material bereits tabellarisch vorliegt und die Frage an die Daten einfach ist.
+Preparation here consists of nothing more than collecting the Excel files in a `data` folder. The case needs no more, because the material is already tabular and the question put to it is simple.
 
 ## Exploration
 
-Der erste Auftrag an den Agenten lautet, alle Dateien im Detail zu analysieren und daraus ein `data.md` zu erzeugen, das die Gesamtheit der Daten und die Beziehungen zwischen allen Spalten abbildet. Ergaenzt wird der Auftrag um eine Anweisung zur Arbeitsweise, naemlich einen `scripts`-Ordner mit Python-Skripten anzulegen, die bei der Exploration helfen, und ihre Funktion in einem eigenen Markdown-Dokument zu dokumentieren.
+The first instruction to the agent is to analyse all files in detail and produce a `data.md` from them that renders the totality of the data and the relations between all columns. The instruction is extended by a directive on working method, namely to create a `scripts` folder with Python scripts that assist the exploration, and to document their function in a Markdown document of their own.
 
-Diese Ergaenzung traegt das Prinzip, auf dem die Token-Oekonomie der Methode beruht. Bei vielen Dateien liest das LLM nicht die Daten, sondern es schreibt Code, der die Daten liest, und arbeitet mit dem verdichteten Ergebnis weiter. Am Ende des Schritts liegen drei Skripte, ihre Dokumentation, die extrahierten Daten als JSON und das `data.md` vor.
+This extension carries the principle the method's token economy rests on. With many files the LLM does not read the data; it writes code that reads the data and works on from the compressed result. At the end of the step there are three scripts, their documentation, the extracted data as JSON, and the `data.md`.
 
-Der zweite Handgriff ist Aufraeumen. Das `data.md` wandert in einen `knowledge`-Ordner, und die Verschiebung wird dem Agenten zurueckgemeldet, weil er sonst mit einem veralteten Bild der Ablage weiterarbeitet.
+The second move is tidying up. The `data.md` moves into a `knowledge` folder, and the move is reported back to the agent, since otherwise it works on from an outdated picture of the file layout.
 
 ## Distillation
 
-Aus dem Datenverstaendnis entstehen in einem Zug drei weitere Dokumente, eine Anforderungsbeschreibung, ein Architekturdokument und ein Designdokument. Das Architekturdokument beschreibt eine statische Single Page Application, HTML5, CSS, responsives Layout, Vanilla JavaScript ohne Build und eine einzige Bibliothek fuer die Visualisierung, dazu JSON und CSV als Datenformate. Ein Detail zeigt, was ein gut gefuellter Kontext leistet, denn der Agent ordnet die Ansicht dem Visual Information Seeking Mantra zu, ohne dass dieser Begriff im Prompt vorkam.
+Three further documents arise from the understanding of the data in one go, a requirements description, an architecture document and a design document. The architecture document describes a static single-page application, HTML5, CSS, responsive layout, vanilla JavaScript without a build, and a single library for the visualisation, with JSON and CSV as data formats. One detail shows what a well-filled context yields, since the agent assigns the view to the Visual Information Seeking Mantra without that term appearing in the prompt.
 
-Dann folgt der Schritt, der die Phase von blossem Schreiben unterscheidet. Die Dokumente werden gegen sich selbst geprueft, auf Inkonsistenzen und auf ueberfluessigen Umfang. Der Agent liefert Kritikpunkte und Empfehlungen, und der Umfang wird bewusst zurueckgenommen, im konkreten Fall auf zwei Diagrammtypen. Verworfen werden Zutaten, die kein Mensch angefordert hat, unter ihnen ein dunkles Farbschema und Tastaturkuerzel. Das ist der Overengineering-Check am Uebergang zur Implementation, und er ist im ersten Durchlauf richtig, weil das Wissen im `knowledge`-Ordner bleibt und die naechste Iteration daraus weiterbaut.
+Then comes the step that separates the phase from mere writing. The documents are checked against themselves, for inconsistencies and for superfluous scope. The agent supplies criticisms and recommendations, and the scope is deliberately reduced, in this case to two chart types. Ingredients no human asked for are discarded, among them a dark colour scheme and keyboard shortcuts. That is the overengineering check at the passage into Implementation, and it is right in a first pass, because the knowledge stays in the `knowledge` folder and the next iteration builds on from it.
 
-Vor dem Beginn der Implementierung entsteht ein `journal.md`, das die Datenanalyse, die Dashboard-Planung, die kritische Pruefung und die Vereinfachung festhaelt. In einem Fall ohne Repositorium tritt das Journal an die Stelle der Commit-Historie.
+Before implementation begins, a `journal.md` is created that records the data analysis, the dashboard planning, the critical review and the simplification. In a case without a repository the journal takes the place of the commit history.
 
 ## Implementation
 
-Die Implementierung laeuft in Milestones, und die erste HTML-Ansicht laesst sich in einem lokalen Server oeffnen. Ab hier arbeiten drei Rueckkanaele.
+Implementation runs in milestones, and the first HTML view can be opened in a local server. From here three feedback channels operate.
 
-- **Screenshots.** Das laufende Artefakt wird fotografiert und das Bild geht zurueck in den Kontext. Der Agent sieht damit, was er gebaut hat.
-- **Praezise Fehleradressierung.** Ein Fehler in der Oberflaeche wird ueber die Kennung des Elements gemeldet und nicht ueber eine Beschreibung dessen, was falsch aussieht. Das ist die zweite Art von Urteil, die die Methode voraussetzt, die entwicklungsseitige.
-- **Durchklicken.** Die fertige Ansicht wird bedient, wie eine nutzende Person sie bedienen wuerde.
+- **Screenshots.** The running artefact is photographed and the image goes back into the context. The agent thereby sees what it has built.
+- **Precise fault addressing.** A fault in the interface is reported by the identifier of the element rather than by a description of what looks wrong. This is the second kind of judgement the method presupposes, the development-side one.
+- **Clicking through.** The finished view is operated the way a user would operate it.
 
-Zwei Stellen der Aufzeichnung sind methodisch aufschlussreich, weil sie von der Regel abweichen.
+Two passages of the recording are methodologically instructive, because they depart from the rule.
 
-Die Exploration wird mitten in der Implementierung nachgeholt. Der Sprecher stellt fest, dass die erste Sondierung nicht gruendlich genug war, unterbricht den Lauf und laesst das `data.md` mit dem neuen Wissen aktualisieren. Genau dafuer ist der Wiedereintritt in eine fruehere Phase da.
+Exploration is caught up on in the middle of implementation. The speaker finds that the first probe was not thorough enough, interrupts the run and has the `data.md` updated with the new knowledge. Re-entry into an earlier phase exists for exactly this.
 
-Die Milestone-Pruefung wird aufgeschoben. Der Lauf geht auf eine blosse Fortsetzungsanweisung weiter, und die Inspektion folgt mehrere Milestones spaeter. Das ist eine Entscheidung mit Preis, in einem ersten Durchgang vertretbar, dessen Zweck es ist, ueberhaupt etwas laufen zu sehen, und sie hinterlaesst eine Verifikationsschuld.
+The milestone check is deferred. The run continues on a bare instruction to carry on, and the inspection follows several milestones later. This is a decision with a price, defensible in a first pass whose point is to see something running at all, and it leaves a verification debt.
 
-## Der Moeglichkeitsraum
+## The possibility space
 
-Am Ende steht ein Experiment, das nicht der Fertigstellung dient. Ein einziger Prompt fordert ein radikal abweichendes Design an, gegen die Konventionen, die die Voreinstellungen des LLM reproduzieren. Das Ergebnis ist ein ausgefallenes Interface, dessen Brauchbarkeit offen bleibt. Der Zweck ist das Abtasten des Moeglichkeitsraums, weil die gelernten Konventionen sonst die Optionen unsichtbar halten, die ein Projekt braucht. Zum Abschluss werden die Wissensdokumente auf den erreichten Stand gezogen, womit die Schleife von der Implementation zurueck in die Dokumente geschlossen ist.
+At the end stands an experiment that does not serve completion. A single prompt requests a radically different design, against the conventions the LLM's defaults reproduce. The result is an unusual interface whose usability remains open. The purpose is to probe the possibility space, because the learned conventions otherwise keep invisible the options a project needs. To close, the knowledge documents are brought up to the state reached, which closes the loop from Implementation back into the documents.
 
-## Was der Fall zeigt und was nicht
+## What the case shows and what it does not
 
-Er zeigt die vollstaendige Schleife an einem Material, das keine fachliche Modellierung verlangt, und er zeigt die Handgriffe, die in der Beschreibung der [Anwendung](#anwendung) abstrakt bleiben. Er zeigt nicht, was die Methode an interpretativ modellierten Forschungsdaten leistet, weil tabellarische Berichtsdaten die Schwierigkeiten nicht tragen, um die es dort geht. Dafuer stehen die [Use Cases](#use-cases) und das Evidenzkapitel des [Papers](#abschnitt-5-evidence-the-documented-projects).
+It shows the full loop on material that demands no scholarly modelling, and it shows the concrete moves that stay abstract in the description of the [application](#anwendung). It does not show what the method achieves on interpretatively modelled research data, because tabular reporting data does not carry the difficulties at issue there. The [use cases](#use-cases) and the evidence chapter of the [paper](#abschnitt-5-evidence-the-documented-projects) stand for that.

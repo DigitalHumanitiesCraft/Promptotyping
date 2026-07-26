@@ -1,68 +1,69 @@
 ---
-title: Praxis und Best Practices
+title: Practice and best practices
 slug: praxis
-source: Projects/Promptotyping/Promptotyping MOC.md (Methodenerweiterungen)
+source: Projects/Promptotyping/Promptotyping MOC.md (method extensions)
 status: complete
-version: "0.1"
-updated: 2026-06-10
+language: en
+version: "0.2"
+updated: 2026-07-26
 mirrored: 2026-06-10
 machine-url: https://dhcraft.org/Promptotyping/_content/praxis.md
 ---
 
-# Praxis und Best Practices
+# Practice and best practices
 
-Diese Sektion sammelt empirisch gewachsene Methodenerweiterungen des Promptotyping. Keine wurde am Schreibtisch entworfen; jede entstand in einem konkreten Projekt und trug danach in weitere. Jeder Eintrag nennt seinen dokumentierten Herkunftsfall. Wo dieser Fall in der kuratierten Galerie dieser Site vertreten ist, fuehrt der Verweis zur Fallseite; wo nicht, steht der Projektname im Fliesstext ohne Link.
+This section collects method extensions of Promptotyping that grew out of practice. None was designed at a desk; each arose in a concrete project and carried over into further ones. Every entry names its documented case of origin. Where that case is represented in the curated gallery of this site, the reference leads to its page; where it is not, the project name stands in the running text without a link.
 
 ## Verification Milestones
 
-Verification Milestones sind definierte Checkpoints im Workflow, an denen Domaenenexpertise systematisch angewendet wird. Sie operationalisieren den Critical Expert in the Loop als Prozessschritt statt als blosse Rolle: An einem Milestone haelt der Prozess an, ein Zwischenergebnis wird mit deterministischen Werkzeugen und mit fachlichem Urteil geprueft, und erst dann geht es weiter.
+Verification Milestones are defined checkpoints in the workflow at which domain expertise is applied systematically. They operationalise the Critical Expert in the Loop as a process step rather than a role. At a milestone the process halts, an intermediate result is checked with deterministic tools and with scholarly judgement, and only then does it continue.
 
-Der Effekt ist, dass die Pruefung nicht dem Zufall ueberlassen bleibt, sondern an den Stellen erzwungen wird, an denen ein Fehler teuer wuerde. Entstanden ist das Muster in der ZBZ OCR/TEI Pipeline ([#case-zbz-ocr-tei](#case-zbz-ocr-tei)), in der jede Pipeline-Stufe einen solchen Pruefpunkt traegt.
+The effect is that checking is enforced at the points where an error would become expensive, instead of being left to chance. The pattern arose in the ZBZ OCR/TEI pipeline ([#case-zbz-ocr-tei](#case-zbz-ocr-tei)), where every pipeline stage carries such a checkpoint.
 
 ## Promptotyping Interfaces
 
-Promptotyping Interfaces sind browser-basierte Validierungstools, die Zwischenergebnisse sichtbar, vergleichbar und korrigierbar machen. Sie machen die epistemische Qualitaet eines Outputs transparent, indem sie ihn nicht als fertiges Ergebnis praesentieren, sondern als pruefbares Material neben seiner Quelle zeigen.
+Promptotyping Interfaces are browser-based validation tools that make intermediate results visible, comparable and correctable. They make the epistemic quality of an output transparent by showing it as inspectable material beside its source instead of presenting it as a finished result.
 
-Das Interface ist hier nicht das Endprodukt, sondern ein Instrument der Verifikation. Es macht sichtbar, wo das Modell sicher und wo es unsicher ist, und gibt dem Experten den Ort, an dem er eingreift. Entwickelt wurde das Muster in der ZBZ OCR/TEI Pipeline ([#case-zbz-ocr-tei](#case-zbz-ocr-tei)).
+The interface here is an instrument of verification rather than the end product. It shows where the model is confident and where it is not, and it gives the expert the place at which to intervene. The pattern was developed in the ZBZ OCR/TEI pipeline ([#case-zbz-ocr-tei](#case-zbz-ocr-tei)).
 
-## Subagents und Rollensimulation
+## Subagents and role simulation
 
-Subagent-Definitionen mit Berechtigungsdifferenzierung trennen Rollen voneinander: ein read-only arbeitender Analyse-Agent, ein Implementierungs-Agent mit vollem Schreibzugriff, ein Synthese-Agent. So entsteht innerhalb eines Projekts eine Arbeitsteilung mit unterschiedlichen Rechten und Blickwinkeln.
+Subagent definitions with differentiated permissions separate roles from one another, a read-only analysis agent, an implementation agent with full write access, a synthesis agent. A division of labour with distinct rights and viewpoints thereby arises inside a single project.
 
-Echte Subagents werden nur geladen, wenn die Definitionen vor Sessionstart existieren; fehlen sie, laeuft stattdessen eine Rollensimulation innerhalb einer einzigen Session, in der ein Agent die Rollen nacheinander einnimmt. Die Unterscheidung ist methodisch wichtig, weil die echte Trennung Berechtigungen erzwingt, die Simulation nicht. Erprobt wurde das Muster im wiiw-FIGARO-Projekt.
+Real subagents are loaded only if the definitions exist before the session starts. Where they are missing, a role simulation runs inside a single session instead, in which one agent takes the roles in turn. The distinction matters methodologically, because the real separation enforces permissions while the simulation does not. The pattern was tried out in the wiiw FIGARO project.
 
-## Skript-vs-LLM-Trennung
+## Script versus LLM separation
 
-Algorithmisch eindeutige Aufgaben gehoeren in Python-Skripte, semantisch interpretierende Aufgaben zum LLM. Tags umbenennen, Statistiken berechnen, Dokumente zusammenfuehren sind eindeutig und deterministisch loesbar; Konzepte zusammenfuehren oder Regeln aus Beispielen ableiten verlangt Interpretation.
+Algorithmically unambiguous tasks belong in Python scripts, semantically interpreting tasks belong to the LLM. Renaming tags, computing statistics and merging documents are unambiguous and deterministically solvable, while merging concepts or deriving rules from examples demands interpretation.
 
-Entscheidend ist die Trennlinie: Sie verlaeuft entlang der Eindeutigkeit, nicht entlang der Komplexitaet. Eine komplexe, aber eindeutige Aufgabe gehoert ins Skript; eine einfache, aber interpretierende Aufgabe gehoert zum Modell. Das Muster wurde im Vault-Kurationsprojekt herausgearbeitet.
+The dividing line runs along unambiguousness rather than along complexity. A complex but unambiguous task belongs in the script, and a simple but interpreting task belongs to the model. The pattern was worked out in the vault curation project.
 
 ## Knowledge Curation
 
-Knowledge Curation ist die systematische Pflege des vernetzten Wissensmodells auf zwei Schichten: dem persoenlichen Vault als Second Brain und den projektspezifischen Knowledge-Vaults in den Repos. Drei Operationstypen greifen ineinander: skriptbasierte (deterministische Umbauten), semantische (Zusammenfuehrung und Regelextraktion durch das Modell) und strukturelle (Umordnung des Wissensgraphen).
+Knowledge Curation is the systematic maintenance of the networked knowledge model on two layers, the personal vault as a second brain and the project-specific knowledge vaults in the repositories. Three types of operation interlock, script-based ones (deterministic restructuring), semantic ones (consolidation and rule extraction by the model) and structural ones (rearrangement of the knowledge graph).
 
-Links fungieren dabei als navigierbare Kontextpfade fuer agentische Systeme: Ein Agent folgt einem Link, um den Kontext zu laden, den er fuer die naechste Operation braucht. Als Querschnittspraxis ueber die Komponenten der epistemischen Infrastruktur sorgt Knowledge Curation dafuer, dass Promptotyping ueber Sessions hinaus akkumuliert, statt bei jedem Neustart von vorn zu beginnen. Das Muster entstand im Vault-Kurationsprojekt und in der Klawiter Bibliography Rescue ([#case-klawiter-rescue](#case-klawiter-rescue)).
+Links act as navigable context paths for agentic systems, since an agent follows a link to load the context it needs for the next operation. As a cross-cutting practice over the components of the epistemic infrastructure, Knowledge Curation is what lets Promptotyping accumulate across sessions instead of starting over at each restart. The pattern arose in the vault curation project and in the Klawiter Bibliography Rescue ([#case-klawiter-rescue](#case-klawiter-rescue)).
 
-## Demo-Repo-Reduktion in der Schulung
+## Demo repository reduction in teaching
 
-Fuer Promptotyping-Workshops, in denen Teilnehmende die Methode an einem realen Projekt selbst nachbauen, wird das Demo-Repository bewusst nicht vorkonfiguriert. Es startet im Initialzustand mit Rohdaten, einer knappen `idea.md` und einem leeren `knowledge/`-Ordner, ohne `CLAUDE.md`, ohne Custom Commands, ohne Output-Struktur. Die Initial-Prompts liegen auf den Folien als verbrauchbare Uebergabe in den Harness; die persistenten Wissensdokumente entstehen erst im Verlauf im Repository.
+For Promptotyping workshops in which participants rebuild the method themselves on a real project, the demo repository is deliberately left unconfigured. It starts in its initial state with raw data, a brief `idea.md` and an empty `knowledge/` folder, without a `CLAUDE.md`, without custom commands, without an output structure. The initial prompts sit on the slides as a consumable handover into the harness, and the persistent knowledge documents arise in the repository over the course of the work.
 
-Der Lerngewinn entsteht aus dem Aufbau der Promptotyping-Architektur unter Anleitung, nicht aus dem Lesen einer fertigen. Wer die Struktur selbst herstellt, versteht, warum sie so aussieht. Erprobt wurde das Muster im Workshop zur prosopographischen Datenbank mittelalterlicher Wiener Rechtsgeschaefte und im Schulungsteil der ZBZ OCR/TEI Pipeline ([#case-zbz-ocr-tei](#case-zbz-ocr-tei)).
+The learning gain comes from building the Promptotyping architecture under guidance rather than from reading a finished one. Whoever produces the structure understands why it looks as it does. The pattern was tried out in the workshop on the prosopographic database of medieval Viennese legal transactions and in the teaching part of the ZBZ OCR/TEI pipeline ([#case-zbz-ocr-tei](#case-zbz-ocr-tei)).
 
-## Claims-Verifikation als Dokumentfunktion
+## Claims verification as a document function
 
-Die adversariale Pruefung der eigenen empirischen und Neuheitsbehauptungen wird zu einer eigenen Funktion der Wissensbasis: eigene Knowledge-Dokumente pruefen die Aussenwirkung des Projekts. Drei Bausteine tragen sie. Erstens die Nachrechnung aller Kopfzahlen aus den Rohdaten durch einen unabhaengigen Agenten, mit Quellpfad-Pflicht pro Zahl. Zweitens eine Webrecherche gegen die eigene Neuheitsbehauptung, deren erklaertes Ziel die Widerlegung ist, nicht die Bestaetigung. Drittens ein Konformitaets-Audit gegen die beanspruchten Standards.
+The adversarial checking of a project's own empirical and novelty claims becomes a function of the knowledge base itself, so that knowledge documents check the project's external representations. Three components carry it. The first is the recomputation of all headline figures from the raw data by an independent agent, with a mandatory source path per figure. The second is a web search against the project's own novelty claim, whose declared aim is refutation. The third is a conformance audit against the standards the project claims to meet.
 
-Die Bindungsregel lautet: Aussenwirksame Claims in Paper, Companion oder Bericht duerfen nur in der Form verwendet werden, die die Verifikationsdokumente lizenzieren. Im Herkunftsfall erwies sich eine berichtete Kopfzahl-Divergenz zur Haelfte als Artefakt der Aufgabenstellung, sichtbar nur, weil die Infrastruktur ihre Ausschlussgruende protokolliert hatte; die Infrastruktur korrigierte ihren eigenen Befund. Entstanden ist das Muster in FemPrompt SozArb ([#case-femprompt-sozarb](#case-femprompt-sozarb)).
+The binding rule is that externally used claims in paper, companion or report may be used only in the form the verification documents license. In the case of origin, a reported divergence in a headline figure turned out to be half an artefact of how the task had been posed, visible only because the infrastructure had logged its own grounds for exclusion; the infrastructure corrected its own finding. The pattern arose in FemPrompt SozArb ([#case-femprompt-sozarb](#case-femprompt-sozarb)).
 
-## Epistemischer Status von User Stories
+## The epistemic status of user stories
 
-Jede User Story ist eine Hypothese ueber den Anwender, solange der benannte Anwender sie nicht bestaetigt hat. Im agentischen Kontext entfaellt das implementierende Gespraech, das im klassischen Team falsche Stories korrigieren wuerde. Unvalidierte Stories muessen deshalb als Annahmen markiert sein und einen Beobachtungspunkt tragen, der festhaelt, durch welches Ereignis sich die Annahme aufloest.
+Every user story is a hypothesis about the user for as long as the named user has not confirmed it. In the agentic context the implementing conversation is absent, the conversation that would correct false stories in a classical team. Unvalidated stories therefore have to be marked as assumptions and carry an observation point that records through which event the assumption resolves.
 
-Acht Pruefkriterien fuer `user-stories.md` ergeben sich daraus, vier davon maschinell pruefbar, drei nur menschlich einloesbar. Hergeleitet sind sie aus dem QUS-Rahmen (Lucassen et al. 2016) und aus dem Herkunftsfall, in dem Proxy-Stories mit einem falschen Nutzungsmodell dazu fuehrten, dass mehrere Versionen auf einer falschen Annahme aufbauten. Das Muster entstand in FemPrompt SozArb ([#case-femprompt-sozarb](#case-femprompt-sozarb)).
+Eight review criteria for `user-stories.md` follow from this, four of them machine-checkable and three redeemable only by a human. They are derived from the QUS framework (Lucassen et al. 2016) and from the case of origin, in which proxy stories with a false model of use led several versions to build on a false assumption. The pattern arose in FemPrompt SozArb ([#case-femprompt-sozarb](#case-femprompt-sozarb)).
 
-## Vorlagen fuer Promptotyping Documents
+## Templates for Promptotyping Documents
 
-Ausfuellbare Vorlagen fuer die Markdown-Dokumente im `knowledge/`-Ordner eines Promptotyping-Repos sind funktionsorientiert konzipiert: Jede Vorlage adressiert eine Funktion (Identitaet, Material, Substanz, Bauweise, Gestalt, Genese, Navigation, Agent-Sozialisierung), nicht einen festen Dateinamen. Welche Vorlagen ein konkretes Repo nutzt, haengt vom Projekt ab; die Konvention beschreibt die Triggerkriterien pro Funktion deskriptiv, sodass ein Coding-Agent selbst entscheiden kann, welche Dokumente er anlegt.
+Fillable templates for the Markdown documents in the `knowledge/` folder of a Promptotyping repository are conceived by function. Each template addresses a function (identity, material, substance, construction, form, genesis, navigation, agent socialisation) rather than a fixed file name. Which templates a concrete repository uses depends on the project, and the convention describes the trigger criteria per function descriptively, so that a coding agent can decide for itself which documents it creates.
 
-Acht Vorlagen wurden aus dem HerData-Refactor abstrahiert ([#case-herdata](#case-herdata)); eine neunte, die Vorlage Action-Layer, kam aus einem Sweep ueber zahlreiche Repos hinzu und ist noch Entwurf. Die Vorlagen selbst sind als adressierbare Promptotyping-Document-Sektionen dieser Site verfuegbar, die beschreibende Regel als [Konvention Promptotyping Documents](#konvention-v0.1).
+The first set of templates was abstracted from the HerData refactor ([#case-herdata](#case-herdata)); the action-layer template came out of a sweep across many repositories, and the catalogue has grown since with each function that recurred in comparable form in at least two repositories. The templates themselves are available as addressable Promptotyping Document sections of this site, and the descriptive rule as the [Convention Promptotyping Documents](#konvention-v0.1).

@@ -39,6 +39,7 @@ By operator decision of 2026-07-23 the core knowledge documents (INDEX, project,
 - **[project.md](project.md)** — what the site is, its audiences, material basis, and current state (function: Charter).
 - **[specification.md](specification.md)** — what the site can do: anchor schema, `template:` resolution, sections, side panels, decision records (function: Specification).
 - **[architecture.md](architecture.md)** — how the site is built: URL structure, tech stack, module inventory (function: Architecture).
+- **[verification.md](verification.md)** — which claims the site makes about itself, what each is checked against, by what procedure and with what verdict; the automatic part runs as `tools/check_consistency.py` (function: Verification).
 - **[design.md](design.md)** — how the site looks and behaves: DHCraft design system, side panels, typography (function: Design).
 - **[journal.md](journal.md)** — chronological process record, German (function: Provenance).
 - **[paper.md](paper.md)** — the full English paper text as one document, the canonical text after the revision rounds of 2026-07-24 and 2026-07-25; headerless by design for copy-out. The site renders this file directly, so the deployed text is the canonical text.

@@ -1,77 +1,92 @@
 ---
-title: Anwendung. Die vier Phasen in Handlungsaufloesung
+title: Application. The four phases resolved into actions
 slug: anwendung
 status: complete
-language: de
-version: "0.1"
+language: en
+version: "0.3"
 created: 2026-07-25
 updated: 2026-07-26
-source: knowledge/paper.md, Abschnitt 3.2 und 3.3
+source: knowledge/paper.md, sections 3.2 and 3.3
 machine-url: https://dhcraft.org/Promptotyping/_content/anwendung.md
 ---
 
-# Anwendung
+# Application
 
-Die Arbeitseinheit der Methode ist ein kleiner Satz Markdown-Dokumente, der die Spezifikation des Artefakts ist, versioniert in der Git-Historie des Projekt-Repositoriums. Die zentrale Schleife iteriert ueber diese Dokumente, und aus ihnen wird die Implementierung abgeleitet. Diese Seite loest die vier Phasen in Handlungen auf, mit Eingang, Schritten, Abbruchkriterium und den Dokumenten, die dabei entstehen. Warum die Methode so gebaut ist und woran sie sich messen laesst, steht im [Paper](#paper).
+The method's unit of work is a small set of Markdown documents that are the specification of the artefact, versioned in the git history of the project repository. The central loop iterates over these documents, and the implementation is derived from them. This page resolves the four phases into actions, with entry condition, steps, stopping criterion and the documents that arise along the way. Why the method is built this way and what it can be measured against stands in the [paper](#paper).
 
 ## Preparation
 
-Alle Materialien werden zusammengetragen, bevor technische Entscheidungen fallen.
+All materials are collected before technical decisions are made.
 
-- **Eingang.** Ein Forschungsvorhaben, ein Datenbestand und eine oder mehrere Fragen an ihn.
-- **Schritte.** Forschungsdaten in ihren Originalformaten sammeln. Dokumentation der Standards und Datenmodelle beilegen, denen die Daten folgen. Die Forschungsfragen aufschreiben. Domaenenwissen explizit machen, aus der eigenen Kenntnis oder aus gemeinsamen Sitzungen mit den Fachpersonen. Requirements Engineering betreiben, also User Stories formulieren und festhalten, welche Daten welche Frage beantworten sollen.
-- **Abbruchkriterium.** Die Repositoriumsstruktur steht, die Quelldaten sind zugaenglich, und die ersten Anforderungen liegen als strukturierter Ausgangspunkt dokumentiert vor.
-- **Dokumente.** `requirements.md` mit User Stories und Akzeptanzkriterien, erste Fassung von `data.md`, der Action-Layer im Repositoriums-Wurzelverzeichnis.
+- **Entry.** A research undertaking, a body of data, and one or more questions put to it.
+- **Steps.** Collect research data in its original formats. Add the documentation of the standards and data models the data follows. Write down the research questions. Make domain knowledge explicit, from one's own competence or from joint sessions with the domain experts. Do requirements engineering, which means formulating user stories and recording which data is meant to answer which question.
+- **Stopping criterion.** The repository structure exists, the source data is accessible, and the initial requirements are documented as a structured starting point.
+- **Documents.** `requirements.md` with user stories and acceptance criteria, a first version of `data.md`, the action layer in the repository root.
 
-Unschaerfe an dieser Stelle setzt sich durch alle folgenden Phasen fort. Eine vage formulierte Frage erzeugt ein vage spezifiziertes Artefakt, und der Aufwand, das spaeter zu korrigieren, faellt in jeder Iteration erneut an.
+Vagueness at this point cascades through all subsequent phases. A vaguely formulated question produces a vaguely specified artefact, and the effort of correcting that later falls due again in every iteration.
 
 ## Exploration
 
-Die Schnittstelle zwischen Daten und Forschungskontext wird sondiert. Die Leitfrage lautet, ob sich die abstrakte Forschungsfrage konkret auf die verfuegbare Datenstruktur abbilden laesst.
+The interface between data and research context is probed. The guiding question is whether the abstract research question can be concretely mapped onto the available data structure.
 
-- **Eingang.** Die Materialsammlung der Preparation.
-- **Schritte.** Die Daten direkt ansehen. Skripte schreiben, die den Korpus durchlaufen und ihn zu kompakten Aggregationen verdichten. Vom LLM Mapping-Hypothesen erzeugen lassen, also Vorschlaege dazu, welche Datenfelder welchen analytischen Kategorien entsprechen, welche Darstellungsformen zu den Daten passen und wo die Daten fuer den beabsichtigten Zweck nicht ausreichen. Diese Vorschlaege an fachlichen Kriterien pruefen.
-- **Abbruchkriterium.** Es liegt ein dokumentiertes Verstaendnis davon vor, was moeglich ist, was nicht und warum.
-- **Dokumente.** Die Exploration schreibt vor allem in `data.md` zurueck, ergaenzt um die Sackgassen und ihre Gruende.
+- **Entry.** The material collected in Preparation.
+- **Steps.** Inspect the data directly where it is small enough to read. Beyond that, write a script that traverses the corpus and renders a compact description of it. Have the LLM generate mapping hypotheses from that description, meaning proposals about which data fields correspond to which analytical categories, which forms of presentation fit the data, and where the data is insufficient for the intended purpose. Evaluate these proposals against domain criteria.
+- **Stopping criterion.** There is a documented understanding of what is feasible, what is not, and why.
+- **Documents.** Exploration writes mainly back into `data.md`, extended by the dead ends and their reasons.
 
-Die Phase hat eine epistemische Dimension ueber die Machbarkeitspruefung hinaus. Das LLM erzeugt Optionen, die die Forschenden selbst nicht entworfen haetten, und ihre Aufgabe wird das Bewerten statt des Erfindens. Zu verstehen, was die Daten nicht hergeben, ist genauso wertvoll wie zu wissen, was geht. Die Phase entfaellt, wo die Daten vertraut sind und die Preparation diese Fragen bereits geklaert hat.
+### Reading a corpus you cannot read
+
+Past a few dozen files nobody opens each one, and neither does an agent. Feeding the whole corpus to the model is the wrong instrument twice over, because it spends the context budget on material the model will summarise anyway, and because the summary is a guess where a count would be an answer. The instrument is a script, and what it produces is a description of the corpus rather than the corpus.
+
+A useful description has four parts.
+
+- **The structural inventory.** Every key, path or element that occurs, with how often it occurs. For a CSV that is the header with the type each column actually holds; for XML the element and attribute paths; for JSON the key set at every level. This states what the data is made of, which is the question no sample can answer.
+- **A few real examples per field.** Enough to see the shape of a value, the date format, the way a name is written, whether a field holds a list in disguise.
+- **Aggregations.** Value ranges, cardinality, how many records leave a field empty, how the records distribute over time or over whichever dimension the research question uses.
+- **The anomalies.** Fields that occur in a handful of records only, values that break the declared schema, places where the schema and the corpus disagree. These are where the project will lose time later, and they are cheapest to find now.
+
+The script is worth more than its output. It is deterministic, so the description can be regenerated when the data changes, and it costs no tokens on the second run. Its output is a generated document, marked as such and never edited by hand, and it goes into the document set alongside the curated description. Where a step is decidable by counting, a script decides it; the model reads the result and proposes what it might mean.
+
+### The epistemic side
+
+The phase has a dimension beyond the feasibility check. The LLM generates options the researchers would not have designed themselves, and their task becomes evaluation rather than invention. Understanding what the data cannot support is as valuable as knowing what is possible. The phase is skipped where the data is already familiar and Preparation has settled these questions.
 
 ## Distillation
 
-Was die Exploration gelehrt hat, wird in den Dokumentsatz verdichtet. Hier findet Context Engineering im strengen Sinn statt, die absichtsvolle Konstruktion des Kontexts, aus dem ein LLM arbeiten wird, unter dem Prinzip maximaler Information bei minimalen Tokens.
+What Exploration taught is compressed into the document set. This is where context engineering happens in the strict sense, the deliberate construction of the context an LLM will work from, under the principle of maximum information with minimum tokens.
 
-- **Eingang.** Die Befunde der Exploration und die Rohmaterialien der Preparation.
-- **Schritte.** Jedes Dokument auf eine abgegrenzte Funktion bringen. Redundanz ueber Verweise aufloesen statt ueber Wiederholung. Wo der Korpus gross oder heterogen ist, Beschreibungen deterministisch aus den Quelldaten rendern und als generierte Dokumente neben der kuratierten Schicht ablegen. Vor dem Uebergang in die Implementation einen Overengineering-Check fahren und die Spezifikation bewusst auf einen minimalen tragfaehigen Umfang zuruecknehmen, damit das erste laufende Artefakt klein genug bleibt, um es zu pruefen.
-- **Abbruchkriterium.** Eine frische Agenteninstanz koennte allein aus den Dokumenten und den Daten die Logik des Projekts aufnehmen und daran weiterarbeiten, ohne zusaetzliche Erklaerung.
-- **Dokumente.** Der vollstaendige Satz, also `data.md`, `requirements.md`, `design.md`, der Action-Layer und die generierten Beschreibungen.
+- **Entry.** The findings of Exploration and the raw materials of Preparation.
+- **Steps.** Bring every document onto one bounded function. Resolve redundancy through references rather than repetition. Where the corpus is large or heterogeneous, render descriptions deterministically from the source data and place them beside the curated layer as generated documents. Before the passage into Implementation, run an overengineering check and deliberately reduce the specification to a minimal viable scope, so that the first working artefact stays small enough to inspect.
+- **Stopping criterion.** A fresh agent instance, given only the documents and the data, could take up the project's logic and work from it without additional explanation.
+- **Documents.** The full set, `data.md`, `requirements.md`, `design.md`, the action layer and the generated descriptions.
 
-Die Verdichtung ist nicht neutral. Kodierungsentscheidungen sind epistemische Entscheidungen, weil sie festlegen, welche Information allen folgenden Schritten zur Verfuegung steht.
+The compression is not neutral. Encoding decisions are epistemic decisions, because they determine what information is available to all downstream steps.
 
 ## Implementation
 
-Der Dokumentsatz geht an ein agentisches Coding-Werkzeug, das im Projekt-Repositorium arbeitet, und das abgeleitete Artefakt wird geprueft.
+The document set is handed to an agentic coding tool operating inside the project repository, and the derived artefact is verified.
 
-- **Eingang.** Der destillierte Dokumentsatz und die Quelldaten.
-- **Schritte.** In Milestones vorgehen, jeder ein kleiner Zuwachs, der vor dem naechsten geprueft wird. Die Erzeugung ueber drei Rueckkopplungen steuern, deterministisches Feedback aus Schema-Validierung, Testsuiten und Builds, visuelles Feedback aus Screenshots des laufenden Artefakts, und fachliches Feedback aus dem Urteil darueber, ob die Ausgabe sachlich richtig, fachlich angemessen und auf die Forschungsfrage bezogen ist. Den Moeglichkeitsraum absichtlich abtasten, indem radikal abweichende Entwuerfe angefordert werden, die gegen die gelernten Konventionen laufen.
-- **Abbruchkriterium.** Das Artefakt erfuellt die Akzeptanzkriterien der Anforderungen und besteht die Pruefungen der [Verifikation](#verifikation). Der Ausstiegspunkt ist ein Spektrum, vom kleinen funktionierenden Prototyp bis zur mehrstufigen Pipeline mit Pruefoberflaechen an jeder Stufe, und was ihn bestimmt, ist die Forschungsfrage.
-- **Dokumente.** Das Journal traegt die Sitzungen, das Was liegt in den Commits.
+- **Entry.** The distilled document set and the source data.
+- **Steps.** Advance in milestones, each a small increment verified before the next begins. Steer the generation through three feedback loops, deterministic feedback from schema validation, test suites and builds, visual feedback from screenshots of the running artefact, and expert feedback from the judgement of whether the output is factually correct, domain-appropriate and aligned with the research question. Probe the possibility space deliberately by requesting radically different designs that run against the learned conventions.
+- **Stopping criterion.** The artefact satisfies the acceptance criteria of the requirements and passes the checks of [verification](#verifikation). The exit point is a spectrum, from a small functional prototype to a multi-stage pipeline with verification interfaces at every stage, and what determines it is the research question.
+- **Documents.** The journal carries the sessions, the what lies in the commits.
 
-Wird die Pruefung eines Milestones aufgeschoben, ist das eine Entscheidung mit Preis. Sie ist am ehesten in einem ersten Durchgang vertretbar, dessen Zweck es ist, ueberhaupt etwas laufen zu sehen, und sie hinterlaesst eine Verifikationsschuld, die vor Nutzung oder Uebergabe zu begleichen ist. Wo die Schuld getragen wird, muss der Record das sagen.
+Deferring the check on a milestone is a decision with a price. It is most defensible in a first pass whose point is to see something running at all, and it leaves a verification debt to be settled before the artefact is used or handed on. Where the debt is carried, the record has to say so.
 
-## Iteration und Wiedereintritt
+## Iteration and re-entry
 
-Die Signatur der Methode ist die Schleife von der Implementation zurueck in die Dokumente. Ist das Artefakt falsch, war die Spezifikation falsch oder unvollstaendig, und korrigiert wird die Spezifikation; danach wird das Artefakt neu erzeugt. Neues Wissen aus dem Bauen, also unerwartete Dateneigenschaften, Leistungsgrenzen und Designverfeinerungen, wird in die Dokumente zurueckgeschrieben.
+The method's signature is the loop from Implementation back into the documents. When the artefact is wrong, the specification was wrong or incomplete, and it is the specification that is fixed; the artefact is then regenerated. New knowledge from building, meaning unexpected data characteristics, performance constraints and design refinements, is written back into the documents.
 
-Der Wiedereintritt geht in diejenige Phase, zu der das neue Wissen gehoert.
+Re-entry goes into whichever phase the new knowledge belongs to.
 
-- Ein falsches Artefakt schickt die Arbeit zurueck in die Distillation.
-- Ein Befund, dass die Daten mehr oder weniger hergeben als angenommen, schickt sie zurueck in die Exploration.
-- Spaeter eintreffende Quellen schicken sie zurueck in die Preparation.
+- A wrong artefact sends the work back into Distillation.
+- A finding that the data affords more or less than assumed sends it back into Exploration.
+- Sources that arrive later send it back into Preparation.
 
-Ein einziger Durchlauf durch die vier Phasen ist die Ausnahme.
+A single pass through the four phases is the exception.
 
-## Zwei Modi
+## Two modes
 
-Die Methode kennt zwei Betriebsformen, unterschieden danach, wie die Arbeit organisiert ist, und unabhaengig von der Projektgroesse. Die Voreinstellung ist eine forschende Person mit einer Agenteninstanz. In komplexen Projekten nimmt die Arbeit selbst die Struktur einer Forschungsorganisation an, mit parallelen Aufgaben, differenzierten Rollen und formalisierten Uebergaben; dort koordiniert eine fuehrende Instanz Subagenten mit definierten Berechtigungen und Wissenszonen, und die methodische Last verschiebt sich vom Steuern eines Agenten zum Entwerfen eines kleinen Teams. Die vier Phasen gelten in beiden Formen. Die dokumentierte Erfahrung liegt weit ueberwiegend bei der ersten, und die Belastbarkeit dauerhafter Mehr-Agenten-Ueberwachung ist eine offene Frage.
+The method has two modes of operation, distinguished by how the work is organised and independent of project size. The default is a single researcher with a single agent instance. In complex projects the work itself acquires the structure of a research organisation, with parallel tasks, differentiated roles and formalised handovers; there a lead instance coordinates sub-agents with defined permissions and knowledge zones, and the methodological burden shifts from steering one agent to designing a small team. The four phases apply in both forms. The documented experience lies overwhelmingly with the first, and the durability of sustained multi-agent monitoring is an open question.
 
-Quer zu beiden Modi liegt die Skalierung. Je komplexer die Domaene, desto mehr Struktur braucht die Wissensorganisation, und der destillierte Dokumentensatz waechst mit dem Projekt. Unberuehrt davon bleibt die Verifikationsdisziplin durch den Critical Expert in the Loop.
+Scaling runs across both modes. The more complex the domain, the more structure the organisation of knowledge needs, and the distilled document set grows with the project. Verification discipline through the Critical Expert in the Loop is untouched by this.

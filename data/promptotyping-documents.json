@@ -2,41 +2,41 @@
   "version": "0.2",
   "generated": "2026-07-19",
   "_meta": {
-    "beschreibung": "Strukturierte Form der Vorlagen-Tabelle (Promptotyping Documents). Generiert aus den Frontmattern der Mirrors unter _content/promptotyping-document/ sowie der Funktions-, Dateinamen- und Typ-Zuordnung aus _content/konvention.md (Vorlagen-Katalog und Lese-Heuristik). Reihenfolge wie im Vorlagen-Katalog der Konvention. Funktionsnamen seit 2026-07-19 englisch; die Vorlagen-Namen bleiben unveraendert, sie sind Identifikatoren. Das Feld trigger traegt das Kriterium, unter dem die Vorlage einschlaegig ist, aus derselben Funktionstabelle.",
+    "beschreibung": "Structured form of the template table (Promptotyping Documents). Generated from the frontmatter of the mirrors under _content/promptotyping-document/ and from the function, file-name and type assignment in _content/konvention.md (template catalogue and reading heuristic). The order follows the template catalogue of the convention. The function names have been English since 2026-07-19; the template names stay unchanged, they are identifiers. The trigger field carries the criterion under which a template applies, taken from the same function table.",
     "schema": {
-      "slug": "URL-Anker-Fragment, ergibt mit #promptotyping-document- den Site-Anker",
-      "title": "Anzeigename der Vorlage",
-      "funktion": "Funktion der Wissensbasis, die die Vorlage adressiert (konvention.md, Vorlagen-Katalog)",
-      "datei": "Empfohlener Dateiname im Repo",
-      "typ": "Analytischer Dokumenttyp: Declarative, Process oder Action, die drei Spezialisierungen des Knowledge Document nach der Art des getragenen Wissens (konvention.md, Lese-Heuristik)",
-      "version": "Vorlagen-Version",
-      "status": "Reifegrad der Vorlage",
-      "machineUrl": "statische .md-URL fuer maschinelle Abrufung ohne JavaScript",
-      "trigger": "Bedingung, unter der die Funktion dieser Vorlage traegt; uebernommen aus der Funktionstabelle in _content/konvention.md"
+      "slug": "URL anchor fragment, forming the site anchor together with #promptotyping-document-",
+      "title": "display name of the template",
+      "funktion": "function of the knowledge base that the template addresses (konvention.md, template catalogue)",
+      "datei": "recommended file name in the repository",
+      "typ": "analytical document type, Declarative, Process or Action, the three specialisations of the knowledge document by the kind of knowledge held (konvention.md, reading heuristic)",
+      "version": "template version",
+      "status": "maturity of the template",
+      "machineUrl": "static .md URL for machine retrieval without JavaScript",
+      "trigger": "condition under which the function of this template applies; taken from the function table in _content/konvention.md"
     }
   },
   "documents": [
     {
       "slug": "index",
       "title": "Vorlage Index",
-      "funktion": "Navigation plus Begriffslexikon",
+      "funktion": "Navigation plus term lexicon",
       "datei": "INDEX.md",
       "typ": "Declarative",
       "version": "0.2",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/index.md",
-      "trigger": "Wissensbasis hat mehr als drei Dokumente oder mehrere konstitutive Begriffe"
+      "trigger": "knowledge base has more than three documents or several constitutive terms"
     },
     {
       "slug": "project",
       "title": "Vorlage Projekt-Wissensdokument",
-      "funktion": "Charter (ggf. zusaetzlich Material und Specification)",
-      "datei": "project.md oder README.md",
+      "funktion": "Charter (possibly also Material and Specification)",
+      "datei": "project.md or README.md",
       "typ": "Declarative",
       "version": "0.2",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/project.md",
-      "trigger": "immer"
+      "trigger": "always"
     },
     {
       "slug": "data",
@@ -47,40 +47,40 @@
       "version": "0.2",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/data.md",
-      "trigger": "Projekt verarbeitet oder produziert Daten"
+      "trigger": "project processes or produces data"
     },
     {
       "slug": "specification",
       "title": "Vorlage Specification",
-      "funktion": "Specification (formale Anforderungen, Epics und User Stories, Funktionsumfang, Entscheidungen)",
+      "funktion": "Specification (formal requirements, epics and user stories, scope, decisions)",
       "datei": "specification.md",
       "typ": "Declarative",
       "version": "0.3",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/specification.md",
-      "trigger": "immer"
+      "trigger": "always"
     },
     {
       "slug": "user-stories",
       "title": "Vorlage User Stories",
-      "funktion": "Specification (narrative Anwendungsszenarien als separate Datei; nur dokumentierte Ausnahme)",
+      "funktion": "Specification (narrative usage scenarios in a separate file; documented exception only)",
       "datei": "user-stories.md",
       "typ": "Declarative",
       "version": "0.2",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/user-stories.md",
-      "trigger": "immer"
+      "trigger": "always"
     },
     {
       "slug": "action-layer",
       "title": "Vorlage Action-Layer",
       "funktion": "Agent Instructions",
-      "datei": "CLAUDE.md (Repo-Root)",
+      "datei": "CLAUDE.md (repository root)",
       "typ": "Action",
       "version": "0.2",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/action-layer.md",
-      "trigger": "immer"
+      "trigger": "always"
     },
     {
       "slug": "architecture",
@@ -91,18 +91,18 @@
       "version": "0.3",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/architecture.md",
-      "trigger": "System geht über Static-Site hinaus"
+      "trigger": "system goes beyond a static site"
     },
     {
       "slug": "domain-knowledge",
       "title": "Vorlage Domaenenwissen",
-      "funktion": "Domain Knowledge (Begruendungsschicht und fachliches Regelwerk)",
-      "datei": "editorial-guidelines.md, methodik.md u. a.",
+      "funktion": "Domain Knowledge (rationale layer and domain rule set)",
+      "datei": "editorial-guidelines.md, methodik.md and others",
       "typ": "Declarative",
       "version": "0.2",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/domain-knowledge.md",
-      "trigger": "Forschungs-, Editions- oder Datenprojekt mit fachmethodischer Vorgabe- oder Theorieschicht"
+      "trigger": "research, edition or data project with a domain-methodological prescriptive or theoretical layer"
     },
     {
       "slug": "design",
@@ -113,29 +113,29 @@
       "version": "0.2",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/design.md",
-      "trigger": "Projekt hat eine UI"
+      "trigger": "project has a UI"
     },
     {
       "slug": "testing",
       "title": "Vorlage Testing",
       "funktion": "Quality Assurance",
-      "datei": "testing.md oder test-strategy.md",
-      "typ": "Declarative",
+      "datei": "testing.md or test-strategy.md",
+      "typ": "Action",
       "version": "0.2",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/testing.md",
-      "trigger": "Projekt mit Tests, Verifikations- oder Akzeptanzprüfungen"
+      "trigger": "project with tests, verification or acceptance checks"
     },
     {
       "slug": "verification",
       "title": "Vorlage Verification",
-      "funktion": "Verification (adversariale Pruefung eigener Claims gegen die Rohdaten)",
+      "funktion": "Verification (adversarial checking of a project's own claims against the raw data)",
       "datei": "verification.md",
       "typ": "Declarative",
       "version": "0.1",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/verification.md",
-      "trigger": "Projekt erhebt empirische Befunde oder Neuheitsansprüche, die außenwirksam verwendet werden (Paper, Bericht, Übergabe)"
+      "trigger": "project makes empirical findings or novelty claims that are used externally (paper, report, handover)"
     },
     {
       "slug": "journal",
@@ -146,40 +146,40 @@
       "version": "0.2",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/journal.md",
-      "trigger": "immer"
+      "trigger": "always"
     },
     {
       "slug": "plan",
       "title": "Vorlage Plan",
-      "funktion": "Planning (vorwaerts)",
-      "datei": "plan.md oder roadmap.md",
+      "funktion": "Planning (forward-looking)",
+      "datei": "plan.md or roadmap.md",
       "typ": "Process",
       "version": "0.2",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/plan.md",
-      "trigger": "Projekt mit Phasen, Milestones oder Sprint-Steuerung"
+      "trigger": "project with phases, milestones or sprint control"
     },
     {
       "slug": "report",
       "title": "Vorlage Report",
       "funktion": "Reporting",
-      "datei": "report.md oder status.md",
+      "datei": "report.md or status.md",
       "typ": "Declarative (Snapshot)",
       "version": "0.2",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/report.md",
-      "trigger": "Projektstatusbericht für externen Empfänger (Auftraggeber, Förderer, Stakeholder); bei Auftragsprojekten Regelfall"
+      "trigger": "project status report for an external recipient (client, funder, stakeholder); the normal case in commissioned projects"
     },
     {
       "slug": "integration",
       "title": "Vorlage Integration",
-      "funktion": "Integration (projektuebergreifende Kontrakte und Handoffs)",
+      "funktion": "Integration (cross-project contracts and handovers)",
       "datei": "integration.md",
       "typ": "Declarative",
       "version": "0.1",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/integration.md",
-      "trigger": "Projekt mit Datenaustausch, Kontrakt oder Handoff zu einem anderen Projekt oder einer anderen Lane"
+      "trigger": "project with data exchange, a contract or a handover to another project or another lane"
     }
   ]
 }
