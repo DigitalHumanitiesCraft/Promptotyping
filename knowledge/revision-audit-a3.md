@@ -3,13 +3,13 @@ title: Redaktionelles Audit A-3
 project:
   name: Promptotyping Site
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
-status: draft
+status: archived
 language: de
 version: 0.1
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-26
 authors: [Christopher Pollin]
-generated-with: Claude Code mit Claude Opus 4.8
+generated-with: Claude Code (Claude Opus 4.8)
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
@@ -19,6 +19,8 @@ related: [paper, paper-writing]
 # Redaktionelles Audit A-3
 
 Redaktionelles Audit des Papers `knowledge/paper.md` gegen die Steuerung und die Sprachregeln in `paper-writing.md`, mit Blick auf mögliche Migrationsziele in der Companion-Site (`_content/`). Geprüft wurden die vier vom Auftrag genannten Hypothesen (Dopplungen über Sektionen, dokumentierende statt argumentierende Passagen, Querverweisdichte, Existenz- statt Gradabgrenzungen). Alle Fundstellen sind selbst identifiziert. Kein Vorschlag ist ausgeführt; die einzige Schreiboperation ist diese Datei.
+
+> Archiviert am 2026-07-26. Dieses Dokument ist das Arbeitsprotokoll einer abgeschlossenen Sitzung und wird nicht fortgeschrieben. Die tragenden Befunde stehen konsolidiert in [revision.md](revision.md).
 
 Maßstab. Das Paper ist ein sehr sauber gearbeiteter Text. Die Sprachregeln sind über weite Strecken eingehalten, mehrere der erwarteten Lasten existieren nicht (siehe Abschnitt b). Die folgenden Befunde sind Feinschliff auf hohem Niveau, keine Strukturmängel. Wortstand `paper.md` rund 15.300 Wörter inklusive Referenzverzeichnis, 86 explizite `Section`-Verweise.
 

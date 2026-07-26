@@ -1524,3 +1524,124 @@ a:hover {
   color: var(--text);
   border-bottom-color: var(--glossar-underline);
 }
+
+/* ---- Paper table of contents ----
+   The paper is the longest page and its only entry into its own structure.
+   Two levels, quiet, static; the removed on-this-page rail is not coming back. */
+
+.paper-toc {
+  margin: 0 0 var(--space-12);
+  padding: var(--space-4) 0 var(--space-8);
+  border-bottom: 1px solid var(--border);
+}
+
+.paper-toc-title {
+  margin: 0 0 var(--space-4);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--grey-3);
+}
+
+.paper-toc-list,
+.paper-toc-sub {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.paper-toc-list {
+  columns: 2;
+  column-gap: var(--space-8);
+}
+
+.paper-toc-list > li {
+  break-inside: avoid;
+  margin: 0 0 var(--space-4);
+}
+
+.paper-toc-list > li > a {
+  display: block;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.paper-toc-sub {
+  margin-top: var(--space-1);
+}
+
+.paper-toc-sub a {
+  display: block;
+  padding-left: var(--space-4);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--grey-2);
+  text-decoration: none;
+}
+
+.paper-toc a:hover,
+.paper-toc a:focus-visible {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+}
+
+@media (max-width: 860px) {
+  .paper-toc-list {
+    columns: 1;
+  }
+}
+
+/* ---- Page focus target ----
+   A page switch moves the focus onto the page host so the keyboard continues in
+   the content. The host is never tabbed to, so it shows no ring. */
+
+.doc-page:focus {
+  outline: none;
+}
+
+/* ---- Term index ----
+   Register term -> pages on the glossary page, built in the browser. */
+
+.term-index {
+  margin: 0 0 var(--space-12);
+  padding-bottom: var(--space-8);
+  border-bottom: 1px solid var(--border);
+}
+
+.term-index-controls {
+  margin: var(--space-4) 0;
+}
+
+.term-index-filter {
+  width: 100%;
+  max-width: 18rem;
+  padding: var(--space-2);
+  font-family: var(--font-text);
+  font-size: 0.875rem;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 0;
+}
+
+.term-index-filter:focus-visible {
+  outline: 2px solid var(--grey-3);
+  outline-offset: 1px;
+}
+
+.term-index-table th[scope="row"] {
+  width: 40%;
+  font-weight: 500;
+}
+
+.term-index-pages a {
+  display: inline-block;
+  margin-right: var(--space-4);
+  color: var(--grey-2);
+}
+
+.term-index-none {
+  color: var(--grey-3);
+}

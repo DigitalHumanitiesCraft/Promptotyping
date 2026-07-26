@@ -6,19 +6,21 @@ project:
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
-status: draft
+status: archived
 language: de
 version: 0.1
 created: 2026-07-24
-updated: 2026-07-24
-authors: [Claude Opus 5, im Auftrag Christopher Pollin]
-generated-with: Claude Code mit Claude Opus 5
+updated: 2026-07-26
+authors: [Christopher Pollin]
+generated-with: Claude Code (Claude Opus 5)
 related: [paper, paper-writing, revision-audit-a1, revision-audit-a2]
 ---
 
 # Revision-Audit A5 — Deckung und Herkunftsgrade der Belegschicht
 
 Auftrag waren zwei strukturelle Prüfungen des Grounded Vault unter `vault/`, die Abdeckung der Paper-Aussagen durch Claims und die Herkunftsqualität der vorhandenen Claims, dazu ein Schema-Vorschlag und eine Selbstanwendungsprüfung. Gelesen wurden `vault/CLAUDE.md`, `vault/README.md`, die sechs Dokumente in `vault/knowledge/` einschließlich `register-paper-sources.md`, `vault/tools/validate.py` vollständig, alle 119 Claims und ihre Frontmatter-Anker maschinell, die dreizehn Dokument-Repräsentationen mit ihren Metadatenblöcken, die Destillate der Dokument-Quellen im Volltext sowie `knowledge/paper.md` vollständig. Geschrieben wurde ausschließlich diese Datei. Kein Claim, keine Quelle, kein Destillat, keine Schemaänderung.
+
+> Archiviert am 2026-07-26. Dieses Dokument ist das Arbeitsprotokoll einer abgeschlossenen Sitzung und wird nicht fortgeschrieben. Die tragenden Befunde stehen konsolidiert in [revision.md](revision.md).
 
 Zustand des Validators. `python tools/validate.py .` aus `vault/` meldet vor und nach dieser Prüfung `0 error(s), 0 warning(s)`.
 

@@ -3,13 +3,13 @@ title: Paper Terminology
 project:
   name: Promptotyping Site
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
-status: working
+status: active
 language: de
 version: 0.1
 created: 2026-07-25
-updated: 2026-07-25
+updated: 2026-07-26
 authors: [Christopher Pollin]
-generated-with: Claude Code mit Claude Opus 5
+generated-with: Claude Code (Claude Opus 5)
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/

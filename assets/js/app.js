@@ -380,6 +380,7 @@
         host.classList.remove("placeholder-section");
         sectionizePaper(host);
         addPaperAnchorAliases(host);
+        buildPaperToc(host);
         injectPaperVideo(host);
         injectUseCaseReference(host);
         // Post-processing per section. The reference list is the citation target
@@ -423,6 +424,43 @@
         current.appendChild(node);
       }
     });
+  }
+
+  /* Table of contents of the paper page, built from the same headings the
+     anchors are generated from. Sits under the title; the status line is
+     inserted between the two later by addPageStatusLines. */
+  function buildPaperToc(host) {
+    if (host.querySelector(".paper-toc")) {
+      return;
+    }
+    var items = "";
+    host.querySelectorAll(".paper-section").forEach(function (section) {
+      var h2 = section.querySelector("h2");
+      if (!section.id || !h2) {
+        return;
+      }
+      var subs = "";
+      section.querySelectorAll("h3[id]").forEach(function (h3) {
+        subs += '<li><a href="#' + h3.id + '">' + escapeHtml(h3.textContent) + "</a></li>";
+      });
+      items += '<li><a href="#' + section.id + '">' + escapeHtml(h2.textContent) + "</a>" +
+        (subs ? '<ul class="paper-toc-sub">' + subs + "</ul>" : "") + "</li>";
+    });
+    if (!items) {
+      return;
+    }
+    var nav = document.createElement("nav");
+    nav.className = "paper-toc";
+    nav.setAttribute("aria-label", "Contents");
+    // The headings carry their own numbering, so the list must not add a second.
+    nav.innerHTML = '<p class="paper-toc-title">Contents</p>' +
+      '<ul class="paper-toc-list">' + items + "</ul>";
+    var h1 = host.querySelector("h1");
+    if (h1) {
+      h1.insertAdjacentElement("afterend", nav);
+    } else {
+      host.insertBefore(nav, host.firstChild);
+    }
   }
 
   /* Empty anchor targets for the published pre-revision section anchors. */
@@ -551,9 +589,26 @@
     }
   }
 
-  function showPage(id, anchor) {
+  /* Carry the focus over to the page that was just routed to; without it a
+     keyboard user stays in the sidebar tree and starts over at its top. The
+     hosts are focusable through tabindex="-1" set in mountPages, and
+     preventScroll keeps the scroll position that scrollToAnchor just set. */
+  function focusActivePage() {
+    var el = document.getElementById(activePage) || document.getElementById("content");
+    if (!el || typeof el.focus !== "function") {
+      return;
+    }
+    try {
+      el.focus({ preventScroll: true });
+    } catch (e) {
+      el.focus();
+    }
+  }
+
+  function showPage(id, anchor, moveFocus) {
     var page = isPageId(id) ? id : HOME_PAGE;
-    if (page !== activePage) {
+    var changed = page !== activePage;
+    if (changed) {
       document.querySelectorAll(".doc-page").forEach(function (el) {
         el.classList.toggle("is-active", el.id === page);
       });
@@ -562,6 +617,9 @@
       document.title = pageTitle(page);
     }
     scrollToAnchor(anchor && anchor !== page ? anchor : null);
+    if (moveFocus && changed) {
+      focusActivePage();
+    }
   }
 
   function pageTitle(id) {
@@ -571,7 +629,7 @@
       : entry.label + " — Promptotyping";
   }
 
-  function handleHash(hash) {
+  function handleHash(hash, moveFocus) {
     if (handleSpecialAnchor(hash)) {
       return;
     }
@@ -579,7 +637,7 @@
     if (!page) {
       return;
     }
-    showPage(page, hash);
+    showPage(page, hash, moveFocus);
   }
 
   /* ---- Page hosts ----
@@ -599,6 +657,8 @@
         (p.id === PAPER_HOST_ID ? " paper" : "") +
         (REFERENCE_PAGES.indexOf(p.id) !== -1 ? " is-reference" : "");
       el.id = p.id;
+      // Focus target on a page switch; never in the tab order itself.
+      el.setAttribute("tabindex", "-1");
       main.appendChild(el);
     });
   }
@@ -1722,6 +1782,23 @@
 
   /* ---- Init ---- */
 
+  /* Module scripts that the page shell does not declare. Loading them from here
+     keeps index.html and 404.html identical shells, the same reason the page
+     registry owns the navigation markup. The load is awaited before
+     promptotyping:sections-ready, so a module cannot miss its boot event. */
+  var LATE_MODULES = ["assets/js/modules/term-index.js"];
+
+  function loadLateModules() {
+    return Promise.all(LATE_MODULES.map(function (src) {
+      return new Promise(function (resolve) {
+        var s = document.createElement("script");
+        s.src = src;
+        s.onload = resolve;
+        s.onerror = resolve; // a missing module must not stop the page
+        document.body.appendChild(s);
+      });
+    }));
+  }
 
   function init() {
     configureMarked();
@@ -1769,8 +1846,8 @@
     ]);
     renderUseCasesHost();
 
-    ready.then(function () {
-      // Host markup for the two modules is now in the DOM; let them boot.
+    Promise.all([ready, loadLateModules()]).then(function () {
+      // Host markup for the modules is now in the DOM; let them boot.
       document.dispatchEvent(new Event("promptotyping:sections-ready"));
       // The paper renders after the glossar, so its terms can be marked.
       return renderPaper();
@@ -1781,18 +1858,26 @@
       // Rebuild the rail now that the active page actually has headings, then
       // resolve the initial hash against the fully rendered DOM.
       handleHash(window.location.hash.replace(/^#/, ""));
+      // Everything addressable is in the DOM now; the term index reads it.
+      document.dispatchEvent(new Event("promptotyping:content-ready"));
     });
 
     window.addEventListener("hashchange", function () {
       if (suppressHashChange) {
         return;
       }
-      handleHash(window.location.hash.replace(/^#/, ""));
+      handleHash(window.location.hash.replace(/^#/, ""), true);
     });
   }
 
   // Expose shared helpers for vendored/later-work-package modules.
   window.PromptotypingApp = {
+    // Copy: the registry stays the single source and is not written from outside.
+    listPages: function () {
+      return PAGES.map(function (p) {
+        return { id: p.id, label: p.label, group: p.group };
+      });
+    },
     resolveTemplateUrl: resolveTemplateUrl,
     openTemplatePanel: openTemplatePanel,
     functionVar: functionVar,

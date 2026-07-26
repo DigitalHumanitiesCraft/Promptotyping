@@ -5,11 +5,11 @@ project:
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 status: complete
 language: en
-version: 0.8
+version: 0.9
 created: 2026-05-09
 updated: 2026-07-26
 authors: [Christopher Pollin]
-generated-with: Claude Code mit Claude Fable 5
+generated-with: Claude Code (Claude Fable 5, Claude Opus 5)
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
@@ -18,7 +18,7 @@ template:
   version: 0.2
   url: https://dhcraft.org/Promptotyping/promptotyping-document/index
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-index
-related: [project, specification, architecture, design, journal, paper, paper-writing, paper-argument-map, paper-terminology, entscheidungen-offen, report, submission-zfdg, revision-knowledge]
+related: [project, specification, architecture, design, journal, paper, paper-writing, paper-argument-map, paper-terminology, entscheidungen-offen, plan-site, report, submission-zfdg, revision, skriptum-video-1, skriptum-video-2]
 ---
 
 # INDEX
@@ -27,7 +27,11 @@ Navigation and glossary of this repository's knowledge base. The repository `Dig
 
 ## Language regime
 
-By operator decision of 2026-07-23 the core knowledge documents (INDEX, project, specification, architecture, design) are English, since they are the public showcase of the self-application. The process and steering documents stay German as working instruments, which covers journal, paper-writing, paper-argument-map, entscheidungen-offen, report, submission-zfdg, and the revision documents. The `template:` frontmatter blocks keep the German template names until the template catalogue itself renames them in the vault; the glossary below gives the English function names.
+By operator decision of 2026-07-23 the core knowledge documents (INDEX, project, specification, architecture, design) are English, since they are the public showcase of the self-application. The process and steering documents stay German as working instruments, which covers journal, paper-writing, paper-argument-map, paper-terminology, entscheidungen-offen, plan-site, report, submission-zfdg, the two video scripts, and the revision documents. The `template:` frontmatter blocks keep the German template names until the template catalogue itself renames them in the vault; the glossary below gives the English function names.
+
+## Status vocabulary
+
+`status:` names the maturity of the document rather than the state of the project. The vocabulary is `idea`, `draft`, `stub`, `complete`, `reviewed`, `archived`, since 2026-07-19 additionally `active` for a document written on continuously and `snapshot` for a document tied to a reporting date. The convention text under `_content/konvention.md` still abbreviates the enumeration to `draft`, `active`, `archived`; the templates carry the full list, and it is the templates that govern.
 
 ## Contents
 
@@ -43,15 +47,28 @@ By operator decision of 2026-07-23 the core knowledge documents (INDEX, project,
 - **[paper-terminology.md](paper-terminology.md)** — working sheet of the terminology pass: every term with its English original form, its definition in the current text, its source, and a status code; German. Carries the open operator decisions of the pass.
 - **[entscheidungen-offen.md](entscheidungen-offen.md)** — everything still undecided or decided but not carried out, across site, paper, and convention, worked out to the point where an assent suffices; German.
 - **[plan-site.md](plan-site.md)** — the work packages of the rebuild from paper publication to specification documentation, with the target state; German (function: Planning).
-- **`skriptum-video-1.md`** and **`skriptum-video-2.md`** — the cleaned scripts of the two introductory videos, the source of the worked-workflow page and of several claims in the vault; German.
+- **[skriptum-video-1.md](skriptum-video-1.md)** and **[skriptum-video-2.md](skriptum-video-2.md)** — the cleaned scripts of the two introductory videos, German. They are the source from which the worked-workflow page was written and, through their representations in the vault, the ground of the claims that rest on the videos.
 - **[report.md](report.md)** — snapshot report of the lane run towards the ZfdG submission (2026-07-23), German; carries a dated addendum on what the revision round settled and is not otherwise updated.
 - **[submission-zfdg.md](submission-zfdg.md)** — submission package for the Zeitschrift für digitale Geisteswissenschaften: exposé with outline and literature selection, short abstracts in German and English, formalities checklist; German.
-- **[revision-knowledge.md](revision-knowledge.md)** — steering knowledge of the revision phase that ran on the finished draft, kept as a historical document with a dated status note; German.
-- **`revision-audit-a0.md`** to **`revision-audit-a3.md`**, **`revision-audit-a4-record-verification.md`**, **`revision-audit-a5-vault-coverage.md`** — the read-only audit reports of the revision phase, German.
-- **`revision-frame-proposal.md`** — the mapping and drafts for retiring the translation doubling as the paper's theoretical core, German.
-- **`revision-research-sdd.md`** — the sourced examination of the Spec-Driven-Development delimitation, German.
+- **[revision.md](revision.md)** — the consolidated revision round: what was carried into the paper and where it now sits, which findings hold a source for a statement in the text, which negative findings protect the text from being weakened, and what stayed open; German (function: Verification).
 
-The paper work follows a two-document model, the text in `paper.md` and the knowledge about it in `paper-writing.md`; the argument map is the third, optional layer over both. The operator decisions of the revision phase were taken in chat and recorded in the commit messages and in `paper-writing.md`; the `revision-decisions.md` that the process description in `revision-knowledge.md` foresees was never written. A `data.md` deliberately does not exist; the Material template does not carry for method repositories, and the material basis lives in `project.md` (journal entry of 2026-05-09).
+The paper work follows a two-document model, the text in `paper.md` and the knowledge about it in `paper-writing.md`; the argument map is the third, optional layer over both. A `data.md` deliberately does not exist; the Material template does not carry for method repositories, and the material basis lives in `project.md` (journal entry of 2026-05-09).
+
+### Archive
+
+Nine working records of the revision round that ran on the finished draft in July 2026. They are closed and are not written on further; each carries `status: archived` and a dated archive note. Read [revision.md](revision.md) first, and reach for a record here only when the exact wording of one finding is needed. They stay in this folder because the evidence layer under `vault/` cites four of them by their present path.
+
+- **[revision-knowledge.md](revision-knowledge.md)** — the steering knowledge of the round, with the operator's non-negotiable constraints and the four-phase process architecture.
+- **[revision-audit-a0.md](revision-audit-a0.md)** — free critical editing pass, five leverage findings.
+- **[revision-audit-a1.md](revision-audit-a1.md)** — claim-evidence check of the transfer claim, with the graded depth of what the evidence covers.
+- **[revision-audit-a2.md](revision-audit-a2.md)** — corpus audit on circularity and the surplus of explicit semantics.
+- **[revision-audit-a3.md](revision-audit-a3.md)** — editorial audit, diffs with a word-count balance.
+- **[revision-audit-a4-record-verification.md](revision-audit-a4-record-verification.md)** — every empirical statement of the paper checked against the repository artefacts it comes from.
+- **[revision-audit-a5-vault-coverage.md](revision-audit-a5-vault-coverage.md)** — coverage and provenance grades of the evidence layer in `vault/`.
+- **[revision-frame-proposal.md](revision-frame-proposal.md)** — mapping and drafts for retiring the translation doubling as the paper's theoretical core.
+- **[revision-research-sdd.md](revision-research-sdd.md)** — the sourced examination of the Spec-Driven-Development delimitation.
+
+The `revision-decisions.md` that the process description in `revision-knowledge.md` foresees never entered the repository; the operator decisions were taken in chat and recorded in the commit messages and in `paper-writing.md`.
 
 ## Reading order
 
@@ -63,8 +80,9 @@ The paper work follows a two-document model, the text in `paper.md` and the know
 6. **journal.md** (what happened)
 7. **paper-writing.md** (state and steering of the paper work, leading into **paper.md**)
 8. **paper-argument-map.md** (the paper's argument in compact notation, for review or regeneration)
+9. **revision.md** (what the revision round settled and what it left open)
 
-The revision documents are consulted per task rather than read in order. They hold the audits, the frame proposal, and the delimitation research of the revision phase.
+The archived records are consulted per task rather than read in order.
 
 ## Glossary
 
@@ -72,17 +90,17 @@ Terms constitutive for this knowledge base. Canonical definitions live in the li
 
 **Promptotyping.** Iterative context-engineering method in four phases, Preparation, Exploration & Mapping, Distillation, Implementation, producing research artefacts from data and frontier LLMs. The `knowledge/` folder is the curated knowledge artefact of a project, holding the domain knowledge and the specification the implementation is derived from; its coverage ends where decisions taken during building are not written back into it. A single iteration of a prototype stays cheap to abandon, and what it taught goes into the documents.
 
-**Promptotyping Document.** Structured Markdown document in a repository's `knowledge/` folder. Three analytical types: Knowledge (declarative), Process (chronological), Action (imperative).
+**Promptotyping Document.** Structured Markdown document in a repository's `knowledge/` folder. All of them are Knowledge Documents, specialised by the kind of knowledge they carry into three analytical types, Declarative (subject matter), Process (chronological), Action (imperative). Until July 2026 the declarative type itself was called Knowledge Document; the name moved to the umbrella term (see `paper-terminology.md`).
 
 **Template (Vorlage).** Fillable structural pattern for one function of a Promptotyping knowledge base. The function names have been English since 2026-07-19 (Navigation, Charter, Material, Specification, Architecture, Domain Knowledge, Design, Quality Assurance, Verification, Provenance, Planning, Reporting, Integration, Agent Instructions). The catalogue lives in the vault; the site mirrors the templates as versioned anchors. A template carries only where its trigger holds.
 
 **Konvention Promptotyping Documents.** The description of knowledge-base functions, the frontmatter schema, and the structural principles. Lives in the vault, mirrored on the public site as an external specification.
 
-**Anchor schema.** System of permanently stable URL anchors on the single-page site (`#promptotyping-document-data`, `#case-herdata`, `#konzept-eil`). Version snapshots add sub-anchors (`#promptotyping-document-data-v0.1`). Repositories linking via the `template:` field address these anchors; anchors are never renamed.
+**Anchor schema.** System of permanently stable URL anchors on the site (`#promptotyping-document-data`, `#case-herdata`, `#konzept-eil`). Version snapshots add sub-anchors (`#promptotyping-document-data-v0.1`). Repositories linking via the `template:` field address these anchors; anchors are never renamed. Since the rebuild of 2026-07-25 the site shows one page at a time and holds the inactive pages in the DOM, which is what keeps every published anchor resolvable (`specification.md`, `architecture.md`).
 
 **Subpath alias.** Machine-readable URL form (`/promptotyping-document/data`) routed to the anchor via `404.html`. The canonical machine address for HTTP retrieval without JavaScript is the static Markdown URL (`/_content/promptotyping-document/{slug}.md`).
 
-**Side panel.** Right sliding panel of the single page carrying context-specific depth; a bottom sheet on mobile.
+**Side panel.** Right sliding panel carrying context-specific depth; a bottom sheet on mobile. What it holds is owned by `specification.md`.
 
 **Frontmatter-Inspector.** Module on the templates section resolving a `template:` URI live and rendering the referenced template beneath it.
 

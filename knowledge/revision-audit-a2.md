@@ -3,10 +3,10 @@ title: Revision Audit A2
 project:
   name: Promptotyping Site
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
-status: draft
+status: archived
 language: de
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-26
 authors: [Christopher Pollin]
 method:
   name: Promptotyping
@@ -17,6 +17,8 @@ related: [paper, paper-writing]
 # Revision Audit A2
 
 Korpus-Audit zu zwei Hypothesen am `paper.md`. Lese-Scope waren `paper.md`, `paper-writing.md`, `vault/knowledge/state.md`, `vault/knowledge/register-paper-sources.md` sowie read-only die genannten Projektrepos. Kein Webzugriff. Ich ändere nichts an `paper.md`; die Diff-Vorschläge sind Vorschläge zur Operator-Entscheidung. Britische Schreibung in den Vorschlagssätzen, deutsche Prosa im Audit.
+
+> Archiviert am 2026-07-26. Dieses Dokument ist das Arbeitsprotokoll einer abgeschlossenen Sitzung und wird nicht fortgeschrieben. Die tragenden Befunde stehen konsolidiert in [revision.md](revision.md).
 
 Vorab ein Gesamtbefund, der beide Hypothesen trägt. Der Record kovariiert die Größen, die die Hypothesen trennen wollen. Ich habe die Dokumenttiefe gegen den Verifikationsaufwand an den Ein-Tages-Builds geprüft, weil dort am ehesten ein Auseinanderfallen zu erwarten wäre. Klawiter-Rescue, laut Tabelle „1 day, ~250 tests", trägt neun Knowledge-Dokumente (`about`, `data`, `frontend`, `index`, `journal`, `pipeline`, `production-readiness`, `testing`, `knowledge/index`; `C:\Users\Chrisi\Documents\GitHub\klawiter-rescue\knowledge\`) samt eigenem `testing.md` und LLM-as-a-Judge-Validierung. M³GIM trägt vierzehn Knowledge-Dokumente samt `testing.md` (`C:\Users\Chrisi\Documents\GitHub\DHCraft\m3gim\knowledge\`). Ein schneller Build heißt im Record nicht flacher Dokumentsatz. Es gibt kein Projekt mit tiefen Dokumenten und belegbar geringer Verifikation und keines umgekehrt, an dem sich die beiden Größen isolieren ließen. Diese Kovarianz ist der harte Kern von Hypothese 1 und begrenzt zugleich, was das Korpus zu Hypothese 2 hergibt.
 

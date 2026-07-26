@@ -9,7 +9,7 @@ version: 0.2
 created: 2026-07-23
 updated: 2026-07-25
 authors: [Christopher Pollin]
-generated-with: Claude Code mit Claude Fable 5
+generated-with: Claude Code (Claude Fable 5)
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/

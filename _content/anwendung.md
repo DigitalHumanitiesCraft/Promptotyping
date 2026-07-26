@@ -5,7 +5,7 @@ status: complete
 language: de
 version: "0.1"
 created: 2026-07-25
-updated: 2026-07-25
+updated: 2026-07-26
 source: knowledge/paper.md, Abschnitt 3.2 und 3.3
 machine-url: https://dhcraft.org/Promptotyping/_content/anwendung.md
 ---
@@ -73,3 +73,5 @@ Ein einziger Durchlauf durch die vier Phasen ist die Ausnahme.
 ## Zwei Modi
 
 Die Methode kennt zwei Betriebsformen, unterschieden danach, wie die Arbeit organisiert ist, und unabhaengig von der Projektgroesse. Die Voreinstellung ist eine forschende Person mit einer Agenteninstanz. In komplexen Projekten nimmt die Arbeit selbst die Struktur einer Forschungsorganisation an, mit parallelen Aufgaben, differenzierten Rollen und formalisierten Uebergaben; dort koordiniert eine fuehrende Instanz Subagenten mit definierten Berechtigungen und Wissenszonen, und die methodische Last verschiebt sich vom Steuern eines Agenten zum Entwerfen eines kleinen Teams. Die vier Phasen gelten in beiden Formen. Die dokumentierte Erfahrung liegt weit ueberwiegend bei der ersten, und die Belastbarkeit dauerhafter Mehr-Agenten-Ueberwachung ist eine offene Frage.
+
+Quer zu beiden Modi liegt die Skalierung. Je komplexer die Domaene, desto mehr Struktur braucht die Wissensorganisation, und der destillierte Dokumentensatz waechst mit dem Projekt. Unberuehrt davon bleibt die Verifikationsdisziplin durch den Critical Expert in the Loop.

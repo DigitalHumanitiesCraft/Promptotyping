@@ -60,7 +60,7 @@ Mit Site-Ergaenzung "Anmerkung der Site (2026-06-10)" zur Maschinen- vs. Mensche
 |---|---|
 | `data/case-studies.json` | Vault Case Studies, MOC-Use-Case-Tabellen, paper/04-projects.md |
 
-18 kuratierte Eintraege, Version 0.3. Klassifiziert nach der Use-Case-Typologie (Pollin 2026, Abschnitt 4.3); das interne Genre-Vokabular erscheint nicht. `diged-neolat` traegt den Anzeigenamen "Lucina Digital Edition".
+17 kuratierte Eintraege, Version 0.3. Klassifiziert nach der Use-Case-Typologie (Pollin 2026, Abschnitt 4.3); das interne Genre-Vokabular erscheint nicht.
 
 Sieben Tiefenseiten unter `_content/case-studies/{id}.md`, je aus der zugehoerigen Vault-Case-Study destilliert (Kontext und Forschungsfrage, Daten, Vorgehen, methodischer Beitrag, Links):
 
@@ -86,7 +86,7 @@ Sieben Tiefenseiten unter `_content/case-studies/{id}.md`, je aus der zugehoerig
 
 ## Kuratierung: ausgeschlossene Case Studies
 
-Acht im Vault gefuehrte Case Studies sind bewusst nicht in der Galerie. Kuratierungskriterium: fehlende Kundenfreigabe bzw. Vermittlungsformat statt Forschungsartefakt. Sie erscheinen nirgends als Galerie-Eintrag, Link-Ziel `#case-{id}` oder Tiefenseite.
+Neun Faelle sind bewusst nicht in der Galerie. Kuratierungskriterien sind fehlende Kundenfreigabe, Vermittlungsformat statt Forschungsartefakt und, seit dem 2026-07-26, die bewusste Nichtfuehrung im Papertext. Sie erscheinen nirgends als Galerie-Eintrag, Link-Ziel `#case-{id}` oder Tiefenseite.
 
 | Ausgeschlossen | Kriterium |
 |---|---|
@@ -98,6 +98,7 @@ Acht im Vault gefuehrte Case Studies sind bewusst nicht in der Galerie. Kuratier
 | vault-kuration-screencast | Vermittlungsformat (Screencast) |
 | wissensorganisation-nano-banana | Vermittlungsformat (Screencast) |
 | wissens-projektmanagement-obsidian-claude-code-screencast | Vermittlungsformat (Screencast) |
+| diged-neolat (Lucina Digital Edition) | im Papertext bewusst nicht gefuehrt, aus der Galerie entfernt 2026-07-26 |
 
 Die Herkunftsfaelle wiiw-figaro, vault-kuration und sugw treten in `praxis.md` als Methoden-Herkunftsfaelle auf, dort als Projektname im Fliesstext ohne Galerie-Link.
 
@@ -105,6 +106,6 @@ Die Herkunftsfaelle wiiw-figaro, vault-kuration und sugw treten in `praxis.md` a
 
 - Ohne `demo_url`: teicrafter, coocr-htr, kulturpool-explorer, zbz-ocr-tei, austrian-university-dashboard. Diese fuenf haben in den Quellen keine hinterlegte Live-Demo (teiCrafter und coocr-htr nur Repo/Video, zbz-ocr-tei intern, kulturpool nur Video, austrian-university-dashboard nur Video).
 - Ohne `repo_url`: austrian-university-dashboard (im Paper ohne Repository-Eintrag gefuehrt).
-- Mit `video_url`: diged-neolat, coocr-htr, kulturpool-explorer, klawiter-rescue, austrian-university-dashboard. Alle uebrigen ohne in den Quellen belegtes Video.
-- `insight: null`: szd-htr (nicht Teil der Paper-Tabelle 4.1, daher kein dort formulierter methodischer Beitrag). Alle uebrigen 17 tragen einen Beitrag aus Tabelle 4.1.
+- Mit `video_url`: coocr-htr, kulturpool-explorer, klawiter-rescue, austrian-university-dashboard. Alle uebrigen ohne in den Quellen belegtes Video.
+- `insight: null`: szd-htr (nicht Teil der Paper-Tabelle 4.1, daher kein dort formulierter methodischer Beitrag). Alle uebrigen tragen einen Beitrag aus Tabelle 4.1.
 - Use-Case-Zuordnung szd und stained-glass als data-modelling-capture folgt Paper 4.3 (CVMA und SZD als fruehe Instanzen der Datenmodellierung und Erfassung), waehrend die Interface-Type-Spalte "Capture" lautet; die Galerie trennt useCase (Ort im Datenlebenszyklus) von interfaceTypes (epistemische Funktion). Diese Trennung ist die einzige nicht-triviale Zuordnungsentscheidung.

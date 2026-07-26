@@ -7,7 +7,7 @@ method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
 template:
-  name: Vorlage Planung
+  name: Vorlage Plan
   version: "0.2"
   url: https://dhcraft.org/Promptotyping/promptotyping-document/plan
 status: active

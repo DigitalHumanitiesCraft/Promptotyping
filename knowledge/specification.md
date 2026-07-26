@@ -5,11 +5,11 @@ project:
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 status: complete
 language: en
-version: 0.6
+version: 0.7
 created: 2026-05-09
 updated: 2026-07-26
 authors: [Christopher Pollin]
-generated-with: Claude Code with Claude Opus 4.8
+generated-with: Claude Code (Claude Opus 4.8)
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
@@ -78,7 +78,7 @@ template:
 Every constitutive term in the paper reading flow is a glossary trigger with a dotted underline. Hover shows a short definition, click opens the right side panel with the full definition, sources, and paper references. The glossary is also reachable as its own anchor `#glossar`.
 
 ### A7 — Use-case gallery
-A dedicated `#use-cases` section holds a curated gallery of publicly documented projects (operator decision 2026-06-10), classified and filtered by a use-case typology, secondarily by interface type and demo availability. The internal genre vocabulary does not appear in the public UI. Selected cases carry a deep-dive page in the side panel (HerData, Klawiter-Rescue, zbz-ocr-tei, M3GIM, Notker-Edition, CorrespExplorer, coOCR-HTR). Missing client clearance or a mediation format rather than a research artefact excludes a case; the full evidence corpus stays documented in the paper, whose evidence section carries the project inventory. Data source `data/case-studies.json`, exclusions in `_content/MANIFEST.md`.
+A dedicated `#use-cases` section holds a curated gallery of publicly documented projects (operator decision 2026-06-10), classified and filtered by a use-case typology, secondarily by interface type and demo availability. The internal genre vocabulary does not appear in the public UI. Selected cases carry a deep-dive page in the side panel (HerData, Klawiter-Rescue, zbz-ocr-tei, M3GIM, Notker-Edition, CorrespExplorer, coOCR-HTR). Three grounds exclude a case, missing client clearance, a mediation format in place of a research artefact, and the deliberate absence of the case from the paper, under which the Lucina Digital Edition was removed on 2026-07-26. The full evidence corpus stays documented in the paper, whose evidence section carries the project inventory. Data source `data/case-studies.json`, exclusions in `_content/MANIFEST.md`.
 
 The use-case vocabulary of the gallery (data production, data exploration, data rescue and transformation, and so on) is the site's own ordering and was once attributed to a paper section. The paper orders artefacts by the five epistemic functions instead, Verification, Exploration, Edition, Capture, and Audit, and carries no use-case typology; the interface-type filter is the one that maps onto it. Re-basing the gallery classification on the five functions, or declaring the use-case vocabulary as the site's own, is open work for the next site update.
 
@@ -98,7 +98,7 @@ A module in the Vorlagen section with a textarea for the YAML frontmatter of a f
 The site's own `knowledge/` documents carry the `template:` field and each links to its own template URL on the live site, subpath form canonical, hash form as alias. The site demonstrates the method on itself.
 
 ### A13 — Specification front page
-The start page is the specification front, addressed `#ueberblick`. It states what Promptotyping is, carries a keyed status table (Fassung, Stand, kanonische Adresse, Maschinenadresse, Evidenz, Lizenz), a generated index of the specification, the three document types with the diagnostic rule, artefacts and scaling, and signposts into paper, templates, use cases, practice, and skills. The four phases moved to part 1 of the specification on 2026-07-26, since carrying them twice made the landing page repeat the page behind it. Substrate `_content/ueberblick.md`. Without it a visitor lands directly in an English academic paper.
+The start page is the specification front, addressed `#ueberblick`. It states what Promptotyping is, carries a keyed status table (Fassung, Stand, kanonische Adresse, Maschinenadresse, Evidenz, Lizenz), a generated index of the specification, a short statement of what the method is, and signposts into paper, templates, use cases, practice, and skills. Three passages moved away on 2026-07-26, since carrying them twice made the landing page repeat the page behind it. The four phases went to part 1, the scaling statement to part 1 under "Zwei Modi", and the document-type classification and the artefact default fell without replacement in favour of parts 3 and 4, with a pointer to part 3 left in "Wo ansetzen". Substrate `_content/ueberblick.md`. Without it a visitor lands directly in an English academic paper.
 
 ### A14 — Practice section (method extensions)
 A `#praxis` section with the empirically grown method extensions from the vault knowledge base (verification milestones, Promptotyping interfaces, subagents and role simulation, script-versus-LLM separation, knowledge curation, demo-repo reduction, claims verification, epistemic status of user stories, template catalog). Each entry has a stable anchor `#praxis-{slug}` and names its documented origin case. Substrate `_content/praxis.md`.
@@ -120,6 +120,15 @@ Every page except the start page carries one line under its title stating whethe
 
 ### A22 — Colour that carries meaning, and the dark theme
 Colour encodes exactly one thing, the epistemic function of an artefact, that is the five interface categories of A-level section 4.2 of the paper. The hue appears on the function list of the Artefakt page and on the left edge of a use-case card, and the category always stands there as a word as well. One prismatic signature band sits at the foot of the header, once per page, and encodes nothing. The dark theme is a token swap that follows the system preference, is overridden by a toggle, and is applied before first paint from `localStorage`. Grounds and token values in [design.md](design.md). Added 2026-07-26.
+
+### A23 — Table of contents on the paper page
+The paper page carries a static two-level table of contents under its title and status line, built from the same headings that produce the `#abschnitt-*` anchors, sections at the first level and subsections at the second. It does not scroll along; the on-this-page rail was removed on 2026-07-25 and stays removed. The paper is the longest page on the site and was the only one without an entry into its own structure. Acceptance criterion. Every entry points at an anchor that resolves, and the entry set matches the heading set of the rendered text. Added 2026-07-26.
+
+### A24 — Focus on page change
+A page change moves the focus into the content. The host of the target page carries `tabindex="-1"`, receives the focus programmatically, and shows no focus ring while doing so, because it is never reachable by Tab. Resolving the initial hash on load leaves the focus alone, so nothing is stolen from the header. The focus call must not overwrite the scroll position of a deep link. Without this a keyboard user lands back at the top of the sidebar after every navigation click. Added 2026-07-26.
+
+### A25 — Term index in place of a full-text search
+The glossary page carries, above its entries, an index that connects every glossary term with the pages on which it occurs, with a filter field over the terms. It is built at runtime from `data/glossar.json` against the page containers mounted in the DOM and fetches no further source. A full-text search was weighed and declined on 2026-07-26; the three audiences of [project.md](project.md) arrive with an address, resolve a `template:` URI, or read a flow, and none of them searches. What the site lacked instead was the path from a term to the place that uses it. A term that the index reports nowhere outside the glossary is a finding about the site, and the index shows it as such. Added 2026-07-26.
 
 ### A19 — Vorlagen hub
 The `#vorlagen` section is the coherent hub of the method specification (operator decision 2026-07-23). After the section head and a quiet text subnav (Katalog, Konvention, Maschinenzugriff, Technology Baseline, plain text links in the design-system greys) come four blocks with additive in-page sub-anchor IDs:
@@ -148,7 +157,7 @@ Curated cards grouped and filtered by the use-case typology (A7, ADR-8 addendum)
 Concepts named in the paper flow are linked to their glossary anchors, with full definitions in the glossary side panel. Asymmetric Amplification, Critical-Expert-in-the-Loop, Scholar-Centered Design, and Context Engineering are carried by the canonical text. Epistemic Infrastructure is not; the concept was removed from the paper on 2026-07-23 and survives as a glossary entry and as a vault concept, which the deployed decomposition does not yet reflect.
 
 ### Glossary (`#glossar`)
-A dedicated section at the page end, alphabetically ordered. Per entry, term, short and full definition, source (with vault link), and paper references. Same data source as the hover tooltips.
+A dedicated section at the page end, alphabetically ordered. Per entry, term, short and full definition, source (with vault link), and paper references. Same data source as the hover tooltips. The term index of A25 precedes the entries and is built from the same data.
 
 ### Literature (`#literatur`)
 An ordered list at the page end. Inline references in the paper are anchor jump targets. Per entry, author, year, title, DOI/URL, anchor ID.
@@ -171,7 +180,7 @@ An ordered list at the page end. Inline references in the paper are anchor jump 
 **Context.** The prior repo state was already vanilla; tooling effort should stay minimal. **Choice.** HTML5/CSS3/JS without a build step, marked.js vendored. **Rationale.** GitHub-Pages-native hosting works without configuration, `git clone` suffices to run locally, no npm, no bundler, no TypeScript compile. **Effect.** No code splitting or tree shaking; re-evaluate if the JS grows past roughly 100KB.
 
 ### ADR-6 — Drop the Vault-Explorer module entirely
-**Context.** The old Living Paper had three interactive modules, Context-Rot-Viz, Vault-Explorer, Sycophancy-Trap; the plan first kept the Vault-Explorer. **Choice.** Drop all three. **Rationale.** They are didactic gadgets rather than method necessities; two are animations that distract in a calm reading environment, and the Vault-Explorer would have needed a `mock_vault.json` substrate that does not pay off when the paper's own reading flow already shows the Promptotyping Documents. **Effect.** Simpler code, focused on reading plus two useful modules, Frontmatter-Inspector and Case-Study-Filter.
+**Context.** The old Living Paper had three interactive modules, Context-Rot-Viz, Vault-Explorer, Sycophancy-Trap; the plan first kept the Vault-Explorer. **Choice.** Drop all three. **Rationale.** They are didactic gadgets rather than method necessities; two are animations that distract in a calm reading environment, and the Vault-Explorer would have needed a `mock_vault.json` substrate that does not pay off when the paper's own reading flow already shows the Promptotyping Documents. **Effect.** Simpler code, focused on reading plus three useful modules, Frontmatter-Inspector, Case-Study-Filter, and the term index added on 2026-07-26 (A25). The third one earns its place on the same criterion the other two do; it stands in for the full-text search the site declined and answers a question the reader actually has.
 
 ### ADR-7 — Frontmatter-Inspector as paste-live-render module
 **Context.** The `template:` URI resolution is central but invisible to an outside reader; a plain URL input would only replicate the anchor click without showing the frontmatter indirection. **Choice.** A textarea for the whole YAML frontmatter block. The inspector parses, extracts `template.url` (or `alias`), validates against the anchor schema, and opens the side panel with the rendered template, prefilled with an example latest-form `template:` field. **Rationale.** Shows the whole mechanism in one step and makes machine readability concrete when a reader pastes a real foreign frontmatter. **Effect.** A standalone module `assets/js/modules/frontmatter-inspector.js`; js-yaml v4.1.0 vendored under `assets/vendor/js-yaml.min.js`. Details in [architecture.md](architecture.md).

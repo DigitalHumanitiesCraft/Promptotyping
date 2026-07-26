@@ -5,11 +5,11 @@ project:
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 status: active
 language: de
-version: 0.6
+version: 0.7
 created: 2026-05-09
 updated: 2026-07-26
 authors: [Christopher Pollin]
-generated-with: Claude Code mit Claude Fable 5
+generated-with: Claude Code (Claude Fable 5)
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
@@ -877,3 +877,19 @@ Beide Fehler haben dieselbe Ursache. Ich habe die verstreuten Offen-Vermerke der
 **Eine Grenze der Erhebung, die erst beim Belegen sichtbar wurde.** Die 490 Dokumente sind ausschließlich solche, die überhaupt Frontmatter tragen, und das Audit vom 2026-07-19 fand in etwa einem Drittel der Wissensbasen gar keines. Die Quote beschreibt also den bereits frontmattertragenden Bestand und untertreibt den Abstand zur Konvention über alles gerechnet. Der Papertext sagt das jetzt.
 
 **Offen am Papertext.** Der Herkunftssatz, der das Übersetzungsproblem im Requirements Engineering verortet, bevor die DH-Antworten folgen. Die Dauer-Formeln an zwei Stellen, in 2.2 und in der Conclusion, wobei die Conclusion zwei davon trägt. Die drei Bilddateien.
+
+## 2026-07-26, vierte Runde — drei Subagenten an Frontend, Inhalt und Wissensbasis
+
+Der Durchgang lief in drei Lanes mit disjunktem Dateibesitz, weil die Grenze der Parallelisierung hier nicht die Zahl der Aufgaben ist, sondern der Umstand, dass `app.js` und `style.css` je eine Datei ohne Modulgrenze sind. Zwei Agenten darin wären ein garantierter Konflikt. Keiner der drei durfte committen, und keiner durfte die Wissensbasis über die eigene Arbeit fortschreiben; die Spezifikations-Deltas kamen als Text zurück und sind vom Orchestrator eingetragen. Parallel arbeitete eine zweite Claude-Code-Sitzung des Operators am Papertext im selben Working Tree, weshalb nur explizite Pfade gestaged wurden.
+
+**Frontend-Kern.** Die Paperseite trägt jetzt ein zweistufiges Inhaltsverzeichnis aus denselben Überschriften, aus denen die `#abschnitt-*`-Anker entstehen (A23). Der Fokus wandert beim Seitenwechsel in den Inhalt, während das Auflösen des Anfangs-Hashs ihn stehen lässt, damit beim Laden nichts gestohlen wird (A24). Das Begriffsregister über den Glossareinträgen ersetzt die abgelehnte Volltextsuche (A25). Es baut zur Laufzeit aus `data/glossar.json` gegen die im DOM gemounteten Seiten, was nur funktioniert, weil die inaktiven Seiten als `display: none` stehen bleiben; Lazy-Mounting bräche das Register in derselben Bewegung, in der es die Ankerauflösung bräche. Das Modul wird von `app.js` zur Laufzeit nachgeladen statt in der Shell deklariert, weil `index.html` und `404.html` keine Markierung tragen dürfen.
+
+**Ein Befund des Registers über die Site.** Acht der siebenundvierzig Glossarbegriffe kommen ausserhalb des Glossars nirgends vor. Das Glossar führt damit Vokabular, das die Spezifikation nicht benutzt. Das Register weist die Fälle als solche aus, statt sie zu verstecken.
+
+**Inhalt und Daten.** B1 ist ausgeführt. Die Startseite trägt Titel, Geltungssatz, Statustabelle, Index, „Was die Methode ist" und „Wo ansetzen". Die Dokumenttypen-Einteilung und die Artefakt-Voreinstellung sind ersatzlos zugunsten von Teil 3 und Teil 4 gefallen, die Skalierungsaussage steht in Teil 1 unter „Zwei Modi". Sie ist dabei gekürzt worden, weil zwei ihrer vier Sätze im Zielabschnitt bereits ausführlicher standen und der wörtliche Umzug genau die Doppelung erzeugt hätte, die B1 beseitigt. Die Lucina Digital Edition ist aus der Galerie entfernt, weil sie im Papertext bewusst fehlt; A7 führt das jetzt als dritten Ausschlussgrund.
+
+**Wissensbasis.** Die neun `revision-*`-Protokolle sind zu `revision.md` konsolidiert und in place archiviert, also über Status und datierten Vermerk statt über einen Ordnerwechsel. Der Agent hat das Verschieben nach `knowledge/archiv/` unterlassen, weil vier Stellen im Vault die Protokolle unter ihrem heutigen Pfad führen, drei in `vault/knowledge/state.md` und eine im Claim zur HERDATA-Briefzahl; ein Verschieben hätte die Belegschicht gebrochen. Der Operator hat einen Archivordner ausdrücklich abgelehnt, womit die in-place-Lösung auch die gewollte ist.
+
+**Was die Prüfung am Dateibestand ergeben hat.** `revision-frame-proposal.md` behauptet eine `revision-decisions.md`, die nie einen Commit gesehen hat; sie lag am 2026-07-24 uncommittet im Working Tree und ist verloren. Die Prozessregel in `paper-writing.md`, die für jeden Revisionsbefund eine dokumentierte Entscheidung in dieser Datei verlangt, hat damit keinen Träger. Drei Protokolle führten ein Modell in `authors:`, was die Konvention verbietet; es steht jetzt in `generated-with`. Zwei Steuerdokumente führten eine `Vorlage Planung`, die der Katalog nicht kennt. `_content/konvention.md` verkürzt das Statusvokabular auf drei Werte, während drei Fülltemplates acht führen und der Bestand `complete` und `snapshot` benutzt; das ist vault-first zu lösen und bleibt offen.
+
+**Offen aus diesem Durchgang.** Der horizontale Überlauf der Paperseite unter etwa 560 Pixeln, verursacht von der Projektinventar-Tabelle ohne eigenen Scrollcontainer. Die acht ungenutzten Glossarbegriffe. Das Statusvokabular der Konvention. Die vier Vault-Verweise, falls die Protokolle doch verschoben werden sollen.

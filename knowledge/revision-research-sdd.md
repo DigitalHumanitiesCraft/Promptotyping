@@ -3,13 +3,13 @@ title: Recherche Spec-Driven-Development-Abgrenzung
 project:
   name: Promptotyping Site
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
-status: draft
+status: archived
 language: de
 version: 0.1
 created: 2026-07-24
-updated: 2026-07-24
+updated: 2026-07-26
 authors: [Christopher Pollin]
-generated-with: Claude Code mit Claude Opus 5
+generated-with: Claude Code (Claude Opus 5)
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
@@ -19,6 +19,8 @@ related: [paper, paper-writing, revision-knowledge, revision-audit-a0, revision-
 # Recherche Spec-Driven-Development-Abgrenzung
 
 Belegte Prüfung der vier Fragen, die die Abgrenzungsformel in Sektion 2.5 voraussetzt, gegen die Dokumentation der einschlägigen Frameworks, dazu ein Formulierungsvorschlag und die Verankerung der Quellen im Grounded Vault. Alle Abrufe am 2026-07-24, sofern nicht anders vermerkt. Wo eine Aussage nicht belegbar war, steht der Negativbefund.
+
+> Archiviert am 2026-07-26. Dieses Dokument ist das Arbeitsprotokoll einer abgeschlossenen Sitzung und wird nicht fortgeschrieben. Die tragenden Befunde stehen konsolidiert in [revision.md](revision.md).
 
 ## 1. Recherchebefunde je Framework
 

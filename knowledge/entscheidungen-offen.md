@@ -7,7 +7,7 @@ method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
 template:
-  name: Vorlage Planung
+  name: Vorlage Plan
   version: "0.2"
   url: https://dhcraft.org/Promptotyping/promptotyping-document/plan
 status: active
@@ -63,7 +63,7 @@ Der Sweep über die fünfzehn Fülltemplates entfiel, weil sie den Sechser-Kern 
 
 ## Teil B. Offen an der Site
 
-### B1. Die zwei verbleibenden Doppelungen der Startseite
+### B1. Die zwei verbleibenden Doppelungen der Startseite — ausgeführt 2026-07-26
 
 **Sachstand.** Die Startseite trägt nach dem Durchgang vom 2026-07-26 noch zwei Abschnitte, die eine Seite hinter ihr vollständiger führt.
 
@@ -74,6 +74,8 @@ Der Sweep über die fünfzehn Fülltemplates entfiel, weil sie den Sechser-Kern 
 **Optionen für den ersten Abschnitt.** Streichen und auf Teil 3 verweisen, oder auf zwei Sätze kürzen. Empfehlung: streichen. Der Spezifikationsindex führt Teil 3 mit der Kurzbeschreibung bereits, und ein Verweissatz im Abschnitt „Wo ansetzen" reicht.
 
 **Optionen für den zweiten Abschnitt.** Die Artefakthälfte streichen ist unstrittig. Für die Skalierungshälfte gibt es drei Wege. Sie bleibt auf der Startseite als eigener kurzer Abschnitt „Skalierung", sie wandert in Teil 1 zu den Phasen, oder sie wandert in Teil 4 zum Artefakt. Empfehlung: nach Teil 1. Skalierung ist eine Eigenschaft der Anwendung und nicht des Artefakts, und Teil 1 führt mit „Zwei Modi" bereits einen Abschnitt, an den sie inhaltlich anschließt.
+
+**Ausgeführt am 2026-07-26** wie unten beschrieben, mit einer Abweichung. Der Skalierungsabsatz ist gekürzt in Teil 1 angekommen, weil zwei seiner vier Sätze im Zielabschnitt „Zwei Modi" bereits ausführlicher standen; ein wörtlicher Umzug hätte die Doppelung erzeugt, die dieser Eintrag beseitigt.
 
 **Umsetzung.** In `_content/ueberblick.md` beide Abschnitte entfernen, den Absatz zur Skalierung nach `_content/anwendung.md` unter „Zwei Modi" verschieben, in „Wo ansetzen" einen Verweis auf Teil 3 ergänzen. Danach trägt die Startseite Titel, Geltungssatz, Statustabelle, Index, „Was die Methode ist" und „Wo ansetzen". Das ist die Form, die eine Spezifikationsfront hat.
 

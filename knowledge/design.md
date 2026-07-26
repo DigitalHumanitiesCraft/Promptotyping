@@ -5,11 +5,11 @@ project:
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 status: complete
 language: en
-version: 0.6
+version: 0.7
 created: 2026-05-09
 updated: 2026-07-26
 authors: [Christopher Pollin]
-generated-with: Claude Code with Claude Opus 4.8
+generated-with: Claude Code (Claude Opus 4.8)
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
@@ -143,11 +143,11 @@ The site is laid out as specification documentation, in the manner of a library 
 
 Desktop uses a two-track grid inside a 1240px container: the page tree (`--nav-width: 250px`) and the page (`minmax(0, 1fr)` with `--read-width: 820px` max, centred). The tree is sticky below the fixed header (`--header-height: 3.25rem`) and scrolls independently. The side panel stays outside the grid as a `position: fixed` overlay of `--panel-width: 360px`.
 
-The tree groups the pages under Spezifikation, Referenz, Belege, Werkzeuge und Praxis, and Paper; the active page is marked by a left border and bold weight. The five parts of the specification proper carry a leading number, so the sidebar shows the specification as an ordered document rather than a list of siblings. The tree is never collapsible; below 860px it stacks above the page and stays visible, tables scroll inside their own box, and the side panel becomes a bottom sheet. An on-this-page rail was built and removed the same day by operator decision.
+The tree groups the pages under Spezifikation, Referenz, Belege, Werkzeuge und Praxis, and Paper; the active page is marked by a left border and bold weight. The five parts of the specification proper carry a leading number, so the sidebar shows the specification as an ordered document rather than a list of siblings. The tree is never collapsible; below 860px it stacks above the page and stays visible, tables scroll inside their own box, and the side panel becomes a bottom sheet. An on-this-page rail was built and removed the same day by operator decision. What replaced it for the one page that needs it is a static table of contents at the head of the paper page, two columns on the desktop and one below 860px, set in the greys of the system and carrying no colour of its own. It stands still while the reader scrolls, which is the difference from the rail.
 
 The header carries the wordmark and the kind marker, with no mark beside it, and the signature band along its foot. Both the DHCraft watercolour and the Promptotyping logo were tried in that slot and dropped, because a chromatic detail image at 22 pixels reads as a smudge and would put a hue on the page that means nothing. The carrier mark stays in the footer, which is a four-column grid carrying carrier and licence, addresses, the state of the specification, and the machine-access note.
 
-The start page is the specification front: title, one-sentence scope, a keyed status table (Fassung, Stand, kanonische Adresse, Maschinenadresse, Evidenz, Lizenz), and a generated index of the specification. Every other page carries a one-line status under its title at 0.8125rem, keys in `#8a8a8a` and values in `#525252`, separated from the body by a hairline. The index is derived from the same page registry as the sidebar, so the two cannot diverge.
+The start page is the specification front: title, one-sentence scope, a keyed status table (Fassung, Stand, kanonische Adresse, Maschinenadresse, Evidenz, Lizenz), and a generated index of the specification. Every other page carries a one-line status under its title at 0.8125rem, keys in `#8a8a8a` and values in `#525252`, separated from the body by a hairline; on the paper page the table of contents follows immediately below it. The index is derived from the same page registry as the sidebar, so the two cannot diverge.
 
 ## Side panels
 
@@ -197,6 +197,14 @@ The Vorlagen hub adds three silent styling blocks:
 ### Case-study cards
 
 The use-case gallery renders case-study cards in a responsive grid (`auto-fill, minmax(280px, 1fr)`), grouped by the use-case typology of A7; the internal genre vocabulary stays out of the public UI. Each card has a `#e0e0e0` border, no shadow, 1rem padding, and a `#f5f5f5` hover fill. A "Mehr" button appears only for case studies that carry a depth page. A filter bar above the grid offers selectable chips and a secondary select control.
+
+### Term index
+
+The term index heads the glossary page as a table of term and target pages. The filter field above it is a plain input in a `--border` frame with no icon and no placeholder decoration. Target pages are links in the dominant grey, the term links into its own glossary entry, and a term that occurs nowhere outside the glossary says so in words rather than by a symbol. The index carries no colour; it distinguishes nothing that a hue would encode.
+
+## Focus and keyboard
+
+A page change carries the focus into the content, so the reader continues in the page rather than back at the top of the tree. The receiving container is reachable by Tab in no other way, and it therefore shows no focus ring when it takes the focus programmatically. Every element that a keyboard reaches on its own keeps its visible ring, and that ring is not weakened anywhere.
 
 ## Motion and elevation
 

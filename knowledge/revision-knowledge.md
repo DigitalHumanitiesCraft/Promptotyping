@@ -1,10 +1,18 @@
 ---
 title: Revisionswissen Promptotyping-Paper
-project: promptotyping-paper
-method: promptotyping
-status: complete
+project:
+  name: Promptotyping Site
+  repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
+method:
+  name: Promptotyping
+  url: https://dhcraft.org/Promptotyping/
+status: archived
+language: de
+version: 0.1
 created: 2026-07-23
-updated: 2026-07-24
+updated: 2026-07-26
+authors: [Christopher Pollin]
+related: [revision, paper, paper-writing]
 ---
 
 # Revisionswissen: Promptotyping-Paper
@@ -14,6 +22,8 @@ die gemeinsame Spezifikation der Revisionsaufträge. Dieses Dokument
 ist Steering-Wissen, kein fertiger Auftrag: Es hält Befunde,
 Prinzipien und Prozessarchitektur fest; die konkreten Aufträge werden
 im Dialog mit dem Operator daraus entwickelt.
+
+> Archiviert am 2026-07-26. Dieses Dokument ist das Arbeitsprotokoll einer abgeschlossenen Sitzung und wird nicht fortgeschrieben. Die tragenden Befunde stehen konsolidiert in [revision.md](revision.md).
 
 ## Stand 2026-07-24
 

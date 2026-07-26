@@ -6,19 +6,21 @@ project:
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
-status: draft
+status: archived
 language: de
 version: 0.1
 created: 2026-07-24
-updated: 2026-07-24
-authors: [Claude Opus 5, im Auftrag Christopher Pollin]
-generated-with: Claude Code mit Claude Opus 5
+updated: 2026-07-26
+authors: [Christopher Pollin]
+generated-with: Claude Code (Claude Opus 5)
 related: [paper, paper-writing, revision-audit-a1, revision-audit-a2, revision-audit-a5-vault-coverage]
 ---
 
 # Revision-Audit A4 — Empirische Aussagen gegen die Repository-Artefakte
 
 Auftrag war die Prüfung jeder empirischen Aussage des Papers über die dokumentierten Projekte gegen die tatsächlichen Artefakte des jeweiligen Repositories. Anlass ist ein Stichprobenbefund, nach dem eine Aussage in Sektion 3.5 aus einem frühen Journalstand stammte und im Paper zu einer allgemeinen Eigenschaft verallgemeinert wurde. Geschrieben wurde ausschließlich diese Datei. In den Projekt-Repositories wurde nichts geändert und nichts committet.
+
+> Archiviert am 2026-07-26. Dieses Dokument ist das Arbeitsprotokoll einer abgeschlossenen Sitzung und wird nicht fortgeschrieben. Die tragenden Befunde stehen konsolidiert in [revision.md](revision.md).
 
 ## Vorgehen und Prüfmethode
 

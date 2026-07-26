@@ -3,7 +3,7 @@
   "generated": "2026-06-10",
   "_meta": {
     "beschreibung": "Case-Study-Daten der Promptotyping-Methodik-Site. Quellen: die Fallbeschreibungen im Vault, die Methodenerweiterungen im Promptotyping MOC und das Projekt-Inventar in Pollin 2026, Abschnitt 5.2. Die useCase-Werte sind ein site-eigenes Ordnungsraster; das Paper ordnet die Projekte nach der Interface-Typologie aus Abschnitt 4.2.",
-    "kuratierung": "Kuratierte Auswahl der oeffentlich praesentierbaren Projekte, nicht das vollstaendige Evidenz-Korpus des Papers. Ausgeschlossen sind Faelle wegen fehlender Kundenfreigabe bzw. weil sie ein Vermittlungsformat statt eines Forschungsartefakts sind: vetmedai-wissensbilanz, agentic-edition-pipeline, wiiw-patent-analysis, wiiw-figaro-subagents, sugw, vault-kuration-screencast, wissensorganisation-nano-banana, wissens-projektmanagement-obsidian-claude-code-screencast. Die Galerie folgt einem eigenen Ordnungsraster und spiegelt das Evidenzkorpus des Papers nicht. Sie fuehrt deshalb auch Faelle, die das Paper bewusst nicht mehr fuehrt, unter ihnen die Aldersbacher Klosterrechnungen (aus dem Paper genommen, weil zu alt) und Lucina (im Paper nicht verwendet); beide bleiben hier, weil sie didaktisch tragen, der Multi-LLM-Workflow im Lucina-Fall in keinem anderen dokumentiert ist und die Galerie ohnehin kuratiert statt vollstaendig ist. Operator-Entscheidung 2026-07-25.",
+    "kuratierung": "Kuratierte Auswahl der oeffentlich praesentierbaren Projekte, nicht das vollstaendige Evidenz-Korpus des Papers. Ausgeschlossen sind Faelle wegen fehlender Kundenfreigabe bzw. weil sie ein Vermittlungsformat statt eines Forschungsartefakts sind: vetmedai-wissensbilanz, agentic-edition-pipeline, wiiw-patent-analysis, wiiw-figaro-subagents, sugw, vault-kuration-screencast, wissensorganisation-nano-banana, wissens-projektmanagement-obsidian-claude-code-screencast. Die Galerie folgt einem eigenen Ordnungsraster und spiegelt das Evidenzkorpus des Papers nicht. Sie fuehrt deshalb auch die Aldersbacher Klosterrechnungen, die aus dem Paper genommen wurden, weil der Fall zu alt ist; er bleibt hier, weil er didaktisch traegt und die Galerie ohnehin kuratiert statt vollstaendig ist (Operator-Entscheidung 2026-07-25). Der Fall diged-neolat mit dem Anzeigenamen Lucina Digital Edition ist am 2026-07-26 aus der Galerie entfernt worden, weil der Papertext ihn bewusst nicht fuehrt (Operator-Entscheidung 2026-07-26).",
     "schema": {
       "id": "Anker-Slug, ergibt zusammen mit #case- den Site-Anker (z.B. herdata -> #case-herdata)",
       "name": "Anzeigename",
@@ -174,24 +174,6 @@
       "video_url": null,
       "insight": "Erster vollstaendiger Dokumentensatz des Korpus, mit Journal und Test-Suite",
       "deep_page": true
-    },
-    {
-      "id": "diged-neolat",
-      "name": "Lucina Digital Edition",
-      "useCase": "data-production",
-      "useCaseLabel": "Datenproduktion",
-      "status": "abgeschlossen",
-      "summary": "Wissenschaftliche digitale Edition neulateinischer Gedichte in fuenf Iterationen mit Multi-LLM-Workflow.",
-      "data": "Lateinische Gedichtsammlung, DOCX zu TEI",
-      "artifact": "TEI-P5 scholarly edition (iterativ)",
-      "interfaceTypes": [
-        "edition"
-      ],
-      "repo_url": "https://github.com/chpollin/diged-neolat",
-      "demo_url": "https://chpollin.github.io/diged-neolat/edition-5/web/",
-      "video_url": "https://youtu.be/0DtX0pLv4TA",
-      "insight": "Multi-Iteration (5 Iterationen, Multi-LLM-Workflow)",
-      "deep_page": false
     },
     {
       "id": "herdata",

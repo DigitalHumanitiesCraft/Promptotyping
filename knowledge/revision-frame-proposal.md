@@ -3,13 +3,13 @@ title: Revision Frame Proposal
 project:
   name: Promptotyping Site
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
-status: draft
+status: archived
 language: de
 version: 0.1
 created: 2026-07-24
-updated: 2026-07-24
+updated: 2026-07-26
 authors: [Christopher Pollin]
-generated-with: Claude Code mit Claude Opus 5
+generated-with: Claude Code (Claude Opus 5)
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
@@ -19,6 +19,8 @@ related: [paper, paper-writing, revision-knowledge, revision-audit-a0]
 # Revision Frame Proposal
 
 Entwurf für den Wechsel der Hauptaussage von der Übersetzungs-Doppelung auf die Verschiebung der bindenden Arbeit vom Implementieren zum Beschreiben, mit der Beschreibungskompetenz der Geisteswissenschaften als tragender zweiter Hälfte. Lese-Scope `paper.md`, `paper-writing.md`, `revision-knowledge.md`, `revision-audit-a0.md`, ergänzend die Audits A1 bis A3 und die Claim-Schicht des Grounded Vault zur Nebenwirkungsprüfung. `paper.md` ist unangetastet, kein Commit. Alle Entwürfe britisches Englisch im Register des Textes, geprüft gegen die vier Kernverbote und den Prüfkatalog in `paper-writing.md`.
+
+> Archiviert am 2026-07-26. Dieses Dokument ist das Arbeitsprotokoll einer abgeschlossenen Sitzung und wird nicht fortgeschrieben. Die tragenden Befunde stehen konsolidiert in [revision.md](revision.md).
 
 Zeilenangaben beziehen sich auf `knowledge/paper.md` im Stand 2026-07-24 (428 Zeilen).
 

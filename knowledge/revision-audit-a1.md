@@ -3,17 +3,22 @@ title: Revision-Audit A1 — Transferbehauptung
 project:
   name: Promptotyping Paper
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
-method: Promptotyping
-status: draft
+method:
+  name: Promptotyping
+  url: https://dhcraft.org/Promptotyping/
+status: archived
 created: 2026-07-23
-updated: 2026-07-23
-authors: [Claude Opus 4.8, im Auftrag Christopher Pollin]
+updated: 2026-07-26
+authors: [Christopher Pollin]
+generated-with: Claude Code (Claude Opus 4.8)
 related: [paper, paper-writing]
 ---
 
 # Revision-Audit A1 — Claim-Evidenz-Prüfung der Transferbehauptung
 
 Auftrag war ein Claim-Evidenz-Audit von `paper.md` mit Schwerpunkt auf der Behauptung, dass auch Personen ohne hybride Kompetenz (Fach plus Programmierung) mit der Methode Forschungsdaten in Artefakte übersetzen können. Geprüft wurde gegen `paper.md`, die Sprach- und Steuerregeln aus `paper-writing.md` und die Projektgeschichte in `journal.md`. Kein Webzugriff, keine externen Behauptungen ohne datierte abrufbare Quelle. Die Fundstellen sind vollständig selbst identifiziert (Grep über die Transfer-Marker, Abgleich gegen den Volltext).
+
+> Archiviert am 2026-07-26. Dieses Dokument ist das Arbeitsprotokoll einer abgeschlossenen Sitzung und wird nicht fortgeschrieben. Die tragenden Befunde stehen konsolidiert in [revision.md](revision.md).
 
 ## Gesamtbefund vorab
 

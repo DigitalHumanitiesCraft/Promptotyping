@@ -3,13 +3,13 @@ title: Revision Audit A0
 project:
   name: Promptotyping Site
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
-status: draft
+status: archived
 language: de
 version: 0.1
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-26
 authors: [Christopher Pollin]
-generated-with: Claude Code mit Claude Opus 4.8
+generated-with: Claude Code (Claude Opus 4.8)
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
@@ -19,6 +19,8 @@ related: [paper, paper-writing]
 # Revision Audit A0
 
 Freies kritisches Lektorat von `paper.md`, Stand 2026-07-23. Lese-Scope geschlossen auf `paper.md` und `paper-writing.md`. Kein externer Abgleich; wo eine Behauptung des Papers über fremde Frameworks oder Werkzeuge nur durch das Paper selbst gedeckt ist, bleibt es dabei. Fünf Hebelbefunde nach dem Verhältnis von Wirkung zu Eingriffstiefe, danach Restliste und die drei Abschlussblöcke. Alle Vorschläge in britischem Englisch im Register des Textes.
+
+> Archiviert am 2026-07-26. Dieses Dokument ist das Arbeitsprotokoll einer abgeschlossenen Sitzung und wird nicht fortgeschrieben. Die tragenden Befunde stehen konsolidiert in [revision.md](revision.md).
 
 Vorbemerkung zur Gesamtlage. Das Paper ist argumentativ dicht gebaut und in seiner Selbstkritik ungewöhnlich diszipliniert. Die Deskilling-Lesart ist sauber blockiert, die Effizienz-Nichtbehauptung durchgehalten, die Drucker-Kritik an LLM-Visualisierungen ist gegen die eigene Methode gewendet statt weggeredet. Die fünf Befunde greifen an tragenden Stellen, keiner betrifft handwerkliche Mängel.
 

@@ -27,18 +27,6 @@ Promptotyping erzeugt Forschungsartefakte, im Regelfall Software, die an die Dat
 
 Diese Seite ist die Spezifikation der Methode. Sie sagt, was Promptotyping ist und wie es angewendet wird. Warum die Methode so gebaut ist und ob sie traegt, sagt das [Paper](#paper).
 
-## Knowledge Documents und ihre drei Spezialisierungen
-
-Jedes Promptotyping Document ist ein Knowledge Document, ein Dokument, das Wissen so festhaelt, dass Menschen und Agenten es lesen und darauf handeln koennen. Nach der Art des Wissens, das sie tragen, zerfallen sie in drei Spezialisierungen. Declarative Documents halten Sachwissen ueber Daten, Domaene und Forschungskontext (etwa `project.md`, `data.md`, `architecture.md`, `design.md`). Process Documents halten den Verlauf der Arbeit fest (etwa `journal.md`, `learnings.md`, `plan.md`). Action Documents halten Handlungswissen darueber, was Agenten im Projekt tun duerfen und wie (etwa `CLAUDE.md`, die Teststrategie, die Technologie-Baseline).
-
-Die Klassifikation ist kein Selbstzweck, sondern ein Diagnoseraster. Ist ein Output inhaltlich falsch, wird zuerst das Declarative Document geprueft. Ist er formal falsch, wird zuerst das Action Document geprueft. Ist die Entscheidungslogik unklar, wird zuerst das Process Document geprueft.
-
-## Artefakte und Skalierung
-
-Das Artefakt ist im Default ein selbststaendiges statisches Web-Tool, ein Satz aus HTML-, CSS- und JavaScript-Dateien mit eingebetteten oder aus flachen Dateien geladenen Forschungsdaten, lauffaehig aus einem lokalen Ordner und auf jedem statischen Host deploybar. Eine Abweichung von diesem Default ist begruendungspflichtig. Wo ein Verarbeitungsschritt nicht im Browser laeuft, nimmt er die Form einer generierten Pipeline vor dem Artefakt an; wo eine Beschreibung aus den Quelldaten selbst gerendert wird, die Form eines deterministisch erzeugten Dokuments.
-
-Quer dazu liegt die Skalierung. Dieselbe Methode traegt die einzelne Sitzung mit einem Agenten ebenso wie die Arbeit, in der ein fuehrender Agent Subagenten mit definierten Rechten und Wissenszonen koordiniert. Je komplexer die Domaene, desto mehr Struktur braucht die Wissensorganisation, und der destillierte Dokumentensatz waechst mit dem Projekt. Verbindend bleiben die vier Phasen, die drei Dokumenttypen und die Verifikationsdisziplin durch den Critical Expert in the Loop.
-
 ## Wo ansetzen
 
-Wer die Methode im Detail nachvollziehen will, liest das [Paper](#abschnitt-1-introduction) von der Introduction bis zur Conclusion. Wer sie anwenden will, nutzt die [Vorlagen](#vorlagen) fuer die Promptotyping Documents und den Frontmatter-Inspector. Wer Belege sucht, sieht sich die [Use Cases](#use-cases) an, die kuratierte Auswahl oeffentlich dokumentierter Projekte. Die empirisch gewachsenen Methodenerweiterungen stehen unter [Praxis](#praxis), die uebertragbaren System Prompts unter [Skills](#skills). Wie Vault, Agent Interface und AI Harness zusammenspielen, beschreibt die [Arbeitsumgebung](#arbeitsumgebung).
+Wer die Methode im Detail nachvollziehen will, liest das [Paper](#abschnitt-1-introduction) von der Introduction bis zur Conclusion. Wer sie anwenden will, nutzt die [Vorlagen](#vorlagen) fuer die Promptotyping Documents und den Frontmatter-Inspector. Wie sich die Dokumenttypen voneinander unterscheiden und welches Dokument bei welchem Fehlerbild zuerst zu pruefen ist, fuehrt Teil 3 der Spezifikation, die [Konvention](#konvention-v0.1). Wer Belege sucht, sieht sich die [Use Cases](#use-cases) an, die kuratierte Auswahl oeffentlich dokumentierter Projekte. Die empirisch gewachsenen Methodenerweiterungen stehen unter [Praxis](#praxis), die uebertragbaren System Prompts unter [Skills](#skills). Wie Vault, Agent Interface und AI Harness zusammenspielen, beschreibt die [Arbeitsumgebung](#arbeitsumgebung).

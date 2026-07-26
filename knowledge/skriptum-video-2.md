@@ -3,6 +3,9 @@ title: Skriptum Video 2 — Einführung in Promptotyping, Live-Demonstration
 project:
   name: Promptotyping
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
+method:
+  name: Promptotyping
+  url: https://dhcraft.org/Promptotyping/
 status: draft
 created: "2026-07-25"
 updated: "2026-07-25"
