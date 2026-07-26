@@ -27,6 +27,11 @@ TEMPLATE_DIR = ROOT / "_content" / "promptotyping-document"
 CLAUDE_MD = ROOT / "CLAUDE.md"
 CASES = ROOT / "data" / "case-studies.json"
 CASE_DIR = ROOT / "_content" / "case-studies"
+PAPER = ROOT / "knowledge" / "paper.md"
+
+# The header row of the project inventory, Table 1 in section 5.2. Parsing keys
+# on this line rather than on a position, so inserting a section cannot move it.
+TABLE1_HEADER = "|Project|Data|Interface Type(s)|Methodological Contribution|"
 
 # The five epistemic functions of the paper's interface typology (section 4.2).
 INTERFACE_TYPES = {"verification", "exploration", "edition", "capture", "audit"}
@@ -180,6 +185,68 @@ def check_gallery(data):
                      % (case_id, kind))
 
 
+def paper_table1():
+    """The project inventory of section 5.2, keyed by the project name.
+
+    Returns {project name: set of interface types, lowercased}.
+    """
+    rows = {}
+    lines = PAPER.read_text(encoding="utf-8").splitlines()
+    try:
+        start = lines.index(TABLE1_HEADER)
+    except ValueError:
+        fail("evidence", "Table 1 header row not found in knowledge/paper.md")
+        return rows
+    for line in lines[start + 2:]:
+        if not line.startswith("|"):
+            break
+        cells = [c.strip() for c in line.strip("|").split("|")]
+        if len(cells) < 3:
+            break
+        kinds = {k.strip().lower() for k in cells[2].split(",") if k.strip()}
+        rows[cells[0]] = kinds
+    return rows
+
+
+def check_evidence_reachable(data):
+    """Every project the paper offers as evidence is reachable on the site.
+
+    A reader who comes from the paper wanting to check a claim of section 5.2
+    has to find the project. This is the condition the gallery exists for, and
+    it held for ten of thirteen projects until 2026-07-26.
+    """
+    table = paper_table1()
+    if not table:
+        return
+    claimed = {}
+    for case in data["caseStudies"]:
+        name = case.get("paper_row")
+        if not name:
+            continue
+        if name in claimed:
+            fail("evidence", "cards %s and %s both claim Table 1 row %r"
+                 % (claimed[name], case["id"], name))
+            continue
+        claimed[name] = case["id"]
+
+    for name in sorted(set(table) - set(claimed)):
+        fail("evidence", "Table 1 lists %r; no card claims it" % name)
+    for name in sorted(set(claimed) - set(table)):
+        fail("evidence", "card %s claims Table 1 row %r; the paper has no such row"
+             % (claimed[name], name))
+
+    # Where both sides describe the same project, they must agree on the
+    # interface typology of section 4.2. Drift here is a claim about the method.
+    by_id = {c["id"]: c for c in data["caseStudies"]}
+    for name, case_id in sorted(claimed.items()):
+        if name not in table:
+            continue
+        card = set(by_id[case_id].get("interfaceTypes") or [])
+        if card != table[name]:
+            fail("evidence", "%s carries interface types %s, Table 1 says %s"
+                 % (case_id, sorted(card) or "none", sorted(table[name])))
+
+
 def urls_of(cases):
     for case in cases:
         for field in ("repo_url", "demo_url", "video_url"):
@@ -221,11 +288,12 @@ def main():
 
     cases = load_cases()
     check_gallery(cases)
+    check_evidence_reachable(cases)
 
-    groups = 4
+    groups = 5
     if "--check-urls" in sys.argv:
         check_urls(cases)
-        groups = 5
+        groups = 6
     else:
         note("URL resolution skipped; run with --check-urls to include it")
 

@@ -65,7 +65,17 @@ The dividing line is the one part 5 draws. Where a rule decides, a script runs i
 
 **Verdict, 2026-07-26.** Passes.
 
-### V5. Every address the gallery publishes resolves
+### V5. Every project the paper offers as evidence is reachable
+
+**Claim.** Every project in Table 1 of section 5.2 has a card, every card that claims a Table 1 row finds that row in `knowledge/paper.md`, and where both sides describe the same project they agree on its interface types.
+
+**Why it matters.** This is the condition the gallery exists for. A reader who comes from the paper to check a claim of section 5.2 has to find the project, and three of the thirteen were unfindable until 2026-07-26. The typology cross-check matters for a second reason: the five interface types are an argument of section 4.2, so a card and a table row disagreeing about a project's type is a contradiction about the method.
+
+**Procedure.** Parse the table under the header row `|Project|Data|Interface Type(s)|Methodological Contribution|`, keyed on that line so a new section cannot move it. Compare the project names against the `paper_row` field of the cards, in both directions, then compare the interface types per project.
+
+**Verdict, 2026-07-26.** Passes. On its first run it reported the three missing projects, VetMedAI Wissensbilanz, wiiw Patent Analysis and Medieval Legal Transactions, all three now carrying a card and a depth page. The ten projects that already had cards agreed with Table 1 on their interface types without exception.
+
+### V6. Every address the gallery publishes resolves
 
 **Claim.** Every `repo_url`, `demo_url` and `video_url` on a card answers with an HTTP status below 400.
 

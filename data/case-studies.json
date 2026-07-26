@@ -3,7 +3,7 @@
   "generated": "2026-06-10",
   "_meta": {
     "beschreibung": "Case-study data of the Promptotyping methodology site. The sources are the case descriptions in the vault, the method extensions in the Promptotyping MOC and the project inventory in Pollin 2026, Section 5.2. The useCase values are an ordering grid of the site's own; the paper orders the projects by the interface typology of Section 4.2.",
-    "kuratierung": "Curated selection of the publicly presentable projects, short of the full evidence corpus of the paper. Excluded for want of client clearance, or because they are a teaching format rather than a research artefact, are vetmedai-wissensbilanz, agentic-edition-pipeline, wiiw-patent-analysis, wiiw-figaro-subagents, sugw, vault-kuration-screencast, wissensorganisation-nano-banana and wissens-projektmanagement-obsidian-claude-code-screencast. The gallery follows an ordering grid of its own and does not mirror the evidence corpus of the paper. It therefore also carries the Aldersbach monastic accounts, which were taken out of the paper because the case is too old; the case stays here because it carries didactically and the gallery is curated rather than complete (operator decision 2026-07-25). The case diged-neolat with the display name Lucina Digital Edition was removed from the gallery on 2026-07-26, because the paper text deliberately does not carry it (operator decision 2026-07-26).",
+    "kuratierung": "Admission is decided by what a card lets a reader check. Every project in Table 1 of the paper has a card, because a reader who comes from section 5.2 to verify a claim has to find the project; the paper_row field carries that link and tools/check_consistency.py holds it in both directions (operator decision 2026-07-26). Beyond the evidence inventory the gallery also carries the projects the method grew out of, which section 2.6 needs, and the teaching formats, which the teachability argument of section 5.4 rests on. A project that supports no claim of the paper has no card. Three exclusion notes of the earlier curation were checked on 2026-07-26 and did not hold: vetmed-wissensbilanz and wiiw-patent-analysis-demo are public repositories with working demos, and sugw is the paper's Medieval Legal Transactions and publicly video-documented, so all three entered the gallery. The Aldersbach monastic accounts stay although the paper dropped the case as too old, because the genealogy is what they carry (operator decision 2026-07-25).",
     "schema": {
       "id": "anchor slug, forming the site anchor together with #case- (e.g. herdata -> #case-herdata)",
       "name": "display name",
@@ -18,7 +18,8 @@
       "demo_url": "live demo URL or null",
       "video_url": "YouTube URL or null",
       "insight": "methodological contribution per the project inventory (Pollin 2026, Section 5.2), otherwise null",
-      "deep_page": "true for the seven deep pages, otherwise false"
+      "deep_page": "true for the seven deep pages, otherwise false",
+      "paper_row": "exact project name in Table 1 of the paper (section 5.2), or null where the project is deliberately outside the evidence inventory; checked by tools/check_consistency.py against knowledge/paper.md"
     },
     "use_case_labels": {
       "data-production": "Data Production",
@@ -47,7 +48,8 @@
       "demo_url": null,
       "video_url": null,
       "insight": "Origin point (2023), vibe coding without a method",
-      "deep_page": false
+      "deep_page": false,
+      "paper_row": null
     },
     {
       "id": "szd",
@@ -65,7 +67,8 @@
       "demo_url": "https://dhcraft.org/excellence/promptotyping/szd-annotation-timeline/",
       "video_url": null,
       "insight": "Critical Expert in the Loop (two-hour experiment, first blog post)",
-      "deep_page": false
+      "deep_page": false,
+      "paper_row": null
     },
     {
       "id": "szd-htr",
@@ -83,7 +86,8 @@
       "demo_url": "https://chpollin.github.io/szd-htr-ocr-pipeline/",
       "video_url": null,
       "insight": null,
-      "deep_page": false
+      "deep_page": false,
+      "paper_row": null
     },
     {
       "id": "aldersbach",
@@ -101,7 +105,8 @@
       "demo_url": "https://chpollin.github.io/depcha-aldersbach",
       "video_url": null,
       "insight": "First Promptotyping Documents (post hoc)",
-      "deep_page": false
+      "deep_page": false,
+      "paper_row": null
     },
     {
       "id": "stained-glass",
@@ -119,7 +124,8 @@
       "demo_url": "https://chpollin.github.io/stained-glass-metadata-annotation-tool/docs/version-2/",
       "video_url": null,
       "insight": "First knowledge/ folder, SPARQL-based extraction",
-      "deep_page": false
+      "deep_page": false,
+      "paper_row": null
     },
     {
       "id": "imareal-room-object",
@@ -137,7 +143,8 @@
       "demo_url": "https://chpollin.github.io/imareal-room-object/",
       "video_url": null,
       "insight": "Context memory, journal plus git history for session resumption",
-      "deep_page": false
+      "deep_page": false,
+      "paper_row": null
     },
     {
       "id": "km",
@@ -155,7 +162,8 @@
       "demo_url": "https://chpollin.github.io/km/index.html",
       "video_url": null,
       "insight": "Dual paradigm, search plus canvas-based spatial exploration",
-      "deep_page": false
+      "deep_page": false,
+      "paper_row": "Hans Gross Kriminalmuseum"
     },
     {
       "id": "corresp-explorer",
@@ -173,7 +181,8 @@
       "demo_url": "https://dhcraft.org/CorrespExplorer",
       "video_url": null,
       "insight": "First complete document set of the corpus, with journal and test suite",
-      "deep_page": true
+      "deep_page": true,
+      "paper_row": "CorrespExplorer"
     },
     {
       "id": "herdata",
@@ -191,7 +200,8 @@
       "demo_url": null,
       "video_url": null,
       "insight": "Gender-focused network with a map-bias transparency section",
-      "deep_page": true
+      "deep_page": true,
+      "paper_row": "HerData"
     },
     {
       "id": "coocr-htr",
@@ -209,7 +219,27 @@
       "demo_url": null,
       "video_url": "https://youtu.be/VJyhVc_ujeA",
       "insight": "Prototype under a regression suite; the only community fork in the corpus (OEAW)",
-      "deep_page": true
+      "deep_page": true,
+      "paper_row": "coOCR-HTR"
+    },
+    {
+      "id": "vetmedai-wissensbilanz",
+      "name": "VetMedAI Wissensbilanz",
+      "useCase": "data-exploration",
+      "useCaseLabel": "Data Exploration",
+      "status": "completed",
+      "summary": "Dashboard over the intellectual-capital reports of the Austrian universities, built as the first use case of the VetMedAI project and observed by workshop participants as it was made.",
+      "data": "~80 Excel files, Austrian university performance metrics",
+      "artifact": "Dashboard with seven visualisation types and a dual-mode analysis",
+      "interfaceTypes": [
+        "exploration"
+      ],
+      "repo_url": "https://github.com/DigitalHumanitiesCraft/vetmed-wissensbilanz",
+      "demo_url": "https://dhcraft.org/vetmed-wissensbilanz/",
+      "video_url": null,
+      "insight": "Hand-curated knowledge base over a heterogeneous spreadsheet corpus",
+      "deep_page": true,
+      "paper_row": "VetMedAI Wissensbilanz"
     },
     {
       "id": "kulturpool-explorer",
@@ -227,7 +257,46 @@
       "demo_url": "https://chpollin.github.io/kulturpool-demo/",
       "video_url": "https://youtu.be/tQBaaVhPu5U",
       "insight": "Parallel agent orchestration (2 Claude Code instances)",
-      "deep_page": false
+      "deep_page": false,
+      "paper_row": "Kulturpool Explorer"
+    },
+    {
+      "id": "wiiw-patent-analysis",
+      "name": "wiiw Patent Analysis",
+      "useCase": "data-exploration",
+      "useCaseLabel": "Data Exploration",
+      "status": "completed",
+      "summary": "Network dashboard over international patent cooperation from 2010 to 2018, built during a workshop at an economic research institute and the record's case for the method outside the humanities.",
+      "data": "Patent cooperation CSV, 2010 to 2018",
+      "artifact": "Four-tab network dashboard with centrality measures and yearly snapshots",
+      "interfaceTypes": [
+        "exploration"
+      ],
+      "repo_url": "https://github.com/DigitalHumanitiesCraft/wiiw-patent-analysis-demo",
+      "demo_url": "https://dhcraft.org/wiiw-patent-analysis-demo/",
+      "video_url": null,
+      "insight": "Promptotyping outside DH",
+      "deep_page": true,
+      "paper_row": "wiiw Patent Analysis"
+    },
+    {
+      "id": "sugw",
+      "name": "Medieval Legal Transactions",
+      "useCase": "workflow-construction",
+      "useCaseLabel": "Workflow Construction",
+      "status": "active",
+      "summary": "Agentic edition workflow for the prosopographic database of medieval Viennese legal transactions, in which the agent navigates the repository, validates, corrects and commits, while person identification across documents stays outside its reach.",
+      "data": "~3,600 TEI-XML documents (~3,100 released) with an extensive CSV dataset",
+      "artifact": "Static edition frontend rendered from a pipeline of 14 transformers and 2 validators",
+      "interfaceTypes": [
+        "edition"
+      ],
+      "repo_url": null,
+      "demo_url": null,
+      "video_url": "https://youtu.be/3W9FjwCY24Q",
+      "insight": "Agentic edition workflow under a regression suite",
+      "deep_page": true,
+      "paper_row": "Medieval Legal Transactions"
     },
     {
       "id": "m3gim",
@@ -246,7 +315,8 @@
       "demo_url": "https://dhcraft.org/m3gim",
       "video_url": null,
       "insight": "The data model develops through the interface, carried by a decision register",
-      "deep_page": true
+      "deep_page": true,
+      "paper_row": "M³GIM"
     },
     {
       "id": "zbz-ocr-tei",
@@ -265,7 +335,8 @@
       "demo_url": null,
       "video_url": null,
       "insight": "Full pipeline infrastructure with one verification interface per stage",
-      "deep_page": true
+      "deep_page": true,
+      "paper_row": "ZBZ OCR/TEI Pipeline"
     },
     {
       "id": "notker-edition",
@@ -283,7 +354,8 @@
       "demo_url": "https://dhcraft.org/notker-edition",
       "video_url": null,
       "insight": "Layer-toggle edition, orthogonal text-layer controls, IIIF, TEI-first",
-      "deep_page": true
+      "deep_page": true,
+      "paper_row": "Notker Edition"
     },
     {
       "id": "klawiter-rescue",
@@ -302,7 +374,8 @@
       "demo_url": "https://chpollin.github.io/klawiter-rescue",
       "video_url": "https://youtu.be/KG35VGVctJw",
       "insight": "Data rescue, staged pipeline plus curation interface under a test suite",
-      "deep_page": true
+      "deep_page": true,
+      "paper_row": "Klawiter Bibliography Rescue"
     },
     {
       "id": "femprompt-sozarb",
@@ -320,7 +393,8 @@
       "demo_url": "https://chpollin.github.io/FemPrompt_SozArb/",
       "video_url": null,
       "insight": "Beyond DH, literature review infrastructure with a generated knowledge base",
-      "deep_page": false
+      "deep_page": false,
+      "paper_row": "FemPrompt SozArb"
     },
     {
       "id": "austrian-university-dashboard",
@@ -338,7 +412,8 @@
       "demo_url": null,
       "video_url": "https://youtu.be/8sUe4Jkh3uQ",
       "insight": "Teaching baseline (full process on video)",
-      "deep_page": false
+      "deep_page": false,
+      "paper_row": null
     }
   ]
 }
