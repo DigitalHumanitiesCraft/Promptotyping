@@ -516,6 +516,28 @@ a:hover {
   color: var(--grey-2);
 }
 
+/* Figures are monochrome line drawings on a white plate. They take the full
+   reading column and sit tight above their caption paragraph. */
+.content img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: var(--space-8) 0 var(--space-2);
+}
+
+/* Inverting the plate is cheaper than a second file and keeps the theme a
+   token swap; the brightness lift lands the inverted white on the page
+   background instead of pure black. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .content img {
+    filter: invert(1) brightness(1.07);
+  }
+}
+
+:root[data-theme="dark"] .content img {
+  filter: invert(1) brightness(1.07);
+}
+
 /* The row rule is the one horizontal line the system keeps unconditionally: it
    carries the eye across the columns. */
 .content table {
@@ -656,15 +678,6 @@ a:hover {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: var(--space-8);
-}
-
-.spec-index-title {
-  margin: 0 0 var(--space-2);
-  font-size: 0.6875rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--grey-3);
 }
 
 .spec-index ul {
@@ -1122,25 +1135,7 @@ a:hover {
 }
 
 /* ---- Templates hub ----
-   Quiet text sub-navigation, additive sub-anchor blocks, clickable rows. */
-
-.vorlagen-subnav {
-  margin: var(--space-6) 0 var(--space-8);
-  font-size: 0.9375rem;
-}
-
-.vorlagen-subnav a {
-  color: var(--grey-2);
-}
-
-.vorlagen-subnav a:hover {
-  color: var(--text);
-}
-
-.vorlagen-subnav a:not(:last-child)::after {
-  content: " \00b7 ";
-  color: var(--grey-3);
-}
+   Additive sub-anchor blocks, clickable rows. */
 
 .vorlagen-block {
   margin-top: var(--space-12);
@@ -1180,14 +1175,6 @@ a:hover {
 .vorlagen-machine-note {
   font-size: 0.875rem;
   color: var(--grey-2);
-}
-
-/* The Promptotyping mark, moved out of the removed hero. */
-.vorlagen-icon {
-  width: 100px;
-  height: auto;
-  display: block;
-  margin: 0 0 var(--space-4);
 }
 
 /* ---- Frontmatter inspector ---- */
@@ -1593,10 +1580,19 @@ a:hover {
   }
 
   /* Long identifiers and full URLs are single unbreakable words; without this
-     they set the min-content width of the reading column. */
+     they set the min-content width of the reading column. Headings need it too:
+     the paper title carries words wider than a phone at 2.25rem. */
   .content code,
-  .content a {
+  .content a,
+  .content h1,
+  .content h2,
+  .content h3 {
     overflow-wrap: anywhere;
+  }
+
+  /* Set the paper title at a size a phone can hold. */
+  .content h1 {
+    font-size: 1.75rem;
   }
 
   /* The header must not push its links off-screen. */
@@ -1641,4 +1637,25 @@ a:hover {
     margin: var(--space-2) auto var(--space-1);
     flex-shrink: 0;
   }
+}
+
+/* The tree carries the numbered specification under a heading and every other
+   page as a flat list; the gap is what keeps the two from reading as one list
+   in which five entries happen to be numbered. */
+.docs-nav-rest {
+  margin-top: var(--space-6);
+}
+
+/* 404.html is a stub with a body of its own rather than the site shell. */
+.not-found-body {
+  max-width: var(--read-width);
+  margin: 0 auto;
+  padding: var(--space-16) var(--space-6);
+}
+
+/* Empty span holding a superseded anchor at its target; it takes no space. */
+.anchor-alias {
+  display: inline;
+  width: 0;
+  height: 0;
 }

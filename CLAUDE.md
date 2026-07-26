@@ -38,11 +38,13 @@ Die Site soll ruhig sein. Konkret bedeutet das beim Coden:
 ├── CLAUDE.md                   # Diese Datei (Action-Layer)
 ├── knowledge/                  # Wissensbasis (Specification)
 ├── _content/                   # Markdown-Inhalte (Paper, Vorlagen, Case Studies, Glossar, Literatur)
-├── assets/                     # CSS, JS, Vendor, Fonts, Logo
+├── assets/                     # CSS, JS, Vendor, Fonts, Logo, Paper-Abbildungen
 ├── data/                       # JSON-Datenfutter
 ├── tools/                      # Prüfskripte der Site (check_consistency.py)
 └── vault/                      # Grounded-Vault-Instanz: Provenienz-Schicht unter dem Paper (Operator-Entscheidung 2026-07-19)
 ```
+
+Die Abbildungen des Papers liegen unter `assets/figures/` und werden aus `knowledge/paper.md` mit einem repo-relativen Pfad referenziert. Das löst auf der Site auf, weil `404.html` jede Subpath-Adresse auf den Site-Root zurückwirft und die Anwendung dort läuft. In der GitHub-Vorschau von `paper.md` bleiben die Bilder deshalb leer, was der bewusste Preis für Portabilität ohne feste Domain ist.
 
 `assets/promptotyping-logo.png` bleibt erhalten. `_content/` und `data/` werden in den Implementierungs-Sprints angelegt.
 
