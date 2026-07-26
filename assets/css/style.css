@@ -955,7 +955,10 @@ a:hover {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   padding: var(--space-2) var(--space-4);
   font-size: 0.8125rem;
-  max-width: 280px;
+  max-width: 300px;
+  line-height: 1.45;
+  /* Not clickable while hidden; the visible state takes the events, or the
+     link to the full entry inside it cannot be reached. */
   pointer-events: none;
   opacity: 0;
   transition: opacity 150ms ease-out;
@@ -963,6 +966,7 @@ a:hover {
 
 .glossar-tooltip.visible {
   opacity: 1;
+  pointer-events: auto;
 }
 
 /* Sub-navigation: one quiet link per initial. */
@@ -1658,4 +1662,55 @@ a:hover {
   display: inline;
   width: 0;
   height: 0;
+}
+
+/* ---- Paper figures ----
+   Black line drawings on white. In the dark theme they are inverted rather
+   than shipped twice, which holds because they carry no hue; a coloured
+   figure would need its own file. */
+
+.paper-figure {
+  margin: var(--space-12) 0;
+}
+
+.paper-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.paper-figure figcaption {
+  margin-top: var(--space-4);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--grey-2);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .paper-figure img {
+    filter: invert(1);
+  }
+}
+
+:root[data-theme="dark"] .paper-figure img {
+  filter: invert(1);
+}
+
+:root[data-theme="light"] .paper-figure img {
+  filter: none;
+}
+
+/* The tooltip carries the whole glossary interaction since the side panel left
+   the reading flow: term, short definition, and the way to the full entry. */
+.glossar-tooltip-term {
+  display: block;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: var(--space-1);
+}
+
+.glossar-tooltip-more {
+  display: block;
+  margin-top: var(--space-2);
+  font-size: 0.8125rem;
 }

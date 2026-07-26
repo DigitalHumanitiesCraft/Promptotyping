@@ -35,9 +35,12 @@
       .then(function (text) {
         host.innerHTML = A.renderPaperMarkdown(A.stripFrontmatter(text));
         host.classList.remove("placeholder-section");
+        attachFigures(host);
         sectionizePaper(host);
         addPaperAnchorAliases(host);
         buildPaperToc(host);
+        indexReferences(host);
+        markReferenceLinks();
         injectPaperVideo(host);
         injectUseCaseReference(host);
         // Post-processing per section. The reference list is the citation target
@@ -58,6 +61,43 @@
   /* Group the flat rendered paper into one section element per H2, so every
      top-level section is an addressable and observable block. The heading id
      moves to the section; the reading order of the DOM is preserved. */
+
+  /* Join an image to the caption paragraph that follows it. The image and its
+     alt text stand in knowledge/paper.md, which is the canonical machine
+     address (ADR-10), so a consumer that fetches the Markdown gets the figure
+     too; this only supplies the semantics Markdown cannot express. A caption
+     with no image before it stays a paragraph, which is how an undrawn figure
+     degrades. */
+  function attachFigures(host) {
+    host.querySelectorAll("p > strong:first-child").forEach(function (strong) {
+      var match = /^Figure (\d+)\.$/.exec(strong.textContent.trim());
+      if (!match) {
+        return;
+      }
+      var para = strong.parentNode;
+      var prev = para.previousElementSibling;
+      if (!prev || prev.tagName !== "P" || prev.children.length !== 1
+          || prev.firstElementChild.tagName !== "IMG") {
+        return;
+      }
+      var img = prev.firstElementChild;
+      img.loading = "lazy";
+
+      var figure = document.createElement("figure");
+      figure.className = "paper-figure";
+      figure.id = "figure-" + match[1];
+      figure.appendChild(img);
+
+      var caption = document.createElement("figcaption");
+      while (para.firstChild) {
+        caption.appendChild(para.firstChild);
+      }
+      figure.appendChild(caption);
+      para.parentNode.replaceChild(figure, para);
+      prev.parentNode.removeChild(prev);
+    });
+  }
+
   function sectionizePaper(host) {
     var nodes = Array.prototype.slice.call(host.childNodes);
     var current = null;
@@ -197,6 +237,56 @@
      Conservative pass: only matches the common parenthetical pattern and links
      to the literature section anchor. Runs after a paper section renders. */
 
+
+  /* Reference anchors. Every entry of the reference list gets an id built from
+     the first author's surname and the year, so a citation in the text lands on
+     the entry rather than at the head of the list. Built once, after the paper
+     renders; a citation whose key is not in the map keeps pointing at the list. */
+  var referenceIds = {};
+
+  function referenceKey(surname, year) {
+    return A.slugify(surname) + "-" + year;
+  }
+
+  function indexReferences(host) {
+    referenceIds = {};
+    var section = document.getElementById("literatur");
+    var items = section ? section.querySelectorAll("li") : [];
+    Array.prototype.forEach.call(items, function (li) {
+      var text = li.textContent.trim();
+      var m = /^([^,]+),.*?\((\d{4}[a-z]?)\)/.exec(text) ||
+              /^([^,]+),.*?\b(\d{4}[a-z]?)\b/.exec(text);
+      if (!m) {
+        return;
+      }
+      var key = referenceKey(m[1], m[2]);
+      if (referenceIds[key]) {
+        return;
+      }
+      var id = "ref-" + key;
+      if (!li.id) {
+        li.id = id;
+      }
+      referenceIds[key] = li.id;
+      li.classList.add("reference-entry");
+    });
+  }
+
+  /* Where a reference carries a URL, the entry's title becomes the way there.
+     marked already autolinks the bare URL at the end of an entry; this only
+     marks it, so the stylesheet can set it apart from an internal jump. */
+  function markReferenceLinks() {
+    var section = document.getElementById("literatur");
+    if (!section) {
+      return;
+    }
+    section.querySelectorAll("li a[href^='http']").forEach(function (a) {
+      a.classList.add("reference-link");
+      a.target = "_blank";
+      a.rel = "noopener";
+    });
+  }
+
   function decorateCitations(sectionEl) {
     if (!sectionEl) {
       return;
@@ -204,6 +294,7 @@
     // Matches the common parenthetical citation form: a capitalised author name,
     // optionally followed by "et al." or a co-author joined by und/and/&, then a
     // four-digit year with an optional disambiguation letter.
+    var MONTH = /^(January|February|March|April|May|June|July|August|September|October|November|December)$/;
     var pattern = /\(([A-Z][A-Za-zÄÖÜäöü'’-]+(?:\s+et al\.| (?:und|and|&) [A-Z][A-Za-zÄÖÜäöü'’-]+)?),?\s+(\d{4}[a-z]?)\)/;
 
     var walker = document.createTreeWalker(sectionEl, NodeFilter.SHOW_TEXT, {
@@ -235,9 +326,14 @@
       }
       var idx = m.index;
       var matched = m[0];
+      if (MONTH.test(m[1])) {
+        return;
+      }
+      var surname = m[1].replace(/\s+et al\.$/, "").split(/\s+(?:und|and|&)\s+/)[0];
+      var target = referenceIds[referenceKey(surname, m[2])];
       var link = document.createElement("a");
       link.className = "citation-link";
-      link.href = "#literatur";
+      link.href = "#" + (target || "literatur");
       link.textContent = matched;
 
       var afterText = text.substr(idx + matched.length);

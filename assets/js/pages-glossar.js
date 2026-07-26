@@ -90,19 +90,6 @@
       });
   }
 
-  function openGlossarPanel(slug) {
-    var e = glossarBySlug[slug];
-    if (!e) {
-      return;
-    }
-    var html =
-      '<p class="glossar-kurz">' + A.escapeHtml(e.kurz) + "</p>" +
-      "<p>" + A.escapeHtml(e.voll) + "</p>" +
-      '<p class="glossar-quelle">Source: ' + A.escapeHtml(e.quelle) + "</p>" +
-      '<p class="panel-footer"><a href="#glossar-' + e.slug + '">Show in the glossary</a></p>';
-    A.openSidePanel(e.begriff, html);
-  }
-
   /* ---- Glossary triggers in the paper reading flow ----
      After a paper section renders, mark the first occurrence of each glossar
      term in that section (text-node scan, case-insensitive, outside links, code,
@@ -205,24 +192,48 @@
     return e.target.closest && e.target.closest(".glossar-trigger");
   }
 
+  /* Show the tooltip for a trigger and keep it there until something else
+     takes over. The tooltip carries the short definition and a link to the full
+     glossary entry, which is the whole interaction; the side panel that used to
+     open on click is gone (operator decision, 26 July 2026). */
+  function showGlossarTip(trigger) {
+    var slug = trigger.getAttribute("data-glossar");
+    var entry = glossarBySlug[slug];
+    if (!entry) {
+      return;
+    }
+    var tip = ensureGlossarTooltip();
+    tip.innerHTML = '<span class="glossar-tooltip-term">' + A.escapeHtml(entry.begriff) +
+      "</span>" + A.escapeHtml(entry.kurz) +
+      '<a class="glossar-tooltip-more" href="#glossar-' + A.escapeHtml(slug) + '">Full entry</a>';
+    var rect = trigger.getBoundingClientRect();
+    tip.style.left = Math.max(8, Math.min(rect.left + window.scrollX,
+      window.scrollX + document.documentElement.clientWidth - tip.offsetWidth - 8)) + "px";
+    tip.style.top = (rect.bottom + window.scrollY + 6) + "px";
+    tip.classList.add("visible");
+    activeTrigger = trigger;
+  }
+
+  function hideGlossarTip() {
+    if (glossarHoverTimer) {
+      clearTimeout(glossarHoverTimer);
+      glossarHoverTimer = null;
+    }
+    if (glossarTooltipEl) {
+      glossarTooltipEl.classList.remove("visible");
+    }
+    activeTrigger = null;
+  }
+
+  var activeTrigger = null;
+
   function setupGlossarInteraction(contentEl) {
     contentEl.addEventListener("mouseover", function (e) {
       var trigger = triggerOf(e);
-      if (!trigger) {
+      if (!trigger || trigger === activeTrigger) {
         return;
       }
-      var entry = glossarBySlug[trigger.getAttribute("data-glossar")];
-      if (!entry) {
-        return;
-      }
-      var rect = trigger.getBoundingClientRect();
-      glossarHoverTimer = setTimeout(function () {
-        var tip = ensureGlossarTooltip();
-        tip.textContent = entry.kurz;
-        tip.style.left = (rect.left + window.scrollX) + "px";
-        tip.style.top = (rect.bottom + window.scrollY + 6) + "px";
-        tip.classList.add("visible");
-      }, 500);
+      glossarHoverTimer = setTimeout(function () { showGlossarTip(trigger); }, 400);
     });
 
     contentEl.addEventListener("mouseout", function (e) {
@@ -233,35 +244,53 @@
         clearTimeout(glossarHoverTimer);
         glossarHoverTimer = null;
       }
-      if (glossarTooltipEl) {
-        glossarTooltipEl.classList.remove("visible");
-      }
-    });
-
-    contentEl.addEventListener("click", function (e) {
-      var trigger = triggerOf(e);
-      if (!trigger) {
+      // Leaving the trigger for the tooltip itself must not close it, or the
+      // link inside is unreachable.
+      var to = e.relatedTarget;
+      if (glossarTooltipEl && to && glossarTooltipEl.contains(to)) {
         return;
       }
-      openGlossarPanel(trigger.getAttribute("data-glossar"));
+      hideGlossarTip();
     });
 
-    // Keyboard activation: Enter/Space on a focused glossar-trigger opens the panel.
-    contentEl.addEventListener("keydown", function (e) {
-      if (e.key !== "Enter" && e.key !== " ") {
-        return;
-      }
+    // Click and keyboard both toggle the tooltip. Touch has no hover, so the
+    // click is the only way in there.
+    function toggle(e) {
       var trigger = triggerOf(e);
       if (!trigger) {
         return;
       }
       e.preventDefault();
-      openGlossarPanel(trigger.getAttribute("data-glossar"));
+      if (trigger === activeTrigger) {
+        hideGlossarTip();
+      } else {
+        showGlossarTip(trigger);
+      }
+    }
+
+    contentEl.addEventListener("click", toggle);
+    contentEl.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") {
+        hideGlossarTip();
+        return;
+      }
+      if (e.key === "Enter" || e.key === " ") {
+        toggle(e);
+      }
+    });
+
+    document.addEventListener("click", function (e) {
+      if (!activeTrigger) {
+        return;
+      }
+      if (triggerOf(e) || (glossarTooltipEl && glossarTooltipEl.contains(e.target))) {
+        return;
+      }
+      hideGlossarTip();
     });
   }
 
   A.renderGlossar = renderGlossar;
-  A.openGlossarPanel = openGlossarPanel;
   A.decorateGlossarTriggers = decorateGlossarTriggers;
   A.setupGlossarInteraction = setupGlossarInteraction;
   A.konzeptSlug = konzeptSlug;

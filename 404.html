@@ -8,13 +8,15 @@
   <link rel="canonical" href="https://dhcraft.org/Promptotyping/">
 
   <script>
-    // Apply the stored theme before first paint, so a dark reader never sees
-    // a white flash.
+    // Light is the default view (operator decision, 26 July 2026), so the
+    // attribute is always set and the system preference never decides. Applied
+    // before first paint, so a reader who chose dark sees no white flash.
     (function () {
+      var t = "light";
       try {
-        var t = localStorage.getItem("promptotyping-theme");
-        if (t) { document.documentElement.setAttribute("data-theme", t); }
+        t = localStorage.getItem("promptotyping-theme") || "light";
       } catch (e) {}
+      document.documentElement.setAttribute("data-theme", t);
     })();
   </script>
   <link rel="stylesheet" href="assets/css/style.css">

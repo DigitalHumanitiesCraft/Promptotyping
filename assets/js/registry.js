@@ -305,11 +305,9 @@
     }
     if (/^konzept-/.test(hash)) {
       var slug = A.konzeptSlug(hash.replace(/^konzept-/, ""));
+      showPage("glossar");
       if (document.getElementById("glossar-" + slug)) {
-        showPage("glossar");
         scrollToAnchor("glossar-" + slug);
-      } else {
-        A.openGlossarPanel(slug);
       }
       return true;
     }
