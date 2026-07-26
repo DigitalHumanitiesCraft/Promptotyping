@@ -285,25 +285,26 @@ The method's evidence is its documented projects, presented at two levels of res
 
 ### 5.2 The Project Inventory
 
-The table's projects run from spring 2025 into mid-2026. Most are traceable through a publicly accessible repository containing Promptotyping Documents, code, and data, and several are additionally documented through video recordings of the working process. Three repositories are closed at the time of writing, the ZBZ pipeline, HerData, and the medieval legal-transactions project. For these the table reports the state I verified in the local working copies, and for the ZBZ pipeline the verification frontend is public even while the repository is not (note at Section 5.3).
+The table's projects run from spring 2025 into mid-2026. Most are traceable through a publicly accessible repository containing Promptotyping Documents, code, and data, and several are additionally documented through video recordings of the working process. Three repositories are closed at the time of writing, the ZBZ pipeline, HerData, and the medieval legal-transactions project, and for these the statements below rest on the local working copies. For the ZBZ pipeline the verification frontend is public even while the repository is not (note at Section 5.3). The table names the kind of material each project worked on and leaves its extent to the repositories, since a corpus that is still growing carries no stable figure.
 
 **Table 1.** The documented projects, their source data, the interface types they produced, and what each contributes methodologically.
 
 |Project|Data|Interface Type(s)|Methodological Contribution|
 |---|---|---|---|
-|Hans Gross Kriminalmuseum|TEI + LIDO, 3,892 objects|Exploration|Dual paradigm: search + spatial exploration|
-|CorrespExplorer|CMIF/TEI, 11,576 letters|Exploration|First complete document set of the record, with journal and test suite|
-|HerData|TEI/Wikidata, 1,793 women-related letters (of 15,312)|Exploration|Gender-focused network with bias transparency section|
+|Hans Gross Kriminalmuseum|TEI and LIDO object corpus|Exploration|Dual paradigm: search + spatial exploration|
+|CorrespExplorer|CMIF/TEI letter corpus|Exploration|First complete document set of the record, with journal and test suite|
+|HerData|TEI/Wikidata, women-related letters within a larger correspondence corpus|Exploration|Gender-focused network with bias transparency section|
 |coOCR-HTR|OCR/HTR outputs|Verification|Prototype under a regression suite; the record's one community fork (ÖAW)|
-|VetMedAI Wissensbilanz|~80 Excel files|Exploration|Hand-curated knowledge base over a heterogeneous spreadsheet corpus|
-|Kulturpool Explorer|Kulturpool API, ~19k objects|Exploration|Parallel agent orchestration|
-|wiiw Patent Analysis|Patent cooperation CSV|Exploration|Promptotyping outside DH|
-|Medieval Legal Transactions|~3,600 TEI-XML (~3,100 released)|Edition|Agentic edition workflow under a regression suite|
+|SZD-HTR Pipeline|Digitised estate: correspondence, life documents, works, essay files|Verification|Worked example of Section 3.4; the record's production-scale pipeline|
+|VetMedAI Wissensbilanz|Excel reporting files of the Austrian universities|Exploration|Hand-curated knowledge base over a heterogeneous spreadsheet corpus|
+|Kulturpool Explorer|Kulturpool API|Exploration|Parallel agent orchestration|
+|wiiw Patent Analysis|Patent cooperation data, synthetic stand-in for the confidential original|Exploration|Promptotyping outside DH; development against synthesised data|
+|Medieval Legal Transactions|TEI-XML edition corpus, released in part|Edition|Agentic edition workflow under a regression suite|
 |M³GIM|RiC-O/JSON-LD, archival data|Exploration, Capture|Data model evolves through the interface, carried by a decision register|
-|ZBZ OCR/TEI Pipeline|286 PDFs, ~4,150 pages|Verification, Edition|Full pipeline infrastructure with a verification interface at each stage|
-|Notker Edition|DOCX, Psalm 2 (13 verses)|Edition|Layer-toggle edition, IIIF, TEI-first|
-|Klawiter Bibliography Rescue|MediaWiki SQL/BLOB, 6,296 entries|Verification, Capture|Data rescue: staged pipeline + curation interface under a test suite|
-|FemPrompt SozArb|326 academic papers|Audit|Beyond DH: literature review infrastructure with a generated vault|
+|ZBZ OCR/TEI Pipeline|PDF scans of multilingual estate materials|Verification, Edition|Full pipeline infrastructure with a verification interface at each stage|
+|Notker Edition|DOCX, Psalm 2|Edition|Layer-toggle edition, IIIF, TEI-first|
+|Klawiter Bibliography Rescue|MediaWiki SQL/BLOB dump|Verification, Capture|Data rescue: staged pipeline + curation interface under a test suite|
+|FemPrompt SozArb|Academic paper corpus|Audit|Beyond DH: literature review infrastructure with a generated vault|
 
 The companion carries the repository URLs and video references that the table omits.
 
@@ -315,7 +316,7 @@ The worked cases below cover four of the five functions, and their yields are of
 
 **Verification: the ZBZ OCR/TEI pipeline.**[^zbz]
 
-- **Source data:** 286 PDF scans, approximately 4,150 pages of estate materials of the Zentralbibliothek Zürich.
+- **Source data:** PDF scans of estate materials of the Zentralbibliothek Zürich, multilingual and across several document genres.
 - **Documents:** a knowledge base governing the pipeline stage by stage, and a Python codebase generated and maintained through the agent, whose generation the repository's commit history carries.
 - **Artefact:** Verification Interfaces at each pipeline stage, with multi-source OCR comparison and layout overlay, plus an Edition Interface as reader.
 - **Epistemic yield:** the interfaces interrupt the error cascade that characterises multi-stage automated pipelines by giving expert judgement a defined place at each milestone. The corpus was handed over with every stream marked unverified, and the scholarly curation lies with the partner institution.
@@ -323,7 +324,7 @@ The worked cases below cover four of the five functions, and their yields are of
 
 **Exploration: the CorrespExplorer.**[^8]
 
-- **Source data:** 11,576 CMIF-encoded letters.
+- **Source data:** the CMIF-encoded letter corpus of the correspSearch aggregation.
 - **Documents:** the first complete document set of the record, with user stories, a design document, a phase-by-phase journal, and a browser-based test suite.
 - **Artefact:** 12 coordinated visualisation views over the correspondence metadata.
 - **Epistemic yield:** the Exploration phase produced a possibility space that the expert pruned against domain criteria. The project's process documentation records context degradation well inside the advertised context window, observed qualitatively and not measured.

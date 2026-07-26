@@ -85,9 +85,9 @@
       "repo_url": "https://github.com/chpollin/szd-htr-ocr-pipeline",
       "demo_url": "https://chpollin.github.io/szd-htr-ocr-pipeline/",
       "video_url": null,
-      "insight": null,
+      "insight": "Worked example of Section 3.4; the record's production-scale pipeline",
       "deep_page": false,
-      "paper_row": null
+      "paper_row": "SZD-HTR Pipeline"
     },
     {
       "id": "aldersbach",
@@ -293,7 +293,7 @@
       ],
       "repo_url": null,
       "demo_url": null,
-      "video_url": "https://youtu.be/3W9FjwCY24Q",
+      "video_url": null,
       "insight": "Agentic edition workflow under a regression suite",
       "deep_page": true,
       "paper_row": "Medieval Legal Transactions"

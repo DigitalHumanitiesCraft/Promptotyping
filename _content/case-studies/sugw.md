@@ -12,7 +12,7 @@ The project edits the prosopographic database of medieval Viennese legal transac
 
 ## Data
 
-The corpus is a large set of TEI-XML documents, most of them in the subdirectories marked as done, alongside an extensive CSV dataset. The repository's generated validation report holds the current counts.
+The corpus is a large set of TEI-XML documents, most of them in the subdirectories marked as done, alongside an extensive CSV dataset. The repository's generated validation report holds the current figures.
 
 ## Approach
 
@@ -32,4 +32,4 @@ The case is the record's clearest instance of the division of labour the method 
 
 The corpus is not schema-valid, and the project says so. The generated validation report records that a minority of the files validate against the toolbox schema while the majority do not, and it carries the schema errors and referential-integrity findings behind that. The report frames these as residual annotation issues in the source corpus, deliberately surfaced for editorial triage. Read as a defect that is the worst figure in the record. Read as a property it is the point, because the pipeline makes the state of the source visible. A pipeline that suppressed those errors would deliver a clean-looking edition over unclean data.
 
-The repository is not public and the test deployment does not currently answer, so the figures above rest on the generated report and on the video documentation. No reader can open the corpus itself. Most of the knowledge documents carry no frontmatter, which puts the knowledge base outside the addressing mechanism the convention describes.
+Nothing about this case is open to inspection. The repository is not public, the test deployment does not answer, and the recorded session is not published either, so every statement on this page rests on the repository's own generated report and on a reading of the source tree. That makes it the least verifiable of the cases the paper offers as evidence. Most of the knowledge documents also carry no frontmatter, which puts the knowledge base outside the addressing mechanism the convention describes.
