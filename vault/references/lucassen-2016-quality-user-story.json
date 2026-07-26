@@ -1,0 +1,39 @@
+[
+  {
+    "id": "lucassen-2016",
+    "type": "article-journal",
+    "title": "Improving agile requirements: the Quality User Story framework and tool",
+    "author": [
+      {
+        "family": "Lucassen",
+        "given": "Garm"
+      },
+      {
+        "family": "Dalpiaz",
+        "given": "Fabiano"
+      },
+      {
+        "family": "van der Werf",
+        "given": "Jan Martijn E. M."
+      },
+      {
+        "family": "Brinkkemper",
+        "given": "Sjaak"
+      }
+    ],
+    "container-title": "Requirements Engineering",
+    "volume": "21",
+    "issue": "3",
+    "page": "383-403",
+    "issued": {
+      "date-parts": [
+        [
+          2016
+        ]
+      ]
+    },
+    "DOI": "10.1007/s00766-016-0250-x",
+    "URL": "https://doi.org/10.1007/s00766-016-0250-x",
+    "note": "Open access, CC BY 4.0. Quote-checked against the publisher PDF at https://link.springer.com/content/pdf/10.1007/s00766-016-0250-x.pdf, retrieved 2026-07-26; ligatures normalised in quotation."
+  }
+]

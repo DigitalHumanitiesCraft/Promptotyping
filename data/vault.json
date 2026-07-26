@@ -9,7 +9,7 @@
    "slug": "MOC-ArtefactVerification",
    "topic": "ArtefactVerification",
    "title": "MOC: ArtefactVerification",
-   "description": "Added with the Phase C revision round of 2026-07-24:",
+   "description": "Added 2026-07-26 from the site-vocabulary literature sweep (lane C1):",
    "claims": [
     "ssh-open-marketplace-models-workflows-as-step-sequences",
     "client-side-provenance-tool-is-a-precedent-for-server-free-artefacts",
@@ -32,14 +32,17 @@
     "tadirah-classifies-dh-research-activities",
     "coordinated-multiple-views-enable-exploration",
     "static-client-side-editions-reach-tens-of-thousands-of-units",
-    "szd-htr-confabulated-reading-in-hasty-kurrent"
+    "szd-htr-confabulated-reading-in-hasty-kurrent",
+    "toulmin-layout-separates-claim-grounds-warrant-and-backing",
+    "nanopublication-binds-a-statement-to-the-annotations-that-carry-its-context",
+    "llm-judgement-approximates-human-preference-and-carries-known-biases"
    ]
   },
   {
    "slug": "MOC-Concepts",
    "topic": "Concepts",
    "title": "MOC: Concepts",
-   "description": "Added from the video distillates of 2026-07-25:",
+   "description": "Added 2026-07-26 from the site-vocabulary literature sweep (lane C1):",
    "claims": [
     "deck-characterises-llms-as-jagged-alien",
     "deck-derives-context-and-verification-from-llm-profile",
@@ -53,7 +56,8 @@
     "a-prototype-can-embody-a-peer-reviewable-argument",
     "humanities-data-modelling-is-interpretive-shaping",
     "visual-analytics-process-models-describe-process-not-interfaces",
-    "expert-role-carries-a-domain-and-a-development-judgement"
+    "expert-role-carries-a-domain-and-a-development-judgement",
+    "dialogue-agent-behaviour-is-described-as-role-play"
    ]
   },
   {
@@ -175,7 +179,7 @@
    "slug": "MOC-Method",
    "topic": "Method",
    "title": "MOC: Method",
-   "description": "Added 2026-07-26 from the frontmatter-core survey, a dated self-observation with a stated reproducibility limit:",
+   "description": "Added 2026-07-26 from the site-vocabulary literature sweep (lane C1), which tests whether five site coinages attach to established names:",
    "claims": [
     "promptotyping-documentation-over-software",
     "promptotyping-documents-form-freedom",
@@ -198,7 +202,13 @@
     "radical-design-request-widens-the-interface-option-space",
     "interface-defect-is-reported-through-the-element-identifier",
     "expert-role-carries-a-domain-and-a-development-judgement",
-    "reduced-frontmatter-core-met-in-about-half-the-documents-2026-07-26"
+    "reduced-frontmatter-core-met-in-about-half-the-documents-2026-07-26",
+    "qus-defines-thirteen-user-story-quality-criteria",
+    "aqusa-checks-the-criteria-a-rule-can-decide",
+    "least-privilege-bounds-damage-and-narrows-the-audit",
+    "multi-agent-frameworks-assign-roles-along-an-encoded-procedure",
+    "diataxis-separates-documentation-along-action-and-cognition",
+    "research-compendium-separates-data-method-and-output"
    ]
   }
  ],
@@ -249,6 +259,33 @@
      "distillate": "pollin-2024-workshopreihe",
      "path": "10_distillates/publications/pollin-2024-workshopreihe",
      "statement": "s2"
+    }
+   ]
+  },
+  {
+   "slug": "aqusa-checks-the-criteria-a-rule-can-decide",
+   "title": "The QUS tool checks only the criteria a rule can decide and excludes the semantic ones, because those require understanding of the requirement's content.",
+   "statement": "AQUSA is designed for the clerical part of requirements engineering, the defects that are easy to describe and algorithmically determinable. Its selection rule admits the syntactic criteria and those pragmatic criteria a rule can decide, and it excludes the semantic criteria on the stated ground that they require deep understanding of the content. The reported first version implements five analyzers, for well-formed, atomic, minimal, unique and uniform. This is the source's own division between what a script decides and what a reader must decide, and it is the division the site's script-versus-LLM vocabulary describes from the other end.",
+   "status": "grounded",
+   "topics": [
+    "Method"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "lucassen-2016-quality-user-story",
+     "path": "10_distillates/publications/lucassen-2016-quality-user-story",
+     "statement": "s7"
+    },
+    {
+     "distillate": "lucassen-2016-quality-user-story",
+     "path": "10_distillates/publications/lucassen-2016-quality-user-story",
+     "statement": "s8"
+    },
+    {
+     "distillate": "lucassen-2016-quality-user-story",
+     "path": "10_distillates/publications/lucassen-2016-quality-user-story",
+     "statement": "s9"
     }
    ]
   },
@@ -645,6 +682,95 @@
      "distillate": "siemens-2009-reply-all-teams",
      "path": "10_distillates/publications/siemens-2009-reply-all-teams",
      "statement": "s2"
+    }
+   ]
+  },
+  {
+   "slug": "dialogue-agent-behaviour-is-described-as-role-play",
+   "title": "The literature describes a dialogue agent's behaviour as role play set by its prompt, and sharpens this into a simulator holding a distribution of characters rather than one fixed role.",
+   "statement": "Shanahan, McDonell and Reynolds propose role play as the central concept for understanding dialogue-agent behaviour, with the role set by the prompt prepended to the exchange. The framing lets belief and goal vocabulary be used about the agent without asserting it in the human sense. They then correct the metaphor, since the agent commits to no well defined role in advance but generates a distribution of characters and refines it as the exchange proceeds, which they describe as a non-deterministic simulator producing simulacra. Role play is therefore the established name for what the site calls role simulation, and the correction bounds it, because a prompt-set role is a distribution the exchange keeps reshaping rather than an enforced boundary.",
+   "status": "grounded",
+   "topics": [
+    "Concepts"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "shanahan-2023-role-play",
+     "path": "10_distillates/publications/shanahan-2023-role-play",
+     "statement": "s1"
+    },
+    {
+     "distillate": "shanahan-2023-role-play",
+     "path": "10_distillates/publications/shanahan-2023-role-play",
+     "statement": "s2"
+    },
+    {
+     "distillate": "shanahan-2023-role-play",
+     "path": "10_distillates/publications/shanahan-2023-role-play",
+     "statement": "s3"
+    },
+    {
+     "distillate": "shanahan-2023-role-play",
+     "path": "10_distillates/publications/shanahan-2023-role-play",
+     "statement": "s4"
+    },
+    {
+     "distillate": "shanahan-2023-role-play",
+     "path": "10_distillates/publications/shanahan-2023-role-play",
+     "statement": "s5"
+    },
+    {
+     "distillate": "shanahan-2023-role-play",
+     "path": "10_distillates/publications/shanahan-2023-role-play",
+     "statement": "s6"
+    }
+   ]
+  },
+  {
+   "slug": "diataxis-separates-documentation-along-action-and-cognition",
+   "title": "Diataxis separates technical documentation along an action-against-cognition axis, the same cut a knowledge base makes between a declarative document and an imperative one.",
+   "statement": "Procida derives four documentation types from two axes. The first separates action, practical knowledge, knowing how and what we do, from cognition, theoretical knowledge, knowing that and what we think, and holds the two to be counterparts that are wholly distinct. The second separates acquiring a practice from applying it. Reference is defined as propositional knowledge that is explicitly not a guide to action, and a how-to guide by the situation of an already-competent user pursuing a goal. The framework is the established, citable name for the axis along which a knowledge base splits a declarative document from an imperative one, while its second axis, study against work, presupposes a reader who acquires a skill over time and has no counterpart when the addressee is a model that loads the document per session.",
+   "status": "grounded",
+   "topics": [
+    "Method"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "procida-2024-diataxis",
+     "path": "10_distillates/publications/procida-2024-diataxis",
+     "statement": "s1"
+    },
+    {
+     "distillate": "procida-2024-diataxis",
+     "path": "10_distillates/publications/procida-2024-diataxis",
+     "statement": "s2"
+    },
+    {
+     "distillate": "procida-2024-diataxis",
+     "path": "10_distillates/publications/procida-2024-diataxis",
+     "statement": "s3"
+    },
+    {
+     "distillate": "procida-2024-diataxis",
+     "path": "10_distillates/publications/procida-2024-diataxis",
+     "statement": "s4"
+    },
+    {
+     "distillate": "procida-2024-diataxis",
+     "path": "10_distillates/publications/procida-2024-diataxis",
+     "statement": "s5"
+    },
+    {
+     "distillate": "procida-2024-diataxis",
+     "path": "10_distillates/publications/procida-2024-diataxis",
+     "statement": "s6"
+    },
+    {
+     "distillate": "procida-2024-diataxis",
+     "path": "10_distillates/publications/procida-2024-diataxis",
+     "statement": "s7"
     }
    ]
   },
@@ -1576,6 +1702,48 @@
    ]
   },
   {
+   "slug": "least-privilege-bounds-damage-and-narrows-the-audit",
+   "title": "Least privilege, the established name for giving an actor only the permissions its task needs, bounds the damage of an error and narrows what an audit has to cover.",
+   "statement": "Saltzer and Schroeder state least privilege as one of eight protection design principles, requiring every program and every user to operate with the least set of privileges the job needs. They give three effects, a bound on the damage an accident or error can do, a reduction of the interactions among privileged programs and therefore of the surface for improper use, and a smaller set of programs that must be audited when misuse is suspected. The principle also tells the designer where to put a boundary. This is the established name for the arrangement in which an analysis agent holds read permissions only.",
+   "status": "grounded",
+   "topics": [
+    "Method"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "saltzer-1975-protection-of-information",
+     "path": "10_distillates/publications/saltzer-1975-protection-of-information",
+     "statement": "s1"
+    },
+    {
+     "distillate": "saltzer-1975-protection-of-information",
+     "path": "10_distillates/publications/saltzer-1975-protection-of-information",
+     "statement": "s2"
+    },
+    {
+     "distillate": "saltzer-1975-protection-of-information",
+     "path": "10_distillates/publications/saltzer-1975-protection-of-information",
+     "statement": "s3"
+    },
+    {
+     "distillate": "saltzer-1975-protection-of-information",
+     "path": "10_distillates/publications/saltzer-1975-protection-of-information",
+     "statement": "s4"
+    },
+    {
+     "distillate": "saltzer-1975-protection-of-information",
+     "path": "10_distillates/publications/saltzer-1975-protection-of-information",
+     "statement": "s5"
+    },
+    {
+     "distillate": "saltzer-1975-protection-of-information",
+     "path": "10_distillates/publications/saltzer-1975-protection-of-information",
+     "statement": "s6"
+    }
+   ]
+  },
+  {
    "slug": "llm-assistance-raises-performance-inside-and-lowers-it-outside-a-jagged-frontier",
    "title": "LLM assistance raises performance on tasks inside a jagged capability frontier and lowers it on tasks outside, within one workflow.",
    "statement": "In a field experiment with 758 consultants, access to a frontier LLM raised productivity and output quality on the consulting tasks that lay inside the boundary of AI capability and lowered the rate of correct solutions on a task that lay outside it. The two effects belong to one flow of interdependent tasks, and difficulty as a human judges it does not tell the two groups of tasks apart. The study names this uneven boundary the jagged technological frontier.",
@@ -1631,6 +1799,38 @@
      "distillate": "liu-2024-llm-agents-se-survey",
      "path": "10_distillates/publications/liu-2024-llm-agents-se-survey",
      "statement": "s2"
+    }
+   ]
+  },
+  {
+   "slug": "llm-judgement-approximates-human-preference-and-carries-known-biases",
+   "title": "A strong judging model matches human preference at the rate humans match each other, and carries position, verbosity and self-enhancement biases together with limited reasoning.",
+   "statement": "Zheng et al. measure the agreement between a strong language model acting as judge and human preference on open-ended questions, and report over eighty per cent, the same level at which humans agree with each other. They name the pattern's limitations in the same breath, position bias, verbosity bias, self-enhancement bias and limited reasoning ability, and present the arrangement as a scalable approximation of human preference. The measurement marks the zone in which a model may legitimately be asked to judge, questions no rule decides and whose answer is a preference; it does not extend to a judgement a rule already decides, and it does not reach a scholarly judgement against sources.",
+   "status": "grounded",
+   "topics": [
+    "ArtefactVerification"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "zheng-2023-llm-as-a-judge",
+     "path": "10_distillates/publications/zheng-2023-llm-as-a-judge",
+     "statement": "s1"
+    },
+    {
+     "distillate": "zheng-2023-llm-as-a-judge",
+     "path": "10_distillates/publications/zheng-2023-llm-as-a-judge",
+     "statement": "s2"
+    },
+    {
+     "distillate": "zheng-2023-llm-as-a-judge",
+     "path": "10_distillates/publications/zheng-2023-llm-as-a-judge",
+     "statement": "s3"
+    },
+    {
+     "distillate": "zheng-2023-llm-as-a-judge",
+     "path": "10_distillates/publications/zheng-2023-llm-as-a-judge",
+     "statement": "s4"
     }
    ]
   },
@@ -1908,6 +2108,85 @@
      "distillate": "risam-2022-minimal-computing",
      "path": "10_distillates/publications/risam-2022-minimal-computing",
      "statement": "s2"
+    }
+   ]
+  },
+  {
+   "slug": "multi-agent-frameworks-assign-roles-along-an-encoded-procedure",
+   "title": "Multi-agent frameworks assign distinct roles to separate agent instances along an encoded work procedure, so that intermediate results are checked by an agent other than their producer.",
+   "statement": "MetaGPT encodes standardised operating procedures into prompt sequences and assigns diverse roles to agents on an assembly-line pattern, decomposing a complex task into subtasks worked by several agents. The stated purpose is that agents verify intermediate results and thereby reduce errors, against the cascading hallucinations that arise from naively chaining models; on collaborative software-engineering benchmarks the arrangement produces more coherent solutions than undifferentiated chat-based systems. This is the literature's name for role separation across agent instances. Permissions are not part of it, so the graded-rights half of the site's sub-agent construct rests on the security principle instead.",
+   "status": "grounded",
+   "topics": [
+    "Method"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "hong-2023-metagpt",
+     "path": "10_distillates/publications/hong-2023-metagpt",
+     "statement": "s1"
+    },
+    {
+     "distillate": "hong-2023-metagpt",
+     "path": "10_distillates/publications/hong-2023-metagpt",
+     "statement": "s2"
+    },
+    {
+     "distillate": "hong-2023-metagpt",
+     "path": "10_distillates/publications/hong-2023-metagpt",
+     "statement": "s3"
+    },
+    {
+     "distillate": "hong-2023-metagpt",
+     "path": "10_distillates/publications/hong-2023-metagpt",
+     "statement": "s4"
+    }
+   ]
+  },
+  {
+   "slug": "nanopublication-binds-a-statement-to-the-annotations-that-carry-its-context",
+   "title": "The nanopublication model makes a single statement citable by binding it to the annotations that carry its provenance and its assertion.",
+   "statement": "Groth, Gibson and Velterop start from the observation that a statement can be validated only with its context, which a traditional publication supplies implicitly, and ask what must be added once the statement is separated from the document. Their model defines a statement as a uniquely identifiable triple, an annotation as a triple whose subject is a statement, and a nanopublication as the set of annotations referring to one statement together with an agreed minimum of them. The annotations carry provenance, where a statement came from, who imported it and who authored it, and an explicit assertion relation lets an entity claim the content. The requirements the model answers to are citability, attributability and reviewability, which is the closest prior art for a document that holds one claim with its evidence.",
+   "status": "grounded",
+   "topics": [
+    "ArtefactVerification"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "groth-2010-nanopublication",
+     "path": "10_distillates/publications/groth-2010-nanopublication",
+     "statement": "s1"
+    },
+    {
+     "distillate": "groth-2010-nanopublication",
+     "path": "10_distillates/publications/groth-2010-nanopublication",
+     "statement": "s2"
+    },
+    {
+     "distillate": "groth-2010-nanopublication",
+     "path": "10_distillates/publications/groth-2010-nanopublication",
+     "statement": "s3"
+    },
+    {
+     "distillate": "groth-2010-nanopublication",
+     "path": "10_distillates/publications/groth-2010-nanopublication",
+     "statement": "s4"
+    },
+    {
+     "distillate": "groth-2010-nanopublication",
+     "path": "10_distillates/publications/groth-2010-nanopublication",
+     "statement": "s5"
+    },
+    {
+     "distillate": "groth-2010-nanopublication",
+     "path": "10_distillates/publications/groth-2010-nanopublication",
+     "statement": "s6"
+    },
+    {
+     "distillate": "groth-2010-nanopublication",
+     "path": "10_distillates/publications/groth-2010-nanopublication",
+     "statement": "s7"
     }
    ]
   },
@@ -2207,6 +2486,48 @@
    ]
   },
   {
+   "slug": "qus-defines-thirteen-user-story-quality-criteria",
+   "title": "The Quality User Story framework fixes thirteen criteria for user-story quality, grouped syntactic, semantic and pragmatic, and scoped either to one story or to the set.",
+   "statement": "Lucassen, Dalpiaz, van der Werf and Brinkkemper define thirteen quality criteria for user stories and organise them in Lindland's three categories. Syntactic quality holds well-formed, atomic and minimal; semantic quality holds conceptually sound, problem-oriented, unambiguous and conflict-free; pragmatic quality holds full sentence, estimatable, unique, uniform, independent and complete. A second classification records whether a criterion is judged against a single story or against the set, which puts conflict-free, unique, uniform, independent and complete at the level of the document rather than the line. Every criterion judges the intrinsic quality of the story text and none of them asks whether the story is true of the user it names.",
+   "status": "grounded",
+   "topics": [
+    "Method"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "lucassen-2016-quality-user-story",
+     "path": "10_distillates/publications/lucassen-2016-quality-user-story",
+     "statement": "s1"
+    },
+    {
+     "distillate": "lucassen-2016-quality-user-story",
+     "path": "10_distillates/publications/lucassen-2016-quality-user-story",
+     "statement": "s2"
+    },
+    {
+     "distillate": "lucassen-2016-quality-user-story",
+     "path": "10_distillates/publications/lucassen-2016-quality-user-story",
+     "statement": "s3"
+    },
+    {
+     "distillate": "lucassen-2016-quality-user-story",
+     "path": "10_distillates/publications/lucassen-2016-quality-user-story",
+     "statement": "s4"
+    },
+    {
+     "distillate": "lucassen-2016-quality-user-story",
+     "path": "10_distillates/publications/lucassen-2016-quality-user-story",
+     "statement": "s5"
+    },
+    {
+     "distillate": "lucassen-2016-quality-user-story",
+     "path": "10_distillates/publications/lucassen-2016-quality-user-story",
+     "statement": "s6"
+    }
+   ]
+  },
+  {
    "slug": "radical-design-request-widens-the-interface-option-space",
    "title": "A deliberately outlandish design request widens the space of interface options the session considers.",
    "statement": "At the close of the recorded session the author orders a design in the style of Frank Herbert's Dune, classes the step as unprofessional, and states that trying radically different things with such interfaces can yield interface elements and designs nobody had thought of, which widens the possibility space and lets the first iteration teach something for the next phase. A single prompt produces the science-fiction interface, whose sense he leaves open, and he names the exploration of the possibility space as what Promptotyping is about. The claim carries the widening as the source states it. That the tool's defaults reproduce design conventions is not stated in this source; the nearest thing it carries is the unrequested dark mode as a typical addition. The witness is the method's author on his own session.",
@@ -2323,6 +2644,48 @@
      "distillate": "posner-2015-necessary-contradiction",
      "path": "10_distillates/publications/posner-2015-necessary-contradiction",
      "statement": "s4"
+    }
+   ]
+  },
+  {
+   "slug": "research-compendium-separates-data-method-and-output",
+   "title": "The research compendium is the established name for a repository that holds a project's data, method and output under community conventions, with the data read-only and the relation between the three made explicit.",
+   "statement": "Marwick, Boettiger and Mullen define the research compendium by three principles that hold independently of tooling and discipline. Its files follow the conventions of the scholarly community, so that others recognise the structure and tools can build on it. It separates data, method and output while stating unambiguously how they relate, which treats the data as read-only and documents every modification in the code. And it specifies the computational environment the original analysis ran in. The arrangement is the reproducibility tradition's counterpart to a repository holding a standalone research dataset beside the code that renders it, and it names the separation the pattern already practises.",
+   "status": "grounded",
+   "topics": [
+    "Method"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "marwick-2018-research-compendium",
+     "path": "10_distillates/publications/marwick-2018-research-compendium",
+     "statement": "s1"
+    },
+    {
+     "distillate": "marwick-2018-research-compendium",
+     "path": "10_distillates/publications/marwick-2018-research-compendium",
+     "statement": "s2"
+    },
+    {
+     "distillate": "marwick-2018-research-compendium",
+     "path": "10_distillates/publications/marwick-2018-research-compendium",
+     "statement": "s3"
+    },
+    {
+     "distillate": "marwick-2018-research-compendium",
+     "path": "10_distillates/publications/marwick-2018-research-compendium",
+     "statement": "s4"
+    },
+    {
+     "distillate": "marwick-2018-research-compendium",
+     "path": "10_distillates/publications/marwick-2018-research-compendium",
+     "statement": "s5"
+    },
+    {
+     "distillate": "marwick-2018-research-compendium",
+     "path": "10_distillates/publications/marwick-2018-research-compendium",
+     "statement": "s6"
     }
    ]
   },
@@ -3059,6 +3422,48 @@
    ]
   },
   {
+   "slug": "toulmin-layout-separates-claim-grounds-warrant-and-backing",
+   "title": "Toulmin's layout of arguments separates the claim, the grounds it rests on, the warrant licensing the step, and the backing of that warrant, each answering a specific challenge.",
+   "statement": "Toulmin replaced premiss and conclusion with claim, data or grounds, warrant, modal qualifier, rebuttal and backing, and derived the layout from the questions a challenger can put to an assertion. The claim is the proposition asserted; the grounds answer what it rests on; the warrant answers how the step from grounds to claim is licensed; the backing answers a challenge to the warrant itself. Grounds and warrant differ in function rather than in wording, since the same sentence can supply information in one argument and license a step in another. The layout supplies the vocabulary for a document that records a claim with its evidence, and it fixes no record format, no verdict vocabulary and no procedure.",
+   "status": "grounded",
+   "topics": [
+    "ArtefactVerification"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "hitchcock-2003-toulmins-warrants",
+     "path": "10_distillates/publications/hitchcock-2003-toulmins-warrants",
+     "statement": "s1"
+    },
+    {
+     "distillate": "hitchcock-2003-toulmins-warrants",
+     "path": "10_distillates/publications/hitchcock-2003-toulmins-warrants",
+     "statement": "s2"
+    },
+    {
+     "distillate": "hitchcock-2003-toulmins-warrants",
+     "path": "10_distillates/publications/hitchcock-2003-toulmins-warrants",
+     "statement": "s3"
+    },
+    {
+     "distillate": "hitchcock-2003-toulmins-warrants",
+     "path": "10_distillates/publications/hitchcock-2003-toulmins-warrants",
+     "statement": "s4"
+    },
+    {
+     "distillate": "hitchcock-2003-toulmins-warrants",
+     "path": "10_distillates/publications/hitchcock-2003-toulmins-warrants",
+     "statement": "s5"
+    },
+    {
+     "distillate": "hitchcock-2003-toulmins-warrants",
+     "path": "10_distillates/publications/hitchcock-2003-toulmins-warrants",
+     "statement": "s6"
+    }
+   ]
+  },
+  {
    "slug": "traditional-dmps-are-unused-compliance-documents",
    "title": "Traditional data management plans are static compliance documents that do not support data-management activities.",
    "statement": "Miksa et al. diagnose the conventional DMP, a static document created before a project begins, as widely seen as an administrative exercise rather than an integral part of research practice, one that does not support data-management activities.",
@@ -3701,6 +4106,14 @@
    "path": "vault/10_distillates/publications/grallert-2026-open-tool-registries.md"
   },
   {
+   "slug": "groth-2010-nanopublication",
+   "title": "Distillate: The anatomy of a nanopublication (Groth, Gibson and Velterop 2010)",
+   "kind": "publications",
+   "reference": "groth-2010",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/groth-2010-nanopublication.md"
+  },
+  {
    "slug": "gruber-1993-ontolingua",
    "title": "Distillate: A Translation Approach to Portable Ontology Specifications (Gruber 1993)",
    "kind": "publications",
@@ -3717,12 +4130,28 @@
    "path": "vault/10_distillates/publications/hinrichs-2019-sandcastles.md"
   },
   {
+   "slug": "hitchcock-2003-toulmins-warrants",
+   "title": "Distillate: Toulmin's Warrants (Hitchcock 2003)",
+   "kind": "publications",
+   "reference": "hitchcock-2003",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/hitchcock-2003-toulmins-warrants.md"
+  },
+  {
    "slug": "holmes-2023-endings-principles",
    "title": "Distillate: The Endings Principles (Holmes & Takeda 2023)",
    "kind": "publications",
    "reference": "holmes-2023",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/holmes-2023-endings-principles.md"
+  },
+  {
+   "slug": "hong-2023-metagpt",
+   "title": "Distillate: MetaGPT, Meta Programming for A Multi-Agent Collaborative Framework (Hong et al. 2024)",
+   "kind": "publications",
+   "reference": "hong-2023-metagpt",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/hong-2023-metagpt.md"
   },
   {
    "slug": "hong-2025-context-rot",
@@ -3781,6 +4210,14 @@
    "path": "vault/10_distillates/publications/liu-2024-llm-agents-se-survey.md"
   },
   {
+   "slug": "lucassen-2016-quality-user-story",
+   "title": "Distillate: Improving agile requirements, the Quality User Story framework and tool (Lucassen et al. 2016)",
+   "kind": "publications",
+   "reference": "lucassen-2016",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/lucassen-2016-quality-user-story.md"
+  },
+  {
    "slug": "macedo-2026-from-prompt-to-process",
    "title": "Distillate: From Prompt to Process (Macedo 2026)",
    "kind": "publications",
@@ -3795,6 +4232,14 @@
    "reference": "mariani-2025",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/mariani-2025-prov-a.md"
+  },
+  {
+   "slug": "marwick-2018-research-compendium",
+   "title": "Distillate: Packaging Data Analytical Work Reproducibly Using R (and Friends) (Marwick, Boettiger and Mullen 2018)",
+   "kind": "publications",
+   "reference": "marwick-2018",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/marwick-2018-research-compendium.md"
   },
   {
    "slug": "mayr-2021-triptych-conceptual-modeling",
@@ -3917,6 +4362,14 @@
    "path": "vault/10_distillates/publications/posner-2015-necessary-contradiction.md"
   },
   {
+   "slug": "procida-2024-diataxis",
+   "title": "Distillate: Diátaxis, a systematic framework for technical documentation authoring (Procida)",
+   "kind": "publications",
+   "reference": "procida-2024",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/procida-2024-diataxis.md"
+  },
+  {
    "slug": "risam-2022-minimal-computing",
    "title": "Distillate: The questions of minimal computing (Risam & Gil 2022)",
    "kind": "publications",
@@ -3949,6 +4402,14 @@
    "path": "vault/10_distillates/publications/sacha-2014-knowledge-generation-model.md"
   },
   {
+   "slug": "saltzer-1975-protection-of-information",
+   "title": "Distillate: The Protection of Information in Computer Systems (Saltzer and Schroeder 1975)",
+   "kind": "publications",
+   "reference": "saltzer-1975",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/saltzer-1975-protection-of-information.md"
+  },
+  {
    "slug": "sarkar-2025-vibe-coding",
    "title": "Distillate: Vibe Coding — Programming through Conversation with AI (Sarkar and Drosos 2025)",
    "kind": "publications",
@@ -3971,6 +4432,14 @@
    "reference": "schonhardt-2026",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/schonhardt-2026-do-one-thing.md"
+  },
+  {
+   "slug": "shanahan-2023-role-play",
+   "title": "Distillate: Role play with large language models (Shanahan, McDonell and Reynolds 2023)",
+   "kind": "publications",
+   "reference": "shanahan-2023",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/shanahan-2023-role-play.md"
   },
   {
    "slug": "sharma-2023-sycophancy",
@@ -4051,6 +4520,14 @@
    "reference": "windhager-2019",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/windhager-2019-visualization-ch-collections.md"
+  },
+  {
+   "slug": "zheng-2023-llm-as-a-judge",
+   "title": "Distillate: Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena (Zheng et al. 2023)",
+   "kind": "publications",
+   "reference": "zheng-2023",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/zheng-2023-llm-as-a-judge.md"
   }
  ]
 }

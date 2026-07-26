@@ -1,0 +1,35 @@
+[
+  {
+    "id": "marwick-2018",
+    "type": "article-journal",
+    "title": "Packaging Data Analytical Work Reproducibly Using R (and Friends)",
+    "author": [
+      {
+        "family": "Marwick",
+        "given": "Ben"
+      },
+      {
+        "family": "Boettiger",
+        "given": "Carl"
+      },
+      {
+        "family": "Mullen",
+        "given": "Lincoln"
+      }
+    ],
+    "container-title": "The American Statistician",
+    "volume": "72",
+    "issue": "1",
+    "page": "80-88",
+    "issued": {
+      "date-parts": [
+        [
+          2018
+        ]
+      ]
+    },
+    "DOI": "10.1080/00031305.2017.1375986",
+    "URL": "https://doi.org/10.1080/00031305.2017.1375986",
+    "note": "Quote-checked against the published PDF hosted at projecttier.org, retrieved 2026-07-26. Carrier flag: third-party host of the publisher PDF whose running heads carry no page numbers, so quotations are located by section."
+  }
+]

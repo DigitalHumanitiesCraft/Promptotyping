@@ -2,7 +2,7 @@
 type: moc
 topic: "ArtefactVerification"
 created: 2026-07-23
-updated: 2026-07-24
+updated: 2026-07-26
 ---
 
 # MOC: ArtefactVerification
@@ -34,3 +34,9 @@ Claims behind the paper's Sections 4, 6.1, and 6.2: the self-contained static ar
 Added with the Phase C revision round of 2026-07-24:
 
 - [[20_claims/szd-htr-confabulated-reading-in-hasty-kurrent]] — a single documented transcription reading in which real words stand for the source word, the occasion the worked example gives for external quality signals
+
+Added 2026-07-26 from the site-vocabulary literature sweep (lane C1):
+
+- [[20_claims/toulmin-layout-separates-claim-grounds-warrant-and-backing]] — the argumentation layout that supplies the claim, grounds, warrant and backing vocabulary, without a verdict or a procedure
+- [[20_claims/nanopublication-binds-a-statement-to-the-annotations-that-carry-its-context]] — the nearest prior art for a document holding one statement with its provenance and its assertion
+- [[20_claims/llm-judgement-approximates-human-preference-and-carries-known-biases]] — the measured zone in which a model may legitimately judge, and the four named biases that bound it

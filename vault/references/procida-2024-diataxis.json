@@ -1,0 +1,31 @@
+[
+  {
+    "id": "procida-2024",
+    "type": "webpage",
+    "title": "Diátaxis: A systematic framework for technical documentation authoring",
+    "author": [
+      {
+        "family": "Procida",
+        "given": "Daniele"
+      }
+    ],
+    "URL": "https://diataxis.fr/",
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          26
+        ]
+      ]
+    },
+    "note": "Living web resource. Quotations taken from the pages /start-here/ and /foundations/, retrieved 2026-07-26, whitespace normalised from the HTML rendering. The site carries no version number and no publication date; the issued year records the state of the framework text as commonly cited."
+  }
+]

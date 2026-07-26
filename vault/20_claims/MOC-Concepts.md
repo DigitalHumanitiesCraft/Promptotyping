@@ -2,7 +2,7 @@
 type: moc
 topic: "Concepts"
 created: 2026-07-19
-updated: 2026-07-25
+updated: 2026-07-26
 ---
 
 # MOC: Concepts
@@ -28,3 +28,7 @@ Added with the bibliography-traceability sweep of 2026-07-23:
 Added from the video distillates of 2026-07-25:
 
 - [[20_claims/expert-role-carries-a-domain-and-a-development-judgement]] — the recorded practice carries a subject-matter judgement over the display and a development-side judgement over the fix (also under Method)
+
+Added 2026-07-26 from the site-vocabulary literature sweep (lane C1):
+
+- [[20_claims/dialogue-agent-behaviour-is-described-as-role-play]] — the literature calls role simulation role play, and corrects it into a simulator holding a distribution of characters

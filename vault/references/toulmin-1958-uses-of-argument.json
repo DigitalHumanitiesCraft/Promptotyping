@@ -1,0 +1,23 @@
+[
+  {
+    "id": "toulmin-1958",
+    "type": "book",
+    "title": "The Uses of Argument",
+    "author": [
+      {
+        "family": "Toulmin",
+        "given": "Stephen E."
+      }
+    ],
+    "publisher": "Cambridge University Press",
+    "publisher-place": "Cambridge",
+    "issued": {
+      "date-parts": [
+        [
+          1958
+        ]
+      ]
+    },
+    "note": "Reference record only, no distillate. No open copy located as of 2026-07-26; the layout of arguments is carried in the vault through hitchcock-2003, which quotes it with page locators (Toulmin 1958, pp. 97-102)."
+  }
+]

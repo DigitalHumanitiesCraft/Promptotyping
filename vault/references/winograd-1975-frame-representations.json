@@ -1,0 +1,35 @@
+[
+  {
+    "id": "winograd-1975",
+    "type": "chapter",
+    "title": "Frame Representations and the Declarative/Procedural Controversy",
+    "author": [
+      {
+        "family": "Winograd",
+        "given": "Terry"
+      }
+    ],
+    "container-title": "Representation and Understanding: Studies in Cognitive Science",
+    "editor": [
+      {
+        "family": "Bobrow",
+        "given": "Daniel G."
+      },
+      {
+        "family": "Collins",
+        "given": "Allan"
+      }
+    ],
+    "publisher": "Academic Press",
+    "publisher-place": "New York",
+    "page": "185-210",
+    "issued": {
+      "date-parts": [
+        [
+          1975
+        ]
+      ]
+    },
+    "note": "Reference record only, no distillate. The classic locus of the declarative/procedural distinction in knowledge representation. No open copy located as of 2026-07-26; the author's former Stanford hosting of the PDF returns 404 and the ScienceDirect chapter is paywalled. The knowledge-action axis is carried in the vault through procida-2024."
+  }
+]

@@ -1,0 +1,36 @@
+[
+  {
+    "id": "shanahan-2023",
+    "type": "article-journal",
+    "title": "Role play with large language models",
+    "author": [
+      {
+        "family": "Shanahan",
+        "given": "Murray"
+      },
+      {
+        "family": "McDonell",
+        "given": "Kyle"
+      },
+      {
+        "family": "Reynolds",
+        "given": "Laria"
+      }
+    ],
+    "container-title": "Nature",
+    "volume": "623",
+    "page": "493-498",
+    "issued": {
+      "date-parts": [
+        [
+          2023,
+          11,
+          8
+        ]
+      ]
+    },
+    "DOI": "10.1038/s41586-023-06647-8",
+    "URL": "https://www.nature.com/articles/s41586-023-06647-8",
+    "note": "Free-to-read at the publisher. Quote-checked against the publisher PDF, retrieved 2026-07-26."
+  }
+]

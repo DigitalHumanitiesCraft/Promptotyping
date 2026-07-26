@@ -40,3 +40,12 @@ Added from the video distillates of 2026-07-25, the operational record of one ta
 Added 2026-07-26 from the frontmatter-core survey, a dated self-observation with a stated reproducibility limit:
 
 - [[20_claims/reduced-frontmatter-core-met-in-about-half-the-documents-2026-07-26]] — the reduced six-field core is met in about half of the documents that carry frontmatter, with `method` as the binding field
+
+Added 2026-07-26 from the site-vocabulary literature sweep (lane C1), which tests whether five site coinages attach to established names:
+
+- [[20_claims/qus-defines-thirteen-user-story-quality-criteria]] — the Quality User Story framework fixes thirteen criteria in three categories, scoped to one story or to the set
+- [[20_claims/aqusa-checks-the-criteria-a-rule-can-decide]] — its tool checks only the criteria a rule can decide and excludes the semantic ones by name
+- [[20_claims/least-privilege-bounds-damage-and-narrows-the-audit]] — least privilege is the established name for the read-only analysis role, and it bounds damage and narrows the audit
+- [[20_claims/multi-agent-frameworks-assign-roles-along-an-encoded-procedure]] — multi-agent frameworks assign roles along an encoded work procedure so that one agent checks another's intermediate result
+- [[20_claims/diataxis-separates-documentation-along-action-and-cognition]] — Diataxis names the action-against-cognition axis on which a declarative and an imperative document split
+- [[20_claims/research-compendium-separates-data-method-and-output]] — the research compendium is the established name for a repository holding data, method and output with the data read-only

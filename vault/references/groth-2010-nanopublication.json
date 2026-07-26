@@ -1,0 +1,35 @@
+[
+  {
+    "id": "groth-2010",
+    "type": "article-journal",
+    "title": "The anatomy of a nanopublication",
+    "author": [
+      {
+        "family": "Groth",
+        "given": "Paul"
+      },
+      {
+        "family": "Gibson",
+        "given": "Andrew"
+      },
+      {
+        "family": "Velterop",
+        "given": "Jan"
+      }
+    ],
+    "container-title": "Information Services and Use",
+    "volume": "30",
+    "issue": "1-2",
+    "page": "51-56",
+    "issued": {
+      "date-parts": [
+        [
+          2010
+        ]
+      ]
+    },
+    "DOI": "10.3233/ISU-2010-0613",
+    "URL": "https://www.w3.org/wiki/images/c/c0/HCLSIG%24%24SWANSIOC%24%24Actions%24%24RhetoricalStructure%24%24meetings%24%2420100215%24cwa-anatomy-nanopub-v3.pdf",
+    "note": "Quote-checked against the v3 manuscript hosted on the W3C wiki (HCLS interest group, meeting of 2010-02-15), retrieved 2026-07-26. Carrier flag: pre-publication manuscript of the journal article, so quotations are located by section, not by the printed pages 51-56."
+  }
+]

@@ -1,0 +1,71 @@
+[
+  {
+    "id": "zheng-2023",
+    "type": "paper-conference",
+    "title": "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena",
+    "author": [
+      {
+        "family": "Zheng",
+        "given": "Lianmin"
+      },
+      {
+        "family": "Chiang",
+        "given": "Wei-Lin"
+      },
+      {
+        "family": "Sheng",
+        "given": "Ying"
+      },
+      {
+        "family": "Zhuang",
+        "given": "Siyuan"
+      },
+      {
+        "family": "Wu",
+        "given": "Zhanghao"
+      },
+      {
+        "family": "Zhuang",
+        "given": "Yonghao"
+      },
+      {
+        "family": "Lin",
+        "given": "Zi"
+      },
+      {
+        "family": "Li",
+        "given": "Zhuohan"
+      },
+      {
+        "family": "Li",
+        "given": "Dacheng"
+      },
+      {
+        "family": "Xing",
+        "given": "Eric P."
+      },
+      {
+        "family": "Zhang",
+        "given": "Hao"
+      },
+      {
+        "family": "Gonzalez",
+        "given": "Joseph E."
+      },
+      {
+        "family": "Stoica",
+        "given": "Ion"
+      }
+    ],
+    "container-title": "Advances in Neural Information Processing Systems 36 (NeurIPS 2023), Datasets and Benchmarks Track",
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "URL": "https://arxiv.org/abs/2306.05685",
+    "note": "Already cited in the paper (Section 6.2). Quote-checked against the arXiv abstract page (arXiv:2306.05685v4), retrieved 2026-07-26."
+  }
+]

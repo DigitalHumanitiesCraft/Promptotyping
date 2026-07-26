@@ -1,0 +1,44 @@
+[
+  {
+    "id": "hitchcock-2003",
+    "type": "chapter",
+    "title": "Toulmin's Warrants",
+    "author": [
+      {
+        "family": "Hitchcock",
+        "given": "David"
+      }
+    ],
+    "container-title": "Anyone Who Has a View: Theoretical Contributions to the Study of Argumentation",
+    "editor": [
+      {
+        "family": "van Eemeren",
+        "given": "Frans H."
+      },
+      {
+        "family": "Blair",
+        "given": "J. Anthony"
+      },
+      {
+        "family": "Willard",
+        "given": "Charles A."
+      },
+      {
+        "family": "Snoeck Henkemans",
+        "given": "A. Francisca"
+      }
+    ],
+    "publisher": "Kluwer",
+    "publisher-place": "Dordrecht",
+    "page": "69-82",
+    "issued": {
+      "date-parts": [
+        [
+          2003
+        ]
+      ]
+    },
+    "URL": "https://www.humanities.mcmaster.ca/~hitchckd/Toulminswarrants.pdf",
+    "note": "Quote-checked against the author's own hosted copy at McMaster University, retrieved 2026-07-26. Carrier flag: author copy without the printed pagination, so quotations are located by section; the Toulmin page references inside the quotations are Hitchcock's own and point at Toulmin 1958."
+  }
+]
