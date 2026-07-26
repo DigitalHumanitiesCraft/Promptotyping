@@ -775,3 +775,23 @@ Die Leiste „Auf dieser Seite" entfällt ebenfalls. Das Raster ist damit zweisp
 Das Markenzeichen im Kopf ist vom DHCraft-Aquarell auf das Promptotyping-Logo gewechselt. DHCraft bleibt im Fußbereich, wo es als Träger hingehört.
 
 Dazu eine strukturelle Klärung: Die fünf Teile der Spezifikation im engeren Sinn, Anwendung, Vorlagen, Konvention, Artefakt und Grenze, Verifikation, tragen jetzt eine führende Nummer. Der Baum zeigt die Spezifikation damit als geordnetes Dokument statt als Reihe gleichrangiger Geschwister. Referenz, Praxis und Paper bleiben eigene Gruppen daneben.
+
+## 2026-07-26 — Optimierungsrunde an der Spezifikationsdokumentation
+
+Fünf Punkte aus der Optimierungsliste der Vorsitzung, vom Operator gesammelt freigegeben.
+
+**Startseite entdoppelt.** Die vier Phasen standen in voller Länge auf der Startseite und ein zweites Mal, in Handlungsauflösung, in Teil 1 der Spezifikation. Die Absätze sind von der Startseite entfernt, Teil 1 trägt sie. Zwei weitere Doppelungen bleiben stehen und sind hier vermerkt, weil sie über den freigegebenen Umfang hinausgehen: „Knowledge Documents und ihre drei Spezialisierungen" auf der Startseite gegen „Klassifikation der Dokumenttypen" plus „Lese-Heuristik" in Teil 3, und die Artefakthälfte von „Artefakte und Skalierung" gegen „Die Voreinstellung" plus „Grenzen des Formats" in Teil 4. Die Skalierungshälfte steht nirgends sonst.
+
+**Startseite umbenannt.** Der Baum führt sie als „Einstieg". Der publizierte Anker `#ueberblick` bleibt unangetastet, nur das Label wechselt.
+
+**Gruppen geschärft.** Aus dem Sammelbecken „Praxis" sind zwei Gruppen geworden, „Belege" mit Beispiel-Workflow und Use Cases, „Werkzeuge und Praxis" mit Best Practices, Skills und Arbeitsumgebung. Der Baum führt damit fünf Gruppen.
+
+**Statuszeile pro Seite.** Jede Seite außer der Startseite trägt unter dem Titel eine Zeile mit Geltung, Fassung, Stand und Maschinenadresse. Die Geltung kommt aus dem Seitenregister, wo jeder Eintrag jetzt `normativ` oder `informativ` führt; die übrigen Felder kommen aus dem Frontmatter der Substratdatei, das `renderMarkdownInto` beim Rendern mitnimmt, oder für die erzeugten Seiten aus dem Register. Drei ältere Spiegelungen hatten kein `version`- und kein `updated`-Feld und haben es bekommen.
+
+**Markenzeichen im Kopf.** Das DHCraft-Aquarell ist entfallen, ein farbiges Detailbild auf 22 Pixeln widerspricht dem monochromen System. Das Promptotyping-Logo hat dasselbe Problem, es ist ein detailreiches Bild und wird auf dieser Größe zum Fleck. Der Kopf trägt jetzt die Wortmarke plus den Gattungsvermerk. DHCraft bleibt im Fußbereich als Träger.
+
+Ein Fund beim Prüfen: die Statuszeile fehlte auf drei Seiten. Ursache war ein `insertBefore` gegen den Seitencontainer, während mehrere Renderer die H1 in einen eigenen Block wickeln; der Referenzknoten war dann kein Kind des Containers, die Ausnahme brach die Schleife ab und die restlichen Seiten kamen nicht mehr dran. Der Einsprung läuft jetzt über `insertAdjacentElement` an der Überschrift selbst.
+
+Nicht erledigt bleibt die Vorlage `technology`. Der Vorlagenkatalog wird vault-first gepflegt, und die Vault-Vorlage existiert nicht. Das braucht weiterhin eine echte Vault-Sitzung.
+
+Geprüft im gerenderten DOM: vierzehn Seiten, fünf Gruppen in der geplanten Ordnung, dreizehn Statuszeilen, fünf davon normativ, keine leere Seite, keine Ladefehler. Screenshots von Startseite und Teil 1 angesehen.

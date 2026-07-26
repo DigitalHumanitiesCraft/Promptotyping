@@ -1,6 +1,9 @@
 ---
 title: Ueberblick
 slug: ueberblick
+status: complete
+version: "0.1"
+updated: 2026-07-26
 mirrored: 2026-06-10
 machine-url: https://dhcraft.org/Promptotyping/_content/ueberblick.md
 ---
@@ -23,16 +26,6 @@ Spezifikation einer iterativen Context-Engineering-Methode in vier Phasen, um au
 Promptotyping erzeugt Forschungsartefakte, im Regelfall Software, die an die Daten eines Projekts gebunden ist und diese explorierbar, analysierbar oder editierbar macht. Der `knowledge/`-Ordner ist dabei ein kuratiertes Wissensartefakt, teils modellgeneriert, teils von der pruefenden Fachperson kuratiert, gehalten in einem Format, das Agenten unmittelbar verarbeiten. Er haelt das Domaenenwissen und die Spezifikation, aus denen implementiert wird, ueberdauert die einzelne Sitzung und ist der Teil des Prozesses, der geprueft, kritisiert und zitiert werden kann. Was beim Bauen an weiteren Entscheidungen anfaellt, halten die Dokumente so weit, wie es zurueckgeschrieben wird. Der Unterschied zum Vibe Coding liegt im strukturierten Vorgehen, in der aktiven Anforderungsanalyse und in der expliziten Wissensdokumentation.
 
 Diese Seite ist die Spezifikation der Methode. Sie sagt, was Promptotyping ist und wie es angewendet wird. Warum die Methode so gebaut ist und ob sie traegt, sagt das [Paper](#paper).
-
-## Die vier Phasen
-
-**Preparation.** Alle Rohmaterialien werden zusammengetragen, bevor technische Entscheidungen fallen: Forschungsdaten in ihren Originalformaten, Dokumentation zu Standards und Datenmodellen, erste Forschungsfragen und implizites Domaenenwissen. Die Materialsammlung erzwingt die praezise Artikulation der Projektziele vor dem LLM-Einsatz.
-
-**Exploration.** Die Schnittstelle zwischen Rohdaten und Forschungskontext wird systematisch sondiert, mit der Leitfrage, ob sich die abstrakte Forschungsfrage konkret auf die Datenstruktur abbilden laesst. Die Forschenden sehen die Daten direkt an, eigens geschriebene Skripte durchlaufen den Korpus und verdichten ihn zu kompakten Aggregationen, und das LLM erzeugt Mapping-Hypothesen darueber, welche Datenfelder welchen analytischen Kategorien entsprechen und wo die Daten fuer den beabsichtigten Zweck nicht ausreichen. Zu verstehen, was die Daten nicht hergeben, ist genauso wertvoll wie zu wissen, was geht. Die Phase endet mit einem dokumentierten Verstaendnis davon, was moeglich ist, was nicht und warum, und sie entfaellt, wo die Daten den Forschenden vertraut sind und die Preparation diese Fragen bereits geklaert hat.
-
-**Distillation.** Die Erkenntnisse der Exploration werden in strukturierte Markdown-Dokumente verdichtet, nach dem Prinzip maximale Information bei minimalen Tokens. Die technische Begruendung liefert Context Rot: gezielte Verdichtung erhoeht die Modellaufmerksamkeit auf das Wesentliche. Jedes Dokument traegt eine abgegrenzte Funktion, Redundanzen werden ueber Verweise statt Wiederholung abgebildet.
-
-**Implementation.** Nach Uebergabe der Promptotyping Documents an das LLM erfolgt iterative Entwicklung: semantische Forschungsdaten als Kontext, Bau von Promptotyping Interfaces, Definition von Verification Milestones, Rueckspeisung von Screenshots, Konsolen-Output und Testergebnissen, Git-Commits an verifizierten Zustaenden. Neues Wissen fliesst zurueck in die Dokumente, die damit lebende Dokumente sind.
 
 ## Knowledge Documents und ihre drei Spezialisierungen
 

@@ -1,6 +1,9 @@
 ---
 title: Arbeitsumgebung
 slug: arbeitsumgebung
+status: complete
+version: "0.1"
+updated: 2026-06-10
 mirrored: 2026-06-10
 machine-url: https://dhcraft.org/Promptotyping/_content/arbeitsumgebung.md
 ---

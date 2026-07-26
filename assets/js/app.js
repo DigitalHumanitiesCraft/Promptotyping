@@ -53,40 +53,42 @@
      cannot drift apart. */
 
   var PAGES = [
-    { id: "ueberblick", label: "Ueberblick", group: "Spezifikation",
+    { id: "ueberblick", label: "Einstieg", group: "Spezifikation", kind: "normativ",
       note: "Was die Methode ist und wofuer sie gilt" },
-    { id: "anwendung", label: "Anwendung", group: "Spezifikation", part: "1",
+    { id: "anwendung", label: "Anwendung", group: "Spezifikation", part: "1", kind: "normativ",
       note: "Die vier Phasen in Handlungsaufloesung" },
-    { id: "vorlagen", label: "Vorlagen", group: "Spezifikation", part: "2",
-      note: "Der vollstaendige Dokumentsatz und seine Ausloeser" },
-    { id: "konvention-v0.1", label: "Konvention", group: "Spezifikation", part: "3",
+    { id: "vorlagen", label: "Vorlagen", group: "Spezifikation", part: "2", kind: "normativ",
+      note: "Der vollstaendige Dokumentsatz und seine Ausloeser",
+      machine: "data/promptotyping-documents.json" },
+    { id: "konvention-v0.1", label: "Konvention", group: "Spezifikation", part: "3", kind: "normativ",
       note: "Frontmatter, Adressierung, Lese-Heuristik" },
-    { id: "artefakt", label: "Artefakt und Grenze", group: "Spezifikation", part: "4",
+    { id: "artefakt", label: "Artefakt und Grenze", group: "Spezifikation", part: "4", kind: "normativ",
       note: "Artefakttyp und Uebergabepunkt" },
-    { id: "verifikation", label: "Verifikation", group: "Spezifikation", part: "5",
+    { id: "verifikation", label: "Verifikation", group: "Spezifikation", part: "5", kind: "normativ",
       note: "Pruefarten, Pruefebenen, Autonomiezonen" },
 
-    { id: "glossar", label: "Glossar", group: "Referenz",
-      note: "Termverzeichnis der Methode" },
-    { id: "vault", label: "Vault", group: "Referenz",
-      note: "Claims und Distillate unter dem Paper" },
+    { id: "glossar", label: "Glossar", group: "Referenz", kind: "informativ",
+      note: "Termverzeichnis der Methode", machine: "data/glossar.json" },
+    { id: "vault", label: "Vault", group: "Referenz", kind: "informativ",
+      note: "Claims und Distillate unter dem Paper", machine: "data/vault.json" },
 
-    { id: "workflow", label: "Beispiel-Workflow", group: "Praxis",
+    { id: "workflow", label: "Beispiel-Workflow", group: "Belege", kind: "informativ",
       note: "Ein durchgefuehrter Fall von Rohdaten bis Artefakt" },
-    { id: "use-cases", label: "Use Cases", group: "Praxis",
-      note: "Dokumentierte Projekte" },
-    { id: "praxis", label: "Best Practices", group: "Praxis",
+    { id: "use-cases", label: "Use Cases", group: "Belege", kind: "informativ",
+      note: "Dokumentierte Projekte", machine: "data/case-studies.json" },
+
+    { id: "praxis", label: "Best Practices", group: "Werkzeuge und Praxis", kind: "informativ",
       note: "Handgriffe aus der Anwendung" },
-    { id: "skills", label: "Skills", group: "Praxis",
-      note: "Wiederverwendbare Agentenanweisungen" },
-    { id: "arbeitsumgebung", label: "Arbeitsumgebung", group: "Praxis",
+    { id: "skills", label: "Skills", group: "Werkzeuge und Praxis", kind: "informativ",
+      note: "Wiederverwendbare Agentenanweisungen", machine: "_content/skills/index.md" },
+    { id: "arbeitsumgebung", label: "Arbeitsumgebung", group: "Werkzeuge und Praxis", kind: "informativ",
       note: "Werkzeuge um die Methode herum" },
 
-    { id: "paper", label: "Paper", group: "Paper",
-      note: "Warum die Methode so gebaut ist" }
+    { id: "paper", label: "Paper", group: "Paper", kind: "informativ",
+      note: "Warum die Methode so gebaut ist", machine: "knowledge/paper.md" }
   ];
 
-  var PAGE_GROUPS = ["Spezifikation", "Referenz", "Praxis", "Paper"];
+  var PAGE_GROUPS = ["Spezifikation", "Referenz", "Belege", "Werkzeuge und Praxis", "Paper"];
   var HOME_PAGE = "ueberblick";
 
   /* Sub-anchor prefixes and their owning page. Order matters only in that the
@@ -346,6 +348,25 @@
     return text.replace(/\r\n?/g, "\n").replace(/^---\n[\s\S]*?\n---\n?/, "");
   }
 
+  /* Flat scalar fields of a leading frontmatter block. Enough for the page
+     status line; nested structures are not used there and stay unparsed. */
+  var pageFrontmatter = {};
+
+  function readFrontmatter(text) {
+    var m = /^---\n([\s\S]*?)\n---/.exec(text.replace(/\r\n?/g, "\n"));
+    if (!m) {
+      return {};
+    }
+    var out = {};
+    m[1].split("\n").forEach(function (line) {
+      var f = /^([a-zA-Z][\w-]*):[ \t]*(.*)$/.exec(line);
+      if (f && f[2]) {
+        out[f[1]] = f[2].trim().replace(/^["']|["']$/g, "");
+      }
+    });
+    return out;
+  }
+
   /* ---- Paper view ---- */
 
   function renderPaper() {
@@ -576,6 +597,52 @@
       el.className = "doc-page placeholder-section" + (p.id === PAPER_HOST_ID ? " paper" : "");
       el.id = p.id;
       main.appendChild(el);
+    });
+  }
+
+  /* ---- Page status line ----
+     Every page states what a published specification states per part: whether
+     it binds, which version it is, when it last changed, and where the machine
+     address of its substrate lies. The start page carries the same fields in
+     its own status table and is therefore skipped. */
+
+  function addPageStatusLines() {
+    PAGES.forEach(function (p) {
+      var host = document.getElementById(p.id);
+      if (!host || p.id === HOME_PAGE || host.querySelector(".page-status")) {
+        return;
+      }
+      var fm = pageFrontmatter[p.id] || {};
+      var machine = fm["machine-url"] || p.machine;
+      var fields = [
+        ["Geltung", p.kind === "normativ"
+          ? "normativ, Teil der Spezifikation"
+          : "informativ"],
+        ["Fassung", fm.version || null],
+        ["Stand", fm.updated || fm.mirrored || null]
+      ];
+      var html = fields.filter(function (f) { return f[1]; }).map(function (f) {
+        return '<span class="page-status-item"><span class="page-status-key">' +
+          f[0] + "</span> " + escapeHtml(f[1]) + "</span>";
+      }).join("");
+      if (machine) {
+        var href = /^https?:/.test(machine) ? machine : machine;
+        html += '<span class="page-status-item"><span class="page-status-key">Quelle</span> ' +
+          '<a href="' + escapeHtml(href) + '" target="_blank" rel="noopener"><code>' +
+          escapeHtml(machine.replace(/^https:\/\/dhcraft\.org\/Promptotyping\//, "")) +
+          "</code></a></span>";
+      }
+      var block = document.createElement("p");
+      block.className = "page-status";
+      block.innerHTML = html;
+      // Insert next to the heading itself. Several renderers wrap the H1 in a
+      // block of their own, so the host is not necessarily its parent.
+      var h1 = host.querySelector("h1");
+      if (h1) {
+        h1.insertAdjacentElement("afterend", block);
+      } else {
+        host.insertBefore(block, host.firstChild);
+      }
     });
   }
 
@@ -1014,6 +1081,7 @@
     }
     return fetchMarkdown(file)
       .then(function (text) {
+        pageFrontmatter[sectionId] = readFrontmatter(text);
         el.innerHTML = marked.parse(stripFrontmatter(text));
         el.classList.remove("placeholder-section");
         if (typeof after === "function") {
@@ -1630,6 +1698,7 @@
     }).then(function () {
       return renderVault();
     }).then(function () {
+      addPageStatusLines();
       // Rebuild the rail now that the active page actually has headings, then
       // resolve the initial hash against the fully rendered DOM.
       handleHash(window.location.hash.replace(/^#/, ""));

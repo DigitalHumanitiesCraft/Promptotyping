@@ -106,9 +106,11 @@ The site is laid out as specification documentation, in the manner of a library 
 
 Desktop uses a two-track grid inside a 1240px container: the page tree (`--nav-width: 250px`) and the page (`minmax(0, 1fr)` with `--read-width: 820px` max, centred). The tree is sticky below the fixed header (`--header-height: 3.25rem`) and scrolls independently. The side panel stays outside the grid as a `position: fixed` overlay of `--panel-width: 360px`.
 
-The tree groups the pages under Spezifikation, Referenz, Praxis and Paper; the active page is marked by a left border and bold weight. The five parts of the specification proper carry a leading number, so the sidebar shows the specification as an ordered document rather than a list of siblings. The tree is never collapsible; below 860px it stacks above the page and stays visible, tables scroll inside their own box, and the side panel becomes a bottom sheet. An on-this-page rail was built and removed the same day by operator decision.
+The tree groups the pages under Spezifikation, Referenz, Belege, Werkzeuge und Praxis, and Paper; the active page is marked by a left border and bold weight. The five parts of the specification proper carry a leading number, so the sidebar shows the specification as an ordered document rather than a list of siblings. The tree is never collapsible; below 860px it stacks above the page and stays visible, tables scroll inside their own box, and the side panel becomes a bottom sheet. An on-this-page rail was built and removed the same day by operator decision.
 
-The start page is the specification front: title, one-sentence scope, a keyed status table (Fassung, Stand, kanonische Adresse, Maschinenadresse, Evidenz, Lizenz), and a generated index of the specification. The index is derived from the same page registry as the sidebar, so the two cannot diverge.
+The header carries the wordmark and the kind marker, with no mark beside it. The DHCraft watercolour was tried there and dropped, because a chromatic detail image at 22 pixels contradicts the monochrome system; the carrier mark stays in the footer.
+
+The start page is the specification front: title, one-sentence scope, a keyed status table (Fassung, Stand, kanonische Adresse, Maschinenadresse, Evidenz, Lizenz), and a generated index of the specification. Every other page carries a one-line status under its title at 0.8125rem, keys in `#8a8a8a` and values in `#525252`, separated from the body by a hairline. The index is derived from the same page registry as the sidebar, so the two cannot diverge.
 
 ## Side panels
 

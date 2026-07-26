@@ -83,7 +83,7 @@ A dedicated `#use-cases` section holds a curated gallery of publicly documented 
 The use-case vocabulary of the gallery (data production, data exploration, data rescue and transformation, and so on) is the site's own ordering and was once attributed to a paper section. The paper orders artefacts by the five epistemic functions instead, Verification, Exploration, Edition, Capture, and Audit, and carries no use-case typology; the interface-type filter is the one that maps onto it. Re-basing the gallery classification on the five functions, or declaring the use-case vocabulary as the site's own, is open work for the next site update.
 
 ### A8 — Embedded YouTube videos
-Part 1 as a hero embed above the paper, part 2 at the VetMedAI knowledge-balance case, which sits in the projects section of the deployed decomposition and in the evidence section of the canonical text. Both run from the `youtube-nocookie.com` variant with no tracking before the click.
+Part 1 on the Beispiel-Workflow page, where the worked case runs, part 2 at the VetMedAI knowledge-balance case, which sits in the projects section of the deployed decomposition and in the evidence section of the canonical text. Both run from the `youtube-nocookie.com` variant with no tracking before the click.
 
 ### A9 — DHCraft design system
 Light grey `#d5d5d5` accent, black on white, Inter for text, Consolas for code, no decorative elements. Side panels collapse to bottom sheets on mobile. Full token set and behaviour in [design.md](design.md).
@@ -97,8 +97,8 @@ A module in the Vorlagen section with a textarea for the YAML frontmatter of a f
 ### A12 — Cross-repo consistency, the site demonstrates rather than advertises
 The site's own `knowledge/` documents carry the `template:` field and each links to its own template URL on the live site, subpath form canonical, hash form as alias. The site demonstrates the method on itself.
 
-### A13 — Method overview as entry point
-A German `#ueberblick` section between hero and paper states what Promptotyping is, the four phases in brief, the three document types with the diagnostic rule, the two modes, and signposts into paper, templates, use cases, practice, and skills. Substrate `_content/ueberblick.md`. Without it a visitor lands directly in an English academic paper.
+### A13 — Specification front page
+The start page is the specification front, addressed `#ueberblick`. It states what Promptotyping is, carries a keyed status table (Fassung, Stand, kanonische Adresse, Maschinenadresse, Evidenz, Lizenz), a generated index of the specification, the three document types with the diagnostic rule, artefacts and scaling, and signposts into paper, templates, use cases, practice, and skills. The four phases moved to part 1 of the specification on 2026-07-26, since carrying them twice made the landing page repeat the page behind it. Substrate `_content/ueberblick.md`. Without it a visitor lands directly in an English academic paper.
 
 ### A14 — Practice section (method extensions)
 A `#praxis` section with the empirically grown method extensions from the vault knowledge base (verification milestones, Promptotyping interfaces, subagents and role simulation, script-versus-LLM separation, knowledge curation, demo-repo reduction, claims verification, epistemic status of user stories, template catalog). Each entry has a stable anchor `#praxis-{slug}` and names its documented origin case. Substrate `_content/praxis.md`.
@@ -112,8 +112,11 @@ The Action-Layer template (`CLAUDE.md`) is published under the slug `action-laye
 ### A17 — Working-environment section
 A `#arbeitsumgebung` section between skills and glossary with three short parts, the Obsidian vault as knowledge environment, the Promptotyping Agent Interface (experimental, in development), and the AI harness and skills (Claude Code as harness, links to `#skills` and the process videos). Substrate `_content/arbeitsumgebung.md`, routing `/arbeitsumgebung` via `404.html`.
 
-### A18 — Site header, footer, hero, video integration
-A sticky white header with the DHCraft logo and wordmark left, section nav and GitHub link right; nav links hidden on narrow viewports (mobile navigation via the TOC toggle). Footer on `#f5f5f5` with carrier note, repo and YouTube links, license line, and machine-address note. The hero is purely typographic; `promptotyping-logo.png` sits at the head of the Vorlagen section. All process videos play without leaving the page, as click-to-load facades over `youtube-nocookie.com`.
+### A18 — Site header, footer, video integration
+A thin fixed header carrying the wordmark plus the kind marker `Spezifikation` left, and the two outbound links Paper and Repository right. No mark sits beside the wordmark; the DHCraft watercolour was tried there and dropped, because a chromatic detail image at 22 pixels contradicts the monochrome system. The carrier mark stays in the footer, which sits on `#f5f5f5` with repo and YouTube links, license line, and machine-address note. `promptotyping-logo.png` sits at the head of the Vorlagen page. All process videos play without leaving the page, as click-to-load facades over `youtube-nocookie.com`.
+
+### A21 — Page status line
+Every page except the start page carries one line under its title stating whether it binds (`normativ, Teil der Spezifikation` or `informativ`), its version, its date, and the machine address of its substrate. Geltung comes from the page registry in `app.js`, the remaining fields from the frontmatter of the substrate file or, for the generated pages, from the registry. Added 2026-07-26.
 
 ### A19 — Vorlagen hub
 The `#vorlagen` section is the coherent hub of the method specification (operator decision 2026-07-23). After the section head and a quiet text subnav (Katalog, Konvention, Maschinenzugriff, Technology Baseline, plain text links in the design-system greys) come four blocks with additive in-page sub-anchor IDs:
@@ -130,7 +133,7 @@ The sub-anchors are additive in-page fragments, no new top-level anchor, no new 
 The paper-section numbers below refer to the deployed decomposition (A1). They are re-drawn against the canonical text when it is decomposed.
 
 ### Method (paper sections 1–3)
-The paper narrative as reading flow. Terms as glossary triggers. The template table in the section-3 context with click links to side-panel specs. Hero video part 1 above.
+The paper narrative as reading flow on its own page. Terms as glossary triggers. The template table lives on the Vorlagen page with click links to side-panel specs.
 
 ### Vorlagen (`#vorlagen`)
 Table of all mirrored templates with function, recommended file name, Promptotyping type, version, and status (function column English, template names German as identifiers). A click opens the side panel with the full spec including frontmatter schema, section structure, a copy button for the `template:` block, and a raw-text link (machine address, ADR-10). One latest anchor per template, snapshot anchors on version changes. Built out as the specification hub per A19.

@@ -2,6 +2,9 @@
 title: Praxis und Best Practices
 slug: praxis
 source: Projects/Promptotyping/Promptotyping MOC.md (Methodenerweiterungen)
+status: complete
+version: "0.1"
+updated: 2026-06-10
 mirrored: 2026-06-10
 machine-url: https://dhcraft.org/Promptotyping/_content/praxis.md
 ---
