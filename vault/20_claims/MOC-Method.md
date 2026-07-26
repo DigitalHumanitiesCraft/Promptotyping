@@ -2,7 +2,7 @@
 type: moc
 topic: "Method"
 created: 2026-07-19
-updated: 2026-07-25
+updated: 2026-07-26
 ---
 
 # MOC: Method
@@ -36,3 +36,7 @@ Added from the video distillates of 2026-07-25, the operational record of one ta
 - [[20_claims/radical-design-request-widens-the-interface-option-space]] — a deliberately outlandish design request widens the space of interface options
 - [[20_claims/interface-defect-is-reported-through-the-element-identifier]] — a defect is reported to the LLM through the identifier of the element
 - [[20_claims/expert-role-carries-a-domain-and-a-development-judgement]] — the loop carries a subject-matter and a development-side judgement (also under Concepts)
+
+Added 2026-07-26 from the frontmatter-core survey, a dated self-observation with a stated reproducibility limit:
+
+- [[20_claims/reduced-frontmatter-core-met-in-about-half-the-documents-2026-07-26]] — the reduced six-field core is met in about half of the documents that carry frontmatter, with `method` as the binding field

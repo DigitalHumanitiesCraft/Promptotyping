@@ -6,7 +6,7 @@ project:
 status: active
 language: en
 created: "2026-07-23"
-updated: "2026-07-25"
+updated: "2026-07-26"
 related: [state, specification]
 ---
 
@@ -43,6 +43,7 @@ Paper roles name the sections of `knowledge/paper.md` in which the work is cited
 | cremer-2025 | Cremer/Paulmann 2025, Quellen- und Datenkritik (ZfdG) | 2.2 | A | claimed | [[10_distillates/publications/cremer-2025-quellen-und-datenkritik]] | making-source-data-machine-addressable-is-interpretive-modelling |
 | drucker-2011 | Drucker 2011, Humanities Approaches (DHQ) | 2.1 | A | claimed | [[10_distillates/publications/drucker-2011-humanities-approaches]] | humanities-data-are-capta-not-given, inherited-visualisation-conventions-carry-positivist-assumptions |
 | drucker-2014 | Drucker 2014, Graphesis | 2.1 | B | no copy needed | | Harvard UP book, no open copy. 2026-07-25: reclassified. The paper names it beside drucker-2011 as the second site of the same capta argument, which the drucker-2011 distillate carries quote-checked; secondary literature confirms the argument recurs in the book, so the joint citation stands and no distillate of its own is needed |
+| dellacqua-2023 | Dell'Acqua et al. 2023, Navigating the Jagged Technological Frontier (HBS Working Paper 24-013) | 2.4 | A | claimed | [[10_distillates/publications/dellacqua-2023-jagged-frontier]] | llm-assistance-raises-performance-inside-and-lowers-it-outside-a-jagged-frontier, the-boundary-of-the-jagged-frontier-is-not-readable-from-a-task-in-advance |
 | edmond-2005 | Edmond 2005, Professional Intermediary | 1 | C | claimed (abstract-only) | [[10_distillates/publications/edmond-2005-professional-intermediary]] | dh-intermediary-bridges-researchers-and-technical-staff |
 | fanous-2025 | Fanous et al. 2025, SycEval | 2.4 | A | claimed | [[10_distillates/publications/fanous-2025-syceval]] | fanous-frontier-models-sycophantic-in-most-cases, sycophancy-agreement-over-truth |
 | fawzy-2025 | Fawzy et al. 2025, Vibe Coding in Practice | 2.4 | A | claimed | [[10_distillates/publications/fawzy-2025-vibe-coding-in-practice]] | vibe-coding-speed-quality-tradeoff |
@@ -70,6 +71,7 @@ Paper roles name the sections of `knowledge/paper.md` in which the work is cited
 | mayr-2021 | Mayr/Thalheim 2021, Triptych of Conceptual Modeling | 2.3 | A | claimed | [[10_distillates/publications/mayr-2021-triptych-conceptual-modeling]] | conceptual-model-links-language-and-domain-concepts |
 | mei-2025 | Mei et al. 2025, Context Engineering Survey | 2.4 | A | claimed | [[10_distillates/publications/mei-2025-context-engineering]] | context-engineering-systematic-inference-context |
 | miksa-2019 | Miksa et al. 2019, Machine-Actionable DMPs | 3.3 | A | claimed | [[10_distillates/publications/miksa-2019-machine-actionable-dmps]] | madmps-demand-documents-infrastructure-can-act-on, traditional-dmps-are-unused-compliance-documents |
+| mollick-2024 | Mollick 2024, Co-Intelligence | 2.4 | B | csl | | Portfolio/Penguin trade book, no legitimate open copy with a citable locator; the search of 2026-07-26 found only reviews and second-hand summaries of the principle the paper takes from it. The paper's sentence, that the system sits between an instrument and a counterpart and that its quirks and failure modes are learned in use, stands on the citation until an operator copy supplies a locator. No distillate is faked and no claim is built |
 | owens-2011 | Owens 2011, Defining Data for Humanists | 2.2 | A | claimed | [[10_distillates/publications/owens-2011-defining-data]] | humanities-data-is-constructed-not-given, owens-data-holds-evidentiary-value |
 | pichler-2022 | Pichler/Reiter 2022, Operationalization (Journal of Cultural Analytics) | 2.2 | A | claimed | [[10_distillates/publications/pichler-2022-operationalization]] | operationalisation-develops-a-measurement-for-a-concept |
 | pierazzo-2015 | Pierazzo 2015, Digital Scholarly Editing | 4.2 | A | claimed | [[10_distillates/publications/pierazzo-2015-digital-editing]] | edition-interface-embodies-editorial-decisions |

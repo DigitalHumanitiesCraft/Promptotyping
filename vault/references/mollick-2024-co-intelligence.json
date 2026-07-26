@@ -1,0 +1,23 @@
+[
+  {
+    "id": "mollick-2024",
+    "type": "book",
+    "title": "Co-Intelligence: Living and Working with AI",
+    "author": [
+      {
+        "family": "Mollick",
+        "given": "Ethan"
+      }
+    ],
+    "publisher": "Portfolio/Penguin",
+    "publisher-place": "New York",
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "ISBN": "9780593716717"
+  }
+]

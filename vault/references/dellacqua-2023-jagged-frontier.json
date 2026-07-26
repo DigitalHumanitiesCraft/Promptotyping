@@ -1,0 +1,60 @@
+[
+  {
+    "id": "dellacqua-2023",
+    "type": "report",
+    "title": "Navigating the Jagged Technological Frontier: Field Experimental Evidence of the Effects of AI on Knowledge Worker Productivity and Quality",
+    "author": [
+      {
+        "family": "Dell'Acqua",
+        "given": "Fabrizio"
+      },
+      {
+        "family": "McFowland III",
+        "given": "Edward"
+      },
+      {
+        "family": "Mollick",
+        "given": "Ethan"
+      },
+      {
+        "family": "Lifshitz-Assaf",
+        "given": "Hila"
+      },
+      {
+        "family": "Kellogg",
+        "given": "Katherine C."
+      },
+      {
+        "family": "Rajendran",
+        "given": "Saran"
+      },
+      {
+        "family": "Krayer",
+        "given": "Lisa"
+      },
+      {
+        "family": "Candelon",
+        "given": "François"
+      },
+      {
+        "family": "Lakhani",
+        "given": "Karim R."
+      }
+    ],
+    "publisher": "Harvard Business School",
+    "genre": "Working Paper",
+    "number": "24-013",
+    "collection-title": "Harvard Business School Technology & Operations Management Unit Working Paper",
+    "issued": {
+      "date-parts": [
+        [
+          2023,
+          9,
+          22
+        ]
+      ]
+    },
+    "URL": "https://www.hbs.edu/faculty/Pages/item.aspx?num=64700",
+    "note": "Quote-checked against the openly hosted working-paper PDF at https://mitsloan.mit.edu/sites/default/files/2023-10/SSRN-id4573321.pdf; SSRN abstract id 4573321"
+  }
+]

@@ -94,7 +94,7 @@
    "slug": "MOC-Frame",
    "topic": "Frame",
    "title": "MOC: Frame",
-   "description": "Claims behind the paper's Section 2, the epistemic frame: exploration as research, the nature of humanities data, the translation problem, and the surrounding AI discourse (Vibe Coding, Spec-Driven Development, context engineering, model failure modes). Added with the bibliography-traceability sweep of 2026-07-23.",
+   "description": "Added 2026-07-26 with the jagged-frontier intake for Section 2.4:",
    "claims": [
     "fair-emphasises-machine-actionability-of-data",
     "making-source-data-machine-addressable-is-interpretive-modelling",
@@ -131,7 +131,9 @@
     "dh-projects-build-teams-to-hold-competences-together",
     "institutional-research-software-support-falls-short-of-need",
     "research-software-engineers-are-scarce",
-    "dh-intermediary-bridges-researchers-and-technical-staff"
+    "dh-intermediary-bridges-researchers-and-technical-staff",
+    "llm-assistance-raises-performance-inside-and-lowers-it-outside-a-jagged-frontier",
+    "the-boundary-of-the-jagged-frontier-is-not-readable-from-a-task-in-advance"
    ]
   },
   {
@@ -173,7 +175,7 @@
    "slug": "MOC-Method",
    "topic": "Method",
    "title": "MOC: Method",
-   "description": "Added from the video distillates of 2026-07-25, the operational record of one taught session:",
+   "description": "Added 2026-07-26 from the frontmatter-core survey, a dated self-observation with a stated reproducibility limit:",
    "claims": [
     "promptotyping-documentation-over-software",
     "promptotyping-documents-form-freedom",
@@ -195,7 +197,8 @@
     "overengineering-check-cuts-the-specification-before-implementation",
     "radical-design-request-widens-the-interface-option-space",
     "interface-defect-is-reported-through-the-element-identifier",
-    "expert-role-carries-a-domain-and-a-development-judgement"
+    "expert-role-carries-a-domain-and-a-development-judgement",
+    "reduced-frontmatter-core-met-in-about-half-the-documents-2026-07-26"
    ]
   }
  ],
@@ -1573,6 +1576,43 @@
    ]
   },
   {
+   "slug": "llm-assistance-raises-performance-inside-and-lowers-it-outside-a-jagged-frontier",
+   "title": "LLM assistance raises performance on tasks inside a jagged capability frontier and lowers it on tasks outside, within one workflow.",
+   "statement": "In a field experiment with 758 consultants, access to a frontier LLM raised productivity and output quality on the consulting tasks that lay inside the boundary of AI capability and lowered the rate of correct solutions on a task that lay outside it. The two effects belong to one flow of interdependent tasks, and difficulty as a human judges it does not tell the two groups of tasks apart. The study names this uneven boundary the jagged technological frontier.",
+   "status": "grounded",
+   "topics": [
+    "Frame"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "dellacqua-2023-jagged-frontier",
+     "path": "10_distillates/publications/dellacqua-2023-jagged-frontier",
+     "statement": "s1"
+    },
+    {
+     "distillate": "dellacqua-2023-jagged-frontier",
+     "path": "10_distillates/publications/dellacqua-2023-jagged-frontier",
+     "statement": "s3"
+    },
+    {
+     "distillate": "dellacqua-2023-jagged-frontier",
+     "path": "10_distillates/publications/dellacqua-2023-jagged-frontier",
+     "statement": "s4"
+    },
+    {
+     "distillate": "dellacqua-2023-jagged-frontier",
+     "path": "10_distillates/publications/dellacqua-2023-jagged-frontier",
+     "statement": "s5"
+    },
+    {
+     "distillate": "dellacqua-2023-jagged-frontier",
+     "path": "10_distillates/publications/dellacqua-2023-jagged-frontier",
+     "statement": "s6"
+    }
+   ]
+  },
+  {
    "slug": "llm-based-agents-for-software-engineering",
    "title": "LLM-based agents, LLMs augmented with tool use, are applied to software engineering with demonstrated effectiveness.",
    "statement": "LLM-based agents extend standalone LLMs with the ability to perceive and use external tools and resources, and a systematic survey documents their application to software engineering with demonstrated effectiveness. This is the reference behind the paper's Section 2.4 mention of the LLM-based agents that Spec-Driven-Development frameworks orchestrate.",
@@ -2229,6 +2269,38 @@
      "distillate": "verification-paper-figures-2026-07-19",
      "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
      "statement": "s18"
+    }
+   ]
+  },
+  {
+   "slug": "reduced-frontmatter-core-met-in-about-half-the-documents-2026-07-26",
+   "title": "The reduced six-field frontmatter core is met in about half of the documents that carry frontmatter, as of the snapshot of 2026-07-26.",
+   "statement": "A survey of 2026-07-26 over 490 documents with YAML frontmatter in 40 local knowledge bases found all six fields of the reduced mandatory core present together in 233 of them, roughly half. `method` is the binding field, so joint fulfilment follows the rate of that one field closely. The figures describe the operator's local working copies on that date. The run kept no script and no file list, so it cannot be recomputed on a different stock, and the claim carries the rate as a dated self-observation of the method's own uptake rather than as a checkable external measurement.",
+   "status": "grounded",
+   "topics": [
+    "Method"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "frontmatter-core-survey-2026-07-26",
+     "path": "10_distillates/documents/frontmatter-core-survey-2026-07-26",
+     "statement": "s1"
+    },
+    {
+     "distillate": "frontmatter-core-survey-2026-07-26",
+     "path": "10_distillates/documents/frontmatter-core-survey-2026-07-26",
+     "statement": "s2"
+    },
+    {
+     "distillate": "frontmatter-core-survey-2026-07-26",
+     "path": "10_distillates/documents/frontmatter-core-survey-2026-07-26",
+     "statement": "s3"
+    },
+    {
+     "distillate": "frontmatter-core-survey-2026-07-26",
+     "path": "10_distillates/documents/frontmatter-core-survey-2026-07-26",
+     "statement": "s8"
     }
    ]
   },
@@ -2965,6 +3037,28 @@
    ]
   },
   {
+   "slug": "the-boundary-of-the-jagged-frontier-is-not-readable-from-a-task-in-advance",
+   "title": "The boundary of the jagged frontier is not readable from a task in advance.",
+   "statement": "Professionals working with an LLM cannot tell from a task where the boundary of AI capability runs, because that capability changes rapidly and is poorly understood, and because tasks on either side of the boundary look alike in difficulty. Knowing where the boundary lies is therefore acquired in the working relationship rather than derived from a property of the task.",
+   "status": "grounded",
+   "topics": [
+    "Frame"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "dellacqua-2023-jagged-frontier",
+     "path": "10_distillates/publications/dellacqua-2023-jagged-frontier",
+     "statement": "s7"
+    },
+    {
+     "distillate": "dellacqua-2023-jagged-frontier",
+     "path": "10_distillates/publications/dellacqua-2023-jagged-frontier",
+     "statement": "s1"
+    }
+   ]
+  },
+  {
    "slug": "traditional-dmps-are-unused-compliance-documents",
    "title": "Traditional data management plans are static compliance documents that do not support data-management activities.",
    "statement": "Miksa et al. diagnose the conventional DMP, a static document created before a project begins, as widely seen as an administrative exercise rather than an integral part of research practice, one that does not support data-management activities.",
@@ -3287,6 +3381,14 @@
  ],
  "distillates": [
   {
+   "slug": "frontmatter-core-survey-2026-07-26",
+   "title": "Distillate: Frontmatter-core survey 2026-07-26",
+   "kind": "documents",
+   "reference": "",
+   "summary": "## Related",
+   "path": "vault/10_distillates/documents/frontmatter-core-survey-2026-07-26.md"
+  },
+  {
    "slug": "frontmatter-practice-2026-05",
    "title": "Distillate: Frontmatter practice across Promptotyping repositories (May 2026)",
    "kind": "documents",
@@ -3517,6 +3619,14 @@
    "reference": "cremer-2025",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/cremer-2025-quellen-und-datenkritik.md"
+  },
+  {
+   "slug": "dellacqua-2023-jagged-frontier",
+   "title": "Distillate: Navigating the Jagged Technological Frontier (Dell'Acqua et al. 2023)",
+   "kind": "publications",
+   "reference": "dellacqua-2023",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/dellacqua-2023-jagged-frontier.md"
   },
   {
    "slug": "drucker-2011-humanities-approaches",

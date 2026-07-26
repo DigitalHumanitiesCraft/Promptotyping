@@ -2,7 +2,7 @@
 type: moc
 topic: "Frame"
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-26
 ---
 
 # MOC: Frame
@@ -46,3 +46,8 @@ Claims behind the paper's Section 2, the epistemic frame: exploration as researc
 - [[20_claims/institutional-research-software-support-falls-short-of-need]] — The research software support institutions provide falls short of what researchers need
 - [[20_claims/research-software-engineers-are-scarce]] — Research software engineers are scarce and sit across a cultural gap between research and software development
 - [[20_claims/dh-intermediary-bridges-researchers-and-technical-staff]] — A professional intermediary bridges researchers and technical staff in digital-humanities institutions
+
+Added 2026-07-26 with the jagged-frontier intake for Section 2.4:
+
+- [[20_claims/llm-assistance-raises-performance-inside-and-lowers-it-outside-a-jagged-frontier]] — LLM assistance raises performance on tasks inside the frontier of AI capability and lowers it on tasks outside, within one workflow
+- [[20_claims/the-boundary-of-the-jagged-frontier-is-not-readable-from-a-task-in-advance]] — Where the boundary of that frontier runs cannot be read off a task, so competence with it accrues in use
