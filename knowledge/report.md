@@ -29,7 +29,7 @@ Stichtagsbericht zum parallelen Lane-Durchgang vom 2026-07-23 mit dem Ziel, das 
 
 Der Bericht beschreibt den Stand vor der Revision und wird darüber hinaus nicht fortgeschrieben. Was aus seinen Abnahme-Listen geworden ist, in Kürze. Die Feinschliff-Kandidaten sind bis auf den als optional geführten Bayerschmidt-Vorschlag und die Formalia des Punkts 16 eingearbeitet; der Belegdurchgang dazu steht im Entscheidungsstand von [paper-writing.md](paper-writing.md). Die Site-Variante 2 ist als `#vorlagen`-Hub umgesetzt und in `specification.md` (A19) spezifiziert; die vault-first-Freigabe der Vorlage Technology steht weiter aus. Die Notker-Fußnote ist gesetzt. Die Erfahrungswerte sind teilweise erledigt, indem Aktivitätsquantitäten aus dem Papertext entfernt wurden; Dauer- und Kostenangaben bleiben als Erfahrungswerte und als Operator-Bestätigung offen.
 
-Die Revision vom 2026-07-24 hat den Text danach an tragenden Stellen geändert, unter anderem Abstract, Rahmung, Sektionsschnitt und Evidenzteil. Die Aussagen dieses Berichts über den Papertext beziehen sich auf den Stand davor. Offen und operatorabhängig sind jetzt die Sichtbarkeit der drei geschlossenen Repositorien, die Freigabe von Lehr- und Workshop-Material für die Belegschicht, der Titel, das Herkunftsfeld im Schema der Belegschicht, der ZfdG-Review-Modus und die Attribution der Übersetzungsmechanismus-Anregung.
+Die Revision vom 2026-07-24 hat den Text danach an tragenden Stellen geändert, unter anderem Abstract, Rahmung, Sektionsschnitt und Evidenzteil. Die Aussagen dieses Berichts über den Papertext beziehen sich auf den Stand davor. Offen und operatorabhängig sind jetzt die Sichtbarkeit der drei geschlossenen Repositorien, die Freigabe von Lehr- und Workshop-Material für die Belegschicht, der Titel, das Herkunftsfeld im Schema der Belegschicht, und der ZfdG-Review-Modus.
 
 ## Tätigkeiten im Berichtszeitraum
 
@@ -96,9 +96,8 @@ Operator-Entscheidungen (zurückgestellt am 2026-07-23, hier geführt bis zur En
 2. Review-Modus ZfdG (closed oder open public).
 3. Site-Variante 2 bestätigen; Vorlage Technology vault-first freigeben.
 4. zbz-ocr-tei öffentlich stellen (danach Fußnote).
-5. Attribution der Übersetzungsmechanismus-Anregung.
-6. Erfahrungswerte bestätigen (Dauer/Kosten der Projekttabelle, Datenvolumen-Grenze 4.3).
-7. Notker-Fußnote mit Repo-URL gewünscht? (Derzeit fußnotenlos, spiegelbildlich zum ZBZ-Exemplar.)
+5. Erfahrungswerte bestätigen (Dauer/Kosten der Projekttabelle, Datenvolumen-Grenze 4.3).
+6. Notker-Fußnote mit Repo-URL gewünscht? (Derzeit fußnotenlos, spiegelbildlich zum ZBZ-Exemplar.)
 
 Arbeitsschritte ohne Operator-Input (nächste Sessions):
 

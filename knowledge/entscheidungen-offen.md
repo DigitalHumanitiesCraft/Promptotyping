@@ -139,9 +139,8 @@ Das ist Schreibarbeit von etwa einer Sitzung, und sie setzt voraus, dass der Pap
 2. **Review-Modus ZfdG, geschlossen oder offen öffentlich.** Reine Operator-Entscheidung ohne Vorarbeit meinerseits. Empfehlung: offen öffentlich, weil der Beitrag Nachvollziehbarkeit zum Thema hat und ein offenes Review dazu passt.
 3. **Site-Variante 2 bestätigen, Vorlage Technology freigeben.** Variante 2 ist als Vorlagen-Hub umgesetzt und in `specification.md` A19 spezifiziert; der Punkt ist durch die Umsetzung erledigt. Die Vorlage steht in B3.
 4. **zbz-ocr-tei öffentlich stellen.** Operator-Aktion, danach setze ich die Fußnote. Ohne sie trägt das Verifikations-Exemplar in 5.3 ein Repositorium, das niemand prüfen kann.
-5. **Attribution der Übersetzungsmechanismus-Anregung.** Die Übersetzungsthese ist der theoretische Kern des Papers und geht auf die mündliche Anregung eines Kollegen zurück. Empfehlung: Danksagung mit Namensnennung nach Rückfrage bei der Person. Ohne Nennung bleibt eine Zuschreibungslücke an der tragenden Stelle des Textes.
-6. **Erfahrungswerte bestätigen.** Dauer- und Kostenangaben der Projekttabelle und die Datenvolumen-Grenze in 4.3. Nur der Operator kann sie bestätigen. Empfehlung: bestätigen oder streichen; eine unbestätigte Erfahrungsangabe in einem Beitrag, der Nachvollziehbarkeit fordert, ist eine Angriffsfläche.
-7. **Notker-Fußnote mit Repo-URL.** Derzeit fußnotenlos, spiegelbildlich zum ZBZ-Exemplar. Empfehlung: fußnotenlos lassen, damit die beiden Exemplare gleich behandelt sind.
+5. **Erfahrungswerte bestätigen.** Dauer- und Kostenangaben der Projekttabelle und die Datenvolumen-Grenze in 4.3. Nur der Operator kann sie bestätigen. Empfehlung: bestätigen oder streichen; eine unbestätigte Erfahrungsangabe in einem Beitrag, der Nachvollziehbarkeit fordert, ist eine Angriffsfläche.
+6. **Notker-Fußnote mit Repo-URL.** Derzeit fußnotenlos, spiegelbildlich zum ZBZ-Exemplar. Empfehlung: fußnotenlos lassen, damit die beiden Exemplare gleich behandelt sind.
 
 ## Reihenfolge über alle Teile
 
@@ -157,4 +156,4 @@ Dann der Sprachdurchgang der Site nach A1 in der dort genannten Ordnung.
 
 Dann C1 und C2, das Doppelabstract und das Exposé, als letzte Schritte vor der Einreichung.
 
-Operatorabhängig und außerhalb dieser Ordnung bleiben die Punkte 2, 4, 5 und 6 aus C5.
+Operatorabhängig und außerhalb dieser Ordnung bleiben die Punkte 2, 4 und 5 aus C5.
