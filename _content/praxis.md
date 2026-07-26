@@ -60,7 +60,7 @@ The binding rule is that externally used claims in paper, companion or report ma
 
 Every user story is a hypothesis about the user for as long as the named user has not confirmed it. In the agentic context the implementing conversation is absent, the conversation that would correct false stories in a classical team. Unvalidated stories therefore have to be marked as assumptions and carry an observation point that records through which event the assumption resolves.
 
-Eight review criteria for `user-stories.md` follow from this, four of them machine-checkable and three redeemable only by a human. They are derived from the QUS framework (Lucassen et al. 2016) and from the case of origin, in which proxy stories with a false model of use led several versions to build on a false assumption. The pattern arose in FemPrompt SozArb ([#case-femprompt-sozarb](#case-femprompt-sozarb)).
+The review criteria for a `user-stories.md` are listed with the template ([Vorlage User Stories](#promptotyping-document-user-stories)). They come from the QUS framework (Lucassen et al. 2016), which separates the criteria a tool can decide from those that require understanding of the content, and the list adds what the agentic setting demands. The epistemic status itself takes no support from that framework, since each of its criteria judges the intrinsic quality of the story text and none asks whether the named user has confirmed the story. It comes from the case of origin, in which proxy stories with a false model of use led several versions to build on a false assumption. The pattern arose in FemPrompt SozArb ([#case-femprompt-sozarb](#case-femprompt-sozarb)).
 
 ## Templates for Promptotyping Documents
 

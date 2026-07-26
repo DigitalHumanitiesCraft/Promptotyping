@@ -72,9 +72,9 @@ Source: Paper, Section 6.4; Pollin 2026a
 
 Adversarial checking of a project's own empirical and novelty claims in dedicated knowledge documents.
 
-Claim verification as a document function denotes the checking of a project's own empirical and novelty claims in a dedicated document that records what claim was checked, against what evidence, by what procedure, and with what verdict. Three building blocks carry it, the recomputation of every headline figure from the raw data by an independent instance with a source path per figure, research against the project's own novelty claim with the aim of refuting it, and a conformance audit against the standards claimed. Claims used externally may be used only in the form these documents license. The pattern emerged in FemPrompt SozArb and is now a document function of the catalogue in its own right.
+Claim verification as a document function denotes the checking of a project's own empirical and novelty claims in a dedicated document that records what claim was checked, against what evidence, by what procedure, and with what verdict. Three building blocks carry it, the recomputation of every headline figure from the raw data by an independent instance with a source path per figure, research against the project's own novelty claim with the aim of refuting it, and a conformance audit against the standards claimed. Claims used externally may be used only in the form these documents license. The vocabulary of claim, grounds, warrant and backing comes from Toulmin's layout of arguments, where each element answers a specific challenge to an assertion (Hitchcock 2003). The recording form stands close to the nanopublication, which binds a single statement to the annotations that carry its provenance so that it becomes citable, attributable and reviewable (Groth et al. 2010). The function is to be held apart from the software test, which checks an artefact against its specification, while what is checked here are statements about the world. Verdict vocabulary and procedure follow from neither model and are the site's own. The pattern emerged in FemPrompt SozArb and is now a document function of the catalogue in its own right.
 
-Source: Paper, Sections 3.3 and 5.1
+Source: Paper, Sections 3.3 and 5.1; Hitchcock 2003 on Toulmin 1958; Groth et al. 2010
 
 ### Co-Intelligence
 
@@ -216,9 +216,9 @@ Source: Paper, Section 3.3
 
 Structural principle that keeps knowledge and action separate and socialises coding agents through their combination.
 
-The knowledge-action composition is the structural principle by which declarative knowledge and imperative steering stay separate and together socialise a coding agent. Concretely, design.md stays a Declarative Document while CLAUDE.md as an Action Document points at it as a source of values and translates the design stance into imperative principles. The aesthetic and factual steering arises from the composition of two documents rather than from a hybrid type.
+The knowledge-action composition is the structural principle by which declarative knowledge and imperative steering stay separate and together socialise a coding agent. Concretely, design.md stays a Declarative Document while CLAUDE.md as an Action Document points at it as a source of values and translates the design stance into imperative principles. The aesthetic and factual steering arises from the composition of two documents rather than from a hybrid type. The same axis separates technical documentation in Diátaxis, action against cognition, knowing how against knowing that (Procida 2024). Two things shift with a machine addressee. That framework's second axis falls away, acquisition against application, because a model loads the documents per session and acquires nothing that persists. And the reason for the separation inverts, since Diátaxis separates so that a reader finds the form their situation calls for, while a knowledge base separates so that a stable description is not overwritten by a volatile instruction.
 
-Source: Site vocabulary, not carried in the paper text; Konvention Promptotyping Documents
+Source: Procida 2024; Konvention Promptotyping Documents
 
 ### Konvention Promptotyping Documents
 
@@ -296,9 +296,9 @@ Source: Paper, Section 2.5; Pollin 2025b
 
 Assignment of tasks by unambiguity, algorithmically unambiguous work to scripts, semantically interpretive work to the LLM.
 
-The script versus LLM division assigns algorithmically unambiguous tasks to scripts and semantically interpretive tasks to the LLM. The dividing line runs along unambiguity rather than along complexity. It appears twice in the method, as deterministically generated documents that are rendered from the source data and committed alongside the curated layer, and as the resolution of the token economy, where the LLM reads over the data and writes code that reads the data.
+The script versus LLM division assigns algorithmically unambiguous tasks to scripts and semantically interpretive tasks to the LLM. The dividing line runs along unambiguity rather than along complexity. It appears twice in the method, as deterministically generated documents that are rendered from the source data and committed alongside the curated layer, and as the resolution of the token economy, where the LLM reads over the data and writes code that reads the data. The line is no coinage of the method. Requirements engineering draws it for its own tools, where the QUS tool checks the criteria a rule can decide and excludes the semantic ones on the stated ground that they require deep understanding of the requirement's content (Lucassen et al. 2016). Evaluation research measures the other end, where a strong judging model matches human preference at the level at which humans agree with one another, under named position, verbosity and self-enhancement biases (Zheng et al. 2023).
 
-Source: Paper, Section 3.3; Promptotyping MOC
+Source: Paper, Section 3.3; Lucassen et al. 2016; Zheng et al. 2023
 
 ### Side Panel
 
@@ -316,21 +316,21 @@ Spec-Driven Development names the corrective the software industry developed aga
 
 Source: Paper, Section 2.4
 
-### Standalone Research Data as a Promptotyping Pattern
+### Research Compendium as a Promptotyping Pattern
 
 Recurring structural feature, a static website plus a standalone research dataset in the repository.
 
-Standalone research data as a Promptotyping pattern denotes the recurring structural feature that a Promptotyping artefact consists of a static website and a standalone research dataset in the repository. It appears in two variants, as a JSON-LD knowledge graph with strong RDF semantics, as in M3GIM, or as a data-structure JSON serving as a plain data source with external identifiers as strings, as in HerData. The dataset carries the whole data holding of the project.
+The research compendium as a Promptotyping pattern denotes the recurring structural feature that a Promptotyping artefact consists of a static website and a standalone research dataset in the repository. It appears in two variants, as a JSON-LD knowledge graph with strong RDF semantics, as in M3GIM, or as a data-structure JSON serving as a plain data source with external identifiers as strings, as in HerData. The dataset carries the whole data holding of the project. The arrangement carries an established name in the reproducibility discussion. Marwick, Boettiger and Mullen (2018) define the research compendium by three principles, that its files follow the conventions of the scholarly community, that data, method and output stay separate with the relation between them stated unambiguously, which treats the data as read-only and documents every modification in the code, and that the computational environment of the original analysis is specified. The convergence on static deployment is argued in the same discourse under the name minimal computing (Risam and Gil 2022).
 
-Source: Site vocabulary, not carried in the paper text; Promptotyping MOC
+Source: Marwick et al. 2018; Risam and Gil 2022; Promptotyping MOC
 
 ### Sub-Agents and Role Simulation
 
 Specialised agent roles with differentiated permissions or, without predefined roles, a simulation of them within one session.
 
-Sub-agents are defined agent roles with graded permissions, for instance a read-only analysis, a writing implementation and a synthesis. They load only if the definitions exist before the session starts; otherwise a role simulation runs within a single session. The method knows this multi-agent mode as a second mode of operation beside the default of one researcher and one agent instance, and the evidence lies overwhelmingly with the first. In the wiiw FIGARO project three roles were separated so that the analysis agent held read permissions only.
+Sub-agents are defined agent roles with graded permissions, for instance a read-only analysis, a writing implementation and a synthesis. They load only if the definitions exist before the session starts; otherwise a role simulation runs within a single session. The method knows this multi-agent mode as a second mode of operation beside the default of one researcher and one agent instance, and the evidence lies overwhelmingly with the first. In the wiiw FIGARO project three roles were separated so that the analysis agent held read permissions only. The graded permissions are least privilege in the sense of Saltzer and Schroeder (1975), where every program and every user operates with the least set of privileges the job needs, which bounds the damage an error can do and narrows what an audit has to cover. Splitting roles across separate instances is what multi-agent frameworks do when they assign roles along an encoded working procedure so that intermediate results are checked by an agent other than their producer (Hong et al. 2023). The simulation within one session is called role play in the literature, and that literature's own correction bounds the term, because a role set by a prompt stays a distribution of characters that the conversation keeps reshaping (Shanahan et al. 2023).
 
-Source: Paper, Section 3.2; Promptotyping MOC
+Source: Paper, Section 3.2; Saltzer and Schroeder 1975; Hong et al. 2023 (MetaGPT); Shanahan et al. 2023
 
 ### Sycophancy
 
@@ -360,9 +360,9 @@ Source: Paper, Section 3.3; knowledge/specification.md, requirement A5
 
 Every user story is a hypothesis about the user until the named user confirms it.
 
-In the Promptotyping context every user story is a hypothesis about the user until the named user has confirmed it. In the agentic setting the implementing conversation that would correct wrong stories within a team falls away, so unvalidated stories have to be marked as assumptions and carry an observation point. Eight review criteria for user-stories.md, four of them machine-checkable and three redeemable only by a human, derive from QUS (Lucassen et al. 2016) and the FemPrompt case.
+In the Promptotyping context every user story is a hypothesis about the user until the named user has confirmed it. In the agentic setting the implementing conversation that would correct wrong stories within a team falls away, so unvalidated stories have to be marked as assumptions and carry an observation point. This status is a stipulation of the site and takes no support from the QUS framework, since each of its criteria judges the intrinsic quality of the story text and none asks whether the story holds of the user it names; it comes from the FemPrompt case. The review criteria for a user-stories document are listed with the Vorlage User Stories, taken from QUS (Lucassen et al. 2016) along the division that framework itself draws between what a tool can decide and what requires understanding of the content, and extended by what the agentic setting demands.
 
-Source: Site vocabulary, not carried in the paper text; Lucassen et al. 2016
+Source: Site vocabulary, not carried in the paper text; criteria from Lucassen et al. 2016, listed at Vorlage User Stories
 
 ### Verification and Validation
 

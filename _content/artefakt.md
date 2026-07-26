@@ -22,6 +22,8 @@ The artefacts are, by deliberate default, self-contained static web tools, a set
 - **Publishability.** They go online without infrastructure, which matches the resource situation of the researchers the method addresses.
 - **Durability.** Minimal computing and the Endings Project argue that the digital artefacts with the fewest moving parts have the best chances of survival, without server-side dependencies and without build chains that rot. Digital scholarly editing reaches the same conclusion from its own side when it publishes TEI-XML editions as static websites.
 
+The data side of this arrangement has an established name. A repository holding a project's research data beside the code that renders it is what the reproducibility discussion calls a Research Compendium (Marwick, Boettiger and Mullen 2018), defined by three principles, that its files follow the conventions of the scholarly community so that others recognise the structure, that data, method and output stay separate with the relation between them stated unambiguously, which treats the data as read-only and documents every modification in the code, and that the computational environment of the original analysis is specified. The first two carry over to a Promptotyping artefact directly and describe what its repository already does. The third is where the analogy strains, because the environment that produced the derivation here is a language model with a harness, and whether naming them discharges the principle is open.
+
 ## Technical rules
 
 From these properties follow the rules that a project's action layer passes on to the agent. The elaborated version lies in the [technology baseline](_content/technology-baseline.md).

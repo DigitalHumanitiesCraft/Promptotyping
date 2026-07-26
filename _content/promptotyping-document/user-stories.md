@@ -32,7 +32,37 @@ Zweitens ist jede Story dreigliedrig: Rolle, Ziel, Nutzen. Eine Story ohne Nutze
 
 Drittens trägt jede Story eine Ableitung. Welche Anforderung in `specification.md` realisiert das Szenario, welche Komponente in `architecture.md` oder `design.md` ist beteiligt, welche Begriffe aus dem INDEX-Glossar werden vorausgesetzt. Diese Ableitung ist die Verlinkung der Story in die Wissensbasis und macht sie maschinenlesbar.
 
-Viertens führt jede Story ihren epistemischen Status. Eine Story ist eine Hypothese über den Anwender, bis der benannte Anwender sie bestätigt hat. Sie ist entweder als validiert markiert (durch wen, wann) oder als Annahme mit Beobachtungspunkt nach dem Muster "Effekt: to be observed", inklusive des Ereignisses, an dem er aufgelöst wird. Stories von Proxies sind als solche gekennzeichnet. Begründung und vollständige Prüfkriterien gehen auf QUS (Lucassen et al. 2016) und den FemPrompt-Fall zurück (siehe Praxis-Sektion, [Epistemischer Status von User Stories](#praxis-user-story-status)).
+Viertens führt jede Story ihren epistemischen Status. Eine Story ist eine Hypothese über den Anwender, bis der benannte Anwender sie bestätigt hat. Sie ist entweder als validiert markiert (durch wen, wann) oder als Annahme mit Beobachtungspunkt nach dem Muster "Effekt: to be observed", inklusive des Ereignisses, an dem er aufgelöst wird. Stories von Proxies sind als solche gekennzeichnet. Die Begründung geht auf den FemPrompt-Fall zurück (siehe Praxis-Sektion, [Epistemischer Status von User Stories](#praxis-the-epistemic-status-of-user-stories)); die Prüfkriterien stehen im folgenden Abschnitt.
+
+## Prüfkriterien
+
+Die Kriterien für ein User-Stories-Dokument stammen aus dem Quality-User-Story-Framework (Lucassen et al. 2016), ergänzt um Punkte aus dem agentischen Setting. Die Trennlinie zieht die Quelle selbst, weil ihr Werkzeug AQUSA die Kriterien prüft, über die eine Regel entscheidet, und die ausschließt, die Verständnis des Inhalts verlangen. Alle QUS-Kriterien beurteilen die intrinsische Qualität des Story-Textes; ob die Story für den Nutzer zutrifft, den sie benennt, liegt außerhalb von ihnen und ist der Grund für die Ergänzungen.
+
+### Was ein Skript entscheidet
+
+Die Kriterien, für die AQUSA einen Analyzer implementiert, dazu zwei Ergänzungen dieser Site.
+
+- **Well-formed.** Die Story enthält mindestens Rolle und Mittel.
+- **Atomic.** Die Story formuliert die Anforderung an genau ein Feature.
+- **Minimal.** Die Story enthält nichts außer Rolle, Mittel und Zweck.
+- **Unique.** Jede Story ist einmalig, Dubletten werden vermieden (am Story-Satz zu prüfen).
+- **Uniform.** Alle Stories eines Dokuments verwenden dieselbe Schablone (am Story-Satz zu prüfen).
+- **Story-ID** (Ergänzung dieser Site). Jede Story trägt eine stabile Kennung, auf die Akzeptanzkriterien, Tests und Journaleinträge verweisen können.
+- **Validierungsstatus** (Ergänzung dieser Site). Jede Story trägt ein Feld für den Status, im Fall der Annahme samt Beobachtungspunkt. Ein Skript prüft die Präsenz des Feldes und nicht die Wahrheit seiner Angabe.
+
+### Was der Mensch einlöst
+
+Die übrigen QUS-Kriterien, dazu eine dritte Ergänzung dieser Site. Die Quelle nimmt die semantischen aus ihrem Werkzeug aus, weil sie Verständnis des Inhalts verlangen; bei Full sentence liegt der Grund allein darin, dass die berichtete Werkzeugversion dafür keinen Analyzer führt.
+
+- **Conceptually sound.** Das Mittel benennt ein Feature und der Zweck eine Begründung.
+- **Problem-oriented.** Die Story benennt allein das Problem; die Lösung dafür bleibt draußen.
+- **Unambiguous.** Die Story vermeidet Begriffe und Abstraktionen, die mehrere Lesarten zulassen.
+- **Full sentence.** Die Story ist ein wohlgeformter vollständiger Satz.
+- **Estimatable.** Die Story bezeichnet keine grobkörnige Anforderung, die sich schwer planen und priorisieren lässt.
+- **Conflict-free.** Keine Story steht im Widerspruch zu einer anderen (am Story-Satz zu prüfen).
+- **Complete.** Die Umsetzung des Story-Satzes ergibt eine funktional vollständige Anwendung, ohne fehlende Schritte (am Story-Satz zu prüfen).
+- **Independent.** Die Story ist in sich geschlossen und hängt an keiner anderen (am Story-Satz zu prüfen). Die Quelle hält fest, dass sich das praktisch nie durchhalten lässt, und empfiehlt für den unvermeidbaren Fall, die Abhängigkeit ausdrücklich zu deklarieren.
+- **Validierung durch den benannten Nutzer** (Ergänzung dieser Site). Die Story ist von der Rolle bestätigt, die sie benennt, mit Angabe von wem und wann.
 
 ## Frontmatter-Schema
 
