@@ -514,7 +514,6 @@ a:hover {
   margin: var(--space-12) 0;
   padding: var(--space-8) 0;
   border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
 }
 
 .content .spec-index h2 {
@@ -1279,7 +1278,6 @@ a:hover {
 .glossar-entry {
   margin: var(--space-6) 0;
   padding-bottom: var(--space-4);
-  border-bottom: 1px solid var(--border);
 }
 
 .glossar-term {
@@ -1442,7 +1440,6 @@ a:hover {
   align-items: baseline;
   gap: var(--space-4);
   padding: var(--space-2) 0;
-  border-top: 1px solid var(--border);
   scroll-margin-top: var(--space-16);
 }
 
@@ -1455,7 +1452,7 @@ a:hover {
   color: var(--text);
   text-align: left;
   cursor: pointer;
-  border-bottom: 1px solid var(--accent);
+  border-bottom: 1px solid transparent;
 }
 
 .vault-claim:hover,
@@ -1516,7 +1513,7 @@ a:hover {
   font-size: 0.8125rem;
   color: var(--grey-2);
   text-decoration: none;
-  border-bottom: 1px solid var(--accent);
+  border-bottom: 1px solid transparent;
 }
 
 .glossar-jump a:hover,
@@ -1644,4 +1641,16 @@ a:hover {
 
 .term-index-none {
   color: var(--grey-3);
+}
+
+.site-footer-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.site-footer-mark svg {
+  width: 14px;
+  height: 14px;
+  flex: none;
 }

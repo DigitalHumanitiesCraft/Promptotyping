@@ -1,4 +1,4 @@
-/* Frontmatter-Inspector (A11, ADR-7). Paste-live-render module in the Vorlagen
+/* Frontmatter inspector (A11, ADR-7). Paste-live-render module in the templates
    section. Takes a whole YAML frontmatter block, extracts template.url/alias via
    js-yaml, validates the URL against the site anchor schema, and opens the side
    panel with the rendered template. No ES modules: app.js is an IIFE that exposes
@@ -38,7 +38,7 @@
       var latestEl = document.getElementById(latest);
       if (latestEl) {
         setStatus(statusEl, "warn",
-          "Snapshot v" + version + " ist nicht als eigener Anker vorhanden. Fallback auf die aktuelle Fassung.");
+          "Snapshot v" + version + " has no anchor of its own. Falling back to the current version.");
         return latest;
       }
     }
@@ -48,7 +48,7 @@
   function parseAndResolve(input, statusEl, openPanel, resolve) {
     var fmMatch = /^---\n([\s\S]+?)\n---/.exec(input.trim());
     if (!fmMatch) {
-      setStatus(statusEl, "error", "Kein Frontmatter-Block gefunden (--- ... ---).");
+      setStatus(statusEl, "error", "No frontmatter block found (--- ... ---).");
       return;
     }
 
@@ -56,35 +56,35 @@
     try {
       parsed = window.jsyaml.load(fmMatch[1]);
     } catch (e) {
-      setStatus(statusEl, "error", "YAML-Fehler: " + e.message);
+      setStatus(statusEl, "error", "YAML error: " + e.message);
       return;
     }
 
     var tmpl = parsed && parsed.template;
     if (!tmpl || (!tmpl.url && !tmpl.alias)) {
-      setStatus(statusEl, "error", "Kein template:-Feld mit url oder alias gefunden.");
+      setStatus(statusEl, "error", "No template: field with url or alias found.");
       return;
     }
 
     var url = tmpl.url || tmpl.alias;
     if (url.indexOf(SITE_BASE) !== 0 && url.charAt(0) !== "#" && url.charAt(0) !== "/") {
-      setStatus(statusEl, "error", "URL zeigt nicht auf " + SITE_BASE + ".");
+      setStatus(statusEl, "error", "The URL does not point at " + SITE_BASE + ".");
       return;
     }
 
     var anchor = resolve(url);
     if (!anchor || anchor.indexOf("promptotyping-document-") !== 0) {
       setStatus(statusEl, "error",
-        "URL passt nicht zum Vorlagen-Anker-Schema (#promptotyping-document-{slug}).");
+        "The URL does not match the template anchor scheme (#promptotyping-document-{slug}).");
       return;
     }
 
     anchor = resolveWithFallback(anchor, statusEl, tmpl);
 
-    var name = tmpl.name ? tmpl.name : "Vorlage";
+    var name = tmpl.name ? tmpl.name : "Template";
     var version = tmpl.version ? " v" + tmpl.version : "";
     if (statusEl.className.indexOf("inspector-status-warn") === -1) {
-      setStatus(statusEl, "ok", "Vorlage erkannt: " + name + version + ". Panel geoeffnet.");
+      setStatus(statusEl, "ok", "Template recognised: " + name + version + ". Panel opened.");
     }
     openPanel(anchor);
   }
@@ -99,7 +99,7 @@
     var resolve = App.resolveTemplateUrl;
     var openPanel = App.openTemplatePanel;
     if (typeof resolve !== "function" || typeof openPanel !== "function") {
-      setStatus(statusEl, "error", "Inspector nicht initialisierbar (App-Helfer fehlen).");
+      setStatus(statusEl, "error", "The inspector cannot initialise (app helpers missing).");
       return;
     }
 
@@ -120,7 +120,7 @@
     var fmMatch = /^---\n([\s\S]+?)\n---/.exec(textarea.value.trim());
     if (fmMatch) {
       setStatus(statusEl, "ok",
-        "Beispiel-Frontmatter geladen. Tippen loest die referenzierte Vorlage auf.");
+        "Example frontmatter loaded. Typing resolves the referenced template.");
     }
 
     var btn = rootEl.querySelector(".inspector-resolve");

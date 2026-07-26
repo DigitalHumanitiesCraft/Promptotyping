@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Promptotyping. Spezifikation der Methode</title>
-  <meta name="description" content="Spezifikationsdokumentation der Promptotyping-Methode: vier Phasen, Dokumentsatz, Konvention, Artefakttyp und Verifikation, mit Referenz, Praxis und dem Methoden-Paper.">
+  <title>Promptotyping. Specification of the Method</title>
+  <meta name="description" content="Specification documentation of the Promptotyping method. Four phases, document set, convention, artefact type and verification, with reference, practice and the method paper.">
 
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://dhcraft.org/Promptotyping/">
 
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Promptotyping. Spezifikation der Methode">
-  <meta property="og:description" content="Iterative Context-Engineering-Methode in vier Phasen, um aus Daten und Frontier-LLMs Forschungsartefakte zu erzeugen.">
+  <meta property="og:title" content="Promptotyping. Specification of the Method">
+  <meta property="og:description" content="An iterative context-engineering method in four phases that turns research data and frontier LLMs into research artefacts.">
   <meta property="og:url" content="https://dhcraft.org/Promptotyping/">
   <meta property="og:image" content="https://dhcraft.org/Promptotyping/assets/promptotyping-logo.png">
   <meta property="og:image:type" content="image/png">
@@ -22,8 +22,8 @@
   {
     "@context": "https://schema.org",
     "@type": "TechArticle",
-    "name": "Promptotyping. Spezifikation der Methode",
-    "description": "Spezifikationsdokumentation der Promptotyping-Methode: vier Phasen, Dokumentsatz, Konvention, Artefakttyp und Verifikation.",
+    "name": "Promptotyping. Specification of the Method",
+    "description": "Specification documentation of the Promptotyping method. Four phases, document set, convention, artefact type and verification.",
     "url": "https://dhcraft.org/Promptotyping/",
     "author": {
       "@type": "Person",
@@ -38,7 +38,7 @@
       "name": "Digital Humanities Craft OG",
       "url": "https://dhcraft.org"
     },
-    "inLanguage": "de"
+    "inLanguage": "en"
   }
   </script>
 
@@ -56,7 +56,7 @@
 </head>
 <body class="docs">
 
-  <a class="skip-link" href="#content">Zum Inhalt springen</a>
+  <a class="skip-link" href="#content">Skip to content</a>
 
   <!-- Docs header: brand and specification status left, outbound links right.
        The section navigation lives in the sidebar tree, not up here. -->
@@ -64,12 +64,17 @@
     <div class="docs-header-inner">
       <a class="docs-brand" href="#ueberblick">
         <span class="docs-brand-word">Promptotyping</span>
-        <span class="docs-brand-kind">Spezifikation</span>
+        <span class="docs-brand-kind">Specification</span>
       </a>
-      <nav class="docs-header-links" aria-label="Extern">
-        <a href="https://github.com/DigitalHumanitiesCraft/Promptotyping" target="_blank" rel="noopener">Repository</a>
+      <nav class="docs-header-links" aria-label="External">
+        <a class="icon-button" href="https://github.com/DigitalHumanitiesCraft/Promptotyping" target="_blank" rel="noopener">
+          <span class="visually-hidden">Repository on GitHub</span>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48l-.01-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.36 1.09 2.94.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85l-.01 2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2z"></path>
+          </svg>
+        </a>
         <button type="button" class="icon-button" id="theme-toggle" aria-live="polite">
-          <span class="visually-hidden">Farbschema wechseln</span>
+          <span class="visually-hidden">Switch colour scheme</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
                stroke-linecap="round" aria-hidden="true">
             <circle cx="12" cy="12" r="7"></circle>
@@ -84,7 +89,7 @@
 
     <!-- Sidebar tree. Built by app.js from the page registry so index.html and
          404.html cannot drift apart. -->
-    <nav class="docs-nav" id="docs-nav" aria-label="Dokumentation"></nav>
+    <nav class="docs-nav" id="docs-nav" aria-label="Documentation"></nav>
 
     <!-- One page visible at a time; app.js mounts the page hosts and routes. -->
     <main class="docs-main content" id="content" tabindex="-1"></main>
@@ -97,7 +102,7 @@
   <aside class="side-panel" id="side-panel" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="side-panel-title">
     <div class="side-panel-header">
       <h2 class="side-panel-title" id="side-panel-title"></h2>
-      <button type="button" class="side-panel-close" id="side-panel-close" aria-label="Panel schliessen">&times;</button>
+      <button type="button" class="side-panel-close" id="side-panel-close" aria-label="Close panel">&times;</button>
     </div>
     <div class="side-panel-body" id="side-panel-body"></div>
   </aside>
@@ -113,20 +118,18 @@
         <p>Code MIT</p>
       </div>
       <div class="site-footer-col">
-        <h2>Adressen</h2>
-        <p><a href="_content/">Maschinenadresse <code>_content/</code></a></p>
-        <p><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping" target="_blank" rel="noopener">Repository</a></p>
-        <p><a href="https://www.youtube.com/@DigitalHumanitiesCraft" target="_blank" rel="noopener">YouTube-Kanal</a></p>
+        <h2>Addresses</h2>
+        <p class="site-footer-machine">Every page is served as static Markdown under <a href="_content/"><code>_content/</code></a> and can be retrieved without JavaScript (ADR-10).</p>
+        <p><a class="site-footer-mark" href="https://github.com/DigitalHumanitiesCraft/Promptotyping" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48l-.01-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.36 1.09 2.94.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85l-.01 2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2z"></path></svg>Repository</a></p>
+        <p><a class="site-footer-mark" href="https://www.youtube.com/@DigitalHumanitiesCraft" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.75-1.77C18.25 5 12 5 12 5s-6.25 0-7.85.43A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.75 1.77C5.75 19 12 19 12 19s6.25 0 7.85-.43a2.5 2.5 0 0 0 1.75-1.77A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8zM10 15V9l5.2 3z"></path></svg>YouTube channel</a></p>
       </div>
       <div class="site-footer-col">
-        <h2>Diese Spezifikation</h2>
-        <p>Fassung 0.1</p>
-        <p>Stand 2026-07-26</p>
-        <p><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/commits/main" target="_blank" rel="noopener">Aenderungen</a></p>
-      </div>
-      <div class="site-footer-col">
-        <h2>Maschinenzugriff</h2>
-        <p>Jeder Inhalt liegt als statisches Markdown unter <code>_content/</code> und ist ohne JavaScript abrufbar (ADR-10).</p>
+        <h2>This specification</h2>
+        <p>Version 0.1</p>
+        <p>Updated 2026-07-26</p>
+        <p><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/commits/main" target="_blank" rel="noopener">Changes</a></p>
       </div>
     </div>
   </footer>

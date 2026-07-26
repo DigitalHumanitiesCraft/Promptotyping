@@ -53,42 +53,42 @@
      cannot drift apart. */
 
   var PAGES = [
-    { id: "ueberblick", label: "Einstieg", group: "Spezifikation", kind: "normativ",
-      note: "Was die Methode ist und wofuer sie gilt" },
-    { id: "anwendung", label: "Anwendung", group: "Spezifikation", part: "1", kind: "normativ",
-      note: "Die vier Phasen in Handlungsaufloesung" },
-    { id: "vorlagen", label: "Vorlagen", group: "Spezifikation", part: "2", kind: "normativ",
-      note: "Der vollstaendige Dokumentsatz und seine Ausloeser",
+    { id: "ueberblick", label: "Overview", group: "Specification", kind: "normative",
+      note: "What the method is and where it applies" },
+    { id: "anwendung", label: "Application", group: "Specification", part: "1", kind: "normative",
+      note: "The four phases resolved into actions" },
+    { id: "vorlagen", label: "Templates", group: "Specification", part: "2", kind: "normative",
+      note: "The full document set and its triggers",
       machine: "data/promptotyping-documents.json" },
-    { id: "konvention-v0.1", label: "Konvention", group: "Spezifikation", part: "3", kind: "normativ",
-      note: "Frontmatter, Adressierung, Lese-Heuristik" },
-    { id: "artefakt", label: "Artefakt und Grenze", group: "Spezifikation", part: "4", kind: "normativ",
-      note: "Artefakttyp und Uebergabepunkt" },
-    { id: "verifikation", label: "Verifikation", group: "Spezifikation", part: "5", kind: "normativ",
-      note: "Pruefarten, Pruefebenen, Autonomiezonen" },
+    { id: "konvention-v0.1", label: "Convention", group: "Specification", part: "3", kind: "normative",
+      note: "Frontmatter, addressing, reading heuristic" },
+    { id: "artefakt", label: "Artefact and boundary", group: "Specification", part: "4", kind: "normative",
+      note: "Artefact type and handover point" },
+    { id: "verifikation", label: "Verification", group: "Specification", part: "5", kind: "normative",
+      note: "Kinds of check, levels of check, zones of autonomy" },
 
-    { id: "glossar", label: "Glossar", group: "Referenz", kind: "informativ",
-      note: "Termverzeichnis der Methode", machine: "data/glossar.json" },
-    { id: "vault", label: "Vault", group: "Referenz", kind: "informativ",
-      note: "Claims und Distillate unter dem Paper", machine: "data/vault.json" },
+    { id: "glossar", label: "Glossary", group: "Reference", kind: "informative",
+      note: "Term register of the method", machine: "data/glossar.json" },
+    { id: "vault", label: "Vault", group: "Reference", kind: "informative",
+      note: "Claims and distillates under the paper", machine: "data/vault.json" },
 
-    { id: "workflow", label: "Beispiel-Workflow", group: "Belege", kind: "informativ",
-      note: "Ein durchgefuehrter Fall von Rohdaten bis Artefakt" },
-    { id: "use-cases", label: "Use Cases", group: "Belege", kind: "informativ",
-      note: "Dokumentierte Projekte", machine: "data/case-studies.json" },
+    { id: "workflow", label: "Worked workflow", group: "Evidence", kind: "informative",
+      note: "One case carried from raw data to artefact" },
+    { id: "use-cases", label: "Use Cases", group: "Evidence", kind: "informative",
+      note: "Documented projects", machine: "data/case-studies.json" },
 
-    { id: "praxis", label: "Best Practices", group: "Werkzeuge und Praxis", kind: "informativ",
-      note: "Handgriffe aus der Anwendung" },
-    { id: "skills", label: "Skills", group: "Werkzeuge und Praxis", kind: "informativ",
-      note: "Wiederverwendbare Agentenanweisungen", machine: "_content/skills/index.md" },
-    { id: "arbeitsumgebung", label: "Arbeitsumgebung", group: "Werkzeuge und Praxis", kind: "informativ",
-      note: "Werkzeuge um die Methode herum" },
+    { id: "praxis", label: "Best Practices", group: "Tools and practice", kind: "informative",
+      note: "Working practices from application" },
+    { id: "skills", label: "Skills", group: "Tools and practice", kind: "informative",
+      note: "Reusable agent instructions", machine: "_content/skills/index.md" },
+    { id: "arbeitsumgebung", label: "Working environment", group: "Tools and practice", kind: "informative",
+      note: "Tools around the method" },
 
-    { id: "paper", label: "Paper", group: "Paper", kind: "informativ",
-      note: "Warum die Methode so gebaut ist", machine: "knowledge/paper.md" }
+    { id: "paper", label: "Paper", group: "Paper", kind: "informative",
+      note: "Why the method is built this way", machine: "knowledge/paper.md" }
   ];
 
-  var PAGE_GROUPS = ["Spezifikation", "Referenz", "Belege", "Werkzeuge und Praxis", "Paper"];
+  var PAGE_GROUPS = ["Specification", "Reference", "Evidence", "Tools and practice", "Paper"];
   var HOME_PAGE = "ueberblick";
 
   /* Sub-anchor prefixes and their owning page. Order matters only in that the
@@ -173,12 +173,12 @@
         html = marked.parseInline(body);
         footnoteSuppress = false;
       } else {
-        html = "<em>Fussnotendefinition fehlt (" + escapeHtml(name) + ").</em>";
+        html = "<em>Footnote definition missing (" + escapeHtml(name) + ").</em>";
       }
       var backs = "";
       for (var k = 1; k <= (footnoteRefCount[name] || 0); k++) {
         backs += ' <a class="footnote-back" href="#' + footnoteRefId(num, k) +
-          '" aria-label="Zurueck zur Textstelle">↩</a>';
+          '" aria-label="Back to the text">↩</a>';
       }
       return '<li class="footnote-item" id="fn-' + num + '">' + html + backs + "</li>";
     }).join("");
@@ -336,7 +336,7 @@
   function fetchMarkdown(file) {
     return fetch(file).then(function (res) {
       if (!res.ok) {
-        throw new Error("Konnte " + file + " nicht laden (" + res.status + ").");
+        throw new Error("Could not load " + file + " (" + res.status + ").");
       }
       return res.text();
     });
@@ -489,12 +489,12 @@
     var facade = document.createElement("button");
     facade.type = "button";
     facade.className = "video-facade";
-    facade.setAttribute("aria-label", "Video laden: " + title);
+    facade.setAttribute("aria-label", "Load video: " + title);
     facade.innerHTML =
       '<span class="video-facade-title">' + title + "</span>" +
-      '<span class="video-facade-note">Klick laedt das Video von youtube-nocookie.com. ' +
-      "Vor dem Klick wird keine Verbindung zu YouTube aufgebaut und es findet kein Tracking statt.</span>" +
-      '<span class="video-facade-play">Video laden</span>';
+      '<span class="video-facade-note">A click loads the video from youtube-nocookie.com. ' +
+      "Before the click no connection to YouTube is made and no tracking takes place.</span>" +
+      '<span class="video-facade-play">Load video</span>';
 
     facade.addEventListener("click", function () {
       var iframe = document.createElement("iframe");
@@ -552,16 +552,16 @@
     var block = document.createElement("aside");
     block.className = "usecase-reference";
     block.innerHTML =
-      "<p>Die in diesem Abschnitt genannten Projekte sind in der kuratierten " +
-      '<a href="#use-cases">Use-Case-Galerie</a> dokumentiert, gruppiert danach, wo im ' +
-      "Forschungsdaten-Lebenszyklus die Methode operiert. Jede Karte traegt einen stabilen " +
-      "Anker und, soweit belegt, Links zu Repository, Demo und Prozessvideo.</p>" +
+      "<p>The projects named in this section are documented in the curated " +
+      '<a href="#use-cases">use-case gallery</a>, grouped by where in the research data ' +
+      "lifecycle the method operates. Every card carries a stable anchor and, where " +
+      "cleared, links to repository, demo and process video.</p>" +
       '<p class="usecase-reference-links">' +
       '<a href="#case-herdata">HerData</a>' +
       '<a href="#case-klawiter-rescue">Klawiter Bibliography Rescue</a>' +
       '<a href="#case-coocr-htr">coOCR-HTR</a>' +
       '<a href="#case-m3gim">M3GIM</a>' +
-      '<a href="#use-cases">Zur vollstaendigen Galerie</a>' +
+      '<a href="#use-cases">To the full gallery</a>' +
       "</p>";
     sectionEl.appendChild(block);
   }
@@ -625,7 +625,7 @@
   function pageTitle(id) {
     var entry = PAGES.filter(function (p) { return p.id === id; })[0];
     return id === HOME_PAGE || !entry
-      ? "Promptotyping. Spezifikation der Methode"
+      ? "Promptotyping. Specification of the Method"
       : entry.label + " — Promptotyping";
   }
 
@@ -685,7 +685,7 @@
     }
     var label = function () {
       btn.setAttribute("title", currentTheme() === "dark"
-        ? "Auf helles Schema wechseln" : "Auf dunkles Schema wechseln");
+        ? "Switch to the light theme" : "Switch to the dark theme");
     };
     label();
     btn.addEventListener("click", function () {
@@ -753,11 +753,11 @@
       var fm = pageFrontmatter[p.id] || {};
       var machine = fm["machine-url"] || p.machine;
       var fields = [
-        ["Geltung", p.kind === "normativ"
-          ? "normativ, Teil der Spezifikation"
-          : "informativ"],
-        ["Fassung", fm.version || null],
-        ["Stand", fm.updated || fm.mirrored || null]
+        ["Standing", p.kind === "normative"
+          ? "normative, part of the specification"
+          : "informative"],
+        ["Version", fm.version || null],
+        ["Updated", fm.updated || fm.mirrored || null]
       ];
       var html = fields.filter(function (f) { return f[1]; }).map(function (f) {
         return '<span class="page-status-item"><span class="page-status-key">' +
@@ -765,7 +765,7 @@
       }).join("");
       if (machine) {
         var href = /^https?:/.test(machine) ? machine : machine;
-        html += '<span class="page-status-item"><span class="page-status-key">Quelle</span> ' +
+        html += '<span class="page-status-item"><span class="page-status-key">Source</span> ' +
           '<a href="' + escapeHtml(href) + '" target="_blank" rel="noopener"><code>' +
           escapeHtml(machine.replace(/^https:\/\/dhcraft\.org\/Promptotyping\//, "")) +
           "</code></a></span>";
@@ -813,7 +813,7 @@
     });
     var block = document.createElement("section");
     block.className = "spec-index";
-    block.innerHTML = '<h2 id="inhalt-der-spezifikation">Inhalt der Spezifikation</h2>' +
+    block.innerHTML = '<h2 id="inhalt-der-spezifikation">Contents of the specification</h2>' +
       '<div class="spec-index-cols">' + html + "</div>";
     if (anchorEl && anchorEl.nextSibling) {
       host.insertBefore(block, anchorEl.nextSibling);
@@ -949,7 +949,7 @@
     return fetch("data/vault.json")
       .then(function (res) {
         if (!res.ok) {
-          throw new Error("Konnte vault.json nicht laden (" + res.status + ").");
+          throw new Error("Could not load vault.json (" + res.status + ").");
         }
         return res.json();
       })
@@ -967,7 +967,7 @@
               '<button type="button" class="vault-claim" data-claim="' + slug + '">' +
               escapeHtml(claim.title) + "</button>" +
               '<span class="vault-claim-meta">' + claim.grounding.length +
-              (claim.grounding.length === 1 ? " Anker" : " Anker") + "</span></li>";
+              (claim.grounding.length === 1 ? " anchor" : " anchors") + "</span></li>";
           }).join("");
           return '<section class="vault-topic" id="vault-topic-' +
             topic.topic.toLowerCase() + '">' +
@@ -979,13 +979,13 @@
         el.classList.remove("placeholder-section");
         el.innerHTML =
           "<h1>Vault</h1>" +
-          "<p>Die Belegschicht unter dem Paper. Quellen werden zu Distillaten mit " +
-          "zitatgepruefeten Einzelaussagen verdichtet, und aus diesen Aussagen sind die " +
-          "Claims gebaut, auf denen die tragenden Saetze des Papers stehen. Die Anker " +
-          "loesen nur nach unten auf, von der Behauptung zur Quelle. Ein Claim oeffnet " +
-          "sich mit seiner Aussage und seinen Ankern im Seitenpanel.</p>" +
+          "<p>The evidence layer under the paper. Sources are condensed into distillates " +
+          "of quotation-checked single statements, and the claims that the paper's " +
+          "load-bearing sentences rest on are built from those statements. The anchors " +
+          "resolve downwards only, from the assertion to the source. A claim opens in the " +
+          "side panel with its statement and its anchors.</p>" +
           '<p class="vault-repo-note"><a href="vault/" target="_blank" rel="noopener">' +
-          "Vault im Repository</a></p>" +
+          "Vault in the repository</a></p>" +
           '<div class="vault-topics">' + blocks + "</div>";
 
         el.addEventListener("click", function (ev) {
@@ -1016,7 +1016,7 @@
     }).join("");
 
     var contested = claim.contestedWith.length
-      ? '<p class="vault-panel-contested">Widerstreitend mit ' +
+      ? '<p class="vault-panel-contested">Contested with ' +
         claim.contestedWith.map(escapeHtml).join(", ") + "</p>"
       : "";
 
@@ -1025,7 +1025,7 @@
       (claim.topics.length ? " &middot; " + claim.topics.map(escapeHtml).join(", ") : "") + "</p>" +
       "<p>" + escapeHtml(claim.statement) + "</p>" +
       contested +
-      "<h3>Grundlage</h3><ul class=\"vault-anchor-list\">" + anchors + "</ul>");
+      "<h3>Grounding</h3><ul class=\"vault-anchor-list\">" + anchors + "</ul>");
   }
 
   /* ---- Reusable side panel ---- */
@@ -1096,7 +1096,7 @@
     });
   }
 
-  /* ---- Vorlagen-Daten und Side-Panel ---- */
+  /* ---- Template data and side panel ---- */
 
   var templateDocs = [];
   var templateBySlug = {};
@@ -1110,7 +1110,7 @@
       "  version: " + doc.version + "\n" +
       "  url: https://dhcraft.org/Promptotyping/promptotyping-document/" + doc.slug + "\n" +
       "  alias: https://dhcraft.org/Promptotyping/#promptotyping-document-" + doc.slug + "\n" +
-      "  # machine-url (statischer Rohtext, ohne JavaScript abrufbar):\n" +
+      "  # machine-url (static raw text, retrievable without JavaScript):\n" +
       "  # " + doc.machineUrl;
   }
 
@@ -1122,7 +1122,7 @@
     }
     var slug = anchor.replace(/^promptotyping-document-/, "").replace(/-v[\d.]+$/, "");
     var doc = templateBySlug[slug];
-    var title = doc ? doc.title : "Vorlage";
+    var title = doc ? doc.title : "Template";
 
     if (templatePanelCache[slug]) {
       openSidePanel(title, templatePanelCache[slug]);
@@ -1130,7 +1130,7 @@
       return;
     }
 
-    openSidePanel(title, '<p class="section-loading">Wird geladen.</p>');
+    openSidePanel(title, '<p class="section-loading">Loading.</p>');
     fetchMarkdown("_content/promptotyping-document/" + slug + ".md")
       .then(function (text) {
         var html = marked.parse(stripFrontmatter(text));
@@ -1150,8 +1150,8 @@
     var block = templateFrontmatterBlock(doc);
     return '<div class="panel-footer">' +
       '<button type="button" class="panel-copy" data-copy="' +
-        encodeURIComponent(block) + '">Frontmatter-Block kopieren</button> ' +
-      '<a href="' + doc.machineUrl + '" target="_blank" rel="noopener">Markdown abrufen</a>' +
+        encodeURIComponent(block) + '">Copy frontmatter block</button> ' +
+      '<a href="' + doc.machineUrl + '" target="_blank" rel="noopener">Open markdown</a>' +
       '<pre class="panel-frontmatter"><code>' + escapeHtml(block) + "</code></pre>" +
       "</div>";
   }
@@ -1167,7 +1167,7 @@
     if (btn) {
       btn.addEventListener("click", function () {
         var text = decodeURIComponent(btn.getAttribute("data-copy"));
-        copyText(text, btn, "Frontmatter-Block kopieren");
+        copyText(text, btn, "Copy frontmatter block");
       });
     }
   }
@@ -1175,7 +1175,7 @@
   function copyText(text, btn, resetLabel) {
     function done() {
       if (btn) {
-        btn.textContent = "Kopiert";
+        btn.textContent = "Copied";
         setTimeout(function () { btn.textContent = resetLabel; }, 1500);
       }
     }
@@ -1210,7 +1210,7 @@
     setTimeout(function () { suppressHashChange = false; }, 0);
   }
 
-  /* ---- Static section rendering (Ueberblick, Praxis, Skills, Konvention) ---- */
+  /* ---- Static section rendering (overview, practice, skills, convention) ---- */
 
   function renderMarkdownInto(sectionId, file, after) {
     var el = document.getElementById(sectionId);
@@ -1280,16 +1280,16 @@
       var btn = document.createElement("button");
       btn.type = "button";
       btn.className = "code-copy";
-      btn.textContent = "Kopieren";
+      btn.textContent = "Copy";
       btn.addEventListener("click", function () {
         var code = pre.querySelector("code");
-        copyText(code ? code.textContent : pre.textContent, btn, "Kopieren");
+        copyText(code ? code.textContent : pre.textContent, btn, "Copy");
       });
       pre.appendChild(btn);
     });
   }
 
-  /* ---- Vorlagen-Tabelle ---- */
+  /* ---- Template table ---- */
 
   function renderVorlagen() {
     var el = document.getElementById("vorlagen");
@@ -1299,7 +1299,7 @@
     return fetch("data/promptotyping-documents.json")
       .then(function (res) {
         if (!res.ok) {
-          throw new Error("Konnte promptotyping-documents.json nicht laden (" + res.status + ").");
+          throw new Error("Could not load promptotyping-documents.json (" + res.status + ").");
         }
         return res.json();
       })
@@ -1323,65 +1323,68 @@
         el.classList.remove("placeholder-section");
         el.innerHTML =
           '<img class="vorlagen-icon" src="assets/promptotyping-logo.png" ' +
-          'alt="Promptotyping-Marke" width="100" height="100">' +
-          "<h1>Vorlagen</h1>" +
-          "<p>Diese Sektion buendelt die Spezifikation der Methode, den ausfuellbaren Vorlagen-Katalog, " +
-          "die zugrunde liegende Konvention, den maschinellen Zugriff ueber das <code>template:</code>-Feld " +
-          "und die Technology Baseline fuer statische Web-Tools.</p>" +
-          '<nav class="vorlagen-subnav" aria-label="Spezifikations-Navigation">' +
-          '<a href="#vorlagen-katalog">Katalog</a>' +
-          '<a href="#vorlagen-konvention">Konvention</a>' +
-          '<a href="#vorlagen-maschinenzugriff">Maschinenzugriff</a>' +
+          'alt="Promptotyping mark" width="100" height="100">' +
+          "<h1>Templates</h1>" +
+          "<p>This page gathers the specification of the method, the fillable template " +
+          "catalogue, the underlying convention, machine access through the " +
+          "<code>template:</code> field, and the technology baseline for static web tools.</p>" +
+          '<nav class="vorlagen-subnav" aria-label="Specification navigation">' +
+          '<a href="#vorlagen-katalog">Catalogue</a>' +
+          '<a href="#vorlagen-konvention">Convention</a>' +
+          '<a href="#vorlagen-maschinenzugriff">Machine access</a>' +
           '<a href="#vorlagen-technology-baseline">Technology Baseline</a>' +
           "</nav>" +
 
           '<div class="vorlagen-block" id="vorlagen-katalog">' +
-          "<h3>Katalog</h3>" +
-          "<p>Ausfuellbare Vorlagen fuer die Promptotyping Documents im <code>knowledge/</code>-Ordner " +
-          "eines Repos. Jede Vorlage adressiert eine Funktion, nicht einen festen Dateinamen. Ein Klick auf " +
-          "eine Zeile oeffnet die volle Vorlagen-Spezifikation im Side-Panel.</p>" +
+          "<h3>Catalogue</h3>" +
+          "<p>Fillable templates for the Promptotyping Documents in the <code>knowledge/</code> " +
+          "folder of a repository. Each template addresses a function rather than a fixed file " +
+          "name. A click on a row opens the full template specification in the side panel.</p>" +
           '<table class="vorlagen-table"><thead><tr>' +
-          "<th>Vorlage</th><th>Funktion</th><th>Traegt, wenn</th><th>Empfohlene Datei</th><th>Typ</th><th>Version</th><th>Status</th>" +
+          "<th>Template</th><th>Function</th><th>Applies when</th><th>Recommended file</th><th>Type</th><th>Version</th><th>Status</th>" +
           "</tr></thead><tbody>" + rows + "</tbody></table>" +
           "</div>" +
 
           '<div class="vorlagen-block" id="vorlagen-konvention">' +
-          "<h3>Konvention</h3>" +
-          "<p>Die Konvention Promptotyping Documents beschreibt, welche Funktionen eine Wissensbasis im " +
-          "<code>knowledge/</code>-Ordner eines Repos abdeckt, von der Navigation ueber Specification und " +
-          "Architecture bis zur Provenance. Sie legt das Frontmatter-Vokabular fest, mit dem ein Dokument " +
-          "seine Herkunft, seine Vorlage und seine Maschinenadresse deklariert, und ordnet jede Funktion " +
-          "einem der drei analytischen Dokumenttypen Knowledge, Process oder Action zu. Zu jeder Funktion " +
-          "nennt sie ein Triggerkriterium, nach dem ein Agent entscheidet, ob ein konkretes Repo das Dokument " +
-          "braucht. Der Vorlagen-Katalog oben ist der ausfuellbare Auszug dieser Funktionen. Die vollstaendige " +
-          'Konvention steht <a href="#konvention-v0.1">weiter unten auf dieser Seite</a>.</p>' +
+          "<h3>Convention</h3>" +
+          "<p>The Konvention Promptotyping Documents describes which functions a knowledge base " +
+          "in the <code>knowledge/</code> folder of a repository covers, from navigation through " +
+          "specification and architecture to provenance. It fixes the frontmatter vocabulary with " +
+          "which a document declares its origin, its template and its machine address, and assigns " +
+          "each function to one of the three analytical document types Knowledge, Process or " +
+          "Action. For every function it names a trigger criterion by which an agent decides " +
+          "whether a given repository needs the document. The template catalogue above is the " +
+          "fillable extract of these functions. The full convention stands " +
+          '<a href="#konvention-v0.1">further down on this page</a>.</p>' +
           "</div>" +
 
           '<div class="vorlagen-block" id="vorlagen-maschinenzugriff">' +
-          "<h3>Maschinenzugriff</h3>" +
+          "<h3>Machine access</h3>" +
           renderInspector() +
-          '<p class="vorlagen-machine-note">Fuer Maschinen ist die kanonische Abrufform jeder Vorlage die ' +
-          'statische Markdown-URL unter <code>_content/</code>. Sie liefert den rohen Markdown-Text direkt ' +
-          "aus dem GitHub-Pages-Repo-Root, ohne dass das Single-Page-JavaScript laufen muss. Muster: " +
-          "<code>https://dhcraft.org/Promptotyping/_content/promptotyping-document/{slug}.md</code>. Die im " +
-          "<code>template:</code>-Feld gefuehrten Subpath- und Hash-Formen sind die menschenlesbaren Adressen; " +
-          "ihre Subpath-Aufloesung setzt JavaScript voraus. Wer den Rohtext deterministisch und ohne " +
-          "Browser-Umgebung braucht, verwendet die statische <code>_content/</code>-Markdown-URL.</p>" +
+          '<p class="vorlagen-machine-note">For machines the canonical retrieval form of every ' +
+          "template is the static markdown URL under <code>_content/</code>. It delivers the raw " +
+          "markdown text straight from the GitHub Pages repository root, without the single-page " +
+          "JavaScript having to run. Pattern: " +
+          "<code>https://dhcraft.org/Promptotyping/_content/promptotyping-document/{slug}.md</code>. " +
+          "The subpath and hash forms carried in the <code>template:</code> field are the " +
+          "human-readable addresses; resolving a subpath presupposes JavaScript. Whoever needs the " +
+          "raw text deterministically and without a browser environment uses the static " +
+          "<code>_content/</code> markdown URL.</p>" +
           "</div>" +
 
           '<div class="vorlagen-block" id="vorlagen-technology-baseline">' +
           "<h3>Technology Baseline</h3>" +
-          "<p>Eine Technology Baseline traegt das projektunabhaengige Technologie-Wissen fuer einen " +
-          "wiederkehrenden Artefakttyp, damit eine einzelne Projektinstanz in ihrer <code>architecture.md</code> " +
-          "nur noch ihre Abweichungen dokumentiert statt die Stack-Argumentation neu zu fuehren. Dieses Repo " +
-          "fuehrt eine solche Baseline fuer den haeufigsten Artefakttyp der Methode, das selbststaendige " +
-          "statische Web-Tool aus HTML, CSS und JavaScript ohne Build-Step. Sie haelt die Regeln fest, kein " +
-          "Build, Vanilla als Default, vendorierte Bibliotheken nur unter einer Kompromissregel, keine externen " +
-          "Laufzeitaufrufe, und begruendet sie aus Generierbarkeit, Publizierbarkeit und Haltbarkeit. " +
-          "Status Entwurf.</p>" +
+          "<p>A Technology Baseline carries the project-independent technology knowledge for a " +
+          "recurring artefact type, so that a single project instance documents only its " +
+          "deviations in its <code>architecture.md</code> instead of arguing the stack again. This " +
+          "repository carries such a baseline for the method's most frequent artefact type, the " +
+          "self-contained static web tool of HTML, CSS and JavaScript without a build step. It " +
+          "records the rules, no build, vanilla as the default, vendored libraries only under a " +
+          "compromise rule, no external runtime calls, and grounds them in generatability, " +
+          "publishability and durability. Status draft.</p>" +
           '<p class="vorlagen-tb-links">' +
-          '<a href="https://dhcraft.org/Promptotyping/_content/technology-baseline.md" target="_blank" rel="noopener">Maschinenadresse</a>' +
-          '<a href="_content/technology-baseline.md" target="_blank" rel="noopener">Im Repo abrufen</a>' +
+          '<a href="https://dhcraft.org/Promptotyping/_content/technology-baseline.md" target="_blank" rel="noopener">Machine address</a>' +
+          '<a href="_content/technology-baseline.md" target="_blank" rel="noopener">Open in the repository</a>' +
           "</p>" +
           "</div>";
 
@@ -1394,15 +1397,16 @@
 
   function renderInspector() {
     return '<div class="frontmatter-inspector" data-component="frontmatter-inspector">' +
-      "<h3>Frontmatter-Inspector</h3>" +
-      "<p>Ein Promptotyping-Repo verlinkt die massgebliche Vorlagen-Spezifikation ueber ein " +
-      "<code>template:</code>-Feld im Frontmatter. Hier kann ein ganzer Frontmatter-Block eingefuegt werden: " +
-      "der Inspector liest <code>template.url</code> oder <code>template.alias</code>, prueft die URL gegen das " +
-      "Anker-Schema der Site und oeffnet die referenzierte Vorlage im Side-Panel.</p>" +
+      "<h3>Frontmatter inspector</h3>" +
+      "<p>A Promptotyping repository links the authoritative template specification through a " +
+      "<code>template:</code> field in its frontmatter. A whole frontmatter block can be pasted " +
+      "here. The inspector reads <code>template.url</code> or <code>template.alias</code>, checks " +
+      "the URL against the anchor scheme of this site, and opens the referenced template in the " +
+      "side panel.</p>" +
       '<textarea name="frontmatter" rows="9" spellcheck="false" ' +
-      'aria-label="YAML-Frontmatter-Block"></textarea>' +
+      'aria-label="YAML frontmatter block"></textarea>' +
       '<div class="inspector-controls">' +
-      '<button type="button" class="inspector-resolve">Vorlage aufloesen</button>' +
+      '<button type="button" class="inspector-resolve">Resolve template</button>' +
       '<span class="inspector-status" role="status" aria-live="polite"></span>' +
       "</div></div>";
   }
@@ -1421,7 +1425,7 @@
     });
   }
 
-  /* ---- Use-Cases-Sektion (host markup; module renders cards) ---- */
+  /* ---- Use-cases section (host markup; module renders cards) ---- */
 
   function renderUseCasesHost() {
     var el = document.getElementById("use-cases");
@@ -1432,14 +1436,14 @@
     el.setAttribute("data-component", "case-study-filter");
     el.innerHTML =
       "<h1>Use Cases</h1>" +
-      "<p>Eine kuratierte Auswahl oeffentlich dokumentierter Projekte, gruppiert danach, wo im " +
-      "Forschungsdaten-Lebenszyklus die Methode operiert. Das vollstaendige Evidenz-Korpus steht im " +
-      '<a href="#abschnitt-5-evidence-the-documented-projects">Paper, Abschnitt 5</a>.</p>' +
+      "<p>A curated selection of publicly documented projects, grouped by where in the research " +
+      "data lifecycle the method operates. The full body of evidence stands in the " +
+      '<a href="#abschnitt-5-evidence-the-documented-projects">paper, section 5</a>.</p>' +
       '<div class="case-filter-host"></div>' +
       '<div class="case-list-host"></div>';
   }
 
-  /* ---- Glossar (A6) ---- */
+  /* ---- Glossary (A6) ---- */
 
   var glossarEntries = [];
   var glossarBySlug = {};
@@ -1470,7 +1474,7 @@
     return fetch("data/glossar.json")
       .then(function (res) {
         if (!res.ok) {
-          throw new Error("Konnte glossar.json nicht laden (" + res.status + ").");
+          throw new Error("Could not load glossar.json (" + res.status + ").");
         }
         return res.json();
       })
@@ -1485,7 +1489,7 @@
             '<h3 class="glossar-term">' + escapeHtml(e.begriff) + "</h3>" +
             '<p class="glossar-kurz">' + escapeHtml(e.kurz) + "</p>" +
             '<p class="glossar-voll">' + escapeHtml(e.voll) + "</p>" +
-            '<p class="glossar-quelle">Quelle: ' + escapeHtml(e.quelle) + "</p>" +
+            '<p class="glossar-quelle">Source: ' + escapeHtml(e.quelle) + "</p>" +
             "</div>";
         }).join("");
 
@@ -1508,18 +1512,18 @@
             initials.push(letter);
           }
         });
-        var jumpBar = '<nav class="glossar-jump" aria-label="Glossar nach Anfangsbuchstabe">' +
+        var jumpBar = '<nav class="glossar-jump" aria-label="Glossary by initial letter">' +
           initials.map(function (letter) {
             return '<a href="#glossar-' + seen[letter] + '">' + letter + "</a>";
           }).join("") + "</nav>";
 
         el.classList.remove("placeholder-section");
         el.innerHTML =
-          "<h1>Glossar</h1>" +
-          "<p>Begriffe der Promptotyping-Methode und der Methodik-Site, alphabetisch geordnet. " +
-          "Im Paper-Lesefluss ist das erste Vorkommen eines Begriffs als Trigger markiert. " +
-          "Begriffe, die der Papertext nicht fuehrt, weisen sich in der Quellenzeile als " +
-          "Site-Vokabular aus.</p>" +
+          "<h1>Glossary</h1>" +
+          "<p>Terms of the Promptotyping method and of this site, in alphabetical order. In the " +
+          "reading flow of the paper the first occurrence of a term is marked as a trigger. Terms " +
+          "the paper text does not carry declare themselves as site vocabulary in their source " +
+          "line.</p>" +
           jumpBar +
           aliasAnchors +
           '<div class="glossar-list">' + items + "</div>";
@@ -1537,12 +1541,12 @@
     var html =
       '<p class="glossar-kurz">' + escapeHtml(e.kurz) + "</p>" +
       "<p>" + escapeHtml(e.voll) + "</p>" +
-      '<p class="glossar-quelle">Quelle: ' + escapeHtml(e.quelle) + "</p>" +
-      '<p class="panel-footer"><a href="#glossar-' + e.slug + '">Im Glossar anzeigen</a></p>';
+      '<p class="glossar-quelle">Source: ' + escapeHtml(e.quelle) + "</p>" +
+      '<p class="panel-footer"><a href="#glossar-' + e.slug + '">Show in the glossary</a></p>';
     openSidePanel(e.begriff, html);
   }
 
-  /* ---- Glossar-Trigger im Paper-Lesefluss ----
+  /* ---- Glossary triggers in the paper reading flow ----
      After a paper section renders, mark the first occurrence of each glossar
      term in that section (text-node scan, case-insensitive, outside links, code,
      headings). One pass per section; terms matched longest-first to avoid
@@ -1614,7 +1618,7 @@
       span.setAttribute("data-glossar", best.slug);
       span.setAttribute("tabindex", "0");
       span.setAttribute("role", "button");
-      span.setAttribute("aria-label", "Begriff im Glossar: " + matched);
+      span.setAttribute("aria-label", "Glossary term: " + matched);
       span.textContent = matched;
 
       var afterText = text.substr(best.idx + best.len);
@@ -1695,7 +1699,7 @@
     });
   }
 
-  /* ---- Literatur-Verweise: inline "Autor Jahr" zu #literatur-Sprunglinks ----
+  /* ---- Literature references: inline "author year" into #literatur jump links ----
      Conservative pass: only matches the common parenthetical pattern and links
      to the literature section anchor. Runs after a paper section renders. */
 
@@ -1752,7 +1756,7 @@
   }
 
   /* ---- Hash handling for non-paper anchor types ----
-     Vorlagen rows, glossar entries, konzept aliases open or scroll directly;
+     Template rows, glossary entries, concept aliases open or scroll directly;
      these anchors live in already-rendered sections (no lazy paper load). */
   function handleSpecialAnchor(hash) {
     if (/^promptotyping-document-/.test(hash)) {
@@ -1823,7 +1827,7 @@
         // Part 1 introduces the method and the four phases; it sits with the
         // worked case rather than in a hero above the specification.
         var intro = el.querySelector("p");
-        var video = buildVideoFacade("8sUe4Jkh3uQ", "Einfuehrung in Promptotyping, Teil 1");
+        var video = buildVideoFacade("8sUe4Jkh3uQ", "Einführung in Promptotyping, Teil 1");
         if (intro && intro.nextSibling) {
           el.insertBefore(video, intro.nextSibling);
         } else {
@@ -1837,7 +1841,7 @@
         var note = document.createElement("p");
         note.className = "vorlagen-machine-note";
         note.innerHTML = '<a href="_content/konvention.md" target="_blank" rel="noopener">' +
-          "Konvention als Markdown abrufen</a>";
+          "Open the convention as markdown</a>";
         el.insertBefore(note, el.firstChild ? el.firstChild.nextSibling : null);
       }),
       renderPraxis(),

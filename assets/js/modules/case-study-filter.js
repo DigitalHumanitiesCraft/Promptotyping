@@ -1,7 +1,7 @@
 /* Case-Study-Filter (ADR-8). Renders case-study cards grouped by use case and a
    filter bar (primary: use case; secondary: interface type, demo available).
    Reads data/case-studies.json. No genre vocabulary. Each card carries a
-   #case-{id} anchor; "Mehr" opens the side panel with the deep page from
+   #case-{id} anchor; "More" opens the side panel with the deep page from
    _content/case-studies/{id}.md. No ES modules; uses window.PromptotypingApp. */
 
 (function () {
@@ -47,7 +47,7 @@
     if (typeof App.buildVideoFacade === "function") {
       return App.buildVideoFacade(youtubeId, title);
     }
-    return linkEl("Video auf YouTube", "https://www.youtube.com/watch?v=" + youtubeId);
+    return linkEl("Video on YouTube", "https://www.youtube.com/watch?v=" + youtubeId);
   }
 
   function textEl(tag, className, text) {
@@ -123,14 +123,14 @@
           videoBtn.setAttribute("aria-expanded", "false");
           return;
         }
-        videoHost.appendChild(buildFacade(videoId, cs.name + " (Prozessvideo)"));
+        videoHost.appendChild(buildFacade(videoId, cs.name + " (process video)"));
         videoBtn.setAttribute("aria-expanded", "true");
       });
       links.appendChild(videoBtn);
     }
 
     if (cs.deep_page) {
-      var more = textEl("button", "case-card-more", "Mehr");
+      var more = textEl("button", "case-card-more", "More");
       more.type = "button";
       more.addEventListener("click", function () { openDeepPage(cs); });
       links.appendChild(more);
@@ -148,7 +148,7 @@
     if (!videoId) { return; }
     var body = document.getElementById("side-panel-body");
     if (!body || body.querySelector(".video-embed")) { return; }
-    body.insertBefore(buildFacade(videoId, cs.name + " (Prozessvideo)"), body.firstChild);
+    body.insertBefore(buildFacade(videoId, cs.name + " (process video)"), body.firstChild);
   }
 
   function openDeepPage(cs) {
@@ -159,10 +159,10 @@
       window.location.hash = "case-" + cs.id;
       return;
     }
-    App.openSidePanel(cs.name, "<p class='section-loading'>Wird geladen.</p>");
+    App.openSidePanel(cs.name, "<p class='section-loading'>Loading.</p>");
     fetch("_content/case-studies/" + cs.id + ".md")
       .then(function (res) {
-        if (!res.ok) { throw new Error("Konnte Tiefenseite nicht laden (" + res.status + ")."); }
+        if (!res.ok) { throw new Error("Could not load the deep page (" + res.status + ")."); }
         return res.text();
       })
       .then(function (text) {
@@ -183,7 +183,7 @@
     var visible = allStudies.filter(matchesFilter);
 
     if (!visible.length) {
-      container.appendChild(textEl("p", "case-empty", "Keine Projekte fuer diese Auswahl."));
+      container.appendChild(textEl("p", "case-empty", "No projects for this selection."));
       return;
     }
 
@@ -214,7 +214,7 @@
 
     var chips = document.createElement("div");
     chips.className = "case-filter-chips";
-    var chipDefs = [{ key: "all", label: "Alle Use Cases" }].concat(
+    var chipDefs = [{ key: "all", label: "All use cases" }].concat(
       present.map(function (uc) { return { key: uc, label: labelMap[uc] || uc }; })
     );
     chipDefs.forEach(function (def) {
@@ -243,7 +243,7 @@
 
     var ifaceWrap = document.createElement("label");
     ifaceWrap.className = "case-filter-control";
-    ifaceWrap.appendChild(document.createTextNode("Interface-Typ "));
+    ifaceWrap.appendChild(document.createTextNode("Interface type "));
     var select = document.createElement("select");
     var presentTypes = {};
     allStudies.forEach(function (cs) {
@@ -251,7 +251,7 @@
     });
     var optAll = document.createElement("option");
     optAll.value = "all";
-    optAll.textContent = "alle";
+    optAll.textContent = "all";
     select.appendChild(optAll);
     Object.keys(INTERFACE_LABELS).forEach(function (t) {
       if (!presentTypes[t]) { return; }
@@ -276,7 +276,7 @@
       onChange();
     });
     demoWrap.appendChild(checkbox);
-    demoWrap.appendChild(document.createTextNode(" nur mit Demo"));
+    demoWrap.appendChild(document.createTextNode(" with demo only"));
     secondary.appendChild(demoWrap);
 
     bar.appendChild(secondary);
@@ -290,7 +290,7 @@
 
     fetch("data/case-studies.json")
       .then(function (res) {
-        if (!res.ok) { throw new Error("Konnte case-studies.json nicht laden (" + res.status + ")."); }
+        if (!res.ok) { throw new Error("Could not load case-studies.json (" + res.status + ")."); }
         return res.json();
       })
       .then(function (data) {
