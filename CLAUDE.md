@@ -91,7 +91,7 @@ Anker dürfen nicht ohne Diskussion umbenannt werden — Repos können auf sie a
 
 - **Nicht aus dem Vault zitieren ohne Markdown-Link.** Vault-interne Wikilinks (`[[CLAUDE]]`) bedeuten im Repo nichts.
 - **Nicht das alte Living-Paper-Material reaktivieren.** Alles, was im November-2025-Stand war, ist gelöscht. Wer alte Module wiederbeleben will, beginnt einen Neu-Diskurs.
-- **Keine englische Fassung in Phase 1.** Site ist deutsch, Pollin-Paper bleibt englisch im Lesefluss. Vollständige Zweisprachigkeit ist späteres Projekt.
+- **Keine deutschen Neuanlagen mehr.** Die Site wird vollständig englisch (Operator-Entscheidung 2026-07-25, journal.md „Sprachentscheidung"). Der Durchgang ist noch nicht gelaufen, der Bestand ist also überwiegend deutsch; neue Seiten und neue Beschriftungen entstehen aber englisch. Die publizierten Anker bleiben deutsch, weil fremde Repos sie als `template:`-URI führen. Deutsch bleiben ausserdem die Vorlagennamen als Identifikatoren und das Unterrichtsmaterial. Reihenfolge und offene Teilfragen des Durchgangs stehen in `knowledge/entscheidungen-offen.md`, A1.
 - **Keine Module außer Frontmatter-Inspector, Case-Study-Filter und Vault-Ansicht.** Die Vault-Ansicht ist seit der Operator-Entscheidung 2026-07-25 in Scope (`knowledge/plan-site.md`, AP4); Context-Rot-Viz und Sycophancy-Trap bleiben es nicht.
 - **Keine Branches.** Alle Änderungen direkt auf `main`. (Das ist Christopher Pollins explizite Wahl, dokumentiert in journal.md.)
 

@@ -18,7 +18,7 @@ template:
   version: 0.2
   url: https://dhcraft.org/Promptotyping/promptotyping-document/index
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-index
-related: [project, specification, architecture, design, journal, paper, paper-writing, paper-argument-map, paper-terminology, report, submission-zfdg, revision-knowledge]
+related: [project, specification, architecture, design, journal, paper, paper-writing, paper-argument-map, paper-terminology, entscheidungen-offen, report, submission-zfdg, revision-knowledge]
 ---
 
 # INDEX
@@ -27,7 +27,7 @@ Navigation and glossary of this repository's knowledge base. The repository `Dig
 
 ## Language regime
 
-By operator decision of 2026-07-23 the core knowledge documents (INDEX, project, specification, architecture, design) are English, since they are the public showcase of the self-application. The process and steering documents stay German as working instruments, which covers journal, paper-writing, paper-argument-map, report, submission-zfdg, and the revision documents. The `template:` frontmatter blocks keep the German template names until the template catalogue itself renames them in the vault; the glossary below gives the English function names.
+By operator decision of 2026-07-23 the core knowledge documents (INDEX, project, specification, architecture, design) are English, since they are the public showcase of the self-application. The process and steering documents stay German as working instruments, which covers journal, paper-writing, paper-argument-map, entscheidungen-offen, report, submission-zfdg, and the revision documents. The `template:` frontmatter blocks keep the German template names until the template catalogue itself renames them in the vault; the glossary below gives the English function names.
 
 ## Contents
 
@@ -41,6 +41,7 @@ By operator decision of 2026-07-23 the core knowledge documents (INDEX, project,
 - **[paper-writing.md](paper-writing.md)** — the knowledge about writing the paper: working mode, core statements, language rules, decision state, checkpoints, German.
 - **[paper-argument-map.md](paper-argument-map.md)** — the concept model of the paper, one argument chain per block in compact notation with confirmation status, German. Serves the operator as a review instrument and an agent as a generation basis.
 - **[paper-terminology.md](paper-terminology.md)** — working sheet of the terminology pass: every term with its English original form, its definition in the current text, its source, and a status code; German. Carries the open operator decisions of the pass.
+- **[entscheidungen-offen.md](entscheidungen-offen.md)** — everything still undecided or decided but not carried out, across site, paper, and convention, worked out to the point where an assent suffices; German.
 - **[report.md](report.md)** — snapshot report of the lane run towards the ZfdG submission (2026-07-23), German; carries a dated addendum on what the revision round settled and is not otherwise updated.
 - **[submission-zfdg.md](submission-zfdg.md)** — submission package for the Zeitschrift für digitale Geisteswissenschaften: exposé with outline and literature selection, short abstracts in German and English, formalities checklist; German.
 - **[revision-knowledge.md](revision-knowledge.md)** — steering knowledge of the revision phase that ran on the finished draft, kept as a historical document with a dated status note; German.

@@ -795,3 +795,13 @@ Ein Fund beim Prüfen: die Statuszeile fehlte auf drei Seiten. Ursache war ein `
 Nicht erledigt bleibt die Vorlage `technology`. Der Vorlagenkatalog wird vault-first gepflegt, und die Vault-Vorlage existiert nicht. Das braucht weiterhin eine echte Vault-Sitzung.
 
 Geprüft im gerenderten DOM: vierzehn Seiten, fünf Gruppen in der geplanten Ordnung, dreizehn Statuszeilen, fünf davon normativ, keine leere Seite, keine Ladefehler. Screenshots von Startseite und Teil 1 angesehen.
+
+### Nachtrag: alle offenen Punkte ausgearbeitet
+
+Auf Operator-Auftrag ist alles, was in Site, Paper und Konvention noch offen ist, in `knowledge/entscheidungen-offen.md` zusammengezogen und bis zur Zustimmungsreife ausgearbeitet. Die Punkte lagen verstreut in `plan-site.md`, `paper-writing.md`, `report.md` und im Journal selbst.
+
+Der wichtigste Fund ist kein offener Punkt, sondern ein Widerspruch. Der Operator hat am 2026-07-25 entschieden, dass die Site vollständig englisch wird; die `CLAUDE.md` trug bis heute die gegenteilige Regel, „Keine englische Fassung in Phase 1". Ein Agent hätte in der nächsten Sitzung nach der falschen Regel gebaut, ohne die Belegstelle zu kennen. Die Regel ist auf die Entscheidung gezogen, mit den drei Punkten, die die Entscheidung offen lässt, nämlich der Umgang mit den publizierten deutschen Ankern, das noch nicht existierende Unterrichtsmaterial und die Vault-Spiegel.
+
+Zweiter Fund: der Pflichtkern der Konvention ist nicht unentschieden, wie der Zielzustand von `plan-site.md` es führt, sondern entschieden und nicht ausgeführt. Der Operator hat am 2026-07-25 acht auf sechs Felder festgelegt, und der Papertext nennt die sechs in Abschnitt 3.3 bereits namentlich. Damit steht fest, dass `template` und `zweck` fallen. Offen ist allein die Folgefrage, wie der Wegfall von `template` aus dem Pflichtkern zur Adressierbarkeit nach ADR-3 und ADR-10 steht, für die das Dokument einen Vorschlag macht.
+
+Ausgearbeitet sind ferner die beiden ZfdG-Kurzabstracts, deutsch und englisch, beide unter der Grenze von 750 Zeichen gemessen, der Aufbau des Exposés, die Spezifikation der Vorlage `technology`, die Spezifikation einer einfarbigen Wortmarke für den Fall, dass doch ein Zeichen gewünscht ist, und je eine Empfehlung zu den sieben zurückgestellten Punkten aus `report.md`.
