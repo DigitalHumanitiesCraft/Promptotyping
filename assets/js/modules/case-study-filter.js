@@ -1,25 +1,26 @@
-/* Case-Study-Filter (ADR-8). Renders case-study cards grouped by use case and a
-   filter bar (primary: use case; secondary: interface type, demo available).
-   Reads data/case-studies.json. No genre vocabulary. Each card carries a
+/* Case-Study-Filter (ADR-8). Renders case-study cards in blocks by what the case
+   argues for, ordering within a block by the epistemic function of its
+   interface. The filter bar is primary over those five functions, secondary over
+   demo availability. Reads data/case-studies.json. Each card carries a
    #case-{id} anchor; "More" opens the side panel with the deep page from
-   _content/case-studies/{id}.md. No ES modules; uses window.PromptotypingApp. */
+   _content/case-studies/{id}.md. No ES modules; uses window.PromptotypingApp.
+
+   Until 2026-07-26 the gallery grouped and filtered on a nine-value vocabulary
+   of its own, which had once been misattributed to a paper section. It now uses
+   the five epistemic functions of Section 4.2, so grouping, filtering and the
+   hue on the card edge all mean the same thing. */
 
 (function () {
   "use strict";
 
   var App = window.PromptotypingApp || {};
 
-  /* Group order per the work package; empty groups are dropped. */
-  var USE_CASE_ORDER = [
-    "data-production",
-    "data-modelling-capture",
-    "data-exploration",
-    "data-rescue-transformation",
-    "process-visualisation",
-    "literature-review-infrastructure",
-    "knowledge-infrastructure",
-    "origin-point"
-  ];
+  /* Block order. Evidence first, since a reader arriving from the paper is
+     looking for a project it names. Empty blocks are dropped. */
+  var ROLE_ORDER = ["evidence", "genealogy", "teaching", "further"];
+
+  /* Order within a block, and the order of the filter chips. */
+  var FUNCTION_ORDER = ["verification", "exploration", "edition", "capture", "audit"];
 
   var INTERFACE_LABELS = {
     verification: "Verification",
@@ -31,8 +32,29 @@
 
   var deepCache = {};
   var allStudies = [];
-  var labelMap = {};
-  var state = { useCase: "all", interfaceType: "all", demoOnly: false };
+  var roleLabels = {};
+  var roleNotes = {};
+  var state = { fn: "all", demoOnly: false };
+
+  /* Sort key: position of the first interface function, cases without one last,
+     alphabetical by name inside a rank so the order does not depend on the file. */
+  function functionRank(cs) {
+    var types = cs.interfaceTypes || [];
+    if (!types.length) { return FUNCTION_ORDER.length; }
+    var best = FUNCTION_ORDER.length;
+    types.forEach(function (t) {
+      var i = FUNCTION_ORDER.indexOf(t);
+      if (i !== -1 && i < best) { best = i; }
+    });
+    return best;
+  }
+
+  function byFunctionThenName(a, b) {
+    var ra = functionRank(a);
+    var rb = functionRank(b);
+    if (ra !== rb) { return ra - rb; }
+    return a.name.localeCompare(b.name);
+  }
 
   /* Extract the bare YouTube id from a watch/short/embed URL. */
   function youtubeIdOf(url) {
@@ -67,10 +89,9 @@
   }
 
   function matchesFilter(cs) {
-    if (state.useCase !== "all" && cs.useCase !== state.useCase) { return false; }
-    if (state.interfaceType !== "all") {
+    if (state.fn !== "all") {
       var types = cs.interfaceTypes || [];
-      if (types.indexOf(state.interfaceType) === -1) { return false; }
+      if (types.indexOf(state.fn) === -1) { return false; }
     }
     if (state.demoOnly && !cs.demo_url) { return false; }
     return true;
@@ -187,13 +208,17 @@
       return;
     }
 
-    USE_CASE_ORDER.forEach(function (uc) {
-      var group = visible.filter(function (cs) { return cs.useCase === uc; });
+    ROLE_ORDER.forEach(function (role) {
+      var group = visible.filter(function (cs) { return cs.role === role; });
       if (!group.length) { return; }
+      group.sort(byFunctionThenName);
 
       var section = document.createElement("div");
       section.className = "case-group";
-      section.appendChild(textEl("h3", "case-group-title", labelMap[uc] || uc));
+      section.appendChild(textEl("h3", "case-group-title", roleLabels[role] || role));
+      if (roleNotes[role]) {
+        section.appendChild(textEl("p", "case-group-note", roleNotes[role]));
+      }
 
       var grid = document.createElement("div");
       grid.className = "case-grid";
@@ -207,25 +232,36 @@
     var bar = document.createElement("div");
     bar.className = "case-filter-bar";
 
-    // Primary: use case chips (only those present in the data, in order).
-    var present = USE_CASE_ORDER.filter(function (uc) {
-      return allStudies.some(function (cs) { return cs.useCase === uc; });
+    // Primary: the five epistemic functions, only those present in the data.
+    var presentTypes = {};
+    allStudies.forEach(function (cs) {
+      (cs.interfaceTypes || []).forEach(function (t) { presentTypes[t] = true; });
     });
+    var present = FUNCTION_ORDER.filter(function (t) { return presentTypes[t]; });
 
     var chips = document.createElement("div");
     chips.className = "case-filter-chips";
-    var chipDefs = [{ key: "all", label: "All use cases" }].concat(
-      present.map(function (uc) { return { key: uc, label: labelMap[uc] || uc }; })
+    var chipDefs = [{ key: "all", label: "All functions" }].concat(
+      present.map(function (t) { return { key: t, label: INTERFACE_LABELS[t] }; })
     );
     chipDefs.forEach(function (def) {
       var chip = textEl("button", "case-chip", def.label);
       chip.type = "button";
-      chip.dataset.useCase = def.key;
+      chip.dataset.fn = def.key;
       var isActive = def.key === "all";
       if (isActive) { chip.classList.add("active"); }
       chip.setAttribute("aria-pressed", isActive ? "true" : "false");
+      // The chip carries the hue of its function, and the word beside it names
+      // the category, so the colour never carries the meaning alone (WCAG 1.4.1).
+      if (def.key !== "all" && App.functionVar) {
+        var fnVar = App.functionVar(def.key);
+        if (fnVar) {
+          chip.classList.add("has-fn");
+          chip.style.setProperty("--fn", fnVar);
+        }
+      }
       chip.addEventListener("click", function () {
-        state.useCase = def.key;
+        state.fn = def.key;
         chips.querySelectorAll(".case-chip").forEach(function (c) {
           var active = c === chip;
           c.classList.toggle("active", active);
@@ -237,35 +273,9 @@
     });
     bar.appendChild(chips);
 
-    // Secondary controls: interface type select + demo-available checkbox.
+    // Secondary control: demo-available checkbox.
     var secondary = document.createElement("div");
     secondary.className = "case-filter-secondary";
-
-    var ifaceWrap = document.createElement("label");
-    ifaceWrap.className = "case-filter-control";
-    ifaceWrap.appendChild(document.createTextNode("Interface type "));
-    var select = document.createElement("select");
-    var presentTypes = {};
-    allStudies.forEach(function (cs) {
-      (cs.interfaceTypes || []).forEach(function (t) { presentTypes[t] = true; });
-    });
-    var optAll = document.createElement("option");
-    optAll.value = "all";
-    optAll.textContent = "all";
-    select.appendChild(optAll);
-    Object.keys(INTERFACE_LABELS).forEach(function (t) {
-      if (!presentTypes[t]) { return; }
-      var opt = document.createElement("option");
-      opt.value = t;
-      opt.textContent = INTERFACE_LABELS[t];
-      select.appendChild(opt);
-    });
-    select.addEventListener("change", function () {
-      state.interfaceType = select.value;
-      onChange();
-    });
-    ifaceWrap.appendChild(select);
-    secondary.appendChild(ifaceWrap);
 
     var demoWrap = document.createElement("label");
     demoWrap.className = "case-filter-control";
@@ -295,7 +305,8 @@
       })
       .then(function (data) {
         allStudies = data.caseStudies || [];
-        labelMap = (data._meta && data._meta.use_case_labels) || {};
+        roleLabels = (data._meta && data._meta.role_labels) || {};
+        roleNotes = (data._meta && data._meta.role_notes) || {};
         buildFilterBar(barHost, function () { renderGroups(listHost); });
         renderGroups(listHost);
         // If the initial hash targets a deep-page case, open it.

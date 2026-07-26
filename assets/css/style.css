@@ -1262,6 +1262,13 @@ a:hover {
   border-color: var(--text);
 }
 
+/* A function chip carries the hue of its epistemic function as a left edge, the
+   same encoding the card edge uses. The word beside it names the category, so
+   the colour never carries the meaning alone (WCAG 1.4.1). */
+.case-chip.has-fn {
+  border-left: 3px solid var(--fn, var(--border));
+}
+
 .case-filter-secondary {
   display: flex;
   flex-wrap: wrap;
@@ -1295,6 +1302,14 @@ a:hover {
   font-weight: 600;
   color: var(--grey-2);
   padding-bottom: var(--space-2);
+}
+
+/* One line per block saying what the cases in it argue for. */
+.case-group-note {
+  max-width: 62ch;
+  margin: 0 0 var(--space-4);
+  font-size: 0.875rem;
+  color: var(--grey-2);
 }
 
 .case-grid {

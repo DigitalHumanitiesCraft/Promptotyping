@@ -153,7 +153,7 @@ def check_gallery(data):
     points at a repository, a demo or a video that someone else may move.
     """
     cases = data["caseStudies"]
-    labels = data["_meta"]["use_case_labels"]
+    roles = data["_meta"]["role_labels"]
 
     with_text = {c["id"] for c in cases if c.get("deep_page")}
     on_disk = {p.stem for p in CASE_DIR.glob("*.md")}
@@ -171,18 +171,22 @@ def check_gallery(data):
             fail("gallery", "duplicate card id %s" % case_id)
         seen.add(case_id)
 
-        use_case = case.get("useCase")
-        if use_case not in labels:
-            fail("gallery", "%s carries useCase %r, not in use_case_labels"
-                 % (case_id, use_case))
-        elif case.get("useCaseLabel") != labels[use_case]:
-            fail("gallery", "%s label %r does not match use_case_labels[%r]"
-                 % (case_id, case.get("useCaseLabel"), use_case))
+        role = case.get("role")
+        if role not in roles:
+            fail("gallery", "%s carries role %r, not in role_labels"
+                 % (case_id, role))
 
         for kind in case.get("interfaceTypes") or []:
             if kind not in INTERFACE_TYPES:
                 fail("gallery", "%s carries interface type %r, not one of the five"
                      % (case_id, kind))
+
+        # A card in the evidence block claims a Table 1 row, and only there.
+        if role == "evidence" and not case.get("paper_row"):
+            fail("gallery", "%s has role evidence but claims no Table 1 row" % case_id)
+        if role != "evidence" and case.get("paper_row"):
+            fail("gallery", "%s claims Table 1 row %r but its role is %r"
+                 % (case_id, case["paper_row"], role))
 
 
 def paper_table1():

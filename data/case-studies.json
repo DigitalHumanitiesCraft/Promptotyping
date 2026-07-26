@@ -7,38 +7,37 @@
     "schema": {
       "id": "anchor slug, forming the site anchor together with #case- (e.g. herdata -> #case-herdata)",
       "name": "display name",
-      "useCase": "exactly one of: data-production, data-modelling-capture, workflow-construction, data-rescue-transformation, data-exploration, knowledge-infrastructure, process-visualisation, literature-review-infrastructure, origin-point",
-      "useCaseLabel": "display form of the useCase",
+      "role": "what the case argues for, one of evidence, genealogy, teaching, further; the gallery breaks on this at the top level and orders within a block by interfaceTypes. Labels in role_labels, one-line notes in role_notes",
       "status": "active | completed | archived",
       "summary": "one-sentence overview",
       "data": "data basis, short",
       "artifact": "artefact produced, short",
-      "interfaceTypes": "array of verification, exploration, edition, capture, audit; empty where none is documented (from the interface-type column of the project inventory, Pollin 2026, Section 5.2)",
+      "interfaceTypes": "array of verification, exploration, edition, capture, audit, the five epistemic functions of Pollin 2026 section 4.2; empty where the case produced no interface. This is the gallery's ordering and filtering dimension since 2026-07-26, replacing a nine-value vocabulary of the site's own",
       "repo_url": "repository URL or null",
       "demo_url": "live demo URL or null",
       "video_url": "YouTube URL or null",
       "insight": "methodological contribution per the project inventory (Pollin 2026, Section 5.2), otherwise null",
-      "deep_page": "true for the seven deep pages, otherwise false",
+      "deep_page": "true where the case carries a depth page under _content/case-studies/",
       "paper_row": "exact project name in Table 1 of the paper (section 5.2), or null where the project is deliberately outside the evidence inventory; checked by tools/check_consistency.py against knowledge/paper.md"
     },
-    "use_case_labels": {
-      "data-production": "Data Production",
-      "data-modelling-capture": "Data Modelling and Capture",
-      "workflow-construction": "Workflow Construction",
-      "data-rescue-transformation": "Data Rescue and Transformation",
-      "data-exploration": "Data Exploration",
-      "knowledge-infrastructure": "Knowledge Infrastructure",
-      "process-visualisation": "Process Visualisation",
-      "literature-review-infrastructure": "Literature Review Infrastructure",
-      "origin-point": "Origin Point (Before the Method)"
+    "role_labels": {
+      "evidence": "Evidence for the paper",
+      "genealogy": "Before the method",
+      "teaching": "Teaching and demonstration",
+      "further": "Further documented applications"
+    },
+    "role_notes": {
+      "evidence": "Carries a row of the project inventory in Pollin 2026, Section 5.2. A claim of that section can be checked against these.",
+      "genealogy": "Built before the method had its vocabulary. Section 2.6 reads them as the ground it grew from.",
+      "teaching": "Recorded sessions and teaching builds. The teachability argument of Section 5.4 rests on this kind of material.",
+      "further": "Documented applications the paper does not carry. They stand on their repositories alone."
     }
   },
   "caseStudies": [
     {
       "id": "teicrafter",
       "name": "teiCrafter",
-      "useCase": "origin-point",
-      "useCaseLabel": "Origin Point (Before the Method)",
+      "role": "genealogy",
       "status": "completed",
       "summary": "Hackathon prototype (2023) that showed an LLM can produce TEI-XML from transcribed texts and that triggered the development of Promptotyping as a structured method.",
       "data": "Transcribed historical texts",
@@ -54,8 +53,7 @@
     {
       "id": "szd",
       "name": "Stefan Zweig Digital Annotation Tool",
-      "useCase": "data-modelling-capture",
-      "useCaseLabel": "Data Modelling and Capture",
+      "role": "genealogy",
       "status": "completed",
       "summary": "First publicly documented Promptotyping experiment, a timeline-based annotation tool for correspondence data from Stefan Zweig Digital, built in about two hours.",
       "data": "XML correspondence metadata from Stefan Zweig Digital",
@@ -73,8 +71,7 @@
     {
       "id": "szd-htr",
       "name": "SZD-HTR OCR Pipeline",
-      "useCase": "data-production",
-      "useCaseLabel": "Data Production",
+      "role": "evidence",
       "status": "active",
       "summary": "VLM-based HTR/OCR pipeline for the Stefan Zweig estate at the Literaturarchiv Salzburg, demonstrating Promptotyping at production scale across numerous documented sessions.",
       "data": "Digitised estate (correspondence, life documents, works, essay files)",
@@ -92,8 +89,7 @@
     {
       "id": "aldersbach",
       "name": "DEPCHA Aldersbach Dashboard",
-      "useCase": "data-exploration",
-      "useCaseLabel": "Data Exploration",
+      "role": "genealogy",
       "status": "completed",
       "summary": "Interactive dashboard for exploring historical financial transactions of the Cistercian abbey of Aldersbach following the DEPCHA data model.",
       "data": "TEI-XML/RDF, monastic accounts",
@@ -111,8 +107,7 @@
     {
       "id": "stained-glass",
       "name": "CVMA Stained Glass Annotation Tool",
-      "useCase": "data-modelling-capture",
-      "useCaseLabel": "Data Modelling and Capture",
+      "role": "genealogy",
       "status": "completed",
       "summary": "Scholarly annotation tool for medieval stained-glass artefacts from the Corpus Vitrearum Medii Aevi, with SPARQL-based extraction from the NFDI4Culture knowledge graph.",
       "data": "JSON-LD (NFDI4Culture, CVMA)",
@@ -130,8 +125,7 @@
     {
       "id": "imareal-room-object",
       "name": "imareal-room-object",
-      "useCase": "data-exploration",
-      "useCaseLabel": "Data Exploration",
+      "role": "genealogy",
       "status": "completed",
       "summary": "Dashboard for exploring medieval room inventories from the REALonline database for the study of material culture.",
       "data": "REALonline metadata (room-object relations)",
@@ -149,8 +143,7 @@
     {
       "id": "km",
       "name": "Hans Gross Kriminalmuseum Digital Archive",
-      "useCase": "data-exploration",
-      "useCaseLabel": "Data Exploration",
+      "role": "evidence",
       "status": "completed",
       "summary": "Digital archive of the criminological collection with two interface paradigms, traditional search and canvas-based spatial exploration.",
       "data": "TEI plus LIDO object corpus",
@@ -168,8 +161,7 @@
     {
       "id": "corresp-explorer",
       "name": "CorrespExplorer",
-      "useCase": "data-exploration",
-      "useCaseLabel": "Data Exploration",
+      "role": "evidence",
       "status": "completed",
       "summary": "Full research tool for the interactive visualisation of correspondence metadata in CMIF format across twelve coordinated views.",
       "data": "CMIF/TEI letter corpus",
@@ -187,8 +179,7 @@
     {
       "id": "herdata",
       "name": "HerData",
-      "useCase": "data-exploration",
-      "useCaseLabel": "Data Exploration",
+      "role": "evidence",
       "status": "active",
       "summary": "Static web application for the prosopographical visualisation of Goethe's female correspondents, with an explicit reflection on map bias ahead of use.",
       "data": "TEI/Wikidata letter corpus (CMIF, SNDB)",
@@ -206,8 +197,7 @@
     {
       "id": "coocr-htr",
       "name": "coOCR-HTR",
-      "useCase": "process-visualisation",
-      "useCaseLabel": "Process Visualisation",
+      "role": "evidence",
       "status": "completed",
       "summary": "Browser-based workbench for expert-in-the-loop transcription workflows that renders OCR/HTR outputs beside the source images; prototyped in a single working day.",
       "data": "OCR/HTR outputs",
@@ -225,8 +215,7 @@
     {
       "id": "vetmedai-wissensbilanz",
       "name": "VetMedAI Wissensbilanz",
-      "useCase": "data-exploration",
-      "useCaseLabel": "Data Exploration",
+      "role": "evidence",
       "status": "completed",
       "summary": "Dashboard over the intellectual-capital reports of the Austrian universities, built as the first use case of the VetMedAI project and observed by workshop participants as it was made.",
       "data": "~80 Excel files, Austrian university performance metrics",
@@ -244,8 +233,7 @@
     {
       "id": "kulturpool-explorer",
       "name": "Kulturpool Explorer",
-      "useCase": "data-exploration",
-      "useCaseLabel": "Data Exploration",
+      "role": "evidence",
       "status": "completed",
       "summary": "Static collection interface for around 19,000 objects from the Kulturpool API, built with parallel agent orchestration.",
       "data": "Kulturpool API",
@@ -263,8 +251,7 @@
     {
       "id": "wiiw-patent-analysis",
       "name": "wiiw Patent Analysis",
-      "useCase": "data-exploration",
-      "useCaseLabel": "Data Exploration",
+      "role": "evidence",
       "status": "completed",
       "summary": "Network dashboard over international patent cooperation from 2010 to 2018, built during a workshop at an economic research institute and the record's case for the method outside the humanities.",
       "data": "Patent cooperation CSV, 2010 to 2018",
@@ -282,8 +269,7 @@
     {
       "id": "sugw",
       "name": "Medieval Legal Transactions",
-      "useCase": "workflow-construction",
-      "useCaseLabel": "Workflow Construction",
+      "role": "evidence",
       "status": "active",
       "summary": "Agentic edition workflow for the prosopographic database of medieval Viennese legal transactions, in which the agent navigates the repository, validates, corrects and commits, while person identification across documents stays outside its reach.",
       "data": "~3,600 TEI-XML documents (~3,100 released) with an extensive CSV dataset",
@@ -301,8 +287,7 @@
     {
       "id": "m3gim",
       "name": "M3GIM",
-      "useCase": "data-modelling-capture",
-      "useCaseLabel": "Data Modelling and Capture",
+      "role": "evidence",
       "status": "completed",
       "summary": "Digital collection and multi-view exploration of the Ira Malaniuk archive, where the interface makes the limits of the still-developing data model visible.",
       "data": "RiC-O/JSON-LD, archival data",
@@ -321,8 +306,7 @@
     {
       "id": "zbz-ocr-tei",
       "name": "ZBZ OCR/TEI Pipeline",
-      "useCase": "data-production",
-      "useCaseLabel": "Data Production",
+      "role": "evidence",
       "status": "active",
       "summary": "LLM-supported OCR and TEI pipeline for the Jeanne Hersch papers at the Zentralbibliothek Zuerich, the most extensive Promptotyping example with a full epistemic infrastructure.",
       "data": "PDF corpus (286 PDFs, around 4,150 pages)",
@@ -341,8 +325,7 @@
     {
       "id": "notker-edition",
       "name": "Notker Edition",
-      "useCase": "data-production",
-      "useCaseLabel": "Data Production",
+      "role": "evidence",
       "status": "active",
       "summary": "Digital edition of the Notker psalm commentary (Psalm 2) that makes interwoven text layers individually visible and controllable through orthogonal toggles.",
       "data": "DOCX, Psalm 2",
@@ -360,8 +343,7 @@
     {
       "id": "klawiter-rescue",
       "name": "Klawiter Bibliography Rescue",
-      "useCase": "data-rescue-transformation",
-      "useCaseLabel": "Data Rescue and Transformation",
+      "role": "evidence",
       "status": "completed",
       "summary": "Extraction and restructuring of the Klawiter bibliography from a decommissioned MediaWiki database into structured JSON-LD with a static web front end.",
       "data": "MediaWiki SQL/BLOB dump",
@@ -380,8 +362,7 @@
     {
       "id": "femprompt-sozarb",
       "name": "FemPrompt SozArb",
-      "useCase": "literature-review-infrastructure",
-      "useCaseLabel": "Literature Review Infrastructure",
+      "role": "evidence",
       "status": "completed",
       "summary": "Systematic literature review on AI literacy and LLM bias in social work, with a five-stage pipeline and a dual assessment design between human experts and an LLM.",
       "data": "Academic paper corpus (326 papers)",
@@ -399,8 +380,7 @@
     {
       "id": "austrian-university-dashboard",
       "name": "Austrian University Dashboard",
-      "useCase": "data-exploration",
-      "useCaseLabel": "Data Exploration",
+      "role": "teaching",
       "status": "completed",
       "summary": "Interactive dashboard for Austrian university statistics that runs through every phase of the method on video as a teaching baseline.",
       "data": "Excel corpus (76 files)",
@@ -413,6 +393,90 @@
       "video_url": "https://youtu.be/8sUe4Jkh3uQ",
       "insight": "Teaching baseline (full process on video)",
       "deep_page": false,
+      "paper_row": null
+    },
+    {
+      "id": "diged-neolat",
+      "name": "Lucina Digital Edition",
+      "role": "further",
+      "status": "completed",
+      "summary": "Scholarly digital edition of a Neo-Latin poetry collection from a Madrid manuscript, developed over successive published edition stages with a prosopographical database beside the text.",
+      "data": "Neo-Latin poetry collection, DOCX and PDF as the point of origin",
+      "artifact": "TEI P5 edition with text-image synchronisation, prosopography and metrical analysis",
+      "interfaceTypes": [
+        "edition"
+      ],
+      "repo_url": "https://github.com/chpollin/diged-neolat",
+      "demo_url": "https://chpollin.github.io/diged-neolat/edition-5/web/",
+      "video_url": "https://youtu.be/0DtX0pLv4TA",
+      "insight": "Each published edition stage is one Promptotyping iteration, so the sequence is inspectable",
+      "deep_page": true,
+      "paper_row": null
+    },
+    {
+      "id": "wiiw-figaro-subagents",
+      "name": "wiiw FIGARO Subagents",
+      "role": "further",
+      "status": "completed",
+      "summary": "Agent-based macroeconomic analysis over the Eurostat FIGARO dataset, with separate subagent roles for analysis, implementation and synthesis in one documented run.",
+      "data": "Eurostat FIGARO dataset, production, income, money flows and consumption",
+      "artifact": "Documented multi-agent analysis run under version control",
+      "interfaceTypes": [
+        "exploration"
+      ],
+      "repo_url": "https://github.com/chpollin/wiiw-figaro-nam-demo",
+      "demo_url": null,
+      "video_url": "https://youtu.be/21815nd9WMM",
+      "insight": "Subagent roles for analysis, implementation and synthesis, and the gap between the planned and the realised architecture",
+      "deep_page": true,
+      "paper_row": null
+    },
+    {
+      "id": "wissens-projektmanagement-obsidian-claude-code-screencast",
+      "name": "Knowledge and Project Management with Obsidian",
+      "role": "teaching",
+      "status": "completed",
+      "summary": "Recorded session in which an empty Obsidian vault is built up with an agent and ends up documenting its own construction.",
+      "data": "An empty vault",
+      "artifact": "A vault that holds the rules by which it grows",
+      "interfaceTypes": [],
+      "repo_url": null,
+      "demo_url": null,
+      "video_url": "https://youtu.be/31Y6uRLnkQA",
+      "insight": "Self-reference as a working principle; a structured vault is active substrate for agents",
+      "deep_page": true,
+      "paper_row": null
+    },
+    {
+      "id": "vault-kuration-screencast",
+      "name": "Obsidian Vault Curation",
+      "role": "teaching",
+      "status": "completed",
+      "summary": "Recorded curation of an organically grown vault, with programmatic analysis, document merging, link updating and rule extraction.",
+      "data": "An organically grown Obsidian vault",
+      "artifact": "Curated vault plus the rules extracted from the curation",
+      "interfaceTypes": [],
+      "repo_url": null,
+      "demo_url": null,
+      "video_url": "https://youtu.be/CioCSbQWGXw",
+      "insight": "Separating what a script can decide from what needs interpretation, and links as navigable context paths",
+      "deep_page": true,
+      "paper_row": null
+    },
+    {
+      "id": "wissensorganisation-nano-banana",
+      "name": "Knowledge Organisation across Three Tools",
+      "role": "teaching",
+      "status": "completed",
+      "summary": "Recorded workflow that takes a video on generative-AI fundamentals through extraction, synthesis, vault integration and an infographic into teaching slides.",
+      "data": "A video on generative-AI fundamentals as source material",
+      "artifact": "Knowledge document, vault entry and an infographic",
+      "interfaceTypes": [],
+      "repo_url": null,
+      "demo_url": null,
+      "video_url": "https://youtu.be/aCMDWtCKGNw",
+      "insight": "Tool differentiation across chat, agentic environment and image generation, with the human holding the workflow together",
+      "deep_page": true,
       "paper_row": null
     }
   ]
