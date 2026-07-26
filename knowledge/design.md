@@ -5,9 +5,9 @@ project:
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 status: complete
 language: en
-version: 0.5
+version: 0.6
 created: 2026-05-09
-updated: 2026-07-24
+updated: 2026-07-26
 authors: [Christopher Pollin]
 generated-with: Claude Code with Claude Opus 4.8
 method:
@@ -23,6 +23,9 @@ knowledge-sources:
   standards:
     CSS3: https://www.w3.org/Style/CSS/
     WCAG 2.1 AA: https://www.w3.org/WAI/WCAG21/quickref/?levels=aa
+    WCAG 2.1 SC 1.4.1 Use of Color: https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html
+  methods:
+    Bertin, Semiology of Graphics (visual variables): https://www.axismaps.com/guide/visual-variables
   vocabularies:
     Inter Font: https://rsms.me/inter/
 related: [INDEX, project, specification, architecture, journal]
@@ -30,7 +33,7 @@ related: [INDEX, project, specification, architecture, journal]
 
 # Design
 
-Design stance, design system, and interaction patterns for the interactive-paper site. This document is the normative specification for how the site looks and behaves. Its imperative translation for coding agents lives in `CLAUDE.md` at the repo root. Every value below is verified against `assets/css/style.css`; the few points where the stylesheet and this document diverge are flagged inline for reconciliation.
+Design stance, design system, and interaction patterns for the specification documentation. This document is the normative specification for how the site looks and behaves, and it is the only one; there is no separate UI document, because the template catalogue carries one Design template and because the interaction rules and the visual rules here explain each other. Its imperative translation for coding agents lives in `CLAUDE.md` at the repo root. Every value below is verified against `assets/css/style.css`.
 
 ## Design stance
 
@@ -179,7 +182,7 @@ Below 768px the panel becomes a bottom sheet: full width, `max-height: 80vh`, a 
 
 ### Glossary trigger
 
-Glossary-defined terms render with a dotted grey underline (`1px dotted #888888`, pending reconciliation to `#8a8a8a`) and `cursor: help`. Hover fills the background with `#f5f5f5`. A hover tooltip with a short definition appears after a delay handled in `app.js`; a click opens the side panel with the full definition. The tooltip surface fades in over `opacity 150ms`.
+Glossary-defined terms render with a dotted grey underline (`1px dotted var(--glossar-underline)`) and `cursor: help`. Hover fills the background with `#f5f5f5`. A hover tooltip with a short definition appears after a delay handled in `app.js`; a click opens the side panel with the full definition. The tooltip surface fades in over `opacity 150ms`.
 
 ### Vorlagen table
 
