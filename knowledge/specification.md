@@ -30,15 +30,23 @@ related: [INDEX, project, architecture, design, journal]
 
 What the site must do. The site is a specification documentation showing one page at a time, with the navigation tree as its table of contents; the Pollin 2026 paper is one of those pages, rendered from the canonical text, and the glossary tooltip, the embedded templates, the case-study cards and the side panel serve it. This document states the requirements and the design decisions. How the site is built is in [architecture.md](architecture.md); how it looks and behaves is in [design.md](design.md).
 
+## Scope and the division of roles
+
+The site says what Promptotyping is and how it is applied. The paper says why the method is built the way it is and whether it holds. Each text carries one sentence of the other's job, so that two documents never compete for the same role. The rebuild that established this division ran as work packages AP1 to AP8 under the operator decision of 2026-07-25 and was completed the same day; the packages are spent and their record is in [journal.md](journal.md) and in the git history.
+
+Four things stay out of scope. No bilingual site. No build step. No colours outside the design system. No modules beyond those A11, A7, A25 and the vault view name.
+
+One item of the target state is still undecided. The mandatory frontmatter core is carried by this knowledge base with six fields while the published convention describes it alongside, and settling that on one version is an operator decision rather than an implementation gap.
+
 ## Requirements
 
 ### A1 — Paper as reading flow
 The canonical paper text is [paper.md](paper.md) in this knowledge base. The site renders that file directly as a continuous reading flow, grouped into one section per H2 at render time, so the deployed text is the canonical text by construction. It renders in a central reading column, with the sticky left sidebar carrying the site's page tree and the paper's own two-level table of contents standing in the page directly under the H1 (A23). Acceptance criterion. A visitor to https://dhcraft.org/Promptotyping/paper can read the paper from abstract to conclusion in one scroll.
 
-The mirrored decomposition under `_content/paper/` is gone since 2026-07-25 (AP1 in [plan-site.md](plan-site.md)), and with it the largest class of drift this site had. There is one paper text, it lives in this knowledge base, and the site fetches it. Nothing is re-cut on release of a revision, because there is nothing to re-cut.
+The mirrored decomposition under `_content/paper/` is gone since 2026-07-25, and with it the largest class of drift this site had. There is one paper text, it lives in this knowledge base, and the site fetches it. Nothing is re-cut on release of a revision, because there is nothing to re-cut.
 
 ### A2 — Phases provenance lane (removed)
-A left lane that marked each paragraph by its Promptotyping phase was removed after the first deploy (operator decision 2026-06-10). Legend, mobile phase bar, hover tooltip, and filter mode are gone from HTML, CSS, and JavaScript; the `{:.phase-*}` tags in the paper markdown are stripped by the marked extension and render nothing. The rationale survives as a decision record in ADR-4.
+A left lane that marked each paragraph by its Promptotyping phase was removed after the first deploy (operator decision 2026-06-10). Legend, mobile phase bar, hover tooltip, and filter mode are gone from HTML, CSS, and JavaScript. The `{:.phase-*}` tags left the paper markdown with the revisions that followed, and the marked extension that had stripped them was deleted on 2026-07-27 once a sweep confirmed the tags were gone. The rationale survives as a decision record in ADR-4.
 
 ### A3 — Addressable templates
 The mirrored templates are addressable under latest anchors (`#promptotyping-document-data`, `#promptotyping-document-journal`, …). Opening such an anchor jumps to the template and opens the side panel with its full specification. Version snapshots receive an additional sub-anchor on the same template section (A4, ADR-2).

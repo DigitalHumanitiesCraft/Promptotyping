@@ -722,12 +722,12 @@ def check_anchors():
 SYMBOL_BINDING = re.compile(
     r"`([A-Za-z_][A-Za-z0-9_.$]*)(?:\([^`]*\))?`\s+in\s+`([^`]+\.(?:js|py))`")
 
-# Chronological and dated records are exempt. A journal entry, a plan and an
-# archived audit are correct as of their date and are not rewritten when the
-# code moves afterwards; holding them against today's code would ask a record to
-# stop being a record. The statuses come from the vocabulary INDEX.md defines.
+# Chronological and dated records are exempt. A journal entry and an archived
+# audit are correct as of their date and are not rewritten when the code moves
+# afterwards; holding them against today's code would ask a record to stop being
+# a record. The statuses come from the vocabulary INDEX.md defines.
 DATED_STATUSES = ("archived", "snapshot")
-PROCESS_DOCUMENTS = ("journal.md", "plan-site.md")
+PROCESS_DOCUMENTS = ("journal.md",)
 
 
 def is_dated_record(path):

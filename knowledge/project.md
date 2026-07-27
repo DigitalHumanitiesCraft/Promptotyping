@@ -74,7 +74,7 @@ Out of scope:
 
 Status is complete and deployed. The site renders the paper reading flow, the templates with side panels and the frontmatter inspector, the curated use-case gallery with its depth pages, and the overview, practice, skills, working-environment, glossary, convention, and bibliography sections, with mobile layout and SEO. What each of these must do and how it is built is owned by [specification.md](specification.md), [architecture.md](architecture.md), and [design.md](design.md); the header and footer run on the DHCraft watercolour mark.
 
-The phase-provenance lane was removed after the first deploy by operator decision. The `{:.phase-*}` tags remain in the paper Markdown as methodological annotation and are stripped at render time (A2 in [specification.md](specification.md)).
+The phase-provenance lane was removed after the first deploy by operator decision (A2 in [specification.md](specification.md)). The `{:.phase-*}` tags it read have since left the paper Markdown as well.
 
 The FAIR infrastructure policy is dual licensing, MIT for code and CC BY 4.0 for documentation and Promptotyping documents, with third-party research data exempted per repository under its own rights statement. The repository root carries a MIT `LICENSE` and a `CITATION.cff`; the citation identity is Christopher Pollin, Digital Humanities Craft OG, ORCID 0000-0002-4879-129X.
 

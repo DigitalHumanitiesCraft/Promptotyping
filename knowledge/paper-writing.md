@@ -123,6 +123,8 @@ Autor und Jahr, keine Seitenangaben (2026-07-25). Der Lokator gehört in die Reg
 - Verification und Validation sind lokal festgelegt, Verification beim Experten, Validation im formal Entscheidbaren. `[^vv]` benennt die Abweichung von der Software-Engineering-Norm als bewusst und auf dieses Begriffspaar beschränkt; 4.3 und 6.5 rufen die RSE-Standards weiter als bindend an.
 - Die Dokumenttypologie in 3.3 ordnet eine Beschreibung des Projektablaufs (`pipeline.md`, `workflow.md`) der deklarativen Klasse zu; Prozessdokumente halten die Arbeit am Projekt. Die Unterscheidung „cuts across the types" gilt ausdrücklich innerhalb der deklarativen Klasse.
 - `AGENTS.md` steht in der Action-Layer-Spezifikation neben `CLAUDE.md`, mit Fußnote `[^agents]`.
+- Eigenprägungen ohne Fremdquelle, bewusst als solche geführt: `tool positivism` als Gegenbegriff in 2.2, `semantic explicitness` und `token economy` als das gegenläufige Paar in 2.3, `epistemic yield` als feste Schemaspalte der Fallbeschreibungen. Die Belegteile darunter stehen (FAIR, Context Rot, Cremer und Paulmann 2025); die Prägung selbst ist die eigene Leistung und braucht keine Fremdquelle, solange sie als Prägung erkennbar bleibt.
+- Aus dem Begriffsdurchgang vom 2026-07-25 aufgelöst: der Ursprung der Trading Zone bei Galison steht über Kemman 2021 im Text, die User Story hat mit dem QUS-Rahmen (Lucassen et al. 2016) ihren Beleg, und das `adversarial machine review` ist in der sechsten Runde zum `LLM review` mit Zheng et al. 2023 geworden.
 
 ### Belege und Theorieanker
 
@@ -181,8 +183,10 @@ Auflösung heißt verifiziert, belegt oder gestrichen, mit Prüfvermerk hier.
 - **Zenodo-Belege der Teaching Cases** und Video-Transkripte für die Präzision der Thinking-Matrix.
 - **Wheaton in der Dissertation.** Der Operator sagt, das Projekt werde dort direkt verwendet; verifizieren, dann als Genealogie-Satz nutzbar.
 - **Curtis-Wortlaut.** Zugangsklasse C, Wortlautprüfung an einem Operator-Exemplar steht aus.
-- **DEPCHA-Flattening.** Die Aussage, dass das generalisierte Dashboard kontextspezifisches Detail einebnet, trägt Sektion 1 als Ursprungspunkt der Methode. Das Diss-Distillat deckt bisher nur Deep-Dive-Sitzungen und Ontologie-Genese; ein Zitatdurchgang durch Kapitel 7.4 fehlt.
-- **TaDiRAH-Claim.** Dass Verification und Audit dort keine Entsprechung haben, ist bisher ein Posit; entweder in einem Distillat des TaDiRAH-Vokabulars verankern oder als Posit stehen lassen.
+- **TaDiRAH-Claim.** Dass Verification und Audit dort keine Entsprechung haben, ist bisher ein Posit. Das Distillat zu Borek et al. 2021 vom 2026-07-27 löst das nicht ein, weil sein Abstract über Formalisierung, SKOS und FAIR spricht und über die Aktivitätsstruktur schweigt. Entweder das SKOS-Vokabular als Datenquelle aufnehmen und die Abwesenheit dort verankern, oder als Posit in eigener Formulierung stehen lassen.
+- **Confabulation** steht im Text ohne Beleg; Kandidat Ji et al. 2023, ungeprüft.
+- **Herleitung der Dokumenttypologie aus dem Knowledge Engineering.** Der Text ruft die Unterscheidung deklarativ gegen prozedural auf, ohne Fundstelle; Kandidat Studer, Benjamins und Fensel 1998, ungeprüft. Für die Site trägt Diátaxis (Procida) dieselbe Achse belegt, was hier ebenfalls in Frage kommt.
+- **Yehudai-Fähigkeitenliste.** Die Agentic-Engineering-Passage nennt fünf Fähigkeiten, das geprüfte Abstract trägt Planung, Schlussfolgern, Werkzeuggebrauch und Umgebungsinteraktion. Entweder auf die belegte Form kürzen oder den Volltext aufnehmen und Memory und Self-Reflection dort verankern.
 - **Grallert-Heftangabe** ist gesetzt (DHQ 20/1, 2026); die verbleibende Referenzarbeit ist damit erledigt, Seitenzahlen entfallen generell nach der Zitierweise.
 
 ## Weg zur Einreichung

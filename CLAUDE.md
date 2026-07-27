@@ -56,13 +56,9 @@ Der Ordner `vault/` ist eine Instanz des Grounded-Vault-Templates (`DigitalHuman
 - **Die Site-Logik liegt in zehn einfachen Skripten unter `assets/js/`**, jedes eine IIFE, die `window.PromptotypingApp` erweitert. Kein ES-Modul, kein `import`. Verhaltensrelevant ist allein, dass `app.js` als letzte der zehn geladen wird und die beiden Shell-deklarierten Module danach folgen. `404.html` ist ein Rumpf ohne Site-Skript, der den angefragten Pfad per `location.replace` als `?p=` an `index.html` durchreicht; die Shell existiert genau einmal, und das Subpath-Vokabular steht allein in `resolveTemplateUrl`.
 - **`python tools/check_consistency.py` läuft vor jedem Commit, der Katalog, Konvention, Vorlagenordner oder die Use-Case-Galerie anfasst.** Es meldet, wenn dieselbe Aussage an zwei Orten auseinanderläuft. Wer eine Adresse in `data/case-studies.json` anfasst, läuft es zusätzlich mit `--check-urls`; diese Gruppe braucht das Netz und ist deshalb nicht im Standardlauf. Was es prüft, steht in `knowledge/verification.md`.
 - **marked.js v9.1.6 vendoriert** in `assets/vendor/marked.min.js`. Kein CDN.
-- **Custom-Extensions für marked.js** sind erlaubt (z.B. für Klassen-Tags `{:.phase-preparation}`), bleiben aber in `assets/js/markdown.js`, wo die marked-Konfiguration insgesamt liegt.
+- **Custom-Extensions für marked.js** sind erlaubt, bleiben aber in `assets/js/markdown.js`, wo die marked-Konfiguration insgesamt liegt. Dort stehen heute der Fußnotenapparat und der Heading-ID-Generator.
 - **Browser-natives `location.hash` für Routing**, kein History-API-Hacking, kein React-Router.
 - **GitHub Pages serviert direkt aus dem Repo-Root.** Kein `_site`, kein `docs/`, kein Jekyll-Build.
-
-## Phasen-Provenance-Lane: entfernt (Operator-Entscheidung 2026-06-10)
-
-Die Phasen-Provenance-Lane wurde nach dem Erstdeploy auf Operator-Entscheidung vollständig entfernt (Legende, Mobile-Phase-Bar, Hover-Tooltip, Filter-Modus aus HTML, CSS und JavaScript). Die `{:.phase-*}`-Tags im Paper-Markdown werden von der marked-Extension in `markdown.js` nur noch gestrippt: ein getaggter Absatz rendert als gewöhnlicher Absatz ohne Klasse und ohne sichtbaren Effekt. Lege keine neuen `{:.phase-*}`-Tags an und reaktiviere die Lane nicht; wer sie wiederbeleben will, beginnt einen Neu-Diskurs mit dem Critical Expert.
 
 ## Seitenmodell: Spezifikationsdokumentation (Operator-Entscheidung 2026-07-25)
 
@@ -100,7 +96,7 @@ Anker dürfen nicht ohne Diskussion umbenannt werden — Repos können auf sie a
 - **Nicht aus dem Vault zitieren ohne Markdown-Link.** Vault-interne Wikilinks (`[[CLAUDE]]`) bedeuten im Repo nichts.
 - **Nicht das alte Living-Paper-Material reaktivieren.** Alles, was im November-2025-Stand war, ist gelöscht. Wer alte Module wiederbeleben will, beginnt einen Neu-Diskurs.
 - **Die Site ist englisch.** Der Durchgang ist am 2026-07-26 gelaufen (Operator-Entscheidung 2026-07-25, journal.md, Sprachentscheidung). Englisch sind Shell, Bedienelemente, die neun Seitentexte direkt unter `_content/` und die Textfelder der drei Datendateien. Deutsch geblieben sind die sechzehn Vorlagen und die drei Dateien unter `_content/skills/` als Unterrichtsmaterial. Bei fünfzehn Vorlagen liegt der Grund darin, dass sie Vault-Spiegel sind und ihre Übersetzung in eine Vault-Sitzung gehört; die Vorlage `technology` ist seit dem 2026-07-26 im Repo kanonisch und bleibt deutsch, damit der Katalog einsprachig bleibt. Offen sind die sieben Fall-Tiefenseiten unter `_content/case-studies/`. Die publizierten Anker bleiben deutsch, weil fremde Repos sie als `template:`-URI führen, ebenso die Vorlagennamen als Identifikatoren.
-- **Keine Module außer Frontmatter-Inspector, Case-Study-Filter, Begriffsregister und Vault-Ansicht.** Das Begriffsregister (A25, seit 2026-07-26) vertritt die abgelehnte Volltextsuche. Die Vault-Ansicht ist seit der Operator-Entscheidung 2026-07-25 in Scope (`knowledge/plan-site.md`, AP4); Context-Rot-Viz und Sycophancy-Trap bleiben es nicht.
+- **Keine Module außer Frontmatter-Inspector, Case-Study-Filter, Begriffsregister und Vault-Ansicht.** Das Begriffsregister (A25, seit 2026-07-26) vertritt die abgelehnte Volltextsuche. Die Vault-Ansicht ist seit der Operator-Entscheidung 2026-07-25 in Scope; Context-Rot-Viz und Sycophancy-Trap bleiben es nicht.
 - **Keine Branches.** Alle Änderungen direkt auf `main`. (Das ist Christopher Pollins explizite Wahl, dokumentiert in journal.md.)
 
 ## Bei Konflikt zwischen Vault und Repo

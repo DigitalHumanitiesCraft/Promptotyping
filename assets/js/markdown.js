@@ -1,20 +1,9 @@
-/* Markdown pipeline: the marked.js configuration with the footnote apparatus,
-   the heading-id generator and the stripper for legacy {:.phase-*} markers,
-   plus the one function that renders a content file into a page host. */
+/* Markdown pipeline: the marked.js configuration with the footnote apparatus
+   and the heading-id generator, plus the one function that renders a content
+   file into a page host. */
 
 (function (A) {
   "use strict";
-
-  /* Legacy phase tags ({:.phase-*}) are recognised only to strip them. The
-     provenance lane was removed on 2026-06-10 by operator decision; the
-     extension stays as a defensive stripper so any residual tag renders as a
-     plain paragraph with no visible effect. */
-  var STRIPPABLE_PHASE_CLASSES = [
-    "phase-preparation",
-    "phase-exploration",
-    "phase-distillation",
-    "phase-implementation"
-  ];
 
   /* Headings whose slug is overridden, so a published anchor keeps resolving. */
   var HEADING_ID_OVERRIDES = {
@@ -126,33 +115,6 @@
         }
       },
       extensions: [{
-        name: "classedParagraph",
-        level: "block",
-        start: function (src) {
-          var m = src.match(/^\{:\.[a-z-]+\}/);
-          return m ? m.index : undefined;
-        },
-        tokenizer: function (src) {
-          var match = /^\{:\.([a-z-]+)\}\n([\s\S]+?)(?:\n\n|$)/.exec(src);
-          if (match) {
-            // Only the legacy phase tags are stripped here; anything else falls
-            // through to the standard paragraph tokenizer.
-            if (STRIPPABLE_PHASE_CLASSES.indexOf(match[1]) === -1) {
-              return undefined;
-            }
-            return {
-              type: "classedParagraph",
-              raw: match[0],
-              tokens: this.lexer.inline(match[2])
-            };
-          }
-        },
-        renderer: function (token) {
-          // Strip the tag: render a plain paragraph, no class, no lane effect.
-          var inner = this.parser.parseInline(token.tokens);
-          return "<p>" + inner + "</p>\n";
-        }
-      }, {
         name: "footnoteDef",
         level: "block",
         start: function (src) {

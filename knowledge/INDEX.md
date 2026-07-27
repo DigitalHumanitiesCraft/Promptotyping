@@ -18,7 +18,7 @@ template:
   version: 0.2
   url: https://dhcraft.org/Promptotyping/promptotyping-document/index
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-index
-related: [project, specification, architecture, design, journal, paper, paper-writing, paper-argument-map, paper-terminology, plan-site, report, submission-zfdg, revision, skriptum-video-1, skriptum-video-2]
+related: [project, specification, architecture, design, journal, paper, paper-writing, paper-argument-map, report, submission-zfdg, revision, skriptum-video-1, skriptum-video-2]
 ---
 
 # INDEX
@@ -27,7 +27,7 @@ Navigation and glossary of this repository's knowledge base. The repository `Dig
 
 ## Language regime
 
-By operator decision of 2026-07-23 the core knowledge documents (INDEX, project, specification, architecture, design) are English, since they are the public showcase of the self-application. The process and steering documents stay German as working instruments, which covers journal, paper-writing, paper-argument-map, paper-terminology, plan-site, report, submission-zfdg, the two video scripts, and revision. The `template:` frontmatter blocks keep the German template names until the template catalogue itself renames them in the vault; the glossary below gives the English function names.
+By operator decision of 2026-07-23 the core knowledge documents (INDEX, project, specification, architecture, design) are English, since they are the public showcase of the self-application. The process and steering documents stay German as working instruments, which covers journal, paper-writing, paper-argument-map, report, submission-zfdg, the two video scripts, and revision. The `template:` frontmatter blocks keep the German template names until the template catalogue itself renames them in the vault; the glossary below gives the English function names.
 
 ## Status vocabulary
 
@@ -45,8 +45,6 @@ By operator decision of 2026-07-23 the core knowledge documents (INDEX, project,
 - **[paper.md](paper.md)** — the full English paper text as one document, the canonical text after the revision rounds of 2026-07-24 and 2026-07-25; headerless by design for copy-out. The site renders this file directly, so the deployed text is the canonical text.
 - **[paper-writing.md](paper-writing.md)** — what holds for the paper text: working mode, core statements, section mirror, the language rule catalogue, the binding decisions by subject, open decisions and checkpoints, and the route to submission. German. It deliberately carries no history; the course of the work is in `journal.md` and in the git history.
 - **[paper-argument-map.md](paper-argument-map.md)** — the concept model of the paper, one argument chain per block in compact notation with confirmation status, German. Serves the operator as a review instrument and an agent as a generation basis.
-- **[paper-terminology.md](paper-terminology.md)** — working sheet of the terminology pass: every term with its English original form, its definition in the current text, its source, and a status code; German. Carries the open operator decisions of the pass.
-- **[plan-site.md](plan-site.md)** — the work packages of the rebuild from paper publication to specification documentation, with the target state; German (function: Planning).
 - **[skriptum-video-1.md](skriptum-video-1.md)** and **[skriptum-video-2.md](skriptum-video-2.md)** — the cleaned scripts of the two introductory videos, German. They are the source from which the worked-workflow page was written and, through their representations in the vault, the ground of the claims that rest on the videos.
 - **[report.md](report.md)** — snapshot report of the lane run towards the ZfdG submission (2026-07-23), German; carries a dated addendum on what the revision round settled and is not otherwise updated.
 - **[submission-zfdg.md](submission-zfdg.md)** — submission package for the Zeitschrift für digitale Geisteswissenschaften: exposé with outline and literature selection, short abstracts in German and English, formalities checklist; German.
@@ -81,7 +79,7 @@ Terms constitutive for this knowledge base. Canonical definitions live in the li
 
 **Promptotyping.** Iterative context-engineering method in four phases, Preparation, Exploration & Mapping, Distillation, Implementation, producing research artefacts from data and frontier LLMs. The `knowledge/` folder is the curated knowledge artefact of a project, holding the domain knowledge and the specification the implementation is derived from; its coverage ends where decisions taken during building are not written back into it. A single iteration of a prototype stays cheap to abandon, and what it taught goes into the documents.
 
-**Promptotyping Document.** Structured Markdown document in a repository's `knowledge/` folder. All of them are Knowledge Documents, specialised by the kind of knowledge they carry into three analytical types, Declarative (subject matter), Process (chronological), Action (imperative). Until July 2026 the declarative type itself was called Knowledge Document; the name moved to the umbrella term (see `paper-terminology.md`).
+**Promptotyping Document.** Structured Markdown document in a repository's `knowledge/` folder. All of them are Knowledge Documents, specialised by the kind of knowledge they carry into three analytical types, Declarative (subject matter), Process (chronological), Action (imperative). Until July 2026 the declarative type itself was called Knowledge Document; the name moved to the umbrella term.
 
 **Template (Vorlage).** Fillable structural pattern for one function of a Promptotyping knowledge base. The function names have been English since 2026-07-19 (Navigation, Charter, Material, Specification, Architecture, Technology Baseline, Domain Knowledge, Design, Quality Assurance, Verification, Provenance, Planning, Reporting, Integration, Agent Instructions). The catalogue lives in the vault; the site mirrors the templates as versioned anchors. A template carries only where its trigger holds.
 
@@ -97,7 +95,7 @@ Terms constitutive for this knowledge base. Canonical definitions live in the li
 
 **Case-study filter.** Module of the use-case section filtering the curated cards by use-case typology (primary), interface type, and demo availability.
 
-**Phase provenance lane.** Historical design device of the first deploy, removed by operator decision 2026-06-10 (A2, ADR-4); the `{:.phase-*}` tags in the paper Markdown remain as methodological annotation and are stripped at render time.
+**Phase provenance lane.** Historical design device of the first deploy, removed by operator decision 2026-06-10 (A2, ADR-4). The `{:.phase-*}` tags it read are gone from the paper Markdown, and the stripper that had covered for them was deleted on 2026-07-27.
 
 **Critical Expert in the Loop (EIL).** The role that verifies LLM output at defined points; here Christopher Pollin is the Critical Expert.
 
