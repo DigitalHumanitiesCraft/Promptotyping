@@ -180,7 +180,6 @@ Stand nach der vierten Fassung der Eröffnung (2026-07-27). Geschlossene Punkte 
 Auflösung heißt verifiziert, belegt oder gestrichen, mit Prüfvermerk hier.
 
 - **Exemplar-Zuordnungen in 5.2** und das Audit-Exemplar.
-- **Datierung der Workshopreihe.** Der Text sagt seit dem 2026-07-27 „materials go back to June 2023" und stützt sich damit auf das Anlagedatum des GM-DH-Repositoriums; der zitierte Zenodo-Deposit trägt 2024-02-11 und keine Termine. Die Winter-School-Notizen datieren die Reihe auf Herbst 2023. Wann sie lief, weiß nur der Operator.
 - **Volle Autorenlisten für sechs Referenzeinträge.** `chuehong-2022`, `dellacqua-2023`, `lambert-2024`, `mei-2025`, `sharma-2023` und `wilkinson-2016` kürzen mit „et al."; bei den großen Kollektiven ist das üblich, bei Dell'Acqua und Mei sollte die volle Liste stehen.
 - **URL-Praxis bei DHQ-Artikeln.** Grallert und Holmes tragen eine URL, Whitelaw, Drucker 2011 und Risam/Gil nicht. Vereinheitlichen.
 - **zbz-ocr-tei sichtbar stellen.** Operator-Aktion; danach Fußnote nach dem Muster der übrigen Fallfußnoten.
