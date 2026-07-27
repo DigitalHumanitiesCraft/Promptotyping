@@ -30,6 +30,7 @@
     "endings-static-artefacts-minimise-maintenance",
     "do-one-thing-well-favours-small-specialised-tools-over-monolithic-platforms",
     "tadirah-classifies-dh-research-activities",
+    "tadirah-was-formalised-as-a-skos-knowledge-organization-system",
     "coordinated-multiple-views-enable-exploration",
     "static-client-side-editions-reach-tens-of-thousands-of-units",
     "szd-htr-confabulated-reading-in-hasty-kurrent",
@@ -98,7 +99,7 @@
    "slug": "MOC-Frame",
    "topic": "Frame",
    "title": "MOC: Frame",
-   "description": "Added 2026-07-26 with the jagged-frontier intake for Section 2.4:",
+   "description": "Added 2026-07-27, the first peer-reviewed carrier for the agent term the Agentic Engineering passage had set on its own authority:",
    "claims": [
     "fair-emphasises-machine-actionability-of-data",
     "making-source-data-machine-addressable-is-interpretive-modelling",
@@ -137,14 +138,15 @@
     "research-software-engineers-are-scarce",
     "dh-intermediary-bridges-researchers-and-technical-staff",
     "llm-assistance-raises-performance-inside-and-lowers-it-outside-a-jagged-frontier",
-    "the-boundary-of-the-jagged-frontier-is-not-readable-from-a-task-in-advance"
+    "the-boundary-of-the-jagged-frontier-is-not-readable-from-a-task-in-advance",
+    "llm-agents-plan-reason-and-use-tools-in-dynamic-environments"
    ]
   },
   {
    "slug": "MOC-Genealogy",
    "topic": "Genealogy",
    "title": "MOC: Genealogy",
-   "description": "Added with the bibliography-traceability sweep of 2026-07-23:",
+   "description": "Added 2026-07-27 with the dissertation re-read for the genealogical opening of Section 1:",
    "claims": [
     "dissertation-requirements-from-deep-dive-sessions",
     "dissertation-requirements-feed-built-artifacts",
@@ -155,7 +157,9 @@
     "field-literature-records-llm-code-generation-and-tei-agent-line-by-2024",
     "deep-dive-process-documented-2019",
     "applied-genai-dh-workshop-series-2024",
-    "semantic-web-envisioned-agents-over-machine-processable-data"
+    "semantic-web-envisioned-agents-over-machine-processable-data",
+    "generalised-dashboard-flattens-context-specific-detail",
+    "promptotyping-first-named-in-the-dissertation"
    ]
   },
   {
@@ -1394,6 +1398,28 @@
    ]
   },
   {
+   "slug": "generalised-dashboard-flattens-context-specific-detail",
+   "title": "The generalised DEPCHA dashboard serves broad overviews and can flatten the context-specific detail that social and economic historians require.",
+   "statement": "The dissertation records the limit of the generalised Dashboard View of DEPCHA in its own terms. The view helps with broad overviews and can overlook what social and economic historians require, flattening context-specific detail; against generalist interfaces of this kind it sets scholar-centred, flexible and interactive environments, which the two experimental interfaces exemplify. This grounds the point Section 1 of the paper uses as the origin of the method, that a shared ontology can normalise heterogeneous datasets without a single interface serving the perspectives built on them.",
+   "status": "grounded",
+   "topics": [
+    "Genealogy"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "pollin-2025b-dissertation",
+     "path": "10_distillates/publications/pollin-2025b-dissertation",
+     "statement": "s14"
+    },
+    {
+     "distillate": "pollin-2025b-dissertation",
+     "path": "10_distillates/publications/pollin-2025b-dissertation",
+     "statement": "s15"
+    }
+   ]
+  },
+  {
    "slug": "generous-interfaces-reveal-collection-through-browsing",
    "title": "Generous interfaces reveal a collection's scale and complexity through rich, browsable representations.",
    "statement": "Whitelaw's generous interface offers rich, navigable representations of a collection that invite exploration and support browsing, and in revealing the collection's complexity it enriches interpretation by exposing relationships and structures within it.",
@@ -1740,6 +1766,28 @@
      "distillate": "saltzer-1975-protection-of-information",
      "path": "10_distillates/publications/saltzer-1975-protection-of-information",
      "statement": "s6"
+    }
+   ]
+  },
+  {
+   "slug": "llm-agents-plan-reason-and-use-tools-in-dynamic-environments",
+   "title": "LLM-based agents are autonomous systems that plan, reason, and use tools while interacting with dynamic environments.",
+   "statement": "A survey published in Findings of the Association for Computational Linguistics: ACL 2025 characterises LLM-based agents as autonomous systems that plan, reason, and use tools while interacting with dynamic environments, and treats planning and tool use as core capabilities required for agentic workflows. This is the first peer-reviewed carrier the paper has for its agent term, which the Agentic Engineering passage had until then set on its own authority. The paper's further step, that the methodologically decisive variable is the span of work performed between two human interventions, is the paper's own and is not carried by this source.",
+   "status": "grounded",
+   "topics": [
+    "Frame"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "yehudai-2025-survey-evaluation-llm-agents",
+     "path": "10_distillates/publications/yehudai-2025-survey-evaluation-llm-agents",
+     "statement": "s1"
+    },
+    {
+     "distillate": "yehudai-2025-survey-evaluation-llm-agents",
+     "path": "10_distillates/publications/yehudai-2025-survey-evaluation-llm-agents",
+     "statement": "s3"
     }
    ]
   },
@@ -2437,6 +2485,23 @@
    ]
   },
   {
+   "slug": "promptotyping-first-named-in-the-dissertation",
+   "title": "The term Promptotyping was introduced in the dissertation, which devotes Section 7.4 to the method.",
+   "statement": "The dissertation introduces the concept of Promptotyping in answer to its fourth research question on LLM-supported interface development and carries a section of its own for it, 7.4 LLM-Supported Prototyping and Exploration: Promptotyping. It also names the Promptotype Documents as context-compressed Markdown files capturing the relevant semantics. The two public contributions of 2025 and 2026 develop the term after that point rather than coining it, which corrects the earlier reading that the blog post was its first use.",
+   "status": "grounded",
+   "topics": [
+    "Genealogy"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "pollin-2025b-dissertation",
+     "path": "10_distillates/publications/pollin-2025b-dissertation",
+     "statement": "s16"
+    }
+   ]
+  },
+  {
    "slug": "promptotyping-is-a-four-phase-context-engineering-technique",
    "title": "Promptotyping is an iterative four-phase context-engineering technique with form-free documents.",
    "statement": "The L.I.S.A. article defines Promptotyping as an iterative context-engineering technique in four phases, developing research artifacts such as interfaces, tools, or workflows together with frontier LLMs. The Promptotyping Documents that carry the context adapt to the domain and have no fixed formal prescription. This four-phase framing is a different axis from the three-stage framing of the earlier Critical Vibing blog, which names integrated components rather than process phases.",
@@ -2461,7 +2526,7 @@
   {
    "slug": "promptotyping-named-first-described-2025-04",
    "title": "The method was named Promptotyping and first publicly described on 2025-04-24 as an iterative, document-based method in four phases oriented on User-Centred Design.",
-   "statement": "The DHCraft blog post introduces the method under the name Promptotyping and presents it as a systematic development of the earlier Vibe Coding approach. It defines Promptotyping as a prompt-engineering method whose requirements are developed iteratively through targeted prompting strategies and continuously refined in clearly structured documents, and it describes the process as running in four iterative, mutually building phases oriented on User-Centred Design. This is the method's first public description; the CSL record for pollin-2025d carries its publication date as 2025-04-24.",
+   "statement": "The DHCraft blog post introduces the method under the name Promptotyping and presents it as a systematic development of the earlier Vibe Coding approach. It defines Promptotyping as a prompt-engineering method whose requirements are developed iteratively through targeted prompting strategies and continuously refined in clearly structured documents, and it describes the process as running in four iterative, mutually building phases oriented on User-Centred Design. This is the method's first public description; the CSL record for pollin-2025d carries its publication date as 2025-04-24. The name itself is older, since the dissertation already carries it with a section of its own ([[20_claims/promptotyping-first-named-in-the-dissertation]]), so this post is where the name first reaches a public audience.",
    "status": "grounded",
    "topics": [
     "Genealogy"
@@ -3400,6 +3465,33 @@
    ]
   },
   {
+   "slug": "tadirah-was-formalised-as-a-skos-knowledge-organization-system",
+   "title": "TaDiRAH was revised into a formalised, machine-readable SKOS knowledge organization system, released as version 2.0.",
+   "statement": "A revision of TaDiRAH by a different author team transformed the taxonomy into a machine-readable, formalised vocabulary, realised in SKOS on pragmatic grounds and extensible through Wikidata, and released as version 2.0 as a knowledge organization system that improves the FAIR properties of digital humanities research data and assets. This grounds the paper's reference to the current, addressable vocabulary at vocabs.dariah.eu, as distinct from the original classification that [[20_claims/tadirah-classifies-dh-research-activities]] carries.",
+   "status": "grounded",
+   "topics": [
+    "ArtefactVerification"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "borek-2021-tadirah-revised-formalized-fair",
+     "path": "10_distillates/publications/borek-2021-tadirah-revised-formalized-fair",
+     "statement": "s1"
+    },
+    {
+     "distillate": "borek-2021-tadirah-revised-formalized-fair",
+     "path": "10_distillates/publications/borek-2021-tadirah-revised-formalized-fair",
+     "statement": "s3"
+    },
+    {
+     "distillate": "borek-2021-tadirah-revised-formalized-fair",
+     "path": "10_distillates/publications/borek-2021-tadirah-revised-formalized-fair",
+     "statement": "s4"
+    }
+   ]
+  },
+  {
    "slug": "the-boundary-of-the-jagged-frontier-is-not-readable-from-a-task-in-advance",
    "title": "The boundary of the jagged frontier is not readable from a task in advance.",
    "statement": "Professionals working with an LLM cannot tell from a task where the boundary of AI capability runs, because that capability changes rapidly and is poorly understood, and because tasks on either side of the boundary look alike in difficulty. Knowing where the boundary lies is therefore acquired in the working relationship rather than derived from a property of the task.",
@@ -3978,6 +4070,14 @@
    "path": "vault/10_distillates/publications/borek-2016-tadirah.md"
   },
   {
+   "slug": "borek-2021-tadirah-revised-formalized-fair",
+   "title": "Distillate: TaDiRAH Revised, Formalized and FAIR (Borek et al. 2021)",
+   "kind": "publications",
+   "reference": "borek-2021",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/borek-2021-tadirah-revised-formalized-fair.md"
+  },
+  {
    "slug": "carver-2022-state-of-practice",
    "title": "Distillate: State of the practice for research software in the United States (Carver et al. 2022)",
    "kind": "publications",
@@ -4520,6 +4620,14 @@
    "reference": "windhager-2019",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/windhager-2019-visualization-ch-collections.md"
+  },
+  {
+   "slug": "yehudai-2025-survey-evaluation-llm-agents",
+   "title": "Distillate: Survey on Evaluation of LLM-based Agents (Yehudai et al. 2025)",
+   "kind": "publications",
+   "reference": "yehudai-2025",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/yehudai-2025-survey-evaluation-llm-agents.md"
   },
   {
    "slug": "zheng-2023-llm-as-a-judge",
