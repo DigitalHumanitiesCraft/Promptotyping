@@ -1,0 +1,11 @@
+[
+  {
+    "id": "few-2007",
+    "type": "article-magazine",
+    "title": "Dashboard Confusion Revisited",
+    "author": [{"family": "Few", "given": "Stephen"}],
+    "container-title": "Visual Business Intelligence Newsletter",
+    "issued": {"date-parts": [[2007]]},
+    "URL": "http://perceptualedge.com/articles/visual_business_intelligence/dboard_confusion_revisited.pdf"
+  }
+]

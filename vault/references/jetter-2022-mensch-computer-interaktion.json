@@ -1,0 +1,20 @@
+[
+  {
+    "id": "jetter-2022",
+    "type": "chapter",
+    "title": "D 3 Mensch-Computer-Interaktion, Usability und User Experience",
+    "author": [{"family": "Jetter", "given": "Hans-Christian"}],
+    "container-title": "Grundlagen der Informationswissenschaft",
+    "editor": [
+      {"family": "Kuhlen", "given": "Rainer"},
+      {"family": "Lewandowski", "given": "Dirk"},
+      {"family": "Semar", "given": "Wolfgang"},
+      {"family": "Womser-Hacker", "given": "Christa"}
+    ],
+    "publisher": "De Gruyter Saur",
+    "publisher-place": "Berlin/Boston",
+    "issued": {"date-parts": [[2022]]},
+    "page": "525-534",
+    "DOI": "10.1515/9783110769043-045"
+  }
+]

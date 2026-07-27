@@ -150,7 +150,10 @@ Autor und Jahr, keine Seitenangaben (2026-07-25). Der Lokator gehört in die Reg
 ### Form und Apparat
 
 - Projekt-Fußnoten: jedes im Fließtext exemplarisch verwendete Projekt erhält eine Fußnote mit Repo-URL, einem Satz zur Funktion und den Pfaden der zitierten Promptotyping Documents. Das Tabellen-Inventar 5.2 behält seine URLs im Companion, damit die Fußnoten nicht inflationieren.
-- Neue Fußnoten werden als benannte Labels angelegt, damit die Nummerierung `[^1]` bis `[^9]` unberührt bleibt.
+- Neue Fußnoten werden als benannte Labels angelegt, damit die Nummerierung `[^1]` bis `[^9]` unberührt bleibt. Jedes Label trägt genau eine Definition und genau eine Verwendung; ein zweiter Bezug auf denselben Sachverhalt läuft über einen Sektionsverweis.
+- Autor-Jahr im Text, drei Namen ausgeschrieben, ab vier „et al." (angeglichen 2026-07-27). Das Literaturverzeichnis führt die vollen Autorenlisten und kürzt nur bei großen Kollektiven.
+- Der coOCR-HTR-Fork steht in genau einer Fußnote, ohne Nennung des Urhebers und ohne Institution (Operator-Entscheidung 2026-07-27). Damit ist der frühere Prüfpunkt zur Namensnennung erledigt.
+- Die Herkunft von Vibe Coding steht im Fließtext von 2.4 mit dem Eröffnungszitat Karpathys, damit der Begriff nicht ohne Ursprung im Text steht (Operator-Entscheidung 2026-07-27). Dass die Praxis vor ihrer Benennung ausgeübt wurde, behauptet das Paper nicht.
 - Drei Abbildungen mit ausformulierten Verweisen und Bildunterschriften, Figure 1 in 3.2 (Phasen und Dokumentsatz), Figure 2 in 3.3 (Dokumenttypen), Figure 3 in 6.2 (Autonomiezonen der Prüfung). Die Bilddateien liegen unter `assets/figures/` und werden repo-relativ referenziert.
 - Die tragenden Anker von Sektion 1, auf die spätere Sektionen namentlich zurückverweisen, sind als Prüfgruppe V10 in `tools/check_consistency.py` deklariert (siehe [verification.md](verification.md)). Wer die Eröffnung neu schreibt, lässt die Gruppe laufen.
 
@@ -169,16 +172,17 @@ Stand nach der vierten Fassung der Eröffnung (2026-07-27). Geschlossene Punkte 
 2. **TaDiRAH steht jetzt zweimal.** Sektion 1 führt das Vokabular ein und trifft die Unterscheidung zwischen den Aktivitäten der Forschenden und den Operationen des Artefakts; 4.2 tut dasselbe mit Collins/Ferguson und dem Mismatch-Argument. Entweder Sektion 1 führt ein und 4.2 baut auf, oder umgekehrt. Der Fußnotenanker `[^tadirah]` sitzt seit dem 2026-07-27 in Sektion 1.
 3. **Analysis als sechste Kategorie** oder als Erweiterung der Exploration-Definition in 4.2. 4.2 definiert Exploration entdeckungsorientiert; das hypothesenprüfende Rechnen fällt derzeit stillschweigend mit hinein. Nicht mehr blockierend für den Abstract, weil dieser keine Liste mehr nennt.
 4. **Der Grund für den TaDiRAH-Mismatch** steht noch nicht im Text. Verification und Audit fehlen dort, weil sie aus der maschinellen Erzeugungsweise entstehen und nicht aus dem Forschungsrepertoire. Ein Satz in 4.2 würde die Typologie an die Leitargumentation binden.
-5. **Jetter 2022.** Aus dem Fließtext genommen, weil keine Recherche ein Werk identifiziert. Welche Arbeit war gemeint? Salinas et al. 2020 und Broy/Kuhrmann 2021 tragen die UCD- und RE-Linie derzeit allein.
-6. **Die Abbildungen.** Verweise und Bildunterschriften stehen in 3.2, 3.3 und 6.2, die Bilddateien fehlen. Zu klären ist die Rechtelage für CC BY-SA 4.0, weil die Vorlage für Figure 1 aus einer Folie des Operators stammt.
-7. **`submission-zfdg.md` hängt hinterher.** Die beiden Kurz-Abstracts und das Exposé geben den Stand vom 2026-07-25 wieder, also vier Fassungen der Eröffnung zurück. Nachzuziehen, sobald die Eröffnung steht.
+5. **Die Abbildungen.** Verweise und Bildunterschriften stehen in 3.2, 3.3 und 6.2, die Bilddateien fehlen. Zu klären ist die Rechtelage für CC BY-SA 4.0, weil die Vorlage für Figure 1 aus einer Folie des Operators stammt.
+6. **`submission-zfdg.md` hängt hinterher.** Die beiden Kurz-Abstracts und das Exposé geben den Stand vom 2026-07-25 wieder, also vier Fassungen der Eröffnung zurück. Nachzuziehen, sobald die Eröffnung steht.
 
 ## Offene Prüfpunkte
 
 Auflösung heißt verifiziert, belegt oder gestrichen, mit Prüfvermerk hier.
 
 - **Exemplar-Zuordnungen in 5.2** und das Audit-Exemplar.
-- **Namensnennung des Fork-Urhebers** in Sektion 4 (Zustimmung einholen oder Rolle statt Name).
+- **Datierung der Workshopreihe.** Der Text sagt seit dem 2026-07-27 „materials go back to June 2023" und stützt sich damit auf das Anlagedatum des GM-DH-Repositoriums; der zitierte Zenodo-Deposit trägt 2024-02-11 und keine Termine. Die Winter-School-Notizen datieren die Reihe auf Herbst 2023. Wann sie lief, weiß nur der Operator.
+- **Volle Autorenlisten für sechs Referenzeinträge.** `chuehong-2022`, `dellacqua-2023`, `lambert-2024`, `mei-2025`, `sharma-2023` und `wilkinson-2016` kürzen mit „et al."; bei den großen Kollektiven ist das üblich, bei Dell'Acqua und Mei sollte die volle Liste stehen.
+- **URL-Praxis bei DHQ-Artikeln.** Grallert und Holmes tragen eine URL, Whitelaw, Drucker 2011 und Risam/Gil nicht. Vereinheitlichen.
 - **zbz-ocr-tei sichtbar stellen.** Operator-Aktion; danach Fußnote nach dem Muster der übrigen Fallfußnoten.
 - **Zenodo-Belege der Teaching Cases** und Video-Transkripte für die Präzision der Thinking-Matrix.
 - **Wheaton in der Dissertation.** Der Operator sagt, das Projekt werde dort direkt verwendet; verifizieren, dann als Genealogie-Satz nutzbar.
