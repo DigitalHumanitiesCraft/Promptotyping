@@ -1,0 +1,20 @@
+[
+  {
+    "id": "borek-2021",
+    "type": "paper-conference",
+    "title": "Information Organization and Access in Digital Humanities: TaDiRAH Revised, Formalized and FAIR",
+    "author": [
+      {"family": "Borek", "given": "Luise"},
+      {"family": "Hastik", "given": "Canan"},
+      {"family": "Khramova", "given": "Vera"},
+      {"family": "Illmayer", "given": "Klaus"},
+      {"family": "Geiger", "given": "Jonathan D."}
+    ],
+    "container-title": "Proceedings of the 16th International Symposium of Information Science (ISI 2021)",
+    "publisher": "Verlag Werner Hülsbusch",
+    "publisher-place": "Glückstadt",
+    "page": "321-332",
+    "issued": {"date-parts": [[2021]]},
+    "URL": "https://epub.uni-regensburg.de/44951/"
+  }
+]

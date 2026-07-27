@@ -43,12 +43,19 @@ The author's doctoral dissertation formulates scholar-centred design, walks the 
   > "Rowley (2007, 175) explains the DIKW hierarchy by introducing two key variables: human agency and degree of structure. These dimensions illustrate the progression from signals to structured knowledge, with human agency describing the increasing involvement of cognitive agents in this process. As the level of human agency increases, so does the degree of structure, evolving from basic detection of physical entities to sophisticated cognitive structures that provide context and significance to data." (Pollin 2025b, p. 35)
 - He characterises information as representing reality and reflecting the relationship between a system or cognitive agent and its external environment. ^s13
   > "Primarily, it represents reality and reflects the relationship between a system or cognitive agent and the external environment." (Pollin 2025b, p. 32)
+- The dissertation records the limit of the generalised DEPCHA Dashboard View, which serves broad overviews and can miss what social and economic historians require. ^s14
+  > "The generalised nature of the Dashboard View, although helpful for broad overviews, can overlook the requirements of, for instance, social and economic historians, potentially flattening context-specific details." (Pollin 2025b, p. 217)
+- It contrasts generalist interfaces such as the DEPCHA Dashboard View with the scholar-centred environments the experimental interfaces exemplify. ^s15
+  > "Rather than relying on more generalist interfaces such as the DEPCHA Dashboard View, active information systems in Thaller's sense call for scholar-centred, flexible, and interactive environments." (Pollin 2025b, p. 204)
+- The dissertation introduces the term Promptotyping and devotes Section 7.4 to it. ^s16
+  > "The exploration of LLM-supported approaches to research interface development (RQ4c) introduces the concept of Promptotyping, a methodology that merges prompt engineering with user-centred design to produce customisable web interfaces." (Pollin 2025b, p. 217)
 
 ## Terms
 
 - **Scholar-centred design**: the systematic, iterative methodology that integrates scholars' practices, needs, and expertise into the development of scholarly tools and frameworks. (Pollin 2025b, p. 89)
 - **Deep dive**: the term the dissertation uses for a requirements-elicitation session with a domain-expert historian. (Pollin 2025b, p. 92)
 - **Bookkeeping Ontology**: the ontology for formalising economic transactions in historical sources, developed through the scholar-centred process. (Pollin 2025b, p. 92)
+- **Promptotype Documents**: the term the dissertation uses for the context-compressed Markdown files that capture the relevant semantics of a project. (Pollin 2025b, p. 217)
 
 ## Open questions
 

@@ -16,7 +16,7 @@ updated: 2026-07-19
 
 ## Statement
 
-The DHCraft blog post introduces the method under the name Promptotyping and presents it as a systematic development of the earlier Vibe Coding approach. It defines Promptotyping as a prompt-engineering method whose requirements are developed iteratively through targeted prompting strategies and continuously refined in clearly structured documents, and it describes the process as running in four iterative, mutually building phases oriented on User-Centred Design. This is the method's first public description; the CSL record for pollin-2025d carries its publication date as 2025-04-24.
+The DHCraft blog post introduces the method under the name Promptotyping and presents it as a systematic development of the earlier Vibe Coding approach. It defines Promptotyping as a prompt-engineering method whose requirements are developed iteratively through targeted prompting strategies and continuously refined in clearly structured documents, and it describes the process as running in four iterative, mutually building phases oriented on User-Centred Design. This is the method's first public description; the CSL record for pollin-2025d carries its publication date as 2025-04-24. The name itself is older, since the dissertation already carries it with a section of its own ([[20_claims/promptotyping-first-named-in-the-dissertation]]), so this post is where the name first reaches a public audience.
 
 ## Support
 

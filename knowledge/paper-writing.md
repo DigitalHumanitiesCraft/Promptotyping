@@ -88,7 +88,7 @@ Gilt für den gesamten Papertext; die vier Kernverbote der globalen Stilregeln g
 17. Keine volatilen Quantitäten im Fließtext; Zahlen nur in der Projekttabelle in verifizierter Form.
 18. Jedes namentlich genannte Werkzeug erhält eine Fußnote mit kompakter Definition und aktueller URL. Sie sitzt an der Ersterwähnung, es sei denn, die substanzielle Behandlung liegt später; dann sitzt sie dort (Präzedenz teiCrafter, ebenso `[^tei]` und `[^rdf]` in 2.3).
 19. Roadmap und Signposts funktional statt inventarisch; kein Satz beginnt mit „Section N" als Aufzählungsglied.
-20. Kursiv nur für übernommene Diskursterme bei ihrer Ersteinführung (die Einträge in 2.5) und die fünf Interface-Kategorien in 4.2. Fett nur für strukturelle Label (Phasen in 3.2, Dokumenttypen in 3.3, Fall-Label in 5.3). Ein Term, dessen Ersteinführung vor 2.5 liegt, bleibt an der 2.5-Stelle recte.
+20. Kursiv für übernommene Diskursterme bei ihrer Ersteinführung (die Einträge in 2.5), für die fünf Interface-Kategorien in 4.2 und für die Ersteinführung eigener Termini an ihrer Definitionsstelle (Erweiterung 2026-07-27, etwa *research artefacts* in Sektion 1). Fett nur für strukturelle Label (Phasen in 3.2, Dokumenttypen in 3.3, Fall-Label in 5.3). Ein Term, dessen Ersteinführung vor 2.5 liegt, bleibt an der 2.5-Stelle recte.
 21. Technische Standards erhalten bei Ersterwähnung eine Fußnote mit Ein-Satz-Definition und Link (TEI, XML, RDF, OWL, TaDiRAH; RiC-O und CMIF innerhalb der Projekt-Fußnoten). Alltagsformate erhalten keine (CSV, JSON, HTML, CSS, JavaScript, Markdown). Abkürzungen ohne Standard-Charakter werden inline ausgeschrieben nach dem Muster „Vollform (ABK)".
 22. „LLM" statt „model", wo ein Sprachmodell gemeint ist (2026-07-25). „Model" ist im Paper dreifach belegt, für das Datenmodell, das konzeptuelle Modell und Stachowiaks Modellbegriff. Nicht betroffen sind eingeführte Fachtermini anderer Herkunft (model checker, reward model, language model, vision-language model, reasoning model) und alle Modellbegriffe der Modellierungstradition.
 
@@ -112,6 +112,11 @@ Autor und Jahr, keine Seitenangaben (2026-07-25). Der Lokator gehört in die Reg
 - Kein Negativfall (2026-07-25). Die Offenlegung in 5.1, dass kein Register abgebrochener Versuche existiert, bleibt als Eigenschaft des Records stehen.
 - Entfallen als eigene Abschnitte: Cognitive Load, Vibe Research, Pedagogy; die zwei Modi stehen als Absatz. Das Material bleibt für Blogpost und Site.
 
+- Der Numerus ist Plural, „research data are" (2026-07-27, dritte Operator-Fassung in Folge). Der Durchgang über den Gesamttext ist gelaufen; ausgenommen bleiben das Owens-Zitat „Data is always manufactured" und die Stellen, deren Subjekt nicht `data` ist.
+- Die Funktionsliste im Abstract entfällt (2026-07-27). Der Abstract nennt die Funktionsspanne in Prosa und überlässt die Klassifikation der Sektion 4, womit der Konflikt zwischen Abstract und 4.2 gegenstandslos ist.
+- Der Artefaktbegriff ist wieder weit, von Modellen und Workflows bis zu Interfaces und Anwendungen (2026-07-27, Rücknahme der Einengung vom 2026-07-25). Tragfähig ist er, weil derselbe Absatz den Vorbehalt mitführt, dass die dokumentierte Praxis überwiegend selbstenthaltende statische Werkzeuge hervorgebracht hat.
+- Der Begriff `research context` ist in `[^context]` definiert und wird über Scholar-Centred Design und die Promptotyping Documents operationalisiert (2026-07-27).
+
 ### Begriffe und Terminologie
 
 - `research artefact` löst `instrument` ab (2026-07-24).
@@ -127,6 +132,10 @@ Autor und Jahr, keine Seitenangaben (2026-07-25). Der Lokator gehört in die Reg
 - SDD-Abgrenzung in 2.4, geteilt in Gemeinsamkeiten und drei Unterschiede; das Prioritätsargument steht als Satz in `[^sdd]`, die Framework-Datierungen mit Abrufdatum ebenfalls dort.
 - Typologie gegen TaDiRAH: TaDiRAH klassifiziert Aktivitäten, die Typologie Artefakt-Funktionen. Capture, Exploration und Edition haben partielle Entsprechungen, Verification und Audit fehlen, was die Typologie motiviert (Borek et al. 2016; Grallert et al. 2026). Der Grund für das Fehlen, dass beide Funktionen aus der maschinellen Erzeugungsweise entstehen und nicht aus dem Forschungsrepertoire, steht noch nicht im Text.
 - Requirements-Engineering-Herkunft des Übersetzungsproblems über Curtis, Krasner und Iscoe 1988 (2026-07-27), Zugangsklasse C im Vault.
+
+- Provenienz des Begriffs, am PDF verifiziert (2026-07-27). Die Dissertation führt Promptotyping ein und widmet ihm Abschnitt 7.4; sie nennt dort auch die Promptotype Documents. Der Blogpost vom 2025-04-24 ist damit die erste öffentliche Beschreibung und nicht die Prägung. Vault-Claim `promptotyping-first-named-in-the-dissertation`, der ältere Claim zum Blogpost ist entsprechend qualifiziert.
+- DEPCHA-Flattening, am PDF verifiziert (2026-07-27, Diss S. 217 und S. 204). Vault-Claim `generalised-dashboard-flattens-context-specific-detail`. Sektion 1 darf die Aussage als Ursprungspunkt der Methode führen.
+- Der Pivot der Genealogie ist öffentlich, die semantische Markdown-Beschreibung der Bookkeeping Ontology im Repo `chpollin/HistInfo`. Der Begriff „semantic Markdown" ist als eigene Prägung ausgewiesen und nicht als Titel zitiert, weil die Datei ihn nicht trägt.
 
 ### Evidenzteil
 
@@ -152,17 +161,15 @@ Autor und Jahr, keine Seitenangaben (2026-07-25). Der Lokator gehört in die Reg
 
 ## Offene Entscheidungen
 
-Der Operator hat sie noch nicht beantwortet. Die Umsetzung hat jeweils den konservativen Weg genommen und ist mit einer Änderung umkehrbar.
+Stand nach der vierten Fassung der Eröffnung (2026-07-27). Geschlossene Punkte stehen unter Festlegungen.
 
-1. **Sektion 1 gegen Sektion 2.5.** Die tragende Entscheidung. Sektion 1 nimmt seit dem 2026-07-27 die Genealogie, und 2.5 heißt Genealogy und trägt sie an vier Stellen bereits, Scholar-Centred Design als Verbindung von User-Centred Design und Requirements Engineering, die Deep-Dive-Sitzungen 2017 bis 2020 bis zur Bookkeeping Ontology, die Umschreibung der Ontologie nach Markdown 2023, und die Kostenstruktur-Aussage zu Frontier-LLMs. Regel 9 verbietet die Dublette. Ich schlage vor, dass Sektion 1 die Genealogie behält, 2.5 schrumpft auf die Formationsphasen-Projekte, die SDD-Abgrenzung und die Selbstverortung als hybrider Praktiker. `[^genealogy]` verweist derzeit auf 2.5 und ist beim Schnitt nachzuziehen.
-2. **Funktionsliste im Abstract.** Umgesetzt sind die fünf kanonischen Kategorien. Der Operator hatte exploration, analysis, comparison, annotation, editing vorgeschlagen, was die Aktivitätsebene ist, auf der TaDiRAH liegt, und gerade die zwei Kategorien streicht, deren Fehlen dort den Beitrag von 4.2 begründet. Hängt an 4.2, an 5.3 und an den fünf `--fn-*`-Tokens der Site.
-3. **Analysis als sechste Kategorie** oder als Erweiterung der Exploration-Definition. 4.2 definiert Exploration entdeckungsorientiert; das hypothesenprüfende Rechnen fällt derzeit stillschweigend mit hinein.
-4. **Numerus.** Der Operator hat zweimal Plural geschrieben, der Gesamttext führt Singular. Umgesetzt ist Singular, weil eine Eröffnung im Plural neben sechs Sektionen im Singular sichtbar bricht. Ein Wechsel ist ein Durchgang über den Gesamttext und nicht mechanisch, weil Verbkongruenz, „data model" und „the data of one project" einzeln zu prüfen sind.
-5. **Titel.** Umgesetzt in der Operator-Fassung; die Wortwiederholung Engineering bleibt zur Nachentscheidung.
-6. **„with and without programming backgrounds".** Nicht übernommen. Der Abstract sagt „scholars without a programming background", weil 5.4 und 6.5 die offene Transferfrage so führen. Soll die weitere Aussage gelten, ziehen beide Sektionen nach.
-7. **Jetter 2022.** Aus dem Fließtext genommen, weil keine Recherche ein Werk identifiziert. Welche Arbeit war gemeint? Salinas et al. 2020 und Broy/Kuhrmann 2021 tragen die UCD- und RE-Linie derzeit allein.
-8. **Kursiv bei Definitionsstellen.** Regel 20 sieht die Ersteinführung eigener Termini nicht vor; umgesetzt ist recte. Eine Erweiterung der Regel gälte für alle Definitionsstellen.
-9. **Die Abbildungen.** Verweise und Bildunterschriften stehen, die Bilddateien fehlen. Zu klären ist die Rechtelage für CC BY-SA 4.0, weil die Vorlage für Figure 1 aus einer Folie des Operators stammt.
+1. **Sektion 1 gegen Sektion 2.5.** Die tragende Entscheidung, und mit jeder Fassung dringlicher. Sektion 1 trägt die Genealogie, und 2.5 heißt Genealogy und trägt sie an vier Stellen ebenfalls, Scholar-Centred Design als Verbindung von User-Centred Design und Requirements Engineering, die Deep-Dive-Sitzungen bis zur Bookkeeping Ontology, die Umschreibung der Ontologie nach Markdown und die Kostenstruktur-Aussage zu Frontier-LLMs. Die Fußnote `[^genealogy]` erzählt die Markdown-Episode inzwischen ausführlicher als 2.5 im Haupttext. Regel 9 verbietet die Dublette. Ich schlage vor, dass Sektion 1 die Genealogie behält und 2.5 schrumpft auf die Formationsphasen-Projekte, die SDD-Abgrenzung und die Selbstverortung als hybrider Praktiker; `[^genealogy]` ist beim Schnitt nachzuziehen.
+2. **TaDiRAH steht jetzt zweimal.** Sektion 1 führt das Vokabular ein und trifft die Unterscheidung zwischen den Aktivitäten der Forschenden und den Operationen des Artefakts; 4.2 tut dasselbe mit Collins/Ferguson und dem Mismatch-Argument. Entweder Sektion 1 führt ein und 4.2 baut auf, oder umgekehrt. Der Fußnotenanker `[^tadirah]` sitzt seit dem 2026-07-27 in Sektion 1.
+3. **Analysis als sechste Kategorie** oder als Erweiterung der Exploration-Definition in 4.2. 4.2 definiert Exploration entdeckungsorientiert; das hypothesenprüfende Rechnen fällt derzeit stillschweigend mit hinein. Nicht mehr blockierend für den Abstract, weil dieser keine Liste mehr nennt.
+4. **Der Grund für den TaDiRAH-Mismatch** steht noch nicht im Text. Verification und Audit fehlen dort, weil sie aus der maschinellen Erzeugungsweise entstehen und nicht aus dem Forschungsrepertoire. Ein Satz in 4.2 würde die Typologie an die Leitargumentation binden.
+5. **Jetter 2022.** Aus dem Fließtext genommen, weil keine Recherche ein Werk identifiziert. Welche Arbeit war gemeint? Salinas et al. 2020 und Broy/Kuhrmann 2021 tragen die UCD- und RE-Linie derzeit allein.
+6. **Die Abbildungen.** Verweise und Bildunterschriften stehen in 3.2, 3.3 und 6.2, die Bilddateien fehlen. Zu klären ist die Rechtelage für CC BY-SA 4.0, weil die Vorlage für Figure 1 aus einer Folie des Operators stammt.
+7. **`submission-zfdg.md` hängt hinterher.** Die beiden Kurz-Abstracts und das Exposé geben den Stand vom 2026-07-25 wieder, also vier Fassungen der Eröffnung zurück. Nachzuziehen, sobald die Eröffnung steht.
 
 ## Offene Prüfpunkte
 

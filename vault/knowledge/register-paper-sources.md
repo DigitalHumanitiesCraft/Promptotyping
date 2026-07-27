@@ -6,7 +6,7 @@ project:
 status: active
 language: en
 created: "2026-07-23"
-updated: "2026-07-26"
+updated: "2026-07-27"
 related: [state, specification]
 ---
 
@@ -33,6 +33,7 @@ Paper roles name the sections of `knowledge/paper.md` in which the work is cited
 | berners-lee-2025 | Berners-Lee 2025, This Is for Everyone | 2.2 | B | acquisition open | | no legitimate open copy; publisher essay carries the personal-agent line but not the agent-realisation claim; print copy needed. 2026-07-25: the operator received the book as an audiobook, which yields no citable locator. The paper sentence was first cut back to what the publisher essay carries and then restored in weakened form on the operator's own attestation from that reception, that Berners-Lee reads the current agentic systems as a partial movement towards the agent idea of his vision. The sentence claims that movement and no redemption of the vision, and it rests on the attestation until a text copy supplies a locator |
 | bleier-2018 | Bleier et al. 2018, Editions as Interfaces | 4.2 | A | claimed | [[10_distillates/publications/bleier-2018-editions-interfaces]] | digital-edition-is-interface-gui-and-api, edition-interface-embodies-editorial-decisions |
 | borek-2016 | Borek et al. 2016, TaDiRAH (DHQ) | 4.2 | A | claimed | [[10_distillates/publications/borek-2016-tadirah]] | tadirah-classifies-dh-research-activities |
+| borek-2021 | Borek/Hastik/Khramova/Illmayer/Geiger 2021, TaDiRAH revised, formalized and FAIR (ISI 2021) | 1, fn [^tadirah] | A | csl | | Other author team than borek-2016; open PDF at epub.uni-regensburg.de. Cited for the revision and FAIR formalisation of the vocabulary. Distillate pending. |
 | borgman-2015 | Borgman 2015, Big Data Little Data No Data | 2.2 | B | acquisition open | | MIT Press book, no open copy found; operator copy needed |
 | broy-2021 | Broy/Kuhrmann 2021, Softwaretechnik | fn [^4] (1) | B | no copy needed | | Springer textbook, no open chapter. 2026-07-25: reclassified. The paper cites it once, for the requirements-engineering sense of specification, without a locator and without a quotation, and states expressly that formal completeness is not claimed. A general textbook reference of that kind carries no statement a distillate could check, so no operator copy is needed |
 | carver-2022 | Carver et al. 2022, State of the practice for research software (PeerJ CS) | 1 | A | claimed | [[10_distillates/publications/carver-2022-state-of-practice]] | institutional-research-software-support-falls-short-of-need |
