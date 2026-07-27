@@ -1,0 +1,20 @@
+[
+  {
+    "id": "salinas-2020",
+    "type": "chapter",
+    "title": "A Systematic Review of User-Centered Design Techniques",
+    "author": [
+      {"family": "Salinas", "given": "Elizabeth"},
+      {"family": "Cueva", "given": "Rony"},
+      {"family": "Paz", "given": "Freddy"}
+    ],
+    "container-title": "Design, User Experience, and Usability. Interaction Design (DUXU 2020)",
+    "collection-title": "Lecture Notes in Computer Science",
+    "volume": "12200",
+    "page": "253-267",
+    "publisher": "Springer",
+    "publisher-place": "Cham",
+    "issued": {"date-parts": [[2020]]},
+    "DOI": "10.1007/978-3-030-49713-2_18"
+  }
+]

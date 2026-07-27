@@ -115,6 +115,16 @@ The dividing line is the one part 5 draws. Where a rule decides, a script runs i
 
 **Verdict, 2026-07-26.** Passes, with the four corrected statements as its regression case.
 
+### V10. Section 1 of the paper still carries what later sections say it carries
+
+**Claim.** Where a later section of `knowledge/paper.md` names something Section 1 established, or where `knowledge/paper-writing.md` records a decision as closed by a passage in Section 1, that passage is still in Section 1.
+
+**Why it matters.** The opening is the part of the paper that gets rewritten most often, and three successive rewrites in July 2026 dropped the same anchors each time. The failures are silent, because the later sections keep reading well on their own. Section 2.3 says "the same inference Section 1 draws" and Section 2.5 says "The workshop demonstration of June 2023 (Section 1)"; when the opening loses the marked inference, the paper attributes to Carver et al. a step the source does not carry, which the grounding vault forbids in the claim itself.
+
+**Procedure.** A declared table pairs an anchor phrase required in Section 1 with the dependent phrase that makes it obligatory. The dependent side is searched in the rest of the paper and in `paper-writing.md`, so a decision recorded only in the steering document also holds its anchor. A pair falls silent when the dependent phrase goes, which keeps the table from outliving its reasons. Six pairs are declared, for the requirements-engineering origin, Kemman's trading zone, the marked inference beyond Carver, the June 2023 waypoint, the dissertation's four-item difficulty profile, and the capacity gap.
+
+**Verdict, 2026-07-27.** Passes. The regression case is the third rewrite of that day, in which two of the six pairs were broken and both were reported.
+
 ## What is not checked automatically, and why
 
 - **Whether a page says what the paper says.** The contradictions of 2026-07-26 were found by reading `knowledge/paper.md` against the site, not by any script. Agreement in substance is not decidable by rule, and the four findings of that reading are recorded in `knowledge/journal.md`.

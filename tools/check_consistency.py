@@ -771,6 +771,51 @@ def check_symbol_bindings():
                      % (where, symbol, named))
 
 
+# Section 1 establishes things that later sections name and build on. Three
+# successive rewrites of the opening dropped the same anchors, so the pairs are
+# declared here: while the dependent phrase stands, the anchor has to stand too.
+LOAD_BEARING_ANCHORS = [
+    ("Curtis, Krasner, and Iscoe",
+     "belegt es mit Curtis, Krasner und Iscoe",
+     "the requirements-engineering origin of the translation problem, recorded as closed in paper-writing.md"),
+    ("Kemman 2021",
+     "the trading zone acquires a written constitution",
+     "Kemman's trading zone, which Section 2.3 presupposes as introduced"),
+    ("I infer",
+     "the same inference Section 1 draws",
+     "the marked inference beyond Carver et al., which the vault forbids attributing to the source"),
+    ("June 2023",
+     "The workshop demonstration of June 2023 (Section 1)",
+     "the dated waypoint before the method, and the only citation of Pollin 2024"),
+    ("human agency, context sensitivity, multiperspectivity, and uncertainty",
+     "the difficulty profile the method was forged against",
+     "the dissertation's four-item difficulty profile"),
+    ("capacity",
+     "whose capacity wall Section 1 already named",
+     "the capacity gap that Section 2.5 refers back to"),
+]
+
+
+def check_load_bearing_anchors():
+    """Section 1 still carries what later sections say it carries."""
+    text = read_text(KNOWLEDGE_DIR / "paper.md")
+    parts = text.split("## 2. The Epistemic Frame")
+    if len(parts) < 2:
+        fail("anchors", "paper.md has no Section 2 heading; cannot separate Section 1")
+        return
+    section_one, rest = parts[0], parts[1]
+    # A dependent phrase may live in the paper or in the steering document that
+    # records the decision; either keeps the anchor obligatory.
+    rest += read_text(KNOWLEDGE_DIR / "paper-writing.md")
+    for anchor, dependent, why in LOAD_BEARING_ANCHORS:
+        if dependent not in rest:
+            continue
+        if anchor not in section_one:
+            fail("anchors",
+                 "%r is still stated elsewhere, but Section 1 no longer carries %r (%s)"
+                 % (dependent, anchor, why))
+
+
 def main():
     documents = load_catalogue()
     conv_types = convention_function_types()
@@ -787,6 +832,7 @@ def main():
         check_glossar_mirror,
         check_anchors,
         check_symbol_bindings,
+        check_load_bearing_anchors,
     ]
     if "--check-urls" in sys.argv:
         groups.append(lambda: check_urls(cases))
