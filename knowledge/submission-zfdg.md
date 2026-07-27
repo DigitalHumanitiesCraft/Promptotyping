@@ -20,7 +20,9 @@ related: [paper, paper-writing]
 
 Einreichpaket für die Zeitschrift für digitale Geisteswissenschaften, Genre Fachartikel. Der Einstieg läuft über ein Exposé (maximal 1.000 Wörter mit Literaturliste und vorläufiger Gliederung); die beiden Kurz-Abstracts (deutsch und englisch, je maximal 750 Zeichen) werden bei Annahme mit dem Volltext eingereicht. Der Papertext liegt in [paper.md](paper.md), die Steuerung in [paper-writing.md](paper-writing.md).
 
-Stand 2026-07-25. Abstracts, Exposé und Gliederung sind aus dem Papertext nach der Begriffsarbeit vom 2026-07-25 nachgezogen. Der Titel steht unverändert und ist Operator-Entscheidung.
+Stand 2026-07-25. Abstracts, Exposé und Gliederung sind aus dem Papertext nach der Begriffsarbeit vom 2026-07-25 nachgezogen.
+
+**Drift, festgestellt 2026-07-27.** Abstract und Sektion 1 des Papers sind an diesem Tag zweimal neu geschrieben worden, zuletzt mit genealogischer Eröffnung. Die beiden Kurz-Abstracts und das Exposé hier geben den Stand vom 2026-07-25 wieder und sind nachzuziehen, sobald die offene Entscheidung über die Funktionsliste im Abstract gefallen ist ([paper-writing.md](paper-writing.md), Offene Entscheidungen).
 
 ## Abstract deutsch (max. 750 Zeichen)
 
@@ -70,7 +72,7 @@ Der Beitrag schließt unmittelbar an laufende ZfdG-Diskussionen an. Er teilt mit
 ## Formalia-Checkliste (Stand paper-writing.md)
 
 - Fachartikel, Einstieg über Exposé an die Redaktion
-- Titel offen (Operator-Entscheidung; der Arbeitstitel trägt weiter, seine dokumentierte Begründung über die Übersetzungs-Doppelung ist mit der Revision entfallen)
+- Titel gesetzt (2026-07-27): „Promptotyping. Translating Research Data into Research Artefacts through Context Engineering and Agentic Engineering"; die Wortwiederholung Engineering steht zur Nachentscheidung ([paper-writing.md](paper-writing.md))
 - Abstracts deutsch und englisch, je max. 750 Zeichen (oben)
 - Fußnoten mit Autor-Jahr-Kurzzitaten, offizielle ZfdG-CSL für Zotero bei Endformatierung
 - Dezimalgliederung max. zwei Ebenen (erfüllt)

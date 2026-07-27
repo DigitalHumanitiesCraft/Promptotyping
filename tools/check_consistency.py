@@ -776,7 +776,7 @@ def check_symbol_bindings():
 # declared here: while the dependent phrase stands, the anchor has to stand too.
 LOAD_BEARING_ANCHORS = [
     ("Curtis, Krasner, and Iscoe",
-     "belegt es mit Curtis, Krasner und Iscoe",
+     "Curtis, Krasner und Iscoe 1988",
      "the requirements-engineering origin of the translation problem, recorded as closed in paper-writing.md"),
     ("Kemman 2021",
      "the trading zone acquires a written constitution",
