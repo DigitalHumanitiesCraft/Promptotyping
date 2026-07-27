@@ -1,0 +1,35 @@
+[
+  {
+    "id": "curtis-1988",
+    "type": "article-journal",
+    "title": "A Field Study of the Software Design Process for Large Systems",
+    "author": [
+      {
+        "family": "Curtis",
+        "given": "Bill"
+      },
+      {
+        "family": "Krasner",
+        "given": "Herb"
+      },
+      {
+        "family": "Iscoe",
+        "given": "Neil"
+      }
+    ],
+    "container-title": "Communications of the ACM",
+    "volume": "31",
+    "issue": "11",
+    "page": "1268-1287",
+    "issued": {
+      "date-parts": [
+        [
+          1988,
+          11
+        ]
+      ]
+    },
+    "DOI": "10.1145/50087.50089",
+    "publisher": "Association for Computing Machinery"
+  }
+]

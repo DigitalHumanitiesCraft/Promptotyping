@@ -7,7 +7,7 @@ status: active
 language: de
 version: 0.1
 created: 2026-07-23
-updated: 2026-07-26
+updated: 2026-07-27
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 method:
@@ -28,7 +28,7 @@ Die Site rendert `paper.md` direkt, seit der Umstellung vom 2026-07-25; jede fre
 
 ## Titel und Kernaussagen
 
-Titel (Operator-Entscheidung 2026-07-23, Koordination aufgelöst am 2026-07-25): **"Promptotyping. Translating Research Data into Research Artefacts with Context Engineering and Agentic Tools"**.
+Titel (Operator-Entscheidung 2026-07-23, Koordination aufgelöst am 2026-07-25, Schlussglied geändert am 2026-07-27): **"Promptotyping. Translating Research Data into Research Artefacts through Context Engineering and Agentic Engineering"**. Der Operator hat das Schlussglied in zwei aufeinanderfolgenden Fassungen so geschrieben; es deckt sich mit der Verortung in Sektion 1, die die Methode „situated within agentic engineering" führt, und ersetzt „with … and Agentic Tools" vom 2026-07-25. Die Wortwiederholung Engineering ist der Preis und bleibt zur Nachentscheidung offen.
 
 Was der Text aussagen will:
 
@@ -61,7 +61,7 @@ Gilt für den gesamten Papertext; die vier Kernverbote der globalen Stilregeln g
 2. Keine nachklappende Negation, auch nicht als "X rather than Y"; echte Kontraste als eigener Satz. Lizenzierte Ausnahme: Druckers "capta rather than given data".
 3. Keine leeren Etikettsätze (Verdinglichung des Vorangegangenen plus Bewertungsadjektiv, "This gap is systematic", "is real", "matters"). Absatzübergänge tragen sich über die sachliche Beziehung der Aussagen.
 4. Keine Ankündigungssätze über den eigenen Text ("Its central claim is a possibility claim", "The word X is chosen deliberately", "Three qualifications define the claim", "A note of reflexivity belongs here"). Direkt tun statt ankündigen; das First/Second/Third-Gerüst entfällt, wo die Aussagen sich selbst tragen.
-5. Semikolon nicht als Ersatzkonnektor; zulässig in echten parallelen Reihen (Beispielreihen, die Übersetzungskette in 2.4), sonst eigenständige Sätze. Kein Doppelpunkt als Konnektor.
+5. Semikolon nicht als Ersatzkonnektor; zulässig in echten parallelen Reihen (Beispielreihen, die Übersetzungskette in 2.4), sonst eigenständige Sätze. Doppelpunkt seit der Operator-Lockerung vom 2026-07-27 nicht mehr verboten, sondern dosiert: zulässig, wo er den unmittelbar vorangehenden Begriff expliziert, ausgeschlossen als Konnektor zwischen gleichrangigen Aussagen und ausgeschlossen als Reihenankündigung im Fließtext. Vereinzelt heißt vereinzelt; im Abstract steht derzeit einer. Die Lockerung gilt für den Papertext, die globale Stilregel bleibt unberührt.
 6. Keine Anaphern und rhetorischen Parallelismen ("they translate, they translate, they translate"); Reihen über ein regierendes Verb führen.
 7. Wortwiederholungen in Nachbarsätzen variieren.
 8. Durchgängig "I/my" statt "the author".
@@ -166,6 +166,32 @@ Vom Operator entschieden (Sessions 2026-07-23):
     - **Drei Abbildungsverweise mit Bildunterschriften eingebaut.** Figure 1 in 3.2 (die vier Phasen und der Dokumentsatz, den sie hervorbringen, mit dem Rücklauf von Korrekturen und dem Critical Expert über alle Phasen). Figure 2 in 3.3 (die drei Dokumenttypen nach der Art des gehaltenen Wissens, mit der diagnostischen Verwendung am Fuß jeder Spalte und der Binnenunterscheidung innerhalb der deklarativen Klasse). Figure 3 in 6.2 (die Autonomiezonen der Prüfung generierter Ausgaben, nach Autorität geordnet). Verweis und Bildunterschrift stehen ausformuliert im Text; die Bilddateien fehlen noch.
     - **Dauer-Formel an ihrer ersten Stelle gefallen.** „documented for two decades" behauptete Gewicht über Dauer, und die Zahl altert. Zwei Stellen tragen die Formel noch, 2.2 und die Conclusion, letztere in zwei Formulierungen; siehe „Offene Prüfpunkte".
 
+- Neufassung von Abstract und Sektion 1 (2026-07-27, Opus 5). Der Operator hat den Text in zwei Runden im Chat neu geschrieben, kürzere Sätze, Einstieg über die CSV-Datei statt über die These, DEPCHA als benannter Fall im Fließtext, Personas und generisches Werkzeug in eigenen Absätzen. Die Fassung ist übernommen und dabei um die Stellen ergänzt worden, an denen sie Verweise späterer Sektionen oder geprüfte Fakten gebrochen hätte. Der frühere Verbatim-Schutz für Abstract und Sektion 1 (2026-07-23) ist damit abgelöst. Im Einzelnen wiederhergestellt oder korrigiert:
+    - **Schwierigkeitsprofil.** Die Fassung hatte die Diss-Liste wieder auf drei Glieder verkürzt. Die geprüfte Viererliste (human agency, context sensitivity, multiperspectivity, uncertainty, Diss S. 35) steht wieder geschlossen; genau diese Verkürzung war am 2026-07-23 schon einmal Befund.
+    - **Carver-Zuschreibung.** Die Fassung schrieb den Long-Tail-Schritt Carver et al. zu. Der Vault-Claim `institutional-research-software-support-falls-short-of-need` hält ausdrücklich fest, dass die Quelle ihn nicht trägt und er im Text als Inferenz markiert sein muss. Die markierte Inferenz steht wieder, mitsamt der 1.149-Befragten-Angabe, auf die 2.3 als „the same inference Section 1 draws" zurückgreift.
+    - **Kemman.** Die Trading Zone war zu einem Klammerzitat geschrumpft, obwohl 2.3 den Begriff als eingeführt voraussetzt („the trading zone acquires a written constitution"). Galison-Herkunft und Broker stehen wieder.
+    - **Juni-2023-Wegpunkt.** Der Workshop-Absatz war entfallen; 2.5 verweist auf ihn zurück und Pollin 2024 wird sonst nirgends zitiert. Wieder eingesetzt, verbunden mit der Prompt-für-Prompt-Charakterisierung der Fassung.
+    - **Die zwei Übersetzungen.** Die Fassung verschmolz sie wieder zu einer. Der Trennsatz der Runde vom 2026-07-26 steht wieder, mit dem Rückverweis auf 3.3.
+    - **Artefaktbegriff.** Die belegten Nebenformen (vorgelagerte Pipeline, gerenderte Beschreibung) sind nach der Entscheidung vom 2026-07-25 wieder Teil der Definition.
+    - **RSE-Schwelle.** Abstract und Sektion 1 nennen jetzt dieselben Achsen wie 4.3 statt einer dritten Adjektivreihe.
+    - **Funktionsliste im Abstract.** Die Fassung nannte exploration, analysis, comparison, annotation, editing. Das ist die Aktivitätsebene, auf der TaDiRAH liegt, und sie streicht genau die zwei Kategorien, deren Fehlen in TaDiRAH den Beitrag von 4.2 begründet. Der Abstract nennt wieder die fünf kanonischen Kategorien; die Frage selbst steht unten als Entscheidung.
+    - **Fußnoten.** `[^1]`, `[^2]`, `[^3]`, `[^4]` und `[^depcha]` neu verankert; `[^depcha]` von „The publication platform of Section 1 is DEPCHA" auf reine Definition umgeschrieben, weil DEPCHA jetzt im Fließtext steht; der zweite `[^depcha]`-Marker in 2.5 entfernt, da die Erstnennung nach Regel 18 in Sektion 1 liegt.
+    - **Mechanik.** Doppelte Überschrift und escapter Punkt im Slug entfernt, die beiden DEPCHA-Erklärungen zusammengelegt, der inventarische Roadmap-Absatz gestrichen (Regel 19), „five steps" gegen sechs aufgezählte Sektionen aufgelöst, die Abstract-Introduction-Dublette zu den zwei Jahren getilgt (Regel 9), die Definition der Geisteswissenschaftsdaten in Sektion 1 auf das Argument gekürzt und mit Verweis auf 2.3 versehen, wo Borgman-Genus und Schöch-Differentia stehen (Regel 9).
+    - **Sprache.** Zwei nachklappende Negationen positiv umformuliert, „often fail" und „typically produces" durch selbsttragende Formulierungen ersetzt (Regel 14), Numerus durchgehend auf Singular normalisiert, einschließlich der letzten Pluralstelle im Artefaktsatz.
+    - **Prüfläufe.** Fußnotenbilanz maschinell, 34 Labels, je eine Definition und eine Verwendung. Sektionsverweise maschinell gegen die Überschriften, kein Verweis ins Leere. Selbstprüfung der neuen Prosa auf Gedankenstriche, „X, not Y" und Doppelpunkte, ein einziger Doppelpunkt im Abstract nach der Lockerung vom selben Tag. `python vault/tools/validate.py vault` und `python tools/check_consistency.py` fehlerfrei, `data/vault.json` unverändert.
+    - **Belegschicht.** Curtis, Krasner und Iscoe 1988 als CSL-Record und Registerzeile der Zugangsklasse C; die DEPCHA-Flattening-Aussage und der Curtis-Wortlaut sind in `vault/knowledge/state.md` als offen vermerkt.
+
+### Offene Entscheidungen aus der Runde 2026-07-27
+
+Der Operator hat sie im Chat noch nicht beantwortet; die Umsetzung hat jeweils den konservativen Weg genommen und ist mit einer Änderung umkehrbar.
+
+1. **Funktionsliste im Abstract.** Die fünf kanonischen Kategorien (umgesetzt) oder die Aktivitätsliste des Operators. Hängt an 4.2, an den Fallblöcken in 5.3 und an den fünf `--fn-*`-Tokens der Site.
+2. **Analysis als sechste Kategorie** oder als Erweiterung der Exploration-Definition in 4.2. Der Befund steht: 4.2 definiert Exploration entdeckungsorientiert, das hypothesenprüfende Rechnen fällt derzeit stillschweigend mit hinein.
+3. **Titel.** Umgesetzt in der Operator-Fassung, siehe oben; die Wortwiederholung bleibt zur Nachentscheidung.
+4. **Numerus.** Singular umgesetzt, weil der Gesamttext ihn führt. Ein Wechsel auf Plural wäre ein Durchgang über alle Sektionen.
+5. **„with and without programming backgrounds".** Nicht übernommen. Der Abstract sagt weiter „scholars without a programming background", weil 5.4 und 6.5 die offene Transferfrage genau so führen. Soll die weitere Aussage gelten, ziehen beide Sektionen nach.
+6. **Der Roadmap-Absatz.** Gestrichen nach Regel 19. Eine funktionale Kurzform wäre möglich, wenn der Operator einen Wegweiser will.
+
 ## Offene Prüfpunkte
 
 Jeder Punkt entspricht einem `[...]`-Marker im Text oder einer offenen Randbedingung; Auflösung heißt verifiziert, belegt oder gestrichen, mit Prüfvermerk hier.
@@ -189,8 +215,8 @@ Jeder Punkt entspricht einem `[...]`-Marker im Text oder einer offenen Randbedin
 
 ### Offen seit der Runde 2026-07-26
 
-- **Der Herkunftssatz zum Übersetzungsproblem.** Sektion 1 führt das Übersetzungsproblem zwischen Fachwissenschaft und Entwicklung ein und geht unmittelbar zu den Antworten des Felds über (Edmond, Siemens, Kemman, RSE). Es fehlt der Satz davor, der das Problem im Requirements Engineering verortet, aus dem es stammt. Ohne ihn erscheint das Problem als eines, das die Digital Humanities für sich entdeckt haben. Der Satz ist zu schreiben und mit einer Referenz zu belegen, bevor die Antworten folgen.
-- **Die zwei verbliebenen Dauer-Formeln.** In 2.2 steht „a research programme the humanities have invested in for two decades", in der Conclusion „a gap the digital humanities have documented for two decades" und dazu „the field's twenty-year investment in standards, ontologies, and semantic modelling". Die erste Stelle ist am 2026-07-26 gefallen, weil die Formel Gewicht über Dauer behauptet und die Zahl altert; für diese drei ist zu entscheiden, ob dasselbe Argument greift oder ob die Datierung an der Conclusion-Stelle das Semantic-Web-Programm sachlich bindet.
+- ~~**Der Herkunftssatz zum Übersetzungsproblem.**~~ Erledigt 2026-07-27. Sektion 1 verortet das Problem jetzt vor den Antworten des Felds im Requirements Engineering und belegt es mit Curtis, Krasner und Iscoe (1988), der Feldstudie, die den thin spread of application domain knowledge benannt hat. Bibliographie über Crossref verifiziert (CACM 31/11, 1268–1287, DOI 10.1145/50087.50089). Der Volltext liegt hinter der ACM-Paywall und die offenen Metadaten-Endpunkte liefern kein Abstract, daher steht die Quelle im Vault als Zugangsklasse C ohne Distillat und der Satz ist auf das formuliert, was der offen abrufbare Record trägt. Wortlautprüfung an einem Operator-Exemplar bleibt offen.
+- ~~**Die zwei verbliebenen Dauer-Formeln.**~~ Gegenstandslos, geprüft 2026-07-27. Weder „two decades" noch „twenty-year" kommt in `paper.md` vor; die Conclusion-Stelle trägt die Datierung inzwischen als „since Edmond (2005)". Der Punkt war seit einer späteren Runde veraltet.
 - **Die Bilddateien zu den drei Abbildungen.** Verweis und Bildunterschrift stehen ausformuliert in 3.2, 3.3 und 6.2; die Dateien fehlen. Zu klären ist die Rechtelage für CC BY-SA 4.0, weil die Vorlage für Figure 1 aus einer Folie des Operators stammt.
 
 ## Evaluationsfragen zum Einbau-Stand 2026-07-23
