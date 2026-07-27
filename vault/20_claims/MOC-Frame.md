@@ -51,3 +51,7 @@ Added 2026-07-26 with the jagged-frontier intake for Section 2.4:
 
 - [[20_claims/llm-assistance-raises-performance-inside-and-lowers-it-outside-a-jagged-frontier]] — LLM assistance raises performance on tasks inside the frontier of AI capability and lowers it on tasks outside, within one workflow
 - [[20_claims/the-boundary-of-the-jagged-frontier-is-not-readable-from-a-task-in-advance]] — Where the boundary of that frontier runs cannot be read off a task, so competence with it accrues in use
+
+Added 2026-07-27, the first peer-reviewed carrier for the agent term the Agentic Engineering passage had set on its own authority:
+
+- [[20_claims/llm-agents-plan-reason-and-use-tools-in-dynamic-environments]] — LLM-based agents are autonomous systems that plan, reason, and use tools while interacting with dynamic environments

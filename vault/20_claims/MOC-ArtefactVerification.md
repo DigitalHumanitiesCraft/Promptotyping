@@ -28,6 +28,7 @@ Claims behind the paper's Sections 4, 6.1, and 6.2: the self-contained static ar
 - [[20_claims/endings-static-artefacts-minimise-maintenance]] — Endings-compliant artefacts function without JavaScript or CSS and require no ongoing tending, turning "Tamagotchis" into "Pet Rocks"
 - [[20_claims/do-one-thing-well-favours-small-specialised-tools-over-monolithic-platforms]] — The Unix "do one thing well" principle, applied to digital editing, argues for small, specialised tools chained through standard formats against monolithic platforms
 - [[20_claims/tadirah-classifies-dh-research-activities]] — TaDiRAH is the digital humanities' taxonomy of research activities, organising DH work under top-level research goals
+- [[20_claims/tadirah-was-formalised-as-a-skos-knowledge-organization-system]] — TaDiRAH was revised into a formalised, machine-readable SKOS knowledge organization system, released as version 2.0 (added 2026-07-27, closing the pending distillate on borek-2021)
 - [[20_claims/coordinated-multiple-views-enable-exploration]] — Coordinated and multiple views let users understand data through different linked representations
 - [[20_claims/static-client-side-editions-reach-tens-of-thousands-of-units]] — A statically published TEI edition of over 16,000 pre-rendered units processes and stores without size trouble on ordinary hardware
 

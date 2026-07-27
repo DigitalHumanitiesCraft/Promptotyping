@@ -1,0 +1,53 @@
+[
+  {
+    "id": "yehudai-2025",
+    "type": "paper-conference",
+    "title": "Survey on Evaluation of LLM-based Agents",
+    "author": [
+      {
+        "family": "Yehudai",
+        "given": "Asaf"
+      },
+      {
+        "family": "Eden",
+        "given": "Lilach"
+      },
+      {
+        "family": "Li",
+        "given": "Alan"
+      },
+      {
+        "family": "Uziel",
+        "given": "Guy"
+      },
+      {
+        "family": "Zhao",
+        "given": "Yilun"
+      },
+      {
+        "family": "Bar-Haim",
+        "given": "Roy"
+      },
+      {
+        "family": "Cohan",
+        "given": "Arman"
+      },
+      {
+        "family": "Shmueli-Scheuer",
+        "given": "Michal"
+      }
+    ],
+    "container-title": "Findings of the Association for Computational Linguistics: ACL 2025",
+    "number": "arXiv:2503.16416",
+    "issued": {
+      "date-parts": [
+        [
+          2025,
+          3,
+          20
+        ]
+      ]
+    },
+    "URL": "https://arxiv.org/abs/2503.16416"
+  }
+]
