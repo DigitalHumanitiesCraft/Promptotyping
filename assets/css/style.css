@@ -1194,6 +1194,118 @@ a:hover {
   color: var(--grey-3);
 }
 
+/* ---- Vault network view ----
+   The secondary view over the same claim layer. Three columns in a static
+   layout, claims to distillates to sources; the container scrolls, and that is
+   the whole of the pan. Unchromatic like the rest of the page, since the one
+   thing hue encodes on this site is the epistemic function of an artefact. */
+
+.vault-view-switch {
+  display: flex;
+  gap: var(--space-2);
+  margin: var(--space-6) 0 var(--space-4);
+}
+
+.vault-graph-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.vault-graph-legend,
+.vault-graph-detail {
+  font-size: 0.8125rem;
+  color: var(--grey-2);
+  margin: 0 0 var(--space-2);
+}
+
+/* The detail line is written on hover and on focus, so it must not resize the
+   graph below it when a long title arrives. */
+.vault-graph-detail {
+  min-height: 1.45em;
+  color: var(--grey-3);
+  margin-bottom: var(--space-4);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.vault-graph {
+  overflow: auto;
+  max-width: 100%;
+  max-height: 70vh;
+  border: 1px solid var(--border);
+  padding: var(--space-4);
+}
+
+.vault-graph:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
+.vault-graph-svg {
+  display: block;
+  font-family: var(--font-text);
+}
+
+.vg-head {
+  font-size: 0.75rem;
+  font-weight: 600;
+  fill: var(--grey-2);
+}
+
+.vg-edge {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1;
+}
+
+.vg-node {
+  text-decoration: none;
+}
+
+.vg-node rect {
+  fill: var(--bg);
+  stroke: var(--border);
+  stroke-width: 1;
+}
+
+.vg-node text {
+  font-size: 0.75rem;
+  fill: var(--text);
+}
+
+.vg-node:hover rect,
+.vg-node.is-lit rect {
+  stroke: var(--text);
+}
+
+.vg-node:focus-visible rect {
+  stroke: var(--text);
+  stroke-width: 2;
+}
+
+.vg-node:focus-visible {
+  outline: none;
+}
+
+/* While one node is lit, the rest of the network steps back so the chain under
+   the pointer reads as a chain. A class switch, no transition. */
+.vault-graph-svg.is-lighting .vg-edge {
+  opacity: 0.15;
+}
+
+.vault-graph-svg.is-lighting .vg-edge.is-lit {
+  opacity: 1;
+  stroke: var(--text);
+  stroke-width: 1.5;
+}
+
+.vault-graph-svg.is-lighting .vg-node:not(.is-lit) text {
+  fill: var(--grey-3);
+}
+
 /* ---- Templates hub ----
    Additive sub-anchor blocks, clickable rows. */
 
@@ -1317,7 +1429,8 @@ a:hover {
   margin-bottom: var(--space-4);
 }
 
-.case-chip {
+.case-chip,
+.vault-chip {
   font-family: var(--font-text);
   font-size: 0.8125rem;
   background: none;
@@ -1329,12 +1442,14 @@ a:hover {
   transition: background 150ms ease-out, color 150ms ease-out, border-color 150ms ease-out;
 }
 
-.case-chip:hover {
+.case-chip:hover,
+.vault-chip:hover {
   border-color: var(--text);
   color: var(--text);
 }
 
-.case-chip.active {
+.case-chip.active,
+.vault-chip.active {
   background: var(--text);
   color: var(--bg);
   border-color: var(--text);

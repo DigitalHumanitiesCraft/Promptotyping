@@ -221,6 +221,13 @@ The mark is one geometric form per value, inline SVG at twelve pixels with a 1.2
 
 Acceptance criterion. Every entry shows exactly one mark with its category word, the register narrows to a category when its name is typed into the filter, and no mark carries a colour.
 
+### A37 — The vault page carries a secondary grounding network
+The vault page keeps its list as the primary form and the default, and adds a network view over the grounding chain, claim to distillate to source (package F4 of [plan.md](plan.md)). The view answers what rests on what and nothing more, which is its acceptance guardrail as stated by the operator on 2026-07-29. One topic renders at a time, chosen from the seven topic maps, because a single canvas over the full claim set shows edge tangle in place of grounding. The layout is three static columns of vanilla SVG in `pages-vault.js`; the container scrolls, nothing is simulated, nothing animates, and hue is absent (A22). The source layer that the edges need entered `data/vault.json` through `vault/tools/build_site_index.py`, the vault's own index tool, and the result is committed as the site's static data.
+
+Hover and focus light a node together with everything its anchors connect, as a class switch. A claim node leads back to the claim in the list, which is where the published `#vault-{slug}` address resolves; a deep link therefore switches the page to the list whichever view the reader left behind, so every published claim anchor keeps resolving in both view states. Distillate and source nodes open their Markdown carriers in the repository. The nodes are focusable and named for assistive technology, and the view switch is a button group with pressed states.
+
+Acceptance criterion. The operator accepts the first pass; the standing test is that a reader can pick any claim in the network and reach, within one interaction each, the distillates it rests on, the sources beneath them, and the claim's own list entry.
+
 ### A26 — The site is English
 Every string the site shows is English, in the British spelling the paper uses (operator decision 2026-07-25, carried out 2026-07-26). That covers the page registry labels, the status line, every control, the nine content pages directly under `_content/`, and the text fields of `data/glossar.json`, `data/case-studies.json` and `data/promptotyping-documents.json`.
 
