@@ -25,7 +25,8 @@ Die Site soll ruhig sein. Konkret bedeutet das beim Coden:
 - **Farbe bedeutet genau eine Sache**, die epistemische Funktion eines Artefakts, also die fünf Interface-Kategorien aus Abschnitt 4.2 (`--fn-verification`, `--fn-exploration`, `--fn-edition`, `--fn-capture`, `--fn-audit`). Das ist eine Nominalskala, und dort ist der Farbton nach Bertin die richtige Kodierung. Sie erscheint auf der Artefakt-Seite und an der Kartenkante der Use Cases, sonst nirgends. **Die Kategorie steht immer auch als Wort daneben** (WCAG 2.1, Erfolgskriterium 1.4.1, Stufe A). Färbe insbesondere nicht die fünf Teile der Spezifikation ein, das ist eine Rangfolge und keine Verschiedenheit der Art.
 - **`--signature`** ist der eine laute Ort, ein prismatischer Verlauf als 2px-Band am Fuß der Kopfzeile, einmal pro Seite. Er trägt keine Information und darf deshalb laut sein. Verwende ihn nirgends sonst.
 - **Schriften: Inter für Text, Consolas für Code, sonst keine.** Keine zweite Sans-Serif, keine Display-Schrift, keine Brand-Schrift.
-- **Animationen: nur Slide-in/out für Side-Panels (200ms ease-out), keine anderen.** Keine Scroll-Linked-Animationen, kein Parallax, keine Hover-Bouncing-Effekte.
+- **Animationen: nur Slide-in/out für Side-Panels (200ms ease-out), keine anderen.** Keine Scroll-Linked-Animationen, kein Parallax, keine Hover-Bouncing-Effekte. Kurze 150ms-Farb- und Hintergrundübergänge als Hover-Feedback sind erlaubte Mikro-Affordanzen.
+- **Nichts klappt ein oder aus** (Operator-Entscheidung 2026-07-29, A33). Der Navigationsbaum zeigt seine Struktur permanent, der Scrollspy bewegt allein die Aktuell-Markierung. Zulässig sind zwei Geräte, das Side-Panel samt seiner mobilen Bottom-Sheet-Form und die Klick-zum-Laden-Fassade der Videos; beide verbergen keinen Text, den die Seite ohnehin trägt. Ein drittes kommt nicht hinzu.
 - **Keine dekorativen Elemente.** Wenn ein UI-Element keine Funktion hat, gehört es nicht hin.
 
 ## Repo-Struktur (Pflicht-Konvention)

@@ -285,12 +285,14 @@
       A.escapeHtml(label) + "</a></li>";
   }
 
-  /* The specification entry carries its five parts, permanently. Nothing in the
-     tree opens or closes (operator decision 2026-07-29); it shows the structure
-     of the site at all times. */
+  /* Two entries carry an inner structure: the specification with its five parts,
+     which the registry knows, and the paper with its sections, which only the
+     rendered text knows. Both subtrees stand permanently. Nothing in the tree
+     opens or closes (operator decision 2026-07-29); the only state it holds is
+     which entry the reader is in, and the scrollspy below moves that marker. */
   function navItem(p) {
     var parts = partsOf(p.id);
-    var sub = parts.length
+    var sub = parts.length || p.id === PAPER_HOST_ID
       ? '<ul class="docs-nav-sub" data-subtree="' + p.id + '">' +
         parts.map(function (s) { return subItem(s.id, s.part, s.label); }).join("") +
         "</ul>"
@@ -320,6 +322,87 @@
     });
     nav.innerHTML = html + (group === null ? "" : "</ul>");
   }
+
+  /* ---- Sub-navigation and scrollspy ----
+     The paper subtree is built from the rendered sections, the same elements
+     that carry the #abschnitt-* anchors, once the content is in the DOM. */
+
+  function buildPaperSubtree() {
+    var host = document.querySelector('.docs-nav-sub[data-subtree="' + PAPER_HOST_ID + '"]');
+    var paper = document.getElementById(PAPER_HOST_ID);
+    if (!host || !paper || host.childNodes.length) {
+      return;
+    }
+    var items = "";
+    paper.querySelectorAll(".paper-section").forEach(function (section) {
+      var h2 = section.querySelector("h2");
+      if (section.id && h2) {
+        items += subItem(section.id, null, h2.textContent);
+      }
+    });
+    host.innerHTML = items;
+  }
+
+  var spyObserver = null;
+  var spyTargets = [];
+
+  function markCurrentSection() {
+    var current = null;
+    for (var i = 0; i < spyTargets.length; i++) {
+      if (spyTargets[i].visible) {
+        current = spyTargets[i].id;
+        break;
+      }
+    }
+    document.querySelectorAll("#docs-nav a[data-section]").forEach(function (a) {
+      var on = a.getAttribute("data-section") === current;
+      a.classList.toggle("is-current", on);
+      if (on) {
+        a.setAttribute("aria-current", "location");
+      } else {
+        a.removeAttribute("aria-current");
+      }
+    });
+  }
+
+  /* One observer over every section the tree lists. It watches the band under
+     the fixed header rather than the whole viewport, so the marked entry is the
+     one being read. The inactive pages are display: none and never intersect,
+     so a page change clears the marker of the page left behind by itself. */
+  function setupScrollspy() {
+    if (spyObserver) {
+      spyObserver.disconnect();
+      spyObserver = null;
+    }
+    spyTargets = [];
+    document.querySelectorAll("#docs-nav a[data-section]").forEach(function (a) {
+      var el = document.getElementById(a.getAttribute("data-section"));
+      if (el) {
+        spyTargets.push({ id: el.id, el: el, visible: false });
+      }
+    });
+    if (!spyTargets.length || typeof IntersectionObserver !== "function") {
+      return;
+    }
+    var header = document.querySelector(".docs-header");
+    var top = header ? header.offsetHeight : 52;
+    spyObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        spyTargets.forEach(function (t) {
+          if (t.el === entry.target) {
+            t.visible = entry.isIntersecting;
+          }
+        });
+      });
+      markCurrentSection();
+    }, { rootMargin: "-" + top + "px 0px -65% 0px", threshold: 0 });
+    spyTargets.forEach(function (t) { spyObserver.observe(t.el); });
+  }
+
+  document.addEventListener("promptotyping:content-ready", function () {
+    buildPaperSubtree();
+    setupScrollspy();
+  });
 
   function markNavActive(page) {
     document.querySelectorAll("#docs-nav a[data-page]").forEach(function (a) {

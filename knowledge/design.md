@@ -5,9 +5,9 @@ project:
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 status: complete
 language: en
-version: 0.7
+version: 0.8
 created: 2026-05-09
-updated: 2026-07-26
+updated: 2026-07-29
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Opus 4.8)
 method:
@@ -143,7 +143,7 @@ The site is laid out as specification documentation, in the manner of a library 
 
 Desktop uses a two-track grid inside a 1240px container: the page tree (`--nav-width: 250px`) and the page (`minmax(0, 1fr)` with `--read-width: 820px` max, centred). The tree is sticky below the fixed header (`--header-height: 3.25rem`) and scrolls independently. The side panel stays outside the grid as a `position: fixed` overlay of `--panel-width: 360px`.
 
-The tree groups the pages under Spezifikation, Referenz, Belege, Werkzeuge und Praxis, and Paper; the active page is marked by a left border and bold weight. The five parts of the specification proper carry a leading number, so the sidebar shows the specification as an ordered document rather than a list of siblings. The tree is never collapsible; below 860px it stacks above the page and stays visible, tables scroll inside their own box, and the side panel becomes a bottom sheet. An on-this-page rail was built and removed the same day by operator decision. What replaced it for the one page that needs it is a static table of contents at the head of the paper page, two columns on the desktop and one below 860px, set in the greys of the system and carrying no colour of its own. It stands still while the reader scrolls, which is the difference from the rail.
+The tree groups the pages under Spezifikation, Referenz, Belege, Werkzeuge und Praxis, and Paper, one flat run per group with a gap between the runs and no label over any of them; the active page is marked by a left border and bold weight. Two entries carry a permanent subtree, the specification with its five numbered parts and the paper with its sections, and the section the reader is in is marked in the same greys at 0.8125rem with a left border. The tree is never collapsible, and since 2026-07-29 nothing else in the interface is either. Below 860px it stacks above the page and stays visible, showing the subtree of the page being read alone, tables scroll inside their own box, and the side panel becomes a bottom sheet. An on-this-page rail was built and removed the same day by operator decision. What replaced it for the one page that needs it is a static table of contents at the head of the paper page, two columns on the desktop and one below 860px, set in the greys of the system and carrying no colour of its own. It stands still while the reader scrolls, which is the difference from the rail.
 
 The header carries the wordmark and the kind marker, with no mark beside it, and the signature band along its foot. Both the DHCraft watercolour and the Promptotyping logo were tried in that slot and dropped, because a chromatic detail image at 22 pixels reads as a smudge and would put a hue on the page that means nothing. The carrier mark stays in the footer, which is a four-column grid carrying carrier and licence, addresses, the state of the specification, and the machine-access note.
 
@@ -212,7 +212,7 @@ A page change carries the focus into the content, so the reader continues in the
 
 ## Motion and elevation
 
-The only movement animation is the side-panel slide, 200ms `ease-out`. Interactive elements additionally carry short 150ms `ease-out` colour and background transitions as hover feedback (TOC links, cards, buttons, chips, the video facade, the tooltip fade, the TOC-toggle icon rotation). The `CLAUDE.md` rule "only side-panel slide, no others" governs decorative and scroll-linked motion, which stays banned; the 150ms hover transitions are permitted micro-affordances. The wording in `CLAUDE.md` should be tightened to name this micro-exception explicitly.
+The only movement animation is the side-panel slide, 200ms `ease-out`. Interactive elements additionally carry short 150ms `ease-out` colour and background transitions as hover feedback (TOC links, tree entries, cards, buttons, chips, the video facade, the tooltip fade). The `CLAUDE.md` rule "only side-panel slide, no others" governs decorative and scroll-linked motion, which stays banned; the 150ms hover transitions are permitted micro-affordances. The scrollspy of A33 moves a class and nothing else, so it adds no motion. An icon rotation on a contents toggle stood in this list until 2026-07-29 and named a control the site no longer has.
 
 ## Icons
 

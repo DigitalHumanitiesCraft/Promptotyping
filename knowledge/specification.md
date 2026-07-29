@@ -191,6 +191,17 @@ Each part keeps its own substrate and its own status line (A21 extended), and th
 
 Acceptance criterion. `/anwendung`, `/vorlagen`, `/konvention`, `/artefakt`, `/verifikation` and their hash forms lead to the same content as before the merge, a template row still opens its side panel, and the frontmatter inspector still resolves a pasted `template:` block.
 
+### A33 — The tree carries its subtrees permanently, and nothing collapses
+Two entries of the tree show their inner structure, the specification with its five parts and the paper with its sections (operator request 2026-07-29, package F1). Both subtrees stand at all times. Scrolling the reading column moves a current marker over them, set as a class and as `aria-current="location"` by one `IntersectionObserver` over the band under the fixed header, so a reader always sees where in the specification or in the paper they are. The paper subtree is built from the rendered `.paper-section` elements, the same elements that carry the `#abschnitt-*` anchors, once `promptotyping:content-ready` reports the content as mounted. This is navigation logic and belongs to the registry, so no module was added.
+
+Nothing in the interface opens or closes (operator decision 2026-07-29). A sweep on the same day found two devices that reveal something on a click, and both stay, because neither hides text the page already carries. The side panel slides in over 200ms and becomes a bottom sheet below 768px, which is the design system's one animation. The video facade of A8 loads an embed on the click that a reader has to make anyway, since nothing reaches YouTube before it. No third device was found.
+
+Below 860px the tree stands above the page instead of beside it, so every entry of it is scrolled past before the text begins. There only the subtree of the page being read stands. That is a width rule and carries no control.
+
+A23 stands unchanged. The paper keeps its table of contents in the page, and no third column returns. The two answer different questions, the subtree where the reader is and the in-page contents what the paper holds.
+
+Acceptance criterion. Opening `#abschnitt-3-the-method` marks the corresponding tree entry as current, scrolling on into the next section moves the marker, and switching to another page leaves no marker behind.
+
 ### A26 — The site is English
 Every string the site shows is English, in the British spelling the paper uses (operator decision 2026-07-25, carried out 2026-07-26). That covers the page registry labels, the status line, every control, the nine content pages directly under `_content/`, and the text fields of `data/glossar.json`, `data/case-studies.json` and `data/promptotyping-documents.json`.
 

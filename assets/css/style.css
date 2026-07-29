@@ -399,8 +399,9 @@ a:hover {
 }
 
 /* ---- Sub-navigation in the tree ----
-   The parts of the specification stand permanently under their entry. Nothing
-   opens or closes. */
+   The parts of the specification and the sections of the paper stand
+   permanently under their entry. Nothing opens or closes; the scrollspy moves
+   the current marker and changes nothing else. */
 
 .docs-nav-sub {
   margin: var(--space-1) 0 var(--space-2);
@@ -412,6 +413,11 @@ a:hover {
   padding-bottom: 0.15rem;
   font-size: 0.8125rem;
   color: var(--grey-3);
+}
+
+.docs-nav-sub a.is-current {
+  color: var(--text);
+  border-left-color: var(--text);
 }
 
 /* ---- Page host and reading column ----
