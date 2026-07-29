@@ -30,16 +30,23 @@ TARGET = ROOT / "_content" / "glossar.md"
 HEADER = """---
 title: Glossary
 slug: glossar
-version: "0.2"
+version: "0.3"
 status: complete
 source: data/glossar.json (authoritative data source); generated, not maintained by hand
-mirrored: 2026-07-26
+mirrored: 2026-07-29
 machine-url: https://dhcraft.org/Promptotyping/_content/glossar.md
 ---
 
 # Glossary
 
-Terms of the Promptotyping method and of the methodology site. The authoritative data source is `data/glossar.json`; this file is generated from it and carries the same content. Each entry gives a short definition for tooltips, a full definition and the source. Terms the paper text does not carry are marked as site vocabulary in their source line."""
+Terms of the Promptotyping method and of the methodology site. The authoritative data source is `data/glossar.json`; this file is generated from it and carries the same content. Each entry gives a short definition for tooltips, a full definition and its sources. A source that this site holds an address for carries it as a hash anchor; the rest stay text. Terms the paper text does not carry are marked as site vocabulary in their source list."""
+
+
+def render_source(source: dict) -> str:
+    """One source, as a link where it has an anchor and as text where it has none."""
+    if source.get("anker"):
+        return "[%s](#%s)" % (source["text"], source["anker"])
+    return source["text"]
 
 
 def render(entries: list[dict]) -> str:
@@ -50,9 +57,10 @@ def render(entries: list[dict]) -> str:
     """
     blocks = [HEADER]
     for entry in entries:
+        sources = "; ".join(render_source(s) for s in entry["quellen"])
         blocks.append(
             "### %s\n\n%s\n\n%s\n\nSource: %s"
-            % (entry["begriff"], entry["kurz"], entry["voll"], entry["quelle"])
+            % (entry["begriff"], entry["kurz"], entry["voll"], sources)
         )
     return "\n\n".join(blocks) + "\n"
 

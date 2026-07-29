@@ -324,6 +324,83 @@ def check_glossar_mirror():
                         "from data/glossar.json; %s" % difference)
 
 
+# The source types data/glossar.json declares, each with the anchor prefix its
+# addresses carry. A type mapped to None takes no anchor at all.
+SOURCE_PREFIXES = {
+    "paper": "abschnitt-",
+    "literature": "ref-",
+    "vault": "vault-",
+    "page": "",
+    "text": None,
+}
+
+
+def reference_ids():
+    """The ref-* anchors of A30, rebuilt from the reference list of the paper.
+
+    Port of indexReferences in assets/js/pages-paper.js. The id of an entry is
+    the surname of its first author with the year, and the first entry to claim
+    a key keeps it. Without this the ref- prefix alone would pass any string.
+    """
+    text = read_text(PAPER)
+    if "## References" not in text:
+        return set()
+    found = set()
+    for line in text.split("## References", 1)[1].split("\n"):
+        line = line.strip()
+        if not line.startswith("- "):
+            continue
+        plain = line[2:].replace("*", "")
+        match = (re.search(r"^([^,]+),.*?\((\d{4}[a-z]?)\)", plain)
+                 or re.search(r"^([^,]+),.*?\b(\d{4}[a-z]?)\b", plain))
+        if match:
+            found.add("ref-" + slugify(match.group(1)) + "-" + match.group(2))
+    return found
+
+
+def check_glossar_sources(anchors):
+    """Every glossary entry names its carriers, and each address among them holds.
+
+    The source list replaced a free-text field on 2026-07-29 (A34), so the entry
+    now states which carrier is which kind and where it lives. Three ways it can
+    go wrong silently: a type outside the declared vocabulary, an anchor under
+    the wrong family, and a reference key that no entry of the paper's list
+    mints.
+    """
+    refs = reference_ids()
+    for entry in load_json(GLOSSAR_JSON)["eintraege"]:
+        slug = entry["slug"]
+        sources = entry.get("quellen") or []
+        if not sources:
+            fail("glossar", "the entry %s names no source" % slug)
+        for source in sources:
+            typ = source.get("typ")
+            anchor = source.get("anker")
+            if typ not in SOURCE_PREFIXES:
+                fail("glossar", "%s carries a source of type %r, which the schema "
+                                "does not declare" % (slug, typ))
+                continue
+            prefix = SOURCE_PREFIXES[typ]
+            if prefix is None:
+                if anchor:
+                    fail("glossar", "%s gives the text source %r an anchor #%s"
+                         % (slug, source.get("text"), anchor))
+                continue
+            if not anchor:
+                fail("glossar", "%s carries a %s source without an anchor" % (slug, typ))
+                continue
+            if not anchor.startswith(prefix):
+                fail("glossar", "%s calls #%s a %s source; those carry the prefix %r"
+                     % (slug, anchor, typ, prefix))
+            if typ == "literature":
+                if anchor not in refs:
+                    fail("glossar", "%s cites #%s; the reference list of the paper "
+                                    "mints no such id" % (slug, anchor))
+            elif not is_declared(anchor, anchors):
+                fail("glossar", "%s links to #%s; nothing on the site declares that "
+                                "anchor" % (slug, anchor))
+
+
 # ---------------------------------------------------------------------------
 # Anchor resolution
 #
@@ -708,6 +785,7 @@ def check_anchors():
             fail("anchors", "%s names %s, which resolves to #%s, and nothing declares it"
                  % (where, token, anchor))
 
+    check_glossar_sources(anchors)
     check_subpath_handover(page_ids, families, paper_anchor)
 
 

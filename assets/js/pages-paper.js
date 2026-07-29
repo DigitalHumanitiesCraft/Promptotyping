@@ -43,6 +43,11 @@
         markReferenceLinks();
         injectPaperVideo(host);
         injectUseCaseReference(host);
+        // Before the text decorations, so a project name is a link rather than
+        // a cell that already carries a glossary trigger.
+        return linkifyProjectTable(host);
+      })
+      .then(function () {
         // Post-processing per section. The reference list is the citation target
         // itself and the apparatus carries the source notes, so both stay out.
         host.querySelectorAll(".paper-section").forEach(function (section) {
@@ -231,6 +236,42 @@
       '<a href="#use-cases">To the full gallery</a>' +
       "</p>";
     sectionEl.appendChild(block);
+  }
+
+  /* ---- Table 1: project names into gallery links ----
+     Every project of the inventory has a card, and data/case-studies.json holds
+     that correspondence in its paper_row field, which V5 of verification.md
+     keeps true in both directions. The first column becomes the way to the card
+     at render time, so knowledge/paper.md stays plain Markdown and the machine
+     address of ADR-10 serves the same text it always did (A35). A row whose name
+     no card claims stays plain text, which is the failure the consistency check
+     reports separately. */
+  function linkifyProjectTable(host) {
+    return A.fetchJson("data/case-studies.json")
+      .then(function (data) {
+        var cardFor = {};
+        (data.caseStudies || []).forEach(function (c) {
+          if (c.paper_row) {
+            cardFor[c.paper_row] = c.id;
+          }
+        });
+        host.querySelectorAll("table tbody tr > td:first-child").forEach(function (cell) {
+          var name = cell.textContent.trim();
+          var id = cardFor[name];
+          if (!id || cell.querySelector("a")) {
+            return;
+          }
+          var link = document.createElement("a");
+          link.href = "#case-" + id;
+          link.textContent = name;
+          cell.textContent = "";
+          cell.appendChild(link);
+        });
+      })
+      .catch(function () {
+        // The gallery data is a second file; without it the table stays as the
+        // paper writes it.
+      });
   }
 
   /* ---- Literature references: inline "author year" into #literatur jump links ----

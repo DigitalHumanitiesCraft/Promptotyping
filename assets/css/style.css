@@ -1037,6 +1037,13 @@ a:hover {
   margin: 0;
 }
 
+/* A source line is one grey; the links in it keep the underline as their only
+   mark, so the line does not break into two weights of text. */
+.glossar-quelle a,
+.glossar-tooltip-quelle a {
+  color: inherit;
+}
+
 /* ---- Term index ----
    Register term -> pages at the head of the glossary page, built in the
    browser. The line under it separates the register from the entries. */
@@ -1755,6 +1762,13 @@ a:hover {
   font-weight: 600;
   color: var(--text);
   margin-bottom: var(--space-1);
+}
+
+.glossar-tooltip-quelle {
+  margin: var(--space-2) 0 0;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: var(--grey-2);
 }
 
 .glossar-tooltip-more {

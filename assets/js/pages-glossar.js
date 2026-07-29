@@ -30,6 +30,28 @@
     return KONZEPT_ALIASES[alias] || alias;
   }
 
+  /* ---- Sources ----
+     Every carrier of an entry that this site holds an address for renders as a
+     link; the ones it holds none for stay text (A34). The anchor comes from the
+     data, so the address families are curated in data/glossar.json rather than
+     here. */
+
+  function sourceHtml(source) {
+    var text = A.escapeHtml(source.text || "");
+    return source.anker
+      ? '<a href="#' + A.escapeHtml(source.anker) + '">' + text + "</a>"
+      : text;
+  }
+
+  function sourcesHtml(entry, className) {
+    var list = entry.quellen || [];
+    if (!list.length) {
+      return "";
+    }
+    return '<p class="' + className + '">Source: ' +
+      list.map(sourceHtml).join("; ") + "</p>";
+  }
+
   function renderGlossar() {
     var el = document.getElementById("glossar");
     if (!el) {
@@ -47,7 +69,7 @@
             '<h3 class="glossar-term">' + A.escapeHtml(e.begriff) + "</h3>" +
             '<p class="glossar-kurz">' + A.escapeHtml(e.kurz) + "</p>" +
             '<p class="glossar-voll">' + A.escapeHtml(e.voll) + "</p>" +
-            '<p class="glossar-quelle">Source: ' + A.escapeHtml(e.quelle) + "</p>" +
+            sourcesHtml(e, "glossar-quelle") +
             "</div>";
         }).join("");
 
@@ -183,6 +205,13 @@
     if (!glossarTooltipEl) {
       glossarTooltipEl = document.createElement("div");
       glossarTooltipEl.className = "glossar-tooltip";
+      // Following a source link out of the tooltip has to close it; the guard
+      // in the document listener below keeps clicks inside from closing it.
+      glossarTooltipEl.addEventListener("click", function (e) {
+        if (e.target.closest && e.target.closest("a")) {
+          hideGlossarTip();
+        }
+      });
       document.body.appendChild(glossarTooltipEl);
     }
     return glossarTooltipEl;
@@ -205,6 +234,7 @@
     var tip = ensureGlossarTooltip();
     tip.innerHTML = '<span class="glossar-tooltip-term">' + A.escapeHtml(entry.begriff) +
       "</span>" + A.escapeHtml(entry.kurz) +
+      sourcesHtml(entry, "glossar-tooltip-quelle") +
       '<a class="glossar-tooltip-more" href="#glossar-' + A.escapeHtml(slug) + '">Full entry</a>';
     var rect = trigger.getBoundingClientRect();
     tip.style.left = Math.max(8, Math.min(rect.left + window.scrollX,
