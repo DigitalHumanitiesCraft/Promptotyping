@@ -40,6 +40,7 @@ The L.I.S.A. article positions Promptotyping as a four-phase context-engineering
 
 - The article names the four phases as Preparation, Exploration & Mapping, Distillation, and Implementation, matching the method site; the three-stage framing in pollin-2025c is a different axis and is not repeated here.
 - The article's own reference list uses citation letters that differ from knowledge/paper.md and the vault CSL (its "Pollin 2025a" is the Zenodo workshop record, "2025c" is the Vibe-Coding blog, "2025d" the initial method description, "2025e" the Critical-Vibing blog).
+- Citation identity. The vault slug and CSL record of this work is `pollin-2026b`, and the canonical `knowledge/paper.md` cites it as Pollin 2026b in the genealogy footnote. The suffix collision within Pollin 2026 was resolved chronologically on 2026-07-29 against the live sources, which gives this article the letter 2026a and the Asymmetric Amplification blog the letter 2026b; `knowledge/paper-knowledge.md` (§10.11) holds that decision and `knowledge/paper-draft.md` follows it. The slug stays as minted, because every anchor and claim quotes it, and the two citation letters in the canonical paper are corrected when the restructured manuscript replaces it. The mapping is tabulated in [[knowledge/register-paper-sources]].
 
 ## Related
 

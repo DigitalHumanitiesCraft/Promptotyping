@@ -35,7 +35,7 @@ The blog post argues that current LLMs do not automate research but amplify comp
 ## Open questions
 
 - The paper's limits chapter names three gradients along which the amplification runs (expertise, access, epistemic selectivity); the blog states the asymmetry and its access, competence, resource, and skill facets in prose without naming such gradients, so that ordering is the paper's systematisation.
-- The paper cites this work as "Pollin 2026c"; the vault reference id and CSL record for the Asymmetric Amplification blog is pollin-2026a. The citation letter should be reconciled.
+- Citation identity. The vault slug and CSL record of this work is `pollin-2026a`, and the canonical `knowledge/paper.md` cites it as Pollin 2026a in Section 6.4. The suffix collision within Pollin 2026 was resolved chronologically on 2026-07-29 against the live sources, which gives the L.I.S.A. article the letter 2026a and this blog post the letter 2026b; `knowledge/paper-knowledge.md` (§10.11) holds that decision and `knowledge/paper-draft.md` follows it. The slug stays as minted, because every anchor and claim quotes it, and the two citation letters in the canonical paper are corrected when the restructured manuscript replaces it. The mapping is tabulated in [[knowledge/register-paper-sources]].
 
 ## Related
 
