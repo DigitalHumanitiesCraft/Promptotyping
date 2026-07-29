@@ -194,3 +194,8 @@ and are therefore not duplicated here.
 | `notker-acceptance--2026-07-29--19-52-25.png` | Figure 10, Section 4.8 | Purpose-specific acceptance; carries in-image caption-like text on the acceptance card |
 | `poster-de--2026-07-29--19-43-33.png` | none, German poster | First rendering; findings on the poster are in `knowledge/journal.md`, 2026-07-29 |
 | `poster-de--2026-07-29--19-45-38.png` | none, German poster | Second rendering of the same state |
+| `checking-architecture--2026-07-29--20-01-22.png` | unassigned; visualises Section 2.4 / Table 2 | Second version: agent nested in the harness, evidence box collecting validation and review, acceptance closes the loop back into the knowledge base, Critical Expert carries the filled-disc mark |
+| `iteration-anatomy--2026-07-29--20-00-10.png` | Figure 5, Section 4.3 | Second version: legend added (documented major emphasis, primary emphasis, documented write-back), hollow dots dropped, in-image closing line removed; resolves the convention deviation of the first version |
+| `notker-acceptance--2026-07-29--19-59-50.png` | Figure 10, Section 4.8 | Second version: left box named Promptotyping Documents, acceptance card states the accepted purpose and what the acceptance does not imply |
+| `zbz-e66--2026-07-29--19-59-45.png` | Figure 9, Section 4.7 | Second version: evidence box added, Critical Expert verification with filled-disc mark, human-authorised status named as such on both sides of E66 |
+| `m3gim-prospective--2026-07-29--19-59-34.png` | Figure 8, Section 4.6 | Second version: six-node circular loop with labelled transitions in place of the network arrangement |
