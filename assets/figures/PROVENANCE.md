@@ -199,3 +199,16 @@ and are therefore not duplicated here.
 | `notker-acceptance--2026-07-29--19-59-50.png` | Figure 10, Section 4.8 | Second version: left box named Promptotyping Documents, acceptance card states the accepted purpose and what the acceptance does not imply |
 | `zbz-e66--2026-07-29--19-59-45.png` | Figure 9, Section 4.7 | Second version: evidence box added, Critical Expert verification with filled-disc mark, human-authorised status named as such on both sides of E66 |
 | `m3gim-prospective--2026-07-29--19-59-34.png` | Figure 8, Section 4.6 | Second version: six-node circular loop with labelled transitions in place of the network arrangement |
+
+## Adopted figures of the integrated version (2026-07-29, night)
+
+The operator's integrated final version (`Promptotyping_Paper_Final_Integrated_2026-07-29.md`, taken in as `knowledge/paper-draft.md`) embeds six figures under the file names below; delivering the manuscript with these references is the adoption decision. Each file is a copy of the named candidate; the candidates stay archived. The figure numbers of the earlier "intended slot" column are superseded by this numbering. With the same version the document-types figure, the versioned-promptotypes figure, and the planned Wheaton figure left the manuscript; `figure-1-promptotyping-iteration.png` and `figure-4-versioned-promptotypes.png` remain in place as the record of the previous draft state, and `figure-1-phases.png` and `figure-2-document-types.png` continue to serve the canonical `knowledge/paper.md` on the site.
+
+| Canonical file | Manuscript slot | Source candidate |
+|---|---|---|
+| `figure_01_promptotyping_method.png` | Figure 1, Section 2.1 | `iteration-loop--2026-07-29--19-51-24.png` |
+| `figure_02_knowledge_context_authority.png` | Figure 2, Section 2.4 | `checking-architecture--2026-07-29--20-01-22.png` |
+| `figure_03_comparative_anatomy.png` | Figure 3, Section 4.3 | `iteration-anatomy--2026-07-29--20-00-10.png` |
+| `figure_04_m3gim_loop.png` | Figure 4, Section 4.6 | `m3gim-prospective--2026-07-29--19-59-34.png` |
+| `figure_05_zbz_e66.png` | Figure 5, Section 4.7 | `zbz-e66--2026-07-29--19-59-45.png` |
+| `figure_06_notker_acceptance.png` | Figure 6, Section 4.8 | `notker-acceptance--2026-07-29--19-59-50.png` |

@@ -1,8 +1,8 @@
 # Promptotyping Paper: Canonical Knowledge Document
 
-**Updated:** 29 July 2026, after the refactor of this document against the final manuscript candidate.
+**Updated:** 29 July 2026, night, after intake of the operator's integrated final version (`Promptotyping_Paper_Final_Integrated_2026-07-29.md`) as `knowledge/paper-draft.md`.
 
-**Status:** Canonical working specification for the final manuscript candidate. The working text is `knowledge/paper-draft.md`; the site keeps rendering `knowledge/paper.md` until chapter-wise author acceptance is complete, then the files are swapped.
+**Status:** Canonical working specification for the final manuscript candidate. The working text is `knowledge/paper-draft.md`, since the night intake with six embedded figures whose image files are adopted under `assets/figures/` (register in `assets/figures/PROVENANCE.md`). The site keeps rendering `knowledge/paper.md` until chapter-wise author acceptance is complete, then the files are swapped.
 
 **Function:** Governs the paper's central argument, terminology, method structure, chapter boundaries, evidence handling, repository interpretation, and final quality assurance.
 
@@ -1057,7 +1057,9 @@ Current principal cases:
 - **CorrespExplorer:** Exploration and selection among generated views;
 - **Notker:** edition, proposal-stage artefact, and distributed scholarly and agentic-engineering judgement;
 - **M³GIM:** Exploration, capture, modelling, deterministic checks, and manual approvals;
-- **Stefan Zweig Digital HTR:** production-scale use of source typology, metadata-controlled context, transcription, and verification architecture.
+- **Stefan Zweig Digital HTR:** production-scale use of source typology, metadata-controlled context, transcription, and verification architecture;
+- **coOCR/HTR:** bounded verification workbench and hybrid checking (added with the integrated version of 2026-07-29);
+- **teiCrafter:** bounded TEI generation and correction workbench; the current tool remains historically distinct from the earlier Custom GPT precursor and the two must not be merged into one project history.
 
 The Strutz case is an external domain-specific comparison for evaluation. It is not a Promptotyping project led by the author.
 
@@ -1486,14 +1488,9 @@ Each claim about responsibility, authority, and incomplete externalisation shoul
 
 Organise around epistemic and methodological functions rather than project chronology.
 
-Include:
+Realised in the integrated version of 2026-07-29 as: 4.1 Case Selection, Sources, and Evidential Status (seven cases with evidential-status table); 4.2 Recurrent Artefact Forms (the four interface types plus Scholarly Workbenches); 4.3 Anatomy of an Iteration Across the Cases; 4.4–4.9 worked cases (SZD-HTR, CorrespExplorer, M³GIM, ZBZ, Notker, and the two workbenches coOCR/HTR and teiCrafter); 4.10 Cross-Case Comparison; 4.11 Teaching, Collaboration, and Independent Continuation.
 
-- recurrent artefact forms;
-- principal worked cases;
-- cross-case comparison;
-- inventory;
-- promptotype-status classification;
-- limits of case evidence.
+Open architectural consequence: the fourteen-project inventory (former Table 1) left the manuscript with this version; the seven-case table of 4.1 is now the only project table. The promptotype-status classification of Section 10.5 and the site gallery rule keyed to Table 1 (A7 in the site specification) must be re-decided against this reduction at acceptance.
 
 Avoid turning the chapter into a catalogue.
 
@@ -1649,6 +1646,8 @@ Do not:
 
 # 17. Figures and Tables Quality Assurance
 
+The integrated version of 2026-07-29 carries six figures with adopted image files: the method loop (Figure 1), knowledge–context–authority (Figure 2), the comparative anatomy (Figure 3), the M³GIM loop (Figure 4), ZBZ before/after E66 (Figure 5), and the Notker acceptance (Figure 6). The document-types figure, the versioned-promptotypes figure, and the planned Wheaton figure left the manuscript with that version; checklist items referring to them apply only if they return.
+
 Before release, verify:
 
 - arrows in the four-form figure point to the intended form of work or accepted state;
@@ -1746,13 +1745,14 @@ These are evidence, editorial, and production tasks. They do not reopen the meth
 
 ## Repository transition tasks (two-track regime)
 
-1. Author review and acceptance of the final candidate chapter by chapter, with the style-catalogue pass per chapter at acceptance.
-2. Orphaned references, cite or remove: Berners-Lee 2025, Flanders and Jannidis 2019, Pichler and Reiter 2022, Pollin 2025c (Critical Vibing), and Pollin et al. 2025 (the ZfdG survey; with it the Strutz benchmark hook from the previous draft has disappeared).
-3. Dropped against the previous draft, confirm or restore: the Karpathy footnote naming the origin of the term vibe coding (the concept is now carried by Sarkar and Drosos 2025 alone), and Summerfield 2025, which leaves the confabulation sentence in 2.4 without a source.
-4. Figures: the Wheaton asset `assets/figures/wheaton-day-book.png` does not exist yet and must come from the dissertation materials; Figure 3 is mapped onto the existing `assets/figures/figure-2-document-types.png`; the regeneration list in `assets/figures/PROVENANCE.md` for Figures 1 and 4 stands.
-5. Deposit the Doctoral Congress presentation and replace the provisional footnote wording with a persistent identifier.
-6. Decide whether Audit Interfaces remain a candidate extension or are promoted after additional evidence.
-7. Perform a final transition and redundancy pass after author acceptance, then swap `paper.md` and re-key the vault register and the site anchors (the `#abschnitt` aliases and the V10 anchor phrases).
+1. Author review and acceptance of the integrated version chapter by chapter, with the style-catalogue pass per chapter at acceptance.
+2. Orphaned references, cite or remove (state after the night intake of 2026-07-29): Berners-Lee 2025, Flanders and Jannidis 2019, Pichler and Reiter 2022, Pollin 2025c (Critical Vibing), Pollin et al. 2025 (the ZfdG survey), and newly orphaned with the departure of the static-artefact section: Andorfer 2026, Chue Hong et al. 2022, Holmes and Takeda 2023, Marwick, Boettiger, and Mullen 2018, Risam and Gil 2022.
+3. Dropped against the earlier drafts, confirm or restore: the Karpathy footnote naming the origin of the term vibe coding (the concept is carried by Sarkar and Drosos 2025 alone), and Summerfield 2025, which leaves the confabulation sentence in 2.4 without a source.
+4. Resolve the dangling cross-reference in 5.3, which states that the technical limits of the static artefact form are given in Section 4.1; the integrated version's 4.1 is the case-selection section and no section states those limits any longer. The decision whether the static-artefact passage returns also decides the five newly orphaned references of task 2.
+5. Decide the fate of the fourteen-project inventory (former Table 1), which the integrated version no longer carries; the site gallery admission rule (A7) and the promptotype-status classification key to it.
+6. Deposit the Doctoral Congress presentation and replace the provisional footnote wording with a persistent identifier.
+7. Decide whether Audit Interfaces remain a candidate extension or are promoted after additional evidence; the integrated version's 4.2 carries Scholarly Workbenches as a fifth artefact form instead, which touches the same site vocabulary (the five epistemic functions of A22).
+8. Perform a final transition and redundancy pass after author acceptance, then swap `paper.md` and re-key the vault register and the site anchors (the `#abschnitt` aliases and the V10 anchor phrases).
 
 A manuscript section is accepted only when:
 

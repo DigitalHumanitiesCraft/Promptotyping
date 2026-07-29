@@ -1,13 +1,8 @@
 # Promptotyping. Translating Research Data into Research Artefacts through Context Engineering and Agentic Engineering
 
-<!--
-Working-manuscript rule:
-The argument is written in full. Unresolved factual, bibliographic, repository-based, conceptual, editorial, or figure-related issues are marked as . A placeholder should be removed only after the answer has been verified and incorporated, or the corresponding claim has been revised or deleted.
--->
-
 ## Abstract
 
-Digital research data become accessible only through software, yet generic tools rarely operationalise the distinctions on which project-specific research questions, domain models, and workflows depend. Traditionally, developing software adapted to such requirements has demanded resources that individual researchers and small projects often lack. This paper presents *Promptotyping*, an iterative, knowledge-driven method for translating structured research data and documented project knowledge into digital research artefacts through Context Engineering and Agentic Engineering. Its central organising structure is an evolving and versioned project knowledge base of Markdown documents that records the project’s current understanding, including requirements, decisions, procedures, and open questions. LLM-based agents create and revise artefacts from this knowledge base, while findings from implementation, assessment, and verification are written back into it. Each accepted iteration yields an identifiable and versioned *promptotype* that connects the maintained project knowledge, the resulting artefact, the referenced research-data state, and the documented basis of acceptance. Accountable researchers and technical contributors remain responsible for the scholarly and technical judgements through which a promptotype is specified, verified, and accepted. The paper offers a conceptual and methodological consolidation of this practice, developed through experimental practice over two years by a single scholar-developer across documented Digital Humanities projects and teaching contexts.
+Digital research data become accessible only through software, yet generic tools rarely operationalise the distinctions on which project-specific research questions, domain models, and workflows depend. Traditionally, developing software adapted to such requirements has demanded resources that individual researchers and small projects often lack. This paper presents *Promptotyping*, an iterative, knowledge-driven method for translating structured research data and documented project knowledge into digital research artefacts through Context Engineering and Agentic Engineering. Its central organising structure is an evolving and versioned project knowledge base of Markdown documents that records the project’s current understanding, including requirements, decisions, procedures, and open questions. LLM-based agents create and revise artefacts from this knowledge base, while findings from implementation, assessment, and verification are written back into it. Each accepted iteration yields an identifiable and versioned *promptotype* that connects the maintained project knowledge, the resulting artefact, the referenced research-data state, and the documented grounds of acceptance. Accountable researchers and technical contributors remain responsible for the scholarly and technical judgements through which a promptotype is specified, verified, and accepted. The paper offers a conceptual and methodological consolidation of this practice, developed through experimental practice over two years by a single scholar-developer across documented Digital Humanities projects and teaching contexts.
 
 # 1. Introduction
 
@@ -17,7 +12,7 @@ Large language models (LLMs)[^2] can reduce the implementation effort required f
 
 Even a verified transformation, however, establishes only that the chosen mapping has been implemented correctly. It does not establish that the target tool can adequately operationalise the project-specific semantics of the research data, since these remain limited to the distinctions and operations the tool supports. Adapting project data to generic software has often been a pragmatic response to the cost of developing a more closely adapted artefact. LLM-based code generation lowers this barrier because it can also produce the processing, interaction, and interface logic of a project-specific artefact. Rather than adapting the research data primarily to the categories of a generic tool, a specialised artefact can therefore be adapted to the structures, semantics, uncertainties, and scholarly requirements of the project.
 
-This paper introduces *Promptotyping*, an iterative, knowledge-driven method for translating structured research data and documented project knowledge into project-specific digital research artefacts through LLM-based AI agents. Its contribution is conceptual and methodological. It defines the method, reconstructs its development from documented practice, explains how project knowledge is externalised in maintained documents and made operational through agentic implementation, and establishes how findings from implementation, assessment, and verification are written back into the project knowledge base. Each accepted iteration yields a versioned *promptotype* that connects the maintained project knowledge with the resulting artefact, its referenced research-data state, and the documented basis of acceptance. Promptotyping redistributes implementation work without transferring responsibility for interpretation, verification, and acceptance from the accountable researchers and technical contributors.
+This paper introduces *Promptotyping*, an iterative, knowledge-driven method for translating structured research data and documented project knowledge into project-specific digital research artefacts through LLM-based AI agents. Its contribution is conceptual and methodological. It defines the method, reconstructs its development from documented practice, explains how project knowledge is externalised in maintained documents and made operational through agentic implementation, and establishes how findings from implementation, assessment, and verification are written back into the project knowledge base. Each accepted iteration yields a versioned *promptotype* that connects the maintained project knowledge with the resulting artefact, its referenced research-data state, and the documented grounds of acceptance. Promptotyping redistributes implementation work without transferring responsibility for interpretation, verification, and acceptance from the accountable researchers and technical contributors.
 
 The argument proceeds from the problem Promptotyping addresses to the foundations, definition, practical forms, implications, and limits of the method. Section 1.1 examines the relation between structured research data, project-specific digital research artefacts, and Scholar-Centred Design. Section 1.2 establishes the technical and organisational foundations provided by Context Engineering, Agentic Engineering, AI harnesses, and Critical Expert judgement. Section 2 reconstructs the development of Promptotyping and defines its recurring forms of work, knowledge architecture, document types, implementation process, verification arrangements, and versioned promptotypes. Section 3 examines the epistemic and methodological implications of translating scholarly knowledge into agent-readable specifications and functional research artefacts. Section 4 presents recurrent artefact forms and the documented projects from which the method was consolidated. Section 5 establishes the empirical scope, conditions of applicability, technical, organisational, infrastructural, ethical, and social limits of the method, sets priorities for evaluation and transfer, and concludes by locating Promptotyping as an amplification of scholarly and technical competence rather than a transfer of scholarly authority to AI agents.
 
@@ -85,7 +80,7 @@ The knowledge base does not authorise itself. It governs implementation only ins
 
 *Promptotyping* applies to documentary and technical artefacts through which modelled research data can be investigated, transformed, enriched, verified, or revised. These range from models and processing pipelines to capture tools, scholarly editions, analytical interfaces, and software applications; no particular output format or technical architecture defines the method. Its application requires research material to be available in a structured and machine-actionable form before it can serve as the basis of implementation. A CSV or JSON file may provide sufficient structure for a bounded project, while markup standards, metadata models, graph-based representations, and ontologies may express richer semantics, provenance, constraints, and uncertainty.[^10] Formal richness alone, however, does not determine a usable research artefact. Data models and standards describe what has been represented, but they do not decide which distinctions should be foregrounded for a particular research question, which operations should be supported, or how their results should be presented and examined. These decisions must be developed and documented within the project.
 
-A *Promptotyping iteration* may contain several internal cycles of Distillation, Implementation, assessment, and verification. It concludes when the relevant project knowledge, the artefact derived from it, and the documented basis of acceptance form a coherent, identifiable, and versioned state for the intended purpose. This accepted iteration state is a *promptotype*. A promptotype therefore does not denote only the visible interface or generated code. It connects the maintained project knowledge, the digital research artefact, the documented basis of acceptance, and a reference to the research-data state on which the artefact operates. It may remain internal, be published, support a handover, or become the starting point for a subsequent iteration.
+A *Promptotyping iteration* may contain several internal cycles of Distillation, Implementation, assessment, and verification. It concludes when the relevant project knowledge, the artefact derived from it, and the documented grounds of acceptance form a coherent, identifiable, and versioned state for the intended purpose. This accepted iteration state is a *promptotype*. A promptotype therefore does not denote only the visible interface or generated code. It connects the maintained project knowledge, the digital research artefact, the documented grounds of acceptance, and a reference to the research-data state on which the artefact operates. It may remain internal, be published, support a handover, or become the starting point for a subsequent iteration.
 
 Earlier notebooks, Custom GPT workflows, FORGE, and comparable experiments are treated as precursors unless the surviving record permits an identifiable accepted iteration state to be reconstructed. An exploratory interface, prompt sequence, or generated codebase is not a promptotype merely because it was produced with an LLM. Later repository-based projects instantiate the consolidated method more fully, while early cases document the development of individual operations such as externalisation, condensation, intermediate specification, and iterative implementation.
 
@@ -95,11 +90,11 @@ Promptotyping addresses a bounded part of the capacity gap between scholarly spe
 
 The method is organised around four recurring forms of work named Preparation, Exploration, Distillation, and Implementation. Each has a distinct object and completion condition, but they do not form a rigid sequence. Preparation establishes the research data, sources, standards, and research context from which the artefact will be derived. Exploration examines what the data can support, what they cannot support, and which assumptions or additional modelling are required. Distillation expresses the resulting understanding in Promptotyping Documents. Implementation makes these documents actionable through an LLM-based AI agent operating within an AI harness.
 
-Figure 1 combines these four forms of work with the inner write-back paths and the acceptance of an iteration. It separates the digital research artefact produced during Implementation from the promptotype, which is reached only when project knowledge, artefact, and documented basis of acceptance have been brought into an accepted versioned relation.
+Figure 1 combines these four forms of work with the inner write-back paths and the acceptance of an iteration. It separates the digital research artefact produced during Implementation from the promptotype, which is reached only when project knowledge, artefact, and documented grounds of acceptance have been brought into an accepted versioned relation.
 
-![Four recurrent forms of work within one Promptotyping iteration, their write-back paths, the Critical Expert, and the accepted promptotype.](assets/figures/figure-1-promptotyping-iteration.png)
+![The Promptotyping method](assets/figures/figure_01_promptotyping_method.png)
 
-**Figure 1.** Four recurrent forms of work within one Promptotyping iteration. Preparation gathers data, sources, standards, and research context. Exploration examines what the data affords and what it does not. Distillation expresses the project’s maintained understanding as Promptotyping Documents. Implementation derives a digital research artefact from those documents. The Critical Expert reviews project knowledge, verifies the artefact, and accepts the coherent versioned iteration state as a promptotype. Findings may return the work to Distillation, Exploration, or Preparation.
+**Figure 1. The Promptotyping method.** Preparation establishes the research data, sources, standards, and research context. Exploration examines what the data can support and where additional modelling or contextualisation is required. Distillation expresses the maintained project understanding as Promptotyping Documents, and Implementation translates these documents into a digital research artefact. Findings from implementation may be written back into Distillation, Exploration, or Preparation. A Promptotyping iteration closes only when the project knowledge, artefact, referenced research-data state, and documented grounds of acceptance form a coherent and identifiable promptotype.
 
 The lower return paths in Figure 1 represent revisions within an iteration. Missing or inadequate specifications return the work to Distillation; a revised understanding of the data returns it to Exploration; and new or corrected source material returns it to Preparation. The stronger return to Distillation reflects the frequent case in which implementation reveals that the documented specification needs to be made more precise. The figure does not prescribe a single traversal through the four forms of work, nor does it imply that every internal cycle produces a new promptotype.
 
@@ -111,11 +106,8 @@ Throughout the following sections, the Stefan Zweig Digital HTR pipeline serves 
 
 Requirements Engineering belongs at this point because an artefact cannot be specified independently of the scholarly activities it is meant to support. Requirements may be developed from the researcher's own domain knowledge or through collaborative Scholar-Centred Design sessions. Epics and user stories translate research practices into statements that can guide implementation while retaining their scholarly purpose. A user story such as "As a social historian, I want to trace people and their relations through commodity transactions so that I can investigate the social structure of the community" is simultaneously a statement about historical inquiry and a functional requirement. Where requirements are expressed as user stories, established criteria such as the QUS framework distinguish qualities that can be tested formally from those that require an understanding of their content (Lucassen et al. 2016).
 
-The first Promptotyping cases drew directly on the requirements work described in Section 1.1: the Wheaton Day Book and the Basel municipal accounts had been modelled through a shared ontological framework, but their research perspectives required distinct artefacts adapted to their questions and analytical practices. The experimental Wheaton network visualisation was an early case in which code generation, modelled data, and requirements developed through Scholar-Centred Design converged in a research-specific interface. As Figure 2 shows, persons, institutions, places, and commodities were represented through differentiated nodes and relations, while the controls exposed categories derived from the data model and the social-historical user stories. The interface was therefore not a generic rendering of an existing graph. It operationalised a particular prosopographic interpretation of the accounting data.
+The first Promptotyping cases drew directly on the requirements work described in Section 1.1: the Wheaton Day Book and the Basel municipal accounts had been modelled through a shared ontological framework, but their research perspectives required distinct artefacts adapted to their questions and analytical practices. The experimental Wheaton network visualisation was an early case in which code generation, modelled data, and requirements developed through Scholar-Centred Design converged in a research-specific interface. Persons, institutions, places, and commodities were represented through differentiated nodes and relations, while the controls exposed categories derived from the data model and the social-historical user stories. The interface was therefore not a generic rendering of an existing graph. It operationalised a particular prosopographic interpretation of the accounting data.
 
-![Interface concept for the Wheaton Day Book use case.](assets/figures/wheaton-day-book.png)
-
-**Figure 2.** Experimental Wheaton Day Book network visualisation used in the dissertation. Persons, institutions, places, and commodities are connected through role-based relations, including quantified commodity flows. The interface operationalises social-historical user stories rather than providing a generic rendering of the underlying data.
 
 In the SZD pipeline, Preparation brought together the facsimiles, TEI metadata, source typology, transcription purpose, and available standards. The sources vary substantially, from handwritten Kurrent through typescripts, forms, tables, and proofs to newspaper material and heterogeneous compilations, and these distinctions determine which transcription instructions and processing routes are appropriate. The object metadata was therefore not treated as ancillary catalogue information. It became machine-actionable context that selected prompt variants and governed how individual materials entered the pipeline.
 
@@ -163,11 +155,8 @@ The design document is where the project relocates representation decisions from
 
 In the SZD pipeline, Distillation translated the exploration findings into declarative and action documents. An annotation protocol defines the transcription conventions and records their rationale: uncertain readings, illegible passages, deletions, insertions, and other interventions must remain visible through defined markup rather than being silently normalised. A verification concept specifies the ground-truth strategy, external quality signals produced independently of the transcription step, cross-model comparison, and the authority attached to different checks. TEI metadata determines the automatic assignment of object-specific context, and the design requires every transcription to be displayed beside its facsimile so that claims about the text remain inspectable against the source.
 
-As the knowledge base expanded, different kinds of knowledge had to be kept apart. Figure 3 distinguishes documents that describe the project, documents that preserve the course and rationale of the work, and documents that direct agent behaviour. The distinction adapts the established separation between declarative and procedural knowledge and adds a process layer for preserving how and why the work developed. It protects relatively stable scholarly descriptions from volatile implementation instructions and provides a practical way to locate the source of an error.
+As the knowledge base expanded, different kinds of knowledge had to be kept apart. The resulting typology distinguishes documents that describe the project, documents that preserve the course and rationale of the work, and documents that direct agent behaviour. The distinction adapts the established separation between declarative and procedural knowledge and adds a process layer for preserving how and why the work developed. It protects relatively stable scholarly descriptions from volatile implementation instructions and provides a practical way to locate the source of an error.
 
-![Three functional classes of Promptotyping Documents: declarative, process, and action documents.](assets/figures/figure-2-document-types.png)
-
-**Figure 3.** Three types of Promptotyping Document. Declarative Documents state what is currently understood about the sources, data, requirements, design, and verification. Process Documents record how the work proceeded and why decisions were made. Action Documents govern how agents should act within the project.
 
 **Declarative Documents** state what is the case according to the project's current understanding. They include data descriptions, requirements, design decisions, editorial guidelines, mapping rules, verification concepts, and descriptions of project pipelines. They contain the scholarly and system knowledge against which output is assessed. Their content should survive changes in code, model version, or tool because it expresses the maintained project description rather than one particular execution.
 
@@ -199,6 +188,13 @@ Promptotyping Documents differ from project documents written primarily for comp
 
 Agentic Engineering, as introduced in Section 1.2, organises this work: the agent becomes an executing instance, while human work shifts towards specification, orchestration, contextual judgement, and verification. The methodologically relevant variable is the span of work performed between two human interventions. The longer that span becomes, the more of the project’s intent, constraints, and evaluation criteria must be represented in the maintained knowledge base before and during implementation. Under continuous prompt-level direction, the researcher carried the coherence of the work, supplied missing context, and decided each next step. Repository-based agents can instead inspect files, modify several components, execute commands, read tool responses, and pursue an implementation goal across multiple steps. The knowledge base therefore no longer serves merely as material attached to a prompt. It provides the maintained reference from which the agent plans and implements and against which its work can be inspected.
 
+Figure 2 summarises the relation between persistent project knowledge, task-specific working context, agentic implementation, evidence-producing checks, Critical Expert verification, and purpose-specific acceptance.
+
+![Project knowledge, working context, implementation, and authority in Promptotyping](assets/figures/figure_02_knowledge_context_authority.png)
+
+**Figure 2. Project knowledge, working context, implementation, and authority in Promptotyping.** The project knowledge base provides the persistent and versioned reference from which task-specific working context is selected. An AI agent operating within a harness uses this context to create or revise a digital research artefact. Deterministic validation and agentic review provide evidence about the artefact but do not authorise scholarly claims. Questions of source fidelity, design conformance, interpretation, and contextualisation remain subject to Critical Expert verification, while acceptance is an accountable and purpose-specific human decision.
+
+
 This arrangement places Promptotyping within the broader movement of **Spec-Driven Development** (Macedo 2026). Agentic software-development frameworks increasingly use persistent specifications as the governing reference from which agents plan and implement, separating stated intent from generated code. Promptotyping shares this commitment, but the content and authority of its specifications differ. Promptotyping Documents also describe sources that precede the system and carry their own semantics, uncertainty, provenance, and scholarly history. The researcher is therefore not only a stakeholder commissioning functionality. They hold epistemic authority over statements about the research material.
 
 This is the principal difference from **Vibe Coding**, understood as generating code from natural-language instructions while accepting its implementation without thorough review (Sarkar and Drosos 2025). Promptotyping shares the possibility of rapidly generating functional code and retains an exploratory mode in which alternatives can be produced before requirements are settled. It differs through the preparation of data and context, persistent specifications, versioned process memory, and defined verification checkpoints. A provisional interface may be generated quickly to expose possibilities, but it does not become an accepted promptotype merely because it runs.
@@ -211,7 +207,7 @@ The knowledge base constrains implementation without determining it completely. 
 
 **Visual feedback** comes from the running artefact. Screenshots allow the agent and researcher to inspect layout, labels, interactions, missing elements, and inconsistencies between specification and rendering. Visual inspection is necessary because many failures are not represented in formal code correctness: content may be clipped, hierarchy may be unreadable, a filter may technically work but communicate the wrong relation, or a conventional representation may contradict the design principles.
 
-Agents can also contribute to checking. They may compare generated outputs with sources or stated rules, operate a running interface against user stories and acceptance criteria, and report the results. Such **agentic review** extends the coverage of checking between deterministic validation and expert verification, but it never authorises: an LLM-mediated comparison remains a generative operation, not scholarly acceptance. The limits of such review became concrete in the ZBZ OCR/TEI pipeline, where an agent-based screening stage had recorded approval statuses that no human had authorised, effectively collapsing production and verification into one generative operation. Decision E66 abolished agent screening and introduced per-stream workflow status instead.[^zbz-e66]
+Agents can also contribute to checking. They may compare generated outputs with sources or stated rules, operate a running interface against user stories and acceptance criteria, and report the results. Such **agentic review** extends the coverage of checking between deterministic validation and expert verification, but it never authorises: an LLM-mediated comparison remains a generative operation, not scholarly acceptance. The limits of such review became concrete in the ZBZ OCR/TEI pipeline, where an agent-based screening stage had recorded approval statuses that no human had authorised, effectively collapsing production and verification into one generative operation. Decision E66 abolished agent screening and introduced per-stream workflow status instead.[^12]
 
 **Verification by the Critical Expert** applies where correctness depends on scholarly judgement. The Critical Expert determines whether the data has been represented appropriately, whether the artefact addresses the research question, whether an interpretation is warranted, and which context a result requires before it can be read. This authority is not delegated.
 
@@ -245,15 +241,14 @@ The Critical Expert’s responsibility extends beyond checking generated content
 
 The defining loop runs from Implementation back into the knowledge base. If an artefact is wrong because a requirement was absent, a category was underspecified, or a design instruction allowed an unwarranted interpretation, the persistent correction belongs in the specification rather than only in the code. The artefact is then regenerated or revised from the corrected documents. Unexpected data characteristics, performance constraints, improved formulations, and revised research questions are likewise written back. Re-entry may go deeper than Distillation: a finding that the data affords less or more than assumed returns the work to Exploration, while a newly received source, schema, or editorial guideline returns it to Preparation.
 
+Write-back can also operate at two scopes. Most findings remain project-level corrections to one knowledge base. A recurrent failure may, however, justify a method-level correction to the general templates or action rules. The ZBZ decision prohibiting agents from recording approval statuses that no accountable person had granted became such a rule. It was first a correction to one pipeline and then a general authority boundary for Promptotyping agents.
+
 Implementation proceeds most reliably in inspectable milestones. Each milestone should add a bounded increment small enough for the researcher to evaluate before the next is built. A first pass may deliberately prioritise seeing an artefact run, but any deferred inspection must be completed before the artefact is accepted, used as evidence, published, or handed over.
 
 An iteration ends when the artefact and the maintained project knowledge form a coherent versioned state that satisfies the applicable acceptance and verification criteria. That state constitutes a promptotype. Acceptance is purpose-specific: the same state may be sufficient for an exploratory demonstration, an internal workflow, a proposal-stage model, or publication only under different criteria. Acceptance therefore closes an iteration without claiming that the project, data, or artefact has become final.
 
-Figure 4 distinguishes the internal cycles of one iteration from the succession of accepted promptotypes. New findings, sources, requirements, or improved checks are written back and initiate another iteration, which may produce a new promptotype.
+The internal cycles of one iteration must be distinguished from the succession of accepted promptotypes. New findings, sources, requirements, or improved checks are written back and initiate another iteration, which may produce a new promptotype.
 
-![Three versioned promptotypes connected by write-back and renewed iterations.](assets/figures/figure-4-versioned-promptotypes.png)
-
-**Figure 4.** Versioned promptotypes across successive iterations. Each accepted Promptotyping iteration yields an identifiable versioned state that connects maintained project knowledge and the corresponding artefact. Later findings initiate renewed work and may result in another promptotype.
 
 The version identifier is methodologically important, but Promptotyping is not tied to GitHub, release objects, or Semantic Versioning. An accepted state must be identifiable well enough that its project knowledge, artefact, research-data reference, and grounds of acceptance can be recovered together. A tag, release, or archived snapshot is a strong implementation of this requirement, but it is not constitutive. In the documented repositories, identifiable states may instead be established through a commit SHA linked to a dated journal entry, a version field in document frontmatter, a numbered and dated decision record, or a dated iteration designation. These mechanisms are weaker than an archived release when they do not freeze all components, but they can still identify the state to which acceptance refers. The labels `v0.0.1`, `v0.0.2`, and `v0.1.0` are therefore illustrative rather than prescribed. The method recommends an explicit release or snapshot where feasible and requires at minimum a durable, unambiguous reference to the accepted state.
 
@@ -290,6 +285,8 @@ Digital tool criticism asks what a tool does to its material, which assumptions 
 A technically adequate implementation is not necessarily an adequate resolution of the underlying scholarly problem. A functioning interface may still rest on inadequate categories, unsupported mappings, or an inappropriate model of uncertainty. The artefact matters because it makes research data addressable in a particular way; its scholarly adequacy depends on the modelling, contextualisation, and verification that precede and accompany it.
 
 This also limits the claim that building is itself research. Implementation becomes epistemically productive when it reveals characteristics of the data, consequences of a model, or alternatives for representing a research problem. A generated artefact is not automatically a scholarly contribution merely because it exists. Its research value lies in what can be learned, argued, and verified through building it, and the verification arrangements of Section 2.4 provide the criteria through which that value is established rather than asserted.
+
+This feedback can be described as the *backtalk* of the artefact. Schön characterises design as a reflective conversation in which materials answer actions with consequences that were not fully anticipated, while Goldschmidt shows how designers read information from their own representations that they did not consciously place there (Schön 1996; Goldschmidt 2003). In Promptotyping, a running interface, transformation, or capture environment can answer a specification by exposing an unhandled state, an unsupported distinction, an implausible aggregation, or a conflict between the data model and its operational use. The epistemically relevant step is not the surprise alone. It is the externalisation of the resulting judgement in a maintained document and the revision of the artefact from that corrected project knowledge. Backtalk therefore explains how Implementation can generate questions; Distillation and write-back explain how their answers become inspectable and reusable project knowledge.
 
 ## 3.2 Semantic Explicitness and the Limits of Context
 
@@ -369,7 +366,7 @@ Promptotyping does not claim that the translation between research data, scholar
 
 A promptotype marks an accepted iteration state, not the final completion of a project. Its acceptance is relative to an intended purpose and to the criteria established for that purpose. A promptotype may be adequate for exploring what the data supports, examining the consequences of a modelling decision, demonstrating a proposed edition model, or operating an internal workflow without yet being suitable for publication or sustained third-party use.
 
-This distinction separates **iteration acceptance** from **publication**. Iteration acceptance establishes that the maintained project knowledge, artefact, and documented basis of acceptance form a coherent versioned state. Publication places that state, or an artefact derived from it, into a scholarly record and creates additional obligations. Readers then require a stable reference, accessible data where legally and ethically possible, an account of provenance, and sufficient documentation to understand the decisions embodied in the artefact. Static publication and versioned documents support these requirements, but archived releases, persistent identifiers, citation metadata, licensing, accessibility, and preservation remain separate publication tasks.
+This distinction separates **iteration acceptance** from **publication**. Iteration acceptance establishes that the maintained project knowledge, artefact, and documented grounds of acceptance form a coherent versioned state. Publication places that state, or an artefact derived from it, into a scholarly record and creates additional obligations. Readers then require a stable reference, accessible data where legally and ethically possible, an account of provenance, and sufficient documentation to understand the decisions embodied in the artefact. Static publication and versioned documents support these requirements, but archived releases, persistent identifiers, citation metadata, licensing, accessibility, and preservation remain separate publication tasks.
 
 A published digital research artefact should identify the promptotype from which it was released. The promptotype may be represented through a repository tag, release, archived deposit, or another persistent snapshot. Publication does not make the underlying project knowledge final: corrections, new sources, or revised interpretations may initiate another Promptotyping iteration and produce a later promptotype. What publication changes is not the possibility of revision but the obligation to preserve and identify the released state.
 
@@ -381,7 +378,7 @@ Running the same Promptotyping Documents again does not guarantee an identical i
 
 *Reconstructability* refers here to the ability to trace an accepted promptotype and any published artefact derived from it back through its code, documents, decisions, source-data reference, and verification record rather than to reproduce an identical implementation through renewed generation.
 
-What can be reconstructed is the documented project logic: the data state used, the requirements established, the design decisions taken, the process recorded in the journal, the models and tools disclosed, the deterministic transformations applied to the data, and the basis on which the iteration state was accepted. Git history records changes to documents and code, while tests and generated reports can make parts of the data-processing path repeatable. A tag, release, or archived snapshot can identify the particular combination of documents, code, artefact, and references that constituted a promptotype.
+What can be reconstructed is the documented project logic: the data state used, the requirements established, the design decisions taken, the process recorded in the journal, the models and tools disclosed, the deterministic transformations applied to the data, and the grounds on which the iteration state was accepted. Git history records changes to documents and code, while tests and generated reports can make parts of the data-processing path repeatable. A tag, release, or archived snapshot can identify the particular combination of documents, code, artefact, and references that constituted a promptotype.
 
 The deterministic layer is especially important. Once accepted code, dependencies, and source data are versioned, deterministic transformations can in principle be re-executed independently of the non-deterministic process that generated the code. Generated documents derived from source data can likewise be refreshed through named commands. The reconstructable object is therefore the versioned relation among source data, maintained documents, accepted code, artefact, process record, and provenance information.
 
@@ -389,161 +386,183 @@ This position does not remove dependence on commercial frontier models. Promptot
 
 # 4. Promptotyping in Practice: Artefact Forms and Documented Projects
 
-Promptotyping can create and revise many kinds of digital research artefact, including data descriptions, models, mappings, scripts, processing pipelines, verification environments, editions, interfaces, and publications. This chapter presents the recurrent browser-based artefact forms produced across the documented projects and the projects themselves, conducted between 2023 and 2026. The projects are not presented as controlled validation of the method. They differ in data, duration, model capability, scholarly depth, technical complexity, and degree of documentation. Most were conducted by the same hybrid scholar-developer, and failures were not recorded through a systematic protocol. They provide the practical basis from which the recurring phases, document functions, interface types, and verification practices were identified, and they allow the method's claims, limits, and development to be discussed against concrete cases.
+The documented projects do not constitute a controlled evaluation of Promptotyping. They differ in source material, research purpose, duration, model and harness, technical complexity, project maturity, and degree of surviving documentation. Most were led by the same hybrid scholar-developer. The cases are therefore used analytically rather than statistically. Each is selected because it makes a different part of a Promptotyping iteration inspectable: verification at production scale, generative exploration and selection, modelling through interface backtalk, organisational write-back, purpose-specific acceptance, or the development of bounded scholarly workbenches.
 
-## 4.1 Self-Contained Static Artefacts
+A Promptotyping iteration is not a fixed traversal through four phases. It may begin with an established corpus, the first records of an emerging dataset, a proposal-stage editorial sample, or a failure discovered in an existing workflow. The common structure is the attempt to bring maintained project knowledge, a digital research artefact, a referenced data state, and documented grounds of acceptance into an identifiable relation. The following cases show how that relation was pursued under different project conditions.
 
-A generic tool serves multiple projects at the level of structure they share. A project-specific digital research artefact is instead bound to the distinctions represented in one project’s data model, requirements, and research context. Its scholarly function derives from this binding rather than from technical novelty.
+## 4.1 Case Selection, Sources, and Evidential Status
 
-Across the documented projects, self-contained static web artefacts became the preferred implementation form where the research purpose did not require server-side processing or shared state. They consist of HTML, CSS, JavaScript, and research data embedded in the artefact or loaded from flat files. They can be deployed on a static host or opened locally without server-side execution. The form keeps the path from documents to implementation comparatively inspectable, requires little infrastructure, and corresponds to the limited maintenance resources available to many individual researchers and small projects.
+The worked cases are reconstructed from combinations of repository documents, journals, decision registers, code, tests, public interfaces, project pages, and author participation. Public web pages provide evidence that an artefact or project context exists, but they do not by themselves establish the internal development history claimed for a Promptotyping iteration. Claims about write-back, verification, or acceptance therefore remain tied to project records where those records survive.
 
-This preference aligns with approaches to minimal and sustainable computing. Risam and Gil (2022) argue for technical forms whose resource requirements and dependencies remain proportionate to their scholarly purposes. The Endings Project likewise identifies reduced technological complexity and minimal dependency chains as important conditions for the longevity of digital scholarship (Holmes and Takeda 2023). Static publication has also been adopted in digital scholarly editing. Andorfer (2026), for example, publishes TEI-based editions as pre-rendered static pages and deliberately avoids an extensive JavaScript build stack. Promptotyping reaches a similar target form through agentic generation rather than deterministic XSLT transformation.
+The cases are assigned distinct analytical functions:
 
-The static artefact also resembles a research compendium in bringing data, documentation, code, and output together within a versioned repository (Marwick, Boettiger, and Mullen 2018). The comparison is not exact: a promptotype may be generated non-deterministically from documents, while the transformations operating on its data should remain deterministic. Nevertheless, both arrangements make the relation between source material, method, and output available for inspection.
-
-The technical defaults follow from this aim:
-
-- Vanilla JavaScript is preferred where it can implement the required behaviour without an additional framework or build process.  
-- External libraries are used selectively and, where feasible, stored locally with the artefact.  
-- Computationally expensive processing is performed upstream, and the artefact receives derived data suitable for client-side use.  
-- Runtime dependencies on external APIs or services are avoided where the artefact can fulfil its research purpose without them.  
-- Each published artefact should include a provenance declaration identifying the promptotype, knowledge base, data state, models, tools, and verification procedures involved in its production.
-
-These are defaults rather than defining conditions of Promptotyping. A project may require a generated processing pipeline upstream of the interface. A document may be rendered deterministically from source data. Earlier promptotypes took the form of notebooks or configured language-model environments rather than web applications. What these cases share is not a particular frontend technology, but derivation from a maintained knowledge base and verification against the research material and requirements.
-
-The relation to FAIR for Research Software is mixed (Chue Hong et al. 2022). Where both artefact and repository can be published, static deployment supports accessibility without requiring proprietary runtime infrastructure. The knowledge base, journal, provenance declaration, and repository history can provide detailed information about how and why the artefact was produced. Findability does not follow automatically. Persistent identifiers, archived releases, citation metadata, and formal publication remain additional responsibilities. Promptotyping can prepare an artefact for publication, but it does not itself complete that publication work.
-
-The limits of the static form are part of its definition. Client-side processing is constrained by browser memory, data volume, and data representation. Large transformations, model inference, OCR, HTR, and computationally expensive aggregation normally remain upstream in generated pipelines, and static artefacts lack the shared server-side state required for simultaneous multi-user editing, institutional authentication, central permission management, or continuously updated databases. Pre-rendering, segmentation, indexing, and precomputation can extend the range of static publication, but they do not remove the limit.
-
-The handover point is reached when the obligations attached to the artefact change. Relevant conditions include continuing maintenance beyond the original project, external users with an expectation of support, shared or sensitive data, multi-user operation, security requirements, institutional deployment, and commitments to availability. These conditions may arise independently of one another and cannot be reduced to a single technical threshold. Once such obligations arise, the standards and responsibilities of Research Software Engineering apply according to what the artefact has become, irrespective of whether its first implementation was produced through Promptotyping. The knowledge base remains useful at this boundary. It provides a data description, requirements, acceptance criteria, design rationale, process record, and provenance account that can support a structured handover to professional development.
-
-## 4.2 An Epistemic Typology of Interfaces
-
-The browser-based artefacts are classified here by the epistemic function they support rather than by their data format or visualisation technique. TaDiRAH classifies research activities rather than the digital research artefacts through which those activities are conducted (Borek et al. 2021). The present typology complements that vocabulary by asking what role an interface plays in producing, examining, correcting, or assessing scholarly knowledge.
-
-Four recurrent interface types and one provisional extension can be distinguished across the documented projects.
-
-**Verification Interfaces** expose intermediate or final outputs for comparison with their sources or with outputs produced through alternative procedures. They introduce review points into processing pipelines so that errors can be identified before they propagate into later stages. Examples include OCR and HTR comparison environments, layout overlays, and viewers that place generated transcriptions beside facsimiles.
-
-**Exploration Interfaces** make existing structured research data investigable through filters, linked views, visualisations, and alternative forms of navigation. Their purpose is not only to retrieve known items but to reveal patterns, absences, concentrations, and possible relations. They operationalise the exploratory function associated with generous interfaces and coordinated multiple views (Whitelaw 2015; Roberts 2007; Windhager et al. 2019).
-
-**Edition Interfaces** render scholarly editions and connect encoded texts with facsimiles, apparatus, translations, annotations, or editorial correction. Interface decisions in this context are themselves editorial decisions because they determine how textual layers, uncertainty, variants, and scholarly interventions become accessible (Pierazzo 2015).
-
-**Capture Interfaces** support structured data input, annotation, correction, or metadata creation. Because the available fields and relations define what can be entered, these interfaces also test the adequacy of the underlying data model. Difficulties encountered during capture can therefore lead to revisions of the schema, vocabulary, or modelling assumptions.
-
-**Audit Interfaces** expose the process through which results were produced. They may show alternative assessments, disagreements, processing stages, statistics, provenance, or the relation between an output and the decisions that shaped it. Their object is not only the research data or result but the inspectability of the research process itself.
-
-The first four types recur across several projects. Audit Interfaces are represented by one case and should therefore be treated as a provisional extension of the typology.
-
-The categories are not mutually exclusive. A processing project may combine Verification Interfaces at several stages, an Edition Interface for reading, and Capture functions for scholarly correction. M³GIM combines exploration with structured input, while the ZBZ pipeline combines stage-specific verification with an edition reader. The typology identifies the primary epistemic functions an artefact supports without requiring every artefact to belong to only one category.
-
-The categories also combine primary epistemic functions with established scholarly artefact forms. Edition Interfaces are retained as a separate type because the editorial relation between encoded text, apparatus, facsimile, intervention, and reader constitutes a distinct design and verification regime.
-
-This functional classification explains why a single general-purpose dashboard cannot serve every research perspective equally well. The same TEI or RDF dataset may require an Exploration Interface, an Edition Interface, a Verification Interface, or a combination of them depending on the research question and workflow. The data format does not determine the artefact type. The epistemic activity established through requirements engineering does.
-
-The typology describes what an interface enables, not when in the project lifecycle it is produced. The same interface type may serve different temporal functions. An Edition Interface may publish a completed scholarly edition or make a proposed editorial model concrete during the preparation of a funding application. An Exploration or Capture Interface may operate on a stable corpus or be generated from the first available records while data collection and modelling are still in progress. Epistemic function and project maturity should therefore be treated as separate dimensions.
-
-## 4.3 Principle of Presentation
-
-A project is included in the inventory when Promptotyping was applied across the project rather than only to an isolated coding task and when the work left a repository containing a meaningful combination of documents, data, code, artefacts, or process records. Public access is not a condition of inclusion because several projects remain subject to partner or data restrictions. Teaching demonstrations without a project repository are discussed separately.
-
-The inventory documents application across different materials and project forms; it does not support comparative claims about efficacy.
-
-Repository-wide claims follow an evidence rule derived from the audit of the project corpus. They are not inferred from one repository, one directory convention, or one filename pattern. Test infrastructure is reconstructed from runner entry points such as package scripts, test configuration, dedicated runners, and continuous-integration workflows, and then traced to the files they execute. Provenance is distinguished at two levels: declarations embedded in the delivered artefact and model or tool declarations in document frontmatter. A negative finding names the inspection procedure and remains a statement about what was not found under that procedure.
-
-The companion repository contains the current manuscript, the method specification, document templates, records of selected claim checks, and links to the relevant public project repositories. It provides a versioned record of the paper’s own development without introducing a separate methodological architecture.
-
-## 4.4 Project Inventory
-
-The documented projects range from small exploratory interfaces to multi-stage processing pipelines. Some repositories remain active and have continued to change since the states examined for this paper. The table therefore records project characteristics rather than claiming a final or complete state. Repository structures and conventions vary substantially, and public or restricted status is not inferred from local remotes. Negative repository findings are reported only relative to the inspection procedure used; absence is not inferred from a failed filename pattern or from one repository's conventions.
-
-**Table 1. Documented Promptotyping projects, their source data, interface types, and what each case illustrates.**
-
-| Project | Data | Interface Type(s) | What the Case Illustrates |
-| :---- | :---- | :---- | :---- |
-| Hans Gross Kriminalmuseum | TEI and LIDO object corpus | Exploration | Combined search-oriented and spatial exploration |
-| CorrespExplorer | CMIF/TEI correspondence corpus | Exploration | Early complete knowledge base with journal and browser-based tests |
-| HerData | TEI and Wikidata correspondence data | Exploration | Gender-focused network with explicit discussion of data bias |
-| coOCR-HTR | OCR and HTR outputs | Verification | Comparison workbench developed under a regression suite and later forked by a third party |
-| SZD-HTR Pipeline | Digitised manuscripts, typescripts, correspondence, and estate materials | Verification | Production-scale transcription pipeline and the recurring example of Sections 2.2–2.4 |
-| VetMedAI Wissensbilanz | Heterogeneous university reporting spreadsheets | Exploration | Hand-curated project documents over inconsistent tabular sources |
-| Kulturpool Explorer | Kulturpool API data | Exploration | Parallel agent orchestration in a public cultural-heritage context |
-| wiiw Patent Analysis | Patent-cooperation data using a synthetic substitute | Exploration | Development against synthetic data where original data was confidential |
-| Medieval Legal Transactions | TEI-XML edition corpus | Edition | Agentic edition workflow governed by regression tests |
-| M³GIM | RiC-O and JSON-LD archival data collected and modelled during the project | Exploration, Capture | Rapid generation of interfaces from early data states to support communication, data capture, and iterative modelling |
-| ZBZ OCR/TEI Pipeline | PDF scans of multilingual estate material | Verification, Edition | Stage-specific verification interfaces across a larger pipeline |
-| Notker Edition | DOCX and TEI sample of Psalm 2 | Edition | A proposal-stage promptotype used to make an intended editorial model and its technical possibilities concrete before project funding |
-| Klawiter Bibliography Rescue | MediaWiki SQL and binary data dump | Verification, Capture | Staged data rescue with a curation interface and tests |
-| FemPrompt SozArb | Academic publication corpus | Audit | Literature-review environment exposing parts of its processing and assessment workflow |
-
-The examples cover humanities data in TEI, LIDO, CMIF, RiC-O, JSON-LD, tabular formats, document files, images, OCR and HTR outputs, and database exports. Two projects extend beyond the digital humanities into economic and social-work research. This range demonstrates breadth of application within the author’s practice, not disciplinary transfer in general.
-
-## 4.5 Worked Cases by Epistemic Function
-
-The following cases are presented through a common structure: source data, documents, artefact, epistemic and project contribution, and limits. The structure supports comparison while keeping the claims attached to concrete project conditions.
-
-#### Verification: ZBZ OCR/TEI Pipeline
-
-- **Source data:** PDF scans of multilingual estate material held by the Zentralbibliothek Zürich and spanning several document genres.  
-- **Documents:** A knowledge base describing the pipeline stage by stage, together with the generated and maintained Python codebase.  
-- **Artefact:** Verification Interfaces for comparing OCR outputs and inspecting layout, followed by an Edition Interface for reading the processed material.  
-- **Epistemic and project contribution:** The interfaces create defined review points intended to prevent errors from propagating unchecked through the pipeline. Outputs were handed to the partner institution with their verification state explicitly marked.  
-- **Limits:** The project approaches infrastructure scale. Although its interfaces remain client-side, the staged pipeline, processing code, data management, and verification burden exceed the lightweight form of smaller promptotypes.
-
-#### Exploration: CorrespExplorer
-
-- **Source data:** CMIF-encoded correspondence metadata from the correspSearch aggregation.  
-- **Documents:** User stories, a data and design description, a phase-based journal, and a browser-based test suite.  
-- **Artefact:** Twelve coordinated visualisation views over the correspondence metadata.  
-- **Epistemic and project contribution:** The project generated a range of possible views that were subsequently evaluated and reduced against domain criteria. The interface made the same correspondence data addressable through temporal, geographical, social, and quantitative perspectives.  
-- **Limits:** Many initial views reproduced established conventions of correspondence visualisation. Decisions to retain, revise, or reject those conventions depended heavily on the design document and expert review. The journal also records qualitative context degradation during longer implementation sessions, but the effect was not systematically measured.
-
-#### Edition: Notker Psalm Commentary
-
-- **Source data:** A sample from Notker III of St. Gallen’s Old High German Psalm commentary prepared for the development of a research proposal. The material combines Latin psalm text, Old High German translation, and exegetical commentary within the same textual flow.  
-- **Documents:** Editorial guidelines describing the intended encoding of textual phenomena, functional layers, language changes, source references, and marginal sigla. TEI-XML was specified as the canonical encoded source from which the interface representation would be derived.  
-- **Artefact:** A proposal-stage Edition Interface with independently toggleable textual layers, a modern German translation, IIIF facsimile access, a patristic source apparatus, a comparison of psalm witnesses, and a parallel textual tradition.  
-- **Epistemic and project contribution:** The promptotype made the proposed editorial model visible and operable before the larger project existed. It allowed the intended relations between transcription, translation, commentary, apparatus, facsimile, and parallel traditions to be examined in a concrete interface rather than described only in the application text. The artefact thereby served both as an exploratory scholarly model and as a demonstrator for the funding proposal. It also exposed editorial questions that would have remained less visible in a purely textual project description. One example concerns the siglum `R`, whose interpretation may depend on whether it occurs beside a psalm citation or within a commentary segment.  
-- **Limits:** The artefact represents a proposed editorial approach rather than the result of a completed edition project. Its data basis is deliberately limited, and several editorial decisions require confirmation by the commissioning scholar. The interface demonstrates what the proposed model could support; it does not establish that the model is complete or philologically verified across the corpus.
-
-#### Exploration and Capture: M³GIM
-
-- **Source data:** Archival information represented in RiC-O and JSON-LD. Data capture, vocabulary development, and modelling proceeded in parallel rather than beginning from a completed and stable dataset.  
-- **Documents:** A data and domain description, vocabulary documentation, session journal, and decision register recording modelling choices, unresolved questions, and changes made during data capture and interface development.  
-- **Artefact:** An archive explorer with eight functional areas and structured data-entry capabilities. Early versions of the interface were generated rapidly from the first available project data and revised as further records and modelling requirements emerged.  
-- **Epistemic and project contribution:** The interface was not added after data collection and modelling had been completed. It developed alongside them. Generating a usable interface from the first recorded data made the emerging structure of the project visible at an early stage and provided a shared object through which project participants could discuss entities, relations, controlled values, navigation, and capture requirements. Problems that remained abstract in vocabulary or schema discussions became concrete when records had to be displayed, filtered, connected, or entered. Conversely, interface proposals prompted questions about distinctions not yet represented in the data. The cycle ran in both directions: the current data model shaped the generated interface, while interaction with the interface informed further data capture and modelling decisions.  
-- **Limits:** Rapid generation can make an early and incomplete model appear more settled than it is. Interface convenience may also encourage changes that solve a local presentation or capture problem without improving the conceptual model. The journal and decision register make these changes traceable, but responsibility for distinguishing justified model refinement from interface-driven model drift remains with the project team.
-
-Audit remains outside the worked cases because it is represented by only one project and has not yet recurred sufficiently to support analysis at the same level as the other types.
-
-## 4.6 Teaching and Collaboration Experiences
-
-Whether Promptotyping can be used by scholars who do not combine domain and development expertise remains open. Teaching and collaboration experiences provide preliminary observations about communicability rather than independent validation.
-
-At a full-day AI winter school for digital humanities researchers in February 2026, participants worked through the four phases with an agentic coding tool, developed data descriptions and user stories, and produced provisional interfaces within the available workshop time. A data-steward training module used the same document types to examine the relation between FAIR data preparation and generated artefacts. A workshop of the Museumsbund Österreich introduced the path from collection data through project documents to functional interfaces. Additional project collaborations used one-pagers, workshops, and coaching to support domain experts in developing prototypes for research and administrative workflows.
-
-These experiences indicate that the phases and document types can be communicated and followed in bounded teaching settings. They do not establish that participants can independently produce, maintain, and verify artefacts in their subsequent research. Participant outputs are not included in the public project corpus, and the teaching observations were not collected through a common evaluation protocol.
-
-Collaboration within documented projects provides a second form of experience. In the Notker case, the commissioning scholar retained authority over philological decisions that the editorial guidelines could not settle. In the ZBZ pipeline, processed material was transferred to the partner institution with verification states made explicit. These cases illustrate how scholarly specification and verification can remain with domain experts while implementation proceeds through agentic tooling.
-
-Documented third-party continuation is currently limited to the coOCR-HTR fork. More independent use is needed before claims about transfer beyond the originating practitioner can be made.
-
-## 4.7 Cross-Case Observations
-
-The repository audit also corrected an initially over-uniform account of project practice. Branching and merging vary across the corpus: merge commits occur in several repositories, while others follow linear histories. No Git tags or release objects were found in the audited set, but several projects identify states through dated journals, commit references, document versions, numbered decisions, or named iterations. M³GIM contains a substantial deterministic layer for building views, transforming and validating data, reporting quality, auditing data, and checking manual approvals. HerData provides systematic document-level model provenance, while teiCrafter and FemPrompt contain automated and manual test structures that conventional filename-only searches failed to detect. These corrections support a central methodological point: repositories must be interpreted through their own conventions, and negative evidence is inseparable from the procedure by which it was sought.
+| Case | Primary analytical function | Evidential status |
+| :---- | :---- | :---- |
+| SZD-HTR Pipeline | Verification architecture at production scale | Documented project with restricted production data and public institutional context |
+| CorrespExplorer | Generative exploration, selection, and context degradation | Public interface and public knowledge vault |
+| M³GIM | Promptotyping during modelling and capture | Documented project; public availability varies by project component |
+| ZBZ OCR/TEI Pipeline | Organisational failure, authority correction, and write-back | Public repository, public interface, institutional project page, numbered decision record |
+| Notker Edition | Purpose-specific acceptance before project funding | Proposal-stage promptotype documented through project records |
+| coOCR/HTR | Bounded verification workbench and hybrid checking | Public research-preview interface |
+| teiCrafter | Bounded TEI generation and correction workbench | Public interface; current tool distinct from the earlier Custom GPT precursor |
 
 
-Several qualitative patterns recur across the projects.
+## 4.2 Recurrent Artefact Forms
 
-First, the implementations converge strongly on static, frontend-oriented architectures and limited dependency stacks. This partly reflects the technical guidelines of Promptotyping. It may also reflect the tendencies of current coding models and the kinds of projects selected. The cases do not allow these influences to be separated.
+Across the projects, browser-based artefacts recur because they make project knowledge operational in a directly inspectable form. The interfaces are classified by epistemic function rather than by visualisation technique or source format.
 
-Second, the cases with the most detailed domain and process documentation also produced the most finely differentiated project-specific functions. The Notker edition and the ZBZ pipeline contain extensive editorial or stage-specific specifications. CorrespExplorer depends more heavily on a single design document to mediate between generic visualisation conventions and the research perspective. This is an interpretative comparison within one practitioner’s project record, not a measured relationship.
+**Verification Interfaces** expose intermediate or final outputs for comparison with sources, rules, or alternative outputs. They create review points inside processing pipelines and keep uncertain or unchecked material distinguishable from authorised results.
 
-Third, implementation repeatedly produced knowledge that returned to the knowledge base. Interfaces revealed gaps in data models, tests exposed ambiguities in requirements, and generated outputs required more precise statements about uncertainty, verification, or editorial practice. This recurring write-back supports the method’s treatment of documents as revisable project models rather than static instructions.
+**Exploration Interfaces** make structured research data investigable through filters, linked views, maps, timelines, networks, tables, and alternative forms of navigation. Their purpose is not merely retrieval but the examination of patterns, absences, concentrations, and possible relations (Whitelaw 2015; Roberts 2007; Windhager et al. 2019).
 
-Fourth, promptotypes appeared at different points in the lifecycle of a project. In M³GIM, interfaces were produced while data capture and modelling were still under way, allowing project participants to discuss an emerging data structure through a concrete artefact. In the Notker case, an Edition Interface was produced before the proposed research project had received funding, making the intended editorial model and technical environment inspectable within the application process. These cases show that Promptotyping can operate prospectively. The artefact may serve as an instrument for defining a project rather than only as an output derived from an already settled one. This increases its value for communication and planning, but it also requires the provisional status of the data, model, and interface to remain explicit.
+**Edition Interfaces** connect encoded texts with facsimiles, translations, apparatus, annotations, variants, or correction functions. Their interface decisions are editorial decisions because they determine how textual layers and scholarly interventions become accessible (Pierazzo 2015).
 
-Finally, the projects do not provide a systematic record of abandonment or failure. The surviving repositories are biased towards work that reached a functional state, and the absence of failed projects cannot be interpreted as demonstrating reliability. Section 5 treats this bias as a methodological limit.
+**Capture Interfaces** support structured data entry, annotation, correction, or metadata creation. The available fields and relations operationalise the current data model. Difficulties encountered during capture can therefore reveal inadequacies in the schema, vocabulary, or modelling assumptions.
+
+**Scholarly Workbenches** are bounded environments that combine several functions around one recurrent task. coOCR/HTR combines document viewing, model-assisted transcription, deterministic checks, LLM review, expert correction, and export. teiCrafter combines source inspection, TEI generation, validation, correction, and export. Their significance lies not in replacing full editorial infrastructures but in making a constrained workflow inspectable and modifiable.
+
+The categories may overlap. ZBZ combines several Verification Interfaces with an Edition Interface. M³GIM combines Exploration and Capture. teiCrafter combines Capture and Verification. The typology identifies the dominant scholarly operation rather than assigning every artefact to exactly one class.
+
+## 4.3 Anatomy of an Iteration Across the Cases
+
+![Comparative anatomy of five Promptotyping iterations](assets/figures/figure_03_comparative_anatomy.png)
+
+**Figure 3. Comparative anatomy of five Promptotyping iterations.** The documented projects foreground different forms of work and begin from different project conditions. SZD-HTR emphasises production-scale verification; CorrespExplorer uses generative exploration followed by domain-specific selection; M³GIM integrates interface generation with ongoing modelling and data capture; ZBZ demonstrates organisational correction through write-back after decision E66; and Notker illustrates purpose-specific acceptance at proposal stage. The comparison shows that Promptotyping is not a rigid linear workflow but a recurrent structure whose forms of work vary in depth, sequence, and emphasis.
+
+The comparative view prevents two misunderstandings. First, an iteration is not identical with one implementation session. It may contain several cycles in which findings move back to Distillation, Exploration, or Preparation. Second, a project can use Promptotyping prospectively. M³GIM and Notker show that a promptotype may participate in defining a project before its data or institutional form has stabilised.
+
+## 4.4 SZD-HTR: Verification Architecture at Production Scale
+
+The Stefan Zweig Digital HTR pipeline processes facsimile scans from the Stefan Zweig estate at the Literaturarchiv Salzburg. The material includes manuscripts, typescripts, correspondence, forms, tables, proofs, newspaper material, and heterogeneous compilations described through TEI metadata. The public Stefan Zweig Digital platform provides the institutional and archival context, while the production pipeline and data remain subject to project conditions.[^13]
+
+Preparation brought together the facsimiles, TEI metadata, source typology, transcription purpose, and available standards. The metadata was not treated as ancillary catalogue information. It became machine-actionable context: object types select prompt variants and determine processing routes.
+
+Exploration tested vision-language-model transcription across different hands and source types. The relevant question was not only which model produced the most plausible text. It was where authoritative checking had to enter the workflow and which distinctions between model output, review, and accepted transcription had to remain visible.
+
+Distillation translated these findings into an annotation protocol and a verification concept. Uncertain readings, illegible passages, deletions, insertions, and editorial interventions remain represented through defined markup instead of being silently normalised. The verification concept distinguishes external quality signals, cross-model comparison, human examination, and the authority attached to each form of checking.
+
+Implementation carries these distinctions into the artefact itself. Transcriptions are marked as human-checked, agent-checked, or unchecked rather than collapsed into one confidence score. Human corrections preserve the machine-generated state in an edit history, making intervention traceable and preventing the accepted text from appearing as if it had been generated without correction.
+
+
+The case demonstrates how verification can be built into a production-scale artefact without equating all checks. It also shows the increasing organisational burden of Promptotyping at infrastructure scale: source routing, ground-truth construction, data management, interface curation, and expert verification remain substantial work.
+
+## 4.5 CorrespExplorer: Exploration, Selection, and Context Degradation
+
+CorrespExplorer is a client-side tool for visualising and exploring correspondence metadata in CMIF, a TEI-based interchange format. Its public interface and project page expose maps, timelines, correspondent views, letter lists, topics, and places, while the public Promptotyping Vault makes project documents inspectable.[^14]
+
+The project began from user stories, data and design descriptions, a phase-based journal, and browser tests. Implementation generated twelve coordinated views over the correspondence data. The methodological result was not the number of views. The views created a possibility space that then had to be evaluated and reduced against domain criteria.
+
+Many initial visualisations reproduced established conventions of correspondence research. A heatmap or chord diagram could be technically plausible while remaining poorly matched to the question, the scale of the data, or the treatment of uncertainty. The interface made such limitations concrete. Placing correspondence on a timeline, for example, required explicit decisions about `notBefore` and `notAfter` values. CorrespExplorer ultimately represents uncertain dates as intervals rather than silently converting them into precise points.
+
+This process produced two forms of write-back. Decisions about uncertainty, visual conventions, and retained views entered the design description. The journal separately recorded qualitative degradation during long implementation sessions: as context accumulated, model performance became less reliable and prior distinctions were more easily lost. That observation informed the organisation of later work through shorter sessions, refreshed context, and stronger reliance on maintained documents.
+
+
+CorrespExplorer therefore illustrates that generative abundance does not remove scholarly selection. The model can broaden the set of available representations; the Critical Expert decides which representations are warranted, useful, and adequately specified.
+
+## 4.6 M³GIM: Promptotyping During Modelling and Capture
+
+M³GIM works with archival information represented through RiC-O and JSON-LD. Data capture, vocabulary development, modelling, and interface development proceeded in parallel rather than beginning from a completed dataset.
+
+Early versions of an archive explorer and capture environment were generated from the first available records. This made the emerging project structure visible before the vocabulary and corpus had stabilised. Questions that remained abstract in schema discussions became concrete when records had to be displayed, filtered, connected, or entered. Conversely, interface interaction exposed distinctions that had not yet been represented adequately in the data.
+
+The cycle therefore ran in both directions:
+
+> data model → interface and capture environment → interaction finding → documented modelling decision → revised data model and artefact
+
+![Prospective Promptotyping during modelling and data capture in M³GIM](assets/figures/figure_04_m3gim_loop.png)
+
+**Figure 4. Prospective Promptotyping during modelling and data capture in M³GIM.** The emerging RiC-O and JSON-LD data model shaped the generated exploration and capture interface, while interaction with that interface exposed requirements, ambiguities, and limitations that remained less visible in abstract schema discussions. These findings were recorded in the decision register and journal and written back into the data model and capture process. The case demonstrates that a Promptotyping artefact may participate in the formation of project knowledge rather than merely implement an already stabilised model.
+
+The decision register and journal are methodologically important because interface convenience can otherwise drive unexamined model drift. A local display problem does not necessarily justify changing the conceptual model. The records distinguish changes accepted as domain-model refinements from changes confined to presentation or workflow.
+
+M³GIM demonstrates that a promptotype need not appear only after data collection and modelling have concluded. It can participate in the formation of the project by giving participants a shared operational object through which to examine an emerging model. This prospective use increases the value of the artefact for communication and planning, while making the provisional status of the data and interface especially important.
+
+## 4.7 ZBZ OCR/TEI: Organisational Failure and Method-Level Write-Back
+
+The ZBZ project investigates an agent-based end-to-end workflow for the digital edition of the writings of Jeanne Hersch. The institutional project page describes a work-in-progress edition whose texts are encoded in TEI/XML and follow the transcription principles of the Deutsches Textarchiv. At the time of writing, the institutional page lists 288 texts; the agentic pipeline experiment operates on a defined project corpus of PDF documents and pages whose counts must be reported as dated project-state measurements.[^15]
+
+The public repository documents a staged pipeline from PDF through OCR, layout analysis, entity processing, and TEI in the DTA Basisformat, while the public interface exposes intermediate outputs for inspection.[^16] Each stage creates a format or view that can be validated deterministically, reviewed by an agent, or verified by an editor. The infrastructure is organised around the judgement of the editors rather than around autonomous model approval.
+
+The most instructive event was a failure of work organisation. An agent-based screening stage had recorded approval statuses that no human had authorised. Production and verification had thereby collapsed into one generative operation. The problem was not merely that one output was wrong. The workflow had assigned epistemic authority to an executing agent.
+
+Decision E66 abolished agent screening and introduced per-stream workflow status. The durable correction entered the process and action layer, after which the pipeline was revised from the corrected knowledge base. This is the defining loop of Promptotyping in a negative case: the implementation reveals that the documented work organisation is inadequate; the relevant project knowledge is corrected; the artefact is then rebuilt or revised from that correction.
+
+![The ZBZ OCR/TEI workflow before and after decision E66](assets/figures/figure_05_zbz_e66.png)
+
+**Figure 5. The ZBZ OCR/TEI workflow before and after decision E66.** Before E66, an agent-based screening stage recorded approval statuses that no human had authorised, thereby collapsing production and verification into one generative operation. E66 abolished agent screening and introduced per-stream workflow states. In the revised workflow, deterministic validation and agentic review contribute evidence, while only the Critical Expert may authorise verification or acceptance. The case illustrates write-back as a correction of work organisation and authority rather than merely of generated code.
+
+E66 also produced method-level write-back. The general Promptotyping action rule now states that an agent must never record approval, verification, or acceptance that an accountable person has not explicitly granted. A project-specific failure thus became a project-independent authority boundary.
+
+## 4.8 Notker: Purpose-Specific Acceptance Before Project Funding
+
+The Notker case began with a deliberately small source basis: Psalm 2 from Notker III of St Gall’s Old High German Psalm commentary. Editorial guidelines described the intended treatment of Latin psalm text, Old High German translation, commentary, language changes, textual functions, source references, and marginal sigla. TEI-XML was specified as the canonical encoded source.
+
+The generated Edition Interface made textual layers independently visible and connected them with a modern German translation, facsimile access, patristic sources, comparisons of psalm witnesses, and a parallel textual tradition. The artefact made the proposed editorial model operational before the larger research project existed.
+
+The resulting state was accepted for a specific purpose: it served as a demonstrator in a funding proposal. The acceptance did not claim that the philology was complete, that the sample generalised across the corpus, or that the edition was ready for publication. Several questions remained with the commissioning scholar, including context-dependent interpretation of marginal sigla.
+
+![Purpose-specific acceptance in the Notker edition case](assets/figures/figure_06_notker_acceptance.png)
+
+**Figure 6. Purpose-specific acceptance in the Notker edition case.** Editorial guidelines, a TEI source model, and a deliberately limited sample from Psalm 2 were translated into an edition interface with independently accessible textual layers. The resulting state was accepted as a demonstrator for a funding proposal because it made the proposed editorial model and technical possibilities concrete. This acceptance did not imply corpus-wide philological verification, publication readiness, or completion of the planned edition.
+
+Notker provides the clearest practical explanation of purpose-specific acceptance. An iteration can close coherently without claiming finality. The same artefact would require different criteria if it were accepted for publication, sustained editorial work, or corpus-wide research use.
+
+## 4.9 coOCR/HTR and teiCrafter: Bounded Scholarly Workbenches
+
+coOCR/HTR and teiCrafter are related but distinct workbench forms. They should not be merged into one project history.
+
+### 4.9.1 coOCR/HTR
+
+coOCR/HTR is a browser-based research preview for historical-document transcription and validation. The current public interface supports images, PAGE XML, and IIIF resources; model-assisted transcription; deterministic checks; LLM review; expert correction; and export to text, JSON, Markdown, PAGE XML, or TEI.[^17] Its design separates the document viewer, transcription editor, and validation functions and represents results as confident, uncertain, or problematic rather than as unexplained percentage scores.
+
+The project is a developmental precursor for several later Promptotyping distinctions. Working with real document types exposed the need to separate rule-based validation from model-mediated review, to provide source-specific context, and to support different editorial modes. The interface acted as a form of backtalk: incomplete states and source variation forced distinctions that an abstract description could leave unresolved.
+
+As a public research preview, coOCR/HTR demonstrates a bounded workflow rather than a complete institutional OCR/HTR infrastructure. API conditions, model variability, source rights, and expert verification remain outside what a client-side workbench can solve by itself.
+
+### 4.9.2 teiCrafter
+
+The name teiCrafter refers to two related stages that must remain historically distinct. An early experimental Custom GPT transferred a mapping-rule approach for transforming unstructured correspondence text into TEI. That experiment belongs to the developmental history of externalising transformation rules. The current teiCrafter is a browser-based TEI workbench presented by Digital Humanities Craft and should be treated as a separate, later artefact.[^18]
+
+The workbench operationalises a bounded path from source material to inspectable TEI: source input, generation or transformation, schema-aware checking, expert correction, and export. Its relevance to Promptotyping lies in the way an editorial mapping becomes both an action rule for the agent and an object of scholarly verification. A valid XML document is not sufficient evidence of an adequate encoding. The editor must still assess textual, structural, and semantic fidelity, a distinction also reflected in recent multidimensional evaluation work for LLM-generated TEI (Strutz 2026).
+
+
+Together, the tools show how Promptotyping can produce reusable, inspectable environments around a constrained scholarly task. They also clarify the boundary to ZBZ and SZD: the workbenches demonstrate task-level operations, whereas the pipelines organise several such operations across larger production processes.
+
+## 4.10 Cross-Case Comparison
+
+**Table 1. Documented cases and the distinct function each contributes to the method.**
+
+| Case | Data state | Artefact | Dominant work | Central finding | Write-back | Verification and acceptance |
+| :---- | :---- | :---- | :---- | :---- | :---- | :---- |
+| SZD-HTR | Large evolving estate corpus | Transcription and verification environment | Preparation through Verification | Source typology and checking authority must remain operationally visible | Annotation protocol and verification concept | Human, agent, and unchecked states remain distinct |
+| CorrespExplorer | Existing CMIF corpus | Coordinated exploration views | Exploration | Generative options reproduce conventions unless selected against domain criteria | Design decisions and session organisation | Expert selection of retained views |
+| M³GIM | Data and vocabulary still developing | Exploration and capture environment | Exploration and Capture | Interface interaction can reveal model and capture problems | Decision register and journal | Project team distinguishes model refinement from interface convenience |
+| ZBZ | Staged OCR/TEI production corpus | Processing pipeline, verification interfaces, edition reader | Implementation and Write-back | Agent screening had acquired unauthorised approval authority | E66 and revised workflow states | Only accountable editors authorise verification and acceptance |
+| Notker | Deliberately bounded sample | Proposal-stage Edition Interface | Distillation and purpose-specific Acceptance | A promptotype can make a proposed project operational before funding | Editorial guidelines and accepted demonstration state | Accepted for proposal demonstration, not corpus-wide philological completion |
+| coOCR/HTR | User-supplied images, PAGE XML, IIIF | OCR/HTR workbench | Exploration and Verification | Different checking forms and source contexts require explicit separation | Methodology and workbench design | Expert correction remains necessary |
+| teiCrafter | Textual source and TEI mapping | TEI generation and correction workbench | Distillation and Verification | Schema validity does not establish adequate encoding | Mapping and editorial rules | Editor verifies textual, structural, and semantic fidelity |
+
+Several observations follow.
+
+First, the projects foreground different points in an iteration. The common method does not require a common chronology.
+
+Second, implementation repeatedly produced questions that were not adequately represented in the existing documents. Interface backtalk became methodologically relevant only when those questions were externalised and written back.
+
+Third, write-back can concern several layers: data semantics, interface design, action rules, process organisation, verification criteria, or the general method specification.
+
+Fourth, promptotypes can operate prospectively. M³GIM and Notker used artefacts to form or communicate a project rather than merely to publish settled results.
+
+Fifth, acceptance remains purpose-specific. The ZBZ pipeline requires explicit editorial authority; the Notker demonstrator closes a bounded proposal-stage iteration; coOCR/HTR and teiCrafter remain research previews or workbenches whose outputs require project-specific verification.
+
+Finally, the surviving cases remain subject to selection bias. They document projects that reached inspectable states. They do not provide a systematic record of abandoned projects, failed attempts, or comparative alternatives.
+
+## 4.11 Teaching, Collaboration, and Independent Continuation
+
+Teaching and collaboration experiences provide evidence of communicability rather than transferability. Workshops have guided Digital Humanities researchers, data stewards, and museum professionals through data description, user stories, Promptotyping Documents, and agentic implementation. Participants were able to produce provisional artefacts within bounded settings, but their later independent maintenance and verification were not studied through a common protocol.
+
+Collaboration cases show how responsibility can be distributed. In Notker, the commissioning scholar retained philological authority while agentic-engineering judgement remained with the author. In ZBZ, the partner institution defines editorial acceptance while the pipeline and interfaces organise evidence for that decision.
+
+Documented third-party continuation remains limited. Independent use must therefore be evaluated through sustained project work rather than workshop completion alone.
 
 # 5. Scope, Limits, and Priorities for Evaluation
 
@@ -593,7 +612,7 @@ Future evaluation should distinguish the quality of the knowledge base, the qual
 
 **Knowledge-base quality** concerns whether the maintained documents are complete enough for their purpose, internally coherent, current, traceable to sources and decisions, and usable by another contributor or agent instance without undocumented oral explanation. Relevant questions include whether the knowledge base exposes unresolved issues rather than hiding them, whether contradictory statements can be detected and reconciled, and whether a new person can identify the grounds on which a decision was made.
 
-**Promptotype and artefact quality** concerns functional conformance, source and data fidelity, representational adequacy, usability for the intended scholarly activity, verifiability, accessibility, and the clarity of the documented basis of acceptance. An artefact can satisfy tests while representing the research material inadequately; conversely, a plausible representation may remain unusable or technically fragile. Evaluation therefore requires both formal checks and domain judgement.
+**Promptotype and artefact quality** concerns functional conformance, source and data fidelity, representational adequacy, usability for the intended scholarly activity, verifiability, accessibility, and the clarity of the documented grounds of acceptance. An artefact can satisfy tests while representing the research material inadequately; conversely, a plausible representation may remain unusable or technically fragile. Evaluation therefore requires both formal checks and domain judgement.
 
 **Method quality** concerns the distribution of effort and intervention across Preparation, Exploration, Distillation, Implementation, assessment, verification, and write-back. Relevant measures include the number and type of human interventions, recurrent error categories, the time and expertise required to diagnose and correct failures, the extent to which corrections become reusable project knowledge, model and harness dependence, and the ability of an independent researcher or developer to continue the work.
 
@@ -609,7 +628,7 @@ Promptotyping addresses the distance between modelled research data and the proj
 
 The method externalises the part of this translation that can be articulated in an evolving project knowledge base. Promptotyping Documents describe the data, record requirements and design decisions, preserve process knowledge, guide agentic implementation, and provide the maintained reference against which resulting artefacts are assessed. Implementation can reveal limitations in the data, assumptions, or specification, and these findings return to the knowledge base.
 
-Each accepted iteration yields an identifiable and versioned promptotype: a coherent state connecting maintained project knowledge, the digital research artefact, the documented basis of acceptance, and the research-data state on which the artefact operates. A promptotype can support exploration, internal use, publication, or handover, and it can become the starting point for a later iteration. Acceptance closes one iteration without claiming that the project has become final.
+Each accepted iteration yields an identifiable and versioned promptotype: a coherent state connecting maintained project knowledge, the digital research artefact, the documented grounds of acceptance, and the research-data state on which the artefact operates. A promptotype can support exploration, internal use, publication, or handover, and it can become the starting point for a later iteration. Acceptance closes one iteration without claiming that the project has become final.
 
 The knowledge base is not authoritative independently of the people who work with it. Its authority relative to implementation arises through the accountable engagement of researchers and technical contributors who interpret, maintain, contest, and approve its contents. Promptotyping therefore does not transfer scholarly authority to an AI agent. It changes the form in which scholarly knowledge guides implementation and the range of implementation work that can be performed from it.
 
@@ -620,9 +639,6 @@ The contribution is one of amplification rather than replacement: agentic work c
 The documented projects demonstrate the feasibility and breadth of the method within the author’s practice across heterogeneous data types and several interface functions. They do not establish comparative efficacy or independent transferability. As the cross-case observations in Section 4.7 show, promptotypes need not appear only after a project has stabilised; they may participate in the formation of the project itself.
 
 Further work should test Promptotyping with independent researchers, compare it with alternative development practices, establish appropriate criteria for knowledge-base, promptotype, and artefact quality, and examine where domain experts can work without sustained hybrid support. The public method specification and templates provide a basis for that work, while versioned project repositories preserve the documented practice from which the method was consolidated.
-
-
-[^zbz-e66]: DHCraft, `zbz-ocr-tei/knowledge/decisions.md`, decision E66, “Abolish agent screening, introduce per-stream workflow status”, 26 May 2026. The decision is cited as a project record rather than as a general scholarly source.
 
 ## AI Use and Research Provenance
 
@@ -765,9 +781,15 @@ Zhao, Wayne Xin, Kun Zhou, Junyi Li, Tianyi Tang, Xiaolei Wang, Yupeng Hou, Ying
 Zhong, Hailin, and Shengxin Zhu. 2026. “AI Harness Engineering: A Runtime Substrate for Foundation-Model Software Agents.” *arXiv*. [https://doi.org/10.48550/arXiv.2605.13357](https://doi.org/10.48550/arXiv.2605.13357).  
 
 
+
+## Figure files
+
+The figures are stored in the accompanying `figures/` directory and are referenced through relative Markdown paths. They form a single monochrome journal-figure series prepared for this manuscript.
+
+
 [^1]: Following the research activities described in TaDiRAH, the Taxonomy of Digital Research Activities in the Humanities (Borek et al. 2021). [https://vocabs.dariah.eu/tadirah/](https://vocabs.dariah.eu/tadirah/)
 
-[^2]:  Large language models are large-scale pretrained generative models capable of producing and transforming natural language, structured data, and source code from textual instructions (Zhao et al. 2023).
+[^2]: Large language models are large-scale pretrained generative models capable of producing and transforming natural language, structured data, and source code from textual instructions (Zhao et al. 2023).
 
 [^3]: The *Bookkeeping Ontology* formalises historical accounting transactions and their constituent entities and relations. Version 1.2, 2022. [https://gams.uni-graz.at/o:depcha.bookkeeping#](https://gams.uni-graz.at/o:depcha.bookkeeping#)
 
@@ -786,3 +808,18 @@ Zhong, Hailin, and Shengxin Zhu. 2026. “AI Harness Engineering: A Runtime Subs
 [^10]: Examples include TEI, LIDO, CMIF, PAGE XML, and RDF-based models.
 
 [^11]: The pipeline processes material described through TEI metadata from the Stefan Zweig Digital platform. It is listed in Table 1 and discussed further in Section 4.
+
+[^12]: DHCraft, `zbz-ocr-tei/knowledge/decisions.md`, decision E66, “Abolish agent screening, introduce per-stream workflow status”, 26 May 2026. The decision is cited as a project record rather than as a general scholarly source.
+
+[^13]: Stefan Zweig Digital provides the public archival and scholarly platform for the estate. [https://stefanzweig.digital/](https://stefanzweig.digital/) (accessed 29 July 2026). The production pipeline discussed here is a project-specific implementation and should not be inferred solely from the public platform.
+
+[^14]: CorrespExplorer public interface: [https://dhcraft.org/CorrespExplorer/](https://dhcraft.org/CorrespExplorer/); project description: [https://dhcraft.org/CorrespExplorer/about.html](https://dhcraft.org/CorrespExplorer/about.html); public Promptotyping Vault: [https://dhcraft.org/CorrespExplorer/vault.html](https://dhcraft.org/CorrespExplorer/vault.html) (all accessed 29 July 2026).
+
+[^15]: Zentralbibliothek Zürich, “Jeanne Hersch: Digitale Neuauflage der Schriften,” [https://www.zb.uzh.ch/de/jeanne-hersch-digitale-neuauflage-der-schriften](https://www.zb.uzh.ch/de/jeanne-hersch-digitale-neuauflage-der-schriften) (accessed 29 July 2026). The institutional page currently states 288 texts. Pipeline counts refer to dated working states and may differ according to the selected document and page set.
+
+[^16]: ZBZ OCR/TEI repository: [https://github.com/chpollin/zbz-ocr-tei](https://github.com/chpollin/zbz-ocr-tei); public interface: [https://chpollin.github.io/zbz-ocr-tei](https://chpollin.github.io/zbz-ocr-tei) (accessed 29 July 2026).
+
+[^17]: Digital Humanities Craft, *coOCR/HTR Workbench*, [https://dhcraft.org/co-ocr-htr/](https://dhcraft.org/co-ocr-htr/) (accessed 29 July 2026). The interface describes itself as a research preview and exposes model configuration, local and hosted model options, deterministic checks, LLM review, expert correction, IIIF input, and several export formats.
+
+[^18]: Current teiCrafter interface: [https://dhcraft.org/teiCrafter](https://dhcraft.org/teiCrafter) (accessed 29 July 2026). Earlier experimental Custom GPT documentation: [https://digedtnt.github.io/teiCrafter/](https://digedtnt.github.io/teiCrafter/) (accessed 29 July 2026). The two should not be treated as the same software state.
+
