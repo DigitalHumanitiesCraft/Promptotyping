@@ -10,7 +10,7 @@ created: 2026-07-19
 updated: 2026-07-29
 ---
 
-# The duration and cost figures of Section 5 are experiential values outside deterministic checking.
+# The duration and cost figures of the paper's project inventory are experiential values outside deterministic checking.
 
 ## Statement
 

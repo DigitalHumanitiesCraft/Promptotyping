@@ -9,7 +9,7 @@ Bevor du eine Aufgabe in diesem Repo angehst, lies in dieser Reihenfolge:
 1. `knowledge/INDEX.md` — Navigation und Begriffslexikon
 2. `knowledge/project.md` — was die Site ist, wer die Adressaten sind
 3. Das jeweils aufgabenrelevante Dokument:
-   - Paper-Arbeit → `knowledge/paper-writing.md` (Steuerung, Sprachregeln, Prüfpunkte), von dort `knowledge/paper.md` (der Text)
+   - Paper-Arbeit → `knowledge/paper-writing.md` (Steuerung, Sprachregeln, Prüfpunkte), von dort `knowledge/paper.md` (der kanonische Text). Übergangslage seit dem 2026-07-29: die Weiterarbeit am Text läuft in `knowledge/paper-draft.md`, gesteuert von `knowledge/paper-knowledge.md`; `paper.md` bleibt der von der Site gerenderte Stand, bis die Kapitelabnahme durch ist.
    - Was-soll-die-Site-können → `knowledge/specification.md`
    - Wie-ist-es-gebaut → `knowledge/architecture.md`
    - Wie-sieht-es-aus → `knowledge/design.md`

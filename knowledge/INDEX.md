@@ -7,7 +7,7 @@ status: complete
 language: en
 version: 0.9
 created: 2026-05-09
-updated: 2026-07-26
+updated: 2026-07-29
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5, Claude Opus 5)
 method:
@@ -18,7 +18,7 @@ template:
   version: 0.2
   url: https://dhcraft.org/Promptotyping/promptotyping-document/index
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-index
-related: [project, specification, architecture, design, journal, paper, paper-writing, paper-argument-map, report, submission-zfdg, revision, skriptum-video-1, skriptum-video-2]
+related: [project, specification, architecture, design, journal, paper, paper-draft, paper-knowledge, paper-writing, verification-draft-sources, paper-argument-map, report, submission-zfdg, revision, skriptum-video-1, skriptum-video-2]
 ---
 
 # INDEX
@@ -43,14 +43,17 @@ By operator decision of 2026-07-23 the core knowledge documents (INDEX, project,
 - **[design.md](design.md)** — how the site looks and behaves: DHCraft design system, side panels, typography (function: Design).
 - **[journal.md](journal.md)** — chronological process record, German (function: Provenance).
 - **[paper.md](paper.md)** — the full English paper text as one document, the canonical text after the revision rounds of 2026-07-24 and 2026-07-25; headerless by design for copy-out. The site renders this file directly, so the deployed text is the canonical text.
-- **[paper-writing.md](paper-writing.md)** — what holds for the paper text: working mode, core statements, section mirror, the language rule catalogue, the binding decisions by subject, open decisions and checkpoints, and the route to submission. German. It deliberately carries no history; the course of the work is in `journal.md` and in the git history.
+- **[paper-writing.md](paper-writing.md)** — what holds for the paper text: working mode, core statements, section mirror, the language rule catalogue, the binding decisions by subject, open decisions and checkpoints, and the route to submission. German. It deliberately carries no history; the course of the work is in `journal.md` and in the git history. Its opening note records the transitional regime of 2026-07-29.
+- **[paper-draft.md](paper-draft.md)** — the restructured manuscript of 2026-07-29 in six chapters, taken in as a working file beside the canonical text. It becomes `paper.md` when the chapter-wise acceptance has run to the end; until then the site keeps rendering the canonical file.
+- **[paper-knowledge.md](paper-knowledge.md)** — the steering document that governs the draft during the transition, with the revision boundary, the placeholder convention, and the acceptance state per chapter. German.
+- **[verification-draft-sources.md](verification-draft-sources.md)** — verdict table for the draft's 2025 and 2026 sources, one row per work with the check that ran and what it found. German.
 - **[paper-argument-map.md](paper-argument-map.md)** — the concept model of the paper, one argument chain per block in compact notation with confirmation status, German. Serves the operator as a review instrument and an agent as a generation basis.
 - **[skriptum-video-1.md](skriptum-video-1.md)** and **[skriptum-video-2.md](skriptum-video-2.md)** — the cleaned scripts of the two introductory videos, German. They are the source from which the worked-workflow page was written and, through their representations in the vault, the ground of the claims that rest on the videos.
 - **[report.md](report.md)** — snapshot report of the lane run towards the ZfdG submission (2026-07-23), German; carries a dated addendum on what the revision round settled and is not otherwise updated.
 - **[submission-zfdg.md](submission-zfdg.md)** — submission package for the Zeitschrift für digitale Geisteswissenschaften: exposé with outline and literature selection, short abstracts in German and English, formalities checklist; German.
 - **[revision.md](revision.md)** — the revision round in one document, since the consolidation of 2026-07-26. It carries the steering knowledge that binds future review commissions, what was carried into the paper and where it now sits, the evidence layer with its counting methods and provenance grades, the negative findings that protect the text from being weakened, and what stayed open; German (function: Verification).
 
-The paper work follows a two-document model, the text in `paper.md` and the knowledge about it in `paper-writing.md`; the argument map is the third, optional layer over both. A `data.md` deliberately does not exist; the Material template does not carry for method repositories, and the material basis lives in `project.md` (journal entry of 2026-05-09).
+The paper work follows a two-document model, the text in `paper.md` and the knowledge about it in `paper-writing.md`; the argument map is the third, optional layer over both. Since 2026-07-29 a transitional second track runs beside it, the draft in `paper-draft.md` steered by `paper-knowledge.md`, and the two tracks merge when the draft replaces the canonical text. A `data.md` deliberately does not exist; the Material template does not carry for method repositories, and the material basis lives in `project.md` (journal entry of 2026-05-09).
 
 ### The revision round
 
