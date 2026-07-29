@@ -1,8 +1,8 @@
 # Promptotyping Paper: Knowledge Document
 
-**Updated:** 29 July 2026, after conceptual revision of *promptotype*, iteration, versioning, and figure integration.
+**Updated:** 29 July 2026, evening, after intake of the operator's final candidate (`Promptotyping_final_candidate.md`) as `knowledge/paper-draft.md`.
 
-**Status:** This document records the current authoritative understanding for the revised manuscript. The Introduction, Sections 1.1–1.2, and the historical genesis before Section 2.1 remain substantively unchanged. The revised definition and all consequences from Section 2.1 onward are consolidated here and implemented in `Promptotyping_Paper_revised.md`. Author acceptance is still required before the complete manuscript becomes canonical.
+**Status:** This document records the current authoritative understanding for the revised manuscript. The working text is `knowledge/paper-draft.md`; the site keeps rendering `knowledge/paper.md` until chapter-wise acceptance is complete. Author acceptance is still required before the complete manuscript becomes canonical.
 
 **Function:** Governing knowledge for completing the paper, preserving its strongest established arguments, preventing duplication, and synchronising terminology, figures, cases, citations, and revision boundaries.
 
@@ -33,14 +33,13 @@ The paper reconstructs and consolidates a method from documented practice. It do
 
 ## 2. Paper Architecture
 
-The six-chapter structure is retained:
+Since the final candidate of 29 July 2026 the manuscript has five sections; the former Foundations chapter is folded into the Introduction, and the Conclusion is a subsection of the limits chapter:
 
-1. **Foundations:** research data, digital research artefacts, Scholar-Centred Design, Context Engineering, Agentic Engineering, AI harnesses, and the Critical Expert.
-2. **Promptotyping:** genesis, definition, recurring forms of work, Promptotyping Documents, agentic implementation, checking, acceptance, write-back, and versioned promptotypes.
-3. **Epistemic and Methodological Implications:** artefacts as arguments, semantic explicitness, documents as conceptual models, distributed judgement, acceptance and publication, reconstructability.
-4. **Promptotyping in Practice:** technical defaults, interface typology, project inventory, worked cases, teaching and collaboration, cross-case observations.
-5. **Limits and Priorities for Evaluation:** empirical, epistemic, technical, organisational, infrastructural, and transfer limits.
-6. **Conclusion:** concise statement of contribution, responsibility, evidential reach, and evaluation priorities.
+1. **Introduction:** the translation problem, Scholar-Centred Design (1.1), Context Engineering, Agentic Engineering, AI harnesses, and the Critical Expert (1.2).
+2. **Promptotyping:** genesis, definition (2.1), Preparation and Exploration (2.2), Distillation and Promptotyping Documents (2.3), agentic implementation, checking, acceptance, write-back, and versioned promptotypes (2.4).
+3. **Epistemic and Methodological Implications:** artefacts as arguments, semantic explicitness, documents as conceptual models, distributed judgement, acceptance and publication, reconstructability (3.1–3.6).
+4. **Promptotyping in Practice:** static artefacts, interface typology, principle of presentation, project inventory, worked cases, teaching and collaboration, cross-case observations (4.1–4.7).
+5. **Scope, Limits, and Priorities for Evaluation:** empirical scope, conditions of applicability, limits, transferability, evaluation priorities, and the Conclusion as 5.6.
 
 ### Chapter-boundary rule
 
@@ -468,14 +467,15 @@ The Conclusion may summarise these points in one sentence each but must not rede
 
 ## 17. Active Work Block
 
-1. Author review and acceptance of the revised promptotype definition and the two integrated figures.
-2. Decide whether Figure 4’s wording “release the next version” remains or is later changed to “record the next version”; the prose currently prevents a publication-only reading.
-3. Deposit the Doctoral Congress presentation and replace the provisional footnote wording with a persistent identifier.
-4. Verify all 2025–2026 publication details and each citation anchor against the cited work.
-5. Verify project repositories, especially provenance declarations, Notker workflow details, and teiCrafter’s current state.
+Applied silently at intake on 29 July 2026, all four verified earlier the same day against the live sources: TEI Guidelines corrected to Version 4.12.0, 28 July 2026; Cao 2026 carries the current v2 title "Agentic Software: How AI Agents Are Restructuring the Software Paradigm"; Strutz 2026 carries the issue number, JOHD 12 (1): 39; the duplicate suffix Pollin 2026a was split, LISA keeps 2026a and Asymmetric Amplification becomes 2026b, with the one in-text citation in 5.3 adjusted.
+
+1. Author review and acceptance of the final candidate chapter by chapter, with the style-catalogue pass per chapter at acceptance.
+2. Orphaned references, cite or remove: Berners-Lee 2025, Flanders and Jannidis 2019, Pichler and Reiter 2022, Pollin 2025c (Critical Vibing), and Pollin et al. 2025 (the ZfdG survey; with it the Strutz benchmark hook from the previous draft has disappeared).
+3. Dropped against the previous draft, confirm or restore: the Karpathy footnote naming the origin of the term vibe coding (the concept is now carried by Sarkar and Drosos 2025 alone), and Summerfield 2025, which leaves the confabulation sentence in 2.4 without a source.
+4. Figures: the Wheaton asset `assets/figures/wheaton-day-book.png` does not exist yet and must come from the dissertation materials; Figure 3 is mapped at intake onto the existing `assets/figures/figure-2-document-types.png`; the regeneration list in `assets/figures/PROVENANCE.md` for Figures 1 and 4 stands.
+5. Deposit the Doctoral Congress presentation and replace the provisional footnote wording with a persistent identifier.
 6. Decide whether Audit Interfaces remain a candidate extension or are promoted after additional evidence.
-7. Perform a final transition and redundancy pass after author acceptance.
-8. Archive restructuring and mechanical repair records outside this active document.
+7. Perform a final transition and redundancy pass after author acceptance, then swap `paper.md` and re-key the vault register and the site anchors.
 
 A manuscript section is accepted only when:
 

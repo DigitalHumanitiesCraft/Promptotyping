@@ -620,3 +620,13 @@ Die Prüfung hat sich gelohnt. Die Synthese trägt die Modellnamen des Datensatz
 **Verifiziert.** Muster-Zählungen am Dateistand bestätigt, Überschriften des Drafts unverändert, die Rückholungen des Abends (Karpathy, Benchmark-Aufhänger, Summerfield) intakt, neun Prüfgruppen ohne Befund, Vault-Validator fehlerfrei.
 
 **Offen.** Die zwei letzten Recherche-Berichte (Notker-Workflow für 3.4, teiCrafter) stehen aus und werden nach Eingang eingearbeitet. Danach die Kapitelabnahme mit dem Operator entlang der acht gemeldeten Befunde, die Site-Schicht (Anker-Aliase, V10, Figuren 2 und 3) erst, wenn der Text steht.
+
+### 2026-07-29, spät — Der Final Candidate zieht ein, fünf Sektionen statt sechs Kapitel
+
+**Ziel.** Die vom Operator gelieferte Fassung `Promptotyping_final_candidate.md` als neuen Arbeitsstand aufnehmen, gegen den bisherigen Draft und die am selben Tag verifizierten Quellenbefunde abgleichen, die Steuerdokumente nachziehen.
+
+**Verlauf.** Die Fassung restrukturiert erneut, die Foundations sind in die Introduction gefaltet (1.1, 1.2), die Conclusion ist 5.6, alle Platzhalter sind aufgelöst. Sie integriert die offenen Rechercheergebnisse selbst, den Notker-Fall als Worked Case und als Beleg der verteilten Urteilsformen in 3.4, die ZBZ-Entscheidung E66 als Fußnote zur Grenze des agentischen Reviews, Strutz als externen Vergleichsfall in 2.4, Spec-Driven Development (Macedo 2026) und Vibe Coding (Sarkar und Drosos 2025) als Einordnung. Bei der Aufnahme bereinigt wurden die Google-Docs-Escapes, die H1-Fettung und die Bildpfade; Figure 3 ist auf das vorhandene `figure-2-document-types.png` gelegt, das Wheaton-Asset für Figure 2 fehlt weiterhin. Still angewandt, weil am selben Tag quellenverifiziert: TEI 4.12.0, der Cao-v2-Titel, die JOHD-Heftangabe, die Auflösung der Suffix-Kollision Pollin 2026a in 2026a (LISA) und 2026b (Asymmetric Amplification).
+
+**Befunde für die Abnahme.** Fünf Waisen im Literaturverzeichnis (Berners-Lee 2025, Flanders/Jannidis 2019, Pichler/Reiter 2022, Pollin 2025c, Pollin et al. 2025, mit letzterem ist der Benchmark-Aufhänger des vorigen Drafts entfallen). Gegenüber dem vorigen Draft gestrichen und zu bestätigen: die Karpathy-Fußnote zur Herkunft des Begriffs Vibe Coding und Summerfield 2025, womit der Konfabulationssatz in 2.4 ohne Quelle steht. Der Katalog-Durchgang je Kapitel steht aus.
+
+**Ergebnis.** `knowledge/paper-draft.md` trägt den Final Candidate, `paper-knowledge.md` führt die Fünf-Sektionen-Struktur und den aktualisierten Active Work Block. Die Site rendert unverändert `paper.md`.
