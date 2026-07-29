@@ -690,3 +690,11 @@ Die Prüfung hat sich gelohnt. Die Synthese trägt die Modellnamen des Datensatz
 **Verifiziert.** `check_consistency.py` neun Prüfgruppen ohne Befund, JS-Syntax beider geänderter Dateien sauber, alle internen Anker der Seite lösen gegen Registry beziehungsweise Seitenbestand auf.
 
 **Offen.** Ein Glossareintrag `promptotype` fehlt der Site weiterhin und gehört zur Abnahme- und Swap-Runde, weil er die neue Definition trägt. Der Seitenstatus bleibt `draft` bis zur Operator-Abnahme des Seitentexts.
+
+### 2026-07-29, Nacht V — Frontend-Plan als Wissensdokument, vor dem Compact
+
+**Ziel.** Die im Abendverlauf gesammelten Frontend-Anliegen des Operators in einen Plan überführen, der den Context-Compact überlebt, mit Scope, Spezifikationsbezug und offenen Entscheidungen je Paket.
+
+**Ausgeführt.** `knowledge/plan.md` neu (Funktion Planning, im INDEX registriert) mit neun Paketen: F1 Paper-Kapitelverfolgung in der Sidebar als permanenter Unterbaum mit Scrollspy, ausdrücklich ohne Einklapp-Verhalten (Operator-Regel des Abends, samt Sweep-Auftrag gegen bestehende Collapse-Muster); F2 auflösbare Quellen-Links im Glossar über strukturierte Source-Felder plus die Verlinkung der Tabelle-1-Projekte auf ihre Case-Karten; F3 Glossar-Symbolik über eine noch zu entscheidende kontrollierte Taxonomie, monochrom, Wort immer daneben; F4 konstruktive Vault-Ansicht mit Netzwerk-Exploration über die Ankerstruktur, Liste bleibt primär; F5 die Paper-Begleitung als Entscheidungspaket, weil die gewünschte rechte Animation mit A23, der Modul-Liste und dem Animationsverbot kollidiert, Empfehlung interaktive Figur 1 in der Lesespalte nach dem Swap; F6 das Swap-Paket gesammelt; F7 Tutorial-Abnahme; F8 Multimedia-Schicht des Tutorials aus den Unterrichtsmaterialien im Obsidian-Vault; F9 die Informationsarchitektur-Konsolidierung als Entscheidungspaket, Spezifikation auf eine Seite und mögliche Zusammenführungen der informativen Seiten, unter der bindenden Bedingung, dass publizierte Anker nie brechen.
+
+**Offen.** F9 vor F1 entscheiden, weil beide dasselbe Unterbaum-Muster verwenden; F5, F3-Vokabular, F8-Folienauswahl und alle F9-Merges sind Operator-Entscheidungen.
