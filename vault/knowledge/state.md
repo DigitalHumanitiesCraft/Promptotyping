@@ -60,43 +60,43 @@ The bibliography-traceability sweep of 2026-07-23 added the paper's cited public
 
 ## Section register
 
-The deliverable is external and single-file (settled decision in [[knowledge/specification]]); the site renders the canonical text at the root of this repository directly. The writing status of the paper is tracked in the repository's `knowledge/paper-writing.md` and is deliberately not mirrored here.
+The deliverable is external and single-file (settled decision in [[knowledge/specification]]); the canonical text is `knowledge/paper.md` at the root of this repository, which the site renders directly. Headings below are taken from that file. The writing status of the paper is tracked in the repository's `knowledge/paper-writing.md` and is deliberately not mirrored here.
 
-Since 2026-07-29 the table tracks the restructured manuscript `knowledge/paper-draft.md` in six chapters, and its headings are taken from that file. The old canonical `knowledge/paper.md` in seven sections keeps rendering on the site until the draft is accepted; its heading list is recoverable from the Git history of this document. The claim-coverage table below still keys to the sections of `knowledge/paper.md` and is rebuilt against the draft at acceptance, so the two tables are not read against each other until then. [[knowledge/register-paper-sources]] was re-keyed to the draft on the same day.
+Transitional state since 2026-07-29. The repository runs a second track, the restructured manuscript `knowledge/paper-draft.md`, whose acceptance proceeds chapter by chapter; the vault stays anchored to the canonical file, and every register here is re-keyed to the draft's structure in one pass when the swap happens, together with the role column of [[knowledge/register-paper-sources]], which records the draft's treatment of each work in the meantime. This table carried the draft's six-chapter structure between the re-keying of 2026-07-29 and the correction of the same day; that heading list is recoverable from the Git history of this document.
 
-| Chapter | Heading | Notes |
+| Section | Heading | Notes |
 |---|---|---|
 | — | Abstract | |
-| 1 | Introduction | |
-| 1.1 | Translating Research Data into Digital Research Artefacts through Scholar-Centred Design | carries the genealogy and the collaboration condition of the old Section 1 |
-| 1.2 | Context Engineering and Agentic Engineering | the terms Agentic Engineering and AI harness rest on three preprints, framed as first uses |
-| 2 | Promptotyping | chapter opening carries the developmental reconstruction of the old Section 2.5 |
-| 2.1 | Definition | |
-| 2.2 | Preparation and Exploration | |
-| 2.3 | Distillation into Promptotyping Documents | document typology and the data-management-plan comparison of the old 3.3 |
-| 2.4 | Agentic Implementation and Verification | absorbs the Vibe-Coding and Spec-Driven-Development delimitations of the old 2.4 and the V&V material of the old 6.2 |
-| 3 | Epistemic and Methodological Implications | |
-| 3.1 | Research Artefacts as Scholarly Arguments | carries the exploration-and-building material of the old 2.1 |
-| 3.2 | Semantic Explicitness and the Limits of Context | carries the research-data material of the old 2.2 |
-| 3.3 | Documents as Conceptual Models and Mediating Structures | modelling theory and ontology material of the old 2.3 |
-| 3.4 | Amplification, Distributed Authority, and the Limits of Externalisation | |
-| 3.5 | Promptotypes, Acceptance, and Publication | carries the material of the old 6.1 |
-| 3.6 | Reconstructability and Model Dependence | carries the material of the old 6.3 |
-| 4 | Promptotyping in Practice: Artefact Forms and Documented Projects | |
-| 4.1 | Self-Contained Static Artefacts | FAIR4RS passage grounded in the szd-htr audit of 2026-07-23 |
-| 4.2 | An Epistemic Typology of Interfaces | the TaDiRAH attribution is flagged in Open work below |
-| 4.3 | Principle of Presentation | |
-| 4.4 | Project Inventory | figures verified 2026-07-19, one Evidence claim per verified figure |
-| 4.5 | Worked Cases by Epistemic Function | |
-| 4.6 | Teaching and Collaboration Experiences | |
-| 4.7 | Cross-Case Observations | |
-| 5 | Limits and Priorities for Evaluation | |
-| 5.1 | Methodological and Empirical Limits | |
-| 5.2 | Dependence on Expertise and Data | |
-| 5.3 | Technical, Organisational, and Infrastructural Limits | asymmetric amplification, carried by pollin-2026a |
-| 5.4 | Transferability and Open Questions | |
-| 6 | Conclusion | |
-| — | AI Use and Research Provenance | |
+| 1 | Introduction | translation-problem genealogy carried by MOC-Frame claims |
+| 2 | The Epistemic Frame | |
+| 2.1 | Exploration, Building, and Their Correctives | merged from the former 2.1 and 2.2 in the revision of 2026-07-25 |
+| 2.2 | LLMs and Research Data | the vocabulary-derivation passage rests on the M³GIM findings source of 2026-07-24 |
+| 2.3 | The Translation Problem, and Documents as Conceptual Models | absorbed the modelling-theory and ontology material of the former Section 3.4 in the revision of 2026-07-24 |
+| 2.4 | Position in the AI Discourse | Spec-Driven-Development delimitation carried by the four SDD claims under MOC-Frame |
+| 2.5 | Genealogy | |
+| 3 | The Method | |
+| 3.1 | Status and Provenance | |
+| 3.2 | The Four Phases | |
+| 3.3 | The Promptotyping Documents | standardisation passage grounded via MOC-Method; the data-management-plan comparison moved here from the former 3.4 |
+| 3.4 | A Worked Example: The Stefan Zweig HTR Pipeline | new 3.4 after the revision; the former 3.4 was dissolved into 2.3 and 3.3 |
+| 4 | The Artefact Type | |
+| 4.1 | Self-Contained Static Web Tools | FAIR4RS passage grounded in the szd-htr audit of 2026-07-23 |
+| 4.2 | A Typology of Promptotyping Interfaces | the TaDiRAH attribution is flagged in Open work below |
+| 4.3 | Limits of the Format, and the Handover Point | |
+| 5 | Evidence: The Documented Projects | carries the material of the former Section 4 |
+| 5.1 | Principle of Presentation | |
+| 5.2 | The Project Inventory | figures verified 2026-07-19, one Evidence claim per verified figure |
+| 5.3 | Worked Cases by Epistemic Function | |
+| 5.4 | Teaching and Collaboration Cases | |
+| 5.5 | Reading the Evidence | |
+| 6 | Discussion | |
+| 6.1 | Process and Publication | |
+| 6.2 | Verification and Validation | |
+| 6.3 | Reproducibility and LLM Dependence | |
+| 6.4 | Limits | asymmetric amplification, carried by the vault slug `pollin-2026a` |
+| 6.5 | Transferability | |
+| 7 | Conclusion | |
+| — | Acknowledgements | |
 | — | References | registered work by work in [[knowledge/register-paper-sources]] |
 
 ### Claim coverage by paper section
@@ -157,5 +157,5 @@ Claims the table places in no section, and which therefore have no current use i
 - Notes for the paper session from the llmdh ingest: the site carries no literal "Cologne"; the location rests on the host domain `uni-koeln.de`. The site heads the session "Advanced Prompting Techniques" (within "Prompt Engineering & AI Engineering"), while the paper's footnote in 2.6 writes "Advanced Prompt Engineering"; the school dates are September 8-11, 2025. Correction candidates for the footnote wording.
 - Open from the jagged-frontier intake of 2026-07-26. Mollick 2024 has a CSL record and a register row but no distillate; the trade book has no legitimate open copy with a citable locator, and the search of that day found only reviews and second-hand summaries of the principle the paper takes from it. The Section 2.4 sentence about the system standing between an instrument and a counterpart therefore rests on the citation alone until an operator copy supplies a page. Dell'Acqua et al. 2023 is ingested, distilled against the openly hosted working-paper PDF and carried by two claims under [[20_claims/MOC-Frame]].
 - Evidential limit of the frontmatter-core survey of 2026-07-26. The run read local working copies, kept no script and recorded no file list, so its figures cannot be recomputed and a repetition would measure a changed stock. Its base excludes documents without frontmatter, which the audit of 2026-07-19 found in roughly a third of the knowledge bases, so the rate of about half describes the documents that already carry frontmatter. [[20_claims/reduced-frontmatter-core-met-in-about-half-the-documents-2026-07-26]] states the limit in the claim itself and is not to be read as an externally checkable measurement. Upgrade path if the figure is to carry more weight: a retained script under `tools/analysis/` over a pinned file list, which would turn the source into a data source with a reproducible computation.
-- Left open by the register re-keying of 2026-07-29. Nine works the draft cites entered [[knowledge/register-paper-sources]] at status `csl` and have no distillate yet: alenezi-2026, cao-2026, flanders-2015, sapkota-2026, schulhoff-2024, tei-consortium-2026, wang-2024, zhao-2023, zhong-2026. Five are openly readable and can be distilled at once (the four arXiv preprints and surveys plus the TEI Guidelines); three are class C behind a publisher paywall at the cited DOI (sapkota-2026, wang-2024, flanders-2015) and need an operator copy or an open carrier before a quote-checked statement is possible. The thirty-seven rows the draft no longer cites keep their distillates and claims as checked material under the role `orphaned (draft)`; among them yehudai-2025, the only peer-reviewed carrier of the agent term in the register, and borek-2016, which carried the structural half of the TaDiRAH statement.
+- Left open by the register re-keying of 2026-07-29. The works that entered [[knowledge/register-paper-sources]] for the draft alone stand at status `csl` and have no distillate yet: alenezi-2026, cao-2026, flanders-2015, sapkota-2026, schulhoff-2024, tei-consortium-2026, wang-2024, zhao-2023, zhong-2026. The four arXiv preprints and surveys plus the TEI Guidelines are openly readable and can be distilled at once; sapkota-2026, wang-2024 and flanders-2015 are class C behind a publisher paywall at the cited DOI and need an operator copy or an open carrier before a quote-checked statement is possible. Works the draft no longer cites keep their distillates and claims as checked material and carry `draft: dropped` beside their canonical role; among them yehudai-2025, the only peer-reviewed carrier of the agent term in the register and not cited in `knowledge/paper.md` either, and borek-2016, which carries the structural half of the TaDiRAH statement in the canonical file.
 - Note for the paper session (Concepts): [[20_claims/deck-characterises-llms-as-jagged-alien]] and [[20_claims/deck-derives-context-and-verification-from-llm-profile]] ground a possible Jagged-Alien-Intelligence passage. The Section 2.7 once named as its attachment point does not exist in `knowledge/paper.md`; the passage was never written, and Section 2.5 or Section 6.4 would be where it could go. The claims carry what the teaching material states and dates; whether the characterisation holds of LLMs would need external sources or enters as a posit.
