@@ -8,12 +8,12 @@ checked:
   quote: 2026-07-23
   validation: 2026-07-23
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # Distillate: Workflows in the SSH Open Marketplace (Barbot et al. 2024)
 
-The paper describes the SSH Open Marketplace and its workflows as step-by-step research scenarios pointing to resources; knowledge/paper.md 4.2 cites it as the field's workflow registry that records workflows as activity chains without a vocabulary for the artefacts that carry them.
+The paper describes the SSH Open Marketplace and its workflows as step-by-step research scenarios pointing to resources; the paper's interface typology cites it as the field's workflow registry that records workflows as activity chains without a vocabulary for the artefacts that carry them.
 
 ## Core statements
 
@@ -32,7 +32,7 @@ The paper describes the SSH Open Marketplace and its workflows as step-by-step r
 
 ## Open questions
 
-- knowledge/paper.md 4.2 states the Marketplace records workflows "as chains of TaDiRAH-annotated activities". The text retrieved at intake describes workflows as chains of steps/actions but did NOT surface any mention of TaDiRAH or activity-classification by TaDiRAH terms. The grounded statements here confine the claim to "chains of steps/actions"; the TaDiRAH-annotation attribution is unverified against this source and is flagged in the intake report as a paper-vs-source mismatch to check.
+- The paper's interface typology states the Marketplace records workflows "as chains of TaDiRAH-annotated activities". The text retrieved at intake describes workflows as chains of steps/actions but did NOT surface any mention of TaDiRAH or activity-classification by TaDiRAH terms. The grounded statements here confine the claim to "chains of steps/actions"; the TaDiRAH-annotation attribution is unverified against this source and is flagged in the intake report as a paper-vs-source mismatch to check.
 
 ## Related
 

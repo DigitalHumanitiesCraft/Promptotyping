@@ -8,12 +8,12 @@ checked:
   quote: 2026-07-23
   validation: 2026-07-23
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # Distillate: Trading Zones of Digital History (Kemman 2021)
 
-Kemman adapts Galison's trading-zone concept to digital-history collaborations between historians and computational experts, analysing them along engagement, power relations, and changing practices, and identifies brokers who translate between the communities; knowledge/paper.md draws on the trading-zone framing in Sections 1 and 2.4. Quotes are checked against the De Gruyter open-access edition (OAPEN); page numbers follow the book's pagination.
+Kemman adapts Galison's trading-zone concept to digital-history collaborations between historians and computational experts, analysing them along engagement, power relations, and changing practices, and identifies brokers who translate between the communities; the paper draws on the trading-zone framing in its introduction and its positioning in the AI discourse. Quotes are checked against the De Gruyter open-access edition (OAPEN); page numbers follow the book's pagination.
 
 ## Core statements
 

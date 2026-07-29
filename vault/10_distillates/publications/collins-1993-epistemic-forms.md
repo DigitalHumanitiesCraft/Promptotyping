@@ -8,12 +8,12 @@ checked:
   quote: 2026-07-23
   validation: 2026-07-23
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # Distillate: Epistemic Forms and Epistemic Games (Collins and Ferguson 1993)
 
-Collins and Ferguson define an epistemic form as a target knowledge structure that guides inquiry and an epistemic game as the set of rules and strategies for building that form; knowledge/paper.md Section 4.2 draws on epistemic forms to organise research-data interfaces by the kind of knowledge they help construct. Quotes are checked against the HTML copy hosted on the IHMC public CmapTools server; the copy is not paginated, so quotations cite the article without a page number.
+Collins and Ferguson define an epistemic form as a target knowledge structure that guides inquiry and an epistemic game as the set of rules and strategies for building that form; the paper's interface typology draws on epistemic forms to organise research-data interfaces by the kind of knowledge they help construct. Quotes are checked against the HTML copy hosted on the IHMC public CmapTools server; the copy is not paginated, so quotations cite the article without a page number.
 
 ## Core statements
 

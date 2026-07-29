@@ -8,12 +8,12 @@ checked:
   quote: 2026-07-23
   validation: 2026-07-23
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # Distillate: A Brief Taxonomy of Prototypes for the Digital Humanities (Ruecker 2015)
 
-Ruecker distinguishes three kinds of prototype by the project they support, experimental, production, and provocative, and holds that an experimental prototype yields generalised knowledge rather than a product; knowledge/paper.md Section 2.1 uses this to position the Promptotype as a knowledge-bearing by-product rather than the deliverable.
+Ruecker distinguishes three kinds of prototype by the project they support, experimental, production, and provocative, and holds that an experimental prototype yields generalised knowledge rather than a product; the paper uses this to position the Promptotype as a knowledge-bearing by-product rather than the deliverable.
 
 ## Core statements
 

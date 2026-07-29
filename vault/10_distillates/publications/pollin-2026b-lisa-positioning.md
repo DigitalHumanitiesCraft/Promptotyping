@@ -8,12 +8,12 @@ checked:
   quote: 2026-07-23
   validation: 2026-07-23
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # Distillate: Promptotyping between Vibe Coding, Vibe Research and Context Engineering (Pollin 2026b)
 
-The L.I.S.A. article positions Promptotyping as a four-phase context-engineering technique grown from the dissertation experience, distinct from Vibe Coding through structured requirements analysis, with the Promptotyping Documents as the actual artifact; knowledge/paper.md Section 1 uses this positioning. The article is single-authored by Christopher Pollin within the "Digitale Geschichte(n)" series.
+The L.I.S.A. article positions Promptotyping as a four-phase context-engineering technique grown from the dissertation experience, distinct from Vibe Coding through structured requirements analysis, with the Promptotyping Documents as the actual artifact; the paper's introduction uses this positioning. The article is single-authored by Christopher Pollin within the "Digitale Geschichte(n)" series.
 
 ## Core statements
 

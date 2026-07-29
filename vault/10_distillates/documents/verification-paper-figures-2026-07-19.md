@@ -7,12 +7,12 @@ status: grounded
 checked:
   validation: 2026-07-19
 created: 2026-07-19
-updated: 2026-07-24
+updated: 2026-07-29
 ---
 
 # Distillate: Section 4 figures verification (2026-07-19)
 
-The adversarial verification of the paper's evidence layer, Section 4 at the time of the check and Section 5 in the current structure, records which quantitative figures held against the real project repositories on 2026-07-19, which figures deviated and by how much, which items lie outside deterministic checking, and the scope limits of the verification itself.
+The adversarial verification of the paper's evidence layer records which quantitative figures held against the real project repositories on 2026-07-19, which figures deviated and by how much, which items lie outside deterministic checking, and the scope limits of the verification itself.
 
 ## Core statements
 

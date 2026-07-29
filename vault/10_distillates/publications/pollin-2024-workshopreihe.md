@@ -8,12 +8,12 @@ checked:
   quote: 2026-07-23
   validation: 2026-07-23
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # Distillate: Workshop series "Applied Generative AI in the (Digital) Humanities" (Pollin 2024)
 
-The Zenodo deposit is a metadata-only software record archiving a versioned release of the author's applied-generative-AI-in-the-humanities workshop-series repository; knowledge/paper.md Section 1 cites it as early evidence of the method's teaching lineage. The record carries no descriptive abstract, so its statements rest on its verbatim metadata fields.
+The Zenodo deposit is a metadata-only software record archiving a versioned release of the author's applied-generative-AI-in-the-humanities workshop-series repository; the paper's introduction cites it as early evidence of the method's teaching lineage. The record carries no descriptive abstract, so its statements rest on its verbatim metadata fields.
 
 ## Core statements
 

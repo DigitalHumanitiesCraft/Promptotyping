@@ -8,12 +8,12 @@ checked:
   quote: 2026-07-23
   validation: 2026-07-23
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # Distillate: 'It's a team if you use "reply all"' (Siemens 2009)
 
-Siemens studies the research teams that digital-humanities projects build to coordinate academics, students, programmers, and librarians, and identifies the patterns and success conditions of such collaboration; knowledge/paper.md Section 1 cites this as one of the field's documented answers to the translation problem, the team that holds domain and technical competence together. Quotes are checked against the full-text PDF hosted on the author's own website; the abstract sits on the first page (p. 225).
+Siemens studies the research teams that digital-humanities projects build to coordinate academics, students, programmers, and librarians, and identifies the patterns and success conditions of such collaboration; the paper's introduction cites this as one of the field's documented answers to the translation problem, the team that holds domain and technical competence together. Quotes are checked against the full-text PDF hosted on the author's own website; the abstract sits on the first page (p. 225).
 
 ## Core statements
 

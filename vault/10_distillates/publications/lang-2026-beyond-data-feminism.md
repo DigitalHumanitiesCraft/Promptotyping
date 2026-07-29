@@ -8,12 +8,12 @@ checked:
   quote: 2026-07-23
   validation: 2026-07-23
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # Distillate: Beyond Data Feminism. Towards ethical data work (Lang / Suárez Cronauer 2026)
 
-The working paper adapts Data Feminism into a digital source criticism for data work, insisting that a dataset's provenance and the interests it encodes be interrogated because data emerges from structures of power; it grounds the paper's Section 6.4 limit that well-modelled data eases generation without discharging critical examination of how the data came to be.
+The working paper adapts Data Feminism into a digital source criticism for data work, insisting that a dataset's provenance and the interests it encodes be interrogated because data emerges from structures of power; it grounds the paper's limit that well-modelled data eases generation without discharging critical examination of how the data came to be.
 
 ## Core statements
 

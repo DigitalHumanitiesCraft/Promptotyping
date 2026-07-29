@@ -8,12 +8,12 @@ checked:
   quote: 2026-07-23
   validation: 2026-07-23
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # Distillate: Knowledge Generation Model for Visual Analytics (Sacha et al. 2014)
 
-Sacha and colleagues propose a knowledge generation model that integrates existing visual-analytics frameworks and describes the human reasoning that produces knowledge as exploration, verification, and knowledge-generation loops around a visual-analytics system; knowledge/paper.md Section 4.2 cites this as the process model that comes closest to an epistemic framework for interfaces yet was not designed as an interface classification. Quotes are checked against the open PDF hosted by co-author B. C. Kwon; the abstract sits on the first page (p. 1604).
+Sacha and colleagues propose a knowledge generation model that integrates existing visual-analytics frameworks and describes the human reasoning that produces knowledge as exploration, verification, and knowledge-generation loops around a visual-analytics system; the paper's interface typology cites this as the process model that comes closest to an epistemic framework for interfaces yet was not designed as an interface classification. Quotes are checked against the open PDF hosted by co-author B. C. Kwon; the abstract sits on the first page (p. 1604).
 
 ## Core statements
 

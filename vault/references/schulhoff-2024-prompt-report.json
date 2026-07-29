@@ -1,0 +1,48 @@
+[
+  {
+    "id": "schulhoff-2024",
+    "type": "report",
+    "title": "The Prompt Report: A Systematic Survey of Prompting Techniques",
+    "author": [
+      {
+        "family": "Schulhoff",
+        "given": "Sander"
+      },
+      {
+        "family": "Ilie",
+        "given": "Michael"
+      },
+      {
+        "family": "Balepur",
+        "given": "Nishant"
+      },
+      {
+        "family": "Kahadze",
+        "given": "Konstantine"
+      },
+      {
+        "family": "Liu",
+        "given": "Amanda"
+      },
+      {
+        "family": "Si",
+        "given": "Chenglei"
+      },
+      {
+        "family": "Li",
+        "given": "Yinheng"
+      }
+    ],
+    "number": "arXiv:2406.06608",
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "DOI": "10.48550/arXiv.2406.06608",
+    "URL": "https://arxiv.org/abs/2406.06608",
+    "note": "Preprint. The author list is truncated after the seventh name, as in the draft's References entry."
+  }
+]

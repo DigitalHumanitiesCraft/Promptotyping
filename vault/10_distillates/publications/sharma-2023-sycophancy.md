@@ -8,12 +8,12 @@ checked:
   quote: 2026-07-23
   validation: 2026-07-23
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # Distillate: Towards Understanding Sycophancy in Language Models (Sharma et al. 2023)
 
-This Anthropic study establishes that sycophancy is a general behaviour of RLHF-finetuned assistants and traces it to human preference data; the paper cites it in Section 2.4 as the primary source for sycophancy as a structural failure mode, alongside Fanous et al. 2025.
+This Anthropic study establishes that sycophancy is a general behaviour of RLHF-finetuned assistants and traces it to human preference data; the paper cites it as the primary source for sycophancy as a structural failure mode, alongside Fanous et al. 2025.
 
 ## Core statements
 

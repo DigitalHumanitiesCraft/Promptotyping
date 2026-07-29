@@ -8,14 +8,14 @@ grounding:
   - "[[10_distillates/publications/macedo-2026-from-prompt-to-process#^s2]]"
   - "[[10_distillates/publications/macedo-2026-from-prompt-to-process#^s3]]"
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # A first process taxonomy of agentic software-development frameworks exists, scoring them on six dimensions.
 
 ## Statement
 
-Macedo 2026 supplies the first study centred on the operational frameworks that turn LLM and agent capabilities into a development process, contributing a six-dimension process taxonomy, specification, context, roles, execution, validation and portability, with a scoring rubric. This is the source behind the paper's Section 2.4 statement that a first process taxonomy of the Spec-Driven-Development frameworks now exists.
+Macedo 2026 supplies the first study centred on the operational frameworks that turn LLM and agent capabilities into a development process, contributing a six-dimension process taxonomy, specification, context, roles, execution, validation and portability, with a scoring rubric. This is the source behind the paper's statement that a first process taxonomy of the Spec-Driven-Development frameworks now exists.
 
 ## Support
 

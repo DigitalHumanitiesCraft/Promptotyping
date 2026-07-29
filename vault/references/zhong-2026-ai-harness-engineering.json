@@ -1,0 +1,28 @@
+[
+  {
+    "id": "zhong-2026",
+    "type": "report",
+    "title": "AI Harness Engineering: A Runtime Substrate for Foundation-Model Software Agents",
+    "author": [
+      {
+        "family": "Zhong",
+        "given": "Hailin"
+      },
+      {
+        "family": "Zhu",
+        "given": "Shengxin"
+      }
+    ],
+    "number": "arXiv:2605.13357",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "DOI": "10.48550/arXiv.2605.13357",
+    "URL": "https://arxiv.org/abs/2605.13357",
+    "note": "Preprint without venue, v1 of 2026-05-13, checked 2026-07-29."
+  }
+]

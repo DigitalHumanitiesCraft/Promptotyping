@@ -7,12 +7,12 @@ status: grounded
 checked:
   quote: 2026-07-26
 created: 2026-07-26
-updated: 2026-07-26
+updated: 2026-07-29
 ---
 
 # Distillate: Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena (Zheng et al. 2023)
 
-The paper already cites this work in Section 6.2 for the LLM-as-a-judge pattern and its weaknesses. The distillate makes the positive side citable as well, the measured agreement between a strong judging model and human preference, which is what marks off the zone in which a model may legitimately judge from the zone a rule decides. Quotations come from the arXiv abstract page.
+The paper already cites this work in its verification architecture for the LLM-as-a-judge pattern and its weaknesses. The distillate makes the positive side citable as well, the measured agreement between a strong judging model and human preference, which is what marks off the zone in which a model may legitimately judge from the zone a rule decides. Quotations come from the arXiv abstract page.
 
 ## Core statements
 

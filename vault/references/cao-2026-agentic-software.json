@@ -1,0 +1,24 @@
+[
+  {
+    "id": "cao-2026",
+    "type": "report",
+    "title": "Agentic Software: How AI Agents Are Restructuring the Software Paradigm",
+    "author": [
+      {
+        "family": "Cao",
+        "given": "Zhenfeng"
+      }
+    ],
+    "number": "arXiv:2606.05608",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "DOI": "10.48550/arXiv.2606.05608",
+    "URL": "https://arxiv.org/abs/2606.05608",
+    "note": "Preprint without venue. The title given here is that of v2 (2026-06-10); v1 carried a different title, checked 2026-07-29."
+  }
+]

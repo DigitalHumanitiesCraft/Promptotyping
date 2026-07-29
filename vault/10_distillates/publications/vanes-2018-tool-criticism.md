@@ -8,12 +8,12 @@ checked:
   quote: 2026-07-23
   validation: 2026-07-23
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # Distillate: Tool Criticism: From Digital Methods to Digital Methodology (van Es, Wieringa and Schäfer 2018)
 
-Van Es, Wieringa and Schäfer argue that a rigorous inquiry into the tools used for research must be an essential element of the research process, naming this inquiry tool criticism and casting it as the move from digital methods to digital methodology; knowledge/paper.md Section 2.1 cites this alongside Koolen et al. as the corrective demanding reflection on what a tool does to the material. Quotes are checked against the PDF hosted on co-author Mirko Tobias Schäfer's own website; the abstract sits on the first page (p. 24).
+Van Es, Wieringa and Schäfer argue that a rigorous inquiry into the tools used for research must be an essential element of the research process, naming this inquiry tool criticism and casting it as the move from digital methods to digital methodology; the paper's account of exploration and building as research cites this alongside Koolen et al. as the corrective demanding reflection on what a tool does to the material. Quotes are checked against the PDF hosted on co-author Mirko Tobias Schäfer's own website; the abstract sits on the first page (p. 24).
 
 ## Core statements
 

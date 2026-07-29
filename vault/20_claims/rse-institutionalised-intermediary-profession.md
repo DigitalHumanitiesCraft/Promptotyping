@@ -9,14 +9,14 @@ grounding:
   - "[[10_distillates/publications/cohen-2021-four-pillars-rse#^s2]]"
   - "[[10_distillates/publications/cohen-2021-four-pillars-rse#^s3]]"
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # The Research Software Engineering movement institutionalised the domain-technical intermediary as a recognised profession.
 
 ## Statement
 
-The Research Software Engineering movement recognises and supports the people who build research software, treating them as critical members of research teams and establishing research software work as a realistic professional career with dedicated roles. This grounds the paper's Section 1 point that the field answered its translation problem between scholars and programmers by institutionalising a human intermediary as a profession, the answer Promptotyping reaches differently.
+The Research Software Engineering movement recognises and supports the people who build research software, treating them as critical members of research teams and establishing research software work as a realistic professional career with dedicated roles. This grounds the paper's introductory point that the field answered its translation problem between scholars and programmers by institutionalising a human intermediary as a profession, the answer Promptotyping reaches differently.
 
 ## Support
 

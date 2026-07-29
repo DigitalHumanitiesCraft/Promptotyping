@@ -8,12 +8,12 @@ checked:
   quote: 2026-07-23
   validation: 2026-07-23
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # Distillate: Cross-linking of vocabularies, and the AI perspective (Stanicka-Brzezicka 2026)
 
-From vocabulary-mapping work the article finds that semantic matching between vocabularies remains a human-driven interpretive task and that AI becomes useful only when grounded in curated, context-rich data; a documented 2025 test of GPT-4 and DeepL Write on specialist terms fell short of thesaurus-level interoperability. It grounds the paper's Section 6.2 boundary between the deterministic and interpretive zones of verification.
+From vocabulary-mapping work the article finds that semantic matching between vocabularies remains a human-driven interpretive task and that AI becomes useful only when grounded in curated, context-rich data; a documented 2025 test of GPT-4 and DeepL Write on specialist terms fell short of thesaurus-level interoperability. It grounds the paper's boundary between the deterministic and interpretive zones of verification.
 
 ## Core statements
 

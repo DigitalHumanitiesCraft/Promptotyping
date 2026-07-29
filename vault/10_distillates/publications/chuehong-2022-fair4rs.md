@@ -8,12 +8,12 @@ checked:
   quote: 2026-07-23
   validation: 2026-07-23
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # Distillate: FAIR Principles for Research Software (Chue Hong et al. 2022)
 
-The community standard that adapts the FAIR principles to research software; the paper uses it in Sections 4.1 and 6.3 as the field's yardstick for the promptotype-as-artifact, where reusability with detailed provenance (R1.2) is the strong point and a persistent identifier (F1) is the missing findability condition. Quotations are taken from the open-access Scientific Data article (Chue Hong et al. 2022, doi:10.1038/s41597-022-01710-x), the peer-reviewed presentation of the FAIR4RS Principles v1.0 recorded under the CSL id's RDA DOI.
+The community standard that adapts the FAIR principles to research software; the paper uses it as the field's yardstick for the promptotype-as-artifact, where reusability with detailed provenance (R1.2) is the strong point and a persistent identifier (F1) is the missing findability condition. Quotations are taken from the open-access Scientific Data article (Chue Hong et al. 2022, doi:10.1038/s41597-022-01710-x), the peer-reviewed presentation of the FAIR4RS Principles v1.0 recorded under the CSL id's RDA DOI.
 
 ## Core statements
 

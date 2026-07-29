@@ -8,12 +8,12 @@ checked:
   quote: 2026-07-23
   validation: 2026-07-23
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # Distillate: TaDiRAH pragmatic classification (Borek et al. 2016)
 
-The paper documents TaDiRAH, the digital humanities' taxonomy of research activities, and its bottom-up pragmatic construction; the paper cites it in Section 4.2 as the field's activity classification against which the interface typology by epistemic function is positioned.
+The paper documents TaDiRAH, the digital humanities' taxonomy of research activities, and its bottom-up pragmatic construction; the paper cites it in its interface typology as the field's activity classification against which the interface typology by epistemic function is positioned.
 
 ## Core statements
 
@@ -32,7 +32,7 @@ The paper documents TaDiRAH, the digital humanities' taxonomy of research activi
 
 ## Open questions
 
-- The paper classifies research *activities*; it does not classify the artefacts or interfaces that carry those activities, which is exactly the gap knowledge/paper.md 4.2 marks (verification and audit have no activity counterpart). That mismatch is the paper's own synthesis, not a statement of Borek et al.
+- The paper classifies research *activities*; it does not classify the artefacts or interfaces that carry those activities, which is exactly the gap the paper's interface typology marks (verification and audit have no activity counterpart). That mismatch is the paper's own synthesis, not a statement of Borek et al.
 
 ## Related
 

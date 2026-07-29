@@ -8,14 +8,14 @@ grounding:
   - "[[10_distillates/publications/macedo-2026-from-prompt-to-process#^s4]]"
   - "[[10_distillates/publications/macedo-2026-from-prompt-to-process#^s5]]"
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # Across agentic software-development frameworks the isolated prompt loses centrality and persistent specification artifacts coordinate the agents.
 
 ## Statement
 
-The comparative assessment of agentic software-development frameworks finds that, where a process is adopted, the isolated prompt loses centrality and persistent artifacts, work contracts, traceability and human review become the coordinating mechanisms, with Spec Kit treating specifications as the central artifact feeding plans, tasks and implementation. This grounds the paper's Section 2.4 observation that the Spec-Driven-Development wave corroborates the premise that documents govern agents better than prompts do.
+The comparative assessment of agentic software-development frameworks finds that, where a process is adopted, the isolated prompt loses centrality and persistent artifacts, work contracts, traceability and human review become the coordinating mechanisms, with Spec Kit treating specifications as the central artifact feeding plans, tasks and implementation. This grounds the paper's observation that the Spec-Driven-Development wave corroborates the premise that documents govern agents better than prompts do.
 
 ## Support
 

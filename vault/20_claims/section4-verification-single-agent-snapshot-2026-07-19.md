@@ -9,14 +9,14 @@ grounding:
   - "[[10_distillates/documents/verification-paper-figures-2026-07-19#^s24]]"
   - "[[10_distillates/documents/verification-paper-figures-2026-07-19#^s25]]"
 created: 2026-07-19
-updated: 2026-07-25
+updated: 2026-07-29
 ---
 
 # The Section 5 verification was a single-agent snapshot with test figures counted as source functions.
 
 ## Statement
 
-The Section 5 verification ran as a single adversarial agent without a second independent pass, read repository states on 2026-07-19 via local clones, shallow clones, and the GitHub API so that later growth stays invisible to it, and counted test figures as test functions in source without executing a pytest collection. These bounds set how far its verdicts reach. The evidence section carried the number 4 when the verification ran and carries the number 5 since the revision; the section references above were corrected on 2026-07-25, and the file name keeps the old number so that existing anchors resolve.
+The figures verification ran as a single adversarial agent without a second independent pass, read repository states on 2026-07-19 via local clones, shallow clones, and the GitHub API so that later growth stays invisible to it, and counted test figures as test functions in source without executing a pytest collection. These bounds set how far its verdicts reach. The file name keeps the section number the evidence layer carried when the verification ran, so that existing anchors resolve.
 
 ## Support
 

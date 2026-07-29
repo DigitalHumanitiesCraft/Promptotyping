@@ -8,12 +8,12 @@ checked:
   quote: 2026-07-23
   validation: 2026-07-23
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # Distillate: PROV-A, a web-based tool for provenance as Linked Open Data (Mariani 2025)
 
-The paper presents a client-side web tool that structures and publishes provenance as Linked Open Data, running entirely in the browser without server-side architecture and keeping a human-in-the-loop over automated extraction; it grounds the paper's Section 4.1 footnote as a same-venue precedent for the server-free artefact type.
+The paper presents a client-side web tool that structures and publishes provenance as Linked Open Data, running entirely in the browser without server-side architecture and keeping a human-in-the-loop over automated extraction; it grounds the paper's footnote as a same-venue precedent for the server-free artefact type.
 
 ## Core statements
 

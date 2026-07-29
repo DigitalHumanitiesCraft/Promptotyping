@@ -8,12 +8,12 @@ checked:
   quote: 2026-07-23
   validation: 2026-07-23
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # Distillate: Mapping hospital heritage with WikiFAIR (Leipold et al. 2026)
 
-The project proposes WikiFAIR, integrating project research data directly into Wikidata so that a maintained collective platform carries long-term preservation instead of a project-specific database; it grounds the paper's Section 4.1 footnote precedent as the opposite answer to the same longevity problem the self-contained static artefact addresses by carrying no dependencies.
+The project proposes WikiFAIR, integrating project research data directly into Wikidata so that a maintained collective platform carries long-term preservation instead of a project-specific database; it grounds the paper's footnote precedent as the opposite answer to the same longevity problem the self-contained static artefact addresses by carrying no dependencies.
 
 ## Core statements
 

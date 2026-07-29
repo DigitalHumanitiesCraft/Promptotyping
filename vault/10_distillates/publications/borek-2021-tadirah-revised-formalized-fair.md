@@ -8,12 +8,12 @@ checked:
   quote: 2026-07-27
   validation: 2026-07-27
 created: 2026-07-27
-updated: 2026-07-27
+updated: 2026-07-29
 ---
 
 # Distillate: TaDiRAH Revised, Formalized and FAIR (Borek et al. 2021)
 
-The working paper documenting the transformation of TaDiRAH into a formalised, machine-readable knowledge organisation system, presented at the 16th International Symposium of Information Science. The author team differs from that of Borek et al. 2016; the two works are separate sources and are not interchangeable. The paper draft of 2026-07-27 cites this work alone for TaDiRAH in the body of Section 1, which raises its load from the footnote position it held before. Quotations are taken from the abstract on the publisher's open repository page (epub.uni-regensburg.de/44951, full-text PDF available at the same location).
+The working paper documenting the transformation of TaDiRAH into a formalised, machine-readable knowledge organisation system, presented at the 16th International Symposium of Information Science. The author team differs from that of Borek et al. 2016; the two works are separate sources and are not interchangeable. The paper draft of 2026-07-27 cites this work alone for TaDiRAH in the body of the introduction, which raises its load from the footnote position it held before. Quotations are taken from the abstract on the publisher's open repository page (epub.uni-regensburg.de/44951, full-text PDF available at the same location).
 
 ## Core statements
 

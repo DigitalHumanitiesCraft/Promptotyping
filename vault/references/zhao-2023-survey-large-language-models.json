@@ -1,0 +1,48 @@
+[
+  {
+    "id": "zhao-2023",
+    "type": "report",
+    "title": "A Survey of Large Language Models",
+    "author": [
+      {
+        "family": "Zhao",
+        "given": "Wayne Xin"
+      },
+      {
+        "family": "Zhou",
+        "given": "Kun"
+      },
+      {
+        "family": "Li",
+        "given": "Junyi"
+      },
+      {
+        "family": "Tang",
+        "given": "Tianyi"
+      },
+      {
+        "family": "Wang",
+        "given": "Xiaolei"
+      },
+      {
+        "family": "Hou",
+        "given": "Yupeng"
+      },
+      {
+        "family": "Min",
+        "given": "Yingqian"
+      }
+    ],
+    "number": "arXiv:2303.18223",
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "DOI": "10.48550/arXiv.2303.18223",
+    "URL": "https://arxiv.org/abs/2303.18223",
+    "note": "Preprint. The author list is truncated after the seventh name, as in the draft's References entry."
+  }
+]

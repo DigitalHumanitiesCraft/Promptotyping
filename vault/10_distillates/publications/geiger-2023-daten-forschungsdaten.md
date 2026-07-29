@@ -8,12 +8,12 @@ checked:
   quote: 2026-07-25
   validation: 2026-07-25
 created: 2026-07-25
-updated: 2026-07-25
+updated: 2026-07-29
 ---
 
 # Distillate: Daten / Forschungsdaten (Geiger 2023)
 
-The discursive-glossary entry surveys how the German-language digital humanities use the terms data and research data, and it withholds a single definition on purpose. What it does supply, and what knowledge/paper.md draws on in Section 2.2, is the functional route: three selection criteria that decide which data of a research process count as research data, each tied to a duty the data has to discharge. Quotes are checked against the article HTML of version 2.0; the numbers follow the publication's own paragraph numbering.
+The discursive-glossary entry surveys how the German-language digital humanities use the terms data and research data, and it withholds a single definition on purpose. What it does supply, and what the paper's account of research data as modelled representations draws on, is the functional route: three selection criteria that decide which data of a research process count as research data, each tied to a duty the data has to discharge. Quotes are checked against the article HTML of version 2.0; the numbers follow the publication's own paragraph numbering.
 
 ## Core statements
 

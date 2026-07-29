@@ -1,0 +1,24 @@
+[
+  {
+    "id": "alenezi-2026",
+    "type": "report",
+    "title": "From Determinism to Delegation: AI-Native Software Engineering and the Evolution of the Agentic Engineer",
+    "author": [
+      {
+        "family": "Alenezi",
+        "given": "Mamdouh"
+      }
+    ],
+    "number": "arXiv:2606.28791",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "DOI": "10.48550/arXiv.2606.28791",
+    "URL": "https://arxiv.org/abs/2606.28791",
+    "note": "Preprint without venue, v1 of 2026-06-27 (cs.SE), checked 2026-07-29."
+  }
+]

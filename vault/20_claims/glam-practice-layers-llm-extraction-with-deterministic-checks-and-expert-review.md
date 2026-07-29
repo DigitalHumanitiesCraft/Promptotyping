@@ -10,14 +10,14 @@ grounding:
   - "[[10_distillates/publications/fischer-2025-bildkarten#^s3]]"
   - "[[10_distillates/publications/fischer-2025-bildkarten#^s4]]"
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # GLAM practice brackets non-deterministic LLM extraction with deterministic regex post-checks and an expert correction interface.
 
 ## Statement
 
-A published archival-cataloguing workflow combines LLM extraction from image cards with deterministic post-checks by regular expression, moving misassigned fixed-structure entries automatically, and a purpose-built correction interface where an expert checks, adjusts, deletes, and completes the extracted fields. This is the layering the paper's Section 6.2 invokes: where output fidelity is not decidable by a closed feedback loop, the non-deterministic step is checked by deterministic rules and, above that, by human review.
+A published archival-cataloguing workflow combines LLM extraction from image cards with deterministic post-checks by regular expression, moving misassigned fixed-structure entries automatically, and a purpose-built correction interface where an expert checks, adjusts, deletes, and completes the extracted fields. This is the layering the paper's verification architecture invokes: where output fidelity is not decidable by a closed feedback loop, the non-deterministic step is checked by deterministic rules and, above that, by human review.
 
 ## Support
 

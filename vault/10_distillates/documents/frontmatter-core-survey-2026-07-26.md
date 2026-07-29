@@ -6,12 +6,12 @@ topics: ["[[Method]]"]
 status: grounded
 checked: {}
 created: 2026-07-26
-updated: 2026-07-26
+updated: 2026-07-29
 ---
 
 # Distillate: Frontmatter-core survey 2026-07-26
 
-A dated snapshot of how far the reduced six-field frontmatter core is met across the operator's local knowledge bases; the paper's Section 3.3 takes from it the finding that the reduced core is met in about half of the documents. The source is a self-observation of the author's own working environment and carries the reproducibility limit stated in its own text, so the statements below are grounded in a snapshot rather than in an externally checkable measurement.
+A dated snapshot of how far the reduced six-field frontmatter core is met across the operator's local knowledge bases; the paper's document typology takes from it the finding that the reduced core is met in about half of the documents. The source is a self-observation of the author's own working environment and carries the reproducibility limit stated in its own text, so the statements below are grounded in a snapshot rather than in an externally checkable measurement.
 
 ## Core statements
 

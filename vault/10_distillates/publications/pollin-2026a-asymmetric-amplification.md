@@ -8,12 +8,12 @@ checked:
   quote: 2026-07-23
   validation: 2026-07-23
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # Distillate: Asymmetric Amplification (Pollin 2026a)
 
-The blog post argues that current LLMs do not automate research but amplify computer-based research work, and that this amplification is deeply asymmetric, widening gaps between those with access, competence, and resources and those without; knowledge/paper.md Section 6.4 builds its asymmetric-amplification passage on this, as the ethical dimension of the access limit.
+The blog post argues that current LLMs do not automate research but amplify computer-based research work, and that this amplification is deeply asymmetric, widening gaps between those with access, competence, and resources and those without; the paper's limits chapter builds its asymmetric-amplification passage on this, as the ethical dimension of the access limit.
 
 ## Core statements
 
@@ -34,7 +34,7 @@ The blog post argues that current LLMs do not automate research but amplify comp
 
 ## Open questions
 
-- knowledge/paper.md Section 6.4 names three gradients along which the amplification runs (expertise, access, epistemic selectivity); the blog states the asymmetry and its access, competence, resource, and skill facets in prose without naming such gradients, so that ordering is the paper's systematisation.
+- The paper's limits chapter names three gradients along which the amplification runs (expertise, access, epistemic selectivity); the blog states the asymmetry and its access, competence, resource, and skill facets in prose without naming such gradients, so that ordering is the paper's systematisation.
 - The paper cites this work as "Pollin 2026c"; the vault reference id and CSL record for the Asymmetric Amplification blog is pollin-2026a. The citation letter should be reconciled.
 
 ## Related

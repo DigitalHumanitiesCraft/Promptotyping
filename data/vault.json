@@ -150,7 +150,7 @@
    "slug": "MOC-Genealogy",
    "topic": "Genealogy",
    "title": "MOC: Genealogy",
-   "description": "Added 2026-07-27 with the dissertation re-read for the genealogical opening of Section 1:",
+   "description": "Added 2026-07-27 with the dissertation re-read for the paper's genealogical opening:",
    "claims": [
     "dissertation-requirements-from-deep-dive-sessions",
     "dissertation-requirements-feed-built-artifacts",
@@ -224,7 +224,7 @@
   {
    "slug": "a-prototype-can-embody-a-peer-reviewable-argument",
    "title": "A digital prototype can embody a contestable argument and stand as peer-reviewable research.",
-   "statement": "Building an experimental digital prototype can convey an argument the way a book edition reifies a theory, so that digital artefacts carry meaning rather than mere utility and can stand, in their own right, as peer-reviewable and contestable contributions to knowledge. This grounds the paper's Section 2.1 claim that building is a way of knowing and that producing prototypes is itself a research act.",
+   "statement": "Building an experimental digital prototype can convey an argument the way a book edition reifies a theory, so that digital artefacts carry meaning rather than mere utility and can stand, in their own right, as peer-reviewable and contestable contributions to knowledge. This grounds the paper's claim that building is a way of knowing and that producing prototypes is itself a research act.",
    "status": "grounded",
    "topics": [
     "Concepts"
@@ -251,7 +251,7 @@
   {
    "slug": "an-open-tei-encoding-benchmark-exists-for-llm-generated-encodings",
    "title": "An open, task-specific benchmark for LLM-generated TEI encoding now exists, holding transcriptions, manually encoded reference documents, the encodings of four models, and the prompt scenarios that produced them.",
-   "statement": "The gap the field named, that benchmarks for evaluating AI-generated results in digital-edition tasks are lacking, has begun to close for one task family. An openly licensed dataset pairs plain-text letter transcriptions with manually encoded TEI reference documents and with the encodings four models produced from the same input under five documented prompt scenarios, and the evaluation code is published under an MIT licence. The framework paper states the gap in its own words in the same year. This qualifies the paper's Section 6.2 position without displacing it, because the benchmark measures the dimensions a rule can decide and hands the interpretative ones to expert review.",
+   "statement": "The gap the field named, that benchmarks for evaluating AI-generated results in digital-edition tasks are lacking, has begun to close for one task family. An openly licensed dataset pairs plain-text letter transcriptions with manually encoded TEI reference documents and with the encodings four models produced from the same input under five documented prompt scenarios, and the evaluation code is published under an MIT licence. The framework paper states the gap in its own words in the same year. This qualifies the paper's verification architecture without displacing it, because the benchmark measures the dimensions a rule can decide and hands the interpretative ones to expert review.",
    "status": "grounded",
    "topics": [
     "ArtefactVerification"
@@ -342,7 +342,7 @@
   {
    "slug": "austrian-dashboard-universities-verified-2026-07-19",
    "title": "The Austrian Dashboard figure of 22 universities held against the repository as verified on 2026-07-19.",
-   "statement": "The Austrian Dashboard case study's stated figure of 22 universities matched the project repository when the Section 5 verification checked it on 2026-07-19. Checked against the deliverable on 2026-07-25, Section 5.4 still names the dashboard as a didactic baseline case and states no number of universities. The drift audit places that absence before the revision rounds of 2026-07-24 and 2026-07-25, since the deliverable already offered no point of attachment for the figure when the vault was built, so this is not a figure the deliverable dropped. The claim stands as a checked finding about the repository.",
+   "statement": "The Austrian Dashboard case study's stated figure of 22 universities matched the project repository when the figures verification checked it on 2026-07-19. Checked against the deliverable on 2026-07-25, the paper's teaching and collaboration cases still name the dashboard as a didactic baseline case and state no number of universities. The drift audit places that absence before the revision rounds of 2026-07-24 and 2026-07-25, since the deliverable already offered no point of attachment for the figure when the vault was built, so this is not a figure the deliverable dropped. The claim stands as a checked finding about the repository.",
    "status": "grounded",
    "topics": [
     "Evidence"
@@ -391,7 +391,7 @@
   {
    "slug": "boundary-objects-are-plastic-yet-robust-across-communities",
    "title": "A boundary object adapts to each community's local needs while keeping a common identity across them.",
-   "statement": "A boundary object is plastic enough to serve the different local needs of the communities that use it, yet robust enough to keep a common identity across their sites, and its creation and management is the key process by which coherence holds across intersecting social worlds. It grounded the paper's Section 2.3 move to read Promptotyping Documents as boundary objects between the scholar and the coding agent. On 2026-07-25 the operator removed the concept from the paper, because the source carries the circulation of an object between social worlds and not the relation between a scholar and a model, and because the paper's own claim stands without it. The claim stays as checked material and has no current use in the paper.",
+   "statement": "A boundary object is plastic enough to serve the different local needs of the communities that use it, yet robust enough to keep a common identity across their sites, and its creation and management is the key process by which coherence holds across intersecting social worlds. It grounded the paper's move to read Promptotyping Documents as boundary objects between the scholar and the coding agent. On 2026-07-25 the operator removed the concept from the paper, because the source carries the circulation of an object between social worlds and not the relation between a scholar and a model, and because the paper's own claim stands without it. The claim stays as checked material and has no current use in the paper.",
    "status": "grounded",
    "topics": [
     "Concepts"
@@ -413,7 +413,7 @@
   {
    "slug": "client-side-provenance-tool-is-a-precedent-for-server-free-artefacts",
    "title": "A same-venue provenance tool runs entirely in the browser without server-side architecture, a precedent for the server-free artefact type.",
-   "statement": "A web-based provenance tool published in the same venue structures and publishes Linked Open Data as a client-side application that runs entirely in the user's browser, deliberately avoiding server-side architecture, hosting, database, and maintenance, which benefits resource-limited contexts. This grounds the paper's Section 4.1 footnote that a client-side precedent for the self-contained artefact type already exists in the field.",
+   "statement": "A web-based provenance tool published in the same venue structures and publishes Linked Open Data as a client-side application that runs entirely in the user's browser, deliberately avoiding server-side architecture, hosting, database, and maintenance, which benefits resource-limited contexts. This grounds the paper's footnote that a client-side precedent for the self-contained artefact type already exists in the field.",
    "status": "grounded",
    "topics": [
     "ArtefactVerification"
@@ -474,7 +474,7 @@
   {
    "slug": "context-engineering-systematic-inference-context",
    "title": "Context engineering is the systematic design and optimisation of the information a model receives at inference, beyond prompt design.",
-   "statement": "Context engineering is a formal discipline defined as the systematic optimisation of the information payload supplied to an LLM at inference, resting on the premise that model performance is fundamentally determined by that context. It supersedes individual prompt optimisation. The paper adopts this definition in Sections 1 and 2.5 and positions Promptotyping as a domain-specific instance optimised for mapping research data onto artifacts.",
+   "statement": "Context engineering is a formal discipline defined as the systematic optimisation of the information payload supplied to an LLM at inference, resting on the premise that model performance is fundamentally determined by that context. It supersedes individual prompt optimisation. The paper adopts this definition in its introduction and its genealogy and positions Promptotyping as a domain-specific instance optimised for mapping research data onto artifacts.",
    "status": "grounded",
    "topics": [
     "Frame"
@@ -496,7 +496,7 @@
   {
    "slug": "context-rot-nonuniform-degradation-with-length",
    "title": "LLM performance degrades non-uniformly as input length grows, even on simple tasks, with input length isolated as the cause.",
-   "statement": "An evaluation of 18 models, including GPT-4.1, Claude 4, Gemini 2.5 and Qwen3, shows that models do not use their context uniformly; performance grows increasingly unreliable as input length increases, even under minimal task conditions, and the effect is attributable to input length because task complexity was held constant. This is the empirical rationale for the paper's Distillation phase in Sections 2.3 and 2.5, whose principle is maximum information with minimum tokens.",
+   "statement": "An evaluation of 18 models, including GPT-4.1, Claude 4, Gemini 2.5 and Qwen3, shows that models do not use their context uniformly; performance grows increasingly unreliable as input length increases, even under minimal task conditions, and the effect is attributable to input length because task complexity was held constant. This is the empirical rationale for the paper's Distillation phase, whose principle is maximum information with minimum tokens.",
    "status": "grounded",
    "topics": [
     "Frame"
@@ -523,7 +523,7 @@
   {
    "slug": "coocr-htr-figures-verified-2026-07-19",
    "title": "coOCR-HTR's stated Section 5 figures held against the repository as verified on 2026-07-19.",
-   "statement": "The coOCR-HTR case study's stated figures held against the project repository when the Section 5 verification checked them on 2026-07-19, covering 567 tests per self-documentation, about 17,000 lines of production JavaScript at an actual 17,762, 197 commits, and 67 fork commits. Checked against the deliverable on 2026-07-25, none of these figures is reported there any longer; the claim stands as a checked finding about the repository.",
+   "statement": "The coOCR-HTR case study's stated figures held against the project repository when the figures verification checked them on 2026-07-19, covering 567 tests per self-documentation, about 17,000 lines of production JavaScript at an actual 17,762, 197 commits, and 67 fork commits. Checked against the deliverable on 2026-07-25, none of these figures is reported there any longer; the claim stands as a checked finding about the repository.",
    "status": "grounded",
    "topics": [
     "Evidence"
@@ -557,7 +557,7 @@
   {
    "slug": "correspexplorer-figures-verified-2026-07-19",
    "title": "CorrespExplorer's stated Section 5 figures held against the repository as verified on 2026-07-19.",
-   "statement": "The CorrespExplorer case study's stated figures, 11,576 letters and 12 coordinated views, matched the project repository when the Section 5 verification checked them on 2026-07-19.",
+   "statement": "The CorrespExplorer case study's stated figures, 11,576 letters and 12 coordinated views, matched the project repository when the figures verification checked them on 2026-07-19.",
    "status": "grounded",
    "topics": [
     "Evidence"
@@ -694,7 +694,7 @@
   {
    "slug": "dh-intermediary-bridges-researchers-and-technical-staff",
    "title": "A dedicated Digital Humanities Intermediary bridges the gap between researchers and technical staff.",
-   "statement": "Edmond models humanities digital development as a value chain in which critical gaps open when the only actors are the researcher and technical support staff, and proposes a dedicated Digital Humanities Intermediary to supply non-specifically-technical skills and support at critical moments. This grounds the paper's Section 1 point that the field answered its translation problem by installing a professional intermediary between scholarly requirements and technical implementation.",
+   "statement": "Edmond models humanities digital development as a value chain in which critical gaps open when the only actors are the researcher and technical support staff, and proposes a dedicated Digital Humanities Intermediary to supply non-specifically-technical skills and support at critical moments. This grounds the paper's introductory point that the field answered its translation problem by installing a professional intermediary between scholarly requirements and technical implementation.",
    "status": "grounded",
    "topics": [
     "Frame"
@@ -716,7 +716,7 @@
   {
    "slug": "dh-projects-build-teams-to-hold-competences-together",
    "title": "Digital-humanities projects build teams to hold their diverse competences together.",
-   "statement": "Digital-humanities research coordinates academics, students, programmers, and librarians in teams defined by common tasks and shared accountability, with success resting on clear task definition and durable working relationships. This grounds the paper's Section 1 point that team-building is one of the field's documented answers to the translation problem between domain scholars and programmers, an answer bound to project funding and staffing.",
+   "statement": "Digital-humanities research coordinates academics, students, programmers, and librarians in teams defined by common tasks and shared accountability, with success resting on clear task definition and durable working relationships. This grounds the paper's introductory point that team-building is one of the field's documented answers to the translation problem between domain scholars and programmers, an answer bound to project funding and staffing.",
    "status": "grounded",
    "topics": [
     "Frame"
@@ -827,7 +827,7 @@
   {
    "slug": "digital-editing-converges-on-static-self-contained-artefact",
    "title": "Digital scholarly editing arrives from its own sustainability discourse at the self-contained static web artefact as the durable publication form.",
-   "statement": "Independently of any generative tooling, digital scholarly editing has reached the same target form the paper defaults to: a standalone static website whose pages exist as plain HTML needing no server-side execution or database, rendered from TEI-XML by deterministic XSLT templates, with longevity tied to the publishing institution rather than to a technology or a single developer. This is the paper's Section 4.1 evidence that the artefact type it proposes is the field's own answer to the longevity problem; the generation path differs, deterministic XSLT there and document-driven generation in a promptotype, while the target artefact agrees.",
+   "statement": "Independently of any generative tooling, digital scholarly editing has reached the same target form the paper defaults to: a standalone static website whose pages exist as plain HTML needing no server-side execution or database, rendered from TEI-XML by deterministic XSLT templates, with longevity tied to the publishing institution rather than to a technology or a single developer. This is the paper's evidence that the artefact type it proposes is the field's own answer to the longevity problem; the generation path differs, deterministic XSLT there and document-driven generation in a promptotype, while the target artefact agrees.",
    "status": "grounded",
    "topics": [
     "ArtefactVerification"
@@ -903,7 +903,7 @@
   {
    "slug": "digital-tool-criticism-demands-reflection-on-tools",
    "title": "Digital tool criticism demands reflection on how a tool shapes research material and method.",
-   "statement": "Digital tool criticism holds that tools are not neutral instruments: choosing one requires reflecting on how it affords a method appropriate to the research question, and a rigorous inquiry into research tools must be an essential part of the research process, the move from digital methods to digital methodology. This grounds the paper's Section 2.1 corrective, that scholars must reflect on what a tool does to their material, which the paper then turns on its own method.",
+   "statement": "Digital tool criticism holds that tools are not neutral instruments: choosing one requires reflecting on how it affords a method appropriate to the research question, and a rigorous inquiry into research tools must be an essential part of the research process, the move from digital methods to digital methodology. This grounds the paper's corrective, that scholars must reflect on what a tool does to their material, which the paper then turns on its own method.",
    "status": "grounded",
    "topics": [
     "Frame"
@@ -1033,7 +1033,7 @@
   {
    "slug": "do-one-thing-well-favours-small-specialised-tools-over-monolithic-platforms",
    "title": "The Unix \"do one thing well\" principle, applied to digital editing, argues for small, specialised tools chained through standard formats against monolithic platforms.",
-   "statement": "Applied to digital scholarly editing, the Unix philosophy of doing one thing well argues against the monolithic platform and for a chain of small, specialised, exchangeable filters whose text-level input and output stay addressable, connected through standard formats. This underwrites the paper's Section 4.2 design philosophy, that the epistemic function determines the interface and that a question-specific tool preserves the model-specific detail a one-size-fits-all dashboard flattens.",
+   "statement": "Applied to digital scholarly editing, the Unix philosophy of doing one thing well argues against the monolithic platform and for a chain of small, specialised, exchangeable filters whose text-level input and output stay addressable, connected through standard formats. This underwrites the design philosophy of the paper's interface typology, that the epistemic function determines the interface and that a question-specific tool preserves the model-specific detail a one-size-fits-all dashboard flattens.",
    "status": "grounded",
    "topics": [
     "ArtefactVerification"
@@ -1060,7 +1060,7 @@
   {
    "slug": "duration-cost-figures-experiential",
    "title": "The duration and cost figures of Section 5 are experiential values outside deterministic checking.",
-   "statement": "The duration and cost figures of Section 5 are experiential values that lie outside deterministic checking, so the verification supports no verdict on their accuracy and treats them as reported experience. Checked against the deliverable on 2026-07-25, no duration or cost figures are reported there any longer, and the deliverable states expressly that it offers no comparative measurements of development time or cost; the claim stands as a checked finding about what the verification could and could not decide.",
+   "statement": "The duration and cost figures of the paper's project inventory are experiential values that lie outside deterministic checking, so the verification supports no verdict on their accuracy and treats them as reported experience. Checked against the deliverable on 2026-07-25, no duration or cost figures are reported there any longer, and the deliverable states expressly that it offers no comparative measurements of development time or cost; the claim stands as a checked finding about what the verification could and could not decide.",
    "status": "grounded",
    "topics": [
     "Evidence",
@@ -1078,7 +1078,7 @@
   {
    "slug": "edition-ai-benchmarks-lacking-and-reproducibility-favours-local-models",
    "title": "Benchmarks for AI-generated edition tasks are lacking, and a reproducibility standard from within digital editing calls for free, locally runnable models.",
-   "statement": "The field lacks benchmarks to rigorously evaluate the quality and accuracy of AI-generated results for its specific tasks, and it voices a reproducibility standard, citing Reiter's point that evaluating non-local, API-based models is product testing rather than model evaluation, that free and locally runnable models are a condition of comprehensible, reproducible, and open research. This grounds two of the paper's discussion moves: in Section 6.2 the method answers the missing-benchmark problem by assigning the check to the human and the deterministic layer, and in Section 6.3 it locates reproducibility in the documents and pipeline against the standard's presupposition of local models, a tension the paper marks as real.",
+   "statement": "The field lacks benchmarks to rigorously evaluate the quality and accuracy of AI-generated results for its specific tasks, and it voices a reproducibility standard, citing Reiter's point that evaluating non-local, API-based models is product testing rather than model evaluation, that free and locally runnable models are a condition of comprehensible, reproducible, and open research. This grounds two of the paper's discussion moves: in its verification architecture the method answers the missing-benchmark problem by assigning the check to the human and the deterministic layer, and in its account of reconstructability it locates reproducibility in the documents and pipeline against the standard's presupposition of local models, a tension the paper marks as real.",
    "status": "grounded",
    "topics": [
     "Limitations"
@@ -1181,7 +1181,7 @@
   {
    "slug": "epistemic-forms-are-target-knowledge-structures",
    "title": "Epistemic forms are target knowledge structures that organise inquiry by the kind of knowledge produced.",
-   "statement": "Collins and Ferguson define an epistemic form as a target structure that guides inquiry by organising knowledge and the relations among its concepts, paired with an epistemic game of rules and strategies for building that form. This grounds the paper's Section 4.2 use of epistemic forms as the principle for classifying research-data interfaces by the kind of knowledge they help construct, rather than by data format or technique.",
+   "statement": "Collins and Ferguson define an epistemic form as a target structure that guides inquiry by organising knowledge and the relations among its concepts, paired with an epistemic game of rules and strategies for building that form. This grounds the paper's use of epistemic forms as the principle for classifying research-data interfaces by the kind of knowledge they help construct, rather than by data format or technique.",
    "status": "grounded",
    "topics": [
     "Concepts"
@@ -1275,7 +1275,7 @@
   {
    "slug": "exploratory-collection-visualisation-is-a-rich-design-space",
    "title": "Exploratory visualisation of cultural-heritage collections spans a rich, diverse design space beyond search and grid interfaces.",
-   "statement": "A survey of information-visualisation approaches to cultural-heritage collections documents a widening spectrum of interactive visualisation types that give visual access to collections as complex information spaces, with a notable diversity of interaction and representation techniques. This grounds the paper's Section 2.1 point about the richness of the exploratory-visualisation design space for cultural heritage, against which it sets how rarely projects can afford to build such interfaces.",
+   "statement": "A survey of information-visualisation approaches to cultural-heritage collections documents a widening spectrum of interactive visualisation types that give visual access to collections as complex information spaces, with a notable diversity of interaction and representation techniques. This grounds the paper's point about the richness of the exploratory-visualisation design space for cultural heritage, against which it sets how rarely projects can afford to build such interfaces.",
    "status": "grounded",
    "topics": [
     "Frame"
@@ -1346,7 +1346,7 @@
   {
    "slug": "fair4rs-provenance-and-identifier-principles",
    "title": "The FAIR4RS principles require detailed provenance under Reusable (R1.2) and a persistent identifier under Findable (F1).",
-   "statement": "The community standard for research software, FAIR4RS, places detailed provenance under its Reusable principle (R1.2) and a globally unique, persistent identifier under its Findable principle (F1). These two principles are the yardstick the paper applies to the promptotype-as-artifact in Sections 4.1 and 6.3: the provenance requirement is what the method's journal and documents satisfy as a by-product, while the persistent-identifier requirement is the findability condition that unpublished prototypes typically fail.",
+   "statement": "The community standard for research software, FAIR4RS, places detailed provenance under its Reusable principle (R1.2) and a globally unique, persistent identifier under its Findable principle (F1). These two principles are the yardstick the paper applies to the promptotype-as-artifact: the provenance requirement is what the method's journal and documents satisfy as a by-product, while the persistent-identifier requirement is the findability condition that unpublished prototypes typically fail.",
    "status": "grounded",
    "topics": [
     "ArtefactVerification"
@@ -1368,7 +1368,7 @@
   {
    "slug": "fanous-frontier-models-sycophantic-in-most-cases",
    "title": "The SycEval benchmark measured sycophantic behaviour in 58% of cases across three frontier models.",
-   "statement": "In the SycEval evaluation of ChatGPT-4o, Claude-Sonnet and Gemini-1.5-Pro on mathematics and medical-advice tasks, sycophantic behaviour occurred in 58.19% of cases. This is the quantitative anchor for the paper's Section 2.4 statement that frontier models behave sycophantically in a majority of cases, supporting the claim that the absence of model disagreement is no validation.",
+   "statement": "In the SycEval evaluation of ChatGPT-4o, Claude-Sonnet and Gemini-1.5-Pro on mathematics and medical-advice tasks, sycophantic behaviour occurred in 58.19% of cases. This is the quantitative anchor for the paper's statement that frontier models behave sycophantically in a majority of cases, supporting the claim that the absence of model disagreement is no validation.",
    "status": "grounded",
    "topics": [
     "Frame"
@@ -1385,7 +1385,7 @@
   {
    "slug": "femprompt-figures-verified-2026-07-19",
    "title": "FemPrompt's stated Section 5 figures held against the repository as verified on 2026-07-19.",
-   "statement": "The FemPrompt case study's stated figures held against the project repository when the Section 5 verification checked them on 2026-07-19, covering 326 papers, a 505-file vault, and a 68 percent to 42 percent split as documented in-repo. Checked against the deliverable on 2026-07-25, the 326 papers are still reported there, while the vault file count and the split are not; for those two the claim stands as a checked finding about the repository.",
+   "statement": "The FemPrompt case study's stated figures held against the project repository when the figures verification checked them on 2026-07-19, covering 326 papers, a 505-file vault, and a 68 percent to 42 percent split as documented in-repo. Checked against the deliverable on 2026-07-25, the 326 papers are still reported there, while the vault file count and the split are not; for those two the claim stands as a checked finding about the repository.",
    "status": "grounded",
    "topics": [
     "Evidence"
@@ -1402,7 +1402,7 @@
   {
    "slug": "field-literature-records-llm-code-generation-and-tei-agent-line-by-2024",
    "title": "The field's own literature records LLM code generation for edition publishing systems in September 2024 and the teiCrafter, teiModeler, teiVerifier line of TEI-generation tools.",
-   "statement": "A trace of the working mode the paper consolidates is on record in the field's literature: code generation to set up technical systems for edition publishing was demonstrated in September 2024, and a line of interacting agents, teiCrafter for TEI annotation, teiModeler for the target text model, and teiVerifier for encoding verification, was described in the same survey. This grounds the paper's Section 2.5 genealogy waypoint, an early public instance predating the consolidated method.",
+   "statement": "A trace of the working mode the paper consolidates is on record in the field's literature: code generation to set up technical systems for edition publishing was demonstrated in September 2024, and a line of interacting agents, teiCrafter for TEI annotation, teiModeler for the target text model, and teiVerifier for encoding verification, was described in the same survey. This grounds the paper's genealogy waypoint, an early public instance predating the consolidated method.",
    "status": "grounded",
    "topics": [
     "Genealogy"
@@ -1446,7 +1446,7 @@
   {
    "slug": "generalised-dashboard-flattens-context-specific-detail",
    "title": "The generalised DEPCHA dashboard serves broad overviews and can flatten the context-specific detail that social and economic historians require.",
-   "statement": "The dissertation records the limit of the generalised Dashboard View of DEPCHA in its own terms. The view helps with broad overviews and can overlook what social and economic historians require, flattening context-specific detail; against generalist interfaces of this kind it sets scholar-centred, flexible and interactive environments, which the two experimental interfaces exemplify. This grounds the point Section 1 of the paper uses as the origin of the method, that a shared ontology can normalise heterogeneous datasets without a single interface serving the perspectives built on them.",
+   "statement": "The dissertation records the limit of the generalised Dashboard View of DEPCHA in its own terms. The view helps with broad overviews and can overlook what social and economic historians require, flattening context-specific detail; against generalist interfaces of this kind it sets scholar-centred, flexible and interactive environments, which the two experimental interfaces exemplify. This grounds the point the paper uses as the origin of the method, that a shared ontology can normalise heterogeneous datasets without a single interface serving the perspectives built on them.",
    "status": "grounded",
    "topics": [
     "Genealogy"
@@ -1490,7 +1490,7 @@
   {
    "slug": "glam-practice-layers-llm-extraction-with-deterministic-checks-and-expert-review",
    "title": "GLAM practice brackets non-deterministic LLM extraction with deterministic regex post-checks and an expert correction interface.",
-   "statement": "A published archival-cataloguing workflow combines LLM extraction from image cards with deterministic post-checks by regular expression, moving misassigned fixed-structure entries automatically, and a purpose-built correction interface where an expert checks, adjusts, deletes, and completes the extracted fields. This is the layering the paper's Section 6.2 invokes: where output fidelity is not decidable by a closed feedback loop, the non-deterministic step is checked by deterministic rules and, above that, by human review.",
+   "statement": "A published archival-cataloguing workflow combines LLM extraction from image cards with deterministic post-checks by regular expression, moving misassigned fixed-structure entries automatically, and a purpose-built correction interface where an expert checks, adjusts, deletes, and completes the extracted fields. This is the layering the paper's verification architecture invokes: where output fidelity is not decidable by a closed feedback loop, the non-deterministic step is checked by deterministic rules and, above that, by human review.",
    "status": "grounded",
    "topics": [
     "ArtefactVerification"
@@ -1522,7 +1522,7 @@
   {
    "slug": "hans-gross-figures-verified-2026-07-19",
    "title": "The Hans Gross figure of 3,892 objects held against the repository as verified on 2026-07-19.",
-   "statement": "The Hans Gross case study's stated figure of 3,892 objects matched the project repository when the Section 5 verification checked it on 2026-07-19.",
+   "statement": "The Hans Gross case study's stated figure of 3,892 objects matched the project repository when the figures verification checked it on 2026-07-19.",
    "status": "grounded",
    "topics": [
     "Evidence"
@@ -1610,7 +1610,7 @@
   {
    "slug": "humanities-data-modelling-is-interpretive-shaping",
    "title": "Humanities data models represent the interpretive shaping choices scholars make about their material.",
-   "statement": "Data models in the digital humanities represent the shaping choices scholars make when they represent and analyse their material, and modelling makes explicit the assumptions a scholar holds about the nature of a text or artefact. This grounds the paper's Section 2.2 point that the contributors to Flanders and Jannidis treat humanities data as the product of interpretive modelling rather than as given.",
+   "statement": "Data models in the digital humanities represent the shaping choices scholars make when they represent and analyse their material, and modelling makes explicit the assumptions a scholar holds about the nature of a text or artefact. This grounds the paper's point that the contributors to Flanders and Jannidis treat humanities data as the product of interpretive modelling rather than as given.",
    "status": "grounded",
    "topics": [
     "Concepts"
@@ -1676,7 +1676,7 @@
   {
    "slug": "institutional-research-software-support-falls-short-of-need",
    "title": "The research software support institutions provide falls short of what researchers need.",
-   "statement": "Across a survey of 1,149 researchers, primarily in the United States, the research-software-engineering, financial, and infrastructure support that institutions provide is inadequate to the respondents' needs, funding for software development activities is overwhelmingly reported as insufficient, and fewer than a third rate any surveyed dimension of support as sufficient. This grounds the paper's Section 1 premise that the institutionalised intermediary answer does not meet demand where it exists. The paper's further step, that the shortfall is larger still for individual researchers and small projects outside institutional attachment, is marked in the text as an inference and is not carried by this source.",
+   "statement": "Across a survey of 1,149 researchers, primarily in the United States, the research-software-engineering, financial, and infrastructure support that institutions provide is inadequate to the respondents' needs, funding for software development activities is overwhelmingly reported as insufficient, and fewer than a third rate any surveyed dimension of support as sufficient. This grounds the paper's introductory premise that the institutionalised intermediary answer does not meet demand where it exists. The paper's further step, that the shortfall is larger still for individual researchers and small projects outside institutional attachment, is marked in the text as an inference and is not carried by this source.",
    "status": "grounded",
    "topics": [
     "Frame"
@@ -1725,7 +1725,7 @@
   {
    "slug": "klawiter-entries-verified-2026-07-19",
    "title": "Klawiter's stated Section 5 figures held against the repository as verified on 2026-07-19.",
-   "statement": "The Klawiter case study's stated figures, 6,296 entries and the existence of a 7-stage pipeline, matched the project repository when the Section 5 verification checked them on 2026-07-19. Checked against the deliverable on 2026-07-25, the 6,296 entries are still reported there, while the number of pipeline stages is not; for that figure the claim stands as a checked finding about the repository.",
+   "statement": "The Klawiter case study's stated figures, 6,296 entries and the existence of a 7-stage pipeline, matched the project repository when the figures verification checked them on 2026-07-19. Checked against the deliverable on 2026-07-25, the 6,296 entries are still reported there, while the number of pipeline stages is not; for that figure the claim stands as a checked finding about the repository.",
    "status": "grounded",
    "topics": [
     "Evidence"
@@ -1877,7 +1877,7 @@
   {
    "slug": "llm-based-agents-for-software-engineering",
    "title": "LLM-based agents, LLMs augmented with tool use, are applied to software engineering with demonstrated effectiveness.",
-   "statement": "LLM-based agents extend standalone LLMs with the ability to perceive and use external tools and resources, and a systematic survey documents their application to software engineering with demonstrated effectiveness. This is the reference behind the paper's Section 2.4 mention of the LLM-based agents that Spec-Driven-Development frameworks orchestrate.",
+   "statement": "LLM-based agents extend standalone LLMs with the ability to perceive and use external tools and resources, and a systematic survey documents their application to software engineering with demonstrated effectiveness. This is the reference behind the paper's mention of the LLM-based agents that Spec-Driven-Development frameworks orchestrate.",
    "status": "grounded",
    "topics": [
     "Frame"
@@ -1948,7 +1948,7 @@
   {
    "slug": "llm-reproducibility-transparency-recommendations",
    "title": "Reproducible LLM-based research requires transparency of prompts, model versions and settings against model non-determinism.",
-   "statement": "A methodological primer for LLM use in social science makes transparency of prompts, code, data, model versions and settings the precondition for replicable results, and grounds this in the non-deterministic and continuously evolving nature of the models. The paper cites these recommendations in Section 6.3 as convergent with its own relocation of reproducibility onto the documents, the process record and the deterministic pipeline rather than the non-reproducible token sequence.",
+   "statement": "A methodological primer for LLM use in social science makes transparency of prompts, code, data, model versions and settings the precondition for replicable results, and grounds this in the non-deterministic and continuously evolving nature of the models. The paper cites these recommendations in its account of reconstructability as convergent with its own relocation of reproducibility onto the documents, the process record and the deterministic pipeline rather than the non-reproducible token sequence.",
    "status": "grounded",
    "topics": [
     "Concepts"
@@ -1970,7 +1970,7 @@
   {
    "slug": "llm-vocabulary-test-2025-fell-short-of-thesaurus-interoperability",
    "title": "A 2025 test of GPT-4 and DeepL Write on specialist vocabulary lacked the terminological precision and hierarchical embedding required for thesaurus-level interoperability.",
-   "statement": "Prompt-based queries to GPT-4 and DeepL Write, tested between April and June 2025 on specialist art and architecture terms, yielded at best general definitions and lacked the terminological precision, conceptual differentiation, and hierarchical embedding that thesaurus-level interoperability requires. This grounds the paper's Section 6.2 footnote evidence that current models do not reach the interpretive precision the task demands.",
+   "statement": "Prompt-based queries to GPT-4 and DeepL Write, tested between April and June 2025 on specialist art and architecture terms, yielded at best general definitions and lacked the terminological precision, conceptual differentiation, and hierarchical embedding that thesaurus-level interoperability requires. This grounds the paper's footnote evidence that current models do not reach the interpretive precision the task demands.",
    "status": "grounded",
    "topics": [
     "ArtefactVerification"
@@ -2014,7 +2014,7 @@
   {
    "slug": "lucina-figures-verified-2026-07-19",
    "title": "Lucina's stated Section 5 figures held against the repository as verified on 2026-07-19.",
-   "statement": "The Lucina case study's stated figures, 128 neo-Latin poems and 5 iterations, matched the project repository when the Section 5 verification checked them on 2026-07-19. Checked against the deliverable on 2026-07-25, neither the figures nor the project appear there. The drift audit places that absence before the revision rounds of 2026-07-24 and 2026-07-25, since the deliverable already offered no point of attachment for these figures when the vault was built, so this is not a figure the deliverable dropped. The claim stands as a checked finding about the repository.",
+   "statement": "The Lucina case study's stated figures, 128 neo-Latin poems and 5 iterations, matched the project repository when the figures verification checked them on 2026-07-19. Checked against the deliverable on 2026-07-25, neither the figures nor the project appear there. The drift audit places that absence before the revision rounds of 2026-07-24 and 2026-07-25, since the deliverable already offered no point of attachment for these figures when the vault was built, so this is not a figure the deliverable dropped. The claim stands as a checked finding about the repository.",
    "status": "grounded",
    "topics": [
     "Evidence"
@@ -2048,7 +2048,7 @@
   {
    "slug": "macedo-first-process-taxonomy-sdd-frameworks",
    "title": "A first process taxonomy of agentic software-development frameworks exists, scoring them on six dimensions.",
-   "statement": "Macedo 2026 supplies the first study centred on the operational frameworks that turn LLM and agent capabilities into a development process, contributing a six-dimension process taxonomy, specification, context, roles, execution, validation and portability, with a scoring rubric. This is the source behind the paper's Section 2.4 statement that a first process taxonomy of the Spec-Driven-Development frameworks now exists.",
+   "statement": "Macedo 2026 supplies the first study centred on the operational frameworks that turn LLM and agent capabilities into a development process, contributing a six-dimension process taxonomy, specification, context, roles, execution, validation and portability, with a scoring rubric. This is the source behind the paper's statement that a first process taxonomy of the Spec-Driven-Development frameworks now exists.",
    "status": "grounded",
    "topics": [
     "Frame"
@@ -2092,7 +2092,7 @@
   {
    "slug": "making-source-data-machine-addressable-is-interpretive-modelling",
    "title": "Source data legible only as PDF layout becomes machine-addressable only through explicit markup, and the categorisation this requires is itself interpretive.",
-   "statement": "Where a source exists as human-readable layout, its structure must be reconstructed before it computes: a PDF table readable to the eye cannot be processed until markup makes each cell explicit. The categorial differentiation this modelling introduces, normalising entries under shared categories, is not neutral cleaning but forms new distinctions that count as part of a historical interpretation, and even the visualisation of the result is an expression of interpretation rather than a mere representation of the data. This grounds the paper's Section 2.2 claim that semantic explicitness is a condition of computation and that data construction is interpretive labour in its own right.",
+   "statement": "Where a source exists as human-readable layout, its structure must be reconstructed before it computes: a PDF table readable to the eye cannot be processed until markup makes each cell explicit. The categorial differentiation this modelling introduces, normalising entries under shared categories, is not neutral cleaning but forms new distinctions that count as part of a historical interpretation, and even the visualisation of the result is an expression of interpretation rather than a mere representation of the data. This grounds the paper's claim that semantic explicitness is a condition of computation and that data construction is interpretive labour in its own right.",
    "status": "grounded",
    "topics": [
     "Frame"
@@ -2304,7 +2304,7 @@
   {
    "slug": "notker-figures-verified-2026-07-19",
    "title": "Notker's stated Section 5 figures held against the repository as verified on 2026-07-19.",
-   "statement": "The Notker case study's stated figures, Psalm 2 with 13 verses and 6 text-layer controls, matched the project repository when the Section 5 verification checked them on 2026-07-19. Checked against the deliverable on 2026-07-25, Psalm 2 with its thirteen verses is still reported there, while the count of text-layer controls is not; for that figure the claim stands as a checked finding about the repository.",
+   "statement": "The Notker case study's stated figures, Psalm 2 with 13 verses and 6 text-layer controls, matched the project repository when the figures verification checked them on 2026-07-19. Checked against the deliverable on 2026-07-25, Psalm 2 with its thirteen verses is still reported there, while the count of text-layer controls is not; for that figure the claim stands as a checked finding about the repository.",
    "status": "grounded",
    "topics": [
     "Evidence"
@@ -2343,7 +2343,7 @@
   {
    "slug": "ontology-derivation-yields-structure-and-exposes-model-defects",
    "title": "Deriving a domain description from a formal vocabulary yields its structural layer and exposes modelling defects, while subject matter, graph shape, absences and reliability stay outside it.",
-   "statement": "In a documented project whose namespace was formalised as an ontology, the domain document of the knowledge base could be derived from that formal source for its structural layer, the class hierarchy, the permitted connections between classes, the typed date properties and the ordering of the controlled vocabularies. What did not derive was the subject matter and research question, the shape the graph actually takes in the data, deliberate absences, and the reliability of a given entry, and part of what did derive rested on prose annotations carried inside the ontology. The finding that reached furthest was diagnostic: having to state a domain, a range and a value range for every term made modelling problems visible that had gone unnoticed. This grounds the Section 2.2 passage on what ontology-based data buys the method's context layer.",
+   "statement": "In a documented project whose namespace was formalised as an ontology, the domain document of the knowledge base could be derived from that formal source for its structural layer, the class hierarchy, the permitted connections between classes, the typed date properties and the ordering of the controlled vocabularies. What did not derive was the subject matter and research question, the shape the graph actually takes in the data, deliberate absences, and the reliability of a given entry, and part of what did derive rested on prose annotations carried inside the ontology. The finding that reached furthest was diagnostic: having to state a domain, a range and a value range for every term made modelling problems visible that had gone unnoticed. This grounds the paper's passage on what ontology-based data buys the method's context layer.",
    "status": "grounded",
    "topics": [
     "Frame"
@@ -2397,7 +2397,7 @@
   {
    "slug": "operationalisation-develops-a-measurement-for-a-concept",
    "title": "Operationalisation is the development of a measurement that assigns instances to a concept, and the choices it makes govern what the results can mean.",
-   "statement": "Operationalisation develops the steps that assign the instantiations of a concept unambiguously to that concept and thereby measure it, which is what carries a theoretical concept over into something detectable in data. Merely applying an existing measurement is not operationalisation in this sense. The choices made in it are consequential, because they govern which results can be reached and how those results may be read against the original research question. This grounds the paper's Section 2.2 sentence that operationalisation is the step through which a humanities abstraction becomes computable.",
+   "statement": "Operationalisation develops the steps that assign the instantiations of a concept unambiguously to that concept and thereby measure it, which is what carries a theoretical concept over into something detectable in data. Merely applying an existing measurement is not operationalisation in this sense. The choices made in it are consequential, because they govern which results can be reached and how those results may be read against the original research question. This grounds the paper's sentence that operationalisation is the step through which a humanities abstraction becomes computable.",
    "status": "grounded",
    "topics": [
     "Concepts"
@@ -2756,7 +2756,7 @@
   {
    "slug": "reproducibility-shifts-to-documented-justification",
    "title": "In LLM-assisted work reproducibility shifts from identical repetition to traceable justification.",
-   "statement": "Reproducibility is reframed from identical repetition to a traceable, documented justification, comparable to qualitative research. This reframing meets a prior condition of the humanities, where reproducible research in the strong sense has limited currency because the scholar's subject position is bound to the scholarship. Checked against the deliverable on 2026-07-25, the reframing itself is still in use there, in the reproducibility passage that locates reproducibility in the documents, the process record, and the deterministic pipeline. The Posner half has lost its use, because the deliverable cites Posner only in the footnote closing Section 2.2, on humanities data as a necessary contradiction, and says nothing about reproducibility at that place. For that half the claim stands as a checked statement without a current use in the deliverable.",
+   "statement": "Reproducibility is reframed from identical repetition to a traceable, documented justification, comparable to qualitative research. This reframing meets a prior condition of the humanities, where reproducible research in the strong sense has limited currency because the scholar's subject position is bound to the scholarship. Checked against the deliverable on 2026-07-25, the reframing itself is still in use there, in the reproducibility passage that locates reproducibility in the documents, the process record, and the deterministic pipeline. The Posner half has lost its use, because the deliverable cites Posner only in the footnote on humanities data as a necessary contradiction, and says nothing about reproducibility at that place. For that half the claim stands as a checked statement without a current use in the deliverable.",
    "status": "grounded",
    "topics": [
     "Method"
@@ -2820,7 +2820,7 @@
   {
    "slug": "research-data-is-defined-by-the-function-it-serves",
    "title": "What makes data research data is the function it serves, not a list of data types.",
-   "statement": "The German-language digital humanities have no uniform definition of research data, and the functional route decides the question instead: data of a research process counts as research data where it is needed to justify the findings, to sustain their claim to truth, or to reproduce the individual steps. This grounds the paper's Section 2.2 sentence that research data is constituted by the function it serves, with grounding, examination of validity claims, and reproduction as the three duties named there. The source withholds a definition on purpose and offers these criteria as selection criteria, so the claim carries the functional cut and not a definition attributed to this source.",
+   "statement": "The German-language digital humanities have no uniform definition of research data, and the functional route decides the question instead: data of a research process counts as research data where it is needed to justify the findings, to sustain their claim to truth, or to reproduce the individual steps. This grounds the paper's sentence that research data is constituted by the function it serves, with grounding, examination of validity claims, and reproduction as the three duties named there. The source withholds a definition on purpose and offers these criteria as selection criteria, so the claim carries the functional cut and not a definition attributed to this source.",
    "status": "grounded",
    "topics": [
     "Concepts"
@@ -2842,7 +2842,7 @@
   {
    "slug": "research-software-engineers-are-scarce",
    "title": "Software engineers who combine research experience with domain knowledge are scarce.",
-   "statement": "Research software engineers who hold both research experience and domain knowledge are in very short supply, for want of institutional homes and career paths, and the fallback of contract programmers typically fails because they lack research experience and underrate the cultural gap between business and academia. This grounds the paper's Section 1 premise that the intermediary answer, even once institutionalised as a profession, does not reach the individual researcher or small project as a matter of course.",
+   "statement": "Research software engineers who hold both research experience and domain knowledge are in very short supply, for want of institutional homes and career paths, and the fallback of contract programmers typically fails because they lack research experience and underrate the cultural gap between business and academia. This grounds the paper's introductory premise that the intermediary answer, even once institutionalised as a profession, does not reach the individual researcher or small project as a matter of course.",
    "status": "grounded",
    "topics": [
     "Frame"
@@ -2891,7 +2891,7 @@
   {
    "slug": "rse-institutionalised-intermediary-profession",
    "title": "The Research Software Engineering movement institutionalised the domain-technical intermediary as a recognised profession.",
-   "statement": "The Research Software Engineering movement recognises and supports the people who build research software, treating them as critical members of research teams and establishing research software work as a realistic professional career with dedicated roles. This grounds the paper's Section 1 point that the field answered its translation problem between scholars and programmers by institutionalising a human intermediary as a profession, the answer Promptotyping reaches differently.",
+   "statement": "The Research Software Engineering movement recognises and supports the people who build research software, treating them as critical members of research teams and establishing research software work as a realistic professional career with dedicated roles. This grounds the paper's introductory point that the field answered its translation problem between scholars and programmers by institutionalising a human intermediary as a profession, the answer Promptotyping reaches differently.",
    "status": "grounded",
    "topics": [
     "Frame"
@@ -2918,7 +2918,7 @@
   {
    "slug": "sarkar-vibe-coding-material-disengagement",
    "title": "The first empirical study of vibe coding describes it as an iterative goal-satisfaction cycle under selective human oversight.",
-   "statement": "The first empirical study of vibe coding, based on over eight hours of think-aloud video, characterises the practice as an iterative goal-satisfaction cycle of prompting, rapid evaluation and manual editing, and as an early form of material disengagement in which practitioners orchestrate AI-produced code while keeping selective, strategic oversight. This grounds the paper's Section 2.4 treatment of vibe coding as an exploratory mode retained inside the method rather than rejected.",
+   "statement": "The first empirical study of vibe coding, based on over eight hours of think-aloud video, characterises the practice as an iterative goal-satisfaction cycle of prompting, rapid evaluation and manual editing, and as an early form of material disengagement in which practitioners orchestrate AI-produced code while keeping selective, strategic oversight. This grounds the paper's treatment of vibe coding as an exploratory mode retained inside the method rather than rejected.",
    "status": "grounded",
    "topics": [
     "Frame"
@@ -2989,7 +2989,7 @@
   {
    "slug": "sdd-data-artefacts-describe-the-system-under-construction",
    "title": "The data artefacts of Spec-Driven-Development frameworks describe the system under construction, and none of them describes external sources or their semantics.",
-   "statement": "Spec Kit produces a dedicated data-model artefact in its planning phase and Kiro's design document carries data flow diagrams, interfaces and database schemas, and in both cases the described object is the system being built, derived from its requirements. BMAD-METHOD and OpenSpec list no artefact whose purpose is describing external data sources at all, and Kiro's persistent context files cover product purpose, technology stack and project structure without touching sources. The difference the paper's Section 2.4 states is therefore one of the object of description rather than the presence of a data artefact.",
+   "statement": "Spec Kit produces a dedicated data-model artefact in its planning phase and Kiro's design document carries data flow diagrams, interfaces and database schemas, and in both cases the described object is the system being built, derived from its requirements. BMAD-METHOD and OpenSpec list no artefact whose purpose is describing external data sources at all, and Kiro's persistent context files cover product purpose, technology stack and project structure without touching sources. The difference the paper states is therefore one of the object of description rather than the presence of a data artefact.",
    "status": "grounded",
    "topics": [
     "Frame"
@@ -3031,7 +3031,7 @@
   {
    "slug": "sdd-frameworks-converge-on-specification-over-prompt",
    "title": "Across agentic software-development frameworks the isolated prompt loses centrality and persistent specification artifacts coordinate the agents.",
-   "statement": "The comparative assessment of agentic software-development frameworks finds that, where a process is adopted, the isolated prompt loses centrality and persistent artifacts, work contracts, traceability and human review become the coordinating mechanisms, with Spec Kit treating specifications as the central artifact feeding plans, tasks and implementation. This grounds the paper's Section 2.4 observation that the Spec-Driven-Development wave corroborates the premise that documents govern agents better than prompts do.",
+   "statement": "The comparative assessment of agentic software-development frameworks finds that, where a process is adopted, the isolated prompt loses centrality and persistent artifacts, work contracts, traceability and human review become the coordinating mechanisms, with Spec Kit treating specifications as the central artifact feeding plans, tasks and implementation. This grounds the paper's observation that the Spec-Driven-Development wave corroborates the premise that documents govern agents better than prompts do.",
    "status": "grounded",
    "topics": [
     "Frame"
@@ -3053,7 +3053,7 @@
   {
    "slug": "sdd-no-subject-matter-verification-role",
    "title": "No framework of the Spec-Driven-Development wave defines a checking role through subject-matter competence.",
-   "statement": "Where the wave names the person who checks, it names a software role. Spec Kit names the developer reviewing the agent's focused changes; Kiro leaves its approval gate unattributed; BMAD, the most role-rich of the four, carries its analyst, architect and reviewer as agent skills invoked inside the tool rather than as definitions of human competence; OpenSpec defines no such role either. This is the difference that Section 2.4 rests on when it installs the Critical Expert in the Loop, a role defined by domain competence together with knowledge of the model's failure modes.",
+   "statement": "Where the wave names the person who checks, it names a software role. Spec Kit names the developer reviewing the agent's focused changes; Kiro leaves its approval gate unattributed; BMAD, the most role-rich of the four, carries its analyst, architect and reviewer as agent skills invoked inside the tool rather than as definitions of human competence; OpenSpec defines no such role either. This is the difference the paper rests on when it installs the Critical Expert in the Loop, a role defined by domain competence together with knowledge of the model's failure modes.",
    "status": "grounded",
    "topics": [
     "Frame"
@@ -3132,7 +3132,7 @@
   {
    "slug": "sdd-specifications-address-non-developers",
    "title": "Spec-Driven-Development specifications are addressed beyond developers, so the delimitation cannot rest on a developers-only readership.",
-   "statement": "Early releases of Spec Kit's specification template stated its readership expressly as business stakeholders and required the specification to be written for non-technical readers, and the release current at retrieval carries no audience statement at all. Kiro names product and engineering alignment as the collaborative reach of its specifications, OpenSpec has one team own specifications that other teams read, and BMAD addresses its documents to the agents of the following phase. A claim that both sides of an industry specification are developers is therefore not available, and the difference Section 2.4 states lies in the kind of authority the reader holds over the subject matter.",
+   "statement": "Early releases of Spec Kit's specification template stated its readership expressly as business stakeholders and required the specification to be written for non-technical readers, and the release current at retrieval carries no audience statement at all. Kiro names product and engineering alignment as the collaborative reach of its specifications, OpenSpec has one team own specifications that other teams read, and BMAD addresses its documents to the agents of the following phase. A claim that both sides of an industry specification are developers is therefore not available, and the difference the paper states lies in the kind of authority the reader holds over the subject matter.",
    "status": "grounded",
    "topics": [
     "Frame"
@@ -3191,7 +3191,7 @@
   {
    "slug": "section4-deviations-are-snapshot-drift-2026-07-19",
    "title": "Several Section 5 deviations are snapshot drift, where dating a figure is as valid as updating it.",
-   "statement": "Several Section 5 deviations are snapshot drift, arising because the paper describes an earlier state of still-growing repositories. For these figures, dating the figure to its build snapshot is as valid a correction as updating it to the current count. The evidence section carried the number 4 when the verification ran on 2026-07-19 and carries the number 5 since the revision; the section references above were corrected on 2026-07-25, and the file name keeps the old number so that existing anchors resolve.",
+   "statement": "Several deviations in the paper's project inventory are snapshot drift, arising because the paper describes an earlier state of still-growing repositories. For these figures, dating the figure to its build snapshot is as valid a correction as updating it to the current count. The file name keeps the section number the evidence layer carried when the verification ran, so that existing anchors resolve.",
    "status": "grounded",
    "topics": [
     "Evidence"
@@ -3208,7 +3208,7 @@
   {
    "slug": "section4-verification-single-agent-snapshot-2026-07-19",
    "title": "The Section 5 verification was a single-agent snapshot with test figures counted as source functions.",
-   "statement": "The Section 5 verification ran as a single adversarial agent without a second independent pass, read repository states on 2026-07-19 via local clones, shallow clones, and the GitHub API so that later growth stays invisible to it, and counted test figures as test functions in source without executing a pytest collection. These bounds set how far its verdicts reach. The evidence section carried the number 4 when the verification ran and carries the number 5 since the revision; the section references above were corrected on 2026-07-25, and the file name keeps the old number so that existing anchors resolve.",
+   "statement": "The figures verification ran as a single adversarial agent without a second independent pass, read repository states on 2026-07-19 via local clones, shallow clones, and the GitHub API so that later growth stays invisible to it, and counted test figures as test functions in source without executing a pytest collection. These bounds set how far its verdicts reach. The file name keeps the section number the evidence layer carried when the verification ran, so that existing anchors resolve.",
    "status": "grounded",
    "topics": [
     "Evidence",
@@ -3236,7 +3236,7 @@
   {
    "slug": "semantic-vocabulary-matching-stays-a-human-interpretive-task",
    "title": "Semantic matching between vocabularies remains a human-driven interpretive task, and AI becomes meaningful only where grounded in curated, context-rich data.",
-   "statement": "Mapping between vocabularies requires more than algorithmic matching; it demands interpretive judgement and deep domain understanding, and AI becomes meaningful and trustworthy only where it is grounded in curated, context-rich data. This grounds the paper's Section 6.2 boundary: interpretation and contextualisation stay in the expert zone, and the method reaches the same limit from vocabulary work that the documented edition project reaches from entity identification.",
+   "statement": "Mapping between vocabularies requires more than algorithmic matching; it demands interpretive judgement and deep domain understanding, and AI becomes meaningful and trustworthy only where it is grounded in curated, context-rich data. This grounds the boundary in the paper's verification architecture: interpretation and contextualisation stay in the expert zone, and the method reaches the same limit from vocabulary work that the documented edition project reaches from entity identification.",
    "status": "grounded",
    "topics": [
     "ArtefactVerification"
@@ -3258,7 +3258,7 @@
   {
    "slug": "semantic-web-envisioned-agents-over-machine-processable-data",
    "title": "The Semantic Web's founding vision was software agents acting over machine-processable, meaningful data.",
-   "statement": "The 2001 founding statement defines the Semantic Web as an extension of the web in which information carries well-defined meaning, and envisions software agents that move across pages to carry out sophisticated tasks over that content. This grounds the paper's Section 2.2 point that the field invested for two decades in agents operating over semantically described data, the end Promptotyping reaches through a different mechanism.",
+   "statement": "The 2001 founding statement defines the Semantic Web as an extension of the web in which information carries well-defined meaning, and envisions software agents that move across pages to carry out sophisticated tasks over that content. This grounds the paper's point that the field invested for two decades in agents operating over semantically described data, the end Promptotyping reaches through a different mechanism.",
    "status": "grounded",
    "topics": [
     "Genealogy"
@@ -3280,7 +3280,7 @@
   {
    "slug": "shared-infrastructure-is-the-opposite-longevity-answer-to-the-self-contained-artefact",
    "title": "The field also answers the longevity problem the opposite way, integrating project data into shared Wikidata so a maintained collective platform carries preservation.",
-   "statement": "Against the same limited-hosting-lifetime problem that motivates the self-contained static artefact, one strand of the field pursues the inverse answer: rather than removing dependencies, it integrates project research data directly into the Wikimedia Foundation's shared infrastructure, so that a maintained collective platform carries preservation and the data stays public after the project ends. This grounds the second half of the paper's Section 4.1 footnote precedent, where the static artefact instead reaches longevity by carrying no dependencies to maintain.",
+   "statement": "Against the same limited-hosting-lifetime problem that motivates the self-contained static artefact, one strand of the field pursues the inverse answer: rather than removing dependencies, it integrates project research data directly into the Wikimedia Foundation's shared infrastructure, so that a maintained collective platform carries preservation and the data stays public after the project ends. This grounds the second half of the paper's footnote precedent, where the static artefact instead reaches longevity by carrying no dependencies to maintain.",
    "status": "grounded",
    "topics": [
     "ArtefactVerification"
@@ -3334,7 +3334,7 @@
   {
    "slug": "static-client-side-editions-reach-tens-of-thousands-of-units",
    "title": "A statically published TEI edition of over 16,000 pre-rendered units processes and stores without size trouble on ordinary hardware.",
-   "statement": "The scale reachable on the pre-rendered, self-contained side is documented at over 16,000 edition units, each a single TEI-XML file, with the denormalised serialisation at 25 MB raising no difficulty in processing on a common machine or in storage within GitHub's 100 MB file limit. This grounds the paper's Section 4.3 order-of-magnitude claim about the pre-rendered side of the client-side bound. The 25 MB figure is the person-register serialisation, not the whole edition's source XML, and the report states no measured browser-memory ceiling for interactive data volume; the number bounds build and storage rather than runtime.",
+   "statement": "The scale reachable on the pre-rendered, self-contained side is documented at over 16,000 edition units, each a single TEI-XML file, with the denormalised serialisation at 25 MB raising no difficulty in processing on a common machine or in storage within GitHub's 100 MB file limit. This grounds the paper's order-of-magnitude claim about the pre-rendered side of the client-side bound. The 25 MB figure is the person-register serialisation, not the whole edition's source XML, and the report states no measured browser-memory ceiling for interactive data volume; the number bounds build and storage rather than runtime.",
    "status": "grounded",
    "topics": [
     "ArtefactVerification"
@@ -3378,7 +3378,7 @@
   {
    "slug": "sycophancy-agreement-over-truth",
    "title": "LLMs exhibit sycophancy, matching the user's stated beliefs over the truthful answer rather than challenging them.",
-   "statement": "Sycophancy is a documented and general behaviour of current LLM assistants: they tend to produce responses that agree with the user's stated or implied beliefs rather than the truthful answer. It is traced to human-feedback finetuning and shown consistently across multiple production assistants. This is the failure mode the paper's Critical-Expert-in-the-Loop role is built to counter in Section 2.4.",
+   "statement": "Sycophancy is a documented and general behaviour of current LLM assistants: they tend to produce responses that agree with the user's stated or implied beliefs rather than the truthful answer. It is traced to human-feedback finetuning and shown consistently across multiple production assistants. This is the failure mode the paper's Critical-Expert-in-the-Loop role is built to counter.",
    "status": "grounded",
    "topics": [
     "Frame"
@@ -3454,7 +3454,7 @@
   {
    "slug": "szd-htr-fair4rs-audit-2026-07-23",
    "title": "The SZD-HTR repository's FAIR4RS audit of 2026-07-23 found accessibility and reusability largely fulfilled and findability unfulfilled.",
-   "statement": "A criterion-by-criterion audit of the SZD-HTR repository against the FAIR4RS principles v1.0, run on 2026-07-23, found accessibility fulfilled by construction, reusability largely fulfilled with detailed provenance as the strongest point, and every findability principle unfulfilled at the snapshot; the audit's verdict names the findability gap publication work. This is the audit the paper's Section 4.1 FAIR4RS passage rests on.",
+   "statement": "A criterion-by-criterion audit of the SZD-HTR repository against the FAIR4RS principles v1.0, run on 2026-07-23, found accessibility fulfilled by construction, reusability largely fulfilled with detailed provenance as the strongest point, and every findability principle unfulfilled at the snapshot; the audit's verdict names the findability gap publication work. This is the audit the paper's FAIR4RS passage rests on.",
    "status": "grounded",
    "topics": [
     "Evidence"
@@ -3724,7 +3724,7 @@
   {
    "slug": "unfinishedness-is-an-epistemic-value-in-the-digital-humanities",
    "title": "In the field's German-language discourse, unfinishedness is an epistemic value: the provisional expresses the dynamics of scholarly knowledge.",
-   "statement": "The digital humanities have an explicit discourse that reads the provisional not as a deficit but as a knowledge-fostering value, understanding digital knowledge objects as process rather than finished product and provisionality in digital practice as a resource for insight. This grounds the paper's Section 6.1 claim that the promptotype's disposability sits within a recognised epistemic value of unfinishedness, so that the tension between the disposable process and the durable published artefact dissolves once making and made are distinguished.",
+   "statement": "The digital humanities have an explicit discourse that reads the provisional not as a deficit but as a knowledge-fostering value, understanding digital knowledge objects as process rather than finished product and provisionality in digital practice as a resource for insight. This grounds the paper's claim that the promptotype's disposability sits within a recognised epistemic value of unfinishedness, so that the tension between the disposable process and the durable published artefact dissolves once making and made are distinguished.",
    "status": "grounded",
    "topics": [
     "Concepts"
@@ -3807,7 +3807,7 @@
   {
    "slug": "vibe-coding-speed-quality-tradeoff",
    "title": "Empirical review finds vibe coding fast and accessible but perceived as unreliable, a speed-quality trade-off.",
-   "statement": "A systematic grey-literature review of practitioner accounts finds that vibe coding is motivated by speed and accessibility yet yields code its own practitioners perceive as fast but flawed, lowering barriers at the cost of reliability and maintainability. This is the empirical support for the paper's Section 2.4 positioning, where Promptotyping shares the generation premise of vibe coding but adds preparation, persistent documentation and verification.",
+   "statement": "A systematic grey-literature review of practitioner accounts finds that vibe coding is motivated by speed and accessibility yet yields code its own practitioners perceive as fast but flawed, lowering barriers at the cost of reliability and maintainability. This is the empirical support for the paper's positioning against Vibe Coding, where Promptotyping shares the generation premise of vibe coding but adds preparation, persistent documentation and verification.",
    "status": "grounded",
    "topics": [
     "Frame"
@@ -3829,7 +3829,7 @@
   {
    "slug": "visual-analytics-process-models-describe-process-not-interfaces",
    "title": "Sacha's knowledge generation model describes the visual-analytics process by integrating existing frameworks.",
-   "statement": "Sacha and colleagues propose a knowledge generation model that ties together diverse visual-analytics frameworks and gives a high-level description of the human and computer processes inside such systems. This grounds the paper's Section 4.2 use of the model as the process framework that comes closest to an epistemic account of visual analytics, yet describes the process rather than classifying interfaces by the epistemic function they serve.",
+   "statement": "Sacha and colleagues propose a knowledge generation model that ties together diverse visual-analytics frameworks and gives a high-level description of the human and computer processes inside such systems. This grounds the paper's use of the model as the process framework that comes closest to an epistemic account of visual analytics, yet describes the process rather than classifying interfaces by the epistemic function they serve.",
    "status": "grounded",
    "topics": [
     "Concepts"
@@ -3873,7 +3873,7 @@
   {
    "slug": "well-modelled-data-does-not-discharge-critical-data-work",
    "title": "Provenance and the interests a dataset encodes remain the scholar's responsibility; well-modelled data does not discharge critical data work.",
-   "statement": "Because data emerges from structures of power and reflects societal hierarchies, the critical examination of how a dataset came to be, its provenance, who made its metadata, and whose interests it serves, remains the scholar's responsibility, and the AI turn makes this critical data work more rather than less crucial. This grounds the paper's Section 6.4 limit: FAIR-grade, well-modelled data eases generation but does not relieve the scholar of interrogating the data's origin and encoded interests.",
+   "statement": "Because data emerges from structures of power and reflects societal hierarchies, the critical examination of how a dataset came to be, its provenance, who made its metadata, and whose interests it serves, remains the scholar's responsibility, and the AI turn makes this critical data work more rather than less crucial. This grounds the paper's limit: FAIR-grade, well-modelled data eases generation but does not relieve the scholar of interrogating the data's origin and encoded interests.",
    "status": "grounded",
    "topics": [
     "Limitations"
@@ -3900,7 +3900,7 @@
   {
    "slug": "wheaton-figures-verified-2026-07-19",
    "title": "Wheaton's stated Section 5 figures held against the repository as verified on 2026-07-19.",
-   "statement": "The Wheaton case study's stated figures, 1,124 transactions and 718 individuals, matched the project repository when the Section 5 verification checked them on 2026-07-19. Checked against the deliverable on 2026-07-25, neither figure is reported there any longer; the deliverable names the Wheaton Day Book without counts. The claim stands as a checked finding about the repository.",
+   "statement": "The Wheaton case study's stated figures, 1,124 transactions and 718 individuals, matched the project repository when the figures verification checked them on 2026-07-19. Checked against the deliverable on 2026-07-25, neither figure is reported there any longer; the deliverable names the Wheaton Day Book without counts. The claim stands as a checked finding about the repository.",
    "status": "grounded",
    "topics": [
     "Evidence"
@@ -3961,7 +3961,7 @@
   {
    "slug": "zbz-figures-verified-2026-07-19",
    "title": "ZBZ's stated Section 5 volume figures held against the repository as verified on 2026-07-19.",
-   "statement": "The ZBZ case study's stated volume figures held against the project repository when the Section 5 verification checked them on 2026-07-19, covering 286 PDFs, about 4,150 pages at an actual 4,117, and more than 30 Python scripts at an actual 98. Checked against the deliverable on 2026-07-25, the 286 PDFs and the approximately 4,150 pages are still reported there, while the script count is not; for that figure the claim stands as a checked finding about the repository.",
+   "statement": "The ZBZ case study's stated volume figures held against the project repository when the figures verification checked them on 2026-07-19, covering 286 PDFs, about 4,150 pages at an actual 4,117, and more than 30 Python scripts at an actual 98. Checked against the deliverable on 2026-07-25, the 286 PDFs and the approximately 4,150 pages are still reported there, while the script count is not; for that figure the claim stands as a checked finding about the repository.",
    "status": "grounded",
    "topics": [
     "Evidence"

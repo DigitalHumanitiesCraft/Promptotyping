@@ -7,7 +7,7 @@ status: grounded
 checked:
   validation: 2026-07-25
 created: 2026-07-25
-updated: 2026-07-25
+updated: 2026-07-29
 ---
 
 # Distillate: Promptotyping live demonstration, video 2
@@ -66,9 +66,9 @@ The second recording from January 2026 runs a full session with an agentic codin
 
 ## Open questions
 
-- Exploration as a phase. The paper's Section 3.2 runs Exploration as a phase that precedes Distillation and ends when there is a documented understanding of what is feasible, and it has Distillation compress what Exploration taught. The video shows the exploration resumed inside the Implementation phase, where the speaker interrupts the aggregation run with the finding that the exploration phase was not thorough enough and orders the `data.md` updated with the new knowledge (^s26, ^s27); the same source also proposes a second exploration pass in a fresh session as a check (^s7). Both wordings stand; whether the paper's phase order describes an ideal sequence or the actual one is the question this raises.
+- Exploration as a phase. The paper runs Exploration as a phase that precedes Distillation and ends when there is a documented understanding of what is feasible, and it has Distillation compress what Exploration taught. The video shows the exploration resumed inside the Implementation phase, where the speaker interrupts the aggregation run with the finding that the exploration phase was not thorough enough and orders the `data.md` updated with the new knowledge (^s26, ^s27); the same source also proposes a second exploration pass in a fresh session as a check (^s7). Both wordings stand; whether the paper's phase order describes an ideal sequence or the actual one is the question this raises.
 - The expert role. The video carries two roles, the Critical Expert in the Loop who checks whether what the interface shows is actually right (^s32), and the Expert Developer in the Loop, invoked where the defect has to be addressed through the element identifier and where passing it as a hash presupposes HTML-specific knowledge (^s33). The paper carries only the Critical Expert in the Loop and names no development-side role.
-- Milestone verification. The paper's Section 3.2 states that Implementation advances in milestones, each a small increment the Critical Expert verifies before the next begins. In the video the run continues to the next milestone on a bare `continue` (^s28), and the verification through screenshots and console arrives after several milestones have been built (^s31, ^s40). Whether the paper describes the rule and the video an abbreviation for the demonstration is open.
+- Milestone verification. The paper states that Implementation advances in milestones, each a small increment the Critical Expert verifies before the next begins. In the video the run continues to the next milestone on a bare `continue` (^s28), and the verification through screenshots and console arrives after several milestones have been built (^s31, ^s40). Whether the paper describes the rule and the video an abbreviation for the demonstration is open.
 - Internal inconsistency of the source. The tool identifies 76 Excel documents in the data folder (^s3), while the journal it writes later records 77 (^s22, where the figure is carried in the block). The source does not resolve the difference, so no count is grounded here.
 - The demonstration is a teaching case without a repository, and its figures describe one recorded session.
 

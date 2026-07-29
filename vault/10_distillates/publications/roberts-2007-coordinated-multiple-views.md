@@ -8,12 +8,12 @@ checked:
   quote: 2026-07-23
   validation: 2026-07-23
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # Distillate: Coordinated and Multiple Views (Roberts 2007)
 
-Roberts states the premise and technique of Coordinated and Multiple Views for exploratory visualisation, that users understand data better when they view it through different, linked representations; knowledge/paper.md Section 4.2 grounds its Exploration Interfaces category on this concept.
+Roberts states the premise and technique of Coordinated and Multiple Views for exploratory visualisation, that users understand data better when they view it through different, linked representations; the paper's interface typology grounds its Exploration Interfaces category on this concept.
 
 ## Core statements
 
@@ -34,4 +34,4 @@ Roberts states the premise and technique of Coordinated and Multiple Views for e
 
 ## Related
 
-- [[10_distillates/publications/whitelaw-2015-generous-interfaces]] — a companion exploration-interface reference in Section 4.2.
+- [[10_distillates/publications/whitelaw-2015-generous-interfaces]] — a companion exploration-interface reference in the paper's interface typology.

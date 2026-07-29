@@ -8,12 +8,12 @@ checked:
   quote: 2026-07-23
   validation: 2026-07-23
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # Distillate: A Primer for Evaluating LLMs in Social-Science Research (Abdurahman et al. 2025)
 
-A methodological primer of best practices for reproducible LLM use in social science; the paper cites it in Section 6.3 as related recommendations for reproducibility, aligned with its own relocation of reproducibility onto documents and process. Quotations are checked against the accepted preprint (OSF, doi:10.31234/osf.io/ag7hy), marked in press at Advances in Methods and Practices in Psychological Science.
+A methodological primer of best practices for reproducible LLM use in social science; the paper cites it in its account of reconstructability as related recommendations for reproducibility, aligned with its own relocation of reproducibility onto documents and process. Quotations are checked against the accepted preprint (OSF, doi:10.31234/osf.io/ag7hy), marked in press at Advances in Methods and Practices in Psychological Science.
 
 ## Core statements
 

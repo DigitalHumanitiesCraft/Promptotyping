@@ -8,12 +8,12 @@ checked:
   quote: 2026-07-23
   validation: 2026-07-23
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # Distillate: Digital Scholarly Editing (Pierazzo 2015)
 
-Pierazzo argues that the interface of a digital edition is not a neutral display but carries editorial decisions and the editor's interpretation; knowledge/paper.md Section 4.2 cites this for its Edition Interfaces category. Quotes are checked against the author's open-access HAL preprint (hal-01182162, dated 2014) of the 2015 book; page numbers refer to the preprint's internal pagination.
+Pierazzo argues that the interface of a digital edition is not a neutral display but carries editorial decisions and the editor's interpretation; the paper's interface typology cites this for its Edition Interfaces category. Quotes are checked against the author's open-access HAL preprint (hal-01182162, dated 2014) of the 2015 book; page numbers refer to the preprint's internal pagination.
 
 ## Core statements
 

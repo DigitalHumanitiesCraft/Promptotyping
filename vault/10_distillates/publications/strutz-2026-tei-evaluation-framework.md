@@ -12,7 +12,7 @@ updated: 2026-07-29
 
 # Distillate: A Multi-Dimensional Evaluation Framework for Assessing LLM Performance in TEI Encoding (Strutz 2026)
 
-A discussion paper in the Journal of Open Humanities Data that builds a stratified framework for judging LLM-generated TEI across five dimensions and assigns each dimension to a checking regime, from fully automated reference-free validation through ground-truth comparison to expert-centred review; it is the paper's Section 6.2 external carrier for the layering of Table 2 and for the statement that a task-specific benchmark now exists in digital editing.
+A discussion paper in the Journal of Open Humanities Data that builds a stratified framework for judging LLM-generated TEI across five dimensions and assigns each dimension to a checking regime, from fully automated reference-free validation through ground-truth comparison to expert-centred review; it is the paper's external carrier for the layering of Table 2 and for the statement that a task-specific benchmark now exists in digital editing.
 
 ## Core statements
 
@@ -43,9 +43,9 @@ A discussion paper in the Journal of Open Humanities Data that builds a stratifi
 ## Open questions
 
 - Distilled from the abstract and the framework section of the open-access article. The full operationalisation of the metrics per dimension, the sampling rule for the expert-centred dimensions, and the review procedure behind the manually encoded references were not read and carry no anchor here.
-- The article is a discussion paper. Its claim to have closed the benchmark gap therefore rests on the framework and the accompanying dataset rather than on a completed community benchmark exercise, which is how the paper's Section 6.2 uses it.
+- The article is a discussion paper. Its claim to have closed the benchmark gap therefore rests on the framework and the accompanying dataset rather than on a completed community benchmark exercise, which is how the paper's verification architecture uses it.
 - The dimension count is stated two ways in the source, five dimensions named in the abstract and a taxonomy of eight running from 0 to 7 in the framework section. The paper cites the five, and ^s6 carries the wider taxonomy for the regime assignment.
-- ^s6 is the framework's design, and the implementation state of the upper dimensions is a separate question the source does not settle here. The operator's own project notes record the dimensions above the fifth as not implemented in the released software. That note is unchecked against the repository and carries no anchor; the paper's Section 6.2 therefore speaks of what the framework assigns and not of what the software currently computes.
+- ^s6 is the framework's design, and the implementation state of the upper dimensions is a separate question the source does not settle here. The operator's own project notes record the dimensions above the fifth as not implemented in the released software. That note is unchecked against the repository and carries no anchor; the paper's verification architecture therefore speaks of what the framework assigns and not of what the software currently computes.
 
 ## Related
 

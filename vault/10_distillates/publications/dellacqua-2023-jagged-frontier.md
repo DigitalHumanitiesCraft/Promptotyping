@@ -7,12 +7,12 @@ status: grounded
 checked:
   quote: 2026-07-26
 created: 2026-07-26
-updated: 2026-07-26
+updated: 2026-07-29
 ---
 
 # Distillate: Navigating the Jagged Technological Frontier (Dell'Acqua et al. 2023)
 
-A pre-registered field experiment with consultants at Boston Consulting Group, measuring the performance effect of GPT-4 access on realistic consulting tasks and naming the uneven boundary of AI capability a jagged technological frontier; the paper cites it in Section 2.4 as the property of the capability that stands beside the two failure modes. Quotes were checked against the openly hosted working-paper PDF (MIT Sloan copy of the SSRN version, abstract id 4573321), which carries the Harvard Business School Working Paper 24-013 cover.
+A pre-registered field experiment with consultants at Boston Consulting Group, measuring the performance effect of GPT-4 access on realistic consulting tasks and naming the uneven boundary of AI capability a jagged technological frontier; the paper cites it as the property of the capability that stands beside the two failure modes. Quotes were checked against the openly hosted working-paper PDF (MIT Sloan copy of the SSRN version, abstract id 4573321), which carries the Harvard Business School Working Paper 24-013 cover.
 
 ## Core statements
 

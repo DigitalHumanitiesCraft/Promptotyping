@@ -8,12 +8,12 @@ checked:
   quote: 2026-07-23
   validation: 2026-07-23
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # Distillate: Visualization of Cultural Heritage Collection Data (Windhager et al. 2019)
 
-Windhager and colleagues survey information-visualisation approaches to cultural-heritage collections, documenting a widening, diverse design space of interactive visualisations that move beyond search-centric and grid interfaces; knowledge/paper.md Section 2.1 cites this survey for the richness of the exploratory-visualisation design space for cultural heritage and how few projects can afford to enter it. Quotes are checked against the postprint hosted by co-author Marian Doerk's Urban Complexity Lab (FH Potsdam); the abstract sits on the first page (p. 2311). Line breaks and ligatures of the PDF are normalised to the printed reading.
+Windhager and colleagues survey information-visualisation approaches to cultural-heritage collections, documenting a widening, diverse design space of interactive visualisations that move beyond search-centric and grid interfaces; the paper's account of exploration and building as research cites this survey for the richness of the exploratory-visualisation design space for cultural heritage and how few projects can afford to enter it. Quotes are checked against the postprint hosted by co-author Marian Doerk's Urban Complexity Lab (FH Potsdam); the abstract sits on the first page (p. 2311). Line breaks and ligatures of the PDF are normalised to the printed reading.
 
 ## Core statements
 

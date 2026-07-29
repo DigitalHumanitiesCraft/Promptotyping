@@ -8,12 +8,12 @@ checked:
   quote: 2026-07-23
   validation: 2026-07-23
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # Distillate: The Role of the Professional Intermediary (Edmond 2005)
 
-Edmond models humanities digital development as a value chain in which critical gaps open when the only actors are the researcher and technical support staff, and proposes a dedicated Digital Humanities Intermediary to bridge them; knowledge/paper.md Section 1 cites Edmond for the professional intermediary who mediates between scholarly requirements and technical implementation. Abstract-only: the OUP full text is paywalled and no open repository copy was located; quotations are from the abstract and cite the record without a page number.
+Edmond models humanities digital development as a value chain in which critical gaps open when the only actors are the researcher and technical support staff, and proposes a dedicated Digital Humanities Intermediary to bridge them; the paper's introduction cites Edmond for the professional intermediary who mediates between scholarly requirements and technical implementation. Abstract-only: the OUP full text is paywalled and no open repository copy was located; quotations are from the abstract and cite the record without a page number.
 
 ## Core statements
 

@@ -8,12 +8,12 @@ checked:
   quote: 2026-07-23
   validation: 2026-07-23
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # Distillate: The Four Pillars of Research Software Engineering (Cohen et al. 2021)
 
-An account of the Research Software Engineering movement and its four supporting pillars; the paper cites it in Section 1 (with Baxter et al. 2012) as evidence that the field institutionalised the domain-technical intermediary as a recognised profession, the human answer to the translation problem that Promptotyping addresses differently. The IEEE Software version of record is paywalled; quotations are checked against the author preprint (arXiv:2002.01035), which the header marks as the author's version prior to publisher changes.
+An account of the Research Software Engineering movement and its four supporting pillars; the paper cites it in its introduction (with Baxter et al. 2012) as evidence that the field institutionalised the domain-technical intermediary as a recognised profession, the human answer to the translation problem that Promptotyping addresses differently. The IEEE Software version of record is paywalled; quotations are checked against the author preprint (arXiv:2002.01035), which the header marks as the author's version prior to publisher changes.
 
 ## Core statements
 
@@ -32,7 +32,7 @@ An account of the Research Software Engineering movement and its four supporting
 
 ## Open questions
 
-- The source documents institutional support for the RSE role but not its reach; the paper's inference that this professionalised answer does not reach the individual researcher or small project is its own, drawn across the Section 1 source cluster.
+- The source documents institutional support for the RSE role but not its reach; the paper's inference that this professionalised answer does not reach the individual researcher or small project is its own, drawn across the introduction's source cluster.
 
 ## Related
 

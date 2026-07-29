@@ -8,12 +8,12 @@ checked:
   quote: 2026-07-23
   validation: 2026-07-23
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # Distillate: A Survey of Context Engineering for LLMs (Mei et al. 2025)
 
-The survey that formalises Context Engineering as a discipline and supplies the paper's definition of the term in Section 2.4; Promptotyping is positioned as a domain-specific instance of it.
+The survey that formalises Context Engineering as a discipline and supplies the paper's definition of the term; Promptotyping is positioned as a domain-specific instance of it.
 
 ## Core statements
 

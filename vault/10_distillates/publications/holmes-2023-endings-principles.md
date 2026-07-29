@@ -8,12 +8,12 @@ checked:
   quote: 2026-07-23
   validation: 2026-07-23
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # Distillate: The Endings Principles (Holmes & Takeda 2023)
 
-Holmes and Takeda report the Endings Project's practice of rebuilding digital projects as static, dependency-free sites to survive software obsolescence; the paper cites it in Section 4.1 as the sustainability rationale for the self-contained static artefact.
+Holmes and Takeda report the Endings Project's practice of rebuilding digital projects as static, dependency-free sites to survive software obsolescence; the paper cites it as the sustainability rationale for the self-contained static artefact.
 
 ## Core statements
 

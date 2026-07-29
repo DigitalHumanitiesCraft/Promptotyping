@@ -2,12 +2,12 @@
 type: moc
 topic: "ArtefactVerification"
 created: 2026-07-23
-updated: 2026-07-26
+updated: 2026-07-29
 ---
 
 # MOC: ArtefactVerification
 
-Claims behind the paper's Sections 4, 6.1, and 6.2: the self-contained static artefact type and its sustainability discourse, the interface typology and its classification gap, and the layering of verification between deterministic checks and expert judgement. Added with the bibliography-traceability sweep of 2026-07-23.
+Claims behind the paper's account of the artefact type, its treatment of provisionality and publication, and its verification architecture: the self-contained static artefact type and its sustainability discourse, the interface typology and its classification gap, and the layering of verification between deterministic checks and expert judgement. Added with the bibliography-traceability sweep of 2026-07-23.
 
 - [[20_claims/ssh-open-marketplace-models-workflows-as-step-sequences]] — The SSH Open Marketplace records research workflows as step-by-step sequences pointing to the tools, services, and datasets usable at each stage
 - [[20_claims/client-side-provenance-tool-is-a-precedent-for-server-free-artefacts]] — A same-venue provenance tool runs entirely in the browser without server-side architecture, a precedent for the server-free artefact type

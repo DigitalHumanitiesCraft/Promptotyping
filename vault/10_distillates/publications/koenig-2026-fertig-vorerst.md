@@ -8,12 +8,12 @@ checked:
   quote: 2026-07-23
   validation: 2026-07-23
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # Distillate: Finished, for now. Unfinishedness as epistemic value (König 2026)
 
-The article argues that in the digital humanities the provisional is not a defect but a knowledge-fostering value, reading digital knowledge objects as process rather than finished product; it grounds the paper's Section 6.1 move that locates the promptotype's provisionality within a recognised epistemic value of unfinishedness.
+The article argues that in the digital humanities the provisional is not a defect but a knowledge-fostering value, reading digital knowledge objects as process rather than finished product; it grounds the paper's move that locates the promptotype's provisionality within a recognised epistemic value of unfinishedness.
 
 ## Core statements
 

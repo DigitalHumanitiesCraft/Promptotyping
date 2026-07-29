@@ -9,14 +9,14 @@ grounding:
   - "[[10_distillates/publications/windhager-2019-visualization-ch-collections#^s2]]"
   - "[[10_distillates/publications/windhager-2019-visualization-ch-collections#^s3]]"
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # Exploratory visualisation of cultural-heritage collections spans a rich, diverse design space beyond search and grid interfaces.
 
 ## Statement
 
-A survey of information-visualisation approaches to cultural-heritage collections documents a widening spectrum of interactive visualisation types that give visual access to collections as complex information spaces, with a notable diversity of interaction and representation techniques. This grounds the paper's Section 2.1 point about the richness of the exploratory-visualisation design space for cultural heritage, against which it sets how rarely projects can afford to build such interfaces.
+A survey of information-visualisation approaches to cultural-heritage collections documents a widening spectrum of interactive visualisation types that give visual access to collections as complex information spaces, with a notable diversity of interaction and representation techniques. This grounds the paper's point about the richness of the exploratory-visualisation design space for cultural heritage, against which it sets how rarely projects can afford to build such interfaces.
 
 ## Support
 

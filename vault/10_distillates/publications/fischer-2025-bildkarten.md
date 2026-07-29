@@ -8,12 +8,12 @@ checked:
   quote: 2026-07-23
   validation: 2026-07-23
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # Distillate: Semi-automatic cataloguing of image cards (Fischer / Kimmel / Puppe 2025)
 
-The report extracts structured text from labelled archival image cards with two methods, a classical deep-learning pipeline and multimodal LLMs, and pairs the LLM output with deterministic regular-expression post-checks and an expert correction tool; it is the paper's Section 6.2 GLAM example of layered verification, where a non-deterministic extraction step is bracketed by deterministic checks and human review.
+The report extracts structured text from labelled archival image cards with two methods, a classical deep-learning pipeline and multimodal LLMs, and pairs the LLM output with deterministic regular-expression post-checks and an expert correction tool; it is the GLAM example of layered verification in the paper's verification architecture, where a non-deterministic extraction step is bracketed by deterministic checks and human review.
 
 ## Core statements
 

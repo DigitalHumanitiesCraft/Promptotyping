@@ -8,12 +8,12 @@ checked:
   quote: 2026-07-23
   validation: 2026-07-23
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # Distillate: The Research Software Engineer (Baxter et al. 2012)
 
-The foundational Research Software Engineering statement argues that research increasingly depends on software while software engineers who combine research experience with domain knowledge are in very short supply, for lack of institutional homes and career paths; knowledge/paper.md Section 1 cites this (with Cohen et al. 2021) as the movement that institutionalised the domain-technical intermediary, whose scarcity the paper takes as read. Abstract-only: the Edinburgh Research Explorer record's abstract was accessible, the linked full-text PDF was not; quotations are from the abstract and cite the record without a page number.
+The foundational Research Software Engineering statement argues that research increasingly depends on software while software engineers who combine research experience with domain knowledge are in very short supply, for lack of institutional homes and career paths; the paper's introduction cites this (with Cohen et al. 2021) as the movement that institutionalised the domain-technical intermediary, whose scarcity the paper takes as read. Abstract-only: the Edinburgh Research Explorer record's abstract was accessible, the linked full-text PDF was not; quotations are from the abstract and cite the record without a page number.
 
 ## Core statements
 

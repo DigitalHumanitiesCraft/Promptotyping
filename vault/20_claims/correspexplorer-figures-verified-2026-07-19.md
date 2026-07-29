@@ -7,14 +7,14 @@ checked:
 grounding:
   - "[[10_distillates/documents/verification-paper-figures-2026-07-19#^s3]]"
 created: 2026-07-19
-updated: 2026-07-25
+updated: 2026-07-29
 ---
 
 # CorrespExplorer's stated Section 5 figures held against the repository as verified on 2026-07-19.
 
 ## Statement
 
-The CorrespExplorer case study's stated figures, 11,576 letters and 12 coordinated views, matched the project repository when the Section 5 verification checked them on 2026-07-19.
+The CorrespExplorer case study's stated figures, 11,576 letters and 12 coordinated views, matched the project repository when the figures verification checked them on 2026-07-19.
 
 ## Support
 

@@ -1,0 +1,33 @@
+[
+  {
+    "id": "tei-consortium-2026",
+    "type": "book",
+    "title": "TEI P5: Guidelines for Electronic Text Encoding and Interchange",
+    "author": [
+      {
+        "literal": "TEI Consortium"
+      }
+    ],
+    "version": "4.12.0",
+    "issued": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          28
+        ]
+      ]
+    },
+    "URL": "https://tei-c.org/release/doc/tei-p5-doc/en/html/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          29
+        ]
+      ]
+    },
+    "note": "Continuously revised specification. Version 4.12.0 of 2026-07-28 was the live release when checked on 2026-07-29; a citation of the Guidelines is only stable with its version."
+  }
+]

@@ -8,12 +8,12 @@ checked:
   quote: 2026-07-23
   validation: 2026-07-23
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # Distillate: Open tool registries on Wikidata (Grallert et al. 2026)
 
-Grallert et al. diagnose the directory paradox of tool registries, document TaDiRAH as the field's most widely adopted yet under-maintained classification, and propose Wikidata-based community-curated registries; knowledge/paper.md cites it in Section 4.2 (TaDiRAH's standing and maintenance) and Section 6.3 (registries for artefact findability).
+Grallert et al. diagnose the directory paradox of tool registries, document TaDiRAH as the field's most widely adopted yet under-maintained classification, and propose Wikidata-based community-curated registries; the paper cites it in its interface typology (TaDiRAH's standing and maintenance) and in its account of reconstructability (registries for artefact findability).
 
 ## Core statements
 
@@ -36,7 +36,7 @@ Grallert et al. diagnose the directory paradox of tool registries, document TaDi
 
 ## Open questions
 
-- The paper (Section 6.3) proposes such registries as the route to findability for small generated instruments; that application is the paper's own inference from the registry idea.
+- The paper proposes such registries as the route to findability for small generated instruments; that application is the paper's own inference from the registry idea.
 
 ## Related
 

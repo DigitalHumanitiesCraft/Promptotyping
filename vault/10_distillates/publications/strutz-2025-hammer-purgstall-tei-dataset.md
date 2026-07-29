@@ -12,7 +12,7 @@ updated: 2026-07-29
 
 # Distillate: Hammer-Purgstall Correspondence TEI Evaluation Dataset (Strutz 2025)
 
-An openly licensed Zenodo dataset that pairs plain-text letter transcriptions with manually encoded TEI reference documents and the encodings four models produced from the same input, together with prompt templates and evaluation results; it is the empirical body of the evaluation framework and the concrete object the paper's Section 6.2 points to when it says that a task-specific benchmark now exists.
+An openly licensed Zenodo dataset that pairs plain-text letter transcriptions with manually encoded TEI reference documents and the encodings four models produced from the same input, together with prompt templates and evaluation results; it is the empirical body of the evaluation framework and the concrete object the paper's verification architecture points to when it says that a task-specific benchmark now exists.
 
 ## Core statements
 

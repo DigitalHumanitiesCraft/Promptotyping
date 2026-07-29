@@ -8,12 +8,12 @@ checked:
   quote: 2026-07-23
   validation: 2026-07-23
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # Distillate: In defense of sandcastles (Hinrichs, Forlini & Moynihan 2019)
 
-The paper introduces the sandcastle to frame visualisation as a research process in its own right, whose discarded iterations still generate knowledge; knowledge/paper.md draws on it in Section 2.1, and Section 6.1 calls promptotypes provisional in exactly Hinrichs' sense.
+The paper introduces the sandcastle to frame visualisation as a research process in its own right, whose discarded iterations still generate knowledge; the paper's account of exploration as research draws on it, and its treatment of provisionality and publication calls promptotypes provisional in exactly Hinrichs' sense.
 
 ## Core statements
 
@@ -32,7 +32,7 @@ The paper introduces the sandcastle to frame visualisation as a research process
 
 ## Open questions
 
-- The provisionality the paper reads off Hinrichs concerns visualisations in the research process; Section 6.1 sets against it what a project publishes into the scholarly record, under the obligations of Section 4.1, a distinction Hinrichs does not draw.
+- The provisionality the paper reads off Hinrichs concerns visualisations in the research process; the paper's treatment of provisionality and publication sets against it what a project publishes into the scholarly record, under the obligations of the self-contained static artefact type, a distinction Hinrichs does not draw.
 
 ## Related
 

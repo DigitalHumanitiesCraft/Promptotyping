@@ -18,7 +18,7 @@ updated: 2026-07-29
 
 ## Statement
 
-The gap the field named, that benchmarks for evaluating AI-generated results in digital-edition tasks are lacking, has begun to close for one task family. An openly licensed dataset pairs plain-text letter transcriptions with manually encoded TEI reference documents and with the encodings four models produced from the same input under five documented prompt scenarios, and the evaluation code is published under an MIT licence. The framework paper states the gap in its own words in the same year. This qualifies the paper's Section 6.2 position without displacing it, because the benchmark measures the dimensions a rule can decide and hands the interpretative ones to expert review.
+The gap the field named, that benchmarks for evaluating AI-generated results in digital-edition tasks are lacking, has begun to close for one task family. An openly licensed dataset pairs plain-text letter transcriptions with manually encoded TEI reference documents and with the encodings four models produced from the same input under five documented prompt scenarios, and the evaluation code is published under an MIT licence. The framework paper states the gap in its own words in the same year. This qualifies the paper's verification architecture without displacing it, because the benchmark measures the dimensions a rule can decide and hands the interpretative ones to expert review.
 
 ## Support
 

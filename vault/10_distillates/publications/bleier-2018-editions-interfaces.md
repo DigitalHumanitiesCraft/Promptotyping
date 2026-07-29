@@ -8,12 +8,12 @@ checked:
   quote: 2026-07-23
   validation: 2026-07-23
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # Distillate: Digital Scholarly Editions as Interfaces (Bleier et al. 2018)
 
-The volume's introduction theorises the digital scholarly edition itself as an interface, a connection point between documents and users, addressed through both a GUI for humans and an API for machines, and tied to the underlying data model; knowledge/paper.md Section 4.2 cites this for its Edition Interfaces category. The introduction chapter "Discussing Interfaces in Digital Scholarly Editing" is authored by Roman Bleier and Helmut W. Klug within the edited volume; page numbers are the volume's roman-numeral pagination.
+The volume's introduction theorises the digital scholarly edition itself as an interface, a connection point between documents and users, addressed through both a GUI for humans and an API for machines, and tied to the underlying data model; the paper's interface typology cites this for its Edition Interfaces category. The introduction chapter "Discussing Interfaces in Digital Scholarly Editing" is authored by Roman Bleier and Helmut W. Klug within the edited volume; page numbers are the volume's roman-numeral pagination.
 
 ## Core statements
 

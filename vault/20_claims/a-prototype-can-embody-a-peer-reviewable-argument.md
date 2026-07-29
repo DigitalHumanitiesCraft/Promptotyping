@@ -9,14 +9,14 @@ grounding:
   - "[[10_distillates/publications/galey-2010-how-a-prototype-argues#^s2]]"
   - "[[10_distillates/publications/galey-2010-how-a-prototype-argues#^s3]]"
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # A digital prototype can embody a contestable argument and stand as peer-reviewable research.
 
 ## Statement
 
-Building an experimental digital prototype can convey an argument the way a book edition reifies a theory, so that digital artefacts carry meaning rather than mere utility and can stand, in their own right, as peer-reviewable and contestable contributions to knowledge. This grounds the paper's Section 2.1 claim that building is a way of knowing and that producing prototypes is itself a research act.
+Building an experimental digital prototype can convey an argument the way a book edition reifies a theory, so that digital artefacts carry meaning rather than mere utility and can stand, in their own right, as peer-reviewable and contestable contributions to knowledge. This grounds the paper's claim that building is a way of knowing and that producing prototypes is itself a research act.
 
 ## Support
 

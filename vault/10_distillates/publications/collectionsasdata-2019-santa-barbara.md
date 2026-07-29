@@ -8,12 +8,12 @@ checked:
   quote: 2026-07-23
   validation: 2026-07-23
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # Distillate: The Santa Barbara Statement on Collections as Data (2019)
 
-The statement sets principles for making cultural-heritage collections available as data amenable to computation, stressing that such provision is an intentional, ongoing, purpose-scoped act; knowledge/paper.md carries it in the Section 2.2 footnote alongside Posner on the constructedness of heritage data.
+The statement sets principles for making cultural-heritage collections available as data amenable to computation, stressing that such provision is an intentional, ongoing, purpose-scoped act; the paper carries it in the footnote alongside Posner on the constructedness of heritage data.
 
 ## Core statements
 
@@ -32,8 +32,8 @@ The statement sets principles for making cultural-heritage collections available
 
 ## Open questions
 
-- The statement's "designed for everyone serve no one" (^s3) rhymes with the paper's Section 4.2 argument for question-specific interfaces over a monolithic dashboard, but the statement speaks of collections, not generated interfaces; the transfer is the paper's.
+- The statement's "designed for everyone serve no one" (^s3) rhymes with the paper's argument for question-specific interfaces over a monolithic dashboard, but the statement speaks of collections, not generated interfaces; the transfer is the paper's.
 
 ## Related
 
-- [[10_distillates/publications/posner-2015-necessary-contradiction]] — paired in the paper's Section 2.2 footnote.
+- [[10_distillates/publications/posner-2015-necessary-contradiction]] — paired in the same footnote of the paper.

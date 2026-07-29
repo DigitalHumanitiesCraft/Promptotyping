@@ -8,12 +8,12 @@ checked:
   quote: 2026-07-23
   validation: 2026-07-23
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # Distillate: The Shape of Data in Digital Humanities (Flanders and Jannidis 2019)
 
-In the editors' introduction to the volume, Flanders and Jannidis hold that data models represent the shaping choices scholars make when they represent and analyse their material, so that modelling makes explicit the assumptions built into humanities data; knowledge/paper.md Section 2.2 cites the volume's contributors for treating humanities data as the product of interpretive modelling. Quotes are checked against co-editor Julia Flanders' self-archived version of Chapter 1, "Data Modeling in a Digital Humanities Context"; only this chapter was available (partial), and the self-archived copy is not paginated to the print edition, so quotations cite the chapter without a page number.
+In the editors' introduction to the volume, Flanders and Jannidis hold that data models represent the shaping choices scholars make when they represent and analyse their material, so that modelling makes explicit the assumptions built into humanities data; the paper's account of research data as modelled representations cites the volume's contributors for treating humanities data as the product of interpretive modelling. Quotes are checked against co-editor Julia Flanders' self-archived version of Chapter 1, "Data Modeling in a Digital Humanities Context"; only this chapter was available (partial), and the self-archived copy is not paginated to the print edition, so quotations cite the chapter without a page number.
 
 ## Core statements
 

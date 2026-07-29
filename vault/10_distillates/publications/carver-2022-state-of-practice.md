@@ -8,12 +8,12 @@ checked:
   quote: 2026-07-25
   validation: 2026-07-25
 created: 2026-07-25
-updated: 2026-07-25
+updated: 2026-07-29
 ---
 
 # Distillate: State of the practice for research software in the United States (Carver et al. 2022)
 
-A survey of 1,149 researchers, primarily in the United States, on the sustainability challenges of developing and using research software; the paper cites it in Section 1 as the measured shortfall behind its premise that the field's intermediary answers do not reach individual researchers and small projects. Quotes are checked against the open PubMed Central copy of the article (PMC9138129), which is not paginated, so quotations cite the article without a page number.
+A survey of 1,149 researchers, primarily in the United States, on the sustainability challenges of developing and using research software; the paper cites it in its introduction as the measured shortfall behind its premise that the field's intermediary answers do not reach individual researchers and small projects. Quotes are checked against the open PubMed Central copy of the article (PMC9138129), which is not paginated, so quotations cite the article without a page number.
 
 ## Core statements
 

@@ -8,12 +8,12 @@ checked:
   quote: 2026-07-23
   validation: 2026-07-23
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # Distillate: How a Prototype Argues (Galey and Ruecker 2010)
 
-Galey and Ruecker argue that an experimental digital prototype can convey an argument the way an edition of a book reifies a theory, so that digital artefacts carry meaning and can stand as peer-reviewable, contestable contributions to knowledge; knowledge/paper.md Section 2.1 uses this to ground its claim that building is a way of knowing and that producing prototypes is itself a research act. Quotes are checked against the copy of the published article hosted on a research-group site; the abstract sits on the first page (p. 405).
+Galey and Ruecker argue that an experimental digital prototype can convey an argument the way an edition of a book reifies a theory, so that digital artefacts carry meaning and can stand as peer-reviewable, contestable contributions to knowledge; the paper uses this to ground its claim that building is a way of knowing and that producing prototypes is itself a research act. Quotes are checked against the copy of the published article hosted on a research-group site; the abstract sits on the first page (p. 405).
 
 ## Core statements
 
@@ -30,7 +30,7 @@ Galey and Ruecker argue that an experimental digital prototype can convey an arg
 
 ## Open questions
 
-- Galey and Ruecker argue for the durability and peer review of the prototype; the paper treats the promptotype as provisional within the research process and locates the persisting yield in the documents and modelled data instead. The tension is handled in the paper's Section 6.1, not in the source.
+- Galey and Ruecker argue for the durability and peer review of the prototype; the paper treats the promptotype as provisional within the research process and locates the persisting yield in the documents and modelled data instead. The tension is handled in the paper's treatment of provisionality and publication, not in the source.
 
 ## Related
 

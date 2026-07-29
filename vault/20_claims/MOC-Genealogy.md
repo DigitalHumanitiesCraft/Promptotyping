@@ -2,7 +2,7 @@
 type: moc
 topic: "Genealogy"
 created: 2026-07-19
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # MOC: Genealogy
@@ -23,8 +23,8 @@ Added with the bibliography-traceability sweep of 2026-07-23:
 - [[20_claims/applied-genai-dh-workshop-series-2024]] — An applied-generative-AI-in-the-humanities workshop series was released as a versioned archive by February 2024
 - [[20_claims/semantic-web-envisioned-agents-over-machine-processable-data]] — The Semantic Web vision centred on agents operating over machine-processable data
 
-Added 2026-07-27 with the dissertation re-read for the genealogical opening of Section 1:
+Added 2026-07-27 with the dissertation re-read for the paper's genealogical opening:
 
-- [[20_claims/generalised-dashboard-flattens-context-specific-detail]] — the dissertation records the limit of the generalised DEPCHA Dashboard View that Section 1 uses as the origin of the method
+- [[20_claims/generalised-dashboard-flattens-context-specific-detail]] — the dissertation records the limit of the generalised DEPCHA Dashboard View that the paper uses as the origin of the method
 - [[20_claims/promptotyping-first-named-in-the-dissertation]] — the term was introduced in the dissertation, which devotes Section 7.4 to it, ahead of both public contributions
 

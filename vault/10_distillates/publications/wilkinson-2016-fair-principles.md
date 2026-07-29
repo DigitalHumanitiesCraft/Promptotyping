@@ -8,12 +8,12 @@ checked:
   quote: 2026-07-23
   validation: 2026-07-23
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # Distillate: The FAIR guiding principles (Wilkinson et al. 2016)
 
-The first formal publication of the FAIR principles, emphasising machine-actionable data and metadata; knowledge/paper.md 2.3 reads FAIR from the context side, since data curated for interoperability and reuse carries its meaning in the explicit form that generation profits from.
+The first formal publication of the FAIR principles, emphasising machine-actionable data and metadata; the paper reads FAIR from the context side, since data curated for interoperability and reuse carries its meaning in the explicit form that generation profits from.
 
 ## Core statements
 

@@ -8,12 +8,12 @@ checked:
   quote: 2026-07-23
   validation: 2026-07-23
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # Distillate: Generous interfaces for digital cultural collections (Whitelaw 2015)
 
-Whitelaw contrasts the ungenerous search box with generous interfaces that show the collection and invite browsing; the paper draws on this in Section 2.1 (exploration as research) and Section 4.2, where the Exploration Interface category operationalises generous interfaces.
+Whitelaw contrasts the ungenerous search box with generous interfaces that show the collection and invite browsing; the paper draws on this in its account of exploration as research and in its interface typology, where the Exploration Interface category operationalises generous interfaces.
 
 ## Core statements
 

@@ -8,12 +8,12 @@ checked:
   quote: 2026-07-23
   validation: 2026-07-23
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # Distillate: Humanities approaches to graphical display (Drucker 2011)
 
-Drucker argues that humanities data are constructed capta rather than given data and that borrowed visualisation conventions carry positivist assumptions; the paper uses this as the touchstone of Section 2.1, against which LLM-generated visualisations are measured.
+Drucker argues that humanities data are constructed capta rather than given data and that borrowed visualisation conventions carry positivist assumptions; the paper uses this as the touchstone of its account of exploration and building as research, against which LLM-generated visualisations are measured.
 
 ## Core statements
 

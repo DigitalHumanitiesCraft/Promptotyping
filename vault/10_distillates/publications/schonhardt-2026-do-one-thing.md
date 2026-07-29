@@ -8,12 +8,12 @@ checked:
   quote: 2026-07-23
   validation: 2026-07-23
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # Distillate: Do one thing and do it well (Schonhardt 2026)
 
-The article derives from the Unix philosophy a best practice for sustainable digital editing, replacing the monolithic platform with small specialised filters chained through text-level standard formats; it grounds the paper's Section 4.2 point that the epistemic function determines interface design and that doing one thing well underwrites a typology of small, specialised tools.
+The article derives from the Unix philosophy a best practice for sustainable digital editing, replacing the monolithic platform with small specialised filters chained through text-level standard formats; it grounds the paper's point that the epistemic function determines interface design and that doing one thing well underwrites a typology of small, specialised tools.
 
 ## Core statements
 

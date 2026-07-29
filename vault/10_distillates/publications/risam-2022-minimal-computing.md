@@ -8,12 +8,12 @@ checked:
   quote: 2026-07-23
   validation: 2026-07-23
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # Distillate: The questions of minimal computing (Risam & Gil 2022)
 
-Risam and Gil frame minimal computing as a constraint-driven mode of DH praxis that resists equating innovation with scale; the paper cites it in Section 4.1 to motivate the self-contained static web tool as the durable default artefact.
+Risam and Gil frame minimal computing as a constraint-driven mode of DH praxis that resists equating innovation with scale; the paper cites it to motivate the self-contained static web tool as the durable default artefact.
 
 ## Core statements
 

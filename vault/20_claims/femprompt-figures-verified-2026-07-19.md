@@ -7,14 +7,14 @@ checked:
 grounding:
   - "[[10_distillates/documents/verification-paper-figures-2026-07-19#^s10]]"
 created: 2026-07-19
-updated: 2026-07-25
+updated: 2026-07-29
 ---
 
 # FemPrompt's stated Section 5 figures held against the repository as verified on 2026-07-19.
 
 ## Statement
 
-The FemPrompt case study's stated figures held against the project repository when the Section 5 verification checked them on 2026-07-19, covering 326 papers, a 505-file vault, and a 68 percent to 42 percent split as documented in-repo. Checked against the deliverable on 2026-07-25, the 326 papers are still reported there, while the vault file count and the split are not; for those two the claim stands as a checked finding about the repository.
+The FemPrompt case study's stated figures held against the project repository when the figures verification checked them on 2026-07-19, covering 326 papers, a 505-file vault, and a 68 percent to 42 percent split as documented in-repo. Checked against the deliverable on 2026-07-25, the 326 papers are still reported there, while the vault file count and the split are not; for those two the claim stands as a checked finding about the repository.
 
 ## Support
 

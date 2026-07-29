@@ -8,14 +8,14 @@ grounding:
   - "[[10_distillates/publications/fawzy-2025-vibe-coding-in-practice#^s1]]"
   - "[[10_distillates/publications/fawzy-2025-vibe-coding-in-practice#^s2]]"
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # Empirical review finds vibe coding fast and accessible but perceived as unreliable, a speed-quality trade-off.
 
 ## Statement
 
-A systematic grey-literature review of practitioner accounts finds that vibe coding is motivated by speed and accessibility yet yields code its own practitioners perceive as fast but flawed, lowering barriers at the cost of reliability and maintainability. This is the empirical support for the paper's Section 2.4 positioning, where Promptotyping shares the generation premise of vibe coding but adds preparation, persistent documentation and verification.
+A systematic grey-literature review of practitioner accounts finds that vibe coding is motivated by speed and accessibility yet yields code its own practitioners perceive as fast but flawed, lowering barriers at the cost of reliability and maintainability. This is the empirical support for the paper's positioning against Vibe Coding, where Promptotyping shares the generation premise of vibe coding but adds preparation, persistent documentation and verification.
 
 ## Support
 

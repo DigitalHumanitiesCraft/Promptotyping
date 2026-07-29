@@ -8,12 +8,12 @@ checked:
   quote: 2026-07-23
   validation: 2026-07-23
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-29
 ---
 
 # Distillate: The Semantic Web (Berners-Lee, Hendler and Lassila 2001)
 
-The founding Semantic Web article defines the Semantic Web as an extension of the existing web in which information carries well-defined meaning, and envisions software agents that move across pages and carry out sophisticated tasks over that machine-processable content; knowledge/paper.md Section 2.2 cites this as the twenty-year-old vision of agents operating over semantically described data that Promptotyping reaches by a different mechanism. Quotes are checked against the open copy of the Scientific American feature hosted by co-author Ora Lassila (text extracted from a mirrored PDF of the identical article); the copy is not paginated, so quotations cite the article without a page number.
+The founding Semantic Web article defines the Semantic Web as an extension of the existing web in which information carries well-defined meaning, and envisions software agents that move across pages and carry out sophisticated tasks over that machine-processable content; the paper's account of research data as modelled representations cites this as the twenty-year-old vision of agents operating over semantically described data that Promptotyping reaches by a different mechanism. Quotes are checked against the open copy of the Scientific American feature hosted by co-author Ora Lassila (text extracted from a mirrored PDF of the identical article); the copy is not paginated, so quotations cite the article without a page number.
 
 ## Core statements
 
