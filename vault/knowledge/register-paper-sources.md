@@ -6,7 +6,7 @@ project:
 status: active
 language: en
 created: "2026-07-23"
-updated: "2026-07-27"
+updated: "2026-07-29"
 related: [state, specification]
 ---
 
@@ -103,6 +103,8 @@ Paper roles name the sections of `knowledge/paper.md` in which the work is cited
 | stachowiak-1973 | Stachowiak 1973, Allgemeine Modelltheorie | 3.3 | B | registered | | Springer print, German. Locator for the three model properties (representation, abbreviation, pragmatics): pp. 129–131, confirmed by the operator 2026-07-25 from the teaching material the passage was taken into. The paper cites the work without the page numbers by the same decision; the locator is held here |
 | stanicka-2026 | Stanicka-Brzezicka 2026, Vocabularies (ZfdG) | 6.2, fn [^stanicka] | A | claimed | [[10_distillates/publications/stanicka-2026-cross-linking-vocabularies]] | llm-vocabulary-test-2025-fell-short-of-thesaurus-interoperability, semantic-vocabulary-matching-stays-a-human-interpretive-task |
 | star-1989 | Star/Griesemer 1989, Boundary Objects | orphaned (was 2.3) | A | claimed | [[10_distillates/publications/star-1989-boundary-objects]] | boundary-objects-are-plastic-yet-robust-across-communities; concept removed from the paper 2026-07-25; the CSL record stays as the source record of the distillate and no longer has a References entry |
+| strutz-2025 | Strutz 2025, Hammer-Purgstall Correspondence TEI Evaluation Dataset (Zenodo) | 6.2 | A | claimed | [[10_distillates/publications/strutz-2025-hammer-purgstall-tei-dataset]] | an-open-tei-encoding-benchmark-exists-for-llm-generated-encodings. Distilled from the Zenodo record description on 2026-07-29; the data files were not downloaded, so no statement here is anchored in the data itself |
+| strutz-2026 | Strutz 2026, Multi-Dimensional Evaluation Framework for LLM Performance in TEI Encoding (JOHD) | 6.2 | A | claimed | [[10_distillates/publications/strutz-2026-tei-evaluation-framework]] | tei-evaluation-assigns-its-dimensions-to-different-checking-regimes, llm-generated-tei-alters-content-and-modernises-language, tei-permits-several-valid-encodings-of-one-phenomenon, an-open-tei-encoding-benchmark-exists-for-llm-generated-encodings. Discussion paper, open access; distilled 2026-07-29 from the abstract and the framework section. The metric operationalisation per dimension and the review procedure behind the manually encoded references were not read |
 | summerfield-2025 | Summerfield 2025, These Strange New Minds | 2.4 | C | csl | | trade book; source of the confabulation term for LLM output, received by the operator as an audiobook (2026-07-25), which yields no citable locator, so the paper cites the work without page |
 | unsworth-2000 | Unsworth 2000, Scholarly Primitives | 4.2 | A | claimed | [[10_distillates/publications/unsworth-2000-scholarly-primitives]] | scholarly-primitives-classify-activities-not-interfaces |
 | vanes-2018 | van Es et al. 2018, Tool Criticism | 2.1 | A | claimed | [[10_distillates/publications/vanes-2018-tool-criticism]] | digital-tool-criticism-demands-reflection-on-tools |

@@ -1,0 +1,29 @@
+[
+  {
+    "id": "strutz-2026",
+    "type": "article-journal",
+    "title": "A Multi-Dimensional Evaluation Framework for Assessing LLM Performance in TEI Encoding",
+    "author": [
+      {
+        "family": "Strutz",
+        "given": "Sabrina"
+      }
+    ],
+    "container-title": "Journal of Open Humanities Data",
+    "volume": "12",
+    "issue": "1",
+    "page": "39",
+    "genre": "Discussion Paper",
+    "issued": {
+      "date-parts": [
+        [
+          2026,
+          3,
+          2
+        ]
+      ]
+    },
+    "DOI": "10.5334/johd.484",
+    "URL": "https://doi.org/10.5334/johd.484"
+  }
+]

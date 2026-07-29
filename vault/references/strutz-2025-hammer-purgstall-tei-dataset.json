@@ -1,0 +1,25 @@
+[
+  {
+    "id": "strutz-2025",
+    "type": "dataset",
+    "title": "Hammer-Purgstall Correspondence TEI Evaluation Dataset",
+    "author": [
+      {
+        "family": "Strutz",
+        "given": "Sabrina"
+      }
+    ],
+    "publisher": "Zenodo",
+    "issued": {
+      "date-parts": [
+        [
+          2025,
+          11,
+          18
+        ]
+      ]
+    },
+    "DOI": "10.5281/zenodo.17643901",
+    "URL": "https://doi.org/10.5281/zenodo.17643901"
+  }
+]

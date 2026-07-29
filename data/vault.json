@@ -9,7 +9,7 @@
    "slug": "MOC-ArtefactVerification",
    "topic": "ArtefactVerification",
    "title": "MOC: ArtefactVerification",
-   "description": "Added 2026-07-26 from the site-vocabulary literature sweep (lane C1):",
+   "description": "Added 2026-07-29 from the intake on TEI-encoding evaluation, the external carriers for the layering of Table 2 and for the state of the benchmark question:",
    "claims": [
     "ssh-open-marketplace-models-workflows-as-step-sequences",
     "client-side-provenance-tool-is-a-precedent-for-server-free-artefacts",
@@ -36,7 +36,11 @@
     "szd-htr-confabulated-reading-in-hasty-kurrent",
     "toulmin-layout-separates-claim-grounds-warrant-and-backing",
     "nanopublication-binds-a-statement-to-the-annotations-that-carry-its-context",
-    "llm-judgement-approximates-human-preference-and-carries-known-biases"
+    "llm-judgement-approximates-human-preference-and-carries-known-biases",
+    "tei-evaluation-assigns-its-dimensions-to-different-checking-regimes",
+    "llm-generated-tei-alters-content-and-modernises-language",
+    "tei-permits-several-valid-encodings-of-one-phenomenon",
+    "an-open-tei-encoding-benchmark-exists-for-llm-generated-encodings"
    ]
   },
   {
@@ -241,6 +245,48 @@
      "distillate": "galey-2010-how-a-prototype-argues",
      "path": "10_distillates/publications/galey-2010-how-a-prototype-argues",
      "statement": "s3"
+    }
+   ]
+  },
+  {
+   "slug": "an-open-tei-encoding-benchmark-exists-for-llm-generated-encodings",
+   "title": "An open, task-specific benchmark for LLM-generated TEI encoding now exists, holding transcriptions, manually encoded reference documents, the encodings of four models, and the prompt scenarios that produced them.",
+   "statement": "The gap the field named, that benchmarks for evaluating AI-generated results in digital-edition tasks are lacking, has begun to close for one task family. An openly licensed dataset pairs plain-text letter transcriptions with manually encoded TEI reference documents and with the encodings four models produced from the same input under five documented prompt scenarios, and the evaluation code is published under an MIT licence. The framework paper states the gap in its own words in the same year. This qualifies the paper's Section 6.2 position without displacing it, because the benchmark measures the dimensions a rule can decide and hands the interpretative ones to expert review.",
+   "status": "grounded",
+   "topics": [
+    "ArtefactVerification"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "strutz-2025-hammer-purgstall-tei-dataset",
+     "path": "10_distillates/publications/strutz-2025-hammer-purgstall-tei-dataset",
+     "statement": "s1"
+    },
+    {
+     "distillate": "strutz-2025-hammer-purgstall-tei-dataset",
+     "path": "10_distillates/publications/strutz-2025-hammer-purgstall-tei-dataset",
+     "statement": "s3"
+    },
+    {
+     "distillate": "strutz-2025-hammer-purgstall-tei-dataset",
+     "path": "10_distillates/publications/strutz-2025-hammer-purgstall-tei-dataset",
+     "statement": "s4"
+    },
+    {
+     "distillate": "strutz-2025-hammer-purgstall-tei-dataset",
+     "path": "10_distillates/publications/strutz-2025-hammer-purgstall-tei-dataset",
+     "statement": "s6"
+    },
+    {
+     "distillate": "strutz-2026-tei-evaluation-framework",
+     "path": "10_distillates/publications/strutz-2026-tei-evaluation-framework",
+     "statement": "s1"
+    },
+    {
+     "distillate": "strutz-2026-tei-evaluation-framework",
+     "path": "10_distillates/publications/strutz-2026-tei-evaluation-framework",
+     "statement": "s9"
     }
    ]
   },
@@ -1847,6 +1893,23 @@
      "distillate": "liu-2024-llm-agents-se-survey",
      "path": "10_distillates/publications/liu-2024-llm-agents-se-survey",
      "statement": "s2"
+    }
+   ]
+  },
+  {
+   "slug": "llm-generated-tei-alters-content-and-modernises-language",
+   "title": "LLM-generated TEI encodings alter content, bias systematically towards modern language conventions, and apply encoding decisions inconsistently.",
+   "statement": "A published evaluation of LLM-generated TEI names three recurring behaviours of the generated encodings, alteration of the content itself, a systematic bias towards modern language conventions, and inconsistent application of encoding decisions across documents. The first two are the reason the paper's Table 2 keeps data fidelity in the verification row wherever correctness is not deterministically decidable, because a silently modernised historical spelling passes every syntactic and schema check the deterministic layer can run. The third is what makes sampling the appropriate expert procedure, since an inconsistency shows only across documents.",
+   "status": "grounded",
+   "topics": [
+    "ArtefactVerification"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "strutz-2026-tei-evaluation-framework",
+     "path": "10_distillates/publications/strutz-2026-tei-evaluation-framework",
+     "statement": "s3"
     }
    ]
   },
@@ -3492,6 +3555,60 @@
    ]
   },
   {
+   "slug": "tei-evaluation-assigns-its-dimensions-to-different-checking-regimes",
+   "title": "A published framework for evaluating LLM-generated TEI assigns its dimensions to different checking regimes, from automated reference-free validation through ground-truth comparison to expert-centred review.",
+   "statement": "The framework separates the properties of a generated TEI document into ordered dimensions and gives each its own regime instead of one uniform metric. Well-formedness, source fidelity and schema conformance run as fully automated reference-free validation; structural fidelity and semantic recognition run as computational metrics against a ground truth; two higher dimensions are assigned to expert-centred review. The framework states its purpose in the same terms, to identify what automated validation can assess reliably at scale and what requires targeted human-in-the-loop review. This is the layering of the paper's Table 2 reached independently, from a different research group and a different task family, which is what makes it evidence rather than restatement.",
+   "status": "grounded",
+   "topics": [
+    "ArtefactVerification"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "strutz-2026-tei-evaluation-framework",
+     "path": "10_distillates/publications/strutz-2026-tei-evaluation-framework",
+     "statement": "s4"
+    },
+    {
+     "distillate": "strutz-2026-tei-evaluation-framework",
+     "path": "10_distillates/publications/strutz-2026-tei-evaluation-framework",
+     "statement": "s5"
+    },
+    {
+     "distillate": "strutz-2026-tei-evaluation-framework",
+     "path": "10_distillates/publications/strutz-2026-tei-evaluation-framework",
+     "statement": "s6"
+    },
+    {
+     "distillate": "strutz-2026-tei-evaluation-framework",
+     "path": "10_distillates/publications/strutz-2026-tei-evaluation-framework",
+     "statement": "s8"
+    }
+   ]
+  },
+  {
+   "slug": "tei-permits-several-valid-encodings-of-one-phenomenon",
+   "title": "The TEI Guidelines permit several valid encodings of one and the same textual phenomenon, so a divergence from a reference encoding is no error in itself.",
+   "statement": "Interpretive multiplicity is a deliberate property of the TEI Guidelines, which admit more than one valid encoding of identical textual phenomena to accommodate differing scholarly perspectives and project methodologies. Two consequences follow for evaluation. Conventional similarity metrics measure divergence from a reference without being able to say whether the divergence is an error or a defensible alternative reading. And the decision between the two is an act of scholarly judgement, which places it in the verification zone of the paper's Table 2 rather than in the validation zone, however good the metric.",
+   "status": "grounded",
+   "topics": [
+    "ArtefactVerification"
+   ],
+   "contestedWith": [],
+   "grounding": [
+    {
+     "distillate": "strutz-2026-tei-evaluation-framework",
+     "path": "10_distillates/publications/strutz-2026-tei-evaluation-framework",
+     "statement": "s7"
+    },
+    {
+     "distillate": "strutz-2026-tei-evaluation-framework",
+     "path": "10_distillates/publications/strutz-2026-tei-evaluation-framework",
+     "statement": "s2"
+    }
+   ]
+  },
+  {
    "slug": "the-boundary-of-the-jagged-frontier-is-not-readable-from-a-task-in-advance",
    "title": "The boundary of the jagged frontier is not readable from a task in advance.",
    "statement": "Professionals working with an LLM cannot tell from a task where the boundary of AI capability runs, because that capability changes rapidly and is poorly understood, and because tasks on either side of the boundary look alike in difficulty. Knowing where the boundary lies is therefore acquired in the working relationship rather than derived from a property of the task.",
@@ -4580,6 +4697,22 @@
    "reference": "star-1989",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/star-1989-boundary-objects.md"
+  },
+  {
+   "slug": "strutz-2025-hammer-purgstall-tei-dataset",
+   "title": "Distillate: Hammer-Purgstall Correspondence TEI Evaluation Dataset (Strutz 2025)",
+   "kind": "publications",
+   "reference": "strutz-2025",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/strutz-2025-hammer-purgstall-tei-dataset.md"
+  },
+  {
+   "slug": "strutz-2026-tei-evaluation-framework",
+   "title": "Distillate: A Multi-Dimensional Evaluation Framework for Assessing LLM Performance in TEI Encoding (Strutz 2026)",
+   "kind": "publications",
+   "reference": "strutz-2026",
+   "summary": "## Related",
+   "path": "vault/10_distillates/publications/strutz-2026-tei-evaluation-framework.md"
   },
   {
    "slug": "unsworth-2000-scholarly-primitives",

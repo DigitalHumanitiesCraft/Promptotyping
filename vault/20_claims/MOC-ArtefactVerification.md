@@ -41,3 +41,10 @@ Added 2026-07-26 from the site-vocabulary literature sweep (lane C1):
 - [[20_claims/toulmin-layout-separates-claim-grounds-warrant-and-backing]] — the argumentation layout that supplies the claim, grounds, warrant and backing vocabulary, without a verdict or a procedure
 - [[20_claims/nanopublication-binds-a-statement-to-the-annotations-that-carry-its-context]] — the nearest prior art for a document holding one statement with its provenance and its assertion
 - [[20_claims/llm-judgement-approximates-human-preference-and-carries-known-biases]] — the measured zone in which a model may legitimately judge, and the four named biases that bound it
+
+Added 2026-07-29 from the intake on TEI-encoding evaluation, the external carriers for the layering of Table 2 and for the state of the benchmark question:
+
+- [[20_claims/tei-evaluation-assigns-its-dimensions-to-different-checking-regimes]] — a published framework reaches the same layering from another task family, automated validation, ground-truth comparison, expert review
+- [[20_claims/llm-generated-tei-alters-content-and-modernises-language]] — the three named behaviours of generated encodings that keep data fidelity in the verification row
+- [[20_claims/tei-permits-several-valid-encodings-of-one-phenomenon]] — interpretive multiplicity as a deliberate property of the Guidelines, so divergence from a reference is no error in itself
+- [[20_claims/an-open-tei-encoding-benchmark-exists-for-llm-generated-encodings]] — the benchmark gap has begun to close for one task family
