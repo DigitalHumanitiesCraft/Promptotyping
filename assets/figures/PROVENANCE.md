@@ -144,3 +144,23 @@ output. It was dropped by operator decision, and the caption in the paper now
 points to the text for it. Restoring it is an addition without redesign, one
 line per column reading `FACTUALLY WRONG → revise`,
 `DECISION LOGIC UNCLEAR → consult` and `FORMALLY WRONG → adjust`.
+
+## figure-1-promptotyping-iteration.png and figure-4-versioned-promptotypes.png
+
+Both belong to the draft manuscript `knowledge/paper-draft.md` (Figure 1 in
+Section 2.1, Figure 4 in Section 2.4) and were produced with the ChatGPT image
+model on 2026-07-29, operator-generated; no prompt text was retained. The
+first extends the four-phase figure by a fifth column for the accepted
+promptotype and draws the three riser words of the return path that the
+2026-07-26 run had dropped. The second shows three versioned promptotypes
+connected by write-back and renewed iterations.
+
+Two known deviations from the conventions of this set stand in both images
+and go on the regeneration list rather than blocking use. Each image carries
+caption text inside the plate (figure 4 additionally a title), against the
+rule that the caption lives in the paper. And figure 4 breaks the
+filled-shape convention, its three timeline dots are solid without meaning
+human judgement, while the Critical Expert, whose acceptance the figure
+depicts, does not appear in it. A future regeneration removes the in-image
+text, hollows the timeline dots or re-introduces the expert mark, and keeps
+the version labels, which the draft's Section 2.4 declares illustrative.

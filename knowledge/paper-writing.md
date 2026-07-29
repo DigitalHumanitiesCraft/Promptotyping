@@ -20,6 +20,8 @@ related: [INDEX, paper, journal, revision, verification]
 
 Steuerdokument zum Papertext. `paper.md` hält den Text, dieses Dokument hält, was für ihn gilt, also Arbeitsmodus, Kernaussagen, Sprachregeln, tragende Festlegungen, offene Entscheidungen und den Weg zur Einreichung.
 
+**Übergangslage (2026-07-29).** Neben dem kanonischen `paper.md` liegt seit dem 2026-07-29 die restrukturierte Fassung `paper-draft.md` mit ihrem eigenen englischen Steuerdokument `paper-knowledge.md` (sechs Kapitel, Revision-Boundary-Modell). Für den Draft steuert `paper-knowledge.md`; aus diesem Dokument gelten für ihn weiterhin der Sprachregel-Katalog einschließlich der vier Kernverbote, angewandt je Kapitel bei der Abnahme (Operator-Entscheidung 2026-07-29). Die Site rendert bis zum Erreichen der Revision Boundary am Textende weiter `paper.md`; erst dann wird getauscht und dieses Dokument mit `paper-knowledge.md` konsolidiert. Wo sich die beiden Steuerdokumente widersprechen (Zheng-Streichung, Fußnotenregime), gilt für den Draft das dortige Dokument.
+
 Was hier **nicht** steht, ist die Geschichte. Sitzungsverläufe, ausgeführte Durchgänge und erledigte Prüfpunkte stehen in [journal.md](journal.md) und in der Git-History; der Revisionsprozess des fertigen Drafts steht in [revision.md](revision.md), die Prüfgruppen der Site in [verification.md](verification.md). Eine Festlegung wird hier so knapp geführt, dass sie ohne ihre Entstehungsgeschichte anwendbar bleibt, mit dem Entscheidungsdatum in Klammern. Version 0.2 vom 2026-07-27 hat das Dokument von 9.900 auf rund ein Drittel gekürzt und von der Datums- auf die Sachordnung umgestellt; der vorige Stand liegt in der Git-History.
 
 ## Arbeitsmodus
