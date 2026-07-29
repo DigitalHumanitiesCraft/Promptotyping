@@ -86,6 +86,12 @@ The signature is the counterpart. A prismatic gradient runs as a two-pixel band 
 
 Beyond these two, no element carries a hue.
 
+### Shape that carries meaning
+
+The glossary classifies every term by the kind of thing it names, and that classification is drawn as a shape (A36, 2026-07-29). Seven values each own one geometric mark, a circle for a form of work, a square for a document function, a triangle for a role, a diamond for an artefact, a hexagon for a checking form, a cross for a failure mode and limit, and three stacked rules for an infrastructure term. They are inline SVG at twelve pixels with a 1.25-pixel stroke in `currentColor`, no fill, and no variation beyond the one form per value.
+
+Shape is the second-best variable here, and it is used because the better one is spent. Bertin classes hue as selective and associative, which is why it encodes the interface typology, and he classes shape as associative without being selective, so a reader recognises a mark but cannot pick every term of one kind out of a list at a glance. The term index answers that with a filter field over its category column, where selection is a matter of the filter. In the entry and in the tooltip the mark stands beside the category word as an aid to recognition, and the word is what states the category, which is the same WCAG 2.1 1.4.1 rule the hue follows.
+
 ### Dark theme
 
 The stylesheet resolves every colour through a token, so the theme is a token swap. Light is the first view (A29, operator decision 2026-07-26). The inline prelude in the head always writes a `data-theme` attribute on the root element, the stored choice where one exists and `light` otherwise, before first paint, so a reader who chose dark never sees a white flash. The stylesheet still carries the `prefers-color-scheme` block, and the always-set attribute overrides it, so the system preference no longer decides what a first-time visitor sees. The choice is kept in `localStorage` under `promptotyping-theme`.
@@ -204,7 +210,7 @@ Labels are English, in the British spelling the paper uses. A label names the th
 
 ### Term index
 
-The term index heads the glossary page as a table of term and target pages. The filter field above it is a plain input in a `--border` frame with no icon and no placeholder decoration. Target pages are links in the dominant grey, the term links into its own glossary entry, and a term that occurs nowhere outside the glossary says so in words rather than by a symbol. The index carries no colour; it distinguishes nothing that a hue would encode.
+The term index heads the glossary page as a table of term, category and target pages. The filter field above it is a plain input in a `--border` frame with no icon and no placeholder decoration, and it searches all three columns. Target pages are links in the dominant grey, the term links into its own glossary entry, and a term that occurs nowhere outside the glossary says so in words rather than by a symbol. The index carries no colour; the one thing it distinguishes, the kind of thing a term names, is drawn as a shape beside its word.
 
 ## Focus and keyboard
 
@@ -216,7 +222,7 @@ The only movement animation is the side-panel slide, 200ms `ease-out`. Interacti
 
 ## Icons
 
-Icons appear only where a control carries no text, currently the theme toggle, the panel close, the copy button, the mark on an outbound link and the repository link in the header. They are inline SVG at 16 pixels with a 1.5-pixel stroke in `currentColor` and no fills, carried in the markup rather than in a font or a sprite file. Navigation entries, headings and groups carry no icons, because there the label is the thing.
+Icons appear only where a control carries no text, currently the theme toggle, the panel close, the copy button, the mark on an outbound link and the repository link in the header. The category marks of the glossary fall outside this rule, since they encode a value rather than name a control; they are specified under Shape that carries meaning. They are inline SVG at 16 pixels with a 1.5-pixel stroke in `currentColor` and no fills, carried in the markup rather than in a font or a sprite file. Navigation entries, headings and groups carry no icons, because there the label is the thing.
 
 A destination mark is the one case that sits beside a label. The GitHub and YouTube glyphs in the footer identify where a link goes, the way the carrier watercolour in the same row does, and they do not stand in for a missing label the way an icon button does. They are set at 14 pixels in `currentColor` and never in the brand colour, which would put two hues on the page that say nothing about epistemic function.
 

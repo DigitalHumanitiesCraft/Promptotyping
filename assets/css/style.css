@@ -1022,6 +1022,30 @@ a:hover {
   margin: 0 0 var(--space-2);
 }
 
+/* Category of an entry: one geometric mark in currentColor plus the category
+   word, which is what carries the information. The mark never takes a hue,
+   because hue on this site means the epistemic function of an artefact. */
+.glossar-kategorie {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  color: var(--grey-2);
+}
+
+.glossar-kategorie-mark {
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.25;
+  stroke-linejoin: round;
+}
+
+.glossar-entry .glossar-kategorie {
+  margin-bottom: var(--space-2);
+}
+
 .glossar-kurz {
   font-weight: 500;
   margin: 0 0 var(--space-2);
@@ -1076,8 +1100,12 @@ a:hover {
 }
 
 .term-index-table th[scope="row"] {
-  width: 40%;
+  width: 32%;
   font-weight: 500;
+}
+
+.term-index-kind {
+  width: 24%;
 }
 
 .term-index-pages a {
@@ -1761,6 +1789,13 @@ a:hover {
   display: block;
   font-weight: 600;
   color: var(--text);
+  margin-bottom: var(--space-1);
+}
+
+/* In the tooltip the category stands on its own line between term and
+   definition; nothing else there is a block. */
+.glossar-tooltip .glossar-kategorie {
+  display: flex;
   margin-bottom: var(--space-1);
 }
 

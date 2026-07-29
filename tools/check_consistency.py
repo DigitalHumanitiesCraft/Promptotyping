@@ -358,18 +358,47 @@ def reference_ids():
     return found
 
 
-def check_glossar_sources(anchors):
-    """Every glossary entry names its carriers, and each address among them holds.
+def glossar_categories(meta):
+    """The taxonomy vocabulary, and the mark the site draws for each of its values.
 
-    The source list replaced a free-text field on 2026-07-29 (A34), so the entry
-    now states which carrier is which kind and where it lives. Three ways it can
-    go wrong silently: a type outside the declared vocabulary, an anchor under
-    the wrong family, and a reference key that no entry of the paper's list
-    mints.
+    The wording is data and stands in _meta.kategorien; the mark is presentation
+    and stands as CATEGORY_MARKS in pages-glossar.js. A value that carries only
+    one of the two renders as a category without a mark or as a mark nothing
+    names, so the two are held against each other here (A36).
+    """
+    vocabulary = set(meta.get("kategorien") or {})
+    # The values are SVG fragments in single quotes, so only the keys are read.
+    source = js_literal(read_text(JS_DIR / "pages-glossar.js"), "CATEGORY_MARKS")
+    if source is None:
+        fail("glossar", "pages-glossar.js declares no CATEGORY_MARKS table")
+        return vocabulary
+    marks = set(re.findall(r'^\s*"([a-z-]+)":', source, re.M))
+    for value in sorted(vocabulary - marks):
+        fail("glossar", "the category %r has no mark in CATEGORY_MARKS" % value)
+    for value in sorted(marks - vocabulary):
+        fail("glossar", "CATEGORY_MARKS draws %r, which _meta.kategorien does "
+                        "not name" % value)
+    return vocabulary
+
+
+def check_glossar_sources(anchors):
+    """Every glossary entry names its kind and its carriers, and each address holds.
+
+    The source list replaced a free-text field on 2026-07-29 (A34) and the
+    taxonomy field arrived with A36, so the entry now states what kind of thing
+    the term names, which carrier is of which kind, and where each one lives.
+    Four ways this can go wrong silently: a category the render table does not
+    know, a source type outside the declared vocabulary, an anchor under the
+    wrong family, and a reference key that no entry of the paper's list mints.
     """
     refs = reference_ids()
-    for entry in load_json(GLOSSAR_JSON)["eintraege"]:
+    data = load_json(GLOSSAR_JSON)
+    categories = glossar_categories(data["_meta"])
+    for entry in data["eintraege"]:
         slug = entry["slug"]
+        if entry.get("kategorie") not in categories:
+            fail("glossar", "%s is classified as %r, which _meta.kategorien does "
+                            "not name" % (slug, entry.get("kategorie")))
         sources = entry.get("quellen") or []
         if not sources:
             fail("glossar", "the entry %s names no source" % slug)

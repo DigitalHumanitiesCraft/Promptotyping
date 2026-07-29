@@ -64,6 +64,20 @@
     return out;
   }
 
+  /* The taxonomy of A36 is declared once, in pages-glossar.js; this module
+     renders the same mark and word so the register can be scanned by kind. */
+  function categoryCell(entry) {
+    return typeof App.glossarCategoryHtml === "function"
+      ? App.glossarCategoryHtml(entry.kategorie)
+      : "";
+  }
+
+  function categoryLabel(entry) {
+    return typeof App.glossarCategoryLabel === "function"
+      ? App.glossarCategoryLabel(entry.kategorie)
+      : "";
+  }
+
   function buildRows(entries, pages) {
     return entries.map(function (entry) {
       var patterns = searchForms(entry).map(termPattern);
@@ -73,10 +87,15 @@
       var links = hits.map(function (p) {
         return '<a href="#' + p.id + '">' + escapeHtml(p.label) + "</a>";
       }).join("");
+      // The filter runs over the term, its kind and the pages it occurs on, so
+      // a reader can narrow the register by any of the three.
+      var haystack = [entry.begriff, categoryLabel(entry)]
+        .concat(hits.map(function (p) { return p.label; })).join(" ");
       return '<tr class="term-index-row" data-term="' +
-        escapeHtml((entry.begriff + " " + hits.map(function (p) { return p.label; }).join(" ")).toLowerCase()) +
+        escapeHtml(haystack.toLowerCase()) +
         '"><th scope="row"><a href="#glossar-' + escapeHtml(entry.slug) + '">' +
         escapeHtml(entry.begriff) + "</a></th>" +
+        '<td class="term-index-kind">' + categoryCell(entry) + "</td>" +
         '<td class="term-index-pages">' +
         (links || '<span class="term-index-none">only on this page</span>') +
         "</td></tr>";
@@ -93,8 +112,9 @@
     host.id = HOST_ID;
     host.innerHTML =
       "<h2>Term index</h2>" +
-      "<p>Every glossary term with the pages that use it. The register is built " +
-      "in the browser from the rendered pages and stands in for a full-text search.</p>";
+      "<p>Every glossary term with the kind of thing it names and the pages that " +
+      "use it. The register is built in the browser from the rendered pages and " +
+      "stands in for a full-text search.</p>";
     // After the intro and the initials bar, ahead of the entries the register
     // links into.
     var list = page.querySelector(".glossar-list");
@@ -117,7 +137,7 @@
       'placeholder="Filter terms" aria-label="Filter terms" spellcheck="false">' +
       "</div>" +
       '<table class="term-index-table"><thead><tr>' +
-      "<th>Term</th><th>Occurs on</th></tr></thead>" +
+      "<th>Term</th><th>Kind</th><th>Occurs on</th></tr></thead>" +
       "<tbody>" + buildRows(entries, pages) + "</tbody></table>");
 
     var filter = host.querySelector(".term-index-filter");

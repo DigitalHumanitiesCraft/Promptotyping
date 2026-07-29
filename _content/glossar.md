@@ -10,9 +10,11 @@ machine-url: https://dhcraft.org/Promptotyping/_content/glossar.md
 
 # Glossary
 
-Terms of the Promptotyping method and of the methodology site. The authoritative data source is `data/glossar.json`; this file is generated from it and carries the same content. Each entry gives a short definition for tooltips, a full definition and its sources. A source that this site holds an address for carries it as a hash anchor; the rest stay text. Terms the paper text does not carry are marked as site vocabulary in their source list.
+Terms of the Promptotyping method and of the methodology site. The authoritative data source is `data/glossar.json`; this file is generated from it and carries the same content. Each entry gives the kind of thing the term names, a short definition for tooltips, a full definition and its sources. A source that this site holds an address for carries it as a hash anchor; the rest stay text. Terms the paper text does not carry are marked as site vocabulary in their source list.
 
 ### Action Document
+
+Kind: Document function
 
 Knowledge document that holds knowledge about what agents may do within the project.
 
@@ -22,6 +24,8 @@ Source: [Paper, Section 3.3](#abschnitt-3-3-the-promptotyping-documents); [Konve
 
 ### Action Layer
 
+Kind: Document function
+
 The imperative CLAUDE.md in the repository root that socialises the coding agent.
 
 The action layer is the imperative document in the repository root, usually CLAUDE.md, that socialises the coding agent. It routes to knowledge and translates it into imperatives while carrying no knowledge itself. It consists of a portable method core (knowledge-base routing, journal obligation, verification rules, design principles, scope, truth hierarchy) and an exchangeable tooling block (commands, hooks, permissions, platform conventions).
@@ -29,6 +33,8 @@ The action layer is the imperative document in the repository root, usually CLAU
 Source: [Paper, Section 3.3](#abschnitt-3-3-the-promptotyping-documents); [Vorlage Action-Layer](#promptotyping-document-action-layer)
 
 ### Agent Socialisation
+
+Kind: Form of work
 
 Aesthetic and behavioural shaping of a coding agent through the composition of design.md and CLAUDE.md.
 
@@ -38,6 +44,8 @@ Source: [Paper, Section 3.3](#abschnitt-3-3-the-promptotyping-documents); Vault 
 
 ### Agentic Coding
 
+Kind: Form of work
+
 LLM agents that navigate file systems autonomously, run scripts, execute tests and iterate.
 
 Agentic coding denotes the use of LLM agents such as Claude Code that navigate a repository, run scripts, execute tests, interpret error messages and iterate on their own outputs. Between mid-2023 and late 2025 the coding capability of frontier LLMs converged with such agentic harnesses, which is what carries the Implementation phase of the method. What this changes is the span over which an agent works without human intervention, and with it how much intent has to exist in writing beforehand. Multi-agent operation remains one of the tools the method uses.
@@ -45,6 +53,8 @@ Agentic coding denotes the use of LLM agents such as Claude Code that navigate a
 Source: [Paper, Section 2.4](#abschnitt-2-4-position-in-the-ai-discourse); Anthropic 2025
 
 ### Agentic Engineering
+
+Kind: Form of work
 
 Development practice in which LLM agents are the executing instance and the human work becomes specifying, steering and verifying.
 
@@ -54,6 +64,8 @@ Source: [Paper, Section 2.4](#abschnitt-2-4-position-in-the-ai-discourse)
 
 ### Anchor Scheme
 
+Kind: Infrastructure and environment
+
 System of stable URL anchors through which the site addresses templates, concepts, case studies and terms.
 
 The anchor scheme is the system of permanently stable URL anchors on the single-page site. One stable anchor exists per template, concept, case study and term, among them #promptotyping-document-data, #konzept-eil and #case-herdata. Every addressable content item exists in two equally canonical forms, a hash anchor and a subpath URL. Repositories that link through the frontmatter field template: address these anchors, so they may not be renamed without discussion.
@@ -61,6 +73,8 @@ The anchor scheme is the system of permanently stable URL anchors on the single-
 Source: knowledge/specification.md, requirement A4
 
 ### Asymmetric Amplification
+
+Kind: Failure mode and limit
 
 LLMs amplify computer-based research work along existing gradients of expertise, access and epistemic selectivity.
 
@@ -70,6 +84,8 @@ Source: [Paper, Section 6.4](#abschnitt-6-4-limits); [Pollin 2026a](#ref-pollin-
 
 ### Claim Verification as a Document Function
 
+Kind: Checking and acceptance
+
 Adversarial checking of a project's own empirical and novelty claims in dedicated knowledge documents.
 
 Claim verification as a document function denotes the checking of a project's own empirical and novelty claims in a dedicated document that records what claim was checked, against what evidence, by what procedure, and with what verdict. Three building blocks carry it, the recomputation of every headline figure from the raw data by an independent instance with a source path per figure, research against the project's own novelty claim with the aim of refuting it, and a conformance audit against the standards claimed. Claims used externally may be used only in the form these documents license. The vocabulary of claim, grounds, warrant and backing comes from Toulmin's layout of arguments, where each element answers a specific challenge to an assertion (Hitchcock 2003). The recording form stands close to the nanopublication, which binds a single statement to the annotations that carry its provenance so that it becomes citable, attributable and reviewable (Groth et al. 2010). The function is to be held apart from the software test, which checks an artefact against its specification, while what is checked here are statements about the world. Verdict vocabulary and procedure follow from neither model and are the site's own. The pattern emerged in FemPrompt SozArb and is now a document function of the catalogue in its own right.
@@ -77,6 +93,8 @@ Claim verification as a document function denotes the checking of a project's ow
 Source: [Paper, Section 3.3](#abschnitt-3-3-the-promptotyping-documents); [Paper, Section 5.1](#abschnitt-5-1-principle-of-presentation); [Best Practices, claims verification](#praxis-claims-verification-as-a-document-function); [Vault: Toulmin's layout of arguments (Hitchcock 2003)](#vault-toulmin-layout-separates-claim-grounds-warrant-and-backing); [Vault: the nanopublication model (Groth et al. 2010)](#vault-nanopublication-binds-a-statement-to-the-annotations-that-carry-its-context)
 
 ### Co-Intelligence
+
+Kind: Role and authority
 
 Framework for human-LLM collaboration that emphasises amplification over automation.
 
@@ -86,6 +104,8 @@ Source: Site vocabulary, not carried in the paper text; [Mollick 2024](#ref-moll
 
 ### Confabulation
 
+Kind: Failure mode and limit
+
 Generation of plausible but false outputs by LLMs, commonly called hallucination.
 
 Confabulation, commonly called hallucination, is the generation of plausible but false outputs (Summerfield 2025). The LLM fills a gap with what fits rather than reporting what it lacks. In research contexts this is particularly dangerous where the output concerns contextualisation, periodisation or attribution, domains in which plausibility and correctness can come apart. Confabulation belongs beside sycophancy to the structural failure modes the Critical Expert in the Loop addresses.
@@ -93,6 +113,8 @@ Confabulation, commonly called hallucination, is the generation of plausible but
 Source: [Paper, Section 2.4](#abschnitt-2-4-position-in-the-ai-discourse); [Summerfield 2025](#ref-summerfield-2025)
 
 ### Context Engineering
+
+Kind: Form of work
 
 Systematic design and management of the contextual information LLMs receive at inference time.
 
@@ -102,6 +124,8 @@ Source: [Paper, Section 2.4](#abschnitt-2-4-position-in-the-ai-discourse); [Mei 
 
 ### Context Memory
 
+Kind: Document function
+
 Interplay of journal and git history that enables reliable session resumption.
 
 Context memory denotes the interplay of journal and git history that enables reliable session resumption, where the journal documents why decisions were taken and the commits document what was done. The Process Documents of the method carry this function. The pattern was observed among others in the imareal-room-object dashboard, where the agent documented in the journal on its own initiative.
@@ -109,6 +133,8 @@ Context memory denotes the interplay of journal and git history that enables rel
 Source: [Paper, Section 3.3](#abschnitt-3-3-the-promptotyping-documents)
 
 ### Context Rot
+
+Kind: Failure mode and limit
 
 Decline of LLM performance as context length grows, even on simple tasks.
 
@@ -118,6 +144,8 @@ Source: [Paper, Section 2.4](#abschnitt-2-4-position-in-the-ai-discourse); [Hong
 
 ### Critical Expert in the Loop (EIL)
 
+Kind: Role and authority
+
 Role that verifies LLM output at defined points and combines domain expertise with knowledge of LLM failure modes.
 
 The Critical Expert in the Loop is the role that verifies LLM output at defined points. Unlike the generic human in the loop it requires domain expertise together with awareness of LLM-specific failure modes and metacognitive vigilance. The Critical Expert's task extends beyond checking the correctness of outputs. The more consequential blind spot lies in the possibility space that was not explored, in the questions not asked and the alternatives not generated. This metareflexive capacity distinguishes the role from a reviewer who checks correctness alone.
@@ -125,6 +153,8 @@ The Critical Expert in the Loop is the role that verifies LLM output at defined 
 Source: [Paper, Section 2.4](#abschnitt-2-4-position-in-the-ai-discourse); [Pollin 2025c](#ref-pollin-2025c); [Vault: the double reflection loop of the role](#vault-critical-expert-in-the-loop-double-reflection-loop)
 
 ### Declarative Document
+
+Kind: Document function
 
 Knowledge document that holds knowledge about data, domain and research context.
 
@@ -134,6 +164,8 @@ Source: [Paper, Section 3.3](#abschnitt-3-3-the-promptotyping-documents); [Konve
 
 ### Demo Repository Reduction
 
+Kind: Form of work
+
 Teaching pattern in which the demo repository is deliberately left unconfigured.
 
 Demo repository reduction is a teaching pattern for Promptotyping workshops in which participants rebuild the method themselves on a real project. The demo repository is deliberately left unconfigured, an initial state with raw data, a terse idea.md and an empty knowledge/ folder, without CLAUDE.md, without custom commands and without an output structure. The learning gain comes from building the Promptotyping architecture under guidance rather than from reading a finished one. Tested in the SuGW and the ZBZ workshop.
@@ -141,6 +173,8 @@ Demo repository reduction is a teaching pattern for Promptotyping workshops in w
 Source: Site vocabulary, not carried in the paper text; [Best Practices, demo repository reduction](#praxis-demo-repository-reduction-in-teaching); Promptotyping MOC
 
 ### Distillation
+
+Kind: Form of work
 
 Phase and writing principle of context compression, maximum information with minimum tokens.
 
@@ -150,6 +184,8 @@ Source: [Paper, Section 3.2](#abschnitt-3-2-the-four-phases); [Hong et al. 2025]
 
 ### Epistemic Infrastructure
 
+Kind: Infrastructure and environment
+
 Site term for the interplay of verification points, interfaces, documents and version history in complex pipelines.
 
 Epistemic infrastructure denotes the interplay that arises in complex Promptotyping pipelines when verification points, interfaces, Promptotyping Documents, version history and agentic tooling mesh and keep the process of inquiry traceable across sessions. In the ZBZ OCR/TEI project and in FemPrompt SozArb the repository itself carries this function. The term was deliberately removed from the paper text, because the method supplies only one part of an epistemic infrastructure; the site keeps it as descriptive vocabulary for these cases.
@@ -157,6 +193,8 @@ Epistemic infrastructure denotes the interplay that arises in complex Promptotyp
 Source: Site vocabulary, not carried in the paper text; Vault Epistemic Infrastructure
 
 ### Exploration
+
+Kind: Form of work
 
 Second Promptotyping phase, probing the interface between data and research context and documenting the dead ends.
 
@@ -166,6 +204,8 @@ Source: [Paper, Section 3.2](#abschnitt-3-2-the-four-phases)
 
 ### Frontmatter Inspector
 
+Kind: Artefact and interface
+
 Site module that resolves a template: URI in real time and renders the referenced template live.
 
 The Frontmatter Inspector is a module of the templates section that accepts a whole YAML frontmatter block, extracts template.url or template.alias, validates the URL against the anchor scheme and opens the side panel with the rendered template. It demonstrates the frontmatter indirection concretely, since pasting a real frontmatter from another repository makes visible how repositories use the site as a machine-readable endpoint.
@@ -173,6 +213,8 @@ The Frontmatter Inspector is a module of the templates section that accepts a wh
 Source: [Templates, machine access](#vorlagen-maschinenzugriff); knowledge/specification.md, requirement A11 and ADR-7
 
 ### Implementation
+
+Kind: Form of work
 
 Fourth Promptotyping phase, iterative development with the Promptotyping Documents as context.
 
@@ -182,6 +224,8 @@ Source: [Paper, Section 3.2](#abschnitt-3-2-the-four-phases)
 
 ### Informed Vibe Coding
 
+Kind: Form of work
+
 Vibe coding grounded in computer literacy and computational thinking as competence prerequisites.
 
 Informed Vibe Coding denotes vibe coding that rests on a three-layer competence model, computer literacy, then computational thinking, then informed vibe coding. It separates the competent, methodologically reflected form of LLM-supported development from the naive one. The lower layer carries the upper one, since without basic technical understanding vibe coding stays blind to the consequences of the generated solution.
@@ -189,6 +233,8 @@ Informed Vibe Coding denotes vibe coding that rests on a three-layer competence 
 Source: Site vocabulary, not carried in the paper text; Vault Informed Vibe Coding
 
 ### Interface Typology
+
+Kind: Artefact and interface
 
 Classification of generated interfaces by epistemic function, verification, exploration, edition, capture and audit.
 
@@ -198,6 +244,8 @@ Source: [Paper, Section 4.2](#abschnitt-4-2-a-typology-of-promptotyping-interfac
 
 ### Knowledge Curation
 
+Kind: Form of work
+
 Systematic maintenance of the networked knowledge model at the vault layer and at the repository layer.
 
 Knowledge curation is the systematic maintenance of the networked knowledge model on two layers, the personal vault as a second brain and the project-specific knowledge vaults in repositories. It knows three types of operation (script-based, semantic, structural) and treats links as navigable context paths for agentic systems. As a cross-cutting practice it is what makes Promptotyping accumulate beyond the individual session.
@@ -205,6 +253,8 @@ Knowledge curation is the systematic maintenance of the networked knowledge mode
 Source: Site vocabulary, not carried in the paper text; [Best Practices, knowledge curation](#praxis-knowledge-curation); Promptotyping MOC
 
 ### Knowledge Document
+
+Kind: Document function
 
 Generic term for a document that holds knowledge; every Promptotyping Document is one.
 
@@ -214,6 +264,8 @@ Source: [Paper, Section 3.3](#abschnitt-3-3-the-promptotyping-documents)
 
 ### Knowledge-Action Composition
 
+Kind: Document function
+
 Structural principle that keeps knowledge and action separate and socialises coding agents through their combination.
 
 The knowledge-action composition is the structural principle by which declarative knowledge and imperative steering stay separate and together socialise a coding agent. Concretely, design.md stays a Declarative Document while CLAUDE.md as an Action Document points at it as a source of values and translates the design stance into imperative principles. The aesthetic and factual steering arises from the composition of two documents rather than from a hybrid type. The same axis separates technical documentation in Diátaxis, action against cognition, knowing how against knowing that (Procida 2024). Two things shift with a machine addressee. That framework's second axis falls away, acquisition against application, because a model loads the documents per session and acquires nothing that persists. And the reason for the separation inverts, since Diátaxis separates so that a reader finds the form their situation calls for, while a knowledge base separates so that a stable description is not overwritten by a volatile instruction.
@@ -221,6 +273,8 @@ The knowledge-action composition is the structural principle by which declarativ
 Source: [Procida 2024](#ref-procida-2024); [Konvention Promptotyping Documents](#konvention-v0.1); [Vault: Diátaxis separates along action and cognition](#vault-diataxis-separates-documentation-along-action-and-cognition)
 
 ### Konvention Promptotyping Documents
+
+Kind: Document function
 
 Descriptive account of the functions of a knowledge base, of the frontmatter schema and of the structural principles.
 
@@ -230,6 +284,8 @@ Source: [Konvention Promptotyping Documents, version 0.1](#konvention-v0.1)
 
 ### Phase Provenance Lane
 
+Kind: Artefact and interface
+
 Removed design element of the site that marked the Promptotyping phase described by each paragraph in the margin.
 
 The phase provenance lane was a design element of the first deploy. A narrow left column showed a monochrome mark in four shades of grey at every paragraph, corresponding to the Promptotyping phase the paragraph described, and made the methodological distribution of the paper visually legible. It was removed in full by operator decision in June 2026, together with legend, tooltip and filter mode (ADR-4). Since then the phase tags in the paper Markdown are only stripped at render time. The entry remains so that the decision stays traceable.
@@ -237,6 +293,8 @@ The phase provenance lane was a design element of the first deploy. A narrow lef
 Source: knowledge/specification.md, ADR-4 (removed feature)
 
 ### Preparation
+
+Kind: Form of work
 
 First Promptotyping phase, collecting all raw materials before technical decisions are made.
 
@@ -246,6 +304,8 @@ Source: [Paper, Section 3.2](#abschnitt-3-2-the-four-phases)
 
 ### Process Document
 
+Kind: Document function
+
 Knowledge document that holds knowledge about the course of the work.
 
 A Process Document is the specialisation of the knowledge document towards knowledge about the course of the work. It records how the work proceeded, chronologically or analytically. Examples are journal.md, learnings.md and plan.md. Together with the git history they form a context memory that enables reliable session resumption, where the journal documents why and the commits document what. For diagnostic use, unclear decision logic sends the reader to the Process Document first. The VetMedAI-Wissensbilanz project introduced learnings as a Process Document type of its own.
@@ -253,6 +313,8 @@ A Process Document is the specialisation of the knowledge document towards knowl
 Source: [Paper, Section 3.3](#abschnitt-3-3-the-promptotyping-documents); [Konvention Promptotyping Documents](#konvention-v0.1)
 
 ### Promptotyping
+
+Kind: Form of work
 
 Iterative, document-driven context-engineering method in four phases that translates research data into research artefacts.
 
@@ -262,6 +324,8 @@ Source: [Paper, Section 3.2](#abschnitt-3-2-the-four-phases); [Vault: the four-p
 
 ### Promptotyping Document
 
+Kind: Document function
+
 Structured, LLM-optimised Markdown document in the knowledge/ folder of a Promptotyping repository.
 
 A Promptotyping Document is a structured, LLM-optimised Markdown document in the knowledge/ folder of a Promptotyping repository that compresses and distils context. Every Promptotyping Document is a knowledge document, and three analytical types differ by the kind of knowledge they hold, Declarative Documents for knowledge about the subject matter, Process Documents for knowledge about the course of the work, and Action Documents for knowledge about how to act. These documents are context-adapted artefacts of context engineering, generated with LLM support and curated by experts. Classical documentation is a different genre.
@@ -269,6 +333,8 @@ A Promptotyping Document is a structured, LLM-optimised Markdown document in the
 Source: [Paper, Section 3.3](#abschnitt-3-3-the-promptotyping-documents); [Vault: the documents are the primary artefact](#vault-promptotyping-documents-are-the-primary-artifact); knowledge/INDEX.md
 
 ### Promptotyping Interface
+
+Kind: Artefact and interface
 
 Browser-based validation tool that makes intermediate results visible, comparable and correctable.
 
@@ -278,6 +344,8 @@ Source: [Paper, Section 4.1](#abschnitt-4-1-self-contained-static-web-tools); [P
 
 ### Research Artefact
 
+Kind: Artefact and interface
+
 Project-bound software that works on a project's own data and makes it explorable, analysable or editable.
 
 A research artefact in the sense of the method is what the documents are made for in the research context of a project, software bound to that project's data and working on it so that the data becomes explorable, analysable or editable. Its scholarly standing comes from that binding, because the distinctions it preserves are the ones the project's data model carries. The same derivation brings forth the forms that stand beside it, the processing pipeline upstream of the artefact and the description rendered from the source data. The default is a self-contained static web tool.
@@ -285,6 +353,8 @@ A research artefact in the sense of the method is what the documents are made fo
 Source: [Paper, Section 1](#abschnitt-1-introduction); [Paper, Section 4.1](#abschnitt-4-1-self-contained-static-web-tools)
 
 ### Scholar-Centred Design
+
+Kind: Form of work
 
 Design approach in which the system adapts to the working practices of researchers.
 
@@ -294,6 +364,8 @@ Source: [Paper, Section 2.5](#abschnitt-2-5-genealogy); [Pollin 2025b](#ref-poll
 
 ### Script versus LLM Division
 
+Kind: Form of work
+
 Assignment of tasks by unambiguity, algorithmically unambiguous work to scripts, semantically interpretive work to the LLM.
 
 The script versus LLM division assigns algorithmically unambiguous tasks to scripts and semantically interpretive tasks to the LLM. The dividing line runs along unambiguity rather than along complexity. It appears twice in the method, as deterministically generated documents that are rendered from the source data and committed alongside the curated layer, and as the resolution of the token economy, where the LLM reads over the data and writes code that reads the data. The line is no coinage of the method. Requirements engineering draws it for its own tools, where the QUS tool checks the criteria a rule can decide and excludes the semantic ones on the stated ground that they require deep understanding of the requirement's content (Lucassen et al. 2016). Evaluation research measures the other end, where a strong judging model matches human preference at the level at which humans agree with one another, under named position, verbosity and self-enhancement biases (Zheng et al. 2023).
@@ -301,6 +373,8 @@ The script versus LLM division assigns algorithmically unambiguous tasks to scri
 Source: [Paper, Section 3.3](#abschnitt-3-3-the-promptotyping-documents); [Best Practices, script versus LLM separation](#praxis-script-versus-llm-separation); [Lucassen et al. 2016](#ref-lucassen-2016); [Zheng et al. 2023](#ref-zheng-2023); [Vault: the QUS tool checks only what a rule can decide](#vault-aqusa-checks-the-criteria-a-rule-can-decide); [Vault: a judging model matches human preference under known biases](#vault-llm-judgement-approximates-human-preference-and-carries-known-biases)
 
 ### Side Panel
+
+Kind: Artefact and interface
 
 Right-hand sliding panel of the site that carries context-specific depth without interrupting the reading flow.
 
@@ -310,6 +384,8 @@ Source: knowledge/specification.md
 
 ### Spec-Driven Development
 
+Kind: Form of work
+
 The software industry's corrective to unreviewed generation, with the specification as the source of truth for agents.
 
 Spec-Driven Development names the corrective the software industry developed against the reliability problems of unreviewed generation. Through 2024 and 2025 agentic coding frameworks converged on maintaining specifications as the source of truth from which LLM-supported agents implement, among them Tessl, BMAD, AWS Kiro, OpenSpec and GitHub Spec Kit. Promptotyping belongs to this movement and shares its core commitments, the versioned document set as the governing unit, the separation of intent from implementation, and a human checkpoint between generation and acceptance. Three things that sit at the periphery there are constitutive here. The data layer describes sources that precede the artefact and carry their own semantics and their own uncertainty, in place of the system under construction. The specification is bound to scholarly verification duties. And the Critical Expert in the Loop is installed as a role holding domain authority over the subject matter.
@@ -317,6 +393,8 @@ Spec-Driven Development names the corrective the software industry developed aga
 Source: [Paper, Section 2.4](#abschnitt-2-4-position-in-the-ai-discourse); [Vault: the frameworks converge on specification over prompt](#vault-sdd-frameworks-converge-on-specification-over-prompt); [Vault: no framework defines a subject-matter checking role](#vault-sdd-no-subject-matter-verification-role)
 
 ### Research Compendium as a Promptotyping Pattern
+
+Kind: Artefact and interface
 
 Recurring structural feature, a static website plus a standalone research dataset in the repository.
 
@@ -326,6 +404,8 @@ Source: [Marwick et al. 2018](#ref-marwick-2018); [Risam and Gil 2022](#ref-risa
 
 ### Sub-Agents and Role Simulation
 
+Kind: Role and authority
+
 Specialised agent roles with differentiated permissions or, without predefined roles, a simulation of them within one session.
 
 Sub-agents are defined agent roles with graded permissions, for instance a read-only analysis, a writing implementation and a synthesis. They load only if the definitions exist before the session starts; otherwise a role simulation runs within a single session. The method knows this multi-agent mode as a second mode of operation beside the default of one researcher and one agent instance, and the evidence lies overwhelmingly with the first. In the wiiw FIGARO project three roles were separated so that the analysis agent held read permissions only. The graded permissions are least privilege in the sense of Saltzer and Schroeder (1975), where every program and every user operates with the least set of privileges the job needs, which bounds the damage an error can do and narrows what an audit has to cover. Splitting roles across separate instances is what multi-agent frameworks do when they assign roles along an encoded working procedure so that intermediate results are checked by an agent other than their producer (Hong et al. 2023). The simulation within one session is called role play in the literature, and that literature's own correction bounds the term, because a role set by a prompt stays a distribution of characters that the conversation keeps reshaping (Shanahan et al. 2023).
@@ -333,6 +413,8 @@ Sub-agents are defined agent roles with graded permissions, for instance a read-
 Source: [Paper, Section 3.2](#abschnitt-3-2-the-four-phases); [Best Practices, subagents and role simulation](#praxis-subagents-and-role-simulation); [Saltzer and Schroeder 1975](#ref-saltzer-1975); [Vault: least privilege bounds damage and narrows the audit](#vault-least-privilege-bounds-damage-and-narrows-the-audit); [Vault: multi-agent frameworks assign roles along a procedure (Hong et al. 2023)](#vault-multi-agent-frameworks-assign-roles-along-an-encoded-procedure); [Vault: dialogue-agent behaviour as role play (Shanahan et al. 2023)](#vault-dialogue-agent-behaviour-is-described-as-role-play)
 
 ### Sycophancy
+
+Kind: Failure mode and limit
 
 Tendency of LLMs to agree with user assumptions instead of challenging them.
 
@@ -342,6 +424,8 @@ Source: [Paper, Section 2.4](#abschnitt-2-4-position-in-the-ai-discourse); [Shar
 
 ### Template (Promptotyping Document)
 
+Kind: Document function
+
 Fillable structural specification for one function of a Promptotyping knowledge base.
 
 A template is a fillable structural specification for one function of a Promptotyping knowledge base. The function names have been English since July 2026, among them Navigation, Charter, Material, Specification, Architecture, Domain Knowledge, Design, Quality Assurance, Verification, Provenance, Planning, Reporting, Integration and Agent Instructions. The catalogue is open; a template arises once a function carrier repeats comparably across at least two repositories, and its requirements are checked against the empirical record instead of prescribed in advance. A template carries a function and no fixed file name, and it holds only where its trigger is met.
@@ -349,6 +433,8 @@ A template is a fillable structural specification for one function of a Promptot
 Source: [Specification, part 2, Templates](#vorlagen); [Konvention Promptotyping Documents](#konvention-v0.1); [Vault: the first description declared the documents form-free](#vault-promptotyping-documents-form-freedom); knowledge/INDEX.md
 
 ### template: field
+
+Kind: Infrastructure and environment
 
 Frontmatter field in Promptotyping Documents that points at the authoritative template specification on the site.
 
@@ -358,6 +444,8 @@ Source: [Paper, Section 3.3](#abschnitt-3-3-the-promptotyping-documents); [Templ
 
 ### User Story (Epistemic Status)
 
+Kind: Checking and acceptance
+
 Every user story is a hypothesis about the user until the named user confirms it.
 
 In the Promptotyping context every user story is a hypothesis about the user until the named user has confirmed it. In the agentic setting the implementing conversation that would correct wrong stories within a team falls away, so unvalidated stories have to be marked as assumptions and carry an observation point. This status is a stipulation of the site and takes no support from the QUS framework, since each of its criteria judges the intrinsic quality of the story text and none asks whether the story holds of the user it names; it comes from the FemPrompt case. The review criteria for a user-stories document are listed with the Vorlage User Stories, taken from QUS (Lucassen et al. 2016) along the division that framework itself draws between what a tool can decide and what requires understanding of the content, and extended by what the agentic setting demands.
@@ -365,6 +453,8 @@ In the Promptotyping context every user story is a hypothesis about the user unt
 Source: Site vocabulary, not carried in the paper text; [Best Practices, the epistemic status of user stories](#praxis-the-epistemic-status-of-user-stories); [Vorlage User Stories](#promptotyping-document-user-stories); [Lucassen et al. 2016](#ref-lucassen-2016); [Vault: the thirteen QUS quality criteria](#vault-qus-defines-thirteen-user-story-quality-criteria)
 
 ### Verification and Validation
+
+Kind: Checking and acceptance
 
 Verification is the check by domain expertise, validation the check by a formal rule.
 
@@ -374,6 +464,8 @@ Source: [Paper, Section 6.2](#abschnitt-6-2-verification-and-validation); [Speci
 
 ### Verification Milestone
 
+Kind: Checking and acceptance
+
 Defined checkpoint in the workflow at which domain expertise is applied systematically.
 
 Verification milestones are defined checkpoints in the workflow at which domain expertise is applied systematically. They turn the Critical Expert in the Loop into a process step, since at a milestone the work stops, is validated with deterministic tools and verified by expert judgement before it continues. The Implementation phase advances in such small, checkable steps. Where the check is deferred, a verification debt arises that has to be settled before use or handover. In the ZBZ OCR/TEI project an interface at every pipeline stage serves as such a milestone.
@@ -381,6 +473,8 @@ Verification milestones are defined checkpoints in the workflow at which domain 
 Source: [Paper, Section 3.2](#abschnitt-3-2-the-four-phases); [Paper, Section 6.2](#abschnitt-6-2-verification-and-validation); [Best Practices, verification milestones](#praxis-verification-milestones)
 
 ### Vibe Coding
+
+Kind: Form of work
 
 Practice of generating code through natural language and accepting it without thorough review.
 

@@ -39,7 +39,7 @@ machine-url: https://dhcraft.org/Promptotyping/_content/glossar.md
 
 # Glossary
 
-Terms of the Promptotyping method and of the methodology site. The authoritative data source is `data/glossar.json`; this file is generated from it and carries the same content. Each entry gives a short definition for tooltips, a full definition and its sources. A source that this site holds an address for carries it as a hash anchor; the rest stay text. Terms the paper text does not carry are marked as site vocabulary in their source list."""
+Terms of the Promptotyping method and of the methodology site. The authoritative data source is `data/glossar.json`; this file is generated from it and carries the same content. Each entry gives the kind of thing the term names, a short definition for tooltips, a full definition and its sources. A source that this site holds an address for carries it as a hash anchor; the rest stay text. Terms the paper text does not carry are marked as site vocabulary in their source list."""
 
 
 def render_source(source: dict) -> str:
@@ -49,25 +49,30 @@ def render_source(source: dict) -> str:
     return source["text"]
 
 
-def render(entries: list[dict]) -> str:
+def render(entries: list[dict], categories: dict) -> str:
     """The mirror text for a list of glossary entries, in the order given.
 
-    Four fields carry into the Markdown. Any further field, such as the search
-    form the term index reads, stays in the JSON and is not rendered.
+    Five fields carry into the Markdown. Any further field, such as the search
+    form the term index reads, stays in the JSON and is not rendered. The
+    category renders as its word, the way the site renders it beside its mark.
     """
     blocks = [HEADER]
     for entry in entries:
         sources = "; ".join(render_source(s) for s in entry["quellen"])
         blocks.append(
-            "### %s\n\n%s\n\n%s\n\nSource: %s"
-            % (entry["begriff"], entry["kurz"], entry["voll"], sources)
+            "### %s\n\nKind: %s\n\n%s\n\n%s\n\nSource: %s"
+            # A category the vocabulary does not name falls through as its own
+            # key rather than stopping the generator; check_consistency.py is
+            # where that case is reported.
+            % (entry["begriff"], categories.get(entry["kategorie"], entry["kategorie"]),
+               entry["kurz"], entry["voll"], sources)
         )
     return "\n\n".join(blocks) + "\n"
 
 
 def build() -> str:
     data = json.loads(SOURCE.read_text(encoding="utf-8"))
-    return render(data["eintraege"])
+    return render(data["eintraege"], data["_meta"]["kategorien"])
 
 
 def _excerpt(line: str, width: int = 90) -> str:

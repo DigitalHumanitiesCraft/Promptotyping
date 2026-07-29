@@ -214,6 +214,13 @@ The first column of Table 1 in section 5.2 carries each project into its use-cas
 
 Acceptance criterion. Clicking a project name in Table 1 opens the use-case gallery at that project's card.
 
+### A36 — The glossary classifies its terms, and the class is drawn as a shape
+Every glossary entry states what kind of thing its term names, from a closed vocabulary of seven values (package F3 of [plan.md](plan.md)). The values are form of work, document function, role and authority, artefact and interface, checking and acceptance, failure mode and limit, and infrastructure and environment. Their wording stands in `_meta.kategorien` of `data/glossar.json`, which makes the vocabulary data, and the mark drawn for each stands as `CATEGORY_MARKS` in `pages-glossar.js`, which makes the mark presentation. `tools/check_consistency.py` holds the two against each other, so a value can neither lose its mark nor acquire one that nothing names.
+
+The mark is one geometric form per value, inline SVG at twelve pixels with a 1.25-pixel stroke in `currentColor` and no fill. It carries no hue, because hue on this site encodes the epistemic function of an artefact and nothing else (A22). The category word stands beside the mark wherever it appears, so the shape is never the sole carrier (WCAG 2.1, success criterion 1.4.1). Tooltip, glossary entry and term index render the same pair, and the register carries it as a column its filter field searches alongside the term and the pages. Grounds for the shape encoding and the form per value are in [design.md](design.md).
+
+Acceptance criterion. Every entry shows exactly one mark with its category word, the register narrows to a category when its name is typed into the filter, and no mark carries a colour.
+
 ### A26 — The site is English
 Every string the site shows is English, in the British spelling the paper uses (operator decision 2026-07-25, carried out 2026-07-26). That covers the page registry labels, the status line, every control, the nine content pages directly under `_content/`, and the text fields of `data/glossar.json`, `data/case-studies.json` and `data/promptotyping-documents.json`.
 

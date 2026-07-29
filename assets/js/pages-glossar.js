@@ -52,6 +52,43 @@
       list.map(sourceHtml).join("; ") + "</p>";
   }
 
+  /* ---- Category marks ----
+     The controlled taxonomy of A36. Every category owns exactly one monochrome
+     geometric mark, drawn in currentColor, and the category word always stands
+     beside it, since neither colour nor shape may be the only carrier of an
+     information (WCAG 2.1, 1.4.1). Hue stays reserved for the five epistemic
+     functions of A22, so no mark takes one. The vocabulary and its wording are
+     data and live in _meta.kategorien of data/glossar.json; what stands here is
+     the mark per value, which is presentation. */
+
+  var CATEGORY_MARKS = {
+    "form-of-work": '<circle cx="7" cy="7" r="4.75"/>',
+    "document-function": '<rect x="2.25" y="2.25" width="9.5" height="9.5"/>',
+    "role": '<path d="M7 2 12 11.5 2 11.5Z"/>',
+    "artefact": '<path d="M7 1.75 12.25 7 7 12.25 1.75 7Z"/>',
+    "checking": '<path d="M7 1.75 11.5 4.375 11.5 9.625 7 12.25 2.5 9.625 2.5 4.375Z"/>',
+    "failure-mode": '<path d="M2.75 2.75 11.25 11.25M11.25 2.75 2.75 11.25"/>',
+    "infrastructure": '<path d="M2 4h10M2 7h10M2 10h10"/>'
+  };
+
+  var categoryLabels = {};
+
+  function categoryLabel(slug) {
+    return categoryLabels[slug] || "";
+  }
+
+  function categoryHtml(slug) {
+    var label = categoryLabel(slug);
+    var mark = CATEGORY_MARKS[slug];
+    if (!label || !mark) {
+      return "";
+    }
+    return '<span class="glossar-kategorie">' +
+      '<svg class="glossar-kategorie-mark" viewBox="0 0 14 14" width="12" height="12" ' +
+      'aria-hidden="true" focusable="false">' + mark + "</svg>" +
+      A.escapeHtml(label) + "</span>";
+  }
+
   function renderGlossar() {
     var el = document.getElementById("glossar");
     if (!el) {
@@ -59,6 +96,7 @@
     }
     return A.fetchJson("data/glossar.json")
       .then(function (data) {
+        categoryLabels = (data._meta && data._meta.kategorien) || {};
         glossarEntries = (data.eintraege || []).slice().sort(function (a, b) {
           return a.begriff.localeCompare(b.begriff, "de");
         });
@@ -67,6 +105,7 @@
         var items = glossarEntries.map(function (e) {
           return '<div class="glossar-entry" id="glossar-' + e.slug + '">' +
             '<h3 class="glossar-term">' + A.escapeHtml(e.begriff) + "</h3>" +
+            categoryHtml(e.kategorie) +
             '<p class="glossar-kurz">' + A.escapeHtml(e.kurz) + "</p>" +
             '<p class="glossar-voll">' + A.escapeHtml(e.voll) + "</p>" +
             sourcesHtml(e, "glossar-quelle") +
@@ -233,7 +272,7 @@
     }
     var tip = ensureGlossarTooltip();
     tip.innerHTML = '<span class="glossar-tooltip-term">' + A.escapeHtml(entry.begriff) +
-      "</span>" + A.escapeHtml(entry.kurz) +
+      "</span>" + categoryHtml(entry.kategorie) + A.escapeHtml(entry.kurz) +
       sourcesHtml(entry, "glossar-tooltip-quelle") +
       '<a class="glossar-tooltip-more" href="#glossar-' + A.escapeHtml(slug) + '">Full entry</a>';
     var rect = trigger.getBoundingClientRect();
@@ -324,4 +363,8 @@
   A.decorateGlossarTriggers = decorateGlossarTriggers;
   A.setupGlossarInteraction = setupGlossarInteraction;
   A.konzeptSlug = konzeptSlug;
+  /* The term index renders the same mark in its own table; the taxonomy stays
+     declared here, where the glossary lives. */
+  A.glossarCategoryHtml = categoryHtml;
+  A.glossarCategoryLabel = categoryLabel;
 })(window.PromptotypingApp = window.PromptotypingApp || {});
