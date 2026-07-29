@@ -184,7 +184,7 @@
       "role": "evidence",
       "status": "active",
       "summary": "Static web application for the prosopographical visualisation of Goethe's female correspondents, with an explicit reflection on map bias ahead of use.",
-      "data": "TEI/Wikidata letter corpus (CMIF, SNDB)",
+      "data": "TEI/CMIF letter corpus (SNDB, GND authority links)",
       "artifact": "Correspondence map (women in Goethe's correspondence)",
       "interfaceTypes": [
         "exploration"

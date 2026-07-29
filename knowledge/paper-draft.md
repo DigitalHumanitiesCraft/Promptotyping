@@ -446,7 +446,7 @@ The documented projects range from small exploratory interfaces to multi-stage p
 | coOCR-HTR | OCR and HTR outputs | Verification | Comparison workbench developed under a regression suite and later forked by a third party |
 | SZD-HTR Pipeline | Digitised manuscripts, typescripts, correspondence, and estate materials | Verification | Production-scale transcription pipeline and the recurring example of Sections 2.2–2.4 |
 | VetMedAI Wissensbilanz | Heterogeneous university reporting spreadsheets | Exploration | Hand-curated project documents over inconsistent tabular sources |
-| Kulturpool Explorer | Harvested Kulturpool API data | Exploration | Dependency-free static artefact whose repository declares the knowledge base as source of truth |
+| Kulturpool Explorer | Harvested Kulturpool API data | Exploration | Parallel agent orchestration in a public cultural-heritage context; the project repository itself is dependency-free and declares the knowledge base as source of truth |
 | wiiw Patent Analysis | Patent-cooperation data using a synthetic substitute | Exploration | Development against synthetic data where original data was confidential |
 | Medieval Legal Transactions | TEI-XML edition corpus | Edition | Agentic edition workflow governed by regression tests |
 | M³GIM | RiC-O and JSON-LD archival data collected and modelled during the project | Exploration, Capture | Rapid generation of interfaces from early data states to support communication, data capture, and iterative modelling |
