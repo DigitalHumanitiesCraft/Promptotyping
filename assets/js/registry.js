@@ -34,6 +34,8 @@
     { id: "use-cases", label: "Use Cases", group: "Evidence", kind: "informative",
       note: "Documented projects", machine: "data/case-studies.json" },
 
+    { id: "tutorial", label: "Tutorial", group: "Tools and practice", kind: "informative",
+      note: "Your own first iteration, step by step from dataset to promptotype" },
     { id: "praxis", label: "Best Practices", group: "Tools and practice", kind: "informative",
       note: "Working practices from application" },
     { id: "skills", label: "Skills", group: "Tools and practice", kind: "informative",

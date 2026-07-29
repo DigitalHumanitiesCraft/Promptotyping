@@ -68,6 +68,7 @@ Every addressable item exists under two equal canonical URL forms, a subpath for
 | Use cases | `#use-cases` | `/use-cases` |
 | Practice entry | `#praxis-{slug}` | `/praxis/{slug}` |
 | Skill | `#skills-{slug}` | `/skills/{slug}` |
+| Tutorial | `#tutorial` | `/tutorial` |
 
 The slug set for Promptotyping-Documents is `index`, `project`, `data`, `specification`, `user-stories`, `action-layer` (ADR-9), `architecture`, `domain-knowledge` (English slug, ADR-3), `design`, `testing`, `verification`, `journal`, `plan`, `report`, `integration`. The canonical source of each version is the `version` field of the mirror and `data/promptotyping-documents.json`. The latest anchor is the primary and only address point; a snapshot sub-anchor is issued only when a template's version changes, as an additional hash fragment on the same section, without its own subpath. Paper subsection anchors (for example `#phase-distillation` within section 3.3) are available inside their section without a subpath. Acceptance criterion. `/promptotyping-document/data` and `#promptotyping-document-data` both lead to the same rendered template.
 
@@ -163,6 +164,15 @@ The site opens in the light theme regardless of the system preference (operator 
 
 ### A30 — A citation lands on its reference entry
 Every entry of the paper's reference list carries an id built from the first author's surname and the year, pattern `ref-{surname}-{year}`, and a parenthetical citation in the text links to that id rather than to the head of the list. Where an entry ends in a URL, marked autolinks it and the site marks the link so the stylesheet can set an outward link apart from an internal jump. Two defects surfaced while building this and are part of the record. A mangled word-boundary escape in the citation pattern had left 23 of 78 entries without an anchor, and month-year parentheses such as "(January 2026)" had been decorated as citations from the start, which a month guard now excludes. A citation whose key is not in the map keeps pointing at the list, so an unmatched reference degrades to the previous behaviour instead of breaking. Added 2026-07-26.
+
+### A31 — Tutorial page, a guided first iteration
+A `#tutorial` page that directs a reader through their own first Promptotyping iteration, from a structured dataset they bring to an accepted and versioned first promptotype. It differs from the worked workflow, which narrates a completed case; the tutorial instructs the reader's own pass (operator request 2026-07-29).
+
+The didactic form is constructive. Each step carries the same four elements, the goal of the step, the concrete action with a copyable prompt where the action addresses the agent, the state the reader should now be in, and a self-check the reader can decide alone. The self-checks operationalise the method's own criteria, among them the falsification probe on `data.md` after Exploration, the fresh-instance test as the completion criterion of Distillation, and the requirement that acceptance names its documented grounds. Prompts render with the copy button the skills page already uses.
+
+The page is informative, English, substrate `_content/tutorial.md`, machine address `https://dhcraft.org/Promptotyping/_content/tutorial.md`. Anchor `#tutorial`, subpath `/tutorial`, which resolves through the existing bare-page rule with no change to `404.html`. Step headings mint their in-page anchors at render time, so a later rewording of a step heading needs the same alias discipline as A26 records for the practice entries. No new module; the page is content rendered like every other content page.
+
+Acceptance criterion. A reader who arrives with a structured dataset, an agentic coding tool, and competence in their own material can follow the steps in order, knows at every step what done looks like, and leaves with a repository whose `knowledge/` folder, artefact, and journal entry identify a first promptotype.
 
 ### A26 — The site is English
 Every string the site shows is English, in the British spelling the paper uses (operator decision 2026-07-25, carried out 2026-07-26). That covers the page registry labels, the status line, every control, the nine content pages directly under `_content/`, and the text fields of `data/glossar.json`, `data/case-studies.json` and `data/promptotyping-documents.json`.

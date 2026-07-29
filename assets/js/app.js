@@ -86,6 +86,8 @@
           "Open the convention as markdown</a>";
         el.insertBefore(note, el.firstChild ? el.firstChild.nextSibling : null);
       }),
+      // Prompts on the tutorial page are copyable like the skills prompts.
+      A.renderMarkdownInto("tutorial", "_content/tutorial.md", A.addCodeCopyButtons),
       A.renderPraxis(),
       A.renderSkills(),
       A.renderMarkdownInto("arbeitsumgebung", "_content/arbeitsumgebung.md")
