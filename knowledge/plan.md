@@ -125,3 +125,15 @@ Two questions the operator raised while reading the tree. First, whether the fiv
 ## Order
 
 F1, then F2, then F4, then F3, with F5 decided along the way; F6 fires with the chapter acceptance, F7 with the operator's page acceptance, F8 after F7. F9 is a decision package that should be settled before F1 ships, because the subtree pattern of F1 is the same device a merged specification page would use, and building it once for both is the smaller diff. F1, F2, F3, and F4 are independent of the swap and safe to ship on the rendered canonical text.
+
+## State after the run of 2026-07-29
+
+The operator released the plan for execution as a whole on the evening of 2026-07-29; the run was orchestrated over Opus subagents and is recorded in [journal.md](journal.md), entries Nacht VI to Nacht VIII.
+
+- **F9** ran as the specification merge (A32). The three candidate merges among the informative pages were left undone and remain separate operator decisions; the tree carries sharper grouping and notes instead.
+- **F1** ran with it (A33), including the collapse sweep.
+- **F2** and **F3** ran (A34, A35, A36). The taxonomy assignment per entry and the per-entry source curation are proposals standing in the diff for operator review.
+- **F4** ran as a first pass (A37) and awaits the operator's acceptance of the view.
+- **F8** stands as the reviewable slide selection under its section above; the export is blocked on access to the decks themselves, since the Obsidian vault holds slide texts without any image form.
+- **F5, F6, F7** remain open as specified, bound to the operator's option pick, the chapter acceptance, and the page-text acceptance.
+- Beyond this plan, one package from the same release remains open, the knowledge-base coherence pass with a widening of `tools/check_consistency.py`; the run closed before it started.
