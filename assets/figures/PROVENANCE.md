@@ -16,6 +16,25 @@ theme of the site inverts the plate in CSS rather than shipping a second file.
 One convention runs across the set. A solid filled shape means human
 judgement, and it is the only filled shape in either image.
 
+## Visual grammar (canonical since 2026-07-29)
+
+The figure series of the integrated manuscript follows one grammar,
+fixed with the integration brief of 2026-07-29:
+
+- rectangle: document, process, artefact, or state;
+- solid arrow: operational flow;
+- thin or curved arrow: supporting relation or write-back;
+- open circle containing a solid disc: accountable human authority;
+- near-black fill: documented major emphasis (Figure 3, per its legend);
+- outlined emphasis ring: primary emphasis;
+- pure white background, no decorative colour, gradient, shadow, or texture;
+- captions carry interpretative detail, diagram bodies remain concise.
+
+Generator naming is **ChatGPT Images 2.0** throughout; earlier entries in
+this file that say "ChatGPT image model" mean the same product. Prompt texts
+were not retained; the process and acceptance records live under `prompts/`,
+machine-readable metadata in `manifest.yaml`.
+
 ## figure-1-phases.png
 
 Belongs to Section 3.2, caption Figure 1. It shows the four phases from left to
@@ -206,9 +225,15 @@ The operator's integrated final version (`Promptotyping_Paper_Final_Integrated_2
 
 | Canonical file | Manuscript slot | Source candidate |
 |---|---|---|
-| `figure_01_promptotyping_method.png` | Figure 1, Section 2.1 | `iteration-loop--2026-07-29--19-51-24.png` |
-| `figure_02_knowledge_context_authority.png` | Figure 2, Section 2.4 | `checking-architecture--2026-07-29--20-01-22.png` |
-| `figure_03_comparative_anatomy.png` | Figure 3, Section 4.3 | `iteration-anatomy--2026-07-29--20-00-10.png` |
-| `figure_04_m3gim_loop.png` | Figure 4, Section 4.6 | `m3gim-prospective--2026-07-29--19-59-34.png` |
-| `figure_05_zbz_e66.png` | Figure 5, Section 4.7 | `zbz-e66--2026-07-29--19-59-45.png` |
-| `figure_06_notker_acceptance.png` | Figure 6, Section 4.8 | `notker-acceptance--2026-07-29--19-59-50.png` |
+| `figure-01-promptotyping-method.png` | Figure 1, Section 2.1 | `iteration-loop--2026-07-29--19-51-24.png` |
+| `figure-02-knowledge-context-authority.png` | Figure 2, Section 2.4 | `checking-architecture--2026-07-29--20-01-22.png` |
+| `figure-03-comparative-iterations.png` | Figure 3, Section 4.3 | `iteration-anatomy--2026-07-29--20-00-10.png` |
+| `figure-04-m3gim-loop.png` | Figure 4, Section 4.6 | `m3gim-prospective--2026-07-29--19-59-34.png` |
+| `figure-05-zbz-e66.png` | Figure 5, Section 4.7 | `zbz-e66--2026-07-29--19-59-45.png` |
+| `figure-06-notker-acceptance.png` | Figure 6, Section 4.8 | `notker-acceptance--2026-07-29--19-59-50.png` |
+
+The canonical file names follow the integration brief of 2026-07-29
+(`Promptotyping_Repository_Integration_Knowledge_Document.md`), which also
+fixed the hyphenated naming and the id `comparative-iterations`. The brief's
+folder functions map onto this repository as `figures/` = `assets/figures/`,
+`prompts/figures/` = `assets/figures/prompts/`, archive = `candidates/`.

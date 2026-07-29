@@ -92,7 +92,7 @@ The method is organised around four recurring forms of work named Preparation, E
 
 Figure 1 combines these four forms of work with the inner write-back paths and the acceptance of an iteration. It separates the digital research artefact produced during Implementation from the promptotype, which is reached only when project knowledge, artefact, and documented grounds of acceptance have been brought into an accepted versioned relation.
 
-![The Promptotyping method](assets/figures/figure_01_promptotyping_method.png)
+![The Promptotyping method](assets/figures/figure-01-promptotyping-method.png)
 
 **Figure 1. The Promptotyping method.** Preparation establishes the research data, sources, standards, and research context. Exploration examines what the data can support and where additional modelling or contextualisation is required. Distillation expresses the maintained project understanding as Promptotyping Documents, and Implementation translates these documents into a digital research artefact. Findings from implementation may be written back into Distillation, Exploration, or Preparation. A Promptotyping iteration closes only when the project knowledge, artefact, referenced research-data state, and documented grounds of acceptance form a coherent and identifiable promptotype.
 
@@ -190,7 +190,7 @@ Agentic Engineering, as introduced in Section 1.2, organises this work: the agen
 
 Figure 2 summarises the relation between persistent project knowledge, task-specific working context, agentic implementation, evidence-producing checks, Critical Expert verification, and purpose-specific acceptance.
 
-![Project knowledge, working context, implementation, and authority in Promptotyping](assets/figures/figure_02_knowledge_context_authority.png)
+![Project knowledge, working context, implementation, and authority in Promptotyping](assets/figures/figure-02-knowledge-context-authority.png)
 
 **Figure 2. Project knowledge, working context, implementation, and authority in Promptotyping.** The project knowledge base provides the persistent and versioned reference from which task-specific working context is selected. An AI agent operating within a harness uses this context to create or revise a digital research artefact. Deterministic validation and agentic review provide evidence about the artefact but do not authorise scholarly claims. Questions of source fidelity, design conformance, interpretation, and contextualisation remain subject to Critical Expert verification, while acceptance is an accountable and purpose-specific human decision.
 
@@ -425,7 +425,9 @@ The categories may overlap. ZBZ combines several Verification Interfaces with an
 
 ## 4.3 Anatomy of an Iteration Across the Cases
 
-![Comparative anatomy of five Promptotyping iterations](assets/figures/figure_03_comparative_anatomy.png)
+Figure 3 aligns the five principal cases across the forms of work of one iteration.
+
+![Comparative anatomy of five Promptotyping iterations](assets/figures/figure-03-comparative-iterations.png)
 
 **Figure 3. Comparative anatomy of five Promptotyping iterations.** The documented projects foreground different forms of work and begin from different project conditions. SZD-HTR emphasises production-scale verification; CorrespExplorer uses generative exploration followed by domain-specific selection; M³GIM integrates interface generation with ongoing modelling and data capture; ZBZ demonstrates organisational correction through write-back after decision E66; and Notker illustrates purpose-specific acceptance at proposal stage. The comparison shows that Promptotyping is not a rigid linear workflow but a recurrent structure whose forms of work vary in depth, sequence, and emphasis.
 
@@ -469,7 +471,9 @@ The cycle therefore ran in both directions:
 
 > data model → interface and capture environment → interaction finding → documented modelling decision → revised data model and artefact
 
-![Prospective Promptotyping during modelling and data capture in M³GIM](assets/figures/figure_04_m3gim_loop.png)
+Figure 4 summarises this bidirectional relation.
+
+![Prospective Promptotyping during modelling and data capture in M³GIM](assets/figures/figure-04-m3gim-loop.png)
 
 **Figure 4. Prospective Promptotyping during modelling and data capture in M³GIM.** The emerging RiC-O and JSON-LD data model shaped the generated exploration and capture interface, while interaction with that interface exposed requirements, ambiguities, and limitations that remained less visible in abstract schema discussions. These findings were recorded in the decision register and journal and written back into the data model and capture process. The case demonstrates that a Promptotyping artefact may participate in the formation of project knowledge rather than merely implement an already stabilised model.
 
@@ -485,9 +489,9 @@ The public repository documents a staged pipeline from PDF through OCR, layout a
 
 The most instructive event was a failure of work organisation. An agent-based screening stage had recorded approval statuses that no human had authorised. Production and verification had thereby collapsed into one generative operation. The problem was not merely that one output was wrong. The workflow had assigned epistemic authority to an executing agent.
 
-Decision E66 abolished agent screening and introduced per-stream workflow status. The durable correction entered the process and action layer, after which the pipeline was revised from the corrected knowledge base. This is the defining loop of Promptotyping in a negative case: the implementation reveals that the documented work organisation is inadequate; the relevant project knowledge is corrected; the artefact is then rebuilt or revised from that correction.
+Decision E66 abolished agent screening and introduced per-stream workflow status. The durable correction entered the process and action layer, after which the pipeline was revised from the corrected knowledge base. This is the defining loop of Promptotyping in a negative case: the implementation reveals that the documented work organisation is inadequate; the relevant project knowledge is corrected; the artefact is then rebuilt or revised from that correction. Figure 5 contrasts the workflow before and after the decision.
 
-![The ZBZ OCR/TEI workflow before and after decision E66](assets/figures/figure_05_zbz_e66.png)
+![The ZBZ OCR/TEI workflow before and after decision E66](assets/figures/figure-05-zbz-e66.png)
 
 **Figure 5. The ZBZ OCR/TEI workflow before and after decision E66.** Before E66, an agent-based screening stage recorded approval statuses that no human had authorised, thereby collapsing production and verification into one generative operation. E66 abolished agent screening and introduced per-stream workflow states. In the revised workflow, deterministic validation and agentic review contribute evidence, while only the Critical Expert may authorise verification or acceptance. The case illustrates write-back as a correction of work organisation and authority rather than merely of generated code.
 
@@ -499,9 +503,9 @@ The Notker case began with a deliberately small source basis: Psalm 2 from Notke
 
 The generated Edition Interface made textual layers independently visible and connected them with a modern German translation, facsimile access, patristic sources, comparisons of psalm witnesses, and a parallel textual tradition. The artefact made the proposed editorial model operational before the larger research project existed.
 
-The resulting state was accepted for a specific purpose: it served as a demonstrator in a funding proposal. The acceptance did not claim that the philology was complete, that the sample generalised across the corpus, or that the edition was ready for publication. Several questions remained with the commissioning scholar, including context-dependent interpretation of marginal sigla.
+The resulting state was accepted for a specific purpose: it served as a demonstrator in a funding proposal. The acceptance did not claim that the philology was complete, that the sample generalised across the corpus, or that the edition was ready for publication. Several questions remained with the commissioning scholar, including context-dependent interpretation of marginal sigla. Figure 6 shows the resulting acceptance state and its stated limits.
 
-![Purpose-specific acceptance in the Notker edition case](assets/figures/figure_06_notker_acceptance.png)
+![Purpose-specific acceptance in the Notker edition case](assets/figures/figure-06-notker-acceptance.png)
 
 **Figure 6. Purpose-specific acceptance in the Notker edition case.** Editorial guidelines, a TEI source model, and a deliberately limited sample from Psalm 2 were translated into an edition interface with independently accessible textual layers. The resulting state was accepted as a demonstrator for a funding proposal because it made the proposed editorial model and technical possibilities concrete. This acceptance did not imply corpus-wide philological verification, publication readiness, or completion of the planned edition.
 
@@ -646,6 +650,12 @@ This paper was developed through the method it describes. Its text, supporting d
 
 Language models contributed to formulation, comparison, restructuring, and editorial revision. Prompt-level interaction logs were not retained. The persistent record consists of the knowledge base, journal, commits, and manuscript versions. Responsibility for the arguments, claims, selections, and final text remains with the author.
 
+## Figure Generation Disclosure
+
+Figures 1–6 were generated and iteratively revised with ChatGPT Images 2.0 from author-written specifications. Their process records, intermediate versions, and final accepted files are documented in the companion repository. The figures form part of the Promptotyping iterations examined in this paper: generated visual proposals were inspected, corrected, and accepted by the author for their stated explanatory purposes. The author remains responsible for their conceptual content, terminology, selection, and final form.
+
+The figure metadata and process records are available in the companion repository under `assets/figures/` (`manifest.yaml`, `prompts/`, and the versioned candidates archive).[^figure-prompts]
+
 ## References
 
 Alenezi, Mamdouh. 2026. “From Determinism to Delegation: AI-Native Software Engineering and the Evolution of the Agentic Engineer.” *arXiv*. [https://doi.org/10.48550/arXiv.2606.28791](https://doi.org/10.48550/arXiv.2606.28791).
@@ -787,6 +797,22 @@ Zhong, Hailin, and Shengxin Zhu. 2026. “AI Harness Engineering: A Runtime Subs
 The figures are stored in the accompanying `figures/` directory and are referenced through relative Markdown paths. They form a single monochrome journal-figure series prepared for this manuscript.
 
 
+
+## List of Figures
+
+**Figure 1. The Promptotyping method.** Preparation, Exploration, Distillation, Implementation, write-back, acceptance, and formation of an identifiable promptotype.
+
+**Figure 2. Project knowledge, working context, implementation, and authority in Promptotyping.** Relation among the maintained knowledge base, task-specific context, agentic implementation, checking, Critical Expert verification, and acceptance.
+
+**Figure 3. Comparative anatomy of five Promptotyping iterations.** Different project emphases across SZD-HTR, CorrespExplorer, M³GIM, ZBZ OCR/TEI, and Notker.
+
+**Figure 4. Prospective Promptotyping during modelling and data capture in M³GIM.** Bidirectional relation among data model, capture, generated interface, documented findings, and model revision.
+
+**Figure 5. The ZBZ OCR/TEI workflow before and after decision E66.** Separation of workflow state, evidence-producing checks, Critical Expert verification, and human-authorised status.
+
+**Figure 6. Purpose-specific acceptance in the Notker edition case.** Acceptance of a proposal-stage demonstrator without claiming a completed or publication-ready edition.
+
+
 [^1]: Following the research activities described in TaDiRAH, the Taxonomy of Digital Research Activities in the Humanities (Borek et al. 2021). [https://vocabs.dariah.eu/tadirah/](https://vocabs.dariah.eu/tadirah/)
 
 [^2]: Large language models are large-scale pretrained generative models capable of producing and transforming natural language, structured data, and source code from textual instructions (Zhao et al. 2023).
@@ -823,3 +849,4 @@ The figures are stored in the accompanying `figures/` directory and are referenc
 
 [^18]: Current teiCrafter interface: [https://dhcraft.org/teiCrafter](https://dhcraft.org/teiCrafter) (accessed 29 July 2026). Earlier experimental Custom GPT documentation: [https://digedtnt.github.io/teiCrafter/](https://digedtnt.github.io/teiCrafter/) (accessed 29 July 2026). The two should not be treated as the same software state.
 
+[^figure-prompts]: Companion repository: [https://github.com/DigitalHumanitiesCraft/Promptotyping](https://github.com/DigitalHumanitiesCraft/Promptotyping). The figure process records are stored under `assets/figures/prompts/`, the accepted image files and their metadata under `assets/figures/` with `manifest.yaml`, and every delivered intermediate version under `assets/figures/candidates/`.

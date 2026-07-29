@@ -1,0 +1,72 @@
+generator:
+  product: "ChatGPT Images 2.0"
+  provider: "OpenAI"
+  generated_on: "2026-07-29"
+  official_product_page: "https://openai.com/index/introducing-chatgpt-images-2-0/"
+  documentation: "https://help.openai.com/en/articles/11084440"
+  note: >
+    Interactive generation by the author; prompt texts were not retained.
+    The prompt files under prompts/ document process and grounds of
+    acceptance, and every delivered intermediate version is archived under
+    candidates/.
+
+figures:
+  - number: 1
+    id: promptotyping-method
+    title: "The Promptotyping method"
+    file: "figure-01-promptotyping-method.png"
+    prompt: "prompts/figure-01-promptotyping-method.md"
+    source_candidate: "candidates/iteration-loop--2026-07-29--19-51-24.png"
+    status: accepted
+    purpose: "Define the method and relation among work forms, write-back, acceptance, and promptotype."
+    author_verified: true
+
+  - number: 2
+    id: knowledge-context-authority
+    title: "Project knowledge, working context, implementation, and authority in Promptotyping"
+    file: "figure-02-knowledge-context-authority.png"
+    prompt: "prompts/figure-02-knowledge-context-authority.md"
+    source_candidate: "candidates/checking-architecture--2026-07-29--20-01-22.png"
+    status: accepted
+    purpose: "Distinguish project knowledge, selected context, agentic implementation, evidence, verification, and acceptance."
+    author_verified: true
+
+  - number: 3
+    id: comparative-iterations
+    title: "Comparative anatomy of five Promptotyping iterations"
+    file: "figure-03-comparative-iterations.png"
+    prompt: "prompts/figure-03-comparative-iterations.md"
+    source_candidate: "candidates/iteration-anatomy--2026-07-29--20-00-10.png"
+    status: accepted
+    purpose: "Compare project-specific emphases within a recurrent method."
+    author_verified: true
+
+  - number: 4
+    id: m3gim-loop
+    title: "Prospective Promptotyping during modelling and data capture in M³GIM"
+    file: "figure-04-m3gim-loop.png"
+    prompt: "prompts/figure-04-m3gim-loop.md"
+    source_candidate: "candidates/m3gim-prospective--2026-07-29--19-59-34.png"
+    status: accepted
+    purpose: "Show the bidirectional relation among modelling, capture, interface interaction, documentation, and revision."
+    author_verified: true
+
+  - number: 5
+    id: zbz-e66
+    title: "The ZBZ OCR/TEI workflow before and after decision E66"
+    file: "figure-05-zbz-e66.png"
+    prompt: "prompts/figure-05-zbz-e66.md"
+    source_candidate: "candidates/zbz-e66--2026-07-29--19-59-45.png"
+    status: accepted
+    purpose: "Show the correction of unauthorised agent screening and the separation of evidence from human authorisation."
+    author_verified: true
+
+  - number: 6
+    id: notker-acceptance
+    title: "Purpose-specific acceptance in the Notker edition case"
+    file: "figure-06-notker-acceptance.png"
+    prompt: "prompts/figure-06-notker-acceptance.md"
+    source_candidate: "candidates/notker-acceptance--2026-07-29--19-59-50.png"
+    status: accepted
+    purpose: "Explain bounded proposal-stage acceptance without claiming edition completion."
+    author_verified: true

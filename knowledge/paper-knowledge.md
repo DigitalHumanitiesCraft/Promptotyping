@@ -1648,6 +1648,8 @@ Do not:
 
 The integrated version of 2026-07-29 carries six figures with adopted image files: the method loop (Figure 1), knowledge–context–authority (Figure 2), the comparative anatomy (Figure 3), the M³GIM loop (Figure 4), ZBZ before/after E66 (Figure 5), and the Notker acceptance (Figure 6). The document-types figure, the versioned-promptotypes figure, and the planned Wheaton figure left the manuscript with that version; checklist items referring to them apply only if they return.
 
+Decision (2026-07-29, integration brief): the figure process records live in the companion repository under `assets/figures/prompts/`, with machine-readable metadata in `assets/figures/manifest.yaml` and the visual grammar in `assets/figures/PROVENANCE.md`; the manuscript carries only the Figure Generation Disclosure, the repository reference, the captions, and the List of Figures. Generator naming is ChatGPT Images 2.0. Prompt texts were not retained, and the records state this rather than reconstructing a prompt history. Figure generation does not transfer responsibility for conceptual content or acceptance to the image-generation system.
+
 Before release, verify:
 
 - arrows in the four-form figure point to the intended form of work or accepted state;
