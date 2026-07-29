@@ -164,3 +164,33 @@ human judgement, while the Critical Expert, whose acceptance the figure
 depicts, does not appear in it. A future regeneration removes the in-image
 text, hollows the timeline dots or re-introduces the expert mark, and keeps
 the version labels, which the draft's Section 2.4 declares illustrative.
+
+## Candidates archive (`candidates/`)
+
+Every delivered figure version is archived under `candidates/`, whether or
+not it is adopted, by operator decision of 2026-07-29. A file is named
+`{content-slug}--{date}--{time}.png`, where the time comes from the delivery
+file name and keeps versions of the same motif apart. Content slugs are used
+instead of figure numbers because numbering shifts between manuscript
+versions; the register below maps each candidate to the figure slot of the
+manuscript version it was made for. Adopting a candidate means copying it to
+the root of `assets/figures/` under its canonical `figure-*` name; the
+candidate file stays.
+
+All candidates so far were produced with the ChatGPT image model,
+operator-generated, no prompt text retained. Delivery file names follow the
+pattern `ChatGPT Image {date}, {time}.png` in the Downloads folder. The two
+deliveries of 2026-07-29, 17:58 are byte-identical to the adopted
+`figure-1-promptotyping-iteration.png` and `figure-4-versioned-promptotypes.png`
+and are therefore not duplicated here.
+
+| Candidate | Intended slot (manuscript of 2026-07-29, revised) | Note |
+|---|---|---|
+| `iteration-loop--2026-07-29--19-51-24.png` | Figure 1, Section 2.1 | Adds the promptotype box with its four components including documented grounds of acceptance, and the three labelled return paths; no in-image caption apart from the write-back label |
+| `checking-architecture--2026-07-29--19-51-31.png` | unassigned; visualises Section 2.4 / Table 2 | Knowledge base, working context, agent in harness, artefact, three checking forms, acceptance; carries the "never authorises" boundary |
+| `iteration-anatomy--2026-07-29--19-51-52.png` | Figure 5, Section 4.3 | Comparative anatomy of five cases across seven forms of work; filled versus hollow dots encode emphasis, a deviation from the filled-shape convention of this set |
+| `m3gim-prospective--2026-07-29--19-52-17.png` | Figure 8, Section 4.6 | Bidirectional loop among data model, capture, generated interface, discussion, documented revision |
+| `zbz-e66--2026-07-29--19-52-21.png` | Figure 9, Section 4.7 | Workflow before and after decision E66 |
+| `notker-acceptance--2026-07-29--19-52-25.png` | Figure 10, Section 4.8 | Purpose-specific acceptance; carries in-image caption-like text on the acceptance card |
+| `poster-de--2026-07-29--19-43-33.png` | none, German poster | First rendering; findings on the poster are in `knowledge/journal.md`, 2026-07-29 |
+| `poster-de--2026-07-29--19-45-38.png` | none, German poster | Second rendering of the same state |
