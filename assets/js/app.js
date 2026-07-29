@@ -95,6 +95,9 @@
     A.renderUseCasesHost();
 
     Promise.all([ready, loadLateModules()]).then(function () {
+      // The five parts of the specification are rendered; fold them into the
+      // one page they are sections of before anything reads the DOM.
+      A.foldParts();
       // Host markup for the modules is now in the DOM; let them boot.
       document.dispatchEvent(new Event("promptotyping:sections-ready"));
       // The paper renders after the glossar, so its terms can be marked.

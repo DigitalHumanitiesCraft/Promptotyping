@@ -64,6 +64,8 @@ Der Ordner `vault/` ist eine Instanz des Grounded-Vault-Templates (`DigitalHuman
 
 Die Site ist eine Spezifikationsdokumentation, wie sie eine Programmbibliothek oder eine publizierte Ontologie führt. Es ist **eine Seite zur Zeit sichtbar**; der Navigationsbaum in der Seitenleiste ist das Inhaltsverzeichnis. Das Raster hat zwei Spuren, den Baum und die Seite; eine dritte Spur mit den Überschriften der aktiven Seite gibt es nicht, das Paper trägt sein Inhaltsverzeichnis stattdessen in der Seite unter der H1 (A23). Die durchgehende Scroll-Spalte mit Hero und Video an der Spitze ist abgelöst und wird nicht reaktiviert.
 
+Die fünf nummerierten Teile sind seit dem 2026-07-29 Sektionen **einer** Spezifikationsseite unter `#specification` (A32, Operator-Entscheidung, Paket F9); die Startseite `ueberblick` bleibt eigenständig. Ein Registereintrag mit `parent` ist ein Teil und keine Seite, behält seine Id als Element-Id in der zusammengeführten Seite und bleibt damit unter genau derselben Adresse erreichbar wie zuvor. Wer einen Teil anfasst, prüft `isPageId`, `hostPage` und `isRouteId`; sie beantworten, was gezeigt werden kann, in welcher Seite ein Teil sitzt und was überhaupt adressierbar ist.
+
 Einzige Quelle für Seitencontainer, Navigationsbaum, Routenauflösung und den Spezifikationsindex der Startseite ist das Register `PAGES` in `assets/js/registry.js`. Eine neue Seite wird dort eingetragen, nicht in `index.html`. **Schreibe keine Navigationsmarkierung in `index.html` oder `404.html`**; beide tragen nur die Shell, und genau das hält sie synchron.
 
 Die nicht aktiven Seiten bleiben als `display: none` im DOM. Das ist die Bedingung dafür, dass jeder publizierte Anker weiter auflöst, gleich welche Seite gerade zu sehen ist. Lazy-Mounting einzelner Seiten würde das brechen.
@@ -76,6 +78,7 @@ Die nicht aktiven Seiten bleiben als `display: none` im DOM. Das ist die Bedingu
 - Konzepte: `#konzept-{name}` (z.B. `#konzept-eil`, `#konzept-asymmetric-amplification`)
 - Case Studies: `#case-{name}` (z.B. `#case-herdata`, `#case-klawiter-rescue`)
 - Vault: `#vault` für die Ansicht, `#vault-{claim-slug}` für einen einzelnen Claim; Subpath `/vault` und `/vault/{claim-slug}`. Die Slugs sind die Dateinamen unter `vault/20_claims/`.
+- Spezifikation: `#specification`, Subpath `/specification` (A32). Die fünf Teile sind Sektionen dieser Seite und behalten ihre Adressen, `#anwendung`, `#vorlagen`, `#konvention-v0.1`, `#artefakt`, `#verifikation` samt den gleichlautenden Subpfaden.
 - Konvention: `#konvention-v0.1`
 - Glossar: `#glossar`
 - Literatur: `#literatur`

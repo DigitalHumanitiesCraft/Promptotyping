@@ -9,54 +9,72 @@
 (function (A) {
   "use strict";
 
+  /* An entry with a `parent` is a part rather than a page: it is mounted as a
+     section inside its parent's host and keeps its own id, so every address
+     published under the five part slugs resolves after the merge of F9
+     (operator decision 2026-07-29). */
   var PAGES = [
     { id: "ueberblick", label: "Overview", group: "Specification", kind: "normative",
       note: "What the method is and where it applies" },
-    { id: "anwendung", label: "Application", group: "Specification", part: "1", kind: "normative",
+    { id: "specification", label: "Specification", group: "Specification", kind: "normative",
+      note: "The five normative parts, from application to verification" },
+
+    { id: "anwendung", label: "Application", group: "Specification", parent: "specification",
+      part: "1", kind: "normative",
       note: "The four phases resolved into actions" },
-    { id: "vorlagen", label: "Templates", group: "Specification", part: "2", kind: "normative",
+    { id: "vorlagen", label: "Templates", group: "Specification", parent: "specification",
+      part: "2", kind: "normative",
       note: "The full document set and its triggers",
       machine: "data/promptotyping-documents.json" },
-    { id: "konvention-v0.1", label: "Convention", group: "Specification", part: "3", kind: "normative",
+    { id: "konvention-v0.1", label: "Convention", group: "Specification", parent: "specification",
+      part: "3", kind: "normative",
       note: "Frontmatter, addressing, reading heuristic" },
-    { id: "artefakt", label: "Artefact and boundary", group: "Specification", part: "4", kind: "normative",
+    { id: "artefakt", label: "Artefact and boundary", group: "Specification", parent: "specification",
+      part: "4", kind: "normative",
       note: "Artefact type and handover point" },
-    { id: "verifikation", label: "Verification", group: "Specification", part: "5", kind: "normative",
+    { id: "verifikation", label: "Verification", group: "Specification", parent: "specification",
+      part: "5", kind: "normative",
       note: "Kinds of check, levels of check, zones of autonomy" },
 
     { id: "glossar", label: "Glossary", group: "Reference", kind: "informative",
-      note: "Term register of the method", machine: "data/glossar.json" },
+      note: "Every term of the method defined, with the pages that use it",
+      machine: "data/glossar.json" },
     { id: "vault", label: "Vault", group: "Reference", kind: "informative",
-      note: "Claims and distillates under the paper", machine: "data/vault.json" },
+      note: "The sources under the load-bearing claims of the paper",
+      machine: "data/vault.json" },
 
     { id: "workflow", label: "Worked workflow", group: "Evidence", kind: "informative",
-      note: "One case carried from raw data to artefact" },
+      note: "A completed case narrated through the four phases" },
     { id: "use-cases", label: "Use Cases", group: "Evidence", kind: "informative",
-      note: "Documented projects", machine: "data/case-studies.json" },
+      note: "The projects the method is documented on", machine: "data/case-studies.json" },
 
     { id: "tutorial", label: "Tutorial", group: "Tools and practice", kind: "informative",
-      note: "Your own first iteration, step by step from dataset to promptotype" },
+      note: "Your own first pass, step by step from dataset to promptotype" },
     { id: "praxis", label: "Best Practices", group: "Tools and practice", kind: "informative",
-      note: "Working practices from application" },
+      note: "Method extensions that grew out of applying it" },
     { id: "skills", label: "Skills", group: "Tools and practice", kind: "informative",
-      note: "Reusable agent instructions", machine: "_content/skills/index.md" },
+      note: "Reusable system prompts for coding and writing",
+      machine: "_content/skills/index.md" },
     { id: "arbeitsumgebung", label: "Working environment", group: "Tools and practice", kind: "informative",
-      note: "Tools around the method" },
+      note: "Vault, agent interface and AI harness around the method" },
 
     { id: "paper", label: "Paper", group: "Paper", kind: "informative",
-      note: "Why the method is built this way", machine: "knowledge/paper.md" }
+      note: "Why the method is built this way, and whether it holds",
+      machine: "knowledge/paper.md" }
   ];
 
   var HOME_PAGE = "ueberblick";
+  var SPEC_PAGE_ID = "specification";
   var PAPER_HOST_ID = "paper";
   /* Host for an address that resolved to nothing. It is a page host like any
      other, but deliberately not a registry entry: it has no place in the
      sidebar tree, in the specification index or in the term index. */
   var NOT_FOUND_PAGE = "not-found";
 
-  /* Sub-anchor families. Each carries the anchor prefix, the page that owns
-     every anchor under it, and the URL segment that addresses the family as a
-     subpath, or null where the family has no subpath form. This is the single
+  /* Sub-anchor families. Each carries the anchor prefix, the registry entry that
+     owns every anchor under it, which may be a page or a part, and the URL
+     segment that addresses the family as a subpath, or null where the family has
+     no subpath form. This is the single
      source for the route resolution and for resolveTemplateUrl below, which is
      why the segment name sits here rather than in a table of its own. */
   var ANCHOR_FAMILIES = [
@@ -75,8 +93,38 @@
      apparatus. */
   var PAPER_ANCHOR = /^(abstract|acknowledgements|literatur|fussnoten|fn-|fnref-)/;
 
+  function entryFor(id) {
+    for (var i = 0; i < PAGES.length; i++) {
+      if (PAGES[i].id === id) {
+        return PAGES[i];
+      }
+    }
+    return null;
+  }
+
+  /* Every registry entry is addressable; only an entry without a parent is a
+     page host that can be shown. hostPage answers which host an address lands
+     in, which is the entry itself for a page and the parent for a part. */
+  function isRouteId(id) {
+    return !!entryFor(id);
+  }
+
   function isPageId(id) {
-    return PAGES.some(function (p) { return p.id === id; });
+    var entry = entryFor(id);
+    return !!entry && !entry.parent;
+  }
+
+  function hostPage(id) {
+    var entry = entryFor(id);
+    return entry && entry.parent ? entry.parent : id;
+  }
+
+  function partsOf(pageId) {
+    return PAGES.filter(function (p) { return p.parent === pageId; });
+  }
+
+  function topLevelPages() {
+    return PAGES.filter(function (p) { return !p.parent; });
   }
 
   function familyForAnchor(anchor) {
@@ -103,15 +151,15 @@
     if (!anchor) {
       return HOME_PAGE;
     }
-    if (isPageId(anchor)) {
-      return anchor;
+    if (isRouteId(anchor)) {
+      return hostPage(anchor);
     }
     if (PAPER_ANCHOR.test(anchor)) {
       return PAPER_HOST_ID;
     }
     var family = familyForAnchor(anchor);
     if (family) {
-      return family.page;
+      return hostPage(family.page);
     }
     var el = document.getElementById(anchor);
     var host = el && el.closest ? el.closest(".doc-page") : null;
@@ -122,24 +170,80 @@
      Mounted before any rendering runs, so the render functions find their
      targets by id exactly as before. */
 
+  /* Directories are scanned rather than read, so they are set tighter. The class
+     sits on the host of a page and on the section of a part alike. */
+  var REFERENCE_HOSTS = ["glossar", "vault", "vorlagen", "use-cases"];
+
   function mountPages() {
     var main = document.getElementById("content");
     if (!main) {
       return;
     }
-    var REFERENCE_PAGES = ["glossar", "vault", "vorlagen", "use-cases"];
-    PAGES.forEach(function (p) {
+    topLevelPages().forEach(function (p) {
       var el = document.createElement("section");
       // The paper host keeps its own class: renderPaper sectionizes into it.
       el.className = "doc-page placeholder-section" +
         (p.id === PAPER_HOST_ID ? " paper" : "") +
-        (REFERENCE_PAGES.indexOf(p.id) !== -1 ? " is-reference" : "");
+        (REFERENCE_HOSTS.indexOf(p.id) !== -1 ? " is-reference" : "");
       el.id = p.id;
       // Focus target on a page switch; never in the tab order itself.
       el.setAttribute("tabindex", "-1");
       main.appendChild(el);
+      mountParts(el, p);
     });
     mountNotFound(main);
+  }
+
+  /* A page that holds parts carries its own title and nothing else; the parts
+     render into the sections mounted under it, each from its own substrate. */
+  function mountParts(host, page) {
+    var parts = partsOf(page.id);
+    if (!parts.length) {
+      return;
+    }
+    host.classList.remove("placeholder-section");
+    host.innerHTML = "<h1>" + A.escapeHtml(page.label) + "</h1>";
+    parts.forEach(function (part) {
+      var el = document.createElement("section");
+      el.className = "spec-part placeholder-section" +
+        (REFERENCE_HOSTS.indexOf(part.id) !== -1 ? " is-reference" : "");
+      el.id = part.id;
+      host.appendChild(el);
+    });
+  }
+
+  /* Once the parts are rendered, their headings move down one level so the
+     merged page has a single H1, and the part number stands at the head of each
+     part the way it stands in the tree. The content files are untouched by
+     this; heading ids are minted for the paper alone, so nothing addressable
+     moves. */
+  function foldParts() {
+    PAGES.forEach(function (p) {
+      var el = p.parent && document.getElementById(p.id);
+      if (!el || el.getAttribute("data-folded")) {
+        return;
+      }
+      demoteHeadings(el);
+      var head = el.querySelector("h2");
+      if (head && p.part) {
+        head.insertAdjacentHTML("afterbegin",
+          '<span class="spec-part-number">' + A.escapeHtml(p.part) + "</span>");
+      }
+      el.setAttribute("data-folded", "1");
+    });
+  }
+
+  function demoteHeadings(el) {
+    var found = Array.prototype.slice.call(el.querySelectorAll("h1, h2, h3, h4, h5"));
+    found.forEach(function (heading) {
+      var level = Number(heading.nodeName.charAt(1)) + 1;
+      var lower = document.createElement("h" + level);
+      Array.prototype.forEach.call(heading.attributes, function (attr) {
+        lower.setAttribute(attr.name, attr.value);
+      });
+      lower.innerHTML = heading.innerHTML;
+      heading.parentNode.replaceChild(lower, heading);
+    });
   }
 
   /* Since 404.html hands every unresolved subpath to the application, the
@@ -175,27 +279,46 @@
 
   /* ---- Sidebar tree ---- */
 
-  function navItem(p) {
-    var num = p.part ? '<span class="docs-nav-part">' + p.part + "</span>" : "";
-    return '<li><a href="#' + p.id + '" data-page="' + p.id + '">' +
-      num + A.escapeHtml(p.label) + "</a></li>";
+  function subItem(id, number, label) {
+    return '<li><a href="#' + id + '" data-section="' + id + '">' +
+      (number ? '<span class="docs-nav-part">' + A.escapeHtml(number) + "</span>" : "") +
+      A.escapeHtml(label) + "</a></li>";
   }
 
-  /* Two blocks. The specification proper keeps its heading because the numbers
-     only mean something under one, everything else is a flat list. Five group
-     labels for fourteen pages read as more structure than the site has
-     (operator decision 2026-07-26). */
+  /* The specification entry carries its five parts, permanently. Nothing in the
+     tree opens or closes (operator decision 2026-07-29); it shows the structure
+     of the site at all times. */
+  function navItem(p) {
+    var parts = partsOf(p.id);
+    var sub = parts.length
+      ? '<ul class="docs-nav-sub" data-subtree="' + p.id + '">' +
+        parts.map(function (s) { return subItem(s.id, s.part, s.label); }).join("") +
+        "</ul>"
+      : "";
+    return '<li><a href="#' + p.id + '" data-page="' + p.id + '">' +
+      A.escapeHtml(p.label) + "</a>" + sub + "</li>";
+  }
+
+  /* One flat list per group run, separated by a gap and carrying no label. Group
+     labels read as more structure than the site has (operator decision
+     2026-07-26), and since the five parts moved into the specification page the
+     heading over them would name a run of two. What the runs do instead is put
+     the pages that answer the same kind of question next to each other. */
   function buildNav() {
     var nav = document.getElementById("docs-nav");
     if (!nav) {
       return;
     }
-    var spec = PAGES.filter(function (p) { return p.group === "Specification"; });
-    var rest = PAGES.filter(function (p) { return p.group !== "Specification"; });
-    nav.innerHTML =
-      '<p class="docs-nav-group">Specification</p><ul>' +
-      spec.map(navItem).join("") + "</ul>" +
-      '<ul class="docs-nav-rest">' + rest.map(navItem).join("") + "</ul>";
+    var html = "";
+    var group = null;
+    topLevelPages().forEach(function (p) {
+      if (p.group !== group) {
+        html += (group === null ? "" : "</ul>") + '<ul class="docs-nav-run">';
+        group = p.group;
+      }
+      html += navItem(p);
+    });
+    nav.innerHTML = html + (group === null ? "" : "</ul>");
   }
 
   function markNavActive(page) {
@@ -220,9 +343,9 @@
       return;
     }
     var anchorEl = host.querySelector("table");
-    // Only the numbered parts. The sidebar tree already lists every page; what
-    // it cannot say is that the specification proper is an ordered set of five,
-    // and it carries no one-line note per entry.
+    // Only the numbered parts, and since the merge of F9 they are sections of
+    // the specification page, so each entry addresses a part of one document.
+    // The sidebar carries the same five without their one-line notes.
     var html = "";
     PAGES.filter(function (p) { return p.part; }).forEach(function (p) {
       html += '<li><a href="#' + p.id + '">' +
@@ -250,18 +373,22 @@
   function addPageStatusLines() {
     PAGES.forEach(function (p) {
       var host = document.getElementById(p.id);
-      if (!host || p.id === HOME_PAGE || host.querySelector(".page-head")) {
+      if (!host || p.id === HOME_PAGE || host.querySelector(":scope > .page-head")) {
         return;
       }
       var fm = A.pageFrontmatter[p.id] || {};
       var machine = fm["machine-url"] || p.machine;
-      var fields = [
+      // A part states the version, date and substrate of its own text; that it
+      // binds is stated once, by the page it is a part of.
+      var fields = p.parent ? [] : [
         ["Standing", p.kind === "normative"
           ? "normative, part of the specification"
-          : "informative"],
+          : "informative"]
+      ];
+      fields = fields.concat([
         ["Version", fm.version || null],
         ["Updated", A.formatDate(fm.updated || fm.mirrored || null)]
-      ];
+      ]);
       var html = fields.filter(function (f) { return f[1]; }).map(function (f) {
         return '<span class="page-status-item"><span class="page-status-key">' +
           f[0] + "</span> " + A.escapeHtml(f[1]) + "</span>";
@@ -280,11 +407,12 @@
       block.innerHTML =
         (p.note ? '<p class="page-note">' + A.escapeHtml(p.note) + "</p>" : "") +
         '<p class="page-status">' + html + "</p>";
-      // Insert next to the heading itself. Several renderers wrap the H1 in a
-      // block of their own, so the host is not necessarily its parent.
-      var h1 = host.querySelector("h1");
-      if (h1) {
-        h1.insertAdjacentElement("afterend", block);
+      // Insert next to the heading itself. Several renderers wrap the heading in
+      // a block of their own, so the host is not necessarily its parent, and a
+      // part heads its text with an H2 since foldParts moved it down a level.
+      var heading = host.querySelector("h1, h2");
+      if (heading) {
+        heading.insertAdjacentElement("afterend", block);
       } else {
         host.insertBefore(block, host.firstChild);
       }
@@ -334,14 +462,17 @@
     if (id === NOT_FOUND_PAGE) {
       return "Address not found — Promptotyping";
     }
-    var entry = PAGES.filter(function (p) { return p.id === id; })[0];
+    var entry = entryFor(id);
     return id === HOME_PAGE || !entry
       ? "Promptotyping. Specification of the Method"
       : entry.label + " — Promptotyping";
   }
 
+  /* An id that names a part is shown by showing the page it sits in, so a caller
+     may pass either without knowing which of the two it holds. */
   function showPage(id, anchor, moveFocus) {
-    var page = isPageId(id) || id === NOT_FOUND_PAGE ? id : HOME_PAGE;
+    var target = hostPage(id);
+    var page = isPageId(target) || target === NOT_FOUND_PAGE ? target : HOME_PAGE;
     var changed = page !== activePage;
     if (changed) {
       document.querySelectorAll(".doc-page").forEach(function (el) {
@@ -441,11 +572,13 @@
     if (segments[1]) {
       return null;
     }
-    // Bare page slug.
-    if (isPageId(rest)) {
+    // Bare registry slug, page or part. The five part slugs were page slugs
+    // until the merge of F9 and are published as such, so they resolve here
+    // exactly as before; the routing then lands them in the page they sit in.
+    if (isRouteId(rest)) {
       return rest;
     }
-    // The convention page is the one page whose id carries a version that its
+    // The convention is the one part whose id carries a version that its
     // address does not.
     if (rest === "konvention") {
       return "konvention-v0.1";
@@ -459,14 +592,19 @@
 
   A.HOME_PAGE = HOME_PAGE;
   A.PAPER_HOST_ID = PAPER_HOST_ID;
-  // Copy: the registry stays the single source and is not written from outside.
+  /* Copy: the registry stays the single source and is not written from outside.
+     The term index reads this, and it reads the entries a term can be reported
+     on, so a page that holds parts steps back in favour of its parts; naming
+     the whole specification would say less than naming the part. */
   A.listPages = function () {
-    return PAGES.map(function (p) {
-      return { id: p.id, label: p.label, group: p.group };
-    });
+    return PAGES.filter(function (p) { return !partsOf(p.id).length; })
+      .map(function (p) {
+        return { id: p.id, label: p.label, group: p.group };
+      });
   };
   A.pageForAnchor = pageForAnchor;
   A.mountPages = mountPages;
+  A.foldParts = foldParts;
   A.buildNav = buildNav;
   A.buildSpecIndex = buildSpecIndex;
   /* The footer states the version of the specification, which the start page

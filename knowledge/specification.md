@@ -5,9 +5,9 @@ project:
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 status: complete
 language: en
-version: 0.7
+version: 0.8
 created: 2026-05-09
-updated: 2026-07-26
+updated: 2026-07-29
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Opus 4.8)
 method:
@@ -60,6 +60,8 @@ Every addressable item exists under two equal canonical URL forms, a subpath for
 | Promptotyping-Document snapshot | `#promptotyping-document-{slug}-v{version}` | `/promptotyping-document/{slug}#v{version}` |
 | Concept | `#konzept-{name}` | `/konzepte/{name}` |
 | Case study | `#case-{name}` | `/case-studies/{name}` |
+| Specification | `#specification` | `/specification` |
+| Part of the specification | `#anwendung`, `#vorlagen`, `#konvention-v0.1`, `#artefakt`, `#verifikation` | the same slug as a subpath |
 | Convention | `#konvention-{version}` | `/konvention/{version}` |
 | Glossary | `#glossar` | `/glossar` |
 | Literature | `#literatur` | `/literatur` |
@@ -121,6 +123,8 @@ A module in the Vorlagen section with a textarea for the YAML frontmatter of a f
 The site's own `knowledge/` documents carry the `template:` field and each links to its own template URL on the live site, subpath form canonical, hash form as alias. The site demonstrates the method on itself.
 
 ### A13 — Specification front page
+Extended on 2026-07-29 by A32. The generated index still carries the five numbered parts, and each entry now addresses a section of the one specification page instead of a page of its own.
+
 The start page is the specification front, addressed `#ueberblick`. It states what Promptotyping is, carries a keyed status table (Fassung, Stand, kanonische Adresse, Maschinenadresse, Evidenz, Lizenz), a generated index of the specification, a short statement of what the method is, and signposts into paper, templates, use cases, practice, and skills. Three passages moved away on 2026-07-26, since carrying them twice made the landing page repeat the page behind it. The four phases went to part 1, the scaling statement to part 1 under "Zwei Modi", and the document-type classification and the artefact default fell without replacement in favour of parts 3 and 4, with a pointer to part 3 left in "Wo ansetzen". Substrate `_content/ueberblick.md`. Without it a visitor lands directly in an English academic paper.
 
 ### A14 — Practice section (method extensions)
@@ -141,6 +145,8 @@ A thin fixed header carrying the wordmark plus the kind marker `Spezifikation` l
 ### A21 — Page status line
 Every page except the start page carries a head block under its title. Its first line is the one-line note from the page registry, which says what the page is about; a reader asking whether they are in the right place is on the page, not in the index that led there (added 2026-07-26). Under it stands the status line, stating whether it binds (`normative, part of the specification` or `informative`), its version, its date, and the machine address of its substrate. The keys read Standing, Version, Updated and Source. Standing comes from the page registry in `registry.js`, the remaining fields from the frontmatter of the substrate file or, for the generated pages, from the registry. Added 2026-07-26.
 
+Extended on 2026-07-29 by A32. A part of the specification page carries the same block under its own heading, with the note, the version, the date and the machine address of its substrate. The Standing field stays out there, because the page states once for all five that they bind, and repeating it under every part would say the same thing five times.
+
 ### A22 — Colour that carries meaning, and the dark theme
 Colour encodes exactly one thing, the epistemic function of an artefact, that is the five interface categories of A-level section 4.2 of the paper. The hue appears on the function list of the Artefakt page and on the left edge of a use-case card, and the category always stands there as a word as well. One prismatic signature band sits at the foot of the header, once per page, and encodes nothing. The dark theme is a token swap that follows the system preference, is overridden by a toggle, and is applied before first paint from `localStorage`. Grounds and token values in [design.md](design.md). Added 2026-07-26.
 
@@ -153,8 +159,10 @@ A page change moves the focus into the content. The host of the target page carr
 ### A25 — Term index in place of a full-text search
 The glossary page carries, above its entries, an index that connects every glossary term with the pages on which it occurs, with a filter field over the terms. It is built at runtime from `data/glossar.json` against the page containers mounted in the DOM and fetches no further source. A full-text search was weighed and declined on 2026-07-26; the three audiences of [project.md](project.md) arrive with an address, resolve a `template:` URI, or read a flow, and none of them searches. What the site lacked instead was the path from a term to the place that uses it. A term that the index reports nowhere outside the glossary is a finding about the site, and the index shows it as such. Added 2026-07-26.
 
-### A27 — The tree has two blocks
+### A27 — The tree carries no group labels
 The sidebar carries the specification proper under its heading, since the part numbers only mean something under one, and every other page below it as a flat list without group labels (operator decision 2026-07-26). Five group labels over fourteen pages read as more structure than the site has, and two of them, Evidence and Tools and practice, are abstractions a first-time reader cannot yet place. The generated index on the start page carries the five numbered parts alone, under the heading "The specification in five parts", since the tree already lists every page and what it cannot say is that the specification is an ordered set of five.
+
+Amended on 2026-07-29 by the merge recorded in A32. The heading over the specification block went with the merge, because the block it named had shrunk to two entries while the part numbers moved into the subtree under the second of them. The tree is now one flat list per group run, with a gap between the runs and no label over any of them. The ban on group labels stands, and the gap is what lets the pages that answer the same kind of question read as belonging together. The one-line note per entry was rewritten in the same move, so that each page says what distinguishes it from its neighbour in the run.
 
 ### A28 — The site checks its own claims
 `tools/check_consistency.py` decides by rule what the site states about itself in more than one place, that the catalogue and the convention agree on every document type, that catalogue and template folder cover each other with held-back slugs named, that the slug list in `CLAUDE.md` is complete, that the gallery holds its own conditions, meaning depth pages and cards cover each other and both closed vocabularies are respected, and that every project in Table 1 of the paper has a card which agrees with the table on its interface types. With `--check-urls` it also resolves every address a card publishes; that pass is opt-in because the script runs before every commit and fifty network round trips would make that unusable. It exits non-zero on any failure. [verification.md](verification.md) records what is checked against what, with the verdict, and what stays with the Critical Expert because agreement in substance is not decidable by rule. Before 2026-07-26 the site specified the verification function in part 5 and ran no check of its own statements, while the vault under it had one from the start. Added 2026-07-26.
@@ -173,6 +181,15 @@ The didactic form is constructive. Each step carries the same four elements, the
 The page is informative, English, substrate `_content/tutorial.md`, machine address `https://dhcraft.org/Promptotyping/_content/tutorial.md`. Anchor `#tutorial`, subpath `/tutorial`, which resolves through the existing bare-page rule with no change to `404.html`. Step headings mint their in-page anchors at render time, so a later rewording of a step heading needs the same alias discipline as A26 records for the practice entries. No new module; the page is content rendered like every other content page.
 
 Acceptance criterion. A reader who arrives with a structured dataset, an agentic coding tool, and competence in their own material can follow the steps in order, knows at every step what done looks like, and leaves with a repository whose `knowledge/` folder, artefact, and journal entry identify a first promptotype.
+
+### A32 — The specification is one page in five parts
+The five numbered parts are sections of one page addressed `#specification`, subpath `/specification` (operator decision 2026-07-29, package F9 of [plan.md](plan.md)). A reader who wants the specification reads one document from application through verification, and the tree entry Specification carries the five as a permanent subtree. The start page keeps its own address and stays a page of its own, since it is the front of the specification rather than a part of it.
+
+The five ids stay. `anwendung`, `vorlagen`, `konvention-v0.1`, `artefakt` and `verifikation` are the ids of the sections inside the merged page, so `#anwendung` and `/anwendung` resolve as they did, and so do the two anchor families that hang under them, `#promptotyping-document-{slug}` and `#konvention-*`. The registry decides this rather than the DOM. A registry entry with a `parent` field is a part instead of a page, `pageForAnchor` answers with the page a part sits in, `showPage` accepts either and shows the page, and `resolveTemplateUrl` accepts a part slug as the bare slug it always was. The DOM fallback over `.doc-page` would resolve a part anchor as well, and the registry answers before it, which keeps an address resolvable before the content carrying it has rendered.
+
+Each part keeps its own substrate and its own status line (A21 extended), and the generated index of the start page keeps its five entries (A13 extended). The part headings move down one level once the parts are rendered, so the merged page carries a single H1; nothing addressable moves with them, because heading ids are minted for the paper alone.
+
+Acceptance criterion. `/anwendung`, `/vorlagen`, `/konvention`, `/artefakt`, `/verifikation` and their hash forms lead to the same content as before the merge, a template row still opens its side panel, and the frontmatter inspector still resolves a pasted `template:` block.
 
 ### A26 — The site is English
 Every string the site shows is English, in the British spelling the paper uses (operator decision 2026-07-25, carried out 2026-07-26). That covers the page registry labels, the status line, every control, the nine content pages directly under `_content/`, and the text fields of `data/glossar.json`, `data/case-studies.json` and `data/promptotyping-documents.json`.

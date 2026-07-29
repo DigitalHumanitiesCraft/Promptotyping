@@ -357,19 +357,6 @@ a:hover {
   font-size: 0.875rem;
 }
 
-.docs-nav-group {
-  margin: var(--space-6) 0 var(--space-2);
-  font-size: 0.6875rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--grey-3);
-}
-
-.docs-nav-group:first-child {
-  margin-top: 0;
-}
-
 .docs-nav ul {
   list-style: none;
   margin: 0;
@@ -411,6 +398,22 @@ a:hover {
   color: var(--grey-2);
 }
 
+/* ---- Sub-navigation in the tree ----
+   The parts of the specification stand permanently under their entry. Nothing
+   opens or closes. */
+
+.docs-nav-sub {
+  margin: var(--space-1) 0 var(--space-2);
+  padding-left: var(--space-4);
+}
+
+.docs-nav-sub a {
+  padding-top: 0.15rem;
+  padding-bottom: 0.15rem;
+  font-size: 0.8125rem;
+  color: var(--grey-3);
+}
+
 /* ---- Page host and reading column ----
    One page is visible at a time; the others stay in the DOM so every published
    anchor keeps resolving. */
@@ -435,12 +438,47 @@ a:hover {
   margin-top: 0;
 }
 
+/* ---- The parts of the specification ----
+   Five sections of one page since the merge of F9, each from its own substrate
+   and each carrying its own status line. The rule separates them the way a
+   published specification separates its parts. */
+
+.spec-part {
+  margin-top: var(--space-12);
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--border);
+}
+
+/* The status line of the page already closes with a hairline, so the first part
+   needs none of its own. */
+.spec-part:first-of-type {
+  margin-top: var(--space-8);
+  padding-top: 0;
+  border-top: 0;
+}
+
+.spec-part > h2:first-child {
+  margin-top: 0;
+}
+
+.spec-part-number {
+  display: inline-block;
+  margin-right: 0.4em;
+  color: var(--grey-3);
+  font-variant-numeric: tabular-nums;
+}
+
 /* Reference density. Specification prose keeps the calm setting because it is
    read; the directories are scanned, so they are set tighter. */
 
-.doc-page.is-reference {
+.doc-page.is-reference,
+.spec-part.is-reference {
   font-size: 0.9375rem;
   line-height: 1.45;
+}
+
+.spec-part.is-reference table {
+  font-size: 0.875rem;
 }
 
 .doc-page.is-reference h2 {
@@ -1561,6 +1599,18 @@ a:hover {
     border-bottom: 1px solid var(--border);
   }
 
+  /* Below this width the tree stands above the page instead of beside it, so
+     every entry of it is scrolled past before the text begins. Only the subtree
+     of the page being read stays. This is a width rule and carries no control;
+     nothing here opens or closes. */
+  .docs-nav-sub {
+    display: none;
+  }
+
+  .docs-nav a.is-active + .docs-nav-sub {
+    display: block;
+  }
+
   /* The tree carries the top offset on mobile, so the page must not add it. */
   .content {
     margin-top: 0;
@@ -1635,10 +1685,10 @@ a:hover {
   }
 }
 
-/* The tree carries the numbered specification under a heading and every other
-   page as a flat list; the gap is what keeps the two from reading as one list
-   in which five entries happen to be numbered. */
-.docs-nav ul.docs-nav-rest {
+/* The tree is one flat list per group run, with a gap between the runs and no
+   label over them. The gap is what lets the pages that answer the same kind of
+   question read as belonging together. */
+.docs-nav ul.docs-nav-run + ul.docs-nav-run {
   margin-top: var(--space-6);
 }
 
