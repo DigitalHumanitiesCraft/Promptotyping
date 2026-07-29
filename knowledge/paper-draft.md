@@ -595,7 +595,7 @@ Borek, Luise, Canan Hastik, Vera Khramova, Klaus Illmayer, and Jonathan D. Geige
 
 Broy, Manfred, and Marco Kuhrmann. 2021. *Einführung in die Softwaretechnik*. Berlin and Heidelberg: Springer Vieweg.
 
-Cao, Zhenfeng. 2026. “The End of Software Engineering: How AI Agents Are Fundamentally Restructuring the Software Paradigm.” *arXiv*. [https://doi.org/10.48550/arXiv.2606.05608](https://doi.org/10.48550/arXiv.2606.05608).
+Cao, Zhenfeng. 2026. “Agentic Software: How AI Agents Are Restructuring the Software Paradigm.” *arXiv*. [https://doi.org/10.48550/arXiv.2606.05608](https://doi.org/10.48550/arXiv.2606.05608).
 
 Carver, Jeffrey C., Nic Weber, Karthik Ram, Sandra Gesing, and Daniel S. Katz. 2022. “A Survey of the State of the Practice for Research Software in the United States.” *PeerJ Computer Science* 8: e963. [https://doi.org/10.7717/peerj-cs.963](https://doi.org/10.7717/peerj-cs.963).
 
@@ -699,7 +699,7 @@ Strutz, Sabrina. 2026. “A Multi-Dimensional Evaluation Framework for Assessing
 
 Summerfield, Christopher. 2025. *These Strange New Minds: How AI Learned to Talk and What It Means*. New York: Viking.
 
-TEI Consortium. 2026. *TEI P5: Guidelines for Electronic Text Encoding and Interchange*. Version 4.11.0, 18 February 2026. [https://tei-c.org/release/doc/tei-p5-doc/en/html/](https://tei-c.org/release/doc/tei-p5-doc/en/html/).
+TEI Consortium. 2026. *TEI P5: Guidelines for Electronic Text Encoding and Interchange*. Version 4.12.0, 28 July 2026. [https://tei-c.org/release/doc/tei-p5-doc/en/html/](https://tei-c.org/release/doc/tei-p5-doc/en/html/).
 
 van Es, Karin, Maranke Wieringa, and Mirko Tobias Schäfer. 2018. “Tool Criticism: From Digital Methods to Digital Methodology.” In *Proceedings of the Second International Conference on Web Studies*, 24–27. New York: ACM. [https://doi.org/10.1145/3240431.3240436](https://doi.org/10.1145/3240431.3240436).
 
