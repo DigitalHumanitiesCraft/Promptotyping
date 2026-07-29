@@ -1,6 +1,6 @@
 {
  "_meta": {
-  "beschreibung": "Claim-Schicht des Grounded Vault unter dem Paper. Erzeugt aus vault/20_claims und vault/10_distillates durch vault/tools/build_site_index.py; nicht von Hand pflegen.",
+  "beschreibung": "Claim-Schicht des Grounded Vault unter dem Paper. Erzeugt aus vault/20_claims, vault/10_distillates, vault/references und vault/00_representation durch vault/tools/build_site_index.py; nicht von Hand pflegen.",
   "quelle": "vault/",
   "generator": "vault/tools/build_site_index.py"
  },
@@ -3999,6 +3999,8 @@
    "title": "Distillate: Frontmatter-core survey 2026-07-26",
    "kind": "documents",
    "reference": "",
+   "source": "frontmatter-core-survey-2026-07-26",
+   "sourceKind": "representation",
    "summary": "## Related",
    "path": "vault/10_distillates/documents/frontmatter-core-survey-2026-07-26.md"
   },
@@ -4007,6 +4009,8 @@
    "title": "Distillate: Frontmatter practice across Promptotyping repositories (May 2026)",
    "kind": "documents",
    "reference": "",
+   "source": "frontmatter-practice-2026-05",
+   "sourceKind": "representation",
    "summary": "## Related",
    "path": "vault/10_distillates/documents/frontmatter-practice-2026-05.md"
   },
@@ -4015,6 +4019,8 @@
    "title": "Distillate: Knowledge und Context Engineering deck, LLM-characterisation slide",
    "kind": "documents",
    "reference": "",
+   "source": "ke-master-deck-2026-07-19",
+   "sourceKind": "representation",
    "summary": "## Related",
    "path": "vault/10_distillates/documents/ke-master-deck-2026-07-19.md"
   },
@@ -4023,6 +4029,8 @@
    "title": "Distillate: Knowledge-base content audit (July 2026)",
    "kind": "documents",
    "reference": "",
+   "source": "knowledge-base-content-audit-2026-07-19",
+   "sourceKind": "representation",
    "summary": "## Related",
    "path": "vault/10_distillates/documents/knowledge-base-content-audit-2026-07-19.md"
   },
@@ -4031,6 +4039,8 @@
    "title": "Distillate: LLM Summer School for DH 2025 (course site)",
    "kind": "documents",
    "reference": "",
+   "source": "llmdh-summer-school-2025",
+   "sourceKind": "representation",
    "summary": "## Related",
    "path": "vault/10_distillates/documents/llmdh-summer-school-2025.md"
   },
@@ -4039,6 +4049,8 @@
    "title": "Distillate: Deriving a domain document from a formal vocabulary (M³GIM)",
    "kind": "documents",
    "reference": "",
+   "source": "m3gim-vocab-derivation-2026-07-24",
+   "sourceKind": "representation",
    "summary": "## Related",
    "path": "vault/10_distillates/documents/m3gim-vocab-derivation-2026-07-24.md"
   },
@@ -4047,6 +4059,8 @@
    "title": "Distillate: Introduction to Promptotyping, video 1",
    "kind": "documents",
    "reference": "",
+   "source": "promptotyping-video-1-introduction",
+   "sourceKind": "representation",
    "summary": "## Related",
    "path": "vault/10_distillates/documents/promptotyping-video-1-introduction.md"
   },
@@ -4055,6 +4069,8 @@
    "title": "Distillate: Promptotyping live demonstration, video 2",
    "kind": "documents",
    "reference": "",
+   "source": "promptotyping-video-2-live-demo",
+   "sourceKind": "representation",
    "summary": "## Related",
    "path": "vault/10_distillates/documents/promptotyping-video-2-live-demo.md"
   },
@@ -4063,6 +4079,8 @@
    "title": "Distillate: Revision audit A1, transfer claim (2026-07-23)",
    "kind": "documents",
    "reference": "",
+   "source": "revision-audit-a1-2026-07-23",
+   "sourceKind": "representation",
    "summary": "## Related",
    "path": "vault/10_distillates/documents/revision-audit-a1-2026-07-23.md"
   },
@@ -4071,6 +4089,8 @@
    "title": "Distillate: Revision audit A2, corpus audit (2026-07-23)",
    "kind": "documents",
    "reference": "",
+   "source": "revision-audit-a2-2026-07-23",
+   "sourceKind": "representation",
    "summary": "## Related",
    "path": "vault/10_distillates/documents/revision-audit-a2-2026-07-23.md"
   },
@@ -4079,6 +4099,8 @@
    "title": "Distillate: BMAD-METHOD",
    "kind": "documents",
    "reference": "",
+   "source": "sdd-bmad-method-2026-07-24",
+   "sourceKind": "representation",
    "summary": "## Related",
    "path": "vault/10_distillates/documents/sdd-bmad-method-2026-07-24.md"
   },
@@ -4087,6 +4109,8 @@
    "title": "Distillate: AWS Kiro",
    "kind": "documents",
    "reference": "",
+   "source": "sdd-kiro-2026-07-24",
+   "sourceKind": "representation",
    "summary": "## Related",
    "path": "vault/10_distillates/documents/sdd-kiro-2026-07-24.md"
   },
@@ -4095,6 +4119,8 @@
    "title": "Distillate: OpenSpec",
    "kind": "documents",
    "reference": "",
+   "source": "sdd-openspec-2026-07-24",
+   "sourceKind": "representation",
    "summary": "## Related",
    "path": "vault/10_distillates/documents/sdd-openspec-2026-07-24.md"
   },
@@ -4103,6 +4129,8 @@
    "title": "Distillate: GitHub Spec Kit",
    "kind": "documents",
    "reference": "",
+   "source": "sdd-spec-kit-2026-07-24",
+   "sourceKind": "representation",
    "summary": "## Related",
    "path": "vault/10_distillates/documents/sdd-spec-kit-2026-07-24.md"
   },
@@ -4111,6 +4139,8 @@
    "title": "Distillate: SZD-HTR evaluation results, error typology (2026-06-10)",
    "kind": "documents",
    "reference": "",
+   "source": "szd-htr-evaluation-results-2026-06-10",
+   "sourceKind": "representation",
    "summary": "## Related",
    "path": "vault/10_distillates/documents/szd-htr-evaluation-results-2026-06-10.md"
   },
@@ -4119,6 +4149,8 @@
    "title": "Distillate: SZD-HTR FAIR4RS audit (2026-07-23)",
    "kind": "documents",
    "reference": "",
+   "source": "szd-htr-fair4rs-audit-2026-07-23",
+   "sourceKind": "representation",
    "summary": "## Core statements",
    "path": "vault/10_distillates/documents/szd-htr-fair4rs-audit-2026-07-23.md"
   },
@@ -4127,6 +4159,8 @@
    "title": "Distillate: Section 4 figures verification (2026-07-19)",
    "kind": "documents",
    "reference": "",
+   "source": "verification-paper-figures-2026-07-19",
+   "sourceKind": "representation",
    "summary": "## Related",
    "path": "vault/10_distillates/documents/verification-paper-figures-2026-07-19.md"
   },
@@ -4135,6 +4169,8 @@
    "title": "Distillate: A Primer for Evaluating LLMs in Social-Science Research (Abdurahman et al. 2025)",
    "kind": "publications",
    "reference": "abdurahman-2025",
+   "source": "abdurahman-2025",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/abdurahman-2025-primer-llm-evaluation.md"
   },
@@ -4143,6 +4179,8 @@
    "title": "Distillate: Digital editions as static websites (Andorfer 2026)",
    "kind": "publications",
    "reference": "andorfer-2026",
+   "source": "andorfer-2026",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/andorfer-2026-static-tei-editions.md"
   },
@@ -4151,6 +4189,8 @@
    "title": "Distillate: Workflows in the SSH Open Marketplace (Barbot et al. 2024)",
    "kind": "publications",
    "reference": "barbot-2024",
+   "source": "barbot-2024",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/barbot-2024-ssh-open-marketplace.md"
   },
@@ -4159,6 +4199,8 @@
    "title": "Distillate: The Research Software Engineer (Baxter et al. 2012)",
    "kind": "publications",
    "reference": "baxter-2012",
+   "source": "baxter-2012",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/baxter-2012-research-software-engineer.md"
   },
@@ -4167,6 +4209,8 @@
    "title": "Distillate: The Semantic Web (Berners-Lee, Hendler and Lassila 2001)",
    "kind": "publications",
    "reference": "berners-lee-2001",
+   "source": "berners-lee-2001",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/berners-lee-2001-semantic-web.md"
   },
@@ -4175,6 +4219,8 @@
    "title": "Distillate: Digital Scholarly Editions as Interfaces (Bleier et al. 2018)",
    "kind": "publications",
    "reference": "bleier-2018",
+   "source": "bleier-2018",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/bleier-2018-editions-interfaces.md"
   },
@@ -4183,6 +4229,8 @@
    "title": "Distillate: TaDiRAH pragmatic classification (Borek et al. 2016)",
    "kind": "publications",
    "reference": "borek-2016",
+   "source": "borek-2016",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/borek-2016-tadirah.md"
   },
@@ -4191,6 +4239,8 @@
    "title": "Distillate: TaDiRAH Revised, Formalized and FAIR (Borek et al. 2021)",
    "kind": "publications",
    "reference": "borek-2021",
+   "source": "borek-2021",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/borek-2021-tadirah-revised-formalized-fair.md"
   },
@@ -4199,6 +4249,8 @@
    "title": "Distillate: State of the practice for research software in the United States (Carver et al. 2022)",
    "kind": "publications",
    "reference": "carver-2022",
+   "source": "carver-2022",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/carver-2022-state-of-practice.md"
   },
@@ -4207,6 +4259,8 @@
    "title": "Distillate: FAIR Principles for Research Software (Chue Hong et al. 2022)",
    "kind": "publications",
    "reference": "chuehong-2022",
+   "source": "chuehong-2022",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/chuehong-2022-fair4rs.md"
   },
@@ -4215,6 +4269,8 @@
    "title": "Distillate: The Four Pillars of Research Software Engineering (Cohen et al. 2021)",
    "kind": "publications",
    "reference": "cohen-2021",
+   "source": "cohen-2021",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/cohen-2021-four-pillars-rse.md"
   },
@@ -4223,6 +4279,8 @@
    "title": "Distillate: The Santa Barbara Statement on Collections as Data (2019)",
    "kind": "publications",
    "reference": "collectionsasdata-2019",
+   "source": "collectionsasdata-2019",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/collectionsasdata-2019-santa-barbara.md"
   },
@@ -4231,6 +4289,8 @@
    "title": "Distillate: Epistemic Forms and Epistemic Games (Collins and Ferguson 1993)",
    "kind": "publications",
    "reference": "collins-1993",
+   "source": "collins-1993",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/collins-1993-epistemic-forms.md"
   },
@@ -4239,6 +4299,8 @@
    "title": "Distillate: Differentiation processes in digital source and data criticism (Cremer / Paulmann 2025)",
    "kind": "publications",
    "reference": "cremer-2025",
+   "source": "cremer-2025",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/cremer-2025-quellen-und-datenkritik.md"
   },
@@ -4247,6 +4309,8 @@
    "title": "Distillate: Navigating the Jagged Technological Frontier (Dell'Acqua et al. 2023)",
    "kind": "publications",
    "reference": "dellacqua-2023",
+   "source": "dellacqua-2023",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/dellacqua-2023-jagged-frontier.md"
   },
@@ -4255,6 +4319,8 @@
    "title": "Distillate: Humanities approaches to graphical display (Drucker 2011)",
    "kind": "publications",
    "reference": "drucker-2011",
+   "source": "drucker-2011",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/drucker-2011-humanities-approaches.md"
   },
@@ -4263,6 +4329,8 @@
    "title": "Distillate: The Role of the Professional Intermediary (Edmond 2005)",
    "kind": "publications",
    "reference": "edmond-2005",
+   "source": "edmond-2005",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/edmond-2005-professional-intermediary.md"
   },
@@ -4271,6 +4339,8 @@
    "title": "Distillate: SycEval — Evaluating LLM Sycophancy (Fanous et al. 2025)",
    "kind": "publications",
    "reference": "fanous-2025",
+   "source": "fanous-2025",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/fanous-2025-syceval.md"
   },
@@ -4279,6 +4349,8 @@
    "title": "Distillate: Vibe Coding in Practice (Fawzy et al. 2025)",
    "kind": "publications",
    "reference": "fawzy-2025",
+   "source": "fawzy-2025",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/fawzy-2025-vibe-coding-in-practice.md"
   },
@@ -4287,6 +4359,8 @@
    "title": "Distillate: Semi-automatic cataloguing of image cards (Fischer / Kimmel / Puppe 2025)",
    "kind": "publications",
    "reference": "fischer-2025",
+   "source": "fischer-2025",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/fischer-2025-bildkarten.md"
   },
@@ -4295,6 +4369,8 @@
    "title": "Distillate: The Shape of Data in Digital Humanities (Flanders and Jannidis 2019)",
    "kind": "publications",
    "reference": "flanders-2019",
+   "source": "flanders-2019",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/flanders-2019-shape-of-data.md"
   },
@@ -4303,6 +4379,8 @@
    "title": "Distillate: How a Prototype Argues (Galey and Ruecker 2010)",
    "kind": "publications",
    "reference": "galey-2010",
+   "source": "galey-2010",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/galey-2010-how-a-prototype-argues.md"
   },
@@ -4311,6 +4389,8 @@
    "title": "Distillate: Daten / Forschungsdaten (Geiger 2023)",
    "kind": "publications",
    "reference": "geiger-2023",
+   "source": "geiger-2023",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/geiger-2023-daten-forschungsdaten.md"
   },
@@ -4319,6 +4399,8 @@
    "title": "Distillate: Open tool registries on Wikidata (Grallert et al. 2026)",
    "kind": "publications",
    "reference": "grallert-2026",
+   "source": "grallert-2026",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/grallert-2026-open-tool-registries.md"
   },
@@ -4327,6 +4409,8 @@
    "title": "Distillate: The anatomy of a nanopublication (Groth, Gibson and Velterop 2010)",
    "kind": "publications",
    "reference": "groth-2010",
+   "source": "groth-2010",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/groth-2010-nanopublication.md"
   },
@@ -4335,6 +4419,8 @@
    "title": "Distillate: A Translation Approach to Portable Ontology Specifications (Gruber 1993)",
    "kind": "publications",
    "reference": "gruber-1993",
+   "source": "gruber-1993",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/gruber-1993-ontolingua.md"
   },
@@ -4343,6 +4429,8 @@
    "title": "Distillate: In defense of sandcastles (Hinrichs, Forlini & Moynihan 2019)",
    "kind": "publications",
    "reference": "hinrichs-2019",
+   "source": "hinrichs-2019",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/hinrichs-2019-sandcastles.md"
   },
@@ -4351,6 +4439,8 @@
    "title": "Distillate: Toulmin's Warrants (Hitchcock 2003)",
    "kind": "publications",
    "reference": "hitchcock-2003",
+   "source": "hitchcock-2003",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/hitchcock-2003-toulmins-warrants.md"
   },
@@ -4359,6 +4449,8 @@
    "title": "Distillate: The Endings Principles (Holmes & Takeda 2023)",
    "kind": "publications",
    "reference": "holmes-2023",
+   "source": "holmes-2023",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/holmes-2023-endings-principles.md"
   },
@@ -4367,6 +4459,8 @@
    "title": "Distillate: MetaGPT, Meta Programming for A Multi-Agent Collaborative Framework (Hong et al. 2024)",
    "kind": "publications",
    "reference": "hong-2023-metagpt",
+   "source": "hong-2023-metagpt",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/hong-2023-metagpt.md"
   },
@@ -4375,6 +4469,8 @@
    "title": "Distillate: Context Rot (Hong et al. 2025)",
    "kind": "publications",
    "reference": "hong-2025",
+   "source": "hong-2025",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/hong-2025-context-rot.md"
   },
@@ -4383,6 +4479,8 @@
    "title": "Distillate: Trading Zones of Digital History (Kemman 2021)",
    "kind": "publications",
    "reference": "kemman-2021",
+   "source": "kemman-2021",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/kemman-2021-trading-zones.md"
   },
@@ -4391,6 +4489,8 @@
    "title": "Distillate: Finished, for now. Unfinishedness as epistemic value (König 2026)",
    "kind": "publications",
    "reference": "koenig-2026",
+   "source": "koenig-2026",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/koenig-2026-fertig-vorerst.md"
   },
@@ -4399,6 +4499,8 @@
    "title": "Distillate: Toward a Model for Digital Tool Criticism (Koolen, van Gorp and van Ossenbruggen 2019)",
    "kind": "publications",
    "reference": "koolen-2019",
+   "source": "koolen-2019",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/koolen-2019-digital-tool-criticism.md"
   },
@@ -4407,6 +4509,8 @@
    "title": "Distillate: Beyond Data Feminism. Towards ethical data work (Lang / Suárez Cronauer 2026)",
    "kind": "publications",
    "reference": "lang-2026",
+   "source": "lang-2026",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/lang-2026-beyond-data-feminism.md"
   },
@@ -4415,6 +4519,8 @@
    "title": "Distillate: Mapping hospital heritage with WikiFAIR (Leipold et al. 2026)",
    "kind": "publications",
    "reference": "leipold-2026",
+   "source": "leipold-2026",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/leipold-2026-wikifair.md"
   },
@@ -4423,6 +4529,8 @@
    "title": "Distillate: LLM-Based Agents for Software Engineering — A Survey (Liu et al. 2024)",
    "kind": "publications",
    "reference": "liu-2024",
+   "source": "liu-2024",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/liu-2024-llm-agents-se-survey.md"
   },
@@ -4431,6 +4539,8 @@
    "title": "Distillate: Improving agile requirements, the Quality User Story framework and tool (Lucassen et al. 2016)",
    "kind": "publications",
    "reference": "lucassen-2016",
+   "source": "lucassen-2016",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/lucassen-2016-quality-user-story.md"
   },
@@ -4439,6 +4549,8 @@
    "title": "Distillate: From Prompt to Process (Macedo 2026)",
    "kind": "publications",
    "reference": "macedo-2026",
+   "source": "macedo-2026",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/macedo-2026-from-prompt-to-process.md"
   },
@@ -4447,6 +4559,8 @@
    "title": "Distillate: PROV-A, a web-based tool for provenance as Linked Open Data (Mariani 2025)",
    "kind": "publications",
    "reference": "mariani-2025",
+   "source": "mariani-2025",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/mariani-2025-prov-a.md"
   },
@@ -4455,6 +4569,8 @@
    "title": "Distillate: Packaging Data Analytical Work Reproducibly Using R (and Friends) (Marwick, Boettiger and Mullen 2018)",
    "kind": "publications",
    "reference": "marwick-2018",
+   "source": "marwick-2018",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/marwick-2018-research-compendium.md"
   },
@@ -4463,6 +4579,8 @@
    "title": "Distillate: The triptych of conceptual modeling (Mayr & Thalheim 2021)",
    "kind": "publications",
    "reference": "mayr-2021",
+   "source": "mayr-2021",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/mayr-2021-triptych-conceptual-modeling.md"
   },
@@ -4471,6 +4589,8 @@
    "title": "Distillate: A Survey of Context Engineering for LLMs (Mei et al. 2025)",
    "kind": "publications",
    "reference": "mei-2025",
+   "source": "mei-2025",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/mei-2025-context-engineering.md"
   },
@@ -4479,6 +4599,8 @@
    "title": "Distillate: Ten principles for machine-actionable DMPs (Miksa et al. 2019)",
    "kind": "publications",
    "reference": "miksa-2019",
+   "source": "miksa-2019",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/miksa-2019-machine-actionable-dmps.md"
   },
@@ -4487,6 +4609,8 @@
    "title": "Distillate: Defining Data for Humanists (Owens 2011)",
    "kind": "publications",
    "reference": "owens-2011",
+   "source": "owens-2011",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/owens-2011-defining-data.md"
   },
@@ -4495,6 +4619,8 @@
    "title": "Distillate: From Concepts to Texts and Back (Pichler and Reiter 2022)",
    "kind": "publications",
    "reference": "pichler-2022",
+   "source": "pichler-2022",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/pichler-2022-operationalization.md"
   },
@@ -4503,6 +4629,8 @@
    "title": "Distillate: Digital Scholarly Editing (Pierazzo 2015)",
    "kind": "publications",
    "reference": "pierazzo-2015",
+   "source": "pierazzo-2015",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/pierazzo-2015-digital-editing.md"
   },
@@ -4511,6 +4639,8 @@
    "title": "Distillate: DEPCHA and the Bookkeeping Ontology (Pollin 2019)",
    "kind": "publications",
    "reference": "pollin-2019",
+   "source": "pollin-2019",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/pollin-2019-depcha-bookkeeping.md"
   },
@@ -4519,6 +4649,8 @@
    "title": "Distillate: Workshop series \"Applied Generative AI in the (Digital) Humanities\" (Pollin 2024)",
    "kind": "publications",
    "reference": "pollin-2024",
+   "source": "pollin-2024",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/pollin-2024-workshopreihe.md"
   },
@@ -4527,6 +4659,8 @@
    "title": "Distillate: When it was 2024. Generative AI in digital scholarly editions (Pollin et al. 2025a)",
    "kind": "publications",
    "reference": "pollin-2025a",
+   "source": "pollin-2025a",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/pollin-2025a-when-it-was-2024.md"
   },
@@ -4535,6 +4669,8 @@
    "title": "Distillate: Pollin dissertation (2025)",
    "kind": "publications",
    "reference": "pollin-2025b",
+   "source": "pollin-2025b",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/pollin-2025b-dissertation.md"
   },
@@ -4543,6 +4679,8 @@
    "title": "Distillate: Promptotyping with Claude Sonnet 4, the Critical Expert in the Loop (Pollin 2025c)",
    "kind": "publications",
    "reference": "pollin-2025c",
+   "source": "pollin-2025c",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/pollin-2025c-critical-vibing.md"
   },
@@ -4551,6 +4689,8 @@
    "title": "Distillate: Promptotyping blog post (Pollin 2025d)",
    "kind": "publications",
    "reference": "pollin-2025d",
+   "source": "pollin-2025d",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/pollin-2025d-promptotyping-blog.md"
   },
@@ -4559,6 +4699,8 @@
    "title": "Distillate: Asymmetric Amplification (Pollin 2026a)",
    "kind": "publications",
    "reference": "pollin-2026a",
+   "source": "pollin-2026a",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/pollin-2026a-asymmetric-amplification.md"
   },
@@ -4567,6 +4709,8 @@
    "title": "Distillate: Promptotyping between Vibe Coding, Vibe Research and Context Engineering (Pollin 2026b)",
    "kind": "publications",
    "reference": "pollin-2026b",
+   "source": "pollin-2026b",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/pollin-2026b-lisa-positioning.md"
   },
@@ -4575,6 +4719,8 @@
    "title": "Distillate: Humanities Data, A Necessary Contradiction (Posner 2015)",
    "kind": "publications",
    "reference": "posner-2015",
+   "source": "posner-2015",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/posner-2015-necessary-contradiction.md"
   },
@@ -4583,6 +4729,8 @@
    "title": "Distillate: Diátaxis, a systematic framework for technical documentation authoring (Procida)",
    "kind": "publications",
    "reference": "procida-2024",
+   "source": "procida-2024",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/procida-2024-diataxis.md"
   },
@@ -4591,6 +4739,8 @@
    "title": "Distillate: The questions of minimal computing (Risam & Gil 2022)",
    "kind": "publications",
    "reference": "risam-2022",
+   "source": "risam-2022",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/risam-2022-minimal-computing.md"
   },
@@ -4599,6 +4749,8 @@
    "title": "Distillate: Coordinated and Multiple Views (Roberts 2007)",
    "kind": "publications",
    "reference": "roberts-2007",
+   "source": "roberts-2007",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/roberts-2007-coordinated-multiple-views.md"
   },
@@ -4607,6 +4759,8 @@
    "title": "Distillate: A Brief Taxonomy of Prototypes for the Digital Humanities (Ruecker 2015)",
    "kind": "publications",
    "reference": "ruecker-2015",
+   "source": "ruecker-2015",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/ruecker-2015-taxonomy-prototypes.md"
   },
@@ -4615,6 +4769,8 @@
    "title": "Distillate: Knowledge Generation Model for Visual Analytics (Sacha et al. 2014)",
    "kind": "publications",
    "reference": "sacha-2014",
+   "source": "sacha-2014",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/sacha-2014-knowledge-generation-model.md"
   },
@@ -4623,6 +4779,8 @@
    "title": "Distillate: The Protection of Information in Computer Systems (Saltzer and Schroeder 1975)",
    "kind": "publications",
    "reference": "saltzer-1975",
+   "source": "saltzer-1975",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/saltzer-1975-protection-of-information.md"
   },
@@ -4631,6 +4789,8 @@
    "title": "Distillate: Vibe Coding — Programming through Conversation with AI (Sarkar and Drosos 2025)",
    "kind": "publications",
    "reference": "sarkar-2025",
+   "source": "sarkar-2025",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/sarkar-2025-vibe-coding.md"
   },
@@ -4639,6 +4799,8 @@
    "title": "Distillate: Big? Smart? Clean? Messy? Data in the Humanities (Schöch 2013)",
    "kind": "publications",
    "reference": "schoech-2013",
+   "source": "schoech-2013",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/schoech-2013-big-smart-clean-messy.md"
   },
@@ -4647,6 +4809,8 @@
    "title": "Distillate: Do one thing and do it well (Schonhardt 2026)",
    "kind": "publications",
    "reference": "schonhardt-2026",
+   "source": "schonhardt-2026",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/schonhardt-2026-do-one-thing.md"
   },
@@ -4655,6 +4819,8 @@
    "title": "Distillate: Role play with large language models (Shanahan, McDonell and Reynolds 2023)",
    "kind": "publications",
    "reference": "shanahan-2023",
+   "source": "shanahan-2023",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/shanahan-2023-role-play.md"
   },
@@ -4663,6 +4829,8 @@
    "title": "Distillate: Towards Understanding Sycophancy in Language Models (Sharma et al. 2023)",
    "kind": "publications",
    "reference": "sharma-2023",
+   "source": "sharma-2023",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/sharma-2023-sycophancy.md"
   },
@@ -4671,6 +4839,8 @@
    "title": "Distillate: 'It's a team if you use \"reply all\"' (Siemens 2009)",
    "kind": "publications",
    "reference": "siemens-2009",
+   "source": "siemens-2009",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/siemens-2009-reply-all-teams.md"
   },
@@ -4679,6 +4849,8 @@
    "title": "Distillate: Packaging research artefacts with RO-Crate (Soiland-Reyes et al. 2022)",
    "kind": "publications",
    "reference": "soiland-2022",
+   "source": "soiland-2022",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/soiland-2022-ro-crate.md"
   },
@@ -4687,6 +4859,8 @@
    "title": "Distillate: Cross-linking of vocabularies, and the AI perspective (Stanicka-Brzezicka 2026)",
    "kind": "publications",
    "reference": "stanicka-2026",
+   "source": "stanicka-2026",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/stanicka-2026-cross-linking-vocabularies.md"
   },
@@ -4695,6 +4869,8 @@
    "title": "Distillate: Institutional Ecology, 'Translations' and Boundary Objects (Star and Griesemer 1989)",
    "kind": "publications",
    "reference": "star-1989",
+   "source": "star-1989",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/star-1989-boundary-objects.md"
   },
@@ -4703,6 +4879,8 @@
    "title": "Distillate: Hammer-Purgstall Correspondence TEI Evaluation Dataset (Strutz 2025)",
    "kind": "publications",
    "reference": "strutz-2025",
+   "source": "strutz-2025",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/strutz-2025-hammer-purgstall-tei-dataset.md"
   },
@@ -4711,6 +4889,8 @@
    "title": "Distillate: A Multi-Dimensional Evaluation Framework for Assessing LLM Performance in TEI Encoding (Strutz 2026)",
    "kind": "publications",
    "reference": "strutz-2026",
+   "source": "strutz-2026",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/strutz-2026-tei-evaluation-framework.md"
   },
@@ -4719,6 +4899,8 @@
    "title": "Distillate: Scholarly Primitives (Unsworth 2000)",
    "kind": "publications",
    "reference": "unsworth-2000",
+   "source": "unsworth-2000",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/unsworth-2000-scholarly-primitives.md"
   },
@@ -4727,6 +4909,8 @@
    "title": "Distillate: Tool Criticism: From Digital Methods to Digital Methodology (van Es, Wieringa and Schäfer 2018)",
    "kind": "publications",
    "reference": "vanes-2018",
+   "source": "vanes-2018",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/vanes-2018-tool-criticism.md"
   },
@@ -4735,6 +4919,8 @@
    "title": "Distillate: Generous interfaces for digital cultural collections (Whitelaw 2015)",
    "kind": "publications",
    "reference": "whitelaw-2015",
+   "source": "whitelaw-2015",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/whitelaw-2015-generous-interfaces.md"
   },
@@ -4743,6 +4929,8 @@
    "title": "Distillate: The FAIR guiding principles (Wilkinson et al. 2016)",
    "kind": "publications",
    "reference": "wilkinson-2016",
+   "source": "wilkinson-2016",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/wilkinson-2016-fair-principles.md"
   },
@@ -4751,6 +4939,8 @@
    "title": "Distillate: Visualization of Cultural Heritage Collection Data (Windhager et al. 2019)",
    "kind": "publications",
    "reference": "windhager-2019",
+   "source": "windhager-2019",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/windhager-2019-visualization-ch-collections.md"
   },
@@ -4759,6 +4949,8 @@
    "title": "Distillate: Survey on Evaluation of LLM-based Agents (Yehudai et al. 2025)",
    "kind": "publications",
    "reference": "yehudai-2025",
+   "source": "yehudai-2025",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/yehudai-2025-survey-evaluation-llm-agents.md"
   },
@@ -4767,8 +4959,691 @@
    "title": "Distillate: Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena (Zheng et al. 2023)",
    "kind": "publications",
    "reference": "zheng-2023",
+   "source": "zheng-2023",
+   "sourceKind": "publication",
    "summary": "## Related",
    "path": "vault/10_distillates/publications/zheng-2023-llm-as-a-judge.md"
+  }
+ ],
+ "sources": [
+  {
+   "slug": "abdurahman-2025",
+   "kind": "publication",
+   "title": "A Primer for Evaluating Large Language Models in Social-Science Research",
+   "label": "Abdurahman et al. 2025",
+   "path": "vault/references/abdurahman-2025-primer-llm-evaluation.json"
+  },
+  {
+   "slug": "andorfer-2026",
+   "kind": "publication",
+   "title": "Digitale Editionen als statische Webseiten. Zur nachhaltigen Publikation TEI-XML-basierter Editionen mit dem dse-static-cookiecutter",
+   "label": "Andorfer 2026",
+   "path": "vault/references/andorfer-2026-static-tei-editions.json"
+  },
+  {
+   "slug": "barbot-2024",
+   "kind": "publication",
+   "title": "Contextualizing Research Tools & Services Through Workflows in the SSH Open Marketplace",
+   "label": "Barbot et al. 2024",
+   "path": "vault/references/barbot-2024-ssh-open-marketplace.json"
+  },
+  {
+   "slug": "baxter-2012",
+   "kind": "publication",
+   "title": "The Research Software Engineer",
+   "label": "Baxter et al. 2012",
+   "path": "vault/references/baxter-2012-research-software-engineer.json"
+  },
+  {
+   "slug": "berners-lee-2001",
+   "kind": "publication",
+   "title": "The Semantic Web",
+   "label": "Berners-Lee et al. 2001",
+   "path": "vault/references/berners-lee-2001-semantic-web.json"
+  },
+  {
+   "slug": "bleier-2018",
+   "kind": "publication",
+   "title": "Digital Scholarly Editions as Interfaces",
+   "label": "Bleier et al. 2018",
+   "path": "vault/references/bleier-2018-editions-as-interfaces.json"
+  },
+  {
+   "slug": "borek-2016",
+   "kind": "publication",
+   "title": "TaDiRAH: A Case Study in Pragmatic Classification",
+   "label": "Borek 2016",
+   "path": "vault/references/borek-2016-tadirah.json"
+  },
+  {
+   "slug": "borek-2021",
+   "kind": "publication",
+   "title": "Information Organization and Access in Digital Humanities: TaDiRAH Revised, Formalized and FAIR",
+   "label": "Borek et al. 2021",
+   "path": "vault/references/borek-2021-tadirah-revised-formalized-fair.json"
+  },
+  {
+   "slug": "carver-2022",
+   "kind": "publication",
+   "title": "A survey of the state of the practice for research software in the United States",
+   "label": "Carver et al. 2022",
+   "path": "vault/references/carver-2022-state-of-practice.json"
+  },
+  {
+   "slug": "chuehong-2022",
+   "kind": "publication",
+   "title": "FAIR Principles for Research Software (FAIR4RS Principles) version 1.0",
+   "label": "Chue Hong et al. 2022",
+   "path": "vault/references/chuehong-2022-fair4rs.json"
+  },
+  {
+   "slug": "cohen-2021",
+   "kind": "publication",
+   "title": "The Four Pillars of Research Software Engineering",
+   "label": "Cohen et al. 2021",
+   "path": "vault/references/cohen-2021-four-pillars-rse.json"
+  },
+  {
+   "slug": "collectionsasdata-2019",
+   "kind": "publication",
+   "title": "The Santa Barbara Statement on Collections as Data",
+   "label": "Collections as Data 2019",
+   "path": "vault/references/collectionsasdata-2019-santa-barbara-statement.json"
+  },
+  {
+   "slug": "collins-1993",
+   "kind": "publication",
+   "title": "Epistemic Forms and Epistemic Games: Structures and Strategies to Guide Inquiry",
+   "label": "Collins and Ferguson 1993",
+   "path": "vault/references/collins-1993-epistemic-forms.json"
+  },
+  {
+   "slug": "cremer-2025",
+   "kind": "publication",
+   "title": "Differenzierungsprozesse in der digitalen Quellen- und Datenkritik. Historische und analytische Kategorienbildung am Beispiel der bayerischen Bußgeldkataloge »Corona-Pandemie«, 2020–2022",
+   "label": "Cremer and Paulmann 2025",
+   "path": "vault/references/cremer-2025-quellen-und-datenkritik.json"
+  },
+  {
+   "slug": "dellacqua-2023",
+   "kind": "publication",
+   "title": "Navigating the Jagged Technological Frontier: Field Experimental Evidence of the Effects of AI on Knowledge Worker Productivity and Quality",
+   "label": "Dell'Acqua et al. 2023",
+   "path": "vault/references/dellacqua-2023-jagged-frontier.json"
+  },
+  {
+   "slug": "drucker-2011",
+   "kind": "publication",
+   "title": "Humanities Approaches to Graphical Display",
+   "label": "Drucker 2011",
+   "path": "vault/references/drucker-2011-humanities-approaches.json"
+  },
+  {
+   "slug": "edmond-2005",
+   "kind": "publication",
+   "title": "The Role of the Professional Intermediary in Expanding the Humanities Computing Base",
+   "label": "Edmond 2005",
+   "path": "vault/references/edmond-2005-professional-intermediary.json"
+  },
+  {
+   "slug": "fanous-2025",
+   "kind": "publication",
+   "title": "SycEval: Evaluating LLM Sycophancy",
+   "label": "Fanous et al. 2025",
+   "path": "vault/references/fanous-2025-syceval.json"
+  },
+  {
+   "slug": "fawzy-2025",
+   "kind": "publication",
+   "title": "Vibe Coding in Practice: Motivations, Challenges, and a Future Outlook – a Grey Literature Review",
+   "label": "Fawzy et al. 2025",
+   "path": "vault/references/fawzy-2025-vibe-coding-in-practice.json"
+  },
+  {
+   "slug": "fischer-2025",
+   "kind": "publication",
+   "title": "Semiautomatische Erschließung von Fotografien auf beschrifteten Bildkarten im Archiv. Dokumentenerkennung mit Deep Learning sowie Large-Language-Modellen",
+   "label": "Fischer et al. 2025",
+   "path": "vault/references/fischer-2025-bildkarten.json"
+  },
+  {
+   "slug": "flanders-2019",
+   "kind": "publication",
+   "title": "The Shape of Data in Digital Humanities: Modeling Texts and Text-Based Resources",
+   "label": "Flanders and Jannidis 2019",
+   "path": "vault/references/flanders-2019-shape-of-data.json"
+  },
+  {
+   "slug": "frontmatter-core-survey-2026-07-26",
+   "kind": "representation",
+   "title": "2026-07-26 - Survey of the reduced frontmatter core across the local knowledge bases",
+   "label": "2026-07-26 - Survey of the reduced frontmatter core across the local knowledge bases",
+   "path": "vault/00_representation/documents/frontmatter-core-survey-2026-07-26.md"
+  },
+  {
+   "slug": "frontmatter-practice-2026-05",
+   "kind": "representation",
+   "title": "Frontmatter-Praxis in Promptotyping-Repos 2026-05",
+   "label": "Frontmatter-Praxis in Promptotyping-Repos 2026-05",
+   "path": "vault/00_representation/documents/frontmatter-practice-2026-05.md"
+  },
+  {
+   "slug": "galey-2010",
+   "kind": "publication",
+   "title": "How a Prototype Argues",
+   "label": "Galey and Ruecker 2010",
+   "path": "vault/references/galey-2010-how-a-prototype-argues.json"
+  },
+  {
+   "slug": "geiger-2023",
+   "kind": "publication",
+   "title": "Daten / Forschungsdaten",
+   "label": "Geiger 2023",
+   "path": "vault/references/geiger-2023-daten-forschungsdaten.json"
+  },
+  {
+   "slug": "grallert-2026",
+   "kind": "publication",
+   "title": "Open Tool Registries! Resolving the Directory Paradox with Wikidata",
+   "label": "Grallert et al. 2026",
+   "path": "vault/references/grallert-2026-open-tool-registries.json"
+  },
+  {
+   "slug": "groth-2010",
+   "kind": "publication",
+   "title": "The anatomy of a nanopublication",
+   "label": "Groth et al. 2010",
+   "path": "vault/references/groth-2010-nanopublication.json"
+  },
+  {
+   "slug": "gruber-1993",
+   "kind": "publication",
+   "title": "A Translation Approach to Portable Ontology Specifications",
+   "label": "Gruber 1993",
+   "path": "vault/references/gruber-1993-translation-approach-ontology.json"
+  },
+  {
+   "slug": "hinrichs-2019",
+   "kind": "publication",
+   "title": "In Defense of Sandcastles: Research Thinking through Visualization in Digital Humanities",
+   "label": "Hinrichs et al. 2019",
+   "path": "vault/references/hinrichs-2019-sandcastles.json"
+  },
+  {
+   "slug": "hitchcock-2003",
+   "kind": "publication",
+   "title": "Toulmin's Warrants",
+   "label": "Hitchcock 2003",
+   "path": "vault/references/hitchcock-2003-toulmins-warrants.json"
+  },
+  {
+   "slug": "holmes-2023",
+   "kind": "publication",
+   "title": "From Tamagotchis to Pet Rocks: On Learning to Love Simplicity through the Endings Principles",
+   "label": "Holmes and Takeda 2023",
+   "path": "vault/references/holmes-2023-endings-principles.json"
+  },
+  {
+   "slug": "hong-2023-metagpt",
+   "kind": "publication",
+   "title": "MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework",
+   "label": "Hong et al. 2024",
+   "path": "vault/references/hong-2023-metagpt.json"
+  },
+  {
+   "slug": "hong-2025",
+   "kind": "publication",
+   "title": "Context Rot: How Increasing Input Tokens Impacts LLM Performance",
+   "label": "Hong et al. 2025",
+   "path": "vault/references/hong-2025-context-rot.json"
+  },
+  {
+   "slug": "ke-master-deck-2026-07-19",
+   "kind": "representation",
+   "title": "Knowledge und Context Engineering für AI Agents",
+   "label": "Knowledge und Context Engineering für AI Agents",
+   "path": "vault/00_representation/documents/ke-master-deck-2026-07-19.md"
+  },
+  {
+   "slug": "kemman-2021",
+   "kind": "publication",
+   "title": "Trading Zones of Digital History",
+   "label": "Kemman 2021",
+   "path": "vault/references/kemman-2021-trading-zones.json"
+  },
+  {
+   "slug": "knowledge-base-content-audit-2026-07-19",
+   "kind": "representation",
+   "title": "2026-07-19 - Promptotyping-Wissensbasen Inhaltsaudit (Befund)",
+   "label": "2026-07-19 - Promptotyping-Wissensbasen Inhaltsaudit (Befund)",
+   "path": "vault/00_representation/documents/knowledge-base-content-audit-2026-07-19.md"
+  },
+  {
+   "slug": "koenig-2026",
+   "kind": "publication",
+   "title": "Fertig – vorerst. Unfertigkeit als epistemischer Wert in den digitalen Geisteswissenschaften",
+   "label": "König 2026",
+   "path": "vault/references/koenig-2026-fertig-vorerst.json"
+  },
+  {
+   "slug": "koolen-2019",
+   "kind": "publication",
+   "title": "Toward a Model for Digital Tool Criticism: Reflection as Integrative Practice",
+   "label": "Koolen et al. 2019",
+   "path": "vault/references/koolen-2019-digital-tool-criticism.json"
+  },
+  {
+   "slug": "lang-2026",
+   "kind": "publication",
+   "title": "Beyond Data Feminism. Towards Ethical Data Work in the (Digital) Humanities",
+   "label": "Lang and Suárez Cronauer 2026",
+   "path": "vault/references/lang-2026-beyond-data-feminism.json"
+  },
+  {
+   "slug": "leipold-2026",
+   "kind": "publication",
+   "title": "Mapping Hospital Heritage with WikiFAIR. A Proposal for Research Data Management",
+   "label": "Leipold et al. 2026",
+   "path": "vault/references/leipold-2026-wikifair.json"
+  },
+  {
+   "slug": "liu-2024",
+   "kind": "publication",
+   "title": "Large Language Model-Based Agents for Software Engineering: A Survey",
+   "label": "Liu et al. 2024",
+   "path": "vault/references/liu-2024-llm-agents-se-survey.json"
+  },
+  {
+   "slug": "llmdh-summer-school-2025",
+   "kind": "representation",
+   "title": "Large Language Models for Digital Humanities Research",
+   "label": "Large Language Models for Digital Humanities Research",
+   "path": "vault/00_representation/documents/llmdh-summer-school-2025.md"
+  },
+  {
+   "slug": "lucassen-2016",
+   "kind": "publication",
+   "title": "Improving agile requirements: the Quality User Story framework and tool",
+   "label": "Lucassen et al. 2016",
+   "path": "vault/references/lucassen-2016-quality-user-story.json"
+  },
+  {
+   "slug": "m3gim-vocab-derivation-2026-07-24",
+   "kind": "representation",
+   "title": "Findings on deriving a domain document from a formal vocabulary",
+   "label": "Findings on deriving a domain document from a formal vocabulary",
+   "path": "vault/00_representation/documents/m3gim-vocab-derivation-2026-07-24.md"
+  },
+  {
+   "slug": "macedo-2026",
+   "kind": "publication",
+   "title": "From Prompt to Process: a Process Taxonomy and Comparative Assessment of Frameworks Supporting AI Software Development Agents",
+   "label": "Macedo 2026",
+   "path": "vault/references/macedo-2026-from-prompt-to-process.json"
+  },
+  {
+   "slug": "mariani-2025",
+   "kind": "publication",
+   "title": "PROV-A, a Web-Based Tool for Structuring Provenance as Linked Open Data",
+   "label": "Mariani 2025",
+   "path": "vault/references/mariani-2025-prov-a.json"
+  },
+  {
+   "slug": "marwick-2018",
+   "kind": "publication",
+   "title": "Packaging Data Analytical Work Reproducibly Using R (and Friends)",
+   "label": "Marwick et al. 2018",
+   "path": "vault/references/marwick-2018-research-compendium.json"
+  },
+  {
+   "slug": "mayr-2021",
+   "kind": "publication",
+   "title": "The Triptych of Conceptual Modeling: A Framework for a Better Understanding of Conceptual Modeling",
+   "label": "Mayr and Thalheim 2021",
+   "path": "vault/references/mayr-2021-triptych-conceptual-modeling.json"
+  },
+  {
+   "slug": "mei-2025",
+   "kind": "publication",
+   "title": "A Survey of Context Engineering for Large Language Models",
+   "label": "Mei et al. 2025",
+   "path": "vault/references/mei-2025-context-engineering-survey.json"
+  },
+  {
+   "slug": "miksa-2019",
+   "kind": "publication",
+   "title": "Ten Principles for Machine-Actionable Data Management Plans",
+   "label": "Miksa et al. 2019",
+   "path": "vault/references/miksa-2019-machine-actionable-dmps.json"
+  },
+  {
+   "slug": "owens-2011",
+   "kind": "publication",
+   "title": "Defining Data for Humanists: Text, Artifact, Information or Evidence?",
+   "label": "Owens 2011",
+   "path": "vault/references/owens-2011-defining-data-for-humanists.json"
+  },
+  {
+   "slug": "pichler-2022",
+   "kind": "publication",
+   "title": "From Concepts to Texts and Back: Operationalization as a Core Activity of Digital Humanities",
+   "label": "Pichler and Reiter 2022",
+   "path": "vault/references/pichler-2022-operationalization.json"
+  },
+  {
+   "slug": "pierazzo-2015",
+   "kind": "publication",
+   "title": "Digital Scholarly Editing: Theories, Models and Methods",
+   "label": "Pierazzo 2015",
+   "path": "vault/references/pierazzo-2015-digital-scholarly-editing.json"
+  },
+  {
+   "slug": "pollin-2019",
+   "kind": "publication",
+   "title": "Digital Edition Publishing Cooperative for Historical Accounts and the Bookkeeping Ontology",
+   "label": "Pollin 2019",
+   "path": "vault/references/pollin-2019-depcha-bookkeeping-ontology.json"
+  },
+  {
+   "slug": "pollin-2024",
+   "kind": "publication",
+   "title": "Workshopreihe \"Angewandte Generative KI in den (digitalen) Geisteswissenschaften\"",
+   "label": "Pollin 2024",
+   "path": "vault/references/pollin-2024-workshopreihe.json"
+  },
+  {
+   "slug": "pollin-2025a",
+   "kind": "publication",
+   "title": "When it was 2024 – Generative AI in the Field of Digital Scholarly Editions",
+   "label": "Pollin et al. 2025",
+   "path": "vault/references/pollin-2025a-when-it-was-2024.json"
+  },
+  {
+   "slug": "pollin-2025b",
+   "kind": "publication",
+   "title": "Modelling, Operationalising and Exploring Historical Information. Using Historical Financial Sources as an Example",
+   "label": "Pollin 2025",
+   "path": "vault/references/pollin-2025b-dissertation.json"
+  },
+  {
+   "slug": "pollin-2025c",
+   "kind": "publication",
+   "title": "Promptotyping mit Claude Sonnet 4. Vibe-Coding erfordert den Critical-Expert-in-the-Loop",
+   "label": "Pollin 2025",
+   "path": "vault/references/pollin-2025c-critical-vibing.json"
+  },
+  {
+   "slug": "pollin-2025d",
+   "kind": "publication",
+   "title": "Promptotyping: Von der Idee zur Anwendung",
+   "label": "Pollin 2025",
+   "path": "vault/references/pollin-2025d-promptotyping-blog.json"
+  },
+  {
+   "slug": "pollin-2026a",
+   "kind": "publication",
+   "title": "Asymmetric Amplification. Why AI Does Not Automate Research — But Disruptively Amplifies Computer-Based Research Work",
+   "label": "Pollin 2026",
+   "path": "vault/references/pollin-2026a-asymmetric-amplification.json"
+  },
+  {
+   "slug": "pollin-2026b",
+   "kind": "publication",
+   "title": "Promptotyping: Zwischen Vibe Coding, Vibe Research und Context Engineering",
+   "label": "Pollin 2026",
+   "path": "vault/references/pollin-2026b-lisa-positioning.json"
+  },
+  {
+   "slug": "posner-2015",
+   "kind": "publication",
+   "title": "Humanities Data: A Necessary Contradiction",
+   "label": "Posner 2015",
+   "path": "vault/references/posner-2015-necessary-contradiction.json"
+  },
+  {
+   "slug": "procida-2024",
+   "kind": "publication",
+   "title": "Diátaxis: A systematic framework for technical documentation authoring",
+   "label": "Procida 2024",
+   "path": "vault/references/procida-2024-diataxis.json"
+  },
+  {
+   "slug": "promptotyping-video-1-introduction",
+   "kind": "representation",
+   "title": "Einführung in Promptotyping, Teil 1",
+   "label": "Einführung in Promptotyping, Teil 1",
+   "path": "vault/00_representation/documents/promptotyping-video-1-introduction.md"
+  },
+  {
+   "slug": "promptotyping-video-2-live-demo",
+   "kind": "representation",
+   "title": "Einführung in Promptotyping, Teil 2 (Live-Demonstration)",
+   "label": "Einführung in Promptotyping, Teil 2 (Live-Demonstration)",
+   "path": "vault/00_representation/documents/promptotyping-video-2-live-demo.md"
+  },
+  {
+   "slug": "revision-audit-a1-2026-07-23",
+   "kind": "representation",
+   "title": "Revision-Audit A1 — Claim-Evidenz-Prüfung der Transferbehauptung",
+   "label": "Revision-Audit A1 — Claim-Evidenz-Prüfung der Transferbehauptung",
+   "path": "vault/00_representation/documents/revision-audit-a1-2026-07-23.md"
+  },
+  {
+   "slug": "revision-audit-a2-2026-07-23",
+   "kind": "representation",
+   "title": "Revision Audit A2",
+   "label": "Revision Audit A2",
+   "path": "vault/00_representation/documents/revision-audit-a2-2026-07-23.md"
+  },
+  {
+   "slug": "risam-2022",
+   "kind": "publication",
+   "title": "Introduction: The Questions of Minimal Computing",
+   "label": "Risam and Gil 2022",
+   "path": "vault/references/risam-2022-minimal-computing.json"
+  },
+  {
+   "slug": "roberts-2007",
+   "kind": "publication",
+   "title": "State of the Art: Coordinated & Multiple Views in Exploratory Visualization",
+   "label": "Roberts 2007",
+   "path": "vault/references/roberts-2007-coordinated-multiple-views.json"
+  },
+  {
+   "slug": "ruecker-2015",
+   "kind": "publication",
+   "title": "A Brief Taxonomy of Prototypes for the Digital Humanities",
+   "label": "Ruecker 2015",
+   "path": "vault/references/ruecker-2015-taxonomy-of-prototypes.json"
+  },
+  {
+   "slug": "sacha-2014",
+   "kind": "publication",
+   "title": "Knowledge Generation Model for Visual Analytics",
+   "label": "Sacha 2014",
+   "path": "vault/references/sacha-2014-knowledge-generation-model.json"
+  },
+  {
+   "slug": "saltzer-1975",
+   "kind": "publication",
+   "title": "The Protection of Information in Computer Systems",
+   "label": "Saltzer and Schroeder 1975",
+   "path": "vault/references/saltzer-1975-protection-of-information.json"
+  },
+  {
+   "slug": "sarkar-2025",
+   "kind": "publication",
+   "title": "Vibe Coding: Programming through Conversation with Artificial Intelligence",
+   "label": "Sarkar and Drosos 2025",
+   "path": "vault/references/sarkar-2025-vibe-coding.json"
+  },
+  {
+   "slug": "schoech-2013",
+   "kind": "publication",
+   "title": "Big? Smart? Clean? Messy? Data in the Humanities",
+   "label": "Schöch 2013",
+   "path": "vault/references/schoech-2013-big-smart-clean-messy.json"
+  },
+  {
+   "slug": "schonhardt-2026",
+   "kind": "publication",
+   "title": "Do One Thing and Do It Well. Vier Prinzipien einer digitalen Editionspraxis im Spannungsfeld zwischen fachlichen Standards und Deep Learning",
+   "label": "Schonhardt 2026",
+   "path": "vault/references/schonhardt-2026-do-one-thing.json"
+  },
+  {
+   "slug": "sdd-bmad-method-2026-07-24",
+   "kind": "representation",
+   "title": "BMAD-METHOD",
+   "label": "BMAD-METHOD",
+   "path": "vault/00_representation/documents/sdd-bmad-method-2026-07-24.md"
+  },
+  {
+   "slug": "sdd-kiro-2026-07-24",
+   "kind": "representation",
+   "title": "AWS Kiro",
+   "label": "AWS Kiro",
+   "path": "vault/00_representation/documents/sdd-kiro-2026-07-24.md"
+  },
+  {
+   "slug": "sdd-openspec-2026-07-24",
+   "kind": "representation",
+   "title": "OpenSpec",
+   "label": "OpenSpec",
+   "path": "vault/00_representation/documents/sdd-openspec-2026-07-24.md"
+  },
+  {
+   "slug": "sdd-spec-kit-2026-07-24",
+   "kind": "representation",
+   "title": "GitHub Spec Kit",
+   "label": "GitHub Spec Kit",
+   "path": "vault/00_representation/documents/sdd-spec-kit-2026-07-24.md"
+  },
+  {
+   "slug": "shanahan-2023",
+   "kind": "publication",
+   "title": "Role play with large language models",
+   "label": "Shanahan et al. 2023",
+   "path": "vault/references/shanahan-2023-role-play.json"
+  },
+  {
+   "slug": "sharma-2023",
+   "kind": "publication",
+   "title": "Towards Understanding Sycophancy in Language Models",
+   "label": "Sharma et al. 2023",
+   "path": "vault/references/sharma-2023-sycophancy.json"
+  },
+  {
+   "slug": "siemens-2009",
+   "kind": "publication",
+   "title": "'It's a team if you use \"reply all\"': An Exploration of Research Teams in Digital Humanities Environments",
+   "label": "Siemens 2009",
+   "path": "vault/references/siemens-2009-reply-all-teams.json"
+  },
+  {
+   "slug": "soiland-2022",
+   "kind": "publication",
+   "title": "Packaging Research Artefacts with RO-Crate",
+   "label": "Soiland-Reyes 2022",
+   "path": "vault/references/soiland-2022-ro-crate.json"
+  },
+  {
+   "slug": "stanicka-2026",
+   "kind": "publication",
+   "title": "Cross-Linking of Vocabularies for Art, Architecture, and Material Culture: Methods, Strategies, Practice, and the AI Perspective",
+   "label": "Stanicka-Brzezicka 2026",
+   "path": "vault/references/stanicka-2026-cross-linking-vocabularies.json"
+  },
+  {
+   "slug": "star-1989",
+   "kind": "publication",
+   "title": "Institutional Ecology, 'Translations' and Boundary Objects: Amateurs and Professionals in Berkeley's Museum of Vertebrate Zoology, 1907–39",
+   "label": "Star and Griesemer 1989",
+   "path": "vault/references/star-1989-boundary-objects.json"
+  },
+  {
+   "slug": "strutz-2025",
+   "kind": "publication",
+   "title": "Hammer-Purgstall Correspondence TEI Evaluation Dataset",
+   "label": "Strutz 2025",
+   "path": "vault/references/strutz-2025-hammer-purgstall-tei-dataset.json"
+  },
+  {
+   "slug": "strutz-2026",
+   "kind": "publication",
+   "title": "A Multi-Dimensional Evaluation Framework for Assessing LLM Performance in TEI Encoding",
+   "label": "Strutz 2026",
+   "path": "vault/references/strutz-2026-tei-evaluation-framework.json"
+  },
+  {
+   "slug": "szd-htr-evaluation-results-2026-06-10",
+   "kind": "representation",
+   "title": "Evaluationsergebnisse: CER-Baseline der SZD-HTR-Pipeline",
+   "label": "Evaluationsergebnisse: CER-Baseline der SZD-HTR-Pipeline",
+   "path": "vault/00_representation/documents/szd-htr-evaluation-results-2026-06-10.md"
+  },
+  {
+   "slug": "szd-htr-fair4rs-audit-2026-07-23",
+   "kind": "representation",
+   "title": "Verifikation: FAIR4RS-Status des Repositories",
+   "label": "Verifikation: FAIR4RS-Status des Repositories",
+   "path": "vault/00_representation/documents/szd-htr-fair4rs-audit-2026-07-23.md"
+  },
+  {
+   "slug": "unsworth-2000",
+   "kind": "publication",
+   "title": "Scholarly Primitives: What Methods Do Humanities Researchers Have in Common, and How Might Our Tools Reflect This?",
+   "label": "Unsworth 2000",
+   "path": "vault/references/unsworth-2000-scholarly-primitives.json"
+  },
+  {
+   "slug": "vanes-2018",
+   "kind": "publication",
+   "title": "Tool Criticism: From Digital Methods to Digital Methodology",
+   "label": "van Es et al. 2018",
+   "path": "vault/references/vanes-2018-tool-criticism.json"
+  },
+  {
+   "slug": "verification-paper-figures-2026-07-19",
+   "kind": "representation",
+   "title": "Verification of Section 4 Figures",
+   "label": "Verification of Section 4 Figures",
+   "path": "vault/00_representation/documents/verification-paper-figures-2026-07-19.md"
+  },
+  {
+   "slug": "whitelaw-2015",
+   "kind": "publication",
+   "title": "Generous Interfaces for Digital Cultural Collections",
+   "label": "Whitelaw 2015",
+   "path": "vault/references/whitelaw-2015-generous-interfaces.json"
+  },
+  {
+   "slug": "wilkinson-2016",
+   "kind": "publication",
+   "title": "The FAIR Guiding Principles for Scientific Data Management and Stewardship",
+   "label": "Wilkinson 2016",
+   "path": "vault/references/wilkinson-2016-fair-principles.json"
+  },
+  {
+   "slug": "windhager-2019",
+   "kind": "publication",
+   "title": "Visualization of Cultural Heritage Collection Data: State of the Art and Future Challenges",
+   "label": "Windhager 2019",
+   "path": "vault/references/windhager-2019-visualization-ch-collections.json"
+  },
+  {
+   "slug": "yehudai-2025",
+   "kind": "publication",
+   "title": "Survey on Evaluation of LLM-based Agents",
+   "label": "Yehudai et al. 2025",
+   "path": "vault/references/yehudai-2025-survey-evaluation-llm-agents.json"
+  },
+  {
+   "slug": "zheng-2023",
+   "kind": "publication",
+   "title": "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena",
+   "label": "Zheng et al. 2023",
+   "path": "vault/references/zheng-2023-llm-as-a-judge.json"
   }
  ]
 }
