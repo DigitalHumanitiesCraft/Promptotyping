@@ -376,6 +376,8 @@ Galey, Alan, and Stan Ruecker. 2010. “How a Prototype Argues.” *Literary and
 
 Geiger, Jonathan D. 2024. “Daten / Forschungsdaten.” In *Begriffe der Digital Humanities: Ein diskursives Glossar*, edited by AG Digital Humanities Theorie des Verbandes Digital Humanities im deutschsprachigen Raum. Version 2.0. *Zeitschrift für digitale Geisteswissenschaften / Working Papers* 2. [https://doi.org/10.17175/wp_2023_003_v2](https://doi.org/10.17175/wp_2023_003_v2).
 
+Glazer, Elliot, Ege Erdil, Tamay Besiroglu, Diego Chicharro, Evan Chen, Alex Gunning, Caroline Falkman Olsson, et al. 2024. “FrontierMath: A Benchmark for Evaluating Advanced Mathematical Reasoning in AI.” *arXiv*. [https://doi.org/10.48550/arXiv.2411.04872](https://doi.org/10.48550/arXiv.2411.04872).
+
 Goldschmidt, Gabriela. 2003. “The Backtalk of Self-Generated Sketches.” *Design Issues* 19 (1): 72–88. [https://doi.org/10.1162/074793603762667728](https://doi.org/10.1162/074793603762667728).
 
 Green, Ben. 2022. “The Flaws of Policies Requiring Human Oversight of Government Algorithms.” *Computer Law & Security Review* 45: 105681. [https://doi.org/10.1016/j.clsr.2022.105681](https://doi.org/10.1016/j.clsr.2022.105681).
@@ -387,6 +389,8 @@ Hertzum, Morten. 2024. “Concurrent or Retrospective Thinking Aloud in Usabilit
 Hong, Kelly, Anton Troynikov, and Jeff Huber. 2025. “Context Rot: How Increasing Input Tokens Impacts LLM Performance.” Chroma Research. [https://research.trychroma.com/context-rot](https://research.trychroma.com/context-rot).
 
 Hora, Andre, and Romain Robbes. 2026. “Are Coding Agents Generating Over-Mocked Tests? An Empirical Study.” In *Proceedings of the International Conference on Mining Software Repositories (MSR 2026)*. [https://doi.org/10.48550/arXiv.2602.00409](https://doi.org/10.48550/arXiv.2602.00409).
+
+Hubert, Thomas, Rishi Mehta, Laurent Sartran, Miklós Z. Horváth, Goran Žužić, Eric Wieser, Aja Huang, et al. 2025. “Olympiad-Level Formal Mathematical Reasoning with Reinforcement Learning.” *Nature* 651 (8106): 607–613. [https://doi.org/10.1038/s41586-025-09833-y](https://doi.org/10.1038/s41586-025-09833-y).
 
 IEEE. 2017. *IEEE Standard for System, Software, and Hardware Verification and Validation*. IEEE Std 1012-2016. New York: IEEE. [https://doi.org/10.1109/IEEESTD.2017.8055462](https://doi.org/10.1109/IEEESTD.2017.8055462).
 
@@ -511,7 +515,7 @@ The figures are stored under `assets/figures/` in the accompanying repository an
 
 [^23]: Research-software sustainability involves technical qualities such as maintainability and testability as well as organisational conditions including resourcing, support, governance, shared ownership, and continued stewardship, which the FAIR principles for research software also address. See Mário Rosado de Souza et al., “What Makes Research Software Sustainable? An Interview Study with Research Software Engineers”, in *2019 IEEE/ACM 12th International Workshop on Cooperative and Human Aspects of Software Engineering* (2019), [https://doi.org/10.1109/CHASE.2019.00039](https://doi.org/10.1109/CHASE.2019.00039); and Michelle Barker et al., “Introducing the FAIR Principles for Research Software”, *Scientific Data* 9 (2022): 622, [https://doi.org/10.1038/s41597-022-01710-x](https://doi.org/10.1038/s41597-022-01710-x).
 
-[^24]: On the task-completion time horizon, its measured growth, and the caution attached to it, see n. 12 above. Results from mathematical reasoning and formal-proof evaluations provide additional evidence of rapidly expanding but task-dependent capabilities; they should not be interpreted as a general measure of research automation.
+[^24]: On the task-completion time horizon, its measured growth, and the caution attached to it, see n. 12 above. Results from mathematical reasoning and formal-proof evaluations provide additional evidence of rapidly expanding but task-dependent capabilities (Glazer et al. 2024; Hubert et al. 2025); they should not be interpreted as a general measure of research automation.
 
 [^25]: I previously used *asymmetric amplification* to describe two related effects of frontier LLMs, that they particularly extend computer-based research activities and that the resulting leverage is unevenly distributed (Pollin 2026b). The present chapter develops the concept specifically in relation to project-specific digital research artefacts and Promptotyping.
 
