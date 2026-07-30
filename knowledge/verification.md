@@ -5,9 +5,9 @@ project:
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 status: active
 language: en
-version: 0.2
+version: 0.3
 created: 2026-07-26
-updated: 2026-07-26
+updated: 2026-07-29
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Opus 5)
 method:
@@ -91,7 +91,7 @@ The dividing line is the one part 5 draws. Where a rule decides, a script runs i
 
 **Why it matters.** The glossary stands twice, as the data source the site fetches at run time and as the Markdown file a reader or a machine retrieves under the address the frontmatter publishes. Part 5 requires that a generated document is rendered by a script, and this file was the one place on the site where the rule was broken; the mirror was edited by hand. Two hand-kept copies of the same term diverge quietly, and the tooltip then says something other than the page.
 
-**Procedure.** The generator holds the non-derivable head of the file, meaning the frontmatter, the H1 and the lead paragraph, and renders one block per entry from `begriff`, `kurz`, `voll` and `quelle` in the order of the JSON array. Any further field in an entry stays in the data and is not rendered. The check calls the generator and reports the first line at which the file on disk departs from it. Writing the file is a separate run of `tools/build_glossar.py` without arguments.
+**Procedure.** The generator holds the non-derivable head of the file, meaning the frontmatter, the H1 and the lead paragraph, and renders one block per entry from `begriff`, `kurz`, `voll` and the structured `quellen` list in the order of the JSON array; since A34 the sources render as hash links, which puts the mirror under the anchor check of V8. Any further field in an entry stays in the data and is not rendered. The check calls the generator and reports the first line at which the file on disk departs from it. Writing the file is a separate run of `tools/build_glossar.py` without arguments.
 
 **Verdict, 2026-07-26.** Passes. Both files were byte-identical with the generator output when the generator was written, which is what established that the body is fully derivable.
 
@@ -124,6 +124,38 @@ The dividing line is the one part 5 draws. Where a rule decides, a script runs i
 **Procedure.** A declared table pairs an anchor phrase required in Section 1 with the dependent phrase that makes it obligatory. The dependent side is searched in the rest of the paper and in `paper-writing.md`, so a decision recorded only in the steering document also holds its anchor. A pair falls silent when the dependent phrase goes, which keeps the table from outliving its reasons. Six pairs are declared, for the requirements-engineering origin, Kemman's trading zone, the marked inference beyond Carver, the June 2023 waypoint, the dissertation's four-item difficulty profile, and the capacity gap.
 
 **Verdict, 2026-07-27.** Passes. The regression case is the third rewrite of that day, in which two of the six pairs were broken and both were reported.
+
+### V11. The glossary's source layer and taxonomy hold their vocabularies
+
+**Claim.** Every glossary entry names at least one source, every source states a type the schema declares, every address sits under the anchor family its type prescribes, every cited reference id is one the paper's own list mints, every entry carries a category that `_meta.kategorien` names, and every category has exactly one mark in `CATEGORY_MARKS`.
+
+**Why it matters.** The source layer of A34 and the taxonomy of A36 are curated data whose failure is silent in both directions. A source under the wrong family renders as a link into nothing, a `ref-` key the paper does not mint passes any prefix test, a category the render table does not know shows an entry without a mark, and a mark nothing names is dead presentation. The reference ids are rebuilt from the paper's list rather than trusted by prefix.
+
+**Verdict, 2026-07-29.** Passes, written with the layer itself. The four failure ways were each provoked once during the build of A34 and A36 and each reported, including a bogus paper anchor, a bogus `ref-` id, an unknown category and an orphan vocabulary value. The checks run inside the anchor group of V8.
+
+### V12. The action layer names every id the registry mounts
+
+**Claim.** Every page and part id in `PAGES` of `assets/js/registry.js` appears as a hash anchor in the anchor scheme of `CLAUDE.md`.
+
+**Why it matters.** V8 runs the other direction, every address the prose names must exist. This closes the remaining gap: a page added to the registry is live and addressable while the published scheme the next agent reads never heard of it. On the day the group was written it found two, `#workflow` had never been in the scheme and `#paper` had only its section family listed.
+
+**Verdict, 2026-07-29.** Passes after the two missing ids were added to the scheme; the regression case is removing one of them, which the check reports.
+
+### V13. The requirement numbers are unique and every cited one exists
+
+**Claim.** No A-number heading in `knowledge/specification.md` occurs twice, and every bare A-number cited in the action layer or a core knowledge document has a heading. Gaps in the sequence are allowed, since a withdrawn requirement keeps its number reserved.
+
+**Why it matters.** The numbers are the requirement identifiers of this knowledge base, cited across the action layer, the plan and the design grounds. A duplicate splits one identifier over two requirements, and a citation without a heading sends the reader to nothing while the citing sentence keeps reading well. The paper texts and `INDEX.md` stay outside the citing set, because `INDEX.md` names the archived audits A1 and A2, which are records rather than requirements.
+
+**Verdict, 2026-07-29.** Passes. Both failure ways were provoked once and reported, a citation of a number without a heading and a duplicated heading.
+
+### V14. Everything the vault index points at exists
+
+**Claim.** Every claim slug in `data/vault.json` is a file under `vault/20_claims/`, and every distillate and source path the index carries is a file of this repository.
+
+**Why it matters.** The index is generated by `vault/tools/build_site_index.py` and committed, so a rename or removal in the vault leaves stale entries behind until the generator is re-run, and the vault page then links into nothing. The reverse direction is open by construction and stays unchecked: a claim outside every topic map is legitimately absent from the index, so absence proves nothing.
+
+**Verdict, 2026-07-29.** Passes. The regression case is renaming a claim slug in a copy of the index, which the check reports.
 
 ## What is not checked automatically, and why
 

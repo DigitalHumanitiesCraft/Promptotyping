@@ -18,7 +18,7 @@ template:
   version: 0.2
   url: https://dhcraft.org/Promptotyping/promptotyping-document/index
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-index
-related: [project, specification, architecture, design, journal, paper, paper-draft, paper-knowledge, paper-writing, verification-draft-sources, paper-argument-map, report, submission-zfdg, revision, skriptum-video-1, skriptum-video-2]
+related: [project, specification, architecture, design, journal, plan, paper, paper-draft, paper-knowledge, paper-writing, verification-draft-sources, paper-argument-map, report, submission-zfdg, revision, skriptum-video-1, skriptum-video-2]
 ---
 
 # INDEX
@@ -49,7 +49,7 @@ By operator decision of 2026-07-23 the core knowledge documents (INDEX, project,
 - **[verification-draft-sources.md](verification-draft-sources.md)** — verdict table for the draft's 2025 and 2026 sources, one row per work with the check that ran and what it found. German.
 - **[paper-argument-map.md](paper-argument-map.md)** — the concept model of the paper, one argument chain per block in compact notation with confirmation status, German. Serves the operator as a review instrument and an agent as a generation basis.
 - **[skriptum-video-1.md](skriptum-video-1.md)** and **[skriptum-video-2.md](skriptum-video-2.md)** — the cleaned scripts of the two introductory videos, German. They are the source from which the worked-workflow page was written and, through their representations in the vault, the ground of the claims that rest on the videos.
-- **[plan.md](plan.md)** — the frontend work packages agreed on 2026-07-29, F1 to F8 with scope, specification impact, and pending operator decisions per package (function: Planning).
+- **[plan.md](plan.md)** — the frontend work packages agreed on 2026-07-29, F1 to F9 with scope, specification impact, and pending operator decisions per package, plus the state section of the execution run of the same night (function: Planning).
 - **[report.md](report.md)** — snapshot report of the lane run towards the ZfdG submission (2026-07-23), German; carries a dated addendum on what the revision round settled and is not otherwise updated.
 - **[submission-zfdg.md](submission-zfdg.md)** — submission package for the Zeitschrift für digitale Geisteswissenschaften: exposé with outline and literature selection, short abstracts in German and English, formalities checklist; German.
 - **[revision.md](revision.md)** — the revision round in one document, since the consolidation of 2026-07-26. It carries the steering knowledge that binds future review commissions, what was carried into the paper and where it now sits, the evidence layer with its counting methods and provenance grades, the negative findings that protect the text from being weakened, and what stayed open; German (function: Verification).

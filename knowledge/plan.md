@@ -136,4 +136,4 @@ The operator released the plan for execution as a whole on the evening of 2026-0
 - **F4** ran as a first pass (A37) and awaits the operator's acceptance of the view.
 - **F8** stands as the reviewable slide selection under its section above; the export is blocked on access to the decks themselves, since the Obsidian vault holds slide texts without any image form.
 - **F5, F6, F7** remain open as specified, bound to the operator's option pick, the chapter acceptance, and the page-text acceptance.
-- Beyond this plan, one package from the same release remains open, the knowledge-base coherence pass with a widening of `tools/check_consistency.py`; the run closed before it started.
+- The knowledge-base coherence pass from the same release ran after the session close, in the main session because the subagent route was blocked by API overload: `tools/check_consistency.py` gained the groups V12 to V14 of [verification.md](verification.md), and the coherence findings are recorded in the journal.
