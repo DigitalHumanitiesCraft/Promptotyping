@@ -10,6 +10,14 @@ generator:
     acceptance, and every delivered intermediate version is archived under
     candidates/.
 
+# File numbers are stable identifiers and are never renamed. Since the
+# Fassung 4 revision (intake 2026-07-30) the manuscript carries five figures,
+# so manuscript numbering diverges from file numbering from figure-04 onward;
+# manuscript_number records the caption number in the current draft.
+# figure-03 fell with the former section 4.3 (operator decision 2026-07-30:
+# the losses of the external revision are accepted); file, prompt record,
+# and candidates stay archived.
+
 figures:
   - number: 1
     id: promptotyping-method
@@ -18,6 +26,7 @@ figures:
     prompt: "prompts/figure-01-promptotyping-method.md"
     source_candidate: "candidates/iteration-loop--2026-07-29--19-51-24.png"
     status: accepted
+    manuscript_number: 1
     purpose: "Define the method and relation among work forms, write-back, acceptance, and promptotype."
     author_verified: true
 
@@ -28,6 +37,7 @@ figures:
     prompt: "prompts/figure-02-knowledge-context-authority.md"
     source_candidate: "candidates/checking-architecture--2026-07-29--20-01-22.png"
     status: accepted
+    manuscript_number: 2
     purpose: "Distinguish project knowledge, selected context, agentic implementation, evidence, verification, and acceptance."
     author_verified: true
 
@@ -37,7 +47,9 @@ figures:
     file: "figure-03-comparative-iterations.png"
     prompt: "prompts/figure-03-comparative-iterations.md"
     source_candidate: "candidates/iteration-anatomy--2026-07-29--20-00-10.png"
-    status: accepted
+    status: retired
+    manuscript_number: null
+    retired: "2026-07-30, with the former section 4.3; the Fassung 4 revision dropped both and the operator accepted the loss."
     purpose: "Compare project-specific emphases within a recurrent method."
     author_verified: true
 
@@ -48,6 +60,7 @@ figures:
     prompt: "prompts/figure-04-m3gim-loop.md"
     source_candidate: "candidates/m3gim-prospective--2026-07-29--19-59-34.png"
     status: accepted
+    manuscript_number: 3
     purpose: "Show the bidirectional relation among modelling, capture, interface interaction, documentation, and revision."
     author_verified: true
 
@@ -58,6 +71,7 @@ figures:
     prompt: "prompts/figure-05-zbz-e66.md"
     source_candidate: "candidates/zbz-e66--2026-07-29--19-59-45.png"
     status: accepted
+    manuscript_number: 4
     purpose: "Show the correction of unauthorised agent screening and the separation of evidence from human authorisation."
     author_verified: true
 
@@ -68,5 +82,6 @@ figures:
     prompt: "prompts/figure-06-notker-acceptance.md"
     source_candidate: "candidates/notker-acceptance--2026-07-29--19-59-50.png"
     status: accepted
+    manuscript_number: 5
     purpose: "Explain bounded proposal-stage acceptance without claiming edition completion."
     author_verified: true
