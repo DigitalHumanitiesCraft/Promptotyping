@@ -59,3 +59,16 @@ Reserve:
 - Cutler, Zach, Lane Harrison, Carolina Nobre, and Alexander Lex. 2025. "Crowdsourced Think-Aloud Studies." CHI 2025. DOI 10.1145/3706598.3714305. Scaling argument for observation-based evaluation.
 - Alvite-Díez, María-Luisa. 2025. "User Interfaces of Digital Scholarly Editions: A Proposal for an Evaluative Framework." International Journal of Digital Humanities 7 (1): 153–172. DOI 10.1007/s42803-025-00102-y. Expert criteria and observed use deliver separate findings for digital editions.
 - Gautam, Sanjana, Houjiang Liu, Yujin Choi, and Matthew Lease. 2026. "How Researchers Navigate Accountability, Transparency, and Trust When Using AI Tools in Early-Stage Research: A Think-Aloud Study." arXiv:2604.23136. Preprint. Requirements for AI research tools emerged only from observing actual use.
+
+## 5. Recovered citations (2026-07-30, all web-verified, resolve the manuscript's dangling author-date citations)
+
+Ready-to-paste Chicago entries; verified-at URLs in parentheses. Title separators normalised to the Chicago colon; Russell/Norvig kept at 2020 to match the in-text citation and trade data (LoC CIP says [2021], noted as reservation).
+
+- Ciula, Arianna, Øyvind Eide, Cristina Marras, and Patrick Sahle. 2023. *Modelling Between Digital and Humanities: Thinking in Practice*. Cambridge, UK: Open Book Publishers. https://doi.org/10.11647/OBP.0369. (openbookpublishers.com, Crossref)
+- Fickers, Andreas. 2020. "Update für die Hermeneutik: Geschichtswissenschaft auf dem Weg zur digitalen Forensik?" *Zeithistorische Forschungen / Studies in Contemporary History* 17 (1): 157–68. https://doi.org/10.14765/zzf.dok-1765. (zeithistorische-forschungen.de)
+- Herrmann, J. Berenike, Anne-Sophie Bories, Francesca Frontini, Clèmence Jacquot, Steffen Pielström, Simone Rebora, Geoffrey Rockwell, and Stéfan Sinclair. 2023. "Tool Criticism in Practice: On Methods, Tools and Aims of Computational Literary Studies." *Digital Humanities Quarterly* 17 (2). https://doi.org/10.63744/apvw2r52eet3. (dhq.digitalhumanities.org)
+- Russell, Stuart J., and Peter Norvig. 2020. *Artificial Intelligence: A Modern Approach*. 4th ed. Hoboken, NJ: Pearson. (openlibrary.org, pearson.com)
+- Lewis, Patrick, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal, Heinrich Küttler, Mike Lewis, Wen-tau Yih, Tim Rocktäschel, Sebastian Riedel, and Douwe Kiela. 2020. "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks." In *Advances in Neural Information Processing Systems 33*, 9459–74. Red Hook, NY: Curran Associates. (proceedings.neurips.cc, dblp)
+- Schön, Donald A. 1996. "Reflective Conversation with Materials: An Interview with Donald Schön by John Bennett." In *Bringing Design to Software*, edited by Terry Winograd, 171–89. New York: ACM Press. https://doi.org/10.1145/229868.230044. (hci.stanford.edu full text, Crossref)
+- Goldschmidt, Gabriela. 2003. "The Backtalk of Self-Generated Sketches." *Design Issues* 19 (1): 72–88. https://doi.org/10.1162/074793603762667728. (Crossref, direct.mit.edu)
+- Karpathy, Andrej. 2026. "LLM Wiki." GitHub Gist, April 4, 2026. https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f. (gist verified; matches the footnote's three elements verbatim)
