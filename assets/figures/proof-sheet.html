@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Figure proof sheet, Promptotyping paper</title>
+<style>
+  :root {
+    --ink: #111111;
+    --grey: #666666;
+    --line: #d9d9d9;
+    --tint: #f7f7f7;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 48px 32px 96px;
+    background: #ffffff;
+    color: var(--ink);
+    font-family: Inter, 'Segoe UI', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+  main { max-width: 1400px; margin: 0 auto; }
+  h1 { font-size: 26px; font-weight: 600; margin: 0 0 12px; }
+  h2 { font-size: 19px; font-weight: 600; margin: 0 0 4px; }
+  p { margin: 0 0 14px; max-width: 78ch; }
+  .lede { color: var(--grey); }
+  .meta { font-size: 13px; color: var(--grey); margin: 0 0 20px; }
+  .meta code { font-family: Consolas, 'SFMono-Regular', Menlo, monospace; font-size: 12.5px; }
+  section.figure {
+    border-top: 1.5px solid var(--ink);
+    padding-top: 24px;
+    margin-top: 48px;
+  }
+  .caption {
+    background: var(--tint);
+    border-left: 3px solid var(--ink);
+    padding: 14px 18px;
+    margin: 0 0 24px;
+    font-size: 15px;
+    max-width: 100ch;
+  }
+  .caption b { font-weight: 600; }
+  .pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    align-items: start;
+  }
+  figure { margin: 0; }
+  figcaption {
+    font-size: 13px;
+    color: var(--grey);
+    margin: 0 0 8px;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 6px;
+  }
+  figcaption .tag { font-weight: 600; color: var(--ink); }
+  .frame {
+    border: 1px solid var(--line);
+    background: #ffffff;
+    padding: 10px;
+  }
+  .frame img { display: block; width: 100%; height: auto; }
+  .notes { margin-top: 18px; font-size: 14px; }
+  .notes ul { margin: 6px 0 0; padding-left: 20px; }
+  .notes li { margin-bottom: 4px; }
+  a { color: var(--ink); text-decoration: underline; text-underline-offset: 2px; }
+  .grammar { margin-top: 56px; border-top: 1.5px solid var(--ink); padding-top: 24px; }
+  .grammar table { border-collapse: collapse; font-size: 14px; margin-top: 12px; }
+  .grammar th, .grammar td {
+    text-align: left;
+    padding: 7px 20px 7px 0;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  @media (max-width: 900px) {
+    .pair { grid-template-columns: 1fr; }
+    body { padding: 32px 18px 64px; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <h1>Figure proof sheet, Promptotyping paper</h1>
+  <p class="lede">Each of the five manuscript figures appears twice, on the left the accepted raster from the interactive image generation of 2026-07-29, on the right the authored SVG built from a written specification. The caption above each pair is the manuscript text the figure has to satisfy. The question for review is whether the right-hand version carries every statement of the caption and whether the five together read as one system.</p>
+  <p class="meta">Rasters under <code>assets/figures/</code>, vectors under <code>assets/figures/svg/</code>, specifications under <code>assets/figures/specs/</code>. File numbers stay as they are, so the manuscript numbering diverges from the file numbering from Figure 3 onward. Figure 03 is retired and is not rebuilt.</p>
+
+  <section class="figure">
+    <h2>Figure 1, The Promptotyping method</h2>
+    <p class="meta">File <code>figure-01-promptotyping-method</code> · <a href="specs/figure-01-promptotyping-method.md">specification</a></p>
+    <p class="caption"><b>Figure 1. The Promptotyping method.</b> Preparation, Exploration, Distillation, and Implementation are recurrent forms of work rather than fixed stages. Findings arising from Implementation may return the work to earlier forms, most frequently to Distillation. The Critical Expert specifies and revises the knowledge documents and verifies the resulting artefact. Purpose-specific acceptance connects maintained project knowledge, the digital research artefact, the referenced research-data state, and the documented grounds of acceptance as an identifiable promptotype.</p>
+    <div class="pair">
+      <figure>
+        <figcaption><span class="tag">Current</span><span>PNG, ChatGPT Images 2.0</span></figcaption>
+        <div class="frame"><img src="figure-01-promptotyping-method.png" alt="Current raster of Figure 1"></div>
+      </figure>
+      <figure>
+        <figcaption><span class="tag">Proposed</span><span>SVG, authored from specification</span></figcaption>
+        <div class="frame"><img src="svg/figure-01-promptotyping-method.svg" alt="Proposed vector of Figure 1"></div>
+      </figure>
+    </div>
+    <div class="notes">
+      <ul>
+        <li>The three returns became dashed with an open head, so the corrective path is distinguishable from the productive one at a glance.</li>
+        <li>The claim about frequency moved from line weight into the label "most frequent return", which keeps stroke widths uniform across the series.</li>
+        <li>The human figure became the disc mark used throughout the series, and the legend now names it.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="figure">
+    <h2>Figure 2, Project knowledge, working context, implementation, and authority</h2>
+    <p class="meta">File <code>figure-02-knowledge-context-authority</code> · <a href="specs/figure-02-knowledge-context-authority.md">specification</a></p>
+    <p class="caption"><b>Figure 2. Project knowledge, working context, implementation, and authority in Promptotyping.</b> Task-specific working context is assembled from the versioned project knowledge base and, where required, from retrieved source material or derived context artefacts. An AI agent operating within a harness carries out bounded implementation and revision tasks that produce or modify a digital research artefact. Deterministic validation and agentic review provide evidence about the artefact but do not authorise scholarly claims. Critical Expert verification assesses source fidelity, design, and interpretation, and only responsible human contributors accept an iteration for its stated purpose.</p>
+    <div class="pair">
+      <figure>
+        <figcaption><span class="tag">Current</span><span>PNG, ChatGPT Images 2.0</span></figcaption>
+        <div class="frame"><img src="figure-02-knowledge-context-authority.png" alt="Current raster of Figure 2"></div>
+      </figure>
+      <figure>
+        <figcaption><span class="tag">Proposed</span><span>SVG, authored from specification</span></figcaption>
+        <div class="frame"><img src="svg/figure-02-knowledge-context-authority.svg" alt="Proposed vector of Figure 2"></div>
+      </figure>
+    </div>
+    <div class="notes">
+      <ul>
+        <li>Evidence reaches Critical Expert verification on a dashed arrow labelled "informs", so the non-authorising status of validation and review is carried by the line type as well as by the wording inside the evidence box.</li>
+        <li>The knowledge base is marked as versioned, which the caption states and the raster left implicit.</li>
+        <li>The tint now means one thing across the series, a container whose named constituents are drawn inside it, which here covers the knowledge base and the harness.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="figure">
+    <h2>Figure 3, Prospective Promptotyping in M³GIM</h2>
+    <p class="meta">File <code>figure-04-m3gim-loop</code> · <a href="specs/figure-04-m3gim-loop.md">specification</a></p>
+    <p class="caption"><b>Figure 3. Prospective Promptotyping during modelling and data capture in M³GIM.</b> The emerging data model shaped the generated exploration and capture environment, while interaction with the environment exposed requirements and limitations that informed documented revisions. The case shows how a promptotype can participate in the formation of project knowledge rather than merely implement an already stabilised model.</p>
+    <div class="pair">
+      <figure>
+        <figcaption><span class="tag">Current</span><span>PNG, ChatGPT Images 2.0</span></figcaption>
+        <div class="frame"><img src="figure-04-m3gim-loop.png" alt="Current raster of Figure 3"></div>
+      </figure>
+      <figure>
+        <figcaption><span class="tag">Proposed</span><span>SVG, authored from specification</span></figcaption>
+        <div class="frame"><img src="svg/figure-04-m3gim-loop.svg" alt="Proposed vector of Figure 3"></div>
+      </figure>
+    </div>
+    <div class="notes">
+      <ul>
+        <li>The circle became a racetrack, which suits a landscape column and lets every transition carry its label without crossing lines.</li>
+        <li>The two transitions that pass through the record are dashed, so the documented write-back is visible as such inside the circuit.</li>
+        <li>The figure carries no authority mark, because the caption makes no claim about who verified or accepted in this case.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="figure">
+    <h2>Figure 4, The ZBZ OCR/TEI workflow before and after decision E66</h2>
+    <p class="meta">File <code>figure-05-zbz-e66</code> · <a href="specs/figure-05-zbz-e66.md">specification</a></p>
+    <p class="caption"><b>Figure 4. The ZBZ OCR/TEI workflow before and after decision E66.</b> Before E66, an agent-generated assessment could appear as an authorised approval state. In the revised workflow, deterministic validation and agentic review contribute evidence, while only accountable editors authorise verification and acceptance. The project-specific failure also produced method-level write-back in the rule that an agent must never record approval, verification, or acceptance that a responsible person has not explicitly granted.</p>
+    <div class="pair">
+      <figure>
+        <figcaption><span class="tag">Current</span><span>PNG, ChatGPT Images 2.0</span></figcaption>
+        <div class="frame"><img src="figure-05-zbz-e66.png" alt="Current raster of Figure 4"></div>
+      </figure>
+      <figure>
+        <figcaption><span class="tag">Proposed</span><span>SVG, authored from specification</span></figcaption>
+        <div class="frame"><img src="svg/figure-05-zbz-e66.svg" alt="Proposed vector of Figure 4"></div>
+      </figure>
+    </div>
+    <div class="notes">
+      <ul>
+        <li>The disc appears once in the whole figure, on the right side. Its absence on the left is the visual form of the failure the case describes.</li>
+        <li>The divider carries the decision rather than a release, which is what the manuscript records for E66.</li>
+        <li>Verification now sits inside a box like every other station, so the right side reads as a workflow rather than as a chain interrupted by an ornament.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="figure">
+    <h2>Figure 5, Purpose-specific acceptance in the Notker edition case</h2>
+    <p class="meta">File <code>figure-06-notker-acceptance</code> · <a href="specs/figure-06-notker-acceptance.md">specification</a></p>
+    <p class="caption"><b>Figure 5. Purpose-specific acceptance in the Notker edition case.</b> Editorial guidelines, a TEI source model, and a limited sample were translated into an Edition Interface. The resulting state was accepted as a proposal demonstrator, not as a completed or publication-ready edition.</p>
+    <div class="pair">
+      <figure>
+        <figcaption><span class="tag">Current</span><span>PNG, ChatGPT Images 2.0</span></figcaption>
+        <div class="frame"><img src="figure-06-notker-acceptance.png" alt="Current raster of Figure 5"></div>
+      </figure>
+      <figure>
+        <figcaption><span class="tag">Proposed</span><span>SVG, authored from specification</span></figcaption>
+        <div class="frame"><img src="svg/figure-06-notker-acceptance.svg" alt="Proposed vector of Figure 5"></div>
+      </figure>
+    </div>
+    <div class="notes">
+      <ul>
+        <li>The eye icons of the raster are gone. They carried no information, and the rows are the modelled layers.</li>
+        <li>The tick mark became the disc used throughout the series, so acceptance is marked as a human decision rather than as a completed check.</li>
+        <li>The negative half of the acceptance card keeps the manuscript wording and holds the same visual weight as the positive half.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="grammar">
+    <h2>Shared visual grammar of the new series</h2>
+    <p>All five vectors carry one type scale, one stroke weight, one arrowhead geometry, and one meaning per visual distinction. Every figure that uses a distinction repeats it in a legend inside the figure.</p>
+    <table>
+      <tr><th>Device</th><th>Meaning</th><th>Used in</th></tr>
+      <tr><td>Solid line, filled head</td><td>Operational flow and authorising acts</td><td>All five</td></tr>
+      <tr><td>Dashed line, open head</td><td>Supporting relation, which covers write-back and the evidence relation</td><td>Figures 1, 2, 3, 4</td></tr>
+      <tr><td>Open circle with a filled disc</td><td>Accountable human authority, the only filled mark in any figure</td><td>Figures 1, 2, 4, 5</td></tr>
+      <tr><td>Tinted rectangle</td><td>Container whose named constituents are drawn inside it</td><td>Figures 1, 2, 5</td></tr>
+      <tr><td>Type, 16px semibold</td><td>Element names, always the manuscript's own terms</td><td>All five</td></tr>
+      <tr><td>Type, 13px regular</td><td>Secondary description inside an element</td><td>All five</td></tr>
+      <tr><td>Type, 11px grey</td><td>Edge labels and legend</td><td>All five</td></tr>
+      <tr><td>Palette</td><td>Black on white with three greys, no colour anywhere</td><td>All five</td></tr>
+    </table>
+  </section>
+
+</main>
+</body>
+</html>
