@@ -5,9 +5,9 @@ project:
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 status: active
 language: en
-version: 0.3
+version: 0.4
 created: 2026-07-26
-updated: 2026-07-29
+updated: 2026-07-30
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Opus 5)
 method:
@@ -59,21 +59,21 @@ The dividing line is the one part 5 draws. Where a rule decides, a script runs i
 
 ### V4. The gallery holds its own conditions
 
-**Claim.** Every card claiming a depth page has a file under `_content/case-studies/`, and every file there is claimed by a card. Card ids are unique. Every `role` value stands in `_meta.role_labels`. Every `interfaceTypes` value is one of the paper's five epistemic functions. A card claims a row of Table 1 exactly when its role is `evidence`.
+**Claim.** Every card claiming a depth page has a file under `_content/case-studies/`, and every file there is claimed by a card. Card ids are unique. Every `role` value stands in `_meta.role_labels`. Every `interfaceTypes` value is one of the five epistemic functions of the site's interface typology. A card claims a row of the paper's case table exactly when its role is `evidence`.
 
 **Why it matters.** A card claiming a depth page that does not exist opens an empty panel; a file no card claims is content nobody can reach. The two closed vocabularies carry meaning beyond their own list. The role decides which group heading a card appears under, and a role outside `role_labels` drops the card out of the gallery without a message. The interface types are the typology of section 4.2, and the first of them sets the hue of the card edge and the filter chips, so a value outside the five fails silently in both directions.
 
 **Verdict, 2026-07-26.** Passes. The description in this document named `useCase` and `_meta.use_case_labels` until the same date, which the vocabulary change of 2026-07-26 had replaced by `role` and `role_labels` without the text following.
 
-### V5. Every project the paper offers as evidence is reachable
+### V5. Every case the paper analyses is reachable
 
-**Claim.** Every project in Table 1 of section 5.2 has a card, every card that claims a Table 1 row finds that row in `knowledge/paper.md`, and where both sides describe the same project they agree on its interface types.
+**Claim.** Every case in Table 3 of section 4.3 has a card, and every card that claims a case-table row finds that row in `knowledge/paper.md`.
 
-**Why it matters.** This is the condition the gallery exists for. A reader who comes from the paper to check a claim of section 5.2 has to find the project, and three of the thirteen were unfindable until 2026-07-26. The typology cross-check matters for a second reason: the five interface types are an argument of section 4.2, so a card and a table row disagreeing about a project's type is a contradiction about the method.
+**Why it matters.** This is the condition the gallery exists for. A reader who comes from the paper to check a claim of section 4 has to find the project, and three of the thirteen were unfindable until 2026-07-26.
 
-**Procedure.** Parse the table under the header row `|Project|Data|Interface Type(s)|Methodological Contribution|`, keyed on that line so a new section cannot move it. Compare the project names against the `paper_row` field of the cards, in both directions, then compare the interface types per project.
+**Procedure.** Parse the table under the header row `| Case | Data state | Artefact | Central finding | Write-back or acceptance |`, keyed on that line so a new section cannot move it. Compare the case names against the `paper_row` field of the cards, in both directions.
 
-**Verdict, 2026-07-26.** Passes. On its first run it reported the three missing projects, VetMedAI Wissensbilanz, wiiw Patent Analysis and Medieval Legal Transactions, all three now carrying a card and a depth page. The ten projects that already had cards agreed with Table 1 on their interface types without exception.
+**Verdict, 2026-07-30.** Passes, re-keyed with the promotion of the five-chapter text. The check originally guarded the seven-chapter text's project inventory (Table 1, section 5.2) including a per-project interface-type comparison; the promoted paper carries no per-case interface types, so that comparison lapsed and the typology lives in the gallery data alone. Seven cases carry the evidence role now; the eight projects the paper no longer lists moved to the role `further` with their cards intact. The first run of the earlier form, 2026-07-26, reported three missing projects, all of which gained cards.
 
 ### V6. Every address the gallery publishes resolves
 
@@ -115,15 +115,11 @@ The dividing line is the one part 5 draws. Where a rule decides, a script runs i
 
 **Verdict, 2026-07-26.** Passes, with the four corrected statements as its regression case.
 
-### V10. Section 1 of the paper still carries what later sections say it carries
+### V10. Section 1 of the paper still carries what later sections say it carries (retired)
 
-**Claim.** Where a later section of `knowledge/paper.md` names something Section 1 established, or where `knowledge/paper-writing.md` records a decision as closed by a passage in Section 1, that passage is still in Section 1.
+**Claim, as it stood.** Where a later section of `knowledge/paper.md` named something Section 1 established, or where the steering document recorded a decision as closed by a passage in Section 1, that passage was still in Section 1. A declared table paired each anchor phrase with the dependent phrase that made it obligatory, and a pair fell silent when the dependent phrase went, which was the check's own retirement condition.
 
-**Why it matters.** The opening is the part of the paper that gets rewritten most often, and three successive rewrites in July 2026 dropped the same anchors each time. The failures are silent, because the later sections keep reading well on their own. Section 2.3 says "the same inference Section 1 draws" and Section 2.5 says "The workshop demonstration of June 2023 (Section 1)"; when the opening loses the marked inference, the paper attributes to Carver et al. a step the source does not carry, which the grounding vault forbids in the claim itself.
-
-**Procedure.** A declared table pairs an anchor phrase required in Section 1 with the dependent phrase that makes it obligatory. The dependent side is searched in the rest of the paper and in `paper-writing.md`, so a decision recorded only in the steering document also holds its anchor. A pair falls silent when the dependent phrase goes, which keeps the table from outliving its reasons. Six pairs are declared, for the requirements-engineering origin, Kemman's trading zone, the marked inference beyond Carver, the June 2023 waypoint, the dissertation's four-item difficulty profile, and the capacity gap.
-
-**Verdict, 2026-07-27.** Passes. The regression case is the third rewrite of that day, in which two of the six pairs were broken and both were reported.
+**Retired, 2026-07-30.** The promotion of the five-chapter text replaced the guarded opening and dissolved the steering document the check also read; every dependent phrase of the declared table left the text with it, so all six pairs fell silent at once. The check was removed from the script rather than kept as dead code. The mechanism, a declared anchor-and-dependent table over the opening, is recorded here and can be redeclared if rewrites of the new opening start dropping load-bearing anchors again. The regression history lives in the git history of `tools/check_consistency.py`.
 
 ### V11. The glossary's source layer and taxonomy hold their vocabularies
 

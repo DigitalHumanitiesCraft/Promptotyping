@@ -31,8 +31,8 @@
       "quellen": [
         {
           "typ": "paper",
-          "anker": "abschnitt-3-3-the-promptotyping-documents",
-          "text": "Paper, Section 3.3"
+          "anker": "abschnitt-2-1-promptotyping-and-the-project-knowledge-base",
+          "text": "Paper, Section 2.1"
         },
         {
           "typ": "page",
@@ -50,8 +50,8 @@
       "quellen": [
         {
           "typ": "paper",
-          "anker": "abschnitt-3-3-the-promptotyping-documents",
-          "text": "Paper, Section 3.3"
+          "anker": "abschnitt-2-1-promptotyping-and-the-project-knowledge-base",
+          "text": "Paper, Section 2.1"
         },
         {
           "typ": "page",
@@ -69,8 +69,8 @@
       "quellen": [
         {
           "typ": "paper",
-          "anker": "abschnitt-3-3-the-promptotyping-documents",
-          "text": "Paper, Section 3.3"
+          "anker": "abschnitt-2-1-promptotyping-and-the-project-knowledge-base",
+          "text": "Paper, Section 2.1"
         },
         {
           "typ": "text",
@@ -87,8 +87,8 @@
       "quellen": [
         {
           "typ": "paper",
-          "anker": "abschnitt-2-4-position-in-the-ai-discourse",
-          "text": "Paper, Section 2.4"
+          "anker": "abschnitt-1-2-context-engineering-agentic-engineering-and-ai-harnesses",
+          "text": "Paper, Section 1.2"
         },
         {
           "typ": "text",
@@ -105,8 +105,8 @@
       "quellen": [
         {
           "typ": "paper",
-          "anker": "abschnitt-2-4-position-in-the-ai-discourse",
-          "text": "Paper, Section 2.4"
+          "anker": "abschnitt-1-2-context-engineering-agentic-engineering-and-ai-harnesses",
+          "text": "Paper, Section 1.2"
         }
       ]
     },
@@ -132,8 +132,8 @@
       "quellen": [
         {
           "typ": "paper",
-          "anker": "abschnitt-6-4-limits",
-          "text": "Paper, Section 6.4"
+          "anker": "abschnitt-3-epistemic-and-methodological-implications",
+          "text": "Paper, Section 3"
         },
         {
           "typ": "literature",
@@ -156,13 +156,13 @@
       "quellen": [
         {
           "typ": "paper",
-          "anker": "abschnitt-3-3-the-promptotyping-documents",
-          "text": "Paper, Section 3.3"
+          "anker": "abschnitt-2-1-promptotyping-and-the-project-knowledge-base",
+          "text": "Paper, Section 2.1"
         },
         {
           "typ": "paper",
-          "anker": "abschnitt-5-1-principle-of-presentation",
-          "text": "Paper, Section 5.1"
+          "anker": "abschnitt-4-1-cases-and-evidential-status",
+          "text": "Paper, Section 4.1"
         },
         {
           "typ": "page",
@@ -194,9 +194,8 @@
           "text": "Site vocabulary, not carried in the paper text"
         },
         {
-          "typ": "literature",
-          "anker": "ref-mollick-2024",
-          "text": "Mollick 2024"
+          "typ": "text",
+          "text": "Mollick 2024, Co-Intelligence (not in the paper's reference list)"
         }
       ]
     },
@@ -209,13 +208,12 @@
       "quellen": [
         {
           "typ": "paper",
-          "anker": "abschnitt-2-4-position-in-the-ai-discourse",
-          "text": "Paper, Section 2.4"
+          "anker": "abschnitt-2-3-from-project-knowledge-to-an-accepted-promptotype",
+          "text": "Paper, Section 2.3"
         },
         {
-          "typ": "literature",
-          "anker": "ref-summerfield-2025",
-          "text": "Summerfield 2025"
+          "typ": "text",
+          "text": "Summerfield 2025, These Strange New Minds (not in the paper's reference list)"
         }
       ]
     },
@@ -228,8 +226,8 @@
       "quellen": [
         {
           "typ": "paper",
-          "anker": "abschnitt-2-4-position-in-the-ai-discourse",
-          "text": "Paper, Section 2.4"
+          "anker": "abschnitt-1-2-context-engineering-agentic-engineering-and-ai-harnesses",
+          "text": "Paper, Section 1.2"
         },
         {
           "typ": "literature",
@@ -252,8 +250,8 @@
       "quellen": [
         {
           "typ": "paper",
-          "anker": "abschnitt-3-3-the-promptotyping-documents",
-          "text": "Paper, Section 3.3"
+          "anker": "abschnitt-2-1-promptotyping-and-the-project-knowledge-base",
+          "text": "Paper, Section 2.1"
         }
       ]
     },
@@ -266,8 +264,8 @@
       "quellen": [
         {
           "typ": "paper",
-          "anker": "abschnitt-2-4-position-in-the-ai-discourse",
-          "text": "Paper, Section 2.4"
+          "anker": "abschnitt-2-1-promptotyping-and-the-project-knowledge-base",
+          "text": "Paper, Section 2.1"
         },
         {
           "typ": "literature",
@@ -290,13 +288,12 @@
       "quellen": [
         {
           "typ": "paper",
-          "anker": "abschnitt-2-4-position-in-the-ai-discourse",
-          "text": "Paper, Section 2.4"
+          "anker": "abschnitt-2-3-from-project-knowledge-to-an-accepted-promptotype",
+          "text": "Paper, Section 2.3"
         },
         {
-          "typ": "literature",
-          "anker": "ref-pollin-2025c",
-          "text": "Pollin 2025c"
+          "typ": "text",
+          "text": "Pollin 2025, Critical Vibing blog (not in the paper's reference list)"
         },
         {
           "typ": "vault",
@@ -314,8 +311,8 @@
       "quellen": [
         {
           "typ": "paper",
-          "anker": "abschnitt-3-3-the-promptotyping-documents",
-          "text": "Paper, Section 3.3"
+          "anker": "abschnitt-2-1-promptotyping-and-the-project-knowledge-base",
+          "text": "Paper, Section 2.1"
         },
         {
           "typ": "page",
@@ -355,8 +352,8 @@
       "quellen": [
         {
           "typ": "paper",
-          "anker": "abschnitt-3-2-the-four-phases",
-          "text": "Paper, Section 3.2"
+          "anker": "abschnitt-2-2-forms-of-work-and-iteration",
+          "text": "Paper, Section 2.2"
         },
         {
           "typ": "literature",
@@ -391,8 +388,8 @@
       "quellen": [
         {
           "typ": "paper",
-          "anker": "abschnitt-3-2-the-four-phases",
-          "text": "Paper, Section 3.2"
+          "anker": "abschnitt-2-2-forms-of-work-and-iteration",
+          "text": "Paper, Section 2.2"
         }
       ]
     },
@@ -423,8 +420,8 @@
       "quellen": [
         {
           "typ": "paper",
-          "anker": "abschnitt-3-2-the-four-phases",
-          "text": "Paper, Section 3.2"
+          "anker": "abschnitt-2-2-forms-of-work-and-iteration",
+          "text": "Paper, Section 2.2"
         }
       ]
     },
@@ -454,7 +451,7 @@
       "quellen": [
         {
           "typ": "paper",
-          "anker": "abschnitt-4-2-a-typology-of-promptotyping-interfaces",
+          "anker": "abschnitt-4-2-artefact-forms-and-documented-projects",
           "text": "Paper, Section 4.2"
         },
         {
@@ -495,8 +492,8 @@
       "quellen": [
         {
           "typ": "paper",
-          "anker": "abschnitt-3-3-the-promptotyping-documents",
-          "text": "Paper, Section 3.3"
+          "anker": "abschnitt-2-1-promptotyping-and-the-project-knowledge-base",
+          "text": "Paper, Section 2.1"
         }
       ]
     },
@@ -508,9 +505,8 @@
       "kategorie": "document-function",
       "quellen": [
         {
-          "typ": "literature",
-          "anker": "ref-procida-2024",
-          "text": "Procida 2024"
+          "typ": "text",
+          "text": "Procida 2024, Diátaxis (not in the paper's reference list)"
         },
         {
           "typ": "page",
@@ -560,8 +556,8 @@
       "quellen": [
         {
           "typ": "paper",
-          "anker": "abschnitt-3-2-the-four-phases",
-          "text": "Paper, Section 3.2"
+          "anker": "abschnitt-2-2-forms-of-work-and-iteration",
+          "text": "Paper, Section 2.2"
         }
       ]
     },
@@ -574,8 +570,8 @@
       "quellen": [
         {
           "typ": "paper",
-          "anker": "abschnitt-3-3-the-promptotyping-documents",
-          "text": "Paper, Section 3.3"
+          "anker": "abschnitt-2-1-promptotyping-and-the-project-knowledge-base",
+          "text": "Paper, Section 2.1"
         },
         {
           "typ": "page",
@@ -593,8 +589,8 @@
       "quellen": [
         {
           "typ": "paper",
-          "anker": "abschnitt-3-2-the-four-phases",
-          "text": "Paper, Section 3.2"
+          "anker": "abschnitt-2-2-forms-of-work-and-iteration",
+          "text": "Paper, Section 2.2"
         },
         {
           "typ": "vault",
@@ -616,8 +612,8 @@
       "quellen": [
         {
           "typ": "paper",
-          "anker": "abschnitt-3-3-the-promptotyping-documents",
-          "text": "Paper, Section 3.3"
+          "anker": "abschnitt-2-1-promptotyping-and-the-project-knowledge-base",
+          "text": "Paper, Section 2.1"
         },
         {
           "typ": "vault",
@@ -639,12 +635,12 @@
       "quellen": [
         {
           "typ": "paper",
-          "anker": "abschnitt-4-1-self-contained-static-web-tools",
-          "text": "Paper, Section 4.1"
+          "anker": "abschnitt-4-2-artefact-forms-and-documented-projects",
+          "text": "Paper, Section 4.2"
         },
         {
           "typ": "paper",
-          "anker": "abschnitt-4-2-a-typology-of-promptotyping-interfaces",
+          "anker": "abschnitt-4-2-artefact-forms-and-documented-projects",
           "text": "Paper, Section 4.2"
         },
         {
@@ -668,8 +664,8 @@
         },
         {
           "typ": "paper",
-          "anker": "abschnitt-4-1-self-contained-static-web-tools",
-          "text": "Paper, Section 4.1"
+          "anker": "abschnitt-4-2-artefact-forms-and-documented-projects",
+          "text": "Paper, Section 4.2"
         }
       ]
     },
@@ -682,8 +678,8 @@
       "quellen": [
         {
           "typ": "paper",
-          "anker": "abschnitt-2-5-genealogy",
-          "text": "Paper, Section 2.5"
+          "anker": "abschnitt-1-1-translating-research-data-into-digital-research-artefacts-through-scholar-centred-design",
+          "text": "Paper, Section 1.1"
         },
         {
           "typ": "literature",
@@ -706,8 +702,8 @@
       "quellen": [
         {
           "typ": "paper",
-          "anker": "abschnitt-3-3-the-promptotyping-documents",
-          "text": "Paper, Section 3.3"
+          "anker": "abschnitt-2-1-promptotyping-and-the-project-knowledge-base",
+          "text": "Paper, Section 2.1"
         },
         {
           "typ": "page",
@@ -721,8 +717,12 @@
         },
         {
           "typ": "literature",
-          "anker": "ref-zheng-2023",
-          "text": "Zheng et al. 2023"
+          "anker": "ref-krumdick-2025",
+          "text": "Krumdick et al. 2025"
+        },
+        {
+          "typ": "text",
+          "text": "Zheng et al. 2023 (not in the paper's reference list)"
         },
         {
           "typ": "vault",
@@ -759,8 +759,8 @@
       "quellen": [
         {
           "typ": "paper",
-          "anker": "abschnitt-2-4-position-in-the-ai-discourse",
-          "text": "Paper, Section 2.4"
+          "anker": "abschnitt-2-3-from-project-knowledge-to-an-accepted-promptotype",
+          "text": "Paper, Section 2.3"
         },
         {
           "typ": "vault",
@@ -782,14 +782,12 @@
       "kategorie": "artefact",
       "quellen": [
         {
-          "typ": "literature",
-          "anker": "ref-marwick-2018",
-          "text": "Marwick et al. 2018"
+          "typ": "text",
+          "text": "Marwick et al. 2018 (not in the paper's reference list)"
         },
         {
-          "typ": "literature",
-          "anker": "ref-risam-2022",
-          "text": "Risam and Gil 2022"
+          "typ": "text",
+          "text": "Risam and Gil 2022 (not in the paper's reference list)"
         },
         {
           "typ": "vault",
@@ -817,8 +815,8 @@
       "quellen": [
         {
           "typ": "paper",
-          "anker": "abschnitt-3-2-the-four-phases",
-          "text": "Paper, Section 3.2"
+          "anker": "abschnitt-2-2-forms-of-work-and-iteration",
+          "text": "Paper, Section 2.2"
         },
         {
           "typ": "page",
@@ -857,18 +855,17 @@
       "quellen": [
         {
           "typ": "paper",
-          "anker": "abschnitt-2-4-position-in-the-ai-discourse",
-          "text": "Paper, Section 2.4"
+          "anker": "abschnitt-2-3-from-project-knowledge-to-an-accepted-promptotype",
+          "text": "Paper, Section 2.3"
         },
         {
           "typ": "literature",
-          "anker": "ref-sharma-2023",
-          "text": "Sharma et al. 2023"
+          "anker": "ref-sharma-2024",
+          "text": "Sharma et al. 2024"
         },
         {
-          "typ": "literature",
-          "anker": "ref-fanous-2025",
-          "text": "Fanous et al. 2025"
+          "typ": "text",
+          "text": "Fanous et al. 2025 (not in the paper's reference list)"
         },
         {
           "typ": "vault",
@@ -914,8 +911,8 @@
       "quellen": [
         {
           "typ": "paper",
-          "anker": "abschnitt-3-3-the-promptotyping-documents",
-          "text": "Paper, Section 3.3"
+          "anker": "abschnitt-2-1-promptotyping-and-the-project-knowledge-base",
+          "text": "Paper, Section 2.1"
         },
         {
           "typ": "page",
@@ -970,8 +967,8 @@
       "quellen": [
         {
           "typ": "paper",
-          "anker": "abschnitt-6-2-verification-and-validation",
-          "text": "Paper, Section 6.2"
+          "anker": "abschnitt-2-3-from-project-knowledge-to-an-accepted-promptotype",
+          "text": "Paper, Section 2.3"
         },
         {
           "typ": "page",
@@ -989,13 +986,13 @@
       "quellen": [
         {
           "typ": "paper",
-          "anker": "abschnitt-3-2-the-four-phases",
-          "text": "Paper, Section 3.2"
+          "anker": "abschnitt-2-2-forms-of-work-and-iteration",
+          "text": "Paper, Section 2.2"
         },
         {
           "typ": "paper",
-          "anker": "abschnitt-6-2-verification-and-validation",
-          "text": "Paper, Section 6.2"
+          "anker": "abschnitt-2-3-from-project-knowledge-to-an-accepted-promptotype",
+          "text": "Paper, Section 2.3"
         },
         {
           "typ": "page",
@@ -1013,8 +1010,8 @@
       "quellen": [
         {
           "typ": "paper",
-          "anker": "abschnitt-2-4-position-in-the-ai-discourse",
-          "text": "Paper, Section 2.4"
+          "anker": "abschnitt-2-3-from-project-knowledge-to-an-accepted-promptotype",
+          "text": "Paper, Section 2.3"
         },
         {
           "typ": "literature",

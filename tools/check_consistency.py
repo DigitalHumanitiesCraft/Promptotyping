@@ -48,9 +48,10 @@ SITE_BASE = "dhcraft.org/Promptotyping/"
 sys.path.insert(0, str(TOOLS))
 import build_glossar  # noqa: E402
 
-# The header row of the project inventory, Table 1 in section 5.2. Parsing keys
-# on this line rather than on a position, so inserting a section cannot move it.
-TABLE1_HEADER = "|Project|Data|Interface Type(s)|Methodological Contribution|"
+# The header row of the paper's case table, Table 3 in section 4.3 of the
+# five-chapter text (promotion of 2026-07-30). Parsing keys on this line rather
+# than on a position, so inserting a section cannot move it.
+TABLE1_HEADER = "| Case | Data state | Artefact | Central finding | Write-back or acceptance |"
 
 # The five epistemic functions of the paper's interface typology (section 4.2).
 INTERFACE_TYPES = {"verification", "exploration", "edition", "capture", "audit"}
@@ -209,25 +210,27 @@ def check_gallery(data):
                 fail("gallery", "%s carries interface type %r, not one of the five"
                      % (case_id, kind))
 
-        # A card in the evidence block claims a Table 1 row, and only there.
+        # A card in the evidence block claims a row of the paper's case table
+        # (Table 3, section 4.3), and only there.
         if role == "evidence" and not case.get("paper_row"):
-            fail("gallery", "%s has role evidence but claims no Table 1 row" % case_id)
+            fail("gallery", "%s has role evidence but claims no case-table row" % case_id)
         if role != "evidence" and case.get("paper_row"):
-            fail("gallery", "%s claims Table 1 row %r but its role is %r"
+            fail("gallery", "%s claims case-table row %r but its role is %r"
                  % (case_id, case["paper_row"], role))
 
 
 def paper_table1():
-    """The project inventory of section 5.2, keyed by the project name.
+    """The paper's case table (Table 3, section 4.3), as the set of case names.
 
-    Returns {project name: set of interface types, lowercased}.
+    The five-chapter text carries no per-case interface types, so the table
+    yields names alone; the interface typology lives in the gallery data.
     """
-    rows = {}
+    rows = set()
     lines = PAPER.read_text(encoding="utf-8").splitlines()
     try:
         start = lines.index(TABLE1_HEADER)
     except ValueError:
-        fail("evidence", "Table 1 header row not found in knowledge/paper.md")
+        fail("evidence", "case-table header row not found in knowledge/paper.md")
         return rows
     for line in lines[start + 2:]:
         if not line.startswith("|"):
@@ -235,15 +238,14 @@ def paper_table1():
         cells = [c.strip() for c in line.strip("|").split("|")]
         if len(cells) < 3:
             break
-        kinds = {k.strip().lower() for k in cells[2].split(",") if k.strip()}
-        rows[cells[0]] = kinds
+        rows.add(cells[0].replace("*", "").strip())
     return rows
 
 
 def check_evidence_reachable(data):
-    """Every project the paper offers as evidence is reachable on the site.
+    """Every case the paper analyses is reachable on the site.
 
-    A reader who comes from the paper wanting to check a claim of section 5.2
+    A reader who comes from the paper wanting to check a claim of section 4
     has to find the project. This is the condition the gallery exists for, and
     it held for ten of thirteen projects until 2026-07-26.
     """
@@ -256,27 +258,16 @@ def check_evidence_reachable(data):
         if not name:
             continue
         if name in claimed:
-            fail("evidence", "cards %s and %s both claim Table 1 row %r"
+            fail("evidence", "cards %s and %s both claim case-table row %r"
                  % (claimed[name], case["id"], name))
             continue
         claimed[name] = case["id"]
 
     for name in sorted(set(table) - set(claimed)):
-        fail("evidence", "Table 1 lists %r; no card claims it" % name)
+        fail("evidence", "the case table lists %r; no card claims it" % name)
     for name in sorted(set(claimed) - set(table)):
-        fail("evidence", "card %s claims Table 1 row %r; the paper has no such row"
+        fail("evidence", "card %s claims case-table row %r; the paper has no such row"
              % (claimed[name], name))
-
-    # Where both sides describe the same project, they must agree on the
-    # interface typology of section 4.2. Drift here is a claim about the method.
-    by_id = {c["id"]: c for c in data["caseStudies"]}
-    for name, case_id in sorted(claimed.items()):
-        if name not in table:
-            continue
-        card = set(by_id[case_id].get("interfaceTypes") or [])
-        if card != table[name]:
-            fail("evidence", "%s carries interface types %s, Table 1 says %s"
-                 % (case_id, sorted(card) or "none", sorted(table[name])))
 
 
 def urls_of(cases):
@@ -878,49 +869,12 @@ def check_symbol_bindings():
                      % (where, symbol, named))
 
 
-# Section 1 establishes things that later sections name and build on. Three
-# successive rewrites of the opening dropped the same anchors, so the pairs are
-# declared here: while the dependent phrase stands, the anchor has to stand too.
-LOAD_BEARING_ANCHORS = [
-    ("Curtis, Krasner, and Iscoe",
-     "Curtis, Krasner und Iscoe 1988",
-     "the requirements-engineering origin of the translation problem, recorded as closed in paper-writing.md"),
-    ("trading zone",
-     "the trading zone acquires a written constitution",
-     "Kemman's trading zone, which Section 2.3 presupposes as introduced"),
-    ("I infer",
-     "the same inference Section 1 draws",
-     "the marked inference beyond Carver et al., which the vault forbids attributing to the source"),
-    ("June 2023",
-     "The workshop demonstration of June 2023 (Section 1)",
-     "the dated waypoint before the method, and the only citation of Pollin 2024"),
-    ("human agency, context sensitivity, multiperspectivity, and uncertainty",
-     "the difficulty profile the method was forged against",
-     "the dissertation's four-item difficulty profile"),
-    ("capacity",
-     "whose capacity wall Section 1 already named",
-     "the capacity gap that Section 2.5 refers back to"),
-]
-
-
-def check_load_bearing_anchors():
-    """Section 1 still carries what later sections say it carries."""
-    text = read_text(KNOWLEDGE_DIR / "paper.md")
-    parts = text.split("## 2. The Epistemic Frame")
-    if len(parts) < 2:
-        fail("anchors", "paper.md has no Section 2 heading; cannot separate Section 1")
-        return
-    section_one, rest = parts[0], parts[1]
-    # A dependent phrase may live in the paper or in the steering document that
-    # records the decision; either keeps the anchor obligatory.
-    rest += read_text(KNOWLEDGE_DIR / "paper-writing.md")
-    for anchor, dependent, why in LOAD_BEARING_ANCHORS:
-        if dependent not in rest:
-            continue
-        if anchor not in section_one:
-            fail("anchors",
-                 "%r is still stated elsewhere, but Section 1 no longer carries %r (%s)"
-                 % (dependent, anchor, why))
+# V10, the load-bearing-anchor pairs of Section 1, was retired with the
+# promotion of 2026-07-30: every dependent phrase of its declared table left the
+# text together with the seven-chapter structure and the steering document it
+# also read, which is the table's own retirement condition (a pair falls silent
+# when the dependent phrase goes). The mechanism stays documented in
+# knowledge/verification.md should a rewrite of the new opening call for it.
 
 
 def check_action_layer_pages():
@@ -1016,7 +970,6 @@ def main():
         check_glossar_mirror,
         check_anchors,
         check_symbol_bindings,
-        check_load_bearing_anchors,
         check_action_layer_pages,
         check_requirement_numbers,
         check_vault_index_current,

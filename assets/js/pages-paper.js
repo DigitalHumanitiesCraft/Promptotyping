@@ -9,14 +9,44 @@
      drift away from the knowledge base. */
   var PAPER_FILE = "knowledge/paper.md";
 
-  /* Published anchors of the pre-revision section cut, mapped onto the section
-     of the current structure that succeeds them. Renaming them is not allowed
-     (CLAUDE.md, URL anchor scheme), so they stay as alias targets. */
+  /* Published anchors of the two earlier section cuts (pre-revision, and the
+     seven-chapter text canonical until 2026-07-30), mapped onto the section of
+     the current five-chapter structure that carries their content. Renaming is
+     not allowed (CLAUDE.md, URL anchor scheme), so they stay as alias targets. */
   var PAPER_ANCHOR_ALIASES = {
-    "abschnitt-2-terms-positioning": "abschnitt-2-the-epistemic-frame",
-    "abschnitt-3-four-phases": "abschnitt-3-the-method",
-    "abschnitt-4-projects": "abschnitt-5-evidence-the-documented-projects",
-    "abschnitt-5-epistemic-infrastructure": "abschnitt-4-the-artefact-type"
+    "abschnitt-2-terms-positioning": "abschnitt-1-1-translating-research-data-into-digital-research-artefacts-through-scholar-centred-design",
+    "abschnitt-3-four-phases": "abschnitt-2-promptotyping-as-a-method",
+    "abschnitt-4-projects": "abschnitt-4-promptotyping-in-practice",
+    "abschnitt-5-epistemic-infrastructure": "abschnitt-4-2-artefact-forms-and-documented-projects",
+    "abschnitt-2-the-epistemic-frame": "abschnitt-1-1-translating-research-data-into-digital-research-artefacts-through-scholar-centred-design",
+    "abschnitt-2-1-exploration-building-and-their-correctives": "abschnitt-1-1-translating-research-data-into-digital-research-artefacts-through-scholar-centred-design",
+    "abschnitt-2-2-llms-and-research-data": "abschnitt-1-1-translating-research-data-into-digital-research-artefacts-through-scholar-centred-design",
+    "abschnitt-2-3-the-translation-problem-and-documents-as-conceptual-models": "abschnitt-3-2-research-data-and-project-knowledge-as-mediating-structures",
+    "abschnitt-2-4-position-in-the-ai-discourse": "abschnitt-1-2-context-engineering-agentic-engineering-and-ai-harnesses",
+    "abschnitt-2-5-genealogy": "abschnitt-2-promptotyping-as-a-method",
+    "abschnitt-3-the-method": "abschnitt-2-promptotyping-as-a-method",
+    "abschnitt-3-1-status-and-provenance": "abschnitt-4-1-cases-and-evidential-status",
+    "abschnitt-3-2-the-four-phases": "abschnitt-2-2-forms-of-work-and-iteration",
+    "abschnitt-3-3-the-promptotyping-documents": "abschnitt-2-1-promptotyping-and-the-project-knowledge-base",
+    "abschnitt-3-4-a-worked-example-the-stefan-zweig-htr-pipeline": "abschnitt-2-3-from-project-knowledge-to-an-accepted-promptotype",
+    "abschnitt-4-the-artefact-type": "abschnitt-4-2-artefact-forms-and-documented-projects",
+    "abschnitt-4-1-self-contained-static-web-tools": "abschnitt-4-2-artefact-forms-and-documented-projects",
+    "abschnitt-4-2-a-typology-of-promptotyping-interfaces": "abschnitt-4-2-artefact-forms-and-documented-projects",
+    "abschnitt-4-3-limits-of-the-format-and-the-handover-point": "abschnitt-5-1-scope-limits-and-conditions-of-applicability",
+    "abschnitt-5-evidence-the-documented-projects": "abschnitt-4-promptotyping-in-practice",
+    "abschnitt-5-1-principle-of-presentation": "abschnitt-4-1-cases-and-evidential-status",
+    "abschnitt-5-2-the-project-inventory": "abschnitt-4-2-artefact-forms-and-documented-projects",
+    "abschnitt-5-3-worked-cases-by-epistemic-function": "abschnitt-4-2-artefact-forms-and-documented-projects",
+    "abschnitt-5-4-teaching-and-collaboration-cases": "abschnitt-4-3-cross-case-findings",
+    "abschnitt-5-5-reading-the-evidence": "abschnitt-4-3-cross-case-findings",
+    "abschnitt-6-discussion": "abschnitt-5-scope-limits-evaluation-and-conclusion",
+    "abschnitt-6-1-process-and-publication": "abschnitt-3-4-acceptance-reconstructability-and-the-status-of-the-promptotype",
+    "abschnitt-6-2-verification-and-validation": "abschnitt-2-3-from-project-knowledge-to-an-accepted-promptotype",
+    "abschnitt-6-3-reproducibility-and-llm-dependence": "abschnitt-3-4-acceptance-reconstructability-and-the-status-of-the-promptotype",
+    "abschnitt-6-4-limits": "abschnitt-5-1-scope-limits-and-conditions-of-applicability",
+    "abschnitt-6-5-transferability": "abschnitt-5-2-transferability-and-priorities-for-evaluation",
+    "abschnitt-7-conclusion": "abschnitt-5-3-conclusion",
+    "acknowledgements": "ai-use-and-research-provenance"
   };
 
   /* Part-2 video sits with the project inventory that lists the demonstrated case. */

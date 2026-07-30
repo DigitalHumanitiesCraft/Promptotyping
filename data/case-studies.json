@@ -2,8 +2,8 @@
   "version": "0.3",
   "generated": "2026-06-10",
   "_meta": {
-    "beschreibung": "Case-study data of the Promptotyping methodology site. The sources are the case descriptions in the vault, the method extensions in the Promptotyping MOC and the project inventory in Pollin 2026, Section 5.2. The gallery groups by the role a case plays for the paper and orders within a block by the interface typology of Section 4.2, which is the typology the paper itself uses.",
-    "kuratierung": "Admission is decided by what a card lets a reader check. Every project in Table 1 of the paper has a card, because a reader who comes from section 5.2 to verify a claim has to find the project; the paper_row field carries that link and tools/check_consistency.py holds it in both directions (operator decision 2026-07-26). Beyond the evidence inventory the gallery also carries the projects the method grew out of, which section 2.5 needs, and the teaching formats, which the teachability argument of section 5.4 rests on. A project that supports no claim of the paper has no card. Three exclusion notes of the earlier curation were checked on 2026-07-26 and did not hold: vetmed-wissensbilanz and wiiw-patent-analysis-demo are public repositories with working demos, and sugw is the paper's Medieval Legal Transactions and publicly video-documented, so all three entered the gallery. The Aldersbach monastic accounts stay although the paper dropped the case as too old, because the genealogy is what they carry (operator decision 2026-07-25). Outside the gallery stays the agentic edition pipeline, which is meta-tooling and a template rather than a single research artefact.",
+    "beschreibung": "Case-study data of the Promptotyping methodology site. The sources are the case descriptions in the vault, the method extensions in the Promptotyping MOC and the case analysis in Pollin 2026, Section 4. The gallery groups by the role a case plays for the paper and orders within a block by the five epistemic interface functions, the site's own typology documented on the artefact page (part 4 of the specification).",
+    "kuratierung": "Admission is decided by what a card lets a reader check. Every case in Table 3 of the paper (Section 4.3) has a card, because a reader who comes from the case analysis to verify a claim has to find the project; the paper_row field carries that link and tools/check_consistency.py holds it in both directions (operator decision 2026-07-26, re-keyed to the five-chapter text with the promotion of 2026-07-30). Beyond the paper's case set the gallery carries the projects the method grew out of, the teaching formats, and the documented applications that the earlier seven-chapter text listed in its project inventory; since the promotion those stand on their repositories alone under the role further. The Aldersbach monastic accounts stay although the paper dropped the case as too old, because the genealogy is what they carry (operator decision 2026-07-25). Outside the gallery stays the agentic edition pipeline, which is meta-tooling and a template rather than a single research artefact.",
     "schema": {
       "id": "anchor slug, forming the site anchor together with #case- (e.g. herdata -> #case-herdata)",
       "name": "display name",
@@ -12,13 +12,13 @@
       "summary": "one-sentence overview",
       "data": "data basis, short",
       "artifact": "artefact produced, short",
-      "interfaceTypes": "array of verification, exploration, edition, capture, audit, the five epistemic functions of Pollin 2026 section 4.2; empty where the case produced no interface. This is the gallery's ordering and filtering dimension since 2026-07-26, replacing a nine-value vocabulary of the site's own",
+      "interfaceTypes": "array of verification, exploration, edition, capture, audit, the five epistemic functions of the site's interface typology (artefact page, part 4 of the specification); empty where the case produced no interface. This is the gallery's ordering and filtering dimension since 2026-07-26, replacing a nine-value vocabulary of the site's own. The promoted paper's Table 2 names five artefact forms of its own; whether the site typology follows it is an open operator decision (2026-07-30)",
       "repo_url": "repository URL or null",
       "demo_url": "live demo URL or null",
       "video_url": "YouTube URL or null",
-      "insight": "methodological contribution per the project inventory (Pollin 2026, Section 5.2), otherwise null",
+      "insight": "methodological contribution as recorded at curation; the paper's own per-case findings stand in Table 3 (Section 4.3), otherwise null",
       "deep_page": "true where the case carries a depth page under _content/case-studies/",
-      "paper_row": "exact project name in Table 1 of the paper (section 5.2), or null where the project is deliberately outside the evidence inventory; checked by tools/check_consistency.py against knowledge/paper.md"
+      "paper_row": "exact case name in Table 3 of the paper (Section 4.3), or null where the project is outside the paper's case set; checked by tools/check_consistency.py against knowledge/paper.md"
     },
     "role_labels": {
       "evidence": "Evidence for the paper",
@@ -27,9 +27,9 @@
       "further": "Further documented applications"
     },
     "role_notes": {
-      "evidence": "Carries a row of the project inventory in Pollin 2026, Section 5.2. A claim of that section can be checked against these.",
-      "genealogy": "Built before the method had its vocabulary. Section 2.5 reads them as the ground it grew from.",
-      "teaching": "Recorded sessions and teaching builds. The teachability argument of Section 5.4 rests on this kind of material.",
+      "evidence": "Carries a row of the cross-case findings in Pollin 2026, Table 3 (Section 4.3). A claim of that analysis can be checked against these.",
+      "genealogy": "Built before the method had its vocabulary. The opening of Section 2 reads them as the ground it grew from.",
+      "teaching": "Recorded sessions and teaching builds. The teachability argument at the end of Section 4.3 rests on this kind of material.",
       "further": "Documented applications the paper does not carry. They stand on their repositories alone."
     }
   },
@@ -37,7 +37,7 @@
     {
       "id": "teicrafter",
       "name": "teiCrafter",
-      "role": "genealogy",
+      "role": "evidence",
       "status": "active",
       "summary": "Idea of 2023, a Custom GPT that converted plain text to TEI-XML (P5) from a mapping rule under editor-in-the-loop control, with no software written for it; the same idea was taken up in 2026 and built as a browser-based lossless TEI editor once the agentic tooling carried it.",
       "data": "Plain text and transcriptions in 2023, arbitrary TEI-XML in the editor since 2026",
@@ -50,7 +50,7 @@
       "video_url": null,
       "insight": "Origin point of the method as a prompt-configured idea; what separates 2023 from 2026 is the maturity of the coding tooling that made the same idea buildable",
       "deep_page": true,
-      "paper_row": null
+      "paper_row": "teiCrafter"
     },
     {
       "id": "szd",
@@ -84,9 +84,9 @@
       "repo_url": "https://github.com/chpollin/szd-htr-ocr-pipeline",
       "demo_url": "https://chpollin.github.io/szd-htr-ocr-pipeline/",
       "video_url": null,
-      "insight": "Worked example of Section 3.4; the record's production-scale pipeline",
+      "insight": "Worked example of Section 2.3; the record's production-scale pipeline",
       "deep_page": true,
-      "paper_row": "SZD-HTR Pipeline"
+      "paper_row": "SZD-HTR"
     },
     {
       "id": "aldersbach",
@@ -145,7 +145,7 @@
     {
       "id": "km",
       "name": "Hans Gross Kriminalmuseum Digital Archive",
-      "role": "evidence",
+      "role": "further",
       "status": "completed",
       "summary": "Digital archive of the criminological collection that pairs traditional search with canvas-based spatial exploration.",
       "data": "TEI plus LIDO object corpus",
@@ -158,7 +158,7 @@
       "video_url": null,
       "insight": "Dual paradigm, search plus canvas-based spatial exploration",
       "deep_page": true,
-      "paper_row": "Hans Gross Kriminalmuseum"
+      "paper_row": null
     },
     {
       "id": "corresp-explorer",
@@ -181,7 +181,7 @@
     {
       "id": "herdata",
       "name": "HerData",
-      "role": "evidence",
+      "role": "further",
       "status": "active",
       "summary": "Static web application for the prosopographical visualisation of Goethe's female correspondents, with an explicit reflection on map bias ahead of use.",
       "data": "TEI/CMIF letter corpus (SNDB, GND authority links)",
@@ -194,7 +194,7 @@
       "video_url": null,
       "insight": "Gender-focused network with a map-bias transparency section",
       "deep_page": true,
-      "paper_row": "HerData"
+      "paper_row": null
     },
     {
       "id": "coocr-htr",
@@ -212,12 +212,12 @@
       "video_url": "https://youtu.be/VJyhVc_ujeA",
       "insight": "Prototype under a regression suite; the only community fork in the corpus (OEAW)",
       "deep_page": true,
-      "paper_row": "coOCR-HTR"
+      "paper_row": "coOCR/HTR"
     },
     {
       "id": "vetmedai-wissensbilanz",
       "name": "VetMedAI Wissensbilanz",
-      "role": "evidence",
+      "role": "further",
       "status": "completed",
       "summary": "Dashboard over the intellectual-capital reports of the Austrian universities, built as the first use case of the VetMedAI project and observed by workshop participants as it was made.",
       "data": "Excel corpus of Austrian university performance metrics",
@@ -230,12 +230,12 @@
       "video_url": null,
       "insight": "Hand-curated knowledge base over a heterogeneous spreadsheet corpus",
       "deep_page": true,
-      "paper_row": "VetMedAI Wissensbilanz"
+      "paper_row": null
     },
     {
       "id": "kulturpool-explorer",
       "name": "Kulturpool Explorer",
-      "role": "evidence",
+      "role": "further",
       "status": "completed",
       "summary": "Static collection interface over the object records of the Kulturpool API, built with parallel agent orchestration.",
       "data": "Kulturpool API",
@@ -248,12 +248,12 @@
       "video_url": "https://youtu.be/tQBaaVhPu5U",
       "insight": "Parallel agent orchestration (2 Claude Code instances)",
       "deep_page": true,
-      "paper_row": "Kulturpool Explorer"
+      "paper_row": null
     },
     {
       "id": "wiiw-patent-analysis",
       "name": "wiiw Patent Analysis",
-      "role": "evidence",
+      "role": "further",
       "status": "completed",
       "summary": "Network dashboard over international patent cooperation from 2010 to 2018, built during a workshop at an economic research institute and the record's case for the method outside the humanities.",
       "data": "Patent cooperation CSV, 2010 to 2018",
@@ -266,12 +266,12 @@
       "video_url": null,
       "insight": "Promptotyping outside DH",
       "deep_page": true,
-      "paper_row": "wiiw Patent Analysis"
+      "paper_row": null
     },
     {
       "id": "sugw",
       "name": "Medieval Legal Transactions",
-      "role": "evidence",
+      "role": "further",
       "status": "active",
       "summary": "Agentic edition workflow for the prosopographic database of medieval Viennese legal transactions, in which the agent navigates the repository, validates, corrects and commits, while person identification across documents stays outside its reach.",
       "data": "TEI-XML documents of the transaction database, released in part, with an extensive CSV dataset",
@@ -284,7 +284,7 @@
       "video_url": null,
       "insight": "Agentic edition workflow under a regression suite",
       "deep_page": true,
-      "paper_row": "Medieval Legal Transactions"
+      "paper_row": null
     },
     {
       "id": "m3gim",
@@ -322,7 +322,7 @@
       "video_url": null,
       "insight": "Full pipeline infrastructure with one verification interface per stage",
       "deep_page": true,
-      "paper_row": "ZBZ OCR/TEI Pipeline"
+      "paper_row": "ZBZ"
     },
     {
       "id": "notker-edition",
@@ -340,12 +340,12 @@
       "video_url": null,
       "insight": "Layer-toggle edition, orthogonal text-layer controls, IIIF, TEI-first",
       "deep_page": true,
-      "paper_row": "Notker Edition"
+      "paper_row": "Notker"
     },
     {
       "id": "klawiter-rescue",
       "name": "Klawiter Bibliography Rescue",
-      "role": "evidence",
+      "role": "further",
       "status": "completed",
       "summary": "Extraction and restructuring of the Klawiter bibliography from a decommissioned MediaWiki database into structured JSON-LD with a static web front end.",
       "data": "MediaWiki SQL/BLOB dump",
@@ -359,12 +359,12 @@
       "video_url": "https://youtu.be/KG35VGVctJw",
       "insight": "Data rescue, staged pipeline plus curation interface under a test suite",
       "deep_page": true,
-      "paper_row": "Klawiter Bibliography Rescue"
+      "paper_row": null
     },
     {
       "id": "femprompt-sozarb",
       "name": "FemPrompt SozArb",
-      "role": "evidence",
+      "role": "further",
       "status": "completed",
       "summary": "Systematic literature review on AI literacy and LLM bias in social work, with a staged pipeline and a dual assessment design between human experts and an LLM.",
       "data": "Academic paper corpus on AI literacy and LLM bias",
@@ -377,7 +377,7 @@
       "video_url": null,
       "insight": "Beyond DH, literature review infrastructure with a generated knowledge base",
       "deep_page": true,
-      "paper_row": "FemPrompt SozArb"
+      "paper_row": null
     },
     {
       "id": "austrian-university-dashboard",

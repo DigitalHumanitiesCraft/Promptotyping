@@ -75,7 +75,7 @@
       "<h1>Use Cases</h1>" +
       "<p>A curated selection of publicly documented projects, grouped by where in the research " +
       "data lifecycle the method operates. The full body of evidence stands in the " +
-      '<a href="#abschnitt-5-evidence-the-documented-projects">paper, section 5</a>.</p>' +
+      '<a href="#abschnitt-4-promptotyping-in-practice">paper, section 4</a>.</p>' +
       '<div class="case-filter-host"></div>' +
       '<div class="case-list-host"></div>';
   }
