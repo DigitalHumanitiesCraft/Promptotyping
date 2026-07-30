@@ -126,11 +126,11 @@ Implementation in the SZD pipeline produces several kinds of feedback. Formal ch
 
 *Deterministic validation* applies where a formal rule decides whether a specified condition has been met. Schemas, tests, constraints, and build procedures can be executed without domain judgement (IEEE 2017). An agent may run these checks and act on unambiguous failures within its assigned scope. Passing validation establishes conformity to the formalised condition, not the scholarly adequacy of that condition.
 
-*Agentic review* uses an LLM-based system to compare an output with a source, requirement, or other reference and to report apparent discrepancies. Such review can extend checking across material that a person could not examine at the same frequency or scale. It remains a generative assessment and does not authorise the output it reviews. Its report is evidence for subsequent judgement rather than a verification verdict.
+*Agentic review* uses an LLM-based system to compare an output with a source, requirement, or other reference and to report apparent discrepancies, an arrangement discussed as LLM-as-a-judge. Recent evaluations show that such judges agree with domain experts only partially and perform most reliably where a human-set reference is available (Krumdick et al. 2025; Szymanski et al. 2025). Such review can extend checking across material that a person could not examine at the same frequency or scale. It remains a generative assessment and does not authorise the output it reviews. Its report is evidence for subsequent judgement rather than a verification verdict.
 
 *Critical Expert verification* applies where assessment depends on source knowledge, interpretation, or design judgement, and is exercised in the role defined in Section 2.2. This authority is not transferred to the agent.
 
-*Acceptance testing* occupies a related but narrower position. Acceptance criteria may allow an agent or deterministic procedure to test whether a stated interaction or output has been implemented. Such testing can establish conformance to the requirement as written. It cannot establish that the requirement itself adequately represents the scholarly practice from which it was derived.
+*Acceptance testing* occupies a related but narrower position. Acceptance criteria may allow an agent or deterministic procedure to test whether a stated interaction or output has been implemented. Such testing can establish conformance to the requirement as written. It cannot establish that the requirement itself adequately represents the scholarly practice from which it was derived. Despite the shared term, it also remains distinct from the acceptance of an iteration described below; passing every stated criterion does not itself constitute acceptance. The adequacy of the criteria becomes visible chiefly in observed use, for which usability evaluation provides established procedures such as thinking aloud, and which no single form of checking replaces (Hertzum 2024; Benito-Santos et al. 2026).
 
 **Table 1. Forms and objects of checking in Promptotyping.**
 
@@ -146,9 +146,9 @@ The SZD interface preserves the distinction among these forms of checking in the
 
 Human corrections also preserve the machine-generated transcription in an edit history. This makes the intervention traceable and prevents the accepted state from appearing as if it had been produced without correction. The distinction is methodological as well as administrative: provenance concerning how an output was generated and checked affects what can be claimed on its basis.
 
-The boundary between validation and verification may change as the project develops. Where Critical Expert verification establishes a recurrent rule that can be formalised, part of the subsequent checking can be converted into deterministic validation. An accepted encoding decision may, for example, become a schema constraint. The conversion does not operate in the opposite direction. Passing any number of formal checks cannot establish the adequacy of distinctions that were never formalised.
+The boundary between validation and verification may change as the project develops. Where Critical Expert verification establishes a recurrent rule that can be formalised, part of the subsequent checking can be converted into deterministic validation. An accepted encoding decision may, for example, become a schema constraint, as test-driven development converts a prior judgement about correct behaviour into an executable check (Fakhoury et al. 2024). The conversion does not operate in the opposite direction. Passing any number of formal checks cannot establish the adequacy of distinctions that were never formalised. Nor can a check that an agent writes for itself substitute for the conversion, since it codifies no judgement external to the generation it tests (Hora and Robbes 2026).
 
-The term *Critical Expert in the Loop* distinguishes the role from an unspecified human checkpoint. The required competence includes knowledge of the research material and sufficient understanding of the technical and generative processes through which the artefact was produced. LLM-specific failure modes make this combination consequential. A model may reproduce an assumption embedded in a request rather than challenge it, or fill a gap with a plausible continuation unsupported by the available material (Sharma et al. 2024). Apparently similar tasks may also differ considerably in reliability, a jaggedness examined in Section 3 whose boundary the Critical Expert cannot infer from surface difficulty alone (Dell’Acqua et al. 2023).
+The term *Critical Expert in the Loop* specifies what generic human-in-the-loop arrangements leave open, since effective oversight depends on conditions that mere presence does not supply (Sterz et al. 2024). The required competence includes knowledge of the research material and sufficient understanding of the technical and generative processes through which the artefact was produced. LLM-specific failure modes make this combination consequential. A model may reproduce an assumption embedded in a request rather than challenge it, or fill a gap with a plausible continuation unsupported by the available material (Sharma et al. 2024). Apparently similar tasks may also differ considerably in reliability, a jaggedness examined in Section 3 whose boundary the Critical Expert cannot infer from surface difficulty alone (Dell’Acqua et al. 2023).
 
 The Critical Expert’s responsibility is not limited to detecting errors in generated content. It includes examining the framing that governed what was generated. Alternatives may not have been explored, established conventions may have been reproduced without justification, and absences may be concealed by an apparently coherent interface. Verification must therefore consider both the realised artefact and the possibility space from which it emerged.
 
@@ -174,7 +174,7 @@ These risks fall within established concerns of research integrity. The use of g
 
 The forms of checking defined in Section 2.3 produce evidence with different scope. **Accountability therefore requires a distinction between evidence and authority.** A system’s ability to generate a finding, execute a check, or modify a workflow state does not give it the competence or authority to issue the scholarly or technical judgement that the state may appear to express.
 
-Human involvement alone does not resolve this problem. Consequential judgements must be attributable to contributors with the relevant competence and recognised responsibility, and they must refer to an identifiable artefact state, data state, evidential basis, and purpose. Transparent documentation does not make an agent trustworthy, passing tests does not establish scholarly adequacy, and the presence of a person in the workflow does not guarantee competent verification.[^21] Promptotyping therefore keeps machine-generated findings, administrative workflow states, Critical Expert verification, and acceptance distinguishable even where they are operationally connected. **An agent must never record approval, verification, or acceptance that a responsible person has not explicitly granted.**
+Human involvement alone does not resolve this problem. Consequential judgements must be attributable to contributors with the relevant competence and recognised responsibility, and they must refer to an identifiable artefact state, data state, evidential basis, and purpose. Transparent documentation does not make an agent trustworthy, passing tests does not establish scholarly adequacy, and the presence of a person in the workflow does not guarantee competent verification (Green 2022).[^21] Promptotyping therefore keeps machine-generated findings, administrative workflow states, Critical Expert verification, and acceptance distinguishable even where they are operationally connected. **An agent must never record approval, verification, or acceptance that a responsible person has not explicitly granted.**
 
 This distinction also limits the claims attached to an accepted promptotype. Acceptance concerns the documented relation defined in Section 2.2, held together for a stated purpose. It does not constitute a general endorsement of the model, development process, or software beyond that bounded state. Writing consequential findings back into maintained project knowledge can preserve the reasons for revisions and support later inspection, continuation, and handover. It cannot reproduce every generative interaction. Persistent project knowledge may reduce some forms of provider dependence, but it does not guarantee the portability or exact reproducibility of the development process.[^22]
 
@@ -350,9 +350,13 @@ Language models contributed to formulation, comparison, restructuring, and edito
 
 Baxter, Rob, Neil Chue Hong, Dirk Gorissen, James Hetherington, and Ilian Todorov. 2012. “The Research Software Engineer.” Paper presented at Digital Research 2012, Oxford, 10–12 September 2012. [https://www.research.ed.ac.uk/en/publications/the-research-software-engineer/](https://www.research.ed.ac.uk/en/publications/the-research-software-engineer/).
 
+Benito-Santos, Alejandro, Florian Windhager, Aida Horaniet Ibañez, Rabea Kleymann, Alfie Abdul-Rahman, and Eva Mayr. 2026. “Chasing Meaning and/or Insight? A Survey on Evaluation Practices at the Intersection of Visualization and the Humanities.” In *Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems*, 1–23. New York: ACM. [https://doi.org/10.1145/3772318.3793150](https://doi.org/10.1145/3772318.3793150).
+
 Borek, Luise, Canan Hastik, Vera Khramova, Klaus Illmayer, and Jonathan D. Geiger. 2021. “Information Organization and Access in Digital Humanities: TaDiRAH Revised, Formalized and FAIR.” In *Information between Data and Knowledge: Information Science and Its Neighbors from Data Science to Digital Humanities*, edited by Thomas Schmidt and Christian Wolff, 321–332. Glückstadt: Verlag Werner Hülsbusch. [https://doi.org/10.5283/epub.44951](https://doi.org/10.5283/epub.44951).
 
 Carver, Jeffrey C., Nic Weber, Karthik Ram, Sandra Gesing, and Daniel S. Katz. 2022. “A Survey of the State of the Practice for Research Software in the United States.” *PeerJ Computer Science* 8: e963. [https://doi.org/10.7717/peerj-cs.963](https://doi.org/10.7717/peerj-cs.963).
+
+Ciula, Arianna, Øyvind Eide, Cristina Marras, and Patrick Sahle. 2023. *Modelling Between Digital and Humanities: Thinking in Practice*. Cambridge, UK: Open Book Publishers. [https://doi.org/10.11647/OBP.0369](https://doi.org/10.11647/OBP.0369).
 
 Cohen, Jeremy, Daniel S. Katz, Michelle Barker, Neil Chue Hong, Robert Haines, and Caroline Jay. 2021. “The Four Pillars of Research Software Engineering.” *IEEE Software* 38 (1): 97–105. [https://doi.org/10.1109/MS.2020.2973362](https://doi.org/10.1109/MS.2020.2973362).
 
@@ -362,19 +366,39 @@ Drucker, Johanna. 2011. “Humanities Approaches to Graphical Display.” *Digit
 
 Edmond, Jennifer. 2005. “The Role of the Professional Intermediary in Expanding the Humanities Computing Base.” *Literary and Linguistic Computing* 20 (3): 367–380. [https://doi.org/10.1093/llc/fqi036](https://doi.org/10.1093/llc/fqi036).
 
+Fakhoury, Sarah, Aaditya Naik, Georgios Sakkas, Saikat Chakraborty, and Shuvendu K. Lahiri. 2024. “LLM-Based Test-Driven Interactive Code Generation: User Study and Empirical Evaluation.” *IEEE Transactions on Software Engineering* 50 (9): 2254–2268. [https://doi.org/10.1109/TSE.2024.3428972](https://doi.org/10.1109/TSE.2024.3428972).
+
+Fickers, Andreas. 2020. “Update für die Hermeneutik: Geschichtswissenschaft auf dem Weg zur digitalen Forensik?” *Zeithistorische Forschungen / Studies in Contemporary History* 17 (1): 157–168. [https://doi.org/10.14765/zzf.dok-1765](https://doi.org/10.14765/zzf.dok-1765).
+
 Flanders, Julia, and Fotis Jannidis, eds. 2019. *The Shape of Data in Digital Humanities: Modeling Texts and Text-Based Resources*. London and New York: Routledge. [https://doi.org/10.4324/9781315552941](https://doi.org/10.4324/9781315552941).
 
 Galey, Alan, and Stan Ruecker. 2010. “How a Prototype Argues.” *Literary and Linguistic Computing* 25 (4): 405–424. [https://doi.org/10.1093/llc/fqq021](https://doi.org/10.1093/llc/fqq021).
 
 Geiger, Jonathan D. 2024. “Daten / Forschungsdaten.” In *Begriffe der Digital Humanities: Ein diskursives Glossar*, edited by AG Digital Humanities Theorie des Verbandes Digital Humanities im deutschsprachigen Raum. Version 2.0. *Zeitschrift für digitale Geisteswissenschaften / Working Papers* 2. [https://doi.org/10.17175/wp_2023_003_v2](https://doi.org/10.17175/wp_2023_003_v2).
 
+Goldschmidt, Gabriela. 2003. “The Backtalk of Self-Generated Sketches.” *Design Issues* 19 (1): 72–88. [https://doi.org/10.1162/074793603762667728](https://doi.org/10.1162/074793603762667728).
+
+Green, Ben. 2022. “The Flaws of Policies Requiring Human Oversight of Government Algorithms.” *Computer Law & Security Review* 45: 105681. [https://doi.org/10.1016/j.clsr.2022.105681](https://doi.org/10.1016/j.clsr.2022.105681).
+
+Herrmann, J. Berenike, Anne-Sophie Bories, Francesca Frontini, Clèmence Jacquot, Steffen Pielström, Simone Rebora, Geoffrey Rockwell, and Stéfan Sinclair. 2023. “Tool Criticism in Practice: On Methods, Tools and Aims of Computational Literary Studies.” *Digital Humanities Quarterly* 17 (2). [https://doi.org/10.63744/apvw2r52eet3](https://doi.org/10.63744/apvw2r52eet3).
+
+Hertzum, Morten. 2024. “Concurrent or Retrospective Thinking Aloud in Usability Tests: A Meta-Analytic Review.” *ACM Transactions on Computer-Human Interaction* 31 (3): 1–29. [https://doi.org/10.1145/3665327](https://doi.org/10.1145/3665327).
+
 Hong, Kelly, Anton Troynikov, and Jeff Huber. 2025. “Context Rot: How Increasing Input Tokens Impacts LLM Performance.” Chroma Research. [https://research.trychroma.com/context-rot](https://research.trychroma.com/context-rot).
 
+Hora, Andre, and Romain Robbes. 2026. “Are Coding Agents Generating Over-Mocked Tests? An Empirical Study.” In *Proceedings of the International Conference on Mining Software Repositories (MSR 2026)*. [https://doi.org/10.48550/arXiv.2602.00409](https://doi.org/10.48550/arXiv.2602.00409).
+
 IEEE. 2017. *IEEE Standard for System, Software, and Hardware Verification and Validation*. IEEE Std 1012-2016. New York: IEEE. [https://doi.org/10.1109/IEEESTD.2017.8055462](https://doi.org/10.1109/IEEESTD.2017.8055462).
+
+Karpathy, Andrej. 2026. “LLM Wiki.” GitHub Gist, 4 April 2026. [https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f).
 
 Kemman, Max. 2021. *Trading Zones of Digital History*. Studies in Digital History and Hermeneutics 1. Berlin and Boston: De Gruyter Oldenbourg. [https://doi.org/10.1515/9783110682106](https://doi.org/10.1515/9783110682106).
 
 Koolen, Marijn, Jasmijn van Gorp, and Jacco van Ossenbruggen. 2019. “Toward a Model for Digital Tool Criticism: Reflection as Integrative Practice.” *Digital Scholarship in the Humanities* 34 (2): 368–385. [https://doi.org/10.1093/llc/fqy048](https://doi.org/10.1093/llc/fqy048).
+
+Krumdick, Michael, Charles Lovering, Varshini Reddy, Seth Ebner, and Chris Tanner. 2025. “No Free Labels: Limitations of LLM-as-a-Judge Without Human Grounding.” *arXiv*. [https://doi.org/10.48550/arXiv.2503.05061](https://doi.org/10.48550/arXiv.2503.05061).
+
+Lewis, Patrick, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal, Heinrich Küttler, et al. 2020. “Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.” In *Advances in Neural Information Processing Systems 33*, 9459–9474. Red Hook, NY: Curran Associates. [https://proceedings.neurips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html](https://proceedings.neurips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html).
 
 Lucassen, Garm, Fabiano Dalpiaz, Jan Martijn E. M. van der Werf, and Sjaak Brinkkemper. 2016. “Improving Agile Requirements: The Quality User Story Framework and Tool.” *Requirements Engineering* 21 (3): 383–403. [https://doi.org/10.1007/s00766-016-0250-x](https://doi.org/10.1007/s00766-016-0250-x).
 
@@ -402,6 +426,8 @@ Pollin, Christopher, Franz Fischer, Patrick Sahle, Martina Scholger, and Georg V
 
 Posner, Miriam. 2015. “Humanities Data: A Necessary Contradiction.” *Miriam Posner’s Blog*, 25 June 2015. [https://miriamposner.com/blog/humanities-data-a-necessary-contradiction/](https://miriamposner.com/blog/humanities-data-a-necessary-contradiction/).
 
+Russell, Stuart J., and Peter Norvig. 2020. *Artificial Intelligence: A Modern Approach*. 4th ed. Hoboken, NJ: Pearson.
+
 Saltzer, Jerome H., and Michael D. Schroeder. 1975. “The Protection of Information in Computer Systems.” *Proceedings of the IEEE* 63 (9): 1278–1308. [https://doi.org/10.1109/PROC.1975.1055068](https://doi.org/10.1109/PROC.1975.1055068).
 
 Sapkota, Ranjan, Konstantinos I. Roumeliotis, and Manoj Karkee. 2026. “AI Agents vs. Agentic AI: A Conceptual Taxonomy, Applications, and Challenges.” *Information Fusion* 126: 103599. [https://doi.org/10.1016/j.inffus.2025.103599](https://doi.org/10.1016/j.inffus.2025.103599).
@@ -410,11 +436,17 @@ Sarkar, Advait, and Ian Drosos. 2025. “Vibe Coding: Programming through Conver
 
 Schöch, Christof. 2013. “Big? Smart? Clean? Messy? Data in the Humanities.” *Journal of Digital Humanities* 2 (3). [https://journalofdigitalhumanities.org/2-3/big-smart-clean-messy-data-in-the-humanities/](https://journalofdigitalhumanities.org/2-3/big-smart-clean-messy-data-in-the-humanities/).
 
+Schön, Donald A. 1996. “Reflective Conversation with Materials: An Interview with Donald Schön by John Bennett.” In *Bringing Design to Software*, edited by Terry Winograd, 171–189. New York: ACM Press. [https://doi.org/10.1145/229868.230044](https://doi.org/10.1145/229868.230044).
+
 Schulhoff, Sander, Michael Ilie, Nishant Balepur, Konstantine Kahadze, Amanda Liu, Chenglei Si, Yinheng Li, et al. 2024. “The Prompt Report: A Systematic Survey of Prompting Techniques.” *arXiv*. [https://doi.org/10.48550/arXiv.2406.06608](https://doi.org/10.48550/arXiv.2406.06608).
 
 Sharma, Mrinank, Meg Tong, Tomasz Korbak, et al. 2024. “Towards Understanding Sycophancy in Language Models.” In *Proceedings of the Twelfth International Conference on Learning Representations*. [https://doi.org/10.48550/arXiv.2310.13548](https://doi.org/10.48550/arXiv.2310.13548).
 
 Stachowiak, Herbert. 1973. *Allgemeine Modelltheorie*. Vienna and New York: Springer.
+
+Sterz, Sarah, Kevin Baum, Sebastian Biewer, Holger Hermanns, Anne Lauber-Rönsberg, Philip Meinel, and Markus Langer. 2024. “On the Quest for Effectiveness in Human Oversight: Interdisciplinary Perspectives.” In *Proceedings of the 2024 ACM Conference on Fairness, Accountability, and Transparency*, 2495–2507. New York: ACM. [https://doi.org/10.1145/3630106.3659051](https://doi.org/10.1145/3630106.3659051).
+
+Szymanski, Annalisa, Noah Ziems, Heather A. Eicher-Miller, Toby Jia-Jun Li, Meng Jiang, and Ronald A. Metoyer. 2025. “Limitations of the LLM-as-a-Judge Approach for Evaluating LLM Outputs in Expert Knowledge Tasks.” In *Proceedings of the 30th International Conference on Intelligent User Interfaces*. New York: ACM. [https://doi.org/10.1145/3708359.3712091](https://doi.org/10.1145/3708359.3712091).
 
 van Es, Karin, Maranke Wieringa, and Mirko Tobias Schäfer. 2018. “Tool Criticism: From Digital Methods to Digital Methodology.” In *Proceedings of the Second International Conference on Web Studies*, 24–27. New York: ACM. [https://doi.org/10.1145/3240431.3240436](https://doi.org/10.1145/3240431.3240436).
 
