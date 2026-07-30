@@ -2,24 +2,23 @@
   <title id="t">Prospective Promptotyping during modelling and data capture in M3GIM</title>
   <desc id="d">A closed clockwise circuit of six stations. The data model structures early data capture, capture populates the generated interface, interaction with the interface reveals requirements, the resulting insights are documented in the decision register and journal, the documented revision yields a revised data model and capture practice, and the revised model begins the next iteration.</desc>
   <defs>
-    <marker id="flowhead" viewBox="0 0 10 10" refX="9.2" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto" markerUnits="strokeWidth">
-      <path d="M0,0.6 L9.6,5 L0,9.4 Z" fill="#111111"/>
+    <marker id="flowhead" viewBox="0 0 12 12" refX="11.5" refY="6" markerWidth="12" markerHeight="12" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0.5,0.8 L11.5,6 L0.5,11.2 Z" fill="#111111"/>
     </marker>
-    <marker id="supporthead" viewBox="0 0 10 10" refX="9.2" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto" markerUnits="strokeWidth">
-      <path d="M0.6,1.2 L9.2,5 L0.6,8.8 Z" fill="#ffffff" stroke="#666666" stroke-width="1.2"/>
+    <marker id="supporthead" viewBox="0 0 12 12" refX="11.5" refY="6" markerWidth="12" markerHeight="12" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M1.2,1.8 L11.0,6 L1.2,10.2 Z" fill="#ffffff" stroke="#666666" stroke-width="1.2"/>
     </marker>
     <style>
       text { font-family: Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #111111; }
-      .n { font-size: 16px; font-weight: 600; }
+      .n { font-size: 17px; font-weight: 600; }
       .s { font-size: 13px; }
       .m { font-size: 13px; font-weight: 600; }
-      .e { font-size: 11px; fill: #666666; }
-      .box { fill: #ffffff; stroke: #111111; stroke-width: 1.5; }
-      .panel { fill: #f2f2f2; stroke: #111111; stroke-width: 1.5; }
-      .flow { fill: none; stroke: #111111; stroke-width: 1.5; stroke-linejoin: round; marker-end: url(#flowhead); }
-      .support { fill: none; stroke: #666666; stroke-width: 1.5; stroke-linejoin: round; stroke-dasharray: 6 4; marker-end: url(#supporthead); }
-      .plain { fill: none; stroke: #111111; stroke-width: 1.5; stroke-linejoin: round; }
-      .rule { stroke: #d9d9d9; stroke-width: 1.5; }
+      .e { font-size: 12px; fill: #666666; }
+      .box { fill: #ffffff; stroke: #111111; stroke-width: 2.5; }
+      .sub { fill: #ffffff; stroke: #111111; stroke-width: 1.25; }
+      .flow { fill: none; stroke: #111111; stroke-width: 2.5; stroke-linejoin: round; marker-end: url(#flowhead); }
+      .plain { fill: none; stroke: #111111; stroke-width: 2.5; stroke-linejoin: round; }
+      .support { fill: none; stroke: #666666; stroke-width: 1.25; stroke-linejoin: round; stroke-dasharray: 6 4; marker-end: url(#supporthead); }
       .disc { fill: #111111; }
     </style>
   </defs>
@@ -27,59 +26,59 @@
   <rect x="0" y="0" width="960" height="520" fill="#ffffff"/>
 
   <!-- Upper row -->
-  <rect class="box" x="60" y="76" width="220" height="84" rx="2"/>
-  <text class="n" x="170" y="108" text-anchor="middle">Data model</text>
-  <text class="s" x="170" y="130" text-anchor="middle">RiC-O and JSON-LD</text>
+  <rect class="box" x="50" y="76" width="220" height="92" rx="2"/>
+  <text class="n" x="160" y="112" text-anchor="middle">Data model</text>
+  <text class="s" x="160" y="136" text-anchor="middle">RiC-O and JSON-LD</text>
 
-  <rect class="box" x="370" y="76" width="220" height="84" rx="2"/>
-  <text class="n" x="480" y="108" text-anchor="middle">Early data capture</text>
-  <text class="s" x="480" y="130" text-anchor="middle">by project partners</text>
+  <rect class="box" x="370" y="76" width="220" height="92" rx="2"/>
+  <text class="n" x="480" y="112" text-anchor="middle">Early data capture</text>
+  <text class="s" x="480" y="136" text-anchor="middle">by project partners</text>
 
-  <rect class="box" x="680" y="76" width="220" height="84" rx="2"/>
-  <text class="n" x="790" y="108" text-anchor="middle">Generated interface</text>
-  <text class="s" x="790" y="130" text-anchor="middle">exploration and capture</text>
+  <rect class="box" x="690" y="76" width="220" height="92" rx="2"/>
+  <text class="n" x="800" y="112" text-anchor="middle">Generated interface</text>
+  <text class="s" x="800" y="136" text-anchor="middle">exploration and capture</text>
 
   <!-- Lower row -->
-  <rect class="box" x="60" y="316" width="220" height="84" rx="2"/>
-  <text class="n" x="170" y="348" text-anchor="middle">Revised data model</text>
-  <text class="n" x="170" y="370" text-anchor="middle">and capture</text>
+  <rect class="box" x="50" y="316" width="220" height="92" rx="2"/>
+  <text class="n" x="160" y="354" text-anchor="middle">Revised data model</text>
+  <text class="n" x="160" y="376" text-anchor="middle">and capture</text>
 
-  <rect class="box" x="370" y="316" width="220" height="84" rx="2"/>
-  <text class="n" x="480" y="348" text-anchor="middle">Decision register</text>
-  <text class="n" x="480" y="370" text-anchor="middle">and journal</text>
+  <rect class="box" x="370" y="316" width="220" height="92" rx="2"/>
+  <text class="n" x="480" y="354" text-anchor="middle">Decision register</text>
+  <text class="n" x="480" y="376" text-anchor="middle">and journal</text>
 
-  <rect class="box" x="680" y="316" width="220" height="84" rx="2"/>
-  <text class="n" x="790" y="348" text-anchor="middle">Modelling and</text>
-  <text class="n" x="790" y="370" text-anchor="middle">capture insights</text>
+  <rect class="box" x="690" y="316" width="220" height="92" rx="2"/>
+  <text class="n" x="800" y="354" text-anchor="middle">Modelling and</text>
+  <text class="n" x="800" y="376" text-anchor="middle">capture insights</text>
 
   <!-- Circuit -->
-  <path class="flow" d="M284,118 H366"/>
-  <text class="e" x="325" y="100" text-anchor="middle">structures the</text>
-  <text class="e" x="325" y="112" text-anchor="middle">capture</text>
+  <path class="flow" d="M274,122 H370"/>
+  <text class="e" x="320" y="100" text-anchor="middle">structures the</text>
+  <text class="e" x="320" y="114" text-anchor="middle">capture</text>
 
-  <path class="flow" d="M594,118 H676"/>
-  <text class="e" x="635" y="100" text-anchor="middle">populates the</text>
-  <text class="e" x="635" y="112" text-anchor="middle">interface</text>
+  <path class="flow" d="M594,122 H690"/>
+  <text class="e" x="640" y="100" text-anchor="middle">populates the</text>
+  <text class="e" x="640" y="114" text-anchor="middle">interface</text>
 
-  <path class="flow" d="M790,164 V312"/>
-  <text class="e" x="778" y="230" text-anchor="end">interaction reveals</text>
-  <text class="e" x="778" y="244" text-anchor="end">requirements</text>
+  <path class="flow" d="M800,172 V312"/>
+  <text class="e" x="814" y="236">interaction reveals</text>
+  <text class="e" x="814" y="252">requirements</text>
 
-  <path class="support" d="M676,358 H594"/>
-  <text class="e" x="635" y="336" text-anchor="middle">findings are</text>
-  <text class="e" x="635" y="350" text-anchor="middle">documented</text>
+  <path class="support" d="M690,362 H594"/>
+  <text class="e" x="640" y="340" text-anchor="middle">findings are</text>
+  <text class="e" x="640" y="354" text-anchor="middle">documented</text>
 
-  <path class="support" d="M366,358 H284"/>
-  <text class="e" x="325" y="336" text-anchor="middle">documented</text>
-  <text class="e" x="325" y="350" text-anchor="middle">revision</text>
+  <path class="support" d="M370,362 H274"/>
+  <text class="e" x="320" y="340" text-anchor="middle">documented</text>
+  <text class="e" x="320" y="354" text-anchor="middle">revision</text>
 
-  <path class="flow" d="M170,312 V164"/>
-  <text class="e" x="184" y="230">revised model</text>
-  <text class="e" x="184" y="244">next iteration</text>
+  <path class="flow" d="M160,312 V172"/>
+  <text class="e" x="146" y="236" text-anchor="end">revised model</text>
+  <text class="e" x="146" y="252" text-anchor="end">next iteration</text>
 
   <!-- Legend -->
-  <path class="flow" d="M60,442 H98"/>
-  <text class="e" x="110" y="446">operational flow</text>
-  <path class="support" d="M60,468 H98"/>
-  <text class="e" x="110" y="472">documented write-back</text>
+  <path class="flow" d="M50,448 H96"/>
+  <text class="e" x="108" y="452">operational flow</text>
+  <path class="support" d="M50,476 H96"/>
+  <text class="e" x="108" y="480">documented write-back</text>
 </svg>

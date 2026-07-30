@@ -1,106 +1,114 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" role="img" aria-labelledby="t d">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 700" role="img" aria-labelledby="t d">
   <title id="t">The ZBZ OCR/TEI workflow before and after decision E66</title>
-  <desc id="d">Two panels divided by decision E66. Before E66, generated output passed through agent screening into an agent-recorded approval status that no responsible person had authorised. After E66, generated output feeds a per-stream workflow state as well as deterministic validation and agentic review, which converge in an evidence box; evidence informs Critical Expert verification, which alone authorises the human-authorised verification status.</desc>
+  <desc id="d">Two columns of equal width divided by decision E66, both beginning with the same generated output. Before E66, generated output passed through agent screening into an agent-recorded approval status that no responsible person had authorised. After E66, generated output feeds a per-stream workflow state as well as deterministic validation and agentic review, which converge in an evidence box; evidence informs Critical Expert verification, which alone authorises the human-authorised verification status.</desc>
   <defs>
-    <marker id="flowhead" viewBox="0 0 10 10" refX="9.2" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto" markerUnits="strokeWidth">
-      <path d="M0,0.6 L9.6,5 L0,9.4 Z" fill="#111111"/>
+    <marker id="flowhead" viewBox="0 0 12 12" refX="11.5" refY="6" markerWidth="12" markerHeight="12" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0.5,0.8 L11.5,6 L0.5,11.2 Z" fill="#111111"/>
     </marker>
-    <marker id="supporthead" viewBox="0 0 10 10" refX="9.2" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto" markerUnits="strokeWidth">
-      <path d="M0.6,1.2 L9.2,5 L0.6,8.8 Z" fill="#ffffff" stroke="#666666" stroke-width="1.2"/>
+    <marker id="supporthead" viewBox="0 0 12 12" refX="11.5" refY="6" markerWidth="12" markerHeight="12" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M1.2,1.8 L11.0,6 L1.2,10.2 Z" fill="#ffffff" stroke="#666666" stroke-width="1.2"/>
     </marker>
     <style>
       text { font-family: Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #111111; }
-      .n { font-size: 16px; font-weight: 600; }
+      .h { font-size: 18px; font-weight: 600; }
+      .n { font-size: 17px; font-weight: 600; }
       .s { font-size: 13px; }
       .m { font-size: 13px; font-weight: 600; }
-      .e { font-size: 11px; fill: #666666; }
-      .box { fill: #ffffff; stroke: #111111; stroke-width: 1.5; }
-      .panel { fill: #f2f2f2; stroke: #111111; stroke-width: 1.5; }
-      .flow { fill: none; stroke: #111111; stroke-width: 1.5; stroke-linejoin: round; marker-end: url(#flowhead); }
-      .support { fill: none; stroke: #666666; stroke-width: 1.5; stroke-linejoin: round; stroke-dasharray: 6 4; marker-end: url(#supporthead); }
-      .plain { fill: none; stroke: #111111; stroke-width: 1.5; stroke-linejoin: round; }
-      .divider { fill: none; stroke: #666666; stroke-width: 1.5; }
-      .rule { stroke: #d9d9d9; stroke-width: 1.5; }
+      .e { font-size: 12px; fill: #666666; }
+      .box { fill: #ffffff; stroke: #111111; stroke-width: 2.5; }
+      .sub { fill: #ffffff; stroke: #111111; stroke-width: 1.25; }
+      .mark { fill: #eeeeee; stroke: #111111; stroke-width: 2.5; }
+      .flow { fill: none; stroke: #111111; stroke-width: 2.5; stroke-linejoin: round; marker-end: url(#flowhead); }
+      .plain { fill: none; stroke: #111111; stroke-width: 2.5; stroke-linejoin: round; }
+      .support { fill: none; stroke: #666666; stroke-width: 1.25; stroke-linejoin: round; stroke-dasharray: 6 4; marker-end: url(#supporthead); }
+      .divider { fill: none; stroke: #666666; stroke-width: 1.25; }
       .disc { fill: #111111; }
     </style>
   </defs>
 
-  <rect x="0" y="0" width="960" height="640" fill="#ffffff"/>
+  <rect x="0" y="0" width="960" height="700" fill="#ffffff"/>
 
-  <text class="n" x="180" y="60" text-anchor="middle">Before E66</text>
-  <text class="n" x="685" y="60" text-anchor="middle">After E66</text>
+  <!-- Column heads -->
+  <text class="h" x="240" y="40" text-anchor="middle">Before E66</text>
+  <text class="h" x="720" y="40" text-anchor="middle">After E66</text>
 
   <!-- Divider -->
-  <path class="divider" d="M380,36 V610"/>
-  <rect x="316" y="284" width="128" height="26" fill="#ffffff"/>
-  <text class="n" x="380" y="304" text-anchor="middle">Decision E66</text>
+  <path class="divider" d="M480,54 V616"/>
+  <rect x="412" y="318" width="136" height="32" fill="#ffffff"/>
+  <text class="n" x="480" y="340" text-anchor="middle">Decision E66</text>
 
-  <!-- Left panel -->
-  <rect class="box" x="60" y="100" width="240" height="60" rx="2"/>
-  <text class="n" x="180" y="136" text-anchor="middle">Generated output</text>
-  <path class="flow" d="M180,164 V206"/>
-  <rect class="box" x="60" y="210" width="240" height="60" rx="2"/>
-  <text class="n" x="180" y="246" text-anchor="middle">Agent screening</text>
-  <path class="flow" d="M180,274 V316"/>
-  <rect class="box" x="60" y="320" width="240" height="76" rx="2"/>
-  <text class="n" x="180" y="352" text-anchor="middle">Agent-recorded</text>
-  <text class="n" x="180" y="374" text-anchor="middle">approval status</text>
+  <!-- Left column -->
+  <rect class="box" x="90" y="68" width="300" height="60" rx="2"/>
+  <text class="n" x="240" y="104" text-anchor="middle">Generated output</text>
+  <path class="flow" d="M240,128 V164"/>
 
-  <text class="s" x="60" y="430">production and verification</text>
-  <text class="s" x="60" y="450">collapse into one operation;</text>
-  <text class="s" x="60" y="470">no responsible person</text>
-  <text class="s" x="60" y="490">authorised the status</text>
+  <rect class="box" x="90" y="168" width="300" height="60" rx="2"/>
+  <text class="n" x="240" y="204" text-anchor="middle">Agent screening</text>
+  <path class="flow" d="M240,228 V264"/>
+
+  <rect class="box" x="90" y="268" width="300" height="80" rx="2"/>
+  <text class="n" x="240" y="302" text-anchor="middle">Agent-recorded</text>
+  <text class="n" x="240" y="324" text-anchor="middle">approval status</text>
+
+  <rect class="sub" x="90" y="492" width="300" height="114" rx="2"/>
+  <text class="s" x="110" y="522">production and verification</text>
+  <text class="s" x="110" y="544">collapse into one operation;</text>
+  <text class="s" x="110" y="566">no responsible person</text>
+  <text class="s" x="110" y="588">authorised the status</text>
+
+  <!-- Right column -->
+  <rect class="box" x="500" y="68" width="200" height="60" rx="2"/>
+  <text class="n" x="600" y="104" text-anchor="middle">Generated output</text>
+
+  <rect class="box" x="740" y="68" width="200" height="60" rx="2"/>
+  <text class="n" x="840" y="98" text-anchor="middle">Workflow state</text>
+  <text class="s" x="840" y="118" text-anchor="middle">per stream</text>
+  <path class="flow" d="M700,98 H740"/>
+
+  <path class="plain" d="M600,128 V150"/>
+  <path class="plain" d="M600,150 H840"/>
+  <path class="flow" d="M600,150 V174"/>
+  <path class="flow" d="M840,150 V174"/>
+
+  <rect class="box" x="500" y="178" width="200" height="72" rx="2"/>
+  <text class="n" x="600" y="210" text-anchor="middle">Deterministic</text>
+  <text class="n" x="600" y="232" text-anchor="middle">validation</text>
+
+  <rect class="box" x="740" y="178" width="200" height="72" rx="2"/>
+  <text class="n" x="840" y="220" text-anchor="middle">Agentic review</text>
+
+  <path class="flow" d="M600,250 V272 H660 V288"/>
+  <path class="flow" d="M840,250 V272 H780 V288"/>
+
+  <rect class="box" x="570" y="292" width="300" height="86" rx="2"/>
+  <text class="n" x="720" y="324" text-anchor="middle">Evidence</text>
+  <text class="s" x="720" y="350" text-anchor="middle">reports about the output</text>
+  <text class="s" x="720" y="368" text-anchor="middle">never an authorisation</text>
+
+  <path class="support" d="M720,378 V406"/>
+  <text class="e" x="732" y="396">informs</text>
+
+  <!-- Critical Expert verification, the emphasised element -->
+  <rect class="mark" x="570" y="410" width="300" height="78" rx="2"/>
+  <circle cx="606" cy="449" r="13" fill="#ffffff" stroke="#111111" stroke-width="2.5"/>
+  <circle cx="606" cy="449" r="6" class="disc"/>
+  <text class="n" x="634" y="443">Critical Expert</text>
+  <text class="n" x="634" y="465">verification</text>
+
+  <path class="flow" d="M720,488 V516"/>
+  <text class="e" x="732" y="506">authorises</text>
+
+  <rect class="box" x="570" y="520" width="300" height="86" rx="2"/>
+  <text class="n" x="720" y="552" text-anchor="middle">Human-authorised</text>
+  <text class="n" x="720" y="574" text-anchor="middle">verification status</text>
+  <text class="s" x="720" y="596" text-anchor="middle">only accountable editors</text>
 
   <!-- Legend -->
-  <path class="flow" d="M60,536 H98"/>
-  <text class="e" x="110" y="540">operational flow</text>
-  <path class="support" d="M60,562 H98"/>
-  <text class="e" x="110" y="566">evidence relation</text>
-  <circle cx="74" cy="586" r="9" fill="#ffffff" stroke="#111111" stroke-width="1.5"/>
-  <circle cx="74" cy="586" r="4" class="disc"/>
-  <text class="e" x="110" y="590">accountable human authority</text>
-
-  <!-- Right panel -->
-  <rect class="box" x="470" y="100" width="190" height="56" rx="2"/>
-  <text class="n" x="565" y="134" text-anchor="middle">Generated output</text>
-
-  <rect class="box" x="740" y="100" width="190" height="56" rx="2"/>
-  <text class="n" x="835" y="130" text-anchor="middle">Workflow state</text>
-  <text class="s" x="835" y="150" text-anchor="middle">per stream</text>
-  <path class="flow" d="M664,128 H736"/>
-
-  <path class="flow" d="M565,160 V178 H540 V186"/>
-  <path class="flow" d="M565,178 H785 V186"/>
-
-  <rect class="box" x="440" y="190" width="200" height="72" rx="2"/>
-  <text class="n" x="540" y="220" text-anchor="middle">Deterministic</text>
-  <text class="n" x="540" y="242" text-anchor="middle">validation</text>
-
-  <rect class="box" x="690" y="190" width="190" height="72" rx="2"/>
-  <text class="n" x="785" y="232" text-anchor="middle">Agentic review</text>
-
-  <path class="flow" d="M540,262 V282 H600 V296"/>
-  <path class="flow" d="M785,262 V282 H720 V296"/>
-
-  <rect class="box" x="545" y="300" width="230" height="84" rx="2"/>
-  <text class="n" x="660" y="330" text-anchor="middle">Evidence</text>
-  <text class="s" x="660" y="354" text-anchor="middle">reports about the output</text>
-  <text class="s" x="660" y="372" text-anchor="middle">never an authorisation</text>
-
-  <path class="support" d="M660,388 V416"/>
-  <text class="e" x="672" y="406">informs</text>
-
-  <rect class="box" x="545" y="420" width="230" height="72" rx="2"/>
-  <circle cx="568" cy="456" r="11" fill="#ffffff" stroke="#111111" stroke-width="1.5"/>
-  <circle cx="568" cy="456" r="5" class="disc"/>
-  <text class="n" x="590" y="450">Critical Expert</text>
-  <text class="n" x="590" y="472">verification</text>
-
-  <path class="flow" d="M660,496 V526"/>
-  <text class="e" x="672" y="514">authorises</text>
-
-  <rect class="box" x="545" y="530" width="230" height="80" rx="2"/>
-  <text class="n" x="660" y="560" text-anchor="middle">Human-authorised</text>
-  <text class="n" x="660" y="582" text-anchor="middle">verification status</text>
-  <text class="s" x="660" y="602" text-anchor="middle">only accountable editors</text>
+  <path class="flow" d="M20,628 H66"/>
+  <text class="e" x="78" y="632">operational flow</text>
+  <path class="support" d="M20,652 H66"/>
+  <text class="e" x="78" y="656">evidence relation</text>
+  <circle cx="34" cy="676" r="10" fill="#ffffff" stroke="#111111" stroke-width="2.5"/>
+  <circle cx="34" cy="676" r="4.5" class="disc"/>
+  <text class="e" x="78" y="680">accountable human authority</text>
 </svg>

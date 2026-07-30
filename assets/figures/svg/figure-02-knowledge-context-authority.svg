@@ -2,123 +2,124 @@
   <title id="t">Project knowledge, working context, implementation, and authority in Promptotyping</title>
   <desc id="d">A versioned project knowledge base supplies a task-specific working context, an AI agent inside a harness produces a digital research artefact, deterministic validation and agentic review provide evidence about it, Critical Expert verification carries the human authority mark, acceptance is a purpose-specific decision, and it writes back into the knowledge base.</desc>
   <defs>
-    <marker id="flowhead" viewBox="0 0 10 10" refX="9.2" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto" markerUnits="strokeWidth">
-      <path d="M0,0.6 L9.6,5 L0,9.4 Z" fill="#111111"/>
+    <marker id="flowhead" viewBox="0 0 12 12" refX="11.5" refY="6" markerWidth="12" markerHeight="12" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0.5,0.8 L11.5,6 L0.5,11.2 Z" fill="#111111"/>
     </marker>
-    <marker id="supporthead" viewBox="0 0 10 10" refX="9.2" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto" markerUnits="strokeWidth">
-      <path d="M0.6,1.2 L9.2,5 L0.6,8.8 Z" fill="#ffffff" stroke="#666666" stroke-width="1.2"/>
+    <marker id="supporthead" viewBox="0 0 12 12" refX="11.5" refY="6" markerWidth="12" markerHeight="12" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M1.2,1.8 L11.0,6 L1.2,10.2 Z" fill="#ffffff" stroke="#666666" stroke-width="1.2"/>
     </marker>
     <style>
       text { font-family: Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #111111; }
-      .n { font-size: 16px; font-weight: 600; }
+      .n { font-size: 17px; font-weight: 600; }
       .s { font-size: 13px; }
       .m { font-size: 13px; font-weight: 600; }
-      .e { font-size: 11px; fill: #666666; }
-      .box { fill: #ffffff; stroke: #111111; stroke-width: 1.5; }
-      .panel { fill: #f2f2f2; stroke: #111111; stroke-width: 1.5; }
-      .flow { fill: none; stroke: #111111; stroke-width: 1.5; stroke-linejoin: round; marker-end: url(#flowhead); }
-      .support { fill: none; stroke: #666666; stroke-width: 1.5; stroke-linejoin: round; stroke-dasharray: 6 4; marker-end: url(#supporthead); }
-      .plain { fill: none; stroke: #111111; stroke-width: 1.5; stroke-linejoin: round; }
-      .rule { stroke: #d9d9d9; stroke-width: 1.5; }
+      .e { font-size: 12px; fill: #666666; }
+      .box { fill: #ffffff; stroke: #111111; stroke-width: 2.5; }
+      .sub { fill: #ffffff; stroke: #111111; stroke-width: 1.25; }
+      .mark { fill: #eeeeee; stroke: #111111; stroke-width: 2.5; }
+      .flow { fill: none; stroke: #111111; stroke-width: 2.5; stroke-linejoin: round; marker-end: url(#flowhead); }
+      .plain { fill: none; stroke: #111111; stroke-width: 2.5; stroke-linejoin: round; }
+      .support { fill: none; stroke: #666666; stroke-width: 1.25; stroke-linejoin: round; stroke-dasharray: 6 4; marker-end: url(#supporthead); }
       .disc { fill: #111111; }
     </style>
   </defs>
 
   <rect x="0" y="0" width="960" height="640" fill="#ffffff"/>
 
-  <!-- Knowledge base -->
-  <rect class="panel" x="30" y="40" width="200" height="156" rx="2"/>
-  <text class="n" x="130" y="66" text-anchor="middle">Versioned project</text>
-  <text class="n" x="130" y="84" text-anchor="middle">knowledge base</text>
-  <rect class="box" x="44" y="96" width="172" height="28" rx="2"/>
-  <text class="s" x="130" y="115" text-anchor="middle">declarative documents</text>
-  <rect class="box" x="44" y="128" width="172" height="28" rx="2"/>
-  <text class="s" x="130" y="147" text-anchor="middle">process documents</text>
-  <rect class="box" x="44" y="160" width="172" height="28" rx="2"/>
-  <text class="s" x="130" y="179" text-anchor="middle">action documents</text>
+  <!-- Knowledge base, container -->
+  <rect class="box" x="30" y="32" width="200" height="186" rx="2"/>
+  <text class="n" x="130" y="60" text-anchor="middle">Versioned project</text>
+  <text class="n" x="130" y="80" text-anchor="middle">knowledge base</text>
+  <rect class="sub" x="44" y="92" width="172" height="34" rx="2"/>
+  <text class="s" x="130" y="114" text-anchor="middle">declarative documents</text>
+  <rect class="sub" x="44" y="132" width="172" height="34" rx="2"/>
+  <text class="s" x="130" y="154" text-anchor="middle">process documents</text>
+  <rect class="sub" x="44" y="172" width="172" height="34" rx="2"/>
+  <text class="s" x="130" y="194" text-anchor="middle">action documents</text>
 
   <!-- Working context -->
-  <rect class="box" x="300" y="78" width="150" height="80" rx="2"/>
-  <text class="n" x="375" y="102" text-anchor="middle">Working</text>
-  <text class="n" x="375" y="120" text-anchor="middle">context</text>
-  <text class="s" x="375" y="142" text-anchor="middle">task-specific</text>
+  <rect class="box" x="298" y="78" width="154" height="92" rx="2"/>
+  <text class="n" x="375" y="106" text-anchor="middle">Working</text>
+  <text class="n" x="375" y="126" text-anchor="middle">context</text>
+  <text class="s" x="375" y="150" text-anchor="middle">task-specific</text>
 
-  <!-- Harness with agent -->
-  <rect class="panel" x="520" y="68" width="170" height="100" rx="2"/>
-  <text class="n" x="605" y="94" text-anchor="middle">AI harness</text>
-  <rect class="box" x="540" y="106" width="130" height="44" rx="2"/>
-  <text class="n" x="605" y="134" text-anchor="middle">AI agent</text>
+  <!-- Harness with nested agent -->
+  <rect class="box" x="520" y="68" width="170" height="112" rx="2"/>
+  <text class="n" x="605" y="96" text-anchor="middle">AI harness</text>
+  <rect class="sub" x="540" y="112" width="130" height="50" rx="2"/>
+  <text class="n" x="605" y="144" text-anchor="middle">AI agent</text>
 
   <!-- Artefact -->
-  <rect class="box" x="750" y="78" width="180" height="80" rx="2"/>
-  <text class="n" x="840" y="106" text-anchor="middle">Digital research</text>
-  <text class="n" x="840" y="128" text-anchor="middle">artefact</text>
+  <rect class="box" x="750" y="78" width="180" height="92" rx="2"/>
+  <text class="n" x="840" y="112" text-anchor="middle">Digital research</text>
+  <text class="n" x="840" y="134" text-anchor="middle">artefact</text>
 
   <!-- Upper band flow -->
-  <path class="flow" d="M234,118 H296"/>
-  <text class="e" x="265" y="98" text-anchor="middle">per-task</text>
-  <text class="e" x="265" y="111" text-anchor="middle">selection</text>
-  <path class="flow" d="M454,118 H516"/>
-  <text class="e" x="485" y="98" text-anchor="middle">assigned</text>
-  <text class="e" x="485" y="111" text-anchor="middle">task</text>
-  <path class="flow" d="M694,118 H746"/>
-  <text class="e" x="720" y="105" text-anchor="middle">produces</text>
+  <path class="flow" d="M234,124 H298"/>
+  <text class="e" x="266" y="102" text-anchor="middle">per-task</text>
+  <text class="e" x="266" y="116" text-anchor="middle">selection</text>
+  <path class="flow" d="M456,124 H520"/>
+  <text class="e" x="488" y="102" text-anchor="middle">assigned</text>
+  <text class="e" x="488" y="116" text-anchor="middle">task</text>
+  <path class="flow" d="M694,124 H750"/>
+  <text class="e" x="722" y="110" text-anchor="middle">produces</text>
 
-  <!-- Branch from artefact -->
-  <path class="flow" d="M840,158 V242"/>
-  <path class="plain" d="M840,210 H400"/>
-  <path class="flow" d="M400,210 V246"/>
-  <path class="flow" d="M615,210 V246"/>
+  <!-- Distribution rail from the artefact -->
+  <path class="plain" d="M840,170 V212"/>
+  <path class="plain" d="M400,212 H840"/>
+  <path class="flow" d="M400,212 V252"/>
+  <path class="flow" d="M615,212 V252"/>
+  <path class="flow" d="M840,212 V252"/>
 
   <!-- Checks -->
-  <rect class="box" x="300" y="250" width="200" height="86" rx="2"/>
-  <text class="n" x="400" y="282" text-anchor="middle">Deterministic</text>
-  <text class="n" x="400" y="302" text-anchor="middle">validation</text>
-  <text class="s" x="400" y="324" text-anchor="middle">formalised checks</text>
+  <rect class="box" x="300" y="256" width="200" height="96" rx="2"/>
+  <text class="n" x="400" y="290" text-anchor="middle">Deterministic</text>
+  <text class="n" x="400" y="312" text-anchor="middle">validation</text>
+  <text class="s" x="400" y="336" text-anchor="middle">formalised checks</text>
 
-  <rect class="box" x="530" y="250" width="170" height="86" rx="2"/>
-  <text class="n" x="615" y="284" text-anchor="middle">Agentic review</text>
-  <text class="s" x="615" y="306" text-anchor="middle">model-mediated</text>
-  <text class="s" x="615" y="324" text-anchor="middle">checking</text>
+  <rect class="box" x="530" y="256" width="170" height="96" rx="2"/>
+  <text class="n" x="615" y="292" text-anchor="middle">Agentic review</text>
+  <text class="s" x="615" y="316" text-anchor="middle">model-mediated</text>
+  <text class="s" x="615" y="334" text-anchor="middle">checking</text>
 
   <!-- Critical Expert verification -->
-  <rect class="box" x="730" y="246" width="200" height="136" rx="2"/>
-  <circle cx="830" cy="272" r="11" fill="#ffffff" stroke="#111111" stroke-width="1.5"/>
-  <circle cx="830" cy="272" r="5" class="disc"/>
-  <text class="n" x="830" y="308" text-anchor="middle">Critical Expert</text>
-  <text class="n" x="830" y="328" text-anchor="middle">verification</text>
-  <text class="s" x="830" y="350" text-anchor="middle">source fidelity, design,</text>
-  <text class="s" x="830" y="368" text-anchor="middle">interpretation</text>
+  <rect class="box" x="730" y="256" width="200" height="148" rx="2"/>
+  <circle cx="830" cy="286" r="13" fill="#ffffff" stroke="#111111" stroke-width="2.5"/>
+  <circle cx="830" cy="286" r="6" class="disc"/>
+  <text class="n" x="830" y="326" text-anchor="middle">Critical Expert</text>
+  <text class="n" x="830" y="348" text-anchor="middle">verification</text>
+  <text class="s" x="830" y="372" text-anchor="middle">source fidelity, design,</text>
+  <text class="s" x="830" y="390" text-anchor="middle">interpretation</text>
 
   <!-- Evidence -->
-  <path class="flow" d="M400,336 V370 H450 V392"/>
-  <path class="flow" d="M615,336 V370 H550 V392"/>
-  <rect class="box" x="390" y="396" width="220" height="88" rx="2"/>
-  <text class="n" x="500" y="426" text-anchor="middle">Evidence</text>
-  <text class="s" x="500" y="450" text-anchor="middle">reports about the artefact</text>
-  <text class="s" x="500" y="470" text-anchor="middle">never an authorisation</text>
+  <path class="flow" d="M400,352 V376 H450 V402"/>
+  <path class="flow" d="M615,352 V376 H550 V402"/>
+  <rect class="box" x="390" y="406" width="220" height="96" rx="2"/>
+  <text class="n" x="500" y="440" text-anchor="middle">Evidence</text>
+  <text class="s" x="500" y="466" text-anchor="middle">reports about the artefact</text>
+  <text class="s" x="500" y="486" text-anchor="middle">never an authorisation</text>
 
-  <path class="support" d="M614,430 H715 V346 H724"/>
-  <text class="e" x="666" y="372">informs</text>
+  <path class="support" d="M610,444 H700 V380 H726"/>
+  <text class="e" x="696" y="396" text-anchor="end">informs</text>
 
-  <!-- Acceptance -->
-  <path class="flow" d="M830,382 V464"/>
-  <text class="e" x="842" y="430">authorises</text>
-  <rect class="box" x="730" y="470" width="200" height="90" rx="2"/>
-  <text class="n" x="830" y="502" text-anchor="middle">Acceptance</text>
-  <text class="s" x="830" y="526" text-anchor="middle">purpose-specific decision</text>
-  <text class="s" x="830" y="546" text-anchor="middle">by accountable humans</text>
+  <!-- Acceptance, the emphasised element -->
+  <path class="flow" d="M830,404 V478"/>
+  <text class="e" x="842" y="446">authorises</text>
+  <rect class="mark" x="730" y="482" width="200" height="100" rx="2"/>
+  <text class="n" x="830" y="516" text-anchor="middle">Acceptance</text>
+  <text class="s" x="830" y="542" text-anchor="middle">purpose-specific decision</text>
+  <text class="s" x="830" y="562" text-anchor="middle">by accountable humans</text>
 
   <!-- Write-back -->
-  <path class="support" d="M726,520 H60 V200"/>
-  <text class="e" x="400" y="510" text-anchor="middle">write-back into project knowledge</text>
+  <path class="support" d="M726,532 H60 V220"/>
+  <text class="e" x="400" y="522" text-anchor="middle">write-back into project knowledge</text>
 
   <!-- Legend -->
-  <path class="flow" d="M30,566 H68"/>
-  <text class="e" x="80" y="570">operational flow</text>
-  <path class="support" d="M30,592 H68"/>
-  <text class="e" x="80" y="596">evidence relation and write-back</text>
-  <circle cx="44" cy="616" r="9" fill="#ffffff" stroke="#111111" stroke-width="1.5"/>
-  <circle cx="44" cy="616" r="4" class="disc"/>
-  <text class="e" x="80" y="620">accountable human authority</text>
+  <path class="flow" d="M30,562 H76"/>
+  <text class="e" x="88" y="566">operational flow</text>
+  <path class="support" d="M30,588 H76"/>
+  <text class="e" x="88" y="592">evidence relation and write-back</text>
+  <circle cx="44" cy="614" r="10" fill="#ffffff" stroke="#111111" stroke-width="2.5"/>
+  <circle cx="44" cy="614" r="4.5" class="disc"/>
+  <text class="e" x="88" y="618">accountable human authority</text>
 </svg>
