@@ -1,8 +1,8 @@
 # Promptotyping Paper: Canonical Knowledge Document
 
-**Updated:** 29 July 2026, night, after intake of the operator's integrated final version (`Promptotyping_Paper_Final_Integrated_2026-07-29.md`) as `knowledge/paper-draft.md`.
+**Updated:** 30 July 2026, after intake of the operator's externally revised manuscript (Fassung 4) as `knowledge/paper-draft.md`.
 
-**Status:** Canonical working specification for the final manuscript candidate. The working text is `knowledge/paper-draft.md`, since the night intake with six embedded figures whose image files are adopted under `assets/figures/` (register in `assets/figures/PROVENANCE.md`). The site keeps rendering `knowledge/paper.md` until chapter-wise author acceptance is complete, then the files are swapped.
+**Status:** Canonical working specification for the final manuscript candidate. The working text is `knowledge/paper-draft.md`, since the 2026-07-30 intake of the operator's revised manuscript (Fassung 4), which condensed the integrated final version of 2026-07-29. The adopted figure files remain under `assets/figures/` (register in `assets/figures/PROVENANCE.md`); the draft currently carries figure placeholders whose re-mapping to those files is part of the running sanitation pass, and the loss control of the external revision is recorded in `knowledge/intake-diff-2026-07-30.md`. The site keeps rendering `knowledge/paper.md` until chapter-wise author acceptance is complete, then the files are swapped.
 
 **Function:** Governs the paper's central argument, terminology, method structure, chapter boundaries, evidence handling, repository interpretation, and final quality assurance.
 

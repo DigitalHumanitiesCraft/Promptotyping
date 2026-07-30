@@ -14,9 +14,9 @@ The full argument is the method paper; an overview is at [dhcraft.org/Promptotyp
 
 ## The method paper
 
-**Pollin, Christopher: Promptotyping. Translating Research Data into Research Artefacts with Context and Agentic Engineering** (in preparation).
+**Pollin, Christopher: Promptotyping. Translating Research Data into Research Artefacts through Context Engineering and Agentic Engineering** (in preparation).
 
-The complete current text is a single Markdown document, [knowledge/paper.md](knowledge/paper.md), written and revised in this repository; [knowledge/paper-writing.md](knowledge/paper-writing.md) holds everything decided, checked, and still open about it, and the Grounded Vault under [vault/](vault/) anchors its supporting claims in sources. The interactive site renders that file directly as a reading flow with inline glossary, so the deployed text is the current text.
+The complete current text is a single Markdown document, [knowledge/paper.md](knowledge/paper.md), written and revised in this repository; [knowledge/paper-writing.md](knowledge/paper-writing.md) holds everything decided, checked, and still open about it, and the Grounded Vault under [vault/](vault/) anchors its supporting claims in sources. The interactive site renders that file directly as a reading flow with inline glossary, so the deployed text is the current text. A revised manuscript is in transitional chapter-wise acceptance in [knowledge/paper-draft.md](knowledge/paper-draft.md), steered by [knowledge/paper-knowledge.md](knowledge/paper-knowledge.md); it replaces the canonical file when that acceptance completes.
 
 ## Videos
 
@@ -118,7 +118,7 @@ Open http://localhost:8000. Development history is in [knowledge/journal.md](kno
 
 ## Citation
 
-This is the repository of the method paper. Pollin, Christopher: Promptotyping. Translating Research Data into Research Artefacts with Context and Agentic Engineering (in preparation); the text is developed in [knowledge/paper.md](knowledge/paper.md), its evidence layer in [vault/](vault/).
+This is the repository of the method paper. Pollin, Christopher: Promptotyping. Translating Research Data into Research Artefacts through Context Engineering and Agentic Engineering (in preparation); the text is developed in [knowledge/paper.md](knowledge/paper.md), its evidence layer in [vault/](vault/).
 
 For the repository and site: Pollin, Christopher; Steiner, Christian: Promptotyping. Zenodo. https://doi.org/10.5281/zenodo.14160875 (concept DOI, always resolves to the current version)
 
