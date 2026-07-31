@@ -1,9 +1,13 @@
 # Figure provenance
 
-The two figures of `knowledge/paper.md` are generated images. This file states
-for each one what it shows, where it belongs in the paper, and the exact prompt
-it was generated from, so that a change of wording can be carried into the
-image without reconstructing the instruction. Section 4.1 of the paper requires
+> **Reading note.** Section numbers in this file address the manuscript state in which a figure or candidate was produced, across the seven-, five- and four-chapter cuts. They are provenance and not addresses into the current text; `manifest.yaml` is authoritative for what the manuscript embeds today.
+
+This file records the generated-image layer of the figure work. It states for
+each image what it shows, which manuscript state it belonged to, and the exact
+prompt it was generated from, so that a change of wording can be carried into
+the image without reconstructing the instruction. The manuscript itself embeds
+an authored SVG, not a generated image, since the series was redrawn by hand
+from written specifications under `specs/`. The paper requires
 every artefact to disclose its conditions of production, and the same
 obligation holds for the figures the paper carries.
 

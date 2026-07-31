@@ -5,9 +5,9 @@ project:
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 status: active
 language: en
-version: "0.1"
+version: "0.2"
 created: 2026-07-29
-updated: 2026-07-29
+updated: 2026-07-31
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 method:
@@ -23,7 +23,9 @@ related: [INDEX, specification, architecture, design, journal, paper-knowledge]
 
 # Plan
 
-Frontend work packages agreed with the operator on 2026-07-29, in the order they should run. Each package states its scope, where it touches the specification, and which operator decision it still needs. The two-track regime holds throughout: the site renders `knowledge/paper.md` until chapter-wise acceptance, and everything bound to the new manuscript ships with the swap (F6).
+Frontend work packages agreed with the operator on 2026-07-29, in the order they should run. Each package states its scope, where it touches the specification, and which operator decision it still needs. Two state sections at the end record what has run since, first the execution night of 2026-07-29 and then the two manuscript promotions of 2026-07-30 and 2026-07-31.
+
+The two-track regime that framed this plan is over. It held that the site renders `knowledge/paper.md` until chapter-wise acceptance and that everything bound to the new manuscript ships with a swap; the swap ran with the promotion of 2026-07-30 and again with the four-chapter revision of 2026-07-31. Package F6 is closed accordingly, and the passages below that still speak of a pending swap are read as the record of the plan as agreed.
 
 ## F1 — Paper chapter tracking in the sidebar
 
@@ -69,16 +71,16 @@ The requested right-hand interactive animation conflicts with three documented d
 
 - Operator decision needed: pick an option; option 1 additionally waits for the swap because it builds on the new Figure 1.
 
-## F6 — The swap package (bound to chapter acceptance)
+## F6 — The swap package (closed 2026-07-31)
 
-Collected here from `paper-knowledge.md` so the frontend view of the swap is complete; nothing in this package runs early.
+Collected here from `paper-knowledge.md` so the frontend view of the swap is complete. The package ran across the two promotions; the per-item state stands after each item.
 
-1. `#abschnitt-*` alias table for every moved section slug, plus re-anchoring of the V10 anchor phrases.
-2. Gallery admission rule A7 re-decided: the fourteen-project inventory left the manuscript, and the card-per-Table-1-row rule loses its referent; likewise the promptotype-status classification.
-3. A22 vocabulary against the new 4.2: Scholarly Workbenches joined the four interface types as a fifth artefact form, and the five-hue nominal scale plus `FUNCTION_SLUGS` must follow whatever the accepted text carries; the old Audit-Interfaces question folds into this.
-4. Glossary entries on the new definitional layer: `promptotype` (missing entirely), and the stale artefact-reading of the existing promptotyping entries; add `working context`, `documented grounds of acceptance`, `agentic review`, `write-back` (also F3/F2 carriers).
-5. The six figures go live with the new paper text; `figure-1-phases.png` and `figure-2-document-types.png` retire with the old one.
-6. Section-number references on the overview, application, and practice pages re-checked against the accepted numbering.
+1. `#abschnitt-*` alias table for every moved section slug, plus re-anchoring of the V10 anchor phrases. **Done.** The map in `assets/js/pages-paper.js` was re-pointed in full on 2026-07-31 and now carries three superseded cuts; it is flat and does not resolve transitively, so every further restructuring re-points it rather than appending to it.
+2. Gallery admission rule A7 re-decided: the fourteen-project inventory left the manuscript, and the card-per-Table-1-row rule loses its referent; likewise the promptotype-status classification. **Done.** Decision 11 of 2026-07-31 keeps the gallery a curated showcase broader than the paper; the evidence role couples to the paper's case table, now Table 1 in section 3.2, and the eight former inventory projects stand under the role `further`.
+3. A22 vocabulary against the new 4.2: Scholarly Workbenches joined the four interface types as a fifth artefact form, and the five-hue nominal scale plus `FUNCTION_SLUGS` must follow whatever the accepted text carries; the old Audit-Interfaces question folds into this. **Decided, no change.** Decision 10 keeps the site's own five categories, because published card filters and the colour scale depend on them. The paper draws its own line with six operational forms since 2026-07-31; the artefact page names the divergence instead of hiding it.
+4. Glossary entries on the new definitional layer: `promptotype` (missing entirely), and the stale artefact-reading of the existing promptotyping entries; add `working context`, `documented grounds of acceptance`, `agentic review`, `write-back` (also F3/F2 carriers). **Done 2026-07-31.** All five entries exist. Three terms the four-chapter text no longer carries were demoted to site vocabulary in the same pass, Spec-Driven Development, Sycophancy and Vibe Coding.
+5. The six figures go live with the new paper text; `figure-1-phases.png` and `figure-2-document-types.png` retire with the old one. **Overtaken by the text.** The old two retired as planned. Of the six only file 01 is embedded, because the four-chapter revision dropped figures 2 to 5 with their host sections; `manifest.yaml` carries the retirement and the files stay.
+6. Section-number references on the overview, application, and practice pages re-checked against the accepted numbering. **Done.** The sweep of 2026-07-31 covered those three pages, the seven case depth pages, the glossary source anchors and the catalogue texts of `data/case-studies.json`; the three pages named here carried no section number.
 
 ## F7 — Tutorial closure
 
@@ -137,3 +139,14 @@ The operator released the plan for execution as a whole on the evening of 2026-0
 - **F8** stands as the reviewable slide selection under its section above; the export is blocked on access to the decks themselves, since the Obsidian vault holds slide texts without any image form.
 - **F5, F6, F7** remain open as specified, bound to the operator's option pick, the chapter acceptance, and the page-text acceptance.
 - The knowledge-base coherence pass from the same release ran after the session close, in the main session because the subagent route was blocked by API overload: `tools/check_consistency.py` gained the groups V12 to V14 of [verification.md](verification.md), and the coherence findings are recorded in the journal.
+
+## State after the promotions of 2026-07-30 and 2026-07-31
+
+- **F6 is closed.** The swap ran twice, first with the five-chapter promotion and then with the four-chapter revision; the per-item state stands in the package above.
+- **F7** stays open on the operator's acceptance of the tutorial page text. The `promptotype` glossary entry it waited on exists since 2026-07-31.
+- **F5** stays open on the operator's option pick. Option 1 built on the new Figure 1, which the manuscript still embeds, so the option survives the restructuring.
+- **F8** stays blocked where it was, on access to the decks; the Obsidian vault holds slide texts without any image form.
+- **F3** and **F4** await the reviews they were left with, the per-entry taxonomy assignment and the acceptance of the vault view.
+- The three merge candidates among the informative pages from F9 are still undecided.
+
+What remains in this document is therefore F5, F7, F8 and two open reviews. When those close, the plan closes with them.

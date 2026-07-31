@@ -192,6 +192,16 @@ Distillation is the third of Promptotyping's four recurrent forms of work and th
 
 Source: [Paper, Section 2.2](#abschnitt-2-2-forms-of-work-and-iteration); [Hong et al. 2025](#ref-hong-2025)
 
+### Documented Grounds of Acceptance
+
+Kind: Checking and acceptance
+
+The record of why, for what purpose and by whom an iteration was accepted; the fourth member of the promptotype relation.
+
+Acceptance is the accountable decision that an identifiable state is adequate for a stated purpose, and it is only reconstructable if its grounds are written down. The record names the intended purpose, the applicable criteria, the accepting person or group, the known limitations, the version reference and, where relevant, the referenced research-data state. It may take the form of an acceptance note, a dated journal entry, a numbered decision record, a verification document or an equivalent project record. Together with the maintained project knowledge, the referenced research-data state and the resulting artefact it forms the four-member relation that makes an accepted iteration a promptotype.
+
+Source: [Paper, Section 2.2.4](#abschnitt-2-2-4-implementation); [Paper, Section 4.3](#abschnitt-4-3-transferability-and-evaluation); [Specification, part 5, Checking](#verifikation)
+
 ### Epistemic Infrastructure
 
 Kind: Infrastructure and environment
@@ -491,3 +501,23 @@ Practice of generating code through natural language and accepting it without th
 Vibe Coding denotes a practice in which code is generated through instructions in natural language and accepted without thorough review (Karpathy 2025). Sarkar and Drosos (2025) describe iterative goal-satisfaction cycles and material disengagement. Promptotyping shares the premise that LLMs can generate functional code from natural language, and it differs through the upstream Preparation and Exploration phases, persistent documentation and systematic verification. Vibe Coding survives inside Promptotyping as an exploratory mode.
 
 Source: Site vocabulary, not carried in the paper text; Sarkar and Drosos 2025 (not in the paper's reference list); [Vault: the first empirical study of vibe coding](#vault-sarkar-vibe-coding-material-disengagement); Karpathy 2025
+
+### Working Context
+
+Kind: Infrastructure and environment
+
+The information and project access assembled for one agent assignment, distinct from the persistent knowledge base.
+
+The working context holds what an agent needs for a particular assignment, the relevant information and the access to project resources. It is assembled per task and must be kept apart from the persistent project knowledge base, which preserves the project's maintained understanding and its decisions. Material may be drawn from maintained documents and derived project artefacts, or obtained through retrieval and direct access to project resources; Retrieval-Augmented Generation can supply task-relevant material from collections that no maintained summary represents adequately. These mechanisms combine, and none of them replaces the maintained account of purpose, data semantics and criteria of assessment. Selection into the working context is itself part of Context Engineering, which is why accumulation is no substitute for it.
+
+Source: [Paper, Section 2.1](#abschnitt-2-1-promptotyping-and-the-project-knowledge-base); [Working environment](#arbeitsumgebung)
+
+### Write-back
+
+Kind: Form of work
+
+Incorporating a finding from implementation into the maintained project knowledge, so later work proceeds from the revised understanding.
+
+A correction becomes methodologically consequential when it enters the maintained project knowledge instead of staying local to the current implementation. Write-back is that operation. It is no additional phase but the mechanism through which findings from Implementation become durable project knowledge. It must be directed at the level where the underlying problem arises, which may be the account of the research material, a conceptual model, a capture practice, a requirement, a mapping, an interface decision, an agent instruction, a checking procedure, or the documented boundary of acceptance. Its purpose is to carry the interpreted consequence of a finding forward, not to preserve every observation. Promptotyping further distinguishes project-level write-back from method-level write-back; a project-specific solution does not by itself become a transferable methodological rule.
+
+Source: [Paper, Section 2.2.4](#abschnitt-2-2-4-implementation); [Paper, Section 3.3](#abschnitt-3-3-findings-attribution-and-learning)

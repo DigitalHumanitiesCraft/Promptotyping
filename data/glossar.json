@@ -381,6 +381,30 @@
       ]
     },
     {
+      "slug": "documented-grounds-of-acceptance",
+      "begriff": "Documented Grounds of Acceptance",
+      "kategorie": "checking",
+      "kurz": "The record of why, for what purpose and by whom an iteration was accepted; the fourth member of the promptotype relation.",
+      "voll": "Acceptance is the accountable decision that an identifiable state is adequate for a stated purpose, and it is only reconstructable if its grounds are written down. The record names the intended purpose, the applicable criteria, the accepting person or group, the known limitations, the version reference and, where relevant, the referenced research-data state. It may take the form of an acceptance note, a dated journal entry, a numbered decision record, a verification document or an equivalent project record. Together with the maintained project knowledge, the referenced research-data state and the resulting artefact it forms the four-member relation that makes an accepted iteration a promptotype.",
+      "quellen": [
+        {
+          "typ": "paper",
+          "anker": "abschnitt-2-2-4-implementation",
+          "text": "Paper, Section 2.2.4"
+        },
+        {
+          "typ": "paper",
+          "anker": "abschnitt-4-3-transferability-and-evaluation",
+          "text": "Paper, Section 4.3"
+        },
+        {
+          "typ": "page",
+          "anker": "verifikation",
+          "text": "Specification, part 5, Checking"
+        }
+      ]
+    },
+    {
       "slug": "epistemic-infrastructure",
       "begriff": "Epistemic Infrastructure",
       "kurz": "Site term for the interplay of verification points, interfaces, documents and version history in complex pipelines.",
@@ -1034,6 +1058,44 @@
         {
           "typ": "text",
           "text": "Karpathy 2025"
+        }
+      ]
+    },
+    {
+      "slug": "working-context",
+      "begriff": "Working Context",
+      "kategorie": "infrastructure",
+      "kurz": "The information and project access assembled for one agent assignment, distinct from the persistent knowledge base.",
+      "voll": "The working context holds what an agent needs for a particular assignment, the relevant information and the access to project resources. It is assembled per task and must be kept apart from the persistent project knowledge base, which preserves the project's maintained understanding and its decisions. Material may be drawn from maintained documents and derived project artefacts, or obtained through retrieval and direct access to project resources; Retrieval-Augmented Generation can supply task-relevant material from collections that no maintained summary represents adequately. These mechanisms combine, and none of them replaces the maintained account of purpose, data semantics and criteria of assessment. Selection into the working context is itself part of Context Engineering, which is why accumulation is no substitute for it.",
+      "quellen": [
+        {
+          "typ": "paper",
+          "anker": "abschnitt-2-1-promptotyping-and-the-project-knowledge-base",
+          "text": "Paper, Section 2.1"
+        },
+        {
+          "typ": "page",
+          "anker": "arbeitsumgebung",
+          "text": "Working environment"
+        }
+      ]
+    },
+    {
+      "slug": "write-back",
+      "begriff": "Write-back",
+      "kategorie": "form-of-work",
+      "kurz": "Incorporating a finding from implementation into the maintained project knowledge, so later work proceeds from the revised understanding.",
+      "voll": "A correction becomes methodologically consequential when it enters the maintained project knowledge instead of staying local to the current implementation. Write-back is that operation. It is no additional phase but the mechanism through which findings from Implementation become durable project knowledge. It must be directed at the level where the underlying problem arises, which may be the account of the research material, a conceptual model, a capture practice, a requirement, a mapping, an interface decision, an agent instruction, a checking procedure, or the documented boundary of acceptance. Its purpose is to carry the interpreted consequence of a finding forward, not to preserve every observation. Promptotyping further distinguishes project-level write-back from method-level write-back; a project-specific solution does not by itself become a transferable methodological rule.",
+      "quellen": [
+        {
+          "typ": "paper",
+          "anker": "abschnitt-2-2-4-implementation",
+          "text": "Paper, Section 2.2.4"
+        },
+        {
+          "typ": "paper",
+          "anker": "abschnitt-3-3-findings-attribution-and-learning",
+          "text": "Paper, Section 3.3"
         }
       ]
     }
