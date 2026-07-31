@@ -1,6 +1,6 @@
 ---
 figure_file: figure-06-notker-acceptance
-manuscript_number: 5
+manuscript_number: null  # retired from the manuscript 2026-07-31; was Figure 5
 id: notker-acceptance
 title: Purpose-specific acceptance in the Notker edition case
 svg: ../svg/figure-06-notker-acceptance.svg

@@ -1,6 +1,6 @@
 ---
 figure_file: figure-05-zbz-e66
-manuscript_number: 4
+manuscript_number: null  # retired from the manuscript 2026-07-31; was Figure 4
 id: zbz-e66
 title: The ZBZ OCR/TEI workflow before and after decision E66
 svg: ../svg/figure-05-zbz-e66.svg

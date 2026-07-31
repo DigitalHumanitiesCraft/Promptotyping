@@ -1,6 +1,6 @@
 ---
 figure_file: figure-04-m3gim-loop
-manuscript_number: 3
+manuscript_number: null  # retired from the manuscript 2026-07-31; was Figure 3
 id: m3gim-loop
 title: Prospective Promptotyping during modelling and data capture in M³GIM
 svg: ../svg/figure-04-m3gim-loop.svg

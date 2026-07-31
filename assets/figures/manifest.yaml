@@ -10,13 +10,20 @@ generator:
     acceptance, and every delivered intermediate version is archived under
     candidates/.
 
-# File numbers are stable identifiers and are never renamed. Since the
-# Fassung 4 revision (intake 2026-07-30) the manuscript carries five figures,
-# so manuscript numbering diverges from file numbering from figure-04 onward;
-# manuscript_number records the caption number in the current draft.
-# figure-03 fell with the former section 4.3 (operator decision 2026-07-30:
-# the losses of the external revision are accepted); file, prompt record,
-# and candidates stay archived.
+# File numbers are stable identifiers and are never renamed;
+# manuscript_number records the caption number in the current draft and is
+# null for a figure the manuscript does not embed.
+#
+# Since the four-chapter revision (intake 2026-07-31) the manuscript carries
+# one figure, file 01. Files 02 and 04 to 06 fell with their host sections,
+# file 02 with the former section 2.4, the other three with the per-case
+# sections of the former chapter 4; their retired manuscript numbers were 2
+# to 5. File 03 had already fallen with the former section 4.3 (operator
+# decision 2026-07-30: the losses of the external revision are accepted).
+# Every retired figure keeps its file, specification, prompt record and
+# candidates; the decision concerns what the manuscript embeds and not what
+# the figure work established. Reinstating one means reinstating its caption
+# and manuscript number together with the section that hosts it.
 
 figures:
   - number: 1
@@ -36,8 +43,8 @@ figures:
     file: "figure-02-knowledge-context-authority.png"
     prompt: "prompts/figure-02-knowledge-context-authority.md"
     source_candidate: "candidates/checking-architecture--2026-07-29--20-01-22.png"
-    status: accepted
-    manuscript_number: 2
+    status: retired
+    manuscript_number: null  # was Figure 2 until 2026-07-31
     purpose: "Distinguish project knowledge, selected context, agentic implementation, evidence, validation, and acceptance."
     author_verified: true
 
@@ -59,8 +66,8 @@ figures:
     file: "figure-04-m3gim-loop.png"
     prompt: "prompts/figure-04-m3gim-loop.md"
     source_candidate: "candidates/m3gim-prospective--2026-07-29--19-59-34.png"
-    status: accepted
-    manuscript_number: 3
+    status: retired
+    manuscript_number: null  # was Figure 3 until 2026-07-31
     purpose: "Show the bidirectional relation among modelling, capture, interface interaction, documentation, and revision."
     author_verified: true
 
@@ -70,8 +77,8 @@ figures:
     file: "figure-05-zbz-e66.png"
     prompt: "prompts/figure-05-zbz-e66.md"
     source_candidate: "candidates/zbz-e66--2026-07-29--19-59-45.png"
-    status: accepted
-    manuscript_number: 4
+    status: retired
+    manuscript_number: null  # was Figure 4 until 2026-07-31
     purpose: "Show the correction of unauthorised agent screening and the separation of evidence from human authorisation."
     author_verified: true
 
@@ -81,7 +88,7 @@ figures:
     file: "figure-06-notker-acceptance.png"
     prompt: "prompts/figure-06-notker-acceptance.md"
     source_candidate: "candidates/notker-acceptance--2026-07-29--19-59-50.png"
-    status: accepted
-    manuscript_number: 5
+    status: retired
+    manuscript_number: null  # was Figure 5 until 2026-07-31
     purpose: "Explain bounded proposal-stage acceptance without claiming edition completion."
     author_verified: true

@@ -1,6 +1,6 @@
 ---
 figure_file: figure-02-knowledge-context-authority
-manuscript_number: 2
+manuscript_number: null  # retired from the manuscript 2026-07-31; was Figure 2
 id: knowledge-context-authority
 title: Project knowledge, working context, implementation, and authority in Promptotyping
 svg: ../svg/figure-02-knowledge-context-authority.svg
