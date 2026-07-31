@@ -14,9 +14,9 @@ revision: 5
 
 ## Caption this figure must satisfy
 
-**Figure 1. The Promptotyping method.** Preparation, Exploration, Distillation, and Implementation are recurrent forms of work rather than fixed stages. Findings arising from Implementation may return the work to earlier forms, most frequently to Distillation. The Critical Expert specifies and revises the knowledge documents and validates the resulting artefact. Purpose-specific acceptance connects maintained project knowledge, the digital research artefact, the referenced research-data state, and the documented grounds of acceptance as an identifiable promptotype.
+**Figure 1. The Promptotyping method.** Preparation, Exploration, Distillation, and Implementation are recurrent phases of work. Findings from Implementation may return the work to earlier phases, most often to Distillation. The Critical Expert specifies and revises project knowledge, verifies the artefact, and accepts the iteration for its stated purpose, thereby establishing an identifiable promptotype.
 
-Caption alignment is pending one operator decision. The figure carries the relation label "verifies and accepts" (operator instruction of 2026-07-31), while the caption sentence above still says "validates the resulting artefact"; whichever wording the paper settles on, caption and figure must use the same verb.
+Caption and figure share the verb since the chapter-2 revision of 2026-07-31: the paper caption says "verifies the artefact", matching the figure's relation label "verifies and accepts". The differentiated taxonomy of paper section 2.4 keeps "Critical Expert validation" as the term for the expert's form of checking; the residual tension between the narrative verb and the taxonomy is recorded as decision 26 in knowledge/paper-knowledge.md.
 
 ## Purpose
 

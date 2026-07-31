@@ -110,7 +110,7 @@ Generation of plausible but false outputs by LLMs, commonly called hallucination
 
 Confabulation, commonly called hallucination, is the generation of plausible but false outputs (Summerfield 2025). The LLM fills a gap with what fits rather than reporting what it lacks. In research contexts this is particularly dangerous where the output concerns contextualisation, periodisation or attribution, domains in which plausibility and correctness can come apart. Confabulation belongs beside sycophancy to the structural failure modes the Critical Expert in the Loop addresses.
 
-Source: [Paper, Section 2.3](#abschnitt-2-3-from-project-knowledge-to-an-accepted-promptotype); Summerfield 2025, These Strange New Minds (not in the paper's reference list)
+Source: [Paper, Section 2.3](#abschnitt-2-4-verification-validation-and-acceptance); Summerfield 2025, These Strange New Minds (not in the paper's reference list)
 
 ### Context Engineering
 
@@ -150,7 +150,7 @@ Role that validates LLM output at defined points and combines domain expertise w
 
 The Critical Expert in the Loop is the role that validates LLM output at defined points. Unlike the generic human in the loop it requires domain expertise together with awareness of LLM-specific failure modes and metacognitive vigilance. The Critical Expert's task extends beyond checking the correctness of outputs. The more consequential blind spot lies in the possibility space that was not explored, in the questions not asked and the alternatives not generated. This metareflexive capacity distinguishes the role from a reviewer who checks correctness alone.
 
-Source: [Paper, Section 2.3](#abschnitt-2-3-from-project-knowledge-to-an-accepted-promptotype); Pollin 2025, Critical Vibing blog (not in the paper's reference list); [Vault: the double reflection loop of the role](#vault-critical-expert-in-the-loop-double-reflection-loop)
+Source: [Paper, Section 2.3](#abschnitt-2-4-verification-validation-and-acceptance); Pollin 2025, Critical Vibing blog (not in the paper's reference list); [Vault: the double reflection loop of the role](#vault-critical-expert-in-the-loop-double-reflection-loop)
 
 ### Declarative Document
 
@@ -380,7 +380,7 @@ The software industry's corrective to unreviewed generation, with the specificat
 
 Spec-Driven Development names the corrective the software industry developed against the reliability problems of unreviewed generation. Through 2024 and 2025 agentic coding frameworks converged on maintaining specifications as the source of truth from which LLM-supported agents implement, among them Tessl, BMAD, AWS Kiro, OpenSpec and GitHub Spec Kit. Promptotyping belongs to this movement and shares its core commitments, the versioned document set as the governing unit, the separation of intent from implementation, and a human checkpoint between generation and acceptance. Three things that sit at the periphery there are constitutive here. The data layer describes sources that precede the artefact and carry their own semantics and their own uncertainty, in place of the system under construction. The specification is bound to scholarly verification duties. And the Critical Expert in the Loop is installed as a role holding domain authority over the subject matter.
 
-Source: [Paper, Section 2.3](#abschnitt-2-3-from-project-knowledge-to-an-accepted-promptotype); [Vault: the frameworks converge on specification over prompt](#vault-sdd-frameworks-converge-on-specification-over-prompt); [Vault: no framework defines a subject-matter checking role](#vault-sdd-no-subject-matter-verification-role)
+Source: [Paper, Section 2.3](#abschnitt-2-4-verification-validation-and-acceptance); [Vault: the frameworks converge on specification over prompt](#vault-sdd-frameworks-converge-on-specification-over-prompt); [Vault: no framework defines a subject-matter checking role](#vault-sdd-no-subject-matter-verification-role)
 
 ### Research Compendium as a Promptotyping Pattern
 
@@ -410,7 +410,7 @@ Tendency of LLMs to agree with user assumptions instead of challenging them.
 
 Sycophancy is the tendency of LLMs to agree with the assumptions of their users instead of challenging them (Sharma et al. 2023; Fanous et al. 2025). Beside confabulation it is one of the two structural failure modes the Critical Expert in the Loop addresses. The Critical Expert has to recognise that an absence of contradiction from the LLM constitutes no validation. In CorrespExplorer the LLM agreed with suboptimal decisions as soon as they were phrased as a proposal.
 
-Source: [Paper, Section 2.3](#abschnitt-2-3-from-project-knowledge-to-an-accepted-promptotype); [Sharma et al. 2024](#ref-sharma-2024); Fanous et al. 2025 (not in the paper's reference list); [Vault: agreement with the user over the truthful answer](#vault-sycophancy-agreement-over-truth)
+Source: [Paper, Section 2.3](#abschnitt-2-4-verification-validation-and-acceptance); [Sharma et al. 2024](#ref-sharma-2024); Fanous et al. 2025 (not in the paper's reference list); [Vault: agreement with the user over the truthful answer](#vault-sycophancy-agreement-over-truth)
 
 ### Template (Knowledge Document)
 
@@ -450,7 +450,7 @@ Verification is the check by a formal rule, validation the check by domain exper
 
 The method distinguishes two kinds of check. Verification is what a formal rule decides, a schema, a test or a constraint, and it runs unsupervised because the feedback loop is closed. Validation is what domain expertise decides against the sources and against scholarly judgement, and it does not delegate. The pair operates at three levels, data fidelity, requirement satisfaction and design conformance, and each level has its own zone of agent autonomy. This usage follows the norm of software and systems engineering, where verification names the check against the specification and validation the check against intended use and user needs (IEEE Std 1012). Schema validation, the established XML term for an automatic check against a schema, keeps its name as a term of art and is in this sense a form of verification.
 
-Source: [Paper, Section 2.3](#abschnitt-2-3-from-project-knowledge-to-an-accepted-promptotype); [Specification, part 5, Checking](#verifikation)
+Source: [Paper, Section 2.3](#abschnitt-2-4-verification-validation-and-acceptance); [Specification, part 5, Checking](#verifikation)
 
 ### Verification Milestone
 
@@ -460,7 +460,7 @@ Defined checkpoint in the workflow at which domain expertise is applied systemat
 
 Verification milestones are defined checkpoints in the workflow at which domain expertise is applied systematically. They turn the Critical Expert in the Loop into a process step, since at a milestone the work stops, is verified with deterministic tools and validated by expert judgement before it continues. The Implementation phase advances in such small, checkable steps. Where the check is deferred, a verification debt arises that has to be settled before use or handover. In the ZBZ OCR/TEI project an interface at every pipeline stage serves as such a milestone.
 
-Source: [Paper, Section 2.2](#abschnitt-2-2-forms-of-work-and-iteration); [Paper, Section 2.3](#abschnitt-2-3-from-project-knowledge-to-an-accepted-promptotype); [Best Practices, verification milestones](#praxis-verification-milestones)
+Source: [Paper, Section 2.2](#abschnitt-2-2-forms-of-work-and-iteration); [Paper, Section 2.3](#abschnitt-2-4-verification-validation-and-acceptance); [Best Practices, verification milestones](#praxis-verification-milestones)
 
 ### Vibe Coding
 
@@ -470,4 +470,4 @@ Practice of generating code through natural language and accepting it without th
 
 Vibe Coding denotes a practice in which code is generated through instructions in natural language and accepted without thorough review (Karpathy 2025). Sarkar and Drosos (2025) describe iterative goal-satisfaction cycles and material disengagement. Promptotyping shares the premise that LLMs can generate functional code from natural language, and it differs through the upstream Preparation and Exploration phases, persistent documentation and systematic verification. Vibe Coding survives inside Promptotyping as an exploratory mode.
 
-Source: [Paper, Section 2.3](#abschnitt-2-3-from-project-knowledge-to-an-accepted-promptotype); [Sarkar and Drosos 2025](#ref-sarkar-2025); [Vault: the first empirical study of vibe coding](#vault-sarkar-vibe-coding-material-disengagement); Karpathy 2025
+Source: [Paper, Section 2.3](#abschnitt-2-4-verification-validation-and-acceptance); [Sarkar and Drosos 2025](#ref-sarkar-2025); [Vault: the first empirical study of vibe coding](#vault-sarkar-vibe-coding-material-disengagement); Karpathy 2025

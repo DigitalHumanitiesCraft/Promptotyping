@@ -84,7 +84,7 @@
       "repo_url": "https://github.com/chpollin/szd-htr-ocr-pipeline",
       "demo_url": "https://chpollin.github.io/szd-htr-ocr-pipeline/",
       "video_url": null,
-      "insight": "Worked example of Section 2.3; the record's production-scale pipeline",
+      "insight": "Introduced in Section 2.3; the record's production-scale pipeline",
       "deep_page": true,
       "paper_row": "SZD-HTR"
     },

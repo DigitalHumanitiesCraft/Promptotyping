@@ -14,7 +14,7 @@ revision: 2
 
 ## Caption this figure must satisfy
 
-**Figure 2. Project knowledge, working context, implementation, and authority in Promptotyping.** Task-specific working context is assembled from the versioned project knowledge base and, where required, from retrieved source material or derived context artefacts. An AI agent operating within a harness carries out bounded implementation and revision tasks that produce or modify a digital research artefact. Deterministic verification and agentic review provide evidence about the artefact but do not authorise scholarly claims. Critical Expert validation assesses source fidelity, design, and interpretation, and only responsible human contributors accept an iteration for its stated purpose.
+**Figure 2. Project knowledge, working context, implementation, and authority in Promptotyping.** Task-specific working context is assembled from the versioned project knowledge base and, where required, from retrieved source material or derived project artefacts. An AI agent operating within a harness carries out bounded implementation and revision tasks that produce or modify a digital research artefact. Deterministic verification and agentic review provide evidence about the artefact but do not authorise scholarly claims. Critical Expert validation assesses source fidelity, design, and interpretation, and only responsible human contributors accept an iteration for its stated purpose.
 
 ## Purpose
 
@@ -86,7 +86,7 @@ Solid line with a filled head marks operational flow and authorising acts. Dashe
 - The harness is not the agent. The agent is nested inside it, and the harness carries the mediating role.
 - The arrangement is not a one-way pipeline. Acceptance returns into the knowledge base.
 - The two checks are not an exhaustive taxonomy of checking. The figure names the two that produce evidence and the one that carries authority.
-- Retrieved source material and derived context artefacts are named in the caption as further inputs to the working context; the figure does not draw them as boxes, so no reader may take the knowledge base to be the only possible source of context.
+- Retrieved source material and derived project artefacts are named in the caption as further inputs to the working context; the figure does not draw them as boxes, so no reader may take the knowledge base to be the only possible source of context.
 - The emphasis on the Acceptance box is a hierarchy of reading and no claim that acceptance outranks validation.
 
 ## Acceptance checks

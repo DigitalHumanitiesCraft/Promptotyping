@@ -661,7 +661,7 @@ The paper must distinguish:
 - Critical Expert validation;
 - acceptance.
 
-*Verification* names conformity to formalised requirements, technical and deterministic. *Validation* names the adequacy judgement that requires expert authority, scholarly in kind. The direction follows IEEE Std 1012 (IEEE 2017), which the manuscript cites in §2.3 (decision 21).
+*Verification* names conformity to formalised requirements, technical and deterministic. *Validation* names the adequacy judgement that requires expert authority, scholarly in kind. The direction follows IEEE Std 1012 (IEEE 2025, decision 24), which the manuscript cites in §2.4 (decision 21).
 
 Do not collapse these into a generic category such as checking, quality assurance, or confidence.
 
@@ -1429,9 +1429,10 @@ The manuscript uses five chapters. This is the realised structure of `knowledge/
   - 1.2 Context Engineering, Agentic Engineering, and AI Harnesses
 - **2. Promptotyping as a Method** — genealogy in the chapter opening
   - 2.1 Promptotyping and the Project Knowledge Base
-  - 2.2 Forms of Work and Iteration (Figure 1)
-  - 2.3 From Project Knowledge to an Accepted Promptotype — SZD worked example, checking architecture, Table 1, Figure 2
-  - 2.4 Documentation, Accountability, and the Limits of AI-Assisted Development
+  - 2.2 Forms of Work and Iteration (Figure 1) — phase subsections 2.2.1 Preparation, 2.2.2 Exploration, 2.2.3 Distillation, 2.2.4 Implementation; write-back and the promptotype definition close 2.2.4
+  - 2.3 Applying Promptotyping: Complementary Project Cases — SZD, ZBZ, M³GIM, Notker with public repository and interface footnotes
+  - 2.4 Verification, Validation, and Acceptance — checking architecture, Table 1, Figure 2, SDD and Vibe-Coding demarcations, acceptance elaboration
+  - 2.5 Documentation, Accountability, and the Limits of AI-Assisted Development
 - **3. Epistemic and Methodological Implications**
   - 3.1 Research Artefacts and the Amplification of Computer-Based Research
   - 3.2 Research Data and Project Knowledge as Mediating Structures
@@ -1472,7 +1473,7 @@ When revising the manuscript, remove repeated full explanations and replace them
 
 ## 14.1 The canonical promptotype relation and its homes
 
-The relation has four members, maintained project knowledge, the resulting digital research artefact, the referenced research-data state, and the documented grounds of acceptance. Member naming is uniform. Three locations carry the enumeration in full and are its canonical homes, the §2.2 definition, the §2.3 operative elaboration with the increment about checking evidence, and the §3.4 statement of epistemic status. The Abstract carries neither the enumeration nor the term promptotype since the operator decision of 2026-07-31; it states responsibility for the consequential judgements of validation and acceptance instead, and the term is first announced in the §1 section preview and introduced at its definition site in §2.2. Three further full statements are licensed exceptions, the Figure 1 caption under the convention that captions stand alone, the §2.3 instantiation with SZD content, and the relation statement in the Conclusion restored after the operator's external review (2026-07-30); none of them may be re-trimmed by a later redundancy pass. Every other occurrence is a reference to the §2.2 definition, and an edit that reintroduces an enumeration elsewhere breaks the arrangement. The §3.4 statement was collapsed from six members to the canonical four (code absorbed by the artefact member, verification evidence by the grounds of acceptance), confirmed by the operator on 2026-07-30.
+The relation has four members, maintained project knowledge, the resulting digital research artefact, the referenced research-data state, and the documented grounds of acceptance. Member naming is uniform. Three locations carry the enumeration in full and are its canonical homes, the §2.2 definition (since the restructuring in §2.2.4), the §2.4 operative elaboration with the increment about checking evidence, and the §3.4 statement of epistemic status. The Abstract carries neither the enumeration nor the term promptotype since the operator decision of 2026-07-31; it states responsibility for the consequential judgements of validation and acceptance instead, and the term is first announced in the §1 section preview and introduced at its definition site in §2.2. Two further full statements are licensed exceptions, the §2.4 instantiation with SZD content and the relation statement in the Conclusion restored after the operator's external review (2026-07-30); neither may be re-trimmed by a later redundancy pass. The Figure 1 caption ceased to carry the enumeration with the operator caption of 2026-07-31 (decision 26). Every other occurrence is a reference to the §2.2 definition, and an edit that reintroduces an enumeration elsewhere breaks the arrangement. The §3.4 statement was collapsed from six members to the canonical four (code absorbed by the artefact member, verification evidence by the grounds of acceptance), confirmed by the operator on 2026-07-30.
 
 ## 14.2 Protected repetitions and one conditional deletion
 
@@ -1634,7 +1635,7 @@ Before release, verify:
 
 - arrows in the four-form figure point to the intended form of work or accepted state;
 - the stronger return path points from Implementation to Distillation;
-- the Critical Expert's authority arrow terminates at the promptotype state and reads "validates and accepts" (wording migrated under decision 21; operator decision 2026-07-30: the arrow carries the acceptance semantics, the caption stands unchanged);
+- the Critical Expert's authority arrow enters the Digital Research Artefact box and reads "verifies and accepts" (operator instructions of 2026-07-31, figure revision 5; the caption follows the same verb under decision 26);
 - figures distinguish the digital research artefact from the promptotype;
 - captions use **Knowledge Documents** and the promptotype caption uses **documented grounds of acceptance**;
 - no alt text appears as ordinary manuscript prose;
@@ -1733,6 +1734,8 @@ Decisions of the acceptance round of 2026-07-31:
 23. **§1.1 announces write-back without the term (2026-07-31).** The closing sentence of §1.1 reads "findings from implementation are incorporated as revised project knowledge"; the operator judged "written back" unclear before its definition site. The Abstract and everything from §2.2 onwards keep *write-back* as the defined term.
 24. **The IEEE citation moves to the current edition (2026-07-31).** IEEE Std 1012-2024, published 2025, replaces the superseded 1012-2016; the reference entry and the citations in footnote 6 and §2.3 read (IEEE 2025). The official abstract wording of the two editions is identical, so the anchored terminology claims are unaffected. Grounded by the citation-fit audit of the same day (`vault/knowledge/citation-fit-section-1-2026-07-31.md`), which also produced the Carver co-citation with Cohen, the repositioned Drucker/Schöch citation, "has argued" for the tool-criticism cluster, and the completed KONDE and ZfdG entries.
 25. **The document class renames to Knowledge Document (2026-07-31).** Operator instruction: paper and site speak of Knowledge Documents; the qualifier Promptotyping falls from the class name, and this document's terminology sections (4.6 and the capitalisation rules) are re-keyed. The Figure 1 caption already said "the knowledge documents" and now carries the term. Unchanged remain the published anchors and subpaths (`/promptotyping-document/{slug}`, `#promptotyping-document-{slug}`, the folder `_content/promptotyping-document/`, the file `data/promptotyping-documents.json`), the sixteen German template mirrors (vault-first), the vault layer, and historical records (journal, figure provenance, video scripts). Follow-up in a vault session: the vault master documents Konvention Promptotyping Documents and Vorlagen Promptotyping Documents and the vault glossary atoms carry the old name and need the rename there first.
+
+26. **Chapter 2 restructured to five sections (2026-07-31).** The operator's revised chapter text replaces the opening, §2.1, and §2.2, introducing phase subsections §2.2.1 to §2.2.4 with per-phase sufficiency criteria; write-back and the promptotype definition close §2.2.4, where the Critical Expert is defined in compact form. The new §2.3 "Applying Promptotyping: Complementary Project Cases" presents SZD, ZBZ, M³GIM, and Notker with repository and interface footnotes and a synthesis paragraph. The checking architecture, Table 1, Figure 2, the SDD and Vibe-Coding demarcations, and the acceptance elaboration continue as §2.4 "Verification, Validation, and Acceptance"; the former §2.4 is now §2.5. The apparatus renumbers to notes 1 to 41 with new notes for Git, `CLAUDE.md`, `AGENTS.md`, the derived-artefact example, context compression (Xu et al. 2024), and the four cases; Liu et al. 2024 and Xu et al. 2024 enter the reference list, both verified against publisher pages. Terminology adopted with the chapter text: *agent instruction documents* replaces *action knowledge documents*, and *derived project artefacts* replaces *derived context artefacts* (paper, Figure 2 spec, proof sheet; no site glossary entry existed for either). The Figure 1 caption follows the operator wording "verifies the artefact", matching the figure label "verifies and accepts"; the §2.4 taxonomy keeps *deterministic verification* and *Critical Expert validation* under decision 21. Open: whether the narrative verb of §2.2.4 and the caption should be harmonised with the taxonomy term for the expert's judgement; until decided, the taxonomy governs terminology and the narrative verb reads in the everyday sense. Site follow-through: retired section anchors alias in `PAPER_ANCHOR_ALIASES`, glossary sources retarget to §2.4.
 
 Open flags that survive:
 

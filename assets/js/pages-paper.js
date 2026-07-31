@@ -9,10 +9,11 @@
      drift away from the knowledge base. */
   var PAPER_FILE = "knowledge/paper.md";
 
-  /* Published anchors of the two earlier section cuts (pre-revision, and the
-     seven-chapter text canonical until 2026-07-30), mapped onto the section of
-     the current five-chapter structure that carries their content. Renaming is
-     not allowed (CLAUDE.md, URL anchor scheme), so they stay as alias targets. */
+  /* Published anchors of the earlier section cuts (pre-revision, the
+     seven-chapter text canonical until 2026-07-30, and the chapter-2 layout
+     canonical until 2026-07-31), mapped onto the section of the current
+     structure that carries their content. Renaming is not allowed (CLAUDE.md,
+     URL anchor scheme), so they stay as alias targets. */
   var PAPER_ANCHOR_ALIASES = {
     "abschnitt-2-terms-positioning": "abschnitt-1-1-translating-research-data-into-digital-research-artefacts-through-scholar-centred-design",
     "abschnitt-3-four-phases": "abschnitt-2-promptotyping-as-a-method",
@@ -28,7 +29,7 @@
     "abschnitt-3-1-status-and-provenance": "abschnitt-4-1-cases-and-evidential-status",
     "abschnitt-3-2-the-four-phases": "abschnitt-2-2-forms-of-work-and-iteration",
     "abschnitt-3-3-the-promptotyping-documents": "abschnitt-2-1-promptotyping-and-the-project-knowledge-base",
-    "abschnitt-3-4-a-worked-example-the-stefan-zweig-htr-pipeline": "abschnitt-2-3-from-project-knowledge-to-an-accepted-promptotype",
+    "abschnitt-3-4-a-worked-example-the-stefan-zweig-htr-pipeline": "abschnitt-2-4-verification-validation-and-acceptance",
     "abschnitt-4-the-artefact-type": "abschnitt-4-2-artefact-forms-and-documented-projects",
     "abschnitt-4-1-self-contained-static-web-tools": "abschnitt-4-2-artefact-forms-and-documented-projects",
     "abschnitt-4-2-a-typology-of-promptotyping-interfaces": "abschnitt-4-2-artefact-forms-and-documented-projects",
@@ -41,12 +42,15 @@
     "abschnitt-5-5-reading-the-evidence": "abschnitt-4-3-cross-case-findings",
     "abschnitt-6-discussion": "abschnitt-5-scope-limits-evaluation-and-conclusion",
     "abschnitt-6-1-process-and-publication": "abschnitt-3-4-acceptance-reconstructability-and-the-status-of-the-promptotype",
-    "abschnitt-6-2-verification-and-validation": "abschnitt-2-3-from-project-knowledge-to-an-accepted-promptotype",
+    "abschnitt-6-2-verification-and-validation": "abschnitt-2-4-verification-validation-and-acceptance",
     "abschnitt-6-3-reproducibility-and-llm-dependence": "abschnitt-3-4-acceptance-reconstructability-and-the-status-of-the-promptotype",
     "abschnitt-6-4-limits": "abschnitt-5-1-scope-limits-and-conditions-of-applicability",
     "abschnitt-6-5-transferability": "abschnitt-5-2-transferability-and-priorities-for-evaluation",
     "abschnitt-7-conclusion": "abschnitt-5-3-conclusion",
-    "acknowledgements": "ai-use-and-research-provenance"
+    "acknowledgements": "ai-use-and-research-provenance",
+    /* Chapter-2 layout canonical until 2026-07-31. */
+    "abschnitt-2-3-from-project-knowledge-to-an-accepted-promptotype": "abschnitt-2-4-verification-validation-and-acceptance",
+    "abschnitt-2-4-documentation-accountability-and-the-limits-of-ai-assisted-development": "abschnitt-2-5-documentation-accountability-and-the-limits-of-ai-assisted-development"
   };
 
   function renderPaper() {
