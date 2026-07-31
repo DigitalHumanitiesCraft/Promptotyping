@@ -6,7 +6,7 @@ title: The Promptotyping method
 svg: ../svg/figure-01-promptotyping-method.svg
 supersedes: ../figure-01-promptotyping-method.png
 canvas: 960 x 600
-status: draft
+status: accepted 2026-07-31
 revision: 4
 ---
 

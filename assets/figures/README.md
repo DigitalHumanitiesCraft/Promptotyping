@@ -7,3 +7,5 @@ The six accepted figures of the manuscript are `figure-01-promptotyping-method.p
 The remaining image files serve other carriers: `figure-1-phases.png` and `figure-2-document-types.png` belong to the canonical `knowledge/paper.md` that the site renders until the manuscript swap, and `figure-1-promptotyping-iteration.png` and `figure-4-versioned-promptotypes.png` are the record of the superseded draft state of 2026-07-29.
 
 The figures are not raw empirical data. They are conceptual and comparative diagrams derived from the paper's method specification and documented project cases, and they should be interpreted together with their captions and case descriptions.
+
+The vector layer under `svg/` is the authoritative form of the redrawn figures, specified per figure under `specs/`. Every SVG has a raster export of the same basename under `png/`, rendered at twice the viewBox size (headless Edge screenshot); whoever changes an SVG regenerates its PNG in the same commit. The PNGs at the directory root are the earlier ChatGPT-generated rasters and stay untouched as the provenance record described above.
