@@ -58,6 +58,18 @@ The back-reference "this operationalisation" opening §1.1's modelling paragraph
 - IEEE: note that Std 1012-2016 is superseded by 1012-2024 (abstract wording identical; the citation may stand on the cited edition).
 - Zhao et al. 2023: pin the arXiv version.
 
+## Resolutions, later the same day
+
+Operator decisions and applied repairs after this audit (steering document decisions 22 to 24):
+
+- Finding 1 (Carver): the scale sentence now stands alone and carries the co-citation (Cohen et al. 2021; Carver et al. 2022).
+- Finding 2 (missing information): the Drucker/Schöch citation moved forward to the interpretation clause it carries; the modelling-decisions clause is authorial.
+- Finding 3 (IEEE in §2.3): the citation now reads (IEEE 2025); the attribution question itself stays on the chapter-2 consistency chain.
+- Finding 4: "has shown" became "has argued".
+- Finding 5: the operator confirmed pp. 89–98.
+- IEEE edition: the paper now cites IEEE Std 1012-2024 as IEEE 2025 (reference entry updated; title and publication year verified against the IEEE standards register).
+- Apparatus: ZfdG volume 10 and the completed KONDE footnote were already applied with this audit's commit.
+
 ## Access limits, stated
 
 IEEE 1012 clause-3 definitions, the Hitzler body text, and the Flanders/Jannidis volume are paywalled; verdicts for these rest on official abstracts, Crossref metadata, and (for Flanders/Jannidis) the authors' open precursor white paper. The Pollin 2025a PDF was not opened.
