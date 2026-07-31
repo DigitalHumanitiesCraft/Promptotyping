@@ -1114,7 +1114,7 @@ It does not establish:
 - general reliability;
 - superiority over alternative workflows.
 
-teiCrafter stands in the manuscript's case set (Table 3, Section 4.3) since the promoted text; its two software states, the 2023 Custom GPT precursor and the 2026 browser workbench, are kept explicitly distinct in Section 4.2 and must not be merged into one project history.
+teiCrafter stands in the manuscript's case set (Table 1, Section 3.2); its two software states, the 2023 Custom GPT precursor and the 2026 browser workbench, are kept explicitly distinct in the source note attached to Section 3.2 and must not be merged into one project history.
 
 ## 10.5 Promptotype-status classification
 

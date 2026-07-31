@@ -64,7 +64,7 @@ The glossary underline keeps its own token name, `--glossar-underline`, because 
 
 Operator decision of 2026-07-26: the site stays unchromatic and serious, with one deliberate colour system on top. Two rules bound it.
 
-Colour encodes exactly one thing, the epistemic function of an artefact, that is the five interface categories of paper section 4.2. Bertin classes hue as selective and associative and as the only colour variable suited to qualitative information, which makes it the correct encoding for a nominal scale of five values, and it makes it the wrong encoding for the five parts of the specification, which are a rank order. The five hues are muted and derived from the watercolour of the Promptotyping logo, so a category name stays readable beside its mark.
+Colour encodes exactly one thing, the epistemic function of an artefact, that is the five interface categories of the site's own typology on the Artefakt page. Bertin classes hue as selective and associative and as the only colour variable suited to qualitative information, which makes it the correct encoding for a nominal scale of five values, and it makes it the wrong encoding for the five parts of the specification, which are a rank order. The five hues are muted and derived from the watercolour of the Promptotyping logo, so a category name stays readable beside its mark.
 
 ```
 --fn-exploration:  #216a4e
