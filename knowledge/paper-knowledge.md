@@ -1,6 +1,6 @@
 # Promptotyping Paper: Canonical Knowledge Document
 
-**Updated:** 30 July 2026, after the promotion of the five-chapter manuscript to `knowledge/paper.md`.
+**Updated:** 31 July 2026, during the operator's end-to-end read; Abstract and §1 opening revised (Section 19, decisions 15 and 16).
 
 **Status:** The single steering document of the paper. The manuscript is `knowledge/paper.md`, promoted on 2026-07-30 from the operator's externally revised, sanitised, verified, and literature-anchored text of the same day; the site renders that file directly, so the deployed text is the canonical text. The two-track regime of 2026-07-29/30 (`paper-draft.md` steered by this document beside `paper.md` steered by `paper-writing.md`) ended with the promotion; the working records of the revision round live commit-pinned in git history (see the provenance section at the end). The figure series is the authored monochrome SVG set under `assets/figures/svg/` with one written specification per figure under `assets/figures/specs/`.
 
@@ -465,7 +465,7 @@ Acceptance closes an iteration for a defined purpose. It does not imply:
 
 ## 4.15 Canonical terminology for acceptance
 
-Use **documented grounds of acceptance** throughout the Abstract, definition, method, figures, and Conclusion.
+Use **documented grounds of acceptance** throughout the definition, method, figures, and Conclusion. Since the operator decision of 2026-07-31 the Abstract carries no acceptance enumeration; its accountability statement is the responsibility sentence on consequential judgements.
 
 Use narrower alternatives only where a specific record is being described, such as:
 
@@ -1466,7 +1466,7 @@ When revising the manuscript, remove repeated full explanations and replace them
 
 ## 14.1 The canonical promptotype relation and its homes
 
-The relation has four members, maintained project knowledge, the resulting digital research artefact, the referenced research-data state, and the documented grounds of acceptance. Member naming is uniform. Four locations carry the enumeration in full and are its canonical homes, the Abstract, the §2.2 definition, the §2.3 operative elaboration with the increment about verification evidence, and the §3.4 statement of epistemic status. Three further full statements are licensed exceptions, the Figure 1 caption under the convention that captions stand alone, the §2.3 instantiation with SZD content, and the relation statement in the Conclusion restored after the operator's external review (2026-07-30); none of them may be re-trimmed by a later redundancy pass. Every other occurrence is a reference to the §2.2 definition, and an edit that reintroduces an enumeration elsewhere breaks the arrangement. The §3.4 statement was collapsed from six members to the canonical four (code absorbed by the artefact member, verification evidence by the grounds of acceptance), confirmed by the operator on 2026-07-30.
+The relation has four members, maintained project knowledge, the resulting digital research artefact, the referenced research-data state, and the documented grounds of acceptance. Member naming is uniform. Three locations carry the enumeration in full and are its canonical homes, the §2.2 definition, the §2.3 operative elaboration with the increment about verification evidence, and the §3.4 statement of epistemic status. The Abstract carries neither the enumeration nor the term promptotype since the operator decision of 2026-07-31; it states responsibility for the consequential judgements of verification and acceptance instead, and the term is first announced in the §1 section preview and introduced at its definition site in §2.2. Three further full statements are licensed exceptions, the Figure 1 caption under the convention that captions stand alone, the §2.3 instantiation with SZD content, and the relation statement in the Conclusion restored after the operator's external review (2026-07-30); none of them may be re-trimmed by a later redundancy pass. Every other occurrence is a reference to the §2.2 definition, and an edit that reintroduces an enumeration elsewhere breaks the arrangement. The §3.4 statement was collapsed from six members to the canonical four (code absorbed by the artefact member, verification evidence by the grounds of acceptance), confirmed by the operator on 2026-07-30.
 
 ## 14.2 Protected repetitions and one conditional deletion
 
@@ -1716,6 +1716,8 @@ Decisions of the acceptance round of 2026-07-31:
 12. **The part-2 demo video moved from the paper page to the tutorial page.** The paper page carries the academic text alone; academic content and tutorial are separated (A8 updated in the site specification).
 13. **The "Figure files" closing section stays in the rendered text** as the repository-facing note on the file/manuscript numbering; it falls away in the submission export.
 14. **`paper-argument-map.md` and `submission-zfdg.md` were deleted with pins** (Section 24). The argument map described the seven-chapter text; the submission package derives fresh from Section 21 and the final text at submission time.
+15. **Abstract revised in the read round of 2026-07-31.** The promptotype sentence left the Abstract; neither the term nor the four-member relation appears there. It is replaced by the responsibility sentence "Responsibility for the consequential judgements through which each iteration is verified and accepted remains with accountable contributors.", and "arising from" left the write-back sentence. Sections 4.15 and 14.1 are re-keyed accordingly.
+16. **§1 opening revised by the operator (2026-07-31).** Paragraph 1 narrows *operationalisation* to the Pichler-Reiter sense and broadens to general software mediation in a second step; the Gephi and TEI examples are technically explicit (node or edge table, graph model and input format); the closing constraint sentence is bold. Paragraph 2 separates the probabilistic recognition step into its own two sentences and hedges the effort claim ("parts of the effort"). Paragraph 3 stands unchanged after an editing doublet was reverted. The section preview reads "The paper proceeds in five sections." Footnotes 3 to 5 adjusted (modular encoding framework; hedged LLM definition; processed or made usable). The §1 freeze of 2026-07-30 is superseded for these passages by the operator's own revision.
 
 Open flags that survive:
 
