@@ -2,7 +2,7 @@
 
 **Updated:** 31 July 2026, on integration of the operator's four-chapter revision (Section 19, decision 27); earlier the same day during the operator's end-to-end read, when Abstract, the whole §1, and the verification/validation terminology were revised (decisions 15 to 24).
 
-**Manuscript version:** 0.9, review draft, 31 July 2026. It is circulated for substantive feedback before the final revision. Central argument, methodological structure, project cases, and evidential scope are in place; references, figures, footnotes, and individual formulations are checked again in the final revision, and the apparatus debt this document records as flags 5 to 8 of Section 19 belongs to that pass. Feedback is invited on the clarity and distinctiveness of the methodological contribution, the adequacy of the case-based evidence, and remaining problems of focus, repetition, or comprehensibility. The version and the reviewer address stay in this document; `knowledge/paper.md` remains headerless and begins with its H1, because the site renders it as the academic text alone (A8).
+**Manuscript version:** 0.9, review draft, 31 July 2026. It is circulated for substantive feedback before the final revision. Central argument, methodological structure, project cases, and evidential scope are in place; references, figures, footnotes, and individual formulations are checked again in the final revision, and the apparatus debt this document records as flags 5 to 9 of Section 19 belongs to that pass. Feedback is invited on the clarity and distinctiveness of the methodological contribution, the adequacy of the case-based evidence, and remaining problems of focus, repetition, or comprehensibility. The version and the reviewer address stay in this document; `knowledge/paper.md` remains headerless and begins with its H1, because the site renders it as the academic text alone (A8).
 
 **Status:** The single steering document of the paper. The manuscript is `knowledge/paper.md`, promoted on 2026-07-31 from the operator's four-chapter revision, which supersedes the five-chapter text promoted on 2026-07-30. The site renders that file directly, so the deployed text is the canonical text. The two-track regime of 2026-07-29/30 (`paper-draft.md` steered by this document beside `paper.md` steered by `paper-writing.md`) ended with the earlier promotion; the working records of both revision rounds live commit-pinned in git history (see the provenance section at the end). The figure series is the authored monochrome SVG set under `assets/figures/svg/` with one written specification per figure under `assets/figures/specs/`; the manuscript embeds one of them since the four-chapter revision (Section 17).
 
@@ -1767,7 +1767,9 @@ Open flags that survive:
 5. **Two footnotes are owed (2026-07-31).** The draft carries markers at two positions in §2.3.1 for which no definition exists in any predecessor, so no restoration was possible and the markers were removed rather than filled with invented citations. First position: after "in extension of emerging agent-based approaches to code review and other forms of tool-supported technical inspection", which needs the agent-based code-review literature. Second position: after "as found in scholarly reviews of digital editions and resources", which needs the review literature, presumably RIDE. Both belong in the final revision.
 6. **Three project URLs are unresolved.** Footnotes 24 (Jeanne Hersch), 25 (M³GIM), and 26 (Notker) carry the operator's own `[Insert project URL.]` markers. The ZBZ repository pointer that the five-chapter text carried has no marker in the new text at all and is therefore not restorable without an editorial decision on where it belongs.
 7. **Two references are listed but uncited.** Fakhoury et al. 2024 and Hora and Robbes 2026 survive in the reference list although the four-chapter text no longer cites them; the passages that did (test-driven conversion, agent-written tests) fell away with §2.4. Either restore the passages or drop the entries.
-8. **Footnote labels are non-sequential in the source.** The restored notes keep their five-chapter labels 29 and 34 to 37 beside the draft's own 1 to 27, and 28 and 30 to 33 do not exist. The site numbers the apparatus by order of occurrence, so the rendered text is correct and only the Markdown source shows the gaps. A submission export renumbers.
+8. **The announcement and the Author's Note name different systems (2026-07-31).** The Author's Note in the manuscript declares GPT-5.6, Claude Opus 4.8, Claude Opus 5, and Claude Fable 5, with Claude Code for agentic work, plus DeepL and Wispr Flow. The public announcement of the same day names Claude Opus 5, Claude Fable 5, and GPT-5.6 Sol. Two differences: the announcement omits Claude Opus 4.8, and it gives the GPT model a fuller name than the manuscript does. The AI-use declaration is the one place where an imprecision is itself a research-integrity problem, so the two must be reconciled and only the operator can say which list is accurate. Until then the manuscript's list governs, because it is the declaration of record.
+
+9. **Footnote labels are non-sequential in the source.** The restored notes keep their five-chapter labels 29 and 34 to 37 beside the draft's own 1 to 27, and 28 and 30 to 33 do not exist. The site numbers the apparatus by order of occurrence, so the rendered text is correct and only the Markdown source shows the gaps. A submission export renumbers.
 
 Evidence and production tasks that remain from the earlier list: the M³GIM `knowledge/domain.md` derivation question, the Notker verification and acceptance reconstruction, repository-visibility verification for restricted repositories, and the rights-clearance list (Section 22).
 
@@ -1778,9 +1780,10 @@ A manuscript section is accepted only when its conceptual and terminological dec
 # 20. Next Work Block
 
 1. Operator's end-to-end read of `knowledge/paper.md` as rendered on the site; findings return through the ordinary revision path with the rule catalogue of Section 16.6.
-2. Close the apparatus flags 5 to 8 of Section 19, which are the debt the four-chapter integration left standing.
-3. Vault claim follow-up from the audit of 2026-07-31 (open flag 3), in a vault session, re-keyed to the four-chapter structure.
-4. Submission package derived fresh from Section 21 and the final text, then venue submission (operator-gated).
+2. Run the open review round on version 0.9 (Section 23.1): collect the Google Doc comments, decide them at the operator gate, and edit `paper.md` rather than the Doc.
+3. Close the apparatus flags 5 to 9 of Section 19, which are the debt the four-chapter integration left standing, and reconcile the AI-use declaration with the announcement.
+4. Vault claim follow-up from the audit of 2026-07-31 (open flag 3), in a vault session, re-keyed to the four-chapter structure.
+5. Submission package derived fresh from Section 21 and the final text, then venue submission (operator-gated).
 
 ---
 
@@ -1812,6 +1815,14 @@ Three process rules bind every audit or revision commission on this paper (carri
 - Audit commissions are anchor-free. They name goal, context, and quality standard, but no findable passages, example projects, or ready-made solutions, so the commission also tests whether the criticism is discoverable in the text.
 - A free lectorate pass (A0) runs before the auditor's first contact with known problem areas.
 - Every change proposal carries a steelman of the existing text, and a hard operator gate stands between audit and implementation; no audit finding is implemented without a documented decision.
+
+## 23.1 The open review round on version 0.9 (from 2026-07-31)
+
+Version 0.9 was announced publicly on 2026-07-31 as a review draft, through the operator's newsletter, and circulated for substantive feedback. The announcement names three addresses, a Google Doc as the comment carrier, `https://dhcraft.org/Promptotyping/` as the method specification, and this repository for project knowledge and development history. Feedback is invited on three points, the clarity and distinctiveness of the methodological contribution, the use of the project cases, and passages that stay unclear, repetitive, or overly detailed; other observations are welcome as well.
+
+Two carriers therefore exist side by side and will diverge as comments arrive. The rule is that `knowledge/paper.md` stays canonical and the Google Doc is a comment surface. A reviewer comment becomes a change to the paper only through the ordinary revision path, meaning an operator decision recorded in Section 19 and an edit to `paper.md`; a comment resolved in the Doc alone is a lost decision. When the round closes, the Doc's comment thread is exported or summarised into the repository, so the reasoning behind accepted and rejected proposals stays reconstructable after the Doc is archived.
+
+The Doc is a copy of the same manuscript state and carries no authority over the text. Whoever edits `paper.md` during the open round refreshes the Doc from it or notes the divergence, because a reviewer commenting on a superseded passage produces findings nobody can act on.
 
 ---
 
