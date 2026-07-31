@@ -138,7 +138,7 @@ Layout. [Grid, Container, responsive Breakpoints in Prosa.]
 
 <!-- Knapper Hinweis: CLAUDE.md im Repo-Root verweist auf dieses Dokument und führt die imperative Übersetzung als "Designprinzipien"-Sektion. Beispielhaft, was dort stehen würde. -->
 
-Die imperative Übersetzung der oben beschriebenen Designhaltung lebt im Action-Layer ([`../CLAUDE.md`](../CLAUDE.md), Sektion "Designprinzipien"). Beispielhafte Imperative, abgeleitet aus der Designhaltung:
+Die imperative Übersetzung der oben beschriebenen Designhaltung lebt im Action-Layer (`../CLAUDE.md`, Sektion "Designprinzipien"). Beispielhafte Imperative, abgeleitet aus der Designhaltung:
 
 - [Imperativ-Satz, abgeleitet aus Designhaltung]
 - [Imperativ-Satz, abgeleitet aus Designsystem]

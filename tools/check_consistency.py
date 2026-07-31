@@ -1070,6 +1070,30 @@ def check_vault_index_current():
                      % (kind[:-1], entry["slug"], path))
 
 
+def check_relative_links():
+    """Every relative Markdown link resolves to a file that exists.
+
+    Consolidation rounds delete documents and leave the links behind. Eight
+    such links stood in knowledge/ and the template mirror until 2026-07-31,
+    pointing at three steering documents that had been consolidated away, and
+    no check saw them. External addresses stay out of this group, they belong
+    to the opt-in URL pass; fragment-only links are anchors and are covered by
+    check_anchors.
+    """
+    targets = list(ROOT.glob("*.md")) + list((ROOT / "knowledge").glob("*.md"))         + list((ROOT / "_content").rglob("*.md"))
+    pattern = re.compile(r"\]\((?!https?:|mailto:|#)([^)]+)\)")
+    for path in sorted(targets):
+        text = path.read_text(encoding="utf-8", errors="replace")
+        for match in pattern.finditer(text):
+            target = match.group(1).split("#")[0].strip()
+            if not target:
+                continue
+            if (path.parent / target).exists() or (ROOT / target).exists():
+                continue
+            fail("links", "%s links to %s, which does not exist"
+                 % (path.relative_to(ROOT).as_posix(), target))
+
+
 def main():
     documents = load_catalogue()
     conv_types = convention_function_types()
@@ -1090,6 +1114,7 @@ def main():
         check_action_layer_pages,
         check_requirement_numbers,
         check_vault_index_current,
+        check_relative_links,
     ]
     if "--check-urls" in sys.argv:
         groups.append(lambda: check_urls(cases))
