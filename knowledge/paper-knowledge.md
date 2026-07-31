@@ -1721,7 +1721,7 @@ Open flags that survive:
 
 1. **Summerfield 2025** left the reference list with the operator's own revision; the confabulation term thereby has no source in the manuscript and the term itself no longer appears. Reopen only if the term returns.
 2. **Doctoral Congress presentation** still needs a deposited persistent identifier (the footnote wording stays provisional until then).
-3. **Vault claim re-grounding.** The claim layer is being audited against the promoted wording (audit commissioned 2026-07-31); its verdicts route the follow-up work in a vault session.
+3. **Vault claim follow-up.** The audit of 2026-07-31 ran over all 153 claims (36 carried, 36 moved, 68 orphaned, 13 internal); verdicts, defect list, and routing stand in `vault/knowledge/claim-audit-2026-07-31.md`. Open is the follow-up vault session: re-key `vault/knowledge/state.md` to the five-chapter structure and edit the claim files whose prose contradicts it.
 4. **Final read-acceptance.** The operator has not yet read the promoted text end to end as the published version; the site renders it in the meantime by the promotion decision.
 
 Evidence and production tasks that remain from the earlier list: the M³GIM `knowledge/domain.md` derivation question, the Notker verification and acceptance reconstruction, repository-visibility verification for restricted repositories, and the rights-clearance list (Section 22).
