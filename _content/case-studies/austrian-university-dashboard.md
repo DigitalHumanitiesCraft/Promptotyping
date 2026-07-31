@@ -23,7 +23,7 @@ The redesign carries a third point. Choosing a visual idiom deliberately, agains
 
 There is no public repository. The documents and the code exist only as they pass across the screen, so nothing about the artefact can be checked independently of the recording. The paper's inventory rule in Section 5.2 admits only projects that left a repository, and this case falls outside the evidence layer by that rule.
 
-The demonstrator is the method's author. The case establishes that the process is demonstrable and settles nothing about whether a scholar who did not develop the method can carry it through, which is the question Section 5.4 opens and Section 6.5 leaves for empirical work.
+The demonstrator is the method's author. The case establishes that the process is demonstrable and settles nothing about whether a scholar who did not develop the method can carry it through, which is the question Section 4.3 opens and Section 5.2 leaves for empirical work.
 
 The material is a spreadsheet corpus. The part of the method that carries a formal data model into an interface stays outside what the recording shows, and a viewer who works with encoded editions or ontologies sees the phases without the modelling problem they were built for.
 

@@ -1,7 +1,7 @@
 ---
 title: FemPrompt SozArb
 id: femprompt-sozarb
-paper: "5.2, Table 1"
+paper: none
 source: Projects/Promptotyping/Case Studies/femprompt-sozarb.md
 ---
 
@@ -9,7 +9,7 @@ source: Projects/Promptotyping/Case Studies/femprompt-sozarb.md
 
 ## Context and research question
 
-FemPrompt SozArb is a systematic literature review on AI literacy and LLM bias in social work, carried out as a staged pipeline whose own record is published alongside its result. The question the project set itself is about the process. It asks how the transformation a body of literature undergoes in an LLM-supported review can be made inspectable at every step. It is the record's one case outside the digital humanities and its one artefact for the audit function of Section 4.2 of the paper.
+FemPrompt SozArb is a systematic literature review on AI literacy and LLM bias in social work, carried out as a staged pipeline whose own record is published alongside its result. The question the project set itself is about the process. It asks how the transformation a body of literature undergoes in an LLM-supported review can be made inspectable at every step. It is the record's one case outside the digital humanities and its one artefact for the audit function in the [interface typology](#artefakt) this site carries.
 
 ## Data
 
@@ -27,13 +27,13 @@ Verification points sit after every AI-assisted stage and are either human or ru
 
 The divergence between human and machine judgement is treated as a primary research output. The LLM included papers at a markedly higher rate than the human reviewers, the disagreement cases were classified by pattern, and each became a document in the vault, which turns an error term into readable evidence about where machine assessment of scholarly relevance departs from expert assessment.
 
-The vault itself is generated from the pipeline data by a named script, an instance of the generated document of Section 3.3 of the paper. Its stated obligation runs on three levels, what is the case, how it came about with the prompts and configurations that produced it, and what the process cannot deliver. The published limitations of each pipeline stage therefore sit inside the artefact, one note per stage.
+The vault itself is generated from the pipeline data by a named script, an instance of the generated document of Section 2.1 of the paper. Its stated obligation runs on three levels, what is the case, how it came about with the prompts and configurations that produced it, and what the process cannot deliver. The published limitations of each pipeline stage therefore sit inside the artefact, one note per stage.
 
 The evidence companion renders three views over that infrastructure, the paper corpus as a searchable and filterable set, the concept network extracted from the knowledge documents, and the comparison of human against LLM assessment with its confusion matrix and agreement statistic. That is the audit function in its clearest form, since the path that produced the result is rendered beside the result.
 
 ## Limits
 
-Section 5.3 of the paper keeps the case out of the worked cases. Its corpus of academic papers lies far from the modelled research data on which the argument about question-specific interfaces turns, so what the artefact demonstrates about the audit function transfers to research data only by analogy.
+Section 4.1 of the paper keeps the case out of the documented cases. Its corpus of academic papers lies far from the modelled research data on which the argument about question-specific interfaces turns, so what the artefact demonstrates about the audit function transfers to research data only by analogy.
 
 The human rating covers a part of the corpus while the LLM rated all of it, so the comparison rests on the overlap alone. The LLM judged from title and abstract without access to the full texts, which bounds what its verdicts can be held to.
 

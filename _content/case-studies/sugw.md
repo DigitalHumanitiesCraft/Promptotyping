@@ -1,7 +1,7 @@
 ---
 title: Medieval Legal Transactions
 id: sugw
-paper: "5.2, Table 1"
+paper: none
 ---
 
 # Medieval Legal Transactions

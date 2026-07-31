@@ -81,8 +81,9 @@
   }
 
   /* ---- Epistemic function marks ----
-     The five interface categories of paper section 4.2 are the one nominal
-     scale on this site, so they are the one place a hue carries meaning. */
+     The five interface categories of the site's own typology (artefakt page;
+     operator decision 2026-07-31) are the one nominal scale on this site, so
+     they are the one place a hue carries meaning. */
 
   var FUNCTION_SLUGS = ["verification", "exploration", "edition", "capture", "audit"];
 

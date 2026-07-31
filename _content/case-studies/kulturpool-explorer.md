@@ -1,7 +1,7 @@
 ---
 title: Kulturpool Explorer
 id: kulturpool-explorer
-paper: "5.2, Table 1"
+paper: none
 source: Projects/Promptotyping/Case Studies/kulturpool-explorer.md
 ---
 

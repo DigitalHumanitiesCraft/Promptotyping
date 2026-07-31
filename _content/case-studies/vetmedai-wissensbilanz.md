@@ -1,7 +1,7 @@
 ---
 title: VetMedAI Wissensbilanz
 id: vetmedai-wissensbilanz
-paper: "5.2, Table 1"
+paper: none
 ---
 
 # VetMedAI Wissensbilanz

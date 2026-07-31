@@ -1,7 +1,7 @@
 ---
 title: ZBZ OCR/TEI Pipeline
 id: zbz-ocr-tei
-paper: "5.2, Table 1"
+paper: "4.3, Table 3"
 source: Projects/Promptotyping/Case Studies/zbz-ocr-tei.md
 ---
 

@@ -6,7 +6,7 @@ language: en
 version: "0.2"
 created: 2026-07-25
 updated: 2026-07-26
-source: knowledge/paper.md, section 4
+source: knowledge/paper.md, sections 4.2 and 5.1
 machine-url: https://dhcraft.org/Promptotyping/_content/artefakt.md
 ---
 
@@ -41,6 +41,8 @@ The default holds as long as its conditions hold, and the record shows the side 
 ## Five functions by which the interfaces sort
 
 The browser-based interfaces of the documented projects sort by the epistemic function they serve. Data format and visualisation technique have proved weaker as ordering principles.
+
+The typology below is the site's own. It descends from an earlier version of the method paper, whose current table of artefact forms draws the fifth category differently, and the five names given here are the ones the use-case gallery filters by.
 
 - **Verification.** Checks the intermediate results of a pipeline at defined points and makes them comparable and correctable before errors propagate. The paradigmatic case is a comparison viewer for several text-recognition sources with layout overlay.
 - **Exploration.** Opens up existing structured research data through coordinated views. Here the interface is the primary research artefact, the means through which the data becomes analytically accessible.

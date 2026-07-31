@@ -121,7 +121,7 @@ On the aesthetic layer the Agent Instructions function takes effect through `CLA
 
 ## Classification of the document types
 
-Promptotyping distinguishes three document types analytically (Pollin 2026, section 3.3). All three are knowledge documents, specialised by the kind of knowledge they hold.
+Promptotyping distinguishes three document types analytically (Pollin 2026, section 2.1). All three are knowledge documents, specialised by the kind of knowledge they hold.
 
 Declarative Documents hold knowledge about the subject matter. They describe what is known about the data, the domain and the research context. Examples are `README.md`, `project.md`, `data.md`, `requirements.md`, `architecture.md`, `design.md`, `editorial-guidelines.md`, mapping rules and verification documents. They extend the model's epistemic horizon and outlast, as a curated layer, the changes to code, model versions and tools. Until July 2026 this type was called Knowledge Document here; the name has moved to the superordinate term.
 
@@ -275,7 +275,7 @@ Negative self-definition. What is deliberately not delivered is named as explici
 
 ## Distillation as a writing principle
 
-Promptotyping Documents follow the distillation principle from the method paper, maximum information with minimum tokens (Hong et al. 2025; Pollin 2026, section 3.3). Concretely this means:
+Promptotyping Documents follow the distillation principle from the method paper, maximum information with minimum tokens (Hong et al. 2025; Pollin 2026, sections 2.1 and 2.2). Concretely this means:
 
 - A document carries one bounded function.
 - Redundancies between documents are represented through wikilinks (`related:`).

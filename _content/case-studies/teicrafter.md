@@ -1,7 +1,7 @@
 ---
 title: teiCrafter
 id: teicrafter
-paper: none
+paper: "4.3, Table 3"
 source: Projects/Promptotyping/Case Studies/teicrafter.md
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Knowledge Organisation across Three Tools
 id: wissensorganisation-nano-banana
-paper: "5.4, teachability"
+paper: "4.3, teaching and collaboration"
 ---
 
 # Knowledge Organisation across Three Tools

@@ -1,7 +1,7 @@
 ---
 title: Knowledge and Project Management with Obsidian
 id: wissens-projektmanagement-obsidian-claude-code-screencast
-paper: "5.4, teachability"
+paper: "4.3, teaching and collaboration"
 ---
 
 # Knowledge and Project Management with Obsidian

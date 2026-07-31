@@ -1,7 +1,7 @@
 ---
 title: M3GIM
 id: m3gim
-paper: "5.2, Table 1"
+paper: "4.3, Table 3"
 ---
 
 # M3GIM

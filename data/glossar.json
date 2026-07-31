@@ -450,14 +450,13 @@
       "kategorie": "artefact",
       "quellen": [
         {
-          "typ": "paper",
-          "anker": "abschnitt-4-2-artefact-forms-and-documented-projects",
-          "text": "Paper, Section 4.2"
-        },
-        {
           "typ": "page",
           "anker": "artefakt",
           "text": "Specification, part 4, Artefact and boundary"
+        },
+        {
+          "typ": "text",
+          "text": "Site vocabulary since the promotion of 2026-07-30; descends from an earlier version of the paper, whose current Table 2 draws the fifth category differently"
         }
       ]
     },

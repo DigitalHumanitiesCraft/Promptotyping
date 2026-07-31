@@ -240,7 +240,7 @@ Classification of generated interfaces by epistemic function, verification, expl
 
 The interface typology sorts the generated interfaces by the epistemic function they serve, data format and visualisation technique having proved weaker ordering principles. Verification Interfaces check pipeline outputs at defined milestones. Exploration Interfaces open up existing structured data through coordinated multiple views. Edition Interfaces render scholarly editions with facsimile synchronisation and editorial correction. Capture Interfaces support structured input, annotation and metadata creation. Audit Interfaces make an entire research process inspectable. The categories are not mutually exclusive; a pipeline project combines them.
 
-Source: [Paper, Section 4.2](#abschnitt-4-2-artefact-forms-and-documented-projects); [Specification, part 4, Artefact and boundary](#artefakt)
+Source: [Specification, part 4, Artefact and boundary](#artefakt); Site vocabulary since the promotion of 2026-07-30; descends from an earlier version of the paper, whose current Table 2 draws the fifth category differently
 
 ### Knowledge Curation
 

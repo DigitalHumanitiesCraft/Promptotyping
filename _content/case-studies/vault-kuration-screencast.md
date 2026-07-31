@@ -1,7 +1,7 @@
 ---
 title: Obsidian Vault Curation
 id: vault-kuration-screencast
-paper: "5.4, teachability"
+paper: "4.3, teaching and collaboration"
 ---
 
 # Obsidian Vault Curation

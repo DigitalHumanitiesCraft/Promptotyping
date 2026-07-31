@@ -13,7 +13,7 @@ machine-url: https://dhcraft.org/Promptotyping/_content/technology-baseline.md
 
 # Technology Baseline. The static website as a research tool
 
-This document carries the project-independent technology knowledge for the method's most frequent artefact type, the self-contained static web tool. It is the layer of rationale that the `architecture.md` of a project instance refers to instead of restating the stack argument in every repository, and the instance then documents only its deviations. The scholarly short form of the argument stands in the method paper (Pollin 2026, section 4); this document is the operative long form with the concrete rules.
+This document carries the project-independent technology knowledge for the method's most frequent artefact type, the self-contained static web tool. It is the layer of rationale that the `architecture.md` of a project instance refers to instead of restating the stack argument in every repository, and the instance then documents only its deviations. The scholarly short form of the argument stands in the method paper (Pollin 2026, section 4.2); this document is the operative long form with the concrete rules.
 
 ## Why the static form
 
@@ -76,7 +76,7 @@ The `architecture.md` of a project refers to this document as its baseline and c
 
 ## Sources
 
-- Pollin, Christopher: Promptotyping. Translating Research Data into Research Artefacts with Context and Agentic Engineering. 2026 (in preparation), section 4.
+- Pollin, Christopher: Promptotyping. Translating Research Data into Research Artefacts with Context and Agentic Engineering. 2026 (in preparation), section 4.2.
 - Risam, Roopika; Gil, Alex: Introduction. The Questions of Minimal Computing. In: Digital Humanities Quarterly 16,2 (2022). https://www.digitalhumanities.org/dhq/vol/16/2/000646/000646.html
 - The Endings Project: Principles for Digital Longevity. https://endings.uvic.ca/principles.html
 - Chue Hong, Neil P.; Katz, Daniel S.; Barker, Michelle et al.: FAIR Principles for Research Software (FAIR4RS Principles). Research Data Alliance 2022. https://doi.org/10.15497/RDA00068

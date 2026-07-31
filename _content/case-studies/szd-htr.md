@@ -1,7 +1,7 @@
 ---
 title: SZD-HTR OCR Pipeline
 id: szd-htr
-paper: "5.2, Table 1"
+paper: "4.3, Table 3"
 source: Projects/Promptotyping/Case Studies/szd-htr.md
 ---
 
@@ -9,7 +9,7 @@ source: Projects/Promptotyping/Case Studies/szd-htr.md
 
 ## Context and research question
 
-The pipeline applies handwritten text recognition to the digitised Stefan Zweig estate at the Literaturarchiv Salzburg, some twenty thousand facsimile scans of manuscripts, typescripts and correspondence. The scholarly purpose fixed in Preparation was to make the estate readable and searchable in diplomatic transcription, without normalisation. Section 3.4 of the paper develops the project as its worked example of the four phases, and the modelling judgement and the verification judgement lay with the same person there.
+The pipeline applies handwritten text recognition to the digitised Stefan Zweig estate at the Literaturarchiv Salzburg, some twenty thousand facsimile scans of manuscripts, typescripts and correspondence. The scholarly purpose fixed in Preparation was to make the estate readable and searchable in diplomatic transcription, without normalisation. Section 2.3 of the paper develops the project as its worked example, and the modelling judgement and the verification judgement lay with the same person there.
 
 ## Data
 
@@ -25,7 +25,7 @@ Implementation derived the pipeline and the viewer through the agent, from a lay
 
 ## Methodological contribution
 
-Verification runs as a three-status scheme in which human-checked, meaning every page read against the facsimile, ranks above agent-checked, meaning a vision-language model compared image and transcript, which ranks above unchecked. That is the authority ordering of Section 6.2 of the paper carried into project practice. Where a human corrects, the machine transcription is preserved in an edit history, so the two layers stay separable after the fact.
+Verification runs as a three-status scheme in which human-checked, meaning every page read against the facsimile, ranks above agent-checked, meaning a vision-language model compared image and transcript, which ranks above unchecked. That is the authority ordering of Section 2.3 of the paper carried into project practice. Where a human corrects, the machine transcription is preserved in an edit history, so the two layers stay separable after the fact.
 
 The model's own confidence report proved worthless early, since it announced high confidence for clean typescripts and for multi-page Kurrent alike, and the automatic quality signals were built to replace it with a judgement formed outside the transcription step. Their thresholds were recalibrated across several rounds, because the first version flagged so large a share of the corpus that it was useless for triage.
 

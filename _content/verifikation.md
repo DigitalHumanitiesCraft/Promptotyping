@@ -6,7 +6,7 @@ language: en
 version: "0.2"
 created: 2026-07-25
 updated: 2026-07-26
-source: knowledge/paper.md, sections 2.4 and 6.2
+source: knowledge/paper.md, sections 2.3 and 2.4
 machine-url: https://dhcraft.org/Promptotyping/_content/verifikation.md
 ---
 

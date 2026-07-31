@@ -1,7 +1,7 @@
 ---
 title: wiiw Patent Analysis
 id: wiiw-patent-analysis
-paper: "5.2, Table 1"
+paper: none
 ---
 
 # wiiw Patent Analysis

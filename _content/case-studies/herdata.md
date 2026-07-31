@@ -1,7 +1,7 @@
 ---
 title: HerData
 id: herdata
-paper: "5.2, Table 1"
+paper: none
 source: Projects/Promptotyping/Case Studies/herdata.md
 ---
 

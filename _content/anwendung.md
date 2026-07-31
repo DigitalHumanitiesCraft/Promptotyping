@@ -6,7 +6,7 @@ language: en
 version: "0.3"
 created: 2026-07-25
 updated: 2026-07-26
-source: knowledge/paper.md, sections 3.2 and 3.3
+source: knowledge/paper.md, sections 2.1 and 2.2
 machine-url: https://dhcraft.org/Promptotyping/_content/anwendung.md
 ---
 

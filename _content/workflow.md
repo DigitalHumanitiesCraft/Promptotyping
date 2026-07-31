@@ -54,4 +54,4 @@ At the end stands an experiment that does not serve completion. A single prompt 
 
 ## What the case shows and what it does not
 
-It shows the full loop on material that demands no scholarly modelling, and it shows the concrete moves that stay abstract in the description of the [application](#anwendung). It does not show what the method achieves on interpretatively modelled research data, because tabular reporting data does not carry the difficulties at issue there. The [use cases](#use-cases) and the evidence chapter of the [paper](#abschnitt-5-evidence-the-documented-projects) stand for that.
+It shows the full loop on material that demands no scholarly modelling, and it shows the concrete moves that stay abstract in the description of the [application](#anwendung). It does not show what the method achieves on interpretatively modelled research data, because tabular reporting data does not carry the difficulties at issue there. The [use cases](#use-cases) and the practice chapter of the [paper](#abschnitt-4-promptotyping-in-practice) stand for that.
