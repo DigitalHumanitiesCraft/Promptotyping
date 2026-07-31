@@ -1,0 +1,23 @@
+[
+  {
+    "id": "benito-santos-2026",
+    "type": "paper-conference",
+    "title": "Chasing Meaning and/or Insight? A Survey on Evaluation Practices at the Intersection of Visualization and the Humanities",
+    "author": [
+      {"family": "Benito-Santos", "given": "Alejandro"},
+      {"family": "Windhager", "given": "Florian"},
+      {"family": "Horaniet Ibañez", "given": "Aida"},
+      {"family": "Kleymann", "given": "Rabea"},
+      {"family": "Abdul-Rahman", "given": "Alfie"},
+      {"family": "Mayr", "given": "Eva"}
+    ],
+    "container-title": "Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems (CHI '26)",
+    "publisher": "ACM",
+    "publisher-place": "New York, NY",
+    "page": "1-23",
+    "issued": {"date-parts": [[2026]]},
+    "DOI": "10.1145/3772318.3793150",
+    "URL": "https://doi.org/10.1145/3772318.3793150",
+    "note": "Title, author order, container title, pages and publication date (2026-04-13) checked against the Crossref API record for 10.1145/3772318.3793150, retrieved 2026-07-30; the same record carries a CC BY 4.0 licence with zero embargo, so the register class moves from the proposed C to A. The ACM Digital Library landing page answers HTTP 403 to an automated fetch, so the open-access finding rests on the Crossref licence field."
+  }
+]

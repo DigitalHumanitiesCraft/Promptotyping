@@ -1,0 +1,19 @@
+[
+  {
+    "id": "ciula-2023",
+    "type": "book",
+    "title": "Modelling Between Digital and Humanities: Thinking in Practice",
+    "author": [
+      {"family": "Ciula", "given": "Arianna"},
+      {"family": "Eide", "given": "Øyvind"},
+      {"family": "Marras", "given": "Cristina"},
+      {"family": "Sahle", "given": "Patrick"}
+    ],
+    "publisher": "Open Book Publishers",
+    "publisher-place": "Cambridge, UK",
+    "issued": {"date-parts": [[2023]]},
+    "DOI": "10.11647/OBP.0369",
+    "URL": "https://doi.org/10.11647/OBP.0369",
+    "note": "Title, subtitle, the four authors in order, publisher, place and publication date (2023-12-15) checked against the Crossref API record for 10.11647/obp.0369, retrieved 2026-07-30; the same record carries a CC BY-NC 4.0 licence and an open-access PDF, which confirms access class A. Crossref lists five ISBNs for print and electronic formats without disambiguating them, so no ISBN is recorded here."
+  }
+]

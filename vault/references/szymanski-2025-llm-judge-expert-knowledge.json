@@ -1,0 +1,24 @@
+[
+  {
+    "id": "szymanski-2025",
+    "type": "paper-conference",
+    "title": "Limitations of the LLM-as-a-Judge Approach for Evaluating LLM Outputs in Expert Knowledge Tasks",
+    "author": [
+      {"family": "Szymanski", "given": "Annalisa"},
+      {"family": "Ziems", "given": "Noah"},
+      {"family": "Eicher-Miller", "given": "Heather A."},
+      {"family": "Li", "given": "Toby Jia-Jun"},
+      {"family": "Jiang", "given": "Meng"},
+      {"family": "Metoyer", "given": "Ronald A."}
+    ],
+    "container-title": "Proceedings of the 30th International Conference on Intelligent User Interfaces (IUI '25)",
+    "publisher": "ACM",
+    "publisher-place": "New York, NY",
+    "event-place": "Cagliari, Italy",
+    "page": "952-966",
+    "issued": {"date-parts": [[2025]]},
+    "DOI": "10.1145/3708359.3712091",
+    "URL": "https://doi.org/10.1145/3708359.3712091",
+    "note": "Title, author order, container title, pages and publication date (2025-03-24) checked against the Crossref API record for 10.1145/3708359.3712091, retrieved 2026-07-30. The same record carries a CC BY 4.0 licence with zero embargo from the publication date, so the register class moves from the proposed C to A. The ACM Digital Library landing page itself answers HTTP 403 to an automated fetch, so the open-access finding rests on the Crossref licence field."
+  }
+]

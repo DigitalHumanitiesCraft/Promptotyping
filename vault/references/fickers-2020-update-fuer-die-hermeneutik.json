@@ -1,0 +1,19 @@
+[
+  {
+    "id": "fickers-2020",
+    "type": "article-journal",
+    "title": "Update für die Hermeneutik. Geschichtswissenschaft auf dem Weg zur digitalen Forensik?",
+    "author": [
+      {"family": "Fickers", "given": "Andreas"}
+    ],
+    "container-title": "Zeithistorische Forschungen – Studies in Contemporary History",
+    "volume": "17",
+    "issue": "1",
+    "page": "157-168",
+    "issued": {"date-parts": [[2020]]},
+    "DOI": "10.14765/zzf.dok-1765",
+    "URL": "https://zeitgeschichte-digital.de/doks/1765",
+    "language": "de",
+    "note": "Title, author, journal, volume, issue, pages and year checked against the landing page reached by resolving the DOI (https://zeitgeschichte-digital.de/doks/1765), retrieved 2026-07-30; the full-text PDF is offered there under the ZZF-Clio licence, which confirms access class A. The DOI is not registered with Crossref, so the landing page is the only metadata source. The register and the task data give the title with a colon after 'Hermeneutik'; the landing page has a full stop, which is used here."
+  }
+]

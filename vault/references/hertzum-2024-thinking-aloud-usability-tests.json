@@ -1,0 +1,18 @@
+[
+  {
+    "id": "hertzum-2024",
+    "type": "article-journal",
+    "title": "Concurrent or Retrospective Thinking Aloud in Usability Tests: A Meta-Analytic Review",
+    "author": [
+      {"family": "Hertzum", "given": "Morten"}
+    ],
+    "container-title": "ACM Transactions on Computer-Human Interaction",
+    "volume": "31",
+    "issue": "3",
+    "page": "1-29",
+    "issued": {"date-parts": [[2024]]},
+    "DOI": "10.1145/3665327",
+    "URL": "https://doi.org/10.1145/3665327",
+    "note": "Title, author, container title, volume, issue, pages and publication date (2024-06-30) checked against the Crossref API record for 10.1145/3665327, retrieved 2026-07-30; the same record carries a CC BY 4.0 licence with zero embargo, so the register class moves from the proposed C to A. The ACM Digital Library landing page answers HTTP 403 to an automated fetch, so the open-access finding rests on the Crossref licence field, and the article number of the journal issue was not obtained."
+  }
+]

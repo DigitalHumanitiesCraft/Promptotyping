@@ -1,0 +1,17 @@
+[
+  {
+    "id": "green-2022",
+    "type": "article-journal",
+    "title": "The Flaws of Policies Requiring Human Oversight of Government Algorithms",
+    "author": [
+      {"family": "Green", "given": "Ben"}
+    ],
+    "container-title": "Computer Law & Security Review",
+    "volume": "45",
+    "page": "105681",
+    "issued": {"date-parts": [[2022]]},
+    "DOI": "10.1016/j.clsr.2022.105681",
+    "URL": "https://doi.org/10.1016/j.clsr.2022.105681",
+    "note": "Title, author, container title, volume, article number 105681 and publication date (2022-07) checked against the Crossref API record for 10.1016/j.clsr.2022.105681, retrieved 2026-07-30; Crossref records a CC BY 4.0 licence effective 2022-10-20. An openly readable author version stands at arXiv:2109.05067, whose abstract page names this journal and DOI as the published version, checked the same day. The register class moves from the proposed C to A on the strength of that open copy; page locators must be taken from the published version, whose pagination the arXiv copy does not carry. Crossref renders the title in sentence case; the title-case form used here follows the arXiv abstract page."
+  }
+]

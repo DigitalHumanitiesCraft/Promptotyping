@@ -1,0 +1,22 @@
+[
+  {
+    "id": "fakhoury-2024",
+    "type": "article-journal",
+    "title": "LLM-Based Test-Driven Interactive Code Generation: User Study and Empirical Evaluation",
+    "author": [
+      {"family": "Fakhoury", "given": "Sarah"},
+      {"family": "Naik", "given": "Aaditya"},
+      {"family": "Sakkas", "given": "Georgios"},
+      {"family": "Chakraborty", "given": "Saikat"},
+      {"family": "Lahiri", "given": "Shuvendu K."}
+    ],
+    "container-title": "IEEE Transactions on Software Engineering",
+    "volume": "50",
+    "issue": "9",
+    "page": "2254-2268",
+    "issued": {"date-parts": [[2024]]},
+    "DOI": "10.1109/TSE.2024.3428972",
+    "URL": "https://doi.org/10.1109/TSE.2024.3428972",
+    "note": "Title, author order, volume, issue and pages checked against the Crossref API record for 10.1109/TSE.2024.3428972, retrieved 2026-07-30; Crossref records IEEE and STM licences only, no open-access licence. An openly readable author version stands at arXiv:2404.10100v2, whose abstract page carries the identical title and author list and names this journal reference and DOI, checked the same day. The register class moves from the proposed C to A on that copy; page locators must come from the published version."
+  }
+]

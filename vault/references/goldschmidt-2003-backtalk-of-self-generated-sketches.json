@@ -1,0 +1,18 @@
+[
+  {
+    "id": "goldschmidt-2003",
+    "type": "article-journal",
+    "title": "The Backtalk of Self-Generated Sketches",
+    "author": [
+      {"family": "Goldschmidt", "given": "Gabriela"}
+    ],
+    "container-title": "Design Issues",
+    "volume": "19",
+    "issue": "1",
+    "page": "72-88",
+    "issued": {"date-parts": [[2003]]},
+    "DOI": "10.1162/074793603762667728",
+    "URL": "https://doi.org/10.1162/074793603762667728",
+    "note": "Title, author, journal, volume, issue, pages and year checked against the Crossref API record for 10.1162/074793603762667728, retrieved 2026-07-30. Crossref carries no licence field and the MIT Press landing page at direct.mit.edu is behind the paywall, so the register class stays at C. Author-uploaded copies circulate on ResearchGate and Scribd; these are not publisher-sanctioned open access and are not treated as an access route here."
+  }
+]

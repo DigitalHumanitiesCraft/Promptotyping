@@ -1,0 +1,24 @@
+[
+  {
+    "id": "herrmann-2023",
+    "type": "article-journal",
+    "title": "Tool Criticism in Practice. On Methods, Tools and Aims of Computational Literary Studies",
+    "author": [
+      {"family": "Herrmann", "given": "J. Berenike"},
+      {"family": "Bories", "given": "Anne-Sophie"},
+      {"family": "Frontini", "given": "Francesca"},
+      {"family": "Jacquot", "given": "Clémence"},
+      {"family": "Pielström", "given": "Steffen"},
+      {"family": "Rebora", "given": "Simone"},
+      {"family": "Rockwell", "given": "Geoffrey"},
+      {"family": "Sinclair", "given": "Stéfan"}
+    ],
+    "container-title": "Digital Humanities Quarterly",
+    "volume": "17",
+    "issue": "2",
+    "issued": {"date-parts": [[2023]]},
+    "DOI": "10.63744/apvw2r52eet3",
+    "URL": "https://doi.org/10.63744/apvw2r52eet3",
+    "note": "Title, the eight authors in order, journal, volume, issue and year checked against the Crossref API record for 10.63744/apvw2r52eet3, retrieved 2026-07-30. Crossref renders the title in sentence case and carries no licence field; DHQ publishes without a paywall, which keeps access class A. DHQ articles are paragraph-numbered rather than paginated, so no page range is recorded."
+  }
+]

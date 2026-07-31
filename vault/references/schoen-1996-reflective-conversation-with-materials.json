@@ -1,0 +1,21 @@
+[
+  {
+    "id": "schoen-1996",
+    "type": "chapter",
+    "title": "Reflective Conversation with Materials: An Interview with Donald Schön by John Bennett",
+    "author": [
+      {"family": "Schön", "given": "Donald A."}
+    ],
+    "container-title": "Bringing Design to Software",
+    "editor": [
+      {"family": "Winograd", "given": "Terry"}
+    ],
+    "publisher": "ACM Press",
+    "publisher-place": "New York, NY",
+    "page": "171-189",
+    "issued": {"date-parts": [[1996]]},
+    "DOI": "10.1145/229868.230044",
+    "URL": "https://hci.stanford.edu/publications/bds/9-schon.html",
+    "note": "Book title, publisher, place, pages and the 1996 date checked against the Crossref API record for 10.1145/229868.230044, retrieved 2026-07-30; Crossref shortens the chapter title to 'Reflective conversation with materials' and lists Bennett as a second author. The full chapter title used here, the interview form and the openly readable full text were checked the same day against the author-side edition at hci.stanford.edu/publications/bds/9-schon.html, whose heading reads '9 Reflective Conversation with Materials: An interview with Donald Schön by John Bennett' and whose body begins 'We can distinguish reflection in action from everyday action.' Bennett is recorded as the interviewer in the title rather than as an author. Because that full text is openly readable, the register class moves from the proposed C to A; the Stanford edition is unpaginated, so page locators must come from the printed book. The Crossref record gives Schön's given name as 'Donald'; the middle initial follows the register's verified data."
+  }
+]

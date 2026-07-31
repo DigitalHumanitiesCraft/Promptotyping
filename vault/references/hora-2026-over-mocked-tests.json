@@ -1,0 +1,16 @@
+[
+  {
+    "id": "hora-2026",
+    "type": "report",
+    "title": "Are Coding Agents Generating Over-Mocked Tests? An Empirical Study",
+    "author": [
+      {"family": "Hora", "given": "Andre"},
+      {"family": "Robbes", "given": "Romain"}
+    ],
+    "number": "arXiv:2602.00409",
+    "issued": {"date-parts": [[2026]]},
+    "DOI": "10.48550/arXiv.2602.00409",
+    "URL": "https://arxiv.org/abs/2602.00409",
+    "note": "Title, author order and the acceptance note for MSR 2026 checked against the arXiv abstract page (arXiv:2602.00409v1, submitted 2026-01-30), retrieved 2026-07-30. Recorded as a preprint because the MSR 2026 proceedings are not yet published; the record moves to paper-conference once the proceedings DOI exists. Access class A, the abstract page and the full text are openly readable."
+  }
+]

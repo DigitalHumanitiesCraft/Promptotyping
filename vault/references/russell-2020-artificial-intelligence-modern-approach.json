@@ -1,0 +1,18 @@
+[
+  {
+    "id": "russell-2020",
+    "type": "book",
+    "title": "Artificial Intelligence: A Modern Approach",
+    "author": [
+      {"family": "Russell", "given": "Stuart J."},
+      {"family": "Norvig", "given": "Peter"}
+    ],
+    "edition": "4",
+    "publisher": "Pearson",
+    "publisher-place": "Hoboken, NJ",
+    "number-of-pages": "1136",
+    "issued": {"date-parts": [[2020]]},
+    "ISBN": "9780134610993",
+    "note": "Title, subtitle, authors, publisher, edition, extent and the publication date 2020-05-08 checked against the Open Library record for ISBN 9780134610993, retrieved 2026-07-30; the authors' own book site at aima.cs.berkeley.edu confirms the fourth US edition but names neither publisher nor year. The year is deliberately kept at 2020 to match the in-text citation, although the Library of Congress CIP record for this edition gives 2021; that reservation is recorded here and the year is not changed. Access class B, print textbook, an operator copy is needed for any page locator. The publisher place is carried over from the register's verified data and was not confirmed on a landing page."
+  }
+]

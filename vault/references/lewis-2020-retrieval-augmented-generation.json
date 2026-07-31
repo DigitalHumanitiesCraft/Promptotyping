@@ -1,0 +1,26 @@
+[
+  {
+    "id": "lewis-2020",
+    "type": "paper-conference",
+    "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+    "author": [
+      {"family": "Lewis", "given": "Patrick"},
+      {"family": "Perez", "given": "Ethan"},
+      {"family": "Piktus", "given": "Aleksandra"},
+      {"family": "Petroni", "given": "Fabio"},
+      {"family": "Karpukhin", "given": "Vladimir"},
+      {"family": "Goyal", "given": "Naman"},
+      {"family": "Küttler", "given": "Heinrich"},
+      {"family": "Lewis", "given": "Mike"},
+      {"family": "Yih", "given": "Wen-tau"},
+      {"family": "Rocktäschel", "given": "Tim"},
+      {"family": "Riedel", "given": "Sebastian"},
+      {"family": "Kiela", "given": "Douwe"}
+    ],
+    "container-title": "Advances in Neural Information Processing Systems 33 (NeurIPS 2020)",
+    "page": "9459-9474",
+    "issued": {"date-parts": [[2020]]},
+    "URL": "https://proceedings.neurips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html",
+    "note": "Title, the twelve authors in order, proceedings volume and year checked against the NeurIPS 2020 abstract page at proceedings.neurips.cc, retrieved 2026-07-30; the PDF is linked openly there, which confirms access class A. That page displays no pagination, so the page range 9459-9474 is carried over from the register's verified data and is unconfirmed against a landing page."
+  }
+]

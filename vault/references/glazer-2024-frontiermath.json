@@ -1,0 +1,38 @@
+[
+  {
+    "id": "glazer-2024",
+    "type": "report",
+    "title": "FrontierMath: A Benchmark for Evaluating Advanced Mathematical Reasoning in AI",
+    "author": [
+      {"family": "Glazer", "given": "Elliot"},
+      {"family": "Erdil", "given": "Ege"},
+      {"family": "Besiroglu", "given": "Tamay"},
+      {"family": "Chicharro", "given": "Diego"},
+      {"family": "Chen", "given": "Evan"},
+      {"family": "Gunning", "given": "Alex"},
+      {"family": "Falkman Olsson", "given": "Caroline"},
+      {"family": "Denain", "given": "Jean-Stanislas"},
+      {"family": "Ho", "given": "Anson"},
+      {"family": "de Oliveira Santos", "given": "Emily"},
+      {"family": "Järviniemi", "given": "Olli"},
+      {"family": "Barnett", "given": "Matthew"},
+      {"family": "Sandler", "given": "Robert"},
+      {"family": "Vrzala", "given": "Matej"},
+      {"family": "Sevilla", "given": "Jaime"},
+      {"family": "Ren", "given": "Qiuyu"},
+      {"family": "Pratt", "given": "Elizabeth"},
+      {"family": "Levine", "given": "Lionel"},
+      {"family": "Barkley", "given": "Grant"},
+      {"family": "Stewart", "given": "Natalie"},
+      {"family": "Grechuk", "given": "Bogdan"},
+      {"family": "Grechuk", "given": "Tetiana"},
+      {"family": "Enugandla", "given": "Shreepranav Varma"},
+      {"family": "Wildon", "given": "Mark"}
+    ],
+    "number": "arXiv:2411.04872",
+    "issued": {"date-parts": [[2024]]},
+    "DOI": "10.48550/arXiv.2411.04872",
+    "URL": "https://arxiv.org/abs/2411.04872",
+    "note": "Title, the twenty-four authors in order and the absence of a journal reference checked against the arXiv abstract page (arXiv:2411.04872v7, submitted 2024-11-07, last revised 2025-12-23), retrieved 2026-07-30. The arXiv ID given in the register task was correct. Preprint without venue; access class A, the abstract page and the full text are openly readable."
+  }
+]

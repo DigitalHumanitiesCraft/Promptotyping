@@ -1,0 +1,19 @@
+[
+  {
+    "id": "krumdick-2025",
+    "type": "report",
+    "title": "No Free Labels: Limitations of LLM-as-a-Judge Without Human Grounding",
+    "author": [
+      {"family": "Krumdick", "given": "Michael"},
+      {"family": "Lovering", "given": "Charles"},
+      {"family": "Reddy", "given": "Varshini"},
+      {"family": "Ebner", "given": "Seth"},
+      {"family": "Tanner", "given": "Chris"}
+    ],
+    "number": "arXiv:2503.05061",
+    "issued": {"date-parts": [[2025]]},
+    "DOI": "10.48550/arXiv.2503.05061",
+    "URL": "https://arxiv.org/abs/2503.05061",
+    "note": "Preprint without venue. Title, author order and the absence of a journal reference checked against the arXiv abstract page (arXiv:2503.05061v2, submitted 2025-03-07, last revised 2026-04-01), retrieved 2026-07-30. Access class A, the abstract page and the full text are openly readable."
+  }
+]
