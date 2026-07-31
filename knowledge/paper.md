@@ -414,7 +414,7 @@ Language models contributed to formulation, comparison, restructuring, and edito
 
 - Mayr, Heinrich C., and Bernhard Thalheim. 2021. “The Triptych of Conceptual Modeling: A Framework for a Better Understanding of Conceptual Modeling.” *Software and Systems Modeling* 20 (1): 7–24. [https://doi.org/10.1007/s10270-020-00836-z](https://doi.org/10.1007/s10270-020-00836-z).
 
-- Mei, Lingrui, et al. 2025. “A Survey of Context Engineering for Large Language Models.” *arXiv*. [https://doi.org/10.48550/arXiv.2507.13334](https://doi.org/10.48550/arXiv.2507.13334).
+- Mei, Lingrui, Jiayu Yao, Yuyao Ge, Yiwei Wang, Baolong Bi, Yujun Cai, Jiazhi Liu, et al. 2025. “A Survey of Context Engineering for Large Language Models.” *arXiv*. [https://doi.org/10.48550/arXiv.2507.13334](https://doi.org/10.48550/arXiv.2507.13334).
 
 - Owens, Trevor. 2011. “Defining Data for Humanists: Text, Artifact, Information or Evidence?” *Journal of Digital Humanities* 1 (1). [https://journalofdigitalhumanities.org/1-1/defining-data-for-humanists-by-trevor-owens/](https://journalofdigitalhumanities.org/1-1/defining-data-for-humanists-by-trevor-owens/).
 
@@ -446,7 +446,7 @@ Language models contributed to formulation, comparison, restructuring, and edito
 
 - Schön, Donald A. 1996. “Reflective Conversation with Materials: An Interview with Donald Schön by John Bennett.” In *Bringing Design to Software*, edited by Terry Winograd, 171–189. New York: ACM Press. [https://doi.org/10.1145/229868.230044](https://doi.org/10.1145/229868.230044).
 
-- Schulhoff, Sander, Michael Ilie, Nishant Balepur, Konstantine Kahadze, Amanda Liu, Chenglei Si, Yinheng Li, et al. 2024. “The Prompt Report: A Systematic Survey of Prompting Techniques.” *arXiv*. [https://doi.org/10.48550/arXiv.2406.06608](https://doi.org/10.48550/arXiv.2406.06608).
+- Schulhoff, Sander, Michael Ilie, Nishant Balepur, Konstantine Kahadze, Amanda Liu, Chenglei Si, Yinheng Li, et al. 2024. “The Prompt Report: A Systematic Survey of Prompting Techniques.” *arXiv*, arXiv:2406.06608v1. [https://doi.org/10.48550/arXiv.2406.06608](https://doi.org/10.48550/arXiv.2406.06608).
 
 - Sharma, Mrinank, Meg Tong, Tomasz Korbak, et al. 2024. “Towards Understanding Sycophancy in Language Models.” In *Proceedings of the Twelfth International Conference on Learning Representations*. [https://doi.org/10.48550/arXiv.2310.13548](https://doi.org/10.48550/arXiv.2310.13548).
 
@@ -497,7 +497,7 @@ The figures are stored under `assets/figures/` in the accompanying repository an
 
 [^12]: Examples available at the time of writing include Claude Code, OpenAI Codex, and the agent functionality provided by Cursor. Their interfaces and architectures differ: agents may operate through a terminal, an integrated development environment, or a remote execution environment.
 
-[^13]: Kwa et al. introduce the *task-completion time horizon* to measure the duration, expressed in human expert completion time, of tasks that AI agents can complete at a given level of reliability. Across tasks drawn primarily from software engineering, machine-learning research engineering, cybersecurity, and general reasoning, they find that the 50 per cent task-completion time horizon of frontier models increased exponentially between 2019 and 2025, approximately doubling every seven months. The measure refers to the human time required to complete a task rather than the agent’s actual runtime. The authors explicitly caution that the external validity of this trend remains uncertain. See Thomas Kwa et al., “Measuring AI Ability to Complete Long Tasks”, arXiv:2503.14499 (2025).
+[^13]: Kwa et al. introduce the *task-completion time horizon* to measure the duration, expressed in human expert completion time, of tasks that AI agents can complete at a given level of reliability. Across tasks drawn primarily from software engineering, machine-learning research engineering, cybersecurity, and general reasoning, they find that the 50 per cent task-completion time horizon of frontier models increased exponentially between 2019 and 2025, approximately doubling every seven months. The measure refers to the human time required to complete a task rather than the agent’s actual runtime. The authors explicitly caution that the external validity of this trend remains uncertain. See Thomas Kwa et al., “Measuring AI Ability to Complete Long Tasks”, arXiv:2503.14499v1 (2025).
 
 [^14]: Chen et al. conceptualise long-horizon machine-learning research engineering as repeated implementation, experimentation, and refinement across heterogeneous stages. Their results indicate that maintaining durable project artefacts across agent roles and invocations contributes substantially to performance. This supports treating long-horizon agentic work as a problem of maintaining cumulative and inspectable project state rather than of local reasoning alone. See Guoxin Chen et al., “Toward Autonomous Long-Horizon Engineering for ML Research”, arXiv:2604.13018 (2026).
 

@@ -1,6 +1,6 @@
 # Citation-fit audit, Sections 1 and 1.1 — 2026-07-31
 
-Snapshot document. Five Opus research agents checked every source cited in §1 and §1.1 of `knowledge/paper.md` (state after commit `fc8a215`) on two dimensions: bibliographic accuracy of the reference or footnote entry, and fit between the source and the exact claim it is attached to. Verdict scale: supports / supports with caveat / does not support. Grokipedia was excluded as a source for all agents. This audit covers the §1 and §1.1 apparatus only; the remaining chapters are unaudited.
+Snapshot document. Five Opus research agents checked every source cited in §1 and §1.1 of `knowledge/paper.md` (state after commit `fc8a215`) on two dimensions: bibliographic accuracy of the reference or footnote entry, and fit between the source and the exact claim it is attached to. Verdict scale: supports / supports with caveat / does not support. Grokipedia was excluded as a source for all agents. This audit covers the §1, §1.1, and §1.2 apparatus (the §1.2 round ran the same day with two further agents, see the section near the end); chapters 2 to 5 are unaudited and follow in step with the operator's read.
 
 ## Verdict table
 
@@ -69,6 +69,22 @@ Operator decisions and applied repairs after this audit (steering document decis
 - Finding 5: the operator confirmed pp. 89–98.
 - IEEE edition: the paper now cites IEEE Std 1012-2024 as IEEE 2025 (reference entry updated; title and publication year verified against the IEEE standards register).
 - Apparatus: ZfdG volume 10 and the completed KONDE footnote were already applied with this audit's commit.
+
+## Section 1.2 round, same day
+
+Two further agents checked the seven §1.2 sources. All seven support their claims.
+
+| Source | Bibliography | Fit verdict |
+|---|---|---|
+| Schulhoff et al. 2024 (Prompt Report) | live arXiv title changed in v6; pinned to v1 (fixed) | supports ("content" half compresses the subsection, not the definitional sentence) |
+| Mei et al. 2025 | author list style aligned to seven names (fixed) | supports (near-verbatim: "transcends simple prompt design") |
+| Sapkota, Roumeliotis, and Karkee 2026 | correct | supports; the source draws a sharper agent/agentic contrast than the paper needs |
+| Wang et al. 2024 | correct | supports (goal pursuit, tool use, planning-with-feedback map to its modules) |
+| Zhong and Zhu 2026 | correct in every field | supports; the bold claim is the source's central thesis and "model-harness-environment system" its own term; the §1.2 harness definition maps element-for-element onto its eleven responsibilities |
+| Kwa et al. 2025 (fn) | live title changed in v4 ("Long Software Tasks"); pinned to v1 (fixed) | supports; doubling period, date range, and external-validity caution verbatim; the human-time/agent-runtime contrast is a correct authorial gloss |
+| Chen et al. 2026 (fn) | correct | supports; the cumulative-project-state conclusion is the source's own, nearly word for word |
+
+Open observations for the operator, no action taken: Zhong and Zhu speak of software-engineering capability where the paper generalises to agentic capability (minimal within the paper's scope; "agentic software-engineering capability" would sit exactly on the source). Kwa and Chen remain footnote-only sources without References entries, which the apparatus convention permits. Kwa et al. note that the seven-month doubling trend may have accelerated in 2024; the footnote does not carry this.
 
 ## Access limits, stated
 
