@@ -66,7 +66,7 @@ Verbatim edge labels, in circuit order:
 
 ## Visual grammar
 
-Solid line with a filled head at primary weight marks operational flow, which covers the three transitions of the productive half and the return of the revised model into the next round. Dashed line with an open head at secondary weight marks documented write-back, which covers the two transitions in which findings pass through the record before the model changes. The figure carries no authority mark, because the caption makes no claim about who verified or accepted, and inventing one would exceed the source.
+Solid line with a filled head at primary weight marks operational flow, which covers the three transitions of the productive half and the return of the revised model into the next round. Dashed line with an open head at secondary weight marks documented write-back, which covers the two transitions in which findings pass through the record before the model changes. The figure carries no authority mark, because the caption makes no claim about who validated or accepted, and inventing one would exceed the source.
 
 ## What the figure must not imply
 

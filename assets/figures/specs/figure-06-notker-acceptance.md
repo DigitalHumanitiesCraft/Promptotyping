@@ -40,7 +40,7 @@ The three cards are equal in width and equal in visual weight, and their top edg
 
 The Acceptance card is a real card again. It carries the light grey fill of the emphasised element and an internal horizontal divider that separates the positive half from the negative half.
 
-The positive half holds "Accepted for a stated purpose" and "proposal-stage demonstrator". The negative half holds "Does not imply a completed or publication-ready edition" and "corpus-wide philological verification remains open". Both halves are set in the same type sizes and the same weights, a semibold lead line and regular lines beneath it, so neither half can be read as a qualification of the other.
+The positive half holds "Accepted for a stated purpose" and "proposal-stage demonstrator". The negative half holds "Does not imply a completed or publication-ready edition" and "corpus-wide philological validation remains open". Both halves are set in the same type sizes and the same weights, a semibold lead line and regular lines beneath it, so neither half can be read as a qualification of the other.
 
 The cards fill the canvas. The empty margin of revision 1 is reduced, the cards run from near the top edge to near the foot, and the legend sits beneath them.
 
@@ -54,13 +54,13 @@ Left to right in three cards. The declarative basis on the left, the generated a
 2. Card, Edition Interface, textual layers made operational, at primary weight, containing one secondary-weight list of five rows: Latin psalm, Old High German, commentary, translation, apparatus.
 3. Card, Acceptance, at primary weight with the light grey fill, carrying the authority mark, divided by a horizontal rule into a positive and a negative half.
    - Positive half: Accepted for a stated purpose, proposal-stage demonstrator.
-   - Negative half: Does not imply a completed or publication-ready edition, and corpus-wide philological verification remains open.
+   - Negative half: Does not imply a completed or publication-ready edition, and corpus-wide philological validation remains open.
 
 ## Relations and labels
 
 Two arrows only. The first, from the documents to the interface, is labelled "generated implementation". The second, from the interface to the acceptance, is labelled "acceptance for a stated purpose". Both are solid and at primary weight, because generation and acceptance are the two productive acts of the case.
 
-Verbatim labels are the element names above. The negative half uses the manuscript's own words, so "completed or publication-ready edition" and "corpus-wide philological verification remains open" may not be shortened.
+Verbatim labels are the element names above. The negative half uses the manuscript's own words, so "completed or publication-ready edition" and "corpus-wide philological validation remains open" may not be shortened.
 
 ## Visual grammar
 

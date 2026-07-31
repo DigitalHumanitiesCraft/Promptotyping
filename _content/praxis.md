@@ -24,7 +24,7 @@ The effect is that checking is enforced at the points where an error would becom
 
 Promptotyping Interfaces are browser-based validation tools that make intermediate results visible, comparable and correctable. They make the epistemic quality of an output transparent by showing it as inspectable material beside its source instead of presenting it as a finished result.
 
-The interface here is an instrument of verification rather than the end product. It shows where the model is confident and where it is not, and it gives the expert the place at which to intervene. The pattern was developed in the ZBZ OCR/TEI pipeline ([#case-zbz-ocr-tei](#case-zbz-ocr-tei)).
+The interface here is an instrument of validation rather than the end product. It shows where the model is confident and where it is not, and it gives the expert the place at which to intervene. The pattern was developed in the ZBZ OCR/TEI pipeline ([#case-zbz-ocr-tei](#case-zbz-ocr-tei)).
 
 ## Subagents and role simulation
 

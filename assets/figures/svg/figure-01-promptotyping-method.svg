@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" role="img" aria-labelledby="t d">
   <title id="t">The Promptotyping method</title>
-  <desc id="d">Preparation, Exploration, Distillation and Implementation stand in one row as recurrent forms of work and lead into the promptotype. Three dashed returns lead from Implementation back to Distillation, Exploration and Preparation, and their labels stand as one group under the band. The Critical Expert stands above the row and specifies and revises the knowledge documents and verifies and accepts the resulting state.</desc>
+  <desc id="d">Preparation, Exploration, Distillation and Implementation stand in one row as recurrent forms of work and lead into the promptotype. Three dashed returns lead from Implementation back to Distillation, Exploration and Preparation, and their labels stand as one group under the band. The Critical Expert stands above the row and specifies and revises the knowledge documents and validates and accepts the resulting state.</desc>
   <defs>
     <marker id="flowhead" viewBox="0 0 12 12" refX="11.5" refY="6" markerWidth="12" markerHeight="12" orient="auto" markerUnits="userSpaceOnUse">
       <path d="M0.5,0.8 L11.5,6 L0.5,11.2 Z" fill="#111111"/>
@@ -33,7 +33,7 @@
   <path class="flow" d="M460,112 L404,242"/>
   <path class="flow" d="M500,112 L830,193"/>
   <text class="e" x="408" y="190" text-anchor="end">specifies and revises</text>
-  <text class="e" x="620" y="136">verifies and accepts</text>
+  <text class="e" x="620" y="136">validates and accepts</text>
 
   <!-- Forms of work -->
   <rect class="box" x="16" y="246" width="152" height="104" rx="2"/>

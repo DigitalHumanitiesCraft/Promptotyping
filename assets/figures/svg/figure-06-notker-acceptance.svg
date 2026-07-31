@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" role="img" aria-labelledby="t d">
   <title id="t">Purpose-specific acceptance in the Notker edition case</title>
-  <desc id="d">Three cards of equal width. Promptotyping Documents holding the Psalm 2 sample, editorial guidelines, TEI source model and layer definitions were turned into an Edition Interface with five textual layers. The resulting state was accepted as a proposal-stage demonstrator and does not imply a completed or publication-ready edition, while corpus-wide philological verification remains open.</desc>
+  <desc id="d">Three cards of equal width. Promptotyping Documents holding the Psalm 2 sample, editorial guidelines, TEI source model and layer definitions were turned into an Edition Interface with five textual layers. The resulting state was accepted as a proposal-stage demonstrator and does not imply a completed or publication-ready edition, while corpus-wide philological validation remains open.</desc>
   <defs>
     <marker id="flowhead" viewBox="0 0 12 12" refX="11.5" refY="6" markerWidth="12" markerHeight="12" orient="auto" markerUnits="userSpaceOnUse">
       <path d="M0.5,0.8 L11.5,6 L0.5,11.2 Z" fill="#111111"/>
@@ -77,7 +77,7 @@
   <text class="s" x="817" y="278" text-anchor="middle">a completed or</text>
   <text class="s" x="817" y="296" text-anchor="middle">publication-ready edition</text>
   <text class="s" x="817" y="328" text-anchor="middle">corpus-wide philological</text>
-  <text class="s" x="817" y="346" text-anchor="middle">verification remains open</text>
+  <text class="s" x="817" y="346" text-anchor="middle">validation remains open</text>
 
   <!-- Legend -->
   <path class="flow" d="M20,424 H66"/>

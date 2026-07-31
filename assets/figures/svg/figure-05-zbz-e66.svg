@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 700" role="img" aria-labelledby="t d">
   <title id="t">The ZBZ OCR/TEI workflow before and after decision E66</title>
-  <desc id="d">Two columns of equal width divided by decision E66, both beginning with the same generated output. Before E66, generated output passed through agent screening into an agent-recorded approval status that no responsible person had authorised. After E66, generated output feeds a per-stream workflow state as well as deterministic validation and agentic review, which converge in an evidence box; evidence informs Critical Expert verification, which alone authorises the human-authorised verification status.</desc>
+  <desc id="d">Two columns of equal width divided by decision E66, both beginning with the same generated output. Before E66, generated output passed through agent screening into an agent-recorded approval status that no responsible person had authorised. After E66, generated output feeds a per-stream workflow state as well as deterministic verification and agentic review, which converge in an evidence box; evidence informs Critical Expert validation, which alone authorises the human-authorised validation status.</desc>
   <defs>
     <marker id="flowhead" viewBox="0 0 12 12" refX="11.5" refY="6" markerWidth="12" markerHeight="12" orient="auto" markerUnits="userSpaceOnUse">
       <path d="M0.5,0.8 L11.5,6 L0.5,11.2 Z" fill="#111111"/>
@@ -51,7 +51,7 @@
   <text class="n" x="240" y="324" text-anchor="middle">approval status</text>
 
   <rect class="sub" x="90" y="492" width="300" height="114" rx="2"/>
-  <text class="s" x="110" y="522">production and verification</text>
+  <text class="s" x="110" y="522">production and checking</text>
   <text class="s" x="110" y="544">collapse into one operation;</text>
   <text class="s" x="110" y="566">no responsible person</text>
   <text class="s" x="110" y="588">authorised the status</text>
@@ -72,7 +72,7 @@
 
   <rect class="box" x="500" y="178" width="200" height="72" rx="2"/>
   <text class="n" x="600" y="210" text-anchor="middle">Deterministic</text>
-  <text class="n" x="600" y="232" text-anchor="middle">validation</text>
+  <text class="n" x="600" y="232" text-anchor="middle">verification</text>
 
   <rect class="box" x="740" y="178" width="200" height="72" rx="2"/>
   <text class="n" x="840" y="220" text-anchor="middle">Agentic review</text>
@@ -88,19 +88,19 @@
   <path class="support" d="M720,378 V406"/>
   <text class="e" x="732" y="396">informs</text>
 
-  <!-- Critical Expert verification, the emphasised element -->
+  <!-- Critical Expert validation, the emphasised element -->
   <rect class="mark" x="570" y="410" width="300" height="78" rx="2"/>
   <circle cx="606" cy="449" r="13" fill="#ffffff" stroke="#111111" stroke-width="2.5"/>
   <circle cx="606" cy="449" r="6" class="disc"/>
   <text class="n" x="634" y="443">Critical Expert</text>
-  <text class="n" x="634" y="465">verification</text>
+  <text class="n" x="634" y="465">validation</text>
 
   <path class="flow" d="M720,488 V516"/>
   <text class="e" x="732" y="506">authorises</text>
 
   <rect class="box" x="570" y="520" width="300" height="86" rx="2"/>
   <text class="n" x="720" y="552" text-anchor="middle">Human-authorised</text>
-  <text class="n" x="720" y="574" text-anchor="middle">verification status</text>
+  <text class="n" x="720" y="574" text-anchor="middle">validation status</text>
   <text class="s" x="720" y="596" text-anchor="middle">only accountable editors</text>
 
   <!-- Legend -->

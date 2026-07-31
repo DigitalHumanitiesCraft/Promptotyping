@@ -27,7 +27,7 @@ Accepted for use in the paper because:
 
 - the declarative basis is named as Promptotyping Documents;
 - the acceptance card states the accepted purpose (proposal-stage demonstrator);
-- the card states explicitly what the acceptance does not imply, a completed or publication-ready edition, and that corpus-wide philological verification remains open.
+- the card states explicitly what the acceptance does not imply, a completed or publication-ready edition, and that corpus-wide philological validation remains open.
 
 Known limitation:
 

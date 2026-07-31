@@ -38,7 +38,7 @@ figures:
     source_candidate: "candidates/checking-architecture--2026-07-29--20-01-22.png"
     status: accepted
     manuscript_number: 2
-    purpose: "Distinguish project knowledge, selected context, agentic implementation, evidence, verification, and acceptance."
+    purpose: "Distinguish project knowledge, selected context, agentic implementation, evidence, validation, and acceptance."
     author_verified: true
 
   - number: 3

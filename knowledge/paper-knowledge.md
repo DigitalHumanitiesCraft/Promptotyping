@@ -1,6 +1,6 @@
 # Promptotyping Paper: Canonical Knowledge Document
 
-**Updated:** 31 July 2026, during the operator's end-to-end read; Abstract and the whole §1 revised (Section 19, decisions 15 to 20).
+**Updated:** 31 July 2026, during the operator's end-to-end read; Abstract, the whole §1, and the verification/validation terminology revised (Section 19, decisions 15 to 21).
 
 **Status:** The single steering document of the paper. The manuscript is `knowledge/paper.md`, promoted on 2026-07-30 from the operator's externally revised, sanitised, verified, and literature-anchored text of the same day; the site renders that file directly, so the deployed text is the canonical text. The two-track regime of 2026-07-29/30 (`paper-draft.md` steered by this document beside `paper.md` steered by `paper-writing.md`) ended with the promotion; the working records of the revision round live commit-pinned in git history (see the provenance section at the end). The figure series is the authored monochrome SVG set under `assets/figures/svg/` with one written specification per figure under `assets/figures/specs/`.
 
@@ -24,7 +24,7 @@ This document is not a chronological session log. Process history belongs in the
 
 The paper presents **Promptotyping** as an iterative, knowledge-driven method for translating structured research data and documented project knowledge into project-specific digital research artefacts through Context Engineering and Agentic Engineering.
 
-Its central organising structure is an evolving, inspectable, and versioned project knowledge base maintained through interrelated Markdown documents. LLM-based AI agents work from task-specific context selected from this knowledge base. Findings from implementation, testing, assessment, review, and verification are written back when they change the maintained understanding of the project.
+Its central organising structure is an evolving, inspectable, and versioned project knowledge base maintained through interrelated Markdown documents. LLM-based AI agents work from task-specific context selected from this knowledge base. Findings from implementation, testing, assessment, review, and validation are written back when they change the maintained understanding of the project.
 
 Each accepted iteration yields an identifiable and versioned **promptotype** that connects:
 
@@ -33,7 +33,7 @@ Each accepted iteration yields an identifiable and versioned **promptotype** tha
 - the referenced research-data state;
 - the documented grounds of acceptance.
 
-Accountable researchers and technical contributors remain responsible for the scholarly and technical judgements through which a promptotype is specified, verified, and accepted.
+Accountable researchers and technical contributors remain responsible for the scholarly and technical judgements through which a promptotype is specified, validated, and accepted.
 
 ## 1.3 Type of contribution
 
@@ -42,8 +42,8 @@ The contribution is **conceptual and methodological**. The paper:
 - defines Promptotyping, Promptotyping Documents, Promptotyping iterations, and promptotypes;
 - explains the relation among Scholar-Centred Design, Context Engineering, Agentic Engineering, AI harnesses, and Critical Expert judgement;
 - establishes the project knowledge base as the persistent reference from which implementation proceeds;
-- defines Preparation, Exploration, Distillation, Implementation, write-back, verification, acceptance, and version identification;
-- distinguishes deterministic validation, agentic review, Critical Expert verification, and acceptance;
+- defines Preparation, Exploration, Distillation, Implementation, write-back, checking, acceptance, and version identification;
+- distinguishes deterministic verification, agentic review, Critical Expert validation, and acceptance;
 - analyses digital research artefacts as operational scholarly arguments;
 - consolidates recurrent document functions, artefact forms, and project cases;
 - establishes the method's empirical scope, conditions of applicability, limitations, and evaluation priorities.
@@ -96,7 +96,7 @@ Generative implementation becomes methodically responsible only where:
 - project knowledge is externalised, maintained, inspectable, and versioned;
 - agents work from that knowledge rather than from transient prompts alone;
 - working context remains selective and task-specific;
-- validation, review, verification, and acceptance are differentiated;
+- verification, review, validation, and acceptance are differentiated;
 - implementation findings are written back into maintained project knowledge;
 - an accountable person or group explicitly accepts an identifiable state for a defined purpose.
 
@@ -138,9 +138,9 @@ The paper's terminology operates on three levels.
 ## 3.3 Responsibility and accepted result
 
 - Critical Expert
-- deterministic validation
+- deterministic verification
 - agentic review
-- Critical Expert verification
+- Critical Expert validation
 - acceptance
 - promptotype
 
@@ -211,7 +211,7 @@ It is:
 
 - the persistent reference from which task-specific working context is selected;
 - available across sessions, models, agents, and contributors;
-- revisable when implementation or verification changes the maintained understanding;
+- revisable when implementation or checking changes the maintained understanding;
 - inspectable by accountable scholarly and technical contributors.
 
 It is not:
@@ -300,7 +300,7 @@ Generated documents are useful for:
 - controlled-value reports;
 - anomaly reports;
 - usage statistics;
-- validation summaries;
+- schema-validation summaries;
 - quality and coverage reports.
 
 Generated documents must be clearly marked and must not be edited manually.
@@ -318,7 +318,7 @@ Within Promptotyping, Context Engineering:
 - selects task-relevant working context;
 - refreshes context when project knowledge changes;
 - avoids treating context accumulation as a substitute for context design;
-- preserves traceability between descriptions, decisions, implementation, and verification.
+- preserves traceability between descriptions, decisions, implementation, and checking.
 
 Distillation is its principal documentary operation, but Context Engineering continues throughout Preparation, Exploration, Implementation, and write-back.
 
@@ -392,7 +392,7 @@ Within Promptotyping:
 
 ## 4.12 Critical Expert
 
-The **Critical Expert** is an accountable human role responsible for the judgements through which project knowledge and artefacts are specified, challenged, verified, and accepted.
+The **Critical Expert** is an accountable human role responsible for the judgements through which project knowledge and artefacts are specified, challenged, validated, and accepted (decision 21).
 
 The role may be distributed across several contributors. It does not require one person to possess all relevant expertise.
 
@@ -439,7 +439,7 @@ One iteration may contain several internal cycles of:
 - testing;
 - assessment;
 - agentic review;
-- Critical Expert verification;
+- Critical Expert validation;
 - correction;
 - write-back.
 
@@ -621,7 +621,7 @@ A first implementation pass may prioritise producing a running artefact, but def
 
 ## 5.5 Write-back
 
-Write-back is the defining return path from Implementation, assessment, review, and verification into maintained project knowledge.
+Write-back is the defining return path from Implementation, assessment, review, and validation into maintained project knowledge.
 
 Persistent findings belong in the knowledge base when they concern:
 
@@ -655,17 +655,19 @@ Local code fixes do not complete write-back when the underlying project understa
 
 The paper must distinguish:
 
-- deterministic validation;
+- deterministic verification;
 - assessment;
 - agentic review;
-- Critical Expert verification;
+- Critical Expert validation;
 - acceptance.
+
+*Verification* names conformity to formalised requirements, technical and deterministic. *Validation* names the adequacy judgement that requires expert authority, scholarly in kind. The direction follows IEEE Std 1012 (IEEE 2017), which the manuscript cites in §2.3 (decision 21).
 
 Do not collapse these into a generic category such as checking, quality assurance, or confidence.
 
-## 6.2 Deterministic validation
+## 6.2 Deterministic verification
 
-**Deterministic validation** applies executable rules whose outcomes can be reproduced under the same conditions.
+**Deterministic verification** applies executable rules whose outcomes can be reproduced under the same conditions.
 
 Examples include:
 
@@ -682,7 +684,7 @@ Examples include:
 
 An agent may run these checks and act on unambiguous failures.
 
-Deterministic validation establishes only what has been formalised into the rule.
+Deterministic verification establishes only what has been formalised into the rule.
 
 ## 6.3 Assessment
 
@@ -699,7 +701,7 @@ It may include:
 - source samples;
 - user-story checks.
 
-Assessment can inform verification and acceptance but does not itself authorise the state.
+Assessment can inform validation and acceptance but does not itself authorise the state.
 
 ## 6.4 Agentic review
 
@@ -714,16 +716,16 @@ Assessment can inform verification and acceptance but does not itself authorise 
 
 Agentic review may extend the coverage of checking and identify plausible failures.
 
-It never authorises. It remains a generative operation and does not become scholarly verification merely because:
+It never authorises. It remains a generative operation and does not become scholarly validation merely because:
 
 - a second model is used;
 - several agents agree;
 - the output receives a confidence score;
 - the review appears systematic.
 
-## 6.5 Critical Expert verification
+## 6.5 Critical Expert validation
 
-**Critical Expert verification** applies where adequacy depends on contextual, domain-specific, interpretative, editorial, representational, or technical judgement that cannot be reduced adequately to deterministic rules.
+**Critical Expert validation** applies where adequacy depends on contextual, domain-specific, interpretative, editorial, representational, or technical judgement that cannot be reduced adequately to deterministic rules.
 
 It may concern:
 
@@ -741,7 +743,7 @@ The Critical Expert determines whether the available evidence supports the relev
 
 **Acceptance** is the accountable decision that an identifiable state is adequate for a stated purpose under documented criteria and limitations.
 
-Validation, assessment, agentic review, and verification contribute evidence. None automatically constitutes acceptance.
+Deterministic verification, assessment, agentic review, and Critical Expert validation contribute evidence. None automatically constitutes acceptance.
 
 Acceptance must be explicit and attributable. The documented grounds of acceptance should identify:
 
@@ -762,7 +764,7 @@ The record may take the form of:
 
 ## 6.7 Conversion principle
 
-Expert verification may become deterministic validation when the relevant judgement has been formalised into executable rules.
+Critical Expert validation may become deterministic verification when the relevant judgement has been formalised into executable rules.
 
 The conversion does not run in the opposite direction. A deterministic check does not acquire scholarly authority merely because it is automated or repeatedly passed.
 
@@ -780,11 +782,11 @@ Preferred rows:
 
 | Object of checking | Form | What decides | Agent autonomy |
 |---|---|---|---|
-| Deterministically decidable data fidelity | Validation | Schemas, tests, constraints, builds | Agent may run checks and act on unambiguous failures |
-| Source fidelity requiring judgement | Verification | Critical Expert comparing output with sources | Agentic review may assist but remains subordinate |
+| Deterministically decidable data fidelity | Verification | Schemas, tests, constraints, builds | Agent may run checks and act on unambiguous failures |
+| Source fidelity requiring judgement | Validation | Critical Expert comparing output with sources | Agentic review may assist but remains subordinate |
 | Requirement satisfaction | Acceptance testing | Acceptance criteria in the requirements document | Agent may operate the artefact and report results |
-| Design conformance | Verification | Critical Expert against the design document | Requires human assessment |
-| Interpretation and contextualisation | Verification | Scholarly judgement against sources and research context | Cannot be delegated for final acceptance |
+| Design conformance | Validation | Critical Expert against the design document | Requires human assessment |
+| Interpretation and contextualisation | Validation | Scholarly judgement against sources and research context | Cannot be delegated for final acceptance |
 
 ---
 
@@ -912,7 +914,7 @@ They do not determine:
 - which operations should be supported;
 - how results should be presented;
 - which absences matter;
-- how an artefact should be verified.
+- how an artefact should be checked.
 
 Explicit modelling changes the work of contextualisation. It does not eliminate it.
 
@@ -939,9 +941,9 @@ Promptotyping Documents do not necessarily support:
 - formal inference;
 - reasoner-based consistency checking;
 - complete machine interpretability;
-- automatic validation of every claim.
+- automatic verification of every claim.
 
-Their residual ambiguity explains why implementation remains variable and verification remains necessary.
+Their residual ambiguity explains why implementation remains variable and checking remains necessary.
 
 ## 8.5 Externalisation is incomplete
 
@@ -976,7 +978,7 @@ Accountable contributors remain responsible for the judgements through which pro
 
 - specified;
 - contextualised;
-- verified;
+- validated;
 - accepted;
 - published.
 
@@ -1085,7 +1087,7 @@ Avoid project description that does not contribute to one of these functions.
 
 Where possible, compare cases through:
 
-| Case | Artefact | Critical documents | Implementation finding | Write-back | Verification authority | Promptotype status |
+| Case | Artefact | Critical documents | Implementation finding | Write-back | Validation authority | Promptotype status |
 |---|---|---|---|---|---|---|
 
 This table should function analytically rather than as a project inventory alone.
@@ -1233,7 +1235,7 @@ Promptotyping depends on:
 - access to relevant sources and documentation;
 - domain competence;
 - ability to specify intended operations and representations;
-- ability to verify scholarly and technical adequacy;
+- ability to validate scholarly and technical adequacy;
 - suitable model and harness access;
 - time and organisational capacity for knowledge maintenance and checking;
 - acceptable legal, ethical, contractual, and institutional conditions.
@@ -1254,7 +1256,7 @@ Substantial work remains in:
 - auditing;
 - error diagnosis;
 - correction;
-- verification;
+- validation;
 - acceptance;
 - documentation;
 - handover.
@@ -1288,7 +1290,7 @@ It is inappropriate where:
 
 - lawful and ethically acceptable processing cannot be established;
 - confidential, personal, culturally sensitive, copyrighted, or contractually restricted material cannot be protected adequately;
-- no accountable expert can verify the resulting claims;
+- no accountable expert can validate the resulting claims;
 - the artefact's status and limitations cannot be communicated adequately;
 - provider terms conflict with project obligations;
 - data governance requirements cannot be met.
@@ -1393,7 +1395,7 @@ It should then examine whether participants can:
 - produce a project-specific artefact;
 - identify errors;
 - revise the relevant knowledge layer;
-- verify scholarly adequacy;
+- validate scholarly adequacy;
 - accept an identifiable promptotype;
 - continue without sustained intervention by the originating scholar-developer.
 
@@ -1470,7 +1472,7 @@ When revising the manuscript, remove repeated full explanations and replace them
 
 ## 14.1 The canonical promptotype relation and its homes
 
-The relation has four members, maintained project knowledge, the resulting digital research artefact, the referenced research-data state, and the documented grounds of acceptance. Member naming is uniform. Three locations carry the enumeration in full and are its canonical homes, the §2.2 definition, the §2.3 operative elaboration with the increment about verification evidence, and the §3.4 statement of epistemic status. The Abstract carries neither the enumeration nor the term promptotype since the operator decision of 2026-07-31; it states responsibility for the consequential judgements of verification and acceptance instead, and the term is first announced in the §1 section preview and introduced at its definition site in §2.2. Three further full statements are licensed exceptions, the Figure 1 caption under the convention that captions stand alone, the §2.3 instantiation with SZD content, and the relation statement in the Conclusion restored after the operator's external review (2026-07-30); none of them may be re-trimmed by a later redundancy pass. Every other occurrence is a reference to the §2.2 definition, and an edit that reintroduces an enumeration elsewhere breaks the arrangement. The §3.4 statement was collapsed from six members to the canonical four (code absorbed by the artefact member, verification evidence by the grounds of acceptance), confirmed by the operator on 2026-07-30.
+The relation has four members, maintained project knowledge, the resulting digital research artefact, the referenced research-data state, and the documented grounds of acceptance. Member naming is uniform. Three locations carry the enumeration in full and are its canonical homes, the §2.2 definition, the §2.3 operative elaboration with the increment about checking evidence, and the §3.4 statement of epistemic status. The Abstract carries neither the enumeration nor the term promptotype since the operator decision of 2026-07-31; it states responsibility for the consequential judgements of validation and acceptance instead, and the term is first announced in the §1 section preview and introduced at its definition site in §2.2. Three further full statements are licensed exceptions, the Figure 1 caption under the convention that captions stand alone, the §2.3 instantiation with SZD content, and the relation statement in the Conclusion restored after the operator's external review (2026-07-30); none of them may be re-trimmed by a later redundancy pass. Every other occurrence is a reference to the §2.2 definition, and an edit that reintroduces an enumeration elsewhere breaks the arrangement. The §3.4 statement was collapsed from six members to the canonical four (code absorbed by the artefact member, verification evidence by the grounds of acceptance), confirmed by the operator on 2026-07-30.
 
 ## 14.2 Protected repetitions and one conditional deletion
 
@@ -1544,9 +1546,9 @@ Distinguish consistently:
 Also distinguish:
 
 - mapping from transformation;
-- deterministic validation from agentic review;
-- assessment from verification;
-- verification from acceptance;
+- deterministic verification from agentic review;
+- assessment from validation;
+- validation from acceptance;
 - acceptance from publication;
 - feasibility from efficacy;
 - version identification from release infrastructure.
@@ -1575,7 +1577,7 @@ Do not:
 
 - claim speed, cost, ease, or efficiency without evidence;
 - call early cases promptotypes merely because they used LLMs;
-- describe agentic review as approval or verification;
+- describe agentic review as approval or validation;
 - imply that passing tests establishes scholarly adequacy;
 - describe the knowledge base as independently authoritative;
 - imply that Markdown guarantees precision;
@@ -1632,7 +1634,7 @@ Before release, verify:
 
 - arrows in the four-form figure point to the intended form of work or accepted state;
 - the stronger return path points from Implementation to Distillation;
-- the Critical Expert's authority arrow terminates at the promptotype state and reads "verifies and accepts" (operator decision 2026-07-30: the arrow carries the acceptance semantics, the caption stands unchanged);
+- the Critical Expert's authority arrow terminates at the promptotype state and reads "validates and accepts" (wording migrated under decision 21; operator decision 2026-07-30: the arrow carries the acceptance semantics, the caption stands unchanged);
 - figures distinguish the digital research artefact from the promptotype;
 - captions use **Promptotyping Documents** and the promptotype caption uses **documented grounds of acceptance**;
 - no alt text appears as ordinary manuscript prose;
@@ -1655,11 +1657,11 @@ The manuscript is ready for submission only when every answer is yes.
 - Is a digital research artefact consistently distinguished from a promptotype?
 - Is working context distinguished from the project knowledge base?
 
-## Verification and acceptance
+## Checking and acceptance
 
-- Are deterministic validation, agentic review, Critical Expert verification, and acceptance distinguished?
+- Are deterministic verification, agentic review, Critical Expert validation, and acceptance distinguished?
 - Is agentic review consistently prevented from authorising?
-- Is acceptance distinguished from verification, publication, finality, and truth?
+- Is acceptance distinguished from validation, publication, finality, and truth?
 - Are documented grounds of acceptance identifiable and attributable?
 - Is version identification defined without making tags or releases constitutive?
 
@@ -1723,9 +1725,10 @@ Decisions of the acceptance round of 2026-07-31:
 15. **Abstract revised in the read round of 2026-07-31.** The promptotype sentence left the Abstract; neither the term nor the four-member relation appears there. It is replaced by the responsibility sentence "Responsibility for the consequential judgements through which each iteration is verified and accepted remains with accountable contributors.", and "arising from" left the write-back sentence. Sections 4.15 and 14.1 are re-keyed accordingly.
 16. **§1 opening revised by the operator (2026-07-31).** Paragraph 1 narrows *operationalisation* to the Pichler-Reiter sense and broadens to general software mediation in a second step; the Gephi and TEI examples are technically explicit (node or edge table, graph model and input format); the closing constraint sentence is bold. Paragraph 2 separates the probabilistic recognition step into its own two sentences and hedges the effort claim ("parts of the effort"). Paragraph 3 stands unchanged after an editing doublet was reverted. The section preview reads "The paper proceeds in five sections." Footnotes 3 to 5 adjusted (modular encoding framework; hedged LLM definition; processed or made usable). The §1 freeze of 2026-07-30 is superseded for these passages by the operator's own revision.
 17. **Research question refocused (2026-07-31).** The responsibility clause left the question. It now asks how scholars, research software engineers, and AI agents collaborate through documented project knowledge to develop artefacts that help a project clarify its requirements and examine what its research data can warrantably support. Accountability is a supporting concern of the paper; the consistency chain (Abstract responsibility sentence, §2.3 and §2.4 checking architecture, §5.3 authority sentence) is checked when the read reaches Chapter 2.
-18. **§1 restructured to five paragraphs (2026-07-31).** Problem; LLM routes in lean form; confinement and capacity thesis with "develop and compare"; checking paragraph using "checking" as umbrella word, "verified by experts" against "technical validation", and "as specified"; method paragraph with etymology, refocused research question, and active section preview.
+18. **§1 restructured to five paragraphs (2026-07-31).** Problem; LLM routes in lean form; confinement and capacity thesis with "develop and compare"; checking paragraph using "checking" as umbrella word, "verified by experts" against "technical validation", and "as specified"; method paragraph with etymology, refocused research question, and active section preview. [The V&V assignment of the checking paragraph is superseded by decision 21, 2026-07-31; the five-paragraph structure stands.]
 19. **Etymology stated at the term's introduction (2026-07-31).** The name combines prompt and prototyping and retains the prototype's clarifying function. First explanation anywhere; the site glossary mirrors it.
 20. **Preview conventions (2026-07-31).** The roadmap announcement sentence is deleted; preview sentences are active with Section subjects; the promptotype is announced with the gloss "the identifiable and versioned state that an accepted iteration yields", which is the canonical short form of the §2.2 definition; the closing sentence reads "the method's scope and limits".
+21. **The V&V pair follows the engineering standard (2026-07-31).** The assignment adopted earlier in this read round (experts verify, technology validates) is reversed: *verification* names conformity to formalised requirements (technical, deterministic), *validation* names the adequacy judgement that requires expert authority (scholarly). Rationale: §2.3 cites IEEE Std 1012 (IEEE 2017), whose definitions run in this direction; the previous usage cited the standard against its own definitions and would have provoked reviewer friction. Consequences: the checking taxonomy renames to *deterministic verification* and *Critical Expert validation*; §1 introduces the pair as *technical verification* and *scholarly validation* with a footnote anchoring the adaptation to IEEE 2017. Retained as proper names: *Verification Interface* (artefact category, site colour token, published anchors), the *Verification* Promptotyping Document type, the site part title *Verification*, project document names such as the SZD *verification concept*, and *schema validation* as the XML term of art. Supersedes decision 18.
 
 Open flags that survive:
 

@@ -32,7 +32,7 @@ From these properties follow the rules that a project's action layer passes on t
 - **A single library may be vendored**, meaning copied into the repository and versioned with it, without a package manager, and only where a problem is algorithmically deep. A compromise rule with four criteria governs this. The problem lies beyond a reasonable implementation of one's own, the library is self-contained and vendorable without a build step, its licence permits redistribution, and its removal path is documented.
 - **Heavy computation is precomputed.** The artefact ships derived data, and the pipelines stay upstream of it.
 - **No external calls at runtime.** The artefact must work offline, which is at once a longevity, a privacy and a security property.
-- **Every artefact carries a provenance declaration** stating that it was generated, from which documents, with which LLMs and tools, and how it was verified. The artefact discloses its conditions of production the way an edition discloses its editorial principles.
+- **Every artefact carries a provenance declaration** stating that it was generated, from which documents, with which LLMs and tools, and how it was checked. The artefact discloses its conditions of production the way an edition discloses its editorial principles.
 
 ## Side forms
 

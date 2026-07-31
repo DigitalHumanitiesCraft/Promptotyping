@@ -64,7 +64,7 @@ The compression is not neutral. Encoding decisions are epistemic decisions, beca
 
 ## Implementation
 
-The document set is handed to an agentic coding tool operating inside the project repository, and the derived artefact is verified.
+The document set is handed to an agentic coding tool operating inside the project repository, and the derived artefact is checked.
 
 - **Entry.** The distilled document set and the source data.
 - **Steps.** Advance in milestones, each a small increment verified before the next begins. Steer the generation through three feedback loops, deterministic feedback from schema validation, test suites and builds, visual feedback from screenshots of the running artefact, and expert feedback from the judgement of whether the output is factually correct, domain-appropriate and aligned with the research question. Probe the possibility space deliberately by requesting radically different designs that run against the learned conventions.

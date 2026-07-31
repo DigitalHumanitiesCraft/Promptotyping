@@ -5,7 +5,7 @@ generator: ChatGPT Images 2.0
 date: 2026-07-29
 status: accepted
 output: ../figure-02-knowledge-context-authority.png
-purpose: Distinguish project knowledge, selected context, agentic implementation, evidence, verification, and acceptance.
+purpose: Distinguish project knowledge, selected context, agentic implementation, evidence, validation, and acceptance.
 ---
 
 # Figure 2 Prompt
@@ -27,7 +27,7 @@ Accepted for use in the paper because:
 
 - the working context is shown as a task-specific selection from the knowledge base;
 - the agent is nested inside the harness;
-- deterministic validation and agentic review feed a shared evidence box and never authorise;
+- deterministic verification and agentic review feed a shared evidence box and never authorise;
 - acceptance closes the loop back into the knowledge base;
 - the Critical Expert carries the filled-disc mark for accountable human judgement.
 

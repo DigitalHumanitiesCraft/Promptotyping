@@ -90,7 +90,7 @@ Terms constitutive for this knowledge base. Canonical definitions live in the li
 
 **Phase provenance lane.** Historical design device of the first deploy, removed by operator decision 2026-06-10 (A2, ADR-4). The `{:.phase-*}` tags it read are gone from the paper Markdown, and the stripper that had covered for them was deleted on 2026-07-27.
 
-**Critical Expert in the Loop (EIL).** The role that verifies LLM output at defined points; here Christopher Pollin is the Critical Expert.
+**Critical Expert in the Loop (EIL).** The role that validates LLM output at defined points; here Christopher Pollin is the Critical Expert.
 
 **`template:` field.** Frontmatter field pointing to the authoritative template specification on this site. Format `template: { name, version, url, alias }`; `url` is the latest subpath form, `alias` the latest hash anchor.
 

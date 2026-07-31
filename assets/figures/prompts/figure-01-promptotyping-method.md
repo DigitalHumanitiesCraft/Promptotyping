@@ -27,7 +27,7 @@ Accepted for use in the paper because:
 
 - the four forms of work are clearly distinguished;
 - write-back reaches Distillation, Exploration, and Preparation, each return labelled;
-- Critical Expert verification and acceptance remain human-authorised;
+- Critical Expert validation and acceptance remain human-authorised;
 - the promptotype is visually distinct from the generated artefact and lists its four components including the documented grounds of acceptance.
 
 Known limitation:

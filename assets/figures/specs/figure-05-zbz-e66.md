@@ -14,7 +14,7 @@ revision: 2
 
 ## Caption this figure must satisfy
 
-**Figure 4. The ZBZ OCR/TEI workflow before and after decision E66.** Before E66, an agent-generated assessment could appear as an authorised approval state. In the revised workflow, deterministic validation and agentic review contribute evidence, while only accountable editors authorise verification and acceptance. The project-specific failure also produced method-level write-back in the rule that an agent must never record approval, verification, or acceptance that a responsible person has not explicitly granted.
+**Figure 4. The ZBZ OCR/TEI workflow before and after decision E66.** Before E66, an agent-generated assessment could appear as an authorised approval state. In the revised workflow, deterministic verification and agentic review contribute evidence, while only accountable editors authorise validation and acceptance. The project-specific failure also produced method-level write-back in the rule that an agent must never record approval, validation, or acceptance that a responsible person has not explicitly granted.
 
 ## Purpose
 
@@ -28,7 +28,7 @@ The series carries two stroke weights. Primary weight, 2.5px, belongs to the ope
 
 Box titles are set at 17px semibold, secondary text inside a box stays at 13px, edge labels and legend rows are 12px in grey. Padding inside a box is generous enough that the box reads as a station rather than as a label with a frame. The two column heads of this figure are the one place in the series where type goes above the title size, at 18px semibold, because they name the comparison the whole figure makes.
 
-Each figure emphasises exactly one element, drawn with a light grey fill (#eeeeee) behind the primary stroke. In this figure the emphasised element is the Critical Expert verification box together with the authority disc it carries. The fill marks the element the caption is about and carries no further information, and no second element in a figure may take it.
+Each figure emphasises exactly one element, drawn with a light grey fill (#eeeeee) behind the primary stroke. In this figure the emphasised element is the Critical Expert validation box together with the authority disc it carries. The fill marks the element the caption is about and carries no further information, and no second element in a figure may take it.
 
 Because the light grey fill is now reserved for the single emphasised element, tint no longer marks containers. A container is a white box at primary weight whose constituents are white boxes at secondary weight. This figure has no container.
 
@@ -48,7 +48,7 @@ The failure diagnosis of the left column is a bordered annotation box at seconda
 
 The empty span between the left chain's last station and the annotation box stays empty. It is the visual form of the statement that the failure state was short, and nothing may be moved into it.
 
-The authority disc appears exactly once, on the right, inside the Critical Expert verification box, which is the emphasised element.
+The authority disc appears exactly once, on the right, inside the Critical Expert validation box, which is the emphasised element.
 
 ## Reading direction
 
@@ -61,7 +61,7 @@ Left column, headed Before E66:
 1. Generated output
 2. Agent screening
 3. Agent-recorded approval status
-4. A bordered annotation box at the foot of the column stating that production and verification collapse into one operation and that no responsible person authorised the status.
+4. A bordered annotation box at the foot of the column stating that production and checking collapse into one operation and that no responsible person authorised the status.
 
 Divider, labelled Decision E66, drawn as a vertical rule from the top of the columns to their foot.
 
@@ -69,18 +69,18 @@ Right column, headed After E66:
 
 1. Generated output
 2. Workflow state, per stream, fed directly from the generated output
-3. Deterministic validation and agentic review, both fed from the generated output
+3. Deterministic verification and agentic review, both fed from the generated output
 4. Evidence, fed by both, stating that it reports about the output and is never an authorisation
-5. Critical Expert verification, carrying the authority mark, emphasised by the light grey fill
-6. Human-authorised verification status, only accountable editors
+5. Critical Expert validation, carrying the authority mark, emphasised by the light grey fill
+6. Human-authorised validation status, only accountable editors
 
 ## Relations and labels
 
-Verbatim labels are the element names above. The annotation box carries the diagnosis verbatim, "production and verification collapse into one operation; no responsible person authorised the status". Edge labels on the right column are "informs" on the dashed arrow from evidence into verification, and "authorises" on the solid arrow from verification into the status. The left column carries no edge labels, because every one of its transitions is an unbroken machine sequence and naming them would suggest deliberation the case did not contain.
+Verbatim labels are the element names above. The annotation box carries the diagnosis verbatim, "production and checking collapse into one operation; no responsible person authorised the status". Edge labels on the right column are "informs" on the dashed arrow from evidence into validation, and "authorises" on the solid arrow from validation into the status. The left column carries no edge labels, because every one of its transitions is an unbroken machine sequence and naming them would suggest deliberation the case did not contain.
 
 ## Visual grammar
 
-Solid line with a filled head at primary weight marks operational flow and authorising acts. Dashed line with an open head at secondary weight marks the evidence relation. The filled disc inside a circle appears once in the whole figure, on Critical Expert verification in the right column; its absence on the left is the visual statement of the failure. The light grey fill appears once, on the same box. The two column heads carry the one type size above the title size, and the divider label is set at title size, because it is a structural label rather than a title.
+Solid line with a filled head at primary weight marks operational flow and authorising acts. Dashed line with an open head at secondary weight marks the evidence relation. The filled disc inside a circle appears once in the whole figure, on Critical Expert validation in the right column; its absence on the left is the visual statement of the failure. The light grey fill appears once, on the same box. The two column heads carry the one type size above the title size, and the divider label is set at title size, because it is a structural label rather than a title.
 
 ## What the figure must not imply
 
@@ -95,9 +95,9 @@ Solid line with a filled head at primary weight marks operational flow and autho
 ## Acceptance checks
 
 - Exactly one filled disc in the figure, in the right column.
-- Exactly one element carries the light grey fill, the Critical Expert verification box.
+- Exactly one element carries the light grey fill, the Critical Expert validation box.
 - Both columns are equal in width, both column heads sit on one baseline, and both chains begin at one y with the box Generated output.
 - The annotation box at the foot of the left column has its bottom edge on the bottom edge of the right column's final station.
-- The left chain terminates in a status, and no path leads from it to a verified state.
+- The left chain terminates in a status, and no path leads from it to a validated state.
 - Both checks in the right column converge in the evidence box before any human mark.
 - The divider label names the decision, and both column heads name the sides.

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" role="img" aria-labelledby="t d">
   <title id="t">Project knowledge, working context, implementation, and authority in Promptotyping</title>
-  <desc id="d">A versioned project knowledge base supplies a task-specific working context, an AI agent inside a harness produces a digital research artefact, deterministic validation and agentic review provide evidence about it, Critical Expert verification carries the human authority mark, acceptance is a purpose-specific decision, and it writes back into the knowledge base.</desc>
+  <desc id="d">A versioned project knowledge base supplies a task-specific working context, an AI agent inside a harness produces a digital research artefact, deterministic verification and agentic review provide evidence about it, Critical Expert validation carries the human authority mark, acceptance is a purpose-specific decision, and it writes back into the knowledge base.</desc>
   <defs>
     <marker id="flowhead" viewBox="0 0 12 12" refX="11.5" refY="6" markerWidth="12" markerHeight="12" orient="auto" markerUnits="userSpaceOnUse">
       <path d="M0.5,0.8 L11.5,6 L0.5,11.2 Z" fill="#111111"/>
@@ -74,7 +74,7 @@
   <!-- Checks -->
   <rect class="box" x="300" y="256" width="200" height="96" rx="2"/>
   <text class="n" x="400" y="290" text-anchor="middle">Deterministic</text>
-  <text class="n" x="400" y="312" text-anchor="middle">validation</text>
+  <text class="n" x="400" y="312" text-anchor="middle">verification</text>
   <text class="s" x="400" y="336" text-anchor="middle">formalised checks</text>
 
   <rect class="box" x="530" y="256" width="170" height="96" rx="2"/>
@@ -82,12 +82,12 @@
   <text class="s" x="615" y="316" text-anchor="middle">model-mediated</text>
   <text class="s" x="615" y="334" text-anchor="middle">checking</text>
 
-  <!-- Critical Expert verification -->
+  <!-- Critical Expert validation -->
   <rect class="box" x="730" y="256" width="200" height="148" rx="2"/>
   <circle cx="830" cy="286" r="13" fill="#ffffff" stroke="#111111" stroke-width="2.5"/>
   <circle cx="830" cy="286" r="6" class="disc"/>
   <text class="n" x="830" y="326" text-anchor="middle">Critical Expert</text>
-  <text class="n" x="830" y="348" text-anchor="middle">verification</text>
+  <text class="n" x="830" y="348" text-anchor="middle">validation</text>
   <text class="s" x="830" y="372" text-anchor="middle">source fidelity, design,</text>
   <text class="s" x="830" y="390" text-anchor="middle">interpretation</text>
 

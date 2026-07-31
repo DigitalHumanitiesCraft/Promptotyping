@@ -26,8 +26,8 @@ Two delivered versions are archived under `../candidates/`, `zbz-e66--2026-07-29
 Accepted for use in the paper because:
 
 - the before side names the failure state as an agent-recorded approval status;
-- the after side collects deterministic validation and agentic review in an evidence box;
-- Critical Expert verification carries the filled-disc mark and is the only path to the human-authorised status;
+- the after side collects deterministic verification and agentic review in an evidence box;
+- Critical Expert validation carries the filled-disc mark and is the only path to the human-authorised status;
 - the decision E66 is marked as the boundary between the two states.
 
 Known limitation:

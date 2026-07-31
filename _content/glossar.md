@@ -56,9 +56,9 @@ Source: [Paper, Section 1.2](#abschnitt-1-2-context-engineering-agentic-engineer
 
 Kind: Form of work
 
-Development practice in which LLM agents are the executing instance and the human work becomes specifying, steering and verifying.
+Development practice in which LLM agents are the executing instance and the human work becomes specifying, steering and checking.
 
-Agentic Engineering names the development practice in which LLM agents are the executing instance and the human work shifts to specifying, steering and verifying. An agent in this sense is a language model that works towards a goal across several steps by calling tools in an environment and taking their responses back into its own context, without being instructed step by step. Four features span a gradient, tool access, the feedback of the environment's response, goal pursuit across several steps, and the span of autonomy between two human interventions. Chat has none of them, chat with tools has the first two, and an agentic coding environment has all four. The span of autonomy is what matters methodologically, because it determines how much intent has to exist in writing before work begins.
+Agentic Engineering names the development practice in which LLM agents are the executing instance and the human work shifts to specifying, steering and checking. An agent in this sense is a language model that works towards a goal across several steps by calling tools in an environment and taking their responses back into its own context, without being instructed step by step. Four features span a gradient, tool access, the feedback of the environment's response, goal pursuit across several steps, and the span of autonomy between two human interventions. Chat has none of them, chat with tools has the first two, and an agentic coding environment has all four. The span of autonomy is what matters methodologically, because it determines how much intent has to exist in writing before work begins.
 
 Source: [Paper, Section 1.2](#abschnitt-1-2-context-engineering-agentic-engineering-and-ai-harnesses)
 
@@ -146,9 +146,9 @@ Source: [Paper, Section 2.1](#abschnitt-2-1-promptotyping-and-the-project-knowle
 
 Kind: Role and authority
 
-Role that verifies LLM output at defined points and combines domain expertise with knowledge of LLM failure modes.
+Role that validates LLM output at defined points and combines domain expertise with knowledge of LLM failure modes.
 
-The Critical Expert in the Loop is the role that verifies LLM output at defined points. Unlike the generic human in the loop it requires domain expertise together with awareness of LLM-specific failure modes and metacognitive vigilance. The Critical Expert's task extends beyond checking the correctness of outputs. The more consequential blind spot lies in the possibility space that was not explored, in the questions not asked and the alternatives not generated. This metareflexive capacity distinguishes the role from a reviewer who checks correctness alone.
+The Critical Expert in the Loop is the role that validates LLM output at defined points. Unlike the generic human in the loop it requires domain expertise together with awareness of LLM-specific failure modes and metacognitive vigilance. The Critical Expert's task extends beyond checking the correctness of outputs. The more consequential blind spot lies in the possibility space that was not explored, in the questions not asked and the alternatives not generated. This metareflexive capacity distinguishes the role from a reviewer who checks correctness alone.
 
 Source: [Paper, Section 2.3](#abschnitt-2-3-from-project-knowledge-to-an-accepted-promptotype); Pollin 2025, Critical Vibing blog (not in the paper's reference list); [Vault: the double reflection loop of the role](#vault-critical-expert-in-the-loop-double-reflection-loop)
 
@@ -456,9 +456,9 @@ Source: Site vocabulary, not carried in the paper text; [Best Practices, the epi
 
 Kind: Checking and acceptance
 
-Verification is the check by domain expertise, validation the check by a formal rule.
+Verification is the check by a formal rule, validation the check by domain expertise.
 
-The method distinguishes two kinds of check. Validation is what a formal rule decides, a schema, a test or a constraint, and it runs unsupervised because the feedback loop is closed. Verification is what domain expertise decides against the sources and against scholarly judgement, and it does not delegate. The pair operates at three levels, data fidelity, requirement satisfaction and design conformance, and each level has its own zone of agent autonomy. This settlement departs deliberately from the norm of software engineering, where verification names the check against the specification and validation the check against intended use. It follows instead the word roots, verus for a truth claim that a judgement must carry, and validus for what holds under a rule that has been set.
+The method distinguishes two kinds of check. Verification is what a formal rule decides, a schema, a test or a constraint, and it runs unsupervised because the feedback loop is closed. Validation is what domain expertise decides against the sources and against scholarly judgement, and it does not delegate. The pair operates at three levels, data fidelity, requirement satisfaction and design conformance, and each level has its own zone of agent autonomy. This usage follows the norm of software and systems engineering, where verification names the check against the specification and validation the check against intended use and user needs (IEEE Std 1012). Schema validation, the established XML term for an automatic check against a schema, keeps its name as a term of art and is in this sense a form of verification.
 
 Source: [Paper, Section 2.3](#abschnitt-2-3-from-project-knowledge-to-an-accepted-promptotype); [Specification, part 5, Verification](#verifikation)
 
@@ -468,7 +468,7 @@ Kind: Checking and acceptance
 
 Defined checkpoint in the workflow at which domain expertise is applied systematically.
 
-Verification milestones are defined checkpoints in the workflow at which domain expertise is applied systematically. They turn the Critical Expert in the Loop into a process step, since at a milestone the work stops, is validated with deterministic tools and verified by expert judgement before it continues. The Implementation phase advances in such small, checkable steps. Where the check is deferred, a verification debt arises that has to be settled before use or handover. In the ZBZ OCR/TEI project an interface at every pipeline stage serves as such a milestone.
+Verification milestones are defined checkpoints in the workflow at which domain expertise is applied systematically. They turn the Critical Expert in the Loop into a process step, since at a milestone the work stops, is verified with deterministic tools and validated by expert judgement before it continues. The Implementation phase advances in such small, checkable steps. Where the check is deferred, a verification debt arises that has to be settled before use or handover. In the ZBZ OCR/TEI project an interface at every pipeline stage serves as such a milestone.
 
 Source: [Paper, Section 2.2](#abschnitt-2-2-forms-of-work-and-iteration); [Paper, Section 2.3](#abschnitt-2-3-from-project-knowledge-to-an-accepted-promptotype); [Best Practices, verification milestones](#praxis-verification-milestones)
 

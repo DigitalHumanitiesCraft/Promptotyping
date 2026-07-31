@@ -14,7 +14,7 @@ revision: 2
 
 ## Caption this figure must satisfy
 
-**Figure 1. The Promptotyping method.** Preparation, Exploration, Distillation, and Implementation are recurrent forms of work rather than fixed stages. Findings arising from Implementation may return the work to earlier forms, most frequently to Distillation. The Critical Expert specifies and revises the knowledge documents and verifies the resulting artefact. Purpose-specific acceptance connects maintained project knowledge, the digital research artefact, the referenced research-data state, and the documented grounds of acceptance as an identifiable promptotype.
+**Figure 1. The Promptotyping method.** Preparation, Exploration, Distillation, and Implementation are recurrent forms of work rather than fixed stages. Findings arising from Implementation may return the work to earlier forms, most frequently to Distillation. The Critical Expert specifies and revises the knowledge documents and validates the resulting artefact. Purpose-specific acceptance connects maintained project knowledge, the digital research artefact, the referenced research-data state, and the documented grounds of acceptance as an identifiable promptotype.
 
 ## Purpose
 
@@ -63,7 +63,7 @@ Verbatim labels, which are terminology and may not be paraphrased in the SVG:
 - promptotype constituents: project knowledge, research artefact, referenced data state, grounds of acceptance
 - returns: specification revised (Distillation), data understanding revised (Exploration), sources or conditions revised (Preparation)
 - return band: write-back
-- human relations: specifies and revises (into Distillation), verifies and accepts (into Promptotype)
+- human relations: specifies and revises (into Distillation), validates and accepts (into Promptotype)
 - legend: flow of work, write-back, accountable human authority
 
 The return into Distillation carries the additional note "most frequent return", which encodes the caption's claim about frequency.
