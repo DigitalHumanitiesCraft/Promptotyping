@@ -83,11 +83,16 @@ def test_instance_is_clean_and_its_one_warning_is_declared() -> None:
 
 def test_an_empty_vault_says_which_checks_had_no_subject(tmp_path: Path) -> None:
     report = validate(tmp_path)
-    assert report.errors == []
     assert {code for code, _, _ in report.warnings} == {
         "W-NO-INVENTORY",
         "W-NO-DELIVERABLE",
     }
+
+
+def test_an_empty_vault_is_an_error_rather_than_a_green_run(tmp_path: Path) -> None:
+    """A path with no documents used to pass every check vacuously and print OK."""
+    report = validate(tmp_path)
+    assert report.codes() == {"E-NO-SUBJECT"}
 
 
 def test_a_declared_warning_is_not_reported_as_unexpected(tmp_path: Path) -> None:

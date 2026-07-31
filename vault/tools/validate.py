@@ -21,7 +21,6 @@ Exit code 0 when no errors were found; warnings alone do not fail the run.
 from __future__ import annotations
 
 import argparse
-import json
 import re
 import subprocess
 import sys
@@ -29,29 +28,21 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 import yaml
-
-CONTENT_FOLDERS = (
-    "00_representation",
-    "10_distillates",
-    "20_claims",
-    "30_deliverable",
-    "glossary",
+from _vaultmd import (
+    CONTENT_FOLDERS,
+    DISTILLATES,
+    REFERENCES,
+    REPRESENTATIONS,
+    TYPE_FOLDER,
+    link_targets,
+    load_reference_records,
 )
-
-TYPE_FOLDER = {
-    "representation": "00_representation",
-    "distillate": "10_distillates",
-    "claim": "20_claims",
-    "moc": "20_claims",
-    "chapter": "30_deliverable",
-    "glossary": "glossary",
-}
 
 INVENTORY_REGISTERS = (
     "knowledge/state.md",
     "knowledge/register-paper-sources.md",
 )
-INVENTORIED_FOLDERS = ("00_representation", "10_distillates")
+INVENTORIED_FOLDERS = (REPRESENTATIONS, DISTILLATES)
 SPECIFICATION = "knowledge/specification.md"
 
 SOURCE_TYPES = frozenset({"document", "publication", "data"})
@@ -85,7 +76,6 @@ REQUIRED_FIELDS = {
     "glossary": ("type", "term", "created", "updated"),
 }
 
-WIKILINK = re.compile(r"\[\[([^\]#|]+?)(?:#\^([A-Za-z0-9-]+))?(?:\|[^\]]*)?\]\]")
 BLOCK_ID = re.compile(r"\^([A-Za-z0-9-]+)\s*$")
 FOOTNOTE_DEF = re.compile(r"^\[\^([A-Za-z0-9]+)\]:\s*(.*)$")
 FOOTNOTE_REF = re.compile(r"\[\^([A-Za-z0-9]+)\]")
@@ -140,24 +130,17 @@ def _parse_doc(path: Path, root: Path, report: Report) -> Doc | None:
     return Doc(path=path, rel=rel, fm=fm, body=body, blocks=blocks)
 
 
-def _load_reference_ids(root: Path) -> set[str]:
-    ids: set[str] = set()
-    refdir = root / "references"
-    if not refdir.is_dir():
-        return ids
-    for path in refdir.glob("*.json"):
-        try:
-            records = json.loads(path.read_text(encoding="utf-8"))
-        except json.JSONDecodeError:
-            continue  # reported implicitly when a reference does not resolve
-        for record in records if isinstance(records, list) else []:
-            if isinstance(record, dict) and "id" in record:
-                ids.add(str(record["id"]))
-    return ids
+def _load_reference_ids(root: Path, report: Report) -> set[str]:
+    """The citation ids of the reference stock, unreadable files reported.
 
-
-def _link_targets(text: str) -> list[tuple[str, str | None]]:
-    return [(m.group(1).strip(), m.group(2)) for m in WIKILINK.finditer(text)]
+    A file that does not parse used to be skipped in silence, which showed up
+    later as a distillate whose reference id would not resolve, at a place that
+    says nothing about the cause.
+    """
+    records, problems = load_reference_records(root / REFERENCES)
+    for message in problems:
+        report.error("E-REFERENCE", f"{REFERENCES}/", message)
+    return {str(record["id"]) for _path, record in records if "id" in record}
 
 
 def _check_frontmatter(doc: Doc, report: Report) -> None:
@@ -256,7 +239,12 @@ def _statement_lines(body: str) -> list[tuple[str, list[str]]]:
 
 
 def _check_distillate(
-    doc: Doc, docs: dict[str, Doc], reference_ids: set[str], root: Path, report: Report
+    doc: Doc,
+    docs: dict[str, Doc],
+    reference_ids: set[str],
+    root: Path,
+    report: Report,
+    run_computations: bool,
 ) -> None:
     source_type = doc.fm.get("source-type")
     statements = _statement_lines(doc.body)
@@ -281,7 +269,7 @@ def _check_distillate(
                 f"core statement without statement ID: {line.strip()[:60]}",
             )
         if source_type == "document":
-            links = _link_targets(line)
+            links = link_targets(line)
             anchored = [t for t in links if t[1] is not None]
             if not anchored:
                 report.error(
@@ -307,11 +295,18 @@ def _check_distillate(
                     f"core statement without computation: {line.strip()[:60]}",
                 )
             for m in declared:
-                _check_computation(m.group(1), m.group(2), root, doc, report)
+                _check_computation(
+                    m.group(1), m.group(2), root, doc, report, run_computations
+                )
 
 
 def _check_computation(
-    command: str, stated: str, root: Path, doc: Doc, report: Report
+    command: str,
+    stated: str,
+    root: Path,
+    doc: Doc,
+    report: Report,
+    run_computations: bool,
 ) -> None:
     scripts = [part for part in command.split() if part.endswith(".py")]
     if not scripts:
@@ -325,7 +320,7 @@ def _check_computation(
             "E-COMPUTATION", doc.rel, f"computation script missing: {scripts[0]}"
         )
         return
-    if _RUN_COMPUTATIONS:
+    if run_computations:
         result = subprocess.run(
             [sys.executable, str(script)],
             cwd=root,
@@ -357,7 +352,7 @@ def _check_topics(doc: Doc, topic_names: set[str], report: Report) -> None:
 
 def _check_claim(doc: Doc, docs: dict[str, Doc], root: Path, report: Report) -> None:
     for raw in doc.fm.get("grounding") or []:
-        for target, block in _link_targets(str(raw)):
+        for target, block in link_targets(str(raw)):
             if block is None:
                 report.error(
                     "E-ANCHOR", doc.rel, f"grounding without statement anchor: {target}"
@@ -366,7 +361,7 @@ def _check_claim(doc: Doc, docs: dict[str, Doc], root: Path, report: Report) -> 
     contested = [
         t
         for raw in doc.fm.get("contested-with") or []
-        for t, _ in _link_targets(str(raw))
+        for t, _ in link_targets(str(raw))
     ]
     if doc.fm.get("status") == "contested" and not contested:
         report.error(
@@ -382,7 +377,7 @@ def _check_claim(doc: Doc, docs: dict[str, Doc], root: Path, report: Report) -> 
         back = [
             t
             for raw in other.fm.get("contested-with") or []
-            for t, _ in _link_targets(str(raw))
+            for t, _ in link_targets(str(raw))
         ]
         if doc.rel not in back:
             report.error(
@@ -412,7 +407,7 @@ def _check_chapter(doc: Doc, docs: dict[str, Doc], root: Path, report: Report) -
     posit_count = 0
     for key, text in defs.items():
         if text.startswith("Grounded in"):
-            targets = [t for t, _ in _link_targets(text)]
+            targets = [t for t, _ in link_targets(text)]
             if not targets:
                 report.error(
                     "E-FOOTNOTE", doc.rel, f"footnote [^{key}] grounds in no claim"
@@ -430,7 +425,7 @@ def _check_chapter(doc: Doc, docs: dict[str, Doc], root: Path, report: Report) -
             )
 
     mirror = {
-        t for raw in doc.fm.get("claims") or [] for t, _ in _link_targets(str(raw))
+        t for raw in doc.fm.get("claims") or [] for t, _ in link_targets(str(raw))
     }
     if mirror != grounded_claims:
         report.error(
@@ -462,16 +457,13 @@ def _check_chapter(doc: Doc, docs: dict[str, Doc], root: Path, report: Report) -
 
 def _check_moc_reachability(docs: dict[str, Doc], report: Report) -> None:
     mocs = [d for d in docs.values() if d.fm.get("type") == "moc"]
-    listed = {target for moc in mocs for target, _ in _link_targets(moc.body)}
+    listed = {target for moc in mocs for target, _ in link_targets(moc.body)}
     for doc in docs.values():
         if doc.fm.get("type") == "claim" and doc.rel not in listed:
             report.error("E-ORPHAN", doc.rel, "claim reachable from no topic map")
 
 
-_RUN_COMPUTATIONS = False
-
-
-def _read_expected_warnings(root: Path) -> frozenset[str]:
+def _read_expected_warnings(root: Path, report: Report) -> frozenset[str]:
     """The warning codes this instance has declared as its known baseline."""
     path = root / SPECIFICATION
     if not path.is_file():
@@ -480,7 +472,18 @@ def _read_expected_warnings(root: Path) -> frozenset[str]:
     if not text.startswith("---\n"):
         return frozenset()
     end = text.find("\n---", 4)
-    fm = yaml.safe_load(text[4 : end if end > 0 else None]) or {}
+    try:
+        fm = yaml.safe_load(text[4 : end if end > 0 else None]) or {}
+    except yaml.YAMLError as exc:
+        # The same case _parse_doc reports for a content document; here it must
+        # not end the run in a traceback either.
+        report.error(
+            "E-FRONTMATTER", SPECIFICATION, f"frontmatter is not valid YAML: {exc}"
+        )
+        return frozenset()
+    if not isinstance(fm, dict):
+        report.error("E-FRONTMATTER", SPECIFICATION, "frontmatter is not a mapping")
+        return frozenset()
     declared = fm.get("expected-warnings") or []
     if isinstance(declared, str):
         declared = [part.strip() for part in declared.split(",")]
@@ -506,7 +509,7 @@ def _check_inventory(root: Path, docs: dict[str, Doc], report: Report) -> None:
     listed = {
         target
         for path in registers
-        for target, _ in _link_targets(path.read_text(encoding="utf-8"))
+        for target, _ in link_targets(path.read_text(encoding="utf-8"))
     }
     for doc in docs.values():
         if doc.rel.startswith(INVENTORIED_FOLDERS) and doc.rel not in listed:
@@ -539,15 +542,24 @@ def _check_expectations(report: Report) -> None:
 
 
 def validate(root: Path, run_computations: bool = False) -> Report:
-    global _RUN_COMPUTATIONS
-    _RUN_COMPUTATIONS = run_computations
-    report = Report(expected_warnings=_read_expected_warnings(root))
+    report = Report()
+    report.expected_warnings = _read_expected_warnings(root, report)
     docs: dict[str, Doc] = {}
     for folder in CONTENT_FOLDERS:
         for path in sorted((root / folder).rglob("*.md")):
             if doc := _parse_doc(path, root, report):
                 docs[doc.rel] = doc
-    reference_ids = _load_reference_ids(root)
+    if not docs:
+        # The principle _check_deliverable_present states, applied to the run as
+        # a whole: a path with no content folder, or with empty ones, used to
+        # pass every check below vacuously and print OK.
+        report.error(
+            "E-NO-SUBJECT",
+            str(root),
+            "no document found in any of "
+            f"{', '.join(CONTENT_FOLDERS)}; there is nothing here to validate",
+        )
+    reference_ids = _load_reference_ids(root, report)
     topic_names = {
         str(d.fm.get("topic")) for d in docs.values() if d.fm.get("type") == "moc"
     }
@@ -560,12 +572,14 @@ def validate(root: Path, run_computations: bool = False) -> Report:
         if doctype in ("distillate", "claim"):
             _check_topics(doc, topic_names, report)
         if doctype == "distillate":
-            _check_distillate(doc, docs, reference_ids, root, report)
+            _check_distillate(
+                doc, docs, reference_ids, root, report, run_computations
+            )
         elif doctype == "claim":
             _check_claim(doc, docs, root, report)
         elif doctype == "chapter":
             _check_chapter(doc, docs, root, report)
-        for target, block in _link_targets(doc.body):
+        for target, block in link_targets(doc.body):
             if block is not None or any(target.startswith(f) for f in CONTENT_FOLDERS):
                 _resolve_anchor(target, block, docs, root, doc, report)
     _check_moc_reachability(docs, report)

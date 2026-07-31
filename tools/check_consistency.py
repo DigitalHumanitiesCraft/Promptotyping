@@ -7,7 +7,10 @@ CLAUDE.md and the files on disk. Two sources for one statement drift, and on
 2026-07-26 three of them had. This script is the check the method's own
 verification function asks for, applied to the site that specifies it.
 
-Run from the repository root:  python tools/check_consistency.py
+Every path is resolved from this file, so the working directory does not matter:
+
+    python tools/check_consistency.py
+
 Add --check-urls to also resolve every address the gallery publishes. That pass
 is opt-in because it needs the network and this script runs before every commit.
 Exit code 0 when every check passes, 1 otherwise.
@@ -51,7 +54,12 @@ import build_glossar  # noqa: E402
 # The header row of the paper's case table, Table 3 in section 4.3 of the
 # five-chapter text (promotion of 2026-07-30). Parsing keys on this line rather
 # than on a position, so inserting a section cannot move it.
-TABLE1_HEADER = "| Case | Data state | Artefact | Central finding | Write-back or acceptance |"
+CASE_TABLE_HEADER = "| Case | Data state | Artefact | Central finding | Write-back or acceptance |"
+
+# The anchor prefix a numbered paper heading takes, as headingId in
+# assets/js/markdown.js mints it. The port below and the source-type table of
+# the glossary both read it from here rather than spelling it out twice.
+PAPER_SECTION_PREFIX = "abschnitt-"
 
 # The five epistemic functions of the paper's interface typology (section 4.2).
 INTERFACE_TYPES = {"verification", "exploration", "edition", "capture", "audit"}
@@ -74,7 +82,16 @@ def note(message):
 
 
 def load_json(path):
-    return json.loads(path.read_text(encoding="utf-8"))
+    """A data file, with the file named where it cannot be parsed.
+
+    Every check below reads its subject from one of these files, so a broken one
+    ends the run; the message has to say which file it was.
+    """
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as error:
+        sys.exit("FAIL:  %s is not valid JSON: %s"
+                 % (path.relative_to(ROOT).as_posix(), error))
 
 
 def read_text(path):
@@ -155,15 +172,21 @@ def check_files_exist(documents):
 
 
 def check_claude_md_slugs(documents):
-    """The action layer publishes the slug list; it must be the catalogue's."""
-    text = CLAUDE_MD.read_text(encoding="utf-8")
-    match = re.search(r"Slugs?: (.+?)\.", text)
+    """The action layer publishes the slug list; it must be the catalogue's.
+
+    The list is read as the remainder of the line that introduces it, so a
+    change of the count word or of the punctuation inside the list cannot hide
+    it. A list this check no longer finds is a failure rather than a note: a
+    check whose subject has disappeared must not stay green, and naming the
+    slugs as literals here would restore the second copy the check exists for.
+    """
+    text = read_text(CLAUDE_MD)
+    match = re.search(r"^.*\bSlugs?:[ \t]*(.+)$", text, re.M)
     if not match:
-        match = re.search(r"`data`.*?`integration`", text, re.S)
-    if not match:
-        note("no slug list found in CLAUDE.md; skipped")
+        fail("slugs", "CLAUDE.md carries no slug list; the anchor scheme has to "
+                      "publish one, and this check has no subject without it")
         return
-    listed = set(re.findall(r"`([a-z-]+)`", match.group(0)))
+    listed = set(re.findall(r"`([a-z][a-z-]*)`", match.group(1)))
     catalogue_slugs = {d["slug"] for d in documents}
     missing = catalogue_slugs - listed
     if missing:
@@ -219,7 +242,7 @@ def check_gallery(data):
                  % (case_id, case["paper_row"], role))
 
 
-def paper_table1():
+def paper_case_table():
     """The paper's case table (Table 3, section 4.3), as the set of case names.
 
     The five-chapter text carries no per-case interface types, so the table
@@ -228,7 +251,7 @@ def paper_table1():
     rows = set()
     lines = PAPER.read_text(encoding="utf-8").splitlines()
     try:
-        start = lines.index(TABLE1_HEADER)
+        start = lines.index(CASE_TABLE_HEADER)
     except ValueError:
         fail("evidence", "case-table header row not found in knowledge/paper.md")
         return rows
@@ -249,7 +272,7 @@ def check_evidence_reachable(data):
     has to find the project. This is the condition the gallery exists for, and
     it held for ten of thirteen projects until 2026-07-26.
     """
-    table = paper_table1()
+    table = paper_case_table()
     if not table:
         return
     claimed = {}
@@ -308,7 +331,11 @@ def check_glossar_mirror():
     was kept by hand until 2026-07-26, which is the one place on the site where
     that rule was broken; the generator now decides what the file says.
     """
-    expected = build_glossar.build()
+    try:
+        expected = build_glossar.build()
+    except build_glossar.EntryError as error:
+        fail("glossar", "the generator cannot render data/glossar.json: %s" % error)
+        return
     difference = build_glossar.first_difference(expected, read_text(GLOSSAR_MD))
     if difference:
         fail("glossar", "_content/glossar.md is not what build_glossar.py renders "
@@ -318,7 +345,7 @@ def check_glossar_mirror():
 # The source types data/glossar.json declares, each with the anchor prefix its
 # addresses carry. A type mapped to None takes no anchor at all.
 SOURCE_PREFIXES = {
-    "paper": "abschnitt-",
+    "paper": PAPER_SECTION_PREFIX,
     "literature": "ref-",
     "vault": "vault-",
     "page": "",
@@ -482,11 +509,6 @@ def js_string_map(text, name):
     return {(quoted or bare): value for quoted, bare, value in pairs}
 
 
-def js_string_list(text, name):
-    source = js_literal(text, name)
-    return re.findall(r'"([^"]*)"', source) if source else []
-
-
 def registry_pages(registry_js):
     """The page ids of PAGES, in registry order."""
     source = js_literal(registry_js, "PAGES") or ""
@@ -523,7 +545,7 @@ def heading_id(text, overrides):
     plain = re.sub(r"<[^>]*>", "", text).strip()
     numbered = re.match(r"^(\d+(?:\.\d+)*)\.?\s+([\s\S]*)$", plain)
     if numbered:
-        anchor = "abschnitt-" + numbered.group(1).replace(".", "-") + "-" + \
+        anchor = PAPER_SECTION_PREFIX + numbered.group(1).replace(".", "-") + "-" + \
             slugify(numbered.group(2))
     else:
         anchor = slugify(plain)
@@ -542,6 +564,61 @@ def unique_ids(ids):
         used[anchor] += 1
         out.append("%s-%d" % (anchor, used[anchor]))
     return out
+
+
+# Known input and output of the three ports above, read off the JavaScript they
+# port: slugify in assets/js/core.js, headingId and uniqueHeadingId in
+# assets/js/markdown.js. The cases cover what the paper and the practice page
+# actually put through them, umlauts and the sharp s, a character outside the
+# alphabet, punctuation runs and edge dashes, a numbered heading at both depths,
+# an override and the collision suffix.
+SLUGIFY_CASES = (
+    ("Grundlagen der Prüfung", "grundlagen-der-pruefung"),
+    ("Öffentliche Straße", "oeffentliche-strasse"),
+    ("Data, Capture & Audit!", "data-capture-audit"),
+    ("  --Trailing--  ", "trailing"),
+    ("Café", "caf"),
+    ("2026-07-30", "2026-07-30"),
+)
+
+HEADING_ID_CASES = (
+    ("1. Introduction", {}, "abschnitt-1-introduction"),
+    ("4.3 Cross-case findings", {}, "abschnitt-4-3-cross-case-findings"),
+    ("References", {}, "references"),
+    ("References", {"references": "literatur"}, "literatur"),
+    ("<em>Emphasis</em> in a heading", {}, "emphasis-in-a-heading"),
+    ("A. Not a number", {}, "a-not-a-number"),
+)
+
+UNIQUE_ID_CASES = (
+    (["a", "b", "a", "a", "b"], ["a", "b", "a-2", "a-3", "b-2"]),
+)
+
+
+def check_ports():
+    """The three ports of the JavaScript still compute what the browser computes.
+
+    slugify, the heading-id generator and its collision suffix decide the anchor
+    set every check of the group above is held against. A port that drifts from
+    the JavaScript does not report anything; it turns those checks into silent
+    passes, which is why the rebuilt resolver carries a self-test of the same
+    kind in check_subpath_handover.
+    """
+    for text, expected in SLUGIFY_CASES:
+        actual = slugify(text)
+        if actual != expected:
+            fail("ports", "slugify(%r) gives %r; slugify in assets/js/core.js "
+                          "gives %r" % (text, actual, expected))
+    for text, overrides, expected in HEADING_ID_CASES:
+        actual = heading_id(text, overrides)
+        if actual != expected:
+            fail("ports", "heading_id(%r) gives %r; headingId in "
+                          "assets/js/markdown.js gives %r" % (text, actual, expected))
+    for ids, expected in UNIQUE_ID_CASES:
+        actual = unique_ids(ids)
+        if actual != list(expected):
+            fail("ports", "unique_ids(%r) gives %r; uniqueHeadingId in "
+                          "assets/js/markdown.js gives %r" % (ids, actual, expected))
 
 
 def markdown_headings(path, levels):
@@ -570,9 +647,20 @@ def plain_inline(text):
     return text.replace("`", "").replace("**", "").replace("*", "").replace("_", "")
 
 
+# The script files this group reads its declarations out of. A rename would
+# otherwise end the run in a bare KeyError that says nothing about what is
+# missing or why the check needed it.
+DECLARING_SCRIPTS = ("registry.js", "markdown.js", "pages-glossar.js",
+                     "pages-content.js", "pages-paper.js")
+
+
 def declared_anchors(js_texts):
     """Every anchor the site mounts, gathered from the tables that mount it."""
     by_name = {pathlib.PurePosixPath(k).name: v for k, v in js_texts.items()}
+    for name in DECLARING_SCRIPTS:
+        if name not in by_name:
+            sys.exit("FAIL:  assets/js/%s is gone; the anchor checks read the "
+                     "declared side of the site out of it" % name)
     overrides = js_string_map(by_name["markdown.js"], "HEADING_ID_OVERRIDES")
     konzept_aliases = js_string_map(by_name["pages-glossar.js"], "KONZEPT_ALIASES")
     praxis_aliases = js_string_map(by_name["pages-content.js"], "PRAXIS_ALIASES")
@@ -630,6 +718,13 @@ def declared_anchors(js_texts):
 # Anchor families the code mints per item at render time rather than declaring:
 # figures, reference-list entries and the footnote apparatus. A link into one of
 # them is checked by its prefix, since the item set follows from the paper text.
+# ref- is deliberately weaker here than in the glossary: indexReferences in
+# pages-paper.js mints one id per entry of the paper's reference list while the
+# paper renders, so the set exists only after a render. A hand-written #ref-
+# link therefore passes on its prefix alone everywhere except in the glossary,
+# where check_glossar_sources rebuilds those ids from the paper's own list and
+# rejects a key the list does not mint. The glossary is the one place that
+# carries such links by hand, which is why the strict test sits there.
 GENERATED_PREFIXES = ("figure-", "ref-", "fn-", "fnref-")
 
 
@@ -893,14 +988,26 @@ def check_action_layer_pages():
                                  "CLAUDE.md does not name #%s" % (page, page))
 
 
-# The documents in which a bare A-number means a requirement of the
-# specification. The paper texts and INDEX.md stay outside: the paper uses no
-# requirement numbers, and INDEX names the archived audits A1 and A2, which are
-# records rather than requirements.
-REQUIREMENT_CITING = ("CLAUDE.md", "knowledge/specification.md",
-                      "knowledge/architecture.md", "knowledge/design.md",
-                      "knowledge/plan.md", "knowledge/verification.md",
-                      "knowledge/project.md")
+# Documents in which a bare A-number does not mean a requirement. The paper
+# texts use no requirement numbers, and INDEX.md names the archived audits A1
+# and A2, which are records rather than requirements. The dated records fall out
+# for that same reason and are recognised the way V9 recognises them, since a
+# journal entry naming an audit run is recording a name, not citing a number.
+REQUIREMENT_EXEMPT = ("paper.md", "paper-knowledge.md", "INDEX.md")
+
+
+def requirement_citing_paths():
+    """The action layer and every core knowledge document the rule covers.
+
+    Open by construction rather than a fixed list, so a knowledge document added
+    tomorrow is under the rule without anyone remembering to enrol it.
+    """
+    paths = [CLAUDE_MD]
+    for path in sorted(KNOWLEDGE_DIR.glob("*.md")):
+        if path.name in REQUIREMENT_EXEMPT or is_dated_record(path):
+            continue
+        paths.append(path)
+    return paths
 
 
 def check_requirement_numbers():
@@ -921,8 +1028,8 @@ def check_requirement_numbers():
             fail("requirements", "specification.md carries the heading %s twice"
                  % number)
         seen.add(number)
-    for name in REQUIREMENT_CITING:
-        path = ROOT / name
+    for path in requirement_citing_paths():
+        name = path.relative_to(ROOT).as_posix()
         cited = set(re.findall(r"\bA\d+\b", read_text(path)))
         for number in sorted(cited - seen, key=lambda n: int(n[1:])):
             fail("requirements", "%s cites %s; specification.md has no such heading"
@@ -948,7 +1055,15 @@ def check_vault_index_current():
     for kind in ("distillates", "sources"):
         for entry in vault[kind]:
             path = entry.get("path")
-            if path and not (ROOT / path).is_file():
+            if not path:
+                # The generator writes an empty path for a source it could not
+                # resolve, so skipping the empty case would pass over exactly
+                # the entries the index is least sure of.
+                fail("vault-index", "data/vault.json carries the %s %s without a "
+                                    "path; the generator leaves it empty where it "
+                                    "could not resolve the entry"
+                     % (kind[:-1], entry["slug"]))
+            elif not (ROOT / path).is_file():
                 fail("vault-index", "data/vault.json points the %s %s at %s, "
                                     "which is not a file"
                      % (kind[:-1], entry["slug"], path))
@@ -968,6 +1083,7 @@ def main():
         lambda: check_gallery(cases),
         lambda: check_evidence_reachable(cases),
         check_glossar_mirror,
+        check_ports,
         check_anchors,
         check_symbol_bindings,
         check_action_layer_pages,

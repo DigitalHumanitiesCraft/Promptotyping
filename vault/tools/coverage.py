@@ -349,7 +349,7 @@ def render(
     skipped: list[str],
     threshold: int,
     show_covered: bool,
-    paper: Path,
+    paper: str,
 ) -> str:
     weights = token_weights(claims)
     out: list[str] = [
@@ -450,6 +450,8 @@ def main() -> None:
     )
     args = parser.parse_args()
 
+    if not args.paper.is_file():
+        sys.exit(f"no paper at {args.paper}")
     units, skipped = read_units(args.paper)
     claims = read_claims(args.claims)
     if not claims:

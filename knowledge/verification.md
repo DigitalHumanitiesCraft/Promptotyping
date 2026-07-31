@@ -29,7 +29,9 @@ The dividing line is the one part 5 draws. Where a rule decides, a script runs i
 
 ## What is checked automatically
 
-`tools/check_consistency.py`, run from the repository root, exits non-zero on any failure. It reaches for the second script in `tools/`, the glossary generator `build_glossar.py`, rather than restating its rules, so V7 below cannot drift from the generator it guards.
+`tools/check_consistency.py` exits non-zero on any failure; it resolves every path from its own location, so the directory it is called from does not matter. It reaches for the second script in `tools/`, the glossary generator `build_glossar.py`, rather than restating its rules, so V7 below cannot drift from the generator it guards.
+
+Under `tools/tests/` the checks are themselves held to their regression cases, run with `python -m unittest discover tools/tests`. Each case takes the repository's own data as its fixture, corrupts one field of a copy, and asserts that the check reports it. The green run before every commit shows that the site is consistent; it does not show that a check still decides anything, and a check that has quietly stopped deciding passes in exactly the same way. The suite uses the standard library alone, so `tools/` keeps needing no dependency; the vault under it is a template instance with its own dependency set and tests its validator with pytest.
 
 ### V1. The catalogue and the convention agree on the document type
 
@@ -54,6 +56,8 @@ The dividing line is the one part 5 draws. Where a rule decides, a script runs i
 **Claim.** The slug list in `CLAUDE.md` covers every slug in the catalogue.
 
 **Why it matters.** The action layer is what the next agent reads. A slug missing there is a template the next session does not know it may use.
+
+**Procedure.** Find the line that introduces the list and read the backticked slugs out of its remainder, so a changed count word or a punctuation mark inside the list cannot hide it. A list the check no longer finds is a failure. Restating the slugs in the script would create the second copy whose drift the check exists to catch, and a check whose subject has disappeared must not report green; a copy of the action layer without a slug list is the regression case, and `tools/tests/` holds it.
 
 **Verdict, 2026-07-26.** Passes.
 
@@ -141,13 +145,15 @@ The dividing line is the one part 5 draws. Where a rule decides, a script runs i
 
 **Claim.** No A-number heading in `knowledge/specification.md` occurs twice, and every bare A-number cited in the action layer or a core knowledge document has a heading. Gaps in the sequence are allowed, since a withdrawn requirement keeps its number reserved.
 
-**Why it matters.** The numbers are the requirement identifiers of this knowledge base, cited across the action layer, the plan and the design grounds. A duplicate splits one identifier over two requirements, and a citation without a heading sends the reader to nothing while the citing sentence keeps reading well. The paper texts and `INDEX.md` stay outside the citing set, because `INDEX.md` names the archived audits A1 and A2, which are records rather than requirements.
+**Why it matters.** The numbers are the requirement identifiers of this knowledge base, cited across the action layer, the plan and the design grounds. A duplicate splits one identifier over two requirements, and a citation without a heading sends the reader to nothing while the citing sentence keeps reading well. The paper texts and `INDEX.md` stay outside the citing set, because `INDEX.md` names the archived audits A1 and A2, which are records rather than requirements. The dated records fall out for the same reason and are recognised the way V9 recognises them, since a journal entry naming an audit run records a name instead of citing a number.
 
-**Verdict, 2026-07-29.** Passes. Both failure ways were provoked once and reported, a citation of a number without a heading and a duplicated heading.
+**Procedure.** The citing set is the action layer plus every document under `knowledge/` that neither stands in the exemption list nor is a dated record. It is derived rather than listed, so a knowledge document written tomorrow is under the rule without anyone remembering to enrol it. Until 2026-07-31 the script held a closed list of seven documents while this text described the open rule; the two agreed on which documents were checked, and only because nothing had been added since.
+
+**Verdict, 2026-07-31.** Passes. The three failure ways were each provoked once and reported, a citation of a number without a heading, a duplicated heading, and the same citation in a document the closed list did not name.
 
 ### V14. Everything the vault index points at exists
 
-**Claim.** Every claim slug in `data/vault.json` is a file under `vault/20_claims/`, and every distillate and source path the index carries is a file of this repository.
+**Claim.** Every claim slug in `data/vault.json` is a file under `vault/20_claims/`, and every distillate and source path the index carries is a file of this repository. An entry whose path is empty fails too, because that is what the generator writes for a source it could not resolve; passing over the empty case would spare exactly the entries the index is least sure of.
 
 **Why it matters.** The index is generated by `vault/tools/build_site_index.py` and committed, so a rename or removal in the vault leaves stale entries behind until the generator is re-run, and the vault page then links into nothing. The reverse direction is open by construction and stays unchecked: a claim outside every topic map is legitimately absent from the index, so absence proves nothing.
 
@@ -158,6 +164,7 @@ The dividing line is the one part 5 draws. Where a rule decides, a script runs i
 - **Whether a page says what the paper says.** The contradictions of 2026-07-26 were found by reading `knowledge/paper.md` against the site, not by any script. Agreement in substance is not decidable by rule, and the four findings of that reading are recorded in `knowledge/journal.md`.
 - **Whether the anchors resolve in the browser.** V8 decides the anchor set from the sources, which is a static reading of what the code would mount. Whether the element actually appears in the DOM depends on the render order, on a fetch that may fail and on the routing that reveals the page, and none of that is visible to a file reader. The check of 2026-07-26 against the rendered DOM, comparing the union of element ids over every page and deep link before and after the refactor, stays the instrument for that question. The routing rebuild of the same day was taken with the second form of it, a local server that answers every non-file path with `404.html` under HTTP 404 as GitHub Pages does, driven by a headless browser over every published subpath form and two unresolvable paths, and read off the page host that carries `is-active`.
 - **What V8 cannot see by construction.** An href or an id assembled at run time carries no literal, so a concatenated address is skipped on the reference side and its family is covered by prefix on the declared side. An anchor named outside the sources it reads goes unnoticed, which includes every foreign repository carrying a `template:` URI and every link in a slide deck, a mail or a published PDF; those are exactly the addresses the no-renaming rule protects, and the check cannot enumerate them. A link that resolves to the wrong but existing anchor passes, since only existence is decidable here. The praxis anchors are derived from the raw Markdown heading while the site derives them from the rendered heading, so an inline link or emphasis inside a practice heading would move the real anchor away from the computed one.
+- **That the ports still compute what the browser computes.** `slugify`, the heading-id generator and its collision suffix exist twice, once as JavaScript the site runs and once as a Python rebuild that decides the anchor set of V8. A rebuild drifting from the original reports nothing; it turns V8 into a silent pass, since both sides then agree on an anchor set the browser never mounts. Since 2026-07-31 the script holds a table of input and output pairs read off the JavaScript, covering umlauts, the sharp s, a character outside the alphabet, punctuation runs, a numbered heading at both depths, an override and the collision suffix, and it runs as its own check group. That is a guard rather than a proof of agreement: the table decides the cases it holds, and whether the JavaScript itself still behaves that way stays the browser half of the verification named above.
 - **Why the records are exempt from V9.** A journal entry and an archived audit are correct as of the date they carry. Holding them against today's code would ask a record to stop being a record, and correcting them would falsify the process history the paper rests on. `knowledge/journal.md` is named in the check; the archived audit records and the snapshot report are recognised by their `status`. Two of the archived records additionally cite files of other repositories, which this repository cannot decide at all.
 - **The experience values.** The record's duration and effort figures rest on the operator's memory and cannot be recomputed. They are marked as such where they appear.
 

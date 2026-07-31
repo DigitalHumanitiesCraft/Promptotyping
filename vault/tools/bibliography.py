@@ -69,12 +69,13 @@ Usage:
 from __future__ import annotations
 
 import argparse
-import json
 import re
 import sys
 import unicodedata
 from dataclasses import dataclass, field
 from pathlib import Path
+
+from _vaultmd import load_reference_records
 
 EN_DASH = "–"  # noqa: RUF001 — the page ranges of the section are set with it
 ITALIC_TYPES = frozenset({"book", "standard"})
@@ -106,11 +107,16 @@ class Comparison:
 
 
 def load_records(directory: Path) -> list[dict]:
-    records: list[dict] = []
-    for path in sorted(directory.glob("*.json")):
-        loaded = json.loads(path.read_text(encoding="utf-8"))
-        records.extend(r for r in loaded if isinstance(r, dict))
-    return records
+    """The CSL records of a folder; an unreadable file stops the run by name.
+
+    Rendering the bibliography from a stock that is missing one of its files
+    would silently produce a shorter section than the paper needs, so this
+    caller stops where the validator only records the message.
+    """
+    records, problems = load_reference_records(directory)
+    if problems:
+        raise SystemExit("cannot read the reference stock: " + "; ".join(problems))
+    return [record for _path, record in records]
 
 
 def _fold(text: str) -> str:
@@ -140,13 +146,32 @@ def _display_year(record: dict) -> str:
     return str(_issued_year(record))
 
 
+def _month_name(part: object, record: dict) -> str:
+    """The month a CSL date part names, the record named where it names none.
+
+    A date part outside 1 to 12, or one that is not a number at all, used to end
+    the run in an IndexError or a ValueError that said nothing about which
+    record carried it.
+    """
+    try:
+        index = int(part) - 1
+    except (TypeError, ValueError):
+        index = -1
+    if not 0 <= index < len(MONTHS):
+        raise SystemExit(
+            f"{record.get('id', '(record without id)')}: {part!r} in issued.date-parts "
+            "is not a month between 1 and 12"
+        )
+    return MONTHS[index]
+
+
 def _full_date(record: dict) -> str:
     parts = (record.get("issued") or {}).get("date-parts") or [[]]
     fields = parts[0]
     if len(fields) >= 3:
-        return f"{fields[2]} {MONTHS[int(fields[1]) - 1]} {fields[0]}"
+        return f"{fields[2]} {_month_name(fields[1], record)} {fields[0]}"
     if len(fields) == 2:
-        return f"{MONTHS[int(fields[1]) - 1]} {fields[0]}"
+        return f"{_month_name(fields[1], record)} {fields[0]}"
     return str(fields[0]) if fields else ""
 
 

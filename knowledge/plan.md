@@ -39,7 +39,7 @@ When the paper page is active, the Paper entry in the navigation tree expands in
 Every `Source:` line in a glossary entry (tooltip and register) links to its carriers. The addresses already exist: paper sections as `#abschnitt-{n}-{slug}`, literature entries as `#ref-{surname}-{year}` (A30), vault claims as `#vault-{claim-slug}`, site pages as their page anchors.
 
 - Implementation: replace the free-text `quelle` field in `data/glossar.json` with a structured source list (type plus target anchor plus display text), keep a text fallback for sources without an address; render as links in the tooltip and on the glossary page. `_content/glossar.md` is generated from the JSON and follows.
-- Same package, same nature (existing addresses, missing links): the project names in Table 1 of the rendered paper link to their gallery cards (`#case-{slug}`), raised 2026-07-29. The mapping already exists as the `paper_row` field in `data/case-studies.json`, which V5 holds in both directions; the paper renderer linkifies the first column at render time, so the Markdown source stays plain.
+- Same package, same nature (existing addresses, missing links): the project names in Table 3 of the rendered paper link to their gallery cards (`#case-{slug}`), raised 2026-07-29. The mapping already exists as the `paper_row` field in `data/case-studies.json`, which V5 holds in both directions; the paper renderer linkifies the first column at render time, so the Markdown source stays plain.
 - Dependency: paper-section anchors move at the swap; using anchors plus the alias mechanism (F6) keeps the links stable, so F2 can run before the swap.
 - Operator decision needed: none on the mechanism; per-entry curation happens during implementation and is reviewable in the diff.
 

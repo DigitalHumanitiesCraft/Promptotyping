@@ -9,7 +9,10 @@ rule. The body is fully derivable from the JSON; the frontmatter, the H1 and the
 lead paragraph are not, so they sit in HEADER below and are the only hand-written
 part of the output.
 
-Run from the repository root:  python tools/build_glossar.py
+Every path is resolved from this file, so the working directory does not matter:
+
+    python tools/build_glossar.py
+
 Add --check to compare instead of write; exit code 1 on any difference.
 """
 
@@ -42,11 +45,36 @@ machine-url: https://dhcraft.org/Promptotyping/_content/glossar.md
 Terms of the Promptotyping method and of the methodology site. The authoritative data source is `data/glossar.json`; this file is generated from it and carries the same content. Each entry gives the kind of thing the term names, a short definition for tooltips, a full definition and its sources. A source that this site holds an address for carries it as a hash anchor; the rest stay text. Terms the paper text does not carry are marked as site vocabulary in their source list."""
 
 
-def render_source(source: dict) -> str:
+class EntryError(Exception):
+    """An entry the generator cannot render, named in the message.
+
+    A missing field used to end the run in a bare KeyError, before the check
+    written for that case in check_consistency.py could say which entry was at
+    fault. Every read below therefore names its entry and raises this instead.
+    """
+
+
+def entry_name(entry: dict, position: int) -> str:
+    """What a report calls an entry: its slug, its term, or its position."""
+    return str(entry.get("slug") or entry.get("begriff") or "entry %d" % (position + 1))
+
+
+def field(entry: dict, key: str, position: int) -> object:
+    value = entry.get(key)
+    if not value:
+        raise EntryError("the glossary entry %s carries no %s"
+                         % (entry_name(entry, position), key))
+    return value
+
+
+def render_source(source: dict, where: str) -> str:
     """One source, as a link where it has an anchor and as text where it has none."""
+    text = source.get("text")
+    if not text:
+        raise EntryError("a source of the glossary entry %s carries no text" % where)
     if source.get("anker"):
-        return "[%s](#%s)" % (source["text"], source["anker"])
-    return source["text"]
+        return "[%s](#%s)" % (text, source["anker"])
+    return text
 
 
 def render(entries: list[dict], categories: dict) -> str:
@@ -57,22 +85,27 @@ def render(entries: list[dict], categories: dict) -> str:
     category renders as its word, the way the site renders it beside its mark.
     """
     blocks = [HEADER]
-    for entry in entries:
-        sources = "; ".join(render_source(s) for s in entry["quellen"])
+    for position, entry in enumerate(entries):
+        where = entry_name(entry, position)
+        sources = "; ".join(render_source(s, where)
+                            for s in field(entry, "quellen", position))
+        kategorie = field(entry, "kategorie", position)
         blocks.append(
             "### %s\n\nKind: %s\n\n%s\n\n%s\n\nSource: %s"
             # A category the vocabulary does not name falls through as its own
             # key rather than stopping the generator; check_consistency.py is
             # where that case is reported.
-            % (entry["begriff"], categories.get(entry["kategorie"], entry["kategorie"]),
-               entry["kurz"], entry["voll"], sources)
+            % (field(entry, "begriff", position), categories.get(kategorie, kategorie),
+               field(entry, "kurz", position), field(entry, "voll", position), sources)
         )
     return "\n\n".join(blocks) + "\n"
 
 
 def build() -> str:
     data = json.loads(SOURCE.read_text(encoding="utf-8"))
-    return render(data["eintraege"], data["_meta"]["kategorien"])
+    if not data.get("eintraege"):
+        raise EntryError("%s carries no eintraege list" % SOURCE.name)
+    return render(data["eintraege"], (data.get("_meta") or {}).get("kategorien") or {})
 
 
 def _excerpt(line: str, width: int = 90) -> str:
@@ -98,25 +131,37 @@ def first_difference(expected: str, actual: str) -> str | None:
     return None
 
 
+def read_target() -> str:
+    """The mirror with its line endings normalised.
+
+    check_consistency.py normalises the same way, so a clone that checked the
+    file out with CRLF endings cannot make the two checks contradict each other.
+    """
+    return TARGET.read_text(encoding="utf-8").replace("\r\n", "\n")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--check", action="store_true",
                         help="compare only, write nothing")
     args = parser.parse_args()
 
-    expected = build()
+    try:
+        expected = build()
+    except EntryError as error:
+        print("FAIL: %s" % error, file=sys.stderr)
+        return 1
     if not args.check:
         # newline="" keeps the LF endings the repository stores on every platform.
         TARGET.write_text(expected, encoding="utf-8", newline="")
         print("OK: wrote %s" % TARGET.relative_to(ROOT).as_posix())
         return 0
 
-    actual = TARGET.read_text(encoding="utf-8")
-    difference = first_difference(expected, actual)
+    difference = first_difference(expected, read_target())
     if difference:
-        print("FEHLER: %s is out of date with data/glossar.json"
+        print("FAIL: %s is out of date with data/glossar.json"
               % TARGET.relative_to(ROOT).as_posix(), file=sys.stderr)
-        print("        %s" % difference, file=sys.stderr)
+        print("      %s" % difference, file=sys.stderr)
         return 1
     print("OK: %s matches data/glossar.json" % TARGET.relative_to(ROOT).as_posix())
     return 0
