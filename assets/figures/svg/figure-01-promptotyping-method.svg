@@ -27,13 +27,13 @@
   <rect x="0" y="0" width="960" height="600" fill="#ffffff"/>
 
   <!-- Critical Expert, top centre -->
-  <circle cx="480" cy="56" r="13" fill="#ffffff" stroke="#111111" stroke-width="2.5"/>
-  <circle cx="480" cy="56" r="6" class="disc"/>
-  <text class="n" x="480" y="96" text-anchor="middle">Critical Expert</text>
-  <path class="flow" d="M460,112 L404,242"/>
-  <path class="flow" d="M500,112 L830,193"/>
-  <text class="e" x="408" y="190" text-anchor="end">specifies and revises</text>
-  <text class="e" x="620" y="136">validates and accepts</text>
+  <circle cx="480" cy="80" r="13" fill="#ffffff" stroke="#111111" stroke-width="2.5"/>
+  <circle cx="480" cy="80" r="6" class="disc"/>
+  <text class="n" x="480" y="120" text-anchor="middle">Critical Expert</text>
+  <path class="flow" d="M468,136 L452,244"/>
+  <path class="flow" d="M500,132 L741,240"/>
+  <text class="e" x="448" y="196" text-anchor="end">specifies and revises</text>
+  <text class="e" x="614" y="172">validates and accepts</text>
 
   <!-- Forms of work -->
   <rect class="box" x="16" y="246" width="152" height="104" rx="2"/>
@@ -78,7 +78,7 @@
   <text class="e" x="470" y="426">most frequent return</text>
   <text class="e" x="470" y="466">data understanding revised</text>
   <text class="e" x="470" y="522">sources or conditions revised</text>
-  <text class="n" x="470" y="558">write-back</text>
+  <text class="m" x="470" y="548">write-back</text>
 
   <!-- Legend -->
   <path class="flow" d="M700,520 H746"/>

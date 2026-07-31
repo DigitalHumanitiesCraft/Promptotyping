@@ -7,7 +7,7 @@ status: active
 language: de
 version: 0.9
 created: 2026-05-09
-updated: 2026-07-27
+updated: 2026-07-31
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 method:
@@ -794,3 +794,11 @@ Die Prüfung hat sich gelohnt. Die Synthese trägt die Modellnamen des Datensatz
 **Nachtrag, Zitat-Fit Kapitel 3 bis 5, Apparat vollständig auditiert.** Auf Operator-Anweisung („beauftrage opus sub agents") haben drei weitere Opus-Agents den Rest des Apparats geprüft, die Kapitel-3-Traditionen (Schön, Goldschmidt, Owens, Posner, Stachowiak, Mayr/Thalheim, Galey/Ruecker, Whitelaw), die Capability-Fußnoten (Glazer, Hubert, Becker) und die Projekt-URL-Fußnoten von Kapitel 4. Bericht in `vault/knowledge/citation-fit-sections-3-5-2026-07-31.md`; damit ist die gesamte Literatur des Papers auditiert. Gefixt: die unvollständige Becker-Fußnote (Autoren, arXiv-ID, DOI ergänzt, Fit stark, die 19-Prozent-Verlangsamung wörtlich im Abstract) und der Whitelaw-Eintrag auf den neu vergebenen DHQ-DOI (Auflösung verifiziert). Sechs neue Befunde für Textentscheidungen, voran drei aus den Fallbeschreibungen: das ZBZ-Repo ist privat und für Leser nicht erreichbar (E66 selbst per authentifiziertem Zugriff verifiziert und deckungsgleich), der „entity"-Zustand wurde durch E71 abgeschafft und steht noch im Fallsatz, coOCR/HTR nennt sich „BETA Work in Progress" und nicht „research preview". Dazu Glazer ohne die „rapidly expanding"-Hälfte, die Hubert-Jahresinkonsistenz (2025 online gegen Print-VoR 2026) und die über ihre Quellen hinausreichende Konzeptmodell-Zitation. Vollständige Liste im Bericht.
 
 **Nachtrag, Beispieldatei für die §2.1-Fußnote.** Der revidierte §2.1-Absatz zu den derived project artefacts verweist per Fußnote auf ein reales Beispieldokument im Repo statt auf einen eingebetteten YAML-Block. Angelegt als `_content/examples/derived-project-artefact.md`; das Frontmatter der Datei ist selbst der illustrierte Header (type, derived_from mit data_state und commit, process, tools, generated_at, status), der Rumpf ein fiktives Korpusprofil samt Abgrenzung zur maintained project knowledge. Im MANIFEST als repo-kanonisch registriert, Konsistenz-Checker ohne Befund. Der Paper-Text selbst ist unverändert, der revidierte Absatz liegt noch beim Operator.
+
+### 2026-07-31, Abbildungsrunde — Figur 1 geometrisch nachgeführt
+
+**Rahmen.** Der Operator hat die Verbesserung von `figure-01-promptotyping-method.svg` beauftragt. Die Prüfung lief gegen das gerenderte Bild (Headless-Edge-Screenshot), nicht allein gegen den Quelltext, weil die Schwächen Layoutschwächen waren.
+
+**Befund und Korrektur.** Vier Punkte, alle innerhalb der Spezifikation Revision 2 behoben. Der Autoritätspfeil „validates and accepts" traf exakt die obere linke Ecke des Promptotype-Kastens und liest jetzt als sauberer Eintritt in die linke Kante unterhalb der Ecke. Die Critical-Expert-Gruppe stand zu hoch und ließ eine tote Fläche über der Werkformen-Reihe; sie ist abgesenkt, beide Pfeile setzen später an, „specifies and revises" tritt mittig in die Oberkante von Distillation ein. Beide Pfeilspitzen endeten wenige Pixel vor den Kastenkanten und berühren sie jetzt. Das Gruppenlabel write-back trug mit 17px die Größe eines Kastentitels und steht jetzt in der 13px-Semibold-Klasse der Sekundärtypografie am linken Rand der Label-Spalte.
+
+**Verifiziert.** Rendering nach jeder Änderung geprüft; die Akzeptanzkriterien der Spezifikation halten (sechs Wortlaut-Namen, drei beschriftete Returns auf gemeinsamer linker Kante, genau ein Disc-Mark, genau eine Hervorhebungsfüllung, keine Label-Kollision). Spezifikation und Wortlaut der Labels sind unverändert, ein Spec-Nachzug war nicht nötig.
