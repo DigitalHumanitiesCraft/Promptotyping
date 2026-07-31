@@ -70,7 +70,7 @@ Two audit records live on in the evidence layer regardless. Audits A1 and A2 are
 
 Terms constitutive for this knowledge base. Canonical definitions live in the linked vault knowledge documents; this is the short form relevant here.
 
-**Promptotyping.** Iterative context-engineering method in four phases, Preparation, Exploration & Mapping, Distillation, Implementation, producing research artefacts from data and frontier LLMs. The `knowledge/` folder is the curated knowledge artefact of a project, holding the domain knowledge and the specification the implementation is derived from; its coverage ends where decisions taken during building are not written back into it. A single iteration of a prototype stays cheap to abandon, and what it taught goes into the documents.
+**Promptotyping.** Iterative context-engineering method organised around four recurrent forms of work, Preparation, Exploration, Distillation, Implementation, producing research artefacts from data and frontier LLMs. The `knowledge/` folder is the curated knowledge artefact of a project, holding the domain knowledge and the specification the implementation is derived from; its coverage ends where decisions taken during building are not written back into it. A single iteration of a prototype stays cheap to abandon, and what it taught goes into the documents.
 
 **Promptotyping Document.** Structured Markdown document in a repository's `knowledge/` folder. All of them are Knowledge Documents, specialised by the kind of knowledge they carry into three analytical types, Declarative (subject matter), Process (chronological), Action (imperative). Until July 2026 the declarative type itself was called Knowledge Document; the name moved to the umbrella term.
 

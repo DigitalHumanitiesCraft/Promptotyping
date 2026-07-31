@@ -176,9 +176,9 @@ Source: Site vocabulary, not carried in the paper text; [Best Practices, demo re
 
 Kind: Form of work
 
-Phase and writing principle of context compression, maximum information with minimum tokens.
+Third of the four recurrent forms of work, pragmatic modelling that selects and organises the project knowledge implementation proceeds from.
 
-Distillation is the third Promptotyping phase and at the same time the writing principle of the Promptotyping Documents, context compression aimed at maximum information with minimum tokens. It compresses what Exploration taught into the document set. The compression is not neutral; encoding decisions are epistemic decisions that determine what information will be available to all downstream steps. Context rot supplies the technical rationale. The phase ends when a new agent instance, given only the documents and the data, could take up the project's logic.
+Distillation is the third of Promptotyping's four recurrent forms of work and the principal documentary operation of Context Engineering. It translates what Preparation and Exploration taught into the document set. This is pragmatic modelling, a selective representation for particular addressees at a particular point in the project; the intellectual work lies in deciding which distinctions, constraints, uncertainties, examples and exceptions must remain available for implementation and verification, and it is not reducible to summarisation or token minimisation. Encoding decisions are epistemic decisions that determine what information will be available to all downstream steps, and context rot supplies a technical rationale for selection. The work is provisionally sufficient when a new agent instance, given the documents and access to the data, could take up the project's logic.
 
 Source: [Paper, Section 2.2](#abschnitt-2-2-forms-of-work-and-iteration); [Hong et al. 2025](#ref-hong-2025)
 
@@ -196,9 +196,9 @@ Source: Site vocabulary, not carried in the paper text; Vault Epistemic Infrastr
 
 Kind: Form of work
 
-Second Promptotyping phase, probing the interface between data and research context and documenting the dead ends.
+Second of Promptotyping's four recurrent forms of work, probing the interface between data and research context and documenting the dead ends.
 
-Exploration is the second Promptotyping phase, formerly called Exploration and Mapping on the site. It probes the interface between data and research context under the guiding question whether the abstract research question can be mapped concretely onto the available data structure. The researcher inspects the data, scripts written for the purpose traverse the corpus and render compact aggregations, and the LLM generates mapping hypotheses that are evaluated against domain criteria. Understanding what the data cannot support is as valuable as knowing what is possible. The phase ends with a documented understanding of what is feasible, what is not and why, and it is skipped where the data is familiar and Preparation has settled these questions.
+Exploration is the second of Promptotyping's four recurrent forms of work, formerly called Exploration and Mapping on the site. It probes the interface between data and research context under the guiding question whether the abstract research question can be mapped concretely onto the available data structure. The researcher inspects the data, scripts written for the purpose traverse the corpus and render compact aggregations, and the LLM generates mapping hypotheses that are evaluated against domain criteria. Understanding what the data cannot support is as valuable as knowing what is possible. It is provisionally sufficient with a documented understanding of what is feasible, what is not and why, and it is skipped where the data is familiar and Preparation has settled these questions.
 
 Source: [Paper, Section 2.2](#abschnitt-2-2-forms-of-work-and-iteration)
 
@@ -216,9 +216,9 @@ Source: [Templates, machine access](#vorlagen-maschinenzugriff); knowledge/speci
 
 Kind: Form of work
 
-Fourth Promptotyping phase, iterative development with the Promptotyping Documents as context.
+Fourth of Promptotyping's four recurrent forms of work, iterative development with the Promptotyping Documents as context.
 
-Implementation is the fourth Promptotyping phase. The document set is handed to an agentic coding tool operating inside the project repository, and the researcher steers the generation of code through structured context and evaluative feedback. Three mechanisms carry the loop, deterministic feedback from schema validation, test suites and builds, visual feedback from screenshots of the running artefact, and expert feedback from domain judgement. When the artefact is wrong, the specification was wrong or incomplete, and it is the specification that is fixed; new knowledge goes back into the documents, which thereby stay living artefacts.
+Implementation is the fourth of Promptotyping's four recurrent forms of work. The document set is handed to an agentic coding tool operating inside the project repository, and the researcher steers the generation of code through structured context and evaluative feedback. Three mechanisms carry the loop, deterministic feedback from schema validation, test suites and builds, visual feedback from screenshots of the running artefact, and expert feedback from domain judgement. When the artefact is wrong, the specification was wrong or incomplete, and it is the specification that is fixed; new knowledge goes back into the documents, which thereby stay living artefacts.
 
 Source: [Paper, Section 2.2](#abschnitt-2-2-forms-of-work-and-iteration)
 
@@ -296,9 +296,9 @@ Source: knowledge/specification.md, ADR-4 (removed feature)
 
 Kind: Form of work
 
-First Promptotyping phase, collecting all raw materials before technical decisions are made.
+First of Promptotyping's four recurrent forms of work, collecting all raw materials before technical decisions are made.
 
-Preparation is the first Promptotyping phase. All relevant materials are collected before technical decisions are made, research data in original formats, documentation of standards and data models, research questions and domain knowledge. The phase typically begins with requirements engineering, articulating user stories and mapping data to questions. Vagueness at this point cascades through all subsequent phases. It ends when the repository structure exists, the source data is accessible and initial requirements are documented.
+Preparation is the first of Promptotyping's four recurrent forms of work. All relevant materials are collected before technical decisions are made, research data in original formats, documentation of standards and data models, research questions and domain knowledge. The work typically begins with requirements engineering, articulating user stories and mapping data to questions. Vagueness at this point cascades through all subsequent work. It ends when the repository structure exists, the source data is accessible and initial requirements are documented.
 
 Source: [Paper, Section 2.2](#abschnitt-2-2-forms-of-work-and-iteration)
 
@@ -316,9 +316,9 @@ Source: [Paper, Section 2.1](#abschnitt-2-1-promptotyping-and-the-project-knowle
 
 Kind: Form of work
 
-Iterative, document-driven context-engineering method in four phases that translates research data into research artefacts.
+Iterative, document-driven context-engineering method organised around four recurrent forms of work that translates research data into research artefacts.
 
-Promptotyping is an iterative, document-driven context-engineering method in four phases (Preparation, Exploration, Distillation, Implementation) with which researchers translate their structured research data into research artefacts. Its working material is a small set of versioned Markdown documents carrying requirements, data descriptions and design decisions, from which an LLM-supported agent derives the artefact. The documents are what the method maintains, and the artefact is regenerated from them. What separates it from vibe coding is the structured preparation, the persistent documents and the verification at defined checkpoints.
+Promptotyping is an iterative, document-driven context-engineering method organised around four recurrent forms of work (Preparation, Exploration, Distillation, Implementation) with which researchers translate their structured research data into research artefacts. Its working material is a small set of versioned Markdown documents carrying requirements, data descriptions and design decisions, from which an LLM-supported agent derives the artefact. The documents are what the method maintains, and the artefact is regenerated from them. What separates it from vibe coding is the structured preparation, the persistent documents and the verification at defined checkpoints.
 
 Source: [Paper, Section 2.2](#abschnitt-2-2-forms-of-work-and-iteration); [Vault: the four-phase context-engineering technique](#vault-promptotyping-is-a-four-phase-context-engineering-technique); knowledge/INDEX.md
 

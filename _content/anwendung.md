@@ -1,5 +1,5 @@
 ---
-title: Application. The four phases resolved into actions
+title: Application. The four forms of work resolved into actions
 slug: anwendung
 status: complete
 language: en
@@ -12,7 +12,7 @@ machine-url: https://dhcraft.org/Promptotyping/_content/anwendung.md
 
 # Application
 
-The method's unit of work is a small set of Markdown documents that are the specification of the artefact, versioned in the git history of the project repository. The central loop iterates over these documents, and the implementation is derived from them. This page resolves the four phases into actions, with entry condition, steps, stopping criterion and the documents that arise along the way. Why the method is built this way and what it can be measured against stands in the [paper](#paper).
+The method's unit of work is a small set of Markdown documents that are the specification of the artefact, versioned in the git history of the project repository. The central loop iterates over these documents, and the implementation is derived from them. This page resolves the four forms of work into actions, with entry condition, steps, stopping criterion and the documents that arise along the way. Why the method is built this way and what it can be measured against stands in the [paper](#paper).
 
 ## Preparation
 
@@ -83,10 +83,10 @@ Re-entry goes into whichever phase the new knowledge belongs to.
 - A finding that the data affords more or less than assumed sends it back into Exploration.
 - Sources that arrive later send it back into Preparation.
 
-A single pass through the four phases is the exception.
+A single pass through the four forms of work is the exception.
 
 ## Two modes
 
-The method has two modes of operation, distinguished by how the work is organised and independent of project size. The default is a single researcher with a single agent instance. In complex projects the work itself acquires the structure of a research organisation, with parallel tasks, differentiated roles and formalised handovers; there a lead instance coordinates sub-agents with defined permissions and knowledge zones, and the methodological burden shifts from steering one agent to designing a small team. The four phases apply in both forms. The documented experience lies overwhelmingly with the first, and the durability of sustained multi-agent monitoring is an open question.
+The method has two modes of operation, distinguished by how the work is organised and independent of project size. The default is a single researcher with a single agent instance. In complex projects the work itself acquires the structure of a research organisation, with parallel tasks, differentiated roles and formalised handovers; there a lead instance coordinates sub-agents with defined permissions and knowledge zones, and the methodological burden shifts from steering one agent to designing a small team. The four forms of work apply in both modes. The documented experience lies overwhelmingly with the first, and the durability of sustained multi-agent monitoring is an open question.
 
 Scaling runs across both modes. The more complex the domain, the more structure the organisation of knowledge needs, and the distilled document set grows with the project. Verification discipline through the Critical Expert in the Loop is untouched by this.

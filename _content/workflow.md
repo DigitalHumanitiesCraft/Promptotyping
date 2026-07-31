@@ -12,7 +12,7 @@ machine-url: https://dhcraft.org/Promptotyping/_content/workflow.md
 
 # Worked workflow
 
-A completed case, from raw data to the running artefact, recorded as a screencast of one working session. The starting material is a large set of Excel files from a public reporting system, and the result is a static dashboard. The case is a didactic base case without a public repository, chosen because it shows the loop in full, and it solves no difficult research problem. The two videos are [part 1 on the method and the four phases](https://youtu.be/8sUe4Jkh3uQ) and [part 2 with the continuous demonstration](https://youtu.be/hd_a-NBO_S4).
+A completed case, from raw data to the running artefact, recorded as a screencast of one working session. The starting material is a large set of Excel files from a public reporting system, and the result is a static dashboard. The case is a didactic base case without a public repository, chosen because it shows the loop in full, and it solves no difficult research problem. The two videos are [part 1 introducing the method](https://youtu.be/8sUe4Jkh3uQ) and [part 2 with the continuous demonstration](https://youtu.be/hd_a-NBO_S4).
 
 ## Preparation
 
