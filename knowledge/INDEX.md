@@ -5,9 +5,9 @@ project:
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 status: complete
 language: en
-version: 0.9
+version: 1.0
 created: 2026-05-09
-updated: 2026-07-29
+updated: 2026-07-30
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5, Claude Opus 5)
 method:
@@ -18,7 +18,7 @@ template:
   version: 0.2
   url: https://dhcraft.org/Promptotyping/promptotyping-document/index
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-index
-related: [project, specification, architecture, design, journal, plan, paper, paper-draft, paper-knowledge, paper-writing, verification-draft-sources, paper-argument-map, report, submission-zfdg, revision, skriptum-video-1, skriptum-video-2]
+related: [project, specification, architecture, design, journal, plan, paper, paper-knowledge, paper-argument-map, report, submission-zfdg, skriptum-video-1, skriptum-video-2]
 ---
 
 # INDEX
@@ -27,7 +27,7 @@ Navigation and glossary of this repository's knowledge base. The repository `Dig
 
 ## Language regime
 
-By operator decision of 2026-07-23 the core knowledge documents (INDEX, project, specification, architecture, design) are English, since they are the public showcase of the self-application. The process and steering documents stay German as working instruments, which covers journal, paper-writing, paper-argument-map, report, submission-zfdg, the two video scripts, and revision. The `template:` frontmatter blocks keep the German template names until the template catalogue itself renames them in the vault; the glossary below gives the English function names.
+By operator decision of 2026-07-23 the core knowledge documents (INDEX, project, specification, architecture, design) are English, since they are the public showcase of the self-application; `paper-knowledge.md` is English since the operator's refactor of 2026-07-29. The process documents stay German as working instruments, which covers journal, paper-argument-map, report, submission-zfdg, and the two video scripts. The `template:` frontmatter blocks keep the German template names until the template catalogue itself renames them in the vault; the glossary below gives the English function names.
 
 ## Status vocabulary
 
@@ -42,27 +42,20 @@ By operator decision of 2026-07-23 the core knowledge documents (INDEX, project,
 - **[verification.md](verification.md)** — which claims the site makes about itself, what each is checked against, by what procedure and with what verdict; the automatic part runs as `tools/check_consistency.py` (function: Verification).
 - **[design.md](design.md)** — how the site looks and behaves: DHCraft design system, side panels, typography (function: Design).
 - **[journal.md](journal.md)** — chronological process record, German (function: Provenance).
-- **[paper.md](paper.md)** — the full English paper text as one document, the canonical text after the revision rounds of 2026-07-24 and 2026-07-25; headerless by design for copy-out. The site renders this file directly, so the deployed text is the canonical text.
-- **[paper-writing.md](paper-writing.md)** — what holds for the paper text: working mode, core statements, section mirror, the language rule catalogue, the binding decisions by subject, open decisions and checkpoints, and the route to submission. German. It deliberately carries no history; the course of the work is in `journal.md` and in the git history. Its opening note records the transitional regime of 2026-07-29.
-- **[paper-draft.md](paper-draft.md)** — the operator's externally revised manuscript (Fassung 4, intake 2026-07-30), a condensation of the integrated final version of 2026-07-29. Five chapters, sanitised, verified, literature-anchored, and repaired after the operator's external review; the working record of that round is consolidated in `revision-2026-07-30.md`, the full reports live commit-pinned in git history. It becomes `paper.md` when the operator's acceptance has run to the end; until then the site keeps rendering the canonical file.
-- **[paper-knowledge.md](paper-knowledge.md)** — the canonical knowledge document governing the final manuscript candidate: argument, terminology, canonical definitions, checking architecture, evidence policy, quality-assurance checklists, and the open work blocks including the repository transition tasks. English since the operator's refactor of 2026-07-29.
-- **[verification-draft-sources.md](verification-draft-sources.md)** — verdict table for the draft's 2025 and 2026 sources, one row per work with the check that ran and what it found. German.
-- **[paper-argument-map.md](paper-argument-map.md)** — the concept model of the paper, one argument chain per block in compact notation with confirmation status, German. Serves the operator as a review instrument and an agent as a generation basis.
+- **[paper.md](paper.md)** — the full English paper text as one document, five chapters, promoted on 2026-07-30 from the operator's externally revised, sanitised, verified, and literature-anchored manuscript; headerless by design for copy-out. The site renders this file directly, so the deployed text is the canonical text.
+- **[paper-knowledge.md](paper-knowledge.md)** — the single steering document of the paper: argument, terminology, canonical definitions, checking architecture, evidence policy, language rules, apparatus conventions, submission route, operator decisions, open flags, and the provenance pins of every consolidated predecessor (`paper-writing.md`, `revision.md`, `revision-2026-07-30.md`, `verification-draft-sources.md`). English.
+- **[paper-argument-map.md](paper-argument-map.md)** — the concept model of the seven-chapter text, one argument chain per block in compact notation with confirmation status, German. Historical since the promotion; a re-derivation against the five-chapter text is open.
 - **[skriptum-video-1.md](skriptum-video-1.md)** and **[skriptum-video-2.md](skriptum-video-2.md)** — the cleaned scripts of the two introductory videos, German. They are the source from which the worked-workflow page was written and, through their representations in the vault, the ground of the claims that rest on the videos.
 - **[plan.md](plan.md)** — the frontend work packages agreed on 2026-07-29, F1 to F9 with scope, specification impact, and pending operator decisions per package, plus the state section of the execution run of the same night (function: Planning).
 - **[report.md](report.md)** — snapshot report of the lane run towards the ZfdG submission (2026-07-23), German; carries a dated addendum on what the revision round settled and is not otherwise updated.
 - **[submission-zfdg.md](submission-zfdg.md)** — submission package for the Zeitschrift für digitale Geisteswissenschaften: exposé with outline and literature selection, short abstracts in German and English, formalities checklist; German.
-- **[revision.md](revision.md)** — the revision round in one document, since the consolidation of 2026-07-26. It carries the steering knowledge that binds future review commissions, what was carried into the paper and where it now sits, the evidence layer with its counting methods and provenance grades, the negative findings that protect the text from being weakened, and what stayed open; German (function: Verification).
+The paper work follows a two-document model, the text in `paper.md` and the knowledge about it in `paper-knowledge.md`. The two-track transitional regime of 2026-07-29/30 ended with the promotion of 2026-07-30. A `data.md` deliberately does not exist; the Material template does not carry for method repositories, and the material basis lives in `project.md` (journal entry of 2026-05-09).
 
-The paper work follows a two-document model, the text in `paper.md` and the knowledge about it in `paper-writing.md`; the argument map is the third, optional layer over both. Since 2026-07-29 a transitional second track runs beside it, the draft in `paper-draft.md` steered by `paper-knowledge.md`, and the two tracks merge when the draft replaces the canonical text. A `data.md` deliberately does not exist; the Material template does not carry for method repositories, and the material basis lives in `project.md` (journal entry of 2026-05-09).
+### The revision rounds
 
-### The revision round
+Two revision rounds ran on the paper in July 2026 and were each consolidated and deleted. The round on the seven-chapter text was consolidated into `revision.md` on 2026-07-26 (its nine working records pinned at `07a736c`); the round on the operator's externally revised manuscript was consolidated into `revision-2026-07-30.md` (its six working reports pinned in that document). With the promotion of 2026-07-30 both consolidations were absorbed into `paper-knowledge.md`, whose closing provenance section carries every pin; the deleted documents' full wording lives in git history at `7138d2a`, the last commit that carries them.
 
-Nine working records of the revision round that ran on the finished draft in July 2026 were consolidated into [revision.md](revision.md) on 2026-07-26 and deleted. That document now carries the steering knowledge that binds future review commissions, every finding with its origin and its checked implementation state, the evidence layer with its counting methods, and the open points. The wording of a single record is in the git history at commit `07a736c`, the last state that carries them.
-
-Two of them live on in the evidence layer regardless. Audits A1 and A2 are ingested into `vault/` as commit-pinned representations with distillates, and three claims rest on them; a pinned anchor points at a commit rather than at a present path, which is why the deletion left the chain intact.
-
-The `revision-decisions.md` that the process description of the round foresaw never entered the repository; the operator decisions were taken in chat and recorded in the commit messages and in `paper-writing.md`.
+Two audit records live on in the evidence layer regardless. Audits A1 and A2 are ingested into `vault/` as commit-pinned representations with distillates, and three claims rest on them; a pinned anchor points at a commit rather than at a present path, which is why the deletion left the chain intact.
 
 ## Reading order
 
@@ -72,9 +65,7 @@ The `revision-decisions.md` that the process description of the round foresaw ne
 4. **architecture.md** (how it is built)
 5. **design.md** (how it looks)
 6. **journal.md** (what happened)
-7. **paper-writing.md** (state and steering of the paper work, leading into **paper.md**)
-8. **paper-argument-map.md** (the paper's argument in compact notation, for review or regeneration)
-9. **revision.md** (what the revision round settled and what it left open)
+7. **paper-knowledge.md** (steering of the paper work, leading into **paper.md**)
 
 
 ## Glossary

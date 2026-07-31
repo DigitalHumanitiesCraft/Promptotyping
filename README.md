@@ -16,7 +16,7 @@ The full argument is the method paper; an overview is at [dhcraft.org/Promptotyp
 
 **Pollin, Christopher: Promptotyping. Translating Research Data into Research Artefacts through Context Engineering and Agentic Engineering** (in preparation).
 
-The complete current text is a single Markdown document, [knowledge/paper.md](knowledge/paper.md), written and revised in this repository; [knowledge/paper-writing.md](knowledge/paper-writing.md) holds everything decided, checked, and still open about it, and the Grounded Vault under [vault/](vault/) anchors its supporting claims in sources. The interactive site renders that file directly as a reading flow with inline glossary, so the deployed text is the current text. A revised manuscript is in transitional chapter-wise acceptance in [knowledge/paper-draft.md](knowledge/paper-draft.md), steered by [knowledge/paper-knowledge.md](knowledge/paper-knowledge.md); it replaces the canonical file when that acceptance completes.
+The complete current text is a single Markdown document, [knowledge/paper.md](knowledge/paper.md), written and revised in this repository; [knowledge/paper-knowledge.md](knowledge/paper-knowledge.md) holds everything decided, checked, and still open about it, and the Grounded Vault under [vault/](vault/) anchors its supporting claims in sources. The interactive site renders that file directly as a reading flow with inline glossary, so the deployed text is the current text. The five-chapter manuscript was promoted on 2026-07-30 from the author's revised and verified draft; the consolidated working records of that revision live in the git history.
 
 ## Videos
 
@@ -26,7 +26,7 @@ Two introductions to the method (German): the methodology explainer [Promptotypi
 
 | Content | Location | On the site |
 |---|---|---|
-| Method paper (English, in progress) | [knowledge/paper.md](knowledge/paper.md), steering in [knowledge/paper-writing.md](knowledge/paper-writing.md) | [#paper](https://dhcraft.org/Promptotyping/#paper) |
+| Method paper (English, in progress) | [knowledge/paper.md](knowledge/paper.md), steering in [knowledge/paper-knowledge.md](knowledge/paper-knowledge.md) | [#paper](https://dhcraft.org/Promptotyping/#paper) |
 | Evidence layer of the paper (Grounded Vault) | [vault/](vault/) | — |
 | Promptotyping Document templates | [_content/promptotyping-document/](_content/promptotyping-document/) | [#vorlagen](https://dhcraft.org/Promptotyping/#vorlagen) |
 | Convention (frontmatter schema, structure) | [_content/konvention.md](_content/konvention.md) | [#konvention-v0.1](https://dhcraft.org/Promptotyping/#konvention-v0.1) |
