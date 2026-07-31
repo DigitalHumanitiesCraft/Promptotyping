@@ -5,9 +5,9 @@ project:
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 status: complete
 language: en
-version: 0.8
+version: 0.9
 created: 2026-05-09
-updated: 2026-07-29
+updated: 2026-07-31
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Opus 4.8)
 method:
@@ -45,7 +45,7 @@ Two reasons carry that stance. Reading is the primary function; a scholarly pape
 
 ### Colour
 
-The permitted palette is fixed. Six core tokens plus four general grey accents, nothing else.
+The permitted palette is fixed. Five core tokens plus three general grey accents, and beyond them only the three overlay tokens of the floating surfaces, which are specified under Dark theme.
 
 ```
 --bg:        #ffffff   background
@@ -56,10 +56,9 @@ The permitted palette is fixed. Six core tokens plus four general grey accents, 
 --grey-1:    #2a2a2a   darkest grey accent (error state)
 --grey-2:    #525252   secondary text (dominant grey: TOC, captions, meta)
 --grey-3:    #8a8a8a   muted grey (loading, separators)
---grey-4:    #b8b8b8   lightest grey (reserved, currently unused)
 ```
 
-Both reconciliation flags this document used to carry are settled. The four grey tokens are named `--grey-1` to `--grey-4`, and the glossary underline is `#8a8a8a`.
+The glossary underline keeps its own token name, `--glossar-underline`, because it is a separate decision from the grey scale; it resolves to `var(--grey-3)` in both themes and therefore holds no value of its own.
 
 ### Colour that carries meaning
 
@@ -99,12 +98,12 @@ The stylesheet resolves every colour through a token, so the theme is a token sw
 ```
 --bg #131313   --text #e9e9e9   --accent #3d3d3d
 --border #2e2e2e   --code-bg #1c1c1c
---grey-1 #d4d4d4   --grey-2 #a6a6a6   --grey-3 #7d7d7d   --grey-4 #5a5a5a
+--grey-1 #d4d4d4   --grey-2 #a6a6a6   --grey-3 #7d7d7d
 ```
 
 The five function hues lighten in the dark theme so they keep their contrast against `#131313`. The watercolour footer mark is dimmed to 85 per cent rather than shipped as a second file.
 
-Subtle overlay shadows exist on floating surfaces and are part of the system: the side panel carries `-2px 0 12px rgba(0,0,0,0.06)`, tooltips carry `0 2px 8px rgba(0,0,0,0.08)`, and the mobile backdrop dims with `rgba(0,0,0,0.3)`. Cards carry no shadow.
+Floating surfaces carry a subtle overlay, and it runs through tokens like every other colour, `--shadow-panel` on the side panel, `--shadow-tooltip` on the tooltip, `--backdrop` behind the open panel. The geometry holds in both themes, `-2px 0 12px` and `0 2px 8px`. The shadow colour flips, because black at six per cent over `#131313` shows nothing; the light theme casts black at six and eight per cent, the dark theme casts white at the same two values. The backdrop deepens from thirty to sixty per cent black, where the dimming shows on the light text it covers. Cards carry no shadow.
 
 ### Typography
 
@@ -182,7 +181,7 @@ The right-hand panel slides in from the right on a trigger.
 
 ### Mobile bottom sheet
 
-Below 768px the panel becomes a bottom sheet: full width, `max-height: 80vh`, a top border-radius of 0.5rem, and a `::before` drag handle (2.5rem by 0.25rem, `--border` fill). It slides up via `translateY` and the backdrop dims the content with `rgba(0,0,0,0.3)`.
+Below 860px the panel becomes a bottom sheet: full width, `max-height: 80vh`, a top border-radius of 0.5rem, and a `::before` drag handle (2.5rem by 0.25rem, `--border` fill). It slides up via `translateY` and the backdrop dims the content with `--backdrop`.
 
 ## Interaction patterns
 
@@ -194,10 +193,9 @@ Glossary-defined terms render with a dotted grey underline (`1px dotted var(--gl
 
 The method section of the reading flow renders a table of all mirrored templates (catalogue and function names follow the Vault convention, English since 2026-07-19). Rows carry `.vorlage-row`, are clickable and keyboard-focusable, and open the side panel with the full template spec; the focus-visible state draws a 2px outline.
 
-The Vorlagen hub adds three silent styling blocks:
+The Vorlagen hub adds two silent styling blocks:
 
-- `.vorlagen-subnav`: a text sub-navigation with `#525252` links and a middot separator between items.
-- `.vorlagen-block`: an additive sub-anchor block with `scroll-margin-top` clear of the sticky header and a top margin of 3rem.
+- `.vorlagen-block`: an additive sub-anchor block with a top margin of 3rem. Its clearance below the sticky header comes from the one global rule over `[id]`, so the block states no `scroll-margin-top` of its own.
 - `.vorlagen-tb-links`: a wrapping link row at 0.875rem.
 
 ### Case-study cards

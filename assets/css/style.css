@@ -62,12 +62,21 @@
   --accent: #d5d5d5;
   --border: #e0e0e0;
   --code-bg: #f5f5f5;
-  --glossar-underline: #8a8a8a;
 
   /* General grey accents, carrying no categorical meaning. */
   --grey-1: #2a2a2a;
   --grey-2: #525252;
   --grey-3: #8a8a8a;
+
+  /* Same value as the muted grey, kept as its own name because the glossary
+     underline is a separate decision from the grey scale. */
+  --glossar-underline: var(--grey-3);
+
+  /* Floating surfaces. The geometry stays the same in both themes; only the
+     shadow colour flips, because black on a dark ground shows nothing. */
+  --shadow-panel: -2px 0 12px rgba(0, 0, 0, 0.06);
+  --shadow-tooltip: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --backdrop: rgba(0, 0, 0, 0.3);
 
   /* Epistemic function hues. The five interface categories of paper section
      4.2 are a nominal scale with five values, and hue is the visual variable
@@ -122,10 +131,13 @@
     --accent: #3d3d3d;
     --border: #2e2e2e;
     --code-bg: #1c1c1c;
-    --glossar-underline: #7d7d7d;
     --grey-1: #d4d4d4;
     --grey-2: #a6a6a6;
     --grey-3: #7d7d7d;
+    --glossar-underline: var(--grey-3);
+    --shadow-panel: -2px 0 12px rgba(255, 255, 255, 0.06);
+    --shadow-tooltip: 0 2px 8px rgba(255, 255, 255, 0.08);
+    --backdrop: rgba(0, 0, 0, 0.6);
     --fn-exploration: #4fbf8f;
     --fn-capture: #b7c94a;
     --fn-edition: #e8bf50;
@@ -140,10 +152,13 @@
   --accent: #3d3d3d;
   --border: #2e2e2e;
   --code-bg: #1c1c1c;
-  --glossar-underline: #7d7d7d;
   --grey-1: #d4d4d4;
   --grey-2: #a6a6a6;
   --grey-3: #7d7d7d;
+  --glossar-underline: var(--grey-3);
+  --shadow-panel: -2px 0 12px rgba(255, 255, 255, 0.06);
+  --shadow-tooltip: 0 2px 8px rgba(255, 255, 255, 0.08);
+  --backdrop: rgba(0, 0, 0, 0.6);
   --fn-exploration: #4fbf8f;
   --fn-capture: #b7c94a;
   --fn-edition: #e8bf50;
@@ -398,6 +413,13 @@ a:hover {
   color: var(--grey-2);
 }
 
+/* The tree is one flat list per group run, with a gap between the runs and no
+   label over them. The gap is what lets the pages that answer the same kind of
+   question read as belonging together. */
+.docs-nav ul.docs-nav-run + ul.docs-nav-run {
+  margin-top: var(--space-6);
+}
+
 /* ---- Sub-navigation in the tree ----
    The parts of the specification and the sections of the paper stand
    permanently under their entry. Nothing opens or closes; the scrollspy moves
@@ -444,6 +466,13 @@ a:hover {
   margin-top: 0;
 }
 
+/* 404.html is a stub with a body of its own rather than the site shell. */
+.not-found-body {
+  max-width: var(--read-width);
+  margin: 0 auto;
+  padding: var(--space-16) var(--space-6);
+}
+
 /* ---- The parts of the specification ----
    Five sections of one page since the merge of F9, each from its own substrate
    and each carrying its own status line. The rule separates them the way a
@@ -483,10 +512,6 @@ a:hover {
   line-height: 1.45;
 }
 
-.spec-part.is-reference table {
-  font-size: 0.875rem;
-}
-
 .doc-page.is-reference h2 {
   font-size: 1.5rem;
   margin-top: var(--space-8);
@@ -501,7 +526,8 @@ a:hover {
   margin-bottom: var(--space-2);
 }
 
-.doc-page.is-reference table {
+.doc-page.is-reference table,
+.spec-part.is-reference table {
   font-size: 0.875rem;
 }
 
@@ -741,10 +767,6 @@ a:hover {
    The paper is the longest page and its only entry into its own structure.
    Two levels, quiet, static; the removed on-this-page rail is not coming back. */
 
-.paper-section {
-  scroll-margin-top: calc(var(--header-height) + var(--space-4));
-}
-
 .paper-toc {
   margin: 0 0 var(--space-12);
   padding: var(--space-4) 0 var(--space-8);
@@ -832,6 +854,42 @@ a:hover {
   font-size: 0.875rem;
 }
 
+/* ---- Paper figures ----
+   Black line drawings on white. In the dark theme they are inverted rather
+   than shipped twice, which holds because they carry no hue; a coloured
+   figure would need its own file. */
+
+.paper-figure {
+  margin: var(--space-12) 0;
+}
+
+.paper-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.paper-figure figcaption {
+  margin-top: var(--space-4);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--grey-2);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .paper-figure img {
+    filter: invert(1);
+  }
+}
+
+:root[data-theme="dark"] .paper-figure img {
+  filter: invert(1);
+}
+
+:root[data-theme="light"] .paper-figure img {
+  filter: none;
+}
+
 /* ---- Side panel ----
    Slides in from the right on a trigger. One reusable shell driven by
    openSidePanel() in app.js; the mobile bottom sheet is in the responsive
@@ -846,7 +904,7 @@ a:hover {
   max-width: 90vw;
   background: var(--bg);
   border-left: 1px solid var(--border);
-  box-shadow: -2px 0 12px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--shadow-panel);
   transform: translateX(100%);
   transition: transform 200ms ease-out;
   z-index: 25;
@@ -895,7 +953,7 @@ a:hover {
 .side-panel-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.3);
+  background: var(--backdrop);
   opacity: 0;
   transition: opacity 200ms ease-out;
   pointer-events: none;
@@ -973,7 +1031,7 @@ a:hover {
   z-index: 30;
   background: var(--bg);
   border: 1px solid var(--accent);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-tooltip);
   padding: var(--space-2) var(--space-4);
   font-size: 0.8125rem;
   max-width: 300px;
@@ -1066,6 +1124,35 @@ a:hover {
 .glossar-quelle a,
 .glossar-tooltip-quelle a {
   color: inherit;
+}
+
+/* The tooltip carries the whole glossary interaction since the side panel left
+   the reading flow: term, short definition, and the way to the full entry. */
+.glossar-tooltip-term {
+  display: block;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: var(--space-1);
+}
+
+/* In the tooltip the category stands on its own line between term and
+   definition; nothing else there is a block. */
+.glossar-tooltip .glossar-kategorie {
+  display: flex;
+  margin-bottom: var(--space-1);
+}
+
+.glossar-tooltip-quelle {
+  margin: var(--space-2) 0 0;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: var(--grey-2);
+}
+
+.glossar-tooltip-more {
+  display: block;
+  margin-top: var(--space-2);
+  font-size: 0.8125rem;
 }
 
 /* ---- Term index ----
@@ -1405,6 +1492,8 @@ a:hover {
   position: relative;
 }
 
+/* Deliberate override of the text-button `background: none`: the button sits on
+   the code block it copies, so it needs an opaque fill of its own. */
 .code-copy {
   position: absolute;
   top: var(--space-2);
@@ -1724,12 +1813,11 @@ a:hover {
   padding: var(--space-8) 0;
 }
 
-/* 404 error message, revealed by the routing prelude. */
-#error-message {
-  display: none;
-  max-width: var(--read-width);
-  margin: calc(var(--header-height) + var(--space-12)) auto var(--space-8);
-  padding: 0 var(--space-8);
+/* Empty span holding a superseded anchor at its target; it takes no space. */
+.anchor-alias {
+  display: inline;
+  width: 0;
+  height: 0;
 }
 
 /* ============================================================
@@ -1839,90 +1927,4 @@ a:hover {
     margin: var(--space-2) auto var(--space-1);
     flex-shrink: 0;
   }
-}
-
-/* The tree is one flat list per group run, with a gap between the runs and no
-   label over them. The gap is what lets the pages that answer the same kind of
-   question read as belonging together. */
-.docs-nav ul.docs-nav-run + ul.docs-nav-run {
-  margin-top: var(--space-6);
-}
-
-/* 404.html is a stub with a body of its own rather than the site shell. */
-.not-found-body {
-  max-width: var(--read-width);
-  margin: 0 auto;
-  padding: var(--space-16) var(--space-6);
-}
-
-/* Empty span holding a superseded anchor at its target; it takes no space. */
-.anchor-alias {
-  display: inline;
-  width: 0;
-  height: 0;
-}
-
-/* ---- Paper figures ----
-   Black line drawings on white. In the dark theme they are inverted rather
-   than shipped twice, which holds because they carry no hue; a coloured
-   figure would need its own file. */
-
-.paper-figure {
-  margin: var(--space-12) 0;
-}
-
-.paper-figure img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.paper-figure figcaption {
-  margin-top: var(--space-4);
-  font-size: 0.875rem;
-  line-height: 1.5;
-  color: var(--grey-2);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .paper-figure img {
-    filter: invert(1);
-  }
-}
-
-:root[data-theme="dark"] .paper-figure img {
-  filter: invert(1);
-}
-
-:root[data-theme="light"] .paper-figure img {
-  filter: none;
-}
-
-/* The tooltip carries the whole glossary interaction since the side panel left
-   the reading flow: term, short definition, and the way to the full entry. */
-.glossar-tooltip-term {
-  display: block;
-  font-weight: 600;
-  color: var(--text);
-  margin-bottom: var(--space-1);
-}
-
-/* In the tooltip the category stands on its own line between term and
-   definition; nothing else there is a block. */
-.glossar-tooltip .glossar-kategorie {
-  display: flex;
-  margin-bottom: var(--space-1);
-}
-
-.glossar-tooltip-quelle {
-  margin: var(--space-2) 0 0;
-  font-size: 0.75rem;
-  line-height: 1.4;
-  color: var(--grey-2);
-}
-
-.glossar-tooltip-more {
-  display: block;
-  margin-top: var(--space-2);
-  font-size: 0.8125rem;
 }
