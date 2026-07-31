@@ -25,6 +25,6 @@ No Promptotyping Documents were written. The whole specification sat in one stru
 
 The annotations live in browser storage. Research data produced with the tool is bound to one browser profile, travels only as an exported file, and the tool holds no shared state that two researchers could work in.
 
-Section 2.5 of the paper reads the projects of this phase as a group and declines to attribute one method component to one project. The gallery card credits this case with the verifying expert in the loop, and that reading is a convenience of the catalogue which the paper does not license.
+The paper treats the experiments of this phase as one body of early work and fixes no method component to a single project. The gallery card credits this case with the verifying expert in the loop, a convenience of the catalogue that rests on the project record alone.
 
 The record consists of a blog account, the repository and the README. No check of the tool's output against the source metadata is documented, so the reliability of what the timeline displays was never established beyond the session.

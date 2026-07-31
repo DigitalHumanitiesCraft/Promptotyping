@@ -39,4 +39,4 @@ Agent verification is a cross-model check, one model transcribing and a second r
 
 The annotation protocol sets inter-annotator agreement as its measure of precision, and the record carries that standard while a measurement against it is still outstanding.
 
-A FAIR4RS audit of the repository is deposited in its own knowledge base and is the audited case Section 4.1 of the paper reports. Findability fails throughout, with no persistent identifier and no versioned releases; the machine-readable citation metadata has since been added and the identifier gap stands. The audit was a single pass on one day without a second independent reviewer, and on two of the principles its verdict is an interpretation.
+A FAIR4RS audit of the repository was run on 23 July 2026 and is deposited in the project's own knowledge base. Findability fails throughout, with no persistent identifier and no versioned releases; the machine-readable citation metadata has since been added and the identifier gap stands. The audit was a single pass on one day without a second independent reviewer, and on two of the principles its verdict is an interpretation.

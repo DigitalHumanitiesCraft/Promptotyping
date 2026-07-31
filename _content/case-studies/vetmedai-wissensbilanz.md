@@ -32,4 +32,4 @@ The dashboard reads what the reports contain, and the reports were written for c
 
 The knowledge base carries frontmatter only in part, which puts the case outside the addressing mechanism the convention describes and makes it a poor example of the machine-readable side of the method.
 
-The paper calls this the largest knowledge base in the record. That holds for hand-curated bases, and another case in the same table carries a generated vault far larger in file count. The two are different kinds of artefact, and the superlative applies only to the first.
+The knowledge base is extensive by the standards of the hand-curated bases in the record, while another documented project carries a generated vault far larger in file count. The two are different kinds of artefact, and a comparison by file count says little about either.

@@ -11,7 +11,7 @@ source: Projects/Promptotyping/Case Studies/aldersbach.md
 
 A dashboard for the financial transactions of the Cistercian abbey of Aldersbach in Lower Bavaria in the year 1557. The accounts are encoded to the DEPCHA standard, whose semantic layer is the Bookkeeping Ontology, and reach the application as RDF/XML that the browser parses client-side. The material carries the properties that make the source difficult, a four-unit currency system of florin, schilling, denarius and groschen, grain trade as the dominant income, and transaction descriptions in the German of the period. The artefact is a frontend-only static site in vanilla JavaScript on GitHub Pages, offering filtered views of the transactions, their temporal distribution, their categorisation into income and expenditure, and the persons and places extracted from the descriptions.
 
-The data model is the same one the method's genealogy runs through. Section 2.5 of the paper locates the step towards the Promptotyping Documents in the rewriting of the Bookkeeping Ontology as compact Markdown in 2023, so this case works on the operationalised form of the ontology whose compaction produced the document idea.
+The data model is the same one the method's genealogy runs through. The step towards the Promptotyping Documents is on record as the rewriting of the Bookkeeping Ontology into compact Markdown in 2023, so this case works on the operationalised form of the ontology whose compaction produced the document idea.
 
 ## Contribution
 
@@ -23,7 +23,7 @@ The case also states the enabling condition plainly. The TEI encoding and the se
 
 ## Limits
 
-The paper does not carry the case. Section 2.5 does not name it, the project inventory of Section 5.2 does not list it, and it was dropped as too old for the evidence layer. It stands in the gallery for the genealogy alone.
+The paper does not carry the case. No chapter names it and no table lists it, and it was dropped as too old for the evidence layer. It stands in the gallery for the genealogy alone.
 
 The code is not production-ready by the project's own account, with no comprehensive tests, minimal error handling and no commentary in the code itself. That is acceptable in a research prototype, and the passage from a prototype of this kind to sustainable research software is the open question the project names and does not answer.
 
@@ -31,4 +31,4 @@ The currency conversion runs on approximate historical rates. Aggregate sums the
 
 Two records of the development time exist, one from a conference account and one from the commit history, and they diverge. The case therefore carries no measurement of effort.
 
-Section 2.5 attributes the retrospective writing of the record's first Promptotyping Documents to the phase rather than to a project. The gallery card assigns that credit to this case, which is a convenience of the catalogue.
+The paper compresses the early experiments into a single sentence at the opening of its second chapter and attributes no method component to any one project. The gallery card credits this case with the retrospective writing of the record's first Promptotyping Documents, which is a convenience of the catalogue.

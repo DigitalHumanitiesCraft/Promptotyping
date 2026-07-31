@@ -29,4 +29,4 @@ Implementation started without an explicit minimum viable product. The project r
 
 The work stopped after the first iteration, so nothing in the case shows how the documents behave when a project returns to them after a break, which is the situation context memory is meant for.
 
-Section 2.5 of the paper reads this phase as a group and withholds the attribution of one component to one project. The gallery card names this case as the origin of context memory, which the paper does not assert.
+The paper reads the early experiments as a group and attributes no method component to any one project. The gallery card names this case as the origin of context memory, an attribution that rests on the project record alone.
