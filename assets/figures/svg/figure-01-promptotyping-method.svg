@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" role="img" aria-labelledby="t d">
   <title id="t">The Promptotyping method</title>
-  <desc id="d">Preparation, Exploration, Distillation and Implementation stand in one row as recurrent forms of work and lead into the promptotype. Three dashed returns lead from Implementation back to Distillation, Exploration and Preparation, and their labels stand as one group under the band. The Critical Expert stands above the row and specifies and revises the knowledge documents and validates and accepts the resulting state.</desc>
+  <desc id="d">Preparation, Exploration, Distillation and Implementation stand in one row as recurrent forms of work. Implementation produces the digital research artefact, and the artefact becomes the promptotype under the judgement of the Critical Expert, whose arrow enters the transition between artefact and promptotype. Three dashed returns lead from Implementation back to Distillation, Exploration and Preparation; the return to Distillation is drawn heavier as the most frequent return. The Critical Expert specifies and revises the knowledge documents and verifies and accepts the artefact into the promptotype.</desc>
   <defs>
     <marker id="flowhead" viewBox="0 0 12 12" refX="11.5" refY="6" markerWidth="12" markerHeight="12" orient="auto" markerUnits="userSpaceOnUse">
       <path d="M0.5,0.8 L11.5,6 L0.5,11.2 Z" fill="#111111"/>
@@ -8,84 +8,94 @@
     <marker id="supporthead" viewBox="0 0 12 12" refX="11.5" refY="6" markerWidth="12" markerHeight="12" orient="auto" markerUnits="userSpaceOnUse">
       <path d="M1.2,1.8 L11.0,6 L1.2,10.2 Z" fill="#ffffff" stroke="#666666" stroke-width="1.2"/>
     </marker>
+    <marker id="supportheadstrong" viewBox="0 0 12 12" refX="11.5" refY="6" markerWidth="12" markerHeight="12" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M1.2,1.8 L11.0,6 L1.2,10.2 Z" fill="#ffffff" stroke="#111111" stroke-width="1.4"/>
+    </marker>
     <style>
       text { font-family: Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #111111; }
       .n { font-size: 17px; font-weight: 600; }
       .s { font-size: 13px; }
-      .m { font-size: 13px; font-weight: 600; }
       .e { font-size: 12px; fill: #666666; }
       .box { fill: #ffffff; stroke: #111111; stroke-width: 2.5; }
-      .sub { fill: #ffffff; stroke: #111111; stroke-width: 1.25; }
       .mark { fill: #eeeeee; stroke: #111111; stroke-width: 2.5; }
       .flow { fill: none; stroke: #111111; stroke-width: 2.5; stroke-linejoin: round; marker-end: url(#flowhead); }
-      .plain { fill: none; stroke: #111111; stroke-width: 2.5; stroke-linejoin: round; }
       .support { fill: none; stroke: #666666; stroke-width: 1.25; stroke-linejoin: round; stroke-dasharray: 6 4; marker-end: url(#supporthead); }
+      .supstrong { fill: none; stroke: #111111; stroke-width: 2; stroke-linejoin: round; stroke-dasharray: 6 4; marker-end: url(#supportheadstrong); }
       .disc { fill: #111111; }
     </style>
   </defs>
 
   <rect x="0" y="0" width="960" height="600" fill="#ffffff"/>
 
-  <!-- Critical Expert, top centre -->
-  <circle cx="480" cy="80" r="13" fill="#ffffff" stroke="#111111" stroke-width="2.5"/>
-  <circle cx="480" cy="80" r="6" class="disc"/>
-  <text class="n" x="480" y="120" text-anchor="middle">Critical Expert</text>
-  <path class="flow" d="M468,136 L452,244"/>
-  <path class="flow" d="M500,132 L741,240"/>
-  <text class="e" x="448" y="196" text-anchor="end">specifies and revises</text>
-  <text class="e" x="614" y="172">validates and accepts</text>
+  <!-- Critical Expert, top centre above Distillation -->
+  <circle cx="470" cy="52" r="13" fill="#ffffff" stroke="#111111" stroke-width="2.5"/>
+  <circle cx="470" cy="52" r="6" class="disc"/>
+  <text class="n" x="470" y="92" text-anchor="middle">Critical Expert</text>
+  <path class="flow" d="M469,104 V148"/>
+  <text class="e" x="456" y="128" text-anchor="end">specifies and revises</text>
+  <path class="flow" d="M487,52 H850 V414 H743"/>
+  <text class="e" x="598" y="74">verifies and accepts</text>
 
   <!-- Forms of work -->
-  <rect class="box" x="16" y="246" width="152" height="104" rx="2"/>
-  <text class="n" x="92" y="284" text-anchor="middle">Preparation</text>
-  <text class="s" x="92" y="310" text-anchor="middle">data, sources,</text>
-  <text class="s" x="92" y="328" text-anchor="middle">standards, context</text>
+  <rect class="box" x="16" y="150" width="160" height="104" rx="2"/>
+  <text class="n" x="96" y="188" text-anchor="middle">Preparation</text>
+  <text class="s" x="96" y="210" text-anchor="middle">data, sources,</text>
+  <text class="s" x="96" y="227" text-anchor="middle">standards,</text>
+  <text class="s" x="96" y="244" text-anchor="middle">research context</text>
 
-  <rect class="box" x="198" y="246" width="152" height="104" rx="2"/>
-  <text class="n" x="274" y="284" text-anchor="middle">Exploration</text>
-  <text class="s" x="274" y="310" text-anchor="middle">what the data</text>
-  <text class="s" x="274" y="328" text-anchor="middle">can support</text>
+  <rect class="box" x="202" y="150" width="160" height="104" rx="2"/>
+  <text class="n" x="282" y="188" text-anchor="middle">Exploration</text>
+  <text class="s" x="282" y="214" text-anchor="middle">what the data affords,</text>
+  <text class="s" x="282" y="232" text-anchor="middle">and what it does not</text>
 
-  <rect class="box" x="380" y="246" width="152" height="104" rx="2"/>
-  <text class="n" x="456" y="284" text-anchor="middle">Distillation</text>
-  <text class="s" x="456" y="310" text-anchor="middle">Promptotyping</text>
-  <text class="s" x="456" y="328" text-anchor="middle">Documents</text>
+  <rect class="box" x="388" y="150" width="160" height="104" rx="2"/>
+  <text class="n" x="468" y="188" text-anchor="middle">Distillation</text>
+  <text class="s" x="468" y="214" text-anchor="middle">Promptotyping</text>
+  <text class="s" x="468" y="232" text-anchor="middle">Documents</text>
 
-  <rect class="box" x="562" y="246" width="152" height="104" rx="2"/>
-  <text class="n" x="638" y="284" text-anchor="middle">Implementation</text>
-  <text class="s" x="638" y="310" text-anchor="middle">agentic work in</text>
-  <text class="s" x="638" y="328" text-anchor="middle">an AI harness</text>
-
-  <!-- Promptotype, the emphasised element -->
-  <rect class="mark" x="744" y="196" width="200" height="154" rx="2"/>
-  <text class="n" x="844" y="230" text-anchor="middle">Promptotype</text>
-  <text class="s" x="764" y="262">project knowledge</text>
-  <text class="s" x="764" y="284">research artefact</text>
-  <text class="s" x="764" y="306">referenced data state</text>
-  <text class="s" x="764" y="328">grounds of acceptance</text>
+  <rect class="box" x="574" y="150" width="160" height="104" rx="2"/>
+  <text class="n" x="654" y="188" text-anchor="middle">Implementation</text>
+  <text class="s" x="654" y="214" text-anchor="middle">agentic implementation</text>
+  <text class="s" x="654" y="232" text-anchor="middle">in an AI harness</text>
 
   <!-- Flow of work -->
-  <path class="flow" d="M170,298 H198"/>
-  <path class="flow" d="M352,298 H380"/>
-  <path class="flow" d="M534,298 H562"/>
-  <path class="flow" d="M716,298 H744"/>
+  <path class="flow" d="M176,202 H202"/>
+  <path class="flow" d="M362,202 H388"/>
+  <path class="flow" d="M548,202 H574"/>
+  <path class="flow" d="M692,254 V318"/>
 
-  <!-- Write-back band -->
-  <path class="support" d="M600,352 V392 H456 V353"/>
-  <path class="support" d="M640,352 V448 H274 V353"/>
-  <path class="support" d="M680,352 V504 H92 V353"/>
-  <text class="e" x="470" y="410">specification revised</text>
-  <text class="e" x="470" y="426">most frequent return</text>
-  <text class="e" x="470" y="466">data understanding revised</text>
-  <text class="e" x="470" y="522">sources or conditions revised</text>
-  <text class="m" x="470" y="548">write-back</text>
+  <!-- Digital Research Artefact -->
+  <rect class="box" x="650" y="320" width="180" height="70" rx="2"/>
+  <text class="n" x="740" y="348" text-anchor="middle">Digital Research</text>
+  <text class="n" x="740" y="370" text-anchor="middle">Artefact</text>
+
+  <!-- Transition into the promptotype, gated by the Critical Expert -->
+  <path class="flow" d="M740,390 V437"/>
+
+  <!-- Promptotype, the emphasised element -->
+  <rect class="mark" x="680" y="440" width="260" height="145" rx="2"/>
+  <text class="n" x="810" y="472" text-anchor="middle">Promptotype</text>
+  <text class="s" x="704" y="500">maintained project knowledge</text>
+  <text class="s" x="704" y="522">digital research artefact</text>
+  <text class="s" x="704" y="544">referenced research-data state</text>
+  <text class="s" x="704" y="566">documented grounds of acceptance</text>
+
+  <!-- Write-back returns -->
+  <text class="e" x="480" y="290">write-back</text>
+  <path class="supstrong" d="M585,255 V300 H468 V257"/>
+  <path class="support" d="M610,255 V345 H282 V257"/>
+  <path class="support" d="M635,255 V390 H96 V257"/>
+  <text class="e" x="430" y="316">project knowledge revised</text>
+  <text class="e" x="430" y="332">most frequent return</text>
+  <text class="e" x="430" y="363">data understanding revised</text>
+  <text class="e" x="430" y="408">sources or conditions revised</text>
 
   <!-- Legend -->
-  <path class="flow" d="M700,520 H746"/>
-  <text class="e" x="758" y="524">flow of work</text>
-  <path class="support" d="M700,548 H746"/>
-  <text class="e" x="758" y="552">write-back</text>
-  <circle cx="712" cy="574" r="10" fill="#ffffff" stroke="#111111" stroke-width="2.5"/>
-  <circle cx="712" cy="574" r="4.5" class="disc"/>
-  <text class="e" x="758" y="578">accountable human authority</text>
+  <path class="flow" d="M16,466 H56"/>
+  <text class="e" x="68" y="470">flow of work</text>
+  <path class="support" d="M180,466 H220"/>
+  <text class="e" x="232" y="470">write-back</text>
+  <circle cx="330" cy="466" r="10" fill="#ffffff" stroke="#111111" stroke-width="2.5"/>
+  <circle cx="330" cy="466" r="4.5" class="disc"/>
+  <text class="e" x="350" y="470">accountable human authority</text>
 </svg>

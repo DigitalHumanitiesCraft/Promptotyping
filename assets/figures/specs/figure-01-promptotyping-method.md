@@ -7,7 +7,7 @@ svg: ../svg/figure-01-promptotyping-method.svg
 supersedes: ../figure-01-promptotyping-method.png
 canvas: 960 x 600
 status: draft
-revision: 2
+revision: 3
 ---
 
 # Specification, Figure 1
@@ -16,9 +16,11 @@ revision: 2
 
 **Figure 1. The Promptotyping method.** Preparation, Exploration, Distillation, and Implementation are recurrent forms of work rather than fixed stages. Findings arising from Implementation may return the work to earlier forms, most frequently to Distillation. The Critical Expert specifies and revises the knowledge documents and validates the resulting artefact. Purpose-specific acceptance connects maintained project knowledge, the digital research artefact, the referenced research-data state, and the documented grounds of acceptance as an identifiable promptotype.
 
+Caption alignment is pending one operator decision. The figure carries the relation label "verifies and accepts" (operator instruction of 2026-07-31), while the caption sentence above still says "validates the resulting artefact"; whichever wording the paper settles on, caption and figure must use the same verb.
+
 ## Purpose
 
-Define the method by naming its four forms of work, the returns that carry findings back into maintained knowledge, the human role that specifies and accepts, and the composite state that results.
+Define the method by naming its four forms of work, the digital research artefact that Implementation produces, the acceptance under which the artefact becomes part of a promptotype, the returns that carry findings back into maintained knowledge, and the human role that specifies and accepts.
 
 ## Series grammar, revision 2 of 2026-07-30
 
@@ -34,59 +36,74 @@ Because the light grey fill is now reserved for the single emphasised element, t
 
 The palette is black (#111111), three greys (#666666, #d9d9d9, #eeeeee), and white. One arrowhead geometry serves the whole series in a filled variant for flow and a hollow variant for supporting relations, drawn at a fixed size independent of stroke weight. Every label is a real text element, the canvas is declared by viewBox, and nothing is drawn that carries no statement.
 
+### Local deviations, revision 3 of 2026-07-31
+
+Three deviations hold for this figure only.
+
+1. The most frequent return, into Distillation, is drawn at 2px in black with a matching hollow head, so it stands visibly stronger than the two grey returns. This is a third stroke treatment local to this figure; the other figures of the series keep the two-weight rule.
+2. The authority arrow "verifies and accepts" is routed orthogonally around the row (right along the canvas top, down the free right corridor, left into its target), because a straight line from the top-centre mark would cross the operational chain.
+3. That arrow targets the transition arrow between Digital Research Artefact and Promptotype rather than a box. The arrow-onto-arrow figure encodes that the transition happens only under the Critical Expert's judgement.
+
 ## Reading direction
 
-Left to right along the row of work forms, then into the promptotype at the right edge. The returns read right to left below the row, and the human role enters from above. A reader who follows only the top-level arrows gets the productive path; a reader who follows the lower band gets the corrective path.
+Left to right along the row of work forms, then down at the right edge, Implementation into the digital research artefact, the artefact into the promptotype. The returns read right to left below the row, and the human role enters from above. A reader who follows only the primary arrows gets the productive path; a reader who follows the dashed band gets the corrective path.
 
 ## Elements
 
-1. Four rectangles in one row, equal in size, in this order: Preparation, Exploration, Distillation, Implementation. Each carries its name and a two-line secondary description of its object. All four stand at primary weight, and the row is the dominant object of the figure.
-2. One rectangle at the right of the row, bottom-aligned with it, labelled Promptotype, listing its four constituents as plain lines inside. This is the emphasised element and carries the light grey fill.
-3. One authority mark at the top centre of the canvas, an open circle containing a filled disc, with the label Critical Expert set centred beneath it.
-4. Three return paths leaving the underside of Implementation at three depths and re-entering Distillation, Exploration, and Preparation.
-5. The three return labels set as a stacked group, one line per return, all left-aligned on a common left edge, with the group label write-back set semibold beneath them.
-6. A legend naming the three visual distinctions the figure uses.
+1. Four rectangles in one row, equal in size, in this order: Preparation, Exploration, Distillation, Implementation. Each carries its name and a short secondary description of its object. All four stand at primary weight, and the row is the dominant object of the figure.
+2. One rectangle below the right end of the row, labelled Digital Research Artefact, connected from Implementation by a vertical flow arrow. It is a state in the operational chain, at primary weight, without secondary description.
+3. One rectangle at the bottom right, labelled Promptotype, listing its four constituents as plain lines inside. This is the emphasised element and carries the light grey fill. A vertical flow arrow leads from the artefact into it; this transition arrow is the target of the acceptance relation.
+4. One authority mark at the top centre of the canvas above Distillation, an open circle containing a filled disc, with the label Critical Expert set centred beneath it.
+5. Three return paths leaving the underside of Implementation at three depths and re-entering Distillation, Exploration, and Preparation. The return into Distillation is the strong one (local deviation 1).
+6. The return labels set beneath their return lines on a common left edge, and the small grey group label write-back set above the topmost return segment.
+7. A compact one-row legend naming the three visual distinctions the figure uses.
 
-## Layout corrections, revision 2
+## Layout
 
-The main chain must dominate. Its five boxes and the four arrows between them carry primary weight, and the returns beneath carry secondary weight, so the productive path is legible before the corrective one.
+The main chain must dominate. The row of four forms of work and the arrows between them carry primary weight; the chain turns downward after Implementation, first into the Digital Research Artefact, then into the Promptotype, both connected by vertical flow arrows at primary weight. The returns beneath the row carry secondary weight, so the productive path is legible before the corrective one.
 
-The three returns are grouped rather than scattered. Their labels form one left-aligned column beneath the band, each label sitting under its own return line, and the semibold group label write-back stands under the column and names the whole group.
+The Critical Expert stands at the top centre above Distillation. The arrow "specifies and revises" drops vertically into the top edge of Distillation. The arrow "verifies and accepts" leaves the mark to the right and reaches the artefact-to-promptotype transition by the orthogonal route of local deviation 2; its head points at the midpoint of the transition arrow.
 
-The Critical Expert stands at the top centre of the canvas, the disc above and the label centred beneath it. Two arrows leave the mark, one down and to the left into Distillation, one down and to the right into the Promptotype. Both are drawn at primary weight, and their labels stand clear of every box edge and of each other.
+The three returns are grouped rather than scattered. Each label sits under its own return line, all on a common left edge, with the note "most frequent return" under the strong return's label. The group label write-back stands in small grey type above the strong return's horizontal segment.
+
+The legend is one compact row at the lower left, clear of the returns above it and of the Promptotype box to its right.
 
 ## Relations and labels
 
 Verbatim labels, which are terminology and may not be paraphrased in the SVG:
 
-- node names: Preparation, Exploration, Distillation, Implementation, Promptotype, Critical Expert
-- promptotype constituents: project knowledge, research artefact, referenced data state, grounds of acceptance
-- returns: specification revised (Distillation), data understanding revised (Exploration), sources or conditions revised (Preparation)
+- node names: Preparation, Exploration, Distillation, Implementation, Digital Research Artefact, Promptotype, Critical Expert
+- form descriptions: "data, sources, standards, research context" (Preparation); "what the data affords, and what it does not" (Exploration); "Promptotyping Documents" (Distillation); "agentic implementation in an AI harness" (Implementation)
+- promptotype constituents: maintained project knowledge, digital research artefact, referenced research-data state, documented grounds of acceptance
+- returns: project knowledge revised (Distillation), data understanding revised (Exploration), sources or conditions revised (Preparation)
 - return band: write-back
-- human relations: specifies and revises (into Distillation), validates and accepts (into Promptotype)
+- human relations: specifies and revises (into Distillation), verifies and accepts (onto the artefact-to-promptotype transition)
 - legend: flow of work, write-back, accountable human authority
 
 The return into Distillation carries the additional note "most frequent return", which encodes the caption's claim about frequency.
 
 ## Visual grammar
 
-Solid line with a filled head marks the flow of work and the acts of the Critical Expert, both of which are productive or authorising. Dashed line with an open head marks the returns, which carry findings without themselves producing an artefact state. The filled disc inside a circle is the only filled mark in the figure and denotes accountable human authority. The light grey fill of the Promptotype box marks it as the state the caption is about.
+Solid line with a filled head marks the flow of work and the acts of the Critical Expert, both of which are productive or authorising. Dashed line with an open head marks the returns, which carry findings without themselves producing an artefact state; the strong black dashed return marks the most frequent one. The filled disc inside a circle is the only filled mark in the figure and denotes accountable human authority. The light grey fill of the Promptotype box marks it as the state the caption is about. The authority arrow ending on the transition arrow, rather than on a box, marks acceptance as a judgement about a transition and denies that the transition is a process step of its own.
 
 ## What the figure must not imply
 
-- No fixed five-stage pipeline. The row shows an order of first passage, and the return paths deny that the order is a schedule.
+- No fixed pipeline. The row shows an order of first passage, and the return paths deny that the order is a schedule.
+- Implementation does not directly produce a promptotype. The digital research artefact stands between them, and only its acceptance constitutes the promptotype.
+- The transition from artefact to promptotype is not automatic. Verification and acceptance are the Critical Expert's responsible judgements, drawn as the authority arrow onto the transition, and never as an unlabelled process step.
 - Write-back is not a fifth form of work. It is drawn as a relation between existing forms and carries no box of its own.
-- The Critical Expert is not a final review gate. One of the two authority arrows enters Distillation, before implementation begins.
-- The promptotype is not the artefact. The artefact is one of four constituents inside the promptotype box.
+- The Critical Expert is not a final review gate only. One of the two authority arrows enters Distillation, before implementation begins.
+- The promptotype is not the artefact. The artefact is one of four constituents inside the promptotype box, and the artefact box and the constituent line name the same thing in two roles.
 - Acceptance is not finality. Nothing in the figure marks an end state, and no arrow leaves the promptotype towards publication.
-- The relative depth of the three returns encodes which form is re-entered, and it does not encode cost, duration, or severity.
+- The relative depth of the three returns encodes which form is re-entered, and it does not encode cost, duration, or severity; frequency is encoded solely by the strong stroke and the note.
 - The emphasis on the Promptotype box is a hierarchy of reading and no statement about value. It carries no meaning that the label does not already carry.
 
 ## Acceptance checks
 
-- All six verbatim node names present and spelled as in the manuscript.
-- Three returns present, each labelled, each terminating at a different box.
-- The three return labels share one left edge, and the group label write-back stands beneath them.
-- The disc appears exactly once, in the Critical Expert mark, and the legend explains it.
+- All seven verbatim node names present and spelled as in the manuscript.
+- The chain Implementation, Digital Research Artefact, Promptotype is connected by two flow arrows, and the authority arrow "verifies and accepts" ends on the second of them.
+- Three returns present, each labelled, each terminating at a different box; the Distillation return is visibly stronger than the other two and carries the note "most frequent return".
+- The return labels share one left edge; the group label write-back stands small and grey above the return band.
+- The disc appears exactly once outside the legend, in the Critical Expert mark, and the legend explains it.
 - Exactly one element carries the light grey fill.
 - No label crosses a box edge or another element.
