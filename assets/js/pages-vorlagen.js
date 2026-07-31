@@ -7,7 +7,6 @@
   "use strict";
 
   var templateBySlug = {};
-  var templatePanelCache = {};
 
   function renderVorlagen() {
     var el = document.getElementById("vorlagen");
@@ -86,7 +85,7 @@
           "compromise rule, no external runtime calls, and grounds them in generatability, " +
           "publishability and durability. Status draft.</p>" +
           '<p class="vorlagen-tb-links">' +
-          '<a href="https://dhcraft.org/Promptotyping/_content/technology-baseline.md" target="_blank" rel="noopener">Machine address</a>' +
+          '<a href="' + A.SITE_BASE + '_content/technology-baseline.md" target="_blank" rel="noopener">Machine address</a>' +
           '<a href="_content/technology-baseline.md" target="_blank" rel="noopener">Open in the repository</a>' +
           "</p>" +
           "</div>";
@@ -135,44 +134,36 @@
   /* Build the copyable template: frontmatter block for a document, with the
      machine-url as a comment line so an agent sees the deterministic .md URL. */
   function templateFrontmatterBlock(doc) {
+    var urls = A.templateUrls(doc.slug);
     return "template:\n" +
       "  name: " + doc.title + "\n" +
       "  version: " + doc.version + "\n" +
-      "  url: https://dhcraft.org/Promptotyping/promptotyping-document/" + doc.slug + "\n" +
-      "  alias: https://dhcraft.org/Promptotyping/#promptotyping-document-" + doc.slug + "\n" +
+      "  url: " + urls.subpath + "\n" +
+      "  alias: " + urls.hash + "\n" +
       "  # machine-url (static raw text, retrievable without JavaScript):\n" +
       "  # " + doc.machineUrl;
   }
 
   /* Open the side panel with the fully rendered template mirror. anchor is the
-     canonical hash anchor, e.g. promptotyping-document-data. */
+     canonical hash anchor, e.g. promptotyping-document-data. The panel body
+     comes from the shared markdown-panel device; what belongs to a template
+     alone is the footer, appended on every open, including the cached one, so
+     its copy button is wired whenever it is on screen. */
   function openTemplatePanel(anchor) {
     if (!anchor) {
       return;
     }
     var slug = anchor.replace(/^promptotyping-document-/, "").replace(/-v[\d.]+$/, "");
     var doc = templateBySlug[slug];
-    var title = doc ? doc.title : "Template";
-
-    if (templatePanelCache[slug]) {
-      A.openSidePanel(title, templatePanelCache[slug]);
-      A.setHashSilently("promptotyping-document-" + slug);
-      return;
-    }
-
-    A.openSidePanel(title, '<p class="section-loading">Loading.</p>');
-    A.fetchMarkdown("_content/promptotyping-document/" + slug + ".md")
-      .then(function (text) {
-        var html = marked.parse(A.stripFrontmatter(text));
-        var footer = doc ? renderTemplateFooter(doc) : "";
-        var full = html + footer;
-        templatePanelCache[slug] = full;
-        A.openSidePanel(title, full);
-        wireTemplatePanelFooter();
-        A.setHashSilently("promptotyping-document-" + slug);
-      })
-      .catch(function (err) {
-        A.openSidePanel(title, '<p class="section-loading">' + err.message + "</p>");
+    var canonical = A.templateUrls(slug).anchor;
+    A.openMarkdownPanel(doc ? doc.title : "Template",
+      "_content/promptotyping-document/" + slug + ".md", canonical,
+      function (body) {
+        if (doc) {
+          body.insertAdjacentHTML("beforeend", renderTemplateFooter(doc));
+          wireTemplatePanelFooter(body);
+        }
+        A.setHashSilently(canonical);
       });
   }
 
@@ -188,11 +179,7 @@
 
   /* The panel body is replaced on each open, so wire the copy button after the
      content for this doc is injected. */
-  function wireTemplatePanelFooter() {
-    var bodyEl = document.getElementById("side-panel-body");
-    if (!bodyEl) {
-      return;
-    }
+  function wireTemplatePanelFooter(bodyEl) {
     var btn = bodyEl.querySelector(".panel-copy");
     if (btn) {
       btn.addEventListener("click", function () {

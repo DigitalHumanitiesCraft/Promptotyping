@@ -68,13 +68,7 @@
       A.renderMarkdownInto("workflow", "_content/workflow.md", function (el) {
         // Part 1 introduces the method and the four phases; it sits with the
         // worked case rather than in a hero above the specification.
-        var intro = el.querySelector("p");
-        var video = A.buildVideoFacade("8sUe4Jkh3uQ", "Einführung in Promptotyping, Teil 1");
-        if (intro && intro.nextSibling) {
-          el.insertBefore(video, intro.nextSibling);
-        } else {
-          el.appendChild(video);
-        }
+        A.insertVideoAfterIntro(el, "8sUe4Jkh3uQ", "Einführung in Promptotyping, Teil 1");
       }),
       A.renderMarkdownInto("artefakt", "_content/artefakt.md", A.markFunctionList),
       A.renderMarkdownInto("verifikation", "_content/verifikation.md"),
@@ -91,13 +85,7 @@
       // so it sits here; the paper page carries the academic text alone (A8).
       A.renderMarkdownInto("tutorial", "_content/tutorial.md", function (el) {
         A.addCodeCopyButtons(el);
-        var intro = el.querySelector("p");
-        var video = A.buildVideoFacade("hd_a-NBO_S4", "Promptotyping Teil 2 (Claude Code)");
-        if (intro && intro.nextSibling) {
-          el.insertBefore(video, intro.nextSibling);
-        } else {
-          el.appendChild(video);
-        }
+        A.insertVideoAfterIntro(el, "hd_a-NBO_S4", "Promptotyping Teil 2 (Claude Code)");
       }),
       A.renderPraxis(),
       A.renderSkills(),

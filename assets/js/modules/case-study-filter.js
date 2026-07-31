@@ -19,8 +19,10 @@
      looking for a project it names. Empty blocks are dropped. */
   var ROLE_ORDER = ["evidence", "genealogy", "teaching", "further"];
 
-  /* Order within a block, and the order of the filter chips. */
-  var FUNCTION_ORDER = ["verification", "exploration", "edition", "capture", "audit"];
+  /* Order within a block, and the order of the filter chips. The vocabulary and
+     its order are the site's own, declared in pages-content.js; what belongs to
+     the gallery is how it labels the five. */
+  var FUNCTION_ORDER = App.FUNCTIONS;
 
   var INTERFACE_LABELS = {
     verification: "Verification",
@@ -30,7 +32,6 @@
     audit: "Audit"
   };
 
-  var deepCache = {};
   var allStudies = [];
   var roleLabels = {};
   var roleNotes = {};
@@ -61,15 +62,6 @@
     if (!url) { return null; }
     var m = /(?:youtu\.be\/|v=|embed\/)([\w-]{6,})/.exec(url);
     return m ? m[1] : null;
-  }
-
-  /* Build a click-to-load facade via the shared app helper, falling back to a
-     plain external link if the helper is unavailable. */
-  function buildFacade(youtubeId, title) {
-    if (typeof App.buildVideoFacade === "function") {
-      return App.buildVideoFacade(youtubeId, title);
-    }
-    return linkEl("Video on YouTube", "https://www.youtube.com/watch?v=" + youtubeId);
   }
 
   function textEl(tag, className, text) {
@@ -114,9 +106,7 @@
       card.appendChild(meta);
       // The card edge carries the hue of the first epistemic function; the
       // category itself stays readable in the line above (WCAG 1.4.1).
-      var fn = window.PromptotypingApp && window.PromptotypingApp.functionVar
-        ? window.PromptotypingApp.functionVar(cs.interfaceTypes[0])
-        : null;
+      var fn = App.functionVar(cs.interfaceTypes[0]);
       if (fn) {
         card.classList.add("has-fn");
         card.style.setProperty("--fn", fn);
@@ -144,7 +134,7 @@
           videoBtn.setAttribute("aria-expanded", "false");
           return;
         }
-        videoHost.appendChild(buildFacade(videoId, cs.name + " (process video)"));
+        videoHost.appendChild(App.buildVideoFacade(videoId, cs.name + " (process video)"));
         videoBtn.setAttribute("aria-expanded", "true");
       });
       links.appendChild(videoBtn);
@@ -164,38 +154,22 @@
 
   /* After the panel HTML is set, prepend a click-to-load video facade if the
      case carries a video_url, so the deep page is playable in place. */
-  function injectDeepPageVideo(cs) {
+  function injectDeepPageVideo(cs, body) {
     var videoId = youtubeIdOf(cs.video_url);
-    if (!videoId) { return; }
-    var body = document.getElementById("side-panel-body");
-    if (!body || body.querySelector(".video-embed")) { return; }
-    body.insertBefore(buildFacade(videoId, cs.name + " (process video)"), body.firstChild);
+    if (!videoId || body.querySelector(".video-embed")) { return; }
+    body.insertBefore(App.buildVideoFacade(videoId, cs.name + " (process video)"), body.firstChild);
   }
 
+  /* The deep page is a Markdown file in the side panel, the same device the
+     template catalogue opens, so the fetching, rendering and caching stand in
+     the shell. The hash is written silently: the card is the address, and a
+     normal write would send the page under the panel scrolling to it. */
   function openDeepPage(cs) {
-    if (typeof App.openSidePanel !== "function") { return; }
-    if (deepCache[cs.id]) {
-      App.openSidePanel(cs.name, deepCache[cs.id]);
-      injectDeepPageVideo(cs);
-      window.location.hash = "case-" + cs.id;
-      return;
-    }
-    App.openSidePanel(cs.name, "<p class='section-loading'>Loading.</p>");
-    fetch("_content/case-studies/" + cs.id + ".md")
-      .then(function (res) {
-        if (!res.ok) { throw new Error("Could not load the deep page (" + res.status + ")."); }
-        return res.text();
-      })
-      .then(function (text) {
-        var body = text.replace(/^---\n[\s\S]*?\n---\n?/, "");
-        var html = window.marked.parse(body);
-        deepCache[cs.id] = html;
-        App.openSidePanel(cs.name, html);
-        injectDeepPageVideo(cs);
-        window.location.hash = "case-" + cs.id;
-      })
-      .catch(function (err) {
-        App.openSidePanel(cs.name, "<p class='section-loading'>" + err.message + "</p>");
+    var anchor = "case-" + cs.id;
+    App.openMarkdownPanel(cs.name, "_content/case-studies/" + cs.id + ".md", anchor,
+      function (body) {
+        injectDeepPageVideo(cs, body);
+        App.setHashSilently(anchor);
       });
   }
 
@@ -253,7 +227,7 @@
       chip.setAttribute("aria-pressed", isActive ? "true" : "false");
       // The chip carries the hue of its function, and the word beside it names
       // the category, so the colour never carries the meaning alone (WCAG 1.4.1).
-      if (def.key !== "all" && App.functionVar) {
+      if (def.key !== "all") {
         var fnVar = App.functionVar(def.key);
         if (fnVar) {
           chip.classList.add("has-fn");
@@ -298,11 +272,7 @@
     var listHost = rootEl.querySelector(".case-list-host");
     if (!barHost || !listHost) { return; }
 
-    fetch("data/case-studies.json")
-      .then(function (res) {
-        if (!res.ok) { throw new Error("Could not load case-studies.json (" + res.status + ")."); }
-        return res.json();
-      })
+    App.fetchJson("data/case-studies.json")
       .then(function (data) {
         allStudies = data.caseStudies || [];
         roleLabels = (data._meta && data._meta.role_labels) || {};
@@ -342,12 +312,8 @@
     }
   }
 
-  // The host markup is injected by app.js after async rendering; boot on its
-  // ready event (and once now in case it already fired).
+  // The host markup is injected by app.js after async rendering, so this event
+  // is the earliest moment there is anything to render into, and app.js fires it
+  // once the render promises have resolved.
   document.addEventListener("promptotyping:sections-ready", boot);
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", boot);
-  } else {
-    boot();
-  }
 })();

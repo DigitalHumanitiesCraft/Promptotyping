@@ -186,6 +186,14 @@
     return html + renderFootnoteApparatus();
   }
 
+  /* Render a Markdown fragment under the configuration of this file: side panel
+     bodies and anything else that is not a page host. Heading ids stay off, as
+     they do for every parse but the paper's. It exists so the marked coupling
+     stands in this file alone. */
+  function parseMarkdown(markdown) {
+    return marked.parse(markdown);
+  }
+
   /* Render a content file into its page host (overview, application, practice,
      skills, convention, artefact, verification, working environment). */
   function renderMarkdownInto(sectionId, file, after) {
@@ -196,7 +204,7 @@
     return A.fetchMarkdown(file)
       .then(function (text) {
         A.pageFrontmatter[sectionId] = A.readFrontmatter(text);
-        el.innerHTML = marked.parse(A.stripFrontmatter(text));
+        el.innerHTML = parseMarkdown(A.stripFrontmatter(text));
         el.classList.remove("placeholder-section");
         if (typeof after === "function") {
           after(el);
@@ -209,5 +217,6 @@
 
   A.configureMarked = configureMarked;
   A.renderPaperMarkdown = renderPaperMarkdown;
+  A.parseMarkdown = parseMarkdown;
   A.renderMarkdownInto = renderMarkdownInto;
 })(window.PromptotypingApp = window.PromptotypingApp || {});

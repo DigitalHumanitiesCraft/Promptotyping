@@ -1,9 +1,10 @@
 /* Term index. Builds a register term -> pages at runtime and hangs it on the
    glossary page: for every entry of data/glossar.json it lists the pages whose
    rendered text carries the term. This is the site's substitute for a full-text
-   search, and it needs no index file and no request beyond the glossary JSON,
-   because every page is already mounted in the DOM (the inactive ones as
-   display: none, which is what makes the scan possible at all).
+   search, and it needs no index file and no request of its own: the entries come
+   from the glossary page, which fetched and sorted them once, and every page is
+   already mounted in the DOM (the inactive ones as display: none, which is what
+   makes the scan possible at all).
    No ES modules; uses window.PromptotypingApp. */
 
 (function () {
@@ -12,13 +13,10 @@
   var App = window.PromptotypingApp || {};
 
   var HOST_ID = "term-index";
-  var SOURCE = "data/glossar.json";
   /* The glossary page defines every term, so listing it would say nothing. */
   var SKIP_PAGES = ["glossar"];
 
-  function escapeHtml(s) {
-    return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-  }
+  var escapeHtml = App.escapeHtml;
 
   function escapeRegExp(s) {
     return String(s).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
@@ -49,7 +47,7 @@
      over a hundred kilobytes, so the terms are matched against these strings
      rather than walking the DOM per term. */
   function collectPages() {
-    var labels = typeof App.listPages === "function" ? App.listPages() : [];
+    var labels = App.listPages();
     var out = [];
     labels.forEach(function (p) {
       if (SKIP_PAGES.indexOf(p.id) !== -1) {
@@ -67,15 +65,11 @@
   /* The taxonomy of A36 is declared once, in pages-glossar.js; this module
      renders the same mark and word so the register can be scanned by kind. */
   function categoryCell(entry) {
-    return typeof App.glossarCategoryHtml === "function"
-      ? App.glossarCategoryHtml(entry.kategorie)
-      : "";
+    return App.glossarCategoryHtml(entry.kategorie);
   }
 
   function categoryLabel(entry) {
-    return typeof App.glossarCategoryLabel === "function"
-      ? App.glossarCategoryLabel(entry.kategorie)
-      : "";
+    return App.glossarCategoryLabel(entry.kategorie);
   }
 
   function buildRows(entries, pages) {
@@ -162,17 +156,8 @@
     if (!host || host.querySelector(".term-index-table")) {
       return;
     }
-    fetch(SOURCE)
-      .then(function (res) {
-        if (!res.ok) {
-          throw new Error("glossar.json " + res.status);
-        }
-        return res.json();
-      })
-      .then(function (data) {
-        var entries = (data.eintraege || []).slice().sort(function (a, b) {
-          return a.begriff.localeCompare(b.begriff, "de");
-        });
+    App.glossarEntries()
+      .then(function (entries) {
         if (entries.length) {
           renderInto(host, entries);
         }

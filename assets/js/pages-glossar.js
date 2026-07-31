@@ -1,6 +1,6 @@
-/* Glossary page. Renders the entries from data/glossar.json, emits the concept
-   alias anchors, marks the first occurrence of every term in a rendered section
-   as a trigger and wires the hover tooltip and the panel. */
+/* Glossary page. Renders the entries from data/glossar.json, marks the first
+   occurrence of every term in a rendered section as a trigger and wires the
+   hover tooltip. */
 
 (function (A) {
   "use strict";
@@ -8,22 +8,12 @@
   var glossarEntries = [];
   var glossarBySlug = {};
 
-  /* Concept alias anchors so /konzepte/{name} routing resolves. Maps the
-     #konzept-{name} alias to the canonical glossar slug. */
+  /* Concept aliases: the two published #konzept-{name} anchors whose name is not
+     the glossary slug it means. Every other concept anchor is the slug itself
+     and needs no entry, since konzeptSlug falls back to identity. */
   var KONZEPT_ALIASES = {
-    "context-engineering": "context-engineering",
-    "vibe-coding": "vibe-coding",
     "eil": "critical-expert-in-the-loop",
-    "critical-expert-in-the-loop": "critical-expert-in-the-loop",
-    "asymmetric-amplification": "asymmetric-amplification",
-    "epistemic-infrastructure": "epistemic-infrastructure",
-    "scholar-centered-design": "scholar-centered-design",
-    "context-rot": "context-rot",
-    "co-intelligence-eil": "co-intelligence",
-    "agentic-engineering": "agentic-engineering",
-    "spec-driven-development": "spec-driven-development",
-    "verification-validation": "verification-validation",
-    "forschungsartefakt": "forschungsartefakt"
+    "co-intelligence-eil": "co-intelligence"
   };
 
   function konzeptSlug(alias) {
@@ -89,20 +79,33 @@
       A.escapeHtml(label) + "</span>";
   }
 
-  function renderGlossar() {
-    var el = document.getElementById("glossar");
-    if (!el) {
-      return Promise.resolve();
-    }
-    return A.fetchJson("data/glossar.json")
-      .then(function (data) {
+  /* One request and one sort for the glossary file, which the page and the term
+     index both read. The promise is the cache; a later caller gets the entries
+     the first one already sorted. */
+  var glossarLoad = null;
+
+  function loadGlossarEntries() {
+    if (!glossarLoad) {
+      glossarLoad = A.fetchJson("data/glossar.json").then(function (data) {
         categoryLabels = (data._meta && data._meta.kategorien) || {};
         glossarEntries = (data.eintraege || []).slice().sort(function (a, b) {
           return a.begriff.localeCompare(b.begriff, "de");
         });
         glossarEntries.forEach(function (e) { glossarBySlug[e.slug] = e; });
+        return glossarEntries;
+      });
+    }
+    return glossarLoad;
+  }
 
-        var items = glossarEntries.map(function (e) {
+  function renderGlossar() {
+    var el = document.getElementById("glossar");
+    if (!el) {
+      return Promise.resolve();
+    }
+    return loadGlossarEntries()
+      .then(function (entries) {
+        var items = entries.map(function (e) {
           return '<div class="glossar-entry" id="glossar-' + e.slug + '">' +
             '<h3 class="glossar-term">' + A.escapeHtml(e.begriff) + "</h3>" +
             categoryHtml(e.kategorie) +
@@ -112,18 +115,11 @@
             "</div>";
         }).join("");
 
-        // Concept alias anchor targets (empty spans) so #konzept-{name} resolves
-        // into the glossar entry via scroll. Each points at its glossar entry.
-        var aliasAnchors = Object.keys(KONZEPT_ALIASES).map(function (alias) {
-          return '<span class="konzept-alias" id="konzept-' + alias +
-            '" data-glossar="' + KONZEPT_ALIASES[alias] + '"></span>';
-        }).join("");
-
         // Sub-navigation: one entry per initial, so the list is navigable
         // without scrolling through it.
         var seen = {};
         var initials = [];
-        glossarEntries.forEach(function (e) {
+        entries.forEach(function (e) {
           var letter = e.begriff.charAt(0).toUpperCase();
           if (!seen[letter]) {
             seen[letter] = e.slug;
@@ -143,7 +139,6 @@
           "the paper text does not carry declare themselves as site vocabulary in their source " +
           "line.</p>" +
           jumpBar +
-          aliasAnchors +
           '<div class="glossar-list">' + items + "</div>";
       })
       .catch(function (err) {
@@ -297,6 +292,9 @@
   var activeTrigger = null;
 
   function setupGlossarInteraction(contentEl) {
+    if (!contentEl) {
+      return;
+    }
     contentEl.addEventListener("mouseover", function (e) {
       var trigger = triggerOf(e);
       if (!trigger || trigger === activeTrigger) {
@@ -360,6 +358,8 @@
   }
 
   A.renderGlossar = renderGlossar;
+  /* The term index reads the same entries; the file is fetched and sorted once. */
+  A.glossarEntries = loadGlossarEntries;
   A.decorateGlossarTriggers = decorateGlossarTriggers;
   A.setupGlossarInteraction = setupGlossarInteraction;
   A.konzeptSlug = konzeptSlug;

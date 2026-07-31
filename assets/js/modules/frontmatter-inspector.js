@@ -8,7 +8,12 @@
   "use strict";
 
   var App = window.PromptotypingApp || {};
-  var SITE_BASE = "https://dhcraft.org/Promptotyping/";
+  var SITE_BASE = App.SITE_BASE;
+  /* The example the textarea starts with, and the anchor family it belongs to,
+     both stated by the address vocabulary of registry.js rather than spelled
+     out a second time here. */
+  var TEMPLATE = App.templateUrls();
+  var EXAMPLE = App.templateUrls("data");
 
   var DEFAULT_FRONTMATTER =
     "---\n" +
@@ -16,8 +21,8 @@
     "template:\n" +
     "  name: Vorlage Datengrundlage\n" +
     "  version: 0.1\n" +
-    "  url: https://dhcraft.org/Promptotyping/promptotyping-document/data\n" +
-    "  alias: https://dhcraft.org/Promptotyping/#promptotyping-document-data\n" +
+    "  url: " + EXAMPLE.subpath + "\n" +
+    "  alias: " + EXAMPLE.hash + "\n" +
     "---";
 
   function setStatus(statusEl, kind, text) {
@@ -28,7 +33,7 @@
   /* Snapshot anchors look like promptotyping-document-{slug}-v{version}. If the
      version is not addressable today (all templates are v0.1, no snapshot anchors
      exist yet), fall back to the latest anchor with a warning (A11). */
-  function resolveWithFallback(anchor, statusEl, tmpl) {
+  function resolveWithFallback(anchor, statusEl) {
     var snapshotMatch = /^(promptotyping-document-[a-z-]+?)-v([\d.]+)$/.exec(anchor);
     if (snapshotMatch) {
       var latest = snapshotMatch[1];
@@ -73,13 +78,14 @@
     }
 
     var anchor = resolve(url);
-    if (!anchor || anchor.indexOf("promptotyping-document-") !== 0) {
+    if (!anchor || anchor.indexOf(TEMPLATE.prefix) !== 0) {
       setStatus(statusEl, "error",
-        "The URL does not match the template anchor scheme (#promptotyping-document-{slug}).");
+        "The URL does not match the template anchor scheme (#" +
+        TEMPLATE.anchor + "{slug}).");
       return;
     }
 
-    anchor = resolveWithFallback(anchor, statusEl, tmpl);
+    anchor = resolveWithFallback(anchor, statusEl);
 
     var name = tmpl.name ? tmpl.name : "Template";
     var version = tmpl.version ? " v" + tmpl.version : "";
@@ -98,10 +104,6 @@
 
     var resolve = App.resolveTemplateUrl;
     var openPanel = App.openTemplatePanel;
-    if (typeof resolve !== "function" || typeof openPanel !== "function") {
-      setStatus(statusEl, "error", "The inspector cannot initialise (app helpers missing).");
-      return;
-    }
 
     if (!textarea.value) {
       textarea.value = DEFAULT_FRONTMATTER;
@@ -142,12 +144,8 @@
     });
   }
 
-  // The host markup is injected by app.js after async rendering; boot on its
-  // ready event (and once now in case it already fired).
+  // The host markup is injected by app.js after async rendering, so this event
+  // is the earliest moment there is anything to take over, and app.js fires it
+  // once the render promises have resolved.
   document.addEventListener("promptotyping:sections-ready", boot);
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", boot);
-  } else {
-    boot();
-  }
 })();

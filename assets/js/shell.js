@@ -71,6 +71,39 @@
     });
   }
 
+  /* ---- Markdown in the panel ----
+     Templates and case-study deep pages open the same device: panel with a
+     loading line, fetch, strip the frontmatter, render, fill, cache. It stands
+     here once, with one cache keyed by the anchor the caller addresses the
+     document under. `after` receives the panel body and runs on the cached open
+     as well, so a footer or an embed it appends is there every time. It does not
+     run when the load fails, where the panel carries the error instead. */
+
+  var panelCache = {};
+
+  function openMarkdownPanel(title, url, cacheKey, after) {
+    function fill(html) {
+      openSidePanel(title, html);
+      var body = document.getElementById("side-panel-body");
+      if (body && typeof after === "function") {
+        after(body);
+      }
+    }
+    if (panelCache[cacheKey]) {
+      fill(panelCache[cacheKey]);
+      return Promise.resolve();
+    }
+    openSidePanel(title, '<p class="section-loading">Loading.</p>');
+    return A.fetchMarkdown(url)
+      .then(function (text) {
+        panelCache[cacheKey] = A.parseMarkdown(A.stripFrontmatter(text));
+        fill(panelCache[cacheKey]);
+      })
+      .catch(function (err) {
+        openSidePanel(title, '<p class="section-loading">' + err.message + "</p>");
+      });
+  }
+
   /* ---- Theme ----
      The stored choice wins over the system preference. The document class is
      set in an inline prelude before first paint; this only wires the toggle. */
@@ -109,7 +142,7 @@
   }
 
   A.openSidePanel = openSidePanel;
-  A.closeSidePanel = closeSidePanel;
+  A.openMarkdownPanel = openMarkdownPanel;
   A.setupSidePanel = setupSidePanel;
   A.setupThemeToggle = setupThemeToggle;
 })(window.PromptotypingApp = window.PromptotypingApp || {});

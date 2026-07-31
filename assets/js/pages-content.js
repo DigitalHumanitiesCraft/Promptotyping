@@ -85,6 +85,8 @@
      operator decision 2026-07-31) are the one nominal scale on this site, so
      they are the one place a hue carries meaning. */
 
+  /* The vocabulary and its order; the use-case gallery sorts and filters by the
+     same five and adds only its display labels. */
   var FUNCTION_SLUGS = ["verification", "exploration", "edition", "capture", "audit"];
 
   function functionVar(name) {
@@ -122,6 +124,7 @@
   A.renderPraxis = renderPraxis;
   A.renderSkills = renderSkills;
   A.renderUseCasesHost = renderUseCasesHost;
+  A.FUNCTIONS = FUNCTION_SLUGS;
   A.functionVar = functionVar;
   A.markFunctionList = markFunctionList;
 })(window.PromptotypingApp = window.PromptotypingApp || {});

@@ -270,11 +270,6 @@
       });
   }
 
-  /* ---- Literature references: inline "author year" into #literatur jump links ----
-     Conservative pass: only matches the common parenthetical pattern and links
-     to the literature section anchor. Runs after a paper section renders. */
-
-
   /* Reference anchors. Every entry of the reference list gets an id built from
      the first author's surname and the year, so a citation in the text lands on
      the entry rather than at the head of the list. Built once, after the paper

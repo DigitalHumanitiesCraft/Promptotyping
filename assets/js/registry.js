@@ -89,6 +89,10 @@
     { prefix: "konvention-", page: "konvention-v0.1", segment: "konvention" }
   ];
 
+  /* The one absolute form of a site address. Everything that prints or reads a
+     full URL builds it from here, so the host and the path prefix stand once. */
+  var SITE_BASE = "https://dhcraft.org/Promptotyping/";
+
   /* Anchors of the paper that are not a family: the unnumbered sections and the
      apparatus. */
   var PAPER_ANCHOR = /^(abstract|acknowledgements|literatur|fussnoten|fn-|fnref-)/;
@@ -477,10 +481,11 @@
           f[0] + "</span> " + A.escapeHtml(f[1]) + "</span>";
       }).join("");
       if (machine) {
+        var shown = machine.indexOf(SITE_BASE) === 0
+          ? machine.slice(SITE_BASE.length) : machine;
         html += '<span class="page-status-item"><span class="page-status-key">Source</span> ' +
           '<a href="' + A.escapeHtml(machine) + '" target="_blank" rel="noopener"><code>' +
-          A.escapeHtml(machine.replace(/^https:\/\/dhcraft\.org\/Promptotyping\//, "")) +
-          "</code></a></span>";
+          A.escapeHtml(shown) + "</code></a></span>";
       }
       var block = document.createElement("div");
       block.className = "page-head";
@@ -580,11 +585,6 @@
       scrollToAnchor(hash);
       return true;
     }
-    if (/^glossar-/.test(hash)) {
-      showPage("glossar");
-      scrollToAnchor(hash);
-      return true;
-    }
     if (/^konzept-/.test(hash)) {
       var slug = A.konzeptSlug(hash.replace(/^konzept-/, ""));
       showPage("glossar");
@@ -612,8 +612,6 @@
      inspector reads it, and so does the boot in app.js for the path that
      404.html hands over as ?p=, so the subpath vocabulary stands exactly
      once. */
-
-  var SITE_BASE = "https://dhcraft.org/Promptotyping/";
 
   /* Map a Subpath or Hash template URL to its canonical hash anchor.
      Returns the anchor string without the leading '#', or null if no match.
@@ -673,7 +671,27 @@
     return null;
   }
 
+  /* The twin of resolveTemplateUrl, and the direction it does not cover: the
+     address forms of a template, built from the same family table and the same
+     base. Whoever prints a template: block, seeds an example or tests an anchor
+     for the family reads them here rather than spelling them out again. A call
+     without a slug answers with the bare forms, which is how the family prefix
+     is asked for. */
+  var TEMPLATE_SEGMENT = "promptotyping-document";
+
+  function templateUrls(slug) {
+    var family = familyForSegment(TEMPLATE_SEGMENT);
+    var name = slug || "";
+    return {
+      prefix: family.prefix,
+      anchor: family.prefix + name,
+      subpath: SITE_BASE + family.segment + "/" + name,
+      hash: SITE_BASE + "#" + family.prefix + name
+    };
+  }
+
   A.HOME_PAGE = HOME_PAGE;
+  A.SITE_BASE = SITE_BASE;
   A.PAPER_HOST_ID = PAPER_HOST_ID;
   /* Copy: the registry stays the single source and is not written from outside.
      The term index reads this, and it reads the entries a term can be reported
@@ -707,4 +725,5 @@
   A.showNotFound = showNotFound;
   A.handleHash = handleHash;
   A.resolveTemplateUrl = resolveTemplateUrl;
+  A.templateUrls = templateUrls;
 })(window.PromptotypingApp = window.PromptotypingApp || {});

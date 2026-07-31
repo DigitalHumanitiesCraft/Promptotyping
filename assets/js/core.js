@@ -143,6 +143,19 @@
     return wrap;
   }
 
+  /* The video of a page sits under its opening paragraph, so the text says what
+     the page is before the embed stands in the way. A page whose first element
+     is not a paragraph takes it at the end. */
+  function insertVideoAfterIntro(el, youtubeId, title) {
+    var intro = el.querySelector("p");
+    var video = buildVideoFacade(youtubeId, title);
+    if (intro && intro.nextSibling) {
+      el.insertBefore(video, intro.nextSibling);
+    } else {
+      el.appendChild(video);
+    }
+  }
+
   /* Update the hash without triggering the global hashchange reload handler. */
   var suppressHashChange = false;
 
@@ -189,6 +202,7 @@
   A.copyText = copyText;
   A.addCodeCopyButtons = addCodeCopyButtons;
   A.buildVideoFacade = buildVideoFacade;
+  A.insertVideoAfterIntro = insertVideoAfterIntro;
   A.setHashSilently = setHashSilently;
   A.hashChangeSuppressed = hashChangeSuppressed;
 })(window.PromptotypingApp = window.PromptotypingApp || {});
