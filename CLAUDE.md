@@ -41,7 +41,7 @@ Die Site soll ruhig sein. Konkret bedeutet das beim Coden:
 ├── _content/                   # Markdown-Inhalte (Paper, Vorlagen, Case Studies, Glossar, Literatur)
 ├── assets/                     # CSS, JS, Vendor, Fonts, Logo, Paper-Abbildungen
 ├── data/                       # JSON-Datenfutter
-├── tools/                      # Prüfskripte der Site (check_consistency.py)
+├── tools/                      # Prüfskripte der Site (check_consistency.py, build_glossar.py) samt tests/
 └── vault/                      # Grounded-Vault-Instanz: Provenienz-Schicht unter dem Paper (Operator-Entscheidung 2026-07-19)
 ```
 
