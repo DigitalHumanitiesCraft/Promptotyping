@@ -1,6 +1,6 @@
 # Promptotyping Paper: Canonical Knowledge Document
 
-**Updated:** 31 July 2026, during the operator's end-to-end read; Abstract and §1 opening revised (Section 19, decisions 15 and 16).
+**Updated:** 31 July 2026, during the operator's end-to-end read; Abstract and the whole §1 revised (Section 19, decisions 15 to 20).
 
 **Status:** The single steering document of the paper. The manuscript is `knowledge/paper.md`, promoted on 2026-07-30 from the operator's externally revised, sanitised, verified, and literature-anchored text of the same day; the site renders that file directly, so the deployed text is the canonical text. The two-track regime of 2026-07-29/30 (`paper-draft.md` steered by this document beside `paper.md` steered by `paper-writing.md`) ended with the promotion; the working records of the revision round live commit-pinned in git history (see the provenance section at the end). The figure series is the authored monochrome SVG set under `assets/figures/svg/` with one written specification per figure under `assets/figures/specs/`.
 
@@ -109,6 +109,10 @@ The claim concerns which artefacts can become practically implementable under su
 ## 2.5 Strongest formulation of the thesis
 
 Promptotyping makes semi-formal scholarly project knowledge operational through agentic implementation. Because this translation remains underdetermined, maintained documentation, systematic write-back, differentiated checking, and accountable acceptance become constitutive parts of the method.
+
+## 2.6 Operator core formulation (2026-07-31)
+
+Promptotyping serves the rapid, iterative creation of project-specific research artefacts that function as instruments of understanding. Working with them clarifies which requirements the project actually pursues, what the research data can warrantably support, and what the researchers require. The LLM-supported work is documented as fully as practicable. Later chapters are measured against this core. Accountability mechanisms remain part of the method but are supporting apparatus; the research question no longer carries them.
 
 ---
 
@@ -1474,7 +1478,7 @@ Repetition is permitted where an editorial convention overrides deduplication, n
 
 ## 14.3 Residual redundancy held under the frozen wording
 
-The operator freeze of 2026-07-30 fixed the retained wording of §1, §1.1, §2.1, and §2.2. Seven components carry an inventory action the verbatim rule blocked; they are the residual redundancy of the deduplication pass and need a decision only if the operator reopens the frozen prose: the three continuity conditions in §2.1 (C-08), Distillation's addressee-indexed selectivity in §2.2 (I-03), the generic-tools adaptation sentence in §1.1 (J-03), the implementation-reduction sentence in §1.1 (K-03), the knowledge-base account sentence in §2.1 (O-02), the method gloss in §1 reduced only by its divergent tail (Q-02), and the harness enumeration in §2.2 repeating the §1.2 definition (R-03).
+The operator freeze of 2026-07-30 fixed the retained wording of §1, §1.1, §2.1, and §2.2. Seven components carry an inventory action the verbatim rule blocked; they are the residual redundancy of the deduplication pass and need a decision only if the operator reopens the frozen prose: the three continuity conditions in §2.1 (C-08), Distillation's addressee-indexed selectivity in §2.2 (I-03), the generic-tools adaptation sentence in §1.1 (J-03), the implementation-reduction sentence in §1.1 (K-03), the knowledge-base account sentence in §2.1 (O-02), the method gloss in §1 reduced only by its divergent tail (Q-02), and the harness enumeration in §2.2 repeating the §1.2 definition (R-03). Q-02 is resolved by acceptance, the operator permits Abstract–Introduction doublets (2026-07-31), and the §1 method gloss stands; J-03 and K-03 are superseded by the §1 rewrite of the same day.
 
 ---
 
@@ -1601,7 +1605,7 @@ Carried over from the German steering document at consolidation (2026-07-30); th
 6. No anaphora or rhetorical parallelism; series run through one governing verb.
 7. Vary word repetitions in neighbouring sentences.
 8. "I/my" throughout, never "the author".
-9. No verbatim doublets among Abstract, Introduction, and section openings; cross-references instead of repetition.
+9. No verbatim doublets among section openings; cross-references instead of repetition. Doublets between the Abstract and the Introduction are permitted, since the Abstract stands alone (operator decision 2026-07-31).
 10. At most one enumeration per paragraph.
 11. Make jargon self-explanatory; replace vague categories with concrete tools, where the example respects the paragraph's category boundary or the boundary violation becomes explicit argument.
 12. Present tense rather than perfect passive for persisting conditions.
@@ -1610,7 +1614,7 @@ Carried over from the German steering document at consolidation (2026-07-30); th
 15. Avoid opaque idioms for international reviewers.
 16. No superlatives.
 17. No volatile quantities in running prose; numbers only in verified form in the case table.
-18. Italics for adopted discourse terms at first introduction and for first introductions of the paper's own terms at their definition site; bold only for structural labels (forms of work, document types, case labels).
+18. Italics for adopted discourse terms at first introduction and for first introductions of the paper's own terms at their definition site; bold only for structural labels (forms of work, document types, case labels). Sentence-level bold in the working manuscript is the operator's revision aid marking core statements; a de-bolding pass over the whole manuscript belongs to the final production step before submission (operator note 2026-07-31).
 19. British spelling throughout.
 20. "LLM" rather than "model" where a language model is meant; "model" stays reserved for the data model, the conceptual model, and Stachowiak's model concept, and established compound terms of other origin (vision-language model, reasoning model) are unaffected.
 
@@ -1718,6 +1722,10 @@ Decisions of the acceptance round of 2026-07-31:
 14. **`paper-argument-map.md` and `submission-zfdg.md` were deleted with pins** (Section 24). The argument map described the seven-chapter text; the submission package derives fresh from Section 21 and the final text at submission time.
 15. **Abstract revised in the read round of 2026-07-31.** The promptotype sentence left the Abstract; neither the term nor the four-member relation appears there. It is replaced by the responsibility sentence "Responsibility for the consequential judgements through which each iteration is verified and accepted remains with accountable contributors.", and "arising from" left the write-back sentence. Sections 4.15 and 14.1 are re-keyed accordingly.
 16. **§1 opening revised by the operator (2026-07-31).** Paragraph 1 narrows *operationalisation* to the Pichler-Reiter sense and broadens to general software mediation in a second step; the Gephi and TEI examples are technically explicit (node or edge table, graph model and input format); the closing constraint sentence is bold. Paragraph 2 separates the probabilistic recognition step into its own two sentences and hedges the effort claim ("parts of the effort"). Paragraph 3 stands unchanged after an editing doublet was reverted. The section preview reads "The paper proceeds in five sections." Footnotes 3 to 5 adjusted (modular encoding framework; hedged LLM definition; processed or made usable). The §1 freeze of 2026-07-30 is superseded for these passages by the operator's own revision.
+17. **Research question refocused (2026-07-31).** The responsibility clause left the question. It now asks how scholars, research software engineers, and AI agents collaborate through documented project knowledge to develop artefacts that help a project clarify its requirements and examine what its research data can warrantably support. Accountability is a supporting concern of the paper; the consistency chain (Abstract responsibility sentence, §2.3 and §2.4 checking architecture, §5.3 authority sentence) is checked when the read reaches Chapter 2.
+18. **§1 restructured to five paragraphs (2026-07-31).** Problem; LLM routes in lean form; confinement and capacity thesis with "develop and compare"; checking paragraph using "checking" as umbrella word, "verified by experts" against "technical validation", and "as specified"; method paragraph with etymology, refocused research question, and active section preview.
+19. **Etymology stated at the term's introduction (2026-07-31).** The name combines prompt and prototyping and retains the prototype's clarifying function. First explanation anywhere; the site glossary mirrors it.
+20. **Preview conventions (2026-07-31).** The roadmap announcement sentence is deleted; preview sentences are active with Section subjects; the promptotype is announced with the gloss "the identifiable and versioned state that an accepted iteration yields", which is the canonical short form of the §2.2 definition; the closing sentence reads "the method's scope and limits".
 
 Open flags that survive:
 
