@@ -27,6 +27,6 @@ This is the paradigmatic case of data rescue and transformation, where a legacy 
 
 The provenance trail per value exists because the values are of mixed origin, and it records that origin without deciding correctness. A field filled by the optional enrichment carries the same weight in the output as a field parsed deterministically, and only the trail distinguishes them.
 
-The LLM-as-a-judge step in the quality assurance ranks below human verification for the reasons Section 2.3 of the paper gives. The round-trip verification is the stronger of the two, because it decides against the source.
+The LLM-as-a-judge step in the quality assurance ranks below human verification for the reasons Section 2.3.1 of the paper gives. The round-trip verification is the stronger of the two, because it decides against the source.
 
 Whether the extraction is complete cannot be established from inside the project. The source system is decommissioned, so the pipeline output is compared against the dump and not against the bibliography as its compiler maintained it.

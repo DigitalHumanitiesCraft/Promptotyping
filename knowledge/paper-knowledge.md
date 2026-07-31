@@ -1,8 +1,10 @@
 # Promptotyping Paper: Canonical Knowledge Document
 
-**Updated:** 31 July 2026, during the operator's end-to-end read; Abstract, the whole §1, and the verification/validation terminology revised (Section 19, decisions 15 to 24).
+**Updated:** 31 July 2026, on integration of the operator's four-chapter revision (Section 19, decision 27); earlier the same day during the operator's end-to-end read, when Abstract, the whole §1, and the verification/validation terminology were revised (decisions 15 to 24).
 
-**Status:** The single steering document of the paper. The manuscript is `knowledge/paper.md`, promoted on 2026-07-30 from the operator's externally revised, sanitised, verified, and literature-anchored text of the same day; the site renders that file directly, so the deployed text is the canonical text. The two-track regime of 2026-07-29/30 (`paper-draft.md` steered by this document beside `paper.md` steered by `paper-writing.md`) ended with the promotion; the working records of the revision round live commit-pinned in git history (see the provenance section at the end). The figure series is the authored monochrome SVG set under `assets/figures/svg/` with one written specification per figure under `assets/figures/specs/`.
+**Manuscript version:** 0.9, review draft, 31 July 2026. It is circulated for substantive feedback before the final revision. Central argument, methodological structure, project cases, and evidential scope are in place; references, figures, footnotes, and individual formulations are checked again in the final revision, and the apparatus debt this document records as flags 5 to 8 of Section 19 belongs to that pass. Feedback is invited on the clarity and distinctiveness of the methodological contribution, the adequacy of the case-based evidence, and remaining problems of focus, repetition, or comprehensibility. The version and the reviewer address stay in this document; `knowledge/paper.md` remains headerless and begins with its H1, because the site renders it as the academic text alone (A8).
+
+**Status:** The single steering document of the paper. The manuscript is `knowledge/paper.md`, promoted on 2026-07-31 from the operator's four-chapter revision, which supersedes the five-chapter text promoted on 2026-07-30. The site renders that file directly, so the deployed text is the canonical text. The two-track regime of 2026-07-29/30 (`paper-draft.md` steered by this document beside `paper.md` steered by `paper-writing.md`) ended with the earlier promotion; the working records of both revision rounds live commit-pinned in git history (see the provenance section at the end). The figure series is the authored monochrome SVG set under `assets/figures/svg/` with one written specification per figure under `assets/figures/specs/`; the manuscript embeds one of them since the four-chapter revision (Section 17).
 
 **Function:** Governs the paper's central argument, terminology, method structure, chapter boundaries, evidence handling, language rules, apparatus conventions, repository interpretation, submission route, and final quality assurance.
 
@@ -656,14 +658,16 @@ Local code fixes do not complete write-back when the underlying project understa
 The paper must distinguish:
 
 - deterministic verification;
-- assessment;
 - agentic review;
-- Critical Expert validation;
+- Critical Expert verification and adjudication;
+- scholarly validation;
 - acceptance.
 
-*Verification* names conformity to formalised requirements, technical and deterministic. *Validation* names the adequacy judgement that requires expert authority, scholarly in kind. The direction follows IEEE Std 1012 (IEEE 2025, decision 24), which the manuscript cites in §2.4 (decision 21).
+The manuscript states the first four as the differentiated forms of checking in §2.3.1 and holds acceptance apart from all of them. *Verification* names conformity to formalised requirements, technical and deterministic. *Validation* names the adequacy judgement that requires expert authority, scholarly in kind. The direction follows IEEE Std 1012 (IEEE 2025, decision 24), which the manuscript cites in the footnote attached to the verification–validation paragraph of §1.
 
 Do not collapse these into a generic category such as checking, quality assurance, or confidence.
+
+*Assessment* (§6.3 below) is steering vocabulary of this document for the wider collection of evidence. The manuscript does not name it as one of the forms, and a revision must not silently promote it to a fifth.
 
 ## 6.2 Deterministic verification
 
@@ -723,11 +727,15 @@ It never authorises. It remains a generative operation and does not become schol
 - the output receives a confidence score;
 - the review appears systematic.
 
-## 6.5 Critical Expert validation
+## 6.5 Critical Expert verification and adjudication, and scholarly validation
 
-**Critical Expert validation** applies where adequacy depends on contextual, domain-specific, interpretative, editorial, representational, or technical judgement that cannot be reduced adequately to deterministic rules.
+Since the restructuring of 2026-07-31 the manuscript splits what earlier stood as one form. Both limbs rest on the same authority and differ in what they take as their object.
 
-It may concern:
+**Critical Expert verification and adjudication** is the accountable examination of particular outputs against their sources and the resolution of cases that no deterministic or probabilistic procedure can decide. It can confirm, correct or reject an earlier finding, and it records who carries the resulting judgement. Its object is the individual output.
+
+**Scholarly validation** assesses whether the representations, requirements, evaluation criteria and artefacts governing a workflow are warranted by the research material and adequate for their intended purpose. Its object is the governing arrangement rather than a single output.
+
+Together they apply where adequacy depends on contextual, domain-specific, interpretative, editorial, representational, or technical judgement that cannot be reduced adequately to deterministic rules. This may concern:
 
 - source fidelity requiring judgement;
 - design conformance;
@@ -737,13 +745,13 @@ It may concern:
 - adequacy for the research question;
 - professional technical judgement.
 
-The Critical Expert determines whether the available evidence supports the relevant claim.
+The Critical Expert determines whether the available evidence supports the relevant claim. The term *Critical Expert validation*, used up to the five-chapter text, is superseded; where a document still carries it, read it as the pair above.
 
 ## 6.6 Acceptance
 
 **Acceptance** is the accountable decision that an identifiable state is adequate for a stated purpose under documented criteria and limitations.
 
-Deterministic verification, assessment, agentic review, and Critical Expert validation contribute evidence. None automatically constitutes acceptance.
+Deterministic verification, assessment, agentic review, Critical Expert verification and adjudication, and scholarly validation contribute evidence. None automatically constitutes acceptance.
 
 Acceptance must be explicit and attributable. The documented grounds of acceptance should identify:
 
@@ -770,7 +778,7 @@ The conversion does not run in the opposite direction. A deterministic check doe
 
 ## 6.8 Canonical table terminology
 
-Use:
+The manuscript stopped carrying a checking table with the restructuring of 2026-07-31; §2.3.1 states the four forms as a bullet list instead. The vocabulary below stays binding for this document, for the site's checking page, and for any project that tabulates its own checking arrangement, and it is what a reinstated table would have to use.
 
 **Table title:** Forms and objects of checking in Promptotyping
 
@@ -995,6 +1003,8 @@ The defensible claim is:
 ---
 
 # 9. Relation to Adjacent Practices
+
+Status since 2026-07-31. The four-chapter manuscript no longer positions Promptotyping explicitly against Spec-Driven Development and Vibe Coding; both demarcations fell away with §2.4, and the references Macedo 2026 and Sarkar and Drosos 2025 left the reference list with them. The distinctions below stay binding as steering vocabulary, they carry the site's glossary and its checking and application pages, and they are what a reviewer's question about either practice must be answered with. Reinstating a demarcation in the manuscript means reinstating its reference. The RSE boundary in §9.3 does remain in the manuscript, in §4.1.
 
 ## 9.1 Spec-Driven Development
 
@@ -1419,9 +1429,9 @@ Do not treat models and harnesses as neutral or interchangeable infrastructure.
 
 ---
 
-# 13. Manuscript Architecture (as promoted, 2026-07-30)
+# 13. Manuscript Architecture (as promoted, 2026-07-31)
 
-The manuscript uses five chapters. This is the realised structure of `knowledge/paper.md`; the site derives the `#abschnitt-{n}-{slug}` anchors from these headings, so renaming a heading moves its address and requires an alias in `PAPER_ANCHOR_ALIASES` (`assets/js/pages-paper.js`).
+The manuscript uses four chapters. This is the realised structure of `knowledge/paper.md`; the site derives the `#abschnitt-{n}-{slug}` anchors from these headings, so renaming a heading moves its address and requires an alias in `PAPER_ANCHOR_ALIASES` (`assets/js/pages-paper.js`).
 
 - **Abstract**
 - **1. Introduction** — problem, operationalisation, claim with its limits
@@ -1430,25 +1440,26 @@ The manuscript uses five chapters. This is the realised structure of `knowledge/
 - **2. Promptotyping as a Method** — genealogy in the chapter opening
   - 2.1 Promptotyping and the Project Knowledge Base
   - 2.2 Forms of Work and Iteration (Figure 1) — phase subsections 2.2.1 Preparation, 2.2.2 Exploration, 2.2.3 Distillation, 2.2.4 Implementation; write-back and the promptotype definition close 2.2.4
-  - 2.3 Applying Promptotyping: Complementary Project Cases — SZD, ZBZ, M³GIM, Notker with public repository and interface footnotes
-  - 2.4 Verification, Validation, and Acceptance — checking architecture, Table 1, Figure 2, SDD and Vibe-Coding demarcations, acceptance elaboration
-  - 2.5 Documentation, Accountability, and the Limits of AI-Assisted Development
-- **3. Epistemic and Methodological Implications**
-  - 3.1 Research Artefacts and the Amplification of Computer-Based Research
-  - 3.2 Research Data and Project Knowledge as Mediating Structures
-  - 3.3 Amplification, Competence, and the Limits of Externalisation
-  - 3.4 Acceptance, Reconstructability, and the Status of the Promptotype
-- **4. Promptotyping in Practice**
-  - 4.1 Cases and Evidential Status
-  - 4.2 Artefact Forms and Documented Projects — Table 2 (artefact forms), seven worked cases, Figures 3 to 5
-  - 4.3 Cross-Case Findings — Table 3, teaching and collaboration paragraph
-- **5. Scope, Limits, Evaluation, and Conclusion**
-  - 5.1 Scope, Limits, and Conditions of Applicability
-  - 5.2 Transferability and Priorities for Evaluation
-  - 5.3 Conclusion
-- **AI Use and Research Provenance**, **References**, **Figure files**
+  - 2.3 Applying Promptotyping: Complementary Project Cases — case overview and the four case subsections
+    - 2.3.1 Agentic Data Production and Curation in the SZD and Jeanne Hersch Workflows — carries the four-form checking architecture as a bullet list, the agentic-review demarcation against LLM-as-a-Judge, and the CER example
+    - 2.3.2 Prospective Modelling and Exploration in M³GIM
+    - 2.3.3 Proposal-Stage Promptotyping in Notker
+    - 2.3.4 From Complementary Cases to the Promptotype — Critical Expert in the loop, delegation and least privilege, acceptance and identifiability
+- **3. Patterns across Promptotypes**
+  - 3.1 Evidence and Comparison — the four analytical dimensions
+  - 3.2 Project Conditions, Functions, and Artefact Forms — three methodological functions, six operational forms, Table 1
+  - 3.3 Findings, Attribution, and Learning — levels of finding, project- against method-level write-back, the ZBZ authority rule
+  - 3.4 Implications and Evidential Limits — artefact-mediated scholarly enquiry as a proposition
+- **4. Scope, Conditions, and Evaluation**
+  - 4.1 Evidential Scope and Applicability
+  - 4.2 Labour, Infrastructure, and Responsible Use — asymmetric amplification, proprietary dependence, data governance, environmental claim withheld
+  - 4.3 Transferability and Evaluation — Table 2, the three evaluation objects
+  - 4.4 Conclusion
+- **Author's Note on AI Use and Research Provenance**, **References**
 
-The former fourteen-project inventory left the manuscript with the integrated version of 2026-07-29; Table 3 is the only project table. The site gallery followed on 2026-07-30: the seven cases of Table 3 carry the evidence role, the eight former inventory projects moved to the role `further` with their cards intact, and the admission rule in `data/case-studies.json` and V5 of `knowledge/verification.md` are re-keyed accordingly.
+What the restructuring of 2026-07-31 changed against the five-chapter text. The separate checking chapter §2.4 is dissolved into §2.3.1, where the four forms are stated as differentiated evidence rather than as a table; the former Table 1 of checking forms is gone. The former chapter 3 (Epistemic and Methodological Implications) is dissolved: its artefact argument moves to §3.4, its mediating-structures argument back to §2.1, its externalisation argument to §4.2, its reconstructability argument to §2.3.4. The former chapter 4 becomes chapter 3 and drops the per-case prose sections in favour of the comparison; Table 2 (artefact forms) and Table 3 (cross-case findings) are merged into the new Table 1. The former chapter 5 becomes chapter 4 and gains Table 2 for the evaluation objects. Figures 2 to 5 are dropped with their host sections; only Figure 1 remains in the manuscript. The AI-use section is rewritten in the first person and renamed, which moves its anchor.
+
+The former fourteen-project inventory left the manuscript with the integrated version of 2026-07-29. Table 1 is now the only project table. The site gallery follows it: the seven cases of Table 1 carry the evidence role, the eight former inventory projects stand under the role `further` with their cards intact, and the admission rule in `data/case-studies.json` and V5 of `knowledge/verification.md` are keyed to Table 1 in Section 3.2.
 
 ---
 
@@ -1458,22 +1469,26 @@ Each recurring claim has one primary argumentative location.
 
 | Claim | Primary location | Later treatment |
 |---|---|---|
-| Expertise is not replaced | Section 3.3 | Brief cross-reference only |
+| Expertise is not replaced | Section 4.2 | Brief cross-reference only |
 | Knowledge base has no autonomous authority | Section 2.1 | Do not redevelop repeatedly |
-| Agentic review does not authorise | Section 2.3 checking architecture | Use concise reminder elsewhere |
-| Promptotyping does not replace RSE | Section 2.4 RSE boundary | Mention once in 1.1 |
-| Externalisation is incomplete | Section 3.3 | Do not repeat in every document discussion |
-| Artefacts embody scholarly decisions | Section 3.1 | Apply through examples elsewhere |
-| Implementation produces knowledge | Write-back in Section 2.2 | Reference in cases |
-| Transferability is unproven | Section 5.2 | State briefly in Abstract and Conclusion |
-| Capacity rather than speed | Sections 1.1 and 5.3 | Enforce through style rules |
-| Acceptance is not finality or publication | Section 2.3 | Do not re-explain at every occurrence |
+| Agentic review does not authorise | Section 2.3.1 checking architecture | Use concise reminder elsewhere; the general rule is stated once more in 3.3 |
+| Promptotyping does not replace RSE | Section 4.1 | Mention once in 1.1 |
+| Externalisation is incomplete | Section 4.1 | Do not repeat in every document discussion |
+| Artefacts embody scholarly decisions | Section 3.4 | Apply through examples elsewhere |
+| Implementation produces knowledge | Write-back in Section 2.2.4 | Reference in cases |
+| Transferability is unproven | Section 4.3 | State briefly in Abstract and Conclusion |
+| Capacity rather than speed | Sections 1.1 and 4.4 | Enforce through style rules |
+| Acceptance is not finality or publication | Section 2.3.4 | Do not re-explain at every occurrence |
 
 When revising the manuscript, remove repeated full explanations and replace them with concise cross-references.
 
 ## 14.1 The canonical promptotype relation and its homes
 
-The relation has four members, maintained project knowledge, the resulting digital research artefact, the referenced research-data state, and the documented grounds of acceptance. Member naming is uniform. Three locations carry the enumeration in full and are its canonical homes, the §2.2 definition (since the restructuring in §2.2.4), the §2.4 operative elaboration with the increment about checking evidence, and the §3.4 statement of epistemic status. The Abstract carries neither the enumeration nor the term promptotype since the operator decision of 2026-07-31; it states responsibility for the consequential judgements of validation and acceptance instead, and the term is first announced in the §1 section preview and introduced at its definition site in §2.2. Two further full statements are licensed exceptions, the §2.4 instantiation with SZD content and the relation statement in the Conclusion restored after the operator's external review (2026-07-30); neither may be re-trimmed by a later redundancy pass. The Figure 1 caption ceased to carry the enumeration with the operator caption of 2026-07-31 (decision 26). Every other occurrence is a reference to the §2.2 definition, and an edit that reintroduces an enumeration elsewhere breaks the arrangement. The §3.4 statement was collapsed from six members to the canonical four (code absorbed by the artefact member, verification evidence by the grounds of acceptance), confirmed by the operator on 2026-07-30.
+The relation has four members, maintained project knowledge, the resulting digital research artefact, the referenced research-data state, and the documented grounds of acceptance. Member naming is uniform. Since the four-chapter restructuring of 2026-07-31 three locations carry the enumeration in full and are its canonical homes, the §2.2.4 definition, the promptotype-quality paragraph of §4.3, and the relation statement in the Conclusion §4.4. The Abstract carries neither the enumeration nor the term promptotype; it states responsibility for the consequential judgements of validation and acceptance instead, and the term is first announced in the §1 section preview and introduced at its definition site in §2.2.4. The Figure 1 caption does not carry the enumeration (decision 26 of 2026-07-31). Every other occurrence is a reference to the §2.2.4 definition, and an edit that reintroduces an enumeration elsewhere breaks the arrangement.
+
+One licensed variant stands in §2.3.4, which opens the cross-case paragraph with a five-member form that adds the findings arising from examination and responsible judgement. It is a reading of the same relation under the case comparison and is not a second canonical home. The §4.3 evaluation table names a fifth member, the stated purpose, for the same reason.
+
+Superseded homes. The §2.4 operative elaboration with the checking-evidence increment and the §2.4 instantiation with SZD content fell away with the section; the §3.4 statement of epistemic status, collapsed from six members to four on 2026-07-30, fell away with the former chapter 3. Both are recorded here because the deduplication decisions behind them stay valid for any passage that reintroduces the enumeration.
 
 ## 14.2 Protected repetitions and one conditional deletion
 
@@ -1627,19 +1642,23 @@ Carried over from the German steering document at consolidation (2026-07-30); th
 
 # 17. Figures and Tables Quality Assurance
 
-The promoted manuscript carries five figures as an authored monochrome SVG series: the method loop (Figure 1, file 01), knowledge–context–authority (Figure 2, file 02), the M³GIM loop (Figure 3, file 04), ZBZ before/after E66 (Figure 4, file 05), and the Notker acceptance (Figure 5, file 06). The manuscript numbering diverges from the file numbering after Figure 2 because file 03 (comparative anatomy) is retired; `assets/figures/manifest.yaml` records the mapping in its `manuscript_number` field, and the manuscript's closing section "Figure files" states the arrangement.
+The manuscript carries one figure since the restructuring of 2026-07-31, the method loop (Figure 1, file 01), embedded as the authored monochrome SVG `assets/figures/svg/figure-01-promptotyping-method.svg`. Figures 2 to 5 fell away with their host sections, knowledge–context–authority (file 02) with §2.4, the M³GIM loop (file 04), ZBZ before/after E66 (file 05) and the Notker acceptance (file 06) with the per-case sections of the former chapter 4. The closing manuscript section "Figure files" is gone with them.
 
-The series is authored, one hand-written SVG per figure from a written specification under `assets/figures/specs/`, with the acceptance proof sheet at `assets/figures/proof-sheet.html`. The earlier generated PNG series (ChatGPT Images 2.0) remains archived under `assets/figures/` with its records in `manifest.yaml` and `PROVENANCE.md`; the manuscript embeds the SVG files. The revision of 2026-07-30 established the visual hierarchy, two stroke weights, one legend vocabulary (operational flow, evidence relation and write-back, accountable human authority), and per-figure layout corrections. Whoever changes a figure edits its specification first, then the SVG, and re-renders the proof sheet.
+The four dropped figures stay in the repository with their specifications, SVG and PNG files, prompts and provenance records intact, and they stay valid as accepted states of what they depict. Nothing is deleted, because the decision of 2026-07-31 concerns what the manuscript embeds rather than what the figure work established. Whoever reinstates one of them reinstates its manuscript number and its caption together with the section that hosts it. `assets/figures/manifest.yaml` carries a `manuscript_number` field per figure; it is authoritative for the file series and now describes the retired numbering for files 02 and 04 to 06.
+
+The series is authored, one hand-written SVG per figure from a written specification under `assets/figures/specs/`, with the acceptance proof sheet at `assets/figures/proof-sheet.html`. The earlier generated PNG series (ChatGPT Images 2.0) remains archived under `assets/figures/` with its records in `manifest.yaml` and `PROVENANCE.md`. The revision of 2026-07-30 established the visual hierarchy, two stroke weights, one legend vocabulary (operational flow, evidence relation and write-back, accountable human authority), and per-figure layout corrections. Whoever changes a figure edits its specification first, then the SVG, and re-renders the proof sheet.
+
+The manuscript carries two tables since the same restructuring. Table 1 in §3.2 compares the seven documented cases across initial project condition, primary function of Implementation, principal operational forms, and bounded purpose; it merges the former Table 2 (artefact forms) and Table 3 (cross-case findings). Table 2 in §4.3 names the three objects of a future evaluation with their central question and indicative evidence; its caption was supplied on integration, since the operator draft left the table unlabelled.
 
 Before release, verify:
 
 - arrows in the four-form figure point to the intended form of work or accepted state;
 - the stronger return path points from Implementation to Distillation;
 - the Critical Expert's authority arrow enters the Digital Research Artefact box and reads "verifies and accepts" (operator instructions of 2026-07-31, figure revision 5; the caption follows the same verb under decision 26);
-- figures distinguish the digital research artefact from the promptotype;
-- captions use **Knowledge Documents** and the promptotype caption uses **documented grounds of acceptance**;
+- the figure distinguishes the digital research artefact from the promptotype;
+- the caption uses **Knowledge Documents**;
 - no alt text appears as ordinary manuscript prose;
-- figure numbers and references are sequential in the manuscript numbering;
+- the first column of Table 1 uses exactly the case names that `data/case-studies.json` carries in `paper_row`, since the site turns them into gallery links;
 - Table 1 uses the terminology fixed in Section 6.8;
 - embedded labels contain no superseded wording.
 
@@ -1660,7 +1679,7 @@ The manuscript is ready for submission only when every answer is yes.
 
 ## Checking and acceptance
 
-- Are deterministic verification, agentic review, Critical Expert validation, and acceptance distinguished?
+- Are deterministic verification, agentic review, Critical Expert verification and adjudication, scholarly validation, and acceptance distinguished?
 - Is agentic review consistently prevented from authorising?
 - Is acceptance distinguished from validation, publication, finality, and truth?
 - Are documented grounds of acceptance identifiable and attributable?
@@ -1718,10 +1737,10 @@ The promotion closed the two-track regime. The operator's decisions of that day,
 
 Decisions of the acceptance round of 2026-07-31:
 
-10. **The site keeps its own interface typology** (verification, exploration, edition, capture, audit) as site vocabulary; the paper's Table 2 names artefact forms, and the two stand side by side. The former open flag is closed.
-11. **The gallery is a curated showcase** of the documented practice, broader than the paper. The eight former inventory projects keep their cards under the role `further`; the evidence block couples strictly to Table 3.
+10. **The site keeps its own interface typology** (verification, exploration, edition, capture, audit) as site vocabulary; the paper names artefact forms of its own, and the two stand side by side. The former open flag is closed. [Re-keyed by decision 27: the paper's forms now stand in Table 1 of §3.2 and number six.]
+11. **The gallery is a curated showcase** of the documented practice, broader than the paper. The eight former inventory projects keep their cards under the role `further`; the evidence block couples strictly to the paper's case table. [Re-keyed by decision 27: that table is Table 1 of §3.2.]
 12. **The part-2 demo video moved from the paper page to the tutorial page.** The paper page carries the academic text alone; academic content and tutorial are separated (A8 updated in the site specification).
-13. **The "Figure files" closing section stays in the rendered text** as the repository-facing note on the file/manuscript numbering; it falls away in the submission export.
+13. **The "Figure files" closing section stays in the rendered text** as the repository-facing note on the file/manuscript numbering; it falls away in the submission export. [Superseded by decision 27: with only Figure 1 left in the manuscript the section has no subject and is gone; `assets/figures/manifest.yaml` carries the numbering alone.]
 14. **`paper-argument-map.md` and `submission-zfdg.md` were deleted with pins** (Section 24). The argument map described the seven-chapter text; the submission package derives fresh from Section 21 and the final text at submission time.
 15. **Abstract revised in the read round of 2026-07-31.** The promptotype sentence left the Abstract; neither the term nor the four-member relation appears there. It is replaced by the responsibility sentence "Responsibility for the consequential judgements through which each iteration is verified and accepted remains with accountable contributors.", and "arising from" left the write-back sentence. Sections 4.15 and 14.1 are re-keyed accordingly.
 16. **§1 opening revised by the operator (2026-07-31).** Paragraph 1 narrows *operationalisation* to the Pichler-Reiter sense and broadens to general software mediation in a second step; the Gephi and TEI examples are technically explicit (node or edge table, graph model and input format); the closing constraint sentence is bold. Paragraph 2 separates the probabilistic recognition step into its own two sentences and hedges the effort claim ("parts of the effort"). Paragraph 3 stands unchanged after an editing doublet was reverted. The section preview reads "The paper proceeds in five sections." Footnotes 3 to 5 adjusted (modular encoding framework; hedged LLM definition; processed or made usable). The §1 freeze of 2026-07-30 is superseded for these passages by the operator's own revision.
@@ -1737,12 +1756,18 @@ Decisions of the acceptance round of 2026-07-31:
 
 26. **Chapter 2 restructured to five sections (2026-07-31).** The operator's revised chapter text replaces the opening, §2.1, and §2.2, introducing phase subsections §2.2.1 to §2.2.4 with per-phase sufficiency criteria; write-back and the promptotype definition close §2.2.4, where the Critical Expert is defined in compact form. The new §2.3 "Applying Promptotyping: Complementary Project Cases" presents SZD, ZBZ, M³GIM, and Notker with repository and interface footnotes and a synthesis paragraph. The checking architecture, Table 1, Figure 2, the SDD and Vibe-Coding demarcations, and the acceptance elaboration continue as §2.4 "Verification, Validation, and Acceptance"; the former §2.4 is now §2.5. The apparatus renumbers to notes 1 to 41 with new notes for Git, `CLAUDE.md`, `AGENTS.md`, the derived-artefact example, context compression (Xu et al. 2024), and the four cases; Liu et al. 2024 and Xu et al. 2024 enter the reference list, both verified against publisher pages. Terminology adopted with the chapter text: *agent instruction documents* replaces *action knowledge documents*, and *derived project artefacts* replaces *derived context artefacts* (paper, Figure 2 spec, proof sheet; no site glossary entry existed for either). The Figure 1 caption follows the operator wording "verifies the artefact", matching the figure label "verifies and accepts"; the §2.4 taxonomy keeps *deterministic verification* and *Critical Expert validation* under decision 21. Open: whether the narrative verb of §2.2.4 and the caption should be harmonised with the taxonomy term for the expert's judgement; until decided, the taxonomy governs terminology and the narrative verb reads in the everyday sense. Site follow-through: retired section anchors alias in `PAPER_ANCHOR_ALIASES`, glossary sources retarget to §2.4.
 
+27. **Four-chapter revision integrated (2026-07-31, version 0.9, review draft).** The operator supplied an externally revised manuscript that dissolves the separate checking chapter and the epistemic chapter and cuts the text to four chapters; Section 13 records the resulting architecture and what moved where. Terminology adopted with it: the checking forms become *deterministic verification*, *agentic review*, *Critical Expert verification and adjudication*, and *scholarly validation*, so decision 21's pair *deterministic verification* / *Critical Expert validation* is superseded in its second limb; *agentic review* becomes a defined term of art with its LLM-as-a-Judge demarcation; the three methodological functions of implementation and the six operational forms enter §3.2; *asymmetric amplification* moves from the epistemic chapter to §4.2. Integration decisions taken here, subject to operator confirmation: the version and reviewer note stay out of `paper.md`, which keeps the headerless convention (A8), and are recorded in this document instead; five footnotes whose markers survived the export without definitions are restored verbatim from the five-chapter text (SZD-HTR repository, coOCR/HTR, teiCrafter, CorrespExplorer, and the DH prototype-scholarship note that carries Galey and Ruecker 2010 with Whitelaw 2015); IEEE 2025 is restored to the reference list, which the draft dropped although footnote 6 still cites it; the unlabelled evaluation table receives the caption Table 2. Site follow-through in the same round: the whole anchor alias map re-pointed, the figure-caption matcher relaxed so `attachFigures` recognises a fully bold caption, glossary sources retargeted with two new entries (Agentic Review, Promptotype) and three terms demoted to site vocabulary (Spec-Driven Development, Sycophancy, Vibe Coding), four dead literature anchors converted to plain text, and the checking and artefact pages rewritten against §2.3.1 and §3.2.
+
 Open flags that survive:
 
 1. **Summerfield 2025** left the reference list with the operator's own revision; the confabulation term thereby has no source in the manuscript and the term itself no longer appears. Reopen only if the term returns.
 2. **Doctoral Congress presentation** still needs a deposited persistent identifier (the footnote wording stays provisional until then).
-3. **Vault claim follow-up.** The audit of 2026-07-31 ran over all 153 claims (36 carried, 36 moved, 68 orphaned, 13 internal); verdicts, defect list, and routing stand in `vault/knowledge/claim-audit-2026-07-31.md`. Open is the follow-up vault session: re-key `vault/knowledge/state.md` to the five-chapter structure and edit the claim files whose prose contradicts it.
+3. **Vault claim follow-up.** The audit of 2026-07-31 ran over all 153 claims (36 carried, 36 moved, 68 orphaned, 13 internal); verdicts, defect list, and routing stand in `vault/knowledge/claim-audit-2026-07-31.md`. Open is the follow-up vault session: re-key `vault/knowledge/state.md` to the four-chapter structure and edit the claim files whose prose contradicts it. The audit itself was run against the five-chapter text, so its routing needs a second pass for the sections that moved.
 4. **Final read-acceptance.** The operator has not yet read the promoted text end to end as the published version; the site renders it in the meantime by the promotion decision.
+5. **Two footnotes are owed (2026-07-31).** The draft carries markers at two positions in §2.3.1 for which no definition exists in any predecessor, so no restoration was possible and the markers were removed rather than filled with invented citations. First position: after "in extension of emerging agent-based approaches to code review and other forms of tool-supported technical inspection", which needs the agent-based code-review literature. Second position: after "as found in scholarly reviews of digital editions and resources", which needs the review literature, presumably RIDE. Both belong in the final revision.
+6. **Three project URLs are unresolved.** Footnotes 24 (Jeanne Hersch), 25 (M³GIM), and 26 (Notker) carry the operator's own `[Insert project URL.]` markers. The ZBZ repository pointer that the five-chapter text carried has no marker in the new text at all and is therefore not restorable without an editorial decision on where it belongs.
+7. **Two references are listed but uncited.** Fakhoury et al. 2024 and Hora and Robbes 2026 survive in the reference list although the four-chapter text no longer cites them; the passages that did (test-driven conversion, agent-written tests) fell away with §2.4. Either restore the passages or drop the entries.
+8. **Footnote labels are non-sequential in the source.** The restored notes keep their five-chapter labels 29 and 34 to 37 beside the draft's own 1 to 27, and 28 and 30 to 33 do not exist. The site numbers the apparatus by order of occurrence, so the rendered text is correct and only the Markdown source shows the gaps. A submission export renumbers.
 
 Evidence and production tasks that remain from the earlier list: the M³GIM `knowledge/domain.md` derivation question, the Notker verification and acceptance reconstruction, repository-visibility verification for restricted repositories, and the rights-clearance list (Section 22).
 
@@ -1753,8 +1778,9 @@ A manuscript section is accepted only when its conceptual and terminological dec
 # 20. Next Work Block
 
 1. Operator's end-to-end read of `knowledge/paper.md` as rendered on the site; findings return through the ordinary revision path with the rule catalogue of Section 16.6.
-2. Vault claim follow-up from the audit of 2026-07-31 (open flag 3), in a vault session.
-3. Submission package derived fresh from Section 21 and the final text, then venue submission (operator-gated).
+2. Close the apparatus flags 5 to 8 of Section 19, which are the debt the four-chapter integration left standing.
+3. Vault claim follow-up from the audit of 2026-07-31 (open flag 3), in a vault session, re-keyed to the four-chapter structure.
+4. Submission package derived fresh from Section 21 and the final text, then venue submission (operator-gated).
 
 ---
 

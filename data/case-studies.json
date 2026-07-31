@@ -2,8 +2,8 @@
   "version": "0.3",
   "generated": "2026-06-10",
   "_meta": {
-    "beschreibung": "Case-study data of the Promptotyping methodology site. The sources are the case descriptions in the vault, the method extensions in the Promptotyping MOC and the case analysis in Pollin 2026, Section 4. The gallery groups by the role a case plays for the paper and orders within a block by the five epistemic interface functions, the site's own typology documented on the artefact page (part 4 of the specification).",
-    "kuratierung": "Admission is decided by what a card lets a reader check. Every case in Table 3 of the paper (Section 4.3) has a card, because a reader who comes from the case analysis to verify a claim has to find the project; the paper_row field carries that link and tools/check_consistency.py holds it in both directions (operator decision 2026-07-26, re-keyed to the five-chapter text with the promotion of 2026-07-30). Beyond the paper's case set the gallery carries the projects the method grew out of, the teaching formats, and the documented applications that the earlier seven-chapter text listed in its project inventory; since the promotion those stand on their repositories alone under the role further. The Aldersbach monastic accounts stay although the paper dropped the case as too old, because the genealogy is what they carry (operator decision 2026-07-25). Outside the gallery stays the agentic edition pipeline, which is meta-tooling and a template rather than a single research artefact.",
+    "beschreibung": "Case-study data of the Promptotyping methodology site. The sources are the case descriptions in the vault, the method extensions in the Promptotyping MOC and the case analysis in Pollin 2026, Section 3. The gallery groups by the role a case plays for the paper and orders within a block by the five epistemic interface functions, the site's own typology documented on the artefact page (part 4 of the specification).",
+    "kuratierung": "Admission is decided by what a card lets a reader check. Every case in Table 1 of the paper (Section 3.2) has a card, because a reader who comes from the case analysis to verify a claim has to find the project; the paper_row field carries that link and tools/check_consistency.py holds it in both directions (operator decision 2026-07-26, re-keyed to the four-chapter text with the promotion of 2026-07-31). Beyond the paper's case set the gallery carries the projects the method grew out of, the teaching formats, and the documented applications that the earlier seven-chapter text listed in its project inventory; since the promotion those stand on their repositories alone under the role further. The Aldersbach monastic accounts stay although the paper dropped the case as too old, because the genealogy is what they carry (operator decision 2026-07-25). Outside the gallery stays the agentic edition pipeline, which is meta-tooling and a template rather than a single research artefact.",
     "schema": {
       "id": "anchor slug, forming the site anchor together with #case- (e.g. herdata -> #case-herdata)",
       "name": "display name",
@@ -12,13 +12,13 @@
       "summary": "one-sentence overview",
       "data": "data basis, short",
       "artifact": "artefact produced, short",
-      "interfaceTypes": "array of verification, exploration, edition, capture, audit, the five epistemic functions of the site's interface typology (artefact page, part 4 of the specification); empty where the case produced no interface. This is the gallery's ordering and filtering dimension since 2026-07-26, replacing a nine-value vocabulary of the site's own. The promoted paper's Table 2 names five artefact forms of its own; whether the site typology follows it is an open operator decision (2026-07-30)",
+      "interfaceTypes": "array of verification, exploration, edition, capture, audit, the five epistemic functions of the site's interface typology (artefact page, part 4 of the specification); empty where the case produced no interface. This is the gallery's ordering and filtering dimension since 2026-07-26, replacing a nine-value vocabulary of the site's own. The paper names six operational forms of its own since the four-chapter revision of 2026-07-31 (Table 1, Section 3.2); whether the site typology follows it is an open operator decision",
       "repo_url": "repository URL or null",
       "demo_url": "live demo URL or null",
       "video_url": "YouTube URL or null",
-      "insight": "methodological contribution as recorded at curation; the paper's own per-case findings stand in Table 3 (Section 4.3), otherwise null",
+      "insight": "methodological contribution as recorded at curation; the paper's own per-case findings stand in Table 1 (Section 3.2), otherwise null",
       "deep_page": "true where the case carries a depth page under _content/case-studies/",
-      "paper_row": "exact case name in Table 3 of the paper (Section 4.3), or null where the project is outside the paper's case set; checked by tools/check_consistency.py against knowledge/paper.md"
+      "paper_row": "exact case name in Table 1 of the paper (Section 3.2), or null where the project is outside the paper's case set; checked by tools/check_consistency.py against knowledge/paper.md"
     },
     "role_labels": {
       "evidence": "Evidence for the paper",
@@ -27,9 +27,9 @@
       "further": "Further documented applications"
     },
     "role_notes": {
-      "evidence": "Carries a row of the cross-case findings in Pollin 2026, Table 3 (Section 4.3). A claim of that analysis can be checked against these.",
+      "evidence": "Carries a row of the case comparison in Pollin 2026, Table 1 (Section 3.2). A claim of that analysis can be checked against these.",
       "genealogy": "Built before the method had its vocabulary. The opening of Section 2 reads them as the ground it grew from.",
-      "teaching": "Recorded sessions and teaching builds. The teachability argument at the end of Section 4.3 rests on this kind of material.",
+      "teaching": "Recorded sessions and teaching builds. The teachability argument in Section 4.3, Transferability and Evaluation, rests on this kind of material.",
       "further": "Documented applications the paper does not carry. They stand on their repositories alone."
     }
   },
@@ -84,7 +84,7 @@
       "repo_url": "https://github.com/chpollin/szd-htr-ocr-pipeline",
       "demo_url": "https://chpollin.github.io/szd-htr-ocr-pipeline/",
       "video_url": null,
-      "insight": "Introduced in Section 2.3; the record's production-scale pipeline",
+      "insight": "Introduced in Section 2.3.1; the record's production-scale pipeline",
       "deep_page": true,
       "paper_row": "SZD-HTR"
     },

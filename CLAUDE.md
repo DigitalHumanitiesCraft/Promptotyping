@@ -9,7 +9,7 @@ Bevor du eine Aufgabe in diesem Repo angehst, lies in dieser Reihenfolge:
 1. `knowledge/INDEX.md` — Navigation und Begriffslexikon
 2. `knowledge/project.md` — was die Site ist, wer die Adressaten sind
 3. Das jeweils aufgabenrelevante Dokument:
-   - Paper-Arbeit → `knowledge/paper-knowledge.md` (das eine Steuerdokument: Argument, Terminologie, Sprachregeln, Apparat, Einreichweg), von dort `knowledge/paper.md` (der kanonische fünfkapitelige Text, seit der Promotion vom 2026-07-30 von der Site gerendert). Die Zwei-Spuren-Übergangslage ist beendet; die konsolidierten Steuerungs- und Revisionsdokumente liegen commit-gepinnt in der Git-History (Provenienz-Tabelle am Ende von `paper-knowledge.md`).
+   - Paper-Arbeit → `knowledge/paper-knowledge.md`, das eine Steuerdokument mit Argument, Terminologie, Sprachregeln, Apparat und Einreichweg; von dort `knowledge/paper.md`, der kanonische vierkapitelige Text in Version 0.9 (Review-Draft), seit der Promotion vom 2026-07-31 von der Site gerendert. `paper.md` bleibt headerless und beginnt mit seiner H1; Version, Status und Reviewer-Ansprache stehen in `paper-knowledge.md`, nicht im Text. Die Zwei-Spuren-Übergangslage ist beendet; die konsolidierten Steuerungs- und Revisionsdokumente liegen commit-gepinnt in der Git-History (Provenienz-Tabelle am Ende von `paper-knowledge.md`).
    - Was-soll-die-Site-können → `knowledge/specification.md`
    - Wie-ist-es-gebaut → `knowledge/architecture.md`
    - Wie-sieht-es-aus → `knowledge/design.md`
@@ -22,7 +22,7 @@ Die Wissensbasis im `knowledge/`-Ordner ist die Specification, aus der die Imple
 Die Site soll ruhig sein. Konkret bedeutet das beim Coden:
 
 - **Verwende keine Farben außer den im Designsystem definierten Tokens.** Unbunt sind `--bg`, `--text`, `--accent`, `--border`, `--code-bg` und die drei Grautöne `--grey-1` bis `--grey-3`. Schreibe nie einen Hex-Wert ins Stylesheet außerhalb des Token-Blocks; der Dunkelmodus ist ein reiner Token-Tausch und bricht sonst.
-- **Farbe bedeutet genau eine Sache**, die epistemische Funktion eines Artefakts, also die fünf Interface-Kategorien aus Abschnitt 4.2 (`--fn-verification`, `--fn-exploration`, `--fn-edition`, `--fn-capture`, `--fn-audit`). Das ist eine Nominalskala, und dort ist der Farbton nach Bertin die richtige Kodierung. Sie erscheint auf der Artefakt-Seite und an der Kartenkante der Use Cases, sonst nirgends. **Die Kategorie steht immer auch als Wort daneben** (WCAG 2.1, Erfolgskriterium 1.4.1, Stufe A). Färbe insbesondere nicht die fünf Teile der Spezifikation ein, das ist eine Rangfolge und keine Verschiedenheit der Art.
+- **Farbe bedeutet genau eine Sache**, die epistemische Funktion eines Artefakts, also die fünf Interface-Kategorien der site-eigenen Typologie auf der Artefakt-Seite (`--fn-verification`, `--fn-exploration`, `--fn-edition`, `--fn-capture`, `--fn-audit`). Das Paper zieht seit dem 2026-07-31 eine eigene Linie mit sechs operationalen Formen (Tabelle 1, Abschnitt 3.2); die Site behält ihre fünf Namen, weil publizierte Kartenfilter und die Farbskala daran hängen. Das ist eine Nominalskala, und dort ist der Farbton nach Bertin die richtige Kodierung. Sie erscheint auf der Artefakt-Seite und an der Kartenkante der Use Cases, sonst nirgends. **Die Kategorie steht immer auch als Wort daneben** (WCAG 2.1, Erfolgskriterium 1.4.1, Stufe A). Färbe insbesondere nicht die fünf Teile der Spezifikation ein, das ist eine Rangfolge und keine Verschiedenheit der Art.
 - **`--signature`** ist der eine laute Ort, ein prismatischer Verlauf als 2px-Band am Fuß der Kopfzeile, einmal pro Seite. Er trägt keine Information und darf deshalb laut sein. Verwende ihn nirgends sonst.
 - **Schriften: Inter für Text, Consolas für Code, sonst keine.** Keine zweite Sans-Serif, keine Display-Schrift, keine Brand-Schrift.
 - **Animationen: nur Slide-in/out für Side-Panels (200ms ease-out), keine anderen.** Keine Scroll-Linked-Animationen, kein Parallax, keine Hover-Bouncing-Effekte. Kurze 150ms-Farb- und Hintergrundübergänge als Hover-Feedback sind erlaubte Mikro-Affordanzen, ebenso die beiden Opazitätsübergänge, die zum Panel gehören, das Einblenden des Glossar-Tooltips über 150ms und das Abdunkeln des Side-Panel-Backdrops über 200ms.
@@ -45,7 +45,7 @@ Die Site soll ruhig sein. Konkret bedeutet das beim Coden:
 └── vault/                      # Grounded-Vault-Instanz: Provenienz-Schicht unter dem Paper (Operator-Entscheidung 2026-07-19)
 ```
 
-Die Abbildungen des Papers liegen unter `assets/figures/` und werden aus `knowledge/paper.md` mit einem repo-relativen Pfad referenziert. Das löst auf der Site auf, weil `404.html` jede Subpath-Adresse auf den Site-Root zurückwirft und die Anwendung dort läuft. In der GitHub-Vorschau von `paper.md` bleiben die Bilder deshalb leer, was der bewusste Preis für Portabilität ohne feste Domain ist.
+Die Abbildungen des Papers liegen unter `assets/figures/`; der Text bindet seit der Vierkapitel-Fassung nur noch Abbildung 1 ein, referenziert mit einem repo-relativen Pfad. Die vier abgelegten Abbildungen bleiben samt Spezifikation, SVG, PNG und Provenienz liegen und werden nicht gelöscht. Das löst auf der Site auf, weil `404.html` jede Subpath-Adresse auf den Site-Root zurückwirft und die Anwendung dort läuft. In der GitHub-Vorschau von `paper.md` bleiben die Bilder deshalb leer, was der bewusste Preis für Portabilität ohne feste Domain ist.
 
 `assets/promptotyping-logo.png` bleibt erhalten. `_content/` und `data/` werden in den Implementierungs-Sprints angelegt.
 
@@ -83,7 +83,7 @@ Die nicht aktiven Seiten bleiben als `display: none` im DOM. Das ist die Bedingu
 - Konvention: `#konvention-v0.1`
 - Glossar: `#glossar`
 - Literatur: `#literatur`
-- Paper-Sektionen: `#abschnitt-{n}-{slug}` (z.B. `#abschnitt-3-the-method`). Die Site rendert `knowledge/paper.md` direkt und erzeugt die Anker beim Rendern; unter `_content/paper/` liegt nichts mehr.
+- Paper-Sektionen: `#abschnitt-{n}-{slug}` (z.B. `#abschnitt-2-promptotyping-as-a-method`). Die Site rendert `knowledge/paper.md` direkt und erzeugt die Anker beim Rendern; unter `_content/paper/` liegt nichts mehr. Jede Umgliederung des Papers verschiebt Anker, deshalb wird die Aliaskarte `PAPER_ANCHOR_ALIASES` in `assets/js/pages-paper.js` vollständig neu gezielt und nicht bloß ergänzt; sie ist flach und löst nicht transitiv auf.
 - Überblick: `#ueberblick`; Use Cases: `#use-cases`; Paper: `#paper`; Worked Workflow: `#workflow`; Best Practices: `#praxis`, Praxis-Einträge: `#praxis-{slug}`; Skills: `#skills` und `#skills-{slug}` (A13 bis A15); Arbeitsumgebung: `#arbeitsumgebung`, Subpath `/arbeitsumgebung` (A17); Tutorial: `#tutorial`, Subpath `/tutorial` (A31)
 
 Anker dürfen nicht ohne Diskussion umbenannt werden — Repos können auf sie als `template:`-URI verlinken.

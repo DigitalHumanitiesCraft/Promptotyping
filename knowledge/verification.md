@@ -7,7 +7,7 @@ status: active
 language: en
 version: 0.4
 created: 2026-07-26
-updated: 2026-07-30
+updated: 2026-07-31
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Opus 5)
 method:
@@ -71,13 +71,13 @@ Under `tools/tests/` the checks are themselves held to their regression cases, r
 
 ### V5. Every case the paper analyses is reachable
 
-**Claim.** Every case in Table 3 of section 4.3 has a card, and every card that claims a case-table row finds that row in `knowledge/paper.md`.
+**Claim.** Every case in Table 1 of section 3.2 has a card, and every card that claims a case-table row finds that row in `knowledge/paper.md`.
 
-**Why it matters.** This is the condition the gallery exists for. A reader who comes from the paper to check a claim of section 4 has to find the project, and three of the thirteen were unfindable until 2026-07-26.
+**Why it matters.** This is the condition the gallery exists for. A reader who comes from the paper to check a claim of the case comparison has to find the project, and three of the thirteen were unfindable until 2026-07-26.
 
-**Procedure.** Parse the table under the header row `| Case | Data state | Artefact | Central finding | Write-back or acceptance |`, keyed on that line so a new section cannot move it. Compare the case names against the `paper_row` field of the cards, in both directions.
+**Procedure.** Parse the table under the header row `| Case | Initial project condition | Primary function of *Implementation* | Principal operational forms | Bounded purpose or status |`, keyed on that line so a new section cannot move it. Compare the case names against the `paper_row` field of the cards, in both directions.
 
-**Verdict, 2026-07-30.** Passes, re-keyed with the promotion of the five-chapter text. The check originally guarded the seven-chapter text's project inventory (Table 1, section 5.2) including a per-project interface-type comparison; the promoted paper carries no per-case interface types, so that comparison lapsed and the typology lives in the gallery data alone. Seven cases carry the evidence role now; the eight projects the paper no longer lists moved to the role `further` with their cards intact. The first run of the earlier form, 2026-07-26, reported three missing projects, all of which gained cards.
+**Verdict, 2026-07-31.** Passes, re-keyed with the promotion of the four-chapter text. The check has now guarded three successive table cuts. It began on the seven-chapter text's project inventory (Table 1, section 5.2) with a per-project interface-type comparison; that comparison lapsed with the five-chapter text, which carried no per-case interface types, so the typology lives in the gallery data alone. The four-chapter text merged the former Table 2 (artefact forms) and Table 3 (cross-case findings) into Table 1 of section 3.2, which changed the header row and the column meanings while leaving the seven case names unchanged, so the card coupling survived the restructuring untouched. The first run of the earliest form, 2026-07-26, reported three missing projects, all of which gained cards.
 
 ### V6. Every address the gallery publishes resolves
 

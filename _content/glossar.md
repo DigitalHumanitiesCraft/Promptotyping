@@ -1,10 +1,10 @@
 ---
 title: Glossary
 slug: glossar
-version: "0.3"
+version: "0.4"
 status: complete
 source: data/glossar.json (authoritative data source); generated, not maintained by hand
-mirrored: 2026-07-29
+mirrored: 2026-07-31
 machine-url: https://dhcraft.org/Promptotyping/_content/glossar.md
 ---
 
@@ -62,6 +62,16 @@ Agentic Engineering names the development practice in which LLM agents are the e
 
 Source: [Paper, Section 1.2](#abschnitt-1-2-context-engineering-agentic-engineering-and-ai-harnesses)
 
+### Agentic Review
+
+Kind: Checking and acceptance
+
+Bounded, tool-supported investigation in which LLM-based agents examine an artefact against its sources, references and criteria.
+
+Agentic review is a bounded, tool-supported investigation in which one or more LLM-based agents examine outputs, data states, implementations or research artefacts against the relevant sources, references, requirements and criteria. It may locate project files, compare sources and outputs, execute formal checks, investigate discrepancies, or coordinate specialised, parallel or adversarial reviewers. It extends agent-based code review while keeping the wider sense of review as criteria-guided examination. An LLM-as-a-Judge, which scores a supplied output against a reference or rubric, can be one operation within agentic review but does not exhaust it. Its findings stay probabilistic evidence and never constitute authorised verification, scholarly validation or acceptance.
+
+Source: [Paper, Section 2.3.1](#abschnitt-2-3-1-agentic-data-production-and-curation-in-the-szd-and-jeanne-hersch-workflows); [Specification, part 5, Checking](#verifikation)
+
 ### Anchor Scheme
 
 Kind: Infrastructure and environment
@@ -80,7 +90,7 @@ LLMs amplify computer-based research work along existing gradients of expertise,
 
 Asymmetric amplification names the dynamic by which LLMs amplify computer-based research work along existing gradients of expertise, access and epistemic selectivity (Pollin 2026a). Training corpora privilege English-language, digitised, well-published knowledge, and the same technology produces autonomy where verification competence exists and dependence where it is absent. A method built on these systems inherits the problem and cannot solve it. In the paper the term carries the ethical dimension of the access limit.
 
-Source: [Paper, Section 3](#abschnitt-3-epistemic-and-methodological-implications); [Pollin 2026a](#ref-pollin-2026a); [Vault: LLMs amplify research work rather than automate it](#vault-llms-amplify-research-not-automate-it)
+Source: [Paper, Section 4.2](#abschnitt-4-2-labour-infrastructure-and-responsible-use); [Pollin 2026a](#ref-pollin-2026a); [Vault: LLMs amplify research work rather than automate it](#vault-llms-amplify-research-not-automate-it)
 
 ### Claim Verification as a Document Function
 
@@ -90,7 +100,7 @@ Adversarial checking of a project's own empirical and novelty claims in dedicate
 
 Claim verification as a document function denotes the checking of a project's own empirical and novelty claims in a dedicated document that records what claim was checked, against what evidence, by what procedure, and with what verdict. Three building blocks carry it, the recomputation of every headline figure from the raw data by an independent instance with a source path per figure, research against the project's own novelty claim with the aim of refuting it, and a conformance audit against the standards claimed. Claims used externally may be used only in the form these documents license. The vocabulary of claim, grounds, warrant and backing comes from Toulmin's layout of arguments, where each element answers a specific challenge to an assertion (Hitchcock 2003). The recording form stands close to the nanopublication, which binds a single statement to the annotations that carry its provenance so that it becomes citable, attributable and reviewable (Groth et al. 2010). The function is to be held apart from the software test, which checks an artefact against its specification, while what is checked here are statements about the world. Verdict vocabulary and procedure follow from neither model and are the site's own. The pattern emerged in FemPrompt SozArb and is now a document function of the catalogue in its own right.
 
-Source: [Paper, Section 2.1](#abschnitt-2-1-promptotyping-and-the-project-knowledge-base); [Paper, Section 4.1](#abschnitt-4-1-cases-and-evidential-status); [Best Practices, claims verification](#praxis-claims-verification-as-a-document-function); [Vault: Toulmin's layout of arguments (Hitchcock 2003)](#vault-toulmin-layout-separates-claim-grounds-warrant-and-backing); [Vault: the nanopublication model (Groth et al. 2010)](#vault-nanopublication-binds-a-statement-to-the-annotations-that-carry-its-context)
+Source: [Paper, Section 2.1](#abschnitt-2-1-promptotyping-and-the-project-knowledge-base); [Paper, Section 3.1](#abschnitt-3-1-evidence-and-comparison); [Best Practices, claims verification](#praxis-claims-verification-as-a-document-function); [Vault: Toulmin's layout of arguments (Hitchcock 2003)](#vault-toulmin-layout-separates-claim-grounds-warrant-and-backing); [Vault: the nanopublication model (Groth et al. 2010)](#vault-nanopublication-binds-a-statement-to-the-annotations-that-carry-its-context)
 
 ### Co-Intelligence
 
@@ -110,7 +120,7 @@ Generation of plausible but false outputs by LLMs, commonly called hallucination
 
 Confabulation, commonly called hallucination, is the generation of plausible but false outputs (Summerfield 2025). The LLM fills a gap with what fits rather than reporting what it lacks. In research contexts this is particularly dangerous where the output concerns contextualisation, periodisation or attribution, domains in which plausibility and correctness can come apart. Confabulation belongs beside sycophancy to the structural failure modes the Critical Expert in the Loop addresses.
 
-Source: [Paper, Section 2.3](#abschnitt-2-4-verification-validation-and-acceptance); Summerfield 2025, These Strange New Minds (not in the paper's reference list)
+Source: Site vocabulary, not carried in the paper text; Summerfield 2025, These Strange New Minds (not in the paper's reference list)
 
 ### Context Engineering
 
@@ -150,7 +160,7 @@ Role that validates LLM output at defined points and combines domain expertise w
 
 The Critical Expert in the Loop is the role that validates LLM output at defined points. Unlike the generic human in the loop it requires domain expertise together with awareness of LLM-specific failure modes and metacognitive vigilance. The Critical Expert's task extends beyond checking the correctness of outputs. The more consequential blind spot lies in the possibility space that was not explored, in the questions not asked and the alternatives not generated. This metareflexive capacity distinguishes the role from a reviewer who checks correctness alone.
 
-Source: [Paper, Section 2.3](#abschnitt-2-4-verification-validation-and-acceptance); Pollin 2025, Critical Vibing blog (not in the paper's reference list); [Vault: the double reflection loop of the role](#vault-critical-expert-in-the-loop-double-reflection-loop)
+Source: [Paper, Section 2.2.4](#abschnitt-2-2-4-implementation); Pollin 2025, Critical Vibing blog (not in the paper's reference list); [Vault: the double reflection loop of the role](#vault-critical-expert-in-the-loop-double-reflection-loop)
 
 ### Declarative Document
 
@@ -240,7 +250,7 @@ Classification of generated interfaces by epistemic function, verification, expl
 
 The interface typology sorts the generated interfaces by the epistemic function they serve, data format and visualisation technique having proved weaker ordering principles. Verification Interfaces check pipeline outputs at defined milestones. Exploration Interfaces open up existing structured data through coordinated multiple views. Edition Interfaces render scholarly editions with facsimile synchronisation and editorial correction. Capture Interfaces support structured input, annotation and metadata creation. Audit Interfaces make an entire research process inspectable. The categories are not mutually exclusive; a pipeline project combines them.
 
-Source: [Specification, part 4, Artefact and boundary](#artefakt); Site vocabulary since the promotion of 2026-07-30; descends from an earlier version of the paper, whose current Table 2 draws the fifth category differently
+Source: [Specification, part 4, Artefact and boundary](#artefakt); Site vocabulary since the promotion of 2026-07-30; descends from an earlier version of the paper, whose Table 1 has named six operational forms of its own since 2026-07-31
 
 ### Knowledge Curation
 
@@ -312,6 +322,16 @@ A Process Document is the specialisation of the knowledge document towards knowl
 
 Source: [Paper, Section 2.1](#abschnitt-2-1-promptotyping-and-the-project-knowledge-base); [Konvention Knowledge Documents](#konvention-v0.1)
 
+### Promptotype
+
+Kind: Artefact and interface
+
+The identifiable and versioned state an accepted Promptotyping iteration yields.
+
+A promptotype is the accepted state of one Promptotyping iteration. It connects the maintained project knowledge, the referenced research-data state, the resulting digital research artefact and the documented grounds of acceptance into a coherent and identifiable whole for a stated purpose. A runnable or plausible artefact does not reach this threshold as long as that relation cannot be reconstructed. Acceptance is purpose-specific, so a promptotype may be accepted as an exploratory interface, an internal production workflow, a proposal-stage demonstrator, a handover state or a public research artefact, and it does not imply that project knowledge, data or artefact have become final. Re-implementing with another model, harness or project state is a new iteration rather than a reproduction of the earlier promptotype.
+
+Source: [Paper, Section 2.2.4](#abschnitt-2-2-4-implementation); [Paper, Section 2.3.4](#abschnitt-2-3-4-from-complementary-cases-to-the-promptotype); knowledge/INDEX.md
+
 ### Promptotyping
 
 Kind: Form of work
@@ -330,7 +350,7 @@ Browser-based validation tool that makes intermediate results visible, comparabl
 
 Promptotyping Interfaces are the browser-based artefacts of the method, as a rule self-contained static HTML, CSS and JavaScript tools with research data embedded or loaded from flat files. They make data and intermediate results visible, comparable and correctable. In the ZBZ OCR/TEI project a pipeline viewer renders facsimile, layout overlay and OCR/TEI side by side. The interface typology sorts them into five categories by the epistemic function they serve.
 
-Source: [Paper, Section 4.2](#abschnitt-4-2-artefact-forms-and-documented-projects); [Paper, Section 4.2](#abschnitt-4-2-artefact-forms-and-documented-projects); [Best Practices, Promptotyping Interfaces](#praxis-promptotyping-interfaces)
+Source: [Paper, Section 3.2](#abschnitt-3-2-project-conditions-functions-and-artefact-forms); [Best Practices, Promptotyping Interfaces](#praxis-promptotyping-interfaces)
 
 ### Research Artefact
 
@@ -340,7 +360,17 @@ Project-bound software that works on a project's own data and makes it explorabl
 
 A research artefact in the sense of the method is what the documents are made for in the research context of a project, software bound to that project's data and working on it so that the data becomes explorable, analysable or editable. Its scholarly standing comes from that binding, because the distinctions it preserves are the ones the project's data model carries. The same derivation brings forth the forms that stand beside it, the processing pipeline upstream of the artefact and the description rendered from the source data. The default is a self-contained static web tool.
 
-Source: [Paper, Section 1](#abschnitt-1-introduction); [Paper, Section 4.2](#abschnitt-4-2-artefact-forms-and-documented-projects)
+Source: [Paper, Section 1](#abschnitt-1-introduction); [Paper, Section 3.2](#abschnitt-3-2-project-conditions-functions-and-artefact-forms)
+
+### Research Compendium as a Promptotyping Pattern
+
+Kind: Artefact and interface
+
+Recurring structural feature, a static website plus a standalone research dataset in the repository.
+
+The research compendium as a Promptotyping pattern denotes the recurring structural feature that a Promptotyping artefact consists of a static website and a standalone research dataset in the repository. It appears in two variants, as a JSON-LD knowledge graph with strong RDF semantics, as in M3GIM, or as a data-structure JSON serving as a plain data source with external identifiers as strings, as in HerData. The dataset carries the whole data holding of the project. The arrangement carries an established name in the reproducibility discussion. Marwick, Boettiger and Mullen (2018) define the research compendium by three principles, that its files follow the conventions of the scholarly community, that data, method and output stay separate with the relation between them stated unambiguously, which treats the data as read-only and documents every modification in the code, and that the computational environment of the original analysis is specified. The convergence on static deployment is argued in the same discourse under the name minimal computing (Risam and Gil 2022).
+
+Source: Marwick et al. 2018 (not in the paper's reference list); Risam and Gil 2022 (not in the paper's reference list); [Vault: the research compendium separates data, method and output](#vault-research-compendium-separates-data-method-and-output); [Vault: minimal computing reduces code and dependencies](#vault-minimal-computing-reduces-code-and-dependencies); Promptotyping MOC
 
 ### Scholar-Centred Design
 
@@ -360,7 +390,7 @@ Assignment of tasks by unambiguity, algorithmically unambiguous work to scripts,
 
 The script versus LLM division assigns algorithmically unambiguous tasks to scripts and semantically interpretive tasks to the LLM. The dividing line runs along unambiguity rather than along complexity. It appears twice in the method, as deterministically generated documents that are rendered from the source data and committed alongside the curated layer, and as the resolution of the token economy, where the LLM reads over the data and writes code that reads the data. The line is no coinage of the method. Requirements engineering draws it for its own tools, where the QUS tool checks the criteria a rule can decide and excludes the semantic ones on the stated ground that they require deep understanding of the requirement's content (Lucassen et al. 2016). Evaluation research measures the other end, where a strong judging model matches human preference at the level at which humans agree with one another, under named position, verbosity and self-enhancement biases (Zheng et al. 2023).
 
-Source: [Paper, Section 2.1](#abschnitt-2-1-promptotyping-and-the-project-knowledge-base); [Best Practices, script versus LLM separation](#praxis-script-versus-llm-separation); [Lucassen et al. 2016](#ref-lucassen-2016); [Krumdick et al. 2025](#ref-krumdick-2025); Zheng et al. 2023 (not in the paper's reference list); [Vault: the QUS tool checks only what a rule can decide](#vault-aqusa-checks-the-criteria-a-rule-can-decide); [Vault: a judging model matches human preference under known biases](#vault-llm-judgement-approximates-human-preference-and-carries-known-biases)
+Source: [Paper, Section 2.1](#abschnitt-2-1-promptotyping-and-the-project-knowledge-base); [Best Practices, script versus LLM separation](#praxis-script-versus-llm-separation); Lucassen et al. 2016 (not in the paper's reference list); Krumdick et al. 2025 (not in the paper's reference list); Zheng et al. 2023 (not in the paper's reference list); [Vault: the QUS tool checks only what a rule can decide](#vault-aqusa-checks-the-criteria-a-rule-can-decide); [Vault: a judging model matches human preference under known biases](#vault-llm-judgement-approximates-human-preference-and-carries-known-biases)
 
 ### Side Panel
 
@@ -380,17 +410,7 @@ The software industry's corrective to unreviewed generation, with the specificat
 
 Spec-Driven Development names the corrective the software industry developed against the reliability problems of unreviewed generation. Through 2024 and 2025 agentic coding frameworks converged on maintaining specifications as the source of truth from which LLM-supported agents implement, among them Tessl, BMAD, AWS Kiro, OpenSpec and GitHub Spec Kit. Promptotyping belongs to this movement and shares its core commitments, the versioned document set as the governing unit, the separation of intent from implementation, and a human checkpoint between generation and acceptance. Three things that sit at the periphery there are constitutive here. The data layer describes sources that precede the artefact and carry their own semantics and their own uncertainty, in place of the system under construction. The specification is bound to scholarly verification duties. And the Critical Expert in the Loop is installed as a role holding domain authority over the subject matter.
 
-Source: [Paper, Section 2.3](#abschnitt-2-4-verification-validation-and-acceptance); [Vault: the frameworks converge on specification over prompt](#vault-sdd-frameworks-converge-on-specification-over-prompt); [Vault: no framework defines a subject-matter checking role](#vault-sdd-no-subject-matter-verification-role)
-
-### Research Compendium as a Promptotyping Pattern
-
-Kind: Artefact and interface
-
-Recurring structural feature, a static website plus a standalone research dataset in the repository.
-
-The research compendium as a Promptotyping pattern denotes the recurring structural feature that a Promptotyping artefact consists of a static website and a standalone research dataset in the repository. It appears in two variants, as a JSON-LD knowledge graph with strong RDF semantics, as in M3GIM, or as a data-structure JSON serving as a plain data source with external identifiers as strings, as in HerData. The dataset carries the whole data holding of the project. The arrangement carries an established name in the reproducibility discussion. Marwick, Boettiger and Mullen (2018) define the research compendium by three principles, that its files follow the conventions of the scholarly community, that data, method and output stay separate with the relation between them stated unambiguously, which treats the data as read-only and documents every modification in the code, and that the computational environment of the original analysis is specified. The convergence on static deployment is argued in the same discourse under the name minimal computing (Risam and Gil 2022).
-
-Source: Marwick et al. 2018 (not in the paper's reference list); Risam and Gil 2022 (not in the paper's reference list); [Vault: the research compendium separates data, method and output](#vault-research-compendium-separates-data-method-and-output); [Vault: minimal computing reduces code and dependencies](#vault-minimal-computing-reduces-code-and-dependencies); Promptotyping MOC
+Source: Site vocabulary, not carried in the paper text; [Vault: the frameworks converge on specification over prompt](#vault-sdd-frameworks-converge-on-specification-over-prompt); [Vault: no framework defines a subject-matter checking role](#vault-sdd-no-subject-matter-verification-role)
 
 ### Sub-Agents and Role Simulation
 
@@ -410,7 +430,7 @@ Tendency of LLMs to agree with user assumptions instead of challenging them.
 
 Sycophancy is the tendency of LLMs to agree with the assumptions of their users instead of challenging them (Sharma et al. 2023; Fanous et al. 2025). Beside confabulation it is one of the two structural failure modes the Critical Expert in the Loop addresses. The Critical Expert has to recognise that an absence of contradiction from the LLM constitutes no validation. In CorrespExplorer the LLM agreed with suboptimal decisions as soon as they were phrased as a proposal.
 
-Source: [Paper, Section 2.3](#abschnitt-2-4-verification-validation-and-acceptance); [Sharma et al. 2024](#ref-sharma-2024); Fanous et al. 2025 (not in the paper's reference list); [Vault: agreement with the user over the truthful answer](#vault-sycophancy-agreement-over-truth)
+Source: Site vocabulary, not carried in the paper text; Sharma et al. 2024 (not in the paper's reference list); Fanous et al. 2025 (not in the paper's reference list); [Vault: agreement with the user over the truthful answer](#vault-sycophancy-agreement-over-truth)
 
 ### Template (Knowledge Document)
 
@@ -440,7 +460,7 @@ Every user story is a hypothesis about the user until the named user confirms it
 
 In the Promptotyping context every user story is a hypothesis about the user until the named user has confirmed it. In the agentic setting the implementing conversation that would correct wrong stories within a team falls away, so unvalidated stories have to be marked as assumptions and carry an observation point. This status is a stipulation of the site and takes no support from the QUS framework, since each of its criteria judges the intrinsic quality of the story text and none asks whether the story holds of the user it names; it comes from the FemPrompt case. The review criteria for a user-stories document are listed with the Vorlage User Stories, taken from QUS (Lucassen et al. 2016) along the division that framework itself draws between what a tool can decide and what requires understanding of the content, and extended by what the agentic setting demands.
 
-Source: Site vocabulary, not carried in the paper text; [Best Practices, the epistemic status of user stories](#praxis-the-epistemic-status-of-user-stories); [Vorlage User Stories](#promptotyping-document-user-stories); [Lucassen et al. 2016](#ref-lucassen-2016); [Vault: the thirteen QUS quality criteria](#vault-qus-defines-thirteen-user-story-quality-criteria)
+Source: Site vocabulary, not carried in the paper text; [Best Practices, the epistemic status of user stories](#praxis-the-epistemic-status-of-user-stories); [Vorlage User Stories](#promptotyping-document-user-stories); Lucassen et al. 2016 (not in the paper's reference list); [Vault: the thirteen QUS quality criteria](#vault-qus-defines-thirteen-user-story-quality-criteria)
 
 ### Verification and Validation
 
@@ -450,7 +470,7 @@ Verification is the check by a formal rule, validation the check by domain exper
 
 The method distinguishes two kinds of check. Verification is what a formal rule decides, a schema, a test or a constraint, and it runs unsupervised because the feedback loop is closed. Validation is what domain expertise decides against the sources and against scholarly judgement, and it does not delegate. The pair operates at three levels, data fidelity, requirement satisfaction and design conformance, and each level has its own zone of agent autonomy. This usage follows the norm of software and systems engineering, where verification names the check against the specification and validation the check against intended use and user needs (IEEE Std 1012). Schema validation, the established XML term for an automatic check against a schema, keeps its name as a term of art and is in this sense a form of verification.
 
-Source: [Paper, Section 2.3](#abschnitt-2-4-verification-validation-and-acceptance); [Specification, part 5, Checking](#verifikation)
+Source: [Paper, Section 2.3.1](#abschnitt-2-3-1-agentic-data-production-and-curation-in-the-szd-and-jeanne-hersch-workflows); [Specification, part 5, Checking](#verifikation)
 
 ### Verification Milestone
 
@@ -460,7 +480,7 @@ Defined checkpoint in the workflow at which domain expertise is applied systemat
 
 Verification milestones are defined checkpoints in the workflow at which domain expertise is applied systematically. They turn the Critical Expert in the Loop into a process step, since at a milestone the work stops, is verified with deterministic tools and validated by expert judgement before it continues. The Implementation phase advances in such small, checkable steps. Where the check is deferred, a verification debt arises that has to be settled before use or handover. In the ZBZ OCR/TEI project an interface at every pipeline stage serves as such a milestone.
 
-Source: [Paper, Section 2.2](#abschnitt-2-2-forms-of-work-and-iteration); [Paper, Section 2.3](#abschnitt-2-4-verification-validation-and-acceptance); [Best Practices, verification milestones](#praxis-verification-milestones)
+Source: [Paper, Section 2.2](#abschnitt-2-2-forms-of-work-and-iteration); [Best Practices, verification milestones](#praxis-verification-milestones)
 
 ### Vibe Coding
 
@@ -470,4 +490,4 @@ Practice of generating code through natural language and accepting it without th
 
 Vibe Coding denotes a practice in which code is generated through instructions in natural language and accepted without thorough review (Karpathy 2025). Sarkar and Drosos (2025) describe iterative goal-satisfaction cycles and material disengagement. Promptotyping shares the premise that LLMs can generate functional code from natural language, and it differs through the upstream Preparation and Exploration phases, persistent documentation and systematic verification. Vibe Coding survives inside Promptotyping as an exploratory mode.
 
-Source: [Paper, Section 2.3](#abschnitt-2-4-verification-validation-and-acceptance); [Sarkar and Drosos 2025](#ref-sarkar-2025); [Vault: the first empirical study of vibe coding](#vault-sarkar-vibe-coding-material-disengagement); Karpathy 2025
+Source: Site vocabulary, not carried in the paper text; Sarkar and Drosos 2025 (not in the paper's reference list); [Vault: the first empirical study of vibe coding](#vault-sarkar-vibe-coding-material-disengagement); Karpathy 2025

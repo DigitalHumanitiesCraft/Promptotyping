@@ -7,7 +7,7 @@ status: complete
 language: en
 version: 1.0
 created: 2026-05-09
-updated: 2026-07-30
+updated: 2026-07-31
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5, Claude Opus 5)
 method:
@@ -42,7 +42,7 @@ By operator decision of 2026-07-23 the core knowledge documents (INDEX, project,
 - **[verification.md](verification.md)** — which claims the site makes about itself, what each is checked against, by what procedure and with what verdict; the automatic part runs as `tools/check_consistency.py` (function: Verification).
 - **[design.md](design.md)** — how the site looks and behaves: DHCraft design system, side panels, typography (function: Design).
 - **[journal.md](journal.md)** — chronological process record, German (function: Provenance).
-- **[paper.md](paper.md)** — the full English paper text as one document, five chapters, promoted on 2026-07-30 from the operator's externally revised, sanitised, verified, and literature-anchored manuscript; headerless by design for copy-out. The site renders this file directly, so the deployed text is the canonical text.
+- **[paper.md](paper.md)** — the full English paper text as one document, four chapters, promoted on 2026-07-31 from the operator's four-chapter revision, which superseded the five-chapter text promoted the day before from the externally revised, sanitised, verified, and literature-anchored manuscript; headerless by design for copy-out. Manuscript version 0.9, review draft; the version and the reviewer address are recorded in `paper-knowledge.md` rather than in the text. The site renders this file directly, so the deployed text is the canonical text.
 - **[paper-knowledge.md](paper-knowledge.md)** — the single steering document of the paper: argument, terminology, canonical definitions, checking architecture, evidence policy, language rules, apparatus conventions, submission route, operator decisions, open flags, and the provenance pins of every consolidated predecessor (`paper-writing.md`, `revision.md`, `revision-2026-07-30.md`, `verification-draft-sources.md`). English.
 - **[skriptum-video-1.md](skriptum-video-1.md)** and **[skriptum-video-2.md](skriptum-video-2.md)** — the cleaned scripts of the two introductory videos, German. They are the source from which the worked-workflow page was written and, through their representations in the vault, the ground of the claims that rest on the videos.
 - **[plan.md](plan.md)** — the frontend work packages agreed on 2026-07-29, F1 to F9 with scope, specification impact, and pending operator decisions per package, plus the state section of the execution run of the same night (function: Planning).

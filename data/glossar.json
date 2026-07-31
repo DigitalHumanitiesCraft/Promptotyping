@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "stand": "2026-07-29",
-    "version": "0.2",
+    "stand": "2026-07-31",
+    "version": "0.3",
     "beschreibung": "Glossary of the terms of the Promptotyping method and of the methodology site. This JSON is the authoritative data source for the site (tooltips, glossary page and term index); _content/glossar.md is the readable form of the same content and is generated from this file. Terms the paper text does not carry are marked as site vocabulary in their source list.",
     "schema": "Array of entries with the fields slug (URL anchor fragment, forming the site anchor together with #konzept- or #glossar-), begriff (display form), kurz (one sentence for tooltips), voll (one paragraph of full definition), kategorie (what kind of thing the term names, one key of the controlled taxonomy in _meta.kategorien below), quellen (the carriers of the entry, see below), and the optional suchform (the shorter wording under which the term actually occurs in running text; the term index searches it alongside begriff, which a long nominal phrase never matches). A source carries typ, the display text, and for every typ but text an anker that resolves on this site: paper for a section of knowledge/paper.md, literature for a reference-list entry, vault for a claim of the grounded vault, page for a page or block of the site, and text for a carrier this site holds no address for.",
     "kategorien": {
@@ -111,6 +111,25 @@
       ]
     },
     {
+      "slug": "agentic-review",
+      "begriff": "Agentic Review",
+      "kategorie": "checking",
+      "kurz": "Bounded, tool-supported investigation in which LLM-based agents examine an artefact against its sources, references and criteria.",
+      "voll": "Agentic review is a bounded, tool-supported investigation in which one or more LLM-based agents examine outputs, data states, implementations or research artefacts against the relevant sources, references, requirements and criteria. It may locate project files, compare sources and outputs, execute formal checks, investigate discrepancies, or coordinate specialised, parallel or adversarial reviewers. It extends agent-based code review while keeping the wider sense of review as criteria-guided examination. An LLM-as-a-Judge, which scores a supplied output against a reference or rubric, can be one operation within agentic review but does not exhaust it. Its findings stay probabilistic evidence and never constitute authorised verification, scholarly validation or acceptance.",
+      "quellen": [
+        {
+          "typ": "paper",
+          "anker": "abschnitt-2-3-1-agentic-data-production-and-curation-in-the-szd-and-jeanne-hersch-workflows",
+          "text": "Paper, Section 2.3.1"
+        },
+        {
+          "typ": "page",
+          "anker": "verifikation",
+          "text": "Specification, part 5, Checking"
+        }
+      ]
+    },
+    {
       "slug": "anker-schema",
       "begriff": "Anchor Scheme",
       "kurz": "System of stable URL anchors through which the site addresses templates, concepts, case studies and terms.",
@@ -132,8 +151,8 @@
       "quellen": [
         {
           "typ": "paper",
-          "anker": "abschnitt-3-epistemic-and-methodological-implications",
-          "text": "Paper, Section 3"
+          "anker": "abschnitt-4-2-labour-infrastructure-and-responsible-use",
+          "text": "Paper, Section 4.2"
         },
         {
           "typ": "literature",
@@ -161,8 +180,8 @@
         },
         {
           "typ": "paper",
-          "anker": "abschnitt-4-1-cases-and-evidential-status",
-          "text": "Paper, Section 4.1"
+          "anker": "abschnitt-3-1-evidence-and-comparison",
+          "text": "Paper, Section 3.1"
         },
         {
           "typ": "page",
@@ -207,9 +226,8 @@
       "kategorie": "failure-mode",
       "quellen": [
         {
-          "typ": "paper",
-          "anker": "abschnitt-2-4-verification-validation-and-acceptance",
-          "text": "Paper, Section 2.3"
+          "typ": "text",
+          "text": "Site vocabulary, not carried in the paper text"
         },
         {
           "typ": "text",
@@ -288,8 +306,8 @@
       "quellen": [
         {
           "typ": "paper",
-          "anker": "abschnitt-2-4-verification-validation-and-acceptance",
-          "text": "Paper, Section 2.3"
+          "anker": "abschnitt-2-2-4-implementation",
+          "text": "Paper, Section 2.2.4"
         },
         {
           "typ": "text",
@@ -456,7 +474,7 @@
         },
         {
           "typ": "text",
-          "text": "Site vocabulary since the promotion of 2026-07-30; descends from an earlier version of the paper, whose current Table 2 draws the fifth category differently"
+          "text": "Site vocabulary since the promotion of 2026-07-30; descends from an earlier version of the paper, whose Table 1 has named six operational forms of its own since 2026-07-31"
         }
       ]
     },
@@ -589,6 +607,29 @@
       ]
     },
     {
+      "slug": "promptotype",
+      "begriff": "Promptotype",
+      "kategorie": "artefact",
+      "kurz": "The identifiable and versioned state an accepted Promptotyping iteration yields.",
+      "voll": "A promptotype is the accepted state of one Promptotyping iteration. It connects the maintained project knowledge, the referenced research-data state, the resulting digital research artefact and the documented grounds of acceptance into a coherent and identifiable whole for a stated purpose. A runnable or plausible artefact does not reach this threshold as long as that relation cannot be reconstructed. Acceptance is purpose-specific, so a promptotype may be accepted as an exploratory interface, an internal production workflow, a proposal-stage demonstrator, a handover state or a public research artefact, and it does not imply that project knowledge, data or artefact have become final. Re-implementing with another model, harness or project state is a new iteration rather than a reproduction of the earlier promptotype.",
+      "quellen": [
+        {
+          "typ": "paper",
+          "anker": "abschnitt-2-2-4-implementation",
+          "text": "Paper, Section 2.2.4"
+        },
+        {
+          "typ": "paper",
+          "anker": "abschnitt-2-3-4-from-complementary-cases-to-the-promptotype",
+          "text": "Paper, Section 2.3.4"
+        },
+        {
+          "typ": "text",
+          "text": "knowledge/INDEX.md"
+        }
+      ]
+    },
+    {
       "slug": "promptotyping",
       "begriff": "Promptotyping",
       "kurz": "Iterative, knowledge-driven method organised around four recurrent forms of work that develops project-specific research artefacts from structured research data and maintained project knowledge.",
@@ -620,13 +661,8 @@
       "quellen": [
         {
           "typ": "paper",
-          "anker": "abschnitt-4-2-artefact-forms-and-documented-projects",
-          "text": "Paper, Section 4.2"
-        },
-        {
-          "typ": "paper",
-          "anker": "abschnitt-4-2-artefact-forms-and-documented-projects",
-          "text": "Paper, Section 4.2"
+          "anker": "abschnitt-3-2-project-conditions-functions-and-artefact-forms",
+          "text": "Paper, Section 3.2"
         },
         {
           "typ": "page",
@@ -649,10 +685,42 @@
         },
         {
           "typ": "paper",
-          "anker": "abschnitt-4-2-artefact-forms-and-documented-projects",
-          "text": "Paper, Section 4.2"
+          "anker": "abschnitt-3-2-project-conditions-functions-and-artefact-forms",
+          "text": "Paper, Section 3.2"
         }
       ]
+    },
+    {
+      "slug": "standalone-forschungsdaten",
+      "begriff": "Research Compendium as a Promptotyping Pattern",
+      "kurz": "Recurring structural feature, a static website plus a standalone research dataset in the repository.",
+      "voll": "The research compendium as a Promptotyping pattern denotes the recurring structural feature that a Promptotyping artefact consists of a static website and a standalone research dataset in the repository. It appears in two variants, as a JSON-LD knowledge graph with strong RDF semantics, as in M3GIM, or as a data-structure JSON serving as a plain data source with external identifiers as strings, as in HerData. The dataset carries the whole data holding of the project. The arrangement carries an established name in the reproducibility discussion. Marwick, Boettiger and Mullen (2018) define the research compendium by three principles, that its files follow the conventions of the scholarly community, that data, method and output stay separate with the relation between them stated unambiguously, which treats the data as read-only and documents every modification in the code, and that the computational environment of the original analysis is specified. The convergence on static deployment is argued in the same discourse under the name minimal computing (Risam and Gil 2022).",
+      "kategorie": "artefact",
+      "quellen": [
+        {
+          "typ": "text",
+          "text": "Marwick et al. 2018 (not in the paper's reference list)"
+        },
+        {
+          "typ": "text",
+          "text": "Risam and Gil 2022 (not in the paper's reference list)"
+        },
+        {
+          "typ": "vault",
+          "anker": "vault-research-compendium-separates-data-method-and-output",
+          "text": "Vault: the research compendium separates data, method and output"
+        },
+        {
+          "typ": "vault",
+          "anker": "vault-minimal-computing-reduces-code-and-dependencies",
+          "text": "Vault: minimal computing reduces code and dependencies"
+        },
+        {
+          "typ": "text",
+          "text": "Promptotyping MOC"
+        }
+      ],
+      "suchform": "Research Compendium"
     },
     {
       "slug": "scholar-centered-design",
@@ -696,14 +764,12 @@
           "text": "Best Practices, script versus LLM separation"
         },
         {
-          "typ": "literature",
-          "anker": "ref-lucassen-2016",
-          "text": "Lucassen et al. 2016"
+          "typ": "text",
+          "text": "Lucassen et al. 2016 (not in the paper's reference list)"
         },
         {
-          "typ": "literature",
-          "anker": "ref-krumdick-2025",
-          "text": "Krumdick et al. 2025"
+          "typ": "text",
+          "text": "Krumdick et al. 2025 (not in the paper's reference list)"
         },
         {
           "typ": "text",
@@ -743,9 +809,8 @@
       "kategorie": "form-of-work",
       "quellen": [
         {
-          "typ": "paper",
-          "anker": "abschnitt-2-4-verification-validation-and-acceptance",
-          "text": "Paper, Section 2.3"
+          "typ": "text",
+          "text": "Site vocabulary, not carried in the paper text"
         },
         {
           "typ": "vault",
@@ -758,38 +823,6 @@
           "text": "Vault: no framework defines a subject-matter checking role"
         }
       ]
-    },
-    {
-      "slug": "standalone-forschungsdaten",
-      "begriff": "Research Compendium as a Promptotyping Pattern",
-      "kurz": "Recurring structural feature, a static website plus a standalone research dataset in the repository.",
-      "voll": "The research compendium as a Promptotyping pattern denotes the recurring structural feature that a Promptotyping artefact consists of a static website and a standalone research dataset in the repository. It appears in two variants, as a JSON-LD knowledge graph with strong RDF semantics, as in M3GIM, or as a data-structure JSON serving as a plain data source with external identifiers as strings, as in HerData. The dataset carries the whole data holding of the project. The arrangement carries an established name in the reproducibility discussion. Marwick, Boettiger and Mullen (2018) define the research compendium by three principles, that its files follow the conventions of the scholarly community, that data, method and output stay separate with the relation between them stated unambiguously, which treats the data as read-only and documents every modification in the code, and that the computational environment of the original analysis is specified. The convergence on static deployment is argued in the same discourse under the name minimal computing (Risam and Gil 2022).",
-      "kategorie": "artefact",
-      "quellen": [
-        {
-          "typ": "text",
-          "text": "Marwick et al. 2018 (not in the paper's reference list)"
-        },
-        {
-          "typ": "text",
-          "text": "Risam and Gil 2022 (not in the paper's reference list)"
-        },
-        {
-          "typ": "vault",
-          "anker": "vault-research-compendium-separates-data-method-and-output",
-          "text": "Vault: the research compendium separates data, method and output"
-        },
-        {
-          "typ": "vault",
-          "anker": "vault-minimal-computing-reduces-code-and-dependencies",
-          "text": "Vault: minimal computing reduces code and dependencies"
-        },
-        {
-          "typ": "text",
-          "text": "Promptotyping MOC"
-        }
-      ],
-      "suchform": "Research Compendium"
     },
     {
       "slug": "subagents-rollensimulation",
@@ -839,14 +872,12 @@
       "kategorie": "failure-mode",
       "quellen": [
         {
-          "typ": "paper",
-          "anker": "abschnitt-2-4-verification-validation-and-acceptance",
-          "text": "Paper, Section 2.3"
+          "typ": "text",
+          "text": "Site vocabulary, not carried in the paper text"
         },
         {
-          "typ": "literature",
-          "anker": "ref-sharma-2024",
-          "text": "Sharma et al. 2024"
+          "typ": "text",
+          "text": "Sharma et al. 2024 (not in the paper's reference list)"
         },
         {
           "typ": "text",
@@ -932,9 +963,8 @@
           "text": "Vorlage User Stories"
         },
         {
-          "typ": "literature",
-          "anker": "ref-lucassen-2016",
-          "text": "Lucassen et al. 2016"
+          "typ": "text",
+          "text": "Lucassen et al. 2016 (not in the paper's reference list)"
         },
         {
           "typ": "vault",
@@ -952,8 +982,8 @@
       "quellen": [
         {
           "typ": "paper",
-          "anker": "abschnitt-2-4-verification-validation-and-acceptance",
-          "text": "Paper, Section 2.3"
+          "anker": "abschnitt-2-3-1-agentic-data-production-and-curation-in-the-szd-and-jeanne-hersch-workflows",
+          "text": "Paper, Section 2.3.1"
         },
         {
           "typ": "page",
@@ -975,11 +1005,6 @@
           "text": "Paper, Section 2.2"
         },
         {
-          "typ": "paper",
-          "anker": "abschnitt-2-4-verification-validation-and-acceptance",
-          "text": "Paper, Section 2.3"
-        },
-        {
           "typ": "page",
           "anker": "praxis-verification-milestones",
           "text": "Best Practices, verification milestones"
@@ -994,14 +1019,12 @@
       "kategorie": "form-of-work",
       "quellen": [
         {
-          "typ": "paper",
-          "anker": "abschnitt-2-4-verification-validation-and-acceptance",
-          "text": "Paper, Section 2.3"
+          "typ": "text",
+          "text": "Site vocabulary, not carried in the paper text"
         },
         {
-          "typ": "literature",
-          "anker": "ref-sarkar-2025",
-          "text": "Sarkar and Drosos 2025"
+          "typ": "text",
+          "text": "Sarkar and Drosos 2025 (not in the paper's reference list)"
         },
         {
           "typ": "vault",

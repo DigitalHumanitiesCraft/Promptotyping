@@ -5,7 +5,7 @@ project:
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 status: active
 language: de
-version: 0.9
+version: 1.0
 created: 2026-05-09
 updated: 2026-07-31
 authors: [Christopher Pollin]
@@ -847,3 +847,21 @@ Die Prüfung hat sich gelohnt. Die Synthese trägt die Modellnamen des Datensatz
 
 **Offen.** Die verifies/validates-Harmonisierung (Entscheidung 26); die Vault-Session aus Entscheidung 25; die sieben Fall-Tiefenseiten sprachlich; ein etwaiger operatorseitiger Neuzuschnitt von Kapitel 4, dessen Fallabschnitte sich jetzt stärker mit 2.3 berühren.
 
+
+### 2026-07-31, Vierkapitel-Fassung — Umbau eingearbeitet, Version 0.9
+
+**Rahmen.** Der Operator hat eine extern revidierte Gesamtfassung geliefert, die den Text von fünf auf vier Kapitel zieht (Entscheidung 27 im Steuerdokument). Das eigene Prüfkapitel 2.4 ist in 2.3.1 aufgegangen, wo die Prüfformen jetzt als differenzierte Evidenz stehen statt als Tabelle; das epistemische Kapitel 3 ist aufgelöst und auf 2.1, 2.3.4, 3.4 und 4.2 verteilt; das bisherige Kapitel 4 wird Kapitel 3 und ersetzt die Fallprosa durch den Vergleich, wobei die alten Tabellen 2 und 3 zu einer Tabelle 1 verschmelzen; das bisherige Kapitel 5 wird Kapitel 4 und bekommt eine Tabelle für die drei Evaluationsgegenstände. Der Manuskriptstand ist Version 0.9, Review-Draft.
+
+**Terminologie.** Die Prüfformen heißen jetzt deterministic verification, agentic review, Critical Expert verification and adjudication und scholarly validation; damit ist der zweite Schenkel von Entscheidung 21 abgelöst. Agentic review wird ein definierter Terminus mit eigener Abgrenzung gegen LLM-as-a-Judge. Kapitel 3.2 führt drei methodische Funktionen der Implementation und sechs operationale Formen ein. Asymmetric amplification wandert aus dem epistemischen Kapitel nach 4.2.
+
+**Integrationsentscheidungen.** Kopf und Reviewer-Ansprache der Lieferdatei bleiben aus `paper.md` draußen, das seine Headerless-Konvention behält (A8); Version und Ansprache stehen im Steuerdokument, in der README und in der Versionszeile der Überblick-Seite. Fünf Fußnoten, deren Marker den Google-Docs-Export ohne Definition überlebt haben, sind wortgleich aus der Fünfkapitel-Fassung restauriert (SZD-HTR-Repo, coOCR/HTR, teiCrafter, CorrespExplorer, die DH-Prototypen-Note mit Galey und Ruecker 2010 samt Whitelaw 2015). Zwei weitere Marker hatten in keiner Vorgängerfassung eine Entsprechung; sie sind aus dem Fließtext entfernt statt mit erfundenen Belegen gefüllt und stehen als Flags 5 bis 8 im Steuerdokument. IEEE 2025 ist ins Literaturverzeichnis zurückgeholt, weil Fußnote 6 die Norm weiter zitiert. Die unbeschriftete Evaluationstabelle hat die Beschriftung Tabelle 2 bekommen.
+
+**Abbildungen.** Das Manuskript bindet nur noch Abbildung 1 ein. Die vier übrigen sind mit ihren Wirtssektionen weggefallen und bleiben samt Spezifikation, SVG, PNG, Prompts und Provenienz im Repo liegen; gelöscht wird nichts, weil die Entscheidung betrifft, was das Manuskript einbettet, und nicht, was die Figurenarbeit festgestellt hat. Der Abschluss-Abschnitt „Figure files“ ist damit gegenstandslos und gefallen.
+
+**Anker.** Die Aliaskarte `PAPER_ANCHOR_ALIASES` ist vollständig neu gezielt statt ergänzt, weil sie flach ist und nicht transitiv auflöst; sie trägt jetzt drei abgelöste Schnitte, die Siebenkapitel-Fassung, die Fünfkapitel-Fassung und die Kapitel-2-Lage vom selben Tag. Der harte Anker in `pages-content.js` zeigt auf das neue Evidenzkapitel. Ein latenter Fehler in `attachFigures` ist dabei aufgefallen und behoben: das Muster verlangte den Marker als vollständigen Fettlauf, sodass eine Caption der Form `**Figure 1. Titel.**` nie zur `<figure>` zusammengezogen wurde; das Präfix genügt jetzt.
+
+**Glossar und Seiten.** Die Quellanker sind auf die neuen Adressen gezogen, zwei Einträge sind neu (Agentic Review, Promptotype), drei Begriffe zu Site-Vokabular herabgestuft, weil das Paper sie nicht mehr trägt (Spec-Driven Development, Sycophancy, Vibe Coding), vier tote Literaturanker in Textquellen umgewandelt. Die Prüf-Seite ist gegen 2.3.1 neu geschrieben, die Artefakt-Seite hält ihre fünf Interface-Kategorien und benennt den abweichenden Schnitt des Papers ausdrücklich. Die Fall-Tiefenseiten und die Katalogtexte tragen die neuen Abschnittsnummern.
+
+**Verifiziert.** `check_consistency.py` zwölf Gruppen ohne Befund nach Umstellung der Fallentabellen-Kopfzeile auf Tabelle 1, `build_glossar.py` regeneriert, 21 Tests unter `tools/tests` grün, Fußnotenapparat skriptgeprüft.
+
+**Offen.** Die vier Apparat-Flags aus Entscheidung 27, die Vault-Session aus Entscheidung 25, die Claim-Nacharbeit aus dem Audit vom selben Tag, jetzt auf die Vierkapitel-Struktur umzuschlüsseln.

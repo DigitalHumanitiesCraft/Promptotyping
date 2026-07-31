@@ -3,8 +3,8 @@ title: Overview
 slug: ueberblick
 status: complete
 language: en
-version: "0.2"
-updated: 2026-07-26
+version: "0.9"
+updated: 2026-07-31
 mirrored: 2026-06-10
 machine-url: https://dhcraft.org/Promptotyping/_content/ueberblick.md
 ---
@@ -15,8 +15,9 @@ Specification of an iterative, knowledge-driven method organised around four rec
 
 | | |
 |---|---|
-| Version | 0.2 |
-| Last changed | 26 July 2026 |
+| Version | 0.9 |
+| Status | Review draft |
+| Last changed | 31 July 2026 |
 | Canonical address | `https://dhcraft.org/Promptotyping/` |
 | Machine address | `_content/ueberblick.md` |
 | Rationale and evidence | [Paper](#paper) |

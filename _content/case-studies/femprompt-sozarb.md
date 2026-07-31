@@ -33,7 +33,7 @@ The evidence companion renders three views over that infrastructure, the paper c
 
 ## Limits
 
-Section 4.1 of the paper keeps the case out of the documented cases. Its corpus of academic papers lies far from the modelled research data on which the argument about question-specific interfaces turns, so what the artefact demonstrates about the audit function transfers to research data only by analogy.
+Section 3.1 of the paper keeps the case out of the documented cases. Its corpus of academic papers lies far from the modelled research data on which the argument about question-specific interfaces turns, so what the artefact demonstrates about the audit function transfers to research data only by analogy.
 
 The human rating covers a part of the corpus while the LLM rated all of it, so the comparison rests on the overlap alone. The LLM judged from title and abstract without access to the full texts, which bounds what its verdicts can be held to.
 

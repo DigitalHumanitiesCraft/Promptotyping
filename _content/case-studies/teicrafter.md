@@ -27,6 +27,6 @@ Conversion quality was never evaluated systematically. The validation system tha
 
 The two artefacts share a name and a conception and no code. The continuity the case documents is one of intent, and it carries no claim about a codebase or an evolution of one.
 
-The method's vocabulary postdates the practice this case belongs to, and the paper maps no single method component onto a project of that phase. What it records about the name is that the Custom GPT of 2023 and the editor of today are distinct software states (Section 4.2). Naming teiCrafter the origin point is the site's own reading of the record, and the case supports nothing beyond it.
+The method's vocabulary postdates the practice this case belongs to, and the paper maps no single method component onto a project of that phase. What it records about the name is that the Custom GPT of 2023 and the editor of today are distinct software states (Section 3.2 and its source note). Naming teiCrafter the origin point is the site's own reading of the record, and the case supports nothing beyond it.
 
 What survives of 2023 is a conference contribution and a project page. The sessions themselves were not recorded, so the working mode of that year is reconstructed from its results.

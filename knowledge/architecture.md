@@ -161,7 +161,7 @@ data/vault.json                                         ← claim layer, generat
 
 data/glossar.json                 ← glossar entries (structured)
 data/promptotyping-documents.json ← template catalogue (structured)
-data/case-studies.json            ← case-study cards, grouped by use case; also read by the paper page for Table 3
+data/case-studies.json            ← case-study cards, grouped by use case; also read by the paper page for the case table
 ```
 
 Markdown files are mirrored; the JSON files are generated from the Markdown frontmatters and the convention. `_content/MANIFEST.md` records the mirror provenance.

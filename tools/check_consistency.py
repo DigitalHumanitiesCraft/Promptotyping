@@ -51,10 +51,11 @@ SITE_BASE = "dhcraft.org/Promptotyping/"
 sys.path.insert(0, str(TOOLS))
 import build_glossar  # noqa: E402
 
-# The header row of the paper's case table, Table 3 in section 4.3 of the
-# five-chapter text (promotion of 2026-07-30). Parsing keys on this line rather
+# The header row of the paper's case table, Table 1 in section 3.2 of the
+# four-chapter text (promotion of 2026-07-31). Parsing keys on this line rather
 # than on a position, so inserting a section cannot move it.
-CASE_TABLE_HEADER = "| Case | Data state | Artefact | Central finding | Write-back or acceptance |"
+CASE_TABLE_HEADER = ("| Case | Initial project condition | Primary function of *Implementation* "
+                     "| Principal operational forms | Bounded purpose or status |")
 
 # The anchor prefix a numbered paper heading takes, as headingId in
 # assets/js/markdown.js mints it. The port below and the source-type table of
@@ -243,9 +244,9 @@ def check_gallery(data):
 
 
 def paper_case_table():
-    """The paper's case table (Table 3, section 4.3), as the set of case names.
+    """The paper's case table (Table 1, section 3.2), as the set of case names.
 
-    The five-chapter text carries no per-case interface types, so the table
+    The four-chapter text carries no per-case interface types, so the table
     yields names alone; the interface typology lives in the gallery data.
     """
     rows = set()

@@ -17,6 +17,8 @@ related: [operations, journal]
 
 Everything volatile in one place, so the rule documents stay stable. Update rows here as work proceeds; never record processing state anywhere else.
 
+> **Section map superseded, 2026-07-31.** The section table below still describes the seven-chapter manuscript. Two restructurings have run since, to five chapters on 2026-07-30 and to four chapters on 2026-07-31; `knowledge/paper-knowledge.md` Section 13 carries the current architecture and what moved where. The claim audit of 2026-07-31 (`vault/knowledge/claim-audit-2026-07-31.md`) was itself run against the five-chapter text, so its routing needs a second pass. Re-keying this table and the claim files whose prose contradicts it is the open follow-up recorded as flag 3 in the paper's steering document. Until then, read every section number below as a historical reference rather than as an address into the current text.
+
 ## Source inventory
 
 One row per source. Processing status: `new` → `ingested` → `distilled`.

@@ -9,48 +9,70 @@
      drift away from the knowledge base. */
   var PAPER_FILE = "knowledge/paper.md";
 
-  /* Published anchors of the earlier section cuts (pre-revision, the
-     seven-chapter text canonical until 2026-07-30, and the chapter-2 layout
-     canonical until 2026-07-31), mapped onto the section of the current
-     structure that carries their content. Renaming is not allowed (CLAUDE.md,
-     URL anchor scheme), so they stay as alias targets. */
+  /* Published anchors of the earlier section cuts, mapped onto the section of
+     the current four-chapter structure that carries their content. Renaming is
+     not allowed (CLAUDE.md, URL anchor scheme), so they stay as alias targets.
+     The map is flat, not transitive: an alias points at a heading id that the
+     current text actually generates, which is why every restructuring re-points
+     the whole map rather than appending to it. Three cuts have been superseded,
+     the pre-revision seven-chapter text (canonical until 2026-07-30), the
+     five-chapter text (until 2026-07-31), and the chapter-2 layout of the same
+     day. */
   var PAPER_ANCHOR_ALIASES = {
+    /* Seven-chapter text, canonical until 2026-07-30. */
     "abschnitt-2-terms-positioning": "abschnitt-1-1-translating-research-data-into-digital-research-artefacts-through-scholar-centred-design",
     "abschnitt-3-four-phases": "abschnitt-2-promptotyping-as-a-method",
-    "abschnitt-4-projects": "abschnitt-4-promptotyping-in-practice",
-    "abschnitt-5-epistemic-infrastructure": "abschnitt-4-2-artefact-forms-and-documented-projects",
+    "abschnitt-4-projects": "abschnitt-3-patterns-across-promptotypes",
+    "abschnitt-5-epistemic-infrastructure": "abschnitt-3-2-project-conditions-functions-and-artefact-forms",
     "abschnitt-2-the-epistemic-frame": "abschnitt-1-1-translating-research-data-into-digital-research-artefacts-through-scholar-centred-design",
     "abschnitt-2-1-exploration-building-and-their-correctives": "abschnitt-1-1-translating-research-data-into-digital-research-artefacts-through-scholar-centred-design",
     "abschnitt-2-2-llms-and-research-data": "abschnitt-1-1-translating-research-data-into-digital-research-artefacts-through-scholar-centred-design",
-    "abschnitt-2-3-the-translation-problem-and-documents-as-conceptual-models": "abschnitt-3-2-research-data-and-project-knowledge-as-mediating-structures",
+    "abschnitt-2-3-the-translation-problem-and-documents-as-conceptual-models": "abschnitt-2-1-promptotyping-and-the-project-knowledge-base",
     "abschnitt-2-4-position-in-the-ai-discourse": "abschnitt-1-2-context-engineering-agentic-engineering-and-ai-harnesses",
     "abschnitt-2-5-genealogy": "abschnitt-2-promptotyping-as-a-method",
     "abschnitt-3-the-method": "abschnitt-2-promptotyping-as-a-method",
-    "abschnitt-3-1-status-and-provenance": "abschnitt-4-1-cases-and-evidential-status",
+    "abschnitt-3-1-status-and-provenance": "abschnitt-3-1-evidence-and-comparison",
     "abschnitt-3-2-the-four-phases": "abschnitt-2-2-forms-of-work-and-iteration",
     "abschnitt-3-3-the-promptotyping-documents": "abschnitt-2-1-promptotyping-and-the-project-knowledge-base",
-    "abschnitt-3-4-a-worked-example-the-stefan-zweig-htr-pipeline": "abschnitt-2-4-verification-validation-and-acceptance",
-    "abschnitt-4-the-artefact-type": "abschnitt-4-2-artefact-forms-and-documented-projects",
-    "abschnitt-4-1-self-contained-static-web-tools": "abschnitt-4-2-artefact-forms-and-documented-projects",
-    "abschnitt-4-2-a-typology-of-promptotyping-interfaces": "abschnitt-4-2-artefact-forms-and-documented-projects",
-    "abschnitt-4-3-limits-of-the-format-and-the-handover-point": "abschnitt-5-1-scope-limits-and-conditions-of-applicability",
-    "abschnitt-5-evidence-the-documented-projects": "abschnitt-4-promptotyping-in-practice",
-    "abschnitt-5-1-principle-of-presentation": "abschnitt-4-1-cases-and-evidential-status",
-    "abschnitt-5-2-the-project-inventory": "abschnitt-4-2-artefact-forms-and-documented-projects",
-    "abschnitt-5-3-worked-cases-by-epistemic-function": "abschnitt-4-2-artefact-forms-and-documented-projects",
-    "abschnitt-5-4-teaching-and-collaboration-cases": "abschnitt-4-3-cross-case-findings",
-    "abschnitt-5-5-reading-the-evidence": "abschnitt-4-3-cross-case-findings",
-    "abschnitt-6-discussion": "abschnitt-5-scope-limits-evaluation-and-conclusion",
-    "abschnitt-6-1-process-and-publication": "abschnitt-3-4-acceptance-reconstructability-and-the-status-of-the-promptotype",
-    "abschnitt-6-2-verification-and-validation": "abschnitt-2-4-verification-validation-and-acceptance",
-    "abschnitt-6-3-reproducibility-and-llm-dependence": "abschnitt-3-4-acceptance-reconstructability-and-the-status-of-the-promptotype",
-    "abschnitt-6-4-limits": "abschnitt-5-1-scope-limits-and-conditions-of-applicability",
-    "abschnitt-6-5-transferability": "abschnitt-5-2-transferability-and-priorities-for-evaluation",
-    "abschnitt-7-conclusion": "abschnitt-5-3-conclusion",
-    "acknowledgements": "ai-use-and-research-provenance",
+    "abschnitt-3-4-a-worked-example-the-stefan-zweig-htr-pipeline": "abschnitt-2-3-1-agentic-data-production-and-curation-in-the-szd-and-jeanne-hersch-workflows",
+    "abschnitt-4-the-artefact-type": "abschnitt-3-2-project-conditions-functions-and-artefact-forms",
+    "abschnitt-4-1-self-contained-static-web-tools": "abschnitt-3-2-project-conditions-functions-and-artefact-forms",
+    "abschnitt-4-2-a-typology-of-promptotyping-interfaces": "abschnitt-3-2-project-conditions-functions-and-artefact-forms",
+    "abschnitt-4-3-limits-of-the-format-and-the-handover-point": "abschnitt-4-1-evidential-scope-and-applicability",
+    "abschnitt-5-evidence-the-documented-projects": "abschnitt-3-patterns-across-promptotypes",
+    "abschnitt-5-1-principle-of-presentation": "abschnitt-3-1-evidence-and-comparison",
+    "abschnitt-5-2-the-project-inventory": "abschnitt-3-2-project-conditions-functions-and-artefact-forms",
+    "abschnitt-5-3-worked-cases-by-epistemic-function": "abschnitt-3-2-project-conditions-functions-and-artefact-forms",
+    "abschnitt-5-4-teaching-and-collaboration-cases": "abschnitt-3-3-findings-attribution-and-learning",
+    "abschnitt-5-5-reading-the-evidence": "abschnitt-3-3-findings-attribution-and-learning",
+    "abschnitt-6-discussion": "abschnitt-4-scope-conditions-and-evaluation",
+    "abschnitt-6-1-process-and-publication": "abschnitt-2-3-4-from-complementary-cases-to-the-promptotype",
+    "abschnitt-6-2-verification-and-validation": "abschnitt-2-3-1-agentic-data-production-and-curation-in-the-szd-and-jeanne-hersch-workflows",
+    "abschnitt-6-3-reproducibility-and-llm-dependence": "abschnitt-2-3-4-from-complementary-cases-to-the-promptotype",
+    "abschnitt-6-4-limits": "abschnitt-4-1-evidential-scope-and-applicability",
+    "abschnitt-6-5-transferability": "abschnitt-4-3-transferability-and-evaluation",
+    "abschnitt-7-conclusion": "abschnitt-4-4-conclusion",
+    "acknowledgements": "author-s-note-on-ai-use-and-research-provenance",
     /* Chapter-2 layout canonical until 2026-07-31. */
-    "abschnitt-2-3-from-project-knowledge-to-an-accepted-promptotype": "abschnitt-2-4-verification-validation-and-acceptance",
-    "abschnitt-2-4-documentation-accountability-and-the-limits-of-ai-assisted-development": "abschnitt-2-5-documentation-accountability-and-the-limits-of-ai-assisted-development"
+    "abschnitt-2-3-from-project-knowledge-to-an-accepted-promptotype": "abschnitt-2-3-applying-promptotyping-complementary-project-cases",
+    "abschnitt-2-4-documentation-accountability-and-the-limits-of-ai-assisted-development": "abschnitt-4-2-labour-infrastructure-and-responsible-use",
+    /* Five-chapter text, canonical until 2026-07-31. */
+    "abschnitt-2-4-verification-validation-and-acceptance": "abschnitt-2-3-1-agentic-data-production-and-curation-in-the-szd-and-jeanne-hersch-workflows",
+    "abschnitt-2-5-documentation-accountability-and-the-limits-of-ai-assisted-development": "abschnitt-4-2-labour-infrastructure-and-responsible-use",
+    "abschnitt-3-epistemic-and-methodological-implications": "abschnitt-3-4-implications-and-evidential-limits",
+    "abschnitt-3-1-research-artefacts-and-the-amplification-of-computer-based-research": "abschnitt-3-4-implications-and-evidential-limits",
+    "abschnitt-3-2-research-data-and-project-knowledge-as-mediating-structures": "abschnitt-2-1-promptotyping-and-the-project-knowledge-base",
+    "abschnitt-3-3-amplification-competence-and-the-limits-of-externalisation": "abschnitt-4-2-labour-infrastructure-and-responsible-use",
+    "abschnitt-3-4-acceptance-reconstructability-and-the-status-of-the-promptotype": "abschnitt-2-3-4-from-complementary-cases-to-the-promptotype",
+    "abschnitt-4-promptotyping-in-practice": "abschnitt-3-patterns-across-promptotypes",
+    "abschnitt-4-1-cases-and-evidential-status": "abschnitt-3-1-evidence-and-comparison",
+    "abschnitt-4-2-artefact-forms-and-documented-projects": "abschnitt-3-2-project-conditions-functions-and-artefact-forms",
+    "abschnitt-4-3-cross-case-findings": "abschnitt-3-3-findings-attribution-and-learning",
+    "abschnitt-5-scope-limits-evaluation-and-conclusion": "abschnitt-4-scope-conditions-and-evaluation",
+    "abschnitt-5-1-scope-limits-and-conditions-of-applicability": "abschnitt-4-1-evidential-scope-and-applicability",
+    "abschnitt-5-2-transferability-and-priorities-for-evaluation": "abschnitt-4-3-transferability-and-evaluation",
+    "abschnitt-5-3-conclusion": "abschnitt-4-4-conclusion",
+    "ai-use-and-research-provenance": "author-s-note-on-ai-use-and-research-provenance"
   };
 
   function renderPaper() {
@@ -101,7 +123,10 @@
      degrades. */
   function attachFigures(host) {
     host.querySelectorAll("p > strong:first-child").forEach(function (strong) {
-      var match = /^Figure (\d+)\.$/.exec(strong.textContent.trim());
+      // The caption may set the whole label bold ("Figure 1. The method.") or
+      // only the number, so the number is matched as a prefix rather than as
+      // the entire run.
+      var match = /^Figure (\d+)\./.exec(strong.textContent.trim());
       if (!match) {
         return;
       }
