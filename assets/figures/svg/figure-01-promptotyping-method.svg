@@ -1,9 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" role="img" aria-labelledby="t d">
   <title id="t">The Promptotyping method</title>
-  <desc id="d">Preparation, Exploration, Distillation and Implementation stand in one row as recurrent forms of work. Implementation produces the digital research artefact, and the artefact becomes the promptotype under the judgement of the Critical Expert, whose arrow enters the transition between artefact and promptotype. Three dashed returns lead from Implementation back to Distillation, Exploration and Preparation; the return to Distillation is drawn heavier as the most frequent return. The Critical Expert specifies and revises the knowledge documents and verifies and accepts the artefact into the promptotype.</desc>
+  <desc id="d">Preparation, Exploration, Distillation and Implementation stand in one row as recurrent forms of work. Implementation produces the digital research artefact, and the artefact becomes the promptotype through purpose-specific acceptance, a transition the Critical Expert authorises rather than a step of the production flow. Three dashed returns share a common stem beneath Implementation and branch back to Distillation, Exploration and Preparation; the return to Distillation is drawn heavier as the most frequent return. The Critical Expert specifies and revises project knowledge and verifies and accepts the artefact into the promptotype.</desc>
   <defs>
     <marker id="flowhead" viewBox="0 0 12 12" refX="11.5" refY="6" markerWidth="12" markerHeight="12" orient="auto" markerUnits="userSpaceOnUse">
       <path d="M0.5,0.8 L11.5,6 L0.5,11.2 Z" fill="#111111"/>
+    </marker>
+    <marker id="authhead" viewBox="0 0 12 12" refX="11.5" refY="6" markerWidth="12" markerHeight="12" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M1.2,1.8 L11.0,6 L1.2,10.2 Z" fill="#ffffff" stroke="#111111" stroke-width="1.4"/>
     </marker>
     <marker id="supporthead" viewBox="0 0 12 12" refX="11.5" refY="6" markerWidth="12" markerHeight="12" orient="auto" markerUnits="userSpaceOnUse">
       <path d="M1.2,1.8 L11.0,6 L1.2,10.2 Z" fill="#ffffff" stroke="#666666" stroke-width="1.2"/>
@@ -19,6 +22,7 @@
       .box { fill: #ffffff; stroke: #111111; stroke-width: 2.5; }
       .mark { fill: #eeeeee; stroke: #111111; stroke-width: 2.5; }
       .flow { fill: none; stroke: #111111; stroke-width: 2.5; stroke-linejoin: round; marker-end: url(#flowhead); }
+      .auth { fill: none; stroke: #111111; stroke-width: 2.5; stroke-linejoin: round; marker-end: url(#authhead); }
       .support { fill: none; stroke: #666666; stroke-width: 1.25; stroke-linejoin: round; stroke-dasharray: 6 4; marker-end: url(#supporthead); }
       .supstrong { fill: none; stroke: #111111; stroke-width: 2; stroke-linejoin: round; stroke-dasharray: 6 4; marker-end: url(#supportheadstrong); }
       .disc { fill: #111111; }
@@ -31,9 +35,9 @@
   <circle cx="470" cy="52" r="13" fill="#ffffff" stroke="#111111" stroke-width="2.5"/>
   <circle cx="470" cy="52" r="6" class="disc"/>
   <text class="n" x="470" y="92" text-anchor="middle">Critical Expert</text>
-  <path class="flow" d="M469,104 V148"/>
-  <text class="e" x="456" y="128" text-anchor="end">specifies and revises</text>
-  <path class="flow" d="M487,52 H850 V414 H743"/>
+  <path class="auth" d="M469,104 V148"/>
+  <text class="e" x="456" y="128" text-anchor="end">specifies and revises project knowledge</text>
+  <path class="auth" d="M487,52 H850 V404 H743"/>
   <text class="e" x="598" y="74">verifies and accepts</text>
 
   <!-- Forms of work -->
@@ -69,33 +73,35 @@
   <text class="n" x="740" y="348" text-anchor="middle">Digital Research</text>
   <text class="n" x="740" y="370" text-anchor="middle">Artefact</text>
 
-  <!-- Transition into the promptotype, gated by the Critical Expert -->
-  <path class="flow" d="M740,390 V437"/>
+  <!-- Purpose-specific acceptance, the transition the Critical Expert authorises -->
+  <path class="flow" d="M740,390 V449"/>
+  <text class="e" x="726" y="432" text-anchor="end">purpose-specific acceptance</text>
 
   <!-- Promptotype, the emphasised element -->
-  <rect class="mark" x="680" y="440" width="260" height="145" rx="2"/>
-  <text class="n" x="810" y="472" text-anchor="middle">Promptotype</text>
-  <text class="s" x="704" y="500">maintained project knowledge</text>
-  <text class="s" x="704" y="522">digital research artefact</text>
-  <text class="s" x="704" y="544">referenced research-data state</text>
-  <text class="s" x="704" y="566">documented grounds of acceptance</text>
+  <rect class="mark" x="700" y="452" width="238" height="126" rx="2"/>
+  <text class="n" x="819" y="480" text-anchor="middle">Promptotype</text>
+  <text class="s" x="722" y="504">maintained project knowledge</text>
+  <text class="s" x="722" y="524">digital research artefact</text>
+  <text class="s" x="722" y="544">referenced research-data state</text>
+  <text class="s" x="722" y="564">documented grounds of acceptance</text>
 
-  <!-- Write-back returns -->
+  <!-- Write-back returns, one stem with staggered branches -->
   <text class="e" x="480" y="290">write-back</text>
-  <path class="supstrong" d="M585,255 V300 H468 V257"/>
-  <path class="support" d="M610,255 V345 H282 V257"/>
-  <path class="support" d="M635,255 V390 H96 V257"/>
+  <path class="supstrong" d="M610,255 V300 H468 V257"/>
+  <path class="support" d="M610,300 V345 H282 V257"/>
+  <path class="support" d="M610,345 V390 H96 V257"/>
   <text class="e" x="430" y="316">project knowledge revised</text>
   <text class="e" x="430" y="332">most frequent return</text>
   <text class="e" x="430" y="363">data understanding revised</text>
-  <text class="e" x="430" y="408">sources or conditions revised</text>
+  <text class="e" x="430" y="406">source basis or conditions revised</text>
 
   <!-- Legend -->
-  <path class="flow" d="M16,466 H56"/>
-  <text class="e" x="68" y="470">flow of work</text>
-  <path class="support" d="M180,466 H220"/>
-  <text class="e" x="232" y="470">write-back</text>
-  <circle cx="330" cy="466" r="10" fill="#ffffff" stroke="#111111" stroke-width="2.5"/>
-  <circle cx="330" cy="466" r="4.5" class="disc"/>
-  <text class="e" x="350" y="470">accountable human authority</text>
+  <path class="flow" d="M16,466 H48"/>
+  <text class="e" x="56" y="470">flow of work</text>
+  <path class="support" d="M150,466 H182"/>
+  <text class="e" x="190" y="470">write-back</text>
+  <circle cx="280" cy="466" r="8" fill="#ffffff" stroke="#111111" stroke-width="2"/>
+  <circle cx="280" cy="466" r="3.5" class="disc"/>
+  <path class="auth" d="M292,466 H324"/>
+  <text class="e" x="332" y="470">accountable human authority</text>
 </svg>
