@@ -1709,13 +1709,20 @@ The promotion closed the two-track regime. The operator's decisions of that day,
 8. **Flanders and Jannidis 2015/2019 and Pichler and Reiter 2022 stand as the manuscript cites them**; the vault register rows follow the manuscript.
 9. **The one-page German distillate was deleted** with the consolidation (dated snapshot, ages with every text change; pinned in git history).
 
-Open flags that survive the promotion:
+Decisions of the acceptance round of 2026-07-31:
+
+10. **The site keeps its own interface typology** (verification, exploration, edition, capture, audit) as site vocabulary; the paper's Table 2 names artefact forms, and the two stand side by side. The former open flag is closed.
+11. **The gallery is a curated showcase** of the documented practice, broader than the paper. The eight former inventory projects keep their cards under the role `further`; the evidence block couples strictly to Table 3.
+12. **The part-2 demo video moved from the paper page to the tutorial page.** The paper page carries the academic text alone; academic content and tutorial are separated (A8 updated in the site specification).
+13. **The "Figure files" closing section stays in the rendered text** as the repository-facing note on the file/manuscript numbering; it falls away in the submission export.
+14. **`paper-argument-map.md` and `submission-zfdg.md` were deleted with pins** (Section 24). The argument map described the seven-chapter text; the submission package derives fresh from Section 21 and the final text at submission time.
+
+Open flags that survive:
 
 1. **Summerfield 2025** left the reference list with the operator's own revision; the confabulation term thereby has no source in the manuscript and the term itself no longer appears. Reopen only if the term returns.
-2. **Site interface typology against Table 2.** The site's five epistemic functions (verification, exploration, edition, capture, audit) predate the promoted text, whose Table 2 names five artefact forms with Scholarly Workbench in place of audit. The gallery, the artefact page, the design tokens (`--fn-audit`), and the checker's vocabulary remain internally consistent on the old five; whether they follow Table 2 is an operator design decision.
-3. **Doctoral Congress presentation** still needs a deposited persistent identifier (fn footnote wording stays provisional until then).
-4. **Vault claim re-grounding.** The vault's claims were grounded against the seven-chapter text; the register is re-keyed to the promoted text, but the claim layer itself has not been re-read against the new wording. Non-blocking, because claims ground against pinned source representations, but due before submission.
-5. **Final read-acceptance.** The operator has not yet read the promoted text end to end as the published version; the site renders it in the meantime by the promotion decision.
+2. **Doctoral Congress presentation** still needs a deposited persistent identifier (the footnote wording stays provisional until then).
+3. **Vault claim re-grounding.** The claim layer is being audited against the promoted wording (audit commissioned 2026-07-31); its verdicts route the follow-up work in a vault session.
+4. **Final read-acceptance.** The operator has not yet read the promoted text end to end as the published version; the site renders it in the meantime by the promotion decision.
 
 Evidence and production tasks that remain from the earlier list: the M³GIM `knowledge/domain.md` derivation question, the Notker verification and acceptance reconstruction, repository-visibility verification for restricted repositories, and the rights-clearance list (Section 22).
 
@@ -1726,8 +1733,8 @@ A manuscript section is accepted only when its conceptual and terminological dec
 # 20. Next Work Block
 
 1. Operator's end-to-end read of `knowledge/paper.md` as rendered on the site; findings return through the ordinary revision path with the rule catalogue of Section 16.6.
-2. Vault claim re-grounding against the promoted wording (open flag 4), then the submission package refresh in `knowledge/submission-zfdg.md` (exposé, both short abstracts, outline against the five-chapter structure).
-3. Venue submission per Section 21 (operator-gated).
+2. Vault claim follow-up from the audit of 2026-07-31 (open flag 3), in a vault session.
+3. Submission package derived fresh from Section 21 and the final text, then venue submission (operator-gated).
 
 ---
 
@@ -1773,6 +1780,8 @@ The steering and revision documents of the July 2026 rounds were consolidated in
 | `revision-2026-07-30.md` | The consolidation of the 2026-07-30 round: the ten-flag list with resolution state, the adopted literature with verification provenance, the reserve list, and the pins of the six working reports (`7979625`, `2fd7cd1`, `0a51b2b`, `5b18079`, `e1e0c8d`/`ec8cb33`, `14c9724`). | `7138d2a` |
 | `verification-draft-sources.md` | The verdict table for the draft's 2025/2026 sources, one row per work with the check that ran. The surviving essence sits in the vault register's adoption notes. | `7138d2a` |
 | `paper-distillate-2026-07-30.md` | The operator's one-page German distillate of the manuscript, a dated snapshot. | `7138d2a` |
+| `paper-argument-map.md` | The concept model of the seven-chapter text, one argument chain per block with confirmation status. Historical since the promotion; deleted by operator decision 2026-07-31. | `46bd6ba` |
+| `submission-zfdg.md` | The ZfdG submission package for the seven-chapter text (exposé, both short abstracts, formalities checklist). The normative formalities live in Section 21; the package is derived fresh at submission. | `46bd6ba` |
 
 The reserve literature of the 2026-07-30 round (verified, worth keeping findable: Norman et al. 2026; Beck et al. 2026; Li et al. 2025; Chen et al. 2026; Wang et al. 2026; Cutler et al. 2025; Alvite-Díez 2025; Gautam et al. 2026) is recorded with full bibliographic data in the pinned consolidation.
 

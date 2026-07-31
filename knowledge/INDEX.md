@@ -18,7 +18,7 @@ template:
   version: 0.2
   url: https://dhcraft.org/Promptotyping/promptotyping-document/index
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-index
-related: [project, specification, architecture, design, journal, plan, paper, paper-knowledge, paper-argument-map, report, submission-zfdg, skriptum-video-1, skriptum-video-2]
+related: [project, specification, architecture, design, journal, plan, paper, paper-knowledge, report, skriptum-video-1, skriptum-video-2]
 ---
 
 # INDEX
@@ -27,7 +27,7 @@ Navigation and glossary of this repository's knowledge base. The repository `Dig
 
 ## Language regime
 
-By operator decision of 2026-07-23 the core knowledge documents (INDEX, project, specification, architecture, design) are English, since they are the public showcase of the self-application; `paper-knowledge.md` is English since the operator's refactor of 2026-07-29. The process documents stay German as working instruments, which covers journal, paper-argument-map, report, submission-zfdg, and the two video scripts. The `template:` frontmatter blocks keep the German template names until the template catalogue itself renames them in the vault; the glossary below gives the English function names.
+By operator decision of 2026-07-23 the core knowledge documents (INDEX, project, specification, architecture, design) are English, since they are the public showcase of the self-application; `paper-knowledge.md` is English since the operator's refactor of 2026-07-29. The process documents stay German as working instruments, which covers journal, report, and the two video scripts. The `template:` frontmatter blocks keep the German template names until the template catalogue itself renames them in the vault; the glossary below gives the English function names.
 
 ## Status vocabulary
 
@@ -44,11 +44,9 @@ By operator decision of 2026-07-23 the core knowledge documents (INDEX, project,
 - **[journal.md](journal.md)** — chronological process record, German (function: Provenance).
 - **[paper.md](paper.md)** — the full English paper text as one document, five chapters, promoted on 2026-07-30 from the operator's externally revised, sanitised, verified, and literature-anchored manuscript; headerless by design for copy-out. The site renders this file directly, so the deployed text is the canonical text.
 - **[paper-knowledge.md](paper-knowledge.md)** — the single steering document of the paper: argument, terminology, canonical definitions, checking architecture, evidence policy, language rules, apparatus conventions, submission route, operator decisions, open flags, and the provenance pins of every consolidated predecessor (`paper-writing.md`, `revision.md`, `revision-2026-07-30.md`, `verification-draft-sources.md`). English.
-- **[paper-argument-map.md](paper-argument-map.md)** — the concept model of the seven-chapter text, one argument chain per block in compact notation with confirmation status, German. Historical since the promotion; a re-derivation against the five-chapter text is open.
 - **[skriptum-video-1.md](skriptum-video-1.md)** and **[skriptum-video-2.md](skriptum-video-2.md)** — the cleaned scripts of the two introductory videos, German. They are the source from which the worked-workflow page was written and, through their representations in the vault, the ground of the claims that rest on the videos.
 - **[plan.md](plan.md)** — the frontend work packages agreed on 2026-07-29, F1 to F9 with scope, specification impact, and pending operator decisions per package, plus the state section of the execution run of the same night (function: Planning).
 - **[report.md](report.md)** — snapshot report of the lane run towards the ZfdG submission (2026-07-23), German; carries a dated addendum on what the revision round settled and is not otherwise updated.
-- **[submission-zfdg.md](submission-zfdg.md)** — submission package for the Zeitschrift für digitale Geisteswissenschaften: exposé with outline and literature selection, short abstracts in German and English, formalities checklist; German.
 The paper work follows a two-document model, the text in `paper.md` and the knowledge about it in `paper-knowledge.md`. The two-track transitional regime of 2026-07-29/30 ended with the promotion of 2026-07-30. A `data.md` deliberately does not exist; the Material template does not carry for method repositories, and the material basis lives in `project.md` (journal entry of 2026-05-09).
 
 ### The revision rounds

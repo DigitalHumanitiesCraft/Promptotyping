@@ -49,13 +49,6 @@
     "acknowledgements": "ai-use-and-research-provenance"
   };
 
-  /* Part-2 video sits with the project inventory that lists the demonstrated case. */
-  var PAPER_VIDEO = {
-    youtubeId: "hd_a-NBO_S4",
-    title: "Promptotyping Teil 2 (Claude Code)",
-    anchorText: "VetMedAI Wissensbilanz"
-  };
-
   function renderPaper() {
     var host = document.getElementById(A.PAPER_HOST_ID);
     if (!host) {
@@ -71,7 +64,6 @@
         buildPaperToc(host);
         indexReferences(host);
         markReferenceLinks();
-        injectPaperVideo(host);
         injectUseCaseReference(host);
         // Before the text decorations, so a project name is a link rather than
         // a cell that already carries a glossary trigger.
@@ -215,32 +207,6 @@
   function evidenceSection(host) {
     return document.getElementById(PAPER_ANCHOR_ALIASES["abschnitt-4-projects"]) ||
       host.querySelector(".paper-section");
-  }
-
-  /* Place the part-2 video after the block that names the demonstrated case
-     (the project inventory), falling back to the end of the evidence section. */
-  function injectPaperVideo(host) {
-    if (host.querySelector(".video-embed")) {
-      return;
-    }
-    var evidence = evidenceSection(host);
-    if (!evidence) {
-      return;
-    }
-    var video = A.buildVideoFacade(PAPER_VIDEO.youtubeId, PAPER_VIDEO.title);
-    var blocks = evidence.querySelectorAll("p, table");
-    var target = null;
-    for (var i = 0; i < blocks.length; i++) {
-      if (blocks[i].textContent.indexOf(PAPER_VIDEO.anchorText) !== -1) {
-        target = blocks[i];
-        break;
-      }
-    }
-    if (target) {
-      target.parentNode.insertBefore(video, target.nextSibling);
-    } else {
-      evidence.appendChild(video);
-    }
   }
 
   /* Append a compact reference block to the end of the evidence section,

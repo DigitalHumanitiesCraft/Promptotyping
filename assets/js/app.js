@@ -87,7 +87,18 @@
         el.insertBefore(note, el.firstChild ? el.firstChild.nextSibling : null);
       }),
       // Prompts on the tutorial page are copyable like the skills prompts.
-      A.renderMarkdownInto("tutorial", "_content/tutorial.md", A.addCodeCopyButtons),
+      // Part 2 demonstrates the method end to end and belongs to learning it,
+      // so it sits here; the paper page carries the academic text alone (A8).
+      A.renderMarkdownInto("tutorial", "_content/tutorial.md", function (el) {
+        A.addCodeCopyButtons(el);
+        var intro = el.querySelector("p");
+        var video = A.buildVideoFacade("hd_a-NBO_S4", "Promptotyping Teil 2 (Claude Code)");
+        if (intro && intro.nextSibling) {
+          el.insertBefore(video, intro.nextSibling);
+        } else {
+          el.appendChild(video);
+        }
+      }),
       A.renderPraxis(),
       A.renderSkills(),
       A.renderMarkdownInto("arbeitsumgebung", "_content/arbeitsumgebung.md")
