@@ -316,9 +316,9 @@ Source: [Paper, Section 2.1](#abschnitt-2-1-promptotyping-and-the-project-knowle
 
 Kind: Form of work
 
-Iterative, document-driven context-engineering method organised around four recurrent forms of work that translates research data into research artefacts.
+Iterative, knowledge-driven method organised around four recurrent forms of work that develops project-specific research artefacts from structured research data and maintained project knowledge.
 
-The name combines *prompt* and *prototyping* and retains the prototype's established function, the provisional implementation through which requirements and design possibilities become clearer. Promptotyping is an iterative, document-driven context-engineering method organised around four recurrent forms of work (Preparation, Exploration, Distillation, Implementation) with which researchers translate their structured research data into research artefacts. Its working material is a small set of versioned Markdown documents carrying requirements, data descriptions and design decisions, from which an LLM-supported agent derives the artefact. The documents are what the method maintains, and the artefact is regenerated from them. What separates it from vibe coding is the structured preparation, the persistent documents and the verification at defined checkpoints.
+The name combines *prompt* and *prototyping* and retains the established function of a prototype as a provisional implementation through which requirements and design possibilities can be examined and refined. Promptotyping is an iterative, knowledge-driven method organised around four recurrent forms of work (Preparation, Exploration, Distillation, Implementation) with which researchers develop project-specific research artefacts from structured research data and maintained project knowledge. Its working material is a small set of versioned Markdown documents carrying requirements, data descriptions and design decisions, from which an LLM-supported agent derives the artefact. The documents are what the method maintains, and the artefact is regenerated from them. What separates it from vibe coding is the structured preparation, the persistent documents and the validation at defined checkpoints.
 
 Source: [Paper, Section 2.2](#abschnitt-2-2-forms-of-work-and-iteration); [Vault: the four-phase context-engineering technique](#vault-promptotyping-is-a-four-phase-context-engineering-technique); knowledge/INDEX.md
 
@@ -460,7 +460,7 @@ Verification is the check by a formal rule, validation the check by domain exper
 
 The method distinguishes two kinds of check. Verification is what a formal rule decides, a schema, a test or a constraint, and it runs unsupervised because the feedback loop is closed. Validation is what domain expertise decides against the sources and against scholarly judgement, and it does not delegate. The pair operates at three levels, data fidelity, requirement satisfaction and design conformance, and each level has its own zone of agent autonomy. This usage follows the norm of software and systems engineering, where verification names the check against the specification and validation the check against intended use and user needs (IEEE Std 1012). Schema validation, the established XML term for an automatic check against a schema, keeps its name as a term of art and is in this sense a form of verification.
 
-Source: [Paper, Section 2.3](#abschnitt-2-3-from-project-knowledge-to-an-accepted-promptotype); [Specification, part 5, Verification](#verifikation)
+Source: [Paper, Section 2.3](#abschnitt-2-3-from-project-knowledge-to-an-accepted-promptotype); [Specification, part 5, Checking](#verifikation)
 
 ### Verification Milestone
 

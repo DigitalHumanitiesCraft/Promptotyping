@@ -582,8 +582,8 @@
     {
       "slug": "promptotyping",
       "begriff": "Promptotyping",
-      "kurz": "Iterative, document-driven context-engineering method organised around four recurrent forms of work that translates research data into research artefacts.",
-      "voll": "The name combines *prompt* and *prototyping* and retains the prototype's established function, the provisional implementation through which requirements and design possibilities become clearer. Promptotyping is an iterative, document-driven context-engineering method organised around four recurrent forms of work (Preparation, Exploration, Distillation, Implementation) with which researchers translate their structured research data into research artefacts. Its working material is a small set of versioned Markdown documents carrying requirements, data descriptions and design decisions, from which an LLM-supported agent derives the artefact. The documents are what the method maintains, and the artefact is regenerated from them. What separates it from vibe coding is the structured preparation, the persistent documents and the verification at defined checkpoints.",
+      "kurz": "Iterative, knowledge-driven method organised around four recurrent forms of work that develops project-specific research artefacts from structured research data and maintained project knowledge.",
+      "voll": "The name combines *prompt* and *prototyping* and retains the established function of a prototype as a provisional implementation through which requirements and design possibilities can be examined and refined. Promptotyping is an iterative, knowledge-driven method organised around four recurrent forms of work (Preparation, Exploration, Distillation, Implementation) with which researchers develop project-specific research artefacts from structured research data and maintained project knowledge. Its working material is a small set of versioned Markdown documents carrying requirements, data descriptions and design decisions, from which an LLM-supported agent derives the artefact. The documents are what the method maintains, and the artefact is regenerated from them. What separates it from vibe coding is the structured preparation, the persistent documents and the validation at defined checkpoints.",
       "kategorie": "form-of-work",
       "quellen": [
         {
@@ -972,7 +972,7 @@
         {
           "typ": "page",
           "anker": "verifikation",
-          "text": "Specification, part 5, Verification"
+          "text": "Specification, part 5, Checking"
         }
       ]
     },

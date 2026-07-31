@@ -11,7 +11,7 @@ machine-url: https://dhcraft.org/Promptotyping/_content/ueberblick.md
 
 # Promptotyping
 
-Specification of an iterative context-engineering method organised around four recurrent forms of work for turning research data and frontier LLMs into research artefacts.
+Specification of an iterative, knowledge-driven method organised around four recurrent forms of work for developing project-specific research artefacts from structured research data and maintained project knowledge.
 
 | | |
 |---|---|

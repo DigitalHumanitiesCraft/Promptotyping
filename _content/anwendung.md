@@ -68,7 +68,7 @@ The document set is handed to an agentic coding tool operating inside the projec
 
 - **Entry.** The distilled document set and the source data.
 - **Steps.** Advance in milestones, each a small increment verified before the next begins. Steer the generation through three feedback loops, deterministic feedback from schema validation, test suites and builds, visual feedback from screenshots of the running artefact, and expert feedback from the judgement of whether the output is factually correct, domain-appropriate and aligned with the research question. Probe the possibility space deliberately by requesting radically different designs that run against the learned conventions.
-- **Stopping criterion.** The artefact satisfies the acceptance criteria of the requirements and passes the checks of [verification](#verifikation). The exit point is a spectrum, from a small functional prototype to a multi-stage pipeline with verification interfaces at every stage, and what determines it is the research question.
+- **Stopping criterion.** The artefact satisfies the acceptance criteria of the requirements and passes the checks of [checking](#verifikation). The exit point is a spectrum, from a small functional prototype to a multi-stage pipeline with verification interfaces at every stage, and what determines it is the research question.
 - **Documents.** The journal carries the sessions, the what lies in the commits.
 
 Deferring the check on a milestone is a decision with a price. It is most defensible in a first pass whose point is to see something running at all, and it leaves a verification debt to be settled before the artefact is used or handed on. Where the debt is carried, the record has to say so.

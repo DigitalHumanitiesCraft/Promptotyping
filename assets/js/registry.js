@@ -32,7 +32,7 @@
     { id: "artefakt", label: "Artefact and boundary", group: "Specification", parent: "specification",
       part: "4", kind: "normative",
       note: "Artefact type and handover point" },
-    { id: "verifikation", label: "Verification", group: "Specification", parent: "specification",
+    { id: "verifikation", label: "Checking", group: "Specification", parent: "specification",
       part: "5", kind: "normative",
       note: "Kinds of check, levels of check, zones of autonomy" },
 

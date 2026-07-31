@@ -1,16 +1,16 @@
 ---
-title: Verification
+title: Checking
 slug: verifikation
 status: complete
 language: en
-version: "0.3"
+version: "0.4"
 created: 2026-07-25
 updated: 2026-07-31
 source: knowledge/paper.md, sections 2.3 and 2.4
 machine-url: https://dhcraft.org/Promptotyping/_content/verifikation.md
 ---
 
-# Verification
+# Checking
 
 The obvious objection to generated research artefacts is quality. The method answers with a check anchored in the documents. That check is systematically necessary because the mapping from the semi-formal document set onto the running artefact is executed stochastically, so its fidelity is not secured by construction.
 

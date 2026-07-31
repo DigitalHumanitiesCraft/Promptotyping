@@ -366,7 +366,7 @@ Language models contributed to formulation, comparison, restructuring, and edito
 
 - Dell’Acqua, Fabrizio, Edward McFowland III, Ethan Mollick, et al. 2023. “Navigating the Jagged Technological Frontier: Field Experimental Evidence of the Effects of AI on Knowledge Worker Productivity and Quality.” Harvard Business School Working Paper 24-013. [https://www.hbs.edu/faculty/Pages/item.aspx?num=64700](https://www.hbs.edu/faculty/Pages/item.aspx?num=64700).
 
-- Drucker, Johanna. 2011. “Humanities Approaches to Graphical Display.” *Digital Humanities Quarterly* 5 (1). [https://www.digitalhumanities.org/dhq/vol/5/1/000091/000091.html](https://www.digitalhumanities.org/dhq/vol/5/1/000091/000091.html).
+- Drucker, Johanna. 2011. “Humanities Approaches to Graphical Display.” *Digital Humanities Quarterly* 5 (1). [https://doi.org/10.63744/r4ysrh7ae534](https://doi.org/10.63744/r4ysrh7ae534).
 
 - Edmond, Jennifer. 2005. “The Role of the Professional Intermediary in Expanding the Humanities Computing Base.” *Literary and Linguistic Computing* 20 (3): 367–380. [https://doi.org/10.1093/llc/fqi036](https://doi.org/10.1093/llc/fqi036).
 
@@ -374,11 +374,11 @@ Language models contributed to formulation, comparison, restructuring, and edito
 
 - Fickers, Andreas. 2020. “Update für die Hermeneutik: Geschichtswissenschaft auf dem Weg zur digitalen Forensik?” *Zeithistorische Forschungen / Studies in Contemporary History* 17 (1): 157–168. [https://doi.org/10.14765/zzf.dok-1765](https://doi.org/10.14765/zzf.dok-1765).
 
-- Flanders, Julia, and Fotis Jannidis, eds. 2019. *The Shape of Data in Digital Humanities: Modeling Texts and Text-Based Resources*. London and New York: Routledge. [https://doi.org/10.4324/9781315552941](https://doi.org/10.4324/9781315552941).
+- Flanders, Julia, and Fotis Jannidis. 2019. “Data Modeling in a Digital Humanities Context.” In *The Shape of Data in Digital Humanities: Modeling Texts and Text-Based Resources*, edited by Julia Flanders and Fotis Jannidis, 3–25. Abingdon and New York: Routledge. [https://doi.org/10.4324/9781315552941](https://doi.org/10.4324/9781315552941).
 
 - Galey, Alan, and Stan Ruecker. 2010. “How a Prototype Argues.” *Literary and Linguistic Computing* 25 (4): 405–424. [https://doi.org/10.1093/llc/fqq021](https://doi.org/10.1093/llc/fqq021).
 
-- Geiger, Jonathan D. 2024. “Daten / Forschungsdaten.” In *Begriffe der Digital Humanities: Ein diskursives Glossar*, edited by AG Digital Humanities Theorie des Verbandes Digital Humanities im deutschsprachigen Raum. Version 2.0. *Zeitschrift für digitale Geisteswissenschaften / Working Papers* 2. [https://doi.org/10.17175/wp_2023_003_v2](https://doi.org/10.17175/wp_2023_003_v2).
+- Geiger, Jonathan D. 2024. “Daten / Forschungsdaten.” In *Begriffe der Digital Humanities: Ein diskursives Glossar*, edited by AG Digital Humanities Theorie des Verbandes Digital Humanities im deutschsprachigen Raum. Version 2.0. *Zeitschrift für digitale Geisteswissenschaften / Working Papers* 2. Wolfenbüttel. [https://doi.org/10.17175/wp_2023_003_v2](https://doi.org/10.17175/wp_2023_003_v2).
 
 - Glazer, Elliot, Ege Erdil, Tamay Besiroglu, Diego Chicharro, Evan Chen, Alex Gunning, Caroline Falkman Olsson, et al. 2024. “FrontierMath: A Benchmark for Evaluating Advanced Mathematical Reasoning in AI.” *arXiv*. [https://doi.org/10.48550/arXiv.2411.04872](https://doi.org/10.48550/arXiv.2411.04872).
 
@@ -422,7 +422,7 @@ Language models contributed to formulation, comparison, restructuring, and edito
 
 - Pollin, Christopher. 2019. “Digital Edition Publishing Cooperative for Historical Accounts and the Bookkeeping Ontology.” In *Proceedings of the Doctoral Symposium on Research on Online Databases in History (RODBH 2019)*, edited by Thomas Riechert, Francesco Beretta, and George Bruseker, 7–14. CEUR Workshop Proceedings 2532. [https://ceur-ws.org/Vol-2532/paper1.pdf](https://ceur-ws.org/Vol-2532/paper1.pdf).
 
-- Pollin, Christopher. 2025a. *Modelling, Operationalising and Exploring Historical Information: Using Historical Financial Sources as an Example*. Dissertation, University of Graz. [https://unipub.uni-graz.at/obvugrhs/12127700](https://unipub.uni-graz.at/obvugrhs/12127700).
+- Pollin, Christopher. 2025a. *Modelling, Operationalising and Exploring Historical Information: Using Historical Financial Sources as an Example*. Dissertation, University of Graz. urn:nbn:at:at-ubg:1-220602. [https://unipub.uni-graz.at/obvugrhs/12127700](https://unipub.uni-graz.at/obvugrhs/12127700).
 
 - Pollin, Christopher. 2025b. “Promptotyping: Von der Idee zur Anwendung.” *Digital Humanities Craft Blog*, 24 April 2025. [https://dhcraft.org/excellence/blog/Promptotyping/](https://dhcraft.org/excellence/blog/Promptotyping/).
 
@@ -464,7 +464,7 @@ Language models contributed to formulation, comparison, restructuring, and edito
 
 - Wilkinson, Mark D., Michel Dumontier, IJsbrand Jan Aalbersberg, et al. 2016. “The FAIR Guiding Principles for Scientific Data Management and Stewardship.” *Scientific Data* 3: 160018. [https://doi.org/10.1038/sdata.2016.18](https://doi.org/10.1038/sdata.2016.18).
 
-- Zhao, Wayne Xin, Kun Zhou, Junyi Li, Tianyi Tang, Xiaolei Wang, Yupeng Hou, Yingqian Min, et al. 2023. “A Survey of Large Language Models.” *arXiv*. [https://doi.org/10.48550/arXiv.2303.18223](https://doi.org/10.48550/arXiv.2303.18223).
+- Zhao, Wayne Xin, Kun Zhou, Junyi Li, Tianyi Tang, Xiaolei Wang, Yupeng Hou, Yingqian Min, et al. 2023. “A Survey of Large Language Models.” *arXiv*, arXiv:2303.18223v1. [https://doi.org/10.48550/arXiv.2303.18223](https://doi.org/10.48550/arXiv.2303.18223).
 
 - Zhong, Hailin, and Shengxin Zhu. 2026. “AI Harness Engineering: A Runtime Substrate for Foundation-Model Software Agents.” *arXiv*. [https://doi.org/10.48550/arXiv.2605.13357](https://doi.org/10.48550/arXiv.2605.13357).
 
