@@ -428,7 +428,7 @@ Language models contributed to formulation, comparison, restructuring, and edito
 
 - Pollin, Christopher. 2026b. “Asymmetric Amplification: Why AI Does Not Automate Research—But Disruptively Amplifies Computer-Based Research Work.” *Digital Humanities Craft Blog*, 9 February 2026. [https://dhcraft.org/excellence/blog/Asymmetric-Amplification](https://dhcraft.org/excellence/blog/Asymmetric-Amplification).
 
-- Pollin, Christopher, Franz Fischer, Patrick Sahle, Martina Scholger, and Georg Vogeler. 2025. “When It Was 2024—Generative AI in the Field of Digital Scholarly Editions.” *Zeitschrift für digitale Geisteswissenschaften*. [https://doi.org/10.17175/2025_008](https://doi.org/10.17175/2025_008).
+- Pollin, Christopher, Franz Fischer, Patrick Sahle, Martina Scholger, and Georg Vogeler. 2025. “When It Was 2024—Generative AI in the Field of Digital Scholarly Editions.” *Zeitschrift für digitale Geisteswissenschaften* 10. [https://doi.org/10.17175/2025_008](https://doi.org/10.17175/2025_008).
 
 - Posner, Miriam. 2015. “Humanities Data: A Necessary Contradiction.” *Miriam Posner’s Blog*, 25 June 2015. [https://miriamposner.com/blog/humanities-data-a-necessary-contradiction/](https://miriamposner.com/blog/humanities-data-a-necessary-contradiction/).
 
@@ -479,7 +479,7 @@ The figures are stored under `assets/figures/` in the accompanying repository an
 
 [^4]: Large language models are pretrained language models of substantial scale that can generate and transform natural language and, depending on their training and configuration, structured data and source code (Zhao et al. 2023).
 
-[^5]: A workflow is understood here as an organised sequence of interrelated operations, tools, decisions, and forms of checking through which research material is processed or made usable for a defined purpose. For an earlier discussion of pipelines and technical workflows in digital editions, see Pollin, “Pipeline, Transition (technischer Workflow),” *KONDE Weißbuch*, [https://gams.uni-graz.at/o:konde.264](https://gams.uni-graz.at/o:konde.264).
+[^5]: A workflow is understood here as an organised sequence of interrelated operations, tools, decisions, and forms of checking through which research material is processed or made usable for a defined purpose. For an earlier discussion of pipelines and technical workflows in digital editions, see Christopher Pollin, “Pipeline, Transition (technischer Workflow),” in *KONDE Weißbuch*, edited by Selina Galka and Helmut W. Klug, 2024, [https://gams.uni-graz.at/o:konde.264](https://gams.uni-graz.at/o:konde.264), Handle: [https://hdl.handle.net/11471/562.50.264](https://hdl.handle.net/11471/562.50.264).
 
 [^6]: This distinction adapts established usage in software and systems engineering, where *verification* concerns conformity to specified requirements and *validation* concerns suitability for the intended use and user needs (IEEE 2017). Applied here, *technical verification* concerns conformity to formalised requirements, while *scholarly validation* concerns the adequacy of a representation or artefact for its intended scholarly purpose. Scholarly validation requires responsible human judgement where assessment depends on source knowledge, interpretation, or design decisions. *Schema validation*, the established XML term for an automatic check against a schema, is in this sense a form of technical verification and keeps its name as a term of art.
 
