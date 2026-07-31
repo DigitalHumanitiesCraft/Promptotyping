@@ -74,11 +74,11 @@ Terms constitutive for this knowledge base. Canonical definitions live in the li
 
 **Promptotype.** The identifiable and versioned state that an accepted iteration yields; it connects maintained project knowledge, the resulting digital research artefact, the referenced research-data state, and the documented grounds of acceptance. Not every generated artefact reaches this threshold.
 
-**Promptotyping Document.** Structured Markdown document in a repository's `knowledge/` folder. All of them are Knowledge Documents, specialised by the kind of knowledge they carry into three analytical types, Declarative (subject matter), Process (chronological), Action (imperative). Until July 2026 the declarative type itself was called Knowledge Document; the name moved to the umbrella term.
+**Knowledge Document.** Structured Markdown document in a repository's `knowledge/` folder. All of them are Knowledge Documents, specialised by the kind of knowledge they carry into three analytical types, Declarative (subject matter), Process (chronological), Action (imperative). Until July 2026 the declarative type itself was called Knowledge Document; the name moved to the umbrella term.
 
 **Template (Vorlage).** Fillable structural pattern for one function of a Promptotyping knowledge base. The function names have been English since 2026-07-19 (Navigation, Charter, Material, Specification, Architecture, Technology Baseline, Domain Knowledge, Design, Quality Assurance, Verification, Provenance, Planning, Reporting, Integration, Agent Instructions). The catalogue lives in the vault; the site mirrors the templates as versioned anchors. A template carries only where its trigger holds.
 
-**Konvention Promptotyping Documents.** The description of knowledge-base functions, the frontmatter schema, and the structural principles. Lives in the vault, mirrored on the public site as an external specification.
+**Konvention Knowledge Documents.** The description of knowledge-base functions, the frontmatter schema, and the structural principles. Lives in the vault, mirrored on the public site as an external specification.
 
 **Anchor schema.** System of permanently stable URL anchors on the site (`#promptotyping-document-data`, `#case-herdata`, `#konzept-eil`). Version snapshots add sub-anchors (`#promptotyping-document-data-v0.1`). Repositories linking via the `template:` field address these anchors; anchors are never renamed. Since the rebuild of 2026-07-25 the site shows one page at a time and holds the inactive pages in the DOM, which is what keeps every published anchor resolvable (`specification.md`, `architecture.md`).
 

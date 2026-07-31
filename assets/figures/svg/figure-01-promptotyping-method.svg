@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" role="img" aria-labelledby="t d">
   <title id="t">The Promptotyping method</title>
-  <desc id="d">Preparation, Exploration, Distillation and Implementation stand in one row as recurrent forms of work. Implementation produces the digital research artefact, and the artefact becomes the promptotype through purpose-specific acceptance, a transition the Critical Expert authorises rather than a step of the production flow. Three dashed returns share a common stem beneath Implementation and branch back to Distillation, Exploration and Preparation; the return to Distillation is drawn heavier as the most frequent return. The Critical Expert specifies and revises project knowledge and verifies and accepts the artefact into the promptotype.</desc>
+  <desc id="d">Preparation, Exploration, Distillation and Implementation stand in one row as recurrent forms of work. Implementation produces the digital research artefact, and the artefact becomes the promptotype through purpose-specific acceptance. Three dashed returns share a common stem beneath Implementation and branch back to Distillation, Exploration and Preparation; the return to Distillation is drawn heavier as the most frequent return. The Critical Expert specifies and revises the knowledge documents in Distillation and verifies and accepts the digital research artefact.</desc>
   <defs>
     <marker id="flowhead" viewBox="0 0 12 12" refX="11.5" refY="6" markerWidth="12" markerHeight="12" orient="auto" markerUnits="userSpaceOnUse">
       <path d="M0.5,0.8 L11.5,6 L0.5,11.2 Z" fill="#111111"/>
@@ -37,7 +37,7 @@
   <text class="n" x="470" y="92" text-anchor="middle">Critical Expert</text>
   <path class="auth" d="M469,104 V148"/>
   <text class="e" x="456" y="128" text-anchor="end">specifies and revises project knowledge</text>
-  <path class="auth" d="M487,52 H850 V404 H743"/>
+  <path class="auth" d="M487,52 H850 V355 H833"/>
   <text class="e" x="598" y="74">verifies and accepts</text>
 
   <!-- Forms of work -->
@@ -54,7 +54,7 @@
 
   <rect class="box" x="388" y="150" width="160" height="104" rx="2"/>
   <text class="n" x="468" y="188" text-anchor="middle">Distillation</text>
-  <text class="s" x="468" y="214" text-anchor="middle">Promptotyping</text>
+  <text class="s" x="468" y="214" text-anchor="middle">Knowledge</text>
   <text class="s" x="468" y="232" text-anchor="middle">Documents</text>
 
   <rect class="box" x="574" y="150" width="160" height="104" rx="2"/>

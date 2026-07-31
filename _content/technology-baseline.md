@@ -19,7 +19,7 @@ This document carries the project-independent technology knowledge for the metho
 
 A Promptotyping artefact is as a rule a set of HTML, CSS and JavaScript files, with the research data embedded or loaded from flat files, runnable from a local folder and deployable on any static host. Three properties ground this default.
 
-The first is generability. Static artefacts can be produced by agentic coding tools in a single pass, which keeps the derivation from the Promptotyping Documents to the artefact inspectable. Every additional layer, whether a build chain, a server component or a database, lengthens the derivation and withdraws parts of it from inspection.
+The first is generability. Static artefacts can be produced by agentic coding tools in a single pass, which keeps the derivation from the Knowledge Documents to the artefact inspectable. Every additional layer, whether a build chain, a server component or a database, lengthens the derivation and withdraws parts of it from inspection.
 
 The second is publishability. A static artefact needs no infrastructure. GitHub Pages or any web space suffices, which matches the resource situation of the individual researchers and small projects the method addresses.
 
@@ -33,7 +33,7 @@ The third is durability. The field's own sustainability discourse, minimal compu
 
 ### Vanilla JavaScript as the default
 
-No framework. Frameworks age fast, resist inspection by those who reuse the artefact, and offer nothing an exploratory research instrument needs; the native DOM, `fetch`, ES modules and `location.hash` cover the demand. A method-specific argument comes on top. Because the prototype can be regenerated from the Promptotyping Documents, the target language of the regeneration has to stay stable over the long term, and the browser platform is the most stable runtime environment there is, while a framework API is not.
+No framework. Frameworks age fast, resist inspection by those who reuse the artefact, and offer nothing an exploratory research instrument needs; the native DOM, `fetch`, ES modules and `location.hash` cover the demand. A method-specific argument comes on top. Because the prototype can be regenerated from the Knowledge Documents, the target language of the regeneration has to stay stable over the long term, and the browser platform is the most stable runtime environment there is, while a framework API is not.
 
 ### Compromise rule for libraries
 
@@ -60,7 +60,7 @@ Static artefacts have a small but real attack surface. No secrets, tokens or cre
 
 ### Provenance declaration
 
-Every artefact discloses its conditions of production, the way an edition discloses its editorial guidelines. It declares that it was generated, from which documents, with which models and tools, and how it was verified. The carriers are the frontmatter of the Promptotyping Documents (`generated-with`, `method`, `template`) and a visible place in the artefact itself, in the footer or the imprint. For citability, `CITATION.cff` and `codemeta.json` go into the repository, derivable deterministically from the frontmatter; a Zenodo DOI presupposes a release.
+Every artefact discloses its conditions of production, the way an edition discloses its editorial guidelines. It declares that it was generated, from which documents, with which models and tools, and how it was verified. The carriers are the frontmatter of the Knowledge Documents (`generated-with`, `method`, `template`) and a visible place in the artefact itself, in the footer or the imprint. For citability, `CITATION.cff` and `codemeta.json` go into the repository, derivable deterministically from the frontmatter; a Zenodo DOI presupposes a release.
 
 ## Sustainability and FAIR4RS
 

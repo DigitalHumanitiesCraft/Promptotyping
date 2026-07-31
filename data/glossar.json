@@ -17,7 +17,7 @@
       "knowledge/paper.md (canonical paper text)",
       "knowledge/INDEX.md (term lexicon)",
       "knowledge/specification.md (site requirements and ADRs)",
-      "Konvention Promptotyping Documents",
+      "Konvention Knowledge Documents",
       "Vault: Promptotyping MOC and linked concept documents"
     ]
   },
@@ -37,7 +37,7 @@
         {
           "typ": "page",
           "anker": "konvention-v0.1",
-          "text": "Konvention Promptotyping Documents"
+          "text": "Konvention Knowledge Documents"
         }
       ]
     },
@@ -317,7 +317,7 @@
         {
           "typ": "page",
           "anker": "konvention-v0.1",
-          "text": "Konvention Promptotyping Documents"
+          "text": "Konvention Knowledge Documents"
         }
       ]
     },
@@ -366,7 +366,7 @@
       "slug": "epistemic-infrastructure",
       "begriff": "Epistemic Infrastructure",
       "kurz": "Site term for the interplay of verification points, interfaces, documents and version history in complex pipelines.",
-      "voll": "Epistemic infrastructure denotes the interplay that arises in complex Promptotyping pipelines when verification points, interfaces, Promptotyping Documents, version history and agentic tooling mesh and keep the process of inquiry traceable across sessions. In the ZBZ OCR/TEI project and in FemPrompt SozArb the repository itself carries this function. The term was deliberately removed from the paper text, because the method supplies only one part of an epistemic infrastructure; the site keeps it as descriptive vocabulary for these cases.",
+      "voll": "Epistemic infrastructure denotes the interplay that arises in complex Promptotyping pipelines when verification points, interfaces, Knowledge Documents, version history and agentic tooling mesh and keep the process of inquiry traceable across sessions. In the ZBZ OCR/TEI project and in FemPrompt SozArb the repository itself carries this function. The term was deliberately removed from the paper text, because the method supplies only one part of an epistemic infrastructure; the site keeps it as descriptive vocabulary for these cases.",
       "kategorie": "infrastructure",
       "quellen": [
         {
@@ -414,7 +414,7 @@
     {
       "slug": "implementation",
       "begriff": "Implementation",
-      "kurz": "Fourth of Promptotyping's four recurrent forms of work, iterative development with the Promptotyping Documents as context.",
+      "kurz": "Fourth of Promptotyping's four recurrent forms of work, iterative development with the Knowledge Documents as context.",
       "voll": "Implementation is the fourth of Promptotyping's four recurrent forms of work. The document set is handed to an agentic coding tool operating inside the project repository, and the researcher steers the generation of code through structured context and evaluative feedback. Three mechanisms carry the loop, deterministic feedback from schema validation, test suites and builds, visual feedback from screenshots of the running artefact, and expert feedback from domain judgement. When the artefact is wrong, the specification was wrong or incomplete, and it is the specification that is fixed; new knowledge goes back into the documents, which thereby stay living artefacts.",
       "kategorie": "form-of-work",
       "quellen": [
@@ -485,14 +485,23 @@
     {
       "slug": "knowledge-document",
       "begriff": "Knowledge Document",
-      "kurz": "Generic term for a document that holds knowledge; every Promptotyping Document is one.",
-      "voll": "A knowledge document holds knowledge in a form that people and agents can read and act on. The term is general and not bound to Promptotyping; within Promptotyping such documents are called Promptotyping Documents when they sit in the knowledge/ folder of a project. By the kind of knowledge they hold they fall into three specialisations, Declarative Documents for knowledge about the subject matter, Process Documents for knowledge about the course of the work, and Action Documents for knowledge about how to act.",
+      "kurz": "Structured, LLM-optimised Markdown document in the knowledge/ folder of a Promptotyping repository; formerly called Promptotyping Document.",
+      "voll": "A Knowledge Document is a structured, LLM-optimised Markdown document in the knowledge/ folder of a Promptotyping repository that compresses and distils context. The class was formerly called Promptotyping Document, and the published template anchors keep that segment. By the kind of knowledge they hold, Knowledge Documents fall into three specialisations, Declarative Documents for knowledge about the subject matter, Process Documents for knowledge about the course of the work, and Action Documents for knowledge about how to act. These documents are context-adapted artefacts of context engineering, generated with LLM support and curated by experts. Classical documentation is a different genre.",
       "kategorie": "document-function",
       "quellen": [
         {
           "typ": "paper",
           "anker": "abschnitt-2-1-promptotyping-and-the-project-knowledge-base",
           "text": "Paper, Section 2.1"
+        },
+        {
+          "typ": "vault",
+          "anker": "vault-promptotyping-documents-are-the-primary-artifact",
+          "text": "Vault: the documents are the primary artefact"
+        },
+        {
+          "typ": "text",
+          "text": "knowledge/INDEX.md"
         }
       ]
     },
@@ -510,7 +519,7 @@
         {
           "typ": "page",
           "anker": "konvention-v0.1",
-          "text": "Konvention Promptotyping Documents"
+          "text": "Konvention Knowledge Documents"
         },
         {
           "typ": "vault",
@@ -521,15 +530,15 @@
     },
     {
       "slug": "konvention-promptotyping-documents",
-      "begriff": "Konvention Promptotyping Documents",
+      "begriff": "Konvention Knowledge Documents",
       "kurz": "Descriptive account of the functions of a knowledge base, of the frontmatter schema and of the structural principles.",
-      "voll": "The Konvention Promptotyping Documents describes descriptively which functions a knowledge base in the knowledge/ folder covers, which frontmatter vocabulary applies and which structural principles hold. It prescribes no fixed list of documents and instead supplies trigger criteria per function, so that a coding agent can decide for itself which documents a repository needs. It is derived from the HerData reference implementation and mirrored on the site as an external specification.",
+      "voll": "The Konvention Knowledge Documents describes descriptively which functions a knowledge base in the knowledge/ folder covers, which frontmatter vocabulary applies and which structural principles hold. It prescribes no fixed list of documents and instead supplies trigger criteria per function, so that a coding agent can decide for itself which documents a repository needs. It is derived from the HerData reference implementation and mirrored on the site as an external specification.",
       "kategorie": "document-function",
       "quellen": [
         {
           "typ": "page",
           "anker": "konvention-v0.1",
-          "text": "Konvention Promptotyping Documents, version 0.1"
+          "text": "Konvention Knowledge Documents, version 0.1"
         }
       ]
     },
@@ -575,7 +584,7 @@
         {
           "typ": "page",
           "anker": "konvention-v0.1",
-          "text": "Konvention Promptotyping Documents"
+          "text": "Konvention Knowledge Documents"
         }
       ]
     },
@@ -595,29 +604,6 @@
           "typ": "vault",
           "anker": "vault-promptotyping-is-a-four-phase-context-engineering-technique",
           "text": "Vault: the four-phase context-engineering technique"
-        },
-        {
-          "typ": "text",
-          "text": "knowledge/INDEX.md"
-        }
-      ]
-    },
-    {
-      "slug": "promptotyping-document",
-      "begriff": "Promptotyping Document",
-      "kurz": "Structured, LLM-optimised Markdown document in the knowledge/ folder of a Promptotyping repository.",
-      "voll": "A Promptotyping Document is a structured, LLM-optimised Markdown document in the knowledge/ folder of a Promptotyping repository that compresses and distils context. Every Promptotyping Document is a knowledge document, and three analytical types differ by the kind of knowledge they hold, Declarative Documents for knowledge about the subject matter, Process Documents for knowledge about the course of the work, and Action Documents for knowledge about how to act. These documents are context-adapted artefacts of context engineering, generated with LLM support and curated by experts. Classical documentation is a different genre.",
-      "kategorie": "document-function",
-      "quellen": [
-        {
-          "typ": "paper",
-          "anker": "abschnitt-2-1-promptotyping-and-the-project-knowledge-base",
-          "text": "Paper, Section 2.1"
-        },
-        {
-          "typ": "vault",
-          "anker": "vault-promptotyping-documents-are-the-primary-artifact",
-          "text": "Vault: the documents are the primary artefact"
         },
         {
           "typ": "text",
@@ -875,7 +861,7 @@
     },
     {
       "slug": "vorlage",
-      "begriff": "Template (Promptotyping Document)",
+      "begriff": "Template (Knowledge Document)",
       "kurz": "Fillable structural specification for one function of a Promptotyping knowledge base.",
       "voll": "A template is a fillable structural specification for one function of a Promptotyping knowledge base. The function names have been English since July 2026, among them Navigation, Charter, Material, Specification, Architecture, Domain Knowledge, Design, Quality Assurance, Verification, Provenance, Planning, Reporting, Integration and Agent Instructions. The catalogue is open; a template arises once a function carrier repeats comparably across at least two repositories, and its requirements are checked against the empirical record instead of prescribed in advance. A template carries a function and no fixed file name, and it holds only where its trigger is met.",
       "kategorie": "document-function",
@@ -888,7 +874,7 @@
         {
           "typ": "page",
           "anker": "konvention-v0.1",
-          "text": "Konvention Promptotyping Documents"
+          "text": "Konvention Knowledge Documents"
         },
         {
           "typ": "vault",
@@ -904,8 +890,8 @@
     {
       "slug": "template-feld",
       "begriff": "template: field",
-      "kurz": "Frontmatter field in Promptotyping Documents that points at the authoritative template specification on the site.",
-      "voll": "The template: field is a frontmatter field in Promptotyping Documents that refers to the authoritative template specification on the methodology site. It carries name, version, url (subpath form, canonical) and optionally alias (hash form, equivalent). A coding agent that encounters the field can retrieve the full template without prior knowledge of the project. The same frontmatter fields can be rendered into citation metadata that harvesters read.",
+      "kurz": "Frontmatter field in Knowledge Documents that points at the authoritative template specification on the site.",
+      "voll": "The template: field is a frontmatter field in Knowledge Documents that refers to the authoritative template specification on the methodology site. It carries name, version, url (subpath form, canonical) and optionally alias (hash form, equivalent). A coding agent that encounters the field can retrieve the full template without prior knowledge of the project. The same frontmatter fields can be rendered into citation metadata that harvesters read.",
       "kategorie": "infrastructure",
       "quellen": [
         {

@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14160875.svg)](https://doi.org/10.5281/zenodo.14160875)
 
-Promptotyping is an iterative context engineering method organised around four recurrent forms of work (Preparation, Exploration, Distillation, Implementation) for building research artefacts from research data with frontier LLMs. The working material is a `knowledge/` folder of versioned Promptotyping Documents holding a project's requirements, data, decisions, and domain knowledge, a curated knowledge artefact written partly by the model and partly by the verifying expert, from which the implementation is derived. It outlasts the individual session and is the part of the process that can be read, checked, criticised, and cited; decisions taken while building hold in it only as far as they are written back. A Critical Expert in the Loop verifies LLM output at defined points.
+Promptotyping is an iterative context engineering method organised around four recurrent forms of work (Preparation, Exploration, Distillation, Implementation) for building research artefacts from research data with frontier LLMs. The working material is a `knowledge/` folder of versioned Knowledge Documents holding a project's requirements, data, decisions, and domain knowledge, a curated knowledge artefact written partly by the model and partly by the verifying expert, from which the implementation is derived. It outlasts the individual session and is the part of the process that can be read, checked, criticised, and cited; decisions taken while building hold in it only as far as they are written back. A Critical Expert in the Loop verifies LLM output at defined points.
 
 This repository is the public specification of the method and the repository of the method paper, which is written here in [knowledge/paper.md](knowledge/paper.md). It renders as an interactive paper at **https://dhcraft.org/Promptotyping/** and serves the method's templates as stable, machine-readable addresses.
 
@@ -28,7 +28,7 @@ Two introductions to the method (German): the methodology explainer [Promptotypi
 |---|---|---|
 | Method paper (English, in progress) | [knowledge/paper.md](knowledge/paper.md), steering in [knowledge/paper-knowledge.md](knowledge/paper-knowledge.md) | [#paper](https://dhcraft.org/Promptotyping/#paper) |
 | Evidence layer of the paper (Grounded Vault) | [vault/](vault/) | — |
-| Promptotyping Document templates | [_content/promptotyping-document/](_content/promptotyping-document/) | [#vorlagen](https://dhcraft.org/Promptotyping/#vorlagen) |
+| Knowledge Document templates | [_content/promptotyping-document/](_content/promptotyping-document/) | [#vorlagen](https://dhcraft.org/Promptotyping/#vorlagen) |
 | Convention (frontmatter schema, structure) | [_content/konvention.md](_content/konvention.md) | [#konvention-v0.1](https://dhcraft.org/Promptotyping/#konvention-v0.1) |
 | Technology baseline for static research tools (draft) | [_content/technology-baseline.md](_content/technology-baseline.md) | — |
 | Curated case studies | [data/case-studies.json](data/case-studies.json), depth pages in [_content/case-studies/](_content/case-studies/) | [#use-cases](https://dhcraft.org/Promptotyping/#use-cases) |

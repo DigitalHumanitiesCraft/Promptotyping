@@ -45,7 +45,7 @@ Investigate the interface between data and research context.
 
 Compress exploration insights into structured Markdown documents. Principle: maximum information, minimum tokens.
 
-Produce Promptotyping Documents. Every one of them is a Knowledge Document, and three specialisations follow from the kind of knowledge it holds. Which documents a repo carries depends on the project; a function is included only when its trigger holds, so not every document appears in every repo. The full function catalogue, the trigger logic, and the resolvable `template:` addressing live at https://dhcraft.org/Promptotyping/.
+Produce Knowledge Documents. Every one of them is a Knowledge Document, and three specialisations follow from the kind of knowledge it holds. Which documents a repo carries depends on the project; a function is included only when its trigger holds, so not every document appears in every repo. The full function catalogue, the trigger logic, and the resolvable `template:` addressing live at https://dhcraft.org/Promptotyping/.
 
 **Declarative Documents (D)** — knowledge about the subject matter, what is known:
 - `data.md` — data structure, field definitions, relationships, example records
@@ -76,7 +76,7 @@ Some Declarative Documents are deterministically generated from source data by s
 
 ### 4. IMPLEMENTATION
 
-Iterative development using the Promptotyping Documents as context.
+Iterative development using the Knowledge Documents as context.
 
 - Use semantic research data as context (the data carries meaning through standards and ontologies)
 - Build Promptotyping Interfaces: static HTML/CSS/JS tools that render intermediate results for inspection
@@ -87,7 +87,7 @@ Iterative development using the Promptotyping Documents as context.
 - Write new knowledge back into the documents — they are living documents, refactored through prompts
 - When the agent has access to repository scripts, use them as tools
 
-**Exit criterion:** Functional prototype that can be verified against the Promptotyping Documents.
+**Exit criterion:** Functional prototype that can be verified against the Knowledge Documents.
 
 ## CORE PRINCIPLES
 

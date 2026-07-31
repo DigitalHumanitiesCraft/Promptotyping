@@ -50,7 +50,7 @@ Left to right in three cards. The declarative basis on the left, the generated a
 
 ## Elements
 
-1. Card, Promptotyping Documents, declarative basis, at primary weight, containing four secondary-weight boxes: Psalm 2 sample, editorial guidelines, TEI source model, layer definitions.
+1. Card, Knowledge Documents, declarative basis, at primary weight, containing four secondary-weight boxes: Psalm 2 sample, editorial guidelines, TEI source model, layer definitions.
 2. Card, Edition Interface, textual layers made operational, at primary weight, containing one secondary-weight list of five rows: Latin psalm, Old High German, commentary, translation, apparatus.
 3. Card, Acceptance, at primary weight with the light grey fill, carrying the authority mark, divided by a horizontal rule into a positive and a negative half.
    - Positive half: Accepted for a stated purpose, proposal-stage demonstrator.

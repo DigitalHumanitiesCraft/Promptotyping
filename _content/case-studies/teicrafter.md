@@ -15,7 +15,7 @@ teiCrafter of 2023 is the origin point of the method, and no software was writte
 
 The case dates a capability. What separates the 2023 artefact from the 2026 editor is the maturity of the agentic tooling, since the conception stayed the same across the interval and became implementable only once the tools carried it. The pair therefore works as a control on the method's dependence on frontier tooling, which is otherwise asserted from cases that all sit on one side of that threshold.
 
-The shape of the 2023 artefact is the second point. A mapping rule and a quality-control instruction, written in prose and executed by a model, is the working core of what the method later formalises as a Promptotyping Document. The editor who checks each conversion occupies the verifying role that the method later names.
+The shape of the 2023 artefact is the second point. A mapping rule and a quality-control instruction, written in prose and executed by a model, is the working core of what the method later formalises as a Knowledge Document. The editor who checks each conversion occupies the verifying role that the method later names.
 
 A third observation redirected the work. The risk that a general-purpose provider would absorb a product of this kind was recognised at the time, and the effort moved from building the tool towards the method and the competences it requires.
 

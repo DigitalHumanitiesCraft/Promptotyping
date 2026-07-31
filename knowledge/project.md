@@ -50,13 +50,13 @@ Four source types feed the site.
 
 **The Pollin 2026 paper.** The scholarly method text. It is written as a single English Markdown document [paper.md](paper.md) in a two-document model, with the writing knowledge held in [paper-writing.md](paper-writing.md) and the argument in compact notation in [paper-argument-map.md](paper-argument-map.md). The draft is complete for operator reading and carries no open markers. A revision round on 2026-07-24 retired the translation doubling as the paper's theoretical core and the claim that the documents are the primary artefact, dissolved section 3.4 into 2.4 and 3.3, replaced the abstract, and reworked the evidence sections; the title still stands as it was and is with the operator. The chosen venue is the Zeitschrift für digitale Geisteswissenschaften (ZfdG), and the submission package (exposé, German and English short abstracts, formal checklist) lives in [submission-zfdg.md](submission-zfdg.md). The site renders `paper.md` directly, so the deployed text is the canonical text. A second round on 2026-07-25 merged the two legitimating subsections of section 2, narrowed the artefact definition, grounded the opening premise in a survey, and cut the teaching cases back to what they carry.
 
-**Vault templates and convention.** The template catalogue under `Vault Operations/Templates/Promptotyping/` and the convention under `Vault Operations/Konventionen/Konvention Promptotyping Documents.md`, both source of truth in the vault. The template function names are English since the 2026-07-19 catalogue sweep. When a template is mirrored into the repository, vault-internal wikilinks are replaced by site anchors or inline explanations, and the mirrored versions lag the vault state until the next site update.
+**Vault templates and convention.** The template catalogue under `Vault Operations/Templates/Promptotyping/` and the convention under `Vault Operations/Konventionen/Konvention Knowledge Documents.md`, both source of truth in the vault. The template function names are English since the 2026-07-19 catalogue sweep. When a template is mirrored into the repository, vault-internal wikilinks are replaced by site anchors or inline explanations, and the mirrored versions lag the vault state until the next site update.
 
 **The case-study collection.** Documented case studies in the vault under `Projects/Promptotyping/Case Studies/`. Each carries repository URL, live-demo URL where available, status, main claim, and methodological aspects. A curated subset renders as depth pages, the remainder as cards in the gallery. The curation and the exact selection are owned by [specification.md](specification.md) (A7).
 
 **Method videos on YouTube.**
 
-- Part 1, method explanation: https://youtu.be/8sUe4Jkh3uQ (four phases, distillation, context-window management, Promptotyping Documents, EIL, sycophancy)
+- Part 1, method explanation: https://youtu.be/8sUe4Jkh3uQ (four phases, distillation, context-window management, Knowledge Documents, EIL, sycophancy)
 - Part 2, live demo with Claude Code: https://youtu.be/hd_a-NBO_S4 (a set of Excel documents turned into a functional dashboard, thinking matrix, context compression, iterative error correction)
 
 ## Scope
@@ -76,7 +76,7 @@ Status is complete and deployed. The site renders the paper reading flow, the te
 
 The phase-provenance lane was removed after the first deploy by operator decision (A2 in [specification.md](specification.md)). The `{:.phase-*}` tags it read have since left the paper Markdown as well.
 
-The FAIR infrastructure policy is dual licensing, MIT for code and CC BY 4.0 for documentation and Promptotyping documents, with third-party research data exempted per repository under its own rights statement. The repository root carries a MIT `LICENSE` and a `CITATION.cff`; the citation identity is Christopher Pollin, Digital Humanities Craft OG, ORCID 0000-0002-4879-129X.
+The FAIR infrastructure policy is dual licensing, MIT for code and CC BY 4.0 for documentation and Knowledge Documents, with third-party research data exempted per repository under its own rights statement. The repository root carries a MIT `LICENSE` and a `CITATION.cff`; the citation identity is Christopher Pollin, Digital Humanities Craft OG, ORCID 0000-0002-4879-129X.
 
 The `vault/` folder is a Grounded-Vault instance (template `DigitalHumanitiesCraft/grounded-vault`) that anchors the paper's load-bearing claims to sources. Work inside it follows its own action layer `vault/CLAUDE.md`.
 
@@ -98,6 +98,6 @@ This knowledge base is a **mirror with a life of its own**. The vault templates 
 ## Links
 
 - Vault knowledge document [[Promptotyping]], the methodological core
-- Vault convention [[Konvention Promptotyping Documents]], the structural principles
-- Vault templates [[Vorlagen Promptotyping Documents]], the template catalogue
+- Vault convention [[Konvention Knowledge Documents]], the structural principles
+- Vault templates [[Vorlagen Knowledge Documents]], the template catalogue
 - Pollin 2026 paper, the reading substrate

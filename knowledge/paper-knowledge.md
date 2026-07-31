@@ -39,7 +39,7 @@ Accountable researchers and technical contributors remain responsible for the sc
 
 The contribution is **conceptual and methodological**. The paper:
 
-- defines Promptotyping, Promptotyping Documents, Promptotyping iterations, and promptotypes;
+- defines Promptotyping, Knowledge Documents, Promptotyping iterations, and promptotypes;
 - explains the relation among Scholar-Centred Design, Context Engineering, Agentic Engineering, AI harnesses, and Critical Expert judgement;
 - establishes the project knowledge base as the persistent reference from which implementation proceeds;
 - defines Preparation, Exploration, Distillation, Implementation, write-back, checking, acceptance, and version identification;
@@ -231,11 +231,11 @@ The working context may include selected documents, examples, constraints, tool 
 
 Context Engineering does not mean loading all available material into a context window.
 
-## 4.6 Promptotyping Document
+## 4.6 Knowledge Document
 
-A **Promptotyping Document** is a Markdown document within the project knowledge base that fulfils a defined knowledge function for human contributors and LLM-based agents.
+A **Knowledge Document** is a Markdown document within the project knowledge base that fulfils a defined knowledge function for human contributors and LLM-based agents.
 
-Promptotyping Documents are dually readable but need not address both audiences in the same way. A scholar reads them to assess whether the project has been represented adequately. An agent reads them to determine how to act.
+Knowledge Documents are dually readable but need not address both audiences in the same way. A scholar reads them to assess whether the project has been represented adequately. An agent reads them to determine how to act.
 
 Markdown is used for practical reasons:
 
@@ -560,7 +560,7 @@ Exploration ends with a documented account of:
 
 ## 5.3 Distillation
 
-Distillation turns the current project understanding into Promptotyping Documents.
+Distillation turns the current project understanding into Knowledge Documents.
 
 It is not simple compression. It is **pragmatic modelling**: a task-specific representation preserves the distinctions required for a particular use while leaving the fuller source material and formal data model intact.
 
@@ -922,7 +922,7 @@ Semantic richness and direct suitability for an LLM context are not the same pro
 
 ## 8.4 Documents as conceptual models
 
-Promptotyping Documents are pragmatic conceptual models and mediating structures.
+Knowledge Documents are pragmatic conceptual models and mediating structures.
 
 They represent and abbreviate:
 
@@ -936,7 +936,7 @@ They represent and abbreviate:
 
 Their semi-formality is deliberate. They support communication and implementation without claiming the formal semantics of an ontology or schema.
 
-Promptotyping Documents do not necessarily support:
+Knowledge Documents do not necessarily support:
 
 - formal inference;
 - reasoner-based consistency checking;
@@ -1074,7 +1074,7 @@ The Strutz case is an external domain-specific comparison for evaluation. It is 
 Each worked case should establish at least one of the following:
 
 - a methodological problem;
-- a relevant Promptotyping Document function;
+- a relevant Knowledge Document function;
 - a finding produced through implementation;
 - a write-back path;
 - a verification boundary;
@@ -1385,7 +1385,7 @@ A strong transferability study should provide independent domain researchers wit
 
 - structured research data;
 - the method specification;
-- Promptotyping Document templates;
+- Knowledge Document templates;
 - a bounded research task;
 - a controlled agentic environment.
 
@@ -1559,7 +1559,7 @@ Use:
 
 - **project-specific** rather than alternating unnecessarily with custom, bespoke, tailored, or specialised;
 - **documented grounds of acceptance** as the canonical acceptance phrase;
-- **Promptotyping Documents** with consistent capitalisation;
+- **Knowledge Documents** with consistent capitalisation;
 - **Critical Expert** for the accountable role;
 - **digital research artefact** for the implemented operational form;
 - **promptotype** only for an accepted identifiable iteration state.
@@ -1567,7 +1567,7 @@ Use:
 Capitalisation:
 
 - *Promptotyping* capitalised as method name;
-- *Promptotyping Documents* capitalised as defined document class;
+- *Knowledge Documents* capitalised as defined document class;
 - *promptotype* lower-case in running prose unless beginning a sentence;
 - Context Engineering, Agentic Engineering, Scholar-Centred Design, Critical Expert, and AI harness according to established manuscript usage.
 
@@ -1636,7 +1636,7 @@ Before release, verify:
 - the stronger return path points from Implementation to Distillation;
 - the Critical Expert's authority arrow terminates at the promptotype state and reads "validates and accepts" (wording migrated under decision 21; operator decision 2026-07-30: the arrow carries the acceptance semantics, the caption stands unchanged);
 - figures distinguish the digital research artefact from the promptotype;
-- captions use **Promptotyping Documents** and the promptotype caption uses **documented grounds of acceptance**;
+- captions use **Knowledge Documents** and the promptotype caption uses **documented grounds of acceptance**;
 - no alt text appears as ordinary manuscript prose;
 - figure numbers and references are sequential in the manuscript numbering;
 - Table 1 uses the terminology fixed in Section 6.8;
@@ -1728,10 +1728,11 @@ Decisions of the acceptance round of 2026-07-31:
 18. **§1 restructured to five paragraphs (2026-07-31).** Problem; LLM routes in lean form; confinement and capacity thesis with "develop and compare"; checking paragraph using "checking" as umbrella word, "verified by experts" against "technical validation", and "as specified"; method paragraph with etymology, refocused research question, and active section preview. [The V&V assignment of the checking paragraph is superseded by decision 21, 2026-07-31; the five-paragraph structure stands.]
 19. **Etymology stated at the term's introduction (2026-07-31).** The name combines prompt and prototyping and retains the prototype's clarifying function. First explanation anywhere; the site glossary mirrors it.
 20. **Preview conventions (2026-07-31).** The roadmap announcement sentence is deleted; preview sentences are active with Section subjects; the promptotype is announced with the gloss "the identifiable and versioned state that an accepted iteration yields", which is the canonical short form of the §2.2 definition; the closing sentence reads "the method's scope and limits".
-21. **The V&V pair follows the engineering standard (2026-07-31).** The assignment adopted earlier in this read round (experts verify, technology validates) is reversed: *verification* names conformity to formalised requirements (technical, deterministic), *validation* names the adequacy judgement that requires expert authority (scholarly). Rationale: §2.3 cites IEEE Std 1012 (IEEE 2017), whose definitions run in this direction; the previous usage cited the standard against its own definitions and would have provoked reviewer friction. Consequences: the checking taxonomy renames to *deterministic verification* and *Critical Expert validation*; §1 introduces the pair as *technical verification* and *scholarly validation* with a footnote anchoring the adaptation to IEEE 2017. Retained as proper names: *Verification Interface* (artefact category, site colour token, published anchors), the *Verification* Promptotyping Document type, the site part title *Verification*, project document names such as the SZD *verification concept*, and *schema validation* as the XML term of art. Supersedes decision 18.
+21. **The V&V pair follows the engineering standard (2026-07-31).** The assignment adopted earlier in this read round (experts verify, technology validates) is reversed: *verification* names conformity to formalised requirements (technical, deterministic), *validation* names the adequacy judgement that requires expert authority (scholarly). Rationale: §2.3 cites IEEE Std 1012 (IEEE 2017), whose definitions run in this direction; the previous usage cited the standard against its own definitions and would have provoked reviewer friction. Consequences: the checking taxonomy renames to *deterministic verification* and *Critical Expert validation*; §1 introduces the pair as *technical verification* and *scholarly validation* with a footnote anchoring the adaptation to IEEE 2017. Retained as proper names: *Verification Interface* (artefact category, site colour token, published anchors), the *Verification* Knowledge Document type, the site part title *Verification*, project document names such as the SZD *verification concept*, and *schema validation* as the XML term of art. Supersedes decision 18.
 22. **The adverb *warrantably* leaves the paper (2026-07-31).** The research question now asks which forms of scholarly work the project's research data can support, and the support-phrases in the §1 preview, §1.1, and §2.2 (Exploration) follow. The adjective *warranted* stays in the validation definition ("warranted by the source material"), which continues to carry the epistemic warrant. Operator judgement: the adverb obstructed readability.
 23. **§1.1 announces write-back without the term (2026-07-31).** The closing sentence of §1.1 reads "findings from implementation are incorporated as revised project knowledge"; the operator judged "written back" unclear before its definition site. The Abstract and everything from §2.2 onwards keep *write-back* as the defined term.
 24. **The IEEE citation moves to the current edition (2026-07-31).** IEEE Std 1012-2024, published 2025, replaces the superseded 1012-2016; the reference entry and the citations in footnote 6 and §2.3 read (IEEE 2025). The official abstract wording of the two editions is identical, so the anchored terminology claims are unaffected. Grounded by the citation-fit audit of the same day (`vault/knowledge/citation-fit-section-1-2026-07-31.md`), which also produced the Carver co-citation with Cohen, the repositioned Drucker/Schöch citation, "has argued" for the tool-criticism cluster, and the completed KONDE and ZfdG entries.
+25. **The document class renames to Knowledge Document (2026-07-31).** Operator instruction: paper and site speak of Knowledge Documents; the qualifier Promptotyping falls from the class name, and this document's terminology sections (4.6 and the capitalisation rules) are re-keyed. The Figure 1 caption already said "the knowledge documents" and now carries the term. Unchanged remain the published anchors and subpaths (`/promptotyping-document/{slug}`, `#promptotyping-document-{slug}`, the folder `_content/promptotyping-document/`, the file `data/promptotyping-documents.json`), the sixteen German template mirrors (vault-first), the vault layer, and historical records (journal, figure provenance, video scripts). Follow-up in a vault session: the vault master documents Konvention Promptotyping Documents and Vorlagen Promptotyping Documents and the vault glossary atoms carry the old name and need the rename there first.
 
 Open flags that survive:
 
@@ -1768,7 +1769,7 @@ The applied submission package derives from this section and stands in `knowledg
 
 # 22. Rights, Licensing, and Identity
 
-- Dual licensing: MIT for code, CC BY 4.0 for documentation and Promptotyping Documents; third-party research data excepted per repository with its own rights statement.
+- Dual licensing: MIT for code, CC BY 4.0 for documentation and Knowledge Documents; third-party research data excepted per repository with its own rights statement.
 - Citation identity: Christopher Pollin, Digital Humanities Craft OG, ORCID 0000-0002-4879-129X, GitHub profile via `sameAs`.
 - Releases without a prescribed cadence, cut when the state carries one; a Zenodo DOI presupposes at least one release.
 - Rights clearance pending with the operator (state 2026-07-23): wiiw-figaro-nam-demo, fortunoff-dashboard, co-ocr-htr, HerData, the three SuGW repositories, uc3-vetcore-proteomics, kisug-wissensbasis. The three co-authors in `FemPrompt/CITATION.cff` are entered by the operator (names rule).

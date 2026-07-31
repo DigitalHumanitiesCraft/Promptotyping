@@ -15,7 +15,7 @@ A dashboard that makes medieval room inventories from the REALonline database ex
 
 The journal appears here as an active document for the first time in the record. The agent wrote it during the session, unprompted at each step and uncorrected by the developer afterwards. Together with the commit history it forms what the project names context memory, since the journal records why a decision was taken and the commits fix which states worked, and a later session that reads both resumes with the reasoning intact, which the code alone does not carry.
 
-The session was also steered by the method's own system prompt, so the agent laid out the Promptotyping Documents itself and led the developer through the phases. Control over the process moved into the prompt, and the developer supplied the domain decisions.
+The session was also steered by the method's own system prompt, so the agent laid out the Knowledge Documents itself and led the developer through the phases. Control over the process moved into the prompt, and the developer supplied the domain decisions.
 
 Two operational observations come from the same session. Screenshots and console output fed back to the model improve the interface across iterations, which makes visual feedback part of the working loop. Commits act as savepoints between phases, and a commit forgotten before a larger rebuild is the point at which a session loses ground.
 

@@ -39,7 +39,7 @@
           "<code>template:</code> field, and the technology baseline for static web tools.</p>" +
           '<div class="vorlagen-block" id="vorlagen-katalog">' +
           "<h3>Catalogue</h3>" +
-          "<p>Fillable templates for the Promptotyping Documents in the <code>knowledge/</code> " +
+          "<p>Fillable templates for the Knowledge Documents in the <code>knowledge/</code> " +
           "folder of a repository. Each template addresses a function rather than a fixed file " +
           "name. A click on a row opens the full template specification in the side panel.</p>" +
           '<table class="vorlagen-table"><thead><tr>' +
@@ -49,7 +49,7 @@
 
           '<div class="vorlagen-block" id="vorlagen-konvention">' +
           "<h3>Convention</h3>" +
-          "<p>The Konvention Promptotyping Documents describes which functions a knowledge base " +
+          "<p>The Konvention Knowledge Documents describes which functions a knowledge base " +
           "in the <code>knowledge/</code> folder of a repository covers, from navigation through " +
           "specification and architecture to provenance. It fixes the frontmatter vocabulary with " +
           "which a document declares its origin, its template and its machine address, and assigns " +

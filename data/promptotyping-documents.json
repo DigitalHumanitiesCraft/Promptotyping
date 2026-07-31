@@ -2,7 +2,7 @@
   "version": "0.2",
   "generated": "2026-07-19",
   "_meta": {
-    "beschreibung": "Structured form of the template table (Promptotyping Documents). Generated from the frontmatter of the mirrors under _content/promptotyping-document/ and from the function, file-name and type assignment in _content/konvention.md (template catalogue and reading heuristic). The order follows the template catalogue of the convention. The function names have been English since 2026-07-19; the template names stay unchanged, they are identifiers. The trigger field carries the criterion under which a template applies, taken from the same function table.",
+    "beschreibung": "Structured form of the template table (Knowledge Documents). Generated from the frontmatter of the mirrors under _content/promptotyping-document/ and from the function, file-name and type assignment in _content/konvention.md (template catalogue and reading heuristic). The order follows the template catalogue of the convention. The function names have been English since 2026-07-19; the template names stay unchanged, they are identifiers. The trigger field carries the criterion under which a template applies, taken from the same function table.",
     "schema": {
       "slug": "URL anchor fragment, forming the site anchor together with #promptotyping-document-",
       "title": "display name of the template",

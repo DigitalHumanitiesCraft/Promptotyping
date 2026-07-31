@@ -21,7 +21,7 @@ Development ran in three large iterations through Claude Code with changing fron
 
 ## Methodological contribution
 
-Two patterns typical of the method appear. The knowledge base is the source of truth, since one folder of Promptotyping Documents is at once the working basis for the model sessions and the public project documentation, each document carrying machine-readable provenance in its frontmatter. A content layer allows non-technical maintenance, so the data partners edit editorial text without touching code. The core methodological contribution is the map-bias section, which makes the systematic distortion of the data explicit before use instead of hiding it behind the visualisation.
+Two patterns typical of the method appear. The knowledge base is the source of truth, since one folder of Knowledge Documents is at once the working basis for the model sessions and the public project documentation, each document carrying machine-readable provenance in its frontmatter. A content layer allows non-technical maintenance, so the data partners edit editorial text without touching code. The core methodological contribution is the map-bias section, which makes the systematic distortion of the data explicit before use instead of hiding it behind the visualisation.
 
 ## Limits
 

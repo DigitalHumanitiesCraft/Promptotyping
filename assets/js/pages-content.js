@@ -19,7 +19,10 @@
     "praxis-demo-repo-reduktion-in-der-schulung": "praxis-demo-repository-reduction-in-teaching",
     "praxis-claims-verifikation-als-dokumentfunktion": "praxis-claims-verification-as-a-document-function",
     "praxis-epistemischer-status-von-user-stories": "praxis-the-epistemic-status-of-user-stories",
-    "praxis-vorlagen-fuer-promptotyping-documents": "praxis-templates-for-promptotyping-documents"
+    "praxis-vorlagen-fuer-promptotyping-documents": "praxis-templates-for-knowledge-documents",
+    /* Anchor published between the English pass and the terminology change
+       to Knowledge Documents of 2026-07-31. */
+    "praxis-templates-for-promptotyping-documents": "praxis-templates-for-knowledge-documents"
   };
 
   function renderPraxis() {

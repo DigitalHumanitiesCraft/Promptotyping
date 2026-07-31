@@ -1,5 +1,5 @@
 ---
-title: Convention Promptotyping Documents
+title: Convention Knowledge Documents
 slug: konvention
 version: "0.2"
 status: complete
@@ -10,19 +10,19 @@ mirrored: 2026-06-10
 machine-url: https://dhcraft.org/Promptotyping/_content/konvention.md
 ---
 
-# Convention Promptotyping Documents
+# Convention Knowledge Documents
 
 ## Summary
 
-Promptotyping Documents are the Markdown documents in the `knowledge/` folder of a Promptotyping repository. This convention describes, descriptively, which functions such a knowledge base covers, which frontmatter vocabulary applies, and which structural principles carry it. Which documents and how many a concrete repository holds depends on the project and is decided by the agent from the trigger criteria per function. The convention is derived from the practice in HerData (state of refactor `13f9880`, 2026-05-09), which serves as the reference implementation. The fillable templates are addressable as Promptotyping Document sections of this site (see the template catalogue below). The empirical basis is held in the vault document on frontmatter practice in Promptotyping repositories, 2026-05.
+Knowledge Documents are the Markdown documents in the `knowledge/` folder of a Promptotyping repository. This convention describes, descriptively, which functions such a knowledge base covers, which frontmatter vocabulary applies, and which structural principles carry it. Which documents and how many a concrete repository holds depends on the project and is decided by the agent from the trigger criteria per function. The convention is derived from the practice in HerData (state of refactor `13f9880`, 2026-05-09), which serves as the reference implementation. The fillable templates are addressable as Knowledge Document sections of this site (see the template catalogue below). The empirical basis is held in the vault document on frontmatter practice in Promptotyping repositories, 2026-05.
 
 ## Scope
 
 The convention applies to Markdown files in the `knowledge/` folder, or an equivalently named folder, of a Promptotyping repository. It does not apply to vault mirror documents, which follow a separate vault standard. Repository frontmatter and vault frontmatter are two separate vocabularies, and a vault mirror of a repository document does not take over the repository frontmatter unfiltered.
 
-## What a Promptotyping Document is
+## What a Knowledge Document is
 
-A Promptotyping Document is a knowledge document, a structured unit of knowledge distilled from raw material and optimised as a context artefact for work shared between people and language models. Three properties make it one.
+A Knowledge Document is a knowledge document, a structured unit of knowledge distilled from raw material and optimised as a context artefact for work shared between people and language models. Three properties make it one.
 
 - **Dually readable.** The same text is comprehensible to the scholar and usable as context by the model. This is the property the whole method rests on, because reading is how the scholar verifies, and that same text is what the artefact is derived from.
 - **Compact.** Maximum information at minimum tokens, which is the writing principle of the Distillation phase and the answer to the degradation of model performance under growing context.
@@ -62,7 +62,7 @@ Standard file names are lower case (`project.md`, `data.md`, `specification.md`,
 
 ## Template catalogue
 
-For the functions that recur in practice, fillable templates lie as Promptotyping Document sections of this site. The catalogue is open, and a template arises as soon as a carrier of a function recurs in comparable form in at least two repositories.
+For the functions that recur in practice, fillable templates lie as Knowledge Document sections of this site. The catalogue is open, and a template arises as soon as a carrier of a function recurs in comparable form in at least two repositories.
 
 One function escapes that count by construction. A centrally held document is written once for a whole family of projects and referenced from each of them, so a second carrier never appears however many projects rely on it. For such a function the admission criterion is the second referencing project rather than the second document, and Technology Baseline is the case in the current stock. The recurrence the rule looks for is the recurrence of the need, which a reference demonstrates as well as a copy does.
 
@@ -265,7 +265,7 @@ Bindingness is optional. Topics are carried where a clear field of knowledge is 
 
 ## Structural principles
 
-Three principles should be recognisable in every Promptotyping Document.
+Three principles should be recognisable in every Knowledge Document.
 
 Separation of doing, not-doing and the origin of substance. The description of what the document delivers is kept apart from the deliberate negation and from the origin of the material used. This tripartition prevents an indistinguishable mixture of description, self-aggrandisement and data provenance.
 
@@ -275,7 +275,7 @@ Negative self-definition. What is deliberately not delivered is named as explici
 
 ## Distillation as a writing principle
 
-Promptotyping Documents follow the distillation principle from the method paper, maximum information with minimum tokens (Hong et al. 2025; Pollin 2026, sections 2.1 and 2.2). Concretely this means:
+Knowledge Documents follow the distillation principle from the method paper, maximum information with minimum tokens (Hong et al. 2025; Pollin 2026, sections 2.1 and 2.2). Concretely this means:
 
 - A document carries one bounded function.
 - Redundancies between documents are represented through wikilinks (`related:`).

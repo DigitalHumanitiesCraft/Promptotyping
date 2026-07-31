@@ -21,7 +21,7 @@ The session recorded a failure mode that later projects handle structurally. Man
 
 ## Limits
 
-No Promptotyping Documents were written. The whole specification sat in one structured prompt with sample XML, and the README followed after the fact, so the case demonstrates the working mode without the document layer that carries the method's claim about derivation.
+No Knowledge Documents were written. The whole specification sat in one structured prompt with sample XML, and the README followed after the fact, so the case demonstrates the working mode without the document layer that carries the method's claim about derivation.
 
 The annotations live in browser storage. Research data produced with the tool is bound to one browser profile, travels only as an exported file, and the tool holds no shared state that two researchers could work in.
 

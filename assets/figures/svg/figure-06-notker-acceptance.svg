@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" role="img" aria-labelledby="t d">
   <title id="t">Purpose-specific acceptance in the Notker edition case</title>
-  <desc id="d">Three cards of equal width. Promptotyping Documents holding the Psalm 2 sample, editorial guidelines, TEI source model and layer definitions were turned into an Edition Interface with five textual layers. The resulting state was accepted as a proposal-stage demonstrator and does not imply a completed or publication-ready edition, while corpus-wide philological validation remains open.</desc>
+  <desc id="d">Three cards of equal width. Knowledge Documents holding the Psalm 2 sample, editorial guidelines, TEI source model and layer definitions were turned into an Edition Interface with five textual layers. The resulting state was accepted as a proposal-stage demonstrator and does not imply a completed or publication-ready edition, while corpus-wide philological validation remains open.</desc>
   <defs>
     <marker id="flowhead" viewBox="0 0 12 12" refX="11.5" refY="6" markerWidth="12" markerHeight="12" orient="auto" markerUnits="userSpaceOnUse">
       <path d="M0.5,0.8 L11.5,6 L0.5,11.2 Z" fill="#111111"/>
@@ -28,7 +28,7 @@
 
   <!-- Declarative basis -->
   <rect class="box" x="20" y="40" width="246" height="352" rx="2"/>
-  <text class="n" x="143" y="76" text-anchor="middle">Promptotyping</text>
+  <text class="n" x="143" y="76" text-anchor="middle">Knowledge</text>
   <text class="n" x="143" y="98" text-anchor="middle">Documents</text>
   <text class="s" x="143" y="120" text-anchor="middle">declarative basis</text>
   <rect class="sub" x="38" y="140" width="210" height="50" rx="2"/>
