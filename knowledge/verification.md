@@ -169,6 +169,16 @@ Under `tools/tests/` the checks are themselves held to their regression cases, r
 
 **Verdict, 2026-07-31.** Passes, after the eight links were repaired. The regression case is a probe link to a non-existent file, which the check reports with file and target.
 
+### V16. Every knowledge document carries the convention's frontmatter core
+
+**Claim.** Every Markdown document under `knowledge/` except the deliberately headerless `paper.md` (A8) carries the mandatory frontmatter core of the Knowledge Documents convention (`title`, `project` with `name` and `repository`, `method` with `name` and `url`, `status` from the template vocabulary, `created` and `updated` as ISO dates). The published machine form of the vocabulary, `schema/knowledge-document.schema.json`, keeps its `required` list and status enum identical to what this group checks, so schema and check cannot drift apart silently.
+
+**Why it matters.** The site publishes the convention and is its own reference implementation; a knowledge document here that ignores the mandatory core undercuts the convention it hosts. The first run found exactly that, `paper-knowledge.md` carried no frontmatter at all. The schema file also answers the repository issue that the YAML header lacked a machine-readable schema; other repositories can validate against the published address.
+
+**Procedure.** Load the schema and compare its `required` list and status enum against the natively checked core; then parse the frontmatter of every `knowledge/*.md` except `paper.md` and check field presence, the nested subfields, the status vocabulary and the date form.
+
+**Verdict, 2026-08-09.** Passes, after `paper-knowledge.md` received the core. The regression cases are a removed core field and a schema edit that widens the required list, both of which the group reports.
+
 ## What is not checked automatically, and why
 
 - **Whether a page says what the paper says.** The contradictions of 2026-07-26 were found by reading `knowledge/paper.md` against the site, not by any script. Agreement in substance is not decidable by rule, and the four findings of that reading are recorded in `knowledge/journal.md`.

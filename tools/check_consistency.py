@@ -1070,6 +1070,63 @@ def check_vault_index_current():
                      % (kind[:-1], entry["slug"], path))
 
 
+CORE_FIELDS = ("title", "project", "method", "status", "created", "updated")
+STATUS_VOCABULARY = ("idea", "draft", "stub", "complete", "reviewed",
+                     "archived", "active", "snapshot")
+DATE_FORM = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+
+
+def check_knowledge_frontmatter():
+    """Every knowledge document carries the convention's mandatory core.
+
+    The published machine form of the convention's frontmatter vocabulary is
+    schema/knowledge-document.schema.json; this group checks the mandatory
+    core natively and pins the schema's required list to the same tuple, so
+    the schema and the check cannot drift apart silently. knowledge/paper.md
+    is headerless by design (A8) and stays out.
+    """
+    schema = json.loads((ROOT / "schema" / "knowledge-document.schema.json")
+                        .read_text(encoding="utf-8"))
+    if tuple(schema.get("required", ())) != CORE_FIELDS:
+        fail("frontmatter", "schema required list %r diverges from the checked core %r"
+             % (schema.get("required"), list(CORE_FIELDS)))
+    if tuple(schema["properties"]["status"]["enum"]) != STATUS_VOCABULARY:
+        fail("frontmatter", "schema status enum diverges from the template vocabulary")
+    try:
+        import yaml
+    except ImportError:
+        note("frontmatter core skipped; PyYAML is not available")
+        return
+    for path in sorted((ROOT / "knowledge").glob("*.md")):
+        if path.name == "paper.md":
+            continue
+        text = path.read_text(encoding="utf-8")
+        if not text.startswith("---"):
+            fail("frontmatter", "knowledge/%s carries no frontmatter" % path.name)
+            continue
+        end = text.find("\n---", 3)
+        front = yaml.safe_load(text[4:end]) or {}
+        rel = "knowledge/%s" % path.name
+        for field in CORE_FIELDS:
+            if field not in front:
+                fail("frontmatter", "%s misses the core field %r" % (rel, field))
+        for parent, subfields in (("project", ("name", "repository")),
+                                  ("method", ("name", "url"))):
+            value = front.get(parent)
+            if isinstance(value, dict):
+                for sub in subfields:
+                    if sub not in value:
+                        fail("frontmatter", "%s misses %s.%s" % (rel, parent, sub))
+        status = front.get("status")
+        if status is not None and status not in STATUS_VOCABULARY:
+            fail("frontmatter", "%s status %r is outside the template vocabulary"
+                 % (rel, status))
+        for field in ("created", "updated"):
+            value = front.get(field)
+            if value is not None and not DATE_FORM.match(str(value)):
+                fail("frontmatter", "%s %s %r is no YYYY-MM-DD date" % (rel, field, value))
+
+
 def check_relative_links():
     """Every relative Markdown link resolves to a file that exists.
 
@@ -1115,6 +1172,7 @@ def main():
         check_requirement_numbers,
         check_vault_index_current,
         check_relative_links,
+        check_knowledge_frontmatter,
     ]
     if "--check-urls" in sys.argv:
         groups.append(lambda: check_urls(cases))

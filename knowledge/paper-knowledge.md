@@ -1,3 +1,19 @@
+---
+title: Paper Knowledge
+project:
+  name: Promptotyping Site
+  repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
+method:
+  name: Promptotyping
+  url: https://dhcraft.org/Promptotyping/
+status: active
+language: en
+created: 2026-07-29
+updated: 2026-08-09
+authors: [Christopher Pollin]
+related: [paper, journal, INDEX]
+---
+
 # Promptotyping Paper: Canonical Knowledge Document
 
 **Updated:** 31 July 2026, on integration of the operator's four-chapter revision (Section 19, decision 27); earlier the same day during the operator's end-to-end read, when Abstract, the whole §1, and the verification/validation terminology were revised (decisions 15 to 24).
