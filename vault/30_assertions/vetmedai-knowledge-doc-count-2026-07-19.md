@@ -8,14 +8,14 @@ checked:
 grounding:
 - '[[20_distillates/documents/verification-paper-figures-2026-07-19#^s15]]'
 created: 2026-07-19
-updated: 2026-07-25
+updated: 2026-08-09
 ---
 
 # The VetMedAI knowledge base holds about 31 content documents as verified on 2026-07-19.
 
 ## Statement
 
-As verified on 2026-07-19, the VetMedAI knowledge base holds about 31 content documents in `knowledge/`, which is 34 Markdown files when the README is counted, below the paper's figure of 41. Checked against the deliverable on 2026-07-25, no knowledge document count is reported there any longer; the claim stands as a checked finding about the repository.
+As verified on 2026-07-19, the VetMedAI knowledge base holds about 31 content documents in `knowledge/`, which is 34 Markdown files when the README is counted, below the figure of 41 the paper's project inventory then carried. Checked against the seven-chapter deliverable state of 2026-07-25, no knowledge document count was reported there any longer. The four-chapter text of 2026-07-31 carries no counts at all, and the assertion stands as vault-internal checked material about the repository.
 
 ## Support
 

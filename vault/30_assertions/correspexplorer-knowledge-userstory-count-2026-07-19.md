@@ -8,14 +8,14 @@ checked:
 grounding:
 - '[[20_distillates/documents/verification-paper-figures-2026-07-19#^s18]]'
 created: 2026-07-19
-updated: 2026-07-24
+updated: 2026-08-09
 ---
 
 # The CorrespExplorer repository holds 13 knowledge files and 37 unique user-story IDs as verified on 2026-07-19.
 
 ## Statement
 
-As verified on 2026-07-19, the CorrespExplorer repository holds 13 knowledge files and 37 unique US-IDs. The figures of 7 documents and 34 user stories that the paper carried until 2026-07-24 describe an earlier state; the paper no longer reports either count.
+As verified on 2026-07-19, the CorrespExplorer repository holds 13 knowledge files and 37 unique US-IDs. The figures of 7 documents and 34 user stories that the paper carried until 2026-07-24 describe an earlier state. The four-chapter text of 2026-07-31 reports neither count, and the assertion stands as vault-internal checked material about the repository.
 
 ## Correction 2026-07-24
 

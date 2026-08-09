@@ -8,14 +8,14 @@ checked:
 grounding:
 - '[[20_distillates/documents/verification-paper-figures-2026-07-19#^s26]]'
 created: 2026-07-19
-updated: 2026-07-29
+updated: 2026-08-09
 ---
 
-# Several Section 5 deviations are snapshot drift, where dating a figure is as valid as updating it.
+# Several deviations in the verified project inventory are snapshot drift, where dating a figure is as valid as updating it.
 
 ## Statement
 
-Several deviations in the paper's project inventory are snapshot drift, arising because the paper describes an earlier state of still-growing repositories. For these figures, dating the figure to its build snapshot is as valid a correction as updating it to the current count. The file name keeps the section number the evidence layer carried when the verification ran, so that existing anchors resolve.
+Several deviations in the project inventory verified on 2026-07-19 are snapshot drift, arising because the inventory described an earlier state of still-growing repositories. For these figures, dating the figure to its build snapshot is as valid a correction as updating it to the current count. The inventory left the manuscript with the four-chapter revision of 2026-07-31, and the reading stands as vault-internal checked material. The file name keeps the section number the evidence layer carried when the verification ran, so that existing anchors resolve.
 
 ## Support
 

@@ -2,7 +2,7 @@
 type: moc
 topic: ArtefactVerification
 created: 2026-07-23
-updated: 2026-07-29
+updated: 2026-08-09
 ---
 
 # MOC: ArtefactVerification
@@ -42,7 +42,7 @@ Added 2026-07-26 from the site-vocabulary literature sweep (lane C1):
 - [[30_assertions/nanopublication-binds-a-statement-to-the-annotations-that-carry-its-context]] — the nearest prior art for a document holding one statement with its provenance and its assertion
 - [[30_assertions/llm-judgement-approximates-human-preference-and-carries-known-biases]] — the measured zone in which a model may legitimately judge, and the four named biases that bound it
 
-Added 2026-07-29 from the intake on TEI-encoding evaluation, the external carriers for the layering of Table 2 and for the state of the benchmark question:
+Added 2026-07-29 from the intake on TEI-encoding evaluation, the external carriers for the layering of Table 1 of the paper (the checking layering) and for the state of the benchmark question:
 
 - [[30_assertions/tei-evaluation-assigns-its-dimensions-to-different-checking-regimes]] — a published framework reaches the same layering from another task family, automated validation, ground-truth comparison, expert review
 - [[30_assertions/llm-generated-tei-alters-content-and-modernises-language]] — the three named behaviours of generated encodings that keep data fidelity in the verification row

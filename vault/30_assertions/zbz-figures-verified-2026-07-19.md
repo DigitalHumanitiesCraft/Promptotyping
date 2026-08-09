@@ -8,14 +8,14 @@ checked:
 grounding:
 - '[[20_distillates/documents/verification-paper-figures-2026-07-19#^s7]]'
 created: 2026-07-19
-updated: 2026-07-29
+updated: 2026-08-09
 ---
 
-# ZBZ's stated Section 5 volume figures held against the repository as verified on 2026-07-19.
+# ZBZ's stated project-inventory volume figures held against the repository as verified on 2026-07-19.
 
 ## Statement
 
-The ZBZ case study's stated volume figures held against the project repository when the figures verification checked them on 2026-07-19, covering 286 PDFs, about 4,150 pages at an actual 4,117, and more than 30 Python scripts at an actual 98. Checked against the deliverable on 2026-07-25, the 286 PDFs and the approximately 4,150 pages are still reported there, while the script count is not; for that figure the claim stands as a checked finding about the repository.
+The ZBZ case study's stated volume figures held against the project repository when the figures verification checked them on 2026-07-19, covering 286 PDFs, about 4,150 pages at an actual 4,117, and more than 30 Python scripts at an actual 98. Checked against the seven-chapter deliverable state of 2026-07-25, the 286 PDFs and the approximately 4,150 pages were still reported there, while the script count was not. The four-chapter text of 2026-07-31 carries no counts at all, and the assertion stands as vault-internal checked material about the repository.
 
 ## Support
 

@@ -9,7 +9,7 @@ method:
 status: draft
 language: en
 created: '2026-07-19'
-updated: '2026-07-29'
+updated: '2026-08-09'
 related:
 - operations
 - journal
@@ -18,8 +18,6 @@ related:
 # State
 
 Everything volatile in one place, so the rule documents stay stable. Update rows here as work proceeds; never record processing state anywhere else.
-
-> **Section map superseded, 2026-07-31.** The section table below still describes the seven-chapter manuscript. Two restructurings have run since, to five chapters on 2026-07-30 and to four chapters on 2026-07-31; `knowledge/paper-knowledge.md` Section 13 carries the current architecture and what moved where. The claim audit of 2026-07-31 (`vault/knowledge/claim-audit-2026-07-31.md`) was itself run against the five-chapter text, so its routing needs a second pass. Re-keying this table and the claim files whose prose contradicts it is the open follow-up recorded as flag 3 in the paper's steering document. Until then, read every section number below as a historical reference rather than as an address into the current text.
 
 ## Source inventory
 
@@ -64,80 +62,60 @@ The bibliography-traceability sweep of 2026-07-23 added the paper's cited public
 
 ## Section register
 
-The deliverable is external and single-file (settled decision in [[knowledge/specification]]); the canonical text is `knowledge/paper.md` at the root of this repository, which the site renders directly. Headings below are taken from that file. The writing status of the paper is tracked in the repository's `knowledge/paper-writing.md` and is deliberately not mirrored here.
-
-Transitional state since 2026-07-29. The repository runs a second track, the restructured manuscript `knowledge/paper-draft.md`, whose acceptance proceeds chapter by chapter; the vault stays anchored to the canonical file, and every register here is re-keyed to the draft's structure in one pass when the swap happens, together with the role column of [[knowledge/register-paper-sources]], which records the draft's treatment of each work in the meantime. This table carried the draft's six-chapter structure between the re-keying of 2026-07-29 and the correction of the same day; that heading list is recoverable from the Git history of this document.
+The output is external and single-file (settled decision in [[knowledge/specification]]); the canonical text is `knowledge/paper.md` at the root of this repository, which the site renders directly. Headings below are taken from that file (four-chapter text, version 0.9, promoted 2026-07-31). The steering of the paper lives in the repository's `knowledge/paper-knowledge.md`; Section 13 there carries the architecture and what the restructuring moved where. Earlier states of this register are recoverable from the Git history of this document.
 
 | Section | Heading | Notes |
 |---|---|---|
 | — | Abstract | |
-| 1 | Introduction | translation-problem genealogy carried by MOC-Frame claims |
-| 2 | The Epistemic Frame | |
-| 2.1 | Exploration, Building, and Their Correctives | merged from the former 2.1 and 2.2 in the revision of 2026-07-25 |
-| 2.2 | LLMs and Research Data | the vocabulary-derivation passage rests on the M³GIM findings source of 2026-07-24 |
-| 2.3 | The Translation Problem, and Documents as Conceptual Models | absorbed the modelling-theory and ontology material of the former Section 3.4 in the revision of 2026-07-24 |
-| 2.4 | Position in the AI Discourse | Spec-Driven-Development delimitation carried by the four SDD claims under MOC-Frame |
-| 2.5 | Genealogy | |
-| 3 | The Method | |
-| 3.1 | Status and Provenance | |
-| 3.2 | The Four Phases | |
-| 3.3 | The Promptotyping Documents | standardisation passage grounded via MOC-Method; the data-management-plan comparison moved here from the former 3.4 |
-| 3.4 | A Worked Example: The Stefan Zweig HTR Pipeline | new 3.4 after the revision; the former 3.4 was dissolved into 2.3 and 3.3 |
-| 4 | The Artefact Type | |
-| 4.1 | Self-Contained Static Web Tools | FAIR4RS passage grounded in the szd-htr audit of 2026-07-23 |
-| 4.2 | A Typology of Promptotyping Interfaces | the TaDiRAH attribution is flagged in Open work below |
-| 4.3 | Limits of the Format, and the Handover Point | |
-| 5 | Evidence: The Documented Projects | carries the material of the former Section 4 |
-| 5.1 | Principle of Presentation | |
-| 5.2 | The Project Inventory | figures verified 2026-07-19, one Evidence claim per verified figure |
-| 5.3 | Worked Cases by Epistemic Function | |
-| 5.4 | Teaching and Collaboration Cases | |
-| 5.5 | Reading the Evidence | |
-| 6 | Discussion | |
-| 6.1 | Process and Publication | |
-| 6.2 | Verification and Validation | |
-| 6.3 | Reproducibility and LLM Dependence | |
-| 6.4 | Limits | asymmetric amplification, carried by the vault slug `pollin-2026a` |
-| 6.5 | Transferability | |
-| 7 | Conclusion | |
-| — | Acknowledgements | |
+| 1 | Introduction | |
+| 1.1 | Translating Research Data into Digital Research Artefacts through Scholar-Centred Design | carries the translation-problem material and most Frame assertions |
+| 1.2 | Context Engineering, Agentic Engineering, and AI Harnesses | |
+| 2 | Promptotyping as a Method | genealogy in the chapter opening |
+| 2.1 | Promptotyping and the Project Knowledge Base | |
+| 2.2 | Forms of Work and Iteration | phase subsections 2.2.1 to 2.2.4; write-back and the promptotype definition close 2.2.4 |
+| 2.3 | Applying Promptotyping: Complementary Project Cases | case subsections 2.3.1 SZD/Jeanne Hersch (checking architecture), 2.3.2 M³GIM, 2.3.3 Notker, 2.3.4 From Complementary Cases to the Promptotype |
+| 3 | Patterns across Promptotypes | |
+| 3.1 | Evidence and Comparison | |
+| 3.2 | Project Conditions, Functions, and Artefact Forms | Table 1 |
+| 3.3 | Findings, Attribution, and Learning | |
+| 3.4 | Implications and Evidential Limits | |
+| 4 | Scope, Conditions, and Evaluation | |
+| 4.1 | Evidential Scope and Applicability | |
+| 4.2 | Labour, Infrastructure, and Responsible Use | asymmetric amplification |
+| 4.3 | Transferability and Evaluation | Table 2 |
+| 4.4 | Conclusion | closes with the self-application sentence anchoring this vault |
+| — | Author's Note on AI Use and Research Provenance | |
 | — | References | registered work by work in [[knowledge/register-paper-sources]] |
 
-### Claim coverage by paper section
+### Assertion coverage by paper section
 
-Rebuilt on 2026-07-25 against the section structure of `knowledge/paper.md` and the claim stock of that date. It replaces the literature-only table generated on 2026-07-23, whose sections predate the revision of 2026-07-24. One row per section, listing the claims available to ground the statements that section makes. Listing is not a checking record. Whether a claim supports the sentence it sits next to is the verification role's judgement, and no machine check stands behind this mapping (see the decision of 2026-07-25 in [[knowledge/specification]]).
+Rebuilt on 2026-08-09 against the four-chapter text, by a second audit pass over the 72 assertions the audit of 2026-07-31 ([[knowledge/claim-audit-2026-07-31]], run against the five-chapter text) had left CARRIED or MOVED. One row per section, listing the assertions available to ground the statements that section makes; "(moved)" marks an assertion whose supported statement survives weakened or relocated. Listing is not a checking record. Whether an assertion supports the sentence it sits next to is the verification role's judgement, and no machine check stands behind this mapping (decision of 2026-07-25 in [[knowledge/specification]]).
 
-| Paper section | Claims |
+| Paper section | Assertions |
 |---|---|
-| 1 | [[30_assertions/applied-genai-dh-workshop-series-2024]], [[30_assertions/dh-intermediary-bridges-researchers-and-technical-staff]], [[30_assertions/dh-projects-build-teams-to-hold-competences-together]], [[30_assertions/digital-history-collaboration-is-a-trading-zone]], [[30_assertions/humanities-data-is-constructed-not-given]], [[30_assertions/institutional-research-software-support-falls-short-of-need]], [[30_assertions/llms-amplify-research-not-automate-it]], [[30_assertions/promptotyping-documentation-over-software]], [[30_assertions/promptotyping-documents-are-the-primary-artifact]], [[30_assertions/promptotyping-is-a-four-phase-context-engineering-technique]], [[30_assertions/research-software-engineers-are-scarce]], [[30_assertions/rse-institutionalised-intermediary-profession]] |
-| 2.1 | [[30_assertions/a-prototype-can-embody-a-peer-reviewable-argument]], [[30_assertions/digital-tool-criticism-demands-reflection-on-tools]], [[30_assertions/discarded-visualisations-retain-epistemic-value]], [[30_assertions/experimental-prototype-yields-knowledge-not-product]], [[30_assertions/exploratory-collection-visualisation-is-a-rich-design-space]], [[30_assertions/generous-interfaces-reveal-collection-through-browsing]], [[30_assertions/humanities-data-are-capta-not-given]], [[30_assertions/inherited-visualisation-conventions-carry-positivist-assumptions]], [[30_assertions/search-cannot-represent-collection-abundance]], [[30_assertions/visualisation-is-research-process-not-means]] |
-| 2.2 | [[30_assertions/context-rot-nonuniform-degradation-with-length]], [[30_assertions/fair-emphasises-machine-actionability-of-data]], [[30_assertions/fair-principles-findable-accessible-interoperable-reusable]], [[30_assertions/humanities-data-is-constructed-not-given]], [[30_assertions/humanities-data-modelling-is-interpretive-shaping]], [[30_assertions/making-source-data-machine-addressable-is-interpretive-modelling]], [[30_assertions/ontology-derivation-yields-structure-and-exposes-model-defects]], [[30_assertions/owens-data-holds-evidentiary-value]], [[30_assertions/schoech-distinguishes-smart-and-big-data]], [[30_assertions/semantic-web-envisioned-agents-over-machine-processable-data]] |
-| 2.3 | [[30_assertions/boundary-objects-are-plastic-yet-robust-across-communities]], [[30_assertions/conceptual-model-links-language-and-domain-concepts]], [[30_assertions/digital-history-collaboration-is-a-trading-zone]], [[30_assertions/ontologies-are-shared-vocabularies-for-reuse]], [[30_assertions/ontology-is-explicit-specification-of-conceptualization]] |
-| 2.4 | [[30_assertions/context-engineering-systematic-inference-context]], [[30_assertions/critical-expert-in-the-loop-double-reflection-loop]], [[30_assertions/fanous-frontier-models-sycophantic-in-most-cases]], [[30_assertions/llm-based-agents-for-software-engineering]], [[30_assertions/macedo-first-process-taxonomy-sdd-frameworks]], [[30_assertions/sarkar-vibe-coding-material-disengagement]], [[30_assertions/sdd-data-artefacts-describe-the-system-under-construction]], [[30_assertions/sdd-frameworks-converge-on-specification-over-prompt]], [[30_assertions/sdd-no-subject-matter-verification-role]], [[30_assertions/sdd-review-examines-internal-coherence]], [[30_assertions/sdd-specifications-address-non-developers]], [[30_assertions/sycophancy-agreement-over-truth]], [[30_assertions/szd-experiment-structured-vibe-coding]], [[30_assertions/vibe-coding-speed-quality-tradeoff]], [[30_assertions/expert-role-carries-a-domain-and-a-development-judgement]], [[30_assertions/interface-defect-is-reported-through-the-element-identifier]], [[30_assertions/llm-assistance-raises-performance-inside-and-lowers-it-outside-a-jagged-frontier]], [[30_assertions/the-boundary-of-the-jagged-frontier-is-not-readable-from-a-task-in-advance]] |
-| 2.5 | [[30_assertions/bookkeeping-ontology-session-driven]], [[30_assertions/deep-dive-process-documented-2019]], [[30_assertions/dissertation-dikw-cognitive-agent-premise]], [[30_assertions/dissertation-requirements-feed-built-artifacts]], [[30_assertions/dissertation-requirements-from-deep-dive-sessions]], [[30_assertions/field-literature-records-llm-code-generation-and-tei-agent-line-by-2024]], [[30_assertions/ontologies-are-shared-vocabularies-for-reuse]], [[30_assertions/wheaton-figures-verified-2026-07-19]] |
-| 3.1 | [[30_assertions/promptotyping-named-first-described-2025-04]] |
-| 3.2 | [[30_assertions/promptotyping-is-a-four-phase-context-engineering-technique]], [[30_assertions/exploration-resumed-inside-an-implementation-milestone]], [[30_assertions/implementation-plan-cuts-work-into-checkable-milestones]], [[30_assertions/milestone-check-deferred-in-the-recorded-session]], [[30_assertions/overengineering-check-cuts-the-specification-before-implementation]], [[30_assertions/radical-design-request-widens-the-interface-option-space]] |
-| 3.3 | [[30_assertions/frontmatter-core-reduced-to-six-fields]], [[30_assertions/reduced-frontmatter-core-met-in-about-half-the-documents-2026-07-26]], [[30_assertions/madmps-demand-documents-infrastructure-can-act-on]], [[30_assertions/promptotyping-documentation-over-software]], [[30_assertions/promptotyping-documents-are-the-primary-artifact]], [[30_assertions/promptotyping-documents-form-freedom]], [[30_assertions/status-vocabulary-adds-active-and-snapshot]], [[30_assertions/traditional-dmps-are-unused-compliance-documents]], [[30_assertions/verification-promoted-to-document-function]] |
-| 3.4 | [[30_assertions/szd-htr-confabulated-reading-in-hasty-kurrent]] |
-| 4.1 | [[30_assertions/digital-editing-converges-on-static-self-contained-artefact]], [[30_assertions/endings-durability-through-static-no-dependencies]], [[30_assertions/endings-static-artefacts-minimise-maintenance]], [[30_assertions/fair4rs-provenance-and-identifier-principles]], [[30_assertions/minimal-computing-reduces-code-and-dependencies]], [[30_assertions/minimal-computing-resists-scale-as-innovation]], [[30_assertions/szd-htr-fair4rs-audit-2026-07-23]] |
-| 4.2 | [[30_assertions/coordinated-multiple-views-enable-exploration]], [[30_assertions/digital-edition-is-interface-gui-and-api]], [[30_assertions/do-one-thing-well-favours-small-specialised-tools-over-monolithic-platforms]], [[30_assertions/edition-interface-embodies-editorial-decisions]], [[30_assertions/epistemic-forms-are-target-knowledge-structures]], [[30_assertions/generous-interfaces-reveal-collection-through-browsing]], [[30_assertions/scholarly-primitives-classify-activities-not-interfaces]], [[30_assertions/ssh-open-marketplace-models-workflows-as-step-sequences]], [[30_assertions/tadirah-classifies-dh-research-activities]], [[30_assertions/tadirah-most-adopted-yet-under-maintained]], [[30_assertions/visual-analytics-process-models-describe-process-not-interfaces]] |
-| 4.3 | [[30_assertions/digital-editing-converges-on-static-self-contained-artefact]], [[30_assertions/static-client-side-editions-reach-tens-of-thousands-of-units]] |
-| 5.1 | [[30_assertions/record-has-no-failure-case-and-a-bounded-yield-pole]], [[30_assertions/section4-deviations-are-snapshot-drift-2026-07-19]], [[30_assertions/section4-verification-single-agent-snapshot-2026-07-19]] |
-| 5.2 | [[30_assertions/coocr-htr-figures-verified-2026-07-19]], [[30_assertions/correspexplorer-figures-verified-2026-07-19]], [[30_assertions/correspexplorer-knowledge-userstory-count-2026-07-19]], [[30_assertions/femprompt-figures-verified-2026-07-19]], [[30_assertions/hans-gross-figures-verified-2026-07-19]], [[30_assertions/herdata-letter-count-2026-07-19]], [[30_assertions/klawiter-entries-verified-2026-07-19]], [[30_assertions/klawiter-test-count-2026-07-19]], [[30_assertions/kulturpool-repo-unresolvable-2026-07-19]], [[30_assertions/m3gim-decision-count-2026-07-19]], [[30_assertions/medieval-test-count-2026-07-19]], [[30_assertions/medieval-xml-count-2026-07-19]], [[30_assertions/notker-figures-verified-2026-07-19]], [[30_assertions/vetmedai-excel-count-2026-07-19]], [[30_assertions/vetmedai-knowledge-doc-count-2026-07-19]], [[30_assertions/zbz-commit-count-2026-07-19]], [[30_assertions/zbz-figures-verified-2026-07-19]], [[30_assertions/zbz-knowledge-doc-count-2026-07-19]] |
-| 5.3 | the four worked cases reuse their Section 5.2 claims, [[30_assertions/zbz-figures-verified-2026-07-19]], [[30_assertions/zbz-knowledge-doc-count-2026-07-19]], [[30_assertions/correspexplorer-figures-verified-2026-07-19]], [[30_assertions/correspexplorer-knowledge-userstory-count-2026-07-19]], [[30_assertions/notker-figures-verified-2026-07-19]], [[30_assertions/m3gim-decision-count-2026-07-19]] |
-| 5.4 | [[30_assertions/austrian-dashboard-universities-verified-2026-07-19]], [[30_assertions/unassisted-non-hybrid-artefact-production-is-unsupported]] |
-| 5.5 | [[30_assertions/record-does-not-separate-document-depth-from-verification-effort]], [[30_assertions/record-has-no-failure-case-and-a-bounded-yield-pole]] |
-| 6.1 | [[30_assertions/discarded-visualisations-retain-epistemic-value]], [[30_assertions/unfinishedness-is-an-epistemic-value-in-the-digital-humanities]], [[30_assertions/visualisation-is-research-process-not-means]] |
-| 6.2 | [[30_assertions/edition-ai-benchmarks-lacking-and-reproducibility-favours-local-models]], [[30_assertions/glam-practice-layers-llm-extraction-with-deterministic-checks-and-expert-review]], [[30_assertions/llm-vocabulary-test-2025-fell-short-of-thesaurus-interoperability]], [[30_assertions/semantic-vocabulary-matching-stays-a-human-interpretive-task]] |
-| 6.3 | [[30_assertions/edition-ai-benchmarks-lacking-and-reproducibility-favours-local-models]], [[30_assertions/llm-reproducibility-transparency-recommendations]], [[30_assertions/reproducibility-shifts-to-documented-justification]], [[30_assertions/tadirah-most-adopted-yet-under-maintained]], [[30_assertions/wikidata-tool-registries-as-commons]] |
-| 6.4 | [[30_assertions/llms-amplify-research-not-automate-it]], [[30_assertions/record-does-not-separate-document-depth-from-verification-effort]], [[30_assertions/section4-verification-single-agent-snapshot-2026-07-19]], [[30_assertions/well-modelled-data-does-not-discharge-critical-data-work]] |
-| 6.5 | [[30_assertions/unassisted-non-hybrid-artefact-production-is-unsupported]] |
-| 7 | [[30_assertions/semantic-web-envisioned-agents-over-machine-processable-data]] |
-| fn [^posner] (2.2) | [[30_assertions/collections-as-data-are-intentional]], [[30_assertions/humanities-data-is-constructed-not-given]] |
-| fn [^precedent] (4.1) | [[30_assertions/client-side-provenance-tool-is-a-precedent-for-server-free-artefacts]], [[30_assertions/shared-infrastructure-is-the-opposite-longevity-answer-to-the-self-contained-artefact]] |
-| fn [^stanicka] (6.2) | [[30_assertions/llm-vocabulary-test-2025-fell-short-of-thesaurus-interoperability]], [[30_assertions/semantic-vocabulary-matching-stays-a-human-interpretive-task]] |
+| 1 | [[30_assertions/operationalisation-develops-a-measurement-for-a-concept]] |
+| 1.1 | [[30_assertions/deep-dive-process-documented-2019]] (moved), [[30_assertions/dh-intermediary-bridges-researchers-and-technical-staff]] (moved), [[30_assertions/digital-tool-criticism-demands-reflection-on-tools]], [[30_assertions/dissertation-requirements-from-deep-dive-sessions]], [[30_assertions/do-one-thing-well-favours-small-specialised-tools-over-monolithic-platforms]] (moved), [[30_assertions/fair-emphasises-machine-actionability-of-data]], [[30_assertions/fair-principles-findable-accessible-interoperable-reusable]] (moved), [[30_assertions/generalised-dashboard-flattens-context-specific-detail]], [[30_assertions/humanities-data-are-capta-not-given]] (moved), [[30_assertions/humanities-data-is-constructed-not-given]], [[30_assertions/humanities-data-modelling-is-interpretive-shaping]] (moved), [[30_assertions/institutional-research-software-support-falls-short-of-need]], [[30_assertions/making-source-data-machine-addressable-is-interpretive-modelling]], [[30_assertions/ontologies-are-shared-vocabularies-for-reuse]] (moved), [[30_assertions/research-data-is-defined-by-the-function-it-serves]] (moved), [[30_assertions/research-software-engineers-are-scarce]], [[30_assertions/rse-institutionalised-intermediary-profession]] (moved) |
+| 1.2 | [[30_assertions/context-engineering-systematic-inference-context]], [[30_assertions/llm-agents-plan-reason-and-use-tools-in-dynamic-environments]] (moved), [[30_assertions/llm-based-agents-for-software-engineering]] (moved), [[30_assertions/sdd-frameworks-converge-on-specification-over-prompt]] (moved) |
+| fn1 (1) | [[30_assertions/tadirah-classifies-dh-research-activities]] (moved), [[30_assertions/tadirah-was-formalised-as-a-skos-knowledge-organization-system]] |
+| fn5 (1) | [[30_assertions/ssh-open-marketplace-models-workflows-as-step-sequences]] (moved) |
+| 2 | [[30_assertions/promptotyping-first-named-in-the-dissertation]], [[30_assertions/promptotyping-named-first-described-2025-04]] |
+| 2.1 | [[30_assertions/conceptual-model-links-language-and-domain-concepts]] (moved), [[30_assertions/diataxis-separates-documentation-along-action-and-cognition]], [[30_assertions/promptotyping-documents-are-the-primary-artifact]] (moved), [[30_assertions/promptotyping-documents-form-freedom]] |
+| 2.2 | [[30_assertions/exploration-resumed-inside-an-implementation-milestone]], [[30_assertions/promptotyping-is-a-four-phase-context-engineering-technique]] |
+| 2.2.3 | [[30_assertions/context-rot-nonuniform-degradation-with-length]] |
+| 2.2.4 | [[30_assertions/implementation-plan-cuts-work-into-checkable-milestones]] (moved) |
+| 2.3.1 | [[30_assertions/glam-practice-layers-llm-extraction-with-deterministic-checks-and-expert-review]] (moved), [[30_assertions/llm-generated-tei-alters-content-and-modernises-language]] (moved), [[30_assertions/llm-judgement-approximates-human-preference-and-carries-known-biases]] (moved), [[30_assertions/semantic-vocabulary-matching-stays-a-human-interpretive-task]] (moved), [[30_assertions/tei-evaluation-assigns-its-dimensions-to-different-checking-regimes]] (moved), [[30_assertions/tei-permits-several-valid-encodings-of-one-phenomenon]] (moved) |
+| 2.3.2 | [[30_assertions/coordinated-multiple-views-enable-exploration]] (moved), [[30_assertions/inherited-visualisation-conventions-carry-positivist-assumptions]] (moved) |
+| 2.3.4 | [[30_assertions/critical-expert-in-the-loop-double-reflection-loop]] (moved), [[30_assertions/expert-role-carries-a-domain-and-a-development-judgement]], [[30_assertions/least-privilege-bounds-damage-and-narrows-the-audit]], [[30_assertions/multi-agent-frameworks-assign-roles-along-an-encoded-procedure]] (moved), [[30_assertions/reproducibility-shifts-to-documented-justification]], [[30_assertions/unfinishedness-is-an-epistemic-value-in-the-digital-humanities]] (moved) |
+| 3.2 | [[30_assertions/edition-interface-embodies-editorial-decisions]] (moved) |
+| fn35 (3.2) | [[30_assertions/field-literature-records-llm-code-generation-and-tei-agent-line-by-2024]] (moved) |
+| 3.4 | [[30_assertions/experimental-prototype-yields-knowledge-not-product]] (moved), [[30_assertions/visualisation-is-research-process-not-means]] |
+| fn37 (3.4) | [[30_assertions/a-prototype-can-embody-a-peer-reviewable-argument]], [[30_assertions/exploratory-collection-visualisation-is-a-rich-design-space]] (moved), [[30_assertions/generous-interfaces-reveal-collection-through-browsing]], [[30_assertions/search-cannot-represent-collection-abundance]] (moved) |
+| 4.1 | [[30_assertions/record-does-not-separate-document-depth-from-verification-effort]], [[30_assertions/record-has-no-failure-case-and-a-bounded-yield-pole]], [[30_assertions/well-modelled-data-does-not-discharge-critical-data-work]] |
+| 4.2 | [[30_assertions/edition-ai-benchmarks-lacking-and-reproducibility-favours-local-models]] (moved), [[30_assertions/llms-amplify-research-not-automate-it]] |
+| fn27 (4.2) | [[30_assertions/llm-assistance-raises-performance-inside-and-lowers-it-outside-a-jagged-frontier]] |
+| 4.3 | [[30_assertions/llm-reproducibility-transparency-recommendations]] (moved), [[30_assertions/unassisted-non-hybrid-artefact-production-is-unsupported]] |
 
-Claims the table places in no section, and which therefore have no current use in the paper: [[30_assertions/deck-characterises-llms-as-jagged-alien]] and [[30_assertions/deck-derives-context-and-verification-from-llm-profile]], whose attachment point, a Jagged-Alien passage in a Section 2.7, was never written and whose Section 2.7 does not exist; [[30_assertions/duration-cost-figures-experiential]], since the paper carries no duration or cost figures; [[30_assertions/lucina-figures-verified-2026-07-19]], since the Lucina project left the inventory; and [[30_assertions/ro-crate-packages-artefacts-with-machine-readable-metadata]] (see Open work). They stay in the vault as checked statements.
+The second pass orphaned seven further assertions whose supported statement did not survive the four-chapter rewrite: [[30_assertions/sycophancy-agreement-over-truth]], [[30_assertions/the-boundary-of-the-jagged-frontier-is-not-readable-from-a-task-in-advance]], [[30_assertions/qus-defines-thirteen-user-story-quality-criteria]], [[30_assertions/radical-design-request-widens-the-interface-option-space]], [[30_assertions/sarkar-vibe-coding-material-disengagement]], [[30_assertions/sdd-data-artefacts-describe-the-system-under-construction]], [[30_assertions/sdd-no-subject-matter-verification-role]]. They join the 68 the first audit orphaned and stay in the vault as checked statements per the register rule; the 13 INTERNAL verdicts of the first audit are unchanged. Two upgrades against the first audit: [[30_assertions/making-source-data-machine-addressable-is-interpretive-modelling]] and [[30_assertions/promptotyping-is-a-four-phase-context-engineering-technique]] returned to CARRIED with the four-phase wording of §2.2.
 
 ## Open work
 

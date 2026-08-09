@@ -96,7 +96,7 @@ Terms constitutive for this knowledge base. Canonical definitions live in the li
 
 **`template:` field.** Frontmatter field pointing to the authoritative template specification on this site. Format `template: { name, version, url, alias }`; `url` is the latest subpath form, `alias` the latest hash anchor.
 
-**Grounded Vault (`vault/`).** Instance of the Grounded Vault template carrying the provenance layer beneath the paper: sources, distillates, and claims with grounding anchors, validated by `vault/tools/validate.py`. Its own action layer `vault/CLAUDE.md` governs all work there.
+**Grounded Vault (`vault/`).** Instance of the Grounded Vault template carrying the provenance layer beneath the paper: sources, distillates, and assertions (until August 2026 claims) with grounding anchors, validated by `vault/tools/validate.py`. Migrated onto the renumbered template chain (`00_sources` to `40_output`) on 2026-08-09. Its own action layer `vault/CLAUDE.md` governs all work there.
 
 ## Relation to the vault knowledge base
 

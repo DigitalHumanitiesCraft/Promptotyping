@@ -8,14 +8,14 @@ checked:
 grounding:
 - '[[20_distillates/documents/verification-paper-figures-2026-07-19#^s16]]'
 created: 2026-07-19
-updated: 2026-07-24
+updated: 2026-08-09
 ---
 
 # The HerData repository documents a corpus of 15,312 letters to Goethe, and the 1,793-letter figure names a subset within it.
 
 ## Statement
 
-As verified on 2026-07-19, the HerData repository README states 15,312 letters as the full corpus of letters to Goethe. That check found no documentation for the paper's 1,793-letter figure and read it as plausibly the women-related subset of the corpus. Whether the figure is that subset the README leaves open, and the check of 2026-07-19 supports no verdict on it.
+As verified on 2026-07-19, the HerData repository README states 15,312 letters as the full corpus of letters to Goethe. That check found no documentation for the 1,793-letter figure the paper's project inventory then carried and read it as plausibly the women-related subset of the corpus. Whether the figure is that subset the README leaves open, and the check of 2026-07-19 supports no verdict on it. The four-chapter text of 2026-07-31 carries no counts at all, and the assertion stands as vault-internal checked material about the repository.
 
 ## Support
 

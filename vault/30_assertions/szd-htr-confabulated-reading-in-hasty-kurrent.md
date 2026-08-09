@@ -9,14 +9,14 @@ grounding:
 - '[[20_distillates/documents/szd-htr-evaluation-results-2026-06-10#^s1]]'
 - '[[20_distillates/documents/szd-htr-evaluation-results-2026-06-10#^s3]]'
 created: 2026-07-24
-updated: 2026-07-25
+updated: 2026-08-09
 ---
 
 # A transcription of a hastily written Kurrent manuscript carried an invented plausible reading that the transcribed text does not betray.
 
 ## Statement
 
-In the error typology of the SZD-HTR pipeline one transcription of a hastily written Kurrent manuscript renders the source word "Laufenden" as "Langentour Kantgewalt", a reading composed of real words that gives no sign of the error in the text itself. This is a single documented reading at object level, taken from a dated evaluation whose figures the source marks as historical, and it carries no statement about how the transcription model behaves in general or about how well any self-reported signal is calibrated. Checked against the deliverable on 2026-07-25, the passage of the worked example that carried this reading is gone; the worked example names the transcription experiments on hastily written Kurrent without citing an individual reading. The claim stands as a checked statement without a current use in the deliverable.
+In the error typology of the SZD-HTR pipeline one transcription of a hastily written Kurrent manuscript renders the source word "Laufenden" as "Langentour Kantgewalt", a reading composed of real words that gives no sign of the error in the text itself. This is a single documented reading at object level, taken from a dated evaluation whose figures the source marks as historical, and it carries no statement about how the transcription model behaves in general or about how well any self-reported signal is calibrated. Checked against the seven-chapter deliverable state of 2026-07-25, the passage of the worked example that carried this reading was gone, and the worked example named the transcription experiments on hastily written Kurrent without citing an individual reading. The assertion stands as a checked statement without a current attachment in the paper.
 
 ## Support
 

@@ -9,14 +9,14 @@ grounding:
 - '[[20_distillates/publications/chuehong-2022-fair4rs#^s2]]'
 - '[[20_distillates/publications/chuehong-2022-fair4rs#^s4]]'
 created: 2026-07-23
-updated: 2026-07-29
+updated: 2026-08-09
 ---
 
 # The FAIR4RS principles require detailed provenance under Reusable (R1.2) and a persistent identifier under Findable (F1).
 
 ## Statement
 
-The community standard for research software, FAIR4RS, places detailed provenance under its Reusable principle (R1.2) and a globally unique, persistent identifier under its Findable principle (F1). These two principles are the yardstick the paper applies to the promptotype-as-artifact: the provenance requirement is what the method's journal and documents satisfy as a by-product, while the persistent-identifier requirement is the findability condition that unpublished prototypes typically fail.
+The community standard for research software, FAIR4RS, places detailed provenance under its Reusable principle (R1.2) and a globally unique, persistent identifier under its Findable principle (F1). The two principles serve here as the yardstick for the promptotype as an artefact. The method's journal and documents satisfy the provenance requirement as a by-product, while the persistent-identifier requirement is the findability condition that unpublished prototypes typically fail. The four-chapter text of 2026-07-31 applies no such yardstick, so the grounding is vault-internal.
 
 ## Support
 

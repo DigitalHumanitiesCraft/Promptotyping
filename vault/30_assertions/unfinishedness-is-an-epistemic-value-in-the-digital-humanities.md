@@ -10,14 +10,14 @@ grounding:
 - '[[20_distillates/publications/koenig-2026-fertig-vorerst#^s2]]'
 - '[[20_distillates/publications/koenig-2026-fertig-vorerst#^s3]]'
 created: 2026-07-23
-updated: 2026-07-29
+updated: 2026-08-09
 ---
 
 # In the field's German-language discourse, unfinishedness is an epistemic value: the provisional expresses the dynamics of scholarly knowledge.
 
 ## Statement
 
-The digital humanities have an explicit discourse that reads the provisional not as a deficit but as a knowledge-fostering value, understanding digital knowledge objects as process rather than finished product and provisionality in digital practice as a resource for insight. This grounds the paper's claim that the promptotype's disposability sits within a recognised epistemic value of unfinishedness, so that the tension between the disposable process and the durable published artefact dissolves once making and made are distinguished.
+The digital humanities have an explicit discourse that reads the provisional not as a deficit but as a knowledge-fostering value, understanding digital knowledge objects as process rather than finished product and provisionality in digital practice as a resource for insight. This grounds the statement that the promptotype's disposability sits within a recognised epistemic value of unfinishedness.
 
 ## Support
 

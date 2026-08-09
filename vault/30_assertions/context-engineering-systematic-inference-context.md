@@ -9,14 +9,14 @@ grounding:
 - '[[20_distillates/publications/mei-2025-context-engineering#^s1]]'
 - '[[20_distillates/publications/mei-2025-context-engineering#^s2]]'
 created: 2026-07-23
-updated: 2026-07-29
+updated: 2026-08-09
 ---
 
 # Context engineering is the systematic design and optimisation of the information a model receives at inference, beyond prompt design.
 
 ## Statement
 
-Context engineering is a formal discipline defined as the systematic optimisation of the information payload supplied to an LLM at inference, resting on the premise that model performance is fundamentally determined by that context. It supersedes individual prompt optimisation. The paper adopts this definition in its introduction and its genealogy and positions Promptotyping as a domain-specific instance optimised for mapping research data onto artifacts.
+Context engineering is a formal discipline defined as the systematic optimisation of the information payload supplied to an LLM at inference, resting on the premise that model performance is fundamentally determined by that context. The survey sets it beyond individual prompt optimisation. The paper takes the definition up where it introduces its conceptual apparatus, describing Context Engineering as an extension of prompt engineering from individual prompts to the wider informational environment in which they are interpreted, and positions Promptotyping as a domain-specific instance optimised for mapping research data onto artifacts.
 
 ## Support
 

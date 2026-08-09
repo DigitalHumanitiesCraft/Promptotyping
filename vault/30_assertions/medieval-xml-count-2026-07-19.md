@@ -4,18 +4,18 @@ topics:
 - '[[Evidence]]'
 status: grounded
 checked:
-  validation: 2026-07-19
+  validation: 2026-08-09
 grounding:
 - '[[20_distillates/documents/verification-paper-figures-2026-07-19#^s11]]'
 created: 2026-07-19
-updated: 2026-07-19
+updated: 2026-08-09
 ---
 
 # The Medieval Legal Transactions repository holds 3,611 XML files with 3,092 in done folders as verified on 2026-07-19.
 
 ## Statement
 
-As verified on 2026-07-19, the Medieval Legal Transactions repository holds 3,611 XML files under `sources/` and 3,092 in `done/` folders, and no figure of 6,400 was found in the repository.
+As verified on 2026-07-19, the Medieval Legal Transactions repository holds 3,611 XML files under `sources/` and 3,092 in `done/` folders, and no figure of 6,400 was found in the repository. The four-chapter text of 2026-07-31 carries no counts at all, and the assertion stands as vault-internal checked material about the repository.
 
 ## Support
 

@@ -9,7 +9,7 @@
    "slug": "MOC-ArtefactVerification",
    "topic": "ArtefactVerification",
    "title": "MOC: ArtefactVerification",
-   "description": "Added 2026-07-29 from the intake on TEI-encoding evaluation, the external carriers for the layering of Table 2 and for the state of the benchmark question:",
+   "description": "Added 2026-07-29 from the intake on TEI-encoding evaluation, the external carriers for the layering of Table 1 of the paper (the checking layering) and for the state of the benchmark question:",
    "assertions": [
     "ssh-open-marketplace-models-workflows-as-step-sequences",
     "client-side-provenance-tool-is-a-precedent-for-server-free-artefacts",
@@ -251,7 +251,7 @@
   {
    "slug": "an-open-tei-encoding-benchmark-exists-for-llm-generated-encodings",
    "title": "An open, task-specific benchmark for LLM-generated TEI encoding now exists, holding transcriptions, manually encoded reference documents, the encodings of four models, and the prompt scenarios that produced them.",
-   "statement": "The gap the field named, that benchmarks for evaluating AI-generated results in digital-edition tasks are lacking, has begun to close for one task family. An openly licensed dataset pairs plain-text letter transcriptions with manually encoded TEI reference documents and with the encodings four models produced from the same input under five documented prompt scenarios, and the evaluation code is published under an MIT licence. The framework paper states the gap in its own words in the same year. This qualifies the paper's verification architecture without displacing it, because the benchmark measures the dimensions a rule can decide and hands the interpretative ones to expert review.",
+   "statement": "The gap the field named, that benchmarks for evaluating AI-generated results in digital-edition tasks are lacking, has begun to close for one task family. An openly licensed dataset pairs plain-text letter transcriptions with manually encoded TEI reference documents and with the encodings four models produced from the same input under five documented prompt scenarios, and the evaluation code is published under an MIT licence. The framework paper states the gap in its own words in the same year. The benchmark measures the dimensions a rule can decide and hands the interpretative ones to expert review, which leaves the division of checking work intact. The four-chapter text of 2026-07-31 carries no missing-benchmark argument, so this assertion stands as vault-internal checked material.",
    "status": "grounded",
    "topics": [
     "ArtefactVerification"
@@ -342,7 +342,7 @@
   {
    "slug": "austrian-dashboard-universities-verified-2026-07-19",
    "title": "The Austrian Dashboard figure of 22 universities held against the repository as verified on 2026-07-19.",
-   "statement": "The Austrian Dashboard case study's stated figure of 22 universities matched the project repository when the figures verification checked it on 2026-07-19. Checked against the deliverable on 2026-07-25, the paper's teaching and collaboration cases still name the dashboard as a didactic baseline case and state no number of universities. The drift audit places that absence before the revision rounds of 2026-07-24 and 2026-07-25, since the deliverable already offered no point of attachment for the figure when the vault was built, so this is not a figure the deliverable dropped. The claim stands as a checked finding about the repository.",
+   "statement": "The Austrian Dashboard case study's stated figure of 22 universities matched the project repository when the figures verification checked it on 2026-07-19. Checked against the seven-chapter deliverable state of 2026-07-25, its teaching and collaboration cases named the dashboard as a didactic baseline case and stated no number of universities. The drift audit places that absence before the revision rounds of 2026-07-24 and 2026-07-25, since the deliverable already offered no point of attachment for the figure when the vault was built, so this is a figure the deliverable never carried. The four-chapter text of 2026-07-31 carries no counts at all, and the assertion stands as vault-internal checked material about the repository.",
    "status": "grounded",
    "topics": [
     "Evidence"
@@ -413,7 +413,7 @@
   {
    "slug": "client-side-provenance-tool-is-a-precedent-for-server-free-artefacts",
    "title": "A same-venue provenance tool runs entirely in the browser without server-side architecture, a precedent for the server-free artefact type.",
-   "statement": "A web-based provenance tool published in the same venue structures and publishes Linked Open Data as a client-side application that runs entirely in the user's browser, deliberately avoiding server-side architecture, hosting, database, and maintenance, which benefits resource-limited contexts. This grounds the paper's footnote that a client-side precedent for the self-contained artefact type already exists in the field.",
+   "statement": "A web-based provenance tool published in the same venue structures and publishes Linked Open Data as a client-side application that runs entirely in the user's browser, deliberately avoiding server-side architecture, hosting, database, and maintenance, which benefits resource-limited contexts. This grounds the site's specification of the self-contained static artefact, for which a client-side precedent already exists in the field. The paper carried the precedent as a footnote until the four-chapter revision of 2026-07-31.",
    "status": "grounded",
    "topics": [
     "ArtefactVerification"
@@ -474,7 +474,7 @@
   {
    "slug": "context-engineering-systematic-inference-context",
    "title": "Context engineering is the systematic design and optimisation of the information a model receives at inference, beyond prompt design.",
-   "statement": "Context engineering is a formal discipline defined as the systematic optimisation of the information payload supplied to an LLM at inference, resting on the premise that model performance is fundamentally determined by that context. It supersedes individual prompt optimisation. The paper adopts this definition in its introduction and its genealogy and positions Promptotyping as a domain-specific instance optimised for mapping research data onto artifacts.",
+   "statement": "Context engineering is a formal discipline defined as the systematic optimisation of the information payload supplied to an LLM at inference, resting on the premise that model performance is fundamentally determined by that context. The survey sets it beyond individual prompt optimisation. The paper takes the definition up where it introduces its conceptual apparatus, describing Context Engineering as an extension of prompt engineering from individual prompts to the wider informational environment in which they are interpreted, and positions Promptotyping as a domain-specific instance optimised for mapping research data onto artifacts.",
    "status": "grounded",
    "topics": [
     "Frame"
@@ -496,7 +496,7 @@
   {
    "slug": "context-rot-nonuniform-degradation-with-length",
    "title": "LLM performance degrades non-uniformly as input length grows, even on simple tasks, with input length isolated as the cause.",
-   "statement": "An evaluation of 18 models, including GPT-4.1, Claude 4, Gemini 2.5 and Qwen3, shows that models do not use their context uniformly; performance grows increasingly unreliable as input length increases, even under minimal task conditions, and the effect is attributable to input length because task complexity was held constant. This is the empirical rationale for the paper's Distillation phase, whose principle is maximum information with minimum tokens.",
+   "statement": "An evaluation of 18 models, including GPT-4.1, Claude 4, Gemini 2.5 and Qwen3, shows that models do not use their context uniformly; performance grows increasingly unreliable as input length increases, even under minimal task conditions, and the effect is attributable to input length because task complexity was held constant.",
    "status": "grounded",
    "topics": [
     "Frame"
@@ -522,8 +522,8 @@
   },
   {
    "slug": "coocr-htr-figures-verified-2026-07-19",
-   "title": "coOCR-HTR's stated Section 5 figures held against the repository as verified on 2026-07-19.",
-   "statement": "The coOCR-HTR case study's stated figures held against the project repository when the figures verification checked them on 2026-07-19, covering 567 tests per self-documentation, about 17,000 lines of production JavaScript at an actual 17,762, 197 commits, and 67 fork commits. Checked against the deliverable on 2026-07-25, none of these figures is reported there any longer; the claim stands as a checked finding about the repository.",
+   "title": "coOCR-HTR's stated project-inventory figures held against the repository as verified on 2026-07-19.",
+   "statement": "The coOCR-HTR case study's stated figures held against the project repository when the figures verification checked them on 2026-07-19, covering 567 tests per self-documentation, about 17,000 lines of production JavaScript at an actual 17,762, 197 commits, and 67 fork commits. Checked against the seven-chapter deliverable state of 2026-07-25, none of these figures was reported there any longer. The four-chapter text of 2026-07-31 carries no counts at all, and the assertion stands as vault-internal checked material about the repository.",
    "status": "grounded",
    "topics": [
     "Evidence"
@@ -556,8 +556,8 @@
   },
   {
    "slug": "correspexplorer-figures-verified-2026-07-19",
-   "title": "CorrespExplorer's stated Section 5 figures held against the repository as verified on 2026-07-19.",
-   "statement": "The CorrespExplorer case study's stated figures, 11,576 letters and 12 coordinated views, matched the project repository when the figures verification checked them on 2026-07-19.",
+   "title": "CorrespExplorer's stated project-inventory figures held against the repository as verified on 2026-07-19.",
+   "statement": "The CorrespExplorer case study's stated figures, 11,576 letters and 12 coordinated views, matched the project repository when the figures verification checked them on 2026-07-19. The four-chapter text of 2026-07-31 carries no counts at all, and the assertion stands as vault-internal checked material about the repository.",
    "status": "grounded",
    "topics": [
     "Evidence"
@@ -574,7 +574,7 @@
   {
    "slug": "correspexplorer-knowledge-userstory-count-2026-07-19",
    "title": "The CorrespExplorer repository holds 13 knowledge files and 37 unique user-story IDs as verified on 2026-07-19.",
-   "statement": "As verified on 2026-07-19, the CorrespExplorer repository holds 13 knowledge files and 37 unique US-IDs. The figures of 7 documents and 34 user stories that the paper carried until 2026-07-24 describe an earlier state; the paper no longer reports either count.",
+   "statement": "As verified on 2026-07-19, the CorrespExplorer repository holds 13 knowledge files and 37 unique US-IDs. The figures of 7 documents and 34 user stories that the paper carried until 2026-07-24 describe an earlier state. The four-chapter text of 2026-07-31 reports neither count, and the assertion stands as vault-internal checked material about the repository.",
    "status": "grounded",
    "topics": [
     "Evidence"
@@ -694,7 +694,7 @@
   {
    "slug": "dh-intermediary-bridges-researchers-and-technical-staff",
    "title": "A dedicated Digital Humanities Intermediary bridges the gap between researchers and technical staff.",
-   "statement": "Edmond models humanities digital development as a value chain in which critical gaps open when the only actors are the researcher and technical support staff, and proposes a dedicated Digital Humanities Intermediary to supply non-specifically-technical skills and support at critical moments. This grounds the paper's introductory point that the field answered its translation problem by installing a professional intermediary between scholarly requirements and technical implementation.",
+   "statement": "Edmond models humanities digital development as a value chain in which critical gaps open when the only actors are the researcher and technical support staff, and proposes a dedicated Digital Humanities Intermediary to supply non-specifically-technical skills and support at critical moments. The source describes a professional intermediary placed between scholarly requirements and technical implementation.",
    "status": "grounded",
    "topics": [
     "Frame"
@@ -716,7 +716,7 @@
   {
    "slug": "dh-projects-build-teams-to-hold-competences-together",
    "title": "Digital-humanities projects build teams to hold their diverse competences together.",
-   "statement": "Digital-humanities research coordinates academics, students, programmers, and librarians in teams defined by common tasks and shared accountability, with success resting on clear task definition and durable working relationships. This grounds the paper's introductory point that team-building is one of the field's documented answers to the translation problem between domain scholars and programmers, an answer bound to project funding and staffing.",
+   "statement": "Digital-humanities research coordinates academics, students, programmers, and librarians in teams defined by common tasks and shared accountability, with success resting on clear task definition and durable working relationships. What the sources describe is team-building as a documented arrangement for holding domain and technical competence together, an arrangement bound to project funding and staffing.",
    "status": "grounded",
    "topics": [
     "Frame"
@@ -827,7 +827,7 @@
   {
    "slug": "digital-editing-converges-on-static-self-contained-artefact",
    "title": "Digital scholarly editing arrives from its own sustainability discourse at the self-contained static web artefact as the durable publication form.",
-   "statement": "Independently of any generative tooling, digital scholarly editing has reached the same target form the paper defaults to: a standalone static website whose pages exist as plain HTML needing no server-side execution or database, rendered from TEI-XML by deterministic XSLT templates, with longevity tied to the publishing institution rather than to a technology or a single developer. This is the paper's evidence that the artefact type it proposes is the field's own answer to the longevity problem; the generation path differs, deterministic XSLT there and document-driven generation in a promptotype, while the target artefact agrees.",
+   "statement": "Independently of any generative tooling, digital scholarly editing has reached the same target form the site's specification defaults to, a standalone static website whose pages exist as plain HTML needing no server-side execution or database, rendered from TEI-XML by deterministic XSLT templates, with longevity tied to the publishing institution rather than to a technology or a single developer. This is the evidence that the artefact type the site specifies is the field's own answer to the longevity problem; the generation path differs, deterministic XSLT there and document-driven generation in a promptotype, while the target artefact agrees.",
    "status": "grounded",
    "topics": [
     "ArtefactVerification"
@@ -1033,7 +1033,7 @@
   {
    "slug": "do-one-thing-well-favours-small-specialised-tools-over-monolithic-platforms",
    "title": "The Unix \"do one thing well\" principle, applied to digital editing, argues for small, specialised tools chained through standard formats against monolithic platforms.",
-   "statement": "Applied to digital scholarly editing, the Unix philosophy of doing one thing well argues against the monolithic platform and for a chain of small, specialised, exchangeable filters whose text-level input and output stay addressable, connected through standard formats. This underwrites the design philosophy of the paper's interface typology, that the epistemic function determines the interface and that a question-specific tool preserves the model-specific detail a one-size-fits-all dashboard flattens.",
+   "statement": "Applied to digital scholarly editing, the Unix philosophy of doing one thing well argues against the monolithic platform and for a chain of small, specialised, exchangeable filters whose text-level input and output stay addressable, connected through standard formats. This underwrites the design philosophy of the site's interface typology, where the epistemic function determines the interface and a question-specific tool preserves the model-specific detail a one-size-fits-all dashboard flattens. The typology left the paper with the four-chapter revision of 2026-07-31 and is site vocabulary since.",
    "status": "grounded",
    "topics": [
     "ArtefactVerification"
@@ -1060,7 +1060,7 @@
   {
    "slug": "duration-cost-figures-experiential",
    "title": "The duration and cost figures of the paper's project inventory are experiential values outside deterministic checking.",
-   "statement": "The duration and cost figures of the paper's project inventory are experiential values that lie outside deterministic checking, so the verification supports no verdict on their accuracy and treats them as reported experience. Checked against the deliverable on 2026-07-25, no duration or cost figures are reported there any longer, and the deliverable states expressly that it offers no comparative measurements of development time or cost; the claim stands as a checked finding about what the verification could and could not decide.",
+   "statement": "The duration and cost figures the paper's project inventory then carried are experiential values that lie outside deterministic checking, so the verification supports no verdict on their accuracy and treats them as reported experience. Checked against the seven-chapter deliverable state of 2026-07-25, no duration or cost figures were reported there any longer, and the deliverable stated expressly that it offered no comparative measurements of development time or cost. The four-chapter text of 2026-07-31 carries no counts at all, and the assertion stands as vault-internal checked material about what the verification could and could not decide.",
    "status": "grounded",
    "topics": [
     "Evidence",
@@ -1078,7 +1078,7 @@
   {
    "slug": "edition-ai-benchmarks-lacking-and-reproducibility-favours-local-models",
    "title": "Benchmarks for AI-generated edition tasks are lacking, and a reproducibility standard from within digital editing calls for free, locally runnable models.",
-   "statement": "The field lacks benchmarks to rigorously evaluate the quality and accuracy of AI-generated results for its specific tasks, and it voices a reproducibility standard, citing Reiter's point that evaluating non-local, API-based models is product testing rather than model evaluation, that free and locally runnable models are a condition of comprehensible, reproducible, and open research. This grounds two of the paper's discussion moves: in its verification architecture the method answers the missing-benchmark problem by assigning the check to the human and the deterministic layer, and in its account of reconstructability it locates reproducibility in the documents and pipeline against the standard's presupposition of local models, a tension the paper marks as real.",
+   "statement": "The field lacks benchmarks to rigorously evaluate the quality and accuracy of AI-generated results for its specific tasks, and it voices a reproducibility standard, citing Reiter's point that evaluating non-local, API-based models is product testing rather than model evaluation, that free and locally runnable models are a condition of comprehensible, reproducible, and open research. Both halves stand as vault-internal checked material. The missing-benchmark argument left the paper with the four-chapter revision of 2026-07-31 and has no attachment in the current text. Within the method, the checking work the missing benchmark would otherwise carry falls to the human and the deterministic layer, and reproducibility is located in the documents and the pipeline against the standard's presupposition of locally runnable models.",
    "status": "grounded",
    "topics": [
     "Limitations"
@@ -1346,7 +1346,7 @@
   {
    "slug": "fair4rs-provenance-and-identifier-principles",
    "title": "The FAIR4RS principles require detailed provenance under Reusable (R1.2) and a persistent identifier under Findable (F1).",
-   "statement": "The community standard for research software, FAIR4RS, places detailed provenance under its Reusable principle (R1.2) and a globally unique, persistent identifier under its Findable principle (F1). These two principles are the yardstick the paper applies to the promptotype-as-artifact: the provenance requirement is what the method's journal and documents satisfy as a by-product, while the persistent-identifier requirement is the findability condition that unpublished prototypes typically fail.",
+   "statement": "The community standard for research software, FAIR4RS, places detailed provenance under its Reusable principle (R1.2) and a globally unique, persistent identifier under its Findable principle (F1). The two principles serve here as the yardstick for the promptotype as an artefact. The method's journal and documents satisfy the provenance requirement as a by-product, while the persistent-identifier requirement is the findability condition that unpublished prototypes typically fail. The four-chapter text of 2026-07-31 applies no such yardstick, so the grounding is vault-internal.",
    "status": "grounded",
    "topics": [
     "ArtefactVerification"
@@ -1384,8 +1384,8 @@
   },
   {
    "slug": "femprompt-figures-verified-2026-07-19",
-   "title": "FemPrompt's stated Section 5 figures held against the repository as verified on 2026-07-19.",
-   "statement": "The FemPrompt case study's stated figures held against the project repository when the figures verification checked them on 2026-07-19, covering 326 papers, a 505-file vault, and a 68 percent to 42 percent split as documented in-repo. Checked against the deliverable on 2026-07-25, the 326 papers are still reported there, while the vault file count and the split are not; for those two the claim stands as a checked finding about the repository.",
+   "title": "FemPrompt's stated project-inventory figures held against the repository as verified on 2026-07-19.",
+   "statement": "The FemPrompt case study's stated figures held against the project repository when the figures verification checked them on 2026-07-19, covering 326 papers, a 505-file vault, and a 68 percent to 42 percent split as documented in-repo. Checked against the seven-chapter deliverable state of 2026-07-25, the 326 papers were still reported there, while the vault file count and the split were not. The four-chapter text of 2026-07-31 carries no counts at all, and the assertion stands as vault-internal checked material about the repository.",
    "status": "grounded",
    "topics": [
     "Evidence"
@@ -1522,7 +1522,7 @@
   {
    "slug": "hans-gross-figures-verified-2026-07-19",
    "title": "The Hans Gross figure of 3,892 objects held against the repository as verified on 2026-07-19.",
-   "statement": "The Hans Gross case study's stated figure of 3,892 objects matched the project repository when the figures verification checked it on 2026-07-19.",
+   "statement": "The Hans Gross case study's stated figure of 3,892 objects matched the project repository when the figures verification checked it on 2026-07-19. The four-chapter text of 2026-07-31 carries no counts at all, and the assertion stands as vault-internal checked material about the repository.",
    "status": "grounded",
    "topics": [
     "Evidence"
@@ -1539,7 +1539,7 @@
   {
    "slug": "herdata-letter-count-2026-07-19",
    "title": "The HerData repository documents a corpus of 15,312 letters to Goethe, and the 1,793-letter figure names a subset within it.",
-   "statement": "As verified on 2026-07-19, the HerData repository README states 15,312 letters as the full corpus of letters to Goethe. That check found no documentation for the paper's 1,793-letter figure and read it as plausibly the women-related subset of the corpus. Whether the figure is that subset the README leaves open, and the check of 2026-07-19 supports no verdict on it.",
+   "statement": "As verified on 2026-07-19, the HerData repository README states 15,312 letters as the full corpus of letters to Goethe. That check found no documentation for the 1,793-letter figure the paper's project inventory then carried and read it as plausibly the women-related subset of the corpus. Whether the figure is that subset the README leaves open, and the check of 2026-07-19 supports no verdict on it. The four-chapter text of 2026-07-31 carries no counts at all, and the assertion stands as vault-internal checked material about the repository.",
    "status": "grounded",
    "topics": [
     "Evidence"
@@ -1724,8 +1724,8 @@
   },
   {
    "slug": "klawiter-entries-verified-2026-07-19",
-   "title": "Klawiter's stated Section 5 figures held against the repository as verified on 2026-07-19.",
-   "statement": "The Klawiter case study's stated figures, 6,296 entries and the existence of a 7-stage pipeline, matched the project repository when the figures verification checked them on 2026-07-19. Checked against the deliverable on 2026-07-25, the 6,296 entries are still reported there, while the number of pipeline stages is not; for that figure the claim stands as a checked finding about the repository.",
+   "title": "Klawiter's stated project-inventory figures held against the repository as verified on 2026-07-19.",
+   "statement": "The Klawiter case study's stated figures, 6,296 entries and the existence of a 7-stage pipeline, matched the project repository when the figures verification checked them on 2026-07-19. Checked against the seven-chapter deliverable state of 2026-07-25, the 6,296 entries were still reported there, while the number of pipeline stages was not. The four-chapter text of 2026-07-31 carries no counts at all, and the assertion stands as vault-internal checked material about the repository.",
    "status": "grounded",
    "topics": [
     "Evidence"
@@ -1742,7 +1742,7 @@
   {
    "slug": "klawiter-test-count-2026-07-19",
    "title": "The Klawiter repository holds 247 test functions as verified on 2026-07-19.",
-   "statement": "As verified on 2026-07-19, the Klawiter repository holds 247 test functions. The paper's figure of 264 is reachable only as the parametrised collection count, so the counting rule decides which number applies. Checked against the deliverable on 2026-07-25, no test count is reported there any longer; the claim stands as a checked finding about the repository.",
+   "statement": "As verified on 2026-07-19, the Klawiter repository holds 247 test functions. The figure of 264 the paper's project inventory then carried is reachable only as the parametrised collection count, so the counting rule decides which number applies. Checked against the seven-chapter deliverable state of 2026-07-25, no test count was reported there any longer. The four-chapter text of 2026-07-31 carries no counts at all, and the assertion stands as vault-internal checked material about the repository.",
    "status": "grounded",
    "topics": [
     "Evidence"
@@ -1759,7 +1759,7 @@
   {
    "slug": "kulturpool-repo-unresolvable-2026-07-19",
    "title": "The Kulturpool Explorer repository was unresolvable and its object figure is an API-scale value as verified on 2026-07-19.",
-   "statement": "As verified on 2026-07-19, the linked Kulturpool Explorer repository `chpollin/vkm-explorer` returned a 404, so its state could not be checked. The paper's figure of about 19,000 objects is an API-scale value rather than a repository count, which is the part that remains supportable.",
+   "statement": "As verified on 2026-07-19, the linked Kulturpool Explorer repository `chpollin/vkm-explorer` returned a 404, so its state could not be checked. The figure of about 19,000 objects the paper's project inventory then carried is an API-scale value rather than a repository count, which is the part that remains supportable. The four-chapter text of 2026-07-31 carries no counts at all, and the assertion stands as vault-internal checked material about the repository.",
    "status": "grounded",
    "topics": [
     "Evidence"
@@ -1818,7 +1818,7 @@
   {
    "slug": "llm-agents-plan-reason-and-use-tools-in-dynamic-environments",
    "title": "LLM-based agents are autonomous systems that plan, reason, and use tools while interacting with dynamic environments.",
-   "statement": "A survey published in Findings of the Association for Computational Linguistics: ACL 2025 characterises LLM-based agents as autonomous systems that plan, reason, and use tools while interacting with dynamic environments, and treats planning and tool use as core capabilities required for agentic workflows. This is the first peer-reviewed carrier the paper has for its agent term, which the Agentic Engineering passage had until then set on its own authority. The paper's further step, that the methodologically decisive variable is the span of work performed between two human interventions, is the paper's own and is not carried by this source.",
+   "statement": "A survey published in Findings of the Association for Computational Linguistics: ACL 2025 characterises LLM-based agents as autonomous systems that plan, reason, and use tools while interacting with dynamic environments, and treats planning and tool use as core capabilities required for agentic workflows. The survey is a peer-reviewed carrier for the agent term. The four-chapter text of 2026-07-31 grounds its own agent definition on Sapkota 2026 and Wang 2024, so the definition stands here as vault-internal checked material. The paper's further step, that the methodologically decisive variable is the span of work performed between two human interventions, is the paper's own and is not carried by this source.",
    "status": "grounded",
    "topics": [
     "Frame"
@@ -1899,7 +1899,7 @@
   {
    "slug": "llm-generated-tei-alters-content-and-modernises-language",
    "title": "LLM-generated TEI encodings alter content, bias systematically towards modern language conventions, and apply encoding decisions inconsistently.",
-   "statement": "A published evaluation of LLM-generated TEI names three recurring behaviours of the generated encodings, alteration of the content itself, a systematic bias towards modern language conventions, and inconsistent application of encoding decisions across documents. The first two are the reason the paper's Table 2 keeps data fidelity in the verification row wherever correctness is not deterministically decidable, because a silently modernised historical spelling passes every syntactic and schema check the deterministic layer can run. The third is what makes sampling the appropriate expert procedure, since an inconsistency shows only across documents.",
+   "statement": "A published evaluation of LLM-generated TEI names three recurring behaviours of the generated encodings, alteration of the content itself, a systematic bias towards modern language conventions, and inconsistent application of encoding decisions across documents. The first two are the reason Table 1 of the paper (the checking layering) keeps data fidelity in the verification row wherever correctness is not deterministically decidable, because a silently modernised historical spelling passes every syntactic and schema check the deterministic layer can run. The third is what makes sampling the appropriate expert procedure, since an inconsistency shows only across documents.",
    "status": "grounded",
    "topics": [
     "ArtefactVerification"
@@ -2013,8 +2013,8 @@
   },
   {
    "slug": "lucina-figures-verified-2026-07-19",
-   "title": "Lucina's stated Section 5 figures held against the repository as verified on 2026-07-19.",
-   "statement": "The Lucina case study's stated figures, 128 neo-Latin poems and 5 iterations, matched the project repository when the figures verification checked them on 2026-07-19. Checked against the deliverable on 2026-07-25, neither the figures nor the project appear there. The drift audit places that absence before the revision rounds of 2026-07-24 and 2026-07-25, since the deliverable already offered no point of attachment for these figures when the vault was built, so this is not a figure the deliverable dropped. The claim stands as a checked finding about the repository.",
+   "title": "Lucina's stated project-inventory figures held against the repository as verified on 2026-07-19.",
+   "statement": "The Lucina case study's stated figures, 128 neo-Latin poems and 5 iterations, matched the project repository when the figures verification checked them on 2026-07-19. Checked against the seven-chapter deliverable state of 2026-07-25, neither the figures nor the project appeared there. The drift audit places that absence before the revision rounds of 2026-07-24 and 2026-07-25, since the deliverable already offered no point of attachment for these figures when the vault was built, so these are figures the deliverable never carried. The four-chapter text of 2026-07-31 carries no counts at all, and the assertion stands as vault-internal checked material about the repository.",
    "status": "grounded",
    "topics": [
     "Evidence"
@@ -2031,7 +2031,7 @@
   {
    "slug": "m3gim-decision-count-2026-07-19",
    "title": "The M³GIM repository holds about 127 decision entries as verified on 2026-07-19.",
-   "statement": "As verified on 2026-07-19, the M³GIM repository holds about 127 E-entries, above the paper's figure of 49 documented decisions, which reflects continued growth of the repository. Checked against the deliverable on 2026-07-25, no decision count is reported there any longer; the claim stands as a checked finding about the repository.",
+   "statement": "As verified on 2026-07-19, the M³GIM repository holds about 127 E-entries, above the figure of 49 documented decisions the paper's project inventory then carried, which reflects continued growth of the repository. Checked against the seven-chapter deliverable state of 2026-07-25, no decision count was reported there any longer. The four-chapter text of 2026-07-31 carries no counts at all, and the assertion stands as vault-internal checked material about the repository.",
    "status": "grounded",
    "topics": [
     "Evidence"
@@ -2119,7 +2119,7 @@
   {
    "slug": "medieval-test-count-2026-07-19",
    "title": "The Medieval Legal Transactions repository holds 192 test functions and 6 knowledge documents as verified on 2026-07-19.",
-   "statement": "As verified on 2026-07-19, the Medieval Legal Transactions repository holds 192 test functions across 10 files and a knowledge folder of 6 content documents plus a README. The paper's figure of 381 regression tests is a collection count whose exact value needs a pytest run, and its figure of 8 knowledge documents overstates the current 6. Checked against the deliverable on 2026-07-25, neither a test count nor a knowledge document count is reported there any longer; the claim stands as a checked finding about the repository.",
+   "statement": "As verified on 2026-07-19, the Medieval Legal Transactions repository holds 192 test functions across 10 files and a knowledge folder of 6 content documents plus a README. The figure of 381 regression tests the paper's project inventory then carried is a collection count whose exact value needs a pytest run, and its figure of 8 knowledge documents overstates the counted 6. Checked against the seven-chapter deliverable state of 2026-07-25, neither a test count nor a knowledge document count was reported there any longer. The four-chapter text of 2026-07-31 carries no counts at all, and the assertion stands as vault-internal checked material about the repository.",
    "status": "grounded",
    "topics": [
     "Evidence"
@@ -2136,7 +2136,7 @@
   {
    "slug": "medieval-xml-count-2026-07-19",
    "title": "The Medieval Legal Transactions repository holds 3,611 XML files with 3,092 in done folders as verified on 2026-07-19.",
-   "statement": "As verified on 2026-07-19, the Medieval Legal Transactions repository holds 3,611 XML files under `sources/` and 3,092 in `done/` folders, and no figure of 6,400 was found in the repository.",
+   "statement": "As verified on 2026-07-19, the Medieval Legal Transactions repository holds 3,611 XML files under `sources/` and 3,092 in `done/` folders, and no figure of 6,400 was found in the repository. The four-chapter text of 2026-07-31 carries no counts at all, and the assertion stands as vault-internal checked material about the repository.",
    "status": "grounded",
    "topics": [
     "Evidence"
@@ -2186,7 +2186,7 @@
   {
    "slug": "minimal-computing-reduces-code-and-dependencies",
    "title": "Minimal computing means reducing computation literally: less code, fewer bytes, less processing.",
-   "statement": "For Risam and Gil, reduction in minimal computing is meant literally, as less code or fewer bytes and, in turn, less computational processing time or capacity. This is the reductive commitment the paper draws on for the fewest-moving-parts artefact.",
+   "statement": "For Risam and Gil, reduction in minimal computing is meant literally, as less code or fewer bytes and, in turn, less computational processing time or capacity. This is the reductive commitment behind the fewest-moving-parts artefact of the site's specification.",
    "status": "grounded",
    "topics": [
     "ArtefactVerification"
@@ -2303,8 +2303,8 @@
   },
   {
    "slug": "notker-figures-verified-2026-07-19",
-   "title": "Notker's stated Section 5 figures held against the repository as verified on 2026-07-19.",
-   "statement": "The Notker case study's stated figures, Psalm 2 with 13 verses and 6 text-layer controls, matched the project repository when the figures verification checked them on 2026-07-19. Checked against the deliverable on 2026-07-25, Psalm 2 with its thirteen verses is still reported there, while the count of text-layer controls is not; for that figure the claim stands as a checked finding about the repository.",
+   "title": "Notker's stated project-inventory figures held against the repository as verified on 2026-07-19.",
+   "statement": "The Notker case study's stated figures, Psalm 2 with 13 verses and 6 text-layer controls, matched the project repository when the figures verification checked them on 2026-07-19. Checked against the seven-chapter deliverable state of 2026-07-25, Psalm 2 with its thirteen verses was still reported there, while the count of text-layer controls was not. The four-chapter text of 2026-07-31 carries no counts at all, and the assertion stands as vault-internal checked material about the repository.",
    "status": "grounded",
    "topics": [
     "Evidence"
@@ -2506,7 +2506,7 @@
   {
    "slug": "promptotyping-documents-are-the-primary-artifact",
    "title": "The Promptotyping Documents are the primary artifact; the code is a regenerable mapping.",
-   "statement": "In the L.I.S.A. positioning, the Promptotyping Documents are distilled knowledge that keeps context explicit and are the actual artifact of the context engineering, enabling continued work even when the code is regenerated. The process focuses on one task, mapping research data onto interfaces, and what distinguishes Promptotyping from Vibe Coding is its structured procedure and active requirements analysis interwoven with documentation and implementation. Checked against the deliverable on 2026-07-25, the primary-artefact formula has been withdrawn there; what the deliverable now carries is that the documents are what is maintained and the artefact is regenerated from them. The claim stands as a checked statement about the L.I.S.A. positioning without a current use in the deliverable.",
+   "statement": "In the L.I.S.A. positioning, the Promptotyping Documents are distilled knowledge that keeps context explicit and are the actual artifact of the context engineering, enabling continued work even when the code is regenerated. The process focuses on one task, mapping research data onto interfaces, and what distinguishes Promptotyping from Vibe Coding is its structured procedure and active requirements analysis interwoven with documentation and implementation. Checked against the seven-chapter deliverable state of 2026-07-25, the primary-artefact formula had been withdrawn there, and the deliverable carried instead that the documents are what is maintained while the artefact is regenerated from them. The assertion stands as a checked statement about the L.I.S.A. positioning without a current attachment in the paper.",
    "status": "grounded",
    "topics": [
     "Method"
@@ -2756,7 +2756,7 @@
   {
    "slug": "reproducibility-shifts-to-documented-justification",
    "title": "In LLM-assisted work reproducibility shifts from identical repetition to traceable justification.",
-   "statement": "Reproducibility is reframed from identical repetition to a traceable, documented justification, comparable to qualitative research. This reframing meets a prior condition of the humanities, where reproducible research in the strong sense has limited currency because the scholar's subject position is bound to the scholarship. Checked against the deliverable on 2026-07-25, the reframing itself is still in use there, in the reproducibility passage that locates reproducibility in the documents, the process record, and the deterministic pipeline. The Posner half has lost its use, because the deliverable cites Posner only in the footnote on humanities data as a necessary contradiction, and says nothing about reproducibility at that place. For that half the claim stands as a checked statement without a current use in the deliverable.",
+   "statement": "Reproducibility is reframed from identical repetition to a traceable, documented justification, comparable to qualitative research. This reframing meets a prior condition of the humanities, where reproducible research in the strong sense has limited currency because the scholar's subject position is bound to the scholarship. Checked against the seven-chapter deliverable state of 2026-07-25, the reframing itself was in use there, in the reproducibility passage that locates reproducibility in the documents, the process record, and the deterministic pipeline. The Posner half had lost its use, because the deliverable cited Posner only in the footnote on humanities data as a necessary contradiction and said nothing about reproducibility at that place. For that half the assertion stands as a checked statement without a current attachment in the paper.",
    "status": "grounded",
    "topics": [
     "Method"
@@ -2891,7 +2891,7 @@
   {
    "slug": "rse-institutionalised-intermediary-profession",
    "title": "The Research Software Engineering movement institutionalised the domain-technical intermediary as a recognised profession.",
-   "statement": "The Research Software Engineering movement recognises and supports the people who build research software, treating them as critical members of research teams and establishing research software work as a realistic professional career with dedicated roles. This grounds the paper's introductory point that the field answered its translation problem between scholars and programmers by institutionalising a human intermediary as a profession, the answer Promptotyping reaches differently.",
+   "statement": "The Research Software Engineering movement recognises and supports the people who build research software, treating them as critical members of research teams and establishing research software work as a realistic professional career with dedicated roles. What the sources describe is the institutionalisation of a human intermediary between scholars and programmers as a recognised profession.",
    "status": "grounded",
    "topics": [
     "Frame"
@@ -3190,8 +3190,8 @@
   },
   {
    "slug": "section4-deviations-are-snapshot-drift-2026-07-19",
-   "title": "Several Section 5 deviations are snapshot drift, where dating a figure is as valid as updating it.",
-   "statement": "Several deviations in the paper's project inventory are snapshot drift, arising because the paper describes an earlier state of still-growing repositories. For these figures, dating the figure to its build snapshot is as valid a correction as updating it to the current count. The file name keeps the section number the evidence layer carried when the verification ran, so that existing anchors resolve.",
+   "title": "Several deviations in the verified project inventory are snapshot drift, where dating a figure is as valid as updating it.",
+   "statement": "Several deviations in the project inventory verified on 2026-07-19 are snapshot drift, arising because the inventory described an earlier state of still-growing repositories. For these figures, dating the figure to its build snapshot is as valid a correction as updating it to the current count. The inventory left the manuscript with the four-chapter revision of 2026-07-31, and the reading stands as vault-internal checked material. The file name keeps the section number the evidence layer carried when the verification ran, so that existing anchors resolve.",
    "status": "grounded",
    "topics": [
     "Evidence"
@@ -3207,8 +3207,8 @@
   },
   {
    "slug": "section4-verification-single-agent-snapshot-2026-07-19",
-   "title": "The Section 5 verification was a single-agent snapshot with test figures counted as source functions.",
-   "statement": "The figures verification ran as a single adversarial agent without a second independent pass, read repository states on 2026-07-19 via local clones, shallow clones, and the GitHub API so that later growth stays invisible to it, and counted test figures as test functions in source without executing a pytest collection. These bounds set how far its verdicts reach. The file name keeps the section number the evidence layer carried when the verification ran, so that existing anchors resolve.",
+   "title": "The figures verification of 2026-07-19 was a single-agent snapshot with test figures counted as source functions.",
+   "statement": "The figures verification ran as a single adversarial agent without a second independent pass, read repository states on 2026-07-19 via local clones, shallow clones, and the GitHub API so that later growth stays invisible to it, and counted test figures as test functions in source without executing a pytest collection. These bounds set how far its verdicts reach. The inventory the run checked left the manuscript with the four-chapter revision of 2026-07-31, and the record stands as vault-internal checked material. The file name keeps the section number the evidence layer carried when the verification ran, so that existing anchors resolve.",
    "status": "grounded",
    "topics": [
     "Evidence",
@@ -3280,7 +3280,7 @@
   {
    "slug": "shared-infrastructure-is-the-opposite-longevity-answer-to-the-self-contained-artefact",
    "title": "The field also answers the longevity problem the opposite way, integrating project data into shared Wikidata so a maintained collective platform carries preservation.",
-   "statement": "Against the same limited-hosting-lifetime problem that motivates the self-contained static artefact, one strand of the field pursues the inverse answer: rather than removing dependencies, it integrates project research data directly into the Wikimedia Foundation's shared infrastructure, so that a maintained collective platform carries preservation and the data stays public after the project ends. This grounds the second half of the paper's footnote precedent, where the static artefact instead reaches longevity by carrying no dependencies to maintain.",
+   "statement": "Against the same limited-hosting-lifetime problem that motivates the self-contained static artefact, one strand of the field pursues the inverse answer: rather than removing dependencies, it integrates project research data directly into the Wikimedia Foundation's shared infrastructure, so that a maintained collective platform carries preservation and the data stays public after the project ends. This is the counterpart to the self-contained static artefact of the site's specification, which reaches longevity by carrying no dependencies to maintain. The paper carried both halves as a footnote until the four-chapter revision of 2026-07-31.",
    "status": "grounded",
    "topics": [
     "ArtefactVerification"
@@ -3334,7 +3334,7 @@
   {
    "slug": "static-client-side-editions-reach-tens-of-thousands-of-units",
    "title": "A statically published TEI edition of over 16,000 pre-rendered units processes and stores without size trouble on ordinary hardware.",
-   "statement": "The scale reachable on the pre-rendered, self-contained side is documented at over 16,000 edition units, each a single TEI-XML file, with the denormalised serialisation at 25 MB raising no difficulty in processing on a common machine or in storage within GitHub's 100 MB file limit. This grounds the paper's order-of-magnitude claim about the pre-rendered side of the client-side bound. The 25 MB figure is the person-register serialisation, not the whole edition's source XML, and the report states no measured browser-memory ceiling for interactive data volume; the number bounds build and storage rather than runtime.",
+   "statement": "The scale reachable on the pre-rendered, self-contained side is documented at over 16,000 edition units, each a single TEI-XML file, with the denormalised serialisation at 25 MB raising no difficulty in processing on a common machine or in storage within GitHub's 100 MB file limit. This grounds the order-of-magnitude statement about the pre-rendered side of the client-side bound in the site's specification. The 25 MB figure is the person-register serialisation rather than the whole edition's source XML, and the report states no measured browser-memory ceiling for interactive data volume; the number bounds build and storage rather than runtime.",
    "status": "grounded",
    "topics": [
     "ArtefactVerification"
@@ -3432,7 +3432,7 @@
   {
    "slug": "szd-htr-confabulated-reading-in-hasty-kurrent",
    "title": "A transcription of a hastily written Kurrent manuscript carried an invented plausible reading that the transcribed text does not betray.",
-   "statement": "In the error typology of the SZD-HTR pipeline one transcription of a hastily written Kurrent manuscript renders the source word \"Laufenden\" as \"Langentour Kantgewalt\", a reading composed of real words that gives no sign of the error in the text itself. This is a single documented reading at object level, taken from a dated evaluation whose figures the source marks as historical, and it carries no statement about how the transcription model behaves in general or about how well any self-reported signal is calibrated. Checked against the deliverable on 2026-07-25, the passage of the worked example that carried this reading is gone; the worked example names the transcription experiments on hastily written Kurrent without citing an individual reading. The claim stands as a checked statement without a current use in the deliverable.",
+   "statement": "In the error typology of the SZD-HTR pipeline one transcription of a hastily written Kurrent manuscript renders the source word \"Laufenden\" as \"Langentour Kantgewalt\", a reading composed of real words that gives no sign of the error in the text itself. This is a single documented reading at object level, taken from a dated evaluation whose figures the source marks as historical, and it carries no statement about how the transcription model behaves in general or about how well any self-reported signal is calibrated. Checked against the seven-chapter deliverable state of 2026-07-25, the passage of the worked example that carried this reading was gone, and the worked example named the transcription experiments on hastily written Kurrent without citing an individual reading. The assertion stands as a checked statement without a current attachment in the paper.",
    "status": "grounded",
    "topics": [
     "ArtefactVerification"
@@ -3454,7 +3454,7 @@
   {
    "slug": "szd-htr-fair4rs-audit-2026-07-23",
    "title": "The SZD-HTR repository's FAIR4RS audit of 2026-07-23 found accessibility and reusability largely fulfilled and findability unfulfilled.",
-   "statement": "A criterion-by-criterion audit of the SZD-HTR repository against the FAIR4RS principles v1.0, run on 2026-07-23, found accessibility fulfilled by construction, reusability largely fulfilled with detailed provenance as the strongest point, and every findability principle unfulfilled at the snapshot; the audit's verdict names the findability gap publication work. This is the audit the paper's FAIR4RS passage rests on.",
+   "statement": "A criterion-by-criterion audit of the SZD-HTR repository against the FAIR4RS principles v1.0, run on 2026-07-23, found accessibility fulfilled by construction, reusability largely fulfilled with detailed provenance as the strongest point, and every findability principle unfulfilled at the snapshot; the audit's verdict names the findability gap publication work. The FAIR4RS passage the audit was run for left the paper with the four-chapter revision of 2026-07-31; the audit findings stand as vault-internal checked material about the repository.",
    "status": "grounded",
    "topics": [
     "Evidence"
@@ -3557,7 +3557,7 @@
   {
    "slug": "tei-evaluation-assigns-its-dimensions-to-different-checking-regimes",
    "title": "A published framework for evaluating LLM-generated TEI assigns its dimensions to different checking regimes, from automated reference-free validation through ground-truth comparison to expert-centred review.",
-   "statement": "The framework separates the properties of a generated TEI document into ordered dimensions and gives each its own regime instead of one uniform metric. Well-formedness, source fidelity and schema conformance run as fully automated reference-free validation; structural fidelity and semantic recognition run as computational metrics against a ground truth; two higher dimensions are assigned to expert-centred review. The framework states its purpose in the same terms, to identify what automated validation can assess reliably at scale and what requires targeted human-in-the-loop review. This is the layering of the paper's Table 2 reached independently, from a different research group and a different task family, which is what makes it evidence rather than restatement.",
+   "statement": "The framework separates the properties of a generated TEI document into ordered dimensions and gives each its own regime instead of one uniform metric. Well-formedness, source fidelity and schema conformance run as fully automated reference-free validation; structural fidelity and semantic recognition run as computational metrics against a ground truth; two higher dimensions are assigned to expert-centred review. The framework states its purpose in the same terms, to identify what automated validation can assess reliably at scale and what requires targeted human-in-the-loop review. This is the layering of Table 1 of the paper (the checking layering) reached independently, from a different research group and a different task family, which is what makes it evidence rather than restatement.",
    "status": "grounded",
    "topics": [
     "ArtefactVerification"
@@ -3589,7 +3589,7 @@
   {
    "slug": "tei-permits-several-valid-encodings-of-one-phenomenon",
    "title": "The TEI Guidelines permit several valid encodings of one and the same textual phenomenon, so a divergence from a reference encoding is no error in itself.",
-   "statement": "Interpretive multiplicity is a deliberate property of the TEI Guidelines, which admit more than one valid encoding of identical textual phenomena to accommodate differing scholarly perspectives and project methodologies. Two consequences follow for evaluation. Conventional similarity metrics measure divergence from a reference without being able to say whether the divergence is an error or a defensible alternative reading. And the decision between the two is an act of scholarly judgement, which places it in the verification zone of the paper's Table 2 rather than in the validation zone, however good the metric.",
+   "statement": "Interpretive multiplicity is a deliberate property of the TEI Guidelines, which admit more than one valid encoding of identical textual phenomena to accommodate differing scholarly perspectives and project methodologies. Two consequences follow for evaluation. Conventional similarity metrics measure divergence from a reference without being able to say whether the divergence is an error or a defensible alternative reading. And the decision between the two is an act of scholarly judgement, which places it in the verification zone of Table 1 of the paper (the checking layering) rather than in the validation zone, however good the metric.",
    "status": "grounded",
    "topics": [
     "ArtefactVerification"
@@ -3724,7 +3724,7 @@
   {
    "slug": "unfinishedness-is-an-epistemic-value-in-the-digital-humanities",
    "title": "In the field's German-language discourse, unfinishedness is an epistemic value: the provisional expresses the dynamics of scholarly knowledge.",
-   "statement": "The digital humanities have an explicit discourse that reads the provisional not as a deficit but as a knowledge-fostering value, understanding digital knowledge objects as process rather than finished product and provisionality in digital practice as a resource for insight. This grounds the paper's claim that the promptotype's disposability sits within a recognised epistemic value of unfinishedness, so that the tension between the disposable process and the durable published artefact dissolves once making and made are distinguished.",
+   "statement": "The digital humanities have an explicit discourse that reads the provisional not as a deficit but as a knowledge-fostering value, understanding digital knowledge objects as process rather than finished product and provisionality in digital practice as a resource for insight. This grounds the statement that the promptotype's disposability sits within a recognised epistemic value of unfinishedness.",
    "status": "grounded",
    "topics": [
     "Concepts"
@@ -3773,7 +3773,7 @@
   {
    "slug": "vetmedai-excel-count-2026-07-19",
    "title": "The VetMedAI repository README states 79 Excel files as verified on 2026-07-19.",
-   "statement": "As verified on 2026-07-19, the README of the VetMedAI / Austrian Dashboard repository states 79 Excel files in both of its mentions, above the paper's figure of 76. Checked against the deliverable on 2026-07-25, the figure of 76 is no longer reported there; the deliverable now gives approximately 80 Excel files, which the verified count of 79 supports.",
+   "statement": "As verified on 2026-07-19, the README of the VetMedAI / Austrian Dashboard repository states 79 Excel files in both of its mentions, above the figure of 76 the paper's project inventory then carried. Checked against the seven-chapter deliverable state of 2026-07-25, the figure of 76 was gone and the deliverable gave approximately 80 Excel files, which the verified count of 79 supports. The four-chapter text of 2026-07-31 carries no counts at all, and the assertion stands as vault-internal checked material about the repository.",
    "status": "grounded",
    "topics": [
     "Evidence"
@@ -3790,7 +3790,7 @@
   {
    "slug": "vetmedai-knowledge-doc-count-2026-07-19",
    "title": "The VetMedAI knowledge base holds about 31 content documents as verified on 2026-07-19.",
-   "statement": "As verified on 2026-07-19, the VetMedAI knowledge base holds about 31 content documents in `knowledge/`, which is 34 Markdown files when the README is counted, below the paper's figure of 41. Checked against the deliverable on 2026-07-25, no knowledge document count is reported there any longer; the claim stands as a checked finding about the repository.",
+   "statement": "As verified on 2026-07-19, the VetMedAI knowledge base holds about 31 content documents in `knowledge/`, which is 34 Markdown files when the README is counted, below the figure of 41 the paper's project inventory then carried. Checked against the seven-chapter deliverable state of 2026-07-25, no knowledge document count was reported there any longer. The four-chapter text of 2026-07-31 carries no counts at all, and the assertion stands as vault-internal checked material about the repository.",
    "status": "grounded",
    "topics": [
     "Evidence"
@@ -3899,8 +3899,8 @@
   },
   {
    "slug": "wheaton-figures-verified-2026-07-19",
-   "title": "Wheaton's stated Section 5 figures held against the repository as verified on 2026-07-19.",
-   "statement": "The Wheaton case study's stated figures, 1,124 transactions and 718 individuals, matched the project repository when the figures verification checked them on 2026-07-19. Checked against the deliverable on 2026-07-25, neither figure is reported there any longer; the deliverable names the Wheaton Day Book without counts. The claim stands as a checked finding about the repository.",
+   "title": "Wheaton's stated project-inventory figures held against the repository as verified on 2026-07-19.",
+   "statement": "The Wheaton case study's stated figures, 1,124 transactions and 718 individuals, matched the project repository when the figures verification checked them on 2026-07-19. Checked against the seven-chapter deliverable state of 2026-07-25, neither figure was reported there any longer and the deliverable named the Wheaton Day Book without counts. The four-chapter text of 2026-07-31 carries no counts at all, and the assertion stands as vault-internal checked material about the repository.",
    "status": "grounded",
    "topics": [
     "Evidence"
@@ -3944,7 +3944,7 @@
   {
    "slug": "zbz-commit-count-2026-07-19",
    "title": "The ZBZ repository shows 305 commits spanning 2026-01-29 to 2026-07-09 as verified on 2026-07-19.",
-   "statement": "As verified on 2026-07-19, the ZBZ repository shows 305 commits spanning 2026-01-29 to 2026-07-09, a wider range than the paper's 128 commits over six weeks. Checked against the deliverable on 2026-07-25, no commit count is reported there any longer; the claim stands as a checked finding about the repository.",
+   "statement": "As verified on 2026-07-19, the ZBZ repository shows 305 commits spanning 2026-01-29 to 2026-07-09, a wider range than the 128 commits over six weeks the paper's project inventory then carried. Checked against the seven-chapter deliverable state of 2026-07-25, no commit count was reported there any longer. The four-chapter text of 2026-07-31 carries no counts at all, and the assertion stands as vault-internal checked material about the repository.",
    "status": "grounded",
    "topics": [
     "Evidence"
@@ -3960,8 +3960,8 @@
   },
   {
    "slug": "zbz-figures-verified-2026-07-19",
-   "title": "ZBZ's stated Section 5 volume figures held against the repository as verified on 2026-07-19.",
-   "statement": "The ZBZ case study's stated volume figures held against the project repository when the figures verification checked them on 2026-07-19, covering 286 PDFs, about 4,150 pages at an actual 4,117, and more than 30 Python scripts at an actual 98. Checked against the deliverable on 2026-07-25, the 286 PDFs and the approximately 4,150 pages are still reported there, while the script count is not; for that figure the claim stands as a checked finding about the repository.",
+   "title": "ZBZ's stated project-inventory volume figures held against the repository as verified on 2026-07-19.",
+   "statement": "The ZBZ case study's stated volume figures held against the project repository when the figures verification checked them on 2026-07-19, covering 286 PDFs, about 4,150 pages at an actual 4,117, and more than 30 Python scripts at an actual 98. Checked against the seven-chapter deliverable state of 2026-07-25, the 286 PDFs and the approximately 4,150 pages were still reported there, while the script count was not. The four-chapter text of 2026-07-31 carries no counts at all, and the assertion stands as vault-internal checked material about the repository.",
    "status": "grounded",
    "topics": [
     "Evidence"
@@ -3978,7 +3978,7 @@
   {
    "slug": "zbz-knowledge-doc-count-2026-07-19",
    "title": "The ZBZ knowledge base holds 13 content documents plus an index as verified on 2026-07-19.",
-   "statement": "As verified on 2026-07-19, the ZBZ knowledge base holds 13 content documents plus an index, and the 3 Action Documents the paper names were not found in the repository. Checked against the deliverable on 2026-07-25, neither a knowledge document count nor the Action Documents are reported there any longer; the claim stands as a checked finding about the repository.",
+   "statement": "As verified on 2026-07-19, the ZBZ knowledge base holds 13 content documents plus an index, and the 3 Action Documents the paper's project inventory then named were not found in the repository. Checked against the seven-chapter deliverable state of 2026-07-25, neither a knowledge document count nor the Action Documents were reported there any longer. The four-chapter text of 2026-07-31 carries no counts at all, and the assertion stands as vault-internal checked material about the repository.",
    "status": "grounded",
    "topics": [
     "Evidence"

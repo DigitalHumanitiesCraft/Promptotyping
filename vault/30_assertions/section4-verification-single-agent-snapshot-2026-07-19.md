@@ -11,14 +11,14 @@ grounding:
 - '[[20_distillates/documents/verification-paper-figures-2026-07-19#^s24]]'
 - '[[20_distillates/documents/verification-paper-figures-2026-07-19#^s25]]'
 created: 2026-07-19
-updated: 2026-07-29
+updated: 2026-08-09
 ---
 
-# The Section 5 verification was a single-agent snapshot with test figures counted as source functions.
+# The figures verification of 2026-07-19 was a single-agent snapshot with test figures counted as source functions.
 
 ## Statement
 
-The figures verification ran as a single adversarial agent without a second independent pass, read repository states on 2026-07-19 via local clones, shallow clones, and the GitHub API so that later growth stays invisible to it, and counted test figures as test functions in source without executing a pytest collection. These bounds set how far its verdicts reach. The file name keeps the section number the evidence layer carried when the verification ran, so that existing anchors resolve.
+The figures verification ran as a single adversarial agent without a second independent pass, read repository states on 2026-07-19 via local clones, shallow clones, and the GitHub API so that later growth stays invisible to it, and counted test figures as test functions in source without executing a pytest collection. These bounds set how far its verdicts reach. The inventory the run checked left the manuscript with the four-chapter revision of 2026-07-31, and the record stands as vault-internal checked material. The file name keeps the section number the evidence layer carried when the verification ran, so that existing anchors resolve.
 
 ## Support
 
