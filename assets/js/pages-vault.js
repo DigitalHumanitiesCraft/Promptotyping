@@ -1,10 +1,10 @@
 /* Vault page. The Grounded Vault under the paper, read from the generated
    index data/vault.json (vault/tools/build_site_index.py). The page lists the
-   topic maps with their claims; a claim opens in the side panel with its
+   topic maps with their assertions; an assertion opens in the side panel with its
    statement and its grounding anchors, which link to the distillate Markdown in
    the repository.
 
-   A second view draws the same grounding chain as a network, claim to
+   A second view draws the same grounding chain as a network, assertion to
    distillate to source, one topic at a time. The list stays the primary form
    and the default; the network answers what rests on what and nothing else. */
 
@@ -18,7 +18,7 @@
     return String(name).replace(/([a-z])([A-Z])/g, "$1 $2");
   }
 
-  var vaultClaimsBySlug = {};
+  var vaultAssertionsBySlug = {};
   var vaultDistillatesBySlug = {};
   var vaultSourcesBySlug = {};
   var vaultTopics = [];
@@ -30,7 +30,7 @@
      scrolls, which is the whole of the pan. */
 
   var COLUMNS = [
-    { key: "claim", label: "Claims", width: 280, chars: 42 },
+    { key: "assertion", label: "Assertions", width: 280, chars: 42 },
     { key: "distillate", label: "Distillates", width: 190, chars: 28 },
     { key: "source", label: "Sources", width: 190, chars: 28 }
   ];
@@ -55,15 +55,15 @@
   }
 
   /* Build the three columns and the two edge sets of one topic. Column order is
-     first appearance walking the claims in the order their topic map lists
+     first appearance walking the assertions in the order their topic map lists
      them, which keeps the lines largely monotone without a layout pass. */
   function buildGraphModel(topic) {
     var columns = [[], [], []];
     var edges = [];
-    var index = { claim: {}, distillate: {}, source: {} };
+    var index = { assertion: {}, distillate: {}, source: {} };
 
     function place(kind, slug, node) {
-      var col = kind === "claim" ? 0 : (kind === "distillate" ? 1 : 2);
+      var col = kind === "assertion" ? 0 : (kind === "distillate" ? 1 : 2);
       if (!(slug in index[kind])) {
         index[kind][slug] = columns[col].length;
         node.key = kind + ":" + slug;
@@ -74,16 +74,16 @@
       return index[kind][slug];
     }
 
-    (topic.claims || []).forEach(function (slug) {
-      var claim = vaultClaimsBySlug[slug];
-      if (!claim) {
+    (topic.assertions || []).forEach(function (slug) {
+      var assertion = vaultAssertionsBySlug[slug];
+      if (!assertion) {
         return;
       }
-      place("claim", slug, { slug: slug, label: claim.title, title: claim.title,
-        note: "Claim, status " + claim.status });
+      place("assertion", slug, { slug: slug, label: assertion.title, title: assertion.title,
+        note: "Assertion, status " + assertion.status });
       var seen = {};
-      claim.grounding.forEach(function (g) {
-        // Several statements of one distillate carry one claim; the network
+      assertion.grounding.forEach(function (g) {
+        // Several statements of one distillate carry one assertion; the network
         // asks what rests on what, so they are one line.
         if (seen[g.distillate]) {
           return;
@@ -97,7 +97,7 @@
           note: "Distillate",
           href: dist ? dist.path : ""
         });
-        edges.push({ a: "claim:" + slug, b: "distillate:" + g.distillate });
+        edges.push({ a: "assertion:" + slug, b: "distillate:" + g.distillate });
         var source = dist && dist.source ? vaultSourcesBySlug[dist.source] : null;
         if (!source) {
           return;
@@ -169,10 +169,10 @@
       return col.map(function (node) {
         var x = columnX(ci);
         var y = nodeY(node.row);
-        // A claim addresses its own list entry; the click handler switches back
+        // An assertion addresses its own list entry; the click handler switches back
         // to the list, which is the state a #vault-{slug} link resolves in.
-        var href = node.kind === "claim" ? "#vault-" + node.slug : node.href;
-        var external = node.kind !== "claim" && href
+        var href = node.kind === "assertion" ? "#vault-" + node.slug : node.href;
+        var external = node.kind !== "assertion" && href
           ? ' target="_blank" rel="noopener"' : "";
         var open = href
           ? '<a class="vg-node vg-' + node.kind + '" href="' + A.escapeHtml(href) + '"' +
@@ -290,10 +290,10 @@
     setDetail(node.getAttribute("aria-label") || "");
   }
 
-  /* A claim node leads to the claim in the list, which is where the published
+  /* An assertion node leads to the assertion in the list, which is where the published
      address #vault-{slug} resolves. */
-  function goToClaim(slug) {
-    if (!vaultClaimsBySlug[slug]) {
+  function goToAssertion(slug) {
+    if (!vaultAssertionsBySlug[slug]) {
       return;
     }
     setView("list");
@@ -301,7 +301,7 @@
     if (el) {
       el.scrollIntoView();
     }
-    openVaultClaim(slug);
+    openVaultAssertion(slug);
     A.setHashSilently("vault-" + slug);
   }
 
@@ -317,10 +317,10 @@
         showTopic(chip.getAttribute("data-topic"));
         return;
       }
-      var node = ev.target.closest(".vg-claim");
+      var node = ev.target.closest(".vg-assertion");
       if (node) {
         ev.preventDefault();
-        goToClaim(node.getAttribute("data-slug"));
+        goToAssertion(node.getAttribute("data-slug"));
       }
     });
     // One handler per pointer move: the node under the pointer, or nothing when
@@ -343,7 +343,7 @@
     // to carry the scroll itself.
     window.addEventListener("hashchange", function () {
       var hash = window.location.hash.replace(/^#/, "");
-      if (hash.indexOf("vault-") !== 0 || !vaultClaimsBySlug[hash.slice(6)]) {
+      if (hash.indexOf("vault-") !== 0 || !vaultAssertionsBySlug[hash.slice(6)]) {
         return;
       }
       if (setView("list")) {
@@ -364,28 +364,28 @@
     }
     return A.fetchJson("data/vault.json")
       .then(function (data) {
-        (data.claims || []).forEach(function (c) { vaultClaimsBySlug[c.slug] = c; });
+        (data.assertions || []).forEach(function (c) { vaultAssertionsBySlug[c.slug] = c; });
         (data.distillates || []).forEach(function (d) { vaultDistillatesBySlug[d.slug] = d; });
         (data.sources || []).forEach(function (s) { vaultSourcesBySlug[s.slug] = s; });
         vaultTopics = data.topics || [];
 
         var blocks = vaultTopics.map(function (topic) {
-          var items = topic.claims.map(function (slug) {
-            var claim = vaultClaimsBySlug[slug];
-            if (!claim) {
+          var items = topic.assertions.map(function (slug) {
+            var assertion = vaultAssertionsBySlug[slug];
+            if (!assertion) {
               return "";
             }
-            return '<li class="vault-claim-item" id="vault-' + slug + '">' +
-              '<button type="button" class="vault-claim" data-claim="' + slug + '">' +
-              A.escapeHtml(claim.title) + "</button>" +
-              '<span class="vault-claim-meta">' + claim.grounding.length +
-              (claim.grounding.length === 1 ? " anchor" : " anchors") + "</span></li>";
+            return '<li class="vault-assertion-item" id="vault-' + slug + '">' +
+              '<button type="button" class="vault-assertion" data-assertion="' + slug + '">' +
+              A.escapeHtml(assertion.title) + "</button>" +
+              '<span class="vault-assertion-meta">' + assertion.grounding.length +
+              (assertion.grounding.length === 1 ? " anchor" : " anchors") + "</span></li>";
           }).join("");
           return '<section class="vault-topic" id="vault-topic-' +
             topic.topic.toLowerCase() + '">' +
             "<h3>" + A.escapeHtml(topicLabel(topic.topic)) + "</h3>" +
             '<p class="vault-topic-desc">' + A.escapeHtml(topic.description) + "</p>" +
-            '<ul class="vault-claim-list">' + items + "</ul></section>";
+            '<ul class="vault-assertion-list">' + items + "</ul></section>";
         }).join("");
 
         var topicChips = vaultTopics.map(function (topic) {
@@ -398,9 +398,9 @@
         el.innerHTML =
           "<h1>Vault</h1>" +
           "<p>The evidence layer under the paper. Sources are condensed into distillates " +
-          "of quotation-checked single statements, and the claims that the paper's " +
+          "of quotation-checked single statements, and the assertions that the paper's " +
           "load-bearing sentences rest on are built from those statements. The anchors " +
-          "resolve downwards only, from the assertion to the source. A claim opens in the " +
+          "resolve downwards only, from the assertion to the source. An assertion opens in the " +
           "side panel with its statement and its anchors.</p>" +
           '<p class="vault-repo-note"><a href="vault/" target="_blank" rel="noopener">' +
           "Vault in the repository</a></p>" +
@@ -412,16 +412,16 @@
           '<div class="vault-topics" id="vault-list">' + blocks + "</div>" +
           '<div class="vault-graph-panel" id="vault-network" hidden>' +
           '<div class="vault-graph-topics">' + topicChips + "</div>" +
-          '<p class="vault-graph-legend">Every line is a grounding anchor. A claim rests ' +
+          '<p class="vault-graph-legend">Every line is a grounding anchor. An assertion rests ' +
           "on the distillates it is anchored in, and a distillate condenses one source.</p>" +
           '<p class="vault-graph-detail" id="vault-graph-detail">' + DETAIL_REST + "</p>" +
           '<div class="vault-graph" id="vault-graph-canvas" tabindex="0" role="group" ' +
           'aria-label="Grounding network, scrollable"></div></div>';
 
         el.addEventListener("click", function (ev) {
-          var btn = ev.target.closest(".vault-claim");
+          var btn = ev.target.closest(".vault-assertion");
           if (btn) {
-            openVaultClaim(btn.getAttribute("data-claim"));
+            openVaultAssertion(btn.getAttribute("data-assertion"));
           }
         });
         wireGraph(el);
@@ -431,12 +431,12 @@
       });
   }
 
-  function openVaultClaim(slug) {
-    var claim = vaultClaimsBySlug[slug];
-    if (!claim) {
+  function openVaultAssertion(slug) {
+    var assertion = vaultAssertionsBySlug[slug];
+    if (!assertion) {
       return;
     }
-    var anchors = claim.grounding.map(function (g) {
+    var anchors = assertion.grounding.map(function (g) {
       var dist = vaultDistillatesBySlug[g.distillate];
       var label = dist ? dist.title : g.distillate;
       var href = dist ? dist.path : null;
@@ -446,15 +446,15 @@
         : A.escapeHtml(label)) + stmt + "</li>";
     }).join("");
 
-    var contested = claim.contestedWith.length
+    var contested = assertion.contestedWith.length
       ? '<p class="vault-panel-contested">Contested with ' +
-        claim.contestedWith.map(A.escapeHtml).join(", ") + "</p>"
+        assertion.contestedWith.map(A.escapeHtml).join(", ") + "</p>"
       : "";
 
-    A.openSidePanel(claim.title,
-      '<p class="vault-panel-status">Status ' + A.escapeHtml(claim.status) +
-      (claim.topics.length ? " &middot; " + claim.topics.map(A.escapeHtml).join(", ") : "") + "</p>" +
-      "<p>" + A.escapeHtml(claim.statement) + "</p>" +
+    A.openSidePanel(assertion.title,
+      '<p class="vault-panel-status">Status ' + A.escapeHtml(assertion.status) +
+      (assertion.topics.length ? " &middot; " + assertion.topics.map(A.escapeHtml).join(", ") : "") + "</p>" +
+      "<p>" + A.escapeHtml(assertion.statement) + "</p>" +
       contested +
       "<h3>Grounding</h3><ul class=\"vault-anchor-list\">" + anchors + "</ul>");
   }

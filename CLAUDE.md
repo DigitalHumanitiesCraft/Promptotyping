@@ -49,7 +49,7 @@ Die Abbildungen des Papers liegen unter `assets/figures/`; der Text bindet seit 
 
 `assets/promptotyping-logo.png` bleibt erhalten. `_content/` und `data/` werden in den Implementierungs-Sprints angelegt.
 
-Der Ordner `vault/` ist eine Instanz des Grounded-Vault-Templates (`DigitalHumanitiesCraft/grounded-vault`) und verankert die tragenden Claims des Papers in `knowledge/paper.md` quellenfest. Für jede Arbeit in `vault/` gilt dessen eigener Action-Layer `vault/CLAUDE.md`; die Python-Werkzeuge unter `vault/tools/` gehören zum Vault und sind die zulässigen Ausnahmen von der No-Build-Regel unten. `validate.py` prüft den Vault. `build_site_index.py` erzeugt `data/vault.json` für die Vault-Ansicht der Site; das Ergebnis wird committet, die Site holt zur Laufzeit eine statische Datei, und ein Build-Schritt zur Auslieferzeit entsteht nicht. Wer die Claim-Schicht ändert, führt das Skript nach.
+Der Ordner `vault/` ist eine Instanz des Grounded-Vault-Templates (`DigitalHumanitiesCraft/grounded-vault`) und verankert die tragenden Claims des Papers in `knowledge/paper.md` quellenfest. Für jede Arbeit in `vault/` gilt dessen eigener Action-Layer `vault/CLAUDE.md`; die Python-Werkzeuge unter `vault/tools/` gehören zum Vault und sind die zulässigen Ausnahmen von der No-Build-Regel unten. `validate.py` prüft den Vault. `build_site_index.py` erzeugt `data/vault.json` für die Vault-Ansicht der Site; das Ergebnis wird committet, die Site holt zur Laufzeit eine statische Datei, und ein Build-Schritt zur Auslieferzeit entsteht nicht. Wer die Assertion-Schicht (bis August 2026 Claim-Schicht) ändert, führt das Skript nach.
 
 ## Tech-Stack-Regeln
 
@@ -78,7 +78,7 @@ Die nicht aktiven Seiten bleiben als `display: none` im DOM. Das ist die Bedingu
 - Praxis-Anker entstehen zur Laufzeit aus den Überschriften. Wer eine Überschrift übersetzt oder umformuliert, verschiebt damit ihre Adresse; sechs Slugs sind am 2026-07-26 gewandert und werden von `PRAXIS_ALIASES` in `assets/js/pages-content.js` am Leben gehalten. Jede weitere Änderung einer ankertragenden Überschrift braucht denselben Alias.
 - Konzepte: `#konzept-{name}` (z.B. `#konzept-eil`, `#konzept-asymmetric-amplification`)
 - Case Studies: `#case-{name}` (z.B. `#case-herdata`, `#case-klawiter-rescue`)
-- Vault: `#vault` für die Ansicht, `#vault-{claim-slug}` für einen einzelnen Claim; Subpath `/vault` und `/vault/{claim-slug}`. Die Slugs sind die Dateinamen unter `vault/20_claims/`.
+- Vault: `#vault` für die Ansicht, `#vault-{assertion-slug}` für eine einzelne Assertion (bis August 2026 Claim); Subpath `/vault` und `/vault/{assertion-slug}`. Die Slugs sind die Dateinamen unter `vault/30_assertions/` und haben die Umbenennung unverändert überlebt, publizierte Anker lösen weiter auf.
 - Spezifikation: `#specification`, Subpath `/specification` (A32). Die fünf Teile sind Sektionen dieser Seite und behalten ihre Adressen, `#anwendung`, `#vorlagen`, `#konvention-v0.1`, `#artefakt`, `#verifikation` samt den gleichlautenden Subpfaden.
 - Konvention: `#konvention-v0.1`
 - Glossar: `#glossar`

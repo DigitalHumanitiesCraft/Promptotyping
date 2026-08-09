@@ -1,6 +1,6 @@
 {
  "_meta": {
-  "beschreibung": "Claim-Schicht des Grounded Vault unter dem Paper. Erzeugt aus vault/20_claims, vault/10_distillates, vault/references und vault/00_representation durch vault/tools/build_site_index.py; nicht von Hand pflegen.",
+  "beschreibung": "Assertion-Schicht des Grounded Vault unter dem Paper. Erzeugt aus vault/30_assertions, vault/20_distillates, vault/references und vault/10_markdown durch vault/tools/build_site_index.py; nicht von Hand pflegen.",
   "quelle": "vault/",
   "generator": "vault/tools/build_site_index.py"
  },
@@ -10,7 +10,7 @@
    "topic": "ArtefactVerification",
    "title": "MOC: ArtefactVerification",
    "description": "Added 2026-07-29 from the intake on TEI-encoding evaluation, the external carriers for the layering of Table 2 and for the state of the benchmark question:",
-   "claims": [
+   "assertions": [
     "ssh-open-marketplace-models-workflows-as-step-sequences",
     "client-side-provenance-tool-is-a-precedent-for-server-free-artefacts",
     "tadirah-most-adopted-yet-under-maintained",
@@ -48,7 +48,7 @@
    "topic": "Concepts",
    "title": "MOC: Concepts",
    "description": "Added 2026-07-26 from the site-vocabulary literature sweep (lane C1):",
-   "claims": [
+   "assertions": [
     "deck-characterises-llms-as-jagged-alien",
     "deck-derives-context-and-verification-from-llm-profile",
     "dissertation-dikw-cognitive-agent-premise",
@@ -70,7 +70,7 @@
    "topic": "Evidence",
    "title": "MOC: Evidence",
    "description": "### What the record does not carry",
-   "claims": [
+   "assertions": [
     "wheaton-figures-verified-2026-07-19",
     "hans-gross-figures-verified-2026-07-19",
     "correspexplorer-figures-verified-2026-07-19",
@@ -104,7 +104,7 @@
    "topic": "Frame",
    "title": "MOC: Frame",
    "description": "Added 2026-07-27, the first peer-reviewed carrier for the agent term the Agentic Engineering passage had set on its own authority:",
-   "claims": [
+   "assertions": [
     "fair-emphasises-machine-actionability-of-data",
     "making-source-data-machine-addressable-is-interpretive-modelling",
     "schoech-distinguishes-smart-and-big-data",
@@ -151,7 +151,7 @@
    "topic": "Genealogy",
    "title": "MOC: Genealogy",
    "description": "Added 2026-07-27 with the dissertation re-read for the paper's genealogical opening:",
-   "claims": [
+   "assertions": [
     "dissertation-requirements-from-deep-dive-sessions",
     "dissertation-requirements-feed-built-artifacts",
     "bookkeeping-ontology-session-driven",
@@ -171,7 +171,7 @@
    "topic": "Limitations",
    "title": "MOC: Limitations",
    "description": "Added from the video distillates of 2026-07-25:",
-   "claims": [
+   "assertions": [
     "section4-verification-single-agent-snapshot-2026-07-19",
     "duration-cost-figures-experiential",
     "well-modelled-data-does-not-discharge-critical-data-work",
@@ -188,7 +188,7 @@
    "topic": "Method",
    "title": "MOC: Method",
    "description": "Added 2026-07-26 from the site-vocabulary literature sweep (lane C1), which tests whether five site coinages attach to established names:",
-   "claims": [
+   "assertions": [
     "promptotyping-documentation-over-software",
     "promptotyping-documents-form-freedom",
     "frontmatter-core-reduced-to-six-fields",
@@ -220,7 +220,7 @@
    ]
   }
  ],
- "claims": [
+ "assertions": [
   {
    "slug": "a-prototype-can-embody-a-peer-reviewable-argument",
    "title": "A digital prototype can embody a contestable argument and stand as peer-reviewable research.",
@@ -233,17 +233,17 @@
    "grounding": [
     {
      "distillate": "galey-2010-how-a-prototype-argues",
-     "path": "10_distillates/publications/galey-2010-how-a-prototype-argues",
+     "path": "20_distillates/publications/galey-2010-how-a-prototype-argues",
      "statement": "s1"
     },
     {
      "distillate": "galey-2010-how-a-prototype-argues",
-     "path": "10_distillates/publications/galey-2010-how-a-prototype-argues",
+     "path": "20_distillates/publications/galey-2010-how-a-prototype-argues",
      "statement": "s2"
     },
     {
      "distillate": "galey-2010-how-a-prototype-argues",
-     "path": "10_distillates/publications/galey-2010-how-a-prototype-argues",
+     "path": "20_distillates/publications/galey-2010-how-a-prototype-argues",
      "statement": "s3"
     }
    ]
@@ -260,32 +260,32 @@
    "grounding": [
     {
      "distillate": "strutz-2025-hammer-purgstall-tei-dataset",
-     "path": "10_distillates/publications/strutz-2025-hammer-purgstall-tei-dataset",
+     "path": "20_distillates/publications/strutz-2025-hammer-purgstall-tei-dataset",
      "statement": "s1"
     },
     {
      "distillate": "strutz-2025-hammer-purgstall-tei-dataset",
-     "path": "10_distillates/publications/strutz-2025-hammer-purgstall-tei-dataset",
+     "path": "20_distillates/publications/strutz-2025-hammer-purgstall-tei-dataset",
      "statement": "s3"
     },
     {
      "distillate": "strutz-2025-hammer-purgstall-tei-dataset",
-     "path": "10_distillates/publications/strutz-2025-hammer-purgstall-tei-dataset",
+     "path": "20_distillates/publications/strutz-2025-hammer-purgstall-tei-dataset",
      "statement": "s4"
     },
     {
      "distillate": "strutz-2025-hammer-purgstall-tei-dataset",
-     "path": "10_distillates/publications/strutz-2025-hammer-purgstall-tei-dataset",
+     "path": "20_distillates/publications/strutz-2025-hammer-purgstall-tei-dataset",
      "statement": "s6"
     },
     {
      "distillate": "strutz-2026-tei-evaluation-framework",
-     "path": "10_distillates/publications/strutz-2026-tei-evaluation-framework",
+     "path": "20_distillates/publications/strutz-2026-tei-evaluation-framework",
      "statement": "s1"
     },
     {
      "distillate": "strutz-2026-tei-evaluation-framework",
-     "path": "10_distillates/publications/strutz-2026-tei-evaluation-framework",
+     "path": "20_distillates/publications/strutz-2026-tei-evaluation-framework",
      "statement": "s9"
     }
    ]
@@ -302,12 +302,12 @@
    "grounding": [
     {
      "distillate": "pollin-2024-workshopreihe",
-     "path": "10_distillates/publications/pollin-2024-workshopreihe",
+     "path": "20_distillates/publications/pollin-2024-workshopreihe",
      "statement": "s1"
     },
     {
      "distillate": "pollin-2024-workshopreihe",
-     "path": "10_distillates/publications/pollin-2024-workshopreihe",
+     "path": "20_distillates/publications/pollin-2024-workshopreihe",
      "statement": "s2"
     }
    ]
@@ -324,17 +324,17 @@
    "grounding": [
     {
      "distillate": "lucassen-2016-quality-user-story",
-     "path": "10_distillates/publications/lucassen-2016-quality-user-story",
+     "path": "20_distillates/publications/lucassen-2016-quality-user-story",
      "statement": "s7"
     },
     {
      "distillate": "lucassen-2016-quality-user-story",
-     "path": "10_distillates/publications/lucassen-2016-quality-user-story",
+     "path": "20_distillates/publications/lucassen-2016-quality-user-story",
      "statement": "s8"
     },
     {
      "distillate": "lucassen-2016-quality-user-story",
-     "path": "10_distillates/publications/lucassen-2016-quality-user-story",
+     "path": "20_distillates/publications/lucassen-2016-quality-user-story",
      "statement": "s9"
     }
    ]
@@ -351,7 +351,7 @@
    "grounding": [
     {
      "distillate": "verification-paper-figures-2026-07-19",
-     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
      "statement": "s6"
     }
    ]
@@ -368,22 +368,22 @@
    "grounding": [
     {
      "distillate": "pollin-2025b-dissertation",
-     "path": "10_distillates/publications/pollin-2025b-dissertation",
+     "path": "20_distillates/publications/pollin-2025b-dissertation",
      "statement": "s7"
     },
     {
      "distillate": "pollin-2025b-dissertation",
-     "path": "10_distillates/publications/pollin-2025b-dissertation",
+     "path": "20_distillates/publications/pollin-2025b-dissertation",
      "statement": "s8"
     },
     {
      "distillate": "pollin-2025b-dissertation",
-     "path": "10_distillates/publications/pollin-2025b-dissertation",
+     "path": "20_distillates/publications/pollin-2025b-dissertation",
      "statement": "s9"
     },
     {
      "distillate": "pollin-2025b-dissertation",
-     "path": "10_distillates/publications/pollin-2025b-dissertation",
+     "path": "20_distillates/publications/pollin-2025b-dissertation",
      "statement": "s10"
     }
    ]
@@ -400,12 +400,12 @@
    "grounding": [
     {
      "distillate": "star-1989-boundary-objects",
-     "path": "10_distillates/publications/star-1989-boundary-objects",
+     "path": "20_distillates/publications/star-1989-boundary-objects",
      "statement": "s1"
     },
     {
      "distillate": "star-1989-boundary-objects",
-     "path": "10_distillates/publications/star-1989-boundary-objects",
+     "path": "20_distillates/publications/star-1989-boundary-objects",
      "statement": "s3"
     }
    ]
@@ -422,12 +422,12 @@
    "grounding": [
     {
      "distillate": "mariani-2025-prov-a",
-     "path": "10_distillates/publications/mariani-2025-prov-a",
+     "path": "20_distillates/publications/mariani-2025-prov-a",
      "statement": "s1"
     },
     {
      "distillate": "mariani-2025-prov-a",
-     "path": "10_distillates/publications/mariani-2025-prov-a",
+     "path": "20_distillates/publications/mariani-2025-prov-a",
      "statement": "s2"
     }
    ]
@@ -444,12 +444,12 @@
    "grounding": [
     {
      "distillate": "collectionsasdata-2019-santa-barbara",
-     "path": "10_distillates/publications/collectionsasdata-2019-santa-barbara",
+     "path": "20_distillates/publications/collectionsasdata-2019-santa-barbara",
      "statement": "s2"
     },
     {
      "distillate": "collectionsasdata-2019-santa-barbara",
-     "path": "10_distillates/publications/collectionsasdata-2019-santa-barbara",
+     "path": "20_distillates/publications/collectionsasdata-2019-santa-barbara",
      "statement": "s3"
     }
    ]
@@ -466,7 +466,7 @@
    "grounding": [
     {
      "distillate": "mayr-2021-triptych-conceptual-modeling",
-     "path": "10_distillates/publications/mayr-2021-triptych-conceptual-modeling",
+     "path": "20_distillates/publications/mayr-2021-triptych-conceptual-modeling",
      "statement": "s2"
     }
    ]
@@ -483,12 +483,12 @@
    "grounding": [
     {
      "distillate": "mei-2025-context-engineering",
-     "path": "10_distillates/publications/mei-2025-context-engineering",
+     "path": "20_distillates/publications/mei-2025-context-engineering",
      "statement": "s1"
     },
     {
      "distillate": "mei-2025-context-engineering",
-     "path": "10_distillates/publications/mei-2025-context-engineering",
+     "path": "20_distillates/publications/mei-2025-context-engineering",
      "statement": "s2"
     }
    ]
@@ -505,17 +505,17 @@
    "grounding": [
     {
      "distillate": "hong-2025-context-rot",
-     "path": "10_distillates/publications/hong-2025-context-rot",
+     "path": "20_distillates/publications/hong-2025-context-rot",
      "statement": "s2"
     },
     {
      "distillate": "hong-2025-context-rot",
-     "path": "10_distillates/publications/hong-2025-context-rot",
+     "path": "20_distillates/publications/hong-2025-context-rot",
      "statement": "s3"
     },
     {
      "distillate": "hong-2025-context-rot",
-     "path": "10_distillates/publications/hong-2025-context-rot",
+     "path": "20_distillates/publications/hong-2025-context-rot",
      "statement": "s4"
     }
    ]
@@ -532,7 +532,7 @@
    "grounding": [
     {
      "distillate": "verification-paper-figures-2026-07-19",
-     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
      "statement": "s5"
     }
    ]
@@ -549,7 +549,7 @@
    "grounding": [
     {
      "distillate": "roberts-2007-coordinated-multiple-views",
-     "path": "10_distillates/publications/roberts-2007-coordinated-multiple-views",
+     "path": "20_distillates/publications/roberts-2007-coordinated-multiple-views",
      "statement": "s1"
     }
    ]
@@ -566,7 +566,7 @@
    "grounding": [
     {
      "distillate": "verification-paper-figures-2026-07-19",
-     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
      "statement": "s3"
     }
    ]
@@ -583,7 +583,7 @@
    "grounding": [
     {
      "distillate": "verification-paper-figures-2026-07-19",
-     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
      "statement": "s18"
     }
    ]
@@ -600,17 +600,17 @@
    "grounding": [
     {
      "distillate": "pollin-2025c-critical-vibing",
-     "path": "10_distillates/publications/pollin-2025c-critical-vibing",
+     "path": "20_distillates/publications/pollin-2025c-critical-vibing",
      "statement": "s2"
     },
     {
      "distillate": "pollin-2025c-critical-vibing",
-     "path": "10_distillates/publications/pollin-2025c-critical-vibing",
+     "path": "20_distillates/publications/pollin-2025c-critical-vibing",
      "statement": "s3"
     },
     {
      "distillate": "pollin-2025c-critical-vibing",
-     "path": "10_distillates/publications/pollin-2025c-critical-vibing",
+     "path": "20_distillates/publications/pollin-2025c-critical-vibing",
      "statement": "s4"
     }
    ]
@@ -627,22 +627,22 @@
    "grounding": [
     {
      "distillate": "ke-master-deck-2026-07-19",
-     "path": "10_distillates/documents/ke-master-deck-2026-07-19",
+     "path": "20_distillates/documents/ke-master-deck-2026-07-19",
      "statement": "s1"
     },
     {
      "distillate": "ke-master-deck-2026-07-19",
-     "path": "10_distillates/documents/ke-master-deck-2026-07-19",
+     "path": "20_distillates/documents/ke-master-deck-2026-07-19",
      "statement": "s2"
     },
     {
      "distillate": "ke-master-deck-2026-07-19",
-     "path": "10_distillates/documents/ke-master-deck-2026-07-19",
+     "path": "20_distillates/documents/ke-master-deck-2026-07-19",
      "statement": "s3"
     },
     {
      "distillate": "ke-master-deck-2026-07-19",
-     "path": "10_distillates/documents/ke-master-deck-2026-07-19",
+     "path": "20_distillates/documents/ke-master-deck-2026-07-19",
      "statement": "s4"
     }
    ]
@@ -659,12 +659,12 @@
    "grounding": [
     {
      "distillate": "ke-master-deck-2026-07-19",
-     "path": "10_distillates/documents/ke-master-deck-2026-07-19",
+     "path": "20_distillates/documents/ke-master-deck-2026-07-19",
      "statement": "s2"
     },
     {
      "distillate": "ke-master-deck-2026-07-19",
-     "path": "10_distillates/documents/ke-master-deck-2026-07-19",
+     "path": "20_distillates/documents/ke-master-deck-2026-07-19",
      "statement": "s5"
     }
    ]
@@ -681,12 +681,12 @@
    "grounding": [
     {
      "distillate": "pollin-2019-depcha-bookkeeping",
-     "path": "10_distillates/publications/pollin-2019-depcha-bookkeeping",
+     "path": "20_distillates/publications/pollin-2019-depcha-bookkeeping",
      "statement": "s2"
     },
     {
      "distillate": "pollin-2019-depcha-bookkeeping",
-     "path": "10_distillates/publications/pollin-2019-depcha-bookkeeping",
+     "path": "20_distillates/publications/pollin-2019-depcha-bookkeeping",
      "statement": "s3"
     }
    ]
@@ -703,12 +703,12 @@
    "grounding": [
     {
      "distillate": "edmond-2005-professional-intermediary",
-     "path": "10_distillates/publications/edmond-2005-professional-intermediary",
+     "path": "20_distillates/publications/edmond-2005-professional-intermediary",
      "statement": "s1"
     },
     {
      "distillate": "edmond-2005-professional-intermediary",
-     "path": "10_distillates/publications/edmond-2005-professional-intermediary",
+     "path": "20_distillates/publications/edmond-2005-professional-intermediary",
      "statement": "s2"
     }
    ]
@@ -725,12 +725,12 @@
    "grounding": [
     {
      "distillate": "siemens-2009-reply-all-teams",
-     "path": "10_distillates/publications/siemens-2009-reply-all-teams",
+     "path": "20_distillates/publications/siemens-2009-reply-all-teams",
      "statement": "s1"
     },
     {
      "distillate": "siemens-2009-reply-all-teams",
-     "path": "10_distillates/publications/siemens-2009-reply-all-teams",
+     "path": "20_distillates/publications/siemens-2009-reply-all-teams",
      "statement": "s2"
     }
    ]
@@ -747,32 +747,32 @@
    "grounding": [
     {
      "distillate": "shanahan-2023-role-play",
-     "path": "10_distillates/publications/shanahan-2023-role-play",
+     "path": "20_distillates/publications/shanahan-2023-role-play",
      "statement": "s1"
     },
     {
      "distillate": "shanahan-2023-role-play",
-     "path": "10_distillates/publications/shanahan-2023-role-play",
+     "path": "20_distillates/publications/shanahan-2023-role-play",
      "statement": "s2"
     },
     {
      "distillate": "shanahan-2023-role-play",
-     "path": "10_distillates/publications/shanahan-2023-role-play",
+     "path": "20_distillates/publications/shanahan-2023-role-play",
      "statement": "s3"
     },
     {
      "distillate": "shanahan-2023-role-play",
-     "path": "10_distillates/publications/shanahan-2023-role-play",
+     "path": "20_distillates/publications/shanahan-2023-role-play",
      "statement": "s4"
     },
     {
      "distillate": "shanahan-2023-role-play",
-     "path": "10_distillates/publications/shanahan-2023-role-play",
+     "path": "20_distillates/publications/shanahan-2023-role-play",
      "statement": "s5"
     },
     {
      "distillate": "shanahan-2023-role-play",
-     "path": "10_distillates/publications/shanahan-2023-role-play",
+     "path": "20_distillates/publications/shanahan-2023-role-play",
      "statement": "s6"
     }
    ]
@@ -789,37 +789,37 @@
    "grounding": [
     {
      "distillate": "procida-2024-diataxis",
-     "path": "10_distillates/publications/procida-2024-diataxis",
+     "path": "20_distillates/publications/procida-2024-diataxis",
      "statement": "s1"
     },
     {
      "distillate": "procida-2024-diataxis",
-     "path": "10_distillates/publications/procida-2024-diataxis",
+     "path": "20_distillates/publications/procida-2024-diataxis",
      "statement": "s2"
     },
     {
      "distillate": "procida-2024-diataxis",
-     "path": "10_distillates/publications/procida-2024-diataxis",
+     "path": "20_distillates/publications/procida-2024-diataxis",
      "statement": "s3"
     },
     {
      "distillate": "procida-2024-diataxis",
-     "path": "10_distillates/publications/procida-2024-diataxis",
+     "path": "20_distillates/publications/procida-2024-diataxis",
      "statement": "s4"
     },
     {
      "distillate": "procida-2024-diataxis",
-     "path": "10_distillates/publications/procida-2024-diataxis",
+     "path": "20_distillates/publications/procida-2024-diataxis",
      "statement": "s5"
     },
     {
      "distillate": "procida-2024-diataxis",
-     "path": "10_distillates/publications/procida-2024-diataxis",
+     "path": "20_distillates/publications/procida-2024-diataxis",
      "statement": "s6"
     },
     {
      "distillate": "procida-2024-diataxis",
-     "path": "10_distillates/publications/procida-2024-diataxis",
+     "path": "20_distillates/publications/procida-2024-diataxis",
      "statement": "s7"
     }
    ]
@@ -836,17 +836,17 @@
    "grounding": [
     {
      "distillate": "andorfer-2026-static-tei-editions",
-     "path": "10_distillates/publications/andorfer-2026-static-tei-editions",
+     "path": "20_distillates/publications/andorfer-2026-static-tei-editions",
      "statement": "s1"
     },
     {
      "distillate": "andorfer-2026-static-tei-editions",
-     "path": "10_distillates/publications/andorfer-2026-static-tei-editions",
+     "path": "20_distillates/publications/andorfer-2026-static-tei-editions",
      "statement": "s2"
     },
     {
      "distillate": "andorfer-2026-static-tei-editions",
-     "path": "10_distillates/publications/andorfer-2026-static-tei-editions",
+     "path": "20_distillates/publications/andorfer-2026-static-tei-editions",
      "statement": "s4"
     }
    ]
@@ -863,12 +863,12 @@
    "grounding": [
     {
      "distillate": "bleier-2018-editions-interfaces",
-     "path": "10_distillates/publications/bleier-2018-editions-interfaces",
+     "path": "20_distillates/publications/bleier-2018-editions-interfaces",
      "statement": "s1"
     },
     {
      "distillate": "bleier-2018-editions-interfaces",
-     "path": "10_distillates/publications/bleier-2018-editions-interfaces",
+     "path": "20_distillates/publications/bleier-2018-editions-interfaces",
      "statement": "s2"
     }
    ]
@@ -885,17 +885,17 @@
    "grounding": [
     {
      "distillate": "kemman-2021-trading-zones",
-     "path": "10_distillates/publications/kemman-2021-trading-zones",
+     "path": "20_distillates/publications/kemman-2021-trading-zones",
      "statement": "s1"
     },
     {
      "distillate": "kemman-2021-trading-zones",
-     "path": "10_distillates/publications/kemman-2021-trading-zones",
+     "path": "20_distillates/publications/kemman-2021-trading-zones",
      "statement": "s2"
     },
     {
      "distillate": "kemman-2021-trading-zones",
-     "path": "10_distillates/publications/kemman-2021-trading-zones",
+     "path": "20_distillates/publications/kemman-2021-trading-zones",
      "statement": "s3"
     }
    ]
@@ -912,17 +912,17 @@
    "grounding": [
     {
      "distillate": "koolen-2019-digital-tool-criticism",
-     "path": "10_distillates/publications/koolen-2019-digital-tool-criticism",
+     "path": "20_distillates/publications/koolen-2019-digital-tool-criticism",
      "statement": "s2"
     },
     {
      "distillate": "vanes-2018-tool-criticism",
-     "path": "10_distillates/publications/vanes-2018-tool-criticism",
+     "path": "20_distillates/publications/vanes-2018-tool-criticism",
      "statement": "s1"
     },
     {
      "distillate": "vanes-2018-tool-criticism",
-     "path": "10_distillates/publications/vanes-2018-tool-criticism",
+     "path": "20_distillates/publications/vanes-2018-tool-criticism",
      "statement": "s2"
     }
    ]
@@ -939,12 +939,12 @@
    "grounding": [
     {
      "distillate": "hinrichs-2019-sandcastles",
-     "path": "10_distillates/publications/hinrichs-2019-sandcastles",
+     "path": "20_distillates/publications/hinrichs-2019-sandcastles",
      "statement": "s3"
     },
     {
      "distillate": "hinrichs-2019-sandcastles",
-     "path": "10_distillates/publications/hinrichs-2019-sandcastles",
+     "path": "20_distillates/publications/hinrichs-2019-sandcastles",
      "statement": "s4"
     }
    ]
@@ -961,17 +961,17 @@
    "grounding": [
     {
      "distillate": "pollin-2025b-dissertation",
-     "path": "10_distillates/publications/pollin-2025b-dissertation",
+     "path": "20_distillates/publications/pollin-2025b-dissertation",
      "statement": "s11"
     },
     {
      "distillate": "pollin-2025b-dissertation",
-     "path": "10_distillates/publications/pollin-2025b-dissertation",
+     "path": "20_distillates/publications/pollin-2025b-dissertation",
      "statement": "s12"
     },
     {
      "distillate": "pollin-2025b-dissertation",
-     "path": "10_distillates/publications/pollin-2025b-dissertation",
+     "path": "20_distillates/publications/pollin-2025b-dissertation",
      "statement": "s13"
     }
    ]
@@ -988,12 +988,12 @@
    "grounding": [
     {
      "distillate": "pollin-2025b-dissertation",
-     "path": "10_distillates/publications/pollin-2025b-dissertation",
+     "path": "20_distillates/publications/pollin-2025b-dissertation",
      "statement": "s2"
     },
     {
      "distillate": "pollin-2025b-dissertation",
-     "path": "10_distillates/publications/pollin-2025b-dissertation",
+     "path": "20_distillates/publications/pollin-2025b-dissertation",
      "statement": "s5"
     }
    ]
@@ -1010,22 +1010,22 @@
    "grounding": [
     {
      "distillate": "pollin-2025b-dissertation",
-     "path": "10_distillates/publications/pollin-2025b-dissertation",
+     "path": "20_distillates/publications/pollin-2025b-dissertation",
      "statement": "s1"
     },
     {
      "distillate": "pollin-2025b-dissertation",
-     "path": "10_distillates/publications/pollin-2025b-dissertation",
+     "path": "20_distillates/publications/pollin-2025b-dissertation",
      "statement": "s3"
     },
     {
      "distillate": "pollin-2025b-dissertation",
-     "path": "10_distillates/publications/pollin-2025b-dissertation",
+     "path": "20_distillates/publications/pollin-2025b-dissertation",
      "statement": "s4"
     },
     {
      "distillate": "pollin-2025b-dissertation",
-     "path": "10_distillates/publications/pollin-2025b-dissertation",
+     "path": "20_distillates/publications/pollin-2025b-dissertation",
      "statement": "s6"
     }
    ]
@@ -1042,17 +1042,17 @@
    "grounding": [
     {
      "distillate": "schonhardt-2026-do-one-thing",
-     "path": "10_distillates/publications/schonhardt-2026-do-one-thing",
+     "path": "20_distillates/publications/schonhardt-2026-do-one-thing",
      "statement": "s1"
     },
     {
      "distillate": "schonhardt-2026-do-one-thing",
-     "path": "10_distillates/publications/schonhardt-2026-do-one-thing",
+     "path": "20_distillates/publications/schonhardt-2026-do-one-thing",
      "statement": "s2"
     },
     {
      "distillate": "schonhardt-2026-do-one-thing",
-     "path": "10_distillates/publications/schonhardt-2026-do-one-thing",
+     "path": "20_distillates/publications/schonhardt-2026-do-one-thing",
      "statement": "s3"
     }
    ]
@@ -1070,7 +1070,7 @@
    "grounding": [
     {
      "distillate": "verification-paper-figures-2026-07-19",
-     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
      "statement": "s22"
     }
    ]
@@ -1087,17 +1087,17 @@
    "grounding": [
     {
      "distillate": "pollin-2025a-when-it-was-2024",
-     "path": "10_distillates/publications/pollin-2025a-when-it-was-2024",
+     "path": "20_distillates/publications/pollin-2025a-when-it-was-2024",
      "statement": "s3"
     },
     {
      "distillate": "pollin-2025a-when-it-was-2024",
-     "path": "10_distillates/publications/pollin-2025a-when-it-was-2024",
+     "path": "20_distillates/publications/pollin-2025a-when-it-was-2024",
      "statement": "s4"
     },
     {
      "distillate": "pollin-2025a-when-it-was-2024",
-     "path": "10_distillates/publications/pollin-2025a-when-it-was-2024",
+     "path": "20_distillates/publications/pollin-2025a-when-it-was-2024",
      "statement": "s5"
     }
    ]
@@ -1114,17 +1114,17 @@
    "grounding": [
     {
      "distillate": "pierazzo-2015-digital-editing",
-     "path": "10_distillates/publications/pierazzo-2015-digital-editing",
+     "path": "20_distillates/publications/pierazzo-2015-digital-editing",
      "statement": "s1"
     },
     {
      "distillate": "pierazzo-2015-digital-editing",
-     "path": "10_distillates/publications/pierazzo-2015-digital-editing",
+     "path": "20_distillates/publications/pierazzo-2015-digital-editing",
      "statement": "s2"
     },
     {
      "distillate": "bleier-2018-editions-interfaces",
-     "path": "10_distillates/publications/bleier-2018-editions-interfaces",
+     "path": "20_distillates/publications/bleier-2018-editions-interfaces",
      "statement": "s3"
     }
    ]
@@ -1141,17 +1141,17 @@
    "grounding": [
     {
      "distillate": "holmes-2023-endings-principles",
-     "path": "10_distillates/publications/holmes-2023-endings-principles",
+     "path": "20_distillates/publications/holmes-2023-endings-principles",
      "statement": "s1"
     },
     {
      "distillate": "holmes-2023-endings-principles",
-     "path": "10_distillates/publications/holmes-2023-endings-principles",
+     "path": "20_distillates/publications/holmes-2023-endings-principles",
      "statement": "s2"
     },
     {
      "distillate": "holmes-2023-endings-principles",
-     "path": "10_distillates/publications/holmes-2023-endings-principles",
+     "path": "20_distillates/publications/holmes-2023-endings-principles",
      "statement": "s3"
     }
    ]
@@ -1168,12 +1168,12 @@
    "grounding": [
     {
      "distillate": "holmes-2023-endings-principles",
-     "path": "10_distillates/publications/holmes-2023-endings-principles",
+     "path": "20_distillates/publications/holmes-2023-endings-principles",
      "statement": "s4"
     },
     {
      "distillate": "holmes-2023-endings-principles",
-     "path": "10_distillates/publications/holmes-2023-endings-principles",
+     "path": "20_distillates/publications/holmes-2023-endings-principles",
      "statement": "s5"
     }
    ]
@@ -1190,12 +1190,12 @@
    "grounding": [
     {
      "distillate": "collins-1993-epistemic-forms",
-     "path": "10_distillates/publications/collins-1993-epistemic-forms",
+     "path": "20_distillates/publications/collins-1993-epistemic-forms",
      "statement": "s1"
     },
     {
      "distillate": "collins-1993-epistemic-forms",
-     "path": "10_distillates/publications/collins-1993-epistemic-forms",
+     "path": "20_distillates/publications/collins-1993-epistemic-forms",
      "statement": "s2"
     }
    ]
@@ -1212,12 +1212,12 @@
    "grounding": [
     {
      "distillate": "ruecker-2015-taxonomy-prototypes",
-     "path": "10_distillates/publications/ruecker-2015-taxonomy-prototypes",
+     "path": "20_distillates/publications/ruecker-2015-taxonomy-prototypes",
      "statement": "s1"
     },
     {
      "distillate": "ruecker-2015-taxonomy-prototypes",
-     "path": "10_distillates/publications/ruecker-2015-taxonomy-prototypes",
+     "path": "20_distillates/publications/ruecker-2015-taxonomy-prototypes",
      "statement": "s2"
     }
    ]
@@ -1235,12 +1235,12 @@
    "grounding": [
     {
      "distillate": "promptotyping-video-2-live-demo",
-     "path": "10_distillates/documents/promptotyping-video-2-live-demo",
+     "path": "20_distillates/documents/promptotyping-video-2-live-demo",
      "statement": "s32"
     },
     {
      "distillate": "promptotyping-video-2-live-demo",
-     "path": "10_distillates/documents/promptotyping-video-2-live-demo",
+     "path": "20_distillates/documents/promptotyping-video-2-live-demo",
      "statement": "s33"
     }
    ]
@@ -1257,17 +1257,17 @@
    "grounding": [
     {
      "distillate": "promptotyping-video-2-live-demo",
-     "path": "10_distillates/documents/promptotyping-video-2-live-demo",
+     "path": "20_distillates/documents/promptotyping-video-2-live-demo",
      "statement": "s26"
     },
     {
      "distillate": "promptotyping-video-2-live-demo",
-     "path": "10_distillates/documents/promptotyping-video-2-live-demo",
+     "path": "20_distillates/documents/promptotyping-video-2-live-demo",
      "statement": "s27"
     },
     {
      "distillate": "promptotyping-video-2-live-demo",
-     "path": "10_distillates/documents/promptotyping-video-2-live-demo",
+     "path": "20_distillates/documents/promptotyping-video-2-live-demo",
      "statement": "s39"
     }
    ]
@@ -1284,17 +1284,17 @@
    "grounding": [
     {
      "distillate": "windhager-2019-visualization-ch-collections",
-     "path": "10_distillates/publications/windhager-2019-visualization-ch-collections",
+     "path": "20_distillates/publications/windhager-2019-visualization-ch-collections",
      "statement": "s1"
     },
     {
      "distillate": "windhager-2019-visualization-ch-collections",
-     "path": "10_distillates/publications/windhager-2019-visualization-ch-collections",
+     "path": "20_distillates/publications/windhager-2019-visualization-ch-collections",
      "statement": "s2"
     },
     {
      "distillate": "windhager-2019-visualization-ch-collections",
-     "path": "10_distillates/publications/windhager-2019-visualization-ch-collections",
+     "path": "20_distillates/publications/windhager-2019-visualization-ch-collections",
      "statement": "s3"
     }
    ]
@@ -1311,12 +1311,12 @@
    "grounding": [
     {
      "distillate": "wilkinson-2016-fair-principles",
-     "path": "10_distillates/publications/wilkinson-2016-fair-principles",
+     "path": "20_distillates/publications/wilkinson-2016-fair-principles",
      "statement": "s3"
     },
     {
      "distillate": "wilkinson-2016-fair-principles",
-     "path": "10_distillates/publications/wilkinson-2016-fair-principles",
+     "path": "20_distillates/publications/wilkinson-2016-fair-principles",
      "statement": "s4"
     }
    ]
@@ -1333,12 +1333,12 @@
    "grounding": [
     {
      "distillate": "wilkinson-2016-fair-principles",
-     "path": "10_distillates/publications/wilkinson-2016-fair-principles",
+     "path": "20_distillates/publications/wilkinson-2016-fair-principles",
      "statement": "s1"
     },
     {
      "distillate": "wilkinson-2016-fair-principles",
-     "path": "10_distillates/publications/wilkinson-2016-fair-principles",
+     "path": "20_distillates/publications/wilkinson-2016-fair-principles",
      "statement": "s2"
     }
    ]
@@ -1355,12 +1355,12 @@
    "grounding": [
     {
      "distillate": "chuehong-2022-fair4rs",
-     "path": "10_distillates/publications/chuehong-2022-fair4rs",
+     "path": "20_distillates/publications/chuehong-2022-fair4rs",
      "statement": "s2"
     },
     {
      "distillate": "chuehong-2022-fair4rs",
-     "path": "10_distillates/publications/chuehong-2022-fair4rs",
+     "path": "20_distillates/publications/chuehong-2022-fair4rs",
      "statement": "s4"
     }
    ]
@@ -1377,7 +1377,7 @@
    "grounding": [
     {
      "distillate": "fanous-2025-syceval",
-     "path": "10_distillates/publications/fanous-2025-syceval",
+     "path": "20_distillates/publications/fanous-2025-syceval",
      "statement": "s2"
     }
    ]
@@ -1394,7 +1394,7 @@
    "grounding": [
     {
      "distillate": "verification-paper-figures-2026-07-19",
-     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
      "statement": "s10"
     }
    ]
@@ -1411,12 +1411,12 @@
    "grounding": [
     {
      "distillate": "pollin-2025a-when-it-was-2024",
-     "path": "10_distillates/publications/pollin-2025a-when-it-was-2024",
+     "path": "20_distillates/publications/pollin-2025a-when-it-was-2024",
      "statement": "s1"
     },
     {
      "distillate": "pollin-2025a-when-it-was-2024",
-     "path": "10_distillates/publications/pollin-2025a-when-it-was-2024",
+     "path": "20_distillates/publications/pollin-2025a-when-it-was-2024",
      "statement": "s2"
     }
    ]
@@ -1433,12 +1433,12 @@
    "grounding": [
     {
      "distillate": "frontmatter-practice-2026-05",
-     "path": "10_distillates/documents/frontmatter-practice-2026-05",
+     "path": "20_distillates/documents/frontmatter-practice-2026-05",
      "statement": "s2"
     },
     {
      "distillate": "frontmatter-practice-2026-05",
-     "path": "10_distillates/documents/frontmatter-practice-2026-05",
+     "path": "20_distillates/documents/frontmatter-practice-2026-05",
      "statement": "s3"
     }
    ]
@@ -1455,12 +1455,12 @@
    "grounding": [
     {
      "distillate": "pollin-2025b-dissertation",
-     "path": "10_distillates/publications/pollin-2025b-dissertation",
+     "path": "20_distillates/publications/pollin-2025b-dissertation",
      "statement": "s14"
     },
     {
      "distillate": "pollin-2025b-dissertation",
-     "path": "10_distillates/publications/pollin-2025b-dissertation",
+     "path": "20_distillates/publications/pollin-2025b-dissertation",
      "statement": "s15"
     }
    ]
@@ -1477,12 +1477,12 @@
    "grounding": [
     {
      "distillate": "whitelaw-2015-generous-interfaces",
-     "path": "10_distillates/publications/whitelaw-2015-generous-interfaces",
+     "path": "20_distillates/publications/whitelaw-2015-generous-interfaces",
      "statement": "s3"
     },
     {
      "distillate": "whitelaw-2015-generous-interfaces",
-     "path": "10_distillates/publications/whitelaw-2015-generous-interfaces",
+     "path": "20_distillates/publications/whitelaw-2015-generous-interfaces",
      "statement": "s4"
     }
    ]
@@ -1499,22 +1499,22 @@
    "grounding": [
     {
      "distillate": "fischer-2025-bildkarten",
-     "path": "10_distillates/publications/fischer-2025-bildkarten",
+     "path": "20_distillates/publications/fischer-2025-bildkarten",
      "statement": "s1"
     },
     {
      "distillate": "fischer-2025-bildkarten",
-     "path": "10_distillates/publications/fischer-2025-bildkarten",
+     "path": "20_distillates/publications/fischer-2025-bildkarten",
      "statement": "s2"
     },
     {
      "distillate": "fischer-2025-bildkarten",
-     "path": "10_distillates/publications/fischer-2025-bildkarten",
+     "path": "20_distillates/publications/fischer-2025-bildkarten",
      "statement": "s3"
     },
     {
      "distillate": "fischer-2025-bildkarten",
-     "path": "10_distillates/publications/fischer-2025-bildkarten",
+     "path": "20_distillates/publications/fischer-2025-bildkarten",
      "statement": "s4"
     }
    ]
@@ -1531,7 +1531,7 @@
    "grounding": [
     {
      "distillate": "verification-paper-figures-2026-07-19",
-     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
      "statement": "s2"
     }
    ]
@@ -1548,7 +1548,7 @@
    "grounding": [
     {
      "distillate": "verification-paper-figures-2026-07-19",
-     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
      "statement": "s16"
     }
    ]
@@ -1565,12 +1565,12 @@
    "grounding": [
     {
      "distillate": "drucker-2011-humanities-approaches",
-     "path": "10_distillates/publications/drucker-2011-humanities-approaches",
+     "path": "20_distillates/publications/drucker-2011-humanities-approaches",
      "statement": "s1"
     },
     {
      "distillate": "drucker-2011-humanities-approaches",
-     "path": "10_distillates/publications/drucker-2011-humanities-approaches",
+     "path": "20_distillates/publications/drucker-2011-humanities-approaches",
      "statement": "s2"
     }
    ]
@@ -1587,22 +1587,22 @@
    "grounding": [
     {
      "distillate": "owens-2011-defining-data",
-     "path": "10_distillates/publications/owens-2011-defining-data",
+     "path": "20_distillates/publications/owens-2011-defining-data",
      "statement": "s1"
     },
     {
      "distillate": "schoech-2013-big-smart-clean-messy",
-     "path": "10_distillates/publications/schoech-2013-big-smart-clean-messy",
+     "path": "20_distillates/publications/schoech-2013-big-smart-clean-messy",
      "statement": "s2"
     },
     {
      "distillate": "posner-2015-necessary-contradiction",
-     "path": "10_distillates/publications/posner-2015-necessary-contradiction",
+     "path": "20_distillates/publications/posner-2015-necessary-contradiction",
      "statement": "s1"
     },
     {
      "distillate": "collectionsasdata-2019-santa-barbara",
-     "path": "10_distillates/publications/collectionsasdata-2019-santa-barbara",
+     "path": "20_distillates/publications/collectionsasdata-2019-santa-barbara",
      "statement": "s2"
     }
    ]
@@ -1619,12 +1619,12 @@
    "grounding": [
     {
      "distillate": "flanders-2019-shape-of-data",
-     "path": "10_distillates/publications/flanders-2019-shape-of-data",
+     "path": "20_distillates/publications/flanders-2019-shape-of-data",
      "statement": "s1"
     },
     {
      "distillate": "flanders-2019-shape-of-data",
-     "path": "10_distillates/publications/flanders-2019-shape-of-data",
+     "path": "20_distillates/publications/flanders-2019-shape-of-data",
      "statement": "s2"
     }
    ]
@@ -1641,17 +1641,17 @@
    "grounding": [
     {
      "distillate": "promptotyping-video-2-live-demo",
-     "path": "10_distillates/documents/promptotyping-video-2-live-demo",
+     "path": "20_distillates/documents/promptotyping-video-2-live-demo",
      "statement": "s17"
     },
     {
      "distillate": "promptotyping-video-2-live-demo",
-     "path": "10_distillates/documents/promptotyping-video-2-live-demo",
+     "path": "20_distillates/documents/promptotyping-video-2-live-demo",
      "statement": "s24"
     },
     {
      "distillate": "promptotyping-video-2-live-demo",
-     "path": "10_distillates/documents/promptotyping-video-2-live-demo",
+     "path": "20_distillates/documents/promptotyping-video-2-live-demo",
      "statement": "s39"
     }
    ]
@@ -1668,7 +1668,7 @@
    "grounding": [
     {
      "distillate": "drucker-2011-humanities-approaches",
-     "path": "10_distillates/publications/drucker-2011-humanities-approaches",
+     "path": "20_distillates/publications/drucker-2011-humanities-approaches",
      "statement": "s3"
     }
    ]
@@ -1685,22 +1685,22 @@
    "grounding": [
     {
      "distillate": "carver-2022-state-of-practice",
-     "path": "10_distillates/publications/carver-2022-state-of-practice",
+     "path": "20_distillates/publications/carver-2022-state-of-practice",
      "statement": "s1"
     },
     {
      "distillate": "carver-2022-state-of-practice",
-     "path": "10_distillates/publications/carver-2022-state-of-practice",
+     "path": "20_distillates/publications/carver-2022-state-of-practice",
      "statement": "s2"
     },
     {
      "distillate": "carver-2022-state-of-practice",
-     "path": "10_distillates/publications/carver-2022-state-of-practice",
+     "path": "20_distillates/publications/carver-2022-state-of-practice",
      "statement": "s3"
     },
     {
      "distillate": "carver-2022-state-of-practice",
-     "path": "10_distillates/publications/carver-2022-state-of-practice",
+     "path": "20_distillates/publications/carver-2022-state-of-practice",
      "statement": "s4"
     }
    ]
@@ -1717,7 +1717,7 @@
    "grounding": [
     {
      "distillate": "promptotyping-video-2-live-demo",
-     "path": "10_distillates/documents/promptotyping-video-2-live-demo",
+     "path": "20_distillates/documents/promptotyping-video-2-live-demo",
      "statement": "s33"
     }
    ]
@@ -1734,7 +1734,7 @@
    "grounding": [
     {
      "distillate": "verification-paper-figures-2026-07-19",
-     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
      "statement": "s9"
     }
    ]
@@ -1751,7 +1751,7 @@
    "grounding": [
     {
      "distillate": "verification-paper-figures-2026-07-19",
-     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
      "statement": "s19"
     }
    ]
@@ -1768,7 +1768,7 @@
    "grounding": [
     {
      "distillate": "verification-paper-figures-2026-07-19",
-     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
      "statement": "s21"
     }
    ]
@@ -1785,32 +1785,32 @@
    "grounding": [
     {
      "distillate": "saltzer-1975-protection-of-information",
-     "path": "10_distillates/publications/saltzer-1975-protection-of-information",
+     "path": "20_distillates/publications/saltzer-1975-protection-of-information",
      "statement": "s1"
     },
     {
      "distillate": "saltzer-1975-protection-of-information",
-     "path": "10_distillates/publications/saltzer-1975-protection-of-information",
+     "path": "20_distillates/publications/saltzer-1975-protection-of-information",
      "statement": "s2"
     },
     {
      "distillate": "saltzer-1975-protection-of-information",
-     "path": "10_distillates/publications/saltzer-1975-protection-of-information",
+     "path": "20_distillates/publications/saltzer-1975-protection-of-information",
      "statement": "s3"
     },
     {
      "distillate": "saltzer-1975-protection-of-information",
-     "path": "10_distillates/publications/saltzer-1975-protection-of-information",
+     "path": "20_distillates/publications/saltzer-1975-protection-of-information",
      "statement": "s4"
     },
     {
      "distillate": "saltzer-1975-protection-of-information",
-     "path": "10_distillates/publications/saltzer-1975-protection-of-information",
+     "path": "20_distillates/publications/saltzer-1975-protection-of-information",
      "statement": "s5"
     },
     {
      "distillate": "saltzer-1975-protection-of-information",
-     "path": "10_distillates/publications/saltzer-1975-protection-of-information",
+     "path": "20_distillates/publications/saltzer-1975-protection-of-information",
      "statement": "s6"
     }
    ]
@@ -1827,12 +1827,12 @@
    "grounding": [
     {
      "distillate": "yehudai-2025-survey-evaluation-llm-agents",
-     "path": "10_distillates/publications/yehudai-2025-survey-evaluation-llm-agents",
+     "path": "20_distillates/publications/yehudai-2025-survey-evaluation-llm-agents",
      "statement": "s1"
     },
     {
      "distillate": "yehudai-2025-survey-evaluation-llm-agents",
-     "path": "10_distillates/publications/yehudai-2025-survey-evaluation-llm-agents",
+     "path": "20_distillates/publications/yehudai-2025-survey-evaluation-llm-agents",
      "statement": "s3"
     }
    ]
@@ -1849,27 +1849,27 @@
    "grounding": [
     {
      "distillate": "dellacqua-2023-jagged-frontier",
-     "path": "10_distillates/publications/dellacqua-2023-jagged-frontier",
+     "path": "20_distillates/publications/dellacqua-2023-jagged-frontier",
      "statement": "s1"
     },
     {
      "distillate": "dellacqua-2023-jagged-frontier",
-     "path": "10_distillates/publications/dellacqua-2023-jagged-frontier",
+     "path": "20_distillates/publications/dellacqua-2023-jagged-frontier",
      "statement": "s3"
     },
     {
      "distillate": "dellacqua-2023-jagged-frontier",
-     "path": "10_distillates/publications/dellacqua-2023-jagged-frontier",
+     "path": "20_distillates/publications/dellacqua-2023-jagged-frontier",
      "statement": "s4"
     },
     {
      "distillate": "dellacqua-2023-jagged-frontier",
-     "path": "10_distillates/publications/dellacqua-2023-jagged-frontier",
+     "path": "20_distillates/publications/dellacqua-2023-jagged-frontier",
      "statement": "s5"
     },
     {
      "distillate": "dellacqua-2023-jagged-frontier",
-     "path": "10_distillates/publications/dellacqua-2023-jagged-frontier",
+     "path": "20_distillates/publications/dellacqua-2023-jagged-frontier",
      "statement": "s6"
     }
    ]
@@ -1886,12 +1886,12 @@
    "grounding": [
     {
      "distillate": "liu-2024-llm-agents-se-survey",
-     "path": "10_distillates/publications/liu-2024-llm-agents-se-survey",
+     "path": "20_distillates/publications/liu-2024-llm-agents-se-survey",
      "statement": "s1"
     },
     {
      "distillate": "liu-2024-llm-agents-se-survey",
-     "path": "10_distillates/publications/liu-2024-llm-agents-se-survey",
+     "path": "20_distillates/publications/liu-2024-llm-agents-se-survey",
      "statement": "s2"
     }
    ]
@@ -1908,7 +1908,7 @@
    "grounding": [
     {
      "distillate": "strutz-2026-tei-evaluation-framework",
-     "path": "10_distillates/publications/strutz-2026-tei-evaluation-framework",
+     "path": "20_distillates/publications/strutz-2026-tei-evaluation-framework",
      "statement": "s3"
     }
    ]
@@ -1925,22 +1925,22 @@
    "grounding": [
     {
      "distillate": "zheng-2023-llm-as-a-judge",
-     "path": "10_distillates/publications/zheng-2023-llm-as-a-judge",
+     "path": "20_distillates/publications/zheng-2023-llm-as-a-judge",
      "statement": "s1"
     },
     {
      "distillate": "zheng-2023-llm-as-a-judge",
-     "path": "10_distillates/publications/zheng-2023-llm-as-a-judge",
+     "path": "20_distillates/publications/zheng-2023-llm-as-a-judge",
      "statement": "s2"
     },
     {
      "distillate": "zheng-2023-llm-as-a-judge",
-     "path": "10_distillates/publications/zheng-2023-llm-as-a-judge",
+     "path": "20_distillates/publications/zheng-2023-llm-as-a-judge",
      "statement": "s3"
     },
     {
      "distillate": "zheng-2023-llm-as-a-judge",
-     "path": "10_distillates/publications/zheng-2023-llm-as-a-judge",
+     "path": "20_distillates/publications/zheng-2023-llm-as-a-judge",
      "statement": "s4"
     }
    ]
@@ -1957,12 +1957,12 @@
    "grounding": [
     {
      "distillate": "abdurahman-2025-primer-llm-evaluation",
-     "path": "10_distillates/publications/abdurahman-2025-primer-llm-evaluation",
+     "path": "20_distillates/publications/abdurahman-2025-primer-llm-evaluation",
      "statement": "s2"
     },
     {
      "distillate": "abdurahman-2025-primer-llm-evaluation",
-     "path": "10_distillates/publications/abdurahman-2025-primer-llm-evaluation",
+     "path": "20_distillates/publications/abdurahman-2025-primer-llm-evaluation",
      "statement": "s3"
     }
    ]
@@ -1979,7 +1979,7 @@
    "grounding": [
     {
      "distillate": "stanicka-2026-cross-linking-vocabularies",
-     "path": "10_distillates/publications/stanicka-2026-cross-linking-vocabularies",
+     "path": "20_distillates/publications/stanicka-2026-cross-linking-vocabularies",
      "statement": "s3"
     }
    ]
@@ -1996,17 +1996,17 @@
    "grounding": [
     {
      "distillate": "pollin-2026a-asymmetric-amplification",
-     "path": "10_distillates/publications/pollin-2026a-asymmetric-amplification",
+     "path": "20_distillates/publications/pollin-2026a-asymmetric-amplification",
      "statement": "s1"
     },
     {
      "distillate": "pollin-2026a-asymmetric-amplification",
-     "path": "10_distillates/publications/pollin-2026a-asymmetric-amplification",
+     "path": "20_distillates/publications/pollin-2026a-asymmetric-amplification",
      "statement": "s2"
     },
     {
      "distillate": "pollin-2026b-lisa-positioning",
-     "path": "10_distillates/publications/pollin-2026b-lisa-positioning",
+     "path": "20_distillates/publications/pollin-2026b-lisa-positioning",
      "statement": "s5"
     }
    ]
@@ -2023,7 +2023,7 @@
    "grounding": [
     {
      "distillate": "verification-paper-figures-2026-07-19",
-     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
      "statement": "s4"
     }
    ]
@@ -2040,7 +2040,7 @@
    "grounding": [
     {
      "distillate": "verification-paper-figures-2026-07-19",
-     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
      "statement": "s17"
     }
    ]
@@ -2057,12 +2057,12 @@
    "grounding": [
     {
      "distillate": "macedo-2026-from-prompt-to-process",
-     "path": "10_distillates/publications/macedo-2026-from-prompt-to-process",
+     "path": "20_distillates/publications/macedo-2026-from-prompt-to-process",
      "statement": "s2"
     },
     {
      "distillate": "macedo-2026-from-prompt-to-process",
-     "path": "10_distillates/publications/macedo-2026-from-prompt-to-process",
+     "path": "20_distillates/publications/macedo-2026-from-prompt-to-process",
      "statement": "s3"
     }
    ]
@@ -2079,12 +2079,12 @@
    "grounding": [
     {
      "distillate": "miksa-2019-machine-actionable-dmps",
-     "path": "10_distillates/publications/miksa-2019-machine-actionable-dmps",
+     "path": "20_distillates/publications/miksa-2019-machine-actionable-dmps",
      "statement": "s3"
     },
     {
      "distillate": "miksa-2019-machine-actionable-dmps",
-     "path": "10_distillates/publications/miksa-2019-machine-actionable-dmps",
+     "path": "20_distillates/publications/miksa-2019-machine-actionable-dmps",
      "statement": "s4"
     }
    ]
@@ -2101,17 +2101,17 @@
    "grounding": [
     {
      "distillate": "cremer-2025-quellen-und-datenkritik",
-     "path": "10_distillates/publications/cremer-2025-quellen-und-datenkritik",
+     "path": "20_distillates/publications/cremer-2025-quellen-und-datenkritik",
      "statement": "s2"
     },
     {
      "distillate": "cremer-2025-quellen-und-datenkritik",
-     "path": "10_distillates/publications/cremer-2025-quellen-und-datenkritik",
+     "path": "20_distillates/publications/cremer-2025-quellen-und-datenkritik",
      "statement": "s3"
     },
     {
      "distillate": "cremer-2025-quellen-und-datenkritik",
-     "path": "10_distillates/publications/cremer-2025-quellen-und-datenkritik",
+     "path": "20_distillates/publications/cremer-2025-quellen-und-datenkritik",
      "statement": "s4"
     }
    ]
@@ -2128,7 +2128,7 @@
    "grounding": [
     {
      "distillate": "verification-paper-figures-2026-07-19",
-     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
      "statement": "s20"
     }
    ]
@@ -2145,7 +2145,7 @@
    "grounding": [
     {
      "distillate": "verification-paper-figures-2026-07-19",
-     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
      "statement": "s11"
     }
    ]
@@ -2163,22 +2163,22 @@
    "grounding": [
     {
      "distillate": "promptotyping-video-2-live-demo",
-     "path": "10_distillates/documents/promptotyping-video-2-live-demo",
+     "path": "20_distillates/documents/promptotyping-video-2-live-demo",
      "statement": "s28"
     },
     {
      "distillate": "promptotyping-video-2-live-demo",
-     "path": "10_distillates/documents/promptotyping-video-2-live-demo",
+     "path": "20_distillates/documents/promptotyping-video-2-live-demo",
      "statement": "s31"
     },
     {
      "distillate": "promptotyping-video-2-live-demo",
-     "path": "10_distillates/documents/promptotyping-video-2-live-demo",
+     "path": "20_distillates/documents/promptotyping-video-2-live-demo",
      "statement": "s39"
     },
     {
      "distillate": "promptotyping-video-2-live-demo",
-     "path": "10_distillates/documents/promptotyping-video-2-live-demo",
+     "path": "20_distillates/documents/promptotyping-video-2-live-demo",
      "statement": "s40"
     }
    ]
@@ -2195,7 +2195,7 @@
    "grounding": [
     {
      "distillate": "risam-2022-minimal-computing",
-     "path": "10_distillates/publications/risam-2022-minimal-computing",
+     "path": "20_distillates/publications/risam-2022-minimal-computing",
      "statement": "s3"
     }
    ]
@@ -2212,12 +2212,12 @@
    "grounding": [
     {
      "distillate": "risam-2022-minimal-computing",
-     "path": "10_distillates/publications/risam-2022-minimal-computing",
+     "path": "20_distillates/publications/risam-2022-minimal-computing",
      "statement": "s1"
     },
     {
      "distillate": "risam-2022-minimal-computing",
-     "path": "10_distillates/publications/risam-2022-minimal-computing",
+     "path": "20_distillates/publications/risam-2022-minimal-computing",
      "statement": "s2"
     }
    ]
@@ -2234,22 +2234,22 @@
    "grounding": [
     {
      "distillate": "hong-2023-metagpt",
-     "path": "10_distillates/publications/hong-2023-metagpt",
+     "path": "20_distillates/publications/hong-2023-metagpt",
      "statement": "s1"
     },
     {
      "distillate": "hong-2023-metagpt",
-     "path": "10_distillates/publications/hong-2023-metagpt",
+     "path": "20_distillates/publications/hong-2023-metagpt",
      "statement": "s2"
     },
     {
      "distillate": "hong-2023-metagpt",
-     "path": "10_distillates/publications/hong-2023-metagpt",
+     "path": "20_distillates/publications/hong-2023-metagpt",
      "statement": "s3"
     },
     {
      "distillate": "hong-2023-metagpt",
-     "path": "10_distillates/publications/hong-2023-metagpt",
+     "path": "20_distillates/publications/hong-2023-metagpt",
      "statement": "s4"
     }
    ]
@@ -2266,37 +2266,37 @@
    "grounding": [
     {
      "distillate": "groth-2010-nanopublication",
-     "path": "10_distillates/publications/groth-2010-nanopublication",
+     "path": "20_distillates/publications/groth-2010-nanopublication",
      "statement": "s1"
     },
     {
      "distillate": "groth-2010-nanopublication",
-     "path": "10_distillates/publications/groth-2010-nanopublication",
+     "path": "20_distillates/publications/groth-2010-nanopublication",
      "statement": "s2"
     },
     {
      "distillate": "groth-2010-nanopublication",
-     "path": "10_distillates/publications/groth-2010-nanopublication",
+     "path": "20_distillates/publications/groth-2010-nanopublication",
      "statement": "s3"
     },
     {
      "distillate": "groth-2010-nanopublication",
-     "path": "10_distillates/publications/groth-2010-nanopublication",
+     "path": "20_distillates/publications/groth-2010-nanopublication",
      "statement": "s4"
     },
     {
      "distillate": "groth-2010-nanopublication",
-     "path": "10_distillates/publications/groth-2010-nanopublication",
+     "path": "20_distillates/publications/groth-2010-nanopublication",
      "statement": "s5"
     },
     {
      "distillate": "groth-2010-nanopublication",
-     "path": "10_distillates/publications/groth-2010-nanopublication",
+     "path": "20_distillates/publications/groth-2010-nanopublication",
      "statement": "s6"
     },
     {
      "distillate": "groth-2010-nanopublication",
-     "path": "10_distillates/publications/groth-2010-nanopublication",
+     "path": "20_distillates/publications/groth-2010-nanopublication",
      "statement": "s7"
     }
    ]
@@ -2313,7 +2313,7 @@
    "grounding": [
     {
      "distillate": "verification-paper-figures-2026-07-19",
-     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
      "statement": "s8"
     }
    ]
@@ -2330,12 +2330,12 @@
    "grounding": [
     {
      "distillate": "gruber-1993-ontolingua",
-     "path": "10_distillates/publications/gruber-1993-ontolingua",
+     "path": "20_distillates/publications/gruber-1993-ontolingua",
      "statement": "s3"
     },
     {
      "distillate": "pollin-2019-depcha-bookkeeping",
-     "path": "10_distillates/publications/pollin-2019-depcha-bookkeeping",
+     "path": "20_distillates/publications/pollin-2019-depcha-bookkeeping",
      "statement": "s4"
     }
    ]
@@ -2352,22 +2352,22 @@
    "grounding": [
     {
      "distillate": "m3gim-vocab-derivation-2026-07-24",
-     "path": "10_distillates/documents/m3gim-vocab-derivation-2026-07-24",
+     "path": "20_distillates/documents/m3gim-vocab-derivation-2026-07-24",
      "statement": "s2"
     },
     {
      "distillate": "m3gim-vocab-derivation-2026-07-24",
-     "path": "10_distillates/documents/m3gim-vocab-derivation-2026-07-24",
+     "path": "20_distillates/documents/m3gim-vocab-derivation-2026-07-24",
      "statement": "s4"
     },
     {
      "distillate": "m3gim-vocab-derivation-2026-07-24",
-     "path": "10_distillates/documents/m3gim-vocab-derivation-2026-07-24",
+     "path": "20_distillates/documents/m3gim-vocab-derivation-2026-07-24",
      "statement": "s5"
     },
     {
      "distillate": "m3gim-vocab-derivation-2026-07-24",
-     "path": "10_distillates/documents/m3gim-vocab-derivation-2026-07-24",
+     "path": "20_distillates/documents/m3gim-vocab-derivation-2026-07-24",
      "statement": "s7"
     }
    ]
@@ -2384,12 +2384,12 @@
    "grounding": [
     {
      "distillate": "gruber-1993-ontolingua",
-     "path": "10_distillates/publications/gruber-1993-ontolingua",
+     "path": "20_distillates/publications/gruber-1993-ontolingua",
      "statement": "s1"
     },
     {
      "distillate": "gruber-1993-ontolingua",
-     "path": "10_distillates/publications/gruber-1993-ontolingua",
+     "path": "20_distillates/publications/gruber-1993-ontolingua",
      "statement": "s2"
     }
    ]
@@ -2406,17 +2406,17 @@
    "grounding": [
     {
      "distillate": "pichler-2022-operationalization",
-     "path": "10_distillates/publications/pichler-2022-operationalization",
+     "path": "20_distillates/publications/pichler-2022-operationalization",
      "statement": "s1"
     },
     {
      "distillate": "pichler-2022-operationalization",
-     "path": "10_distillates/publications/pichler-2022-operationalization",
+     "path": "20_distillates/publications/pichler-2022-operationalization",
      "statement": "s2"
     },
     {
      "distillate": "pichler-2022-operationalization",
-     "path": "10_distillates/publications/pichler-2022-operationalization",
+     "path": "20_distillates/publications/pichler-2022-operationalization",
      "statement": "s5"
     }
    ]
@@ -2433,27 +2433,27 @@
    "grounding": [
     {
      "distillate": "promptotyping-video-2-live-demo",
-     "path": "10_distillates/documents/promptotyping-video-2-live-demo",
+     "path": "20_distillates/documents/promptotyping-video-2-live-demo",
      "statement": "s12"
     },
     {
      "distillate": "promptotyping-video-2-live-demo",
-     "path": "10_distillates/documents/promptotyping-video-2-live-demo",
+     "path": "20_distillates/documents/promptotyping-video-2-live-demo",
      "statement": "s13"
     },
     {
      "distillate": "promptotyping-video-2-live-demo",
-     "path": "10_distillates/documents/promptotyping-video-2-live-demo",
+     "path": "20_distillates/documents/promptotyping-video-2-live-demo",
      "statement": "s15"
     },
     {
      "distillate": "promptotyping-video-2-live-demo",
-     "path": "10_distillates/documents/promptotyping-video-2-live-demo",
+     "path": "20_distillates/documents/promptotyping-video-2-live-demo",
      "statement": "s18"
     },
     {
      "distillate": "promptotyping-video-2-live-demo",
-     "path": "10_distillates/documents/promptotyping-video-2-live-demo",
+     "path": "20_distillates/documents/promptotyping-video-2-live-demo",
      "statement": "s39"
     }
    ]
@@ -2470,12 +2470,12 @@
    "grounding": [
     {
      "distillate": "owens-2011-defining-data",
-     "path": "10_distillates/publications/owens-2011-defining-data",
+     "path": "20_distillates/publications/owens-2011-defining-data",
      "statement": "s3"
     },
     {
      "distillate": "owens-2011-defining-data",
-     "path": "10_distillates/publications/owens-2011-defining-data",
+     "path": "20_distillates/publications/owens-2011-defining-data",
      "statement": "s2"
     }
    ]
@@ -2493,12 +2493,12 @@
    "grounding": [
     {
      "distillate": "pollin-2025d-promptotyping-blog",
-     "path": "10_distillates/publications/pollin-2025d-promptotyping-blog",
+     "path": "20_distillates/publications/pollin-2025d-promptotyping-blog",
      "statement": "s3"
     },
     {
      "distillate": "pollin-2025d-promptotyping-blog",
-     "path": "10_distillates/publications/pollin-2025d-promptotyping-blog",
+     "path": "20_distillates/publications/pollin-2025d-promptotyping-blog",
      "statement": "s4"
     }
    ]
@@ -2515,17 +2515,17 @@
    "grounding": [
     {
      "distillate": "pollin-2026b-lisa-positioning",
-     "path": "10_distillates/publications/pollin-2026b-lisa-positioning",
+     "path": "20_distillates/publications/pollin-2026b-lisa-positioning",
      "statement": "s3"
     },
     {
      "distillate": "pollin-2026b-lisa-positioning",
-     "path": "10_distillates/publications/pollin-2026b-lisa-positioning",
+     "path": "20_distillates/publications/pollin-2026b-lisa-positioning",
      "statement": "s4"
     },
     {
      "distillate": "pollin-2026b-lisa-positioning",
-     "path": "10_distillates/publications/pollin-2026b-lisa-positioning",
+     "path": "20_distillates/publications/pollin-2026b-lisa-positioning",
      "statement": "s2"
     }
    ]
@@ -2542,7 +2542,7 @@
    "grounding": [
     {
      "distillate": "pollin-2025d-promptotyping-blog",
-     "path": "10_distillates/publications/pollin-2025d-promptotyping-blog",
+     "path": "20_distillates/publications/pollin-2025d-promptotyping-blog",
      "statement": "s7"
     }
    ]
@@ -2559,7 +2559,7 @@
    "grounding": [
     {
      "distillate": "pollin-2025b-dissertation",
-     "path": "10_distillates/publications/pollin-2025b-dissertation",
+     "path": "20_distillates/publications/pollin-2025b-dissertation",
      "statement": "s16"
     }
    ]
@@ -2576,12 +2576,12 @@
    "grounding": [
     {
      "distillate": "pollin-2026b-lisa-positioning",
-     "path": "10_distillates/publications/pollin-2026b-lisa-positioning",
+     "path": "20_distillates/publications/pollin-2026b-lisa-positioning",
      "statement": "s1"
     },
     {
      "distillate": "pollin-2026b-lisa-positioning",
-     "path": "10_distillates/publications/pollin-2026b-lisa-positioning",
+     "path": "20_distillates/publications/pollin-2026b-lisa-positioning",
      "statement": "s7"
     }
    ]
@@ -2589,7 +2589,7 @@
   {
    "slug": "promptotyping-named-first-described-2025-04",
    "title": "The method was named Promptotyping and first publicly described on 2025-04-24 as an iterative, document-based method in four phases oriented on User-Centred Design.",
-   "statement": "The DHCraft blog post introduces the method under the name Promptotyping and presents it as a systematic development of the earlier Vibe Coding approach. It defines Promptotyping as a prompt-engineering method whose requirements are developed iteratively through targeted prompting strategies and continuously refined in clearly structured documents, and it describes the process as running in four iterative, mutually building phases oriented on User-Centred Design. This is the method's first public description; the CSL record for pollin-2025d carries its publication date as 2025-04-24. The name itself is older, since the dissertation already carries it with a section of its own ([[20_claims/promptotyping-first-named-in-the-dissertation]]), so this post is where the name first reaches a public audience.",
+   "statement": "The DHCraft blog post introduces the method under the name Promptotyping and presents it as a systematic development of the earlier Vibe Coding approach. It defines Promptotyping as a prompt-engineering method whose requirements are developed iteratively through targeted prompting strategies and continuously refined in clearly structured documents, and it describes the process as running in four iterative, mutually building phases oriented on User-Centred Design. This is the method's first public description; the CSL record for pollin-2025d carries its publication date as 2025-04-24. The name itself is older, since the dissertation already carries it with a section of its own ([[30_assertions/promptotyping-first-named-in-the-dissertation]]), so this post is where the name first reaches a public audience.",
    "status": "grounded",
    "topics": [
     "Genealogy"
@@ -2598,17 +2598,17 @@
    "grounding": [
     {
      "distillate": "pollin-2025d-promptotyping-blog",
-     "path": "10_distillates/publications/pollin-2025d-promptotyping-blog",
+     "path": "20_distillates/publications/pollin-2025d-promptotyping-blog",
      "statement": "s1"
     },
     {
      "distillate": "pollin-2025d-promptotyping-blog",
-     "path": "10_distillates/publications/pollin-2025d-promptotyping-blog",
+     "path": "20_distillates/publications/pollin-2025d-promptotyping-blog",
      "statement": "s2"
     },
     {
      "distillate": "pollin-2025d-promptotyping-blog",
-     "path": "10_distillates/publications/pollin-2025d-promptotyping-blog",
+     "path": "20_distillates/publications/pollin-2025d-promptotyping-blog",
      "statement": "s6"
     }
    ]
@@ -2625,32 +2625,32 @@
    "grounding": [
     {
      "distillate": "lucassen-2016-quality-user-story",
-     "path": "10_distillates/publications/lucassen-2016-quality-user-story",
+     "path": "20_distillates/publications/lucassen-2016-quality-user-story",
      "statement": "s1"
     },
     {
      "distillate": "lucassen-2016-quality-user-story",
-     "path": "10_distillates/publications/lucassen-2016-quality-user-story",
+     "path": "20_distillates/publications/lucassen-2016-quality-user-story",
      "statement": "s2"
     },
     {
      "distillate": "lucassen-2016-quality-user-story",
-     "path": "10_distillates/publications/lucassen-2016-quality-user-story",
+     "path": "20_distillates/publications/lucassen-2016-quality-user-story",
      "statement": "s3"
     },
     {
      "distillate": "lucassen-2016-quality-user-story",
-     "path": "10_distillates/publications/lucassen-2016-quality-user-story",
+     "path": "20_distillates/publications/lucassen-2016-quality-user-story",
      "statement": "s4"
     },
     {
      "distillate": "lucassen-2016-quality-user-story",
-     "path": "10_distillates/publications/lucassen-2016-quality-user-story",
+     "path": "20_distillates/publications/lucassen-2016-quality-user-story",
      "statement": "s5"
     },
     {
      "distillate": "lucassen-2016-quality-user-story",
-     "path": "10_distillates/publications/lucassen-2016-quality-user-story",
+     "path": "20_distillates/publications/lucassen-2016-quality-user-story",
      "statement": "s6"
     }
    ]
@@ -2667,12 +2667,12 @@
    "grounding": [
     {
      "distillate": "promptotyping-video-2-live-demo",
-     "path": "10_distillates/documents/promptotyping-video-2-live-demo",
+     "path": "20_distillates/documents/promptotyping-video-2-live-demo",
      "statement": "s36"
     },
     {
      "distillate": "promptotyping-video-2-live-demo",
-     "path": "10_distillates/documents/promptotyping-video-2-live-demo",
+     "path": "20_distillates/documents/promptotyping-video-2-live-demo",
      "statement": "s37"
     }
    ]
@@ -2689,12 +2689,12 @@
    "grounding": [
     {
      "distillate": "revision-audit-a2-2026-07-23",
-     "path": "10_distillates/documents/revision-audit-a2-2026-07-23",
+     "path": "20_distillates/documents/revision-audit-a2-2026-07-23",
      "statement": "s1"
     },
     {
      "distillate": "revision-audit-a2-2026-07-23",
-     "path": "10_distillates/documents/revision-audit-a2-2026-07-23",
+     "path": "20_distillates/documents/revision-audit-a2-2026-07-23",
      "statement": "s2"
     }
    ]
@@ -2711,12 +2711,12 @@
    "grounding": [
     {
      "distillate": "revision-audit-a2-2026-07-23",
-     "path": "10_distillates/documents/revision-audit-a2-2026-07-23",
+     "path": "20_distillates/documents/revision-audit-a2-2026-07-23",
      "statement": "s3"
     },
     {
      "distillate": "verification-paper-figures-2026-07-19",
-     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
      "statement": "s18"
     }
    ]
@@ -2733,22 +2733,22 @@
    "grounding": [
     {
      "distillate": "frontmatter-core-survey-2026-07-26",
-     "path": "10_distillates/documents/frontmatter-core-survey-2026-07-26",
+     "path": "20_distillates/documents/frontmatter-core-survey-2026-07-26",
      "statement": "s1"
     },
     {
      "distillate": "frontmatter-core-survey-2026-07-26",
-     "path": "10_distillates/documents/frontmatter-core-survey-2026-07-26",
+     "path": "20_distillates/documents/frontmatter-core-survey-2026-07-26",
      "statement": "s2"
     },
     {
      "distillate": "frontmatter-core-survey-2026-07-26",
-     "path": "10_distillates/documents/frontmatter-core-survey-2026-07-26",
+     "path": "20_distillates/documents/frontmatter-core-survey-2026-07-26",
      "statement": "s3"
     },
     {
      "distillate": "frontmatter-core-survey-2026-07-26",
-     "path": "10_distillates/documents/frontmatter-core-survey-2026-07-26",
+     "path": "20_distillates/documents/frontmatter-core-survey-2026-07-26",
      "statement": "s8"
     }
    ]
@@ -2765,12 +2765,12 @@
    "grounding": [
     {
      "distillate": "pollin-2026b-lisa-positioning",
-     "path": "10_distillates/publications/pollin-2026b-lisa-positioning",
+     "path": "20_distillates/publications/pollin-2026b-lisa-positioning",
      "statement": "s6"
     },
     {
      "distillate": "posner-2015-necessary-contradiction",
-     "path": "10_distillates/publications/posner-2015-necessary-contradiction",
+     "path": "20_distillates/publications/posner-2015-necessary-contradiction",
      "statement": "s4"
     }
    ]
@@ -2787,32 +2787,32 @@
    "grounding": [
     {
      "distillate": "marwick-2018-research-compendium",
-     "path": "10_distillates/publications/marwick-2018-research-compendium",
+     "path": "20_distillates/publications/marwick-2018-research-compendium",
      "statement": "s1"
     },
     {
      "distillate": "marwick-2018-research-compendium",
-     "path": "10_distillates/publications/marwick-2018-research-compendium",
+     "path": "20_distillates/publications/marwick-2018-research-compendium",
      "statement": "s2"
     },
     {
      "distillate": "marwick-2018-research-compendium",
-     "path": "10_distillates/publications/marwick-2018-research-compendium",
+     "path": "20_distillates/publications/marwick-2018-research-compendium",
      "statement": "s3"
     },
     {
      "distillate": "marwick-2018-research-compendium",
-     "path": "10_distillates/publications/marwick-2018-research-compendium",
+     "path": "20_distillates/publications/marwick-2018-research-compendium",
      "statement": "s4"
     },
     {
      "distillate": "marwick-2018-research-compendium",
-     "path": "10_distillates/publications/marwick-2018-research-compendium",
+     "path": "20_distillates/publications/marwick-2018-research-compendium",
      "statement": "s5"
     },
     {
      "distillate": "marwick-2018-research-compendium",
-     "path": "10_distillates/publications/marwick-2018-research-compendium",
+     "path": "20_distillates/publications/marwick-2018-research-compendium",
      "statement": "s6"
     }
    ]
@@ -2829,12 +2829,12 @@
    "grounding": [
     {
      "distillate": "geiger-2023-daten-forschungsdaten",
-     "path": "10_distillates/publications/geiger-2023-daten-forschungsdaten",
+     "path": "20_distillates/publications/geiger-2023-daten-forschungsdaten",
      "statement": "s1"
     },
     {
      "distillate": "geiger-2023-daten-forschungsdaten",
-     "path": "10_distillates/publications/geiger-2023-daten-forschungsdaten",
+     "path": "20_distillates/publications/geiger-2023-daten-forschungsdaten",
      "statement": "s4"
     }
    ]
@@ -2851,12 +2851,12 @@
    "grounding": [
     {
      "distillate": "baxter-2012-research-software-engineer",
-     "path": "10_distillates/publications/baxter-2012-research-software-engineer",
+     "path": "20_distillates/publications/baxter-2012-research-software-engineer",
      "statement": "s1"
     },
     {
      "distillate": "baxter-2012-research-software-engineer",
-     "path": "10_distillates/publications/baxter-2012-research-software-engineer",
+     "path": "20_distillates/publications/baxter-2012-research-software-engineer",
      "statement": "s2"
     }
    ]
@@ -2873,17 +2873,17 @@
    "grounding": [
     {
      "distillate": "soiland-2022-ro-crate",
-     "path": "10_distillates/publications/soiland-2022-ro-crate",
+     "path": "20_distillates/publications/soiland-2022-ro-crate",
      "statement": "s1"
     },
     {
      "distillate": "soiland-2022-ro-crate",
-     "path": "10_distillates/publications/soiland-2022-ro-crate",
+     "path": "20_distillates/publications/soiland-2022-ro-crate",
      "statement": "s2"
     },
     {
      "distillate": "soiland-2022-ro-crate",
-     "path": "10_distillates/publications/soiland-2022-ro-crate",
+     "path": "20_distillates/publications/soiland-2022-ro-crate",
      "statement": "s3"
     }
    ]
@@ -2900,17 +2900,17 @@
    "grounding": [
     {
      "distillate": "cohen-2021-four-pillars-rse",
-     "path": "10_distillates/publications/cohen-2021-four-pillars-rse",
+     "path": "20_distillates/publications/cohen-2021-four-pillars-rse",
      "statement": "s1"
     },
     {
      "distillate": "cohen-2021-four-pillars-rse",
-     "path": "10_distillates/publications/cohen-2021-four-pillars-rse",
+     "path": "20_distillates/publications/cohen-2021-four-pillars-rse",
      "statement": "s2"
     },
     {
      "distillate": "cohen-2021-four-pillars-rse",
-     "path": "10_distillates/publications/cohen-2021-four-pillars-rse",
+     "path": "20_distillates/publications/cohen-2021-four-pillars-rse",
      "statement": "s3"
     }
    ]
@@ -2927,17 +2927,17 @@
    "grounding": [
     {
      "distillate": "sarkar-2025-vibe-coding",
-     "path": "10_distillates/publications/sarkar-2025-vibe-coding",
+     "path": "20_distillates/publications/sarkar-2025-vibe-coding",
      "statement": "s1"
     },
     {
      "distillate": "sarkar-2025-vibe-coding",
-     "path": "10_distillates/publications/sarkar-2025-vibe-coding",
+     "path": "20_distillates/publications/sarkar-2025-vibe-coding",
      "statement": "s2"
     },
     {
      "distillate": "sarkar-2025-vibe-coding",
-     "path": "10_distillates/publications/sarkar-2025-vibe-coding",
+     "path": "20_distillates/publications/sarkar-2025-vibe-coding",
      "statement": "s4"
     }
    ]
@@ -2954,12 +2954,12 @@
    "grounding": [
     {
      "distillate": "schoech-2013-big-smart-clean-messy",
-     "path": "10_distillates/publications/schoech-2013-big-smart-clean-messy",
+     "path": "20_distillates/publications/schoech-2013-big-smart-clean-messy",
      "statement": "s4"
     },
     {
      "distillate": "schoech-2013-big-smart-clean-messy",
-     "path": "10_distillates/publications/schoech-2013-big-smart-clean-messy",
+     "path": "20_distillates/publications/schoech-2013-big-smart-clean-messy",
      "statement": "s5"
     }
    ]
@@ -2976,12 +2976,12 @@
    "grounding": [
     {
      "distillate": "unsworth-2000-scholarly-primitives",
-     "path": "10_distillates/publications/unsworth-2000-scholarly-primitives",
+     "path": "20_distillates/publications/unsworth-2000-scholarly-primitives",
      "statement": "s1"
     },
     {
      "distillate": "unsworth-2000-scholarly-primitives",
-     "path": "10_distillates/publications/unsworth-2000-scholarly-primitives",
+     "path": "20_distillates/publications/unsworth-2000-scholarly-primitives",
      "statement": "s2"
     }
    ]
@@ -2998,32 +2998,32 @@
    "grounding": [
     {
      "distillate": "sdd-spec-kit-2026-07-24",
-     "path": "10_distillates/documents/sdd-spec-kit-2026-07-24",
+     "path": "20_distillates/documents/sdd-spec-kit-2026-07-24",
      "statement": "s3"
     },
     {
      "distillate": "sdd-spec-kit-2026-07-24",
-     "path": "10_distillates/documents/sdd-spec-kit-2026-07-24",
+     "path": "20_distillates/documents/sdd-spec-kit-2026-07-24",
      "statement": "s4"
     },
     {
      "distillate": "sdd-kiro-2026-07-24",
-     "path": "10_distillates/documents/sdd-kiro-2026-07-24",
+     "path": "20_distillates/documents/sdd-kiro-2026-07-24",
      "statement": "s3"
     },
     {
      "distillate": "sdd-kiro-2026-07-24",
-     "path": "10_distillates/documents/sdd-kiro-2026-07-24",
+     "path": "20_distillates/documents/sdd-kiro-2026-07-24",
      "statement": "s8"
     },
     {
      "distillate": "sdd-bmad-method-2026-07-24",
-     "path": "10_distillates/documents/sdd-bmad-method-2026-07-24",
+     "path": "20_distillates/documents/sdd-bmad-method-2026-07-24",
      "statement": "s10"
     },
     {
      "distillate": "sdd-openspec-2026-07-24",
-     "path": "10_distillates/documents/sdd-openspec-2026-07-24",
+     "path": "20_distillates/documents/sdd-openspec-2026-07-24",
      "statement": "s7"
     }
    ]
@@ -3040,12 +3040,12 @@
    "grounding": [
     {
      "distillate": "macedo-2026-from-prompt-to-process",
-     "path": "10_distillates/publications/macedo-2026-from-prompt-to-process",
+     "path": "20_distillates/publications/macedo-2026-from-prompt-to-process",
      "statement": "s4"
     },
     {
      "distillate": "macedo-2026-from-prompt-to-process",
-     "path": "10_distillates/publications/macedo-2026-from-prompt-to-process",
+     "path": "20_distillates/publications/macedo-2026-from-prompt-to-process",
      "statement": "s5"
     }
    ]
@@ -3062,27 +3062,27 @@
    "grounding": [
     {
      "distillate": "sdd-spec-kit-2026-07-24",
-     "path": "10_distillates/documents/sdd-spec-kit-2026-07-24",
+     "path": "20_distillates/documents/sdd-spec-kit-2026-07-24",
      "statement": "s7"
     },
     {
      "distillate": "sdd-kiro-2026-07-24",
-     "path": "10_distillates/documents/sdd-kiro-2026-07-24",
+     "path": "20_distillates/documents/sdd-kiro-2026-07-24",
      "statement": "s10"
     },
     {
      "distillate": "sdd-bmad-method-2026-07-24",
-     "path": "10_distillates/documents/sdd-bmad-method-2026-07-24",
+     "path": "20_distillates/documents/sdd-bmad-method-2026-07-24",
      "statement": "s3"
     },
     {
      "distillate": "sdd-bmad-method-2026-07-24",
-     "path": "10_distillates/documents/sdd-bmad-method-2026-07-24",
+     "path": "20_distillates/documents/sdd-bmad-method-2026-07-24",
      "statement": "s4"
     },
     {
      "distillate": "sdd-openspec-2026-07-24",
-     "path": "10_distillates/documents/sdd-openspec-2026-07-24",
+     "path": "20_distillates/documents/sdd-openspec-2026-07-24",
      "statement": "s7"
     }
    ]
@@ -3099,32 +3099,32 @@
    "grounding": [
     {
      "distillate": "sdd-spec-kit-2026-07-24",
-     "path": "10_distillates/documents/sdd-spec-kit-2026-07-24",
+     "path": "20_distillates/documents/sdd-spec-kit-2026-07-24",
      "statement": "s6"
     },
     {
      "distillate": "sdd-spec-kit-2026-07-24",
-     "path": "10_distillates/documents/sdd-spec-kit-2026-07-24",
+     "path": "20_distillates/documents/sdd-spec-kit-2026-07-24",
      "statement": "s8"
     },
     {
      "distillate": "sdd-kiro-2026-07-24",
-     "path": "10_distillates/documents/sdd-kiro-2026-07-24",
+     "path": "20_distillates/documents/sdd-kiro-2026-07-24",
      "statement": "s5"
     },
     {
      "distillate": "sdd-kiro-2026-07-24",
-     "path": "10_distillates/documents/sdd-kiro-2026-07-24",
+     "path": "20_distillates/documents/sdd-kiro-2026-07-24",
      "statement": "s6"
     },
     {
      "distillate": "sdd-bmad-method-2026-07-24",
-     "path": "10_distillates/documents/sdd-bmad-method-2026-07-24",
+     "path": "20_distillates/documents/sdd-bmad-method-2026-07-24",
      "statement": "s7"
     },
     {
      "distillate": "sdd-openspec-2026-07-24",
-     "path": "10_distillates/documents/sdd-openspec-2026-07-24",
+     "path": "20_distillates/documents/sdd-openspec-2026-07-24",
      "statement": "s5"
     }
    ]
@@ -3141,27 +3141,27 @@
    "grounding": [
     {
      "distillate": "sdd-spec-kit-2026-07-24",
-     "path": "10_distillates/documents/sdd-spec-kit-2026-07-24",
+     "path": "20_distillates/documents/sdd-spec-kit-2026-07-24",
      "statement": "s11"
     },
     {
      "distillate": "sdd-spec-kit-2026-07-24",
-     "path": "10_distillates/documents/sdd-spec-kit-2026-07-24",
+     "path": "20_distillates/documents/sdd-spec-kit-2026-07-24",
      "statement": "s12"
     },
     {
      "distillate": "sdd-kiro-2026-07-24",
-     "path": "10_distillates/documents/sdd-kiro-2026-07-24",
+     "path": "20_distillates/documents/sdd-kiro-2026-07-24",
      "statement": "s9"
     },
     {
      "distillate": "sdd-bmad-method-2026-07-24",
-     "path": "10_distillates/documents/sdd-bmad-method-2026-07-24",
+     "path": "20_distillates/documents/sdd-bmad-method-2026-07-24",
      "statement": "s9"
     },
     {
      "distillate": "sdd-openspec-2026-07-24",
-     "path": "10_distillates/documents/sdd-openspec-2026-07-24",
+     "path": "20_distillates/documents/sdd-openspec-2026-07-24",
      "statement": "s6"
     }
    ]
@@ -3178,12 +3178,12 @@
    "grounding": [
     {
      "distillate": "whitelaw-2015-generous-interfaces",
-     "path": "10_distillates/publications/whitelaw-2015-generous-interfaces",
+     "path": "20_distillates/publications/whitelaw-2015-generous-interfaces",
      "statement": "s1"
     },
     {
      "distillate": "whitelaw-2015-generous-interfaces",
-     "path": "10_distillates/publications/whitelaw-2015-generous-interfaces",
+     "path": "20_distillates/publications/whitelaw-2015-generous-interfaces",
      "statement": "s2"
     }
    ]
@@ -3200,7 +3200,7 @@
    "grounding": [
     {
      "distillate": "verification-paper-figures-2026-07-19",
-     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
      "statement": "s26"
     }
    ]
@@ -3218,17 +3218,17 @@
    "grounding": [
     {
      "distillate": "verification-paper-figures-2026-07-19",
-     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
      "statement": "s23"
     },
     {
      "distillate": "verification-paper-figures-2026-07-19",
-     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
      "statement": "s24"
     },
     {
      "distillate": "verification-paper-figures-2026-07-19",
-     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
      "statement": "s25"
     }
    ]
@@ -3245,12 +3245,12 @@
    "grounding": [
     {
      "distillate": "stanicka-2026-cross-linking-vocabularies",
-     "path": "10_distillates/publications/stanicka-2026-cross-linking-vocabularies",
+     "path": "20_distillates/publications/stanicka-2026-cross-linking-vocabularies",
      "statement": "s1"
     },
     {
      "distillate": "stanicka-2026-cross-linking-vocabularies",
-     "path": "10_distillates/publications/stanicka-2026-cross-linking-vocabularies",
+     "path": "20_distillates/publications/stanicka-2026-cross-linking-vocabularies",
      "statement": "s2"
     }
    ]
@@ -3267,12 +3267,12 @@
    "grounding": [
     {
      "distillate": "berners-lee-2001-semantic-web",
-     "path": "10_distillates/publications/berners-lee-2001-semantic-web",
+     "path": "20_distillates/publications/berners-lee-2001-semantic-web",
      "statement": "s1"
     },
     {
      "distillate": "berners-lee-2001-semantic-web",
-     "path": "10_distillates/publications/berners-lee-2001-semantic-web",
+     "path": "20_distillates/publications/berners-lee-2001-semantic-web",
      "statement": "s2"
     }
    ]
@@ -3289,17 +3289,17 @@
    "grounding": [
     {
      "distillate": "leipold-2026-wikifair",
-     "path": "10_distillates/publications/leipold-2026-wikifair",
+     "path": "20_distillates/publications/leipold-2026-wikifair",
      "statement": "s1"
     },
     {
      "distillate": "leipold-2026-wikifair",
-     "path": "10_distillates/publications/leipold-2026-wikifair",
+     "path": "20_distillates/publications/leipold-2026-wikifair",
      "statement": "s2"
     },
     {
      "distillate": "leipold-2026-wikifair",
-     "path": "10_distillates/publications/leipold-2026-wikifair",
+     "path": "20_distillates/publications/leipold-2026-wikifair",
      "statement": "s3"
     }
    ]
@@ -3316,17 +3316,17 @@
    "grounding": [
     {
      "distillate": "barbot-2024-ssh-open-marketplace",
-     "path": "10_distillates/publications/barbot-2024-ssh-open-marketplace",
+     "path": "20_distillates/publications/barbot-2024-ssh-open-marketplace",
      "statement": "s1"
     },
     {
      "distillate": "barbot-2024-ssh-open-marketplace",
-     "path": "10_distillates/publications/barbot-2024-ssh-open-marketplace",
+     "path": "20_distillates/publications/barbot-2024-ssh-open-marketplace",
      "statement": "s3"
     },
     {
      "distillate": "barbot-2024-ssh-open-marketplace",
-     "path": "10_distillates/publications/barbot-2024-ssh-open-marketplace",
+     "path": "20_distillates/publications/barbot-2024-ssh-open-marketplace",
      "statement": "s4"
     }
    ]
@@ -3343,12 +3343,12 @@
    "grounding": [
     {
      "distillate": "andorfer-2026-static-tei-editions",
-     "path": "10_distillates/publications/andorfer-2026-static-tei-editions",
+     "path": "20_distillates/publications/andorfer-2026-static-tei-editions",
      "statement": "s5"
     },
     {
      "distillate": "andorfer-2026-static-tei-editions",
-     "path": "10_distillates/publications/andorfer-2026-static-tei-editions",
+     "path": "20_distillates/publications/andorfer-2026-static-tei-editions",
      "statement": "s6"
     }
    ]
@@ -3365,12 +3365,12 @@
    "grounding": [
     {
      "distillate": "knowledge-base-content-audit-2026-07-19",
-     "path": "10_distillates/documents/knowledge-base-content-audit-2026-07-19",
+     "path": "20_distillates/documents/knowledge-base-content-audit-2026-07-19",
      "statement": "s2"
     },
     {
      "distillate": "knowledge-base-content-audit-2026-07-19",
-     "path": "10_distillates/documents/knowledge-base-content-audit-2026-07-19",
+     "path": "20_distillates/documents/knowledge-base-content-audit-2026-07-19",
      "statement": "s4"
     }
    ]
@@ -3387,17 +3387,17 @@
    "grounding": [
     {
      "distillate": "sharma-2023-sycophancy",
-     "path": "10_distillates/publications/sharma-2023-sycophancy",
+     "path": "20_distillates/publications/sharma-2023-sycophancy",
      "statement": "s1"
     },
     {
      "distillate": "sharma-2023-sycophancy",
-     "path": "10_distillates/publications/sharma-2023-sycophancy",
+     "path": "20_distillates/publications/sharma-2023-sycophancy",
      "statement": "s2"
     },
     {
      "distillate": "fanous-2025-syceval",
-     "path": "10_distillates/publications/fanous-2025-syceval",
+     "path": "20_distillates/publications/fanous-2025-syceval",
      "statement": "s1"
     }
    ]
@@ -3414,17 +3414,17 @@
    "grounding": [
     {
      "distillate": "pollin-2025c-critical-vibing",
-     "path": "10_distillates/publications/pollin-2025c-critical-vibing",
+     "path": "20_distillates/publications/pollin-2025c-critical-vibing",
      "statement": "s5"
     },
     {
      "distillate": "pollin-2025c-critical-vibing",
-     "path": "10_distillates/publications/pollin-2025c-critical-vibing",
+     "path": "20_distillates/publications/pollin-2025c-critical-vibing",
      "statement": "s7"
     },
     {
      "distillate": "pollin-2025c-critical-vibing",
-     "path": "10_distillates/publications/pollin-2025c-critical-vibing",
+     "path": "20_distillates/publications/pollin-2025c-critical-vibing",
      "statement": "s6"
     }
    ]
@@ -3441,12 +3441,12 @@
    "grounding": [
     {
      "distillate": "szd-htr-evaluation-results-2026-06-10",
-     "path": "10_distillates/documents/szd-htr-evaluation-results-2026-06-10",
+     "path": "20_distillates/documents/szd-htr-evaluation-results-2026-06-10",
      "statement": "s1"
     },
     {
      "distillate": "szd-htr-evaluation-results-2026-06-10",
-     "path": "10_distillates/documents/szd-htr-evaluation-results-2026-06-10",
+     "path": "20_distillates/documents/szd-htr-evaluation-results-2026-06-10",
      "statement": "s3"
     }
    ]
@@ -3463,22 +3463,22 @@
    "grounding": [
     {
      "distillate": "szd-htr-fair4rs-audit-2026-07-23",
-     "path": "10_distillates/documents/szd-htr-fair4rs-audit-2026-07-23",
+     "path": "20_distillates/documents/szd-htr-fair4rs-audit-2026-07-23",
      "statement": "s2"
     },
     {
      "distillate": "szd-htr-fair4rs-audit-2026-07-23",
-     "path": "10_distillates/documents/szd-htr-fair4rs-audit-2026-07-23",
+     "path": "20_distillates/documents/szd-htr-fair4rs-audit-2026-07-23",
      "statement": "s3"
     },
     {
      "distillate": "szd-htr-fair4rs-audit-2026-07-23",
-     "path": "10_distillates/documents/szd-htr-fair4rs-audit-2026-07-23",
+     "path": "20_distillates/documents/szd-htr-fair4rs-audit-2026-07-23",
      "statement": "s4"
     },
     {
      "distillate": "szd-htr-fair4rs-audit-2026-07-23",
-     "path": "10_distillates/documents/szd-htr-fair4rs-audit-2026-07-23",
+     "path": "20_distillates/documents/szd-htr-fair4rs-audit-2026-07-23",
      "statement": "s5"
     }
    ]
@@ -3495,12 +3495,12 @@
    "grounding": [
     {
      "distillate": "borek-2016-tadirah",
-     "path": "10_distillates/publications/borek-2016-tadirah",
+     "path": "20_distillates/publications/borek-2016-tadirah",
      "statement": "s1"
     },
     {
      "distillate": "borek-2016-tadirah",
-     "path": "10_distillates/publications/borek-2016-tadirah",
+     "path": "20_distillates/publications/borek-2016-tadirah",
      "statement": "s3"
     }
    ]
@@ -3517,12 +3517,12 @@
    "grounding": [
     {
      "distillate": "grallert-2026-open-tool-registries",
-     "path": "10_distillates/publications/grallert-2026-open-tool-registries",
+     "path": "20_distillates/publications/grallert-2026-open-tool-registries",
      "statement": "s4"
     },
     {
      "distillate": "grallert-2026-open-tool-registries",
-     "path": "10_distillates/publications/grallert-2026-open-tool-registries",
+     "path": "20_distillates/publications/grallert-2026-open-tool-registries",
      "statement": "s5"
     }
    ]
@@ -3530,7 +3530,7 @@
   {
    "slug": "tadirah-was-formalised-as-a-skos-knowledge-organization-system",
    "title": "TaDiRAH was revised into a formalised, machine-readable SKOS knowledge organization system, released as version 2.0.",
-   "statement": "A revision of TaDiRAH by a different author team transformed the taxonomy into a machine-readable, formalised vocabulary, realised in SKOS on pragmatic grounds and extensible through Wikidata, and released as version 2.0 as a knowledge organization system that improves the FAIR properties of digital humanities research data and assets. This grounds the paper's reference to the current, addressable vocabulary at vocabs.dariah.eu, as distinct from the original classification that [[20_claims/tadirah-classifies-dh-research-activities]] carries.",
+   "statement": "A revision of TaDiRAH by a different author team transformed the taxonomy into a machine-readable, formalised vocabulary, realised in SKOS on pragmatic grounds and extensible through Wikidata, and released as version 2.0 as a knowledge organization system that improves the FAIR properties of digital humanities research data and assets. This grounds the paper's reference to the current, addressable vocabulary at vocabs.dariah.eu, as distinct from the original classification that [[30_assertions/tadirah-classifies-dh-research-activities]] carries.",
    "status": "grounded",
    "topics": [
     "ArtefactVerification"
@@ -3539,17 +3539,17 @@
    "grounding": [
     {
      "distillate": "borek-2021-tadirah-revised-formalized-fair",
-     "path": "10_distillates/publications/borek-2021-tadirah-revised-formalized-fair",
+     "path": "20_distillates/publications/borek-2021-tadirah-revised-formalized-fair",
      "statement": "s1"
     },
     {
      "distillate": "borek-2021-tadirah-revised-formalized-fair",
-     "path": "10_distillates/publications/borek-2021-tadirah-revised-formalized-fair",
+     "path": "20_distillates/publications/borek-2021-tadirah-revised-formalized-fair",
      "statement": "s3"
     },
     {
      "distillate": "borek-2021-tadirah-revised-formalized-fair",
-     "path": "10_distillates/publications/borek-2021-tadirah-revised-formalized-fair",
+     "path": "20_distillates/publications/borek-2021-tadirah-revised-formalized-fair",
      "statement": "s4"
     }
    ]
@@ -3566,22 +3566,22 @@
    "grounding": [
     {
      "distillate": "strutz-2026-tei-evaluation-framework",
-     "path": "10_distillates/publications/strutz-2026-tei-evaluation-framework",
+     "path": "20_distillates/publications/strutz-2026-tei-evaluation-framework",
      "statement": "s4"
     },
     {
      "distillate": "strutz-2026-tei-evaluation-framework",
-     "path": "10_distillates/publications/strutz-2026-tei-evaluation-framework",
+     "path": "20_distillates/publications/strutz-2026-tei-evaluation-framework",
      "statement": "s5"
     },
     {
      "distillate": "strutz-2026-tei-evaluation-framework",
-     "path": "10_distillates/publications/strutz-2026-tei-evaluation-framework",
+     "path": "20_distillates/publications/strutz-2026-tei-evaluation-framework",
      "statement": "s6"
     },
     {
      "distillate": "strutz-2026-tei-evaluation-framework",
-     "path": "10_distillates/publications/strutz-2026-tei-evaluation-framework",
+     "path": "20_distillates/publications/strutz-2026-tei-evaluation-framework",
      "statement": "s8"
     }
    ]
@@ -3598,12 +3598,12 @@
    "grounding": [
     {
      "distillate": "strutz-2026-tei-evaluation-framework",
-     "path": "10_distillates/publications/strutz-2026-tei-evaluation-framework",
+     "path": "20_distillates/publications/strutz-2026-tei-evaluation-framework",
      "statement": "s7"
     },
     {
      "distillate": "strutz-2026-tei-evaluation-framework",
-     "path": "10_distillates/publications/strutz-2026-tei-evaluation-framework",
+     "path": "20_distillates/publications/strutz-2026-tei-evaluation-framework",
      "statement": "s2"
     }
    ]
@@ -3620,12 +3620,12 @@
    "grounding": [
     {
      "distillate": "dellacqua-2023-jagged-frontier",
-     "path": "10_distillates/publications/dellacqua-2023-jagged-frontier",
+     "path": "20_distillates/publications/dellacqua-2023-jagged-frontier",
      "statement": "s7"
     },
     {
      "distillate": "dellacqua-2023-jagged-frontier",
-     "path": "10_distillates/publications/dellacqua-2023-jagged-frontier",
+     "path": "20_distillates/publications/dellacqua-2023-jagged-frontier",
      "statement": "s1"
     }
    ]
@@ -3642,32 +3642,32 @@
    "grounding": [
     {
      "distillate": "hitchcock-2003-toulmins-warrants",
-     "path": "10_distillates/publications/hitchcock-2003-toulmins-warrants",
+     "path": "20_distillates/publications/hitchcock-2003-toulmins-warrants",
      "statement": "s1"
     },
     {
      "distillate": "hitchcock-2003-toulmins-warrants",
-     "path": "10_distillates/publications/hitchcock-2003-toulmins-warrants",
+     "path": "20_distillates/publications/hitchcock-2003-toulmins-warrants",
      "statement": "s2"
     },
     {
      "distillate": "hitchcock-2003-toulmins-warrants",
-     "path": "10_distillates/publications/hitchcock-2003-toulmins-warrants",
+     "path": "20_distillates/publications/hitchcock-2003-toulmins-warrants",
      "statement": "s3"
     },
     {
      "distillate": "hitchcock-2003-toulmins-warrants",
-     "path": "10_distillates/publications/hitchcock-2003-toulmins-warrants",
+     "path": "20_distillates/publications/hitchcock-2003-toulmins-warrants",
      "statement": "s4"
     },
     {
      "distillate": "hitchcock-2003-toulmins-warrants",
-     "path": "10_distillates/publications/hitchcock-2003-toulmins-warrants",
+     "path": "20_distillates/publications/hitchcock-2003-toulmins-warrants",
      "statement": "s5"
     },
     {
      "distillate": "hitchcock-2003-toulmins-warrants",
-     "path": "10_distillates/publications/hitchcock-2003-toulmins-warrants",
+     "path": "20_distillates/publications/hitchcock-2003-toulmins-warrants",
      "statement": "s6"
     }
    ]
@@ -3684,12 +3684,12 @@
    "grounding": [
     {
      "distillate": "miksa-2019-machine-actionable-dmps",
-     "path": "10_distillates/publications/miksa-2019-machine-actionable-dmps",
+     "path": "20_distillates/publications/miksa-2019-machine-actionable-dmps",
      "statement": "s1"
     },
     {
      "distillate": "miksa-2019-machine-actionable-dmps",
-     "path": "10_distillates/publications/miksa-2019-machine-actionable-dmps",
+     "path": "20_distillates/publications/miksa-2019-machine-actionable-dmps",
      "statement": "s2"
     }
    ]
@@ -3706,17 +3706,17 @@
    "grounding": [
     {
      "distillate": "revision-audit-a1-2026-07-23",
-     "path": "10_distillates/documents/revision-audit-a1-2026-07-23",
+     "path": "20_distillates/documents/revision-audit-a1-2026-07-23",
      "statement": "s1"
     },
     {
      "distillate": "revision-audit-a1-2026-07-23",
-     "path": "10_distillates/documents/revision-audit-a1-2026-07-23",
+     "path": "20_distillates/documents/revision-audit-a1-2026-07-23",
      "statement": "s2"
     },
     {
      "distillate": "revision-audit-a1-2026-07-23",
-     "path": "10_distillates/documents/revision-audit-a1-2026-07-23",
+     "path": "20_distillates/documents/revision-audit-a1-2026-07-23",
      "statement": "s3"
     }
    ]
@@ -3733,17 +3733,17 @@
    "grounding": [
     {
      "distillate": "koenig-2026-fertig-vorerst",
-     "path": "10_distillates/publications/koenig-2026-fertig-vorerst",
+     "path": "20_distillates/publications/koenig-2026-fertig-vorerst",
      "statement": "s1"
     },
     {
      "distillate": "koenig-2026-fertig-vorerst",
-     "path": "10_distillates/publications/koenig-2026-fertig-vorerst",
+     "path": "20_distillates/publications/koenig-2026-fertig-vorerst",
      "statement": "s2"
     },
     {
      "distillate": "koenig-2026-fertig-vorerst",
-     "path": "10_distillates/publications/koenig-2026-fertig-vorerst",
+     "path": "20_distillates/publications/koenig-2026-fertig-vorerst",
      "statement": "s3"
     }
    ]
@@ -3760,12 +3760,12 @@
    "grounding": [
     {
      "distillate": "knowledge-base-content-audit-2026-07-19",
-     "path": "10_distillates/documents/knowledge-base-content-audit-2026-07-19",
+     "path": "20_distillates/documents/knowledge-base-content-audit-2026-07-19",
      "statement": "s3"
     },
     {
      "distillate": "knowledge-base-content-audit-2026-07-19",
-     "path": "10_distillates/documents/knowledge-base-content-audit-2026-07-19",
+     "path": "20_distillates/documents/knowledge-base-content-audit-2026-07-19",
      "statement": "s4"
     }
    ]
@@ -3782,7 +3782,7 @@
    "grounding": [
     {
      "distillate": "verification-paper-figures-2026-07-19",
-     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
      "statement": "s14"
     }
    ]
@@ -3799,7 +3799,7 @@
    "grounding": [
     {
      "distillate": "verification-paper-figures-2026-07-19",
-     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
      "statement": "s15"
     }
    ]
@@ -3816,12 +3816,12 @@
    "grounding": [
     {
      "distillate": "fawzy-2025-vibe-coding-in-practice",
-     "path": "10_distillates/publications/fawzy-2025-vibe-coding-in-practice",
+     "path": "20_distillates/publications/fawzy-2025-vibe-coding-in-practice",
      "statement": "s1"
     },
     {
      "distillate": "fawzy-2025-vibe-coding-in-practice",
-     "path": "10_distillates/publications/fawzy-2025-vibe-coding-in-practice",
+     "path": "20_distillates/publications/fawzy-2025-vibe-coding-in-practice",
      "statement": "s2"
     }
    ]
@@ -3838,12 +3838,12 @@
    "grounding": [
     {
      "distillate": "sacha-2014-knowledge-generation-model",
-     "path": "10_distillates/publications/sacha-2014-knowledge-generation-model",
+     "path": "20_distillates/publications/sacha-2014-knowledge-generation-model",
      "statement": "s1"
     },
     {
      "distillate": "sacha-2014-knowledge-generation-model",
-     "path": "10_distillates/publications/sacha-2014-knowledge-generation-model",
+     "path": "20_distillates/publications/sacha-2014-knowledge-generation-model",
      "statement": "s2"
     }
    ]
@@ -3860,12 +3860,12 @@
    "grounding": [
     {
      "distillate": "hinrichs-2019-sandcastles",
-     "path": "10_distillates/publications/hinrichs-2019-sandcastles",
+     "path": "20_distillates/publications/hinrichs-2019-sandcastles",
      "statement": "s1"
     },
     {
      "distillate": "hinrichs-2019-sandcastles",
-     "path": "10_distillates/publications/hinrichs-2019-sandcastles",
+     "path": "20_distillates/publications/hinrichs-2019-sandcastles",
      "statement": "s2"
     }
    ]
@@ -3882,17 +3882,17 @@
    "grounding": [
     {
      "distillate": "lang-2026-beyond-data-feminism",
-     "path": "10_distillates/publications/lang-2026-beyond-data-feminism",
+     "path": "20_distillates/publications/lang-2026-beyond-data-feminism",
      "statement": "s2"
     },
     {
      "distillate": "lang-2026-beyond-data-feminism",
-     "path": "10_distillates/publications/lang-2026-beyond-data-feminism",
+     "path": "20_distillates/publications/lang-2026-beyond-data-feminism",
      "statement": "s3"
     },
     {
      "distillate": "lang-2026-beyond-data-feminism",
-     "path": "10_distillates/publications/lang-2026-beyond-data-feminism",
+     "path": "20_distillates/publications/lang-2026-beyond-data-feminism",
      "statement": "s4"
     }
    ]
@@ -3909,7 +3909,7 @@
    "grounding": [
     {
      "distillate": "verification-paper-figures-2026-07-19",
-     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
      "statement": "s1"
     }
    ]
@@ -3926,17 +3926,17 @@
    "grounding": [
     {
      "distillate": "grallert-2026-open-tool-registries",
-     "path": "10_distillates/publications/grallert-2026-open-tool-registries",
+     "path": "20_distillates/publications/grallert-2026-open-tool-registries",
      "statement": "s1"
     },
     {
      "distillate": "grallert-2026-open-tool-registries",
-     "path": "10_distillates/publications/grallert-2026-open-tool-registries",
+     "path": "20_distillates/publications/grallert-2026-open-tool-registries",
      "statement": "s2"
     },
     {
      "distillate": "grallert-2026-open-tool-registries",
-     "path": "10_distillates/publications/grallert-2026-open-tool-registries",
+     "path": "20_distillates/publications/grallert-2026-open-tool-registries",
      "statement": "s6"
     }
    ]
@@ -3953,7 +3953,7 @@
    "grounding": [
     {
      "distillate": "verification-paper-figures-2026-07-19",
-     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
      "statement": "s12"
     }
    ]
@@ -3970,7 +3970,7 @@
    "grounding": [
     {
      "distillate": "verification-paper-figures-2026-07-19",
-     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
      "statement": "s7"
     }
    ]
@@ -3987,7 +3987,7 @@
    "grounding": [
     {
      "distillate": "verification-paper-figures-2026-07-19",
-     "path": "10_distillates/documents/verification-paper-figures-2026-07-19",
+     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
      "statement": "s13"
     }
    ]
@@ -4001,7 +4001,7 @@
    "source": "frontmatter-core-survey-2026-07-26",
    "sourceKind": "representation",
    "summary": "## Related",
-   "path": "vault/10_distillates/documents/frontmatter-core-survey-2026-07-26.md"
+   "path": "vault/20_distillates/documents/frontmatter-core-survey-2026-07-26.md"
   },
   {
    "slug": "frontmatter-practice-2026-05",
@@ -4010,7 +4010,7 @@
    "source": "frontmatter-practice-2026-05",
    "sourceKind": "representation",
    "summary": "## Related",
-   "path": "vault/10_distillates/documents/frontmatter-practice-2026-05.md"
+   "path": "vault/20_distillates/documents/frontmatter-practice-2026-05.md"
   },
   {
    "slug": "ke-master-deck-2026-07-19",
@@ -4019,7 +4019,7 @@
    "source": "ke-master-deck-2026-07-19",
    "sourceKind": "representation",
    "summary": "## Related",
-   "path": "vault/10_distillates/documents/ke-master-deck-2026-07-19.md"
+   "path": "vault/20_distillates/documents/ke-master-deck-2026-07-19.md"
   },
   {
    "slug": "knowledge-base-content-audit-2026-07-19",
@@ -4028,7 +4028,7 @@
    "source": "knowledge-base-content-audit-2026-07-19",
    "sourceKind": "representation",
    "summary": "## Related",
-   "path": "vault/10_distillates/documents/knowledge-base-content-audit-2026-07-19.md"
+   "path": "vault/20_distillates/documents/knowledge-base-content-audit-2026-07-19.md"
   },
   {
    "slug": "llmdh-summer-school-2025",
@@ -4037,7 +4037,7 @@
    "source": "llmdh-summer-school-2025",
    "sourceKind": "representation",
    "summary": "## Related",
-   "path": "vault/10_distillates/documents/llmdh-summer-school-2025.md"
+   "path": "vault/20_distillates/documents/llmdh-summer-school-2025.md"
   },
   {
    "slug": "m3gim-vocab-derivation-2026-07-24",
@@ -4046,7 +4046,7 @@
    "source": "m3gim-vocab-derivation-2026-07-24",
    "sourceKind": "representation",
    "summary": "## Related",
-   "path": "vault/10_distillates/documents/m3gim-vocab-derivation-2026-07-24.md"
+   "path": "vault/20_distillates/documents/m3gim-vocab-derivation-2026-07-24.md"
   },
   {
    "slug": "promptotyping-video-1-introduction",
@@ -4055,7 +4055,7 @@
    "source": "promptotyping-video-1-introduction",
    "sourceKind": "representation",
    "summary": "## Related",
-   "path": "vault/10_distillates/documents/promptotyping-video-1-introduction.md"
+   "path": "vault/20_distillates/documents/promptotyping-video-1-introduction.md"
   },
   {
    "slug": "promptotyping-video-2-live-demo",
@@ -4064,7 +4064,7 @@
    "source": "promptotyping-video-2-live-demo",
    "sourceKind": "representation",
    "summary": "## Related",
-   "path": "vault/10_distillates/documents/promptotyping-video-2-live-demo.md"
+   "path": "vault/20_distillates/documents/promptotyping-video-2-live-demo.md"
   },
   {
    "slug": "revision-audit-a1-2026-07-23",
@@ -4073,7 +4073,7 @@
    "source": "revision-audit-a1-2026-07-23",
    "sourceKind": "representation",
    "summary": "## Related",
-   "path": "vault/10_distillates/documents/revision-audit-a1-2026-07-23.md"
+   "path": "vault/20_distillates/documents/revision-audit-a1-2026-07-23.md"
   },
   {
    "slug": "revision-audit-a2-2026-07-23",
@@ -4082,7 +4082,7 @@
    "source": "revision-audit-a2-2026-07-23",
    "sourceKind": "representation",
    "summary": "## Related",
-   "path": "vault/10_distillates/documents/revision-audit-a2-2026-07-23.md"
+   "path": "vault/20_distillates/documents/revision-audit-a2-2026-07-23.md"
   },
   {
    "slug": "sdd-bmad-method-2026-07-24",
@@ -4091,7 +4091,7 @@
    "source": "sdd-bmad-method-2026-07-24",
    "sourceKind": "representation",
    "summary": "## Related",
-   "path": "vault/10_distillates/documents/sdd-bmad-method-2026-07-24.md"
+   "path": "vault/20_distillates/documents/sdd-bmad-method-2026-07-24.md"
   },
   {
    "slug": "sdd-kiro-2026-07-24",
@@ -4100,7 +4100,7 @@
    "source": "sdd-kiro-2026-07-24",
    "sourceKind": "representation",
    "summary": "## Related",
-   "path": "vault/10_distillates/documents/sdd-kiro-2026-07-24.md"
+   "path": "vault/20_distillates/documents/sdd-kiro-2026-07-24.md"
   },
   {
    "slug": "sdd-openspec-2026-07-24",
@@ -4109,7 +4109,7 @@
    "source": "sdd-openspec-2026-07-24",
    "sourceKind": "representation",
    "summary": "## Related",
-   "path": "vault/10_distillates/documents/sdd-openspec-2026-07-24.md"
+   "path": "vault/20_distillates/documents/sdd-openspec-2026-07-24.md"
   },
   {
    "slug": "sdd-spec-kit-2026-07-24",
@@ -4118,7 +4118,7 @@
    "source": "sdd-spec-kit-2026-07-24",
    "sourceKind": "representation",
    "summary": "## Related",
-   "path": "vault/10_distillates/documents/sdd-spec-kit-2026-07-24.md"
+   "path": "vault/20_distillates/documents/sdd-spec-kit-2026-07-24.md"
   },
   {
    "slug": "szd-htr-evaluation-results-2026-06-10",
@@ -4127,7 +4127,7 @@
    "source": "szd-htr-evaluation-results-2026-06-10",
    "sourceKind": "representation",
    "summary": "## Related",
-   "path": "vault/10_distillates/documents/szd-htr-evaluation-results-2026-06-10.md"
+   "path": "vault/20_distillates/documents/szd-htr-evaluation-results-2026-06-10.md"
   },
   {
    "slug": "szd-htr-fair4rs-audit-2026-07-23",
@@ -4136,7 +4136,7 @@
    "source": "szd-htr-fair4rs-audit-2026-07-23",
    "sourceKind": "representation",
    "summary": "## Core statements",
-   "path": "vault/10_distillates/documents/szd-htr-fair4rs-audit-2026-07-23.md"
+   "path": "vault/20_distillates/documents/szd-htr-fair4rs-audit-2026-07-23.md"
   },
   {
    "slug": "verification-paper-figures-2026-07-19",
@@ -4145,7 +4145,7 @@
    "source": "verification-paper-figures-2026-07-19",
    "sourceKind": "representation",
    "summary": "## Related",
-   "path": "vault/10_distillates/documents/verification-paper-figures-2026-07-19.md"
+   "path": "vault/20_distillates/documents/verification-paper-figures-2026-07-19.md"
   },
   {
    "slug": "abdurahman-2025-primer-llm-evaluation",
@@ -4154,7 +4154,7 @@
    "source": "abdurahman-2025",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/abdurahman-2025-primer-llm-evaluation.md"
+   "path": "vault/20_distillates/publications/abdurahman-2025-primer-llm-evaluation.md"
   },
   {
    "slug": "andorfer-2026-static-tei-editions",
@@ -4163,7 +4163,7 @@
    "source": "andorfer-2026",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/andorfer-2026-static-tei-editions.md"
+   "path": "vault/20_distillates/publications/andorfer-2026-static-tei-editions.md"
   },
   {
    "slug": "barbot-2024-ssh-open-marketplace",
@@ -4172,7 +4172,7 @@
    "source": "barbot-2024",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/barbot-2024-ssh-open-marketplace.md"
+   "path": "vault/20_distillates/publications/barbot-2024-ssh-open-marketplace.md"
   },
   {
    "slug": "baxter-2012-research-software-engineer",
@@ -4181,7 +4181,7 @@
    "source": "baxter-2012",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/baxter-2012-research-software-engineer.md"
+   "path": "vault/20_distillates/publications/baxter-2012-research-software-engineer.md"
   },
   {
    "slug": "berners-lee-2001-semantic-web",
@@ -4190,7 +4190,7 @@
    "source": "berners-lee-2001",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/berners-lee-2001-semantic-web.md"
+   "path": "vault/20_distillates/publications/berners-lee-2001-semantic-web.md"
   },
   {
    "slug": "bleier-2018-editions-interfaces",
@@ -4199,7 +4199,7 @@
    "source": "bleier-2018",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/bleier-2018-editions-interfaces.md"
+   "path": "vault/20_distillates/publications/bleier-2018-editions-interfaces.md"
   },
   {
    "slug": "borek-2016-tadirah",
@@ -4208,7 +4208,7 @@
    "source": "borek-2016",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/borek-2016-tadirah.md"
+   "path": "vault/20_distillates/publications/borek-2016-tadirah.md"
   },
   {
    "slug": "borek-2021-tadirah-revised-formalized-fair",
@@ -4217,7 +4217,7 @@
    "source": "borek-2021",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/borek-2021-tadirah-revised-formalized-fair.md"
+   "path": "vault/20_distillates/publications/borek-2021-tadirah-revised-formalized-fair.md"
   },
   {
    "slug": "carver-2022-state-of-practice",
@@ -4226,7 +4226,7 @@
    "source": "carver-2022",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/carver-2022-state-of-practice.md"
+   "path": "vault/20_distillates/publications/carver-2022-state-of-practice.md"
   },
   {
    "slug": "chuehong-2022-fair4rs",
@@ -4235,7 +4235,7 @@
    "source": "chuehong-2022",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/chuehong-2022-fair4rs.md"
+   "path": "vault/20_distillates/publications/chuehong-2022-fair4rs.md"
   },
   {
    "slug": "cohen-2021-four-pillars-rse",
@@ -4244,7 +4244,7 @@
    "source": "cohen-2021",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/cohen-2021-four-pillars-rse.md"
+   "path": "vault/20_distillates/publications/cohen-2021-four-pillars-rse.md"
   },
   {
    "slug": "collectionsasdata-2019-santa-barbara",
@@ -4253,7 +4253,7 @@
    "source": "collectionsasdata-2019",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/collectionsasdata-2019-santa-barbara.md"
+   "path": "vault/20_distillates/publications/collectionsasdata-2019-santa-barbara.md"
   },
   {
    "slug": "collins-1993-epistemic-forms",
@@ -4262,7 +4262,7 @@
    "source": "collins-1993",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/collins-1993-epistemic-forms.md"
+   "path": "vault/20_distillates/publications/collins-1993-epistemic-forms.md"
   },
   {
    "slug": "cremer-2025-quellen-und-datenkritik",
@@ -4271,7 +4271,7 @@
    "source": "cremer-2025",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/cremer-2025-quellen-und-datenkritik.md"
+   "path": "vault/20_distillates/publications/cremer-2025-quellen-und-datenkritik.md"
   },
   {
    "slug": "dellacqua-2023-jagged-frontier",
@@ -4280,7 +4280,7 @@
    "source": "dellacqua-2023",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/dellacqua-2023-jagged-frontier.md"
+   "path": "vault/20_distillates/publications/dellacqua-2023-jagged-frontier.md"
   },
   {
    "slug": "drucker-2011-humanities-approaches",
@@ -4289,7 +4289,7 @@
    "source": "drucker-2011",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/drucker-2011-humanities-approaches.md"
+   "path": "vault/20_distillates/publications/drucker-2011-humanities-approaches.md"
   },
   {
    "slug": "edmond-2005-professional-intermediary",
@@ -4298,7 +4298,7 @@
    "source": "edmond-2005",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/edmond-2005-professional-intermediary.md"
+   "path": "vault/20_distillates/publications/edmond-2005-professional-intermediary.md"
   },
   {
    "slug": "fanous-2025-syceval",
@@ -4307,7 +4307,7 @@
    "source": "fanous-2025",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/fanous-2025-syceval.md"
+   "path": "vault/20_distillates/publications/fanous-2025-syceval.md"
   },
   {
    "slug": "fawzy-2025-vibe-coding-in-practice",
@@ -4316,7 +4316,7 @@
    "source": "fawzy-2025",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/fawzy-2025-vibe-coding-in-practice.md"
+   "path": "vault/20_distillates/publications/fawzy-2025-vibe-coding-in-practice.md"
   },
   {
    "slug": "fischer-2025-bildkarten",
@@ -4325,7 +4325,7 @@
    "source": "fischer-2025",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/fischer-2025-bildkarten.md"
+   "path": "vault/20_distillates/publications/fischer-2025-bildkarten.md"
   },
   {
    "slug": "flanders-2019-shape-of-data",
@@ -4334,7 +4334,7 @@
    "source": "flanders-2019",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/flanders-2019-shape-of-data.md"
+   "path": "vault/20_distillates/publications/flanders-2019-shape-of-data.md"
   },
   {
    "slug": "galey-2010-how-a-prototype-argues",
@@ -4343,7 +4343,7 @@
    "source": "galey-2010",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/galey-2010-how-a-prototype-argues.md"
+   "path": "vault/20_distillates/publications/galey-2010-how-a-prototype-argues.md"
   },
   {
    "slug": "geiger-2023-daten-forschungsdaten",
@@ -4352,7 +4352,7 @@
    "source": "geiger-2023",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/geiger-2023-daten-forschungsdaten.md"
+   "path": "vault/20_distillates/publications/geiger-2023-daten-forschungsdaten.md"
   },
   {
    "slug": "grallert-2026-open-tool-registries",
@@ -4361,7 +4361,7 @@
    "source": "grallert-2026",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/grallert-2026-open-tool-registries.md"
+   "path": "vault/20_distillates/publications/grallert-2026-open-tool-registries.md"
   },
   {
    "slug": "groth-2010-nanopublication",
@@ -4370,7 +4370,7 @@
    "source": "groth-2010",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/groth-2010-nanopublication.md"
+   "path": "vault/20_distillates/publications/groth-2010-nanopublication.md"
   },
   {
    "slug": "gruber-1993-ontolingua",
@@ -4379,7 +4379,7 @@
    "source": "gruber-1993",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/gruber-1993-ontolingua.md"
+   "path": "vault/20_distillates/publications/gruber-1993-ontolingua.md"
   },
   {
    "slug": "hinrichs-2019-sandcastles",
@@ -4388,7 +4388,7 @@
    "source": "hinrichs-2019",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/hinrichs-2019-sandcastles.md"
+   "path": "vault/20_distillates/publications/hinrichs-2019-sandcastles.md"
   },
   {
    "slug": "hitchcock-2003-toulmins-warrants",
@@ -4397,7 +4397,7 @@
    "source": "hitchcock-2003",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/hitchcock-2003-toulmins-warrants.md"
+   "path": "vault/20_distillates/publications/hitchcock-2003-toulmins-warrants.md"
   },
   {
    "slug": "holmes-2023-endings-principles",
@@ -4406,7 +4406,7 @@
    "source": "holmes-2023",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/holmes-2023-endings-principles.md"
+   "path": "vault/20_distillates/publications/holmes-2023-endings-principles.md"
   },
   {
    "slug": "hong-2023-metagpt",
@@ -4415,7 +4415,7 @@
    "source": "hong-2023-metagpt",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/hong-2023-metagpt.md"
+   "path": "vault/20_distillates/publications/hong-2023-metagpt.md"
   },
   {
    "slug": "hong-2025-context-rot",
@@ -4424,7 +4424,7 @@
    "source": "hong-2025",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/hong-2025-context-rot.md"
+   "path": "vault/20_distillates/publications/hong-2025-context-rot.md"
   },
   {
    "slug": "kemman-2021-trading-zones",
@@ -4433,7 +4433,7 @@
    "source": "kemman-2021",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/kemman-2021-trading-zones.md"
+   "path": "vault/20_distillates/publications/kemman-2021-trading-zones.md"
   },
   {
    "slug": "koenig-2026-fertig-vorerst",
@@ -4442,7 +4442,7 @@
    "source": "koenig-2026",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/koenig-2026-fertig-vorerst.md"
+   "path": "vault/20_distillates/publications/koenig-2026-fertig-vorerst.md"
   },
   {
    "slug": "koolen-2019-digital-tool-criticism",
@@ -4451,7 +4451,7 @@
    "source": "koolen-2019",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/koolen-2019-digital-tool-criticism.md"
+   "path": "vault/20_distillates/publications/koolen-2019-digital-tool-criticism.md"
   },
   {
    "slug": "lang-2026-beyond-data-feminism",
@@ -4460,7 +4460,7 @@
    "source": "lang-2026",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/lang-2026-beyond-data-feminism.md"
+   "path": "vault/20_distillates/publications/lang-2026-beyond-data-feminism.md"
   },
   {
    "slug": "leipold-2026-wikifair",
@@ -4469,7 +4469,7 @@
    "source": "leipold-2026",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/leipold-2026-wikifair.md"
+   "path": "vault/20_distillates/publications/leipold-2026-wikifair.md"
   },
   {
    "slug": "liu-2024-llm-agents-se-survey",
@@ -4478,7 +4478,7 @@
    "source": "liu-2024",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/liu-2024-llm-agents-se-survey.md"
+   "path": "vault/20_distillates/publications/liu-2024-llm-agents-se-survey.md"
   },
   {
    "slug": "lucassen-2016-quality-user-story",
@@ -4487,7 +4487,7 @@
    "source": "lucassen-2016",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/lucassen-2016-quality-user-story.md"
+   "path": "vault/20_distillates/publications/lucassen-2016-quality-user-story.md"
   },
   {
    "slug": "macedo-2026-from-prompt-to-process",
@@ -4496,7 +4496,7 @@
    "source": "macedo-2026",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/macedo-2026-from-prompt-to-process.md"
+   "path": "vault/20_distillates/publications/macedo-2026-from-prompt-to-process.md"
   },
   {
    "slug": "mariani-2025-prov-a",
@@ -4505,7 +4505,7 @@
    "source": "mariani-2025",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/mariani-2025-prov-a.md"
+   "path": "vault/20_distillates/publications/mariani-2025-prov-a.md"
   },
   {
    "slug": "marwick-2018-research-compendium",
@@ -4514,7 +4514,7 @@
    "source": "marwick-2018",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/marwick-2018-research-compendium.md"
+   "path": "vault/20_distillates/publications/marwick-2018-research-compendium.md"
   },
   {
    "slug": "mayr-2021-triptych-conceptual-modeling",
@@ -4523,7 +4523,7 @@
    "source": "mayr-2021",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/mayr-2021-triptych-conceptual-modeling.md"
+   "path": "vault/20_distillates/publications/mayr-2021-triptych-conceptual-modeling.md"
   },
   {
    "slug": "mei-2025-context-engineering",
@@ -4532,7 +4532,7 @@
    "source": "mei-2025",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/mei-2025-context-engineering.md"
+   "path": "vault/20_distillates/publications/mei-2025-context-engineering.md"
   },
   {
    "slug": "miksa-2019-machine-actionable-dmps",
@@ -4541,7 +4541,7 @@
    "source": "miksa-2019",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/miksa-2019-machine-actionable-dmps.md"
+   "path": "vault/20_distillates/publications/miksa-2019-machine-actionable-dmps.md"
   },
   {
    "slug": "owens-2011-defining-data",
@@ -4550,7 +4550,7 @@
    "source": "owens-2011",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/owens-2011-defining-data.md"
+   "path": "vault/20_distillates/publications/owens-2011-defining-data.md"
   },
   {
    "slug": "pichler-2022-operationalization",
@@ -4559,7 +4559,7 @@
    "source": "pichler-2022",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/pichler-2022-operationalization.md"
+   "path": "vault/20_distillates/publications/pichler-2022-operationalization.md"
   },
   {
    "slug": "pierazzo-2015-digital-editing",
@@ -4568,7 +4568,7 @@
    "source": "pierazzo-2015",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/pierazzo-2015-digital-editing.md"
+   "path": "vault/20_distillates/publications/pierazzo-2015-digital-editing.md"
   },
   {
    "slug": "pollin-2019-depcha-bookkeeping",
@@ -4577,7 +4577,7 @@
    "source": "pollin-2019",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/pollin-2019-depcha-bookkeeping.md"
+   "path": "vault/20_distillates/publications/pollin-2019-depcha-bookkeeping.md"
   },
   {
    "slug": "pollin-2024-workshopreihe",
@@ -4586,7 +4586,7 @@
    "source": "pollin-2024",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/pollin-2024-workshopreihe.md"
+   "path": "vault/20_distillates/publications/pollin-2024-workshopreihe.md"
   },
   {
    "slug": "pollin-2025a-when-it-was-2024",
@@ -4595,7 +4595,7 @@
    "source": "pollin-2025a",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/pollin-2025a-when-it-was-2024.md"
+   "path": "vault/20_distillates/publications/pollin-2025a-when-it-was-2024.md"
   },
   {
    "slug": "pollin-2025b-dissertation",
@@ -4604,7 +4604,7 @@
    "source": "pollin-2025b",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/pollin-2025b-dissertation.md"
+   "path": "vault/20_distillates/publications/pollin-2025b-dissertation.md"
   },
   {
    "slug": "pollin-2025c-critical-vibing",
@@ -4613,7 +4613,7 @@
    "source": "pollin-2025c",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/pollin-2025c-critical-vibing.md"
+   "path": "vault/20_distillates/publications/pollin-2025c-critical-vibing.md"
   },
   {
    "slug": "pollin-2025d-promptotyping-blog",
@@ -4622,7 +4622,7 @@
    "source": "pollin-2025d",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/pollin-2025d-promptotyping-blog.md"
+   "path": "vault/20_distillates/publications/pollin-2025d-promptotyping-blog.md"
   },
   {
    "slug": "pollin-2026a-asymmetric-amplification",
@@ -4631,7 +4631,7 @@
    "source": "pollin-2026a",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/pollin-2026a-asymmetric-amplification.md"
+   "path": "vault/20_distillates/publications/pollin-2026a-asymmetric-amplification.md"
   },
   {
    "slug": "pollin-2026b-lisa-positioning",
@@ -4640,7 +4640,7 @@
    "source": "pollin-2026b",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/pollin-2026b-lisa-positioning.md"
+   "path": "vault/20_distillates/publications/pollin-2026b-lisa-positioning.md"
   },
   {
    "slug": "posner-2015-necessary-contradiction",
@@ -4649,7 +4649,7 @@
    "source": "posner-2015",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/posner-2015-necessary-contradiction.md"
+   "path": "vault/20_distillates/publications/posner-2015-necessary-contradiction.md"
   },
   {
    "slug": "procida-2024-diataxis",
@@ -4658,7 +4658,7 @@
    "source": "procida-2024",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/procida-2024-diataxis.md"
+   "path": "vault/20_distillates/publications/procida-2024-diataxis.md"
   },
   {
    "slug": "risam-2022-minimal-computing",
@@ -4667,7 +4667,7 @@
    "source": "risam-2022",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/risam-2022-minimal-computing.md"
+   "path": "vault/20_distillates/publications/risam-2022-minimal-computing.md"
   },
   {
    "slug": "roberts-2007-coordinated-multiple-views",
@@ -4676,7 +4676,7 @@
    "source": "roberts-2007",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/roberts-2007-coordinated-multiple-views.md"
+   "path": "vault/20_distillates/publications/roberts-2007-coordinated-multiple-views.md"
   },
   {
    "slug": "ruecker-2015-taxonomy-prototypes",
@@ -4685,7 +4685,7 @@
    "source": "ruecker-2015",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/ruecker-2015-taxonomy-prototypes.md"
+   "path": "vault/20_distillates/publications/ruecker-2015-taxonomy-prototypes.md"
   },
   {
    "slug": "sacha-2014-knowledge-generation-model",
@@ -4694,7 +4694,7 @@
    "source": "sacha-2014",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/sacha-2014-knowledge-generation-model.md"
+   "path": "vault/20_distillates/publications/sacha-2014-knowledge-generation-model.md"
   },
   {
    "slug": "saltzer-1975-protection-of-information",
@@ -4703,7 +4703,7 @@
    "source": "saltzer-1975",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/saltzer-1975-protection-of-information.md"
+   "path": "vault/20_distillates/publications/saltzer-1975-protection-of-information.md"
   },
   {
    "slug": "sarkar-2025-vibe-coding",
@@ -4712,7 +4712,7 @@
    "source": "sarkar-2025",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/sarkar-2025-vibe-coding.md"
+   "path": "vault/20_distillates/publications/sarkar-2025-vibe-coding.md"
   },
   {
    "slug": "schoech-2013-big-smart-clean-messy",
@@ -4721,7 +4721,7 @@
    "source": "schoech-2013",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/schoech-2013-big-smart-clean-messy.md"
+   "path": "vault/20_distillates/publications/schoech-2013-big-smart-clean-messy.md"
   },
   {
    "slug": "schonhardt-2026-do-one-thing",
@@ -4730,7 +4730,7 @@
    "source": "schonhardt-2026",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/schonhardt-2026-do-one-thing.md"
+   "path": "vault/20_distillates/publications/schonhardt-2026-do-one-thing.md"
   },
   {
    "slug": "shanahan-2023-role-play",
@@ -4739,7 +4739,7 @@
    "source": "shanahan-2023",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/shanahan-2023-role-play.md"
+   "path": "vault/20_distillates/publications/shanahan-2023-role-play.md"
   },
   {
    "slug": "sharma-2023-sycophancy",
@@ -4748,7 +4748,7 @@
    "source": "sharma-2023",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/sharma-2023-sycophancy.md"
+   "path": "vault/20_distillates/publications/sharma-2023-sycophancy.md"
   },
   {
    "slug": "siemens-2009-reply-all-teams",
@@ -4757,7 +4757,7 @@
    "source": "siemens-2009",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/siemens-2009-reply-all-teams.md"
+   "path": "vault/20_distillates/publications/siemens-2009-reply-all-teams.md"
   },
   {
    "slug": "soiland-2022-ro-crate",
@@ -4766,7 +4766,7 @@
    "source": "soiland-2022",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/soiland-2022-ro-crate.md"
+   "path": "vault/20_distillates/publications/soiland-2022-ro-crate.md"
   },
   {
    "slug": "stanicka-2026-cross-linking-vocabularies",
@@ -4775,7 +4775,7 @@
    "source": "stanicka-2026",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/stanicka-2026-cross-linking-vocabularies.md"
+   "path": "vault/20_distillates/publications/stanicka-2026-cross-linking-vocabularies.md"
   },
   {
    "slug": "star-1989-boundary-objects",
@@ -4784,7 +4784,7 @@
    "source": "star-1989",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/star-1989-boundary-objects.md"
+   "path": "vault/20_distillates/publications/star-1989-boundary-objects.md"
   },
   {
    "slug": "strutz-2025-hammer-purgstall-tei-dataset",
@@ -4793,7 +4793,7 @@
    "source": "strutz-2025",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/strutz-2025-hammer-purgstall-tei-dataset.md"
+   "path": "vault/20_distillates/publications/strutz-2025-hammer-purgstall-tei-dataset.md"
   },
   {
    "slug": "strutz-2026-tei-evaluation-framework",
@@ -4802,7 +4802,7 @@
    "source": "strutz-2026",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/strutz-2026-tei-evaluation-framework.md"
+   "path": "vault/20_distillates/publications/strutz-2026-tei-evaluation-framework.md"
   },
   {
    "slug": "unsworth-2000-scholarly-primitives",
@@ -4811,7 +4811,7 @@
    "source": "unsworth-2000",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/unsworth-2000-scholarly-primitives.md"
+   "path": "vault/20_distillates/publications/unsworth-2000-scholarly-primitives.md"
   },
   {
    "slug": "vanes-2018-tool-criticism",
@@ -4820,7 +4820,7 @@
    "source": "vanes-2018",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/vanes-2018-tool-criticism.md"
+   "path": "vault/20_distillates/publications/vanes-2018-tool-criticism.md"
   },
   {
    "slug": "whitelaw-2015-generous-interfaces",
@@ -4829,7 +4829,7 @@
    "source": "whitelaw-2015",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/whitelaw-2015-generous-interfaces.md"
+   "path": "vault/20_distillates/publications/whitelaw-2015-generous-interfaces.md"
   },
   {
    "slug": "wilkinson-2016-fair-principles",
@@ -4838,7 +4838,7 @@
    "source": "wilkinson-2016",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/wilkinson-2016-fair-principles.md"
+   "path": "vault/20_distillates/publications/wilkinson-2016-fair-principles.md"
   },
   {
    "slug": "windhager-2019-visualization-ch-collections",
@@ -4847,7 +4847,7 @@
    "source": "windhager-2019",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/windhager-2019-visualization-ch-collections.md"
+   "path": "vault/20_distillates/publications/windhager-2019-visualization-ch-collections.md"
   },
   {
    "slug": "yehudai-2025-survey-evaluation-llm-agents",
@@ -4856,7 +4856,7 @@
    "source": "yehudai-2025",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/yehudai-2025-survey-evaluation-llm-agents.md"
+   "path": "vault/20_distillates/publications/yehudai-2025-survey-evaluation-llm-agents.md"
   },
   {
    "slug": "zheng-2023-llm-as-a-judge",
@@ -4865,7 +4865,7 @@
    "source": "zheng-2023",
    "sourceKind": "publication",
    "summary": "## Related",
-   "path": "vault/10_distillates/publications/zheng-2023-llm-as-a-judge.md"
+   "path": "vault/20_distillates/publications/zheng-2023-llm-as-a-judge.md"
   }
  ],
  "sources": [
@@ -5021,14 +5021,14 @@
    "kind": "representation",
    "title": "2026-07-26 - Survey of the reduced frontmatter core across the local knowledge bases",
    "label": "2026-07-26 - Survey of the reduced frontmatter core across the local knowledge bases",
-   "path": "vault/00_representation/documents/frontmatter-core-survey-2026-07-26.md"
+   "path": "vault/10_markdown/documents/frontmatter-core-survey-2026-07-26.md"
   },
   {
    "slug": "frontmatter-practice-2026-05",
    "kind": "representation",
    "title": "Frontmatter-Praxis in Promptotyping-Repos 2026-05",
    "label": "Frontmatter-Praxis in Promptotyping-Repos 2026-05",
-   "path": "vault/00_representation/documents/frontmatter-practice-2026-05.md"
+   "path": "vault/10_markdown/documents/frontmatter-practice-2026-05.md"
   },
   {
    "slug": "galey-2010",
@@ -5105,7 +5105,7 @@
    "kind": "representation",
    "title": "Knowledge und Context Engineering für AI Agents",
    "label": "Knowledge und Context Engineering für AI Agents",
-   "path": "vault/00_representation/documents/ke-master-deck-2026-07-19.md"
+   "path": "vault/10_markdown/documents/ke-master-deck-2026-07-19.md"
   },
   {
    "slug": "kemman-2021",
@@ -5119,7 +5119,7 @@
    "kind": "representation",
    "title": "2026-07-19 - Promptotyping-Wissensbasen Inhaltsaudit (Befund)",
    "label": "2026-07-19 - Promptotyping-Wissensbasen Inhaltsaudit (Befund)",
-   "path": "vault/00_representation/documents/knowledge-base-content-audit-2026-07-19.md"
+   "path": "vault/10_markdown/documents/knowledge-base-content-audit-2026-07-19.md"
   },
   {
    "slug": "koenig-2026",
@@ -5161,7 +5161,7 @@
    "kind": "representation",
    "title": "Large Language Models for Digital Humanities Research",
    "label": "Large Language Models for Digital Humanities Research",
-   "path": "vault/00_representation/documents/llmdh-summer-school-2025.md"
+   "path": "vault/10_markdown/documents/llmdh-summer-school-2025.md"
   },
   {
    "slug": "lucassen-2016",
@@ -5175,7 +5175,7 @@
    "kind": "representation",
    "title": "Findings on deriving a domain document from a formal vocabulary",
    "label": "Findings on deriving a domain document from a formal vocabulary",
-   "path": "vault/00_representation/documents/m3gim-vocab-derivation-2026-07-24.md"
+   "path": "vault/10_markdown/documents/m3gim-vocab-derivation-2026-07-24.md"
   },
   {
    "slug": "macedo-2026",
@@ -5315,28 +5315,28 @@
    "kind": "representation",
    "title": "Einführung in Promptotyping, Teil 1",
    "label": "Einführung in Promptotyping, Teil 1",
-   "path": "vault/00_representation/documents/promptotyping-video-1-introduction.md"
+   "path": "vault/10_markdown/documents/promptotyping-video-1-introduction.md"
   },
   {
    "slug": "promptotyping-video-2-live-demo",
    "kind": "representation",
    "title": "Einführung in Promptotyping, Teil 2 (Live-Demonstration)",
    "label": "Einführung in Promptotyping, Teil 2 (Live-Demonstration)",
-   "path": "vault/00_representation/documents/promptotyping-video-2-live-demo.md"
+   "path": "vault/10_markdown/documents/promptotyping-video-2-live-demo.md"
   },
   {
    "slug": "revision-audit-a1-2026-07-23",
    "kind": "representation",
    "title": "Revision-Audit A1 — Claim-Evidenz-Prüfung der Transferbehauptung",
    "label": "Revision-Audit A1 — Claim-Evidenz-Prüfung der Transferbehauptung",
-   "path": "vault/00_representation/documents/revision-audit-a1-2026-07-23.md"
+   "path": "vault/10_markdown/documents/revision-audit-a1-2026-07-23.md"
   },
   {
    "slug": "revision-audit-a2-2026-07-23",
    "kind": "representation",
    "title": "Revision Audit A2",
    "label": "Revision Audit A2",
-   "path": "vault/00_representation/documents/revision-audit-a2-2026-07-23.md"
+   "path": "vault/10_markdown/documents/revision-audit-a2-2026-07-23.md"
   },
   {
    "slug": "risam-2022",
@@ -5399,28 +5399,28 @@
    "kind": "representation",
    "title": "BMAD-METHOD",
    "label": "BMAD-METHOD",
-   "path": "vault/00_representation/documents/sdd-bmad-method-2026-07-24.md"
+   "path": "vault/10_markdown/documents/sdd-bmad-method-2026-07-24.md"
   },
   {
    "slug": "sdd-kiro-2026-07-24",
    "kind": "representation",
    "title": "AWS Kiro",
    "label": "AWS Kiro",
-   "path": "vault/00_representation/documents/sdd-kiro-2026-07-24.md"
+   "path": "vault/10_markdown/documents/sdd-kiro-2026-07-24.md"
   },
   {
    "slug": "sdd-openspec-2026-07-24",
    "kind": "representation",
    "title": "OpenSpec",
    "label": "OpenSpec",
-   "path": "vault/00_representation/documents/sdd-openspec-2026-07-24.md"
+   "path": "vault/10_markdown/documents/sdd-openspec-2026-07-24.md"
   },
   {
    "slug": "sdd-spec-kit-2026-07-24",
    "kind": "representation",
    "title": "GitHub Spec Kit",
    "label": "GitHub Spec Kit",
-   "path": "vault/00_representation/documents/sdd-spec-kit-2026-07-24.md"
+   "path": "vault/10_markdown/documents/sdd-spec-kit-2026-07-24.md"
   },
   {
    "slug": "shanahan-2023",
@@ -5483,14 +5483,14 @@
    "kind": "representation",
    "title": "Evaluationsergebnisse: CER-Baseline der SZD-HTR-Pipeline",
    "label": "Evaluationsergebnisse: CER-Baseline der SZD-HTR-Pipeline",
-   "path": "vault/00_representation/documents/szd-htr-evaluation-results-2026-06-10.md"
+   "path": "vault/10_markdown/documents/szd-htr-evaluation-results-2026-06-10.md"
   },
   {
    "slug": "szd-htr-fair4rs-audit-2026-07-23",
    "kind": "representation",
    "title": "Verifikation: FAIR4RS-Status des Repositories",
    "label": "Verifikation: FAIR4RS-Status des Repositories",
-   "path": "vault/00_representation/documents/szd-htr-fair4rs-audit-2026-07-23.md"
+   "path": "vault/10_markdown/documents/szd-htr-fair4rs-audit-2026-07-23.md"
   },
   {
    "slug": "unsworth-2000",
@@ -5511,7 +5511,7 @@
    "kind": "representation",
    "title": "Verification of Section 4 Figures",
    "label": "Verification of Section 4 Figures",
-   "path": "vault/00_representation/documents/verification-paper-figures-2026-07-19.md"
+   "path": "vault/10_markdown/documents/verification-paper-figures-2026-07-19.md"
   },
   {
    "slug": "whitelaw-2015",

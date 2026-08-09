@@ -1223,20 +1223,20 @@ a:hover {
   margin: 0 0 var(--space-4);
 }
 
-.vault-claim-list {
+.vault-assertion-list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.vault-claim-item {
+.vault-assertion-item {
   display: flex;
   align-items: baseline;
   gap: var(--space-4);
   padding: var(--space-2) 0;
 }
 
-.vault-claim {
+.vault-assertion {
   flex: 1;
   background: none;
   border: none;
@@ -1248,12 +1248,12 @@ a:hover {
   border-bottom: 1px solid transparent;
 }
 
-.vault-claim:hover,
-.vault-claim:focus-visible {
+.vault-assertion:hover,
+.vault-assertion:focus-visible {
   border-bottom-color: var(--glossar-underline);
 }
 
-.vault-claim-meta,
+.vault-assertion-meta,
 .vault-repo-note {
   font-size: 0.8125rem;
   color: var(--grey-3);

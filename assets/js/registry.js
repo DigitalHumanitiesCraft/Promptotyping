@@ -640,7 +640,7 @@
     rest = rest.replace(/\/$/, "");
     var segments = rest.split("/");
 
-    // Prefixed family: /paper/{n-slug}, /konzepte/{name}, /vault/{claim}, ...
+    // Prefixed family: /paper/{n-slug}, /konzepte/{name}, /vault/{assertion}, ...
     var family = familyForSegment(segments[0]);
     if (family && segments[1]) {
       var anchor = family.prefix + segments[1];

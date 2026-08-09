@@ -1,4 +1,4 @@
-"""Render the vault's claim layer into the site's data file.
+"""Render the vault's assertion layer into the site's data file.
 
 The Promptotyping site is served straight from the repository with no build
 step at request time. This script is a generator in the same sense as the
@@ -10,14 +10,14 @@ Run from the repository root:
 
     python vault/tools/build_site_index.py
 
-The index carries the topic maps, the claims with their statements, their
+The index carries the topic maps, the assertions with their statements, their
 status and their grounding anchors, and the source each distillate condenses,
-so the site can draw the grounding chain from a claim down to its source.
+so the site can draw the grounding chain from an assertion down to its source.
 Distillate bodies stay out; the side panel fetches the distillate Markdown on
 demand, the way the template panel does.
 
 Exit code 0 when the index was written without complaint, 1 when there is no
-claim layer to read, 2 when the index was written but a warning stands against
+assertion layer to read, 2 when the index was written but a warning stands against
 it. A warning here means the index carries something the vault could not
 resolve, which V14 of the site's verification document then reports as well.
 """
@@ -89,7 +89,7 @@ def section(body: str, heading: str) -> str:
     return m.group(1).strip() if m else ""
 
 
-def read_claim(path: Path) -> dict:
+def read_assertion(path: Path) -> dict:
     frontmatter, body = read_document(path)
     title = re.search(r"^# (.+)$", body, re.M)
     grounding = []
@@ -113,13 +113,13 @@ def read_moc(path: Path) -> dict:
     frontmatter, body = read_document(path)
     title = re.search(r"^# (.+)$", body, re.M)
     lead = re.search(r"^# .+$\n+([^\n-].*?)(?=\n\n|\n- )", body, re.M | re.S)
-    claims = [m.group(1).split("/")[-1] for m in WIKILINK.finditer(body)]
+    assertions = [m.group(1).split("/")[-1] for m in WIKILINK.finditer(body)]
     return {
         "slug": path.stem,
         "topic": scalar(frontmatter, "topic") or path.stem.replace("MOC-", ""),
         "title": title.group(1).strip() if title else path.stem,
         "description": " ".join(lead.group(1).split()) if lead else "",
-        "claims": claims,
+        "assertions": assertions,
     }
 
 
@@ -229,15 +229,15 @@ def collect_sources(vault: Path, distillates: list[dict]) -> tuple[list[dict], l
 def main() -> int:
     root = repo_root()
     vault = root / "vault"
-    claims_dir = vault / ASSERTIONS
-    if not claims_dir.is_dir():
-        print(f"no claim layer at {claims_dir}", file=sys.stderr)
+    assertions_dir = vault / ASSERTIONS
+    if not assertions_dir.is_dir():
+        print(f"no assertion layer at {assertions_dir}", file=sys.stderr)
         return 1
 
     try:
-        topics = [read_moc(p) for p in sorted(claims_dir.glob("MOC-*.md"))]
-        claims = [read_claim(p) for p in sorted(claims_dir.glob("*.md"))
-                  if not p.name.startswith("MOC-")]
+        topics = [read_moc(p) for p in sorted(assertions_dir.glob("MOC-*.md"))]
+        assertions = [read_assertion(p) for p in sorted(assertions_dir.glob("*.md"))
+                      if not p.name.startswith("MOC-")]
         distillates = [read_distillate(p) for p in sorted(vault.glob(f"{DISTILLATES}/*/*.md"))
                        if p.name != "README.md"]
         sources, warnings = collect_sources(vault, distillates)
@@ -245,34 +245,34 @@ def main() -> int:
         print(f"cannot read the vault: {error}", file=sys.stderr)
         return 1
 
-    known = {c["slug"] for c in claims}
+    known = {c["slug"] for c in assertions}
     for topic in topics:
-        missing = [s for s in topic["claims"] if s not in known]
+        missing = [s for s in topic["assertions"] if s not in known]
         if missing:
-            warnings.append(f"{topic['slug']} lists unknown claims: {missing}")
-        topic["claims"] = [s for s in topic["claims"] if s in known]
+            warnings.append(f"{topic['slug']} lists unknown assertions: {missing}")
+        topic["assertions"] = [s for s in topic["assertions"] if s in known]
 
-    orphans = sorted(known - {s for t in topics for s in t["claims"]})
+    orphans = sorted(known - {s for t in topics for s in t["assertions"]})
     if orphans:
-        warnings.append(f"claims in no topic map: {orphans}")
+        warnings.append(f"assertions in no topic map: {orphans}")
 
     index = {
         "_meta": {
-            "beschreibung": "Claim-Schicht des Grounded Vault unter dem Paper. Erzeugt aus "
-                            "vault/20_claims, vault/10_distillates, vault/references und "
-                            "vault/00_representation durch vault/tools/build_site_index.py; "
+            "beschreibung": "Assertion-Schicht des Grounded Vault unter dem Paper. Erzeugt aus "
+                            "vault/30_assertions, vault/20_distillates, vault/references und "
+                            "vault/10_markdown durch vault/tools/build_site_index.py; "
                             "nicht von Hand pflegen.",
             "quelle": "vault/",
             "generator": "vault/tools/build_site_index.py",
         },
         "topics": topics,
-        "claims": claims,
+        "assertions": assertions,
         "distillates": distillates,
         "sources": sources,
     }
     out = root / "data" / "vault.json"
     out.write_text(json.dumps(index, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-    print(f"{out.relative_to(root)}: {len(topics)} topics, {len(claims)} claims, "
+    print(f"{out.relative_to(root)}: {len(topics)} topics, {len(assertions)} assertions, "
           f"{len(distillates)} distillates, {len(sources)} sources, "
           f"{out.stat().st_size // 1024} KB")
     for message in warnings:
