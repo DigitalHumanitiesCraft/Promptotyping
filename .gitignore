@@ -1,6 +1,6 @@
 # Grounded-Vault instance (vault/): originals may be confidential; they never enter version control.
-vault/_sources/*
-!vault/_sources/README.md
+vault/00_sources/*
+!vault/00_sources/README.md
 vault/.env
 __pycache__/
 .pytest_cache/
