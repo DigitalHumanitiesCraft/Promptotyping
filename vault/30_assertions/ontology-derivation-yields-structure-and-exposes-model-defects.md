@@ -4,7 +4,7 @@ topics:
 - '[[Frame]]'
 status: grounded
 checked:
-  validation: 2026-07-24
+  validation: 2026-08-09
 grounding:
 - '[[20_distillates/documents/m3gim-vocab-derivation-2026-07-24#^s2]]'
 - '[[20_distillates/documents/m3gim-vocab-derivation-2026-07-24#^s4]]'

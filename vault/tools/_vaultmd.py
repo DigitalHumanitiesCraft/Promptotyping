@@ -16,26 +16,26 @@ import json
 import re
 from pathlib import Path
 
-REPRESENTATIONS = "00_representation"
-DISTILLATES = "10_distillates"
-CLAIMS = "20_claims"
-DELIVERABLE = "30_deliverable"
+REPRESENTATIONS = "10_markdown"
+DISTILLATES = "20_distillates"
+ASSERTIONS = "30_assertions"
+OUTPUT = "40_output"
 GLOSSARY = "glossary"
 REFERENCES = "references"
 
-CONTENT_FOLDERS = (REPRESENTATIONS, DISTILLATES, CLAIMS, DELIVERABLE, GLOSSARY)
+CONTENT_FOLDERS = (REPRESENTATIONS, DISTILLATES, ASSERTIONS, OUTPUT, GLOSSARY)
 
 TYPE_FOLDER = {
     "representation": REPRESENTATIONS,
     "distillate": DISTILLATES,
-    "claim": CLAIMS,
-    "moc": CLAIMS,
-    "chapter": DELIVERABLE,
+    "assertion": ASSERTIONS,
+    "moc": ASSERTIONS,
+    "chapter": OUTPUT,
     "glossary": GLOSSARY,
 }
 
 # The one wikilink form. `knowledge/schema.md` mints an anchor only as a block
-# reference, `[[10_distillates/documents/slug#^s1]]`, so the caret belongs to the
+# reference, `[[20_distillates/documents/slug#^s1]]`, so the caret belongs to the
 # syntax rather than being optional; no document in this vault carries a heading
 # anchor. An alias is read by neither tool and may therefore be anything,
 # including empty, which Obsidian accepts.

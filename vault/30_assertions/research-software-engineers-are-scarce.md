@@ -4,7 +4,7 @@ topics:
 - '[[Frame]]'
 status: grounded
 checked:
-  validation: 2026-07-23
+  validation: 2026-08-09
 grounding:
 - '[[20_distillates/publications/baxter-2012-research-software-engineer#^s1]]'
 - '[[20_distillates/publications/baxter-2012-research-software-engineer#^s2]]'

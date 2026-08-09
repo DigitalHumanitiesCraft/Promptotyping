@@ -31,7 +31,7 @@ from pathlib import Path
 
 import yaml
 from _vaultmd import (
-    CLAIMS,
+    ASSERTIONS,
     DISTILLATES,
     REFERENCES,
     REPRESENTATIONS,
@@ -229,7 +229,7 @@ def collect_sources(vault: Path, distillates: list[dict]) -> tuple[list[dict], l
 def main() -> int:
     root = repo_root()
     vault = root / "vault"
-    claims_dir = vault / CLAIMS
+    claims_dir = vault / ASSERTIONS
     if not claims_dir.is_dir():
         print(f"no claim layer at {claims_dir}", file=sys.stderr)
         return 1

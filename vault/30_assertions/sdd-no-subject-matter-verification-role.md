@@ -4,7 +4,7 @@ topics:
 - '[[Frame]]'
 status: grounded
 checked:
-  validation: 2026-07-24
+  validation: 2026-08-09
 grounding:
 - '[[20_distillates/documents/sdd-spec-kit-2026-07-24#^s7]]'
 - '[[20_distillates/documents/sdd-kiro-2026-07-24#^s10]]'

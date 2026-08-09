@@ -9,9 +9,9 @@ method:
 status: draft
 language: en
 created: '2026-07-19'
-updated: '2026-07-25'
+updated: '2026-08-09'
 expected-warnings:
-- W-NO-DELIVERABLE
+- W-NO-OUTPUT
 related:
 - index
 - schema
@@ -24,7 +24,7 @@ Purpose, parameters and settled decisions of this vault instance. The invariant 
 
 ## Purpose
 
-This vault grounds the Promptotyping paper. The deliverable is the paper maintained canonically in this repository as `knowledge/paper.md`, which the site renders directly the site renders, regenerated only after release; this vault carries the provenance layer beneath it, anchoring the paper's load-bearing claims to the source material that supports them, from the Section 4 project figures through the genealogy claims to the novelty claims of the discussion. The evidence obligation follows the paper's own verification practice, adversarial checking against the public project repositories, so that the paper workstream's verification milestones (figures check M3, source dating M4, novelty research M8) read and write this vault instead of leaving their findings in session-local documents.
+This vault grounds the Promptotyping paper. The output is the paper maintained canonically in this repository as `knowledge/paper.md`, which the site renders directly; this vault carries the provenance layer beneath it, anchoring the paper's load-bearing claims to the source material that supports them, from the Section 4 project figures through the genealogy claims to the novelty claims of the discussion. The evidence obligation follows the paper's own verification practice, adversarial checking against the public project repositories, so that the paper workstream's verification milestones (figures check M3, source dating M4, novelty research M8) read and write this vault instead of leaving their findings in session-local documents.
 
 ## Parameters
 
@@ -33,12 +33,12 @@ This vault grounds the Promptotyping paper. The deliverable is the paper maintai
 | Topic | The evidence base of the Promptotyping paper |
 | Topic backbone | Genealogy, Method, Evidence, Concepts, Limitations, Frame, ArtefactVerification |
 | Active source types | document, publication, data |
-| Deliverable genre | scholarly synthesis |
+| Output genre | scholarly synthesis |
 | Chapter register | see [[knowledge/state]] |
 | Working language of content | English |
 | Verification role | Critical Expert in the Loop: the method's author (Digital Humanities Craft) |
 | Validation mechanism | `tools/validate.py` |
-| Machine review mechanism | Adversarial review by an LLM from a different model family than the producing agent (producer: Claude; reviewer: GPT- or Gemini-class), under the anti-anchoring protocol |
+| Machine review mechanism | Adversarial review by an LLM from a different model family than the producing agent (producer: Claude; reviewer: GPT- or Gemini-class), under the anti-anchoring protocol; pair cutting and verdict booking through `tools/review.py` |
 
 ## Style sheet
 
@@ -59,9 +59,9 @@ Beyond those: write LLM where an LLM is meant, since "model" carries the data mo
 
 A statement is one assertion, anchored to one location, and it stands on its own without the quotation beside it. The quotation licenses exactly that assertion and nothing broader; where the source hedges, the statement hedges with it, and where the source is categorical, the statement does not soften it. Statements are never merged across sources, and they carry no evaluation of the source. Where a source says less than the paper takes from it, or says it differently, that goes under Open questions and is left standing there.
 
-### Claims
+### Assertions
 
-A claim is one atomic assertion in the affirmative present, phrased as what is the case, while its anchors carry who says so. A claim earns its existence by being the form the deliverable needs; a restatement of a single distillate statement in other words is not a claim. Where sources conflict irreconcilably, both claims are stated positively, both marked contested, and both linked to each other.
+An assertion is one atomic statement in the affirmative present, phrased as what is the case, while its anchors carry who says so. An assertion earns its existence by being the form the output needs; a restatement of a single distillate statement in other words is no assertion. Where sources conflict irreconcilably, both assertions are stated positively, both marked contested, and both linked to each other. Until the template's rename of August 2026 this document type was called claim, and older journal and register entries use that word.
 
 ### Registers and knowledge documents
 
@@ -81,3 +81,4 @@ Descriptive, one line per entry, no narration of the work that produced the entr
 - 2026-07-19: Topic backbone set to Genealogy, Method, Evidence, Concepts, Limitations.
 - 2026-07-23: Scope extended by operator decision to full bibliography traceability. Every work the paper cites in its References is registered in [[knowledge/register-paper-sources]], and every accessible one is ingested as a publication source, distilled towards the statements the paper takes from it, and grounded through claims. Footnote-only resources (tools, videos, standards, repositories) stay outside intake, since the `source-type` vocabulary does not cover them and the paper uses them as tool evidence rather than as statement support.
 - 2026-07-23: Topic backbone extended by Frame (the Section 2 discourses) and ArtefactVerification (Sections 4 and 6.2), to give the bibliography claims reachable topic maps.
+- 2026-08-09: Instance migrated onto the renumbered template chain (`00_sources` to `40_output`) with `tools/migrate.py --instance promptotyping` from the template repository; the document type claim is renamed assertion. The template's validator and `review.py` are adopted; the instance declares its two inventory registers in `INVENTORY_REGISTERS` and its expected warning is now `W-NO-OUTPUT`, which carries the meaning the decision of 2026-07-25 gave `W-NO-DELIVERABLE`. `checked.validation` was refreshed on every document the migration rewrote, after a full green run. Source originals under `00_sources/` stayed byte-identical.

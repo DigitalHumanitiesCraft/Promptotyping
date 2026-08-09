@@ -4,7 +4,7 @@ topics:
 - '[[ArtefactVerification]]'
 status: grounded
 checked:
-  validation: 2026-07-24
+  validation: 2026-08-09
 grounding:
 - '[[20_distillates/documents/szd-htr-evaluation-results-2026-06-10#^s1]]'
 - '[[20_distillates/documents/szd-htr-evaluation-results-2026-06-10#^s3]]'

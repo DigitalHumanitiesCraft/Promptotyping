@@ -4,7 +4,7 @@ topics:
 - '[[Genealogy]]'
 status: grounded
 checked:
-  validation: 2026-07-27
+  validation: 2026-08-09
 grounding:
 - '[[20_distillates/publications/pollin-2025b-dissertation#^s14]]'
 - '[[20_distillates/publications/pollin-2025b-dissertation#^s15]]'

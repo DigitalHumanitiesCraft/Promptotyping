@@ -4,7 +4,7 @@ topics:
 - '[[Frame]]'
 status: grounded
 checked:
-  validation: 2026-07-25
+  validation: 2026-08-09
 grounding:
 - '[[20_distillates/publications/carver-2022-state-of-practice#^s1]]'
 - '[[20_distillates/publications/carver-2022-state-of-practice#^s2]]'

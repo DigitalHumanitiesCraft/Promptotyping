@@ -4,7 +4,7 @@ topics:
 - '[[Limitations]]'
 status: grounded
 checked:
-  validation: 2026-07-23
+  validation: 2026-08-09
 grounding:
 - '[[20_distillates/publications/lang-2026-beyond-data-feminism#^s2]]'
 - '[[20_distillates/publications/lang-2026-beyond-data-feminism#^s3]]'

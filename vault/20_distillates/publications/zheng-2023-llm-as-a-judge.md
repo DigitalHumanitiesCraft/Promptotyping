@@ -6,6 +6,7 @@ topics:
 - '[[ArtefactVerification]]'
 status: grounded
 checked:
+  validation: 2026-08-09
   quote: 2026-07-26
 created: 2026-07-26
 updated: 2026-07-29

@@ -8,7 +8,7 @@ The validator checks the deliverable layer for unanchored paragraphs, and that
 check has no subject here because the paper is maintained outside the vault.
 This script fills that gap from the outside: it reads the paper text, proposes
 the substantial empirical statements as candidates, and reports which of them
-finds no matching claim in 20_claims/. It reads and prints; it writes nothing.
+finds no matching assertion in 30_assertions/. It reads and prints; it writes nothing.
 
 How it decides
 --------------
@@ -434,8 +434,8 @@ def main() -> None:
     parser.add_argument(
         "--claims",
         type=Path,
-        default=here.parents[1] / "20_claims",
-        help="claim folder to match against (default: 20_claims/ of this vault)",
+        default=here.parents[1] / "30_assertions",
+        help="assertion folder to match against (default: 30_assertions/ of this vault)",
     )
     parser.add_argument(
         "--threshold",

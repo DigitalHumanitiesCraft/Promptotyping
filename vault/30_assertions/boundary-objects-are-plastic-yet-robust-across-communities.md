@@ -4,7 +4,7 @@ topics:
 - '[[Concepts]]'
 status: grounded
 checked:
-  validation: 2026-07-23
+  validation: 2026-08-09
 grounding:
 - '[[20_distillates/publications/star-1989-boundary-objects#^s1]]'
 - '[[20_distillates/publications/star-1989-boundary-objects#^s3]]'

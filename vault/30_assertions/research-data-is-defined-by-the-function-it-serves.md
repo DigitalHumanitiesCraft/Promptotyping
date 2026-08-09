@@ -4,7 +4,7 @@ topics:
 - '[[Concepts]]'
 status: grounded
 checked:
-  validation: 2026-07-25
+  validation: 2026-08-09
 grounding:
 - '[[20_distillates/publications/geiger-2023-daten-forschungsdaten#^s1]]'
 - '[[20_distillates/publications/geiger-2023-daten-forschungsdaten#^s4]]'

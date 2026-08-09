@@ -6,7 +6,7 @@ topics:
 - '[[Frame]]'
 status: grounded
 checked:
-  validation: 2026-07-24
+  validation: 2026-08-09
 created: 2026-07-24
 updated: 2026-07-29
 ---

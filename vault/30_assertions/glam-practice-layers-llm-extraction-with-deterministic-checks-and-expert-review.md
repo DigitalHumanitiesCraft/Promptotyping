@@ -4,7 +4,7 @@ topics:
 - '[[ArtefactVerification]]'
 status: grounded
 checked:
-  validation: 2026-07-23
+  validation: 2026-08-09
 grounding:
 - '[[20_distillates/publications/fischer-2025-bildkarten#^s1]]'
 - '[[20_distillates/publications/fischer-2025-bildkarten#^s2]]'

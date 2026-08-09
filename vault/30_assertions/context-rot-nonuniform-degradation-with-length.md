@@ -4,7 +4,7 @@ topics:
 - '[[Frame]]'
 status: grounded
 checked:
-  validation: 2026-07-23
+  validation: 2026-08-09
 grounding:
 - '[[20_distillates/publications/hong-2025-context-rot#^s2]]'
 - '[[20_distillates/publications/hong-2025-context-rot#^s3]]'

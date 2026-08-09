@@ -4,7 +4,7 @@ topics:
 - '[[Evidence]]'
 status: grounded
 checked:
-  validation: 2026-07-19
+  validation: 2026-08-09
 grounding:
 - '[[20_distillates/documents/verification-paper-figures-2026-07-19#^s13]]'
 created: 2026-07-19

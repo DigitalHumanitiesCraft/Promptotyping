@@ -4,7 +4,7 @@ topics:
 - '[[Concepts]]'
 status: grounded
 checked:
-  validation: 2026-07-23
+  validation: 2026-08-09
 grounding:
 - '[[20_distillates/publications/flanders-2019-shape-of-data#^s1]]'
 - '[[20_distillates/publications/flanders-2019-shape-of-data#^s2]]'
