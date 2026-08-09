@@ -1,13 +1,14 @@
 ---
-type: claim
-topics: ["[[ArtefactVerification]]"]
+type: assertion
+topics:
+- '[[ArtefactVerification]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/holmes-2023-endings-principles#^s1]]"
-  - "[[10_distillates/publications/holmes-2023-endings-principles#^s2]]"
-  - "[[10_distillates/publications/holmes-2023-endings-principles#^s3]]"
+- '[[20_distillates/publications/holmes-2023-endings-principles#^s1]]'
+- '[[20_distillates/publications/holmes-2023-endings-principles#^s2]]'
+- '[[20_distillates/publications/holmes-2023-endings-principles#^s3]]'
 created: 2026-07-23
 updated: 2026-07-23
 ---
@@ -20,11 +21,11 @@ Holmes and Takeda, reporting Project Endings, prescribe static standalone websit
 
 ## Support
 
-- [[10_distillates/publications/holmes-2023-endings-principles#^s1]] — projects rescued by reconstitution as static standalone sites with minimal dependencies.
-- [[10_distillates/publications/holmes-2023-endings-principles#^s2]] — no server-side software.
-- [[10_distillates/publications/holmes-2023-endings-principles#^s3]] — no external libraries or services.
+- [[20_distillates/publications/holmes-2023-endings-principles#^s1]] — projects rescued by reconstitution as static standalone sites with minimal dependencies.
+- [[20_distillates/publications/holmes-2023-endings-principles#^s2]] — no server-side software.
+- [[20_distillates/publications/holmes-2023-endings-principles#^s3]] — no external libraries or services.
 
 ## Related
 
-- [[20_claims/endings-static-artefacts-minimise-maintenance]]
-- [[20_claims/minimal-computing-resists-scale-as-innovation]]
+- [[30_assertions/endings-static-artefacts-minimise-maintenance]]
+- [[30_assertions/minimal-computing-resists-scale-as-innovation]]

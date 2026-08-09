@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: hinrichs-2019
-topics: ["[[Concepts]]"]
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -28,7 +29,7 @@ The paper introduces the sandcastle to frame visualisation as a research process
 
 ## Terms
 
-- **sandcastle**: a visualisation understood as a transient research process whose value lies in the building, not a means-to-an-end tool. [[10_distillates/publications/hinrichs-2019-sandcastles#^s1]]
+- **sandcastle**: a visualisation understood as a transient research process whose value lies in the building, not a means-to-an-end tool. [[20_distillates/publications/hinrichs-2019-sandcastles#^s1]]
 
 ## Open questions
 
@@ -36,5 +37,5 @@ The paper introduces the sandcastle to frame visualisation as a research process
 
 ## Related
 
-- [[10_distillates/publications/whitelaw-2015-generous-interfaces]] — exploration/browsing as research.
-- [[10_distillates/publications/drucker-2011-humanities-approaches]] — the critical-visualisation frame.
+- [[20_distillates/publications/whitelaw-2015-generous-interfaces]] — exploration/browsing as research.
+- [[20_distillates/publications/drucker-2011-humanities-approaches]] — the critical-visualisation frame.

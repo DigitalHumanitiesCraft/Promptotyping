@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: barbot-2024
-topics: ["[[Concepts]]"]
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -28,7 +29,7 @@ The paper describes the SSH Open Marketplace and its workflows as step-by-step r
 
 ## Terms
 
-- **workflow (SSH Open Marketplace)**: a step-by-step research scenario pointing to the tools, services, and datasets usable at each stage. [[10_distillates/publications/barbot-2024-ssh-open-marketplace#^s3]]
+- **workflow (SSH Open Marketplace)**: a step-by-step research scenario pointing to the tools, services, and datasets usable at each stage. [[20_distillates/publications/barbot-2024-ssh-open-marketplace#^s3]]
 
 ## Open questions
 
@@ -36,5 +37,5 @@ The paper describes the SSH Open Marketplace and its workflows as step-by-step r
 
 ## Related
 
-- [[10_distillates/publications/borek-2016-tadirah]] — the activity taxonomy the paper links to the Marketplace.
-- [[10_distillates/publications/grallert-2026-open-tool-registries]] — tool-registry infrastructure and TaDiRAH's state.
+- [[20_distillates/publications/borek-2016-tadirah]] — the activity taxonomy the paper links to the Marketplace.
+- [[20_distillates/publications/grallert-2026-open-tool-registries]] — tool-registry infrastructure and TaDiRAH's state.

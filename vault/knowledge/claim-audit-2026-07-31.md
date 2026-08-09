@@ -1,15 +1,18 @@
 ---
-title: "Claim Audit against the Promoted Paper"
+title: Claim Audit against the Promoted Paper
 status: snapshot
 language: en
-created: "2026-07-31"
-updated: "2026-07-31"
-related: [state, register-paper-sources, journal]
+created: '2026-07-31'
+updated: '2026-07-31'
+related:
+- state
+- register-paper-sources
+- journal
 ---
 
 # Claim Audit against the Promoted Paper (2026-07-31)
 
-Read-only audit of every claim under `20_claims/` against the five-chapter text promoted to the repository's `knowledge/paper.md` on 2026-07-30. Commissioned by the operator ("sollten wir überprüfen"); run by an audit agent, verified against the vault validator (`0 errors`, schema conform). Verdicts: **CARRIED** (the promoted text still makes a statement the claim supports), **MOVED** (supported statement survives elsewhere or weakened), **ORPHANED** (no supported statement remains), **INTERNAL** (the claim supports the vault's or site's own record; paper changes do not affect it). Nothing was edited; this document routes the follow-up round, which belongs to a vault session.
+Read-only audit of every claim under `30_assertions/` against the five-chapter text promoted to the repository's `knowledge/paper.md` on 2026-07-30. Commissioned by the operator ("sollten wir überprüfen"); run by an audit agent, verified against the vault validator (`0 errors`, schema conform). Verdicts: **CARRIED** (the promoted text still makes a statement the claim supports), **MOVED** (supported statement survives elsewhere or weakened), **ORPHANED** (no supported statement remains), **INTERNAL** (the claim supports the vault's or site's own record; paper changes do not affect it). Nothing was edited; this document routes the follow-up round, which belongs to a vault session.
 
 ## Summary
 

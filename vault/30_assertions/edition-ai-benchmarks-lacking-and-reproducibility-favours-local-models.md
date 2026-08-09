@@ -1,13 +1,14 @@
 ---
-type: claim
-topics: ["[[Limitations]]"]
+type: assertion
+topics:
+- '[[Limitations]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/pollin-2025a-when-it-was-2024#^s3]]"
-  - "[[10_distillates/publications/pollin-2025a-when-it-was-2024#^s4]]"
-  - "[[10_distillates/publications/pollin-2025a-when-it-was-2024#^s5]]"
+- '[[20_distillates/publications/pollin-2025a-when-it-was-2024#^s3]]'
+- '[[20_distillates/publications/pollin-2025a-when-it-was-2024#^s4]]'
+- '[[20_distillates/publications/pollin-2025a-when-it-was-2024#^s5]]'
 created: 2026-07-23
 updated: 2026-07-29
 ---
@@ -20,10 +21,10 @@ The field lacks benchmarks to rigorously evaluate the quality and accuracy of AI
 
 ## Support
 
-- [[10_distillates/publications/pollin-2025a-when-it-was-2024#^s3]] — task-specific benchmarks still lacking.
-- [[10_distillates/publications/pollin-2025a-when-it-was-2024#^s4]] — free, local models as a condition of reproducible, open research.
-- [[10_distillates/publications/pollin-2025a-when-it-was-2024#^s5]] — Reiter's product-testing point about non-local, API-based models.
+- [[20_distillates/publications/pollin-2025a-when-it-was-2024#^s3]] — task-specific benchmarks still lacking.
+- [[20_distillates/publications/pollin-2025a-when-it-was-2024#^s4]] — free, local models as a condition of reproducible, open research.
+- [[20_distillates/publications/pollin-2025a-when-it-was-2024#^s5]] — Reiter's product-testing point about non-local, API-based models.
 
 ## Related
 
-- [[20_claims/MOC-Limitations]]
+- [[30_assertions/MOC-Limitations]]

@@ -1,14 +1,16 @@
 ---
-type: claim
-topics: ["[[Method]]", "[[Limitations]]"]
+type: assertion
+topics:
+- '[[Method]]'
+- '[[Limitations]]'
 status: grounded
 checked:
   validation: 2026-07-25
 grounding:
-  - "[[10_distillates/documents/promptotyping-video-2-live-demo#^s28]]"
-  - "[[10_distillates/documents/promptotyping-video-2-live-demo#^s31]]"
-  - "[[10_distillates/documents/promptotyping-video-2-live-demo#^s39]]"
-  - "[[10_distillates/documents/promptotyping-video-2-live-demo#^s40]]"
+- '[[20_distillates/documents/promptotyping-video-2-live-demo#^s28]]'
+- '[[20_distillates/documents/promptotyping-video-2-live-demo#^s31]]'
+- '[[20_distillates/documents/promptotyping-video-2-live-demo#^s39]]'
+- '[[20_distillates/documents/promptotyping-video-2-live-demo#^s40]]'
 created: 2026-07-25
 updated: 2026-07-25
 ---
@@ -21,12 +23,12 @@ The recorded live demonstration works the milestones of the implementation plan 
 
 ## Support
 
-- [[10_distillates/documents/promptotyping-video-2-live-demo#^s28]] — the bare `continue` as the move that carries the run on inside the plan.
-- [[10_distillates/documents/promptotyping-video-2-live-demo#^s39]] — the milestones of the plan carried out one after another, the first three or four of them on video.
-- [[10_distillates/documents/promptotyping-video-2-live-demo#^s31]] — the screenshot back channel, needed because the system never sees the page.
-- [[10_distillates/documents/promptotyping-video-2-live-demo#^s40]] — verification of the results through screenshots and the browser console.
+- [[20_distillates/documents/promptotyping-video-2-live-demo#^s28]] — the bare `continue` as the move that carries the run on inside the plan.
+- [[20_distillates/documents/promptotyping-video-2-live-demo#^s39]] — the milestones of the plan carried out one after another, the first three or four of them on video.
+- [[20_distillates/documents/promptotyping-video-2-live-demo#^s31]] — the screenshot back channel, needed because the system never sees the page.
+- [[20_distillates/documents/promptotyping-video-2-live-demo#^s40]] — verification of the results through screenshots and the browser console.
 
 ## Related
 
-- [[20_claims/implementation-plan-cuts-work-into-checkable-milestones]]
-- [[20_claims/expert-role-carries-a-domain-and-a-development-judgement]]
+- [[30_assertions/implementation-plan-cuts-work-into-checkable-milestones]]
+- [[30_assertions/expert-role-carries-a-domain-and-a-development-judgement]]

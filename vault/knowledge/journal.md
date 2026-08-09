@@ -1,16 +1,18 @@
 ---
 title: Journal
 project:
-  name: "Promptotyping Paper Vault"
-  repository: "https://github.com/DigitalHumanitiesCraft/Promptotyping"
+  name: Promptotyping Paper Vault
+  repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
 status: draft
 language: en
-created: "2026-07-19"
-updated: "2026-07-29"
-related: [specification, state]
+created: '2026-07-19'
+updated: '2026-07-29'
+related:
+- specification
+- state
 ---
 
 # Journal
@@ -48,7 +50,7 @@ Nine claims completed the claim layer over the distilled sources, seven Genealog
 
 ## 2026-07-20 — Section 3.3 standardisation grounded (two method-development sources)
 
-One production cycle ingested two German method-development notes as handover document sources: the frontmatter-practice survey (2026-05-09) as `frontmatter-practice-2026-05`, and the knowledge-base content audit (2026-07-19) as `knowledge-base-content-audit-2026-07-19`. Both entered as verbatim Markdown copies with internal Obsidian wikilinks flattened to plain text so the validator does not chase vault-internal links; block IDs were minted only in the representations (four each), and each distillate carries four English core statements anchored to them. Three Method claims were built to ground paper Section 3.3 (standardisation stage) and registered in [[20_claims/MOC-Method]]: the mandatory frontmatter core reduced to six fields with type demoted to a reading heuristic ([[20_claims/frontmatter-core-reduced-to-six-fields]]), the status vocabulary extended with active and snapshot ([[20_claims/status-vocabulary-adds-active-and-snapshot]]), and adversarial self-verification promoted to a distinct document function ([[20_claims/verification-promoted-to-document-function]]). The sources are dated snapshots of a moving repository landscape, so the claims are stated as the standardisation decisions the notes record rather than as evergreen counts. Validator clean at 0 errors, 0 warnings.
+One production cycle ingested two German method-development notes as handover document sources: the frontmatter-practice survey (2026-05-09) as `frontmatter-practice-2026-05`, and the knowledge-base content audit (2026-07-19) as `knowledge-base-content-audit-2026-07-19`. Both entered as verbatim Markdown copies with internal Obsidian wikilinks flattened to plain text so the validator does not chase vault-internal links; block IDs were minted only in the representations (four each), and each distillate carries four English core statements anchored to them. Three Method claims were built to ground paper Section 3.3 (standardisation stage) and registered in [[30_assertions/MOC-Method]]: the mandatory frontmatter core reduced to six fields with type demoted to a reading heuristic ([[30_assertions/frontmatter-core-reduced-to-six-fields]]), the status vocabulary extended with active and snapshot ([[30_assertions/status-vocabulary-adds-active-and-snapshot]]), and adversarial self-verification promoted to a distinct document function ([[30_assertions/verification-promoted-to-document-function]]). The sources are dated snapshots of a moving repository landscape, so the claims are stated as the standardisation decisions the notes record rather than as evergreen counts. Validator clean at 0 errors, 0 warnings.
 
 ## 2026-07-23 — Scope extended to full bibliography traceability (operator decision)
 
@@ -96,7 +98,7 @@ The validator's unanchored-paragraph check still has no subject, since the opera
 
 ## 2026-07-25 — Two video sources ingested and distilled, claims deliberately deferred
 
-The two January 2026 recordings of the method's author entered the vault as document sources, the introduction to the method and its four phases, and the end-to-end live demonstration with an agentic coding tool that builds a dashboard from the Austrian knowledge-balance spreadsheets. The raw YouTube transcripts lie in `_sources/`; the representations copy the cleaned German scripts of the repository root verbatim and add block IDs, so the timecodes stay in the text as the locator of this source genre. Both distillates carry one English statement per anchor and merge nothing across the two videos. Claim building was left undone on instruction, because it hangs on a pending decision about the paper text.
+The two January 2026 recordings of the method's author entered the vault as document sources, the introduction to the method and its four phases, and the end-to-end live demonstration with an agentic coding tool that builds a dashboard from the Austrian knowledge-balance spreadsheets. The raw YouTube transcripts lie in `00_sources/`; the representations copy the cleaned German scripts of the repository root verbatim and add block IDs, so the timecodes stay in the text as the locator of this source genre. Both distillates carry one English statement per anchor and merge nothing across the two videos. Claim building was left undone on instruction, because it hangs on a pending decision about the paper text.
 
 The intake was aimed at the three practices the paper's Section 3.2 rests on the video-documented sessions, the milestone cut, the overengineering check at the passage into Implementation, and the deliberate breach of convention in the design experiment, all three of which are now anchored. Beyond them the sources carry operational knowledge the paper does not use, among it the screenshot and console back channel with its reason, the addressing of an interface defect through the element identifier, the journal standing in for a commit where no repository exists, the Thinking Matrix as a consistency check between the documents, the two-step distillation with a reasoning order, the context cost of XLSX against CSV, the expert interview as a Preparation step, and the origin of the documents in a Semantic Markdown of the GPT-4 era.
 
@@ -108,7 +110,7 @@ The paper's opening premise, that the field's intermediary answers do not reach 
 
 Two candidates were rejected. Barker et al. 2025 on institutional policy pathways does not make the distribution claim, and the de-RSE 2023 paper on central RSE units was not machine-readable.
 
-The paper merged its former Sections 2.1 and 2.2 into one, so every section from the former 2.3 onwards moved down by one number. The distillates, claims and the two section-keyed tables in `knowledge/state.md` were renumbered accordingly, and the source register's paper-role column with them. The representations under `00_representation/` and the sources were left untouched, since they are immutable once anchored and their section references record the paper as it stood when they were written. `python tools/validate.py .` passes with the declared deliverable warning.
+The paper merged its former Sections 2.1 and 2.2 into one, so every section from the former 2.3 onwards moved down by one number. The distillates, claims and the two section-keyed tables in `knowledge/state.md` were renumbered accordingly, and the source register's paper-role column with them. The representations under `10_markdown/` and the sources were left untouched, since they are immutable once anchored and their section references record the paper as it stood when they were written. `python tools/validate.py .` passes with the declared deliverable warning.
 
 ## 2026-07-26 — Jagged frontier ingested, frontmatter-core survey carried as a marked snapshot
 

@@ -1,11 +1,12 @@
 ---
-type: claim
-topics: ["[[ArtefactVerification]]"]
+type: assertion
+topics:
+- '[[ArtefactVerification]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/risam-2022-minimal-computing#^s3]]"
+- '[[20_distillates/publications/risam-2022-minimal-computing#^s3]]'
 created: 2026-07-23
 updated: 2026-07-23
 ---
@@ -18,8 +19,8 @@ For Risam and Gil, reduction in minimal computing is meant literally, as less co
 
 ## Support
 
-- [[10_distillates/publications/risam-2022-minimal-computing#^s3]] — reduction as less code, fewer bytes, less processing.
+- [[20_distillates/publications/risam-2022-minimal-computing#^s3]] — reduction as less code, fewer bytes, less processing.
 
 ## Related
 
-- [[20_claims/minimal-computing-resists-scale-as-innovation]]
+- [[30_assertions/minimal-computing-resists-scale-as-innovation]]

@@ -1,16 +1,16 @@
 ---
 type: representation
 source-type: document
-source: "[[_sources/verification-paper-figures-2026-07-19]]"
-converter: "none (verbatim Markdown copy of the source; block IDs appended for anchoring)"
+source: '[[00_sources/verification-paper-figures-2026-07-19]]'
+converter: none (verbatim Markdown copy of the source; block IDs appended for anchoring)
 channel: handover
 metadata:
-  title: "Verification of Section 4 Figures"
-  creator: "verification agent under the method author's direction, Digital Humanities Craft"
-  date: "2026-07-19"
-  format: "text/markdown"
-  identifier: "https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/7c209645b05492ce14c5aaafbe606235cb9b55e0/knowledge/verification-paper-figures.md"
-  license: "no explicit license file for this document; public repository"
+  title: Verification of Section 4 Figures
+  creator: verification agent under the method author's direction, Digital Humanities Craft
+  date: '2026-07-19'
+  format: text/markdown
+  identifier: https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/7c209645b05492ce14c5aaafbe606235cb9b55e0/knowledge/verification-paper-figures.md
+  license: no explicit license file for this document; public repository
   confidential: false
 created: 2026-07-19
 updated: 2026-07-24
@@ -58,7 +58,7 @@ This is a scoped snapshot verification (a findings register for one correction p
 
 Finding 8 carried its two figures the wrong way round and is corrected here against the repository artefact. As written on 2026-07-19 the finding read "Real today: 13 knowledge files, 34 unique US-IDs. Keep 7 only if marked as the historical first-vault state; correct 37 to 34." The record verification of 2026-07-24 recounted the artefact and found 37 heading-level user-story identifiers, US-01 through US-37 without gaps, in `docs/knowledge/user-stories.md` of the CorrespExplorer repository. That file was last changed on 2025-12-18 and the repository's last commit dates to 2025-12-19, so no state can have moved between the two checks. The figure 34 was never a state of the repository; 37 was the correct count on both dates and is the figure the paper had before this finding was applied to it. ^corr1
 
-The correction is entered in this file rather than in a successor representation because the defect is a transposition inside one finding and not a revision of the source's subject matter, and because the anchors of this block carry the inversion into the distillate, the claim built on it, and the paper. The affected chain is `^c8` to `10_distillates/documents/verification-paper-figures-2026-07-19#^s18` to `20_claims/correspexplorer-knowledge-userstory-count-2026-07-19`. ^corr2
+The correction is entered in this file rather than in a successor representation because the defect is a transposition inside one finding and not a revision of the source's subject matter, and because the anchors of this block carry the inversion into the distillate, the claim built on it, and the paper. The affected chain is `^c8` to `20_distillates/documents/verification-paper-figures-2026-07-19#^s18` to `30_assertions/correspexplorer-knowledge-userstory-count-2026-07-19`. ^corr2
 
 ## Related
 

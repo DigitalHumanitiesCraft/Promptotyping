@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[Method]]"]
+type: assertion
+topics:
+- '[[Method]]'
 status: grounded
 checked:
   validation: 2026-07-20
 grounding:
-  - "[[10_distillates/documents/knowledge-base-content-audit-2026-07-19#^s2]]"
-  - "[[10_distillates/documents/knowledge-base-content-audit-2026-07-19#^s4]]"
+- '[[20_distillates/documents/knowledge-base-content-audit-2026-07-19#^s2]]'
+- '[[20_distillates/documents/knowledge-base-content-audit-2026-07-19#^s4]]'
 contested-with: []
 created: 2026-07-20
 updated: 2026-07-20
@@ -20,10 +21,10 @@ The July 2026 audit found the status field not in use as a maturity field across
 
 ## Support
 
-- [[10_distillates/documents/knowledge-base-content-audit-2026-07-19#^s2]] — records that status was not in use as a maturity field and the recommendation to register active and snapshot and normalise the free values onto them.
-- [[10_distillates/documents/knowledge-base-content-audit-2026-07-19#^s4]] — records the operator decision that extended the vocabulary with active and snapshot.
+- [[20_distillates/documents/knowledge-base-content-audit-2026-07-19#^s2]] — records that status was not in use as a maturity field and the recommendation to register active and snapshot and normalise the free values onto them.
+- [[20_distillates/documents/knowledge-base-content-audit-2026-07-19#^s4]] — records the operator decision that extended the vocabulary with active and snapshot.
 
 ## Related
 
-- [[20_claims/frontmatter-core-reduced-to-six-fields]]
-- [[20_claims/verification-promoted-to-document-function]]
+- [[30_assertions/frontmatter-core-reduced-to-six-fields]]
+- [[30_assertions/verification-promoted-to-document-function]]

@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: edmond-2005
-topics: ["[[Frame]]"]
+topics:
+- '[[Frame]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -24,7 +25,7 @@ Edmond models humanities digital development as a value chain in which critical 
 
 ## Terms
 
-- **Digital Humanities Intermediary (DHI)**: a dedicated role bridging humanities researchers and technical staff, providing translation and support in a form that fits the researchers' own language and ways of working. [[10_distillates/publications/edmond-2005-professional-intermediary#^s2]]
+- **Digital Humanities Intermediary (DHI)**: a dedicated role bridging humanities researchers and technical staff, providing translation and support in a form that fits the researchers' own language and ways of working. [[20_distillates/publications/edmond-2005-professional-intermediary#^s2]]
 
 ## Open questions
 
@@ -32,5 +33,5 @@ Edmond models humanities digital development as a value chain in which critical 
 
 ## Related
 
-- [[10_distillates/publications/siemens-2009-reply-all-teams]] — a team-based rather than intermediary-based answer to the same translation problem.
-- [[10_distillates/publications/kemman-2021-trading-zones]] — the broker who translates between the two communities.
+- [[20_distillates/publications/siemens-2009-reply-all-teams]] — a team-based rather than intermediary-based answer to the same translation problem.
+- [[20_distillates/publications/kemman-2021-trading-zones]] — the broker who translates between the two communities.

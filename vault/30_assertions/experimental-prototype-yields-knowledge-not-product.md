@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[Frame]]"]
+type: assertion
+topics:
+- '[[Frame]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/ruecker-2015-taxonomy-prototypes#^s1]]"
-  - "[[10_distillates/publications/ruecker-2015-taxonomy-prototypes#^s2]]"
+- '[[20_distillates/publications/ruecker-2015-taxonomy-prototypes#^s1]]'
+- '[[20_distillates/publications/ruecker-2015-taxonomy-prototypes#^s2]]'
 created: 2026-07-23
 updated: 2026-07-23
 ---
@@ -19,9 +20,9 @@ Ruecker distinguishes three kinds of prototype by the project they support, inte
 
 ## Support
 
-- [[10_distillates/publications/ruecker-2015-taxonomy-prototypes#^s1]] — three prototype categories: experiment, development, provocation.
-- [[10_distillates/publications/ruecker-2015-taxonomy-prototypes#^s2]] — the experimental prototype yields generalised knowledge, not a product.
+- [[20_distillates/publications/ruecker-2015-taxonomy-prototypes#^s1]] — three prototype categories: experiment, development, provocation.
+- [[20_distillates/publications/ruecker-2015-taxonomy-prototypes#^s2]] — the experimental prototype yields generalised knowledge, not a product.
 
 ## Related
 
-- [[20_claims/promptotyping-documents-are-the-primary-artifact]]
+- [[30_assertions/promptotyping-documents-are-the-primary-artifact]]

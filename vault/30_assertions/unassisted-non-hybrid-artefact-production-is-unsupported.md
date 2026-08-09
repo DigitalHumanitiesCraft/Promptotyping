@@ -1,13 +1,14 @@
 ---
-type: claim
-topics: ["[[Limitations]]"]
+type: assertion
+topics:
+- '[[Limitations]]'
 status: grounded
 checked:
   validation: 2026-07-24
 grounding:
-  - "[[10_distillates/documents/revision-audit-a1-2026-07-23#^s1]]"
-  - "[[10_distillates/documents/revision-audit-a1-2026-07-23#^s2]]"
-  - "[[10_distillates/documents/revision-audit-a1-2026-07-23#^s3]]"
+- '[[20_distillates/documents/revision-audit-a1-2026-07-23#^s1]]'
+- '[[20_distillates/documents/revision-audit-a1-2026-07-23#^s2]]'
+- '[[20_distillates/documents/revision-audit-a1-2026-07-23#^s3]]'
 created: 2026-07-24
 updated: 2026-07-24
 ---
@@ -20,10 +21,10 @@ The evidence carries four graded levels, from the hybrid practitioner's own docu
 
 ## Support
 
-- [[10_distillates/documents/revision-audit-a1-2026-07-23#^s1]] — states the ceiling of the evidence and the exactly covered claim.
-- [[10_distillates/documents/revision-audit-a1-2026-07-23#^s2]] — records that the teaching-case passage stays at communicability and producibility.
-- [[10_distillates/documents/revision-audit-a1-2026-07-23#^s3]] — identifies the uncovered axis and the place where the offer belongs.
+- [[20_distillates/documents/revision-audit-a1-2026-07-23#^s1]] — states the ceiling of the evidence and the exactly covered claim.
+- [[20_distillates/documents/revision-audit-a1-2026-07-23#^s2]] — records that the teaching-case passage stays at communicability and producibility.
+- [[20_distillates/documents/revision-audit-a1-2026-07-23#^s3]] — identifies the uncovered axis and the place where the offer belongs.
 
 ## Related
 
-- [[20_claims/record-does-not-separate-document-depth-from-verification-effort]]
+- [[30_assertions/record-does-not-separate-document-depth-from-verification-effort]]

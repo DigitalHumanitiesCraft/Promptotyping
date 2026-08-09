@@ -1,15 +1,16 @@
 ---
-type: claim
-topics: ["[[Method]]"]
+type: assertion
+topics:
+- '[[Method]]'
 status: grounded
 checked: {}
 grounding:
-  - "[[10_distillates/publications/marwick-2018-research-compendium#^s1]]"
-  - "[[10_distillates/publications/marwick-2018-research-compendium#^s2]]"
-  - "[[10_distillates/publications/marwick-2018-research-compendium#^s3]]"
-  - "[[10_distillates/publications/marwick-2018-research-compendium#^s4]]"
-  - "[[10_distillates/publications/marwick-2018-research-compendium#^s5]]"
-  - "[[10_distillates/publications/marwick-2018-research-compendium#^s6]]"
+- '[[20_distillates/publications/marwick-2018-research-compendium#^s1]]'
+- '[[20_distillates/publications/marwick-2018-research-compendium#^s2]]'
+- '[[20_distillates/publications/marwick-2018-research-compendium#^s3]]'
+- '[[20_distillates/publications/marwick-2018-research-compendium#^s4]]'
+- '[[20_distillates/publications/marwick-2018-research-compendium#^s5]]'
+- '[[20_distillates/publications/marwick-2018-research-compendium#^s6]]'
 created: 2026-07-26
 updated: 2026-07-26
 ---
@@ -22,16 +23,16 @@ Marwick, Boettiger and Mullen define the research compendium by three principles
 
 ## Support
 
-- [[10_distillates/publications/marwick-2018-research-compendium#^s1]] — what a compendium is for.
-- [[10_distillates/publications/marwick-2018-research-compendium#^s2]] — that three principles define it independently of tooling.
-- [[10_distillates/publications/marwick-2018-research-compendium#^s3]] — the convention principle.
-- [[10_distillates/publications/marwick-2018-research-compendium#^s4]] — the separation of data, method and output.
-- [[10_distillates/publications/marwick-2018-research-compendium#^s5]] — the read-only status of the data.
-- [[10_distillates/publications/marwick-2018-research-compendium#^s6]] — the computational-environment principle.
+- [[20_distillates/publications/marwick-2018-research-compendium#^s1]] — what a compendium is for.
+- [[20_distillates/publications/marwick-2018-research-compendium#^s2]] — that three principles define it independently of tooling.
+- [[20_distillates/publications/marwick-2018-research-compendium#^s3]] — the convention principle.
+- [[20_distillates/publications/marwick-2018-research-compendium#^s4]] — the separation of data, method and output.
+- [[20_distillates/publications/marwick-2018-research-compendium#^s5]] — the read-only status of the data.
+- [[20_distillates/publications/marwick-2018-research-compendium#^s6]] — the computational-environment principle.
 
 ## Related
 
-- [[20_claims/minimal-computing-reduces-code-and-dependencies]]
-- [[20_claims/fair-principles-findable-accessible-interoperable-reusable]]
-- [[20_claims/endings-durability-through-static-no-dependencies]]
-- [[20_claims/MOC-Method]]
+- [[30_assertions/minimal-computing-reduces-code-and-dependencies]]
+- [[30_assertions/fair-principles-findable-accessible-interoperable-reusable]]
+- [[30_assertions/endings-durability-through-static-no-dependencies]]
+- [[30_assertions/MOC-Method]]

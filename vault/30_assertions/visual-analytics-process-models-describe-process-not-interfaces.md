@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[Concepts]]"]
+type: assertion
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/sacha-2014-knowledge-generation-model#^s1]]"
-  - "[[10_distillates/publications/sacha-2014-knowledge-generation-model#^s2]]"
+- '[[20_distillates/publications/sacha-2014-knowledge-generation-model#^s1]]'
+- '[[20_distillates/publications/sacha-2014-knowledge-generation-model#^s2]]'
 created: 2026-07-23
 updated: 2026-07-29
 ---
@@ -19,9 +20,9 @@ Sacha and colleagues propose a knowledge generation model that ties together div
 
 ## Support
 
-- [[10_distillates/publications/sacha-2014-knowledge-generation-model#^s1]] — a model that ties together diverse frameworks.
-- [[10_distillates/publications/sacha-2014-knowledge-generation-model#^s2]] — a high-level description of human and computer processes.
+- [[20_distillates/publications/sacha-2014-knowledge-generation-model#^s1]] — a model that ties together diverse frameworks.
+- [[20_distillates/publications/sacha-2014-knowledge-generation-model#^s2]] — a high-level description of human and computer processes.
 
 ## Related
 
-- [[20_claims/MOC-Concepts]]
+- [[30_assertions/MOC-Concepts]]

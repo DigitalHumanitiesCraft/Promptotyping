@@ -1,11 +1,12 @@
 ---
-type: claim
-topics: ["[[Genealogy]]"]
+type: assertion
+topics:
+- '[[Genealogy]]'
 status: grounded
 checked:
   validation: 2026-07-27
 grounding:
-  - "[[10_distillates/publications/pollin-2025b-dissertation#^s16]]"
+- '[[20_distillates/publications/pollin-2025b-dissertation#^s16]]'
 created: 2026-07-27
 updated: 2026-07-27
 ---
@@ -18,9 +19,9 @@ The dissertation introduces the concept of Promptotyping in answer to its fourth
 
 ## Support
 
-- [[10_distillates/publications/pollin-2025b-dissertation#^s16]] — the dissertation introduces the concept of Promptotyping.
+- [[20_distillates/publications/pollin-2025b-dissertation#^s16]] — the dissertation introduces the concept of Promptotyping.
 
 ## Related
 
-- [[20_claims/MOC-Genealogy]]
-- [[20_claims/generalised-dashboard-flattens-context-specific-detail]]
+- [[30_assertions/MOC-Genealogy]]
+- [[30_assertions/generalised-dashboard-flattens-context-specific-detail]]

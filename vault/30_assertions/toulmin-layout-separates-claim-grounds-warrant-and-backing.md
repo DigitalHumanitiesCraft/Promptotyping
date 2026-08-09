@@ -1,15 +1,16 @@
 ---
-type: claim
-topics: ["[[ArtefactVerification]]"]
+type: assertion
+topics:
+- '[[ArtefactVerification]]'
 status: grounded
 checked: {}
 grounding:
-  - "[[10_distillates/publications/hitchcock-2003-toulmins-warrants#^s1]]"
-  - "[[10_distillates/publications/hitchcock-2003-toulmins-warrants#^s2]]"
-  - "[[10_distillates/publications/hitchcock-2003-toulmins-warrants#^s3]]"
-  - "[[10_distillates/publications/hitchcock-2003-toulmins-warrants#^s4]]"
-  - "[[10_distillates/publications/hitchcock-2003-toulmins-warrants#^s5]]"
-  - "[[10_distillates/publications/hitchcock-2003-toulmins-warrants#^s6]]"
+- '[[20_distillates/publications/hitchcock-2003-toulmins-warrants#^s1]]'
+- '[[20_distillates/publications/hitchcock-2003-toulmins-warrants#^s2]]'
+- '[[20_distillates/publications/hitchcock-2003-toulmins-warrants#^s3]]'
+- '[[20_distillates/publications/hitchcock-2003-toulmins-warrants#^s4]]'
+- '[[20_distillates/publications/hitchcock-2003-toulmins-warrants#^s5]]'
+- '[[20_distillates/publications/hitchcock-2003-toulmins-warrants#^s6]]'
 created: 2026-07-26
 updated: 2026-07-26
 ---
@@ -22,14 +23,14 @@ Toulmin replaced premiss and conclusion with claim, data or grounds, warrant, mo
 
 ## Support
 
-- [[10_distillates/publications/hitchcock-2003-toulmins-warrants#^s1]] — the six elements of the layout.
-- [[10_distillates/publications/hitchcock-2003-toulmins-warrants#^s2]] — the derivation from a challenge to an assertion.
-- [[10_distillates/publications/hitchcock-2003-toulmins-warrants#^s3]] — claim and grounds.
-- [[10_distillates/publications/hitchcock-2003-toulmins-warrants#^s4]] — the warrant and what it licenses.
-- [[10_distillates/publications/hitchcock-2003-toulmins-warrants#^s5]] — qualifier, rebuttal and backing.
-- [[10_distillates/publications/hitchcock-2003-toulmins-warrants#^s6]] — the functional difference between grounds and warrant.
+- [[20_distillates/publications/hitchcock-2003-toulmins-warrants#^s1]] — the six elements of the layout.
+- [[20_distillates/publications/hitchcock-2003-toulmins-warrants#^s2]] — the derivation from a challenge to an assertion.
+- [[20_distillates/publications/hitchcock-2003-toulmins-warrants#^s3]] — claim and grounds.
+- [[20_distillates/publications/hitchcock-2003-toulmins-warrants#^s4]] — the warrant and what it licenses.
+- [[20_distillates/publications/hitchcock-2003-toulmins-warrants#^s5]] — qualifier, rebuttal and backing.
+- [[20_distillates/publications/hitchcock-2003-toulmins-warrants#^s6]] — the functional difference between grounds and warrant.
 
 ## Related
 
-- [[20_claims/nanopublication-binds-a-statement-to-the-annotations-that-carry-its-context]]
-- [[20_claims/MOC-ArtefactVerification]]
+- [[30_assertions/nanopublication-binds-a-statement-to-the-annotations-that-carry-its-context]]
+- [[30_assertions/MOC-ArtefactVerification]]

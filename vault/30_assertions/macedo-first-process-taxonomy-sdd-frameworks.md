@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[Frame]]"]
+type: assertion
+topics:
+- '[[Frame]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/macedo-2026-from-prompt-to-process#^s2]]"
-  - "[[10_distillates/publications/macedo-2026-from-prompt-to-process#^s3]]"
+- '[[20_distillates/publications/macedo-2026-from-prompt-to-process#^s2]]'
+- '[[20_distillates/publications/macedo-2026-from-prompt-to-process#^s3]]'
 created: 2026-07-23
 updated: 2026-07-29
 ---
@@ -19,10 +20,10 @@ Macedo 2026 supplies the first study centred on the operational frameworks that 
 
 ## Support
 
-- [[10_distillates/publications/macedo-2026-from-prompt-to-process#^s2]] — no prior study centres on the operational frameworks; this one fills that gap.
-- [[10_distillates/publications/macedo-2026-from-prompt-to-process#^s3]] — the six-dimension process taxonomy with its scoring rubric.
+- [[20_distillates/publications/macedo-2026-from-prompt-to-process#^s2]] — no prior study centres on the operational frameworks; this one fills that gap.
+- [[20_distillates/publications/macedo-2026-from-prompt-to-process#^s3]] — the six-dimension process taxonomy with its scoring rubric.
 
 ## Related
 
-- [[20_claims/sdd-frameworks-converge-on-specification-over-prompt]]
-- [[20_claims/MOC-Concepts]]
+- [[30_assertions/sdd-frameworks-converge-on-specification-over-prompt]]
+- [[30_assertions/MOC-Concepts]]

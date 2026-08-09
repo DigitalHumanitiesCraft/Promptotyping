@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[ArtefactVerification]]"]
+type: assertion
+topics:
+- '[[ArtefactVerification]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/andorfer-2026-static-tei-editions#^s5]]"
-  - "[[10_distillates/publications/andorfer-2026-static-tei-editions#^s6]]"
+- '[[20_distillates/publications/andorfer-2026-static-tei-editions#^s5]]'
+- '[[20_distillates/publications/andorfer-2026-static-tei-editions#^s6]]'
 created: 2026-07-23
 updated: 2026-07-29
 ---
@@ -19,9 +20,9 @@ The scale reachable on the pre-rendered, self-contained side is documented at ov
 
 ## Support
 
-- [[10_distillates/publications/andorfer-2026-static-tei-editions#^s5]] — over 16,000 edition units, one TEI-XML file each.
-- [[10_distillates/publications/andorfer-2026-static-tei-editions#^s6]] — 25 MB serialisation without processing or storage trouble.
+- [[20_distillates/publications/andorfer-2026-static-tei-editions#^s5]] — over 16,000 edition units, one TEI-XML file each.
+- [[20_distillates/publications/andorfer-2026-static-tei-editions#^s6]] — 25 MB serialisation without processing or storage trouble.
 
 ## Related
 
-- [[20_claims/MOC-Limitations]]
+- [[30_assertions/MOC-Limitations]]

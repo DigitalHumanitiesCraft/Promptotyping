@@ -1,16 +1,16 @@
 ---
 type: representation
 source-type: document
-source: "[[_sources/llmdh-summer-school-2025.html]]"
-converter: "manual extraction from HTML preserving wording; ingested state = chpollin/llmdh@30c9bbb (index.html last modified 2025-12-03)"
+source: '[[00_sources/llmdh-summer-school-2025.html]]'
+converter: manual extraction from HTML preserving wording; ingested state = chpollin/llmdh@30c9bbb (index.html last modified 2025-12-03)
 channel: collection
 metadata:
-  title: "Large Language Models for Digital Humanities Research"
-  creator: "lecturer, Digital Humanities Craft OG"
-  date: "2025-09-08/2025-09-11"
-  format: "text/html"
-  identifier: "https://github.com/chpollin/llmdh/blob/30c9bbb0518ca8b859f2c565e96f455f5f023015/index.html (live: https://chpollin.github.io/llmdh/)"
-  license: "CC-BY (site DC.rights)"
+  title: Large Language Models for Digital Humanities Research
+  creator: lecturer, Digital Humanities Craft OG
+  date: 2025-09-08/2025-09-11
+  format: text/html
+  identifier: 'https://github.com/chpollin/llmdh/blob/30c9bbb0518ca8b859f2c565e96f455f5f023015/index.html (live: https://chpollin.github.io/llmdh/)'
+  license: CC-BY (site DC.rights)
   confidential: false
 created: 2026-07-19
 updated: 2026-07-19

@@ -1,6 +1,6 @@
 ---
 type: glossary
-term: "Self-contained static web tool"
+term: Self-contained static web tool
 created: 2026-07-25
 updated: 2026-07-25
 ---

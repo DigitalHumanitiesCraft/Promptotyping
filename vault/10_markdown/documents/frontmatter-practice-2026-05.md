@@ -1,16 +1,16 @@
 ---
 type: representation
 source-type: document
-source: "[[_sources/frontmatter-practice-2026-05]]"
-converter: "Markdown copy; internal Obsidian wikilinks flattened to plain text; block IDs appended for anchoring"
+source: '[[00_sources/frontmatter-practice-2026-05]]'
+converter: Markdown copy; internal Obsidian wikilinks flattened to plain text; block IDs appended for anchoring
 channel: handover
 metadata:
-  title: "Frontmatter-Praxis in Promptotyping-Repos 2026-05"
-  creator: "Christopher Pollin, Digital Humanities Craft"
-  date: "2026-05-09"
-  format: "text/markdown"
-  identifier: ""
-  license: "CC BY 4.0 (vault content)"
+  title: Frontmatter-Praxis in Promptotyping-Repos 2026-05
+  creator: Christopher Pollin, Digital Humanities Craft
+  date: '2026-05-09'
+  format: text/markdown
+  identifier: ''
+  license: CC BY 4.0 (vault content)
   confidential: false
 created: 2026-05-09
 updated: 2026-05-09

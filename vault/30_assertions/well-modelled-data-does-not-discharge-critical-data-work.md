@@ -1,13 +1,14 @@
 ---
-type: claim
-topics: ["[[Limitations]]"]
+type: assertion
+topics:
+- '[[Limitations]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/lang-2026-beyond-data-feminism#^s2]]"
-  - "[[10_distillates/publications/lang-2026-beyond-data-feminism#^s3]]"
-  - "[[10_distillates/publications/lang-2026-beyond-data-feminism#^s4]]"
+- '[[20_distillates/publications/lang-2026-beyond-data-feminism#^s2]]'
+- '[[20_distillates/publications/lang-2026-beyond-data-feminism#^s3]]'
+- '[[20_distillates/publications/lang-2026-beyond-data-feminism#^s4]]'
 created: 2026-07-23
 updated: 2026-07-29
 ---
@@ -20,10 +21,10 @@ Because data emerges from structures of power and reflects societal hierarchies,
 
 ## Support
 
-- [[10_distillates/publications/lang-2026-beyond-data-feminism#^s2]] — the AI turn makes critical data work more crucial.
-- [[10_distillates/publications/lang-2026-beyond-data-feminism#^s3]] — interrogating who made metadata and whose interests are served.
-- [[10_distillates/publications/lang-2026-beyond-data-feminism#^s4]] — data emerges from structures of power worth making explicit.
+- [[20_distillates/publications/lang-2026-beyond-data-feminism#^s2]] — the AI turn makes critical data work more crucial.
+- [[20_distillates/publications/lang-2026-beyond-data-feminism#^s3]] — interrogating who made metadata and whose interests are served.
+- [[20_distillates/publications/lang-2026-beyond-data-feminism#^s4]] — data emerges from structures of power worth making explicit.
 
 ## Related
 
-- [[20_claims/MOC-Limitations]]
+- [[30_assertions/MOC-Limitations]]

@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: fanous-2025
-topics: ["[[Concepts]]"]
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -30,7 +31,7 @@ SycEval is a benchmark study that measures sycophantic behaviour in three fronti
 
 ## Terms
 
-- **Progressive vs regressive sycophancy**: the study's own distinction between agreement that yields a correct answer and agreement that yields an incorrect one, introduced to separate harmful over-alignment from appropriate adaptation. [[10_distillates/publications/fanous-2025-syceval#^s3]]
+- **Progressive vs regressive sycophancy**: the study's own distinction between agreement that yields a correct answer and agreement that yields an incorrect one, introduced to separate harmful over-alignment from appropriate adaptation. [[20_distillates/publications/fanous-2025-syceval#^s3]]
 
 ## Open questions
 
@@ -38,4 +39,4 @@ SycEval is a benchmark study that measures sycophantic behaviour in three fronti
 
 ## Related
 
-- [[10_distillates/publications/sharma-2023-sycophancy]]
+- [[20_distillates/publications/sharma-2023-sycophancy]]

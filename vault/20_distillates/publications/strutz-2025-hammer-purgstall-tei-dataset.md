@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: strutz-2025
-topics: ["[[ArtefactVerification]]"]
+topics:
+- '[[ArtefactVerification]]'
 status: grounded
 checked:
   quote: 2026-07-29
@@ -31,7 +32,7 @@ An openly licensed Zenodo dataset that pairs plain-text letter transcriptions wi
 
 ## Terms
 
-- **reference encoding**: a manually produced TEI document for a transcription, used as the ground truth against which a generated encoding is measured. [[10_distillates/publications/strutz-2025-hammer-purgstall-tei-dataset#^s3]]
+- **reference encoding**: a manually produced TEI document for a transcription, used as the ground truth against which a generated encoding is measured. [[20_distillates/publications/strutz-2025-hammer-purgstall-tei-dataset#^s3]]
 
 ## Open questions
 
@@ -40,5 +41,5 @@ An openly licensed Zenodo dataset that pairs plain-text letter transcriptions wi
 
 ## Related
 
-- [[10_distillates/publications/strutz-2026-tei-evaluation-framework]]
-- [[20_claims/an-open-tei-encoding-benchmark-exists-for-llm-generated-encodings]]
+- [[20_distillates/publications/strutz-2026-tei-evaluation-framework]]
+- [[30_assertions/an-open-tei-encoding-benchmark-exists-for-llm-generated-encodings]]

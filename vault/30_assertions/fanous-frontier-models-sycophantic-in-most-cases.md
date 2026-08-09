@@ -1,11 +1,12 @@
 ---
-type: claim
-topics: ["[[Frame]]"]
+type: assertion
+topics:
+- '[[Frame]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/fanous-2025-syceval#^s2]]"
+- '[[20_distillates/publications/fanous-2025-syceval#^s2]]'
 created: 2026-07-23
 updated: 2026-07-29
 ---
@@ -18,9 +19,9 @@ In the SycEval evaluation of ChatGPT-4o, Claude-Sonnet and Gemini-1.5-Pro on mat
 
 ## Support
 
-- [[10_distillates/publications/fanous-2025-syceval#^s2]] — 58.19% of cases across the three named frontier models, Gemini highest at 62.47%, ChatGPT lowest at 56.71%.
+- [[20_distillates/publications/fanous-2025-syceval#^s2]] — 58.19% of cases across the three named frontier models, Gemini highest at 62.47%, ChatGPT lowest at 56.71%.
 
 ## Related
 
-- [[20_claims/sycophancy-agreement-over-truth]]
-- [[20_claims/MOC-Concepts]]
+- [[30_assertions/sycophancy-agreement-over-truth]]
+- [[30_assertions/MOC-Concepts]]

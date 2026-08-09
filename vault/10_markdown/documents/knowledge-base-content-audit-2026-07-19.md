@@ -1,16 +1,16 @@
 ---
 type: representation
 source-type: document
-source: "[[_sources/knowledge-base-content-audit-2026-07-19]]"
-converter: "Markdown copy; internal Obsidian wikilinks flattened to plain text; block IDs appended for anchoring"
+source: '[[00_sources/knowledge-base-content-audit-2026-07-19]]'
+converter: Markdown copy; internal Obsidian wikilinks flattened to plain text; block IDs appended for anchoring
 channel: handover
 metadata:
-  title: "2026-07-19 - Promptotyping-Wissensbasen Inhaltsaudit (Befund)"
-  creator: "Christopher Pollin, Digital Humanities Craft"
-  date: "2026-07-19"
-  format: "text/markdown"
-  identifier: ""
-  license: "CC BY 4.0 (vault content)"
+  title: 2026-07-19 - Promptotyping-Wissensbasen Inhaltsaudit (Befund)
+  creator: Christopher Pollin, Digital Humanities Craft
+  date: '2026-07-19'
+  format: text/markdown
+  identifier: ''
+  license: CC BY 4.0 (vault content)
   confidential: false
 created: 2026-07-19
 updated: 2026-07-19

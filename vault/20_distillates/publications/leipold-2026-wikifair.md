@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: leipold-2026
-topics: ["[[Concepts]]"]
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -28,7 +29,7 @@ The project proposes WikiFAIR, integrating project research data directly into W
 
 ## Terms
 
-- **WikiFAIR**: a FAIR-oriented research-data-management strategy that preserves and publishes project data by integrating it into Wikidata's shared infrastructure. [[10_distillates/publications/leipold-2026-wikifair#^s2]]
+- **WikiFAIR**: a FAIR-oriented research-data-management strategy that preserves and publishes project data by integrating it into Wikidata's shared infrastructure. [[20_distillates/publications/leipold-2026-wikifair#^s2]]
 
 ## Open questions
 
@@ -36,4 +37,4 @@ The project proposes WikiFAIR, integrating project research data directly into W
 
 ## Related
 
-- [[20_claims/shared-infrastructure-is-the-opposite-longevity-answer-to-the-self-contained-artefact]]
+- [[30_assertions/shared-infrastructure-is-the-opposite-longevity-answer-to-the-self-contained-artefact]]

@@ -1,11 +1,12 @@
 ---
-type: claim
-topics: ["[[Evidence]]"]
+type: assertion
+topics:
+- '[[Evidence]]'
 status: grounded
 checked:
   validation: 2026-07-19
 grounding:
-  - "[[10_distillates/documents/verification-paper-figures-2026-07-19#^s11]]"
+- '[[20_distillates/documents/verification-paper-figures-2026-07-19#^s11]]'
 created: 2026-07-19
 updated: 2026-07-19
 ---
@@ -18,8 +19,8 @@ As verified on 2026-07-19, the Medieval Legal Transactions repository holds 3,61
 
 ## Support
 
-- [[10_distillates/documents/verification-paper-figures-2026-07-19#^s11]] — records the XML file counts and the absence of the 6,400 figure in the repository.
+- [[20_distillates/documents/verification-paper-figures-2026-07-19#^s11]] — records the XML file counts and the absence of the 6,400 figure in the repository.
 
 ## Related
 
-- [[20_claims/medieval-test-count-2026-07-19]]
+- [[30_assertions/medieval-test-count-2026-07-19]]

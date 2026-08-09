@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[Method]]"]
+type: assertion
+topics:
+- '[[Method]]'
 status: grounded
 checked:
   validation: 2026-07-25
 grounding:
-  - "[[10_distillates/documents/promptotyping-video-2-live-demo#^s36]]"
-  - "[[10_distillates/documents/promptotyping-video-2-live-demo#^s37]]"
+- '[[20_distillates/documents/promptotyping-video-2-live-demo#^s36]]'
+- '[[20_distillates/documents/promptotyping-video-2-live-demo#^s37]]'
 created: 2026-07-25
 updated: 2026-07-25
 ---
@@ -19,9 +20,9 @@ At the close of the recorded session the author orders a design in the style of 
 
 ## Support
 
-- [[10_distillates/documents/promptotyping-video-2-live-demo#^s36]] — the Dune design experiment, its classification as unprofessional, and the widening of the possibility space.
-- [[10_distillates/documents/promptotyping-video-2-live-demo#^s37]] — the science-fiction interface from a single prompt, and the possibility space as the point of the method.
+- [[20_distillates/documents/promptotyping-video-2-live-demo#^s36]] — the Dune design experiment, its classification as unprofessional, and the widening of the possibility space.
+- [[20_distillates/documents/promptotyping-video-2-live-demo#^s37]] — the science-fiction interface from a single prompt, and the possibility space as the point of the method.
 
 ## Related
 
-- [[20_claims/overengineering-check-cuts-the-specification-before-implementation]]
+- [[30_assertions/overengineering-check-cuts-the-specification-before-implementation]]

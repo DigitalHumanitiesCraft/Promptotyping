@@ -1,11 +1,12 @@
 ---
-type: claim
-topics: ["[[Evidence]]"]
+type: assertion
+topics:
+- '[[Evidence]]'
 status: grounded
 checked:
   validation: 2026-07-19
 grounding:
-  - "[[10_distillates/documents/verification-paper-figures-2026-07-19#^s5]]"
+- '[[20_distillates/documents/verification-paper-figures-2026-07-19#^s5]]'
 created: 2026-07-19
 updated: 2026-07-29
 ---
@@ -18,8 +19,8 @@ The coOCR-HTR case study's stated figures held against the project repository wh
 
 ## Support
 
-- [[10_distillates/documents/verification-paper-figures-2026-07-19#^s5]] — records the confirmation of the coOCR-HTR figures against the repository, including the actual line count behind the rounded figure.
+- [[20_distillates/documents/verification-paper-figures-2026-07-19#^s5]] — records the confirmation of the coOCR-HTR figures against the repository, including the actual line count behind the rounded figure.
 
 ## Related
 
-- [[20_claims/klawiter-entries-verified-2026-07-19]]
+- [[30_assertions/klawiter-entries-verified-2026-07-19]]

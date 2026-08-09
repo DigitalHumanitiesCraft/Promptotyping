@@ -1,14 +1,15 @@
 ---
-type: claim
-topics: ["[[Genealogy]]"]
+type: assertion
+topics:
+- '[[Genealogy]]'
 status: grounded
 checked:
   validation: 2026-07-19
 grounding:
-  - "[[10_distillates/publications/pollin-2025b-dissertation#^s1]]"
-  - "[[10_distillates/publications/pollin-2025b-dissertation#^s3]]"
-  - "[[10_distillates/publications/pollin-2025b-dissertation#^s4]]"
-  - "[[10_distillates/publications/pollin-2025b-dissertation#^s6]]"
+- '[[20_distillates/publications/pollin-2025b-dissertation#^s1]]'
+- '[[20_distillates/publications/pollin-2025b-dissertation#^s3]]'
+- '[[20_distillates/publications/pollin-2025b-dissertation#^s4]]'
+- '[[20_distillates/publications/pollin-2025b-dissertation#^s6]]'
 created: 2026-07-19
 updated: 2026-07-19
 ---
@@ -21,13 +22,13 @@ The dissertation formulates scholar-centred design as a systematic, iterative me
 
 ## Support
 
-- [[10_distillates/publications/pollin-2025b-dissertation#^s1]] — gives the definition of scholar-centred design as a systematic, iterative methodology integrating scholars' practices, needs, and expertise.
-- [[10_distillates/publications/pollin-2025b-dissertation#^s3]] — establishes personas, epics, and user stories as the requirements-engineering instruments, with the personas derived from the deep-dive interviews.
-- [[10_distillates/publications/pollin-2025b-dissertation#^s4]] — fixes the role-goal-reason user-story template as how functional requirements are captured from the domain experts.
-- [[10_distillates/publications/pollin-2025b-dissertation#^s6]] — dates the elicitation sessions to 2017-2020 in DEPCHA with domain-expert historians.
+- [[20_distillates/publications/pollin-2025b-dissertation#^s1]] — gives the definition of scholar-centred design as a systematic, iterative methodology integrating scholars' practices, needs, and expertise.
+- [[20_distillates/publications/pollin-2025b-dissertation#^s3]] — establishes personas, epics, and user stories as the requirements-engineering instruments, with the personas derived from the deep-dive interviews.
+- [[20_distillates/publications/pollin-2025b-dissertation#^s4]] — fixes the role-goal-reason user-story template as how functional requirements are captured from the domain experts.
+- [[20_distillates/publications/pollin-2025b-dissertation#^s6]] — dates the elicitation sessions to 2017-2020 in DEPCHA with domain-expert historians.
 
 ## Related
 
-- [[20_claims/dissertation-requirements-feed-built-artifacts]]
-- [[20_claims/bookkeeping-ontology-session-driven]]
-- [[20_claims/promptotyping-named-first-described-2025-04]]
+- [[30_assertions/dissertation-requirements-feed-built-artifacts]]
+- [[30_assertions/bookkeeping-ontology-session-driven]]
+- [[30_assertions/promptotyping-named-first-described-2025-04]]

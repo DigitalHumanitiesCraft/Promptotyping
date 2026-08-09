@@ -2,7 +2,9 @@
 type: distillate
 source-type: publication
 reference: pollin-2026a
-topics: ["[[Limitations]]", "[[Concepts]]"]
+topics:
+- '[[Limitations]]'
+- '[[Concepts]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -30,7 +32,7 @@ The blog post argues that current LLMs do not automate research but amplify comp
 
 ## Terms
 
-- **asymmetric amplification**: the property whereby LLMs amplify computer-based research work unevenly, magnifying existing advantages in access, competence, and resources. [[10_distillates/publications/pollin-2026a-asymmetric-amplification#^s2]]
+- **asymmetric amplification**: the property whereby LLMs amplify computer-based research work unevenly, magnifying existing advantages in access, competence, and resources. [[20_distillates/publications/pollin-2026a-asymmetric-amplification#^s2]]
 
 ## Open questions
 
@@ -39,4 +41,4 @@ The blog post argues that current LLMs do not automate research but amplify comp
 
 ## Related
 
-- [[10_distillates/publications/pollin-2026b-lisa-positioning]] — the amplification-not-automation framing in the L.I.S.A. article.
+- [[20_distillates/publications/pollin-2026b-lisa-positioning]] — the amplification-not-automation framing in the L.I.S.A. article.

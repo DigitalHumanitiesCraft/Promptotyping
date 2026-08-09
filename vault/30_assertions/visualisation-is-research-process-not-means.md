@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[Frame]]"]
+type: assertion
+topics:
+- '[[Frame]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/hinrichs-2019-sandcastles#^s1]]"
-  - "[[10_distillates/publications/hinrichs-2019-sandcastles#^s2]]"
+- '[[20_distillates/publications/hinrichs-2019-sandcastles#^s1]]'
+- '[[20_distillates/publications/hinrichs-2019-sandcastles#^s2]]'
 created: 2026-07-23
 updated: 2026-07-23
 ---
@@ -19,10 +20,10 @@ Hinrichs, Forlini and Moynihan introduce the sandcastle to reframe visualisation
 
 ## Support
 
-- [[10_distillates/publications/hinrichs-2019-sandcastles#^s1]] — the sandcastle frames visualisation as a research process in its own right.
-- [[10_distillates/publications/hinrichs-2019-sandcastles#^s2]] — prototype/tool terminology frames visualisation as a means to an end.
+- [[20_distillates/publications/hinrichs-2019-sandcastles#^s1]] — the sandcastle frames visualisation as a research process in its own right.
+- [[20_distillates/publications/hinrichs-2019-sandcastles#^s2]] — prototype/tool terminology frames visualisation as a means to an end.
 
 ## Related
 
-- [[20_claims/discarded-visualisations-retain-epistemic-value]]
-- [[20_claims/generous-interfaces-reveal-collection-through-browsing]]
+- [[30_assertions/discarded-visualisations-retain-epistemic-value]]
+- [[30_assertions/generous-interfaces-reveal-collection-through-browsing]]

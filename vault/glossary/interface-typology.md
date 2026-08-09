@@ -1,6 +1,6 @@
 ---
 type: glossary
-term: "Interface typology"
+term: Interface typology
 created: 2026-07-25
 updated: 2026-07-25
 ---

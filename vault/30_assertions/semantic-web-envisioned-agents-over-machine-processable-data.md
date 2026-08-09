@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[Genealogy]]"]
+type: assertion
+topics:
+- '[[Genealogy]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/berners-lee-2001-semantic-web#^s1]]"
-  - "[[10_distillates/publications/berners-lee-2001-semantic-web#^s2]]"
+- '[[20_distillates/publications/berners-lee-2001-semantic-web#^s1]]'
+- '[[20_distillates/publications/berners-lee-2001-semantic-web#^s2]]'
 created: 2026-07-23
 updated: 2026-07-29
 ---
@@ -19,9 +20,9 @@ The 2001 founding statement defines the Semantic Web as an extension of the web 
 
 ## Support
 
-- [[10_distillates/publications/berners-lee-2001-semantic-web#^s1]] — the Semantic Web as web content with well-defined meaning.
-- [[10_distillates/publications/berners-lee-2001-semantic-web#^s2]] — software agents carrying out tasks over that content.
+- [[20_distillates/publications/berners-lee-2001-semantic-web#^s1]] — the Semantic Web as web content with well-defined meaning.
+- [[20_distillates/publications/berners-lee-2001-semantic-web#^s2]] — software agents carrying out tasks over that content.
 
 ## Related
 
-- [[20_claims/MOC-Genealogy]]
+- [[30_assertions/MOC-Genealogy]]

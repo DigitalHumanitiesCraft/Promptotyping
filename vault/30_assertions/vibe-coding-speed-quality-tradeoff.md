@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[Frame]]"]
+type: assertion
+topics:
+- '[[Frame]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/fawzy-2025-vibe-coding-in-practice#^s1]]"
-  - "[[10_distillates/publications/fawzy-2025-vibe-coding-in-practice#^s2]]"
+- '[[20_distillates/publications/fawzy-2025-vibe-coding-in-practice#^s1]]'
+- '[[20_distillates/publications/fawzy-2025-vibe-coding-in-practice#^s2]]'
 created: 2026-07-23
 updated: 2026-07-29
 ---
@@ -19,10 +20,10 @@ A systematic grey-literature review of practitioner accounts finds that vibe cod
 
 ## Support
 
-- [[10_distillates/publications/fawzy-2025-vibe-coding-in-practice#^s1]] — the speed-quality trade-off paradox: motivated by speed, yet the code is perceived as fast but flawed.
-- [[10_distillates/publications/fawzy-2025-vibe-coding-in-practice#^s2]] — lowers barriers and accelerates prototyping at the cost of reliability and maintainability.
+- [[20_distillates/publications/fawzy-2025-vibe-coding-in-practice#^s1]] — the speed-quality trade-off paradox: motivated by speed, yet the code is perceived as fast but flawed.
+- [[20_distillates/publications/fawzy-2025-vibe-coding-in-practice#^s2]] — lowers barriers and accelerates prototyping at the cost of reliability and maintainability.
 
 ## Related
 
-- [[20_claims/sarkar-vibe-coding-material-disengagement]]
-- [[20_claims/MOC-Concepts]]
+- [[30_assertions/sarkar-vibe-coding-material-disengagement]]
+- [[30_assertions/MOC-Concepts]]

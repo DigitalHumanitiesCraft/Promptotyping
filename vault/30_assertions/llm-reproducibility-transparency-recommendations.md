@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[Concepts]]"]
+type: assertion
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/abdurahman-2025-primer-llm-evaluation#^s2]]"
-  - "[[10_distillates/publications/abdurahman-2025-primer-llm-evaluation#^s3]]"
+- '[[20_distillates/publications/abdurahman-2025-primer-llm-evaluation#^s2]]'
+- '[[20_distillates/publications/abdurahman-2025-primer-llm-evaluation#^s3]]'
 created: 2026-07-23
 updated: 2026-07-29
 ---
@@ -19,9 +20,9 @@ A methodological primer for LLM use in social science makes transparency of prom
 
 ## Support
 
-- [[10_distillates/publications/abdurahman-2025-primer-llm-evaluation#^s2]] — transparency in methodological reporting against non-deterministic, evolving models.
-- [[10_distillates/publications/abdurahman-2025-primer-llm-evaluation#^s3]] — full disclosure of prompts, code, data, model versions and settings for replication.
+- [[20_distillates/publications/abdurahman-2025-primer-llm-evaluation#^s2]] — transparency in methodological reporting against non-deterministic, evolving models.
+- [[20_distillates/publications/abdurahman-2025-primer-llm-evaluation#^s3]] — full disclosure of prompts, code, data, model versions and settings for replication.
 
 ## Related
 
-- [[20_claims/MOC-Concepts]]
+- [[30_assertions/MOC-Concepts]]

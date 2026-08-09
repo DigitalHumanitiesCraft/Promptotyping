@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: marwick-2018
-topics: ["[[Method]]"]
+topics:
+- '[[Method]]'
 status: grounded
 checked:
   quote: 2026-07-26
@@ -31,7 +32,7 @@ The established name and the three defining principles of the research compendiu
 
 ## Terms
 
-- **Research compendium**: a repository organised by community convention that holds a project's data, method and output with their relation made explicit. [[10_distillates/publications/marwick-2018-research-compendium#^s1]]
+- **Research compendium**: a repository organised by community convention that holds a project's data, method and output with their relation made explicit. [[20_distillates/publications/marwick-2018-research-compendium#^s1]]
 
 ## Open questions
 
@@ -41,7 +42,7 @@ The established name and the three defining principles of the research compendiu
 
 ## Related
 
-- [[10_distillates/publications/risam-2022-minimal-computing]]
-- [[10_distillates/publications/holmes-2023-endings-principles]]
-- [[10_distillates/publications/wilkinson-2016-fair-principles]]
-- [[10_distillates/publications/soiland-2022-ro-crate]]
+- [[20_distillates/publications/risam-2022-minimal-computing]]
+- [[20_distillates/publications/holmes-2023-endings-principles]]
+- [[20_distillates/publications/wilkinson-2016-fair-principles]]
+- [[20_distillates/publications/soiland-2022-ro-crate]]

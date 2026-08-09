@@ -1,14 +1,15 @@
 ---
-type: claim
-topics: ["[[Evidence]]"]
+type: assertion
+topics:
+- '[[Evidence]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/documents/szd-htr-fair4rs-audit-2026-07-23#^s2]]"
-  - "[[10_distillates/documents/szd-htr-fair4rs-audit-2026-07-23#^s3]]"
-  - "[[10_distillates/documents/szd-htr-fair4rs-audit-2026-07-23#^s4]]"
-  - "[[10_distillates/documents/szd-htr-fair4rs-audit-2026-07-23#^s5]]"
+- '[[20_distillates/documents/szd-htr-fair4rs-audit-2026-07-23#^s2]]'
+- '[[20_distillates/documents/szd-htr-fair4rs-audit-2026-07-23#^s3]]'
+- '[[20_distillates/documents/szd-htr-fair4rs-audit-2026-07-23#^s4]]'
+- '[[20_distillates/documents/szd-htr-fair4rs-audit-2026-07-23#^s5]]'
 created: 2026-07-23
 updated: 2026-07-29
 ---
@@ -21,11 +22,11 @@ A criterion-by-criterion audit of the SZD-HTR repository against the FAIR4RS pri
 
 ## Support
 
-- [[10_distillates/documents/szd-htr-fair4rs-audit-2026-07-23#^s2]] — findability failures per principle.
-- [[10_distillates/documents/szd-htr-fair4rs-audit-2026-07-23#^s3]] — accessibility by construction.
-- [[10_distillates/documents/szd-htr-fair4rs-audit-2026-07-23#^s4]] — reusability with provenance above the ordinary.
-- [[10_distillates/documents/szd-htr-fair4rs-audit-2026-07-23#^s5]] — the verdict.
+- [[20_distillates/documents/szd-htr-fair4rs-audit-2026-07-23#^s2]] — findability failures per principle.
+- [[20_distillates/documents/szd-htr-fair4rs-audit-2026-07-23#^s3]] — accessibility by construction.
+- [[20_distillates/documents/szd-htr-fair4rs-audit-2026-07-23#^s4]] — reusability with provenance above the ordinary.
+- [[20_distillates/documents/szd-htr-fair4rs-audit-2026-07-23#^s5]] — the verdict.
 
 ## Related
 
-- [[20_claims/MOC-Evidence]]
+- [[30_assertions/MOC-Evidence]]

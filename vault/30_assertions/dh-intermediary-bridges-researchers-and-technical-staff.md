@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[Frame]]"]
+type: assertion
+topics:
+- '[[Frame]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/edmond-2005-professional-intermediary#^s1]]"
-  - "[[10_distillates/publications/edmond-2005-professional-intermediary#^s2]]"
+- '[[20_distillates/publications/edmond-2005-professional-intermediary#^s1]]'
+- '[[20_distillates/publications/edmond-2005-professional-intermediary#^s2]]'
 created: 2026-07-23
 updated: 2026-07-29
 ---
@@ -19,11 +20,11 @@ Edmond models humanities digital development as a value chain in which critical 
 
 ## Support
 
-- [[10_distillates/publications/edmond-2005-professional-intermediary#^s1]] — the value-chain gap between researcher and technical staff.
-- [[10_distillates/publications/edmond-2005-professional-intermediary#^s2]] — the intermediary who bridges that gap.
+- [[20_distillates/publications/edmond-2005-professional-intermediary#^s1]] — the value-chain gap between researcher and technical staff.
+- [[20_distillates/publications/edmond-2005-professional-intermediary#^s2]] — the intermediary who bridges that gap.
 
 ## Related
 
-- [[20_claims/MOC-Frame]]
-- [[20_claims/dh-projects-build-teams-to-hold-competences-together]]
-- [[20_claims/rse-institutionalised-intermediary-profession]]
+- [[30_assertions/MOC-Frame]]
+- [[30_assertions/dh-projects-build-teams-to-hold-competences-together]]
+- [[30_assertions/rse-institutionalised-intermediary-profession]]

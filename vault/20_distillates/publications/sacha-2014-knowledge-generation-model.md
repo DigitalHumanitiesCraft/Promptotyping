@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: sacha-2014
-topics: ["[[Concepts]]"]
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -24,7 +25,7 @@ Sacha and colleagues propose a knowledge generation model that integrates existi
 
 ## Terms
 
-- **knowledge generation model**: a process model that couples a visual-analytics system with the analyst's reasoning loops (exploration, verification, knowledge generation) to describe how knowledge is produced. [[10_distillates/publications/sacha-2014-knowledge-generation-model#^s1]]
+- **knowledge generation model**: a process model that couples a visual-analytics system with the analyst's reasoning loops (exploration, verification, knowledge generation) to describe how knowledge is produced. [[20_distillates/publications/sacha-2014-knowledge-generation-model#^s1]]
 
 ## Open questions
 
@@ -32,4 +33,4 @@ Sacha and colleagues propose a knowledge generation model that integrates existi
 
 ## Related
 
-- [[10_distillates/publications/roberts-2007-coordinated-multiple-views]] — an interface technique the paper positions against an epistemic classification.
+- [[20_distillates/publications/roberts-2007-coordinated-multiple-views]] — an interface technique the paper positions against an epistemic classification.

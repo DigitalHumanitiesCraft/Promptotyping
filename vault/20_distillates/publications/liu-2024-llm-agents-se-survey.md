@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: liu-2024
-topics: ["[[Concepts]]"]
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -28,7 +29,7 @@ A systematic survey of LLM-based agents applied to software engineering; the pap
 
 ## Terms
 
-- **LLM-based agent for software engineering**: an LLM augmented with tool use and environment perception, applied to software-engineering tasks. [[10_distillates/publications/liu-2024-llm-agents-se-survey#^s1]]
+- **LLM-based agent for software engineering**: an LLM augmented with tool use and environment perception, applied to software-engineering tasks. [[20_distillates/publications/liu-2024-llm-agents-se-survey#^s1]]
 
 ## Open questions
 
@@ -36,4 +37,4 @@ A systematic survey of LLM-based agents applied to software engineering; the pap
 
 ## Related
 
-- [[10_distillates/publications/macedo-2026-from-prompt-to-process]]
+- [[20_distillates/publications/macedo-2026-from-prompt-to-process]]

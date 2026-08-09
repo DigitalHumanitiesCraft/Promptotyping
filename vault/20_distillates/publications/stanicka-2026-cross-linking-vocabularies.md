@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: stanicka-2026
-topics: ["[[Limitations]]"]
+topics:
+- '[[Limitations]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -26,7 +27,7 @@ From vocabulary-mapping work the article finds that semantic matching between vo
 
 ## Terms
 
-- **human-in-the-loop (vocabulary work)**: the model in which machine-generated suggestions are filtered, validated, and contextualised by domain experts, preserving semantic accuracy. [[10_distillates/publications/stanicka-2026-cross-linking-vocabularies#^s1]]
+- **human-in-the-loop (vocabulary work)**: the model in which machine-generated suggestions are filtered, validated, and contextualised by domain experts, preserving semantic accuracy. [[20_distillates/publications/stanicka-2026-cross-linking-vocabularies#^s1]]
 
 ## Open questions
 
@@ -34,5 +35,5 @@ From vocabulary-mapping work the article finds that semantic matching between vo
 
 ## Related
 
-- [[20_claims/semantic-vocabulary-matching-stays-a-human-interpretive-task]]
-- [[20_claims/llm-vocabulary-test-2025-fell-short-of-thesaurus-interoperability]]
+- [[30_assertions/semantic-vocabulary-matching-stays-a-human-interpretive-task]]
+- [[30_assertions/llm-vocabulary-test-2025-fell-short-of-thesaurus-interoperability]]

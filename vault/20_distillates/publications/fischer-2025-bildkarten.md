@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: fischer-2025
-topics: ["[[Method]]"]
+topics:
+- '[[Method]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -28,7 +29,7 @@ The report extracts structured text from labelled archival image cards with two 
 
 ## Terms
 
-- **wissensbasierte Nachbearbeitung**: knowledge-based post-processing that corrects typical extraction errors with regular expressions and a growing name database. [[10_distillates/publications/fischer-2025-bildkarten#^s3]]
+- **wissensbasierte Nachbearbeitung**: knowledge-based post-processing that corrects typical extraction errors with regular expressions and a growing name database. [[20_distillates/publications/fischer-2025-bildkarten#^s3]]
 
 ## Open questions
 
@@ -36,4 +37,4 @@ The report extracts structured text from labelled archival image cards with two 
 
 ## Related
 
-- [[20_claims/glam-practice-layers-llm-extraction-with-deterministic-checks-and-expert-review]]
+- [[30_assertions/glam-practice-layers-llm-extraction-with-deterministic-checks-and-expert-review]]

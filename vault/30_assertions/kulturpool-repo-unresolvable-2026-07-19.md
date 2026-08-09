@@ -1,11 +1,12 @@
 ---
-type: claim
-topics: ["[[Evidence]]"]
+type: assertion
+topics:
+- '[[Evidence]]'
 status: grounded
 checked:
   validation: 2026-07-19
 grounding:
-  - "[[10_distillates/documents/verification-paper-figures-2026-07-19#^s21]]"
+- '[[20_distillates/documents/verification-paper-figures-2026-07-19#^s21]]'
 created: 2026-07-19
 updated: 2026-07-19
 ---
@@ -18,8 +19,8 @@ As verified on 2026-07-19, the linked Kulturpool Explorer repository `chpollin/v
 
 ## Support
 
-- [[10_distillates/documents/verification-paper-figures-2026-07-19#^s21]] — records the 404 on the linked repository and the API-scale nature of the object figure.
+- [[20_distillates/documents/verification-paper-figures-2026-07-19#^s21]] — records the 404 on the linked repository and the API-scale nature of the object figure.
 
 ## Related
 
-- [[20_claims/duration-cost-figures-experiential]]
+- [[30_assertions/duration-cost-figures-experiential]]

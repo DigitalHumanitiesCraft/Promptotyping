@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[ArtefactVerification]]"]
+type: assertion
+topics:
+- '[[ArtefactVerification]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/borek-2016-tadirah#^s1]]"
-  - "[[10_distillates/publications/borek-2016-tadirah#^s3]]"
+- '[[20_distillates/publications/borek-2016-tadirah#^s1]]'
+- '[[20_distillates/publications/borek-2016-tadirah#^s3]]'
 created: 2026-07-23
 updated: 2026-07-23
 ---
@@ -19,9 +20,9 @@ TaDiRAH, the Taxonomy of Digital Research Activities in the Humanities, classifi
 
 ## Support
 
-- [[10_distillates/publications/borek-2016-tadirah#^s1]] — TaDiRAH as the DARIAH/DiRT taxonomy of digital research activities.
-- [[10_distillates/publications/borek-2016-tadirah#^s3]] — eight top-level goal categories with methods, techniques, objects below.
+- [[20_distillates/publications/borek-2016-tadirah#^s1]] — TaDiRAH as the DARIAH/DiRT taxonomy of digital research activities.
+- [[20_distillates/publications/borek-2016-tadirah#^s3]] — eight top-level goal categories with methods, techniques, objects below.
 
 ## Related
 
-- [[20_claims/tadirah-most-adopted-yet-under-maintained]]
+- [[30_assertions/tadirah-most-adopted-yet-under-maintained]]

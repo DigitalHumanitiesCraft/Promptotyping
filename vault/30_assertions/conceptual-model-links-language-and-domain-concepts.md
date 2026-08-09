@@ -1,11 +1,12 @@
 ---
-type: claim
-topics: ["[[Method]]"]
+type: assertion
+topics:
+- '[[Method]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/mayr-2021-triptych-conceptual-modeling#^s2]]"
+- '[[20_distillates/publications/mayr-2021-triptych-conceptual-modeling#^s2]]'
 created: 2026-07-23
 updated: 2026-07-23
 ---
@@ -18,8 +19,8 @@ Mayr and Thalheim characterise the conceptual model as a link between the dimens
 
 ## Support
 
-- [[10_distillates/publications/mayr-2021-triptych-conceptual-modeling#^s2]] — conceptual model as a link between linguistic terms and encyclopedic notions.
+- [[20_distillates/publications/mayr-2021-triptych-conceptual-modeling#^s2]] — conceptual model as a link between linguistic terms and encyclopedic notions.
 
 ## Related
 
-- [[20_claims/madmps-demand-documents-infrastructure-can-act-on]]
+- [[30_assertions/madmps-demand-documents-infrastructure-can-act-on]]

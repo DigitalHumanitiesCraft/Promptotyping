@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[Genealogy]]"]
+type: assertion
+topics:
+- '[[Genealogy]]'
 status: grounded
 checked:
   validation: 2026-07-27
 grounding:
-  - "[[10_distillates/publications/pollin-2025b-dissertation#^s14]]"
-  - "[[10_distillates/publications/pollin-2025b-dissertation#^s15]]"
+- '[[20_distillates/publications/pollin-2025b-dissertation#^s14]]'
+- '[[20_distillates/publications/pollin-2025b-dissertation#^s15]]'
 created: 2026-07-27
 updated: 2026-07-29
 ---
@@ -19,11 +20,11 @@ The dissertation records the limit of the generalised Dashboard View of DEPCHA i
 
 ## Support
 
-- [[10_distillates/publications/pollin-2025b-dissertation#^s14]] — the generalised Dashboard View can flatten context-specific details.
-- [[10_distillates/publications/pollin-2025b-dissertation#^s15]] — generalist interfaces against scholar-centred environments.
+- [[20_distillates/publications/pollin-2025b-dissertation#^s14]] — the generalised Dashboard View can flatten context-specific details.
+- [[20_distillates/publications/pollin-2025b-dissertation#^s15]] — generalist interfaces against scholar-centred environments.
 
 ## Related
 
-- [[20_claims/MOC-Genealogy]]
-- [[20_claims/bookkeeping-ontology-session-driven]]
-- [[20_claims/dissertation-requirements-feed-built-artifacts]]
+- [[30_assertions/MOC-Genealogy]]
+- [[30_assertions/bookkeeping-ontology-session-driven]]
+- [[30_assertions/dissertation-requirements-feed-built-artifacts]]

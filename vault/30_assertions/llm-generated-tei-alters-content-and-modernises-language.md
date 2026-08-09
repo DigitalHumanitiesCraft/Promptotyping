@@ -1,10 +1,11 @@
 ---
-type: claim
-topics: ["[[ArtefactVerification]]"]
+type: assertion
+topics:
+- '[[ArtefactVerification]]'
 status: grounded
 checked: {}
 grounding:
-  - "[[10_distillates/publications/strutz-2026-tei-evaluation-framework#^s3]]"
+- '[[20_distillates/publications/strutz-2026-tei-evaluation-framework#^s3]]'
 created: 2026-07-29
 updated: 2026-07-29
 ---
@@ -17,9 +18,9 @@ A published evaluation of LLM-generated TEI names three recurring behaviours of 
 
 ## Support
 
-- [[10_distillates/publications/strutz-2026-tei-evaluation-framework#^s3]] — the three named behaviours of LLM-generated encodings.
+- [[20_distillates/publications/strutz-2026-tei-evaluation-framework#^s3]] — the three named behaviours of LLM-generated encodings.
 
 ## Related
 
-- [[20_claims/szd-htr-confabulated-reading-in-hasty-kurrent]]
-- [[20_claims/tei-evaluation-assigns-its-dimensions-to-different-checking-regimes]]
+- [[30_assertions/szd-htr-confabulated-reading-in-hasty-kurrent]]
+- [[30_assertions/tei-evaluation-assigns-its-dimensions-to-different-checking-regimes]]

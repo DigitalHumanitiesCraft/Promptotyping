@@ -1,6 +1,6 @@
 ---
 type: glossary
-term: "Research context"
+term: Research context
 created: 2026-07-25
 updated: 2026-07-25
 ---

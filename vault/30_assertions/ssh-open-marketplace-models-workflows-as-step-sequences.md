@@ -1,13 +1,14 @@
 ---
-type: claim
-topics: ["[[ArtefactVerification]]"]
+type: assertion
+topics:
+- '[[ArtefactVerification]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/barbot-2024-ssh-open-marketplace#^s1]]"
-  - "[[10_distillates/publications/barbot-2024-ssh-open-marketplace#^s3]]"
-  - "[[10_distillates/publications/barbot-2024-ssh-open-marketplace#^s4]]"
+- '[[20_distillates/publications/barbot-2024-ssh-open-marketplace#^s1]]'
+- '[[20_distillates/publications/barbot-2024-ssh-open-marketplace#^s3]]'
+- '[[20_distillates/publications/barbot-2024-ssh-open-marketplace#^s4]]'
 created: 2026-07-23
 updated: 2026-07-23
 ---
@@ -20,10 +21,10 @@ Barbot et al. describe the SSH Open Marketplace, a discovery platform for contex
 
 ## Support
 
-- [[10_distillates/publications/barbot-2024-ssh-open-marketplace#^s1]] — the Marketplace as a discovery platform for contextualised SSH resources.
-- [[10_distillates/publications/barbot-2024-ssh-open-marketplace#^s3]] — workflows as step-by-step scenarios pointing to resources.
-- [[10_distillates/publications/barbot-2024-ssh-open-marketplace#^s4]] — a workflow as a series of actions with tools, services, datasets.
+- [[20_distillates/publications/barbot-2024-ssh-open-marketplace#^s1]] — the Marketplace as a discovery platform for contextualised SSH resources.
+- [[20_distillates/publications/barbot-2024-ssh-open-marketplace#^s3]] — workflows as step-by-step scenarios pointing to resources.
+- [[20_distillates/publications/barbot-2024-ssh-open-marketplace#^s4]] — a workflow as a series of actions with tools, services, datasets.
 
 ## Related
 
-- [[20_claims/tadirah-classifies-dh-research-activities]]
+- [[30_assertions/tadirah-classifies-dh-research-activities]]

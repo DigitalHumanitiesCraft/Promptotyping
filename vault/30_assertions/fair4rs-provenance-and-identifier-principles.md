@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[ArtefactVerification]]"]
+type: assertion
+topics:
+- '[[ArtefactVerification]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/chuehong-2022-fair4rs#^s2]]"
-  - "[[10_distillates/publications/chuehong-2022-fair4rs#^s4]]"
+- '[[20_distillates/publications/chuehong-2022-fair4rs#^s2]]'
+- '[[20_distillates/publications/chuehong-2022-fair4rs#^s4]]'
 created: 2026-07-23
 updated: 2026-07-29
 ---
@@ -19,10 +20,10 @@ The community standard for research software, FAIR4RS, places detailed provenanc
 
 ## Support
 
-- [[10_distillates/publications/chuehong-2022-fair4rs#^s2]] — F1 requires a globally unique and persistent identifier.
-- [[10_distillates/publications/chuehong-2022-fair4rs#^s4]] — R1.2 requires software to be associated with detailed provenance.
+- [[20_distillates/publications/chuehong-2022-fair4rs#^s2]] — F1 requires a globally unique and persistent identifier.
+- [[20_distillates/publications/chuehong-2022-fair4rs#^s4]] — R1.2 requires software to be associated with detailed provenance.
 
 ## Related
 
-- [[20_claims/szd-htr-fair4rs-audit-2026-07-23]]
-- [[20_claims/MOC-Evidence]]
+- [[30_assertions/szd-htr-fair4rs-audit-2026-07-23]]
+- [[30_assertions/MOC-Evidence]]

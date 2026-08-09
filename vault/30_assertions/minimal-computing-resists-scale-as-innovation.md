@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[ArtefactVerification]]"]
+type: assertion
+topics:
+- '[[ArtefactVerification]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/risam-2022-minimal-computing#^s1]]"
-  - "[[10_distillates/publications/risam-2022-minimal-computing#^s2]]"
+- '[[20_distillates/publications/risam-2022-minimal-computing#^s1]]'
+- '[[20_distillates/publications/risam-2022-minimal-computing#^s2]]'
 created: 2026-07-23
 updated: 2026-07-23
 ---
@@ -19,10 +20,10 @@ Risam and Gil define minimal computing as digital humanities work undertaken und
 
 ## Support
 
-- [[10_distillates/publications/risam-2022-minimal-computing#^s1]] — minimal computing as constraint-driven DH work.
-- [[10_distillates/publications/risam-2022-minimal-computing#^s2]] — resisting innovation-as-scale.
+- [[20_distillates/publications/risam-2022-minimal-computing#^s1]] — minimal computing as constraint-driven DH work.
+- [[20_distillates/publications/risam-2022-minimal-computing#^s2]] — resisting innovation-as-scale.
 
 ## Related
 
-- [[20_claims/minimal-computing-reduces-code-and-dependencies]]
-- [[20_claims/endings-durability-through-static-no-dependencies]]
+- [[30_assertions/minimal-computing-reduces-code-and-dependencies]]
+- [[30_assertions/endings-durability-through-static-no-dependencies]]

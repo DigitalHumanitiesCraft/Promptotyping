@@ -1,16 +1,16 @@
 ---
 type: representation
 source-type: document
-source: "[[_sources/sdd-bmad-method-2026-07-24.md]]"
-converter: "manual extraction from the artefacts named per section, wording preserved; repository state pinned by the API metadata quoted in section A"
+source: '[[00_sources/sdd-bmad-method-2026-07-24.md]]'
+converter: manual extraction from the artefacts named per section, wording preserved; repository state pinned by the API metadata quoted in section A
 channel: collection
 metadata:
-  title: "BMAD-METHOD: repository metadata, README, agents reference and workflow map"
-  creator: "BMad Method maintainers, BMad Code"
-  date: "2025-04-13/2026-07-24"
-  format: "text/markdown and text/html"
-  identifier: "https://github.com/bmad-code-org/BMAD-METHOD"
-  license: "MIT (repository); documentation site quoted for scholarly citation"
+  title: 'BMAD-METHOD: repository metadata, README, agents reference and workflow map'
+  creator: BMad Method maintainers, BMad Code
+  date: 2025-04-13/2026-07-24
+  format: text/markdown and text/html
+  identifier: https://github.com/bmad-code-org/BMAD-METHOD
+  license: MIT (repository); documentation site quoted for scholarly citation
   confidential: false
 created: 2026-07-24
 updated: 2026-07-24

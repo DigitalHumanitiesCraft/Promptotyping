@@ -1,14 +1,15 @@
 ---
-type: claim
-topics: ["[[ArtefactVerification]]"]
+type: assertion
+topics:
+- '[[ArtefactVerification]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/fischer-2025-bildkarten#^s1]]"
-  - "[[10_distillates/publications/fischer-2025-bildkarten#^s2]]"
-  - "[[10_distillates/publications/fischer-2025-bildkarten#^s3]]"
-  - "[[10_distillates/publications/fischer-2025-bildkarten#^s4]]"
+- '[[20_distillates/publications/fischer-2025-bildkarten#^s1]]'
+- '[[20_distillates/publications/fischer-2025-bildkarten#^s2]]'
+- '[[20_distillates/publications/fischer-2025-bildkarten#^s3]]'
+- '[[20_distillates/publications/fischer-2025-bildkarten#^s4]]'
 created: 2026-07-23
 updated: 2026-07-29
 ---
@@ -21,11 +22,11 @@ A published archival-cataloguing workflow combines LLM extraction from image car
 
 ## Support
 
-- [[10_distillates/publications/fischer-2025-bildkarten#^s1]] — LLM extraction from image cards, over 90 % with pre- and post-processing.
-- [[10_distillates/publications/fischer-2025-bildkarten#^s2]] — regular grammars applied to the LLM output for structured extraction.
-- [[10_distillates/publications/fischer-2025-bildkarten#^s3]] — regular expressions verify and correct fixed-structure inventory numbers.
-- [[10_distillates/publications/fischer-2025-bildkarten#^s4]] — expert correction interface over the extracted fields.
+- [[20_distillates/publications/fischer-2025-bildkarten#^s1]] — LLM extraction from image cards, over 90 % with pre- and post-processing.
+- [[20_distillates/publications/fischer-2025-bildkarten#^s2]] — regular grammars applied to the LLM output for structured extraction.
+- [[20_distillates/publications/fischer-2025-bildkarten#^s3]] — regular expressions verify and correct fixed-structure inventory numbers.
+- [[20_distillates/publications/fischer-2025-bildkarten#^s4]] — expert correction interface over the extracted fields.
 
 ## Related
 
-- [[20_claims/MOC-Method]]
+- [[30_assertions/MOC-Method]]

@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[ArtefactVerification]]"]
+type: assertion
+topics:
+- '[[ArtefactVerification]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/grallert-2026-open-tool-registries#^s4]]"
-  - "[[10_distillates/publications/grallert-2026-open-tool-registries#^s5]]"
+- '[[20_distillates/publications/grallert-2026-open-tool-registries#^s4]]'
+- '[[20_distillates/publications/grallert-2026-open-tool-registries#^s5]]'
 created: 2026-07-23
 updated: 2026-07-23
 ---
@@ -19,10 +20,10 @@ Grallert et al. document that TaDiRAH has become the most widely adopted classif
 
 ## Support
 
-- [[10_distillates/publications/grallert-2026-open-tool-registries#^s4]] — TaDiRAH as the most widely adopted DH classification.
-- [[10_distillates/publications/grallert-2026-open-tool-registries#^s5]] — dependence on voluntary labour and years of dormancy.
+- [[20_distillates/publications/grallert-2026-open-tool-registries#^s4]] — TaDiRAH as the most widely adopted DH classification.
+- [[20_distillates/publications/grallert-2026-open-tool-registries#^s5]] — dependence on voluntary labour and years of dormancy.
 
 ## Related
 
-- [[20_claims/tadirah-classifies-dh-research-activities]]
-- [[20_claims/wikidata-tool-registries-as-commons]]
+- [[30_assertions/tadirah-classifies-dh-research-activities]]
+- [[30_assertions/wikidata-tool-registries-as-commons]]

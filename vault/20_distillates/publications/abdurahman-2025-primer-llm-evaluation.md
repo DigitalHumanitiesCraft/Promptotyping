@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: abdurahman-2025
-topics: ["[[Concepts]]"]
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -30,7 +31,7 @@ A methodological primer of best practices for reproducible LLM use in social sci
 
 ## Terms
 
-- **Reproducibility transparency (for LLM studies)**: the disclosure of prompts, code, data, model versions and settings that the primer treats as the precondition for replicable LLM-based research. [[10_distillates/publications/abdurahman-2025-primer-llm-evaluation#^s3]]
+- **Reproducibility transparency (for LLM studies)**: the disclosure of prompts, code, data, model versions and settings that the primer treats as the precondition for replicable LLM-based research. [[20_distillates/publications/abdurahman-2025-primer-llm-evaluation#^s3]]
 
 ## Open questions
 
@@ -38,4 +39,4 @@ A methodological primer of best practices for reproducible LLM use in social sci
 
 ## Related
 
-- [[10_distillates/publications/hong-2025-context-rot]]
+- [[20_distillates/publications/hong-2025-context-rot]]

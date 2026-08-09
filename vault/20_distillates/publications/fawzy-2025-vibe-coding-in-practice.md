@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: fawzy-2025
-topics: ["[[Concepts]]"]
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -28,7 +29,7 @@ A systematic grey-literature review of practitioner accounts of vibe coding; the
 
 ## Terms
 
-- **Speed-quality trade-off paradox**: the review's name for the pattern that vibe coders value rapid output while simultaneously distrusting the reliability of what they produce. [[10_distillates/publications/fawzy-2025-vibe-coding-in-practice#^s1]]
+- **Speed-quality trade-off paradox**: the review's name for the pattern that vibe coders value rapid output while simultaneously distrusting the reliability of what they produce. [[20_distillates/publications/fawzy-2025-vibe-coding-in-practice#^s1]]
 
 ## Open questions
 
@@ -36,4 +37,4 @@ A systematic grey-literature review of practitioner accounts of vibe coding; the
 
 ## Related
 
-- [[10_distillates/publications/sarkar-2025-vibe-coding]]
+- [[20_distillates/publications/sarkar-2025-vibe-coding]]

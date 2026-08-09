@@ -1,11 +1,12 @@
 ---
-type: claim
-topics: ["[[Evidence]]"]
+type: assertion
+topics:
+- '[[Evidence]]'
 status: grounded
 checked:
   validation: 2026-07-19
 grounding:
-  - "[[10_distillates/documents/verification-paper-figures-2026-07-19#^s10]]"
+- '[[20_distillates/documents/verification-paper-figures-2026-07-19#^s10]]'
 created: 2026-07-19
 updated: 2026-07-29
 ---
@@ -18,8 +19,8 @@ The FemPrompt case study's stated figures held against the project repository wh
 
 ## Support
 
-- [[10_distillates/documents/verification-paper-figures-2026-07-19#^s10]] — records the confirmation of the FemPrompt figures against the repository, including the in-repo documentation of the split.
+- [[20_distillates/documents/verification-paper-figures-2026-07-19#^s10]] — records the confirmation of the FemPrompt figures against the repository, including the in-repo documentation of the split.
 
 ## Related
 
-- [[20_claims/wheaton-figures-verified-2026-07-19]]
+- [[30_assertions/wheaton-figures-verified-2026-07-19]]

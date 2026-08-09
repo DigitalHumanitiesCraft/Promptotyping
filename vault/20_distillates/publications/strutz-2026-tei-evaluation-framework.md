@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: strutz-2026
-topics: ["[[ArtefactVerification]]"]
+topics:
+- '[[ArtefactVerification]]'
 status: grounded
 checked:
   quote: 2026-07-29
@@ -37,8 +38,8 @@ A discussion paper in the Journal of Open Humanities Data that builds a stratifi
 
 ## Terms
 
-- **stratified evaluation**: an evaluation methodology that separates the properties of a generated TEI document into ordered dimensions and assigns a different checking regime to each, instead of collapsing them into one score. [[10_distillates/publications/strutz-2026-tei-evaluation-framework#^s6]]
-- **interpretive multiplicity**: the property of the TEI Guidelines that several encodings of one textual phenomenon can be equally valid, which is why divergence from a reference encoding is not by itself an error. [[10_distillates/publications/strutz-2026-tei-evaluation-framework#^s7]]
+- **stratified evaluation**: an evaluation methodology that separates the properties of a generated TEI document into ordered dimensions and assigns a different checking regime to each, instead of collapsing them into one score. [[20_distillates/publications/strutz-2026-tei-evaluation-framework#^s6]]
+- **interpretive multiplicity**: the property of the TEI Guidelines that several encodings of one textual phenomenon can be equally valid, which is why divergence from a reference encoding is not by itself an error. [[20_distillates/publications/strutz-2026-tei-evaluation-framework#^s7]]
 
 ## Open questions
 
@@ -49,8 +50,8 @@ A discussion paper in the Journal of Open Humanities Data that builds a stratifi
 
 ## Related
 
-- [[10_distillates/publications/strutz-2025-hammer-purgstall-tei-dataset]]
-- [[20_claims/tei-evaluation-assigns-its-dimensions-to-different-checking-regimes]]
-- [[20_claims/llm-generated-tei-alters-content-and-modernises-language]]
-- [[20_claims/tei-permits-several-valid-encodings-of-one-phenomenon]]
-- [[20_claims/an-open-tei-encoding-benchmark-exists-for-llm-generated-encodings]]
+- [[20_distillates/publications/strutz-2025-hammer-purgstall-tei-dataset]]
+- [[30_assertions/tei-evaluation-assigns-its-dimensions-to-different-checking-regimes]]
+- [[30_assertions/llm-generated-tei-alters-content-and-modernises-language]]
+- [[30_assertions/tei-permits-several-valid-encodings-of-one-phenomenon]]
+- [[30_assertions/an-open-tei-encoding-benchmark-exists-for-llm-generated-encodings]]

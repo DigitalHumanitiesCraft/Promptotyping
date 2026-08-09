@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: yehudai-2025
-topics: ["[[Frame]]"]
+topics:
+- '[[Frame]]'
 status: grounded
 checked:
   quote: 2026-07-27
@@ -30,7 +31,7 @@ The first comprehensive survey of evaluation methods for LLM-based agents, publi
 
 ## Terms
 
-- **LLM-based agent**: an autonomous system that plans, reasons, and uses tools while interacting with a dynamic environment. [[10_distillates/publications/yehudai-2025-survey-evaluation-llm-agents#^s1]]
+- **LLM-based agent**: an autonomous system that plans, reasons, and uses tools while interacting with a dynamic environment. [[20_distillates/publications/yehudai-2025-survey-evaluation-llm-agents#^s1]]
 
 ## Open questions
 
@@ -39,5 +40,5 @@ The first comprehensive survey of evaluation methods for LLM-based agents, publi
 
 ## Related
 
-- [[10_distillates/publications/liu-2024-llm-agents-se-survey]]
-- [[10_distillates/publications/macedo-2026-from-prompt-to-process]]
+- [[20_distillates/publications/liu-2024-llm-agents-se-survey]]
+- [[20_distillates/publications/macedo-2026-from-prompt-to-process]]

@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: pierazzo-2015
-topics: ["[[Concepts]]"]
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -28,7 +29,7 @@ Pierazzo argues that the interface of a digital edition is not a neutral display
 
 ## Terms
 
-- **interface (of a digital edition)**: not a neutral display layer but a regulative principle that embodies editorial decisions and interpretation. [[10_distillates/publications/pierazzo-2015-digital-editing#^s1]]
+- **interface (of a digital edition)**: not a neutral display layer but a regulative principle that embodies editorial decisions and interpretation. [[20_distillates/publications/pierazzo-2015-digital-editing#^s1]]
 
 ## Open questions
 
@@ -36,4 +37,4 @@ Pierazzo argues that the interface of a digital edition is not a neutral display
 
 ## Related
 
-- [[10_distillates/publications/bleier-2018-editions-interfaces]] — extends the edition-as-interface argument to the GUI/API duality.
+- [[20_distillates/publications/bleier-2018-editions-interfaces]] — extends the edition-as-interface argument to the GUI/API duality.

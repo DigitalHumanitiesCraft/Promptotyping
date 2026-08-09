@@ -1,16 +1,16 @@
 ---
 type: representation
 source-type: document
-source: "[[_sources/sdd-spec-kit-2026-07-24.md]]"
-converter: "manual extraction from the artefacts named per section, wording preserved; repository artefacts pinned to release v0.14.1 (published 2026-07-23) and to the tags named in the audience section"
+source: '[[00_sources/sdd-spec-kit-2026-07-24.md]]'
+converter: manual extraction from the artefacts named per section, wording preserved; repository artefacts pinned to release v0.14.1 (published 2026-07-23) and to the tags named in the audience section
 channel: collection
 metadata:
-  title: "GitHub Spec Kit: announcement post, templates, methodology document and README"
-  creator: "Spec Kit maintainers, GitHub"
-  date: "2025-09-02/2026-07-24"
-  format: "text/html and text/markdown"
-  identifier: "https://github.com/github/spec-kit"
-  license: "MIT (repository); the announcement post is GitHub web content quoted for scholarly citation"
+  title: 'GitHub Spec Kit: announcement post, templates, methodology document and README'
+  creator: Spec Kit maintainers, GitHub
+  date: 2025-09-02/2026-07-24
+  format: text/html and text/markdown
+  identifier: https://github.com/github/spec-kit
+  license: MIT (repository); the announcement post is GitHub web content quoted for scholarly citation
   confidential: false
 created: 2026-07-24
 updated: 2026-07-24

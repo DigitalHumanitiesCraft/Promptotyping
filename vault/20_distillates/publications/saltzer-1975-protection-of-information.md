@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: saltzer-1975
-topics: ["[[Method]]"]
+topics:
+- '[[Method]]'
 status: grounded
 checked:
   quote: 2026-07-26
@@ -31,7 +32,7 @@ The canonical statement of the eight protection design principles, among them le
 
 ## Terms
 
-- **Least privilege**: the design rule that an actor holds only the privileges its task requires. [[10_distillates/publications/saltzer-1975-protection-of-information#^s2]]
+- **Least privilege**: the design rule that an actor holds only the privileges its task requires. [[20_distillates/publications/saltzer-1975-protection-of-information#^s2]]
 
 ## Open questions
 
@@ -40,5 +41,5 @@ The canonical statement of the eight protection design principles, among them le
 
 ## Related
 
-- [[10_distillates/publications/liu-2024-llm-agents-se-survey]]
-- [[10_distillates/publications/hong-2023-metagpt]]
+- [[20_distillates/publications/liu-2024-llm-agents-se-survey]]
+- [[20_distillates/publications/hong-2023-metagpt]]

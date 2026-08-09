@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: zheng-2023
-topics: ["[[ArtefactVerification]]"]
+topics:
+- '[[ArtefactVerification]]'
 status: grounded
 checked:
   quote: 2026-07-26
@@ -27,8 +28,8 @@ The paper already cites this work in its verification architecture for the LLM-a
 
 ## Terms
 
-- **LLM-as-a-judge**: the use of a strong language model to grade the output of another model on questions whose answers no rule decides. [[10_distillates/publications/zheng-2023-llm-as-a-judge#^s1]]
-- **Self-enhancement bias**: the judging model's tendency to favour output of its own kind. [[10_distillates/publications/zheng-2023-llm-as-a-judge#^s2]]
+- **LLM-as-a-judge**: the use of a strong language model to grade the output of another model on questions whose answers no rule decides. [[20_distillates/publications/zheng-2023-llm-as-a-judge#^s1]]
+- **Self-enhancement bias**: the judging model's tendency to favour output of its own kind. [[20_distillates/publications/zheng-2023-llm-as-a-judge#^s2]]
 
 ## Open questions
 
@@ -37,6 +38,6 @@ The paper already cites this work in its verification architecture for the LLM-a
 
 ## Related
 
-- [[10_distillates/publications/abdurahman-2025-primer-llm-evaluation]]
-- [[10_distillates/publications/fanous-2025-syceval]]
-- [[10_distillates/publications/sharma-2023-sycophancy]]
+- [[20_distillates/publications/abdurahman-2025-primer-llm-evaluation]]
+- [[20_distillates/publications/fanous-2025-syceval]]
+- [[20_distillates/publications/sharma-2023-sycophancy]]

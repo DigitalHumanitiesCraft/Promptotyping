@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[Frame]]"]
+type: assertion
+topics:
+- '[[Frame]]'
 status: grounded
 checked:
   validation: 2026-07-27
 grounding:
-  - "[[10_distillates/publications/yehudai-2025-survey-evaluation-llm-agents#^s1]]"
-  - "[[10_distillates/publications/yehudai-2025-survey-evaluation-llm-agents#^s3]]"
+- '[[20_distillates/publications/yehudai-2025-survey-evaluation-llm-agents#^s1]]'
+- '[[20_distillates/publications/yehudai-2025-survey-evaluation-llm-agents#^s3]]'
 created: 2026-07-27
 updated: 2026-07-27
 ---
@@ -19,11 +20,11 @@ A survey published in Findings of the Association for Computational Linguistics:
 
 ## Support
 
-- [[10_distillates/publications/yehudai-2025-survey-evaluation-llm-agents#^s1]] — agents plan, reason, and use tools while interacting with dynamic environments.
-- [[10_distillates/publications/yehudai-2025-survey-evaluation-llm-agents#^s3]] — planning and tool use as core capabilities of agentic workflows.
+- [[20_distillates/publications/yehudai-2025-survey-evaluation-llm-agents#^s1]] — agents plan, reason, and use tools while interacting with dynamic environments.
+- [[20_distillates/publications/yehudai-2025-survey-evaluation-llm-agents#^s3]] — planning and tool use as core capabilities of agentic workflows.
 
 ## Related
 
-- [[20_claims/llm-based-agents-for-software-engineering]]
-- [[20_claims/sdd-frameworks-converge-on-specification-over-prompt]]
-- [[20_claims/MOC-Frame]]
+- [[30_assertions/llm-based-agents-for-software-engineering]]
+- [[30_assertions/sdd-frameworks-converge-on-specification-over-prompt]]
+- [[30_assertions/MOC-Frame]]

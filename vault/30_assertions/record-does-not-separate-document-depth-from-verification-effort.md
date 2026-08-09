@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[Limitations]]"]
+type: assertion
+topics:
+- '[[Limitations]]'
 status: grounded
 checked:
   validation: 2026-07-24
 grounding:
-  - "[[10_distillates/documents/revision-audit-a2-2026-07-23#^s1]]"
-  - "[[10_distillates/documents/revision-audit-a2-2026-07-23#^s2]]"
+- '[[20_distillates/documents/revision-audit-a2-2026-07-23#^s1]]'
+- '[[20_distillates/documents/revision-audit-a2-2026-07-23#^s2]]'
 created: 2026-07-24
 updated: 2026-07-24
 ---
@@ -19,10 +20,10 @@ Document depth and verification effort in the documented projects are the same p
 
 ## Support
 
-- [[10_distillates/documents/revision-audit-a2-2026-07-23#^s1]] — records the co-variation across the projects and the absence of any case that isolates the two quantities.
-- [[10_distillates/documents/revision-audit-a2-2026-07-23#^s2]] — names the project-internal confound and states that the record confirms the non-separability.
+- [[20_distillates/documents/revision-audit-a2-2026-07-23#^s1]] — records the co-variation across the projects and the absence of any case that isolates the two quantities.
+- [[20_distillates/documents/revision-audit-a2-2026-07-23#^s2]] — names the project-internal confound and states that the record confirms the non-separability.
 
 ## Related
 
-- [[20_claims/record-has-no-failure-case-and-a-bounded-yield-pole]]
-- [[20_claims/section4-verification-single-agent-snapshot-2026-07-19]]
+- [[30_assertions/record-has-no-failure-case-and-a-bounded-yield-pole]]
+- [[30_assertions/section4-verification-single-agent-snapshot-2026-07-19]]

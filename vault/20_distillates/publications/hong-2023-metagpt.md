@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: hong-2023-metagpt
-topics: ["[[Method]]"]
+topics:
+- '[[Method]]'
 status: grounded
 checked:
   quote: 2026-07-26
@@ -27,8 +28,8 @@ The most cited framework in which several language-model agents are given distin
 
 ## Terms
 
-- **Role assignment**: the allocation of distinct, procedure-defined parts to separate agent instances along a workflow. [[10_distillates/publications/hong-2023-metagpt#^s3]]
-- **Standardised operating procedure (SOP) encoding**: the translation of a human work procedure into the prompt sequence that structures the agents' collaboration. [[10_distillates/publications/hong-2023-metagpt#^s2]]
+- **Role assignment**: the allocation of distinct, procedure-defined parts to separate agent instances along a workflow. [[20_distillates/publications/hong-2023-metagpt#^s3]]
+- **Standardised operating procedure (SOP) encoding**: the translation of a human work procedure into the prompt sequence that structures the agents' collaboration. [[20_distillates/publications/hong-2023-metagpt#^s2]]
 
 ## Open questions
 
@@ -38,6 +39,6 @@ The most cited framework in which several language-model agents are given distin
 
 ## Related
 
-- [[10_distillates/publications/liu-2024-llm-agents-se-survey]]
-- [[10_distillates/publications/shanahan-2023-role-play]]
-- [[10_distillates/publications/saltzer-1975-protection-of-information]]
+- [[20_distillates/publications/liu-2024-llm-agents-se-survey]]
+- [[20_distillates/publications/shanahan-2023-role-play]]
+- [[20_distillates/publications/saltzer-1975-protection-of-information]]

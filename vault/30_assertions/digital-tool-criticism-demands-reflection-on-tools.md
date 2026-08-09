@@ -1,13 +1,14 @@
 ---
-type: claim
-topics: ["[[Frame]]"]
+type: assertion
+topics:
+- '[[Frame]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/koolen-2019-digital-tool-criticism#^s2]]"
-  - "[[10_distillates/publications/vanes-2018-tool-criticism#^s1]]"
-  - "[[10_distillates/publications/vanes-2018-tool-criticism#^s2]]"
+- '[[20_distillates/publications/koolen-2019-digital-tool-criticism#^s2]]'
+- '[[20_distillates/publications/vanes-2018-tool-criticism#^s1]]'
+- '[[20_distillates/publications/vanes-2018-tool-criticism#^s2]]'
 created: 2026-07-23
 updated: 2026-07-29
 ---
@@ -20,11 +21,11 @@ Digital tool criticism holds that tools are not neutral instruments: choosing on
 
 ## Support
 
-- [[10_distillates/publications/koolen-2019-digital-tool-criticism#^s2]] — choosing a tool requires reflecting on how it affords a method.
-- [[10_distillates/publications/vanes-2018-tool-criticism#^s1]] — tool criticism as an essential element of the research process.
-- [[10_distillates/publications/vanes-2018-tool-criticism#^s2]] — the move from digital methods to digital methodology.
+- [[20_distillates/publications/koolen-2019-digital-tool-criticism#^s2]] — choosing a tool requires reflecting on how it affords a method.
+- [[20_distillates/publications/vanes-2018-tool-criticism#^s1]] — tool criticism as an essential element of the research process.
+- [[20_distillates/publications/vanes-2018-tool-criticism#^s2]] — the move from digital methods to digital methodology.
 
 ## Related
 
-- [[20_claims/MOC-Frame]]
-- [[20_claims/well-modelled-data-does-not-discharge-critical-data-work]]
+- [[30_assertions/MOC-Frame]]
+- [[30_assertions/well-modelled-data-does-not-discharge-critical-data-work]]

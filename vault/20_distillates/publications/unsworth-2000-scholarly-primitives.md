@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: unsworth-2000
-topics: ["[[Concepts]]"]
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -28,7 +29,7 @@ Unsworth proposes a short list of basic scholarly functions common across discip
 
 ## Terms
 
-- **scholarly primitive**: a basic, self-understood scholarly function, common across disciplines and media, from which higher-level scholarship is built and which tools can embody. [[10_distillates/publications/unsworth-2000-scholarly-primitives#^s1]]
+- **scholarly primitive**: a basic, self-understood scholarly function, common across disciplines and media, from which higher-level scholarship is built and which tools can embody. [[20_distillates/publications/unsworth-2000-scholarly-primitives#^s1]]
 
 ## Open questions
 
@@ -36,4 +37,4 @@ Unsworth proposes a short list of basic scholarly functions common across discip
 
 ## Related
 
-- [[10_distillates/publications/borek-2016-tadirah]] — the activity taxonomy the paper pairs with Unsworth in its interface typology.
+- [[20_distillates/publications/borek-2016-tadirah]] — the activity taxonomy the paper pairs with Unsworth in its interface typology.

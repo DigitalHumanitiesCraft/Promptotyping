@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: pichler-2022
-topics: ["[[Concepts]]"]
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   quote: 2026-07-25
@@ -34,8 +35,8 @@ The article makes operationalisation the core activity of the digital humanities
 
 ## Terms
 
-- **operationalisation**: the development of a measurement for a given concept, the steps that assign instantiations to the concept unambiguously and make it detectable. [[10_distillates/publications/pichler-2022-operationalization#^s1]]
-- **manual measurement**: the first operationalisation step, a rule for human detection written as annotation guidelines. [[10_distillates/publications/pichler-2022-operationalization#^s6]]
+- **operationalisation**: the development of a measurement for a given concept, the steps that assign instantiations to the concept unambiguously and make it detectable. [[20_distillates/publications/pichler-2022-operationalization#^s1]]
+- **manual measurement**: the first operationalisation step, a rule for human detection written as annotation guidelines. [[20_distillates/publications/pichler-2022-operationalization#^s6]]
 
 ## Open questions
 
@@ -43,5 +44,5 @@ The article makes operationalisation the core activity of the digital humanities
 
 ## Related
 
-- [[10_distillates/publications/schoech-2013-big-smart-clean-messy]] — the humanities data abstraction that operationalisation makes computable.
-- [[20_claims/operationalisation-develops-a-measurement-for-a-concept]]
+- [[20_distillates/publications/schoech-2013-big-smart-clean-messy]] — the humanities data abstraction that operationalisation makes computable.
+- [[30_assertions/operationalisation-develops-a-measurement-for-a-concept]]

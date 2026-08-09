@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: chuehong-2022
-topics: ["[[Evidence]]"]
+topics:
+- '[[Evidence]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -30,8 +31,8 @@ The community standard that adapts the FAIR principles to research software; the
 
 ## Terms
 
-- **R1.2 (detailed provenance)**: the FAIR4RS requirement that research software carry a record of why and how it came to be and who contributed, the principle the paper maps onto its journal-and-document by-product. [[10_distillates/publications/chuehong-2022-fair4rs#^s4]]
-- **F1 (persistent identifier)**: the FAIR4RS findability requirement that the paper identifies as the condition unpublished promptotypes typically fail. [[10_distillates/publications/chuehong-2022-fair4rs#^s2]]
+- **R1.2 (detailed provenance)**: the FAIR4RS requirement that research software carry a record of why and how it came to be and who contributed, the principle the paper maps onto its journal-and-document by-product. [[20_distillates/publications/chuehong-2022-fair4rs#^s4]]
+- **F1 (persistent identifier)**: the FAIR4RS findability requirement that the paper identifies as the condition unpublished promptotypes typically fail. [[20_distillates/publications/chuehong-2022-fair4rs#^s2]]
 
 ## Open questions
 
@@ -39,4 +40,4 @@ The community standard that adapts the FAIR principles to research software; the
 
 ## Related
 
-- [[20_claims/szd-htr-fair4rs-audit-2026-07-23]]
+- [[30_assertions/szd-htr-fair4rs-audit-2026-07-23]]

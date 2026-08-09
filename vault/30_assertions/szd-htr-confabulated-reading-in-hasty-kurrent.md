@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[ArtefactVerification]]"]
+type: assertion
+topics:
+- '[[ArtefactVerification]]'
 status: grounded
 checked:
   validation: 2026-07-24
 grounding:
-  - "[[10_distillates/documents/szd-htr-evaluation-results-2026-06-10#^s1]]"
-  - "[[10_distillates/documents/szd-htr-evaluation-results-2026-06-10#^s3]]"
+- '[[20_distillates/documents/szd-htr-evaluation-results-2026-06-10#^s1]]'
+- '[[20_distillates/documents/szd-htr-evaluation-results-2026-06-10#^s3]]'
 created: 2026-07-24
 updated: 2026-07-25
 ---
@@ -19,10 +20,10 @@ In the error typology of the SZD-HTR pipeline one transcription of a hastily wri
 
 ## Support
 
-- [[10_distillates/documents/szd-htr-evaluation-results-2026-06-10#^s1]] — records the reading, its correct resolution, and the object it occurs in.
-- [[10_distillates/documents/szd-htr-evaluation-results-2026-06-10#^s3]] — fixes the scope, an early dated session with figures the source marks as historical.
+- [[20_distillates/documents/szd-htr-evaluation-results-2026-06-10#^s1]] — records the reading, its correct resolution, and the object it occurs in.
+- [[20_distillates/documents/szd-htr-evaluation-results-2026-06-10#^s3]] — fixes the scope, an early dated session with figures the source marks as historical.
 
 ## Related
 
-- [[20_claims/glam-practice-layers-llm-extraction-with-deterministic-checks-and-expert-review]]
-- [[20_claims/szd-htr-fair4rs-audit-2026-07-23]]
+- [[30_assertions/glam-practice-layers-llm-extraction-with-deterministic-checks-and-expert-review]]
+- [[30_assertions/szd-htr-fair4rs-audit-2026-07-23]]

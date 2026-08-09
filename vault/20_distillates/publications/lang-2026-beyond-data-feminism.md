@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: lang-2026
-topics: ["[[Limitations]]"]
+topics:
+- '[[Limitations]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -28,7 +29,7 @@ The working paper adapts Data Feminism into a digital source criticism for data 
 
 ## Terms
 
-- **digital source criticism (for data work)**: a two-fold critical examination of how the sources came into existence and how they became data, extended by Data Feminist attention to power. [[10_distillates/publications/lang-2026-beyond-data-feminism#^s1]]
+- **digital source criticism (for data work)**: a two-fold critical examination of how the sources came into existence and how they became data, extended by Data Feminist attention to power. [[20_distillates/publications/lang-2026-beyond-data-feminism#^s1]]
 
 ## Open questions
 
@@ -36,4 +37,4 @@ The working paper adapts Data Feminism into a digital source criticism for data 
 
 ## Related
 
-- [[20_claims/well-modelled-data-does-not-discharge-critical-data-work]]
+- [[30_assertions/well-modelled-data-does-not-discharge-critical-data-work]]

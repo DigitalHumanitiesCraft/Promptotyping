@@ -1,13 +1,14 @@
 ---
-type: claim
-topics: ["[[Method]]"]
+type: assertion
+topics:
+- '[[Method]]'
 status: grounded
 checked: {}
 grounding:
-  - "[[10_distillates/publications/hong-2023-metagpt#^s1]]"
-  - "[[10_distillates/publications/hong-2023-metagpt#^s2]]"
-  - "[[10_distillates/publications/hong-2023-metagpt#^s3]]"
-  - "[[10_distillates/publications/hong-2023-metagpt#^s4]]"
+- '[[20_distillates/publications/hong-2023-metagpt#^s1]]'
+- '[[20_distillates/publications/hong-2023-metagpt#^s2]]'
+- '[[20_distillates/publications/hong-2023-metagpt#^s3]]'
+- '[[20_distillates/publications/hong-2023-metagpt#^s4]]'
 created: 2026-07-26
 updated: 2026-07-26
 ---
@@ -20,14 +21,14 @@ MetaGPT encodes standardised operating procedures into prompt sequences and assi
 
 ## Support
 
-- [[10_distillates/publications/hong-2023-metagpt#^s1]] — the failure the arrangement is built against.
-- [[10_distillates/publications/hong-2023-metagpt#^s2]] — procedure encoding and verification of intermediate results.
-- [[10_distillates/publications/hong-2023-metagpt#^s3]] — role assignment on the assembly-line pattern.
-- [[10_distillates/publications/hong-2023-metagpt#^s4]] — the benchmark result against undifferentiated multi-agent chat.
+- [[20_distillates/publications/hong-2023-metagpt#^s1]] — the failure the arrangement is built against.
+- [[20_distillates/publications/hong-2023-metagpt#^s2]] — procedure encoding and verification of intermediate results.
+- [[20_distillates/publications/hong-2023-metagpt#^s3]] — role assignment on the assembly-line pattern.
+- [[20_distillates/publications/hong-2023-metagpt#^s4]] — the benchmark result against undifferentiated multi-agent chat.
 
 ## Related
 
-- [[20_claims/least-privilege-bounds-damage-and-narrows-the-audit]]
-- [[20_claims/dialogue-agent-behaviour-is-described-as-role-play]]
-- [[20_claims/llm-based-agents-for-software-engineering]]
-- [[20_claims/MOC-Method]]
+- [[30_assertions/least-privilege-bounds-damage-and-narrows-the-audit]]
+- [[30_assertions/dialogue-agent-behaviour-is-described-as-role-play]]
+- [[30_assertions/llm-based-agents-for-software-engineering]]
+- [[30_assertions/MOC-Method]]

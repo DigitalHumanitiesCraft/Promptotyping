@@ -1,11 +1,12 @@
 ---
-type: claim
-topics: ["[[Evidence]]"]
+type: assertion
+topics:
+- '[[Evidence]]'
 status: grounded
 checked:
   validation: 2026-07-19
 grounding:
-  - "[[10_distillates/documents/verification-paper-figures-2026-07-19#^s17]]"
+- '[[20_distillates/documents/verification-paper-figures-2026-07-19#^s17]]'
 created: 2026-07-19
 updated: 2026-07-25
 ---
@@ -18,8 +19,8 @@ As verified on 2026-07-19, the M³GIM repository holds about 127 E-entries, abov
 
 ## Support
 
-- [[10_distillates/documents/verification-paper-figures-2026-07-19#^s17]] — records the M³GIM decision entry count at the verification date.
+- [[20_distillates/documents/verification-paper-figures-2026-07-19#^s17]] — records the M³GIM decision entry count at the verification date.
 
 ## Related
 
-- [[20_claims/section4-deviations-are-snapshot-drift-2026-07-19]]
+- [[30_assertions/section4-deviations-are-snapshot-drift-2026-07-19]]

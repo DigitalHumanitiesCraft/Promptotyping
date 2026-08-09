@@ -2,7 +2,9 @@
 type: distillate
 source-type: publication
 reference: pollin-2025b
-topics: ["[[Genealogy]]", "[[Concepts]]"]
+topics:
+- '[[Genealogy]]'
+- '[[Concepts]]'
 status: grounded
 checked:
   quote: 2026-07-19
@@ -64,5 +66,5 @@ The author's doctoral dissertation formulates scholar-centred design, walks the 
 
 ## Related
 
-- [[20_claims/MOC-Genealogy]]
-- [[20_claims/MOC-Concepts]]
+- [[30_assertions/MOC-Genealogy]]
+- [[30_assertions/MOC-Concepts]]

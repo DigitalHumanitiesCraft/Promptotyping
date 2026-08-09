@@ -1,13 +1,14 @@
 ---
-type: claim
-topics: ["[[Limitations]]"]
+type: assertion
+topics:
+- '[[Limitations]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/pollin-2026a-asymmetric-amplification#^s1]]"
-  - "[[10_distillates/publications/pollin-2026a-asymmetric-amplification#^s2]]"
-  - "[[10_distillates/publications/pollin-2026b-lisa-positioning#^s5]]"
+- '[[20_distillates/publications/pollin-2026a-asymmetric-amplification#^s1]]'
+- '[[20_distillates/publications/pollin-2026a-asymmetric-amplification#^s2]]'
+- '[[20_distillates/publications/pollin-2026b-lisa-positioning#^s5]]'
 created: 2026-07-23
 updated: 2026-07-23
 ---
@@ -20,10 +21,10 @@ Current LLMs do not automate the research process; they massively amplify comput
 
 ## Support
 
-- [[10_distillates/publications/pollin-2026a-asymmetric-amplification#^s1]] — the systems amplify computer-based research work rather than automate research.
-- [[10_distillates/publications/pollin-2026a-asymmetric-amplification#^s2]] — the amplification is deeply asymmetric and magnifies existing advantages.
-- [[10_distillates/publications/pollin-2026b-lisa-positioning#^s5]] — amplification, not automation, of expert abilities.
+- [[20_distillates/publications/pollin-2026a-asymmetric-amplification#^s1]] — the systems amplify computer-based research work rather than automate research.
+- [[20_distillates/publications/pollin-2026a-asymmetric-amplification#^s2]] — the amplification is deeply asymmetric and magnifies existing advantages.
+- [[20_distillates/publications/pollin-2026b-lisa-positioning#^s5]] — amplification, not automation, of expert abilities.
 
 ## Related
 
-- [[20_claims/promptotyping-documents-are-the-primary-artifact]]
+- [[30_assertions/promptotyping-documents-are-the-primary-artifact]]

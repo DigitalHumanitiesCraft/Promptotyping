@@ -1,13 +1,15 @@
 ---
-type: claim
-topics: ["[[Evidence]]", "[[Limitations]]"]
+type: assertion
+topics:
+- '[[Evidence]]'
+- '[[Limitations]]'
 status: grounded
 checked:
   validation: 2026-07-19
 grounding:
-  - "[[10_distillates/documents/verification-paper-figures-2026-07-19#^s23]]"
-  - "[[10_distillates/documents/verification-paper-figures-2026-07-19#^s24]]"
-  - "[[10_distillates/documents/verification-paper-figures-2026-07-19#^s25]]"
+- '[[20_distillates/documents/verification-paper-figures-2026-07-19#^s23]]'
+- '[[20_distillates/documents/verification-paper-figures-2026-07-19#^s24]]'
+- '[[20_distillates/documents/verification-paper-figures-2026-07-19#^s25]]'
 created: 2026-07-19
 updated: 2026-07-29
 ---
@@ -20,11 +22,11 @@ The figures verification ran as a single adversarial agent without a second inde
 
 ## Support
 
-- [[10_distillates/documents/verification-paper-figures-2026-07-19#^s23]] — records the single-agent design without a second pass.
-- [[10_distillates/documents/verification-paper-figures-2026-07-19#^s24]] — records the snapshot reading date and the methods that make later growth invisible.
-- [[10_distillates/documents/verification-paper-figures-2026-07-19#^s25]] — records the test-function counting rule in place of a pytest collection.
+- [[20_distillates/documents/verification-paper-figures-2026-07-19#^s23]] — records the single-agent design without a second pass.
+- [[20_distillates/documents/verification-paper-figures-2026-07-19#^s24]] — records the snapshot reading date and the methods that make later growth invisible.
+- [[20_distillates/documents/verification-paper-figures-2026-07-19#^s25]] — records the test-function counting rule in place of a pytest collection.
 
 ## Related
 
-- [[20_claims/klawiter-test-count-2026-07-19]]
-- [[20_claims/medieval-test-count-2026-07-19]]
+- [[30_assertions/klawiter-test-count-2026-07-19]]
+- [[30_assertions/medieval-test-count-2026-07-19]]

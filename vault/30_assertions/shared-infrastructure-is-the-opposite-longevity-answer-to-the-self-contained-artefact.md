@@ -1,13 +1,14 @@
 ---
-type: claim
-topics: ["[[ArtefactVerification]]"]
+type: assertion
+topics:
+- '[[ArtefactVerification]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/leipold-2026-wikifair#^s1]]"
-  - "[[10_distillates/publications/leipold-2026-wikifair#^s2]]"
-  - "[[10_distillates/publications/leipold-2026-wikifair#^s3]]"
+- '[[20_distillates/publications/leipold-2026-wikifair#^s1]]'
+- '[[20_distillates/publications/leipold-2026-wikifair#^s2]]'
+- '[[20_distillates/publications/leipold-2026-wikifair#^s3]]'
 created: 2026-07-23
 updated: 2026-07-29
 ---
@@ -20,11 +21,11 @@ Against the same limited-hosting-lifetime problem that motivates the self-contai
 
 ## Support
 
-- [[10_distillates/publications/leipold-2026-wikifair#^s1]] — limited hosting lifetime as the shared longevity problem.
-- [[10_distillates/publications/leipold-2026-wikifair#^s2]] — using Wikimedia infrastructure for long-term preservation.
-- [[10_distillates/publications/leipold-2026-wikifair#^s3]] — integrating into Wikidata instead of a separate database.
+- [[20_distillates/publications/leipold-2026-wikifair#^s1]] — limited hosting lifetime as the shared longevity problem.
+- [[20_distillates/publications/leipold-2026-wikifair#^s2]] — using Wikimedia infrastructure for long-term preservation.
+- [[20_distillates/publications/leipold-2026-wikifair#^s3]] — integrating into Wikidata instead of a separate database.
 
 ## Related
 
-- [[20_claims/MOC-Concepts]]
-- [[20_claims/client-side-provenance-tool-is-a-precedent-for-server-free-artefacts]]
+- [[30_assertions/MOC-Concepts]]
+- [[30_assertions/client-side-provenance-tool-is-a-precedent-for-server-free-artefacts]]

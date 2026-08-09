@@ -1,12 +1,14 @@
 ---
-type: claim
-topics: ["[[Concepts]]", "[[Method]]"]
+type: assertion
+topics:
+- '[[Concepts]]'
+- '[[Method]]'
 status: grounded
 checked:
   validation: 2026-07-25
 grounding:
-  - "[[10_distillates/documents/promptotyping-video-2-live-demo#^s32]]"
-  - "[[10_distillates/documents/promptotyping-video-2-live-demo#^s33]]"
+- '[[20_distillates/documents/promptotyping-video-2-live-demo#^s32]]'
+- '[[20_distillates/documents/promptotyping-video-2-live-demo#^s33]]'
 created: 2026-07-25
 updated: 2026-07-25
 ---
@@ -19,10 +21,10 @@ At the point where the tool analyses the screenshots of the running interface, t
 
 ## Support
 
-- [[10_distillates/documents/promptotyping-video-2-live-demo#^s32]] — the Critical Expert in the Loop as the instance that checks whether the display is right.
-- [[10_distillates/documents/promptotyping-video-2-live-demo#^s33]] — the Expert Developer in the Loop, invoked where the fix runs through the element identifier and HTML-specific knowledge.
+- [[20_distillates/documents/promptotyping-video-2-live-demo#^s32]] — the Critical Expert in the Loop as the instance that checks whether the display is right.
+- [[20_distillates/documents/promptotyping-video-2-live-demo#^s33]] — the Expert Developer in the Loop, invoked where the fix runs through the element identifier and HTML-specific knowledge.
 
 ## Related
 
-- [[20_claims/critical-expert-in-the-loop-double-reflection-loop]]
-- [[20_claims/interface-defect-is-reported-through-the-element-identifier]]
+- [[30_assertions/critical-expert-in-the-loop-double-reflection-loop]]
+- [[30_assertions/interface-defect-is-reported-through-the-element-identifier]]

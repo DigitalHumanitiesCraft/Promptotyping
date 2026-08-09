@@ -1,16 +1,17 @@
 ---
-type: claim
-topics: ["[[ArtefactVerification]]"]
+type: assertion
+topics:
+- '[[ArtefactVerification]]'
 status: grounded
 checked: {}
 grounding:
-  - "[[10_distillates/publications/groth-2010-nanopublication#^s1]]"
-  - "[[10_distillates/publications/groth-2010-nanopublication#^s2]]"
-  - "[[10_distillates/publications/groth-2010-nanopublication#^s3]]"
-  - "[[10_distillates/publications/groth-2010-nanopublication#^s4]]"
-  - "[[10_distillates/publications/groth-2010-nanopublication#^s5]]"
-  - "[[10_distillates/publications/groth-2010-nanopublication#^s6]]"
-  - "[[10_distillates/publications/groth-2010-nanopublication#^s7]]"
+- '[[20_distillates/publications/groth-2010-nanopublication#^s1]]'
+- '[[20_distillates/publications/groth-2010-nanopublication#^s2]]'
+- '[[20_distillates/publications/groth-2010-nanopublication#^s3]]'
+- '[[20_distillates/publications/groth-2010-nanopublication#^s4]]'
+- '[[20_distillates/publications/groth-2010-nanopublication#^s5]]'
+- '[[20_distillates/publications/groth-2010-nanopublication#^s6]]'
+- '[[20_distillates/publications/groth-2010-nanopublication#^s7]]'
 created: 2026-07-26
 updated: 2026-07-26
 ---
@@ -23,15 +24,15 @@ Groth, Gibson and Velterop start from the observation that a statement can be va
 
 ## Support
 
-- [[10_distillates/publications/groth-2010-nanopublication#^s1]] — a statement validates only with its context.
-- [[10_distillates/publications/groth-2010-nanopublication#^s2]] — the problem of restoring context to a detached statement.
-- [[10_distillates/publications/groth-2010-nanopublication#^s3]] — citability, attributability, reviewability as requirements.
-- [[10_distillates/publications/groth-2010-nanopublication#^s4]] — the definitions of statement and annotation.
-- [[10_distillates/publications/groth-2010-nanopublication#^s5]] — the definition of a nanopublication.
-- [[10_distillates/publications/groth-2010-nanopublication#^s6]] — the provenance annotations.
-- [[10_distillates/publications/groth-2010-nanopublication#^s7]] — the assertion relation.
+- [[20_distillates/publications/groth-2010-nanopublication#^s1]] — a statement validates only with its context.
+- [[20_distillates/publications/groth-2010-nanopublication#^s2]] — the problem of restoring context to a detached statement.
+- [[20_distillates/publications/groth-2010-nanopublication#^s3]] — citability, attributability, reviewability as requirements.
+- [[20_distillates/publications/groth-2010-nanopublication#^s4]] — the definitions of statement and annotation.
+- [[20_distillates/publications/groth-2010-nanopublication#^s5]] — the definition of a nanopublication.
+- [[20_distillates/publications/groth-2010-nanopublication#^s6]] — the provenance annotations.
+- [[20_distillates/publications/groth-2010-nanopublication#^s7]] — the assertion relation.
 
 ## Related
 
-- [[20_claims/toulmin-layout-separates-claim-grounds-warrant-and-backing]]
-- [[20_claims/MOC-ArtefactVerification]]
+- [[30_assertions/toulmin-layout-separates-claim-grounds-warrant-and-backing]]
+- [[30_assertions/MOC-ArtefactVerification]]

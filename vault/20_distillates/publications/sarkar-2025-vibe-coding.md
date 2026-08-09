@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: sarkar-2025
-topics: ["[[Concepts]]"]
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -30,7 +31,7 @@ The first empirical study of vibe coding, based on think-aloud video of extended
 
 ## Terms
 
-- **Material disengagement**: practitioners orchestrating code production through AI while retaining selective, strategic oversight rather than writing or reading all code directly. [[10_distillates/publications/sarkar-2025-vibe-coding#^s4]]
+- **Material disengagement**: practitioners orchestrating code production through AI while retaining selective, strategic oversight rather than writing or reading all code directly. [[20_distillates/publications/sarkar-2025-vibe-coding#^s4]]
 
 ## Open questions
 
@@ -38,4 +39,4 @@ The first empirical study of vibe coding, based on think-aloud video of extended
 
 ## Related
 
-- [[10_distillates/publications/fawzy-2025-vibe-coding-in-practice]]
+- [[20_distillates/publications/fawzy-2025-vibe-coding-in-practice]]

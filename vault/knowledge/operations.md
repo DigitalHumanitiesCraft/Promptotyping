@@ -1,16 +1,19 @@
 ---
 title: Operations
 project:
-  name: "Promptotyping Paper Vault"
-  repository: "https://github.com/DigitalHumanitiesCraft/Promptotyping"
+  name: Promptotyping Paper Vault
+  repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
 status: draft
 language: en
-created: "2026-07-19"
-updated: "2026-07-19"
-related: [schema, state, journal]
+created: '2026-07-19'
+updated: '2026-07-19'
+related:
+- schema
+- state
+- journal
 ---
 
 # Operations
@@ -21,7 +24,7 @@ This document is the procedural playbook of the vault, one section per chain. Ev
 
 How a source enters the vault is orthogonal to its type; the channel is recorded in the representation's `channel` field and changes nothing about checking.
 
-- **handover** and **collection**: place the original in `_sources/`, record it in the source inventory in [[knowledge/state]] with status `new`.
+- **handover** and **collection**: place the original in `00_sources/`, record it in the source inventory in [[knowledge/state]] with status `new`.
 - **import**: export records from the reference library as CSL JSON into `references/`, one inventory row per record.
 - **deep-research**: run the research prompt below. Capture every located publication in the reference manager and export it as CSL JSON into `references/`. The research report itself never becomes a source; all anchors bind to the located publications.
 
@@ -40,7 +43,7 @@ How a source enters the vault is orthogonal to its type; the channel is recorded
 Per source, produce the representation.
 
 1. **document**: convert the original once (converter noted in frontmatter), set the H1, append a block ID to every anchor-relevant paragraph, fill the metadata block. Never edit the file after IDs exist.
-2. **data**: place the data file in `00_representation/data/`, write the schema description of the same slug, fill the metadata block.
+2. **data**: place the data file in `10_markdown/data/`, write the schema description of the same slug, fill the metadata block.
 3. **publication**: no representation; the CSL JSON record in `references/` is the root.
 
 Update the inventory row to `ingested`.

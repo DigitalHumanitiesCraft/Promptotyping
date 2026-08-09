@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[Method]]"]
+type: assertion
+topics:
+- '[[Method]]'
 status: grounded
 checked: {}
 grounding:
-  - "[[10_distillates/publications/lucassen-2016-quality-user-story#^s7]]"
-  - "[[10_distillates/publications/lucassen-2016-quality-user-story#^s8]]"
-  - "[[10_distillates/publications/lucassen-2016-quality-user-story#^s9]]"
+- '[[20_distillates/publications/lucassen-2016-quality-user-story#^s7]]'
+- '[[20_distillates/publications/lucassen-2016-quality-user-story#^s8]]'
+- '[[20_distillates/publications/lucassen-2016-quality-user-story#^s9]]'
 created: 2026-07-26
 updated: 2026-07-26
 ---
@@ -19,12 +20,12 @@ AQUSA is designed for the clerical part of requirements engineering, the defects
 
 ## Support
 
-- [[10_distillates/publications/lucassen-2016-quality-user-story#^s7]] — the selection rule and the stated reason for excluding the semantic criteria.
-- [[10_distillates/publications/lucassen-2016-quality-user-story#^s8]] — the five implemented analyzers of the first version.
-- [[10_distillates/publications/lucassen-2016-quality-user-story#^s9]] — the tool's remit, the clerical and algorithmically determinable part.
+- [[20_distillates/publications/lucassen-2016-quality-user-story#^s7]] — the selection rule and the stated reason for excluding the semantic criteria.
+- [[20_distillates/publications/lucassen-2016-quality-user-story#^s8]] — the five implemented analyzers of the first version.
+- [[20_distillates/publications/lucassen-2016-quality-user-story#^s9]] — the tool's remit, the clerical and algorithmically determinable part.
 
 ## Related
 
-- [[20_claims/qus-defines-thirteen-user-story-quality-criteria]]
-- [[20_claims/llm-judgement-approximates-human-preference-and-carries-known-biases]]
-- [[20_claims/MOC-Method]]
+- [[30_assertions/qus-defines-thirteen-user-story-quality-criteria]]
+- [[30_assertions/llm-judgement-approximates-human-preference-and-carries-known-biases]]
+- [[30_assertions/MOC-Method]]

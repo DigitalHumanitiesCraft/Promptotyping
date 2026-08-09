@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: macedo-2026
-topics: ["[[Concepts]]"]
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -32,7 +33,7 @@ A process taxonomy and comparative assessment of six agentic software-developmen
 
 ## Terms
 
-- **Object-framework**: a structured set of artifacts, commands, roles, templates, workflows or policies that runs over a coding agent to organise the work, distinct from the agent itself. [[10_distillates/publications/macedo-2026-from-prompt-to-process#^s1]]
+- **Object-framework**: a structured set of artifacts, commands, roles, templates, workflows or policies that runs over a coding agent to organise the work, distinct from the agent itself. [[20_distillates/publications/macedo-2026-from-prompt-to-process#^s1]]
 
 ## Open questions
 
@@ -40,4 +41,4 @@ A process taxonomy and comparative assessment of six agentic software-developmen
 
 ## Related
 
-- [[10_distillates/publications/liu-2024-llm-agents-se-survey]]
+- [[20_distillates/publications/liu-2024-llm-agents-se-survey]]

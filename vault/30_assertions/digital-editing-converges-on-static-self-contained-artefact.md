@@ -1,13 +1,14 @@
 ---
-type: claim
-topics: ["[[ArtefactVerification]]"]
+type: assertion
+topics:
+- '[[ArtefactVerification]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/andorfer-2026-static-tei-editions#^s1]]"
-  - "[[10_distillates/publications/andorfer-2026-static-tei-editions#^s2]]"
-  - "[[10_distillates/publications/andorfer-2026-static-tei-editions#^s4]]"
+- '[[20_distillates/publications/andorfer-2026-static-tei-editions#^s1]]'
+- '[[20_distillates/publications/andorfer-2026-static-tei-editions#^s2]]'
+- '[[20_distillates/publications/andorfer-2026-static-tei-editions#^s4]]'
 created: 2026-07-23
 updated: 2026-07-29
 ---
@@ -20,10 +21,10 @@ Independently of any generative tooling, digital scholarly editing has reached t
 
 ## Support
 
-- [[10_distillates/publications/andorfer-2026-static-tei-editions#^s1]] — static defined as standalone HTML with no server-side execution.
-- [[10_distillates/publications/andorfer-2026-static-tei-editions#^s2]] — deterministic XSLT as the rendering path.
-- [[10_distillates/publications/andorfer-2026-static-tei-editions#^s4]] — longevity anchored in institutional context, not technology or person.
+- [[20_distillates/publications/andorfer-2026-static-tei-editions#^s1]] — static defined as standalone HTML with no server-side execution.
+- [[20_distillates/publications/andorfer-2026-static-tei-editions#^s2]] — deterministic XSLT as the rendering path.
+- [[20_distillates/publications/andorfer-2026-static-tei-editions#^s4]] — longevity anchored in institutional context, not technology or person.
 
 ## Related
 
-- [[20_claims/MOC-Concepts]]
+- [[30_assertions/MOC-Concepts]]

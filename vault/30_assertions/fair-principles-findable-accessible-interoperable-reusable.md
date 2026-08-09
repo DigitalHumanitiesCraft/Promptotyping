@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[Frame]]"]
+type: assertion
+topics:
+- '[[Frame]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/wilkinson-2016-fair-principles#^s1]]"
-  - "[[10_distillates/publications/wilkinson-2016-fair-principles#^s2]]"
+- '[[20_distillates/publications/wilkinson-2016-fair-principles#^s1]]'
+- '[[20_distillates/publications/wilkinson-2016-fair-principles#^s2]]'
 created: 2026-07-23
 updated: 2026-07-23
 ---
@@ -19,9 +20,9 @@ Wilkinson et al. state the FAIR Data Principles as a concise, measurable set of 
 
 ## Support
 
-- [[10_distillates/publications/wilkinson-2016-fair-principles#^s1]] — a concise, measurable set of principles to enhance reusability.
-- [[10_distillates/publications/wilkinson-2016-fair-principles#^s2]] — Findable, Accessible, Interoperable, and Reusable.
+- [[20_distillates/publications/wilkinson-2016-fair-principles#^s1]] — a concise, measurable set of principles to enhance reusability.
+- [[20_distillates/publications/wilkinson-2016-fair-principles#^s2]] — Findable, Accessible, Interoperable, and Reusable.
 
 ## Related
 
-- [[20_claims/fair-emphasises-machine-actionability-of-data]]
+- [[30_assertions/fair-emphasises-machine-actionability-of-data]]

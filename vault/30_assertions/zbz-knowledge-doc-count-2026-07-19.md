@@ -1,11 +1,12 @@
 ---
-type: claim
-topics: ["[[Evidence]]"]
+type: assertion
+topics:
+- '[[Evidence]]'
 status: grounded
 checked:
   validation: 2026-07-19
 grounding:
-  - "[[10_distillates/documents/verification-paper-figures-2026-07-19#^s13]]"
+- '[[20_distillates/documents/verification-paper-figures-2026-07-19#^s13]]'
 created: 2026-07-19
 updated: 2026-07-25
 ---
@@ -18,8 +19,8 @@ As verified on 2026-07-19, the ZBZ knowledge base holds 13 content documents plu
 
 ## Support
 
-- [[10_distillates/documents/verification-paper-figures-2026-07-19#^s13]] — records the ZBZ knowledge document count and the absence of the Action Documents.
+- [[20_distillates/documents/verification-paper-figures-2026-07-19#^s13]] — records the ZBZ knowledge document count and the absence of the Action Documents.
 
 ## Related
 
-- [[20_claims/zbz-figures-verified-2026-07-19]]
+- [[30_assertions/zbz-figures-verified-2026-07-19]]

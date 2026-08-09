@@ -1,16 +1,16 @@
 ---
 type: representation
 source-type: document
-source: "[[_sources/frontmatter-core-survey-2026-07-26]]"
-converter: "Markdown copy of the handover record; block IDs appended for anchoring"
+source: '[[00_sources/frontmatter-core-survey-2026-07-26]]'
+converter: Markdown copy of the handover record; block IDs appended for anchoring
 channel: handover
 metadata:
-  title: "2026-07-26 - Survey of the reduced frontmatter core across the local knowledge bases"
-  creator: "Digital Humanities Craft; run executed by a Claude subagent over the operator's local working copies"
-  date: "2026-07-26"
-  format: "text/markdown"
-  identifier: ""
-  license: "CC BY 4.0 (vault content)"
+  title: 2026-07-26 - Survey of the reduced frontmatter core across the local knowledge bases
+  creator: Digital Humanities Craft; run executed by a Claude subagent over the operator's local working copies
+  date: '2026-07-26'
+  format: text/markdown
+  identifier: ''
+  license: CC BY 4.0 (vault content)
   confidential: false
 created: 2026-07-26
 updated: 2026-07-26

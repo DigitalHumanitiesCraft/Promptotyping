@@ -1,6 +1,6 @@
 ---
 type: glossary
-term: "Agentic engineering"
+term: Agentic engineering
 created: 2026-07-25
 updated: 2026-07-25
 ---

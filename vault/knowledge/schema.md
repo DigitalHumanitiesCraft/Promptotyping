@@ -1,8 +1,8 @@
 ---
 title: Schema
 project:
-  name: "Promptotyping Paper Vault"
-  repository: "https://github.com/DigitalHumanitiesCraft/Promptotyping"
+  name: Promptotyping Paper Vault
+  repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
@@ -11,9 +11,13 @@ profile:
   url: https://github.com/DigitalHumanitiesCraft/grounded-vault
 status: draft
 language: en
-created: "2026-07-19"
-updated: "2026-07-19"
-related: [index, specification, operations, state]
+created: '2026-07-19'
+updated: '2026-07-19'
+related:
+- index
+- specification
+- operations
+- state
 ---
 
 # Schema
@@ -24,11 +28,11 @@ This document is the stable rulebook of the vault. It defines the layer model, t
 
 | Layer | Folder | Content | Anchor it carries |
 |---|---|---|---|
-| Sources | `_sources/` | originals, local only | none; this is the ground |
-| Representation | `00_representation/` | archived full texts, datasets with schema | block IDs, file plus schema |
-| Distillates | `10_distillates/` | one distillate per source | grounding anchors into its source, statement IDs |
-| Claims | `20_claims/` | atomic cross-source statements, topic maps | grounding anchors into distillate statements |
-| Deliverable | `30_deliverable/` | one file per chapter | footnote anchors into claims, posits marked |
+| Sources | `00_sources/` | originals, local only | none; this is the ground |
+| Representation | `10_markdown/` | archived full texts, datasets with schema | block IDs, file plus schema |
+| Distillates | `20_distillates/` | one distillate per source | grounding anchors into its source, statement IDs |
+| Claims | `30_assertions/` | atomic cross-source statements, topic maps | grounding anchors into distillate statements |
+| Deliverable | `40_output/` | one file per chapter | footnote anchors into claims, posits marked |
 
 Every representation and every distillate is also listed in a register, the source inventory in [[knowledge/state]] or the register of paper sources, and the validator raises `E-INVENTORY` on one that is not. Without the register row a document is invisible to every check and every overview that reads a register, so it can be complete and conformant and still be missed.
 
@@ -40,7 +44,7 @@ Two rules keep the chain honest. Anchors are minted only at the layer they belon
 - `source-type`: `document` | `publication` | `data`
 - `channel`: `handover` | `collection` | `import` | `deep-research`
 - `status`: `grounded` | `validated` | `verified`, plus `contested` (claims only) and `superseded` (distillates only)
-- `topics`: values must each name an existing topic map; the set of `MOC-*.md` files in `20_claims/` is the controlled topic backbone
+- `topics`: values must each name an existing topic map; the set of `MOC-*.md` files in `30_assertions/` is the controlled topic backbone
 
 ## Audit trail
 
@@ -76,13 +80,13 @@ Each type carries its frontmatter as a code block, followed by the section skele
 
 ### 1. Representation (source-type: document)
 
-Exactly one archived full text per source, converted once and never edited afterwards, so that its anchors stay stable. Lives in `00_representation/documents/`. A revised source enters as a new file with a date-suffixed slug; existing anchors keep resolving against the old file.
+Exactly one archived full text per source, converted once and never edited afterwards, so that its anchors stay stable. Lives in `10_markdown/documents/`. A revised source enters as a new file with a date-suffixed slug; existing anchors keep resolving against the old file.
 
 ```yaml
 ---
 type: representation
 source-type: document
-source: "[[_sources/<filename>]]"
+source: "[[00_sources/<filename>]]"
 converter: ""            # e.g. Docling, MarkItDown
 channel: handover        # handover | collection | import | deep-research
 metadata: { … }          # see Source metadata
@@ -101,14 +105,14 @@ Block IDs are short, stable, unique per file, and minted only here.
 
 ### 2. Representation (source-type: data)
 
-A dataset plus its schema description. The data file (CSV, XML, …) lives in `00_representation/data/` next to a Markdown file of the same slug that carries the frontmatter and describes the schema.
+A dataset plus its schema description. The data file (CSV, XML, …) lives in `10_markdown/data/` next to a Markdown file of the same slug that carries the frontmatter and describes the schema.
 
 ```yaml
 ---
 type: representation
 source-type: data
-source: "[[_sources/<filename>]]"    # omit when the data file is the original
-data: "[[00_representation/data/<file.csv>]]"
+source: "[[00_sources/<filename>]]"    # omit when the data file is the original
+data: "[[10_markdown/data/<file.csv>]]"
 channel: handover
 metadata: { … }
 created: 2026-01-01
@@ -120,13 +124,13 @@ The body describes columns, units, encodings and known limitations. The anchor o
 
 ### 3. Distillate
 
-The condensation of exactly one source into its core statements. One file per source in `10_distillates/<source-type>s/`, same slug as its representation. A distillate reproduces its source without evaluating it and without merging it with other sources; synthesis belongs to claims.
+The condensation of exactly one source into its core statements. One file per source in `20_distillates/<source-type>s/`, same slug as its representation. A distillate reproduces its source without evaluating it and without merging it with other sources; synthesis belongs to claims.
 
 ```yaml
 ---
 type: distillate
 source-type: document        # document | publication | data
-representation: "[[00_representation/documents/<slug>]]"   # document and data types
+representation: "[[10_markdown/documents/<slug>]]"   # document and data types
 reference: ""                # publication type: CSL JSON id from references/
 topics: ["[[<Topic>]]"]
 status: grounded             # grounded | validated | verified | superseded
@@ -144,12 +148,12 @@ updated: 2026-01-01
 
 ## Core statements
 
-- <statement> [[00_representation/documents/<slug>#^a1b2]] ^s1
-- <statement> [[00_representation/documents/<slug>#^c3d4]] ^s2
+- <statement> [[10_markdown/documents/<slug>#^a1b2]] ^s1
+- <statement> [[10_markdown/documents/<slug>#^c3d4]] ^s2
 
 ## Terms
 
-- **<term>**: <meaning as set by the source> [[00_representation/documents/<slug>#^e5f6]]
+- **<term>**: <meaning as set by the source> [[10_markdown/documents/<slug>#^e5f6]]
 
 ## Open questions
 
@@ -157,7 +161,7 @@ updated: 2026-01-01
 
 ## Related
 
-- [[10_distillates/…]] / [[20_claims/…]]
+- [[20_distillates/…]] / [[30_assertions/…]]
 ```
 
 Every core statement carries exactly one grounding anchor into its source and ends with a statement ID (`^s1`, `^s2`, …), the anchor claims bind to. The anchor form varies by source type:
@@ -179,7 +183,7 @@ Every core statement carries exactly one grounding anchor into its source and en
 
 ### 4. Claim
 
-An atomic, source-independent statement relevant to the deliverable, one file in `20_claims/`, synthesized from the distillates of one or more sources. This is the layer where source types converge.
+An atomic, source-independent statement relevant to the deliverable, one file in `30_assertions/`, synthesized from the distillates of one or more sources. This is the layer where source types converge.
 
 ```yaml
 ---
@@ -188,8 +192,8 @@ topics: ["[[<Topic>]]"]
 status: grounded             # grounded | validated | verified | contested
 checked: {}
 grounding:
-  - "[[10_distillates/documents/<slug>#^s1]]"
-  - "[[10_distillates/publications/<slug>#^s2]]"
+  - "[[20_distillates/documents/<slug>#^s1]]"
+  - "[[20_distillates/publications/<slug>#^s2]]"
 contested-with: []           # wikilinks; required on both sides when status is contested
 created: 2026-01-01
 updated: 2026-01-01
@@ -205,19 +209,19 @@ updated: 2026-01-01
 
 ## Support
 
-- [[10_distillates/documents/<slug>#^s1]] — <what this anchor contributes>
-- [[10_distillates/publications/<slug>#^s2]] — <what this anchor contributes>
+- [[20_distillates/documents/<slug>#^s1]] — <what this anchor contributes>
+- [[20_distillates/publications/<slug>#^s2]] — <what this anchor contributes>
 
 ## Related
 
-- [[20_claims/…]]
+- [[30_assertions/…]]
 ```
 
 A conclusion without source support never becomes a claim; it enters the deliverable as a posit. Claims that cannot be reconciled are both set to `contested` and linked to each other in `contested-with`.
 
 ### 5. Topic map (MOC)
 
-One file per topic of the controlled backbone, named `MOC-<Topic>.md` in `20_claims/`. The set of these files is the topic vocabulary.
+One file per topic of the controlled backbone, named `MOC-<Topic>.md` in `30_assertions/`. The set of these files is the topic vocabulary.
 
 ```yaml
 ---
@@ -247,14 +251,14 @@ The body gives the definition in one or two sentences with a grounding anchor wh
 
 ### 7. Chapter
 
-One file per chapter of the deliverable in `30_deliverable/`, continuous prose in the project's working language and style sheet.
+One file per chapter of the deliverable in `40_output/`, continuous prose in the project's working language and style sheet.
 
 ```yaml
 ---
 type: chapter
 status: grounded             # grounded | validated | verified
 checked: {}
-claims: ["[[20_claims/<slug>]]"]   # structured mirror of all referenced claims
+claims: ["[[30_assertions/<slug>]]"]   # structured mirror of all referenced claims
 posits: 0                          # count of posit footnotes
 created: 2026-01-01
 updated: 2026-01-01
@@ -267,7 +271,7 @@ The anchor contract of the deliverable: every load-bearing sentence carries a fo
 Water use fell by a third after metering was introduced.[^1] The board should
 therefore extend metering to all sites.[^2]
 
-[^1]: Grounded in [[20_claims/metering-reduces-use]].
+[^1]: Grounded in [[30_assertions/metering-reduces-use]].
 [^2]: Posit: follows from [^1] only if consumption patterns are comparable
       across sites. Open evidence question: site-level baseline data.
 ```

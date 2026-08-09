@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[Method]]"]
+type: assertion
+topics:
+- '[[Method]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/pollin-2026b-lisa-positioning#^s6]]"
-  - "[[10_distillates/publications/posner-2015-necessary-contradiction#^s4]]"
+- '[[20_distillates/publications/pollin-2026b-lisa-positioning#^s6]]'
+- '[[20_distillates/publications/posner-2015-necessary-contradiction#^s4]]'
 created: 2026-07-23
 updated: 2026-07-29
 ---
@@ -19,9 +20,9 @@ Reproducibility is reframed from identical repetition to a traceable, documented
 
 ## Support
 
-- [[10_distillates/publications/pollin-2026b-lisa-positioning#^s6]] — reproducibility shifts from identical repetition to traceable justification.
-- [[10_distillates/publications/posner-2015-necessary-contradiction#^s4]] — reproducible research holds little currency in the humanities.
+- [[20_distillates/publications/pollin-2026b-lisa-positioning#^s6]] — reproducibility shifts from identical repetition to traceable justification.
+- [[20_distillates/publications/posner-2015-necessary-contradiction#^s4]] — reproducible research holds little currency in the humanities.
 
 ## Related
 
-- [[20_claims/promptotyping-documents-are-the-primary-artifact]]
+- [[30_assertions/promptotyping-documents-are-the-primary-artifact]]

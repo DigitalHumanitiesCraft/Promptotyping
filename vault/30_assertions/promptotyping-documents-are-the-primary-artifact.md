@@ -1,13 +1,14 @@
 ---
-type: claim
-topics: ["[[Method]]"]
+type: assertion
+topics:
+- '[[Method]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/pollin-2026b-lisa-positioning#^s3]]"
-  - "[[10_distillates/publications/pollin-2026b-lisa-positioning#^s4]]"
-  - "[[10_distillates/publications/pollin-2026b-lisa-positioning#^s2]]"
+- '[[20_distillates/publications/pollin-2026b-lisa-positioning#^s3]]'
+- '[[20_distillates/publications/pollin-2026b-lisa-positioning#^s4]]'
+- '[[20_distillates/publications/pollin-2026b-lisa-positioning#^s2]]'
 created: 2026-07-23
 updated: 2026-07-25
 ---
@@ -20,11 +21,11 @@ In the L.I.S.A. positioning, the Promptotyping Documents are distilled knowledge
 
 ## Support
 
-- [[10_distillates/publications/pollin-2026b-lisa-positioning#^s3]] — the documents as the actual artifact of context engineering.
-- [[10_distillates/publications/pollin-2026b-lisa-positioning#^s4]] — the process as mapping of research data onto interfaces.
-- [[10_distillates/publications/pollin-2026b-lisa-positioning#^s2]] — the difference from Vibe Coding through structured requirements analysis.
+- [[20_distillates/publications/pollin-2026b-lisa-positioning#^s3]] — the documents as the actual artifact of context engineering.
+- [[20_distillates/publications/pollin-2026b-lisa-positioning#^s4]] — the process as mapping of research data onto interfaces.
+- [[20_distillates/publications/pollin-2026b-lisa-positioning#^s2]] — the difference from Vibe Coding through structured requirements analysis.
 
 ## Related
 
-- [[20_claims/promptotyping-documentation-over-software]]
-- [[20_claims/promptotyping-is-a-four-phase-context-engineering-technique]]
+- [[30_assertions/promptotyping-documentation-over-software]]
+- [[30_assertions/promptotyping-is-a-four-phase-context-engineering-technique]]

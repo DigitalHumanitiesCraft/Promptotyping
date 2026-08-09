@@ -1,13 +1,14 @@
 ---
-type: claim
-topics: ["[[Concepts]]"]
+type: assertion
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   validation: 2026-07-25
 grounding:
-  - "[[10_distillates/publications/pichler-2022-operationalization#^s1]]"
-  - "[[10_distillates/publications/pichler-2022-operationalization#^s2]]"
-  - "[[10_distillates/publications/pichler-2022-operationalization#^s5]]"
+- '[[20_distillates/publications/pichler-2022-operationalization#^s1]]'
+- '[[20_distillates/publications/pichler-2022-operationalization#^s2]]'
+- '[[20_distillates/publications/pichler-2022-operationalization#^s5]]'
 created: 2026-07-25
 updated: 2026-07-29
 ---
@@ -20,10 +21,10 @@ Operationalisation develops the steps that assign the instantiations of a concep
 
 ## Support
 
-- [[10_distillates/publications/pichler-2022-operationalization#^s1]] — the steps that assign instantiations to a concept and measure it.
-- [[10_distillates/publications/pichler-2022-operationalization#^s2]] — the short form of the definition and its exclusion.
-- [[10_distillates/publications/pichler-2022-operationalization#^s5]] — the long-lasting consequences of operationalisation choices.
+- [[20_distillates/publications/pichler-2022-operationalization#^s1]] — the steps that assign instantiations to a concept and measure it.
+- [[20_distillates/publications/pichler-2022-operationalization#^s2]] — the short form of the definition and its exclusion.
+- [[20_distillates/publications/pichler-2022-operationalization#^s5]] — the long-lasting consequences of operationalisation choices.
 
 ## Related
 
-- [[20_claims/MOC-Concepts]]
+- [[30_assertions/MOC-Concepts]]

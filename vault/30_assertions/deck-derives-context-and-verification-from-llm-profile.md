@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[Concepts]]"]
+type: assertion
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   validation: 2026-07-19
 grounding:
-  - "[[10_distillates/documents/ke-master-deck-2026-07-19#^s2]]"
-  - "[[10_distillates/documents/ke-master-deck-2026-07-19#^s5]]"
+- '[[20_distillates/documents/ke-master-deck-2026-07-19#^s2]]'
+- '[[20_distillates/documents/ke-master-deck-2026-07-19#^s5]]'
 created: 2026-07-19
 updated: 2026-07-19
 ---
@@ -19,10 +20,10 @@ The workshop deck does not leave its LLM characterisation as description. As of 
 
 ## Support
 
-- [[10_distillates/documents/ke-master-deck-2026-07-19#^s2]] — states that the need for curated context and verification follows from the jagged-alien profile.
-- [[10_distillates/documents/ke-master-deck-2026-07-19#^s5]] — states the system-property distinction, tool-use as first remedy, and the harness argument of compensating weaknesses through the environment.
+- [[20_distillates/documents/ke-master-deck-2026-07-19#^s2]] — states that the need for curated context and verification follows from the jagged-alien profile.
+- [[20_distillates/documents/ke-master-deck-2026-07-19#^s5]] — states the system-property distinction, tool-use as first remedy, and the harness argument of compensating weaknesses through the environment.
 
 ## Related
 
-- [[20_claims/deck-characterises-llms-as-jagged-alien]]
-- [[10_distillates/documents/ke-master-deck-2026-07-19]]
+- [[30_assertions/deck-characterises-llms-as-jagged-alien]]
+- [[20_distillates/documents/ke-master-deck-2026-07-19]]

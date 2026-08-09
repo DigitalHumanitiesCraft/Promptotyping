@@ -1,13 +1,14 @@
 ---
-type: claim
-topics: ["[[ArtefactVerification]]"]
+type: assertion
+topics:
+- '[[ArtefactVerification]]'
 status: grounded
 checked: {}
 grounding:
-  - "[[10_distillates/publications/zheng-2023-llm-as-a-judge#^s1]]"
-  - "[[10_distillates/publications/zheng-2023-llm-as-a-judge#^s2]]"
-  - "[[10_distillates/publications/zheng-2023-llm-as-a-judge#^s3]]"
-  - "[[10_distillates/publications/zheng-2023-llm-as-a-judge#^s4]]"
+- '[[20_distillates/publications/zheng-2023-llm-as-a-judge#^s1]]'
+- '[[20_distillates/publications/zheng-2023-llm-as-a-judge#^s2]]'
+- '[[20_distillates/publications/zheng-2023-llm-as-a-judge#^s3]]'
+- '[[20_distillates/publications/zheng-2023-llm-as-a-judge#^s4]]'
 created: 2026-07-26
 updated: 2026-07-26
 ---
@@ -20,13 +21,13 @@ Zheng et al. measure the agreement between a strong language model acting as jud
 
 ## Support
 
-- [[10_distillates/publications/zheng-2023-llm-as-a-judge#^s1]] — the setting, open-ended questions that existing benchmarks fail to measure.
-- [[10_distillates/publications/zheng-2023-llm-as-a-judge#^s2]] — the four named limitations.
-- [[10_distillates/publications/zheng-2023-llm-as-a-judge#^s3]] — the measured agreement rate and its human baseline.
-- [[10_distillates/publications/zheng-2023-llm-as-a-judge#^s4]] — the framing as approximation rather than replacement.
+- [[20_distillates/publications/zheng-2023-llm-as-a-judge#^s1]] — the setting, open-ended questions that existing benchmarks fail to measure.
+- [[20_distillates/publications/zheng-2023-llm-as-a-judge#^s2]] — the four named limitations.
+- [[20_distillates/publications/zheng-2023-llm-as-a-judge#^s3]] — the measured agreement rate and its human baseline.
+- [[20_distillates/publications/zheng-2023-llm-as-a-judge#^s4]] — the framing as approximation rather than replacement.
 
 ## Related
 
-- [[20_claims/aqusa-checks-the-criteria-a-rule-can-decide]]
-- [[20_claims/glam-practice-layers-llm-extraction-with-deterministic-checks-and-expert-review]]
-- [[20_claims/MOC-ArtefactVerification]]
+- [[30_assertions/aqusa-checks-the-criteria-a-rule-can-decide]]
+- [[30_assertions/glam-practice-layers-llm-extraction-with-deterministic-checks-and-expert-review]]
+- [[30_assertions/MOC-ArtefactVerification]]

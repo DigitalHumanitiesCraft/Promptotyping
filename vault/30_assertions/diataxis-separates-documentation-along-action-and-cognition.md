@@ -1,16 +1,17 @@
 ---
-type: claim
-topics: ["[[Method]]"]
+type: assertion
+topics:
+- '[[Method]]'
 status: grounded
 checked: {}
 grounding:
-  - "[[10_distillates/publications/procida-2024-diataxis#^s1]]"
-  - "[[10_distillates/publications/procida-2024-diataxis#^s2]]"
-  - "[[10_distillates/publications/procida-2024-diataxis#^s3]]"
-  - "[[10_distillates/publications/procida-2024-diataxis#^s4]]"
-  - "[[10_distillates/publications/procida-2024-diataxis#^s5]]"
-  - "[[10_distillates/publications/procida-2024-diataxis#^s6]]"
-  - "[[10_distillates/publications/procida-2024-diataxis#^s7]]"
+- '[[20_distillates/publications/procida-2024-diataxis#^s1]]'
+- '[[20_distillates/publications/procida-2024-diataxis#^s2]]'
+- '[[20_distillates/publications/procida-2024-diataxis#^s3]]'
+- '[[20_distillates/publications/procida-2024-diataxis#^s4]]'
+- '[[20_distillates/publications/procida-2024-diataxis#^s5]]'
+- '[[20_distillates/publications/procida-2024-diataxis#^s6]]'
+- '[[20_distillates/publications/procida-2024-diataxis#^s7]]'
 created: 2026-07-26
 updated: 2026-07-26
 ---
@@ -23,15 +24,15 @@ Procida derives four documentation types from two axes. The first separates acti
 
 ## Support
 
-- [[10_distillates/publications/procida-2024-diataxis#^s1]] — the four types and that each is written differently.
-- [[10_distillates/publications/procida-2024-diataxis#^s2]] — the action-cognition axis with the knowing-how and knowing-that gloss.
-- [[10_distillates/publications/procida-2024-diataxis#^s3]] — the acquisition-application axis.
-- [[10_distillates/publications/procida-2024-diataxis#^s4]] — the completeness argument for four types.
-- [[10_distillates/publications/procida-2024-diataxis#^s5]] — reference as propositional knowledge and not a guide to action.
-- [[10_distillates/publications/procida-2024-diataxis#^s6]] — the how-to guide defined by its addressee's situation.
-- [[10_distillates/publications/procida-2024-diataxis#^s7]] — the derivation from user needs.
+- [[20_distillates/publications/procida-2024-diataxis#^s1]] — the four types and that each is written differently.
+- [[20_distillates/publications/procida-2024-diataxis#^s2]] — the action-cognition axis with the knowing-how and knowing-that gloss.
+- [[20_distillates/publications/procida-2024-diataxis#^s3]] — the acquisition-application axis.
+- [[20_distillates/publications/procida-2024-diataxis#^s4]] — the completeness argument for four types.
+- [[20_distillates/publications/procida-2024-diataxis#^s5]] — reference as propositional knowledge and not a guide to action.
+- [[20_distillates/publications/procida-2024-diataxis#^s6]] — the how-to guide defined by its addressee's situation.
+- [[20_distillates/publications/procida-2024-diataxis#^s7]] — the derivation from user needs.
 
 ## Related
 
-- [[20_claims/promptotyping-documents-form-freedom]]
-- [[20_claims/MOC-Method]]
+- [[30_assertions/promptotyping-documents-form-freedom]]
+- [[30_assertions/MOC-Method]]

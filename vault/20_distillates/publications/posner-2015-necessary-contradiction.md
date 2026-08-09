@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: posner-2015
-topics: ["[[Concepts]]"]
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -28,7 +29,7 @@ Posner argues that calling humanities source material "data" imports assumptions
 
 ## Terms
 
-- **humanities data**: source material whose reduction to discrete, tractable, reproducible units is in tension with humanistic ways of knowing, hence a "necessary contradiction". [[10_distillates/publications/posner-2015-necessary-contradiction#^s1]]
+- **humanities data**: source material whose reduction to discrete, tractable, reproducible units is in tension with humanistic ways of knowing, hence a "necessary contradiction". [[20_distillates/publications/posner-2015-necessary-contradiction#^s1]]
 
 ## Open questions
 
@@ -36,5 +37,5 @@ Posner argues that calling humanities source material "data" imports assumptions
 
 ## Related
 
-- [[10_distillates/publications/collectionsasdata-2019-santa-barbara]] — the collections-as-data position the paper pairs with Posner in the same footnote.
-- [[10_distillates/publications/owens-2011-defining-data]] — the constructedness argument.
+- [[20_distillates/publications/collectionsasdata-2019-santa-barbara]] — the collections-as-data position the paper pairs with Posner in the same footnote.
+- [[20_distillates/publications/owens-2011-defining-data]] — the constructedness argument.

@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[ArtefactVerification]]"]
+type: assertion
+topics:
+- '[[ArtefactVerification]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/stanicka-2026-cross-linking-vocabularies#^s1]]"
-  - "[[10_distillates/publications/stanicka-2026-cross-linking-vocabularies#^s2]]"
+- '[[20_distillates/publications/stanicka-2026-cross-linking-vocabularies#^s1]]'
+- '[[20_distillates/publications/stanicka-2026-cross-linking-vocabularies#^s2]]'
 created: 2026-07-23
 updated: 2026-07-29
 ---
@@ -19,10 +20,10 @@ Mapping between vocabularies requires more than algorithmic matching; it demands
 
 ## Support
 
-- [[10_distillates/publications/stanicka-2026-cross-linking-vocabularies#^s1]] — matching demands interpretive judgement, not algorithmic matching alone.
-- [[10_distillates/publications/stanicka-2026-cross-linking-vocabularies#^s2]] — AI meaningful only when grounded in curated, context-rich data.
+- [[20_distillates/publications/stanicka-2026-cross-linking-vocabularies#^s1]] — matching demands interpretive judgement, not algorithmic matching alone.
+- [[20_distillates/publications/stanicka-2026-cross-linking-vocabularies#^s2]] — AI meaningful only when grounded in curated, context-rich data.
 
 ## Related
 
-- [[20_claims/MOC-Limitations]]
-- [[20_claims/llm-vocabulary-test-2025-fell-short-of-thesaurus-interoperability]]
+- [[30_assertions/MOC-Limitations]]
+- [[30_assertions/llm-vocabulary-test-2025-fell-short-of-thesaurus-interoperability]]

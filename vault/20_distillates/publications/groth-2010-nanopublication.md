@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: groth-2010
-topics: ["[[ArtefactVerification]]"]
+topics:
+- '[[ArtefactVerification]]'
 status: grounded
 checked:
   quote: 2026-07-26
@@ -33,8 +34,8 @@ The established model for treating a single scientific statement as a publishabl
 
 ## Terms
 
-- **Nanopublication**: a single scientific statement made citable and attributable by the set of annotations that carry its context. [[10_distillates/publications/groth-2010-nanopublication#^s5]]
-- **Annotation**: a statement about a statement, the mechanism by which provenance and attribution attach to the assertion. [[10_distillates/publications/groth-2010-nanopublication#^s4]]
+- **Nanopublication**: a single scientific statement made citable and attributable by the set of annotations that carry its context. [[20_distillates/publications/groth-2010-nanopublication#^s5]]
+- **Annotation**: a statement about a statement, the mechanism by which provenance and attribution attach to the assertion. [[20_distillates/publications/groth-2010-nanopublication#^s4]]
 
 ## Open questions
 
@@ -44,6 +45,6 @@ The established model for treating a single scientific statement as a publishabl
 
 ## Related
 
-- [[10_distillates/publications/hitchcock-2003-toulmins-warrants]]
-- [[10_distillates/publications/mariani-2025-prov-a]]
-- [[10_distillates/publications/berners-lee-2001-semantic-web]]
+- [[20_distillates/publications/hitchcock-2003-toulmins-warrants]]
+- [[20_distillates/publications/mariani-2025-prov-a]]
+- [[20_distillates/publications/berners-lee-2001-semantic-web]]

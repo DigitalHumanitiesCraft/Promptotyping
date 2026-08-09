@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[Concepts]]"]
+type: assertion
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/gruber-1993-ontolingua#^s1]]"
-  - "[[10_distillates/publications/gruber-1993-ontolingua#^s2]]"
+- '[[20_distillates/publications/gruber-1993-ontolingua#^s1]]'
+- '[[20_distillates/publications/gruber-1993-ontolingua#^s2]]'
 created: 2026-07-23
 updated: 2026-07-23
 ---
@@ -19,9 +20,9 @@ In Gruber's canonical definition, an ontology is an explicit specification of a 
 
 ## Support
 
-- [[10_distillates/publications/gruber-1993-ontolingua#^s1]] — an ontology is an explicit specification of a conceptualization.
-- [[10_distillates/publications/gruber-1993-ontolingua#^s2]] — a conceptualization is an abstract, simplified view of the world.
+- [[20_distillates/publications/gruber-1993-ontolingua#^s1]] — an ontology is an explicit specification of a conceptualization.
+- [[20_distillates/publications/gruber-1993-ontolingua#^s2]] — a conceptualization is an abstract, simplified view of the world.
 
 ## Related
 
-- [[20_claims/ontologies-are-shared-vocabularies-for-reuse]]
+- [[30_assertions/ontologies-are-shared-vocabularies-for-reuse]]

@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[Frame]]"]
+type: assertion
+topics:
+- '[[Frame]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/hinrichs-2019-sandcastles#^s3]]"
-  - "[[10_distillates/publications/hinrichs-2019-sandcastles#^s4]]"
+- '[[20_distillates/publications/hinrichs-2019-sandcastles#^s3]]'
+- '[[20_distillates/publications/hinrichs-2019-sandcastles#^s4]]'
 created: 2026-07-23
 updated: 2026-07-23
 ---
@@ -19,9 +20,9 @@ Hinrichs et al. hold that, approached critically, visualisation sandcastles are 
 
 ## Support
 
-- [[10_distillates/publications/hinrichs-2019-sandcastles#^s3]] — building sandcastles as a holistic knowledge-generation process.
-- [[10_distillates/publications/hinrichs-2019-sandcastles#^s4]] — discarded sandcastles are never failures and still promote reflection.
+- [[20_distillates/publications/hinrichs-2019-sandcastles#^s3]] — building sandcastles as a holistic knowledge-generation process.
+- [[20_distillates/publications/hinrichs-2019-sandcastles#^s4]] — discarded sandcastles are never failures and still promote reflection.
 
 ## Related
 
-- [[20_claims/visualisation-is-research-process-not-means]]
+- [[30_assertions/visualisation-is-research-process-not-means]]

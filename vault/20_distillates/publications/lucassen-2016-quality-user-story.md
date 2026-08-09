@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: lucassen-2016
-topics: ["[[Method]]"]
+topics:
+- '[[Method]]'
 status: grounded
 checked:
   quote: 2026-07-26
@@ -39,9 +40,9 @@ The source that the site's user-story vocabulary names as its origin. It defines
 
 ## Terms
 
-- **Quality User Story framework (QUS)**: thirteen criteria for the intrinsic quality of user-story text, grouped syntactic, semantic and pragmatic, and scoped to a single story or to the set. [[10_distillates/publications/lucassen-2016-quality-user-story#^s1]]
-- **AQUSA**: the companion tool that reports defects against those criteria a rule can decide. [[10_distillates/publications/lucassen-2016-quality-user-story#^s7]]
-- **Perfect Recall Condition**: the design requirement that a defect detector miss close to nothing, since a missed defect forces manual re-reading of the whole set. [[10_distillates/publications/lucassen-2016-quality-user-story#^s9]]
+- **Quality User Story framework (QUS)**: thirteen criteria for the intrinsic quality of user-story text, grouped syntactic, semantic and pragmatic, and scoped to a single story or to the set. [[20_distillates/publications/lucassen-2016-quality-user-story#^s1]]
+- **AQUSA**: the companion tool that reports defects against those criteria a rule can decide. [[20_distillates/publications/lucassen-2016-quality-user-story#^s7]]
+- **Perfect Recall Condition**: the design requirement that a defect detector miss close to nothing, since a missed defect forces manual re-reading of the whole set. [[20_distillates/publications/lucassen-2016-quality-user-story#^s9]]
 
 ## Open questions
 
@@ -51,4 +52,4 @@ The source that the site's user-story vocabulary names as its origin. It defines
 
 ## Related
 
-- [[10_distillates/publications/pollin-2025b-dissertation]] — the Scholar-Centred Design lineage in which the paper places user stories.
+- [[20_distillates/publications/pollin-2025b-dissertation]] — the Scholar-Centred Design lineage in which the paper places user stories.

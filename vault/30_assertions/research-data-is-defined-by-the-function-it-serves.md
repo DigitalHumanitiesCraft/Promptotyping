@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[Concepts]]"]
+type: assertion
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   validation: 2026-07-25
 grounding:
-  - "[[10_distillates/publications/geiger-2023-daten-forschungsdaten#^s1]]"
-  - "[[10_distillates/publications/geiger-2023-daten-forschungsdaten#^s4]]"
+- '[[20_distillates/publications/geiger-2023-daten-forschungsdaten#^s1]]'
+- '[[20_distillates/publications/geiger-2023-daten-forschungsdaten#^s4]]'
 created: 2026-07-25
 updated: 2026-07-29
 ---
@@ -19,9 +20,9 @@ The German-language digital humanities have no uniform definition of research da
 
 ## Support
 
-- [[10_distillates/publications/geiger-2023-daten-forschungsdaten#^s1]] — no uniform definition, the term works as a discursive bridging concept.
-- [[10_distillates/publications/geiger-2023-daten-forschungsdaten#^s4]] — the criteria of justification, truth, and reproduction.
+- [[20_distillates/publications/geiger-2023-daten-forschungsdaten#^s1]] — no uniform definition, the term works as a discursive bridging concept.
+- [[20_distillates/publications/geiger-2023-daten-forschungsdaten#^s4]] — the criteria of justification, truth, and reproduction.
 
 ## Related
 
-- [[20_claims/MOC-Concepts]]
+- [[30_assertions/MOC-Concepts]]

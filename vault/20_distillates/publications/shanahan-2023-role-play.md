@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: shanahan-2023
-topics: ["[[Concepts]]"]
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   quote: 2026-07-26
@@ -31,8 +32,8 @@ The established scholarly framing for what the site calls role simulation. It na
 
 ## Terms
 
-- **Role play**: the framing under which a dialogue agent's behaviour is described as playing a part set by its prompt. [[10_distillates/publications/shanahan-2023-role-play#^s1]]
-- **Simulator and simulacrum**: the distinction between the model that generates characters and the character it generates at a given moment. [[10_distillates/publications/shanahan-2023-role-play#^s6]]
+- **Role play**: the framing under which a dialogue agent's behaviour is described as playing a part set by its prompt. [[20_distillates/publications/shanahan-2023-role-play#^s1]]
+- **Simulator and simulacrum**: the distinction between the model that generates characters and the character it generates at a given moment. [[20_distillates/publications/shanahan-2023-role-play#^s6]]
 
 ## Open questions
 
@@ -41,5 +42,5 @@ The established scholarly framing for what the site calls role simulation. It na
 
 ## Related
 
-- [[10_distillates/publications/hong-2023-metagpt]]
-- [[10_distillates/publications/saltzer-1975-protection-of-information]]
+- [[20_distillates/publications/hong-2023-metagpt]]
+- [[20_distillates/publications/saltzer-1975-protection-of-information]]

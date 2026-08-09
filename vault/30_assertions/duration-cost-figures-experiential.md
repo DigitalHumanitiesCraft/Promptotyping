@@ -1,11 +1,13 @@
 ---
-type: claim
-topics: ["[[Evidence]]", "[[Limitations]]"]
+type: assertion
+topics:
+- '[[Evidence]]'
+- '[[Limitations]]'
 status: grounded
 checked:
   validation: 2026-07-19
 grounding:
-  - "[[10_distillates/documents/verification-paper-figures-2026-07-19#^s22]]"
+- '[[20_distillates/documents/verification-paper-figures-2026-07-19#^s22]]'
 created: 2026-07-19
 updated: 2026-07-29
 ---
@@ -18,8 +20,8 @@ The duration and cost figures of the paper's project inventory are experiential 
 
 ## Support
 
-- [[10_distillates/documents/verification-paper-figures-2026-07-19#^s22]] — records that duration and cost figures are experiential values outside deterministic checking.
+- [[20_distillates/documents/verification-paper-figures-2026-07-19#^s22]] — records that duration and cost figures are experiential values outside deterministic checking.
 
 ## Related
 
-- [[20_claims/section4-verification-single-agent-snapshot-2026-07-19]]
+- [[30_assertions/section4-verification-single-agent-snapshot-2026-07-19]]

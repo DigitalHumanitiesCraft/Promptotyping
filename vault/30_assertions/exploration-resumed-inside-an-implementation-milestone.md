@@ -1,13 +1,14 @@
 ---
-type: claim
-topics: ["[[Method]]"]
+type: assertion
+topics:
+- '[[Method]]'
 status: grounded
 checked:
   validation: 2026-07-25
 grounding:
-  - "[[10_distillates/documents/promptotyping-video-2-live-demo#^s26]]"
-  - "[[10_distillates/documents/promptotyping-video-2-live-demo#^s27]]"
-  - "[[10_distillates/documents/promptotyping-video-2-live-demo#^s39]]"
+- '[[20_distillates/documents/promptotyping-video-2-live-demo#^s26]]'
+- '[[20_distillates/documents/promptotyping-video-2-live-demo#^s27]]'
+- '[[20_distillates/documents/promptotyping-video-2-live-demo#^s39]]'
 created: 2026-07-25
 updated: 2026-07-25
 ---
@@ -20,11 +21,11 @@ In the aggregation step of the recorded session the tool at first writes no scri
 
 ## Support
 
-- [[10_distillates/documents/promptotyping-video-2-live-demo#^s26]] — the missing scripts and the intervention in the middle of the run.
-- [[10_distillates/documents/promptotyping-video-2-live-demo#^s27]] — the finding that exploration was not thorough enough, and the order to update the `data.md`.
-- [[10_distillates/documents/promptotyping-video-2-live-demo#^s39]] — the second iteration over the `data.md` recorded in the author's own summary of the session.
+- [[20_distillates/documents/promptotyping-video-2-live-demo#^s26]] — the missing scripts and the intervention in the middle of the run.
+- [[20_distillates/documents/promptotyping-video-2-live-demo#^s27]] — the finding that exploration was not thorough enough, and the order to update the `data.md`.
+- [[20_distillates/documents/promptotyping-video-2-live-demo#^s39]] — the second iteration over the `data.md` recorded in the author's own summary of the session.
 
 ## Related
 
-- [[20_claims/promptotyping-is-a-four-phase-context-engineering-technique]]
-- [[20_claims/milestone-check-deferred-in-the-recorded-session]]
+- [[30_assertions/promptotyping-is-a-four-phase-context-engineering-technique]]
+- [[30_assertions/milestone-check-deferred-in-the-recorded-session]]

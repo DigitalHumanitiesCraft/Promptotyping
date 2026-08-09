@@ -1,6 +1,6 @@
 ---
 type: moc
-topic: "Method"
+topic: Method
 created: 2026-07-19
 updated: 2026-07-26
 ---
@@ -9,43 +9,43 @@ updated: 2026-07-26
 
 Claims about the method itself: the four phases, the document typology (Knowledge, Process, Action), the vault model and its structural commitments, and the standardisation stage (frontmatter core, `template:` addressing).
 
-- [[20_claims/promptotyping-documentation-over-software]] — from its first description the method set documentation of requirements above finished software as its aim (also under Genealogy).
-- [[20_claims/promptotyping-documents-form-freedom]] — the first description declared the Promptotyping Documents form-free, with none strictly prescribed.
-- [[20_claims/frontmatter-core-reduced-to-six-fields]] — the standardisation stage reduced the mandatory frontmatter core to six fields and demoted type to a reading heuristic.
-- [[20_claims/status-vocabulary-adds-active-and-snapshot]] — the status vocabulary gained active and snapshot to name the ongoing process document and the dated snapshot.
-- [[20_claims/verification-promoted-to-document-function]] — adversarial self-verification of a project's own claims became a distinct document function alongside Integration and Action-Layer.
+- [[30_assertions/promptotyping-documentation-over-software]] — from its first description the method set documentation of requirements above finished software as its aim (also under Genealogy).
+- [[30_assertions/promptotyping-documents-form-freedom]] — the first description declared the Promptotyping Documents form-free, with none strictly prescribed.
+- [[30_assertions/frontmatter-core-reduced-to-six-fields]] — the standardisation stage reduced the mandatory frontmatter core to six fields and demoted type to a reading heuristic.
+- [[30_assertions/status-vocabulary-adds-active-and-snapshot]] — the status vocabulary gained active and snapshot to name the ongoing process document and the dated snapshot.
+- [[30_assertions/verification-promoted-to-document-function]] — adversarial self-verification of a project's own claims became a distinct document function alongside Integration and Action-Layer.
 
 Added with the bibliography-traceability sweep of 2026-07-23:
 
-- [[20_claims/madmps-demand-documents-infrastructure-can-act-on]] — Machine-actionable DMPs demand documents that infrastructure can act on, exchange, and embed in workflows
-- [[20_claims/ontologies-are-shared-vocabularies-for-reuse]] — A shared ontology is a common vocabulary that enables reuse of formally represented knowledge
-- [[20_claims/conceptual-model-links-language-and-domain-concepts]] — A conceptual model links a language dimension of terms to an encyclopedic dimension of domain notions
-- [[20_claims/promptotyping-is-a-four-phase-context-engineering-technique]] — Promptotyping is an iterative four-phase context-engineering technique with form-free documents
-- [[20_claims/promptotyping-documents-are-the-primary-artifact]] — The Promptotyping Documents are the primary artifact; the code is a regenerable mapping
-- [[20_claims/ro-crate-packages-artefacts-with-machine-readable-metadata]] — RO-Crate packages research artefacts with their metadata as a machine-readable Schema.org/JSON-LD archive
-- [[20_claims/reproducibility-shifts-to-documented-justification]] — In LLM-assisted work reproducibility shifts from identical repetition to traceable justification
-- [[20_claims/ontology-is-explicit-specification-of-conceptualization]] — An ontology is an explicit specification of a conceptualization
-- [[20_claims/traditional-dmps-are-unused-compliance-documents]] — Traditional data management plans are static compliance documents that do not support data-management activities
+- [[30_assertions/madmps-demand-documents-infrastructure-can-act-on]] — Machine-actionable DMPs demand documents that infrastructure can act on, exchange, and embed in workflows
+- [[30_assertions/ontologies-are-shared-vocabularies-for-reuse]] — A shared ontology is a common vocabulary that enables reuse of formally represented knowledge
+- [[30_assertions/conceptual-model-links-language-and-domain-concepts]] — A conceptual model links a language dimension of terms to an encyclopedic dimension of domain notions
+- [[30_assertions/promptotyping-is-a-four-phase-context-engineering-technique]] — Promptotyping is an iterative four-phase context-engineering technique with form-free documents
+- [[30_assertions/promptotyping-documents-are-the-primary-artifact]] — The Promptotyping Documents are the primary artifact; the code is a regenerable mapping
+- [[30_assertions/ro-crate-packages-artefacts-with-machine-readable-metadata]] — RO-Crate packages research artefacts with their metadata as a machine-readable Schema.org/JSON-LD archive
+- [[30_assertions/reproducibility-shifts-to-documented-justification]] — In LLM-assisted work reproducibility shifts from identical repetition to traceable justification
+- [[30_assertions/ontology-is-explicit-specification-of-conceptualization]] — An ontology is an explicit specification of a conceptualization
+- [[30_assertions/traditional-dmps-are-unused-compliance-documents]] — Traditional data management plans are static compliance documents that do not support data-management activities
 
 Added from the video distillates of 2026-07-25, the operational record of one taught session:
 
-- [[20_claims/milestone-check-deferred-in-the-recorded-session]] — the run advances on a bare continuation instruction and the artefact is inspected several milestones later (also under Limitations)
-- [[20_claims/exploration-resumed-inside-an-implementation-milestone]] — exploration is taken up again inside a running milestone and forces an update of the `data.md`
-- [[20_claims/implementation-plan-cuts-work-into-checkable-milestones]] — the plan cuts the work into milestones that can be checked independently
-- [[20_claims/overengineering-check-cuts-the-specification-before-implementation]] — a check for overengineering cuts the specification back to a minimal scope before the build
-- [[20_claims/radical-design-request-widens-the-interface-option-space]] — a deliberately outlandish design request widens the space of interface options
-- [[20_claims/interface-defect-is-reported-through-the-element-identifier]] — a defect is reported to the LLM through the identifier of the element
-- [[20_claims/expert-role-carries-a-domain-and-a-development-judgement]] — the loop carries a subject-matter and a development-side judgement (also under Concepts)
+- [[30_assertions/milestone-check-deferred-in-the-recorded-session]] — the run advances on a bare continuation instruction and the artefact is inspected several milestones later (also under Limitations)
+- [[30_assertions/exploration-resumed-inside-an-implementation-milestone]] — exploration is taken up again inside a running milestone and forces an update of the `data.md`
+- [[30_assertions/implementation-plan-cuts-work-into-checkable-milestones]] — the plan cuts the work into milestones that can be checked independently
+- [[30_assertions/overengineering-check-cuts-the-specification-before-implementation]] — a check for overengineering cuts the specification back to a minimal scope before the build
+- [[30_assertions/radical-design-request-widens-the-interface-option-space]] — a deliberately outlandish design request widens the space of interface options
+- [[30_assertions/interface-defect-is-reported-through-the-element-identifier]] — a defect is reported to the LLM through the identifier of the element
+- [[30_assertions/expert-role-carries-a-domain-and-a-development-judgement]] — the loop carries a subject-matter and a development-side judgement (also under Concepts)
 
 Added 2026-07-26 from the frontmatter-core survey, a dated self-observation with a stated reproducibility limit:
 
-- [[20_claims/reduced-frontmatter-core-met-in-about-half-the-documents-2026-07-26]] — the reduced six-field core is met in about half of the documents that carry frontmatter, with `method` as the binding field
+- [[30_assertions/reduced-frontmatter-core-met-in-about-half-the-documents-2026-07-26]] — the reduced six-field core is met in about half of the documents that carry frontmatter, with `method` as the binding field
 
 Added 2026-07-26 from the site-vocabulary literature sweep (lane C1), which tests whether five site coinages attach to established names:
 
-- [[20_claims/qus-defines-thirteen-user-story-quality-criteria]] — the Quality User Story framework fixes thirteen criteria in three categories, scoped to one story or to the set
-- [[20_claims/aqusa-checks-the-criteria-a-rule-can-decide]] — its tool checks only the criteria a rule can decide and excludes the semantic ones by name
-- [[20_claims/least-privilege-bounds-damage-and-narrows-the-audit]] — least privilege is the established name for the read-only analysis role, and it bounds damage and narrows the audit
-- [[20_claims/multi-agent-frameworks-assign-roles-along-an-encoded-procedure]] — multi-agent frameworks assign roles along an encoded work procedure so that one agent checks another's intermediate result
-- [[20_claims/diataxis-separates-documentation-along-action-and-cognition]] — Diataxis names the action-against-cognition axis on which a declarative and an imperative document split
-- [[20_claims/research-compendium-separates-data-method-and-output]] — the research compendium is the established name for a repository holding data, method and output with the data read-only
+- [[30_assertions/qus-defines-thirteen-user-story-quality-criteria]] — the Quality User Story framework fixes thirteen criteria in three categories, scoped to one story or to the set
+- [[30_assertions/aqusa-checks-the-criteria-a-rule-can-decide]] — its tool checks only the criteria a rule can decide and excludes the semantic ones by name
+- [[30_assertions/least-privilege-bounds-damage-and-narrows-the-audit]] — least privilege is the established name for the read-only analysis role, and it bounds damage and narrows the audit
+- [[30_assertions/multi-agent-frameworks-assign-roles-along-an-encoded-procedure]] — multi-agent frameworks assign roles along an encoded work procedure so that one agent checks another's intermediate result
+- [[30_assertions/diataxis-separates-documentation-along-action-and-cognition]] — Diataxis names the action-against-cognition axis on which a declarative and an imperative document split
+- [[30_assertions/research-compendium-separates-data-method-and-output]] — the research compendium is the established name for a repository holding data, method and output with the data read-only

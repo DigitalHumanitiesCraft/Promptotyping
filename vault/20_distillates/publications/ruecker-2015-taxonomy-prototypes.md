@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: ruecker-2015
-topics: ["[[Concepts]]"]
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -28,7 +29,7 @@ Ruecker distinguishes three kinds of prototype by the project they support, expe
 
 ## Terms
 
-- **experimental prototype**: a prototype built to produce generalised knowledge about an embodied idea rather than to become a product. [[10_distillates/publications/ruecker-2015-taxonomy-prototypes#^s2]]
+- **experimental prototype**: a prototype built to produce generalised knowledge about an embodied idea rather than to become a product. [[20_distillates/publications/ruecker-2015-taxonomy-prototypes#^s2]]
 
 ## Open questions
 
@@ -36,4 +37,4 @@ Ruecker distinguishes three kinds of prototype by the project they support, expe
 
 ## Related
 
-- [[10_distillates/publications/sarkar-2025-vibe-coding]] — the Vibe Coding practice the paper positions against in the same section.
+- [[20_distillates/publications/sarkar-2025-vibe-coding]] — the Vibe Coding practice the paper positions against in the same section.

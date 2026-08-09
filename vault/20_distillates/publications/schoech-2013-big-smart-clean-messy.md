@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: schoech-2013
-topics: ["[[Concepts]]"]
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -30,7 +31,7 @@ Schöch offers a working definition of humanities data as a selectively construc
 
 ## Terms
 
-- **smart data**: structured or semi-structured, explicit, enriched, clean data, small in volume because its creation depends on human agency. [[10_distillates/publications/schoech-2013-big-smart-clean-messy#^s5]]
+- **smart data**: structured or semi-structured, explicit, enriched, clean data, small in volume because its creation depends on human agency. [[20_distillates/publications/schoech-2013-big-smart-clean-messy#^s5]]
 
 ## Open questions
 
@@ -38,5 +39,5 @@ Schöch offers a working definition of humanities data as a selectively construc
 
 ## Related
 
-- [[10_distillates/publications/owens-2011-defining-data]] — the constructedness argument Schöch cites.
-- [[10_distillates/publications/drucker-2011-humanities-approaches]] — the capta term Schöch adopts.
+- [[20_distillates/publications/owens-2011-defining-data]] — the constructedness argument Schöch cites.
+- [[20_distillates/publications/drucker-2011-humanities-approaches]] — the capta term Schöch adopts.

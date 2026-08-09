@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: collectionsasdata-2019
-topics: ["[[Concepts]]"]
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -28,7 +29,7 @@ The statement sets principles for making cultural-heritage collections available
 
 ## Terms
 
-- **collections as data**: cultural-heritage collections deliberately conceived, packaged, and made available for computational use, scoped to specific community needs. [[10_distillates/publications/collectionsasdata-2019-santa-barbara#^s1]]
+- **collections as data**: cultural-heritage collections deliberately conceived, packaged, and made available for computational use, scoped to specific community needs. [[20_distillates/publications/collectionsasdata-2019-santa-barbara#^s1]]
 
 ## Open questions
 
@@ -36,4 +37,4 @@ The statement sets principles for making cultural-heritage collections available
 
 ## Related
 
-- [[10_distillates/publications/posner-2015-necessary-contradiction]] — paired in the same footnote of the paper.
+- [[20_distillates/publications/posner-2015-necessary-contradiction]] — paired in the same footnote of the paper.

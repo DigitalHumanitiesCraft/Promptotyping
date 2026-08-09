@@ -1,11 +1,12 @@
 ---
-type: claim
-topics: ["[[Evidence]]"]
+type: assertion
+topics:
+- '[[Evidence]]'
 status: grounded
 checked:
   validation: 2026-07-19
 grounding:
-  - "[[10_distillates/documents/verification-paper-figures-2026-07-19#^s14]]"
+- '[[20_distillates/documents/verification-paper-figures-2026-07-19#^s14]]'
 created: 2026-07-19
 updated: 2026-07-25
 ---
@@ -18,8 +19,8 @@ As verified on 2026-07-19, the README of the VetMedAI / Austrian Dashboard repos
 
 ## Support
 
-- [[10_distillates/documents/verification-paper-figures-2026-07-19#^s14]] — records the Excel file count stated in both README mentions.
+- [[20_distillates/documents/verification-paper-figures-2026-07-19#^s14]] — records the Excel file count stated in both README mentions.
 
 ## Related
 
-- [[20_claims/vetmedai-knowledge-doc-count-2026-07-19]]
+- [[30_assertions/vetmedai-knowledge-doc-count-2026-07-19]]

@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: miksa-2019
-topics: ["[[Method]]"]
+topics:
+- '[[Method]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -28,7 +29,7 @@ Miksa et al. diagnose the traditional data management plan as an unused static c
 
 ## Terms
 
-- **machine-actionable DMP (maDMP)**: a data management plan that systems can act on, exchange, and update automatically, rather than a static text. [[10_distillates/publications/miksa-2019-machine-actionable-dmps#^s3]]
+- **machine-actionable DMP (maDMP)**: a data management plan that systems can act on, exchange, and update automatically, rather than a static text. [[20_distillates/publications/miksa-2019-machine-actionable-dmps#^s3]]
 
 ## Open questions
 
@@ -36,5 +37,5 @@ Miksa et al. diagnose the traditional data management plan as an unused static c
 
 ## Related
 
-- [[10_distillates/publications/soiland-2022-ro-crate]] — machine-readable packaging of research artefacts.
-- [[10_distillates/publications/mayr-2021-triptych-conceptual-modeling]] — documents as conceptual models.
+- [[20_distillates/publications/soiland-2022-ro-crate]] — machine-readable packaging of research artefacts.
+- [[20_distillates/publications/mayr-2021-triptych-conceptual-modeling]] — documents as conceptual models.

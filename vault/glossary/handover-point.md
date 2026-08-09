@@ -1,6 +1,6 @@
 ---
 type: glossary
-term: "Handover point"
+term: Handover point
 created: 2026-07-25
 updated: 2026-07-25
 ---

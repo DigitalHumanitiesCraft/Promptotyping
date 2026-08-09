@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[Frame]]"]
+type: assertion
+topics:
+- '[[Frame]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/whitelaw-2015-generous-interfaces#^s3]]"
-  - "[[10_distillates/publications/whitelaw-2015-generous-interfaces#^s4]]"
+- '[[20_distillates/publications/whitelaw-2015-generous-interfaces#^s3]]'
+- '[[20_distillates/publications/whitelaw-2015-generous-interfaces#^s4]]'
 created: 2026-07-23
 updated: 2026-07-23
 ---
@@ -19,10 +20,10 @@ Whitelaw's generous interface offers rich, navigable representations of a collec
 
 ## Support
 
-- [[10_distillates/publications/whitelaw-2015-generous-interfaces#^s3]] — generous interfaces invite exploration and support browsing.
-- [[10_distillates/publications/whitelaw-2015-generous-interfaces#^s4]] — revealing complexity enriches interpretation.
+- [[20_distillates/publications/whitelaw-2015-generous-interfaces#^s3]] — generous interfaces invite exploration and support browsing.
+- [[20_distillates/publications/whitelaw-2015-generous-interfaces#^s4]] — revealing complexity enriches interpretation.
 
 ## Related
 
-- [[20_claims/search-cannot-represent-collection-abundance]]
-- [[20_claims/visualisation-is-research-process-not-means]]
+- [[30_assertions/search-cannot-represent-collection-abundance]]
+- [[30_assertions/visualisation-is-research-process-not-means]]

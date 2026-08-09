@@ -1,6 +1,6 @@
 ---
 type: glossary
-term: "Token economy"
+term: Token economy
 created: 2026-07-25
 updated: 2026-07-25
 ---

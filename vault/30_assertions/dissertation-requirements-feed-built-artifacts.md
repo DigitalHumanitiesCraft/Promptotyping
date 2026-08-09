@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[Genealogy]]"]
+type: assertion
+topics:
+- '[[Genealogy]]'
 status: grounded
 checked:
   validation: 2026-07-19
 grounding:
-  - "[[10_distillates/publications/pollin-2025b-dissertation#^s2]]"
-  - "[[10_distillates/publications/pollin-2025b-dissertation#^s5]]"
+- '[[20_distillates/publications/pollin-2025b-dissertation#^s2]]'
+- '[[20_distillates/publications/pollin-2025b-dissertation#^s5]]'
 created: 2026-07-19
 updated: 2026-07-19
 ---
@@ -19,10 +20,10 @@ The requirements captured in the scholar-centred process informed the artifacts 
 
 ## Support
 
-- [[10_distillates/publications/pollin-2025b-dissertation#^s5]] — states that the captured requirements informed interface design, TEI XML and ontology modelling, and RDF data workflows.
-- [[10_distillates/publications/pollin-2025b-dissertation#^s2]] — gives the two complementary roles of user-centred design, domain understanding for the ontology and practical interfaces for historians.
+- [[20_distillates/publications/pollin-2025b-dissertation#^s5]] — states that the captured requirements informed interface design, TEI XML and ontology modelling, and RDF data workflows.
+- [[20_distillates/publications/pollin-2025b-dissertation#^s2]] — gives the two complementary roles of user-centred design, domain understanding for the ontology and practical interfaces for historians.
 
 ## Related
 
-- [[20_claims/dissertation-requirements-from-deep-dive-sessions]]
-- [[20_claims/bookkeeping-ontology-session-driven]]
+- [[30_assertions/dissertation-requirements-from-deep-dive-sessions]]
+- [[30_assertions/bookkeeping-ontology-session-driven]]

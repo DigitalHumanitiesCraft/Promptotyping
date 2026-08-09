@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[Method]]"]
+type: assertion
+topics:
+- '[[Method]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/miksa-2019-machine-actionable-dmps#^s3]]"
-  - "[[10_distillates/publications/miksa-2019-machine-actionable-dmps#^s4]]"
+- '[[20_distillates/publications/miksa-2019-machine-actionable-dmps#^s3]]'
+- '[[20_distillates/publications/miksa-2019-machine-actionable-dmps#^s4]]'
 created: 2026-07-23
 updated: 2026-07-23
 ---
@@ -19,10 +20,10 @@ Miksa et al. call for machine-actionable DMPs that exchange information across r
 
 ## Support
 
-- [[10_distillates/publications/miksa-2019-machine-actionable-dmps#^s3]] — maDMPs exchange information across tools/systems and embed in workflows.
-- [[10_distillates/publications/miksa-2019-machine-actionable-dmps#^s4]] — ten principles to put maDMPs into practice.
+- [[20_distillates/publications/miksa-2019-machine-actionable-dmps#^s3]] — maDMPs exchange information across tools/systems and embed in workflows.
+- [[20_distillates/publications/miksa-2019-machine-actionable-dmps#^s4]] — ten principles to put maDMPs into practice.
 
 ## Related
 
-- [[20_claims/traditional-dmps-are-unused-compliance-documents]]
-- [[20_claims/ro-crate-packages-artefacts-with-machine-readable-metadata]]
+- [[30_assertions/traditional-dmps-are-unused-compliance-documents]]
+- [[30_assertions/ro-crate-packages-artefacts-with-machine-readable-metadata]]

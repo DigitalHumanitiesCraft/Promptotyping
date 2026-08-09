@@ -1,13 +1,14 @@
 ---
-type: claim
-topics: ["[[Frame]]"]
+type: assertion
+topics:
+- '[[Frame]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/cremer-2025-quellen-und-datenkritik#^s2]]"
-  - "[[10_distillates/publications/cremer-2025-quellen-und-datenkritik#^s3]]"
-  - "[[10_distillates/publications/cremer-2025-quellen-und-datenkritik#^s4]]"
+- '[[20_distillates/publications/cremer-2025-quellen-und-datenkritik#^s2]]'
+- '[[20_distillates/publications/cremer-2025-quellen-und-datenkritik#^s3]]'
+- '[[20_distillates/publications/cremer-2025-quellen-und-datenkritik#^s4]]'
 created: 2026-07-23
 updated: 2026-07-29
 ---
@@ -20,10 +21,10 @@ Where a source exists as human-readable layout, its structure must be reconstruc
 
 ## Support
 
-- [[10_distillates/publications/cremer-2025-quellen-und-datenkritik#^s2]] — PDF layout not machine-processable; HTML markup makes each cell explicit.
-- [[10_distillates/publications/cremer-2025-quellen-und-datenkritik#^s3]] — categorial normalisation forms a new differentiation, part of interpretation.
-- [[10_distillates/publications/cremer-2025-quellen-und-datenkritik#^s4]] — visualisation as interpretation through the tool, not neutral rendering.
+- [[20_distillates/publications/cremer-2025-quellen-und-datenkritik#^s2]] — PDF layout not machine-processable; HTML markup makes each cell explicit.
+- [[20_distillates/publications/cremer-2025-quellen-und-datenkritik#^s3]] — categorial normalisation forms a new differentiation, part of interpretation.
+- [[20_distillates/publications/cremer-2025-quellen-und-datenkritik#^s4]] — visualisation as interpretation through the tool, not neutral rendering.
 
 ## Related
 
-- [[20_claims/MOC-Concepts]]
+- [[30_assertions/MOC-Concepts]]

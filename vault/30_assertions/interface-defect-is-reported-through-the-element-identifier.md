@@ -1,11 +1,12 @@
 ---
-type: claim
-topics: ["[[Method]]"]
+type: assertion
+topics:
+- '[[Method]]'
 status: grounded
 checked:
   validation: 2026-07-25
 grounding:
-  - "[[10_distillates/documents/promptotyping-video-2-live-demo#^s33]]"
+- '[[20_distillates/documents/promptotyping-video-2-live-demo#^s33]]'
 created: 2026-07-25
 updated: 2026-07-25
 ---
@@ -18,8 +19,8 @@ The author addresses a remaining user-interface error at a range element by nami
 
 ## Support
 
-- [[10_distillates/documents/promptotyping-video-2-live-demo#^s33]] — the element addressed by its ID, the reason given for it, and the cleaner hash form.
+- [[20_distillates/documents/promptotyping-video-2-live-demo#^s33]] — the element addressed by its ID, the reason given for it, and the cleaner hash form.
 
 ## Related
 
-- [[20_claims/expert-role-carries-a-domain-and-a-development-judgement]]
+- [[30_assertions/expert-role-carries-a-domain-and-a-development-judgement]]

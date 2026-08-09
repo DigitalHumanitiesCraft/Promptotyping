@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: drucker-2011
-topics: ["[[Concepts]]"]
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -28,7 +29,7 @@ Drucker argues that humanities data are constructed capta rather than given data
 
 ## Terms
 
-- **capta**: constructed, situated observations actively taken, as against data assumed to be given. [[10_distillates/publications/drucker-2011-humanities-approaches#^s2]]
+- **capta**: constructed, situated observations actively taken, as against data assumed to be given. [[20_distillates/publications/drucker-2011-humanities-approaches#^s2]]
 
 ## Open questions
 
@@ -36,5 +37,5 @@ Drucker argues that humanities data are constructed capta rather than given data
 
 ## Related
 
-- [[10_distillates/publications/whitelaw-2015-generous-interfaces]] — a companion critique of the default collection interface.
-- [[10_distillates/publications/hinrichs-2019-sandcastles]] — visualisation as a research process.
+- [[20_distillates/publications/whitelaw-2015-generous-interfaces]] — a companion critique of the default collection interface.
+- [[20_distillates/publications/hinrichs-2019-sandcastles]] — visualisation as a research process.

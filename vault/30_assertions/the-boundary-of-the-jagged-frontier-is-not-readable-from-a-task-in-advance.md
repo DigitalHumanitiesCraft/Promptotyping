@@ -1,11 +1,12 @@
 ---
-type: claim
-topics: ["[[Frame]]"]
+type: assertion
+topics:
+- '[[Frame]]'
 status: grounded
 checked: {}
 grounding:
-  - "[[10_distillates/publications/dellacqua-2023-jagged-frontier#^s7]]"
-  - "[[10_distillates/publications/dellacqua-2023-jagged-frontier#^s1]]"
+- '[[20_distillates/publications/dellacqua-2023-jagged-frontier#^s7]]'
+- '[[20_distillates/publications/dellacqua-2023-jagged-frontier#^s1]]'
 contested-with: []
 created: 2026-07-26
 updated: 2026-07-26
@@ -19,10 +20,10 @@ Professionals working with an LLM cannot tell from a task where the boundary of 
 
 ## Support
 
-- [[10_distillates/publications/dellacqua-2023-jagged-frontier#^s7]] — states that professionals find the boundary hard to grasp, with rapid change and poor understanding of the capability as the reason.
-- [[10_distillates/publications/dellacqua-2023-jagged-frontier#^s1]] — supplies the second reason, that tasks of seemingly similar difficulty fall on opposite sides.
+- [[20_distillates/publications/dellacqua-2023-jagged-frontier#^s7]] — states that professionals find the boundary hard to grasp, with rapid change and poor understanding of the capability as the reason.
+- [[20_distillates/publications/dellacqua-2023-jagged-frontier#^s1]] — supplies the second reason, that tasks of seemingly similar difficulty fall on opposite sides.
 
 ## Related
 
-- [[20_claims/llm-assistance-raises-performance-inside-and-lowers-it-outside-a-jagged-frontier]]
-- [[20_claims/critical-expert-in-the-loop-double-reflection-loop]]
+- [[30_assertions/llm-assistance-raises-performance-inside-and-lowers-it-outside-a-jagged-frontier]]
+- [[30_assertions/critical-expert-in-the-loop-double-reflection-loop]]

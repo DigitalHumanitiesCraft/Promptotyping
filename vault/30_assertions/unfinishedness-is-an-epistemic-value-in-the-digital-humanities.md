@@ -1,13 +1,14 @@
 ---
-type: claim
-topics: ["[[Concepts]]"]
+type: assertion
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/koenig-2026-fertig-vorerst#^s1]]"
-  - "[[10_distillates/publications/koenig-2026-fertig-vorerst#^s2]]"
-  - "[[10_distillates/publications/koenig-2026-fertig-vorerst#^s3]]"
+- '[[20_distillates/publications/koenig-2026-fertig-vorerst#^s1]]'
+- '[[20_distillates/publications/koenig-2026-fertig-vorerst#^s2]]'
+- '[[20_distillates/publications/koenig-2026-fertig-vorerst#^s3]]'
 created: 2026-07-23
 updated: 2026-07-29
 ---
@@ -20,10 +21,10 @@ The digital humanities have an explicit discourse that reads the provisional not
 
 ## Support
 
-- [[10_distillates/publications/koenig-2026-fertig-vorerst#^s1]] — unfinishedness as a knowledge-fostering principle, science always in the making.
-- [[10_distillates/publications/koenig-2026-fertig-vorerst#^s2]] — provisionality as a knowledge-bringing resource.
-- [[10_distillates/publications/koenig-2026-fertig-vorerst#^s3]] — knowledge as process, not finished product.
+- [[20_distillates/publications/koenig-2026-fertig-vorerst#^s1]] — unfinishedness as a knowledge-fostering principle, science always in the making.
+- [[20_distillates/publications/koenig-2026-fertig-vorerst#^s2]] — provisionality as a knowledge-bringing resource.
+- [[20_distillates/publications/koenig-2026-fertig-vorerst#^s3]] — knowledge as process, not finished product.
 
 ## Related
 
-- [[20_claims/MOC-Concepts]]
+- [[30_assertions/MOC-Concepts]]

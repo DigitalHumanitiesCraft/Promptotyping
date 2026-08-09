@@ -1,13 +1,14 @@
 ---
-type: claim
-topics: ["[[Frame]]"]
+type: assertion
+topics:
+- '[[Frame]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/windhager-2019-visualization-ch-collections#^s1]]"
-  - "[[10_distillates/publications/windhager-2019-visualization-ch-collections#^s2]]"
-  - "[[10_distillates/publications/windhager-2019-visualization-ch-collections#^s3]]"
+- '[[20_distillates/publications/windhager-2019-visualization-ch-collections#^s1]]'
+- '[[20_distillates/publications/windhager-2019-visualization-ch-collections#^s2]]'
+- '[[20_distillates/publications/windhager-2019-visualization-ch-collections#^s3]]'
 created: 2026-07-23
 updated: 2026-07-29
 ---
@@ -20,11 +21,11 @@ A survey of information-visualisation approaches to cultural-heritage collection
 
 ## Support
 
-- [[10_distillates/publications/windhager-2019-visualization-ch-collections#^s1]] — a survey reviewing the state of the art in techniques and design choices.
-- [[10_distillates/publications/windhager-2019-visualization-ch-collections#^s2]] — visual access to collections beyond search and grid interfaces.
-- [[10_distillates/publications/windhager-2019-visualization-ch-collections#^s3]] — a notable diversity of interaction and representation techniques.
+- [[20_distillates/publications/windhager-2019-visualization-ch-collections#^s1]] — a survey reviewing the state of the art in techniques and design choices.
+- [[20_distillates/publications/windhager-2019-visualization-ch-collections#^s2]] — visual access to collections beyond search and grid interfaces.
+- [[20_distillates/publications/windhager-2019-visualization-ch-collections#^s3]] — a notable diversity of interaction and representation techniques.
 
 ## Related
 
-- [[20_claims/MOC-Frame]]
-- [[20_claims/generous-interfaces-reveal-collection-through-browsing]]
+- [[30_assertions/MOC-Frame]]
+- [[30_assertions/generous-interfaces-reveal-collection-through-browsing]]

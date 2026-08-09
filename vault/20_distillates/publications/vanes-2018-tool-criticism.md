@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: vanes-2018
-topics: ["[[Frame]]"]
+topics:
+- '[[Frame]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -24,7 +25,7 @@ Van Es, Wieringa and Schäfer argue that a rigorous inquiry into the tools used 
 
 ## Terms
 
-- **tool criticism**: a rigorous, reflective inquiry into how research tools shape knowledge production, treated as a necessary part of method rather than a neutral instrument choice. [[10_distillates/publications/vanes-2018-tool-criticism#^s1]]
+- **tool criticism**: a rigorous, reflective inquiry into how research tools shape knowledge production, treated as a necessary part of method rather than a neutral instrument choice. [[20_distillates/publications/vanes-2018-tool-criticism#^s1]]
 
 ## Open questions
 
@@ -32,4 +33,4 @@ Van Es, Wieringa and Schäfer argue that a rigorous inquiry into the tools used 
 
 ## Related
 
-- [[10_distillates/publications/koolen-2019-digital-tool-criticism]] — the companion model of digital tool criticism as reflective practice.
+- [[20_distillates/publications/koolen-2019-digital-tool-criticism]] — the companion model of digital tool criticism as reflective practice.

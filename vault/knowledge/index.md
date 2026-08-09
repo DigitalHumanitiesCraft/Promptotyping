@@ -1,16 +1,22 @@
 ---
 title: Index
 project:
-  name: "Promptotyping Paper Vault"
-  repository: "https://github.com/DigitalHumanitiesCraft/Promptotyping"
+  name: Promptotyping Paper Vault
+  repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
 status: draft
 language: en
-created: "2026-07-19"
-updated: "2026-07-25"
-related: [specification, schema, operations, state, journal, register-paper-sources]
+created: '2026-07-19'
+updated: '2026-07-25'
+related:
+- specification
+- schema
+- operations
+- state
+- journal
+- register-paper-sources
 ---
 
 # Index

@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: berners-lee-2001
-topics: ["[[Genealogy]]"]
+topics:
+- '[[Genealogy]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -24,7 +25,7 @@ The founding Semantic Web article defines the Semantic Web as an extension of th
 
 ## Terms
 
-- **Semantic Web**: an extension of the web in which content carries machine-processable, well-defined meaning, enabling automated agents to act over it. [[10_distillates/publications/berners-lee-2001-semantic-web#^s1]]
+- **Semantic Web**: an extension of the web in which content carries machine-processable, well-defined meaning, enabling automated agents to act over it. [[20_distillates/publications/berners-lee-2001-semantic-web#^s1]]
 
 ## Open questions
 
@@ -32,4 +33,4 @@ The founding Semantic Web article defines the Semantic Web as an extension of th
 
 ## Related
 
-- [[10_distillates/publications/gruber-1993-ontolingua]] — the ontology layer the Semantic Web vision presupposes.
+- [[20_distillates/publications/gruber-1993-ontolingua]] — the ontology layer the Semantic Web vision presupposes.

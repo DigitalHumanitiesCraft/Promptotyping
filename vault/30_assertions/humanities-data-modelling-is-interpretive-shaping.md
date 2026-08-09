@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[Concepts]]"]
+type: assertion
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/flanders-2019-shape-of-data#^s1]]"
-  - "[[10_distillates/publications/flanders-2019-shape-of-data#^s2]]"
+- '[[20_distillates/publications/flanders-2019-shape-of-data#^s1]]'
+- '[[20_distillates/publications/flanders-2019-shape-of-data#^s2]]'
 created: 2026-07-23
 updated: 2026-07-29
 ---
@@ -19,10 +20,10 @@ Data models in the digital humanities represent the shaping choices scholars mak
 
 ## Support
 
-- [[10_distillates/publications/flanders-2019-shape-of-data#^s1]] — models as the shaping choices of representation and analysis.
-- [[10_distillates/publications/flanders-2019-shape-of-data#^s2]] — modelling as making explicit assumptions about the artefact.
+- [[20_distillates/publications/flanders-2019-shape-of-data#^s1]] — models as the shaping choices of representation and analysis.
+- [[20_distillates/publications/flanders-2019-shape-of-data#^s2]] — modelling as making explicit assumptions about the artefact.
 
 ## Related
 
-- [[20_claims/MOC-Concepts]]
-- [[20_claims/humanities-data-is-constructed-not-given]]
+- [[30_assertions/MOC-Concepts]]
+- [[30_assertions/humanities-data-is-constructed-not-given]]

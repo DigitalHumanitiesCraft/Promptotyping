@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: hitchcock-2003
-topics: ["[[ArtefactVerification]]"]
+topics:
+- '[[ArtefactVerification]]'
 status: grounded
 checked:
   quote: 2026-07-26
@@ -31,10 +32,10 @@ The carrier through which Toulmin's layout of arguments enters this vault, since
 
 ## Terms
 
-- **Claim**: the proposition asserted, which the layout's other elements are called on to justify. [[10_distillates/publications/hitchcock-2003-toulmins-warrants#^s3]]
-- **Grounds (data)**: what the claim rests on, given in answer to the challenge asking what one has to go on. [[10_distillates/publications/hitchcock-2003-toulmins-warrants#^s3]]
-- **Warrant**: the general rule that licenses the step from grounds to claim. [[10_distillates/publications/hitchcock-2003-toulmins-warrants#^s4]]
-- **Backing**: the justification offered for the warrant when the warrant itself is challenged. [[10_distillates/publications/hitchcock-2003-toulmins-warrants#^s5]]
+- **Claim**: the proposition asserted, which the layout's other elements are called on to justify. [[20_distillates/publications/hitchcock-2003-toulmins-warrants#^s3]]
+- **Grounds (data)**: what the claim rests on, given in answer to the challenge asking what one has to go on. [[20_distillates/publications/hitchcock-2003-toulmins-warrants#^s3]]
+- **Warrant**: the general rule that licenses the step from grounds to claim. [[20_distillates/publications/hitchcock-2003-toulmins-warrants#^s4]]
+- **Backing**: the justification offered for the warrant when the warrant itself is challenged. [[20_distillates/publications/hitchcock-2003-toulmins-warrants#^s5]]
 
 ## Open questions
 
@@ -43,5 +44,5 @@ The carrier through which Toulmin's layout of arguments enters this vault, since
 
 ## Related
 
-- [[10_distillates/publications/groth-2010-nanopublication]]
-- [[10_distillates/publications/mariani-2025-prov-a]]
+- [[20_distillates/publications/groth-2010-nanopublication]]
+- [[20_distillates/publications/mariani-2025-prov-a]]

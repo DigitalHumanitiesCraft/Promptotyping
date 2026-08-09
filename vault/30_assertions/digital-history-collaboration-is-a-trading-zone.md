@@ -1,13 +1,14 @@
 ---
-type: claim
-topics: ["[[Frame]]"]
+type: assertion
+topics:
+- '[[Frame]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/kemman-2021-trading-zones#^s1]]"
-  - "[[10_distillates/publications/kemman-2021-trading-zones#^s2]]"
-  - "[[10_distillates/publications/kemman-2021-trading-zones#^s3]]"
+- '[[20_distillates/publications/kemman-2021-trading-zones#^s1]]'
+- '[[20_distillates/publications/kemman-2021-trading-zones#^s2]]'
+- '[[20_distillates/publications/kemman-2021-trading-zones#^s3]]'
 created: 2026-07-23
 updated: 2026-07-23
 ---
@@ -20,10 +21,10 @@ Kemman analyses digital-history collaborations as trading zones, adapting Galiso
 
 ## Support
 
-- [[10_distillates/publications/kemman-2021-trading-zones#^s1]] — collaborations analysed as trading zones between two communities.
-- [[10_distillates/publications/kemman-2021-trading-zones#^s2]] — Galison's definition of the trading zone.
-- [[10_distillates/publications/kemman-2021-trading-zones#^s3]] — the three dimensions of analysis.
+- [[20_distillates/publications/kemman-2021-trading-zones#^s1]] — collaborations analysed as trading zones between two communities.
+- [[20_distillates/publications/kemman-2021-trading-zones#^s2]] — Galison's definition of the trading zone.
+- [[20_distillates/publications/kemman-2021-trading-zones#^s3]] — the three dimensions of analysis.
 
 ## Related
 
-- [[20_claims/critical-expert-in-the-loop-double-reflection-loop]]
+- [[30_assertions/critical-expert-in-the-loop-double-reflection-loop]]

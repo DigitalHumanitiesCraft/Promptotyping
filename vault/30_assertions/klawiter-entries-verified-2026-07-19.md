@@ -1,11 +1,12 @@
 ---
-type: claim
-topics: ["[[Evidence]]"]
+type: assertion
+topics:
+- '[[Evidence]]'
 status: grounded
 checked:
   validation: 2026-07-19
 grounding:
-  - "[[10_distillates/documents/verification-paper-figures-2026-07-19#^s9]]"
+- '[[20_distillates/documents/verification-paper-figures-2026-07-19#^s9]]'
 created: 2026-07-19
 updated: 2026-07-29
 ---
@@ -18,8 +19,8 @@ The Klawiter case study's stated figures, 6,296 entries and the existence of a 7
 
 ## Support
 
-- [[10_distillates/documents/verification-paper-figures-2026-07-19#^s9]] — records the confirmation of the Klawiter entry count and pipeline against the repository.
+- [[20_distillates/documents/verification-paper-figures-2026-07-19#^s9]] — records the confirmation of the Klawiter entry count and pipeline against the repository.
 
 ## Related
 
-- [[20_claims/klawiter-test-count-2026-07-19]]
+- [[30_assertions/klawiter-test-count-2026-07-19]]

@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: windhager-2019
-topics: ["[[Frame]]"]
+topics:
+- '[[Frame]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -26,7 +27,7 @@ Windhager and colleagues survey information-visualisation approaches to cultural
 
 ## Terms
 
-- **exploratory collection visualisation**: interactive information-visualisation access to a cultural-heritage collection as a whole, in contrast to search-centric or grid interfaces. [[10_distillates/publications/windhager-2019-visualization-ch-collections#^s2]]
+- **exploratory collection visualisation**: interactive information-visualisation access to a cultural-heritage collection as a whole, in contrast to search-centric or grid interfaces. [[20_distillates/publications/windhager-2019-visualization-ch-collections#^s2]]
 
 ## Open questions
 
@@ -34,5 +35,5 @@ Windhager and colleagues survey information-visualisation approaches to cultural
 
 ## Related
 
-- [[10_distillates/publications/whitelaw-2015-generous-interfaces]] — the generosity principle the survey names.
-- [[10_distillates/publications/hinrichs-2019-sandcastles]] — visualisation as a humanities research process.
+- [[20_distillates/publications/whitelaw-2015-generous-interfaces]] — the generosity principle the survey names.
+- [[20_distillates/publications/hinrichs-2019-sandcastles]] — visualisation as a humanities research process.

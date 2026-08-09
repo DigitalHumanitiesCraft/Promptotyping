@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: baxter-2012
-topics: ["[[Frame]]"]
+topics:
+- '[[Frame]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -24,7 +25,7 @@ The foundational Research Software Engineering statement argues that research in
 
 ## Terms
 
-- **research software engineer**: a software engineer who also holds research experience and domain knowledge, the role the movement names and seeks to establish as a career. [[10_distillates/publications/baxter-2012-research-software-engineer#^s1]]
+- **research software engineer**: a software engineer who also holds research experience and domain knowledge, the role the movement names and seeks to establish as a career. [[20_distillates/publications/baxter-2012-research-software-engineer#^s1]]
 
 ## Open questions
 
@@ -32,5 +33,5 @@ The foundational Research Software Engineering statement argues that research in
 
 ## Related
 
-- [[10_distillates/publications/cohen-2021-four-pillars-rse]] — the later statement of the RSE role the paper pairs with Baxter et al.
-- [[20_claims/rse-institutionalised-intermediary-profession]] — the claim these sources jointly ground.
+- [[20_distillates/publications/cohen-2021-four-pillars-rse]] — the later statement of the RSE role the paper pairs with Baxter et al.
+- [[30_assertions/rse-institutionalised-intermediary-profession]] — the claim these sources jointly ground.

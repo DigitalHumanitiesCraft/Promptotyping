@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: galey-2010
-topics: ["[[Concepts]]"]
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -26,7 +27,7 @@ Galey and Ruecker argue that an experimental digital prototype can convey an arg
 
 ## Terms
 
-- **prototype as argument**: a built digital artefact whose design decisions assert contestable claims about the material it organises, readable and reviewable like a scholarly text. [[10_distillates/publications/galey-2010-how-a-prototype-argues#^s1]]
+- **prototype as argument**: a built digital artefact whose design decisions assert contestable claims about the material it organises, readable and reviewable like a scholarly text. [[20_distillates/publications/galey-2010-how-a-prototype-argues#^s1]]
 
 ## Open questions
 
@@ -34,4 +35,4 @@ Galey and Ruecker argue that an experimental digital prototype can convey an arg
 
 ## Related
 
-- [[10_distillates/publications/ruecker-2015-taxonomy-prototypes]] — the prototype typology that extends this argument.
+- [[20_distillates/publications/ruecker-2015-taxonomy-prototypes]] — the prototype typology that extends this argument.

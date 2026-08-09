@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: cohen-2021
-topics: ["[[Concepts]]"]
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -28,7 +29,7 @@ An account of the Research Software Engineering movement and its four supporting
 
 ## Terms
 
-- **Research Software Engineering (RSE)**: the movement and emerging profession, begun in the UK around 2013, that recognises and supports the people who build research software as a distinct role. [[10_distillates/publications/cohen-2021-four-pillars-rse#^s1]]
+- **Research Software Engineering (RSE)**: the movement and emerging profession, begun in the UK around 2013, that recognises and supports the people who build research software as a distinct role. [[20_distillates/publications/cohen-2021-four-pillars-rse#^s1]]
 
 ## Open questions
 
@@ -36,4 +37,4 @@ An account of the Research Software Engineering movement and its four supporting
 
 ## Related
 
-- [[10_distillates/publications/chuehong-2022-fair4rs]]
+- [[20_distillates/publications/chuehong-2022-fair4rs]]

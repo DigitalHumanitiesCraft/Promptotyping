@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: cremer-2025
-topics: ["[[Concepts]]"]
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -28,7 +29,7 @@ Working the Bavarian COVID-19 penalty catalogues, the article shows that tabular
 
 ## Terms
 
-- **quellengetreue Normalisierung**: source-faithful normalisation that adds analytical categories without replacing the original transliteration, keeping the classification reversible. [[10_distillates/publications/cremer-2025-quellen-und-datenkritik#^s3]]
+- **quellengetreue Normalisierung**: source-faithful normalisation that adds analytical categories without replacing the original transliteration, keeping the classification reversible. [[20_distillates/publications/cremer-2025-quellen-und-datenkritik#^s3]]
 
 ## Open questions
 
@@ -36,4 +37,4 @@ Working the Bavarian COVID-19 penalty catalogues, the article shows that tabular
 
 ## Related
 
-- [[20_claims/making-source-data-machine-addressable-is-interpretive-modelling]]
+- [[30_assertions/making-source-data-machine-addressable-is-interpretive-modelling]]

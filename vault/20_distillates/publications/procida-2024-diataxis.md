@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: procida-2024
-topics: ["[[Method]]"]
+topics:
+- '[[Method]]'
 status: grounded
 checked:
   quote: 2026-07-26
@@ -33,8 +34,8 @@ The documentation framework that divides technical documentation along the same 
 
 ## Terms
 
-- **Action and cognition**: the axis separating practical knowledge, knowing how, from theoretical knowledge, knowing that. [[10_distillates/publications/procida-2024-diataxis#^s2]]
-- **Acquisition and application**: the axis separating the practitioner at study from the practitioner at work. [[10_distillates/publications/procida-2024-diataxis#^s3]]
+- **Action and cognition**: the axis separating practical knowledge, knowing how, from theoretical knowledge, knowing that. [[20_distillates/publications/procida-2024-diataxis#^s2]]
+- **Acquisition and application**: the axis separating the practitioner at study from the practitioner at work. [[20_distillates/publications/procida-2024-diataxis#^s3]]
 
 ## Open questions
 
@@ -44,5 +45,5 @@ The documentation framework that divides technical documentation along the same 
 
 ## Related
 
-- [[10_distillates/publications/mei-2025-context-engineering]]
-- [[10_distillates/publications/gruber-1993-ontolingua]]
+- [[20_distillates/publications/mei-2025-context-engineering]]
+- [[20_distillates/publications/gruber-1993-ontolingua]]

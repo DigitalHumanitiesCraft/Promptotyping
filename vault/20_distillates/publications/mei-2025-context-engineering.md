@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: mei-2025
-topics: ["[[Concepts]]"]
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -28,7 +29,7 @@ The survey that formalises Context Engineering as a discipline and supplies the 
 
 ## Terms
 
-- **Context Engineering**: the systematic design, optimisation and management of the information payload provided to an LLM at inference, treated as a formal discipline beyond individual prompt optimisation. [[10_distillates/publications/mei-2025-context-engineering#^s1]]
+- **Context Engineering**: the systematic design, optimisation and management of the information payload provided to an LLM at inference, treated as a formal discipline beyond individual prompt optimisation. [[20_distillates/publications/mei-2025-context-engineering#^s1]]
 
 ## Open questions
 
@@ -36,4 +37,4 @@ The survey that formalises Context Engineering as a discipline and supplies the 
 
 ## Related
 
-- [[10_distillates/publications/hong-2025-context-rot]]
+- [[20_distillates/publications/hong-2025-context-rot]]

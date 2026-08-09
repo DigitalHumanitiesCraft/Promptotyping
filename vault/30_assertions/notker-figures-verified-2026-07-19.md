@@ -1,11 +1,12 @@
 ---
-type: claim
-topics: ["[[Evidence]]"]
+type: assertion
+topics:
+- '[[Evidence]]'
 status: grounded
 checked:
   validation: 2026-07-19
 grounding:
-  - "[[10_distillates/documents/verification-paper-figures-2026-07-19#^s8]]"
+- '[[20_distillates/documents/verification-paper-figures-2026-07-19#^s8]]'
 created: 2026-07-19
 updated: 2026-07-29
 ---
@@ -18,8 +19,8 @@ The Notker case study's stated figures, Psalm 2 with 13 verses and 6 text-layer 
 
 ## Support
 
-- [[10_distillates/documents/verification-paper-figures-2026-07-19#^s8]] — records the confirmation of the Notker figures against the repository.
+- [[20_distillates/documents/verification-paper-figures-2026-07-19#^s8]] — records the confirmation of the Notker figures against the repository.
 
 ## Related
 
-- [[20_claims/lucina-figures-verified-2026-07-19]]
+- [[30_assertions/lucina-figures-verified-2026-07-19]]

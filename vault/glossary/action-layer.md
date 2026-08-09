@@ -1,6 +1,6 @@
 ---
 type: glossary
-term: "Action layer"
+term: Action layer
 created: 2026-07-25
 updated: 2026-07-25
 ---

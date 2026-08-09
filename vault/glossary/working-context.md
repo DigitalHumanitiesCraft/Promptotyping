@@ -1,6 +1,6 @@
 ---
 type: glossary
-term: "Working context"
+term: Working context
 created: 2026-07-29
 updated: 2026-07-29
 ---

@@ -1,15 +1,16 @@
 ---
-type: claim
-topics: ["[[Method]]"]
+type: assertion
+topics:
+- '[[Method]]'
 status: grounded
 checked: {}
 grounding:
-  - "[[10_distillates/publications/lucassen-2016-quality-user-story#^s1]]"
-  - "[[10_distillates/publications/lucassen-2016-quality-user-story#^s2]]"
-  - "[[10_distillates/publications/lucassen-2016-quality-user-story#^s3]]"
-  - "[[10_distillates/publications/lucassen-2016-quality-user-story#^s4]]"
-  - "[[10_distillates/publications/lucassen-2016-quality-user-story#^s5]]"
-  - "[[10_distillates/publications/lucassen-2016-quality-user-story#^s6]]"
+- '[[20_distillates/publications/lucassen-2016-quality-user-story#^s1]]'
+- '[[20_distillates/publications/lucassen-2016-quality-user-story#^s2]]'
+- '[[20_distillates/publications/lucassen-2016-quality-user-story#^s3]]'
+- '[[20_distillates/publications/lucassen-2016-quality-user-story#^s4]]'
+- '[[20_distillates/publications/lucassen-2016-quality-user-story#^s5]]'
+- '[[20_distillates/publications/lucassen-2016-quality-user-story#^s6]]'
 created: 2026-07-26
 updated: 2026-07-26
 ---
@@ -22,14 +23,14 @@ Lucassen, Dalpiaz, van der Werf and Brinkkemper define thirteen quality criteria
 
 ## Support
 
-- [[10_distillates/publications/lucassen-2016-quality-user-story#^s1]] — thirteen criteria, with the tool built on them.
-- [[10_distillates/publications/lucassen-2016-quality-user-story#^s2]] — the three Lindland categories and what each concerns.
-- [[10_distillates/publications/lucassen-2016-quality-user-story#^s3]] — the second classification, individual story against set.
-- [[10_distillates/publications/lucassen-2016-quality-user-story#^s4]] — the three syntactic criteria with their definitions and scope.
-- [[10_distillates/publications/lucassen-2016-quality-user-story#^s5]] — the four semantic criteria with their definitions and scope.
-- [[10_distillates/publications/lucassen-2016-quality-user-story#^s6]] — the six pragmatic criteria with their definitions and scope.
+- [[20_distillates/publications/lucassen-2016-quality-user-story#^s1]] — thirteen criteria, with the tool built on them.
+- [[20_distillates/publications/lucassen-2016-quality-user-story#^s2]] — the three Lindland categories and what each concerns.
+- [[20_distillates/publications/lucassen-2016-quality-user-story#^s3]] — the second classification, individual story against set.
+- [[20_distillates/publications/lucassen-2016-quality-user-story#^s4]] — the three syntactic criteria with their definitions and scope.
+- [[20_distillates/publications/lucassen-2016-quality-user-story#^s5]] — the four semantic criteria with their definitions and scope.
+- [[20_distillates/publications/lucassen-2016-quality-user-story#^s6]] — the six pragmatic criteria with their definitions and scope.
 
 ## Related
 
-- [[20_claims/aqusa-checks-the-criteria-a-rule-can-decide]]
-- [[20_claims/MOC-Method]]
+- [[30_assertions/aqusa-checks-the-criteria-a-rule-can-decide]]
+- [[30_assertions/MOC-Method]]

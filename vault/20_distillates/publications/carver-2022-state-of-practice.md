@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: carver-2022
-topics: ["[[Frame]]"]
+topics:
+- '[[Frame]]'
 status: grounded
 checked:
   quote: 2026-07-25
@@ -28,7 +29,7 @@ A survey of 1,149 researchers, primarily in the United States, on the sustainabi
 
 ## Terms
 
-- **RSE support**: institutional provision of research software engineering capacity to researchers, surveyed here alongside financial and infrastructure support. [[10_distillates/publications/carver-2022-state-of-practice#^s2]]
+- **RSE support**: institutional provision of research software engineering capacity to researchers, surveyed here alongside financial and infrastructure support. [[20_distillates/publications/carver-2022-state-of-practice#^s2]]
 
 ## Open questions
 
@@ -37,5 +38,5 @@ A survey of 1,149 researchers, primarily in the United States, on the sustainabi
 
 ## Related
 
-- [[10_distillates/publications/baxter-2012-research-software-engineer]]
-- [[10_distillates/publications/cohen-2021-four-pillars-rse]]
+- [[20_distillates/publications/baxter-2012-research-software-engineer]]
+- [[20_distillates/publications/cohen-2021-four-pillars-rse]]

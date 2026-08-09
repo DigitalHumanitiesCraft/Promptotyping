@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: schonhardt-2026
-topics: ["[[Concepts]]"]
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -28,7 +29,7 @@ The article derives from the Unix philosophy a best practice for sustainable dig
 
 ## Terms
 
-- **Verkettungspotential (linking potential)**: the priority of solutions whose text-level output can be re-chained and reprocessed, kept under one's own control rather than in closed platforms. [[10_distillates/publications/schonhardt-2026-do-one-thing#^s4]]
+- **Verkettungspotential (linking potential)**: the priority of solutions whose text-level output can be re-chained and reprocessed, kept under one's own control rather than in closed platforms. [[20_distillates/publications/schonhardt-2026-do-one-thing#^s4]]
 
 ## Open questions
 
@@ -36,4 +37,4 @@ The article derives from the Unix philosophy a best practice for sustainable dig
 
 ## Related
 
-- [[20_claims/do-one-thing-well-favours-small-specialised-tools-over-monolithic-platforms]]
+- [[30_assertions/do-one-thing-well-favours-small-specialised-tools-over-monolithic-platforms]]

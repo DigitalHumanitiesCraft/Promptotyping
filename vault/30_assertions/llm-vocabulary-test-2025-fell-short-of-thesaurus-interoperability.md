@@ -1,11 +1,12 @@
 ---
-type: claim
-topics: ["[[ArtefactVerification]]"]
+type: assertion
+topics:
+- '[[ArtefactVerification]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/stanicka-2026-cross-linking-vocabularies#^s3]]"
+- '[[20_distillates/publications/stanicka-2026-cross-linking-vocabularies#^s3]]'
 created: 2026-07-23
 updated: 2026-07-29
 ---
@@ -18,8 +19,8 @@ Prompt-based queries to GPT-4 and DeepL Write, tested between April and June 202
 
 ## Support
 
-- [[10_distillates/publications/stanicka-2026-cross-linking-vocabularies#^s3]] — the April–June 2025 GPT-4 and DeepL Write test and its shortfall.
+- [[20_distillates/publications/stanicka-2026-cross-linking-vocabularies#^s3]] — the April–June 2025 GPT-4 and DeepL Write test and its shortfall.
 
 ## Related
 
-- [[20_claims/MOC-Limitations]]
+- [[30_assertions/MOC-Limitations]]

@@ -2,7 +2,9 @@
 type: distillate
 source-type: publication
 reference: pollin-2025a
-topics: ["[[Genealogy]]", "[[Limitations]]"]
+topics:
+- '[[Genealogy]]'
+- '[[Limitations]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -30,7 +32,7 @@ The field survey records, in September 2024, LLM code generation for edition pub
 
 ## Terms
 
-- **teiCrafter / teiModeler / teiVerifier**: a proposed line of interacting LLM agents for TEI annotation, target-structure modelling, and encoding verification. [[10_distillates/publications/pollin-2025a-when-it-was-2024#^s2]]
+- **teiCrafter / teiModeler / teiVerifier**: a proposed line of interacting LLM agents for TEI annotation, target-structure modelling, and encoding verification. [[20_distillates/publications/pollin-2025a-when-it-was-2024#^s2]]
 
 ## Open questions
 
@@ -38,5 +40,5 @@ The field survey records, in September 2024, LLM code generation for edition pub
 
 ## Related
 
-- [[20_claims/field-literature-records-llm-code-generation-and-tei-agent-line-by-2024]]
-- [[20_claims/edition-ai-benchmarks-lacking-and-reproducibility-favours-local-models]]
+- [[30_assertions/field-literature-records-llm-code-generation-and-tei-agent-line-by-2024]]
+- [[30_assertions/edition-ai-benchmarks-lacking-and-reproducibility-favours-local-models]]

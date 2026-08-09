@@ -1,11 +1,12 @@
 ---
-type: claim
-topics: ["[[Evidence]]"]
+type: assertion
+topics:
+- '[[Evidence]]'
 status: grounded
 checked:
   validation: 2026-07-19
 grounding:
-  - "[[10_distillates/documents/verification-paper-figures-2026-07-19#^s12]]"
+- '[[20_distillates/documents/verification-paper-figures-2026-07-19#^s12]]'
 created: 2026-07-19
 updated: 2026-07-25
 ---
@@ -18,8 +19,8 @@ As verified on 2026-07-19, the ZBZ repository shows 305 commits spanning 2026-01
 
 ## Support
 
-- [[10_distillates/documents/verification-paper-figures-2026-07-19#^s12]] — records the ZBZ commit count and the date span of the repository history.
+- [[20_distillates/documents/verification-paper-figures-2026-07-19#^s12]] — records the ZBZ commit count and the date span of the repository history.
 
 ## Related
 
-- [[20_claims/zbz-figures-verified-2026-07-19]]
+- [[30_assertions/zbz-figures-verified-2026-07-19]]

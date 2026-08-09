@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[Method]]"]
+type: assertion
+topics:
+- '[[Method]]'
 status: grounded
 checked:
   validation: 2026-07-20
 grounding:
-  - "[[10_distillates/documents/knowledge-base-content-audit-2026-07-19#^s3]]"
-  - "[[10_distillates/documents/knowledge-base-content-audit-2026-07-19#^s4]]"
+- '[[20_distillates/documents/knowledge-base-content-audit-2026-07-19#^s3]]'
+- '[[20_distillates/documents/knowledge-base-content-audit-2026-07-19#^s4]]'
 contested-with: []
 created: 2026-07-20
 updated: 2026-07-20
@@ -20,10 +21,10 @@ The July 2026 audit extracted a Verification skeleton empirically from the repos
 
 ## Support
 
-- [[10_distillates/documents/knowledge-base-content-audit-2026-07-19#^s3]] — records that the Verification function was template-ready from empirically extracted skeletons and that no knowledge base yet checked its own contribution claims systematically.
-- [[10_distillates/documents/knowledge-base-content-audit-2026-07-19#^s4]] — records the operator decision that released the Verification, Integration and Action-Layer templates.
+- [[20_distillates/documents/knowledge-base-content-audit-2026-07-19#^s3]] — records that the Verification function was template-ready from empirically extracted skeletons and that no knowledge base yet checked its own contribution claims systematically.
+- [[20_distillates/documents/knowledge-base-content-audit-2026-07-19#^s4]] — records the operator decision that released the Verification, Integration and Action-Layer templates.
 
 ## Related
 
-- [[20_claims/status-vocabulary-adds-active-and-snapshot]]
-- [[20_claims/section4-verification-single-agent-snapshot-2026-07-19]]
+- [[30_assertions/status-vocabulary-adds-active-and-snapshot]]
+- [[30_assertions/section4-verification-single-agent-snapshot-2026-07-19]]

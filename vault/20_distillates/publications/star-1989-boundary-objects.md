@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: star-1989
-topics: ["[[Concepts]]"]
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -28,7 +29,7 @@ Star and Griesemer introduce boundary objects as entities that hold their identi
 
 ## Terms
 
-- **boundary object**: an object that different communities can each read for their own local needs while it keeps enough common structure to be recognisable across them, serving as a means of translation. [[10_distillates/publications/star-1989-boundary-objects#^s1]]
+- **boundary object**: an object that different communities can each read for their own local needs while it keeps enough common structure to be recognisable across them, serving as a means of translation. [[20_distillates/publications/star-1989-boundary-objects#^s1]]
 
 ## Open questions
 
@@ -36,5 +37,5 @@ Star and Griesemer introduce boundary objects as entities that hold their identi
 
 ## Related
 
-- [[10_distillates/publications/kemman-2021-trading-zones]] — a companion framing of interdisciplinary coordination the paper pairs with boundary objects.
-- [[10_distillates/publications/gruber-1993-ontolingua]] — shared vocabularies as the formal-representation counterpart to boundary objects.
+- [[20_distillates/publications/kemman-2021-trading-zones]] — a companion framing of interdisciplinary coordination the paper pairs with boundary objects.
+- [[20_distillates/publications/gruber-1993-ontolingua]] — shared vocabularies as the formal-representation counterpart to boundary objects.

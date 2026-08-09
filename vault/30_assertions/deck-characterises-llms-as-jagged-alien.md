@@ -1,14 +1,15 @@
 ---
-type: claim
-topics: ["[[Concepts]]"]
+type: assertion
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   validation: 2026-07-19
 grounding:
-  - "[[10_distillates/documents/ke-master-deck-2026-07-19#^s1]]"
-  - "[[10_distillates/documents/ke-master-deck-2026-07-19#^s2]]"
-  - "[[10_distillates/documents/ke-master-deck-2026-07-19#^s3]]"
-  - "[[10_distillates/documents/ke-master-deck-2026-07-19#^s4]]"
+- '[[20_distillates/documents/ke-master-deck-2026-07-19#^s1]]'
+- '[[20_distillates/documents/ke-master-deck-2026-07-19#^s2]]'
+- '[[20_distillates/documents/ke-master-deck-2026-07-19#^s3]]'
+- '[[20_distillates/documents/ke-master-deck-2026-07-19#^s4]]'
 created: 2026-07-19
 updated: 2026-07-19
 ---
@@ -21,12 +22,12 @@ The workshop deck used by the method author states, as of the 2026-07-19 snapsho
 
 ## Support
 
-- [[10_distillates/documents/ke-master-deck-2026-07-19#^s1]] — gives the slide label and the enumerated components of the characterisation.
-- [[10_distillates/documents/ke-master-deck-2026-07-19#^s2]] — gives the jagged and alien definitions and the named coinages (Mollick 2023, Karpathy 2024, Summerfield).
-- [[10_distillates/documents/ke-master-deck-2026-07-19#^s3]] — gives the mechanism-level grounding of the alien reading through the Anthropic 2025 attribution-graph finding.
-- [[10_distillates/documents/ke-master-deck-2026-07-19#^s4]] — gives the statistical, confabulation, bias and black-box cluster and the definitions of reasoning tokens and sycophancy.
+- [[20_distillates/documents/ke-master-deck-2026-07-19#^s1]] — gives the slide label and the enumerated components of the characterisation.
+- [[20_distillates/documents/ke-master-deck-2026-07-19#^s2]] — gives the jagged and alien definitions and the named coinages (Mollick 2023, Karpathy 2024, Summerfield).
+- [[20_distillates/documents/ke-master-deck-2026-07-19#^s3]] — gives the mechanism-level grounding of the alien reading through the Anthropic 2025 attribution-graph finding.
+- [[20_distillates/documents/ke-master-deck-2026-07-19#^s4]] — gives the statistical, confabulation, bias and black-box cluster and the definitions of reasoning tokens and sycophancy.
 
 ## Related
 
-- [[20_claims/deck-derives-context-and-verification-from-llm-profile]]
-- [[10_distillates/documents/ke-master-deck-2026-07-19]]
+- [[30_assertions/deck-derives-context-and-verification-from-llm-profile]]
+- [[20_distillates/documents/ke-master-deck-2026-07-19]]

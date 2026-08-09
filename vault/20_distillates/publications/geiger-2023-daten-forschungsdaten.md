@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: geiger-2023
-topics: ["[[Concepts]]"]
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   quote: 2026-07-25
@@ -35,8 +36,8 @@ The discursive-glossary entry surveys how the German-language digital humanities
 
 ## Terms
 
-- **research data (functional)**: the data of a research process that is needed to justify its findings, to sustain their claim to truth, or to reproduce its steps. [[10_distillates/publications/geiger-2023-daten-forschungsdaten#^s4]]
-- **paradata**: sufficient information about every automatic or semi-automatic transformation step the data passed through. [[10_distillates/publications/geiger-2023-daten-forschungsdaten#^s6]]
+- **research data (functional)**: the data of a research process that is needed to justify its findings, to sustain their claim to truth, or to reproduce its steps. [[20_distillates/publications/geiger-2023-daten-forschungsdaten#^s4]]
+- **paradata**: sufficient information about every automatic or semi-automatic transformation step the data passed through. [[20_distillates/publications/geiger-2023-daten-forschungsdaten#^s6]]
 
 ## Open questions
 
@@ -44,5 +45,5 @@ The discursive-glossary entry surveys how the German-language digital humanities
 
 ## Related
 
-- [[10_distillates/publications/schoech-2013-big-smart-clean-messy]] — the humanities-specific form of the genus.
-- [[20_claims/research-data-is-defined-by-the-function-it-serves]]
+- [[20_distillates/publications/schoech-2013-big-smart-clean-messy]] — the humanities-specific form of the genus.
+- [[30_assertions/research-data-is-defined-by-the-function-it-serves]]

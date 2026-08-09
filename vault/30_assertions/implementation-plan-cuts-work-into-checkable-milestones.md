@@ -1,13 +1,14 @@
 ---
-type: claim
-topics: ["[[Method]]"]
+type: assertion
+topics:
+- '[[Method]]'
 status: grounded
 checked:
   validation: 2026-07-25
 grounding:
-  - "[[10_distillates/documents/promptotyping-video-2-live-demo#^s17]]"
-  - "[[10_distillates/documents/promptotyping-video-2-live-demo#^s24]]"
-  - "[[10_distillates/documents/promptotyping-video-2-live-demo#^s39]]"
+- '[[20_distillates/documents/promptotyping-video-2-live-demo#^s17]]'
+- '[[20_distillates/documents/promptotyping-video-2-live-demo#^s24]]'
+- '[[20_distillates/documents/promptotyping-video-2-live-demo#^s39]]'
 created: 2026-07-25
 updated: 2026-07-25
 ---
@@ -20,11 +21,11 @@ The author states the intent behind the implementation plan as giving the LLM co
 
 ## Support
 
-- [[10_distillates/documents/promptotyping-video-2-live-demo#^s17]] — the intent of the plan, independently checkable milestones, and the testing requirements that could be written into it.
-- [[10_distillates/documents/promptotyping-video-2-live-demo#^s24]] — the implementation plan of this session consisting of eight milestones.
-- [[10_distillates/documents/promptotyping-video-2-live-demo#^s39]] — the milestones worked one after another.
+- [[20_distillates/documents/promptotyping-video-2-live-demo#^s17]] — the intent of the plan, independently checkable milestones, and the testing requirements that could be written into it.
+- [[20_distillates/documents/promptotyping-video-2-live-demo#^s24]] — the implementation plan of this session consisting of eight milestones.
+- [[20_distillates/documents/promptotyping-video-2-live-demo#^s39]] — the milestones worked one after another.
 
 ## Related
 
-- [[20_claims/milestone-check-deferred-in-the-recorded-session]]
-- [[20_claims/overengineering-check-cuts-the-specification-before-implementation]]
+- [[30_assertions/milestone-check-deferred-in-the-recorded-session]]
+- [[30_assertions/overengineering-check-cuts-the-specification-before-implementation]]

@@ -1,13 +1,14 @@
 ---
-type: claim
-topics: ["[[Concepts]]"]
+type: assertion
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/pollin-2025c-critical-vibing#^s2]]"
-  - "[[10_distillates/publications/pollin-2025c-critical-vibing#^s3]]"
-  - "[[10_distillates/publications/pollin-2025c-critical-vibing#^s4]]"
+- '[[20_distillates/publications/pollin-2025c-critical-vibing#^s2]]'
+- '[[20_distillates/publications/pollin-2025c-critical-vibing#^s3]]'
+- '[[20_distillates/publications/pollin-2025c-critical-vibing#^s4]]'
 created: 2026-07-23
 updated: 2026-07-23
 ---
@@ -20,11 +21,11 @@ The Critical Vibing blog introduces the Critical Expert in the Loop as the refle
 
 ## Support
 
-- [[10_distillates/publications/pollin-2025c-critical-vibing#^s2]] — the Critical Expert in the Loop as required reflective role.
-- [[10_distillates/publications/pollin-2025c-critical-vibing#^s3]] — the double reflection loop of human review and machine self-critique.
-- [[10_distillates/publications/pollin-2025c-critical-vibing#^s4]] — sycophancy as a central failure mode.
+- [[20_distillates/publications/pollin-2025c-critical-vibing#^s2]] — the Critical Expert in the Loop as required reflective role.
+- [[20_distillates/publications/pollin-2025c-critical-vibing#^s3]] — the double reflection loop of human review and machine self-critique.
+- [[20_distillates/publications/pollin-2025c-critical-vibing#^s4]] — sycophancy as a central failure mode.
 
 ## Related
 
-- [[20_claims/digital-history-collaboration-is-a-trading-zone]]
-- [[20_claims/szd-experiment-structured-vibe-coding]]
+- [[30_assertions/digital-history-collaboration-is-a-trading-zone]]
+- [[30_assertions/szd-experiment-structured-vibe-coding]]

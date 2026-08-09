@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[Frame]]"]
+type: assertion
+topics:
+- '[[Frame]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/macedo-2026-from-prompt-to-process#^s4]]"
-  - "[[10_distillates/publications/macedo-2026-from-prompt-to-process#^s5]]"
+- '[[20_distillates/publications/macedo-2026-from-prompt-to-process#^s4]]'
+- '[[20_distillates/publications/macedo-2026-from-prompt-to-process#^s5]]'
 created: 2026-07-23
 updated: 2026-07-29
 ---
@@ -19,11 +20,11 @@ The comparative assessment of agentic software-development frameworks finds that
 
 ## Support
 
-- [[10_distillates/publications/macedo-2026-from-prompt-to-process#^s4]] — the isolated prompt loses centrality; persistent artifacts and traceability coordinate agents.
-- [[10_distillates/publications/macedo-2026-from-prompt-to-process#^s5]] — Spec Kit treats specifications as the central artifact feeding implementation.
+- [[20_distillates/publications/macedo-2026-from-prompt-to-process#^s4]] — the isolated prompt loses centrality; persistent artifacts and traceability coordinate agents.
+- [[20_distillates/publications/macedo-2026-from-prompt-to-process#^s5]] — Spec Kit treats specifications as the central artifact feeding implementation.
 
 ## Related
 
-- [[20_claims/macedo-first-process-taxonomy-sdd-frameworks]]
-- [[20_claims/llm-based-agents-for-software-engineering]]
-- [[20_claims/MOC-Concepts]]
+- [[30_assertions/macedo-first-process-taxonomy-sdd-frameworks]]
+- [[30_assertions/llm-based-agents-for-software-engineering]]
+- [[30_assertions/MOC-Concepts]]

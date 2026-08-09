@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: pollin-2024
-topics: ["[[Genealogy]]"]
+topics:
+- '[[Genealogy]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -28,7 +29,7 @@ The Zenodo deposit is a metadata-only software record archiving a versioned rele
 
 ## Terms
 
-- **GM-DH workshop series**: the author's applied-generative-AI-in-the-humanities workshop series, whose versioned repository release this record archives. [[10_distillates/publications/pollin-2024-workshopreihe#^s1]]
+- **GM-DH workshop series**: the author's applied-generative-AI-in-the-humanities workshop series, whose versioned repository release this record archives. [[20_distillates/publications/pollin-2024-workshopreihe#^s1]]
 
 ## Open questions
 
@@ -37,4 +38,4 @@ The Zenodo deposit is a metadata-only software record archiving a versioned rele
 
 ## Related
 
-- [[10_distillates/publications/pollin-2026b-lisa-positioning]] — cites the same workshop series in the method's genealogy.
+- [[20_distillates/publications/pollin-2026b-lisa-positioning]] — cites the same workshop series in the method's genealogy.

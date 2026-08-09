@@ -1,16 +1,16 @@
 ---
 type: representation
 source-type: document
-source: "[[_sources/promptotyping-video-1-introduction.txt]]"
-converter: "YouTube auto-transcript of the recording, cleaned into a readable German script (timestamp artefacts removed, speech-recognition errors corrected, spoken language rendered as prose) as `knowledge/skriptum-video-1.md` of the Promptotyping repository; that script copied here verbatim, block IDs appended for anchoring. The timecodes behind the headings are the locator of this source and point into the video."
+source: '[[00_sources/promptotyping-video-1-introduction.txt]]'
+converter: YouTube auto-transcript of the recording, cleaned into a readable German script (timestamp artefacts removed, speech-recognition errors corrected, spoken language rendered as prose) as `knowledge/skriptum-video-1.md` of the Promptotyping repository; that script copied here verbatim, block IDs appended for anchoring. The timecodes behind the headings are the locator of this source and point into the video.
 channel: handover
 metadata:
-  title: "Einführung in Promptotyping, Teil 1"
-  creator: "method author, Digital Humanities Craft"
-  date: "2026-01"
-  format: "video/mp4 (screencast with slides), transcript as text/plain"
-  identifier: "https://youtu.be/8sUe4Jkh3uQ"
-  license: "publicly available recording, no license statement on the carrier"
+  title: Einführung in Promptotyping, Teil 1
+  creator: method author, Digital Humanities Craft
+  date: 2026-01
+  format: video/mp4 (screencast with slides), transcript as text/plain
+  identifier: https://youtu.be/8sUe4Jkh3uQ
+  license: publicly available recording, no license statement on the carrier
   confidential: false
 created: 2026-07-25
 updated: 2026-07-25

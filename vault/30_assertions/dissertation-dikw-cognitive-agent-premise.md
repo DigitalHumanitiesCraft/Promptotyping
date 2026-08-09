@@ -1,13 +1,14 @@
 ---
-type: claim
-topics: ["[[Concepts]]"]
+type: assertion
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   validation: 2026-07-19
 grounding:
-  - "[[10_distillates/publications/pollin-2025b-dissertation#^s11]]"
-  - "[[10_distillates/publications/pollin-2025b-dissertation#^s12]]"
-  - "[[10_distillates/publications/pollin-2025b-dissertation#^s13]]"
+- '[[20_distillates/publications/pollin-2025b-dissertation#^s11]]'
+- '[[20_distillates/publications/pollin-2025b-dissertation#^s12]]'
+- '[[20_distillates/publications/pollin-2025b-dissertation#^s13]]'
 created: 2026-07-19
 updated: 2026-07-19
 ---
@@ -20,10 +21,10 @@ In the dissertation's account of the DIKW hierarchy the involvement of a cogniti
 
 ## Support
 
-- [[10_distillates/publications/pollin-2025b-dissertation#^s11]] — lists the involvement of a cognitive agent, equated with human agency, among the factors distinguishing DIKW versions.
-- [[10_distillates/publications/pollin-2025b-dissertation#^s12]] — ties the ascent from signals to structured knowledge to the increasing involvement of the cognitive agent, yielding the structures that give data context and significance.
-- [[10_distillates/publications/pollin-2025b-dissertation#^s13]] — characterises information as reflecting the relationship between a cognitive agent and its external environment.
+- [[20_distillates/publications/pollin-2025b-dissertation#^s11]] — lists the involvement of a cognitive agent, equated with human agency, among the factors distinguishing DIKW versions.
+- [[20_distillates/publications/pollin-2025b-dissertation#^s12]] — ties the ascent from signals to structured knowledge to the increasing involvement of the cognitive agent, yielding the structures that give data context and significance.
+- [[20_distillates/publications/pollin-2025b-dissertation#^s13]] — characterises information as reflecting the relationship between a cognitive agent and its external environment.
 
 ## Related
 
-- [[20_claims/dissertation-requirements-from-deep-dive-sessions]]
+- [[30_assertions/dissertation-requirements-from-deep-dive-sessions]]

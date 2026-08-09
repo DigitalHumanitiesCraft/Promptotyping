@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[Genealogy]]"]
+type: assertion
+topics:
+- '[[Genealogy]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/pollin-2019-depcha-bookkeeping#^s2]]"
-  - "[[10_distillates/publications/pollin-2019-depcha-bookkeeping#^s3]]"
+- '[[20_distillates/publications/pollin-2019-depcha-bookkeeping#^s2]]'
+- '[[20_distillates/publications/pollin-2019-depcha-bookkeeping#^s3]]'
 created: 2026-07-23
 updated: 2026-07-23
 ---
@@ -19,10 +20,10 @@ The DEPCHA conference paper of 2019 already documents the iterative, collaborati
 
 ## Support
 
-- [[10_distillates/publications/pollin-2019-depcha-bookkeeping#^s2]] — deep-dives added bk:Group and bk:Tax to the ontology.
-- [[10_distillates/publications/pollin-2019-depcha-bookkeeping#^s3]] — the collective-actor entry prompting bk:Group.
+- [[20_distillates/publications/pollin-2019-depcha-bookkeeping#^s2]] — deep-dives added bk:Group and bk:Tax to the ontology.
+- [[20_distillates/publications/pollin-2019-depcha-bookkeeping#^s3]] — the collective-actor entry prompting bk:Group.
 
 ## Related
 
-- [[20_claims/bookkeeping-ontology-session-driven]]
-- [[20_claims/ontologies-are-shared-vocabularies-for-reuse]]
+- [[30_assertions/bookkeeping-ontology-session-driven]]
+- [[30_assertions/ontologies-are-shared-vocabularies-for-reuse]]

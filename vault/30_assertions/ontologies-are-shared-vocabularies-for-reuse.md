@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[Concepts]]"]
+type: assertion
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/gruber-1993-ontolingua#^s3]]"
-  - "[[10_distillates/publications/pollin-2019-depcha-bookkeeping#^s4]]"
+- '[[20_distillates/publications/gruber-1993-ontolingua#^s3]]'
+- '[[20_distillates/publications/pollin-2019-depcha-bookkeeping#^s4]]'
 created: 2026-07-23
 updated: 2026-07-23
 ---
@@ -19,10 +20,10 @@ Defining a common vocabulary for a shared domain of discourse supports the shari
 
 ## Support
 
-- [[10_distillates/publications/gruber-1993-ontolingua#^s3]] — a common vocabulary supports sharing and reuse of formal knowledge.
-- [[10_distillates/publications/pollin-2019-depcha-bookkeeping#^s4]] — the Bookkeeping Ontology's shared vocabulary eases communication and is reusable.
+- [[20_distillates/publications/gruber-1993-ontolingua#^s3]] — a common vocabulary supports sharing and reuse of formal knowledge.
+- [[20_distillates/publications/pollin-2019-depcha-bookkeeping#^s4]] — the Bookkeeping Ontology's shared vocabulary eases communication and is reusable.
 
 ## Related
 
-- [[20_claims/ontology-is-explicit-specification-of-conceptualization]]
-- [[20_claims/deep-dive-process-documented-2019]]
+- [[30_assertions/ontology-is-explicit-specification-of-conceptualization]]
+- [[30_assertions/deep-dive-process-documented-2019]]

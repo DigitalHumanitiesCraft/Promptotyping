@@ -1,6 +1,6 @@
 ---
 type: glossary
-term: "Write-back"
+term: Write-back
 created: 2026-07-29
 updated: 2026-07-29
 ---

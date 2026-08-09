@@ -1,11 +1,12 @@
 ---
-type: claim
-topics: ["[[Evidence]]"]
+type: assertion
+topics:
+- '[[Evidence]]'
 status: grounded
 checked:
   validation: 2026-07-19
 grounding:
-  - "[[10_distillates/documents/verification-paper-figures-2026-07-19#^s19]]"
+- '[[20_distillates/documents/verification-paper-figures-2026-07-19#^s19]]'
 created: 2026-07-19
 updated: 2026-07-25
 ---
@@ -18,8 +19,8 @@ As verified on 2026-07-19, the Klawiter repository holds 247 test functions. The
 
 ## Support
 
-- [[10_distillates/documents/verification-paper-figures-2026-07-19#^s19]] — records the Klawiter test-function count and the parametrised collection reading behind 264.
+- [[20_distillates/documents/verification-paper-figures-2026-07-19#^s19]] — records the Klawiter test-function count and the parametrised collection reading behind 264.
 
 ## Related
 
-- [[20_claims/klawiter-entries-verified-2026-07-19]]
+- [[30_assertions/klawiter-entries-verified-2026-07-19]]

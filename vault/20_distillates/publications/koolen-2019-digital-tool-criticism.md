@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: koolen-2019
-topics: ["[[Frame]]"]
+topics:
+- '[[Frame]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -24,7 +25,7 @@ Koolen and colleagues propose a model for digital tool criticism as reflective, 
 
 ## Terms
 
-- **digital tool criticism**: the reflective practice of examining how a digital tool affords, shapes, and constrains the method and material of a research question. [[10_distillates/publications/koolen-2019-digital-tool-criticism#^s1]]
+- **digital tool criticism**: the reflective practice of examining how a digital tool affords, shapes, and constrains the method and material of a research question. [[20_distillates/publications/koolen-2019-digital-tool-criticism#^s1]]
 
 ## Open questions
 
@@ -32,4 +33,4 @@ Koolen and colleagues propose a model for digital tool criticism as reflective, 
 
 ## Related
 
-- [[10_distillates/publications/vanes-2018-tool-criticism]] — the companion statement of tool criticism as digital methodology.
+- [[20_distillates/publications/vanes-2018-tool-criticism]] — the companion statement of tool criticism as digital methodology.

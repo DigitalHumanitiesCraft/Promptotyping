@@ -1,6 +1,6 @@
 ---
 type: glossary
-term: "Agentic review"
+term: Agentic review
 created: 2026-07-29
 updated: 2026-07-29
 ---

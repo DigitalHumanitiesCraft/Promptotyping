@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: bleier-2018
-topics: ["[[Concepts]]"]
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -28,7 +29,7 @@ The volume's introduction theorises the digital scholarly edition itself as an i
 
 ## Terms
 
-- **edition as interface**: the digital scholarly edition conceived as a connection point between documents and users, realised through a GUI and an API and bound to its data model. [[10_distillates/publications/bleier-2018-editions-interfaces#^s1]]
+- **edition as interface**: the digital scholarly edition conceived as a connection point between documents and users, realised through a GUI and an API and bound to its data model. [[20_distillates/publications/bleier-2018-editions-interfaces#^s1]]
 
 ## Open questions
 
@@ -36,4 +37,4 @@ The volume's introduction theorises the digital scholarly edition itself as an i
 
 ## Related
 
-- [[10_distillates/publications/pierazzo-2015-digital-editing]] — the interface-as-editorial-decision argument the volume builds on.
+- [[20_distillates/publications/pierazzo-2015-digital-editing]] — the interface-as-editorial-decision argument the volume builds on.

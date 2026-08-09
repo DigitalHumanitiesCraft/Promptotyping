@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: mariani-2025
-topics: ["[[Concepts]]"]
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -26,7 +27,7 @@ The paper presents a client-side web tool that structures and publishes provenan
 
 ## Terms
 
-- **client-side application**: an application that runs entirely in the browser, without server-side hosting, database, or maintenance. [[10_distillates/publications/mariani-2025-prov-a#^s2]]
+- **client-side application**: an application that runs entirely in the browser, without server-side hosting, database, or maintenance. [[20_distillates/publications/mariani-2025-prov-a#^s2]]
 
 ## Open questions
 
@@ -34,4 +35,4 @@ The paper presents a client-side web tool that structures and publishes provenan
 
 ## Related
 
-- [[20_claims/client-side-provenance-tool-is-a-precedent-for-server-free-artefacts]]
+- [[30_assertions/client-side-provenance-tool-is-a-precedent-for-server-free-artefacts]]

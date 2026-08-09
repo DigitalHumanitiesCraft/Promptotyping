@@ -1,13 +1,14 @@
 ---
-type: claim
-topics: ["[[ArtefactVerification]]"]
+type: assertion
+topics:
+- '[[ArtefactVerification]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/grallert-2026-open-tool-registries#^s1]]"
-  - "[[10_distillates/publications/grallert-2026-open-tool-registries#^s2]]"
-  - "[[10_distillates/publications/grallert-2026-open-tool-registries#^s6]]"
+- '[[20_distillates/publications/grallert-2026-open-tool-registries#^s1]]'
+- '[[20_distillates/publications/grallert-2026-open-tool-registries#^s2]]'
+- '[[20_distillates/publications/grallert-2026-open-tool-registries#^s6]]'
 created: 2026-07-23
 updated: 2026-07-23
 ---
@@ -20,10 +21,10 @@ Grallert et al. argue that curated tool directories inevitably go stale in fast-
 
 ## Support
 
-- [[10_distillates/publications/grallert-2026-open-tool-registries#^s1]] — registries as authority files and knowledge bases of methodological practice.
-- [[10_distillates/publications/grallert-2026-open-tool-registries#^s2]] — the directory paradox.
-- [[10_distillates/publications/grallert-2026-open-tool-registries#^s6]] — Wikidata positions tool data as part of the commons.
+- [[20_distillates/publications/grallert-2026-open-tool-registries#^s1]] — registries as authority files and knowledge bases of methodological practice.
+- [[20_distillates/publications/grallert-2026-open-tool-registries#^s2]] — the directory paradox.
+- [[20_distillates/publications/grallert-2026-open-tool-registries#^s6]] — Wikidata positions tool data as part of the commons.
 
 ## Related
 
-- [[20_claims/tadirah-most-adopted-yet-under-maintained]]
+- [[30_assertions/tadirah-most-adopted-yet-under-maintained]]

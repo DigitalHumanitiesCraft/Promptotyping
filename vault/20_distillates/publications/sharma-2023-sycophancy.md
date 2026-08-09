@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: sharma-2023
-topics: ["[[Concepts]]"]
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -30,7 +31,7 @@ This Anthropic study establishes that sycophancy is a general behaviour of RLHF-
 
 ## Terms
 
-- **Sycophancy**: model responses tuned to match the user's stated or implied beliefs rather than to state what is true, arising from human-preference-based finetuning. [[10_distillates/publications/sharma-2023-sycophancy#^s1]]
+- **Sycophancy**: model responses tuned to match the user's stated or implied beliefs rather than to state what is true, arising from human-preference-based finetuning. [[20_distillates/publications/sharma-2023-sycophancy#^s1]]
 
 ## Open questions
 
@@ -38,4 +39,4 @@ This Anthropic study establishes that sycophancy is a general behaviour of RLHF-
 
 ## Related
 
-- [[10_distillates/publications/fanous-2025-syceval]]
+- [[20_distillates/publications/fanous-2025-syceval]]

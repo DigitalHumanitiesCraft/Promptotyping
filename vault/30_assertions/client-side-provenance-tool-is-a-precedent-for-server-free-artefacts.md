@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[ArtefactVerification]]"]
+type: assertion
+topics:
+- '[[ArtefactVerification]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/mariani-2025-prov-a#^s1]]"
-  - "[[10_distillates/publications/mariani-2025-prov-a#^s2]]"
+- '[[20_distillates/publications/mariani-2025-prov-a#^s1]]'
+- '[[20_distillates/publications/mariani-2025-prov-a#^s2]]'
 created: 2026-07-23
 updated: 2026-07-29
 ---
@@ -19,10 +20,10 @@ A web-based provenance tool published in the same venue structures and publishes
 
 ## Support
 
-- [[10_distillates/publications/mariani-2025-prov-a#^s1]] — a web-based tool publishing provenance as LOD.
-- [[10_distillates/publications/mariani-2025-prov-a#^s2]] — runs entirely in the browser without server-side architecture.
+- [[20_distillates/publications/mariani-2025-prov-a#^s1]] — a web-based tool publishing provenance as LOD.
+- [[20_distillates/publications/mariani-2025-prov-a#^s2]] — runs entirely in the browser without server-side architecture.
 
 ## Related
 
-- [[20_claims/MOC-Concepts]]
-- [[20_claims/shared-infrastructure-is-the-opposite-longevity-answer-to-the-self-contained-artefact]]
+- [[30_assertions/MOC-Concepts]]
+- [[30_assertions/shared-infrastructure-is-the-opposite-longevity-answer-to-the-self-contained-artefact]]

@@ -1,6 +1,6 @@
 ---
 type: glossary
-term: "Promptotype"
+term: Promptotype
 created: 2026-07-25
 updated: 2026-07-29
 ---

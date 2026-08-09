@@ -1,11 +1,12 @@
 ---
-type: claim
-topics: ["[[ArtefactVerification]]"]
+type: assertion
+topics:
+- '[[ArtefactVerification]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/roberts-2007-coordinated-multiple-views#^s1]]"
+- '[[20_distillates/publications/roberts-2007-coordinated-multiple-views#^s1]]'
 created: 2026-07-23
 updated: 2026-07-23
 ---
@@ -18,8 +19,8 @@ Coordinated and Multiple Views is an exploratory visualisation technique whose p
 
 ## Support
 
-- [[10_distillates/publications/roberts-2007-coordinated-multiple-views#^s1]] — the premise that different linked representations improve understanding.
+- [[20_distillates/publications/roberts-2007-coordinated-multiple-views#^s1]] — the premise that different linked representations improve understanding.
 
 ## Related
 
-- [[20_claims/scholarly-primitives-classify-activities-not-interfaces]]
+- [[30_assertions/scholarly-primitives-classify-activities-not-interfaces]]

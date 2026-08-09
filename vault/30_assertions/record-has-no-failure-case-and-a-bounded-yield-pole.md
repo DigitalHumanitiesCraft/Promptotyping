@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[Evidence]]"]
+type: assertion
+topics:
+- '[[Evidence]]'
 status: grounded
 checked:
   validation: 2026-07-24
 grounding:
-  - "[[10_distillates/documents/revision-audit-a2-2026-07-23#^s3]]"
-  - "[[10_distillates/documents/verification-paper-figures-2026-07-19#^s18]]"
+- '[[20_distillates/documents/revision-audit-a2-2026-07-23#^s3]]'
+- '[[20_distillates/documents/verification-paper-figures-2026-07-19#^s18]]'
 created: 2026-07-24
 updated: 2026-07-24
 ---
@@ -19,11 +20,11 @@ The project inventory and the worked cases present successes only, so a statemen
 
 ## Support
 
-- [[10_distillates/documents/revision-audit-a2-2026-07-23#^s3]] — establishes the absence of a documented failure case and names the convention-bound artefact as the corpus-anchored negative pole.
-- [[10_distillates/documents/verification-paper-figures-2026-07-19#^s18]] — carries the verified knowledge-file count that rules out a documentation-depth ranking for this pole.
+- [[20_distillates/documents/revision-audit-a2-2026-07-23#^s3]] — establishes the absence of a documented failure case and names the convention-bound artefact as the corpus-anchored negative pole.
+- [[20_distillates/documents/verification-paper-figures-2026-07-19#^s18]] — carries the verified knowledge-file count that rules out a documentation-depth ranking for this pole.
 
 ## Related
 
-- [[20_claims/correspexplorer-knowledge-userstory-count-2026-07-19]]
-- [[20_claims/record-does-not-separate-document-depth-from-verification-effort]]
-- [[20_claims/inherited-visualisation-conventions-carry-positivist-assumptions]]
+- [[30_assertions/correspexplorer-knowledge-userstory-count-2026-07-19]]
+- [[30_assertions/record-does-not-separate-document-depth-from-verification-effort]]
+- [[30_assertions/inherited-visualisation-conventions-carry-positivist-assumptions]]

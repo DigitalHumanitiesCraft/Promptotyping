@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: flanders-2019
-topics: ["[[Concepts]]"]
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -24,7 +25,7 @@ In the editors' introduction to the volume, Flanders and Jannidis hold that data
 
 ## Terms
 
-- **data modelling (humanities)**: the interpretive act of making explicit, in a formal representation, the shaping choices and assumptions a scholar brings to a text or artefact. [[10_distillates/publications/flanders-2019-shape-of-data#^s1]]
+- **data modelling (humanities)**: the interpretive act of making explicit, in a formal representation, the shaping choices and assumptions a scholar brings to a text or artefact. [[20_distillates/publications/flanders-2019-shape-of-data#^s1]]
 
 ## Open questions
 
@@ -32,5 +33,5 @@ In the editors' introduction to the volume, Flanders and Jannidis hold that data
 
 ## Related
 
-- [[10_distillates/publications/owens-2011-defining-data]] — data as manufactured and created rather than given.
-- [[10_distillates/publications/schoech-2013-big-smart-clean-messy]] — humanities data as a selectively constructed abstraction.
+- [[20_distillates/publications/owens-2011-defining-data]] — data as manufactured and created rather than given.
+- [[20_distillates/publications/schoech-2013-big-smart-clean-messy]] — humanities data as a selectively constructed abstraction.

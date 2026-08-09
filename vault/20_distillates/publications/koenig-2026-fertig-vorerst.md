@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: koenig-2026
-topics: ["[[Concepts]]"]
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -28,7 +29,7 @@ The article argues that in the digital humanities the provisional is not a defec
 
 ## Terms
 
-- **Unfertigkeit**: unfinishedness as a cultivated epistemic value, the deliberate keeping-open of knowledge processes as a resource. [[10_distillates/publications/koenig-2026-fertig-vorerst#^s2]]
+- **Unfertigkeit**: unfinishedness as a cultivated epistemic value, the deliberate keeping-open of knowledge processes as a resource. [[20_distillates/publications/koenig-2026-fertig-vorerst#^s2]]
 
 ## Open questions
 
@@ -36,4 +37,4 @@ The article argues that in the digital humanities the provisional is not a defec
 
 ## Related
 
-- [[20_claims/unfinishedness-is-an-epistemic-value-in-the-digital-humanities]]
+- [[30_assertions/unfinishedness-is-an-epistemic-value-in-the-digital-humanities]]

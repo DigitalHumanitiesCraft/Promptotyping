@@ -1,11 +1,12 @@
 ---
-type: claim
-topics: ["[[Evidence]]"]
+type: assertion
+topics:
+- '[[Evidence]]'
 status: grounded
 checked:
   validation: 2026-07-19
 grounding:
-  - "[[10_distillates/documents/verification-paper-figures-2026-07-19#^s18]]"
+- '[[20_distillates/documents/verification-paper-figures-2026-07-19#^s18]]'
 created: 2026-07-19
 updated: 2026-07-24
 ---
@@ -22,8 +23,8 @@ The statement previously read 34 US-IDs and attributed 37 to the paper, which in
 
 ## Support
 
-- [[10_distillates/documents/verification-paper-figures-2026-07-19#^s18]] — records the current CorrespExplorer knowledge file and user-story counts.
+- [[20_distillates/documents/verification-paper-figures-2026-07-19#^s18]] — records the current CorrespExplorer knowledge file and user-story counts.
 
 ## Related
 
-- [[20_claims/correspexplorer-figures-verified-2026-07-19]]
+- [[30_assertions/correspexplorer-figures-verified-2026-07-19]]

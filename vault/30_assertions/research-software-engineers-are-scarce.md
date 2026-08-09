@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[Frame]]"]
+type: assertion
+topics:
+- '[[Frame]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/baxter-2012-research-software-engineer#^s1]]"
-  - "[[10_distillates/publications/baxter-2012-research-software-engineer#^s2]]"
+- '[[20_distillates/publications/baxter-2012-research-software-engineer#^s1]]'
+- '[[20_distillates/publications/baxter-2012-research-software-engineer#^s2]]'
 created: 2026-07-23
 updated: 2026-07-29
 ---
@@ -19,10 +20,10 @@ Research software engineers who hold both research experience and domain knowled
 
 ## Support
 
-- [[10_distillates/publications/baxter-2012-research-software-engineer#^s1]] — research-experienced software engineers in very short supply.
-- [[10_distillates/publications/baxter-2012-research-software-engineer#^s2]] — contract programmers as a failing substitute.
+- [[20_distillates/publications/baxter-2012-research-software-engineer#^s1]] — research-experienced software engineers in very short supply.
+- [[20_distillates/publications/baxter-2012-research-software-engineer#^s2]] — contract programmers as a failing substitute.
 
 ## Related
 
-- [[20_claims/MOC-Frame]]
-- [[20_claims/rse-institutionalised-intermediary-profession]]
+- [[30_assertions/MOC-Frame]]
+- [[30_assertions/rse-institutionalised-intermediary-profession]]

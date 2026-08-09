@@ -1,6 +1,6 @@
 ---
 type: glossary
-term: "Verification"
+term: Verification
 created: 2026-07-25
 updated: 2026-07-25
 ---

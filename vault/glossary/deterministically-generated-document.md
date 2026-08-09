@@ -1,6 +1,6 @@
 ---
 type: glossary
-term: "Deterministically generated document"
+term: Deterministically generated document
 created: 2026-07-25
 updated: 2026-07-25
 ---

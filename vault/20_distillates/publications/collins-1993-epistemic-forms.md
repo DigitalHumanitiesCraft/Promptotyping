@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: collins-1993
-topics: ["[[Concepts]]"]
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -24,7 +25,7 @@ Collins and Ferguson define an epistemic form as a target knowledge structure th
 
 ## Terms
 
-- **epistemic form**: a target knowledge structure that organises inquiry by the kind of knowledge to be produced. [[10_distillates/publications/collins-1993-epistemic-forms#^s1]]
+- **epistemic form**: a target knowledge structure that organises inquiry by the kind of knowledge to be produced. [[20_distillates/publications/collins-1993-epistemic-forms#^s1]]
 
 ## Open questions
 
@@ -32,4 +33,4 @@ Collins and Ferguson define an epistemic form as a target knowledge structure th
 
 ## Related
 
-- [[10_distillates/publications/unsworth-2000-scholarly-primitives]] — a contrasting classification of research activities rather than knowledge structures.
+- [[20_distillates/publications/unsworth-2000-scholarly-primitives]] — a contrasting classification of research activities rather than knowledge structures.

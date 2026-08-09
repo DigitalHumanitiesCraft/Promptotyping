@@ -1,6 +1,6 @@
 ---
 type: glossary
-term: "Epistemic yield"
+term: Epistemic yield
 created: 2026-07-25
 updated: 2026-07-25
 ---

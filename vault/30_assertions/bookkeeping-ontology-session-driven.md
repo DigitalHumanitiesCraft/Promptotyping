@@ -1,14 +1,15 @@
 ---
-type: claim
-topics: ["[[Genealogy]]"]
+type: assertion
+topics:
+- '[[Genealogy]]'
 status: grounded
 checked:
   validation: 2026-07-19
 grounding:
-  - "[[10_distillates/publications/pollin-2025b-dissertation#^s7]]"
-  - "[[10_distillates/publications/pollin-2025b-dissertation#^s8]]"
-  - "[[10_distillates/publications/pollin-2025b-dissertation#^s9]]"
-  - "[[10_distillates/publications/pollin-2025b-dissertation#^s10]]"
+- '[[20_distillates/publications/pollin-2025b-dissertation#^s7]]'
+- '[[20_distillates/publications/pollin-2025b-dissertation#^s8]]'
+- '[[20_distillates/publications/pollin-2025b-dissertation#^s9]]'
+- '[[20_distillates/publications/pollin-2025b-dissertation#^s10]]'
 created: 2026-07-19
 updated: 2026-07-19
 ---
@@ -21,12 +22,12 @@ The collaborative requirements sessions surfaced recurring representation needs 
 
 ## Support
 
-- [[10_distillates/publications/pollin-2025b-dissertation#^s7]] — states that the collaborative sessions surfaced recurring representation needs shaping the ontology.
-- [[10_distillates/publications/pollin-2025b-dissertation#^s8]] — traces the class Group to tax-record sessions.
-- [[10_distillates/publications/pollin-2025b-dissertation#^s9]] — traces the class Right to the Rentrechnung (1718) sessions.
-- [[10_distillates/publications/pollin-2025b-dissertation#^s10]] — traces the class AgentMention and the property by to Wheaton Day Book sessions.
+- [[20_distillates/publications/pollin-2025b-dissertation#^s7]] — states that the collaborative sessions surfaced recurring representation needs shaping the ontology.
+- [[20_distillates/publications/pollin-2025b-dissertation#^s8]] — traces the class Group to tax-record sessions.
+- [[20_distillates/publications/pollin-2025b-dissertation#^s9]] — traces the class Right to the Rentrechnung (1718) sessions.
+- [[20_distillates/publications/pollin-2025b-dissertation#^s10]] — traces the class AgentMention and the property by to Wheaton Day Book sessions.
 
 ## Related
 
-- [[20_claims/dissertation-requirements-from-deep-dive-sessions]]
-- [[20_claims/dissertation-requirements-feed-built-artifacts]]
+- [[30_assertions/dissertation-requirements-from-deep-dive-sessions]]
+- [[30_assertions/dissertation-requirements-feed-built-artifacts]]

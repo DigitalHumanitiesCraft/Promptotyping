@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: hong-2025
-topics: ["[[Concepts]]"]
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -28,7 +29,7 @@ A Chroma technical report showing that LLM performance degrades non-uniformly as
 
 ## Terms
 
-- **Context rot**: the non-uniform decline of model reliability as input length grows, distinct from increased task difficulty, which the report isolates by holding complexity fixed. [[10_distillates/publications/hong-2025-context-rot#^s2]]
+- **Context rot**: the non-uniform decline of model reliability as input length grows, distinct from increased task difficulty, which the report isolates by holding complexity fixed. [[20_distillates/publications/hong-2025-context-rot#^s2]]
 
 ## Open questions
 
@@ -36,4 +37,4 @@ A Chroma technical report showing that LLM performance degrades non-uniformly as
 
 ## Related
 
-- [[10_distillates/publications/mei-2025-context-engineering]]
+- [[20_distillates/publications/mei-2025-context-engineering]]

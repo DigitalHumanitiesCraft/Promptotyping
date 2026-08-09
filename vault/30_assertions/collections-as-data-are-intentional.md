@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[Frame]]"]
+type: assertion
+topics:
+- '[[Frame]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/collectionsasdata-2019-santa-barbara#^s2]]"
-  - "[[10_distillates/publications/collectionsasdata-2019-santa-barbara#^s3]]"
+- '[[20_distillates/publications/collectionsasdata-2019-santa-barbara#^s2]]'
+- '[[20_distillates/publications/collectionsasdata-2019-santa-barbara#^s3]]'
 created: 2026-07-23
 updated: 2026-07-23
 ---
@@ -19,9 +20,9 @@ Cultural-heritage institutions have rarely designed collections or access with c
 
 ## Support
 
-- [[10_distillates/publications/collectionsasdata-2019-santa-barbara#^s2]] — treating collections as data signals an intention to support computational use.
-- [[10_distillates/publications/collectionsasdata-2019-santa-barbara#^s3]] — collections as data designed for everyone serve no one.
+- [[20_distillates/publications/collectionsasdata-2019-santa-barbara#^s2]] — treating collections as data signals an intention to support computational use.
+- [[20_distillates/publications/collectionsasdata-2019-santa-barbara#^s3]] — collections as data designed for everyone serve no one.
 
 ## Related
 
-- [[20_claims/humanities-data-is-constructed-not-given]]
+- [[30_assertions/humanities-data-is-constructed-not-given]]

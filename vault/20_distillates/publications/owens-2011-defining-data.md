@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: owens-2011
-topics: ["[[Concepts]]"]
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -28,7 +29,7 @@ Owens argues that data is a manufactured, multifaceted object that humanists can
 
 ## Terms
 
-- **data (for humanists)**: a manufactured, multifaceted object, readable as artifact, text, and processable information, that can hold evidentiary value. [[10_distillates/publications/owens-2011-defining-data#^s2]]
+- **data (for humanists)**: a manufactured, multifaceted object, readable as artifact, text, and processable information, that can hold evidentiary value. [[20_distillates/publications/owens-2011-defining-data#^s2]]
 
 ## Open questions
 
@@ -36,5 +37,5 @@ Owens argues that data is a manufactured, multifaceted object that humanists can
 
 ## Related
 
-- [[10_distillates/publications/schoech-2013-big-smart-clean-messy]] — builds on Owens for a humanities definition of data.
-- [[10_distillates/publications/drucker-2011-humanities-approaches]] — the capta companion to the constructedness argument.
+- [[20_distillates/publications/schoech-2013-big-smart-clean-messy]] — builds on Owens for a humanities definition of data.
+- [[20_distillates/publications/drucker-2011-humanities-approaches]] — the capta companion to the constructedness argument.

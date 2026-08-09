@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: soiland-2022
-topics: ["[[Method]]"]
+topics:
+- '[[Method]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -28,7 +29,7 @@ RO-Crate is a lightweight, community-driven way to package research artefacts wi
 
 ## Terms
 
-- **RO-Crate**: a lightweight Schema.org/JSON-LD packaging of research artefacts and their metadata for machines. [[10_distillates/publications/soiland-2022-ro-crate#^s1]]
+- **RO-Crate**: a lightweight Schema.org/JSON-LD packaging of research artefacts and their metadata for machines. [[20_distillates/publications/soiland-2022-ro-crate#^s1]]
 
 ## Open questions
 
@@ -36,5 +37,5 @@ RO-Crate is a lightweight, community-driven way to package research artefacts wi
 
 ## Related
 
-- [[10_distillates/publications/miksa-2019-machine-actionable-dmps]] — machine-actionable research documents.
-- [[10_distillates/publications/wilkinson-2016-fair-principles]] — the FAIR programme RO-Crate operationalises.
+- [[20_distillates/publications/miksa-2019-machine-actionable-dmps]] — machine-actionable research documents.
+- [[20_distillates/publications/wilkinson-2016-fair-principles]] — the FAIR programme RO-Crate operationalises.

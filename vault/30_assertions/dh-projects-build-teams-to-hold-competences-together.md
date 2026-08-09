@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[Frame]]"]
+type: assertion
+topics:
+- '[[Frame]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/siemens-2009-reply-all-teams#^s1]]"
-  - "[[10_distillates/publications/siemens-2009-reply-all-teams#^s2]]"
+- '[[20_distillates/publications/siemens-2009-reply-all-teams#^s1]]'
+- '[[20_distillates/publications/siemens-2009-reply-all-teams#^s2]]'
 created: 2026-07-23
 updated: 2026-07-29
 ---
@@ -19,10 +20,10 @@ Digital-humanities research coordinates academics, students, programmers, and li
 
 ## Support
 
-- [[10_distillates/publications/siemens-2009-reply-all-teams#^s1]] — coordination across academics, students, programmers, and librarians.
-- [[10_distillates/publications/siemens-2009-reply-all-teams#^s2]] — the definition and success conditions of the team.
+- [[20_distillates/publications/siemens-2009-reply-all-teams#^s1]] — coordination across academics, students, programmers, and librarians.
+- [[20_distillates/publications/siemens-2009-reply-all-teams#^s2]] — the definition and success conditions of the team.
 
 ## Related
 
-- [[20_claims/MOC-Frame]]
-- [[20_claims/rse-institutionalised-intermediary-profession]]
+- [[30_assertions/MOC-Frame]]
+- [[30_assertions/rse-institutionalised-intermediary-profession]]

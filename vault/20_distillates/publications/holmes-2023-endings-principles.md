@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: holmes-2023
-topics: ["[[Method]]"]
+topics:
+- '[[Method]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -30,7 +31,7 @@ Holmes and Takeda report the Endings Project's practice of rebuilding digital pr
 
 ## Terms
 
-- **Endings Principles**: guidelines for durable digital projects built as static, dependency-free sites. [[10_distillates/publications/holmes-2023-endings-principles#^s2]]
+- **Endings Principles**: guidelines for durable digital projects built as static, dependency-free sites. [[20_distillates/publications/holmes-2023-endings-principles#^s2]]
 
 ## Open questions
 
@@ -38,4 +39,4 @@ Holmes and Takeda report the Endings Project's practice of rebuilding digital pr
 
 ## Related
 
-- [[10_distillates/publications/risam-2022-minimal-computing]] — the minimal-computing companion.
+- [[20_distillates/publications/risam-2022-minimal-computing]] — the minimal-computing companion.

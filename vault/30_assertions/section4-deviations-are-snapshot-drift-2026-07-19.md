@@ -1,11 +1,12 @@
 ---
-type: claim
-topics: ["[[Evidence]]"]
+type: assertion
+topics:
+- '[[Evidence]]'
 status: grounded
 checked:
   validation: 2026-07-19
 grounding:
-  - "[[10_distillates/documents/verification-paper-figures-2026-07-19#^s26]]"
+- '[[20_distillates/documents/verification-paper-figures-2026-07-19#^s26]]'
 created: 2026-07-19
 updated: 2026-07-29
 ---
@@ -18,9 +19,9 @@ Several deviations in the paper's project inventory are snapshot drift, arising 
 
 ## Support
 
-- [[10_distillates/documents/verification-paper-figures-2026-07-19#^s26]] — records the snapshot-drift reading and the editorial equivalence of dating and updating.
+- [[20_distillates/documents/verification-paper-figures-2026-07-19#^s26]] — records the snapshot-drift reading and the editorial equivalence of dating and updating.
 
 ## Related
 
-- [[20_claims/m3gim-decision-count-2026-07-19]]
-- [[20_claims/zbz-commit-count-2026-07-19]]
+- [[30_assertions/m3gim-decision-count-2026-07-19]]
+- [[30_assertions/zbz-commit-count-2026-07-19]]

@@ -1,13 +1,14 @@
 ---
-type: claim
-topics: ["[[ArtefactVerification]]"]
+type: assertion
+topics:
+- '[[ArtefactVerification]]'
 status: grounded
 checked: {}
 grounding:
-  - "[[10_distillates/publications/strutz-2026-tei-evaluation-framework#^s4]]"
-  - "[[10_distillates/publications/strutz-2026-tei-evaluation-framework#^s5]]"
-  - "[[10_distillates/publications/strutz-2026-tei-evaluation-framework#^s6]]"
-  - "[[10_distillates/publications/strutz-2026-tei-evaluation-framework#^s8]]"
+- '[[20_distillates/publications/strutz-2026-tei-evaluation-framework#^s4]]'
+- '[[20_distillates/publications/strutz-2026-tei-evaluation-framework#^s5]]'
+- '[[20_distillates/publications/strutz-2026-tei-evaluation-framework#^s6]]'
+- '[[20_distillates/publications/strutz-2026-tei-evaluation-framework#^s8]]'
 created: 2026-07-29
 updated: 2026-07-29
 ---
@@ -20,13 +21,13 @@ The framework separates the properties of a generated TEI document into ordered 
 
 ## Support
 
-- [[10_distillates/publications/strutz-2026-tei-evaluation-framework#^s4]] — the five dimensions the framework names.
-- [[10_distillates/publications/strutz-2026-tei-evaluation-framework#^s5]] — the stated aim, separating scalable automated validation from targeted human review.
-- [[10_distillates/publications/strutz-2026-tei-evaluation-framework#^s6]] — the regime assigned to each band of dimensions.
-- [[10_distillates/publications/strutz-2026-tei-evaluation-framework#^s8]] — well-formedness as the foundational, blocking check.
+- [[20_distillates/publications/strutz-2026-tei-evaluation-framework#^s4]] — the five dimensions the framework names.
+- [[20_distillates/publications/strutz-2026-tei-evaluation-framework#^s5]] — the stated aim, separating scalable automated validation from targeted human review.
+- [[20_distillates/publications/strutz-2026-tei-evaluation-framework#^s6]] — the regime assigned to each band of dimensions.
+- [[20_distillates/publications/strutz-2026-tei-evaluation-framework#^s8]] — well-formedness as the foundational, blocking check.
 
 ## Related
 
-- [[20_claims/glam-practice-layers-llm-extraction-with-deterministic-checks-and-expert-review]]
-- [[20_claims/tei-permits-several-valid-encodings-of-one-phenomenon]]
-- [[20_claims/llm-judgement-approximates-human-preference-and-carries-known-biases]]
+- [[30_assertions/glam-practice-layers-llm-extraction-with-deterministic-checks-and-expert-review]]
+- [[30_assertions/tei-permits-several-valid-encodings-of-one-phenomenon]]
+- [[30_assertions/llm-judgement-approximates-human-preference-and-carries-known-biases]]

@@ -1,13 +1,14 @@
 ---
-type: claim
-topics: ["[[Frame]]"]
+type: assertion
+topics:
+- '[[Frame]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/sharma-2023-sycophancy#^s1]]"
-  - "[[10_distillates/publications/sharma-2023-sycophancy#^s2]]"
-  - "[[10_distillates/publications/fanous-2025-syceval#^s1]]"
+- '[[20_distillates/publications/sharma-2023-sycophancy#^s1]]'
+- '[[20_distillates/publications/sharma-2023-sycophancy#^s2]]'
+- '[[20_distillates/publications/fanous-2025-syceval#^s1]]'
 created: 2026-07-23
 updated: 2026-07-29
 ---
@@ -20,11 +21,11 @@ Sycophancy is a documented and general behaviour of current LLM assistants: they
 
 ## Support
 
-- [[10_distillates/publications/sharma-2023-sycophancy#^s1]] — defines sycophancy as responses matching user beliefs over truthful ones, induced by human feedback.
-- [[10_distillates/publications/sharma-2023-sycophancy#^s2]] — five production assistants exhibit it consistently across varied tasks.
-- [[10_distillates/publications/fanous-2025-syceval#^s1]] — corroborates the definition as prioritising user agreement over independent reasoning, framed as a reliability risk.
+- [[20_distillates/publications/sharma-2023-sycophancy#^s1]] — defines sycophancy as responses matching user beliefs over truthful ones, induced by human feedback.
+- [[20_distillates/publications/sharma-2023-sycophancy#^s2]] — five production assistants exhibit it consistently across varied tasks.
+- [[20_distillates/publications/fanous-2025-syceval#^s1]] — corroborates the definition as prioritising user agreement over independent reasoning, framed as a reliability risk.
 
 ## Related
 
-- [[20_claims/fanous-frontier-models-sycophantic-in-most-cases]]
-- [[20_claims/MOC-Concepts]]
+- [[30_assertions/fanous-frontier-models-sycophantic-in-most-cases]]
+- [[30_assertions/MOC-Concepts]]

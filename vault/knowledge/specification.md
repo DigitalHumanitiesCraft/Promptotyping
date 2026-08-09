@@ -1,17 +1,21 @@
 ---
 title: Specification
 project:
-  name: "Promptotyping Paper Vault"
-  repository: "https://github.com/DigitalHumanitiesCraft/Promptotyping"
+  name: Promptotyping Paper Vault
+  repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
 status: draft
 language: en
-created: "2026-07-19"
-updated: "2026-07-25"
-expected-warnings: [W-NO-DELIVERABLE]
-related: [index, schema, operations]
+created: '2026-07-19'
+updated: '2026-07-25'
+expected-warnings:
+- W-NO-DELIVERABLE
+related:
+- index
+- schema
+- operations
 ---
 
 # Specification
@@ -68,10 +72,10 @@ Descriptive, one line per entry, no narration of the work that produced the entr
 <!-- One line per decision with date; the reasoning behind each lives in the journal. -->
 
 - 2026-07-19: Vault instantiated from the Grounded Vault template on operator instruction; the parking of a paper-work instantiation recorded in the Promptotyping repo's plan is lifted.
-- 2026-07-19: The deliverable stays canonical at the root of this repository; `30_deliverable/` holds no copy. The chapter register in [[knowledge/state]] maps sections to claims. Deviation from the template default, to avoid drift between two copies of the paper.
-- 2026-07-25: The footnote contract of the deliverable layer does not take effect in this instance, and what stands in its place is weaker. `_check_chapter` in `tools/validate.py` checks footnote keywords, the claim mirror and the posit count against the chapter files in `30_deliverable/`. That folder is empty because the deliverable is external, and the paper's own footnotes are ordinary literature notes rather than claim anchors, so the check reports green without having examined anything. In its place this instance runs `tools/coverage.py`, which reads `knowledge/paper.md`, proposes its empirical statements as candidates and reports which of them no claim in `20_claims/` matches. That comparison is lexical, over rare shared tokens and figures. A hit says that some claim uses similar wording; it says nothing about whether the claim supports the statement, and a miss can be a wording difference. The output is a warning that directs reading and carries no verdict. Machine checking of the provenance chain from a paper sentence to its claim therefore does not exist in this instance, and the whole weight of that step rests on the verification role.
-- 2026-07-25: Two checks were added to `tools/validate.py` after an audit found the gaps they close. The inventory obligation (`E-INVENTORY`) requires every document in `00_representation/` and `10_distillates/` to be named in one of the two registers, [[knowledge/state]] or [[knowledge/register-paper-sources]]; the registers divide the work between project documents and cited publications, so either one counts as proof of record. Its trigger was a representation with its distillate that was entered in no register and stayed invisible for months. The second check reports the state of the deliverable layer, since `_check_chapter` had no subject in this instance and the validator reported green on the most expensive part of its contract without having examined anything.
-- 2026-07-25: The success criterion of a validation run over this instance is zero errors and exactly one warning, `W-NO-DELIVERABLE` on `30_deliverable/`, which states that the footnote contract does not take effect here. The warning is expected and stays, because the deliverable is external by the decision of 2026-07-19 and the folder will stay empty; it keeps the gap visible instead of letting a green run suggest that the chain from a paper sentence to its claim was machine-checked. What stands in its place is `tools/coverage.py` and the verification role, under the terms of the decision below. A run that reports a second warning or any error is a finding.
+- 2026-07-19: The deliverable stays canonical at the root of this repository; `40_output/` holds no copy. The chapter register in [[knowledge/state]] maps sections to claims. Deviation from the template default, to avoid drift between two copies of the paper.
+- 2026-07-25: The footnote contract of the deliverable layer does not take effect in this instance, and what stands in its place is weaker. `_check_chapter` in `tools/validate.py` checks footnote keywords, the claim mirror and the posit count against the chapter files in `40_output/`. That folder is empty because the deliverable is external, and the paper's own footnotes are ordinary literature notes rather than claim anchors, so the check reports green without having examined anything. In its place this instance runs `tools/coverage.py`, which reads `knowledge/paper.md`, proposes its empirical statements as candidates and reports which of them no claim in `30_assertions/` matches. That comparison is lexical, over rare shared tokens and figures. A hit says that some claim uses similar wording; it says nothing about whether the claim supports the statement, and a miss can be a wording difference. The output is a warning that directs reading and carries no verdict. Machine checking of the provenance chain from a paper sentence to its claim therefore does not exist in this instance, and the whole weight of that step rests on the verification role.
+- 2026-07-25: Two checks were added to `tools/validate.py` after an audit found the gaps they close. The inventory obligation (`E-INVENTORY`) requires every document in `10_markdown/` and `20_distillates/` to be named in one of the two registers, [[knowledge/state]] or [[knowledge/register-paper-sources]]; the registers divide the work between project documents and cited publications, so either one counts as proof of record. Its trigger was a representation with its distillate that was entered in no register and stayed invisible for months. The second check reports the state of the deliverable layer, since `_check_chapter` had no subject in this instance and the validator reported green on the most expensive part of its contract without having examined anything.
+- 2026-07-25: The success criterion of a validation run over this instance is zero errors and exactly one warning, `W-NO-DELIVERABLE` on `40_output/`, which states that the footnote contract does not take effect here. The warning is expected and stays, because the deliverable is external by the decision of 2026-07-19 and the folder will stay empty; it keeps the gap visible instead of letting a green run suggest that the chain from a paper sentence to its claim was machine-checked. What stands in its place is `tools/coverage.py` and the verification role, under the terms of the decision below. A run that reports a second warning or any error is a finding.
 - 2026-07-25: The References section of the paper and the records in `references/` stay two stocks maintained by hand, and `tools/bibliography.py` keeps them comparable instead of merging them. It renders the section from the records and reports the differences in both directions; it never writes to `knowledge/paper.md`, because the paper is the deliverable and adopting a rendered line is the operator's decision. Its rendering rules were read off the existing section, and the script's header records where the section is inconsistent and where the records fall short of what it prints.
 - 2026-07-25: The canonical deliverable file is `knowledge/paper.md`. `_content/paper/` holds the section files the site renders and is the derived publication form, regenerated from the canonical text after release. Where the two diverge, `knowledge/paper.md` decides. Correction of the 2026-07-19 wording, which named the derived form as canonical.
 - 2026-07-19: Topic backbone set to Genealogy, Method, Evidence, Concepts, Limitations.

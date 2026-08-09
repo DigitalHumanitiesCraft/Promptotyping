@@ -1,13 +1,14 @@
 ---
-type: claim
-topics: ["[[Genealogy]]"]
+type: assertion
+topics:
+- '[[Genealogy]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/pollin-2025c-critical-vibing#^s5]]"
-  - "[[10_distillates/publications/pollin-2025c-critical-vibing#^s7]]"
-  - "[[10_distillates/publications/pollin-2025c-critical-vibing#^s6]]"
+- '[[20_distillates/publications/pollin-2025c-critical-vibing#^s5]]'
+- '[[20_distillates/publications/pollin-2025c-critical-vibing#^s7]]'
+- '[[20_distillates/publications/pollin-2025c-critical-vibing#^s6]]'
 created: 2026-07-23
 updated: 2026-07-23
 ---
@@ -20,10 +21,10 @@ The first publicly documented Promptotyping experiment built a working timeline 
 
 ## Support
 
-- [[10_distillates/publications/pollin-2025c-critical-vibing#^s5]] — a working timeline annotation tool built in two hours.
-- [[10_distillates/publications/pollin-2025c-critical-vibing#^s7]] — the intervention to reduce complexity.
-- [[10_distillates/publications/pollin-2025c-critical-vibing#^s6]] — terminology steering the generated architecture.
+- [[20_distillates/publications/pollin-2025c-critical-vibing#^s5]] — a working timeline annotation tool built in two hours.
+- [[20_distillates/publications/pollin-2025c-critical-vibing#^s7]] — the intervention to reduce complexity.
+- [[20_distillates/publications/pollin-2025c-critical-vibing#^s6]] — terminology steering the generated architecture.
 
 ## Related
 
-- [[20_claims/critical-expert-in-the-loop-double-reflection-loop]]
+- [[30_assertions/critical-expert-in-the-loop-double-reflection-loop]]

@@ -1,15 +1,16 @@
 ---
-type: claim
-topics: ["[[Method]]"]
+type: assertion
+topics:
+- '[[Method]]'
 status: grounded
 checked: {}
 grounding:
-  - "[[10_distillates/publications/saltzer-1975-protection-of-information#^s1]]"
-  - "[[10_distillates/publications/saltzer-1975-protection-of-information#^s2]]"
-  - "[[10_distillates/publications/saltzer-1975-protection-of-information#^s3]]"
-  - "[[10_distillates/publications/saltzer-1975-protection-of-information#^s4]]"
-  - "[[10_distillates/publications/saltzer-1975-protection-of-information#^s5]]"
-  - "[[10_distillates/publications/saltzer-1975-protection-of-information#^s6]]"
+- '[[20_distillates/publications/saltzer-1975-protection-of-information#^s1]]'
+- '[[20_distillates/publications/saltzer-1975-protection-of-information#^s2]]'
+- '[[20_distillates/publications/saltzer-1975-protection-of-information#^s3]]'
+- '[[20_distillates/publications/saltzer-1975-protection-of-information#^s4]]'
+- '[[20_distillates/publications/saltzer-1975-protection-of-information#^s5]]'
+- '[[20_distillates/publications/saltzer-1975-protection-of-information#^s6]]'
 created: 2026-07-26
 updated: 2026-07-26
 ---
@@ -22,15 +23,15 @@ Saltzer and Schroeder state least privilege as one of eight protection design pr
 
 ## Support
 
-- [[10_distillates/publications/saltzer-1975-protection-of-information#^s1]] — the eight principles and why they are offered.
-- [[10_distillates/publications/saltzer-1975-protection-of-information#^s2]] — the statement of the principle itself.
-- [[10_distillates/publications/saltzer-1975-protection-of-information#^s3]] — the damage bound.
-- [[10_distillates/publications/saltzer-1975-protection-of-information#^s4]] — the reduction of privileged interactions.
-- [[10_distillates/publications/saltzer-1975-protection-of-information#^s5]] — the narrowed audit.
-- [[10_distillates/publications/saltzer-1975-protection-of-information#^s6]] — the principle as a rule for where a boundary goes.
+- [[20_distillates/publications/saltzer-1975-protection-of-information#^s1]] — the eight principles and why they are offered.
+- [[20_distillates/publications/saltzer-1975-protection-of-information#^s2]] — the statement of the principle itself.
+- [[20_distillates/publications/saltzer-1975-protection-of-information#^s3]] — the damage bound.
+- [[20_distillates/publications/saltzer-1975-protection-of-information#^s4]] — the reduction of privileged interactions.
+- [[20_distillates/publications/saltzer-1975-protection-of-information#^s5]] — the narrowed audit.
+- [[20_distillates/publications/saltzer-1975-protection-of-information#^s6]] — the principle as a rule for where a boundary goes.
 
 ## Related
 
-- [[20_claims/multi-agent-frameworks-assign-roles-along-an-encoded-procedure]]
-- [[20_claims/dialogue-agent-behaviour-is-described-as-role-play]]
-- [[20_claims/MOC-Method]]
+- [[30_assertions/multi-agent-frameworks-assign-roles-along-an-encoded-procedure]]
+- [[30_assertions/dialogue-agent-behaviour-is-described-as-role-play]]
+- [[30_assertions/MOC-Method]]

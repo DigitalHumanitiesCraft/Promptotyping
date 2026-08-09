@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[Concepts]]"]
+type: assertion
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/star-1989-boundary-objects#^s1]]"
-  - "[[10_distillates/publications/star-1989-boundary-objects#^s3]]"
+- '[[20_distillates/publications/star-1989-boundary-objects#^s1]]'
+- '[[20_distillates/publications/star-1989-boundary-objects#^s3]]'
 created: 2026-07-23
 updated: 2026-07-29
 ---
@@ -19,9 +20,9 @@ A boundary object is plastic enough to serve the different local needs of the co
 
 ## Support
 
-- [[10_distillates/publications/star-1989-boundary-objects#^s1]] — the plastic-yet-robust definition.
-- [[10_distillates/publications/star-1989-boundary-objects#^s3]] — managing boundary objects as the key to cross-world coherence.
+- [[20_distillates/publications/star-1989-boundary-objects#^s1]] — the plastic-yet-robust definition.
+- [[20_distillates/publications/star-1989-boundary-objects#^s3]] — managing boundary objects as the key to cross-world coherence.
 
 ## Related
 
-- [[20_claims/MOC-Concepts]]
+- [[30_assertions/MOC-Concepts]]

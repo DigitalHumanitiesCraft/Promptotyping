@@ -1,6 +1,6 @@
 ---
 type: glossary
-term: "Knowledge Document"
+term: Knowledge Document
 created: 2026-07-25
 updated: 2026-07-25
 ---

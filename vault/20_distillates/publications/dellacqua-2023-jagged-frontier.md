@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: dellacqua-2023
-topics: ["[[Frame]]"]
+topics:
+- '[[Frame]]'
 status: grounded
 checked:
   quote: 2026-07-26
@@ -33,8 +34,8 @@ A pre-registered field experiment with consultants at Boston Consulting Group, m
 
 ## Terms
 
-- **Jagged technological frontier**: the uneven boundary of AI capability, along which task difficulty as a human judges it fails to predict whether AI handles the task. [[10_distillates/publications/dellacqua-2023-jagged-frontier#^s1]]
-- **Centaurs and Cyborgs**: the two patterns of successful human-AI integration the study observed, division of labour between human and AI against continuous interleaving of the task flow with the AI. [[10_distillates/publications/dellacqua-2023-jagged-frontier#^s1]]
+- **Jagged technological frontier**: the uneven boundary of AI capability, along which task difficulty as a human judges it fails to predict whether AI handles the task. [[20_distillates/publications/dellacqua-2023-jagged-frontier#^s1]]
+- **Centaurs and Cyborgs**: the two patterns of successful human-AI integration the study observed, division of labour between human and AI against continuous interleaving of the task flow with the AI. [[20_distillates/publications/dellacqua-2023-jagged-frontier#^s1]]
 
 ## Open questions
 
@@ -44,6 +45,6 @@ A pre-registered field experiment with consultants at Boston Consulting Group, m
 
 ## Related
 
-- [[10_distillates/publications/fanous-2025-syceval]]
-- [[10_distillates/publications/fawzy-2025-vibe-coding-in-practice]]
-- [[10_distillates/publications/hong-2025-context-rot]]
+- [[20_distillates/publications/fanous-2025-syceval]]
+- [[20_distillates/publications/fawzy-2025-vibe-coding-in-practice]]
+- [[20_distillates/publications/hong-2025-context-rot]]

@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: gruber-1993
-topics: ["[[Concepts]]"]
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -28,7 +29,7 @@ Gruber gives the canonical definition of an ontology as an explicit specificatio
 
 ## Terms
 
-- **ontology**: an explicit specification of a conceptualization, a shared representational vocabulary for a domain of discourse. [[10_distillates/publications/gruber-1993-ontolingua#^s1]]
+- **ontology**: an explicit specification of a conceptualization, a shared representational vocabulary for a domain of discourse. [[20_distillates/publications/gruber-1993-ontolingua#^s1]]
 
 ## Open questions
 
@@ -36,5 +37,5 @@ Gruber gives the canonical definition of an ontology as an explicit specificatio
 
 ## Related
 
-- [[10_distillates/publications/mayr-2021-triptych-conceptual-modeling]] — a later conceptual-modelling framing the paper pairs with Gruber.
-- [[10_distillates/publications/pollin-2019-depcha-bookkeeping]] — an applied ontology built on a shared vocabulary in the sense Gruber sets out.
+- [[20_distillates/publications/mayr-2021-triptych-conceptual-modeling]] — a later conceptual-modelling framing the paper pairs with Gruber.
+- [[20_distillates/publications/pollin-2019-depcha-bookkeeping]] — an applied ontology built on a shared vocabulary in the sense Gruber sets out.

@@ -2,7 +2,9 @@
 type: distillate
 source-type: publication
 reference: pollin-2026b
-topics: ["[[Method]]", "[[Genealogy]]"]
+topics:
+- '[[Method]]'
+- '[[Genealogy]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -34,7 +36,7 @@ The L.I.S.A. article positions Promptotyping as a four-phase context-engineering
 
 ## Terms
 
-- **Promptotyping**: an iterative, four-phase context-engineering technique that maps research data onto research artifacts together with frontier LLMs, with the Promptotyping Documents as the primary artifact. [[10_distillates/publications/pollin-2026b-lisa-positioning#^s1]]
+- **Promptotyping**: an iterative, four-phase context-engineering technique that maps research data onto research artifacts together with frontier LLMs, with the Promptotyping Documents as the primary artifact. [[20_distillates/publications/pollin-2026b-lisa-positioning#^s1]]
 
 ## Open questions
 
@@ -44,5 +46,5 @@ The L.I.S.A. article positions Promptotyping as a four-phase context-engineering
 
 ## Related
 
-- [[10_distillates/publications/pollin-2025d-promptotyping-blog]] — the first description whose four-phase structure this article restates.
-- [[10_distillates/publications/pollin-2026a-asymmetric-amplification]] — the amplification-not-automation thesis.
+- [[20_distillates/publications/pollin-2025d-promptotyping-blog]] — the first description whose four-phase structure this article restates.
+- [[20_distillates/publications/pollin-2026a-asymmetric-amplification]] — the amplification-not-automation thesis.

@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[Frame]]"]
+type: assertion
+topics:
+- '[[Frame]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/schoech-2013-big-smart-clean-messy#^s4]]"
-  - "[[10_distillates/publications/schoech-2013-big-smart-clean-messy#^s5]]"
+- '[[20_distillates/publications/schoech-2013-big-smart-clean-messy#^s4]]'
+- '[[20_distillates/publications/schoech-2013-big-smart-clean-messy#^s5]]'
 created: 2026-07-23
 updated: 2026-07-23
 ---
@@ -19,9 +20,9 @@ Schöch posits two core types of humanities data. Smart data is structured or se
 
 ## Support
 
-- [[10_distillates/publications/schoech-2013-big-smart-clean-messy#^s4]] — two core types of humanities data, big data and smart data.
-- [[10_distillates/publications/schoech-2013-big-smart-clean-messy#^s5]] — smart data as structured, explicit, enriched, clean, and small in volume.
+- [[20_distillates/publications/schoech-2013-big-smart-clean-messy#^s4]] — two core types of humanities data, big data and smart data.
+- [[20_distillates/publications/schoech-2013-big-smart-clean-messy#^s5]] — smart data as structured, explicit, enriched, clean, and small in volume.
 
 ## Related
 
-- [[20_claims/humanities-data-is-constructed-not-given]]
+- [[30_assertions/humanities-data-is-constructed-not-given]]

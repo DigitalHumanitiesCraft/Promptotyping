@@ -1,11 +1,12 @@
 ---
-type: claim
-topics: ["[[ArtefactVerification]]"]
+type: assertion
+topics:
+- '[[ArtefactVerification]]'
 status: grounded
 checked: {}
 grounding:
-  - "[[10_distillates/publications/strutz-2026-tei-evaluation-framework#^s7]]"
-  - "[[10_distillates/publications/strutz-2026-tei-evaluation-framework#^s2]]"
+- '[[20_distillates/publications/strutz-2026-tei-evaluation-framework#^s7]]'
+- '[[20_distillates/publications/strutz-2026-tei-evaluation-framework#^s2]]'
 created: 2026-07-29
 updated: 2026-07-29
 ---
@@ -18,11 +19,11 @@ Interpretive multiplicity is a deliberate property of the TEI Guidelines, which 
 
 ## Support
 
-- [[10_distillates/publications/strutz-2026-tei-evaluation-framework#^s7]] — the Guidelines permit multiple valid encodings for identical phenomena.
-- [[10_distillates/publications/strutz-2026-tei-evaluation-framework#^s2]] — interpretive flexibility as one of the two reasons conventional NLP metrics fall short.
+- [[20_distillates/publications/strutz-2026-tei-evaluation-framework#^s7]] — the Guidelines permit multiple valid encodings for identical phenomena.
+- [[20_distillates/publications/strutz-2026-tei-evaluation-framework#^s2]] — interpretive flexibility as one of the two reasons conventional NLP metrics fall short.
 
 ## Related
 
-- [[20_claims/tei-evaluation-assigns-its-dimensions-to-different-checking-regimes]]
-- [[20_claims/semantic-vocabulary-matching-stays-a-human-interpretive-task]]
-- [[20_claims/edition-interface-embodies-editorial-decisions]]
+- [[30_assertions/tei-evaluation-assigns-its-dimensions-to-different-checking-regimes]]
+- [[30_assertions/semantic-vocabulary-matching-stays-a-human-interpretive-task]]
+- [[30_assertions/edition-interface-embodies-editorial-decisions]]

@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: siemens-2009
-topics: ["[[Frame]]"]
+topics:
+- '[[Frame]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -24,7 +25,7 @@ Siemens studies the research teams that digital-humanities projects build to coo
 
 ## Terms
 
-- **digital-humanities research team**: a collaboration assembled to hold together the diverse competences a digital-humanities project needs, defined by common tasks and shared accountability. [[10_distillates/publications/siemens-2009-reply-all-teams#^s2]]
+- **digital-humanities research team**: a collaboration assembled to hold together the diverse competences a digital-humanities project needs, defined by common tasks and shared accountability. [[20_distillates/publications/siemens-2009-reply-all-teams#^s2]]
 
 ## Open questions
 
@@ -32,5 +33,5 @@ Siemens studies the research teams that digital-humanities projects build to coo
 
 ## Related
 
-- [[10_distillates/publications/kemman-2021-trading-zones]] — the negotiation between competences the team is built to hold.
-- [[20_claims/rse-institutionalised-intermediary-profession]] — the intermediary answer the paper groups with team-building.
+- [[20_distillates/publications/kemman-2021-trading-zones]] — the negotiation between competences the team is built to hold.
+- [[30_assertions/rse-institutionalised-intermediary-profession]] — the intermediary answer the paper groups with team-building.

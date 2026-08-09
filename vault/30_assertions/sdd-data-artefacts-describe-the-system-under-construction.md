@@ -1,16 +1,17 @@
 ---
-type: claim
-topics: ["[[Frame]]"]
+type: assertion
+topics:
+- '[[Frame]]'
 status: grounded
 checked:
   validation: 2026-07-24
 grounding:
-  - "[[10_distillates/documents/sdd-spec-kit-2026-07-24#^s3]]"
-  - "[[10_distillates/documents/sdd-spec-kit-2026-07-24#^s4]]"
-  - "[[10_distillates/documents/sdd-kiro-2026-07-24#^s3]]"
-  - "[[10_distillates/documents/sdd-kiro-2026-07-24#^s8]]"
-  - "[[10_distillates/documents/sdd-bmad-method-2026-07-24#^s10]]"
-  - "[[10_distillates/documents/sdd-openspec-2026-07-24#^s7]]"
+- '[[20_distillates/documents/sdd-spec-kit-2026-07-24#^s3]]'
+- '[[20_distillates/documents/sdd-spec-kit-2026-07-24#^s4]]'
+- '[[20_distillates/documents/sdd-kiro-2026-07-24#^s3]]'
+- '[[20_distillates/documents/sdd-kiro-2026-07-24#^s8]]'
+- '[[20_distillates/documents/sdd-bmad-method-2026-07-24#^s10]]'
+- '[[20_distillates/documents/sdd-openspec-2026-07-24#^s7]]'
 created: 2026-07-24
 updated: 2026-07-29
 ---
@@ -23,15 +24,15 @@ Spec Kit produces a dedicated data-model artefact in its planning phase and Kiro
 
 ## Support
 
-- [[10_distillates/documents/sdd-spec-kit-2026-07-24#^s3]] — a dedicated data-model artefact exists in Spec Kit's own artefact tree.
-- [[10_distillates/documents/sdd-spec-kit-2026-07-24#^s4]] — its content is the entity model of the system, derived from the feature requirements.
-- [[10_distillates/documents/sdd-kiro-2026-07-24#^s3]] — Kiro's design artefact carries data descriptions of the system under construction.
-- [[10_distillates/documents/sdd-kiro-2026-07-24#^s8]] — none of Kiro's foundational context files describes data sources or their semantics.
-- [[10_distillates/documents/sdd-bmad-method-2026-07-24#^s10]] — the BMAD workflow map lists no artefact describing external data sources.
-- [[10_distillates/documents/sdd-openspec-2026-07-24#^s7]] — the OpenSpec README lists no artefact describing external data sources.
+- [[20_distillates/documents/sdd-spec-kit-2026-07-24#^s3]] — a dedicated data-model artefact exists in Spec Kit's own artefact tree.
+- [[20_distillates/documents/sdd-spec-kit-2026-07-24#^s4]] — its content is the entity model of the system, derived from the feature requirements.
+- [[20_distillates/documents/sdd-kiro-2026-07-24#^s3]] — Kiro's design artefact carries data descriptions of the system under construction.
+- [[20_distillates/documents/sdd-kiro-2026-07-24#^s8]] — none of Kiro's foundational context files describes data sources or their semantics.
+- [[20_distillates/documents/sdd-bmad-method-2026-07-24#^s10]] — the BMAD workflow map lists no artefact describing external data sources.
+- [[20_distillates/documents/sdd-openspec-2026-07-24#^s7]] — the OpenSpec README lists no artefact describing external data sources.
 
 ## Related
 
-- [[20_claims/sdd-frameworks-converge-on-specification-over-prompt]]
-- [[20_claims/sdd-review-examines-internal-coherence]]
-- [[20_claims/MOC-Frame]]
+- [[30_assertions/sdd-frameworks-converge-on-specification-over-prompt]]
+- [[30_assertions/sdd-review-examines-internal-coherence]]
+- [[30_assertions/MOC-Frame]]

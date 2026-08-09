@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: borek-2021
-topics: ["[[ArtefactVerification]]"]
+topics:
+- '[[ArtefactVerification]]'
 status: grounded
 checked:
   quote: 2026-07-27
@@ -30,14 +31,14 @@ The working paper documenting the transformation of TaDiRAH into a formalised, m
 
 ## Terms
 
-- **Knowledge organization system (KOS)**: the class of artefact the revised TaDiRAH is declared to be, realised in SKOS. [[10_distillates/publications/borek-2021-tadirah-revised-formalized-fair#^s4]]
+- **Knowledge organization system (KOS)**: the class of artefact the revised TaDiRAH is declared to be, realised in SKOS. [[20_distillates/publications/borek-2021-tadirah-revised-formalized-fair#^s4]]
 
 ## Open questions
 
-- The abstract states what the revision does to the vocabulary and says nothing about the structure of the activity classification itself. The paper's statement that TaDiRAH provides a controlled vocabulary for scholarly activities rests on [[10_distillates/publications/borek-2016-tadirah]] for the eight top-level categories. If the draft keeps only borek-2021 in the body, the structural half of that sentence loses its carrier.
+- The abstract states what the revision does to the vocabulary and says nothing about the structure of the activity classification itself. The paper's statement that TaDiRAH provides a controlled vocabulary for scholarly activities rests on [[20_distillates/publications/borek-2016-tadirah]] for the eight top-level categories. If the draft keeps only borek-2021 in the body, the structural half of that sentence loses its carrier.
 - The paper's positioning step, that TaDiRAH classifies activities rather than research artefacts, is the paper's own distinction and is carried by neither source.
 
 ## Related
 
-- [[10_distillates/publications/borek-2016-tadirah]]
-- [[10_distillates/publications/wilkinson-2016-fair-principles]]
+- [[20_distillates/publications/borek-2016-tadirah]]
+- [[20_distillates/publications/wilkinson-2016-fair-principles]]

@@ -1,13 +1,14 @@
 ---
-type: claim
-topics: ["[[Frame]]"]
+type: assertion
+topics:
+- '[[Frame]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/cohen-2021-four-pillars-rse#^s1]]"
-  - "[[10_distillates/publications/cohen-2021-four-pillars-rse#^s2]]"
-  - "[[10_distillates/publications/cohen-2021-four-pillars-rse#^s3]]"
+- '[[20_distillates/publications/cohen-2021-four-pillars-rse#^s1]]'
+- '[[20_distillates/publications/cohen-2021-four-pillars-rse#^s2]]'
+- '[[20_distillates/publications/cohen-2021-four-pillars-rse#^s3]]'
 created: 2026-07-23
 updated: 2026-07-29
 ---
@@ -20,10 +21,10 @@ The Research Software Engineering movement recognises and supports the people wh
 
 ## Support
 
-- [[10_distillates/publications/cohen-2021-four-pillars-rse#^s1]] — the RSE movement aims to recognise and support these individuals.
-- [[10_distillates/publications/cohen-2021-four-pillars-rse#^s2]] — software builders seen as critical team members, not just code writers.
-- [[10_distillates/publications/cohen-2021-four-pillars-rse#^s3]] — research software work framed as a realistic professional career.
+- [[20_distillates/publications/cohen-2021-four-pillars-rse#^s1]] — the RSE movement aims to recognise and support these individuals.
+- [[20_distillates/publications/cohen-2021-four-pillars-rse#^s2]] — software builders seen as critical team members, not just code writers.
+- [[20_distillates/publications/cohen-2021-four-pillars-rse#^s3]] — research software work framed as a realistic professional career.
 
 ## Related
 
-- [[20_claims/MOC-Concepts]]
+- [[30_assertions/MOC-Concepts]]

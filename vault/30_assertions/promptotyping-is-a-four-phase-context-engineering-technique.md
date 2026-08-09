@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[Method]]"]
+type: assertion
+topics:
+- '[[Method]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/pollin-2026b-lisa-positioning#^s1]]"
-  - "[[10_distillates/publications/pollin-2026b-lisa-positioning#^s7]]"
+- '[[20_distillates/publications/pollin-2026b-lisa-positioning#^s1]]'
+- '[[20_distillates/publications/pollin-2026b-lisa-positioning#^s7]]'
 created: 2026-07-23
 updated: 2026-07-23
 ---
@@ -19,10 +20,10 @@ The L.I.S.A. article defines Promptotyping as an iterative context-engineering t
 
 ## Support
 
-- [[10_distillates/publications/pollin-2026b-lisa-positioning#^s1]] — Promptotyping as an iterative four-phase context-engineering technique.
-- [[10_distillates/publications/pollin-2026b-lisa-positioning#^s7]] — the documents adapt to the domain and have no fixed form.
+- [[20_distillates/publications/pollin-2026b-lisa-positioning#^s1]] — Promptotyping as an iterative four-phase context-engineering technique.
+- [[20_distillates/publications/pollin-2026b-lisa-positioning#^s7]] — the documents adapt to the domain and have no fixed form.
 
 ## Related
 
-- [[20_claims/promptotyping-documents-form-freedom]]
-- [[20_claims/promptotyping-documents-are-the-primary-artifact]]
+- [[30_assertions/promptotyping-documents-form-freedom]]
+- [[30_assertions/promptotyping-documents-are-the-primary-artifact]]

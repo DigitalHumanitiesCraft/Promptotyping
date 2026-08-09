@@ -1,16 +1,16 @@
 ---
 type: representation
 source-type: document
-source: "[[_sources/szd-htr-evaluation-results-2026-06-10]]"
-converter: "none (verbatim Markdown copy of the source without its frontmatter; block IDs appended for anchoring)"
+source: '[[00_sources/szd-htr-evaluation-results-2026-06-10]]'
+converter: none (verbatim Markdown copy of the source without its frontmatter; block IDs appended for anchoring)
 channel: handover
 metadata:
-  title: "Evaluationsergebnisse: CER-Baseline der SZD-HTR-Pipeline"
-  creator: "method author with agent support, Digital Humanities Craft"
-  date: "2026-06-10"
-  format: "text/markdown"
-  identifier: "https://github.com/chpollin/szd-htr-ocr-pipeline/blob/2641b284419e7a859ade55661052a4272d125985/knowledge/evaluation-results.md"
-  license: "CC BY 4.0 per repository licence at snapshot time"
+  title: 'Evaluationsergebnisse: CER-Baseline der SZD-HTR-Pipeline'
+  creator: method author with agent support, Digital Humanities Craft
+  date: '2026-06-10'
+  format: text/markdown
+  identifier: https://github.com/chpollin/szd-htr-ocr-pipeline/blob/2641b284419e7a859ade55661052a4272d125985/knowledge/evaluation-results.md
+  license: CC BY 4.0 per repository licence at snapshot time
   confidential: false
 created: 2026-07-24
 updated: 2026-07-24

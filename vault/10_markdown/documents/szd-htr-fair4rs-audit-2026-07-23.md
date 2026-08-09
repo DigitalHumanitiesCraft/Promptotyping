@@ -1,16 +1,16 @@
 ---
 type: representation
 source-type: document
-source: "[[_sources/szd-htr-fair4rs-audit-2026-07-23]]"
-converter: "none (verbatim Markdown copy of the source without its frontmatter; block IDs appended for anchoring)"
+source: '[[00_sources/szd-htr-fair4rs-audit-2026-07-23]]'
+converter: none (verbatim Markdown copy of the source without its frontmatter; block IDs appended for anchoring)
 channel: handover
 metadata:
-  title: "Verifikation FAIR4RS-Status"
-  creator: "method author with agent support, Digital Humanities Craft"
-  date: "2026-07-23"
-  format: "text/markdown"
-  identifier: "https://github.com/chpollin/szd-htr-ocr-pipeline/blob/5baa9064b91b38d26a2ebd5854c121f7bb9c55f3/knowledge/verification-fair4rs.md"
-  license: "CC BY 4.0 per repository licence at snapshot time"
+  title: Verifikation FAIR4RS-Status
+  creator: method author with agent support, Digital Humanities Craft
+  date: '2026-07-23'
+  format: text/markdown
+  identifier: https://github.com/chpollin/szd-htr-ocr-pipeline/blob/5baa9064b91b38d26a2ebd5854c121f7bb9c55f3/knowledge/verification-fair4rs.md
+  license: CC BY 4.0 per repository licence at snapshot time
   confidential: false
 created: 2026-07-23
 updated: 2026-07-23

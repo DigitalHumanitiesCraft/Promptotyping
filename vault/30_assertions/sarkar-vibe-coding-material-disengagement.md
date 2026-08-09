@@ -1,13 +1,14 @@
 ---
-type: claim
-topics: ["[[Frame]]"]
+type: assertion
+topics:
+- '[[Frame]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/sarkar-2025-vibe-coding#^s1]]"
-  - "[[10_distillates/publications/sarkar-2025-vibe-coding#^s2]]"
-  - "[[10_distillates/publications/sarkar-2025-vibe-coding#^s4]]"
+- '[[20_distillates/publications/sarkar-2025-vibe-coding#^s1]]'
+- '[[20_distillates/publications/sarkar-2025-vibe-coding#^s2]]'
+- '[[20_distillates/publications/sarkar-2025-vibe-coding#^s4]]'
 created: 2026-07-23
 updated: 2026-07-29
 ---
@@ -20,11 +21,11 @@ The first empirical study of vibe coding, based on over eight hours of think-alo
 
 ## Support
 
-- [[10_distillates/publications/sarkar-2025-vibe-coding#^s1]] — the first empirical study, over eight hours of curated think-aloud video.
-- [[10_distillates/publications/sarkar-2025-vibe-coding#^s2]] — the iterative goal-satisfaction cycle of prompting, evaluation and editing.
-- [[10_distillates/publications/sarkar-2025-vibe-coding#^s4]] — material disengagement with selective and strategic oversight.
+- [[20_distillates/publications/sarkar-2025-vibe-coding#^s1]] — the first empirical study, over eight hours of curated think-aloud video.
+- [[20_distillates/publications/sarkar-2025-vibe-coding#^s2]] — the iterative goal-satisfaction cycle of prompting, evaluation and editing.
+- [[20_distillates/publications/sarkar-2025-vibe-coding#^s4]] — material disengagement with selective and strategic oversight.
 
 ## Related
 
-- [[20_claims/vibe-coding-speed-quality-tradeoff]]
-- [[20_claims/MOC-Concepts]]
+- [[30_assertions/vibe-coding-speed-quality-tradeoff]]
+- [[30_assertions/MOC-Concepts]]

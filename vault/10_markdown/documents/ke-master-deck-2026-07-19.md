@@ -1,16 +1,16 @@
 ---
 type: representation
 source-type: document
-source: "[[_sources/ke-master-deck-2026-07-19.txt]]"
-converter: "none (verbatim text export); partial extraction, only the LLM-characterisation slide plus title slide and learning goals are reproduced, all other slides elided as [...] lines without block IDs"
+source: '[[00_sources/ke-master-deck-2026-07-19.txt]]'
+converter: none (verbatim text export); partial extraction, only the LLM-characterisation slide plus title slide and learning goals are reproduced, all other slides elided as [...] lines without block IDs
 channel: handover
 metadata:
-  title: "Knowledge und Context Engineering für AI Agents"
-  creator: "method author, Digital Humanities Craft"
-  date: "2026-07-19"
-  format: "text/plain (slide-text export of a working deck)"
-  identifier: "unpublished working slide deck; no persistent identifier (local snapshot, DHCraft slide export, 2026-07-19)"
-  license: "unpublished teaching material, all rights reserved by the author; no public license"
+  title: Knowledge und Context Engineering für AI Agents
+  creator: method author, Digital Humanities Craft
+  date: '2026-07-19'
+  format: text/plain (slide-text export of a working deck)
+  identifier: unpublished working slide deck; no persistent identifier (local snapshot, DHCraft slide export, 2026-07-19)
+  license: unpublished teaching material, all rights reserved by the author; no public license
   confidential: false
 created: 2026-07-19
 updated: 2026-07-19

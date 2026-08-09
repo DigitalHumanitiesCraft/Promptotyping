@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: risam-2022
-topics: ["[[Method]]"]
+topics:
+- '[[Method]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -28,7 +29,7 @@ Risam and Gil frame minimal computing as a constraint-driven mode of DH praxis t
 
 ## Terms
 
-- **minimal computing**: constraint-driven DH work that resists scale-as-innovation and reduces code, bytes, and processing. [[10_distillates/publications/risam-2022-minimal-computing#^s1]]
+- **minimal computing**: constraint-driven DH work that resists scale-as-innovation and reduces code, bytes, and processing. [[20_distillates/publications/risam-2022-minimal-computing#^s1]]
 
 ## Open questions
 
@@ -36,4 +37,4 @@ Risam and Gil frame minimal computing as a constraint-driven mode of DH praxis t
 
 ## Related
 
-- [[10_distillates/publications/holmes-2023-endings-principles]] — the durability-through-simplicity companion.
+- [[20_distillates/publications/holmes-2023-endings-principles]] — the durability-through-simplicity companion.

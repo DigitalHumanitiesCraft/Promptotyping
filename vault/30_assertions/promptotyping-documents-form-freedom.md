@@ -1,11 +1,12 @@
 ---
-type: claim
-topics: ["[[Method]]"]
+type: assertion
+topics:
+- '[[Method]]'
 status: grounded
 checked:
   validation: 2026-07-19
 grounding:
-  - "[[10_distillates/publications/pollin-2025d-promptotyping-blog#^s7]]"
+- '[[20_distillates/publications/pollin-2025d-promptotyping-blog#^s7]]'
 created: 2026-07-19
 updated: 2026-07-19
 ---
@@ -18,9 +19,9 @@ The first public description treats the documents as flexible orientation aids t
 
 ## Support
 
-- [[10_distillates/publications/pollin-2025d-promptotyping-blog#^s7]] — declares the documents flexible orientation aids adapted to project requirements, with none strictly prescribed.
+- [[20_distillates/publications/pollin-2025d-promptotyping-blog#^s7]] — declares the documents flexible orientation aids adapted to project requirements, with none strictly prescribed.
 
 ## Related
 
-- [[20_claims/promptotyping-documentation-over-software]]
-- [[20_claims/promptotyping-named-first-described-2025-04]]
+- [[30_assertions/promptotyping-documentation-over-software]]
+- [[30_assertions/promptotyping-named-first-described-2025-04]]

@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: mayr-2021
-topics: ["[[Method]]"]
+topics:
+- '[[Method]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -26,7 +27,7 @@ Mayr and Thalheim characterise the conceptual model as a link between a language
 
 ## Terms
 
-- **conceptual model**: in Mayr & Thalheim's framing, a model dimension linking linguistic terms to the encyclopedic notions of a domain. [[10_distillates/publications/mayr-2021-triptych-conceptual-modeling#^s2]]
+- **conceptual model**: in Mayr & Thalheim's framing, a model dimension linking linguistic terms to the encyclopedic notions of a domain. [[20_distillates/publications/mayr-2021-triptych-conceptual-modeling#^s2]]
 
 ## Open questions
 
@@ -34,4 +35,4 @@ Mayr and Thalheim characterise the conceptual model as a link between a language
 
 ## Related
 
-- [[10_distillates/publications/miksa-2019-machine-actionable-dmps]] — documents infrastructure can act on.
+- [[20_distillates/publications/miksa-2019-machine-actionable-dmps]] — documents infrastructure can act on.

@@ -32,4 +32,4 @@ Read in this order: `knowledge/index.md` (terminology), `knowledge/state.md` (wh
 
 - Commit at milestones with concise English imperative messages; stage explicit paths.
 - Subagents run with an explicit Opus model override; delegation stays flat (no sub-subagents). Guardrail and exclusion lists are passed to subagents verbatim.
-- The deliverable is the paper, maintained canonically in `knowledge/paper.md` at the repository root. The site renders that file directly, so no derived cut of the paper exists; never copy paper text into `30_deliverable/` (see the settled decision in `knowledge/specification.md`).
+- The deliverable is the paper, maintained canonically in `knowledge/paper.md` at the repository root. The site renders that file directly, so no derived cut of the paper exists; never copy paper text into `40_output/` (see the settled decision in `knowledge/specification.md`).

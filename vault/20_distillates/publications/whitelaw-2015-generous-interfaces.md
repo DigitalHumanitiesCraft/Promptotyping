@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: whitelaw-2015
-topics: ["[[Concepts]]"]
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -28,7 +29,7 @@ Whitelaw contrasts the ungenerous search box with generous interfaces that show 
 
 ## Terms
 
-- **generous interface**: a rich, browsable representation of a collection that reveals its scale and complexity and invites exploration without a query. [[10_distillates/publications/whitelaw-2015-generous-interfaces#^s3]]
+- **generous interface**: a rich, browsable representation of a collection that reveals its scale and complexity and invites exploration without a query. [[20_distillates/publications/whitelaw-2015-generous-interfaces#^s3]]
 
 ## Open questions
 
@@ -36,5 +37,5 @@ Whitelaw contrasts the ungenerous search box with generous interfaces that show 
 
 ## Related
 
-- [[10_distillates/publications/drucker-2011-humanities-approaches]] — the critical-interface companion.
-- [[10_distillates/publications/hinrichs-2019-sandcastles]] — visualisation as a research process.
+- [[20_distillates/publications/drucker-2011-humanities-approaches]] — the critical-interface companion.
+- [[20_distillates/publications/hinrichs-2019-sandcastles]] — visualisation as a research process.

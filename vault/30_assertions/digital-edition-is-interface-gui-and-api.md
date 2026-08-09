@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[ArtefactVerification]]"]
+type: assertion
+topics:
+- '[[ArtefactVerification]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/bleier-2018-editions-interfaces#^s1]]"
-  - "[[10_distillates/publications/bleier-2018-editions-interfaces#^s2]]"
+- '[[20_distillates/publications/bleier-2018-editions-interfaces#^s1]]'
+- '[[20_distillates/publications/bleier-2018-editions-interfaces#^s2]]'
 created: 2026-07-23
 updated: 2026-07-23
 ---
@@ -19,9 +20,9 @@ Understanding a digital scholarly edition as an interface means understanding it
 
 ## Support
 
-- [[10_distillates/publications/bleier-2018-editions-interfaces#^s1]] — the edition as connection point between documents and human or machine users.
-- [[10_distillates/publications/bleier-2018-editions-interfaces#^s2]] — the GUI and API as the two interface types of an edition.
+- [[20_distillates/publications/bleier-2018-editions-interfaces#^s1]] — the edition as connection point between documents and human or machine users.
+- [[20_distillates/publications/bleier-2018-editions-interfaces#^s2]] — the GUI and API as the two interface types of an edition.
 
 ## Related
 
-- [[20_claims/edition-interface-embodies-editorial-decisions]]
+- [[30_assertions/edition-interface-embodies-editorial-decisions]]

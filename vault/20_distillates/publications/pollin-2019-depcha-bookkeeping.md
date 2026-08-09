@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: pollin-2019
-topics: ["[[Genealogy]]"]
+topics:
+- '[[Genealogy]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -28,8 +29,8 @@ The paper documents the Bookkeeping Ontology as a conceptual model built with do
 
 ## Terms
 
-- **deep-dive**: an iterative, collaborative session with domain experts in which source phenomena are discussed to extend the knowledge domain. [[10_distillates/publications/pollin-2019-depcha-bookkeeping#^s2]]
-- **Bookkeeping Ontology**: a conceptual model of historical financial transactions, based on REA and CIDOC CRM, built through the DEPCHA deep-dive process. [[10_distillates/publications/pollin-2019-depcha-bookkeeping#^s1]]
+- **deep-dive**: an iterative, collaborative session with domain experts in which source phenomena are discussed to extend the knowledge domain. [[20_distillates/publications/pollin-2019-depcha-bookkeeping#^s2]]
+- **Bookkeeping Ontology**: a conceptual model of historical financial transactions, based on REA and CIDOC CRM, built through the DEPCHA deep-dive process. [[20_distillates/publications/pollin-2019-depcha-bookkeeping#^s1]]
 
 ## Open questions
 
@@ -37,5 +38,5 @@ The paper documents the Bookkeeping Ontology as a conceptual model built with do
 
 ## Related
 
-- [[10_distillates/publications/pollin-2025b-dissertation]] — the later account of the same deep-dive process and ontology classes.
-- [[10_distillates/publications/gruber-1993-ontolingua]] — the shared-vocabulary notion the ontology instantiates.
+- [[20_distillates/publications/pollin-2025b-dissertation]] — the later account of the same deep-dive process and ontology classes.
+- [[20_distillates/publications/gruber-1993-ontolingua]] — the shared-vocabulary notion the ontology instantiates.

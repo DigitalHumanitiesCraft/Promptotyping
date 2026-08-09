@@ -1,14 +1,15 @@
 ---
-type: claim
-topics: ["[[Frame]]"]
+type: assertion
+topics:
+- '[[Frame]]'
 status: grounded
 checked:
   validation: 2026-07-24
 grounding:
-  - "[[10_distillates/documents/m3gim-vocab-derivation-2026-07-24#^s2]]"
-  - "[[10_distillates/documents/m3gim-vocab-derivation-2026-07-24#^s4]]"
-  - "[[10_distillates/documents/m3gim-vocab-derivation-2026-07-24#^s5]]"
-  - "[[10_distillates/documents/m3gim-vocab-derivation-2026-07-24#^s7]]"
+- '[[20_distillates/documents/m3gim-vocab-derivation-2026-07-24#^s2]]'
+- '[[20_distillates/documents/m3gim-vocab-derivation-2026-07-24#^s4]]'
+- '[[20_distillates/documents/m3gim-vocab-derivation-2026-07-24#^s5]]'
+- '[[20_distillates/documents/m3gim-vocab-derivation-2026-07-24#^s7]]'
 created: 2026-07-24
 updated: 2026-07-29
 ---
@@ -21,13 +22,13 @@ In a documented project whose namespace was formalised as an ontology, the domai
 
 ## Support
 
-- [[10_distillates/documents/m3gim-vocab-derivation-2026-07-24#^s2]] — the structural layer came across mechanically.
-- [[10_distillates/documents/m3gim-vocab-derivation-2026-07-24#^s4]] — part of what derived rests on prose annotations inside the ontology.
-- [[10_distillates/documents/m3gim-vocab-derivation-2026-07-24#^s5]] — subject matter, graph shape, absences and reliability could not come from the vocabulary.
-- [[10_distillates/documents/m3gim-vocab-derivation-2026-07-24#^s7]] — the required completeness of domain, range and standard edge exposed unnoticed vagueness in the model.
+- [[20_distillates/documents/m3gim-vocab-derivation-2026-07-24#^s2]] — the structural layer came across mechanically.
+- [[20_distillates/documents/m3gim-vocab-derivation-2026-07-24#^s4]] — part of what derived rests on prose annotations inside the ontology.
+- [[20_distillates/documents/m3gim-vocab-derivation-2026-07-24#^s5]] — subject matter, graph shape, absences and reliability could not come from the vocabulary.
+- [[20_distillates/documents/m3gim-vocab-derivation-2026-07-24#^s7]] — the required completeness of domain, range and standard edge exposed unnoticed vagueness in the model.
 
 ## Related
 
-- [[20_claims/ontology-is-explicit-specification-of-conceptualization]]
-- [[20_claims/semantic-web-envisioned-agents-over-machine-processable-data]]
-- [[20_claims/MOC-Frame]]
+- [[30_assertions/ontology-is-explicit-specification-of-conceptualization]]
+- [[30_assertions/semantic-web-envisioned-agents-over-machine-processable-data]]
+- [[30_assertions/MOC-Frame]]

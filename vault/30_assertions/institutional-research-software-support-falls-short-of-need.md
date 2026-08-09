@@ -1,14 +1,15 @@
 ---
-type: claim
-topics: ["[[Frame]]"]
+type: assertion
+topics:
+- '[[Frame]]'
 status: grounded
 checked:
   validation: 2026-07-25
 grounding:
-  - "[[10_distillates/publications/carver-2022-state-of-practice#^s1]]"
-  - "[[10_distillates/publications/carver-2022-state-of-practice#^s2]]"
-  - "[[10_distillates/publications/carver-2022-state-of-practice#^s3]]"
-  - "[[10_distillates/publications/carver-2022-state-of-practice#^s4]]"
+- '[[20_distillates/publications/carver-2022-state-of-practice#^s1]]'
+- '[[20_distillates/publications/carver-2022-state-of-practice#^s2]]'
+- '[[20_distillates/publications/carver-2022-state-of-practice#^s3]]'
+- '[[20_distillates/publications/carver-2022-state-of-practice#^s4]]'
 created: 2026-07-25
 updated: 2026-07-29
 ---
@@ -21,13 +22,13 @@ Across a survey of 1,149 researchers, primarily in the United States, the resear
 
 ## Support
 
-- [[10_distillates/publications/carver-2022-state-of-practice#^s1]] — survey population of 1,149 researchers, primarily United States.
-- [[10_distillates/publications/carver-2022-state-of-practice#^s2]] — institutional RSE, financial, and infrastructure support inadequate to needs.
-- [[10_distillates/publications/carver-2022-state-of-practice#^s3]] — funding for software development overwhelmingly insufficient.
-- [[10_distillates/publications/carver-2022-state-of-practice#^s4]] — under 35 per cent rate support as sufficient on any dimension.
+- [[20_distillates/publications/carver-2022-state-of-practice#^s1]] — survey population of 1,149 researchers, primarily United States.
+- [[20_distillates/publications/carver-2022-state-of-practice#^s2]] — institutional RSE, financial, and infrastructure support inadequate to needs.
+- [[20_distillates/publications/carver-2022-state-of-practice#^s3]] — funding for software development overwhelmingly insufficient.
+- [[20_distillates/publications/carver-2022-state-of-practice#^s4]] — under 35 per cent rate support as sufficient on any dimension.
 
 ## Related
 
-- [[20_claims/MOC-Frame]]
-- [[20_claims/research-software-engineers-are-scarce]]
-- [[20_claims/rse-institutionalised-intermediary-profession]]
+- [[30_assertions/MOC-Frame]]
+- [[30_assertions/research-software-engineers-are-scarce]]
+- [[30_assertions/rse-institutionalised-intermediary-profession]]

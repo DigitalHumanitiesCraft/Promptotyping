@@ -1,16 +1,16 @@
 ---
 type: representation
 source-type: document
-source: "[[_sources/revision-audit-a1-2026-07-23]]"
-converter: "none (verbatim Markdown copy of the source without its frontmatter; block IDs appended for anchoring)"
+source: '[[00_sources/revision-audit-a1-2026-07-23]]'
+converter: none (verbatim Markdown copy of the source without its frontmatter; block IDs appended for anchoring)
 channel: handover
 metadata:
-  title: "Revision-Audit A1 — Claim-Evidenz-Prüfung der Transferbehauptung"
-  creator: "revision audit agent under the method author's commission, Digital Humanities Craft"
-  date: "2026-07-23"
-  format: "text/markdown"
-  identifier: "https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/e2da77e484e24675481642211beb211bb3e367e3/knowledge/revision-audit-a1.md"
-  license: "CC BY 4.0 per repository licence at snapshot time"
+  title: Revision-Audit A1 — Claim-Evidenz-Prüfung der Transferbehauptung
+  creator: revision audit agent under the method author's commission, Digital Humanities Craft
+  date: '2026-07-23'
+  format: text/markdown
+  identifier: https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/e2da77e484e24675481642211beb211bb3e367e3/knowledge/revision-audit-a1.md
+  license: CC BY 4.0 per repository licence at snapshot time
   confidential: false
 created: 2026-07-24
 updated: 2026-07-24

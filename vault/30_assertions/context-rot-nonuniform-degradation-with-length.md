@@ -1,13 +1,14 @@
 ---
-type: claim
-topics: ["[[Frame]]"]
+type: assertion
+topics:
+- '[[Frame]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/hong-2025-context-rot#^s2]]"
-  - "[[10_distillates/publications/hong-2025-context-rot#^s3]]"
-  - "[[10_distillates/publications/hong-2025-context-rot#^s4]]"
+- '[[20_distillates/publications/hong-2025-context-rot#^s2]]'
+- '[[20_distillates/publications/hong-2025-context-rot#^s3]]'
+- '[[20_distillates/publications/hong-2025-context-rot#^s4]]'
 created: 2026-07-23
 updated: 2026-07-29
 ---
@@ -20,11 +21,11 @@ An evaluation of 18 models, including GPT-4.1, Claude 4, Gemini 2.5 and Qwen3, s
 
 ## Support
 
-- [[10_distillates/publications/hong-2025-context-rot#^s2]] — 18 models; performance grows increasingly unreliable as input length grows.
-- [[10_distillates/publications/hong-2025-context-rot#^s3]] — degradation appears even under minimal task conditions, non-uniformly.
-- [[10_distillates/publications/hong-2025-context-rot#^s4]] — task complexity held constant, isolating input length as the cause.
+- [[20_distillates/publications/hong-2025-context-rot#^s2]] — 18 models; performance grows increasingly unreliable as input length grows.
+- [[20_distillates/publications/hong-2025-context-rot#^s3]] — degradation appears even under minimal task conditions, non-uniformly.
+- [[20_distillates/publications/hong-2025-context-rot#^s4]] — task complexity held constant, isolating input length as the cause.
 
 ## Related
 
-- [[20_claims/context-engineering-systematic-inference-context]]
-- [[20_claims/MOC-Concepts]]
+- [[30_assertions/context-engineering-systematic-inference-context]]
+- [[30_assertions/MOC-Concepts]]

@@ -1,13 +1,14 @@
 ---
-type: claim
-topics: ["[[Method]]"]
+type: assertion
+topics:
+- '[[Method]]'
 status: grounded
 checked: {}
 grounding:
-  - "[[10_distillates/documents/frontmatter-core-survey-2026-07-26#^s1]]"
-  - "[[10_distillates/documents/frontmatter-core-survey-2026-07-26#^s2]]"
-  - "[[10_distillates/documents/frontmatter-core-survey-2026-07-26#^s3]]"
-  - "[[10_distillates/documents/frontmatter-core-survey-2026-07-26#^s8]]"
+- '[[20_distillates/documents/frontmatter-core-survey-2026-07-26#^s1]]'
+- '[[20_distillates/documents/frontmatter-core-survey-2026-07-26#^s2]]'
+- '[[20_distillates/documents/frontmatter-core-survey-2026-07-26#^s3]]'
+- '[[20_distillates/documents/frontmatter-core-survey-2026-07-26#^s8]]'
 contested-with: []
 created: 2026-07-26
 updated: 2026-07-26
@@ -21,13 +22,13 @@ A survey of 2026-07-26 over 490 documents with YAML frontmatter in 40 local know
 
 ## Support
 
-- [[10_distillates/documents/frontmatter-core-survey-2026-07-26#^s1]] — fixes the base, 490 documents with frontmatter across 40 knowledge bases.
-- [[10_distillates/documents/frontmatter-core-survey-2026-07-26#^s2]] — carries the joint fulfilment of all six fields in 233 documents.
-- [[10_distillates/documents/frontmatter-core-survey-2026-07-26#^s3]] — identifies `method` as the field that decides most cases of non-fulfilment.
-- [[10_distillates/documents/frontmatter-core-survey-2026-07-26#^s8]] — carries the reproducibility limit that bounds what the rate can be used for.
+- [[20_distillates/documents/frontmatter-core-survey-2026-07-26#^s1]] — fixes the base, 490 documents with frontmatter across 40 knowledge bases.
+- [[20_distillates/documents/frontmatter-core-survey-2026-07-26#^s2]] — carries the joint fulfilment of all six fields in 233 documents.
+- [[20_distillates/documents/frontmatter-core-survey-2026-07-26#^s3]] — identifies `method` as the field that decides most cases of non-fulfilment.
+- [[20_distillates/documents/frontmatter-core-survey-2026-07-26#^s8]] — carries the reproducibility limit that bounds what the rate can be used for.
 
 ## Related
 
-- [[20_claims/frontmatter-core-reduced-to-six-fields]]
-- [[20_claims/status-vocabulary-adds-active-and-snapshot]]
-- [[20_claims/promptotyping-documents-form-freedom]]
+- [[30_assertions/frontmatter-core-reduced-to-six-fields]]
+- [[30_assertions/status-vocabulary-adds-active-and-snapshot]]
+- [[30_assertions/promptotyping-documents-form-freedom]]

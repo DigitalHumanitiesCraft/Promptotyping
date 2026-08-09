@@ -1,16 +1,16 @@
 ---
 type: representation
 source-type: document
-source: "[[_sources/sdd-openspec-2026-07-24.md]]"
-converter: "manual extraction from the artefacts named per section, wording preserved; repository state pinned by the API metadata quoted in section A"
+source: '[[00_sources/sdd-openspec-2026-07-24.md]]'
+converter: manual extraction from the artefacts named per section, wording preserved; repository state pinned by the API metadata quoted in section A
 channel: collection
 metadata:
-  title: "OpenSpec: repository metadata and README"
-  creator: "OpenSpec maintainers, Fission AI"
-  date: "2025-08-05/2026-07-24"
-  format: "text/markdown"
-  identifier: "https://github.com/Fission-AI/OpenSpec"
-  license: "MIT"
+  title: 'OpenSpec: repository metadata and README'
+  creator: OpenSpec maintainers, Fission AI
+  date: 2025-08-05/2026-07-24
+  format: text/markdown
+  identifier: https://github.com/Fission-AI/OpenSpec
+  license: MIT
   confidential: false
 created: 2026-07-24
 updated: 2026-07-24

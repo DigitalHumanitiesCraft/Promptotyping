@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[Frame]]"]
+type: assertion
+topics:
+- '[[Frame]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/liu-2024-llm-agents-se-survey#^s1]]"
-  - "[[10_distillates/publications/liu-2024-llm-agents-se-survey#^s2]]"
+- '[[20_distillates/publications/liu-2024-llm-agents-se-survey#^s1]]'
+- '[[20_distillates/publications/liu-2024-llm-agents-se-survey#^s2]]'
 created: 2026-07-23
 updated: 2026-07-29
 ---
@@ -19,10 +20,10 @@ LLM-based agents extend standalone LLMs with the ability to perceive and use ext
 
 ## Support
 
-- [[10_distillates/publications/liu-2024-llm-agents-se-survey#^s1]] — agents extend LLMs with tool and resource use.
-- [[10_distillates/publications/liu-2024-llm-agents-se-survey#^s2]] — applied to software engineering with remarkable effectiveness.
+- [[20_distillates/publications/liu-2024-llm-agents-se-survey#^s1]] — agents extend LLMs with tool and resource use.
+- [[20_distillates/publications/liu-2024-llm-agents-se-survey#^s2]] — applied to software engineering with remarkable effectiveness.
 
 ## Related
 
-- [[20_claims/sdd-frameworks-converge-on-specification-over-prompt]]
-- [[20_claims/MOC-Concepts]]
+- [[30_assertions/sdd-frameworks-converge-on-specification-over-prompt]]
+- [[30_assertions/MOC-Concepts]]

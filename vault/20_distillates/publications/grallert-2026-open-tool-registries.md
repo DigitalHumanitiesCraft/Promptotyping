@@ -2,7 +2,9 @@
 type: distillate
 source-type: publication
 reference: grallert-2026
-topics: ["[[Concepts]]", "[[Limitations]]"]
+topics:
+- '[[Concepts]]'
+- '[[Limitations]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -32,7 +34,7 @@ Grallert et al. diagnose the directory paradox of tool registries, document TaDi
 
 ## Terms
 
-- **directory paradox**: the inevitable staleness of a curated tool directory in a fast-moving field. [[10_distillates/publications/grallert-2026-open-tool-registries#^s2]]
+- **directory paradox**: the inevitable staleness of a curated tool directory in a fast-moving field. [[20_distillates/publications/grallert-2026-open-tool-registries#^s2]]
 
 ## Open questions
 
@@ -40,5 +42,5 @@ Grallert et al. diagnose the directory paradox of tool registries, document TaDi
 
 ## Related
 
-- [[10_distillates/publications/borek-2016-tadirah]] — the taxonomy whose adoption and dormancy this paper documents.
-- [[10_distillates/publications/barbot-2024-ssh-open-marketplace]] — a workflow registry over research activities.
+- [[20_distillates/publications/borek-2016-tadirah]] — the taxonomy whose adoption and dormancy this paper documents.
+- [[20_distillates/publications/barbot-2024-ssh-open-marketplace]] — a workflow registry over research activities.

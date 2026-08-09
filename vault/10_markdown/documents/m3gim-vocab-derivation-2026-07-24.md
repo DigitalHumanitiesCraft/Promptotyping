@@ -1,16 +1,16 @@
 ---
 type: representation
 source-type: document
-source: "[[_sources/m3gim-vocab-derivation-2026-07-24.md]]"
-converter: "manual extraction from the German original, wording preserved and rendered into English where quoted; source pinned to commit e51174d6aea73f8678bfab205e69110c82c976b6 of the m3gim repository"
+source: '[[00_sources/m3gim-vocab-derivation-2026-07-24.md]]'
+converter: manual extraction from the German original, wording preserved and rendered into English where quoted; source pinned to commit e51174d6aea73f8678bfab205e69110c82c976b6 of the m3gim repository
 channel: collection
 metadata:
-  title: "Befund: Domänenwissen aus einer formalen Quelle (M³GIM knowledge base)"
-  creator: "method author, Digital Humanities Craft OG, with agent support"
-  date: "2026-07-24"
-  format: "text/markdown"
-  identifier: "https://github.com/DigitalHumanitiesCraft/m3gim/blob/main/knowledge/vocab-derivation-findings.md"
-  license: "CC BY 4.0 (repository documentation)"
+  title: 'Befund: Domänenwissen aus einer formalen Quelle (M³GIM knowledge base)'
+  creator: method author, Digital Humanities Craft OG, with agent support
+  date: '2026-07-24'
+  format: text/markdown
+  identifier: https://github.com/DigitalHumanitiesCraft/m3gim/blob/main/knowledge/vocab-derivation-findings.md
+  license: CC BY 4.0 (repository documentation)
   confidential: false
 created: 2026-07-24
 updated: 2026-07-24

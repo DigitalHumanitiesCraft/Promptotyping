@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: wilkinson-2016
-topics: ["[[Concepts]]"]
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -28,7 +29,7 @@ The first formal publication of the FAIR principles, emphasising machine-actiona
 
 ## Terms
 
-- **FAIR**: Findable, Accessible, Interoperable, Reusable; data-stewardship principles with a specific emphasis on machine-actionability. [[10_distillates/publications/wilkinson-2016-fair-principles#^s2]]
+- **FAIR**: Findable, Accessible, Interoperable, Reusable; data-stewardship principles with a specific emphasis on machine-actionability. [[20_distillates/publications/wilkinson-2016-fair-principles#^s2]]
 
 ## Open questions
 
@@ -36,4 +37,4 @@ The first formal publication of the FAIR principles, emphasising machine-actiona
 
 ## Related
 
-- [[10_distillates/publications/soiland-2022-ro-crate]] — a FAIR-packaging implementation.
+- [[20_distillates/publications/soiland-2022-ro-crate]] — a FAIR-packaging implementation.

@@ -1,6 +1,6 @@
 ---
 type: glossary
-term: "Context memory"
+term: Context memory
 created: 2026-07-25
 updated: 2026-07-25
 ---

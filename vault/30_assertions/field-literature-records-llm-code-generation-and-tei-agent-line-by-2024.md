@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[Genealogy]]"]
+type: assertion
+topics:
+- '[[Genealogy]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/pollin-2025a-when-it-was-2024#^s1]]"
-  - "[[10_distillates/publications/pollin-2025a-when-it-was-2024#^s2]]"
+- '[[20_distillates/publications/pollin-2025a-when-it-was-2024#^s1]]'
+- '[[20_distillates/publications/pollin-2025a-when-it-was-2024#^s2]]'
 created: 2026-07-23
 updated: 2026-07-29
 ---
@@ -19,9 +20,9 @@ A trace of the working mode the paper consolidates is on record in the field's l
 
 ## Support
 
-- [[10_distillates/publications/pollin-2025a-when-it-was-2024#^s1]] — code generation for publishing systems demonstrated September 2024.
-- [[10_distillates/publications/pollin-2025a-when-it-was-2024#^s2]] — the teiCrafter / teiModeler / teiVerifier line of interacting agents.
+- [[20_distillates/publications/pollin-2025a-when-it-was-2024#^s1]] — code generation for publishing systems demonstrated September 2024.
+- [[20_distillates/publications/pollin-2025a-when-it-was-2024#^s2]] — the teiCrafter / teiModeler / teiVerifier line of interacting agents.
 
 ## Related
 
-- [[20_claims/MOC-Genealogy]]
+- [[30_assertions/MOC-Genealogy]]

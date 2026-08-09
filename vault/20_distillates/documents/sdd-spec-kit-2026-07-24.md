@@ -1,8 +1,9 @@
 ---
 type: distillate
 source-type: document
-representation: "[[00_representation/documents/sdd-spec-kit-2026-07-24]]"
-topics: ["[[Frame]]"]
+representation: '[[10_markdown/documents/sdd-spec-kit-2026-07-24]]'
+topics:
+- '[[Frame]]'
 status: grounded
 checked:
   validation: 2026-07-24
@@ -16,23 +17,23 @@ Spec Kit is the Spec-Driven-Development framework the paper names by title. Its 
 
 ## Core statements
 
-- Spec Kit entered the public record with its announcement post of 2025-09-02, and its repository was created on 2025-08-21. [[00_representation/documents/sdd-spec-kit-2026-07-24#^created]] ^s1
-- The framework describes the specification as a contract for the behaviour of the code and as the source of truth from which agents generate, test and validate. [[00_representation/documents/sdd-spec-kit-2026-07-24#^contract]] ^s2
-- Its planning phase produces a dedicated `data-model.md` alongside research, contracts and quickstart artefacts, so a data-describing document exists in the framework's own artefact tree. [[00_representation/documents/sdd-spec-kit-2026-07-24#^data-model]] ^s3
-- The data content of that artefact is the entity model of the system under construction, described as entities with attributes and relationships and derived from the feature requirements. [[00_representation/documents/sdd-spec-kit-2026-07-24#^key-entities]] ^s4
-- The framework mandates explicit uncertainty markers, and the uncertainty they mark is underspecification of the requirements rather than uncertainty in an external source. [[00_representation/documents/sdd-spec-kit-2026-07-24#^uncertainty-markers]] ^s5
-- Verification is an explicit and repeated obligation of the human, who reflects and refines at each phase checkpoint and answers for whether the generated artefacts are right. [[00_representation/documents/sdd-spec-kit-2026-07-24#^verify]] ^s6
-- The person carrying that obligation is named as the developer reviewing the agent's focused changes. [[00_representation/documents/sdd-spec-kit-2026-07-24#^developer-reviews]] ^s7
-- Machine-side quality assurance runs as cross-artefact consistency and coverage analysis and as generated checklists over requirement completeness, clarity and consistency. [[00_representation/documents/sdd-spec-kit-2026-07-24#^quality-commands]] ^s8
-- Beyond the individual reviewer the framework locates review in a team process over versioned, branched and merged specifications. [[00_representation/documents/sdd-spec-kit-2026-07-24#^team-review]] ^s9
-- The framework provisions role-oriented setups for team personas that include product manager, business analyst and security researcher next to developer. [[00_representation/documents/sdd-spec-kit-2026-07-24#^bundles]] ^s10
-- Early releases of the specification template stated the intended readership expressly as business stakeholders and carried a checklist item requiring the specification to be written for non-technical stakeholders. [[00_representation/documents/sdd-spec-kit-2026-07-24#^audience-early]] ^s11
-- The release current at retrieval carries no such audience statement in the specification template. [[00_representation/documents/sdd-spec-kit-2026-07-24#^audience-current]] ^s12
+- Spec Kit entered the public record with its announcement post of 2025-09-02, and its repository was created on 2025-08-21. [[10_markdown/documents/sdd-spec-kit-2026-07-24#^created]] ^s1
+- The framework describes the specification as a contract for the behaviour of the code and as the source of truth from which agents generate, test and validate. [[10_markdown/documents/sdd-spec-kit-2026-07-24#^contract]] ^s2
+- Its planning phase produces a dedicated `data-model.md` alongside research, contracts and quickstart artefacts, so a data-describing document exists in the framework's own artefact tree. [[10_markdown/documents/sdd-spec-kit-2026-07-24#^data-model]] ^s3
+- The data content of that artefact is the entity model of the system under construction, described as entities with attributes and relationships and derived from the feature requirements. [[10_markdown/documents/sdd-spec-kit-2026-07-24#^key-entities]] ^s4
+- The framework mandates explicit uncertainty markers, and the uncertainty they mark is underspecification of the requirements rather than uncertainty in an external source. [[10_markdown/documents/sdd-spec-kit-2026-07-24#^uncertainty-markers]] ^s5
+- Verification is an explicit and repeated obligation of the human, who reflects and refines at each phase checkpoint and answers for whether the generated artefacts are right. [[10_markdown/documents/sdd-spec-kit-2026-07-24#^verify]] ^s6
+- The person carrying that obligation is named as the developer reviewing the agent's focused changes. [[10_markdown/documents/sdd-spec-kit-2026-07-24#^developer-reviews]] ^s7
+- Machine-side quality assurance runs as cross-artefact consistency and coverage analysis and as generated checklists over requirement completeness, clarity and consistency. [[10_markdown/documents/sdd-spec-kit-2026-07-24#^quality-commands]] ^s8
+- Beyond the individual reviewer the framework locates review in a team process over versioned, branched and merged specifications. [[10_markdown/documents/sdd-spec-kit-2026-07-24#^team-review]] ^s9
+- The framework provisions role-oriented setups for team personas that include product manager, business analyst and security researcher next to developer. [[10_markdown/documents/sdd-spec-kit-2026-07-24#^bundles]] ^s10
+- Early releases of the specification template stated the intended readership expressly as business stakeholders and carried a checklist item requiring the specification to be written for non-technical stakeholders. [[10_markdown/documents/sdd-spec-kit-2026-07-24#^audience-early]] ^s11
+- The release current at retrieval carries no such audience statement in the specification template. [[10_markdown/documents/sdd-spec-kit-2026-07-24#^audience-current]] ^s12
 
 ## Terms
 
-- **Spec-Driven Development**: in this framework's usage, a process in which the specification is the source of truth that drives implementation, checklists and task breakdown, with the human steering and the coding agent writing. [[00_representation/documents/sdd-spec-kit-2026-07-24#^steer]]
-- **data-model.md**: the phase-one planning artefact of Spec Kit that carries the entity model derived from the feature specification. [[00_representation/documents/sdd-spec-kit-2026-07-24#^data-model]]
+- **Spec-Driven Development**: in this framework's usage, a process in which the specification is the source of truth that drives implementation, checklists and task breakdown, with the human steering and the coding agent writing. [[10_markdown/documents/sdd-spec-kit-2026-07-24#^steer]]
+- **data-model.md**: the phase-one planning artefact of Spec Kit that carries the entity model derived from the feature specification. [[10_markdown/documents/sdd-spec-kit-2026-07-24#^data-model]]
 
 ## Open questions
 
@@ -42,7 +43,7 @@ Spec Kit is the Spec-Driven-Development framework the paper names by title. Its 
 
 ## Related
 
-- [[10_distillates/documents/sdd-kiro-2026-07-24]]
-- [[10_distillates/documents/sdd-bmad-method-2026-07-24]]
-- [[10_distillates/documents/sdd-openspec-2026-07-24]]
-- [[10_distillates/publications/macedo-2026-from-prompt-to-process]]
+- [[20_distillates/documents/sdd-kiro-2026-07-24]]
+- [[20_distillates/documents/sdd-bmad-method-2026-07-24]]
+- [[20_distillates/documents/sdd-openspec-2026-07-24]]
+- [[20_distillates/publications/macedo-2026-from-prompt-to-process]]

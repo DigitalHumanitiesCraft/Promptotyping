@@ -2,7 +2,9 @@
 type: distillate
 source-type: publication
 reference: pollin-2025d
-topics: ["[[Genealogy]]", "[[Method]]"]
+topics:
+- '[[Genealogy]]'
+- '[[Method]]'
 status: grounded
 checked:
   quote: 2026-07-19
@@ -34,8 +36,8 @@ The DHCraft blog post of 24 April 2025 is the first public description that name
 
 ## Terms
 
-- **Promptotyping**: the method the post names, a blend of prompt and prototype, an iterative prompt engineering approach for developing and documenting requirements in structured Markdown documents before LLM implementation. [[10_distillates/publications/pollin-2025d-promptotyping-blog#^s1]]
-- **Promptotyping Documents**: the structured Markdown files carrying the project context, grouped into the WHAT, USING WHAT, and HOW categories. [[10_distillates/publications/pollin-2025d-promptotyping-blog#^s5]]
+- **Promptotyping**: the method the post names, a blend of prompt and prototype, an iterative prompt engineering approach for developing and documenting requirements in structured Markdown documents before LLM implementation. [[20_distillates/publications/pollin-2025d-promptotyping-blog#^s1]]
+- **Promptotyping Documents**: the structured Markdown files carrying the project context, grouped into the WHAT, USING WHAT, and HOW categories. [[20_distillates/publications/pollin-2025d-promptotyping-blog#^s5]]
 
 ## Open questions
 
@@ -44,5 +46,5 @@ The DHCraft blog post of 24 April 2025 is the first public description that name
 
 ## Related
 
-- [[20_claims/MOC-Genealogy]]
-- [[20_claims/MOC-Method]]
+- [[30_assertions/MOC-Genealogy]]
+- [[30_assertions/MOC-Method]]

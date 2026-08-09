@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: borek-2016
-topics: ["[[Concepts]]"]
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -28,7 +29,7 @@ The paper documents TaDiRAH, the digital humanities' taxonomy of research activi
 
 ## Terms
 
-- **TaDiRAH**: the Taxonomy of Digital Research Activities in the Humanities, a classification of DH research activities/goals. [[10_distillates/publications/borek-2016-tadirah#^s1]]
+- **TaDiRAH**: the Taxonomy of Digital Research Activities in the Humanities, a classification of DH research activities/goals. [[20_distillates/publications/borek-2016-tadirah#^s1]]
 
 ## Open questions
 
@@ -36,5 +37,5 @@ The paper documents TaDiRAH, the digital humanities' taxonomy of research activi
 
 ## Related
 
-- [[10_distillates/publications/grallert-2026-open-tool-registries]] — TaDiRAH's adoption and maintenance state.
-- [[10_distillates/publications/barbot-2024-ssh-open-marketplace]] — a workflow registry over research activities.
+- [[20_distillates/publications/grallert-2026-open-tool-registries]] — TaDiRAH's adoption and maintenance state.
+- [[20_distillates/publications/barbot-2024-ssh-open-marketplace]] — a workflow registry over research activities.

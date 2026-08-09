@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: roberts-2007
-topics: ["[[Concepts]]"]
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -26,7 +27,7 @@ Roberts states the premise and technique of Coordinated and Multiple Views for e
 
 ## Terms
 
-- **Coordinated and Multiple Views (CMV)**: an exploratory visualisation technique presenting data through several linked representations whose interactions are coordinated, so that new relationships become perceivable. [[10_distillates/publications/roberts-2007-coordinated-multiple-views#^s1]]
+- **Coordinated and Multiple Views (CMV)**: an exploratory visualisation technique presenting data through several linked representations whose interactions are coordinated, so that new relationships become perceivable. [[20_distillates/publications/roberts-2007-coordinated-multiple-views#^s1]]
 
 ## Open questions
 
@@ -34,4 +35,4 @@ Roberts states the premise and technique of Coordinated and Multiple Views for e
 
 ## Related
 
-- [[10_distillates/publications/whitelaw-2015-generous-interfaces]] — a companion exploration-interface reference in the paper's interface typology.
+- [[20_distillates/publications/whitelaw-2015-generous-interfaces]] — a companion exploration-interface reference in the paper's interface typology.

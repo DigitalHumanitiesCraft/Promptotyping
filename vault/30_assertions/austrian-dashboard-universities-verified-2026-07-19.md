@@ -1,11 +1,12 @@
 ---
-type: claim
-topics: ["[[Evidence]]"]
+type: assertion
+topics:
+- '[[Evidence]]'
 status: grounded
 checked:
   validation: 2026-07-19
 grounding:
-  - "[[10_distillates/documents/verification-paper-figures-2026-07-19#^s6]]"
+- '[[20_distillates/documents/verification-paper-figures-2026-07-19#^s6]]'
 created: 2026-07-19
 updated: 2026-07-29
 ---
@@ -18,8 +19,8 @@ The Austrian Dashboard case study's stated figure of 22 universities matched the
 
 ## Support
 
-- [[10_distillates/documents/verification-paper-figures-2026-07-19#^s6]] — records the confirmation of the Austrian Dashboard university count against the repository.
+- [[20_distillates/documents/verification-paper-figures-2026-07-19#^s6]] — records the confirmation of the Austrian Dashboard university count against the repository.
 
 ## Related
 
-- [[20_claims/vetmedai-excel-count-2026-07-19]]
+- [[30_assertions/vetmedai-excel-count-2026-07-19]]

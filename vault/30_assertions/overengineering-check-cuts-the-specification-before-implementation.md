@@ -1,15 +1,16 @@
 ---
-type: claim
-topics: ["[[Method]]"]
+type: assertion
+topics:
+- '[[Method]]'
 status: grounded
 checked:
   validation: 2026-07-25
 grounding:
-  - "[[10_distillates/documents/promptotyping-video-2-live-demo#^s12]]"
-  - "[[10_distillates/documents/promptotyping-video-2-live-demo#^s13]]"
-  - "[[10_distillates/documents/promptotyping-video-2-live-demo#^s15]]"
-  - "[[10_distillates/documents/promptotyping-video-2-live-demo#^s18]]"
-  - "[[10_distillates/documents/promptotyping-video-2-live-demo#^s39]]"
+- '[[20_distillates/documents/promptotyping-video-2-live-demo#^s12]]'
+- '[[20_distillates/documents/promptotyping-video-2-live-demo#^s13]]'
+- '[[20_distillates/documents/promptotyping-video-2-live-demo#^s15]]'
+- '[[20_distillates/documents/promptotyping-video-2-live-demo#^s18]]'
+- '[[20_distillates/documents/promptotyping-video-2-live-demo#^s39]]'
 created: 2026-07-25
 updated: 2026-07-25
 ---
@@ -22,13 +23,13 @@ When the architecture document arrives with a folder structure holding very many
 
 ## Support
 
-- [[10_distillates/documents/promptotyping-video-2-live-demo#^s12]] — the many files of the proposed structure, the strategy of showing the architecture first, and the minimum-viable-product question.
-- [[10_distillates/documents/promptotyping-video-2-live-demo#^s13]] — the order to check for overengineering and document fit, under the instruction to be honest.
-- [[10_distillates/documents/promptotyping-video-2-live-demo#^s15]] — the criticism returned, with the unrequested dark mode as the named default tendency.
-- [[10_distillates/documents/promptotyping-video-2-live-demo#^s18]] — the simplified documents and the reduced scope accepted for iteration 1.
-- [[10_distillates/documents/promptotyping-video-2-live-demo#^s39]] — the second pass over the specification documents aimed at a state that is not overengineered.
+- [[20_distillates/documents/promptotyping-video-2-live-demo#^s12]] — the many files of the proposed structure, the strategy of showing the architecture first, and the minimum-viable-product question.
+- [[20_distillates/documents/promptotyping-video-2-live-demo#^s13]] — the order to check for overengineering and document fit, under the instruction to be honest.
+- [[20_distillates/documents/promptotyping-video-2-live-demo#^s15]] — the criticism returned, with the unrequested dark mode as the named default tendency.
+- [[20_distillates/documents/promptotyping-video-2-live-demo#^s18]] — the simplified documents and the reduced scope accepted for iteration 1.
+- [[20_distillates/documents/promptotyping-video-2-live-demo#^s39]] — the second pass over the specification documents aimed at a state that is not overengineered.
 
 ## Related
 
-- [[20_claims/implementation-plan-cuts-work-into-checkable-milestones]]
-- [[20_claims/radical-design-request-widens-the-interface-option-space]]
+- [[30_assertions/implementation-plan-cuts-work-into-checkable-milestones]]
+- [[30_assertions/radical-design-request-widens-the-interface-option-space]]

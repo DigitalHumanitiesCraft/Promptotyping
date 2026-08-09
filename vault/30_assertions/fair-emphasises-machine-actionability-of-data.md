@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[Frame]]"]
+type: assertion
+topics:
+- '[[Frame]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/wilkinson-2016-fair-principles#^s3]]"
-  - "[[10_distillates/publications/wilkinson-2016-fair-principles#^s4]]"
+- '[[20_distillates/publications/wilkinson-2016-fair-principles#^s3]]'
+- '[[20_distillates/publications/wilkinson-2016-fair-principles#^s4]]'
 created: 2026-07-23
 updated: 2026-07-23
 ---
@@ -19,10 +20,10 @@ Distinct from initiatives focused on the human scholar, FAIR puts specific empha
 
 ## Support
 
-- [[10_distillates/publications/wilkinson-2016-fair-principles#^s3]] — emphasis on machines automatically finding and using data.
-- [[10_distillates/publications/wilkinson-2016-fair-principles#^s4]] — extension to algorithms, tools, and workflows.
+- [[20_distillates/publications/wilkinson-2016-fair-principles#^s3]] — emphasis on machines automatically finding and using data.
+- [[20_distillates/publications/wilkinson-2016-fair-principles#^s4]] — extension to algorithms, tools, and workflows.
 
 ## Related
 
-- [[20_claims/fair-principles-findable-accessible-interoperable-reusable]]
-- [[20_claims/ro-crate-packages-artefacts-with-machine-readable-metadata]]
+- [[30_assertions/fair-principles-findable-accessible-interoperable-reusable]]
+- [[30_assertions/ro-crate-packages-artefacts-with-machine-readable-metadata]]

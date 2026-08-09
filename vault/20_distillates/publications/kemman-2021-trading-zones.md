@@ -2,7 +2,8 @@
 type: distillate
 source-type: publication
 reference: kemman-2021
-topics: ["[[Concepts]]"]
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -30,8 +31,8 @@ Kemman adapts Galison's trading-zone concept to digital-history collaborations b
 
 ## Terms
 
-- **trading zone**: an arena in which two communities with different practices locally coordinate a joint enterprise without merging globally. [[10_distillates/publications/kemman-2021-trading-zones#^s2]]
-- **digital history broker**: an actor who connects and translates between the historical and computational communities of a digital-history collaboration. [[10_distillates/publications/kemman-2021-trading-zones#^s5]]
+- **trading zone**: an arena in which two communities with different practices locally coordinate a joint enterprise without merging globally. [[20_distillates/publications/kemman-2021-trading-zones#^s2]]
+- **digital history broker**: an actor who connects and translates between the historical and computational communities of a digital-history collaboration. [[20_distillates/publications/kemman-2021-trading-zones#^s5]]
 
 ## Open questions
 
@@ -39,4 +40,4 @@ Kemman adapts Galison's trading-zone concept to digital-history collaborations b
 
 ## Related
 
-- [[10_distillates/publications/pollin-2025c-critical-vibing]] — the Critical Expert role that internalises both sides of the trading zone.
+- [[20_distillates/publications/pollin-2025c-critical-vibing]] — the Critical Expert role that internalises both sides of the trading zone.

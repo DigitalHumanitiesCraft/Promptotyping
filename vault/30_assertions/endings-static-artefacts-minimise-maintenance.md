@@ -1,12 +1,13 @@
 ---
-type: claim
-topics: ["[[ArtefactVerification]]"]
+type: assertion
+topics:
+- '[[ArtefactVerification]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/holmes-2023-endings-principles#^s4]]"
-  - "[[10_distillates/publications/holmes-2023-endings-principles#^s5]]"
+- '[[20_distillates/publications/holmes-2023-endings-principles#^s4]]'
+- '[[20_distillates/publications/holmes-2023-endings-principles#^s5]]'
 created: 2026-07-23
 updated: 2026-07-23
 ---
@@ -19,9 +20,9 @@ The Endings aim is to convert high-maintenance "Tamagotchi" projects into zero-m
 
 ## Support
 
-- [[10_distillates/publications/holmes-2023-endings-principles#^s4]] — pages function without JavaScript or CSS.
-- [[10_distillates/publications/holmes-2023-endings-principles#^s5]] — the Tamagotchi-to-Pet-Rock aim.
+- [[20_distillates/publications/holmes-2023-endings-principles#^s4]] — pages function without JavaScript or CSS.
+- [[20_distillates/publications/holmes-2023-endings-principles#^s5]] — the Tamagotchi-to-Pet-Rock aim.
 
 ## Related
 
-- [[20_claims/endings-durability-through-static-no-dependencies]]
+- [[30_assertions/endings-durability-through-static-no-dependencies]]

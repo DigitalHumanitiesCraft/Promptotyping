@@ -1,11 +1,12 @@
 ---
-type: claim
-topics: ["[[Evidence]]"]
+type: assertion
+topics:
+- '[[Evidence]]'
 status: grounded
 checked:
   validation: 2026-07-19
 grounding:
-  - "[[10_distillates/documents/verification-paper-figures-2026-07-19#^s4]]"
+- '[[20_distillates/documents/verification-paper-figures-2026-07-19#^s4]]'
 created: 2026-07-19
 updated: 2026-07-29
 ---
@@ -18,8 +19,8 @@ The Lucina case study's stated figures, 128 neo-Latin poems and 5 iterations, ma
 
 ## Support
 
-- [[10_distillates/documents/verification-paper-figures-2026-07-19#^s4]] — records the confirmation of both Lucina figures against the repository.
+- [[20_distillates/documents/verification-paper-figures-2026-07-19#^s4]] — records the confirmation of both Lucina figures against the repository.
 
 ## Related
 
-- [[20_claims/notker-figures-verified-2026-07-19]]
+- [[30_assertions/notker-figures-verified-2026-07-19]]

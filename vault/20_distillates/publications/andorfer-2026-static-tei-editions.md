@@ -2,7 +2,9 @@
 type: distillate
 source-type: publication
 reference: andorfer-2026
-topics: ["[[Concepts]]", "[[Limitations]]"]
+topics:
+- '[[Concepts]]'
+- '[[Limitations]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -32,7 +34,7 @@ The project report presents the ACDH `dse-static-cookiecutter`, a static-site ge
 
 ## Terms
 
-- **static (website)**: contents already present as standalone HTML files, needing no server-side execution or database. [[10_distillates/publications/andorfer-2026-static-tei-editions#^s1]]
+- **static (website)**: contents already present as standalone HTML files, needing no server-side execution or database. [[20_distillates/publications/andorfer-2026-static-tei-editions#^s1]]
 
 ## Open questions
 
@@ -40,5 +42,5 @@ The project report presents the ACDH `dse-static-cookiecutter`, a static-site ge
 
 ## Related
 
-- [[20_claims/digital-editing-converges-on-static-self-contained-artefact]]
-- [[20_claims/static-client-side-editions-reach-tens-of-thousands-of-units]]
+- [[30_assertions/digital-editing-converges-on-static-self-contained-artefact]]
+- [[30_assertions/static-client-side-editions-reach-tens-of-thousands-of-units]]

@@ -2,7 +2,9 @@
 type: distillate
 source-type: publication
 reference: pollin-2025c
-topics: ["[[Method]]", "[[Concepts]]"]
+topics:
+- '[[Method]]'
+- '[[Concepts]]'
 status: grounded
 checked:
   quote: 2026-07-23
@@ -34,7 +36,7 @@ The blog post of 27 May 2025 introduces the Critical Expert in the Loop with its
 
 ## Terms
 
-- **Critical Expert in the Loop**: a role requiring both domain expertise and awareness of LLM failure modes, operating a double loop of human review and elicited machine self-critique. [[10_distillates/publications/pollin-2025c-critical-vibing#^s2]]
+- **Critical Expert in the Loop**: a role requiring both domain expertise and awareness of LLM failure modes, operating a double loop of human review and elicited machine self-critique. [[20_distillates/publications/pollin-2025c-critical-vibing#^s2]]
 
 ## Open questions
 
@@ -42,5 +44,5 @@ The blog post of 27 May 2025 introduces the Critical Expert in the Loop with its
 
 ## Related
 
-- [[10_distillates/publications/pollin-2025d-promptotyping-blog]] — the initial method description this post extends.
-- [[10_distillates/publications/kemman-2021-trading-zones]] — the two-community collaboration the Critical Expert internalises.
+- [[20_distillates/publications/pollin-2025d-promptotyping-blog]] — the initial method description this post extends.
+- [[20_distillates/publications/kemman-2021-trading-zones]] — the two-community collaboration the Critical Expert internalises.

@@ -1,15 +1,16 @@
 ---
-type: claim
-topics: ["[[Concepts]]"]
+type: assertion
+topics:
+- '[[Concepts]]'
 status: grounded
 checked: {}
 grounding:
-  - "[[10_distillates/publications/shanahan-2023-role-play#^s1]]"
-  - "[[10_distillates/publications/shanahan-2023-role-play#^s2]]"
-  - "[[10_distillates/publications/shanahan-2023-role-play#^s3]]"
-  - "[[10_distillates/publications/shanahan-2023-role-play#^s4]]"
-  - "[[10_distillates/publications/shanahan-2023-role-play#^s5]]"
-  - "[[10_distillates/publications/shanahan-2023-role-play#^s6]]"
+- '[[20_distillates/publications/shanahan-2023-role-play#^s1]]'
+- '[[20_distillates/publications/shanahan-2023-role-play#^s2]]'
+- '[[20_distillates/publications/shanahan-2023-role-play#^s3]]'
+- '[[20_distillates/publications/shanahan-2023-role-play#^s4]]'
+- '[[20_distillates/publications/shanahan-2023-role-play#^s5]]'
+- '[[20_distillates/publications/shanahan-2023-role-play#^s6]]'
 created: 2026-07-26
 updated: 2026-07-26
 ---
@@ -22,15 +23,15 @@ Shanahan, McDonell and Reynolds propose role play as the central concept for und
 
 ## Support
 
-- [[10_distillates/publications/shanahan-2023-role-play#^s1]] — role play as the central concept.
-- [[10_distillates/publications/shanahan-2023-role-play#^s2]] — the two metaphors, single character and superposition.
-- [[10_distillates/publications/shanahan-2023-role-play#^s3]] — the prompt as what sets the role.
-- [[10_distillates/publications/shanahan-2023-role-play#^s4]] — what the framing licenses in vocabulary.
-- [[10_distillates/publications/shanahan-2023-role-play#^s5]] — the correction, no commitment to one role in advance.
-- [[10_distillates/publications/shanahan-2023-role-play#^s6]] — the simulator formulation.
+- [[20_distillates/publications/shanahan-2023-role-play#^s1]] — role play as the central concept.
+- [[20_distillates/publications/shanahan-2023-role-play#^s2]] — the two metaphors, single character and superposition.
+- [[20_distillates/publications/shanahan-2023-role-play#^s3]] — the prompt as what sets the role.
+- [[20_distillates/publications/shanahan-2023-role-play#^s4]] — what the framing licenses in vocabulary.
+- [[20_distillates/publications/shanahan-2023-role-play#^s5]] — the correction, no commitment to one role in advance.
+- [[20_distillates/publications/shanahan-2023-role-play#^s6]] — the simulator formulation.
 
 ## Related
 
-- [[20_claims/multi-agent-frameworks-assign-roles-along-an-encoded-procedure]]
-- [[20_claims/least-privilege-bounds-damage-and-narrows-the-audit]]
-- [[20_claims/MOC-Concepts]]
+- [[30_assertions/multi-agent-frameworks-assign-roles-along-an-encoded-procedure]]
+- [[30_assertions/least-privilege-bounds-damage-and-narrows-the-audit]]
+- [[30_assertions/MOC-Concepts]]

@@ -1,13 +1,14 @@
 ---
-type: claim
-topics: ["[[Concepts]]"]
+type: assertion
+topics:
+- '[[Concepts]]'
 status: grounded
 checked:
   validation: 2026-07-23
 grounding:
-  - "[[10_distillates/publications/galey-2010-how-a-prototype-argues#^s1]]"
-  - "[[10_distillates/publications/galey-2010-how-a-prototype-argues#^s2]]"
-  - "[[10_distillates/publications/galey-2010-how-a-prototype-argues#^s3]]"
+- '[[20_distillates/publications/galey-2010-how-a-prototype-argues#^s1]]'
+- '[[20_distillates/publications/galey-2010-how-a-prototype-argues#^s2]]'
+- '[[20_distillates/publications/galey-2010-how-a-prototype-argues#^s3]]'
 created: 2026-07-23
 updated: 2026-07-29
 ---
@@ -20,11 +21,11 @@ Building an experimental digital prototype can convey an argument the way a book
 
 ## Support
 
-- [[10_distillates/publications/galey-2010-how-a-prototype-argues#^s1]] — a prototype conveys an argument about interface design.
-- [[10_distillates/publications/galey-2010-how-a-prototype-argues#^s2]] — digital artefacts have meaning and may be original contributions.
-- [[10_distillates/publications/galey-2010-how-a-prototype-argues#^s3]] — artefacts as peer-reviewable, contestable research.
+- [[20_distillates/publications/galey-2010-how-a-prototype-argues#^s1]] — a prototype conveys an argument about interface design.
+- [[20_distillates/publications/galey-2010-how-a-prototype-argues#^s2]] — digital artefacts have meaning and may be original contributions.
+- [[20_distillates/publications/galey-2010-how-a-prototype-argues#^s3]] — artefacts as peer-reviewable, contestable research.
 
 ## Related
 
-- [[20_claims/MOC-Concepts]]
-- [[20_claims/experimental-prototype-yields-knowledge-not-product]]
+- [[30_assertions/MOC-Concepts]]
+- [[30_assertions/experimental-prototype-yields-knowledge-not-product]]
