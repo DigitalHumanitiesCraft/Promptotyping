@@ -325,15 +325,15 @@ Comparative evaluation should determine when maintained project knowledge, syste
 
 ### 4.4 Conclusion
 
-This paper opened with a CSV file that *Gephi* could process and project-specific TEI that it could not. That asymmetry is not a technical accident but a structural condition of software-mediated research. A tool operationalises only those distinctions that have been translated into its representational model, and the direction of that translation has ordinarily run from the project towards the tool. Researchers must therefore map their data and questions into the representations and operations that existing software provides.
+This paper opened with a CSV file that *Gephi* could process and project-specific TEI that it could not. That asymmetry is a structural condition of software-mediated research. A tool operationalises only those distinctions that have been translated into its representational model, and the direction of that translation has ordinarily run from the project towards the tool. Researchers must therefore map their data and questions into the representations and operations that existing software provides.
 
-Promptotyping can partially reverse this direction under stated conditions. Maintained project knowledge records how the research data are understood and for what purpose they are to be operationalised. LLM-based agents working from that knowledge contribute to translating it into functional, project-specific artefacts, while findings arising from examination are interpreted and written back into the maintained project state. The *promptotype*—an accepted and identifiable iteration comprising maintained project knowledge, a referenced research-data state, the resulting artefact, and documented grounds of acceptance—is the form through which this process remains reconstructable and accountable.
+Promptotyping can partially reverse this direction under stated conditions. Maintained project knowledge records how the research data are understood and for what purpose they are to be operationalised. LLM-based agents working from that knowledge contribute to translating it into functional, project-specific artefacts, while findings arising from examination are interpreted and written back into the maintained project state. The *promptotype*—an accepted and identifiable iteration comprising maintained project knowledge, a referenced research-data state, the resulting artefact, and documented grounds of acceptance—is the form through which this process remains reconstructable and accountable. This paper applies that form to itself. Its load-bearing statements are anchored source by source in a machine-validated evidence layer published with the repository, and the Author's Note records the conditions of its production.
 
 The significance of this capacity is modal rather than economic. The documented cases do not show that Promptotyping produces artefacts faster, more cheaply, or more reliably than alternative approaches, and the paper has not argued that it does. They show that forms of project-specific implementation which had previously lain outside the practical resources of individual researchers and small projects became workable at all. Requirements could be examined through functional artefacts, emerging data models could be tested against the material they were intended to organise, and proposed projects could be encountered as operational arrangements before production began.
 
 Increasingly capable models and harnesses do not render the method obsolete. As the volume, scope, and plausibility of delegable work grow, the span between what agents can produce and what scholars can responsibly accept widens rather than narrows. Maintained project knowledge, differentiated checking, write-back, and purpose-specific acceptance are the means through which that span can remain governable. Their importance increases with the capabilities they organise and constrain.
 
-These conclusions hold within the evidential scope defined in Section 4.1 and await the comparative and independent evaluation outlined in Section 4.3. Within that boundary, the paper’s position is that the contribution of LLM-based agents to scholarly work is amplification rather than a transfer of authority. **Promptotyping amplifies the practical reach of articulated project knowledge without making scholarly competence, technical responsibility, or accountable judgement dispensable.**
+These conclusions hold within the evidential scope defined in Section 4.1 and await the comparative and independent evaluation outlined in Section 4.3. Within that boundary, the paper’s position is that the contribution of LLM-based agents to scholarly work is amplification rather than a transfer of authority. Promptotyping amplifies the practical reach of articulated project knowledge; the scholarly competence and the accountable judgement it presupposes remain indispensable.
 
 ## Author’s Note on AI Use and Research Provenance
 
@@ -371,7 +371,6 @@ This account describes my experience of developing the paper and is not evidence
 
 - Edwards, Nicholas, Yukyung Lee, Yujun Audrey Mao, Yulu Qin, Sebastian Schuster, and Najoung Kim. 2026. “RExBench: Can Coding Agents Autonomously Implement AI Research Extensions?” In *Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics*. Association for Computational Linguistics. [https://doi.org/10.48550/arXiv.2506.22598](https://doi.org/10.48550/arXiv.2506.22598).
 
-- Fakhoury, Sarah, Aaditya Naik, Georgios Sakkas, Saikat Chakraborty, and Shuvendu K. Lahiri. 2024. “LLM-Based Test-Driven Interactive Code Generation: User Study and Empirical Evaluation.” *IEEE Transactions on Software Engineering* 50 (9): 2254–2268. [https://doi.org/10.1109/TSE.2024.3428972](https://doi.org/10.1109/TSE.2024.3428972).
 
 - Fickers, Andreas. 2020. “Update für die Hermeneutik: Geschichtswissenschaft auf dem Weg zur digitalen Forensik?” *Zeithistorische Forschungen / Studies in Contemporary History* 17 (1): 157–168. [https://doi.org/10.14765/zzf.dok-1765](https://doi.org/10.14765/zzf.dok-1765).
 
@@ -387,7 +386,6 @@ This account describes my experience of developing the paper and is not evidence
 
 - Hong, Kelly, Anton Troynikov, and Jeff Huber. 2025. “Context Rot: How Increasing Input Tokens Impacts LLM Performance.” Chroma Research. [https://research.trychroma.com/context-rot](https://research.trychroma.com/context-rot).
 
-- Hora, Andre, and Romain Robbes. 2026. “Are Coding Agents Generating Over-Mocked Tests? An Empirical Study.” In *Proceedings of the International Conference on Mining Software Repositories (MSR 2026)*. [https://doi.org/10.48550/arXiv.2602.00409](https://doi.org/10.48550/arXiv.2602.00409).
 
 - IEEE. 2025. *IEEE Standard for System, Software, and Hardware Verification and Validation*. IEEE Std 1012-2024. New York: IEEE. [https://standards.ieee.org/ieee/1012/7324/](https://standards.ieee.org/ieee/1012/7324/).
 
@@ -497,9 +495,9 @@ This account describes my experience of developing the paper and is not evidence
 
 [^24]: *Jeanne Hersch: Digitale Neuauflage der Schriften* is a project of the Zentralbibliothek Zürich concerned with the digital preparation, processing, and publication of Jeanne Hersch’s writings. **[Insert project URL.]**
 
-[^25]: M³GIM investigates the mobility and professional life of the mezzo-soprano Ira Malaniuk through archival material from her estate and develops corresponding data-modelling, capture, and exploration practices. **[Insert project URL.]**
+[^25]: M³GIM investigates the mobility and professional life of the mezzo-soprano Ira Malaniuk through archival material from her estate and develops corresponding data-modelling, capture, and exploration practices. Repository: [https://github.com/DigitalHumanitiesCraft/m3gim](https://github.com/DigitalHumanitiesCraft/m3gim); exploration interface: [https://dhcraft.org/m3gim](https://dhcraft.org/m3gim) (accessed 9 August 2026).
 
-[^26]: The Notker promptotype was developed as a bounded functional demonstrator for a proposed digital edition and was accepted for use in the preparation and communication of a funding proposal. **[Insert project or repository URL.]**
+[^26]: The Notker promptotype was developed as a bounded functional demonstrator for a proposed digital edition and was accepted for use in the preparation and communication of a funding proposal. Repository: [https://github.com/DigitalHumanitiesCraft/notker-edition](https://github.com/DigitalHumanitiesCraft/notker-edition); demonstrator: [https://dhcraft.org/notker-edition](https://dhcraft.org/notker-edition) (accessed 9 August 2026).
 
 [^27]: I previously used *asymmetric amplification* to describe two related effects of frontier LLMs. They particularly extend computer-based research activities, and the conditions required to benefit from that extension are unevenly distributed (Pollin 2026b). Dell’Acqua et al. (2023) similarly describe a *jagged technological frontier* on which AI assistance can improve performance for some tasks while reducing it outside the system’s current capability boundary. The term is used here to emphasise that increased implementation capacity remains dependent on data, expertise, infrastructure, and verification.
 
