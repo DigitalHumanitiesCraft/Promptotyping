@@ -22,6 +22,7 @@ import re
 import sys
 import urllib.error
 import urllib.request
+from datetime import date
 
 TOOLS = pathlib.Path(__file__).resolve().parent
 ROOT = TOOLS.parent
@@ -1076,7 +1077,7 @@ STATUS_VOCABULARY = ("idea", "draft", "stub", "complete", "reviewed",
 DATE_FORM = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
 
-def check_knowledge_frontmatter():
+def check_knowledge_frontmatter() -> None:
     """Every knowledge document carries the convention's mandatory core.
 
     The published machine form of the convention's frontmatter vocabulary is
@@ -1095,36 +1096,58 @@ def check_knowledge_frontmatter():
     try:
         import yaml
     except ImportError:
-        note("frontmatter core skipped; PyYAML is not available")
+        fail("frontmatter", "PyYAML is not available; the mandatory frontmatter "
+                            "contract cannot be checked")
         return
     for path in sorted((ROOT / "knowledge").glob("*.md")):
         if path.name == "paper.md":
             continue
-        text = path.read_text(encoding="utf-8")
-        if not text.startswith("---"):
-            fail("frontmatter", "knowledge/%s carries no frontmatter" % path.name)
+        text = read_text(path)
+        frontmatter = re.match(r"^---\n(.*?)\n---(?:\n|$)", text, re.S)
+        if not frontmatter:
+            fail("frontmatter", "knowledge/%s carries no complete frontmatter block"
+                 % path.name)
             continue
-        end = text.find("\n---", 3)
-        front = yaml.safe_load(text[4:end]) or {}
+        try:
+            front = yaml.safe_load(frontmatter.group(1)) or {}
+        except (ValueError, yaml.YAMLError) as error:
+            fail("frontmatter", "knowledge/%s carries invalid YAML: %s"
+                 % (path.name, error))
+            continue
         rel = "knowledge/%s" % path.name
+        if not isinstance(front, dict):
+            fail("frontmatter", "%s frontmatter is not a mapping" % rel)
+            continue
         for field in CORE_FIELDS:
             if field not in front:
                 fail("frontmatter", "%s misses the core field %r" % (rel, field))
         for parent, subfields in (("project", ("name", "repository")),
                                   ("method", ("name", "url"))):
             value = front.get(parent)
-            if isinstance(value, dict):
-                for sub in subfields:
-                    if sub not in value:
-                        fail("frontmatter", "%s misses %s.%s" % (rel, parent, sub))
+            if parent not in front:
+                continue
+            if not isinstance(value, dict):
+                fail("frontmatter", "%s field %s is not a mapping" % (rel, parent))
+                continue
+            for sub in subfields:
+                if sub not in value:
+                    fail("frontmatter", "%s misses %s.%s" % (rel, parent, sub))
         status = front.get("status")
         if status is not None and status not in STATUS_VOCABULARY:
             fail("frontmatter", "%s status %r is outside the template vocabulary"
                  % (rel, status))
         for field in ("created", "updated"):
             value = front.get(field)
-            if value is not None and not DATE_FORM.match(str(value)):
+            if value is None:
+                continue
+            if not DATE_FORM.fullmatch(str(value)):
                 fail("frontmatter", "%s %s %r is no YYYY-MM-DD date" % (rel, field, value))
+                continue
+            try:
+                date.fromisoformat(str(value))
+            except ValueError:
+                fail("frontmatter", "%s %s %r is not a valid calendar date"
+                     % (rel, field, value))
 
 
 def check_relative_links():
@@ -1151,7 +1174,9 @@ def check_relative_links():
                  % (path.relative_to(ROOT).as_posix(), target))
 
 
-def main():
+def main() -> int:
+    failures.clear()
+    notes.clear()
     documents = load_catalogue()
     conv_types = convention_function_types()
     cases = load_cases()
