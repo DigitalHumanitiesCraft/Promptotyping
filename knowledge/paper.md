@@ -511,7 +511,7 @@ This account describes my experience of developing the paper and is not evidence
 
 [^23]: *Stefan Zweig Digital* is a digital research environment for the scholarly exploration and publication of material from Stefan Zweig’s literary estate. [https://stefanzweig.digital](https://stefanzweig.digital)
 
-[^24]: *Jeanne Hersch: Digitale Neuauflage der Schriften* is a project of the Zentralbibliothek Zürich concerned with the digital preparation, processing, and publication of Jeanne Hersch’s writings. **[Insert project URL.]**
+[^24]: *Jeanne Hersch: Digitale Neuauflage der Schriften* is a project of the Zentralbibliothek Zürich concerned with the digital preparation, processing, and publication of Jeanne Hersch’s writings. Public corpus interface: [https://chpollin.github.io/zbz-ocr-tei/](https://chpollin.github.io/zbz-ocr-tei/) (accessed 19 August 2026).
 
 [^25]: M³GIM investigates the mobility and professional life of the mezzo-soprano Ira Malaniuk through archival material from her estate and develops corresponding data-modelling, capture, and exploration practices. Repository: [https://github.com/DigitalHumanitiesCraft/m3gim](https://github.com/DigitalHumanitiesCraft/m3gim); exploration interface: [https://dhcraft.org/m3gim](https://dhcraft.org/m3gim) (accessed 9 August 2026).
 
