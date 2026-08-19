@@ -142,7 +142,7 @@ The examination of these implemented workflows required several forms of checkin
 
 * ***Scholarly validation*** assesses whether the representations, requirements, evaluation criteria, and artefacts governing the workflow are warranted by the research material and adequate for their intended scholarly purpose.
 
-The term *agentic review* is used here in extension of emerging agent-based approaches to code review and other forms of tool-supported technical inspection. It also retains the broader sense of review as the criteria-guided and substantive examination of an artefact, as found in scholarly reviews of digital editions and resources. Whereas an LLM-as-a-Judge typically evaluates a supplied output under a given reference or rubric and returns a score, ranking, or judgement, an agentic reviewer can investigate a delimited part of a project by retrieving relevant materials, comparing several artefact layers, executing tools, and examining the grounds of apparent discrepancies. LLM-as-a-Judge can therefore be one operation within agentic review, but does not exhaust it.
+The term *agentic review* is used here in extension of emerging agent-based approaches to code review and other forms of tool-supported technical inspection.[^28] It also retains the broader sense of review as the criteria-guided and substantive examination of an artefact, as found in scholarly reviews of digital editions and resources.[^30] Whereas an LLM-as-a-Judge typically evaluates a supplied output under a given reference or rubric and returns a score, ranking, or judgement, an agentic reviewer can investigate a delimited part of a project by retrieving relevant materials, comparing several artefact layers, executing tools, and examining the grounds of apparent discrepancies. LLM-as-a-Judge can therefore be one operation within agentic review, but does not exhaust it.
 
 The evidential value of agentic review depends on how the investigation is organised. Agentic Engineering determines how review tasks are delimited and decomposed, which project knowledge and sources are supplied, which tools and permissions are available, how several reviewers are coordinated, and when unresolved cases are escalated for human adjudication. Agentic review can consequently extend the scope and depth of inspection, but its findings remain probabilistic evidence rather than authorised verification, scholarly validation, or acceptance.
 
@@ -409,6 +409,8 @@ This account describes my experience of developing the paper and is not evidence
 
 - Lewis, Patrick, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal, Heinrich Küttler, et al. 2020. “Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.” In *Advances in Neural Information Processing Systems 33*, 9459–9474. Red Hook, NY: Curran Associates. [https://proceedings.neurips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html](https://proceedings.neurips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html).
 
+- Liu, Junwei, Kaixin Wang, Yixuan Chen, Xin Peng, Zhenpeng Chen, Lingming Zhang, and Yiling Lou. 2026. “Large Language Model-Based Agents for Software Engineering: A Survey.” *ACM Transactions on Software Engineering and Methodology*. [https://doi.org/10.1145/3796507](https://doi.org/10.1145/3796507).
+
 - Liu, Nelson F., Kevin Lin, John Hewitt, Ashwin Paranjape, Michele Bevilacqua, Fabio Petroni, and Percy Liang. 2024. “Lost in the Middle: How Language Models Use Long Contexts.” *Transactions of the Association for Computational Linguistics* 12: 157–173. [https://doi.org/10.1162/tacl_a_00638](https://doi.org/10.1162/tacl_a_00638).
 
 - Malone, Thomas W., and Kevin Crowston. 1994. “The Interdisciplinary Study of Coordination.” *ACM Computing Surveys* 26 (1): 87–119. [https://doi.org/10.1145/174666.174668](https://doi.org/10.1145/174666.174668).
@@ -431,6 +433,8 @@ This account describes my experience of developing the paper and is not evidence
 
 - Russell, Stuart J., and Peter Norvig. 2020. *Artificial Intelligence: A Modern Approach*. 4th ed. Hoboken, NJ: Pearson.
 
+- Sahle, Patrick, in collaboration with Georg Vogeler and the members of the Institut für Dokumentologie und Editorik. 2014. *Criteria for Reviewing Scholarly Digital Editions, version 1.1*. Institut für Dokumentologie und Editorik. [https://www.i-d-e.de/publikationen/weitereschriften/criteria-version-1-1/](https://www.i-d-e.de/publikationen/weitereschriften/criteria-version-1-1/).
+
 - Saltzer, Jerome H., and Michael D. Schroeder. 1975. “The Protection of Information in Computer Systems.” *Proceedings of the IEEE* 63 (9): 1278–1308. [https://doi.org/10.1109/PROC.1975.1055068](https://doi.org/10.1109/PROC.1975.1055068).
 
 - Sapkota, Ranjan, Konstantinos I. Roumeliotis, and Manoj Karkee. 2026. “AI Agents vs. Agentic AI: A Conceptual Taxonomy, Applications, and Challenges.” *Information Fusion* 126: 103599. [https://doi.org/10.1016/j.inffus.2025.103599](https://doi.org/10.1016/j.inffus.2025.103599).
@@ -444,6 +448,8 @@ This account describes my experience of developing the paper and is not evidence
 - Starace, Giulio, Oliver Jaffe, Dane Sherburn, James Aung, Jun Shern Chan, Leon Maksin, Rachel Dias, et al. 2025. “PaperBench: Evaluating AI’s Ability to Replicate AI Research.” *arXiv*. [https://doi.org/10.48550/arXiv.2504.01848](https://doi.org/10.48550/arXiv.2504.01848).
 
 - Sterz, Sarah, Kevin Baum, Sebastian Biewer, Holger Hermanns, Anne Lauber-Rönsberg, Philip Meinel, and Markus Langer. 2024. “On the Quest for Effectiveness in Human Oversight: Interdisciplinary Perspectives.” In *Proceedings of the 2024 ACM Conference on Fairness, Accountability, and Transparency*, 2495–2507. New York: ACM. [https://doi.org/10.1145/3630106.3659051](https://doi.org/10.1145/3630106.3659051).
+
+- Tang, Xunzhu, Kisub Kim, Yewei Song, Cedric Lothritz, Bei Li, Saad Ezzini, Haoye Tian, Jacques Klein, and Tegawendé F. Bissyandé. 2024. “CodeAgent: Autonomous Communicative Agents for Code Review.” In *Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing*, edited by Yaser Al-Onaizan, Mohit Bansal, and Yun-Nung Chen, 11279–11313. Association for Computational Linguistics. [https://doi.org/10.18653/v1/2024.emnlp-main.632](https://doi.org/10.18653/v1/2024.emnlp-main.632).
 
 - van Es, Karin, Maranke Wieringa, and Mirko Tobias Schäfer. 2018. “Tool Criticism: From Digital Methods to Digital Methodology.” In *Proceedings of the Second International Conference on Web Studies*, 24–27. New York: ACM. [https://doi.org/10.1145/3240431.3240436](https://doi.org/10.1145/3240431.3240436).
 
@@ -513,7 +519,11 @@ This account describes my experience of developing the paper and is not evidence
 
 [^27]: I previously used *asymmetric amplification* to describe two related effects of frontier LLMs. They particularly extend computer-based research activities, and the conditions required to benefit from that extension are unevenly distributed (Pollin 2026b). Dell’Acqua et al. (2023) similarly describe a *jagged technological frontier* on which AI assistance can improve performance for some tasks while reducing it outside the system’s current capability boundary. The term is used here to emphasise that increased implementation capacity remains dependent on data, expertise, infrastructure, and verification.
 
+[^28]: Agent-based code review is an active research direction in software engineering. Liu et al. (2026) survey LLM-based agents across software-engineering tasks and place code review within static code checking. Tang et al. (2024) present a multi-agent arrangement in which specialised agents examine a code change for inconsistency with its commit message, introduced vulnerabilities, adherence to code style, and required revisions, while a supervisory agent keeps their contributions bound to the review question.
+
 [^29]: SZD-HTR pipeline repository: [https://github.com/chpollin/szd-htr-ocr-pipeline](https://github.com/chpollin/szd-htr-ocr-pipeline); public verification interface: [https://chpollin.github.io/szd-htr-ocr-pipeline/](https://chpollin.github.io/szd-htr-ocr-pipeline/) (accessed 31 July 2026). The pipeline processes material described through TEI metadata from *Stefan Zweig Digital*, the public archival and scholarly platform for Stefan Zweig’s estate. The production pipeline is a project-specific implementation and should not be inferred solely from the public platform.
+
+[^30]: The criteria-guided form of review is established for digital editions and resources through RIDE, the review journal published by the Institut für Dokumentologie und Editorik since 2014, [https://ride.i-d-e.de/](https://ride.i-d-e.de/) (accessed 19 August 2026). Its reviewers work against published catalogues of criteria, among them the catalogue for scholarly digital editions (Sahle 2014), and combine a substantive written review with a structured factsheet.
 
 [^34]: Digital Humanities Craft, *coOCR/HTR Workbench*, [https://dhcraft.org/co-ocr-htr/](https://dhcraft.org/co-ocr-htr/) (accessed 29 July 2026). The interface describes itself as a research preview and exposes model configuration, local and hosted model options, deterministic checks, LLM review, expert correction, IIIF input, and several export formats.
 
