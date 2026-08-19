@@ -8,7 +8,8 @@ Bevor du eine Aufgabe in diesem Repo angehst, lies in dieser Reihenfolge:
 
 1. `knowledge/INDEX.md` — Navigation und Begriffslexikon
 2. `knowledge/project.md` — was die Site ist, wer die Adressaten sind
-3. Das jeweils aufgabenrelevante Dokument:
+3. `knowledge/governance.md` — Autorität, Quellenstatus, Schreibgrenzen, Write-back, Rechte, Publikation und Eskalation
+4. Das jeweils aufgabenrelevante Dokument:
    - Paper-Arbeit → `knowledge/paper-knowledge.md`, das eine Steuerdokument mit Argument, Terminologie, Sprachregeln, Apparat und Einreichweg; von dort `knowledge/paper.md`, der kanonische vierkapitelige Text in Version 0.9 (Review-Draft), seit der Promotion vom 2026-07-31 von der Site gerendert. `paper.md` bleibt headerless und beginnt mit seiner H1; Version, Status und Reviewer-Ansprache stehen in `paper-knowledge.md`, nicht im Text. Die Zwei-Spuren-Übergangslage ist beendet; die konsolidierten Steuerungs- und Revisionsdokumente liegen commit-gepinnt in der Git-History (Provenienz-Tabelle am Ende von `paper-knowledge.md`).
    - Was-soll-die-Site-können → `knowledge/specification.md`
    - Wie-ist-es-gebaut → `knowledge/architecture.md`

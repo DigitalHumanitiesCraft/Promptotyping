@@ -7,7 +7,7 @@ status: complete
 language: en
 version: 1.0
 created: 2026-05-09
-updated: 2026-07-31
+updated: 2026-08-17
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5, Claude Opus 5)
 method:
@@ -18,7 +18,7 @@ template:
   version: 0.2
   url: https://dhcraft.org/Promptotyping/promptotyping-document/index
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-index
-related: [project, specification, architecture, design, journal, plan, paper, paper-knowledge, report, skriptum-video-1, skriptum-video-2]
+related: [project, governance, specification, architecture, design, journal, plan, paper, paper-knowledge, report, skriptum-video-1, skriptum-video-2]
 ---
 
 # INDEX
@@ -37,6 +37,7 @@ By operator decision of 2026-07-23 the core knowledge documents (INDEX, project,
 
 - **INDEX** (this document). Navigation and glossary.
 - **[project.md](project.md)** — what the site is, its audiences, material basis, and current state (function: Charter).
+- **[governance.md](governance.md)** — who may decide and change what, which source and checking statuses apply, where findings are written back, and which rights, publication, and escalation rules bind the work (function: Governance; type: Action).
 - **[specification.md](specification.md)** — what the site can do: anchor schema, `template:` resolution, sections, side panels, decision records (function: Specification).
 - **[architecture.md](architecture.md)** — how the site is built: URL structure, tech stack, module inventory (function: Architecture).
 - **[verification.md](verification.md)** — which claims the site makes about itself, what each is checked against, by what procedure and with what verdict; the automatic part runs as `tools/check_consistency.py` (function: Verification).
@@ -59,11 +60,12 @@ Two audit records live on in the evidence layer regardless. Audits A1 and A2 are
 
 1. INDEX (orientation)
 2. **project.md** (what the site is)
-3. **specification.md** (what it can do)
-4. **architecture.md** (how it is built)
-5. **design.md** (how it looks)
-6. **journal.md** (what happened)
-7. **paper-knowledge.md** (steering of the paper work, leading into **paper.md**)
+3. **governance.md** (who has authority and which rules bind changes)
+4. **specification.md** (what it can do)
+5. **architecture.md** (how it is built)
+6. **design.md** (how it looks)
+7. **journal.md** (what happened)
+8. **paper-knowledge.md** (steering of the paper work, leading into **paper.md**)
 
 
 ## Glossary
@@ -97,6 +99,8 @@ Terms constitutive for this knowledge base. Canonical definitions live in the li
 **`template:` field.** Frontmatter field pointing to the authoritative template specification on this site. Format `template: { name, version, url, alias }`; `url` is the latest subpath form, `alias` the latest hash anchor.
 
 **Grounded Vault (`vault/`).** Instance of the Grounded Vault template carrying the provenance layer beneath the paper: sources, distillates, and assertions (until August 2026 claims) with grounding anchors, validated by `vault/tools/validate.py`. Migrated onto the renumbered template chain (`00_sources` to `40_output`) on 2026-08-09. Its own action layer `vault/CLAUDE.md` governs all work there.
+
+**Project Governance.** The binding project-level rules for authority, source and evidence status, permissions, checking, acceptance, write-back, rights, publication, and escalation. In this repository they live in [governance.md](governance.md) and are applied through the repository action layer.
 
 ## Relation to the vault knowledge base
 

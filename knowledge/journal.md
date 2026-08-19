@@ -7,7 +7,7 @@ status: active
 language: de
 version: 1.0
 created: 2026-05-09
-updated: 2026-07-31
+updated: 2026-08-17
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 method:
@@ -871,3 +871,7 @@ Die Prüfung hat sich gelohnt. Die Synthese trägt die Modellnamen des Datensatz
 Lane-4-Session. Der `vault/` ist auf den weiterentwickelten Grounded-Vault-Template-Stand migriert: Schichtkette `00_sources` bis `40_output`, claim→assertion, Template-Validator mit beiden Inventarregistern, `review.py`, neu instanzierte Regeldokumente, Template-Fixtures statt `examples/`. Das Mapping liegt im Template-Repo (`grounded-vault`, `--instance promptotyping`); Quellen-Originale blieben byte-identisch, alle publizierten `#vault-{slug}`-Anker lösen unverändert auf. Die Site zog nach (Generator, `data/vault.json`, Vault-Ansicht, CSS, `check_consistency.py`, Doku). Am Paper: Conclusion gegen das Style Sheet geglättet und um den Selbstanwendungssatz ergänzt, Flags 6 (M³GIM/Notker-URLs) und 7 (Fakhoury/Hora entfernt, Register `dropped`) geschlossen, Flag 3 vollständig abgearbeitet (Zweitaudit der 72 Zuordnungen gegen den Vierkapitel-Text, Defektliste in 49 Assertion-Dateien, `state.md` neu gebaut). Offen beim Operator: Flags 2, 4, 5, 8, ZBZ-Projekt-URL (fn 24). Verifikation: Vault-Validator 0 Fehler/1 deklarierte Warnung, pytest 59/59, `check_consistency` 0 Failures, Browser-Smoke-Test der Vault-Ansicht bestanden.
 
 Nachtrag, gleiche Session: Stilkonformanz-Pass über den ganzen Vierkapitel-Text gegen das eigene Style Sheet. Sechs Eingriffe, alle wortchirurgisch ohne Anker- oder Strukturänderung: die Negativ-Konstruktion in §1.1 (Drucker/Schöch-Satz) positiv gestellt, zwei "neither/nor, but"- und Doppelpunkt-Konnektoren in §2.1 aufgelöst, der Doppelpunkt-Konnektor am Ende von §2.3.2, der gefettete Kernsatz von §3.2 positiv gebaut (Ausschluss als eigener Satz), die Doppelpunkt-Fuge in §4.1. Die Assertion-Routings bleiben gültig, der von §1.1 betroffene Satz trägt seinen Inhalt weiter.
+
+## 2026-08-17 — Project Governance als eigene Knowledge-Base-Funktion
+
+Der Methodenbestand erhält `knowledge/governance.md` als projektweites Action Document. Es bündelt Autorität, Quellen- und Evidenzstatus, Schreibgrenzen, Verifikation, fachliche Validierung, Annahme, Write-back, Rechte, Veröffentlichung und Eskalation. `CLAUDE.md` lädt das Dokument vor jeder relevanten Änderung, `INDEX.md` führt es in Navigation und Glossar. Die Governance-Funktion ist im Obsidian-Vault in der Konvention der Promptotyping Documents registriert; eine allgemeine Vorlage wird aus mehreren überprüften Projektinstanzen destilliert. Research Mission Control bleibt eine optionale Orchestrierungsarchitektur für komplexe Promptotyping-Projekte.
