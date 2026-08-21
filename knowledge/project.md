@@ -7,7 +7,7 @@ status: complete
 language: en
 version: 0.5
 created: 2026-05-09
-updated: 2026-07-25
+updated: 2026-08-21
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Opus 4.8)
 method:
@@ -15,7 +15,7 @@ method:
   url: https://dhcraft.org/Promptotyping/
 template:
   name: Vorlage Projekt-Wissensdokument
-  version: 0.2
+  version: 0.3
   url: https://dhcraft.org/Promptotyping/promptotyping-document/project
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-project
 topics: ["[[Promptotyping]]", "[[Context Engineering]]"]
@@ -48,9 +48,9 @@ The methodology repository processes no research data, it mirrors knowledge. Tha
 
 Four source types feed the site.
 
-**The Pollin 2026 paper.** The scholarly method text, *Promptotyping. Translating Research Data into Research Artefacts through Context Engineering and Agentic Engineering*. It is written as a single English Markdown document [paper.md](paper.md) in a two-document model, with everything decided, checked and still open about it held in [paper-knowledge.md](paper-knowledge.md). The current state is version 0.9, a four-chapter review draft promoted on 2026-07-31, circulated for substantive feedback before the final revision. The site renders `paper.md` directly, so the deployed text is the canonical text. The chosen venue is the Zeitschrift für digitale Geisteswissenschaften (ZfdG); the submission package derives fresh from the submission section of `paper-knowledge.md` and the final text at submission time. Three earlier steering documents were consolidated into `paper-knowledge.md` and deleted with commit pins, `paper-writing.md`, `paper-argument-map.md` and `submission-zfdg.md`; their wording lives in the git history.
+**The Pollin 2026 paper.** The scholarly method text, *Promptotyping. Translating Research Data into Research Artefacts through Context Engineering and Agentic Engineering*. It is the single English Markdown Research Artefact [promptotyping-paper.md](../research-artefacts/promptotyping-paper.md) in a two-document model, with everything decided, checked and still open about it held in [paper-specification.md](paper-specification.md). The current state is version 0.9, a four-chapter review draft promoted on 2026-07-31, circulated for substantive feedback before the final revision. The site renders the Research Artefact directly, so the deployed text is canonical. The chosen venue is the Zeitschrift für digitale Geisteswissenschaften (ZfdG); the submission package derives fresh from the submission section of `paper-specification.md` and the final text at submission time. Three earlier steering documents were consolidated into `paper-specification.md` and deleted with commit pins, `paper-writing.md`, `paper-argument-map.md` and `submission-zfdg.md`; their wording lives in the git history.
 
-**Vault templates and convention.** The template catalogue under `Vault Operations/Templates/Promptotyping/` and the convention under `Vault Operations/Konventionen/Konvention Knowledge Documents.md`, both source of truth in the vault. The template function names are English since the 2026-07-19 catalogue sweep. When a template is mirrored into the repository, vault-internal wikilinks are replaced by site anchors or inline explanations, and the mirrored versions lag the vault state until the next site update.
+**Vault templates and convention.** The template catalogue under `Vault Operations/Templates/Promptotyping/` and the convention under `Vault Operations/Konventionen/Konvention Promptotyping Documents.md` are the source of truth in the vault. Function names and subject prefixes are English. The public mirrors preserve their established URLs and anchors while adopting the current naming contract and template versions.
 
 **The case-study collection.** Documented case studies in the vault under `Projects/Promptotyping/Case Studies/`. Each carries repository URL, live-demo URL where available, status, main claim, and methodological aspects. A curated subset renders as depth pages, the remainder as cards in the gallery. The curation and the exact selection are owned by [specification.md](specification.md) (A7).
 
@@ -80,7 +80,7 @@ The FAIR infrastructure policy is dual licensing, MIT for code and CC BY 4.0 for
 
 The `vault/` folder is a Grounded-Vault instance (template `DigitalHumanitiesCraft/grounded-vault`) that anchors the paper's load-bearing claims to sources. Work inside it follows its own action layer `vault/CLAUDE.md`.
 
-The refactor and paper work continue in a multi-lane setup with research reporting. The chronological course and the lane cuts live in [journal.md](journal.md), the paper steering in [paper-knowledge.md](paper-knowledge.md).
+The chronological course and the lane cuts live in [journal.md](journal.md), while the paper's governing knowledge lives in [paper-specification.md](paper-specification.md).
 
 ## Relationship to the vault
 

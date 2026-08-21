@@ -7,7 +7,7 @@ status: active
 language: en
 version: "0.2"
 created: 2026-07-29
-updated: 2026-07-31
+updated: 2026-08-21
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 method:
@@ -15,17 +15,17 @@ method:
   url: https://dhcraft.org/Promptotyping/
 template:
   name: Vorlage Plan
-  version: 0.1
+  version: 0.3
   url: https://dhcraft.org/Promptotyping/promptotyping-document/plan
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-plan
-related: [INDEX, specification, architecture, design, journal, paper-knowledge]
+related: [INDEX, specification, architecture, design, handoff, journal, paper-specification]
 ---
 
 # Plan
 
 Frontend work packages agreed with the operator on 2026-07-29, in the order they should run. Each package states its scope, where it touches the specification, and which operator decision it still needs. Two state sections at the end record what has run since, first the execution night of 2026-07-29 and then the two manuscript promotions of 2026-07-30 and 2026-07-31.
 
-The two-track regime that framed this plan is over. It held that the site renders `knowledge/paper.md` until chapter-wise acceptance and that everything bound to the new manuscript ships with a swap; the swap ran with the promotion of 2026-07-30 and again with the four-chapter revision of 2026-07-31. Package F6 is closed accordingly, and the passages below that still speak of a pending swap are read as the record of the plan as agreed.
+The two-track regime that framed this plan is over. It held that the site rendered the canonical paper until chapter-wise acceptance and that everything bound to the new manuscript shipped with a swap; the swap ran with the promotion of 2026-07-30 and again with the four-chapter revision of 2026-07-31. The canonical manuscript now lives at `research-artefacts/promptotyping-paper.md`. Package F6 is closed accordingly, and passages below that still speak of a pending swap are the record of the plan as agreed.
 
 ## F1 — Paper chapter tracking in the sidebar
 
@@ -73,7 +73,7 @@ The requested right-hand interactive animation conflicts with three documented d
 
 ## F6 — The swap package (closed 2026-07-31)
 
-Collected here from `paper-knowledge.md` so the frontend view of the swap is complete. The package ran across the two promotions; the per-item state stands after each item.
+Collected here from `paper-specification.md` so the frontend view of the swap is complete. The package ran across the two promotions; the per-item state stands after each item.
 
 1. `#abschnitt-*` alias table for every moved section slug, plus re-anchoring of the V10 anchor phrases. **Done.** The map in `assets/js/pages-paper.js` was re-pointed in full on 2026-07-31 and now carries three superseded cuts; it is flat and does not resolve transitively, so every further restructuring re-points it rather than appending to it.
 2. Gallery admission rule A7 re-decided: the fourteen-project inventory left the manuscript, and the card-per-Table-1-row rule loses its referent; likewise the promptotype-status classification. **Done.** Decision 11 of 2026-07-31 keeps the gallery a curated showcase broader than the paper; the evidence role couples to the paper's case table, now Table 1 in section 3.2, and the eight former inventory projects stand under the role `further`.
@@ -150,3 +150,9 @@ The operator released the plan for execution as a whole on the evening of 2026-0
 - The three merge candidates among the informative pages from F9 are still undecided.
 
 What remains in this document is therefore F5, F7, F8 and two open reviews. When those close, the plan closes with them.
+
+## Method-maintenance lanes
+
+The current `knowledge/journal.md` predates template version 0.4 and remains a narrative project record. A later repository-specific migration will apply the curated provenance types and semantic compaction rule against a clean Git baseline. That migration will preserve every substantive statement through an explicit disposition and will not create `journal-archive.md`.
+
+The canonical Promptotyping skill needs a separate delivery lane. That lane will establish the repository source and synchronisation path, then align `orient`, `handoff`, `compact`, and `distill` with the method specification. Installed copies are outside this refactor.

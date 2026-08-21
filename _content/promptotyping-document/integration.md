@@ -1,24 +1,23 @@
 ---
 title: Vorlage Integration
 slug: integration
-version: "0.1"
+version: "0.3"
 status: complete
 source: Vorlage Integration
-mirrored: 2026-07-19
+mirrored: 2026-08-21
 machine-url: https://dhcraft.org/Promptotyping/_content/promptotyping-document/integration.md
 ---
-
 # Vorlage Integration
 
-Diese Vorlage strukturiert das Integration-Dokument einer Promptotyping-Wissensbasis. Das resultierende Dokument heißt typischerweise `integration.md` oder, wenn ein Repo mehrere Schnittstellen führt, `{gegenüber}-integration.md`, und liegt im `knowledge/`-Ordner des Repos. Es trägt den Kontrakt zwischen zwei Promptotyping-Projekten oder Lanes: wer liefert was an wen, in welchem Format, unter welchen Abnahmekriterien, und was auf der Schnittstelle noch offen ist. Der erste Absatz unter der H1 trägt den Zweck in einem Satz. Empirische Basis der Vorlage sind teiCrafter (`integration.md` als Drei-Projekt-Referenz) und szd-htr-ocr-pipeline (`teicrafter-integration.md`, `dia-xai-integration.md` als lane-lokale Schnittstellendokumente); Extraktion im Inhaltsaudit vom 2026-07-19.
+Diese Vorlage strukturiert das dauerhaft gepflegte Integration-Dokument einer Promptotyping-Wissensbasis. Ein einzelner Kontrakt heißt `integration.md`; mehrere Schnittstellen werden als `<counterpart>-integration.md` spezialisiert. Das Dokument liegt im `knowledge/`-Ordner und trägt Austauschformat, Zuständigkeiten sowie Abnahmekriterien. Neue Übergabedeltas liegen bis zur fachlichen Verarbeitung in `knowledge/handoff.md`; datierte außergewöhnliche Übergabestände liegen unter `handoffs/`.
 
 ## Geltungsbereich
 
-Die Vorlage trägt, sobald ein Projekt Daten, Formate oder Zuständigkeiten mit einem anderen Projekt, einem externen System oder einer parallelen Lane teilt und diese Schnittstelle explizit gemacht werden muss. Triggerkriterium ist der projektübergreifende Kontrakt, nicht die bloße Nachbarschaft zweier Repos.
+Die Vorlage trägt, sobald ein Projekt Daten, Formate oder Zuständigkeiten mit einem anderen Projekt, einem externen System oder einer parallelen Lane teilt und diese Schnittstelle explizit gemacht werden muss. Triggerkriterium ist der projektübergreifende Kontrakt.
 
-Lebenszyklus: das Dokument entsteht mit dem Kontrakt, idealerweise bevor die erste Lieferung fließt, und wird bei jeder Kontraktänderung auf beiden Seiten der Schnittstelle im selben Zug nachgezogen; eine einseitig aktualisierte Integration ist der teuerste Drift der Wissensbasis, weil er das Gegenüber betrifft. Wird die Schnittstelle stillgelegt, wird das Dokument archiviert, nicht gelöscht, weil der Kontrakt die gelieferten Daten weiter erklärt.
+Das Dokument entsteht mit dem Kontrakt, idealerweise bevor die erste Lieferung fließt, und wird bei jeder Kontraktänderung auf beiden Seiten der Schnittstelle im selben Zug nachgezogen. Wird die Schnittstelle stillgelegt, bleibt der letzte gültige Kontrakt als Erklärung der gelieferten Daten erhalten.
 
-Integration ist von zwei Nachbarfunktionen abgegrenzt. Architecture (`architecture.md`) beschreibt den internen Aufbau des eigenen Projekts, introspektiv; Integration beschreibt den Kontrakt an der Projektgrenze, interfokussiert, und verweist für interne Schichten auf die Architecture. Provenance (`journal.md`) hält den rückwärts gerichteten Entscheidungsverlauf; Integration hält den aktuell gültigen, vorwärts gerichteten Kontrakt, ein empirischer Befund friert den Kontrakt hier ein, die Entscheidungsgeschichte dahinter gehört ins Journal.
+Integration ist von den Nachbarfunktionen Architecture, Handoff und Provenance abgegrenzt. `architecture.md` beschreibt den internen Aufbau des eigenen Projekts. `handoff.md` führt übernommene Deltas bis zu ihrer Integration oder Verwerfung. `journal.md` weist den rückwärts gerichteten Übergang nach. Integration hält den aktuell gültigen Kontrakt an der Projektgrenze. Ein dauerhafter Research-to-Operations-Handoff ist deshalb ein Declarative Integration Document.
 
 Zwei Zuschnitte sind gleichwertig und richten sich nach dem Adressaten. Die Masterreferenz (teiCrafter-Muster) beschreibt ein Mehrprojekt-Geflecht aus einer Hand für alle Beteiligten; das lane-lokale Schnittstellendokument (szd-htr-Muster) beschreibt eine Richtung aus Sicht des eigenen Repos. Beschreiben beide Seiten denselben Kontrakt, muss genau eine Seite als Quelle der Wahrheit deklariert sein und beide müssen aufeinander verweisen; die einseitige Verlinkung war der eine Konsistenzbefund der Extraktion.
 
@@ -41,7 +40,7 @@ Pflichtkern der Konvention (`title`, `project`, `method`, `status`, `created`, `
 - `template:` als Block mit `name: Vorlage Integration`, `version`, `url`, sobald diese Vorlage angewandt wurde.
 - `counterpart:` das Gegenüber als Objekt mit `name` und, falls vorhanden, `repository`.
 - `direction:` `outbound`, `inbound` oder `bidirectional`.
-- `related:` typischerweise `architecture`, `specification`, `journal`.
+- `related:` typischerweise `architecture`, `specification`, `handoff`, `journal`.
 
 ## Abschnitte im Detail
 
@@ -67,7 +66,7 @@ Funktion: die Erfüllung prüfbar machen. Inhalt: die formalen Bedingungen, unte
 
 ### Offene Punkte und Input-Gaps
 
-Funktion: benennen, was noch nicht geliefert wird oder blockiert. Inhalt: pro Punkt, was fehlt, welche Seite es schuldet und was es blockiert.
+Funktion: vertragliche Input-Verpflichtungen benennen. Inhalt: pro Verpflichtung, was geliefert werden muss, welche Seite es schuldet und welche Abnahmekriterien gelten. Neu eingegangene, noch ungeprüfte Deltas bleiben bis zur Integration in `knowledge/handoff.md`.
 
 ### Korrekturen und Fallgruben
 
@@ -77,16 +76,14 @@ Funktion: bekannte Missinterpretationen festhalten, bevor sie sich wiederholen. 
 
 Funktion: die Quellen der Wahrheit auflisten. Inhalt: pro Aspekt des Kontrakts das verbindliche Dokument mit Pfad, auf beiden Seiten der Schnittstelle; hier wird die wechselseitige Verlinkung beider Repos hergestellt.
 
-### Wiedereinstiegs-Kontext (optional)
-
-Funktion: den Handoff-Zustand für die nächste Session oder Lane tragen. Inhalt: aktueller Stand der Schnittstelle, letztes verifiziertes Datum, der eine nächste offene Schritt. In der Praxis lebt dieser Inhalt teils in Action-Layer-Notizen (teiCrafter führt Handoff-Dateien unter `reports/`); die Sektion holt ihn in die Wissensbasis, wo die Schnittstelle selbst der Wiedereinstiegspunkt ist. Volatile Stände sind hier als datierter Snapshot zu führen.
-
 ## Was nicht reingehört
 
 - Interner Aufbau. Schichten, Module und Signaturen des eigenen Systems gehören in `architecture.md`; hier steht nur, was an der Grenze sichtbar ist.
-- Entscheidungsgeschichte. Warum der Kontrakt so aussieht, gehört in `journal.md` oder `decisions.md`; hier steht der gültige Stand.
+- Entscheidungsgeschichte. Warum der Kontrakt so aussieht, gehört in `journal.md` oder ein gegenstandsbezogenes Entscheidungsregister wie `architecture-decisions.md`; hier steht der gültige Stand.
 - Detailwissen des Gegenübers. Die Pipeline-Internas des anderen Projekts gehören in dessen Wissensbasis; hier stehen sie nur, soweit der Kontrakt sie braucht, sonst als Verweis.
 - Zeitpläne ohne externe Phase. Meilenstein-Tabellen veralten unmarkiert; sie gehören nur hinein, wenn eine externe Projektphase sie erzwingt, und dann als datierter Snapshot.
+- Wiedereinstiegsstände. Session- und Lane-Übergaben liegen als `<scope>-handoff-YYYY-MM-DD.md` unter `handoffs/` und verweisen auf den gültigen Kontrakt.
+- Ungeprüfte Übergabedeltas. Sie verbleiben bis zur Integration oder Verwerfung in `knowledge/handoff.md`.
 
 ## Vorlage zum Befüllen
 
@@ -101,7 +98,7 @@ method:
   url: https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin
 template:
   name: Vorlage Integration
-  version: 0.1
+  version: 0.3
   url: https://dhcraft.org/Promptotyping/promptotyping-document/integration
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-integration
 counterpart:
@@ -113,7 +110,7 @@ language: [de | en]
 version: [Repo-Schema-Version]
 created: [YYYY-MM-DD]
 updated: [YYYY-MM-DD]
-related: [architecture, specification, journal]
+related: [architecture, specification, handoff, journal]
 ---
 
 # Integration: [Gegenüber]
@@ -150,7 +147,7 @@ related: [architecture, specification, journal]
 
 ## Offene Punkte und Input-Gaps
 
-<!-- Pro Punkt: was fehlt, welche Seite es schuldet, was es blockiert. -->
+<!-- Nur vertragliche Input-Verpflichtungen. Neu eingegangene Deltas verbleiben bis zur Integration in knowledge/handoff.md. -->
 
 [...]
 
@@ -168,22 +165,13 @@ related: [architecture, specification, journal]
 |---|---|---|
 | [Aspekt] | [Dokument] | [Pfad] |
 
-<!-- ============================================================ -->
-<!-- OPTIONALE SEKTION: vor dem Commit löschen, falls nicht genutzt -->
-<!-- ============================================================ -->
-
-## Wiedereinstiegs-Kontext
-
-<!-- Datierter Snapshot: aktueller Stand, letztes verifiziertes Datum, der eine nächste Schritt. -->
-
-[Stand YYYY-MM-DD] [...]
 ````
 
 ## Anwendung als Prompt-Template
 
 Strukturanker beim Aufsetzen einer neuen Schnittstelle. Der Agent erhält den Template-Block, das Format (Schema, Beispieldateien) und die Gegenüber-Wissensbasis; er befüllt Zweck, Datenfluss, Format und Zuständigkeiten, leitet die Abnahmekriterien aus den formalen Eigenschaften des Formats ab und prüft, ob das Gegenüber die Schnittstelle bereits beschreibt. Wenn ja, ist zuerst die Quelle der Wahrheit zu deklarieren und die wechselseitige Verlinkung herzustellen, bevor Inhalt dupliziert wird.
 
-Review-Folie für eine bestehende Integration. Ein vorhandenes Dokument wird gegen die Vorlage gehalten, um zu prüfen, ob die Richtung explizit ist, ob eine Quelle der Wahrheit deklariert und beidseitig verlinkt ist, ob die Abnahmekriterien einen Prüfweg tragen, ob Zeitpläne als datierte Snapshots gekennzeichnet sind und ob Internas des Gegenübers als Verweis statt als Kopie geführt werden.
+Review-Folie für eine bestehende Integration. Ein vorhandenes Dokument wird gegen die Vorlage gehalten, um Richtung, Quelle der Wahrheit, beidseitige Verlinkung, Abnahmekriterien und die Trennung von datierten Handoffs zu prüfen.
 
 ## Beispiel
 
@@ -200,11 +188,16 @@ teiCrafter (`knowledge/integration.md`, "Three-Project Master Reference") ist di
 
 ## Versionshistorie
 
+- 0.3 (2026-08-21): Process Inbox, datierte Snapshots und dauerhafter Research-to-Operations-Kontrakt funktional getrennt.
+- 0.2 (2026-08-21): Naming Contract übernommen. Integration bleibt der dauerhafte Kontrakt in `knowledge/`; datierte Wiedereinstiegsstände liegen unter `handoffs/`.
 - 0.1 (2026-07-19): Erstfassung, empirisch extrahiert aus teiCrafter und szd-htr-ocr-pipeline; Wiedereinstiegs-Kontext als ergänzte Sektion. Freigegeben am 2026-07-19.
 
 ## Related
 
+- [Vorlagen Promptotyping Documents](#vorlagen)
 - [Konvention Promptotyping Documents](#konvention-v0.1)
+- 2026-07-19 - Promptotyping-Wissensbasen Inhaltsaudit (Befund)
 - [Vorlage Architecture](#promptotyping-document-architecture)
 - [Vorlage Journal](#promptotyping-document-journal)
 - [Vorlage Verification](#promptotyping-document-verification)
+- [Vorlage Handoff](#promptotyping-document-handoff)

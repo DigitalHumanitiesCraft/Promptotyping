@@ -3,7 +3,7 @@
     "stand": "2026-07-31",
     "version": "0.3",
     "beschreibung": "Glossary of the terms of the Promptotyping method and of the methodology site. This JSON is the authoritative data source for the site (tooltips, glossary page and term index); _content/glossar.md is the readable form of the same content and is generated from this file. Terms the paper text does not carry are marked as site vocabulary in their source list.",
-    "schema": "Array of entries with the fields slug (URL anchor fragment, forming the site anchor together with #konzept- or #glossar-), begriff (display form), kurz (one sentence for tooltips), voll (one paragraph of full definition), kategorie (what kind of thing the term names, one key of the controlled taxonomy in _meta.kategorien below), quellen (the carriers of the entry, see below), and the optional suchform (the shorter wording under which the term actually occurs in running text; the term index searches it alongside begriff, which a long nominal phrase never matches). A source carries typ, the display text, and for every typ but text an anker that resolves on this site: paper for a section of knowledge/paper.md, literature for a reference-list entry, vault for an assertion of the grounded vault, page for a page or block of the site, and text for a carrier this site holds no address for.",
+    "schema": "Array of entries with the fields slug (URL anchor fragment, forming the site anchor together with #konzept- or #glossar-), begriff (display form), kurz (one sentence for tooltips), voll (one paragraph of full definition), kategorie (what kind of thing the term names, one key of the controlled taxonomy in _meta.kategorien below), quellen (the carriers of the entry, see below), and the optional suchform (the shorter wording under which the term actually occurs in running text; the term index searches it alongside begriff, which a long nominal phrase never matches). A source carries typ, the display text, and for every typ but text an anker that resolves on this site: paper for a section of research-artefacts/promptotyping-paper.md, literature for a reference-list entry, vault for an assertion of the grounded vault, page for a page or block of the site, and text for a carrier this site holds no address for.",
     "kategorien": {
       "form-of-work": "Form of work",
       "document-function": "Document function",
@@ -14,7 +14,7 @@
       "infrastructure": "Infrastructure and environment"
     },
     "datengrundlage": [
-      "knowledge/paper.md (canonical paper text)",
+      "research-artefacts/promptotyping-paper.md (canonical paper text)",
       "knowledge/INDEX.md (term lexicon)",
       "knowledge/specification.md (site requirements and ADRs)",
       "Konvention Knowledge Documents",
@@ -262,8 +262,8 @@
     {
       "slug": "context-memory",
       "begriff": "Context Memory",
-      "kurz": "Interplay of journal and git history that enables reliable session resumption.",
-      "voll": "Context memory denotes the interplay of journal and git history that enables reliable session resumption, where the journal documents why decisions were taken and the commits document what was done. The Process Documents of the method carry this function. The pattern was observed among others in the imareal-room-object dashboard, where the agent documented in the journal on its own initiative.",
+      "kurz": "Division of re-entry context among durable documents, Process Documents and git history.",
+      "voll": "Context memory denotes the division of re-entry information among durable project knowledge, open received deltas in handoff.md, accepted future work in plan.md, the curated provenance index in journal.md, and earlier wording in git history. This division lets a new session recover current substance, pending inputs, future commitments, and transition grounds from their responsible carriers.",
       "kategorie": "document-function",
       "quellen": [
         {
@@ -324,7 +324,7 @@
       "slug": "declarative-document",
       "begriff": "Declarative Document",
       "kurz": "Knowledge document that holds knowledge about data, domain and research context.",
-      "voll": "A Declarative Document is the specialisation of the knowledge document towards knowledge about the subject matter. It describes what is known about the data, the domain and the research context. Examples are README.md, project.md, data.md, requirements.md, architecture.md, design.md, editorial guidelines, mapping rules and verification documents. Declarative Documents are curated by the Critical Expert and constitute the persistent artefact of context engineering, because the knowledge they encode survives changes in code, model versions and tools. For diagnostic use, factually wrong output sends the reader to the Declarative Document first. The site carried this type under the name Knowledge Document until July 2026, when the name moved to the generic term.",
+      "voll": "A Declarative Document is the specialisation of the knowledge document towards knowledge about the subject matter. It describes what is known about the data, the domain and the research context. Examples are README.md, project.md, data.md, specification.md, architecture.md, design.md, editorial guidelines, mapping rules and verification documents. Declarative Documents are curated by the Critical Expert and constitute the persistent artefact of context engineering, because the knowledge they encode survives changes in code, model versions and tools. For diagnostic use, factually wrong output sends the reader to the Declarative Document first. The site carried this type under the name Knowledge Document until July 2026, when the name moved to the generic term.",
       "kategorie": "document-function",
       "quellen": [
         {
@@ -615,7 +615,7 @@
       "slug": "process-document",
       "begriff": "Process Document",
       "kurz": "Knowledge document that holds knowledge about the course of the work.",
-      "voll": "A Process Document is the specialisation of the knowledge document towards knowledge about the course of the work. It records how the work proceeded, chronologically or analytically. Examples are journal.md, learnings.md and plan.md. Together with the git history they form a context memory that enables reliable session resumption, where the journal documents why and the commits document what. For diagnostic use, unclear decision logic sends the reader to the Process Document first. The VetMedAI-Wissensbilanz project introduced learnings as a Process Document type of its own.",
+      "voll": "A Process Document is the specialisation of the knowledge document towards knowledge about the course of the work. The mandatory handoff.md contains open received deltas, plan.md accepted future work, and journal.md the curated backward provenance index. Together with durable project knowledge and git history, these functions provide context for session resumption. For diagnostic use, an overlooked input routes to handoff.md and unclear transition grounds to journal.md.",
       "kategorie": "document-function",
       "quellen": [
         {
@@ -918,7 +918,7 @@
       "slug": "vorlage",
       "begriff": "Template (Knowledge Document)",
       "kurz": "Fillable structural specification for one function of a Promptotyping knowledge base.",
-      "voll": "A template is a fillable structural specification for one function of a Promptotyping knowledge base. The function names have been English since July 2026, among them Navigation, Charter, Material, Specification, Architecture, Domain Knowledge, Design, Quality Assurance, Verification, Provenance, Planning, Reporting, Integration and Agent Instructions. The catalogue is open; a template arises once a function carrier repeats comparably across at least two repositories, and its requirements are checked against the empirical record instead of prescribed in advance. A template carries a function and no fixed file name, and it holds only where its trigger is met.",
+      "voll": "A template is a fillable structural specification for one function of a Promptotyping knowledge base. Function names and subject prefixes are English, including Navigation, Charter, Material, Specification, Architecture, Domain Knowledge, Design, Quality Assurance, Verification, Provenance, Planning, Governance, Reporting, Integration and Agent Instructions. A single carrier uses its canonical file name; a specialisation follows <subject>-<function>.md. Template names remain stable public identifiers even where their wording is German. The catalogue is open, and a template applies only where its trigger is met.",
       "kategorie": "document-function",
       "quellen": [
         {

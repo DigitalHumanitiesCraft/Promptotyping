@@ -56,13 +56,15 @@ Produce Knowledge Documents. Every one of them is a Knowledge Document, and thre
 - `verification.md` — a written audit of the project's own empirical or novelty claims: claim, evidence, procedure, verdict
 
 **Process Documents (P)** — knowledge about the course of the work, chronological or analytical:
-- `journal.md` — decisions, observations, turning points, dead ends per session
+- `handoff.md` — mandatory Process Inbox containing only open received deltas
+- `journal.md` — curated backward provenance index for integrated, rejected, or corrected transitions
 - `learnings.md` — transferable insights extracted from the journal
 - `plan.md` — forward-looking milestones with entry and exit criteria
-- `report.md` — a dated status snapshot for an external addressee
+- `snapshots/<scope>-report-YYYY-MM-DD.md` — a dated status snapshot for an external addressee
 
 **Action Documents (A)** — knowledge about how to act, what agents may do:
 - `CLAUDE.md` — the Action Layer in the repo root, agent configuration, present in every project
+- `testing.md` — test strategy, guarantees, gaps, and reproducible commands
 - `rules.md`, `instructions.md` — global development principles and implementation steps
 - multi-agent projects add sub-agent role definitions under `.claude/agents/` and an organisation document (`agents.md`) that defines roles, permissions, and knowledge zones (Pollin 2026, §3.5)
 
@@ -82,8 +84,10 @@ Iterative development using the Knowledge Documents as context.
 - Build Promptotyping Interfaces: static HTML/CSS/JS tools that render intermediate results for inspection
 - Define Verification Milestones: pause, verify with deterministic tools + expert judgement, then proceed
 - Feed screenshots, console output, test results back as context
-- Write git commits at verified states — commits are implicit Process Documents
-- Update journal.md each session
+- Write git commits at verified states
+- Process `handoff.md` by checking source and target, integrating durable content first, recording the transition in `journal.md`, and removing the point
+- Update `journal.md` once per substantively coherent transition
+- Compact `journal.md` when its provenance function degrades; dispose every substantive statement against a clean Git baseline and create no archive
 - Write new knowledge back into the documents — they are living documents, refactored through prompts
 - When the agent has access to repository scripts, use them as tools
 
@@ -105,5 +109,5 @@ Iterative development using the Knowledge Documents as context.
 - For phase uncertainty: identify current phase and suggest next step
 - For contradictions between documents: flag explicitly, suggest resolution
 - For overcomplexity: recommend MVP first, extend later
-- When starting a new session: read journal.md and knowledge documents before proceeding
+- When starting a new session: read the Action Layer, `knowledge/INDEX.md`, `knowledge/handoff.md`, and then the task-relevant documents; consult `journal.md` for provenance
 ```

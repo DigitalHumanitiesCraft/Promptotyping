@@ -1,16 +1,16 @@
 ---
 title: Vorlage Datengrundlage
 slug: data
-version: "0.2"
+version: "0.3"
 status: complete
 source: Vorlage Datengrundlage
-mirrored: 2026-06-10
+mirrored: 2026-08-21
 machine-url: https://dhcraft.org/Promptotyping/_content/promptotyping-document/data.md
 ---
 
 # Vorlage Datengrundlage
 
-Diese Vorlage strukturiert das Material-Dokument einer Promptotyping-Wissensbasis. Das resultierende Dokument heißt typischerweise `data.md` (alternativ `material.md` oder `corpus.md`, je nach Projektsprache) und liegt im `knowledge/`-Ordner des Repos. Es trägt die epistemische Verantwortung für das verarbeitete oder produzierte Material.
+Diese Vorlage strukturiert das Material-Dokument einer Promptotyping-Wissensbasis. Ein einzelner Träger heißt `data.md`; getrennte Datengrundlagen werden als `<subject>-data.md` oder nach ihrer präziseren Funktion, etwa `data-schema.md`, spezialisiert. Das Dokument liegt im `knowledge/`-Ordner und trägt die epistemische Verantwortung für das verarbeitete oder produzierte Material.
 
 Diese Fassung (v0.1, 2026-05-09) ist auf Basis einer Querschau durch 19 reale `data.md` aus den aktiven Promptotyping-Repos entwickelt. Sie unterscheidet vier Pflichtsektionen von sechs optionalen Sektionen mit Triggerkriterium.
 
@@ -133,7 +133,7 @@ method:
   url: https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin
 template:
   name: Vorlage Datengrundlage
-  version: 0.1
+  version: 0.3
   url: https://dhcraft.org/Promptotyping/promptotyping-document/data
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-data
 topics: ["[[Data Modelling]]", "[[Normdata]]", "[[Controlled Vocabularies]]"]

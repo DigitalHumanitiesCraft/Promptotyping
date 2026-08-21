@@ -1,5 +1,5 @@
 ---
-title: Paper Knowledge
+title: Paper Specification
 project:
   name: Promptotyping Site
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
@@ -9,18 +9,18 @@ method:
 status: active
 language: en
 created: 2026-07-29
-updated: 2026-08-09
+updated: 2026-08-21
 authors: [Christopher Pollin]
-related: [paper, journal, INDEX]
+related: [promptotyping-paper, journal, INDEX]
 ---
 
-# Promptotyping Paper: Canonical Knowledge Document
+# Promptotyping Paper Specification
 
-**Updated:** 31 July 2026, on integration of the operator's four-chapter revision (Section 19, decision 27); earlier the same day during the operator's end-to-end read, when Abstract, the whole §1, and the verification/validation terminology were revised (decisions 15 to 24).
+**Updated:** 21 August 2026 for the repository Naming Contract and artefact separation. The governing paper content remains the four-chapter revision integrated on 31 July 2026.
 
-**Manuscript version:** 0.9, review draft, 31 July 2026. It is circulated for substantive feedback before the final revision. Central argument, methodological structure, project cases, and evidential scope are in place; references, figures, footnotes, and individual formulations are checked again in the final revision, and the apparatus debt this document records as flags 5 to 9 of Section 19 belongs to that pass. Feedback is invited on the clarity and distinctiveness of the methodological contribution, the adequacy of the case-based evidence, and remaining problems of focus, repetition, or comprehensibility. The version and the reviewer address stay in this document; `knowledge/paper.md` remains headerless and begins with its H1, because the site renders it as the academic text alone (A8).
+**Manuscript version:** 0.9, review draft, 31 July 2026. It is circulated for substantive feedback before the final revision. Central argument, methodological structure, project cases, and evidential scope are in place; references, figures, footnotes, and individual formulations are checked again in the final revision, and the apparatus debt this document records as flags 5 to 9 of Section 19 belongs to that pass. Feedback is invited on the clarity and distinctiveness of the methodological contribution, the adequacy of the case-based evidence, and remaining problems of focus, repetition, or comprehensibility. The version and the reviewer address stay in this document; `research-artefacts/promptotyping-paper.md` remains headerless and begins with its H1, because the site renders it as the academic text alone (A8).
 
-**Status:** The single steering document of the paper. The manuscript is `knowledge/paper.md`, promoted on 2026-07-31 from the operator's four-chapter revision, which supersedes the five-chapter text promoted on 2026-07-30. The site renders that file directly, so the deployed text is the canonical text. The two-track regime of 2026-07-29/30 (`paper-draft.md` steered by this document beside `paper.md` steered by `paper-writing.md`) ended with the earlier promotion; the working records of both revision rounds live commit-pinned in git history (see the provenance section at the end). The figure series is the authored monochrome SVG set under `assets/figures/svg/` with one written specification per figure under `assets/figures/specs/`; the manuscript embeds one of them since the four-chapter revision (Section 17).
+**Status:** The single specification document of the paper. The manuscript is `research-artefacts/promptotyping-paper.md`, promoted on 2026-07-31 from the operator's four-chapter revision, which supersedes the five-chapter text promoted on 2026-07-30. The site renders that file directly, so the deployed text is the canonical text. The two-track regime of 2026-07-29/30 (`paper-draft.md` steered by this document beside `paper.md` steered by `paper-writing.md`) ended with the earlier promotion; the working records of both revision rounds live commit-pinned in git history (see the provenance section at the end). The figure series is the authored monochrome SVG set under `assets/figures/svg/` with one written specification per figure under `assets/figures/specs/`; the manuscript embeds one of them since the four-chapter revision (Section 17).
 
 **Function:** Governs the paper's central argument, terminology, method structure, chapter boundaries, evidence handling, language rules, apparatus conventions, repository interpretation, submission route, and final quality assurance.
 
@@ -1447,7 +1447,7 @@ Do not treat models and harnesses as neutral or interchangeable infrastructure.
 
 # 13. Manuscript Architecture (as promoted, 2026-07-31)
 
-The manuscript uses four chapters. This is the realised structure of `knowledge/paper.md`; the site derives the `#abschnitt-{n}-{slug}` anchors from these headings, so renaming a heading moves its address and requires an alias in `PAPER_ANCHOR_ALIASES` (`assets/js/pages-paper.js`).
+The manuscript uses four chapters. This is the realised structure of `research-artefacts/promptotyping-paper.md`; the site derives the `#abschnitt-{n}-{slug}` anchors from these headings, so renaming a heading moves its address and requires an alias in `PAPER_ANCHOR_ALIASES` (`assets/js/pages-paper.js`).
 
 - **Abstract**
 - **1. Introduction** — problem, operationalisation, claim with its limits
@@ -1741,7 +1741,7 @@ The manuscript is ready for submission only when every answer is yes.
 
 The promotion closed the two-track regime. The operator's decisions of that day, recorded here so they are not re-litigated:
 
-1. **Promotion executed.** The five-chapter text is `knowledge/paper.md`; every published anchor of both earlier section cuts resolves through `PAPER_ANCHOR_ALIASES`.
+1. **Promotion executed.** The promoted text now lives at `research-artefacts/promptotyping-paper.md`; every published anchor of both earlier section cuts resolves through `PAPER_ANCHOR_ALIASES`.
 2. **Footnote 23 residue accepted.** "Security" and "operational reliability" in the §2.4 sentence are not covered by the two retained sources; the footnote is a see-note and does not have to carry the sentence exhaustively, so the wording stands.
 3. **Figure 1 stands.** The caption's "verifies the resulting artefact" is realised by the authority arrow "verifies and accepts" terminating at the promptotype state; caption unchanged.
 4. **Figure format is SVG.** The manuscript embeds the authored SVG series; the PNG series stays archived.
@@ -1778,7 +1778,7 @@ Decisions of the acceptance round of 2026-07-31:
 
 29. **The two owed footnotes of §2.3.1 are supplied (2026-08-19).** The marker after the code-review clause becomes footnote 28 and cites the TOSEM survey of LLM-based agents for software engineering (Liu et al. 2026), which places code review within static code checking, together with the multi-agent code-review system CodeAgent (Tang et al. 2024). The marker after the digital-editions clause becomes footnote 30 and cites RIDE with its criteria catalogue for scholarly digital editions (Sahle 2014). Three reference entries were added accordingly; the misfiled Kim et al. entry was moved behind Kemman. Every source was checked at its DOI or publisher record before entry.
 
-30. **The Author's Note model list is reconciled with the repository's own provenance records (2026-08-19).** Two omissions were decidable from the record and are corrected. Claude Opus 4.7 carries `knowledge/report.md` in its `generated-with` field and was missing from the declaration. The generated-image layer of the figure work was produced with ChatGPT Images 2.0 according to `assets/figures/manifest.yaml`, `assets/figures/PROVENANCE.md`, and the six prompt records, and the note now names it while stating that the manuscript embeds hand-authored SVGs. The declared list therefore reads GPT-5.6, Claude Opus 4.7, Claude Opus 4.8, Claude Opus 5, Claude Fable 5, ChatGPT Images 2.0, Claude Code, DeepL, and Wispr Flow. The full name of the GPT model was left untouched because no repository record carries it; see flag 8.
+30. **The Author's Note model list is reconciled with the repository's own provenance records (2026-08-19).** Two omissions were decidable from the record and are corrected. Claude Opus 4.7 carries `snapshots/paper-zfdg-submission-report-2026-07-23.md` in its `generated-with` field and was missing from the declaration. The generated-image layer of the figure work was produced with ChatGPT Images 2.0 according to `assets/figures/manifest.yaml`, `assets/figures/PROVENANCE.md`, and the six prompt records, and the note now names it while stating that the manuscript embeds hand-authored SVGs. The declared list therefore reads GPT-5.6, Claude Opus 4.7, Claude Opus 4.8, Claude Opus 5, Claude Fable 5, ChatGPT Images 2.0, Claude Code, DeepL, and Wispr Flow. The full name of the GPT model was left untouched because no repository record carries it; see flag 8.
 
 Open flags that survive:
 
@@ -1801,7 +1801,7 @@ A manuscript section is accepted only when its conceptual and terminological dec
 
 # 20. Next Work Block
 
-1. Operator's end-to-end read of `knowledge/paper.md` as rendered on the site; findings return through the ordinary revision path with the rule catalogue of Section 16.6.
+1. Operator's end-to-end read of `research-artefacts/promptotyping-paper.md` as rendered on the site; findings return through the ordinary revision path with the rule catalogue of Section 16.6.
 2. Run the open review round on version 0.9 (Section 23.1): collect the Google Doc comments, decide them at the operator gate, and edit `paper.md` rather than the Doc.
 3. Close the apparatus flags 5 to 9 of Section 19, which are the debt the four-chapter integration left standing, and reconcile the AI-use declaration with the announcement.
 4. Vault claim follow-up from the audit of 2026-07-31 (open flag 3), in a vault session, re-keyed to the four-chapter structure.
@@ -1842,7 +1842,7 @@ Three process rules bind every audit or revision commission on this paper (carri
 
 Version 0.9 was announced publicly on 2026-07-31 as a review draft, through the operator's newsletter, and circulated for substantive feedback. The announcement names three addresses, a Google Doc as the comment carrier, `https://dhcraft.org/Promptotyping/` as the method specification, and this repository for project knowledge and development history. Feedback is invited on three points, the clarity and distinctiveness of the methodological contribution, the use of the project cases, and passages that stay unclear, repetitive, or overly detailed; other observations are welcome as well.
 
-Two carriers therefore exist side by side and will diverge as comments arrive. The rule is that `knowledge/paper.md` stays canonical and the Google Doc is a comment surface. A reviewer comment becomes a change to the paper only through the ordinary revision path, meaning an operator decision recorded in Section 19 and an edit to `paper.md`; a comment resolved in the Doc alone is a lost decision. When the round closes, the Doc's comment thread is exported or summarised into the repository, so the reasoning behind accepted and rejected proposals stays reconstructable after the Doc is archived.
+Two carriers therefore exist side by side and will diverge as comments arrive. The rule is that `research-artefacts/promptotyping-paper.md` stays canonical and the Google Doc is a comment surface. A reviewer comment becomes a change to the paper only through the ordinary revision path, meaning an operator decision recorded in Section 19 and an edit to the Research Artefact; a comment resolved in the Doc alone is a lost decision. When the round closes, the Doc's comment thread is exported or summarised into the repository, so the reasoning behind accepted and rejected proposals stays reconstructable after the Doc is archived.
 
 The Doc is a copy of the same manuscript state and carries no authority over the text. Whoever edits `paper.md` during the open round refreshes the Doc from it or notes the divergence, because a reviewer commenting on a superseded passage produces findings nobody can act on.
 

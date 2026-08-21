@@ -136,9 +136,9 @@ Source: [Paper, Section 1.2](#abschnitt-1-2-context-engineering-agentic-engineer
 
 Kind: Document function
 
-Interplay of journal and git history that enables reliable session resumption.
+Division of re-entry context among durable documents, Process Documents and git history.
 
-Context memory denotes the interplay of journal and git history that enables reliable session resumption, where the journal documents why decisions were taken and the commits document what was done. The Process Documents of the method carry this function. The pattern was observed among others in the imareal-room-object dashboard, where the agent documented in the journal on its own initiative.
+Context memory denotes the division of re-entry information among durable project knowledge, open received deltas in handoff.md, accepted future work in plan.md, the curated provenance index in journal.md, and earlier wording in git history. This division lets a new session recover current substance, pending inputs, future commitments, and transition grounds from their responsible carriers.
 
 Source: [Paper, Section 2.1](#abschnitt-2-1-promptotyping-and-the-project-knowledge-base)
 
@@ -168,7 +168,7 @@ Kind: Document function
 
 Knowledge document that holds knowledge about data, domain and research context.
 
-A Declarative Document is the specialisation of the knowledge document towards knowledge about the subject matter. It describes what is known about the data, the domain and the research context. Examples are README.md, project.md, data.md, requirements.md, architecture.md, design.md, editorial guidelines, mapping rules and verification documents. Declarative Documents are curated by the Critical Expert and constitute the persistent artefact of context engineering, because the knowledge they encode survives changes in code, model versions and tools. For diagnostic use, factually wrong output sends the reader to the Declarative Document first. The site carried this type under the name Knowledge Document until July 2026, when the name moved to the generic term.
+A Declarative Document is the specialisation of the knowledge document towards knowledge about the subject matter. It describes what is known about the data, the domain and the research context. Examples are README.md, project.md, data.md, specification.md, architecture.md, design.md, editorial guidelines, mapping rules and verification documents. Declarative Documents are curated by the Critical Expert and constitute the persistent artefact of context engineering, because the knowledge they encode survives changes in code, model versions and tools. For diagnostic use, factually wrong output sends the reader to the Declarative Document first. The site carried this type under the name Knowledge Document until July 2026, when the name moved to the generic term.
 
 Source: [Paper, Section 2.1](#abschnitt-2-1-promptotyping-and-the-project-knowledge-base); [Konvention Knowledge Documents](#konvention-v0.1)
 
@@ -328,7 +328,7 @@ Kind: Document function
 
 Knowledge document that holds knowledge about the course of the work.
 
-A Process Document is the specialisation of the knowledge document towards knowledge about the course of the work. It records how the work proceeded, chronologically or analytically. Examples are journal.md, learnings.md and plan.md. Together with the git history they form a context memory that enables reliable session resumption, where the journal documents why and the commits document what. For diagnostic use, unclear decision logic sends the reader to the Process Document first. The VetMedAI-Wissensbilanz project introduced learnings as a Process Document type of its own.
+A Process Document is the specialisation of the knowledge document towards knowledge about the course of the work. The mandatory handoff.md contains open received deltas, plan.md accepted future work, and journal.md the curated backward provenance index. Together with durable project knowledge and git history, these functions provide context for session resumption. For diagnostic use, an overlooked input routes to handoff.md and unclear transition grounds to journal.md.
 
 Source: [Paper, Section 2.1](#abschnitt-2-1-promptotyping-and-the-project-knowledge-base); [Konvention Knowledge Documents](#konvention-v0.1)
 
@@ -448,7 +448,7 @@ Kind: Document function
 
 Fillable structural specification for one function of a Promptotyping knowledge base.
 
-A template is a fillable structural specification for one function of a Promptotyping knowledge base. The function names have been English since July 2026, among them Navigation, Charter, Material, Specification, Architecture, Domain Knowledge, Design, Quality Assurance, Verification, Provenance, Planning, Reporting, Integration and Agent Instructions. The catalogue is open; a template arises once a function carrier repeats comparably across at least two repositories, and its requirements are checked against the empirical record instead of prescribed in advance. A template carries a function and no fixed file name, and it holds only where its trigger is met.
+A template is a fillable structural specification for one function of a Promptotyping knowledge base. Function names and subject prefixes are English, including Navigation, Charter, Material, Specification, Architecture, Domain Knowledge, Design, Quality Assurance, Verification, Provenance, Planning, Governance, Reporting, Integration and Agent Instructions. A single carrier uses its canonical file name; a specialisation follows <subject>-<function>.md. Template names remain stable public identifiers even where their wording is German. The catalogue is open, and a template applies only where its trigger is met.
 
 Source: [Specification, part 2, Templates](#vorlagen); [Konvention Knowledge Documents](#konvention-v0.1); [Vault: the first description declared the documents form-free](#vault-promptotyping-documents-form-freedom); knowledge/INDEX.md
 

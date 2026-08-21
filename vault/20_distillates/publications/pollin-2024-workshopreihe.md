@@ -34,7 +34,7 @@ The Zenodo deposit is a metadata-only software record archiving a versioned rele
 ## Open questions
 
 - The register asks to distil the record's description and workshop-series scope; the record itself carries no abstract, only a changelog link (^s4). Scope beyond the title lives in the linked GM-DH repository, which is a separate, out-of-intake resource. Any claim about the series' content or dates would need that repository as its own source.
-- The record dates to 2024-02-11 (v1.1.0); knowledge/paper.md and the L.I.S.A. article (pollin-2026b) cite the same DOI as "Pollin 2025a", a citation-year that does not match the record's publication date.
+- The record dates to 2024-02-11 (v1.1.0); `research-artefacts/promptotyping-paper.md` and the L.I.S.A. article (pollin-2026b) cite the same DOI as "Pollin 2025a", a citation-year that does not match the record's publication date.
 
 ## Related
 

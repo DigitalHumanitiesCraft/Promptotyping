@@ -28,11 +28,11 @@ The second move is tidying up. The `data.md` moves into a `knowledge` folder, an
 
 ## Distillation
 
-Three further documents arise from the understanding of the data in one go, a requirements description, an architecture document and a design document. The architecture document describes a static single-page application, HTML5, CSS, responsive layout, vanilla JavaScript without a build, and a single library for the visualisation, with JSON and CSV as data formats. One detail shows what a well-filled context yields, since the agent assigns the view to the Visual Information Seeking Mantra without that term appearing in the prompt.
+Three further documents arise from the understanding of the data in one go, `specification.md`, `architecture.md` and `design.md`. The architecture document describes a static single-page application, HTML5, CSS, responsive layout, vanilla JavaScript without a build, and a single library for the visualisation, with JSON and CSV as data formats. One detail shows what a well-filled context yields, since the agent assigns the view to the Visual Information Seeking Mantra without that term appearing in the prompt.
 
 Then comes the step that separates the phase from mere writing. The documents are checked against themselves, for inconsistencies and for superfluous scope. The agent supplies criticisms and recommendations, and the scope is deliberately reduced, in this case to two chart types. Ingredients no human asked for are discarded, among them a dark colour scheme and keyboard shortcuts. That is the overengineering check at the passage into Implementation, and it is right in a first pass, because the knowledge stays in the `knowledge` folder and the next iteration builds on from it.
 
-Before implementation begins, a `journal.md` is created that records the data analysis, the dashboard planning, the critical review and the simplification. In a case without a repository the journal takes the place of the commit history.
+Before implementation begins, `handoff.md` is created with the canonical empty state and `journal.md` receives one integrated transition that points from the explored material to the Specification, Architecture and Design documents. This didactic case has no repository, so commit hashes and Git-based recovery remain unavailable; the Journal preserves the transition grounds within that limit.
 
 ## Implementation
 

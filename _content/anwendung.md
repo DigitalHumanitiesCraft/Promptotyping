@@ -6,7 +6,7 @@ language: en
 version: "0.3"
 created: 2026-07-25
 updated: 2026-07-26
-source: knowledge/paper.md, sections 2.1 and 2.2
+source: research-artefacts/promptotyping-paper.md, sections 2.1 and 2.2
 machine-url: https://dhcraft.org/Promptotyping/_content/anwendung.md
 ---
 
@@ -21,7 +21,7 @@ All materials are collected before technical decisions are made.
 - **Entry.** A research undertaking, a body of data, and one or more questions put to it.
 - **Steps.** Collect research data in its original formats. Add the documentation of the standards and data models the data follows. Write down the research questions. Make domain knowledge explicit, from one's own competence or from joint sessions with the domain experts. Do requirements engineering, which means formulating user stories and recording which data is meant to answer which question.
 - **Stopping criterion.** The repository structure exists, the source data is accessible, and the initial requirements are documented as a structured starting point.
-- **Documents.** `requirements.md` with user stories and acceptance criteria, a first version of `data.md`, the action layer in the repository root.
+- **Documents.** `specification.md` with user stories and acceptance criteria, a first version of `data.md`, and the action layer in the repository root.
 
 Vagueness at this point cascades through all subsequent phases. A vaguely formulated question produces a vaguely specified artefact, and the effort of correcting that later falls due again in every iteration.
 
@@ -58,7 +58,7 @@ What Exploration taught is compressed into the document set. This is where conte
 - **Entry.** The findings of Exploration and the raw materials of Preparation.
 - **Steps.** Bring every document onto one bounded function. Resolve redundancy through references rather than repetition. Where the corpus is large or heterogeneous, render descriptions deterministically from the source data and place them beside the curated layer as generated documents. Before the passage into Implementation, run an overengineering check and deliberately reduce the specification to a minimal viable scope, so that the first working artefact stays small enough to inspect.
 - **Stopping criterion.** A fresh agent instance, given only the documents and the data, could take up the project's logic and work from it without additional explanation.
-- **Documents.** The full set, `data.md`, `requirements.md`, `design.md`, the action layer and the generated descriptions.
+- **Documents.** The durable set includes `INDEX.md`, `data.md`, `specification.md`, `design.md`, `verification.md`, the active Process Documents `handoff.md` and `journal.md`, the action layer, and generated descriptions.
 
 The compression is not neutral. Encoding decisions are epistemic decisions, because they determine what information is available to all downstream steps.
 
@@ -68,8 +68,8 @@ The document set is handed to an agentic coding tool operating inside the projec
 
 - **Entry.** The distilled document set and the source data.
 - **Steps.** Advance in milestones, each a small increment verified before the next begins. Steer the generation through three feedback loops, deterministic feedback from schema validation, test suites and builds, visual feedback from screenshots of the running artefact, and expert feedback from the judgement of whether the output is factually correct, domain-appropriate and aligned with the research question. Probe the possibility space deliberately by requesting radically different designs that run against the learned conventions.
-- **Stopping criterion.** The artefact satisfies the acceptance criteria of the requirements and passes the checks of [checking](#verifikation). The exit point is a spectrum, from a small functional prototype to a multi-stage pipeline with verification interfaces at every stage, and what determines it is the research question.
-- **Documents.** The journal carries the sessions, the what lies in the commits.
+- **Stopping criterion.** The artefact satisfies the acceptance criteria of `specification.md` and passes the checks of [checking](#verifikation). The exit point is a spectrum, from a small functional prototype to a multi-stage pipeline with verification interfaces at every stage, and what determines it is the research question.
+- **Documents.** Durable findings update their responsible Declarative or Action Document. `verification.md` carries procedures and results, `journal.md` records substantively coherent transitions, and `handoff.md` retains only received deltas that remain open.
 
 Deferring the check on a milestone is a decision with a price. It is most defensible in a first pass whose point is to see something running at all, and it leaves a verification debt to be settled before the artefact is used or handed on. Where the debt is carried, the record has to say so.
 

@@ -7,14 +7,15 @@ Dieses Repo ist `DigitalHumanitiesCraft/Promptotyping`, die öffentliche Methodi
 Bevor du eine Aufgabe in diesem Repo angehst, lies in dieser Reihenfolge:
 
 1. `knowledge/INDEX.md` — Navigation und Begriffslexikon
-2. `knowledge/project.md` — was die Site ist, wer die Adressaten sind
-3. `knowledge/governance.md` — Autorität, Quellenstatus, Schreibgrenzen, Write-back, Rechte, Publikation und Eskalation
-4. Das jeweils aufgabenrelevante Dokument:
-   - Paper-Arbeit → `knowledge/paper-knowledge.md`, das eine Steuerdokument mit Argument, Terminologie, Sprachregeln, Apparat und Einreichweg; von dort `knowledge/paper.md`, der kanonische vierkapitelige Text in Version 0.9 (Review-Draft), seit der Promotion vom 2026-07-31 von der Site gerendert. `paper.md` bleibt headerless und beginnt mit seiner H1; Version, Status und Reviewer-Ansprache stehen in `paper-knowledge.md`, nicht im Text. Die Zwei-Spuren-Übergangslage ist beendet; die konsolidierten Steuerungs- und Revisionsdokumente liegen commit-gepinnt in der Git-History (Provenienz-Tabelle am Ende von `paper-knowledge.md`).
+2. `knowledge/handoff.md` — offene Übergabepunkte; ein leerer Zustand ist gültig
+3. `knowledge/project.md` — was die Site ist, wer die Adressaten sind
+4. `knowledge/governance.md` — Autorität, Quellenstatus, Schreibgrenzen, Write-back, Rechte, Publikation und Eskalation
+5. Das jeweils aufgabenrelevante Dokument:
+   - Paper-Arbeit → `knowledge/paper-specification.md`, das Specification-Dokument mit Argument, Terminologie, Sprachregeln, Apparat und Einreichweg; von dort `research-artefacts/promptotyping-paper.md`, der kanonische vierkapitelige Text in Version 0.9 (Review-Draft), seit der Promotion vom 2026-07-31 von der Site gerendert. Das Research Artefact bleibt headerless und beginnt mit seiner H1; Version, Status und Reviewer-Ansprache stehen in `paper-specification.md`. Die Zwei-Spuren-Übergangslage ist beendet; die konsolidierten Steuerungs- und Revisionsdokumente liegen commit-gepinnt in der Git-History (Provenienz-Tabelle am Ende von `paper-specification.md`).
    - Was-soll-die-Site-können → `knowledge/specification.md`
    - Wie-ist-es-gebaut → `knowledge/architecture.md`
    - Wie-sieht-es-aus → `knowledge/design.md`
-   - Was-ist-bisher-passiert → `knowledge/journal.md`
+   - Woher-kommt-eine-Entscheidung → `knowledge/journal.md`
 
 Die Wissensbasis im `knowledge/`-Ordner ist die Specification, aus der die Implementation folgt. Sie ist nicht beiläufig, sie ist normativ.
 
@@ -38,19 +39,24 @@ Die Site soll ruhig sein. Konkret bedeutet das beim Coden:
 ├── 404.html                    # Subpath-Routing-Fallback
 ├── README.md                   # Repo-README
 ├── CLAUDE.md                   # Diese Datei (Action-Layer)
-├── knowledge/                  # Wissensbasis (Specification)
-├── _content/                   # Markdown-Inhalte (Paper, Vorlagen, Case Studies, Glossar, Literatur)
+├── knowledge/                  # Dauerhafte Promptotyping Documents
+│   └── handoff.md              # Verpflichtende Process Inbox
+├── research-artefacts/         # Wissenschaftliche Outputs, darunter das Paper
+├── source-material/            # Übernommene Quellen und Transkripte
+├── snapshots/                  # Datierte Reports und Audits
+├── handoffs/                   # Datierte Übergabestände
+├── _content/                   # Site-Inhalte (Vorlagen, Case Studies, Glossar, Literatur)
 ├── assets/                     # CSS, JS, Vendor, Fonts, Logo, Paper-Abbildungen
 ├── data/                       # JSON-Datenfutter
 ├── tools/                      # Prüfskripte der Site (check_consistency.py, build_glossar.py) samt tests/
 └── vault/                      # Grounded-Vault-Instanz: Provenienz-Schicht unter dem Paper (Operator-Entscheidung 2026-07-19)
 ```
 
-Die Abbildungen des Papers liegen unter `assets/figures/`; der Text bindet seit der Vierkapitel-Fassung nur noch Abbildung 1 ein, referenziert mit einem repo-relativen Pfad. Die vier abgelegten Abbildungen bleiben samt Spezifikation, SVG, PNG und Provenienz liegen und werden nicht gelöscht. Das löst auf der Site auf, weil `404.html` jede Subpath-Adresse auf den Site-Root zurückwirft und die Anwendung dort läuft. In der GitHub-Vorschau von `paper.md` bleiben die Bilder deshalb leer, was der bewusste Preis für Portabilität ohne feste Domain ist.
+Die Abbildungen des Papers liegen unter `assets/figures/`; der Text bindet seit der Vierkapitel-Fassung nur noch Abbildung 1 ein, referenziert mit einem repo-relativen Pfad. Die vier abgelegten Abbildungen bleiben samt Spezifikation, SVG, PNG und Provenienz liegen und werden nicht gelöscht. Das löst auf der Site auf, weil `404.html` jede Subpath-Adresse auf den Site-Root zurückwirft und die Anwendung dort läuft. In der GitHub-Vorschau von `research-artefacts/promptotyping-paper.md` bleiben die Bilder deshalb leer, was der bewusste Preis für Portabilität ohne feste Domain ist.
 
 `assets/promptotyping-logo.png` bleibt erhalten. `_content/` und `data/` werden in den Implementierungs-Sprints angelegt.
 
-Der Ordner `vault/` ist eine Instanz des Grounded-Vault-Templates (`DigitalHumanitiesCraft/grounded-vault`) und verankert die tragenden Claims des Papers in `knowledge/paper.md` quellenfest. Für jede Arbeit in `vault/` gilt dessen eigener Action-Layer `vault/CLAUDE.md`; die Python-Werkzeuge unter `vault/tools/` gehören zum Vault und sind die zulässigen Ausnahmen von der No-Build-Regel unten. `validate.py` prüft den Vault. `build_site_index.py` erzeugt `data/vault.json` für die Vault-Ansicht der Site; das Ergebnis wird committet, die Site holt zur Laufzeit eine statische Datei, und ein Build-Schritt zur Auslieferzeit entsteht nicht. Wer die Assertion-Schicht (bis August 2026 Claim-Schicht) ändert, führt das Skript nach.
+Der Ordner `vault/` ist eine Instanz des Grounded-Vault-Templates (`DigitalHumanitiesCraft/grounded-vault`) und verankert die tragenden Claims des Papers in `research-artefacts/promptotyping-paper.md` quellenfest. Für jede Arbeit in `vault/` gilt dessen eigener Action-Layer `vault/CLAUDE.md`; die Python-Werkzeuge unter `vault/tools/` gehören zum Vault und sind die zulässigen Ausnahmen von der No-Build-Regel unten. `validate.py` prüft den Vault. `build_site_index.py` erzeugt `data/vault.json` für die Vault-Ansicht der Site; das Ergebnis wird committet, die Site holt zur Laufzeit eine statische Datei, und ein Build-Schritt zur Auslieferzeit entsteht nicht. Wer die Assertion-Schicht (bis August 2026 Claim-Schicht) ändert, führt das Skript nach.
 
 ## Tech-Stack-Regeln
 
@@ -74,7 +80,7 @@ Die nicht aktiven Seiten bleiben als `display: none` im DOM. Das ist die Bedingu
 
 ## URL-Anker-Schema (Pflicht-Konvention, Stand ADR-2/ADR-3)
 
-- Vorlagen (Knowledge Documents, bis 2026-07-31 Promptotyping Documents; die Anker behalten das alte Segment): Subpath `/promptotyping-document/{slug}` (Latest, kanonisch), gleichwertig Hash `#promptotyping-document-{slug}`. Sechzehn Slugs: `data`, `index`, `project`, `specification`, `architecture`, `technology`, `design`, `journal`, `user-stories`, `action-layer` (ADR-9), `testing`, `plan`, `report`, `domain-knowledge`, `verification`, `integration`. Snapshots erst bei Versionssprung über Sub-Anker `#promptotyping-document-{slug}-v{version}` bzw. `/promptotyping-document/{slug}#v{version}` — kein eigener Subpath pro Version. (Das ältere Schema `#vorlage-{name}-{version}` ist obsolet, siehe journal.md 2026-05-09 „URL-Schema-Korrektur".)
+- Vorlagen (Knowledge Documents, bis 2026-07-31 Promptotyping Documents; die Anker behalten das alte Segment): Subpath `/promptotyping-document/{slug}` (Latest, kanonisch), gleichwertig Hash `#promptotyping-document-{slug}`. Siebzehn Slugs: `data`, `index`, `project`, `specification`, `architecture`, `technology`, `design`, `journal`, `handoff`, `user-stories`, `action-layer` (ADR-9), `testing`, `plan`, `report`, `domain-knowledge`, `verification`, `integration`. Snapshots erst bei Versionssprung über Sub-Anker `#promptotyping-document-{slug}-v{version}` bzw. `/promptotyping-document/{slug}#v{version}` — kein eigener Subpath pro Version. (Das ältere Schema `#vorlage-{name}-{version}` ist obsolet, siehe journal.md 2026-05-09 „URL-Schema-Korrektur".)
 - Maschinenadresse (ADR-10): Für HTTP-Abruf ohne JavaScript ist die statische Markdown-URL kanonisch, Muster `https://dhcraft.org/Promptotyping/_content/promptotyping-document/{slug}.md`. Die Subpath-Auflösung läuft über `404.html` und setzt JavaScript voraus. `.nojekyll` im Repo-Root ist Pflicht, sonst publiziert GitHub Pages `_content/` nicht.
 - Praxis-Anker entstehen zur Laufzeit aus den Überschriften. Wer eine Überschrift übersetzt oder umformuliert, verschiebt damit ihre Adresse; sechs Slugs sind am 2026-07-26 gewandert und werden von `PRAXIS_ALIASES` in `assets/js/pages-content.js` am Leben gehalten. Jede weitere Änderung einer ankertragenden Überschrift braucht denselben Alias.
 - Konzepte: `#konzept-{name}` (z.B. `#konzept-eil`, `#konzept-asymmetric-amplification`)
@@ -84,7 +90,7 @@ Die nicht aktiven Seiten bleiben als `display: none` im DOM. Das ist die Bedingu
 - Konvention: `#konvention-v0.1`
 - Glossar: `#glossar`
 - Literatur: `#literatur`
-- Paper-Sektionen: `#abschnitt-{n}-{slug}` (z.B. `#abschnitt-2-promptotyping-as-a-method`). Die Site rendert `knowledge/paper.md` direkt und erzeugt die Anker beim Rendern; unter `_content/paper/` liegt nichts mehr. Jede Umgliederung des Papers verschiebt Anker, deshalb wird die Aliaskarte `PAPER_ANCHOR_ALIASES` in `assets/js/pages-paper.js` vollständig neu gezielt und nicht bloß ergänzt; sie ist flach und löst nicht transitiv auf.
+- Paper-Sektionen: `#abschnitt-{n}-{slug}` (z.B. `#abschnitt-2-promptotyping-as-a-method`). Die Site rendert `research-artefacts/promptotyping-paper.md` direkt und erzeugt die Anker beim Rendern; unter `_content/paper/` liegt nichts mehr. Jede Umgliederung des Papers verschiebt Anker, deshalb wird die Aliaskarte `PAPER_ANCHOR_ALIASES` in `assets/js/pages-paper.js` vollständig neu gezielt und nicht bloß ergänzt; sie ist flach und löst nicht transitiv auf.
 - Überblick: `#ueberblick`; Use Cases: `#use-cases`; Paper: `#paper`; Worked Workflow: `#workflow`; Best Practices: `#praxis`, Praxis-Einträge: `#praxis-{slug}`; Skills: `#skills` und `#skills-{slug}` (A13 bis A15); Arbeitsumgebung: `#arbeitsumgebung`, Subpath `/arbeitsumgebung` (A17); Tutorial: `#tutorial`, Subpath `/tutorial` (A31)
 
 Anker dürfen nicht ohne Diskussion umbenannt werden — Repos können auf sie als `template:`-URI verlinken.
@@ -94,13 +100,14 @@ Anker dürfen nicht ohne Diskussion umbenannt werden — Repos können auf sie a
 - **Inkrementell arbeiten**: ein abgegrenzter Schritt nach dem in der Wissensbasis dokumentierten Stand, ein Commit pro abgeschlossenem Schritt
 - **Wissensbasis konsultieren**, bevor du eine Designentscheidung triffst
 - **Bei Unklarheit fragen** statt eigenmächtig entscheiden — speziell bei Scope, Reihenfolge, Architektur
-- **journal.md aktualisieren** am Ende jeder Session
+- **Handoff-Punkte verarbeiten**: Quelle und aktuelles Ziel prüfen, dauerhaften Inhalt zuerst integrieren oder begründet verwerfen, danach den Journal-Nachweis schreiben und den Punkt vollständig entfernen
+- **Journal als Provenienzindex pflegen**: ein Eintrag pro sachlich zusammengehörigem Übergang mit `integriert`, `verworfen` oder `korrigiert`; bei Funktionsverlust semantisch verdichten und kein Archiv erzeugen
 
 ## Was du nicht tun sollst
 
 - **Nicht aus dem Vault zitieren ohne Markdown-Link.** Vault-interne Wikilinks (`[[CLAUDE]]`) bedeuten im Repo nichts.
 - **Nicht das alte Living-Paper-Material reaktivieren.** Alles, was im November-2025-Stand war, ist gelöscht. Wer alte Module wiederbeleben will, beginnt einen Neu-Diskurs.
-- **Die Site ist englisch.** Der Durchgang ist am 2026-07-26 gelaufen (Operator-Entscheidung 2026-07-25, journal.md, Sprachentscheidung). Englisch sind Shell, Bedienelemente, die neun Seitentexte direkt unter `_content/` und die Textfelder der drei Datendateien. Deutsch geblieben sind die sechzehn Vorlagen und die drei Dateien unter `_content/skills/` als Unterrichtsmaterial. Bei fünfzehn Vorlagen liegt der Grund darin, dass sie Vault-Spiegel sind und ihre Übersetzung in eine Vault-Sitzung gehört; die Vorlage `technology` ist seit dem 2026-07-26 im Repo kanonisch und bleibt deutsch, damit der Katalog einsprachig bleibt. Die sieben Fall-Tiefenseiten unter `_content/case-studies/` sind ebenfalls englisch; der Durchgang ist damit abgeschlossen. Die publizierten Anker bleiben deutsch, weil fremde Repos sie als `template:`-URI führen, ebenso die Vorlagennamen als Identifikatoren.
+- **Die Site ist englisch.** Der Durchgang ist am 2026-07-26 gelaufen (Operator-Entscheidung 2026-07-25, journal.md, Sprachentscheidung). Englisch sind Shell, Bedienelemente, die neun Seitentexte direkt unter `_content/` und die Textfelder der drei Datendateien. Deutsch geblieben sind die siebzehn Vorlagen und die drei Dateien unter `_content/skills/` als Unterrichtsmaterial. Sechzehn Vorlagen sind Vault-Spiegel, deren Übersetzung in eine Vault-Sitzung gehört; die Vorlage `technology` ist seit dem 2026-07-26 im Repo kanonisch und bleibt deutsch, damit der Katalog einsprachig bleibt. Die sieben Fall-Tiefenseiten unter `_content/case-studies/` sind ebenfalls englisch; der Durchgang ist damit abgeschlossen. Die publizierten Anker bleiben deutsch, weil fremde Repos sie als `template:`-URI führen, ebenso die Vorlagennamen als Identifikatoren.
 - **Keine Module außer Frontmatter-Inspector, Case-Study-Filter, Begriffsregister und Vault-Ansicht.** Das Begriffsregister (A25, seit 2026-07-26) vertritt die abgelehnte Volltextsuche. Die Vault-Ansicht ist seit der Operator-Entscheidung 2026-07-25 in Scope; Context-Rot-Viz und Sycophancy-Trap bleiben es nicht.
 - **Keine Branches.** Alle Änderungen direkt auf `main`. (Das ist Christopher Pollins explizite Wahl, dokumentiert in journal.md.)
 

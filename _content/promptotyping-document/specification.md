@@ -16,7 +16,7 @@ Diese Vorlage strukturiert das Substanz-Dokument einer Promptotyping-Wissensbasi
 
 Die Vorlage trägt für jedes Promptotyping-Repo, weil die Substanz-Funktion in der [Konvention Promptotyping Documents](#konvention-v0.1) als immer-relevant geführt wird. Bei sehr kleinen Projekten kann sie in `project.md` integriert werden.
 
-Spaltung als Norm. Die Praxis in untersuchten Repos zeigt, dass größere Projekte die Substanz-Funktion regelmäßig in mehrere Dokumente aufteilen: `requirements.md`, `features.md`, `decisions.md` plus thematische Vertiefungen wie `analyse.md` oder `exploration.md`. Diese Spaltung ist nicht falsch, sondern Reaktion auf die Größe der Substanz. Diese Vorlage beschreibt das Idealbild der Konsolidierung in einer `specification.md`; bei der Anwendung in einem realen Repo entscheidet die Projektgröße, ob konsolidiert oder gespalten wird. Die Strukturprinzipien und das Frontmatter-Schema gelten dann pro Datei.
+Spaltung als Norm. Größere Projekte teilen die Specification-Funktion regelmäßig in spezialisierte Träger wie `system-specification.md`, `feature-specification.md` und `architecture-decisions.md`. Eigenständige Forschungsfragen erhalten gegenstandsbezogene Funktionen wie `research-analysis.md` oder `research-exploration.md`. Die Teilung folgt eigenständigen Routing Questions oder Aktualisierungszyklen. Diese Vorlage beschreibt den konsolidierten Einzelträger `specification.md`; Strukturprinzipien und Frontmatter-Schema gelten bei einer Spaltung pro Datei.
 
 Anwendungsszenarien sind integriert. User Stories aus Anwender-Perspektive im Format „Als [Rolle], die …, will ich …, damit …" gehören seit der Konventionsänderung 2026-05-30 als eigene Sektion (Epics plus User Stories) in `specification.md`. Eine separate `user-stories.md` (siehe [Vorlage User Stories](#promptotyping-document-user-stories)) ist die dokumentierte Ausnahme für große Projekte (typischerweise Editionsprojekte), deren Substanz-Funktion ohnehin gespalten wird; in dem Fall gelten die Strukturprinzipien der Vorlage User Stories für die ausgelagerte Datei.
 
@@ -193,7 +193,7 @@ Effekt. [Was wurde seitdem beobachtet.]
 
 Strukturanker beim Aufsetzen der Substanz-Dokumentation. Anforderungen entstehen früh, typischerweise in der Preparation- und Exploration-Phase aus Scholar-Centered-Design-Sessions oder Requirements-Engineering. Funktionsumfang füllt sich iterativ während der Implementation. Entscheidungen werden in dem Moment eingetragen, in dem sie getroffen werden, nicht nachträglich rekonstruiert (siehe Glossar-Eintrag Critical-Expert-in-the-Loop).
 
-Review-Folie für eine bestehende Specification. Ein vorhandenes `specification.md` (oder die getrennten Dateien `requirements.md`, `features.md`, `decisions.md`) wird gegen die Vorlage gehalten, um zu prüfen, ob die drei Sektionen sauber getrennt sind, ob jede Entscheidung viergliedrig ist (Kontext, Wahl, Begründung, Effekt), ob revidierte Decisions als neue Einträge mit Verweis stehen statt als Edits am alten, und ob keine Architektur- oder Designdetails hineingewachsen sind.
+Review-Folie für eine bestehende Specification. Ein vorhandenes `specification.md` oder spezialisierte Träger wie `system-specification.md`, `feature-specification.md` und `architecture-decisions.md` werden gegen die Vorlage gehalten. Geprüft werden Sektionstrennung, viergliedrige Entscheidungen, nachvollziehbare Revisionen und die Abgrenzung zu Architektur- und Designdetails.
 
 ## Beispiel
 

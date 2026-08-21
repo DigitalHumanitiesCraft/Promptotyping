@@ -1,21 +1,34 @@
 ---
 title: System Prompts und Skills
 slug: skills
-mirrored: 2026-06-10
+mirrored: 2026-08-21
 machine-url: https://dhcraft.org/Promptotyping/_content/skills/index.md
 ---
 
 # System Prompts und Skills
 
-System Prompts und Skills sind die wiederverwendbaren Bausteine der Action-Layer-Praxis im Promptotyping. Waehrend die Knowledge-Dokumente eines Repos das deklarative Wissen tragen (was das Projekt ist, welche Daten es verarbeitet, was es leisten soll), sozialisieren System Prompts den Coding-Agenten auf ein wiederkehrendes Vorgehen: die vier Phasen, die drei Dokumenttypen, die Verifikationsdisziplin. Sie sind nicht projektgebunden, sondern uebertragbar.
+System Prompts und Skills sind wiederverwendbare Bausteine der Action-Layer-Praxis im Promptotyping. Die Promptotyping Documents eines Repos tragen projektbezogenes Wissen. System Prompts und Skills übersetzen die Methode in wiederholbare Agentenhandlungen über die vier Arbeitsformen, drei Dokumenttypen und die Verifikationsdisziplin.
 
-Im konkreten Repo lebt diese Schicht an drei Orten. Erstens in der `CLAUDE.md` im Repo-Root, dem Action-Dokument, das der Coding-Agent bei jedem Sessionstart automatisch als Kontext erhaelt: imperative Regeln, die auf die Wissensbasis verweisen und das Verhalten steuern. Zweitens in Custom Commands, also benannten, wiederholbaren Arbeitsschritten, die ein Agent als Werkzeug aufruft. Drittens in System Prompts als portablen Methodenkern, der unabhaengig vom einzelnen Repo gepflegt und in mehrere Projekte uebernommen wird.
+Im konkreten Repo liegt diese Schicht in `CLAUDE.md`, in benannten wiederholbaren Operationen und im portablen Methodenkern. `CLAUDE.md` wird bei jedem Sessionstart geladen und routet in die Wissensbasis. Der Methodenkern bleibt über Repositories hinweg wiederverwendbar.
 
-Die strukturelle Trennung dieser Schicht von der Wissensbasis ist in der [Vorlage Action-Layer](#promptotyping-document-action-layer) beschrieben: Der Methodenkern (Wissensbasis-Verweis, Journal-Pflicht, Verifikationsregeln, Designprinzipien, Scope-Negativliste) ist portabel, der Werkzeug-Block (Befehle, Hooks, Permissions, Stack-Konventionen) ist austauschbar. Ein System Prompt ist genau ein solcher portabler Methodenkern.
+Die [Vorlage Action-Layer](#promptotyping-document-action-layer) trennt den portablen Methodenkern aus Wissensbasis-Routing, Handoff-Verarbeitung, Journal-Provenienz, Verifikationsregeln, Designprinzipien und Scope vom austauschbaren Werkzeug-Block.
 
-Zwei System Prompts stehen hier zum Kopieren bereit:
+## Methodenvertrag für den künftigen kanonischen Skill
 
-- [Promptotyping System Prompt for Coding](#skills-coding): fuer Sessions, in denen aus Forschungsdaten ein Forschungsartefakt (Interface, Pipeline, Edition, Datenmodell) gebaut wird.
-- [Promptotyping System Prompt for Writing](#skills-writing): fuer die akademische Textproduktion, in der jede Behauptung an eine Quelle rueckbindbar bleibt.
+Die spätere kanonische Skill-Quelle übernimmt folgende Semantik:
 
-Beide folgen demselben Aufbau: vier Phasen (Preparation, Exploration und Mapping, Distillation, Implementation), drei Dokumenttypen (Knowledge, Process, Action) und ein Diagnoseraster, das Fehlerbilder auf den jeweils zustaendigen Dokumenttyp zurueckfuehrt.
+- `orient` liest nach dem Action-Layer zuerst `knowledge/INDEX.md`, dann `knowledge/handoff.md` und anschließend die aufgabenrelevanten Dokumente. `journal.md` dient der Prüfung von Herkunft und Entscheidungsgründen.
+- `handoff` prüft Quelle und aktuelles Ziel, integriert dauerhaften Inhalt zuerst in das zuständige Declarative oder Action Document, hält ausschließlich offene Deltas in der Inbox und schreibt den Journal-Nachweis vor dem gemeinsamen Commit.
+- `compact` verwendet die semantische Verdichtungsregel der [Vorlage Journal](#promptotyping-document-journal), disponiert jede substantielle Aussage gegen einen sauberen Git-Ausgangsstand und erzeugt kein Archiv.
+- `distill` legt bei einer neuen Promptotyping-Wissensbasis sowohl `knowledge/journal.md` als auch `knowledge/handoff.md` an.
+
+Integration bleibt eine Invariante von `orient`, der laufenden Arbeit und `handoff`. Eine eigene `integrate`-Operation ist nicht Bestandteil des Methodenvertrags.
+
+Repository-Quelle und Synchronisierung des Skills bilden eine separate Liefer-Lane. Dieser Methoden-Refactor dokumentiert die Semantik und verändert keine installierten Kopien.
+
+Zwei System Prompts stehen weiterhin zum Kopieren bereit:
+
+- [Promptotyping System Prompt for Coding](#skills-coding): für Sessions, in denen aus Forschungsdaten ein Forschungsartefakt wie Interface, Datenpipeline, Edition oder Datenmodell gebaut wird.
+- [Promptotyping System Prompt for Writing](#skills-writing): für akademische Textproduktion mit überprüfbarer Rückbindung jeder Behauptung an ihre Quelle.
+
+Beide folgen demselben Aufbau: vier Arbeitsformen (Preparation, Exploration and Mapping, Distillation, Implementation), drei Dokumenttypen (Declarative, Process, Action) und ein Diagnoseraster, das Fehlerbilder auf den zuständigen Dokumenttyp zurückführt.

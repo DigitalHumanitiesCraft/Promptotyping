@@ -4,11 +4,11 @@
 
 Promptotyping is an iterative, knowledge-driven method for developing project-specific digital research artefacts from structured research data and maintained project knowledge through Context Engineering and Agentic Engineering, organised around four recurrent forms of work (Preparation, Exploration, Distillation, Implementation). The working material is a `knowledge/` folder of versioned Knowledge Documents holding a project's requirements, data, decisions, and domain knowledge, a curated knowledge artefact written partly by the model and partly by the verifying expert, from which the implementation is derived. It outlasts the individual session and is the part of the process that can be read, checked, criticised, and cited; decisions taken while building hold in it only as far as they are written back. A Critical Expert in the Loop verifies LLM output at defined points.
 
-This repository is the public specification of the method and the repository of the method paper, which is written here in [knowledge/paper.md](knowledge/paper.md). It renders as an interactive paper at **https://dhcraft.org/Promptotyping/** and serves the method's templates as stable, machine-readable addresses.
+This repository is the public specification of the method and the repository of the method paper, which is written here in [research-artefacts/promptotyping-paper.md](research-artefacts/promptotyping-paper.md). It renders as an interactive paper at **https://dhcraft.org/Promptotyping/** and serves the method's templates as stable, machine-readable addresses.
 
 ## The method in brief
 
-The four forms of work move from gathering raw material (Preparation) over probing what the data affords (Exploration) and distilling the findings into selective Markdown documents (Distillation) to iterative, verified development with an agentic coding tool (Implementation). Knowledge Document is the general term for a document of this kind, and it specialises into three types according to the kind of knowledge it holds, each with a diagnostic rule attached. Declarative Documents hold knowledge about the subject matter (data, domain, architecture); when output is factually wrong, check these first. Process Documents hold knowledge about the course of the work (journal, plan); check these when decision logic is unclear. Action Documents, which the paper calls agent instruction documents, hold knowledge about how to act (`CLAUDE.md`, `AGENTS.md`); check these when output is formally wrong.
+The four forms of work move from gathering raw material (Preparation) over probing what the data affords (Exploration) and distilling the findings into selective Markdown documents (Distillation) to iterative, verified development with an agentic coding tool (Implementation). Knowledge Document is the general term for a document of this kind, and it specialises into three types according to the kind of knowledge it holds, each with a diagnostic rule attached. Declarative Documents hold knowledge about the subject matter. Process Documents divide current handoff inputs, accepted future work, and the curated provenance index between `handoff.md`, `plan.md`, and `journal.md`. Action Documents, which the paper calls agent instruction documents, hold knowledge about how to act (`CLAUDE.md`, `AGENTS.md`); check these when output is formally wrong.
 
 The full argument is the method paper; an overview is at [dhcraft.org/Promptotyping/#ueberblick](https://dhcraft.org/Promptotyping/#ueberblick).
 
@@ -16,11 +16,11 @@ The full argument is the method paper; an overview is at [dhcraft.org/Promptotyp
 
 **Pollin, Christopher: Promptotyping. Translating Research Data into Research Artefacts through Context Engineering and Agentic Engineering** (version 0.9, review draft, 31 July 2026; in preparation).
 
-The complete current text is a single Markdown document, [knowledge/paper.md](knowledge/paper.md), written and revised in this repository; [knowledge/paper-knowledge.md](knowledge/paper-knowledge.md) holds everything decided, checked, and still open about it, and the Grounded Vault under [vault/](vault/) anchors its supporting claims in sources. The interactive site renders that file directly as a reading flow with inline glossary, so the deployed text is the current text.
+The complete current text is a single Markdown Research Artefact, [research-artefacts/promptotyping-paper.md](research-artefacts/promptotyping-paper.md), written and revised in this repository. [knowledge/paper-specification.md](knowledge/paper-specification.md) holds everything decided, checked, and still open about it, and the Grounded Vault under [vault/](vault/) anchors its supporting claims in sources. The interactive site renders the Research Artefact directly as a reading flow with inline glossary.
 
-The current state is **version 0.9, a review draft of 31 July 2026**, circulated for substantive feedback before the final revision. Its four chapters were promoted on that day, superseding the five-chapter manuscript promoted the day before; the consolidated working records of both revisions live in the git history. Central argument, methodological structure, project cases, and evidential scope are in place. References, figures, footnotes, and individual formulations are checked again in the final revision, and what that pass still owes stands as open flags in [knowledge/paper-knowledge.md](knowledge/paper-knowledge.md). Feedback is invited on the clarity and distinctiveness of the methodological contribution, the use of the project cases, and passages that stay unclear, repetitive, or overly detailed.
+The current state is **version 0.9, a review draft of 31 July 2026**, circulated for substantive feedback before the final revision. Its four chapters were promoted on that day, superseding the five-chapter manuscript promoted the day before; the consolidated working records of both revisions live in the git history. Central argument, methodological structure, project cases, and evidential scope are in place. References, figures, footnotes, and individual formulations are checked again in the final revision, and what that pass still owes stands as open flags in [knowledge/paper-specification.md](knowledge/paper-specification.md). Feedback is invited on the clarity and distinctiveness of the methodological contribution, the use of the project cases, and passages that stay unclear, repetitive, or overly detailed.
 
-The review round runs on a circulated copy of this text, which serves as the comment surface. This file stays canonical: a reviewer comment becomes a change only through a recorded decision and an edit here, and the reasoning behind accepted and rejected proposals is written back into [knowledge/paper-knowledge.md](knowledge/paper-knowledge.md) when the round closes.
+The review round runs on a circulated copy of this text, which serves as the comment surface. The [research artefact](research-artefacts/promptotyping-paper.md) stays canonical: a reviewer comment becomes a change only through a recorded decision and an edit there, and the reasoning behind accepted and rejected proposals is written back into [knowledge/paper-specification.md](knowledge/paper-specification.md) when the round closes.
 
 ## Videos
 
@@ -30,16 +30,19 @@ Two introductions to the method (German): the methodology explainer [Promptotypi
 
 | Content | Location | On the site |
 |---|---|---|
-| Method paper (English, version 0.9, review draft) | [knowledge/paper.md](knowledge/paper.md), steering in [knowledge/paper-knowledge.md](knowledge/paper-knowledge.md) | [#paper](https://dhcraft.org/Promptotyping/#paper) |
+| Method paper (English, version 0.9, review draft) | [research-artefacts/promptotyping-paper.md](research-artefacts/promptotyping-paper.md), specification in [knowledge/paper-specification.md](knowledge/paper-specification.md) | [#paper](https://dhcraft.org/Promptotyping/#paper) |
 | Evidence layer of the paper (Grounded Vault) | [vault/](vault/) | — |
 | Knowledge Document templates | [_content/promptotyping-document/](_content/promptotyping-document/) | [#vorlagen](https://dhcraft.org/Promptotyping/#vorlagen) |
-| Convention (frontmatter schema, structure) | [_content/konvention.md](_content/konvention.md) | [#konvention-v0.1](https://dhcraft.org/Promptotyping/#konvention-v0.1) |
+| Convention (naming contract, frontmatter schema, structure) | [_content/konvention.md](_content/konvention.md) | [#konvention-v0.1](https://dhcraft.org/Promptotyping/#konvention-v0.1) |
 | Technology baseline for static research tools (draft) | [_content/technology-baseline.md](_content/technology-baseline.md) | — |
 | Curated case studies | [data/case-studies.json](data/case-studies.json), depth pages in [_content/case-studies/](_content/case-studies/) | [#use-cases](https://dhcraft.org/Promptotyping/#use-cases) |
 | Method extensions from practice | [_content/praxis.md](_content/praxis.md) | [#praxis](https://dhcraft.org/Promptotyping/#praxis) |
 | Reusable system prompts (coding, writing) | [_content/skills/](_content/skills/) | [#skills](https://dhcraft.org/Promptotyping/#skills) |
 | Glossary | [data/glossar.json](data/glossar.json), [_content/glossar.md](_content/glossar.md) | [#glossar](https://dhcraft.org/Promptotyping/#glossar) |
-| Site knowledge base (self-application) | [knowledge/](knowledge/) | — |
+| Durable site knowledge base (self-application) | [knowledge/](knowledge/) | — |
+| Live Process Inbox | [knowledge/handoff.md](knowledge/handoff.md) | — |
+| Source material, including video scripts | [source-material/](source-material/) | — |
+| Dated reports and transfer context | [snapshots/](snapshots/), [handoffs/](handoffs/) | — |
 
 ### Templates
 
@@ -57,12 +60,13 @@ The templates of the catalogue structure the documents of a Promptotyping knowle
 | [technology](_content/promptotyping-document/technology.md) | Technology baseline for an artefact family | Action |
 | [domain-knowledge](_content/promptotyping-document/domain-knowledge.md) | Domain knowledge and reasoning layer | Declarative |
 | [design](_content/promptotyping-document/design.md) | Design | Declarative |
-| [testing](_content/promptotyping-document/testing.md) | Quality assurance | Declarative |
+| [testing](_content/promptotyping-document/testing.md) | Quality assurance | Action |
 | [verification](_content/promptotyping-document/verification.md) | Adversarial verification of claims | Declarative |
 | [journal](_content/promptotyping-document/journal.md) | Provenance | Process |
+| [handoff](_content/promptotyping-document/handoff.md) | Process Inbox | Process |
 | [plan](_content/promptotyping-document/plan.md) | Planning | Process |
 | [report](_content/promptotyping-document/report.md) | Reporting | Declarative (snapshot) |
-| [integration](_content/promptotyping-document/integration.md) | Cross-project contracts and handoffs | Declarative |
+| [integration](_content/promptotyping-document/integration.md) | Cross-project contracts | Declarative |
 
 Template versions live in the mirrors' frontmatter and in [data/promptotyping-documents.json](data/promptotyping-documents.json), which is the catalogue this table follows.
 
@@ -122,7 +126,7 @@ Open http://localhost:8000. Development history is in [knowledge/journal.md](kno
 
 ## Citation
 
-This is the repository of the method paper. Pollin, Christopher: Promptotyping. Translating Research Data into Research Artefacts through Context Engineering and Agentic Engineering (in preparation); the text is developed in [knowledge/paper.md](knowledge/paper.md), its evidence layer in [vault/](vault/).
+This is the repository of the method paper. Pollin, Christopher: Promptotyping. Translating Research Data into Research Artefacts through Context Engineering and Agentic Engineering (in preparation); the text is developed in [research-artefacts/promptotyping-paper.md](research-artefacts/promptotyping-paper.md), its evidence layer in [vault/](vault/).
 
 For the repository and site: Pollin, Christopher; Steiner, Christian: Promptotyping. Zenodo. https://doi.org/10.5281/zenodo.14160875 (concept DOI, always resolves to the current version)
 

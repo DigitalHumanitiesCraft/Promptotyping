@@ -1,16 +1,16 @@
 ---
 title: Vorlage Domänenwissen
 slug: domain-knowledge
-version: "0.2"
+version: "0.3"
 status: complete
 source: Vorlage Domänenwissen
-mirrored: 2026-07-19
+mirrored: 2026-08-21
 machine-url: https://dhcraft.org/Promptotyping/_content/promptotyping-document/domain-knowledge.md
 ---
 
 # Vorlage Domänenwissen
 
-Diese Vorlage strukturiert das Domänen- und Methodenwissen-Dokument einer Promptotyping-Wissensbasis. Das resultierende Dokument heißt je nach Untertyp typischerweise `editorial-guidelines.md`, `tei-mapping.md`, `ontology.md` oder `kodiermanual.md` (domänenspezifisches Regelwerk) beziehungsweise `forschungsrahmen.md`, `methodik.md`, `research.md` oder `theory.md` (Methoden- und Begründungsschicht). Es liegt im `knowledge/`-Ordner des Repos und trägt die fachmethodische Vorgabe- und Theorieschicht: die Regeln, nach denen das Material ausgezeichnet oder berechnet wird, und die Begründung, warum diese Regeln so und nicht anders lauten. Diese Schicht ist in vielen DH-, Editions- und Forschungsprojekten der eigentliche wissenschaftliche Wert, den der ansonsten software-zentrierte Katalog ([Vorlage Specification](#promptotyping-document-specification), [Vorlage Architecture](#promptotyping-document-architecture), [Vorlage Datengrundlage](#promptotyping-document-data)) nicht abbildet. Der erste Absatz des resultierenden Dokuments trägt den Zweck in einem Satz.
+Diese Vorlage strukturiert das Domain-Knowledge-Dokument einer Promptotyping-Wissensbasis. Der Dateiname folgt `<subject>-<function>.md`, etwa `editorial-guidelines.md`, `tei-mapping.md`, `domain-ontology.md`, `research-methodology.md` oder `research-framework.md`. Das Dokument liegt im `knowledge/`-Ordner und trägt fachmethodische Regeln sowie deren Begründung. Der erste Absatz bestätigt die über den Dateinamen geroutete Funktion; ein eigenes `zweck:`- oder `function:`-Feld entsteht nicht.
 
 ## Geltungsbereich
 
@@ -18,7 +18,7 @@ Die Funktion trägt, sobald ein Projekt eine fachmethodische Vorgabe macht, die 
 
 Die Funktion trägt nicht für triviale Tool- oder Bibliotheks-Repos ohne eigene fachmethodische Setzung; dort genügt eine kurze Methodensektion im Charter-Dokument. Sie trägt nicht für reine Anleitung an den Agenten (das ist Action-Layer, `CLAUDE.md`) und nicht für Forschungsergebnisse als Aussagen über den Gegenstand (die gehören in Veröffentlichungen, nicht in die Wissensbasis). Zwei Untertypen werden unterschieden, weil sie unterschiedliche Lesergruppen und Strukturen tragen, im selben Repo aber nebeneinander vorkommen:
 
-- (a) Methoden- und Begründungsschicht: das Warum. Theoretischer Rahmen, Forschungsfragen, methodische Entscheidungen mit akademischen Quellen. Typische Träger `forschungsrahmen.md`, `methodik.md`, `research.md`.
+- (a) Methoden- und Begründungsschicht: das Warum. Theoretischer Rahmen, Forschungsfragen, methodische Entscheidungen mit akademischen Quellen. Typische Träger sind `research-framework.md`, `research-methodology.md` und `<subject>-methodology.md`.
 - (b) Domänenspezifisches Regelwerk: das Wie der Auszeichnung. Editionsrichtlinien, TEI-Mapping, Kodiermanual, Ontologie, Berechnungslogik, normativ und auszeichnungsnah. Typische Träger `editorial-guidelines.md`, `tei-mapping.md`, `ontology.md`.
 
 Ein Projekt kann beide Untertypen in getrennten Dateien führen (notker-edition trennt die Theorie nicht aus, agentic-edition-pipeline führt Regelwerk in `03_CONTEXT.md` und `04_TEI_MAPPING.md`), oder das Regelwerk trägt eine knappe Begründungssektion am Kopf und bleibt eine Datei. Die Spaltung folgt derselben Rhythmus-Logik wie in [Vorlage Architecture](#promptotyping-document-architecture): getrennt, sobald Begründung und Regelwerk eigene Aktualisierungsrhythmen und Lesergruppen entwickeln. Diese Spaltung ist zugleich die Destillat-Grenze der Funktion; wächst ein Regelwerk über die Lesbarkeit, wird nach Phänomengruppen oder Untertypen in Themendateien geteilt, nie in ein Sammelsurium verlängert.
@@ -73,7 +73,7 @@ Funktion: in einem Satz den Zweck des Dokuments tragen, dann in einem bis drei S
 
 ### Untertyp (b): Domänenspezifisches Regelwerk
 
-`## Begründung` (optional). Funktion: die fachliche Grundentscheidung tragen, falls der Untertyp (a) nicht als eigene Datei existiert. Inhalt: zwei bis fünf Sätze, warum diese Auszeichnungs- oder Berechnungslogik gewählt wurde, mit Verweis auf das einschlägige Vorbild oder die Referenzedition. Entfällt, wenn ein eigenes `forschungsrahmen.md` oder `methodik.md` die Begründung trägt.
+`## Begründung` (optional). Funktion: die fachliche Grundentscheidung tragen, falls der Untertyp (a) nicht als eigene Datei existiert. Inhalt: zwei bis fünf Sätze zur Wahl der Auszeichnungs- oder Berechnungslogik mit Verweis auf das einschlägige Vorbild oder die Referenzedition. Entfällt, wenn `research-framework.md` oder `research-methodology.md` die Begründung trägt.
 
 `## Phänomene und ihre Behandlung` (Kern). Funktion: für jedes relevante Phänomen die Regel festlegen. Inhalt: pro Phänomen eine Beschreibung, die normative Kodierung oder Berechnung (Codeblock mit dem konkreten Element, Attribut oder der Formel), die Begründung der Wahl und die Abgrenzung der Grenzfälle. Bei Editionsprojekten ist das die Auszeichnung der Textschichten, Sprachwechsel, Glossen, Apparate, Fußnoten; bei Berechnungslogiken die Formel pro Metrik mit Bedingungen. Das ist der voluminöseste Teil und wird nach Phänomengruppen gegliedert.
 
@@ -113,7 +113,7 @@ created: [YYYY-MM-DD]
 updated: [YYYY-MM-DD]
 template:
   name: Vorlage Domänenwissen
-  version: 0.2
+  version: 0.3
   url: https://dhcraft.org/Promptotyping/promptotyping-document/domain-knowledge
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-domain-knowledge
 language: [de | en]
@@ -137,7 +137,7 @@ related: [data, specification, design]
 
 ## Begründung
 
-<!-- Optional. Entfällt, wenn ein eigenes forschungsrahmen.md die Begründung trägt. Warum diese Auszeichnungs- oder Berechnungslogik, mit Vorbild oder Referenzedition. -->
+<!-- Optional. Entfällt, wenn ein eigenes research-framework.md die Begründung trägt. Warum diese Auszeichnungs- oder Berechnungslogik, mit Vorbild oder Referenzedition. -->
 
 [...]
 
@@ -202,7 +202,7 @@ created: [YYYY-MM-DD]
 updated: [YYYY-MM-DD]
 template:
   name: Vorlage Domänenwissen
-  version: 0.2
+  version: 0.3
   url: https://dhcraft.org/Promptotyping/promptotyping-document/domain-knowledge
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-domain-knowledge
 language: [de | en]
@@ -299,7 +299,7 @@ status: draft
 
 Strukturanker beim Aufsetzen des Domänenwissens. Zuerst entscheidet der Agent (oder der Fachexperte), welcher Untertyp trägt und ob beide getrennt geführt werden. Den passenden Template-Block in eine neue Datei im `knowledge/`-Ordner kopieren und iterativ befüllen. Untertyp (b) wird aus dem real existierenden Quellmaterial befüllt (Probeseite, DOCX, Schema-Datei, bestehende Referenzedition): pro Phänomen wird die Regel aus einem realen Beleg abgeleitet, nicht erfunden. Untertyp (a) wird aus der Literatur befüllt; jede Erkenntnis braucht eine prüfbare Primärquelle mit DOI oder URL. Da diese Schicht fachwissenschaftliche Setzung trägt, ist sie der Teil der Wissensbasis, der am dringendsten vom Critical Expert verifiziert werden muss (Critical Expert in the Loop); Grenzfälle und ungeklärte Phänomene werden nicht weggeglättet, sondern als offene Frage an den Auftraggeber stehen gelassen. Recherchequellen werden gegen das Verbot von Grokipedia geprüft.
 
-Review-Folie für ein bestehendes Domänenwissen-Dokument. Ein vorhandenes `editorial-guidelines.md`, `tei-mapping.md`, `forschungsrahmen.md` oder `research.md` wird gegen die Vorlage gehalten: Trägt der erste Absatz den Zweck in einem Satz? Trägt jede Regel ihre Begründung und Abgrenzung, jede Erkenntnis ihre Quelle und Auswirkung? Sind ungeklärte Phänomene explizit benannt statt übergangen? Verweist das Dokument auf die Schema-Datei als Source of Truth statt sie zu duplizieren? Ist es sauber von `data.md` (Material) und `specification.md` (Specification) abgegrenzt, oder ist Datenherkunft oder Funktionsumfang hineingewachsen?
+Review-Folie für ein bestehendes Domain-Knowledge-Dokument. Ein vorhandenes `editorial-guidelines.md`, `tei-mapping.md`, `research-framework.md` oder `research-methodology.md` wird gegen Naming Contract, Lead, Begründungen, Quellen und Auswirkungen geprüft. Das Review kontrolliert außerdem die Abgrenzung zu `data.md` und `specification.md` sowie den Verweis auf eine autoritative Schema-Datei.
 
 ## Beispiel
 
@@ -309,7 +309,7 @@ Regelwerk in Skelettform (Untertyp b, frühe Phase): agentic-edition-pipeline sp
 
 Methoden- und Begründungsschicht mit akademischen Quellen (Untertyp a): dia-xai führt `RESEARCH.md` als Forschungsgrundlagen. Der Lead trägt den Zweck ("destillierte Erkenntnisse aus der Forschungsliteratur, die unsere Designentscheidungen begründen") und das Strukturversprechen (jede Erkenntnis mit Primärquelle und konkreter Auswirkung). Jede der elf Sektionen folgt dem Dreischritt Erkenntnis, Quelle, Auswirkung: etwa der Anchoring-Bias bei Pre-Annotation (Berzak et al., EMNLP 2016) führt zur Designentscheidung "Rohtext in der Verify-Ansicht immer sichtbar". Eine abschließende Tabelle Design-Entscheidung gegen Forschungsgrundlage verdichtet die elf Erkenntnisse. Das ist die Reinform des Untertyps (a): nachprüfbare Bindung jeder Praxisentscheidung an eine Primärquelle.
 
-Forschungsrahmen einer Studie (Untertyp a): m3gim führt `forschungsrahmen.md` mit Promptotyping-Frontmatter (`topics: [[Mobility Studies]], [[Music History]], [[Gender Studies]]`). Es trägt den theoretischen Rahmen (Mobility Turn nach Urry, die Motilität-Mobilität-Unterscheidung nach Strohmann), die DH-Vorläufer (MUSICI, MusMig) und die Lücke, die das Projekt schließt, dann vier nummerierte Forschungsfragen mit Hypothese und einem dreiteiligen Machbarkeitsziel, schließlich den Forschungskontext Oper Graz mit Literatur und benannten Forschungslücken. Die Quellen stehen in einer eigenen Sektion am Dokumentende.
+Ein Forschungsrahmen einer Studie wird als `research-framework.md` geführt. Er trägt den theoretischen Rahmen, relevante Vorarbeiten, Forschungslücken und Forschungsfragen mit Quellen in einer eigenen Sektion.
 
 Vault-Atom-Variante (Untertyp a als Wissensatom): hist-info-model führt seine Theorie-Dokumente im Ordner `knowledge/01-theory/` nicht im Promptotyping-Frontmatter, sondern in der Vault-Atom-Struktur. `Historical-Information.md` trägt `type: knowledge` plus `tags` und `status: draft` im Frontmatter und im Korpus `## Summary`, dann die fachliche Setzung (fünf Eigenschaften, drei Primitive, offene Frage nach ihrer Beziehung), dann `## Sources` (Pollin, Thaller, Koselleck, Langefors) und `## Related` mit erläuterten Wikilinks. Das belegt den Sonderfall: ein Methoden- und Theoriedokument, das primär als atomare Wissenseinheit gelesen wird, folgt der Vault-Struktur statt dem Promptotyping-Frontmatter.
 
@@ -324,6 +324,7 @@ Vault-Atom-Variante (Untertyp a als Wissensatom): hist-info-model führt seine T
 
 ## Versionshistorie
 
+- 0.3 (2026-08-21): Naming Contract übernommen. Fachliche Präfixe und Funktionsnamen sind englisch; Spezialisierungen folgen `<subject>-<function>.md`.
 - 0.2 (2026-07-19): Freigabe (status complete), englisches Funktionsvokabular (Domain Knowledge), Status-Vokabular auf den Stand der Konvention, `knowledge-sources`-Platzhalter auf die kanonische Map-Form, Lebenszyklus und Destillat-Grenze, Verification-Verweis. Die drei Template-Blöcke (Regelwerk, Begründungsschicht, Vault-Atom-Variante) sind geprüft und bleiben als echte Genres bestehen. Keine Migrationspflicht für bestehende Repos.
 - 0.1 (2026-06-13): Erstfassung, empirisch aus notker-edition, agentic-edition-pipeline, dia-xai, m3gim und hist-info-model.
 

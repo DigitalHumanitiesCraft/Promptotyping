@@ -177,6 +177,48 @@ class CatalogueTypeTest(CheckCase):
         self.assertIn(documents[0]["slug"], self.only_failure())
 
 
+class NamingContractTest(CheckCase):
+    """V17, the mandatory Inbox, catalogue size, types, and current names."""
+
+    def documents(self):
+        return copy.deepcopy(cc.load_catalogue())
+
+    def test_the_catalogue_has_seventeen_entries(self) -> None:
+        documents = self.documents()
+        documents.pop()
+        cc.check_catalogue_contract(documents)
+        self.assertTrue(any("expected 17" in failure for failure in cc.failures))
+
+    def test_handoff_is_the_mandatory_process_slug(self) -> None:
+        documents = self.documents()
+        handoff = next(document for document in documents
+                       if document["slug"] == "handoff")
+        handoff["typ"] = "Declarative"
+        cc.check_catalogue_contract(documents)
+        self.assertTrue(any("handoff typ" in failure for failure in cc.failures))
+
+    def test_testing_is_an_action_document(self) -> None:
+        documents = self.documents()
+        testing = next(document for document in documents
+                       if document["slug"] == "testing")
+        testing["typ"] = "Declarative"
+        cc.check_catalogue_contract(documents)
+        self.assertTrue(any("testing is" in failure for failure in cc.failures))
+
+    def test_each_retired_normative_name_is_reported(self) -> None:
+        root = self.tempdir()
+        templates = root / "templates"
+        templates.mkdir()
+        self.patch("TEMPLATE_DIR", templates)
+        for retired in cc.RETIRED_GENERIC_NAMES:
+            with self.subTest(retired=retired):
+                cc.failures.clear()
+                surface = self.write(root / "surface.md", retired + "\n")
+                self.patch("NORMATIVE_FILES", (surface,))
+                cc.check_normative_names()
+                self.assertIn(retired, self.only_failure())
+
+
 class GalleryTest(CheckCase):
     """V4, the two closed vocabularies whose violation is silent in the browser."""
 

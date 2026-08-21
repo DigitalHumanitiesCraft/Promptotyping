@@ -1,5 +1,5 @@
 ---
-title: Skriptum Video 1 — Einführung in Promptotyping
+title: Promptotyping Introduction Video Script
 project:
   name: Promptotyping
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
@@ -17,7 +17,7 @@ source:
 generated: transcript-cleanup
 ---
 
-# Skriptum Video 1 — Einführung in Promptotyping
+# Promptotyping Introduction Video Script
 
 Dieses Dokument ist die lesbare Fassung des gesprochenen Vortrags aus dem Video „Einführung in Promptotyping, Teil 1". Grundlage ist das automatisch erzeugte YouTube-Transkript, aus dem die Zeitstempel-Artefakte entfernt, die Fehler der Spracherkennung korrigiert und die gesprochene Sprache zu Prosa geglättet wurden. Der Inhalt folgt dem Verlauf des Vortrags, einschließlich der Einschränkungen und Zweifel, die der Sprecher formuliert. Die Zeitmarke hinter jeder Überschrift verweist auf die Videostelle, an der der Abschnitt beginnt.
 

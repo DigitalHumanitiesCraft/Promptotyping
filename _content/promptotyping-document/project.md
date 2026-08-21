@@ -1,20 +1,20 @@
 ---
 title: Vorlage Projekt-Wissensdokument
 slug: project
-version: "0.2"
+version: "0.3"
 status: complete
 source: Vorlage Projekt-Wissensdokument
-mirrored: 2026-06-10
+mirrored: 2026-08-21
 machine-url: https://dhcraft.org/Promptotyping/_content/promptotyping-document/project.md
 ---
 
 # Vorlage Projekt-Wissensdokument
 
-Diese Vorlage strukturiert das zentrale Projekt-Wissensdokument eines Promptotyping-Projekts. Sie ist abstrahiert aus konkreten Projekt-READMEs und überführt deren Strukturlogik in eine wiederverwendbare Form. Das Dokument erklärt die Struktur, dokumentiert die Funktion jedes Abschnitts und stellt am Ende einen befüllbaren Template-Block bereit.
+Diese Vorlage strukturiert `project.md`, den kanonischen Charter-Träger eines Promptotyping-Projekts. Sie ist aus konkreten Projektüberblicken abstrahiert und überführt deren Strukturlogik in eine wiederverwendbare Form. Ein öffentliches `README.md` kann daraus ableiten und verweist auf die Wissensbasis; es ersetzt `knowledge/project.md` nicht.
 
 ## Geltungsbereich
 
-Die Vorlage eignet sich für das zentrale Wissensdokument eines Projekts, in der Regel eine Datei mit dem Charakter einer README oder eines Projektüberblicks. Sie trägt für Projekte, die mindestens drei Eigenschaften aufweisen:
+Die Vorlage eignet sich für das zentrale Projekt-Wissensdokument `knowledge/project.md`. Sie trägt für Projekte, die mindestens drei Eigenschaften aufweisen:
 
 - Sie verarbeiten oder produzieren ein abgegrenztes Material, etwa Daten, Korpora, Dokumente.
 - Sie sind in einen institutionellen, methodologischen oder technischen Kontext eingebettet, der nicht selbsterklärend ist.
@@ -139,7 +139,7 @@ method:
   url: [Methodendokumentation]
 template:
   name: Vorlage Projekt-Wissensdokument
-  version: 0.1
+  version: 0.3
   url: https://dhcraft.org/Promptotyping/promptotyping-document/project
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-project
 # topics: ["[[Wissensfeld]]"]  # optional, nur falls eine Verortung das Befüllen leitet

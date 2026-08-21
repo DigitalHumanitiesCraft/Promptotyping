@@ -1,22 +1,22 @@
 ---
 title: Vorlage Architecture
 slug: architecture
-version: "0.3"
+version: "0.4"
 status: complete
 source: Vorlage Architecture
-mirrored: 2026-06-10
+mirrored: 2026-08-21
 machine-url: https://dhcraft.org/Promptotyping/_content/promptotyping-document/architecture.md
 ---
 
 # Vorlage Architecture
 
-Diese Vorlage strukturiert das Bauweise-Dokument einer Promptotyping-Wissensbasis. Das resultierende Dokument heißt typischerweise `architecture.md` und liegt im `knowledge/`-Ordner des Repos. Es trägt die technische Realisierung des Systems und beantwortet die Wie-Frage in Abgrenzung zur Was-Frage (Substanz) und zur Aussehen-Frage (Gestalt).
+Diese Vorlage strukturiert das Architecture-Dokument einer Promptotyping-Wissensbasis. Ein einzelner Träger heißt `architecture.md`; Spezialisierungen folgen `<subject>-architecture.md`. Das Dokument liegt im `knowledge/`-Ordner und trägt die technische Realisierung des Systems.
 
 ## Geltungsbereich
 
 Die Vorlage trägt, sobald das System mehr als ein triviales Frontend ist, sobald also Pipeline-Stufen, Modulgrenzen, Datenflüsse oder Sicherheitsannahmen dokumentiert werden müssen. Bei einseitigen Static-Site-Repos ohne Build-Schritt entfällt sie; eine knappe Architektur-Sektion in `specification.md` reicht dann. Sie trägt nicht für Code-Dokumentation auf Funktions- oder Klassenebene; diese liegt im Code (Docstrings, Kommentare, JSDoc).
 
-Bei größeren Systemen zerfällt eine monolithische `architecture.md` in mehrere Dokumente. Typische Spaltungen, die in der Praxis vorkommen: `pipeline.md` für den Datenfluss durch Verarbeitungsstufen, `infrastruktur.md` für Deployment und CI/CD, `engines.md` für externe Modelle und APIs (OCR-Modelle, LLM-Endpunkte, NER-Tools). Die Strukturprinzipien und das Frontmatter-Schema dieser Vorlage gelten dann pro Datei; jede Datei trägt einen abgegrenzten Aspekt der Bauweise-Funktion. Maßgabe ist, dass jeder Aspekt an genau einer auffindbaren Stelle abgedeckt ist.
+Architektur bleibt im Regelfall ein Dokument. Eine Auslagerung entsteht, sobald ein Aspekt eine eigene Routing Question oder einen eigenen Aktualisierungszyklus entwickelt. Die Dateinamen folgen dann `<subject>-architecture.md`, etwa `pipeline-architecture.md`, `model-services-architecture.md` oder `deployment-architecture.md`. Strukturprinzipien und Frontmatter-Schema dieser Vorlage gelten pro Datei, und `INDEX.md` registriert jede Spezialisierung.
 
 ## Funktion des Dokuments
 
@@ -56,11 +56,11 @@ Funktion: die Hauptmodule und ihre Verantwortung. Inhalt: pro Komponente Zweck, 
 
 ### Datenfluss
 
-Funktion: zeigen, wie Daten von Quelle zu Anzeige fließen. Inhalt: Pipeline-Stufen mit klaren Übergängen, etwa "XML-Quellen → Python-Pipeline → JSON-Export → JavaScript-Frontend". Pro Stufe das Format, das produziert wird, und die Stelle, wo die Validierung erfolgt. Bei mehrstufigen Pipelines hilft eine ASCII-Skizze oder ein verlinktes Diagramm. In großen Pipelines kann diese Sektion zu einer eigenen Datei `pipeline.md` ausgelagert werden; Komponenten und Datenfluss verschmelzen dann zu einer Stufentabelle, die pro Stufe Skript, Input-Format, Output-Format und Verantwortung trägt.
+Funktion: zeigen, wie Daten von Quelle zu Anzeige fließen. Inhalt: Pipeline-Stufen mit klaren Übergängen, etwa "XML-Quellen → Python-Pipeline → JSON-Export → JavaScript-Frontend". Pro Stufe werden Output-Format und Validierungsstelle dokumentiert. Bei eigenständiger Routing Question und eigenem Pflegezyklus wird diese Sektion zu `pipeline-architecture.md`.
 
 ### Externe Modelle und Services
 
-Funktion: alle externen Verarbeitungs-Ressourcen dokumentieren, die das System nutzt. Inhalt: pro Modell oder Service Rolle in der Pipeline, Provider, Endpunkt-Format, Authentifizierung, Limits, Output-Form. Relevant typischerweise für OCR-Modelle, LLM-Endpunkte, NER-Tools, Embedding-Modelle, Geocoding-Services. Diese Sektion entfällt, wenn das System keine externen Verarbeitungs-Services nutzt; bei mehrstufigen ML-Pipelines wird sie häufig zu einer eigenen Datei `engines.md` ausgelagert. Begründung der Modellwahl knapp, in einem Satz pro Modell.
+Funktion: alle externen Verarbeitungs-Ressourcen dokumentieren, die das System nutzt. Inhalt: pro Modell oder Service Rolle in der Pipeline, Provider, Endpunkt-Format, Authentifizierung, Limits und Output-Form. Bei eigenständigem Pflegezyklus entsteht `model-services-architecture.md`.
 
 ### Sicherheit
 
@@ -107,7 +107,7 @@ method:
   url: https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin
 template:
   name: Vorlage Architecture
-  version: 0.1
+  version: 0.4
   url: https://dhcraft.org/Promptotyping/promptotyping-document/architecture
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-architecture
 topics: ["[[Software Architecture]]"]  # bei Pipeline-Projekten zusätzlich [[Pipeline Design]]
@@ -137,13 +137,13 @@ related: [data, specification, design]
 
 ## Datenfluss
 
-<!-- Pipeline-Stufen mit Übergängen und Validierungspunkten. ASCII-Skizze hilfreich. Bei großen Pipelines: eigene pipeline.md auslagern. -->
+<!-- Pipeline-Stufen mit Übergängen und Validierungspunkten. Bei eigener Routing Question und eigenem Pflegezyklus als pipeline-architecture.md auslagern. -->
 
 [...]
 
 ## Externe Modelle und Services
 
-<!-- Optional. OCR-Modelle, LLM-Endpunkte, NER-Tools, Embeddings, Geocoding. Pro Eintrag: Rolle, Provider, Endpunkt, Authentifizierung, Limits, Output. Bei mehreren ML-Engines: eigene engines.md auslagern. -->
+<!-- Optional. OCR-Modelle, LLM-Endpunkte, NER-Tools, Embeddings, Geocoding. Bei eigenem Pflegezyklus als model-services-architecture.md auslagern. -->
 
 | Modell/Service | Rolle | Provider | Endpunkt |
 |---|---|---|---|

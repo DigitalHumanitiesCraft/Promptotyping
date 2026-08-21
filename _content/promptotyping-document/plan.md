@@ -1,16 +1,16 @@
 ---
 title: Vorlage Plan
 slug: plan
-version: "0.2"
+version: "0.3"
 status: complete
 source: Vorlage Plan
-mirrored: 2026-07-19
+mirrored: 2026-08-21
 machine-url: https://dhcraft.org/Promptotyping/_content/promptotyping-document/plan.md
 ---
 
 # Vorlage Plan
 
-Diese Vorlage strukturiert das vorwärts gerichtete Process-Dokument einer Promptotyping-Wissensbasis. Das resultierende Dokument heißt typischerweise `plan.md` oder `roadmap.md` und liegt im `knowledge/`-Ordner des Repos. Es ist das ausdrückliche Gegenstück zum rückblickenden `journal.md`: während das Journal dokumentiert, wie sich das Projekt zum aktuellen Stand gearbeitet hat, ordnet der Plan die noch ausstehende Arbeit in eine Sequenz aus Phasen und Milestones mit Entry- und Exit-Bedingungen, die gegen die `specification.md` verankert sind. Der erste Absatz des resultierenden Dokuments trägt den Zweck in einem Satz.
+Diese Vorlage strukturiert das vorwärts gerichtete Process-Dokument einer Promptotyping-Wissensbasis. Ein einzelner Träger heißt `plan.md`; getrennte Arbeitsströme werden als `<subject>-plan.md` spezialisiert. Das Dokument liegt im `knowledge/`-Ordner und ist das Gegenstück zum rückblickenden `journal.md`. Es ordnet die noch ausstehende Arbeit in Phasen und Milestones mit Entry- und Exit-Bedingungen, die gegen `specification.md` verankert sind. Der erste Absatz bestätigt die Funktion; ein eigenes `zweck:`- oder `function:`-Frontmatter-Feld entsteht nicht.
 
 ## Geltungsbereich
 
@@ -114,7 +114,7 @@ method:
   url: https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin
 template:
   name: Vorlage Plan
-  version: 0.2
+  version: 0.3
   url: https://dhcraft.org/Promptotyping/promptotyping-document/plan
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-plan
 related: [specification, journal, index]
@@ -205,6 +205,7 @@ Das Fehlmuster aus dem Inhaltsaudit vom Juli 2026 ist der Plan als Sammelsurium:
 
 ## Versionshistorie
 
+- 0.3 (2026-08-21): Naming Contract übernommen. Einzelträger heißt `plan.md`, Spezialisierungen folgen `<subject>-plan.md`.
 - 0.2 (2026-07-19): Freigabe (status complete), englisches Funktionsvokabular, Block-Status auf `active`, Lebenszyklus-Absatz, Fehlmuster im Beispiel. Keine Migrationspflicht für bestehende Repos.
 - 0.1 (2026-06-13): Erstfassung.
 

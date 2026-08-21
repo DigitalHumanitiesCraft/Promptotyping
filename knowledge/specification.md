@@ -7,7 +7,7 @@ status: complete
 language: en
 version: 0.8
 created: 2026-05-09
-updated: 2026-07-29
+updated: 2026-08-21
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Opus 4.8)
 method:
@@ -23,7 +23,7 @@ knowledge-sources:
   standards:
     Schema.org ScholarlyArticle: https://schema.org/ScholarlyArticle
     YAML Frontmatter: https://yaml.org/spec/1.2.2/
-related: [INDEX, project, architecture, design, journal]
+related: [INDEX, project, architecture, design, handoff, journal]
 ---
 
 # Specification
@@ -41,7 +41,7 @@ One item of the target state is still undecided. The mandatory frontmatter core 
 ## Requirements
 
 ### A1 — Paper as reading flow
-The canonical paper text is [paper.md](paper.md) in this knowledge base. The site renders that file directly as a continuous reading flow, grouped into one section per H2 at render time, so the deployed text is the canonical text by construction. It renders in a central reading column, with the sticky left sidebar carrying the site's page tree and the paper's own two-level table of contents standing in the page directly under the H1 (A23). Acceptance criterion. A visitor to https://dhcraft.org/Promptotyping/paper can read the paper from abstract to conclusion in one scroll.
+The canonical paper text is [promptotyping-paper.md](../research-artefacts/promptotyping-paper.md). The site renders that file directly as a continuous reading flow, grouped into one section per H2 at render time, so the deployed text is the canonical text by construction. It renders in a central reading column, with the sticky left sidebar carrying the site's page tree and the paper's own two-level table of contents standing in the page directly under the H1 (A23). Acceptance criterion. A visitor to https://dhcraft.org/Promptotyping/paper can read the paper from abstract to conclusion in one scroll.
 
 The mirrored decomposition under `_content/paper/` is gone since 2026-07-25, and with it the largest class of drift this site had. There is one paper text, it lives in this knowledge base, and the site fetches it. Nothing is re-cut on release of a revision, because there is nothing to re-cut.
 
@@ -72,7 +72,7 @@ Every addressable item exists under two equal canonical URL forms, a subpath for
 | Skill | `#skills-{slug}` | `/skills/{slug}` |
 | Tutorial | `#tutorial` | `/tutorial` |
 
-The slug set for Promptotyping-Documents is `index`, `project`, `data`, `specification`, `user-stories`, `action-layer` (ADR-9), `architecture`, `domain-knowledge` (English slug, ADR-3), `design`, `testing`, `verification`, `journal`, `plan`, `report`, `integration`. The canonical source of each version is the `version` field of the mirror and `data/promptotyping-documents.json`. The latest anchor is the primary and only address point; a snapshot sub-anchor is issued only when a template's version changes, as an additional hash fragment on the same section, without its own subpath. Paper subsection anchors (for example `#phase-distillation` within section 3.3) are available inside their section without a subpath. Acceptance criterion. `/promptotyping-document/data` and `#promptotyping-document-data` both lead to the same rendered template.
+The slug set for Promptotyping-Documents is `index`, `project`, `data`, `specification`, `user-stories`, `action-layer` (ADR-9), `architecture`, `technology`, `domain-knowledge` (English slug, ADR-3), `design`, `testing`, `verification`, `journal`, `handoff`, `plan`, `report`, `integration`. The canonical source of each version is the `version` field of the mirror and `data/promptotyping-documents.json`. The latest anchor is the primary and only address point; a snapshot sub-anchor is issued only when a template's version changes, as an additional hash fragment on the same section, without its own subpath. Paper subsection anchors (for example `#phase-distillation` within section 3.3) are available inside their section without a subpath. Acceptance criterion. `/promptotyping-document/data` and `#promptotyping-document-data` both lead to the same rendered template.
 
 ### A5 — `template:` frontmatter field as machine address
 Promptotyping repos carry a `template:` block in their `knowledge/` documents with `name`, `version`, `url` (subpath form, canonical), and optional `alias` (hash form, equal). The `url` points to the latest address of the template. A coding agent that reads a `template:` URI can call it and receives the authoritative template specification.
@@ -203,14 +203,14 @@ A23 stands unchanged. The paper keeps its table of contents in the page, and no 
 Acceptance criterion. Opening `#abschnitt-2-promptotyping-as-a-method` marks the corresponding tree entry as current, scrolling on into the next section moves the marker, and switching to another page leaves no marker behind.
 
 ### A34 — A glossary source is a link wherever the site holds its address
-Every entry of `data/glossar.json` carries a source list in place of the free-text line it carried until 2026-07-29 (package F2 of [plan.md](plan.md)). A source states its kind, its display text and the anchor it resolves to. Five kinds exist, a section of the canonical paper, an entry of the reference list under the `ref-{surname}-{year}` ids of A30, an assertion of the grounded vault, a page or block of this site, and a carrier the site holds no address for, which keeps its wording and stays text. The curation runs entry by entry and was checked against the real inventory, meaning the heading set of [paper.md](paper.md), the reference list of the same file, the assertion files under `vault/30_assertions/` and the anchors the page registry mounts. No address was invented for a carrier that has none, among them the vault concept documents that live outside this repository.
+Every entry of `data/glossar.json` carries a source list in place of the free-text line it carried until 2026-07-29 (package F2 of [plan.md](plan.md)). A source states its kind, its display text and the anchor it resolves to. Five kinds exist, a section of the canonical paper, an entry of the reference list under the `ref-{surname}-{year}` ids of A30, an assertion of the grounded vault, a page or block of this site, and a carrier the site holds no address for, which keeps its wording and stays text. The curation runs entry by entry and was checked against the real inventory, meaning the heading set of [promptotyping-paper.md](../research-artefacts/promptotyping-paper.md), the reference list of the same file, the assertion files under `vault/30_assertions/` and the anchors the page registry mounts. No address was invented for a carrier that has none, among them the vault concept documents that live outside this repository.
 
 The tooltip and the glossary page render the list as links. `tools/build_glossar.py` renders it into the Markdown mirror as hash links, which brings the mirror under the anchor check of A28 by the same path every other `_content` file takes. Three further things hold by rule, that an entry names at least one source, that a kind and its anchor family agree, and that a cited reference id is one the paper's own list mints; the last of these rebuilds the ids rather than trusting the `ref-` prefix.
 
 Acceptance criterion. A source line in the tooltip and on the glossary page lands on the paper section, reference entry, claim or page it names.
 
 ### A35 — The case table links to the gallery
-The first column of Table 1 in section 3.2 carries each project into its use-case card under `#case-{id}` (raised 2026-07-29, package F2 of [plan.md](plan.md)). The correspondence is the `paper_row` field of `data/case-studies.json`, which A7 already relies on and V5 of [verification.md](verification.md) holds in both directions, so no second table arises. `pages-paper.js` fetches the gallery data and rewrites the first column after the paper has rendered and before the glossary triggers run. The Markdown source stays plain, so a machine fetching `knowledge/paper.md` under ADR-10 receives the table the paper writes. A row that no card claims stays plain text, and A28 reports it as a gap in the gallery.
+The first column of Table 1 in section 3.2 carries each project into its use-case card under `#case-{id}` (raised 2026-07-29, package F2 of [plan.md](plan.md)). The correspondence is the `paper_row` field of `data/case-studies.json`, which A7 already relies on and V5 of [verification.md](verification.md) holds in both directions, so no second table arises. `pages-paper.js` fetches the gallery data and rewrites the first column after the paper has rendered and before the glossary triggers run. The Markdown source stays plain, so a machine fetching `research-artefacts/promptotyping-paper.md` receives the table the paper writes. A row that no card claims stays plain text, and A28 reports it as a gap in the gallery.
 
 Acceptance criterion. Clicking a project name in Table 1 opens the use-case gallery at that project's card.
 
@@ -234,10 +234,22 @@ The fifth part of the specification displays as Checking (operator decision 2026
 ### A39 — The site describes the method as knowledge-driven
 Site self-descriptions carry the paper's framing, an iterative, knowledge-driven method for developing project-specific research artefacts from structured research data and maintained project knowledge (operator decision 2026-07-31). The earlier self-descriptions diverged three ways, context-engineering method in the INDEX lexicon, document-driven context-engineering method in the glossary, knowledge-driven in the paper; the INDEX and the `og:description` also derived the artefacts from data and frontier LLMs, which put the model into the definitional slot the paper gives to maintained project knowledge. Context Engineering remains one of the method's two named foundations rather than its genus. Changed are the `og:description` in `index.html`, the overview page's description line, the glossary entry (whose long text also takes the paper's current etymology wording and the validation term of decision 21), and the INDEX lexicon, which additionally gains the missing Promptotype entry. Added 2026-07-31.
 
+### A40 — Handoff is a mandatory Process Inbox
+
+The catalogue has seventeen slugs and includes `handoff` as a Process Document with the always trigger. Every Promptotyping project carries `knowledge/handoff.md` with `status: active`. An empty inbox contains only “Keine offenen Handoff-Punkte.” under `## Offene Handoff-Punkte`. Each open point carries `Received`, `Source`, `Target`, and `Context`; optional fields are omitted when empty. A processed point is integrated or rejected, evidenced in `journal.md`, and removed completely. Exceptional dated snapshots under `handoffs/` remain separate artefacts.
+
+### A41 — Journal is a curated provenance index
+
+The Journal template is version 0.4. Entries represent substantively coherent transitions of type `integriert`, `verworfen`, or `korrigiert`; `verdichtet` is reserved for semantic maintenance and names its Git baseline. Current status, future work, open inputs, and detailed verification results remain in their responsible documents. Compaction begins when the journal loses its provenance function and disposes every substantive statement; it uses no fixed threshold and creates no archive document.
+
+### A42 — The canonical skill follows the document semantics
+
+The later canonical Promptotyping skill must make `orient` read `handoff.md` before `journal.md`; `handoff` integrates durable knowledge before it retains open deltas and writes the Journal before the shared commit; `compact` applies semantic compaction without an archive; `distill` creates both `journal.md` and `handoff.md`. Integration remains an invariant of orientation, ongoing work, and handoff processing. The operation set gains no `integrate` command. Repository source and synchronisation belong to the separate skill-delivery lane in `plan.md`.
+
 ### A26 — The site is English
 Every string the site shows is English, in the British spelling the paper uses (operator decision 2026-07-25, carried out 2026-07-26). That covers the page registry labels, the status line, every control, the nine content pages directly under `_content/`, and the text fields of `data/glossar.json`, `data/case-studies.json` and `data/promptotyping-documents.json`.
 
-Three sets under `_content/` are still German, and each for its own reason. Fifteen of the sixteen templates are vault mirrors whose translation belongs in a vault session together with their originals, so translating the repo copy alone would be the silent divergence `CLAUDE.md` forbids; the sixteenth, `technology`, has been repo-canonical since 2026-07-26 and stays German so that the catalogue reads in one language. The three files under `skills/` are reusable German system prompts, that is teaching material, which the language decision of 2026-07-25 exempts. The seven case-study depth pages had no such reason and were carried over on 2026-07-26, onto the shape A7 prescribes, which ended the pass. The source for the terminology of the distilled pages is [paper.md](paper.md), which they are distilled from; the German distillate is superseded and is not maintained as a back-translation source.
+Three sets under `_content/` are still German, and each for its own reason. Sixteen of the seventeen templates are vault mirrors whose translation belongs in a vault session together with their originals, so translating the repo copy alone would be the silent divergence `CLAUDE.md` forbids; the seventeenth, `technology`, has been repo-canonical since 2026-07-26 and stays German so that the catalogue reads in one language. The three files under `skills/` are reusable German system prompts, that is teaching material, which the language decision of 2026-07-25 exempts. The seven case-study depth pages had no such reason and were carried over on 2026-07-26, onto the shape A7 prescribes, which ended the pass. The source for the terminology of the distilled pages is [promptotyping-paper.md](../research-artefacts/promptotyping-paper.md), which they are distilled from; the German distillate is superseded and is not maintained as a back-translation source.
 
 Three classes stay German because they are identifiers rather than text. The published anchors, since foreign repositories carry them as `template:` URIs. The template names, since they stand in foreign frontmatter blocks. And the German file names the convention cites as examples of real repositories. Thirteen glossary entries and all templates therefore appear under a German address with an English label, which is the separation of identifier from text that A1 weighed and recommended.
 
@@ -255,7 +267,7 @@ The sub-anchors are additive in-page fragments, no new top-level anchor, no new 
 
 ## Function per site section
 
-The paper-section numbers below refer to the canonical text in `knowledge/paper.md`, which the site renders directly.
+The paper-section numbers below refer to the canonical text in `research-artefacts/promptotyping-paper.md`, which the site renders directly.
 
 ### Method (paper sections 1–3)
 The paper narrative as reading flow on its own page. Terms as glossary triggers. The template table lives on the Vorlagen page with click links to side-panel specs.

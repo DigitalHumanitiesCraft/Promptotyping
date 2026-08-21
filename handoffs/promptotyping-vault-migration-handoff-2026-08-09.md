@@ -1,5 +1,5 @@
 ---
-title: Handoff
+title: Promptotyping Vault Migration Handoff
 project:
   name: Promptotyping Site
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
@@ -10,10 +10,10 @@ status: snapshot
 language: de
 created: 2026-08-09
 updated: 2026-08-09
-related: [journal, paper-knowledge, INDEX]
+related: [journal, paper-specification, INDEX]
 ---
 
-# Handoff, Lane 4, 2026-08-09
+# Promptotyping Vault Migration Handoff, 2026-08-09
 
 Übergabenotiz der Session, die den Vault migriert, die Site nachgezogen und die Paper-Flags abgearbeitet hat. Eine frische Instanz liest zuerst `CLAUDE.md`, dann diese Notiz, dann `knowledge/journal.md` (Eintrag 2026-08-09 samt Nachtrag).
 
@@ -31,7 +31,7 @@ Alles committet und gepusht bis `3e4265d` auf `main`. Der Vault läuft auf der n
 
 ## Offene Fäden (alle operator-gated)
 
-Machine-Review-Gate (Batch `vault/review-batch-2026-08-09.jsonl`, 956 Paare, gitignored und über `review.py emit` regenerierbar; Reviewer fremder Modellfamilie nötig, Verdicts bucht `review.py judge`); Flag-5-Literaturauswahl (Kandidaten im Chat-Protokoll der Session: arXiv 2604.03196, arXiv 2602.13377, ESEM 2025, RIDE-Kriterienkatalog); Flags 2, 4, 8, 9 aus `paper-knowledge.md` Abschnitt 19; ZBZ-Projekt-URL für Fußnote 24; Issues #1 und #3 vault-first; CI-Workflow des Templates optional übernehmbar.
+Machine-Review-Gate (Batch `vault/review-batch-2026-08-09.jsonl`, 956 Paare, gitignored und über `review.py emit` regenerierbar; Reviewer fremder Modellfamilie nötig, Verdicts bucht `review.py judge`); Flag-5-Literaturauswahl (Kandidaten im Chat-Protokoll der Session: arXiv 2604.03196, arXiv 2602.13377, ESEM 2025, RIDE-Kriterienkatalog); Flags 2, 4, 8, 9 aus `knowledge/paper-specification.md` Abschnitt 19; ZBZ-Projekt-URL für Fußnote 24; Issues #1 und #3 vault-first; CI-Workflow des Templates optional übernehmbar.
 
 ## Der eine nächste Schritt
 

@@ -4,7 +4,7 @@ Human entry point of this vault. The vault carries the provenance layer beneath 
 
 ## Read the output
 
-- The paper lives canonically in this repository as `knowledge/paper.md`; the site renders that file directly, so no derived cut of the paper exists. The chapter register in [[knowledge/state]] maps the paper's sections to the assertions here.
+- The paper lives canonically in this repository as `research-artefacts/promptotyping-paper.md`; the site renders that file directly, so no derived cut of the paper exists. The chapter register in [[knowledge/state]] maps the paper's sections to the assertions here.
 
 ## Explore the knowledge
 

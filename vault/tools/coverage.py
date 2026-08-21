@@ -428,8 +428,8 @@ def main() -> None:
     parser.add_argument(
         "--paper",
         type=Path,
-        default=here.parents[2] / "knowledge" / "paper.md",
-        help="paper text to read (default: knowledge/paper.md of the repository)",
+        default=here.parents[2] / "research-artefacts" / "promptotyping-paper.md",
+        help="paper text to read (default: research-artefacts/promptotyping-paper.md)",
     )
     parser.add_argument(
         "--claims",

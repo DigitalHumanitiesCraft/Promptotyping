@@ -5,9 +5,9 @@ project:
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 status: active
 language: en
-version: 0.5
+version: 0.6
 created: 2026-07-26
-updated: 2026-07-31
+updated: 2026-08-21
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Opus 5)
 method:
@@ -18,7 +18,7 @@ template:
   version: 0.2
   url: https://dhcraft.org/Promptotyping/promptotyping-document/verification
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-verification
-related: [INDEX, specification, architecture, journal]
+related: [INDEX, specification, architecture, handoff, journal]
 ---
 
 # Verification
@@ -37,9 +37,9 @@ Under `tools/tests/` the checks are themselves held to their regression cases, r
 
 **Claim.** Every template in `data/promptotyping-documents.json` carries the analytical type that `_content/konvention.md` assigns to its function.
 
-**Why it matters.** The diagnostic rule of part 3 routes by type. A reader who sees formally wrong output is sent to the Action Document. If `testing.md` is filed as declarative, the rule sends them to the wrong file, and the error is invisible because both documents read plausibly on their own.
+**Why it matters.** The diagnostic rule of part 3 routes from the file name through function and type. A reader who sees formally wrong output is sent to the Action Document. If `testing.md` is filed as declarative, the rule sends them to the wrong file, and the error is invisible because both documents read plausibly on their own.
 
-**Procedure.** Read the type column of the reading-heuristic table, match each catalogue function against it by name, and compare. Where the convention splits a function into variants, the variants must agree with one another first.
+**Procedure.** Read the type column of the routing-heuristic table, match each catalogue function against it by name, and compare. Where the convention splits a function into variants, the variants must agree with one another first.
 
 **Verdict, 2026-07-26.** Passes. It did not before that date. The catalogue filed Quality Assurance as declarative while the convention's own prose and section 3.3 of the paper both class the testing strategy as an Action Document; the convention contradicted itself two pages apart. The check was regression-tested by reintroducing the old value, which it reports.
 
@@ -49,7 +49,7 @@ Under `tools/tests/` the checks are themselves held to their regression cases, r
 
 **Why it matters.** A catalogue entry without a file is a dead address that a foreign repository may already carry in a `template:` field. A file without an entry is either an oversight or a deliberate hold, and only the second is acceptable.
 
-**Verdict, 2026-07-26.** Passes, with sixteen slugs on both sides and nothing held back. `technology` entered the catalogue on 2026-07-26; until then it was the one held-back slug, reported by the check as a note. The `HELD_BACK` map stays in the script as the mechanism for the next such case, since a file without an entry has to be either an oversight or a stated hold, and the script is what forces the choice.
+**Verdict, 2026-08-21.** Passes, with seventeen slugs on both sides and nothing held back. `handoff` is the seventeenth mandatory Process slug. The `HELD_BACK` map stays in the script as the mechanism for the next deliberate hold.
 
 ### V3. The action layer lists the catalogue's slugs
 
@@ -71,7 +71,7 @@ Under `tools/tests/` the checks are themselves held to their regression cases, r
 
 ### V5. Every case the paper analyses is reachable
 
-**Claim.** Every case in Table 1 of section 3.2 has a card, and every card that claims a case-table row finds that row in `knowledge/paper.md`.
+**Claim.** Every case in Table 1 of section 3.2 has a card, and every card that claims a case-table row finds that row in `research-artefacts/promptotyping-paper.md`.
 
 **Why it matters.** This is the condition the gallery exists for. A reader who comes from the paper to check a claim of the case comparison has to find the project, and three of the thirteen were unfindable until 2026-07-26.
 
@@ -105,7 +105,7 @@ Under `tools/tests/` the checks are themselves held to their regression cases, r
 
 **Why it matters.** This is the failure class where a value is display text and identifier at once. A heading is translated, a card is renamed, and the anchor moves with it while the sentence that links there stays. Nothing reports it, because both sides read plausibly on their own, and a foreign repository may already carry the old address in a `template:` field. The English pass of 2026-07-26 hit the class three times. The handover checks guard the routing rebuild of the same day. The parameter name is written in `404.html` and read in `app.js`, and a rename on one side sends every subpath to the not-found state; a slug written back into `404.html` restores the duplicate table that had already drifted seven entries apart from the resolver before it was removed.
 
-**Procedure.** The declared side is read out of the tables the site itself reads, `PAGES` and `ANCHOR_FAMILIES` in `assets/js/registry.js`, the slugs of the four data files, the alias tables in `markdown.js`, `pages-content.js`, `pages-glossar.js` and `pages-paper.js`, and the literal block ids in the scripts. `slugify` and the heading-id generator with its collision suffix are ported into the check, and the heading anchors of `_content/praxis.md` and `knowledge/paper.md` are derived with them. Restating any of those tables as a Python literal would create the second copy whose drift the group exists to catch, so each is parsed from its source file. The reference side takes only literal addresses; an href assembled at run time carries no literal to decide. The subpath side is a self-test of that rebuild, holding it against the same declarations, so a rebuild that stops understanding a declaration shows up as a failure instead of turning the checks above into silent passes. Whether the JavaScript resolver agrees is the browser half of the verification and is named among the limits below.
+**Procedure.** The declared side is read out of the tables the site itself reads, `PAGES` and `ANCHOR_FAMILIES` in `assets/js/registry.js`, the slugs of the four data files, the alias tables in `markdown.js`, `pages-content.js`, `pages-glossar.js` and `pages-paper.js`, and the literal block ids in the scripts. `slugify` and the heading-id generator with its collision suffix are ported into the check, and the heading anchors of `_content/praxis.md` and `research-artefacts/promptotyping-paper.md` are derived with them. Restating any of those tables as a Python literal would create the second copy whose drift the group exists to catch, so each is parsed from its source file. The reference side takes only literal addresses; an href assembled at run time carries no literal to decide. The subpath side is a self-test of that rebuild, holding it against the same declarations, so a rebuild that stops understanding a declaration shows up as a failure instead of turning the checks above into silent passes. Whether the JavaScript resolver agrees is the browser half of the verification and is named among the limits below.
 
 **Verdict, 2026-07-26.** Passes after the one failure of its first run at the real repository was corrected. `_content/promptotyping-document/user-stories.md` linked to `#praxis-user-story-status`, an anchor no practice heading has ever carried; the section is reachable as `#praxis-the-epistemic-status-of-user-stories`, with the pre-English form held alive in `PRAXIS_ALIASES`. The link predates the English pass and survived it, since it was wrong from the start and had nothing to do with a translation, which is the case the group exists for. The subpath comparison against the tables in `404.html` was replaced on the same day by the handover checks, when the routing rebuild removed the tables; the four failure cases of the new form were each provoked once and each reported.
 
@@ -121,7 +121,7 @@ Under `tools/tests/` the checks are themselves held to their regression cases, r
 
 ### V10. Section 1 of the paper still carries what later sections say it carries (retired)
 
-**Claim, as it stood.** Where a later section of `knowledge/paper.md` named something Section 1 established, or where the steering document recorded a decision as closed by a passage in Section 1, that passage was still in Section 1. A declared table paired each anchor phrase with the dependent phrase that made it obligatory, and a pair fell silent when the dependent phrase went, which was the check's own retirement condition.
+**Claim, as it stood.** Where a later section of the canonical paper named something Section 1 established, or where the paper specification recorded a decision as closed by a passage in Section 1, that passage was still in Section 1. A declared table paired each anchor phrase with the dependent phrase that made it obligatory, and a pair fell silent when the dependent phrase went, which was the check's own retirement condition.
 
 **Retired, 2026-07-30.** The promotion of the five-chapter text replaced the guarded opening and dissolved the steering document the check also read; every dependent phrase of the declared table left the text with it, so all six pairs fell silent at once. The check was removed from the script rather than kept as dead code. The mechanism, a declared anchor-and-dependent table over the opening, is recorded here and can be redeclared if rewrites of the new opening start dropping load-bearing anchors again. The regression history lives in the git history of `tools/check_consistency.py`.
 
@@ -163,7 +163,7 @@ Under `tools/tests/` the checks are themselves held to their regression cases, r
 
 **Claim.** Every relative Markdown link in the repository root, in `knowledge/` and under `_content/` points at a file that exists. External addresses stay out, they belong to the opt-in URL pass of V6; a fragment-only link is an anchor and belongs to V8.
 
-**Why it matters.** A consolidation round deletes a document and leaves its incoming links behind, and nothing noticed. The round of 2026-07-29/30 consolidated `paper-writing.md`, `paper-argument-map.md` and `submission-zfdg.md` into `paper-knowledge.md` and deleted them; seven links to those three names stood in `knowledge/project.md` and `knowledge/report.md` until 2026-07-31, and an eighth in the design template mirror rendered an illustrative path as a link into a file that never existed here. That is the failure mode this group exists for, because every further consolidation produces it again.
+**Why it matters.** A consolidation round deletes a document and can leave incoming links behind. The round of 2026-07-29/30 consolidated `paper-writing.md`, `paper-argument-map.md` and `submission-zfdg.md` into the document now named `paper-specification.md`; seven links to those three names survived until 2026-07-31. An eighth link in the design template mirror rendered an illustrative path into a file that never existed here. This group detects that failure mode after later consolidations and moves.
 
 **Procedure.** Read every Markdown file of the three areas, take each link whose target is neither an absolute URL nor a bare fragment, strip the fragment, and require the target to exist relative to the linking file or to the repository root.
 
@@ -171,17 +171,27 @@ Under `tools/tests/` the checks are themselves held to their regression cases, r
 
 ### V16. Every knowledge document carries the convention's frontmatter core
 
-**Claim.** Every Markdown document under `knowledge/` except the deliberately headerless `paper.md` (A8) carries the mandatory frontmatter core of the Knowledge Documents convention (`title`, `project` with `name` and `repository`, `method` with `name` and `url`, `status` from the template vocabulary, `created` and `updated` as ISO dates). The published machine form of the vocabulary, `schema/knowledge-document.schema.json`, keeps its `required` list and status enum identical to what this group checks, so schema and check cannot drift apart silently.
+**Claim.** Every Markdown document under `knowledge/` carries the mandatory frontmatter core of the Knowledge Documents convention (`title`, `project` with `name` and `repository`, `method` with `name` and `url`, `status` from the template vocabulary, `created` and `updated` as ISO dates). The headerless paper is a Research Artefact under `research-artefacts/` and lies outside this check. The published machine form of the vocabulary, `schema/knowledge-document.schema.json`, keeps its `required` list and status enum identical to what this group checks, so schema and check cannot drift apart silently.
 
-**Why it matters.** The site publishes the convention and is its own reference implementation; a knowledge document here that ignores the mandatory core undercuts the convention it hosts. The first run found exactly that, `paper-knowledge.md` carried no frontmatter at all. The schema file also answers the repository issue that the YAML header lacked a machine-readable schema; other repositories can validate against the published address.
+**Why it matters.** The site publishes the convention and is its own reference implementation; a Knowledge Document here that ignores the mandatory core undercuts the convention it hosts. The first run found exactly that in the document now named `paper-specification.md`, which carried no frontmatter. The schema file also answers the repository issue that the YAML header lacked a machine-readable schema; other repositories can validate against the published address.
 
-**Procedure.** Load the schema and compare its `required` list and status enum against the natively checked core; then parse the frontmatter of every `knowledge/*.md` except `paper.md` and check field presence, the nested subfields, the status vocabulary and the date form.
+**Procedure.** Load the schema and compare its `required` list and status enum against the natively checked core; then parse the frontmatter of every `knowledge/*.md` and check field presence, nested subfields, status vocabulary and date form.
 
-**Verdict, 2026-08-09.** Passes, after `paper-knowledge.md` received the core. The regression cases are a removed core field and a schema edit that widens the required list, both of which the group reports.
+**Verdict, 2026-08-09.** Passes after the paper specification received the core. The regression cases are a removed core field and a schema edit that widens the required list, both of which the group reports.
+
+### V17. The naming and document-type contract stays coherent
+
+**Claim.** The catalogue contains exactly seventeen slugs. `handoff` is present with function Handoff, type Process, trigger always, and a public mirror; `testing` is Action. Current normative surfaces contain none of the retired generic names `pipeline.md`, `engines.md`, `infrastruktur.md`, `decisions.md`, `requirements.md`, `features.md`, `analyse.md`, `exploration.md`, or `JOURNAL.md`.
+
+**Why it matters.** These statements form one routing contract. A missing Process Inbox loses open deltas, a declarative Testing classification sends a formal failure to the wrong document, and a generic example reintroduces the filename ambiguity the Naming Contract removed.
+
+**Procedure.** Check the catalogue size and required entries, then scan the current convention, template catalogue, README, action layer, and current template blocks. Historical journal entries, dated snapshots, explicit historical evidence paragraphs, and version histories are excluded because they record earlier states.
+
+**Verdict, 2026-08-21.** Passes after the Handoff template, catalogue entry, current examples, and regression cases were added.
 
 ## What is not checked automatically, and why
 
-- **Whether a page says what the paper says.** The contradictions of 2026-07-26 were found by reading `knowledge/paper.md` against the site, not by any script. Agreement in substance is not decidable by rule, and the four findings of that reading are recorded in `knowledge/journal.md`.
+- **Whether a page says what the paper says.** The contradictions of 2026-07-26 were found by reading `research-artefacts/promptotyping-paper.md` against the site. Agreement in substance is not decidable by rule, and the four findings of that reading are recorded in `knowledge/journal.md`.
 - **Whether the anchors resolve in the browser.** V8 decides the anchor set from the sources, which is a static reading of what the code would mount. Whether the element actually appears in the DOM depends on the render order, on a fetch that may fail and on the routing that reveals the page, and none of that is visible to a file reader. The check of 2026-07-26 against the rendered DOM, comparing the union of element ids over every page and deep link before and after the refactor, stays the instrument for that question. The routing rebuild of the same day was taken with the second form of it, a local server that answers every non-file path with `404.html` under HTTP 404 as GitHub Pages does, driven by a headless browser over every published subpath form and two unresolvable paths, and read off the page host that carries `is-active`.
 - **What V8 cannot see by construction.** An href or an id assembled at run time carries no literal, so a concatenated address is skipped on the reference side and its family is covered by prefix on the declared side. An anchor named outside the sources it reads goes unnoticed, which includes every foreign repository carrying a `template:` URI and every link in a slide deck, a mail or a published PDF; those are exactly the addresses the no-renaming rule protects, and the check cannot enumerate them. A link that resolves to the wrong but existing anchor passes, since only existence is decidable here. The praxis anchors are derived from the raw Markdown heading while the site derives them from the rendered heading, so an inline link or emphasis inside a practice heading would move the real anchor away from the computed one.
 - **That the ports still compute what the browser computes.** `slugify`, the heading-id generator and its collision suffix exist twice, once as JavaScript the site runs and once as a Python rebuild that decides the anchor set of V8. A rebuild drifting from the original reports nothing; it turns V8 into a silent pass, since both sides then agree on an anchor set the browser never mounts. Since 2026-07-31 the script holds a table of input and output pairs read off the JavaScript, covering umlauts, the sharp s, a character outside the alphabet, punctuation runs, a numbered heading at both depths, an override and the collision suffix, and it runs as its own check group. That is a guard rather than a proof of agreement: the table decides the cases it holds, and whether the JavaScript itself still behaves that way stays the browser half of the verification named above.

@@ -1,40 +1,43 @@
 ---
 title: Vorlage Index
 slug: index
-version: "0.2"
+version: "0.4"
 status: complete
 source: Vorlage Index
-mirrored: 2026-06-10
+mirrored: 2026-08-21
 machine-url: https://dhcraft.org/Promptotyping/_content/promptotyping-document/index.md
 ---
-
 # Vorlage Index
 
-Diese Vorlage strukturiert das Navigationsdokument einer Promptotyping-Wissensbasis. Das resultierende Dokument heißt typischerweise `INDEX.md` und liegt im `knowledge/`-Ordner des Repos. Es ist der einzige Punkt, an dem ein neuer Leser die Lesereihenfolge der gesamten Wissensbasis erschließen kann.
+Diese Vorlage strukturiert das Navigationsdokument einer Promptotyping-Wissensbasis. Das resultierende Dokument heißt `INDEX.md` und liegt im `knowledge/`-Ordner. Die Großschreibung ist die begründete Hub-Ausnahme des Naming Contract. Hier erschließen Menschen und Agents Dokumentregister, Lesereihenfolge, Ablagezonen sowie konstitutive Begriffe und Abkürzungen.
 
 ## Geltungsbereich
 
-Die Vorlage trägt, sobald die Wissensbasis mehr als drei Dokumente enthält. Bei kleineren Repos ist ein Index überflüssig und kann in das Identitätsdokument (`project.md` oder `README.md`) integriert werden. Sie trägt nicht für projektübergreifende Übersichten oder MOCs im Vault; dafür gilt der Vault-Standard.
+Die Vorlage trägt, sobald die Wissensbasis mehr als drei Dokumente enthält. Bei kleineren Repos ist ein Index überflüssig und kann in das Charter-Dokument (`project.md` oder `README.md`) integriert werden. Sie trägt nicht für projektübergreifende Übersichten oder MOCs im Vault; dafür gilt der Vault-Standard aus CLAUDE §3.
+
+Lebenszyklus: der Index entsteht, sobald das vierte Dokument die Schwelle reißt, und wird bei jeder neuen, umbenannten oder entfernten Datei nachgepflegt, parallel zur Wissensbasis, nicht erst zum Schluss. Die Konsistenz gegen den realen Ordnerinhalt ist seine einzige Update-Pflicht; ein Index, der sie verliert, ist schlechter als keiner, weil er falsche Sicherheit erzeugt.
 
 ## Funktion des Dokuments
 
-Das Indexdokument adressiert drei Lesergruppen gleichzeitig: einen menschlichen Reviewer, einen neu aufgesetzten Coding-Agenten und den Projekt-Verantwortlichen, der nach Wochen zurückkommt. Es beantwortet vier Fragen: was liegt hier, in welcher Reihenfolge soll ich lesen, welche Begriffe sind in dieser Wissensbasis konstitutiv und wie sind sie definiert, was bedeutet es wenn ein erwartetes Dokument fehlt. Es ist gleichzeitig Navigationsknoten und Begriffslexikon, das eine Dokument, in dem ein Coding-Agent die für das Projekt definierende Begrifflichkeit findet, ohne dass er die Geschwister-Dokumente vollständig lesen muss.
+Das Indexdokument adressiert einen menschlichen Reviewer, einen neu aufgesetzten Coding-Agenten und den Projekt-Verantwortlichen, der nach Wochen zurückkommt. Es beantwortet, welche Dokumente und Artefaktbereiche existieren, welche Routing Question jeder Pfad bedient, in welcher Reihenfolge gelesen wird und welche Begriffe oder Abkürzungen konstitutiv sind. Es ist zugleich Navigationsknoten und Begriffslexikon.
 
 ## Strukturprinzipien
 
-Vier Prinzipien tragen das Dokument.
+Fünf Prinzipien tragen das Dokument.
 
 Erstens speichert der Index nicht, er zeigt. Jede Information, die im Index zusammengefasst wird, muss im verlinkten Geschwister-Dokument selbst stehen, sonst entstehen Wahrheitskonflikte zwischen Index und Quelle. Ausnahme: die Begriffsdefinitionen, die hier kanonisch leben, weil das Glossar zentralisiert ist.
 
 Zweitens liefert der Index Lesepfade, nicht nur eine Liste. Eine flache Aufzählung der Dokumente ist eine Datei-Übersicht, keine Lesehilfe. Lesepfade ordnen Dokumente nach Anliegen ("Onboarding", "Reproduktion", "Architektur-Review") und schicken den Leser durch die Wissensbasis in einer Reihenfolge, die der Aufgabe angemessen ist.
 
-Drittens trägt der Index die kanonischen Begriffe des Projekts. Begriffe sind dort definiert, wo sie gebraucht werden; der Index ist die einzige Stelle, an der die definierenden Begriffe vault-weit konsistent gepflegt sind. Geschwister-Dokumente verlinken auf einzelne Begriffe (`[[INDEX#Erschließungsform]]`), statt sie selbst zu definieren. Bei sehr vielen Begriffen (mehr als 15 bis 20) ist die Auslagerung in ein eigenes `glossar.md` zulässig; in der Regel reicht eine Sektion im Index.
+Drittens trägt der Index die kanonischen Begriffe des Projekts. Begriffe sind dort definiert, wo sie gebraucht werden; der Index ist die einzige Stelle, an der die definierenden Begriffe vault-weit konsistent gepflegt sind. Geschwister-Dokumente verlinken auf einzelne Begriffe (`INDEX`), statt sie selbst zu definieren. Bei sehr vielen Begriffen (mehr als 15 bis 20) ist die Auslagerung in ein eigenes `glossary.md` zulässig; in der Regel reicht eine Sektion im Index.
 
-Viertens markiert der Index, was fehlt. Wenn eine Funktion (zum Beispiel Datengrundlage oder Bauweise) für das Projekt nicht relevant ist und kein Dokument dafür existiert, sagt der Index das ausdrücklich. Eine Lücke ohne Erwähnung wirkt wie ein Versehen; eine begründete Lücke ist eine Designentscheidung.
+Viertens ist der Index gegen den realen Ordnerinhalt konsistent. Jede relevante Datei ist gelistet, kein Eintrag zeigt auf eine gelöschte oder geplante Datei. Nicht relevante Funktionen bleiben ohne ausgeschriebene Begründung weg.
+
+Fünftens erklärt der Index jede offizielle oder konstitutive Abkürzung, die in einem Dateinamen vorkommt. Die Dokumentenmatrix führt die echte Schreibweise des Pfads und bestätigt damit das primäre Routing-Signal.
 
 ## Frontmatter-Schema
 
-Das Indexdokument folgt dem Frontmatter-Schema aus der [Konvention Promptotyping Documents](#konvention-v0.1) (Pflichtkern: `title, project, method, status, created, updated`). Spezifisch für den Index:
+Das Indexdokument folgt dem Frontmatter-Schema aus [Konvention Promptotyping Documents](#konvention-v0.1) (Pflichtkern: `title, project, method, status, created, updated`). Spezifisch für den Index:
 
 - `topics:` üblicherweise leer; der Index ist Meta-Dokument der Wissensbasis und trägt keine domänen-thematische Verortung.
 - `related:` listet alle Geschwister-Dokumente, die der Index anbindet. Dies ist die einzige Stelle in der Wissensbasis, an der `related:` vollständig sein muss.
@@ -48,7 +51,11 @@ Funktion: in zwei bis drei Sätzen klar machen, was die Wissensbasis dokumentier
 
 ### Dokumentenmatrix
 
-Funktion: tabellarische Übersicht aller Geschwister-Dokumente mit ihrer Funktion. Inhalt: Spalten typischerweise Datei, Funktion, Update-Rhythmus. Die Matrix ist die maschinenlesbare Form der Wissensbasis-Struktur und wird von einem Agenten als erstes konsultiert. Reihenfolge der Zeilen folgt den Funktionen aus der Konvention (Identität, Material, Substanz, Bauweise, Gestalt, Genese), nicht alphabetisch.
+Funktion: tabellarische Übersicht aller dauerhaften Promptotyping Documents mit Pfad, Funktion, Routing Question und Aktualisierungsanlass. Die Matrix ist die maschinenlesbare Form der Wissensbasis-Struktur und wird von einem Agenten als erstes konsultiert. Die Reihenfolge folgt der Funktionslogik.
+
+### Ablagezonen
+
+Funktion: die Grenzen zwischen `knowledge/`, `research-artefacts/`, `source-material/`, `snapshots/`, `handoffs/` und `generated/` erklären. Inhalt: pro vorhandener Zone ein Satz zu Artefaktklasse und Lebenszyklus. Repo-spezifische oder domänentypische Ausgabepfade werden hier auf eine dieser Klassen abgebildet.
 
 ### Lesepfade
 
@@ -56,22 +63,19 @@ Funktion: Reihenfolgenempfehlungen für unterschiedliche Anliegen. Inhalt: zwei 
 
 ### Konvention
 
-Funktion: Verweis auf die Konvention, nach der die Wissensbasis gepflegt wird. Inhalt: Link auf die [Konvention Promptotyping Documents](#konvention-v0.1) (auf dieser Site oder die Repo-Variante davon), plus ein Satz darüber, was der Verweis dem Leser bringt, typischerweise "die Konvention erklärt das Frontmatter-Schema und die Lese-Heuristik, gegen die jedes Dokument lesbar ist".
+Funktion: Verweis auf die Konvention, nach der die Wissensbasis gepflegt wird. Inhalt: Wikilink auf [Konvention Promptotyping Documents](#konvention-v0.1) oder die Repo-Variante und ein Satz dazu, dass sie Naming Contract, Frontmatter-Schema und Routing-Heuristik erklärt.
 
 ### Begriffe
 
-Funktion: kanonische Definitionen der projekt-konstitutiven Begriffe, alphabetisch sortiert. Inhalt: pro Begriff ein Absatz mit Definition, Abgrenzung und gegebenenfalls einer Notiz zu häufigen Verwechslungen. Verwendet wird dort, wo der Begriff in den Geschwister-Dokumenten auftaucht; Wikilinks von dort hierher, nicht andersherum. Begriffe, die nur in einem einzigen Dokument vorkommen, gehören nicht hierher; das Glossar ist für Begriffe, die in mehreren Dokumenten konsistent verwendet werden sollen. Bei mehr als 15 bis 20 Begriffen lohnt die Auslagerung in ein eigenes `glossar.md`, dann verweist der Index nur darauf.
-
-### Was fehlt und warum
-
-Funktion: bewusst nicht abgedeckte Funktionen explizit machen. Inhalt: kurze Liste mit Begründung, etwa "keine `data.md`, weil das Projekt ein reines Tool-Repo ist und die Materialgrundlage in `project.md` selbst beschrieben wird" oder "keine `design.md`, weil das Repo nur eine Pipeline und kein Frontend trägt". Diese Sektion fällt weg, wenn die Wissensbasis alle für das Projekt relevanten Funktionen abdeckt.
+Funktion: kanonische Definitionen der projekt-konstitutiven Begriffe und der in Dateinamen verwendeten Abkürzungen, alphabetisch sortiert. Jede Abkürzung wird ausgeschrieben und in ihrer projektbezogenen Bedeutung eingeordnet. Geschwister-Dokumente verlinken bei Bedarf auf die Definition. Bei einem umfangreichen Begriffsbestand kann ein eigenes `glossary.md` übernehmen; die Dateinamen-Abkürzungen bleiben im Index sichtbar.
 
 ## Was nicht reingehört
 
 - Inhaltsabschriften aus den Geschwistern. Der Index zeigt, er speichert nicht. Ausnahme: die Begriffsdefinitionen, die hier kanonisch leben.
-- Konkrete Zahlen aus der Anwendung (Coverage, Datensatzgrößen, Testcounts). Diese liegen in der Anwendung selbst und im `persons.json#meta` oder vergleichbar.
-- Sessionchronik. Was wann geschah, gehört in `journal.md`, nicht in den Index.
-- Methodische Einführungen ins Promptotyping. Dafür ist das Promptotyping-Wissensdokument zuständig; der Index zeigt nur darauf.
+- Konkrete Zahlen aus der Anwendung (Coverage, Datensatzgrößen, Testcounts). Diese liegen in der Anwendung selbst und im `persons.json#meta` oder vergleichbar; siehe Vault-Regel zu volatilen Quantitäten in CLAUDE §6.
+- Sessionprotokolle und Verlaufserzählungen. Sachliche Übergänge werden knapp in `journal.md` nachgewiesen.
+- Eine "Was fehlt und warum"-Sektion. Bis zur Regeländerung vom 2026-06-29 gefordert, seitdem untersagt; nicht relevante Funktionen bleiben unkommentiert weg, Verweise auf anderswo liegendes Material stehen positiv am Bedarfsort.
+- Methodische Einführungen ins Promptotyping. Dafür ist [Promptotyping](#ueberblick) im Vault zuständig; der Index zeigt nur darauf.
 - Definitionen für Begriffe, die nur in einem einzigen Geschwister-Dokument vorkommen. Diese leben in der "Begriffe"-Sektion des betreffenden Dokuments, nicht im Index.
 
 ## Vorlage zum Befüllen
@@ -84,7 +88,7 @@ title: Index
 project:
   name: [Projektname]
   repository: [Repository-URL]
-status: complete
+status: draft
 language: [de | en]
 version: [Repo-Schema-Version]
 created: [YYYY-MM-DD]
@@ -96,10 +100,10 @@ method:
   url: https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin
 template:
   name: Vorlage Index
-  version: 0.1
+  version: 0.4
   url: https://dhcraft.org/Promptotyping/promptotyping-document/index
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-index
-related: [project, data, specification, architecture, design, journal]
+related: [project, data, specification, architecture, design, handoff, journal]
 ---
 
 <!-- Lead: zwei bis drei Sätze. Wer adressiert wird, was abgedeckt ist, was woanders liegt. -->
@@ -108,32 +112,44 @@ related: [project, data, specification, architecture, design, journal]
 
 ## Dokumente
 
-| Dokument | Funktion | Update-Rhythmus |
-|---|---|---|
-| [[project]] | Identität: Was ist dieses Projekt | selten |
-| [[data]] | Material: Was ist die Datengrundlage | bei jedem Datenexport |
-| [[specification]] | Substanz: Was soll das System tun und warum | inkrementell |
-| [[architecture]] | Bauweise: Wie ist es technisch realisiert | bei Stackwechsel |
-| [[design]] | Gestalt: Wie sieht es aus, wie verhält es sich | bei Designsystem-Refactor |
-| [[journal]] | Genese: Wie sind wir hierhin gekommen | pro Session |
+| Pfad | Funktion | Routing Question | Aktualisierung |
+|---|---|---|---|
+| [[project]] | Charter | Was ist dieses Projekt? | bei Änderung von Identität oder Scope |
+| [[data]] | Material | Was ist die Datengrundlage? | bei Datenexport oder Schemaänderung |
+| [[specification]] | Specification | Was soll das System tun und warum? | bei Anforderungs- oder Entscheidungsänderung |
+| [[architecture]] | Architecture | Wie ist es technisch realisiert? | bei Architekturänderung |
+| [[design]] | Design | Wie sieht es aus und wie verhält es sich? | bei Änderung des Designsystems |
+| [[handoff]] | Handoff | Welche Übergabepunkte sind offen? | bei Eingang oder Verarbeitung eines Handoff-Punkts |
+| [[journal]] | Provenance | Welche Übergänge wurden integriert, verworfen oder korrigiert? | nach sachlich zusammengehörigen Übergängen |
 
 <!-- Reihenfolge folgt Funktions-Logik, nicht alphabetisch. Nicht relevante Funktionen weglassen. -->
+
+## Ablagezonen
+
+- `knowledge/` enthält dauerhaft gepflegte Promptotyping Documents einschließlich `handoff.md` als Process Inbox.
+- `research-artefacts/` enthält wissenschaftliche Arbeitsprodukte.
+- `source-material/` enthält übernommene Quellen und Transkripte.
+- `snapshots/` enthält datierte Reports und Audits.
+- `handoffs/` enthält außergewöhnliche, datierte Übergabe-Snapshots.
+- `generated/` enthält reproduzierbar erzeugte Artefakte.
+
+<!-- Nur vorhandene Zonen führen. Domänenspezifische Ausgabeordner ihrer Artefaktklasse zuordnen. -->
 
 ## Lesepfade
 
 <!-- Zwei bis vier Pfade. Jeder Pfad mit kurzer Begründung. -->
 
-- Onboarding eines neuen Mitarbeiters: [[project]] → [[data]] → [[specification]] → [[architecture]].
-- Reproduktion eines Datenexports: [[data]] → [[architecture]] → [[journal]].
+- Sessionstart: [[INDEX]] → [[handoff]] → [[project]] → [aufgabenrelevantes Dokument].
+- Reproduktion eines Datenexports: [[data]] → [[architecture]] → [[verification]].
 - Verstehen einer Designentscheidung: [[specification]] → [[journal]] → [[design]].
 
 ## Konvention
 
-Diese Wissensbasis folgt der Konvention für Promptotyping Documents. Sie regelt das Frontmatter-Schema, die Lese-Heuristik und die Strukturprinzipien, gegen die jedes Dokument lesbar ist. Siehe [Konvention auf der Methodik-Site] oder die Repo-Kopie unter `[Pfad falls vorhanden]`.
+Diese Wissensbasis folgt der Konvention für Promptotyping Documents. Sie regelt Naming Contract, Frontmatter-Schema, Routing-Heuristik und Strukturprinzipien. Siehe [Konvention im Vault] oder die Repo-Kopie unter `[Pfad falls vorhanden]`.
 
 ## Begriffe
 
-<!-- Alphabetisch sortiert. Pro Begriff: Definition, Abgrenzung, optional Notiz zu Verwechslungen. Nur Begriffe, die in mehreren Dokumenten konsistent verwendet werden. Bei mehr als 15-20 Begriffen: in glossar.md auslagern. -->
+<!-- Alphabetisch sortiert. Offizielle oder konstitutive Abkürzungen in Dateinamen immer hier ausschreiben und definieren. Umfangreiche Fachbegriffe können in glossary.md ausgelagert werden. -->
 
 ### [Begriff A]
 
@@ -148,23 +164,19 @@ Verwendet in [[document#Sektion]], [[anderes-document]].
 [Abgrenzung gegenüber verwandtem Begriff, falls Verwechslungsgefahr.]
 
 Verwendet in [[document#Sektion]].
-
-## Was fehlt und warum
-
-<!-- Optional. Nur wenn bewusste Lücken bestehen. Pro Lücke ein Satz mit Begründung. -->
-
-- Keine `[Funktion]`, weil [Begründung].
 ````
 
 ## Anwendung als Prompt-Template
 
 Strukturanker beim Setup eines neuen Repos. Der Agent erhält den Template-Block, kopiert ihn als `INDEX.md` in den `knowledge/`-Ordner und füllt die Tabelle aus, sobald die ersten Geschwister-Dokumente angelegt sind. Der Index entsteht parallel zur Wissensbasis und wird mit jeder neuen Datei nachgepflegt, nicht erst zum Schluss.
 
-Review-Folie für eine bestehende Wissensbasis. Ein vorhandener Index wird gegen die Vorlage gehalten, um zu prüfen, ob alle Geschwister gelistet sind, ob Lesepfade tatsächlich Pfade sind und nicht nur Listen, ob die Konvention referenziert ist und ob Lücken benannt sind.
+Review-Folie für eine bestehende Wissensbasis. Ein vorhandener Index wird gegen die Vorlage gehalten, um zu prüfen, ob alle Geschwister gelistet sind und kein Eintrag auf eine gelöschte Datei zeigt, ob Lesepfade tatsächlich Pfade sind und nicht nur Listen, und ob die Konvention referenziert ist.
 
 ## Beispiel
 
-HerData führt `INDEX.md` mit Lead, Dokumentenmatrix, Lesepfad-Sektionen und Konventionsverweis. Charakteristisch ist der Schlusssatz im Lead: "Konkrete Zahlen erscheinen ausschliesslich in der Anwendung selbst, in den Stat-Cards der Hauptansichten und im Meta-Block der `persons.json`." Diese Negation ist die Praxisform der „Was fehlt und warum"-Sektion. HerData führt die Begriffe-Sektion noch nicht; der Refactor sollte sie ergänzen, weil Termini wie „Erwähnt", „Erwähnung", „Brief", „Person" projekt-konstitutiv sind und in mehreren Dokumenten konsistent verwendet werden.
+HerData führt `INDEX.md` mit Lead, Dokumentenmatrix, Lesepfad-Sektionen und Konventionsverweis. Charakteristisch ist der Schlusssatz im Lead: "Konkrete Zahlen erscheinen ausschliesslich in der Anwendung selbst, in den Stat-Cards der Hauptansichten und im Meta-Block der `persons.json`." Das ist ein positiver Verweis auf den Ort der Wahrheit für volatile Zahlen und bleibt auch nach der Regeländerung vom 2026-06-29 zulässig, die ausgeschriebene "Was fehlt"-Sektionen abgeschafft hat. HerData führt die Begriffe-Sektion noch nicht; der Refactor sollte sie ergänzen, weil Termini wie „Erwähnt", „Erwähnung", „Brief", „Person" projekt-konstitutiv sind und in mehreren Dokumenten konsistent verwendet werden.
+
+Das wiederkehrende Fehlmuster zeigt das Inhaltsaudit vom Juli (2026-07-19 - Promptotyping-Wissensbasen Inhaltsaudit (Befund)): Indexe, die gegen den Ordnerinhalt driften, ein Index listet nur die Hälfte der real existierenden Dokumente, ein anderer lässt drei Dateien unregistriert, ein dritter verlinkt ein gelöschtes Datenmodell. Der Index ist das Dokument mit der höchsten Drift-Anfälligkeit der Wissensbasis, weil jede Änderung an einer Geschwister-Datei ihn mittelbar betrifft.
 
 sugw-Edition trägt das Glossar als eigenständiges Dokument `glossar.md` mit zwölf Begriffen (Erschließungsform, Event, Faksimile, Gesamtnennung, Individuelle Person, Menschen-Event, Quelle, Quellenkorpus, Rechtsgeschäft, Regest, Rolle, Volltext). Das ist die Auslagerungs-Variante, die die Konvention oberhalb von 15 bis 20 Begriffen empfiehlt; bei zwölf wäre eine Index-Sektion auch zulässig, sugw hat sich für die Auslagerung entschieden, weil das Glossar als UI-Tooltip-Quelle im Frontend dient und damit auch maschinen-konsumiert wird.
 
@@ -172,4 +184,20 @@ sugw-Edition trägt das Glossar als eigenständiges Dokument `glossar.md` mit zw
 
 - Wissensbasis: die Sammlung aller Markdown-Dokumente im `knowledge/`-Ordner eines Promptotyping-Repos.
 - Lesepfad: empfohlene Reihenfolge mehrerer Dokumente, die ein bestimmtes Anliegen am effizientesten beantwortet.
-- Dokumentenmatrix: tabellarische Übersicht der Geschwister-Dokumente mit ihrer Funktion und ihrem Update-Rhythmus.
+- Dokumentenmatrix: tabellarische Übersicht der Promptotyping Documents mit Pfad, Funktion, Routing Question und Aktualisierungsanlass.
+
+## Versionshistorie
+
+- 0.4 (2026-08-21): `handoff.md` als verpflichtende Process Inbox in Dokumentenmatrix, Ablagezonen und Lesepfade aufgenommen.
+- 0.3 (2026-08-21): Naming Contract übernommen. Dokumentenmatrix um Pfad, Routing Question und Aktualisierungsanlass erweitert; Ablagezonen und Abkürzungsdefinitionen registriert.
+- 0.2 (2026-07-19): "Was fehlt und warum"-Sektion entfernt (Propagierung der Regeländerung Keine Selbstbeschreibung vom 2026-06-29), Ordnerinhalts-Konsistenz als viertes Strukturprinzip, englisches Funktionsvokabular, Block-Status auf `draft`, Lebenszyklus-Absatz. Migration: bestehende Indexe entfernen die Sektion beim nächsten Anfassen; begründete Lücken wandern ersatzlos, positive Verweise an den Bedarfsort.
+- 0.1 (2026-05-09): Erstfassung.
+
+## Related
+
+- [Vorlagen Promptotyping Documents](#vorlagen)
+- [Konvention Promptotyping Documents](#konvention-v0.1)
+- [Promptotyping](#ueberblick)
+- [Vorlage Projekt-Wissensdokument](#promptotyping-document-project)
+- [Vorlage Journal](#promptotyping-document-journal)
+- [Vorlage Handoff](#promptotyping-document-handoff)

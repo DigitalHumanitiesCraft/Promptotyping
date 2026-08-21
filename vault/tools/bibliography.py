@@ -4,7 +4,7 @@
 # ///
 """Bibliography of the paper, rendered from the CSL records in references/.
 
-The References section of `knowledge/paper.md` and the records in `references/`
+The References section of `research-artefacts/promptotyping-paper.md` and the records in `references/`
 carry the same information twice and are maintained by hand twice. This script
 renders the section from the records and, in `--compare` mode, names where the
 two stocks differ. It only reads and prints. The paper is the deliverable, so
@@ -405,8 +405,8 @@ def main() -> None:
     parser.add_argument(
         "--paper",
         type=Path,
-        default=here.parents[2] / "knowledge" / "paper.md",
-        help="paper to compare against (default: knowledge/paper.md of the repository)",
+        default=here.parents[2] / "research-artefacts" / "promptotyping-paper.md",
+        help="paper to compare against (default: research-artefacts/promptotyping-paper.md)",
     )
     parser.add_argument(
         "--compare",

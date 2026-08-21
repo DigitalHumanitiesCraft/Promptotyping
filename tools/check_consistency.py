@@ -33,7 +33,7 @@ CLAUDE_MD = ROOT / "CLAUDE.md"
 README = ROOT / "README.md"
 CASES = ROOT / "data" / "case-studies.json"
 CASE_DIR = ROOT / "_content" / "case-studies"
-PAPER = ROOT / "knowledge" / "paper.md"
+PAPER = ROOT / "research-artefacts" / "promptotyping-paper.md"
 CONTENT_DIR = ROOT / "_content"
 PRAXIS = CONTENT_DIR / "praxis.md"
 GLOSSAR_JSON = ROOT / "data" / "glossar.json"
@@ -70,6 +70,38 @@ INTERFACE_TYPES = {"verification", "exploration", "edition", "capture", "audit"}
 # reason. A slug may sit here or in the catalogue, never in neither. Empty
 # since 2026-07-26, when technology entered the catalogue.
 HELD_BACK = {}
+
+EXPECTED_TEMPLATE_COUNT = 17
+RETIRED_GENERIC_NAMES = (
+    "pipeline.md",
+    "engines.md",
+    "infrastruktur.md",
+    "decisions.md",
+    "requirements.md",
+    "features.md",
+    "analyse.md",
+    "exploration.md",
+    "JOURNAL.md",
+)
+NORMATIVE_FILES = (
+    CLAUDE_MD,
+    README,
+    CONVENTION,
+    CONTENT_DIR / "anwendung.md",
+    CONTENT_DIR / "glossar.md",
+    CONTENT_DIR / "tutorial.md",
+    CONTENT_DIR / "workflow.md",
+    CONTENT_DIR / "skills" / "coding.md",
+    CONTENT_DIR / "skills" / "index.md",
+    GLOSSAR_JSON,
+    KNOWLEDGE_DIR / "INDEX.md",
+    KNOWLEDGE_DIR / "architecture.md",
+    KNOWLEDGE_DIR / "governance.md",
+    KNOWLEDGE_DIR / "handoff.md",
+    KNOWLEDGE_DIR / "plan.md",
+    KNOWLEDGE_DIR / "project.md",
+    KNOWLEDGE_DIR / "specification.md",
+)
 
 failures = []
 notes = []
@@ -173,6 +205,104 @@ def check_files_exist(documents):
             fail("files", "template %s.md exists but no catalogue entry" % slug)
 
 
+def check_catalogue_contract(documents):
+    """The catalogue carries the mandatory Handoff and type invariants."""
+    slugs = [document.get("slug") for document in documents]
+    if len(documents) != EXPECTED_TEMPLATE_COUNT:
+        fail("naming", "catalogue has %d entries; expected %d"
+             % (len(documents), EXPECTED_TEMPLATE_COUNT))
+    if len(set(slugs)) != len(slugs):
+        fail("naming", "catalogue slugs are not unique")
+
+    by_slug = {document.get("slug"): document for document in documents}
+    handoff = by_slug.get("handoff")
+    if handoff is None:
+        fail("naming", "catalogue misses the mandatory handoff slug")
+    else:
+        expected = {
+            "funktion": "Handoff (live Process Inbox)",
+            "datei": "handoff.md",
+            "typ": "Process",
+            "trigger": "always",
+        }
+        for field, value in expected.items():
+            if handoff.get(field) != value:
+                fail("naming", "handoff %s is %r; expected %r"
+                     % (field, handoff.get(field), value))
+
+    testing = by_slug.get("testing")
+    if testing is None:
+        fail("naming", "catalogue misses the testing slug")
+    elif testing.get("typ") != "Action":
+        fail("naming", "testing is %r; expected 'Action'" % testing.get("typ"))
+
+    handoff_template = TEMPLATE_DIR / "handoff.md"
+    if not handoff_template.is_file():
+        return
+    template = read_text(handoff_template)
+    required_markers = (
+        "Keine offenen Handoff-Punkte.",
+        "- Received:",
+        "- Source:",
+        "- Target:",
+        "- Context:",
+        "- Evidence:",
+        "- Next action:",
+        "- Blocker:",
+        "- Operator point:",
+    )
+    for marker in required_markers:
+        if marker not in template:
+            fail("naming", "handoff template misses %r" % marker)
+
+
+def template_fill_block(path):
+    """Return the current fillable block, excluding examples and history."""
+    text = read_text(path)
+    match = re.search(
+        r"^## Vorlage zum Befüllen\n(.*?)(?=^## |\Z)",
+        text,
+        re.M | re.S,
+    )
+    return match.group(1) if match else ""
+
+
+def check_normative_names():
+    """Retired generic names do not return to current routing surfaces."""
+    surfaces = []
+    for path in NORMATIVE_FILES:
+        if not path.is_file():
+            continue
+        text = read_text(path)
+        if path == CONVENTION:
+            text = "\n".join(
+                line for line in text.splitlines()
+                if not line.startswith("Historical evidence only.")
+            )
+        surfaces.append((path, text))
+    for path in sorted(TEMPLATE_DIR.glob("*.md")):
+        surfaces.append((path, template_fill_block(path)))
+
+    for path, text in surfaces:
+        for retired in RETIRED_GENERIC_NAMES:
+            pattern = re.compile(
+                r"(?<![A-Za-z0-9-])%s(?![A-Za-z0-9-])" % re.escape(retired)
+            )
+            if pattern.search(text):
+                try:
+                    label = path.relative_to(ROOT).as_posix()
+                except ValueError:
+                    label = path.as_posix()
+                fail("naming", "%s uses retired normative name %s"
+                     % (label, retired))
+
+
+def check_naming_contract(documents):
+    """Run the catalogue and current-name halves of the naming contract."""
+    check_catalogue_contract(documents)
+    check_normative_names()
+
+
 def check_claude_md_slugs(documents):
     """The action layer publishes the slug list; it must be the catalogue's.
 
@@ -255,7 +385,7 @@ def paper_case_table():
     try:
         start = lines.index(CASE_TABLE_HEADER)
     except ValueError:
-        fail("evidence", "case-table header row not found in knowledge/paper.md")
+        fail("evidence", "case-table header row not found in research-artefacts/promptotyping-paper.md")
         return rows
     for line in lines[start + 2:]:
         if not line.startswith("|"):
@@ -995,7 +1125,7 @@ def check_action_layer_pages():
 # and A2, which are records rather than requirements. The dated records fall out
 # for that same reason and are recognised the way V9 recognises them, since a
 # journal entry naming an audit run is recording a name, not citing a number.
-REQUIREMENT_EXEMPT = ("paper.md", "paper-knowledge.md", "INDEX.md")
+REQUIREMENT_EXEMPT = ("paper-specification.md", "INDEX.md")
 
 
 def requirement_citing_paths():
@@ -1083,8 +1213,8 @@ def check_knowledge_frontmatter() -> None:
     The published machine form of the convention's frontmatter vocabulary is
     schema/knowledge-document.schema.json; this group checks the mandatory
     core natively and pins the schema's required list to the same tuple, so
-    the schema and the check cannot drift apart silently. knowledge/paper.md
-    is headerless by design (A8) and stays out.
+    the schema and the check cannot drift apart silently. The headerless
+    paper under research-artefacts/ is outside this Knowledge Document check.
     """
     schema = json.loads((ROOT / "schema" / "knowledge-document.schema.json")
                         .read_text(encoding="utf-8"))
@@ -1100,8 +1230,6 @@ def check_knowledge_frontmatter() -> None:
                             "contract cannot be checked")
         return
     for path in sorted((ROOT / "knowledge").glob("*.md")):
-        if path.name == "paper.md":
-            continue
         text = read_text(path)
         frontmatter = re.match(r"^---\n(.*?)\n---(?:\n|$)", text, re.S)
         if not frontmatter:
@@ -1186,6 +1314,7 @@ def main() -> int:
     groups = [
         lambda: check_types_agree(documents, conv_types),
         lambda: check_files_exist(documents),
+        lambda: check_naming_contract(documents),
         lambda: check_claude_md_slugs(documents),
         lambda: check_gallery(cases),
         lambda: check_evidence_reachable(cases),

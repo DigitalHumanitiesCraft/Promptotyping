@@ -1,5 +1,5 @@
 ---
-title: Skriptum Video 2 — Einführung in Promptotyping, Live-Demonstration
+title: Promptotyping Live Demo Video Script
 project:
   name: Promptotyping
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
@@ -16,7 +16,7 @@ source:
 generated: transcript-cleanup
 ---
 
-# Skriptum Video 2 — Live-Demonstration Promptotyping
+# Promptotyping Live Demo Video Script
 
 Dieses Dokument ist die bereinigte Textfassung des zweiten Teils der Videoeinführung in Promptotyping von Christopher Pollin, aufgenommen im Jänner 2026. Grundlage ist das automatisch erzeugte YouTube-Transkript, aus dem die Zeitstempel-Artefakte entfernt, die Fehler der Spracherkennung korrigiert und die gesprochene Sprache zu lesbarer Prosa geglättet wurden. Der Inhalt ist vollständig erhalten, einschließlich der Einschränkungen und Nebenbemerkungen des Sprechers. Das Video ist eine durchgehende Live-Demonstration mit Claude Code, in der aus 76 Excel-Dateien der österreichischen Wissensbilanz ein Dashboard entsteht. Die Zeitmarken hinter den Abschnittsüberschriften verweisen auf die Stelle im Video. Diktierte Prompts stehen wortgetreu in Codeblöcken.
 

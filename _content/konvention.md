@@ -1,12 +1,12 @@
 ---
 title: Convention Knowledge Documents
 slug: konvention
-version: "0.2"
+version: "0.3"
 status: complete
 language: en
 source: Konvention Promptotyping Documents
-updated: 2026-07-26
-mirrored: 2026-06-10
+updated: 2026-08-21
+mirrored: 2026-08-21
 machine-url: https://dhcraft.org/Promptotyping/_content/konvention.md
 ---
 
@@ -14,11 +14,30 @@ machine-url: https://dhcraft.org/Promptotyping/_content/konvention.md
 
 ## Summary
 
-Knowledge Documents are the Markdown documents in the `knowledge/` folder of a Promptotyping repository. This convention describes, descriptively, which functions such a knowledge base covers, which frontmatter vocabulary applies, and which structural principles carry it. Which documents and how many a concrete repository holds depends on the project and is decided by the agent from the trigger criteria per function. The convention is derived from the practice in HerData (state of refactor `13f9880`, 2026-05-09), which serves as the reference implementation. The fillable templates are addressable as Knowledge Document sections of this site (see the template catalogue below). The empirical basis is held in the vault document on frontmatter practice in Promptotyping repositories, 2026-05.
+Knowledge Documents are the durable Markdown documents in the `knowledge/` folder of a Promptotyping repository. Their file names are the primary routing signal for agents working through terminals and search results. This convention defines the naming contract, document functions, frontmatter vocabulary, and structural principles of that knowledge base. The fillable templates remain addressable through stable Knowledge Document sections of this site.
 
 ## Scope
 
-The convention applies to Markdown files in the `knowledge/` folder, or an equivalently named folder, of a Promptotyping repository. It does not apply to vault mirror documents, which follow a separate vault standard. Repository frontmatter and vault frontmatter are two separate vocabularies, and a vault mirror of a repository document does not take over the repository frontmatter unfiltered.
+The convention applies to durable project knowledge under `knowledge/` and to the boundaries between that core and adjacent artefact areas. Vault mirrors follow a separate vault standard. Repository frontmatter and vault frontmatter are separate vocabularies, and a vault mirror does not inherit repository frontmatter unfiltered.
+
+## Naming contract and artefact areas
+
+File names carry function before a document is opened. Functional names and subject prefixes are English. The standard form is lowercase kebab-case; `INDEX.md` and `CLAUDE.md` are established exceptions with specific routing roles.
+
+Single carriers use canonical names such as `project.md`, `data.md`, `specification.md`, `architecture.md`, `design.md`, `testing.md`, `verification.md`, `journal.md`, `handoff.md`, `plan.md`, and `governance.md`. Specialisations follow `<subject>-<function>.md`, for example `research-methodology.md`, `character-error-rate-methodology.md`, `data-schema.md`, `output-schema.md`, and `tei-mapping.md`. Terms are written out. Official or constitutive abbreviations are permitted when `INDEX.md` defines them.
+
+Reports and exceptional handoff snapshots identify scope and date: `<scope>-report-YYYY-MM-DD.md` and `<scope>-handoff-YYYY-MM-DD.md`. Every project also carries the live Process Inbox `knowledge/handoff.md`, including when it is empty. Dated snapshots under `handoffs/` supplement this Inbox and never replace it. A document is split when its parts answer independent routing questions or develop different update cycles. The split produces named functions or specialisations and is registered in `INDEX.md`.
+
+| Area | Contents | Lifecycle |
+|---|---|---|
+| `knowledge/` | durable Promptotyping Documents, including the live Process Inbox `handoff.md` | maintained with the project |
+| `research-artefacts/` | papers, articles, talks, and other scholarly outputs | revised according to their publication lifecycle |
+| `source-material/` | transcripts, imports, and supplied material | preserved as input and provenance |
+| `snapshots/` | dated reports and frozen assessments | immutable in scope and date except for corrections |
+| `handoffs/` | exceptional dated transfer snapshots between agents or workstreams | retained for re-entry and provenance |
+| `generated/` | reproducible derived output | regenerated from its source; an established domain output folder may replace it when `INDEX.md` documents the rule |
+
+The assignment needs no mandatory `function:` frontmatter field. The file name, lead paragraph, `template:` field, and `INDEX.md` carry it. Routing is a qualitative quality objective: a reader should identify the likely document from the search result and confirm the function in its lead. The convention introduces no A/B test, threshold, or LLM benchmark.
 
 ## What a Knowledge Document is
 
@@ -30,35 +49,35 @@ A Knowledge Document is a knowledge document, a structured unit of knowledge dis
 
 Dual readability disciplines the writing. A data description too vague for a model to work against is usually also too vague to count as scholarly documentation, which is why the demand tightens the text instead of adding a second obligation to it.
 
-One document carries one function. A small tool repository may therefore consolidate several functions into one file, and a multi-stage pipeline may split them further; what stays constant is the function, not the file name. The functions below are the recurring ones, each with the condition under which it applies.
+One document carries one routing question. A small tool repository may consolidate several functions in a canonical carrier while they share one update cycle. A multi-stage project splits them when routing questions or update cycles diverge.
 
 ## Functions of a Promptotyping knowledge base
 
 A knowledge base in the `knowledge/` folder covers a range of functions. Which functions are relevant, and how many files carry them, depends on the project. The convention describes these functions rather than a fixed list of documents, so that an agent setting up a new repository checks the trigger criterion per function and decides which documents to create.
 
-The function names have been English since 2026-07-19 (Navigation, Charter, Material, Specification, Architecture, Technology Baseline, Domain Knowledge, Design, Quality Assurance, Provenance, Planning, Reporting, Agent Instructions, Verification, Integration). The template names remain unchanged even where they are German (Vorlage Datengrundlage, Vorlage Domänenwissen), because real repositories reference them in `template:` fields and the site anchors rest on them. Template names are identifiers rather than designations of function.
+The function names are English (Navigation, Charter, Material, Specification, Architecture, Technology Baseline, Domain Knowledge, Design, Quality Assurance, Verification, Provenance, Handoff, Planning, Governance, Reporting, Integration, Agent Instructions). Template names remain unchanged even where they are German because repositories reference them in `template:` fields and the site anchors rest on them. Template names are stable identifiers.
 
 | Function | Question it answers | Trigger | Typical carrier |
 |---|---|---|---|
 | Navigation | What lies here, how do I read it, which terms are constitutive? | knowledge base has more than three documents or several constitutive terms | `INDEX.md` (combines navigation and term glossary) |
-| Charter | What is this project, for whom, with what goal and what material basis? | always | `project.md` or `README.md` |
+| Charter | What is this project, for whom, with what goal and what material basis? | always | `project.md` |
 | Material | What is the substrate that is processed or produced? | project processes or produces data | `data.md` |
-| Specification | What is the system to do and why? | always | `specification.md` (requirements, epics and user stories, functional scope, decisions); ADRs and decisions can be split out as `decisions.md`; narrative scenarios as a section in `specification.md`, as a separate `user-stories.md` for large projects, or as "Acceptance Scenarios" in the spec (equivalent) |
+| Specification | What is the system to do and why? | always | `specification.md`; independent decision classes may become `architecture-decisions.md` or `project-decisions.md`; large narrative scenarios may become `user-stories.md` |
 | Architecture | How is it technically realised? | system goes beyond a static site | `architecture.md` |
 | Technology Baseline | With which technologies is a whole family of artefacts built, and why do the rules read as they do? | several projects build the same artefact type and the stack rationale is reusable; held centrally and referenced by the instances | `technology-baseline.md`; template [Vorlage Technology](#promptotyping-document-technology) |
-| Domain Knowledge | Which scholarly-methodological knowledge and which stipulations apply (the why and the domain rulebook)? | research, edition or data project with a layer of methodological stipulation or theory | `editorial-guidelines.md`, `tei-mapping.md`, `methodik.md`, `forschungsrahmen.md`, `ontology.md`; template [Vorlage Domänenwissen](#promptotyping-document-domain-knowledge) |
+| Domain Knowledge | Which scholarly-methodological knowledge and which stipulations apply? | research, edition or data project with a layer of methodological stipulation or theory | `research-methodology.md`, `editorial-guidelines.md`, `tei-mapping.md`, `ontology.md`; template [Vorlage Domänenwissen](#promptotyping-document-domain-knowledge) |
 | Design | What does it look like, how does it behave aesthetically? | project has a UI | `design.md` |
-| Quality Assurance | What is guaranteed, what deliberately is not, and how is it checked? | project with tests, verification or acceptance checks | `testing.md` (or `test-strategy.md`); template [Vorlage Testing](#promptotyping-document-testing) |
-| Verification | Do the project's own empirical and novelty claims survive an adversarial check against the raw data? | project makes empirical findings or novelty claims that are used externally (paper, report, handover) | `verification.md` (also `verifikation.md`, `conformance-*.md`); template [Vorlage Verification](#promptotyping-document-verification) |
+| Quality Assurance | What is guaranteed, what deliberately is not, and how is it checked? | project with tests, verification or acceptance checks | `testing.md` or `<subject>-testing.md`; template [Vorlage Testing](#promptotyping-document-testing) |
+| Verification | Do the project's own empirical and novelty claims survive an adversarial check against the raw data? | project makes empirical findings or novelty claims that are used externally | `verification.md` or `<subject>-verification.md`; template [Vorlage Verification](#promptotyping-document-verification) |
 | Provenance | How did we get here? | always | `journal.md` |
-| Planning | Where does it go next, and in what order? | project with phases, milestones or sprint steering | `plan.md` (or `roadmap.md`); template [Vorlage Plan](#promptotyping-document-plan); forward counterpart to Provenance |
-| Reporting | What is the correct state of the project on date X, communicated to an external addressee? | project status report for an external recipient (client, funder, stakeholder); the regular case in commissioned projects | `report.md` (or `status.md`, which collides less; genre-named `zwischenbericht.md`, `abschlussbericht.md`; machine-generated snapshots may lie outside `knowledge/` in `reports/`); template [Vorlage Report](#promptotyping-document-report) |
-| Integration | What does this project deliver to another one, or receive from it, in what format, and how is fulfilment measured? | project with data exchange, contract or handoff to another project or lane | `integration.md`, `{counterpart}-integration.md`; template [Vorlage Integration](#promptotyping-document-integration) |
+| Handoff | Which received deltas still await checking, integration, or rejection? | always | `handoff.md`; template [Vorlage Handoff](#promptotyping-document-handoff) |
+| Planning | Where does it go next, and in what order? | project with a multi-step sequence | `plan.md` or `<subject>-plan.md`; template [Vorlage Plan](#promptotyping-document-plan) |
+| Governance | Which standing authority, decision, and change rules bind the project? | project with rules beyond the action layer | `governance.md` |
+| Reporting | What was the correct state of a defined scope on date X for an external addressee? | project status report for an external recipient | `snapshots/<scope>-report-YYYY-MM-DD.md`; template [Vorlage Report](#promptotyping-document-report) |
+| Integration | What does this project deliver to another one, or receive from it, in what format, and how is fulfilment measured? | project with data exchange or a standing cross-project contract | `integration.md`, `<counterpart>-integration.md`; template [Vorlage Integration](#promptotyping-document-integration) |
 | Agent Instructions | How is the agent to behave, aesthetically included? | always | `CLAUDE.md` (in the repository root, not in `knowledge/`); references `design.md` as its source of values |
 
-The functions can be merged where the project is small (a trivial tool repository often carries Charter, Material and Specification in a single `project.md`), or split where the project is large (zbz-ocr-tei splits Architecture into pipeline, engines, CER methodology and TEI mapping). The measure is that every function relevant to the project is covered at exactly one findable place, and completeness is beside the point.
-
-Standard file names are lower case (`project.md`, `data.md`, `specification.md`, `architecture.md`, `design.md`, `journal.md`, `plan.md`, `testing.md`, `verification.md`, `integration.md`, `report.md`), with `INDEX.md` as the upper-case convention for hub documents. Repositories with other file-naming conventions, for instance zbz-ocr-tei with upper-case names such as `PIPELINE.md`, are not wrong, and they profit less from the reading heuristic below.
+Functions may be merged while they share a routing question and update cycle. They are split when either boundary diverges. Every relevant function must remain covered in one findable place.
 
 ## Template catalogue
 
@@ -71,33 +90,34 @@ The current stock is the following.
 | Template | Function | Recommended file name |
 |---|---|---|
 | [Vorlage Index](#promptotyping-document-index) | Navigation plus term glossary | `INDEX.md` |
-| [Vorlage Projekt-Wissensdokument](#promptotyping-document-project) | Charter (possibly Material and Specification as well) | `project.md` or `README.md` |
+| [Vorlage Projekt-Wissensdokument](#promptotyping-document-project) | Charter (possibly Material and Specification as well) | `project.md` |
 | [Vorlage Datengrundlage](#promptotyping-document-data) | Material | `data.md` |
 | [Vorlage Specification](#promptotyping-document-specification) | Specification (formal requirements, epics and user stories, functional scope, decisions) | `specification.md` |
 | [Vorlage User Stories](#promptotyping-document-user-stories) | Specification (narrative usage scenarios in a separate file; documented exception only) | `user-stories.md` |
 | [Vorlage Action-Layer](#promptotyping-document-action-layer) | Agent Instructions | `CLAUDE.md` (repository root) |
-| [Vorlage Architecture](#promptotyping-document-architecture) | Architecture (including external models and deployment as sections; regular split-out `pipeline.md`) | `architecture.md` |
+| [Vorlage Architecture](#promptotyping-document-architecture) | Architecture, including subject-specific specialisations | `architecture.md`, `<subject>-architecture.md` |
 | [Vorlage Technology](#promptotyping-document-technology) | Technology Baseline (rules and rationale for a whole artefact family, held centrally) | `technology-baseline.md` |
-| [Vorlage Domänenwissen](#promptotyping-document-domain-knowledge) | Domain Knowledge (layer of rationale and domain rulebook) | `editorial-guidelines.md`, `methodik.md`, `tei-mapping.md` and others |
+| [Vorlage Domänenwissen](#promptotyping-document-domain-knowledge) | Domain Knowledge (layer of rationale and domain rulebook) | `research-methodology.md`, `editorial-guidelines.md`, `tei-mapping.md` and others |
 | [Vorlage Design](#promptotyping-document-design) | Design | `design.md` |
 | [Vorlage Testing](#promptotyping-document-testing) | Quality Assurance | `testing.md` |
 | [Vorlage Verification](#promptotyping-document-verification) | Verification (adversarial check of a project's own claims against the raw data) | `verification.md` |
 | [Vorlage Journal](#promptotyping-document-journal) | Provenance | `journal.md` |
-| [Vorlage Plan](#promptotyping-document-plan) | Planning (forward) | `plan.md` or `roadmap.md` |
-| [Vorlage Report](#promptotyping-document-report) | Reporting | `report.md` |
-| [Vorlage Integration](#promptotyping-document-integration) | Integration (cross-project contracts and handoffs) | `integration.md`, `{counterpart}-integration.md` |
+| [Vorlage Handoff](#promptotyping-document-handoff) | Handoff (live Process Inbox) | `handoff.md` |
+| [Vorlage Plan](#promptotyping-document-plan) | Planning (forward) | `plan.md`, `<subject>-plan.md` |
+| [Vorlage Report](#promptotyping-document-report) | Reporting | `snapshots/<scope>-report-YYYY-MM-DD.md` |
+| [Vorlage Integration](#promptotyping-document-integration) | Integration (cross-project contracts) | `integration.md`, `<counterpart>-integration.md` |
 
-A template carries a function rather than a fixed file name. Anyone who wants to name the repository document differently, for instance `material.md` instead of `data.md` or `corpus.md` for an edition project, uses the same template. The frontmatter schemas and structural principles hold independently of the concrete file name.
+A template carries a function and follows the naming contract. A single carrier uses the canonical name; a specialisation uses `<subject>-<function>.md`. Existing public template file names, URLs, and anchors remain stable identifiers.
 
 Convention change of 2026-05-30: epics and user stories move into `specification.md` as a section of their own, and a separate `user-stories.md` has since been the documented exception for large projects, typically edition projects, whose Specification function is split anyway. The [Vorlage Specification](#promptotyping-document-specification) carries the section from template version 0.2 onwards, and the [Vorlage User Stories](#promptotyping-document-user-stories) stays in the catalogue for the exceptional case.
 
-Where a repository covers a function for which no template yet exists, for instance `cer-methodik.md` in OCR projects or `personas.md` as a UX artefact, the document stays freehand for the time being; the convention supplies the frontmatter vocabulary and the structural principles, which suffices for a start. As soon as a second repository carries the same function in comparable form, a template of its own becomes worthwhile.
+Where a repository covers a function for which no template exists, for instance `character-error-rate-methodology.md` or `personas.md`, the document stays freehand and follows the naming contract and frontmatter vocabulary. A template becomes worthwhile once comparable structures recur.
 
-Verification and Integration were candidate functions from 2026-06-13 and were promoted on 2026-07-19 to full functions with a template of their own, after the content audit confirmed the threshold of two comparable occurrences (Verification in kisug, FemPrompt and szd-htr-ocr-pipeline; Integration in teiCrafter and szd-htr-ocr-pipeline). Since 2026-07-19 all templates in the catalogue are released (`status: complete`), and a draft status of a template would stand visibly in catalogue and template alike.
+Verification and Integration were candidate functions from 2026-06-13 and were promoted on 2026-07-19 to full functions with a template of their own, after the content audit confirmed the threshold of two comparable occurrences. Handoff entered the catalogue on 2026-08-21 as the mandatory Process Inbox of every project. All catalogue templates are released (`status: complete`); a draft status would stand visibly in catalogue and template alike.
 
 ## Template addressability through the `template:` field
 
-Every template has a permanent public address on the Promptotyping site (https://dhcraft.org/Promptotyping/). Repositories link to the authoritative template specification through a `template:` field in the frontmatter. The document itself thereby becomes the canonical source rather than the template mirror in the vault, since a coding agent that sees a `template:` URI can retrieve the full specification without knowing the vault.
+Every template has a permanent public address on the Promptotyping site (https://dhcraft.org/Promptotyping/). Repositories link to the public mirror through a `template:` field in the frontmatter. The Vault template remains the editorial source of truth; the stable public mirror makes the same specification retrievable without Vault access.
 
 The field carries three mandatory subfields (`name`, `version`, `url`) and one optional subfield (`alias`). The default is latest addressing, so `url:` and `alias:` point at the current version of the template section on the site, without a version suffix. Two URL forms are canonical and equivalent, `url:` as the subpath form (machine-friendly) and `alias:` as the hash form (a browser-native anchor on the same page). Both resolve identically, and repositories may omit one of the two forms where they prefer.
 
@@ -115,17 +135,17 @@ The field belongs to the recommended layer and is set as soon as a catalogue tem
 
 ## Action layer in the repository root
 
-Action documents lie in the repository root rather than in the `knowledge/` folder. The standard is `CLAUDE.md` as the agent configuration, and it should refer explicitly to the `knowledge/` folder so that the agent takes the knowledge base as context. Structure and filling are described by the [Vorlage Action-Layer](#promptotyping-document-action-layer) (since 2026-06-09, released 2026-07-19). `RULES.md`, `INSTRUCTIONS.md` and `cloud-commands.md` are specific to the research control-room setup with several parallel agents in differentiated roles, and they are no standard for ordinary Promptotyping repositories.
+Action documents lie in the repository root rather than in the `knowledge/` folder. The standard is `CLAUDE.md` as the agent configuration, and it refers explicitly to the durable knowledge base. At every session start the agent reads `knowledge/INDEX.md`, then `knowledge/handoff.md`, and then the task-relevant Declarative or Action Document. `journal.md` is consulted for provenance and decision grounds. Structure and filling are described by the [Vorlage Action-Layer](#promptotyping-document-action-layer). `RULES.md`, `INSTRUCTIONS.md` and `cloud-commands.md` are specific to the research control-room setup and are no standard for ordinary Promptotyping repositories.
 
-On the aesthetic layer the Agent Instructions function takes effect through `CLAUDE.md` binding in `design.md` as its source of values, for instance through a section on design principles with imperatively formulated sentences derived from the design stance, or through the instruction to read `design.md` before generating any UI. The `design.md` itself stays a Declarative Document, and the imperative translation belongs in the action layer. This division follows the reading heuristic below and prevents a document from changing its analytical type.
+On the aesthetic layer the Agent Instructions function takes effect through `CLAUDE.md` binding in `design.md` as its source of values, for instance through a section on design principles with imperatively formulated sentences derived from the design stance, or through the instruction to read `design.md` before generating any UI. The `design.md` itself stays a Declarative Document, and the imperative translation belongs in the action layer. This division follows the routing heuristic below and prevents a document from changing its analytical type.
 
 ## Classification of the document types
 
 Promptotyping distinguishes three document types analytically (Pollin 2026, section 2.1). All three are knowledge documents, specialised by the kind of knowledge they hold.
 
-Declarative Documents hold knowledge about the subject matter. They describe what is known about the data, the domain and the research context. Examples are `README.md`, `project.md`, `data.md`, `requirements.md`, `architecture.md`, `design.md`, `editorial-guidelines.md`, mapping rules and verification documents. They extend the model's epistemic horizon and outlast, as a curated layer, the changes to code, model versions and tools. Until July 2026 this type was called Knowledge Document here; the name has moved to the superordinate term.
+Declarative Documents hold knowledge about the subject matter. They describe what is known about the data, the domain and the research context. Examples are `README.md`, `project.md`, `data.md`, `specification.md`, `architecture.md`, `design.md`, `editorial-guidelines.md`, mapping rules and verification documents. They extend the model's epistemic horizon and outlast, as a curated layer, the changes to code, model versions and tools. Until July 2026 this type was called Knowledge Document here; the name has moved to the superordinate term.
 
-Process Documents hold knowledge about the course of the work. They record the progress of the work, chronologically or analytically. Examples are `JOURNAL.md`, `learnings.md`, `plan.md`. They are updated continuously and form, together with the git history, the context memory.
+Process Documents separate three temporal functions. `handoff.md` contains open received deltas, `plan.md` accepted future work, and `journal.md` the curated backward provenance index. Git preserves earlier wording. These documents form the context memory without duplicating current project knowledge.
 
 Action Documents hold knowledge about how to act. They describe what agents may do within the project and how. Examples are `instructions.md`, `rules.md`, `CLAUDE.md`, along with the testing strategy, the technology baseline, and in multi-agent projects the role and orchestration rules. They steer the model's behaviour.
 
@@ -135,31 +155,33 @@ This is the Knowledge-Action Composition, and the axis it runs along carries a n
 
 The classification is analytical rather than rigid, and it is not carried in the frontmatter. It supplies a diagnostic grid. Where the output is factually wrong, the Declarative Document is checked first. Where it is formally wrong, the Action Document. Where the decision logic is unclear, the Process Document.
 
-## Reading heuristic (function to type to diagnosis)
+## Routing heuristic (file name to function to diagnosis)
 
-Instead of a `type:` field in the frontmatter, a document's function carries its type implicitly. The following heuristic lets an agent decide without a frontmatter lookup which document to check first for a given failure pattern. The heuristic connects the function with typical file names; where a repository carries other file names, the function applies rather than the name.
+Instead of a `type:` or `function:` field in frontmatter, the file name routes to a function and the lead confirms it. The following heuristic identifies the first document to inspect for a given failure pattern.
 
 | Function | Type | Typical file names | Which failure pattern to check it for first |
 |---|---|---|---|
-| Navigation | Declarative | `INDEX.md`, `00_INDEX.md` | order unclear, document not found, term used wrongly (the glossary lives in the index) |
-| Charter | Declarative | `project.md`, `README.md`, `PROJEKT.md` | output factually wrong, project context unclear |
-| Material | Declarative | `data.md`, `DATA.md`, `corpus.md`, `material.md` | data fields confused, examples cited wrongly |
-| Specification (formal) | Declarative | `specification.md`, `requirements.md`, `features.md`, `decisions.md` as an ADR split-out | acceptance criterion ignored, earlier decision revised, function misrepresented |
-| Decision record | Process | `decisions.md` where it lifts the standing decisions out of the running journal | a decision already taken is reopened, the current rule is not findable outside the log |
+| Navigation | Declarative | `INDEX.md` | order unclear, document not found, term used wrongly |
+| Charter | Declarative | `project.md` | output factually wrong, project context unclear |
+| Material | Declarative | `data.md`, `<subject>-data.md` | data fields confused, examples cited wrongly |
+| Specification (formal) | Declarative | `specification.md`, `<subject>-specification.md` | acceptance criterion ignored, function misrepresented |
+| Decision record | Process | `architecture-decisions.md`, `project-decisions.md` | a decision already taken is reopened, the current rule is not findable outside the log |
 | Specification (narrative) | Declarative | `specification.md` (section on epics and user stories); where split, `user-stories.md`, `scholar-user-stories.md` | usage scenario misunderstood, research operation ignored |
-| Architecture | Declarative | `architecture.md`, `pipeline.md`, `infrastruktur.md` | false assumptions about components, data flow, layer boundaries |
+| Architecture | Declarative | `architecture.md`, `<subject>-architecture.md` | false assumptions about components, data flow, layer boundaries |
 | Technology Baseline | Action | `technology-baseline.md` | generated artefact breaks a family-wide technology rule (build step, forbidden dependency, wrong hosting form), or a deviation stands without a rationale in the instance's `architecture.md` |
-| Domain Knowledge | Declarative | `editorial-guidelines.md`, `tei-mapping.md`, `methodik.md`, `forschungsrahmen.md`, `ontology.md` | domain rule or method violated, editorial guideline ignored, layer of rationale missing |
-| Design | Declarative | `design.md`, `DESIGN.md` | UI inconsistency, break in the design system, design stance unclear (for agent behaviour that contradicts design values, check `CLAUDE.md` as well) |
-| Quality Assurance | Action | `testing.md`, `test-strategy.md` | guarantee unclear, test missing or failing, acceptance criterion unchecked |
-| Verification | Declarative | `verification.md`, `verifikation.md`, `conformance-*.md` | externally used claim unsupported, headline figure not recomputable, novelty claim unchecked |
-| Provenance | Process | `journal.md`, `JOURNAL.md`, `learnings.md` | decision logic unclear, earlier dead ends repeated |
-| Planning | Process | `plan.md`, `roadmap.md` | order or phase boundary unclear, next step not recognisable (forward; Provenance is backward) |
-| Reporting | Declarative (snapshot) | `report.md`, `status.md`, `zwischenbericht.md`, `abschlussbericht.md` | external claim about the state unclear or outdated, addressee not recognisable, evidence missing |
-| Integration | Declarative | `integration.md`, `{counterpart}-integration.md`, `HANDOFF.md` | interface format misunderstood, responsibility at the project boundary unclear, the two sides describe the contract inconsistently |
+| Domain Knowledge | Declarative | `research-methodology.md`, `editorial-guidelines.md`, `tei-mapping.md`, `ontology.md` | domain rule or method violated, editorial guideline ignored, layer of rationale missing |
+| Design | Declarative | `design.md`, `<subject>-design.md` | UI inconsistency, break in the design system, design stance unclear |
+| Quality Assurance | Action | `testing.md`, `<subject>-testing.md` | guarantee unclear, test missing or failing, acceptance criterion unchecked |
+| Verification | Declarative | `verification.md`, `<subject>-verification.md` | externally used claim unsupported, headline figure not recomputable, novelty claim unchecked |
+| Provenance | Process | `journal.md`, `project-learnings.md` | decision logic unclear, earlier dead ends repeated |
+| Handoff | Process | `handoff.md` | open input overlooked, source or current target unchecked, durable content not yet integrated |
+| Planning | Process | `plan.md`, `<subject>-plan.md` | order or phase boundary unclear, next step not recognisable |
+| Governance | Action | `governance.md` | standing authority or change rule unclear, a settled rule is bypassed |
+| Reporting | Declarative (snapshot) | `snapshots/<scope>-report-YYYY-MM-DD.md` | external claim about the state unclear or outdated, addressee not recognisable, evidence missing |
+| Integration | Declarative | `integration.md`, `<counterpart>-integration.md` | interface format misunderstood, responsibility at the project boundary unclear, the two sides describe the contract inconsistently |
 | Agent Instructions | Action | `CLAUDE.md`, `RULES.md`, `INSTRUCTIONS.md` (repository root) | break in style, prohibition ignored, formally wrong output |
 
-In repositories with file names shaped by project semantics, where zbz-ocr-tei carries `TEI-MAPPING.md`, `CER-METHODIK.md` and `EDITION.md`, the semantic content decides the function rather than the file name. As a rule these are Declarative Documents carrying a specialisation of the Material or Architecture function.
+Existing repositories may retain established names during a staged migration. New and renamed documents follow the naming contract so that routing converges without requiring a repository-wide rewrite.
 
 ## Frontmatter schema
 
@@ -251,7 +273,7 @@ The refactor in HerData (`13f9880`) carries `version: 0.2` throughout all eight 
 
 `knowledge-sources` is the structural feature that distinguishes Promptotyping knowledge documents from generic READMEs. It makes the document connectable to linked open data, since every source listed is uniquely identified by a URI. The second level groups by source type, the third level lists label and URI.
 
-Selective use. In the HerData refactor `knowledge-sources:` is carried only in `project.md`, `data.md` and `architecture.md`, that is, where external connections carry the substance. In `design.md`, `decisions.md`, `features.md` and `JOURNAL.md` it is deliberately absent. This selectivity is the correct practice, since the field belongs where it carries and nowhere else.
+Historical evidence only. In the HerData refactor `knowledge-sources:` was carried in `project.md`, `data.md` and `architecture.md`, while the files then named `design.md`, `decisions.md`, `features.md` and `JOURNAL.md` omitted it. The old names record that repository state and are no current naming examples. The field belongs only where external connections carry the substance.
 
 ### On the semantics of `topics:`
 
@@ -282,12 +304,16 @@ Knowledge Documents follow the distillation principle from the method paper, max
 - The most important content stands in the first sentences and at the close.
 - Periodic refactoring, meaning consolidation through prompts, belongs to the routine.
 
+The live Handoff Inbox is processed before its point is removed: verify source and current target, integrate durable content into the responsible Declarative or Action Document, then add a concise Journal record of subject, source, target, and result or rejection reason. A point has no status; its presence means open.
+
+Journal compaction is semantic. It begins when repetition, copied durable knowledge, completed open lists, scattered decision grounds, or expensive regular reading impair the provenance function. Every substantive statement receives a disposition against a clean Git baseline: retain, integrate into a canonical target, reject with a reason, or preserve only through Git. Paths, anchors, and hashes are checked before the temporary coverage list is removed and a `verdichtet` record references the predecessor state. Fixed thresholds and a `journal-archive.md` are excluded.
+
 ## Application
 
 When setting up a new Promptotyping repository:
 
 1. Check the functions. Which of the functions listed above are relevant to this project (apply the trigger criterion per function)?
-2. Map the functions onto documents. Small projects merge several functions into one document, large projects split one function across several documents.
+2. Create the always-triggered functions, including `knowledge/handoff.md`. Map the remaining functions onto documents. Merge only while routing question and update cycle remain shared.
 3. Copy the matching template block from the catalogue per document and fill it in. Where no template exists, the convention alone serves as the guide.
 
 When refactoring a knowledge folder, checklist:
@@ -297,6 +323,7 @@ When refactoring a knowledge folder, checklist:
 - Are nested fields (`project:`, `method:`, `knowledge-sources:`) cleanly structured, with no flat `method-url:` and the like?
 - Is `knowledge-sources:` used selectively, where external connections carry, and omitted otherwise?
 - Are the three structural principles (separation, standards in the main body, negative self-definition) recognisable in the document?
+- Does `knowledge/handoff.md` exist with `status: active`, and does it contain only open points or the canonical empty state?
 
 ## Note by the site (2026-06-10)
 

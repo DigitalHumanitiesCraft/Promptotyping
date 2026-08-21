@@ -1,4 +1,4 @@
-/* Paper page. Renders the canonical paper from knowledge/paper.md, groups it
+/* Paper page. Renders the canonical paper from research-artefacts/promptotyping-paper.md, groups it
    into one section per H2, builds its table of contents, keeps the published
    pre-revision anchors alive and decorates glossary triggers and citations. */
 
@@ -7,7 +7,7 @@
 
   /* The paper is rendered from its canonical source, so the site text cannot
      drift away from the knowledge base. */
-  var PAPER_FILE = "knowledge/paper.md";
+  var PAPER_FILE = "research-artefacts/promptotyping-paper.md";
 
   /* Published anchors of the earlier section cuts, mapped onto the section of
      the current four-chapter structure that carries their content. Renaming is
@@ -116,7 +116,7 @@
      moves to the section; the reading order of the DOM is preserved. */
 
   /* Join an image to the caption paragraph that follows it. The image and its
-     alt text stand in knowledge/paper.md, which is the canonical machine
+     alt text stand in research-artefacts/promptotyping-paper.md, which is the canonical machine
      address (ADR-10), so a consumer that fetches the Markdown gets the figure
      too; this only supplies the semantics Markdown cannot express. A caption
      with no image before it stays a paragraph, which is how an undrawn figure
@@ -267,7 +267,7 @@
      Every project of the inventory has a card, and data/case-studies.json holds
      that correspondence in its paper_row field, which V5 of verification.md
      keeps true in both directions. The first column becomes the way to the card
-     at render time, so knowledge/paper.md stays plain Markdown and the machine
+     at render time, so research-artefacts/promptotyping-paper.md stays plain Markdown and the machine
      address of ADR-10 serves the same text it always did (A35). A row whose name
      no card claims stays plain text, which is the failure the consistency check
      reports separately. */

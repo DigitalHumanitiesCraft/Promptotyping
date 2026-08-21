@@ -9,6 +9,6 @@
     "container-title": "GitHub Gist",
     "issued": {"date-parts": [[2026, 4, 4]]},
     "URL": "https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f",
-    "note": "Owner handle, date 2026-04-04 and content checked against the gist landing page, retrieved 2026-07-30; the gist is openly readable, which confirms access class A. The gist itself carries no title beyond its file name 'llm-wiki.md', so the register's short title 'LLM Wiki' is used. The given name is taken from the display name of the GitHub account karpathy, checked the same day, because the gist page shows only the handle. Distinct item from the Karpathy vibe-coding post that knowledge/paper.md carries as the footnote-only resource."
+    "note": "Owner handle, date 2026-04-04 and content checked against the gist landing page, retrieved 2026-07-30; the gist is openly readable, which confirms access class A. The gist itself carries no title beyond its file name 'llm-wiki.md', so the register's short title 'LLM Wiki' is used. The given name is taken from the display name of the GitHub account karpathy, checked the same day, because the gist page shows only the handle. Distinct item from the Karpathy vibe-coding post that research-artefacts/promptotyping-paper.md carries as the footnote-only resource."
   }
 ]

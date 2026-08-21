@@ -1,22 +1,22 @@
 ---
 title: Vorlage Report
 slug: report
-version: "0.2"
+version: "0.3"
 status: complete
 source: Vorlage Report
-mirrored: 2026-07-19
+mirrored: 2026-08-21
 machine-url: https://dhcraft.org/Promptotyping/_content/promptotyping-document/report.md
 ---
 
 # Vorlage Report
 
-Diese Vorlage strukturiert das Bericht-Dokument einer Promptotyping-Wissensbasis. Das resultierende Dokument heißt typischerweise `report.md` (oder genre-benannt `zwischenbericht.md`, `abschlussbericht.md`) und liegt im `knowledge/`-Ordner des Repos. Es ist ein menschlich kuratierter Projektstatusbericht für einen externen Adressaten und friert einen Stand zum festen Zeitpunkt ein. Es ist das einzige Promptotyping-Dokument, dessen Adressat nicht der Agent oder das Projekt-Zukunfts-Ich ist, sondern ein identifizierbarer Dritter ohne Repo-Vorwissen. Aus diesem Audienz-Unterschied folgen Lebenszyklus, Struktur und Stil. Die ausführliche Begründung der Funktion liegt in der Konvention Report Document.
+Diese Vorlage strukturiert den menschlich kuratierten Projektstatusbericht für einen externen Adressaten. Das resultierende Dokument heißt `<scope>-report-YYYY-MM-DD.md` und liegt unter `snapshots/`. Scope und Datum machen Berichtsgegenstand und Stichtag bereits im Suchtreffer sichtbar. Aus der externen Audience und dem Snapshot-Charakter folgen Lebenszyklus, Struktur und Stil. Die ausführliche Begründung der Funktion liegt in der Konvention Report Document.
 
 ## Geltungsbereich
 
 Die Vorlage trägt, sobald ein Projektstand an einen externen Empfänger kommuniziert werden muss: Auftraggeber, Förderer, Stakeholder. Bei Auftragsprojekten ist das der Regelfall, weil Kundinnen und Kunden einen Arbeitsbericht erhalten. Sie entfällt bei reinen Eigenforschungs-Repos ohne externen Berichtsadressaten und bei Tool-Repos ohne Auftragskontext. Sie trägt nicht für interne Stand-Notizen; diese leben im `journal.md`.
 
-Der Dateiname `report.md` ist kollisionsanfällig: In mehreren Repos ist `report.md` für maschinell erzeugte Artefakt- oder Vollständigkeitsberichte belegt (Excel-Blattmapping, Pipeline-Prüfung), nicht für den externen Stand. `status.md` ist ein gleichwertiger, kollisionsärmerer Name für diese Funktion. Maschinell erzeugte Prüf- oder Vollständigkeits-Snapshots liegen legitim außerhalb von `knowledge/` in einem eigenen `reports/`-Ordner; dieses Dokument meint den menschlich kuratierten Bericht für einen externen Adressaten.
+Der Naming Contract trennt den kuratierten Report von maschinell erzeugten Prüf- und Vollständigkeitsberichten. Kuratierte Berichte tragen Scope, Funktion und Datum. Generierte Berichte liegen unter `generated/` oder einem in `INDEX.md` erklärten domänenspezifischen Ausgabeordner. Ein generisches `report.md` oder `status.md` wird für neue kuratierte Berichte nicht verwendet.
 
 ## Funktion des Dokuments
 
@@ -38,9 +38,9 @@ Jede inhaltliche Behauptung über fertige Arbeit ist belegbar: über einen Pfad 
 
 ## Lebenszyklus
 
-Der Report trägt `status: snapshot` (seit 2026-07-19 registriert), weil sein Inhalt ab Erstellung bewusst veraltet; das Stichtagsdatum steht im Dokument. Er ist ein single living document, keine Serie datierter Snapshot-Dateien. Frühere Stände sind über git-tags rekonstruierbar (`git show <tag>:report.md`); das macht die Zeitachse maschinell zugänglich ohne Datei-Inflation. Aussagekräftige Tag-Namen wie `report-2026-05` oder `report-abschluss` halten sie semantisch fest. Der Vorteil gegenüber datierten Dateinamen: Der Tag markiert das ganze Repo zu diesem Zeitpunkt (Report plus Code plus Daten plus alle anderen Knowledge-Dokumente), was bei einem Projektstatusbericht die ehrlichere Aussage ist.
+Der Report trägt `status: snapshot`, weil sein Inhalt ab Erstellung bewusst veraltet. Der Stichtag steht im Dateinamen und im Dokument. Ein sachlich neuer Berichtsstand erzeugt eine neue datierte Datei. Korrekturen am selben eingefrorenen Stand bleiben über git nachvollziehbar. Ein Git-Tag kann zusätzlich das gesamte Repo am Berichtsdatum markieren, wenn Report, Code, Daten und Knowledge Documents gemeinsam referenzierbar bleiben müssen.
 
-Trägt ein Projekt mehrere Berichte unterschiedlicher Adressaten oder Genres (Zwischenbericht für Förderer, Abschlussbericht für Auftraggeber, Stakeholder-Update), sind das keine Versionen desselben Dokuments, sondern eigene Artefakte mit genre-benannten Dateinamen (`zwischenbericht.md`, `abschlussbericht.md`), jeweils als eigenes living document plus git-tags geführt.
+Mehrere Adressaten oder Genres erhalten eigene Scope-Werte, etwa `funder-interim-report-2026-08-21.md` und `client-final-report-2026-08-21.md`. `report-genre:` hält die kontrollierte Gattung unabhängig von der Sprache des Dateinamens.
 
 ## Frontmatter-Schema
 
@@ -113,7 +113,7 @@ method:
   url: https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin
 template:
   name: Vorlage Report
-  version: 0.2
+  version: 0.3
   url: https://dhcraft.org/Promptotyping/promptotyping-document/report
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-report
 audience:
@@ -164,21 +164,22 @@ report-genre: [zwischenbericht | abschlussbericht | stakeholder-update]
 
 Strukturanker beim Erstellen eines Berichts. Der Agent erhält den Template-Block und befüllt ihn aus `journal.md` (Tätigkeiten), `specification.md` (Stand der Anforderungen und Entscheidungen), den Ergebnis-Artefakten im Repo (Pfade, Commits) und dem aktuellen Datenstand. Volatile Zahlen werden hier ausdrücklich aus den lebenden Quellen übernommen, nicht aus dem Gedächtnis. Der Bericht wird vor Versand vom Critical Expert gegen den echten Repo-Stand geprüft (Critical Expert in the Loop).
 
-Review-Folie für einen bestehenden Bericht. Ein vorhandenes `report.md` wird gegen die Vorlage gehalten, um zu prüfen, ob die Identifikation vollständig ist, ob jede Ergebnis-Aussage belegbar ist, ob internes Jargon aufgelöst wurde und ob der Stand mit dem getaggten Repo-Zustand übereinstimmt.
+Review-Folie für einen bestehenden Bericht. Ein vorhandener `<scope>-report-YYYY-MM-DD.md` wird gegen die Vorlage gehalten, um Naming, Identifikation, Belegbarkeit, Begriffserklärung und Übereinstimmung mit dem referenzierten Repo-Zustand zu prüfen.
 
 ## Beispiel
 
-zbz-ocr-tei führt den Abschlussbericht für die Zentralbibliothek Zürich als erste Referenzimplementierung (in Entwicklung seit Mai 2026). Er trägt die volatilen Pipeline-Stände (CER-Werte, dokumentierte Seiten von Gesamtumfang) als Kern der eingefrorenen Aussage, eine Stufentabelle der OCR-zu-TEI-Pipeline und eine Ergebnisliste mit Commit-Refs und Repository-URLs. Er ist genre-benannt (`abschlussbericht.md`) und über git-tag `report-abschluss` rekonstruierbar.
+Das Promptotyping-Methodik-Repo führt den früheren Lane-Bericht als `snapshots/paper-zfdg-submission-report-2026-07-23.md`. Der Pfad signalisiert die Artefaktklasse, der Scope benennt Paper und Einreichkontext, das Datum fixiert den Stand. Inhaltliche Behauptungen verweisen auf die damaligen Repo-Pfade und Commit-Refs.
 
 ## Begriffe
 
 - Report: menschlich kuratierter Projektstatusbericht für einen externen Adressaten, der einen Stand zum festen Zeitpunkt einfriert.
 - Audience: der externe Empfänger des Berichts; der Marker, der den Report von allen anderen Promptotyping-Dokumenten unterscheidet.
-- Living document: ein einziges fortgeschriebenes Dokument, dessen frühere Stände über git-tags rekonstruierbar sind, statt als datierte Dateiserie geführt zu werden.
+- Snapshot-Serie: Folge eigenständiger, datierter Reports, deren Scope und Stichtag im Dateinamen sichtbar sind.
 - Berichtsgenre: Gattung des Berichts (Zwischenbericht, Abschlussbericht, Stakeholder-Update), die Gewichtung und Lebenszyklus prägt.
 
 ## Versionshistorie
 
+- 0.3 (2026-08-21): Naming Contract übernommen. Reports liegen als datierte Snapshots unter `snapshots/` und führen Scope, Funktion und Datum im Dateinamen. Generische `report.md`- und `status.md`-Träger entfallen für neue kuratierte Berichte.
 - 0.2 (2026-07-19): Freigabe (status complete), Block-Status auf `snapshot` (neu registriertes Vokabular), Verification-Verweis für außenwirksame Claims. Keine Migrationspflicht für bestehende Repos.
 - 0.1 (2026-06-13): Erstfassung, Rationale in der Konvention Report Document.
 

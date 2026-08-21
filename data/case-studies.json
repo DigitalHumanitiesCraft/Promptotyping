@@ -18,7 +18,7 @@
       "video_url": "YouTube URL or null",
       "insight": "methodological contribution as recorded at curation; the paper's own per-case findings stand in Table 1 (Section 3.2), otherwise null",
       "deep_page": "true where the case carries a depth page under _content/case-studies/",
-      "paper_row": "exact case name in Table 1 of the paper (Section 3.2), or null where the project is outside the paper's case set; checked by tools/check_consistency.py against knowledge/paper.md"
+      "paper_row": "exact case name in Table 1 of the paper (Section 3.2), or null where the project is outside the paper's case set; checked by tools/check_consistency.py against research-artefacts/promptotyping-paper.md"
     },
     "role_labels": {
       "evidence": "Evidence for the paper",

@@ -1,22 +1,22 @@
 ---
 title: Vorlage Testing
 slug: testing
-version: "0.2"
+version: "0.3"
 status: complete
 source: Vorlage Testing
-mirrored: 2026-07-19
+mirrored: 2026-08-21
 machine-url: https://dhcraft.org/Promptotyping/_content/promptotyping-document/testing.md
 ---
 
 # Vorlage Testing
 
-Diese Vorlage strukturiert das Quality-Assurance-Dokument einer Promptotyping-Wissensbasis. Das resultierende Dokument heißt typischerweise `testing.md` (alternativ `test-strategy.md` oder `tests.md`, je nach Projektsprache und Schwerpunkt) und liegt im `knowledge/`-Ordner des Repos. Es trägt die Teststrategie: welche Garantien das System nachweislich hält, welche Lücken bewusst offen bleiben, und wie ein Dritter die Tests selbst laufen lässt. Der erste Absatz unter der H1 trägt den Zweck des konkreten Dokuments in einem Satz; bei der teiCrafter-Fassung ist das die Aussage "Testing-first, der Maßstab wird vor den Features gebaut, die er beurteilt". Die Vorlage stellt sicher, dass dieser zweck-tragende erste Absatz vorhanden ist.
+Diese Vorlage strukturiert das Quality-Assurance-Dokument einer Promptotyping-Wissensbasis. Ein einzelner Träger heißt `testing.md`; getrennte Testdomänen werden als `<subject>-testing.md` spezialisiert. Das Dokument liegt im `knowledge/`-Ordner und trägt die Teststrategie, ihre Garantien, ihre offenen Lücken und die reproduzierbaren Run-Kommandos. Der erste Absatz bestätigt diese Funktion; ein eigenes `zweck:`- oder `function:`-Frontmatter-Feld entsteht nicht.
 
 ## Geltungsbereich
 
 Die Vorlage trägt, sobald das System eine automatisierte oder systematische Qualitätssicherung führt und diese dokumentiert werden soll: eine Testsuite, eine Validierungs-Harness, eine Acceptance-Prüfung gegen die Projektziele. Triggerkriterium ist nicht die bloße Existenz einzelner Tests, sondern die Notwendigkeit, die Teststrategie als Ganzes nachvollziehbar zu machen, also was geprüft wird, was bewusst nicht geprüft wird, und welche Garantie daraus folgt.
 
-Bei trivialen Tool-Repos ohne eigene Tests entfällt die Vorlage; ein Satz in `architecture.md` ("keine automatisierten Tests, manuelle Sichtprüfung") reicht dann. Sie trägt nicht für die Dokumentation einzelner Testfälle auf Code-Ebene; diese liegt im Testcode selbst (Testnamen, Assertions, Kommentare). Sie trägt nicht für CI/CD-Infrastruktur als solche; deren Konfiguration liegt in `architecture.md` (Build und Deployment) oder einer eigenen `infrastruktur.md`. Das Testing-Dokument verweist auf die CI nur als Auslöser ("Tests laufen bei jedem Push"), beschreibt sie nicht.
+Bei trivialen Tool-Repos ohne eigene Tests entfällt die Vorlage; ein Satz in `architecture.md` reicht dann. Die Dokumentation einzelner Testfälle liegt im Testcode. Continuous-Integration-Konfiguration liegt in `architecture.md` oder bei eigenständiger Routing Question in `deployment-architecture.md`. Das Testing-Dokument verweist auf die CI nur als Auslöser.
 
 Testing bleibt im Regelfall ein Dokument. Wächst die Suite auf mehrere unabhängige Engines mit eigenen Aktualisierungsrhythmen (eine Node-Engine-Harness und eine getrennte Python/lxml-Validierungs-Harness, wie bei teiCrafter), bleiben diese dennoch Sektionen desselben Dokuments, solange sie eine gemeinsame Teststrategie tragen. Die Spaltung in eine eigene Datei lohnt sich erst, wenn ein Aspekt der Qualitätssicherung (etwa eine CER-Evaluationsmethodik in einem OCR-Projekt) einen eigenen Leser und eigenen Pflegerhythmus entwickelt.
 
@@ -38,7 +38,7 @@ Drittens bindet es Tests an die Projektziele zurück. Eine Testsuite ist kein Se
 
 ## Frontmatter-Schema
 
-Das Dokument folgt dem reduzierten Pflichtkern der aktuellen Konvention (Stand 2026-06-13): `title`, `project` (Objekt mit `name` und `repository`), `method` (Objekt mit `name` und `url`), `status`, `created`, `updated`. Der Zweck lebt als erster Absatz unter der H1. Das Dokument deklariert seine Funktion über diesen ersten Absatz, nicht über den Dateinamen; `testing.md`, `test-strategy.md` und `tests.md` sind gleichwertige Träger derselben Funktion.
+Das Dokument folgt dem reduzierten Pflichtkern der aktuellen Konvention: `title`, `project` (Objekt mit `name` und `repository`), `method` (Objekt mit `name` und `url`), `status`, `created`, `updated`. Der Dateiname ist das primäre Routing-Signal, der erste Absatz bestätigt die Funktion. Es gibt kein `zweck:`- oder `function:`-Feld.
 
 - `template:` empfohlen, als Block mit `name`, `version`, `url` und optional `alias`, dort wo diese Vorlage angewandt wurde. teiCrafter führt das Feld bereits kanonisch mit der dhcraft.org-URL.
 - `status:` meint die Dokument-Maturity (`idea`, `draft`, `stub`, `complete`, `reviewed`, `archived`; seit 2026-07-19 auch `active` für fortlaufende Prozessdokumente und `snapshot` für Stichtagsdokumente), nicht den operativen Projektstatus. Ein Testing-Dokument mit gepflegtem Stand-Block kann `snapshot`-Semantik tragen; maßgeblich ist das Vokabular der Konvention.
@@ -116,7 +116,7 @@ method:
   url: https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin
 template:
   name: Vorlage Testing
-  version: 0.2
+  version: 0.3
   url: https://dhcraft.org/Promptotyping/promptotyping-document/testing
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-testing
 status: draft
@@ -234,6 +234,7 @@ Das Fehlmuster aus dem Inhaltsaudit vom Juli 2026 ist die doppelt geführte Test
 
 ## Versionshistorie
 
+- 0.3 (2026-08-21): Naming Contract übernommen. Einzelträger heißt `testing.md`, Spezialisierungen folgen `<subject>-testing.md`; der Dateiname ist das primäre Routing-Signal.
 - 0.2 (2026-07-19): Freigabe (status complete), englisches Funktionsvokabular (Quality Assurance), Lebenszyklus-Absatz, Fehlmuster im Beispiel. Keine Migrationspflicht für bestehende Repos.
 - 0.1 (2026-06-13): Erstfassung, empirisch destilliert aus teiCrafter, SuGW, M3GIM und co-ocr-htr.
 

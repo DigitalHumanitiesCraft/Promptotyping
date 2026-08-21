@@ -6,7 +6,7 @@ language: en
 version: "0.3"
 created: 2026-07-25
 updated: 2026-07-31
-source: knowledge/paper.md, sections 3.2, 4.1 and 4.2
+source: research-artefacts/promptotyping-paper.md, sections 3.2, 4.1 and 4.2
 machine-url: https://dhcraft.org/Promptotyping/_content/artefakt.md
 ---
 

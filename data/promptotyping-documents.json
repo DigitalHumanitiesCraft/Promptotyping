@@ -1,14 +1,14 @@
 {
-  "version": "0.2",
-  "generated": "2026-07-19",
+  "version": "0.4",
+  "generated": "2026-08-21",
   "_meta": {
-    "beschreibung": "Structured form of the template table (Knowledge Documents). Generated from the frontmatter of the mirrors under _content/promptotyping-document/ and from the function, file-name and type assignment in _content/konvention.md (template catalogue and reading heuristic). The order follows the template catalogue of the convention. The function names have been English since 2026-07-19; the template names stay unchanged, they are identifiers. The trigger field carries the criterion under which a template applies, taken from the same function table.",
+    "beschreibung": "Structured form of the template table (Knowledge Documents). Generated from the frontmatter of the mirrors under _content/promptotyping-document/ and from the function, file-name and type assignment in _content/konvention.md (template catalogue and routing heuristic). The order follows the template catalogue of the convention. The function names are English; template names remain stable identifiers. The trigger field carries the criterion under which a template applies.",
     "schema": {
       "slug": "URL anchor fragment, forming the site anchor together with #promptotyping-document-",
       "title": "display name of the template",
       "funktion": "function of the knowledge base that the template addresses (konvention.md, template catalogue)",
       "datei": "recommended file name in the repository",
-      "typ": "analytical document type, Declarative, Process or Action, the three specialisations of the knowledge document by the kind of knowledge held (konvention.md, reading heuristic)",
+      "typ": "analytical document type, Declarative, Process or Action, the three specialisations of the knowledge document by the kind of knowledge held (konvention.md, routing heuristic)",
       "version": "template version",
       "status": "maturity of the template",
       "machineUrl": "static .md URL for machine retrieval without JavaScript",
@@ -22,7 +22,7 @@
       "funktion": "Navigation plus term lexicon",
       "datei": "INDEX.md",
       "typ": "Declarative",
-      "version": "0.2",
+      "version": "0.4",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/index.md",
       "trigger": "knowledge base has more than three documents or several constitutive terms"
@@ -31,9 +31,9 @@
       "slug": "project",
       "title": "Vorlage Projekt-Wissensdokument",
       "funktion": "Charter (possibly also Material and Specification)",
-      "datei": "project.md or README.md",
+      "datei": "project.md",
       "typ": "Declarative",
-      "version": "0.2",
+      "version": "0.3",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/project.md",
       "trigger": "always"
@@ -44,7 +44,7 @@
       "funktion": "Material",
       "datei": "data.md",
       "typ": "Declarative",
-      "version": "0.2",
+      "version": "0.3",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/data.md",
       "trigger": "project processes or produces data"
@@ -77,7 +77,7 @@
       "funktion": "Agent Instructions",
       "datei": "CLAUDE.md (repository root)",
       "typ": "Action",
-      "version": "0.2",
+      "version": "0.4",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/action-layer.md",
       "trigger": "always"
@@ -88,7 +88,7 @@
       "funktion": "Architecture",
       "datei": "architecture.md",
       "typ": "Declarative",
-      "version": "0.3",
+      "version": "0.4",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/architecture.md",
       "trigger": "system goes beyond a static site"
@@ -108,9 +108,9 @@
       "slug": "domain-knowledge",
       "title": "Vorlage Domaenenwissen",
       "funktion": "Domain Knowledge (rationale layer and domain rule set)",
-      "datei": "editorial-guidelines.md, methodik.md and others",
+      "datei": "research-methodology.md, editorial-guidelines.md, tei-mapping.md and others",
       "typ": "Declarative",
-      "version": "0.2",
+      "version": "0.3",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/domain-knowledge.md",
       "trigger": "research, edition or data project with a domain-methodological prescriptive or theoretical layer"
@@ -130,9 +130,9 @@
       "slug": "testing",
       "title": "Vorlage Testing",
       "funktion": "Quality Assurance",
-      "datei": "testing.md or test-strategy.md",
+      "datei": "testing.md or <subject>-testing.md",
       "typ": "Action",
-      "version": "0.2",
+      "version": "0.3",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/testing.md",
       "trigger": "project with tests, verification or acceptance checks"
@@ -143,7 +143,7 @@
       "funktion": "Verification (adversarial checking of a project's own claims against the raw data)",
       "datei": "verification.md",
       "typ": "Declarative",
-      "version": "0.1",
+      "version": "0.2",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/verification.md",
       "trigger": "project makes empirical findings or novelty claims that are used externally (paper, report, handover)"
@@ -154,18 +154,29 @@
       "funktion": "Provenance",
       "datei": "journal.md",
       "typ": "Process",
-      "version": "0.3",
+      "version": "0.4",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/journal.md",
+      "trigger": "always"
+    },
+    {
+      "slug": "handoff",
+      "title": "Vorlage Handoff",
+      "funktion": "Handoff (live Process Inbox)",
+      "datei": "handoff.md",
+      "typ": "Process",
+      "version": "0.1",
+      "status": "complete",
+      "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/handoff.md",
       "trigger": "always"
     },
     {
       "slug": "plan",
       "title": "Vorlage Plan",
       "funktion": "Planning (forward-looking)",
-      "datei": "plan.md or roadmap.md",
+      "datei": "plan.md or <subject>-plan.md",
       "typ": "Process",
-      "version": "0.2",
+      "version": "0.3",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/plan.md",
       "trigger": "project with phases, milestones or sprint control"
@@ -174,9 +185,9 @@
       "slug": "report",
       "title": "Vorlage Report",
       "funktion": "Reporting",
-      "datei": "report.md or status.md",
+      "datei": "snapshots/<scope>-report-YYYY-MM-DD.md",
       "typ": "Declarative (Snapshot)",
-      "version": "0.2",
+      "version": "0.3",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/report.md",
       "trigger": "project status report for an external recipient (client, funder, stakeholder); the normal case in commissioned projects"
@@ -184,13 +195,13 @@
     {
       "slug": "integration",
       "title": "Vorlage Integration",
-      "funktion": "Integration (cross-project contracts and handovers)",
+      "funktion": "Integration (durable cross-project contracts)",
       "datei": "integration.md",
       "typ": "Declarative",
-      "version": "0.1",
+      "version": "0.3",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/integration.md",
-      "trigger": "project with data exchange, a contract or a handover to another project or another lane"
+      "trigger": "project with a durable cross-project contract for data, formats or responsibilities"
     }
   ]
 }

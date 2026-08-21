@@ -6,12 +6,12 @@ project:
 status: draft
 language: en
 created: 2026-08-17
-updated: 2026-08-17
+updated: 2026-08-21
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
 topics: ["[[Promptotyping]]", "[[Agentic Knowledge Engineering]]", "[[Research Mission Control]]"]
-related: [INDEX, project, specification, verification, journal, paper-knowledge]
+related: [INDEX, project, specification, verification, journal, paper-specification]
 ---
 
 # Project Governance
@@ -158,4 +158,3 @@ This governance instance is adequate when:
 - rights and privacy constraints are visible before distribution;
 - escalation produces a self-contained decision object;
 - action layers refer to this document and preserve its authority boundaries.
-

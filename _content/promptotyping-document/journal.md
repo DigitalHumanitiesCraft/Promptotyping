@@ -1,78 +1,72 @@
 ---
 title: Vorlage Journal
 slug: journal
-version: "0.3"
+version: "0.4"
 status: complete
 source: Vorlage Journal
-mirrored: 2026-06-10
+mirrored: 2026-08-21
 machine-url: https://dhcraft.org/Promptotyping/_content/promptotyping-document/journal.md
 ---
-
 # Vorlage Journal
 
-Diese Vorlage strukturiert das Process-Dokument einer Promptotyping-Wissensbasis. Das resultierende Dokument heißt typischerweise `journal.md` und liegt im `knowledge/`-Ordner des Repos. Es hält den Arbeitsverlauf als zusammenhängende Erzählung der Promptotyping-Iterationen fest und ist die einzige Stelle, an der Entscheidungs-Genese und Sackgassen dokumentiert sind.
+Diese Vorlage strukturiert den kuratierten rückwärtsgerichteten Provenienzindex einer Promptotyping-Wissensbasis. Das resultierende Dokument heißt `journal.md`, liegt im `knowledge/`-Ordner und weist sachlich zusammengehörige Übergänge nach. Die aktuellen Inhalte bleiben in ihren zuständigen Declarative, Action und Process Documents.
 
 ## Geltungsbereich
 
-Die Vorlage trägt für jedes Promptotyping-Repo, weil die Genese-Funktion in der [Konvention Promptotyping Documents](#konvention-v0.1) als immer-relevant geführt wird. Sie trägt nicht für reine Veröffentlichungs-Repos ohne aktive Entwicklung; dort ist ein Journal nachträglich rekonstruiert wertlos. Sie trägt auch nicht für Sitzungsprotokolle oder Meeting-Mitschriften; das sind andere Dokumenttypen.
+Die Vorlage trägt für jedes aktive Promptotyping-Projekt. `journal.md` entsteht mit dem ersten nachweiswürdigen Übergang, führt dauerhaft `status: active` und bleibt am Projektende als Provenienzindex erhalten. Einträge entstehen nach integrierten, verworfenen oder korrigierten Übergängen sowie selten nach einer semantischen Verdichtung.
+
+Das Journal wird verdichtet, sobald Wiederholungen, kopiertes Dauerwissen, erledigte Offenlisten, verstreute Entscheidungsgründe oder ein zu teurer regulärer Lesekontext seine Provenienzfunktion beeinträchtigen. Seine Länge oder die Zahl der Einträge löst allein keine Verdichtung aus.
 
 ## Funktion des Dokuments
 
-Das Journal ist die Process-Schicht der Wissensbasis. Es beantwortet "wie haben wir uns hierhin gearbeitet, welche Sackgassen sind dokumentiert, welche Entscheidungen wuchsen aus welchem Kontext". Adressiert ist primär der Projekt-Verantwortliche, der nach Wochen zurückkommt, und der Coding-Agent, der eine Session ohne Verlust an Kontext fortsetzen soll. Das Journal trägt die Genese; das Ergebnis liegt in den anderen Dokumenten.
+Das Journal beantwortet, welcher sachliche Übergang aus welcher Quelle in welches Ziel führte und welches Ergebnis angenommen, verworfen oder korrigiert wurde. Es ist ein kuratierter Provenienzindex für Menschen und Agents, die Herkunft oder Entscheidungsgrund einer aktuellen Aussage prüfen.
+
+Der aktuelle Projektstatus liegt in der projektspezifischen lebenden Quelle. Dauerhafte Sach- und Handlungsinhalte liegen in Declarative oder Action Documents, angenommene Zukunftsarbeit in `plan.md`, offene Eingänge in `handoff.md` und ausführliche Prüfresultate in `verification.md`. Git bewahrt frühere Wortlaute.
 
 ## Strukturprinzipien
 
-Drei Prinzipien tragen das Dokument.
+Erstens entsteht ein Eintrag pro sachlich zusammengehörigem Übergang. Sessiongrenzen erzeugen keinen eigenen Eintrag, wenn sie keinen solchen Übergang abschließen.
 
-Erstens bleibt die Aussage eines Eintrags unangetastet. Zeigt eine spätere Erkenntnis, dass eine frühere Entscheidung falsch war, korrigiert ein neuer Eintrag mit Verweis auf den alten; der alte behält seinen Wortlaut in der Sache. Das Journal ist die einzige Wissensquelle, in der alte Stände verfügbar bleiben, und ohne diese Eigenschaft verliert es seinen Process-Charakter.
+Zweitens führt jeder Eintrag genau einen inhaltlichen Typ. `integriert` weist die Übernahme in ein kanonisches Ziel nach. `verworfen` nennt den geprüften Gegenstand und den Verwerfungsgrund. `korrigiert` referenziert die frühere Aussage und weist die gültige Korrektur nach. Der seltene Wartungstyp `verdichtet` nennt den bearbeiteten Bereich und den Git-Ausgangsstand.
 
-Davon zu unterscheiden ist die Verdichtung. Ein Journal wächst mit jeder Sitzung, und ein Dokument, das nur wächst, wird unlesbar und teuer, weil es bei jeder Sitzung ins Kontextfenster geladen wird. Das Journal wird deshalb periodisch verdichtet, destilliert und formal vereinheitlicht. Erlaubt sind dabei Umformulierung, das Zusammenführen paralleler Einträge, das Streichen von Wiederholung und von Vorhaben, die längst erledigt oder überholt sind, und die Angleichung an das Schema dieser Vorlage. Nicht erlaubt ist der Verlust von Wissen; jede Entscheidung, jede Sackgasse, jede Begründung und jeder benannte Dateiname überlebt die Verdichtung. Der Eingriff wird im Lead mit seinem Datum offengelegt, sodass ein Leser weiß, dass die Form jünger ist als die Einträge.
+Drittens folgt der Journal-Nachweis der dauerhaften Integration. Bei einem Handoff-Punkt werden zuerst Quelle und aktuelles Ziel geprüft, anschließend wird der dauerhafte Inhalt integriert oder begründet verworfen. Danach entsteht der Journal-Eintrag und der Punkt wird aus `handoff.md` entfernt.
 
-Zweitens dokumentiert das Journal Sackgassen mit Begründung. Was versucht und verworfen wurde, ist genauso wertvoll wie was umgesetzt wurde; Sackgassen verhindern, dass spätere Sessions denselben Pfad noch einmal gehen. Eine Sackgasse ohne Begründung ist eine vergessene, keine dokumentierte.
-
-Drittens trennt das Journal Genese von Ergebnis. Was am Ende einer Session steht, gehört nicht ins Journal, sondern in `specification.md` oder `architecture.md`. Was am Anfang stand und welche Schritte zum Ergebnis führten, gehört ins Journal. Diese Trennung verhindert Doppelpflege.
+Viertens verdichtet das Journal semantisch. Jede substantielle Aussage des Vorgängerstands erhält eine Disposition, nämlich behalten, in ein kanonisches Ziel integrieren, begründet verwerfen oder ausschließlich über Git bewahren. Eine temporäre Deckungsliste sichert diese Prüfung und wird danach entfernt.
 
 ## Frontmatter-Schema
 
-Das Journal folgt dem Frontmatter-Schema aus der [Konvention Promptotyping Documents](#konvention-v0.1) (Pflichtkern: `title, project, method, status, created, updated`). Spezifisch für das Journal:
+Das Journal folgt dem Pflichtkern aus [Konvention Promptotyping Documents](#konvention-v0.1). Spezifisch für die Provenance-Funktion gelten folgende Felder.
 
-- `topics:` entfällt typischerweise. Das Journal ist Process-Dokument und trägt keine domänen-thematische Verortung; die thematischen Topics leben in den Knowledge-Geschwistern.
-- `related:` listet typischerweise `project`, `specification` und gegebenenfalls `decisions`, weil diese Dokumente die im Journal dokumentierte Genese als Ergebnis tragen.
-- `knowledge-sources:` entfällt; das Journal trägt keine externen Anschlüsse.
-- `updated:` wird bei jedem neuen Eintrag aktualisiert; das Feld ist eines der am häufigsten geänderten in der Wissensbasis.
+- `status:` ist immer `active`.
+- `related:` enthält mindestens `handoff` und typischerweise `project` sowie `specification`.
+- `topics:` und `knowledge-sources:` entfallen üblicherweise.
+- `updated:` wird nach einem neuen Eintrag oder einer Verdichtung angepasst.
 
 ## Abschnitte im Detail
 
 ### Lead
 
-Funktion: in zwei bis drei Sätzen klar machen, was das Journal dokumentiert und was nicht. Inhalt: Charakter als Erzählung der Iterationen, ausdrückliche Negation der Vollständigkeit (einzelne Commits stehen in der Git-History, nicht im Journal), Adressatenkreis. Der Lead positioniert das Journal gegen Git-Log und Sessionprotokoll: es ist weder das eine noch das andere.
+Der Lead benennt die Funktion als kuratierten rückwärtsgerichteten Provenienzindex und verweist auf die Zuständigkeit der Geschwister-Dokumente für aktuelle Inhalte.
 
 ### Einträge
 
-Funktion: chronologische Dokumentation des Arbeitsverlaufs. Inhalt: pro Eintrag ein Datum als Heading (`### YYYY-MM-DD Sessiontitel`), darunter Ziel, Verlauf, Ergebnis, Dead Ends. Reihenfolge der Einträge: neueste zuerst oder älteste zuerst; entscheidend ist Konsistenz innerhalb des Journals. Bei langen Projekten kann eine Aggregierung zu monatlichen Zwischenüberschriften die Lesbarkeit verbessern.
+Die Einträge stehen in konsistenter chronologischer Ordnung. Die Überschrift enthält Datum, Typ und Gegenstand. Der Inhalt nennt Quelle, Ziel und Ergebnis. Ein Verwerfungsgrund ersetzt bei `verworfen` das Zielergebnis; `korrigiert` referenziert zusätzlich die frühere Aussage.
 
-Pro Eintrag:
+### Verdichtungsnachweis
 
-- Datum (kein Uhrzeit-Zusatz, weil Sessions nicht stundengenau geführt werden).
-- Ziel der Session in einem Satz.
-- Verlauf in zwei bis vier Absätzen Prosa. Was tatsächlich passiert ist, nicht was geplant war.
-- Ergebnis in einem Absatz. Was steht am Ende, was ist offen.
-- Dead Ends optional. Was wurde versucht und verworfen, mit Begründung.
-
-### Aggregations-Sektionen
-
-Funktion: bei langen Journalen die Lesbarkeit erhalten. Inhalt: Zwischenüberschriften, die mehrere Einträge bündeln (`## Mai 2026`, `## Phase 1: Datenmodellierung`). Wann sinnvoll: ab etwa zwanzig Einträgen oder wenn das Journal sich in inhaltlich abgrenzbare Phasen teilen lässt. Bei kürzeren Journalen entfällt die Sektion.
+Ein `verdichtet`-Eintrag nennt Bereich, Git-Ausgangsstand und Ergebnis. Vor der Verdichtung muss ein sauberer Git-Ausgangsstand vorliegen. Pfade, Anker und Hashes werden gegen den resultierenden Stand geprüft. Die temporäre Deckungsliste wird nach der Prüfung gelöscht.
 
 ## Was nicht reingehört
 
-- Spezifikation. Was am Ende einer Session entschieden wurde, gehört in die Decisions-Sektion von `specification.md`, nicht ins Journal.
-- Stundengenaue Sessionprotokolle. Das Journal verdichtet, es protokolliert nicht.
-- Persönliche Notizen oder Stimmungsbilder. Das Journal ist Repo-Substrat, nicht Tagebuch.
-- Code-Diffs oder Commit-Messages. Diese liegen in der Git-History; das Journal verweist gegebenenfalls auf Commits, kopiert sie aber nicht.
+- Aktueller Projektstatus und offene Aufgaben.
+- Angenommene Zukunftsarbeit, sie liegt in `plan.md`.
+- Offene Übergabepunkte, sie liegen in `handoff.md`.
+- Ausführliche Prüfresultate, sie liegen in `verification.md`.
+- Kopien von dauerhaftem Sachwissen oder Handlungsregeln.
+- Sessionprotokolle, Code-Diffs und vollständige Commit-Messages.
+- Starre Verdichtungsschwellen, ein Fenster der jüngsten Einträge oder ein `journal-archive.md`.
 
 ## Vorlage zum Befüllen
-
-Der folgende Block ist als Template gedacht.
 
 ````markdown
 ---
@@ -80,65 +74,90 @@ title: Journal
 project:
   name: [Projektname]
   repository: [Repository-URL]
-status: complete
+method:
+  name: Promptotyping
+  url: https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin
+status: active
 language: [de | en]
 version: [Repo-Schema-Version]
 created: [YYYY-MM-DD]
 updated: [YYYY-MM-DD]
 authors: [Autor 1, Autor 2]
 generated-with: [Harness (LLM), falls relevant]
-method:
-  name: Promptotyping
-  url: https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin
 template:
   name: Vorlage Journal
-  version: 0.1
+  version: 0.4
   url: https://dhcraft.org/Promptotyping/promptotyping-document/journal
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-journal
-related: [project, specification]
+related: [project, specification, handoff]
 ---
 
-<!-- Lead: zwei bis drei Sätze. Was das Journal dokumentiert, was nicht. Negation gegen Git-Log und Sessionprotokoll. -->
+# Journal
 
-[Lead-Absatz]
+Dieses Journal ist der kuratierte rückwärtsgerichtete Provenienzindex des Projekts. Aktuelle Sach- und Handlungsinhalte stehen in den zuständigen Declarative oder Action Documents, Zukunftsarbeit in `plan.md`, offene Eingänge in `handoff.md` und Prüfresultate in `verification.md`.
 
 ## Einträge
 
-<!-- Reihenfolge: neueste zuerst oder älteste zuerst, konsistent halten. Pro Eintrag: Datum, Ziel, Verlauf, Ergebnis, Dead Ends optional. -->
+<!-- Ein Eintrag pro sachlich zusammengehörigem Übergang. Zulässige Inhaltstypen sind integriert, verworfen und korrigiert. Verdichtet ist ein seltener Wartungstyp. -->
 
-### YYYY-MM-DD Sessiontitel
+### YYYY-MM-DD integriert [Gegenstand]
 
-Ziel. [Ein Satz.]
+- Quelle: [überprüfbarer Pfad, Nachricht oder Commit]
+- Ziel: [kanonisches Declarative oder Action Document]
+- Ergebnis: [knapper Nachweis der Integration]
 
-Verlauf. [Zwei bis vier Absätze Prosa. Was tatsächlich passiert ist, nicht was geplant war.]
+### YYYY-MM-DD verworfen [Gegenstand]
 
-Ergebnis. [Ein Absatz. Was steht am Ende, was ist offen.]
+- Quelle: [überprüfbarer Pfad, Nachricht oder Commit]
+- Ziel: [geprüftes kanonisches Ziel]
+- Verwerfungsgrund: [fachlicher, technischer oder wissenschaftlicher Grund]
 
-Dead Ends. [Optional. Was versucht und verworfen wurde, mit Begründung.]
+### YYYY-MM-DD korrigiert [Gegenstand]
 
-### YYYY-MM-DD Vorheriger Sessiontitel
+- Quelle: [frühere Aussage und neue Evidenz]
+- Ziel: [kanonisches Dokument mit gültiger Fassung]
+- Ergebnis: [Korrektur und ihre Auswirkung]
 
-[...]
+<!-- Seltener Wartungseintrag nach semantischer Verdichtung:
+
+### YYYY-MM-DD verdichtet [Bereich]
+
+- Vorgängerstand: [Git-Commit oder anderer eindeutiger Git-Ausgangsstand]
+- Bereich: [geprüfte Einträge oder Sektionen]
+- Ergebnis: [behaltene, integrierte, verworfene und ausschließlich über Git bewahrte Aussagen]
+-->
 ````
 
 ## Anwendung als Prompt-Template
 
-Strukturanker pro Session. Am Ende einer Arbeitssession trägt der Agent oder der menschliche Bearbeiter einen neuen Eintrag ein. Beim Wiederaufnehmen einer Session liest der Agent zuerst den letzten Journal-Eintrag, um den Stand zu erfassen, bevor er andere Dokumente konsultiert. Das Journal ist die wichtigste Form von Process-Memory in der Wissensbasis (Context Engineering, siehe Glossar).
+Bei einem sachlich zusammengehörigen Übergang wird zuerst der dauerhafte Zielinhalt aktualisiert. Danach ergänzt der Agent den passenden Journal-Eintrag. Für einen Handoff-Punkt folgt anschließend dessen vollständige Entfernung aus `handoff.md`.
 
-Review-Folie für ein bestehendes Journal. Ein vorhandenes Journal wird gegen die Vorlage gehalten, um zu prüfen, ob die Einträge die geforderte Struktur (Ziel, Verlauf, Ergebnis, Dead Ends) tragen, ob die chronologische Reihenfolge konsistent ist, und ob spätere Korrekturen als neue Einträge mit Verweis stehen statt als Edits am alten.
+Eine Verdichtung beginnt auf einem sauberen Git-Ausgangsstand. Der Agent erstellt vorübergehend eine Deckungsliste aller substantiellen Aussagen und weist jeder Aussage eine Disposition zu. Nach der Übernahme werden Pfade, Anker und Hashes geprüft. Die Deckungsliste wird entfernt und ein `verdichtet`-Eintrag referenziert den Vorgängerstand. Ein Archivdokument entsteht dabei nicht.
+
+Der Review prüft, ob jeder Eintrag einen sachlichen Übergang abbildet, ob aktueller Status, Zukunftsarbeit, offene Eingänge und Prüfdetails an ihren zuständigen Orten liegen und ob jeder Verdichtungsnachweis einen überprüfbaren Vorgängerstand nennt.
 
 ## Beispiel
 
-HerData führt ein Journal, das die Promptotyping-Iterationen als zusammenhängende Erzählung verdichtet. Charakteristisch ist der erste Satz nach dem Lead: "Es ist keine vollständige Session-Chronik (einzelne Commits stehen in der Git-History), sondern ein lesbarer Rückblick." Diese Negation positioniert das Journal explizit gegen Git-Log und gibt dem Leser den richtigen Erwartungshorizont.
+Ein offener Handoff-Punkt liefert eine neue Schemainvariante. Nach Prüfung wird die Variante in `data-schema.md` integriert. Das Journal erhält einen Eintrag vom Typ `integriert` mit Quelle, Ziel und Ergebnis; anschließend wird der Handoff-Punkt entfernt.
 
 ## Begriffe
 
-- Eintrag: einzelne datierte Einheit im Journal, deckt eine Session oder eine inhaltlich abgegrenzte Phase ab.
-- Dead End: dokumentierter Versuch, der nicht zum Ziel führte, mit Begründung warum er verworfen wurde.
-- Process-Memory: Eigenschaft eines Dokuments, vergangene Arbeitsstände auch nach späteren Korrekturen lesbar zu halten; die definierende Eigenschaft eines Journals.
+- Provenienzindex: kuratierte Rückwärtsreferenz auf sachliche Übergänge und ihre überprüfbaren Quellen.
+- Disposition: Entscheidung für eine substantielle Aussage bei der Verdichtung, nämlich behalten, integrieren, verwerfen oder ausschließlich über Git bewahren.
+- Vorgängerstand: sauberer Git-Ausgangsstand, gegen den eine Verdichtung vollständig geprüft wird.
+
+## Versionshistorie
+
+- 0.4 (2026-08-21): Journal als kuratierten Provenienzindex gefasst. Inhaltstypen, Handoff-Reihenfolge und semantische Verdichtung ohne Archiv normiert.
+- 0.2 (2026-07-19): Englisches Funktionsvokabular (Provenance), Block-Status auf `active`, Lebenszyklus-Absatz.
+- 0.1 (2026-05-09): Erstfassung.
 
 ## Related
 
-- [Vorlage Projekt-Wissensdokument](#promptotyping-document-project)
-- [Vorlage Specification](#promptotyping-document-specification)
+- [Vorlagen Promptotyping Documents](#vorlagen)
 - [Konvention Promptotyping Documents](#konvention-v0.1)
+- [Promptotyping](#ueberblick)
+- Context Engineering
+- [Vorlage Handoff](#promptotyping-document-handoff)
+- [Vorlage Plan](#promptotyping-document-plan)
+- [Vorlage Verification](#promptotyping-document-verification)

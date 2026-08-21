@@ -1,16 +1,16 @@
 ---
 title: Vorlage Verification
 slug: verification
-version: "0.1"
+version: "0.2"
 status: complete
 source: Vorlage Verification
-mirrored: 2026-07-19
+mirrored: 2026-08-21
 machine-url: https://dhcraft.org/Promptotyping/_content/promptotyping-document/verification.md
 ---
 
 # Vorlage Verification
 
-Diese Vorlage strukturiert das Verification-Dokument einer Promptotyping-Wissensbasis. Das resultierende Dokument heißt typischerweise `verification.md` (auch `verifikation.md` oder `conformance-*.md`) und liegt im `knowledge/`-Ordner des Repos. Es trägt die adversariale Prüfung der eigenen empirischen und Neuheits-Claims gegen die Rohdaten: welche Behauptungen das Projekt außenwirksam erhebt, mit welchem Verfahren sie zu widerlegen versucht wurden, welches Verdikt jede Behauptung trägt und was die Prüfung strukturell nicht leisten kann. Der erste Absatz unter der H1 trägt den Zweck in einem Satz. Empirische Basis der Vorlage sind kisug (Anti-Anchoring, Zweitprüfer aus fremder Modellfamilie), FemPrompt (Fünf-Klassen-Befundvokabular mit Migrationskonsequenz) und szd-htr-ocr-pipeline (dreistufiges Review-Modell mit maschinenlesbarem Pendant); Extraktion im Inhaltsaudit vom 2026-07-19.
+Diese Vorlage strukturiert das Verification-Dokument einer Promptotyping-Wissensbasis. Ein einzelner Träger heißt `verification.md`; getrennte Prüfgegenstände werden als `<subject>-verification.md` spezialisiert. Das Dokument liegt im `knowledge/`-Ordner und trägt die adversariale Prüfung eigener empirischer und Neuheits-Claims gegen die Rohdaten. Der erste Absatz bestätigt die über den Dateinamen geroutete Funktion.
 
 ## Geltungsbereich
 
@@ -18,7 +18,7 @@ Die Vorlage trägt, sobald das Projekt empirische Befunde oder Neuheitsansprüch
 
 Lebenszyklus: das Dokument entsteht, bevor der erste außenwirksame Claim das Projekt verlässt, nicht danach; eine nachgereichte Verification prüft eine bereits publizierte Formulierung und kann sie nur noch einschränken. Aktualisiert wird es bei jedem neuen Claim und jedem Prüflauf; am Projektende bleibt es als finaler Prüfstand stehen, weil die Bindungsregel für publizierte Formulierungen fortgilt.
 
-Verification ist von drei Nachbarfunktionen abgegrenzt. Quality Assurance (`testing.md`) prüft Systemverhalten gegen die Spezifikation, ob Code und Pipeline tun, was sie sollen; Verification prüft, ob inhaltliche Behauptungen durch die Rohdaten gedeckt sind. Reporting (`report.md`) berichtet Ergebnisse an einen externen Adressaten; Verification prüft deren Belastbarkeit, bevor sie berichtet werden. Provenance (`journal.md`) hält den chronologischen Entscheidungsverlauf; Verification ist die synchrone, antagonistische Prüfung einer Behauptung gegen ihren Beleg.
+Verification ist von drei Nachbarfunktionen abgegrenzt. Quality Assurance (`testing.md`) prüft Systemverhalten gegen die Spezifikation, ob Code und Pipeline tun, was sie sollen; Verification prüft, ob inhaltliche Behauptungen durch die Rohdaten gedeckt sind. Reporting unter `snapshots/` kommuniziert Ergebnisse an einen externen Adressaten; Verification prüft deren Belastbarkeit, bevor sie berichtet werden. Provenance (`journal.md`) hält den chronologischen Entscheidungsverlauf; Verification ist die synchrone, antagonistische Prüfung einer Behauptung gegen ihren Beleg.
 
 ## Funktion des Dokuments
 
@@ -42,7 +42,7 @@ Pflichtkern der Konvention (`title`, `project`, `method`, `status`, `created`, `
 - `verdict-vocabulary:` Verweis auf die Sektion, die das Vokabular definiert, oder Kurzform (`fünfstufig`, `dreistufig`).
 - `output-of:` trägt den Befehl, der das Dokument erzeugt, und wird gesetzt, sobald ein Prüfskript den Befund aus den Prüfläufen rendert. Steht das Feld, wird das Dokument nicht von Hand bearbeitet und eine Korrektur geht an das Skript. Bleibt die Prosa des Dokuments menschlich verantwortet und nur das Befundregister maschinell gefüllt, wandert das Register in eine eigene Datei und das Feld steht dort.
 - `authors:` trägt ausschließlich Menschen, auch wenn ein LLM den Text erzeugt hat; `generated-with:` nennt Harness und LLM im Format `Harness (LLM)`, etwa `Claude Code (Claude Opus 5)`. Zu allen drei Feldern siehe Sektion *Provenienz im Frontmatter* der [Konvention Promptotyping Documents](#konvention-v0.1).
-- `related:` typischerweise `data`, `journal`, `report`, `testing`.
+- `related:` typischerweise `data`, `journal`, `testing` und der konkrete datierte Report unter `snapshots/`, falls einer existiert.
 
 ## Abschnitte im Detail
 
@@ -85,7 +85,7 @@ Funktion: aussprechen, was das Verfahren strukturell nicht leisten kann. Inhalt:
 ## Was nicht reingehört
 
 - Systemtests. Ob Code und Pipeline funktionieren, gehört in `testing.md`; hier geht es um inhaltliche Behauptungen.
-- Berichtsprosa. Die außenwirksame Darstellung der Ergebnisse gehört in `report.md`; Verification lizenziert sie nur.
+- Berichtsprosa. Die außenwirksame Darstellung der Ergebnisse gehört in den datierten Report unter `snapshots/`; Verification lizenziert sie nur.
 - Chronologie. Wann welche Prüfung lief und was dabei entschieden wurde, gehört in `journal.md`; hier steht der aktuelle Prüfstand pro Claim.
 - Rohdaten-Beschreibung. Was die Daten sind, gehört in `data.md`; hier steht nur der Prüfstand-Verweis.
 
@@ -102,7 +102,7 @@ method:
   url: https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin
 template:
   name: Vorlage Verification
-  version: 0.1
+  version: 0.2
   url: https://dhcraft.org/Promptotyping/promptotyping-document/verification
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-verification
 status: draft
@@ -113,7 +113,7 @@ updated: [YYYY-MM-DD]
 scope: [empirical-claims | novelty-claims | conformance]
 prüfstand: [Pfad oder Bezeichnung der Referenzquelle]
 verdict-vocabulary: [fünfstufig | dreistufig | Verweis auf Sektion]
-related: [data, journal, report, testing]
+related: [data, journal, testing]
 ---
 
 # Verification
@@ -183,7 +183,7 @@ related: [data, journal, report, testing]
 
 ## Anwendung als Prompt-Template
 
-Strukturanker beim Aufsetzen der Verification. Der Agent erhält den Template-Block, die Liste der außenwirksamen Claims (aus `report.md`, Paper-Entwurf oder `project.md`) und den Prüfstand-Pfad; er befüllt Prüfgegenstand, Vokabular und Prüfkette, führt die Stufen 1 und 2 aus und übergibt die Stufe-3-Entscheidungen als offene Befunde an den Operator. Die Neuheits-Claims-Sektion verlangt eine Webrecherche mit Widerlegungsziel.
+Strukturanker beim Aufsetzen der Verification. Der Agent erhält den Template-Block, die Liste der außenwirksamen Claims aus datierten Reports, Research Artefacts oder `project.md` und den Prüfstand-Pfad. Er befüllt Prüfgegenstand, Vokabular und Prüfkette, führt die maschinellen Stufen aus und übergibt die bindenden Entscheidungen als offene Befunde an den Operator. Die Neuheits-Claims-Sektion verlangt eine Webrecherche mit Widerlegungsziel.
 
 Review-Folie für eine bestehende Verification. Ein vorhandenes Dokument wird gegen die Vorlage gehalten, um zu prüfen, ob die Grundhaltung adversarial ist (Widerlegung als Ziel formuliert), ob das Verdikt-Vokabular geschlossen ist und Konsequenzen trägt, ob die menschliche Stufe als einzige statuserzeugende Instanz ausgewiesen ist, ob die Neuheits-Claims überhaupt geprüft werden und ob die Grenzen-Sektion existiert.
 
@@ -202,6 +202,7 @@ kisug führt den strengsten Mechanismus des Bestands: adversariale Verifikation 
 
 ## Versionshistorie
 
+- 0.2 (2026-08-21): Naming Contract übernommen. Einzelträger heißt `verification.md`, Spezialisierungen folgen `<subject>-verification.md`; Reports werden als datierte Snapshots referenziert.
 - 0.1 (2026-07-19): Erstfassung, empirisch extrahiert aus kisug, FemPrompt und szd-htr-ocr-pipeline; Neuheits-Claims-Sektion als nicht empirisch belegter Eigenbeitrag. Freigegeben am 2026-07-19.
 
 ## Related

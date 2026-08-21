@@ -18,7 +18,7 @@ template:
   version: 0.2
   url: https://dhcraft.org/Promptotyping/promptotyping-document/report
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-report
-related: [paper-writing, journal, project]
+related: [paper-specification, journal, project]
 ---
 
 # Report Lane-Durchgang ZfdG-Einreichung
@@ -27,7 +27,7 @@ Stichtagsbericht zum parallelen Lane-Durchgang vom 2026-07-23 mit dem Ziel, das 
 
 ## Nachtrag 2026-07-24
 
-Der Bericht beschreibt den Stand vor der Revision und wird darüber hinaus nicht fortgeschrieben. Das hier genannte Steuerdokument `paper-writing.md` ist am 2026-07-30 nach `paper-knowledge.md` konsolidiert und gelöscht worden; es wird als Name des damaligen Stands geführt und nicht mehr verlinkt, sein Wortlaut liegt commit-gepinnt in der Git-History. Was aus seinen Abnahme-Listen geworden ist, in Kürze. Die Feinschliff-Kandidaten sind bis auf den als optional geführten Bayerschmidt-Vorschlag und die Formalia des Punkts 16 eingearbeitet; der Belegdurchgang dazu steht im Entscheidungsstand von `paper-writing.md`. Die Site-Variante 2 ist als `#vorlagen`-Hub umgesetzt und in `specification.md` (A19) spezifiziert; die vault-first-Freigabe der Vorlage Technology steht weiter aus. Die Notker-Fußnote ist gesetzt. Die Erfahrungswerte sind teilweise erledigt, indem Aktivitätsquantitäten aus dem Papertext entfernt wurden; Dauer- und Kostenangaben bleiben als Erfahrungswerte und als Operator-Bestätigung offen.
+Der Bericht beschreibt den Stand vor der Revision und wird darüber hinaus nicht fortgeschrieben. Das hier genannte Steuerdokument `paper-writing.md` ist am 2026-07-30 in das heutige `knowledge/paper-specification.md` konsolidiert und gelöscht worden; es wird als Name des damaligen Stands geführt und nicht mehr verlinkt, sein Wortlaut liegt commit-gepinnt in der Git-History. Was aus seinen Abnahme-Listen geworden ist, in Kürze. Die Feinschliff-Kandidaten sind bis auf den als optional geführten Bayerschmidt-Vorschlag und die Formalia des Punkts 16 eingearbeitet; der Belegdurchgang dazu steht im Entscheidungsstand von `paper-writing.md`. Die Site-Variante 2 ist als `#vorlagen`-Hub umgesetzt und in `specification.md` (A19) spezifiziert; die vault-first-Freigabe der Vorlage Technology steht weiter aus. Die Notker-Fußnote ist gesetzt. Die Erfahrungswerte sind teilweise erledigt, indem Aktivitätsquantitäten aus dem Papertext entfernt wurden; Dauer- und Kostenangaben bleiben als Erfahrungswerte und als Operator-Bestätigung offen.
 
 Die Revision vom 2026-07-24 hat den Text danach an tragenden Stellen geändert, unter anderem Abstract, Rahmung, Sektionsschnitt und Evidenzteil. Die Aussagen dieses Berichts über den Papertext beziehen sich auf den Stand davor. Offen und operatorabhängig sind jetzt die Sichtbarkeit der drei geschlossenen Repositorien, die Freigabe von Lehr- und Workshop-Material für die Belegschicht, der Titel, das Herkunftsfeld im Schema der Belegschicht, und der ZfdG-Review-Modus.
 
@@ -37,7 +37,7 @@ Sieben Opus-Subagenten in zwei Wellen, dazu Koordinator-Arbeit (Fable 5). Welle 
 
 ## Status quo
 
-**Paper** (`knowledge/paper.md`): Introduction und Sektion 2 waren durch; der Sprachpass 3–7 ist gelaufen, das Edition-Exemplar 5.3 ist die Notker-Edition (faktenverifiziert am realen Repo `DigitalHumanitiesCraft/notker-edition`), Lucina ist vollständig entfernt, die Reasoning-Prompt-Seitenlinie ist vollständig entfernt, zehn von elf offenen Referenzen sind quellengeprüft gefüllt. Es bleiben die in `paper-writing.md` geführten Prüfpunkte, darunter Abstract-Neufassung (zuletzt), Quantitäten-Bereinigung, Diss-Seitenzahlen, Grallert-Heftangabe.
+**Paper** (damals `knowledge/paper.md`, heute `research-artefacts/promptotyping-paper.md`): Introduction und Sektion 2 waren durch; der Sprachpass 3–7 ist gelaufen, das Edition-Exemplar 5.3 ist die Notker-Edition (faktenverifiziert am realen Repo `DigitalHumanitiesCraft/notker-edition`), Lucina ist vollständig entfernt, die Reasoning-Prompt-Seitenlinie ist vollständig entfernt, zehn von elf offenen Referenzen sind quellengeprüft gefüllt. Es bleiben die in `paper-writing.md` geführten Prüfpunkte, darunter Abstract-Neufassung (zuletzt), Quantitäten-Bereinigung, Diss-Seitenzahlen, Grallert-Heftangabe.
 
 **Repository**: LICENSE (MIT plus CC-BY-4.0-Inhaltsklausel), präziser Licence-Abschnitt, `CITATION.cff` konsistent mit `license: MIT`, README als Landkarte inklusive Paper-Abschnitt, Videos, Use-Case-Verweis. Technology Baseline und Vorlagen-Entwurf Technology liegen als publizierte Entwürfe.
 

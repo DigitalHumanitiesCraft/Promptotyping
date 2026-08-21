@@ -46,7 +46,7 @@
   }
 
   /* Normalise line endings and strip a leading YAML frontmatter block.
-     knowledge/paper.md is headerless and starts with its H1. */
+     research-artefacts/promptotyping-paper.md is headerless and starts with its H1. */
   function stripFrontmatter(text) {
     return text.replace(/\r\n?/g, "\n").replace(/^---\n[\s\S]*?\n---\n?/, "");
   }

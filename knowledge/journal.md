@@ -7,7 +7,7 @@ status: active
 language: de
 version: 1.0
 created: 2026-05-09
-updated: 2026-08-17
+updated: 2026-08-21
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 method:
@@ -15,10 +15,10 @@ method:
   url: https://dhcraft.org/Promptotyping/
 template:
   name: Vorlage Journal
-  version: 0.3
+  version: 0.4
   url: https://dhcraft.org/Promptotyping/promptotyping-document/journal
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-journal
-related: [INDEX, project, specification, architecture, design]
+related: [INDEX, project, specification, architecture, design, handoff]
 ---
 
 # Journal
@@ -28,6 +28,8 @@ Das Journal hält den Arbeitsverlauf dieses Repos als Erzählung der Promptotypi
 Am 2026-07-26 sind alle Einträge auf das Schema der Vorlage Journal normalisiert worden, in Reihenfolge, Überschriftenebene und Laufmarken. Die Aussagen der Einträge sind dabei unverändert geblieben.
 
 Am 2026-07-27 ist das Dokument erstmals verdichtet worden, nach dem ersten Strukturprinzip der Vorlage Journal in Version 0.3. Betroffen sind Mai und Juni sowie der 19. bis 25. Juli, deren Einträge zusammengeführt und von Wiederholung befreit sind; die Runden ab dem 25. Juli, zweite Hälfte, stehen unverdichtet, weil sie den laufenden Arbeitskontext tragen. Jede Entscheidung, jede Sackgasse, jede Begründung und jeder benannte Dateiname ist erhalten. Was gefallen ist, sind die Absatz-für-Absatz-Aufzählungen jener Wissensdokument-Änderungen, deren Ergebnis heute in `specification.md`, `architecture.md` und `design.md` steht. Die Form ist damit jünger als die Einträge, den Wortlaut vor der Verdichtung hält die Git-History.
+
+Die bestehende Erzählstruktur bleibt bis zur projektspezifischen Migration erhalten. Neue Nachweise folgen der Vorlagenversion 0.4 und dokumentieren sachlich zusammengehörige Übergänge mit Quelle, Ziel und Ergebnis.
 
 ## Mai 2026
 
@@ -179,7 +181,7 @@ E1 ist entschieden, es wird die ZfdG, nach Abwägung gegen DHQ, IJDH, DSH und TG
 
 Vier Opus-Runden liefen anschließend auf `paper.md`, jeweils vom Koordinator gegen den realen Dateistand verifiziert. Die erste vollendete den Umbau (`cc34357`, `75747f8`) mit der Sektion 3.4 „Documents as Conceptual Models" und dem Worked Example nach 3.5. Die zweite nahm sich Marker und Apparat vor (`e8b41bd`), alle Klammermarker sind aufgelöst, nach der Operator-Regel, nie Seitenzahlen zu setzen; die Referenzen sind bibliographisch verifiziert, unter anderem Grallert final in DHQ 20.1 und Liu bei TOSEM angenommen, dazu der Video-Absatz 3.2, der Ethik-Absatz 6.4 über asymmetrische Amplifikation und die Acknowledgements mit Verantwortungsklausel; der Audit-Fallblock ist auf Operator-Entscheidung aus 5.3 entfernt, FemPrompt bleibt im Inventar. Die dritte war die Politur (`f5fb3cd`) mit fünf Redundanzschnitten, drei gestrichenen leeren Etikettsätzen, entfernten Commit-Zahlen und der entfernten Angabe „22 universities" als flüchtigen Aktivitätsquantitäten, Standards-Fußnoten für TEI, XML, RDF, OWL und TaDiRAH, festgehalten als Regeln 20 und 21 in `paper-writing.md`; die 5.2-Formationsphase ist konzeptionell kollektiv gefasst, eine Komponenten-zu-Projekt-Zuordnung wird bewusst nicht behauptet. Die vierte war ein Koordinator-Nachtrag, der die Bookkeeping Ontology mit Pollin 2019 zitiert und die Selbstzitationen kreuzprüft.
 
-Parallel entstand `submission-zfdg.md` (`a8025bf`) mit Exposé, den Kurz-Abstracts innerhalb der Zeichengrenze und der Formalia-Checkliste; die Review-Modus-Entscheidung ist auf Operator-Wunsch in die Vault-ACTIVE-WORK verlagert. Der konsolidierte Stichtagsbericht [report.md](report.md) führt die Feinschliff-Kandidaten, die offenen Operator-Punkte und die definierte Grounded-Vault-Nachzieh-Runde.
+Parallel entstand `submission-zfdg.md` (`a8025bf`) mit Exposé, den Kurz-Abstracts innerhalb der Zeichengrenze und der Formalia-Checkliste; die Review-Modus-Entscheidung ist auf Operator-Wunsch in die Vault-ACTIVE-WORK verlagert. Der konsolidierte Stichtagsbericht [report.md](../snapshots/paper-zfdg-submission-report-2026-07-23.md), heute als datierter Snapshot abgelegt, führt die Feinschliff-Kandidaten, die offenen Operator-Punkte und die definierte Grounded-Vault-Nachzieh-Runde.
 
 **Ergebnis.** `paper.md` ist vollständiger Draft zur Operator-Lektüre, ohne offene Marker und mit verifizierten Referenzen, die End-Verifikation gegen die vier Kernverbote ist bestanden. Offen bleibt die vault-first-Aufnahme der Vorlage Technology in den Katalog, die eine echte Vault-Sitzung braucht. Zwei Operator-Ideen sind bewusst außerhalb dieses Repos geparkt und brauchen bei Aufnahme einen eigenen Diskurs, die repoübergreifende Verknüpfung von Promptotyping-Wissensbasen über `template:`- und Frontmatter-Metadaten, und die Exploration von DH-Publikationskorpora mit Opus-Subagenten, typologisch ein Exploration-Interface und ein kanonischer Anwendungsfall, zu starten als eigenes Repo.
 
@@ -875,3 +877,15 @@ Nachtrag, gleiche Session: Stilkonformanz-Pass über den ganzen Vierkapitel-Text
 ## 2026-08-17 — Project Governance als eigene Knowledge-Base-Funktion
 
 Der Methodenbestand erhält `knowledge/governance.md` als projektweites Action Document. Es bündelt Autorität, Quellen- und Evidenzstatus, Schreibgrenzen, Verifikation, fachliche Validierung, Annahme, Write-back, Rechte, Veröffentlichung und Eskalation. `CLAUDE.md` lädt das Dokument vor jeder relevanten Änderung, `INDEX.md` führt es in Navigation und Glossar. Die Governance-Funktion ist im Obsidian-Vault in der Konvention der Promptotyping Documents registriert; eine allgemeine Vorlage wird aus mehreren überprüften Projektinstanzen destilliert. Research Mission Control bleibt eine optionale Orchestrierungsarchitektur für komplexe Promptotyping-Projekte.
+
+## 2026-08-21 — Naming Contract und Artefakttrennung
+
+Die kanonische Vault-Konvention macht Dateinamen zum primären Routing-Signal. Das Methoden-Repository übernimmt die Regel mit englischen Funktionsnamen, lowercase kebab-case, den Sondernamen `INDEX.md` und `CLAUDE.md` sowie Spezialisierungen nach `<subject>-<function>.md`. Routing-Qualität wird im Arbeitsalltag an Fehlleitungen geprüft; ein Mess-Benchmark gehört nicht zur Methode.
+
+Der dauerhafte `knowledge/`-Kern ist von den übrigen Artefaktklassen getrennt. Das Manuskript liegt unter `research-artefacts/promptotyping-paper.md`, seine Steuerung heißt `knowledge/paper-specification.md`. Die bereinigten Video-Transkripte liegen unter `source-material/video-scripts/`. Der Lane-Bericht und die Übergabe führen Scope und Datum unter `snapshots/` beziehungsweise `handoffs/`. Die Site lädt den neuen Manuskriptpfad, während der öffentliche `#paper`-Anker und sämtliche Template-URLs unverändert bleiben.
+
+## 2026-08-21 integriert Handoff Process Inbox und Journalmethode
+
+- Quelle: kanonische Vault-Konvention und Vorlagen vom 2026-08-21
+- Ziel: `knowledge/handoff.md`, Action-Layer, öffentliche Konvention, Vorlagenspiegel und Konsistenzprüfung
+- Ergebnis: Jedes Promptotyping-Projekt führt eine aktive Process Inbox. Journal-Einträge weisen sachliche Übergänge nach; die semantische Verdichtung arbeitet ohne Schwellen und ohne Archivdatei.

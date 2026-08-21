@@ -60,7 +60,7 @@
 
     { id: "paper", label: "Paper", group: "Paper", kind: "informative",
       note: "Why the method is built this way, and whether it holds",
-      machine: "knowledge/paper.md" }
+      machine: "research-artefacts/promptotyping-paper.md" }
   ];
 
   var HOME_PAGE = "ueberblick";
