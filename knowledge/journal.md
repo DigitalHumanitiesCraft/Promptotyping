@@ -977,3 +977,9 @@ Der Operator bewertet den nach Version 0.9 verbesserten Manuskriptstand als Vers
 `paper-specification.md` führt dafür ein verbindliches Verfahren mit sechs Prüfdimensionen und sechs Abschlussbedingungen. `tools/paper_review.py` leitet die Prüfeinheiten verlustfrei aus dem kanonischen Manuskript ab und erzeugt keine zweite Textfassung. Der Ausgangsstand umfasst 27 Textsektionen, 142 Absatzblöcke, 588 Prüfeinheiten, 54 Literaturangaben und 34 Fußnoten. Sechs Regressionstests sichern Segmentierung, Trennung des Apparats und deterministische Ausgabe.
 
 Die aktiven Statusquellen in Action Layer, README, Project Document, Paper Specification, Technology Baseline und eingebettetem Paper-Vault nennen nun Version 0.9.1. Die neue Konsistenzprüfung V21 schützt diese Übereinstimmung. Die öffentlich zirkulierte Fassung und historische Records behalten Version 0.9; externe Kommentare werden vor einer Entscheidung auf die aktuelle Passage abgebildet. Der Manuskripttext selbst blieb in diesem Übergang unverändert.
+
+## 2026-08-22: Obsidian-Vault gegen Paper- und Portalstand synchronisiert
+
+Quelle war der geprüfte Übergabepunkt in `knowledge/handoff.md`. Ziel waren `ACTIVE-WORK.md`, das Repository-Verzeichnis, das Promptotyping MOC, die Vault-Zeiger auf das Paper und die zuständigen Leitstellen-Lanes.
+
+Der Vault führt nun v0.9.1 mit `research-artefacts/promptotyping-paper.md` als kanonischem Manuskript und Abschnitt 20 der Paper-Spezifikation als verbindlichem Prüfverfahren. Repositoryqualität und Portal sind als abgeschlossen eingeordnet; das gelöschte Interface-Repository ist aus dem Register entfernt und seine Studie als abgeschlossen und retiriert dokumentiert. Die spätere Satz-für-Satz-Abnahme des Papers blieb unberührt und steht als nächster inhaltlicher Arbeitsgang in ACTIVE-WORK. Nach der formal bestandenen Vault-Prüfung wurde der Übergabepunkt entfernt.
