@@ -402,8 +402,10 @@
           "load-bearing sentences rest on are built from those statements. The anchors " +
           "resolve downwards only, from the assertion to the source. An assertion opens in the " +
           "side panel with its statement and its anchors.</p>" +
-          '<p class="vault-repo-note"><a href="vault/" target="_blank" rel="noopener">' +
-          "Vault in the repository</a></p>" +
+          /* GitHub Pages serves no directory index, so the repository folder is
+             addressed on GitHub rather than under the site root. */
+          '<p class="vault-repo-note"><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/tree/main/vault" ' +
+          'target="_blank" rel="noopener">Vault in the repository</a></p>' +
           '<div class="vault-view-switch" role="group" aria-label="Vault view">' +
           '<button type="button" class="vault-chip active" data-view="list" ' +
           'aria-pressed="true">List</button>' +
