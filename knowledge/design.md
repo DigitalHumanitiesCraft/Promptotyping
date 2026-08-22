@@ -7,7 +7,7 @@ status: complete
 language: en
 version: 0.9
 created: 2026-05-09
-updated: 2026-07-31
+updated: 2026-08-22
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Opus 4.8)
 method:
@@ -161,7 +161,7 @@ The right-hand panel slides in from the right on a trigger.
 ### Triggers
 
 - A glossary term in the reading flow (dotted underline, `cursor: help`)
-- A clickable Vorlagen-table row
+- A template button in the first cell of each clickable Vorlagen-table row
 - A case-study card "Mehr" link
 - A literature reference in the paper
 
@@ -170,6 +170,8 @@ The right-hand panel slides in from the right on a trigger.
 - Open and close both animate as `transform` over 200ms `ease-out`. The stylesheet uses a single ease-out transition for both directions; an earlier draft claiming `ease-in` on close was wrong.
 - ESC closes the panel; a click outside the panel closes it.
 - One panel at a time. A new trigger replaces the panel content.
+- Tab and Shift+Tab remain within the open dialog; closing restores focus to the native control that opened it.
+- A Markdown response belongs to the panel request that initiated it. Closing the panel or opening another invalidates a pending response.
 - Opening a panel updates the URL hash (for example `#promptotyping-document-data`); browser back closes the panel.
 - Layering: panel `z-index: 25`, backdrop `z-index: 24`.
 
@@ -191,7 +193,7 @@ Glossary-defined terms render with a dotted grey underline (`1px dotted var(--gl
 
 ### Vorlagen table
 
-The method section of the reading flow renders a table of all mirrored templates (catalogue and function names follow the Vault convention, English since 2026-07-19). Rows carry `.vorlage-row`, are clickable and keyboard-focusable, and open the side panel with the full template spec; the focus-visible state draws a 2px outline.
+The method section of the reading flow renders a table of all mirrored templates (catalogue and function names follow the Vault convention, English since 2026-07-19). Rows carry `.vorlage-row` and remain clickable as a pointer surface. A native `.vorlage-open` button in the first cell provides the keyboard action without changing the row's table semantics; its focus-visible state draws a 2px outline.
 
 The Vorlagen hub adds two silent styling blocks:
 

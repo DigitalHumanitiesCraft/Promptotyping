@@ -20,8 +20,9 @@
 
         var rows = templateDocs.map(function (d) {
           return '<tr class="vorlage-row" id="promptotyping-document-' + d.slug + '" ' +
-            'tabindex="0" role="button" data-slug="' + d.slug + '">' +
-            "<td>" + A.escapeHtml(d.title) + "</td>" +
+            'data-slug="' + d.slug + '">' +
+            '<td><button type="button" class="vorlage-open">' +
+              A.escapeHtml(d.title) + "</button></td>" +
             "<td>" + A.escapeHtml(d.funktion) + "</td>" +
             '<td class="vorlagen-trigger">' + A.escapeHtml(d.trigger || "") + "</td>" +
             "<td><code>" + A.escapeHtml(d.datei) + "</code></td>" +
@@ -118,14 +119,14 @@
   function wireVorlagenRows(el) {
     el.querySelectorAll(".vorlage-row").forEach(function (row) {
       var slug = row.getAttribute("data-slug");
-      function open() { openTemplatePanel("promptotyping-document-" + slug); }
-      row.addEventListener("click", open);
-      row.addEventListener("keydown", function (e) {
-        if (e.key === "Enter" || e.key === " ") {
-          e.preventDefault();
-          open();
+      function open() {
+        var button = row.querySelector(".vorlage-open");
+        if (button) {
+          button.focus();
         }
-      });
+        openTemplatePanel("promptotyping-document-" + slug);
+      }
+      row.addEventListener("click", open);
     });
   }
 

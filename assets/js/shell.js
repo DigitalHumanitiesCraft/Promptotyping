@@ -9,6 +9,11 @@
      and HTML body. */
 
   var panelOpenerEl = null; // element that triggered the panel, for focus return
+  var panelRequestId = 0;
+
+  function panelIsOpen(panel) {
+    return panel && panel.classList.contains("open");
+  }
 
   function openSidePanel(title, html) {
     var panel = document.getElementById("side-panel");
@@ -18,8 +23,11 @@
     if (!panel || !bodyEl) {
       return;
     }
-    // Track the element that opened the panel so focus can return on close.
-    panelOpenerEl = document.activeElement || null;
+    panelRequestId += 1;
+    var wasOpen = panelIsOpen(panel);
+    if (!wasOpen) {
+      panelOpenerEl = document.activeElement || null;
+    }
     titleEl.textContent = title || "";
     bodyEl.innerHTML = html || "";
     panel.classList.add("open");
@@ -27,13 +35,14 @@
     if (backdrop) {
       backdrop.classList.add("visible");
     }
-    // Move focus into the panel: prefer close button, fall back to panel itself.
-    var closeBtn = document.getElementById("side-panel-close");
-    if (closeBtn) {
-      closeBtn.focus();
-    } else {
-      panel.setAttribute("tabindex", "-1");
-      panel.focus();
+    if (!wasOpen) {
+      var closeBtn = document.getElementById("side-panel-close");
+      if (closeBtn) {
+        closeBtn.focus();
+      } else {
+        panel.setAttribute("tabindex", "-1");
+        panel.focus();
+      }
     }
   }
 
@@ -43,6 +52,7 @@
     if (!panel) {
       return;
     }
+    panelRequestId += 1;
     panel.classList.remove("open");
     panel.setAttribute("aria-hidden", "true");
     if (backdrop) {
@@ -65,8 +75,38 @@
       backdrop.addEventListener("click", closeSidePanel);
     }
     document.addEventListener("keydown", function (e) {
+      var panel = document.getElementById("side-panel");
+      if (!panelIsOpen(panel)) {
+        return;
+      }
       if (e.key === "Escape") {
+        e.preventDefault();
         closeSidePanel();
+        return;
+      }
+      if (e.key !== "Tab") {
+        return;
+      }
+      var focusable = Array.prototype.slice.call(panel.querySelectorAll(
+        'a[href], button:not([disabled]), textarea:not([disabled]), ' +
+        'input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      )).filter(function (el) {
+        return el.getAttribute("aria-hidden") !== "true" && el.offsetParent !== null;
+      });
+      if (!focusable.length) {
+        e.preventDefault();
+        panel.focus();
+        return;
+      }
+      var first = focusable[0];
+      var last = focusable[focusable.length - 1];
+      if (e.shiftKey && (document.activeElement === first || !panel.contains(document.activeElement))) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey &&
+          (document.activeElement === last || !panel.contains(document.activeElement))) {
+        e.preventDefault();
+        first.focus();
       }
     });
   }
@@ -82,25 +122,41 @@
   var panelCache = {};
 
   function openMarkdownPanel(title, url, cacheKey, after) {
-    function fill(html) {
-      openSidePanel(title, html);
+    function augmentBody() {
       var body = document.getElementById("side-panel-body");
       if (body && typeof after === "function") {
         after(body);
       }
     }
     if (panelCache[cacheKey]) {
-      fill(panelCache[cacheKey]);
+      openSidePanel(title, panelCache[cacheKey]);
+      augmentBody();
       return Promise.resolve();
     }
     openSidePanel(title, '<p class="section-loading">Loading.</p>');
+    var requestId = panelRequestId;
     return A.fetchMarkdown(url)
       .then(function (text) {
         panelCache[cacheKey] = A.parseMarkdown(A.stripFrontmatter(text));
-        fill(panelCache[cacheKey]);
+        if (requestId !== panelRequestId) {
+          return;
+        }
+        var panel = document.getElementById("side-panel");
+        var body = document.getElementById("side-panel-body");
+        if (!panelIsOpen(panel) || !body) {
+          return;
+        }
+        body.innerHTML = panelCache[cacheKey];
+        augmentBody();
       })
       .catch(function (err) {
-        openSidePanel(title, '<p class="section-loading">' + err.message + "</p>");
+        if (requestId !== panelRequestId) {
+          return;
+        }
+        var body = document.getElementById("side-panel-body");
+        if (body) {
+          body.innerHTML = '<p class="section-loading">' + A.escapeHtml(err.message) + "</p>";
+        }
       });
   }
 

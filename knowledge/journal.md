@@ -903,3 +903,11 @@ Das Repository führt den portablen Methodenkern unter `skills/promptotyping/`. 
 Die öffentliche Konvention weist Governance als registrierte Funktion mit `knowledge/governance.md` als erster ausgearbeiteter Referenzinstanz aus. Eine allgemeine Governance-Vorlage entsteht erst nach mindestens zwei geprüften vergleichbaren Anwendungen. Der aktuelle Vorlagenkatalog bleibt deshalb unverändert.
 
 Die neue Prüfgruppe V18 koppelt Paket, Operationsvertrag und Frontend-Adresse. Verifiziert wurden 16 Konsistenzgruppen ohne Fehler, 54 Werkzeugtests, der offizielle Skill-Validator, die JavaScript-Syntax aller Frontend-Dateien und die lokale Browserdarstellung einschließlich Direktanker und Kopierfunktion. Der Browser meldete keine Fehler oder Warnungen.
+
+## 2026-08-22 — Fokusvertrag des Side-Panels korrigiert
+
+Die Browserprüfung des Frontends zeigte zwei Abweichungen zwischen Architektur und Implementierung. Beim ersten, noch nicht gecachten Öffnen ersetzte der nachgelagerte Markdown-Ladevorgang das ursprüngliche Fokusziel durch den Schließen-Button. Die dokumentierte Fokusfalle für das modale Panel fehlte vollständig. Die Vorlagentabelle bildete ihre Tastaturaktion außerdem durch `role="button"` und `tabindex="0"` auf Tabellenzeilen ab.
+
+`shell.js` hält den ursprünglichen Auslöser jetzt über den gesamten Ladevorgang, begrenzt Tab und Shift+Tab auf den geöffneten Dialog und ordnet jede asynchrone Antwort ihrem aktuellen Panel-Auftrag zu. Schließen oder ein neuer Auftrag invalidiert eine ältere ausstehende Antwort. Die Vorlagentabelle verwendet native Buttons in der ersten Zelle; die vollständige Zeile bleibt für Zeigerinteraktionen aktiv und behält ihre Tabellenrolle.
+
+Verifiziert wurden die Fokuszirkulation, die Rückgabe an den auslösenden Button, das Schließen während eines Ladevorgangs, alle 17 Vorlagenaktionen, die unveränderte Darstellung und eine Browserkonsole ohne Fehler oder Warnungen. Die 16 Konsistenzgruppen, 54 Werkzeugtests, der Skill-Validator, die Syntaxprüfung aller JavaScript-Dateien und `git diff --check` bleiben grün.

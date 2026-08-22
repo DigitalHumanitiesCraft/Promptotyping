@@ -248,6 +248,10 @@ The canonical Promptotyping skill makes `orient` read `handoff.md` before `journ
 
 The repository source is `skills/promptotyping/SKILL.md`. The Skills page renders this source directly and provides controls for copying the complete file, downloading it, and opening the package. Product-specific metadata remains optional and separate from the portable instructions. Acceptance criterion. A fresh checkout exposes the skill under `#skills-promptotyping`, the copied source passes the skill validator, and the four named operations preserve the document semantics above.
 
+### A43 — The side panel preserves modal focus and request ownership
+
+The reusable side panel keeps keyboard focus inside the open dialog, closes on Escape, and returns focus to the control that opened it. Template rows retain their table semantics; a native button in the first cell provides the keyboard action while the full row remains a pointer target. An asynchronous Markdown response may update only the panel request that initiated it. Closing the panel or opening a newer panel invalidates an earlier pending response. Acceptance criterion. On a template's first uncached open, Shift+Tab from the close button wraps to the final panel control, Tab returns to the close button, Escape closes the panel and focuses the template button, and a response arriving after close leaves the panel closed.
+
 ### A26 — The site is English
 Every string the site shows is English, in the British spelling the paper uses (operator decision 2026-07-25, carried out 2026-07-26). That covers the page registry labels, the status line, every control, the nine content pages directly under `_content/`, and the text fields of `data/glossar.json`, `data/case-studies.json` and `data/promptotyping-documents.json`.
 

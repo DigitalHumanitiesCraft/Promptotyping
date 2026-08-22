@@ -1415,14 +1415,23 @@ a:hover {
 }
 
 .vorlagen-table tbody tr.vorlage-row:hover,
-.vorlagen-table tbody tr.vorlage-row:focus {
+.vorlagen-table tbody tr.vorlage-row:focus-within {
   background: var(--code-bg);
-  outline: none;
 }
 
-.vorlagen-table tbody tr.vorlage-row:focus-visible {
+.vorlage-open {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+.vorlage-open:focus-visible {
   outline: 2px solid var(--text);
-  outline-offset: -2px;
+  outline-offset: 2px;
 }
 
 /* The trigger column carries a sentence, so it wraps. */
