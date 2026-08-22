@@ -17,14 +17,14 @@ This Process Inbox contains only open handoff points. Before using a point, veri
 
 ## Offene Handoff-Punkte
 
-### Retired interface entries in the Obsidian Vault
+### Reconcile Promptotyping state in the Obsidian Vault
 
 - Received: 2026-08-22
-- Source: read-only audit of `Vault Operations/Repo-Verzeichnis.md` and `Projects/Promptotyping/Promptotyping MOC.md`
-- Target: the same two documents in a session started from the Obsidian Vault
-- Context: the separate `DigitalHumanitiesCraft/promptotyping-interface` repository was retired and deleted after its transferable knowledge was preserved in [promptotyping-agent-interface-final-record-2026-08-22.md](../snapshots/promptotyping-agent-interface-final-record-2026-08-22.md). The repository directory still registers it as an active Promptotyping dashboard, and the MOC still presents the Agent Interface as an active study.
-- Evidence: the final record and the retirement decision in [journal.md](journal.md)
-- Next action: remove the active dashboard row from the repository directory and revise the MOC reference so it records the retired study without presenting a live repository.
+- Source: read-only audit of `ACTIVE-WORK.md`, `Vault Operations/Repo-Verzeichnis.md`, `Projects/Promptotyping/Promptotyping MOC.md`, and the current repository state at commit `ff623c0`
+- Target: those Vault documents and, where its source reference is affected, `Writing/Paper/Paper-Writing-Index.md`, in a session started from the Obsidian Vault
+- Context: the Vault still describes paper v0.9 at `knowledge/paper.md`, retains completed repository and frontend actions, and registers the deleted `DigitalHumanitiesCraft/promptotyping-interface` repository as active. The canonical author-review baseline is now v0.9.1 at `research-artefacts/promptotyping-paper.md`. Its binding sentence-level acceptance protocol is section 20 of [paper-specification.md](paper-specification.md). The retired interface knowledge is preserved in [promptotyping-agent-interface-final-record-2026-08-22.md](../snapshots/promptotyping-agent-interface-final-record-2026-08-22.md).
+- Evidence: commit `ff623c0`; the source digest and 588-unit review inventory in [paper-specification.md](paper-specification.md); the retirement decision in [journal.md](journal.md)
+- Next action: update the Promptotyping ACTIVE-WORK entry to v0.9.1 and the sentence-level author review; correct the canonical paper path; remove completed checkout and interface tasks; remove the retired dashboard row; revise the MOC so the Agent Interface is a completed study with no live repository; record the integration; then remove this handoff point.
 - Blocker: Vault governance reserves structural edits of these documents for a session started from the Vault root.
 
 <!--
