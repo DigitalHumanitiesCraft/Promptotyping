@@ -889,3 +889,9 @@ Der dauerhafte `knowledge/`-Kern ist von den übrigen Artefaktklassen getrennt. 
 - Quelle: kanonische Vault-Konvention und Vorlagen vom 2026-08-21
 - Ziel: `knowledge/handoff.md`, Action-Layer, öffentliche Konvention, Vorlagenspiegel und Konsistenzprüfung
 - Ergebnis: Jedes Promptotyping-Projekt führt eine aktive Process Inbox. Journal-Einträge weisen sachliche Übergänge nach; die semantische Verdichtung arbeitet ohne Schwellen und ohne Archivdatei.
+
+## 2026-08-22 — Das eigenständige Agent Interface wird eingestellt
+
+Der Operator hat das separate Interface-Repository aus dem aktiven Promptotyping-Umfang genommen. Sein übertragbares Wissen ist vor der Löschung in [promptotyping-agent-interface-final-record-2026-08-22.md](../snapshots/promptotyping-agent-interface-final-record-2026-08-22.md) verdichtet. Der Record hält den finalen Commit, den verifizierten Teststand, die Architekturentscheidungen, die methodischen Befunde und die bekannte Grenze der manuellen QA.
+
+Die Working-Environment-Seite führt wieder allein den Vault und den AI Harness als aktuelle Arbeitsumgebung. Der allgemeine Methodenbegriff Promptotyping Interface bleibt bestehen. Er bezeichnet weiterhin zweckgebundene Prüf- und Arbeitsoberflächen in Forschungsprojekten.
