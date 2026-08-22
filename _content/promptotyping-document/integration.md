@@ -19,7 +19,7 @@ Das Dokument entsteht mit dem Kontrakt, idealerweise bevor die erste Lieferung f
 
 Integration ist von den Nachbarfunktionen Architecture, Handoff und Provenance abgegrenzt. `architecture.md` beschreibt den internen Aufbau des eigenen Projekts. `handoff.md` führt übernommene Deltas bis zu ihrer Integration oder Verwerfung. `journal.md` weist den rückwärts gerichteten Übergang nach. Integration hält den aktuell gültigen Kontrakt an der Projektgrenze. Ein dauerhafter Research-to-Operations-Handoff ist deshalb ein Declarative Integration Document.
 
-Zwei Zuschnitte sind gleichwertig und richten sich nach dem Adressaten. Die Masterreferenz (teiCrafter-Muster) beschreibt ein Mehrprojekt-Geflecht aus einer Hand für alle Beteiligten; das lane-lokale Schnittstellendokument (szd-htr-Muster) beschreibt eine Richtung aus Sicht des eigenen Repos. Beschreiben beide Seiten denselben Kontrakt, muss genau eine Seite als Quelle der Wahrheit deklariert sein und beide müssen aufeinander verweisen; die einseitige Verlinkung war der eine Konsistenzbefund der Extraktion.
+Zwei Zuschnitte sind gleichwertig und richten sich nach dem Adressaten. Die Mehrprojekt-Referenz (teiCrafter-Muster) beschreibt ein Mehrprojekt-Geflecht aus einer Hand für alle Beteiligten; das lane-lokale Schnittstellendokument (szd-htr-Muster) beschreibt eine Richtung aus Sicht des eigenen Repos. Beschreiben beide Seiten denselben Kontrakt, muss genau eine Seite als Quelle der Wahrheit deklariert sein und beide müssen aufeinander verweisen; die einseitige Verlinkung war der eine Konsistenzbefund der Extraktion.
 
 ## Funktion des Dokuments
 
@@ -175,14 +175,14 @@ Review-Folie für eine bestehende Integration. Ein vorhandenes Dokument wird geg
 
 ## Beispiel
 
-teiCrafter (`knowledge/integration.md`, "Three-Project Master Reference") ist die Masterreferenz über drei Projekte: Rollen-Tabelle, Tool-Boundary, Datenfluss-Diagramm, die Kontrakte beider Pipelines, eine eigene Corrections-Sektion gegen wiederkehrende Missinterpretationen und eine Source-Evidence-Sektion als Liste der autoritären Dokumente; die Schichten des eigenen Editors delegiert es ausdrücklich an `architecture.md`. szd-htr-ocr-pipeline führt die Gegenseite lane-lokal: `teicrafter-integration.md` deklariert teiCrafters `converter-reference.md` als verbindlichen Kontrakt und positioniert sich als Implementierungs- und Abnahmedokumentation (CLI, Byte-Identitäts-Fallen, Realitätsabgleich an realen Objekten), `dia-xai-integration.md` beschreibt eine unidirektionale Lieferbeziehung mit Inline-JSON-Schema und externem Phasen-Zeitplan. Die Extraktion fand die beiden Seiten des teiCrafter-Kontrakts inhaltlich konsistent, aber nur einseitig verlinkt; die Autoritäre-Dokumente-Sektion der Vorlage adressiert genau das.
+teiCrafter (`knowledge/integration.md`, "Three-Project Integration Reference") ist die Mehrprojekt-Referenz über drei Projekte: Rollen-Tabelle, Tool-Boundary, Datenfluss-Diagramm, die Kontrakte beider Pipelines, eine eigene Corrections-Sektion gegen wiederkehrende Missinterpretationen und eine Source-Evidence-Sektion als Liste der autoritären Dokumente; die Schichten des eigenen Editors delegiert es ausdrücklich an `architecture.md`. szd-htr-ocr-pipeline führt die Gegenseite lane-lokal: `teicrafter-integration.md` deklariert teiCrafters `converter-reference.md` als verbindlichen Kontrakt und positioniert sich als Implementierungs- und Abnahmedokumentation (CLI, Byte-Identitäts-Fallen, Realitätsabgleich an realen Objekten), `dia-xai-integration.md` beschreibt eine unidirektionale Lieferbeziehung mit Inline-JSON-Schema und externem Phasen-Zeitplan. Die Extraktion fand die beiden Seiten des teiCrafter-Kontrakts inhaltlich konsistent, aber nur einseitig verlinkt; die Autoritäre-Dokumente-Sektion der Vorlage adressiert genau das.
 
 ## Begriffe
 
 - Kontrakt: die explizit gemachte Vereinbarung an der Projektgrenze, Format plus Zuständigkeit plus Abnahmekriterien.
 - Gegenüber (counterpart): das Projekt, System oder die Lane auf der anderen Seite der Schnittstelle, im Frontmatter benannt.
 - Richtung (direction): ob die Schnittstelle liefert (outbound), empfängt (inbound) oder beides (bidirectional).
-- Masterreferenz: der Zuschnitt, der ein Mehrprojekt-Geflecht aus einer Hand für alle Beteiligten beschreibt.
+- Mehrprojekt-Referenz: der Zuschnitt, der ein Mehrprojekt-Geflecht aus einer Hand für alle Beteiligten beschreibt.
 - Quelle der Wahrheit: das eine pro Kontrakt-Aspekt als verbindlich deklarierte Dokument; alle anderen verweisen.
 - Input-Gap: eine ausstehende Lieferung einer Seite, die die andere blockiert.
 
