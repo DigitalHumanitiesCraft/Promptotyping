@@ -47,24 +47,13 @@
      #skills-coding / #skills-writing; prompt code blocks get a copy button. */
 
   /* Both sub-block files head their text with an H1, so the merged page would
-     carry three. Their headings move down one level at render time, the way
-     foldParts folds the specification parts. The content files stay untouched
-     and the attributes travel with the heading, so nothing addressable moves;
-     the block anchors sit on the hosts and are unaffected either way. */
-  function demoteBlockHeadings(el) {
-    Array.prototype.slice.call(el.querySelectorAll("h1, h2, h3, h4, h5"))
-      .forEach(function (heading) {
-        var lower = document.createElement("h" + (Number(heading.nodeName.charAt(1)) + 1));
-        Array.prototype.forEach.call(heading.attributes, function (attr) {
-          lower.setAttribute(attr.name, attr.value);
-        });
-        lower.innerHTML = heading.innerHTML;
-        heading.parentNode.replaceChild(lower, heading);
-      });
-  }
-
+     carry three. Their headings move down one level at render time through the
+     same helper foldParts uses on the specification parts. The content files
+     stay untouched and the attributes travel with the heading, so nothing
+     addressable moves; the block anchors sit on the hosts and are unaffected
+     either way. */
   function renderSkillsBlock(el) {
-    demoteBlockHeadings(el);
+    A.demoteHeadings(el);
     A.addCodeCopyButtons(el);
   }
 

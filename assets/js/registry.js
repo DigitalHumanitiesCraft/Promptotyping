@@ -237,6 +237,9 @@
     });
   }
 
+  /* Move every heading in a subtree down one level, attributes and all, so a
+     block merged into a page does not bring a second H1 with it. Exported,
+     because the skills page merges its sub-blocks the same way. */
   function demoteHeadings(el) {
     var found = Array.prototype.slice.call(el.querySelectorAll("h1, h2, h3, h4, h5"));
     found.forEach(function (heading) {
@@ -706,6 +709,7 @@
   A.pageForAnchor = pageForAnchor;
   A.mountPages = mountPages;
   A.foldParts = foldParts;
+  A.demoteHeadings = demoteHeadings;
   A.buildNav = buildNav;
   A.buildSpecIndex = buildSpecIndex;
   /* The footer states the version of the specification, which the start page
