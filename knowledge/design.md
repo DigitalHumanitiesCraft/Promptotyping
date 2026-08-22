@@ -152,7 +152,7 @@ The tree groups the pages under Spezifikation, Referenz, Belege, Werkzeuge und P
 
 The header carries the wordmark and the kind marker, with no mark beside it, and the signature band along its foot. Both the DHCraft watercolour and the Promptotyping logo were tried in that slot and dropped, because a chromatic detail image at 22 pixels reads as a smudge and would put a hue on the page that means nothing. The carrier mark stays in the footer and supplies the favicon. The footer's auto-fitting grid currently resolves into three content columns: carrier and licence, addresses and machine access, and the state of the specification.
 
-The start page is the specification front: title, one-sentence scope, a keyed status table (Fassung, Stand, kanonische Adresse, Maschinenadresse, Evidenz, Lizenz), and a generated index of the specification. Every other page carries a one-line status under its title at 0.8125rem, keys in `#8a8a8a` and values in `#525252`, separated from the body by a hairline; on the paper page the table of contents follows immediately below it. The index is derived from the same page registry as the sidebar, so the two cannot diverge.
+The start page is the specification front. The title and one-sentence scope lead into three task routes for understanding, evaluating, and applying the method. A short method account follows. The keyed status table and generated specification index then provide the reference entry into the normative parts. Every other page carries a one-line status under its title at 0.8125rem, keys in `#8a8a8a` and values in `#525252`, separated from the body by a hairline; on the paper page the table of contents follows immediately below it. The index is derived from the same page registry as the sidebar, so the two cannot diverge.
 
 ## Side panels
 
@@ -218,7 +218,7 @@ A page change carries the focus into the content, so the reader continues in the
 
 ## Motion and elevation
 
-The only movement animation is the side-panel slide, 200ms `ease-out`. Interactive elements additionally carry short 150ms `ease-out` colour and background transitions as hover feedback (TOC links, tree entries, cards, buttons, chips, the video facade, the tooltip fade). The `CLAUDE.md` rule "only side-panel slide, no others" governs decorative and scroll-linked motion, which stays banned; the 150ms hover transitions are permitted micro-affordances. The scrollspy of A33 moves a class and nothing else, so it adds no motion. An icon rotation on a contents toggle stood in this list until 2026-07-29 and named a control the site no longer has.
+The only movement animation is the side-panel slide, 200ms `ease-out`. Interactive elements additionally carry short 150ms `ease-out` colour and background transitions as hover feedback (TOC links, tree entries, cards, buttons, chips, the video facade, the tooltip fade). The `CLAUDE.md` rule "only side-panel slide, no others" governs decorative and scroll-linked motion, which stays banned; the 150ms hover transitions are permitted micro-affordances. The scrollspy of A33 moves a class and nothing else, so it adds no motion. When `prefers-reduced-motion: reduce` is active, the stylesheet makes every transition and animation effectively immediate. An icon rotation on a contents toggle stood in this list until 2026-07-29 and named a control the site no longer has.
 
 ## Icons
 

@@ -128,8 +128,9 @@
     el.setAttribute("data-component", "case-study-filter");
     el.innerHTML =
       "<h1>Use Cases</h1>" +
-      "<p>A curated selection of publicly documented projects, grouped by where in the research " +
-      "data lifecycle the method operates. The full body of evidence stands in the " +
+      "<p>A curated selection of publicly documented projects, grouped by the role each case " +
+      "plays in the paper's argument and ordered within each group by the artefact's epistemic " +
+      "function. The comparative account stands in the " +
       '<a href="#abschnitt-3-patterns-across-promptotypes">paper, section 3</a>.</p>' +
       '<div class="case-filter-host"></div>' +
       '<div class="case-list-host"></div>';

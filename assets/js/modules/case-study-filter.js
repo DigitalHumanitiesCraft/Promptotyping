@@ -283,7 +283,7 @@
         maybeOpenFromHash();
       })
       .catch(function (err) {
-        listHost.innerHTML = "<p class='section-loading'>" + err.message + "</p>";
+        A.showLoadError(listHost, err);
       });
   }
 

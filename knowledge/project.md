@@ -5,7 +5,7 @@ project:
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 status: complete
 language: en
-version: 0.5
+version: 0.6
 created: 2026-05-09
 updated: 2026-08-22
 authors: [Christopher Pollin]
@@ -23,22 +23,22 @@ knowledge-sources:
   institutions:
     Digital Humanities Craft OG: https://dhcraft.org
     University of Graz: https://www.uni-graz.at
-related: [INDEX, specification, architecture, design, journal]
+related: [INDEX, specification, architecture, design, governance, handoff, plan, journal]
 ---
 
 # Project
 
-This document is the charter for the repository `DigitalHumanitiesCraft/Promptotyping`. The repository renders on https://dhcraft.org/Promptotyping/ as an interactive paper and serves as the public methodology specification for Promptotyping, addressable, versioned, readable as a paper narrative, and machine-readable as the endpoint that `template:` URIs in Promptotyping repositories resolve to.
+This document is the charter for the repository `DigitalHumanitiesCraft/Promptotyping`. The repository renders on https://dhcraft.org/Promptotyping/ as the public method portal for Promptotyping. It integrates the methodology specification, the scholarly paper, the case evidence, reusable templates, and the canonical skill. Its machine-readable endpoints resolve the `template:` URIs used by Promptotyping repositories.
 
 This English charter is part of an operator decision from 2026-07-23. The core knowledge documents (INDEX, project, specification, architecture, design) become English so the knowledge base can serve as the public showcase of the method applied to itself. The journal, the report, and the paper-writing document stay German.
 
 ## Identity
 
-The site is the public counterpart to the Promptotyping method as the Pollin 2026 paper formalises it and as the vault develops it into systematic knowledge. The site is an interactive reading and addressing layer over the paper, with every methodological component embedded in it (templates, convention, case studies, glossary, bibliography). It does not replace the paper.
+The site is the public counterpart to the Promptotyping method as the Pollin 2026 paper formalises it and as the vault develops it into systematic knowledge. Its primary user path is Understand, Evaluate, Apply. The paper supplies the scholarly rationale and evaluation within that portal, while the specification, case evidence, tutorial, templates, and skill support assessment and application.
 
-Three audiences use it:
+The audiences are ordered by product priority:
 
-- **Researchers** who want to apply Promptotyping. They enter through the method narrative, read the paper in its flow, and leave with concrete templates.
+- **Researchers and project leads** who want to assess and apply Promptotyping. They enter through the goal-based routes and leave with an executable tutorial, skill, and template set.
 - **Reviewers and reproducers** who check a Promptotyping repository against the method. They enter through the convention or through a specific template address.
 - **Coding agents** that resolve `template:` URIs from repository frontmatter fields. They enter through versioned anchors and need the templates as a machine-readable endpoint.
 
@@ -68,11 +68,13 @@ Out of scope:
 - **No new scholarly paper.** The paper is authored under its own two-document model; the site mirrors and renders it.
 - **No method refactor.** The four phases, the three document types, the template catalogue, and the concepts are fixed in the vault. The site mirrors them and does not revise them.
 - **No vault refactor.** Vault corrections happen only when mirroring surfaces a discrepancy, and they are decided in the vault.
-- **No internationalisation of the whole site yet.** The site is German first. A full bilingual edition is a later project. The English core knowledge documents are the bounded exception the operator decided on 2026-07-23.
+- **No parallel language architecture.** The public method pages and the repository's core Knowledge Documents are English. Established German template mirrors and teaching materials remain bounded exceptions.
 
 ## Current state
 
-Status is complete and deployed. The site renders the paper reading flow, the templates with side panels and the frontmatter inspector, the curated use-case gallery with its depth pages, and the overview, practice, skills, working-environment, glossary, convention, and bibliography sections, with mobile layout and SEO. The repository also carries the canonical portable Promptotyping skill rendered on the Skills page. What each of these must do and how it is built is owned by [specification.md](specification.md), [architecture.md](architecture.md), and [design.md](design.md); the header and footer run on the DHCraft watercolour mark.
+The repository baseline is complete. The site renders the method portal, the paper, the templates with side panels and the frontmatter inspector, the curated use-case gallery with its depth pages, the tutorial, the canonical skill, the Vault evidence layer, and the reference pages. Mobile layout, accessibility behaviour, stable addressing, and search-engine metadata are part of that baseline. What each surface must do and how it is built is owned by [specification.md](specification.md), [architecture.md](architecture.md), and [design.md](design.md); the header and footer use the DHCraft watercolour mark.
+
+The public deployment changes only through an explicit release decision under [governance.md](governance.md). The repository and the live site can therefore differ between release decisions without changing which repository sources are canonical.
 
 The phase-provenance lane was removed after the first deploy by operator decision (A2 in [specification.md](specification.md)). The `{:.phase-*}` tags it read have since left the paper Markdown as well.
 
@@ -88,10 +90,12 @@ This knowledge base is a **mirror with a life of its own**. The vault templates 
 
 ## Expected outcome
 
-- `https://dhcraft.org/Promptotyping/` renders the Pollin 2026 paper as a scrollable interactive paper.
+- `https://dhcraft.org/Promptotyping/` guides a researcher or project lead through Understand, Evaluate, Apply.
+- The Pollin 2026 paper remains readable and citable as the scholarly component of the portal.
 - The catalogue templates are addressable under latest anchors (`#promptotyping-document-data` and so on), with snapshot sub-anchors added at later version jumps.
 - Subpath aliases (`/promptotyping-document/data`) serve humans; static Markdown URLs under `_content/` serve as the machine address (ADR-10).
 - Case-study depth pages plus a filterable, curated use-case gallery (A7).
+- The tutorial and canonical skill support a first documented Promptotyping iteration from the same public interface.
 - Glossary as a tooltip over the reading flow, with the full entry one link away; bibliography as an anchor list in which every entry carries its own address.
 - Repositories can write `template: { url: "https://dhcraft.org/Promptotyping/promptotyping-document/data" }` into their frontmatter and thereby point at the canonical latest specification.
 

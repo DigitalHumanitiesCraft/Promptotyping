@@ -943,3 +943,13 @@ Die Paper-Spezifikation führt den datierten Befund in Abschnitt 10.12 und schli
 Der Operator bestätigte GPT-5.6 Sol als das im Paperprozess verwendete GPT-Modell. Die Author's Note des Manuskripts führt jetzt die vollständige Bezeichnung. Entscheidung 31 in `paper-specification.md` dokumentiert die Bestätigung und schließt Flag 8 für das Manuskript.
 
 Die öffentliche Ankündigung vom 31. Juli nannte GPT-5.6 Sol bereits korrekt. Ihre kürzere Modellliste bleibt als damaliger Ankündigungsstand erhalten. Die vollständige AI-Use-Erklärung steht im Manuskript. An externen Veröffentlichungen wurde nichts geändert.
+
+## 2026-08-22 — Kanonische Grundlage des Methodenportals abgeschlossen
+
+Der Operator ersetzte die verbliebene Paketsteuerung durch drei überprüfbare Projekt-Milestones. Der erste Milestone bündelt Paper, Methodenspezifikation, Governance, Handoff, den finalen Record des eingestellten Interface-Repositories, den kanonischen Skill und das Frontend. Der Portalweg folgt der Reihenfolge Understand → Evaluate → Apply. Forschende und Projektleitende bilden die primäre Zielgruppe; Paper, Use Cases, Vault, Tutorial, Skill und Vorlagen übernehmen darin klar getrennte Funktionen.
+
+Die Startseite führt jetzt über drei zielbezogene Einstiege in das Portal. Die Use-Case-Einleitung beschreibt die tatsächliche Gruppierung nach Evidenzrolle und die Sortierung nach epistemischer Funktion. Der Vault-Renderer vergibt einen öffentlichen Assertion-Anker nur beim ersten Auftreten in den Topic Maps, wodurch fünf doppelte DOM-IDs entfallen. Fehlertexte an Ladegrenzen werden escaped, der Case-Study-Filter verwendet den gemeinsamen Fehlerpfad, und das Stylesheet berücksichtigt Reduced Motion. Projekt-, Architektur-, Design- und Spezifikationsdokumente bilden diese Änderungen ab.
+
+Die lokale Browserprüfung deckte die sieben Startseiten-Ziele, einen wiederholt verwendeten Vault-Anker, das Vorlagenpanel und die mobile sowie die Desktopdarstellung ab. Der Endstand zeigte eindeutige IDs, vollständig benannte Bedienelemente, Alt-Texte für alle Bilder, keinen horizontalen Seitenüberlauf und eine Konsole ohne Fehler oder Warnungen. Die automatisierten Konsistenz-, Werkzeug- und Syntaxprüfungen bilden das zweite Prüfniveau dieses Milestones.
+
+Der read-only Vault-Audit fand zwei aktive Verweise auf das eingestellte Interface-Repository im Repo-Verzeichnis und im Promptotyping MOC. Die Vault-Governance erlaubt deren strukturelle Korrektur nur aus einer Sitzung, die im Vault gestartet wurde. `knowledge/handoff.md` führt deshalb einen überprüften Übergabepunkt für diese externe Synchronisierung. Die historischen Referenzen im Methoden-Repository bleiben als Provenienz des finalen Wissensrecords erhalten.

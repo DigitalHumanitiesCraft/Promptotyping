@@ -369,14 +369,21 @@
         (data.sources || []).forEach(function (s) { vaultSourcesBySlug[s.slug] = s; });
         vaultTopics = data.topics || [];
 
+        /* One assertion may belong to several topic maps. Its first list
+           occurrence owns the published id; later occurrences remain usable
+           buttons without duplicating the id in the document. */
+        var anchoredAssertions = {};
         var blocks = vaultTopics.map(function (topic) {
           var items = topic.assertions.map(function (slug) {
             var assertion = vaultAssertionsBySlug[slug];
             if (!assertion) {
               return "";
             }
-            return '<li class="vault-assertion-item" id="vault-' + slug + '">' +
-              '<button type="button" class="vault-assertion" data-assertion="' + slug + '">' +
+            var safeSlug = A.escapeHtml(slug);
+            var publicId = anchoredAssertions[slug] ? "" : ' id="vault-' + safeSlug + '"';
+            anchoredAssertions[slug] = true;
+            return '<li class="vault-assertion-item"' + publicId + '>' +
+              '<button type="button" class="vault-assertion" data-assertion="' + safeSlug + '">' +
               A.escapeHtml(assertion.title) + "</button>" +
               '<span class="vault-assertion-meta">' + assertion.grounding.length +
               (assertion.grounding.length === 1 ? " anchor" : " anchors") + "</span></li>";

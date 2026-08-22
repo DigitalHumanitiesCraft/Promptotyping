@@ -7,7 +7,12 @@
   "use strict";
 
   function escapeHtml(s) {
-    return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    return String(s)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
   }
 
   function slugify(text) {
@@ -42,7 +47,8 @@
   }
 
   function showLoadError(el, err) {
-    el.innerHTML = '<p class="section-loading">' + err.message + "</p>";
+    var message = err && err.message ? err.message : "Content could not be loaded.";
+    el.innerHTML = '<p class="section-loading">' + escapeHtml(message) + "</p>";
   }
 
   /* Normalise line endings and strip a leading YAML frontmatter block.

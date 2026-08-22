@@ -4,7 +4,7 @@
 
 Promptotyping is an iterative, knowledge-driven method for developing project-specific digital research artefacts from structured research data and maintained project knowledge through Context Engineering and Agentic Engineering, organised around four recurrent forms of work (Preparation, Exploration, Distillation, Implementation). The working material is a `knowledge/` folder of versioned Knowledge Documents holding a project's requirements, data, decisions, and domain knowledge, a curated knowledge artefact written partly by the model and partly by the verifying expert, from which the implementation is derived. It outlasts the individual session and is the part of the process that can be read, checked, criticised, and cited; decisions taken while building hold in it only as far as they are written back. A Critical Expert in the Loop verifies LLM output at defined points.
 
-This repository is the public specification of the method and the repository of the method paper, which is written here in [research-artefacts/promptotyping-paper.md](research-artefacts/promptotyping-paper.md). It renders as an interactive paper at **https://dhcraft.org/Promptotyping/** and serves the method's templates as stable, machine-readable addresses.
+This repository is the public method portal and the repository of the method paper, which is written in [research-artefacts/promptotyping-paper.md](research-artefacts/promptotyping-paper.md). The portal at **https://dhcraft.org/Promptotyping/** integrates the specification, case evidence, tutorial, templates, canonical skill, and paper. It also serves the templates as stable, machine-readable addresses.
 
 ## The method in brief
 
@@ -16,7 +16,7 @@ The full argument is the method paper; an overview is at [dhcraft.org/Promptotyp
 
 **Pollin, Christopher: Promptotyping. Translating Research Data into Research Artefacts through Context Engineering and Agentic Engineering** (version 0.9, review draft, 31 July 2026; in preparation).
 
-The complete current text is a single Markdown Research Artefact, [research-artefacts/promptotyping-paper.md](research-artefacts/promptotyping-paper.md), written and revised in this repository. [knowledge/paper-specification.md](knowledge/paper-specification.md) holds everything decided, checked, and still open about it, and the Grounded Vault under [vault/](vault/) anchors its supporting claims in sources. The interactive site renders the Research Artefact directly as a reading flow with inline glossary.
+The complete current text is a single Markdown Research Artefact, [research-artefacts/promptotyping-paper.md](research-artefacts/promptotyping-paper.md), written and revised in this repository. [knowledge/paper-specification.md](knowledge/paper-specification.md) holds everything decided, checked, and still open about it, and the Grounded Vault under [vault/](vault/) anchors its supporting claims in sources. The method portal renders the Research Artefact directly on its Paper page with an inline glossary.
 
 The current state is **version 0.9, a review draft of 31 July 2026**, circulated for substantive feedback before the final revision. Its four chapters were promoted on that day, superseding the five-chapter manuscript promoted the day before; the consolidated working records of both revisions live in the git history. Central argument, methodological structure, project cases, and evidential scope are in place. References, figures, footnotes, and individual formulations are checked again in the final revision, and what that pass still owes stands as open flags in [knowledge/paper-specification.md](knowledge/paper-specification.md). Feedback is invited on the clarity and distinctiveness of the methodological contribution, the use of the project cases, and passages that stay unclear, repetitive, or overly detailed.
 
@@ -31,11 +31,12 @@ Two introductions to the method (German): the methodology explainer [Promptotypi
 | Content | Location | On the site |
 |---|---|---|
 | Method paper (English, version 0.9, review draft) | [research-artefacts/promptotyping-paper.md](research-artefacts/promptotyping-paper.md), specification in [knowledge/paper-specification.md](knowledge/paper-specification.md) | [#paper](https://dhcraft.org/Promptotyping/#paper) |
-| Evidence layer of the paper (Grounded Vault) | [vault/](vault/) | — |
+| Evidence layer of the paper (Grounded Vault) | [vault/](vault/) | [#vault](https://dhcraft.org/Promptotyping/#vault) |
 | Knowledge Document templates | [_content/promptotyping-document/](_content/promptotyping-document/) | [#vorlagen](https://dhcraft.org/Promptotyping/#vorlagen) |
 | Convention (naming contract, frontmatter schema, structure) | [_content/konvention.md](_content/konvention.md) | [#konvention-v0.1](https://dhcraft.org/Promptotyping/#konvention-v0.1) |
 | Technology baseline for static research tools (draft) | [_content/technology-baseline.md](_content/technology-baseline.md) | — |
 | Curated case studies | [data/case-studies.json](data/case-studies.json), depth pages in [_content/case-studies/](_content/case-studies/) | [#use-cases](https://dhcraft.org/Promptotyping/#use-cases) |
+| Guided first iteration | [_content/tutorial.md](_content/tutorial.md) | [#tutorial](https://dhcraft.org/Promptotyping/#tutorial) |
 | Method extensions from practice | [_content/praxis.md](_content/praxis.md) | [#praxis](https://dhcraft.org/Promptotyping/#praxis) |
 | Canonical Promptotyping skill | [skills/promptotyping/](skills/promptotyping/) | [#skills-promptotyping](https://dhcraft.org/Promptotyping/#skills-promptotyping) |
 | Reusable system prompts (coding, writing) | [_content/skills/](_content/skills/) | [#skills](https://dhcraft.org/Promptotyping/#skills) |
@@ -102,12 +103,14 @@ The site is both specification and application of the method. The knowledge base
 ## Repository layout
 
 ```
-index.html        single-page entry, renders the interactive paper
+index.html        single-shell entry for the method portal
 404.html          subpath-to-hash routing fallback
 CLAUDE.md         action layer of this repository (its own instance of the action-layer template)
 .nojekyll         required so GitHub Pages publishes _content/
-knowledge/        knowledge base of the site itself, plus the method paper
-_content/         Markdown content (paper sections, templates, case studies, glossary)
+knowledge/        knowledge base of the site itself
+research-artefacts/  method paper
+skills/           canonical Promptotyping skill
+_content/         Markdown content (method pages, templates, case studies, glossary)
 assets/           CSS, JS, vendored libraries, fonts, logo
 data/             JSON data (case studies, glossary, template table)
 vault/            Grounded Vault instance, evidence layer of the paper

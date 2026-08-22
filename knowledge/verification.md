@@ -199,6 +199,14 @@ Under `tools/tests/` the checks are themselves held to their regression cases, r
 
 **Verdict, 2026-08-22.** Passes with the first canonical package and its Skills-page integration.
 
+## Browser verification, 2026-08-22
+
+The repository was served from a fresh local HTTP origin and checked at 1280 by 720 pixels and 390 by 844 pixels. The seven start-page targets for Application, the paper, Use Cases, the Vault, the tutorial, the canonical skill, and the templates each activated the expected mounted page. Every target element appeared exactly once.
+
+The first DOM inventory found five duplicate public ids where one Vault assertion occurred in more than one topic map. The renderer now assigns the public id to its first topic occurrence and leaves further topic occurrences as unanchored controls. The final DOM carried no duplicate ids, unnamed controls, images without alternative text, or horizontal page overflow.
+
+The template panel opened as a bottom sheet at the mobile viewport. Once its asynchronous content had loaded, focus moved to the close control inside the dialog. Closing the panel returned focus to the native template button that opened it. The start page and panel were inspected visually in the mobile layout, and the start page was inspected again in the desktop layout. The final browser console contained no errors or warnings.
+
 ## What is not checked automatically, and why
 
 - **Whether a page says what the paper says.** The contradictions of 2026-07-26 were found by reading `research-artefacts/promptotyping-paper.md` against the site. Agreement in substance is not decidable by rule, and the four findings of that reading are recorded in `knowledge/journal.md`.

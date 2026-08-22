@@ -5,7 +5,7 @@ project:
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 status: active
 language: en
-version: "0.2"
+version: "0.3"
 created: 2026-07-29
 updated: 2026-08-22
 authors: [Christopher Pollin]
@@ -23,7 +23,21 @@ related: [INDEX, specification, architecture, design, handoff, journal, paper-sp
 
 # Plan
 
-Frontend work packages agreed with the operator on 2026-07-29, in the order they should run. Each package states its scope, where it touches the specification, and which operator decision it still needs. Two state sections at the end record what has run since, first the execution night of 2026-07-29 and then the two manuscript promotions of 2026-07-30 and 2026-07-31.
+The operator replaced the remaining package-by-package sequence on 2026-08-22 with three acceptance milestones for the whole project. The historical frontend packages remain below as provenance and as a source of bounded candidates. They no longer determine the current execution order.
+
+## Current delivery milestones
+
+| Milestone | Outcome | Exit condition | State |
+|---|---|---|---|
+| 1. Canonical foundation | Paper, method specification, governance, handoff, retired-interface record, canonical skill, and frontend describe one method system. | Active references to the retired interface repository are removed, canonical terms and status statements agree, the goal-based frontend routes resolve, and all repository and browser checks pass. | Repository scope completed and verified on 2026-08-22. The governed Vault reconciliation remains in [handoff.md](handoff.md). |
+| 2. Usable method portal | Researchers and project leads can understand, evaluate, and apply Promptotyping through the frontend. | A representative user can complete the defined portal scenarios from the public interface alone, with stable addresses and traceable sources. | Pending. |
+| 3. Evaluated public release | The method package is versioned, citable, empirically evaluated, and publicly released from one approved state. | The evaluation has no blocking findings, the public site matches the released commit, and paper, specification, skill, and templates identify the same method version. | Pending. |
+
+The final evaluation target is an external researcher or project lead who can explain the method's purpose, judge its fit for a project, and complete one documented Promptotyping iteration with the skill or a template without private project context.
+
+## Historical frontend packages
+
+Frontend work packages agreed with the operator on 2026-07-29, in the order in which they were proposed. Each package states its scope, where it touches the specification, and which operator decision it still needed at the time. Two state sections at the end record the execution night of 2026-07-29 and the manuscript promotions of 2026-07-30 and 2026-07-31.
 
 The two-track regime that framed this plan is over. It held that the site rendered the canonical paper until chapter-wise acceptance and that everything bound to the new manuscript shipped with a swap; the swap ran with the promotion of 2026-07-30 and again with the four-chapter revision of 2026-07-31. The canonical manuscript now lives at `research-artefacts/promptotyping-paper.md`. Package F6 is closed accordingly, and passages below that still speak of a pending swap are the record of the plan as agreed.
 
