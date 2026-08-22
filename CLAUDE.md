@@ -41,6 +41,7 @@ Die Site soll ruhig sein. Konkret bedeutet das beim Coden:
 ├── CLAUDE.md                   # Diese Datei (Action-Layer)
 ├── knowledge/                  # Dauerhafte Promptotyping Documents
 │   └── handoff.md              # Verpflichtende Process Inbox
+├── skills/                     # Portabler kanonischer Promptotyping-Skill
 ├── research-artefacts/         # Wissenschaftliche Outputs, darunter das Paper
 ├── source-material/            # Übernommene Quellen und Transkripte
 ├── snapshots/                  # Datierte Reports und Audits
@@ -91,7 +92,7 @@ Die nicht aktiven Seiten bleiben als `display: none` im DOM. Das ist die Bedingu
 - Glossar: `#glossar`
 - Literatur: `#literatur`
 - Paper-Sektionen: `#abschnitt-{n}-{slug}` (z.B. `#abschnitt-2-promptotyping-as-a-method`). Die Site rendert `research-artefacts/promptotyping-paper.md` direkt und erzeugt die Anker beim Rendern; unter `_content/paper/` liegt nichts mehr. Jede Umgliederung des Papers verschiebt Anker, deshalb wird die Aliaskarte `PAPER_ANCHOR_ALIASES` in `assets/js/pages-paper.js` vollständig neu gezielt und nicht bloß ergänzt; sie ist flach und löst nicht transitiv auf.
-- Überblick: `#ueberblick`; Use Cases: `#use-cases`; Paper: `#paper`; Worked Workflow: `#workflow`; Best Practices: `#praxis`, Praxis-Einträge: `#praxis-{slug}`; Skills: `#skills` und `#skills-{slug}` (A13 bis A15); Arbeitsumgebung: `#arbeitsumgebung`, Subpath `/arbeitsumgebung` (A17); Tutorial: `#tutorial`, Subpath `/tutorial` (A31)
+- Überblick: `#ueberblick`; Use Cases: `#use-cases`; Paper: `#paper`; Worked Workflow: `#workflow`; Best Practices: `#praxis`, Praxis-Einträge: `#praxis-{slug}`; Skills: `#skills`, `#skills-promptotyping` und `#skills-{slug}` (A13 bis A15, A42); Arbeitsumgebung: `#arbeitsumgebung`, Subpath `/arbeitsumgebung` (A17); Tutorial: `#tutorial`, Subpath `/tutorial` (A31)
 
 Anker dürfen nicht ohne Diskussion umbenannt werden — Repos können auf sie als `template:`-URI verlinken.
 
@@ -107,7 +108,7 @@ Anker dürfen nicht ohne Diskussion umbenannt werden — Repos können auf sie a
 
 - **Nicht aus dem Vault zitieren ohne Markdown-Link.** Vault-interne Wikilinks (`[[CLAUDE]]`) bedeuten im Repo nichts.
 - **Nicht das alte Living-Paper-Material reaktivieren.** Alles, was im November-2025-Stand war, ist gelöscht. Wer alte Module wiederbeleben will, beginnt einen Neu-Diskurs.
-- **Die Site ist englisch.** Der Durchgang ist am 2026-07-26 gelaufen (Operator-Entscheidung 2026-07-25, journal.md, Sprachentscheidung). Englisch sind Shell, Bedienelemente, die neun Seitentexte direkt unter `_content/` und die Textfelder der drei Datendateien. Deutsch geblieben sind die siebzehn Vorlagen und die drei Dateien unter `_content/skills/` als Unterrichtsmaterial. Sechzehn Vorlagen sind Vault-Spiegel, deren Übersetzung in eine Vault-Sitzung gehört; die Vorlage `technology` ist seit dem 2026-07-26 im Repo kanonisch und bleibt deutsch, damit der Katalog einsprachig bleibt. Die sieben Fall-Tiefenseiten unter `_content/case-studies/` sind ebenfalls englisch; der Durchgang ist damit abgeschlossen. Die publizierten Anker bleiben deutsch, weil fremde Repos sie als `template:`-URI führen, ebenso die Vorlagennamen als Identifikatoren.
+- **Die Site ist englisch.** Der Durchgang ist am 2026-07-26 gelaufen (Operator-Entscheidung 2026-07-25, journal.md, Sprachentscheidung). Englisch sind Shell, Bedienelemente, die neun Seitentexte direkt unter `_content/` und die Textfelder der drei Datendateien. Deutsch geblieben sind die siebzehn Vorlagen und die drei Dateien unter `_content/skills/` als Unterrichtsmaterial. Der portable Skill unter `skills/promptotyping/` ist als maschinenadressierte Action-Layer-Quelle englisch. Sechzehn Vorlagen sind Vault-Spiegel, deren Übersetzung in eine Vault-Sitzung gehört; die Vorlage `technology` ist seit dem 2026-07-26 im Repo kanonisch und bleibt deutsch, damit der Katalog einsprachig bleibt. Die sieben Fall-Tiefenseiten unter `_content/case-studies/` sind ebenfalls englisch; der Durchgang ist damit abgeschlossen. Die publizierten Anker bleiben deutsch, weil fremde Repos sie als `template:`-URI führen, ebenso die Vorlagennamen als Identifikatoren.
 - **Keine Module außer Frontmatter-Inspector, Case-Study-Filter, Begriffsregister und Vault-Ansicht.** Das Begriffsregister (A25, seit 2026-07-26) vertritt die abgelehnte Volltextsuche. Die Vault-Ansicht ist seit der Operator-Entscheidung 2026-07-25 in Scope; Context-Rot-Viz und Sycophancy-Trap bleiben es nicht.
 - **Keine Branches.** Alle Änderungen direkt auf `main`. (Das ist Christopher Pollins explizite Wahl, dokumentiert in journal.md.)
 

@@ -7,7 +7,7 @@ status: active
 language: en
 version: "0.2"
 created: 2026-07-29
-updated: 2026-08-21
+updated: 2026-08-22
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 method:
@@ -155,4 +155,4 @@ What remains in this document is therefore F5, F7, F8 and two open reviews. When
 
 The current `knowledge/journal.md` predates template version 0.4 and remains a narrative project record. A later repository-specific migration will apply the curated provenance types and semantic compaction rule against a clean Git baseline. That migration will preserve every substantive statement through an explicit disposition and will not create `journal-archive.md`.
 
-The canonical Promptotyping skill needs a separate delivery lane. That lane will establish the repository source and synchronisation path, then align `orient`, `handoff`, `compact`, and `distill` with the method specification. Installed copies are outside this refactor.
+The canonical Promptotyping skill delivery lane closed on 2026-08-22. The repository source is `skills/promptotyping/SKILL.md`; the Skills page renders that file directly and exposes copy, download, and package links. Its `orient`, `handoff`, `compact`, and `distill` operations follow the method specification. Installed copies remain outside repository synchronisation.

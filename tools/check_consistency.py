@@ -43,6 +43,11 @@ KNOWLEDGE_DIR = ROOT / "knowledge"
 VAULT_SOURCES = ROOT / "vault" / "00_sources"
 JS_DIR = ROOT / "assets" / "js"
 NOT_FOUND = ROOT / "404.html"
+SKILL_DIR = ROOT / "skills" / "promptotyping"
+SKILL_MD = SKILL_DIR / "SKILL.md"
+SKILL_UI = SKILL_DIR / "agents" / "openai.yaml"
+SKILLS_INDEX = CONTENT_DIR / "skills" / "index.md"
+PAGES_CONTENT = JS_DIR / "pages-content.js"
 
 # The site's own base, as the template: fields and the prose spell it.
 SITE_BASE = "dhcraft.org/Promptotyping/"
@@ -101,6 +106,7 @@ NORMATIVE_FILES = (
     KNOWLEDGE_DIR / "plan.md",
     KNOWLEDGE_DIR / "project.md",
     KNOWLEDGE_DIR / "specification.md",
+    SKILL_MD,
 )
 
 failures = []
@@ -254,6 +260,45 @@ def check_catalogue_contract(documents):
     for marker in required_markers:
         if marker not in template:
             fail("naming", "handoff template misses %r" % marker)
+
+
+def check_skill_package() -> None:
+    """The canonical skill and its public access path form one package."""
+    required_files = (SKILL_MD, SKILL_UI, SKILLS_INDEX, PAGES_CONTENT)
+    missing = [path for path in required_files if not path.is_file()]
+    for path in missing:
+        fail("skill", "%s is missing" % path.relative_to(ROOT).as_posix())
+    if missing:
+        return
+
+    skill = read_text(SKILL_MD)
+    frontmatter = re.match(r"^---\n(.*?)\n---(?:\n|$)", skill, re.S)
+    if not frontmatter or not re.search(
+            r"^name:[ \t]*promptotyping[ \t]*$", frontmatter.group(1), re.M):
+        fail("skill", "skills/promptotyping/SKILL.md has no promptotyping name")
+
+    operations = ("Orient", "Distill", "Handoff", "Compact")
+    for operation in operations:
+        if not re.search(r"^## %s[ \t]*$" % operation, skill, re.M):
+            fail("skill", "SKILL.md misses the %s operation" % operation)
+    if re.search(r"^## Integrate\b", skill, re.M):
+        fail("skill", "SKILL.md defines the excluded Integrate operation")
+
+    orient = re.search(r"^## Orient\n(.*?)(?=^## |\Z)", skill, re.M | re.S)
+    if orient:
+        carriers = ("knowledge/INDEX.md", "knowledge/handoff.md", "knowledge/journal.md")
+        positions = [orient.group(1).find(carrier) for carrier in carriers]
+        if -1 in positions or positions != sorted(positions):
+            fail("skill", "Orient does not read INDEX, Handoff, and Journal in order")
+
+    page = read_text(PAGES_CONTENT)
+    for marker in ('id="skills-promptotyping"', '"skills/promptotyping/SKILL.md"'):
+        if marker not in page:
+            fail("skill", "pages-content.js misses %s" % marker)
+    if "#skills-promptotyping" not in read_text(SKILLS_INDEX):
+        fail("skill", "the Skills index does not link to #skills-promptotyping")
+    if "$promptotyping" not in read_text(SKILL_UI):
+        fail("skill", "agents/openai.yaml default prompt does not invoke $promptotyping")
 
 
 def template_fill_block(path):
@@ -1288,7 +1333,10 @@ def check_relative_links():
     to the opt-in URL pass; fragment-only links are anchors and are covered by
     check_anchors.
     """
-    targets = list(ROOT.glob("*.md")) + list((ROOT / "knowledge").glob("*.md"))         + list((ROOT / "_content").rglob("*.md"))
+    targets = (list(ROOT.glob("*.md"))
+               + list((ROOT / "knowledge").glob("*.md"))
+               + list((ROOT / "_content").rglob("*.md"))
+               + list((ROOT / "skills").rglob("*.md")))
     pattern = re.compile(r"\]\((?!https?:|mailto:|#)([^)]+)\)")
     for path in sorted(targets):
         text = path.read_text(encoding="utf-8", errors="replace")
@@ -1327,6 +1375,7 @@ def main() -> int:
         check_vault_index_current,
         check_relative_links,
         check_knowledge_frontmatter,
+        check_skill_package,
     ]
     if "--check-urls" in sys.argv:
         groups.append(lambda: check_urls(cases))

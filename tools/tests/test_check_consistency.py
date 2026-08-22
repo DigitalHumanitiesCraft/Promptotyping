@@ -219,6 +219,47 @@ class NamingContractTest(CheckCase):
                 self.assertIn(retired, self.only_failure())
 
 
+class SkillPackageTest(CheckCase):
+    """V18, the portable source and the site surface stay connected."""
+
+    def setUp(self) -> None:
+        super().setUp()
+        root = self.tempdir()
+        fixtures = {
+            "SKILL_MD": cc.SKILL_MD,
+            "SKILL_UI": cc.SKILL_UI,
+            "SKILLS_INDEX": cc.SKILLS_INDEX,
+            "PAGES_CONTENT": cc.PAGES_CONTENT,
+        }
+        for name, source in fixtures.items():
+            target = root / source.relative_to(cc.ROOT)
+            self.write(target, source.read_text(encoding="utf-8"))
+            self.patch(name, target)
+
+    def test_the_current_package_passes(self) -> None:
+        cc.check_skill_package()
+        self.assertEqual(cc.failures, [])
+
+    def test_a_missing_operation_fails(self) -> None:
+        text = cc.SKILL_MD.read_text(encoding="utf-8").replace("## Compact", "## Condense")
+        cc.SKILL_MD.write_text(text, encoding="utf-8")
+        cc.check_skill_package()
+        self.assertIn("Compact operation", self.only_failure())
+
+    def test_an_integrate_operation_fails(self) -> None:
+        with cc.SKILL_MD.open("a", encoding="utf-8") as handle:
+            handle.write("\n## Integrate\n")
+        cc.check_skill_package()
+        self.assertIn("excluded Integrate", self.only_failure())
+
+    def test_a_disconnected_site_surface_fails(self) -> None:
+        text = cc.PAGES_CONTENT.read_text(encoding="utf-8").replace(
+            '"skills/promptotyping/SKILL.md"', '"skills/missing/SKILL.md"')
+        cc.PAGES_CONTENT.write_text(text, encoding="utf-8")
+        cc.check_skill_package()
+        self.assertIn("pages-content.js", self.only_failure())
+
+
 class GalleryTest(CheckCase):
     """V4, the two closed vocabularies whose violation is silent in the browser."""
 

@@ -7,7 +7,7 @@ status: complete
 language: en
 version: 1.1
 created: 2026-05-09
-updated: 2026-08-21
+updated: 2026-08-22
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5, Claude Opus 5)
 method:
@@ -59,6 +59,7 @@ The method paper follows a two-document model. The canonical text is the Researc
 - `snapshots/` contains the dated external report [paper-zfdg-submission-report-2026-07-23.md](../snapshots/paper-zfdg-submission-report-2026-07-23.md) and the final knowledge record of the retired [Promptotyping Agent Interface](../snapshots/promptotyping-agent-interface-final-record-2026-08-22.md).
 - `handoffs/` contains the exceptional dated transition snapshot [promptotyping-vault-migration-handoff-2026-08-09.md](../handoffs/promptotyping-vault-migration-handoff-2026-08-09.md). It does not replace the live inbox.
 - `_content/` contains authored publication pages and the stable public template mirrors. Generated mirrors such as `_content/glossar.md` are rebuilt from their declared source.
+- `skills/promptotyping/` contains the portable canonical skill. The Skills page renders its `SKILL.md` directly and exposes the complete package source.
 - `data/` is the established runtime-data area. Generated members name their producing command in the governing documentation; `data/vault.json` is built by `vault/tools/build_site_index.py`.
 
 ### The revision rounds

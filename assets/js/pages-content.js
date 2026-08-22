@@ -43,8 +43,8 @@
   }
 
   /* ---- Skills ----
-     Index intro, then coding and writing as sub-blocks with stable anchors
-     #skills-coding / #skills-writing; prompt code blocks get a copy button. */
+     Index intro, the installable skill package and two system prompts use the
+     stable #skills-promptotyping / #skills-coding / #skills-writing anchors. */
 
   /* Both sub-block files head their text with an H1, so the merged page would
      carry three. Their headings move down one level at render time through the
@@ -57,6 +57,42 @@
     A.addCodeCopyButtons(el);
   }
 
+  function renderSkillPackage(el, source, text) {
+    renderSkillsBlock(el);
+
+    var actions = document.createElement("div");
+    actions.className = "skill-actions";
+
+    var copy = document.createElement("button");
+    copy.type = "button";
+    copy.className = "skill-copy";
+    copy.textContent = "Copy SKILL.md";
+    copy.addEventListener("click", function () {
+      A.copyText(text, copy, "Copy SKILL.md");
+    });
+    actions.appendChild(copy);
+
+    var download = document.createElement("a");
+    download.href = source;
+    download.download = "SKILL.md";
+    download.textContent = "Download SKILL.md";
+    actions.appendChild(download);
+
+    var repository = document.createElement("a");
+    repository.href = "https://github.com/DigitalHumanitiesCraft/Promptotyping/tree/main/skills/promptotyping";
+    repository.target = "_blank";
+    repository.rel = "noopener";
+    repository.textContent = "Open package";
+    actions.appendChild(repository);
+
+    var heading = el.querySelector("h2");
+    if (heading && heading.nextSibling) {
+      el.insertBefore(actions, heading.nextSibling);
+    } else {
+      el.appendChild(actions);
+    }
+  }
+
   function renderSkills() {
     var host = document.getElementById("skills");
     if (!host) {
@@ -65,11 +101,16 @@
     host.classList.remove("placeholder-section");
     host.innerHTML =
       '<div id="skills-intro"></div>' +
+      '<div class="skills-block" id="skills-promptotyping"></div>' +
       '<div class="skills-block" id="skills-coding"></div>' +
       '<div class="skills-block" id="skills-writing"></div>';
 
+    var skillSource = "skills/promptotyping/SKILL.md";
     return Promise.all([
       A.renderMarkdownInto("skills-intro", "_content/skills/index.md"),
+      A.renderMarkdownInto("skills-promptotyping", skillSource, function (el, text) {
+        renderSkillPackage(el, skillSource, text);
+      }),
       A.renderMarkdownInto("skills-coding", "_content/skills/coding.md", renderSkillsBlock),
       A.renderMarkdownInto("skills-writing", "_content/skills/writing.md", renderSkillsBlock)
     ]);

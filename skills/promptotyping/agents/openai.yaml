@@ -1,0 +1,4 @@
+interface:
+  display_name: "Promptotyping"
+  short_description: "Work from maintained project knowledge"
+  default_prompt: "Use $promptotyping to orient in this repository and continue from its maintained project knowledge."

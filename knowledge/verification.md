@@ -7,7 +7,7 @@ status: active
 language: en
 version: 0.6
 created: 2026-07-26
-updated: 2026-08-21
+updated: 2026-08-22
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Opus 5)
 method:
@@ -188,6 +188,16 @@ Under `tools/tests/` the checks are themselves held to their regression cases, r
 **Procedure.** Check the catalogue size and required entries, then scan the current convention, template catalogue, README, action layer, and current template blocks. Historical journal entries, dated snapshots, explicit historical evidence paragraphs, and version histories are excluded because they record earlier states.
 
 **Verdict, 2026-08-21.** Passes after the Handoff template, catalogue entry, current examples, and regression cases were added.
+
+### V18. The canonical skill remains installable and publicly reachable
+
+**Claim.** `skills/promptotyping/` contains a valid `SKILL.md` and its Codex metadata. The skill exposes `orient`, `distill`, `handoff`, and `compact`, preserves the required reading order, and defines no separate `integrate` operation. The Skills page renders the canonical source under `#skills-promptotyping`, while the page index and UI metadata point to the same package.
+
+**Why it matters.** The operation contract is published in the method specification and executed from a separate machine-readable package. A renamed operation, missing source file, or disconnected page would leave a plausible description on the site while the installable skill followed another method state.
+
+**Procedure.** Check the package files, frontmatter name, operation headings, orientation order, excluded operation, page source path, public anchor, and default invocation. Regression tests remove an operation, add the excluded operation, and disconnect the rendered source.
+
+**Verdict, 2026-08-22.** Passes with the first canonical package and its Skills-page integration.
 
 ## What is not checked automatically, and why
 

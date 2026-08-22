@@ -37,6 +37,7 @@ Two introductions to the method (German): the methodology explainer [Promptotypi
 | Technology baseline for static research tools (draft) | [_content/technology-baseline.md](_content/technology-baseline.md) | — |
 | Curated case studies | [data/case-studies.json](data/case-studies.json), depth pages in [_content/case-studies/](_content/case-studies/) | [#use-cases](https://dhcraft.org/Promptotyping/#use-cases) |
 | Method extensions from practice | [_content/praxis.md](_content/praxis.md) | [#praxis](https://dhcraft.org/Promptotyping/#praxis) |
+| Canonical Promptotyping skill | [skills/promptotyping/](skills/promptotyping/) | [#skills-promptotyping](https://dhcraft.org/Promptotyping/#skills-promptotyping) |
 | Reusable system prompts (coding, writing) | [_content/skills/](_content/skills/) | [#skills](https://dhcraft.org/Promptotyping/#skills) |
 | Glossary | [data/glossar.json](data/glossar.json), [_content/glossar.md](_content/glossar.md) | [#glossar](https://dhcraft.org/Promptotyping/#glossar) |
 | Durable site knowledge base (self-application) | [knowledge/](knowledge/) | — |

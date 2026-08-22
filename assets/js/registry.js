@@ -53,7 +53,7 @@
     { id: "praxis", label: "Best Practices", group: "Tools and practice", kind: "informative",
       note: "Method extensions that grew out of applying it" },
     { id: "skills", label: "Skills", group: "Tools and practice", kind: "informative",
-      note: "Reusable system prompts for coding and writing",
+      note: "Installable method skill and reusable system prompts",
       machine: "_content/skills/index.md" },
     { id: "arbeitsumgebung", label: "Working environment", group: "Tools and practice", kind: "informative",
       note: "Vault, agent interface and AI harness around the method" },

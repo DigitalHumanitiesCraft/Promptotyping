@@ -994,6 +994,7 @@ a:hover {
 .case-card-more,
 .case-card-video-toggle,
 .panel-copy,
+.skill-copy,
 .code-copy {
   font-family: var(--font-text);
   font-size: 0.875rem;
@@ -1010,6 +1011,7 @@ a:hover {
 .case-card-more:hover,
 .case-card-video-toggle:hover,
 .panel-copy:hover,
+.skill-copy:hover,
 .code-copy:hover {
   background: var(--text);
   color: var(--bg);
@@ -1486,7 +1488,15 @@ a:hover {
   color: var(--grey-3);
 }
 
-/* ---- Skills: copy button over a code block ---- */
+/* ---- Skills: package actions and copy buttons ---- */
+
+.skill-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+  margin: var(--space-4) 0 var(--space-6);
+}
 
 .skills-block pre {
   position: relative;

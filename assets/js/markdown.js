@@ -207,7 +207,7 @@
         el.innerHTML = parseMarkdown(A.stripFrontmatter(text));
         el.classList.remove("placeholder-section");
         if (typeof after === "function") {
-          after(el);
+          after(el, text);
         }
       })
       .catch(function (err) {

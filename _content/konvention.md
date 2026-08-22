@@ -5,8 +5,8 @@ version: "0.3"
 status: complete
 language: en
 source: Konvention Promptotyping Documents
-updated: 2026-08-21
-mirrored: 2026-08-21
+updated: 2026-08-22
+mirrored: 2026-08-22
 machine-url: https://dhcraft.org/Promptotyping/_content/konvention.md
 ---
 
@@ -114,6 +114,8 @@ Convention change of 2026-05-30: epics and user stories move into `specification
 Where a repository covers a function for which no template exists, for instance `character-error-rate-methodology.md` or `personas.md`, the document stays freehand and follows the naming contract and frontmatter vocabulary. A template becomes worthwhile once comparable structures recur.
 
 Verification and Integration were candidate functions from 2026-06-13 and were promoted on 2026-07-19 to full functions with a template of their own, after the content audit confirmed the threshold of two comparable occurrences. Handoff entered the catalogue on 2026-08-21 as the mandatory Process Inbox of every project. All catalogue templates are released (`status: complete`); a draft status would stand visibly in catalogue and template alike.
+
+Governance has been registered as a function since 2026-08-17. Its first developed instance is the draft [`knowledge/governance.md`](../knowledge/governance.md) of this method repository. The Knowledge, Context and Agentic Engineering teaching project and Research Mission Control are the next intended applications. A general template will be distilled after at least two comparable project instances have been reviewed. Until then, a `governance.md` follows the mandatory frontmatter core and the function definition of this convention without claiming a template address.
 
 ## Template addressability through the `template:` field
 

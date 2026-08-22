@@ -7,7 +7,7 @@ status: active
 language: de
 version: 1.0
 created: 2026-05-09
-updated: 2026-08-21
+updated: 2026-08-22
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 method:
@@ -895,3 +895,11 @@ Der dauerhafte `knowledge/`-Kern ist von den übrigen Artefaktklassen getrennt. 
 Der Operator hat das separate Interface-Repository aus dem aktiven Promptotyping-Umfang genommen. Sein übertragbares Wissen ist vor der Löschung in [promptotyping-agent-interface-final-record-2026-08-22.md](../snapshots/promptotyping-agent-interface-final-record-2026-08-22.md) verdichtet. Der Record hält den finalen Commit, den verifizierten Teststand, die Architekturentscheidungen, die methodischen Befunde und die bekannte Grenze der manuellen QA.
 
 Die Working-Environment-Seite führt wieder allein den Vault und den AI Harness als aktuelle Arbeitsumgebung. Der allgemeine Methodenbegriff Promptotyping Interface bleibt bestehen. Er bezeichnet weiterhin zweckgebundene Prüf- und Arbeitsoberflächen in Forschungsprojekten.
+
+## 2026-08-22 — Kanonischer Skill und Frontend-Integration
+
+Das Repository führt den portablen Methodenkern unter `skills/promptotyping/`. `SKILL.md` operationalisiert Orient, Distill, Handoff und Compact; produktspezifische Codex-Metadaten liegen getrennt unter `agents/openai.yaml`. Die Skills-Seite rendert die kanonische Datei direkt und stellt Kopieren, Download sowie den Paketverweis bereit. Die beiden bestehenden System-Prompts bleiben als aufgabenspezifisches Lehrmaterial erhalten.
+
+Die öffentliche Konvention weist Governance als registrierte Funktion mit `knowledge/governance.md` als erster ausgearbeiteter Referenzinstanz aus. Eine allgemeine Governance-Vorlage entsteht erst nach mindestens zwei geprüften vergleichbaren Anwendungen. Der aktuelle Vorlagenkatalog bleibt deshalb unverändert.
+
+Die neue Prüfgruppe V18 koppelt Paket, Operationsvertrag und Frontend-Adresse. Verifiziert wurden 16 Konsistenzgruppen ohne Fehler, 54 Werkzeugtests, der offizielle Skill-Validator, die JavaScript-Syntax aller Frontend-Dateien und die lokale Browserdarstellung einschließlich Direktanker und Kopierfunktion. Der Browser meldete keine Fehler oder Warnungen.

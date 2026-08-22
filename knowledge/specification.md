@@ -7,7 +7,7 @@ status: complete
 language: en
 version: 0.8
 created: 2026-05-09
-updated: 2026-08-21
+updated: 2026-08-22
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Opus 4.8)
 method:
@@ -244,12 +244,14 @@ The Journal template is version 0.4. Entries represent substantively coherent tr
 
 ### A42 — The canonical skill follows the document semantics
 
-The later canonical Promptotyping skill must make `orient` read `handoff.md` before `journal.md`; `handoff` integrates durable knowledge before it retains open deltas and writes the Journal before the shared commit; `compact` applies semantic compaction without an archive; `distill` creates both `journal.md` and `handoff.md`. Integration remains an invariant of orientation, ongoing work, and handoff processing. The operation set gains no `integrate` command. Repository source and synchronisation belong to the separate skill-delivery lane in `plan.md`.
+The canonical Promptotyping skill makes `orient` read `handoff.md` before `journal.md`; `handoff` integrates durable knowledge before it removes an open delta and writes the Journal before any shared commit; `compact` applies semantic compaction without an archive; `distill` creates both `journal.md` and `handoff.md`. Integration remains an invariant of orientation, ongoing work, and handoff processing. The operation set gains no `integrate` command.
+
+The repository source is `skills/promptotyping/SKILL.md`. The Skills page renders this source directly and provides controls for copying the complete file, downloading it, and opening the package. Product-specific metadata remains optional and separate from the portable instructions. Acceptance criterion. A fresh checkout exposes the skill under `#skills-promptotyping`, the copied source passes the skill validator, and the four named operations preserve the document semantics above.
 
 ### A26 — The site is English
 Every string the site shows is English, in the British spelling the paper uses (operator decision 2026-07-25, carried out 2026-07-26). That covers the page registry labels, the status line, every control, the nine content pages directly under `_content/`, and the text fields of `data/glossar.json`, `data/case-studies.json` and `data/promptotyping-documents.json`.
 
-Three sets under `_content/` are still German, and each for its own reason. Sixteen of the seventeen templates are vault mirrors whose translation belongs in a vault session together with their originals, so translating the repo copy alone would be the silent divergence `CLAUDE.md` forbids; the seventeenth, `technology`, has been repo-canonical since 2026-07-26 and stays German so that the catalogue reads in one language. The three files under `skills/` are reusable German system prompts, that is teaching material, which the language decision of 2026-07-25 exempts. The seven case-study depth pages had no such reason and were carried over on 2026-07-26, onto the shape A7 prescribes, which ended the pass. The source for the terminology of the distilled pages is [promptotyping-paper.md](../research-artefacts/promptotyping-paper.md), which they are distilled from; the German distillate is superseded and is not maintained as a back-translation source.
+Three sets under `_content/` are still German, and each for its own reason. Sixteen of the seventeen templates are vault mirrors whose translation belongs in a vault session together with their originals, so translating the repo copy alone would be the silent divergence `CLAUDE.md` forbids; the seventeenth, `technology`, has been repo-canonical since 2026-07-26 and stays German so that the catalogue reads in one language. The three files under `_content/skills/` are reusable German teaching material, which the language decision of 2026-07-25 exempts. The canonical package under `skills/promptotyping/` is an English machine-addressed Action-Layer source. The seven case-study depth pages had no such reason and were carried over on 2026-07-26, onto the shape A7 prescribes, which ended the pass. The source for the terminology of the distilled pages is [promptotyping-paper.md](../research-artefacts/promptotyping-paper.md), which they are distilled from; the German distillate is superseded and is not maintained as a back-translation source.
 
 Three classes stay German because they are identifiers rather than text. The published anchors, since foreign repositories carry them as `template:` URIs. The template names, since they stand in foreign frontmatter blocks. And the German file names the convention cites as examples of real repositories. Thirteen glossary entries and all templates therefore appear under a German address with an English label, which is the separation of identifier from text that A1 weighed and recommended.
 

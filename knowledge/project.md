@@ -7,7 +7,7 @@ status: complete
 language: en
 version: 0.5
 created: 2026-05-09
-updated: 2026-08-21
+updated: 2026-08-22
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Opus 4.8)
 method:
@@ -72,7 +72,7 @@ Out of scope:
 
 ## Current state
 
-Status is complete and deployed. The site renders the paper reading flow, the templates with side panels and the frontmatter inspector, the curated use-case gallery with its depth pages, and the overview, practice, skills, working-environment, glossary, convention, and bibliography sections, with mobile layout and SEO. What each of these must do and how it is built is owned by [specification.md](specification.md), [architecture.md](architecture.md), and [design.md](design.md); the header and footer run on the DHCraft watercolour mark.
+Status is complete and deployed. The site renders the paper reading flow, the templates with side panels and the frontmatter inspector, the curated use-case gallery with its depth pages, and the overview, practice, skills, working-environment, glossary, convention, and bibliography sections, with mobile layout and SEO. The repository also carries the canonical portable Promptotyping skill rendered on the Skills page. What each of these must do and how it is built is owned by [specification.md](specification.md), [architecture.md](architecture.md), and [design.md](design.md); the header and footer run on the DHCraft watercolour mark.
 
 The phase-provenance lane was removed after the first deploy by operator decision (A2 in [specification.md](specification.md)). The `{:.phase-*}` tags it read have since left the paper Markdown as well.
 
