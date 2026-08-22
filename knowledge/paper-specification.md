@@ -1237,6 +1237,23 @@ Verify visibility through:
 - an authoritative project record;
 - explicit author testimony.
 
+The current visibility set was verified on 2026-08-22 through the authenticated GitHub repository record and an anonymous request to the repository URL. The two checks agreed in all ten cases.
+
+| Repository | Authenticated GitHub visibility | Anonymous repository URL |
+|---|---|---|
+| `chpollin/wiiw-figaro-nam-demo` | public | HTTP 200 |
+| `chpollin/fortunoff-dashboard` | public | HTTP 200 |
+| `DigitalHumanitiesCraft/co-ocr-htr` | public | HTTP 200 |
+| `chpollin/HerData` | private | HTTP 404 |
+| `chpollin/db_for_medieval_legal_transactions` | private | HTTP 404 |
+| `chpollin/db_for_medieval_legal_transactions_edition` | public | HTTP 200 |
+| `chpollin/db_for_medieval_legal_transactions_simplified` | public | HTTP 200 |
+| `chpollin/uc3-vetcore-proteomics` | private | HTTP 404 |
+| `DigitalHumanitiesCraft/kisug-wissensbasis` | private | HTTP 404 |
+| `chpollin/zbz-ocr-tei` | private | HTTP 404 |
+
+This closes the repository-visibility verification task. Rights clearance remains an independent publication decision and is recorded in Section 22.
+
 ---
 
 # 11. Scope and Limitations
@@ -1795,7 +1812,7 @@ Flag register. The numbers remain stable because the journal and earlier work bl
 
 9. **Open production constraint. Footnote labels are non-sequential in the source.** The restored notes keep their five-chapter labels 29 and 34 to 37 beside the draft's own 1 to 27, and 28 and 30 to 33 do not exist. The site numbers the apparatus by order of occurrence, so the rendered text is correct and only the Markdown source shows the gaps. A submission export renumbers.
 
-Evidence and production tasks that remain from the earlier list are repository-visibility verification for restricted repositories and the rights-clearance list in Section 22. The M³GIM derivation question and the Notker verification and acceptance reconstruction were closed on 2026-08-22 in Sections 10.9 and 10.5.
+The evidence and production task that remains from the earlier list is the rights-clearance decision in Section 22. The M³GIM derivation question, the Notker verification and acceptance reconstruction, and repository-visibility verification were closed on 2026-08-22 in Sections 10.9, 10.5, and 10.12.
 
 A manuscript section is accepted only when its conceptual and terminological decisions match this document, its citations and footnotes have been verified, no unresolved placeholder remains, figures are introduced and interpreted in prose, and the author has accepted the prose as the current manuscript version.
 
@@ -1806,7 +1823,7 @@ A manuscript section is accepted only when its conceptual and terminological dec
 1. Operator's end-to-end read of `research-artefacts/promptotyping-paper.md` as rendered on the site; findings return through the ordinary revision path with the rule catalogue of Section 16.6.
 2. Run the open review round on version 0.9 (Section 23.1). Collect the Google Doc comments, decide them at the operator gate, and edit `research-artefacts/promptotyping-paper.md` rather than the Doc.
 3. Resolve open flags 2, 4, 6, and 8 of Section 19. Keep flag 9 as an explicit submission-export step; flag 1 remains dormant while the confabulation term is absent.
-4. Complete the remaining evidence and production tasks from Section 19. They cover repository visibility for restricted repositories and the rights-clearance list of Section 22.
+4. Complete the rights-clearance decision in Section 22.
 5. Derive the submission package fresh from Section 21 and the final text, then submit it after operator release.
 
 ---
@@ -1828,7 +1845,8 @@ The applied submission package will be derived from this section and the final m
 - Dual licensing: MIT for code, CC BY 4.0 for documentation and Knowledge Documents; third-party research data excepted per repository with its own rights statement.
 - Citation identity: Christopher Pollin, Digital Humanities Craft OG, ORCID 0000-0002-4879-129X, GitHub profile via `sameAs`.
 - Releases without a prescribed cadence, cut when the state carries one; a Zenodo DOI presupposes at least one release.
-- Rights clearance pending with the operator (state 2026-07-23): wiiw-figaro-nam-demo, fortunoff-dashboard, co-ocr-htr, HerData, the three SuGW repositories, uc3-vetcore-proteomics, kisug-wissensbasis. The three co-authors in `FemPrompt/CITATION.cff` are entered by the operator (names rule).
+- Repository visibility was verified on 2026-08-22 in Section 10.12. Public availability does not establish permission to reproduce project material in the paper.
+- Rights clearance remains pending with the operator for wiiw-figaro-nam-demo, fortunoff-dashboard, co-ocr-htr, HerData, the three SuGW repositories, uc3-vetcore-proteomics, and kisug-wissensbasis. The three co-authors in `FemPrompt/CITATION.cff` are entered by the operator under the names rule.
 
 ---
 
