@@ -5,7 +5,7 @@ project:
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 status: snapshot
 language: de
-version: "1.0"
+version: "1.1"
 created: 2026-08-22
 updated: 2026-08-22
 authors: [Christopher Pollin]
@@ -37,15 +37,21 @@ Die automatisierten Tests deckten Parser, Diff-Verarbeitung, Provenienz, Zustand
 
 Der Prototyp untersuchte eine Beobachtungsschicht für Forschende, die mehrere agentisch bearbeitete Projekte parallel führen. Der Obsidian-Vault bildete die gemeinsame Arbeitsumgebung. `ACTIVE-WORK.md` lieferte den projektübergreifenden Zustand, während projektbezogene Knowledge Documents den fachlichen Kontext trugen. Das Interface sollte den Wechsel zwischen Portfolioübersicht und Dokumentarbeit unterstützen und Änderungen eines externen Agenten prüfbar machen.
 
+Die Konzeption unterschied drei Tätigkeiten des Critical Expert. Beobachten umfasste Agentenstatus und Dateiänderungen. Steuern umfasste Agentenanweisungen und Kontextauswahl. Arbeiten bezeichnete die direkte Kuration derselben Dokumente, die der Agent verwendete. Im Entwicklungsverlauf wanderten Steuerung und Dokumentbearbeitung zurück in den AI Harness und nach Obsidian. Der Browser behielt die abgeleitete Übersicht und das Diff-Review. Der Verlauf zeigte damit, dass die drei Tätigkeiten gemeinsame Daten brauchen, aber keine gemeinsame Bedienoberfläche voraussetzen.
+
 Die erste Konzeption sah eine Browseranwendung mit eigener LLM-Anbindung und Dokumenteditor vor. Die Architekturprüfung verwarf diesen Ansatz. Claude Code arbeitete bereits im Dateisystem und verfügte dort über Werkzeuge, Ausführung und Projektregeln. Eine zweite LLM-Schicht im Browser hätte denselben Arbeitszusammenhang dupliziert und einen zusätzlichen Zustand erzeugt.
 
 ## Architektur des Prototyps
 
 Die endgültige Architektur setzte den Vault und seine Dateien als Integrationsvertrag ein. Claude Code arbeitete außerhalb des Browsers im Dateisystem. Das Interface las denselben Bestand und hielt keinen eigenen fachlichen Datenspeicher.
 
+Der Vault war als Analyseeinheit gedacht, weil Anforderungen, Datenbeschreibungen und Forschungsfragen ihre Bedeutung aus dokumentierten Relationen beziehen. Die frühe Konzeption wollte auch die Auswahl des Agentenkontexts und sein Token-Budget sichtbar machen. Die endgültige Fassung reduzierte diese Funktion auf eine Dokumentliste und überließ die wirksame Kontextsteuerung dem Harness. Die bleibende Einsicht betrifft die Autorität dieser Auswahl. Eine sichtbare Auswahl unterstützt den Forschungsprozess nur dann, wenn sie den tatsächlich verwendeten Agentenkontext verbindlich bestimmt.
+
 Der Overview Mode leitete Projektkarten aus `ACTIVE-WORK.md` ab. Status, Kurzbeschreibung, nächste Schritte, Aktualisierungsdatum, Rechnungshinweis und Repository-Adresse wurden aus Inline-Feldern gelesen. Saved Views filterten aktive, wartende und termingebundene Einträge. Der Focus Mode zeigte die Dokumente eines Projekts als formatiertes Markdown und erhielt einen schmalen Hinweis auf andere Projekte.
 
 Änderungen an geöffneten Dateien erzeugten einen zeilenbasierten Diff. Nutzende konnten einzelne Hunks übernehmen oder verwerfen. Separate Provenienzdateien hielten fest, welche Zeilen aus einem Agentenlauf oder einer menschlichen Bearbeitung hervorgegangen waren. Die normale Leseansicht zeigte den integrierten Text. Die Entstehungsgeschichte wurde nur bei Bedarf eingeblendet.
+
+Die eigenen Knowledge Documents dienten als Testbestand des Prototyps. Diese Selbstanwendung prüfte, ob die dokumentierte Architektur, die implementierten Funktionen und der angezeigte Projektzustand zusammenpassten. Drift zwischen diesen Schichten wurde dadurch zu einem beobachtbaren Projektbefund.
 
 ## Übertragbare Befunde
 
@@ -72,6 +78,10 @@ Das Dashboard war eng an eine damalige Fassung von `ACTIVE-WORK.md` gebunden. Sp
 ### Ein eigenes Interface braucht eine eigenständige Funktion
 
 Der Prototyp bestätigte den Nutzen von Overview und Focus, abgeleiteten Statusansichten und expliziten Prüfpunkten. Die Forschungsleitstelle, ihre Lanes und die Agentenharnesses übernahmen diese Funktionen später näher an den kanonischen Quellen. Das separate Browserwerkzeug fügte keine hinreichend eigenständige Fähigkeit mehr hinzu.
+
+### Methodenschritte müssen keine Navigationsmodi werden
+
+Die frühe Gestaltung wollte die vier Promptotyping-Formen als phasenabhängige Oberfläche materialisieren. Die spätere Fassung organisierte die Arbeit über Overview und Focus und führte methodische Regeln in den Knowledge Documents. Der Verlauf belegt, dass eine Methode durch Dokumentfunktionen, Prüfkriterien und Write-back wirksam werden kann. Eine zusätzliche Abbildung als Navigationszustand ist nur dann gerechtfertigt, wenn sie eine konkrete Entscheidung unterstützt.
 
 ## Ablösung
 
