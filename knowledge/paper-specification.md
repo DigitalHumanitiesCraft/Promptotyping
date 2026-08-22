@@ -1143,6 +1143,8 @@ Classify each project as one of:
 
 Apply the canonical definition of promptotype and the version-identification rule consistently.
 
+The Notker state is a **retrospectively reconstructable promptotype**. Its referenced implementation state is commit `fb480a7`, which integrates the last proposal-stage pipeline and interface work recorded in the repository. Technical verification is documented through 29 passing pipeline tests, six passing glossary-classification tests, RelaxNG validation, and a Playwright walkthrough without JavaScript errors. Scholarly examination is documented through the commissioning editor's review of 2026-04-15 and the corrective iterations that followed. Purpose-specific acceptance is reconstructable from the completed demonstrator commission, the delivery of the proposal materials on 2026-04-30, and the subsequent use of the project in the submitted funding process. The repository contains no separate acceptance record, and its project document still marks full acceptance of Iteration 2 as open. The paper's claim is therefore limited to acceptance as a funding-proposal demonstrator; it supplies no evidence for corpus-wide philological or production acceptance.
+
 ## 10.6 Repository evidence rule
 
 Repository-wide claims must not be inferred from:
@@ -1202,7 +1204,7 @@ The canonical repository findings are:
 - HerData has frontmatter in all seven inspected knowledge documents and `generated-with:` in all seven.
 - `teiCrafter` contains extensive proof, roundtrip, fidelity, invariant, and browser-acceptance checks.
 - FemPrompt contains automated tests and a manual checklist.
-- The production mode of `M³GIM knowledge/domain.md` remains unresolved: deterministic, agentic, or hybrid derivation must be established from the script, document account, commit diff, and commit sequence.
+- The production mode of the former `M³GIM knowledge/domain.md` is established as **agentic derivation with deterministic verification**. Commit `d0ab900` formalised the vocabulary and added `vocab/check-coverage.py`; commit `e51174d`, eight seconds later, added the domain document and derivation report with `generated-with: Claude Code` and a Claude co-author trailer. The coverage script reads the vocabulary and dataset and returns findings and an exit code; it does not generate the document. The document itself combines the vocabulary with existing project knowledge and data observation. The wider workflow is hybrid, while the document-generation operation is agentic.
 
 ## 10.10 ZBZ correction
 
@@ -1793,7 +1795,7 @@ Flag register. The numbers remain stable because the journal and earlier work bl
 
 9. **Open production constraint. Footnote labels are non-sequential in the source.** The restored notes keep their five-chapter labels 29 and 34 to 37 beside the draft's own 1 to 27, and 28 and 30 to 33 do not exist. The site numbers the apparatus by order of occurrence, so the rendered text is correct and only the Markdown source shows the gaps. A submission export renumbers.
 
-Evidence and production tasks that remain from the earlier list: the M³GIM `knowledge/domain.md` derivation question, the Notker verification and acceptance reconstruction, repository-visibility verification for restricted repositories, and the rights-clearance list (Section 22).
+Evidence and production tasks that remain from the earlier list are repository-visibility verification for restricted repositories and the rights-clearance list in Section 22. The M³GIM derivation question and the Notker verification and acceptance reconstruction were closed on 2026-08-22 in Sections 10.9 and 10.5.
 
 A manuscript section is accepted only when its conceptual and terminological decisions match this document, its citations and footnotes have been verified, no unresolved placeholder remains, figures are introduced and interpreted in prose, and the author has accepted the prose as the current manuscript version.
 
@@ -1804,7 +1806,7 @@ A manuscript section is accepted only when its conceptual and terminological dec
 1. Operator's end-to-end read of `research-artefacts/promptotyping-paper.md` as rendered on the site; findings return through the ordinary revision path with the rule catalogue of Section 16.6.
 2. Run the open review round on version 0.9 (Section 23.1). Collect the Google Doc comments, decide them at the operator gate, and edit `research-artefacts/promptotyping-paper.md` rather than the Doc.
 3. Resolve open flags 2, 4, 6, and 8 of Section 19. Keep flag 9 as an explicit submission-export step; flag 1 remains dormant while the confabulation term is absent.
-4. Complete the remaining evidence and production tasks from Section 19. They cover the M³GIM `knowledge/domain.md` derivation question, the Notker verification and acceptance reconstruction, repository visibility for restricted repositories, and the rights-clearance list of Section 22.
+4. Complete the remaining evidence and production tasks from Section 19. They cover repository visibility for restricted repositories and the rights-clearance list of Section 22.
 5. Derive the submission package fresh from Section 21 and the final text, then submit it after operator release.
 
 ---
