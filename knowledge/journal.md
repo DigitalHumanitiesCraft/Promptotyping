@@ -937,3 +937,9 @@ Die Notker-Rekonstruktion trennt den überprüften Artefaktzustand von seiner An
 Die Prüfung verwendete für zehn Repositories den authentifizierten GitHub-Sichtbarkeitswert und einen anonymen Abruf der Repository-Adresse. Beide Verfahren lieferten durchgehend denselben Befund. Öffentlich sind wiiw FIGARO-NAM, Fortunoff, coOCR/HTR sowie die SuGW-Edition und das SuGW-Trainingssubset. Privat sind HerData, die SuGW-Pipeline, VetCore UC3, KISUG und ZBZ; ihre anonymen Repository-Adressen antworteten mit HTTP 404.
 
 Die Paper-Spezifikation führt den datierten Befund in Abschnitt 10.12 und schließt damit die Sichtbarkeitsprüfung. Die Rechteentscheidung bleibt davon unabhängig und weiter beim Operator. Das Manuskript und die Site-Daten blieben unverändert.
+
+## 2026-08-22 — Vollständige GPT-Modellbezeichnung bestätigt
+
+Der Operator bestätigte GPT-5.6 Sol als das im Paperprozess verwendete GPT-Modell. Die Author's Note des Manuskripts führt jetzt die vollständige Bezeichnung. Entscheidung 31 in `paper-specification.md` dokumentiert die Bestätigung und schließt Flag 8 für das Manuskript.
+
+Die öffentliche Ankündigung vom 31. Juli nannte GPT-5.6 Sol bereits korrekt. Ihre kürzere Modellliste bleibt als damaliger Ankündigungsstand erhalten. Die vollständige AI-Use-Erklärung steht im Manuskript. An externen Veröffentlichungen wurde nichts geändert.
