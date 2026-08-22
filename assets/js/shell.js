@@ -181,8 +181,14 @@
       return;
     }
     var label = function () {
-      btn.setAttribute("title", currentTheme() === "dark"
-        ? "Switch to the light theme" : "Switch to the dark theme");
+      var dark = currentTheme() === "dark";
+      var action = dark ? "Switch to the light theme" : "Switch to the dark theme";
+      var text = btn.querySelector(".visually-hidden");
+      btn.setAttribute("title", action);
+      btn.setAttribute("aria-pressed", dark ? "true" : "false");
+      if (text) {
+        text.textContent = action;
+      }
     };
     label();
     btn.addEventListener("click", function () {
