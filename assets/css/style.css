@@ -1507,7 +1507,8 @@ a:hover {
   margin: var(--space-4) 0 var(--space-6);
 }
 
-.skills-block pre {
+.skills-block pre,
+#tutorial pre {
   position: relative;
 }
 

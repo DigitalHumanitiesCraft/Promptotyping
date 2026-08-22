@@ -3,7 +3,7 @@ title: Tutorial. Your first Promptotyping iteration
 slug: tutorial
 status: draft
 language: en
-version: "0.3"
+version: "0.4"
 created: 2026-07-29
 updated: 2026-08-22
 machine-url: https://dhcraft.org/Promptotyping/_content/tutorial.md
@@ -39,13 +39,14 @@ The scope of a first pass is deliberately small. One dataset, one question, one 
 Create a Git repository in this folder: initialise it, create a data/
 folder and a knowledge/ folder, and add a .gitignore suited to this
 environment. I will place my dataset in data/. Then create
-knowledge/project.md from the purpose, question, and user stories I
-give you next, keeping my wording. Commit the result.
+knowledge/project.md as a minimal charter from the purpose, question,
+and provisional user stories I give you next, keeping my wording and
+marking the stories as provisional. Commit the result.
 ```
 
 Paste your purpose, question, and user stories when the agent asks, and copy your dataset into `data/`.
 
-**You should now have** a repository containing `data/` with your files and `knowledge/project.md` with purpose, question, and user stories in your wording.
+**You should now have** a repository containing `data/` with your files and `knowledge/project.md` with purpose, question, and provisional user stories in your wording. This is a compact starting state. Step 3 transfers the stories into `specification.md`, their durable document function, after Exploration has tested their relation to the data.
 
 **Check yourself.** Read the user stories and ask whether a colleague from your field would understand what the artefact must let them do, without you in the room. Sharpen any story that only says "explore the data" until it names an activity and a purpose.
 
@@ -56,20 +57,21 @@ Paste your purpose, question, and user stories when the agent asks, and copy you
 **Do this.** Give the agent its first analytical task:
 
 ```
-Read knowledge/project.md. Then analyse all files in data/ and write
-knowledge/data.md describing their structure, the meaning of every
-column or element, the relations between the files, value ranges,
-gaps, and anything anomalous. Do not read the full data into context:
-create a scripts/ folder with small scripts that profile the data,
-commit their extracted summaries, and work from those. Document what
-each script does. Where you are inferring meaning rather than reading
-it from the files, say so explicitly, and for every non-obvious claim
-name the file and rows or elements it rests on.
+Read knowledge/project.md. Then analyse all files in data/. Write
+knowledge/data.md as a curated account of their provenance, structure,
+semantics, relations, qualitative gaps, and anomalies. Create small
+profiling scripts under scripts/ and write volatile counts, value
+ranges, cardinalities, and distributions to generated/data-profile.md.
+Reference that report from knowledge/data.md without duplicating its
+numbers. Do not read the full data into model context. Document what
+each script does. Where you infer meaning, state that status explicitly;
+for every non-obvious claim, name the supporting file and rows or
+elements.
 ```
 
 The last sentence matters twice over. The agent's statements about your data are hypotheses, and `data.md` must keep visible where the files end and the model's guesses begin; the named evidence rows are what make the next check workable.
 
-**You should now have** `knowledge/data.md`, a `scripts/` folder with profiling scripts, their documentation, and the committed summaries they produced.
+**You should now have** a curated `knowledge/data.md`, a generated `generated/data-profile.md`, and a `scripts/` folder with the documented profiling scripts that produce the report.
 
 **Check yourself, twice.** First the falsification probe: pick one claim in `data.md`, follow its named evidence to the file and rows, and read them yourself. Second the gap probe: name one deficiency of the data that you know as its researcher, a known gap, a known encoding quirk, a known bias, and look up whether `data.md` states it. If either probe fails, tell the agent what is wrong and have `data.md` corrected before you continue. That correction is your first act as Critical Expert, and expect to make it; a first `data.md` that survives both probes untouched is the exception.
 
@@ -77,22 +79,27 @@ The last sentence matters twice over. The agent's statements about your data are
 
 **Goal.** The remaining durable documents exist: Specification, Design, Navigation, Verification, the Process Inbox, the provenance index, and the action document.
 
-**Do this.** Have the agent derive them:
+**Do this.** Have the agent derive them. When the canonical skill is installed, this instruction invokes its `distill` operation. The instruction remains complete for a harness without skill support. The named structures are available in the template catalogue as [Project](#promptotyping-document-project), [Data](#promptotyping-document-data), [Specification](#promptotyping-document-specification), [Design](#promptotyping-document-design), [Verification](#promptotyping-document-verification), [Index](#promptotyping-document-index), [Handoff](#promptotyping-document-handoff), [Journal](#promptotyping-document-journal), and [Action Layer](#promptotyping-document-action-layer).
 
 ```
-From knowledge/project.md and knowledge/data.md, create the remaining
-Promptotyping Documents. knowledge/specification.md turns the user
-stories into concrete functional requirements with acceptance criteria
-I can test against. knowledge/design.md records the interface and
-representation decisions with their reasons, including how gaps and
-uncertainty in the data stay visible. knowledge/verification.md defines
-the checks and their evidence. knowledge/INDEX.md registers every
-document and the reading order. knowledge/handoff.md starts with
-"Keine offenen Handoff-Punkte." knowledge/journal.md records one
-integrated transition from project and data into specification, design,
-and verification. An action document in the repository root (CLAUDE.md,
-AGENTS.md, or whatever this harness reads) states the technical baseline
-and routes every session through INDEX.md and handoff.md.
+Use the Promptotyping skill's Distill operation when it is installed.
+Read knowledge/project.md, knowledge/data.md, and
+generated/data-profile.md. Evaluate the document-function triggers,
+then create the bounded set required for this tutorial. Transfer the
+provisional user stories from project.md to knowledge/specification.md
+and turn them into functional requirements with acceptance criteria I
+can test. Create knowledge/design.md for interface and representation
+decisions, including how gaps and uncertainty stay visible. Create
+knowledge/verification.md for checks and evidence. Create
+knowledge/INDEX.md as the document register and reading order. Create
+knowledge/handoff.md with "Keine offenen Handoff-Punkte." Create
+knowledge/journal.md with one integrated transition from project and
+data into specification, design, and verification. Review every file
+against the published template with the same function name. Finally,
+create the action document this harness reads in the repository root.
+It routes every session through INDEX.md and handoff.md and fixes this
+technical baseline: a self-contained static web page using HTML, CSS,
+and vanilla JavaScript without a build step, loading data from files.
 ```
 
 One sentence in there is a choice you should know you are making. This tutorial fixes the technical baseline to a self-contained static web page, HTML, CSS, and vanilla JavaScript without a build step, loading its data from files; that is the artefact family this site documents as a [Technology Baseline](#vorlagen-technology-baseline), and it keeps a first pass free of infrastructure. Tell the agent if your case genuinely needs something else.
@@ -163,12 +170,13 @@ When something is wrong, route the correction before you prompt. A factually wro
 **Do this.** Separate the checks by who can decide them. Let the agent run what is deterministically decidable:
 
 ```
-Run the checks that can be decided mechanically: that the artefact
-loads without errors, that each acceptance criterion in
-knowledge/specification.md is operationally met, and that the counts
-shown in the artefact match the counts the profiling scripts report.
-Also compare each view against the underlying data and report any
-discrepancy. Write procedures, evidence, and results to
+Run only checks that can be decided mechanically: confirm that the
+artefact loads without errors, test every explicitly mechanisable
+acceptance criterion in knowledge/specification.md, and compare the
+counts shown in the artefact with the profiling-script results. List
+every remaining acceptance criterion under "Human decision required".
+Where a data-to-view comparison can be formalised, execute it and report
+any discrepancy. Write procedures, evidence, and results to
 knowledge/verification.md. Do not record approval or acceptance status.
 ```
 
@@ -182,6 +190,6 @@ Then make your purpose-specific judgement. Record its durable grounds in `knowle
 
 ## Where this leaves you
 
-The next iteration starts from the documents, and that is the point of having written them. A new requirement, a corrected understanding of the data, or a new source enters the relevant document first, and implementation follows from it. The [canonical skill](#skills-promptotyping) carries this routing into later sessions; its `orient`, `handoff`, and `compact` operations preserve the knowledge base as work continues. The [templates](#vorlagen) give every document you just wrote a fuller, versioned structural pattern; the catalogue is German, and your files map onto it as `data.md` to the template `data`, `specification.md` to `specification`, `design.md` to `design`, `verification.md` to `verification`, `handoff.md` to `handoff`, `journal.md` to `journal`, and the action document to `action-layer`. The [working-environment page](#arbeitsumgebung) explains how the vault, action document, harness, and skill fit together. The [best practices](#praxis) collect the working practices that grew out of documented projects, including the verification milestones and the script-versus-LLM separation you just used. The [paper](#paper) argues why the method is built this way, with the [documented projects](#use-cases) as its evidence.
+The next iteration starts from the documents, and that is the point of having written them. A new requirement, a corrected understanding of the data, or a new source enters the relevant document first, and implementation follows from it. The [canonical skill](#skills-promptotyping) carries this routing into later sessions; its `orient`, `handoff`, and `compact` operations preserve the knowledge base as work continues. The [templates](#vorlagen) give every document you just wrote a fuller, versioned structural pattern; the catalogue is German, and your files map onto it as `project.md` to `project`, `INDEX.md` to `index`, `data.md` to `data`, `specification.md` to `specification`, `design.md` to `design`, `verification.md` to `verification`, `handoff.md` to `handoff`, `journal.md` to `journal`, and the action document to `action-layer`. The [working-environment page](#arbeitsumgebung) explains how the vault, action document, harness, and skill fit together. The [best practices](#praxis) collect the working practices that grew out of documented projects, including the verification milestones and the script-versus-LLM separation you just used. The [paper](#paper) argues why the method is built this way, with the [documented projects](#use-cases) as its evidence.
 
 One honest limit. This tutorial exercised the loop on a bounded first pass. What it cannot establish is that your artefact is scholarly adequate, since that depends on the judgement you brought to Steps 2 and 6, and it does not transfer to material you cannot verify. Where an artefact is to be operated durably, maintained, or handed to third parties, the boundary to Research Software Engineering applies, and the documents you now have are the handover package.

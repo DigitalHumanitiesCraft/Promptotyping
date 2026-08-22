@@ -44,7 +44,7 @@ The assignment needs no mandatory `function:` frontmatter field. The file name, 
 A Knowledge Document is a knowledge document, a structured unit of knowledge distilled from raw material and optimised as a context artefact for work shared between people and language models. Three properties make it one.
 
 - **Dually readable.** The same text is comprehensible to the scholar and usable as context by the model. This is the property the whole method rests on, because reading is how the scholar verifies, and that same text is what the artefact is derived from.
-- **Compact.** Maximum information at minimum tokens, which is the writing principle of the Distillation phase and the answer to the degradation of model performance under growing context.
+- **Compact.** Maximum information at minimum tokens, which is the writing principle of Distillation and the answer to the degradation of model performance under growing context.
 - **Portable.** A Markdown file that can be linked and exchanged across knowledge systems, versioned in git, readable by people and machines without conversion.
 
 Dual readability disciplines the writing. A data description too vague for a model to work against is usually also too vague to count as scholarly documentation, which is why the demand tightens the text instead of adding a second obligation to it.

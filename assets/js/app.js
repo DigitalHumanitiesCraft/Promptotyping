@@ -66,7 +66,7 @@
       A.renderMarkdownInto("ueberblick", "_content/ueberblick.md", A.buildSpecIndex),
       A.renderMarkdownInto("anwendung", "_content/anwendung.md"),
       A.renderMarkdownInto("workflow", "_content/workflow.md", function (el) {
-        // Part 1 introduces the method and the four phases; it sits with the
+        // Part 1 introduces the method and the four forms of work; it sits with the
         // worked case rather than in a hero above the specification.
         A.insertVideoAfterIntro(el, "8sUe4Jkh3uQ", "Einführung in Promptotyping, Teil 1");
       }),

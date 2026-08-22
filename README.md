@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14160875.svg)](https://doi.org/10.5281/zenodo.14160875)
 
-Promptotyping is an iterative, knowledge-driven method for developing project-specific digital research artefacts from structured research data and maintained project knowledge through Context Engineering and Agentic Engineering, organised around four recurrent forms of work (Preparation, Exploration, Distillation, Implementation). The working material is a `knowledge/` folder of versioned Knowledge Documents holding a project's requirements, data, decisions, and domain knowledge, a curated knowledge artefact written partly by the model and partly by the verifying expert, from which the implementation is derived. It outlasts the individual session and is the part of the process that can be read, checked, criticised, and cited; decisions taken while building hold in it only as far as they are written back. A Critical Expert in the Loop verifies LLM output at defined points.
+Promptotyping is an iterative, knowledge-driven method for developing project-specific digital research artefacts from structured research data and maintained project knowledge through Context Engineering and Agentic Engineering, organised around four recurrent forms of work (Preparation, Exploration, Distillation, Implementation). In the canonical repository convention, a `knowledge/` folder holds versioned Knowledge Documents for requirements, data, decisions, and domain knowledge. This curated knowledge artefact guides implementation, persists across sessions, and receives consequential findings through write-back. The method also permits another inspectable and revisable documentary environment. A Critical Expert in the Loop verifies LLM output at defined points.
 
 This repository is the public method portal and the repository of the method paper, which is written in [research-artefacts/promptotyping-paper.md](research-artefacts/promptotyping-paper.md). The portal at **https://dhcraft.org/Promptotyping/** integrates the specification, case evidence, tutorial, templates, canonical skill, and paper. It also serves the templates as stable, machine-readable addresses.
 
@@ -24,7 +24,7 @@ The review round runs on a circulated copy of this text, which serves as the com
 
 ## Videos
 
-Two introductions to the method (German): the methodology explainer [Promptotyping, Teil 1](https://youtu.be/8sUe4Jkh3uQ) covering the four phases, the documents, and Critical Expert in the Loop, and the live demo [Teil 2](https://youtu.be/hd_a-NBO_S4), building a functional dashboard from 76 Excel files with Claude Code.
+Two introductions to the method (German): the methodology explainer [Promptotyping, Teil 1](https://youtu.be/8sUe4Jkh3uQ) covering the four forms of work, the documents, and Critical Expert in the Loop, and the live demo [Teil 2](https://youtu.be/hd_a-NBO_S4), building a functional dashboard from 76 Excel files with Claude Code.
 
 ## What is in this repository
 

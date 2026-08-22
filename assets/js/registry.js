@@ -21,7 +21,7 @@
 
     { id: "anwendung", label: "Application", group: "Specification", parent: "specification",
       part: "1", kind: "normative",
-      note: "The four phases resolved into actions" },
+      note: "The four forms of work resolved into actions" },
     { id: "vorlagen", label: "Templates", group: "Specification", parent: "specification",
       part: "2", kind: "normative",
       note: "The full document set and its triggers",
@@ -44,7 +44,7 @@
       machine: "data/vault.json" },
 
     { id: "workflow", label: "Worked workflow", group: "Evidence", kind: "informative",
-      note: "A completed case narrated through the four phases" },
+      note: "A completed case narrated through the four forms of work" },
     { id: "use-cases", label: "Use Cases", group: "Evidence", kind: "informative",
       note: "The projects the method is documented on", machine: "data/case-studies.json" },
 

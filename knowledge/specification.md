@@ -262,6 +262,14 @@ The primary path is Understand, Evaluate, Apply. Each scenario starts on the ove
 
 Acceptance criterion. The overview exposes all three routes. The Application, Use Cases, tutorial, skill, templates, Vault, paper, and Working environment surfaces link into their stated scenario without private project context. At desktop and mobile widths, the filters, case depth panel, Vault assertion panel, skill copy control, and template frontmatter control complete their documented actions without a console error. Static checks preserve the cross-links; browser verification decides the rendered interactions. Human comprehension and scholarly adequacy remain the participant evaluation of the public-release milestone.
 
+### A45 — The portal supports a responsible fit and first-use decision
+
+Application exposes a compact fit check derived from paper sections 4.1 to 4.3. It distinguishes the conditions for a bounded iteration from the additional engineering competence required for dependable public or institutional operation, and it states the empirical limits of the current corpus. The site consistently calls Preparation, Exploration, Distillation, and Implementation recurrent forms of work. A repository-based `knowledge/` folder is the canonical public convention; inspectable and revisable alternatives remain methodologically possible.
+
+The tutorial preserves the document boundaries defined by the templates. Step 1 records a minimal charter with provisional user stories in `project.md`; Step 3 transfers them into `specification.md`. Step 2 keeps qualitative, curated data knowledge in `data.md` and writes volatile quantitative profiles to a generated report. Step 3 invokes the canonical Skill's `distill` operation where available and remains executable as a self-contained instruction elsewhere. Step 6 assigns only mechanically decidable criteria to the agent and lists the remaining criteria for human judgement.
+
+Acceptance criterion. A reader can decide whether a bounded Promptotyping iteration is responsible, identify which evidence is still missing for a comparative methods decision, and follow the tutorial without inventing a document destination or assigning scholarly acceptance to the agent. The canonical Skill, templates, Application, Overview, Glossary, paper, tutorial, and Working environment use the same terminology and routing contract.
+
 ### A26 — The site is English
 Every string the site shows is English, in the British spelling the paper uses (operator decision 2026-07-25, carried out 2026-07-26). That covers the page registry labels, the status line, every control, the nine content pages directly under `_content/`, and the text fields of `data/glossar.json`, `data/case-studies.json` and `data/promptotyping-documents.json`.
 

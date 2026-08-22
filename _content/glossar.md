@@ -48,7 +48,7 @@ Kind: Form of work
 
 LLM agents that navigate file systems autonomously, run scripts, execute tests and iterate.
 
-Agentic coding denotes the use of LLM agents such as Claude Code that navigate a repository, run scripts, execute tests, interpret error messages and iterate on their own outputs. Between mid-2023 and late 2025 the coding capability of frontier LLMs converged with such agentic harnesses, which is what carries the Implementation phase of the method. What this changes is the span over which an agent works without human intervention, and with it how much intent has to exist in writing beforehand. Multi-agent operation remains one of the tools the method uses.
+Agentic coding denotes the use of LLM agents such as Claude Code that navigate a repository, run scripts, execute tests, interpret error messages and iterate on their own outputs. Between mid-2023 and late 2025 the coding capability of frontier LLMs converged with such agentic harnesses, which is what carries Implementation within the method. What this changes is the span over which an agent works without human intervention, and with it how much intent has to exist in writing beforehand. Multi-agent operation remains one of the tools the method uses.
 
 Source: [Paper, Section 1.2](#abschnitt-1-2-context-engineering-agentic-engineering-and-ai-harnesses); Anthropic 2025
 
@@ -148,7 +148,7 @@ Kind: Failure mode and limit
 
 Decline of LLM performance as context length grows, even on simple tasks.
 
-Context rot denotes the empirically documented decline of LLM performance as input length grows, even on simple tasks such as retrieving text (Hong et al. 2025). The study across eighteen models shows non-uniform performance under growing context and refutes the assumption that more information yields better results. Context rot supplies the technical rationale for the Distillation phase, whose principle is maximum information with minimum tokens. In CorrespExplorer the degradation was observed well inside the advertised context window, qualitatively and without measurement.
+Context rot denotes the empirically documented decline of LLM performance as input length grows, even on simple tasks such as retrieving text (Hong et al. 2025). The study across eighteen models shows non-uniform performance under growing context and refutes the assumption that more information yields better results. Context rot supplies the technical rationale for Distillation, whose principle is maximum information with minimum tokens. In CorrespExplorer the degradation was observed well inside the advertised context window, qualitatively and without measurement.
 
 Source: [Paper, Section 2.1](#abschnitt-2-1-promptotyping-and-the-project-knowledge-base); [Hong et al. 2025](#ref-hong-2025); [Vault: non-uniform degradation as input length grows](#vault-context-rot-nonuniform-degradation-with-length)
 
@@ -276,9 +276,9 @@ Source: Site vocabulary, not carried in the paper text; [Best Practices, knowled
 
 Kind: Document function
 
-Structured, LLM-optimised Markdown document in the knowledge/ folder of a Promptotyping repository; formerly called Promptotyping Document.
+Structured, inspectable document that carries maintained project knowledge; canonically held as Markdown under knowledge/ in repository-based projects.
 
-A Knowledge Document is a structured, LLM-optimised Markdown document in the knowledge/ folder of a Promptotyping repository that compresses and distils context. The class was formerly called Promptotyping Document, and the published template anchors keep that segment. By the kind of knowledge they hold, Knowledge Documents fall into three specialisations, Declarative Documents for knowledge about the subject matter, Process Documents for knowledge about the course of the work, and Action Documents for knowledge about how to act. These documents are context-adapted artefacts of context engineering, generated with LLM support and curated by experts. Classical documentation is a different genre.
+A Knowledge Document is a structured, inspectable and revisable carrier of maintained project knowledge that compresses and distils context. Repository-based Promptotyping projects canonically hold these documents as Markdown in a knowledge/ folder; the method permits other documentary environments with the same inspectability and revision properties. The class was formerly called Promptotyping Document, and the published template anchors keep that segment. By the kind of knowledge they hold, Knowledge Documents fall into three specialisations, Declarative Documents for knowledge about the subject matter, Process Documents for knowledge about the course of the work, and Action Documents for knowledge about how to act. These documents are context-adapted artefacts of context engineering, generated with LLM support and curated by experts. Classical documentation is a different genre.
 
 Source: [Paper, Section 2.1](#abschnitt-2-1-promptotyping-and-the-project-knowledge-base); [Vault: the documents are the primary artefact](#vault-promptotyping-documents-are-the-primary-artifact); knowledge/INDEX.md
 
@@ -318,7 +318,7 @@ Kind: Form of work
 
 First of Promptotyping's four recurrent forms of work, collecting all raw materials before technical decisions are made.
 
-Preparation is the first of Promptotyping's four recurrent forms of work. All relevant materials are collected before technical decisions are made, research data in original formats, documentation of standards and data models, research questions and domain knowledge. The work typically begins with requirements engineering, articulating user stories and mapping data to questions. Vagueness at this point cascades through all subsequent work. It ends when the repository structure exists, the source data is accessible and initial requirements are documented.
+Preparation is the first of Promptotyping's four recurrent forms of work. It collects the relevant research data in original formats, documentation of standards and data models, research questions, existing domain knowledge, and any preliminary requirements already present in the working material. Exploration tests how questions and provisional requirements relate to the data; Distillation formulates the durable requirements. Preparation is provisionally sufficient when the repository structure exists and the source basis and research context are documented well enough for systematic examination.
 
 Source: [Paper, Section 2.2](#abschnitt-2-2-forms-of-work-and-iteration)
 
@@ -488,7 +488,7 @@ Kind: Checking and acceptance
 
 Defined checkpoint in the workflow at which domain expertise is applied systematically.
 
-Verification milestones are defined checkpoints in the workflow at which domain expertise is applied systematically. They turn the Critical Expert in the Loop into a process step, since at a milestone the work stops, is verified with deterministic tools and validated by expert judgement before it continues. The Implementation phase advances in such small, checkable steps. Where the check is deferred, a verification debt arises that has to be settled before use or handover. In the ZBZ OCR/TEI project an interface at every pipeline stage serves as such a milestone.
+Verification milestones are defined checkpoints in the workflow at which domain expertise is applied systematically. They turn the Critical Expert in the Loop into a process step, since at a milestone the work stops, is verified with deterministic tools and validated by expert judgement before it continues. Implementation advances in such small, checkable steps. Where the check is deferred, a verification debt arises that has to be settled before use or handover. In the ZBZ OCR/TEI project an interface at every pipeline stage serves as such a milestone.
 
 Source: [Paper, Section 2.2](#abschnitt-2-2-forms-of-work-and-iteration); [Best Practices, verification milestones](#praxis-verification-milestones)
 
@@ -498,7 +498,7 @@ Kind: Form of work
 
 Practice of generating code through natural language and accepting it without thorough review.
 
-Vibe Coding denotes a practice in which code is generated through instructions in natural language and accepted without thorough review (Karpathy 2025). Sarkar and Drosos (2025) describe iterative goal-satisfaction cycles and material disengagement. Promptotyping shares the premise that LLMs can generate functional code from natural language, and it differs through the upstream Preparation and Exploration phases, persistent documentation and systematic verification. Vibe Coding survives inside Promptotyping as an exploratory mode.
+Vibe Coding denotes a practice in which code is generated through instructions in natural language and accepted without thorough review (Karpathy 2025). Sarkar and Drosos (2025) describe iterative goal-satisfaction cycles and material disengagement. Promptotyping shares the premise that LLMs can generate functional code from natural language. Its additional controls are the upstream forms Preparation and Exploration, persistent documentation, systematic verification, purpose-specific acceptance, and write-back. Vibe Coding survives inside Promptotyping as an exploratory mode.
 
 Source: Site vocabulary, not carried in the paper text; Sarkar and Drosos 2025 (not in the paper's reference list); [Vault: the first empirical study of vibe coding](#vault-sarkar-vibe-coding-material-disengagement); Karpathy 2025
 
@@ -518,6 +518,6 @@ Kind: Form of work
 
 Incorporating a finding from implementation into the maintained project knowledge, so later work proceeds from the revised understanding.
 
-A correction becomes methodologically consequential when it enters the maintained project knowledge instead of staying local to the current implementation. Write-back is that operation. It is no additional phase but the mechanism through which findings from Implementation become durable project knowledge. It must be directed at the level where the underlying problem arises, which may be the account of the research material, a conceptual model, a capture practice, a requirement, a mapping, an interface decision, an agent instruction, a checking procedure, or the documented boundary of acceptance. Its purpose is to carry the interpreted consequence of a finding forward, not to preserve every observation. Promptotyping further distinguishes project-level write-back from method-level write-back; a project-specific solution does not by itself become a transferable methodological rule.
+A correction becomes methodologically consequential when it enters the maintained project knowledge. Write-back is that operation and carries findings from Implementation into durable project knowledge. It integrates the four forms of work without constituting a fifth form. Write-back must be directed at the level where the underlying problem arises, which may be the account of the research material, a conceptual model, a capture practice, a requirement, a mapping, an interface decision, an agent instruction, a checking procedure, or the documented boundary of acceptance. Its purpose is to carry the interpreted consequence of a finding forward. Promptotyping further distinguishes project-level write-back from method-level write-back; a project-specific solution requires additional evidence before it becomes a transferable methodological rule.
 
 Source: [Paper, Section 2.2.4](#abschnitt-2-2-4-implementation); [Paper, Section 3.3](#abschnitt-3-3-findings-attribution-and-learning)

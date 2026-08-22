@@ -209,6 +209,16 @@ Under `tools/tests/` the checks are themselves held to their regression cases, r
 
 **Verdict, 2026-08-22.** Passes. The normal scenarios complete without console output. The controlled failure renders “Could not load case-studies.json (503).” inside the Use Cases surface and produces no secondary JavaScript error.
 
+### V20. Independent role simulations can understand, evaluate, and apply the method
+
+**Claim.** Three independent agent instances can use only the public portal surfaces to explain the method, make a conservative fit decision, and begin a first documented iteration. Their reading must not depend on the private repository knowledge under `knowledge/`.
+
+**Why it matters.** A connected interface can still require unrecorded explanations. Separate role simulations expose contradictions in terminology, document routing, responsibility, and evidential scope before an external participant study.
+
+**Procedure.** Assign three fresh instances the roles Understand, Evaluate, and Apply. Understand reads Overview, Application, Glossary, and the paper. Evaluate uses Overview, Use Cases, one deep case, the Vault, and the paper. Apply uses the tutorial, canonical Skill, templates, and Working environment. Each instance answers a fixed task and reports at most five frictions with severity, public evidence, and the smallest correction. Reconcile every finding against the canonical sources before changing the portal.
+
+**Verdict, 2026-08-22.** The first pass found two major interpretation conflicts and three major first-use conflicts. The portal now aligns Requirements Engineering with the paper, identifies `knowledge/` as the repository convention, adds a fit check, clarifies the interface-function filter, separates provisional stories from their durable specification, separates curated data knowledge from volatile profiles, and defines the Skill and human-judgement branches. Browser follow-up also confirmed and corrected the missing positioning context that stacked the tutorial's eight copy controls under the fixed header. The role simulations establish coherent public guidance. They do not establish human usability, comparative effectiveness, transferability, labour, or maintenance cost. Those questions remain part of Milestone 3.
+
 ## Browser verification, 2026-08-22
 
 The repository was served from a fresh local HTTP origin and checked at 1280 by 720 pixels and 390 by 844 pixels. The seven start-page targets for Application, the paper, Use Cases, the Vault, the tutorial, the canonical skill, and the templates each activated the expected mounted page. Every target element appeared exactly once.
@@ -218,6 +228,8 @@ The first DOM inventory found five duplicate public ids where one Vault assertio
 The template panel opened as a bottom sheet at the mobile viewport. Once its asynchronous content had loaded, focus moved to the close control inside the dialog. Closing the panel returned focus to the native template button that opened it. The start page and panel were inspected visually in the mobile layout, and the start page was inspected again in the desktop layout. The final browser console contained no errors or warnings.
 
 The Milestone 2 pass executed the full A44 scenarios from a freshly served repository state. Understand exposed every goal route and continued from Application to evidence and first use. Evaluate filtered the 25-case gallery to four Verification cases, opened a case with its limits, and opened a Vault assertion with three source links. Apply exposed six tutorial steps and eight copyable prompts, copied the canonical Skill source, and copied a template block. All eight scenario surfaces resolved at 1280 by 720 pixels and 390 by 844 pixels with no duplicate ids, unnamed buttons, missing alternative text, horizontal overflow, console errors, or warnings.
+
+The role-simulation correction pass served the revised repository from a new local origin. Application rendered a six-condition Fit check and its limitation statement. The Use Case control labelled its scale “All interface functions”, filtered to four Verification cards, and labelled each card “Interface function”. Tutorial v0.4 rendered six steps, eight copy controls, all nine document-template links, the generated profile path, the `distill` branch, and the human-decision boundary. The Step 3 copy control reported “Copied” at desktop and mobile widths after its codeblock positioning context was corrected. Desktop at 1280 by 720 pixels and mobile at 390 by 844 pixels had no horizontal overflow, console errors, or warnings.
 
 At the mobile viewport the case and template panels occupied the full 375-pixel layout width and met the bottom edge. The Use Case filter, case panel, Vault grounding panel, Skill copy, and template copy completed again in that layout. A separate controlled-failure origin returned HTTP 503 for the case-study JSON; the page retained the Use Cases route and rendered its specific load error through the shared boundary.
 

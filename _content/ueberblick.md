@@ -3,7 +3,7 @@ title: Overview
 slug: ueberblick
 status: complete
 language: en
-version: "0.9"
+version: "0.10"
 updated: 2026-08-22
 mirrored: 2026-06-10
 machine-url: https://dhcraft.org/Promptotyping/_content/ueberblick.md
@@ -21,7 +21,9 @@ Specification of an iterative, knowledge-driven method organised around four rec
 
 ## What the method is
 
-Promptotyping produces research artefacts, as a rule software that is bound to the data of one project and makes it explorable, analysable or editable. The `knowledge/` folder is a curated knowledge artefact, written partly by the model and partly by the checking domain expert, held in a format agents process directly. It carries the domain knowledge and the specification from which the implementation is derived. It persists across individual sessions and creates a record that can be checked, criticised and cited. Further decisions taken while building are held by the documents as far as they are written back into them. What separates the method from Vibe Coding is the structured procedure, the active requirements analysis and the explicit documentation of knowledge.
+Promptotyping produces research artefacts, as a rule software that is bound to the data of one project and makes it explorable, analysable or editable. Its maintained project knowledge carries the domain account and specification from which implementation is derived. This knowledge persists across individual sessions, can be inspected and revised, and receives consequential findings through write-back. A versioned `knowledge/` folder is the canonical repository convention used by this portal and its templates. The method itself also permits another inspectable and revisable documentary environment.
+
+Promptotyping differs from ordinary AI-supported code generation through four linked controls. Maintained project knowledge provides the implementation basis. Preparation and Exploration examine the material before durable requirements are distilled. Small increments receive deterministic checks and domain judgement. Responsible contributors record purpose-specific acceptance and write consequential findings back into the project knowledge.
 
 This page is the specification of the method. It states what Promptotyping is and how it is applied. The [paper](#paper) supplies the scholarly rationale and evaluation.
 
@@ -29,7 +31,7 @@ This page is the specification of the method. It states what Promptotyping is an
 
 | | |
 |---|---|
-| Version | 0.9 |
+| Version | 0.10 |
 | Status | Review draft |
 | Last changed | 22 August 2026 |
 | Canonical address | `https://dhcraft.org/Promptotyping/` |

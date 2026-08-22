@@ -3,7 +3,7 @@ title: Application. The four forms of work resolved into actions
 slug: anwendung
 status: complete
 language: en
-version: "0.4"
+version: "0.5"
 created: 2026-07-25
 updated: 2026-08-22
 source: research-artefacts/promptotyping-paper.md, sections 2.1 and 2.2
@@ -19,11 +19,11 @@ The method's unit of work is a small set of Markdown documents that are the spec
 All materials are collected before technical decisions are made.
 
 - **Entry.** A research undertaking, a body of data, and one or more questions put to it.
-- **Steps.** Collect research data in its original formats. Add the documentation of the standards and data models the data follows. Write down the research questions. Make domain knowledge explicit, from one's own competence or from joint sessions with the domain experts. Do requirements engineering, which means formulating user stories and recording which data is meant to answer which question.
-- **Stopping criterion.** The repository structure exists, the source data is accessible, and the initial requirements are documented as a structured starting point.
-- **Documents.** `specification.md` with user stories and acceptance criteria, a first version of `data.md`, and the action layer in the repository root.
+- **Steps.** Collect research data in its original formats. Add the documentation of the standards and data models the data follows. Record the research questions, provisional purpose, existing domain knowledge, and any requirements already present in the working material. These initial statements remain provisional until Exploration has tested their relation to the data and Distillation has formulated the durable requirements.
+- **Stopping criterion.** The repository structure exists, the source data is accessible, and the research context is documented well enough for systematic examination.
+- **Documents.** A project charter, the accessible source material and its documentation, and an initial action layer in the repository root. A preliminary `data.md` may be useful when the material is already well understood.
 
-Vagueness at this point cascades through all subsequent phases. A vaguely formulated question produces a vaguely specified artefact, and the effort of correcting that later falls due again in every iteration.
+Vagueness at this point cascades through all subsequent forms of work. A vaguely formulated question produces a vaguely specified artefact, and the effort of correcting that later falls due again in every iteration.
 
 ## Exploration
 
@@ -49,7 +49,7 @@ The script is worth more than its output. It is deterministic, so the descriptio
 
 ### The epistemic side
 
-The phase has a dimension beyond the feasibility check. The LLM generates options the researchers would not have designed themselves, and their task becomes evaluation rather than invention. Understanding what the data cannot support is as valuable as knowing what is possible. The phase is skipped where the data is already familiar and Preparation has settled these questions.
+This form of work has a dimension beyond the feasibility check. The LLM generates options the researchers would not have designed themselves, and their task becomes evaluation rather than invention. Understanding what the data cannot support is as valuable as knowing what is possible. Exploration is skipped where the data is already familiar and Preparation has settled these questions.
 
 ## Distillation
 
@@ -77,7 +77,7 @@ Deferring the check on a milestone is a decision with a price. It is most defens
 
 The method's signature is the loop from Implementation back into the documents. When the artefact is wrong, the specification was wrong or incomplete, and it is the specification that is fixed; the artefact is then regenerated. New knowledge from building, meaning unexpected data characteristics, performance constraints and design refinements, is written back into the documents.
 
-Re-entry goes into whichever phase the new knowledge belongs to.
+Re-entry goes into whichever form of work the new knowledge belongs to.
 
 - A wrong artefact sends the work back into Distillation.
 - A finding that the data affords more or less than assumed sends it back into Exploration.
@@ -90,6 +90,21 @@ A single pass through the four forms of work is the exception.
 The method has two modes of operation, distinguished by how the work is organised and independent of project size. The default is a single researcher with a single agent instance. In complex projects the work itself acquires the structure of a research organisation, with parallel tasks, differentiated roles and formalised handovers; there a lead instance coordinates sub-agents with defined permissions and knowledge zones, and the methodological burden shifts from steering one agent to designing a small team. The four forms of work apply in both modes. The documented experience lies overwhelmingly with the first, and the durability of sustained multi-agent monitoring is an open question.
 
 Scaling runs across both modes. The more complex the domain, the more structure the organisation of knowledge needs, and the distilled document set grows with the project. Verification discipline through the Critical Expert in the Loop is untouched by this.
+
+## Fit check
+
+A bounded Promptotyping iteration is responsible only when every required condition below can be answered with yes.
+
+- The project has accessible structured or semi-structured research data whose provenance and relevant semantics are sufficiently understood.
+- One specific scholarly purpose and a limited first artefact can be stated.
+- A Critical Expert can inspect the relation among source material, data, project knowledge, implementation, and output.
+- The project has capacity for deterministic verification and domain validation before acceptance.
+- Rights, privacy, institutional agreements, infrastructure, and model-provider conditions permit the intended processing.
+- The expected state can be versioned, inspected, and accepted for a stated purpose.
+
+An unknown answer requires resolution before implementation. A no answer excludes the proposed iteration in its current form. Public or institutional operation adds expertise in security, accessibility, maintainability, integration, and sustained operation.
+
+A positive fit check licenses a bounded trial. It provides no comparative success forecast. The documented corpus is not representative, total human work remains unmeasured, and independent long-term transfer has yet to be established. The grounds and limitations are stated in [paper sections 4.1 to 4.3](#abschnitt-4-1-evidential-scope-and-applicability).
 
 ## Continue from here
 

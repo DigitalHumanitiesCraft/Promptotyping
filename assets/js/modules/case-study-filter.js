@@ -102,7 +102,7 @@
       var labels = cs.interfaceTypes.map(function (t) {
         return INTERFACE_LABELS[t] || t;
       });
-      meta.textContent = "Interface: " + labels.join(", ");
+      meta.textContent = "Interface function: " + labels.join(", ");
       card.appendChild(meta);
       // The card edge carries the hue of the first epistemic function; the
       // category itself stays readable in the line above (WCAG 1.4.1).
@@ -215,7 +215,7 @@
 
     var chips = document.createElement("div");
     chips.className = "case-filter-chips";
-    var chipDefs = [{ key: "all", label: "All functions" }].concat(
+    var chipDefs = [{ key: "all", label: "All interface functions" }].concat(
       present.map(function (t) { return { key: t, label: INTERFACE_LABELS[t] }; })
     );
     chipDefs.forEach(function (def) {
