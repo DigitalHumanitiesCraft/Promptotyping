@@ -49,7 +49,7 @@ The durable core is English because it specifies the public self-application. `j
 | [plan.md](plan.md) | Planning | Which accepted work remains and in what dependency order? | accepted scope or completion state changes |
 | [paper-specification.md](paper-specification.md) | Paper Specification | What must the method paper argue, define, evidence, and satisfy? | manuscript argument, evidence policy, or submission rule changes |
 
-The method paper follows a two-document model. The canonical text is the Research Artefact [research-artefacts/promptotyping-paper.md](../research-artefacts/promptotyping-paper.md); its governing knowledge is [paper-specification.md](paper-specification.md). A `data.md` does not carry for this method repository because [project.md](project.md) holds the material basis.
+The method paper follows a two-document model. The canonical text is the Research Artefact [research-artefacts/promptotyping-paper.md](../research-artefacts/promptotyping-paper.md); its governing knowledge is [paper-specification.md](paper-specification.md). The sentence-level author review is derived from the canonical text with `python tools/paper_review.py`, so it introduces no competing manuscript. A `data.md` does not carry for this method repository because [project.md](project.md) holds the material basis.
 
 ## Artefact areas
 

@@ -14,13 +14,13 @@ The full argument is the method paper; an overview is at [dhcraft.org/Promptotyp
 
 ## The method paper
 
-**Pollin, Christopher: Promptotyping. Translating Research Data into Research Artefacts through Context Engineering and Agentic Engineering** (version 0.9, review draft, 31 July 2026; in preparation).
+**Pollin, Christopher: Promptotyping. Translating Research Data into Research Artefacts through Context Engineering and Agentic Engineering** (version 0.9.1, author-review draft, 22 August 2026; in preparation).
 
 The complete current text is a single Markdown Research Artefact, [research-artefacts/promptotyping-paper.md](research-artefacts/promptotyping-paper.md), written and revised in this repository. [knowledge/paper-specification.md](knowledge/paper-specification.md) holds everything decided, checked, and still open about it, and the Grounded Vault under [vault/](vault/) anchors its supporting claims in sources. The method portal renders the Research Artefact directly on its Paper page with an inline glossary.
 
-The current state is **version 0.9, a review draft of 31 July 2026**, circulated for substantive feedback before the final revision. Its four chapters were promoted on that day, superseding the five-chapter manuscript promoted the day before; the consolidated working records of both revisions live in the git history. Central argument, methodological structure, project cases, and evidential scope are in place. References, figures, footnotes, and individual formulations are checked again in the final revision, and what that pass still owes stands as open flags in [knowledge/paper-specification.md](knowledge/paper-specification.md). Feedback is invited on the clarity and distinctiveness of the methodological contribution, the use of the project cases, and passages that stay unclear, repetitive, or overly detailed.
+The current repository state is **version 0.9.1, an author-review draft of 22 August 2026**. It incorporates the revisions made after the publicly circulated version 0.9 and establishes the baseline for complete sentence-level author review. Version 1.0 is reserved for a state in which the author has accepted every sentence in its paragraph and subsection context, the canonical terminology, the evidence and apparatus, the complete rendered text, and the release decision. The public review copy announced on 31 July 2026 remains version 0.9; its comments are evidence for revision and do not supersede the canonical repository text.
 
-The review round runs on a circulated copy of this text, which serves as the comment surface. The [research artefact](research-artefacts/promptotyping-paper.md) stays canonical: a reviewer comment becomes a change only through a recorded decision and an edit there, and the reasoning behind accepted and rejected proposals is written back into [knowledge/paper-specification.md](knowledge/paper-specification.md) when the round closes.
+The open review round runs on the circulated version 0.9 copy, which serves as the external comment surface. The [research artefact](research-artefacts/promptotyping-paper.md) stays canonical. A reviewer comment becomes a change only through a recorded decision and an edit there. The author-review protocol and the current divergence between the two versions are recorded in [knowledge/paper-specification.md](knowledge/paper-specification.md).
 
 ## Videos
 
@@ -30,7 +30,7 @@ Two introductions to the method (German): the methodology explainer [Promptotypi
 
 | Content | Location | On the site |
 |---|---|---|
-| Method paper (English, version 0.9, review draft) | [research-artefacts/promptotyping-paper.md](research-artefacts/promptotyping-paper.md), specification in [knowledge/paper-specification.md](knowledge/paper-specification.md) | [#paper](https://dhcraft.org/Promptotyping/#paper) |
+| Method paper (English, version 0.9.1, author-review draft) | [research-artefacts/promptotyping-paper.md](research-artefacts/promptotyping-paper.md), specification in [knowledge/paper-specification.md](knowledge/paper-specification.md) | [#paper](https://dhcraft.org/Promptotyping/#paper) |
 | Evidence layer of the paper (Grounded Vault) | [vault/](vault/) | [#vault](https://dhcraft.org/Promptotyping/#vault) |
 | Knowledge Document templates | [_content/promptotyping-document/](_content/promptotyping-document/) | [#vorlagen](https://dhcraft.org/Promptotyping/#vorlagen) |
 | Convention (naming contract, frontmatter schema, structure) | [_content/konvention.md](_content/konvention.md) | [#konvention-v0.1](https://dhcraft.org/Promptotyping/#konvention-v0.1) |

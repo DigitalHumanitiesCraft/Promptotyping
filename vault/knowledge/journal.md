@@ -9,7 +9,7 @@ method:
 status: draft
 language: en
 created: '2026-07-19'
-updated: '2026-07-29'
+updated: '2026-08-22'
 related:
 - specification
 - state
@@ -219,3 +219,7 @@ The template repository had moved on, folder renumbering into one chain (`00_sou
 ## 2026-08-09 — Second audit pass and defect closure against the four-chapter text
 
 The follow-up the audit of 2026-07-31 routed (open flag 3 of the paper's steering document) ran in two delegated passes. A read-only pass re-verified the 72 CARRIED/MOVED routings against the four-chapter text, semantically rather than by quote match, because the promoted revision rewrote the wording; result 30 carried, 35 moved, 7 further orphaned (sycophancy, Sarkar vibe coding, two SDD content assertions, the jagged-frontier boundary, QUS criteria, the radical design request), and two upgrades back to CARRIED with the four-phase wording of §2.2. An editing pass closed the eleven defects of the audit's defect list across 49 assertion files plus two topic maps, prose only, anchors and statuses untouched. `knowledge/state.md` carries the rebuilt section register and the new assertion-coverage table; the orphaned decision of the audit's routing stands as taken there, files stay per the register rule with the audit as the record. Validator at the success criterion after every step, `data/vault.json` regenerated.
+
+## 2026-08-22: Paper state advances to version 0.9.1
+
+The operator designated the current canonical manuscript as version 0.9.1 and reserved version 1.0 for complete sentence-level author acceptance. The paper's repository specification holds the review protocol and version boundary. This vault changes only its volatile section-register description so that evidence work targets the current manuscript state. The four-chapter structure and the assertion routing remain unchanged.

@@ -642,5 +642,19 @@ class GlossaryGeneratorTest(unittest.TestCase):
         self.assertIn("### ", rendered)
 
 
+class PaperVersionTest(CheckCase):
+    """V21, which prevents another silent split in the current paper status."""
+
+    def test_current_status_carriers_agree(self):
+        cc.check_paper_version_claims()
+        self.assertEqual(cc.failures, [])
+
+    def test_a_stale_status_carrier_fails(self):
+        stale = self.write(self.tempdir() / "status.md", "version 0.9")
+        self.patch("PAPER_VERSION_CLAIMS", ((stale, "version 0.9.1"),))
+        cc.check_paper_version_claims()
+        self.assertIn("paper-version", self.only_failure())
+
+
 if __name__ == "__main__":
     unittest.main()

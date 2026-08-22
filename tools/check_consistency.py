@@ -53,6 +53,20 @@ OVERVIEW = CONTENT_DIR / "ueberblick.md"
 APPLICATION = CONTENT_DIR / "anwendung.md"
 TUTORIAL = CONTENT_DIR / "tutorial.md"
 WORKING_ENVIRONMENT = CONTENT_DIR / "arbeitsumgebung.md"
+PAPER_SPECIFICATION = KNOWLEDGE_DIR / "paper-specification.md"
+PROJECT = KNOWLEDGE_DIR / "project.md"
+TECHNOLOGY_BASELINE = CONTENT_DIR / "technology-baseline.md"
+VAULT_STATE = ROOT / "vault" / "knowledge" / "state.md"
+
+CURRENT_PAPER_VERSION = "0.9.1"
+PAPER_VERSION_CLAIMS = (
+    (CLAUDE_MD, "Version 0.9.1 (Author-Review-Draft)"),
+    (README, "version 0.9.1, an author-review draft"),
+    (PROJECT, "current state is version 0.9.1"),
+    (PAPER_SPECIFICATION, "**Manuscript version:** 0.9.1"),
+    (TECHNOLOGY_BASELINE, "version 0.9.1, author-review draft"),
+    (VAULT_STATE, "four-chapter text, version 0.9.1"),
+)
 
 # The site's own base, as the template: fields and the prose spell it.
 SITE_BASE = "dhcraft.org/Promptotyping/"
@@ -1392,6 +1406,24 @@ def check_relative_links():
                  % (path.relative_to(ROOT).as_posix(), target))
 
 
+def check_paper_version_claims() -> None:
+    """Keep every active manuscript-status carrier on one declared version."""
+
+    for path, marker in PAPER_VERSION_CLAIMS:
+        text = read_text(path)
+        if marker not in text:
+            display_path = (
+                path.relative_to(ROOT).as_posix()
+                if path.is_relative_to(ROOT)
+                else str(path)
+            )
+            fail(
+                "paper-version",
+                "%s does not identify the current paper as version %s"
+                % (display_path, CURRENT_PAPER_VERSION),
+            )
+
+
 def main() -> int:
     failures.clear()
     notes.clear()
@@ -1419,6 +1451,7 @@ def main() -> int:
         check_knowledge_frontmatter,
         check_skill_package,
         check_portal_paths,
+        check_paper_version_claims,
     ]
     if "--check-urls" in sys.argv:
         groups.append(lambda: check_urls(cases))

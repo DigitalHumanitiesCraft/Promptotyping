@@ -9,7 +9,7 @@ method:
 status: draft
 language: en
 created: '2026-07-19'
-updated: '2026-08-09'
+updated: '2026-08-22'
 related:
 - operations
 - journal
@@ -62,7 +62,7 @@ The bibliography-traceability sweep of 2026-07-23 added the paper's cited public
 
 ## Section register
 
-The output is external and single-file (settled decision in [[knowledge/specification]]); the canonical text is `research-artefacts/promptotyping-paper.md` at the root of this repository, which the site renders directly. Headings below are taken from that file (four-chapter text, version 0.9, promoted 2026-07-31). The specification of the paper lives in the repository's `knowledge/paper-specification.md`; Section 13 there carries the architecture and what the restructuring moved where. Earlier states of this register are recoverable from the Git history of this document.
+The output is external and single-file (settled decision in [[knowledge/specification]]); the canonical text is `research-artefacts/promptotyping-paper.md` at the root of this repository, which the site renders directly. Headings below are taken from that file (four-chapter text, version 0.9.1, author-review baseline established 2026-08-22). The specification of the paper lives in the repository's `knowledge/paper-specification.md`; Section 13 there carries the architecture and what the restructuring moved where. Earlier states of this register are recoverable from the Git history of this document.
 
 | Section | Heading | Notes |
 |---|---|---|

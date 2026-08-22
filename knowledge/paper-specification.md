@@ -9,18 +9,18 @@ method:
 status: active
 language: en
 created: 2026-07-29
-updated: 2026-08-21
+updated: 2026-08-22
 authors: [Christopher Pollin]
 related: [promptotyping-paper, journal, INDEX]
 ---
 
 # Promptotyping Paper Specification
 
-**Updated:** 21 August 2026 for the repository Naming Contract and artefact separation. The governing paper content remains the four-chapter revision integrated on 31 July 2026.
+**Updated:** 22 August 2026 for manuscript version 0.9.1 and the binding sentence-level author-review protocol.
 
-**Manuscript version:** 0.9, review draft, 31 July 2026. It is circulated for substantive feedback before the final revision. Central argument, methodological structure, project cases, and evidential scope are in place; references, figures, footnotes, and individual formulations are checked again in the final revision, and the apparatus debt this document records as flags 5 to 9 of Section 19 belongs to that pass. Feedback is invited on the clarity and distinctiveness of the methodological contribution, the adequacy of the case-based evidence, and remaining problems of focus, repetition, or comprehensibility. The version and the reviewer address stay in this document; `research-artefacts/promptotyping-paper.md` remains headerless and begins with its H1, because the site renders it as the academic text alone (A8).
+**Manuscript version:** 0.9.1, author-review draft, 22 August 2026. This state incorporates the manuscript revisions made after the publicly circulated version 0.9 and is the baseline for complete author review. Version 1.0 is reserved for a state that has passed every gate in Section 20. The publicly announced review copy remains version 0.9 and continues to serve as an external comment surface. The version and reviewer address stay in this document; `research-artefacts/promptotyping-paper.md` remains headerless and begins with its H1, because the site renders it as the academic text alone (A8).
 
-**Status:** The single specification document of the paper. The manuscript is `research-artefacts/promptotyping-paper.md`, promoted on 2026-07-31 from the operator's four-chapter revision, which supersedes the five-chapter text promoted on 2026-07-30. The site renders that file directly, so the deployed text is the canonical text. The two-track regime of 2026-07-29/30 (`paper-draft.md` steered by this document beside `paper.md` steered by `paper-writing.md`) ended with the earlier promotion; the working records of both revision rounds live commit-pinned in git history (see the provenance section at the end). The figure series is the authored monochrome SVG set under `assets/figures/svg/` with one written specification per figure under `assets/figures/specs/`; the manuscript embeds one of them since the four-chapter revision (Section 17).
+**Status:** The single specification document of the paper. The manuscript is `research-artefacts/promptotyping-paper.md`, promoted on 2026-07-31 from the operator's four-chapter revision and revised to version 0.9.1 on 2026-08-22. The site renders that file directly, so the deployed text is the canonical text. The two-track regime of 2026-07-29/30 (`paper-draft.md` steered by this document beside `paper.md` steered by `paper-writing.md`) ended with the earlier promotion; the working records of both revision rounds live commit-pinned in git history (see the provenance section at the end). The figure series is the authored monochrome SVG set under `assets/figures/svg/` with one written specification per figure under `assets/figures/specs/`; the manuscript embeds one of them since the four-chapter revision (Section 17).
 
 **Function:** Governs the paper's central argument, terminology, method structure, chapter boundaries, evidence handling, language rules, apparatus conventions, repository interpretation, submission route, and final quality assurance.
 
@@ -1801,12 +1801,14 @@ Decisions of the acceptance round of 2026-07-31:
 
 31. **GPT-5.6 Sol is the confirmed model name (2026-08-22).** The operator confirmed that the GPT model used in the paper process was GPT-5.6 Sol. The Author's Note now carries that full name. The public announcement already uses the same name and remains a historical announcement with a shorter model list. The manuscript is the declaration of record. No external announcement was changed.
 
+32. **Version 0.9.1 establishes the author-review baseline (2026-08-22).** The operator judged that the revisions integrated after version 0.9 constitute version 0.9.1 and reserved version 1.0 for complete personal acceptance of the paper. Acceptance operates at sentence level while preserving paragraph and subsection context. It also covers the canonical terms, the argument as a whole, evidential scope, citations, footnotes, references, figures, rights, and the final rendered text. The initial 0.9.1 manuscript baseline has SHA-256 digest `213ea8c3e49d8852249a25a32637c3f1ea5f74363163939f61f3fe21c427a006`. The review inventory is derived from the canonical file with `python tools/paper_review.py`; it does not create a second manuscript. Section 20 governs the procedure and the version 1.0 gates.
+
 Flag register. The numbers remain stable because the journal and earlier work blocks refer to them.
 
 1. **Dormant. Summerfield 2025** left the reference list with the operator's own revision; the confabulation term thereby has no source in the manuscript and the term itself no longer appears. Reopen only if the term returns.
 2. **Open. Doctoral Congress presentation** still needs a deposited persistent identifier. The footnote wording stays provisional until then.
 3. **Closed on 2026-08-09. Vault claim follow-up.** The audit of 2026-07-31 ran over all 153 claims and recorded 36 as carried, 36 as moved, 68 as orphaned, and 13 as internal. The follow-up re-verified the 72 carried or moved assertions against the four-chapter text, corrected the recorded defects across 49 assertion files, and rebuilt `vault/knowledge/state.md`. The audit record stands in `vault/knowledge/claim-audit-2026-07-31.md`; the completed follow-up is recorded in `vault/knowledge/journal.md` and the rebuilt state file.
-4. **Open. Final read-acceptance.** The operator has not yet read the promoted text end to end as the published version; the site renders it in the meantime by the promotion decision.
+4. **Open. Complete author acceptance.** The operator has not yet accepted every sentence of version 0.9.1 in its paragraph and subsection context, the canonical terminology, the complete apparatus, and the rendered manuscript. Section 20 defines the review and the conditions that close this flag.
 5. **Closed on 2026-08-19.** The two owed footnotes of §2.3.1 are written and sourced; see decision 29. The entry keeps its number so that the references to the flag set in the journal and the work-block list stay valid.
 6. **Open editorial decision. The project URLs are entered; the ZBZ repository pointer remains undecided.** Footnotes 25 (M³GIM) and 26 (Notker) received repository and interface URLs on 2026-08-09, footnote 24 (Jeanne Hersch) the public corpus interface `https://chpollin.github.io/zbz-ocr-tei/` on 2026-08-19; no `[Insert project URL.]` marker survives. What stays open is where the ZBZ repository pointer that the five-chapter text carried belongs, and whether it can be given at all, since `chpollin/zbz-ocr-tei` is private while its GitHub Pages output is public. Table 1 in §3.2 carries no URL column, so the placements actually available are footnote 24 beside the interface URL and the rights and repository-visibility list of Section 22; omitting the pointer while the repository stays private is the third option.
 7. **Closed on 2026-08-09. Uncited references.** Fakhoury et al. 2024 and Hora and Robbes 2026 were removed from the manuscript reference list after their supporting passages fell away with §2.4. Their source-register entries remain with status `dropped` and preserve the reason.
@@ -1816,17 +1818,53 @@ Flag register. The numbers remain stable because the journal and earlier work bl
 
 The evidence and production task that remains from the earlier list is the rights-clearance decision in Section 22. The M³GIM derivation question, the Notker verification and acceptance reconstruction, and repository-visibility verification were closed on 2026-08-22 in Sections 10.9, 10.5, and 10.12.
 
-A manuscript section is accepted only when its conceptual and terminological decisions match this document, its citations and footnotes have been verified, no unresolved placeholder remains, figures are introduced and interpreted in prose, and the author has accepted the prose as the current manuscript version.
+A manuscript section is accepted only when its conceptual and terminological decisions match this document, its citations and footnotes have been verified, no unresolved placeholder remains, figures are introduced and interpreted in prose, and the author has accepted every sentence and its relation to the paragraph and subsection. A semantic edit to accepted wording reopens that unit.
 
 ---
 
-# 20. Next Work Block
+# 20. Author Review and Next Work Block
 
-1. Operator's end-to-end read of `research-artefacts/promptotyping-paper.md` as rendered on the site; findings return through the ordinary revision path with the rule catalogue of Section 16.6.
-2. Run the open review round on version 0.9 (Section 23.1). Collect the Google Doc comments, decide them at the operator gate, and edit `research-artefacts/promptotyping-paper.md` rather than the Doc.
-3. Resolve open flags 2, 4, and 6 of Section 19. Keep flag 9 as an explicit submission-export step; flag 1 remains dormant while the confabulation term is absent. Flag 8 requires no further manuscript work.
-4. Complete the rights-clearance decision in Section 22.
-5. Derive the submission package fresh from Section 21 and the final text, then submit it after operator release.
+## 20.1 Binding review model
+
+Version 0.9.1 is the author-review baseline. The canonical manuscript contains one title, 27 reviewable text sections, 142 paragraph-level blocks, and 588 sentence or non-sentence review units. Its separate apparatus contains 54 reference entries and 34 footnotes. These counts and the source digest were generated from `research-artefacts/promptotyping-paper.md` with `python tools/paper_review.py` on 2026-08-22 and verified by the tool's regression tests. They establish review coverage. Scholarly acceptance requires an operator decision.
+
+The review proceeds paragraph by paragraph within one subsection at a time. Every sentence or bounded content item receives a version-bound derived address such as `2.1.p3.s2`. The paragraph and subsection remain visible because a locally adequate sentence can still repeat an earlier claim, interrupt the argument, introduce a term too late, or exceed the evidence available to the subsection.
+
+Every review unit is assessed on six dimensions:
+
+1. **Authorial fidelity.** The statement expresses the author's intended position with the intended degree of commitment.
+2. **Argumentative function.** The statement performs a necessary and identifiable role in its paragraph and subsection.
+3. **Conceptual and terminological precision.** Defined terms, distinctions, and category boundaries match the canonical vocabulary and remain consistent across the paper.
+4. **Logical relation.** The statement follows from its premises, connects correctly to adjacent statements, and does not create an internal contradiction.
+5. **Evidence and scope.** The claim stays within what the cited sources, documented cases, and declared evidential limits can support.
+6. **Scholarly expression.** The wording is precise, readable, proportionate, and compliant with the British-English and style rules of Section 16.
+
+A paragraph is accepted when every review unit passes these dimensions and the paragraph's internal relation is accepted. A subsection is accepted when its paragraphs jointly perform the function assigned by the argument architecture. Terminology is accepted separately across all definitions and uses, because a sentence-by-sentence pass cannot by itself establish global consistency. The title, Abstract, Author's Note, references, footnotes, figure and caption, and the rendered reading experience each receive their own final check.
+
+## 20.2 Decision and change control
+
+The review tool derives addresses and exact text from the canonical manuscript. It creates no editable copy. For each reviewed paragraph, the agent supplies the subsection function, the paragraph function, the numbered units, findings under the six dimensions, and a recommendation. Proposed wording appears only where a finding requires change.
+
+The operator accepts, revises, or holds each proposed disposition. Accepted revisions are applied to `research-artefacts/promptotyping-paper.md`; consequential decisions are incorporated here and the completed transition is recorded in `journal.md`. A semantic change to an accepted paragraph invalidates its acceptance and returns it to review. Mechanical submission transformations, including footnote renumbering, are verified separately against the accepted wording.
+
+## 20.3 Gates for version 1.0
+
+Version 1.0 requires all of the following:
+
+1. The title, Abstract, body, and Author's Note have complete sentence-level author acceptance in paragraph and subsection context.
+2. Every canonical term and definition has been accepted, and all uses have passed a consistency sweep.
+3. The whole-paper argument, chapter functions, transitions, research question, central contribution, and conclusion have received an end-to-end coherence decision.
+4. Claims, citations, evidential limits, footnotes, references, figure and caption, links, and remaining source gaps have been resolved or explicitly bounded.
+5. External review comments have been decided through the operator gate, and rights clearance has been completed for every reproduced project element.
+6. The final rendered manuscript and submission export have passed technical checks, a final author read, and an explicit release decision.
+
+## 20.4 Current next work
+
+1. Run the author review from the title and Abstract through Sections 1 to 4 and the Author's Note. Integrate only operator-accepted revisions.
+2. Review the canonical term set across the complete manuscript after the relevant definitional sections have been accepted.
+3. Resolve flags 2 and 6 in the passages where they occur. Keep flag 9 as a submission-export check and flag 1 dormant while the confabulation term remains absent.
+4. Collect and decide the external comments on version 0.9 under Section 23.1, recording its divergence from version 0.9.1.
+5. Complete evidence, rights, apparatus, rendering, and release gates before assigning version 1.0 or deriving the submission package.
 
 ---
 
@@ -1866,7 +1904,11 @@ Version 0.9 was announced publicly on 2026-07-31 as a review draft, through the 
 
 Two carriers therefore exist side by side and will diverge as comments arrive. The rule is that `research-artefacts/promptotyping-paper.md` stays canonical and the Google Doc is a comment surface. A reviewer comment becomes a change to the paper only through the ordinary revision path, meaning an operator decision recorded in Section 19 and an edit to the Research Artefact; a comment resolved in the Doc alone is a lost decision. When the round closes, the Doc's comment thread is exported or summarised into the repository, so the reasoning behind accepted and rejected proposals stays reconstructable after the Doc is archived.
 
-The Doc is a copy of the same manuscript state and carries no authority over the text. Whoever edits `paper.md` during the open round refreshes the Doc from it or notes the divergence, because a reviewer commenting on a superseded passage produces findings nobody can act on.
+The Doc is a copy of version 0.9 and carries no authority over the text. The canonical repository manuscript is version 0.9.1 from 2026-08-22. Reviewer findings are therefore mapped to the current passage before a decision is made; the difference in version is recorded rather than concealed.
+
+## 23.2 The author review of version 0.9.1 (from 2026-08-22)
+
+The author review is the acceptance process defined in Section 20. It examines every sentence or bounded content item in paragraph and subsection context, then performs global terminology, argument, apparatus, rendering, and release checks. Agent findings and proposed revisions remain provisional. The operator's recorded acceptance supplies the authorial and scholarly decision required for version 1.0.
 
 ---
 
@@ -1895,6 +1937,8 @@ After each revision session:
 - update the status line;
 - record accepted conceptual or architectural changes here;
 - move process history to the journal;
+- run `python tools/paper_review.py` after manuscript changes and bind review reports to its source digest;
+- reopen any accepted paragraph whose meaning changes;
 - update repository findings only from an explicit audit record;
 - update the citation map when a new source enters the manuscript;
 - run the claim-control checklist;

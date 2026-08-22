@@ -219,6 +219,16 @@ Under `tools/tests/` the checks are themselves held to their regression cases, r
 
 **Verdict, 2026-08-22.** The first pass found two major interpretation conflicts and three major first-use conflicts. The portal now aligns Requirements Engineering with the paper, identifies `knowledge/` as the repository convention, adds a fit check, clarifies the interface-function filter, separates provisional stories from their durable specification, separates curated data knowledge from volatile profiles, and defines the Skill and human-judgement branches. Browser follow-up also confirmed and corrected the missing positioning context that stacked the tutorial's eight copy controls under the fixed header. The role simulations establish coherent public guidance. They do not establish human usability, comparative effectiveness, transferability, labour, or maintenance cost. Those questions remain part of Milestone 3.
 
+### V21. Active manuscript-status carriers agree on the paper version
+
+**Claim.** The action layer, README, Project Document, Paper Specification, technology baseline, and embedded evidence-vault state identify the current canonical manuscript as version 0.9.1. Historical records and the externally circulated version 0.9 remain unchanged.
+
+**Why it matters.** The paper version determines which text is canonical, which external comments require passage mapping, and which acceptance protocol applies. A stale active carrier can direct a contributor to the wrong manuscript state while every file remains individually valid.
+
+**Procedure.** `tools/check_consistency.py` checks a current-status marker in each of the six active carriers. A regression test substitutes a stale version claim and requires the group to fail. `tools/paper_review.py` separately binds the sentence inventory to the exact canonical source digest.
+
+**Verdict, 2026-08-22.** Passes for version 0.9.1. The public announcement, the version 0.9 review copy, and dated historical records are intentionally outside this check.
+
 ## Browser verification, 2026-08-22
 
 The repository was served from a fresh local HTTP origin and checked at 1280 by 720 pixels and 390 by 844 pixels. The seven start-page targets for Application, the paper, Use Cases, the Vault, the tutorial, the canonical skill, and the templates each activated the expected mounted page. Every target element appeared exactly once.
