@@ -5,7 +5,7 @@ project:
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 status: active
 language: en
-version: "0.3"
+version: "0.4"
 created: 2026-07-29
 updated: 2026-08-22
 authors: [Christopher Pollin]
@@ -30,7 +30,7 @@ The operator replaced the remaining package-by-package sequence on 2026-08-22 wi
 | Milestone | Outcome | Exit condition | State |
 |---|---|---|---|
 | 1. Canonical foundation | Paper, method specification, governance, handoff, retired-interface record, canonical skill, and frontend describe one method system. | Active references to the retired interface repository are removed, canonical terms and status statements agree, the goal-based frontend routes resolve, and all repository and browser checks pass. | Repository scope completed and verified on 2026-08-22. The governed Vault reconciliation remains in [handoff.md](handoff.md). |
-| 2. Usable method portal | Researchers and project leads can understand, evaluate, and apply Promptotyping through the frontend. | A representative user can complete the defined portal scenarios from the public interface alone, with stable addresses and traceable sources. | Pending. |
+| 2. Usable method portal | Researchers and project leads can understand, evaluate, and apply Promptotyping through the frontend. | A representative user can complete the defined portal scenarios from the public interface alone, with stable addresses and traceable sources. | Repository implementation and browser scenarios completed on 2026-08-22. Tutorial v0.3 remains draft pending operator text acceptance. |
 | 3. Evaluated public release | The method package is versioned, citable, empirically evaluated, and publicly released from one approved state. | The evaluation has no blocking findings, the public site matches the released commit, and paper, specification, skill, and templates identify the same method version. | Pending. |
 
 The final evaluation target is an external researcher or project lead who can explain the method's purpose, judge its fit for a project, and complete one documented Promptotyping iteration with the skill or a template without private project context.

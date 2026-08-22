@@ -3,9 +3,9 @@ title: Application. The four forms of work resolved into actions
 slug: anwendung
 status: complete
 language: en
-version: "0.3"
+version: "0.4"
 created: 2026-07-25
-updated: 2026-07-26
+updated: 2026-08-22
 source: research-artefacts/promptotyping-paper.md, sections 2.1 and 2.2
 machine-url: https://dhcraft.org/Promptotyping/_content/anwendung.md
 ---
@@ -90,3 +90,7 @@ A single pass through the four forms of work is the exception.
 The method has two modes of operation, distinguished by how the work is organised and independent of project size. The default is a single researcher with a single agent instance. In complex projects the work itself acquires the structure of a research organisation, with parallel tasks, differentiated roles and formalised handovers; there a lead instance coordinates sub-agents with defined permissions and knowledge zones, and the methodological burden shifts from steering one agent to designing a small team. The four forms of work apply in both modes. The documented experience lies overwhelmingly with the first, and the durability of sustained multi-agent monitoring is an open question.
 
 Scaling runs across both modes. The more complex the domain, the more structure the organisation of knowledge needs, and the distilled document set grows with the project. Verification discipline through the Critical Expert in the Loop is untouched by this.
+
+## Continue from here
+
+To evaluate whether the method fits a project, compare the [documented use cases](#use-cases), then follow a load-bearing statement through the [Vault](#vault) to its sources. To apply the method, continue with the [tutorial](#tutorial), keep later sessions aligned with the [canonical Promptotyping skill](#skills-promptotyping), and take the required document structures from the [templates](#vorlagen).

@@ -5,7 +5,7 @@ project:
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 status: complete
 language: en
-version: 0.8
+version: 0.9
 created: 2026-05-09
 updated: 2026-08-22
 authors: [Christopher Pollin]
@@ -251,6 +251,16 @@ The repository source is `skills/promptotyping/SKILL.md`. The Skills page render
 ### A43 — The side panel preserves modal focus and request ownership
 
 The reusable side panel keeps keyboard focus inside the open dialog, closes on Escape, and returns focus to the control that opened it. Template rows retain their table semantics; a native button in the first cell provides the keyboard action while the full row remains a pointer target. An asynchronous Markdown response may update only the panel request that initiated it. Closing the panel or opening a newer panel invalidates an earlier pending response. Acceptance criterion. On a template's first uncached open, Shift+Tab from the close button wraps to the final panel control, Tab returns to the close button, Escape closes the panel and focuses the template button, and a response arriving after close leaves the panel closed.
+
+### A44 — The portal supports three complete user scenarios
+
+The primary path is Understand, Evaluate, Apply. Each scenario starts on the overview, reaches its evidence or working surface through a stable public anchor, and ends with an explicit continuation into the next relevant surface.
+
+- **Understand.** A researcher opens Application, identifies the four forms of work and the role of the maintained knowledge base, then reaches the paper for the scholarly rationale and evaluation.
+- **Evaluate.** A researcher filters the Use Cases by epistemic function, opens a case's context, data, approach, contribution, and limits, then follows the argument into the paper or traces a load-bearing statement through the Vault to its grounded sources.
+- **Apply.** A researcher follows the tutorial from prerequisites to an accepted first iteration, copies an agent instruction, reaches the canonical skill and its four operations, and copies a suitable template block. The Working environment page explains how the vault, action document, harness, and skill relate.
+
+Acceptance criterion. The overview exposes all three routes. The Application, Use Cases, tutorial, skill, templates, Vault, paper, and Working environment surfaces link into their stated scenario without private project context. At desktop and mobile widths, the filters, case depth panel, Vault assertion panel, skill copy control, and template frontmatter control complete their documented actions without a console error. Static checks preserve the cross-links; browser verification decides the rendered interactions. Human comprehension and scholarly adequacy remain the participant evaluation of the public-release milestone.
 
 ### A26 — The site is English
 Every string the site shows is English, in the British spelling the paper uses (operator decision 2026-07-25, carried out 2026-07-26). That covers the page registry labels, the status line, every control, the nine content pages directly under `_content/`, and the text fields of `data/glossar.json`, `data/case-studies.json` and `data/promptotyping-documents.json`.

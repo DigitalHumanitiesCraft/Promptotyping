@@ -5,7 +5,7 @@ project:
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 status: active
 language: en
-version: 0.6
+version: 0.7
 created: 2026-07-26
 updated: 2026-08-22
 authors: [Christopher Pollin]
@@ -199,6 +199,16 @@ Under `tools/tests/` the checks are themselves held to their regression cases, r
 
 **Verdict, 2026-08-22.** Passes with the first canonical package and its Skills-page integration.
 
+### V19. The three portal scenarios remain connected
+
+**Claim.** The overview routes researchers through Understand, Evaluate, and Apply. Application continues into evidence or first use; Use Cases continues into the Vault or tutorial; the tutorial reaches the canonical skill, templates, and Working environment. The Use Cases data boundary reports a failed load through the shared escaped error surface.
+
+**Why it matters.** Individually valid pages do not form a usable method portal when a reader has to reconstruct their order or return to the navigation tree after every step. A disconnected error boundary is worse because it replaces an intelligible data failure with an unrelated JavaScript exception.
+
+**Procedure.** The static group checks the required anchors on the overview, Application, Use Cases host, tutorial, and Working environment, and checks the shared Use Cases error call. Regression cases remove the Vault transition, the skill transition, and the error-boundary call. Browser verification then executes the filters, case panel, Vault grounding panel, skill copy, and template copy at desktop and mobile widths. A controlled HTTP 503 for `data/case-studies.json` exercises the failed-data path.
+
+**Verdict, 2026-08-22.** Passes. The normal scenarios complete without console output. The controlled failure renders “Could not load case-studies.json (503).” inside the Use Cases surface and produces no secondary JavaScript error.
+
 ## Browser verification, 2026-08-22
 
 The repository was served from a fresh local HTTP origin and checked at 1280 by 720 pixels and 390 by 844 pixels. The seven start-page targets for Application, the paper, Use Cases, the Vault, the tutorial, the canonical skill, and the templates each activated the expected mounted page. Every target element appeared exactly once.
@@ -206,6 +216,10 @@ The repository was served from a fresh local HTTP origin and checked at 1280 by 
 The first DOM inventory found five duplicate public ids where one Vault assertion occurred in more than one topic map. The renderer now assigns the public id to its first topic occurrence and leaves further topic occurrences as unanchored controls. The final DOM carried no duplicate ids, unnamed controls, images without alternative text, or horizontal page overflow.
 
 The template panel opened as a bottom sheet at the mobile viewport. Once its asynchronous content had loaded, focus moved to the close control inside the dialog. Closing the panel returned focus to the native template button that opened it. The start page and panel were inspected visually in the mobile layout, and the start page was inspected again in the desktop layout. The final browser console contained no errors or warnings.
+
+The Milestone 2 pass executed the full A44 scenarios from a freshly served repository state. Understand exposed every goal route and continued from Application to evidence and first use. Evaluate filtered the 25-case gallery to four Verification cases, opened a case with its limits, and opened a Vault assertion with three source links. Apply exposed six tutorial steps and eight copyable prompts, copied the canonical Skill source, and copied a template block. All eight scenario surfaces resolved at 1280 by 720 pixels and 390 by 844 pixels with no duplicate ids, unnamed buttons, missing alternative text, horizontal overflow, console errors, or warnings.
+
+At the mobile viewport the case and template panels occupied the full 375-pixel layout width and met the bottom edge. The Use Case filter, case panel, Vault grounding panel, Skill copy, and template copy completed again in that layout. A separate controlled-failure origin returned HTTP 503 for the case-study JSON; the page retained the Use Cases route and rendered its specific load error through the shared boundary.
 
 ## What is not checked automatically, and why
 

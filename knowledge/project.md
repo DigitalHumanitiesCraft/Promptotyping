@@ -5,7 +5,7 @@ project:
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 status: complete
 language: en
-version: 0.6
+version: 0.7
 created: 2026-05-09
 updated: 2026-08-22
 authors: [Christopher Pollin]
@@ -73,6 +73,8 @@ Out of scope:
 ## Current state
 
 The repository baseline is complete. The site renders the method portal, the paper, the templates with side panels and the frontmatter inspector, the curated use-case gallery with its depth pages, the tutorial, the canonical skill, the Vault evidence layer, and the reference pages. Mobile layout, accessibility behaviour, stable addressing, and search-engine metadata are part of that baseline. What each surface must do and how it is built is owned by [specification.md](specification.md), [architecture.md](architecture.md), and [design.md](design.md); the header and footer use the DHCraft watercolour mark.
+
+The repository implementation of the three portal scenarios is complete and verified. Understand connects Application to the paper and evidence; Evaluate connects the gallery, case depth pages, the paper, and the Vault; Apply connects the tutorial, canonical skill, templates, and Working environment. The tutorial source is version 0.3 and remains a draft until the operator accepts its text. Human comprehension and scholarly adequacy belong to the external evaluation of the release candidate.
 
 The public deployment changes only through an explicit release decision under [governance.md](governance.md). The repository and the live site can therefore differ between release decisions without changing which repository sources are canonical.
 

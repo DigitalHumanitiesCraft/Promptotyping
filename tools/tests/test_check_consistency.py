@@ -260,6 +260,53 @@ class SkillPackageTest(CheckCase):
         self.assertIn("pages-content.js", self.only_failure())
 
 
+class PortalPathsTest(CheckCase):
+    """V19, the three portal scenarios remain connected across surfaces."""
+
+    def setUp(self) -> None:
+        super().setUp()
+        root = self.tempdir()
+        fixtures = {
+            "OVERVIEW": cc.OVERVIEW,
+            "APPLICATION": cc.APPLICATION,
+            "PAGES_CONTENT": cc.PAGES_CONTENT,
+            "CASE_FILTER": cc.CASE_FILTER,
+            "TUTORIAL": cc.TUTORIAL,
+            "WORKING_ENVIRONMENT": cc.WORKING_ENVIRONMENT,
+        }
+        for name, source in fixtures.items():
+            target = root / source.name
+            self.write(target, source.read_text(encoding="utf-8"))
+            self.patch(name, target)
+
+    def test_the_current_routes_pass(self) -> None:
+        cc.check_portal_paths()
+        self.assertEqual(cc.failures, [])
+
+    def test_an_evaluation_route_without_the_vault_fails(self) -> None:
+        text = cc.PAGES_CONTENT.read_text(encoding="utf-8").replace(
+            'href="#vault"', 'href="#missing-vault"')
+        cc.PAGES_CONTENT.write_text(text, encoding="utf-8")
+        cc.check_portal_paths()
+        self.assertTrue(any("evaluate" in failure and "#vault" in failure
+                            for failure in cc.failures))
+
+    def test_an_apply_route_without_the_skill_fails(self) -> None:
+        text = cc.TUTORIAL.read_text(encoding="utf-8").replace(
+            "#skills-promptotyping", "#skills-missing")
+        cc.TUTORIAL.write_text(text, encoding="utf-8")
+        cc.check_portal_paths()
+        self.assertTrue(any("apply" in failure and "#skills-promptotyping" in failure
+                            for failure in cc.failures))
+
+    def test_a_disconnected_use_case_error_boundary_fails(self) -> None:
+        text = cc.CASE_FILTER.read_text(encoding="utf-8").replace(
+            "App.showLoadError(listHost, err);", "A.showLoadError(listHost, err);")
+        cc.CASE_FILTER.write_text(text, encoding="utf-8")
+        cc.check_portal_paths()
+        self.assertTrue(any("error boundary" in failure for failure in cc.failures))
+
+
 class GalleryTest(CheckCase):
     """V4, the two closed vocabularies whose violation is silent in the browser."""
 

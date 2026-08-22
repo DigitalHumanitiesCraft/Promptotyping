@@ -133,7 +133,10 @@
       "function. The comparative account stands in the " +
       '<a href="#abschnitt-3-patterns-across-promptotypes">paper, section 3</a>.</p>' +
       '<div class="case-filter-host"></div>' +
-      '<div class="case-list-host"></div>';
+      '<div class="case-list-host"></div>' +
+      '<h2>Continue your evaluation</h2>' +
+      '<p>Trace the paper\'s load-bearing statements through the <a href="#vault">Vault</a>, ' +
+      'or move from assessment to a first iteration with the <a href="#tutorial">tutorial</a>.</p>';
   }
 
   /* ---- Epistemic function marks ----

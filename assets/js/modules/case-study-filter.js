@@ -283,7 +283,7 @@
         maybeOpenFromHash();
       })
       .catch(function (err) {
-        A.showLoadError(listHost, err);
+        App.showLoadError(listHost, err);
       });
   }
 

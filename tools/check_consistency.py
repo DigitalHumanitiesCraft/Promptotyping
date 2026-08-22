@@ -48,6 +48,11 @@ SKILL_MD = SKILL_DIR / "SKILL.md"
 SKILL_UI = SKILL_DIR / "agents" / "openai.yaml"
 SKILLS_INDEX = CONTENT_DIR / "skills" / "index.md"
 PAGES_CONTENT = JS_DIR / "pages-content.js"
+CASE_FILTER = JS_DIR / "modules" / "case-study-filter.js"
+OVERVIEW = CONTENT_DIR / "ueberblick.md"
+APPLICATION = CONTENT_DIR / "anwendung.md"
+TUTORIAL = CONTENT_DIR / "tutorial.md"
+WORKING_ENVIRONMENT = CONTENT_DIR / "arbeitsumgebung.md"
 
 # The site's own base, as the template: fields and the prose spell it.
 SITE_BASE = "dhcraft.org/Promptotyping/"
@@ -299,6 +304,43 @@ def check_skill_package() -> None:
         fail("skill", "the Skills index does not link to #skills-promptotyping")
     if "$promptotyping" not in read_text(SKILL_UI):
         fail("skill", "agents/openai.yaml default prompt does not invoke $promptotyping")
+
+
+def check_portal_paths() -> None:
+    """The Understand, Evaluate, and Apply routes stay connected.
+
+    Browser verification decides whether the controls work. This static half
+    protects the explicit transitions that make those controls one user path
+    rather than a collection of individually reachable pages (A44).
+    """
+    surfaces = (
+        ("overview", OVERVIEW,
+         ("#anwendung", "#paper", "#use-cases", "#vault", "#tutorial",
+          "#skills-promptotyping", "#vorlagen")),
+        ("understand", APPLICATION,
+         ("#paper", "#use-cases", "#vault", "#tutorial",
+          "#skills-promptotyping", "#vorlagen")),
+        ("evaluate", PAGES_CONTENT,
+         ("#abschnitt-3-patterns-across-promptotypes", "#vault", "#tutorial")),
+        ("apply", TUTORIAL,
+         ("#skills-promptotyping", "#vorlagen", "#arbeitsumgebung")),
+        ("working environment", WORKING_ENVIRONMENT,
+         ("#skills-promptotyping",)),
+    )
+    for scenario, path, anchors in surfaces:
+        if not path.is_file():
+            fail("portal", "%s surface %s is missing" % (scenario, path.as_posix()))
+            continue
+        text = read_text(path)
+        missing = [anchor for anchor in anchors if anchor not in text]
+        if missing:
+            fail("portal", "%s surface %s misses %s"
+                 % (scenario, path.as_posix(), ", ".join(missing)))
+
+    if not CASE_FILTER.is_file():
+        fail("portal", "Use Cases error boundary %s is missing" % CASE_FILTER.as_posix())
+    elif "App.showLoadError(listHost, err);" not in read_text(CASE_FILTER):
+        fail("portal", "Use Cases error boundary does not call the shared load-error path")
 
 
 def template_fill_block(path):
@@ -1376,6 +1418,7 @@ def main() -> int:
         check_relative_links,
         check_knowledge_frontmatter,
         check_skill_package,
+        check_portal_paths,
     ]
     if "--check-urls" in sys.argv:
         groups.append(lambda: check_urls(cases))

@@ -3,9 +3,9 @@ title: Tutorial. Your first Promptotyping iteration
 slug: tutorial
 status: draft
 language: en
-version: "0.2"
+version: "0.3"
 created: 2026-07-29
-updated: 2026-07-29
+updated: 2026-08-22
 machine-url: https://dhcraft.org/Promptotyping/_content/tutorial.md
 ---
 
@@ -18,6 +18,7 @@ This page directs your own first Promptotyping iteration, from a dataset you bri
 - **A structured dataset.** A folder of CSV, JSON, XML/TEI, or comparable machine-readable files that you know as a researcher. Tabular exports are enough; the tutorial makes no assumptions about format richness.
 - **A question.** One thing you actually want to see, check, or trace in this data. Without it, every later decision loses its criterion.
 - **An agentic coding tool.** A coding agent that can read your files, run scripts, and edit the repository, for example Claude Code or a comparable harness. Start the agent in the folder that will become the repository; every path in the prompts below is relative to that root.
+- **The canonical skill, when your harness supports skills.** Install or copy the [canonical Promptotyping skill](#skills-promptotyping) before Step 1. Use `orient` whenever a later session enters the repository and `handoff` before another session or person takes over. The six prompts below remain self-contained when the harness has no skill mechanism.
 - **Git.** The iteration ends with an identifiable versioned state, and a repository is the simplest way to have one. You need no Git knowledge beyond letting the agent run it.
 - **Clearance to process the material.** The agent sends what it reads to an external model. Before Step 2, settle that the data may be processed that way, which concerns personal data, copyright, contracts with holding institutions, and the provider's terms. Where that cannot be established, Promptotyping is the wrong instrument for this material, whatever its technical fit.
 - **Your own competence.** You are the [Critical Expert](#glossar) of this pass. The agent will propose mappings, categories, and interfaces; whether they are faithful to your material is a judgement the tutorial cannot make for you.
@@ -181,6 +182,6 @@ Then make your purpose-specific judgement. Record its durable grounds in `knowle
 
 ## Where this leaves you
 
-The next iteration starts from the documents, and that is the point of having written them. A new requirement, a corrected understanding of the data, or a new source enters the relevant document first, and implementation follows from it. From here, three directions carry further. The [templates](#vorlagen) give every document you just wrote a fuller, versioned structural pattern; the catalogue is German, and your files map onto it as `data.md` to the template `data`, `specification.md` to `specification`, `design.md` to `design`, `verification.md` to `verification`, `handoff.md` to `handoff`, `journal.md` to `journal`, and the action document to `action-layer`. The [best practices](#praxis) collect the working practices that grew out of documented projects, including the verification milestones and the script-versus-LLM separation you just used. And the [paper](#paper) argues why the method is built this way, with the [documented projects](#use-cases) as its evidence.
+The next iteration starts from the documents, and that is the point of having written them. A new requirement, a corrected understanding of the data, or a new source enters the relevant document first, and implementation follows from it. The [canonical skill](#skills-promptotyping) carries this routing into later sessions; its `orient`, `handoff`, and `compact` operations preserve the knowledge base as work continues. The [templates](#vorlagen) give every document you just wrote a fuller, versioned structural pattern; the catalogue is German, and your files map onto it as `data.md` to the template `data`, `specification.md` to `specification`, `design.md` to `design`, `verification.md` to `verification`, `handoff.md` to `handoff`, `journal.md` to `journal`, and the action document to `action-layer`. The [working-environment page](#arbeitsumgebung) explains how the vault, action document, harness, and skill fit together. The [best practices](#praxis) collect the working practices that grew out of documented projects, including the verification milestones and the script-versus-LLM separation you just used. The [paper](#paper) argues why the method is built this way, with the [documented projects](#use-cases) as its evidence.
 
 One honest limit. This tutorial exercised the loop on a bounded first pass. What it cannot establish is that your artefact is scholarly adequate, since that depends on the judgement you brought to Steps 2 and 6, and it does not transfer to material you cannot verify. Where an artefact is to be operated durably, maintained, or handed to third parties, the boundary to Research Software Engineering applies, and the documents you now have are the handover package.
