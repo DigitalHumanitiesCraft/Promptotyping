@@ -3,8 +3,8 @@
    The site is a specification documentation: one page is visible at a time,
    the sidebar tree is the table of contents, and the hash names the page. The
    registry PAGES is the single source for the page hosts, the sidebar, the
-   route resolution and the generated specification index, so index.html and
-   404.html carry no navigation markup and cannot drift apart. */
+   route resolution, so index.html and 404.html carry no navigation markup and
+   cannot drift apart. */
 
 (function (A) {
   "use strict";
@@ -14,27 +14,22 @@
      published under the five part slugs resolves after the merge of F9
      (operator decision 2026-07-29). */
   var PAGES = [
-    { id: "ueberblick", label: "Overview", group: "Specification", kind: "normative",
+    { id: "overview", label: "Overview", group: "Specification", kind: "normative",
       note: "What the method is and where it applies" },
     { id: "specification", label: "Specification", group: "Specification", kind: "normative",
-      note: "The five normative parts, from application to verification" },
+      note: "" },
 
-    { id: "anwendung", label: "Application", group: "Specification", parent: "specification",
-      part: "1", kind: "normative",
-      note: "The four forms of work resolved into actions" },
+    { id: "application", label: "Application", group: "Specification", parent: "specification",
+      part: "1", kind: "normative", note: "" },
     { id: "vorlagen", label: "Templates", group: "Specification", parent: "specification",
-      part: "2", kind: "normative",
-      note: "The full document set and its triggers",
+      part: "2", kind: "normative", note: "",
       machine: "data/promptotyping-documents.json" },
     { id: "konvention-v0.1", label: "Convention", group: "Specification", parent: "specification",
-      part: "3", kind: "normative",
-      note: "Frontmatter, addressing, reading heuristic" },
+      part: "3", kind: "normative", note: "" },
     { id: "artefakt", label: "Artefact and boundary", group: "Specification", parent: "specification",
-      part: "4", kind: "normative",
-      note: "Artefact type and handover point" },
+      part: "4", kind: "normative", note: "" },
     { id: "verifikation", label: "Checking", group: "Specification", parent: "specification",
-      part: "5", kind: "normative",
-      note: "Kinds of check, levels of check, zones of autonomy" },
+      part: "5", kind: "normative", note: "" },
 
     { id: "glossar", label: "Glossary", group: "Reference", kind: "informative",
       note: "Every term of the method defined, with the pages that use it",
@@ -63,7 +58,14 @@
       machine: "research-artefacts/promptotyping-paper.md" }
   ];
 
-  var HOME_PAGE = "ueberblick";
+  /* Published German routes from the first English-site pass remain accepted,
+     but resolve onto the English canonical ids before a page is shown. */
+  var LEGACY_ROUTE_ALIASES = {
+    ueberblick: "overview",
+    anwendung: "application"
+  };
+
+  var HOME_PAGE = "overview";
   var SPEC_PAGE_ID = "specification";
   var PAPER_HOST_ID = "paper";
   /* Host for an address that resolved to nothing. It is a page host like any
@@ -104,6 +106,10 @@
       }
     }
     return null;
+  }
+
+  function canonicalRouteId(id) {
+    return LEGACY_ROUTE_ALIASES[id] || id;
   }
 
   /* Every registry entry is addressable; only an entry without a parent is a
@@ -155,6 +161,7 @@
     if (!anchor) {
       return HOME_PAGE;
     }
+    anchor = canonicalRouteId(anchor);
     if (isRouteId(anchor)) {
       return hostPage(anchor);
     }
@@ -423,37 +430,6 @@
     });
   }
 
-  /* ---- Specification index ----
-     The start page carries an index of the specification, generated from the
-     page registry so it cannot fall behind the sidebar. Placed after the status
-     table, the way an ontology document leads with its term index. */
-
-  function buildSpecIndex(host) {
-    if (host.querySelector(".spec-index")) {
-      return;
-    }
-    var anchorEl = host.querySelector("table");
-    // Only the numbered parts, and since the merge of F9 they are sections of
-    // the specification page, so each entry addresses a part of one document.
-    // The sidebar carries the same five without their one-line notes.
-    var html = "";
-    PAGES.filter(function (p) { return p.part; }).forEach(function (p) {
-      html += '<li><a href="#' + p.id + '">' +
-        '<span class="spec-index-part">' + p.part + "</span>" +
-        A.escapeHtml(p.label) + "</a>" +
-        '<span class="spec-index-note">' + A.escapeHtml(p.note || "") + "</span></li>";
-    });
-    var block = document.createElement("section");
-    block.className = "spec-index";
-    block.innerHTML = '<h2 id="inhalt-der-spezifikation">The specification in five parts</h2>' +
-      '<div class="spec-index-cols"><ul>' + html + "</ul></div>";
-    if (anchorEl && anchorEl.nextSibling) {
-      host.insertBefore(block, anchorEl.nextSibling);
-    } else {
-      host.appendChild(block);
-    }
-  }
-
   /* ---- Page status line ----
      Every page states what a published specification states per part: whether
      it binds, which version it is, when it last changed, and where the machine
@@ -470,7 +446,7 @@
       var machine = fm["machine-url"] || p.machine;
       // A part states the version, date and substrate of its own text; that it
       // binds is stated once, by the page it is a part of.
-      var fields = p.parent ? [] : [
+      var fields = p.parent || p.id === SPEC_PAGE_ID ? [] : [
         ["Standing", p.kind === "normative"
           ? "normative, part of the specification"
           : "informative"]
@@ -489,6 +465,9 @@
         html += '<span class="page-status-item"><span class="page-status-key">Source</span> ' +
           '<a href="' + A.escapeHtml(machine) + '" target="_blank" rel="noopener"><code>' +
           A.escapeHtml(shown) + "</code></a></span>";
+      }
+      if (!html && !p.note) {
+        return;
       }
       var block = document.createElement("div");
       block.className = "page-head";
@@ -562,6 +541,8 @@
   /* An id that names a part is shown by showing the page it sits in, so a caller
      may pass either without knowing which of the two it holds. */
   function showPage(id, anchor, moveFocus) {
+    id = canonicalRouteId(id);
+    anchor = canonicalRouteId(anchor);
     var target = hostPage(id);
     var page = isPageId(target) || target === NOT_FOUND_PAGE ? target : HOME_PAGE;
     var changed = page !== activePage;
@@ -600,6 +581,12 @@
   }
 
   function handleHash(hash, moveFocus) {
+    var canonical = canonicalRouteId(hash);
+    if (canonical !== hash) {
+      history.replaceState(null, "", window.location.pathname +
+        window.location.search + "#" + canonical);
+      hash = canonical;
+    }
     if (handleSpecialAnchor(hash)) {
       return;
     }
@@ -630,7 +617,7 @@
 
     // Hash form: #promptotyping-document-data or bare promptotyping-document-data
     if (rest.charAt(0) === "#") {
-      return rest.slice(1) || null;
+      return canonicalRouteId(rest.slice(1)) || null;
     }
 
     // Subpath form, optionally with a trailing #v0.1 snapshot suffix.
@@ -659,8 +646,9 @@
     // Bare registry slug, page or part. The five part slugs were page slugs
     // until the merge of F9 and are published as such, so they resolve here
     // exactly as before; the routing then lands them in the page they sit in.
-    if (isRouteId(rest)) {
-      return rest;
+    var canonical = canonicalRouteId(rest);
+    if (isRouteId(canonical)) {
+      return canonical;
     }
     // The convention is the one part whose id carries a version that its
     // address does not.
@@ -711,7 +699,6 @@
   A.foldParts = foldParts;
   A.demoteHeadings = demoteHeadings;
   A.buildNav = buildNav;
-  A.buildSpecIndex = buildSpecIndex;
   /* The footer states the version of the specification, which the start page
      already states from its frontmatter. Reading it from the same place keeps
      the two from drifting, as they had by 2026-07-26. */

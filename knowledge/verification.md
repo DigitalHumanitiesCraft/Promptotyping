@@ -5,9 +5,9 @@ project:
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 status: active
 language: en
-version: 0.7
+version: 0.8
 created: 2026-07-26
-updated: 2026-08-22
+updated: 2026-08-25
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Opus 5)
 method:
@@ -229,6 +229,16 @@ Under `tools/tests/` the checks are themselves held to their regression cases, r
 
 **Verdict, 2026-08-22.** Passes for version 0.9.1. The public announcement, the version 0.9 review copy, and dated historical records are intentionally outside this check.
 
+### V22. Overview and Application use canonical English addresses
+
+**Claim.** The public registry mounts Overview and Application from `_content/overview.md` and `_content/application.md`; their canonical hash and path forms are `#overview`, `#application`, `/overview`, and `/application`. The retired German forms remain resolvable aliases, but do not occur as canonical source files or visible machine addresses. The Overview contains one compact orientation treatment, and the Specification page presents the five parts without an additional index, status claim, taglines, or decorative separators.
+
+**Why it matters.** A public English interface whose source links and machine addresses switch to German exposes two competing naming systems. Repeating the five-part structure in the page body also spends the first viewport on information already present in the navigation.
+
+**Procedure.** `tools/check_consistency.py` reads the registry, content frontmatter, route resolver, page render calls, and CSS contract. It requires the two English sources and addresses, the explicit `ueberblick` and `anwendung` alias map, the absence of the retired source files, and the compact page rules. Regression cases replace the canonical identifiers, remove an alias, point a source line back to German, or reintroduce one of the retired substrates. Browser verification then opens canonical and legacy hashes and subpaths, uses Browser Back, inspects both pages at desktop and narrow widths, and checks the console.
+
+**Verdict, 2026-08-25.** Passes. All four canonical forms and all four legacy forms resolve to the intended English route. The Overview status block ends at 853 pixels in a 1440 by 900 viewport, the Specification retains all five parts, both checked widths avoid horizontal overflow, and the browser console contains no warnings or errors.
+
 ## Browser verification, 2026-08-22
 
 The repository was served from a fresh local HTTP origin and checked at 1280 by 720 pixels and 390 by 844 pixels. The seven start-page targets for Application, the paper, Use Cases, the Vault, the tutorial, the canonical skill, and the templates each activated the expected mounted page. Every target element appeared exactly once.
@@ -242,6 +252,12 @@ The Milestone 2 pass executed the full A44 scenarios from a freshly served repos
 The role-simulation correction pass served the revised repository from a new local origin. Application rendered a six-condition Fit check and its limitation statement. The Use Case control labelled its scale “All interface functions”, filtered to four Verification cards, and labelled each card “Interface function”. Tutorial v0.4 rendered six steps, eight copy controls, all nine document-template links, the generated profile path, the `distill` branch, and the human-decision boundary. The Step 3 copy control reported “Copied” at desktop and mobile widths after its codeblock positioning context was corrected. Desktop at 1280 by 720 pixels and mobile at 390 by 844 pixels had no horizontal overflow, console errors, or warnings.
 
 At the mobile viewport the case and template panels occupied the full 375-pixel layout width and met the bottom edge. The Use Case filter, case panel, Vault grounding panel, Skill copy, and template copy completed again in that layout. A separate controlled-failure origin returned HTTP 503 for the case-study JSON; the page retained the Use Cases route and rendered its specific load error through the shared boundary.
+
+## Browser verification, 2026-08-25
+
+The repository was served from a fresh local origin at 1440 by 900 pixels and 390 by 844 pixels. The canonical hashes `#overview` and `#application` mounted Overview and the Application part of Specification. The legacy hashes `#ueberblick` and `#anwendung` were replaced in place by their English canonical forms. A second local origin reproduced the GitHub Pages 404 handover; `/overview`, `/application`, `/ueberblick`, and `/anwendung` all completed at the intended canonical hash. Browser Back returned from Specification to Overview.
+
+At desktop width the full Overview orientation and its seven status fields ended at 853 pixels, without a repeated five-part index or horizontal overflow. Specification rendered five parts with `_content/application.md` as the Application source and without the removed subtitle, standing claim, part taglines, or section separators. The narrow layout kept the Overview status fields in one column and both checked pages free of horizontal overflow. Navigation controls remain native links, their route targets were exercised through the link controls, and the changed page receives programmatic focus after primary-page navigation. The final browser console contained no errors or warnings.
 
 ## What is not checked automatically, and why
 

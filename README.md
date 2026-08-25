@@ -10,7 +10,7 @@ This repository is the public method portal and the repository of the method pap
 
 The four forms of work move from gathering raw material (Preparation) over probing what the data affords (Exploration) and distilling the findings into selective Markdown documents (Distillation) to iterative, verified development with an agentic coding tool (Implementation). Knowledge Document is the general term for a document of this kind, and it specialises into three types according to the kind of knowledge it holds, each with a diagnostic rule attached. Declarative Documents hold knowledge about the subject matter. Process Documents divide current handoff inputs, accepted future work, and the curated provenance index between `handoff.md`, `plan.md`, and `journal.md`. Action Documents, which the paper calls agent instruction documents, hold knowledge about how to act (`CLAUDE.md`, `AGENTS.md`); check these when output is formally wrong.
 
-The full argument is the method paper; an overview is at [dhcraft.org/Promptotyping/#ueberblick](https://dhcraft.org/Promptotyping/#ueberblick).
+The full argument is the method paper; an overview is at [dhcraft.org/Promptotyping/#overview](https://dhcraft.org/Promptotyping/#overview).
 
 ## The method paper
 

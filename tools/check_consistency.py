@@ -49,8 +49,8 @@ SKILL_UI = SKILL_DIR / "agents" / "openai.yaml"
 SKILLS_INDEX = CONTENT_DIR / "skills" / "index.md"
 PAGES_CONTENT = JS_DIR / "pages-content.js"
 CASE_FILTER = JS_DIR / "modules" / "case-study-filter.js"
-OVERVIEW = CONTENT_DIR / "ueberblick.md"
-APPLICATION = CONTENT_DIR / "anwendung.md"
+OVERVIEW = CONTENT_DIR / "overview.md"
+APPLICATION = CONTENT_DIR / "application.md"
 TUTORIAL = CONTENT_DIR / "tutorial.md"
 WORKING_ENVIRONMENT = CONTENT_DIR / "arbeitsumgebung.md"
 PAPER_SPECIFICATION = KNOWLEDGE_DIR / "paper-specification.md"
@@ -111,7 +111,7 @@ NORMATIVE_FILES = (
     CLAUDE_MD,
     README,
     CONVENTION,
-    CONTENT_DIR / "anwendung.md",
+    CONTENT_DIR / "application.md",
     CONTENT_DIR / "glossar.md",
     CONTENT_DIR / "tutorial.md",
     CONTENT_DIR / "workflow.md",
@@ -329,7 +329,7 @@ def check_portal_paths() -> None:
     """
     surfaces = (
         ("overview", OVERVIEW,
-         ("#anwendung", "#paper", "#use-cases", "#vault", "#tutorial",
+         ("#application", "#paper", "#use-cases", "#vault", "#tutorial",
           "#skills-promptotyping", "#vorlagen")),
         ("understand", APPLICATION,
          ("#paper", "#use-cases", "#vault", "#tutorial",
@@ -355,6 +355,65 @@ def check_portal_paths() -> None:
         fail("portal", "Use Cases error boundary %s is missing" % CASE_FILTER.as_posix())
     elif "App.showLoadError(listHost, err);" not in read_text(CASE_FILTER):
         fail("portal", "Use Cases error boundary does not call the shared load-error path")
+
+
+def check_english_route_contract() -> None:
+    """Overview and Application own English canonical routes and substrates.
+
+    The published German hashes and subpaths remain accepted through the route
+    alias table. They must not remain canonical registry entries or duplicate
+    Markdown substrates, because that would leave the English site exposing a
+    German machine address.
+    """
+    registry_path = JS_DIR / "registry.js"
+    app_path = JS_DIR / "app.js"
+    if not registry_path.is_file() or not app_path.is_file():
+        fail("english-routes", "registry.js or app.js is missing")
+        return
+
+    registry = read_text(registry_path)
+    app = read_text(app_path)
+    page_ids = registry_pages(registry)
+    aliases = js_string_map(registry, "LEGACY_ROUTE_ALIASES")
+    contracts = (
+        ("overview", "ueberblick", OVERVIEW),
+        ("application", "anwendung", APPLICATION),
+    )
+    for canonical, legacy, substrate in contracts:
+        if canonical not in page_ids or legacy in page_ids:
+            fail(
+                "english-routes",
+                "%s must be the canonical page id and %s must not be a registry page"
+                % (canonical, legacy),
+            )
+        if aliases.get(legacy) != canonical:
+            fail(
+                "english-routes",
+                "legacy route %s must resolve to %s" % (legacy, canonical),
+            )
+        legacy_substrate = CONTENT_DIR / (legacy + ".md")
+        if legacy_substrate.is_file():
+            fail(
+                "english-routes",
+                "legacy substrate %s must be removed" % legacy_substrate.as_posix(),
+            )
+        if not substrate.is_file():
+            fail("english-routes", "canonical substrate %s is missing" % substrate.as_posix())
+            continue
+        text = read_text(substrate)
+        if not re.search(r"^slug:\s*%s\s*$" % re.escape(canonical), text, re.M):
+            fail("english-routes", "%s does not carry slug: %s" % (substrate, canonical))
+        expected_machine = "_content/%s.md" % canonical
+        if expected_machine not in text or "_content/%s.md" % legacy in text:
+            fail(
+                "english-routes",
+                "%s does not carry the English machine address %s"
+                % (substrate, expected_machine),
+            )
+        marker = 'A.renderMarkdownInto("%s", "_content/%s.md"' % (canonical, canonical)
+        if marker not in app:
+            fail("english-routes", "app.js does not render %s from %s" %
+                 (canonical, expected_machine))
 
 
 def template_fill_block(path):
@@ -759,6 +818,11 @@ def anchor_families(registry_js):
     return out
 
 
+def route_aliases(registry_js):
+    """Legacy bare routes mapped onto their canonical registry ids."""
+    return js_string_map(registry_js, "LEGACY_ROUTE_ALIASES")
+
+
 def paper_anchor_pattern(registry_js):
     """The PAPER_ANCHOR regex of registry.js, reused rather than restated."""
     match = re.search(r"var PAPER_ANCHOR = /(.+?)/;", registry_js)
@@ -900,6 +964,7 @@ def declared_anchors(js_texts):
     paper_aliases = js_string_map(by_name["pages-paper.js"], "PAPER_ANCHOR_ALIASES")
 
     anchors = set(registry_pages(by_name["registry.js"]))
+    anchors.update(route_aliases(by_name["registry.js"]))
 
     for doc in load_json(CATALOGUE)["documents"]:
         anchors.add("promptotyping-document-" + doc["slug"])
@@ -965,14 +1030,16 @@ def is_declared(anchor, anchors):
     return anchor in anchors or anchor.startswith(GENERATED_PREFIXES)
 
 
-def resolve_site_url(url, page_ids, families, paper_anchor):
+def resolve_site_url(url, page_ids, families, paper_anchor, aliases=None):
     """Port of resolveTemplateUrl in assets/js/registry.js."""
+    aliases = aliases or {}
     rest = re.sub(r"^https?://", "", url)
     if rest.startswith(SITE_BASE):
         rest = rest[len(SITE_BASE):]
     rest = rest.lstrip("/")
     if rest.startswith("#"):
-        return rest[1:] or None
+        anchor = rest[1:] or None
+        return aliases.get(anchor, anchor)
 
     suffix = ""
     if "#" in rest:
@@ -990,6 +1057,8 @@ def resolve_site_url(url, page_ids, families, paper_anchor):
         return None
     if rest in page_ids:
         return rest
+    if rest in aliases:
+        return aliases[rest]
     if rest == "konvention":
         return "konvention-v0.1"
     if paper_anchor.search(rest) or any(rest.startswith(p) for p, _, _ in families):
@@ -1054,7 +1123,7 @@ def prose_site_urls():
 HANDOVER_PARAM = "p"
 
 
-def check_subpath_handover(page_ids, families, paper_anchor):
+def check_subpath_handover(page_ids, families, paper_anchor, aliases):
     """The one subpath vocabulary resolves, and 404.html states none of its own.
 
     Since 2026-07-26 the router hands the requested path to the application as a
@@ -1084,16 +1153,22 @@ def check_subpath_handover(page_ids, families, paper_anchor):
     # shows up here instead of turning the checks above into silent passes. That
     # the JavaScript resolver agrees is the browser half of the verification.
     for page in sorted(page_ids):
-        if resolve_site_url(page, page_ids, families, paper_anchor) != page:
+        if resolve_site_url(page, page_ids, families, paper_anchor, aliases) != page:
             fail("anchors", "the subpath /%s does not resolve to #%s" % (page, page))
+    for legacy, canonical in sorted(aliases.items()):
+        if resolve_site_url(legacy, page_ids, families, paper_anchor, aliases) != canonical:
+            fail("anchors", "the legacy subpath /%s does not resolve to #%s"
+                 % (legacy, canonical))
     for prefix, _page, segment in families:
         if not segment:
             continue
-        resolved = resolve_site_url(segment + "/probe", page_ids, families, paper_anchor)
+        resolved = resolve_site_url(segment + "/probe", page_ids, families, paper_anchor,
+                                    aliases)
         if resolved != prefix + "probe":
             fail("anchors", "the subpath /%s/probe resolves to %s, not to #%sprobe"
                  % (segment, "#" + resolved if resolved else "nothing", prefix))
-    if resolve_site_url("konvention", page_ids, families, paper_anchor) != "konvention-v0.1":
+    if resolve_site_url("konvention", page_ids, families, paper_anchor,
+                        aliases) != "konvention-v0.1":
         fail("anchors", "the subpath /konvention no longer resolves to #konvention-v0.1")
 
 
@@ -1105,6 +1180,7 @@ def check_anchors():
     page_ids = registry_pages(registry_js)
     families = anchor_families(registry_js)
     paper_anchor = paper_anchor_pattern(registry_js)
+    aliases = route_aliases(registry_js)
 
     anchors = declared_anchors(js_texts)
 
@@ -1118,7 +1194,7 @@ def check_anchors():
                  % (where, anchor))
 
     for where, field, url in template_field_urls():
-        anchor = resolve_site_url(url, page_ids, families, paper_anchor)
+        anchor = resolve_site_url(url, page_ids, families, paper_anchor, aliases)
         if anchor is None:
             fail("anchors", "%s: template.%s %s resolves to no anchor" % (where, field, url))
         elif not is_declared(anchor, anchors):
@@ -1126,7 +1202,7 @@ def check_anchors():
                  % (where, field, url, anchor))
 
     for where, token in prose_site_urls():
-        anchor = resolve_site_url(token, page_ids, families, paper_anchor)
+        anchor = resolve_site_url(token, page_ids, families, paper_anchor, aliases)
         if anchor is None:
             fail("anchors", "%s names %s, which resolves to no anchor" % (where, token))
         elif not is_declared(anchor, anchors):
@@ -1134,7 +1210,7 @@ def check_anchors():
                  % (where, token, anchor))
 
     check_glossar_sources(anchors)
-    check_subpath_handover(page_ids, families, paper_anchor)
+    check_subpath_handover(page_ids, families, paper_anchor, aliases)
 
 
 # ---------------------------------------------------------------------------
@@ -1451,6 +1527,7 @@ def main() -> int:
         check_knowledge_frontmatter,
         check_skill_package,
         check_portal_paths,
+        check_english_route_contract,
         check_paper_version_claims,
     ]
     if "--check-urls" in sys.argv:

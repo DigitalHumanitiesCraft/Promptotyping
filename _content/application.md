@@ -1,13 +1,13 @@
 ---
-title: Application. The four forms of work resolved into actions
-slug: anwendung
+title: Application
+slug: application
 status: complete
 language: en
-version: "0.5"
+version: "0.6"
 created: 2026-07-25
-updated: 2026-08-22
+updated: 2026-08-25
 source: research-artefacts/promptotyping-paper.md, sections 2.1 and 2.2
-machine-url: https://dhcraft.org/Promptotyping/_content/anwendung.md
+machine-url: https://dhcraft.org/Promptotyping/_content/application.md
 ---
 
 # Application

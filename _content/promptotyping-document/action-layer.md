@@ -208,7 +208,7 @@ m3gim eröffnet seine CLAUDE.md mit der Selbstbeschränkung "Workflow-Regeln fü
 
 - [Vorlagen Promptotyping Documents](#vorlagen)
 - [Konvention Promptotyping Documents](#konvention-v0.1)
-- [Promptotyping](#ueberblick)
+- [Promptotyping](#overview)
 - Agent-Sozialisierung
 - Knowledge-Action-Komposition
 - Action-Layer- und Journal-Praxis in Promptotyping-Repos 2026-06

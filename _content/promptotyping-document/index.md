@@ -75,7 +75,7 @@ Funktion: kanonische Definitionen der projekt-konstitutiven Begriffe und der in 
 - Konkrete Zahlen aus der Anwendung (Coverage, Datensatzgrößen, Testcounts). Diese liegen in der Anwendung selbst und im `persons.json#meta` oder vergleichbar; siehe Vault-Regel zu volatilen Quantitäten in CLAUDE §6.
 - Sessionprotokolle und Verlaufserzählungen. Sachliche Übergänge werden knapp in `journal.md` nachgewiesen.
 - Eine "Was fehlt und warum"-Sektion. Bis zur Regeländerung vom 2026-06-29 gefordert, seitdem untersagt; nicht relevante Funktionen bleiben unkommentiert weg, Verweise auf anderswo liegendes Material stehen positiv am Bedarfsort.
-- Methodische Einführungen ins Promptotyping. Dafür ist [Promptotyping](#ueberblick) im Vault zuständig; der Index zeigt nur darauf.
+- Methodische Einführungen ins Promptotyping. Dafür ist [Promptotyping](#overview) im Vault zuständig; der Index zeigt nur darauf.
 - Definitionen für Begriffe, die nur in einem einzigen Geschwister-Dokument vorkommen. Diese leben in der "Begriffe"-Sektion des betreffenden Dokuments, nicht im Index.
 
 ## Vorlage zum Befüllen
@@ -197,7 +197,7 @@ sugw-Edition trägt das Glossar als eigenständiges Dokument `glossar.md` mit zw
 
 - [Vorlagen Promptotyping Documents](#vorlagen)
 - [Konvention Promptotyping Documents](#konvention-v0.1)
-- [Promptotyping](#ueberblick)
+- [Promptotyping](#overview)
 - [Vorlage Projekt-Wissensdokument](#promptotyping-document-project)
 - [Vorlage Journal](#promptotyping-document-journal)
 - [Vorlage Handoff](#promptotyping-document-handoff)

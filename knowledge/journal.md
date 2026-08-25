@@ -5,9 +5,9 @@ project:
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 status: active
 language: de
-version: 1.0
+version: 1.1
 created: 2026-05-09
-updated: 2026-08-22
+updated: 2026-08-25
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 method:
@@ -983,3 +983,11 @@ Die aktiven Statusquellen in Action Layer, README, Project Document, Paper Speci
 Quelle war der geprüfte Übergabepunkt in `knowledge/handoff.md`. Ziel waren `ACTIVE-WORK.md`, das Repository-Verzeichnis, das Promptotyping MOC, die Vault-Zeiger auf das Paper und die zuständigen Leitstellen-Lanes.
 
 Der Vault führt nun v0.9.1 mit `research-artefacts/promptotyping-paper.md` als kanonischem Manuskript und Abschnitt 20 der Paper-Spezifikation als verbindlichem Prüfverfahren. Repositoryqualität und Portal sind als abgeschlossen eingeordnet; das gelöschte Interface-Repository ist aus dem Register entfernt und seine Studie als abgeschlossen und retiriert dokumentiert. Die spätere Satz-für-Satz-Abnahme des Papers blieb unberührt und steht als nächster inhaltlicher Arbeitsgang in ACTIVE-WORK. Nach der formal bestandenen Vault-Prüfung wurde der Übergabepunkt entfernt.
+
+## 2026-08-25 — Englische Portaladressen und kompakte Spezifikationsseiten integriert
+
+Die Abnahmerunde vereinheitlichte die englische Oberfläche und ihre Maschinenadressen. Overview und Application liegen nun kanonisch in `_content/overview.md` und `_content/application.md` und verwenden `#overview`, `#application`, `/overview` und `/application`. Die bisherigen deutschen Hashes und Unterpfade bleiben als Alias erhalten und werden auf die englischen Adressen normalisiert. Registry, Inhaltsverweise, Knowledge Documents, Konsistenzprüfung und Regressionstests bilden denselben Vertrag ab.
+
+Die Overview wiederholt die fünf Spezifikationsteile nicht mehr im Seitenkörper. Ihre Orientierung, Ziele und Statusangaben passen bei 1440 mal 900 Pixeln in den ersten Viewport. Die Specification behält alle fünf Teile als Navigation und Abschnitte, entfernt jedoch den allgemeinen Untertitel, die Standing-Zeile, die Taglines der Teile und dekorative Trennlinien. Die Browserprüfung bestätigte kanonische und historische Hashes und Unterpfade, Browser-Zurück, Desktop- und Schmallayout sowie eine Konsole ohne Warnungen oder Fehler.
+
+## 2026-08-25 — Implementierungsangabe im Footer ergänzt

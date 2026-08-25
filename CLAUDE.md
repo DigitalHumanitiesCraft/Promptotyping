@@ -73,9 +73,9 @@ Der Ordner `vault/` ist eine Instanz des Grounded-Vault-Templates (`DigitalHuman
 
 Die Site ist eine Spezifikationsdokumentation, wie sie eine Programmbibliothek oder eine publizierte Ontologie führt. Es ist **eine Seite zur Zeit sichtbar**; der Navigationsbaum in der Seitenleiste ist das Inhaltsverzeichnis. Das Raster hat zwei Spuren, den Baum und die Seite; eine dritte Spur mit den Überschriften der aktiven Seite gibt es nicht, das Paper trägt sein Inhaltsverzeichnis stattdessen in der Seite unter der H1 (A23). Die durchgehende Scroll-Spalte mit Hero und Video an der Spitze ist abgelöst und wird nicht reaktiviert.
 
-Die fünf nummerierten Teile sind seit dem 2026-07-29 Sektionen **einer** Spezifikationsseite unter `#specification` (A32, Operator-Entscheidung, Paket F9); die Startseite `ueberblick` bleibt eigenständig. Ein Registereintrag mit `parent` ist ein Teil und keine Seite, behält seine Id als Element-Id in der zusammengeführten Seite und bleibt damit unter genau derselben Adresse erreichbar wie zuvor. Wer einen Teil anfasst, prüft `isPageId`, `hostPage` und `isRouteId`; sie beantworten, was gezeigt werden kann, in welcher Seite ein Teil sitzt und was überhaupt adressierbar ist.
+Die fünf nummerierten Teile sind seit dem 2026-07-29 Sektionen **einer** Spezifikationsseite unter `#specification` (A32, Operator-Entscheidung, Paket F9); die Startseite `overview` bleibt eigenständig. Ein Registereintrag mit `parent` ist ein Teil und keine Seite, behält seine Id als Element-Id in der zusammengeführten Seite und bleibt damit unter genau derselben Adresse erreichbar wie zuvor. Wer einen Teil anfasst, prüft `isPageId`, `hostPage` und `isRouteId`; sie beantworten, was gezeigt werden kann, in welcher Seite ein Teil sitzt und was überhaupt adressierbar ist.
 
-Einzige Quelle für Seitencontainer, Navigationsbaum, Routenauflösung und den Spezifikationsindex der Startseite ist das Register `PAGES` in `assets/js/registry.js`. Eine neue Seite wird dort eingetragen, nicht in `index.html`. **Schreibe keine Navigationsmarkierung in `index.html` oder `404.html`**; beide tragen nur die Shell, und genau das hält sie synchron.
+Einzige Quelle für Seitencontainer, Navigationsbaum und Routenauflösung ist das Register `PAGES` in `assets/js/registry.js`. Eine neue Seite wird dort eingetragen, nicht in `index.html`. **Schreibe keine Navigationsmarkierung in `index.html` oder `404.html`**; beide tragen nur die Shell, und genau das hält sie synchron.
 
 Die nicht aktiven Seiten bleiben als `display: none` im DOM. Das ist die Bedingung dafür, dass jeder publizierte Anker weiter auflöst, gleich welche Seite gerade zu sehen ist. Lazy-Mounting einzelner Seiten würde das brechen.
 
@@ -87,12 +87,12 @@ Die nicht aktiven Seiten bleiben als `display: none` im DOM. Das ist die Bedingu
 - Konzepte: `#konzept-{name}` (z.B. `#konzept-eil`, `#konzept-asymmetric-amplification`)
 - Case Studies: `#case-{name}` (z.B. `#case-herdata`, `#case-klawiter-rescue`)
 - Vault: `#vault` für die Ansicht, `#vault-{assertion-slug}` für eine einzelne Assertion (bis August 2026 Claim); Subpath `/vault` und `/vault/{assertion-slug}`. Die Slugs sind die Dateinamen unter `vault/30_assertions/` und haben die Umbenennung unverändert überlebt, publizierte Anker lösen weiter auf.
-- Spezifikation: `#specification`, Subpath `/specification` (A32). Die fünf Teile sind Sektionen dieser Seite und behalten ihre Adressen, `#anwendung`, `#vorlagen`, `#konvention-v0.1`, `#artefakt`, `#verifikation` samt den gleichlautenden Subpfaden.
+- Spezifikation: `#specification`, Subpath `/specification` (A32). Die fünf Teile sind Sektionen dieser Seite. Teil 1 ist kanonisch unter `#application` und `/application` adressiert; `#anwendung` und `/anwendung` bleiben Legacy-Aliasse. Die übrigen Teile behalten `#vorlagen`, `#konvention-v0.1`, `#artefakt`, `#verifikation` samt den gleichlautenden Subpfaden.
 - Konvention: `#konvention-v0.1`
 - Glossar: `#glossar`
 - Literatur: `#literatur`
 - Paper-Sektionen: `#abschnitt-{n}-{slug}` (z.B. `#abschnitt-2-promptotyping-as-a-method`). Die Site rendert `research-artefacts/promptotyping-paper.md` direkt und erzeugt die Anker beim Rendern; unter `_content/paper/` liegt nichts mehr. Jede Umgliederung des Papers verschiebt Anker, deshalb wird die Aliaskarte `PAPER_ANCHOR_ALIASES` in `assets/js/pages-paper.js` vollständig neu gezielt und nicht bloß ergänzt; sie ist flach und löst nicht transitiv auf.
-- Überblick: `#ueberblick`; Use Cases: `#use-cases`; Paper: `#paper`; Worked Workflow: `#workflow`; Best Practices: `#praxis`, Praxis-Einträge: `#praxis-{slug}`; Skills: `#skills`, `#skills-promptotyping` und `#skills-{slug}` (A13 bis A15, A42); Arbeitsumgebung: `#arbeitsumgebung`, Subpath `/arbeitsumgebung` (A17); Tutorial: `#tutorial`, Subpath `/tutorial` (A31)
+- Overview: `#overview`, Subpath `/overview`; `#ueberblick` und `/ueberblick` bleiben Legacy-Aliasse. Use Cases: `#use-cases`; Paper: `#paper`; Worked Workflow: `#workflow`; Best Practices: `#praxis`, Praxis-Einträge: `#praxis-{slug}`; Skills: `#skills`, `#skills-promptotyping` und `#skills-{slug}` (A13 bis A15, A42); Arbeitsumgebung: `#arbeitsumgebung`, Subpath `/arbeitsumgebung` (A17); Tutorial: `#tutorial`, Subpath `/tutorial` (A31)
 
 Anker dürfen nicht ohne Diskussion umbenannt werden — Repos können auf sie als `template:`-URI verlinken.
 

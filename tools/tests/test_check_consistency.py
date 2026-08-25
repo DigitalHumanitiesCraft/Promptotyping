@@ -307,6 +307,81 @@ class PortalPathsTest(CheckCase):
         self.assertTrue(any("error boundary" in failure for failure in cc.failures))
 
 
+class EnglishRouteContractTest(CheckCase):
+    """The public English pages own English canonical files and routes."""
+
+    def setUp(self) -> None:
+        super().setUp()
+        root = self.tempdir()
+        self.patch("CONTENT_DIR", root / "_content")
+        self.patch("JS_DIR", root / "assets" / "js")
+        self.patch("OVERVIEW", cc.CONTENT_DIR / "overview.md")
+        self.patch("APPLICATION", cc.CONTENT_DIR / "application.md")
+        self.registry = cc.JS_DIR / "registry.js"
+        self.app = cc.JS_DIR / "app.js"
+
+    def write_valid_contract(self) -> None:
+        self.write(
+            self.registry,
+            'var PAGES = [{ id: "overview" }, { id: "application" }];\n'
+            'var LEGACY_ROUTE_ALIASES = { ueberblick: "overview", '
+            'anwendung: "application" };\n',
+        )
+        self.write(
+            self.app,
+            'A.renderMarkdownInto("overview", "_content/overview.md");\n'
+            'A.renderMarkdownInto("application", "_content/application.md");\n',
+        )
+        self.write(
+            cc.OVERVIEW,
+            '---\nslug: overview\nmachine-url: '
+            'https://dhcraft.org/Promptotyping/_content/overview.md\n---\n',
+        )
+        self.write(
+            cc.APPLICATION,
+            '---\nslug: application\nmachine-url: '
+            'https://dhcraft.org/Promptotyping/_content/application.md\n---\n',
+        )
+
+    def test_the_current_contract_passes(self) -> None:
+        self.patch("CONTENT_DIR", cc.ROOT / "_content")
+        self.patch("JS_DIR", cc.ROOT / "assets" / "js")
+        self.patch("OVERVIEW", cc.CONTENT_DIR / "overview.md")
+        self.patch("APPLICATION", cc.CONTENT_DIR / "application.md")
+        cc.check_english_route_contract()
+        self.assertEqual(cc.failures, [])
+
+    def test_a_german_canonical_registry_id_fails(self) -> None:
+        self.write_valid_contract()
+        text = self.registry.read_text(encoding="utf-8").replace(
+            'id: "overview"', 'id: "ueberblick"')
+        self.registry.write_text(text, encoding="utf-8")
+        cc.check_english_route_contract()
+        self.assertIn("canonical page id", self.only_failure())
+
+    def test_a_missing_legacy_alias_fails(self) -> None:
+        self.write_valid_contract()
+        text = self.registry.read_text(encoding="utf-8").replace(
+            'ueberblick: "overview", ', "")
+        self.registry.write_text(text, encoding="utf-8")
+        cc.check_english_route_contract()
+        self.assertIn("legacy route", self.only_failure())
+
+    def test_a_german_substrate_fails(self) -> None:
+        self.write_valid_contract()
+        self.write(cc.CONTENT_DIR / "ueberblick.md", "legacy substrate\n")
+        cc.check_english_route_contract()
+        self.assertIn("legacy substrate", self.only_failure())
+
+    def test_a_german_machine_address_fails(self) -> None:
+        self.write_valid_contract()
+        text = cc.OVERVIEW.read_text(encoding="utf-8").replace(
+            "_content/overview.md", "_content/ueberblick.md")
+        cc.OVERVIEW.write_text(text, encoding="utf-8")
+        cc.check_english_route_contract()
+        self.assertIn("machine address", self.only_failure())
+
+
 class GalleryTest(CheckCase):
     """V4, the two closed vocabularies whose violation is silent in the browser."""
 

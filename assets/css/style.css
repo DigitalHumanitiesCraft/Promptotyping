@@ -475,21 +475,15 @@ a:hover {
 
 /* ---- The parts of the specification ----
    Five sections of one page since the merge of F9, each from its own substrate
-   and each carrying its own status line. The rule separates them the way a
-   published specification separates its parts. */
+   and each carrying its own compact metadata. Spacing and headings establish
+   the hierarchy without decorative rules. */
 
 .spec-part {
-  margin-top: var(--space-12);
-  padding-top: var(--space-8);
-  border-top: 1px solid var(--border);
+  margin-top: var(--space-8);
 }
 
-/* The status line of the page already closes with a hairline, so the first part
-   needs none of its own. */
 .spec-part:first-of-type {
-  margin-top: var(--space-8);
-  padding-top: 0;
-  border-top: 0;
+  margin-top: var(--space-6);
 }
 
 .spec-part > h2:first-child {
@@ -668,16 +662,13 @@ a:hover {
 }
 
 /* ---- Page status line ----
-   One line under the page title: does it bind, which version, when last
-   changed, and the machine address of its substrate. */
+   Compact metadata under a page title. */
 
 .content .page-status {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-2) var(--space-6);
-  margin: 0 0 var(--space-8);
-  padding-bottom: var(--space-4);
-  border-bottom: 1px solid var(--border);
+  margin: 0 0 var(--space-6);
   font-size: 0.8125rem;
   color: var(--grey-2);
 }
@@ -690,77 +681,34 @@ a:hover {
   font-size: 0.75rem;
 }
 
-/* ---- Start page: status block and specification index ----
-   The first table on the start page is the status header, keyed left. */
+/* ---- Start page status block ---- */
 
-#ueberblick > table:first-of-type {
-  font-size: 0.875rem;
-  margin-bottom: 0;
-}
-
-/* The status table is keyed, so its header row is empty by construction. */
-#ueberblick > table:first-of-type thead {
-  display: none;
-}
-
-#ueberblick > table:first-of-type th,
-#ueberblick > table:first-of-type td:first-child {
-  width: 14rem;
-  color: var(--grey-2);
-}
-
-.spec-index {
-  margin: var(--space-12) 0;
-  padding: var(--space-8) 0;
-  border-top: 1px solid var(--border);
-}
-
-.content .spec-index h2 {
-  margin: 0 0 var(--space-6);
-  font-size: 1rem;
-  letter-spacing: 0.01em;
-}
-
-.spec-index-cols {
+.overview-status {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: var(--space-8);
-}
-
-.spec-index ul {
-  list-style: none;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-2) var(--space-8);
   margin: 0;
-  padding: 0;
-}
-
-.spec-index li {
-  margin: 0 0 var(--space-2);
-}
-
-.spec-index a {
-  display: block;
-  font-weight: 500;
-  text-decoration: none;
-}
-
-.spec-index a:hover {
-  text-decoration: underline;
-  text-decoration-color: var(--text);
-}
-
-.spec-index-part {
-  display: inline-block;
-  min-width: 1.2em;
-  color: var(--grey-3);
-  font-weight: 400;
-  font-variant-numeric: tabular-nums;
-}
-
-.spec-index-note {
-  display: block;
   font-size: 0.8125rem;
-  line-height: 1.4;
+}
+
+.overview-status > div {
+  display: grid;
+  grid-template-columns: 9rem minmax(0, 1fr);
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.overview-status dt {
   color: var(--grey-2);
+}
+
+.overview-status dd {
+  min-width: 0;
+  margin: 0;
+}
+
+#overview > h2 {
+  margin-top: var(--space-8);
 }
 
 /* ---- Paper: sections and table of contents ----
@@ -1903,6 +1851,10 @@ a:hover {
   /* Set the paper title at a size a phone can hold. */
   .content h1 {
     font-size: 1.75rem;
+  }
+
+  .overview-status {
+    grid-template-columns: 1fr;
   }
 
   /* The header must not push its links off-screen. */

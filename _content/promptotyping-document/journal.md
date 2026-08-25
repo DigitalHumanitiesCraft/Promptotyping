@@ -156,7 +156,7 @@ Ein offener Handoff-Punkt liefert eine neue Schemainvariante. Nach Prüfung wird
 
 - [Vorlagen Promptotyping Documents](#vorlagen)
 - [Konvention Promptotyping Documents](#konvention-v0.1)
-- [Promptotyping](#ueberblick)
+- [Promptotyping](#overview)
 - Context Engineering
 - [Vorlage Handoff](#promptotyping-document-handoff)
 - [Vorlage Plan](#promptotyping-document-plan)

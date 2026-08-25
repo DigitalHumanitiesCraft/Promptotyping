@@ -72,7 +72,7 @@
 
   /* ---- Heading ids ----
      Only enabled while the paper is parsed: the static content files render
-     into sections that already own ids like #ueberblick, and a heading of the
+     into sections that already own ids like #overview, and a heading of the
      same slug would duplicate them. */
 
   var headingIdsEnabled = false;

@@ -63,8 +63,8 @@
     // then start the paper lazy loading and resolve the initial hash.
     var ready = Promise.all([
       A.renderGlossar(),
-      A.renderMarkdownInto("ueberblick", "_content/ueberblick.md", A.buildSpecIndex),
-      A.renderMarkdownInto("anwendung", "_content/anwendung.md"),
+      A.renderMarkdownInto("overview", "_content/overview.md"),
+      A.renderMarkdownInto("application", "_content/application.md"),
       A.renderMarkdownInto("workflow", "_content/workflow.md", function (el) {
         // Part 1 introduces the method and the four forms of work; it sits with the
         // worked case rather than in a hero above the specification.

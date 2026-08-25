@@ -5,9 +5,9 @@ project:
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 status: complete
 language: en
-version: 0.9
+version: "1.0"
 created: 2026-05-09
-updated: 2026-08-22
+updated: 2026-08-25
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Opus 4.8)
 method:
@@ -150,9 +150,9 @@ Desktop uses a two-track grid inside a 1240px container: the page tree (`--nav-w
 
 The tree groups the pages under Spezifikation, Referenz, Belege, Werkzeuge und Praxis, and Paper, one flat run per group with a gap between the runs and no label over any of them; the active page is marked by a left border and bold weight. Two entries carry a permanent subtree, the specification with its five numbered parts and the paper with its sections, and the section the reader is in is marked in the same greys at 0.8125rem with a left border. The tree is never collapsible, and since 2026-07-29 nothing else in the interface is either. Below 860px it stacks above the page and stays visible, showing the subtree of the page being read alone, tables scroll inside their own box, and the side panel becomes a bottom sheet. An on-this-page rail was built and removed the same day by operator decision. What replaced it for the one page that needs it is a static table of contents at the head of the paper page, two columns on the desktop and one below 860px, set in the greys of the system and carrying no colour of its own. It stands still while the reader scrolls, which is the difference from the rail.
 
-The header carries the wordmark and the kind marker, with no mark beside it, and the signature band along its foot. Both the DHCraft watercolour and the Promptotyping logo were tried in that slot and dropped, because a chromatic detail image at 22 pixels reads as a smudge and would put a hue on the page that means nothing. The carrier mark stays in the footer and supplies the favicon. The footer's auto-fitting grid currently resolves into three content columns: carrier and licence, addresses and machine access, and the state of the specification.
+The header carries the wordmark and the kind marker, with no mark beside it, and the signature band along its foot. Both the DHCraft watercolour and the Promptotyping logo were tried in that slot and dropped, because a chromatic detail image at 22 pixels reads as a smudge and would put a hue on the page that means nothing. The carrier mark stays in the footer and supplies the favicon. The footer's auto-fitting grid currently resolves into four content columns: carrier and licence, addresses and machine access, the state of the specification, and implementation. The implementation column names Digital Humanities Craft, the documented AI harnesses and models, and Promptotyping without repeating the repository link already present in the addresses column.
 
-The start page is the specification front. The title and one-sentence scope lead into three task routes for understanding, evaluating, and applying the method. A short method account follows. The keyed status table and generated specification index then provide the reference entry into the normative parts. Every other page carries a one-line status under its title at 0.8125rem, keys in `#8a8a8a` and values in `#525252`, separated from the body by a hairline; on the paper page the table of contents follows immediately below it. The index is derived from the same page registry as the sidebar, so the two cannot diverge.
+The start page is the specification front. The title and one-sentence scope lead into three task routes for understanding, evaluating, and applying the method. A compact operational account and two-column keyed status block complete the page. The block becomes one column below 860px. The permanent navigation subtree is the only five-part index. Overview fits through its status block at a 1440 by 900 CSS-pixel viewport. Informative pages carry their note and status metadata under the title at 0.8125rem. The Specification page carries neither tagline nor standing line; each part retains compact version, date, and source metadata. Spacing and heading weight establish these transitions without horizontal rules.
 
 ## Side panels
 
