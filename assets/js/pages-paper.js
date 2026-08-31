@@ -17,7 +17,7 @@
      the whole map rather than appending to it. Three cuts have been superseded,
      the pre-revision seven-chapter text (canonical until 2026-07-30), the
      five-chapter text (until 2026-07-31), and the chapter-2 layout of the same
-     day. */
+     day. The map also preserves headings renamed during author review. */
   var PAPER_ANCHOR_ALIASES = {
     /* Seven-chapter text, canonical until 2026-07-30. */
     "abschnitt-2-terms-positioning": "abschnitt-1-1-translating-research-data-into-digital-research-artefacts-through-scholar-centred-design",
@@ -43,8 +43,8 @@
     "abschnitt-5-1-principle-of-presentation": "abschnitt-3-1-evidence-and-comparison",
     "abschnitt-5-2-the-project-inventory": "abschnitt-3-2-project-conditions-functions-and-artefact-forms",
     "abschnitt-5-3-worked-cases-by-epistemic-function": "abschnitt-3-2-project-conditions-functions-and-artefact-forms",
-    "abschnitt-5-4-teaching-and-collaboration-cases": "abschnitt-3-3-findings-attribution-and-learning",
-    "abschnitt-5-5-reading-the-evidence": "abschnitt-3-3-findings-attribution-and-learning",
+    "abschnitt-5-4-teaching-and-collaboration-cases": "abschnitt-3-3-from-findings-to-knowledge-refactoring",
+    "abschnitt-5-5-reading-the-evidence": "abschnitt-3-3-from-findings-to-knowledge-refactoring",
     "abschnitt-6-discussion": "abschnitt-4-scope-conditions-and-evaluation",
     "abschnitt-6-1-process-and-publication": "abschnitt-2-3-4-from-complementary-cases-to-the-promptotype",
     "abschnitt-6-2-verification-and-validation": "abschnitt-2-3-1-agentic-data-production-and-curation-in-the-szd-and-jeanne-hersch-workflows",
@@ -59,20 +59,22 @@
     /* Five-chapter text, canonical until 2026-07-31. */
     "abschnitt-2-4-verification-validation-and-acceptance": "abschnitt-2-3-1-agentic-data-production-and-curation-in-the-szd-and-jeanne-hersch-workflows",
     "abschnitt-2-5-documentation-accountability-and-the-limits-of-ai-assisted-development": "abschnitt-4-2-labour-infrastructure-and-responsible-use",
-    "abschnitt-3-epistemic-and-methodological-implications": "abschnitt-3-4-implications-and-evidential-limits",
-    "abschnitt-3-1-research-artefacts-and-the-amplification-of-computer-based-research": "abschnitt-3-4-implications-and-evidential-limits",
+    "abschnitt-3-epistemic-and-methodological-implications": "abschnitt-3-3-from-findings-to-knowledge-refactoring",
+    "abschnitt-3-1-research-artefacts-and-the-amplification-of-computer-based-research": "abschnitt-4-2-labour-infrastructure-and-responsible-use",
     "abschnitt-3-2-research-data-and-project-knowledge-as-mediating-structures": "abschnitt-2-1-promptotyping-and-the-project-knowledge-base",
     "abschnitt-3-3-amplification-competence-and-the-limits-of-externalisation": "abschnitt-4-2-labour-infrastructure-and-responsible-use",
     "abschnitt-3-4-acceptance-reconstructability-and-the-status-of-the-promptotype": "abschnitt-2-3-4-from-complementary-cases-to-the-promptotype",
     "abschnitt-4-promptotyping-in-practice": "abschnitt-3-patterns-across-promptotypes",
     "abschnitt-4-1-cases-and-evidential-status": "abschnitt-3-1-evidence-and-comparison",
     "abschnitt-4-2-artefact-forms-and-documented-projects": "abschnitt-3-2-project-conditions-functions-and-artefact-forms",
-    "abschnitt-4-3-cross-case-findings": "abschnitt-3-3-findings-attribution-and-learning",
+    "abschnitt-4-3-cross-case-findings": "abschnitt-3-3-from-findings-to-knowledge-refactoring",
+    "abschnitt-3-4-implications-and-evidential-limits": "abschnitt-4-scope-conditions-and-evaluation",
     "abschnitt-5-scope-limits-evaluation-and-conclusion": "abschnitt-4-scope-conditions-and-evaluation",
     "abschnitt-5-1-scope-limits-and-conditions-of-applicability": "abschnitt-4-1-evidential-scope-and-applicability",
     "abschnitt-5-2-transferability-and-priorities-for-evaluation": "abschnitt-4-3-transferability-and-evaluation",
     "abschnitt-5-3-conclusion": "abschnitt-4-4-conclusion",
-    "ai-use-and-research-provenance": "author-s-note-on-ai-use-and-research-provenance"
+    "ai-use-and-research-provenance": "author-s-note-on-ai-use-and-research-provenance",
+    "abschnitt-3-3-findings-attribution-and-learning": "abschnitt-3-3-from-findings-to-knowledge-refactoring"
   };
 
   function renderPaper() {

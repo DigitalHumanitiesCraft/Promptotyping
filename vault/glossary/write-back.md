@@ -2,16 +2,16 @@
 type: glossary
 term: Write-back
 created: 2026-07-29
-updated: 2026-07-29
+updated: 2026-08-23
 ---
 
 # Write-back
 
-Write-back is the return path from Implementation, assessment, review and verification into the maintained project knowledge. A finding belongs in the knowledge base when it concerns a missing requirement, an undocumented data characteristic, an incorrect assumption, a representational problem, an improved design decision, a new constraint, a revised procedure, a recurrent failure mode, a verification criterion, corrected source material, or a changed research question.
+Write-back is the return path through which consequential findings from Implementation, assessment, review, and validation enter renewed Distillation and maintained project knowledge. The term identifies the direction of return independently of whether a human contributor or an LLM-based agent carries out the documentary work.
 
-The depth of the return follows the finding. An inadequate specification returns to Distillation, a revised understanding of the data returns to Exploration, and new or corrected source material returns to Preparation. The frequent return to Distillation reflects the common case in which implementation reveals the specification to be incomplete or ambiguous. A local code fix leaves write-back incomplete while the underlying project understanding has changed.
+Within renewed Distillation, knowledge refactoring revises the maintained Markdown documents so that they express the current project understanding coherently. Accountable contributors determine which revised knowledge forms part of the accepted project state. The depth of return follows the finding, with revised project understanding most often returning to Distillation and changes to the source basis or its interpretation returning to Preparation or Exploration.
 
-The definition stands in `knowledge/paper-specification.md` (§5.5), which counts write-back among the recurrent forms of work. The canonical `research-artefacts/promptotyping-paper.md` describes the same movement in Section 3.2 as the return of findings into the documents without setting a term for it. The term carries no external source.
+The definition stands in `knowledge/paper-specification.md` (§5.5). The canonical `research-artefacts/promptotyping-paper.md` distinguishes write-back as the return path from knowledge refactoring as the documentary revision in Section 3.3. The term carries no external source.
 
 ## Related
 

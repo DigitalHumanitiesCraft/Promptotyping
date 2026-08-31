@@ -59,7 +59,7 @@ class InventoryTest(unittest.TestCase):
     def test_current_paper_has_expected_review_sections(self):
         inventory = paper_review.build_inventory()
         section_ids = {section.id for section in inventory.sections}
-        self.assertEqual(len(inventory.sections), 27)
+        self.assertEqual(len(inventory.sections), 26)
         self.assertIn("abstract", section_ids)
         self.assertIn("2.3.4", section_ids)
         self.assertIn("authors-note", section_ids)

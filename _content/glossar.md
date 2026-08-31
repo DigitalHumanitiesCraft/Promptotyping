@@ -516,8 +516,8 @@ Source: [Paper, Section 2.1](#abschnitt-2-1-promptotyping-and-the-project-knowle
 
 Kind: Form of work
 
-Incorporating a finding from implementation into the maintained project knowledge, so later work proceeds from the revised understanding.
+The return path through which consequential findings enter renewed Distillation and maintained project knowledge.
 
-A correction becomes methodologically consequential when it enters the maintained project knowledge. Write-back is that operation and carries findings from Implementation into durable project knowledge. It integrates the four forms of work without constituting a fifth form. Write-back must be directed at the level where the underlying problem arises, which may be the account of the research material, a conceptual model, a capture practice, a requirement, a mapping, an interface decision, an agent instruction, a checking procedure, or the documented boundary of acceptance. Its purpose is to carry the interpreted consequence of a finding forward. Promptotyping further distinguishes project-level write-back from method-level write-back; a project-specific solution requires additional evidence before it becomes a transferable methodological rule.
+Write-back carries consequential findings from Implementation, assessment, review, and validation into renewed Distillation. Human contributors or LLM-based agents may carry out the resulting documentary work. Within Promptotyping, knowledge refactoring revises the maintained Markdown documents so that they express the current project understanding coherently. Accountable contributors determine which revised knowledge enters the accepted project state. A project-specific revision supports method-level change when the available evidence warrants a general rule.
 
-Source: [Paper, Section 2.2.4](#abschnitt-2-2-4-implementation); [Paper, Section 3.3](#abschnitt-3-3-findings-attribution-and-learning)
+Source: [Paper, Section 2.2.4](#abschnitt-2-2-4-implementation); [Paper, Section 3.3](#abschnitt-3-3-from-findings-to-knowledge-refactoring)

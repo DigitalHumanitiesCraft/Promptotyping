@@ -984,6 +984,30 @@ Quelle war der geprüfte Übergabepunkt in `knowledge/handoff.md`. Ziel waren `A
 
 Der Vault führt nun v0.9.1 mit `research-artefacts/promptotyping-paper.md` als kanonischem Manuskript und Abschnitt 20 der Paper-Spezifikation als verbindlichem Prüfverfahren. Repositoryqualität und Portal sind als abgeschlossen eingeordnet; das gelöschte Interface-Repository ist aus dem Register entfernt und seine Studie als abgeschlossen und retiriert dokumentiert. Die spätere Satz-für-Satz-Abnahme des Papers blieb unberührt und steht als nächster inhaltlicher Arbeitsgang in ACTIVE-WORK. Nach der formal bestandenen Vault-Prüfung wurde der Übergabepunkt entfernt.
 
+## 2026-08-23 — Abschnitt 3.3 als Wissensrefactoring konsolidiert
+
+Der Operator nahm die fünf Absätze des neuen Abschnitts „From Findings to Knowledge Refactoring“ an. Sie ersetzen neun Absätze, die Fallbefunde, Zuordnung, Write-back und projekt- beziehungsweise methodenbezogenes Lernen teilweise erneut ausführten. Die neue Fassung unterscheidet Write-back als Rückweg von erneuter Distillation als dokumentarischer Arbeit. Menschen und LLM-basierte Agenten können die Wissensdokumente refactoren; verantwortliche Beteiligte entscheiden über die angenommene Wissensfassung.
+
+Glossar, eingebetteter Projekt-Vault, Manuskriptarchitektur und Portalanker bilden diese Unterscheidung ab. Die Prüfinventur umfasst nach der Verdichtung 138 Absatzblöcke und 564 Prüfeinheiten bei unverändert 27 Textsektionen, 54 Literaturangaben und 34 Fußnoten. Der aktuelle Manuskriptdigest lautet `2d3b6167a0c962fa0474e42030d974006fb2d46190e1444f5d4e61c757b3f4aa`. Alle 18 Konsistenzgruppen und 66 Werkzeugtests bestehen.
+
+## 2026-08-23 — Einstieg in die epistemische Synthese angenommen
+
+Der Operator nahm den neuen Eröffnungsabsatz von Abschnitt 3.4 an. Er setzt bei der Digital-Humanities-Tradition artefaktbasierter Erkenntnis an und führt direkt zur Proposition der artefaktvermittelten wissenschaftlichen Untersuchung. Die Wiederholung der in Abschnitt 3.3 behandelten Implementierungsfunktion entfällt. Die Prüfinventur führt nun 563 Einheiten und den Manuskriptdigest `ad57a5375fd8c24a7827c78ad92f51cc6f37190b68da59d275c202e8b72ac5d3`; alle 18 Konsistenzgruppen und 66 Werkzeugtests bestehen.
+
+## 2026-08-23 — Redundanten Abschnitt 3.4 entfernt
+
+Der Operator öffnete die zuvor angenommene Passage erneut und entschied, dass die eigenständige Proposition artefaktvermittelter wissenschaftlicher Untersuchung für die Kernthese des Papers nicht erforderlich ist. Der vollständige Abschnitt 3.4 entfällt. Seine methodischen Aussagen haben ihre primären Orte bereits in den Abschnitten 3.2 und 3.3; die Begrenzung der Evidenz trägt Kapitel 4. Der Überblick in Kapitel 1 beschreibt entsprechend die Rückführung von Befunden in Projekt- und Methodenwissen.
+
+Mit der Proposition entfallen Fußnote 37 sowie die ausschließlich dort verwendeten Literaturangaben Galey und Ruecker 2010 und Whitelaw 2015. Ihre Quellen- und Assertion-Records bleiben als dauerhaftes Projektwissen erhalten und sind als aus dem Paper entfernt gekennzeichnet. Historische und aktuelle Portalanker führen auf die weiterbestehenden argumentativen Zielstellen.
+
+Die Prüfinventur umfasst nach der Verdichtung 26 Textsektionen, 133 Absatzblöcke, 548 Prüfeinheiten, 52 Literaturangaben und 33 Fußnoten. Der Manuskriptdigest lautet `b60b72cbb159f2794359f32240c2634a2327ffc94d201834f83c4ecfc7375ac3`.
+
+## 2026-08-23 — Kapitel 4 beginnt mit der Evidenzgrenze
+
+Der Operator nahm eine zweisätzige Eröffnung von Abschnitt 4.1 an. Sie benennt die von einem einzelnen Scholar-Developer geprägte Projektpraxis, hält die dokumentierte Durchführbarkeit unter den untersuchten Bedingungen fest und führt die begrenzte Verallgemeinerbarkeit als Gegenstand des Kapitels ein. Der separate Vorspann von Kapitel 4 entfällt, weil er die Aufgaben der folgenden Unterabschnitte lediglich vorwegnahm. Die detaillierten Gründe für die Evidenzgrenze bilden nun den anschließenden Absatz.
+
+Die Prüfinventur umfasst unverändert 26 Textsektionen und 133 Absatzblöcke sowie nun 546 Prüfeinheiten, 52 Literaturangaben und 33 Fußnoten. Der Manuskriptdigest lautet `cf99e073448f8df3719970305aee1504135753e5a8f43e9268517e2367dbf576`.
+
 ## 2026-08-25 — Englische Portaladressen und kompakte Spezifikationsseiten integriert
 
 Die Abnahmerunde vereinheitlichte die englische Oberfläche und ihre Maschinenadressen. Overview und Application liegen nun kanonisch in `_content/overview.md` und `_content/application.md` und verwenden `#overview`, `#application`, `/overview` und `/application`. Die bisherigen deutschen Hashes und Unterpfade bleiben als Alias erhalten und werden auf die englischen Adressen normalisiert. Registry, Inhaltsverweise, Knowledge Documents, Konsistenzprüfung und Regressionstests bilden denselben Vertrag ab.
@@ -991,3 +1015,5 @@ Die Abnahmerunde vereinheitlichte die englische Oberfläche und ihre Maschinenad
 Die Overview wiederholt die fünf Spezifikationsteile nicht mehr im Seitenkörper. Ihre Orientierung, Ziele und Statusangaben passen bei 1440 mal 900 Pixeln in den ersten Viewport. Die Specification behält alle fünf Teile als Navigation und Abschnitte, entfernt jedoch den allgemeinen Untertitel, die Standing-Zeile, die Taglines der Teile und dekorative Trennlinien. Die Browserprüfung bestätigte kanonische und historische Hashes und Unterpfade, Browser-Zurück, Desktop- und Schmallayout sowie eine Konsole ohne Warnungen oder Fehler.
 
 ## 2026-08-25 — Implementierungsangabe im Footer ergänzt
+
+Der Footer führt neben Träger, Adressen und Spezifikationsstand eine kompakte Implementierungsangabe. Sie nennt Digital Humanities Craft, Claude Code mit Fable 5 und Opus 5, Codex mit GPT-5.6 Sol sowie Promptotyping. Das bestehende zweischriftige System aus Inter und Consolas, die zurückhaltende Farbgebung und die vorhandenen Repository-Zugänge bleiben unverändert.

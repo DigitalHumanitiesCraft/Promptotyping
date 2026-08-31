@@ -77,8 +77,7 @@ The output is external and single-file (settled decision in [[knowledge/specific
 | 3 | Patterns across Promptotypes | |
 | 3.1 | Evidence and Comparison | |
 | 3.2 | Project Conditions, Functions, and Artefact Forms | Table 1 |
-| 3.3 | Findings, Attribution, and Learning | |
-| 3.4 | Implications and Evidential Limits | |
+| 3.3 | From Findings to Knowledge Refactoring | attribution, renewed Distillation, accountable acceptance, and project- against method-level learning |
 | 4 | Scope, Conditions, and Evaluation | |
 | 4.1 | Evidential Scope and Applicability | |
 | 4.2 | Labour, Infrastructure, and Responsible Use | asymmetric amplification |
@@ -108,14 +107,14 @@ Rebuilt on 2026-08-09 against the four-chapter text, by a second audit pass over
 | 2.3.4 | [[30_assertions/critical-expert-in-the-loop-double-reflection-loop]] (moved), [[30_assertions/expert-role-carries-a-domain-and-a-development-judgement]], [[30_assertions/least-privilege-bounds-damage-and-narrows-the-audit]], [[30_assertions/multi-agent-frameworks-assign-roles-along-an-encoded-procedure]] (moved), [[30_assertions/reproducibility-shifts-to-documented-justification]], [[30_assertions/unfinishedness-is-an-epistemic-value-in-the-digital-humanities]] (moved) |
 | 3.2 | [[30_assertions/edition-interface-embodies-editorial-decisions]] (moved) |
 | fn35 (3.2) | [[30_assertions/field-literature-records-llm-code-generation-and-tei-agent-line-by-2024]] (moved) |
-| 3.4 | [[30_assertions/experimental-prototype-yields-knowledge-not-product]] (moved), [[30_assertions/visualisation-is-research-process-not-means]] |
-| fn37 (3.4) | [[30_assertions/a-prototype-can-embody-a-peer-reviewable-argument]], [[30_assertions/exploratory-collection-visualisation-is-a-rich-design-space]] (moved), [[30_assertions/generous-interfaces-reveal-collection-through-browsing]], [[30_assertions/search-cannot-represent-collection-abundance]] (moved) |
 | 4.1 | [[30_assertions/record-does-not-separate-document-depth-from-verification-effort]], [[30_assertions/record-has-no-failure-case-and-a-bounded-yield-pole]], [[30_assertions/well-modelled-data-does-not-discharge-critical-data-work]] |
 | 4.2 | [[30_assertions/edition-ai-benchmarks-lacking-and-reproducibility-favours-local-models]] (moved), [[30_assertions/llms-amplify-research-not-automate-it]] |
 | fn27 (4.2) | [[30_assertions/llm-assistance-raises-performance-inside-and-lowers-it-outside-a-jagged-frontier]] |
 | 4.3 | [[30_assertions/llm-reproducibility-transparency-recommendations]] (moved), [[30_assertions/unassisted-non-hybrid-artefact-production-is-unsupported]] |
 
 The second pass orphaned seven further assertions whose supported statement did not survive the four-chapter rewrite: [[30_assertions/sycophancy-agreement-over-truth]], [[30_assertions/the-boundary-of-the-jagged-frontier-is-not-readable-from-a-task-in-advance]], [[30_assertions/qus-defines-thirteen-user-story-quality-criteria]], [[30_assertions/radical-design-request-widens-the-interface-option-space]], [[30_assertions/sarkar-vibe-coding-material-disengagement]], [[30_assertions/sdd-data-artefacts-describe-the-system-under-construction]], [[30_assertions/sdd-no-subject-matter-verification-role]]. They join the 68 the first audit orphaned and stay in the vault as checked statements per the register rule; the 13 INTERNAL verdicts of the first audit are unchanged. Two upgrades against the first audit: [[30_assertions/making-source-data-machine-addressable-is-interpretive-modelling]] and [[30_assertions/promptotyping-is-a-four-phase-context-engineering-technique]] returned to CARRIED with the four-phase wording of §2.2.
+
+The author review of 2026-08-23 removed §3.4 and with it the paper carriers of six further assertions: [[30_assertions/experimental-prototype-yields-knowledge-not-product]], [[30_assertions/visualisation-is-research-process-not-means]], [[30_assertions/a-prototype-can-embody-a-peer-reviewable-argument]], [[30_assertions/exploratory-collection-visualisation-is-a-rich-design-space]], [[30_assertions/generous-interfaces-reveal-collection-through-browsing]], and [[30_assertions/search-cannot-represent-collection-abundance]]. The checked assertion files remain durable knowledge; the current manuscript makes no separate artefact-mediated-enquiry proposition.
 
 ## Open work
 
