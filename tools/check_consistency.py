@@ -1468,7 +1468,10 @@ def check_relative_links():
     targets = (list(ROOT.glob("*.md"))
                + list((ROOT / "knowledge").glob("*.md"))
                + list((ROOT / "_content").rglob("*.md"))
-               + list((ROOT / "skills").rglob("*.md")))
+               + list((ROOT / "skills").rglob("*.md"))
+               + list((ROOT / "research-artefacts").rglob("*.md"))
+               + list((ROOT / "snapshots").rglob("*.md"))
+               + list((ROOT / "handoffs").rglob("*.md")))
     pattern = re.compile(r"\]\((?!https?:|mailto:|#)([^)]+)\)")
     for path in sorted(targets):
         text = path.read_text(encoding="utf-8", errors="replace")

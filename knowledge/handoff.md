@@ -8,7 +8,7 @@ method:
   url: https://dhcraft.org/Promptotyping/
 status: active
 created: 2026-08-21
-updated: 2026-08-22
+updated: 2026-09-05
 ---
 
 # Handoff

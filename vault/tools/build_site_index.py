@@ -112,7 +112,7 @@ def read_assertion(path: Path) -> dict:
 def read_moc(path: Path) -> dict:
     frontmatter, body = read_document(path)
     title = re.search(r"^# (.+)$", body, re.M)
-    lead = re.search(r"^# .+$\n+([^\n-].*?)(?=\n\n|\n- )", body, re.M | re.S)
+    lead = re.search(r"^# [^\n]+\n+([^\n#-].*?)(?=\n\n|\n- |\Z)", body, re.M | re.S)
     assertions = [m.group(1).split("/")[-1] for m in WIKILINK.finditer(body)]
     return {
         "slug": path.stem,

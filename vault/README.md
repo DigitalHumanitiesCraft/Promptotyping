@@ -4,6 +4,11 @@ A [Grounded Vault](https://github.com/DigitalHumanitiesCraft/grounded-vault) ins
 
 Layer model, anchor mechanics, check contracts, and status progression are the template's invariants; see [SETUP.md](SETUP.md) for how this instance was parameterised and `knowledge/specification.md` for what this project decided. Humans start at [HOME.md](HOME.md), agents at [CLAUDE.md](CLAUDE.md).
 
+The [benchmark research map](30_assertions/MOC-Benchmark.md) also connects this
+source base to the repository's draft Promptotyping Bench proposal. The proposal,
+study plan and executable task package stay at their canonical repository locations.
+Hypotheses and reference checks are not entered as evidence of method effectiveness.
+
 ## What each folder holds
 
 Four folders carry the evidence chain, and their numbers state the direction material travels through it. A source becomes a representation in `10_markdown/`, a representation becomes a distillate with quote-checked statements in `20_distillates/`, a distillate becomes an atomic assertion in `30_assertions/`, and assertions carry the output in `40_output/`. Anchors resolve backwards along this chain and never forwards, which is the rule the numbering makes visible. The steps of ten leave room for a layer between two existing ones.

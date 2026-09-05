@@ -9,7 +9,7 @@ method:
 status: draft
 language: en
 created: '2026-07-19'
-updated: '2026-08-22'
+updated: '2026-09-05'
 related:
 - specification
 - state
@@ -223,3 +223,9 @@ The follow-up the audit of 2026-07-31 routed (open flag 3 of the paper's steerin
 ## 2026-08-22: Paper state advances to version 0.9.1
 
 The operator designated the current canonical manuscript as version 0.9.1 and reserved version 1.0 for complete sentence-level author acceptance. The paper's repository specification holds the review protocol and version boundary. This vault changes only its volatile section-register description so that evidence work targets the current manuscript state. The four-chapter structure and the assertion routing remain unchanged.
+
+## 2026-09-05 — Benchmark research navigation integrated
+
+The operator requested a research proposal and work plan for Promptotyping Bench and a suitable integration of its research knowledge. [[30_assertions/MOC-Benchmark]] links existing assertions on the internal corpus and transfer audits, TEI evaluation and reference alternatives, reporting and model-judge limitations. The proposal and operational documents remain canonical in the repository; the new map owns navigation, while [[knowledge/state]] distinguishes existing source carriers from candidate literature still requiring intake. No assertion was created from a hypothesis, no source or assertion status was upgraded, and no performance result was ingested. The paper remains the sole manuscript in the section register.
+
+Building the site index exposed a parsing defect: a multi-section topic map's description could become its final section heading because the H1 matcher consumed line breaks. The generator now confines that match to the heading line, with regression cases for a multi-section map and a map without introductory prose. The generated index retains the source assertions and adds the Benchmark navigation topic. The personal Obsidian vault remains a separate portfolio knowledge environment; its requested navigation changes are prepared in the repository handoff under that vault's external-session read-only rule.

@@ -9,7 +9,7 @@ method:
 status: draft
 language: en
 created: '2026-07-19'
-updated: '2026-08-09'
+updated: '2026-09-05'
 expected-warnings:
 - W-NO-OUTPUT
 related:
@@ -28,10 +28,17 @@ This vault grounds the Promptotyping paper. The output is the paper maintained c
 
 ## Parameters
 
+The operator's benchmark-planning request of 5 September 2026 adds research
+navigation through [[30_assertions/MOC-Benchmark]]. It reuses the existing source
+base for the external [proposal](../../research-artefacts/promptotyping-bench-proposal.md).
+The canonical paper and its section register remain the sole manuscript output
+of this instance. Benchmark plans, task files and future run records have the
+destinations specified in the repository's [benchmark plan](../../knowledge/benchmark-plan.md).
+
 | Parameter | Value |
 |---|---|
 | Topic | The evidence base of the Promptotyping paper |
-| Topic backbone | Genealogy, Method, Evidence, Concepts, Limitations, Frame, ArtefactVerification |
+| Topic backbone | Genealogy, Method, Evidence, Concepts, Limitations, Frame, ArtefactVerification, Benchmark |
 | Active source types | document, publication, data |
 | Output genre | scholarly synthesis |
 | Chapter register | see [[knowledge/state]] |
@@ -70,6 +77,8 @@ Descriptive, one line per entry, no narration of the work that produced the entr
 ## Settled decisions
 
 <!-- One line per decision with date; the reasoning behind each lives in the journal. -->
+
+- 2026-09-05: Add Benchmark as a research-navigation topic for the operator-requested proposal; reuse existing assertions without changing their status, keep the proposal and study plan external, and record new literature intake separately from empirical results.
 
 - 2026-07-19: Vault instantiated from the Grounded Vault template on operator instruction; the parking of a paper-work instantiation recorded in the Promptotyping repo's plan is lifted.
 - 2026-07-19: The deliverable stays canonical at the root of this repository; `40_output/` holds no copy. The chapter register in [[knowledge/state]] maps sections to claims. Deviation from the template default, to avoid drift between two copies of the paper.

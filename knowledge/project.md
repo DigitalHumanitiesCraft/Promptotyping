@@ -7,7 +7,7 @@ status: complete
 language: en
 version: 0.7
 created: 2026-05-09
-updated: 2026-08-22
+updated: 2026-09-05
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Opus 4.8)
 method:
@@ -44,11 +44,11 @@ The audiences are ordered by product priority:
 
 ## Material basis
 
-The methodology repository processes no research data, it mirrors knowledge. That is why the Data template does not apply and no `data.md` exists (see [journal.md](journal.md), entry 2026-05-09 on the template-trigger correction). The material basis is stated compactly here instead.
+The method portal primarily mirrors knowledge. Its material basis is stated compactly here rather than in a root `data.md` (see [journal.md](journal.md), entry 2026-05-09 on the template-trigger correction). The separate [benchmark authoring area](../research-artefacts/promptotyping-bench/README.md) distinguishes real-data task contracts and source manifests under `tasks/` from synthetic tooling material under `fixtures/`.
 
 Four source types feed the site.
 
-**The Pollin 2026 paper.** The scholarly method text, *Promptotyping. Translating Research Data into Research Artefacts through Context Engineering and Agentic Engineering*. It is the single English Markdown Research Artefact [promptotyping-paper.md](../research-artefacts/promptotyping-paper.md) in a two-document model, with everything decided, checked and still open about it held in [paper-specification.md](paper-specification.md). The current state is version 0.9.1, a four-chapter author-review draft established on 2026-08-22 from the revisions following the publicly circulated version 0.9. Version 1.0 requires complete author acceptance under the sentence-level protocol in `paper-specification.md`. The site renders the Research Artefact directly, so the deployed text is canonical. The chosen venue is the Zeitschrift für digitale Geisteswissenschaften (ZfdG); the submission package derives fresh from the submission section of `paper-specification.md` and the final text at submission time. Three earlier steering documents were consolidated into `paper-specification.md` and deleted with commit pins, `paper-writing.md`, `paper-argument-map.md` and `submission-zfdg.md`; their wording lives in the git history.
+**The Pollin 2026 paper.** The scholarly method text, *Promptotyping. Translating Research Data into Research Artefacts through Context Engineering and Agentic Engineering*. It is the single English Markdown Research Artefact [promptotyping-paper.md](../research-artefacts/promptotyping-paper.md) in a two-document model, with everything decided, checked and still open about it held in [paper-specification.md](paper-specification.md). The current state is version 0.9.1, a four-chapter author-review draft established on 2026-08-22 from the revisions following the publicly circulated version 0.9. Version 1.0 requires complete author acceptance under the sentence-level protocol in `paper-specification.md`. The site renders the Research Artefact from its deployed commit; the working repository owns the canonical source, and deployment parity is verified separately. The chosen venue is the Zeitschrift für digitale Geisteswissenschaften (ZfdG); the submission package derives fresh from the submission section of `paper-specification.md` and the final text at submission time. Three earlier steering documents were consolidated into `paper-specification.md` and deleted with commit pins, `paper-writing.md`, `paper-argument-map.md` and `submission-zfdg.md`; their wording lives in the git history.
 
 **Vault templates and convention.** The template catalogue under `Vault Operations/Templates/Promptotyping/` and the convention under `Vault Operations/Konventionen/Konvention Promptotyping Documents.md` are the source of truth in the vault. Function names and subject prefixes are English. The public mirrors preserve their established URLs and anchors while adopting the current naming contract and template versions.
 
@@ -83,6 +83,19 @@ The phase-provenance lane was removed after the first deploy by operator decisio
 The FAIR infrastructure policy is dual licensing, MIT for code and CC BY 4.0 for documentation and Knowledge Documents, with third-party research data exempted per repository under its own rights statement. The repository root carries a MIT `LICENSE` and a `CITATION.cff`; the citation identity is Christopher Pollin, Digital Humanities Craft OG, ORCID 0000-0002-4879-129X.
 
 The `vault/` folder is a Grounded-Vault instance (template `DigitalHumanitiesCraft/grounded-vault`) that anchors the paper's load-bearing claims to sources. Work inside it follows its own action layer `vault/CLAUDE.md`.
+
+The [Promptotyping Bench proposal](../research-artefacts/promptotyping-bench-proposal.md)
+opens a bounded research workstream on small research-artefact implementation tasks.
+Its [specification](benchmark-specification.md) and [plan](benchmark-plan.md) own
+the proposed study; [MOC-Benchmark](../vault/30_assertions/MOC-Benchmark.md) connects
+it to the existing research basis. Every benchmark study task must use real DH
+research data; the synthetic development package serves only as a tooling fixture.
+The operator selected SZD correspondence and dating for the first real-data task;
+its [rehearsal materials](../research-artefacts/promptotyping-bench/tasks/szd-correspondence/README.md)
+now include source selection, participant briefs, an input schema, a local data
+preparer and candidate assessment scenarios. A local author-rehearsal package is
+prepared; independent domain review and measured trials remain outstanding. This
+preparation provides no empirical result or revision of the method paper.
 
 The chronological course and the lane cuts live in [journal.md](journal.md), while the paper's governing knowledge lives in [paper-specification.md](paper-specification.md).
 

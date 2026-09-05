@@ -9,7 +9,7 @@ method:
 status: active
 language: en
 created: 2026-07-29
-updated: 2026-08-22
+updated: 2026-09-05
 authors: [Christopher Pollin]
 related: [promptotyping-paper, journal, INDEX]
 ---
@@ -20,7 +20,7 @@ related: [promptotyping-paper, journal, INDEX]
 
 **Manuscript version:** 0.9.1, author-review draft, 22 August 2026. This state incorporates the manuscript revisions made after the publicly circulated version 0.9 and is the baseline for complete author review. Version 1.0 is reserved for a state that has passed every gate in Section 20. The publicly announced review copy remains version 0.9 and continues to serve as an external comment surface. The version and reviewer address stay in this document; `research-artefacts/promptotyping-paper.md` remains headerless and begins with its H1, because the site renders it as the academic text alone (A8).
 
-**Status:** The single specification document of the paper. The manuscript is `research-artefacts/promptotyping-paper.md`, promoted on 2026-07-31 from the operator's four-chapter revision and revised to version 0.9.1 on 2026-08-22. The site renders that file directly, so the deployed text is the canonical text. The two-track regime of 2026-07-29/30 (`paper-draft.md` steered by this document beside `paper.md` steered by `paper-writing.md`) ended with the earlier promotion; the working records of both revision rounds live commit-pinned in git history (see the provenance section at the end). The figure series is the authored monochrome SVG set under `assets/figures/svg/` with one written specification per figure under `assets/figures/specs/`; the manuscript embeds one of them since the four-chapter revision (Section 17).
+**Status:** The single specification document of the paper. The manuscript is `research-artefacts/promptotyping-paper.md`, promoted on 2026-07-31 from the operator's four-chapter revision and revised to version 0.9.1 on 2026-08-22. The site renders that file from its deployed commit; the live site can lag the canonical working repository until an authorised release. The two-track regime of 2026-07-29/30 (`paper-draft.md` steered by this document beside `paper.md` steered by `paper-writing.md`) ended with the earlier promotion; the working records of both revision rounds live commit-pinned in git history (see the provenance section at the end). The figure series is the authored monochrome SVG set under `assets/figures/svg/` with one written specification per figure under `assets/figures/specs/`; the manuscript embeds one of them since the four-chapter revision (Section 17).
 
 **Function:** Governs the paper's central argument, terminology, method structure, chapter boundaries, evidence handling, language rules, apparatus conventions, repository interpretation, submission route, and final quality assurance.
 

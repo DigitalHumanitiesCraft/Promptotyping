@@ -14,13 +14,15 @@ The full argument is the method paper; an overview is at [dhcraft.org/Promptotyp
 
 ## The method paper
 
-**Pollin, Christopher: Promptotyping. Translating Research Data into Research Artefacts through Context Engineering and Agentic Engineering** (version 0.9.1, author-review draft, 22 August 2026; in preparation).
+**Pollin, Christopher: Promptotyping. Translating Research Data into Research Artefacts through Context Engineering and Agentic Engineering** (version 0.9.1, an author-review draft, 22 August 2026; in preparation).
 
 The complete current text is a single Markdown Research Artefact, [research-artefacts/promptotyping-paper.md](research-artefacts/promptotyping-paper.md), written and revised in this repository. [knowledge/paper-specification.md](knowledge/paper-specification.md) holds everything decided, checked, and still open about it, and the Grounded Vault under [vault/](vault/) anchors its supporting claims in sources. The method portal renders the Research Artefact directly on its Paper page with an inline glossary.
 
-The current repository state is **version 0.9.1, an author-review draft of 22 August 2026**. It incorporates the revisions made after the publicly circulated version 0.9 and establishes the baseline for complete sentence-level author review. Version 1.0 is reserved for a state in which the author has accepted every sentence in its paragraph and subsection context, the canonical terminology, the evidence and apparatus, the complete rendered text, and the release decision. The public review copy announced on 31 July 2026 remains version 0.9; its comments are evidence for revision and do not supersede the canonical repository text.
-
-The open review round runs on the circulated version 0.9 copy, which serves as the external comment surface. The [research artefact](research-artefacts/promptotyping-paper.md) stays canonical. A reviewer comment becomes a change only through a recorded decision and an edit there. The author-review protocol and the current divergence between the two versions are recorded in [knowledge/paper-specification.md](knowledge/paper-specification.md).
+The circulated version 0.9 remains the external review surface. Accepted comments
+are integrated into the canonical manuscript through recorded decisions.
+The paper specification owns the version history, sentence-level author-review
+protocol and gates for version 1.0. The [project plan](knowledge/plan.md) routes
+current portal, paper and benchmark work; each workstream retains its own acceptance.
 
 ## Videos
 
@@ -32,6 +34,7 @@ Two introductions to the method (German): the methodology explainer [Promptotypi
 |---|---|---|
 | Method paper (English, version 0.9.1, author-review draft) | [research-artefacts/promptotyping-paper.md](research-artefacts/promptotyping-paper.md), specification in [knowledge/paper-specification.md](knowledge/paper-specification.md) | [#paper](https://dhcraft.org/Promptotyping/#paper) |
 | Evidence layer of the paper (Grounded Vault) | [vault/](vault/) | [#vault](https://dhcraft.org/Promptotyping/#vault) |
+| Promptotyping Bench (draft research programme) | [Proposal](research-artefacts/promptotyping-bench-proposal.md), [plan](knowledge/benchmark-plan.md), [task and tooling index](research-artefacts/promptotyping-bench/README.md), [research map](vault/30_assertions/MOC-Benchmark.md) | No dedicated portal page |
 | Knowledge Document templates | [_content/promptotyping-document/](_content/promptotyping-document/) | [#vorlagen](https://dhcraft.org/Promptotyping/#vorlagen) |
 | Convention (naming contract, frontmatter schema, structure) | [_content/konvention.md](_content/konvention.md) | [#konvention-v0.1](https://dhcraft.org/Promptotyping/#konvention-v0.1) |
 | Technology baseline for static research tools (draft) | [_content/technology-baseline.md](_content/technology-baseline.md) | — |
@@ -48,7 +51,7 @@ Two introductions to the method (German): the methodology explainer [Promptotypi
 
 ### Templates
 
-The templates of the catalogue structure the documents of a Promptotyping knowledge base. Each is addressable under a stable latest URL of the pattern `https://dhcraft.org/Promptotyping/promptotyping-document/{slug}` and readable as raw Markdown under the machine address pattern below. A template applies only when its trigger holds; a methods repository without data processing, like this one, skips `data`, and the reasoning is documented in its knowledge base.
+The templates of the catalogue structure the documents of a Promptotyping knowledge base. Each is addressable under a stable latest URL of the pattern `https://dhcraft.org/Promptotyping/promptotyping-document/{slug}` and readable as raw Markdown under the machine address pattern below. A template applies only when its trigger holds. This method portal records its material basis in `knowledge/project.md`; benchmark tasks hold their own data contracts and provenance in the separate authoring area.
 
 | Slug | Function | Type |
 |---|---|---|

@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SZD source-preserving input record",
+  "description": "Input structure only; this schema does not establish historical truth or research-artefact quality.",
+  "type": "object",
+  "required": ["id", "titles", "description_types", "repositories", "signatures", "facsimile_pids", "extents", "correspondence"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "titles": {"$ref": "#/$defs/leaves"},
+    "description_types": {"$ref": "#/$defs/leaves"},
+    "repositories": {"$ref": "#/$defs/leaves"},
+    "signatures": {"$ref": "#/$defs/leaves"},
+    "facsimile_pids": {"$ref": "#/$defs/leaves"},
+    "extents": {"$ref": "#/$defs/leaves"},
+    "correspondence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["attributes", "actions"],
+        "additionalProperties": false,
+        "properties": {
+          "attributes": {"$ref": "#/$defs/attributes"},
+          "actions": {"type": "array", "items": {"$ref": "#/$defs/action"}}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "attributes": {"type": "object", "additionalProperties": {"type": "string"}},
+    "leaf": {
+      "type": "object",
+      "required": ["attributes", "text"],
+      "additionalProperties": false,
+      "properties": {"attributes": {"$ref": "#/$defs/attributes"}, "text": {"type": "string"}}
+    },
+    "leaves": {"type": "array", "items": {"$ref": "#/$defs/leaf"}},
+    "person": {
+      "type": "object",
+      "required": ["attributes", "text", "forenames", "surnames"],
+      "additionalProperties": false,
+      "properties": {
+        "attributes": {"$ref": "#/$defs/attributes"},
+        "text": {"type": "string"},
+        "forenames": {"$ref": "#/$defs/leaves"},
+        "surnames": {"$ref": "#/$defs/leaves"}
+      }
+    },
+    "action": {
+      "type": "object",
+      "required": ["attributes", "persons", "dates", "places"],
+      "additionalProperties": false,
+      "properties": {
+        "attributes": {"$ref": "#/$defs/attributes"},
+        "persons": {"type": "array", "items": {"$ref": "#/$defs/person"}},
+        "dates": {"$ref": "#/$defs/leaves"},
+        "places": {"$ref": "#/$defs/leaves"}
+      }
+    }
+  }
+}

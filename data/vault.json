@@ -9,7 +9,7 @@
    "slug": "MOC-ArtefactVerification",
    "topic": "ArtefactVerification",
    "title": "MOC: ArtefactVerification",
-   "description": "Added 2026-07-29 from the intake on TEI-encoding evaluation, the external carriers for the layering of Table 1 of the paper (the checking layering) and for the state of the benchmark question:",
+   "description": "Claims behind the paper's account of the artefact type, its treatment of provisionality and publication, and its verification architecture: the self-contained static artefact type and its sustainability discourse, the interface typology and its classification gap, and the layering of verification between deterministic checks and expert judgement. Added with the bibliography-traceability sweep of 2026-07-23.",
    "assertions": [
     "ssh-open-marketplace-models-workflows-as-step-sequences",
     "client-side-provenance-tool-is-a-precedent-for-server-free-artefacts",
@@ -44,10 +44,26 @@
    ]
   },
   {
+   "slug": "MOC-Benchmark",
+   "topic": "Benchmark",
+   "title": "MOC: Benchmark",
+   "description": "Research grounding and open questions for evaluating small DH research artefacts built by autonomous agents and researchers working with agents.",
+   "assertions": [
+    "record-does-not-separate-document-depth-from-verification-effort",
+    "unassisted-non-hybrid-artefact-production-is-unsupported",
+    "record-has-no-failure-case-and-a-bounded-yield-pole",
+    "tei-evaluation-assigns-its-dimensions-to-different-checking-regimes",
+    "tei-permits-several-valid-encodings-of-one-phenomenon",
+    "an-open-tei-encoding-benchmark-exists-for-llm-generated-encodings",
+    "llm-reproducibility-transparency-recommendations",
+    "llm-judgement-approximates-human-preference-and-carries-known-biases"
+   ]
+  },
+  {
    "slug": "MOC-Concepts",
    "topic": "Concepts",
    "title": "MOC: Concepts",
-   "description": "Added 2026-07-26 from the site-vocabulary literature sweep (lane C1):",
+   "description": "Claims behind the paper's conceptual contributions: epistemic infrastructure, the interface typology by epistemic function, and the novelty claims that Milestone M8 of the paper workstream checks against the current discourse.",
    "assertions": [
     "deck-characterises-llms-as-jagged-alien",
     "deck-derives-context-and-verification-from-llm-profile",
@@ -69,7 +85,7 @@
    "slug": "MOC-Evidence",
    "topic": "Evidence",
    "title": "MOC: Evidence",
-   "description": "### What the record does not carry",
+   "description": "Claims of the paper's evidence base: project figures, build states, and growth statements, each anchored to the project repositories or to the adversarial verification findings of 2026-07-19.",
    "assertions": [
     "wheaton-figures-verified-2026-07-19",
     "hans-gross-figures-verified-2026-07-19",
@@ -103,7 +119,7 @@
    "slug": "MOC-Frame",
    "topic": "Frame",
    "title": "MOC: Frame",
-   "description": "Added 2026-07-27, the first peer-reviewed carrier for the agent term the Agentic Engineering passage had set on its own authority:",
+   "description": "Claims behind the paper's epistemic frame: exploration as research, the nature of humanities data, the translation problem, and the surrounding AI discourse (Vibe Coding, Spec-Driven Development, context engineering, model failure modes). Added with the bibliography-traceability sweep of 2026-07-23.",
    "assertions": [
     "fair-emphasises-machine-actionability-of-data",
     "making-source-data-machine-addressable-is-interpretive-modelling",
@@ -150,7 +166,7 @@
    "slug": "MOC-Genealogy",
    "topic": "Genealogy",
    "title": "MOC: Genealogy",
-   "description": "Added 2026-07-27 with the dissertation re-read for the paper's genealogical opening:",
+   "description": "Claims about the method's origin. The dissertation is the origin, from user stories to interfaces and the mapping of research data and context onto artifacts, together with the dating of the genealogy's waypoints.",
    "assertions": [
     "dissertation-requirements-from-deep-dive-sessions",
     "dissertation-requirements-feed-built-artifacts",
@@ -170,7 +186,7 @@
    "slug": "MOC-Limitations",
    "topic": "Limitations",
    "title": "MOC: Limitations",
-   "description": "Added from the video distillates of 2026-07-25:",
+   "description": "Claims about the boundaries of the evidence: single-practitioner corpus, experiential effort figures, the missing control condition, the confounding of method effects with model capability, and the prototype-to-product boundary.",
    "assertions": [
     "section4-verification-single-agent-snapshot-2026-07-19",
     "duration-cost-figures-experiential",
@@ -187,7 +203,7 @@
    "slug": "MOC-Method",
    "topic": "Method",
    "title": "MOC: Method",
-   "description": "Added 2026-07-26 from the site-vocabulary literature sweep (lane C1), which tests whether five site coinages attach to established names:",
+   "description": "Claims about the method itself: the four phases, the document typology (Knowledge, Process, Action), the vault model and its structural commitments, and the standardisation stage (frontmatter core, `template:` addressing).",
    "assertions": [
     "promptotyping-documentation-over-software",
     "promptotyping-documents-form-freedom",

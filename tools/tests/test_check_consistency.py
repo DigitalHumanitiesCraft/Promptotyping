@@ -590,6 +590,24 @@ class RelativeLinkTest(CheckCase):
         cc.check_relative_links()
         self.assertEqual(cc.failures, [])
 
+    def test_authoring_and_historical_document_links_are_checked(self) -> None:
+        root = self.repository("# Repository\n")
+        paths = ("research-artefacts/bench/tasks/example/README.md",
+                 "snapshots/old-plan.md", "handoffs/transfer.md")
+        for path in paths:
+            self.write(root / path, "[missing](missing.md)\n")
+        cc.check_relative_links()
+        self.assertEqual(len(cc.failures), len(paths))
+        for path in paths:
+            self.assertTrue(any(path in error for error in cc.failures))
+
+    def test_research_artefact_can_use_portal_root_relative_assets(self) -> None:
+        root = self.repository("# Repository\n")
+        self.write(root / "assets/figure.svg", "<svg/>\n")
+        self.write(root / "research-artefacts/paper.md", "![Figure](assets/figure.svg)\n")
+        cc.check_relative_links()
+        self.assertEqual(cc.failures, [])
+
 
 class FrontmatterTest(CheckCase):
     """V16, the mandatory structure and value domains of knowledge documents."""

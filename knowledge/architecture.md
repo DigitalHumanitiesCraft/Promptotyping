@@ -7,7 +7,7 @@ status: complete
 language: en
 version: 0.9
 created: 2026-05-09
-updated: 2026-08-25
+updated: 2026-09-05
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Opus 4.8)
 method:
@@ -33,6 +33,18 @@ related: [INDEX, project, specification, design, journal]
 ---
 
 # Architecture
+
+The architecture below describes the method portal. The separate benchmark
+authoring area is documented in
+[research-artefacts/promptotyping-bench/README.md](../research-artefacts/promptotyping-bench/README.md):
+real-data task materials live in `tasks/`, while `fixtures/dating-explorer/` owns the
+synthetic runner, grader and reference artefact. The SZD preparer reads a pinned
+Git blob, checks its hash and exports selected TEI and JSONL into a fresh local
+directory outside both repositories. It separates initial participant inputs from
+later episodes and facilitator material, without supplying execution isolation or
+model calls. These Python tools run locally for development and do not add a build
+step or runtime dependency to the site.
+The measured study harness remains planned under [benchmark-plan.md](benchmark-plan.md).
 
 How the site is built. A single HTML page holds empty section shells; vanilla JavaScript fetches Markdown from `_content/` and JSON from `data/`, renders it with a vendored Markdown parser, and drives client-side routing. GitHub Pages serves the repository root directly, with no build step. What the site does is in [specification.md](specification.md); how it looks is in [design.md](design.md).
 

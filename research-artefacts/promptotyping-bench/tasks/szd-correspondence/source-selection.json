@@ -1,0 +1,61 @@
+{
+  "task_id": "szd-correspondence-explorer",
+  "version": "0.2.0-rehearsal",
+  "status": "local-rehearsal-materials",
+  "study_ready": false,
+  "data_origin": "real-dh-research-data",
+  "selected_on": "2026-09-05",
+  "collection": "Stefan Zweig digital",
+  "source_repository": "https://github.com/chpollin/SZD",
+  "source_commit": "45115eaa58a83a12660ab556e7fcdbe1fc56f588",
+  "source_path": "data/Correspondence/konvolute/szd.korrespondenzen.altmann-hannah.xml",
+  "source_sha256": "bb5998948e357e2ab0c64e438dda8b1aa53ea07c10602803f77636e4cfbaf2e2",
+  "source_hash_basis": "exact committed Git blob bytes with LF line endings",
+  "inspected_checkout_sha256": "0785a00cc3fbdaa955a64effcca89de615b90532ce75787482bc95ab7fa58dbe",
+  "checkout_difference": "CRLF line endings only; replacing CRLF with LF reproduces the committed blob exactly",
+  "source_object_pid": "o:szd.korrespondenzen.altmann-hannah",
+  "source_unit": "tei:biblFull correspondence description identified by xml:id",
+  "sampling": "Purposive development sample from one konvolut: day, month and year granularity; both Stefan and Lotte as senders; multiple recipients; divergent or incomplete representations; continuation around May 1941. Not a prevalence or network sample.",
+  "selection_status": "operator-accepted-for-rehearsal; independent domain review pending",
+  "initial_record_ids": [
+    "SZDKOR.altmann-hannah.1",
+    "SZDKOR.altmann-hannah.2",
+    "SZDKOR.altmann-hannah.3",
+    "SZDKOR.altmann-hannah.4",
+    "SZDKOR.altmann-hannah.5",
+    "SZDKOR.altmann-hannah.13",
+    "SZDKOR.altmann-hannah.17",
+    "SZDKOR.altmann-hannah.48",
+    "SZDKOR.altmann-hannah.64",
+    "SZDKOR.altmann-hannah.102",
+    "SZDKOR.altmann-hannah.103",
+    "SZDKOR.altmann-hannah.116"
+  ],
+  "continuation_record_ids": [
+    "SZDKOR.altmann-hannah.117",
+    "SZDKOR.altmann-hannah.118",
+    "SZDKOR.altmann-hannah.119",
+    "SZDKOR.altmann-hannah.120"
+  ],
+  "rights_evidence": {
+    "selected_xml_header_licence": null,
+    "repository_readme": "Archival data and facsimile rights remain with the archive; code licence is separate.",
+    "other_main_collection_headers": "CC BY 4.0 declarations were observed; applicability to this konvolut file is not established.",
+    "metadata_packaging_basis": "pending documentation",
+    "facsimile_reproduction": "outside first task scope"
+  },
+  "packaging": {
+    "implementation": "tools/prepare_rehearsal.py",
+    "output_scope": "local directories outside both repositories; public redistribution not cleared",
+    "transformations": [
+      "Read exact committed Git blob and check SHA-256.",
+      "Select the manifest IDs without replacing or correcting source values.",
+      "Project documented TEI paths to JSONL, preserving every action/person and literal text.",
+      "Serialize copied TEI header and selected subtrees; namespace prefixes and empty-element syntax may differ."
+    ],
+    "input_schema": "record.schema.json",
+    "reference_expectations_reviewed": false,
+    "runtime_adapter_available": false
+  },
+  "exposure": "These IDs and authoring findings were inspected in the design session. Existing SZD timeline case-study code must not be participant input. Fresh held-out probes remain to be selected."
+}

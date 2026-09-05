@@ -1,0 +1,25 @@
+record_id,collection,date_literal,source_ref
+D001,letter,1830-05-17,SYN-L-001
+D002,letter,17.05.1830,SYN-L-002
+D003,letter,Mai 1830,SYN-L-003
+D004,letter,1830,SYN-L-004
+D005,letter,ca. 1830,SYN-L-005
+D006,letter,1830?,SYN-L-006
+D007,letter,,SYN-L-007
+D008,letter,o. D.,SYN-L-008
+D009,letter,31.02.1830,SYN-L-009
+D010,letter,29.02.1832,SYN-L-010
+D011,letter,29.02.1831,SYN-L-011
+D012,letter,1830/1831,SYN-L-012
+D013,register,[1832],SYN-R-013
+D014,register,[Mai 1830],SYN-R-014
+D015,letter,[1832],SYN-L-015
+D016,register,[17.05.1830],SYN-R-016
+D017,letter,vor 1830,SYN-L-017
+D018,letter,nach 1830,SYN-L-018
+D019,letter,Frühjahr 1830,SYN-L-019
+D020,letter,ca. Mai 1830,SYN-L-020
+D021,letter,17.05.1830?,SYN-L-021
+D022,letter,1830-13-01,SYN-L-022
+D023,letter, 1830 ,SYN-L-023
+D024,register,[31.02.1830],SYN-R-024

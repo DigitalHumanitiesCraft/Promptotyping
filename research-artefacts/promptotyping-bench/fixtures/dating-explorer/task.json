@@ -1,0 +1,24 @@
+{
+  "id": "dh-dating-explorer-001",
+  "version": "0.1.0",
+  "status": "tooling-fixture-only",
+  "benchmark_eligible": false,
+  "domain": "digital-humanities",
+  "language": "en",
+  "data_language": "de",
+  "data_origin": "synthetic",
+  "conditions": ["A", "B"],
+  "episodes": ["initial", "revision", "continuation"],
+  "initial_rows": 24,
+  "continuation_rows": 6,
+  "output": "output/normalized.json",
+  "entrypoint": "normalize.py",
+  "research_artefact": "index.html",
+  "proposed_limits": {
+    "status": "uncalibrated-not-enforced-by-file-runner",
+    "cumulative_tokens": 15000,
+    "agent_execution_seconds": 900
+  },
+  "primary_outcomes": ["revision.researcher_scenarios", "continuation.researcher_scenarios"],
+  "no_agent_trials_conducted": true
+}

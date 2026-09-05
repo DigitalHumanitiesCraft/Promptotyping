@@ -1,0 +1,11 @@
+{
+  "fields": ["date_value", "precision", "certainty", "status", "reason"],
+  "records": {
+    "N001": ["1832-02", "month", "uncertain", "normalized", "editorial_supplied"],
+    "N002": [null, "unknown", "unknown", "ambiguous", "unresolved"],
+    "N003": ["1832-02-29", "day", "uncertain", "normalized", "editorial_supplied"],
+    "N004": [null, "unknown", "unknown", "invalid", "invalid_calendar"],
+    "N005": ["1832-02-19", "day", "certain", "normalized", "direct"],
+    "N006": ["1832-03-01", "day", "certain", "normalized", "direct"]
+  }
+}

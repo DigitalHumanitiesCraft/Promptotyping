@@ -7,7 +7,7 @@ status: active
 language: en
 version: 0.8
 created: 2026-07-26
-updated: 2026-08-25
+updated: 2026-09-05
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Opus 5)
 method:
@@ -28,6 +28,25 @@ Which claims this site makes about itself, what each is checked against, by what
 The dividing line is the one part 5 draws. Where a rule decides, a script runs it unsupervised. Where scholarly judgement decides, the check stays with the Critical Expert, and this document records only that it is outstanding.
 
 ## What is checked automatically
+
+The V-series below checks portal consistency. The benchmark has a separate
+[tooling verification entry point](../research-artefacts/promptotyping-bench/README.md#check-the-existing-tooling).
+Its tests cover fixture packaging, source integrity, scoring, episode retention,
+task fingerprints and explicit study ineligibility. Passing them supplies
+engineering evidence; the benchmark specification owns the distinct functional,
+scholarly and effort assessment needed for a real-data study.
+
+For a combined local regression run from the repository root:
+
+```sh
+python -m pytest tools/tests vault/tests research-artefacts/promptotyping-bench -q -p no:cacheprovider
+python tools/check_consistency.py
+python vault/tools/validate.py vault
+```
+
+The consistency command checks repository contracts; external URL resolution
+requires its separate `--check-urls` option. Dated test totals belong in the journal
+or an audit, so the instructions do not depend on a hand-maintained test count.
 
 `tools/check_consistency.py` exits non-zero on any failure; it resolves every path from its own location, so the directory it is called from does not matter. It reaches for the second script in `tools/`, the glossary generator `build_glossar.py`, rather than restating its rules, so V7 below cannot drift from the generator it guards.
 
@@ -161,11 +180,11 @@ Under `tools/tests/` the checks are themselves held to their regression cases, r
 
 ### V15. Every relative Markdown link resolves
 
-**Claim.** Every relative Markdown link in the repository root, in `knowledge/` and under `_content/` points at a file that exists. External addresses stay out, they belong to the opt-in URL pass of V6; a fragment-only link is an anchor and belongs to V8.
+**Claim.** Every relative Markdown link in the repository root, `knowledge/`, `_content/`, `skills/`, `research-artefacts/`, `snapshots/` and `handoffs/` points at a file that exists. External addresses stay out, they belong to the opt-in URL pass of V6; a fragment-only link is an anchor and belongs to V8. Grounded Vault anchors are checked by its own validator; imported source representations retain their original example links.
 
 **Why it matters.** A consolidation round deletes a document and can leave incoming links behind. The round of 2026-07-29/30 consolidated `paper-writing.md`, `paper-argument-map.md` and `submission-zfdg.md` into the document now named `paper-specification.md`; seven links to those three names survived until 2026-07-31. An eighth link in the design template mirror rendered an illustrative path into a file that never existed here. This group detects that failure mode after later consolidations and moves.
 
-**Procedure.** Read every Markdown file of the three areas, take each link whose target is neither an absolute URL nor a bare fragment, strip the fragment, and require the target to exist relative to the linking file or to the repository root.
+**Procedure.** Read Markdown in the named areas, take each link whose target is neither an absolute URL nor a bare fragment, strip the fragment, and require the target to exist relative to the linking file or to the repository root. Root-relative resolution is needed for material rendered by the portal, including the paper figure. The benchmark, snapshots and handoffs were added to this check during the knowledge refactor of 2026-09-05, with regression cases for moved authoring documents and portal assets.
 
 **Verdict, 2026-07-31.** Passes, after the eight links were repaired. The regression case is a probe link to a non-existent file, which the check reports with file and target.
 

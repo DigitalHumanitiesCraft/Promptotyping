@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Correspondence dating explorer</title>
+<style>
+  :root { font: 17px/1.5 system-ui, sans-serif; color: #182b34; background: #faf9f5; }
+  body { max-width: 1050px; margin: 2rem auto; padding: 0 1rem; }
+  h1 { line-height: 1.15; } label { display: inline-block; margin: 0 1.4rem 1rem 0; }
+  input, select { display: block; padding: .55rem; font: inherit; }
+  #counts { padding: 1rem; background: #e6eeeb; }
+  #records { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr)); gap: 1rem; }
+  article { background: white; border: 1px solid #b7c4c2; padding: 1rem; overflow-wrap: anywhere; }
+  article h2 { font-size: 1.15rem; margin-top: 0; } dl { margin-bottom: 0; }
+  dt { font-weight: 600; } dd { margin: 0 0 .4rem; } code { white-space: pre-wrap; }
+  :focus-visible { outline: 3px solid #13674f; outline-offset: 3px; }
+  #error { color: #8d2727; }
+</style>
+<main>
+  <h1>Correspondence dating explorer</h1>
+  <p>Inspect the temporal evidence in a synthetic catalogue. Counts refer to catalogue
+     records, not unique letters or historical correspondence intensity.</p>
+  <label>Research month<input id="month" type="month" value="1830-05" required></label>
+  <label>Evidence group<select id="group">
+    <option value="all">All records</option><option>In month</option>
+    <option>Needs review</option><option>Outside month</option>
+  </select></label>
+  <p id="counts" role="status">Loading catalogue records…</p>
+  <p>“Needs review” includes uncertainty, insufficient precision and unresolved dates.
+    Membership in that queue does not assert overlap with the research month;
+    uncertain values have no quantified error interval here. Consult the original
+    statement and source reference before accepting a dated account.</p>
+  <p id="error" role="alert"></p>
+  <section id="records" aria-label="Catalogue records"></section>
+</main>
+<script>
+  "use strict";
+  let rows = [];
+  const month = document.getElementById("month");
+  const group = document.getElementById("group");
+  const records = document.getElementById("records");
+  const labels = ["In month", "Needs review", "Outside month"];
+  function classify(row, selected) {
+    if (row.status !== "normalized" || row.certainty !== "certain") return "Needs review";
+    if (row.precision === "year") return row.date_value === selected.slice(0, 4) ? "Needs review" : "Outside month";
+    return row.date_value.slice(0, 7) === selected ? "In month" : "Outside month";
+  }
+  function appendField(list, label, value, literal = false) {
+    const dt = document.createElement("dt"); dt.textContent = label;
+    const dd = document.createElement("dd");
+    if (literal) { const code = document.createElement("code"); code.textContent = JSON.stringify(value); dd.append(code); }
+    else dd.textContent = value === null ? "—" : value;
+    list.append(dt, dd);
+  }
+  function render() {
+    records.replaceChildren();
+    if (!/^[0-9]{4}-[0-9]{2}$/.test(month.value)) {
+      document.getElementById("counts").textContent = "Choose a valid research month.";
+      return;
+    }
+    const counts = Object.fromEntries(labels.map(label => [label, 0]));
+    rows.forEach(row => {
+      const assigned = classify(row, month.value); counts[assigned]++;
+      if (group.value !== "all" && group.value !== assigned) return;
+      const card = document.createElement("article");
+      const heading = document.createElement("h2"); heading.textContent = row.record_id + " · " + assigned;
+      const list = document.createElement("dl");
+      for (const [key, label] of [["collection", "Collection"], ["date_literal", "Original date"],
+        ["date_value", "Normalised value"], ["precision", "Precision"], ["certainty", "Certainty"],
+        ["status", "Date status"], ["reason", "Reason"], ["source_ref", "Source reference"]]) {
+        appendField(list, label, row[key], key === "date_literal");
+      }
+      card.append(heading, list); records.append(card);
+    });
+    document.getElementById("counts").textContent = rows.length + " catalogue records · " +
+      labels.map(label => label + ": " + counts[label]).join(" · ");
+    if (!records.childElementCount) records.textContent = "No records in this group.";
+  }
+  month.addEventListener("input", render); group.addEventListener("change", render);
+  fetch("output/normalized.json").then(response => {
+    if (!response.ok) throw new Error("Could not load normalised records (HTTP " + response.status + ").");
+    return response.json();
+  }).then(data => { if (!Array.isArray(data)) throw new Error("Expected a JSON array."); rows = data; render(); })
+    .catch(error => { document.getElementById("counts").textContent = "Catalogue unavailable.";
+      document.getElementById("error").textContent = error.message; });
+</script>
+</html>

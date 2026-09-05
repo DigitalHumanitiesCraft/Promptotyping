@@ -7,7 +7,7 @@ status: complete
 language: en
 version: 1.1
 created: 2026-05-09
-updated: 2026-08-22
+updated: 2026-09-05
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5, Claude Opus 5)
 method:
@@ -18,7 +18,7 @@ template:
   version: 0.4
   url: https://dhcraft.org/Promptotyping/promptotyping-document/index
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-index
-related: [project, governance, specification, architecture, design, verification, handoff, journal, plan, paper-specification]
+related: [project, governance, specification, architecture, design, verification, handoff, journal, plan, paper-specification, benchmark-specification, benchmark-plan]
 ---
 
 # INDEX
@@ -48,6 +48,8 @@ The durable core is English because it specifies the public self-application. `j
 | [journal.md](journal.md) | Provenance | Which transitions were integrated, rejected, or corrected, and from which source? | a substantively coherent transition closes |
 | [plan.md](plan.md) | Planning | Which accepted work remains and in what dependency order? | accepted scope or completion state changes |
 | [paper-specification.md](paper-specification.md) | Paper Specification | What must the method paper argue, define, evidence, and satisfy? | manuscript argument, evidence policy, or submission rule changes |
+| [benchmark-specification.md](benchmark-specification.md) | Benchmark Specification (draft) | How will small research-artefact implementation tasks evaluate the method and human–agent work? | pilot design, task contract, evaluation or calibration decision changes |
+| [benchmark-plan.md](benchmark-plan.md) | Benchmark Planning | What must be reviewed, built and measured before a comparative or human study? | milestone, readiness or integration decision changes |
 
 The method paper follows a two-document model. The canonical text is the Research Artefact [research-artefacts/promptotyping-paper.md](../research-artefacts/promptotyping-paper.md); its governing knowledge is [paper-specification.md](paper-specification.md). The sentence-level author review is derived from the canonical text with `python tools/paper_review.py`, so it introduces no competing manuscript. A `data.md` does not carry for this method repository because [project.md](project.md) holds the material basis.
 
@@ -55,8 +57,12 @@ The method paper follows a two-document model. The canonical text is the Researc
 
 - `knowledge/` contains durable Promptotyping Documents, including `handoff.md` as the live Process Inbox.
 - `research-artefacts/` contains the canonical method paper. The site renders [promptotyping-paper.md](../research-artefacts/promptotyping-paper.md) directly while preserving the public `#paper` route and its published section anchors.
+- `research-artefacts/promptotyping-bench/` is the [benchmark authoring area](../research-artefacts/promptotyping-bench/README.md). Real-data task materials live under `tasks/`, beginning with the [SZD correspondence explorer](../research-artefacts/promptotyping-bench/tasks/szd-correspondence/README.md). Synthetic machinery tests live under [fixtures/dating-explorer](../research-artefacts/promptotyping-bench/fixtures/dating-explorer/README.md) and are excluded from study results. The benchmark specification owns shared requirements; task manifests own data provenance and the plan owns readiness.
+- [research-artefacts/promptotyping-bench-proposal.md](../research-artefacts/promptotyping-bench-proposal.md) is the draft research proposal. Its rationale links to existing grounded findings through [MOC-Benchmark](../vault/30_assertions/MOC-Benchmark.md); the experimental contract and work sequence remain in the two benchmark knowledge documents.
 - `source-material/video-scripts/` contains the cleaned German transcripts [promptotyping-introduction-video-script.md](../source-material/video-scripts/promptotyping-introduction-video-script.md) and [promptotyping-live-demo-video-script.md](../source-material/video-scripts/promptotyping-live-demo-video-script.md).
 - `snapshots/` contains the dated external report [paper-zfdg-submission-report-2026-07-23.md](../snapshots/paper-zfdg-submission-report-2026-07-23.md) and the final knowledge record of the retired [Promptotyping Agent Interface](../snapshots/promptotyping-agent-interface-final-record-2026-08-22.md).
+  The [historical frontend plan](../snapshots/frontend-plan-history-2026-09-05.md) preserves superseded packages; the [knowledge-refactor audit](../snapshots/project-knowledge-refactor-2026-09-05.md) records the repository-wide inventory, current ownership and verification scope.
+  The [SZD rehearsal preparation record](../snapshots/benchmark-szd-rehearsal-preparation-2026-09-05.md) records the local real-data package and technical input checks, without claiming a completed study.
 - `handoffs/` contains the exceptional dated transition snapshot [promptotyping-vault-migration-handoff-2026-08-09.md](../handoffs/promptotyping-vault-migration-handoff-2026-08-09.md). It does not replace the live inbox.
 - `_content/` contains authored publication pages and the stable public template mirrors. Generated mirrors such as `_content/glossar.md` are rebuilt from their declared source.
 - `skills/promptotyping/` contains the portable canonical skill. The Skills page renders its `SKILL.md` directly and exposes the complete package source.
@@ -116,6 +122,8 @@ Terms constitutive for this knowledge base. Canonical definitions live in the li
 **`template:` field.** Frontmatter field pointing to the authoritative template specification on this site. Format `template: { name, version, url, alias }`; `url` is the latest subpath form, `alias` the latest hash anchor.
 
 **Grounded Vault (`vault/`).** Instance of the Grounded Vault template carrying the provenance layer beneath the paper: sources, distillates, and assertions (until August 2026 claims) with grounding anchors, validated by `vault/tools/validate.py`. Migrated onto the renumbered template chain (`00_sources` to `40_output`) on 2026-08-09. Its own action layer `vault/CLAUDE.md` governs all work there.
+
+The embedded Grounded Vault also supplies existing research grounding for the benchmark proposal. The separate personal Obsidian vault holds cross-project orientation under `Projects/Promptotyping/`, reached through `Promptotyping MOC.md` and `Project Overview Promptotyping.md`. It is not a second copy of the repository or its evidence chain; the integration boundary and canonical destinations are in [benchmark-plan.md](benchmark-plan.md#knowledge-integration).
 
 **Project Governance.** The binding project-level rules for authority, source and evidence status, permissions, checking, acceptance, write-back, rights, publication, and escalation. In this repository they live in [governance.md](governance.md) and are applied through the repository action layer.
 

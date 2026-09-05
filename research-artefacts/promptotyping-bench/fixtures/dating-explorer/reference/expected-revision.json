@@ -1,0 +1,29 @@
+{
+  "fields": ["date_value", "precision", "certainty", "status", "reason"],
+  "records": {
+    "D001": ["1830-05-17", "day", "certain", "normalized", "direct"],
+    "D002": ["1830-05-17", "day", "certain", "normalized", "direct"],
+    "D003": ["1830-05", "month", "certain", "normalized", "direct"],
+    "D004": ["1830", "year", "certain", "normalized", "direct"],
+    "D005": ["1830", "year", "approximate", "normalized", "approximate"],
+    "D006": ["1830", "year", "uncertain", "normalized", "questioned"],
+    "D007": [null, "unknown", "unknown", "missing", "missing"],
+    "D008": [null, "unknown", "unknown", "missing", "missing"],
+    "D009": [null, "unknown", "unknown", "invalid", "invalid_calendar"],
+    "D010": ["1832-02-29", "day", "certain", "normalized", "direct"],
+    "D011": [null, "unknown", "unknown", "invalid", "invalid_calendar"],
+    "D012": [null, "unknown", "unknown", "ambiguous", "unresolved"],
+    "D013": ["1832", "year", "uncertain", "normalized", "editorial_supplied"],
+    "D014": ["1830-05", "month", "uncertain", "normalized", "editorial_supplied"],
+    "D015": [null, "unknown", "unknown", "ambiguous", "unresolved"],
+    "D016": ["1830-05-17", "day", "uncertain", "normalized", "editorial_supplied"],
+    "D017": [null, "unknown", "unknown", "ambiguous", "unresolved"],
+    "D018": [null, "unknown", "unknown", "ambiguous", "unresolved"],
+    "D019": [null, "unknown", "unknown", "ambiguous", "unresolved"],
+    "D020": ["1830-05", "month", "approximate", "normalized", "approximate"],
+    "D021": ["1830-05-17", "day", "uncertain", "normalized", "questioned"],
+    "D022": [null, "unknown", "unknown", "invalid", "invalid_calendar"],
+    "D023": ["1830", "year", "certain", "normalized", "direct"],
+    "D024": [null, "unknown", "unknown", "invalid", "invalid_calendar"]
+  }
+}

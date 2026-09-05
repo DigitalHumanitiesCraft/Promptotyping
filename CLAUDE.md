@@ -16,8 +16,11 @@ Bevor du eine Aufgabe in diesem Repo angehst, lies in dieser Reihenfolge:
    - Wie-ist-es-gebaut → `knowledge/architecture.md`
    - Wie-sieht-es-aus → `knowledge/design.md`
    - Woher-kommt-eine-Entscheidung → `knowledge/journal.md`
+   - Benchmark-Arbeit → `knowledge/benchmark-specification.md` für den gemeinsamen Versuchs- und Messvertrag, danach `knowledge/benchmark-plan.md` für den Arbeitsstand. `research-artefacts/promptotyping-bench/README.md` trennt reale Aufgaben unter `tasks/` von synthetischen Werkzeugtests unter `fixtures/`. Aufgabenspezifische Regeln und Quellenstände gehören in die jeweilige Aufgabe.
 
 Die Wissensbasis im `knowledge/`-Ordner ist die Specification, aus der die Implementation folgt. Sie ist nicht beiläufig, sie ist normativ.
+
+Der aktive Projektplan steht in `knowledge/plan.md`. Historische Frontend-Pakete stehen seit der Wissenspflege vom 2026-09-05 in `snapshots/frontend-plan-history-2026-09-05.md`; ihre damalige Ausführungsreihenfolge ist keine aktuelle Arbeitsanweisung.
 
 ## Designprinzipien (aus knowledge/design.md übersetzt)
 

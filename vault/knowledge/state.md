@@ -9,7 +9,7 @@ method:
 status: draft
 language: en
 created: '2026-07-19'
-updated: '2026-08-22'
+updated: '2026-09-05'
 related:
 - operations
 - journal
@@ -59,6 +59,25 @@ One row per source. Processing status: `new` → `ingested` → `distilled`.
 The nine rows above entered on 2026-07-26 with the site-vocabulary literature sweep, which tested five coinages of the public site against the research literature. Two further CSL records were laid down without a distillate, because no open copy was found, `toulmin-1958` (the layout is carried through `hitchcock-2003`) and `winograd-1975` (the declarative/procedural axis is carried through `procida-2024`).
 
 The bibliography-traceability sweep of 2026-07-23 added the paper's cited publications as sources in one pass. Their per-source rows, with access class, distillate and claims, live in [[knowledge/register-paper-sources]], which is the canonical inventory for that sweep and the single place where the state of a cited work is recorded; this table carries no counterpart rows for them. A minority of cited works still has no distillate, part of it awaiting an operator-supplied copy and part of it inaccessible behind paywall or print, and the register marks which case applies in each row.
+
+## Benchmark research intake
+
+[[30_assertions/MOC-Benchmark]] routes the research basis of the repository's
+[draft proposal](../../research-artefacts/promptotyping-bench-proposal.md).
+Existing assertion and distillate statuses are unchanged. No new publication
+intake, benchmark result ingestion or human verification is recorded by this update.
+
+| Literature starting point | Existing carrier or next required operation |
+|---|---|
+| Strutz 2026, TEI evaluation; Strutz 2025 dataset | Existing records and distillates in the paper-source register; reuse within their stated source scope |
+| Yehudai et al. 2025, agent-evaluation survey | Existing CSL record and abstract-level distillate; inspect full text before grounding section-level design claims |
+| Sterz et al. 2024, human oversight | Existing CSL record; relevant passage intake and distillation remain necessary |
+| Gloaguen et al., Evaluating AGENTS.md; Kapoor et al., AI Agents That Matter; Vaccaro et al., human–AI combinations; Merrill et al., Terminal-Bench; Anthropic's agent-evaluation guide | Candidates linked in the repository specification; no corresponding source record or distillate found here on 2026-09-05; follow acquire and distill before building assertions |
+
+The candidates are not entries in the paper's bibliography inventory unless the
+paper actually cites them. Future ingested sources for benchmark work belong in
+this document's source inventory. No self-authored proposal is a substitute for
+the research publications it discusses.
 
 ## Section register
 

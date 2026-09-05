@@ -10,6 +10,7 @@ Human entry point of this vault. The vault carries the provenance layer beneath 
 
 - Topic maps: [[30_assertions/MOC-Genealogy]], [[30_assertions/MOC-Method]], [[30_assertions/MOC-Evidence]], [[30_assertions/MOC-Concepts]], [[30_assertions/MOC-Limitations]], [[30_assertions/MOC-Frame]], [[30_assertions/MOC-ArtefactVerification]]
 - [[glossary/]] — one entry per term the paper sets on its own authority, with the discarded alternative where a fixing departs from established use. Terms an external source grounds stay in the distillates and assertions.
+- [[30_assertions/MOC-Benchmark]] — existing research grounding and open questions for the proposed Promptotyping Bench; links to the repository's proposal and plan.
 
 ## Understand the machine room
 

@@ -9,7 +9,7 @@ method:
 status: draft
 language: en
 created: "2026-07-19"
-updated: "2026-08-09"
+updated: "2026-09-05"
 related: [specification, schema, operations, state, journal]
 ---
 
@@ -22,6 +22,7 @@ Navigation and terminology of the vault. Human readers start at [[HOME]]; agents
 - **Understand the project**: [[knowledge/specification]] for purpose and parameters, then [[knowledge/state]] for where work stands.
 - **Produce or check content**: [[knowledge/schema]] for what a well-formed artifact is, [[knowledge/operations]] for the chain that produces it.
 - **Understand a past decision**: [[knowledge/journal]], append-only, newest last.
+- **Develop the benchmark research basis**: [[30_assertions/MOC-Benchmark]] for existing grounding and open questions; the linked repository proposal, specification and plan own the study design.
 
 ## The six knowledge documents
 
