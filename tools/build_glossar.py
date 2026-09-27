@@ -33,10 +33,10 @@ TARGET = ROOT / "_content" / "glossar.md"
 HEADER = """---
 title: Glossary
 slug: glossar
-version: "0.4"
+version: "0.5"
 status: complete
 source: data/glossar.json (authoritative data source); generated, not maintained by hand
-mirrored: 2026-07-31
+mirrored: 2026-09-27
 machine-url: https://dhcraft.org/Promptotyping/_content/glossar.md
 ---
 

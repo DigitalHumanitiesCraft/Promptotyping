@@ -138,7 +138,7 @@ The examination of these implemented workflows required several forms of checkin
 
 * ***Agentic review*** is a bounded, tool-supported investigation in which one or more LLM-based agents examine outputs, data states, implementations, or research artefacts against relevant sources, references, requirements, and criteria. It may involve locating project files, comparing sources and outputs, executing formal checks, investigating discrepancies, or coordinating specialised, parallel, or adversarial reviewers.
 
-* ***Critical Expert verification and adjudication*** involves accountable examination of particular outputs against their sources and the resolution of cases that deterministic or probabilistic procedures cannot determine. It can confirm, correct, or reject previous findings and records who assumes responsibility for the resulting judgement.
+* ***Critical Expert verification and adjudication*** involves accountable examination of particular outputs against their sources and the resolution of cases that deterministic or probabilistic procedures cannot determine. It can confirm, correct, or reject previous findings and records who assumes responsibility for the resulting judgement.[^31]
 
 * ***Scholarly validation*** assesses whether the representations, requirements, evaluation criteria, and artefacts governing the workflow are warranted by the research material and adequate for their intended scholarly purpose.
 
@@ -500,6 +500,8 @@ This account describes my experience of developing the paper and is not evidence
 [^29]: SZD-HTR pipeline repository: [https://github.com/chpollin/szd-htr-ocr-pipeline](https://github.com/chpollin/szd-htr-ocr-pipeline); public verification interface: [https://chpollin.github.io/szd-htr-ocr-pipeline/](https://chpollin.github.io/szd-htr-ocr-pipeline/) (accessed 31 July 2026). The pipeline processes material described through TEI metadata from *Stefan Zweig Digital*, the public archival and scholarly platform for Stefan Zweig’s estate. The production pipeline is a project-specific implementation and should not be inferred solely from the public platform.
 
 [^30]: The criteria-guided form of review is established for digital editions and resources through RIDE, the review journal published by the Institut für Dokumentologie und Editorik since 2014, [https://ride.i-d-e.de/](https://ride.i-d-e.de/) (accessed 19 August 2026). Its reviewers work against published catalogues of criteria, among them the catalogue for scholarly digital editions (Sahle 2014), and combine a substantive written review with a structured factsheet.
+
+[^31]: *Verification* here names the accountable examination of particular outputs against their sources. It differs from the technical verification introduced in Section 1, which concerns conformity to formalised requirements. Where such an examination judges whether a representation is warranted by the source material, it belongs to validation in the sense of IEEE Std 1012 (IEEE 2025).
 
 [^34]: Digital Humanities Craft, *coOCR/HTR Workbench*, [https://dhcraft.org/co-ocr-htr/](https://dhcraft.org/co-ocr-htr/) (accessed 29 July 2026). The interface describes itself as a research preview and exposes model configuration, local and hosted model options, deterministic checks, LLM review, expert correction, IIIF input, and several export formats.
 

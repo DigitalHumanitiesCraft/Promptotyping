@@ -65,15 +65,23 @@ Promptotyping/
 ├── .nojekyll                       # forces GitHub Pages to publish _content/
 ├── README.md
 ├── CLAUDE.md                       # action layer
+├── CITATION.cff, LICENSE
 ├── knowledge/                      # this knowledge base (specification)
 ├── skills/promptotyping/           # portable canonical skill package
+├── research-artefacts/             # method paper, benchmark proposal and benchmark authoring area
+├── source-material/                # cleaned video transcripts
+├── snapshots/                      # dated reports and audits
+├── handoffs/                       # exceptional dated transition snapshots
+├── schema/                         # JSON Schema of the frontmatter core (check group V16)
+├── tools/                          # check_consistency.py, build_glossar.py, paper_review.py, tests/
 ├── _content/                       # Markdown content
 │   ├── promptotyping-document/     # one template mirror per slug
 │   ├── case-studies/               # case-study deep pages
 │   ├── skills/                     # index, coding, writing
-│   ├── overview.md, application.md, konvention.md, praxis.md
-│   ├── arbeitsumgebung.md, technology-baseline.md
-│   ├── glossar.md               # generated from data/glossar.json
+│   ├── examples/                   # example files the paper footnotes point to
+│   ├── overview.md, application.md, konvention.md, artefakt.md, verifikation.md
+│   ├── praxis.md, workflow.md, tutorial.md, arbeitsumgebung.md, technology-baseline.md
+│   ├── glossar.md                  # generated from data/glossar.json
 │   └── MANIFEST.md                 # mirror provenance
 ├── assets/
 │   ├── css/style.css
@@ -82,10 +90,11 @@ Promptotyping/
 │   ├── js/modules/case-study-filter.js
 │   ├── js/modules/term-index.js
 │   ├── vendor/marked.min.js, vendor/js-yaml.min.js
+│   ├── fonts/                      # Inter, self-hosted
 │   ├── figures/                    # paper figures plus PROVENANCE.md
 │   ├── img/dhcraft-logo-watercolor.png
 │   └── promptotyping-logo.png
-├── data/                           # glossar.json, promptotyping-documents.json, case-studies.json
+├── data/                           # glossar.json, promptotyping-documents.json, case-studies.json, vault.json
 └── vault/                          # Grounded-Vault instance (see below)
 ```
 
@@ -115,13 +124,13 @@ A subpath request is served by `404.html`, so it carries HTTP status 404 even th
 
 ## Script inventory
 
-The logic is split by responsibility across ten core files and three modules. `core.js` carries the shared helpers, escaping, slugify, loading Markdown and JSON, reading frontmatter, clipboard and code-copy buttons, the YouTube facade, and the guard around programmatic hash writes. `markdown.js` carries the marked configuration with the footnote apparatus and the heading-id generator, plus `renderPaperMarkdown` and `renderMarkdownInto`. `registry.js` carries `PAGES` and everything that follows from it, the page hosts, the sidebar tree, the specification index, the status lines, the route resolution with its special anchors, and `resolveTemplateUrl`. `shell.js` carries the reusable side panel and the theme toggle. The five `pages-*.js` files carry one page type each, paper, glossary, templates, vault, and the content pages without a data source of their own, that is Praxis, Skills and the use-case host together with the function hues of the Artefakt page. `app.js` carries only the boot order. The thirteen first-party files total 148,789 bytes raw and approximately 49,840 bytes under per-file gzip compression as measured on 2026-08-22; ADR-5 records why this review retains the No-Build architecture.
+The logic is split by responsibility across ten core files and three modules. `core.js` carries the shared helpers, escaping, slugify, loading Markdown and JSON, reading frontmatter, clipboard and code-copy buttons, the YouTube facade, and the guard around programmatic hash writes. `markdown.js` carries the marked configuration with the footnote apparatus and the heading-id generator, plus `renderPaperMarkdown` and `renderMarkdownInto`. `registry.js` carries `PAGES` and everything that follows from it, the page hosts, the sidebar tree, the specification index, the status lines, the route resolution with its special anchors, and `resolveTemplateUrl`. `shell.js` carries the reusable side panel and the theme toggle. The five `pages-*.js` files carry one page type each, paper, glossary, templates, vault, and the content pages without a data source of their own, that is Praxis, Skills and the use-case host together with the function hues of the Artefakt page. `app.js` carries only the boot order. ADR-5 records why the No-Build architecture is retained.
 
 Calls across file boundaries go through the namespace at call time, so no load order among the first nine matters. Two positions are behaviour-relevant. `app.js` must be the last of the ten, because it starts `init()` when the document is already parsed, and the two shell-declared modules must follow it.
 
 `init()` runs on `DOMContentLoaded` in this order:
 
-1. `configureMarked()` registers the marked configuration and the phase-tag extension.
+1. `configureMarked()` registers the marked configuration with the heading-id renderer and the footnote apparatus.
 2. `mountPages()` and `buildNav()` build the page hosts and the sidebar tree from `PAGES`.
 3. `setupSidePanel()`, `setupThemeToggle()` and `setupGlossarInteraction()` wire the reusable slide-in panel, the theme control and the glossar tooltip delegation. The sidebar has no toggle; it is always visible.
 4. `showPage()` activates the routed page immediately, so the shell is never a blank frame while the content files are still in flight.
@@ -160,7 +169,7 @@ Calls across file boundaries go through the namespace at call time, so no load o
 
 ## Data flow
 
-`_content/` holds the Markdown, mirrored from the vault and the paper source; `data/` holds the JSON that JavaScript consumes directly.
+`_content/` holds the site's Markdown and `data/` the JSON that JavaScript consumes directly. The paper is not mirrored, because the site renders it directly from `research-artefacts/`.
 
 ```
 research-artefacts/promptotyping-paper.md                ← the paper, rendered from its canonical source
@@ -168,17 +177,17 @@ _content/promptotyping-document/{slug}.md               ← template mirrors, on
 _content/case-studies/{id}.md                           ← case-study deep pages
 _content/skills/{index,coding,writing}.md               ← skills content
 skills/promptotyping/{SKILL.md,agents/openai.yaml}      ← canonical skill package
-_content/{overview,application,konvention,praxis,arbeitsumgebung,technology-baseline}.md
+_content/{overview,application,konvention,artefakt,verifikation,praxis,workflow,tutorial,arbeitsumgebung,technology-baseline}.md
 _content/glossar.md                                     ← glossar prose, generated from data/glossar.json
 _content/MANIFEST.md                                    ← mirror provenance
-data/vault.json                                         ← claim layer, generated from vault/
+data/vault.json                                         ← assertion layer, generated from vault/
 
 data/glossar.json                 ← glossar entries (structured)
 data/promptotyping-documents.json ← template catalogue (structured)
 data/case-studies.json            ← case-study cards, grouped by use case; also read by the paper page for the case table
 ```
 
-Markdown files are mirrored; the JSON files are generated from the Markdown frontmatters and the convention. `_content/MANIFEST.md` records the mirror provenance.
+The template mirrors, except the repository-canonical `technology` template, and the pages `konvention.md` and `praxis.md` are copied from the vault, and `_content/MANIFEST.md` records their provenance. The other page texts are authored in this repository. `data/glossar.json` is maintained by hand, and `tools/build_glossar.py` generates `_content/glossar.md` from it. `data/vault.json` is generated from `vault/` by `vault/tools/build_site_index.py`. `data/promptotyping-documents.json` and `data/case-studies.json` are maintained by hand, and `tools/check_consistency.py` checks them against the mirrors, the convention and the case-study pages.
 
 ## Local development and deployment
 

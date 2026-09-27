@@ -53,6 +53,7 @@
 
   var CATEGORY_MARKS = {
     "form-of-work": '<circle cx="7" cy="7" r="4.75"/>',
+    "practice": '<path d="M2 10.5a5 5 0 0 1 10 0Z"/>',
     "document-function": '<rect x="2.25" y="2.25" width="9.5" height="9.5"/>',
     "role": '<path d="M7 2 12 11.5 2 11.5Z"/>',
     "artefact": '<path d="M7 1.75 12.25 7 7 12.25 1.75 7Z"/>',

@@ -8,3 +8,6 @@ __pycache__/
 
 .obsidian/
 vault/review-batch-*.jsonl
+
+# Machine-local Claude Code settings
+.claude/settings.local.json

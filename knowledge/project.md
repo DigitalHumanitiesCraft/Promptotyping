@@ -66,7 +66,7 @@ The refactor deleted the outdated November 2025 state of the repository (six-pha
 Out of scope:
 
 - **No new scholarly paper.** The paper is authored under its own two-document model; the site mirrors and renders it.
-- **No method refactor.** The four phases, the three document types, the template catalogue, and the concepts are fixed in the vault. The site mirrors them and does not revise them.
+- **No method refactor.** The four forms of work, the three document types, the template catalogue, and the concepts are fixed in the vault. The site mirrors them and does not revise them.
 - **No vault refactor.** Vault corrections happen only when mirroring surfaces a discrepancy, and they are decided in the vault.
 - **No parallel language architecture.** The public method pages and the repository's core Knowledge Documents are English. Established German template mirrors and teaching materials remain bounded exceptions.
 

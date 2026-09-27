@@ -111,11 +111,16 @@ index.html        single-shell entry for the method portal
 CLAUDE.md         action layer of this repository (its own instance of the action-layer template)
 .nojekyll         required so GitHub Pages publishes _content/
 knowledge/        knowledge base of the site itself
-research-artefacts/  method paper
+research-artefacts/  method paper, benchmark proposal and benchmark authoring area
+source-material/  cleaned video transcripts
+snapshots/        dated reports and audits
+handoffs/         exceptional dated transition snapshots
+schema/           JSON Schema of the frontmatter core
+tools/            consistency check, glossary build, paper review inventory, tests
 skills/           canonical Promptotyping skill
 _content/         Markdown content (method pages, templates, case studies, glossary)
 assets/           CSS, JS, vendored libraries, fonts, logo
-data/             JSON data (case studies, glossary, template table)
+data/             JSON data (case studies, glossary, template table, vault index)
 vault/            Grounded Vault instance, evidence layer of the paper
 ```
 
@@ -145,4 +150,4 @@ The method originates in the author's dissertation and was first published in bl
 
 ## Licence
 
-Code (HTML, CSS, JavaScript, and the Python tooling under [vault/tools/](vault/tools/)) is licensed under the MIT License, see [LICENSE](LICENSE). Content (Markdown under [_content/](_content/), [knowledge/](knowledge/), the Grounded Vault under [vault/](vault/), and the prose texts of the site) is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The split follows the carrier; source that runs is MIT, text that is read is CC BY 4.0. This repository contains no third-party research data.
+Code (HTML, CSS, JavaScript, and the Python tooling under [tools/](tools/), [vault/tools/](vault/tools/) and [research-artefacts/promptotyping-bench/](research-artefacts/promptotyping-bench/)) is licensed under the MIT License, see [LICENSE](LICENSE). Content (Markdown under [_content/](_content/), [knowledge/](knowledge/), the Grounded Vault under [vault/](vault/), and the prose texts of the site) is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The split follows the carrier; source that runs is MIT, text that is read is CC BY 4.0. This repository contains no third-party research data.

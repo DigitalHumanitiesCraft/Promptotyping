@@ -61,7 +61,7 @@ The contribution is **conceptual and methodological**. The paper:
 - explains the relation among Scholar-Centred Design, Context Engineering, Agentic Engineering, AI harnesses, and Critical Expert judgement;
 - establishes the project knowledge base as the persistent reference from which implementation proceeds;
 - defines Preparation, Exploration, Distillation, Implementation, write-back, checking, acceptance, and version identification;
-- distinguishes deterministic verification, agentic review, Critical Expert validation, and acceptance;
+- distinguishes deterministic verification, agentic review, Critical Expert verification and adjudication, scholarly validation, and acceptance;
 - analyses digital research artefacts as operational scholarly arguments;
 - consolidates recurrent document functions, artefact forms, and project cases;
 - establishes the method's empirical scope, conditions of applicability, limitations, and evaluation priorities.
@@ -151,14 +151,15 @@ The paper's terminology operates on three levels.
 - Exploration
 - Distillation
 - Implementation
-- write-back
+- write-back, the return path that connects the four forms without constituting a fifth
 
 ## 3.3 Responsibility and accepted result
 
 - Critical Expert
 - deterministic verification
 - agentic review
-- Critical Expert validation
+- Critical Expert verification and adjudication
+- scholarly validation
 - acceptance
 - promptotype
 
@@ -186,12 +187,10 @@ Software operates on these represented distinctions rather than directly on rese
 
 ## 4.2 Digital research artefact
 
-A **digital research artefact** is a project-specific documentary or technical form that operationalises research data and associated scholarly decisions for a research activity.
+A **digital research artefact** is a project-specific operational form through which researchers work with structured research data for a defined scholarly purpose (paper §1.1).
 
 It may be:
 
-- a project document;
-- a conceptual model;
 - a transformation;
 - a workflow;
 - a processing pipeline;
@@ -201,6 +200,8 @@ It may be:
 - a publication interface;
 - a software application.
 
+Maintained project knowledge and derived project artefacts are not digital research artefacts in this sense. The promptotype relation holds the knowledge apart from the artefact it guides.
+
 Its defining property is adaptation to project-specific questions and practices, not its technical format.
 
 A digital research artefact is not a neutral presentation layer. Its selections, operations, aggregations, interfaces, and representations embody scholarly and technical claims.
@@ -209,7 +210,7 @@ A digital research artefact is not a neutral presentation layer. Its selections,
 
 **Project knowledge** is the maintained understanding required to interpret, implement, assess, and continue the project. It includes:
 
-- research data and sources;
+- descriptions of the research data and sources;
 - domain concepts and contextual information;
 - scholarly purposes and requirements;
 - assumptions, uncertainty, and known absences;
@@ -227,7 +228,7 @@ The **project knowledge base** is the evolving, inspectable, and versioned colle
 
 It is:
 
-- the persistent reference from which task-specific working context is selected;
+- the persistent reference on which task-specific working context draws;
 - available across sessions, models, agents, and contributors;
 - revisable when implementation or checking changes the maintained understanding;
 - inspectable by accountable scholarly and technical contributors.
@@ -243,15 +244,15 @@ The knowledge base governs implementation only through the accountable engagemen
 
 ## 4.5 Working context
 
-**Working context** is the task-specific selection of project knowledge supplied to an agent for a particular activity.
+**Working context** is the information and access an agent requires for a particular assignment (paper §2.1).
 
-The working context may include selected documents, examples, constraints, tool instructions, current findings, and relevant data summaries. It is derived from the project knowledge base but remains narrower than it.
+The working context may include selected documents, derived project artefacts, examples, constraints, tool instructions, current findings, and task-relevant selections from the research data. Material may also be obtained through retrieval, including Retrieval-Augmented Generation, and through direct access to project resources. These mechanisms supplement the maintained account of purpose, data semantics, and criteria of assessment and do not replace it. The working context therefore draws on the project knowledge base without being a subset of it.
 
 Context Engineering does not mean loading all available material into a context window.
 
 ## 4.6 Knowledge Document
 
-A **Knowledge Document** is a Markdown document within the project knowledge base that fulfils a defined knowledge function for human contributors and LLM-based agents.
+A **Knowledge Document** is a document within the project knowledge base that fulfils a defined knowledge function for human contributors and LLM-based agents. Repository-based projects hold Knowledge Documents as Markdown. The paper admits other documentary environments that are equally inspectable and revisable (§2.1).
 
 Knowledge Documents are dually readable but need not address both audiences in the same way. A scholar reads them to assess whether the project has been represented adequately. An agent reads them to determine how to act.
 
@@ -267,7 +268,9 @@ Markdown is not epistemically privileged and provides no formal guarantee of cor
 
 ### Functional classes
 
-**Declarative Documents** state what is currently understood to be the case. Examples include:
+The site and the convention name the three classes Declarative, Process, and Action Documents. The paper calls them declarative knowledge documents, process knowledge documents, and agent instruction documents (§2.1). Each pair names the same class, and each carrier keeps its own name (decision 37).
+
+**Declarative Documents** state what the project currently takes to be the case and what the artefact is required to realise. Examples include:
 
 - `data.md`;
 - `requirements.md`;
@@ -457,7 +460,8 @@ One iteration may contain several internal cycles of:
 - testing;
 - assessment;
 - agentic review;
-- Critical Expert validation;
+- Critical Expert verification and adjudication;
+- scholarly validation;
 - correction;
 - write-back.
 
@@ -520,17 +524,17 @@ It includes:
 - standards, schemas, and formal models;
 - source and corpus descriptions;
 - research context;
-- scholarly purposes and initial requirements;
+- scholarly purposes and any requirements already expressed in the working material;
 - editorial, annotation, and mapping guidelines;
 - access conditions;
 - legal, ethical, contractual, and institutional constraints;
-- repository and project-environment setup.
+- an accessible project environment.
 
-Requirements Engineering belongs here because the artefact cannot be specified independently of the scholarly activities it should support.
+Preparation gathers requirements where the working material already expresses them, but their systematic formulation is not its primary purpose (paper §2.2.1). Exploration refines the relation between material and intended scholarly work, and Distillation incorporates the resulting requirements into maintained project knowledge. Requirements engineering in the wider sense belongs to Scholar-Centred Design (§4.11).
 
-Preparation is sufficient when:
+Preparation is provisionally sufficient when the source basis and research context are digitally accessible and documented well enough to support systematic examination (paper §2.2.1). In practice this means:
 
-- relevant data, sources, and documentation are accessible;
+- relevant data, sources, and documentation are accessible, with provenance and known limitations recorded;
 - the project environment exists;
 - the current purpose and initial assumptions are explicit enough to support systematic exploration;
 - later changes can be identified as revisions rather than absorbed invisibly into implementation.
@@ -790,7 +794,7 @@ The record may take the form of:
 
 ## 6.7 Conversion principle
 
-Critical Expert validation may become deterministic verification when the relevant judgement has been formalised into executable rules.
+A judgement of Critical Expert verification and adjudication or of scholarly validation may become deterministic verification when the relevant judgement has been formalised into executable rules.
 
 The conversion does not run in the opposite direction. A deterministic check does not acquire scholarly authority merely because it is automated or repeatedly passed.
 
@@ -808,11 +812,11 @@ Preferred rows:
 
 | Object of checking | Form | What decides | Agent autonomy |
 |---|---|---|---|
-| Deterministically decidable data fidelity | Verification | Schemas, tests, constraints, builds | Agent may run checks and act on unambiguous failures |
-| Source fidelity requiring judgement | Validation | Critical Expert comparing output with sources | Agentic review may assist but remains subordinate |
-| Requirement satisfaction | Acceptance testing | Acceptance criteria in the requirements document | Agent may operate the artefact and report results |
-| Design conformance | Validation | Critical Expert against the design document | Requires human assessment |
-| Interpretation and contextualisation | Validation | Scholarly judgement against sources and research context | Cannot be delegated for final acceptance |
+| Deterministically decidable data fidelity | Deterministic verification | Schemas, tests, constraints, builds | Agent may run checks and act on unambiguous failures |
+| Source fidelity requiring judgement | Critical Expert verification and adjudication | Critical Expert comparing output with sources | Agentic review may assist but remains subordinate |
+| Requirement satisfaction | Requirement testing | Acceptance criteria in the requirements document | Agent may operate the artefact and report results |
+| Design conformance | Critical Expert verification and adjudication | Critical Expert against the design document | Requires human assessment |
+| Interpretation and contextualisation | Scholarly validation | Scholarly judgement against sources and research context | Cannot be delegated for final acceptance |
 
 ---
 
@@ -1812,6 +1816,10 @@ Decisions of the acceptance round of 2026-07-31:
 
 36. **Chapter 4 opens directly with evidential scope (2026-08-23).** The separate chapter-preview paragraph repeated the work of §§4.1–4.3 and therefore left the manuscript. Section 4.1 now opens with two accepted sentences that identify the practice from which Promptotyping was consolidated, state workability under the examined conditions, and make the generalisation of that finding the organising problem of the chapter. The detailed reasons for this evidential limit follow as a separate review paragraph.
 
+37. **The paper is the terminological standard for steering document and glossary (2026-09-27).** Where this document or the site glossary contradicts the paper, or attributes to the paper what it does not say, they follow the paper's wording. Site elaborations that do not contradict it stay and are marked as site vocabulary. Consequences in this document: §4.2 takes the paper's definition of the digital research artefact and no longer counts project documents and conceptual models among them, §4.5 no longer treats the working context as a subset of the knowledge base, and §5.1 places the systematic formulation of requirements outside Preparation. The three document classes keep two names. Site and convention say Declarative, Process, and Action Documents, the paper says declarative knowledge documents, process knowledge documents, and agent instruction documents, and §4.6 and the glossary state the correspondence.
+
+38. **The expert checking form keeps its name and receives a clarification (2026-09-27).** *Critical Expert verification and adjudication* stays in §2.3.1. Footnote 31 states that *verification* there names the accountable examination of particular outputs against their sources, unlike the technical verification of Section 1, and that judging whether a representation is warranted by the sources belongs to validation in the IEEE sense. The table in §6.8 uses the four forms of §6.1 and renames its acceptance row to *requirement testing*, so that no checking form carries the word acceptance.
+
 Flag register. The numbers remain stable because the journal and earlier work blocks refer to them.
 
 1. **Dormant. Summerfield 2025** left the reference list with the operator's own revision; the confabulation term thereby has no source in the manuscript and the term itself no longer appears. Reopen only if the term returns.
@@ -1823,7 +1831,13 @@ Flag register. The numbers remain stable because the journal and earlier work bl
 7. **Closed on 2026-08-09. Uncited references.** Fakhoury et al. 2024 and Hora and Robbes 2026 were removed from the manuscript reference list after their supporting passages fell away with §2.4. Their source-register entries remain with status `dropped` and preserve the reason.
 8. **Closed for the manuscript on 2026-08-22.** The operator confirmed GPT-5.6 Sol as the full model name, and the Author's Note now matches the public announcement on that point. The announcement remains shorter than the manuscript declaration because it predates the provenance reconciliation of decision 30. The manuscript is the declaration of record. Any later expansion of the external announcement is an optional operator-controlled publication action and no manuscript defect survives.
 
-9. **Open production constraint. Footnote labels are non-sequential in the source.** The restored notes keep their five-chapter labels 29 and 34 to 37 beside the draft's own 1 to 27, and 28 and 30 to 33 do not exist. The site numbers the apparatus by order of occurrence, so the rendered text is correct and only the Markdown source shows the gaps. A submission export renumbers.
+9. **Open production constraint. Footnote labels are non-sequential in the source.** The labels run from 1 to 31 and from 34 to 36, and 32 and 33 do not exist. The site numbers the apparatus by order of occurrence, so the rendered text is correct and only the Markdown source shows the gaps. A submission export renumbers.
+
+10. **Open for author acceptance. Promptotype status of the corpus cases.** Chapter 3 is titled "Patterns across Promptotypes" and speaks of additional promptotypes, while §3.1 concedes that some cases are represented primarily by an artefact. Section 10.5 classifies only Notker, and no acceptance record is documented for every case of Table 1, for example the coOCR/HTR research preview. Options are a status indication per case in Table 1 or a formulation that speaks of documented cases where acceptance is not recorded.
+
+11. **Open for author acceptance. Operational forms in Table 1.** Section 3.2 names six operational forms, while Table 1 uses further labels such as visualisation, curation interface, edition-related workbench, editorial workbench, integrated workbench, and edition demonstrator. Either the table uses the six forms or §3.2 admits the further labels.
+
+12. **Open for author acceptance. Role wording.** Section 2.3.1 speaks of operator adjudication, and the paper nowhere defines *operator*. The paper also alternates between accountable contributors and responsible contributors without a difference in meaning.
 
 The evidence and production task that remains from the earlier list is the rights-clearance decision in Section 22. The M³GIM derivation question, the Notker verification and acceptance reconstruction, and repository-visibility verification were closed on 2026-08-22 in Sections 10.9, 10.5, and 10.12.
 
@@ -1883,7 +1897,7 @@ Version 1.0 requires all of the following:
 
 **ZfdG formal constraints, normative here.** Genre Fachartikel. Exposé first, at most 1,000 words plus literature list and provisional table of contents. Bilingual abstract, German and English, at most 750 characters each. Citation as footnote short reference author–year; official CSL file exists. Decimal section numbering, target depth two levels. Tools as formal software citations in the bibliography. Article licence CC BY-SA 4.0. British spelling stays (the American ZfdG house practice is observation, no requirement).
 
-The applied submission package will be derived from this section and the final manuscript at `knowledge/submission-zfdg.md`. No current package exists because the earlier draft was deleted when the manuscript architecture changed.
+The applied submission package will be derived from this section and the final manuscript as a dated report under `snapshots/`, named `paper-zfdg-submission-package-YYYY-MM-DD.md` after the naming contract and analogous to the submission report of 2026-07-23. No current package exists because the earlier draft was deleted when the manuscript architecture changed.
 
 **Gates.** No claim without a verification note, no submission without operator release. Before submission: novelty check against the current discourse, with outward-facing claims only in the form the check licenses.
 

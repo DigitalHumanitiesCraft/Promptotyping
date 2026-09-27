@@ -55,13 +55,14 @@ The method paper follows a two-document model. The canonical text is the Researc
 
 ## Artefact areas
 
-- `knowledge/` contains durable Promptotyping Documents, including `handoff.md` as the live Process Inbox.
-- `research-artefacts/` contains the canonical method paper. The site renders [promptotyping-paper.md](../research-artefacts/promptotyping-paper.md) directly while preserving the public `#paper` route and its published section anchors.
+- `knowledge/` contains durable Knowledge Documents, including `handoff.md` as the live Process Inbox.
+- `research-artefacts/` contains the canonical method paper. The folder name means scholarly outputs about the method and not digital research artefacts in the paper's sense, which are project-specific operational forms such as interfaces, transformations and workflows. The site renders [promptotyping-paper.md](../research-artefacts/promptotyping-paper.md) directly while preserving the public `#paper` route and its published section anchors.
 - `research-artefacts/promptotyping-bench/` is the [benchmark authoring area](../research-artefacts/promptotyping-bench/README.md). Real-data task materials live under `tasks/`, beginning with the [SZD correspondence explorer](../research-artefacts/promptotyping-bench/tasks/szd-correspondence/README.md). Synthetic machinery tests live under [fixtures/dating-explorer](../research-artefacts/promptotyping-bench/fixtures/dating-explorer/README.md) and are excluded from study results. The benchmark specification owns shared requirements; task manifests own data provenance and the plan owns readiness.
 - [research-artefacts/promptotyping-bench-proposal.md](../research-artefacts/promptotyping-bench-proposal.md) is the draft research proposal. Its rationale links to existing grounded findings through [MOC-Benchmark](../vault/30_assertions/MOC-Benchmark.md); the experimental contract and work sequence remain in the two benchmark knowledge documents.
 - `source-material/video-scripts/` contains the cleaned German transcripts [promptotyping-introduction-video-script.md](../source-material/video-scripts/promptotyping-introduction-video-script.md) and [promptotyping-live-demo-video-script.md](../source-material/video-scripts/promptotyping-live-demo-video-script.md).
 - `snapshots/` contains the dated external report [paper-zfdg-submission-report-2026-07-23.md](../snapshots/paper-zfdg-submission-report-2026-07-23.md) and the final knowledge record of the retired [Promptotyping Agent Interface](../snapshots/promptotyping-agent-interface-final-record-2026-08-22.md).
   The [historical frontend plan](../snapshots/frontend-plan-history-2026-09-05.md) preserves superseded packages; the [knowledge-refactor audit](../snapshots/project-knowledge-refactor-2026-09-05.md) records the repository-wide inventory, current ownership and verification scope.
+  The [SZD data audit](../snapshots/benchmark-szd-data-audit-2026-09-05.md) records the first dated inspection of the SZD data basis for the benchmark.
   The [SZD rehearsal preparation record](../snapshots/benchmark-szd-rehearsal-preparation-2026-09-05.md) records the local real-data package and technical input checks, without claiming a completed study.
 - `handoffs/` contains the exceptional dated transition snapshot [promptotyping-vault-migration-handoff-2026-08-09.md](../handoffs/promptotyping-vault-migration-handoff-2026-08-09.md). It does not replace the live inbox.
 - `_content/` contains authored publication pages and the stable public template mirrors. Generated mirrors such as `_content/glossar.md` are rebuilt from their declared source.
@@ -91,11 +92,11 @@ Two audit records live on in the evidence layer regardless. Audits A1 and A2 are
 
 Terms constitutive for this knowledge base. Canonical definitions live in the linked vault knowledge documents; this is the short form relevant here.
 
-**Promptotyping.** Iterative, knowledge-driven method organised around four recurrent forms of work, Preparation, Exploration, Distillation, Implementation, developing project-specific research artefacts from structured research data and maintained project knowledge. The `knowledge/` folder is the curated knowledge artefact of a project, holding the domain knowledge and the specification the implementation is derived from; its coverage ends where decisions taken during building are not written back into it. A single iteration of a prototype stays cheap to abandon, and what it taught goes into the documents.
+**Promptotyping.** Iterative, knowledge-driven method organised around four recurrent forms of work, Preparation, Exploration, Distillation, Implementation, developing project-specific research artefacts from structured research data and maintained project knowledge. In repository-based projects the `knowledge/` folder holds the maintained project knowledge from which implementation proceeds. Its coverage ends where findings from implementation are not written back into it.
 
 **Promptotype.** The identifiable and versioned state that an accepted iteration yields; it connects maintained project knowledge, the resulting digital research artefact, the referenced research-data state, and the documented grounds of acceptance. Not every generated artefact reaches this threshold.
 
-**Knowledge Document.** Structured Markdown document in a repository's `knowledge/` folder. All of them are Knowledge Documents, specialised by the kind of knowledge they carry into three analytical types, Declarative (subject matter), Process (workflow state and provenance), Action (imperative). Until July 2026 the declarative type itself was called Knowledge Document; the name moved to the umbrella term.
+**Knowledge Document.** Structured Markdown document in a repository's `knowledge/` folder. All of them are Knowledge Documents, specialised by the kind of knowledge they carry into three analytical types, Declarative (subject matter), Process (workflow state and provenance), Action (imperative). The paper calls the three types declarative knowledge documents, process knowledge documents and agent instruction documents. Until July 2026 the declarative type itself was called Knowledge Document, and the name then moved to the umbrella term.
 
 **Template (Vorlage).** Fillable structural pattern for one function of a Promptotyping knowledge base. The function names are English: Navigation, Charter, Material, Specification, Architecture, Technology Baseline, Domain Knowledge, Design, Quality Assurance, Verification, Provenance, Handoff, Planning, Governance, Reporting, Integration, and Agent Instructions. The catalogue lives in the vault; the site mirrors the templates as versioned anchors. A template carries only where its trigger holds.
 
@@ -107,7 +108,7 @@ Terms constitutive for this knowledge base. Canonical definitions live in the li
 
 **Anchor schema.** System of permanently stable URL anchors on the site (`#promptotyping-document-data`, `#case-herdata`, `#konzept-eil`). Version snapshots add sub-anchors (`#promptotyping-document-data-v0.1`). Repositories linking via the `template:` field address these anchors; anchors are never renamed. Since the rebuild of 2026-07-25 the site shows one page at a time and holds the inactive pages in the DOM, which is what keeps every published anchor resolvable (`specification.md`, `architecture.md`).
 
-**Subpath alias.** Machine-readable URL form (`/promptotyping-document/data`) routed to the anchor via `404.html`. The canonical machine address for HTTP retrieval without JavaScript is the static Markdown URL (`/_content/promptotyping-document/{slug}.md`).
+**Subpath form.** Path form of an address (`/promptotyping-document/data`), canonical on equal terms with the hash anchor (A4) and routed to it via `404.html`, which requires JavaScript. The canonical machine address for HTTP retrieval without JavaScript is the static Markdown URL (`/_content/promptotyping-document/{slug}.md`).
 
 **Side panel.** Right sliding panel carrying context-specific depth; a bottom sheet on mobile. What it holds is owned by `specification.md`.
 
@@ -117,7 +118,7 @@ Terms constitutive for this knowledge base. Canonical definitions live in the li
 
 **Phase provenance lane.** Historical design device of the first deploy, removed by operator decision 2026-06-10 (A2, ADR-4). The `{:.phase-*}` tags it read are gone from the paper Markdown, and the stripper that had covered for them was deleted on 2026-07-27.
 
-**Critical Expert in the Loop (EIL).** The role that validates LLM output at defined points; here Christopher Pollin is the Critical Expert.
+**Critical Expert.** The person or group competent and accountable for judging whether the project knowledge adequately represents the research material and whether the artefact suits its stated purpose, and responsible for accepting an iteration (paper §2.2.4). The site formerly called the role Critical Expert in the Loop (EIL), and the anchor `#konzept-eil` keeps that name. In this repository the operator holds the role.
 
 **`template:` field.** Frontmatter field pointing to the authoritative template specification on this site. Format `template: { name, version, url, alias }`; `url` is the latest subpath form, `alias` the latest hash anchor.
 
