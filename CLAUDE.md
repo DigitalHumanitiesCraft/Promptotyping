@@ -1,5 +1,12 @@
 # CLAUDE.md — Action-Layer für Coding-Sessions in diesem Repo
 
+## Manuscript publication boundary
+
+The operator withdrew the manuscript from the current public repository and GitHub Pages on 14 October 2026. The public repository carries the method documentation and paper specification; manuscript text is maintained separately. The former Paper route and section links show an availability notice without loading manuscript prose. The manuscript file is absent from the deployed tree. Earlier commits and historical publication records are retained, so this removal does not undo prior public availability.
+
+For manuscript work, obtain the current author-controlled text before editing. Historical references below to the repository manuscript and its rendering describe the earlier arrangement and do not authorise restoring it. The journal's acceptance of the expose does not establish acceptance of the full manuscript or resolve eligibility of the previously public draft.
+
+
 Dieses Repo ist `DigitalHumanitiesCraft/Promptotyping`, die öffentliche Methodik-Site für Promptotyping. Es rendert auf https://dhcraft.org/Promptotyping/ als Spezifikationsdokumentation der Methode, mit dem Paper als einer ihrer Seiten, dem Glossar-Tooltip über dem Lesetext, den eingebetteten Vorlagen und der Use-Case-Galerie.
 
 ## Beim Session-Start lesen

@@ -9,12 +9,19 @@ method:
 status: active
 language: en
 created: 2026-07-29
-updated: 2026-09-05
+updated: 2026-10-14
 authors: [Christopher Pollin]
 related: [promptotyping-paper, journal, INDEX]
 ---
 
 # Promptotyping Paper Specification
+
+## Manuscript publication boundary
+
+The operator withdrew the manuscript from the current public repository and GitHub Pages on 14 October 2026. The public repository carries the method documentation and paper specification; manuscript text is maintained separately. The former Paper route and section links show an availability notice without loading manuscript prose. The manuscript file is absent from the deployed tree. Earlier commits and historical publication records are retained, so this removal does not undo prior public availability.
+
+For manuscript work, obtain the current author-controlled text before editing. Historical references below to the repository manuscript and its rendering describe the earlier arrangement and do not authorise restoring it. The journal's acceptance of the expose does not establish acceptance of the full manuscript or resolve eligibility of the previously public draft.
+
 
 **Updated:** 22 August 2026 for manuscript version 0.9.1 and the binding sentence-level author-review protocol.
 

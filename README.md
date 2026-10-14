@@ -4,25 +4,19 @@
 
 Promptotyping is an iterative, knowledge-driven method for developing project-specific digital research artefacts from structured research data and maintained project knowledge through Context Engineering and Agentic Engineering, organised around four recurrent forms of work (Preparation, Exploration, Distillation, Implementation). In the canonical repository convention, a `knowledge/` folder holds versioned Knowledge Documents for requirements, data, decisions, and domain knowledge. This curated knowledge artefact guides implementation, persists across sessions, and receives consequential findings through write-back. The method also permits another inspectable and revisable documentary environment. A Critical Expert in the Loop verifies LLM output at defined points.
 
-This repository is the public method portal and the repository of the method paper, which is written in [research-artefacts/promptotyping-paper.md](research-artefacts/promptotyping-paper.md). The portal at **https://dhcraft.org/Promptotyping/** integrates the specification, case evidence, tutorial, templates, canonical skill, and paper. It also serves the templates as stable, machine-readable addresses.
+This repository is the public method portal and the repository of the method paper, which is written in [research-artefacts/promptotyping-paper.md](research-artefacts/promptotyping-paper.md). The portal at **https://dhcraft.org/Promptotyping/** integrates the specification, case evidence, tutorial, templates and canonical skill. It also serves the templates as stable, machine-readable addresses.
 
 ## The method in brief
 
 The four forms of work move from gathering raw material (Preparation) over probing what the data affords (Exploration) and distilling the findings into selective Markdown documents (Distillation) to iterative, verified development with an agentic coding tool (Implementation). Knowledge Document is the general term for a document of this kind, and it specialises into three types according to the kind of knowledge it holds, each with a diagnostic rule attached. Declarative Documents hold knowledge about the subject matter. Process Documents divide current handoff inputs, accepted future work, and the curated provenance index between `handoff.md`, `plan.md`, and `journal.md`. Action Documents, which the paper calls agent instruction documents, hold knowledge about how to act (`CLAUDE.md`, `AGENTS.md`); check these when output is formally wrong.
 
-The full argument is the method paper; an overview is at [dhcraft.org/Promptotyping/#overview](https://dhcraft.org/Promptotyping/#overview).
+An overview of the method is at [dhcraft.org/Promptotyping/#overview](https://dhcraft.org/Promptotyping/#overview).
 
 ## The method paper
 
-**Pollin, Christopher: Promptotyping. Translating Research Data into Research Artefacts through Context Engineering and Agentic Engineering** (version 0.9.1, an author-review draft, 22 August 2026; in preparation).
+The manuscript is being prepared for journal submission. On 14 October 2026 the author removed the manuscript from the current public repository and website. The method specification, templates and documented applications remain available. Earlier public availability remains part of the publication history; removing the current copy does not establish compliance with a journal's originality requirements.
 
-The complete current text is a single Markdown Research Artefact, [research-artefacts/promptotyping-paper.md](research-artefacts/promptotyping-paper.md), written and revised in this repository. [knowledge/paper-specification.md](knowledge/paper-specification.md) holds everything decided, checked, and still open about it, and the Grounded Vault under [vault/](vault/) anchors its supporting claims in sources. The method portal renders the Research Artefact directly on its Paper page with an inline glossary.
-
-The circulated version 0.9 remains the external review surface. Accepted comments
-are integrated into the canonical manuscript through recorded decisions.
-The paper specification owns the version history, sentence-level author-review
-protocol and gates for version 1.0. The [project plan](knowledge/plan.md) routes
-current portal, paper and benchmark work; each workstream retains its own acceptance.
+[knowledge/paper-specification.md](knowledge/paper-specification.md) records the manuscript's governing requirements. Manuscript text is maintained outside this public repository.
 
 ## Videos
 
@@ -32,7 +26,7 @@ Two introductions to the method (German): the methodology explainer [Promptotypi
 
 | Content | Location | On the site |
 |---|---|---|
-| Method paper (English, version 0.9.1, author-review draft) | [research-artefacts/promptotyping-paper.md](research-artefacts/promptotyping-paper.md), specification in [knowledge/paper-specification.md](knowledge/paper-specification.md) | [#paper](https://dhcraft.org/Promptotyping/#paper) |
+| Paper specification | [knowledge/paper-specification.md](knowledge/paper-specification.md) | Manuscript unavailable |
 | Evidence layer of the paper (Grounded Vault) | [vault/](vault/) | [#vault](https://dhcraft.org/Promptotyping/#vault) |
 | Promptotyping Bench (draft research programme) | [Proposal](research-artefacts/promptotyping-bench-proposal.md), [plan](knowledge/benchmark-plan.md), [task and tooling index](research-artefacts/promptotyping-bench/README.md), [research map](vault/30_assertions/MOC-Benchmark.md) | No dedicated portal page |
 | Knowledge Document templates | [_content/promptotyping-document/](_content/promptotyping-document/) | [#vorlagen](https://dhcraft.org/Promptotyping/#vorlagen) |
@@ -111,7 +105,7 @@ index.html        single-shell entry for the method portal
 CLAUDE.md         action layer of this repository (its own instance of the action-layer template)
 .nojekyll         required so GitHub Pages publishes _content/
 knowledge/        knowledge base of the site itself
-research-artefacts/  method paper, benchmark proposal and benchmark authoring area
+research-artefacts/  benchmark proposal and benchmark authoring area
 source-material/  cleaned video transcripts
 snapshots/        dated reports and audits
 handoffs/         exceptional dated transition snapshots
@@ -138,7 +132,7 @@ Open http://localhost:8000. Development history is in [knowledge/journal.md](kno
 
 ## Citation
 
-This is the repository of the method paper. Pollin, Christopher: Promptotyping. Translating Research Data into Research Artefacts through Context Engineering and Agentic Engineering (in preparation); the text is developed in [research-artefacts/promptotyping-paper.md](research-artefacts/promptotyping-paper.md), its evidence layer in [vault/](vault/).
+This repository documents the Promptotyping method. The journal manuscript is maintained separately.
 
 For the repository and site: Pollin, Christopher; Steiner, Christian: Promptotyping. Zenodo. https://doi.org/10.5281/zenodo.14160875 (concept DOI, always resolves to the current version)
 

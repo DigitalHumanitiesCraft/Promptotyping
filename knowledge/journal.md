@@ -7,7 +7,7 @@ status: active
 language: de
 version: 1.1
 created: 2026-05-09
-updated: 2026-09-05
+updated: 2026-10-14
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 method:
@@ -22,6 +22,10 @@ related: [INDEX, project, specification, architecture, design, handoff]
 ---
 
 # Journal
+
+## 2026-10-14 Manuskript aus der öffentlichen Auslieferung entfernt
+
+Auf ausdrücklichen Auftrag des Autors wurde die Manuskriptdatei vor der Entfernung außerhalb des öffentlichen Repositorys bytegleich gesichert. Die aktuelle Repositoryfassung und die Website liefern den Manuskripttext nicht mehr aus. Der Paper-Menüpunkt entfällt, bestehende Paper-Adressen zeigen einen Verfügbarkeitshinweis mit Links zur Spezifikation und zu den Anwendungsfällen. Die Git-Historie bleibt erhalten. Die Entfernung macht die frühere öffentliche Verfügbarkeit nicht rückgängig; die Vereinbarkeit mit der Artikelvereinbarung bleibt mit der Redaktion zu klären.
 
 Das Journal hält den Arbeitsverlauf dieses Repos als Erzählung der Promptotyping-Iterationen fest, mit den Entscheidungen, ihren Gründen und den dokumentierten Sackgassen. Es ist weder Git-Log noch Sitzungsprotokoll. Die einzelnen Commits stehen in der Git-History, das Journal verdichtet sie. Adressiert sind der Projektverantwortliche, der nach Wochen zurückkommt, und der Coding-Agent, der eine Sitzung ohne Kontextverlust fortsetzt.
 

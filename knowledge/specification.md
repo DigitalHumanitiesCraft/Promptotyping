@@ -7,7 +7,7 @@ status: complete
 language: en
 version: "1.0"
 created: 2026-05-09
-updated: 2026-09-05
+updated: 2026-10-14
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Opus 4.8)
 method:
@@ -27,6 +27,13 @@ related: [INDEX, project, architecture, design, handoff, journal]
 ---
 
 # Specification
+
+## Manuscript publication boundary
+
+The operator withdrew the manuscript from the current public repository and GitHub Pages on 14 October 2026. The public repository carries the method documentation and paper specification; manuscript text is maintained separately. The former Paper route and section links show an availability notice without loading manuscript prose. The manuscript file is absent from the deployed tree. Earlier commits and historical publication records are retained, so this removal does not undo prior public availability.
+
+For manuscript work, obtain the current author-controlled text before editing. Historical references below to the repository manuscript and its rendering describe the earlier arrangement and do not authorise restoring it. The journal's acceptance of the expose does not establish acceptance of the full manuscript or resolve eligibility of the previously public draft.
+
 
 What the site must do. The site is a specification documentation showing one page at a time, with the navigation tree as its table of contents; the Pollin 2026 paper is one of those pages, rendered from the canonical text, and the glossary tooltip, the embedded templates, the case-study cards and the side panel serve it. This document states the requirements and the design decisions. How the site is built is in [architecture.md](architecture.md); how it looks and behaves is in [design.md](design.md).
 

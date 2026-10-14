@@ -53,9 +53,8 @@
     { id: "arbeitsumgebung", label: "Working environment", group: "Tools and practice", kind: "informative",
       note: "Vault, agent interface and AI harness around the method" },
 
-    { id: "paper", label: "Paper", group: "Paper", kind: "informative",
-      note: "Why the method is built this way, and whether it holds",
-      machine: "research-artefacts/promptotyping-paper.md" }
+    { id: "paper", label: "Manuscript unavailable", group: "Paper", kind: "informative",
+      hiddenFromNav: true, note: "" }
   ];
 
   /* Published German routes from the first English-site pass remain accepted,
@@ -97,7 +96,7 @@
 
   /* Anchors of the paper that are not a family: the unnumbered sections and the
      apparatus. */
-  var PAPER_ANCHOR = /^(abstract|acknowledgements|literatur|fussnoten|fn-|fnref-)/;
+  var PAPER_ANCHOR = /^(abstract|acknowledgements|author-s-note|ai-use-and-research-provenance|literatur|fussnoten|ref-|fn-|fnref-)/;
 
   function entryFor(id) {
     for (var i = 0; i < PAGES.length; i++) {
@@ -327,7 +326,7 @@
     }
     var html = "";
     var group = null;
-    topLevelPages().forEach(function (p) {
+    topLevelPages().filter(function (p) { return !p.hiddenFromNav; }).forEach(function (p) {
       if (p.group !== group) {
         html += (group === null ? "" : "</ul>") + '<ul class="docs-nav-run">';
         group = p.group;
