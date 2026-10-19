@@ -266,7 +266,7 @@ Under `tools/tests/` the checks are themselves held to their regression cases, r
 
 **Claim.** While `MANUSCRIPT_WITHDRAWN` holds in `tools/check_consistency.py`, `research-artefacts/promptotyping-paper.md` is absent. Every address the router sends to the Paper page (`#abschnitt-*` and the `PAPER_ANCHOR` pattern of `registry.js`) counts as resolving, because it lands on the availability notice. The groups that read the manuscript say what they skip: V5 compares no case table, and V11 checks literature sources by their `ref-` prefix only.
 
-**Why it matters.** The manuscript was withdrawn on 2026-10-14 for a journal submission whose agreement excludes digital prior versions. A restored file would republish it with the next push, and a check that stopped on the missing file would leave every other group unchecked.
+**Why it matters.** The manuscript was withdrawn from the repository and the site on 2026-10-14 for a journal submission. A restored file would republish it with the next push, and a check that stopped on the missing file would leave every other group unchecked.
 
 **Procedure.** The group fails when the file exists. Regression cases restore a manuscript file, call the evidence group in the withdrawn state, and resolve a section anchor, `#literatur` and an unknown anchor. The paper inventory test in `tools/tests/test_paper_review.py` skips while the file is absent; `tools/paper_review.py --paper` runs the inventory on the author's copy.
 

@@ -61,9 +61,9 @@ PROJECT = KNOWLEDGE_DIR / "project.md"
 TECHNOLOGY_BASELINE = CONTENT_DIR / "technology-baseline.md"
 VAULT_STATE = ROOT / "vault" / "knowledge" / "state.md"
 
-# The manuscript left the public repository and the site on 2026-10-14: the
-# journal it is submitted to (ZfdG) publishes no text that has appeared in a
-# digital prior version. While this holds, its file must stay absent, and the
+# The manuscript left the public repository and the site on 2026-10-14 for a
+# journal submission (see the manuscript publication boundary in CLAUDE.md).
+# While this holds, its file must stay absent, and the
 # groups that read it check what they still can and say what they skip.
 MANUSCRIPT_WITHDRAWN = True
 

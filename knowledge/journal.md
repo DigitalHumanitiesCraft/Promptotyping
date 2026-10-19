@@ -1121,8 +1121,8 @@ Der externe Skill (v1.0.0) erfüllt den Methodenvertrag von A42 nicht vollständ
 
 ## 2026-10-19 - Prüfwerkzeuge auf den Manuskript-Rückzug eingestellt (korrigiert)
 
-Der Rückzug vom 2026-10-14 hatte die Prüfwerkzeuge nicht erfasst: `tools/check_consistency.py` brach mit `FileNotFoundError` auf der fehlenden Manuskriptdatei ab, 8 Tests schlugen fehl. Hintergrund ist die Zeitschrifteneinreichung, deren Artikelvereinbarung digital vorveröffentlichte Fassungen ausschließt.
+Der Rückzug vom 2026-10-14 hatte die Prüfwerkzeuge nicht erfasst: `tools/check_consistency.py` brach mit `FileNotFoundError` auf der fehlenden Manuskriptdatei ab, 8 Tests schlugen fehl. Hintergrund ist die Zeitschrifteneinreichung (Abschnitt Manuscript publication boundary in `CLAUDE.md`).
 
 `MANUSCRIPT_WITHDRAWN` hält den Rückzug im Prüfskript fest, die neue Gruppe V23 meldet eine zurückgekehrte Manuskriptdatei als Fehler. Paper-Adressen gelten als auflösend, weil sie auf den Verfügbarkeitshinweis führen; V5 und der Literaturabgleich von V11 sind mit sichtbarem Hinweis ausgesetzt. Der erste vollständige Lauf fand 7 tote Links aufs Manuskript und eine veraltete Bindung in `CLAUDE.md`; README Zeile 7 nannte das Repository noch Ort des Manuskripts. Alle Stellen sind korrigiert, Lauf und Tests sind grün.
 
-Ungeprüft und nicht geändert: 8 von 423 Manuskriptsätzen ab 90 Zeichen stehen wörtlich in Glossar und Abbildungsspezifikation; ob das als Vorfassung zählt, entscheidet der Autor.
+Nicht geändert: 8 Sätze des zurückgezogenen Manuskripts mit mindestens 90 Zeichen stehen wörtlich in `_content/glossar.md`, `data/glossar.json` und `assets/figures/specs/figure-01-promptotyping-method.md`; die Gesamtzahl der Vergleichssätze hängt am Satzsplitter. Ob das als Vorfassung zählt, entscheidet der Autor.

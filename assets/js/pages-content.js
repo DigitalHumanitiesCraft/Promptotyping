@@ -130,7 +130,8 @@
 
     /* The canonical skill comes from another host. It loads only once the
        Skills page is shown, so a visitor who never opens it makes no request
-       to GitHub, and the boot never waits for it: a blocked or slow GitHub
+       to raw.githubusercontent.com, and the boot never waits for it: a blocked
+       or slow raw.githubusercontent.com
        would otherwise hold back folding, module boot and hash resolution on
        every page. The host element stands already, so #skills-promptotyping
        resolves; a failed fetch shows the shared load error in the block alone. */
