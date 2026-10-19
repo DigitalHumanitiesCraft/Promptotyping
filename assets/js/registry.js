@@ -529,12 +529,12 @@
 
   function pageTitle(id) {
     if (id === NOT_FOUND_PAGE) {
-      return "Address not found — Promptotyping";
+      return "Address not found - Promptotyping";
     }
     var entry = entryFor(id);
     return id === HOME_PAGE || !entry
       ? "Promptotyping. Specification of the Method"
-      : entry.label + " — Promptotyping";
+      : entry.label + " - Promptotyping";
   }
 
   /* An id that names a part is shown by showing the page it sits in, so a caller
