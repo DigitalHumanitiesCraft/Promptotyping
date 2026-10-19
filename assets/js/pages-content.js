@@ -93,8 +93,8 @@
     });
     actions.appendChild(copy);
 
-    /* A cross-origin href ignores the download attribute, so the fetched text
-       is offered as a same-origin blob. */
+    /* The HTML standard honours the download attribute only for same-origin
+       URLs, so the fetched text is offered as a same-origin blob. */
     var download = document.createElement("a");
     download.href = URL.createObjectURL(new Blob([text], { type: "text/markdown" }));
     download.download = "SKILL.md";
@@ -128,9 +128,34 @@
       '<div class="skills-block" id="skills-coding"></div>' +
       '<div class="skills-block" id="skills-writing"></div>';
 
+    /* The canonical skill comes from another host. It loads only once the
+       Skills page is shown, so a visitor who never opens it makes no request
+       to GitHub, and the boot never waits for it: a blocked or slow GitHub
+       would otherwise hold back folding, module boot and hash resolution on
+       every page. The host element stands already, so #skills-promptotyping
+       resolves; a failed fetch shows the shared load error in the block alone. */
+    var skillRequested = false;
+    function loadSkill() {
+      if (skillRequested) {
+        return;
+      }
+      skillRequested = true;
+      document.removeEventListener("promptotyping:page-shown", onPageShown);
+      A.renderMarkdownInto("skills-promptotyping", SKILL_SOURCE, renderSkillPackage);
+    }
+    function onPageShown(event) {
+      if (event.detail && event.detail.page === "skills") {
+        loadSkill();
+      }
+    }
+    if (host.closest(".doc-page.is-active")) {
+      loadSkill();
+    } else {
+      document.addEventListener("promptotyping:page-shown", onPageShown);
+    }
+
     return Promise.all([
       A.renderMarkdownInto("skills-intro", "_content/skills/index.md"),
-      A.renderMarkdownInto("skills-promptotyping", SKILL_SOURCE, renderSkillPackage),
       A.renderMarkdownInto("skills-coding", "_content/skills/coding.md", renderSkillsBlock),
       A.renderMarkdownInto("skills-writing", "_content/skills/writing.md", renderSkillsBlock)
     ]);

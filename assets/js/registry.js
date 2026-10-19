@@ -552,6 +552,10 @@
       activePage = page;
       markNavActive(page);
       document.title = pageTitle(page);
+      // Content that must not load before its page is seen listens here.
+      document.dispatchEvent(new CustomEvent("promptotyping:page-shown", {
+        detail: { page: page }
+      }));
     }
     scrollToAnchor(anchor && anchor !== page ? anchor : null);
     if (moveFocus && changed) {

@@ -7,7 +7,7 @@ status: active
 language: en
 version: 0.8
 created: 2026-07-26
-updated: 2026-09-05
+updated: 2026-10-19
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Opus 5)
 method:
@@ -180,7 +180,7 @@ Under `tools/tests/` the checks are themselves held to their regression cases, r
 
 ### V15. Every relative Markdown link resolves
 
-**Claim.** Every relative Markdown link in the repository root, `knowledge/`, `_content/`, `skills/`, `research-artefacts/`, `snapshots/` and `handoffs/` points at a file that exists. External addresses stay out, they belong to the opt-in URL pass of V6; a fragment-only link is an anchor and belongs to V8. Grounded Vault anchors are checked by its own validator; imported source representations retain their original example links.
+**Claim.** Every relative Markdown link in the repository root, `knowledge/`, `_content/`, `research-artefacts/`, `snapshots/` and `handoffs/` points at a file that exists. External addresses stay out, they belong to the opt-in URL pass of V6; a fragment-only link is an anchor and belongs to V8. Grounded Vault anchors are checked by its own validator; imported source representations retain their original example links.
 
 **Why it matters.** A consolidation round deletes a document and can leave incoming links behind. The round of 2026-07-29/30 consolidated `paper-writing.md`, `paper-argument-map.md` and `submission-zfdg.md` into the document now named `paper-specification.md`; seven links to those three names survived until 2026-07-31. An eighth link in the design template mirror rendered an illustrative path into a file that never existed here. This group detects that failure mode after later consolidations and moves.
 
