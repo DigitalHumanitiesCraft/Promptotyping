@@ -4,7 +4,7 @@
 
 Promptotyping is an iterative, knowledge-driven method for developing project-specific digital research artefacts from structured research data and maintained project knowledge through Context Engineering and Agentic Engineering, organised around four recurrent forms of work (Preparation, Exploration, Distillation, Implementation). In the canonical repository convention, a `knowledge/` folder holds versioned Knowledge Documents for requirements, data, decisions, and domain knowledge. This curated knowledge artefact guides implementation, persists across sessions, and receives consequential findings through write-back. The method also permits another inspectable and revisable documentary environment. A Critical Expert in the Loop verifies LLM output at defined points.
 
-This repository is the public method portal and the repository of the method paper, which is written in [research-artefacts/promptotyping-paper.md](research-artefacts/promptotyping-paper.md). The portal at **https://dhcraft.org/Promptotyping/** integrates the specification, case evidence, tutorial, templates and canonical skill. It also serves the templates as stable, machine-readable addresses.
+This repository is the public method portal; the manuscript of the method paper is maintained separately (see below). The portal at **https://dhcraft.org/Promptotyping/** integrates the specification, case evidence, tutorial, templates and canonical skill. It also serves the templates as stable, machine-readable addresses.
 
 ## The method in brief
 

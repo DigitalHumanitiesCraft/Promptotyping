@@ -98,6 +98,8 @@ Under `tools/tests/` the checks are themselves held to their regression cases, r
 
 **Verdict, 2026-07-31.** Passes, re-keyed with the promotion of the four-chapter text. The check has now guarded three successive table cuts. It began on the seven-chapter text's project inventory (Table 1, section 5.2) with a per-project interface-type comparison; that comparison lapsed with the five-chapter text, which carried no per-case interface types, so the typology lives in the gallery data alone. The four-chapter text merged the former Table 2 (artefact forms) and Table 3 (cross-case findings) into Table 1 of section 3.2, which changed the header row and the column meanings while leaving the seven case names unchanged, so the card coupling survived the restructuring untouched. The first run of the earliest form, 2026-07-26, reported three missing projects, all of which gained cards.
 
+**Suspended, 2026-10-19.** The table left the repository with the manuscript on 2026-10-14 (V23). The group reports a note instead of comparing, and its regression cases run with the withdrawal lifted, so the coupling is ready once a manuscript returns.
+
 ### V6. Every address the gallery publishes resolves
 
 **Claim.** Every `repo_url`, `demo_url` and `video_url` on a card answers with an HTTP status below 400.
@@ -248,6 +250,8 @@ Under `tools/tests/` the checks are themselves held to their regression cases, r
 
 **Verdict, 2026-08-22.** Passes for version 0.9.1. The public announcement, the version 0.9 review copy, and dated historical records are intentionally outside this check.
 
+**Amended, 2026-10-19.** README stopped naming a manuscript version with the withdrawal of 2026-10-14 and left the carrier list; five carriers remain.
+
 ### V22. Overview and Application use canonical English addresses
 
 **Claim.** The public registry mounts Overview and Application from `_content/overview.md` and `_content/application.md`; their canonical hash and path forms are `#overview`, `#application`, `/overview`, and `/application`. The retired German forms remain resolvable aliases, but do not occur as canonical source files or visible machine addresses. The Overview contains one compact orientation treatment, and the Specification page presents the five parts without an additional index, status claim, taglines, or decorative separators.
@@ -257,6 +261,16 @@ Under `tools/tests/` the checks are themselves held to their regression cases, r
 **Procedure.** `tools/check_consistency.py` reads the registry, content frontmatter, route resolver, page render calls, and CSS contract. It requires the two English sources and addresses, the explicit `ueberblick` and `anwendung` alias map, the absence of the retired source files, and the compact page rules. Regression cases replace the canonical identifiers, remove an alias, point a source line back to German, or reintroduce one of the retired substrates. Browser verification then opens canonical and legacy hashes and subpaths, uses Browser Back, inspects both pages at desktop and narrow widths, and checks the console.
 
 **Verdict, 2026-08-25.** Passes. All four canonical forms and all four legacy forms resolve to the intended English route. The Overview status block ends at 853 pixels in a 1440 by 900 viewport, the Specification retains all five parts, both checked widths avoid horizontal overflow, and the browser console contains no warnings or errors.
+
+### V23. The withdrawn manuscript stays out of the repository
+
+**Claim.** While `MANUSCRIPT_WITHDRAWN` holds in `tools/check_consistency.py`, `research-artefacts/promptotyping-paper.md` is absent. Every address the router sends to the Paper page (`#abschnitt-*` and the `PAPER_ANCHOR` pattern of `registry.js`) counts as resolving, because it lands on the availability notice. The groups that read the manuscript say what they skip: V5 compares no case table, and V11 checks literature sources by their `ref-` prefix only.
+
+**Why it matters.** The manuscript was withdrawn on 2026-10-14 for a journal submission whose agreement excludes digital prior versions. A restored file would republish it with the next push, and a check that stopped on the missing file would leave every other group unchecked.
+
+**Procedure.** The group fails when the file exists. Regression cases restore a manuscript file, call the evidence group in the withdrawn state, and resolve a section anchor, `#literatur` and an unknown anchor. The paper inventory test in `tools/tests/test_paper_review.py` skips while the file is absent; `tools/paper_review.py --paper` runs the inventory on the author's copy.
+
+**Verdict, 2026-10-19.** Passes. Before this group, the consistency run ended in a `FileNotFoundError` on the missing file, and 8 tests failed (6 in `test_check_consistency.py`, 2 in `test_paper_review.py`). The first full run afterwards reported 9 failures (7 + 1 + 1): 7 dead links to the manuscript (README 1, `INDEX.md` 2, `project.md` 1, `specification.md` 3), `#literatur` in `CLAUDE.md` as an undeclared anchor, which the Paper-route rule above now resolves, and the stale `PAPER_ANCHOR_ALIASES` binding in `CLAUDE.md`. The links became plain text, README line 7 no longer calls the repository the manuscript's home, and the `CLAUDE.md` passage describes the withdrawn state.
 
 ## Browser verification, 2026-08-22
 

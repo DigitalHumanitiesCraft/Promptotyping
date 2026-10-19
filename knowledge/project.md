@@ -7,7 +7,7 @@ status: complete
 language: en
 version: 0.7
 created: 2026-05-09
-updated: 2026-09-05
+updated: 2026-10-19
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Opus 4.8)
 method:
@@ -48,7 +48,7 @@ The method portal primarily mirrors knowledge. Its material basis is stated comp
 
 Four source types feed the site.
 
-**The Pollin 2026 paper.** The scholarly method text, *Promptotyping. Translating Research Data into Research Artefacts through Context Engineering and Agentic Engineering*. It is the single English Markdown Research Artefact [promptotyping-paper.md](../research-artefacts/promptotyping-paper.md) in a two-document model, with everything decided, checked and still open about it held in [paper-specification.md](paper-specification.md). The current state is version 0.9.1, a four-chapter author-review draft established on 2026-08-22 from the revisions following the publicly circulated version 0.9. Version 1.0 requires complete author acceptance under the sentence-level protocol in `paper-specification.md`. The site renders the Research Artefact from its deployed commit; the working repository owns the canonical source, and deployment parity is verified separately. The chosen venue is the Zeitschrift für digitale Geisteswissenschaften (ZfdG); the submission package derives fresh from the submission section of `paper-specification.md` and the final text at submission time. Three earlier steering documents were consolidated into `paper-specification.md` and deleted with commit pins, `paper-writing.md`, `paper-argument-map.md` and `submission-zfdg.md`; their wording lives in the git history.
+**The Pollin 2026 paper.** The scholarly method text, *Promptotyping. Translating Research Data into Research Artefacts through Context Engineering and Agentic Engineering*. It is the single English Markdown Research Artefact `promptotyping-paper.md` in a two-document model, with everything decided, checked and still open about it held in [paper-specification.md](paper-specification.md). The current state is version 0.9.1, a four-chapter author-review draft established on 2026-08-22 from the revisions following the publicly circulated version 0.9. Version 1.0 requires complete author acceptance under the sentence-level protocol in `paper-specification.md`. The site renders the Research Artefact from its deployed commit; the working repository owns the canonical source, and deployment parity is verified separately. The chosen venue is the Zeitschrift für digitale Geisteswissenschaften (ZfdG); the submission package derives fresh from the submission section of `paper-specification.md` and the final text at submission time. Three earlier steering documents were consolidated into `paper-specification.md` and deleted with commit pins, `paper-writing.md`, `paper-argument-map.md` and `submission-zfdg.md`; their wording lives in the git history.
 
 **Vault templates and convention.** The template catalogue under `Vault Operations/Templates/Promptotyping/` and the convention under `Vault Operations/Konventionen/Konvention Promptotyping Documents.md` are the source of truth in the vault. Function names and subject prefixes are English. The public mirrors preserve their established URLs and anchors while adopting the current naming contract and template versions.
 

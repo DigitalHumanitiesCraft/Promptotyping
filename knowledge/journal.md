@@ -1114,6 +1114,15 @@ Offen bleiben als Flags 10 bis 12 der Promptotype-Status der Korpusfälle, die F
 
 Christian Steiner und Christopher Pollin haben abgesprochen, dass der kanonische Promptotyping-Skill in `DigitalHumanitiesCraft/promptotyping-skill` gepflegt wird; Christian Steiner hat das am 2026-10-19 als Operator-Entscheidung übergeben. Das korrigiert den Eintrag vom 2026-08-22, nach dem `skills/promptotyping/` in diesem Repository die kanonische Fassung war. Offener Anlass war Issue #4.
 
-Der Ordner `skills/` ist entfernt; sein letzter Stand liegt in der Git-History unter `3230c91`. Die Skills-Seite lädt `promptotyping/SKILL.md` zur Laufzeit aus dem Skill-Repository, setzt dessen paketrelative Links auf das Skill-Repository um und bietet den Download als Blob an. A42, V18, `architecture.md`, `INDEX.md`, `plan.md`, README, `CLAUDE.md` und `_content/skills/index.md` verweisen auf das Skill-Repository. `check_skill_package` prüft jetzt die Anbindung und meldet eine lokale Kopie als Fehler.
+Der Ordner `skills/` ist entfernt; sein letzter Stand liegt in der Git-History unter `3230c91`. Die Skills-Seite lädt `promptotyping/SKILL.md` aus dem Skill-Repository, setzt dessen paketrelative Links auf das Skill-Repository um und bietet den Download als Blob an. Der Abruf startet erst, wenn die Skills-Seite gezeigt wird (Ereignis `promptotyping:page-shown`), und hält den Boot nicht auf; das Begriffsregister lässt den externen Text aus. Beides kam aus zwei Review-Runden. A42, V18, `architecture.md`, `INDEX.md`, `plan.md`, README, `CLAUDE.md` und `_content/skills/index.md` verweisen auf das Skill-Repository. `check_skill_package` prüft jetzt die Anbindung und meldet eine lokale Kopie als Fehler.
 
 Der externe Skill (v1.0.0) erfüllt den Methodenvertrag von A42 nicht vollständig: sechs statt vier Operationen, `compact` mit `journal-archive.md`, keine `handoff.md`-Inbox, ältere Begriffe. Auf Operator-Entscheidung verweist die Spezifikation trotzdem schon jetzt auf ihn; die Angleichung steht in promptotyping-skill#2.
+
+
+## 2026-10-19 - Prüfwerkzeuge auf den Manuskript-Rückzug eingestellt (korrigiert)
+
+Der Rückzug vom 2026-10-14 hatte die Prüfwerkzeuge nicht erfasst: `tools/check_consistency.py` brach mit `FileNotFoundError` auf der fehlenden Manuskriptdatei ab, 8 Tests schlugen fehl. Hintergrund ist die Zeitschrifteneinreichung, deren Artikelvereinbarung digital vorveröffentlichte Fassungen ausschließt.
+
+`MANUSCRIPT_WITHDRAWN` hält den Rückzug im Prüfskript fest, die neue Gruppe V23 meldet eine zurückgekehrte Manuskriptdatei als Fehler. Paper-Adressen gelten als auflösend, weil sie auf den Verfügbarkeitshinweis führen; V5 und der Literaturabgleich von V11 sind mit sichtbarem Hinweis ausgesetzt. Der erste vollständige Lauf fand 7 tote Links aufs Manuskript und eine veraltete Bindung in `CLAUDE.md`; README Zeile 7 nannte das Repository noch Ort des Manuskripts. Alle Stellen sind korrigiert, Lauf und Tests sind grün.
+
+Ungeprüft und nicht geändert: 8 von 423 Manuskriptsätzen ab 90 Zeichen stehen wörtlich in Glossar und Abbildungsspezifikation; ob das als Vorfassung zählt, entscheidet der Autor.

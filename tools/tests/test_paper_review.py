@@ -56,6 +56,10 @@ class InventoryTest(unittest.TestCase):
         self.assertEqual(result["references"], 1)
         self.assertEqual(result["footnotes"], 1)
 
+    # The manuscript left the public repository on 2026-10-14; the inventory
+    # then runs on the author's copy through --paper, outside this suite.
+    @unittest.skipUnless(paper_review.PAPER.exists(),
+                         "manuscript withdrawn from the repository")
     def test_current_paper_has_expected_review_sections(self):
         inventory = paper_review.build_inventory()
         section_ids = {section.id for section in inventory.sections}
@@ -67,8 +71,12 @@ class InventoryTest(unittest.TestCase):
         self.assertGreater(inventory.footnotes, 30)
 
     def test_inventory_is_deterministic(self):
-        first = paper_review.build_inventory()
-        second = paper_review.build_inventory()
+        path = self.fixture(
+            "# Title\n\n## 1. Introduction\n\nOne claim.[^1] Another, et al. 2025.\n\n"
+            "## References\n\n- One reference.\n\n[^1]: One note.\n"
+        )
+        first = paper_review.build_inventory(path)
+        second = paper_review.build_inventory(path)
         self.assertEqual(first, second)
 
 

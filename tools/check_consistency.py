@@ -61,10 +61,16 @@ PROJECT = KNOWLEDGE_DIR / "project.md"
 TECHNOLOGY_BASELINE = CONTENT_DIR / "technology-baseline.md"
 VAULT_STATE = ROOT / "vault" / "knowledge" / "state.md"
 
+# The manuscript left the public repository and the site on 2026-10-14: the
+# journal it is submitted to (ZfdG) publishes no text that has appeared in a
+# digital prior version. While this holds, its file must stay absent, and the
+# groups that read it check what they still can and say what they skip.
+MANUSCRIPT_WITHDRAWN = True
+
 CURRENT_PAPER_VERSION = "0.9.1"
+# README stopped naming the manuscript version with the withdrawal.
 PAPER_VERSION_CLAIMS = (
     (CLAUDE_MD, "Version 0.9.1 (Author-Review-Draft)"),
-    (README, "version 0.9.1, an author-review draft"),
     (PROJECT, "current state is version 0.9.1"),
     (PAPER_SPECIFICATION, "**Manuscript version:** 0.9.1"),
     (TECHNOLOGY_BASELINE, "version 0.9.1, author-review draft"),
@@ -320,7 +326,7 @@ def check_portal_paths() -> None:
     """
     surfaces = (
         ("overview", OVERVIEW,
-         ("#application", "#paper", "#use-cases", "#vault", "#tutorial",
+         ("#application", "#use-cases", "#vault", "#tutorial",
           "#skills-promptotyping", "#vorlagen")),
         ("understand", APPLICATION,
          ("#paper", "#use-cases", "#vault", "#tutorial",
@@ -555,6 +561,10 @@ def check_evidence_reachable(data):
     has to find the project. This is the condition the gallery exists for, and
     it held for ten of thirteen projects until 2026-07-26.
     """
+    if MANUSCRIPT_WITHDRAWN:
+        note("evidence: the case table lives in the withdrawn manuscript; "
+             "paper_row claims are not checked against it")
+        return
     table = paper_case_table()
     if not table:
         return
@@ -642,7 +652,10 @@ def reference_ids():
     Port of indexReferences in assets/js/pages-paper.js. The id of an entry is
     the surname of its first author with the year, and the first entry to claim
     a key keeps it. Without this the ref- prefix alone would pass any string.
+    None while the manuscript is withdrawn, since its list is not here.
     """
+    if MANUSCRIPT_WITHDRAWN:
+        return None
     text = read_text(PAPER)
     if "## References" not in text:
         return set()
@@ -693,6 +706,9 @@ def check_glossar_sources(anchors):
     wrong family, and a reference key that no entry of the paper's list mints.
     """
     refs = reference_ids()
+    if refs is None:
+        note("glossar: literature sources are checked by their ref- prefix only; "
+             "the reference list left with the withdrawn manuscript")
     data = load_json(GLOSSAR_JSON)
     categories = glossar_categories(data["_meta"])
     for entry in data["eintraege"]:
@@ -723,7 +739,7 @@ def check_glossar_sources(anchors):
                 fail("glossar", "%s calls #%s a %s source; those carry the prefix %r"
                      % (slug, anchor, typ, prefix))
             if typ == "literature":
-                if anchor not in refs:
+                if refs is not None and anchor not in refs:
                     fail("glossar", "%s cites #%s; the reference list of the paper "
                                     "mints no such id" % (slug, anchor))
             elif not is_declared(anchor, anchors):
@@ -952,7 +968,10 @@ def declared_anchors(js_texts):
     overrides = js_string_map(by_name["markdown.js"], "HEADING_ID_OVERRIDES")
     konzept_aliases = js_string_map(by_name["pages-glossar.js"], "KONZEPT_ALIASES")
     praxis_aliases = js_string_map(by_name["pages-content.js"], "PRAXIS_ALIASES")
-    paper_aliases = js_string_map(by_name["pages-paper.js"], "PAPER_ANCHOR_ALIASES")
+    # pages-paper.js shrank to the availability notice with the withdrawal and
+    # carries no alias table any more.
+    paper_aliases = ({} if MANUSCRIPT_WITHDRAWN else
+                     js_string_map(by_name["pages-paper.js"], "PAPER_ANCHOR_ALIASES"))
 
     anchors = set(registry_pages(by_name["registry.js"]))
     anchors.update(route_aliases(by_name["registry.js"]))
@@ -976,8 +995,8 @@ def declared_anchors(js_texts):
     anchors.update(praxis_ids)
     anchors.update(praxis_aliases)
 
-    paper_ids = unique_ids([heading_id(h, overrides)
-                            for h in markdown_headings(PAPER, (1, 2, 3, 4, 5, 6))])
+    paper_ids = [] if MANUSCRIPT_WITHDRAWN else unique_ids(
+        [heading_id(h, overrides) for h in markdown_headings(PAPER, (1, 2, 3, 4, 5, 6))])
     anchors.update(paper_ids)
     anchors.update(paper_aliases)
 
@@ -1017,7 +1036,25 @@ def declared_anchors(js_texts):
 GENERATED_PREFIXES = ("figure-", "ref-", "fn-", "fnref-")
 
 
+_paper_route = []
+
+
+def routes_to_paper(anchor):
+    """The anchor is one pageForAnchor sends to the Paper page.
+
+    That is the abschnitt- family and the PAPER_ANCHOR pattern of registry.js,
+    read once from the same file the site routes by.
+    """
+    if not _paper_route:
+        _paper_route.append(paper_anchor_pattern(read_text(JS_DIR / "registry.js")))
+    return anchor.startswith(PAPER_SECTION_PREFIX) or bool(_paper_route[0].search(anchor))
+
+
 def is_declared(anchor, anchors):
+    # While the manuscript is withdrawn, every address the router sends to the
+    # Paper page lands on its availability notice, so those resolve as a whole.
+    if MANUSCRIPT_WITHDRAWN and routes_to_paper(anchor):
+        return True
     return anchor in anchors or anchor.startswith(GENERATED_PREFIXES)
 
 
@@ -1475,6 +1512,15 @@ def check_relative_links():
                  % (path.relative_to(ROOT).as_posix(), target))
 
 
+def check_manuscript_boundary() -> None:
+    """The withdrawn manuscript stays out of the public repository."""
+    if MANUSCRIPT_WITHDRAWN and PAPER.exists():
+        shown = (PAPER.relative_to(ROOT).as_posix()
+                 if PAPER.is_relative_to(ROOT) else str(PAPER))
+        fail("manuscript", "%s is back in the repository, but the manuscript is "
+             "withdrawn (journal submission, 2026-10-14)" % shown)
+
+
 def check_paper_version_claims() -> None:
     """Keep every active manuscript-status carrier on one declared version."""
 
@@ -1522,6 +1568,7 @@ def main() -> int:
         check_portal_paths,
         check_english_route_contract,
         check_paper_version_claims,
+        check_manuscript_boundary,
     ]
     if "--check-urls" in sys.argv:
         groups.append(lambda: check_urls(cases))

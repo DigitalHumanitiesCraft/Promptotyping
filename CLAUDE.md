@@ -101,7 +101,7 @@ Die nicht aktiven Seiten bleiben als `display: none` im DOM. Das ist die Bedingu
 - Konvention: `#konvention-v0.1`
 - Glossar: `#glossar`
 - Literatur: `#literatur`
-- Paper-Sektionen: `#abschnitt-{n}-{slug}` (z.B. `#abschnitt-2-promptotyping-as-a-method`). Die Site rendert `research-artefacts/promptotyping-paper.md` direkt und erzeugt die Anker beim Rendern; unter `_content/paper/` liegt nichts mehr. Jede Umgliederung des Papers verschiebt Anker, deshalb wird die Aliaskarte `PAPER_ANCHOR_ALIASES` in `assets/js/pages-paper.js` vollständig neu gezielt und nicht bloß ergänzt; sie ist flach und löst nicht transitiv auf.
+- Paper-Sektionen: `#abschnitt-{n}-{slug}` (z.B. `#abschnitt-2-promptotyping-as-a-method`). Seit dem Rückzug des Manuskripts am 2026-10-14 führen diese Anker, `#literatur` und die übrigen Paper-Anker auf den Verfügbarkeitshinweis der Paper-Seite; `assets/js/pages-paper.js` rendert keinen Manuskripttext und führt keine Aliaskarte mehr. `tools/check_consistency.py` meldet es als Fehler, wenn `research-artefacts/promptotyping-paper.md` wieder im Repo liegt (`MANUSCRIPT_WITHDRAWN`).
 - Overview: `#overview`, Subpath `/overview`; `#ueberblick` und `/ueberblick` bleiben Legacy-Aliasse. Use Cases: `#use-cases`; Paper: `#paper`; Worked Workflow: `#workflow`; Best Practices: `#praxis`, Praxis-Einträge: `#praxis-{slug}`; Skills: `#skills`, `#skills-promptotyping` und `#skills-{slug}` (A13 bis A15, A42); Arbeitsumgebung: `#arbeitsumgebung`, Subpath `/arbeitsumgebung` (A17); Tutorial: `#tutorial`, Subpath `/tutorial` (A31)
 
 Anker dürfen nicht ohne Diskussion umbenannt werden — Repos können auf sie als `template:`-URI verlinken.

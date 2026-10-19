@@ -431,7 +431,15 @@ class GalleryTest(CheckCase):
 
 
 class EvidenceReachabilityTest(CheckCase):
-    """V5, coupling the paper table to gallery cards in both directions."""
+    """V5, coupling the paper table to gallery cards in both directions.
+
+    The coupling applies once a manuscript is back in the repository, so these
+    cases run with the withdrawal lifted.
+    """
+
+    def setUp(self) -> None:
+        super().setUp()
+        self.patch("MANUSCRIPT_WITHDRAWN", False)
 
     def paper_with_cases(self, *names: str) -> None:
         separator = "| --- | --- | --- | --- | --- |"
@@ -457,6 +465,31 @@ class EvidenceReachabilityTest(CheckCase):
                                 {"id": "two", "paper_row": "Alpha"}]}
         cc.check_evidence_reachable(data)
         self.assertIn("both claim", self.only_failure())
+
+
+class ManuscriptBoundaryTest(CheckCase):
+    """The withdrawn manuscript stays absent, and the groups that read it say so."""
+
+    def test_the_current_repository_passes(self) -> None:
+        cc.check_manuscript_boundary()
+        self.assertEqual(cc.failures, [])
+
+    def test_a_returned_manuscript_fails(self) -> None:
+        self.patch("PAPER", self.write(self.tempdir() / "promptotyping-paper.md", "# Paper\n"))
+        cc.check_manuscript_boundary()
+        self.assertIn("withdrawn", self.only_failure())
+
+    def test_evidence_is_skipped_with_a_note(self) -> None:
+        cc.notes.clear()
+        self.addCleanup(cc.notes.clear)
+        cc.check_evidence_reachable({"caseStudies": [{"id": "alpha", "paper_row": "Alpha"}]})
+        self.assertEqual(cc.failures, [])
+        self.assertTrue(any("withdrawn manuscript" in n for n in cc.notes), cc.notes)
+
+    def test_paper_anchors_resolve_to_the_notice(self) -> None:
+        self.assertTrue(cc.is_declared("abschnitt-4-1-evidential-scope", set()))
+        self.assertTrue(cc.is_declared("literatur", set()))
+        self.assertFalse(cc.is_declared("no-such-anchor", set()))
 
 
 class GlossaryMirrorTest(CheckCase):
