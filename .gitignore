@@ -9,5 +9,6 @@ __pycache__/
 .obsidian/
 vault/review-batch-*.jsonl
 
-# Machine-local Claude Code settings
+# Machine-local Claude Code settings and agent memory
 .claude/settings.local.json
+.claude/agent-memory/
