@@ -43,6 +43,21 @@
     }).filter(function (t) { return t; });
   }
 
+  /* A block marked data-term-index-skip holds content from another repository
+     that loads after the scan or not at all (the canonical skill, A42). Its
+     text is subtracted whether it has arrived or not, so the register does not
+     depend on the entry route or the network. */
+  function pageText(el) {
+    var text = el.textContent || "";
+    el.querySelectorAll("[data-term-index-skip]").forEach(function (skip) {
+      var part = skip.textContent || "";
+      if (part) {
+        text = text.replace(part, " ");
+      }
+    });
+    return text;
+  }
+
   /* One lowercased text snapshot per page, taken once. The paper alone is well
      over a hundred kilobytes, so the terms are matched against these strings
      rather than walking the DOM per term. */
@@ -57,7 +72,7 @@
       if (!el) {
         return;
       }
-      out.push({ id: p.id, label: p.label, text: (el.textContent || "").toLowerCase() });
+      out.push({ id: p.id, label: p.label, text: pageText(el).toLowerCase() });
     });
     return out;
   }

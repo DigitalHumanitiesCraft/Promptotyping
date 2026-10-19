@@ -93,8 +93,8 @@
     });
     actions.appendChild(copy);
 
-    /* The HTML standard honours the download attribute only for same-origin
-       URLs, so the fetched text is offered as a same-origin blob. */
+    /* Browsers ignore the download attribute on a cross-origin link, so the
+       fetched text is offered as a same-origin blob. */
     var download = document.createElement("a");
     download.href = URL.createObjectURL(new Blob([text], { type: "text/markdown" }));
     download.download = "SKILL.md";
@@ -124,7 +124,7 @@
     host.classList.remove("placeholder-section");
     host.innerHTML =
       '<div id="skills-intro"></div>' +
-      '<div class="skills-block" id="skills-promptotyping"></div>' +
+      '<div class="skills-block" id="skills-promptotyping" data-term-index-skip></div>' +
       '<div class="skills-block" id="skills-coding"></div>' +
       '<div class="skills-block" id="skills-writing"></div>';
 
