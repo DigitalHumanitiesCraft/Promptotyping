@@ -35,7 +35,7 @@ Two introductions to the method (German): the methodology explainer [Promptotypi
 | Curated case studies | [data/case-studies.json](data/case-studies.json), depth pages in [_content/case-studies/](_content/case-studies/) | [#use-cases](https://dhcraft.org/Promptotyping/#use-cases) |
 | Guided first iteration | [_content/tutorial.md](_content/tutorial.md) | [#tutorial](https://dhcraft.org/Promptotyping/#tutorial) |
 | Method extensions from practice | [_content/praxis.md](_content/praxis.md) | [#praxis](https://dhcraft.org/Promptotyping/#praxis) |
-| Canonical Promptotyping skill | [skills/promptotyping/](skills/promptotyping/) | [#skills-promptotyping](https://dhcraft.org/Promptotyping/#skills-promptotyping) |
+| Canonical Promptotyping skill | [DigitalHumanitiesCraft/promptotyping-skill](https://github.com/DigitalHumanitiesCraft/promptotyping-skill) (own repository) | [#skills-promptotyping](https://dhcraft.org/Promptotyping/#skills-promptotyping) |
 | Reusable system prompts (coding, writing) | [_content/skills/](_content/skills/) | [#skills](https://dhcraft.org/Promptotyping/#skills) |
 | Glossary | [data/glossar.json](data/glossar.json), [_content/glossar.md](_content/glossar.md) | [#glossar](https://dhcraft.org/Promptotyping/#glossar) |
 | Durable site knowledge base (self-application) | [knowledge/](knowledge/) | — |
@@ -111,7 +111,6 @@ snapshots/        dated reports and audits
 handoffs/         exceptional dated transition snapshots
 schema/           JSON Schema of the frontmatter core
 tools/            consistency check, glossary build, paper review inventory, tests
-skills/           canonical Promptotyping skill
 _content/         Markdown content (method pages, templates, case studies, glossary)
 assets/           CSS, JS, vendored libraries, fonts, logo
 data/             JSON data (case studies, glossary, template table, vault index)

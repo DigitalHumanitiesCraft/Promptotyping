@@ -73,7 +73,7 @@ The method paper follows a two-document model. The canonical text is the Researc
   The [SZD rehearsal preparation record](../snapshots/benchmark-szd-rehearsal-preparation-2026-09-05.md) records the local real-data package and technical input checks, without claiming a completed study.
 - `handoffs/` contains the exceptional dated transition snapshot [promptotyping-vault-migration-handoff-2026-08-09.md](../handoffs/promptotyping-vault-migration-handoff-2026-08-09.md). It does not replace the live inbox.
 - `_content/` contains authored publication pages and the stable public template mirrors. Generated mirrors such as `_content/glossar.md` are rebuilt from their declared source.
-- `skills/promptotyping/` contains the portable canonical skill. The Skills page renders its `SKILL.md` directly and exposes the complete package source.
+- The canonical skill is not in this repository. It is maintained in [DigitalHumanitiesCraft/promptotyping-skill](https://github.com/DigitalHumanitiesCraft/promptotyping-skill); the Skills page fetches and renders its `SKILL.md` (A42).
 - `data/` is the established runtime-data area. Generated members name their producing command in the governing documentation; `data/vault.json` is built by `vault/tools/build_site_index.py`.
 
 ### The revision rounds

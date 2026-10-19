@@ -43,9 +43,12 @@ KNOWLEDGE_DIR = ROOT / "knowledge"
 VAULT_SOURCES = ROOT / "vault" / "00_sources"
 JS_DIR = ROOT / "assets" / "js"
 NOT_FOUND = ROOT / "404.html"
-SKILL_DIR = ROOT / "skills" / "promptotyping"
-SKILL_MD = SKILL_DIR / "SKILL.md"
-SKILL_UI = SKILL_DIR / "agents" / "openai.yaml"
+# The canonical skill lives in its own repository (A42, 2026-10-19); this
+# repository links to it and must not grow a second copy.
+SKILL_DIR = ROOT / "skills"
+SKILL_REPOSITORY = "https://github.com/DigitalHumanitiesCraft/promptotyping-skill"
+SKILL_SOURCE = ("https://raw.githubusercontent.com/DigitalHumanitiesCraft/"
+                "promptotyping-skill/main/promptotyping/SKILL.md")
 SKILLS_INDEX = CONTENT_DIR / "skills" / "index.md"
 PAGES_CONTENT = JS_DIR / "pages-content.js"
 CASE_FILTER = JS_DIR / "modules" / "case-study-filter.js"
@@ -125,7 +128,6 @@ NORMATIVE_FILES = (
     KNOWLEDGE_DIR / "plan.md",
     KNOWLEDGE_DIR / "project.md",
     KNOWLEDGE_DIR / "specification.md",
-    SKILL_MD,
 )
 
 failures = []
@@ -282,42 +284,31 @@ def check_catalogue_contract(documents):
 
 
 def check_skill_package() -> None:
-    """The canonical skill and its public access path form one package."""
-    required_files = (SKILL_MD, SKILL_UI, SKILLS_INDEX, PAGES_CONTENT)
+    """The site renders and links the canonical skill from its own repository.
+
+    Whether the skill meets the method contract of A42 is not decidable here,
+    since its source lives elsewhere; the open deviations are tracked in
+    promptotyping-skill#2.
+    """
+    required_files = (SKILLS_INDEX, PAGES_CONTENT)
     missing = [path for path in required_files if not path.is_file()]
     for path in missing:
         fail("skill", "%s is missing" % path.relative_to(ROOT).as_posix())
     if missing:
         return
 
-    skill = read_text(SKILL_MD)
-    frontmatter = re.match(r"^---\n(.*?)\n---(?:\n|$)", skill, re.S)
-    if not frontmatter or not re.search(
-            r"^name:[ \t]*promptotyping[ \t]*$", frontmatter.group(1), re.M):
-        fail("skill", "skills/promptotyping/SKILL.md has no promptotyping name")
-
-    operations = ("Orient", "Distill", "Handoff", "Compact")
-    for operation in operations:
-        if not re.search(r"^## %s[ \t]*$" % operation, skill, re.M):
-            fail("skill", "SKILL.md misses the %s operation" % operation)
-    if re.search(r"^## Integrate\b", skill, re.M):
-        fail("skill", "SKILL.md defines the excluded Integrate operation")
-
-    orient = re.search(r"^## Orient\n(.*?)(?=^## |\Z)", skill, re.M | re.S)
-    if orient:
-        carriers = ("knowledge/INDEX.md", "knowledge/handoff.md", "knowledge/journal.md")
-        positions = [orient.group(1).find(carrier) for carrier in carriers]
-        if -1 in positions or positions != sorted(positions):
-            fail("skill", "Orient does not read INDEX, Handoff, and Journal in order")
+    if SKILL_DIR.exists():
+        fail("skill", "%s/ exists, but the canonical skill lives in %s"
+             % (SKILL_DIR.name, SKILL_REPOSITORY))
 
     page = read_text(PAGES_CONTENT)
-    for marker in ('id="skills-promptotyping"', '"skills/promptotyping/SKILL.md"'):
+    for marker in ('id="skills-promptotyping"', '"%s"' % SKILL_SOURCE):
         if marker not in page:
             fail("skill", "pages-content.js misses %s" % marker)
-    if "#skills-promptotyping" not in read_text(SKILLS_INDEX):
-        fail("skill", "the Skills index does not link to #skills-promptotyping")
-    if "$promptotyping" not in read_text(SKILL_UI):
-        fail("skill", "agents/openai.yaml default prompt does not invoke $promptotyping")
+    index = read_text(SKILLS_INDEX)
+    for marker in ("#skills-promptotyping", SKILL_REPOSITORY):
+        if marker not in index:
+            fail("skill", "the Skills index does not link to %s" % marker)
 
 
 def check_portal_paths() -> None:

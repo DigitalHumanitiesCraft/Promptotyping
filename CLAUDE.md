@@ -51,7 +51,6 @@ Die Site soll ruhig sein. Konkret bedeutet das beim Coden:
 ├── CLAUDE.md                   # Diese Datei (Action-Layer)
 ├── knowledge/                  # Dauerhafte Knowledge Documents
 │   └── handoff.md              # Verpflichtende Process Inbox
-├── skills/                     # Portabler kanonischer Promptotyping-Skill
 ├── research-artefacts/         # Wissenschaftliche Outputs, darunter das Paper
 ├── source-material/            # Übernommene Quellen und Transkripte
 ├── snapshots/                  # Datierte Reports und Audits
@@ -119,7 +118,7 @@ Anker dürfen nicht ohne Diskussion umbenannt werden — Repos können auf sie a
 
 - **Nicht aus dem Vault zitieren ohne Markdown-Link.** Vault-interne Wikilinks (`[[CLAUDE]]`) bedeuten im Repo nichts.
 - **Nicht das alte Living-Paper-Material reaktivieren.** Alles, was im November-2025-Stand war, ist gelöscht. Wer alte Module wiederbeleben will, beginnt einen Neu-Diskurs.
-- **Die Site ist englisch.** Der Durchgang ist am 2026-07-26 gelaufen (Operator-Entscheidung 2026-07-25, journal.md, Sprachentscheidung). Englisch sind Shell, Bedienelemente, die Seitentexte direkt unter `_content/` und die Textfelder der Datendateien unter `data/`. Deutsch geblieben sind die Vorlagen und die Dateien unter `_content/skills/` als Unterrichtsmaterial. Der portable Skill unter `skills/promptotyping/` ist als maschinenadressierte Action-Layer-Quelle englisch. Alle Vorlagen außer `technology` sind Vault-Spiegel, deren Übersetzung in eine Vault-Sitzung gehört; die Vorlage `technology` ist seit dem 2026-07-26 im Repo kanonisch und bleibt deutsch, damit der Katalog einsprachig bleibt. Die Fall-Tiefenseiten unter `_content/case-studies/` sind ebenfalls englisch; der Durchgang ist damit abgeschlossen. Die publizierten Anker bleiben deutsch, weil fremde Repos sie als `template:`-URI führen, ebenso die Vorlagennamen als Identifikatoren.
+- **Die Site ist englisch.** Der Durchgang ist am 2026-07-26 gelaufen (Operator-Entscheidung 2026-07-25, journal.md, Sprachentscheidung). Englisch sind Shell, Bedienelemente, die Seitentexte direkt unter `_content/` und die Textfelder der Datendateien unter `data/`. Deutsch geblieben sind die Vorlagen und die Dateien unter `_content/skills/` als Unterrichtsmaterial. Der kanonische Skill liegt seit dem 2026-10-19 in einem eigenen Repository, `DigitalHumanitiesCraft/promptotyping-skill` (A42); die Skills-Seite lädt ihn von dort. Lege hier keine Kopie an. Alle Vorlagen außer `technology` sind Vault-Spiegel, deren Übersetzung in eine Vault-Sitzung gehört; die Vorlage `technology` ist seit dem 2026-07-26 im Repo kanonisch und bleibt deutsch, damit der Katalog einsprachig bleibt. Die Fall-Tiefenseiten unter `_content/case-studies/` sind ebenfalls englisch; der Durchgang ist damit abgeschlossen. Die publizierten Anker bleiben deutsch, weil fremde Repos sie als `template:`-URI führen, ebenso die Vorlagennamen als Identifikatoren.
 - **Keine Module außer Frontmatter-Inspector, Case-Study-Filter, Begriffsregister und Vault-Ansicht.** Das Begriffsregister (A25, seit 2026-07-26) vertritt die abgelehnte Volltextsuche. Die Vault-Ansicht ist seit der Operator-Entscheidung 2026-07-25 in Scope; Context-Rot-Viz und Sycophancy-Trap bleiben es nicht.
 - **Keine Branches.** Alle Änderungen direkt auf `main`. (Das ist Christopher Pollins explizite Wahl, dokumentiert in journal.md.)
 

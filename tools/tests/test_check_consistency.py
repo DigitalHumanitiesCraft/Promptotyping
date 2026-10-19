@@ -220,14 +220,12 @@ class NamingContractTest(CheckCase):
 
 
 class SkillPackageTest(CheckCase):
-    """V18, the portable source and the site surface stay connected."""
+    """V18, the site surface stays connected to the external canonical skill."""
 
     def setUp(self) -> None:
         super().setUp()
         root = self.tempdir()
         fixtures = {
-            "SKILL_MD": cc.SKILL_MD,
-            "SKILL_UI": cc.SKILL_UI,
             "SKILLS_INDEX": cc.SKILLS_INDEX,
             "PAGES_CONTENT": cc.PAGES_CONTENT,
         }
@@ -235,29 +233,30 @@ class SkillPackageTest(CheckCase):
             target = root / source.relative_to(cc.ROOT)
             self.write(target, source.read_text(encoding="utf-8"))
             self.patch(name, target)
+        self.patch("SKILL_DIR", root / "skills")
 
-    def test_the_current_package_passes(self) -> None:
+    def test_the_current_surface_passes(self) -> None:
         cc.check_skill_package()
         self.assertEqual(cc.failures, [])
 
-    def test_a_missing_operation_fails(self) -> None:
-        text = cc.SKILL_MD.read_text(encoding="utf-8").replace("## Compact", "## Condense")
-        cc.SKILL_MD.write_text(text, encoding="utf-8")
+    def test_a_local_skill_copy_fails(self) -> None:
+        self.write(cc.SKILL_DIR / "promptotyping" / "SKILL.md", "---\nname: promptotyping\n---\n")
         cc.check_skill_package()
-        self.assertIn("Compact operation", self.only_failure())
-
-    def test_an_integrate_operation_fails(self) -> None:
-        with cc.SKILL_MD.open("a", encoding="utf-8") as handle:
-            handle.write("\n## Integrate\n")
-        cc.check_skill_package()
-        self.assertIn("excluded Integrate", self.only_failure())
+        self.assertIn("lives in", self.only_failure())
 
     def test_a_disconnected_site_surface_fails(self) -> None:
         text = cc.PAGES_CONTENT.read_text(encoding="utf-8").replace(
-            '"skills/promptotyping/SKILL.md"', '"skills/missing/SKILL.md"')
+            cc.SKILL_SOURCE, "skills/promptotyping/SKILL.md")
         cc.PAGES_CONTENT.write_text(text, encoding="utf-8")
         cc.check_skill_package()
         self.assertIn("pages-content.js", self.only_failure())
+
+    def test_a_missing_repository_link_fails(self) -> None:
+        text = cc.SKILLS_INDEX.read_text(encoding="utf-8").replace(
+            cc.SKILL_REPOSITORY, "https://example.org/skill")
+        cc.SKILLS_INDEX.write_text(text, encoding="utf-8")
+        cc.check_skill_package()
+        self.assertIn("Skills index", self.only_failure())
 
 
 class PortalPathsTest(CheckCase):

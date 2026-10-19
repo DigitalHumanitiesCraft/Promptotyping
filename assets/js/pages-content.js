@@ -57,8 +57,29 @@
     A.addCodeCopyButtons(el);
   }
 
-  function renderSkillPackage(el, source, text) {
+  /* The canonical skill lives in its own repository (operator decision
+     2026-10-19). The page fetches its SKILL.md from there; relative links in
+     that file point into the package and are rebased onto it here, because
+     they would otherwise resolve against this site. */
+  var SKILL_REPOSITORY = "https://github.com/DigitalHumanitiesCraft/promptotyping-skill";
+  var SKILL_PACKAGE = SKILL_REPOSITORY + "/tree/main/promptotyping";
+  var SKILL_SOURCE = "https://raw.githubusercontent.com/DigitalHumanitiesCraft/promptotyping-skill/main/promptotyping/SKILL.md";
+
+  function rebaseSkillLinks(el) {
+    el.querySelectorAll("a[href]").forEach(function (link) {
+      var href = link.getAttribute("href");
+      if (/^(?:[a-z][a-z0-9+.-]*:|#|\/)/i.test(href)) {
+        return;
+      }
+      link.href = SKILL_REPOSITORY + "/blob/main/promptotyping/" + href;
+      link.target = "_blank";
+      link.rel = "noopener";
+    });
+  }
+
+  function renderSkillPackage(el, text) {
     renderSkillsBlock(el);
+    rebaseSkillLinks(el);
 
     var actions = document.createElement("div");
     actions.className = "skill-actions";
@@ -72,14 +93,16 @@
     });
     actions.appendChild(copy);
 
+    /* A cross-origin href ignores the download attribute, so the fetched text
+       is offered as a same-origin blob. */
     var download = document.createElement("a");
-    download.href = source;
+    download.href = URL.createObjectURL(new Blob([text], { type: "text/markdown" }));
     download.download = "SKILL.md";
     download.textContent = "Download SKILL.md";
     actions.appendChild(download);
 
     var repository = document.createElement("a");
-    repository.href = "https://github.com/DigitalHumanitiesCraft/Promptotyping/tree/main/skills/promptotyping";
+    repository.href = SKILL_PACKAGE;
     repository.target = "_blank";
     repository.rel = "noopener";
     repository.textContent = "Open package";
@@ -105,12 +128,9 @@
       '<div class="skills-block" id="skills-coding"></div>' +
       '<div class="skills-block" id="skills-writing"></div>';
 
-    var skillSource = "skills/promptotyping/SKILL.md";
     return Promise.all([
       A.renderMarkdownInto("skills-intro", "_content/skills/index.md"),
-      A.renderMarkdownInto("skills-promptotyping", skillSource, function (el, text) {
-        renderSkillPackage(el, skillSource, text);
-      }),
+      A.renderMarkdownInto("skills-promptotyping", SKILL_SOURCE, renderSkillPackage),
       A.renderMarkdownInto("skills-coding", "_content/skills/coding.md", renderSkillsBlock),
       A.renderMarkdownInto("skills-writing", "_content/skills/writing.md", renderSkillsBlock)
     ]);

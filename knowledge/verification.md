@@ -208,15 +208,15 @@ Under `tools/tests/` the checks are themselves held to their regression cases, r
 
 **Verdict, 2026-08-21.** Passes after the Handoff template, catalogue entry, current examples, and regression cases were added.
 
-### V18. The canonical skill remains installable and publicly reachable
+### V18. The canonical skill remains publicly reachable
 
-**Claim.** `skills/promptotyping/` contains a valid `SKILL.md` and its Codex metadata. The skill exposes `orient`, `distill`, `handoff`, and `compact`, preserves the required reading order, and defines no separate `integrate` operation. The Skills page renders the canonical source under `#skills-promptotyping`, while the page index and UI metadata point to the same package.
+**Claim.** The Skills page renders the canonical skill from its own repository, `DigitalHumanitiesCraft/promptotyping-skill`, under `#skills-promptotyping`, and the Skills index links that repository. This repository carries no second copy under `skills/`.
 
-**Why it matters.** The operation contract is published in the method specification and executed from a separate machine-readable package. A renamed operation, missing source file, or disconnected page would leave a plausible description on the site while the installable skill followed another method state.
+**Why it matters.** The skill is maintained outside this repository (A42). A local copy would drift from it unnoticed, and a disconnected page would leave a plausible description on the site while the installable skill lived elsewhere.
 
-**Procedure.** Check the package files, frontmatter name, operation headings, orientation order, excluded operation, page source path, public anchor, and default invocation. Regression tests remove an operation, add the excluded operation, and disconnect the rendered source.
+**Procedure.** Check that `skills/` is absent, that `pages-content.js` carries the public anchor and the raw source address of the canonical `SKILL.md`, and that the Skills index links both the anchor and the skill repository. Regression tests add a local copy, disconnect the rendered source, and remove the repository link. Whether the canonical skill meets the operation contract of A42 is not decidable from this repository; the open deviations stand in [promptotyping-skill#2](https://github.com/DigitalHumanitiesCraft/promptotyping-skill/issues/2).
 
-**Verdict, 2026-08-22.** Passes with the first canonical package and its Skills-page integration.
+**Verdict, 2026-10-19.** Passes after the move to the external canonical skill. The contract check of 2026-08-22 against the local package lapsed with that package.
 
 ### V19. The three portal scenarios remain connected
 

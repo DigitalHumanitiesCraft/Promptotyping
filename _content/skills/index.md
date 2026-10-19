@@ -2,7 +2,7 @@
 title: System Prompts und Skills
 slug: skills
 status: complete
-updated: 2026-08-22
+updated: 2026-10-19
 machine-url: https://dhcraft.org/Promptotyping/_content/skills/index.md
 ---
 
@@ -16,18 +16,11 @@ Die [Vorlage Action-Layer](#promptotyping-document-action-layer) trennt den port
 
 ## Kanonischer Promptotyping-Skill
 
-Der [kanonische Promptotyping-Skill](#skills-promptotyping) liegt als portables Paket im Methoden-Repository und wird direkt unterhalb dieses Abschnitts gerendert. Seine Quelle ist [`skills/promptotyping/SKILL.md`](https://dhcraft.org/Promptotyping/skills/promptotyping/SKILL.md). Die Schaltflächen an der Skill-Ansicht kopieren oder laden die vollständige Datei einschließlich Frontmatter. Das Paket enthält zusätzlich `agents/openai.yaml` als optionale Codex-Oberflächenmetadaten.
+Der kanonische Promptotyping-Skill wird in einem eigenen Repository gepflegt: [DigitalHumanitiesCraft/promptotyping-skill](https://github.com/DigitalHumanitiesCraft/promptotyping-skill). Er folgt dem Agent-Skills-Standard (agentskills.io), ist für Claude Code geschrieben und mit anderen Agenten lauffähig, die diesen Standard unterstützen. Installiert wird der Ordner `promptotyping` aus diesem Repository in das Skills-Verzeichnis des jeweiligen Agenten.
 
-Der Skill führt folgende Operationen:
+Die [Skill-Ansicht](#skills-promptotyping) direkt unterhalb dieses Abschnitts lädt `promptotyping/SKILL.md` aus dem Skill-Repository und rendert sie. Die Schaltflächen kopieren oder laden die vollständige Datei einschließlich Frontmatter. Die Operationen verweisen auf Referenzdateien im Paket, die nur im Skill-Repository liegen.
 
-- `orient` liest nach dem Action-Layer zuerst `knowledge/INDEX.md`, dann `knowledge/handoff.md` und anschließend die aufgabenrelevanten Dokumente. `journal.md` dient der Prüfung von Herkunft und Entscheidungsgründen.
-- `handoff` prüft Quelle und aktuelles Ziel, integriert dauerhaften Inhalt zuerst in das zuständige Declarative oder Action Document, hält ausschließlich offene Deltas in der Inbox und schreibt den Journal-Nachweis vor dem gemeinsamen Commit.
-- `compact` verwendet die semantische Verdichtungsregel der [Vorlage Journal](#promptotyping-document-journal), disponiert jede substantielle Aussage gegen einen sauberen Git-Ausgangsstand und erzeugt kein Archiv.
-- `distill` legt bei einer neuen Promptotyping-Wissensbasis sowohl `knowledge/journal.md` als auch `knowledge/handoff.md` an und wählt weitere Dokumente anhand ihrer Funktionstrigger.
-
-Integration bleibt eine Invariante von `orient`, der laufenden Arbeit und `handoff`. Eine eigene `integrate`-Operation ist nicht Bestandteil des Methodenvertrags.
-
-Für Codex wird der Ordner `promptotyping` unter dem konfigurierten Skills-Verzeichnis abgelegt, gewöhnlich unter `$CODEX_HOME/skills/`. Die `SKILL.md` bleibt plattformneutral; produktspezifische Metadaten liegen getrennt unter `agents/`.
+Der Methodenvertrag für die Skill-Operationen steht in der Spezifikation: `orient` liest nach dem Action-Layer zuerst `knowledge/INDEX.md`, dann `knowledge/handoff.md`; `handoff` integriert dauerhaften Inhalt vor dem Entfernen eines offenen Deltas; `compact` verdichtet nach der Regel der [Vorlage Journal](#promptotyping-document-journal) ohne Archiv; eine eigene `integrate`-Operation gibt es nicht. Der Skill erfüllt diesen Vertrag in seiner aktuellen Fassung noch nicht vollständig. Die Abweichungen und ihre Klärung führt [promptotyping-skill#2](https://github.com/DigitalHumanitiesCraft/promptotyping-skill/issues/2).
 
 ## System Prompts
 

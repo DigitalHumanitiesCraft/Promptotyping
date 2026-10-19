@@ -67,7 +67,6 @@ Promptotyping/
 ├── CLAUDE.md                       # action layer
 ├── CITATION.cff, LICENSE
 ├── knowledge/                      # this knowledge base (specification)
-├── skills/promptotyping/           # portable canonical skill package
 ├── research-artefacts/             # method paper, benchmark proposal and benchmark authoring area
 ├── source-material/                # cleaned video transcripts
 ├── snapshots/                      # dated reports and audits
@@ -155,7 +154,7 @@ Calls across file boundaries go through the namespace at call time, so no load o
 
 **Vorlagen hub** (`pages-vorlagen.js`)**.** `renderVorlagen` loads `data/promptotyping-documents.json` (top-level `documents`, each with `slug`, `title`, `funktion`, `datei`, `typ`, `version`, `status`, `machineUrl`), builds the `#vorlagen` section as a hub with four blocks, the quiet sub-navigation over them having been removed on 2026-07-26 (A19): `#vorlagen-katalog` (the clickable template table wired by `wireVorlagenRows`), `#vorlagen-konvention` (a short abstract with a jump to `#konvention-v0.1`), `#vorlagen-maschinenzugriff` (the Frontmatter-Inspector host from `renderInspector` plus the machine-address note), and `#vorlagen-technology-baseline` (the baseline abstract linking `_content/technology-baseline.md`). The sub-anchors are in-page fragments without subpath routing and without an entry in the anchor-family table; a `vorlagen`-prefixed hash resolves through the DOM fallback of `pageForAnchor`, which walks up from the element to its `.doc-page` ancestor. Each row keeps its stable anchor and pointer surface; a native button in its first cell carries the keyboard semantics. Activating either calls `openTemplatePanel`, which fetches `_content/promptotyping-document/{slug}.md`, renders it into the side panel, appends a footer with a copyable `template:` block and a machine-URL link, and caches the result.
 
-**Skills and Praxis** (`pages-content.js`)**.** `renderSkills` builds an intro, the `#skills-promptotyping` package view from `skills/promptotyping/SKILL.md`, and the `#skills-coding` and `#skills-writing` teaching blocks from `_content/skills/`. The package view copies or downloads the complete source and links to its repository folder. Prompt code blocks retain their own copy controls. `renderPraxis` renders `_content/praxis.md` and gives each heading a stable `#praxis-{slug}` anchor matching the `/praxis/{slug}` route.
+**Skills and Praxis** (`pages-content.js`)**.** `renderSkills` builds an intro, the `#skills-promptotyping` package view, and the `#skills-coding` and `#skills-writing` teaching blocks from `_content/skills/`. The package view fetches `promptotyping/SKILL.md` at runtime from the canonical skill repository, `DigitalHumanitiesCraft/promptotyping-skill` (A42), through its `raw.githubusercontent.com` address, which answers with `Access-Control-Allow-Origin: *`. `rebaseSkillLinks` points the file's package-relative links at the skill repository. The view copies the complete source, offers it for download as a same-origin blob, because browsers ignore the `download` attribute on a cross-origin link, and links to the package folder. If GitHub is unreachable, the view shows the shared load error. Prompt code blocks retain their own copy controls. `renderPraxis` renders `_content/praxis.md` and gives each heading a stable `#praxis-{slug}` anchor matching the `/praxis/{slug}` route.
 
 **Template URL resolution** (`registry.js`)**.** `resolveTemplateUrl` maps both subpath and hash template URLs onto the canonical hash anchor. It is the one implementation of the subpath vocabulary, called by the boot in `app.js` for the path `404.html` hands over and by the inspector for a pasted address.
 
@@ -176,7 +175,7 @@ research-artefacts/promptotyping-paper.md                ← the paper, rendered
 _content/promptotyping-document/{slug}.md               ← template mirrors, one file per slug
 _content/case-studies/{id}.md                           ← case-study deep pages
 _content/skills/{index,coding,writing}.md               ← skills content
-skills/promptotyping/{SKILL.md,agents/openai.yaml}      ← canonical skill package
+promptotyping-skill: promptotyping/SKILL.md              ← canonical skill, fetched at runtime from its own repository
 _content/{overview,application,konvention,artefakt,verifikation,praxis,workflow,tutorial,arbeitsumgebung,technology-baseline}.md
 _content/glossar.md                                     ← glossar prose, generated from data/glossar.json
 _content/MANIFEST.md                                    ← mirror provenance
