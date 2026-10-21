@@ -3,7 +3,7 @@
     "stand": "2026-09-27",
     "version": "0.5",
     "beschreibung": "Glossary of the terms of the Promptotyping method and of the methodology site. This JSON is the authoritative data source for the site (tooltips, glossary page and term index); _content/glossar.md is the readable form of the same content and is generated from this file. Terms the paper text does not carry are marked as site vocabulary in their source list.",
-    "schema": "Array of entries with the fields slug (URL anchor fragment, forming the site anchor together with #konzept- or #glossar-), begriff (display form), kurz (one sentence for tooltips), voll (one paragraph of full definition), kategorie (what kind of thing the term names, one key of the controlled taxonomy in _meta.kategorien below), quellen (the carriers of the entry, see below), and the optional suchform (the shorter wording under which the term actually occurs in running text; the term index searches it alongside begriff, which a long nominal phrase never matches). A source carries typ, the display text, and for every typ but text an anker that resolves on this site: paper for a section of research-artefacts/promptotyping-paper.md, literature for a reference-list entry, vault for an assertion of the grounded vault, page for a page or block of the site, and text for a carrier this site holds no address for.",
+    "schema": "Array of entries with the fields slug (URL anchor fragment, forming the site anchor together with #konzept- or #glossar-), begriff (display form), kurz (one sentence for tooltips), voll (one paragraph of full definition), kategorie (what kind of thing the term names, one key of the controlled taxonomy in _meta.kategorien below), quellen (the carriers of the entry, see below), and the optional suchform (the shorter wording under which the term actually occurs in running text; the term index searches it alongside begriff, which a long nominal phrase never matches). A source carries typ, the display text, and for every typ but text an anker that resolves on this site: vault for an assertion of the grounded vault, page for a page or block of the site, and text for a carrier this site holds no address for. Since the manuscript left the public repository on 2026-10-14, paper sections and reference-list entries are text sources.",
     "kategorien": {
       "form-of-work": "Form of work",
       "practice": "Practice",
@@ -35,8 +35,7 @@
           "text": "Site vocabulary, not carried in the paper text"
         },
         {
-          "typ": "paper",
-          "anker": "abschnitt-2-1-promptotyping-and-the-project-knowledge-base",
+          "typ": "text",
           "text": "Paper, Section 2.1"
         },
         {
@@ -58,8 +57,7 @@
           "text": "Site vocabulary, not carried in the paper text"
         },
         {
-          "typ": "paper",
-          "anker": "abschnitt-2-1-promptotyping-and-the-project-knowledge-base",
+          "typ": "text",
           "text": "Paper, Section 2.1"
         },
         {
@@ -81,8 +79,7 @@
           "text": "Site vocabulary, not carried in the paper text"
         },
         {
-          "typ": "paper",
-          "anker": "abschnitt-2-1-promptotyping-and-the-project-knowledge-base",
+          "typ": "text",
           "text": "Paper, Section 2.1"
         },
         {
@@ -103,8 +100,7 @@
           "text": "Site vocabulary, not carried in the paper text"
         },
         {
-          "typ": "paper",
-          "anker": "abschnitt-1-2-context-engineering-agentic-engineering-and-ai-harnesses",
+          "typ": "text",
           "text": "Paper, Section 1.2"
         },
         {
@@ -121,13 +117,11 @@
       "kategorie": "practice",
       "quellen": [
         {
-          "typ": "paper",
-          "anker": "abschnitt-1-2-context-engineering-agentic-engineering-and-ai-harnesses",
+          "typ": "text",
           "text": "Paper, Section 1.2"
         },
         {
-          "typ": "paper",
-          "anker": "abschnitt-2-1-promptotyping-and-the-project-knowledge-base",
+          "typ": "text",
           "text": "Paper, Section 2.1"
         }
       ]
@@ -140,8 +134,7 @@
       "voll": "Agentic review is a bounded, tool-supported investigation in which one or more LLM-based agents examine outputs, data states, implementations or research artefacts against the relevant sources, references, requirements and criteria. It may locate project files, compare sources and outputs, execute formal checks, investigate discrepancies, or coordinate specialised, parallel or adversarial reviewers. It extends agent-based code review while keeping the wider sense of review as criteria-guided examination. An LLM-as-a-Judge, which scores a supplied output against a reference or rubric, can be one operation within agentic review but does not exhaust it. Its findings stay probabilistic evidence and never constitute authorised verification, scholarly validation or acceptance.",
       "quellen": [
         {
-          "typ": "paper",
-          "anker": "abschnitt-2-3-1-agentic-data-production-and-curation-in-the-szd-and-jeanne-hersch-workflows",
+          "typ": "text",
           "text": "Paper, Section 2.3.1"
         },
         {
@@ -176,13 +169,11 @@
       "kategorie": "failure-mode",
       "quellen": [
         {
-          "typ": "paper",
-          "anker": "abschnitt-4-2-labour-infrastructure-and-responsible-use",
+          "typ": "text",
           "text": "Paper, Section 4.2"
         },
         {
-          "typ": "literature",
-          "anker": "ref-pollin-2026b",
+          "typ": "text",
           "text": "Pollin 2026b"
         },
         {
@@ -204,13 +195,11 @@
           "text": "Site vocabulary, not carried in the paper text"
         },
         {
-          "typ": "paper",
-          "anker": "abschnitt-2-1-promptotyping-and-the-project-knowledge-base",
+          "typ": "text",
           "text": "Paper, Section 2.1"
         },
         {
-          "typ": "paper",
-          "anker": "abschnitt-3-1-evidence-and-comparison",
+          "typ": "text",
           "text": "Paper, Section 3.1"
         },
         {
@@ -273,18 +262,15 @@
       "kategorie": "practice",
       "quellen": [
         {
-          "typ": "paper",
-          "anker": "abschnitt-1-2-context-engineering-agentic-engineering-and-ai-harnesses",
+          "typ": "text",
           "text": "Paper, Section 1.2"
         },
         {
-          "typ": "paper",
-          "anker": "abschnitt-2-1-promptotyping-and-the-project-knowledge-base",
+          "typ": "text",
           "text": "Paper, Section 2.1"
         },
         {
-          "typ": "literature",
-          "anker": "ref-mei-2025",
+          "typ": "text",
           "text": "Mei et al. 2025"
         },
         {
@@ -306,8 +292,7 @@
           "text": "Site vocabulary, not carried in the paper text"
         },
         {
-          "typ": "paper",
-          "anker": "abschnitt-2-1-promptotyping-and-the-project-knowledge-base",
+          "typ": "text",
           "text": "Paper, Section 2.1"
         }
       ]
@@ -324,13 +309,11 @@
           "text": "Site vocabulary, not carried in the paper text"
         },
         {
-          "typ": "paper",
-          "anker": "abschnitt-2-2-3-distillation",
+          "typ": "text",
           "text": "Paper, Section 2.2.3"
         },
         {
-          "typ": "literature",
-          "anker": "ref-hong-2025",
+          "typ": "text",
           "text": "Hong et al. 2025"
         },
         {
@@ -348,13 +331,11 @@
       "kategorie": "role",
       "quellen": [
         {
-          "typ": "paper",
-          "anker": "abschnitt-2-2-4-implementation",
+          "typ": "text",
           "text": "Paper, Section 2.2.4"
         },
         {
-          "typ": "paper",
-          "anker": "abschnitt-2-3-4-from-complementary-cases-to-the-promptotype",
+          "typ": "text",
           "text": "Paper, Section 2.3.4"
         },
         {
@@ -376,8 +357,7 @@
       "kategorie": "document-function",
       "quellen": [
         {
-          "typ": "paper",
-          "anker": "abschnitt-2-1-promptotyping-and-the-project-knowledge-base",
+          "typ": "text",
           "text": "Paper, Section 2.1"
         },
         {
@@ -417,18 +397,15 @@
       "kategorie": "form-of-work",
       "quellen": [
         {
-          "typ": "paper",
-          "anker": "abschnitt-2-2-3-distillation",
+          "typ": "text",
           "text": "Paper, Section 2.2.3"
         },
         {
-          "typ": "literature",
-          "anker": "ref-liu-2024",
+          "typ": "text",
           "text": "Liu et al. 2024"
         },
         {
-          "typ": "literature",
-          "anker": "ref-hong-2025",
+          "typ": "text",
           "text": "Hong et al. 2025"
         }
       ]
@@ -441,13 +418,11 @@
       "voll": "Acceptance is the accountable decision that an identifiable state is adequate for a stated purpose, and it is only reconstructable if its grounds are written down. The record names the intended purpose, the applicable criteria, the accepting person or group, the known limitations, the version reference and, where relevant, the referenced research-data state. It may take the form of an acceptance note, a dated journal entry, a numbered decision record, a verification document or an equivalent project record. Together with the maintained project knowledge, the referenced research-data state and the resulting artefact it forms the four-member relation that makes an accepted iteration a promptotype.",
       "quellen": [
         {
-          "typ": "paper",
-          "anker": "abschnitt-2-2-4-implementation",
+          "typ": "text",
           "text": "Paper, Section 2.2.4"
         },
         {
-          "typ": "paper",
-          "anker": "abschnitt-4-3-transferability-and-evaluation",
+          "typ": "text",
           "text": "Paper, Section 4.3"
         },
         {
@@ -482,8 +457,7 @@
       "kategorie": "form-of-work",
       "quellen": [
         {
-          "typ": "paper",
-          "anker": "abschnitt-2-2-2-exploration",
+          "typ": "text",
           "text": "Paper, Section 2.2.2"
         }
       ]
@@ -518,13 +492,11 @@
       "kategorie": "form-of-work",
       "quellen": [
         {
-          "typ": "paper",
-          "anker": "abschnitt-2-2-4-implementation",
+          "typ": "text",
           "text": "Paper, Section 2.2.4"
         },
         {
-          "typ": "paper",
-          "anker": "abschnitt-3-3-from-findings-to-knowledge-refactoring",
+          "typ": "text",
           "text": "Paper, Section 3.3"
         }
       ]
@@ -594,13 +566,11 @@
       "kategorie": "document-function",
       "quellen": [
         {
-          "typ": "paper",
-          "anker": "abschnitt-2-1-promptotyping-and-the-project-knowledge-base",
+          "typ": "text",
           "text": "Paper, Section 2.1"
         },
         {
-          "typ": "paper",
-          "anker": "abschnitt-3-3-from-findings-to-knowledge-refactoring",
+          "typ": "text",
           "text": "Paper, Section 3.3"
         },
         {
@@ -684,8 +654,7 @@
       "kategorie": "form-of-work",
       "quellen": [
         {
-          "typ": "paper",
-          "anker": "abschnitt-2-2-1-preparation",
+          "typ": "text",
           "text": "Paper, Section 2.2.1"
         }
       ]
@@ -698,8 +667,7 @@
       "kategorie": "document-function",
       "quellen": [
         {
-          "typ": "paper",
-          "anker": "abschnitt-2-1-promptotyping-and-the-project-knowledge-base",
+          "typ": "text",
           "text": "Paper, Section 2.1"
         },
         {
@@ -717,13 +685,11 @@
       "voll": "A promptotype is the accepted state of one Promptotyping iteration. It connects the maintained project knowledge, the referenced research-data state, the resulting digital research artefact and the documented grounds of acceptance into a coherent and identifiable whole for a stated purpose. A runnable or plausible artefact does not reach this threshold as long as that relation cannot be reconstructed. Acceptance is purpose-specific, so a promptotype may be accepted as an exploratory interface, an internal production workflow, a proposal-stage demonstrator, a handover state or a public research artefact, and it does not imply that project knowledge, data or artefact have become final. Re-implementing with another model, harness or project state is a new iteration rather than a reproduction of the earlier promptotype.",
       "quellen": [
         {
-          "typ": "paper",
-          "anker": "abschnitt-2-2-4-implementation",
+          "typ": "text",
           "text": "Paper, Section 2.2.4"
         },
         {
-          "typ": "paper",
-          "anker": "abschnitt-2-3-4-from-complementary-cases-to-the-promptotype",
+          "typ": "text",
           "text": "Paper, Section 2.3.4"
         },
         {
@@ -740,18 +706,15 @@
       "kategorie": "practice",
       "quellen": [
         {
-          "typ": "paper",
-          "anker": "abschnitt-2-1-promptotyping-and-the-project-knowledge-base",
+          "typ": "text",
           "text": "Paper, Section 2.1"
         },
         {
-          "typ": "paper",
-          "anker": "abschnitt-2-2-forms-of-work-and-iteration",
+          "typ": "text",
           "text": "Paper, Section 2.2"
         },
         {
-          "typ": "paper",
-          "anker": "abschnitt-2-3-4-from-complementary-cases-to-the-promptotype",
+          "typ": "text",
           "text": "Paper, Section 2.3.4"
         },
         {
@@ -772,8 +735,7 @@
           "text": "Site vocabulary, not carried in the paper text"
         },
         {
-          "typ": "paper",
-          "anker": "abschnitt-3-2-project-conditions-functions-and-artefact-forms",
+          "typ": "text",
           "text": "Paper, Section 3.2"
         },
         {
@@ -791,18 +753,15 @@
       "kategorie": "artefact",
       "quellen": [
         {
-          "typ": "paper",
-          "anker": "abschnitt-1-introduction",
+          "typ": "text",
           "text": "Paper, Section 1"
         },
         {
-          "typ": "paper",
-          "anker": "abschnitt-1-1-translating-research-data-into-digital-research-artefacts-through-scholar-centred-design",
+          "typ": "text",
           "text": "Paper, Section 1.1"
         },
         {
-          "typ": "paper",
-          "anker": "abschnitt-3-2-project-conditions-functions-and-artefact-forms",
+          "typ": "text",
           "text": "Paper, Section 3.2"
         },
         {
@@ -857,13 +816,11 @@
       "kategorie": "practice",
       "quellen": [
         {
-          "typ": "paper",
-          "anker": "abschnitt-1-1-translating-research-data-into-digital-research-artefacts-through-scholar-centred-design",
+          "typ": "text",
           "text": "Paper, Section 1.1"
         },
         {
-          "typ": "literature",
-          "anker": "ref-pollin-2025a",
+          "typ": "text",
           "text": "Pollin 2025a"
         },
         {
@@ -885,8 +842,7 @@
           "text": "Site vocabulary, not carried in the paper text"
         },
         {
-          "typ": "paper",
-          "anker": "abschnitt-2-1-promptotyping-and-the-project-knowledge-base",
+          "typ": "text",
           "text": "Paper, Section 2.1"
         },
         {
@@ -971,8 +927,7 @@
           "text": "Site vocabulary, not carried in the paper text"
         },
         {
-          "typ": "paper",
-          "anker": "abschnitt-2-3-4-from-complementary-cases-to-the-promptotype",
+          "typ": "text",
           "text": "Paper, Section 2.3.4"
         },
         {
@@ -981,8 +936,7 @@
           "text": "Best Practices, subagents and role simulation"
         },
         {
-          "typ": "literature",
-          "anker": "ref-saltzer-1975",
+          "typ": "text",
           "text": "Saltzer and Schroeder 1975"
         },
         {
@@ -1069,8 +1023,7 @@
           "text": "Site vocabulary, not carried in the paper text"
         },
         {
-          "typ": "paper",
-          "anker": "abschnitt-2-promptotyping-as-a-method",
+          "typ": "text",
           "text": "Paper, Section 2"
         },
         {
@@ -1124,18 +1077,15 @@
       "kategorie": "checking",
       "quellen": [
         {
-          "typ": "paper",
-          "anker": "abschnitt-1-introduction",
+          "typ": "text",
           "text": "Paper, Section 1"
         },
         {
-          "typ": "paper",
-          "anker": "abschnitt-2-3-1-agentic-data-production-and-curation-in-the-szd-and-jeanne-hersch-workflows",
+          "typ": "text",
           "text": "Paper, Section 2.3.1"
         },
         {
-          "typ": "literature",
-          "anker": "ref-ieee-2025-ieee-standard-for-system-1012",
+          "typ": "text",
           "text": "IEEE 2025 (IEEE Std 1012-2024)"
         },
         {
@@ -1157,8 +1107,7 @@
           "text": "Site vocabulary, not carried in the paper text"
         },
         {
-          "typ": "paper",
-          "anker": "abschnitt-2-2-4-implementation",
+          "typ": "text",
           "text": "Paper, Section 2.2.4"
         },
         {
@@ -1202,8 +1151,7 @@
       "voll": "The working context holds what an agent needs for a particular assignment, the relevant information and the access to project resources. It is assembled per task and must be kept apart from the persistent project knowledge base, which preserves the project's maintained understanding and its decisions. Material may be drawn from maintained documents and derived project artefacts, or obtained through retrieval and direct access to project resources. Retrieval-Augmented Generation can supply task-relevant material from collections that no maintained summary represents adequately. These mechanisms combine, and none of them replaces the maintained account of purpose, data semantics and criteria of assessment. Selection into the working context is itself part of Context Engineering, which is why accumulation is no substitute for it.",
       "quellen": [
         {
-          "typ": "paper",
-          "anker": "abschnitt-2-1-promptotyping-and-the-project-knowledge-base",
+          "typ": "text",
           "text": "Paper, Section 2.1"
         },
         {
@@ -1221,13 +1169,11 @@
       "voll": "Write-back carries consequential findings from Implementation, assessment, review, and validation into renewed Distillation. Human contributors or LLM-based agents may carry out the resulting documentary work. Within Promptotyping, knowledge refactoring revises the maintained Markdown documents so that they express the current project understanding coherently. Accountable contributors determine which revised knowledge enters the accepted project state. A project-specific revision supports method-level change when the available evidence warrants a general rule.",
       "quellen": [
         {
-          "typ": "paper",
-          "anker": "abschnitt-2-2-4-implementation",
+          "typ": "text",
           "text": "Paper, Section 2.2.4"
         },
         {
-          "typ": "paper",
-          "anker": "abschnitt-3-3-from-findings-to-knowledge-refactoring",
+          "typ": "text",
           "text": "Paper, Section 3.3"
         }
       ]

@@ -177,7 +177,7 @@
       "<p>A curated selection of publicly documented projects, grouped by the role each case " +
       "plays in the paper's argument and ordered within each group by the artefact's epistemic " +
       "function. The comparative account stands in the " +
-      '<a href="#abschnitt-3-patterns-across-promptotypes">paper, section 3</a>.</p>' +
+      'paper, section 3.</p>' +
       '<div class="case-filter-host"></div>' +
       '<div class="case-list-host"></div>' +
       '<h2>Continue your evaluation</h2>' +

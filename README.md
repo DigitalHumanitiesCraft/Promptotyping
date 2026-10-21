@@ -4,7 +4,7 @@
 
 Promptotyping is an iterative, knowledge-driven method for developing project-specific digital research artefacts from structured research data and maintained project knowledge through Context Engineering and Agentic Engineering, organised around four recurrent forms of work (Preparation, Exploration, Distillation, Implementation). In the canonical repository convention, a `knowledge/` folder holds versioned Knowledge Documents for requirements, data, decisions, and domain knowledge. This curated knowledge artefact guides implementation, persists across sessions, and receives consequential findings through write-back. The method also permits another inspectable and revisable documentary environment. A Critical Expert in the Loop verifies LLM output at defined points.
 
-This repository is the public method portal; the manuscript of the method paper is maintained separately (see below). The portal at **https://dhcraft.org/Promptotyping/** integrates the specification, case evidence, tutorial, templates and canonical skill. It also serves the templates as stable, machine-readable addresses.
+This repository is the public method portal. The governing requirements of the method paper stand in [knowledge/paper-specification.md](knowledge/paper-specification.md); the manuscript itself is maintained separately. The portal at **https://dhcraft.org/Promptotyping/** integrates the specification, case evidence, tutorial, templates and canonical skill. It also serves the templates as stable, machine-readable addresses.
 
 ## The method in brief
 
@@ -35,7 +35,7 @@ Two introductions to the method (German): the methodology explainer [Promptotypi
 | Curated case studies | [data/case-studies.json](data/case-studies.json), depth pages in [_content/case-studies/](_content/case-studies/) | [#use-cases](https://dhcraft.org/Promptotyping/#use-cases) |
 | Guided first iteration | [_content/tutorial.md](_content/tutorial.md) | [#tutorial](https://dhcraft.org/Promptotyping/#tutorial) |
 | Method extensions from practice | [_content/praxis.md](_content/praxis.md) | [#praxis](https://dhcraft.org/Promptotyping/#praxis) |
-| Canonical Promptotyping skill | [DigitalHumanitiesCraft/promptotyping-skill](https://github.com/DigitalHumanitiesCraft/promptotyping-skill) (own repository) | [#skills-promptotyping](https://dhcraft.org/Promptotyping/#skills-promptotyping) |
+| Canonical Promptotyping skill | [skills/promptotyping/](skills/promptotyping/) | [#skills-promptotyping](https://dhcraft.org/Promptotyping/#skills-promptotyping) |
 | Reusable system prompts (coding, writing) | [_content/skills/](_content/skills/) | [#skills](https://dhcraft.org/Promptotyping/#skills) |
 | Glossary | [data/glossar.json](data/glossar.json), [_content/glossar.md](_content/glossar.md) | [#glossar](https://dhcraft.org/Promptotyping/#glossar) |
 | Durable site knowledge base (self-application) | [knowledge/](knowledge/) | — |
@@ -111,6 +111,7 @@ snapshots/        dated reports and audits
 handoffs/         exceptional dated transition snapshots
 schema/           JSON Schema of the frontmatter core
 tools/            consistency check, glossary build, paper review inventory, tests
+skills/           canonical Promptotyping skill
 _content/         Markdown content (method pages, templates, case studies, glossary)
 assets/           CSS, JS, vendored libraries, fonts, logo
 data/             JSON data (case studies, glossary, template table, vault index)
