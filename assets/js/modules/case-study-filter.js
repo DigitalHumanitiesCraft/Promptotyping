@@ -7,7 +7,8 @@
 
    Until 2026-07-26 the gallery grouped and filtered on a nine-value vocabulary
    of its own, which had once been misattributed to a paper section. It now uses
-   the five epistemic functions of Section 4.2, so grouping, filtering and the
+   the five epistemic functions of the artefact page (part 4 of the
+   specification), so grouping, filtering and the
    hue on the card edge all mean the same thing. */
 
 (function () {

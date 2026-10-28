@@ -143,7 +143,7 @@ On the aesthetic layer the Agent Instructions function takes effect through `CLA
 
 ## Classification of the document types
 
-Promptotyping distinguishes three document types analytically (Pollin 2026, section 2.1). All three are knowledge documents, specialised by the kind of knowledge they hold.
+Promptotyping distinguishes three document types analytically. All three are knowledge documents, specialised by the kind of knowledge they hold.
 
 Declarative Documents hold knowledge about the subject matter. They describe what is known about the data, the domain and the research context. Examples are `README.md`, `project.md`, `data.md`, `specification.md`, `architecture.md`, `design.md`, `editorial-guidelines.md`, mapping rules and verification documents. They extend the model's epistemic horizon and outlast, as a curated layer, the changes to code, model versions and tools. Until July 2026 this type was called Knowledge Document here; the name has moved to the superordinate term.
 
