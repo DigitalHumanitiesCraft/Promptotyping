@@ -2,12 +2,9 @@
 
 ## Manuscript publication boundary
 
-The operator withdrew the manuscript from the current public repository and GitHub Pages on 14 October 2026. The public repository carries the method documentation and paper specification; manuscript text is maintained separately. The former Paper route and section links show an availability notice without loading manuscript prose. The manuscript file is absent from the deployed tree. Earlier commits and historical publication records are retained, so this removal does not undo prior public availability.
+The method paper is maintained outside this repository and will be published in the journal. The operator removed the manuscript from the public repository and GitHub Pages on 14 October 2026, and on 28 October 2026 everything bound to it followed, the paper specification, the review tooling, the figures, the submission report and the manuscript audits in the vault. This repository holds the method specification and its supporting material. Paper work does not happen here, and manuscript text, its apparatus and paper-specific tooling do not enter the repository. Earlier commits and historical publication records are retained, so the removal does not undo prior public availability.
 
-For manuscript work, obtain the current author-controlled text before editing. Historical references below to the repository manuscript and its rendering describe the earlier arrangement and do not authorise restoring it. The journal's acceptance of the expose does not establish acceptance of the full manuscript or resolve eligibility of the previously public draft.
-
-
-Dieses Repo ist `DigitalHumanitiesCraft/Promptotyping`, die öffentliche Methodik-Site für Promptotyping. Es rendert auf https://dhcraft.org/Promptotyping/ als Spezifikationsdokumentation der Methode, mit dem Paper als einer ihrer Seiten, dem Glossar-Tooltip über dem Lesetext, den eingebetteten Vorlagen und der Use-Case-Galerie.
+Dieses Repo ist `DigitalHumanitiesCraft/Promptotyping`, die öffentliche Methodik-Site für Promptotyping. Es rendert auf https://dhcraft.org/Promptotyping/ als Spezifikationsdokumentation der Methode, mit Glossar, den eingebetteten Vorlagen, der Vault-Ansicht und der Use-Case-Galerie.
 
 ## Beim Session-Start lesen
 
@@ -18,7 +15,6 @@ Bevor du eine Aufgabe in diesem Repo angehst, lies in dieser Reihenfolge:
 3. `knowledge/project.md` — was die Site ist, wer die Adressaten sind
 4. `knowledge/governance.md` — Autorität, Quellenstatus, Schreibgrenzen, Write-back, Rechte, Publikation und Eskalation
 5. Das jeweils aufgabenrelevante Dokument:
-   - Paper-Arbeit → `knowledge/paper-specification.md`, das Specification-Dokument mit Argument, Terminologie, Sprachregeln, Apparat, Autor:innenabnahme und Einreichweg; von dort `research-artefacts/promptotyping-paper.md`, der kanonische vierkapitelige Text in Version 0.9.1 (Author-Review-Draft). `python tools/paper_review.py` erzeugt die verlustfreie Satzinventur aus diesem Text. Das Research Artefact bleibt headerless und beginnt mit seiner H1; Version, Status und Reviewer-Ansprache stehen in `paper-specification.md`. Die Zwei-Spuren-Übergangslage ist beendet; die konsolidierten Steuerungs- und Revisionsdokumente liegen commit-gepinnt in der Git-History (Provenienz-Tabelle am Ende von `paper-specification.md`).
    - Was-soll-die-Site-können → `knowledge/specification.md`
    - Wie-ist-es-gebaut → `knowledge/architecture.md`
    - Wie-sieht-es-aus → `knowledge/design.md`
@@ -34,7 +30,7 @@ Der aktive Projektplan steht in `knowledge/plan.md`. Historische Frontend-Pakete
 Die Site soll ruhig sein. Konkret bedeutet das beim Coden:
 
 - **Verwende keine Farben außer den im Designsystem definierten Tokens.** Unbunt sind `--bg`, `--text`, `--accent`, `--border`, `--code-bg` und die drei Grautöne `--grey-1` bis `--grey-3`. Schreibe nie einen Hex-Wert ins Stylesheet außerhalb des Token-Blocks; der Dunkelmodus ist ein reiner Token-Tausch und bricht sonst.
-- **Farbe bedeutet genau eine Sache**, die epistemische Funktion eines Artefakts, also die fünf Interface-Kategorien der site-eigenen Typologie auf der Artefakt-Seite (`--fn-verification`, `--fn-exploration`, `--fn-edition`, `--fn-capture`, `--fn-audit`). Das Paper zieht seit dem 2026-07-31 eine eigene Linie mit sechs operationalen Formen (Tabelle 1, Abschnitt 3.2); die Site behält ihre fünf Namen, weil publizierte Kartenfilter und die Farbskala daran hängen. Das ist eine Nominalskala, und dort ist der Farbton nach Bertin die richtige Kodierung. Sie erscheint auf der Artefakt-Seite und an der Kartenkante der Use Cases, sonst nirgends. **Die Kategorie steht immer auch als Wort daneben** (WCAG 2.1, Erfolgskriterium 1.4.1, Stufe A). Färbe insbesondere nicht die fünf Teile der Spezifikation ein, das ist eine Rangfolge und keine Verschiedenheit der Art.
+- **Farbe bedeutet genau eine Sache**, die epistemische Funktion eines Artefakts, also die fünf Interface-Kategorien der site-eigenen Typologie auf der Artefakt-Seite (`--fn-verification`, `--fn-exploration`, `--fn-edition`, `--fn-capture`, `--fn-audit`). Das Methodenpaper zieht eine eigene Linie mit sechs operationalen Formen; die Site behält ihre fünf Namen, weil publizierte Kartenfilter und die Farbskala daran hängen. Das ist eine Nominalskala, und dort ist der Farbton nach Bertin die richtige Kodierung. Sie erscheint auf der Artefakt-Seite und an der Kartenkante der Use Cases, sonst nirgends. **Die Kategorie steht immer auch als Wort daneben** (WCAG 2.1, Erfolgskriterium 1.4.1, Stufe A). Färbe insbesondere nicht die fünf Teile der Spezifikation ein, das ist eine Rangfolge und keine Verschiedenheit der Art.
 - **`--signature`** ist der eine laute Ort, ein prismatischer Verlauf als 2px-Band am Fuß der Kopfzeile, einmal pro Seite. Er trägt keine Information und darf deshalb laut sein. Verwende ihn nirgends sonst.
 - **Schriften: Inter für Text, Consolas für Code, sonst keine.** Keine zweite Sans-Serif, keine Display-Schrift, keine Brand-Schrift.
 - **Animationen: nur Slide-in/out für Side-Panels (200ms ease-out), keine anderen.** Keine Scroll-Linked-Animationen, kein Parallax, keine Hover-Bouncing-Effekte. Kurze 150ms-Farb- und Hintergrundübergänge als Hover-Feedback sind erlaubte Mikro-Affordanzen, ebenso die beiden Opazitätsübergänge, die zum Panel gehören, das Einblenden des Glossar-Tooltips über 150ms und das Abdunkeln des Side-Panel-Backdrops über 200ms.
@@ -51,23 +47,20 @@ Die Site soll ruhig sein. Konkret bedeutet das beim Coden:
 ├── CLAUDE.md                   # Diese Datei (Action-Layer)
 ├── knowledge/                  # Dauerhafte Knowledge Documents
 │   └── handoff.md              # Verpflichtende Process Inbox
-├── research-artefacts/         # Wissenschaftliche Outputs, darunter das Paper
+├── research-artefacts/         # Benchmark-Vorschlag und Benchmark-Autorenbereich
 ├── source-material/            # Übernommene Quellen und Transkripte
 ├── snapshots/                  # Datierte Reports und Audits
-├── handoffs/                   # Datierte Übergabestände
-├── _content/                   # Site-Inhalte (Vorlagen, Case Studies, Glossar, Literatur)
-├── assets/                     # CSS, JS, Vendor, Fonts, Logo, Paper-Abbildungen
+├── _content/                   # Site-Inhalte (Vorlagen, Case Studies, Glossar)
+├── assets/                     # CSS, JS, Vendor, Fonts, Logo
 ├── data/                       # JSON-Datenfutter
 ├── schema/                     # JSON Schema des Frontmatter-Kerns (Prüfgruppe V16)
-├── tools/                      # Prüf- und Erzeugungsskripte der Site (check_consistency.py, build_glossar.py, paper_review.py) samt tests/
-└── vault/                      # Grounded-Vault-Instanz: Provenienz-Schicht unter dem Paper (Operator-Entscheidung 2026-07-19)
+├── tools/                      # Prüf- und Erzeugungsskripte der Site (check_consistency.py, build_glossar.py) samt tests/
+└── vault/                      # Grounded-Vault-Instanz: belegte Evidenzschicht der Methode
 ```
-
-Die Abbildungen des Papers liegen unter `assets/figures/`; der Text bindet seit der Vierkapitel-Fassung nur noch Abbildung 1 ein, referenziert mit einem repo-relativen Pfad. Die abgelegten Abbildungen 02 bis 06 bleiben mit allen vorhandenen Schichten (Spezifikation, Prompt-Record, SVG, PNG, Provenienz) liegen und werden nicht gelöscht; `assets/figures/manifest.yaml` führt ihren Status. Das löst auf der Site auf, weil `404.html` jede Subpath-Adresse auf den Site-Root zurückwirft und die Anwendung dort läuft. In der GitHub-Vorschau von `research-artefacts/promptotyping-paper.md` bleiben die Bilder deshalb leer, was der bewusste Preis für Portabilität ohne feste Domain ist.
 
 `assets/promptotyping-logo.png` bleibt erhalten.
 
-Der Ordner `vault/` ist eine Instanz des Grounded-Vault-Templates (`DigitalHumanitiesCraft/grounded-vault`) und verankert die tragenden Claims des Papers in `research-artefacts/promptotyping-paper.md` quellenfest. Für jede Arbeit in `vault/` gilt dessen eigener Action-Layer `vault/CLAUDE.md`; die Python-Werkzeuge unter `vault/tools/` gehören zum Vault und sind die zulässigen Ausnahmen von der No-Build-Regel unten. `validate.py` prüft den Vault. `build_site_index.py` erzeugt `data/vault.json` für die Vault-Ansicht der Site; das Ergebnis wird committet, die Site holt zur Laufzeit eine statische Datei, und ein Build-Schritt zur Auslieferzeit entsteht nicht. Wer die Assertion-Schicht (bis August 2026 Claim-Schicht) ändert, führt das Skript nach.
+Der Ordner `vault/` ist eine Instanz des Grounded-Vault-Templates (`DigitalHumanitiesCraft/grounded-vault`) und verankert die tragenden Aussagen der Methode quellenfest. Für jede Arbeit in `vault/` gilt dessen eigener Action-Layer `vault/CLAUDE.md`; die Python-Werkzeuge unter `vault/tools/` gehören zum Vault und sind die zulässigen Ausnahmen von der No-Build-Regel unten. `validate.py` prüft den Vault. `build_site_index.py` erzeugt `data/vault.json` für die Vault-Ansicht der Site; das Ergebnis wird committet, die Site holt zur Laufzeit eine statische Datei, und ein Build-Schritt zur Auslieferzeit entsteht nicht. Wer die Assertion-Schicht (bis August 2026 Claim-Schicht) ändert, führt das Skript nach.
 
 ## Tech-Stack-Regeln
 
@@ -75,13 +68,13 @@ Der Ordner `vault/` ist eine Instanz des Grounded-Vault-Templates (`DigitalHuman
 - **Die Site-Logik liegt in einfachen Kernskripten unter `assets/js/`**, jedes eine IIFE, die `window.PromptotypingApp` erweitert. Kein ES-Modul, kein `import`. Verhaltensrelevant ist allein, dass `app.js` als letztes der Kernskripte geladen wird und die beiden Shell-deklarierten Module danach folgen. `404.html` ist ein Rumpf ohne Site-Skript, der den angefragten Pfad per `location.replace` als `?p=` an `index.html` durchreicht; die Shell existiert genau einmal, und das Subpath-Vokabular steht allein in `resolveTemplateUrl`.
 - **`python tools/check_consistency.py` läuft vor jedem Commit, der Katalog, Konvention, Vorlagenordner oder die Use-Case-Galerie anfasst.** Es meldet, wenn dieselbe Aussage an zwei Orten auseinanderläuft. Wer eine Adresse in `data/case-studies.json` anfasst, läuft es zusätzlich mit `--check-urls`; diese Gruppe braucht das Netz und ist deshalb nicht im Standardlauf. Was es prüft, steht in `knowledge/verification.md`.
 - **marked.js v9.1.6 vendoriert** in `assets/vendor/marked.min.js`. Kein CDN.
-- **Custom-Extensions für marked.js** sind erlaubt, bleiben aber in `assets/js/markdown.js`, wo die marked-Konfiguration insgesamt liegt. Dort stehen heute der Fußnotenapparat und der Heading-ID-Generator.
+- **Custom-Extensions für marked.js** sind erlaubt, bleiben aber in `assets/js/markdown.js`, wo die marked-Konfiguration insgesamt liegt. Heute steht dort nur die Grundkonfiguration.
 - **Browser-natives `location.hash` für Routing**, kein History-API-Hacking, kein React-Router.
 - **GitHub Pages serviert direkt aus dem Repo-Root.** Kein `_site`, kein `docs/`, kein Jekyll-Build.
 
 ## Seitenmodell: Spezifikationsdokumentation (Operator-Entscheidung 2026-07-25)
 
-Die Site ist eine Spezifikationsdokumentation, wie sie eine Programmbibliothek oder eine publizierte Ontologie führt. Es ist **eine Seite zur Zeit sichtbar**; der Navigationsbaum in der Seitenleiste ist das Inhaltsverzeichnis. Das Raster hat zwei Spuren, den Baum und die Seite; eine dritte Spur mit den Überschriften der aktiven Seite gibt es nicht, das Paper trägt sein Inhaltsverzeichnis stattdessen in der Seite unter der H1 (A23). Die durchgehende Scroll-Spalte mit Hero und Video an der Spitze ist abgelöst und wird nicht reaktiviert.
+Die Site ist eine Spezifikationsdokumentation, wie sie eine Programmbibliothek oder eine publizierte Ontologie führt. Es ist **eine Seite zur Zeit sichtbar**; der Navigationsbaum in der Seitenleiste ist das Inhaltsverzeichnis. Das Raster hat zwei Spuren, den Baum und die Seite; eine dritte Spur mit den Überschriften der aktiven Seite gibt es nicht. Die durchgehende Scroll-Spalte mit Hero und Video an der Spitze ist abgelöst und wird nicht reaktiviert.
 
 Die fünf nummerierten Teile sind seit dem 2026-07-29 Sektionen **einer** Spezifikationsseite unter `#specification` (A32, Operator-Entscheidung, Paket F9); die Startseite `overview` bleibt eigenständig. Ein Registereintrag mit `parent` ist ein Teil und keine Seite, behält seine Id als Element-Id in der zusammengeführten Seite und bleibt damit unter genau derselben Adresse erreichbar wie zuvor. Wer einen Teil anfasst, prüft `isPageId`, `hostPage` und `isRouteId`; sie beantworten, was gezeigt werden kann, in welcher Seite ein Teil sitzt und was überhaupt adressierbar ist.
 
@@ -100,9 +93,7 @@ Die nicht aktiven Seiten bleiben als `display: none` im DOM. Das ist die Bedingu
 - Spezifikation: `#specification`, Subpath `/specification` (A32). Die fünf Teile sind Sektionen dieser Seite. Teil 1 ist kanonisch unter `#application` und `/application` adressiert; `#anwendung` und `/anwendung` bleiben Legacy-Aliasse. Die übrigen Teile behalten `#vorlagen`, `#konvention-v0.1`, `#artefakt`, `#verifikation` samt den gleichlautenden Subpfaden.
 - Konvention: `#konvention-v0.1`
 - Glossar: `#glossar`
-- Literatur: `#literatur`
-- Paper-Sektionen: `#abschnitt-{n}-{slug}` (z.B. `#abschnitt-2-promptotyping-as-a-method`). Seit dem Rückzug des Manuskripts am 2026-10-14 führen diese Anker, `#literatur` und die übrigen Paper-Anker auf den Verfügbarkeitshinweis der Paper-Seite; `assets/js/pages-paper.js` rendert keinen Manuskripttext und führt keine Aliaskarte mehr. `tools/check_consistency.py` meldet es als Fehler, wenn `research-artefacts/promptotyping-paper.md` wieder im Repo liegt (`MANUSCRIPT_WITHDRAWN`).
-- Overview: `#overview`, Subpath `/overview`; `#ueberblick` und `/ueberblick` bleiben Legacy-Aliasse. Use Cases: `#use-cases`; Paper: `#paper`; Worked Workflow: `#workflow`; Best Practices: `#praxis`, Praxis-Einträge: `#praxis-{slug}`; Skills: `#skills`, `#skills-promptotyping` und `#skills-{slug}` (A13 bis A15, A42); Arbeitsumgebung: `#arbeitsumgebung`, Subpath `/arbeitsumgebung` (A17); Tutorial: `#tutorial`, Subpath `/tutorial` (A31)
+- Overview: `#overview`, Subpath `/overview`; `#ueberblick` und `/ueberblick` bleiben Legacy-Aliasse. Use Cases: `#use-cases`; Worked Workflow: `#workflow`; Best Practices: `#praxis`, Praxis-Einträge: `#praxis-{slug}`; Skills: `#skills`, `#skills-promptotyping` und `#skills-{slug}` (A13 bis A15, A42); Arbeitsumgebung: `#arbeitsumgebung`, Subpath `/arbeitsumgebung` (A17); Tutorial: `#tutorial`, Subpath `/tutorial` (A31)
 
 Anker dürfen nicht ohne Diskussion umbenannt werden — Repos können auf sie als `template:`-URI verlinken.
 

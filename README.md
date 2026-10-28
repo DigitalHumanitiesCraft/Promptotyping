@@ -4,7 +4,7 @@
 
 Promptotyping is an iterative, knowledge-driven method for developing project-specific digital research artefacts from structured research data and maintained project knowledge through Context Engineering and Agentic Engineering, organised around four recurrent forms of work (Preparation, Exploration, Distillation, Implementation). In the canonical repository convention, a `knowledge/` folder holds versioned Knowledge Documents for requirements, data, decisions, and domain knowledge. This curated knowledge artefact guides implementation, persists across sessions, and receives consequential findings through write-back. The method also permits another inspectable and revisable documentary environment. A Critical Expert in the Loop verifies LLM output at defined points.
 
-This repository is the public method portal; the manuscript of the method paper is maintained separately (see below). The portal at **https://dhcraft.org/Promptotyping/** integrates the specification, case evidence, tutorial, templates and canonical skill. It also serves the templates as stable, machine-readable addresses.
+This repository is the public method portal. It holds the method specification and its supporting material, the templates, examples, method site and tools. The portal at **https://dhcraft.org/Promptotyping/** integrates the specification, case evidence, tutorial, templates and canonical skill. It also serves the templates as stable, machine-readable addresses.
 
 ## The method in brief
 
@@ -14,9 +14,7 @@ An overview of the method is at [dhcraft.org/Promptotyping/#overview](https://dh
 
 ## The method paper
 
-The manuscript is being prepared for journal submission. On 14 October 2026 the author removed the manuscript from the current public repository and website. The method specification, templates and documented applications remain available. Earlier public availability remains part of the publication history; removing the current copy does not establish compliance with a journal's originality requirements.
-
-[knowledge/paper-specification.md](knowledge/paper-specification.md) records the manuscript's governing requirements. Manuscript text is maintained outside this public repository.
+The method paper is maintained separately and will be published in the journal. The manuscript and the material bound to it, its specification, review tooling, figures and audits, are not part of this repository. On 14 October 2026 the author removed the manuscript from the public repository and website, and on 28 October 2026 the remaining manuscript-bound material followed. Earlier public availability remains part of the publication history.
 
 ## Videos
 
@@ -26,8 +24,7 @@ Two introductions to the method (German): the methodology explainer [Promptotypi
 
 | Content | Location | On the site |
 |---|---|---|
-| Paper specification | [knowledge/paper-specification.md](knowledge/paper-specification.md) | Manuscript unavailable |
-| Evidence layer of the paper (Grounded Vault) | [vault/](vault/) | [#vault](https://dhcraft.org/Promptotyping/#vault) |
+| Evidence layer of the method (Grounded Vault) | [vault/](vault/) | [#vault](https://dhcraft.org/Promptotyping/#vault) |
 | Promptotyping Bench (draft research programme) | [Proposal](research-artefacts/promptotyping-bench-proposal.md), [plan](knowledge/benchmark-plan.md), [task and tooling index](research-artefacts/promptotyping-bench/README.md), [research map](vault/30_assertions/MOC-Benchmark.md) | No dedicated portal page |
 | Knowledge Document templates | [_content/promptotyping-document/](_content/promptotyping-document/) | [#vorlagen](https://dhcraft.org/Promptotyping/#vorlagen) |
 | Convention (naming contract, frontmatter schema, structure) | [_content/konvention.md](_content/konvention.md) | [#konvention-v0.1](https://dhcraft.org/Promptotyping/#konvention-v0.1) |
@@ -41,7 +38,7 @@ Two introductions to the method (German): the methodology explainer [Promptotypi
 | Durable site knowledge base (self-application) | [knowledge/](knowledge/) | — |
 | Live Process Inbox | [knowledge/handoff.md](knowledge/handoff.md) | — |
 | Source material, including video scripts | [source-material/](source-material/) | — |
-| Dated reports and transfer context | [snapshots/](snapshots/), [handoffs/](handoffs/) | — |
+| Dated reports and audits | [snapshots/](snapshots/) | — |
 
 ### Templates
 
@@ -95,7 +92,7 @@ https://dhcraft.org/Promptotyping/_content/promptotyping-document/{slug}.md
 
 ## Self-application
 
-The site is both specification and application of the method. The knowledge base in [knowledge/](knowledge/) follows the templates the site publishes, each document carrying the `template:` field that points back to its own specification. The paper's supporting claims are anchored in the Grounded Vault under [vault/](vault/), which links every claim to a source with provenance.
+The site is both specification and application of the method. The knowledge base in [knowledge/](knowledge/) follows the templates the site publishes, each document carrying the `template:` field that points back to its own specification. The method's supporting claims are anchored in the Grounded Vault under [vault/](vault/), which links every claim to a source with provenance.
 
 ## Repository layout
 
@@ -108,13 +105,12 @@ knowledge/        knowledge base of the site itself
 research-artefacts/  benchmark proposal and benchmark authoring area
 source-material/  cleaned video transcripts
 snapshots/        dated reports and audits
-handoffs/         exceptional dated transition snapshots
 schema/           JSON Schema of the frontmatter core
-tools/            consistency check, glossary build, paper review inventory, tests
+tools/            consistency check, glossary build, tests
 _content/         Markdown content (method pages, templates, case studies, glossary)
 assets/           CSS, JS, vendored libraries, fonts, logo
 data/             JSON data (case studies, glossary, template table, vault index)
-vault/            Grounded Vault instance, evidence layer of the paper
+vault/            Grounded Vault instance, evidence layer of the method
 ```
 
 No framework, no build step; marked.js and js-yaml are vendored. The reasoning is documented in the [technology baseline](_content/technology-baseline.md).
@@ -131,7 +127,7 @@ Open http://localhost:8000. Development history is in [knowledge/journal.md](kno
 
 ## Citation
 
-This repository documents the Promptotyping method. The journal manuscript is maintained separately.
+This repository documents the Promptotyping method. The method paper is maintained separately and will be published in the journal.
 
 For the repository and site: Pollin, Christopher; Steiner, Christian: Promptotyping. Zenodo. https://doi.org/10.5281/zenodo.14160875 (concept DOI, always resolves to the current version)
 

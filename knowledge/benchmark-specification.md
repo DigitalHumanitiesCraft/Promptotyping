@@ -10,7 +10,7 @@ status: draft
 language: en
 created: 2026-09-05
 updated: 2026-09-05
-related: [INDEX, governance, paper-specification, verification, benchmark-plan]
+related: [INDEX, governance, verification, benchmark-plan]
 ---
 
 # Promptotyping benchmark pilot specification

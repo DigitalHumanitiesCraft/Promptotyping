@@ -6,17 +6,17 @@ project:
 status: draft
 language: en
 created: 2026-08-17
-updated: 2026-08-21
+updated: 2026-10-28
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
 topics: ["[[Promptotyping]]", "[[Agentic Knowledge Engineering]]", "[[Research Mission Control]]"]
-related: [INDEX, project, specification, verification, journal, paper-specification]
+related: [INDEX, project, specification, verification, journal]
 ---
 
 # Project Governance
 
-This Action Document defines the project-wide rules under which people and LLM-based agents read, change, check, accept, and publish the Promptotyping method, paper, site, and evidence layer. It binds the repository action layer and provides a reusable governance instance for Promptotyping projects with distributed knowledge, delegated work, writing tools, sensitive material, or public outputs.
+This Action Document defines the project-wide rules under which people and LLM-based agents read, change, check, accept, and publish the Promptotyping method, site, and evidence layer. It binds the repository action layer and provides a reusable governance instance for Promptotyping projects with distributed knowledge, delegated work, writing tools, sensitive material, or public outputs.
 
 ## Governing model
 
@@ -128,6 +128,8 @@ A public release requires:
 4. checked citations, links, and licences;
 5. a rendered preview where layout or interaction carries meaning;
 6. explicit release by the Critical Expert.
+
+The method paper is published only in the journal (operator decision 2026-10-28). Its manuscript text, its specification, review tooling, figures and manuscript audits do not enter this public repository or its site, and paper work happens in the author's private workspace.
 
 ## Escalation
 
