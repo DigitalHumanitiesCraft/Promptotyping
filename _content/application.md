@@ -12,7 +12,7 @@ machine-url: https://dhcraft.org/Promptotyping/_content/application.md
 
 # Application
 
-The method's unit of work is a small set of Markdown documents that are the specification of the artefact, versioned in the git history of the project repository. The central loop iterates over these documents, and the implementation is derived from them. This page resolves the four forms of work into actions, with entry condition, steps, stopping criterion and the documents that arise along the way. Why the method is built this way and what it can be measured against stands in the [paper](#paper).
+The method's unit of work is a small set of Markdown documents that are the specification of the artefact, versioned in the git history of the project repository. The central loop iterates over these documents, and the implementation is derived from them. This page resolves the four forms of work into actions, with entry condition, steps, stopping criterion and the documents that arise along the way. Why the method is built this way and what it can be measured against stands in the paper.
 
 ## Preparation
 
@@ -104,7 +104,7 @@ A bounded Promptotyping iteration is responsible only when every required condit
 
 An unknown answer requires resolution before implementation. A no answer excludes the proposed iteration in its current form. Public or institutional operation adds expertise in security, accessibility, maintainability, integration, and sustained operation.
 
-A positive fit check licenses a bounded trial. It provides no comparative success forecast. The documented corpus is not representative, total human work remains unmeasured, and independent long-term transfer has yet to be established. The grounds and limitations are stated in [paper sections 4.1 to 4.3](#abschnitt-4-1-evidential-scope-and-applicability).
+A positive fit check licenses a bounded trial. It provides no comparative success forecast. The documented corpus is not representative, total human work remains unmeasured, and independent long-term transfer has yet to be established. The grounds and limitations are stated in paper sections 4.1 to 4.3.
 
 ## Continue from here
 

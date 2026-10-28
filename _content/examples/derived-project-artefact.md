@@ -11,7 +11,7 @@ status: derived-observation
 
 # Corpus profile of the letter corpus at corpus-v1.4
 
-> This file is an illustrative example referenced from the [Promptotyping paper](https://dhcraft.org/Promptotyping/#paper). It shows how a *derived project artefact* records document type, referenced project or data state, generation process, and epistemic status in its header. All values are fictional. Regenerating the real counterpart of such a file means checking out the referenced commit and re-running the recorded process with the recorded tools.
+> This file is an illustrative example referenced from the Promptotyping paper. It shows how a *derived project artefact* records document type, referenced project or data state, generation process, and epistemic status in its header. All values are fictional. Regenerating the real counterpart of such a file means checking out the referenced commit and re-running the recorded process with the recorded tools.
 
 ## Derived observations
 
