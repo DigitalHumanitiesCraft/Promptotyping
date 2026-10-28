@@ -33,7 +33,6 @@ CLAUDE_MD = ROOT / "CLAUDE.md"
 README = ROOT / "README.md"
 CASES = ROOT / "data" / "case-studies.json"
 CASE_DIR = ROOT / "_content" / "case-studies"
-PAPER = ROOT / "research-artefacts" / "promptotyping-paper.md"
 CONTENT_DIR = ROOT / "_content"
 PRAXIS = CONTENT_DIR / "praxis.md"
 GLOSSAR_JSON = ROOT / "data" / "glossar.json"
@@ -56,26 +55,6 @@ OVERVIEW = CONTENT_DIR / "overview.md"
 APPLICATION = CONTENT_DIR / "application.md"
 TUTORIAL = CONTENT_DIR / "tutorial.md"
 WORKING_ENVIRONMENT = CONTENT_DIR / "arbeitsumgebung.md"
-PAPER_SPECIFICATION = KNOWLEDGE_DIR / "paper-specification.md"
-PROJECT = KNOWLEDGE_DIR / "project.md"
-TECHNOLOGY_BASELINE = CONTENT_DIR / "technology-baseline.md"
-VAULT_STATE = ROOT / "vault" / "knowledge" / "state.md"
-
-# The manuscript left the public repository and the site on 2026-10-14 for a
-# journal submission (see the manuscript publication boundary in CLAUDE.md).
-# While this holds, its file must stay absent, and the
-# groups that read it check what they still can and say what they skip.
-MANUSCRIPT_WITHDRAWN = True
-
-CURRENT_PAPER_VERSION = "0.9.1"
-# README stopped naming the manuscript version with the withdrawal.
-PAPER_VERSION_CLAIMS = (
-    (CLAUDE_MD, "Version 0.9.1 (Author-Review-Draft)"),
-    (PROJECT, "current state is version 0.9.1"),
-    (PAPER_SPECIFICATION, "**Manuscript version:** 0.9.1"),
-    (TECHNOLOGY_BASELINE, "version 0.9.1, author-review draft"),
-    (VAULT_STATE, "four-chapter text, version 0.9.1"),
-)
 
 # The site's own base, as the template: fields and the prose spell it.
 SITE_BASE = "dhcraft.org/Promptotyping/"
@@ -85,18 +64,7 @@ SITE_BASE = "dhcraft.org/Promptotyping/"
 sys.path.insert(0, str(TOOLS))
 import build_glossar  # noqa: E402
 
-# The header row of the paper's case table, Table 1 in section 3.2 of the
-# four-chapter text (promotion of 2026-07-31). Parsing keys on this line rather
-# than on a position, so inserting a section cannot move it.
-CASE_TABLE_HEADER = ("| Case | Initial project condition | Primary function of *Implementation* "
-                     "| Principal operational forms | Bounded purpose or status |")
-
-# The anchor prefix a numbered paper heading takes, as headingId in
-# assets/js/markdown.js mints it. The port below and the source-type table of
-# the glossary both read it from here rather than spelling it out twice.
-PAPER_SECTION_PREFIX = "abschnitt-"
-
-# The five epistemic functions of the paper's interface typology (section 4.2).
+# The five epistemic functions of the site's interface typology (artefact page).
 INTERFACE_TYPES = {"verification", "exploration", "edition", "capture", "audit"}
 
 # Templates written but deliberately not wired into the catalogue, with the
@@ -329,10 +297,10 @@ def check_portal_paths() -> None:
          ("#application", "#use-cases", "#vault", "#tutorial",
           "#skills-promptotyping", "#vorlagen")),
         ("understand", APPLICATION,
-         ("#paper", "#use-cases", "#vault", "#tutorial",
+         ("#use-cases", "#vault", "#tutorial",
           "#skills-promptotyping", "#vorlagen")),
         ("evaluate", PAGES_CONTENT,
-         ("#abschnitt-3-patterns-across-promptotypes", "#vault", "#tutorial")),
+         ("#vault", "#tutorial")),
         ("apply", TUTORIAL,
          ("#skills-promptotyping", "#vorlagen", "#arbeitsumgebung")),
         ("working environment", WORKING_ENVIRONMENT,
@@ -522,68 +490,6 @@ def check_gallery(data):
                 fail("gallery", "%s carries interface type %r, not one of the five"
                      % (case_id, kind))
 
-        # A card in the evidence block claims a row of the paper's case table
-        # (Table 3, section 4.3), and only there.
-        if role == "evidence" and not case.get("paper_row"):
-            fail("gallery", "%s has role evidence but claims no case-table row" % case_id)
-        if role != "evidence" and case.get("paper_row"):
-            fail("gallery", "%s claims case-table row %r but its role is %r"
-                 % (case_id, case["paper_row"], role))
-
-
-def paper_case_table():
-    """The paper's case table (Table 1, section 3.2), as the set of case names.
-
-    The four-chapter text carries no per-case interface types, so the table
-    yields names alone; the interface typology lives in the gallery data.
-    """
-    rows = set()
-    lines = PAPER.read_text(encoding="utf-8").splitlines()
-    try:
-        start = lines.index(CASE_TABLE_HEADER)
-    except ValueError:
-        fail("evidence", "case-table header row not found in research-artefacts/promptotyping-paper.md")
-        return rows
-    for line in lines[start + 2:]:
-        if not line.startswith("|"):
-            break
-        cells = [c.strip() for c in line.strip("|").split("|")]
-        if len(cells) < 3:
-            break
-        rows.add(cells[0].replace("*", "").strip())
-    return rows
-
-
-def check_evidence_reachable(data):
-    """Every case the paper analyses is reachable on the site.
-
-    A reader who comes from the paper wanting to check a claim of section 4
-    has to find the project. This is the condition the gallery exists for, and
-    it held for ten of thirteen projects until 2026-07-26.
-    """
-    if MANUSCRIPT_WITHDRAWN:
-        note("evidence: the case table lives in the withdrawn manuscript; "
-             "paper_row claims are not checked against it")
-        return
-    table = paper_case_table()
-    if not table:
-        return
-    claimed = {}
-    for case in data["caseStudies"]:
-        name = case.get("paper_row")
-        if not name:
-            continue
-        if name in claimed:
-            fail("evidence", "cards %s and %s both claim case-table row %r"
-                 % (claimed[name], case["id"], name))
-            continue
-        claimed[name] = case["id"]
-
-    for name in sorted(set(table) - set(claimed)):
-        fail("evidence", "the case table lists %r; no card claims it" % name)
-    for name in sorted(set(claimed) - set(table)):
-        fail("evidence", "card %s claims case-table row %r; the paper has no such row"
-             % (claimed[name], name))
 
 
 def urls_of(cases):
@@ -638,38 +544,10 @@ def check_glossar_mirror():
 # The source types data/glossar.json declares, each with the anchor prefix its
 # addresses carry. A type mapped to None takes no anchor at all.
 SOURCE_PREFIXES = {
-    "paper": PAPER_SECTION_PREFIX,
-    "literature": "ref-",
     "vault": "vault-",
     "page": "",
     "text": None,
 }
-
-
-def reference_ids():
-    """The ref-* anchors of A30, rebuilt from the reference list of the paper.
-
-    Port of indexReferences in assets/js/pages-paper.js. The id of an entry is
-    the surname of its first author with the year, and the first entry to claim
-    a key keeps it. Without this the ref- prefix alone would pass any string.
-    None while the manuscript is withdrawn, since its list is not here.
-    """
-    if MANUSCRIPT_WITHDRAWN:
-        return None
-    text = read_text(PAPER)
-    if "## References" not in text:
-        return set()
-    found = set()
-    for line in text.split("## References", 1)[1].split("\n"):
-        line = line.strip()
-        if not line.startswith("- "):
-            continue
-        plain = line[2:].replace("*", "")
-        match = (re.search(r"^([^,]+),.*?\((\d{4}[a-z]?)\)", plain)
-                 or re.search(r"^([^,]+),.*?\b(\d{4}[a-z]?)\b", plain))
-        if match:
-            found.add("ref-" + slugify(match.group(1)) + "-" + match.group(2))
-    return found
 
 
 def glossar_categories(meta):
@@ -703,12 +581,8 @@ def check_glossar_sources(anchors):
     the term names, which carrier is of which kind, and where each one lives.
     Four ways this can go wrong silently: a category the render table does not
     know, a source type outside the declared vocabulary, an anchor under the
-    wrong family, and a reference key that no entry of the paper's list mints.
+    wrong family, and an anchor nothing on the site declares.
     """
-    refs = reference_ids()
-    if refs is None:
-        note("glossar: literature sources are checked by their ref- prefix only; "
-             "the reference list left with the withdrawn manuscript")
     data = load_json(GLOSSAR_JSON)
     categories = glossar_categories(data["_meta"])
     for entry in data["eintraege"]:
@@ -738,11 +612,7 @@ def check_glossar_sources(anchors):
             if not anchor.startswith(prefix):
                 fail("glossar", "%s calls #%s a %s source; those carry the prefix %r"
                      % (slug, anchor, typ, prefix))
-            if typ == "literature":
-                if refs is not None and anchor not in refs:
-                    fail("glossar", "%s cites #%s; the reference list of the paper "
-                                    "mints no such id" % (slug, anchor))
-            elif not is_declared(anchor, anchors):
+            if not is_declared(anchor, anchors):
                 fail("glossar", "%s links to #%s; nothing on the site declares that "
                                 "anchor" % (slug, anchor))
 
@@ -830,12 +700,6 @@ def route_aliases(registry_js):
     return js_string_map(registry_js, "LEGACY_ROUTE_ALIASES")
 
 
-def paper_anchor_pattern(registry_js):
-    """The PAPER_ANCHOR regex of registry.js, reused rather than restated."""
-    match = re.search(r"var PAPER_ANCHOR = /(.+?)/;", registry_js)
-    return re.compile(match.group(1)) if match else re.compile(r"^$")
-
-
 def slugify(text):
     """Port of slugify in assets/js/core.js."""
     lowered = text.lower()
@@ -844,38 +708,10 @@ def slugify(text):
     return re.sub(r"[^a-z0-9]+", "-", lowered).strip("-")
 
 
-def heading_id(text, overrides):
-    """Port of headingId in assets/js/markdown.js, overrides included."""
-    plain = re.sub(r"<[^>]*>", "", text).strip()
-    numbered = re.match(r"^(\d+(?:\.\d+)*)\.?\s+([\s\S]*)$", plain)
-    if numbered:
-        anchor = PAPER_SECTION_PREFIX + numbered.group(1).replace(".", "-") + "-" + \
-            slugify(numbered.group(2))
-    else:
-        anchor = slugify(plain)
-    return overrides.get(anchor, anchor)
-
-
-def unique_ids(ids):
-    """Port of uniqueHeadingId: the nth repeat of an id gets the suffix -n."""
-    used = {}
-    out = []
-    for anchor in ids:
-        if anchor not in used:
-            used[anchor] = 1
-            out.append(anchor)
-            continue
-        used[anchor] += 1
-        out.append("%s-%d" % (anchor, used[anchor]))
-    return out
-
-
-# Known input and output of the three ports above, read off the JavaScript they
-# port: slugify in assets/js/core.js, headingId and uniqueHeadingId in
-# assets/js/markdown.js. The cases cover what the paper and the practice page
-# actually put through them, umlauts and the sharp s, a character outside the
-# alphabet, punctuation runs and edge dashes, a numbered heading at both depths,
-# an override and the collision suffix.
+# Known input and output of the port above, read off slugify in
+# assets/js/core.js. The cases cover what the practice page actually puts
+# through it, umlauts and the sharp s, a character outside the alphabet, and
+# punctuation runs and edge dashes.
 SLUGIFY_CASES = (
     ("Grundlagen der Prüfung", "grundlagen-der-pruefung"),
     ("Öffentliche Straße", "oeffentliche-strasse"),
@@ -885,25 +721,11 @@ SLUGIFY_CASES = (
     ("2026-07-30", "2026-07-30"),
 )
 
-HEADING_ID_CASES = (
-    ("1. Introduction", {}, "abschnitt-1-introduction"),
-    ("4.3 Cross-case findings", {}, "abschnitt-4-3-cross-case-findings"),
-    ("References", {}, "references"),
-    ("References", {"references": "literatur"}, "literatur"),
-    ("<em>Emphasis</em> in a heading", {}, "emphasis-in-a-heading"),
-    ("A. Not a number", {}, "a-not-a-number"),
-)
-
-UNIQUE_ID_CASES = (
-    (["a", "b", "a", "a", "b"], ["a", "b", "a-2", "a-3", "b-2"]),
-)
-
-
 def check_ports():
-    """The three ports of the JavaScript still compute what the browser computes.
+    """The port of slugify still computes what the browser computes.
 
-    slugify, the heading-id generator and its collision suffix decide the anchor
-    set every check of the group above is held against. A port that drifts from
+    slugify decides the praxis anchors every check of the group below is held
+    against. A port that drifts from
     the JavaScript does not report anything; it turns those checks into silent
     passes, which is why the rebuilt resolver carries a self-test of the same
     kind in check_subpath_handover.
@@ -913,16 +735,6 @@ def check_ports():
         if actual != expected:
             fail("ports", "slugify(%r) gives %r; slugify in assets/js/core.js "
                           "gives %r" % (text, actual, expected))
-    for text, overrides, expected in HEADING_ID_CASES:
-        actual = heading_id(text, overrides)
-        if actual != expected:
-            fail("ports", "heading_id(%r) gives %r; headingId in "
-                          "assets/js/markdown.js gives %r" % (text, actual, expected))
-    for ids, expected in UNIQUE_ID_CASES:
-        actual = unique_ids(ids)
-        if actual != list(expected):
-            fail("ports", "unique_ids(%r) gives %r; uniqueHeadingId in "
-                          "assets/js/markdown.js gives %r" % (ids, actual, expected))
 
 
 def markdown_headings(path, levels):
@@ -944,8 +756,7 @@ def markdown_headings(path, levels):
 def plain_inline(text):
     """Markdown inline markup removed, the way textContent sees a heading.
 
-    The praxis anchors are built from the rendered heading, the paper anchors
-    from the raw Markdown; only this path needs the stripping.
+    The praxis anchors are built from the rendered heading.
     """
     text = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", text)
     return text.replace("`", "").replace("**", "").replace("*", "").replace("_", "")
@@ -954,8 +765,7 @@ def plain_inline(text):
 # The script files this group reads its declarations out of. A rename would
 # otherwise end the run in a bare KeyError that says nothing about what is
 # missing or why the check needed it.
-DECLARING_SCRIPTS = ("registry.js", "markdown.js", "pages-glossar.js",
-                     "pages-content.js", "pages-paper.js")
+DECLARING_SCRIPTS = ("registry.js", "pages-glossar.js", "pages-content.js")
 
 
 def declared_anchors(js_texts):
@@ -965,13 +775,8 @@ def declared_anchors(js_texts):
         if name not in by_name:
             sys.exit("FAIL:  assets/js/%s is gone; the anchor checks read the "
                      "declared side of the site out of it" % name)
-    overrides = js_string_map(by_name["markdown.js"], "HEADING_ID_OVERRIDES")
     konzept_aliases = js_string_map(by_name["pages-glossar.js"], "KONZEPT_ALIASES")
     praxis_aliases = js_string_map(by_name["pages-content.js"], "PRAXIS_ALIASES")
-    # pages-paper.js shrank to the availability notice with the withdrawal and
-    # carries no alias table any more.
-    paper_aliases = ({} if MANUSCRIPT_WITHDRAWN else
-                     js_string_map(by_name["pages-paper.js"], "PAPER_ANCHOR_ALIASES"))
 
     anchors = set(registry_pages(by_name["registry.js"]))
     anchors.update(route_aliases(by_name["registry.js"]))
@@ -995,11 +800,6 @@ def declared_anchors(js_texts):
     anchors.update(praxis_ids)
     anchors.update(praxis_aliases)
 
-    paper_ids = [] if MANUSCRIPT_WITHDRAWN else unique_ids(
-        [heading_id(h, overrides) for h in markdown_headings(PAPER, (1, 2, 3, 4, 5, 6))])
-    anchors.update(paper_ids)
-    anchors.update(paper_aliases)
-
     # Block anchors written as literals in the JavaScript, plus the host ids
     # that a *_ID constant names.
     for text in js_texts.values():
@@ -1011,10 +811,6 @@ def declared_anchors(js_texts):
         if target not in praxis_ids:
             fail("anchors", "PRAXIS_ALIASES sends %s to #%s; no praxis heading "
                             "carries that anchor" % (alias, target))
-    for alias, target in sorted(paper_aliases.items()):
-        if target not in paper_ids:
-            fail("anchors", "PAPER_ANCHOR_ALIASES sends %s to #%s; no paper heading "
-                            "carries that anchor" % (alias, target))
     for alias, target in sorted(konzept_aliases.items()):
         if target not in glossar_slugs:
             fail("anchors", "KONZEPT_ALIASES sends konzept-%s to the glossary entry "
@@ -1023,42 +819,11 @@ def declared_anchors(js_texts):
     return anchors
 
 
-# Anchor families the code mints per item at render time rather than declaring:
-# figures, reference-list entries and the footnote apparatus. A link into one of
-# them is checked by its prefix, since the item set follows from the paper text.
-# ref- is deliberately weaker here than in the glossary: indexReferences in
-# pages-paper.js mints one id per entry of the paper's reference list while the
-# paper renders, so the set exists only after a render. A hand-written #ref-
-# link therefore passes on its prefix alone everywhere except in the glossary,
-# where check_glossar_sources rebuilds those ids from the paper's own list and
-# rejects a key the list does not mint. The glossary is the one place that
-# carries such links by hand, which is why the strict test sits there.
-GENERATED_PREFIXES = ("figure-", "ref-", "fn-", "fnref-")
-
-
-_paper_route = []
-
-
-def routes_to_paper(anchor):
-    """The anchor is one pageForAnchor sends to the Paper page.
-
-    That is the abschnitt- family and the PAPER_ANCHOR pattern of registry.js,
-    read once from the same file the site routes by.
-    """
-    if not _paper_route:
-        _paper_route.append(paper_anchor_pattern(read_text(JS_DIR / "registry.js")))
-    return anchor.startswith(PAPER_SECTION_PREFIX) or bool(_paper_route[0].search(anchor))
-
-
 def is_declared(anchor, anchors):
-    # While the manuscript is withdrawn, every address the router sends to the
-    # Paper page lands on its availability notice, so those resolve as a whole.
-    if MANUSCRIPT_WITHDRAWN and routes_to_paper(anchor):
-        return True
-    return anchor in anchors or anchor.startswith(GENERATED_PREFIXES)
+    return anchor in anchors
 
 
-def resolve_site_url(url, page_ids, families, paper_anchor, aliases=None):
+def resolve_site_url(url, page_ids, families, aliases=None):
     """Port of resolveTemplateUrl in assets/js/registry.js."""
     aliases = aliases or {}
     rest = re.sub(r"^https?://", "", url)
@@ -1089,7 +854,7 @@ def resolve_site_url(url, page_ids, families, paper_anchor, aliases=None):
         return aliases[rest]
     if rest == "konvention":
         return "konvention-v0.1"
-    if paper_anchor.search(rest) or any(rest.startswith(p) for p, _, _ in families):
+    if any(rest.startswith(p) for p, _, _ in families):
         return rest
     return None
 
@@ -1151,7 +916,7 @@ def prose_site_urls():
 HANDOVER_PARAM = "p"
 
 
-def check_subpath_handover(page_ids, families, paper_anchor, aliases):
+def check_subpath_handover(page_ids, families, aliases):
     """The one subpath vocabulary resolves, and 404.html states none of its own.
 
     Since 2026-07-26 the router hands the requested path to the application as a
@@ -1181,22 +946,20 @@ def check_subpath_handover(page_ids, families, paper_anchor, aliases):
     # shows up here instead of turning the checks above into silent passes. That
     # the JavaScript resolver agrees is the browser half of the verification.
     for page in sorted(page_ids):
-        if resolve_site_url(page, page_ids, families, paper_anchor, aliases) != page:
+        if resolve_site_url(page, page_ids, families, aliases) != page:
             fail("anchors", "the subpath /%s does not resolve to #%s" % (page, page))
     for legacy, canonical in sorted(aliases.items()):
-        if resolve_site_url(legacy, page_ids, families, paper_anchor, aliases) != canonical:
+        if resolve_site_url(legacy, page_ids, families, aliases) != canonical:
             fail("anchors", "the legacy subpath /%s does not resolve to #%s"
                  % (legacy, canonical))
     for prefix, _page, segment in families:
         if not segment:
             continue
-        resolved = resolve_site_url(segment + "/probe", page_ids, families, paper_anchor,
-                                    aliases)
+        resolved = resolve_site_url(segment + "/probe", page_ids, families, aliases)
         if resolved != prefix + "probe":
             fail("anchors", "the subpath /%s/probe resolves to %s, not to #%sprobe"
                  % (segment, "#" + resolved if resolved else "nothing", prefix))
-    if resolve_site_url("konvention", page_ids, families, paper_anchor,
-                        aliases) != "konvention-v0.1":
+    if resolve_site_url("konvention", page_ids, families, aliases) != "konvention-v0.1":
         fail("anchors", "the subpath /konvention no longer resolves to #konvention-v0.1")
 
 
@@ -1207,7 +970,6 @@ def check_anchors():
     registry_js = read_text(JS_DIR / "registry.js")
     page_ids = registry_pages(registry_js)
     families = anchor_families(registry_js)
-    paper_anchor = paper_anchor_pattern(registry_js)
     aliases = route_aliases(registry_js)
 
     anchors = declared_anchors(js_texts)
@@ -1222,7 +984,7 @@ def check_anchors():
                  % (where, anchor))
 
     for where, field, url in template_field_urls():
-        anchor = resolve_site_url(url, page_ids, families, paper_anchor, aliases)
+        anchor = resolve_site_url(url, page_ids, families, aliases)
         if anchor is None:
             fail("anchors", "%s: template.%s %s resolves to no anchor" % (where, field, url))
         elif not is_declared(anchor, anchors):
@@ -1230,7 +992,7 @@ def check_anchors():
                  % (where, field, url, anchor))
 
     for where, token in prose_site_urls():
-        anchor = resolve_site_url(token, page_ids, families, paper_anchor, aliases)
+        anchor = resolve_site_url(token, page_ids, families, aliases)
         if anchor is None:
             fail("anchors", "%s names %s, which resolves to no anchor" % (where, token))
         elif not is_declared(anchor, anchors):
@@ -1238,7 +1000,7 @@ def check_anchors():
                  % (where, token, anchor))
 
     check_glossar_sources(anchors)
-    check_subpath_handover(page_ids, families, paper_anchor, aliases)
+    check_subpath_handover(page_ids, families, aliases)
 
 
 # ---------------------------------------------------------------------------
@@ -1315,8 +1077,8 @@ def check_action_layer_pages():
     The prose checks above run the other direction, every address CLAUDE.md
     names must exist. This one closes the gap that direction leaves: a page or
     part added in registry.js is live and addressable, and nothing complained
-    that the published scheme the next agent reads never heard of it. Two ids,
-    workflow and paper, were missing on 2026-07-29 when the group was written.
+    that the published scheme the next agent reads never heard of it. Two ids
+    were missing on 2026-07-29 when the group was written.
     """
     text = read_text(CLAUDE_MD)
     for page in registry_pages(read_text(JS_DIR / "registry.js")):
@@ -1325,12 +1087,12 @@ def check_action_layer_pages():
                                  "CLAUDE.md does not name #%s" % (page, page))
 
 
-# Documents in which a bare A-number does not mean a requirement. The paper
-# texts use no requirement numbers, and INDEX.md names the archived audits A1
-# and A2, which are records rather than requirements. The dated records fall out
+# Documents in which a bare A-number does not mean a requirement. INDEX.md
+# names the archived audits A1 and A2, which are records rather than
+# requirements. The dated records fall out
 # for that same reason and are recognised the way V9 recognises them, since a
 # journal entry naming an audit run is recording a name, not citing a number.
-REQUIREMENT_EXEMPT = ("paper-specification.md", "INDEX.md")
+REQUIREMENT_EXEMPT = ("INDEX.md",)
 
 
 def requirement_citing_paths():
@@ -1418,8 +1180,7 @@ def check_knowledge_frontmatter() -> None:
     The published machine form of the convention's frontmatter vocabulary is
     schema/knowledge-document.schema.json; this group checks the mandatory
     core natively and pins the schema's required list to the same tuple, so
-    the schema and the check cannot drift apart silently. The headerless
-    paper under research-artefacts/ is outside this Knowledge Document check.
+    the schema and the check cannot drift apart silently.
     """
     schema = json.loads((ROOT / "schema" / "knowledge-document.schema.json")
                         .read_text(encoding="utf-8"))
@@ -1512,33 +1273,6 @@ def check_relative_links():
                  % (path.relative_to(ROOT).as_posix(), target))
 
 
-def check_manuscript_boundary() -> None:
-    """The withdrawn manuscript stays out of the public repository."""
-    if MANUSCRIPT_WITHDRAWN and PAPER.exists():
-        shown = (PAPER.relative_to(ROOT).as_posix()
-                 if PAPER.is_relative_to(ROOT) else str(PAPER))
-        fail("manuscript", "%s is back in the repository, but the manuscript is "
-             "withdrawn (journal submission, 2026-10-14)" % shown)
-
-
-def check_paper_version_claims() -> None:
-    """Keep every active manuscript-status carrier on one declared version."""
-
-    for path, marker in PAPER_VERSION_CLAIMS:
-        text = read_text(path)
-        if marker not in text:
-            display_path = (
-                path.relative_to(ROOT).as_posix()
-                if path.is_relative_to(ROOT)
-                else str(path)
-            )
-            fail(
-                "paper-version",
-                "%s does not identify the current paper as version %s"
-                % (display_path, CURRENT_PAPER_VERSION),
-            )
-
-
 def main() -> int:
     failures.clear()
     notes.clear()
@@ -1554,7 +1288,6 @@ def main() -> int:
         lambda: check_naming_contract(documents),
         lambda: check_claude_md_slugs(documents),
         lambda: check_gallery(cases),
-        lambda: check_evidence_reachable(cases),
         check_glossar_mirror,
         check_ports,
         check_anchors,
@@ -1567,8 +1300,6 @@ def main() -> int:
         check_skill_package,
         check_portal_paths,
         check_english_route_contract,
-        check_paper_version_claims,
-        check_manuscript_boundary,
     ]
     if "--check-urls" in sys.argv:
         groups.append(lambda: check_urls(cases))

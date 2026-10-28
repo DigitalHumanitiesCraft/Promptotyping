@@ -1,4 +1,4 @@
-/* Vault page. The Grounded Vault under the paper, read from the generated
+/* Vault page. The Grounded Vault of the method, read from the generated
    index data/vault.json (vault/tools/build_site_index.py). The page lists the
    topic maps with their assertions; an assertion opens in the side panel with its
    statement and its grounding anchors, which link to the distillate Markdown in
@@ -404,9 +404,9 @@
         el.classList.remove("placeholder-section");
         el.innerHTML =
           "<h1>Vault</h1>" +
-          "<p>The evidence layer under the paper. Sources are condensed into distillates " +
-          "of quotation-checked single statements, and the assertions that the paper's " +
-          "load-bearing sentences rest on are built from those statements. The anchors " +
+          "<p>The grounded evidence layer of the method. Sources are condensed into " +
+          "distillates of quotation-checked single statements, and the assertions that the " +
+          "method's load-bearing statements rest on are built from those statements. The anchors " +
           "resolve downwards only, from the assertion to the source. An assertion opens in the " +
           "side panel with its statement and its anchors.</p>" +
           /* GitHub Pages serves no directory index, so the repository folder is

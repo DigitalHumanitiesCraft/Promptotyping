@@ -58,9 +58,8 @@
     return text;
   }
 
-  /* One lowercased text snapshot per page, taken once. The paper alone is well
-     over a hundred kilobytes, so the terms are matched against these strings
-     rather than walking the DOM per term. */
+  /* One lowercased text snapshot per page, taken once, so the terms are matched
+     against these strings rather than walking the DOM per term. */
   function collectPages() {
     var labels = App.listPages();
     var out = [];
@@ -165,7 +164,7 @@
     host = mountHost();
   }
 
-  /* The paper renders after promptotyping:sections-ready, so the scan waits for
+  /* The vault renders after promptotyping:sections-ready, so the scan waits for
      the event that reports the whole content as mounted. */
   function build() {
     if (!host || host.querySelector(".term-index-table")) {

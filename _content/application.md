@@ -6,7 +6,7 @@ language: en
 version: "0.6"
 created: 2026-07-25
 updated: 2026-08-25
-source: research-artefacts/promptotyping-paper.md, sections 2.1 and 2.2
+source: Promptotyping method, forms of work and project knowledge base
 machine-url: https://dhcraft.org/Promptotyping/_content/application.md
 ---
 

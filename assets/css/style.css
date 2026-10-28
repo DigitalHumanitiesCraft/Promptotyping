@@ -78,8 +78,8 @@
   --shadow-tooltip: 0 2px 8px rgba(0, 0, 0, 0.08);
   --backdrop: rgba(0, 0, 0, 0.3);
 
-  /* Epistemic function hues. The five interface categories of paper section
-     4.2 are a nominal scale with five values, and hue is the visual variable
+  /* Epistemic function hues. The five interface categories of the artefact
+     typology are a nominal scale with five values, and hue is the visual variable
      Bertin classes as selective and associative, so it is the correct encoding
      there. Muted, derived from the watercolour of the Promptotyping logo, so
      the category name stays readable beside the mark; WCAG 1.4.1 forbids
@@ -421,8 +421,7 @@ a:hover {
 }
 
 /* ---- Sub-navigation in the tree ----
-   The parts of the specification and the sections of the paper stand
-   permanently under their entry. Nothing opens or closes; the scrollspy moves
+   The parts of the specification stand permanently under their entry. Nothing opens or closes; the scrollspy moves
    the current marker and changes nothing else. */
 
 .docs-nav-sub {
@@ -709,133 +708,6 @@ a:hover {
 
 #overview > h2 {
   margin-top: var(--space-8);
-}
-
-/* ---- Paper: sections and table of contents ----
-   The paper is the longest page and its only entry into its own structure.
-   Two levels, quiet, static; the removed on-this-page rail is not coming back. */
-
-.paper-toc {
-  margin: 0 0 var(--space-12);
-  padding: var(--space-4) 0 var(--space-8);
-  border-bottom: 1px solid var(--border);
-}
-
-.paper-toc-title {
-  margin: 0 0 var(--space-4);
-  font-size: 0.6875rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--grey-3);
-}
-
-.paper-toc-list,
-.paper-toc-sub {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.paper-toc-list {
-  columns: 2;
-  column-gap: var(--space-8);
-}
-
-.paper-toc-list > li {
-  break-inside: avoid;
-  margin: 0 0 var(--space-4);
-}
-
-.paper-toc-list > li > a {
-  display: block;
-  font-weight: 500;
-  text-decoration: none;
-}
-
-.paper-toc-sub {
-  margin-top: var(--space-1);
-}
-
-.paper-toc-sub a {
-  display: block;
-  padding-left: var(--space-4);
-  font-size: 0.875rem;
-  line-height: 1.5;
-  color: var(--grey-2);
-  text-decoration: none;
-}
-
-.paper-toc a:hover,
-.paper-toc a:focus-visible {
-  color: var(--text);
-  text-decoration: underline;
-  text-decoration-color: var(--accent);
-}
-
-/* Inline citation links jump to the literature section. */
-.citation-link {
-  text-decoration-style: dotted;
-}
-
-/* Use-case reference block at the end of paper section 4. The fill marks the
-   block off, so it carries no frame. */
-
-.usecase-reference {
-  padding: var(--space-6);
-  margin: var(--space-8) 0;
-  background: var(--code-bg);
-}
-
-.usecase-reference p {
-  margin: 0 0 var(--space-2);
-}
-
-.usecase-reference p:last-child {
-  margin-bottom: 0;
-}
-
-.usecase-reference-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-4);
-  font-size: 0.875rem;
-}
-
-/* ---- Paper figures ----
-   Black line drawings on white. In the dark theme they are inverted rather
-   than shipped twice, which holds because they carry no hue; a coloured
-   figure would need its own file. */
-
-.paper-figure {
-  margin: var(--space-12) 0;
-}
-
-.paper-figure img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.paper-figure figcaption {
-  margin-top: var(--space-4);
-  font-size: 0.875rem;
-  line-height: 1.5;
-  color: var(--grey-2);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .paper-figure img {
-    filter: invert(1);
-  }
-}
-
-:root[data-theme="dark"] .paper-figure img {
-  filter: invert(1);
-}
-
-:root[data-theme="light"] .paper-figure img {
-  filter: none;
 }
 
 /* ---- Side panel ----
@@ -1838,8 +1710,8 @@ a:hover {
   }
 
   /* Long identifiers and full URLs are single unbreakable words; without this
-     they set the min-content width of the reading column. Headings need it too:
-     the paper title carries words wider than a phone at 2.25rem. */
+     they set the min-content width of the reading column. Headings need it too,
+     since a long title carries words wider than a phone at 2.25rem. */
   .content code,
   .content a,
   .content h1,
@@ -1848,7 +1720,7 @@ a:hover {
     overflow-wrap: anywhere;
   }
 
-  /* Set the paper title at a size a phone can hold. */
+  /* Set page titles at a size a phone can hold. */
   .content h1 {
     font-size: 1.75rem;
   }
@@ -1860,10 +1732,6 @@ a:hover {
   /* The header must not push its links off-screen. */
   .docs-brand-kind {
     display: none;
-  }
-
-  .paper-toc-list {
-    columns: 1;
   }
 
   .site-footer-inner {

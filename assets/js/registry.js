@@ -35,7 +35,7 @@
       note: "Every term of the method defined, with the pages that use it",
       machine: "data/glossar.json" },
     { id: "vault", label: "Vault", group: "Reference", kind: "informative",
-      note: "The sources under the load-bearing claims of the paper",
+      note: "The sources under the load-bearing claims of the method",
       machine: "data/vault.json" },
 
     { id: "workflow", label: "Worked workflow", group: "Evidence", kind: "informative",
@@ -51,10 +51,7 @@
       note: "Installable method skill and reusable system prompts",
       machine: "_content/skills/index.md" },
     { id: "arbeitsumgebung", label: "Working environment", group: "Tools and practice", kind: "informative",
-      note: "Vault, agent interface and AI harness around the method" },
-
-    { id: "paper", label: "Manuscript unavailable", group: "Paper", kind: "informative",
-      hiddenFromNav: true, note: "" }
+      note: "Vault, agent interface and AI harness around the method" }
   ];
 
   /* Published German routes from the first English-site pass remain accepted,
@@ -66,7 +63,6 @@
 
   var HOME_PAGE = "overview";
   var SPEC_PAGE_ID = "specification";
-  var PAPER_HOST_ID = "paper";
   /* Host for an address that resolved to nothing. It is a page host like any
      other, but deliberately not a registry entry: it has no place in the
      sidebar tree, in the specification index or in the term index. */
@@ -79,7 +75,6 @@
      source for the route resolution and for resolveTemplateUrl below, which is
      why the segment name sits here rather than in a table of its own. */
   var ANCHOR_FAMILIES = [
-    { prefix: "abschnitt-", page: "paper", segment: "paper" },
     { prefix: "case-", page: "use-cases", segment: "case-studies" },
     { prefix: "praxis-", page: "praxis", segment: "praxis" },
     { prefix: "skills-", page: "skills", segment: "skills" },
@@ -93,10 +88,6 @@
   /* The one absolute form of a site address. Everything that prints or reads a
      full URL builds it from here, so the host and the path prefix stand once. */
   var SITE_BASE = "https://dhcraft.org/Promptotyping/";
-
-  /* Anchors of the paper that are not a family: the unnumbered sections and the
-     apparatus. */
-  var PAPER_ANCHOR = /^(abstract|acknowledgements|author-s-note|ai-use-and-research-provenance|literatur|fussnoten|ref-|fn-|fnref-)/;
 
   function entryFor(id) {
     for (var i = 0; i < PAGES.length; i++) {
@@ -164,9 +155,6 @@
     if (isRouteId(anchor)) {
       return hostPage(anchor);
     }
-    if (PAPER_ANCHOR.test(anchor)) {
-      return PAPER_HOST_ID;
-    }
     var family = familyForAnchor(anchor);
     if (family) {
       return hostPage(family.page);
@@ -191,9 +179,7 @@
     }
     topLevelPages().forEach(function (p) {
       var el = document.createElement("section");
-      // The paper host keeps its own class: renderPaper sectionizes into it.
       el.className = "doc-page placeholder-section" +
-        (p.id === PAPER_HOST_ID ? " paper" : "") +
         (REFERENCE_HOSTS.indexOf(p.id) !== -1 ? " is-reference" : "");
       el.id = p.id;
       // Focus target on a page switch; never in the tab order itself.
@@ -225,8 +211,7 @@
   /* Once the parts are rendered, their headings move down one level so the
      merged page has a single H1, and the part number stands at the head of each
      part the way it stands in the tree. The content files are untouched by
-     this; heading ids are minted for the paper alone, so nothing addressable
-     moves. */
+     this; content headings carry no ids, so nothing addressable moves. */
   function foldParts() {
     PAGES.forEach(function (p) {
       var el = p.parent && document.getElementById(p.id);
@@ -298,14 +283,13 @@
       A.escapeHtml(label) + "</a></li>";
   }
 
-  /* Two entries carry an inner structure: the specification with its five parts,
-     which the registry knows, and the paper with its sections, which only the
-     rendered text knows. Both subtrees stand permanently. Nothing in the tree
+  /* The specification carries an inner structure, its five parts, which the
+     registry knows. The subtree stands permanently. Nothing in the tree
      opens or closes (operator decision 2026-07-29); the only state it holds is
      which entry the reader is in, and the scrollspy below moves that marker. */
   function navItem(p) {
     var parts = partsOf(p.id);
-    var sub = parts.length || p.id === PAPER_HOST_ID
+    var sub = parts.length
       ? '<ul class="docs-nav-sub" data-subtree="' + p.id + '">' +
         parts.map(function (s) { return subItem(s.id, s.part, s.label); }).join("") +
         "</ul>"
@@ -326,7 +310,7 @@
     }
     var html = "";
     var group = null;
-    topLevelPages().filter(function (p) { return !p.hiddenFromNav; }).forEach(function (p) {
+    topLevelPages().forEach(function (p) {
       if (p.group !== group) {
         html += (group === null ? "" : "</ul>") + '<ul class="docs-nav-run">';
         group = p.group;
@@ -336,25 +320,7 @@
     nav.innerHTML = html + (group === null ? "" : "</ul>");
   }
 
-  /* ---- Sub-navigation and scrollspy ----
-     The paper subtree is built from the rendered sections, the same elements
-     that carry the #abschnitt-* anchors, once the content is in the DOM. */
-
-  function buildPaperSubtree() {
-    var host = document.querySelector('.docs-nav-sub[data-subtree="' + PAPER_HOST_ID + '"]');
-    var paper = document.getElementById(PAPER_HOST_ID);
-    if (!host || !paper || host.childNodes.length) {
-      return;
-    }
-    var items = "";
-    paper.querySelectorAll(".paper-section").forEach(function (section) {
-      var h2 = section.querySelector("h2");
-      if (section.id && h2) {
-        items += subItem(section.id, null, h2.textContent);
-      }
-    });
-    host.innerHTML = items;
-  }
+  /* ---- Scrollspy ---- */
 
   var spyObserver = null;
   var spyTargets = [];
@@ -412,10 +378,7 @@
     spyTargets.forEach(function (t) { spyObserver.observe(t.el); });
   }
 
-  document.addEventListener("promptotyping:content-ready", function () {
-    buildPaperSubtree();
-    setupScrollspy();
-  });
+  document.addEventListener("promptotyping:content-ready", setupScrollspy);
 
   function markNavActive(page) {
     document.querySelectorAll("#docs-nav a[data-page]").forEach(function (a) {
@@ -633,7 +596,7 @@
     rest = rest.replace(/\/$/, "");
     var segments = rest.split("/");
 
-    // Prefixed family: /paper/{n-slug}, /konzepte/{name}, /vault/{assertion}, ...
+    // Prefixed family: /konzepte/{name}, /vault/{assertion}, ...
     var family = familyForSegment(segments[0]);
     if (family && segments[1]) {
       var anchor = family.prefix + segments[1];
@@ -659,7 +622,7 @@
       return "konvention-v0.1";
     }
     // Already a hash-form anchor passed without a leading '#'.
-    if (PAPER_ANCHOR.test(rest) || familyForAnchor(rest)) {
+    if (familyForAnchor(rest)) {
       return rest;
     }
     return null;
@@ -686,7 +649,6 @@
 
   A.HOME_PAGE = HOME_PAGE;
   A.SITE_BASE = SITE_BASE;
-  A.PAPER_HOST_ID = PAPER_HOST_ID;
   /* Copy: the registry stays the single source and is not written from outside.
      The term index reads this, and it reads the entries a term can be reported
      on, so a page that holds parts steps back in favour of its parts; naming

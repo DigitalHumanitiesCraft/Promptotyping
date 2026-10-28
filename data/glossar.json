@@ -15,7 +15,7 @@
       "infrastructure": "Infrastructure and environment"
     },
     "datengrundlage": [
-      "research-artefacts/promptotyping-paper.md (canonical paper text)",
+      "Promptotyping method paper (manuscript maintained outside this repository)",
       "knowledge/INDEX.md (term lexicon)",
       "knowledge/specification.md (site requirements and ADRs)",
       "Konvention Knowledge Documents",

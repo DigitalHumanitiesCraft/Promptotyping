@@ -51,8 +51,7 @@
     el.innerHTML = '<p class="section-loading">' + escapeHtml(message) + "</p>";
   }
 
-  /* Normalise line endings and strip a leading YAML frontmatter block.
-     research-artefacts/promptotyping-paper.md is headerless and starts with its H1. */
+  /* Normalise line endings and strip a leading YAML frontmatter block. */
   function stripFrontmatter(text) {
     return text.replace(/\r\n?/g, "\n").replace(/^---\n[\s\S]*?\n---\n?/, "");
   }

@@ -64,7 +64,7 @@ class CheckCase(unittest.TestCase):
 
 
 class PortSelfTest(CheckCase):
-    """The three ports of the JavaScript, which decide the anchor set of V8."""
+    """The slugify port, which decides the praxis anchors of V8."""
 
     def test_the_tables_hold_for_the_current_ports(self):
         cc.check_ports()
@@ -74,16 +74,6 @@ class PortSelfTest(CheckCase):
         self.patch("SLUGIFY_CASES", (("Straße", "not-what-the-port-gives"),))
         cc.check_ports()
         self.assertIn("slugify", self.only_failure())
-
-    def test_a_drifting_heading_id_is_reported(self):
-        self.patch("HEADING_ID_CASES", (("1. Introduction", {}, "introduction"),))
-        cc.check_ports()
-        self.assertIn("heading_id", self.only_failure())
-
-    def test_a_drifting_collision_suffix_is_reported(self):
-        self.patch("UNIQUE_ID_CASES", ((["a", "a"], ["a", "a"]),))
-        cc.check_ports()
-        self.assertIn("unique_ids", self.only_failure())
 
 
 class SlugListTest(CheckCase):
@@ -407,15 +397,6 @@ class GalleryTest(CheckCase):
         cc.check_gallery(data)
         self.assertIn("duplicate card id", self.only_failure())
 
-    def test_an_evidence_card_without_a_paper_row_fails(self) -> None:
-        data = {
-            "_meta": {"role_labels": {"evidence": "Evidence"}},
-            "caseStudies": [{"id": "case", "role": "evidence"}],
-        }
-        self.patch("CASE_DIR", self.tempdir())
-        cc.check_gallery(data)
-        self.assertIn("claims no case-table row", self.only_failure())
-
     def test_a_depth_page_claim_without_a_file_fails(self) -> None:
         data = {
             "_meta": {"role_labels": {"context": "Context"}},
@@ -428,68 +409,6 @@ class GalleryTest(CheckCase):
         self.patch("CASE_DIR", self.tempdir())
         cc.check_gallery(data)
         self.assertIn("no _content/case-studies/case.md", self.only_failure())
-
-
-class EvidenceReachabilityTest(CheckCase):
-    """V5, coupling the paper table to gallery cards in both directions.
-
-    The coupling applies once a manuscript is back in the repository, so these
-    cases run with the withdrawal lifted.
-    """
-
-    def setUp(self) -> None:
-        super().setUp()
-        self.patch("MANUSCRIPT_WITHDRAWN", False)
-
-    def paper_with_cases(self, *names: str) -> None:
-        separator = "| --- | --- | --- | --- | --- |"
-        rows = [f"| {name} | state | function | form | purpose |" for name in names]
-        paper = "\n".join((cc.CASE_TABLE_HEADER, separator, *rows, "", "After"))
-        self.patch("PAPER", self.write(self.tempdir() / "paper.md", paper))
-
-    def test_a_paper_case_without_a_card_fails(self) -> None:
-        self.paper_with_cases("Alpha")
-        cc.check_evidence_reachable({"caseStudies": []})
-        self.assertIn("no card claims it", self.only_failure())
-
-    def test_a_card_row_absent_from_the_paper_fails(self) -> None:
-        self.paper_with_cases("Alpha")
-        data = {"caseStudies": [{"id": "beta", "paper_row": "Beta"},
-                                {"id": "alpha", "paper_row": "Alpha"}]}
-        cc.check_evidence_reachable(data)
-        self.assertIn("paper has no such row", self.only_failure())
-
-    def test_two_cards_claiming_one_row_fail(self) -> None:
-        self.paper_with_cases("Alpha")
-        data = {"caseStudies": [{"id": "one", "paper_row": "Alpha"},
-                                {"id": "two", "paper_row": "Alpha"}]}
-        cc.check_evidence_reachable(data)
-        self.assertIn("both claim", self.only_failure())
-
-
-class ManuscriptBoundaryTest(CheckCase):
-    """The withdrawn manuscript stays absent, and the groups that read it say so."""
-
-    def test_the_current_repository_passes(self) -> None:
-        cc.check_manuscript_boundary()
-        self.assertEqual(cc.failures, [])
-
-    def test_a_returned_manuscript_fails(self) -> None:
-        self.patch("PAPER", self.write(self.tempdir() / "promptotyping-paper.md", "# Paper\n"))
-        cc.check_manuscript_boundary()
-        self.assertIn("withdrawn", self.only_failure())
-
-    def test_evidence_is_skipped_with_a_note(self) -> None:
-        cc.notes.clear()
-        self.addCleanup(cc.notes.clear)
-        cc.check_evidence_reachable({"caseStudies": [{"id": "alpha", "paper_row": "Alpha"}]})
-        self.assertEqual(cc.failures, [])
-        self.assertTrue(any("withdrawn manuscript" in n for n in cc.notes), cc.notes)
-
-    def test_paper_anchors_resolve_to_the_notice(self) -> None:
-        self.assertTrue(cc.is_declared("abschnitt-4-1-evidential-scope", set()))
-        self.assertTrue(cc.is_declared("literatur", set()))
-        self.assertFalse(cc.is_declared("no-such-anchor", set()))
 
 
 class GlossaryMirrorTest(CheckCase):
@@ -636,7 +555,7 @@ class RelativeLinkTest(CheckCase):
     def test_research_artefact_can_use_portal_root_relative_assets(self) -> None:
         root = self.repository("# Repository\n")
         self.write(root / "assets/figure.svg", "<svg/>\n")
-        self.write(root / "research-artefacts/paper.md", "![Figure](assets/figure.svg)\n")
+        self.write(root / "research-artefacts/proposal.md", "![Figure](assets/figure.svg)\n")
         cc.check_relative_links()
         self.assertEqual(cc.failures, [])
 
@@ -765,20 +684,6 @@ class GlossaryGeneratorTest(unittest.TestCase):
     def test_a_complete_entry_renders(self):
         rendered = build_glossar.render([self.entry()], {})
         self.assertIn("### ", rendered)
-
-
-class PaperVersionTest(CheckCase):
-    """V21, which prevents another silent split in the current paper status."""
-
-    def test_current_status_carriers_agree(self):
-        cc.check_paper_version_claims()
-        self.assertEqual(cc.failures, [])
-
-    def test_a_stale_status_carrier_fails(self):
-        stale = self.write(self.tempdir() / "status.md", "version 0.9")
-        self.patch("PAPER_VERSION_CLAIMS", ((stale, "version 0.9.1"),))
-        cc.check_paper_version_claims()
-        self.assertIn("paper-version", self.only_failure())
 
 
 if __name__ == "__main__":

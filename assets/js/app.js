@@ -58,9 +58,8 @@
       A.showPage(A.pageForAnchor(window.location.hash.replace(/^#/, "")) || A.HOME_PAGE);
     }
 
-    // Glossar must be loaded before paper sections render, so the trigger
-    // post-processing can mark terms. Render the static sections in parallel,
-    // then start the paper lazy loading and resolve the initial hash.
+    // Render the static sections in parallel, then the vault, then resolve the
+    // initial hash against the complete DOM.
     var ready = Promise.all([
       A.renderGlossar(),
       A.renderMarkdownInto("overview", "_content/overview.md"),
@@ -82,7 +81,7 @@
       }),
       // Prompts on the tutorial page are copyable like the skills prompts.
       // Part 2 demonstrates the method end to end and belongs to learning it,
-      // so it sits here; the paper page carries the academic text alone (A8).
+      // so it sits here (A8).
       A.renderMarkdownInto("tutorial", "_content/tutorial.md", function (el) {
         A.addCodeCopyButtons(el);
         A.insertVideoAfterIntro(el, "hd_a-NBO_S4", "Promptotyping Teil 2 (Claude Code)");
@@ -99,9 +98,6 @@
       A.foldParts();
       // Host markup for the modules is now in the DOM; let them boot.
       document.dispatchEvent(new Event("promptotyping:sections-ready"));
-      // The paper renders after the glossar, so its terms can be marked.
-      return A.renderPaper();
-    }).then(function () {
       return A.renderVault();
     }).then(function () {
       A.addPageStatusLines();

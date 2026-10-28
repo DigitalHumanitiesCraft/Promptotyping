@@ -76,7 +76,7 @@ The `architecture.md` of a project refers to this document as its baseline and c
 
 ## Sources
 
-- Pollin, Christopher: Promptotyping. Translating Research Data into Research Artefacts through Context Engineering and Agentic Engineering. 2026 (version 0.9.1, author-review draft), section 3.2.
+- Pollin, Christopher: Promptotyping. Translating Research Data into Research Artefacts through Context Engineering and Agentic Engineering. Manuscript, 2026, forthcoming in the journal.
 - Risam, Roopika; Gil, Alex: Introduction. The Questions of Minimal Computing. In: Digital Humanities Quarterly 16,2 (2022). https://www.digitalhumanities.org/dhq/vol/16/2/000646/000646.html
 - The Endings Project: Principles for Digital Longevity. https://endings.uvic.ca/principles.html
 - Chue Hong, Neil P.; Katz, Daniel S.; Barker, Michelle et al.: FAIR Principles for Research Software (FAIR4RS Principles). Research Data Alliance 2022. https://doi.org/10.15497/RDA00068

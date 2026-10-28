@@ -135,9 +135,8 @@
         el.classList.remove("placeholder-section");
         el.innerHTML =
           "<h1>Glossary</h1>" +
-          "<p>Terms of the Promptotyping method and of this site, in alphabetical order. In the " +
-          "reading flow of the paper the first occurrence of a term is marked as a trigger. Terms " +
-          "the paper text does not carry declare themselves as site vocabulary in their source " +
+          "<p>Terms of the Promptotyping method and of this site, in alphabetical order. Terms " +
+          "the method paper does not carry declare themselves as site vocabulary in their source " +
           "line.</p>" +
           jumpBar +
           '<div class="glossar-list">' + items + "</div>";
@@ -147,8 +146,8 @@
       });
   }
 
-  /* ---- Glossary triggers in the paper reading flow ----
-     After a paper section renders, mark the first occurrence of each glossar
+  /* ---- Glossary triggers in a reading flow ----
+     After a long-form section renders, mark the first occurrence of each glossar
      term in that section (text-node scan, case-insensitive, outside links, code,
      headings). One pass per section; terms matched longest-first to avoid
      swallowing shorter terms; no overlaps. */
