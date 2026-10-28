@@ -25,12 +25,12 @@ related: [project, governance, specification, architecture, design, verification
 
 ## Manuscript publication boundary
 
-The operator withdrew the manuscript from the current public repository and GitHub Pages on 14 October 2026. The public repository carries the method documentation and paper specification; manuscript text is maintained separately. The former Paper route and section links show an availability notice without loading manuscript prose. The manuscript file is absent from the deployed tree. Earlier commits and historical publication records are retained, so this removal does not undo prior public availability.
+The operator withdrew the manuscript from the current public repository and GitHub Pages on 14 October 2026. The public repository carries the specification of the Promptotyping practice, and the manuscript is maintained outside it. The former Paper route and section links show an availability notice without loading manuscript prose. The manuscript file is absent from the deployed tree. Earlier commits and historical publication records are retained, so this removal does not undo prior public availability.
 
 For manuscript work, obtain the current author-controlled text before editing. Historical references below to the repository manuscript and its rendering describe the earlier arrangement and do not authorise restoring it. The journal's acceptance of the expose does not establish acceptance of the full manuscript or resolve eligibility of the previously public draft.
 
 
-Navigation and glossary of this repository's durable knowledge base. The repository `DigitalHumanitiesCraft/Promptotyping` is the public methodology site for Promptotyping and renders the method paper at https://dhcraft.org/Promptotyping/. File names and paths are the primary routing signals; this index confirms each function and separates durable project knowledge from Research Artefacts, Source Material, Snapshots, Handoffs, and generated site data.
+Navigation and glossary of this repository's durable knowledge base. The repository `DigitalHumanitiesCraft/Promptotyping` is the public site for the specification of the Promptotyping practice at https://dhcraft.org/Promptotyping/. File names and paths are the primary routing signals; this index confirms each function and separates durable project knowledge from Research Artefacts, Source Material, Snapshots, Handoffs, and generated site data.
 
 ## Language regime
 
