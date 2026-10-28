@@ -336,11 +336,11 @@ Source: Paper, Section 2.1; [Konvention Knowledge Documents](#konvention-v0.1)
 
 Kind: Checking and acceptance
 
-The identifiable and versioned state an accepted Promptotyping iteration yields.
+The state of an artefact that a Promptotyping iteration yields, together with the project knowledge and research data it was built from.
 
-A promptotype is the accepted state of one Promptotyping iteration. It connects the maintained project knowledge, the referenced research-data state, the resulting digital research artefact and the documented grounds of acceptance into a coherent and identifiable whole for a stated purpose. A runnable or plausible artefact does not reach this threshold as long as that relation cannot be reconstructed. Acceptance is purpose-specific, so a promptotype may be accepted as an exploratory interface, an internal production workflow, a proposal-stage demonstrator, a handover state or a public research artefact, and it does not imply that project knowledge, data or artefact have become final. Re-implementing with another model, harness or project state is a new iteration rather than a reproduction of the earlier promptotype.
+Every iteration yields a promptotype. It holds only in relation to the project knowledge and the research-data state from which the artefact was built, so a runnable artefact without that relation is not yet a promptotype. A promptotype is a means of knowing. Working with an ontology, a workflow or an interface shows which distinctions the data support and where the work fails, and curation carries these insights into the next iteration. A promptotype is finished for its purpose once the accountable expert's scholarly validation has accepted it, which may be as an exploratory interface, an internal workflow, a demonstrator or a public research artefact. Re-implementing with another model, harness or project state is a new iteration rather than a reproduction of the earlier promptotype. Until 28 October 2026 this glossary reserved the term for an accepted iteration with documented grounds of acceptance.
 
-Source: Paper, Section 2.2.4; Paper, Section 2.3.4; knowledge/INDEX.md
+Source: knowledge/INDEX.md
 
 ### Promptotyping
 
