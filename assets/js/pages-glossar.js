@@ -135,8 +135,8 @@
         el.classList.remove("placeholder-section");
         el.innerHTML =
           "<h1>Glossary</h1>" +
-          "<p>Terms of the Promptotyping method and of this site, in alphabetical order. Terms " +
-          "the method paper does not carry declare themselves as site vocabulary in their source " +
+          "<p>Terms of the Promptotyping working practice and of this site, in alphabetical order. Terms " +
+          "the paper does not carry declare themselves as site vocabulary in their source " +
           "line.</p>" +
           jumpBar +
           '<div class="glossar-list">' + items + "</div>";
