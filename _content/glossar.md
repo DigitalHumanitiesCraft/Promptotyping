@@ -196,9 +196,9 @@ Source: [Specification, part 1, Application](#application); Liu et al. 2024; Hon
 
 Kind: Checking and acceptance
 
-The record of why, for what purpose and by whom an iteration was accepted, which forms the fourth member of the promptotype relation.
+The record of why, for what purpose and by whom a promptotype was accepted as finished through scholarly validation.
 
-Acceptance is the accountable decision that an identifiable state is adequate for a stated purpose, and it is only reconstructable if its grounds are written down. The record names the intended purpose, the applicable criteria, the accepting person or group, the known limitations, the version reference and, where relevant, the referenced research-data state. It may take the form of an acceptance note, a dated journal entry, a numbered decision record, a verification document or an equivalent project record. Together with the maintained project knowledge, the referenced research-data state and the resulting artefact it forms the four-member relation that makes an accepted iteration a promptotype.
+Acceptance is the accountable decision that a promptotype is adequate for a stated purpose, and it can only be reconstructed if its grounds are written down. The record names the intended purpose, the applicable criteria, the accepting person or group, the known limitations, the version reference and, where relevant, the referenced research-data state. It may take the form of an acceptance note, a dated journal entry, a numbered decision record, a verification document or an equivalent project record. Every iteration yields a promptotype, and these documented grounds mark the point at which one counts as finished for its purpose. Until 28 October 2026 this glossary treated them as the fourth member of a relation that made an accepted iteration a promptotype.
 
 Source: [Specification, part 1, Application](#application); [Specification, part 5, Checking](#verifikation)
 
