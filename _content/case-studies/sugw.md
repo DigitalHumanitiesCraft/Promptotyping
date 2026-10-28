@@ -26,7 +26,7 @@ The pipeline was refactored from XSLT to Python with lxml over many sessions, an
 
 ## Methodological contribution
 
-The case is the record's clearest instance of the division of labour the method claims. Everything decidable by rule runs deterministically or is delegated, and the one thing that is not decidable by rule stays with the editor by explicit exclusion. The commit history is what makes that division auditable, since every correction the agent made carries its own entry and the editorial responsibility can be traced to a specific change.
+The case is the record's clearest instance of the division of labour the practice claims. Everything decidable by rule runs deterministically or is delegated, and the one thing that is not decidable by rule stays with the editor by explicit exclusion. The commit history is what makes that division auditable, since every correction the agent made carries its own entry and the editorial responsibility can be traced to a specific change.
 
 ## Limits
 

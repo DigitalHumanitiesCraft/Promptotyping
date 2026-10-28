@@ -9,7 +9,7 @@ source: Projects/Promptotyping/Case Studies/szd.md
 
 ## Context
 
-A timeline-based annotation tool over the correspondence metadata of Stefan Zweig Digital, the digital reconstruction of the Zweig estate at the Literaturarchiv Salzburg. The XML metadata carries title, date, creator and contributors, and the tool fetches it directly from the GAMS asset management system in which the project publishes. The artefact is a single-page application without external dependencies; a researcher marks letters with a research status, tags and notes, the annotations are kept in browser storage, and JSON export and import move them between sessions. The prototype was built in about two hours and is the first publicly documented experiment of the working mode that later became the method, with its account published as a blog post.
+A timeline-based annotation tool over the correspondence metadata of Stefan Zweig Digital, the digital reconstruction of the Zweig estate at the Literaturarchiv Salzburg. The XML metadata carries title, date, creator and contributors, and the tool fetches it directly from the GAMS asset management system in which the project publishes. The artefact is a single-page application without external dependencies; a researcher marks letters with a research status, tags and notes, the annotations are kept in browser storage, and JSON export and import move them between sessions. The prototype was built in about two hours and is the first publicly documented experiment of the working mode that later became the practice, with its account published as a blog post.
 
 ## Contribution
 
@@ -21,10 +21,10 @@ The session recorded a failure mode that later projects handle structurally. Man
 
 ## Limits
 
-No Knowledge Documents were written. The whole specification sat in one structured prompt with sample XML, and the README followed after the fact, so the case demonstrates the working mode without the document layer that carries the method's claim about derivation.
+No Knowledge Documents were written. The whole specification sat in one structured prompt with sample XML, and the README followed after the fact, so the case demonstrates the working mode without the document layer that carries the practice's claim about derivation.
 
 The annotations live in browser storage. Research data produced with the tool is bound to one browser profile, travels only as an exported file, and the tool holds no shared state that two researchers could work in.
 
-The paper treats the experiments of this phase as one body of early work and fixes no method component to a single project. The gallery card credits this case with the verifying expert in the loop, a convenience of the catalogue that rests on the project record alone.
+The paper treats the experiments of this phase as one body of early work and fixes no component of the practice to a single project. The gallery card credits this case with the verifying expert in the loop, a convenience of the catalogue that rests on the project record alone.
 
 The record consists of a blog account, the repository and the README. No check of the tool's output against the source metadata is documented, so the reliability of what the timeline displays was never established beyond the session.

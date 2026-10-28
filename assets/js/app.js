@@ -65,7 +65,7 @@
       A.renderMarkdownInto("overview", "_content/overview.md"),
       A.renderMarkdownInto("application", "_content/application.md"),
       A.renderMarkdownInto("workflow", "_content/workflow.md", function (el) {
-        // Part 1 introduces the method and the four forms of work; it sits with the
+        // Part 1 introduces the practice and the four forms of work; it sits with the
         // worked case rather than in a hero above the specification.
         A.insertVideoAfterIntro(el, "8sUe4Jkh3uQ", "Einführung in Promptotyping, Teil 1");
       }),
@@ -80,7 +80,7 @@
         el.insertBefore(note, el.firstChild ? el.firstChild.nextSibling : null);
       }),
       // Prompts on the tutorial page are copyable like the skills prompts.
-      // Part 2 demonstrates the method end to end and belongs to learning it,
+      // Part 2 demonstrates the practice end to end and belongs to learning it,
       // so it sits here (A8).
       A.renderMarkdownInto("tutorial", "_content/tutorial.md", function (el) {
         A.addCodeCopyButtons(el);

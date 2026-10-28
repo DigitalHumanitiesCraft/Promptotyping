@@ -6,13 +6,13 @@ language: en
 version: "0.6"
 created: 2026-07-25
 updated: 2026-08-25
-source: Promptotyping method, forms of work and project knowledge base
+source: Promptotyping working practice, forms of work and project knowledge base
 machine-url: https://dhcraft.org/Promptotyping/_content/application.md
 ---
 
 # Application
 
-The method's unit of work is a small set of Markdown documents that are the specification of the artefact, versioned in the git history of the project repository. The central loop iterates over these documents, and the implementation is derived from them. This page resolves the four forms of work into actions, with entry condition, steps, stopping criterion and the documents that arise along the way. Why the method is built this way and what it can be measured against stands in the paper.
+The practice's unit of work is a small set of Markdown documents that are the specification of the artefact, versioned in the git history of the project repository. The central loop iterates over these documents, and the implementation is derived from them. This page resolves the four forms of work into actions, with entry condition, steps, stopping criterion and the documents that arise along the way. The [use cases](#use-cases) and the [Vault](#vault) carry the grounds on which the practice is built this way.
 
 ## Preparation
 
@@ -75,7 +75,7 @@ Deferring the check on a milestone is a decision with a price. It is most defens
 
 ## Iteration and re-entry
 
-The method's signature is the loop from Implementation back into the documents. When the artefact is wrong, the specification was wrong or incomplete, and it is the specification that is fixed; the artefact is then regenerated. New knowledge from building, meaning unexpected data characteristics, performance constraints and design refinements, is written back into the documents.
+The practice's signature is the loop from Implementation back into the documents. When the artefact is wrong, the specification was wrong or incomplete, and it is the specification that is fixed; the artefact is then regenerated. New knowledge from building, meaning unexpected data characteristics, performance constraints and design refinements, is written back into the documents.
 
 Re-entry goes into whichever form of work the new knowledge belongs to.
 
@@ -87,7 +87,7 @@ A single pass through the four forms of work is the exception.
 
 ## Two modes
 
-The method has two modes of operation, distinguished by how the work is organised and independent of project size. The default is a single researcher with a single agent instance. In complex projects the work itself acquires the structure of a research organisation, with parallel tasks, differentiated roles and formalised handovers; there a lead instance coordinates sub-agents with defined permissions and knowledge zones, and the methodological burden shifts from steering one agent to designing a small team. The four forms of work apply in both modes. The documented experience lies overwhelmingly with the first, and the durability of sustained multi-agent monitoring is an open question.
+The practice has two modes of operation, distinguished by how the work is organised and independent of project size. The default is a single researcher with a single agent instance. In complex projects the work itself acquires the structure of a research organisation, with parallel tasks, differentiated roles and formalised handovers; there a lead instance coordinates sub-agents with defined permissions and knowledge zones, and the methodological burden shifts from steering one agent to designing a small team. The four forms of work apply in both modes. The documented experience lies overwhelmingly with the first, and the durability of sustained multi-agent monitoring is an open question.
 
 Scaling runs across both modes. The more complex the domain, the more structure the organisation of knowledge needs, and the distilled document set grows with the project. Verification discipline through the Critical Expert in the Loop is untouched by this.
 
@@ -104,8 +104,8 @@ A bounded Promptotyping iteration is responsible only when every required condit
 
 An unknown answer requires resolution before implementation. A no answer excludes the proposed iteration in its current form. Public or institutional operation adds expertise in security, accessibility, maintainability, integration, and sustained operation.
 
-A positive fit check licenses a bounded trial. It provides no comparative success forecast. The documented corpus is not representative, total human work remains unmeasured, and independent long-term transfer has yet to be established. The grounds and limitations are stated in paper sections 4.1 to 4.3.
+A positive fit check licenses a bounded trial. It provides no comparative success forecast. The documented corpus is not representative, total human work remains unmeasured, and independent long-term transfer has yet to be established. The cases these limits are drawn from are listed under [use cases](#use-cases).
 
 ## Continue from here
 
-To evaluate whether the method fits a project, compare the [documented use cases](#use-cases), then follow a load-bearing statement through the [Vault](#vault) to its sources. To apply the method, continue with the [tutorial](#tutorial), keep later sessions aligned with the [canonical Promptotyping skill](#skills-promptotyping), and take the required document structures from the [templates](#vorlagen).
+To evaluate whether the practice fits a project, compare the [documented use cases](#use-cases), then follow a load-bearing statement through the [Vault](#vault) to its sources. To apply it, continue with the [tutorial](#tutorial), keep later sessions aligned with the [canonical Promptotyping skill](#skills-promptotyping), and take the required document structures from the [templates](#vorlagen).

@@ -175,12 +175,12 @@
     el.innerHTML =
       "<h1>Use Cases</h1>" +
       "<p>A curated selection of publicly documented projects, grouped by the role each case " +
-      "plays in the evidence for the method and ordered within each group by the artefact's " +
+      "plays in the evidence for the practice and ordered within each group by the artefact's " +
       "epistemic function.</p>" +
       '<div class="case-filter-host"></div>' +
       '<div class="case-list-host"></div>' +
       '<h2>Continue your evaluation</h2>' +
-      '<p>Trace the method\'s load-bearing statements through the <a href="#vault">Vault</a>, ' +
+      '<p>Trace the practice\'s load-bearing statements through the <a href="#vault">Vault</a>, ' +
       'or move from assessment to a first iteration with the <a href="#tutorial">tutorial</a>.</p>';
   }
 

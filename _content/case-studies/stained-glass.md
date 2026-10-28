@@ -13,7 +13,7 @@ A scholarly annotation tool for medieval stained-glass artefacts from the Corpus
 
 ## Contribution
 
-The case argues the enabling condition of the method from the data side. The modelling in the knowledge graph is of high quality, the vocabularies are controlled, and the transition from the original data source to a working application therefore needed no modelling step of its own. That matches a co-variation the record shows across its projects, where the artefacts with the most epistemic yield come from the projects with the deepest domain modelling, and this case reaches the same result by inheriting the modelling instead of performing it.
+The case argues the enabling condition of the practice from the data side. The modelling in the knowledge graph is of high quality, the vocabularies are controlled, and the transition from the original data source to a working application therefore needed no modelling step of its own. That matches a co-variation the record shows across its projects, where the artefacts with the most epistemic yield come from the projects with the deepest domain modelling, and this case reaches the same result by inheriting the modelling instead of performing it.
 
 Query development is where the division of labour shows. The SPARQL was refined in a loop in which each result reshaped the next query, the model handled the query language reliably, and the decision about what to select stayed on the domain side. Extraction from a knowledge graph is thus a place where an agent is productive without holding the research question.
 
@@ -27,4 +27,4 @@ The knowledge folder holds no journal. The two iterations left their specificati
 
 Annotations leave the tool as exported files. Nothing in the artefact holds a shared store, so annotation by several researchers on one body of material is outside what the tool does.
 
-The paper no longer discusses the formation phase project by project, and it fixes no method component to a single project. The gallery card names this case as the first structured knowledge folder, an attribution that rests on the project record alone.
+The paper no longer discusses the formation phase project by project, and it fixes no component of the practice to a single project. The gallery card names this case as the first structured knowledge folder, an attribution that rests on the project record alone.

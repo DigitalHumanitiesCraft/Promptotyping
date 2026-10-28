@@ -22,7 +22,7 @@ The interface separates the question into tabbed views, each answering a differe
 
 ## Methodological contribution
 
-The method produced a working analysis interface on economic research data, outside the humanities.
+Promptotyping produced a working analysis interface on economic research data, outside the humanities.
 
 The case also documents a way of working with data under a confidentiality obligation. An agentic tool sends what it reads to a provider's infrastructure, which disqualifies the tool for such data. Here a dataset was synthesised that carries the structure of the original and none of its content, development ran against that, and the real data stayed on local infrastructure. The published artefact is therefore inspectable without the confidentiality being at issue. The record carries no second case with this pattern.
 

@@ -637,7 +637,7 @@
       "slug": "promptotype",
       "begriff": "Promptotype",
       "kategorie": "checking",
-      "kurz": "What a Promptotyping iteration yields, an artefact state taken together with the project knowledge and research data behind it.",
+      "kurz": "What a Promptotyping iteration yields, an artefact state read in relation to its project knowledge and research data.",
       "voll": "Every iteration yields a promptotype. Its standing depends on the project knowledge and the research-data state underlying the artefact, and a runnable artefact cut off from them is not yet a promptotype. A promptotype is a means of knowing. Whether the artefact is an ontology, a workflow or an interface, using it reveals which distinctions the data sustain and at which points the work breaks down, and curation feeds what was learned into the next iteration. It counts as finished for a given purpose when the responsible expert has accepted it through scholarly validation, whether as an exploratory interface, an internal workflow, a demonstrator or a public research artefact. Re-implementing with another model, harness or project state is a new iteration rather than a reproduction of the earlier promptotype. Until 28 October 2026 this glossary reserved the term for an accepted iteration with documented grounds of acceptance.",
       "quellen": [
         {

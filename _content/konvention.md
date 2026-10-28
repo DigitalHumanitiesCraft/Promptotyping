@@ -43,7 +43,7 @@ The assignment needs no mandatory `function:` frontmatter field. The file name, 
 
 A Knowledge Document is a knowledge document, a structured unit of knowledge distilled from raw material and optimised as a context artefact for work shared between people and language models. Three properties make it one.
 
-- **Dually readable.** The same text is comprehensible to the scholar and usable as context by the model. This is the property the whole method rests on, because reading is how the scholar verifies, and that same text is what the artefact is derived from.
+- **Dually readable.** The same text is comprehensible to the scholar and usable as context by the model. This is the property the whole practice rests on, because reading is how the scholar verifies, and that same text is what the artefact is derived from.
 - **Compact.** Maximum information at minimum tokens, which is the writing principle of Distillation and the answer to the degradation of model performance under growing context.
 - **Portable.** A Markdown file that can be linked and exchanged across knowledge systems, versioned in git, readable by people and machines without conversion.
 
@@ -115,7 +115,7 @@ Where a repository covers a function for which no template exists, for instance 
 
 Verification and Integration were candidate functions from 2026-06-13 and were promoted on 2026-07-19 to full functions with a template of their own, after the content audit confirmed the threshold of two comparable occurrences. Handoff entered the catalogue on 2026-08-21 as the mandatory Process Inbox of every project. All catalogue templates are released (`status: complete`); a draft status would stand visibly in catalogue and template alike.
 
-Governance has been registered as a function since 2026-08-17. Its first developed instance is the draft [`knowledge/governance.md`](../knowledge/governance.md) of this method repository. The Knowledge, Context and Agentic Engineering teaching project and Research Mission Control are the next intended applications. A general template will be distilled after at least two comparable project instances have been reviewed. Until then, a `governance.md` follows the mandatory frontmatter core and the function definition of this convention without claiming a template address.
+Governance has been registered as a function since 2026-08-17. Its first developed instance is the draft [`knowledge/governance.md`](../knowledge/governance.md) of this repository. The Knowledge, Context and Agentic Engineering teaching project and Research Mission Control are the next intended applications. A general template will be distilled after at least two comparable project instances have been reviewed. Until then, a `governance.md` follows the mandatory frontmatter core and the function definition of this convention without claiming a template address.
 
 ## Template addressability through the `template:` field
 
@@ -153,7 +153,7 @@ Action Documents hold knowledge about how to act. They describe what agents may 
 
 `design.md` is declarative and thus a Declarative Document, because it describes design stance, design system and interaction patterns. The socialisation of the coding agent on the aesthetic layer is a reading effect that arises when an Action Document, typically `CLAUDE.md`, refers to the `design.md` and carries the imperative design principles there. The declarative stays declarative and the action stays action; the aesthetic steering comes from the composition of two documents rather than from a hybrid type.
 
-This is the Knowledge-Action Composition, and the axis it runs along carries a name outside the method. Diátaxis separates technical documentation along action against cognition, practical knowledge against theoretical knowledge, knowing how against knowing that (Procida 2024), which is the cut that runs here between a Declarative Document and an Action Document. Two things shift once the addressee is a model. That framework's second axis falls away, acquisition against application, because it presupposes a reader who builds up a practice over time, while a model loads the documents per session and acquires nothing that persists. And the reason for the cut differs. Diátaxis separates so that a reader finds the form their situation calls for, and a knowledge base separates so that a stable description is not overwritten by a volatile instruction. That is why the typology needs both types instead of one mixed type.
+This is the Knowledge-Action Composition, and the axis it runs along carries a name outside the practice. Diátaxis separates technical documentation along action against cognition, practical knowledge against theoretical knowledge, knowing how against knowing that (Procida 2024), which is the cut that runs here between a Declarative Document and an Action Document. Two things shift once the addressee is a model. That framework's second axis falls away, acquisition against application, because it presupposes a reader who builds up a practice over time, while a model loads the documents per session and acquires nothing that persists. And the reason for the cut differs. Diátaxis separates so that a reader finds the form their situation calls for, and a knowledge base separates so that a stable description is not overwritten by a volatile instruction. That is why the typology needs both types instead of one mixed type.
 
 The classification is analytical rather than rigid, and it is not carried in the frontmatter. It supplies a diagnostic grid. Where the output is factually wrong, the Declarative Document is checked first. Where it is formally wrong, the Action Document. Where the decision logic is unclear, the Process Document.
 
@@ -299,7 +299,7 @@ Negative self-definition. What is deliberately not delivered is named as explici
 
 ## Distillation as a writing principle
 
-Knowledge Documents follow the distillation principle from the method paper, maximum information with minimum tokens (Hong et al. 2025; Pollin 2026, sections 2.1 and 2.2). Concretely this means:
+Knowledge Documents follow the distillation principle of the practice, maximum information with minimum tokens (Hong et al. 2025), as the [Distillation](#application) step of the Application page sets it out. Concretely this means:
 
 - A document carries one bounded function.
 - Redundancies between documents are represented through wikilinks (`related:`).
@@ -345,4 +345,4 @@ The subpath and hash forms carried in the `template:` field (`/promptotyping-doc
 
 The vault standard fixes a frontmatter minimum of its own with a closed `type:` list. This convention extends the vocabulary for the repository context alone, so that in the repository's `knowledge/` folder the mandatory core described here applies instead of the vault minimum.
 
-Where a repository document is created as a vault mirror, for instance a piece of method documentation held in the vault as a knowledge document, the frontmatter is adjusted. A vault-conformant `type:` is set, and repository-specific fields (`project`, `version`, `knowledge-sources`) are dropped or carried over into prose.
+Where a repository document is created as a vault mirror, for instance a piece of practice documentation held in the vault as a knowledge document, the frontmatter is adjusted. A vault-conformant `type:` is set, and repository-specific fields (`project`, `version`, `knowledge-sources`) are dropped or carried over into prose.

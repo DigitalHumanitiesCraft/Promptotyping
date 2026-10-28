@@ -24,6 +24,6 @@ The published stages are the contribution. Each is a working edition, and the se
 
 ## Limits
 
-The paper does not carry this case, and the site holds it because the edition stages document the method's progression. Any claim drawn from it stands on the repository alone.
+The paper does not carry this case, and the site holds it because the edition stages document the practice's progression. Any claim drawn from it stands on the repository alone.
 
 Prosopographical identification and metrical analysis are the interpretive core of a Neo-Latin edition, and both were produced with model assistance. What the edition publishes at those two points therefore needs the same scrutiny a first-time editorial hypothesis needs, and the stages do not record which identifications a human confirmed.

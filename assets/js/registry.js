@@ -15,7 +15,7 @@
      (operator decision 2026-07-29). */
   var PAGES = [
     { id: "overview", label: "Overview", group: "Specification", kind: "normative",
-      note: "What the method is and where it applies" },
+      note: "What the practice is and where it applies" },
     { id: "specification", label: "Specification", group: "Specification", kind: "normative",
       note: "" },
 
@@ -32,26 +32,26 @@
       part: "5", kind: "normative", note: "" },
 
     { id: "glossar", label: "Glossary", group: "Reference", kind: "informative",
-      note: "Every term of the method defined, with the pages that use it",
+      note: "Every term of the practice defined, with the pages that use it",
       machine: "data/glossar.json" },
     { id: "vault", label: "Vault", group: "Reference", kind: "informative",
-      note: "The sources under the load-bearing claims of the method",
+      note: "The sources under the load-bearing claims of the practice",
       machine: "data/vault.json" },
 
     { id: "workflow", label: "Worked workflow", group: "Evidence", kind: "informative",
       note: "A completed case narrated through the four forms of work" },
     { id: "use-cases", label: "Use Cases", group: "Evidence", kind: "informative",
-      note: "The projects the method is documented on", machine: "data/case-studies.json" },
+      note: "The projects the practice is documented on", machine: "data/case-studies.json" },
 
     { id: "tutorial", label: "Tutorial", group: "Tools and practice", kind: "informative",
       note: "Your own first pass, step by step from dataset to promptotype" },
     { id: "praxis", label: "Best Practices", group: "Tools and practice", kind: "informative",
-      note: "Method extensions that grew out of applying it" },
+      note: "Extensions of the practice that grew out of applying it" },
     { id: "skills", label: "Skills", group: "Tools and practice", kind: "informative",
-      note: "Installable method skill and reusable system prompts",
+      note: "Installable Promptotyping skill and reusable system prompts",
       machine: "_content/skills/index.md" },
     { id: "arbeitsumgebung", label: "Working environment", group: "Tools and practice", kind: "informative",
-      note: "Vault, agent interface and AI harness around the method" }
+      note: "Vault, agent interface and AI harness around the practice" }
   ];
 
   /* Published German routes from the first English-site pass remain accepted,
@@ -496,7 +496,7 @@
     }
     var entry = entryFor(id);
     return id === HOME_PAGE || !entry
-      ? "Promptotyping. Specification of the Method"
+      ? "Promptotyping. Specification of the Working Practice"
       : entry.label + " - Promptotyping";
   }
 

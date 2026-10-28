@@ -13,7 +13,7 @@ machine-url: https://dhcraft.org/Promptotyping/_content/technology-baseline.md
 
 # Technology Baseline. The static website as a research tool
 
-This document carries the project-independent technology knowledge for the method's most frequent artefact type, the self-contained static web tool. It is the layer of rationale that the `architecture.md` of a project instance refers to instead of restating the stack argument in every repository, and the instance then documents only its deviations. The scholarly short form of the artefact argument stands in the method paper, which names six operational forms of the digital research artefact (Pollin 2026, section 3.2); the self-contained static web tool as the method's default artefact form is the site's own position and stands on the [artefact page](#artefakt). This document is the operative long form with the concrete rules.
+This document carries the project-independent technology knowledge for the practice's most frequent artefact type, the self-contained static web tool. It is the layer of rationale that the `architecture.md` of a project instance refers to instead of restating the stack argument in every repository, and the instance then documents only its deviations. The paper gives the scholarly short form of the artefact argument and names six operational forms of the digital research artefact (Pollin 2026); the self-contained static web tool as the default artefact form of the practice is the site's own position and stands on the [artefact page](#artefakt). This document is the operative long form with the concrete rules.
 
 ## Why the static form
 
@@ -21,7 +21,7 @@ A Promptotyping artefact is as a rule a set of HTML, CSS and JavaScript files, w
 
 The first is generability. Static artefacts can be produced by agentic coding tools in a single pass, which keeps the derivation from the Knowledge Documents to the artefact inspectable. Every additional layer, whether a build chain, a server component or a database, lengthens the derivation and withdraws parts of it from inspection.
 
-The second is publishability. A static artefact needs no infrastructure. GitHub Pages or any web space suffices, which matches the resource situation of the individual researchers and small projects the method addresses.
+The second is publishability. A static artefact needs no infrastructure. GitHub Pages or any web space suffices, which matches the resource situation of the individual researchers and small projects the practice addresses.
 
 The third is durability. The field's own sustainability discourse, minimal computing (Risam and Gil 2022) and the Endings principles, arrives at the same finding. Digital artefacts survive most reliably with the fewest moving parts, without server-side dependencies and without build chains that rot. A static artefact from 2026 still renders once nobody maintains it any more.
 
@@ -33,7 +33,7 @@ The third is durability. The field's own sustainability discourse, minimal compu
 
 ### Vanilla JavaScript as the default
 
-No framework. Frameworks age fast, resist inspection by those who reuse the artefact, and offer nothing an exploratory research instrument needs; the native DOM, `fetch`, ES modules and `location.hash` cover the demand. A method-specific argument comes on top. Because the prototype can be regenerated from the Knowledge Documents, the target language of the regeneration has to stay stable over the long term, and the browser platform is the most stable runtime environment there is, while a framework API is not.
+No framework. Frameworks age fast, resist inspection by those who reuse the artefact, and offer nothing an exploratory research instrument needs; the native DOM, `fetch`, ES modules and `location.hash` cover the demand. An argument specific to the practice comes on top. Because the prototype can be regenerated from the Knowledge Documents, the target language of the regeneration has to stay stable over the long term, and the browser platform is the most stable runtime environment there is, while a framework API is not.
 
 ### Compromise rule for libraries
 
@@ -64,11 +64,11 @@ Every artefact discloses its conditions of production, the way an edition disclo
 
 ## Sustainability and FAIR4RS
 
-Measured against the FAIR4RS principles (Chue Hong et al. 2022) the artefact type is uneven, and the pattern is instructive. Accessibility holds by construction, since artefact and source are retrievable over HTTPS without proprietary tooling. Reusability is the method's strength, since the detailed provenance that R1.2 demands arises in journal, documents and repository history as a by-product of working. Findability fails by default, since without a persistent identifier, versioned releases and machine-readable citation metadata a prototype stays unfindable. That gap is publication work and separable from the artefact, and an archived release with a DOI together with generated citation metadata closes it without touching the artefact.
+Measured against the FAIR4RS principles (Chue Hong et al. 2022) the artefact type is uneven, and the pattern is instructive. Accessibility holds by construction, since artefact and source are retrievable over HTTPS without proprietary tooling. Reusability is the practice's strength, since the detailed provenance that R1.2 demands arises in journal, documents and repository history as a by-product of working. Findability fails by default, since without a persistent identifier, versioned releases and machine-readable citation metadata a prototype stays unfindable. That gap is publication work and separable from the artefact, and an archived release with a DOI together with generated citation metadata closes it without touching the artefact.
 
 ## Limits of the format and the handover point
 
-The limits are part of the definition of the artefact type. Client-side processing bounds the data volume, and the bound moves with the data format and the memory of the reading machine. With flat JSON or CSV files it is reached early, and the answer is to move work upstream, so that a script precomputes, aggregates or samples and the artefact loads the result. Columnar formats with WebAssembly query engines shift the bound by orders of magnitude, at the price of a vendored engine that the compromise rule must cover. Collaborative or server-mediated workflows, write persistence beyond the browser, and authentication lie outside the format. Where a project grows past these limits it has outgrown prototyping and arrived in software development; from there Research Software Engineering carries it with its standards for testing, maintenance and operation, and the method's document set becomes the handover package.
+The limits are part of the definition of the artefact type. Client-side processing bounds the data volume, and the bound moves with the data format and the memory of the reading machine. With flat JSON or CSV files it is reached early, and the answer is to move work upstream, so that a script precomputes, aggregates or samples and the artefact loads the result. Columnar formats with WebAssembly query engines shift the bound by orders of magnitude, at the price of a vendored engine that the compromise rule must cover. Collaborative or server-mediated workflows, write persistence beyond the browser, and authentication lie outside the format. Where a project grows past these limits it has outgrown prototyping and arrived in software development; from there Research Software Engineering carries it with its standards for testing, maintenance and operation, and the practice's document set becomes the handover package.
 
 ## Application in a project instance
 

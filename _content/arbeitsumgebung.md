@@ -17,7 +17,7 @@ The Knowledge Documents live in a Markdown vault. The unit of analysis is the va
 
 ## AI harness and skills
 
-Claude Code serves as the AI harness in which the method scales, the environment in which an agent works on a project over longer stretches, with access to files, tools and execution. The [canonical Promptotyping skill](#skills-promptotyping) maintains the method's routing and handoff discipline across those sessions; the same section also provides transferable system prompts for coding and writing. Process videos showing the procedure inside the environment are on the [YouTube channel](https://www.youtube.com/@DigitalHumanitiesCraft).
+Claude Code serves as the AI harness in which the practice scales, the environment in which an agent works on a project over longer stretches, with access to files, tools and execution. The [canonical Promptotyping skill](#skills-promptotyping) maintains the practice's routing and handoff discipline across those sessions; the same section also provides transferable system prompts for coding and writing. Process videos showing the procedure inside the environment are on the [YouTube channel](https://www.youtube.com/@DigitalHumanitiesCraft).
 
 Three operating cases determine how this layer is used.
 

@@ -12,7 +12,7 @@ machine-url: https://dhcraft.org/Promptotyping/_content/praxis.md
 
 # Practice and best practices
 
-This section collects method extensions of Promptotyping that grew out of practice. None was designed at a desk; each arose in a concrete project and carried over into further ones. Every entry names its documented case of origin. Where that case is represented in the curated gallery of this site, the reference leads to its page; where it is not, the project name stands in the running text without a link.
+This section collects extensions of Promptotyping that grew out of applying it. None was designed at a desk; each arose in a concrete project and carried over into further ones. Every entry names its documented case of origin. Where that case is represented in the curated gallery of this site, the reference leads to its page; where it is not, the project name stands in the running text without a link.
 
 ## Verification Milestones
 
@@ -46,7 +46,7 @@ Links act as navigable context paths for agentic systems, since an agent follows
 
 ## Demo repository reduction in teaching
 
-For Promptotyping workshops in which participants rebuild the method themselves on a real project, the demo repository is deliberately left unconfigured. It starts in its initial state with raw data, a brief `idea.md` and an empty `knowledge/` folder, without a `CLAUDE.md`, without custom commands, without an output structure. The initial prompts sit on the slides as a consumable handover into the harness, and the persistent knowledge documents arise in the repository over the course of the work.
+For Promptotyping workshops in which participants build up the practice themselves on a real project, the demo repository is deliberately left unconfigured. It starts in its initial state with raw data, a brief `idea.md` and an empty `knowledge/` folder, without a `CLAUDE.md`, without custom commands, without an output structure. The initial prompts sit on the slides as a consumable handover into the harness, and the persistent knowledge documents arise in the repository over the course of the work.
 
 The learning gain comes from building the Promptotyping architecture under guidance rather than from reading a finished one. Whoever produces the structure understands why it looks as it does. The pattern was tried out in the workshop on the prosopographic database of medieval Viennese legal transactions and in the teaching part of the ZBZ OCR/TEI pipeline ([#case-zbz-ocr-tei](#case-zbz-ocr-tei)).
 

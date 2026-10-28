@@ -30,6 +30,6 @@ The separation of learnings from journal is the second contribution. It has sinc
 
 The dashboard reads what the reports contain, and the reports were written for compliance. An indicator that two institutions interpret differently is displayed as one series, and no part of the interface marks that divergence, so a comparison across institutions carries an assumption the data does not support.
 
-The knowledge base carries frontmatter only in part, which puts the case outside the addressing mechanism the convention describes and makes it a poor example of the machine-readable side of the method.
+The knowledge base carries frontmatter only in part, which puts the case outside the addressing mechanism the convention describes and makes it a poor example of the machine-readable side of the practice.
 
 The knowledge base is extensive by the standards of the hand-curated bases in the record, while another documented project carries a generated vault far larger in file count. The two are different kinds of artefact, and a comparison by file count says little about either.

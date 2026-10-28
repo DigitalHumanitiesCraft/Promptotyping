@@ -1,4 +1,4 @@
-/* Templates page. The hub of the method specification: catalogue table,
+/* Templates page. The hub of the practice specification: catalogue table,
    convention abstract, machine access with the frontmatter inspector host, and
    the technology baseline. A table row opens its template mirror in the side
    panel. */
@@ -35,7 +35,7 @@
         el.classList.remove("placeholder-section");
         el.innerHTML =
           "<h1>Templates</h1>" +
-          "<p>This page gathers the specification of the method, the fillable template " +
+          "<p>This page gathers the specification of the practice, the fillable template " +
           "catalogue, the underlying convention, machine access through the " +
           "<code>template:</code> field, and the technology baseline for static web tools.</p>" +
           '<div class="vorlagen-block" id="vorlagen-katalog">' +
@@ -80,7 +80,7 @@
           "<p>A Technology Baseline carries the project-independent technology knowledge for a " +
           "recurring artefact type, so that a single project instance documents only its " +
           "deviations in its <code>architecture.md</code> instead of arguing the stack again. This " +
-          "repository carries such a baseline for the method's most frequent artefact type, the " +
+          "repository carries such a baseline for the practice's most frequent artefact type, the " +
           "self-contained static web tool of HTML, CSS and JavaScript without a build step. It " +
           "records the rules, no build, vanilla as the default, vendored libraries only under a " +
           "compromise rule, no external runtime calls, and grounds them in generatability, " +

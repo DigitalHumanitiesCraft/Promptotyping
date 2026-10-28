@@ -29,7 +29,7 @@ The explorer also shows how the client-side bound named on the site's [artefact 
 
 ## Limits
 
-The record judges the case closer to vibe coding than to Promptotyping, since three documents carried a project whose interface decisions were taken in session and left no separate requirements layer. What the case demonstrates about interface paradigms therefore rests on a documentation depth that the method's own argument about domain modelling would call thin.
+The record judges the case closer to vibe coding than to Promptotyping, since three documents carried a project whose interface decisions were taken in session and left no separate requirements layer. What the case demonstrates about interface paradigms therefore rests on a documentation depth that the practice's own argument about domain modelling would call thin.
 
 Both interfaces load one index file at startup and require JavaScript, so the collection size the artefact can carry is bounded by what the browser holds.
 

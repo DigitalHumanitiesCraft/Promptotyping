@@ -2,8 +2,8 @@
   "version": "0.3",
   "generated": "2026-06-10",
   "_meta": {
-    "beschreibung": "Case-study data of the Promptotyping methodology site. The sources are the case descriptions in the vault, the method extensions in the Promptotyping MOC and the case analysis of the method paper (Pollin 2026, maintained outside this repository). The gallery groups by the role a case plays as evidence for the method and orders within a block by the five epistemic interface functions, the site's own typology documented on the artefact page (part 4 of the specification).",
-    "kuratierung": "Admission is decided by what a card lets a reader check. Every case of the method paper's case comparison has a card, because a reader who comes from the case analysis to verify a claim has to find the project (operator decision 2026-07-26). Beyond the paper's case set the gallery carries the projects the method grew out of, the teaching formats, and the documented applications that the earlier seven-chapter text listed in its project inventory; since the promotion those stand on their repositories alone under the role further. The Aldersbach monastic accounts stay although the paper dropped the case as too old, because the genealogy is what they carry (operator decision 2026-07-25). Outside the gallery stays the agentic edition pipeline, which is meta-tooling and a template rather than a single research artefact.",
+    "beschreibung": "Case-study data of the Promptotyping specification site. The sources are the case descriptions in the vault, the practice extensions in the Promptotyping MOC and the case analysis of the paper (Pollin 2026, maintained outside this repository). The gallery groups by the role a case plays as evidence for the practice and orders within a block by the five epistemic interface functions, the site's own typology documented on the artefact page (part 4 of the specification).",
+    "kuratierung": "Admission is decided by what a card lets a reader check. Every case of the paper's case comparison has a card, because a reader who comes from the case analysis to verify a claim has to find the project (operator decision 2026-07-26). Beyond the paper's case set the gallery carries the projects the practice grew out of, the teaching formats, and the documented applications that the earlier seven-chapter text listed in its project inventory; since the promotion those stand on their repositories alone under the role further. The Aldersbach monastic accounts stay although the paper dropped the case as too old, because the genealogy is what they carry (operator decision 2026-07-25). Outside the gallery stays the agentic edition pipeline, which is meta-tooling and a template rather than a single research artefact.",
     "schema": {
       "id": "anchor slug, forming the site anchor together with #case- (e.g. herdata -> #case-herdata)",
       "name": "display name",
@@ -21,14 +21,14 @@
     },
     "role_labels": {
       "evidence": "Evidence for the paper",
-      "genealogy": "Before the method",
+      "genealogy": "Before the practice",
       "teaching": "Teaching and demonstration",
       "further": "Further documented applications"
     },
     "role_notes": {
-      "evidence": "Part of the case comparison in the method paper (Pollin 2026). A claim of that analysis can be checked against these.",
-      "genealogy": "Built before the method had its vocabulary. The method grew from them.",
-      "teaching": "Recorded sessions and teaching builds. The teachability of the method rests on this kind of material.",
+      "evidence": "Part of the case comparison in the paper (Pollin 2026). A claim of that analysis can be checked against these.",
+      "genealogy": "Built before the practice had its vocabulary. The practice grew from them.",
+      "teaching": "Recorded sessions and teaching builds. The teachability of the practice rests on this kind of material.",
       "further": "Documented applications the paper does not carry. They stand on their repositories alone."
     }
   },
@@ -47,7 +47,7 @@
       "repo_url": "https://github.com/DigitalHumanitiesCraft/teiCrafter",
       "demo_url": "https://dhcraft.org/teiCrafter/",
       "video_url": null,
-      "insight": "Origin point of the method as a prompt-configured idea; what separates 2023 from 2026 is the maturity of the coding tooling that made the same idea buildable",
+      "insight": "Origin point of the practice as a prompt-configured idea; what separates 2023 from 2026 is the maturity of the coding tooling that made the same idea buildable",
       "deep_page": true
     },
     {
@@ -242,7 +242,7 @@
       "name": "wiiw Patent Analysis",
       "role": "further",
       "status": "completed",
-      "summary": "Network dashboard over international patent cooperation from 2010 to 2018, built during a workshop at an economic research institute and the record's case for the method outside the humanities.",
+      "summary": "Network dashboard over international patent cooperation from 2010 to 2018, built during a workshop at an economic research institute and the record's case for the practice outside the humanities.",
       "data": "Patent cooperation CSV, 2010 to 2018",
       "artifact": "Network dashboard with centrality measures and yearly snapshots",
       "interfaceTypes": [
@@ -364,7 +364,7 @@
       "name": "Austrian University Dashboard",
       "role": "teaching",
       "status": "completed",
-      "summary": "Interactive dashboard for Austrian university statistics that runs through every phase of the method on video as a teaching baseline.",
+      "summary": "Interactive dashboard for Austrian university statistics that runs through every phase of the practice on video as a teaching baseline.",
       "data": "Excel corpus of Austrian university statistics",
       "artifact": "Interactive dashboard (teaching baseline)",
       "interfaceTypes": [

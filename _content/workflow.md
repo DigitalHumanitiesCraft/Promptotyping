@@ -12,7 +12,7 @@ machine-url: https://dhcraft.org/Promptotyping/_content/workflow.md
 
 # Worked workflow
 
-A completed case, from raw data to the running artefact, recorded as a screencast of one working session. The starting material is a large set of Excel files from a public reporting system, and the result is a static dashboard. The case is a didactic base case without a public repository, chosen because it shows the loop in full, and it solves no difficult research problem. The two videos are [part 1 introducing the method](https://youtu.be/8sUe4Jkh3uQ) and [part 2 with the continuous demonstration](https://youtu.be/hd_a-NBO_S4).
+A completed case, from raw data to the running artefact, recorded as a screencast of one working session. The starting material is a large set of Excel files from a public reporting system, and the result is a static dashboard. The case is a didactic base case without a public repository, chosen because it shows the loop in full, and it solves no difficult research problem. The two videos are [part 1 introducing the practice](https://youtu.be/8sUe4Jkh3uQ) and [part 2 with the continuous demonstration](https://youtu.be/hd_a-NBO_S4).
 
 ## Preparation
 
@@ -22,7 +22,7 @@ Preparation here consists of nothing more than collecting the Excel files in a `
 
 The first instruction to the agent is to analyse all files in detail and produce a `data.md` from them that renders the totality of the data and the relations between all columns. The instruction is extended by a directive on working method, namely to create a `scripts` folder with Python scripts that assist the exploration, and to document their function in a Markdown document of their own.
 
-This extension carries the principle the method's token economy rests on. With many files the LLM does not read the data; it writes code that reads the data and works on from the compressed result. At the end of the step there are three scripts, their documentation, the extracted data as JSON, and the `data.md`.
+This extension carries the principle the practice's token economy rests on. With many files the LLM does not read the data; it writes code that reads the data and works on from the compressed result. At the end of the step there are three scripts, their documentation, the extracted data as JSON, and the `data.md`.
 
 The second move is tidying up. The `data.md` moves into a `knowledge` folder, and the move is reported back to the agent, since otherwise it works on from an outdated picture of the file layout.
 
@@ -39,7 +39,7 @@ Before implementation begins, `handoff.md` is created with the canonical empty s
 Implementation runs in milestones, and the first HTML view can be opened in a local server. From here three feedback channels operate.
 
 - **Screenshots.** The running artefact is photographed and the image goes back into the context. The agent thereby sees what it has built.
-- **Precise fault addressing.** A fault in the interface is reported by the identifier of the element rather than by a description of what looks wrong. This is the second kind of judgement the method presupposes, the development-side one.
+- **Precise fault addressing.** A fault in the interface is reported by the identifier of the element rather than by a description of what looks wrong. This is the second kind of judgement the practice presupposes, the development-side one.
 - **Clicking through.** The finished view is operated the way a user would operate it.
 
 Two passages of the recording are methodologically instructive, because they depart from the rule.
@@ -54,4 +54,4 @@ At the end stands an experiment that does not serve completion. A single prompt 
 
 ## What the case shows and what it does not
 
-It shows the full loop on material that demands no scholarly modelling, and it shows the concrete moves that stay abstract in the description of the [application](#application). It does not show what the method achieves on interpretatively modelled research data, because tabular reporting data does not carry the difficulties at issue there. The [use cases](#use-cases) and the practice chapter of the paper stand for that.
+It shows the full loop on material that demands no scholarly modelling, and it shows the concrete moves that stay abstract in the description of the [application](#application). It does not show what the practice achieves on interpretatively modelled research data, because tabular reporting data does not carry the difficulties at issue there. The [use cases](#use-cases) stand for that.

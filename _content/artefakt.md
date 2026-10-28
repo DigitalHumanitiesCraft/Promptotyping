@@ -6,20 +6,20 @@ language: en
 version: "0.3"
 created: 2026-07-25
 updated: 2026-07-31
-source: Promptotyping method, artefact forms and evidential scope
+source: Promptotyping working practice, artefact forms and evidential scope
 machine-url: https://dhcraft.org/Promptotyping/_content/artefakt.md
 ---
 
 # The artefact and its boundary
 
-A tool serves many projects at the level of generality all of them share. A research artefact is bound to one project, and that is where its scholarly standing comes from, because the distinctions it preserves are the ones that project's data model carries. What the method produces is software that operates on the data of one project and makes it explorable, analysable or editable.
+A tool serves many projects at the level of generality all of them share. A research artefact is bound to one project, and that is where its scholarly standing comes from, because the distinctions it preserves are the ones that project's data model carries. What the practice produces is software that operates on the data of one project and makes it explorable, analysable or editable.
 
 ## The default, a self-contained static web tool
 
 The artefacts are, by deliberate default, self-contained static web tools, a set of HTML, CSS and JavaScript files with the research data embedded or loaded from flat files, runnable on any static host and from a local folder. Three properties carry this choice.
 
 - **Generability.** Current agentic tools produce static artefacts in one pass, which keeps the derivation from documents to artefact inspectable.
-- **Publishability.** They go online without infrastructure, which matches the resource situation of the researchers the method addresses.
+- **Publishability.** They go online without infrastructure, which matches the resource situation of the researchers the practice addresses.
 - **Durability.** Minimal computing and the Endings Project argue that the digital artefacts with the fewest moving parts have the best chances of survival, without server-side dependencies and without build chains that rot. Digital scholarly editing reaches the same conclusion from its own side when it publishes TEI-XML editions as static websites.
 
 The data side of this arrangement has an established name. A repository holding a project's research data beside the code that renders it is what the reproducibility discussion calls a Research Compendium (Marwick, Boettiger and Mullen 2018), defined by three principles, that its files follow the conventions of the scholarly community so that others recognise the structure, that data, method and output stay separate with the relation between them stated unambiguously, which treats the data as read-only and documents every modification in the code, and that the computational environment of the original analysis is specified. The first two carry over to a Promptotyping artefact directly and describe what its repository already does. The third is where the analogy strains, because the environment that produced the derivation here is a language model with a harness, and whether naming them discharges the principle is open.
@@ -42,7 +42,7 @@ The default holds as long as its conditions hold, and the record shows the side 
 
 The browser-based interfaces of the documented projects sort by the epistemic function they serve. Data format and visualisation technique have proved weaker as ordering principles.
 
-The typology below is the site's own. It descends from an earlier version of the method paper, and the five names given here are the ones the use-case gallery filters by. Since the revision of 31 July 2026 the paper draws its own line differently. It names six operational forms, Capture, Transformation, Exploration, Edition, Verification and the integrated scholarly workbench, and it orders them under three methodological functions of implementation, production and curation, prospective modelling and exploration, and project formation with bounded communication (paper, section 3.2). Two differences are worth holding apart. The paper counts Transformation as a form in its own right, which this page treats as a side form of the default; and the paper replaces the site's Audit category with the integrated workbench, which is a different cut rather than a rename. The site keeps its five names because published card filters and the colour scale depend on them.
+The typology below is the site's own. It descends from an earlier draft of the paper, and the five names given here are the ones the use-case gallery filters by. Since the revision of 31 July 2026 the paper draws its own line differently. It names six operational forms, Capture, Transformation, Exploration, Edition, Verification and the integrated scholarly workbench, and it orders them under three methodological functions of implementation, production and curation, prospective modelling and exploration, and project formation with bounded communication. Two differences are worth holding apart. The paper counts Transformation as a form in its own right, which this page treats as a side form of the default; and the paper replaces the site's Audit category with the integrated workbench, which is a different cut rather than a rename. The site keeps its five names because published card filters and the colour scale depend on them.
 
 - **Verification.** Checks the intermediate results of a pipeline at defined points and makes them comparable and correctable before errors propagate. The paradigmatic case is a comparison viewer for several text-recognition sources with layout overlay.
 - **Exploration.** Opens up existing structured research data through coordinated views. Here the interface is the primary research artefact, the means through which the data becomes analytically accessible.

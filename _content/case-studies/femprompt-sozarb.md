@@ -27,7 +27,7 @@ Verification points sit after every AI-assisted stage and are either human or ru
 
 The divergence between human and machine judgement is treated as a primary research output. The LLM included papers at a markedly higher rate than the human reviewers, the disagreement cases were classified by pattern, and each became a document in the vault, which turns an error term into readable evidence about where machine assessment of scholarly relevance departs from expert assessment.
 
-The vault itself is generated from the pipeline data by a named script, an instance of the generated document of Section 2.1 of the paper. Its stated obligation runs on three levels, what is the case, how it came about with the prompts and configurations that produced it, and what the process cannot deliver. The published limitations of each pipeline stage therefore sit inside the artefact, one note per stage.
+The vault itself is generated from the pipeline data by a named script, an instance of the generated document that the [Distillation](#application) step describes. Its stated obligation runs on three levels, what is the case, how it came about with the prompts and configurations that produced it, and what the process cannot deliver. The published limitations of each pipeline stage therefore sit inside the artefact, one note per stage.
 
 The evidence companion renders three views over that infrastructure, the paper corpus as a searchable and filterable set, the concept network extracted from the knowledge documents, and the comparison of human against LLM assessment with its confusion matrix and agreement statistic. That is the audit function in its clearest form, since the path that produced the result is rendered beside the result.
 
