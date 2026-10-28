@@ -7,7 +7,7 @@ status: complete
 language: en
 version: "1.0"
 created: 2026-05-09
-updated: 2026-08-25
+updated: 2026-10-28
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Opus 4.8)
 method:
@@ -39,7 +39,7 @@ Design stance, design system, and interaction patterns for the specification doc
 
 The site is calm. Black on white, one typeface, a single light-grey accent. No colour flood, no decorative lines, no accent boxes, and no motion beyond the side-panel slide and short hover feedback. Since 2026-07-26 two bounded colour systems sit on top of that ground without loosening it, described under Colour that carries meaning.
 
-Two reasons carry that stance. Reading is the primary function; a scholarly paper is read rather than scrolled past, so anything that competes with the text is a defect. And the method is made visible through structure, through the division of the tree into specification, reference, evidence, tools, and paper, so no additional visual device is needed. The earlier phase-provenance lane was removed after the first deploy by operator decision (A2 in [specification.md](specification.md), 2026-06-10) in favour of an undisturbed reading flow.
+Two reasons carry that stance. Reading is the primary function; a scholarly paper is read rather than scrolled past, so anything that competes with the text is a defect. And the practice is made visible through structure, through the division of the tree into specification, reference, evidence, tools, and paper, so no additional visual device is needed. The earlier phase-provenance lane was removed after the first deploy by operator decision (A2 in [specification.md](specification.md), 2026-06-10) in favour of an undisturbed reading flow.
 
 ## Design system
 
@@ -152,7 +152,7 @@ The tree groups the pages under Spezifikation, Referenz, Belege, Werkzeuge und P
 
 The header carries the wordmark and the kind marker, with no mark beside it, and the signature band along its foot. Both the DHCraft watercolour and the Promptotyping logo were tried in that slot and dropped, because a chromatic detail image at 22 pixels reads as a smudge and would put a hue on the page that means nothing. The carrier mark stays in the footer and supplies the favicon. The footer's auto-fitting grid currently resolves into four content columns: carrier and licence, addresses and machine access, the state of the specification, and implementation. The implementation column names Digital Humanities Craft, the documented AI harnesses and models, and Promptotyping without repeating the repository link already present in the addresses column.
 
-The start page is the specification front. The title and one-sentence scope lead into three task routes for understanding, evaluating, and applying the method. A compact operational account and two-column keyed status block complete the page. The block becomes one column below 860px. The permanent navigation subtree is the only five-part index. Overview fits through its status block at a 1440 by 900 CSS-pixel viewport. Informative pages carry their note and status metadata under the title at 0.8125rem. The Specification page carries neither tagline nor standing line; each part retains compact version, date, and source metadata. Spacing and heading weight establish these transitions without horizontal rules.
+The start page is the specification front. The title and one-sentence scope lead into three task routes for understanding, evaluating, and applying the practice. A compact operational account and two-column keyed status block complete the page. The block becomes one column below 860px. The permanent navigation subtree is the only five-part index. Overview fits through its status block at a 1440 by 900 CSS-pixel viewport. Informative pages carry their note and status metadata under the title at 0.8125rem. The Specification page carries neither tagline nor standing line; each part retains compact version, date, and source metadata. Spacing and heading weight establish these transitions without horizontal rules.
 
 ## Side panels
 
@@ -193,7 +193,7 @@ Glossary-defined terms render with a dotted grey underline (`1px dotted var(--gl
 
 ### Vorlagen table
 
-The method section of the reading flow renders a table of all mirrored templates (catalogue and function names follow the Vault convention, English since 2026-07-19). Rows carry `.vorlage-row` and remain clickable as a pointer surface. A native `.vorlage-open` button in the first cell provides the keyboard action without changing the row's table semantics; its focus-visible state draws a 2px outline.
+The practice section of the reading flow renders a table of all mirrored templates (catalogue and function names follow the Vault convention, English since 2026-07-19). Rows carry `.vorlage-row` and remain clickable as a pointer surface. A native `.vorlage-open` button in the first cell provides the keyboard action without changing the row's table semantics; its focus-visible state draws a 2px outline.
 
 The Vorlagen hub adds two silent styling blocks:
 

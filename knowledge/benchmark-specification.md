@@ -9,7 +9,7 @@ method:
 status: draft
 language: en
 created: 2026-09-05
-updated: 2026-09-05
+updated: 2026-10-28
 related: [INDEX, governance, verification, benchmark-plan]
 ---
 
@@ -212,7 +212,7 @@ runtime, timestamps and the complete observable tool/message trace. Record bille
 usage from the provider rather than estimating it from source-file size. Never
 infer a missing usage field as zero. No model API adapter is included yet.
 
-For external humans, standardise tool onboarding and record method-training time.
+For external humans, standardise tool onboarding and record training time for the practice.
 The first small pilot diagnoses protocol usability and scoring problems. A later
 comparison requires assignment balancing/randomisation, handling of learning and
 carryover, an analysis plan, and participant recording/consent arrangements. If
@@ -221,7 +221,7 @@ human–AI synergy relative to either actor alone is claimed, add a human-only a
 ## Isolation and publication
 
 Only the exported participant workspace may be made available to an agent.
-Starting a trial inside this methodology repository would expose reference answers,
+Starting a trial inside this specification repository would expose reference answers,
 future episodes and its extensive agent instructions. An external path is helpful
 but is **not** an OS sandbox: restrict filesystem access or mount only that workspace
 into a prepared container. Network use is disabled except for the authorised model
@@ -232,7 +232,7 @@ Run directories and traces stay outside the repository. They may contain partici
 data or credentials and require review before publication. The development task's
 references are visible in the authoring repository and are not a contamination-free
 holdout. Create independently reviewed fresh variants before evaluation claims.
-No public release or change of canonical method terminology follows from this pilot.
+No public release or change of the canonical terminology of the practice follows from this pilot.
 
 ## Literature informing the design
 

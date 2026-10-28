@@ -1,12 +1,12 @@
 <!-- template: Vorlage Action-Layer v0.5, https://dhcraft.org/Promptotyping/promptotyping-document/action-layer -->
 
-# Project instructions for the Promptotyping method portal
+# Project instructions for the Promptotyping Promptotyping portal
 
-This repository is `DigitalHumanitiesCraft/Promptotyping`, the public method portal for Promptotyping. It renders at https://dhcraft.org/Promptotyping/ as the specification documentation of the method, with glossary, embedded templates, vault view and use-case gallery. The documents in `knowledge/` specify the site, and the implementation follows from them.
+This repository is `DigitalHumanitiesCraft/Promptotyping`, the public portal for Promptotyping. It renders at https://dhcraft.org/Promptotyping/ as the specification documentation of the practice, with glossary, embedded templates, vault view and use-case gallery. The documents in `knowledge/` specify the site, and the implementation follows from them.
 
 ## Manuscript publication boundary
 
-The method paper is maintained outside this repository and will be published in the journal. Paper work does not happen here, and manuscript text, its apparatus and paper-specific tooling do not enter the repository. The removal history (14 and 28 October 2026) is recorded in `knowledge/specification.md`, Manuscript publication boundary.
+The paper is maintained outside this repository and will be published in the journal. Paper work does not happen here, and manuscript text, its apparatus and paper-specific tooling do not enter the repository. The removal history (14 and 28 October 2026) is recorded in `knowledge/specification.md`, Manuscript publication boundary.
 
 ## Knowledge base
 
@@ -15,7 +15,7 @@ At every session start, after this file, read in this order:
 1. `knowledge/INDEX.md`, navigation and term lexicon
 2. `knowledge/handoff.md`, open handoff points; an empty state is valid
 3. `knowledge/plan.md`, accepted work and its order
-4. `knowledge/governance.md` before changes that affect method content, evidence, public outputs, permissions or publication
+4. `knowledge/governance.md` before changes that affect practice content, evidence, public outputs, permissions or publication
 5. the document relevant to the task:
    - what the site must do: `knowledge/specification.md`
    - how it is built: `knowledge/architecture.md`

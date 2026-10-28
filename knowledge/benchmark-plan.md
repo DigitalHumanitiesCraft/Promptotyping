@@ -9,7 +9,7 @@ method:
 status: active
 language: en
 created: 2026-09-05
-updated: 2026-09-05
+updated: 2026-10-28
 related: [INDEX, benchmark-specification, governance, journal]
 ---
 
@@ -56,7 +56,7 @@ source interpretations, reviewer availability or redistribution rights.
 |---|---|
 | Main research focus | Artefact quality after changes and fresh-session continuation, with initial quality and effort also measured |
 | Development sample | The task manifest's 12 initial and four continuation SZD records; independent domain review remains necessary |
-| First practical step | An author–agent rehearsal using B to exercise the method; excluded from comparative results |
+| First practical step | An author–agent rehearsal using B to exercise the practice; excluded from comparative results |
 | Session allowance | Approximately 60 minutes: 10 orientation, 35 work and 15 joint inspection; preparation happens beforehand |
 | First comparison | One model/harness in both conditions, same factual inputs/tools/limits, repeated runs; A may use notes and tests |
 | Independent assessment | Obtain a second domain reviewer; no person's availability has been established |
@@ -94,7 +94,7 @@ For M4, initially assign each participant one condition for the dating task, bal
 experience as far as the small sample permits. This avoids treating a second attempt
 at the same task as an independent observation. The pilot is descriptive. A later
 within-person design needs parallel task variants and counterbalanced ordering.
-The method's author may rehearse the procedure, but that rehearsal is not evidence
+The practice's author may rehearse the procedure, but that rehearsal is not evidence
 of transfer to another researcher.
 
 ## Resources and stopping rules
@@ -129,7 +129,7 @@ exhaustion during a frozen comparative trial remains an outcome.
 | Cleared analysis and findings | Dated report under `snapshots/`, then Grounded Vault intake where a claim needs grounding | Distinguish technical checks, experimental observations and human acceptance |
 
 The personal Obsidian vault and the embedded Grounded Vault have complementary
-functions. The first connects projects and method knowledge; the second maintains
+functions. The first connects projects and practice knowledge; the second maintains
 the source-to-assertion chain. Benchmark planning does not require another vault.
 
 The personal vault's MOC, Project Overview and ACTIVE-WORK were updated on

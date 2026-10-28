@@ -54,15 +54,15 @@ The durable core is English because it specifies the public self-application. `j
 | [handoff.md](handoff.md) | Handoff | Which received deltas still require integration or rejection? | a handoff point arrives or is resolved |
 | [journal.md](journal.md) | Provenance | Which transitions were integrated, rejected, or corrected, and from which source? | a substantively coherent transition closes |
 | [plan.md](plan.md) | Planning | Which accepted work remains and in what dependency order? | accepted scope or completion state changes |
-| [benchmark-specification.md](benchmark-specification.md) | Benchmark Specification (draft) | How will small research-artefact implementation tasks evaluate the method and human–agent work? | pilot design, task contract, evaluation or calibration decision changes |
+| [benchmark-specification.md](benchmark-specification.md) | Benchmark Specification (draft) | How will small research-artefact implementation tasks evaluate the practice and human–agent work? | pilot design, task contract, evaluation or calibration decision changes |
 | [benchmark-plan.md](benchmark-plan.md) | Benchmark Planning | What must be reviewed, built and measured before a comparative or human study? | milestone, readiness or integration decision changes |
 
-The method paper is maintained outside this repository and will be published in the journal; neither its text nor its governing knowledge is part of this knowledge base. A `data.md` does not carry for this method repository because [project.md](project.md) holds the material basis.
+The paper is maintained outside this repository and will be published in the journal; neither its text nor its governing knowledge is part of this knowledge base. A `data.md` does not carry for this repository because [project.md](project.md) holds the material basis.
 
 ## Artefact areas
 
 - `knowledge/` contains durable Knowledge Documents, including `handoff.md` as the live Process Inbox.
-- `research-artefacts/` contains scholarly outputs about the method, currently the benchmark proposal and its authoring area. The folder name does not mean digital research artefacts in the method's sense, which are project-specific operational forms such as interfaces, transformations and workflows.
+- `research-artefacts/` contains scholarly outputs about the practice, currently the benchmark proposal and its authoring area. The folder name does not mean digital research artefacts in the practice's sense, which are project-specific operational forms such as interfaces, transformations and workflows.
 - `research-artefacts/promptotyping-bench/` is the [benchmark authoring area](../research-artefacts/promptotyping-bench/README.md). Real-data task materials live under `tasks/`, beginning with the [SZD correspondence explorer](../research-artefacts/promptotyping-bench/tasks/szd-correspondence/README.md). Synthetic machinery tests live under [fixtures/dating-explorer](../research-artefacts/promptotyping-bench/fixtures/dating-explorer/README.md) and are excluded from study results. The benchmark specification owns shared requirements; task manifests own data provenance and the plan owns readiness.
 - [research-artefacts/promptotyping-bench-proposal.md](../research-artefacts/promptotyping-bench-proposal.md) is the draft research proposal. Its rationale links to existing grounded findings through [MOC-Benchmark](../vault/30_assertions/MOC-Benchmark.md); the experimental contract and work sequence remain in the two benchmark knowledge documents.
 - `source-material/video-scripts/` contains the cleaned German transcripts [promptotyping-introduction-video-script.md](../source-material/video-scripts/promptotyping-introduction-video-script.md) and [promptotyping-live-demo-video-script.md](../source-material/video-scripts/promptotyping-live-demo-video-script.md).
@@ -90,9 +90,9 @@ The method paper is maintained outside this repository and will be published in 
 
 Terms constitutive for this knowledge base. Canonical definitions live in the linked vault knowledge documents; this is the short form relevant here.
 
-**Promptotyping.** Iterative, knowledge-driven method organised around four recurrent forms of work, Preparation, Exploration, Distillation, Implementation, developing project-specific research artefacts from structured research data and maintained project knowledge. In repository-based projects the `knowledge/` folder holds the maintained project knowledge from which implementation proceeds. Its coverage ends where findings from implementation are not written back into it.
+**Promptotyping.** Iterative, knowledge-driven working practice organised around four recurrent forms of work, Preparation, Exploration, Distillation, Implementation, through which a project builds its own research artefacts out of structured research data and the project knowledge it maintains. It is called a working practice because the word method would claim an empirical validation that does not yet exist (author decision 2026-10-28). In repository-based projects the `knowledge/` folder holds the maintained project knowledge from which implementation proceeds. Its coverage ends where findings from implementation are not written back into it.
 
-**Promptotype.** The state of an artefact that each iteration yields, valid only together with the project knowledge and the research-data state it was built from. It serves as a means of knowing, because working with it shows which distinctions the data support and where the work fails. A promptotype is finished for its purpose once the accountable expert's scholarly validation has accepted it. Until 2026-10-28 this glossary reserved the term for an accepted iteration with documented grounds of acceptance.
+**Promptotype.** The artefact state that each iteration yields, which holds only in relation to the project knowledge and research-data state underlying it. It is a means of knowing, since using it reveals which distinctions the data sustain and at which points the work breaks down. It counts as finished for a given purpose when the responsible expert has accepted it through scholarly validation. Until 2026-10-28 this glossary reserved the term for an accepted iteration with documented grounds of acceptance.
 
 **Knowledge Document.** Structured Markdown document in a repository's `knowledge/` folder. All of them are Knowledge Documents, specialised by the kind of knowledge they carry into three analytical types, Declarative (subject matter), Process (workflow state and provenance), Action (imperative). The paper calls the three types declarative knowledge documents, process knowledge documents and agent instruction documents. Until July 2026 the declarative type itself was called Knowledge Document, and the name then moved to the umbrella term.
 
@@ -120,7 +120,7 @@ Terms constitutive for this knowledge base. Canonical definitions live in the li
 
 **`template:` field.** Frontmatter field pointing to the authoritative template specification on this site. Format `template: { name, version, url, alias }`; `url` is the latest subpath form, `alias` the latest hash anchor.
 
-**Grounded Vault (`vault/`).** Instance of the Grounded Vault template carrying the grounded evidence layer of the method: sources, distillates, and assertions (until August 2026 claims) with grounding anchors, validated by `vault/tools/validate.py`. Migrated onto the renumbered template chain (`00_sources` to `40_output`) on 2026-08-09. Its own action layer `vault/CLAUDE.md` governs all work there.
+**Grounded Vault (`vault/`).** Instance of the Grounded Vault template carrying the grounded evidence layer of the practice: sources, distillates, and assertions (until August 2026 claims) with grounding anchors, validated by `vault/tools/validate.py`. Migrated onto the renumbered template chain (`00_sources` to `40_output`) on 2026-08-09. Its own action layer `vault/CLAUDE.md` governs all work there.
 
 The embedded Grounded Vault also supplies existing research grounding for the benchmark proposal. The separate personal Obsidian vault holds cross-project orientation under `Projects/Promptotyping/`, reached through `Promptotyping MOC.md` and `Project Overview Promptotyping.md`. It is not a second copy of the repository or its evidence chain; the integration boundary and canonical destinations are in [benchmark-plan.md](benchmark-plan.md#knowledge-integration).
 
@@ -128,7 +128,7 @@ The embedded Grounded Vault also supplies existing research grounding for the be
 
 ## Relation to the vault knowledge base
 
-This repository knowledge base is a self-application of the method. The vault templates guiding it are the source of the template mirror; discrepancies flow back to the vault first, then into the repo. The Critical Expert check made visible that not every template carries; method repositories skip the Material template, which sharpened the trigger rule in the convention itself.
+This repository knowledge base is a self-application of the practice. The vault templates guiding it are the source of the template mirror; discrepancies flow back to the vault first, then into the repo. The Critical Expert check made visible that not every template carries; method repositories skip the Material template, which sharpened the trigger rule in the convention itself.
 
 ## Related
 

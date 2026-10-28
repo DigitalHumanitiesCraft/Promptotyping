@@ -16,7 +16,7 @@ related: [INDEX, project, specification, verification, journal]
 
 # Project Governance
 
-This Action Document defines the project-wide rules under which people and LLM-based agents read, change, check, accept, and publish the Promptotyping method, site, and evidence layer. It binds the repository action layer and provides a reusable governance instance for Promptotyping projects with distributed knowledge, delegated work, writing tools, sensitive material, or public outputs.
+This Action Document defines the project-wide rules under which people and LLM-based agents read, change, check, accept, and publish the Promptotyping practice, site, and evidence layer. It binds the repository action layer and provides a reusable governance instance for Promptotyping projects with distributed knowledge, delegated work, writing tools, sensitive material, or public outputs.
 
 ## Governing model
 
@@ -32,7 +32,7 @@ The Critical Expert holds final authority over scholarly interpretations, canoni
 
 ### Research Orchestrator
 
-The Research Orchestrator maintains the research question, terminology, argument, sources, evidence status, uncertainty, and method or teaching decisions. They prepare a versioned Research Brief and return implementation findings to the appropriate knowledge document.
+The Research Orchestrator maintains the research question, terminology, argument, sources, evidence status, uncertainty, and practice or teaching decisions. They prepare a versioned Research Brief and return implementation findings to the appropriate knowledge document.
 
 ### Operational Orchestrator
 
@@ -107,7 +107,7 @@ Every accepted implementation finding has a named destination:
 - corrections to source representations return to the representation and its provenance record;
 - clarified requirements return to `specification.md` or the responsible domain document;
 - project-wide authority or status rules return to `governance.md`;
-- reusable methodological findings return to the Promptotyping method knowledge;
+- reusable methodological findings return to the Promptotyping practice knowledge;
 - chronological decisions and failed approaches return to `journal.md`;
 - evidence relations return to the Grounded Vault instance;
 - changes relevant to another project cross the boundary through an integration document or explicit handoff.
@@ -129,7 +129,7 @@ A public release requires:
 5. a rendered preview where layout or interaction carries meaning;
 6. explicit release by the Critical Expert.
 
-The method paper is published only in the journal (operator decision 2026-10-28). Its manuscript text, its specification, review tooling, figures and manuscript audits do not enter this public repository or its site, and paper work happens in the author's private workspace.
+The paper is published only in the journal (operator decision 2026-10-28). Its manuscript text, its specification, review tooling, figures and manuscript audits do not enter this public repository or its site, and paper work happens in the author's private workspace.
 
 ## Escalation
 
@@ -141,13 +141,13 @@ Work returns to the Critical Expert when it encounters:
 - an external, public, destructive, identity-bearing, or difficult-to-reverse action;
 - a requested change outside the authorised artefact or repository scope;
 - disagreement between epistemic validity and operational correctness;
-- a proposed method change that would alter Promptotyping's general claims.
+- a proposed change to the practice that would alter Promptotyping's general claims.
 
 The escalation object contains the context, recommended position, concrete artefact, checking criterion, consequence, and a short response form.
 
 ## Action-layer binding
 
-Repository action layers such as `CLAUDE.md` or `AGENTS.md` load this document before changes that affect method content, evidence, public outputs, permissions, or publication. They may narrow permissions for a session or tool. Any expansion of authority requires a recorded Critical Expert decision and a corresponding governance update.
+Repository action layers such as `CLAUDE.md` or `AGENTS.md` load this document before changes that affect practice content, evidence, public outputs, permissions, or publication. They may narrow permissions for a session or tool. Any expansion of authority requires a recorded Critical Expert decision and a corresponding governance update.
 
 ## Acceptance criteria
 

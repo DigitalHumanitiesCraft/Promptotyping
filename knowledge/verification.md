@@ -23,7 +23,7 @@ related: [INDEX, specification, architecture, handoff, journal]
 
 # Verification
 
-Which claims this site makes about itself, what each is checked against, by what procedure, and with what verdict. The site specifies the verification function in part 5 and requires in A12 that it demonstrates the method on itself. Until 2026-07-26 it ran no check of its own statements, while the vault under it had `validate.py` from the start. This document closes that gap for the claims a script can decide.
+Which claims this site makes about itself, what each is checked against, by what procedure, and with what verdict. The site specifies the verification function in part 5 and requires in A12 that it demonstrates the practice on itself. Until 2026-07-26 it ran no check of its own statements, while the vault under it had `validate.py` from the start. This document closes that gap for the claims a script can decide.
 
 The dividing line is the one part 5 draws. Where a rule decides, a script runs it unsupervised. Where scholarly judgement decides, the check stays with the Critical Expert, and this document records only that it is outstanding.
 
@@ -218,15 +218,15 @@ Under `tools/tests/` the checks are themselves held to their regression cases, r
 
 **Claim.** The overview routes researchers through Understand, Evaluate, and Apply. Application continues into evidence or first use; Use Cases continues into the Vault or tutorial; the tutorial reaches the canonical skill, templates, and Working environment. The Use Cases data boundary reports a failed load through the shared escaped error surface.
 
-**Why it matters.** Individually valid pages do not form a usable method portal when a reader has to reconstruct their order or return to the navigation tree after every step. A disconnected error boundary is worse because it replaces an intelligible data failure with an unrelated JavaScript exception.
+**Why it matters.** Individually valid pages do not form a usable Promptotyping portal when a reader has to reconstruct their order or return to the navigation tree after every step. A disconnected error boundary is worse because it replaces an intelligible data failure with an unrelated JavaScript exception.
 
 **Procedure.** The static group checks the required anchors on the overview, Application, Use Cases host, tutorial, and Working environment, and checks the shared Use Cases error call. Regression cases remove the Vault transition, the skill transition, and the error-boundary call. Browser verification then executes the filters, case panel, Vault grounding panel, skill copy, and template copy at desktop and mobile widths. A controlled HTTP 503 for `data/case-studies.json` exercises the failed-data path.
 
 **Verdict, 2026-08-22.** Passes. The normal scenarios complete without console output. The controlled failure renders “Could not load case-studies.json (503).” inside the Use Cases surface and produces no secondary JavaScript error.
 
-### V20. Independent role simulations can understand, evaluate, and apply the method
+### V20. Independent role simulations can understand, evaluate, and apply the practice
 
-**Claim.** Three independent agent instances can use only the public portal surfaces to explain the method, make a conservative fit decision, and begin a first documented iteration. Their reading must not depend on the private repository knowledge under `knowledge/`.
+**Claim.** Three independent agent instances can use only the public portal surfaces to explain the practice, make a conservative fit decision, and begin a first documented iteration. Their reading must not depend on the private repository knowledge under `knowledge/`.
 
 **Why it matters.** A connected interface can still require unrecorded explanations. Separate role simulations expose contradictions in terminology, document routing, responsibility, and evidential scope before an external participant study.
 
@@ -274,7 +274,7 @@ At desktop width the full Overview orientation and its seven status fields ended
 
 ## What is not checked automatically, and why
 
-- **Whether a page says what the method paper says.** The contradictions of 2026-07-26 were found by reading the manuscript against the site. Agreement in substance is not decidable by rule, and the four findings of that reading are recorded in `knowledge/journal.md`.
+- **Whether a page says what the paper says.** The contradictions of 2026-07-26 were found by reading the manuscript against the site. Agreement in substance is not decidable by rule, and the four findings of that reading are recorded in `knowledge/journal.md`.
 - **Whether the anchors resolve in the browser.** V8 decides the anchor set from the sources, which is a static reading of what the code would mount. Whether the element actually appears in the DOM depends on the render order, on a fetch that may fail and on the routing that reveals the page, and none of that is visible to a file reader. The check of 2026-07-26 against the rendered DOM, comparing the union of element ids over every page and deep link before and after the refactor, stays the instrument for that question. The routing rebuild of the same day was taken with the second form of it, a local server that answers every non-file path with `404.html` under HTTP 404 as GitHub Pages does, driven by a headless browser over every published subpath form and two unresolvable paths, and read off the page host that carries `is-active`.
 - **What V8 cannot see by construction.** An href or an id assembled at run time carries no literal, so a concatenated address is skipped on the reference side and its family is covered by prefix on the declared side. An anchor named outside the sources it reads goes unnoticed, which includes every foreign repository carrying a `template:` URI and every link in a slide deck, a mail or a published PDF; those are exactly the addresses the no-renaming rule protects, and the check cannot enumerate them. A link that resolves to the wrong but existing anchor passes, since only existence is decidable here. The praxis anchors are derived from the raw Markdown heading while the site derives them from the rendered heading, so an inline link or emphasis inside a practice heading would move the real anchor away from the computed one.
 - **That the ports still compute what the browser computes.** `slugify` exists twice, once as JavaScript the site runs and once as a Python rebuild that decides the anchor set of V8. A rebuild drifting from the original reports nothing; it turns V8 into a silent pass, since both sides then agree on an anchor set the browser never mounts. Since 2026-07-31 the script holds a table of input and output pairs read off the JavaScript, covering umlauts, the sharp s, a character outside the alphabet and punctuation runs, and it runs as its own check group. That is a guard rather than a proof of agreement: the table decides the cases it holds, and whether the JavaScript itself still behaves that way stays the browser half of the verification named above.
