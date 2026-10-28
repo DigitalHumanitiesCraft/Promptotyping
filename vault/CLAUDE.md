@@ -1,4 +1,4 @@
-# Promptotyping Paper Vault — Agent Action Layer
+# Promptotyping Grounded Vault — Agent Action Layer
 
 This vault is a Grounded Vault instance. Every substantive statement you produce here must carry a grounding anchor; the rules live in `knowledge/`, and this file only routes you there. Do not duplicate rules here.
 
@@ -33,4 +33,4 @@ Read in this order: `knowledge/index.md` (terminology), `knowledge/state.md` (wh
 
 - Commit at milestones with concise English imperative messages; stage explicit paths.
 - Subagents run with an explicit Opus model override; delegation stays flat (no sub-subagents). Guardrail and exclusion lists are passed to subagents verbatim.
-- The deliverable is the paper, maintained canonically in `research-artefacts/promptotyping-paper.md` at the repository root. The site renders that file directly, so no derived cut of the paper exists; never copy paper text into `40_output/` (see the settled decision in `knowledge/specification.md`).
+- This vault has no manuscript deliverable. The site renders the assertion layer through `tools/build_site_index.py`. Manuscript text of the method paper never enters this repository, neither in `40_output/` nor anywhere else (see the settled decision in `knowledge/specification.md`).

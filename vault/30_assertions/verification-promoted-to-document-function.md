@@ -27,4 +27,3 @@ The July 2026 audit extracted a Verification skeleton empirically from the repos
 ## Related
 
 - [[30_assertions/status-vocabulary-adds-active-and-snapshot]]
-- [[30_assertions/section4-verification-single-agent-snapshot-2026-07-19]]

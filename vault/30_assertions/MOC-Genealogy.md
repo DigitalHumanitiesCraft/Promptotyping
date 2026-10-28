@@ -23,8 +23,8 @@ Added with the bibliography-traceability sweep of 2026-07-23:
 - [[30_assertions/applied-genai-dh-workshop-series-2024]] — An applied-generative-AI-in-the-humanities workshop series was released as a versioned archive by February 2024
 - [[30_assertions/semantic-web-envisioned-agents-over-machine-processable-data]] — The Semantic Web vision centred on agents operating over machine-processable data
 
-Added 2026-07-27 with the dissertation re-read for the paper's genealogical opening:
+Added 2026-07-27 with the dissertation re-read for the method's genealogy:
 
-- [[30_assertions/generalised-dashboard-flattens-context-specific-detail]] — the dissertation records the limit of the generalised DEPCHA Dashboard View that the paper uses as the origin of the method
+- [[30_assertions/generalised-dashboard-flattens-context-specific-detail]] — the dissertation records the limit of the generalised DEPCHA Dashboard View that stands at the origin of the method
 - [[30_assertions/promptotyping-first-named-in-the-dissertation]] — the term was introduced in the dissertation, which devotes Section 7.4 to it, ahead of both public contributions
 

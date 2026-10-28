@@ -146,7 +146,7 @@ def read_distillate(path: Path) -> dict:
 
 
 def cite_label(entry: dict) -> str:
-    """Author-and-year label of a CSL-JSON entry, the way the paper cites it."""
+    """Author-and-year label of a CSL-JSON entry, in author-date citation form."""
     names = [a.get("family") or a.get("literal") or "" for a in entry.get("author") or []]
     names = [n for n in names if n] or [
         e.get("family") or e.get("literal") or "" for e in entry.get("editor") or []

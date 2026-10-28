@@ -11,7 +11,7 @@ updated: "2026-07-25"
 The inventory register of the minimal example. Every representation and every
 distillate of this instance is listed here, which is what the inventory check of
 `tools/validate.py` requires; the second register the check accepts,
-`knowledge/register-paper-sources.md`, is not used by this example.
+`knowledge/register-literature.md`, is not used by this example.
 
 ## Source inventory
 

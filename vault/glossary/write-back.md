@@ -11,7 +11,7 @@ Write-back is the return path through which consequential findings from Implemen
 
 Within renewed Distillation, knowledge refactoring revises the maintained Markdown documents so that they express the current project understanding coherently. Accountable contributors determine which revised knowledge forms part of the accepted project state. The depth of return follows the finding, with revised project understanding most often returning to Distillation and changes to the source basis or its interpretation returning to Preparation or Exploration.
 
-The definition stands in `knowledge/paper-specification.md` (§5.5). The canonical `research-artefacts/promptotyping-paper.md` distinguishes write-back as the return path from knowledge refactoring as the documentary revision in Section 3.3. The term carries no external source.
+Write-back names the return path, knowledge refactoring the documentary revision within it. The term belongs to the method's own vocabulary and carries no external source.
 
 ## Related
 

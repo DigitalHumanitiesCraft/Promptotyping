@@ -7,7 +7,7 @@ updated: 2026-07-29
 
 # MOC: Frame
 
-Claims behind the paper's epistemic frame: exploration as research, the nature of humanities data, the translation problem, and the surrounding AI discourse (Vibe Coding, Spec-Driven Development, context engineering, model failure modes). Added with the bibliography-traceability sweep of 2026-07-23.
+Claims behind the method's epistemic frame: exploration as research, the nature of humanities data, the translation problem, and the surrounding AI discourse (Vibe Coding, Spec-Driven Development, context engineering, model failure modes). Added with the bibliography-traceability sweep of 2026-07-23.
 
 - [[30_assertions/fair-emphasises-machine-actionability-of-data]] — The FAIR principles place specific emphasis on machines' ability to find and use data, and extend to the tools and workflows that produced it
 - [[30_assertions/making-source-data-machine-addressable-is-interpretive-modelling]] — Source data legible only as PDF layout becomes machine-addressable only through explicit markup, and the categorisation this requires is itself interpretive
@@ -47,7 +47,7 @@ Claims behind the paper's epistemic frame: exploration as research, the nature o
 - [[30_assertions/research-software-engineers-are-scarce]] — Research software engineers are scarce and sit across a cultural gap between research and software development
 - [[30_assertions/dh-intermediary-bridges-researchers-and-technical-staff]] — A professional intermediary bridges researchers and technical staff in digital-humanities institutions
 
-Added 2026-07-26 with the jagged-frontier intake for the paper's account of the failure modes of current LLMs:
+Added 2026-07-26 with the jagged-frontier intake for the method's account of the failure modes of current LLMs:
 
 - [[30_assertions/llm-assistance-raises-performance-inside-and-lowers-it-outside-a-jagged-frontier]] — LLM assistance raises performance on tasks inside the frontier of AI capability and lowers it on tasks outside, within one workflow
 - [[30_assertions/the-boundary-of-the-jagged-frontier-is-not-readable-from-a-task-in-advance]] — Where the boundary of that frontier runs cannot be read off a task, so competence with it accrues in use

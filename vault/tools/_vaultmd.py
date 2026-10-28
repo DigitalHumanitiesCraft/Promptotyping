@@ -53,7 +53,7 @@ def load_reference_records(directory: Path) -> tuple[list[tuple[Path, dict]], li
     A file that does not parse yields no records and one message naming it, so
     the callers report the same defect in the same words. What a caller does
     after that stays its own decision: the validator records the message, the
-    generator warns and carries on, the bibliography stops.
+    generator warns and carries on.
     """
     records: list[tuple[Path, dict]] = []
     problems: list[str] = []

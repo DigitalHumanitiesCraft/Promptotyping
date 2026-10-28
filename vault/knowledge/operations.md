@@ -1,7 +1,7 @@
 ---
 title: Operations
 project:
-  name: "Promptotyping Paper Vault"
+  name: "Promptotyping Grounded Vault"
   repository: "https://github.com/DigitalHumanitiesCraft/Promptotyping"
 method:
   name: Promptotyping

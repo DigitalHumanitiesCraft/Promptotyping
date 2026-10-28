@@ -1,7 +1,7 @@
 ---
 title: Specification
 project:
-  name: Promptotyping Paper Vault
+  name: Promptotyping Grounded Vault
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 method:
   name: Promptotyping
@@ -24,24 +24,22 @@ Purpose, parameters and settled decisions of this vault instance. The invariant 
 
 ## Purpose
 
-This vault grounds the Promptotyping paper. The output is the paper maintained canonically in this repository as `research-artefacts/promptotyping-paper.md`, which the site renders directly; this vault carries the provenance layer beneath it, anchoring the paper's load-bearing claims to the source material that supports them, from the Section 4 project figures through the genealogy claims to the novelty claims of the discussion. The evidence obligation follows the paper's own verification practice, adversarial checking against the public project repositories, so that the paper workstream's verification milestones (figures check M3, source dating M4, novelty research M8) read and write this vault instead of leaving their findings in session-local documents.
+This vault is the grounded evidence layer of the Promptotyping method. It anchors the method's load-bearing claims, from its genealogy through its method and concepts to its limitations and the surrounding discourse, to the source material that supports them. The method paper that draws on this evidence is maintained outside this repository and will be published in a journal. Manuscript text and manuscript-specific apparatus stay out of this vault.
 
 ## Parameters
 
 The operator's benchmark-planning request of 5 September 2026 adds research
 navigation through [[30_assertions/MOC-Benchmark]]. It reuses the existing source
 base for the external [proposal](../../research-artefacts/promptotyping-bench-proposal.md).
-The canonical paper and its section register remain the sole manuscript output
-of this instance. Benchmark plans, task files and future run records have the
+Benchmark plans, task files and future run records have the
 destinations specified in the repository's [benchmark plan](../../knowledge/benchmark-plan.md).
 
 | Parameter | Value |
 |---|---|
-| Topic | The evidence base of the Promptotyping paper |
+| Topic | The evidence base of the Promptotyping method |
 | Topic backbone | Genealogy, Method, Evidence, Concepts, Limitations, Frame, ArtefactVerification, Benchmark |
 | Active source types | document, publication, data |
 | Output genre | scholarly synthesis |
-| Chapter register | see [[knowledge/state]] |
 | Working language of content | English |
 | Verification role | Critical Expert in the Loop: the method's author (Digital Humanities Craft) |
 | Validation mechanism | `tools/validate.py` |
@@ -49,11 +47,11 @@ destinations specified in the repository's [benchmark plan](../../knowledge/benc
 
 ## Style sheet
 
-English scholarly prose in the register of the paper. Figures follow the paper's three-class rule; exact numbers only where they carry an argument and are verified, tilde-rounded orders of magnitude for scale descriptors, volatile process metrics dated or stated qualitatively. Citation display is author-year against the CSL records in `references/`. Terminology follows the glossary of the Promptotyping site (https://dhcraft.org/Promptotyping/#glossar).
+English scholarly prose. Figures follow a three-class rule; exact numbers only where they carry an argument and are verified, tilde-rounded orders of magnitude for scale descriptors, volatile process metrics dated or stated qualitatively. Citation display is author-year against the CSL records in `references/`. Terminology follows the glossary of the Promptotyping site (https://dhcraft.org/Promptotyping/#glossar).
 
 ### Rules for every text in this vault
 
-Sharpened on operator instruction, 2026-07-25. These four are the frequent failures and hold in English as they do in the paper.
+Sharpened on operator instruction, 2026-07-25. These four are the frequent failures.
 
 1. No dash and no colon as a connector, for emphasis, or ahead of a summary or a run of examples. A colon stands only before a quotation, a code block, or a list whose items sit on their own lines.
 2. No trailing negative apposition in the pattern "X, not Y" or "not X, but Y". State the point positively and give the excluded alternative its own sentence if it is needed at all. The licensed exception is Drucker's "capta rather than given data", because it quotes the source.
@@ -78,6 +76,7 @@ Descriptive, one line per entry, no narration of the work that produced the entr
 
 <!-- One line per decision with date; the reasoning behind each lives in the journal. -->
 
+- 2026-10-28: The manuscript and everything bound to it leave the public repository (operator decision). This vault is the evidence layer of the method. The paper-source register, the claim and citation-fit audits, the revision audits, the paper-figures verification with the assertions grounded only in it, `tools/coverage.py` and `tools/bibliography.py` are removed, and the distilled publications are inventoried in [[knowledge/register-literature]]. Decisions below that name the paper, its sections or its bibliography are superseded where they concern the manuscript.
 - 2026-09-05: Add Benchmark as a research-navigation topic for the operator-requested proposal; reuse existing assertions without changing their status, keep the proposal and study plan external, and record new literature intake separately from empirical results.
 
 - 2026-07-19: Vault instantiated from the Grounded Vault template on operator instruction; the parking of a paper-work instantiation recorded in the Promptotyping repo's plan is lifted.

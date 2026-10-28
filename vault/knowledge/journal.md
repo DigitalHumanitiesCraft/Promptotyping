@@ -1,7 +1,7 @@
 ---
 title: Journal
 project:
-  name: Promptotyping Paper Vault
+  name: Promptotyping Grounded Vault
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 method:
   name: Promptotyping
@@ -229,3 +229,8 @@ The operator designated the current canonical manuscript as version 0.9.1 and re
 The operator requested a research proposal and work plan for Promptotyping Bench and a suitable integration of its research knowledge. [[30_assertions/MOC-Benchmark]] links existing assertions on the internal corpus and transfer audits, TEI evaluation and reference alternatives, reporting and model-judge limitations. The proposal and operational documents remain canonical in the repository; the new map owns navigation, while [[knowledge/state]] distinguishes existing source carriers from candidate literature still requiring intake. No assertion was created from a hypothesis, no source or assertion status was upgraded, and no performance result was ingested. The paper remains the sole manuscript in the section register.
 
 Building the site index exposed a parsing defect: a multi-section topic map's description could become its final section heading because the H1 matcher consumed line breaks. The generator now confines that match to the heading line, with regression cases for a multi-section map and a map without introductory prose. The generated index retains the source assertions and adds the Benchmark navigation topic. The personal Obsidian vault remains a separate portfolio knowledge environment; its requested navigation changes are prepared in the repository handoff under that vault's external-session read-only rule.
+
+## 2026-10-28 — Manuscript-bound material leaves the vault
+
+The operator decided that the public repository holds only the method specification and its supporting material, because the method paper may be published only in the journal. The vault therefore stops serving as the provenance layer of the manuscript and stays as the grounded evidence layer of the method. Removed are the paper-source register, the claim audit and the three citation-fit audits of 2026-07-31, the revision audits A1 and A2 (their representations quoted manuscript sentences), the paper-figures verification of 2026-07-19 in both layers, the 27 assertions grounded only in those documents, `tools/coverage.py`, `tools/bibliography.py` and its tests. The distilled publications moved into the new [[knowledge/register-literature]], which keeps class, status, distillate and assertions and drops the paper-role column; the section register and the paper-session notes left [[knowledge/state]]. A copy of every removed file is held in the operator's private paper workspace. The validator stays at zero errors and the one declared warning.
+

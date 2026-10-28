@@ -20,9 +20,6 @@ no assertion that the proposed benchmark or Promptotyping has demonstrated an ef
 
 ## Existing source-supported findings
 
-- [[30_assertions/record-does-not-separate-document-depth-from-verification-effort]] — the internal corpus audit identifies a confound the comparison must respect.
-- [[30_assertions/unassisted-non-hybrid-artefact-production-is-unsupported]] — the transfer audit bounds the existing evidence for independent human use.
-- [[30_assertions/record-has-no-failure-case-and-a-bounded-yield-pole]] — the internal audit identifies the absence of documented failure cases.
 - [[30_assertions/tei-evaluation-assigns-its-dimensions-to-different-checking-regimes]] — a TEI framework separates automatic, reference-based and expert-centred checks.
 - [[30_assertions/tei-permits-several-valid-encodings-of-one-phenomenon]] — legitimate interpretive alternatives constrain reference matching.
 - [[30_assertions/an-open-tei-encoding-benchmark-exists-for-llm-generated-encodings]] — a task-specific DH precedent is already represented in this vault.

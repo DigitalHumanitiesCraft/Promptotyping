@@ -7,7 +7,7 @@ updated: 2026-08-09
 
 # MOC: ArtefactVerification
 
-Claims behind the paper's account of the artefact type, its treatment of provisionality and publication, and its verification architecture: the self-contained static artefact type and its sustainability discourse, the interface typology and its classification gap, and the layering of verification between deterministic checks and expert judgement. Added with the bibliography-traceability sweep of 2026-07-23.
+Claims behind the method's account of the artefact type, its treatment of provisionality and publication, and its verification architecture: the self-contained static artefact type and its sustainability discourse, the interface typology and its classification gap, and the layering of verification between deterministic checks and expert judgement. Added with the bibliography-traceability sweep of 2026-07-23.
 
 - [[30_assertions/ssh-open-marketplace-models-workflows-as-step-sequences]] — The SSH Open Marketplace records research workflows as step-by-step sequences pointing to the tools, services, and datasets usable at each stage
 - [[30_assertions/client-side-provenance-tool-is-a-precedent-for-server-free-artefacts]] — A same-venue provenance tool runs entirely in the browser without server-side architecture, a precedent for the server-free artefact type
@@ -42,7 +42,7 @@ Added 2026-07-26 from the site-vocabulary literature sweep (lane C1):
 - [[30_assertions/nanopublication-binds-a-statement-to-the-annotations-that-carry-its-context]] — the nearest prior art for a document holding one statement with its provenance and its assertion
 - [[30_assertions/llm-judgement-approximates-human-preference-and-carries-known-biases]] — the measured zone in which a model may legitimately judge, and the four named biases that bound it
 
-Added 2026-07-29 from the intake on TEI-encoding evaluation, the external carriers for the layering of Table 1 of the paper (the checking layering) and for the state of the benchmark question:
+Added 2026-07-29 from the intake on TEI-encoding evaluation, the external carriers for the checking layering and for the state of the benchmark question:
 
 - [[30_assertions/tei-evaluation-assigns-its-dimensions-to-different-checking-regimes]] — a published framework reaches the same layering from another task family, automated validation, ground-truth comparison, expert review
 - [[30_assertions/llm-generated-tei-alters-content-and-modernises-language]] — the three named behaviours of generated encodings that keep data fidelity in the verification row

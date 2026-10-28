@@ -1,7 +1,7 @@
 ---
 title: Index
 project:
-  name: "Promptotyping Paper Vault"
+  name: "Promptotyping Grounded Vault"
   repository: "https://github.com/DigitalHumanitiesCraft/Promptotyping"
 method:
   name: Promptotyping
@@ -32,7 +32,8 @@ Navigation and terminology of the vault. Human readers start at [[HOME]]; agents
 | [[knowledge/specification]] | purpose, parameters, settled decisions | on decisions |
 | [[knowledge/schema]] | layer model, document types, anchor mechanics, audit trail | rarely, by decision |
 | [[knowledge/operations]] | the chains: acquire, ingest, distill, assertions, chapters, query, check | rarely, by decision |
-| [[knowledge/state]] | source inventory, chapter register, everything volatile | constantly |
+| [[knowledge/state]] | source inventory of project documents, open work, everything volatile | constantly |
+| [[knowledge/register-literature]] | inventory of the distilled publications | on intake |
 | [[knowledge/journal]] | decision history | append-only |
 
 A document is split only when its sections develop divergent update rhythms or divergent readers.

@@ -9,7 +9,7 @@
    "slug": "MOC-ArtefactVerification",
    "topic": "ArtefactVerification",
    "title": "MOC: ArtefactVerification",
-   "description": "Claims behind the paper's account of the artefact type, its treatment of provisionality and publication, and its verification architecture: the self-contained static artefact type and its sustainability discourse, the interface typology and its classification gap, and the layering of verification between deterministic checks and expert judgement. Added with the bibliography-traceability sweep of 2026-07-23.",
+   "description": "Claims behind the method's account of the artefact type, its treatment of provisionality and publication, and its verification architecture: the self-contained static artefact type and its sustainability discourse, the interface typology and its classification gap, and the layering of verification between deterministic checks and expert judgement. Added with the bibliography-traceability sweep of 2026-07-23.",
    "assertions": [
     "ssh-open-marketplace-models-workflows-as-step-sequences",
     "client-side-provenance-tool-is-a-precedent-for-server-free-artefacts",
@@ -49,9 +49,6 @@
    "title": "MOC: Benchmark",
    "description": "Research grounding and open questions for evaluating small DH research artefacts built by autonomous agents and researchers working with agents.",
    "assertions": [
-    "record-does-not-separate-document-depth-from-verification-effort",
-    "unassisted-non-hybrid-artefact-production-is-unsupported",
-    "record-has-no-failure-case-and-a-bounded-yield-pole",
     "tei-evaluation-assigns-its-dimensions-to-different-checking-regimes",
     "tei-permits-several-valid-encodings-of-one-phenomenon",
     "an-open-tei-encoding-benchmark-exists-for-llm-generated-encodings",
@@ -63,7 +60,7 @@
    "slug": "MOC-Concepts",
    "topic": "Concepts",
    "title": "MOC: Concepts",
-   "description": "Claims behind the paper's conceptual contributions: epistemic infrastructure, the interface typology by epistemic function, and the novelty claims that Milestone M8 of the paper workstream checks against the current discourse.",
+   "description": "Claims behind the method's conceptual contributions: epistemic infrastructure, the interface typology by epistemic function, and the novelty claims held against the current discourse.",
    "assertions": [
     "deck-characterises-llms-as-jagged-alien",
     "deck-derives-context-and-verification-from-llm-profile",
@@ -85,41 +82,16 @@
    "slug": "MOC-Evidence",
    "topic": "Evidence",
    "title": "MOC: Evidence",
-   "description": "Claims of the paper's evidence base: project figures, build states, and growth statements, each anchored to the project repositories or to the adversarial verification findings of 2026-07-19.",
+   "description": "Claims about the evidence base of the method in its documented projects, each anchored to the project repositories or to audits of them.",
    "assertions": [
-    "wheaton-figures-verified-2026-07-19",
-    "hans-gross-figures-verified-2026-07-19",
-    "correspexplorer-figures-verified-2026-07-19",
-    "lucina-figures-verified-2026-07-19",
-    "coocr-htr-figures-verified-2026-07-19",
-    "austrian-dashboard-universities-verified-2026-07-19",
-    "zbz-figures-verified-2026-07-19",
-    "notker-figures-verified-2026-07-19",
-    "klawiter-entries-verified-2026-07-19",
-    "femprompt-figures-verified-2026-07-19",
-    "medieval-xml-count-2026-07-19",
-    "zbz-commit-count-2026-07-19",
-    "zbz-knowledge-doc-count-2026-07-19",
-    "vetmedai-excel-count-2026-07-19",
-    "vetmedai-knowledge-doc-count-2026-07-19",
-    "herdata-letter-count-2026-07-19",
-    "m3gim-decision-count-2026-07-19",
-    "correspexplorer-knowledge-userstory-count-2026-07-19",
-    "klawiter-test-count-2026-07-19",
-    "medieval-test-count-2026-07-19",
-    "szd-htr-fair4rs-audit-2026-07-23",
-    "kulturpool-repo-unresolvable-2026-07-19",
-    "duration-cost-figures-experiential",
-    "section4-verification-single-agent-snapshot-2026-07-19",
-    "section4-deviations-are-snapshot-drift-2026-07-19",
-    "record-has-no-failure-case-and-a-bounded-yield-pole"
+    "szd-htr-fair4rs-audit-2026-07-23"
    ]
   },
   {
    "slug": "MOC-Frame",
    "topic": "Frame",
    "title": "MOC: Frame",
-   "description": "Claims behind the paper's epistemic frame: exploration as research, the nature of humanities data, the translation problem, and the surrounding AI discourse (Vibe Coding, Spec-Driven Development, context engineering, model failure modes). Added with the bibliography-traceability sweep of 2026-07-23.",
+   "description": "Claims behind the method's epistemic frame: exploration as research, the nature of humanities data, the translation problem, and the surrounding AI discourse (Vibe Coding, Spec-Driven Development, context engineering, model failure modes). Added with the bibliography-traceability sweep of 2026-07-23.",
    "assertions": [
     "fair-emphasises-machine-actionability-of-data",
     "making-source-data-machine-addressable-is-interpretive-modelling",
@@ -186,16 +158,12 @@
    "slug": "MOC-Limitations",
    "topic": "Limitations",
    "title": "MOC: Limitations",
-   "description": "Claims about the boundaries of the evidence: single-practitioner corpus, experiential effort figures, the missing control condition, the confounding of method effects with model capability, and the prototype-to-product boundary.",
+   "description": "Claims about the boundaries of the evidence: single-practitioner corpus, the missing control condition, the confounding of method effects with model capability, and the prototype-to-product boundary.",
    "assertions": [
-    "section4-verification-single-agent-snapshot-2026-07-19",
-    "duration-cost-figures-experiential",
     "well-modelled-data-does-not-discharge-critical-data-work",
     "llms-amplify-research-not-automate-it",
     "llm-reproducibility-transparency-recommendations",
     "edition-ai-benchmarks-lacking-and-reproducibility-favours-local-models",
-    "record-does-not-separate-document-depth-from-verification-effort",
-    "unassisted-non-hybrid-artefact-production-is-unsupported",
     "milestone-check-deferred-in-the-recorded-session"
    ]
   },
@@ -352,23 +320,6 @@
      "distillate": "lucassen-2016-quality-user-story",
      "path": "20_distillates/publications/lucassen-2016-quality-user-story",
      "statement": "s9"
-    }
-   ]
-  },
-  {
-   "slug": "austrian-dashboard-universities-verified-2026-07-19",
-   "title": "The Austrian Dashboard figure of 22 universities held against the repository as verified on 2026-07-19.",
-   "statement": "The Austrian Dashboard case study's stated figure of 22 universities matched the project repository when the figures verification checked it on 2026-07-19. Checked against the seven-chapter deliverable state of 2026-07-25, its teaching and collaboration cases named the dashboard as a didactic baseline case and stated no number of universities. The drift audit places that absence before the revision rounds of 2026-07-24 and 2026-07-25, since the deliverable already offered no point of attachment for the figure when the vault was built, so this is a figure the deliverable never carried. The four-chapter text of 2026-07-31 carries no counts at all, and the assertion stands as vault-internal checked material about the repository.",
-   "status": "grounded",
-   "topics": [
-    "Evidence"
-   ],
-   "contestedWith": [],
-   "grounding": [
-    {
-     "distillate": "verification-paper-figures-2026-07-19",
-     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
-     "statement": "s6"
     }
    ]
   },
@@ -537,23 +488,6 @@
    ]
   },
   {
-   "slug": "coocr-htr-figures-verified-2026-07-19",
-   "title": "coOCR-HTR's stated project-inventory figures held against the repository as verified on 2026-07-19.",
-   "statement": "The coOCR-HTR case study's stated figures held against the project repository when the figures verification checked them on 2026-07-19, covering 567 tests per self-documentation, about 17,000 lines of production JavaScript at an actual 17,762, 197 commits, and 67 fork commits. Checked against the seven-chapter deliverable state of 2026-07-25, none of these figures was reported there any longer. The four-chapter text of 2026-07-31 carries no counts at all, and the assertion stands as vault-internal checked material about the repository.",
-   "status": "grounded",
-   "topics": [
-    "Evidence"
-   ],
-   "contestedWith": [],
-   "grounding": [
-    {
-     "distillate": "verification-paper-figures-2026-07-19",
-     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
-     "statement": "s5"
-    }
-   ]
-  },
-  {
    "slug": "coordinated-multiple-views-enable-exploration",
    "title": "Coordinated and multiple views let users understand data through different linked representations.",
    "statement": "Coordinated and Multiple Views is an exploratory visualisation technique whose premise is that users understand their data better when they interact with it through several different, coordinated representations. Insight is formed through the interaction, which is why an exploration interface built on coordinated views functions as a primary research artifact rather than a presentation layer.",
@@ -567,40 +501,6 @@
      "distillate": "roberts-2007-coordinated-multiple-views",
      "path": "20_distillates/publications/roberts-2007-coordinated-multiple-views",
      "statement": "s1"
-    }
-   ]
-  },
-  {
-   "slug": "correspexplorer-figures-verified-2026-07-19",
-   "title": "CorrespExplorer's stated project-inventory figures held against the repository as verified on 2026-07-19.",
-   "statement": "The CorrespExplorer case study's stated figures, 11,576 letters and 12 coordinated views, matched the project repository when the figures verification checked them on 2026-07-19. The four-chapter text of 2026-07-31 carries no counts at all, and the assertion stands as vault-internal checked material about the repository.",
-   "status": "grounded",
-   "topics": [
-    "Evidence"
-   ],
-   "contestedWith": [],
-   "grounding": [
-    {
-     "distillate": "verification-paper-figures-2026-07-19",
-     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
-     "statement": "s3"
-    }
-   ]
-  },
-  {
-   "slug": "correspexplorer-knowledge-userstory-count-2026-07-19",
-   "title": "The CorrespExplorer repository holds 13 knowledge files and 37 unique user-story IDs as verified on 2026-07-19.",
-   "statement": "As verified on 2026-07-19, the CorrespExplorer repository holds 13 knowledge files and 37 unique US-IDs. The figures of 7 documents and 34 user stories that the paper carried until 2026-07-24 describe an earlier state. The four-chapter text of 2026-07-31 reports neither count, and the assertion stands as vault-internal checked material about the repository.",
-   "status": "grounded",
-   "topics": [
-    "Evidence"
-   ],
-   "contestedWith": [],
-   "grounding": [
-    {
-     "distillate": "verification-paper-figures-2026-07-19",
-     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
-     "statement": "s18"
     }
    ]
   },
@@ -1074,24 +974,6 @@
    ]
   },
   {
-   "slug": "duration-cost-figures-experiential",
-   "title": "The duration and cost figures of the paper's project inventory are experiential values outside deterministic checking.",
-   "statement": "The duration and cost figures the paper's project inventory then carried are experiential values that lie outside deterministic checking, so the verification supports no verdict on their accuracy and treats them as reported experience. Checked against the seven-chapter deliverable state of 2026-07-25, no duration or cost figures were reported there any longer, and the deliverable stated expressly that it offered no comparative measurements of development time or cost. The four-chapter text of 2026-07-31 carries no counts at all, and the assertion stands as vault-internal checked material about what the verification could and could not decide.",
-   "status": "grounded",
-   "topics": [
-    "Evidence",
-    "Limitations"
-   ],
-   "contestedWith": [],
-   "grounding": [
-    {
-     "distillate": "verification-paper-figures-2026-07-19",
-     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
-     "statement": "s22"
-    }
-   ]
-  },
-  {
    "slug": "edition-ai-benchmarks-lacking-and-reproducibility-favours-local-models",
    "title": "Benchmarks for AI-generated edition tasks are lacking, and a reproducibility standard from within digital editing calls for free, locally runnable models.",
    "statement": "The field lacks benchmarks to rigorously evaluate the quality and accuracy of AI-generated results for its specific tasks, and it voices a reproducibility standard, citing Reiter's point that evaluating non-local, API-based models is product testing rather than model evaluation, that free and locally runnable models are a condition of comprehensible, reproducible, and open research. Both halves stand as vault-internal checked material. The missing-benchmark argument left the paper with the four-chapter revision of 2026-07-31 and has no attachment in the current text. Within the method, the checking work the missing benchmark would otherwise carry falls to the human and the deterministic layer, and reproducibility is located in the documents and the pipeline against the standard's presupposition of locally runnable models.",
@@ -1399,23 +1281,6 @@
    ]
   },
   {
-   "slug": "femprompt-figures-verified-2026-07-19",
-   "title": "FemPrompt's stated project-inventory figures held against the repository as verified on 2026-07-19.",
-   "statement": "The FemPrompt case study's stated figures held against the project repository when the figures verification checked them on 2026-07-19, covering 326 papers, a 505-file vault, and a 68 percent to 42 percent split as documented in-repo. Checked against the seven-chapter deliverable state of 2026-07-25, the 326 papers were still reported there, while the vault file count and the split were not. The four-chapter text of 2026-07-31 carries no counts at all, and the assertion stands as vault-internal checked material about the repository.",
-   "status": "grounded",
-   "topics": [
-    "Evidence"
-   ],
-   "contestedWith": [],
-   "grounding": [
-    {
-     "distillate": "verification-paper-figures-2026-07-19",
-     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
-     "statement": "s10"
-    }
-   ]
-  },
-  {
    "slug": "field-literature-records-llm-code-generation-and-tei-agent-line-by-2024",
    "title": "The field's own literature records LLM code generation for edition publishing systems in September 2024 and the teiCrafter, teiModeler, teiVerifier line of TEI-generation tools.",
    "statement": "A trace of the working mode the paper consolidates is on record in the field's literature: code generation to set up technical systems for edition publishing was demonstrated in September 2024, and a line of interacting agents, teiCrafter for TEI annotation, teiModeler for the target text model, and teiVerifier for encoding verification, was described in the same survey. This grounds the paper's genealogy waypoint, an early public instance predating the consolidated method.",
@@ -1532,40 +1397,6 @@
      "distillate": "fischer-2025-bildkarten",
      "path": "20_distillates/publications/fischer-2025-bildkarten",
      "statement": "s4"
-    }
-   ]
-  },
-  {
-   "slug": "hans-gross-figures-verified-2026-07-19",
-   "title": "The Hans Gross figure of 3,892 objects held against the repository as verified on 2026-07-19.",
-   "statement": "The Hans Gross case study's stated figure of 3,892 objects matched the project repository when the figures verification checked it on 2026-07-19. The four-chapter text of 2026-07-31 carries no counts at all, and the assertion stands as vault-internal checked material about the repository.",
-   "status": "grounded",
-   "topics": [
-    "Evidence"
-   ],
-   "contestedWith": [],
-   "grounding": [
-    {
-     "distillate": "verification-paper-figures-2026-07-19",
-     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
-     "statement": "s2"
-    }
-   ]
-  },
-  {
-   "slug": "herdata-letter-count-2026-07-19",
-   "title": "The HerData repository documents a corpus of 15,312 letters to Goethe, and the 1,793-letter figure names a subset within it.",
-   "statement": "As verified on 2026-07-19, the HerData repository README states 15,312 letters as the full corpus of letters to Goethe. That check found no documentation for the 1,793-letter figure the paper's project inventory then carried and read it as plausibly the women-related subset of the corpus. Whether the figure is that subset the README leaves open, and the check of 2026-07-19 supports no verdict on it. The four-chapter text of 2026-07-31 carries no counts at all, and the assertion stands as vault-internal checked material about the repository.",
-   "status": "grounded",
-   "topics": [
-    "Evidence"
-   ],
-   "contestedWith": [],
-   "grounding": [
-    {
-     "distillate": "verification-paper-figures-2026-07-19",
-     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
-     "statement": "s16"
     }
    ]
   },
@@ -1735,57 +1566,6 @@
      "distillate": "promptotyping-video-2-live-demo",
      "path": "20_distillates/documents/promptotyping-video-2-live-demo",
      "statement": "s33"
-    }
-   ]
-  },
-  {
-   "slug": "klawiter-entries-verified-2026-07-19",
-   "title": "Klawiter's stated project-inventory figures held against the repository as verified on 2026-07-19.",
-   "statement": "The Klawiter case study's stated figures, 6,296 entries and the existence of a 7-stage pipeline, matched the project repository when the figures verification checked them on 2026-07-19. Checked against the seven-chapter deliverable state of 2026-07-25, the 6,296 entries were still reported there, while the number of pipeline stages was not. The four-chapter text of 2026-07-31 carries no counts at all, and the assertion stands as vault-internal checked material about the repository.",
-   "status": "grounded",
-   "topics": [
-    "Evidence"
-   ],
-   "contestedWith": [],
-   "grounding": [
-    {
-     "distillate": "verification-paper-figures-2026-07-19",
-     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
-     "statement": "s9"
-    }
-   ]
-  },
-  {
-   "slug": "klawiter-test-count-2026-07-19",
-   "title": "The Klawiter repository holds 247 test functions as verified on 2026-07-19.",
-   "statement": "As verified on 2026-07-19, the Klawiter repository holds 247 test functions. The figure of 264 the paper's project inventory then carried is reachable only as the parametrised collection count, so the counting rule decides which number applies. Checked against the seven-chapter deliverable state of 2026-07-25, no test count was reported there any longer. The four-chapter text of 2026-07-31 carries no counts at all, and the assertion stands as vault-internal checked material about the repository.",
-   "status": "grounded",
-   "topics": [
-    "Evidence"
-   ],
-   "contestedWith": [],
-   "grounding": [
-    {
-     "distillate": "verification-paper-figures-2026-07-19",
-     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
-     "statement": "s19"
-    }
-   ]
-  },
-  {
-   "slug": "kulturpool-repo-unresolvable-2026-07-19",
-   "title": "The Kulturpool Explorer repository was unresolvable and its object figure is an API-scale value as verified on 2026-07-19.",
-   "statement": "As verified on 2026-07-19, the linked Kulturpool Explorer repository `chpollin/vkm-explorer` returned a 404, so its state could not be checked. The figure of about 19,000 objects the paper's project inventory then carried is an API-scale value rather than a repository count, which is the part that remains supportable. The four-chapter text of 2026-07-31 carries no counts at all, and the assertion stands as vault-internal checked material about the repository.",
-   "status": "grounded",
-   "topics": [
-    "Evidence"
-   ],
-   "contestedWith": [],
-   "grounding": [
-    {
-     "distillate": "verification-paper-figures-2026-07-19",
-     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
-     "statement": "s21"
     }
    ]
   },
@@ -2028,40 +1808,6 @@
    ]
   },
   {
-   "slug": "lucina-figures-verified-2026-07-19",
-   "title": "Lucina's stated project-inventory figures held against the repository as verified on 2026-07-19.",
-   "statement": "The Lucina case study's stated figures, 128 neo-Latin poems and 5 iterations, matched the project repository when the figures verification checked them on 2026-07-19. Checked against the seven-chapter deliverable state of 2026-07-25, neither the figures nor the project appeared there. The drift audit places that absence before the revision rounds of 2026-07-24 and 2026-07-25, since the deliverable already offered no point of attachment for these figures when the vault was built, so these are figures the deliverable never carried. The four-chapter text of 2026-07-31 carries no counts at all, and the assertion stands as vault-internal checked material about the repository.",
-   "status": "grounded",
-   "topics": [
-    "Evidence"
-   ],
-   "contestedWith": [],
-   "grounding": [
-    {
-     "distillate": "verification-paper-figures-2026-07-19",
-     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
-     "statement": "s4"
-    }
-   ]
-  },
-  {
-   "slug": "m3gim-decision-count-2026-07-19",
-   "title": "The M³GIM repository holds about 127 decision entries as verified on 2026-07-19.",
-   "statement": "As verified on 2026-07-19, the M³GIM repository holds about 127 E-entries, above the figure of 49 documented decisions the paper's project inventory then carried, which reflects continued growth of the repository. Checked against the seven-chapter deliverable state of 2026-07-25, no decision count was reported there any longer. The four-chapter text of 2026-07-31 carries no counts at all, and the assertion stands as vault-internal checked material about the repository.",
-   "status": "grounded",
-   "topics": [
-    "Evidence"
-   ],
-   "contestedWith": [],
-   "grounding": [
-    {
-     "distillate": "verification-paper-figures-2026-07-19",
-     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
-     "statement": "s17"
-    }
-   ]
-  },
-  {
    "slug": "macedo-first-process-taxonomy-sdd-frameworks",
    "title": "A first process taxonomy of agentic software-development frameworks exists, scoring them on six dimensions.",
    "statement": "Macedo 2026 supplies the first study centred on the operational frameworks that turn LLM and agent capabilities into a development process, contributing a six-dimension process taxonomy, specification, context, roles, execution, validation and portability, with a scoring rubric. This is the source behind the paper's statement that a first process taxonomy of the Spec-Driven-Development frameworks now exists.",
@@ -2129,40 +1875,6 @@
      "distillate": "cremer-2025-quellen-und-datenkritik",
      "path": "20_distillates/publications/cremer-2025-quellen-und-datenkritik",
      "statement": "s4"
-    }
-   ]
-  },
-  {
-   "slug": "medieval-test-count-2026-07-19",
-   "title": "The Medieval Legal Transactions repository holds 192 test functions and 6 knowledge documents as verified on 2026-07-19.",
-   "statement": "As verified on 2026-07-19, the Medieval Legal Transactions repository holds 192 test functions across 10 files and a knowledge folder of 6 content documents plus a README. The figure of 381 regression tests the paper's project inventory then carried is a collection count whose exact value needs a pytest run, and its figure of 8 knowledge documents overstates the counted 6. Checked against the seven-chapter deliverable state of 2026-07-25, neither a test count nor a knowledge document count was reported there any longer. The four-chapter text of 2026-07-31 carries no counts at all, and the assertion stands as vault-internal checked material about the repository.",
-   "status": "grounded",
-   "topics": [
-    "Evidence"
-   ],
-   "contestedWith": [],
-   "grounding": [
-    {
-     "distillate": "verification-paper-figures-2026-07-19",
-     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
-     "statement": "s20"
-    }
-   ]
-  },
-  {
-   "slug": "medieval-xml-count-2026-07-19",
-   "title": "The Medieval Legal Transactions repository holds 3,611 XML files with 3,092 in done folders as verified on 2026-07-19.",
-   "statement": "As verified on 2026-07-19, the Medieval Legal Transactions repository holds 3,611 XML files under `sources/` and 3,092 in `done/` folders, and no figure of 6,400 was found in the repository. The four-chapter text of 2026-07-31 carries no counts at all, and the assertion stands as vault-internal checked material about the repository.",
-   "status": "grounded",
-   "topics": [
-    "Evidence"
-   ],
-   "contestedWith": [],
-   "grounding": [
-    {
-     "distillate": "verification-paper-figures-2026-07-19",
-     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
-     "statement": "s11"
     }
    ]
   },
@@ -2314,23 +2026,6 @@
      "distillate": "groth-2010-nanopublication",
      "path": "20_distillates/publications/groth-2010-nanopublication",
      "statement": "s7"
-    }
-   ]
-  },
-  {
-   "slug": "notker-figures-verified-2026-07-19",
-   "title": "Notker's stated project-inventory figures held against the repository as verified on 2026-07-19.",
-   "statement": "The Notker case study's stated figures, Psalm 2 with 13 verses and 6 text-layer controls, matched the project repository when the figures verification checked them on 2026-07-19. Checked against the seven-chapter deliverable state of 2026-07-25, Psalm 2 with its thirteen verses was still reported there, while the count of text-layer controls was not. The four-chapter text of 2026-07-31 carries no counts at all, and the assertion stands as vault-internal checked material about the repository.",
-   "status": "grounded",
-   "topics": [
-    "Evidence"
-   ],
-   "contestedWith": [],
-   "grounding": [
-    {
-     "distillate": "verification-paper-figures-2026-07-19",
-     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
-     "statement": "s8"
     }
    ]
   },
@@ -2690,50 +2385,6 @@
      "distillate": "promptotyping-video-2-live-demo",
      "path": "20_distillates/documents/promptotyping-video-2-live-demo",
      "statement": "s37"
-    }
-   ]
-  },
-  {
-   "slug": "record-does-not-separate-document-depth-from-verification-effort",
-   "title": "The documented record separates neither document depth from verification effort nor either of them from the attention a project received overall.",
-   "statement": "Document depth and verification effort in the documented projects are the same practitioner's investment, and the corpus audit of 2026-07-23 found them co-varying throughout, with deep document sets present even in the one-day builds and no project pairing deep documents with demonstrably low verification. The observation that artefact quality co-varies with the expertise invested in the documents therefore cannot be attributed to document depth alone; the total attention a project received remains an equally consistent reading of the same record.",
-   "status": "grounded",
-   "topics": [
-    "Limitations"
-   ],
-   "contestedWith": [],
-   "grounding": [
-    {
-     "distillate": "revision-audit-a2-2026-07-23",
-     "path": "20_distillates/documents/revision-audit-a2-2026-07-23",
-     "statement": "s1"
-    },
-    {
-     "distillate": "revision-audit-a2-2026-07-23",
-     "path": "20_distillates/documents/revision-audit-a2-2026-07-23",
-     "statement": "s2"
-    }
-   ]
-  },
-  {
-   "slug": "record-has-no-failure-case-and-a-bounded-yield-pole",
-   "title": "The record carries no documented failure case, and at its negative pole stands bounded yield where the documents stayed thin.",
-   "statement": "The project inventory and the worked cases present successes only, so a statement that failures cluster where documentation was vague has no documented case behind it. What the record does carry at the negative pole is bounded yield, the case in which a single design document is all that stands between an artefact and the visualisation conventions a model reproduces by default. A ranking of the projects by documentation depth does not carry this pole, because the verified count places the case in question at thirteen knowledge files, the same order of magnitude as the deeply documented cases, while the paper's lower figure describes an earlier build state.",
-   "status": "grounded",
-   "topics": [
-    "Evidence"
-   ],
-   "contestedWith": [],
-   "grounding": [
-    {
-     "distillate": "revision-audit-a2-2026-07-23",
-     "path": "20_distillates/documents/revision-audit-a2-2026-07-23",
-     "statement": "s3"
-    },
-    {
-     "distillate": "verification-paper-figures-2026-07-19",
-     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
-     "statement": "s18"
     }
    ]
   },
@@ -3205,51 +2856,6 @@
    ]
   },
   {
-   "slug": "section4-deviations-are-snapshot-drift-2026-07-19",
-   "title": "Several deviations in the verified project inventory are snapshot drift, where dating a figure is as valid as updating it.",
-   "statement": "Several deviations in the project inventory verified on 2026-07-19 are snapshot drift, arising because the inventory described an earlier state of still-growing repositories. For these figures, dating the figure to its build snapshot is as valid a correction as updating it to the current count. The inventory left the manuscript with the four-chapter revision of 2026-07-31, and the reading stands as vault-internal checked material. The file name keeps the section number the evidence layer carried when the verification ran, so that existing anchors resolve.",
-   "status": "grounded",
-   "topics": [
-    "Evidence"
-   ],
-   "contestedWith": [],
-   "grounding": [
-    {
-     "distillate": "verification-paper-figures-2026-07-19",
-     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
-     "statement": "s26"
-    }
-   ]
-  },
-  {
-   "slug": "section4-verification-single-agent-snapshot-2026-07-19",
-   "title": "The figures verification of 2026-07-19 was a single-agent snapshot with test figures counted as source functions.",
-   "statement": "The figures verification ran as a single adversarial agent without a second independent pass, read repository states on 2026-07-19 via local clones, shallow clones, and the GitHub API so that later growth stays invisible to it, and counted test figures as test functions in source without executing a pytest collection. These bounds set how far its verdicts reach. The inventory the run checked left the manuscript with the four-chapter revision of 2026-07-31, and the record stands as vault-internal checked material. The file name keeps the section number the evidence layer carried when the verification ran, so that existing anchors resolve.",
-   "status": "grounded",
-   "topics": [
-    "Evidence",
-    "Limitations"
-   ],
-   "contestedWith": [],
-   "grounding": [
-    {
-     "distillate": "verification-paper-figures-2026-07-19",
-     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
-     "statement": "s23"
-    },
-    {
-     "distillate": "verification-paper-figures-2026-07-19",
-     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
-     "statement": "s24"
-    },
-    {
-     "distillate": "verification-paper-figures-2026-07-19",
-     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
-     "statement": "s25"
-    }
-   ]
-  },
-  {
    "slug": "semantic-vocabulary-matching-stays-a-human-interpretive-task",
    "title": "Semantic matching between vocabularies remains a human-driven interpretive task, and AI becomes meaningful only where grounded in curated, context-rich data.",
    "statement": "Mapping between vocabularies requires more than algorithmic matching; it demands interpretive judgement and deep domain understanding, and AI becomes meaningful and trustworthy only where it is grounded in curated, context-rich data. This grounds the boundary in the paper's verification architecture: interpretation and contextualisation stay in the expert zone, and the method reaches the same limit from vocabulary work that the documented edition project reaches from entity identification.",
@@ -3711,33 +3317,6 @@
    ]
   },
   {
-   "slug": "unassisted-non-hybrid-artefact-production-is-unsupported",
-   "title": "The record supports teachability and guided producibility, and leaves unassisted artefact production by non-hybrid scholars open.",
-   "statement": "The evidence carries four graded levels, from the hybrid practitioner's own documented projects through the teaching cases to guided non-developer prototypes and a single external fork. Its ceiling is reached before the unassisted production of epistemically valuable research artefacts by domain experts without a programming background, which stays an open question the teaching cases open instead of closing. The transferability hedge of the paper covers disciplines with schema-regular data and leaves this second axis uncovered, which is where a falsification offer belongs.",
-   "status": "grounded",
-   "topics": [
-    "Limitations"
-   ],
-   "contestedWith": [],
-   "grounding": [
-    {
-     "distillate": "revision-audit-a1-2026-07-23",
-     "path": "20_distillates/documents/revision-audit-a1-2026-07-23",
-     "statement": "s1"
-    },
-    {
-     "distillate": "revision-audit-a1-2026-07-23",
-     "path": "20_distillates/documents/revision-audit-a1-2026-07-23",
-     "statement": "s2"
-    },
-    {
-     "distillate": "revision-audit-a1-2026-07-23",
-     "path": "20_distillates/documents/revision-audit-a1-2026-07-23",
-     "statement": "s3"
-    }
-   ]
-  },
-  {
    "slug": "unfinishedness-is-an-epistemic-value-in-the-digital-humanities",
    "title": "In the field's German-language discourse, unfinishedness is an epistemic value: the provisional expresses the dynamics of scholarly knowledge.",
    "statement": "The digital humanities have an explicit discourse that reads the provisional not as a deficit but as a knowledge-fostering value, understanding digital knowledge objects as process rather than finished product and provisionality in digital practice as a resource for insight. This grounds the statement that the promptotype's disposability sits within a recognised epistemic value of unfinishedness.",
@@ -3783,40 +3362,6 @@
      "distillate": "knowledge-base-content-audit-2026-07-19",
      "path": "20_distillates/documents/knowledge-base-content-audit-2026-07-19",
      "statement": "s4"
-    }
-   ]
-  },
-  {
-   "slug": "vetmedai-excel-count-2026-07-19",
-   "title": "The VetMedAI repository README states 79 Excel files as verified on 2026-07-19.",
-   "statement": "As verified on 2026-07-19, the README of the VetMedAI / Austrian Dashboard repository states 79 Excel files in both of its mentions, above the figure of 76 the paper's project inventory then carried. Checked against the seven-chapter deliverable state of 2026-07-25, the figure of 76 was gone and the deliverable gave approximately 80 Excel files, which the verified count of 79 supports. The four-chapter text of 2026-07-31 carries no counts at all, and the assertion stands as vault-internal checked material about the repository.",
-   "status": "grounded",
-   "topics": [
-    "Evidence"
-   ],
-   "contestedWith": [],
-   "grounding": [
-    {
-     "distillate": "verification-paper-figures-2026-07-19",
-     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
-     "statement": "s14"
-    }
-   ]
-  },
-  {
-   "slug": "vetmedai-knowledge-doc-count-2026-07-19",
-   "title": "The VetMedAI knowledge base holds about 31 content documents as verified on 2026-07-19.",
-   "statement": "As verified on 2026-07-19, the VetMedAI knowledge base holds about 31 content documents in `knowledge/`, which is 34 Markdown files when the README is counted, below the figure of 41 the paper's project inventory then carried. Checked against the seven-chapter deliverable state of 2026-07-25, no knowledge document count was reported there any longer. The four-chapter text of 2026-07-31 carries no counts at all, and the assertion stands as vault-internal checked material about the repository.",
-   "status": "grounded",
-   "topics": [
-    "Evidence"
-   ],
-   "contestedWith": [],
-   "grounding": [
-    {
-     "distillate": "verification-paper-figures-2026-07-19",
-     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
-     "statement": "s15"
     }
    ]
   },
@@ -3914,23 +3459,6 @@
    ]
   },
   {
-   "slug": "wheaton-figures-verified-2026-07-19",
-   "title": "Wheaton's stated project-inventory figures held against the repository as verified on 2026-07-19.",
-   "statement": "The Wheaton case study's stated figures, 1,124 transactions and 718 individuals, matched the project repository when the figures verification checked them on 2026-07-19. Checked against the seven-chapter deliverable state of 2026-07-25, neither figure was reported there any longer and the deliverable named the Wheaton Day Book without counts. The four-chapter text of 2026-07-31 carries no counts at all, and the assertion stands as vault-internal checked material about the repository.",
-   "status": "grounded",
-   "topics": [
-    "Evidence"
-   ],
-   "contestedWith": [],
-   "grounding": [
-    {
-     "distillate": "verification-paper-figures-2026-07-19",
-     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
-     "statement": "s1"
-    }
-   ]
-  },
-  {
    "slug": "wikidata-tool-registries-as-commons",
    "title": "Community-curated tool registries on Wikidata answer the directory paradox by treating tool data as a maintained commons.",
    "statement": "Grallert et al. argue that curated tool directories inevitably go stale in fast-moving fields (the directory paradox), and propose open, community-curated registries that act as authority files and knowledge bases of a field's methodological practices, with Wikidata as the data store positioning tool data as part of the commons. This is the registry infrastructure the paper points to for the findability of small generated instruments.",
@@ -3954,57 +3482,6 @@
      "distillate": "grallert-2026-open-tool-registries",
      "path": "20_distillates/publications/grallert-2026-open-tool-registries",
      "statement": "s6"
-    }
-   ]
-  },
-  {
-   "slug": "zbz-commit-count-2026-07-19",
-   "title": "The ZBZ repository shows 305 commits spanning 2026-01-29 to 2026-07-09 as verified on 2026-07-19.",
-   "statement": "As verified on 2026-07-19, the ZBZ repository shows 305 commits spanning 2026-01-29 to 2026-07-09, a wider range than the 128 commits over six weeks the paper's project inventory then carried. Checked against the seven-chapter deliverable state of 2026-07-25, no commit count was reported there any longer. The four-chapter text of 2026-07-31 carries no counts at all, and the assertion stands as vault-internal checked material about the repository.",
-   "status": "grounded",
-   "topics": [
-    "Evidence"
-   ],
-   "contestedWith": [],
-   "grounding": [
-    {
-     "distillate": "verification-paper-figures-2026-07-19",
-     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
-     "statement": "s12"
-    }
-   ]
-  },
-  {
-   "slug": "zbz-figures-verified-2026-07-19",
-   "title": "ZBZ's stated project-inventory volume figures held against the repository as verified on 2026-07-19.",
-   "statement": "The ZBZ case study's stated volume figures held against the project repository when the figures verification checked them on 2026-07-19, covering 286 PDFs, about 4,150 pages at an actual 4,117, and more than 30 Python scripts at an actual 98. Checked against the seven-chapter deliverable state of 2026-07-25, the 286 PDFs and the approximately 4,150 pages were still reported there, while the script count was not. The four-chapter text of 2026-07-31 carries no counts at all, and the assertion stands as vault-internal checked material about the repository.",
-   "status": "grounded",
-   "topics": [
-    "Evidence"
-   ],
-   "contestedWith": [],
-   "grounding": [
-    {
-     "distillate": "verification-paper-figures-2026-07-19",
-     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
-     "statement": "s7"
-    }
-   ]
-  },
-  {
-   "slug": "zbz-knowledge-doc-count-2026-07-19",
-   "title": "The ZBZ knowledge base holds 13 content documents plus an index as verified on 2026-07-19.",
-   "statement": "As verified on 2026-07-19, the ZBZ knowledge base holds 13 content documents plus an index, and the 3 Action Documents the paper's project inventory then named were not found in the repository. Checked against the seven-chapter deliverable state of 2026-07-25, neither a knowledge document count nor the Action Documents were reported there any longer. The four-chapter text of 2026-07-31 carries no counts at all, and the assertion stands as vault-internal checked material about the repository.",
-   "status": "grounded",
-   "topics": [
-    "Evidence"
-   ],
-   "contestedWith": [],
-   "grounding": [
-    {
-     "distillate": "verification-paper-figures-2026-07-19",
-     "path": "20_distillates/documents/verification-paper-figures-2026-07-19",
-     "statement": "s13"
     }
    ]
   }
@@ -4083,24 +3560,6 @@
    "path": "vault/20_distillates/documents/promptotyping-video-2-live-demo.md"
   },
   {
-   "slug": "revision-audit-a1-2026-07-23",
-   "title": "Distillate: Revision audit A1, transfer claim (2026-07-23)",
-   "kind": "documents",
-   "source": "revision-audit-a1-2026-07-23",
-   "sourceKind": "representation",
-   "summary": "## Related",
-   "path": "vault/20_distillates/documents/revision-audit-a1-2026-07-23.md"
-  },
-  {
-   "slug": "revision-audit-a2-2026-07-23",
-   "title": "Distillate: Revision audit A2, corpus audit (2026-07-23)",
-   "kind": "documents",
-   "source": "revision-audit-a2-2026-07-23",
-   "sourceKind": "representation",
-   "summary": "## Related",
-   "path": "vault/20_distillates/documents/revision-audit-a2-2026-07-23.md"
-  },
-  {
    "slug": "sdd-bmad-method-2026-07-24",
    "title": "Distillate: BMAD-METHOD",
    "kind": "documents",
@@ -4153,15 +3612,6 @@
    "sourceKind": "representation",
    "summary": "## Core statements",
    "path": "vault/20_distillates/documents/szd-htr-fair4rs-audit-2026-07-23.md"
-  },
-  {
-   "slug": "verification-paper-figures-2026-07-19",
-   "title": "Distillate: Section 4 figures verification (2026-07-19)",
-   "kind": "documents",
-   "source": "verification-paper-figures-2026-07-19",
-   "sourceKind": "representation",
-   "summary": "## Related",
-   "path": "vault/20_distillates/documents/verification-paper-figures-2026-07-19.md"
   },
   {
    "slug": "abdurahman-2025-primer-llm-evaluation",
@@ -5341,20 +4791,6 @@
    "path": "vault/10_markdown/documents/promptotyping-video-2-live-demo.md"
   },
   {
-   "slug": "revision-audit-a1-2026-07-23",
-   "kind": "representation",
-   "title": "Revision-Audit A1 — Claim-Evidenz-Prüfung der Transferbehauptung",
-   "label": "Revision-Audit A1 — Claim-Evidenz-Prüfung der Transferbehauptung",
-   "path": "vault/10_markdown/documents/revision-audit-a1-2026-07-23.md"
-  },
-  {
-   "slug": "revision-audit-a2-2026-07-23",
-   "kind": "representation",
-   "title": "Revision Audit A2",
-   "label": "Revision Audit A2",
-   "path": "vault/10_markdown/documents/revision-audit-a2-2026-07-23.md"
-  },
-  {
    "slug": "risam-2022",
    "kind": "publication",
    "title": "Introduction: The Questions of Minimal Computing",
@@ -5521,13 +4957,6 @@
    "title": "Tool Criticism: From Digital Methods to Digital Methodology",
    "label": "van Es et al. 2018",
    "path": "vault/references/vanes-2018-tool-criticism.json"
-  },
-  {
-   "slug": "verification-paper-figures-2026-07-19",
-   "kind": "representation",
-   "title": "Verification of Section 4 Figures",
-   "label": "Verification of Section 4 Figures",
-   "path": "vault/10_markdown/documents/verification-paper-figures-2026-07-19.md"
   },
   {
    "slug": "whitelaw-2015",

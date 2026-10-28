@@ -193,7 +193,7 @@ results. Research claims enter the Grounded Vault only through their actual sour
 or result records and review. The proposal itself is not evidence that the method
 works, and preparing it does not change the canonical method paper.
 
-[^confounding]: [Grounded project finding: documentation and verification effort are not separated](../vault/30_assertions/record-does-not-separate-document-depth-from-verification-effort.md), with links to the internal corpus audit. Status at drafting: grounded.
-[^transfer]: [Grounded project finding: independent non-hybrid artefact production remains open](../vault/30_assertions/unassisted-non-hybrid-artefact-production-is-unsupported.md), with links to the internal transfer audit. Status at drafting: grounded.
+[^confounding]: Project finding from an internal corpus audit of 2026-07-23: documentation depth and verification effort are not separated in the project record. The audit is held outside the public repository since 2026-10-28.
+[^transfer]: Project finding from an internal transfer audit of 2026-07-23: independent artefact production by domain experts without programming background remains open. The audit is held outside the public repository since 2026-10-28.
 [^tei]: [Strutz 2026 framework, checking-regime assertion and its source anchors](../vault/30_assertions/tei-evaluation-assigns-its-dimensions-to-different-checking-regimes.md). The proposed evaluation layering is our adaptation of the framework, not a reported effect on Promptotyping.
 [^alternatives]: [TEI permits multiple valid encodings](../vault/30_assertions/tei-permits-several-valid-encodings-of-one-phenomenon.md), grounded in the same framework.

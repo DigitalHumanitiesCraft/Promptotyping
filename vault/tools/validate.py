@@ -54,9 +54,9 @@ TYPE_FOLDER = {
     "glossary": "glossary",
 }
 
-# Instance declaration: the cited publications are inventoried in the
-# register of paper sources, the project documents in the state register.
-INVENTORY_REGISTERS = ("knowledge/state.md", "knowledge/register-paper-sources.md")
+# Instance declaration: the distilled publications are inventoried in the
+# literature register, the project documents in the state register.
+INVENTORY_REGISTERS = ("knowledge/state.md", "knowledge/register-literature.md")
 INVENTORIED_FOLDERS = ("10_markdown", "20_distillates")
 SPECIFICATION = "knowledge/specification.md"
 
