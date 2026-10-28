@@ -1,132 +1,108 @@
-# CLAUDE.md — Action-Layer für Coding-Sessions in diesem Repo
+<!-- template: Vorlage Action-Layer v0.5, https://dhcraft.org/Promptotyping/promptotyping-document/action-layer -->
+
+# Project instructions for the Promptotyping method portal
+
+This repository is `DigitalHumanitiesCraft/Promptotyping`, the public method portal for Promptotyping. It renders at https://dhcraft.org/Promptotyping/ as the specification documentation of the method, with glossary, embedded templates, vault view and use-case gallery. The documents in `knowledge/` specify the site, and the implementation follows from them.
 
 ## Manuscript publication boundary
 
-The method paper is maintained outside this repository and will be published in the journal. The operator removed the manuscript from the public repository and GitHub Pages on 14 October 2026, and on 28 October 2026 everything bound to it followed, the paper specification, the review tooling, the figures, the submission report and the manuscript audits in the vault. This repository holds the method specification and its supporting material. Paper work does not happen here, and manuscript text, its apparatus and paper-specific tooling do not enter the repository. Earlier commits and historical publication records are retained, so the removal does not undo prior public availability.
+The method paper is maintained outside this repository and will be published in the journal. Paper work does not happen here, and manuscript text, its apparatus and paper-specific tooling do not enter the repository. The removal history (14 and 28 October 2026) is recorded in `knowledge/specification.md`, Manuscript publication boundary.
 
-Dieses Repo ist `DigitalHumanitiesCraft/Promptotyping`, die öffentliche Methodik-Site für Promptotyping. Es rendert auf https://dhcraft.org/Promptotyping/ als Spezifikationsdokumentation der Methode, mit Glossar, den eingebetteten Vorlagen, der Vault-Ansicht und der Use-Case-Galerie.
+## Knowledge base
 
-## Beim Session-Start lesen
+At every session start, after this file, read in this order:
 
-Bevor du eine Aufgabe in diesem Repo angehst, lies in dieser Reihenfolge:
+1. `knowledge/INDEX.md`, navigation and term lexicon
+2. `knowledge/handoff.md`, open handoff points; an empty state is valid
+3. `knowledge/plan.md`, accepted work and its order
+4. `knowledge/governance.md` before changes that affect method content, evidence, public outputs, permissions or publication
+5. the document relevant to the task:
+   - what the site must do: `knowledge/specification.md`
+   - how it is built: `knowledge/architecture.md`
+   - how it looks: `knowledge/design.md`
+   - what is checked and how: `knowledge/verification.md`
+   - benchmark work: `knowledge/benchmark-specification.md`, then `knowledge/benchmark-plan.md`; `research-artefacts/promptotyping-bench/README.md` separates real tasks under `tasks/` from synthetic tool tests under `fixtures/`
+   - where a decision comes from: `knowledge/journal.md`
 
-1. `knowledge/INDEX.md` — Navigation und Begriffslexikon
-2. `knowledge/handoff.md` — offene Übergabepunkte; ein leerer Zustand ist gültig
-3. `knowledge/project.md` — was die Site ist, wer die Adressaten sind
-4. `knowledge/governance.md` — Autorität, Quellenstatus, Schreibgrenzen, Write-back, Rechte, Publikation und Eskalation
-5. Das jeweils aufgabenrelevante Dokument:
-   - Was-soll-die-Site-können → `knowledge/specification.md`
-   - Wie-ist-es-gebaut → `knowledge/architecture.md`
-   - Wie-sieht-es-aus → `knowledge/design.md`
-   - Woher-kommt-eine-Entscheidung → `knowledge/journal.md`
-   - Benchmark-Arbeit → `knowledge/benchmark-specification.md` für den gemeinsamen Versuchs- und Messvertrag, danach `knowledge/benchmark-plan.md` für den Arbeitsstand. `research-artefacts/promptotyping-bench/README.md` trennt reale Aufgaben unter `tasks/` von synthetischen Werkzeugtests unter `fixtures/`. Aufgabenspezifische Regeln und Quellenstände gehören in die jeweilige Aufgabe.
+## Working rules
 
-Die Wissensbasis im `knowledge/`-Ordner ist die Specification, aus der die Implementation folgt. Sie ist nicht beiläufig, sie ist normativ.
+- Work incrementally, one bounded step after the state documented in the knowledge base, one commit per finished step.
+- Consult the knowledge base before taking a design decision. Ask when scope, order or architecture are unclear.
+- Handoff. Check source and current target of a point, integrate durable content first or reject it with a reason, then write the journal record and remove the point completely.
+- Journal. One entry per coherent transition marked `integriert`, `verworfen` or `korrigiert`; compact semantically when the journal loses its function, and create no archive.
+- Do not cite from the operator's vault without a Markdown link. Vault wikilinks mean nothing in the repository.
+- Do not reactivate the old living-paper material of November 2025. Reviving old modules starts a new discussion.
+- No branches. All changes go directly to `main`.
+- Commits with agent involvement end with `Co-Authored-By: Claude <model actually used> <noreply@anthropic.com>`.
 
-Der aktive Projektplan steht in `knowledge/plan.md`. Historische Frontend-Pakete stehen seit der Wissenspflege vom 2026-09-05 in `snapshots/frontend-plan-history-2026-09-05.md`; ihre damalige Ausführungsreihenfolge ist keine aktuelle Arbeitsanweisung.
+## Vault and repository conflicts
 
-## Designprinzipien (aus knowledge/design.md übersetzt)
+Vault templates are the source of truth for the templates themselves. When mirroring a template reveals a discrepancy:
 
-Die Site soll ruhig sein. Konkret bedeutet das beim Coden:
+1. If the vault template is wrong, correct the vault, then mirror into the repository.
+2. If the repository mirror is wrong, correct the repository; the vault stays.
+3. If it is unclear, ask the operator.
 
-- **Verwende keine Farben außer den im Designsystem definierten Tokens.** Unbunt sind `--bg`, `--text`, `--accent`, `--border`, `--code-bg` und die drei Grautöne `--grey-1` bis `--grey-3`. Schreibe nie einen Hex-Wert ins Stylesheet außerhalb des Token-Blocks; der Dunkelmodus ist ein reiner Token-Tausch und bricht sonst.
-- **Farbe bedeutet genau eine Sache**, die epistemische Funktion eines Artefakts, also die fünf Interface-Kategorien der site-eigenen Typologie auf der Artefakt-Seite (`--fn-verification`, `--fn-exploration`, `--fn-edition`, `--fn-capture`, `--fn-audit`). Das Methodenpaper zieht eine eigene Linie mit sechs operationalen Formen; die Site behält ihre fünf Namen, weil publizierte Kartenfilter und die Farbskala daran hängen. Das ist eine Nominalskala, und dort ist der Farbton nach Bertin die richtige Kodierung. Sie erscheint auf der Artefakt-Seite und an der Kartenkante der Use Cases, sonst nirgends. **Die Kategorie steht immer auch als Wort daneben** (WCAG 2.1, Erfolgskriterium 1.4.1, Stufe A). Färbe insbesondere nicht die fünf Teile der Spezifikation ein, das ist eine Rangfolge und keine Verschiedenheit der Art.
-- **`--signature`** ist der eine laute Ort, ein prismatischer Verlauf als 2px-Band am Fuß der Kopfzeile, einmal pro Seite. Er trägt keine Information und darf deshalb laut sein. Verwende ihn nirgends sonst.
-- **Schriften: Inter für Text, Consolas für Code, sonst keine.** Keine zweite Sans-Serif, keine Display-Schrift, keine Brand-Schrift.
-- **Animationen: nur Slide-in/out für Side-Panels (200ms ease-out), keine anderen.** Keine Scroll-Linked-Animationen, kein Parallax, keine Hover-Bouncing-Effekte. Kurze 150ms-Farb- und Hintergrundübergänge als Hover-Feedback sind erlaubte Mikro-Affordanzen, ebenso die beiden Opazitätsübergänge, die zum Panel gehören, das Einblenden des Glossar-Tooltips über 150ms und das Abdunkeln des Side-Panel-Backdrops über 200ms.
-- **Nichts klappt ein oder aus** (Operator-Entscheidung 2026-07-29, A33). Der Navigationsbaum zeigt seine Struktur permanent, der Scrollspy bewegt allein die Aktuell-Markierung. Zulässig sind zwei Geräte, das Side-Panel samt seiner mobilen Bottom-Sheet-Form und die Klick-zum-Laden-Fassade der Videos; beide verbergen keinen Text, den die Seite ohnehin trägt. Ein drittes kommt nicht hinzu.
-- **Keine dekorativen Elemente.** Wenn ein UI-Element keine Funktion hat, gehört es nicht hin.
+Never let them diverge silently.
 
-## Repo-Struktur (Pflicht-Konvention)
+## Design principles
 
+Source of values: `knowledge/design.md`. Read it before UI work. The site is calm. Binding:
+
+- Use no colours other than the design-system tokens. Write no hex value outside the token block, because the dark theme is a pure token swap.
+- Colour means exactly one thing, the epistemic function of an artefact (`--fn-verification`, `--fn-exploration`, `--fn-edition`, `--fn-capture`, `--fn-audit`), on the Artefakt page and the card edge of the use cases only, and always with the category as a word beside it. Do not colour the five parts of the specification.
+- `--signature` is the one loud place, a 2px band at the foot of the header, once per page. Use it nowhere else.
+- Fonts are Inter for text and Consolas for code, no others.
+- The only movement animation is the side-panel slide (200ms ease-out). Short hover transitions are permitted micro-affordances as `knowledge/design.md` lists them.
+- Nothing collapses (A33). The side panel with its mobile bottom-sheet form and the click-to-load video facade are the only two devices that hide content; add no third.
+- Add no decorative elements.
+
+## Scope
+
+- The site is English (A26). The templates and the files under `_content/skills/` stay German, and template names and published anchors stay German identifiers. All templates except `technology` are vault mirrors whose translation belongs in a vault session.
+- The canonical skill lives in `DigitalHumanitiesCraft/promptotyping-skill` (A42). Do not keep a copy here.
+- No modules beyond the Frontmatter-Inspector, case-study filter, term index and vault view.
+
+## Site model
+
+- One page is visible at a time; the sidebar tree is the table of contents (operator decision 2026-07-25, A32). The five parts of the specification are sections of one page under `#specification`.
+- `PAGES` in `assets/js/registry.js` is the single source for page hosts, navigation tree and route resolution. Write no navigation markup into `index.html` or `404.html`. When touching a part, check `isPageId`, `hostPage` and `isRouteId`.
+- Inactive pages stay in the DOM as `display: none`, so every published anchor resolves. Do not lazy-mount pages.
+- `vault/` is a Grounded Vault instance with its own action layer `vault/CLAUDE.md`, which governs all work there. Its Python tools under `vault/tools/` are the permitted exceptions to the no-build rule. After changing the assertion layer, rerun `vault/tools/build_site_index.py`, which writes the committed `data/vault.json`.
+
+## URL anchor scheme
+
+Anchors are not renamed without discussion, because repositories link them as `template:` URIs. The full scheme and its rationale are in `knowledge/specification.md`, A4, A5 and ADR-2, ADR-3, ADR-10. `tools/check_consistency.py` reads this list.
+
+- Templates: subpath `/promptotyping-document/{slug}` (latest, canonical), equivalent hash `#promptotyping-document-{slug}`; snapshots only on a version change as `#promptotyping-document-{slug}-v{version}`. Slugs: `data`, `index`, `project`, `specification`, `architecture`, `technology`, `design`, `journal`, `handoff`, `user-stories`, `action-layer`, `testing`, `plan`, `report`, `domain-knowledge`, `verification`, `integration`.
+- Machine address (ADR-10): `https://dhcraft.org/Promptotyping/_content/promptotyping-document/{slug}.md`. `.nojekyll` in the repository root is required.
+- Practice anchors derive from headings at render time. Changing an anchor-bearing heading needs an entry in `PRAXIS_ALIASES` in `assets/js/pages-content.js`.
+- Concepts `#konzept-{name}`, case studies `#case-{name}`, vault `#vault` and `#vault-{assertion-slug}` (subpaths `/vault`, `/vault/{assertion-slug}`).
+- Specification `#specification`; its parts `#application` (legacy `#anwendung`), `#vorlagen`, `#konvention-v0.1`, `#artefakt`, `#verifikation`, each with the same subpath.
+- Glossary `#glossar`; overview `#overview` (legacy `#ueberblick`); use cases `#use-cases`; worked workflow `#workflow`; practice `#praxis` and `#praxis-{slug}`; skills `#skills`, `#skills-promptotyping`, `#skills-{slug}`; working environment `#arbeitsumgebung`; tutorial `#tutorial`.
+
+## Tools
+
+Before dependent steps, check the available tools, runtimes and connections. A missing binding rule source holds the dependent change. Name checks you did not run.
+
+### Stack
+
+- Vanilla HTML5, CSS3 and JavaScript, no framework, no build step, no npm.
+- Core scripts under `assets/js/` are IIFEs extending `window.PromptotypingApp`, no ES modules. `app.js` loads last among the core scripts. `404.html` is a stub that hands the path as `?p=` to `index.html`; the subpath vocabulary lives only in `resolveTemplateUrl`.
+- marked.js and js-yaml are vendored under `assets/vendor/`. No CDN. Custom marked extensions stay in `assets/js/markdown.js`.
+- Routing uses browser-native `location.hash`. GitHub Pages serves directly from the repository root.
+- `assets/promptotyping-logo.png` stays.
+
+### Checks
+
+`python tools/check_consistency.py` runs before every commit that touches the catalogue, convention, template folder or use-case gallery. The combined regression run from the repository root is:
+
+```sh
+python -m pytest tools/tests vault/tests research-artefacts/promptotyping-bench -q -p no:cacheprovider
+python tools/check_consistency.py
+python vault/tools/validate.py vault
 ```
-.
-├── index.html                  # Site-Einstieg
-├── 404.html                    # Subpath-Routing-Fallback
-├── README.md                   # Repo-README
-├── CLAUDE.md                   # Diese Datei (Action-Layer)
-├── knowledge/                  # Dauerhafte Knowledge Documents
-│   └── handoff.md              # Verpflichtende Process Inbox
-├── research-artefacts/         # Benchmark-Vorschlag und Benchmark-Autorenbereich
-├── source-material/            # Übernommene Quellen und Transkripte
-├── snapshots/                  # Datierte Reports und Audits
-├── _content/                   # Site-Inhalte (Vorlagen, Case Studies, Glossar)
-├── assets/                     # CSS, JS, Vendor, Fonts, Logo
-├── data/                       # JSON-Datenfutter
-├── schema/                     # JSON Schema des Frontmatter-Kerns (Prüfgruppe V16)
-├── tools/                      # Prüf- und Erzeugungsskripte der Site (check_consistency.py, build_glossar.py) samt tests/
-└── vault/                      # Grounded-Vault-Instanz: belegte Evidenzschicht der Methode
-```
 
-`assets/promptotyping-logo.png` bleibt erhalten.
+Add `--check-urls` to `check_consistency.py` when an address in `data/case-studies.json` changes; it needs the network. What each check covers is in `knowledge/verification.md`.
 
-Der Ordner `vault/` ist eine Instanz des Grounded-Vault-Templates (`DigitalHumanitiesCraft/grounded-vault`) und verankert die tragenden Aussagen der Methode quellenfest. Für jede Arbeit in `vault/` gilt dessen eigener Action-Layer `vault/CLAUDE.md`; die Python-Werkzeuge unter `vault/tools/` gehören zum Vault und sind die zulässigen Ausnahmen von der No-Build-Regel unten. `validate.py` prüft den Vault. `build_site_index.py` erzeugt `data/vault.json` für die Vault-Ansicht der Site; das Ergebnis wird committet, die Site holt zur Laufzeit eine statische Datei, und ein Build-Schritt zur Auslieferzeit entsteht nicht. Wer die Assertion-Schicht (bis August 2026 Claim-Schicht) ändert, führt das Skript nach.
-
-## Tech-Stack-Regeln
-
-- **Vanilla HTML5/CSS3/JS, kein Framework, kein Build-Step.** Wenn du dabei bist, npm zu verwenden, halte inne. Falsche Richtung.
-- **Die Site-Logik liegt in einfachen Kernskripten unter `assets/js/`**, jedes eine IIFE, die `window.PromptotypingApp` erweitert. Kein ES-Modul, kein `import`. Verhaltensrelevant ist allein, dass `app.js` als letztes der Kernskripte geladen wird und die beiden Shell-deklarierten Module danach folgen. `404.html` ist ein Rumpf ohne Site-Skript, der den angefragten Pfad per `location.replace` als `?p=` an `index.html` durchreicht; die Shell existiert genau einmal, und das Subpath-Vokabular steht allein in `resolveTemplateUrl`.
-- **`python tools/check_consistency.py` läuft vor jedem Commit, der Katalog, Konvention, Vorlagenordner oder die Use-Case-Galerie anfasst.** Es meldet, wenn dieselbe Aussage an zwei Orten auseinanderläuft. Wer eine Adresse in `data/case-studies.json` anfasst, läuft es zusätzlich mit `--check-urls`; diese Gruppe braucht das Netz und ist deshalb nicht im Standardlauf. Was es prüft, steht in `knowledge/verification.md`.
-- **marked.js v9.1.6 vendoriert** in `assets/vendor/marked.min.js`. Kein CDN.
-- **Custom-Extensions für marked.js** sind erlaubt, bleiben aber in `assets/js/markdown.js`, wo die marked-Konfiguration insgesamt liegt. Heute steht dort nur die Grundkonfiguration.
-- **Browser-natives `location.hash` für Routing**, kein History-API-Hacking, kein React-Router.
-- **GitHub Pages serviert direkt aus dem Repo-Root.** Kein `_site`, kein `docs/`, kein Jekyll-Build.
-
-## Seitenmodell: Spezifikationsdokumentation (Operator-Entscheidung 2026-07-25)
-
-Die Site ist eine Spezifikationsdokumentation, wie sie eine Programmbibliothek oder eine publizierte Ontologie führt. Es ist **eine Seite zur Zeit sichtbar**; der Navigationsbaum in der Seitenleiste ist das Inhaltsverzeichnis. Das Raster hat zwei Spuren, den Baum und die Seite; eine dritte Spur mit den Überschriften der aktiven Seite gibt es nicht. Die durchgehende Scroll-Spalte mit Hero und Video an der Spitze ist abgelöst und wird nicht reaktiviert.
-
-Die fünf nummerierten Teile sind seit dem 2026-07-29 Sektionen **einer** Spezifikationsseite unter `#specification` (A32, Operator-Entscheidung, Paket F9); die Startseite `overview` bleibt eigenständig. Ein Registereintrag mit `parent` ist ein Teil und keine Seite, behält seine Id als Element-Id in der zusammengeführten Seite und bleibt damit unter genau derselben Adresse erreichbar wie zuvor. Wer einen Teil anfasst, prüft `isPageId`, `hostPage` und `isRouteId`; sie beantworten, was gezeigt werden kann, in welcher Seite ein Teil sitzt und was überhaupt adressierbar ist.
-
-Einzige Quelle für Seitencontainer, Navigationsbaum und Routenauflösung ist das Register `PAGES` in `assets/js/registry.js`. Eine neue Seite wird dort eingetragen, nicht in `index.html`. **Schreibe keine Navigationsmarkierung in `index.html` oder `404.html`**; beide tragen nur die Shell, und genau das hält sie synchron.
-
-Die nicht aktiven Seiten bleiben als `display: none` im DOM. Das ist die Bedingung dafür, dass jeder publizierte Anker weiter auflöst, gleich welche Seite gerade zu sehen ist. Lazy-Mounting einzelner Seiten würde das brechen.
-
-## URL-Anker-Schema (Pflicht-Konvention, Stand ADR-2/ADR-3)
-
-- Vorlagen (Knowledge Documents, bis 2026-07-31 Promptotyping Documents; die Anker behalten das alte Segment): Subpath `/promptotyping-document/{slug}` (Latest, kanonisch), gleichwertig Hash `#promptotyping-document-{slug}`. Die Slugs: `data`, `index`, `project`, `specification`, `architecture`, `technology`, `design`, `journal`, `handoff`, `user-stories`, `action-layer` (ADR-9), `testing`, `plan`, `report`, `domain-knowledge`, `verification`, `integration`. Snapshots erst bei Versionssprung über Sub-Anker `#promptotyping-document-{slug}-v{version}` bzw. `/promptotyping-document/{slug}#v{version}` — kein eigener Subpath pro Version. (Das ältere Schema `#vorlage-{name}-{version}` ist obsolet, siehe journal.md 2026-05-09 „URL-Schema-Korrektur".)
-- Maschinenadresse (ADR-10): Für HTTP-Abruf ohne JavaScript ist die statische Markdown-URL kanonisch, Muster `https://dhcraft.org/Promptotyping/_content/promptotyping-document/{slug}.md`. Die Subpath-Auflösung läuft über `404.html` und setzt JavaScript voraus. `.nojekyll` im Repo-Root ist Pflicht, sonst publiziert GitHub Pages `_content/` nicht.
-- Praxis-Anker entstehen zur Laufzeit aus den Überschriften. Wer eine Überschrift übersetzt oder umformuliert, verschiebt damit ihre Adresse; sechs Slugs sind am 2026-07-26 gewandert und werden von `PRAXIS_ALIASES` in `assets/js/pages-content.js` am Leben gehalten. Jede weitere Änderung einer ankertragenden Überschrift braucht denselben Alias.
-- Konzepte: `#konzept-{name}` (z.B. `#konzept-eil`, `#konzept-asymmetric-amplification`)
-- Case Studies: `#case-{name}` (z.B. `#case-herdata`, `#case-klawiter-rescue`)
-- Vault: `#vault` für die Ansicht, `#vault-{assertion-slug}` für eine einzelne Assertion (bis August 2026 Claim); Subpath `/vault` und `/vault/{assertion-slug}`. Die Slugs sind die Dateinamen unter `vault/30_assertions/` und haben die Umbenennung unverändert überlebt, publizierte Anker lösen weiter auf.
-- Spezifikation: `#specification`, Subpath `/specification` (A32). Die fünf Teile sind Sektionen dieser Seite. Teil 1 ist kanonisch unter `#application` und `/application` adressiert; `#anwendung` und `/anwendung` bleiben Legacy-Aliasse. Die übrigen Teile behalten `#vorlagen`, `#konvention-v0.1`, `#artefakt`, `#verifikation` samt den gleichlautenden Subpfaden.
-- Konvention: `#konvention-v0.1`
-- Glossar: `#glossar`
-- Overview: `#overview`, Subpath `/overview`; `#ueberblick` und `/ueberblick` bleiben Legacy-Aliasse. Use Cases: `#use-cases`; Worked Workflow: `#workflow`; Best Practices: `#praxis`, Praxis-Einträge: `#praxis-{slug}`; Skills: `#skills`, `#skills-promptotyping` und `#skills-{slug}` (A13 bis A15, A42); Arbeitsumgebung: `#arbeitsumgebung`, Subpath `/arbeitsumgebung` (A17); Tutorial: `#tutorial`, Subpath `/tutorial` (A31)
-
-Anker dürfen nicht ohne Diskussion umbenannt werden — Repos können auf sie als `template:`-URI verlinken.
-
-## Was du tun sollst
-
-- **Inkrementell arbeiten**: ein abgegrenzter Schritt nach dem in der Wissensbasis dokumentierten Stand, ein Commit pro abgeschlossenem Schritt
-- **Wissensbasis konsultieren**, bevor du eine Designentscheidung triffst
-- **Bei Unklarheit fragen** statt eigenmächtig entscheiden — speziell bei Scope, Reihenfolge, Architektur
-- **Handoff-Punkte verarbeiten**: Quelle und aktuelles Ziel prüfen, dauerhaften Inhalt zuerst integrieren oder begründet verwerfen, danach den Journal-Nachweis schreiben und den Punkt vollständig entfernen
-- **Journal als Provenienzindex pflegen**: ein Eintrag pro sachlich zusammengehörigem Übergang mit `integriert`, `verworfen` oder `korrigiert`; bei Funktionsverlust semantisch verdichten und kein Archiv erzeugen
-
-## Was du nicht tun sollst
-
-- **Nicht aus dem Vault zitieren ohne Markdown-Link.** Vault-interne Wikilinks (`[[CLAUDE]]`) bedeuten im Repo nichts.
-- **Nicht das alte Living-Paper-Material reaktivieren.** Alles, was im November-2025-Stand war, ist gelöscht. Wer alte Module wiederbeleben will, beginnt einen Neu-Diskurs.
-- **Die Site ist englisch.** Der Durchgang ist am 2026-07-26 gelaufen (Operator-Entscheidung 2026-07-25, journal.md, Sprachentscheidung). Englisch sind Shell, Bedienelemente, die Seitentexte direkt unter `_content/` und die Textfelder der Datendateien unter `data/`. Deutsch geblieben sind die Vorlagen und die Dateien unter `_content/skills/` als Unterrichtsmaterial. Der kanonische Skill liegt seit dem 2026-10-19 in einem eigenen Repository, `DigitalHumanitiesCraft/promptotyping-skill` (A42); die Skills-Seite lädt ihn von dort. Lege hier keine Kopie an. Alle Vorlagen außer `technology` sind Vault-Spiegel, deren Übersetzung in eine Vault-Sitzung gehört; die Vorlage `technology` ist seit dem 2026-07-26 im Repo kanonisch und bleibt deutsch, damit der Katalog einsprachig bleibt. Die Fall-Tiefenseiten unter `_content/case-studies/` sind ebenfalls englisch; der Durchgang ist damit abgeschlossen. Die publizierten Anker bleiben deutsch, weil fremde Repos sie als `template:`-URI führen, ebenso die Vorlagennamen als Identifikatoren.
-- **Keine Module außer Frontmatter-Inspector, Case-Study-Filter, Begriffsregister und Vault-Ansicht.** Das Begriffsregister (A25, seit 2026-07-26) vertritt die abgelehnte Volltextsuche. Die Vault-Ansicht ist seit der Operator-Entscheidung 2026-07-25 in Scope; Context-Rot-Viz und Sycophancy-Trap bleiben es nicht.
-- **Keine Branches.** Alle Änderungen direkt auf `main`. (Das ist Christopher Pollins explizite Wahl, dokumentiert in journal.md.)
-
-## Bei Konflikt zwischen Vault und Repo
-
-Vault-Vorlagen sind Source of Truth für die Vorlagen selbst. Wenn beim Spiegeln eine Vorlage ins Repo Diskrepanzen mit dem Vault auffallen, gilt:
-
-1. Wenn die Vault-Vorlage falsch ist → Vault korrigieren, dann ins Repo spiegeln
-2. Wenn die Repo-Spiegelung falsch ist → Repo korrigieren, Vault bleibt
-3. Wenn unklar → Christopher fragen
-
-Niemals stillschweigend divergieren lassen.
-
-## Co-Author-Tag für Commits
-
-Commits, an denen Claude beteiligt war, tragen am Ende:
-
-```
-Co-Authored-By: Claude <tatsächlich verwendetes Modell> <noreply@anthropic.com>
-```
+Local preview: `python -m http.server 8000`.
