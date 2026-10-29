@@ -182,7 +182,7 @@ knowledge/verification.md. Do not record approval or acceptance status.
 
 Treat the agent's comparisons as evidence for your judgement; the judgement itself stays with you. What only you can decide is whether the representation is faithful to the material and whether the artefact answers the question from Step 1. Decide it by using the artefact on cases you know well, including at least one case you expect it to get wrong.
 
-Then make your purpose-specific judgement. Record its durable grounds in `knowledge/verification.md`. Add one `integriert` entry to `knowledge/journal.md` that identifies your judgement as the source, the Verification document as the target, and the accepted result. Put accepted future work in `plan.md` and received open deltas in `handoff.md`. Commit the documents and artefact together after the Journal entry exists.
+Then make your purpose-specific judgement. Record its durable grounds in `knowledge/verification.md`. Add one entry at the top of `knowledge/journal.md` whose Trigger field names your judgement, whose Decided field states the accepted result in your own words, whose Changed field names the Verification document, and whose Evidence field points to a checkable record. Put accepted future work in `plan.md` and received open deltas in `handoff.md`. Commit the documents and artefact together after the Journal entry exists.
 
 **You should now have** your first promptotype, the accepted, versioned relation of documents, artefact, data state, and documented grounds of acceptance, identified by one commit and a dated provenance entry.
 

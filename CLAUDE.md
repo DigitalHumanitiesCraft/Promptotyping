@@ -29,7 +29,7 @@ At every session start, after this file, read in this order:
 - Work incrementally, one bounded step after the state documented in the knowledge base, one commit per finished step.
 - Consult the knowledge base before taking a design decision. Ask when scope, order or architecture are unclear.
 - Handoff. Check source and current target of a point, integrate durable content first or reject it with a reason, then write the journal record and remove the point completely.
-- Journal. One entry per coherent transition marked `integriert`, `verworfen` or `korrigiert`; compact semantically when the journal loses its function, and create no archive.
+- Journal. One entry per coherent transition with the fields of template 0.6 that have content (Anlass, Befund, Entschieden, Korrigiert, Geändert, Belege) and at least one checkable piece of evidence; compact semantically when the journal loses its function, and create no archive. Until the migration recorded in `knowledge/plan.md`, new entries follow the existing oldest-first order of `knowledge/journal.md`.
 - Do not cite from the operator's vault without a Markdown link. Vault wikilinks mean nothing in the repository.
 - Do not reactivate the old living-paper material of November 2025. Reviving old modules starts a new discussion.
 - No branches. All changes go directly to `main`.

@@ -53,6 +53,6 @@ archived execution order is not an active instruction.
 
 ## Practice-maintenance lanes
 
-The current `knowledge/journal.md` predates template version 0.4 and remains a narrative project record. A later repository-specific migration will apply the curated provenance types and semantic compaction rule against a clean Git baseline. That migration will preserve every substantive statement through an explicit disposition and will not create `journal-archive.md`.
+The current `knowledge/journal.md` predates template version 0.6 and remains a narrative, oldest-first project record. A later repository-specific migration will apply the entry fields, newest-first order and semantic compaction rule of version 0.6 against a clean Git baseline, protecting entries cited outside the journal. That migration will preserve every substantive statement through an explicit disposition and will not create `journal-archive.md`.
 
 The canonical Promptotyping skill is maintained in [DigitalHumanitiesCraft/promptotyping-skill](https://github.com/DigitalHumanitiesCraft/promptotyping-skill) since the operator decision of 2026-10-19 (A42); the repository-local package of 2026-08-22 was removed. Aligning that skill with the practice contract of A42 is open work in [promptotyping-skill#2](https://github.com/DigitalHumanitiesCraft/promptotyping-skill/issues/2). Installed copies remain outside repository synchronisation.

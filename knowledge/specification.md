@@ -238,7 +238,7 @@ The catalogue has seventeen slugs and includes `handoff` as a Process Document w
 
 ### A41 — Journal is a curated provenance index
 
-The Journal template is version 0.4. Entries represent substantively coherent transitions of type `integriert`, `verworfen`, or `korrigiert`; `verdichtet` is reserved for semantic maintenance and names its Git baseline. Current status, future work, open inputs, and detailed verification results remain in their responsible documents. Compaction begins when the journal loses its provenance function and disposes every substantive statement; it uses no fixed threshold and creates no archive document.
+The Journal template is version 0.6. Entries represent substantively coherent transitions, stand newest first and carry only the fields that have content: Anlass, Befund, Entschieden, Korrigiert, Geändert, Belege (English journals: Trigger, Found, Decided, Corrected, Changed, Evidence). Operator judgements stand verbatim under Entschieden, a delegated decision names its origin, and every entry names at least one commit or other checkable evidence. A `verdichtet` entry is reserved for semantic maintenance and names the direct parent of the compaction commit. Entries cited outside the journal, operator judgements, corrections, rejected alternatives with their reasons and all commit hashes are protected during compaction; an older entry form is migrated at the next compaction. Current status, future work, open inputs, and detailed verification results remain in their responsible documents. Compaction begins when the journal loses its provenance function and disposes every substantive statement; it uses no fixed threshold and creates no archive document.
 
 ### A42 — The canonical skill follows the document semantics
 

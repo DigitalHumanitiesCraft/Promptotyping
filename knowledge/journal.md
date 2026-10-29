@@ -7,7 +7,7 @@ status: active
 language: de
 version: 1.1
 created: 2026-05-09
-updated: 2026-10-19
+updated: 2026-10-29
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 method:
@@ -1147,3 +1147,12 @@ Ziel und Ergebnis. Ein Abgleich der Site-Inhalte, der Wissensbasis und des Vault
 
 Bewusst stehen geblieben sind das Frontmatter-Feld `method` samt Schema und Prüfskript, die deutschen Vault-Spiegel unter `_content/promptotyping-document/` (Methode, Methodenkern; der Nachzug gehört in eine Vault-Sitzung), die Evidenzschicht `vault/` mit ihrem eigenen Action Layer, frühere Journal-Einträge, Anker und Slugs sowie allgemeine Verwendungen wie research methodology oder die Methode einer einzelnen Analyse.
 
+
+## 2026-10-29 - Deutsche Spiegel als Arbeitspraxis und Vorlage Journal auf 0.6
+
+- Anlass: Offene Punkte der Kurationsrunde vom 2026-10-28, die der vorige Eintrag als Nachzug benannt hatte.
+- Befund: Die Vorlage Action-Layer und `_content/skills/index.md` führten Promptotyping als Methode und seinen portablen Teil als Methodenkern, der Glossareintrag Action Layer als method core. Die gespiegelte Vorlage Journal stand auf 0.4, die Vault-Vorlage auf 0.6. Die Vault-Vorlage Action-Layer beschreibt Journal-Einträge weiterhin über die Typen `integriert`, `verworfen` und `korrigiert` und führt weiter Methode und Methodenkern. Die beiden Revisionsaudits A1 und A2 liegen als ungetrackte, über `.gitignore` ausgeschlossene Originale unter `vault/00_sources/`; nichts im versionierten Bestand verweist noch auf sie.
+- Entschieden: Wo Methode Promptotyping selbst bezeichnet, steht Arbeitspraxis, der portable Teil des Action-Layers heißt Praxiskern, im Glossar practice core. Allgemeine Verwendungen (Methoden-Repos, Extraktionsmethode, Spalte Methode, Feld `method`) bleiben. Die Vorlage Journal folgt der Vault-Fassung 0.6 inhaltlich vollständig. Die Typbeschreibung der Vorlage Action-Layer bleibt bis zur Vault-Korrektur gespiegelt. Verworfen: die Audit-Originale innerhalb des Repositorys zu verschieben, weil sie Paper-Material sind und nach dem Eintrag vom 2026-10-28 in den privaten Paper-Arbeitsbereich gehören, der außerhalb dieses Repositorys liegt.
+- Korrigiert: A41 nannte die Journal-Vorlage 0.4 mit Eintragstypen; gültig ist `knowledge/specification.md#A41` mit Feldern, neueste zuerst und geschützten Zitierstellen.
+- Geändert: `_content/promptotyping-document/journal.md` und `data/promptotyping-documents.json` auf 0.6, A41 in `knowledge/specification.md`, die Migrationszeile in `knowledge/plan.md`, die Journalregel in `CLAUDE.md`, der Journalschritt in `_content/tutorial.md` und der Abschnitt Repo dem Vault voraus in `_content/MANIFEST.md`.
+- Belege: `ad6211d`; `python tools/check_consistency.py` ohne Fehler.
