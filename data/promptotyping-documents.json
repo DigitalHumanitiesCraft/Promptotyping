@@ -77,7 +77,7 @@
       "funktion": "Agent Instructions",
       "datei": "CLAUDE.md (repository root)",
       "typ": "Action",
-      "version": "0.4",
+      "version": "0.6",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/action-layer.md",
       "trigger": "always"

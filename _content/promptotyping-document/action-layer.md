@@ -1,7 +1,7 @@
 ---
 title: Vorlage Action-Layer
 slug: action-layer
-version: "0.4"
+version: "0.6"
 status: complete
 source: Vorlage Action-Layer
 mirrored: 2026-08-21
@@ -56,7 +56,7 @@ Funktion: Routing in die Wissensbasis. Inhalt: Verweis auf `knowledge/` mit `IND
 Funktion: der portable Praxiskern als Regelliste. Die Regeln werden projektspezifisch konkretisiert:
 
 - Handoff-Verarbeitung. Bei jedem Sessionstart `knowledge/handoff.md` lesen. Vor der Nutzung eines Punkts Quelle und aktuelles Ziel prüfen, dauerhaften Inhalt zuerst in das zuständige Declarative oder Action Document integrieren, anschließend den Journal-Nachweis schreiben und den Punkt vollständig entfernen.
-- Journal-Provenienz. Ein Eintrag entsteht pro sachlich zusammengehörigem Übergang und verwendet `integriert`, `verworfen` oder `korrigiert`. Das Journal führt keinen aktuellen Projektstatus, keine offenen Aufgaben und keine ausführlichen Prüfresultate.
+- Journal-Provenienz. Ein Eintrag entsteht pro sachlich zusammengehörigem Übergang und führt die zutreffenden Felder der Journal-Vorlage (Anlass, Befund, Entschieden, Korrigiert, Geändert, Belege). Das Journal führt keinen aktuellen Projektstatus, keine offenen Aufgaben und keine ausführlichen Prüfresultate.
 - Journal-Verdichtung. Verdichten, wenn Wiederholungen, kopiertes Dauerwissen, erledigte Offenlisten, verstreute Entscheidungsgründe oder ein zu teurer regulärer Lesekontext die Provenienzfunktion beeinträchtigen. Die semantische Deckungsprüfung folgt [Vorlage Journal](#promptotyping-document-journal); ein Journal-Archiv wird nicht erzeugt.
 - Verifikation und CEIL. Keine erfundenen Werte, Begriffe oder Zitate; bei fehlendem Wissen nachfragen statt raten. Projektspezifische Checkpoints benennen: was wird wann dem Critical Expert vorgelegt, was läuft nie ohne Freigabe. Wo maschinelle Prüfungen existieren (Tests, Validierungsskripte, Datenverträge), sind sie als Pflichtlauf zu nennen.
 - Wahrheitshierarchie. Vorrangregel pro Konfliktklasse: welche Quelle ist kanonisch, welche abgeleitet (TEI vor JSON, Spec vor Code, Speicherstand vor Gedächtnis für Zahlen). Schlusssatz: niemals stillschweigend divergieren lassen, Widersprüche melden.
@@ -122,7 +122,7 @@ Die Wissensbasis liegt in `knowledge/`. Lies nach diesem Action-Layer bei jedem 
 ## Arbeitsregeln
 
 - Handoff: Bei jedem Sessionstart `knowledge/handoff.md` lesen. Quelle und aktuelles Ziel jedes verwendeten Punkts prüfen, dauerhaften Inhalt zuerst integrieren, den Journal-Nachweis schreiben und den Punkt vollständig entfernen.
-- Journal: Pro sachlich zusammengehörigem Übergang einen Eintrag vom Typ `integriert`, `verworfen` oder `korrigiert` schreiben. Aktuellen Projektstatus, offene Aufgaben und ausführliche Prüfresultate in ihren zuständigen Dokumenten halten.
+- Journal: Pro sachlich zusammengehörigem Übergang einen Eintrag mit den zutreffenden Feldern Anlass, Befund, Entschieden, Korrigiert, Geändert und Belege schreiben. Aktuellen Projektstatus, offene Aufgaben und ausführliche Prüfresultate in ihren zuständigen Dokumenten halten.
 - Verdichtung: Bei Funktionsverlust semantisch nach `knowledge/journal.md` verdichten, jede substantielle Aussage disponieren und kein Journal-Archiv erzeugen.
 - Nichts erfinden: [projektspezifische Regel: welche Werte, Begriffe, Zitate nur aus welchen Quellen stammen dürfen]. Bei fehlendem Wissen nachfragen, nicht raten.
 - Checkpoints: [was wird wann dem Critical Expert vorgelegt; was läuft nie ohne Freigabe; welche Prüfläufe sind Pflicht].

@@ -242,7 +242,7 @@ The Journal template is version 0.6. Entries represent substantively coherent tr
 
 ### A42 — The canonical skill follows the document semantics
 
-The canonical Promptotyping skill is maintained in its own repository, [DigitalHumanitiesCraft/promptotyping-skill](https://github.com/DigitalHumanitiesCraft/promptotyping-skill), with its source at `promptotyping/SKILL.md` (operator decision 2026-10-19, agreed between Christian Steiner and Christopher Pollin). This repository carries no copy of it. The package under `skills/promptotyping/` that stood here from 2026-08-22 was removed; its last state remains in Git history at `3230c91`.
+The canonical Promptotyping skill is maintained in its own repository, [DigitalHumanitiesCraft/promptotyping-skill](https://github.com/DigitalHumanitiesCraft/promptotyping-skill), with its source at `promptotyping/SKILL.md` (operator decision 2026-10-19, agreed with a project partner). This repository carries no copy of it. The package under `skills/promptotyping/` that stood here from 2026-08-22 was removed; its last state remains in Git history at `3230c91`.
 
 The practice contract for the skill is that `orient` reads `handoff.md` before `journal.md`; `handoff` integrates durable knowledge before it removes an open delta and writes the Journal before any shared commit; `compact` applies semantic compaction without an archive; `distill` creates both `journal.md` and `handoff.md`. Integration remains an invariant of orientation, ongoing work, and handoff processing. The operation set gains no `integrate` command. The canonical skill does not yet meet this contract in full; the deviations and their resolution are tracked in [promptotyping-skill#2](https://github.com/DigitalHumanitiesCraft/promptotyping-skill/issues/2).
 
