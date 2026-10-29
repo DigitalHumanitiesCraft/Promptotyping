@@ -13,9 +13,9 @@ Diese Vorlage strukturiert das Action-Dokument eines Promptotyping-Repos. Das re
 
 ## Geltungsbereich
 
-Die Vorlage trägt für jedes Promptotyping-Repo, weil die Funktion Agent Instructions in [Konvention Promptotyping Documents](#konvention-v0.1) als immer-relevant geführt wird. Sie trägt nicht für Forschungsleitstelle-Spezialdokumente (`RULES.md`, `INSTRUCTIONS.md`, `cloud-commands.md` für mehrere parallele Agenten mit differenzierten Rollen) und nicht für den Vault selbst. Bei einem anderen Coding-Agenten als Claude Code (Cursor, Gemini CLI) trägt der Methodenkern der Vorlage unverändert; nur der Werkzeug-Block wird gegen das tool-eigene Format (`.cursorrules`, `GEMINI.md`) getauscht.
+Die Vorlage trägt für jedes Promptotyping-Repo, weil die Funktion Agent Instructions in [Konvention Promptotyping Documents](#konvention-v0.1) als immer-relevant geführt wird. Sie trägt nicht für Forschungsleitstelle-Spezialdokumente (`RULES.md`, `INSTRUCTIONS.md`, `cloud-commands.md` für mehrere parallele Agenten mit differenzierten Rollen) und nicht für den Vault selbst. Bei einem anderen Coding-Agenten als Claude Code (Cursor, Gemini CLI) trägt der Praxiskern der Vorlage unverändert; nur der Werkzeug-Block wird gegen das tool-eigene Format (`.cursorrules`, `GEMINI.md`) getauscht.
 
-Lebenszyklus: die CLAUDE.md entsteht beim Repo-Setup, sobald die ersten Knowledge-Dokumente einschließlich `knowledge/handoff.md` stehen, aus denen der Methodenkern abgeleitet wird, und nie als leerer Platzhalter vorab. Aktualisiert wird sie, wenn sich Regeln, Wissensbasis-Struktur oder Werkzeug ändern; weil sie in jeder Session injiziert wird, ist Drift hier teurer als in jedem anderen Dokument und die Distillation-Regel zugleich die Destillat-Grenze, jede Zeile, die aus Code oder Wissensbasis ableitbar ist, wird gestrichen statt gepflegt.
+Lebenszyklus: die CLAUDE.md entsteht beim Repo-Setup, sobald die ersten Knowledge-Dokumente einschließlich `knowledge/handoff.md` stehen, aus denen der Praxiskern abgeleitet wird, und nie als leerer Platzhalter vorab. Aktualisiert wird sie, wenn sich Regeln, Wissensbasis-Struktur oder Werkzeug ändern; weil sie in jeder Session injiziert wird, ist Drift hier teurer als in jedem anderen Dokument und die Distillation-Regel zugleich die Destillat-Grenze, jede Zeile, die aus Code oder Wissensbasis ableitbar ist, wird gestrichen statt gepflegt.
 
 ## Funktion des Dokuments
 
@@ -25,7 +25,7 @@ CLAUDE.md ist der Action-Layer der Wissensbasis: imperativ, verhaltenssteuernd, 
 
 Drei Prinzipien tragen das Dokument.
 
-Erstens die Trennung von Methodenkern und Werkzeug-Block. Der Methodenkern ist portabel: Wissensbasis-Verweis mit Lesepfad, Handoff-Verarbeitung, Journal-Provenienz, CEIL-Prüfregeln, Designprinzipien, Scope-Negativliste, Wahrheitshierarchie. Der Werkzeug-Block ist austauschbar: Befehle, Hooks, Permissions, Stack-Konventionen, Security, maschinen- und plattformgebundene Details. Prüfkriterium: Wird der Werkzeug-Block gelöscht, muss der Methodenkern ohne Änderung in ein anderes Agent-Format übertragbar sein. Werkzeuggebundene Sätze im Methodenkern sind Fehler (sugw-Befund: "Keine Annahmen" neben `core.longpaths` in derselben Sektion).
+Erstens die Trennung von Praxiskern und Werkzeug-Block. Der Praxiskern ist portabel: Wissensbasis-Verweis mit Lesepfad, Handoff-Verarbeitung, Journal-Provenienz, CEIL-Prüfregeln, Designprinzipien, Scope-Negativliste, Wahrheitshierarchie. Der Werkzeug-Block ist austauschbar: Befehle, Hooks, Permissions, Stack-Konventionen, Security, maschinen- und plattformgebundene Details. Prüfkriterium: Wird der Werkzeug-Block gelöscht, muss der Praxiskern ohne Änderung in ein anderes Agent-Format übertragbar sein. Werkzeuggebundene Sätze im Praxiskern sind Fehler (sugw-Befund: "Keine Annahmen" neben `core.longpaths` in derselben Sektion).
 
 Zweitens Komposition statt Duplikation. `design.md` bleibt deklaratives Knowledge-Dokument; CLAUDE.md führt die imperative Übersetzung der Designhaltung und benennt `design.md` als Wertequelle. Dasselbe Prinzip gilt für alle volatilen Inhalte: Zahlen, Stände und Inventare werden auf ihre lebende Quelle verlinkt. Offene Eingänge liegen in `handoff.md`, angenommene Zukunftsarbeit in `plan.md` und Prüfresultate in `verification.md`. Die ästhetische und faktische Steuerung kommt aus der Komposition zweier Dokumente, nicht aus einem Hybriddokument.
 
@@ -45,7 +45,7 @@ Die kanonische Adresse ist der stabile Slug `action-layer` unter `/promptotyping
 
 ### Identität (Kopf)
 
-Funktion: den Agenten in einem Absatz verorten. Inhalt: was das Projekt ist (ein Satz), Methode Promptotyping mit dem Kernsatz, dass die Documents in `knowledge/` das Domänenwissen und die Spezifikation halten, aus denen implementiert wird, Rollenverteilung Mensch/Agent, falls klärungsbedürftig (Critical Expert, Projektleiter, nicht Entwickler). Kein Marketing, keine Geschichte.
+Funktion: den Agenten in einem Absatz verorten. Inhalt: was das Projekt ist (ein Satz), Arbeitspraxis Promptotyping mit dem Kernsatz, dass die Documents in `knowledge/` das Domänenwissen und die Spezifikation halten, aus denen implementiert wird, Rollenverteilung Mensch/Agent, falls klärungsbedürftig (Critical Expert, Projektleiter, nicht Entwickler). Kein Marketing, keine Geschichte.
 
 ### Wissensbasis
 
@@ -53,7 +53,7 @@ Funktion: Routing in die Wissensbasis. Inhalt: Verweis auf `knowledge/` mit `IND
 
 ### Arbeitsregeln
 
-Funktion: der portable Methodenkern als Regelliste. Die Regeln werden projektspezifisch konkretisiert:
+Funktion: der portable Praxiskern als Regelliste. Die Regeln werden projektspezifisch konkretisiert:
 
 - Handoff-Verarbeitung. Bei jedem Sessionstart `knowledge/handoff.md` lesen. Vor der Nutzung eines Punkts Quelle und aktuelles Ziel prüfen, dauerhaften Inhalt zuerst in das zuständige Declarative oder Action Document integrieren, anschließend den Journal-Nachweis schreiben und den Punkt vollständig entfernen.
 - Journal-Provenienz. Ein Eintrag entsteht pro sachlich zusammengehörigem Übergang und verwendet `integriert`, `verworfen` oder `korrigiert`. Das Journal führt keinen aktuellen Projektstatus, keine offenen Aufgaben und keine ausführlichen Prüfresultate.
@@ -76,7 +76,7 @@ Funktion: epistemischer Status, optional. Inhalt: ehrliche Grenzen von System, M
 
 ### Werkzeug (austauschbarer Block)
 
-Funktion: alles Toolgebundene an genau einer Stelle, durch eine sichtbare Markierung vom Methodenkern getrennt. Inhalt in Untersektionen:
+Funktion: alles Toolgebundene an genau einer Stelle, durch eine sichtbare Markierung vom Praxiskern getrennt. Inhalt in Untersektionen:
 
 - Befehle: Build, Tests, Pipeline-Schritte als konkrete Aufrufe, mit Angabe, wann sie Pflicht sind.
 - Konventionen: Stack-Festlegungen, Encoding, Plattform-Gotchas, Git-Regeln (Commit-Format, was nie ohne Aufforderung geschieht).
@@ -93,7 +93,7 @@ Maschinengebundene absolute Pfade gehören, wenn überhaupt, nur hierher und wer
 - Kompensatorische Bündelung. CLAUDE.md ist kein Ersatz für fehlende `project.md`, `architecture.md`, `design.md` oder `specification.md`. In den meisten untersuchten Repos absorbiert sie Charter, Architecture, Design oder ADR genau dann, wenn diese Dokumente fehlen; das ist ein Symptom fehlender Knowledge-Dokumente, kein eigener Inhalt. Sie routet und bindet, sie dupliziert keine Substanz.
 - Falscher Ort oder leerer Stub. CLAUDE.md gehört in den Repo-Root, nie in `knowledge/`, und wird nicht als leerer Platzhalter angelegt. Beides ist ein wiederkehrender Fehler (CLAUDE.md in `knowledge/` bei diged-neolat und grip; Leer-Stubs bei docta und kulturpool).
 - Spezifikation und Entscheidungen. Anforderungen und ADRs leben in `specification.md`; CLAUDE.md darf einzelne Entscheidungen als Regel zitieren, mit Verweis auf die Quelle.
-- Secrets, personenbezogene Daten, Modellpreise, hartkodierte Modellnamen im Methodenkern.
+- Secrets, personenbezogene Daten, Modellpreise, hartkodierte Modellnamen im Praxiskern.
 - Inhalte für menschliche Leser. Die Datei ist Agent-Konfiguration; Nutzerdokumentation liegt in `README.md`.
 
 ## Vorlage zum Befüllen
@@ -105,7 +105,7 @@ Der folgende Block ist als Template gedacht.
 
 # CLAUDE.md: [Projektname]
 
-[Ein Absatz: was das Projekt ist, in einem Satz. Methode: Promptotyping, die Documents in `knowledge/` halten Domänenwissen und Spezifikation, aus denen implementiert wird. Rollenverteilung Mensch/Agent, falls klärungsbedürftig.]
+[Ein Absatz: was das Projekt ist, in einem Satz. Arbeitspraxis: Promptotyping, die Documents in `knowledge/` halten Domänenwissen und Spezifikation, aus denen implementiert wird. Rollenverteilung Mensch/Agent, falls klärungsbedürftig.]
 
 ## Wissensbasis
 
@@ -179,11 +179,11 @@ Was du nicht tun sollst:
 
 ## Anwendung als Prompt-Template
 
-Erzeugung beim Repo-Setup. Der Agent liest [Konvention Promptotyping Documents](#konvention-v0.1) und die vorhandene Wissensbasis, legt `knowledge/handoff.md` an, kopiert das Template und befüllt den Methodenkern aus den Knowledge-Dokumenten. Designprinzipien werden aus `design.md` imperativ übersetzt, die Wahrheitshierarchie aus der Dokumentstruktur abgeleitet und Scope-Grenzen aus `specification.md` übernommen. Wo die Wissensbasis eine Lücke lässt, fragt der Agent.
+Erzeugung beim Repo-Setup. Der Agent liest [Konvention Promptotyping Documents](#konvention-v0.1) und die vorhandene Wissensbasis, legt `knowledge/handoff.md` an, kopiert das Template und befüllt den Praxiskern aus den Knowledge-Dokumenten. Designprinzipien werden aus `design.md` imperativ übersetzt, die Wahrheitshierarchie aus der Dokumentstruktur abgeleitet und Scope-Grenzen aus `specification.md` übernommen. Wo die Wissensbasis eine Lücke lässt, fragt der Agent.
 
-Review-Folie für eine bestehende CLAUDE.md. Geprüft wird die Trennung von Methodenkern und Werkzeug-Block, die Sessionstart-Reihenfolge über `INDEX.md` und `handoff.md`, die Integrationsreihenfolge vor dem Journal-Nachweis, die semantische Journal-Verdichtung sowie die Verweise auf lebende Quellen. Außerdem werden Routing-Tabelle und Wissensbasis gegeneinander geprüft.
+Review-Folie für eine bestehende CLAUDE.md. Geprüft wird die Trennung von Praxiskern und Werkzeug-Block, die Sessionstart-Reihenfolge über `INDEX.md` und `handoff.md`, die Integrationsreihenfolge vor dem Journal-Nachweis, die semantische Journal-Verdichtung sowie die Verweise auf lebende Quellen. Außerdem werden Routing-Tabelle und Wissensbasis gegeneinander geprüft.
 
-Portierung. Beim Wechsel des Coding-Agenten wird der Werkzeug-Block durch das tool-eigene Pendant ersetzt; der Methodenkern wird unverändert übernommen. Parallele tool-spezifische Zwillingsdateien werden aus derselben Quelle erzeugt, nicht doppelt gepflegt.
+Portierung. Beim Wechsel des Coding-Agenten wird der Werkzeug-Block durch das tool-eigene Pendant ersetzt; der Praxiskern wird unverändert übernommen. Parallele tool-spezifische Zwillingsdateien werden aus derselben Quelle erzeugt, nicht doppelt gepflegt.
 
 ## Beispiel
 
@@ -192,7 +192,7 @@ m3gim eröffnet seine CLAUDE.md mit der Selbstbeschränkung "Workflow-Regeln fü
 ## Begriffe
 
 - Action-Layer: das imperative Dokument im Repo-Root, das den Agenten sozialisiert; analytischer Typ Action neben Knowledge und Process.
-- Methodenkern: der portable Teil des Action-Layers (Wissensbasis-Routing, Handoff-Verarbeitung, Journal-Provenienz, CEIL-Regeln, Designprinzipien, Scope, Wahrheitshierarchie), unabhängig vom konkreten Coding-Agenten.
+- Praxiskern: der portable Teil des Action-Layers (Wissensbasis-Routing, Handoff-Verarbeitung, Journal-Provenienz, CEIL-Regeln, Designprinzipien, Scope, Wahrheitshierarchie), unabhängig vom konkreten Coding-Agenten.
 - Werkzeug-Block: der austauschbare, toolgebundene Teil (Befehle, Hooks, Permissions, Security, Plattform-Konventionen).
 - Komposition: das Prinzip, dass ästhetische und faktische Steuerung aus dem Verweis eines Action-Dokuments auf ein Knowledge-Dokument entsteht (design.md → CLAUDE.md), nicht aus einem Hybridtyp.
 - Drift: Auseinanderlaufen von CLAUDE.md und Realität (Code, Daten, Wissensbasis); häufigstes Fehlerbild des Dokumenttyps, primär verursacht durch duplizierte volatile Inhalte.

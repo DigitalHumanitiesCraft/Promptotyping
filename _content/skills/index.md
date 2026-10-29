@@ -10,9 +10,9 @@ machine-url: https://dhcraft.org/Promptotyping/_content/skills/index.md
 
 System Prompts und Skills sind wiederverwendbare Bausteine der Action-Layer-Praxis im Promptotyping. Die Knowledge Documents eines Repos tragen projektbezogenes Wissen. System Prompts und Skills übersetzen die Arbeitspraxis in wiederholbare Agentenhandlungen über die vier Arbeitsformen, drei Dokumenttypen und die Verifikationsdisziplin.
 
-Im konkreten Repo liegt diese Schicht in `CLAUDE.md`, in benannten wiederholbaren Operationen und im portablen Methodenkern. `CLAUDE.md` wird bei jedem Sessionstart geladen und routet in die Wissensbasis. Der Methodenkern bleibt über Repositories hinweg wiederverwendbar.
+Im konkreten Repo liegt diese Schicht in `CLAUDE.md`, in benannten wiederholbaren Operationen und im portablen Praxiskern. `CLAUDE.md` wird bei jedem Sessionstart geladen und routet in die Wissensbasis. Der Praxiskern bleibt über Repositories hinweg wiederverwendbar.
 
-Die [Vorlage Action-Layer](#promptotyping-document-action-layer) trennt den portablen Methodenkern aus Wissensbasis-Routing, Handoff-Verarbeitung, Journal-Provenienz, Verifikationsregeln, Designprinzipien und Scope vom austauschbaren Werkzeug-Block.
+Die [Vorlage Action-Layer](#promptotyping-document-action-layer) trennt den portablen Praxiskern aus Wissensbasis-Routing, Handoff-Verarbeitung, Journal-Provenienz, Verifikationsregeln, Designprinzipien und Scope vom austauschbaren Werkzeug-Block.
 
 ## Kanonischer Promptotyping-Skill
 
