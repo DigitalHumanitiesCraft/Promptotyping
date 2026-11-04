@@ -68,6 +68,7 @@ Promptotyping/
 │   ├── content.js                  # all text in English and German
 │   ├── page.js                     # header, example stepper, try-it steps, notes
 │   ├── example/letters.csv         # the invented letters of the example, for rehearsal
+│   ├── tests/                      # browser regression cases, skip without Playwright
 │   └── assets/                     # white DHCraft mark, favicon, Sora and Instrument Sans with licences
 ├── .nojekyll                       # forces GitHub Pages to publish _content/
 ├── README.md

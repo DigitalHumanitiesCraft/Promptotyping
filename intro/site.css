@@ -1,4 +1,4 @@
-@layer reset, base, tokens, layout, components;
+@layer reset, base, tokens, layout, components, utilities;
 
 @font-face { font-family: "Instrument Sans"; src: url("assets/fonts/instrument-sans-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
 @font-face { font-family: "Instrument Sans"; src: url("assets/fonts/instrument-sans-latin-600-normal.woff2") format("woff2"); font-weight: 600; font-display: swap; }
@@ -13,17 +13,14 @@
     --ground: oklch(99.1% 0.005 95);
     --ground-alt: oklch(96.6% 0.01 95);
     --surface: oklch(100% 0 0);
-    --edge: oklch(28.3% 0.064 271 / 0.12);
     --edge-hi: oklch(28.3% 0.064 271 / 0.25);
     --ink: oklch(28.3% 0.064 271);
     --ink-soft: oklch(42% 0.05 271);
     --ink-faint: oklch(52% 0.04 271);
     --accent: oklch(53.1% 0.14 315);
-    --accent-hi: oklch(41.6% 0.105 307);
     --on-accent: oklch(99% 0.005 95);
     --sheen: oklch(100% 0 0 / 0.6);
     --st-new: oklch(63.5% 0.136 139);
-    --st-read: oklch(57.4% 0.11 255);
     --st-flag: oklch(58% 0.13 30);
     --focus: oklch(53.1% 0.14 315);
     --head-bg: oklch(15% 0.042 271);
@@ -51,17 +48,14 @@
     --ground: oklch(17% 0.045 271);
     --ground-alt: oklch(14% 0.04 271);
     --surface: oklch(22% 0.05 271);
-    --edge: oklch(100% 0 0 / 0.1);
     --edge-hi: oklch(100% 0 0 / 0.22);
     --ink: oklch(95% 0.01 95);
     --ink-soft: oklch(82% 0.03 271);
     --ink-faint: oklch(70% 0.03 271);
     --accent: oklch(74% 0.13 315);
-    --accent-hi: oklch(84% 0.09 315);
     --on-accent: oklch(17% 0.045 271);
     --sheen: oklch(100% 0 0 / 0.06);
     --st-new: oklch(78% 0.14 139);
-    --st-read: oklch(80% 0.09 253);
     --st-flag: oklch(74% 0.14 35);
     --focus: oklch(84% 0.09 315);
   }
@@ -77,14 +71,16 @@
 
 @layer base {
   html { scroll-padding-block-start: calc(var(--head-h) + 1rem); }
+  /* The header wraps to two rows on a phone. */
   @media (max-width: 47.99rem) { html { scroll-padding-block-start: calc(var(--head-h) + 3.5rem); } }
   @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
   body { background: var(--ground); color: var(--ink); font-family: var(--font); font-size: var(--step-0); line-height: 1.6; -webkit-font-smoothing: antialiased; }
   .night { background-color: var(--ground); color: var(--ink); }
+  /* Three text levels: headings, body, and meta at --step--1. h3 is body size in bold;
+     only h1, h2 and the lead paragraph are larger. */
   h1, h2, h3 { font-family: var(--display); font-weight: 700; letter-spacing: -0.01em; }
   h1 { font-size: var(--step-3); line-height: 1.05; letter-spacing: -0.02em; }
   h2 { font-size: var(--step-2); line-height: 1.2; }
-  /* Three text levels: headings, body, and meta at --step--1. h3 is body size in bold. */
   h3 { font-size: var(--step-0); line-height: 1.35; font-weight: 600; }
   a { color: var(--accent); text-underline-offset: 0.18em; }
   code, pre { font-family: var(--mono); font-size: 0.88em; }
@@ -95,6 +91,7 @@
   .skip { position: absolute; inset-inline-start: 1rem; inset-block-start: -3rem; background: var(--surface); padding: 0.5rem 1rem; z-index: 40; }
   .skip:focus { inset-block-start: 0.5rem; }
 
+  /* Header: opaque, always night, wrapping instead of scrolling on narrow screens. */
   .site-head {
     position: sticky; inset-block-start: 0; z-index: 20;
     display: flex; align-items: center; gap: 0.4rem 2rem; flex-wrap: wrap;
@@ -109,22 +106,16 @@
   .site-nav a:hover { color: var(--ink); }
   .site-nav a[aria-current="true"] { color: var(--ink); border-block-end-color: var(--accent); }
   .head-actions { display: flex; gap: 0.5rem; align-items: center; }
-  .pill {
-    padding: 0.3rem 0.85rem; border-radius: 999px; border: 1px solid var(--edge-hi); background: transparent;
-    color: var(--ink); text-decoration: none; font-size: var(--step--1); cursor: pointer; white-space: nowrap; min-block-size: 2.2rem; display: inline-flex; align-items: center;
-  }
-  .pill:hover { border-color: var(--accent); }
   @media (max-width: 47.99rem) {
     .site-nav { flex-basis: 100%; order: 3; }
     .site-head { gap: 0 1rem; justify-content: space-between; }
-    .spec-link { display: none; }
   }
 
   .band { padding: calc(var(--space) * 3) var(--gutter); }
   .band.alt { background: var(--ground-alt); }
   .inner { max-inline-size: var(--wide); margin-inline: auto; display: grid; gap: calc(var(--space) * 1.1); }
-  .intro { color: var(--ink-soft); max-inline-size: var(--measure); }
 
+  /* Hero: text left, example right, stacked on narrow screens. */
   .hero { display: grid; gap: calc(var(--space) * 1.5); align-items: center; max-inline-size: var(--wide); margin-inline: auto; padding: 0.9rem var(--gutter) calc(var(--space) * 1.5); grid-template-columns: minmax(0, 1fr); }
   @media (min-width: 62rem) { .hero { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); min-block-size: calc(100svh - var(--head-h)); } }
   .hero-text { display: grid; gap: 1.2rem; align-content: center; }
@@ -135,26 +126,40 @@
       var(--ground);
   }
 
+  /* Try it: the steps on the left, the folder they fill on the right. */
+  .grow { max-inline-size: var(--wide); margin-inline: auto; display: grid; gap: calc(var(--space) * 2); grid-template-columns: minmax(0, 1fr); }
+  #try-body { display: grid; gap: calc(var(--space) * 1.1); align-content: start; }
+  .grow-folder { display: none; }
+  @media (min-width: 62rem) {
+    .grow { grid-template-columns: minmax(0, var(--measure)) minmax(0, 24rem); justify-content: space-between; }
+    .grow-folder { display: grid; position: sticky; inset-block-start: calc(var(--head-h) + 1.5rem); align-self: start; }
+  }
+
   .site-foot { padding: calc(var(--space) * 2) var(--gutter); font-size: var(--step--1); }
   .foot-grid { max-inline-size: var(--wide); margin-inline: auto; display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); }
   .foot-grid > div { display: grid; gap: 0.6rem; }
   .foot-links { display: grid; gap: 0.35rem; align-content: start; }
-  .quiet { color: var(--ink-faint); }
 }
 
 @layer components {
-  .btn {
-    display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.55rem 1.1rem; border-radius: 999px;
-    border: 1px solid var(--edge-hi); background: transparent; cursor: pointer; font-weight: 600; text-decoration: none; color: var(--ink); min-block-size: 2.5rem;
+  /* Controls: pills. */
+  .btn, .pill {
+    display: inline-flex; align-items: center; border-radius: 999px; border: 1px solid var(--edge-hi);
+    background: transparent; color: var(--ink); text-decoration: none; cursor: pointer; white-space: nowrap;
   }
-  .btn:hover { border-color: var(--accent); }
+  .btn:hover, .pill:hover { border-color: var(--accent); }
+  .btn { gap: 0.4rem; padding: 0.55rem 1.1rem; font-weight: 600; min-block-size: 2.5rem; }
   .btn.primary { background: var(--accent); color: var(--on-accent); border-color: transparent; }
   .night .btn.primary { box-shadow: 0 0 2rem var(--glow); }
   .btn.small { min-block-size: 2.2rem; padding: 0.2rem 0.9rem; font-size: var(--step--1); }
   .btn:disabled { opacity: 0.55; cursor: default; }
+  .pill { padding: 0.3rem 0.85rem; font-size: var(--step--1); min-block-size: 2.2rem; }
   .actions { display: flex; flex-wrap: wrap; gap: 0.7rem; }
+
   .lead { font-size: var(--step-1); line-height: 1.5; color: var(--ink-soft); max-inline-size: 34rem; }
   .who { color: var(--ink-faint); max-inline-size: 34rem; }
+  .intro { color: var(--ink-soft); max-inline-size: var(--measure); }
+  .quiet { color: var(--ink-faint); }
 
   /* The four parts of the practice as one line. */
   .flow { display: flex; flex-wrap: wrap; gap: 0.3rem 0.4rem; align-items: baseline; color: var(--ink-soft); }
@@ -171,8 +176,8 @@
     display: inline-flex; align-items: center; gap: 0.35rem; min-block-size: 2.2rem; padding: 0.15rem 0.7rem 0.15rem 0.25rem;
     border-radius: 999px; border: 1px solid var(--edge-hi); background: transparent; cursor: pointer; font-size: var(--step--1); color: var(--ink-faint);
   }
-  .step-mark { display: inline-grid; place-items: center; inline-size: 1.5rem; block-size: 1.5rem; border-radius: 50%; font-size: var(--step--1); font-weight: 600; border: 1px dashed var(--edge-hi); }
   .step-pick:hover { border-color: var(--accent); }
+  .step-mark { display: inline-grid; place-items: center; inline-size: 1.5rem; block-size: 1.5rem; border-radius: 50%; font-size: var(--step--1); font-weight: 600; border: 1px dashed var(--edge-hi); }
   .step-pick[data-state="done"] { color: var(--ink-soft); }
   .step-pick[data-state="done"] .step-mark { border: 1px solid var(--accent); color: var(--accent); }
   .step-pick[data-state="current"] { background: var(--accent); color: var(--on-accent); border-color: transparent; }
@@ -188,9 +193,9 @@
   .pane-title { font-size: var(--step-0); display: flex; justify-content: space-between; gap: 1rem; }
   .version { font-family: var(--font); font-weight: 400; font-size: var(--step--1); color: var(--ink-faint); }
 
-  /* Each file state carries a word; fill and outline repeat it for a quick glance. */
-  .files { display: grid; gap: 0; font-size: var(--step--1); line-height: 1.25; }
-  /* A fixed state column keeps the glosses from rewrapping as the state words change. */
+  /* Each file state carries a word; a fill repeats new and changed for a quick glance. A fixed
+     state column keeps the glosses from rewrapping as the state words change. */
+  .files { display: grid; font-size: var(--step--1); line-height: 1.25; }
   .file { display: grid; grid-template-columns: minmax(0, 1fr) 4.9rem; column-gap: 0.6rem; padding-block: 0.15rem; }
   .file code { font-size: 1em; color: var(--ink); overflow-wrap: anywhere; }
   .file .dir { color: var(--ink-faint); }
@@ -201,15 +206,15 @@
   .file.is-changed .state { background: var(--ink); color: var(--ground); font-weight: 600; }
   .file.is-read .state { color: var(--ink-soft); font-style: italic; }
 
+  /* Prototype timeline: shape carries the distinction, orange marks only the reader's check. */
   .proto-empty { color: var(--ink-faint); font-size: var(--step--1); align-self: center; }
   .proto-view svg { inline-size: 100%; block-size: auto; }
   .proto-view .axis { stroke: var(--ink-faint); stroke-width: 0.8; }
   .proto-view .tick { stroke: var(--ink-faint); stroke-width: 0.6; }
   .proto-view .year { fill: var(--ink-soft); font-size: 8px; font-family: var(--font); }
-  .proto-view .mark.exact { fill: var(--ink-soft); }
+  .proto-view .mark.exact, .proto-view .mark.span { fill: var(--ink-soft); }
   .proto-view .mark.flagged { fill: var(--st-flag); }
   .proto-view .flag-ring { fill: none; stroke: var(--st-flag); stroke-width: 1.4; stroke-dasharray: 2 1.4; }
-  .proto-view .mark.span { fill: var(--ink-soft); }
   .proto-legend { display: grid; gap: 0.25rem; font-size: var(--step--1); color: var(--ink-soft); }
   .proto-legend li { display: flex; gap: 0.5rem; align-items: baseline; }
   .key { flex: none; display: inline-block; inline-size: 0.6rem; block-size: 0.6rem; border-radius: 50%; translate: 0 0.05rem; }
@@ -217,6 +222,16 @@
   .key.flagged { background: var(--st-flag); outline: 1px dashed var(--st-flag); outline-offset: 2px; }
   .key.span { background: var(--ink-soft); inline-size: 1.2rem; border-radius: 999px; }
   .proto-note { font-size: var(--step--1); color: var(--ink-faint); }
+
+  /* On a phone the short prototype comes first, and absent rows and the glosses of untouched
+     files give way, so the files a step changes stay near its caption. */
+  @media (max-width: 47.99rem) {
+    #proto { order: -1; }
+    #folder .file.is-absent { display: none; }
+    #folder .file.is-same .gloss { display: none; }
+    #folder .file.is-same code, #folder .file.is-same .dir { color: var(--ink-faint); }
+    .step-count { flex-basis: 100%; }
+  }
 
   /* Try it: one track per step. */
   .tools { display: flex; flex-wrap: wrap; gap: 0.4rem 1.2rem; font-size: var(--step--1); color: var(--ink-soft); max-inline-size: var(--measure); }
@@ -232,18 +247,10 @@
   .prompt { inline-size: 100%; background: var(--surface); padding: 0.7rem 0.9rem; border-radius: 0.6rem; white-space: pre-wrap; overflow-wrap: anywhere; font-size: var(--step--1); }
   .prompt code { font-size: 1em; }
 
-  /* Try it: the steps on the left, the folder they fill on the right. */
-  .grow { max-inline-size: var(--wide); margin-inline: auto; display: grid; gap: calc(var(--space) * 2); grid-template-columns: minmax(0, 1fr); }
-  #try-body { display: grid; gap: calc(var(--space) * 1.1); align-content: start; }
-  .grow-folder { display: none; }
-  @media (min-width: 62rem) {
-    .grow { grid-template-columns: minmax(0, var(--measure)) minmax(0, 24rem); justify-content: space-between; }
-    .grow-folder { display: grid; position: sticky; inset-block-start: calc(var(--head-h) + 1.5rem); align-self: start; }
-  }
-
-  /* Set up: a schematic assistant window. Its parts are drawn as fills, the numbered marks
+  /* Set up: a schematic assistant window. Its parts are drawn as fills, and the numbered marks
      match the key below it. */
   .win-figure { display: grid; gap: 0.6rem; margin: 0.4rem 0 0.2rem; }
+  .win-figure .quiet { font-size: var(--step--1); }
   .win { background: var(--surface); border-radius: 0.8rem; overflow: hidden; font-size: var(--step--1); color: var(--ink-soft); }
   .win-bar { display: flex; align-items: center; gap: 0.6rem; padding: 0.55rem 0.9rem; background: var(--ink); color: var(--ground); }
   .win-folder { display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.1rem 0.7rem; border-radius: 999px; background: var(--ground); color: var(--ink); font-family: var(--mono); }
@@ -256,11 +263,10 @@
   .win-btn { padding: 0.05rem 0.7rem; border-radius: 999px; background: var(--surface); }
   .win-btn.yes { background: var(--accent); color: var(--on-accent); }
   .win-input { display: flex; align-items: center; gap: 0.6rem; margin: 0 0.9rem 0.9rem; padding: 0.5rem 0.75rem; border-radius: 999px; background: var(--ground-alt); color: var(--ink-faint); }
-  .win-mark { flex: none; display: inline-grid; place-items: center; inline-size: 1.4rem; block-size: 1.4rem; border-radius: 50%; background: var(--accent); color: var(--on-accent); font-weight: 600; }
   .win-keys { display: grid; gap: 0.3rem; counter-reset: key; font-size: var(--step--1); color: var(--ink-soft); }
   .win-keys li { counter-increment: key; display: grid; grid-template-columns: 1.4rem minmax(0, 1fr); gap: 0.6rem; }
-  .win-keys li::before { content: counter(key); display: inline-grid; place-items: center; inline-size: 1.4rem; block-size: 1.4rem; border-radius: 50%; background: var(--accent); color: var(--on-accent); font-weight: 600; }
-  .win-figure .quiet { font-size: var(--step--1); }
+  .win-mark, .win-keys li::before { flex: none; display: inline-grid; place-items: center; inline-size: 1.4rem; block-size: 1.4rem; border-radius: 50%; background: var(--accent); color: var(--on-accent); font-weight: 600; }
+  .win-keys li::before { content: counter(key); }
 
   /* Good to know: calm columns of sentences. */
   .columns { display: grid; gap: var(--space) calc(var(--space) * 2); grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); }
@@ -268,20 +274,11 @@
   .plain { display: grid; gap: 0.7rem; color: var(--ink-soft); }
   .plain a { font-size: var(--step--1); }
   .plain.links a { font-size: inherit; }
-
-  /* On narrow screens the short prototype comes first, so a step's effect stays near its caption. */
-  /* Absent rows and the glosses of untouched files give way, so the changed files stay in view. */
-  @media (max-width: 47.99rem) {
-    #proto { order: -1; }
-    #folder .file.is-absent { display: none; }
-    #folder .file.is-same .gloss { display: none; }
-    #folder .file.is-same code, #folder .file.is-same .dir { color: var(--ink-faint); }
-    .step-count { flex-basis: 100%; }
-  }
-
-  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 }
 
-@layer components {
+@layer utilities {
+  /* In utilities, so it wins over the pill display of the components layer. The footer
+     carries the same link. */
+  @media (max-width: 47.99rem) { .spec-link { display: none; } }
   .visually-hidden { position: absolute; inline-size: 1px; block-size: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 }

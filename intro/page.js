@@ -323,7 +323,7 @@
   function copyButton(t, value) {
     // Without the Clipboard API the prompt stays selectable text and no button appears.
     if (!navigator.clipboard?.writeText) return null;
-    const copy = h("button", { type: "button", class: "btn ghost small", text: t.try.copy });
+    const copy = h("button", { type: "button", class: "btn small", text: t.try.copy });
     copy.addEventListener("click", async () => {
       try {
         await navigator.clipboard.writeText(value);
@@ -363,7 +363,8 @@
   function renderTry(t) {
     const r = t.try;
     const tools = h("p", { class: "tools" }, h("span", { class: "tools-label", text: r.toolsLabel }),
-      ...r.tools.map(([name, note, href]) => h("span", { class: "tool" }, h("a", { href, text: name }), ` ${note}`)));
+      ...r.tools.map(([links, note]) => h("span", { class: "tool" },
+        ...links.flatMap(([name, href], i) => [i ? ` ${r.or} ` : "", h("a", { href, text: name })]), ` ${note}`)));
     const steps = r.steps.map((step, index) => h("li", { "data-step": String(index) },
       h("h3", { text: step.title }),
       h("p", { text: step.body }),

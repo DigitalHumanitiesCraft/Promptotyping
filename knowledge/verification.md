@@ -7,7 +7,7 @@ status: active
 language: en
 version: 0.8
 created: 2026-07-26
-updated: 2026-10-28
+updated: 2026-11-04
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Opus 5)
 method:
@@ -39,7 +39,7 @@ scholarly and effort assessment needed for a real-data study.
 For a combined local regression run from the repository root:
 
 ```sh
-python -m pytest tools/tests vault/tests research-artefacts/promptotyping-bench -q -p no:cacheprovider
+python -m pytest tools/tests vault/tests research-artefacts/promptotyping-bench intro/tests -q -p no:cacheprovider
 python tools/check_consistency.py
 python vault/tools/validate.py vault
 ```
@@ -51,6 +51,8 @@ or an audit, so the instructions do not depend on a hand-maintained test count.
 `tools/check_consistency.py` exits non-zero on any failure; it resolves every path from its own location, so the directory it is called from does not matter. It reaches for the second script in `tools/`, the glossary generator `build_glossar.py`, rather than restating its rules, so V7 below cannot drift from the generator it guards.
 
 Under `tools/tests/` the checks are themselves held to their regression cases, run with `python -m unittest discover tools/tests`. Each case takes the repository's own data as its fixture, corrupts one field of a copy, and asserts that the check reports it. The green run before every commit shows that the site is consistent; it does not show that a check still decides anything, and a check that has quietly stopped deciding passes in exactly the same way. The suite uses the standard library alone, so `tools/` keeps needing no dependency; the vault under it is a template instance with its own dependency set and tests its validator with pytest.
+
+Under `intro/tests/` the introduction page (A47) is held to the outcomes a reader sees, in a browser. The cases serve the repository on a free local port and assert which files each example step creates or changes, that the check marks every uncertain letter and the rebuild draws them as spans, that the keyboard focus stays on the stepper at its ends, that the language switch reaches German, that the try-it folder names the step in view, and that the header and page stay inside a narrow screen. Their expectations come from the page contract in [design.md](design.md#introduction-page). They need Python Playwright with Chromium and skip without it, so the rule above for `tools/` stays untouched.
 
 ### V1. The catalogue and the convention agree on the document type
 

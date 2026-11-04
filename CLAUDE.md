@@ -99,7 +99,7 @@ Before dependent steps, check the available tools, runtimes and connections. A m
 `python tools/check_consistency.py` runs before every commit that touches the catalogue, convention, template folder or use-case gallery. The combined regression run from the repository root is:
 
 ```sh
-python -m pytest tools/tests vault/tests research-artefacts/promptotyping-bench -q -p no:cacheprovider
+python -m pytest tools/tests vault/tests research-artefacts/promptotyping-bench intro/tests -q -p no:cacheprovider
 python tools/check_consistency.py
 python vault/tools/validate.py vault
 ```
