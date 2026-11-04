@@ -122,6 +122,20 @@ class IntroPageTest(unittest.TestCase):
         page.locator(".steps > li").nth(2).get_by_role("button").focus()
         self.assertIn("Explore", page.locator("#try-folder .pane-title").inner_text())
 
+    def test_example_fits_the_first_screen_and_holds_still(self):
+        # design.md: at 1440 by 900 the example fits above the fold, and the panes do not jump
+        # while the steps change.
+        for lang in ("en", "de"):
+            with self.subTest(lang=lang):
+                page = self.open(lang=lang)
+                page.evaluate("document.fonts.ready")
+                bottoms = set()
+                for index in range(7):
+                    self.pick(page, index)
+                    bottoms.add(round(page.evaluate("document.querySelector('.panes').getBoundingClientRect().bottom")))
+                self.assertEqual(len(bottoms), 1, f"panes move between steps: {sorted(bottoms)}")
+                self.assertLessEqual(bottoms.pop(), 900)
+
     def test_narrow_screen_keeps_navigation_and_page_inside(self):
         page = self.open(lang="de", width=320, height=700)
         self.assertFalse(page.evaluate("[...document.querySelectorAll('.site-nav a')].some(a => a.getBoundingClientRect().right > innerWidth)"))

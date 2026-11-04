@@ -117,7 +117,7 @@
 
   /* Hero: text left, example right, stacked on narrow screens. */
   .hero { display: grid; gap: calc(var(--space) * 1.5); align-items: center; max-inline-size: var(--wide); margin-inline: auto; padding: 0.9rem var(--gutter) calc(var(--space) * 1.5); grid-template-columns: minmax(0, 1fr); }
-  @media (min-width: 62rem) { .hero { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); min-block-size: calc(100svh - var(--head-h)); } }
+  @media (min-width: 62rem) { .hero { grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr); min-block-size: calc(100svh - var(--head-h)); } }
   .hero-text { display: grid; gap: 1.2rem; align-content: center; }
   .night-glass {
     background:
@@ -169,6 +169,7 @@
 
   /* Example: named steps above, the project folder and the prototype side by side below. */
   .example { display: grid; gap: 0.8rem; align-content: center; }
+  .episode-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.5rem 1rem; }
   .episode-title { font-family: var(--display); font-weight: 600; }
   #episode-stepper { display: grid; gap: 0.6rem; }
   .step-list { display: flex; flex-wrap: wrap; gap: 0.3rem; }
@@ -184,6 +185,7 @@
   .step-pick[data-state="current"] .step-mark { border: 0; background: var(--on-accent); color: var(--accent); }
   .step-caption { color: var(--ink-soft); max-inline-size: var(--measure); }
   .step-caption strong { color: var(--ink); }
+  .step-caption.probe { position: absolute; visibility: hidden; pointer-events: none; }
   .step-example { display: block; margin-block-start: 0.5rem; padding: 0.45rem 0.75rem; background: var(--sheen); color: var(--ink); border-radius: 0.3rem; }
   .step-controls { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
   .step-count { color: var(--ink-faint); font-size: var(--step--1); }
@@ -242,6 +244,7 @@
   .steps h3::before { content: counter(step) "  "; color: var(--accent); font-variant-numeric: tabular-nums; }
   .steps p { color: var(--ink-soft); }
   .steps .check { font-size: var(--step--1); }
+  .step-links { display: flex; flex-wrap: wrap; gap: 0.3rem 1.2rem; font-size: var(--step--1); }
   .steps .check strong { color: var(--ink); }
   .prompt-box { display: grid; gap: 0.35rem; justify-items: start; }
   .prompt { inline-size: 100%; background: var(--surface); padding: 0.7rem 0.9rem; border-radius: 0.6rem; white-space: pre-wrap; overflow-wrap: anywhere; font-size: var(--step--1); }

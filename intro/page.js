@@ -242,7 +242,22 @@
       list.append(h("li", {}, pick));
       return pick;
     });
-    host.replaceChildren(h("p", { class: "episode-title", text: e.title }), list, caption, h("div", { class: "step-controls" }, prev, next, play, count));
+    // Title and controls share the first row on wide screens, so the panes start higher.
+    host.replaceChildren(h("div", { class: "episode-head" }, h("p", { class: "episode-title", text: e.title }), h("div", { class: "step-controls" }, prev, next, play, count)), list, caption);
+
+    /** Actor, step, explanation and instance; the folder change is announced with them, since
+     *  the folder pane has no live region. */
+    function captionContent(position) {
+      const [title, body, example] = e.steps[position];
+      const step = STEPS[position];
+      const changes = ["new", "changed", "read"].filter((kind) => (step[kind] || []).length)
+        .map((kind) => `${e.changeWords[kind]} ${step[kind].map((file) => file.split("/").at(-1)).join(", ")}`);
+      return [
+        h("strong", { text: `${e.actors[step.actor]}: ${title}. ` }), body,
+        h("span", { class: "step-example", text: example }),
+        h("span", { class: "visually-hidden", text: e.changes(changes) }),
+      ];
+    }
 
     let index = 0;
     let timer = 0;
@@ -257,15 +272,7 @@
         if (state === "current") item.setAttribute("aria-current", "step");
         else item.removeAttribute("aria-current");
       });
-      const [title, body, example] = e.steps[index];
-      // The folder change is announced with the caption, since the folder pane has no live region.
-      const step = STEPS[index];
-      const changes = ["new", "changed", "read"].filter((kind) => (step[kind] || []).length)
-        .map((kind) => `${e.changeWords[kind]} ${step[kind].map((file) => file.split("/").at(-1)).join(", ")}`);
-      caption.replaceChildren(
-        h("strong", { text: `${e.actors[step.actor]}: ${title}. ` }), body,
-        h("span", { class: "step-example", text: example }),
-        h("span", { class: "visually-hidden", text: e.changes(changes) }));
+      caption.replaceChildren(...captionContent(index));
       count.textContent = e.stepOf(index + 1, e.steps.length);
       // A control that is about to be disabled hands its focus to the current step first.
       const focused = document.activeElement;
@@ -291,19 +298,22 @@
       timer = setTimeout(tick, 6000);
     }
     // The caption reserves the height of its longest step, so the panes below do not jump
-    // while the example plays. Measured again when the width changes.
+    // while the example plays. A hidden probe of the same width is measured, so the live
+    // region announces nothing while this runs. Measured again when the width changes.
     function reserve() {
-      const keep = index;
       caption.style.minBlockSize = "";
       // On a phone the panes sit far below anyway, and a reserved gap would only push them down.
       if (matchMedia("(max-width: 47.99rem)").matches) return;
+      const probe = h("p", { class: "step-caption probe", "aria-hidden": "true" });
+      probe.style.inlineSize = `${caption.getBoundingClientRect().width}px`;
+      host.append(probe);
       let tallest = 0;
       for (let i = 0; i < e.steps.length; i += 1) {
-        show(i);
-        tallest = Math.max(tallest, caption.getBoundingClientRect().height);
+        probe.replaceChildren(...captionContent(i));
+        tallest = Math.max(tallest, probe.getBoundingClientRect().height);
       }
+      probe.remove();
       caption.style.minBlockSize = `${Math.ceil(tallest)}px`;
-      show(keep);
     }
     let width = innerWidth;
     addEventListener("resize", () => {
@@ -317,6 +327,8 @@
     next.addEventListener("click", () => show(index + 1, true));
     show(0);
     reserve();
+    // The web fonts change line breaks once they arrive, so the reservation is measured again.
+    document.fonts?.ready.then(reserve);
     return { start };
   }
 
@@ -368,6 +380,7 @@
     const steps = r.steps.map((step, index) => h("li", { "data-step": String(index) },
       h("h3", { text: step.title }),
       h("p", { text: step.body }),
+      step.links ? h("p", { class: "step-links" }, ...step.links.map(([label, href]) => h("a", { href, text: label }))) : null,
       index === 0 ? assistantWindow(r.window) : null,
       index === 1 ? h("p", {}, h("a", { href: "example/letters.csv", download: "letters.csv", text: r.exampleFile })) : null,
       h("div", { class: "prompt-box" }, h("pre", { class: "prompt" }, h("code", { text: step.prompt })), copyButton(t, step.prompt)),
