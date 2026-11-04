@@ -56,6 +56,7 @@ Source of values: `knowledge/design.md`. Read it before UI work. The site is cal
 - The only movement animation is the side-panel slide (200ms ease-out). Short hover transitions are permitted micro-affordances as `knowledge/design.md` lists them.
 - Nothing collapses (A33). The side panel with its mobile bottom-sheet form and the click-to-load video facade are the only two devices that hide content; add no third.
 - Add no decorative elements.
+- The introduction page under `intro/` (A47) is the one bounded exception to the rules above. It carries the DHCraft design, Sora and Instrument Sans and an English default with `?lang=de`, and its own rules are in `knowledge/design.md`, section Introduction page.
 
 ## Scope
 

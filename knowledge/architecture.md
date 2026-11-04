@@ -7,7 +7,7 @@ status: complete
 language: en
 version: 0.9
 created: 2026-05-09
-updated: 2026-10-28
+updated: 2026-11-04
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Opus 4.8)
 method:
@@ -54,6 +54,7 @@ How the site is built. A single HTML page holds empty section shells; vanilla Ja
 - **HTML/CSS/JS**: vanilla, no framework, no bundler, no npm dependency.
 - **Markdown parser**: marked.js v9.1.6, vendored in `assets/vendor/marked.min.js`. No CDN.
 - **YAML parser**: js-yaml v4.1.0, vendored in `assets/vendor/js-yaml.min.js`, used by the Frontmatter-Inspector to parse pasted frontmatter blocks. No CDN.
+- **Introduction page**: `intro/` is a real directory, so GitHub Pages serves it with HTTP 200 and `404.html` never sees the path. Its two classic scripts share the namespace `window.PromptotypingIntro` and load nothing from the portal; it reads no data file.
 - **Scripts**: ten plain scripts under `assets/js/`, each an IIFE extending the shared namespace `window.PromptotypingApp`, plus three module scripts under `assets/js/modules/`. No ES module, no `import`. `index.html` declares the ten core files in a fixed order and the first two modules; `app.js` injects `term-index.js` at runtime and awaits it. `404.html` is a stub and carries no site script at all.
 
 ## Directory layout
@@ -62,6 +63,12 @@ How the site is built. A single HTML page holds empty section shells; vanilla Ja
 Promptotyping/
 ├── index.html                      # site entry, empty section shells
 ├── 404.html                        # subpath handover stub, passes the path to index.html as ?p=
+├── intro/                          # introduction page (A47), separate from the portal
+│   ├── index.html, site.css        # DHCraft design, own tokens and fonts
+│   ├── content.js                  # all text in English and German
+│   ├── page.js                     # header, example stepper, try-it steps, notes
+│   ├── example/letters.csv         # the invented letters of the example, for rehearsal
+│   └── assets/                     # white DHCraft mark, favicon, Sora and Instrument Sans with licences
 ├── .nojekyll                       # forces GitHub Pages to publish _content/
 ├── README.md
 ├── CLAUDE.md                       # action layer

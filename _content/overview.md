@@ -4,7 +4,7 @@ slug: overview
 status: complete
 language: en
 version: "0.11"
-updated: 2026-10-14
+updated: 2026-11-04
 mirrored: 2026-06-10
 machine-url: https://dhcraft.org/Promptotyping/_content/overview.md
 ---
@@ -15,6 +15,7 @@ Specification of an iterative, knowledge-driven working practice organised aroun
 
 ## Start with your goal
 
+- **Meet the practice.** The [introduction](intro/) plays one synthetic Promptotyping round and shows how to try it on your own data, in English and German.
 - **Understand the practice.** Read [Application](#application) for the operational account and [Checking](#verifikation) for the verification and acceptance criteria.
 - **Evaluate its grounds.** Examine the documented [use cases](#use-cases) and trace the practice's supporting assertions through the [Vault](#vault).
 - **Apply it to a project.** Follow the [tutorial](#tutorial), use the [canonical Promptotyping skill](#skills-promptotyping), and select the [templates](#vorlagen) whose triggers match your project.

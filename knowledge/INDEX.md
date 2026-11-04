@@ -7,7 +7,7 @@ status: complete
 language: en
 version: 1.1
 created: 2026-05-09
-updated: 2026-10-28
+updated: 2026-11-04
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5, Claude Opus 5)
 method:
@@ -70,6 +70,7 @@ The paper is maintained outside this repository and will be published in the jou
   The [historical frontend plan](../snapshots/frontend-plan-history-2026-09-05.md) preserves superseded packages; the [knowledge-refactor audit](../snapshots/project-knowledge-refactor-2026-09-05.md) records the repository-wide inventory, current ownership and verification scope.
   The [SZD data audit](../snapshots/benchmark-szd-data-audit-2026-09-05.md) records the first dated inspection of the SZD data basis for the benchmark.
   The [SZD rehearsal preparation record](../snapshots/benchmark-szd-rehearsal-preparation-2026-09-05.md) records the local real-data package and technical input checks, without claiming a completed study.
+- `intro/` contains the introduction page for newcomers (A47), a separate page in the DHCraft design with its own text source for English and German.
 - `_content/` contains authored publication pages and the stable public template mirrors. Generated mirrors such as `_content/glossar.md` are rebuilt from their declared source.
 - The canonical skill is not in this repository. It is maintained in [DigitalHumanitiesCraft/promptotyping-skill](https://github.com/DigitalHumanitiesCraft/promptotyping-skill); the Skills page fetches and renders its `SKILL.md` (A42).
 - `data/` is the established runtime-data area. Generated members name their producing command in the governing documentation; `data/vault.json` is built by `vault/tools/build_site_index.py`.

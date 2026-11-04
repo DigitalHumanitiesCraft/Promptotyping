@@ -7,7 +7,7 @@ status: complete
 language: en
 version: "1.0"
 created: 2026-05-09
-updated: 2026-10-28
+updated: 2026-11-04
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Opus 4.8)
 method:
@@ -38,7 +38,7 @@ What the site must do. The site is a specification documentation showing one pag
 
 The site says what Promptotyping is and how it is applied. The paper, maintained outside this repository, says why the practice is built the way it is and whether it holds. The rebuild that established this division ran as work packages AP1 to AP8 under the operator decision of 2026-07-25 and was completed the same day; the packages are spent and their record is in [journal.md](journal.md) and in the git history.
 
-Four things stay out of scope. No bilingual site. No build step. No colours outside the design system. No modules beyond those A11, A7, A25 and the vault view name.
+Four things stay out of scope. No bilingual site. No build step. No colours outside the design system. No modules beyond those A11, A7, A25 and the vault view name. The introduction page of A47 is a separate page outside the portal and the one bounded exception to the first and third rule.
 
 One item of the target state is still undecided. The mandatory frontmatter core is carried by this knowledge base with six fields while the published convention describes it alongside, and settling that on one version is an operator decision rather than an implementation gap.
 
@@ -278,6 +278,15 @@ The Overview presents the practice definition, the three goal routes, a compact 
 
 Acceptance criterion. Canonical and legacy Overview and Application routes reach the same content, the address bar shows the English hash after legacy resolution, browser Back returns to the previous page, keyboard navigation reaches the five parts, and desktop and narrow layouts show no horizontal document scroll or console error.
 
+### A47 — Introduction page for newcomers
+A separate page under `intro/` (`https://dhcraft.org/Promptotyping/intro/`) explains the practice to readers without prior knowledge of Git, coding assistants or the specification (operator decision 2026-11-04, prepared for the workshop of 9 and 10 November 2026). It follows the method pages of the Second Brain Vault and Grounded Vault rather than the portal, so it carries the DHCraft corporate design and an English default with a German version under `?lang=de`. The portal remains the specification, its anchors and design are untouched, and the Overview links the page from its goal routes.
+
+The page answers three questions in three parts. The hero states what Promptotyping physically is and for whom, and plays one synthetic round in seven named steps beside the project folder and a small prototype. The second part gives the six tutorial steps as short prompts with a self-check each, beside a folder that follows the step in view. The third part states what leaves the reader's computer, what the practice is and is not, and where the specification continues. Interaction and visual rules are in [design.md](design.md#introduction-page).
+
+The example is invented. A family correspondence with partly uncertain dates becomes a timeline. The check finds that letters dated only to a year sit on 1 January, the finding is written into specification, design and journal before the code changes, and the next version draws such dates as spans. It shows the write-back that distinguishes the practice from code generation, and its user story is the one the tutorial uses.
+
+Acceptance criterion. From the page alone, a reader without prior knowledge can say what the practice is, retell the example round including the write-back, and name the first step on their own data, in both languages, on a 1440 by 900 desktop and a 390-pixel phone, with no horizontal scroll and no console error.
+
 ### A26 — The site is English
 Every string the site shows is English, in British spelling (operator decision 2026-07-25, carried out 2026-07-26). That covers the page registry labels, the status line, every control, the nine content pages directly under `_content/`, and the text fields of `data/glossar.json`, `data/case-studies.json` and `data/promptotyping-documents.json`.
 
@@ -346,7 +355,7 @@ A dedicated section at the page end, alphabetically ordered. Per entry, term, sh
 **Context.** Plan review 2026-06-10 found two things. GitHub Pages does not publish underscore directories without `.nojekyll`, so `_content/` would have been unreachable. And the subpath URLs did not meet their "robust for agents" purpose, because GitHub Pages serves `404.html` with HTTP status 404 and the content appears only after JavaScript, so a browserless HTTP fetch gets an error page. **Choice.** `.nojekyll` in the repo root. The static markdown URL `https://dhcraft.org/Promptotyping/_content/promptotyping-document/{slug}.md` is the documented machine address (mirror field `machine-url`, note in `_content/konvention.md`, note in the Vorlagen section). Subpath and hash stay the human-readable addresses; the `template:` field is unchanged. **Effect.** Agents get the markdown with HTTP 200 and no JavaScript. The vault convention is to adopt the machine address at its next update (open, vault-side).
 
 ## Out of scope
-- **Parallel bilingual edition.** The public pages of the practice are English. Established German template mirrors and teaching materials remain the bounded exceptions.
+- **Parallel bilingual edition.** The public pages of the practice are English. Established German template mirrors and teaching materials remain the bounded exceptions, together with the introduction page of A47, which carries both languages from one text source.
 - **CMS functionality.** The site is static, content changes through Git.
 - **User accounts, comments, annotations.** Out of scope.
 - **Automatic vault sync.** Manual mirroring on refactor.

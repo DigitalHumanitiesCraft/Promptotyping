@@ -7,7 +7,7 @@ status: complete
 language: en
 version: "1.0"
 created: 2026-05-09
-updated: 2026-10-28
+updated: 2026-11-04
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Opus 4.8)
 method:
@@ -225,6 +225,52 @@ The only movement animation is the side-panel slide, 200ms `ease-out`. Interacti
 Icons appear only where a control carries no text, currently the theme toggle, the panel close, the copy button, the mark on an outbound link and the repository link in the header. The category marks of the glossary fall outside this rule, since they encode a value rather than name a control; they are specified under Shape that carries meaning. They are inline SVG at 16 pixels with a 1.5-pixel stroke in `currentColor` and no fills, carried in the markup rather than in a font or a sprite file. Navigation entries, headings and groups carry no icons, because there the label is the thing.
 
 A destination mark is the one case that sits beside a label. The GitHub and YouTube glyphs in the footer identify where a link goes, the way the carrier watercolour in the same row does, and they do not stand in for a missing label the way an icon button does. They are set at 14 pixels in `currentColor` and never in the brand colour, which would put two hues on the page that say nothing about epistemic function.
+
+## Introduction page
+
+The page under `intro/` (A47 in [specification.md](specification.md)) addresses readers who know neither Git nor coding assistants, and it follows the method pages of Second Brain Vault and Grounded Vault instead of the portal. Everything above this section binds the portal; this section alone binds the introduction page.
+
+### Sections
+
+| Section | Question it answers | Form |
+|---|---|---|
+| Hero | What is it, for whom, and how does a round run? | Title, one lead paragraph, the four parts as one line, audience line, two actions, and the playable example |
+| Try it | How do I start on my own data? | Tool line, seven steps (Set up, then the example's steps with Cut to size after Distil and Check and accept at the end), each with one paragraph, a copyable prompt and a self-check, and on wide screens a sticky project folder titled with the step in view |
+| Good to know | What leaves my computer, what is it not, where do I read on? | Three columns of short sentences with source links |
+
+### Example
+
+One synthetic round in seven named steps, Prepare, Explore, Distil, Build, Check, Write back and Rebuild. A family correspondence with partly uncertain dates becomes a timeline. The steps are buttons with their names; a done step carries a check mark, the current step is filled, a coming step has a dashed number. The caption names who acts, the step and the concrete instance, and on wide screens it reserves the height of its longest step so the panes below stay still while the example plays. Below stand two panes. The project folder lists every file of the round with a one-line gloss and a state word, new as a green pill, changed as an ink pill, read with a small arrow, not yet in faint text. The prototype pane shows nothing, version 1, version 1 with the reader's marks, or version 2. In the timeline a letter drawn on one day is a dot, a letter the check marks carries a dashed ring, and a span is a bar, so shape carries the distinction. Orange means only the reader's mark. The Check step says why version 1 failed, since data.md had recorded the uncertain dates and the specification never turned them into a requirement.
+
+Below 48rem the prototype pane comes first and the folder drops its absent rows and the glosses of untouched files, so the files a step changes stay near the caption. This is the page's one device that hides content, and the hidden rows add nothing the step is about.
+
+### Visual system
+
+DHCraft corporate design, loosely. Tokens follow the dhcraft-site palette in OKLCH and live in the token block of `intro/site.css`; Sora and Instrument Sans are vendored under `intro/assets/fonts/` with their licences; buttons and step markers are pills; the header carries the white DHCraft mark on navy. The hero stands on the navy night ground, the reading sections on paper. At most three text levels, borders only on controls, prompts and the state words, and no box inside a box. Sections are separated by their ground. Text runs on three levels, headings in Sora, body text, and meta text at the smallest step for glosses, states, legends, prompts and notes; the lead paragraph alone is set one step larger. The navigation bar is opaque and wraps on narrow screens instead of scrolling.
+
+### Terms
+
+| English | German |
+|---|---|
+| working practice | Arbeitspraxis |
+| AI coding assistant | KI-Coding-Assistent |
+| session | Sitzung |
+| project folder | Projektordner |
+| prototype | Prototyp |
+| Prepare, Explore, Distil, Build, Check, Write back, Rebuild | Vorbereiten, Erkunden, Destillieren, Bauen, Prüfen, Zurückschreiben, Neu bauen |
+| Set up, Cut to size, Check and accept | Einrichten, Zuschneiden, Prüfen und annehmen |
+
+### Evidence
+
+On 2026-11-04 three subagents read screenshots and page text in the roles of a historian without Git or agent experience (English, desktop), a research data manager at a university library (German, phone) and the head of a museum digital collections team (English, desktop). A fourth reviewed code, screenshots and the running page against the vault document on interface practice for agent-built frontends. They are model readers, not people.
+
+- All three understood the example's point, that a wrong display is corrected in the documents before the code. Two read version 1's failure as the documents failing, and one read its legend as false. The Check step now names the gap between data.md and the specification, and the legend says what version 1 actually draws.
+- All three would have stopped before the first step, not knowing which program to open or where to type, and stumbled over session, skill, commit and local server. The page now opens the try-it steps with Set up, says in the lead that the assistant forgets between conversations, and explains each of these words where it first appears.
+- Two could not map the example's seven steps onto the tutorial's six. The try-it section now names the relation and carries the same step names.
+- A second reader, an art historian, then retold the round and the reason for version 1's failure correctly. They still missed how to choose the folder in the assistant, whether to install Git and Python, and a file to rehearse with. Set up and Prepare now answer these, and `intro/example/letters.csv` holds the invented letters of the example.
+- The reviewer found lost keyboard focus at the stepper's ends, unreadable absent rows, changed files below the fold on the phone, a clipped navigation at 320 pixels, too many type sizes, rules on non-controls and a translucent header. All are corrected, and `intro/` has no automated test; the browser checks of that round ran from a session script.
+
+Still open after these readings are a screenshot of the assistant's window, a price range, the time a first round takes, a real heritage-sector case on the page, the rights in generated code, a fully local option and whether the workshop covers the setup. A human reading and the operator's acceptance remain open.
 
 ## What the design is not
 
