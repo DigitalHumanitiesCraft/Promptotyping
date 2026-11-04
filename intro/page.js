@@ -338,6 +338,28 @@
     return copy;
   }
 
+  /**
+   * A schematic assistant window for the set-up step. It is drawn, not captured, so it shows
+   * no account or session of a real installation and holds for both assistants. The numbered
+   * marks in the window and in the key below share their numbers.
+   */
+  function assistantWindow(w) {
+    const mark = (n) => h("span", { class: "win-mark", "aria-hidden": "true", text: String(n) });
+    const shown = h("div", { class: "win", role: "img", "aria-label": w.label },
+      h("div", { class: "win-bar" }, mark(1),
+        h("span", { class: "win-folder" }, h("span", { class: "win-folder-icon", "aria-hidden": "true" }), w.folder)),
+      h("div", { class: "win-chat" },
+        h("p", { class: "win-you", text: w.you }),
+        h("p", { class: "win-reply", text: w.reply }),
+        h("div", { class: "win-ask" }, mark(3), h("span", { text: w.ask }),
+          h("span", { class: "win-buttons" }, h("span", { class: "win-btn yes", text: w.allow }), h("span", { class: "win-btn", text: w.decline })))),
+      h("div", { class: "win-input" }, mark(2), h("span", { text: w.input })));
+    return h("figure", { class: "win-figure" }, shown,
+      h("figcaption", {},
+        h("ol", { class: "win-keys" }, ...w.keys.map((key) => h("li", { text: key }))),
+        h("p", { class: "quiet", text: w.caption })));
+  }
+
   function renderTry(t) {
     const r = t.try;
     const tools = h("p", { class: "tools" }, h("span", { class: "tools-label", text: r.toolsLabel }),
@@ -345,6 +367,7 @@
     const steps = r.steps.map((step, index) => h("li", { "data-step": String(index) },
       h("h3", { text: step.title }),
       h("p", { text: step.body }),
+      index === 0 ? assistantWindow(r.window) : null,
       index === 1 ? h("p", {}, h("a", { href: "example/letters.csv", download: "letters.csv", text: r.exampleFile })) : null,
       h("div", { class: "prompt-box" }, h("pre", { class: "prompt" }, h("code", { text: step.prompt })), copyButton(t, step.prompt)),
       h("p", { class: "check" }, h("strong", { text: `${r.checkLabel}. ` }), step.check)));

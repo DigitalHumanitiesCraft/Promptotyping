@@ -241,6 +241,27 @@
     .grow-folder { display: grid; position: sticky; inset-block-start: calc(var(--head-h) + 1.5rem); align-self: start; }
   }
 
+  /* Set up: a schematic assistant window. Its parts are drawn as fills, the numbered marks
+     match the key below it. */
+  .win-figure { display: grid; gap: 0.6rem; margin: 0.4rem 0 0.2rem; }
+  .win { background: var(--surface); border-radius: 0.8rem; overflow: hidden; font-size: var(--step--1); color: var(--ink-soft); }
+  .win-bar { display: flex; align-items: center; gap: 0.6rem; padding: 0.55rem 0.9rem; background: var(--ink); color: var(--ground); }
+  .win-folder { display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.1rem 0.7rem; border-radius: 999px; background: var(--ground); color: var(--ink); font-family: var(--mono); }
+  .win-folder-icon { inline-size: 0.9rem; block-size: 0.65rem; border-radius: 0.12rem; background: var(--ink-faint); }
+  .win-chat { display: grid; gap: 0.6rem; padding: 0.9rem; }
+  .win-you { justify-self: end; max-inline-size: 85%; padding: 0.45rem 0.75rem; border-radius: 0.8rem; background: var(--ground-alt); color: var(--ink); }
+  .win-reply { max-inline-size: 90%; }
+  .win-ask { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.7rem; padding: 0.5rem 0.75rem; border-radius: 0.6rem; background: var(--ground-alt); color: var(--ink); }
+  .win-buttons { display: inline-flex; gap: 0.4rem; margin-inline-start: auto; }
+  .win-btn { padding: 0.05rem 0.7rem; border-radius: 999px; background: var(--surface); }
+  .win-btn.yes { background: var(--accent); color: var(--on-accent); }
+  .win-input { display: flex; align-items: center; gap: 0.6rem; margin: 0 0.9rem 0.9rem; padding: 0.5rem 0.75rem; border-radius: 999px; background: var(--ground-alt); color: var(--ink-faint); }
+  .win-mark { flex: none; display: inline-grid; place-items: center; inline-size: 1.4rem; block-size: 1.4rem; border-radius: 50%; background: var(--accent); color: var(--on-accent); font-weight: 600; }
+  .win-keys { display: grid; gap: 0.3rem; counter-reset: key; font-size: var(--step--1); color: var(--ink-soft); }
+  .win-keys li { counter-increment: key; display: grid; grid-template-columns: 1.4rem minmax(0, 1fr); gap: 0.6rem; }
+  .win-keys li::before { content: counter(key); display: inline-grid; place-items: center; inline-size: 1.4rem; block-size: 1.4rem; border-radius: 50%; background: var(--accent); color: var(--on-accent); font-weight: 600; }
+  .win-figure .quiet { font-size: var(--step--1); }
+
   /* Good to know: calm columns of sentences. */
   .columns { display: grid; gap: var(--space) calc(var(--space) * 2); grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); }
   .columns h3 { margin-block-end: 0.6rem; }

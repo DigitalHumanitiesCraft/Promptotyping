@@ -235,12 +235,14 @@ The page under `intro/` (A47 in [specification.md](specification.md)) addresses 
 | Section | Question it answers | Form |
 |---|---|---|
 | Hero | What is it, for whom, and how does a round run? | Title, one lead paragraph, the four parts as one line, audience line, two actions, and the playable example |
-| Try it | How do I start on my own data? | Tool line, seven steps (Set up, then the example's steps with Cut to size after Distil and Check and accept at the end), each with one paragraph, a copyable prompt and a self-check, and on wide screens a sticky project folder titled with the step in view |
+| Try it | How do I start on my own data? | Tool line, seven steps (Set up, then the example's steps with Cut to size after Distil and Check and accept at the end), each with one paragraph, a copyable prompt and a self-check, and on wide screens a sticky project folder titled with the step in view. Set up carries a schematic assistant window |
 | Good to know | What leaves my computer, what is it not, where do I read on? | Three columns of short sentences with source links |
 
 ### Example
 
 One synthetic round in seven named steps, Prepare, Explore, Distil, Build, Check, Write back and Rebuild. A family correspondence with partly uncertain dates becomes a timeline. The steps are buttons with their names; a done step carries a check mark, the current step is filled, a coming step has a dashed number. The caption names who acts, the step and the concrete instance, and on wide screens it reserves the height of its longest step so the panes below stay still while the example plays. Below stand two panes. The project folder lists every file of the round with a one-line gloss and a state word, new as a green pill, changed as an ink pill, read with a small arrow, not yet in faint text. The prototype pane shows nothing, version 1, version 1 with the reader's marks, or version 2. In the timeline a letter drawn on one day is a dot, a letter the check marks carries a dashed ring, and a span is a bar, so shape carries the distinction. Orange means only the reader's mark. The Check step says why version 1 failed, since data.md had recorded the uncertain dates and the specification never turned them into a requirement.
+
+The Set up step draws a schematic assistant window in HTML with the three places a newcomer uses, the folder chosen at the start of a session, the chat field and the question before a change. Numbered marks in the window match a key below it, and the caption says that it is a schematic and that Claude Code and Codex look different. It is drawn rather than captured, because a screenshot would show the account and sessions of a real installation and would hold for one assistant only.
 
 Below 48rem the prototype pane comes first and the folder drops its absent rows and the glosses of untouched files, so the files a step changes stay near the caption. This is the page's one device that hides content, and the hidden rows add nothing the step is about.
 
@@ -270,7 +272,7 @@ On 2026-11-04 three subagents read screenshots and page text in the roles of a h
 - A second reader, an art historian, then retold the round and the reason for version 1's failure correctly. They still missed how to choose the folder in the assistant, whether to install Git and Python, and a file to rehearse with. Set up and Prepare now answer these, and `intro/example/letters.csv` holds the invented letters of the example.
 - The reviewer found lost keyboard focus at the stepper's ends, unreadable absent rows, changed files below the fold on the phone, a clipped navigation at 320 pixels, too many type sizes, rules on non-controls and a translucent header. All are corrected, and `intro/` has no automated test; the browser checks of that round ran from a session script.
 
-Still open after these readings are a screenshot of the assistant's window, a price range, the time a first round takes, a real heritage-sector case on the page, the rights in generated code, a fully local option and whether the workshop covers the setup. A human reading and the operator's acceptance remain open.
+Still open after these readings are a price range, the time a first round takes, a real heritage-sector case on the page, the rights in generated code, a fully local option and whether the workshop covers the setup. A human reading and the operator's acceptance remain open.
 
 ## What the design is not
 
