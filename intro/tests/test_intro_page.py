@@ -15,6 +15,8 @@ keeps its standard-library rule. They serve the repository root on a free local 
 import functools
 import http.server
 import pathlib
+import shutil
+import subprocess
 import threading
 import unittest
 
@@ -28,6 +30,17 @@ ROOT = pathlib.Path(__file__).resolve().parents[2]
 # The example's seven steps. Expected states follow the step texts in intro/content.js.
 WRITE_BACK = {"knowledge/specification.md", "knowledge/design.md", "knowledge/verification.md", "knowledge/journal.md"}
 UNCERTAIN_LETTERS = 6  # letters in intro/page.js whose date is a span, fixed by the synthetic example
+
+
+@unittest.skipIf(shutil.which("node") is None, "Node.js is not installed")
+class IntroScriptSyntaxTest(unittest.TestCase):
+    """The page's classic scripts parse, the check the web house rules ask of a no-build page."""
+
+    def test_scripts_parse(self):
+        for script in sorted((ROOT / "intro").glob("*.js")):
+            with self.subTest(script=script.name):
+                result = subprocess.run(["node", "--check", str(script)], capture_output=True, text=True)
+                self.assertEqual(result.returncode, 0, result.stderr)
 
 
 class _QuietHandler(http.server.SimpleHTTPRequestHandler):
