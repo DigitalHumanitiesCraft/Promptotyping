@@ -5,7 +5,7 @@ status: complete
 language: en
 version: "0.5"
 created: 2026-07-25
-updated: 2026-07-31
+updated: 2026-11-05
 source: Promptotyping working practice, checking architecture and knowledge refactoring
 machine-url: https://dhcraft.org/Promptotyping/_content/verifikation.md
 ---
@@ -20,14 +20,13 @@ The practice separates what a rule decides from what a person vouches for. Verif
 
 This usage follows the norm of software and systems engineering, where verification names the check against the specification and validation the check against intended use (IEEE Std 1012). Schema validation, the established XML term for an automatic check against a schema, keeps its name as a term of art and is in this sense a form of verification.
 
-## Four forms of checking
+## Three forms of checking
 
-The documented practice has settled four distinguishable forms of checking, each with its own evidential scope and its own authority. Deterministic verification and scholarly validation are the two forms the distinction above names, and agentic review and Critical Expert verification and adjudication lie between them. They are not interchangeable, and treating them as one collapses the difference between inspecting an output and being answerable for it.
+The practice distinguishes three forms of checking, each with its own evidential scope and its own authority. Verification and scholarly validation are the two forms the distinction above names, and agentic review lies between them. Treating them as one would collapse the difference between inspecting an output and being answerable for it.
 
-- **Deterministic verification** checks an output against formalised requirements by means of schemas, constraints, transformation tests, structural audits and measurements that can be repeated. Its conclusions reach exactly as far as the properties the check encodes. An agent runs these unsupervised and acts on unambiguous failures within its assigned scope.
-- **Agentic review** is a bounded, tool-supported investigation in which one or more LLM-based agents examine outputs, data states, implementations or artefacts against the relevant sources, references, requirements and criteria. It may locate project files, compare sources and outputs, execute formal checks, investigate discrepancies, or coordinate specialised, parallel or adversarial reviewers. Its findings remain probabilistic evidence for a later judgement.
-- **Critical Expert verification and adjudication** is the accountable examination of particular outputs against their sources and the resolution of cases that no deterministic or probabilistic procedure can decide. It can confirm, correct or reject an earlier finding, and it records who carries the resulting judgement. *Verification* here names the examination of particular outputs against their sources rather than conformity to a formalised requirement. Where the examination judges whether a representation is warranted by the sources, it is validation in the IEEE sense.
-- **Scholarly validation** assesses whether the representations, requirements, evaluation criteria and artefacts governing a workflow are warranted by the research material and adequate for their intended purpose.
+- Verification checks an output or implementation against formalised requirements by means of schemas, constraints, transformation tests, structural audits and measurements that can be repeated. Its conclusions reach exactly as far as the properties the check encodes. An agent runs these checks unsupervised and acts on unambiguous failures within its assigned scope.
+- Agentic review is a bounded, tool-supported investigation in which one or more LLM-based agents, often subagents with a fresh context, examine outputs, data states, implementations, artefacts or knowledge documents against the relevant sources, references, requirements and criteria. It may locate project files, compare sources and outputs, execute formal checks, investigate discrepancies, or coordinate specialised, parallel or adversarial reviewers. Its findings remain probabilistic evidence and become decisions only through verification or scholarly validation.
+- Scholarly validation assesses whether the representations, requirements, evaluation criteria and artefacts governing a workflow are warranted by the research material and adequate for their intended purpose. Domain experts carry it, usually the researchers who will work with the artefact, in the role of the Critical Expert. It covers the accountable examination of particular outputs against their sources and the resolution of cases that no deterministic or probabilistic procedure can decide, so that it can confirm, correct or reject an earlier finding, and it records who carries the resulting judgement. Depending on the project it may be distributed across levels of expertise, for instance when assistants work against a protocol and experts review their results and revise the protocol.
 
 An LLM-as-a-Judge evaluates a supplied output under a given reference or rubric and returns a score, a ranking or a verdict. That is one operation an agentic reviewer can perform among others, and the wider sense of review as criteria-guided examination, familiar from reviews of digital editions and resources, is what the term is meant to keep.
 
@@ -35,13 +34,13 @@ How much an agentic review is worth depends on how the investigation is organise
 
 ## Acceptance is separate
 
-Acceptance is the accountable decision by which an identifiable iteration state becomes a promptotype for a stated purpose. It stands apart from all four forms of checking, and it is bounded: an artefact can be accepted as an experimental processing pipeline or as a handover state without being accepted as a publication-ready scholarly edition.
+Acceptance is the accountable decision that follows the checks and by which a promptotype, an identifiable iteration state, counts as finished for a stated purpose. It stands apart from all three forms of checking and is bounded by that purpose, so an artefact can be accepted as an experimental processing pipeline or as a handover state without being accepted as a publication-ready scholarly edition.
 
 A deterministic metric shows the boundary clearly. Once reference text, extraction rules, normalisation, comparison scope and calculation procedure are specified, a character error rate can be computed reproducibly. It still measures deviation from a selected reference rather than transcription correctness. The choice of reference, the treatment of corrections and annotations, the exclusion of particular textual phenomena and the reading of the resulting value stay technical and editorial decisions.
 
 ## The authority rule
 
-One project failure produced the practice's sharpest rule. In the ZBZ workflow an agent-screening stage assigned approval labels although no responsible contributor had granted approval. The labels were abolished and agent findings reclassified as provisional evidence pending operator adjudication. Generalised, the rule reads: **agents may assemble evidence, compare materials, investigate discrepancies, execute checks and record provisional assessments, but they may not independently assign an authorised verification status, scholarly validation, approval or acceptance.**
+One project failure produced the practice's sharpest rule. In the ZBZ workflow an agent-screening stage assigned approval labels although no responsible contributor had granted approval. The labels were abolished and agent findings reclassified as provisional evidence pending operator adjudication. Generalised, the rule reads that agents may assemble evidence, compare materials, investigate discrepancies, execute checks and record provisional assessments, but they may not independently assign an authorised verification status, scholarly validation, approval or acceptance.
 
 The capacity to inspect an output is thereby separated from the authority to record it as verified. Where a workflow carries checking states, they stay distinguishable by the procedure that produced them. Combining them into one confidence score destroys exactly the information that makes the state readable.
 
@@ -49,8 +48,8 @@ The capacity to inspect an output is thereby separated from the authority to rec
 
 The role that carries the accountable judgements is the Critical Expert in the Loop. It differs from the generic human in the loop by requiring domain expertise together with awareness of LLM-specific failure modes. Two of those are structural in current systems.
 
-- **Sycophancy** is the tendency to agree with user assumptions instead of challenging them. Absence of objection is therefore no confirmation.
-- **Confabulation** is the generation of plausible but false output. The term fits the behaviour more closely than hallucination, because the model fills a gap with what fits and does not report what it lacks.
+- Sycophancy is the tendency to agree with user assumptions instead of challenging them. Absence of objection is therefore no confirmation.
+- Confabulation is the generation of plausible but false output. The term fits the behaviour more closely than hallucination, because the model fills a gap with what fits and does not report what it lacks.
 
 The role's task extends beyond checking outputs into the unexplored possibility space, into the questions not asked and the alternatives not generated. Alternatives may have been excluded, conventions reproduced without justification, and absences concealed behind an artefact that looks coherent.
 

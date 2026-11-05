@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "stand": "2026-09-27",
+    "stand": "2026-11-05",
     "version": "0.5",
     "beschreibung": "Glossary of the terms of the Promptotyping working practice and of its specification site. This JSON is the authoritative data source for the site (tooltips, glossary page and term index); _content/glossar.md is the readable form of the same content and is generated from this file. Terms the paper text does not carry are marked as site vocabulary in their source list.",
     "schema": "Array of entries with the fields slug (URL anchor fragment, forming the site anchor together with #konzept- or #glossar-), begriff (display form), kurz (one sentence for tooltips), voll (one paragraph of full definition), kategorie (what kind of thing the term names, one key of the controlled taxonomy in _meta.kategorien below), quellen (the carriers of the entry, see below), and the optional suchform (the shorter wording under which the term actually occurs in running text; the term index searches it alongside begriff, which a long nominal phrase never matches). A source carries typ, the display text, and for every typ but text an anker that resolves on this site: vault for an assertion of the grounded vault, page for a page or block of the site, and text for a carrier this site holds no address for. Since 2026-10-28 no source names a section of the paper; a definition is traced to the site page or repository document that carries it.",
@@ -97,7 +97,7 @@
       "slug": "agentic-engineering",
       "begriff": "Agentic Engineering",
       "kurz": "Systematic organisation of the extended, multi-step work of LLM-based agents, from task decomposition and tool use to human intervention and inspection.",
-      "voll": "Agentic Engineering names the deliberate organisation of work that AI agents carry out over many steps. An AI agent here is an LLM-based system that works towards a goal in a series of tool-assisted actions, reading project resources, changing them, assessing what came out and adjusting its next step to it. The questions it settles are how a task is split up and coordinated, how an agent uses its tools and reacts to what it finds, at which points a person has to step in, and how the agent's work is checked and taken up again. Its scope reaches beyond code, since agents also write and revise the documents that describe, steer and evaluate a project. What has changed with current systems is how much work an agent can carry out between two human interventions, and the knowledge that guides this work therefore has to outlast any single interaction. Agentic Engineering and Context Engineering are interdependent, since a well-organised agentic workflow cannot compensate for an inadequate account of the data or research purpose.",
+      "voll": "Agentic Engineering names the deliberate organisation of work that AI agents carry out over many steps. An AI agent here is an LLM-based system that works towards a goal in a series of tool-assisted actions, reading project resources, changing them, assessing what came out and adjusting its next step to it. The questions it settles are how a task is split up and coordinated, how an agent uses its tools and reacts to what it finds, at which points a person has to step in, and how the agent's work is checked and taken up again. Its scope reaches beyond code, since agents also write and revise the documents that describe, steer and evaluate a project. What has changed with current systems is how much work an agent can carry out between two human interventions, and the knowledge that guides this work therefore has to outlast any single interaction. Agentic Engineering is one of the practice's three engineering forms and depends on the other two, since a well-organised agentic workflow cannot compensate for an inadequate account of the data or research purpose, which Knowledge Engineering supplies and Context Engineering selects from.",
       "kategorie": "practice",
       "quellen": [
         {
@@ -116,8 +116,8 @@
       "slug": "agentic-review",
       "begriff": "Agentic Review",
       "kategorie": "checking",
-      "kurz": "Bounded, tool-supported investigation in which LLM-based agents examine an artefact against its sources, references and criteria.",
-      "voll": "Agentic review is a bounded, tool-supported investigation in which one or more LLM-based agents examine outputs, data states, implementations or research artefacts against the relevant sources, references, requirements and criteria. It may locate project files, compare sources and outputs, execute formal checks, investigate discrepancies, or coordinate specialised, parallel or adversarial reviewers. It extends agent-based code review while keeping the wider sense of review as criteria-guided examination. An LLM-as-a-Judge, which scores a supplied output against a reference or rubric, can be one operation within agentic review but does not exhaust it. Its findings stay probabilistic evidence and never constitute authorised verification, scholarly validation or acceptance.",
+      "kurz": "Bounded, tool-supported investigation in which LLM-based agents examine an artefact or the project knowledge against its sources, references and criteria.",
+      "voll": "Agentic review is a bounded, tool-supported investigation in which one or more LLM-based agents, often subagents with a fresh context, examine outputs, data states, implementations, artefacts or knowledge documents against the relevant sources, references, requirements and criteria. It may locate project files, compare sources and outputs, execute formal checks, investigate discrepancies, or coordinate specialised, parallel or adversarial reviewers. It extends agent-based code review while keeping the wider sense of review as criteria-guided examination. An LLM-as-a-Judge, which scores a supplied output against a reference or rubric, can be one operation within agentic review but does not exhaust it. Its findings remain probabilistic evidence and become decisions only through verification or scholarly validation, so that a review never by itself constitutes an authorised verification status, scholarly validation or acceptance.",
       "quellen": [
         {
           "typ": "page",
@@ -228,7 +228,7 @@
       "slug": "context-engineering",
       "begriff": "Context Engineering",
       "kurz": "Deliberate choice, arrangement, upkeep and supply of what an LLM-based system is given to work with.",
-      "voll": "Context Engineering names the deliberate choice, arrangement, upkeep and supply of what an LLM-based system is given to work with. It extends Prompt Engineering from individual prompts to the wider informational environment in which they are interpreted (Mei et al. 2025). Within Promptotyping this environment is organised around maintained project knowledge that records the project's current understanding of its data and purpose, together with decisions and unresolved questions relevant to implementation. Its object is an inspectable body of project knowledge from which the context of each task is selected and renewed, and filling a context window with every available document falls short of it. Distillation is the documentary operation through which Promptotyping builds that body. Promptotyping depends on Context Engineering and Agentic Engineering together, and each of the two needs the other.",
+      "voll": "Context Engineering names the deliberate choice, arrangement, upkeep and supply of what an LLM-based system is given to work with. It extends Prompt Engineering from individual prompts to the wider informational environment in which they are interpreted (Mei et al. 2025). Within Promptotyping this environment is organised around maintained project knowledge that records the project's current understanding of its data and purpose, together with decisions and unresolved questions relevant to implementation. Its object is an inspectable body of project knowledge from which the context of each task is selected and renewed, and filling a context window with every available document falls short of it. Knowledge Engineering builds and curates that body, with Distillation as its foundational operation, and Context Engineering selects from it. Context Engineering is one of the practice's three engineering forms, beside Knowledge Engineering and Agentic Engineering, and each of them depends on the others.",
       "kategorie": "practice",
       "quellen": [
         {
@@ -359,7 +359,7 @@
       "slug": "distillation",
       "begriff": "Distillation",
       "kurz": "Third of Promptotyping's four recurrent forms of work, which translates the understanding from Preparation and Exploration into maintained knowledge documents.",
-      "voll": "Distillation is the third of Promptotyping's four recurrent forms of work and the principal documentary operation of Context Engineering within the practice. It writes what Preparation and Exploration have brought to light into maintained knowledge documents, which implementation and verification then work from, while the complete sources and research data stay at hand for direct reading and computational processing. Summarising, compressing context and saving tokens describe it only in part. Its product is a selective representation open to inspection, which keeps the distinctions, conditions and uncertainties that adequate implementation and verification depend on. In that sense it is pragmatic modelling, addressed to human contributors and agent instances alike. Findings that models do not use all supplied information reliably (Liu et al. 2024; Hong et al. 2025) supply a rationale for this selection. Sufficiency is practical rather than formal. The test is whether a newcomer, human or agent, who is given the pertinent knowledge documents and can reach the project resources is able to work out the current logic of the project and take up the assigned task without explanations that exist nowhere in writing. Successful implementation does not by itself establish scholarly adequacy.",
+      "voll": "Distillation is the third of Promptotyping's four recurrent forms of work and the foundational form of knowledge curation, in which Knowledge Engineering takes written form. It writes what Preparation and Exploration have brought to light into maintained knowledge documents, which implementation and verification then work from, while the complete sources and research data stay at hand for direct reading and computational processing. Summarising, compressing context and saving tokens describe it only in part. Its product is a selective representation open to inspection, which keeps the distinctions, conditions and uncertainties that adequate implementation and verification depend on. In that sense it is pragmatic modelling, addressed to human contributors and agent instances alike. Findings that models do not use all supplied information reliably (Liu et al. 2024; Hong et al. 2025) supply a rationale for this selection. Sufficiency is practical rather than formal. The test is whether a newcomer, human or agent, who is given the pertinent knowledge documents and can reach the project resources is able to work out the current logic of the project and take up the assigned task without explanations that exist nowhere in writing. Successful implementation does not by itself establish scholarly adequacy.",
       "kategorie": "form-of-work",
       "quellen": [
         {
@@ -501,13 +501,14 @@
     {
       "slug": "knowledge-curation",
       "begriff": "Knowledge Curation",
-      "kurz": "Systematic maintenance of the networked knowledge model at the vault layer and at the repository layer.",
-      "voll": "Knowledge curation is the systematic maintenance of the networked knowledge model on two layers, the personal vault as a second brain and the project-specific knowledge vaults in repositories. It knows three types of operation (script-based, semantic, structural) and treats links as navigable context paths for agentic systems. As a cross-cutting practice it is what makes Promptotyping accumulate beyond the individual session.",
+      "kurz": "Examination and revision of the project knowledge in light of what the sources, the checks and the work with the artefacts reveal, running across all four forms of work.",
+      "voll": "Knowledge curation examines the project knowledge against what the sources, the checks and the work with the artefacts reveal, and revises it accordingly. It runs across all four forms of work, Preparation, Exploration, Distillation and Implementation, and each of them returns its findings to the project knowledge through it. A finding is recorded at the level where it applies, from the account of the sources and the data model to the interface or the organisation of agentic work, and statements that have become outdated or unwarranted are corrected. Distillation is its foundational form. The term extends data curation, the maintenance of research data over their lifecycle so that they stay reusable, trustworthy and interpretable, from the data to the project knowledge that governs their use. The two are coupled in practice, since Promptotyping can build the tools in which research data are curated, and what data curation reveals feeds knowledge curation. The Best Practices page describes its operational form on two layers, the personal vault and the project-specific knowledge bases in repositories, with script-based, semantic and structural operations and with links as navigable context paths for agents. Until 5 November 2026 this glossary marked the term as site vocabulary and defined it by that two-layer maintenance alone.",
       "kategorie": "practice",
       "quellen": [
         {
-          "typ": "text",
-          "text": "Site vocabulary, not carried in the paper text"
+          "typ": "page",
+          "anker": "application",
+          "text": "Specification, part 1, Application"
         },
         {
           "typ": "page",
@@ -540,6 +541,24 @@
           "typ": "page",
           "anker": "konvention-v0.1",
           "text": "Konvention Knowledge Documents"
+        }
+      ]
+    },
+    {
+      "slug": "knowledge-engineering",
+      "begriff": "Knowledge Engineering",
+      "kurz": "Eliciting, modelling and curating what researchers and project partners know about domain, data, research contexts and workflows, which yields the project knowledge base.",
+      "voll": "Knowledge Engineering traditionally names the elicitation and formalisation of expert knowledge for computational systems. Within Promptotyping it names the elicitation, modelling and curation of what researchers and project partners know about the domain, the data, the research contexts and the workflows, including their feedback on the artefacts. Its result is the project knowledge base, a set of natural-language documents that records how the data are understood, which decisions were taken and which questions remain open. Where a data model formalises the data, this knowledge base models the domain and its context in language that agents can read, in a semi-formal form that supports no formal inference. Knowledge Engineering is one of the practice's three engineering forms. Context Engineering selects from the knowledge it produces what an agent needs for a given task, and Agentic Engineering organises the work of the agents that act on it. Distillation and knowledge curation are the operations through which it proceeds.",
+      "kategorie": "practice",
+      "quellen": [
+        {
+          "typ": "page",
+          "anker": "application",
+          "text": "Specification, part 1, Application"
+        },
+        {
+          "typ": "text",
+          "text": "knowledge/specification.md, A39"
         }
       ]
     },
@@ -634,6 +653,25 @@
       ]
     },
     {
+      "slug": "project-knowledge-base",
+      "begriff": "Project Knowledge Base",
+      "kurz": "The persistent set of interrelated knowledge documents that records how a project understands its data, which decisions it took and which questions remain open.",
+      "voll": "The project knowledge base is the persistent set of interrelated knowledge documents through which a Promptotyping project records how its data are understood, which decisions were taken and which questions remain open. It complements the research data by adding what they do not state, namely their meaning, the conditions of their interpretation and use, and how they are to be operationalised for the project's purpose. In repository-based projects it is a knowledge/ folder of Markdown files versioned with the code and mapped by an INDEX.md, and the practice also permits interlinked notes or a more structured form as long as the knowledge stays inspectable. Its documents fall into three types, declarative knowledge documents, process knowledge documents and agent instruction documents, which the site calls Declarative, Process and Action Documents. Context Engineering keeps the knowledge base apart from an agent's working context, and material that enters a working context becomes project knowledge only once it has been examined and curated. The knowledge base is itself fallible, because its documents drift from the project state and grow as journals fill, and it is therefore examined against the sources and the project state like any other artefact.",
+      "kategorie": "document-function",
+      "quellen": [
+        {
+          "typ": "page",
+          "anker": "konvention-v0.1",
+          "text": "Konvention Knowledge Documents"
+        },
+        {
+          "typ": "page",
+          "anker": "application",
+          "text": "Specification, part 1, Application"
+        }
+      ]
+    },
+    {
       "slug": "promptotype",
       "begriff": "Promptotype",
       "kategorie": "checking",
@@ -654,8 +692,8 @@
     {
       "slug": "promptotyping",
       "begriff": "Promptotyping",
-      "kurz": "Iterative, knowledge-driven working practice for developing project-specific digital research artefacts from structured research data and maintained project knowledge through Context Engineering and Agentic Engineering.",
-      "voll": "Promptotyping is an iterative, knowledge-driven working practice for developing project-specific digital research artefacts from structured research data and maintained project knowledge through Context Engineering and Agentic Engineering. The name joins *prompt* and *prototyping* and keeps what a prototype is for, a provisional implementation on which requirements and design options can be tried out and refined. Its organising structure is an evolving and versioned project knowledge base, held in versioned files, an interlinked note system or another inspectable and revisable form. Project contributors curate this knowledge and define and oversee the bounded tasks that LLM-based agents carry out, and findings from implementation and examination are written back into it. The work proceeds through four recurrent forms, Preparation, Exploration, Distillation and Implementation. The knowledge base guides implementation without determining a single realisation, so a renewed implementation with another model, harness or project state constitutes a new iteration. Each iteration yields a promptotype.",
+      "kurz": "Iterative, knowledge-driven working practice for developing project-specific digital research artefacts from structured research data and maintained project knowledge through Knowledge Engineering, Context Engineering and Agentic Engineering.",
+      "voll": "Promptotyping is an iterative, knowledge-driven working practice for developing project-specific digital research artefacts from structured research data and maintained project knowledge through Knowledge Engineering, Context Engineering and Agentic Engineering. Knowledge Engineering elicits, models and curates what researchers and project partners know about domain, data and aims, Context Engineering selects from that knowledge what an agent needs for a given task, and Agentic Engineering organises the work of the agents that act on it. The name joins *prompt* and *prototyping* and keeps what a prototype is for, a provisional implementation on which requirements and design options can be tried out and refined. Its organising structure is an evolving and versioned project knowledge base, held in versioned files, an interlinked note system or another inspectable and revisable form. Project contributors curate this knowledge and define and oversee the bounded tasks that LLM-based agents carry out, and findings from implementation and examination are written back into it. The work proceeds through four recurrent forms, Preparation, Exploration, Distillation and Implementation, and knowledge curation runs across all four. The knowledge base guides implementation without determining a single realisation, so a renewed implementation with another model, harness or project state constitutes a new iteration. Each iteration yields a promptotype.",
       "kategorie": "practice",
       "quellen": [
         {
@@ -792,7 +830,7 @@
         },
         {
           "typ": "text",
-          "text": "Zheng et al. 2023 (not in the paper's reference list)"
+          "text": "Zheng et al. 2023"
         },
         {
           "typ": "vault",
@@ -831,10 +869,6 @@
       "voll": "Spec-Driven Development names the corrective the software industry developed against the reliability problems of unreviewed generation. Through 2024 and 2025 agentic coding frameworks converged on maintaining specifications as the source of truth from which LLM-supported agents implement, among them Tessl, BMAD, AWS Kiro, OpenSpec and GitHub Spec Kit. Promptotyping belongs to this movement and shares its core commitments, the versioned document set as the governing unit, the separation of intent from implementation, and a human checkpoint between generation and acceptance. Three things that sit at the periphery there are constitutive here. The data layer describes sources that precede the artefact and carry their own semantics and their own uncertainty, in place of the system under construction. The specification is bound to scholarly verification duties. And the Critical Expert is installed as a role holding domain authority over the subject matter.",
       "kategorie": "practice",
       "quellen": [
-        {
-          "typ": "text",
-          "text": "Site vocabulary, not carried in the paper text"
-        },
         {
           "typ": "vault",
           "anker": "vault-sdd-frameworks-converge-on-specification-over-prompt",
@@ -894,7 +928,7 @@
       "slug": "sycophancy",
       "begriff": "Sycophancy",
       "kurz": "Tendency of LLMs to agree with user assumptions instead of challenging them.",
-      "voll": "Sycophancy is the tendency of LLMs to agree with the assumptions of their users instead of challenging them (Sharma et al. 2023; Fanous et al. 2025). Beside confabulation it is one of the two structural failure modes the Critical Expert addresses. The Critical Expert has to recognise that an absence of contradiction from the LLM constitutes no validation. In CorrespExplorer the LLM agreed with suboptimal decisions as soon as they were phrased as a proposal.",
+      "voll": "Sycophancy is the tendency of LLMs to agree with the assumptions of their users instead of challenging them (Sharma et al. 2024; Fanous et al. 2025). Beside confabulation it is one of the two structural failure modes the Critical Expert addresses. The Critical Expert has to recognise that an absence of contradiction from the LLM constitutes no validation. In CorrespExplorer the LLM agreed with suboptimal decisions as soon as they were phrased as a proposal.",
       "kategorie": "failure-mode",
       "quellen": [
         {
@@ -903,7 +937,7 @@
         },
         {
           "typ": "text",
-          "text": "Sharma et al. 2023 (not in the paper's reference list)"
+          "text": "Sharma et al. 2024"
         },
         {
           "typ": "text",
@@ -1002,7 +1036,7 @@
       "slug": "verification-validation",
       "begriff": "Verification and Validation",
       "kurz": "Technical verification tests an output against formalised requirements, and scholarly validation asks whether a representation is supported by its sources and fit for its purpose.",
-      "voll": "Promptotyping distinguishes technical verification, which assesses whether an output or implementation conforms to formalised requirements such as a schema, test, constraint or specified mapping, from scholarly validation, which assesses whether the underlying representation is warranted by the source material and adequate for its intended research purpose. An implementation can therefore be technically correct and still fail validation, because the requirement it faithfully realises is itself inadequate. The pair is taken over from software and systems engineering, where verification means conformity to specified requirements and validation means fitness for intended use and user needs (IEEE Std 1012). Scholarly validation requires responsible human judgement wherever adequacy depends on source knowledge, interpretation or design decisions. The Checking page divides checking into four forms, deterministic verification, agentic review, Critical Expert verification and adjudication, and scholarly validation. In the third form verification names the accountable examination of particular outputs against their sources, whereas technical verification names conformity to formalised requirements. Where such an examination judges whether a representation is warranted by the sources, it belongs in IEEE 1012 terms to validation. Schema validation, the established XML term for an automatic check against a schema, keeps its name as a term of art and is in this sense a form of verification.",
+      "voll": "Promptotyping distinguishes technical verification, which assesses whether an output or implementation conforms to formalised requirements such as a schema, test, constraint or specified mapping, from scholarly validation, which assesses whether the underlying representation is warranted by the source material and adequate for its intended research purpose. An implementation can therefore be technically correct and still fail validation, because the requirement it faithfully realises is itself inadequate. The pair is taken over from software and systems engineering, where verification means conformity to specified requirements and validation means fitness for intended use and user needs (IEEE Std 1012). Scholarly validation requires responsible human judgement wherever adequacy depends on source knowledge, interpretation or design decisions. The Checking page divides checking into three forms, verification, agentic review and scholarly validation, and treats acceptance as the decision that follows them. Until 5 November 2026 it counted Critical Expert verification and adjudication as a fourth form, and the accountable examination of particular outputs against their sources that this form named now belongs to scholarly validation. Schema validation, the established XML term for an automatic check against a schema, keeps its name as a term of art and is in this sense a form of verification.",
       "kategorie": "checking",
       "quellen": [
         {
@@ -1043,13 +1077,9 @@
       "slug": "vibe-coding",
       "begriff": "Vibe Coding",
       "kurz": "Practice of generating code through natural language and accepting it without thorough review.",
-      "voll": "Vibe Coding denotes a practice in which code is generated through instructions in natural language and accepted without thorough review (Karpathy 2025). Sarkar and Drosos (2025) describe iterative goal-satisfaction cycles and material disengagement. Promptotyping shares the premise that LLMs can generate functional code from natural language. Its additional controls are the upstream forms Preparation and Exploration, persistent documentation, systematic verification, purpose-specific acceptance, and write-back. Vibe Coding survives inside Promptotyping as an exploratory mode.",
+      "voll": "Vibe Coding denotes a practice in which code is generated through instructions in natural language and accepted without thorough review (Karpathy 2025a). Sarkar and Drosos (2025) describe iterative goal-satisfaction cycles and material disengagement. Promptotyping shares the premise that LLMs can generate functional code from natural language. Its additional controls are the upstream forms Preparation and Exploration, persistent documentation, systematic verification, purpose-specific acceptance, and write-back. Vibe Coding survives inside Promptotyping as an exploratory mode.",
       "kategorie": "practice",
       "quellen": [
-        {
-          "typ": "text",
-          "text": "Site vocabulary, not carried in the paper text"
-        },
         {
           "typ": "text",
           "text": "Sarkar and Drosos 2025 (not in the paper's reference list)"
@@ -1061,7 +1091,7 @@
         },
         {
           "typ": "text",
-          "text": "Karpathy 2025 (not in the paper's reference list)"
+          "text": "Karpathy 2025a"
         }
       ]
     },

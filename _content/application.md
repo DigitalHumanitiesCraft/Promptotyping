@@ -5,7 +5,7 @@ status: complete
 language: en
 version: "0.6"
 created: 2026-07-25
-updated: 2026-08-25
+updated: 2026-11-05
 source: Promptotyping working practice, forms of work and project knowledge base
 machine-url: https://dhcraft.org/Promptotyping/_content/application.md
 ---
@@ -53,7 +53,7 @@ This form of work has a dimension beyond the feasibility check. The LLM generate
 
 ## Distillation
 
-What Exploration taught is compressed into the document set. This is where context engineering happens in the strict sense, the deliberate construction of the context an LLM will work from, under the principle of maximum information with minimum tokens.
+What Exploration taught is distilled into the document set. Distillation is the foundational form of knowledge curation, in which Knowledge Engineering takes written form. Its product is the selective representation from which Context Engineering later chooses what an agent reads for a task, and it is written under the principle of maximum information with minimum tokens.
 
 - **Entry.** The findings of Exploration and the raw materials of Preparation.
 - **Steps.** Bring every document onto one bounded function. Resolve redundancy through references rather than repetition. Where the corpus is large or heterogeneous, render descriptions deterministically from the source data and place them beside the curated layer as generated documents. Before the passage into Implementation, run an overengineering check and deliberately reduce the specification to a minimal viable scope, so that the first working artefact stays small enough to inspect.

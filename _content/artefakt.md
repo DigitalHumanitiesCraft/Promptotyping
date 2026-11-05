@@ -5,7 +5,7 @@ status: complete
 language: en
 version: "0.3"
 created: 2026-07-25
-updated: 2026-07-31
+updated: 2026-11-05
 source: Promptotyping working practice, artefact forms and evidential scope
 machine-url: https://dhcraft.org/Promptotyping/_content/artefakt.md
 ---
@@ -42,7 +42,7 @@ The default holds as long as its conditions hold, and the record shows the side 
 
 The browser-based interfaces of the documented projects sort by the epistemic function they serve. Data format and visualisation technique have proved weaker as ordering principles.
 
-The typology below is the site's own. It descends from an earlier draft of the paper, and the five names given here are the ones the use-case gallery filters by. Since the revision of 31 July 2026 the paper draws its own line differently. It names six operational forms, Capture, Transformation, Exploration, Edition, Verification and the integrated scholarly workbench, and it orders them under three methodological functions of implementation, production and curation, prospective modelling and exploration, and project formation with bounded communication. Two differences are worth holding apart. The paper counts Transformation as a form in its own right, which this page treats as a side form of the default; and the paper replaces the site's Audit category with the integrated workbench, which is a different cut rather than a rename. The site keeps its five names because published card filters and the colour scale depend on them.
+The typology below is the site's own. It descends from an earlier draft of the paper, and the five names given here are the ones the use-case gallery filters by. The paper in its version 1.0 sets up no typology of its own. It defines digital research artefacts by their function, as the project-specific forms in which models of the domain and its data become operational for a defined scholarly purpose, and it gives digital editions, interactive visualisations, data workflows, project-specific schemas or ontologies, and tools as examples. Because the definition concerns function, a schema under revision counts as an artefact, and the same schema may become infrastructure once it is stabilised and shared. The site keeps its five names because published card filters and the colour scale depend on them.
 
 - **Verification.** Checks the intermediate results of a pipeline at defined points and makes them comparable and correctable before errors propagate. The paradigmatic case is a comparison viewer for several text-recognition sources with layout overlay.
 - **Exploration.** Opens up existing structured research data through coordinated views. Here the interface is the primary research artefact, the means through which the data becomes analytically accessible.

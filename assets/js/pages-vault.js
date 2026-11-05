@@ -462,7 +462,7 @@
 
     A.openSidePanel(assertion.title,
       '<p class="vault-panel-status">Status ' + A.escapeHtml(assertion.status) +
-      (assertion.topics.length ? " &middot; " + assertion.topics.map(A.escapeHtml).join(", ") : "") + "</p>" +
+      (assertion.topics.length ? ", topics " + assertion.topics.map(A.escapeHtml).join(", ") : "") + "</p>" +
       "<p>" + A.escapeHtml(assertion.statement) + "</p>" +
       contested +
       "<h3>Grounding</h3><ul class=\"vault-anchor-list\">" + anchors + "</ul>");

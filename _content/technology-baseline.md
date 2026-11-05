@@ -5,7 +5,7 @@ status: draft
 language: en
 version: 0.2
 created: 2026-07-23
-updated: 2026-07-26
+updated: 2026-11-05
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 machine-url: https://dhcraft.org/Promptotyping/_content/technology-baseline.md
@@ -13,7 +13,7 @@ machine-url: https://dhcraft.org/Promptotyping/_content/technology-baseline.md
 
 # Technology Baseline. The static website as a research tool
 
-This document carries the project-independent technology knowledge for the practice's most frequent artefact type, the self-contained static web tool. It is the layer of rationale that the `architecture.md` of a project instance refers to instead of restating the stack argument in every repository, and the instance then documents only its deviations. The paper gives the scholarly short form of the artefact argument and names six operational forms of the digital research artefact (Pollin 2026); the self-contained static web tool as the default artefact form of the practice is the site's own position and stands on the [artefact page](#artefakt). This document is the operative long form with the concrete rules.
+This document carries the project-independent technology knowledge for the practice's most frequent artefact type, the self-contained static web tool. It is the layer of rationale that the `architecture.md` of a project instance refers to instead of restating the stack argument in every repository, and the instance then documents only its deviations. The paper gives the scholarly short form of the artefact argument, defining digital research artefacts by their function and naming digital editions, interactive visualisations, data workflows, project-specific schemas or ontologies and tools as examples (Pollin 2026). The self-contained static web tool as the default artefact form of the practice is the site's own position and stands on the [artefact page](#artefakt). This document is the operative long form with the concrete rules.
 
 ## Why the static form
 
@@ -76,7 +76,7 @@ The `architecture.md` of a project refers to this document as its baseline and c
 
 ## Sources
 
-- Pollin, Christopher: Promptotyping. Translating Research Data into Research Artefacts through Context Engineering and Agentic Engineering. Manuscript, 2026, forthcoming in the journal.
+- Pollin, Christopher: Promptotyping. Translating Research Data into Research Artefacts through Knowledge, Context, and Agentic Engineering. Manuscript, 2026, forthcoming in the journal.
 - Risam, Roopika; Gil, Alex: Introduction. The Questions of Minimal Computing. In: Digital Humanities Quarterly 16,2 (2022). https://www.digitalhumanities.org/dhq/vol/16/2/000646/000646.html
 - The Endings Project: Principles for Digital Longevity. https://endings.uvic.ca/principles.html
 - Chue Hong, Neil P.; Katz, Daniel S.; Barker, Michelle et al.: FAIR Principles for Research Software (FAIR4RS Principles). Research Data Alliance 2022. https://doi.org/10.15497/RDA00068
