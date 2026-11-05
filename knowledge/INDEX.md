@@ -7,9 +7,9 @@ status: complete
 language: en
 version: 1.1
 created: 2026-05-09
-updated: 2026-11-04
+updated: 2026-11-05
 authors: [Christopher Pollin]
-generated-with: Claude Code (Claude Fable 5, Claude Opus 5)
+generated-with: Claude Code (Claude Fable 5, Claude Opus 5, Claude Opus 5.5)
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
@@ -25,9 +25,7 @@ related: [project, governance, specification, architecture, design, verification
 
 ## Manuscript publication boundary
 
-The operator withdrew the manuscript from the current public repository and GitHub Pages on 14 October 2026. The public repository carries the specification of the Promptotyping practice, and the manuscript is maintained outside it. The former Paper route and section links show an availability notice without loading manuscript prose. The manuscript file is absent from the deployed tree. Earlier commits and historical publication records are retained, so this removal does not undo prior public availability.
-
-For manuscript work, obtain the current author-controlled text before editing. Historical references below to the repository manuscript and its rendering describe the earlier arrangement and do not authorise restoring it. The journal's acceptance of the expose does not establish acceptance of the full manuscript or resolve eligibility of the previously public draft.
+The public repository carries the specification of the Promptotyping practice, and the manuscript is maintained outside it. The manuscript left the repository and GitHub Pages on 14 October 2026, and the material bound to it followed on 28 October 2026 (operator decisions). The site carries no paper page and states the definitions it shares with the manuscript in its own words. The rule and its history are in [specification.md](specification.md#manuscript-publication-boundary), and paper work does not happen in this repository. Earlier commits and historical publication records are retained, so the removal does not undo prior public availability. The journal's acceptance of the expose does not establish acceptance of the full manuscript or resolve eligibility of the previously public draft.
 
 
 Navigation and glossary of this repository's durable knowledge base. The repository `DigitalHumanitiesCraft/Promptotyping` is the public site for the specification of the Promptotyping practice at https://dhcraft.org/Promptotyping/. File names and paths are the primary routing signals; this index confirms each function and separates durable project knowledge from Research Artefacts, Source Material, Snapshots, Handoffs, and generated site data.
@@ -78,13 +76,14 @@ The paper is maintained outside this repository and will be published in the jou
 ## Reading order
 
 1. INDEX (orientation)
-2. **handoff.md** (which received deltas are open)
-3. **project.md** (what the site is)
-4. **governance.md** (who has authority and which rules bind changes)
-5. **specification.md** (what it can do)
-6. **architecture.md** (how it is built)
-7. **design.md** (how it looks)
-8. **journal.md** (the provenance of substantive transitions)
+2. handoff.md (which received deltas are open)
+3. plan.md (which accepted work remains, in the order `CLAUDE.md` sets for session start)
+4. project.md (what the site is)
+5. governance.md (who has authority and which rules bind changes)
+6. specification.md (what it can do)
+7. architecture.md (how it is built)
+8. design.md (how it looks)
+9. journal.md (the provenance of substantive transitions)
 
 
 ## Glossary
@@ -95,15 +94,15 @@ Terms constitutive for this knowledge base. Canonical definitions live in the li
 
 **Promptotype.** The artefact state that each iteration yields, which holds only in relation to the project knowledge and research-data state underlying it. It is a means of knowing, since using it reveals which distinctions the data sustain and at which points the work breaks down. It counts as finished for a given purpose when the responsible expert has accepted it through scholarly validation. Until 2026-10-28 this glossary reserved the term for an accepted iteration with documented grounds of acceptance.
 
-**Knowledge Document.** Structured Markdown document in a repository's `knowledge/` folder. All of them are Knowledge Documents, specialised by the kind of knowledge they carry into three analytical types, Declarative (subject matter), Process (workflow state and provenance), Action (imperative). The paper calls the three types declarative knowledge documents, process knowledge documents and agent instruction documents. Until July 2026 the declarative type itself was called Knowledge Document, and the name then moved to the umbrella term.
+**Knowledge Document.** Structured Markdown document in a repository's `knowledge/` folder. All of them are Knowledge Documents, specialised by the kind of knowledge they carry into three analytical types, Declarative (subject matter), Process (workflow state and provenance), Action (imperative). The paper calls the three types declarative knowledge documents, process knowledge documents and agent instruction documents. Site and convention keep the short names Declarative, Process and Action Document beside the paper's names (operator decision recorded in [journal.md](journal.md), entry of 2026-09-27). Until July 2026 the declarative type itself was called Knowledge Document, and the name then moved to the umbrella term.
 
 **Template (Vorlage).** Fillable structural pattern for one function of a Promptotyping knowledge base. The function names are English: Navigation, Charter, Material, Specification, Architecture, Technology Baseline, Domain Knowledge, Design, Quality Assurance, Verification, Provenance, Handoff, Planning, Governance, Reporting, Integration, and Agent Instructions. The catalogue lives in the vault; the site mirrors the templates as versioned anchors. A template carries only where its trigger holds.
 
 **Naming Contract.** Repository rule that makes the file name and path the primary routing signal. Durable single carriers use canonical function names; specialisations follow `<subject>-<function>.md`. `knowledge/handoff.md` is the live inbox, while exceptional dated Handoff snapshots and Reports include scope and date outside `knowledge/`. `INDEX.md` and `CLAUDE.md` are the registered uppercase exceptions.
 
-**ZfdG.** Official abbreviation of *Zeitschrift für digitale Geisteswissenschaften*. It appears in the scope of the dated submission report under `snapshots/`.
+**ZfdG.** Official abbreviation of *Zeitschrift für digitale Geisteswissenschaften*. [journal.md](journal.md) uses it for the venue decision of 2026-07-23. The dated submission report that also carried it left `snapshots/` on 2026-10-28.
 
-**Konvention Knowledge Documents.** The description of knowledge-base functions, the frontmatter schema, and the structural principles. Lives in the vault, mirrored on the public site as an external specification.
+**Konvention Knowledge Documents.** The description of knowledge-base functions, the frontmatter schema, and the structural principles. Lives in the vault, mirrored on the public site as an external specification. The vault file still carries the earlier name `Konvention Promptotyping Documents.md`, whose renaming the journal entry of 2026-09-27 records as open vault work.
 
 **Anchor schema.** System of permanently stable URL anchors on the site (`#promptotyping-document-data`, `#case-herdata`, `#konzept-eil`). Version snapshots add sub-anchors (`#promptotyping-document-data-v0.1`). Repositories linking via the `template:` field address these anchors; anchors are never renamed. Since the rebuild of 2026-07-25 the site shows one page at a time and holds the inactive pages in the DOM, which is what keeps every published anchor resolvable (`specification.md`, `architecture.md`).
 

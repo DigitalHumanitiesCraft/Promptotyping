@@ -7,9 +7,9 @@ status: active
 language: en
 version: "0.6"
 created: 2026-07-29
-updated: 2026-10-28
+updated: 2026-11-05
 authors: [Christopher Pollin]
-generated-with: Claude Code (Claude Fable 5)
+generated-with: Claude Code (Claude Fable 5, Claude Opus 5.5)
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
@@ -40,6 +40,7 @@ The final evaluation target is an external researcher or project lead who can ex
 | Workstream | Owning document | Next work |
 |---|---|---|
 | Portal evaluation | This plan and [verification.md](verification.md) | Retain technical checks; obtain external use and operator acceptance against the delivery milestones |
+| Introduction page (A47) | [specification.md](specification.md#a47--introduction-page-for-newcomers) and [design.md](design.md#introduction-page) | Obtain a human reading and the operator's acceptance, and settle whether the workshop of 9 and 10 November 2026 covers the setup |
 | Promptotyping Bench | [benchmark-plan.md](benchmark-plan.md) | Use the prepared SZD package for an author rehearsal, obtain independent review and build measured trials; no effectiveness result exists yet |
 | Project knowledge maintenance | [INDEX.md](INDEX.md) and the relevant owning document | Keep current contracts, state and historical evidence distinct; update links after moving an artefact |
 

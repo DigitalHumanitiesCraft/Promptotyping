@@ -7,9 +7,9 @@ status: complete
 language: en
 version: "1.0"
 created: 2026-05-09
-updated: 2026-11-04
+updated: 2026-11-05
 authors: [Christopher Pollin]
-generated-with: Claude Code (Claude Opus 4.8)
+generated-with: Claude Code (Claude Opus 4.8, Claude Opus 5.5)
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
@@ -148,7 +148,7 @@ The site is laid out as specification documentation, in the manner of a library 
 
 Desktop uses a two-track grid inside a 1240px container: the page tree (`--nav-width: 250px`) and the page (`minmax(0, 1fr)` with `--read-width: 820px` max, centred). The tree is sticky below the fixed header (`--header-height: 3.25rem`) and scrolls independently. The side panel stays outside the grid as a `position: fixed` overlay of `--panel-width: 360px`.
 
-The tree groups the pages under Spezifikation, Referenz, Belege, Werkzeuge und Praxis, and Paper, one flat run per group with a gap between the runs and no label over any of them; the active page is marked by a left border and bold weight. Two entries carry a permanent subtree, the specification with its five numbered parts and the paper with its sections, and the section the reader is in is marked in the same greys at 0.8125rem with a left border. The tree is never collapsible, and since 2026-07-29 nothing else in the interface is either. Below 860px it stacks above the page and stays visible, showing the subtree of the page being read alone, tables scroll inside their own box, and the side panel becomes a bottom sheet. An on-this-page rail was built and removed the same day by operator decision. What replaced it for the one page that needs it is a static table of contents at the head of the paper page, two columns on the desktop and one below 860px, set in the greys of the system and carrying no colour of its own. It stands still while the reader scrolls, which is the difference from the rail.
+The tree groups the pages under Specification, Reference, Evidence, and Tools and practice, one flat run per group with a gap between the runs and no label over any of them. The active page is marked by a left border and bold weight. The specification carries the one permanent subtree, its five numbered parts, and the part the reader is in is marked in the same greys at 0.8125rem with a left border. The Paper group and the subtree of the paper's sections left with the paper view on 2026-10-28. The tree is never collapsible, and since 2026-07-29 nothing else in the interface is either. Below 860px it stacks above the page and stays visible, showing the subtree of the page being read alone, tables scroll inside their own box, and the side panel becomes a bottom sheet. An on-this-page rail was built and removed the same day by operator decision. The static table of contents that replaced it at the head of the paper page was retired with that page on 2026-10-28.
 
 The header carries the wordmark and the kind marker, with no mark beside it, and the signature band along its foot. Both the DHCraft watercolour and the Promptotyping logo were tried in that slot and dropped, because a chromatic detail image at 22 pixels reads as a smudge and would put a hue on the page that means nothing. The carrier mark stays in the footer and supplies the favicon. The footer's auto-fitting grid currently resolves into four content columns: carrier and licence, addresses and machine access, the state of the specification, and implementation. The implementation column names Digital Humanities Craft, the documented AI harnesses and models, and Promptotyping without repeating the repository link already present in the addresses column.
 
@@ -162,8 +162,8 @@ The right-hand panel slides in from the right on a trigger.
 
 - A glossary term in the reading flow (dotted underline, `cursor: help`)
 - A template button in the first cell of each clickable Vorlagen-table row
-- A case-study card "Mehr" link
-- A literature reference in the paper
+- The "More" button of a case-study card
+- An assertion in the vault view
 
 ### Behaviour
 
@@ -274,7 +274,7 @@ On 2026-11-04 three subagents read screenshots and page text in the roles of a h
 
 A check of the providers' pages on the same day corrected two statements. Codex is included in every ChatGPT plan, the free one too, while Claude Code needs the Pro plan or above. Codex in its recommended mode works inside the project folder without asking and asks before it reaches beyond it, so only Claude Code asks before every change. The page now names these plans and modes with their sources, links three documented cases, says that the duration of a round has not been measured, asks for a licence on generated code and documents, and states that fully local work is not covered.
 
-Open are a price, whether the workshop covers the setup, a human reading and the operator's acceptance.
+Prices stay off the page because they change (journal, 2026-11-04). Open are whether the workshop covers the setup, a human reading and the operator's acceptance.
 
 ## What the design is not
 

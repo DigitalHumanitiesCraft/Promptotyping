@@ -7,9 +7,9 @@ status: complete
 language: en
 version: 0.7
 created: 2026-05-09
-updated: 2026-10-28
+updated: 2026-11-05
 authors: [Christopher Pollin]
-generated-with: Claude Code (Claude Opus 4.8)
+generated-with: Claude Code (Claude Opus 4.8, Claude Opus 5.5)
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
@@ -48,7 +48,7 @@ The Promptotyping portal primarily mirrors knowledge. Its material basis is stat
 
 Four source types feed the site.
 
-**The paper.** The scholarly text, *Promptotyping. Translating Research Data into Research Artefacts through Context Engineering and Agentic Engineering*, is maintained outside this repository and will be published in the journal. Neither the manuscript nor the material bound to it, its specification, review tooling, figures and audits, belongs to this repository (operator decision 2026-10-28).
+**The paper.** The scholarly text, in its current version titled *Promptotyping. Translating Research Data into Research Artefacts through Knowledge, Context, and Agentic Engineering*, is maintained outside this repository and will be published in the journal. Neither the manuscript nor the material bound to it, its specification, review tooling, figures and audits, belongs to this repository (operator decision 2026-10-28).
 
 **Vault templates and convention.** The template catalogue under `Vault Operations/Templates/Promptotyping/` and the convention under `Vault Operations/Konventionen/Konvention Promptotyping Documents.md` are the source of truth in the vault. Function names and subject prefixes are English. The public mirrors preserve their established URLs and anchors while adopting the current naming contract and template versions.
 
@@ -56,7 +56,7 @@ Four source types feed the site.
 
 **Videos on YouTube.**
 
-- Part 1, explanation of the practice: https://youtu.be/8sUe4Jkh3uQ (four phases, distillation, context-window management, Knowledge Documents, EIL, sycophancy)
+- Part 1, explanation of the practice: https://youtu.be/8sUe4Jkh3uQ (the four forms of work, which the video calls phases, distillation, context-window management, Knowledge Documents, EIL, sycophancy)
 - Part 2, live demo with Claude Code: https://youtu.be/hd_a-NBO_S4 (a set of Excel documents turned into a functional dashboard, thinking matrix, context compression, iterative error correction)
 
 ## Scope

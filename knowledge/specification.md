@@ -7,9 +7,9 @@ status: complete
 language: en
 version: "1.0"
 created: 2026-05-09
-updated: 2026-11-04
+updated: 2026-11-05
 authors: [Christopher Pollin]
-generated-with: Claude Code (Claude Opus 4.8)
+generated-with: Claude Code (Claude Opus 4.8, Claude Opus 5.5)
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
@@ -281,7 +281,7 @@ Acceptance criterion. Canonical and legacy Overview and Application routes reach
 ### A47 — Introduction page for newcomers
 A separate page under `intro/` (`https://dhcraft.org/Promptotyping/intro/`) explains the practice to readers without prior knowledge of Git, coding assistants or the specification (operator decision 2026-11-04, prepared for the workshop of 9 and 10 November 2026). It follows the method pages of the Second Brain Vault and Grounded Vault rather than the portal, so it carries the DHCraft corporate design and an English default with a German version under `?lang=de`. The portal remains the specification, its anchors and design are untouched, and the Overview links the page from its goal routes.
 
-The page answers three questions in three parts. The hero states what Promptotyping physically is and for whom, and plays one synthetic round in seven named steps beside the project folder and a small prototype. The second part gives the six tutorial steps as short prompts with a self-check each, beside a folder that follows the step in view. The third part states what leaves the reader's computer, what the practice is and is not, and where the specification continues. Interaction and visual rules are in [design.md](design.md#introduction-page).
+The page answers three questions in three parts. The hero states what Promptotyping physically is and for whom, and plays one synthetic round in seven named steps beside the project folder and a small prototype. The second part opens with setting up the assistant and then gives the six tutorial steps under the names of the example, each with a short paragraph, a copyable prompt and a self-check, beside a folder that follows the step in view. The third part states what leaves the reader's computer, what the practice is and is not, and where the specification continues. Interaction and visual rules are in [design.md](design.md#introduction-page).
 
 The example is invented. A family correspondence with partly uncertain dates becomes a timeline. The check finds that letters dated only to a year sit on 1 January, the finding is written into specification, design and journal before the code changes, and the next version draws such dates as spans. It shows the write-back that distinguishes the practice from code generation, and its user story is the one the tutorial uses.
 
