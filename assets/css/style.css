@@ -1,5 +1,6 @@
-/* Promptotyping Site design system. Black on white, one grey accent, Inter for
-   text, Consolas for code. Cascade order, and the only order the file may have:
+/* Promptotyping Site design system on the shared DHCraft tokens (paper ground,
+   ink text, Sora for headings, Instrument Sans for text, system monospace for
+   code), loaded before this file from assets/dhcraft/. Cascade order, and the only order the file may have:
 
      1  Fonts
      2  Design tokens          the sole place a literal colour may stand
@@ -16,38 +17,10 @@
 
 /* ============================================================
    1  Fonts
-   Inter self-hosted (no Google Fonts, no external CDN: the site promises no
-   tracking). Four static weights; font-display: swap with a system fallback.
+   Sora and Instrument Sans are served from assets/dhcraft/fonts/ and declared in
+   assets/dhcraft/dhcraft-tokens.css, the shared DHCraft token file, which
+   index.html and 404.html load before this stylesheet. No runtime CDN.
    ============================================================ */
-
-@font-face {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("../fonts/inter-latin-400-normal.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("../fonts/inter-latin-500-normal.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("../fonts/inter-latin-600-normal.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("../fonts/inter-latin-700-normal.woff2") format("woff2");
-}
 
 /* ============================================================
    2  Design tokens
@@ -56,17 +29,24 @@
    ============================================================ */
 
 :root {
-  /* Colour */
-  --bg: #ffffff;
-  --text: #1a1a1a;
-  --accent: #d5d5d5;
-  --border: #e0e0e0;
-  --code-bg: #f5f5f5;
+  /* Colour. The portal's roles resolve onto the shared DHCraft roles of
+     assets/dhcraft/dhcraft-tokens.css (adopted 2026-11-10), whose light-dark()
+     values follow the data-theme attribute, so the dark theme needs no second
+     copy of them here. */
+  --bg: var(--dh-ground);
+  --text: var(--dh-ink);
+  --link: var(--dh-link);
+  --accent: var(--dh-line-strong);
+  --border: var(--dh-line);
+  --code-bg: var(--dh-ground-alt);
+  --surface: var(--dh-surface);
+  --brand-accent: var(--dh-accent);
+  --on-brand-accent: var(--dh-on-accent);
 
-  /* General grey accents, carrying no categorical meaning. */
-  --grey-1: #2a2a2a;
-  --grey-2: #525252;
-  --grey-3: #8a8a8a;
+  /* General ink steps, carrying no categorical meaning. */
+  --grey-1: var(--dh-ink);
+  --grey-2: var(--dh-ink-soft);
+  --grey-3: var(--dh-line-strong);
 
   /* Same value as the muted grey, kept as its own name because the glossary
      underline is a separate decision from the grey scale. */
@@ -98,8 +78,9 @@
     #ff6a00 70%, #ff2ea6);
 
   /* Type */
-  --font-text: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-code: Consolas, "SFMono-Regular", Menlo, Monaco, "Liberation Mono", monospace;
+  --font-text: var(--dh-font-text);
+  --font-display: var(--dh-font-display);
+  --font-code: var(--dh-font-mono);
 
   /* Spacing: 8px grid with 4px half-step */
   --space-1: 0.25rem; /* 4px */
@@ -112,7 +93,9 @@
 
   /* Shape, lines and type steps of the start page. Held here so that a shared
      corporate design across the DHCraft method sites is a swap of values. */
-  --radius: 2px;
+  --radius: var(--dh-radius-s);
+  --radius-pill: var(--dh-radius-pill);
+  --brand-mark: 1.75rem;
   --line-graphic: var(--grey-3);
   --arrow-head: 6px;
   --arrow-half: 4px;
@@ -139,15 +122,6 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #131313;
-    --text: #e9e9e9;
-    --accent: #3d3d3d;
-    --border: #2e2e2e;
-    --code-bg: #1c1c1c;
-    --grey-1: #d4d4d4;
-    --grey-2: #a6a6a6;
-    --grey-3: #7d7d7d;
-    --glossar-underline: var(--grey-3);
     --shadow-panel: -2px 0 12px rgba(255, 255, 255, 0.06);
     --shadow-tooltip: 0 2px 8px rgba(255, 255, 255, 0.08);
     --backdrop: rgba(0, 0, 0, 0.6);
@@ -160,15 +134,6 @@
 }
 
 :root[data-theme="dark"] {
-  --bg: #131313;
-  --text: #e9e9e9;
-  --accent: #3d3d3d;
-  --border: #2e2e2e;
-  --code-bg: #1c1c1c;
-  --grey-1: #d4d4d4;
-  --grey-2: #a6a6a6;
-  --grey-3: #7d7d7d;
-  --glossar-underline: var(--grey-3);
   --shadow-panel: -2px 0 12px rgba(255, 255, 255, 0.06);
   --shadow-tooltip: 0 2px 8px rgba(255, 255, 255, 0.08);
   --backdrop: rgba(0, 0, 0, 0.6);
@@ -179,11 +144,6 @@
   --fn-audit: #cf7aa6;
 }
 
-/* The watercolour logo is a light-background mark; dim it rather than ship a
-   second file. */
-:root[data-theme="dark"] .site-footer-brand img {
-  opacity: 0.85;
-}
 
 /* ============================================================
    4  Reset and base
@@ -211,14 +171,14 @@ body {
 }
 
 a {
-  color: var(--text);
+  color: var(--link);
   text-decoration: underline;
   text-decoration-color: var(--accent);
   text-underline-offset: 2px;
 }
 
 a:hover {
-  text-decoration-color: var(--text);
+  text-decoration-color: currentColor;
 }
 
 .visually-hidden {
@@ -258,7 +218,7 @@ a:hover {
   padding: 0;
   background: none;
   border: 1px solid transparent;
-  border-radius: 2px;
+  border-radius: var(--radius);
   color: var(--grey-2);
   cursor: pointer;
   transition: color 150ms ease-out, border-color 150ms ease-out;
@@ -325,6 +285,8 @@ a:hover {
 .docs-brand img {
   align-self: center;
   display: block;
+  width: auto;
+  height: var(--brand-mark);
 }
 
 .docs-brand-word {
@@ -552,6 +514,14 @@ a:hover {
    Everything the Markdown renderer produces inside .content.
    ============================================================ */
 
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.docs-brand-word {
+  font-family: var(--font-display);
+}
+
 .content h1 {
   font-size: 2.25rem;
   font-weight: 700;
@@ -627,14 +597,14 @@ a:hover {
   font-size: 0.9375rem;
   background: var(--code-bg);
   padding: 0.1em 0.3em;
-  border-radius: 2px;
+  border-radius: var(--radius);
 }
 
 .content pre {
   background: var(--code-bg);
   padding: var(--space-4);
   overflow-x: auto;
-  border-radius: 2px;
+  border-radius: var(--radius);
   line-height: 1.4;
   margin: 0 0 var(--space-4);
 }
@@ -722,10 +692,12 @@ a:hover {
 }
 
 .start-button {
-  display: inline-block;
-  padding: var(--space-2) var(--space-4);
-  border: 1px solid var(--text);
-  border-radius: var(--radius);
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--dh-tap);
+  padding: var(--space-2) var(--space-6);
+  border: 1px solid var(--grey-3);
+  border-radius: var(--radius-pill);
   font-size: var(--text-md);
   font-weight: 500;
   line-height: 1.4;
@@ -735,22 +707,24 @@ a:hover {
 }
 
 .start-button:hover {
-  background: var(--code-bg);
+  border-color: var(--brand-accent);
 }
 
 .start-button.is-primary {
-  background: var(--text);
-  color: var(--bg);
+  background: var(--brand-accent);
+  border-color: var(--brand-accent);
+  color: var(--on-brand-accent);
 }
 
 .start-button.is-primary:hover {
-  background: var(--grey-1);
+  background: var(--link);
+  border-color: var(--link);
 }
 
 .start-button:focus-visible,
 .start a:focus-visible {
-  outline: 2px solid var(--text);
-  outline-offset: 2px;
+  outline: var(--dh-focus-ring);
+  outline-offset: var(--dh-focus-offset);
 }
 
 .start > h2 {
@@ -794,6 +768,7 @@ a:hover {
   padding: var(--space-4);
   border: 1px solid var(--line-graphic);
   border-radius: var(--radius);
+  background: var(--surface);
   line-height: 1.4;
 }
 
@@ -1102,6 +1077,20 @@ a:hover {
   font-size: 0.9375rem;
 }
 
+/* The shared heading scale is set for page titles; inside the panel the
+   rendered template heads its text at panel size. */
+.side-panel-body h1 {
+  font-size: 1.5rem;
+}
+
+.side-panel-body h2 {
+  font-size: 1.25rem;
+}
+
+.side-panel-body h3 {
+  font-size: 1.0625rem;
+}
+
 .side-panel-backdrop {
   position: fixed;
   inset: 0;
@@ -1152,7 +1141,7 @@ a:hover {
   font-size: 0.875rem;
   background: none;
   border: 1px solid var(--text);
-  border-radius: 2px;
+  border-radius: var(--radius);
   padding: var(--space-1) var(--space-4);
   cursor: pointer;
   color: var(--text);
@@ -1618,7 +1607,7 @@ a:hover {
   line-height: 1.4;
   background: var(--code-bg);
   border: 1px solid var(--border);
-  border-radius: 2px;
+  border-radius: var(--radius);
   padding: var(--space-4);
   resize: vertical;
 }
@@ -1696,7 +1685,7 @@ a:hover {
   font-size: 0.8125rem;
   background: none;
   border: 1px solid var(--border);
-  border-radius: 2px;
+  border-radius: var(--radius);
   padding: var(--space-1) var(--space-2);
   cursor: pointer;
   color: var(--grey-2);
@@ -1742,7 +1731,7 @@ a:hover {
   font-size: 0.875rem;
   padding: var(--space-1) var(--space-2);
   border: 1px solid var(--border);
-  border-radius: 2px;
+  border-radius: var(--radius);
   background: var(--bg);
   color: var(--text);
 }
@@ -1881,7 +1870,7 @@ a:hover {
   font-weight: 600;
   padding: var(--space-2) var(--space-6);
   border: 1px solid var(--text);
-  border-radius: 2px;
+  border-radius: var(--radius);
   transition: background 150ms ease-out, color 150ms ease-out;
 }
 
@@ -1891,74 +1880,11 @@ a:hover {
 }
 
 /* ---- Site footer ----
-   The fill is the boundary, so the footer carries no top rule. */
+   The shared dh-foot block of assets/dhcraft/dhcraft-components.css carries
+   layout, fill and type; the portal only keeps code in it at footer size. */
 
-.site-footer {
-  background: var(--code-bg);
-  margin-top: var(--space-16);
-}
-
-.site-footer-inner {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: var(--space-8);
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: var(--space-12) var(--space-6);
-  font-size: 0.875rem;
-}
-
-.site-footer-col h2 {
-  margin: 0 0 var(--space-2);
-  font-size: 0.6875rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--grey-3);
-}
-
-.site-footer-col p {
-  margin: 0 0 var(--space-1);
-  color: var(--grey-2);
-}
-
-.site-footer-col a {
-  color: var(--grey-2);
-}
-
-.site-footer-col a:hover {
-  color: var(--text);
-}
-
-.site-footer-brand {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  text-decoration: none;
-  color: var(--text);
-  font-weight: 600;
-  margin-bottom: var(--space-4);
-}
-
-.site-footer-brand img {
-  display: block;
-}
-
-.site-footer-machine {
-  margin: 0;
-  color: var(--grey-2);
-}
-
-.site-footer-mark {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-}
-
-.site-footer-mark svg {
-  width: 14px;
-  height: 14px;
-  flex: none;
+.site-footer code {
+  font-size: 0.95em;
 }
 
 /* ============================================================
@@ -2066,9 +1992,6 @@ a:hover {
     display: none;
   }
 
-  .site-footer-inner {
-    padding: var(--space-8) var(--space-6);
-  }
 
   /* Side panel becomes a bottom sheet. */
   .side-panel {
@@ -2095,7 +2018,7 @@ a:hover {
     width: 2.5rem;
     height: 0.25rem;
     background: var(--border);
-    border-radius: 2px;
+    border-radius: var(--radius);
     margin: var(--space-2) auto var(--space-1);
     flex-shrink: 0;
   }

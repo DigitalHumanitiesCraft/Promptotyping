@@ -1,0 +1,131 @@
+/* DHCraft shared building blocks: base text, header, footer, card, button, code block with
+   copy button, diagram frame. Load after dhcraft-tokens.css.
+   Everything sits in the layer dh, so any unlayered rule of a site wins without a
+   specificity fight. Sites that use their own layers name dh first in their layer order. */
+
+@layer dh {
+  /* Base. Only what every page needs; a site keeps its own reset. */
+  body {
+    margin: 0;
+    background-color: var(--dh-ground);
+    color: var(--dh-ink);
+    font-family: var(--dh-font-text);
+    font-size: var(--dh-step-0);
+    line-height: var(--dh-leading);
+  }
+  /* A dark island (dh-dark) re-reads the role tokens in its own scheme. */
+  .dh-dark, .dh-light { background-color: var(--dh-ground); color: var(--dh-ink); }
+
+  h1, h2, h3 { font-family: var(--dh-font-display); font-weight: 700; line-height: var(--dh-leading-tight); letter-spacing: -0.01em; text-wrap: balance; }
+  h1 { font-size: var(--dh-step-3); letter-spacing: -0.02em; }
+  h2 { font-size: var(--dh-step-2); }
+  h3 { font-size: var(--dh-step-1); font-weight: 600; }
+
+  a { color: var(--dh-link); text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+  a:hover { color: var(--dh-accent); }
+  code, kbd, pre { font-family: var(--dh-font-mono); font-size: 0.9em; }
+  :focus-visible { outline: var(--dh-focus-ring); outline-offset: var(--dh-focus-offset); }
+
+  .dh-prose { max-inline-size: var(--dh-measure); }
+  .dh-page { max-inline-size: var(--dh-page); margin-inline: auto; padding-inline: var(--dh-gutter); }
+
+  .dh-skip { position: absolute; inset-inline-start: var(--dh-space-4); inset-block-start: -4rem; z-index: 50; padding: var(--dh-space-2) var(--dh-space-4); background: var(--dh-ink); color: var(--dh-ground); border-radius: var(--dh-radius-s); }
+  .dh-skip:focus { inset-block-start: var(--dh-space-2); }
+
+  /* Header: brand mark and site name, then the navigation. Solid background, the current
+     page carries aria-current and an accent underline. On narrow screens the navigation
+     moves to its own line and scrolls sideways inside itself. */
+  .dh-head {
+    display: flex; flex-wrap: wrap; align-items: center; gap: var(--dh-space-2) var(--dh-space-6);
+    padding: var(--dh-space-2) var(--dh-gutter);
+    background-color: var(--dh-ground); color: var(--dh-ink);
+    border-block-end: var(--dh-hairline) solid var(--dh-line);
+  }
+  .dh-brand { display: inline-flex; align-items: center; gap: var(--dh-space-3); min-block-size: var(--dh-tap); color: var(--dh-ink); font-family: var(--dh-font-display); font-weight: 700; text-decoration: none; }
+  .dh-brand img { inline-size: auto; block-size: 2rem; }
+  .dh-nav { flex: 1; min-inline-size: 0; }
+  .dh-nav ul { display: flex; gap: var(--dh-space-1); margin: 0; padding: 0; list-style: none; overflow-x: auto; scrollbar-width: none; }
+  .dh-nav a { display: block; padding: var(--dh-space-2) var(--dh-space-3); color: var(--dh-ink-soft); text-decoration: none; white-space: nowrap; border-block-end: 2px solid transparent; }
+  .dh-nav a:hover, .dh-nav a:focus-visible { color: var(--dh-ink); text-decoration: underline; }
+  .dh-nav a[aria-current] { color: var(--dh-ink); border-block-end-color: var(--dh-accent); }
+  @media (max-width: 47.99rem) {
+    .dh-nav { flex-basis: 100%; }
+    .dh-nav a { padding-inline: var(--dh-space-2); }
+  }
+
+  /* Footer: publisher, licence, source. One row on wide screens, stacked on narrow ones. */
+  .dh-foot {
+    display: flex; flex-wrap: wrap; align-items: center; gap: var(--dh-space-3) var(--dh-space-6);
+    margin-block-start: var(--dh-space-7); padding: var(--dh-space-6) var(--dh-gutter);
+    background-color: var(--dh-ground-alt); color: var(--dh-ink-soft);
+    font-size: var(--dh-step--1);
+  }
+  .dh-foot p { margin: 0; }
+  .dh-foot a { color: var(--dh-link); }
+
+  /* Card: one self-contained object with comparable siblings. No shadow, no nested frame.
+     A card that is a link as a whole puts the link on its heading and stretches it. */
+  .dh-card {
+    position: relative; display: grid; gap: var(--dh-space-2); align-content: start;
+    padding: var(--dh-space-5);
+    background-color: var(--dh-surface); color: var(--dh-ink);
+    border: var(--dh-hairline) solid var(--dh-line); border-radius: var(--dh-radius-m);
+  }
+  .dh-cards { display: grid; gap: var(--dh-space-4); grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr)); }
+  .dh-card > * { margin: 0; }
+  .dh-card h3 a { color: inherit; text-decoration: none; }
+  .dh-card h3 a::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
+  .dh-card:has(h3 a:hover) { border-color: var(--dh-accent); }
+  .dh-card:has(h3 a:focus-visible) { outline: var(--dh-focus-ring); outline-offset: var(--dh-focus-offset); }
+  .dh-card h3 a:focus-visible { outline: none; }
+
+  /* Button: pill, at least the tap height. Primary fills with the accent. */
+  .dh-btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: var(--dh-space-2);
+    min-block-size: var(--dh-tap); padding: var(--dh-space-2) var(--dh-space-5);
+    border: var(--dh-hairline) solid var(--dh-line-strong); border-radius: var(--dh-radius-pill);
+    background: transparent; color: var(--dh-ink);
+    font: inherit; font-weight: 600; line-height: 1.3; text-decoration: none; cursor: pointer;
+  }
+  .dh-btn:hover { border-color: var(--dh-accent); color: var(--dh-ink); }
+  .dh-btn--primary { background-color: var(--dh-accent); border-color: var(--dh-accent); color: var(--dh-on-accent); }
+  .dh-btn--primary:hover { background-color: var(--dh-link); border-color: var(--dh-link); color: var(--dh-on-accent); }
+  .dh-btn:disabled { opacity: 0.5; cursor: default; }
+
+  /* Code block: a figure.dh-code holding one pre. dhcraft-copy.js adds the copy button only
+     where the Clipboard API exists, so a page without it shows the plain block. */
+  /* Caption and button share the row above the block, so the button never covers code that
+     scrolls sideways on a narrow screen. */
+  .dh-code { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: var(--dh-space-2); margin: var(--dh-space-4) 0; }
+  .dh-code pre {
+    grid-column: 1 / -1; grid-row: 2;
+    margin: 0; padding: var(--dh-space-4);
+    overflow-x: auto; background-color: var(--dh-ground-alt); color: var(--dh-ink);
+    border: var(--dh-hairline) solid var(--dh-line); border-radius: var(--dh-radius-m);
+    line-height: 1.5; tab-size: 2;
+  }
+  .dh-code figcaption { grid-column: 1; grid-row: 1; color: var(--dh-ink-soft); font-size: var(--dh-step--1); }
+  .dh-copy {
+    grid-column: 2; grid-row: 1;
+    min-block-size: 2.25rem; padding: var(--dh-space-1) var(--dh-space-3);
+    border: var(--dh-hairline) solid var(--dh-line-strong); border-radius: var(--dh-radius-pill);
+    background-color: var(--dh-surface); color: var(--dh-ink);
+    font: inherit; font-size: var(--dh-step--1); font-weight: 600; cursor: pointer;
+  }
+  .dh-copy:hover { border-color: var(--dh-accent); }
+
+  /* Diagram frame: a figure.dh-figure with an SVG, image or HTML diagram and a caption.
+     A diagram wider than the screen scrolls inside the frame, never the page. */
+  .dh-figure { display: grid; gap: var(--dh-space-3); margin: var(--dh-space-5) 0; }
+  .dh-figure__canvas {
+    overflow-x: auto; padding: var(--dh-space-4);
+    background-color: var(--dh-ground-alt);
+    border: var(--dh-hairline) solid var(--dh-line); border-radius: var(--dh-radius-m);
+  }
+  .dh-figure__canvas > svg, .dh-figure__canvas > img { display: block; max-inline-size: 100%; block-size: auto; margin-inline: auto; }
+  .dh-figure figcaption { max-inline-size: var(--dh-measure); color: var(--dh-ink-soft); font-size: var(--dh-step--1); }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .dh-btn, .dh-copy, .dh-card { transition: border-color 0.15s ease, background-color 0.15s ease; }
+  }
+}

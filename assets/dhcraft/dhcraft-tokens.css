@@ -1,0 +1,80 @@
+/* DHCraft web tokens, shared by the public DHCraft method sites.
+   Copy the whole web/ folder (or this file plus fonts/) into a site and load it before the
+   site's own stylesheet. Brand hues are the dhcraft.org palette documented in ../README.md.
+   Light and dark values sit together in light-dark(); a page follows the system setting,
+   and data-theme="light|dark" on <html> or the class dh-dark on any element overrides it.
+   Contrast ratios in the comments are WCAG 2 ratios against the ground of the same scheme. */
+
+@font-face { font-family: "Instrument Sans"; src: url("fonts/instrument-sans-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Instrument Sans"; src: url("fonts/instrument-sans-latin-600-normal.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Sora"; src: url("fonts/sora-latin-600-normal.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Sora"; src: url("fonts/sora-latin-700-normal.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+
+:root {
+  color-scheme: light dark;
+
+  /* Brand hues, unchanged from dhcraft.org. Use them for marks and categories only after a
+     contrast and colour-vision check; text colours come from the role tokens below. */
+  --dh-paper: #fdfcf8;
+  --dh-ink-brand: #1e2749;
+  --dh-ink-deep: #161d38;
+  --dh-purple: #8a4fa3;
+  --dh-purple-deep: #5b3a78;
+  --dh-pink: #c06bb0;
+  --dh-green: #5c9e4a;
+  --dh-lime: #a9c53d;
+  --dh-orange: #e39a3b;
+  --dh-blue: #85aede;
+  --dh-blue-deep: #4a7ab8;
+
+  /* Roles, light value first, dark value second. */
+  --dh-ground: light-dark(#fdfcf8, #161d38);       /* page background */
+  --dh-ground-alt: light-dark(#f6f4ec, #121932);   /* bands, code blocks, figure frames */
+  --dh-surface: light-dark(#ffffff, #1e2749);      /* cards and raised panels */
+  --dh-ink: light-dark(#1e2749, #fdfcf8);          /* text, 14.2:1 light, 16.2:1 dark */
+  --dh-ink-soft: light-dark(#576078, #b6bdd2);     /* secondary text, 5.6:1 or more on every ground */
+  --dh-accent: light-dark(#8a4fa3, #ca91e3);       /* marks, primary button, focus, 5.1:1 or more */
+  --dh-on-accent: light-dark(#ffffff, #161d38);    /* text on accent, 5.6:1 light, 6.8:1 dark */
+  --dh-link: light-dark(#5b3a78, #e1b9f3);         /* links, 8.1:1 or more */
+  --dh-line: light-dark(#dedce4, #2c3561);         /* decorative hairline, carries no meaning */
+  --dh-line-strong: light-dark(#7f8499, #7a84a8);  /* boundaries of controls, 3.3:1 or more */
+  --dh-focus: var(--dh-accent);
+
+  /* Type. Sora sets headings, Instrument Sans everything else, code a system monospace. */
+  --dh-font-text: "Instrument Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --dh-font-display: "Sora", "Instrument Sans", system-ui, sans-serif;
+  --dh-font-mono: ui-monospace, "Cascadia Mono", Consolas, "SFMono-Regular", Menlo, monospace;
+  --dh-step--1: clamp(0.84rem, 0.82rem + 0.1vw, 0.9rem);
+  --dh-step-0: clamp(1rem, 0.97rem + 0.15vw, 1.08rem);
+  --dh-step-1: clamp(1.15rem, 1.08rem + 0.35vw, 1.35rem);
+  --dh-step-2: clamp(1.45rem, 1.25rem + 0.9vw, 1.95rem);
+  --dh-step-3: clamp(2.2rem, 1.6rem + 2.6vw, 3.5rem);
+  --dh-leading: 1.6;
+  --dh-leading-tight: 1.2;
+
+  /* Space and layout. */
+  --dh-space-1: 0.25rem;
+  --dh-space-2: 0.5rem;
+  --dh-space-3: 0.75rem;
+  --dh-space-4: 1rem;
+  --dh-space-5: 1.5rem;
+  --dh-space-6: 2rem;
+  --dh-space-7: 3rem;
+  --dh-gutter: clamp(1rem, 0.6rem + 2vw, 2.5rem);
+  --dh-measure: 72ch;   /* reading width of prose, about 80 characters in Instrument Sans */
+  --dh-page: 75rem;     /* width of the page frame, as on dhcraft.org */
+  --dh-tap: 2.75rem;    /* minimum height of a control */
+
+  /* Shape and lines. */
+  --dh-radius-s: 0.375rem;
+  --dh-radius-m: 0.75rem;
+  --dh-radius-pill: 999px;
+  --dh-hairline: 1px;
+  --dh-focus-ring: 2px solid var(--dh-focus);
+  --dh-focus-offset: 3px;
+}
+
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; }
+.dh-dark { color-scheme: dark; }
+.dh-light { color-scheme: light; }

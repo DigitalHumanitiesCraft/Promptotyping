@@ -96,7 +96,7 @@ Promptotyping/
 │   ├── js/modules/case-study-filter.js
 │   ├── js/modules/term-index.js
 │   ├── vendor/marked.min.js, vendor/js-yaml.min.js
-│   ├── fonts/                      # Inter, self-hosted
+│   ├── dhcraft/                    # shared DHCraft tokens, blocks, mark and fonts (A49), unchanged copies
 │   ├── img/dhcraft-logo-watercolor.png
 │   └── promptotyping-logo.png
 ├── data/                           # glossar.json, promptotyping-documents.json, case-studies.json, vault.json

@@ -27,7 +27,7 @@ knowledge-sources:
   methods:
     Bertin, Semiology of Graphics (visual variables): https://www.axismaps.com/guide/visual-variables
   vocabularies:
-    Inter Font: https://rsms.me/inter/
+    DHCraft web tokens: https://github.com/DigitalHumanitiesCraft/brand-assets/tree/main/web
 related: [INDEX, project, specification, architecture, journal]
 ---
 
@@ -37,7 +37,7 @@ Design stance, design system, and interaction patterns for the specification doc
 
 ## Design stance
 
-The site is calm. Black on white, one typeface, a single light-grey accent. No colour flood, no decorative lines, no accent boxes, and no motion beyond the side-panel slide and short hover feedback. Since 2026-07-26 two bounded colour systems sit on top of that ground without loosening it, described under Colour that carries meaning.
+The site is calm. Since 2026-11-10 it stands on the shared DHCraft design (A49), ink on the brand paper, Sora for headings and Instrument Sans for text, with the brand accent reserved for the primary action, focus and links. No colour flood, no decorative lines, no accent boxes, and no motion beyond the side-panel slide and short hover feedback. Two bounded colour systems of the project sit on top of that ground, described under Colour that carries meaning.
 
 Two reasons carry that stance. Reading is the primary function; a scholarly paper is read rather than scrolled past, so anything that competes with the text is a defect. And the practice is made visible through structure, through the division of the tree into specification, reference, evidence, tools, and paper, so no additional visual device is needed. The earlier phase-provenance lane was removed after the first deploy by operator decision (A2 in [specification.md](specification.md), 2026-06-10) in favour of an undisturbed reading flow.
 
@@ -45,17 +45,20 @@ Two reasons carry that stance. Reading is the primary function; a scholarly pape
 
 ### Colour
 
-The permitted palette is fixed. Five core tokens plus three general grey accents, and beyond them only the three overlay tokens of the floating surfaces, which are specified under Dark theme.
+The values come from the shared token file `assets/dhcraft/dhcraft-tokens.css`, an unchanged copy of the brand-assets repository's folder `web/`, whose design document there (`web/design.md`) states the roles, their light and dark values and their measured contrast. The portal keeps its own role names and resolves them onto the shared roles in the token block of `assets/css/style.css`, so a later change of the shared values reaches the portal without an edit here.
 
 ```
---bg:        #ffffff   background
---text:      #1a1a1a   text
---accent:    #d5d5d5   link underline, hover fill, tooltip border
---border:    #e0e0e0   borders, hairlines
---code-bg:   #f5f5f5   code background, card hover, footer
---grey-1:    #2a2a2a   darkest grey accent (error state)
---grey-2:    #525252   secondary text (dominant grey: TOC, captions, meta)
---grey-3:    #8a8a8a   muted grey (loading, separators)
+--bg        var(--dh-ground)       background, paper #fdfcf8 or ink-deep #161d38
+--text      var(--dh-ink)          text
+--link      var(--dh-link)         links
+--accent    var(--dh-line-strong)  link underline, control boundaries
+--border    var(--dh-line)         hairlines
+--code-bg   var(--dh-ground-alt)   code background, bands, footer
+--surface   var(--dh-surface)      raised boxes such as the diagram nodes
+--grey-1    var(--dh-ink)          strongest secondary ink
+--grey-2    var(--dh-ink-soft)     secondary text (tree, captions, meta)
+--grey-3    var(--dh-line-strong)  muted marks, lines of the diagram
+--brand-accent, --on-brand-accent  primary action and its text
 ```
 
 The glossary underline keeps its own token name, `--glossar-underline`, because it is a separate decision from the grey scale; it resolves to `var(--grey-3)` in both themes and therefore holds no value of its own.
@@ -93,24 +96,18 @@ Shape is the second-best variable here, and it is used because the better one is
 
 ### Dark theme
 
-The stylesheet resolves every colour through a token, so the theme is a token swap. Light is the first view (A29, operator decision 2026-07-26). The inline prelude in the head always writes a `data-theme` attribute on the root element, the stored choice where one exists and `light` otherwise, before first paint, so a reader who chose dark never sees a white flash. The stylesheet still carries the `prefers-color-scheme` block, and the always-set attribute overrides it, so the system preference no longer decides what a first-time visitor sees. The choice is kept in `localStorage` under `promptotyping-theme`. The toggle exposes the active state through `aria-pressed` and names the next action in its accessible label and title.
+The stylesheet resolves every colour through a token. The shared roles carry their light and dark values in `light-dark()`, and the attribute `data-theme` sets `color-scheme` on the root, so the theme follows from the attribute without a second copy of the roles. Light is the first view (A29, operator decision 2026-07-26). The inline prelude in the head always writes a `data-theme` attribute on the root element, the stored choice where one exists and `light` otherwise, before first paint, so a reader who chose dark never sees a white flash. The stylesheet still carries the `prefers-color-scheme` block, and the always-set attribute overrides it, so the system preference no longer decides what a first-time visitor sees. The choice is kept in `localStorage` under `promptotyping-theme`. The toggle exposes the active state through `aria-pressed` and names the next action in its accessible label and title.
 
-```
---bg #131313   --text #e9e9e9   --accent #3d3d3d
---border #2e2e2e   --code-bg #1c1c1c
---grey-1 #d4d4d4   --grey-2 #a6a6a6   --grey-3 #7d7d7d
-```
+The five function hues lighten in the dark theme so they keep their contrast against the dark ground; measured on 2026-11-10 against `#161d38` they reach 5.5:1 to 9.5:1. In light, against `#fdfcf8`, four hues reach 3.7:1 to 6.4:1 and the edition hue `#d0a022` only 2.3:1, below the 3:1 for graphical objects, as it was against white before; the category word beside it carries the meaning, and the hue itself is an open point. The watercolour mark in the header is a transparent raster and stands on both grounds unchanged.
 
-The five function hues lighten in the dark theme so they keep their contrast against `#131313`. The watercolour footer mark is dimmed to 85 per cent rather than shipped as a second file.
-
-Floating surfaces carry a subtle overlay, and it runs through tokens like every other colour, `--shadow-panel` on the side panel, `--shadow-tooltip` on the tooltip, `--backdrop` behind the open panel. The geometry holds in both themes, `-2px 0 12px` and `0 2px 8px`. The shadow colour flips, because black at six per cent over `#131313` shows nothing; the light theme casts black at six and eight per cent, the dark theme casts white at the same two values. The backdrop deepens from thirty to sixty per cent black, where the dimming shows on the light text it covers. Cards carry no shadow.
+Floating surfaces carry a subtle overlay, and it runs through tokens like every other colour, `--shadow-panel` on the side panel, `--shadow-tooltip` on the tooltip, `--backdrop` behind the open panel. The geometry holds in both themes, `-2px 0 12px` and `0 2px 8px`. The shadow colour flips, because black at six per cent over a dark ground shows nothing; the light theme casts black at six and eight per cent, the dark theme casts white at the same two values. The backdrop deepens from thirty to sixty per cent black, where the dimming shows on the light text it covers. Cards carry no shadow.
 
 ### Typography
 
-Inter for text, Consolas for code, no other fonts.
+Sora for headings and the site name, Instrument Sans for text, a system monospace for code, from the shared tokens (`--dh-font-display`, `--dh-font-text`, `--dh-font-mono`).
 
-- **Inter** is self-hosted as four static woff2 weights (Regular 400, Medium 500, Semibold 600, Bold 700) with `font-display: swap` and a system-sans fallback stack. No Google Fonts, no external CDN; the site promises no tracking.
-- **Consolas** for code, a system monospace with fallback stack, no download.
+- Sora 600 and 700 and Instrument Sans 400 and 600 are served as WOFF2 from `assets/dhcraft/fonts/` with their SIL Open Font License texts and `font-display: swap`. No Google Fonts, no external CDN; the site promises no tracking. Inter was retired on 2026-11-10 and its files deleted.
+- Code uses `ui-monospace`, Cascadia Mono or Consolas, whichever the system has, without a download.
 
 Sizes (base `font-size: 16px`):
 
@@ -150,7 +147,7 @@ Desktop uses a two-track grid inside a 1240px container: the page tree (`--nav-w
 
 The tree groups the pages under Specification, Reference, Evidence, and Tools and practice, one flat run per group with a gap between the runs and no label over any of them. The active page is marked by a left border and bold weight. The specification carries the one permanent subtree, its five numbered parts, and the part the reader is in is marked in the same greys at 0.8125rem with a left border. The Paper group and the subtree of the paper's sections left with the paper view on 2026-10-28. The tree is never collapsible, and since 2026-07-29 nothing else in the interface is either. Below 860px it stacks above the page and stays visible, showing the subtree of the page being read alone, tables scroll inside their own box, and the side panel becomes a bottom sheet. An on-this-page rail was built and removed the same day by operator decision. The static table of contents that replaced it at the head of the paper page was retired with that page on 2026-10-28.
 
-The header carries the wordmark and the kind marker, with no mark beside it, and the signature band along its foot. Both the DHCraft watercolour and the Promptotyping logo were tried in that slot and dropped, because a chromatic detail image at 22 pixels reads as a smudge and would put a hue on the page that means nothing. The carrier mark stays in the footer and supplies the favicon. The footer's auto-fitting grid currently resolves into four content columns: carrier and licence, addresses and machine access, the state of the specification, and implementation. The implementation column names Digital Humanities Craft, the documented AI harnesses and models, and Promptotyping without repeating the repository link already present in the addresses column.
+The header carries the watercolour mark at 1.75rem beside the wordmark in Sora, the kind marker, and the signature band along its foot (A49). At 22 pixels the mark had read as a smudge on 2026-07-26; the shared design sets it larger, and the coordination decided its place on 2026-11-10. The favicon stays the earlier watercolour file. The footer is the shared `dh-foot` block on `--code-bg`, a row of statements that wraps, with publisher, licence with the logo excluded, source and changes, version and date, the machine address, and implementation. Version and date stand statically for a reader without JavaScript and are refreshed from the frontmatter of `_content/overview.md`.
 
 The start page is the level from which the practice is reused (A48), described under Start page below. The permanent navigation subtree is the only five-part index. Informative pages carry their note and status metadata under the title at 0.8125rem. The Specification page carries neither tagline nor standing line; each part retains compact version, date, and source metadata. Spacing and heading weight establish these transitions without horizontal rules.
 
@@ -224,7 +221,7 @@ The only movement animation is the side-panel slide, 200ms `ease-out`. Interacti
 
 Icons appear only where a control carries no text, currently the theme toggle, the panel close, the copy button, the mark on an outbound link and the repository link in the header. The category marks of the glossary fall outside this rule, since they encode a value rather than name a control; they are specified under Shape that carries meaning. They are inline SVG at 16 pixels with a 1.5-pixel stroke in `currentColor` and no fills, carried in the markup rather than in a font or a sprite file. Navigation entries, headings and groups carry no icons, because there the label is the thing.
 
-A destination mark is the one case that sits beside a label. The GitHub and YouTube glyphs in the footer identify where a link goes, the way the carrier watercolour in the same row does, and they do not stand in for a missing label the way an icon button does. They are set at 14 pixels in `currentColor` and never in the brand colour, which would put two hues on the page that say nothing about epistemic function.
+The footer carries no destination glyphs since it moved to the shared footer block on 2026-11-10; its links name their targets in words.
 
 ## Start page
 
@@ -251,7 +248,7 @@ The four forms stand as four outlined boxes in one row with arrows in the gaps, 
 
 ### Tokens and responsive rules
 
-Every value the start page introduces is a custom property on `:root`, so a shared corporate design across the DHCraft method sites is a swap of values: `--radius` (2px), `--line-graphic`, `--arrow-head` and `--arrow-half` (6px, 4px), `--step-marker` (1.75rem), and the type steps `--text-xs` (0.8125rem), `--text-sm` (0.875rem), `--text-md` (0.9375rem), `--text-lead` (1.1875rem) and `--text-h2-start` (1.5rem). Hairlines stay 1px and focus rings 2px. A shared token file prepared on 2026-11-10 in the brand-assets repository (folder `web/`) proposes the DHCraft palette with Sora and Instrument Sans for all three method sites; adopting it for the portal reverses the decisions in this document and waits for the operator.
+Every value the start page introduces is a custom property on `:root`, so a shared corporate design across the DHCraft method sites is a swap of values: `--radius` (2px), `--line-graphic`, `--arrow-head` and `--arrow-half` (6px, 4px), `--step-marker` (1.75rem), and the type steps `--text-xs` (0.8125rem), `--text-sm` (0.875rem), `--text-md` (0.9375rem), `--text-lead` (1.1875rem) and `--text-h2-start` (1.5rem). Hairlines stay 1px. `--radius` resolves to `--dh-radius-s`, `--radius-pill` to `--dh-radius-pill`, and the start buttons and focus ring take the shared accent, pill and focus ring.
 
 Below 860 pixels the tree stands after the start page, since the page links every page itself; `showPage` writes the page id to `body[data-page]`, and the static attribute serves the first paint. Below 600 pixels the template and example tables become rows of two lines, identifier and download link on the first, function and trigger beneath. Links in these tables are not underlined at rest and underline on hover and focus. Without JavaScript the empty tree column drops its rule and the theme toggle is hidden.
 

@@ -49,14 +49,15 @@ Never let them diverge silently.
 
 Source of values: `knowledge/design.md`. Read it before UI work. The site is calm. Binding:
 
-- Use no colours other than the design-system tokens. Write no hex value outside the token block, because the dark theme is a pure token swap.
-- Colour means exactly one thing, the epistemic function of an artefact (`--fn-verification`, `--fn-exploration`, `--fn-edition`, `--fn-capture`, `--fn-audit`), on the Artefakt page and the card edge of the use cases only, and always with the category as a word beside it. Do not colour the five parts of the specification.
+- The portal stands on the shared DHCraft tokens and building blocks, copied unchanged into `assets/dhcraft/` from the brand-assets repository (folder `web/`) and loaded before `assets/css/style.css` (A49, 2026-11-10). Change a shared value by overriding its custom property in `style.css` and recording it in `knowledge/design.md`; do not edit the copies.
+- Use no colours other than the tokens. Write no hex value outside the token block of `style.css`; the portal's roles resolve onto the `--dh-*` roles, whose `light-dark()` values follow `data-theme`.
+- Beyond the brand roles (accent for the primary action, focus and links), colour means exactly one thing, the epistemic function of an artefact (`--fn-verification`, `--fn-exploration`, `--fn-edition`, `--fn-capture`, `--fn-audit`), on the Artefakt page and the card edge of the use cases only, and always with the category as a word beside it. Do not colour the five parts of the specification.
 - `--signature` is the one loud place, a 2px band at the foot of the header, once per page. Use it nowhere else.
-- Fonts are Inter for text and Consolas for code, no others.
+- Fonts are Sora for headings and the site name, Instrument Sans for text and the system monospace for code, all from `assets/dhcraft/`.
 - The only movement animation is the side-panel slide (200ms ease-out). Short hover transitions are permitted micro-affordances as `knowledge/design.md` lists them.
 - Nothing collapses (A33). The side panel with its mobile bottom-sheet form and the click-to-load video facade are the only two devices that hide content; add no third.
 - Add no decorative elements.
-- The introduction page under `intro/` (A47) is the one bounded exception to the rules above. It carries the DHCraft design, Sora and Instrument Sans and an English default with `?lang=de`, and its own rules are in `knowledge/design.md`, section Introduction page.
+- The introduction page under `intro/` (A47) keeps its own copy of the DHCraft tokens and fonts, an English default with `?lang=de`, and its own rules in `knowledge/design.md`, section Introduction page; moving it onto `assets/dhcraft/` is open.
 
 ## Scope
 

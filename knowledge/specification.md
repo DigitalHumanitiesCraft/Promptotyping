@@ -111,6 +111,8 @@ Two dimensions remain, and they are orthogonal on purpose. The epistemic functio
 Part 1 on the Beispiel-Workflow page, where the worked case runs, part 2 on the tutorial page (operator decision 2026-07-31: the paper page carries the academic text alone, and the demo video belongs to learning the practice). Until then part 2 sat in the paper's evidence section at the VetMedAI case, which the promoted five-chapter text no longer carries. Both run from the `youtube-nocookie.com` variant with no tracking before the click.
 
 ### A9 — DHCraft design system
+Amended on 2026-11-10 by A49: palette and fonts follow the shared DHCraft tokens; the function hues, the signature band, the dark theme toggle and the bottom sheets stay.
+
 Black on white, Inter for text, Consolas for code, no decorative elements. Unchromatic throughout, with two bounded exceptions decided on 2026-07-26: five muted hues that encode the epistemic function of an artefact, and one prismatic signature band that encodes nothing. A dark theme applies the system preference and can be overridden by a toggle. Side panels collapse to bottom sheets on mobile. Full token set, the grounds for the colour rules, and behaviour in [design.md](design.md).
 
 ### A10 — Vanilla tech stack
@@ -142,6 +144,8 @@ The Action-Layer template (`CLAUDE.md`) is published under the slug `action-laye
 A `#arbeitsumgebung` section between skills and glossary with two short parts, the Obsidian vault as knowledge environment and the AI harness and skills (Claude Code as harness, links to `#skills` and the process videos). Substrate `_content/arbeitsumgebung.md`, routing `/arbeitsumgebung` via `404.html`.
 
 ### A18 — Site header, footer, video integration
+Amended on 2026-11-10 by A49: the header carries the watercolour mark beside the wordmark at 2rem, and the footer is the shared footer block with publisher, licence with the logo excluded, source, version, machine address and implementation.
+
 A thin fixed header carries the wordmark plus the kind marker `Specification` left and the theme toggle plus the Repository link right; the Paper link was dropped on 2026-07-26 because the tree carries it. No mark sits beside the wordmark. Both the DHCraft watercolour and `promptotyping-logo.png` were tried there and dropped, because a chromatic detail image at 22 pixels reads as a smudge and would be the only hue on the page that means nothing. The signature band runs along the foot of the header. The footer uses an auto-fitting grid with four current columns on `--code-bg`: carrier and licence, addresses and machine access, the state of the specification, and implementation. The implementation column identifies Digital Humanities Craft, Claude Code with Fable 5 and Opus 5, Codex with GPT-5.6 Sol, and Promptotyping. The watercolour carrier mark also supplies the favicon; its footer instance is decoded asynchronously. `promptotyping-logo.png` remains the OpenGraph preview. All process videos play without leaving the page, as click-to-load facades over `youtube-nocookie.com`.
 
 ### A21 — Page status line
@@ -150,6 +154,8 @@ Informative pages carry a head block under the title with the registry note, sta
 Extended on 2026-07-29 by A32 and reduced on 2026-08-25. The Specification page carries no explanatory tagline or standing line, since the title and permanent five-part subtree already establish both. Each part carries only version, date, and source metadata under its heading. Part taglines and decorative rules are absent.
 
 ### A22 — Colour that carries meaning, and the dark theme
+Amended on 2026-11-10 by A49: the brand accent marks the primary action, focus and links; the function hues remain the only colour that encodes a category.
+
 Colour encodes exactly one thing, the epistemic function of an artefact, that is the five interface categories of the site's own typology on the Artefakt page. The hue appears on the function list of the Artefakt page and on the left edge of a use-case card, and the category always stands there as a word as well. One prismatic signature band sits at the foot of the header, once per page, and encodes nothing. The dark theme is a token swap that follows the system preference, is overridden by a toggle, and is applied before first paint from `localStorage`. Grounds and token values in [design.md](design.md). Added 2026-07-26.
 
 ### A23 — Table of contents on the paper page (retired)
@@ -297,6 +303,11 @@ The page is static markup in `index.html`, so it reads without JavaScript and it
 The template rows, the operation table and the two prompts repeat their sources verbatim, and the case rows repeat the gallery data, so `tools/check_consistency.py` holds them against `data/promptotyping-documents.json`, `skills/promptotyping/SKILL.md`, `_content/tutorial.md` and `data/case-studies.json` (V24 in [verification.md](verification.md)).
 
 Acceptance criterion. From the start page alone, a reader reaches the four forms of work, a first iteration, every template, the skill, the checking forms, three examples and the citation in one or two steps, at 1440 by 900 and at 360 pixels, light and dark, with JavaScript and without, without horizontal document scroll or console error. Scholarly adequacy and the operator's acceptance stay open.
+
+### A49 — The portal adopts the shared DHCraft design
+Decision of the coordination on 2026-11-10, in the sense of the owner's request for one corporate design across the Promptotyping, Second Brain Vault and Research Mission Control sites. The portal loads `assets/dhcraft/dhcraft-tokens.css` and `assets/dhcraft/dhcraft-components.css`, unchanged copies of the brand-assets repository's folder `web/` (local commit `9d68bc1`), before its own stylesheet; it serves Sora and Instrument Sans from `assets/dhcraft/fonts/` and shows the watercolour mark `assets/dhcraft/dhcraft-mark-watercolor-128.png` in the header. The portal's colour, font and radius tokens resolve onto the `--dh-*` roles, so the dark theme follows from `light-dark()` and the existing toggle. Inter is retired and its files are deleted. Kept as project decisions are the five function hues, the signature band under the header, the side panel and the bottom sheet. The shared design document stays in the brand-assets repository with `status: draft` and is not copied, since drafts are not served. Two conditions lie with the owner before a push: the licence of the copied CSS and the logo, which the brand-assets repository still holds under all rights reserved, and whether the signature band and the introduction page's own token copy stay.
+
+Acceptance criterion. Every portal page renders in Sora and Instrument Sans on the paper ground in light and on ink-deep in dark, with the watercolour mark in the header and the shared footer, without a runtime request outside the site and without a hex value outside the token blocks.
 
 ### A26 — The site is English
 Every string the site shows is English, in British spelling (operator decision 2026-07-25, carried out 2026-07-26). That covers the page registry labels, the status line, every control, the nine content pages directly under `_content/`, and the text fields of `data/glossar.json`, `data/case-studies.json` and `data/promptotyping-documents.json`.
