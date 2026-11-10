@@ -89,6 +89,8 @@
     <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 5h5v5m0-5-8.5 8.5M18 14v5H5V6h5"/></symbol>
     <symbol id="i-terminal" viewBox="0 0 24 24"><path d="m5 7 4.5 4.5L5 16m7 1h7"/></symbol>
     <symbol id="i-prompt" viewBox="0 0 24 24"><path d="M5 5.5h14v10H10l-4 3.5v-3.5H5z"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><path d="M8.5 8.5h10v11h-10zM5.5 15.5v-11h10"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
     <symbol id="i-result" viewBox="0 0 24 24"><path d="M5 12h13m0 0-4.5-4.5M18 12l-4.5 4.5"/></symbol>
   </svg>
 
@@ -104,12 +106,11 @@
     </a>
     <nav class="dh-nav" aria-label="Main">
       <ul id="docs-nav">
-        <li><a href="#overview" data-page="overview">Overview</a></li>
-        <li><a href="#specification" data-page="specification">Specification</a></li>
-        <li><a href="#vorlagen" data-section="vorlagen">Templates</a></li>
-        <li><a href="#glossar" data-page="glossar">Glossary</a></li>
+        <li><a href="#start-reuse" data-section="start-reuse">Reuse</a></li>
+        <li><a href="#start-downloads" data-section="start-downloads">Downloads</a></li>
+        <li><a href="#start-example" data-section="start-example">Example</a></li>
+        <li><a href="#start-limits" data-section="start-limits">Citation</a></li>
         <li><a href="#use-cases" data-page="use-cases">Use cases</a></li>
-        <li><a href="#vault" data-page="vault">Vault</a></li>
       </ul>
     </nav>
     <div class="docs-header-tools">
@@ -309,7 +310,7 @@
 
         <h2 id="start-origin">Origin</h2>
         <div class="start-prose">
-          <p>Promptotyping grew out of research software development in the digital humanities. The term first named the generation of project-specific interfaces with LLMs in a <a href="https://unipub.uni-graz.at/obvugrhs/12127700">dissertation at the University of Graz</a> (2025), the practice was described in blog posts on <a href="https://dhcraft.org/excellence/blog/Promptotyping/">DHCraft</a> (2025) and <a href="https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin">L.I.S.A.</a> (2026), and the paper of 2026 traces it through three cases, <span data-case="corresp-explorer"><a href="#case-corresp-explorer">CorrespExplorer</a> (<a href="https://dhcraft.org/CorrespExplorer">live</a>)</span>, <span data-case="szd-htr"><a href="#case-szd-htr">SZD-HTR</a> (<a href="https://chpollin.github.io/szd-htr-ocr-pipeline/">live</a>)</span> and <span data-case="klawiter-rescue"><a href="#case-klawiter-rescue">Klawiter-Rescue</a> (<a href="https://chpollin.github.io/klawiter-rescue">live</a>)</span>. Further projects are documented under <a href="#use-cases">use cases</a>, and the <a href="#vault">Vault</a> traces the practice's claims to their sources.</p>
+          <p>Promptotyping grew out of research software development in the digital humanities. The term first named the generation of project-specific interfaces with LLMs in a <a href="https://unipub.uni-graz.at/obvugrhs/12127700">dissertation at the University of Graz</a> (2025), the practice was described in blog posts on <a href="https://dhcraft.org/excellence/blog/Promptotyping/">DHCraft</a> (2025) and <a href="https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin">L.I.S.A.</a> (2026), and the paper of 2026 traces it through three cases, <span data-case="corresp-explorer"><a href="#case-corresp-explorer">CorrespExplorer</a> (<a href="https://dhcraft.org/CorrespExplorer">live</a>)</span>, <span data-case="szd-htr"><a href="#case-szd-htr">SZD-HTR</a> (<a href="https://chpollin.github.io/szd-htr-ocr-pipeline/">live</a>)</span> and <span data-case="klawiter-rescue"><a href="#case-klawiter-rescue">Klawiter-Rescue</a> (<a href="https://chpollin.github.io/klawiter-rescue">live</a>)</span>. Further projects are documented under <a href="#use-cases">use cases</a>, and the <a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/tree/main/vault">Grounded Vault in the repository</a> traces the practice's claims to their sources.</p>
         </div>
 
         <h2 id="start-reuse">Reuse</h2>
@@ -463,13 +464,13 @@ cp -r Promptotyping/skills/promptotyping ~/.claude/skills/</code></pre>
           </li>
         </ol>
 
-        <h2 id="start-limits">Limits, licence and citation</h2>
+        <h2 id="start-limits">Limits and citation</h2>
         <div class="start-prose">
           <p>The practice has not been evaluated against other ways of working, and whether it transfers to other people and projects is open. The automatic checks of this site decide consistency between its own statements, while whether the description is right in substance remains scholarly judgement. The templates other than <code>technology</code> are written in German, and a project writes its documents in its own language.</p>
-          <p>Text, templates and skill are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, code under the <a href="LICENSE">MIT License</a>. Cite the practice with its concept DOI, which resolves to the latest archived version, and take the full metadata from <a href="CITATION.cff">CITATION.cff</a>. The paper is Pollin 2026, Promptotyping, submitted.</p>
+          <p>Cite the practice with its concept DOI, which resolves to the latest archived version, and take the full metadata from <a href="CITATION.cff">CITATION.cff</a>. The paper is Pollin 2026, Promptotyping, submitted.</p>
         </div>
             <figure class="dh-code field is-citation">
-              <figcaption><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-external"></use></svg>Citation</figcaption>
+              <figcaption>Citation</figcaption>
 <pre><code>Pollin, Christopher; Steiner, Christian: Promptotyping. Zenodo. https://doi.org/10.5281/zenodo.14160875</code></pre>
             </figure>
 
@@ -490,12 +491,26 @@ cp -r Promptotyping/skills/promptotyping ~/.claude/skills/</code></pre>
   </aside>
 
   <footer class="site-footer dh-foot">
-    <p>Published by <a href="https://dhcraft.org">Digital Humanities Craft</a></p>
-    <p>Text CC BY 4.0, code <a href="LICENSE">MIT</a>, shared web files <a href="assets/dhcraft/LICENSE.md">MIT</a> with fonts under the SIL Open Font License and the DHCraft mark proprietary</p>
-    <p>Source and <a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/commits/main">changes</a> in the <a href="https://github.com/DigitalHumanitiesCraft/Promptotyping">repository</a>, every page also as Markdown under <a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/tree/main/_content"><code>_content/</code></a>, <span id="footer-version">Version 1.0</span>, <span id="footer-updated">Updated 10 November 2026</span></p>
+    <div class="foot-group">
+      <p class="foot-title">Promptotyping</p>
+      <p>A method site of <a href="https://dhcraft.org">Digital Humanities Craft</a></p>
+      <p><span id="footer-version">Version 1.0</span>, <span id="footer-updated">Updated 10 November 2026</span></p>
+      <p><a href="#start-limits">Citation</a></p>
+    </div>
+    <div class="foot-group">
+      <p class="foot-title">Licence</p>
+      <p>Text, templates and skill <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, code <a href="LICENSE">MIT</a></p>
+      <p>Shared web files <a href="assets/dhcraft/LICENSE.md">MIT</a>, fonts OFL</p>
+      <p>DHCraft mark proprietary</p>
+    </div>
+    <div class="foot-group">
+      <p class="foot-title">Repository</p>
+      <p><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping">Source</a> and <a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/commits/main">changes</a></p>
+      <p><a href="#specification">Specification</a> and <a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/tree/main/_content">Markdown sources</a></p>
+      <p>Related methods <a href="https://github.com/chpollin/second-brain-vault">Second Brain Vault</a>, <a href="https://github.com/DigitalHumanitiesCraft/grounded-vault">Grounded Vault</a>, <a href="https://github.com/DigitalHumanitiesCraft/research-mission-control">Research Mission Control</a></p>
+    </div>
   </footer>
 
-  <script type="module" src="assets/dhcraft/dhcraft-copy.js"></script>
   <script src="assets/vendor/marked.min.js"></script>
   <script src="assets/vendor/js-yaml.min.js"></script>
   <!-- The site scripts share one namespace and call across files at call time,

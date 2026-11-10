@@ -105,6 +105,8 @@
   --brand-mark: 2rem;
   --figure-min: 64rem;
   --step-marker: 1.75rem;
+  --field-indent: var(--space-6);
+  --field-measure: 76ch;
   --text-xs: 0.8125rem;
   --text-sm: 0.875rem;
   --text-md: 0.9375rem;
@@ -539,7 +541,7 @@ a:hover {
 }
 
 .case-card.has-fn {
-  border-left: 3px solid var(--fn, var(--border));
+  border-left-color: var(--fn, var(--border));
 }
 
 /* ---- Page status line ----
@@ -826,9 +828,10 @@ a:hover {
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
   gap: 0;
-  margin: 0;
+  max-width: var(--field-measure);
+  margin: 0 0 0 var(--field-indent);
   background: var(--surface);
-  border: 1px solid var(--border);
+  border: 1px dashed var(--grey-3);
   border-radius: var(--dh-radius-m);
 }
 
@@ -846,8 +849,47 @@ a:hover {
   color: var(--grey-2);
 }
 
-.start .field .dh-copy {
-  margin: var(--space-1) var(--space-2) 0 0;
+.field-copy {
+  grid-column: 2;
+  grid-row: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  margin: var(--space-1) var(--space-1) 0 0;
+  padding: 0;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: var(--dh-radius-s);
+  color: var(--grey-2);
+  cursor: pointer;
+}
+
+.field-copy:hover {
+  color: var(--text);
+  border-color: var(--grey-3);
+}
+
+.field-copy:focus-visible {
+  outline: var(--dh-focus-ring);
+  outline-offset: 1px;
+}
+
+.field-copy .icon {
+  margin: 0;
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.field-copy .icon-done,
+.field-copy.is-done .icon-copy {
+  display: none;
+}
+
+.field-copy.is-done .icon-done {
+  display: inline;
+  color: var(--cat-forms);
 }
 
 .content .start .field pre {
@@ -861,18 +903,18 @@ a:hover {
   line-height: 1.55;
 }
 
+.content .start .field pre {
+  line-height: 1.65;
+}
+
 .content .start .field pre code {
+  font-family: var(--font-code);
   font-size: var(--text-sm);
   white-space: pre-wrap;
   overflow-wrap: anywhere;
 }
 
-.start .field.is-prompt pre code {
-  font-family: var(--font-text);
-}
-
 .start > .field {
-  max-width: var(--dh-measure);
   margin-top: var(--space-4);
 }
 
@@ -1108,8 +1150,6 @@ body[data-page="overview"] .content {
    One outlined button shape for every text control on the site. */
 
 .inspector-resolve,
-.case-card-more,
-.case-card-video-toggle,
 .panel-copy,
 .skill-copy,
 .code-copy {
@@ -1125,8 +1165,6 @@ body[data-page="overview"] .content {
 }
 
 .inspector-resolve:hover,
-.case-card-more:hover,
-.case-card-video-toggle:hover,
 .panel-copy:hover,
 .skill-copy:hover,
 .code-copy:hover {
@@ -1643,40 +1681,40 @@ body[data-page="overview"] .content {
   background: var(--bg);
 }
 
-/* ---- Case studies: filter bar and cards ---- */
+/* ---- Use cases: one filter and quiet entries ----
+   Head of three levels (title with a sentence, the filter, the list) and
+   entries of three (name, one sentence, one line of function and links). */
 
-/* The controls sit above the grid they act on, so the line marks the edge of
-   the control zone. */
+.page-lead {
+  max-width: var(--dh-measure);
+}
+
 .case-filter-bar {
-  margin: var(--space-6) 0;
-  padding-bottom: var(--space-4);
-  border-bottom: 1px solid var(--border);
+  margin: var(--space-6) 0 0;
 }
 
 .case-filter-chips {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-2);
-  margin-bottom: var(--space-4);
 }
 
 .case-chip,
 .vault-chip {
   font-family: var(--font-text);
-  font-size: 0.8125rem;
+  font-size: var(--text-sm);
   background: none;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: var(--space-1) var(--space-2);
+  border: 1px solid var(--grey-3);
+  border-radius: var(--radius-pill);
+  padding: var(--space-1) var(--space-4);
   cursor: pointer;
-  color: var(--grey-2);
+  color: var(--text);
   transition: background 150ms ease-out, color 150ms ease-out, border-color 150ms ease-out;
 }
 
 .case-chip:hover,
 .vault-chip:hover {
-  border-color: var(--text);
-  color: var(--text);
+  border-color: var(--brand-accent);
 }
 
 .case-chip.active,
@@ -1687,111 +1725,68 @@ body[data-page="overview"] .content {
 }
 
 /* A function chip carries the hue of its epistemic function as a left edge, the
-   same encoding the card edge uses. The word beside it names the category, so
-   the colour never carries the meaning alone (WCAG 1.4.1). */
+   same encoding the entry edge uses, with the word beside it (WCAG 1.4.1). */
 .case-chip.has-fn {
-  border-left: 3px solid var(--fn, var(--border));
-}
-
-.case-filter-secondary {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--space-6);
-  font-size: 0.875rem;
-}
-
-.case-filter-control {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-}
-
-.case-filter-control select {
-  font-family: var(--font-text);
-  font-size: 0.875rem;
-  padding: var(--space-1) var(--space-2);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--bg);
-  color: var(--text);
+  border-left: 4px solid var(--fn, var(--border));
 }
 
 .case-group {
-  margin: var(--space-8) 0;
+  margin: var(--space-12) 0 0;
 }
 
-.case-group-title {
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: var(--grey-2);
-  padding-bottom: var(--space-2);
-}
-
-/* One line per block saying what the cases in it argue for. */
-.case-group-note {
-  max-width: 62ch;
+.content .case-group-title {
   margin: 0 0 var(--space-4);
-  font-size: 0.875rem;
-  color: var(--grey-2);
+  font-size: var(--text-h2-start);
 }
 
 .case-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: var(--space-4);
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
+  gap: var(--space-4) var(--space-6);
 }
 
 .case-card {
-  border: 1px solid var(--border);
-  padding: var(--space-4);
-  background: var(--bg);
-  transition: background 150ms ease-out;
+  padding: 0 0 0 var(--space-4);
+  border-left: 3px solid var(--border);
 }
 
-.case-card:hover {
-  background: var(--code-bg);
+.content .case-card p {
+  margin: 0;
 }
 
 .case-card-name {
-  margin: 0 0 var(--space-2);
-  font-size: 1.0625rem;
+  font-family: var(--font-display);
+  font-weight: 600;
 }
 
-.case-card-summary {
-  margin: 0 0 var(--space-2);
-  font-size: 0.875rem;
+.content .case-card-summary {
+  margin: var(--space-1) 0;
+  font-size: var(--text-sm);
 }
 
 .case-card-meta {
-  margin: 0 0 var(--space-2);
-  font-size: 0.8125rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-4);
+  font-size: var(--text-sm);
+}
+
+.case-card-fn {
   color: var(--grey-2);
 }
 
-.case-card-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-  align-items: center;
+.case-card-meta a {
+  text-decoration: none;
 }
 
-.case-card-links a {
-  font-size: 0.875rem;
+.case-card-meta a:hover,
+.case-card-meta a:focus-visible {
+  text-decoration: underline;
 }
 
 .case-empty {
   color: var(--grey-2);
-  font-size: 0.875rem;
-}
-
-/* Inline video host under a case card (the facade loads in place). */
-.case-card-video {
-  margin-top: var(--space-2);
-}
-
-.case-card-video .video-embed {
-  margin: 0;
+  font-size: var(--text-sm);
 }
 
 /* ---- YouTube click-to-load facade ---- */
@@ -1861,11 +1856,27 @@ body[data-page="overview"] .content {
 }
 
 /* ---- Site footer ----
-   The shared dh-foot block of assets/dhcraft/dhcraft-components.css carries
-   layout, fill and type; the portal only keeps code in it at footer size. */
+   The shared dh-foot block carries fill and type. The footer holds three
+   groups of short lines, project, licence, and repository with the related
+   method sites, laid out as columns that stack on a phone. */
 
-.site-footer code {
-  font-size: 0.95em;
+.site-footer.dh-foot {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+  align-items: start;
+  gap: var(--space-6) var(--space-8);
+}
+
+.foot-group p {
+  margin: 0 0 var(--space-1);
+}
+
+.content .foot-title,
+.foot-title {
+  margin-bottom: var(--space-2);
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--text);
 }
 
 /* ============================================================
@@ -1979,6 +1990,7 @@ body[data-page="overview"] .content {
      scrolls sideways inside its frame. */
   :root {
     --figure-min: 80rem;
+    --field-indent: 0px;
   }
 
   .content .doc-types-figure {

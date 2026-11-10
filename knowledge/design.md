@@ -242,6 +242,17 @@ The start page under `#overview` (A48 in [specification.md](specification.md)) i
 - A recurring entry has at most three visual levels, the step with its instruction, the field, the result.
 - The four hues of the mark mark categories with a text label, purple stays the action accent, and light is the default whatever the system setting.
 
+### Fourth round of 2026-11-10
+
+- The owner found the third version much better and asked for dashed frames around the copyable fields, set in from the text, with console type at a readable measure and an icon-only copy button inside the field.
+- He found the footer unclear and asked for few groups of short lines that do not repeat the seventh part.
+- He saw too many pages and much redundancy and asked for one page in the core and at most one more.
+- On the use-case page he counted far too many levels and asked for at most three in the head and per entry, with links of one form.
+
+### Footer
+
+The footer is one band on `--code-bg` with three groups of short lines, meant as the shared footer of the DHCraft method sites. The first group names the site, the publisher with a link, version and date, and a link to the citation part. The second group states the licences, content and code of the site, the shared web files and fonts, and the mark as proprietary. The third group links the repository, its changes, the specification and the Markdown sources, and the related method sites. The groups stand as columns of at least 14rem and stack on a phone, each with its name as a short title in the display face.
+
 ### Hierarchy
 
 | Part | Question it answers | Form |

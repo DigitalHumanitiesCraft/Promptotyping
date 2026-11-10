@@ -33,6 +33,7 @@
     A.setupSidePanel();
     A.setupThemeToggle();
     A.setupGlossarInteraction(document.getElementById("content"));
+    A.addFieldCopyButtons(document.getElementById("content"));
 
     // GitHub Pages has no server-side routing, so 404.html catches every
     // subpath, normalises it and hands it over as ?p=. Translating it here,

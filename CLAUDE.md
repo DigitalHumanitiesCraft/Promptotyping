@@ -67,7 +67,7 @@ Source of values: `knowledge/design.md`. Read it before UI work. The site is cal
 
 ## Site model
 
-- One page is visible at a time. The header carries a static navigation of Overview, Specification, Templates, Glossary, Use cases and Vault (A50); the tree is retired. The five parts of the specification are sections of one page under `#specification`.
+- The start page is the site, and Use cases is the one further page in the navigation (A50). The header carries anchors on the start page and the link to the use cases; the other pages stay mounted and addressable and are reached from links. The five parts of the specification are sections of one page under `#specification`.
 - `PAGES` in `assets/js/registry.js` is the single source for page hosts and route resolution, and it keeps every page mounted whether or not the header lists it. When touching a part, check `isPageId`, `hostPage` and `isRouteId`.
 - Inactive pages stay in the DOM as `display: none`, so every published anchor resolves. Do not lazy-mount pages.
 - The start page `#overview` is static markup in `index.html` with the seven parts of a DHCraft method page (A48), and `_content/overview.md` is its machine-readable twin. Its template entries, skill operations, prompts, cases and download archives repeat their sources; `tools/check_consistency.py` holds them, so change the source and the page together. The prompts are canonical in `_content/tutorial.md`. Recurring entries have at most three visual levels.

@@ -118,6 +118,55 @@
     });
   }
 
+  /* Copyable fields of the start page: an icon-only button in the field's head
+     row. Its accessible name says what it does, the icon turns into a check
+     after copying, and a live region announces the result, so the feedback
+     does not rest on the icon alone. */
+  var copyStatus = null;
+
+  function announce(text) {
+    if (!copyStatus) {
+      copyStatus = document.createElement("span");
+      copyStatus.className = "visually-hidden";
+      copyStatus.setAttribute("role", "status");
+      document.body.appendChild(copyStatus);
+    }
+    copyStatus.textContent = "";
+    setTimeout(function () { copyStatus.textContent = text; }, 50);
+  }
+
+  function addFieldCopyButtons(root) {
+    root.querySelectorAll("figure.field").forEach(function (field) {
+      var pre = field.querySelector("pre");
+      if (!pre || field.querySelector(".field-copy")) {
+        return;
+      }
+      var caption = field.querySelector("figcaption");
+      var what = caption ? caption.textContent.trim().toLowerCase() : "text";
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "field-copy";
+      btn.setAttribute("aria-label", "Copy " + what);
+      btn.innerHTML =
+        '<svg class="icon icon-copy" aria-hidden="true" focusable="false"><use href="#i-copy"></use></svg>' +
+        '<svg class="icon icon-done" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg>';
+      btn.addEventListener("click", function () {
+        var text = pre.textContent.replace(/\n$/, "");
+        function done() {
+          btn.classList.add("is-done");
+          announce("Copied");
+          setTimeout(function () { btn.classList.remove("is-done"); }, 2000);
+        }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(done, function () { fallbackCopy(text, done); });
+        } else {
+          fallbackCopy(text, done);
+        }
+      });
+      (caption || pre).insertAdjacentElement("afterend", btn);
+    });
+  }
+
   /* ---- YouTube click-to-load facade ---- */
 
   function buildVideoFacade(youtubeId, title) {
@@ -206,6 +255,7 @@
   A.readFrontmatter = readFrontmatter;
   A.copyText = copyText;
   A.addCodeCopyButtons = addCodeCopyButtons;
+  A.addFieldCopyButtons = addFieldCopyButtons;
   A.buildVideoFacade = buildVideoFacade;
   A.insertVideoAfterIntro = insertVideoAfterIntro;
   A.setHashSilently = setHashSilently;
