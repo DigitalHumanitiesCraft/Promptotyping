@@ -4,19 +4,20 @@ slug: architecture
 version: "0.4"
 status: complete
 source: Vorlage Architecture
-mirrored: 2026-08-21
+mirrored: 2026-11-10
 machine-url: https://dhcraft.org/Promptotyping/_content/promptotyping-document/architecture.md
 ---
-
 # Vorlage Architecture
 
-Diese Vorlage strukturiert das Architecture-Dokument einer Promptotyping-Wissensbasis. Ein einzelner Träger heißt `architecture.md`; Spezialisierungen folgen `<subject>-architecture.md`. Das Dokument liegt im `knowledge/`-Ordner und trägt die technische Realisierung des Systems.
+Diese Vorlage strukturiert das Architecture-Dokument einer Promptotyping-Wissensbasis. Ein einzelner Träger heißt `architecture.md`; Spezialisierungen folgen `<subject>-architecture.md`. Das Dokument liegt im `knowledge/`-Ordner und trägt die technische Realisierung des Systems und beantwortet die Wie-Frage in Abgrenzung zur Was-Frage (Specification) und zur Aussehen-Frage (Design).
 
 ## Geltungsbereich
 
 Die Vorlage trägt, sobald das System mehr als ein triviales Frontend ist, sobald also Pipeline-Stufen, Modulgrenzen, Datenflüsse oder Sicherheitsannahmen dokumentiert werden müssen. Bei einseitigen Static-Site-Repos ohne Build-Schritt entfällt sie; eine knappe Architektur-Sektion in `specification.md` reicht dann. Sie trägt nicht für Code-Dokumentation auf Funktions- oder Klassenebene; diese liegt im Code (Docstrings, Kommentare, JSDoc).
 
-Architektur bleibt im Regelfall ein Dokument. Eine Auslagerung entsteht, sobald ein Aspekt eine eigene Routing Question oder einen eigenen Aktualisierungszyklus entwickelt. Die Dateinamen folgen dann `<subject>-architecture.md`, etwa `pipeline-architecture.md`, `model-services-architecture.md` oder `deployment-architecture.md`. Strukturprinzipien und Frontmatter-Schema dieser Vorlage gelten pro Datei, und `INDEX.md` registriert jede Spezialisierung.
+Lebenszyklus: das Dokument entsteht, sobald der Stack steht, und wird bei Stackwechsel, Komponentenumbau oder dem Entfernen einer Komponente aktualisiert, im selben Arbeitsgang wie der Code. Das gravierendste Verfallsmuster der Praxis ist die Architektur, die eine entfernte Komponente weiter als aktiv beschreibt. Entwickelt die Pipeline eine eigenständige Routing Question oder einen eigenen Aktualisierungszyklus, entsteht `pipeline-architecture.md`.
+
+Architektur bleibt im Regelfall ein Dokument. Externe Modelle, Services, Deployment und Continuous Integration sind Sektionen dieses Dokuments. Eine Auslagerung entsteht, sobald ein Aspekt eine eigene Routing Question oder einen eigenen Aktualisierungszyklus entwickelt. Die Dateinamen folgen dann `<subject>-architecture.md`, etwa `pipeline-architecture.md`, `model-services-architecture.md` oder `deployment-architecture.md`. Strukturprinzipien und Frontmatter-Schema dieser Vorlage gelten pro Datei, und `INDEX.md` registriert jede Spezialisierung.
 
 ## Funktion des Dokuments
 
@@ -34,9 +35,9 @@ Drittens trägt es Sicherheit und Barrierefreiheit als Hauptbestandteile, nicht 
 
 ## Frontmatter-Schema
 
-Das Dokument folgt dem Frontmatter-Schema aus der [Konvention Promptotyping Documents](#konvention-v0.1) (Pflichtkern: `title, project, method, status, created, updated`). Spezifisch für Architecture:
+Das Dokument folgt dem Frontmatter-Schema aus [Konvention Promptotyping Documents](#konvention-v0.1) (Pflichtkern: `title, project, method, status, created, updated`). Spezifisch für Architecture:
 
-- `topics:` projektabhängig. Typisch sind Verweise auf Wissensfelder wie Software Architecture, Pipeline Design, Web Architecture, je nach Charakter des Systems. Bei ML- oder OCR-Pipelines zusätzlich Computer Vision oder NLP Pipelines. Topics werden so gewählt, dass der Agent bei Implementations-Reasoning die richtigen Architektur-Standards aktiviert.
+- `topics:` projektabhängig. Typisch sind `[[Software Architecture]]`, `[[Pipeline Design]]`, `[[Web Architecture]]`, je nach Charakter des Systems. Bei ML- oder OCR-Pipelines zusätzlich `[[Computer Vision]]` oder `[[NLP Pipelines]]`. Topics werden so gewählt, dass der Agent bei Implementations-Reasoning die richtigen Architektur-Standards aktiviert.
 - `knowledge-sources:` sinnvoll, wenn das System auf institutionellen Plattformen (GAMS, eXist-db) oder etablierten Architekturmustern (REST, RDF-Triplestore, statische Generatoren) aufbaut. Standards wie WCAG für Barrierefreiheit oder OWASP für Sicherheit als URI hinterlegen.
 - `related:` typischerweise `data`, `specification`, `design`.
 
@@ -56,11 +57,11 @@ Funktion: die Hauptmodule und ihre Verantwortung. Inhalt: pro Komponente Zweck, 
 
 ### Datenfluss
 
-Funktion: zeigen, wie Daten von Quelle zu Anzeige fließen. Inhalt: Pipeline-Stufen mit klaren Übergängen, etwa "XML-Quellen → Python-Pipeline → JSON-Export → JavaScript-Frontend". Pro Stufe werden Output-Format und Validierungsstelle dokumentiert. Bei eigenständiger Routing Question und eigenem Pflegezyklus wird diese Sektion zu `pipeline-architecture.md`.
+Funktion: zeigen, wie Daten von Quelle zu Anzeige fließen. Inhalt: Pipeline-Stufen mit klaren Übergängen, etwa "XML-Quellen → Python-Pipeline → JSON-Export → JavaScript-Frontend". Pro Stufe das Format, das produziert wird, und die Stelle, wo die Validierung erfolgt. Bei eigenständiger Routing Question oder eigenständigem Pflegezyklus wird diese Sektion zu `pipeline-architecture.md`. Komponenten und Datenfluss werden dort in einer Stufentabelle mit Skript, Input-Format, Output-Format und Verantwortung zusammengeführt.
 
 ### Externe Modelle und Services
 
-Funktion: alle externen Verarbeitungs-Ressourcen dokumentieren, die das System nutzt. Inhalt: pro Modell oder Service Rolle in der Pipeline, Provider, Endpunkt-Format, Authentifizierung, Limits und Output-Form. Bei eigenständigem Pflegezyklus entsteht `model-services-architecture.md`.
+Funktion: alle externen Verarbeitungs-Ressourcen dokumentieren, die das System nutzt. Inhalt: pro Modell oder Service Rolle in der Pipeline, Provider, Endpunkt-Format, Authentifizierung, Limits und Output-Form. Diese Sektion bleibt im Regelfall in `architecture.md` oder `pipeline-architecture.md`. Bei eigenständigem Pflegezyklus entsteht `model-services-architecture.md`.
 
 ### Sicherheit
 
@@ -76,7 +77,7 @@ Funktion: Top-Level-Ordner mit Funktionszuweisung erklären. Inhalt: Tabelle ode
 
 ### Build und Deployment
 
-Funktion: den Weg vom Repo zur laufenden Anwendung dokumentieren. Inhalt: lokale Entwicklungsumgebung, Build-Schritt, Deployment-Ziel, CI/CD-Konfiguration. Verweis auf die konkreten Workflow-Dateien (`.github/workflows/`, `pyproject.toml`) als Source of Truth.
+Funktion: den Weg vom Repo zur laufenden Anwendung dokumentieren. Inhalt: lokale Entwicklungsumgebung, Build-Schritt, Deployment-Ziel und Continuous-Integration-Konfiguration. Diese Aspekte bleiben hier, solange sie denselben Pflegezyklus teilen. Bei eigenständiger Routing Question entsteht `deployment-architecture.md`. Verweis auf die konkreten Workflow-Dateien (`.github/workflows/`, `pyproject.toml`) als Source of Truth.
 
 ## Was nicht reingehört
 
@@ -95,7 +96,7 @@ title: Architektur
 project:
   name: [Projektname]
   repository: [Repository-URL]
-status: complete
+status: draft
 language: [de | en]
 version: [Repo-Schema-Version]
 created: [YYYY-MM-DD]
@@ -137,7 +138,7 @@ related: [data, specification, design]
 
 ## Datenfluss
 
-<!-- Pipeline-Stufen mit Übergängen und Validierungspunkten. Bei eigener Routing Question und eigenem Pflegezyklus als pipeline-architecture.md auslagern. -->
+<!-- Pipeline-Stufen mit Übergängen und Validierungspunkten. Bei eigener Routing Question oder eigenem Pflegezyklus als pipeline-architecture.md auslagern. -->
 
 [...]
 
@@ -178,7 +179,7 @@ related: [data, specification, design]
 
 ## Anwendung als Prompt-Template
 
-Strukturanker beim Aufsetzen der Architektur. Der Agent erhält den Template-Block und befüllt ihn aus dem real existierenden Code-Aufbau, dem `package.json` oder `requirements.txt`, der CI/CD-Konfiguration und den Build-Skripten. Sicherheits- und Barrierefreiheits-Sektionen verlangen Domänenwissen und sollten gegebenenfalls vom Critical Expert verifiziert werden.
+Strukturanker beim Aufsetzen der Architektur. Der Agent erhält den Template-Block und befüllt ihn aus dem real existierenden Code-Aufbau, dem `package.json` oder `requirements.txt`, der CI/CD-Konfiguration und den Build-Skripten. Sicherheits- und Barrierefreiheits-Sektionen verlangen Domänenwissen und sollten gegebenenfalls vom Critical Expert geprüft werden.
 
 Review-Folie für eine bestehende Architektur. Ein vorhandenes `architecture.md` wird gegen die Vorlage gehalten, um zu prüfen, ob alle Sektionen tragen, ob die Modulgrenzen sauber sind, ob Sicherheit und Barrierefreiheit als Hauptbestandteile geführt werden und nicht als Anhang, und ob keine Code-Implementation hineingewachsen ist.
 
@@ -201,7 +202,7 @@ tags: [template, promptotyping, vault-operations]
 created: 2026-05-05
 updated: 2026-05-09
 authors: [Christopher Pollin]
-generated-with: Claude Code mit Claude Opus 4.7
+generated-with: Claude Code (Claude Opus 4.7)
 method:
   name: Promptotyping
   url: https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin
@@ -213,17 +214,29 @@ related: [data, design, features, maintenance]
 ---
 ```
 
-Gespaltener Fall: zbz-ocr-tei führt die Bauweise-Funktion in drei Dokumenten: `PIPELINE.md` (7-stufige OCR-zu-TEI-Pipeline mit Skripten, Input- und Output-Pfaden, Stage-Status), `INFRASTRUKTUR.md` (Azure-API-Zugang, Podman-Container, GitLab-CI, ZBZ-Deployment), `ENGINES.md` (Mistral Document AI, DeepSeek, Gemini, Docling als OCR- und Layout-Engines mit Endpunkten und Limits). Diese Spaltung ist die Praxisform des Geltungsbereich-Hinweises oben: bei mehrstufigen ML-Pipelines mit mehreren externen Modellen reicht eine Datei nicht, weil die einzelnen Aspekte je eigenen Aktualisierungsrhythmus tragen.
+Ein großes System kann die Architecture-Funktion in `pipeline-architecture.md`, `model-services-architecture.md` und `deployment-architecture.md` teilen, wenn diese Aspekte unabhängig gesucht oder gepflegt werden. Ein neues Repo beginnt mit `architecture.md` und teilt erst an dieser nachgewiesenen Grenze.
+
+Das Fehlmuster aus dem Inhaltsaudit vom Juli (2026-07-19 - Promptotyping-Wissensbasen Inhaltsaudit (Befund)) ist die veraltete Architektur in einer aktiven Wissensbasis: eine `architecture.md`, die eine seit Wochen entfernte Komponente als aktiv beschreibt, weil das Dokument beim Rückbau nicht mitgezogen wurde. Architektur veraltet nicht durch Zuwachs, sondern durch Rückbau.
 
 ## Begriffe
 
 - Stack: die Gesamtheit der eingesetzten Technologien (Sprachen, Frameworks, Plattformen, Tooling).
 - Modulgrenze: die Schnittstelle, an der eine Komponente endet und eine andere beginnt; die zentrale Information einer Architekturbeschreibung.
 - Datenfluss: der Weg, den Daten von der Quelle bis zur Anzeige durchlaufen, mit Formaten und Validierungspunkten an jedem Übergang.
+- Pipeline: ein mehrstufiger Verarbeitungs-Workflow, der eine Quelle über definierte Stufen in ein Zielartefakt überführt; bei eigenständiger Routing Question eine Spezialisierung als `pipeline-architecture.md`.
+
+## Versionshistorie
+
+- 0.4 (2026-08-21): Naming Contract übernommen. Architektur-Spezialisierungen folgen `<subject>-architecture.md`; die Teilungsgrenze verbindet Routing Question und Aktualisierungszyklus.
+- 0.3 (2026-07-19): englisches Funktionsvokabular (Architecture), Block-Status auf `draft`, Lebenszyklus-Absatz, Fehlmuster im Beispiel. Keine Migrationspflicht für bestehende Repos.
+- 0.2 (2026-06-13): externe Modelle und Deployment als Sektionen konsolidiert (statt eigener `engines.md`/`infrastruktur.md` als Default), `pipeline.md` als einzige reguläre Auslagerung.
+- 0.1 (2026-05-09): Erstfassung.
 
 ## Related
 
+- [Vorlagen Promptotyping Documents](#vorlagen)
+- [Konvention Promptotyping Documents](#konvention-v0.1)
+- [Promptotyping](#overview)
 - [Vorlage Specification](#promptotyping-document-specification)
 - [Vorlage Datengrundlage](#promptotyping-document-data)
 - [Vorlage Design](#promptotyping-document-design)
-- [Konvention Promptotyping Documents](#konvention-v0.1)

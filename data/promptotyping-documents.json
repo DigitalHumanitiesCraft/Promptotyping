@@ -1,6 +1,6 @@
 {
   "version": "0.4",
-  "generated": "2026-08-21",
+  "generated": "2026-11-10",
   "_meta": {
     "beschreibung": "Structured form of the template table (Knowledge Documents). Generated from the frontmatter of the mirrors under _content/promptotyping-document/ and from the function, file-name and type assignment in _content/konvention.md (template catalogue and routing heuristic). The order follows the template catalogue of the convention. The function names are English; template names remain stable identifiers. The trigger field carries the criterion under which a template applies.",
     "schema": {
@@ -121,7 +121,7 @@
       "funktion": "Design",
       "datei": "design.md",
       "typ": "Declarative",
-      "version": "0.2",
+      "version": "0.3",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/design.md",
       "trigger": "project has a UI"

@@ -4,7 +4,7 @@ slug: index
 version: "0.4"
 status: complete
 source: Vorlage Index
-mirrored: 2026-08-21
+mirrored: 2026-11-10
 machine-url: https://dhcraft.org/Promptotyping/_content/promptotyping-document/index.md
 ---
 # Vorlage Index
@@ -13,7 +13,7 @@ Diese Vorlage strukturiert das Navigationsdokument einer Promptotyping-Wissensba
 
 ## Geltungsbereich
 
-Die Vorlage trägt, sobald die Wissensbasis mehr als drei Dokumente enthält. Bei kleineren Repos ist ein Index überflüssig und kann in das Charter-Dokument (`project.md` oder `README.md`) integriert werden. Sie trägt nicht für projektübergreifende Übersichten oder MOCs im Vault; dafür gilt der Vault-Standard aus CLAUDE §3.
+Die Vorlage trägt, sobald die Wissensbasis mehr als drei Dokumente enthält. Bei kleineren Repos ist ein Index überflüssig und kann in das Charter-Dokument (`project.md` oder `README.md`) integriert werden. Sie trägt nicht für projektübergreifende Übersichten oder MOCs im Vault; dafür gelten die Dokumentregeln des jeweiligen Vaults.
 
 Lebenszyklus: der Index entsteht, sobald das vierte Dokument die Schwelle reißt, und wird bei jeder neuen, umbenannten oder entfernten Datei nachgepflegt, parallel zur Wissensbasis, nicht erst zum Schluss. Die Konsistenz gegen den realen Ordnerinhalt ist seine einzige Update-Pflicht; ein Index, der sie verliert, ist schlechter als keiner, weil er falsche Sicherheit erzeugt.
 
@@ -29,7 +29,7 @@ Erstens speichert der Index nicht, er zeigt. Jede Information, die im Index zusa
 
 Zweitens liefert der Index Lesepfade, nicht nur eine Liste. Eine flache Aufzählung der Dokumente ist eine Datei-Übersicht, keine Lesehilfe. Lesepfade ordnen Dokumente nach Anliegen ("Onboarding", "Reproduktion", "Architektur-Review") und schicken den Leser durch die Wissensbasis in einer Reihenfolge, die der Aufgabe angemessen ist.
 
-Drittens trägt der Index die kanonischen Begriffe des Projekts. Begriffe sind dort definiert, wo sie gebraucht werden; der Index ist die einzige Stelle, an der die definierenden Begriffe vault-weit konsistent gepflegt sind. Geschwister-Dokumente verlinken auf einzelne Begriffe (`INDEX`), statt sie selbst zu definieren. Bei sehr vielen Begriffen (mehr als 15 bis 20) ist die Auslagerung in ein eigenes `glossary.md` zulässig; in der Regel reicht eine Sektion im Index.
+Drittens trägt der Index die kanonischen Begriffe des Projekts. Begriffe sind dort definiert, wo sie gebraucht werden; der Index ist die einzige Stelle, an der die definierenden Begriffe vault-weit konsistent gepflegt sind. Geschwister-Dokumente verlinken auf einzelne Begriffe (`[[INDEX#Erschließungsform]]`), statt sie selbst zu definieren. Bei sehr vielen Begriffen (mehr als 15 bis 20) ist die Auslagerung in ein eigenes `glossary.md` zulässig; in der Regel reicht eine Sektion im Index.
 
 Viertens ist der Index gegen den realen Ordnerinhalt konsistent. Jede relevante Datei ist gelistet, kein Eintrag zeigt auf eine gelöschte oder geplante Datei. Nicht relevante Funktionen bleiben ohne ausgeschriebene Begründung weg.
 
@@ -72,7 +72,7 @@ Funktion: kanonische Definitionen der projekt-konstitutiven Begriffe und der in 
 ## Was nicht reingehört
 
 - Inhaltsabschriften aus den Geschwistern. Der Index zeigt, er speichert nicht. Ausnahme: die Begriffsdefinitionen, die hier kanonisch leben.
-- Konkrete Zahlen aus der Anwendung (Coverage, Datensatzgrößen, Testcounts). Diese liegen in der Anwendung selbst und im `persons.json#meta` oder vergleichbar; siehe Vault-Regel zu volatilen Quantitäten in CLAUDE §6.
+- Konkrete Zahlen aus der Anwendung (Coverage, Datensatzgrößen, Testcounts). Diese liegen in der Anwendung selbst und im `persons.json#meta` oder vergleichbar; volatile Quantitäten stehen nicht in Wissensdokumenten.
 - Sessionprotokolle und Verlaufserzählungen. Sachliche Übergänge werden knapp in `journal.md` nachgewiesen.
 - Eine "Was fehlt und warum"-Sektion. Bis zur Regeländerung vom 2026-06-29 gefordert, seitdem untersagt; nicht relevante Funktionen bleiben unkommentiert weg, Verweise auf anderswo liegendes Material stehen positiv am Bedarfsort.
 - Methodische Einführungen ins Promptotyping. Dafür ist [Promptotyping](#overview) im Vault zuständig; der Index zeigt nur darauf.
@@ -120,7 +120,7 @@ related: [project, data, specification, architecture, design, handoff, journal]
 | [[architecture]] | Architecture | Wie ist es technisch realisiert? | bei Architekturänderung |
 | [[design]] | Design | Wie sieht es aus und wie verhält es sich? | bei Änderung des Designsystems |
 | [[handoff]] | Handoff | Welche Übergabepunkte sind offen? | bei Eingang oder Verarbeitung eines Handoff-Punkts |
-| [[journal]] | Provenance | Welche Übergänge wurden integriert, verworfen oder korrigiert? | nach sachlich zusammengehörigen Übergängen |
+| [[journal]] | Provenance | Was wurde wann aus welchem Anlass entschieden, korrigiert oder geändert? | nach sachlich zusammengehörigen Übergängen |
 
 <!-- Reihenfolge folgt Funktions-Logik, nicht alphabetisch. Nicht relevante Funktionen weglassen. -->
 

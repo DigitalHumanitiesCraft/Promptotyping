@@ -4,17 +4,16 @@ slug: report
 version: "0.3"
 status: complete
 source: Vorlage Report
-mirrored: 2026-08-21
+mirrored: 2026-11-10
 machine-url: https://dhcraft.org/Promptotyping/_content/promptotyping-document/report.md
 ---
-
 # Vorlage Report
 
-Diese Vorlage strukturiert den menschlich kuratierten Projektstatusbericht für einen externen Adressaten. Das resultierende Dokument heißt `<scope>-report-YYYY-MM-DD.md` und liegt unter `snapshots/`. Scope und Datum machen Berichtsgegenstand und Stichtag bereits im Suchtreffer sichtbar. Aus der externen Audience und dem Snapshot-Charakter folgen Lebenszyklus, Struktur und Stil. Die ausführliche Begründung der Funktion liegt in der Konvention Report Document.
+Diese Vorlage strukturiert den menschlich kuratierten Projektstatusbericht für einen externen Adressaten. Das resultierende Dokument heißt `<scope>-report-YYYY-MM-DD.md` und liegt unter `snapshots/`. Scope und Datum machen Berichtsgegenstand und Stichtag bereits im Suchtreffer sichtbar. Aus der externen Audience und dem Snapshot-Charakter folgen Lebenszyklus, Struktur und Stil.
 
 ## Geltungsbereich
 
-Die Vorlage trägt, sobald ein Projektstand an einen externen Empfänger kommuniziert werden muss: Auftraggeber, Förderer, Stakeholder. Bei Auftragsprojekten ist das der Regelfall, weil Kundinnen und Kunden einen Arbeitsbericht erhalten. Sie entfällt bei reinen Eigenforschungs-Repos ohne externen Berichtsadressaten und bei Tool-Repos ohne Auftragskontext. Sie trägt nicht für interne Stand-Notizen; diese leben im `journal.md`.
+Die Vorlage trägt, sobald ein Projektstand an einen externen Empfänger kommuniziert werden muss, etwa an Auftraggeber, Förderer oder Stakeholder. Bei Auftragsprojekten ist das der Regelfall. Sie entfällt bei reinen Eigenforschungs-Repos ohne externen Berichtsadressaten und bei Tool-Repos ohne Auftragskontext. Interne aktuelle Stände stammen aus der projektspezifischen lebenden Statusquelle.
 
 Der Naming Contract trennt den kuratierten Report von maschinell erzeugten Prüf- und Vollständigkeitsberichten. Kuratierte Berichte tragen Scope, Funktion und Datum. Generierte Berichte liegen unter `generated/` oder einem in `INDEX.md` erklärten domänenspezifischen Ausgabeordner. Ein generisches `report.md` oder `status.md` wird für neue kuratierte Berichte nicht verwendet.
 
@@ -22,7 +21,7 @@ Der Naming Contract trennt den kuratierten Report von maschinell erzeugten Prüf
 
 Das Dokument beantwortet einem Dritten ohne Repo-Vorwissen vier Fragen am Stück: was wurde im Berichtszeitraum getan, wo steht das Projekt am Stichtag, welche belastbaren Ergebnisse liegen vor, was geschieht als Nächstes. Adressiert ist ein identifizierbarer externer Empfänger; das unterscheidet den Report von allen anderen Promptotyping-Dokumenten, deren Adressat der Coding-Agent oder das Projekt selbst ist.
 
-Abgrenzung gegen `journal.md`: nicht der Inhalt unterscheidet, sondern Lebenszyklus und Kuratierungsgrad. Das Journal trägt fortlaufende, chronologische Einträge für interne Adressaten; der Report ist ein einziger, redaktionell verdichteter Stand ohne Verlaufslogik für externe Adressaten. Der Report zitiert aus dem Journal, das Journal verweist nicht auf den Report. Abgrenzung gegen `project.md`: dort steht zeitlos „Was ist dieses Projekt?", im Report steht „Wie steht es am Stichtag X?".
+Das Journal liefert Provenienznachweise für sachliche Übergänge, der Report verdichtet den belegten Stand für einen externen Adressaten. `project.md` hält die stabile Projektidentität, der Report den Zustand zum Stichtag. Angenommene nächste Schritte stammen aus `plan.md`, Prüfergebnisse aus `verification.md`.
 
 ## Strukturprinzipien
 
@@ -34,7 +33,7 @@ Zweitens sind Tabellen liberaler einsetzbar als das Fließprosa-Default. Eine Ta
 
 Drittens entfällt die negative Selbstdefinition. Ein externer Adressat erwartet, dass kommuniziert wird, was geleistet wurde, nicht was bewusst ausgespart bleibt. Wo Auslassungen relevant sind (out of scope, geplant aber nicht umgesetzt), gehören sie in „Offene Punkte" und „Ausblick", nicht in eine eigene Negationssektion.
 
-Jede inhaltliche Behauptung über fertige Arbeit ist belegbar: über einen Pfad ins Repo, eine URL oder einen Commit-Ref. Das ist nicht Dekoration, sondern der Mechanismus, der den Bericht als korrekten Stand zum Zeitpunkt X tragfähig macht. Erhebt der Bericht empirische Befunde oder Neuheitsansprüche (Genauigkeitswerte, erstmalige Verfahren), verweist er auf das `verification.md` des Projekts ([Vorlage Verification](#promptotyping-document-verification)), in dem diese Claims adversarial gegen die Rohdaten geprüft sind; ein außenwirksamer Claim ohne Verifikationsverweis ist eine Behauptung.
+Jede inhaltliche Behauptung über fertige Arbeit ist belegbar: über einen Pfad ins Repo, eine URL oder einen Commit-Ref. Diese Belegbarkeit ist der Mechanismus, der den Bericht als korrekten Stand zum Zeitpunkt X tragfähig macht. Erhebt der Bericht empirische Befunde oder Neuheitsansprüche (Genauigkeitswerte, erstmalige Verfahren), verweist er auf das `verification.md` des Projekts ([Vorlage Verification](#promptotyping-document-verification)), in dem diese Claims adversarial gegen die Rohdaten geprüft sind; ein außenwirksamer Claim ohne Verifikationsverweis ist eine Behauptung.
 
 ## Lebenszyklus
 
@@ -44,10 +43,10 @@ Mehrere Adressaten oder Genres erhalten eigene Scope-Werte, etwa `funder-interim
 
 ## Frontmatter-Schema
 
-Das Dokument folgt dem Frontmatter-Schema aus der [Konvention Promptotyping Documents](#konvention-v0.1) (Pflichtkern: `title, project, method, status, created, updated`; `template:` empfohlen), erweitert um drei adressaten-bezogene Felder:
+Das Dokument folgt dem Frontmatter-Schema aus [Konvention Promptotyping Documents](#konvention-v0.1) (Pflichtkern: `title, project, method, status, created, updated`; `template:` empfohlen), erweitert um drei adressaten-bezogene Felder:
 
 - `audience:` verschachtelt mit `type` (`client`, `funder`, `stakeholder`, `public`) und `name` (Adressatenbezeichnung). Der entscheidende Marker, der den Report von allen anderen Promptotyping-Dokumenten unterscheidet.
-- `report-period:` verschachtelt mit `from` und `to` (Berichtszeitraum).
+- `report-period:` verschachtelt mit `from` und `to` (Berichtszeitraum). Dokumentiert der Bericht nur einen Stichtag, entfällt das Feld. Scope und Datum im Dateinamen bleiben verpflichtend.
 - `report-genre:` kontrolliertes Vokabular: `zwischenbericht`, `abschlussbericht`, `stakeholder-update`.
 
 `topics:` entfällt typischerweise; der Report trägt keine domänen-thematische Verortung im Vault-Sinn. `knowledge-sources:` entfällt; der Report verweist auf die internen Knowledge-Dokumente, nicht auf externe Anschlüsse.
@@ -56,7 +55,7 @@ Das Dokument folgt dem Frontmatter-Schema aus der [Konvention Promptotyping Docu
 
 ### Identifikation
 
-Funktion: den eingefrorenen Stand referenzierbar machen. Inhalt: Projekt, Berichtszeitraum, Adressat, Datum, Autor. Ohne diese fünf Angaben ist ein Stand nicht zitierbar. Steht am Anfang, kurz, gegebenenfalls als Kopf-Tabelle.
+Funktion: den eingefrorenen Stand referenzierbar machen. Inhalt: Projekt, Adressat, Datum und Autor, dazu der Berichtszeitraum, wenn der Adressat ihn verlangt. Ohne diese Angaben ist ein Stand nicht zitierbar. Steht am Anfang, kurz, gegebenenfalls als Kopf-Tabelle.
 
 ### Tätigkeiten im Berichtszeitraum
 
@@ -86,7 +85,7 @@ Selbsterklärend für jemanden ohne Repo-Vorwissen. Fachbegriffe (TEI, OCR-Engin
 
 ## Was nicht reingehört
 
-- Interne Stand-Notizen und Sessionchronik. Diese leben im `journal.md`; der Report verdichtet daraus, kopiert nicht.
+- Interne aktuelle Stand-Notizen. Der Report bezieht sie aus der projektspezifischen lebenden Statusquelle und friert sie zum Stichtag ein.
 - Negative Selbstdefinition als eigene Sektion. Relevante Auslassungen gehören in „Offene Punkte" und „Ausblick".
 - Unbelegte Behauptungen über fertige Arbeit. Jede solche Aussage trägt einen Pfad, eine URL oder einen Commit-Ref.
 - Internes Jargon ohne Auflösung.
@@ -125,7 +124,7 @@ report-period:
 report-genre: [zwischenbericht | abschlussbericht | stakeholder-update]
 ---
 
-<!-- Identifikation: Projekt, Berichtszeitraum, Adressat, Datum, Autor. Kurz, ggf. als Kopf-Tabelle. -->
+<!-- Identifikation: Projekt, Adressat, Datum, Autor, Berichtszeitraum nur auf Verlangen des Adressaten. Kurz, ggf. als Kopf-Tabelle. -->
 
 [Identifikations-Block]
 
@@ -162,13 +161,13 @@ report-genre: [zwischenbericht | abschlussbericht | stakeholder-update]
 
 ## Anwendung als Prompt-Template
 
-Strukturanker beim Erstellen eines Berichts. Der Agent erhält den Template-Block und befüllt ihn aus `journal.md` (Tätigkeiten), `specification.md` (Stand der Anforderungen und Entscheidungen), den Ergebnis-Artefakten im Repo (Pfade, Commits) und dem aktuellen Datenstand. Volatile Zahlen werden hier ausdrücklich aus den lebenden Quellen übernommen, nicht aus dem Gedächtnis. Der Bericht wird vor Versand vom Critical Expert gegen den echten Repo-Stand geprüft (Critical Expert in the Loop).
+Strukturanker beim Erstellen eines Berichts. Der Agent erhält den Template-Block und befüllt ihn aus der lebenden Statusquelle, `specification.md`, `plan.md`, `verification.md`, den Ergebnis-Artefakten und dem aktuellen Datenstand. `journal.md` wird nur für Herkunft und Entscheidungsgründe sachlicher Übergänge konsultiert. Volatile Zahlen werden aus ihren lebenden Quellen übernommen. Der Bericht wird vor Versand vom Critical Expert gegen den echten Repo-Stand geprüft (Critical-Expert-in-the-Loop).
 
 Review-Folie für einen bestehenden Bericht. Ein vorhandener `<scope>-report-YYYY-MM-DD.md` wird gegen die Vorlage gehalten, um Naming, Identifikation, Belegbarkeit, Begriffserklärung und Übereinstimmung mit dem referenzierten Repo-Zustand zu prüfen.
 
 ## Beispiel
 
-Das Promptotyping-Methodik-Repo führt den früheren Lane-Bericht als `snapshots/paper-zfdg-submission-report-2026-07-23.md`. Der Pfad signalisiert die Artefaktklasse, der Scope benennt Paper und Einreichkontext, das Datum fixiert den Stand. Inhaltliche Behauptungen verweisen auf die damaligen Repo-Pfade und Commit-Refs.
+Ein Zwischenbericht an einen Fördergeber zum Ende eines Projektjahres hieße etwa `snapshots/funder-interim-report-2026-12-15.md`. Der Pfad signalisiert die Artefaktklasse, der Scope benennt Adressat und Berichtsgenre, das Datum fixiert den Stand. Inhaltliche Behauptungen verweisen auf die Repo-Pfade und Commit-Refs dieses Stichtags.
 
 ## Begriffe
 
@@ -181,11 +180,14 @@ Das Promptotyping-Methodik-Repo führt den früheren Lane-Bericht als `snapshots
 
 - 0.3 (2026-08-21): Naming Contract übernommen. Reports liegen als datierte Snapshots unter `snapshots/` und führen Scope, Funktion und Datum im Dateinamen. Generische `report.md`- und `status.md`-Träger entfallen für neue kuratierte Berichte.
 - 0.2 (2026-07-19): Freigabe (status complete), Block-Status auf `snapshot` (neu registriertes Vokabular), Verification-Verweis für außenwirksame Claims. Keine Migrationspflicht für bestehende Repos.
-- 0.1 (2026-06-13): Erstfassung, Rationale in der Konvention Report Document.
+- 0.1 (2026-06-13): Erstfassung, Rationale damals in einer eigenen Konvention, die seit 2026-10-03 in dieser Vorlage aufgeht.
 
 ## Related
 
+- [Vorlagen Promptotyping Documents](#vorlagen)
 - [Konvention Promptotyping Documents](#konvention-v0.1)
-- [Vorlage Verification](#promptotyping-document-verification)
+- [Promptotyping](#overview)
+- Critical-Expert-in-the-Loop
 - [Vorlage Journal](#promptotyping-document-journal)
 - [Vorlage Projekt-Wissensdokument](#promptotyping-document-project)
+- [Vorlage Verification](#promptotyping-document-verification)

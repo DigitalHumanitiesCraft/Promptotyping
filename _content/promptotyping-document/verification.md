@@ -4,10 +4,9 @@ slug: verification
 version: "0.2"
 status: complete
 source: Vorlage Verification
-mirrored: 2026-08-21
+mirrored: 2026-11-10
 machine-url: https://dhcraft.org/Promptotyping/_content/promptotyping-document/verification.md
 ---
-
 # Vorlage Verification
 
 Diese Vorlage strukturiert das Verification-Dokument einer Promptotyping-Wissensbasis. Ein einzelner Träger heißt `verification.md`; getrennte Prüfgegenstände werden als `<subject>-verification.md` spezialisiert. Das Dokument liegt im `knowledge/`-Ordner und trägt die adversariale Prüfung eigener empirischer und Neuheits-Claims gegen die Rohdaten. Der erste Absatz bestätigt die über den Dateinamen geroutete Funktion.
@@ -18,7 +17,7 @@ Die Vorlage trägt, sobald das Projekt empirische Befunde oder Neuheitsansprüch
 
 Lebenszyklus: das Dokument entsteht, bevor der erste außenwirksame Claim das Projekt verlässt, nicht danach; eine nachgereichte Verification prüft eine bereits publizierte Formulierung und kann sie nur noch einschränken. Aktualisiert wird es bei jedem neuen Claim und jedem Prüflauf; am Projektende bleibt es als finaler Prüfstand stehen, weil die Bindungsregel für publizierte Formulierungen fortgilt.
 
-Verification ist von drei Nachbarfunktionen abgegrenzt. Quality Assurance (`testing.md`) prüft Systemverhalten gegen die Spezifikation, ob Code und Pipeline tun, was sie sollen; Verification prüft, ob inhaltliche Behauptungen durch die Rohdaten gedeckt sind. Reporting unter `snapshots/` kommuniziert Ergebnisse an einen externen Adressaten; Verification prüft deren Belastbarkeit, bevor sie berichtet werden. Provenance (`journal.md`) hält den chronologischen Entscheidungsverlauf; Verification ist die synchrone, antagonistische Prüfung einer Behauptung gegen ihren Beleg.
+Verification ist von drei Nachbarfunktionen abgegrenzt. Quality Assurance (`testing.md`) prüft Systemverhalten gegen die Spezifikation, ob Code und Pipeline tun, was sie sollen; Verification prüft, ob inhaltliche Behauptungen durch die Rohdaten gedeckt sind. Reporting unter `snapshots/` kommuniziert Ergebnisse an einen externen Adressaten. Provenance (`journal.md`) weist sachliche Übergänge aus den Prüfergebnissen nach.
 
 ## Funktion des Dokuments
 
@@ -60,7 +59,7 @@ Funktion: das geschlossene Ergebnis-Vokabular definieren, mit Konsequenz pro Wer
 
 ### Prüfkette
 
-Funktion: das Stufenmodell der Prüfung von deterministisch nach menschlich dokumentieren. Inhalt: Stufe 1 formale Integrität (Lint, Ankerauflösung, Zitat-Identität, deterministisch per Skript), Stufe 2 adversariale Maschinenprüfung, Stufe 3 bindende menschliche Verifikation durch den Critical Expert. Nur Stufe 3 erzeugt den höchsten Status. Alle drei Belegprojekte führen diese Kette in vergleichbarer Form.
+Funktion: das Stufenmodell der Prüfung von deterministisch nach menschlich dokumentieren. Inhalt: Stufe 1 formale Integrität (Lint, Ankerauflösung, Zitat-Identität, deterministisch per Skript) als Verifikation, Stufe 2 adversariale Maschinenprüfung als agentisches Review, Stufe 3 bindende fachliche Validierung durch den Critical Expert. Nur Stufe 3 erzeugt den höchsten Status. Alle drei Belegprojekte führen diese Kette in vergleichbarer Form.
 
 ### Anti-Anchoring-Protokoll
 
@@ -86,7 +85,7 @@ Funktion: aussprechen, was das Verfahren strukturell nicht leisten kann. Inhalt:
 
 - Systemtests. Ob Code und Pipeline funktionieren, gehört in `testing.md`; hier geht es um inhaltliche Behauptungen.
 - Berichtsprosa. Die außenwirksame Darstellung der Ergebnisse gehört in den datierten Report unter `snapshots/`; Verification lizenziert sie nur.
-- Chronologie. Wann welche Prüfung lief und was dabei entschieden wurde, gehört in `journal.md`; hier steht der aktuelle Prüfstand pro Claim.
+- Provenienzindex. Integrierte, verworfene oder korrigierte Übergänge aus einer Prüfung werden knapp in `journal.md` nachgewiesen; hier steht der ausführliche aktuelle Prüfstand pro Claim.
 - Rohdaten-Beschreibung. Was die Daten sind, gehört in `data.md`; hier steht nur der Prüfstand-Verweis.
 
 ## Vorlage zum Befüllen
@@ -189,7 +188,7 @@ Review-Folie für eine bestehende Verification. Ein vorhandenes Dokument wird ge
 
 ## Beispiel
 
-kisug führt den strengsten Mechanismus des Bestands: adversariale Verifikation mit Anti-Anchoring (der Prüfer sieht nur Quellstelle und Behauptung), einem Zweitprüfer aus fremder Modellfamilie als Dekorrelation, Kalibrierung des Prüfers an Kontrollfällen mit bekannter Wahrheit und einem fünfstufigen Verdikt-Vokabular, in dem nur `stützt voll` den Status `verifiziert` erlaubt. FemPrompt führt das Fünf-Klassen-Befundvokabular mit direkter Migrationskonsequenz pro Klasse und eine persistierte Waitlist für offene Fälle; die Prüfkette läuft vom deterministischen Skript über die adversariale Maschinenprüfung zur bindenden menschlichen Stufe. szd-htr-ocr-pipeline führt das dreistufige Review-Modell als maschinenlesbaren JSON-Block im Pipeline-Output und benennt die Grenzen explizit (Agreement ist nicht Wahrheit, Ground-Truth-freie Verfahren messen Plausibilität). Alle drei teilen die Grundfigur: kontrolliertes Verdikt, Stufenkette mit menschlichem Abschluss, maschinenlesbare Persistenz.
+kisug führt den strengsten Mechanismus des Bestands: adversariale Prüfung mit Anti-Anchoring (der Prüfer sieht nur Quellstelle und Behauptung), einem Zweitprüfer aus fremder Modellfamilie als Dekorrelation, Kalibrierung des Prüfers an Kontrollfällen mit bekannter Wahrheit und einem fünfstufigen Verdikt-Vokabular, in dem nur `stützt voll` den Status `verifiziert` erlaubt. FemPrompt führt das Fünf-Klassen-Befundvokabular mit direkter Migrationskonsequenz pro Klasse und eine persistierte Waitlist für offene Fälle; die Prüfkette läuft vom deterministischen Skript über die adversariale Maschinenprüfung zur bindenden menschlichen Stufe. szd-htr-ocr-pipeline führt das dreistufige Review-Modell als maschinenlesbaren JSON-Block im Pipeline-Output und benennt die Grenzen explizit (Agreement ist nicht Wahrheit, Ground-Truth-freie Verfahren messen Plausibilität). Alle drei teilen die Grundfigur: kontrolliertes Verdikt, Stufenkette mit menschlichem Abschluss, maschinenlesbare Persistenz.
 
 ## Begriffe
 
@@ -207,7 +206,9 @@ kisug führt den strengsten Mechanismus des Bestands: adversariale Verifikation 
 
 ## Related
 
+- [Vorlagen Promptotyping Documents](#vorlagen)
 - [Konvention Promptotyping Documents](#konvention-v0.1)
+- 2026-07-19 - Promptotyping-Wissensbasen Inhaltsaudit (Befund)
 - [Vorlage Testing](#promptotyping-document-testing)
 - [Vorlage Report](#promptotyping-document-report)
 - [Vorlage Journal](#promptotyping-document-journal)

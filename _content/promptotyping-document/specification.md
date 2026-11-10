@@ -4,21 +4,22 @@ slug: specification
 version: "0.3"
 status: complete
 source: Vorlage Specification
-mirrored: 2026-06-10
+mirrored: 2026-11-10
 machine-url: https://dhcraft.org/Promptotyping/_content/promptotyping-document/specification.md
 ---
-
 # Vorlage Specification
 
-Diese Vorlage strukturiert das Substanz-Dokument einer Promptotyping-Wissensbasis. Das resultierende Dokument heißt typischerweise `specification.md` und liegt im `knowledge/`-Ordner des Repos. Es konsolidiert Anforderungen, Epics und User Stories, Funktionsumfang und Entscheidungen zu einer zentralen Datei und beantwortet die Was-und-Warum-Frage des Projekts am Stück. Seit Vorlagen-Version 0.2 (Konventionsänderung 2026-05-30) trägt es auch die narrativen Anwendungsszenarien, die zuvor per Default in einer separaten `user-stories.md` lagen.
+Diese Vorlage strukturiert das Specification-Dokument einer Promptotyping-Wissensbasis. Das resultierende Dokument heißt typischerweise `specification.md` und liegt im `knowledge/`-Ordner des Repos. Es konsolidiert Anforderungen, Epics und User Stories, Funktionsumfang und Entscheidungen zu einer zentralen Datei und beantwortet die Was-und-Warum-Frage des Projekts am Stück. Seit Vorlagen-Version 0.2 (Konventionsänderung 2026-05-30) trägt es auch die narrativen Anwendungsszenarien, die zuvor per Default in einer separaten `user-stories.md` lagen.
 
 ## Geltungsbereich
 
-Die Vorlage trägt für jedes Promptotyping-Repo, weil die Substanz-Funktion in der [Konvention Promptotyping Documents](#konvention-v0.1) als immer-relevant geführt wird. Bei sehr kleinen Projekten kann sie in `project.md` integriert werden.
+Die Vorlage trägt für jedes Promptotyping-Repo, weil die Specification-Funktion in [Konvention Promptotyping Documents](#konvention-v0.1) als immer-relevant geführt wird. Bei sehr kleinen Projekten kann sie in `project.md` integriert werden.
+
+Lebenszyklus: das Dokument entsteht früh, typischerweise in Preparation und Exploration, und lebt danach in drei Rhythmen, die Anforderungen bleiben weitgehend stehen, der Funktionsumfang wird pro Release refaktoriert, die Entscheidungen wachsen monoton in dem Moment, in dem sie fallen. Die Destillat-Grenze ist erreicht, wenn diese Rhythmen als Dateirhythmen auseinanderlaufen; dann wird nach Routing Question gespalten, etwa in `system-specification.md`, `architecture-decisions.md` und `user-stories.md`.
 
 Spaltung als Norm. Größere Projekte teilen die Specification-Funktion regelmäßig in spezialisierte Träger wie `system-specification.md`, `feature-specification.md` und `architecture-decisions.md`. Eigenständige Forschungsfragen erhalten gegenstandsbezogene Funktionen wie `research-analysis.md` oder `research-exploration.md`. Die Teilung folgt eigenständigen Routing Questions oder Aktualisierungszyklen. Diese Vorlage beschreibt den konsolidierten Einzelträger `specification.md`; Strukturprinzipien und Frontmatter-Schema gelten bei einer Spaltung pro Datei.
 
-Anwendungsszenarien sind integriert. User Stories aus Anwender-Perspektive im Format „Als [Rolle], die …, will ich …, damit …" gehören seit der Konventionsänderung 2026-05-30 als eigene Sektion (Epics plus User Stories) in `specification.md`. Eine separate `user-stories.md` (siehe [Vorlage User Stories](#promptotyping-document-user-stories)) ist die dokumentierte Ausnahme für große Projekte (typischerweise Editionsprojekte), deren Substanz-Funktion ohnehin gespalten wird; in dem Fall gelten die Strukturprinzipien der Vorlage User Stories für die ausgelagerte Datei.
+Anwendungsszenarien sind integriert. User Stories aus Anwender-Perspektive im Format „Als [Rolle], die …, will ich …, damit …" gehören seit der Konventionsänderung 2026-05-30 als eigene Sektion (Epics plus User Stories) in `specification.md`. Eine separate `user-stories.md` ([Vorlage User Stories](#promptotyping-document-user-stories)) ist dann kein eigenständiges Dokument, sondern die ausgelagerte Epics-und-User-Stories-Sektion dieser Specification, also ein Unterdokument der Specification-Funktion. Sie ist die dokumentierte Ausnahme für große Projekte (typischerweise Editionsprojekte), deren Specification-Funktion ohnehin gespalten wird; in dem Fall gelten die Strukturprinzipien der Vorlage User Stories für die ausgelagerte Datei, und in `specification.md` verbleibt an ihrer Stelle ein Verweis. Die Spaltung ist reversibel: teiCrafter hat die separate Datei am 2026-06-12 wieder in die Specification gezogen und die Szenarien als „Acceptance Scenarios" geführt („a usage scenario is a requirement seen from the user's side"). Diese In-spec-Form ist eine gleichwertige Alternative zur Epics-und-User-Stories-Sektion.
 
 ## Funktion des Dokuments
 
@@ -38,11 +39,11 @@ Drittens werden Decisions nicht überschrieben. Wenn eine Entscheidung revidiert
 
 ## Frontmatter-Schema
 
-Das Dokument folgt dem Frontmatter-Schema aus der [Konvention Promptotyping Documents](#konvention-v0.1) (Pflichtkern: `title, project, method, status, created, updated`). Spezifisch für Specification:
+Das Dokument folgt dem Frontmatter-Schema aus [Konvention Promptotyping Documents](#konvention-v0.1) (Pflichtkern: `title, project, method, status, created, updated`). Spezifisch für Specification:
 
-- `topics:` typisch sind Verweise auf Requirements Engineering, Decision Records (oder ADR) und User Stories. Sie verorten den Agenten in den methodischen Wissensfeldern, die formale Anforderungen, Anwendungsszenarien und Entscheidungsdokumentation tragen.
+- `topics:` typisch sind `[[Requirements Engineering]]`, `[[Decision Records]]` (oder `[[ADR]]`) und `[[User Stories]]`. Sie verorten den Agenten in den methodischen Wissensfeldern, die formale Anforderungen, Anwendungsszenarien und Entscheidungsdokumentation tragen.
 - `knowledge-sources:` selten genutzt; Specification trägt projekt-internes Wissen, nicht externe Anschlüsse.
-- `related:` typischerweise `project`, `data`, `architecture`, `design`; bei ausgelagerten Stories zusätzlich `user-stories`. Specification ist das Hub-Dokument der Substanz und referenziert in beide Richtungen.
+- `related:` typischerweise `project`, `data`, `architecture`, `design`; bei ausgelagerten Stories zusätzlich `user-stories`. Specification ist das Hub-Dokument der gleichnamigen Funktion und referenziert in beide Richtungen.
 
 ## Abschnitte im Detail
 
@@ -54,11 +55,11 @@ Funktion: in zwei bis drei Sätzen den Charakter des Dokuments und seinen Aufbau
 
 Funktion: festhalten, was das System leisten soll und für wen. Inhalt: funktionale und nicht-funktionale Anforderungen in formaler Sprache, mit Akzeptanzkriterien soweit operationalisierbar, durchnummeriert (FR-NN, NFR-NN). Format pro Anforderung: ein Satz, der das Verhalten beschreibt, plus Akzeptanzkriterium. Nicht-funktionale Anforderungen (Barrierefreiheit, Performance, Datenschutz) werden separat ausgewiesen, gegebenenfalls als eigene Unterüberschrift. Diese Sektion wird selten umgeschrieben.
 
-Diese Sektion trägt formale Anforderungen, nicht narrative Szenarien. Anwendungsszenarien aus Forscherinnen- oder Anwender-Perspektive gehören in die Sektion Epics und User Stories desselben Dokuments. Der Grund für die getrennten Sektionen: Anforderungen sind formal-prüfbar (Reviewer-Sicht), Stories sind narrativ-anwendungsorientiert (Anwender-Sicht); beide gehören zur Substanz-Funktion, tragen aber unterschiedliche Sprachen und Adressaten.
+Diese Sektion trägt formale Anforderungen, nicht narrative Szenarien. Anwendungsszenarien aus Forscherinnen- oder Anwender-Perspektive gehören in die Sektion Epics und User Stories desselben Dokuments. Der Grund für die getrennten Sektionen: Anforderungen sind formal-prüfbar (Reviewer-Sicht), Stories sind narrativ-anwendungsorientiert (Anwender-Sicht); beide gehören zur Specification-Funktion, tragen aber unterschiedliche Sprachen und Adressaten.
 
 ### Epics und User Stories
 
-Funktion: dokumentieren, wer das System wie und warum nutzt. Inhalt: Epics als thematische Bündel verwandter Szenarien (typischerweise drei bis fünf, etwa Zentrale Forschungsoperationen, Wissenschaftliche Absicherung, Begriffliche Orientierung), darunter die einzelnen Stories im Format „Als [Rolle], die [Kontext], will ich [Ziel], damit [Nutzen]." Jede Story führt ihren epistemischen Status (validiert durch wen und wann, oder Annahme mit Beobachtungspunkt „Effekt: to be observed" plus auflösendem Ereignis) und eine Ableitung als Verlinkung in die Wissensbasis: welche Anforderung (FR-NN), welche Komponente in `architecture.md` oder `design.md`, welche Begriffe aus `INDEX.md`. Die vollständigen Strukturprinzipien (Dreigliedrigkeit, Trennung Anwender- von System-Perspektive, Ableitungspflicht, epistemischer Status) stehen in der [Vorlage User Stories](#promptotyping-document-user-stories) und gelten für diese Sektion unverändert. Wird die Sektion bei großen Editionsprojekten als separate `user-stories.md` ausgelagert (dokumentierte Ausnahme), verbleibt hier ein Verweis.
+Funktion: dokumentieren, wer das System wie und warum nutzt. Inhalt: Epics als thematische Bündel verwandter Szenarien (typischerweise drei bis fünf, etwa Zentrale Forschungsoperationen, Wissenschaftliche Absicherung, Begriffliche Orientierung), darunter die einzelnen Stories im Format „Als [Rolle], die [Kontext], will ich [Ziel], damit [Nutzen]." Jede Story führt ihren epistemischen Status (validiert durch wen und wann, oder Annahme mit Beobachtungspunkt „Effekt: to be observed" plus auflösendem Ereignis) und eine Ableitung als Verlinkung in die Wissensbasis: welche Anforderung (FR-NN), welche Komponente in `architecture.md` oder `design.md`, welche Begriffe aus `INDEX.md`. Die vollständigen Strukturprinzipien (Dreigliedrigkeit, Trennung Anwender- von System-Perspektive, Ableitungspflicht, epistemischer Status) stehen in [Vorlage User Stories](#promptotyping-document-user-stories) und gelten für diese Sektion unverändert, ebenso ihre Prüfkriterien. Wird die Sektion bei großen Editionsprojekten als separate `user-stories.md` ausgelagert (dokumentierte Ausnahme), verbleibt hier ein Verweis.
 
 ### Funktionsumfang
 
@@ -66,7 +67,7 @@ Funktion: die aktuelle Gestalt des Systems beschreiben. Inhalt: pro Ansicht oder
 
 ### Entscheidungen
 
-Funktion: die Designentscheidungen mit Kontext, Wahl, Begründung, Effekt festhalten. Inhalt: ADR-artige Einträge, monoton wachsend, neueste oben oder neueste unten; entscheidend ist Konsistenz innerhalb des Dokuments. Pro Eintrag eine Überschrift mit Identifier (`### ADR-007 Akzent-Farbe von Forest Green auf Academic Blue`) und vier Felder. Bei Revision wird ein neuer Eintrag mit Verweis angelegt; der alte bleibt stehen.
+Funktion: die Designentscheidungen mit Kontext, Wahl, Begründung, Effekt festhalten. Inhalt: ADR-artige Einträge, monoton wachsend, neueste oben oder neueste unten; entscheidend ist Konsistenz innerhalb des Dokuments. Pro Eintrag eine Überschrift mit Identifier (`### ADR-007 Akzent-Farbe von Forest Green auf Academic Blue`) und vier Felder. Bei Revision wird ein neuer Eintrag mit Verweis angelegt; der alte bleibt stehen. Bei großen Projekten darf die Entscheidungs-Sektion als `architecture-decisions.md` oder ein anderes gegenstandsbezogenes `<subject>-decisions.md` ausgelagert werden, solange genau ein kanonischer Träger besteht.
 
 Pro Entscheidung:
 
@@ -92,7 +93,7 @@ title: Specification
 project:
   name: [Projektname]
   repository: [Repository-URL]
-status: complete
+status: draft
 language: [de | en]
 version: [Repo-Schema-Version]
 created: [YYYY-MM-DD]
@@ -104,7 +105,7 @@ method:
   url: https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin
 template:
   name: Vorlage Specification
-  version: 0.2
+  version: 0.3
   url: https://dhcraft.org/Promptotyping/promptotyping-document/specification
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-specification
 topics: ["[[Requirements Engineering]]", "[[Decision Records]]", "[[User Stories]]"]
@@ -191,7 +192,7 @@ Effekt. [Was wurde seitdem beobachtet.]
 
 ## Anwendung als Prompt-Template
 
-Strukturanker beim Aufsetzen der Substanz-Dokumentation. Anforderungen entstehen früh, typischerweise in der Preparation- und Exploration-Phase aus Scholar-Centered-Design-Sessions oder Requirements-Engineering. Funktionsumfang füllt sich iterativ während der Implementation. Entscheidungen werden in dem Moment eingetragen, in dem sie getroffen werden, nicht nachträglich rekonstruiert (siehe Glossar-Eintrag Critical-Expert-in-the-Loop).
+Strukturanker beim Aufsetzen der Specification-Dokumentation. Anforderungen entstehen früh, typischerweise in Preparation und Exploration aus Scholar-Centered-Design-Sessions oder Requirements-Engineering. Funktionsumfang füllt sich iterativ während der Implementation. Entscheidungen werden in dem Moment eingetragen, in dem sie getroffen werden, nicht nachträglich rekonstruiert (Critical-Expert-in-the-Loop).
 
 Review-Folie für eine bestehende Specification. Ein vorhandenes `specification.md` oder spezialisierte Träger wie `system-specification.md`, `feature-specification.md` und `architecture-decisions.md` werden gegen die Vorlage gehalten. Geprüft werden Sektionstrennung, viergliedrige Entscheidungen, nachvollziehbare Revisionen und die Abgrenzung zu Architektur- und Designdetails.
 
@@ -199,7 +200,9 @@ Review-Folie für eine bestehende Specification. Ein vorhandenes `specification.
 
 HerData hat die früher getrennten Dateien `features.md` und `decisions.md` in eine konsolidierte `specification.md` überführt, mit Drift zwischen den Dateien als dokumentiertem Grund. Die Entscheidungs-Sektion arbeitet mit dem viergliedrigen Schema "Kontext, Wahl, Begründung, Effekt"; ein Beispiel ist die Akzent-Farbe-Entscheidung, die als ADR den Wechsel von Forest Green auf Academic Blue mit Konflikt-Begründung dokumentiert. HerData ist damit der Referenzfall der Konsolidierungs-Norm.
 
-sugw-Edition hat das frühere `requirements.md` ebenfalls in `specification.md` aufgehen lassen, führt aber die Anwendungsszenarien weiterhin als separate `knowledge/user-stories.md` mit Ableitung, der Referenzfall für die dokumentierte Ausnahme der ausgelagerten Story-Datei (siehe [Vorlage User Stories](#promptotyping-document-user-stories), Konventionsänderung 2026-05-30). Beide Beispiele gegen die Repos verifiziert am 2026-06-09.
+sugw-Edition hat das frühere `requirements.md` ebenfalls in `specification.md` aufgehen lassen, führt aber die Anwendungsszenarien weiterhin als separate `knowledge/user-stories.md` mit Ableitung, der Referenzfall für die dokumentierte Ausnahme der ausgelagerten Story-Datei ([Vorlage User Stories](#promptotyping-document-user-stories), Konventionsänderung 2026-05-30). Beide Beispiele gegen die Repos verifiziert am 2026-06-09; weitere empirische Befunde zur Spannweite der Specification-Formen in Action-Layer- und Journal-Praxis in Promptotyping-Repos 2026-06.
+
+Das Fehlmuster aus dem Inhaltsaudit vom Juli (2026-07-19 - Promptotyping-Wissensbasen Inhaltsaudit (Befund)) ist die sachlich veraltete Spezifikation in einer aktiven Wissensbasis, ein Funktionsumfang, der einen abgelösten Systemstand beschreibt, während der Code längst weiter ist. Der Funktionsumfang ist die einzige Sektion, die pro Release aktiv nachgezogen werden muss; unterbleibt das, wird ausgerechnet das zentrale Was-Dokument zur falschen Quelle.
 
 ## Begriffe
 
@@ -207,3 +210,22 @@ sugw-Edition hat das frühere `requirements.md` ebenfalls in `specification.md` 
 - Feature: konkrete Funktion oder Ansicht, die das System bereitstellt; setzt typischerweise eine oder mehrere Anforderungen um.
 - ADR: Architecture Decision Record, viergliedriges Format (Kontext, Wahl, Begründung, Effekt) für eine dokumentierte Designentscheidung.
 - Aktualisierungsrhythmus: die typische Häufigkeit, mit der eine Sektion eines Dokuments verändert wird; bei Specification unterscheiden sich die drei Sektionen erheblich.
+
+## Versionshistorie
+
+- 0.3 (2026-07-19): englisches Funktionsvokabular (Specification), Block-Status auf `draft`, Lebenszyklus-Absatz, Fehlmuster im Beispiel. Keine Migrationspflicht für bestehende Repos.
+- 0.2 (2026-05-30): Epics und User Stories als Default-Sektion integriert; separate `user-stories.md` seitdem dokumentierte Ausnahme.
+- 0.1 (2026-05-09): Erstfassung.
+
+## Related
+
+- [Vorlagen Promptotyping Documents](#vorlagen)
+- [Konvention Promptotyping Documents](#konvention-v0.1)
+- [Promptotyping](#overview)
+- Critical-Expert-in-the-Loop
+- [Vorlage User Stories](#promptotyping-document-user-stories)
+- [Vorlage Projekt-Wissensdokument](#promptotyping-document-project)
+- [Vorlage Datengrundlage](#promptotyping-document-data)
+- [Vorlage Architecture](#promptotyping-document-architecture)
+- [Vorlage Design](#promptotyping-document-design)
+- [Vorlage Journal](#promptotyping-document-journal)

@@ -4,10 +4,9 @@ slug: plan
 version: "0.3"
 status: complete
 source: Vorlage Plan
-mirrored: 2026-08-21
+mirrored: 2026-11-10
 machine-url: https://dhcraft.org/Promptotyping/_content/promptotyping-document/plan.md
 ---
-
 # Vorlage Plan
 
 Diese Vorlage strukturiert das vorwärts gerichtete Process-Dokument einer Promptotyping-Wissensbasis. Ein einzelner Träger heißt `plan.md`; getrennte Arbeitsströme werden als `<subject>-plan.md` spezialisiert. Das Dokument liegt im `knowledge/`-Ordner und ist das Gegenstück zum rückblickenden `journal.md`. Es ordnet die noch ausstehende Arbeit in Phasen und Milestones mit Entry- und Exit-Bedingungen, die gegen `specification.md` verankert sind. Der erste Absatz bestätigt die Funktion; ein eigenes `zweck:`- oder `function:`-Frontmatter-Feld entsteht nicht.
@@ -24,7 +23,7 @@ Lebenszyklus: der Plan entsteht, sobald die Sequenz erkennbar ist, meist nach de
 
 Das Dokument beantwortet "was ist der nächste Schritt, in welcher Reihenfolge bauen die Schritte aufeinander auf, woran erkenne ich, dass ein Schritt abgeschlossen ist, und was muss vorher wahr sein, damit er beginnen kann". Es ist die vorwärts gerichtete Steuerungsschicht der Wissensbasis. Adressiert sind primär der Projekt-Verantwortliche, der die Arbeit taktet und gegen einen Termin priorisiert, und der Coding-Agent, der eine Session aufnimmt und wissen muss, welcher Milestone als Nächstes dran ist und unter welcher Bedingung er ihn als erledigt markieren darf.
 
-Die Abgrenzung gegen die Nachbardokumente ist scharf und definiert die Funktion. Gegen das `journal.md`: das Journal ist rückblickend und wird nie umgeschrieben, der Plan ist vorwärts gerichtet und wird fortgeschrieben. Was erledigt ist, wandert aus dem aktiven Teil des Plans in den Status-Tracker und verdichtet sich im Journal zu einem Eintrag; der Plan trägt nicht die Genese, sondern die Vorausschau. Gegen die `specification.md`: die Spezifikation sagt, was gebaut wird und warum (Anforderungen, Akzeptanzkriterien, Entscheidungen), der Plan sagt, wann und in welcher Reihenfolge. Die Exit-Bedingungen des Plans verweisen auf die Akzeptanzkriterien und Quality Gates der Spezifikation, dupliziert sie aber nicht.
+Die Abgrenzung gegen die Nachbardokumente definiert die Funktion. `journal.md` ist der kuratierte rückwärtsgerichtete Provenienzindex; `plan.md` führt angenommene Zukunftsarbeit und wird fortgeschrieben. Erledigte Arbeit verlässt den aktiven Plan. Ein Journal-Eintrag entsteht, wenn der Abschluss einen sachlich zusammengehörigen Übergang integriert, verwirft oder korrigiert. `specification.md` hält Anforderungen, Akzeptanzkriterien und Entscheidungen; die Exit-Bedingungen des Plans verweisen darauf.
 
 ## Strukturprinzipien
 
@@ -32,7 +31,7 @@ Drei Prinzipien tragen das Dokument.
 
 Erstens ist jeder Milestone gegen die Spezifikation verankert. Eine Phase oder ein Milestone trägt eine Entry-Bedingung (was muss wahr sein, um zu beginnen) und eine Exit-Bedingung (was muss wahr sein, um abzuschließen); die Exit-Bedingung verweist auf die Akzeptanzkriterien, Quality Gates oder Entscheidungen in der `specification.md`, statt sie neu zu formulieren. Ohne diese Verankerung wird der Plan zu einer Wunschliste ohne prüfbares Erledigt-Kriterium. Der Plan ist die Sequenz, die Spezifikation der Maßstab.
 
-Zweitens ist der Plan vorwärts gerichtet und wird fortgeschrieben, nicht angesammelt. Anders als das Journal, in dem alte Stände unverändert lesbar bleiben, wird der Plan beim Abschluss eines Milestones aktualisiert: der Status wandert in den Status-Tracker, neue Erkenntnisse über die nächste Phase fließen ein. Der Plan trägt immer den aktuellen Blick nach vorn, nicht die Historie. Die Historie liegt im Journal und in der Git-History; der Plan verweist darauf, kopiert sie nicht.
+Zweitens ist der Plan vorwärts gerichtet und wird fortgeschrieben. Beim Abschluss eines Milestones wandert der Stand in den Status-Tracker, neue Erkenntnisse über die nächste Phase fließen ein. Die Provenienz sachlicher Übergänge liegt im Journal, frühere Wortlaute bewahrt Git.
 
 Drittens dürfen im Status-Tracker volatile Zahlen stehen. Anders als Wissens-, Strategie- und Überblicksdokumente, die keine flüchtigen Quantitäten tragen, ist der Status-Tracker ein zeitpunktbezogener Snapshot des Arbeitsfortschritts und fällt damit unter die Snapshot-Ausnahme wie der Report. Commit-Hashes, abgeschlossene Anzahl von Artefakten, erreichte Messwerte gehören dort hin, weil der Status-Tracker genau diesen Stand festhält. Außerhalb des Status-Trackers, etwa in der Beschreibung künftiger Phasen, bleibt die Vorausschau frei von Zahlen, die beim nächsten Schritt veralten.
 
@@ -62,7 +61,7 @@ Funktion: definieren, was "fertig" bedeutet, bevor die Sequenz beginnt. Inhalt: 
 
 ### Phasen und Milestones
 
-Funktion: die Arbeit in eine geordnete Sequenz prüfbarer Etappen gliedern. Inhalt: pro Phase ein Ziel in einem Satz, darunter ein oder mehrere Milestones; pro Milestone eine Entry-Bedingung, die zu leistende Arbeit, eine Exit-Bedingung. Eine Übersichtstabelle (Phase, Milestones, Quality Gate) am Kopf der Sektion gibt den Gesamtblick, wie im `roadmap.md` des DH Developer Skriptums. Reihenfolge stets älteste-Phase-zuerst, weil der Plan die Bauabfolge abbildet.
+Funktion: die Arbeit in eine geordnete Sequenz prüfbarer Etappen gliedern. Inhalt: pro Phase ein Ziel in einem Satz, darunter ein oder mehrere Milestones; pro Milestone eine Entry-Bedingung, die zu leistende Arbeit, eine Exit-Bedingung. Eine Übersichtstabelle mit Phase, Milestones und Quality Gate gibt den Gesamtblick. Reihenfolge stets älteste-Phase-zuerst, weil der Plan die Bauabfolge abbildet.
 
 Pro Milestone:
 
@@ -82,11 +81,11 @@ Funktion: festhalten, was noch zu entscheiden ist und was die Sequenz blockiert.
 
 ### Abweichungen
 
-Funktion: regeln, was passiert, wenn von der geplanten Reihenfolge abgewichen wird. Inhalt: unter welchen Bedingungen die Sequenz neu priorisiert werden darf, wohin die Abweichung dokumentiert wird (in der Regel ins `journal.md` mit Begründung), und welche Bedingungen unabhängig von der Reihenfolge gelten (typischerweise die Quality Gates). Das `roadmap.md` führt diese Sektion als "Deviations" und hält fest, dass die Wellen-Reihenfolge Empfehlung ist, die Gates aber unabhängig gelten. Bei kurzen, fest getakteten Plänen entfällt die Sektion.
+Funktion: regeln, was passiert, wenn von der geplanten Reihenfolge abgewichen wird. Inhalt: unter welchen Bedingungen die Sequenz neu priorisiert werden darf, welches kanonische Dokument die geänderte Annahme trägt und welche Quality Gates unabhängig von der Reihenfolge gelten. Ein sachlicher Korrekturübergang erhält einen `korrigiert`-Eintrag im Journal. Bei kurzen, fest getakteten Plänen entfällt die Sektion.
 
 ## Was nicht reingehört
 
-- Provenance und Sessionchronik. Wie sich das Projekt zum Stand gearbeitet hat, gehört ins `journal.md`; der Plan blickt nach vorn, nicht zurück.
+- Provenienznachweise integrierter, verworfener oder korrigierter Übergänge. Sie liegen in `journal.md`.
 - Anforderungen und Entscheidungsbegründungen. Was gebaut wird und warum, steht in der `specification.md`; der Plan verweist auf ihre Akzeptanzkriterien als Exit-Bedingungen, formuliert sie nicht neu. Entscheidungen, die unterwegs fallen, wandern als ADR in die Spezifikation, nicht in den Plan.
 - Volatile Zahlen außerhalb des Status-Trackers. In der Beschreibung künftiger Phasen bleiben flüchtige Quantitäten draußen; sie veralten, bevor die Phase beginnt. Nur der Status-Tracker trägt den eingefrorenen Stand.
 - Zeitschätzungen. Die Sequenz ist fixiert, das Tempo offen; der Plan nennt keine Minuten-, Tages- oder Wochenschätzungen ("No time estimates", `roadmap.md`).
@@ -180,9 +179,9 @@ Legende: completed, in progress, pending.
 
 ## Anwendung als Prompt-Template
 
-Strukturanker beim Aufsetzen eines Plans. Der Agent erhält den Template-Block und befüllt ihn aus der `specification.md` (die Akzeptanzkriterien und Quality Gates, gegen die er die Exit-Bedingungen verankert) und dem aktuellen Repo-Stand (für den initialen Status-Tracker). Beim Aufnehmen einer Session liest der Agent zuerst den Status-Tracker und die Sektion *Offene Entscheidungen und Abhängigkeiten*, um den nächsten zulässigen Milestone zu bestimmen, bevor er mit der Arbeit beginnt. Beim Abschluss eines Milestones aktualisiert er den Status-Tracker und das `updated:`-Feld und verdichtet die geleistete Arbeit zu einem `journal.md`-Eintrag; der Plan selbst bleibt vorwärts gerichtet.
+Strukturanker beim Aufsetzen eines Plans. Der Agent erhält den Template-Block und befüllt ihn aus `specification.md` sowie dem aktuellen Repo-Stand. Beim Sessionstart liest er nach `knowledge/INDEX.md` und `knowledge/handoff.md` den Status-Tracker und die Sektion *Offene Entscheidungen und Abhängigkeiten*. Beim Abschluss eines Milestones aktualisiert er Plan und `updated:`-Feld. Ein Journal-Eintrag folgt nur für einen sachlich zusammengehörigen Übergang.
 
-Review-Folie für einen bestehenden Plan. Ein vorhandenes `plan.md` oder `roadmap.md` wird gegen die Vorlage gehalten, um zu prüfen, ob jeder Milestone eine Entry- und eine Exit-Bedingung trägt, ob die Exit-Bedingungen gegen die Spezifikation verankert sind statt frei formuliert, ob volatile Zahlen ausschließlich im Status-Tracker stehen, und ob erledigte Arbeit aus dem aktiven Plan herausgewandert ist statt sich anzusammeln.
+Review-Folie für einen bestehenden Plan. Ein vorhandenes `plan.md` oder `<subject>-plan.md` wird gegen die Vorlage gehalten. Geprüft werden Entry- und Exit-Bedingungen, ihre Verankerung in der Spezifikation, die Begrenzung volatiler Zahlen auf den Status-Tracker und die Entfernung erledigter Arbeit aus dem aktiven Plan.
 
 ## Beispiel
 
@@ -211,7 +210,9 @@ Das Fehlmuster aus dem Inhaltsaudit vom Juli 2026 ist der Plan als Sammelsurium:
 
 ## Related
 
+- [Vorlagen Promptotyping Documents](#vorlagen)
 - [Konvention Promptotyping Documents](#konvention-v0.1)
+- [Promptotyping](#overview)
 - [Vorlage Journal](#promptotyping-document-journal)
 - [Vorlage Specification](#promptotyping-document-specification)
 - [Vorlage Report](#promptotyping-document-report)

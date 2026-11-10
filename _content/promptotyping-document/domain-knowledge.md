@@ -4,10 +4,9 @@ slug: domain-knowledge
 version: "0.3"
 status: complete
 source: Vorlage Domänenwissen
-mirrored: 2026-08-21
+mirrored: 2026-11-10
 machine-url: https://dhcraft.org/Promptotyping/_content/promptotyping-document/domain-knowledge.md
 ---
-
 # Vorlage Domänenwissen
 
 Diese Vorlage strukturiert das Domain-Knowledge-Dokument einer Promptotyping-Wissensbasis. Der Dateiname folgt `<subject>-<function>.md`, etwa `editorial-guidelines.md`, `tei-mapping.md`, `domain-ontology.md`, `research-methodology.md` oder `research-framework.md`. Das Dokument liegt im `knowledge/`-Ordner und trägt fachmethodische Regeln sowie deren Begründung. Der erste Absatz bestätigt die über den Dateinamen geroutete Funktion; ein eigenes `zweck:`- oder `function:`-Feld entsteht nicht.
@@ -16,7 +15,7 @@ Diese Vorlage strukturiert das Domain-Knowledge-Dokument einer Promptotyping-Wis
 
 Die Funktion trägt, sobald ein Projekt eine fachmethodische Vorgabe macht, die nicht aus dem Material und nicht aus der Softwareanforderung ableitbar ist, sondern eine eigene wissenschaftliche Setzung darstellt. Triggerkriterium: Es existiert eine Regel, ein Mapping, eine Berechnungslogik, ein Vokabular oder eine theoretische Rahmung, die ein Fachexperte verantwortet und die man kennen muss, um das Output korrekt zu interpretieren oder zu erweitern. Das ist der Fall bei Editionsrichtlinien, TEI-Mappings, Kodiermanualen, Ontologie-Definitionen, Berechnungslogiken (etwa CER-Methodik, Score-Formeln, Klassifikationsregeln) und bei expliziten Forschungsrahmen, Methodik-Kapiteln oder forschungsgestützten Designbegründungen.
 
-Die Funktion trägt nicht für triviale Tool- oder Bibliotheks-Repos ohne eigene fachmethodische Setzung; dort genügt eine kurze Methodensektion im Charter-Dokument. Sie trägt nicht für reine Anleitung an den Agenten (das ist Action-Layer, `CLAUDE.md`) und nicht für Forschungsergebnisse als Aussagen über den Gegenstand (die gehören in Veröffentlichungen, nicht in die Wissensbasis). Zwei Untertypen werden unterschieden, weil sie unterschiedliche Lesergruppen und Strukturen tragen, im selben Repo aber nebeneinander vorkommen:
+Bei einfachen Werkzeugen ohne eigene fachmethodische Setzung genügt eine kurze Methodensektion im Charter-Dokument. Agentenanweisungen folgen [Vorlage Action-Layer](#promptotyping-document-action-layer). Forschungsergebnisse über den Gegenstand werden in den zuständigen Forschungsdokumenten ausgearbeitet. Das Domänenwissen unterscheidet zwei Untertypen nach Lesergruppe und Funktion:
 
 - (a) Methoden- und Begründungsschicht: das Warum. Theoretischer Rahmen, Forschungsfragen, methodische Entscheidungen mit akademischen Quellen. Typische Träger sind `research-framework.md`, `research-methodology.md` und `<subject>-methodology.md`.
 - (b) Domänenspezifisches Regelwerk: das Wie der Auszeichnung. Editionsrichtlinien, TEI-Mapping, Kodiermanual, Ontologie, Berechnungslogik, normativ und auszeichnungsnah. Typische Träger `editorial-guidelines.md`, `tei-mapping.md`, `ontology.md`.
@@ -49,7 +48,7 @@ Das Dokument folgt dem reduzierten Frontmatter-Pflichtkern aus der [Konvention P
 - `knowledge-sources:` ist hier zentral und sollte gepflegt sein. Mindestens `standards:` (eingesetzte Standards, Schemata, Guidelines mit URI: TEI P5, ISO-Codes, WCAG, fachliche Editionsrichtlinien) und, wo zutreffend, `vocabularies:` (kontrollierte Vokabulare, Normdaten-Autoritäten) sowie `datasets:` oder `institutions:` für referenzierte Referenzprojekte. Bei Untertyp (a) tragen die akademischen Primärquellen entweder hier als `standards:`-Anschlüsse oder, sprechender, in der Dokumentsektion `Quellen`.
 - `related:` typischerweise `data`, `specification`, `design`; die Dokumente, die auf dem Regelwerk aufsetzen oder es verwenden.
 
-Sonderfall Vault-Atom-Struktur. Methoden- und Theoriedokumente vom Untertyp (a), die als atomare Wissenseinheit lesbar bleiben sollen, folgen oft nicht dem Promptotyping-Frontmatter, sondern der Vault-Atom-Struktur aus CLAUDE §3 und §4: `type: knowledge`, `created`, `tags`, `status`, und im Korpus `## Summary`, `## Sources`, `## Related` statt `knowledge-sources:` im Frontmatter. Das ist kein Fehler, sondern die angemessene Form, wenn das Dokument primär als Wissensatom und weniger als Agenten-Kontext im Repo gelesen wird (hist-info-model führt seine Theorie-Dokumente so). Welche der beiden Frontmatter-Formen trägt, entscheidet die primäre Lesergruppe: Agent-zentrierter Repo-Kontext nimmt das Promptotyping-Frontmatter, atomares Wissensdokument nimmt die Vault-Atom-Struktur.
+Sonderfall Vault-Atom-Struktur. Methoden- und Theoriedokumente vom Untertyp (a), die als atomare Wissenseinheit lesbar bleiben sollen, folgen oft nicht dem Promptotyping-Frontmatter, sondern der Vault-Atom-Struktur aus den Dokumentregeln des jeweiligen Vaults: `type: knowledge`, `created`, `tags`, `status`, und im Korpus `## Summary`, `## Sources`, `## Related` statt `knowledge-sources:` im Frontmatter. Das ist kein Fehler, sondern die angemessene Form, wenn das Dokument primär als Wissensatom und weniger als Agenten-Kontext im Repo gelesen wird (hist-info-model führt seine Theorie-Dokumente so). Welche der beiden Frontmatter-Formen trägt, entscheidet die primäre Lesergruppe: Agent-zentrierter Repo-Kontext nimmt das Promptotyping-Frontmatter, atomares Wissensdokument nimmt die Vault-Atom-Struktur.
 
 ## Abschnitte im Detail
 
@@ -90,7 +89,7 @@ Funktion: in einem Satz den Zweck des Dokuments tragen, dann in einem bis drei S
 - Material und Datenherkunft. Was die Daten sind, woher sie kommen, wie groß der Bestand ist, gehört in `data.md` ([Vorlage Datengrundlage](#promptotyping-document-data)). Das Domänenwissen verlinkt die Datengrundlage für die empirische Basis (etwa die konkreten Sigel-Bedeutungen), führt sie aber nicht selbst.
 - Funktionsumfang und Akzeptanzkriterien. Was das System leisten soll, gehört in `specification.md` ([Vorlage Specification](#promptotyping-document-specification)). Das Regelwerk sagt, nach welcher fachlichen Logik ausgezeichnet wird, nicht welche Features das Frontend hat.
 - Technische Realisierung. Mit welchem Skript das Mapping ausgeführt wird, welcher Stack die Pipeline trägt, gehört in `architecture.md` ([Vorlage Architecture](#promptotyping-document-architecture)). Das Regelwerk nennt die Funktion (`chain_cross_verse_hyphens()` setzt die Cross-Verse-Verkettung um), nicht ihre Implementation.
-- Imperative Agenten-Anweisung. Wie der Agent sich verhalten soll, gehört in den Action-Layer (`CLAUDE.md`, [Vorlage Action-Layer](#promptotyping-document-action-layer)). Das Regelwerk ist deklaratives Knowledge; der Action-Layer verweist darauf.
+- Imperative Agenten-Anweisungen gehören in den Action-Layer gemäß [Vorlage Action-Layer](#promptotyping-document-action-layer). Er verweist auf das deklarative fachliche Regelwerk.
 - Forschungsergebnisse als Aussagen über den Gegenstand. Was die Edition oder die Auswertung inhaltlich zeigt, ist Sache der Veröffentlichungen, nicht des Domänenwissens. Das Dokument trägt die Regel und ihre Begründung, nicht das Resultat ihrer Anwendung. Werden aus der Anwendung der Regeln empirische Befunde oder Neuheitsansprüche außenwirksam erhoben, prüft sie das `verification.md` des Projekts ([Vorlage Verification](#promptotyping-document-verification)).
 
 ## Vorlage zum Befüllen
@@ -297,7 +296,7 @@ status: draft
 
 ## Anwendung als Prompt-Template
 
-Strukturanker beim Aufsetzen des Domänenwissens. Zuerst entscheidet der Agent (oder der Fachexperte), welcher Untertyp trägt und ob beide getrennt geführt werden. Den passenden Template-Block in eine neue Datei im `knowledge/`-Ordner kopieren und iterativ befüllen. Untertyp (b) wird aus dem real existierenden Quellmaterial befüllt (Probeseite, DOCX, Schema-Datei, bestehende Referenzedition): pro Phänomen wird die Regel aus einem realen Beleg abgeleitet, nicht erfunden. Untertyp (a) wird aus der Literatur befüllt; jede Erkenntnis braucht eine prüfbare Primärquelle mit DOI oder URL. Da diese Schicht fachwissenschaftliche Setzung trägt, ist sie der Teil der Wissensbasis, der am dringendsten vom Critical Expert verifiziert werden muss (Critical Expert in the Loop); Grenzfälle und ungeklärte Phänomene werden nicht weggeglättet, sondern als offene Frage an den Auftraggeber stehen gelassen. Recherchequellen werden gegen das Verbot von Grokipedia geprüft.
+Strukturanker beim Aufsetzen des Domänenwissens. Zuerst entscheidet der Agent (oder der Fachexperte), welcher Untertyp trägt und ob beide getrennt geführt werden. Den passenden Template-Block in eine neue Datei im `knowledge/`-Ordner kopieren und iterativ befüllen. Untertyp (b) wird aus dem real existierenden Quellmaterial befüllt (Probeseite, DOCX, Schema-Datei, bestehende Referenzedition): pro Phänomen wird die Regel aus einem realen Beleg abgeleitet, nicht erfunden. Untertyp (a) wird aus der Literatur befüllt; jede Erkenntnis braucht eine prüfbare Primärquelle mit DOI oder URL. Da diese Schicht fachwissenschaftliche Setzung trägt, ist sie der Teil der Wissensbasis, der am dringendsten vom Critical Expert fachlich validiert werden muss (Critical-Expert-in-the-Loop); Grenzfälle und ungeklärte Phänomene werden nicht weggeglättet, sondern als offene Frage an den Auftraggeber stehen gelassen. Recherchequellen werden gegen das Verbot von Grokipedia geprüft.
 
 Review-Folie für ein bestehendes Domain-Knowledge-Dokument. Ein vorhandenes `editorial-guidelines.md`, `tei-mapping.md`, `research-framework.md` oder `research-methodology.md` wird gegen Naming Contract, Lead, Begründungen, Quellen und Auswirkungen geprüft. Das Review kontrolliert außerdem die Abgrenzung zu `data.md` und `specification.md` sowie den Verweis auf eine autoritative Schema-Datei.
 
@@ -330,7 +329,10 @@ Vault-Atom-Variante (Untertyp a als Wissensatom): hist-info-model führt seine T
 
 ## Related
 
+- [Vorlagen Promptotyping Documents](#vorlagen)
 - [Konvention Promptotyping Documents](#konvention-v0.1)
+- [Promptotyping](#overview)
 - [Vorlage Datengrundlage](#promptotyping-document-data)
 - [Vorlage Specification](#promptotyping-document-specification)
 - [Vorlage Architecture](#promptotyping-document-architecture)
+- Critical-Expert-in-the-Loop

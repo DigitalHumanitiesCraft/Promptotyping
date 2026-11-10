@@ -18,13 +18,15 @@ Die Funktion trägt, sobald mehrere Projekte denselben Artefakttyp bauen und die
 
 Die Funktion trägt nicht für die Architektur eines einzelnen Projekts; die gehört in `architecture.md` ([Vorlage Architecture](#promptotyping-document-architecture)). Sie trägt nicht für imperative Agenten-Anweisung; die gehört in den Action-Layer ([Vorlage Action-Layer](#promptotyping-document-action-layer)), der auf die Baseline verweisen kann. Ein Einzelprojekt ohne Familienzusammenhang braucht keine Baseline; dort genügt die Begründung in der eigenen `architecture.md`.
 
+Lebenszyklus. Die Baseline entsteht, sobald das zweite Projekt auf dieselbe Regelmenge zugreift. Ein Update lösen eine geänderte Regel, eine neu aufgenommene Ausnahme und eine verschobene Formatgrenze aus. Der Fortschritt eines einzelnen Projekts löst keines aus. Ihre Lebensdauer bemisst sich an der Artefaktfamilie und überdauert damit jedes einzelne Projekt. Destillat-Grenze: Wächst eine einzelne Regel zu einem eigenen Regelwerk mit eigenem Aktualisierungsrhythmus, wird sie in ein eigenes Dokument ausgelagert und aus der Baseline heraus verlinkt.
+
 ## Funktion des Dokuments
 
 Das Dokument beantwortet, mit welchen Technologien Artefakte einer Familie gebaut werden und warum diese Regeln so lauten. Adressiert sind drei Lesergruppen. Ein Forschender oder Reviewer prüft, ob die Technologiewahl eines Projekts begründet ist, ohne die Begründung in jedem Repo suchen zu müssen. Ein Coding-Agent liest die Baseline als Vorgabe, bevor er ein Artefakt der Familie generiert oder regeneriert; die Regeln sind für ihn direkte Constraints. Der Methodenverantwortliche pflegt die Regeln an einer Stelle statt in jedem Repo.
 
-Der Dokumenttyp ist Action. Die Zuordnung folgt der Diagnosefrage der Typologie, welcher Dokumenttyp nachzuziehen ist, wenn der Output nicht stimmt. Generiert ein Agent ein Artefakt der Familie mit einem Build-Schritt und einer npm-Abhängigkeit, ist der Output formal falsch, und nachzuziehen ist die Baseline. Die Baseline steht damit neben Action-Layer und Teststrategie und unterscheidet sich von beiden durch ihren Geltungsbereich, sie gilt für eine Artefaktfamilie statt für ein Projekt.
+Der Dokumenttyp ist Action, weil die Baseline verbindliche Technologieregeln für eine Artefaktfamilie festlegt. Widerspricht ein erzeugtes Artefakt einer solchen Regel, werden die Regel selbst, ihre tatsächliche Übermittlung und die Implementierung geprüft. Eine unzulässige npm-Abhängigkeit kann trotz korrekter Baseline entstehen. Änderungen erfolgen an der belegten Fehlerursache. Die Baseline steht neben Action-Layer und Teststrategie und gilt projektübergreifend für die benannte Artefaktfamilie.
 
-Der Grund, warum die Zuordnung nicht offensichtlich ist, liegt in der Form. Die Baseline formuliert Regeln mit Begründung und nicht Anweisungen im Imperativ, was sie oberflächlich wie ein deklaratives Dokument aussehen lässt. Maßgeblich ist aber, dass ihre Sätze das Bauen binden und nicht einen Sachverhalt des Projekts beschreiben.
+Der Grund, warum die Zuordnung nicht offensichtlich ist, liegt in der Form. Die Baseline formuliert Regeln mit Begründung statt Anweisungen im Imperativ, was sie oberflächlich wie ein deklaratives Dokument aussehen lässt. Maßgeblich ist aber die Wirkung ihrer Sätze, sie binden das Bauen.
 
 ## Strukturprinzipien
 
@@ -38,7 +40,7 @@ Drittens benennt es die Grenzen der Artefaktfamilie. Wo das Format endet (Datenv
 
 ## Frontmatter-Schema
 
-Das Dokument folgt dem reduzierten Frontmatter-Pflichtkern aus der [Konvention Promptotyping Documents](#konvention-v0.1); `title`, `status`, `created`, `updated`. Da die Baseline projektübergreifend gilt, entfällt der `project:`-Block oder benennt das tragende Methodik-Repo. Empfohlen sind `language`, `version`, `authors` beziehungsweise `generated-with` und `machine-url`, weil die Baseline gerade für maschinelle Abrufung gebaut ist. `authors` trägt ausschließlich Menschen, auch wenn ein LLM den Text erzeugt hat; `generated-with` nennt Harness und LLM im Format `Harness (LLM)`, etwa `Claude Code (Claude Opus 5)`. Siehe Sektion *Provenienz im Frontmatter* der Konvention.
+Das Dokument folgt dem Frontmatter-Pflichtkern aus [Konvention Promptotyping Documents](#konvention-v0.1) mit einer dort registrierten Abweichung. Da die Baseline projektübergreifend gilt, entfällt der `project:`-Block oder benennt das tragende Methodik-Repo; es bleiben `title`, `status`, `created`, `updated`. Empfohlen sind `language`, `version`, `authors` beziehungsweise `generated-with` und `machine-url`, weil die Baseline gerade für maschinelle Abrufung gebaut ist. `authors` trägt ausschließlich Menschen, auch wenn ein LLM den Text erzeugt hat; `generated-with` nennt Harness und LLM im Format `Harness (LLM)`, etwa `Claude Code (Claude Opus 5)`. Siehe den Abschnitt zur Provenienz im Frontmatter in der Konvention.
 
 ## Abschnitte im Detail
 
@@ -74,6 +76,11 @@ updated: [YYYY-MM-DD]
 authors: [Autor]
 generated-with: [Harness (LLM), falls relevant]
 machine-url: [statische URL dieses Dokuments]
+template:
+  name: Vorlage Technology
+  version: 0.1
+  url: https://dhcraft.org/Promptotyping/promptotyping-document/technology
+  alias: https://dhcraft.org/Promptotyping/#promptotyping-document-technology
 ---
 
 # Technology Baseline. [Artefaktfamilie]
@@ -109,7 +116,7 @@ machine-url: [statische URL dieses Dokuments]
 
 ## Anwendung als Prompt-Template
 
-Strukturanker beim Aufschreiben einer Baseline. Der Agent erhält den Template-Block und befüllt ihn aus dem, was die Repositorien der Familie faktisch tun, also aus den Stacks, den Abhängigkeitslisten, der Hosting-Form und den vorhandenen `architecture.md`-Dokumenten. Der entscheidende Arbeitsschritt liegt danach und ist nicht delegierbar. Eine Regel, die der Agent aus dem Bestand abliest, ist eine Beobachtung; zur Regel wird sie erst, wenn der Fachverantwortliche sie vertritt. Die Begründungen verlangen deshalb Verifikation durch den Critical Expert, und die Abweichungskriterien ebenso, weil sie festlegen, wann ein Projekt vom Default abrücken darf.
+Strukturanker beim Aufschreiben einer Baseline. Der Agent erhält den Template-Block und befüllt ihn aus dem, was die Repositorien der Familie faktisch tun, also aus den Stacks, den Abhängigkeitslisten, der Hosting-Form und den vorhandenen `architecture.md`-Dokumenten. Der entscheidende Arbeitsschritt liegt danach und ist nicht delegierbar. Eine Regel, die der Agent aus dem Bestand abliest, ist eine Beobachtung; zur Regel wird sie erst, wenn der Fachverantwortliche sie vertritt. Die Begründungen verlangen deshalb die fachliche Validierung durch den Critical Expert, und die Abweichungskriterien ebenso, weil sie festlegen, wann ein Projekt vom Default abrücken darf.
 
 Vorgabe an den bauenden Agenten. Die Baseline wird über ihre Maschinenadresse in den Kontext geladen, bevor ein Artefakt der Familie generiert oder regeneriert wird; ihre Regeln sind für den Lauf Constraints. Verweist der Action-Layer eines Projekts auf die Baseline, genügt dort die Adresse und die Nennung der Abweichungen.
 
@@ -121,17 +128,18 @@ Das Methodik-Repo führt `_content/technology-baseline.md` als Baseline für die
 
 ## Begriffe
 
-- Technology Baseline: projektübergreifendes Knowledge Document, das Technologie-Regeln und ihre Begründung für eine Artefaktfamilie trägt und von Projektinstanzen referenziert wird.
+- Technology Baseline: projektübergreifendes Action Document, das Technologie-Regeln und ihre Begründung für eine Artefaktfamilie trägt und von Projektinstanzen referenziert wird.
 - Artefaktfamilie: Menge von Forschungsartefakten mit gleicher technischer Grundform (statisches Web-Tool, Datenpipeline), für die dieselben Technologie-Regeln gelten.
 - Abweichungsdokumentation: Pflicht der Projektinstanz, jede Abweichung von der Baseline in der eigenen `architecture.md` mit Begründung zu führen.
 
 ## Versionshistorie
 
-- 0.1 (2026-07-26): Aufnahme in den Vorlagen-Katalog. Empirisch aus der Technology Baseline des Methodik-Repos entstanden (Erstentwurf 2026-07-23). Der Dokumenttyp ist bei der Aufnahme von Declarative auf Action korrigiert, weil der kanonische Papertext die Technology Baseline in Abschnitt 3.3 unter den Action Documents führt und die Diagnosefrage der Typologie zum selben Ergebnis kommt. Die Vorlage ist im Repo kanonisch und hat kein Vault-Original.
+- 0.1 (2026-07-26): Aufnahme in den Vorlagen-Katalog. Empirisch aus der Technology Baseline des Methodik-Repos entstanden (Erstentwurf 2026-07-23). Der Dokumenttyp ist bei der Aufnahme von Declarative auf Action korrigiert, weil der kanonische Papertext die Technology Baseline in Abschnitt 3.3 unter den Action Documents führt und die Diagnosefrage der Typologie zum selben Ergebnis kommt. Mit der Aufnahme ist das Katalogkriterium für zentral gehaltene Funktionen auf das zweite referenzierende Projekt umgestellt. Die Vorlage ist im Repo kanonisch.
 
 ## Related
 
 - [Konvention Promptotyping Documents](#konvention-v0.1)
+- [Vorlagen Promptotyping Documents](#vorlagen)
 - [Vorlage Architecture](#promptotyping-document-architecture)
 - [Vorlage Action-Layer](#promptotyping-document-action-layer)
 - [Vorlage Design](#promptotyping-document-design)

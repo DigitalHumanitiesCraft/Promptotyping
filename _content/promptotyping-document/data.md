@@ -4,25 +4,26 @@ slug: data
 version: "0.3"
 status: complete
 source: Vorlage Datengrundlage
-mirrored: 2026-08-21
+mirrored: 2026-11-10
 machine-url: https://dhcraft.org/Promptotyping/_content/promptotyping-document/data.md
 ---
-
 # Vorlage Datengrundlage
 
 Diese Vorlage strukturiert das Material-Dokument einer Promptotyping-Wissensbasis. Ein einzelner Träger heißt `data.md`; getrennte Datengrundlagen werden als `<subject>-data.md` oder nach ihrer präziseren Funktion, etwa `data-schema.md`, spezialisiert. Das Dokument liegt im `knowledge/`-Ordner und trägt die epistemische Verantwortung für das verarbeitete oder produzierte Material.
 
-Diese Fassung (v0.1, 2026-05-09) ist auf Basis einer Querschau durch 19 reale `data.md` aus den aktiven Promptotyping-Repos entwickelt. Sie unterscheidet vier Pflichtsektionen von sechs optionalen Sektionen mit Triggerkriterium.
+Die Vorlage ist auf Basis einer Querschau durch 19 reale `data.md` aus den aktiven Promptotyping-Repos entwickelt. Sie unterscheidet vier Pflichtsektionen von sechs optionalen Sektionen mit Triggerkriterium.
 
 ## Geltungsbereich
 
-Die Vorlage trägt, sobald das Projekt Daten verarbeitet oder produziert. Bei reinen Tool-, Bibliotheks- oder Methoden-Repos entfällt sie; das Identitätsdokument trägt die Materialgrundlage dann selbst in einer kompakten Sektion. Die Vorlage trägt nicht für API-Dokumentationen, Datenbankschema-Beschreibungen ohne Inhaltsbezug oder Datenbeispiele ohne Provenienz.
+Die Vorlage trägt, sobald das Projekt Daten verarbeitet oder produziert. Bei reinen Tool-, Bibliotheks- oder Methoden-Repos entfällt sie; das Charter-Dokument trägt die Materialgrundlage dann selbst in einer kompakten Sektion. Die Vorlage trägt nicht für API-Dokumentationen, Datenbankschema-Beschreibungen ohne Inhaltsbezug oder Datenbeispiele ohne Provenienz.
 
 Sie trägt sowohl für Repos, die eigene Daten produzieren (HerData, klawiter-rescue, notker-edition, sugw-Edition), als auch für Repos, die fremde Datensätze nur als Input nehmen (wiiw-figaro-nam, vetmed-berichtswesen, objekt-bestimmung-workshop). Die optionalen Sektionen unterscheiden die Fälle.
 
+Lebenszyklus: das Dokument entsteht, sobald das Material definiert ist, typischerweise mit dem ersten Export oder der ersten Lieferung, und wird bei jedem Datenexport (`updated:` ist hier eines der aktivsten Felder der Wissensbasis) und jeder Schemaänderung (Modell-Sektion) nachgezogen. Ein `data.md`, dessen Modell-Sektion ein abgelöstes Schema beschreibt, ist das teuerste Verfallsmuster dieser Funktion, weil operative Teams damit arbeiten. Zählstände veralten hier nie, weil sie nie hier stehen (drittes Strukturprinzip); wer einen Vollzugsstand festhalten will, kennzeichnet ihn als datierten Snapshot oder verweist auf die messende Quelle.
+
 ## Funktion des Dokuments
 
-Das Dokument beantwortet "was sind die Daten, woher kommen sie, wie sind sie modelliert, wo hört das Material auf zu tragen". Adressiert sind drei Lesergruppen: ein Reviewer, der die Datenqualität beurteilen will; ein Coding-Agent, der die Daten verarbeiten oder transformieren soll; ein Domänenexperte, der die Auswahllogik nachvollziehen will. Das Dokument ist epistemisch verantwortlich; es macht transparent, was die Daten leisten und was nicht.
+Das Dokument beantwortet "was sind die Daten, woher kommen sie, wie sind sie modelliert, wo hört das Material auf zu tragen". Adressiert sind drei Lesergruppen: ein Reviewer, der die Datenqualität beurteilen will; ein Coding-Agent, der die Daten verarbeiten oder transformieren soll; ein Domänenexperte, der die Auswahllogik nachvollziehen will. Das Dokument ist epistemisch verantwortlich; es macht transparent, was die Daten leisten und was nicht. Empirische Aussagen über das Material, die außenwirksam verwendet werden (Genauigkeitswerte, Vollständigkeitsansprüche), werden in `verification.md` geprüft ([Vorlage Verification](#promptotyping-document-verification)); die Datengrundlage beschreibt, die Verification belegt.
 
 ## Strukturprinzipien
 
@@ -30,21 +31,21 @@ Drei Prinzipien tragen das Dokument.
 
 Erstens trennt es Datenproduktion von Datenverarbeitung. Wer die Daten erfasst hat (Institution, Editionsteam, externe Quelle) trägt eine andere Art von Autorschaft als wer sie hier verarbeitet; diese Trennung muss explizit benannt werden. Die eigene Leistung gegenüber der Datenproduktion abzugrenzen ist eine Grundregel, kein Höflichkeitsgestus.
 
-Zweitens praktiziert das Dokument negative Selbstdefinition. Was bewusst nicht geleistet wird oder nicht abgedeckt ist, wird genauso explizit benannt wie das, was geleistet wird. Diese Auslassung ist konstitutiv und trägt die Sektion `Grenzen`.
+Zweitens macht das Dokument die Grenzen des Materials explizit. Was das Material nicht abdeckt, wird genauso benannt wie das, was es abdeckt; diese Aussage trägt die Sektion `Grenzen` und ist konstitutiv. Sie ist eine Aussage über das Material, nicht über das Dokument; die seit 2026-06-29 untersagte Selbstbeschreibung ("dieses Dokument behandelt X nicht") bleibt auch hier ausgeschlossen ([Konvention Promptotyping Documents](#konvention-v0.1)).
 
 Drittens steht im Dokument keine konkrete Zahl, die sich beim nächsten Datenexport ändert. Coverage-Werte, Datensatzgrößen und Verteilungs-Statistiken liegen in der Anwendung selbst (im `persons.json#meta` oder vergleichbar) und in den Stat-Cards der Hauptansichten. Das Dokument verweist auf diese Quellen, dupliziert sie nicht.
 
 ## Frontmatter-Schema
 
-Das Dokument folgt dem Frontmatter-Schema aus der [Konvention Promptotyping Documents](#konvention-v0.1) (Pflichtkern: `title, project, method, status, created, updated`). Spezifisch für die Datengrundlage:
+Das Dokument folgt dem Frontmatter-Schema aus [Konvention Promptotyping Documents](#konvention-v0.1) (Pflichtkern: `title, project, method, status, created, updated`). Spezifisch für die Datengrundlage:
 
-- `topics:` typisch sind Verweise auf Wissensfelder wie Data Modelling, Normdata, Controlled Vocabularies. Bei Editions-Repos zusätzlich TEI, Prosopography o.ä. Sie verorten den Agenten in den Wissensfeldern, die für Materialdokumentation tragen.
+- `topics:` typisch sind `[[Data Modelling]]`, `[[Normdata]]`, `[[Controlled Vocabularies]]`. Bei Editions-Repos zusätzlich `[[TEI]]`, `[[Prosopography]]` o.ä. Sie verorten den Agenten in den Wissensfeldern, die für Materialdokumentation tragen.
 - `knowledge-sources:` ist hier zentral und sollte gepflegt sein. Mindestens `institutions:` (datenproduzierende Institutionen mit URI) und `standards:` (eingesetzte Datenstandards, Vokabulare, Ontologien mit URI). Optional `vocabularies:` für kontrollierte Vokabulare und `datasets:` für referenzierte externe Datensätze.
 - `related:` typischerweise `project`, `architecture`, `specification`; die drei Dokumente, die auf die Datengrundlage aufbauen.
 - `output-of:` trägt den Befehl, der das Dokument erzeugt, und wird gesetzt, sobald ein Skript die Korpusbeschreibung aus den Quelldaten rendert. Das ist bei großen oder heterogenen Beständen der Regelfall. Steht das Feld, wird das Dokument nicht von Hand bearbeitet und eine Korrektur geht an das Skript. Siehe Sektion *Provenienz im Frontmatter* der Konvention.
 - `updated:` wird bei jedem neuen Datenexport aktualisiert.
 
-## Sektionsstruktur
+## Abschnitte im Detail
 
 Vier Pflichtsektionen, sechs optionale Sektionen mit Triggerkriterium. Optionale Sektionen, die nicht zutreffen, werden weggelassen, nicht leer geführt.
 
@@ -98,13 +99,13 @@ Trigger: Daten werden geliefert, nicht erzeugt. Das Repo nimmt fremde Daten als 
 
 ### Workflow
 
-Trigger: Pipeline transformiert die Quelle zu einer Anwendungsdatei. Funktion: den Weg von der Quelle zur Anwendungsdatei dokumentieren. Definition: knapp die Pipeline-Stufen (Import, Bereinigung, Verknüpfung, Export) mit Verweis auf die Skripte im Repo. Nicht die Implementation des Workflows beschreiben, das gehört in `architecture.md`. Bei reinen Lese-Repos ohne Transformation entfällt die Sektion.
+Trigger: Eine Pipeline transformiert die Quelle zu einer Anwendungsdatei. Funktion: den Weg von der Quelle zur Anwendungsdatei dokumentieren. Definition: knapp die Pipeline-Stufen mit Verweis auf die Skripte im Repo. Die Implementation des Workflows gehört in `architecture.md` oder bei eigenständiger Routing Question in `pipeline-architecture.md`. Bei reinen Lese-Repos ohne Transformation entfällt die Sektion.
 
 ### Beispiele
 
 Trigger: das Datenmodell ist ohne konkretes Beispiel schwer greifbar. Funktion: das Datenmodell konkret machen. Definition: ein bis drei kompakte Records (JSON, XML, RDF, je nach Format) im Codeblock, die das Modell exemplarisch zeigen. Die Beispiele sind aus den realen Daten gewählt, nicht erfunden. Bei sehr einfachen Datenmodellen, die im `Modell`-Abschnitt selbsterklärend dargestellt sind, entfällt die Sektion.
 
-## Was nicht in das Dokument gehört
+## Was nicht reingehört
 
 - Konkrete Coverage-Zahlen, Datensatzgrößen, Verteilungs-Statistiken. Diese liegen in der Anwendung und im Meta-Block der Datendatei, nicht im Dokument.
 - Pipeline-Implementation. Wie der Workflow gebaut ist, gehört in `architecture.md`.
@@ -121,7 +122,7 @@ title: Daten
 project:
   name: [Projektname]
   repository: [Repository-URL]
-status: complete
+status: draft
 language: [de | en]
 version: [Repo-Schema-Version]
 created: [YYYY-MM-DD]
@@ -144,6 +145,10 @@ knowledge-sources:
     [Standard]: [URI]
 related: [project, architecture, specification]
 ---
+
+<!-- Lead: ein bis zwei Sätze. Was das Material ist und woher es kommt, ohne Zahlen. -->
+
+[Lead-Absatz]
 
 ## Gegenstand
 
@@ -214,11 +219,11 @@ related: [project, architecture, specification]
 
 ## Anwendung als Prompt-Template
 
-Strukturanker beim Aufsetzen der Datengrundlage. Der Agent erhält den Template-Block und befüllt ihn iterativ aus den Quelldokumenten (Lizenztexte, Schema-Dateien, README der Datenherkunft). Vor dem ersten Befüllen entscheidet der Agent pro optionaler Sektion anhand des Triggers, ob sie trägt; nicht zutreffende werden gelöscht. Die Sektion `Verzerrungen`, falls sie trägt, verlangt Domänenexpertise und sollte vom Critical Expert verifiziert werden (siehe Glossar-Eintrag Critical-Expert-in-the-Loop).
+Strukturanker beim Aufsetzen der Datengrundlage. Der Agent erhält den Template-Block und befüllt ihn iterativ aus den Quelldokumenten (Lizenztexte, Schema-Dateien, README der Datenherkunft). Vor dem ersten Befüllen entscheidet der Agent pro optionaler Sektion anhand des Triggers, ob sie trägt; nicht zutreffende werden gelöscht. Die Sektion `Verzerrungen`, falls sie trägt, verlangt Domänenexpertise und sollte vom Critical Expert fachlich validiert werden (Critical-Expert-in-the-Loop).
 
 Review-Folie für eine bestehende Datengrundlage. Ein vorhandenes `data.md` wird gegen die Vorlage gehalten, um zu prüfen, ob die vier Pflichtsektionen tragen, ob `knowledge-sources:` im Frontmatter gepflegt ist, ob keine konkreten Zahlen aus der Anwendung dupliziert werden, ob optionale Sektionen ihren Trigger erfüllen und Sektionen ohne Trigger nicht aus Reflex mitgeschleppt werden.
 
-## Genrebeispiele aus der Praxis
+## Beispiel
 
 HerData (eigene Datenproduktion mit Normdaten-Anbindung). Trägt: Gegenstand, Quellen, Modell, Grenzen, Normdaten und Anschlüsse, Verzerrungen, Provenance pro Wert, Workflow, Beispiele. Charakteristisch ist die explizite Map-Bias-Sektion, die in der Anwendung selbst (Onboarding-Schritt MapBias) sichtbar gemacht wird. `knowledge-sources` führt Goethe- und Schiller-Archiv und PROPYLÄEN als Institutionen, CMIF, GND, GeoNames und AGRELON als Standards.
 
@@ -228,6 +233,8 @@ vetmed-berichtswesen / objekt-bestimmung-workshop (externe Datenquelle als Input
 
 klawiter-rescue (mehrstufige Daten-Rekonstruktion). Trägt: alle vier Pflichtsektionen, dazu Normdaten und Anschlüsse, Verzerrungen, Provenance pro Wert, Workflow, Beispiele. Das volle Programm: `Provenance pro Wert` ist hier zentral, weil Werte aus Regex, LLM und Wikidata-Reconciliation kombiniert sind.
 
+Das Fehlmuster aus dem Inhaltsaudit vom Juli (2026-07-19 - Promptotyping-Wissensbasen Inhaltsaudit (Befund)) ist der unmarkierte Snapshot: ein `data.md`, das Zählstände zum Erfassungsstand ohne Stichtag trägt und damit ab dem nächsten Export still falsch wird, sowie das Daten-Sammelsurium, ein `data.md`, das Material, Workflow und Vollzugsstand ungetrennt mischt.
+
 ## Begriffe
 
 - Material: das verarbeitete oder produzierte Substrat eines Promptotyping-Projekts. Daten, Korpus, Dokumentensammlung, Bildbestand.
@@ -235,3 +242,20 @@ klawiter-rescue (mehrstufige Daten-Rekonstruktion). Trägt: alle vier Pflichtsek
 - Verzerrung: systematische Schiefe innerhalb des erfassten Materials, die durch die Erfassungs- oder Auswahllogik der Quelle bedingt ist.
 - Provenienz: Herkunfts- und Bearbeitungsgeschichte einer Datenquelle, einschließlich der Institutionen und Personen, die sie produziert haben.
 - Provenance pro Wert: feinkörnige Extraktionsspur pro Datenfeld, die festhält, durch welche Methode (regex, LLM, manuell, KI-korrigiert) ein Wert in das Datenset gelangt ist.
+
+## Versionshistorie
+
+- 0.3 (2026-08-21): Naming Contract übernommen. Einzelträger heißt `data.md`; Spezialisierungen folgen `<subject>-data.md` oder einem präziseren `<subject>-<function>.md` wie `data-schema.md`.
+- 0.2 (2026-07-19): englisches Funktionsvokabular (Material), Skelett-Angleichung (Abschnitte im Detail, Was nicht reingehört, Beispiel als Standard-Überschriften, Lead-Platzhalter im Block), Grenzen-Prinzip terminologisch von der untersagten Dokument-Selbstbeschreibung getrennt, Verification-Verweis, Lebenszyklus-Absatz, Block-Status auf `draft`. Keine Migrationspflicht für bestehende Repos.
+- 0.1 (2026-05-09): Erstfassung, Querschau durch 19 reale `data.md`.
+
+## Related
+
+- [Vorlagen Promptotyping Documents](#vorlagen)
+- [Konvention Promptotyping Documents](#konvention-v0.1)
+- [Promptotyping](#overview)
+- Epistemic Infrastructure
+- Critical-Expert-in-the-Loop
+- [Vorlage Projekt-Wissensdokument](#promptotyping-document-project)
+- [Vorlage Specification](#promptotyping-document-specification)
+- [Vorlage Architecture](#promptotyping-document-architecture)
