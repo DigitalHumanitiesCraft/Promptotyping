@@ -69,10 +69,10 @@
     },
     {
       "id": "szd-htr",
-      "name": "SZD-HTR OCR Pipeline",
+      "name": "SZD-HTR",
       "role": "evidence",
       "status": "active",
-      "summary": "VLM-based HTR/OCR pipeline for the Stefan Zweig estate at the Literaturarchiv Salzburg, demonstrating Promptotyping at production scale across numerous documented sessions.",
+      "summary": "Transcription and review of the Stefan Zweig estate. VLM-based HTR and OCR for the estate at the Literaturarchiv Salzburg, demonstrating Promptotyping at production scale across numerous documented sessions.",
       "data": "Digitised estate (correspondence, life documents, works, essay files)",
       "artifact": "HTR/OCR pipeline with facsimile-text viewer and statistics dashboard",
       "interfaceTypes": [

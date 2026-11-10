@@ -1,11 +1,13 @@
 ---
-title: SZD-HTR OCR Pipeline
+title: SZD-HTR
 id: szd-htr
 paper: "4.3, Table 3"
 source: Projects/Promptotyping/Case Studies/szd-htr.md
 ---
 
-# SZD-HTR OCR Pipeline
+# SZD-HTR
+
+Transcription and review of the Stefan Zweig estate.
 
 ## Context and research question
 
