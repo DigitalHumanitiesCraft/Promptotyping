@@ -4,7 +4,7 @@ slug: project
 version: "0.3"
 status: complete
 source: Vorlage Projekt-Wissensdokument
-mirrored: 2026-11-10
+mirrored: 2026-08-21
 machine-url: https://dhcraft.org/Promptotyping/_content/promptotyping-document/project.md
 ---
 # Vorlage Projekt-Wissensdokument

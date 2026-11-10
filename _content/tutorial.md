@@ -5,7 +5,7 @@ status: draft
 language: en
 version: "0.4"
 created: 2026-07-29
-updated: 2026-08-22
+updated: 2026-11-10
 machine-url: https://dhcraft.org/Promptotyping/_content/tutorial.md
 ---
 
@@ -165,7 +165,7 @@ When something is wrong, route the correction before you prompt. A factually wro
 
 ## Step 6. Verify, accept, version
 
-**Goal.** A first [promptotype](#glossar), meaning a coherent, identifiable state of knowledge base, artefact, and the documented grounds of acceptance.
+**Goal.** A first [promptotype](#glossar), the state of the artefact together with the project knowledge and the research data from which it was built, and your judgement whether it fits your purpose.
 
 **Do this.** Separate the checks by who can decide them. Let the agent run what is deterministically decidable:
 
@@ -184,7 +184,7 @@ Treat the agent's comparisons as evidence for your judgement; the judgement itse
 
 Then make your purpose-specific judgement. Record its durable grounds in `knowledge/verification.md`. Add one entry at the top of `knowledge/journal.md` whose Trigger field names your judgement, whose Decided field states the accepted result in your own words, whose Changed field names the Verification document, and whose Evidence field points to a checkable record. Put accepted future work in `plan.md` and received open deltas in `handoff.md`. Commit the documents and artefact together after the Journal entry exists.
 
-**You should now have** your first promptotype, the state of the artefact together with the project knowledge and the research data from which it was built, identified by one commit and a dated provenance entry.
+**You should now have** your first promptotype, identified by one commit and a dated provenance entry, and accepted for your purpose if your judgement found that it fits. Otherwise it remains a state of work in progress, and the next iteration starts from what you found.
 
 **Check yourself.** Could a colleague, given only the repository, reconstruct what was accepted, by whom, for which purpose, and on which grounds? Acceptance here is purpose-specific. `verification.md` carries the grounds and `journal.md` points to the transition; publication or handover would impose further criteria.
 

@@ -3,9 +3,9 @@ title: Checking
 slug: verifikation
 status: complete
 language: en
-version: "0.5"
+version: "0.6"
 created: 2026-07-25
-updated: 2026-11-05
+updated: 2026-11-10
 source: Promptotyping working practice, checking architecture and knowledge refactoring
 machine-url: https://dhcraft.org/Promptotyping/_content/verifikation.md
 ---
@@ -32,9 +32,9 @@ An LLM-as-a-Judge evaluates a supplied output under a given reference or rubric 
 
 How much an agentic review is worth depends on how the investigation is organised. Agentic Engineering settles how review tasks are delimited and decomposed, which project knowledge and sources reach the reviewer, which tools and permissions it holds, how several reviewers are coordinated, and when an unresolved case goes to a person for adjudication.
 
-## Acceptance is separate
+## Acceptance is scholarly validation for a purpose
 
-Acceptance is the accountable decision that follows the checks and by which a promptotype, an identifiable iteration state, counts as finished for a stated purpose. It stands apart from all three forms of checking and is bounded by that purpose, so an artefact can be accepted as an experimental processing pipeline or as a handover state without being accepted as a publication-ready scholarly edition.
+Each iteration yields a promptotype, the state of an artefact together with the project knowledge and the research data from which it was built. A promptotype is accepted for a purpose when the researchers who will work with it judge that it fits their questions and ways of working, and this judgement is the scholarly validation described above. Verification and agentic review prepare it and cannot stand in for it. Until then the promptotype remains a state of work in progress, whatever checks it has passed. Acceptance is bounded by its purpose, so an artefact can be accepted as an experimental processing pipeline or as a handover state without being accepted as a publication-ready scholarly edition. Its grounds are written down, naming the purpose, the criteria, who judged and the known limits.
 
 A deterministic metric shows the boundary clearly. Once reference text, extraction rules, normalisation, comparison scope and calculation procedure are specified, a character error rate can be computed reproducibly. It still measures deviation from a selected reference rather than transcription correctness. The choice of reference, the treatment of corrections and annotations, the exclusion of particular textual phenomena and the reading of the resulting value stay technical and editorial decisions.
 

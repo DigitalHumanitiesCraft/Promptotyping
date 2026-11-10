@@ -1,11 +1,11 @@
 ---
 title: Convention Knowledge Documents
 slug: konvention
-version: "0.3"
+version: "0.4"
 status: complete
 language: en
 source: Konvention Promptotyping Documents
-updated: 2026-08-22
+updated: 2026-11-10
 mirrored: 2026-08-22
 machine-url: https://dhcraft.org/Promptotyping/_content/konvention.md
 ---
@@ -44,7 +44,7 @@ The assignment needs no mandatory `function:` frontmatter field. The file name, 
 A Knowledge Document is a knowledge document, a structured unit of knowledge distilled from raw material and optimised as a context artefact for work shared between people and language models. Three properties make it one.
 
 - **Dually readable.** The same text is comprehensible to the scholar and usable as context by the model. This is the property the whole practice rests on, because reading is how the scholar verifies, and that same text is what the artefact is derived from.
-- **Compact.** Maximum information at minimum tokens, which is the writing principle of Distillation and the answer to the degradation of model performance under growing context.
+- **Selective.** It keeps what its purpose needs, with the distinctions, conditions and uncertainties an implementation requires. Distillation goes beyond summarisation or context compression, because a model's nominal context capacity does not imply that all supplied information will be used reliably (Liu et al. 2024; Hong et al. 2025).
 - **Portable.** A Markdown file that can be linked and exchanged across knowledge systems, versioned in git, readable by people and machines without conversion.
 
 Dual readability disciplines the writing. A data description too vague for a model to work against is usually also too vague to count as scholarly documentation, which is why the demand tightens the text instead of adding a second obligation to it.
@@ -75,7 +75,7 @@ The function names are English (Navigation, Charter, Material, Specification, Ar
 | Governance | Which standing authority, decision, and change rules bind the project? | project with rules beyond the action layer | `governance.md` |
 | Reporting | What was the correct state of a defined scope on date X for an external addressee? | project status report for an external recipient | `snapshots/<scope>-report-YYYY-MM-DD.md`; template [Vorlage Report](#promptotyping-document-report) |
 | Integration | What does this project deliver to another one, or receive from it, in what format, and how is fulfilment measured? | project with data exchange or a standing cross-project contract | `integration.md`, `<counterpart>-integration.md`; template [Vorlage Integration](#promptotyping-document-integration) |
-| Agent Instructions | How is the agent to behave, aesthetically included? | always | `CLAUDE.md` (in the repository root, not in `knowledge/`); references `design.md` as its source of values |
+| Agent Instructions | How is the agent to behave, including in design? | always | `CLAUDE.md` or `AGENTS.md` in the repository root, according to the environment; references `design.md` as its source of values |
 
 Functions may be merged while they share a routing question and update cycle. They are split when either boundary diverges. Every relevant function must remain covered in one findable place.
 
@@ -137,13 +137,13 @@ The field belongs to the recommended layer and is set as soon as a catalogue tem
 
 ## Action layer in the repository root
 
-Action documents lie in the repository root rather than in the `knowledge/` folder. The standard is `CLAUDE.md` as the agent configuration, and it refers explicitly to the durable knowledge base. At every session start the agent reads `knowledge/INDEX.md`, then `knowledge/handoff.md`, and then the task-relevant Declarative or Action Document. `journal.md` is consulted for provenance and decision grounds. Structure and filling are described by the [Vorlage Action-Layer](#promptotyping-document-action-layer). `RULES.md`, `INSTRUCTIONS.md` and `cloud-commands.md` are specific to the research control-room setup and are no standard for ordinary Promptotyping repositories.
+The entry points of the action layer lie in the repository root and route into `knowledge/`. File name and loading mechanism follow the environment actually used, such as `CLAUDE.md` for Claude Code and `AGENTS.md` for Codex. With several entry points the rules stay in one maintained place, and derived versions are checked for agreement. A file name alone does not establish that an environment loads it automatically, so without such evidence the agent reads the instruction source explicitly. After the action layer the agent reads `knowledge/INDEX.md`, then `knowledge/handoff.md`, and then the task-relevant Declarative or Action Document. `journal.md` is consulted for provenance and decision grounds. Structure and filling are described by the [Vorlage Action-Layer](#promptotyping-document-action-layer). `RULES.md`, `INSTRUCTIONS.md` and `cloud-commands.md` are specific to the research control-room setup and are no standard for ordinary Promptotyping repositories.
 
 On the aesthetic layer the Agent Instructions function takes effect through `CLAUDE.md` binding in `design.md` as its source of values, for instance through a section on design principles with imperatively formulated sentences derived from the design stance, or through the instruction to read `design.md` before generating any UI. The `design.md` itself stays a Declarative Document, and the imperative translation belongs in the action layer. This division follows the routing heuristic below and prevents a document from changing its analytical type.
 
 ## Classification of the document types
 
-Promptotyping distinguishes three document types analytically. All three are knowledge documents, specialised by the kind of knowledge they hold.
+Promptotyping distinguishes three document types analytically. All three are knowledge documents, specialised by the kind of knowledge they hold. The paper calls them declarative knowledge documents, process knowledge documents and agent instruction documents, and this site keeps the short names Declarative, Process and Action Document beside them.
 
 Declarative Documents hold knowledge about the subject matter. They describe what is known about the data, the domain and the research context. Examples are `README.md`, `project.md`, `data.md`, `specification.md`, `architecture.md`, `design.md`, `editorial-guidelines.md`, mapping rules and verification documents. They extend the model's epistemic horizon and outlast, as a curated layer, the changes to code, model versions and tools. Until July 2026 this type was called Knowledge Document here; the name has moved to the superordinate term.
 
@@ -155,7 +155,7 @@ Action Documents hold knowledge about how to act. They describe what agents may 
 
 This is the Knowledge-Action Composition, and the axis it runs along carries a name outside the practice. Diátaxis separates technical documentation along action against cognition, practical knowledge against theoretical knowledge, knowing how against knowing that (Procida 2024), which is the cut that runs here between a Declarative Document and an Action Document. Two things shift once the addressee is a model. That framework's second axis falls away, acquisition against application, because it presupposes a reader who builds up a practice over time, while a model loads the documents per session and acquires nothing that persists. And the reason for the cut differs. Diátaxis separates so that a reader finds the form their situation calls for, and a knowledge base separates so that a stable description is not overwritten by a volatile instruction. That is why the typology needs both types instead of one mixed type.
 
-The classification is analytical rather than rigid, and it is not carried in the frontmatter. It supplies a diagnostic grid. Where the output is factually wrong, the Declarative Document is checked first. Where it is formally wrong, the Action Document. Where the decision logic is unclear, the Process Document.
+The classification distinguishes kinds of knowledge and is not carried in the frontmatter. It supplies a diagnostic grid. Where the output is wrong in substance, the responsible Declarative Document is a first place to check, and where an agent behaves impermissibly, the Action Document. Process Documents open up the course of the work and the grounds of decisions. The failure pattern does not establish the cause, and implementation errors remain possible under a correct specification.
 
 ## Routing heuristic (file name to function to diagnosis)
 
@@ -181,7 +181,7 @@ Instead of a `type:` or `function:` field in frontmatter, the file name routes t
 | Governance | Action | `governance.md` | standing authority or change rule unclear, a settled rule is bypassed |
 | Reporting | Declarative (snapshot) | `snapshots/<scope>-report-YYYY-MM-DD.md` | external claim about the state unclear or outdated, addressee not recognisable, evidence missing |
 | Integration | Declarative | `integration.md`, `<counterpart>-integration.md` | interface format misunderstood, responsibility at the project boundary unclear, the two sides describe the contract inconsistently |
-| Agent Instructions | Action | `CLAUDE.md`, `RULES.md`, `INSTRUCTIONS.md` (repository root) | break in style, prohibition ignored, formally wrong output |
+| Agent Instructions | Action | `CLAUDE.md`, `AGENTS.md`, supplemented by `RULES.md` and `INSTRUCTIONS.md` (repository root) | break in style, prohibition ignored, formally wrong output |
 
 Existing repositories may retain established names during a staged migration. New and renamed documents follow the naming contract so that routing converges without requiring a repository-wide rewrite.
 
@@ -196,7 +196,7 @@ The frontmatter follows a reduced mandatory core and two optional layers. The co
 | `title` | string | Human-readable document title |
 | `project` | object | Nested with `name` and `repository` |
 | `method` | object | Nested with `name` and `url`; usually `Promptotyping` |
-| `status` | enum | `draft`, `active`, `archived` |
+| `status` | enum | Document maturity, `idea`, `draft`, `stub`, `complete`, `reviewed`, `archived`, plus `active` for a continuously maintained Process Document and `snapshot` for a dated record |
 | `created` | date YYYY-MM-DD | Date of creation |
 | `updated` | date YYYY-MM-DD | Last substantive update |
 
@@ -291,20 +291,24 @@ Bindingness is optional. Topics are carried where a clear field of knowledge is 
 
 Three principles should be recognisable in every Knowledge Document.
 
-Separation of doing, not-doing and the origin of substance. The description of what the document delivers is kept apart from the deliberate negation and from the origin of the material used. This tripartition prevents an indistinguishable mixture of description, self-aggrandisement and data provenance.
+Separation of content and origin of substance. The description of what the document delivers is kept apart from the origin of the material used. This prevents an indistinguishable mixture of description, self-aggrandisement and data provenance.
 
 Standards as a main component. Standards, vocabularies and ontologies in use belong in the main body of a knowledge document rather than in an appendix. Connectability to external knowledge is part of the project's identity.
 
-Negative self-definition. What is deliberately not delivered is named as explicitly as what is delivered. This omission is constitutive and should be preserved.
+No self-description of the document (changed 2026-06-29, reversing the earlier principle of negative self-definition). A document does not state what it leaves out or that material lies elsewhere, and it carries no section on what is missing or what does not belong. Its boundary follows its routing question and update cycle under the naming contract. Related material is linked positively at the point of use. The limits of the material or of the project scope are statements about the subject and stay, for instance in a section on the limits of the data.
 
 ## Distillation as a writing principle
 
-Knowledge Documents follow the distillation principle of the practice, maximum information with minimum tokens (Hong et al. 2025), as the [Distillation](#application) step of the Application page sets it out. Concretely this means:
+Knowledge Documents follow the distillation principle of the practice as the [Distillation](#application) step of the Application page sets it out. Distillation creates an inspectable, selective representation for a purpose, which keeps the distinctions, conditions and uncertainties an adequate implementation requires and goes beyond summarisation or context compression. Concretely this means:
 
 - A document carries one bounded function.
-- Redundancies between documents are represented through wikilinks (`related:`).
+- Redundancies between documents are represented through links (`related:`).
 - The most important content stands in the first sentences and at the close.
-- Periodic refactoring, meaning consolidation through prompts, belongs to the routine.
+- Distillation recurs throughout a project, because journals fill and earlier distillations lose their shape.
+
+## Write-back and bringing restatements into step
+
+A durable finding from implementation is written into the document responsible for it. Then the documents that restate the changed statement are read, in the repository and in any mirrored place, and for each one it is decided whether the restatement is brought into step, replaced by a link, or left with a reason. A mirror that does not take over a reversal of its source carries the earlier state on in the present tense.
 
 The live Handoff Inbox is processed before its point is removed: verify source and current target, integrate durable content into the responsible Declarative or Action Document, then add a concise Journal record of subject, source, target, and result or rejection reason. A point has no status; its presence means open.
 
@@ -320,11 +324,13 @@ When setting up a new Promptotyping repository:
 
 When refactoring a knowledge folder, checklist:
 
+- Does every file name signal the routing question of its document under the naming contract?
+- Are research artefacts, source material, snapshots, handoffs and generated output kept apart from the durable `knowledge/` core?
 - Does every document carry the mandatory core (`title, project, method, status, created, updated`)?
 - Is `version:` consistent across the repository?
 - Are nested fields (`project:`, `method:`, `knowledge-sources:`) cleanly structured, with no flat `method-url:` and the like?
 - Is `knowledge-sources:` used selectively, where external connections carry, and omitted otherwise?
-- Are the three structural principles (separation, standards in the main body, negative self-definition) recognisable in the document?
+- Are the three structural principles (separation of content and origin, standards in the main body, no self-description) recognisable, with no section on what is missing and no note that material lies elsewhere?
 - Does `knowledge/handoff.md` exist with `status: active`, and does it contain only open points or the canonical empty state?
 
 ## Note by the site (2026-06-10)

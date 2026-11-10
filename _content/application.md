@@ -3,16 +3,16 @@ title: Application
 slug: application
 status: complete
 language: en
-version: "0.6"
+version: "0.7"
 created: 2026-07-25
-updated: 2026-11-05
+updated: 2026-11-10
 source: Promptotyping working practice, forms of work and project knowledge base
 machine-url: https://dhcraft.org/Promptotyping/_content/application.md
 ---
 
 # Application
 
-The practice's unit of work is a small set of Markdown documents that are the specification of the artefact, versioned in the git history of the project repository. The central loop iterates over these documents, and the implementation is derived from them. This page resolves the four forms of work into actions, with entry condition, steps, stopping criterion and the documents that arise along the way. The [use cases](#use-cases) and the [Vault](#vault) carry the grounds on which the practice is built this way.
+The practice's unit of work is the project knowledge base, a small set of Markdown documents versioned with the code in the project repository. It holds the specification of the artefact as one part of the project knowledge, which is itself examined against the sources. The central loop iterates over these documents, and implementation builds on them. This page resolves the four forms of work into actions, with entry condition, steps, stopping criterion and the documents that arise along the way. The [use cases](#use-cases) and the [Vault](#vault) carry the grounds on which the practice is built this way.
 
 ## Preparation
 
@@ -31,7 +31,7 @@ The interface between data and research context is probed. The guiding question 
 
 - **Entry.** The material collected in Preparation.
 - **Steps.** Inspect the data directly where it is small enough to read. Beyond that, write a script that traverses the corpus and renders a compact description of it. Have the LLM generate mapping hypotheses from that description, meaning proposals about which data fields correspond to which analytical categories, which forms of presentation fit the data, and where the data is insufficient for the intended purpose. Evaluate these proposals against domain criteria.
-- **Stopping criterion.** There is a documented understanding of what is feasible, what is not, and why.
+- **Stopping criterion.** There is a documented understanding of what is feasible, what is not, and why, and the researchers recognise their material in it.
 - **Documents.** Exploration writes mainly back into `data.md`, extended by the dead ends and their reasons.
 
 ### Reading a corpus you cannot read
@@ -53,11 +53,11 @@ This form of work has a dimension beyond the feasibility check. The LLM generate
 
 ## Distillation
 
-What Exploration taught is distilled into the document set. Distillation is the foundational form of knowledge curation, in which Knowledge Engineering takes written form. Its product is the selective representation from which Context Engineering later chooses what an agent reads for a task, and it is written under the principle of maximum information with minimum tokens.
+What Exploration taught is distilled into the document set. Distillation is the foundational form of knowledge curation, in which Knowledge Engineering takes written form. Its product is the selective representation from which Context Engineering later chooses what an agent reads for a task. It goes beyond summarisation or context compression and keeps the distinctions, conditions and uncertainties an adequate implementation requires.
 
 - **Entry.** The findings of Exploration and the raw materials of Preparation.
 - **Steps.** Bring every document onto one bounded function. Resolve redundancy through references rather than repetition. Where the corpus is large or heterogeneous, render descriptions deterministically from the source data and place them beside the curated layer as generated documents. Before the passage into Implementation, run an overengineering check and deliberately reduce the specification to a minimal viable scope, so that the first working artefact stays small enough to inspect.
-- **Stopping criterion.** A fresh agent instance, given only the documents and the data, could take up the project's logic and work from it without additional explanation.
+- **Stopping criterion.** A fresh agent instance, given only the documents and the data, could take up the project's logic and work from it without additional explanation, and the researchers confirm that the documents describe their material and purpose as they understand them.
 - **Documents.** The durable set includes `INDEX.md`, `data.md`, `specification.md`, `design.md`, `verification.md`, the active Process Documents `handoff.md` and `journal.md`, the action layer, and generated descriptions.
 
 The compression is not neutral. Encoding decisions are epistemic decisions, because they determine what information is available to all downstream steps.
@@ -67,7 +67,7 @@ The compression is not neutral. Encoding decisions are epistemic decisions, beca
 The document set is handed to an agentic coding tool operating inside the project repository, and the derived artefact is checked.
 
 - **Entry.** The distilled document set and the source data.
-- **Steps.** Advance in milestones, each a small increment verified before the next begins. Steer the generation through three feedback loops, deterministic feedback from schema validation, test suites and builds, visual feedback from screenshots of the running artefact, and expert feedback from the judgement of whether the output is factually correct, domain-appropriate and aligned with the research question. Probe the possibility space deliberately by requesting radically different designs that run against the learned conventions.
+- **Steps.** Advance in milestones, each a small increment verified before the next begins. Steer the generation through three feedback loops, deterministic feedback from schema validation, test suites and builds, visual feedback from screenshots of the running artefact, and expert feedback from the judgement of whether the output is factually correct, domain-appropriate and aligned with the research question. Probe the possibility space deliberately by requesting radically different designs that run against the learned conventions. Show each increment to the researchers as a basis for discussing requirements.
 - **Stopping criterion.** The artefact satisfies the acceptance criteria of `specification.md` and passes the checks of [checking](#verifikation). The exit point is a spectrum, from a small functional prototype to a multi-stage pipeline with verification interfaces at every stage, and what determines it is the research question.
 - **Documents.** Durable findings update their responsible Declarative or Action Document. `verification.md` carries procedures and results, `journal.md` records substantively coherent transitions, and `handoff.md` retains only received deltas that remain open.
 
@@ -75,7 +75,7 @@ Deferring the check on a milestone is a decision with a price. It is most defens
 
 ## Iteration and re-entry
 
-The practice's signature is the loop from Implementation back into the documents. When the artefact is wrong, the specification was wrong or incomplete, and it is the specification that is fixed; the artefact is then regenerated. New knowledge from building, meaning unexpected data characteristics, performance constraints and design refinements, is written back into the documents.
+The practice's signature is the loop from Implementation back into the documents. When the artefact is wrong, the finding is curated into the project knowledge at the level where it applies, from the account of the sources and the data model to the interface or the organisation of agentic work, and the implementation follows from the corrected documents. New knowledge from building, meaning unexpected data characteristics, performance constraints and design refinements, is written back in the same way. An artefact regenerated from the documents does not reproduce decisions that were never written back.
 
 Re-entry goes into whichever form of work the new knowledge belongs to.
 
@@ -84,6 +84,16 @@ Re-entry goes into whichever form of work the new knowledge belongs to.
 - Sources that arrive later send it back into Preparation.
 
 A single pass through the four forms of work is the exception.
+
+## Five practices
+
+Five practices hold throughout the work, whatever the order in which its forms of work recur.
+
+1. Implementation builds on explicitly modelled research data and on a curated project knowledge base, from which each agent's working context is selected for its task.
+2. Where agents process research data, they write inspectable procedures wherever rules or mappings suffice, and where a model must produce data directly, its raw output is preserved and each item counts as unchecked until it has been checked.
+3. The work proceeds in bounded iterations, each yielding a promptotype that is shown to the researchers, so that what the data support and what the project needs become visible and open to discussion.
+4. Verification and agentic review are kept apart from scholarly validation, which remains with the researchers, and an agent's result stays a proposal, with its producer recorded, until a person or a validated deterministic rule confirms it.
+5. What checking and use reveal is curated into the project knowledge at the level where it applies, and the knowledge base is itself examined against the sources and the project state.
 
 ## Two modes
 
@@ -98,7 +108,7 @@ A bounded Promptotyping iteration is responsible only when every required condit
 - The project has accessible structured or semi-structured research data whose provenance and relevant semantics are sufficiently understood.
 - One specific scholarly purpose and a limited first artefact can be stated.
 - A Critical Expert can inspect the relation among source material, data, project knowledge, implementation, and output.
-- The project has capacity for deterministic verification and domain validation before acceptance.
+- The project has capacity for verification and for scholarly validation by the researchers, which decides acceptance.
 - Rights, privacy, institutional agreements, infrastructure, and model-provider conditions permit the intended processing.
 - The expected state can be versioned, inspected, and accepted for a stated purpose.
 

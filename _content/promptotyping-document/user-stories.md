@@ -4,7 +4,7 @@ slug: user-stories
 version: "0.2"
 status: complete
 source: Vorlage User Stories
-mirrored: 2026-11-10
+mirrored: 2026-06-10
 machine-url: https://dhcraft.org/Promptotyping/_content/promptotyping-document/user-stories.md
 ---
 # Vorlage User Stories

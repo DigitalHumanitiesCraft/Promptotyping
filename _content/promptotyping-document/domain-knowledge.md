@@ -4,7 +4,7 @@ slug: domain-knowledge
 version: "0.3"
 status: complete
 source: Vorlage Domänenwissen
-mirrored: 2026-11-10
+mirrored: 2026-08-21
 machine-url: https://dhcraft.org/Promptotyping/_content/promptotyping-document/domain-knowledge.md
 ---
 # Vorlage Domänenwissen

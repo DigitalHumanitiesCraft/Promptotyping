@@ -4,7 +4,7 @@ slug: data
 version: "0.3"
 status: complete
 source: Vorlage Datengrundlage
-mirrored: 2026-11-10
+mirrored: 2026-08-21
 machine-url: https://dhcraft.org/Promptotyping/_content/promptotyping-document/data.md
 ---
 # Vorlage Datengrundlage

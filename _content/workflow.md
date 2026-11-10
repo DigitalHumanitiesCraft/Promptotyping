@@ -5,7 +5,7 @@ status: complete
 language: en
 version: "0.2"
 created: 2026-07-25
-updated: 2026-07-26
+updated: 2026-11-10
 source: the two introductory videos, cleaned scripts in the Grounded Vault
 machine-url: https://dhcraft.org/Promptotyping/_content/workflow.md
 ---
@@ -22,7 +22,7 @@ Preparation here consists of nothing more than collecting the Excel files in a `
 
 The first instruction to the agent is to analyse all files in detail and produce a `data.md` from them that renders the totality of the data and the relations between all columns. The instruction is extended by a directive on working method, namely to create a `scripts` folder with Python scripts that assist the exploration, and to document their function in a Markdown document of their own.
 
-This extension carries the principle the practice's token economy rests on. With many files the LLM does not read the data; it writes code that reads the data and works on from the compressed result. At the end of the step there are three scripts, their documentation, the extracted data as JSON, and the `data.md`.
+This extension carries one of the practice's five practices. With many files the agent does not read the data. It writes code that reads the data, so that the procedure can be inspected, tested and rerun, and works on from the result. At the end of the step there are three scripts, their documentation, the extracted data as JSON, and the `data.md`.
 
 The second move is tidying up. The `data.md` moves into a `knowledge` folder, and the move is reported back to the agent, since otherwise it works on from an outdated picture of the file layout.
 
@@ -30,7 +30,7 @@ The second move is tidying up. The `data.md` moves into a `knowledge` folder, an
 
 Three further documents arise from the understanding of the data in one go, `specification.md`, `architecture.md` and `design.md`. The architecture document describes a static single-page application, HTML5, CSS, responsive layout, vanilla JavaScript without a build, and a single library for the visualisation, with JSON and CSV as data formats. One detail shows what a well-filled context yields, since the agent assigns the view to the Visual Information Seeking Mantra without that term appearing in the prompt.
 
-Then comes the step that separates the phase from mere writing. The documents are checked against themselves, for inconsistencies and for superfluous scope. The agent supplies criticisms and recommendations, and the scope is deliberately reduced, in this case to two chart types. Ingredients no human asked for are discarded, among them a dark colour scheme and keyboard shortcuts. That is the overengineering check at the passage into Implementation, and it is right in a first pass, because the knowledge stays in the `knowledge` folder and the next iteration builds on from it.
+Then comes the step that separates Distillation from mere writing. The documents are checked against themselves, for inconsistencies and for superfluous scope. The agent supplies criticisms and recommendations, and the scope is deliberately reduced, in this case to two chart types. Ingredients no human asked for are discarded, among them a dark colour scheme and keyboard shortcuts. That is the overengineering check at the passage into Implementation, and it is right in a first pass, because the knowledge stays in the `knowledge` folder and the next iteration builds on from it.
 
 Before implementation begins, `handoff.md` is created with the canonical empty state and `journal.md` receives one integrated transition that points from the explored material to the Specification, Architecture and Design documents. This didactic case has no repository, so commit hashes and Git-based recovery remain unavailable; the Journal preserves the transition grounds within that limit.
 
@@ -44,7 +44,7 @@ Implementation runs in milestones, and the first HTML view can be opened in a lo
 
 Two passages of the recording are methodologically instructive, because they depart from the rule.
 
-Exploration is caught up on in the middle of implementation. The speaker finds that the first probe was not thorough enough, interrupts the run and has the `data.md` updated with the new knowledge. Re-entry into an earlier phase exists for exactly this.
+Exploration is caught up on in the middle of implementation. The speaker finds that the first probe was not thorough enough, interrupts the run and has the `data.md` updated with the new knowledge. Re-entry into an earlier form of work exists for exactly this.
 
 The milestone check is deferred. The run continues on a bare instruction to carry on, and the inspection follows several milestones later. This is a decision with a price, defensible in a first pass whose point is to see something running at all, and it leaves a verification debt.
 

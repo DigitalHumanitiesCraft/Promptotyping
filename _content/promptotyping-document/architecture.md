@@ -4,7 +4,7 @@ slug: architecture
 version: "0.4"
 status: complete
 source: Vorlage Architecture
-mirrored: 2026-11-10
+mirrored: 2026-08-21
 machine-url: https://dhcraft.org/Promptotyping/_content/promptotyping-document/architecture.md
 ---
 # Vorlage Architecture

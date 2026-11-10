@@ -4,7 +4,7 @@ slug: specification
 version: "0.3"
 status: complete
 source: Vorlage Specification
-mirrored: 2026-11-10
+mirrored: 2026-06-10
 machine-url: https://dhcraft.org/Promptotyping/_content/promptotyping-document/specification.md
 ---
 # Vorlage Specification

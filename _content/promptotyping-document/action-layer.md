@@ -4,7 +4,7 @@ slug: action-layer
 version: "0.6"
 status: complete
 source: Vorlage Action-Layer
-mirrored: 2026-11-10
+mirrored: 2026-08-21
 machine-url: https://dhcraft.org/Promptotyping/_content/promptotyping-document/action-layer.md
 ---
 # Vorlage Action-Layer

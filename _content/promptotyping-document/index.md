@@ -4,7 +4,7 @@ slug: index
 version: "0.4"
 status: complete
 source: Vorlage Index
-mirrored: 2026-11-10
+mirrored: 2026-08-21
 machine-url: https://dhcraft.org/Promptotyping/_content/promptotyping-document/index.md
 ---
 # Vorlage Index

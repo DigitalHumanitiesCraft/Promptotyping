@@ -4,14 +4,14 @@ slug: overview
 status: complete
 language: en
 version: "0.11"
-updated: 2026-11-04
+updated: 2026-11-10
 mirrored: 2026-06-10
 machine-url: https://dhcraft.org/Promptotyping/_content/overview.md
 ---
 
 # Promptotyping
 
-Specification of an iterative, knowledge-driven working practice organised around four recurrent forms of work for developing project-specific research artefacts from structured research data and maintained project knowledge.
+Specification of a working practice for translating research data and their contexts into research artefacts that fit the researchers' questions and ways of working, through Knowledge, Context and Agentic Engineering and four recurrent forms of work.
 
 ## Start with your goal
 
@@ -20,7 +20,7 @@ Specification of an iterative, knowledge-driven working practice organised aroun
 - **Evaluate its grounds.** Examine the documented [use cases](#use-cases) and trace the practice's supporting assertions through the [Vault](#vault).
 - **Apply it to a project.** Follow the [tutorial](#tutorial), use the [canonical Promptotyping skill](#skills-promptotyping), and select the [templates](#vorlagen) whose triggers match your project.
 
-Promptotyping derives implementation from inspectable project knowledge that persists across sessions and receives consequential findings through write-back. Preparation and Exploration examine the material before durable requirements are distilled; small increments then receive deterministic checks and domain judgement before responsible contributors record purpose-specific acceptance. A versioned `knowledge/` folder is the canonical repository convention used by this portal and its templates.
+Promptotyping derives implementation from inspectable project knowledge that persists across sessions and receives consequential findings through write-back. Preparation and Exploration examine the material before durable requirements are distilled. Each increment then passes verification and agentic review, and it is accepted for a purpose when the researchers who will work with it judge that it fits their questions and ways of working. [Five practices](#application) hold throughout. A versioned `knowledge/` folder is the canonical repository convention used by this portal and its templates.
 
 ## Specification status
 

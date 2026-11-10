@@ -4,7 +4,7 @@ slug: verification
 version: "0.2"
 status: complete
 source: Vorlage Verification
-mirrored: 2026-11-10
+mirrored: 2026-08-21
 machine-url: https://dhcraft.org/Promptotyping/_content/promptotyping-document/verification.md
 ---
 # Vorlage Verification
