@@ -7,7 +7,7 @@ status: complete
 language: en
 version: 0.9
 created: 2026-05-09
-updated: 2026-11-04
+updated: 2026-11-10
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Opus 4.8)
 method:
@@ -46,11 +46,11 @@ model calls. These Python tools run locally for development and do not add a bui
 step or runtime dependency to the site.
 The measured study harness remains planned under [benchmark-plan.md](benchmark-plan.md).
 
-How the site is built. A single HTML page holds empty section shells; vanilla JavaScript fetches Markdown from `_content/` and JSON from `data/`, plus the canonical skill from its own repository once the Skills page is shown, renders it with a vendored Markdown parser, and drives client-side routing. GitHub Pages serves the repository root directly, with no build step. What the site does is in [specification.md](specification.md); how it looks is in [design.md](design.md).
+How the site is built. A single HTML page holds empty section shells; vanilla JavaScript fetches Markdown from `_content/` and JSON from `data/`, plus the canonical skill from its own repository once the Skills page is shown, renders it with a vendored Markdown parser, and drives client-side routing. GitHub Pages publishes a tree that a workflow copies from the repository, with no build step. What the site does is in [specification.md](specification.md); how it looks is in [design.md](design.md).
 
 ## Stack
 
-- **Hosting**: GitHub Pages, branch `main`, source at the repository root. No Jekyll build, `.nojekyll` present so `_content/` publishes.
+- **Hosting**: GitHub Pages, branch `main`, deployed by `.github/workflows/pages.yml`, which copies `index.html`, `404.html`, `LICENSE`, `assets/`, `_content/`, `data/`, `intro/` without its tests, `schema/` and the vault layers the vault view links (`vault/10_markdown/`, `vault/20_distillates/`, `vault/references/`, `vault/LICENSE`) into the Pages artifact. The knowledge base, the action layer, tools, tests, snapshots, research artefacts and source material are not published. No Jekyll build runs; `.nojekyll` keeps the legacy root build raw until the Pages source is GitHub Actions.
 - **HTML/CSS/JS**: vanilla, no framework, no bundler, no npm dependency.
 - **Markdown parser**: marked.js v9.1.6, vendored in `assets/vendor/marked.min.js`. No CDN.
 - **YAML parser**: js-yaml v4.1.0, vendored in `assets/vendor/js-yaml.min.js`, used by the Frontmatter-Inspector to parse pasted frontmatter blocks. No CDN.
@@ -191,7 +191,7 @@ The template mirrors, except the repository-canonical `technology` template, and
 
 ## Local development and deployment
 
-Serve the repository root over HTTP for local work, for example `python -m http.server 8000`, and open `http://localhost:8000`. Deployment is a push to `main`; GitHub Pages publishes the root with no build step and no Jekyll processing. The custom domain `dhcraft.org/Promptotyping/` is configured via DNS and CNAME.
+Serve the repository root over HTTP for local work, for example `python -m http.server 8000`, and open `http://localhost:8000`. Deployment is a push to `main`; the Pages workflow publishes the listed folders with no build step and no Jekyll processing. A local preview of the published tree copies the same list. The custom domain `dhcraft.org/Promptotyping/` is configured via DNS and CNAME.
 
 ## Security and privacy
 
