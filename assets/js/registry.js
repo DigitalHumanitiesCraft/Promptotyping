@@ -365,7 +365,10 @@
   function addPageStatusLines() {
     PAGES.forEach(function (p) {
       var host = document.getElementById(p.id);
-      if (!host || p.id === HOME_PAGE || host.querySelector(":scope > .page-head")) {
+      // The start page and the use cases carry no status line; source and
+      // standing are repository facts, not reading matter (owner review).
+      if (!host || p.id === HOME_PAGE || p.id === "use-cases" ||
+          host.querySelector(":scope > .page-head")) {
         return;
       }
       var fm = A.pageFrontmatter[p.id] || {};

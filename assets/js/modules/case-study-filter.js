@@ -1,9 +1,11 @@
 /* Case-Study-Filter (ADR-8). Renders case-study cards in blocks by what the case
    argues for, ordering within a block by the epistemic function of its
-   interface. The filter bar is primary over those five functions, secondary over
-   demo availability. Reads data/case-studies.json. Each card carries a
-   #case-{id} anchor; "More" opens the side panel with the deep page from
-   _content/case-studies/{id}.md. No ES modules; uses window.PromptotypingApp.
+   interface. One filter runs over those five functions. Reads
+   data/case-studies.json. Each entry carries a #case-{id} anchor and has three
+   levels, its name, one sentence, and one line of function and links; the
+   "Details" link opens the side panel with the deep page from
+   _content/case-studies/{id}.md (owner review of 2026-11-10). No ES modules;
+   uses window.PromptotypingApp.
 
    Until 2026-07-26 the gallery grouped and filtered on a nine-value vocabulary
    of its own, which had once been misattributed to a paper section. It now uses
@@ -35,8 +37,7 @@
 
   var allStudies = [];
   var roleLabels = {};
-  var roleNotes = {};
-  var state = { fn: "all", demoOnly: false };
+  var state = { fn: "all" };
 
   /* Sort key: position of the first interface function, cases without one last,
      alphabetical by name inside a rank so the order does not depend on the file. */
@@ -86,7 +87,6 @@
       var types = cs.interfaceTypes || [];
       if (types.indexOf(state.fn) === -1) { return false; }
     }
-    if (state.demoOnly && !cs.demo_url) { return false; }
     return true;
   }
 
@@ -95,61 +95,37 @@
     card.className = "case-card";
     card.id = "case-" + cs.id;
 
-    card.appendChild(textEl("h4", "case-card-name", cs.name));
+    card.appendChild(textEl("p", "case-card-name", cs.name));
     card.appendChild(textEl("p", "case-card-summary", cs.summary));
 
+    // One line for function and links, every target a link of the same form.
+    var line = textEl("p", "case-card-meta");
     if (cs.interfaceTypes && cs.interfaceTypes.length) {
-      var meta = textEl("p", "case-card-meta");
-      var labels = cs.interfaceTypes.map(function (t) {
+      line.appendChild(textEl("span", "case-card-fn", cs.interfaceTypes.map(function (t) {
         return INTERFACE_LABELS[t] || t;
-      });
-      meta.textContent = "Interface function: " + labels.join(", ");
-      card.appendChild(meta);
+      }).join(", ")));
       // The card edge carries the hue of the first epistemic function; the
-      // category itself stays readable in the line above (WCAG 1.4.1).
+      // category itself stays readable in the word beside it (WCAG 1.4.1).
       var fn = App.functionVar(cs.interfaceTypes[0]);
       if (fn) {
         card.classList.add("has-fn");
         card.style.setProperty("--fn", fn);
       }
     }
-
-    var links = document.createElement("div");
-    links.className = "case-card-links";
-    if (cs.demo_url) { links.appendChild(linkEl("Demo", cs.demo_url)); }
-    if (cs.repo_url) { links.appendChild(linkEl("Repo", cs.repo_url)); }
-
-    // Video affordance: a button that loads the facade inline under the card,
-    // so every case with a video_url is playable without leaving the page.
-    var videoId = youtubeIdOf(cs.video_url);
-    var videoHost = null;
-    if (videoId) {
-      videoHost = document.createElement("div");
-      videoHost.className = "case-card-video";
-      var videoBtn = textEl("button", "case-card-video-toggle", "Video");
-      videoBtn.type = "button";
-      videoBtn.setAttribute("aria-expanded", "false");
-      videoBtn.addEventListener("click", function () {
-        if (videoHost.childNodes.length) {
-          videoHost.innerHTML = "";
-          videoBtn.setAttribute("aria-expanded", "false");
-          return;
-        }
-        videoHost.appendChild(App.buildVideoFacade(videoId, cs.name + " (process video)"));
-        videoBtn.setAttribute("aria-expanded", "true");
-      });
-      links.appendChild(videoBtn);
-    }
-
+    if (cs.demo_url) { line.appendChild(linkEl("Live", cs.demo_url)); }
+    if (cs.repo_url) { line.appendChild(linkEl("Code", cs.repo_url)); }
+    if (cs.video_url) { line.appendChild(linkEl("Video", cs.video_url)); }
     if (cs.deep_page) {
-      var more = textEl("button", "case-card-more", "More");
-      more.type = "button";
-      more.addEventListener("click", function () { openDeepPage(cs); });
-      links.appendChild(more);
+      var more = document.createElement("a");
+      more.href = "#case-" + cs.id;
+      more.textContent = "Details";
+      more.addEventListener("click", function (e) {
+        e.preventDefault();
+        openDeepPage(cs);
+      });
+      line.appendChild(more);
     }
-    if (links.childNodes.length) { card.appendChild(links); }
-    if (videoHost) { card.appendChild(videoHost); }
-
+    card.appendChild(line);
     return card;
   }
 
@@ -190,10 +166,7 @@
 
       var section = document.createElement("div");
       section.className = "case-group";
-      section.appendChild(textEl("h3", "case-group-title", roleLabels[role] || role));
-      if (roleNotes[role]) {
-        section.appendChild(textEl("p", "case-group-note", roleNotes[role]));
-      }
+      section.appendChild(textEl("h2", "case-group-title", roleLabels[role] || role));
 
       var grid = document.createElement("div");
       grid.className = "case-grid";
@@ -216,7 +189,7 @@
 
     var chips = document.createElement("div");
     chips.className = "case-filter-chips";
-    var chipDefs = [{ key: "all", label: "All interface functions" }].concat(
+    var chipDefs = [{ key: "all", label: "All" }].concat(
       present.map(function (t) { return { key: t, label: INTERFACE_LABELS[t] }; })
     );
     chipDefs.forEach(function (def) {
@@ -248,23 +221,6 @@
     });
     bar.appendChild(chips);
 
-    // Secondary control: demo-available checkbox.
-    var secondary = document.createElement("div");
-    secondary.className = "case-filter-secondary";
-
-    var demoWrap = document.createElement("label");
-    demoWrap.className = "case-filter-control";
-    var checkbox = document.createElement("input");
-    checkbox.type = "checkbox";
-    checkbox.addEventListener("change", function () {
-      state.demoOnly = checkbox.checked;
-      onChange();
-    });
-    demoWrap.appendChild(checkbox);
-    demoWrap.appendChild(document.createTextNode(" with demo only"));
-    secondary.appendChild(demoWrap);
-
-    bar.appendChild(secondary);
     container.appendChild(bar);
   }
 
@@ -277,7 +233,6 @@
       .then(function (data) {
         allStudies = data.caseStudies || [];
         roleLabels = (data._meta && data._meta.role_labels) || {};
-        roleNotes = (data._meta && data._meta.role_notes) || {};
         buildFilterBar(barHost, function () { renderGroups(listHost); });
         renderGroups(listHost);
         // If the initial hash targets a deep-page case, open it.

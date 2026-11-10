@@ -328,7 +328,7 @@ def check_portal_paths() -> None:
          ("#use-cases", "#vault", "#tutorial",
           "#skills-promptotyping", "#vorlagen")),
         ("evaluate", PAGES_CONTENT,
-         ("#vault", "#tutorial")),
+         ("#overview",)),
         ("apply", TUTORIAL,
          ("#skills-promptotyping", "#vorlagen", "#arbeitsumgebung")),
         ("working environment", WORKING_ENVIRONMENT,
@@ -433,7 +433,7 @@ def check_start_page(documents) -> None:
             if url and 'href="%s"' % url not in item:
                 fail("start", "start page case %s misses %s" % (case_id, url))
 
-    for anchor in ("#application", "#use-cases", "#vault", "#tutorial",
+    for anchor in ("#application", "#use-cases", "#tutorial",
                    "#skills-promptotyping", "#vorlagen", "#glossar"):
         if 'href="%s"' % anchor not in page:
             fail("start", "start page does not link %s" % anchor)
@@ -939,6 +939,9 @@ def declared_anchors(js_texts):
 
     anchors = set(registry_pages(by_name["registry.js"]))
     anchors.update(route_aliases(by_name["registry.js"]))
+    # The static start page and the icon set in index.html declare ids too.
+    if INDEX_HTML.is_file():
+        anchors.update(re.findall(r'\bid="([^"]+)"', read_text(INDEX_HTML)))
 
     for doc in load_json(CATALOGUE)["documents"]:
         anchors.add("promptotyping-document-" + doc["slug"])

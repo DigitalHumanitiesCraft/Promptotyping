@@ -284,12 +284,12 @@ class PortalPathsTest(CheckCase):
         cc.check_portal_paths()
         self.assertEqual(cc.failures, [])
 
-    def test_an_evaluation_route_without_the_vault_fails(self) -> None:
+    def test_an_evaluation_route_without_the_start_page_fails(self) -> None:
         text = cc.PAGES_CONTENT.read_text(encoding="utf-8").replace(
-            'href="#vault"', 'href="#missing-vault"')
+            'href="#overview"', 'href="#missing-overview"')
         cc.PAGES_CONTENT.write_text(text, encoding="utf-8")
         cc.check_portal_paths()
-        self.assertTrue(any("evaluate" in failure and "#vault" in failure
+        self.assertTrue(any("evaluate" in failure and "#overview" in failure
                             for failure in cc.failures))
 
     def test_an_apply_route_without_the_skill_fails(self) -> None:

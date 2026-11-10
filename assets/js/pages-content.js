@@ -169,16 +169,13 @@
     }
     el.classList.remove("placeholder-section");
     el.setAttribute("data-component", "case-study-filter");
+    // Three levels in the head: title with one sentence, the filter, the list.
     el.innerHTML =
-      "<h1>Use Cases</h1>" +
-      "<p>A curated selection of publicly documented projects, grouped by the role each case " +
-      "plays in the evidence for the practice and ordered within each group by the artefact's " +
-      "epistemic function.</p>" +
+      "<h1>Use cases</h1>" +
+      '<p class="page-lead">Projects built with the practice, by their role for the paper and the ' +
+      'epistemic function of their interface. The method itself is on the <a href="#overview">start page</a>.</p>' +
       '<div class="case-filter-host"></div>' +
-      '<div class="case-list-host"></div>' +
-      '<h2>Continue your evaluation</h2>' +
-      '<p>Trace the practice\'s load-bearing statements through the <a href="#vault">Vault</a>, ' +
-      'or move from assessment to a first iteration with the <a href="#tutorial">tutorial</a>.</p>';
+      '<div class="case-list-host"></div>';
   }
 
   /* ---- Epistemic function marks ----
