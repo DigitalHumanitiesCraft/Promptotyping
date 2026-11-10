@@ -7,7 +7,7 @@ status: active
 language: de
 version: 1.1
 created: 2026-05-09
-updated: 2026-11-05
+updated: 2026-11-10
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5, Claude Opus 5.5)
 method:
@@ -1194,3 +1194,11 @@ Bewusst stehen geblieben sind das Frontmatter-Feld `method` samt Schema und Prü
 - Geändert: `README.md` (drei Engineering-Formen, Papernamen und Diagnoseregel für alle drei Dokumenttypen, Knowledge Curation, Prüfung durch verification, agentic review und scholarly validation), `knowledge/specification.md` (A39 mit Vermerk und vollständiger Änderungsliste, Ordnungsgrund der Galerie in A7), `knowledge/INDEX.md` (Lexikoneintrag Promptotyping), `_content/technology-baseline.md` (Papertitel, Funktionsdefinition statt sechs Formen), `_content/verifikation.md` (drei Prüfformen, Acceptance danach, ohne Fettdruck), `_content/application.md` (Distillation), `_content/artefakt.md` (Verhältnis der Site-Typologie zum Paper), `data/case-studies.json` (Schemabeschreibung von `interfaceTypes`), `data/glossar.json` mit neu erzeugtem `_content/glossar.md` (Promptotyping, Context Engineering, Agentic Engineering, Agentic Review, Distillation, Verification and Validation, Knowledge Curation, Vibe Coding, Spec-Driven Development, neu Knowledge Engineering und Project Knowledge Base, `_meta.stand`), `assets/js/pages-vault.js` (Komma statt Mittelpunkt im Statusabsatz des Vault-Panels) und `assets/js/pages-vorlagen.js` (Declarative, Process oder Action).
 - Korrigiert nach der zweiten Prüfung: Im Glossar führen Zheng et al. 2023 und Sharma et al. 2024 nicht mehr den Vermerk, sie fehlten im Literaturverzeichnis des Papers, denn die Lesefassung führt beide; Sharma steht wie dort mit 2024. Vibe Coding zitiert Karpathy 2025a wie die Lesefassung.
 - Belege: Lesefassung im privaten Paper-Arbeitsbereich, gelesen im Titel, in der Funktionsdefinition der Artefakte in Abschnitt 1, in der Abgrenzung von Vibe Coding und Spec-Driven Development in Abschnitt 2 und in den Abschnitten 2.1 bis 2.3; Bericht der unabhängigen Prüfung; `python -m pytest tools/tests vault/tests research-artefacts/promptotyping-bench intro/tests -q -p no:cacheprovider` grün; `python tools/check_consistency.py` mit 17 Prüfgruppen ohne Fehler; `python vault/tools/validate.py vault` ohne Fehler mit der deklarierten Warnung W-NO-OUTPUT; `python tools/build_glossar.py --check` ohne Abweichung; `node --check` auf `assets/js/pages-vault.js` und `assets/js/pages-vorlagen.js`. Nicht committet.
+
+
+## 2026-11-10 | Repository-Stand nach der Repository-Pflege
+
+- Anlass: Repository-Pflege im Auftrag der Koordination vom 2026-11-10.
+- Befund: Die beiden Einträge vom 2026-11-05 nennen ihren Stand „nicht gepusht“ und „Nicht committet“. Beide Übergänge sind als `f97cb3d` und `9ec8355` committet und auf `origin/main` gepusht, der Zweig steht gleich mit `origin/main`. Entgegen der Regel „No branches“ in `CLAUDE.md` liegen zwei lokale Zweige ohne Entsprechung in `main`. `backup/desktop-wip-2026-09-29` zeigt auf denselben Commit `5479fe5` wie `stash@{0}` und hält den Desktop-Zwischenstand vom 2026-10-14 mit Paper-Arbeitskopie und Wissensdokumenten. `manuscript-link-removal` hält mit `d06b179` vom 2026-10-21 eine frühere Fassung der Entfernung öffentlicher Manuskriptlinks, die `main` mit `1cba125` vom 2026-10-28 in anderer Fassung trägt. GitHub Pages liefert weiterhin die ganze Repository-Wurzel aus, darunter `knowledge/` und `CLAUDE.md`.
+- Geändert: nur dieser Eintrag. Zweige und Stash bleiben bis zur Entscheidung des Operators unverändert.
+- Belege: `git status -sb` und `git log` vom 2026-11-10; `python -m pytest tools/tests vault/tests research-artefacts/promptotyping-bench intro/tests -q -p no:cacheprovider` grün; `python tools/check_consistency.py` mit 17 Prüfgruppen ohne Fehler; `python vault/tools/validate.py vault` ohne Fehler mit der deklarierten Warnung W-NO-OUTPUT; HTTP 200 für `knowledge/journal.md` und `CLAUDE.md` unter https://dhcraft.org/Promptotyping/.
