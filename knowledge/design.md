@@ -228,21 +228,21 @@ A destination mark is the one case that sits beside a label. The GitHub and YouT
 
 ## Introduction page
 
-The page under `intro/` (A47 in [specification.md](specification.md)) addresses readers who know neither Git nor coding assistants, and it follows the method pages of Second Brain Vault and Grounded Vault instead of the portal. Everything above this section binds the portal; this section alone binds the introduction page.
+The page under `intro/` (A47 in [specification.md](specification.md)) addresses readers who know neither Git nor coding agents, and it follows the method pages of Second Brain Vault and Grounded Vault instead of the portal. Everything above this section binds the portal; this section alone binds the introduction page.
 
 ### Sections
 
 | Section | Question it answers | Form |
 |---|---|---|
 | Hero | What is it, for whom, and how does a round run? | Title, one lead paragraph, the four parts as one line, audience line, two actions, and the playable example |
-| Try it | How do I start on my own data? | Tool line, seven steps (Set up, then the example's steps with Cut to size after Distil and Check and accept at the end), each with one paragraph, a copyable prompt and a self-check, and on wide screens a sticky project folder titled with the step in view. Set up carries a schematic assistant window |
+| Try it | How do I start on my own data? | Tool line, seven steps (Set up, then the example's steps with Cut to size after Distil and Check and accept at the end), each with one paragraph, a copyable prompt and a self-check, and on wide screens a sticky project folder titled with the step in view. Set up carries a schematic agent window |
 | Good to know | What leaves my computer, what is it not, where do I read on? | Three columns of short sentences with source links |
 
 ### Example
 
 One synthetic round in seven named steps, Prepare, Explore, Distil, Build, Check, Write back and Rebuild. A family correspondence with partly uncertain dates becomes a timeline. The steps are buttons with their names; a done step carries a check mark, the current step is filled, a coming step has a dashed number. The example's title shares its row with the controls Previous, Next and Play. The caption names who acts, the step and the concrete instance, and on wide screens it reserves the height of its longest step, measured on a hidden probe once the web fonts have loaded, so the panes below stay still while the example plays. At 1440 by 900 the whole example fits the first screen in both languages. Below stand two panes. The project folder lists every file of the round with a one-line gloss and a state word, new as a green pill, changed as an ink pill, read with a small arrow, not yet in faint text. The prototype pane shows nothing, version 1, version 1 with the reader's marks, or version 2. In the timeline a letter drawn on one day is a dot, a letter the check marks carries a dashed ring, and a span is a bar, so shape carries the distinction. Orange means only the reader's mark. The Check step says why version 1 failed, since data.md had recorded the uncertain dates and the specification never turned them into a requirement.
 
-The Set up step draws a schematic assistant window in HTML with the three places a newcomer uses, the folder chosen at the start of a session, the chat field and the question before a change. Numbered marks in the window match a key below it, and the caption says that it is a schematic and that Claude Code and Codex look different. It is drawn rather than captured, because a screenshot would show the account and sessions of a real installation and would hold for one assistant only.
+The Set up step draws a schematic agent window in HTML with the three places a newcomer uses, the folder chosen at the start of a session, the chat field and the question before a change. Numbered marks in the window match a key below it, and the caption says that it is a schematic and that Claude Code and Codex look different. It is drawn rather than captured, because a screenshot would show the account and sessions of a real installation and would hold for one agent only.
 
 Below 48rem the prototype pane comes first and the folder drops its absent rows and the glosses of untouched files, so the files a step changes stay near the caption. This is the page's one device that hides content, and the hidden rows add nothing the step is about.
 
@@ -255,7 +255,7 @@ DHCraft corporate design, loosely. Tokens follow the dhcraft-site palette in OKL
 | English | German |
 |---|---|
 | working practice | Arbeitspraxis |
-| AI coding assistant | KI-Coding-Assistent |
+| AI coding agent | KI-Coding-Agent |
 | session | Sitzung |
 | project folder | Projektordner |
 | prototype | Prototyp |
@@ -274,7 +274,7 @@ On 2026-11-04 three subagents read screenshots and page text in the roles of a h
 
 A check of the providers' pages on the same day corrected two statements. Codex is included in every ChatGPT plan, the free one too, while Claude Code needs the Pro plan or above. Codex in its recommended mode works inside the project folder without asking and asks before it reaches beyond it, so only Claude Code asks before every change. The page now names these plans and modes with their sources, links three documented cases, says that the duration of a round has not been measured, asks for a licence on generated code and documents, and states that fully local work is not covered.
 
-Prices stay off the page because they change (journal, 2026-11-04). Open are whether the workshop covers the setup, a human reading and the operator's acceptance.
+Prices stay off the page because they change (journal, 2026-11-04). On 2026-11-10 the page took over the paper's name for the LLM role, agent instead of assistant, glossed in the lead, named the four forms of work in the try-it section, defined acceptance as the researchers' judgement of fit, and points to the citation file. Open are whether the workshop covers the setup, a human reading and the operator's acceptance.
 
 ## What the design is not
 

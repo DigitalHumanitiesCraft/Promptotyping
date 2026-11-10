@@ -351,8 +351,8 @@
   }
 
   /**
-   * A schematic assistant window for the set-up step. It is drawn, not captured, so it shows
-   * no account or session of a real installation and holds for both assistants. The numbered
+   * A schematic agent window for the set-up step. It is drawn, not captured, so it shows
+   * no account or session of a real installation and holds for both agents. The numbered
    * marks in the window and in the key below share their numbers.
    */
   function assistantWindow(w) {
