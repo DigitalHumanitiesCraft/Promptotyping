@@ -269,6 +269,16 @@ The footer is one band on `--code-bg` with three groups of short lines, meant as
 
 The paper's figure is copied from its source and converted at authoring time, colour literals to `currentColor` and `--surface`, ids prefixed with `pf-`, the description equal to the owner's legend, and the curation label rephrased without a colon. The four forms of work carry `--cat-forms` (green), the promptotype frames `--cat-proto` (orange) and the knowledge-base sheets `--cat-base` (blue), each beside the figure's own text label, with a 10 to 12 per cent tint of the hue as fill. The values are the mark's hues where they reach 3:1 against paper and white, `#5c9e4a`, `#4a7ab8` and the darker orange `#b8701a`, and in the dark scheme `#85aede` and `#e39a3b`. In the prose the category stands as a thick underline in its hue under its words. Below 48rem the figure keeps a width of 80rem, at which its lettering reads, and scrolls inside its frame, which takes keyboard focus.
 
+### Changes to the figure for the paper
+
+The owner asked on 2026-11-10 for three changes, which the coordination may carry into the paper's figure. In the start page's conversion of `figure-1-promptotyping-practice.svg` (viewBox 1672 by 860):
+
+- Lettering. Every inline `font-size` below 17 units is raised to 17, which reads at about 11 pixels at the page width of 75rem. This concerns the file names (13), `describes` (14.5), `example files` (14), `each state can be versioned` and `checking and use` (15.5), the labels between the two frames (14.5 and 15.5), the subtitles in the ellipses and under PROMPTOTYPE (15.5) and the heads FOUR FORMS OF WORK (14), ARTEFACT, PROJECT KNOWLEDGE BASE and RESEARCH DATA (15). The file names at y 674 move apart, `data.md` from x 863 to 858, `specification.md` from 975 to 984, `journal.md` from 1103 to 1127 and `CLAUDE.md` from 1223 to 1242.
+- Researchers. The filled core `<circle cx="730" cy="62" r="12">`, which reads as the end node of an activity diagram, gives way to a person drawn in stroke without fill, a head `<circle cx="730" cy="55" r="7">` and shoulders `<path d="M717,77 C717,66 743,66 743,77">`, inside the kept ring of radius 26.
+- Knowledge base. A dashed frame `<rect x="816" y="480" width="484" height="236" rx="10">` in the blue of the knowledge base encloses label, type brackets, sheets and file names. The arrow `context for each task` starts at its left edge, `M816,600 H662` instead of `M826,600`, and the arrow `maintains` ends there, `H816` instead of `H826`.
+
+The README shows the same figure as a standalone light SVG, `assets/img/promptotyping-practice.svg`, written from the converted figure with fixed colours.
+
 ### Tokens
 
 Every value the start page introduces is a custom property on `:root`: `--radius`, `--radius-pill`, `--brand-mark`, `--figure-min`, `--step-marker`, the type steps `--text-xs` to `--text-lead` and `--text-h2-start`, and the three category hues. Hairlines stay 1px. Measures and radii of fields, panels and the download block come from the shared tokens.
