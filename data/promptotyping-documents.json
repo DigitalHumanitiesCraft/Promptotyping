@@ -12,7 +12,8 @@
       "version": "template version",
       "status": "maturity of the template",
       "machineUrl": "static .md URL for machine retrieval without JavaScript",
-      "trigger": "condition under which the function of this template applies; taken from the function table in _content/konvention.md"
+      "trigger": "condition under which the function of this template applies; taken from the function table in _content/konvention.md",
+      "mark": "short form of the trigger, shown as a mark beside the template on the start page"
     }
   },
   "documents": [
@@ -25,7 +26,8 @@
       "version": "0.4",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/index.md",
-      "trigger": "knowledge base has more than three documents or several constitutive terms"
+      "trigger": "knowledge base has more than three documents or several constitutive terms",
+      "mark": "more than three documents"
     },
     {
       "slug": "project",
@@ -36,7 +38,8 @@
       "version": "0.3",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/project.md",
-      "trigger": "always"
+      "trigger": "always",
+      "mark": "always"
     },
     {
       "slug": "data",
@@ -47,7 +50,8 @@
       "version": "0.3",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/data.md",
-      "trigger": "project processes or produces data"
+      "trigger": "project processes or produces data",
+      "mark": "the project uses data"
     },
     {
       "slug": "specification",
@@ -58,7 +62,8 @@
       "version": "0.3",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/specification.md",
-      "trigger": "always"
+      "trigger": "always",
+      "mark": "always"
     },
     {
       "slug": "user-stories",
@@ -69,7 +74,8 @@
       "version": "0.2",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/user-stories.md",
-      "trigger": "always"
+      "trigger": "always",
+      "mark": "always"
     },
     {
       "slug": "action-layer",
@@ -80,7 +86,8 @@
       "version": "0.6",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/action-layer.md",
-      "trigger": "always"
+      "trigger": "always",
+      "mark": "always"
     },
     {
       "slug": "architecture",
@@ -91,7 +98,8 @@
       "version": "0.4",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/architecture.md",
-      "trigger": "system goes beyond a static site"
+      "trigger": "system goes beyond a static site",
+      "mark": "more than a static site"
     },
     {
       "slug": "technology",
@@ -102,7 +110,8 @@
       "version": "0.1",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/technology.md",
-      "trigger": "several projects build the same artefact type and the stack rationale is reusable"
+      "trigger": "several projects build the same artefact type and the stack rationale is reusable",
+      "mark": "a shared artefact family"
     },
     {
       "slug": "domain-knowledge",
@@ -113,7 +122,8 @@
       "version": "0.3",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/domain-knowledge.md",
-      "trigger": "research, edition or data project with a domain-methodological prescriptive or theoretical layer"
+      "trigger": "research, edition or data project with a domain-methodological prescriptive or theoretical layer",
+      "mark": "a domain rule set"
     },
     {
       "slug": "design",
@@ -124,7 +134,8 @@
       "version": "0.3",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/design.md",
-      "trigger": "project has a UI"
+      "trigger": "project has a UI",
+      "mark": "the project has a UI"
     },
     {
       "slug": "testing",
@@ -135,7 +146,8 @@
       "version": "0.3",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/testing.md",
-      "trigger": "project with tests, verification or acceptance checks"
+      "trigger": "project with tests, verification or acceptance checks",
+      "mark": "tests or acceptance checks"
     },
     {
       "slug": "verification",
@@ -146,7 +158,8 @@
       "version": "0.2",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/verification.md",
-      "trigger": "project makes empirical findings or novelty claims that are used externally (paper, report, handover)"
+      "trigger": "project makes empirical findings or novelty claims that are used externally (paper, report, handover)",
+      "mark": "claims used externally"
     },
     {
       "slug": "journal",
@@ -157,7 +170,8 @@
       "version": "0.6",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/journal.md",
-      "trigger": "always"
+      "trigger": "always",
+      "mark": "always"
     },
     {
       "slug": "handoff",
@@ -168,7 +182,8 @@
       "version": "0.1",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/handoff.md",
-      "trigger": "always"
+      "trigger": "always",
+      "mark": "always"
     },
     {
       "slug": "plan",
@@ -179,7 +194,8 @@
       "version": "0.3",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/plan.md",
-      "trigger": "project with phases, milestones or sprint control"
+      "trigger": "project with phases, milestones or sprint control",
+      "mark": "phases or milestones"
     },
     {
       "slug": "report",
@@ -190,7 +206,8 @@
       "version": "0.3",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/report.md",
-      "trigger": "project status report for an external recipient (client, funder, stakeholder); the normal case in commissioned projects"
+      "trigger": "project status report for an external recipient (client, funder, stakeholder); the normal case in commissioned projects",
+      "mark": "an external status report"
     },
     {
       "slug": "integration",
@@ -201,7 +218,8 @@
       "version": "0.3",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/integration.md",
-      "trigger": "project with a durable cross-project contract for data, formats or responsibilities"
+      "trigger": "project with a durable cross-project contract for data, formats or responsibilities",
+      "mark": "a cross-project contract"
     }
   ]
 }

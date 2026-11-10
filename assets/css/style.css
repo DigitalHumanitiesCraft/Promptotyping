@@ -72,6 +72,13 @@
   --fn-verification: #c9661c;
   --fn-audit: #9b3a6b;
 
+  /* Categories in figures and lists, the hues of the mark (owner decision of
+     2026-11-10): at least 3:1 against paper and surface in light, and against
+     ink-deep and the dark surface in the dark values below. */
+  --cat-forms: #5c9e4a;
+  --cat-base: #4a7ab8;
+  --cat-proto: #b8701a;
+
   /* Signature. Carries no information, which is why it is the loud one: it
      marks identity, not a category. Exactly one occurrence per page. */
   --signature: linear-gradient(90deg, #00b37e, #b6ff1a 22%, #ffd400 45%,
@@ -95,10 +102,8 @@
      corporate design across the DHCraft method sites is a swap of values. */
   --radius: var(--dh-radius-s);
   --radius-pill: var(--dh-radius-pill);
-  --brand-mark: 1.75rem;
-  --line-graphic: var(--grey-3);
-  --arrow-head: 6px;
-  --arrow-half: 4px;
+  --brand-mark: 2rem;
+  --figure-min: 64rem;
   --step-marker: 1.75rem;
   --text-xs: 0.8125rem;
   --text-sm: 0.875rem;
@@ -107,8 +112,7 @@
   --text-h2-start: 1.5rem;
 
   /* Layout */
-  --header-height: 3.25rem;
-  --nav-width: 250px;
+  --header-height: 3.75rem;
   --read-width: 820px;
   --panel-width: 360px;
 }
@@ -122,6 +126,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
+    --cat-base: #85aede;
+    --cat-proto: #e39a3b;
     --shadow-panel: -2px 0 12px rgba(255, 255, 255, 0.06);
     --shadow-tooltip: 0 2px 8px rgba(255, 255, 255, 0.08);
     --backdrop: rgba(0, 0, 0, 0.6);
@@ -134,6 +140,8 @@
 }
 
 :root[data-theme="dark"] {
+  --cat-base: #85aede;
+  --cat-proto: #e39a3b;
   --shadow-panel: -2px 0 12px rgba(255, 255, 255, 0.06);
   --shadow-tooltip: 0 2px 8px rgba(255, 255, 255, 0.08);
   --backdrop: rgba(0, 0, 0, 0.6);
@@ -239,19 +247,15 @@ a:hover {
    5  Layout shell
    ============================================================ */
 
-/* ---- Documentation header ----
-   A thin fixed bar. It carries identity and the two outbound links; the
-   navigation itself is the sidebar tree below. */
+/* ---- Header ----
+   The shared dh-head block carries brand, main navigation and the two tools,
+   as on the other DHCraft method sites. The portal keeps it in view while the
+   page scrolls and adds its signature band. */
 
 .docs-header {
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
-  right: 0;
   z-index: 30;
-  height: var(--header-height);
-  background: var(--bg);
-  border-bottom: 1px solid var(--border);
 }
 
 /* Signature band: the one loud moment, at the foot of the header. It encodes
@@ -266,164 +270,50 @@ a:hover {
   background: var(--signature);
 }
 
-.docs-header-inner {
-  display: flex;
-  align-items: center;
-  gap: var(--space-4);
-  height: 100%;
-  padding: 0 var(--space-6);
-}
-
-.docs-brand {
-  display: flex;
-  align-items: baseline;
-  gap: var(--space-2);
-  text-decoration: none;
-  color: var(--text);
-}
-
-.docs-brand img {
-  align-self: center;
-  display: block;
-  width: auto;
+.docs-header .dh-brand img {
   height: var(--brand-mark);
 }
 
-.docs-brand-word {
-  font-weight: 600;
-  letter-spacing: -0.01em;
-}
-
-.docs-brand-kind {
-  font-size: 0.75rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--grey-3);
-  border-left: 1px solid var(--border);
-  padding-left: var(--space-2);
-}
-
-.docs-header-links {
-  margin-left: auto;
+.docs-header-tools {
   display: flex;
-  gap: var(--space-4);
-  font-size: 0.875rem;
+  gap: var(--space-2);
+  margin-left: auto;
 }
 
-.docs-header-links a {
-  text-decoration: none;
-  color: var(--grey-2);
+/* On a narrow screen brand and tools share the first line and the navigation
+   takes its own line beneath, scrolling sideways inside itself. */
+@media (max-width: 47.99rem) {
+  .docs-header-tools {
+    order: 2;
+  }
+
+  .docs-header .dh-nav {
+    order: 3;
+  }
 }
 
-.docs-header-links a:hover {
+/* The scripts mark the page in view; the shared block underlines it. */
+.dh-nav a.is-active,
+.dh-nav a.is-current {
   color: var(--text);
+  border-block-end-color: var(--brand-accent);
 }
 
-/* ---- Shell grid ----
-   Two tracks: the page tree and the page. The tree is sticky below the header
-   and scrolls independently of the reading column. The page track is
-   minmax(0, 1fr) so a wide table or code block scrolls inside its own box
-   instead of widening the track; the responsive block keeps that floor. */
-
-.docs-shell {
-  display: grid;
-  grid-template-columns: var(--nav-width) minmax(0, 1fr);
-  gap: var(--space-12);
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: 0 var(--space-6);
-}
-
-/* ---- Page tree ---- */
-
-.docs-nav {
-  position: sticky;
-  top: var(--header-height);
-  align-self: start;
-  max-height: calc(100vh - var(--header-height));
-  overflow-y: auto;
-  padding: var(--space-8) var(--space-4) var(--space-8) 0;
-  border-right: 1px solid var(--border);
-  font-size: 0.875rem;
-}
-
-.docs-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.docs-nav li {
-  margin: 0;
-}
-
-.docs-nav a {
-  display: block;
-  padding: 0.3rem var(--space-2);
-  margin-left: -1px;
-  border-left: 2px solid transparent;
-  text-decoration: none;
-  color: var(--grey-2);
-  transition: color 150ms ease-out, border-color 150ms ease-out;
-}
-
-.docs-nav a:hover {
-  color: var(--text);
-}
-
-.docs-nav a.is-active {
-  color: var(--text);
-  font-weight: 600;
-  border-left-color: var(--text);
-}
-
-.docs-nav-part {
-  display: inline-block;
-  min-width: 1.2em;
-  color: var(--grey-3);
-  font-variant-numeric: tabular-nums;
-}
-
-.docs-nav a.is-active .docs-nav-part {
-  color: var(--grey-2);
-}
-
-/* The tree is one flat list per group run, with a gap between the runs and no
-   label over them. The gap is what lets the pages that answer the same kind of
-   question read as belonging together. */
-.docs-nav ul.docs-nav-run + ul.docs-nav-run {
-  margin-top: var(--space-6);
-}
-
-/* Without JavaScript the tree is never built, so its empty column keeps no rule,
-   and the theme toggle, which needs the script, is not shown. */
+/* Without JavaScript the theme toggle, which needs the script, is not shown. */
 :root:not(.js) #theme-toggle {
   display: none;
 }
 
-.docs-nav:empty {
-  border-right: 0;
-}
+/* ---- Shell ----
+   One column. The page track is minmax(0, 1fr) so a wide table or code block
+   scrolls inside its own box instead of widening the page. */
 
-/* ---- Sub-navigation in the tree ----
-   The parts of the specification stand permanently under their entry. Nothing opens or closes; the scrollspy moves
-   the current marker and changes nothing else. */
-
-.docs-nav-sub {
-  margin: var(--space-1) 0 var(--space-2);
-  padding-left: var(--space-4);
-}
-
-.docs-nav-sub a {
-  padding-top: 0.15rem;
-  padding-bottom: 0.15rem;
-  font-size: 0.8125rem;
-  color: var(--grey-3);
-}
-
-.docs-nav-sub a.is-current {
-  color: var(--text);
-  border-left-color: var(--text);
+.docs-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  max-width: var(--dh-page);
+  margin: 0 auto;
+  padding: 0 var(--dh-gutter);
 }
 
 /* ---- Page host and reading column ----
@@ -441,8 +331,8 @@ a:hover {
 .content {
   width: 100%;
   max-width: var(--read-width);
-  margin: var(--header-height) auto 0;
-  padding: var(--space-12) var(--space-4) var(--space-16);
+  margin: 0 auto;
+  padding: var(--space-12) 0 var(--space-16);
 }
 
 .doc-page > h1:first-child,
@@ -517,8 +407,7 @@ a:hover {
 .content h1,
 .content h2,
 .content h3,
-.content h4,
-.docs-brand-word {
+.content h4 {
   font-family: var(--font-display);
 }
 
@@ -674,57 +563,18 @@ a:hover {
 }
 
 /* ---- Start page ----
-   Static markup in index.html: the one level from which everything needed to
-   reuse the practice is reached. Spacing and weight carry the order; lines are
-   kept for the diagram, the table rows and the controls. */
+   Static markup in index.html: the figure first, prose under it, the files to
+   take away in a block of their own, and recurring entries of at most three
+   visual levels (owner decisions of 2026-11-10 in the shared design document). */
 
 .start-lead {
   font-size: var(--text-lead);
   line-height: 1.5;
-  max-width: 40em;
 }
 
-.start-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2) var(--space-4);
-  margin: var(--space-6) 0 0;
-}
-
-.start-button {
-  display: inline-flex;
-  align-items: center;
-  min-height: var(--dh-tap);
-  padding: var(--space-2) var(--space-6);
-  border: 1px solid var(--grey-3);
-  border-radius: var(--radius-pill);
-  font-size: var(--text-md);
-  font-weight: 500;
-  line-height: 1.4;
-  text-decoration: none;
-  color: var(--text);
-  transition: background 150ms ease-out, color 150ms ease-out;
-}
-
-.start-button:hover {
-  border-color: var(--brand-accent);
-}
-
-.start-button.is-primary {
-  background: var(--brand-accent);
-  border-color: var(--brand-accent);
-  color: var(--on-brand-accent);
-}
-
-.start-button.is-primary:hover {
-  background: var(--link);
-  border-color: var(--link);
-}
-
-.start-button:focus-visible,
-.start a:focus-visible {
-  outline: var(--dh-focus-ring);
-  outline-offset: var(--dh-focus-offset);
+.start .start-head + noscript + figure,
+.start .start-head + figure {
+  margin-top: var(--space-8);
 }
 
 .start > h2 {
@@ -732,181 +582,220 @@ a:hover {
   margin-top: var(--space-16);
 }
 
-.start .start-head + h2 {
-  margin-top: var(--space-12);
-}
-
 .start-note {
   font-size: var(--text-sm);
   color: var(--grey-2);
 }
 
-/* The cycle diagram. Four forms of work in a row with arrows between them, a
-   return path from Implementation into Distillation under the row, and the
-   knowledge base as the ground they all read and revise. Lines and arrows use
-   --grey-3, which keeps the 3:1 contrast of graphical objects in both themes. */
-
-.cycle {
-  margin: var(--space-6) 0 0;
+.start a:focus-visible {
+  outline: var(--dh-focus-ring);
+  outline-offset: var(--dh-focus-offset);
 }
 
-.content .cycle-forms {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: var(--space-6);
+/* Icons: one inline set of 24-unit symbols drawn with a 1.5 stroke in
+   currentColor, always beside a word that names the target. */
+.icon-set {
+  display: none;
 }
 
-.content .cycle-form {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-1);
-  margin: 0;
-  padding: var(--space-4);
-  border: 1px solid var(--line-graphic);
-  border-radius: var(--radius);
+.icon {
+  width: 1.1em;
+  height: 1.1em;
+  flex: none;
+  vertical-align: -0.2em;
+  margin-right: 0.35em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Category hues of the mark, each beside its text label: green the forms of
+   work, blue the project knowledge base, orange the promptotype. */
+.cat {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 4px;
+}
+
+.cat-forms {
+  text-decoration-color: var(--cat-forms);
+}
+
+.cat-base {
+  text-decoration-color: var(--cat-base);
+}
+
+/* The figure of the paper on the shared tokens. Below the width at which its
+   lettering stays legible, the canvas scrolls sideways inside its frame. */
+.practice .dh-figure__canvas {
   background: var(--surface);
-  line-height: 1.4;
 }
 
-/* Arrow to the next form: a shaft in the gap and a head at its end. */
-.cycle-form:not(:last-child)::after,
-.cycle-form:not(:last-child)::before {
-  content: "";
-  position: absolute;
-  top: 50%;
+.practice-svg {
+  display: block;
+  width: 100%;
+  min-width: var(--figure-min);
+  height: auto;
+  color: var(--text);
 }
 
-.cycle-form:not(:last-child)::after {
-  left: 100%;
-  width: calc(var(--space-6) - var(--arrow-head) + 1px);
-  height: 1px;
-  background: var(--line-graphic);
+.practice-svg text {
+  fill: currentColor;
+  font-family: var(--font-text);
+  text-anchor: middle;
 }
 
-.cycle-form:not(:last-child)::before {
-  left: calc(100% + var(--space-6) - var(--arrow-head));
-  margin-top: calc(-1 * var(--arrow-half));
-  border: var(--arrow-half) solid transparent;
-  border-left: var(--arrow-head) solid var(--line-graphic);
-  border-right: 0;
+.practice-svg .head {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 2px;
 }
 
-.cycle-number {
-  font-size: var(--text-xs);
-  color: var(--grey-2);
-  font-variant-numeric: tabular-nums;
+.practice-svg .sub {
+  font-size: 17px;
 }
 
-.cycle-name {
-  font-size: 1.0625rem;
+.practice-svg .mono {
+  font-family: var(--font-code);
+}
+
+.practice-svg .start {
+  text-anchor: start;
+}
+
+.practice-svg .line {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+}
+
+.practice-svg .shape {
+  fill: var(--surface);
+  stroke: currentColor;
+  stroke-width: 1.8;
+}
+
+.practice-svg .thin {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.3;
+}
+
+.practice-svg .fill-surface {
+  fill: var(--surface);
+}
+
+.practice-svg .cat-forms ellipse,
+.practice-svg .cat-forms-frame {
+  stroke: var(--cat-forms);
+}
+
+.practice-svg .cat-forms ellipse {
+  fill: color-mix(in srgb, var(--cat-forms) 12%, var(--surface));
+}
+
+.practice-svg .cat-proto {
+  stroke: var(--cat-proto);
+}
+
+.practice-svg .cat-base {
+  stroke: var(--cat-base);
+  fill: color-mix(in srgb, var(--cat-base) 10%, var(--surface));
+}
+
+/* Prose under the figure and in the later parts, at reading measure. */
+.start-prose,
+.start-prose-line {
+  max-width: var(--dh-measure);
+}
+
+.start-prose em {
+  font-style: normal;
   font-weight: 600;
 }
 
-.cycle-what {
-  font-size: var(--text-md);
-}
-
-.cycle-done,
-.cycle-files {
-  font-size: var(--text-xs);
-  color: var(--grey-2);
-}
-
-.cycle-files {
-  margin-top: auto;
-  padding-top: var(--space-2);
-}
-
-.content .cycle-files code,
-.content .cycle-base code {
-  font-size: var(--text-xs);
-  background: none;
-  padding: 0;
-}
-
-/* The return path spans the third and fourth column. Its verticals stand at the
-   centres of the two boxes, a quarter of the span in from each side less a
-   quarter of the gap, and the head points up into Distillation. */
-.content .cycle-loop {
+/* The three document types with their files, drawn as code: one column per
+   type, each file a sheet with a folded corner. */
+.content .doc-types-figure {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  column-gap: var(--space-6);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+  margin: var(--space-6) 0 0;
+}
+
+.doc-type {
+  padding: var(--space-4);
+  border: 1px solid var(--cat-base);
+  border-top-width: 4px;
+  border-radius: var(--dh-radius-m);
+  background: var(--surface);
+}
+
+.content .doc-type p {
   margin: 0;
 }
 
-.cycle-loop-path,
-.cycle-loop-label {
-  grid-column: 3 / 5;
+.doc-type-name {
+  font-family: var(--font-display);
+  font-weight: 600;
 }
 
-.cycle-loop-path {
-  position: relative;
-  height: var(--space-6);
-  margin: 0 calc(25% - var(--space-6) / 4);
-  border: 1px solid var(--line-graphic);
-  border-top: 0;
-}
-
-.cycle-loop-path::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: calc(-1 * var(--arrow-half) - 0.5px);
-  border: var(--arrow-half) solid transparent;
-  border-bottom: var(--arrow-head) solid var(--line-graphic);
-  border-top: 0;
-}
-
-.cycle-loop-label {
-  padding-top: var(--space-2);
-  font-size: var(--text-xs);
-  line-height: 1.4;
+.doc-type-gloss {
+  font-size: var(--text-sm);
   color: var(--grey-2);
-  text-align: center;
 }
 
-.content .cycle-base {
+.content .sheets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
   margin: var(--space-4) 0 0;
-  padding: var(--space-2) var(--space-4);
-  background: var(--code-bg);
-  border-radius: var(--radius);
-  font-size: var(--text-sm);
-  text-align: center;
-}
-
-.cycle figcaption {
-  margin-top: var(--space-4);
-  font-size: var(--text-sm);
-  color: var(--grey-2);
-  max-width: 44em;
-}
-
-/* Start steps: numbered, each with its name, a sentence and a copyable block. */
-.content .start-steps {
+  padding: 0;
   list-style: none;
-  counter-reset: start-step;
-  padding-left: 0;
 }
 
-.content .start-steps > li {
-  counter-increment: start-step;
+.content .sheet {
+  margin: 0;
+  padding: var(--space-1) var(--space-2) var(--space-1) var(--space-2);
+  border: 1px solid var(--grey-3);
+  border-radius: 2px var(--space-2) 2px 2px;
+  background: color-mix(in srgb, var(--cat-base) 8%, var(--surface));
+}
+
+.content .sheet code {
+  background: none;
+  padding: 0;
+  font-size: var(--text-xs);
+}
+
+/* Steps of Reuse and Example: (1) number, name and instruction as one block,
+   (2) the field with its label and copy button in its head row, (3) the
+   result. */
+.content .steps {
+  list-style: none;
+  counter-reset: step;
+  padding-left: 0;
+  max-width: var(--dh-measure);
+}
+
+.content .steps > li {
+  counter-increment: step;
   position: relative;
-  margin: 0 0 var(--space-6);
+  margin: 0 0 var(--space-8);
   padding-left: calc(var(--step-marker) + var(--space-4));
 }
 
-.start-steps > li::before {
-  content: counter(start-step);
+.steps > li::before {
+  content: counter(step);
   position: absolute;
   left: 0;
   top: 0;
   width: var(--step-marker);
   height: var(--step-marker);
-  border: 1px solid var(--line-graphic);
+  border: 1px solid var(--grey-3);
   border-radius: 50%;
   font-size: var(--text-sm);
   font-weight: 600;
@@ -915,106 +804,193 @@ a:hover {
   font-variant-numeric: tabular-nums;
 }
 
-.start-step-name {
-  display: block;
+.content .step-head {
+  margin: 0 0 var(--space-2);
+}
+
+.step-name {
+  font-family: var(--font-display);
   font-weight: 600;
-  margin-bottom: var(--space-1);
 }
 
-.start-steps p {
-  margin-bottom: var(--space-2);
+.content .step-result {
+  margin: var(--space-2) 0 0;
+  color: var(--grey-2);
+  font-size: var(--text-sm);
 }
 
-.start pre {
-  position: relative;
+/* A copyable field is one box: label and copy button in its head row, the
+   text beneath, wrapped as prose for prompts. */
+.start .field {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0;
+  margin: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--dh-radius-m);
 }
 
-.content .start pre code {
+.start .field + .field {
+  margin-top: var(--space-2);
+}
+
+.start .field figcaption {
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  padding: var(--space-2) var(--space-4);
   font-size: var(--text-xs);
+  color: var(--grey-2);
 }
 
-/* A copy button sits on its block; keep the first line clear of it. */
-.start pre:has(.code-copy) {
-  padding-top: calc(var(--space-8) + var(--space-2));
+.start .field .dh-copy {
+  margin: var(--space-1) var(--space-2) 0 0;
 }
 
-.start-citation code {
+.content .start .field pre {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  margin: 0;
+  padding: 0 var(--space-4) var(--space-4);
+  background: none;
+  border: 0;
+  border-radius: 0;
+  line-height: 1.55;
+}
+
+.content .start .field pre code {
+  font-size: var(--text-sm);
   white-space: pre-wrap;
   overflow-wrap: anywhere;
 }
 
-/* Directory tables: identifier first, links quiet until hovered or focused. */
-.content .start-documents,
-.content .start-skill,
-.content .start-examples {
+.start .field.is-prompt pre code {
+  font-family: var(--font-text);
+}
+
+.start > .field {
+  max-width: var(--dh-measure);
+  margin-top: var(--space-4);
+}
+
+/* Files to take away: a block of its own on the surface, one download control
+   per file, one per archive, and no explanatory prose inside. */
+.downloads {
+  margin: var(--space-8) 0 0;
+  padding: var(--space-6);
+  background: var(--surface);
+  border: 1px solid var(--grey-3);
+  border-radius: var(--dh-radius-m);
+}
+
+.content .downloads-title {
+  margin: 0 0 var(--space-4);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-lead);
+}
+
+.download-group + .download-group {
+  margin-top: var(--space-6);
+}
+
+.content .download-group-name {
+  margin: 0 0 var(--space-2);
+  font-weight: 600;
+}
+
+.content .download-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
+  gap: var(--space-1) var(--space-6);
+  margin: 0 0 var(--space-4);
+  padding: 0;
+  list-style: none;
+}
+
+.content .download-list li {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-2);
+  margin: 0;
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--border);
   font-size: var(--text-sm);
 }
 
-.start-documents th[scope="row"],
-.start-skill th[scope="row"],
-.start-examples th[scope="row"] {
-  font-weight: 500;
-  white-space: nowrap;
-}
-
-.start-documents tbody a,
-.start-examples tbody a {
+.file-get {
+  font-weight: 600;
   text-decoration: none;
 }
 
-.start-documents tbody a:hover,
-.start-documents tbody a:focus-visible,
-.start-examples tbody a:hover,
-.start-examples tbody a:focus-visible {
+.file-get:hover,
+.file-get:focus-visible,
+.file-about:hover,
+.file-about:focus-visible {
   text-decoration: underline;
 }
 
-.start-documents td:last-child,
-.start-examples td:last-child {
-  white-space: nowrap;
-  text-align: right;
-}
-
-.start-documents td:last-child a,
-.start-examples td:last-child a {
+.doc-when {
   color: var(--grey-2);
 }
 
-.start-examples td:last-child a + a {
-  margin-left: var(--space-4);
-}
-
-.content .start-group th {
-  padding-top: var(--space-6);
-  font-weight: 600;
-}
-
-.start-skill th[scope="row"] {
-  width: 9rem;
-}
-
-/* Three kinds of checking side by side; who carries each stands under it. */
-.start-checks {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--space-6);
-  margin: var(--space-6) 0;
-}
-
-.start-checks dt {
-  font-weight: 600;
-  margin-bottom: var(--space-1);
-}
-
-.start-checks dd {
-  margin: 0 0 var(--space-2);
-  font-size: var(--text-md);
-  line-height: 1.5;
-}
-
-.start-checks .start-checks-who {
+.doc-when.is-always {
+  padding: 0 var(--space-2);
+  border: 1px solid var(--grey-3);
+  border-radius: var(--radius-pill);
+  color: var(--text);
   font-size: var(--text-xs);
+}
+
+.file-about {
+  margin-left: auto;
   color: var(--grey-2);
+  text-decoration: none;
+}
+
+.content a.download-all {
+  font-size: var(--text-sm);
+}
+
+/* Links that are controls: the shared blocks set their colour and decoration,
+   so the portal's prose link rule must not reach them. */
+.docs-header a,
+.content a.dh-btn {
+  text-decoration: none;
+}
+
+.docs-header .dh-brand {
+  color: var(--text);
+}
+
+.docs-header .dh-nav a {
+  color: var(--grey-2);
+}
+
+.content a.dh-btn {
+  color: var(--text);
+}
+
+.content a.dh-btn--primary,
+.content a.dh-btn--primary:hover {
+  color: var(--on-brand-accent);
+}
+
+/* The start page uses the page frame for its figure and grids and keeps prose
+   at the shared reading measure. */
+body[data-page="overview"] .content {
+  max-width: var(--dh-page);
+}
+
+.start > p,
+.start > h2,
+.start > noscript,
+.start .start-head {
+  max-width: var(--dh-measure);
 }
 
 /* ---- Side panel ----
@@ -1653,6 +1629,11 @@ a:hover {
   position: relative;
 }
 
+/* The tutorial prompts are single paragraphs; they wrap like prose. */
+#tutorial pre code {
+  white-space: pre-wrap;
+}
+
 /* Deliberate override of the text-button `background: none`: the button sits on
    the code block it copies, so it needs an opaque fill of its own. */
 .code-copy {
@@ -1924,40 +1905,6 @@ a:hover {
    ============================================================ */
 
 @media (max-width: 860px) {
-  /* minmax(0, …) keeps the single track from growing to the min-content width
-     of a wide table or code block; without it the whole page scrolls sideways
-     instead of the box. */
-  .docs-shell {
-    grid-template-columns: minmax(0, 1fr);
-    padding: 0 var(--space-6);
-  }
-
-  .docs-nav {
-    position: static;
-    max-height: none;
-    overflow: visible;
-    padding: calc(var(--header-height) + var(--space-8)) 0 var(--space-6);
-    border-right: 0;
-    border-bottom: 1px solid var(--border);
-  }
-
-  /* Below this width the tree stands above the page instead of beside it, so
-     every entry of it is scrolled past before the text begins. Only the subtree
-     of the page being read stays. This is a width rule and carries no control;
-     nothing here opens or closes. */
-  .docs-nav-sub {
-    display: none;
-  }
-
-  .docs-nav a.is-active + .docs-nav-sub {
-    display: block;
-  }
-
-  /* The tree carries the top offset on mobile, so the page must not add it. */
-  .content {
-    margin-top: 0;
-    padding: var(--space-8) 0;
-  }
 
   /* The specification tables are wider than a phone. Let them scroll inside
      their own box instead of widening the page. */
@@ -1965,6 +1912,10 @@ a:hover {
     display: block;
     max-width: 100%;
     overflow-x: auto;
+  }
+
+  .content {
+    padding: var(--space-8) 0;
   }
 
   /* Long identifiers and full URLs are single unbreakable words; without this
@@ -1983,14 +1934,7 @@ a:hover {
     font-size: 1.75rem;
   }
 
-  .overview-status {
-    grid-template-columns: 1fr;
-  }
 
-  /* The header must not push its links off-screen. */
-  .docs-brand-kind {
-    display: none;
-  }
 
 
   /* Side panel becomes a bottom sheet. */
@@ -2024,152 +1968,33 @@ a:hover {
   }
 }
 
-/* On the start page the tree moves below the content, since the page itself
-   links every page of the tree and a phone would otherwise scroll past the
-   whole tree before the first line. The attribute is set by showPage and
-   stands statically on body for the first paint. */
-@media (max-width: 860px) {
-  body[data-page="overview"] .docs-nav {
-    order: 2;
-    padding-top: var(--space-6);
-    border-bottom: 0;
-    border-top: 1px solid var(--border);
+/* Narrow screens: the header wraps its navigation onto its own line, the
+   document types stack, and the figure scrolls inside its frame. */
+@media (max-width: 47.99rem) {
+  :root {
+    --header-height: 6.5rem;
   }
 
-  body[data-page="overview"] .content {
-    order: 1;
-    padding-top: calc(var(--header-height) + var(--space-8));
+  /* On a phone the figure keeps a width at which its lettering reads and
+     scrolls sideways inside its frame. */
+  :root {
+    --figure-min: 80rem;
   }
 
-  .start > h2 {
-    margin-top: var(--space-12);
-  }
-}
-
-/* The four forms stack. The drawn return path needs the row, so below this
-   width the return is stated as a line under Implementation instead. */
-@media (max-width: 700px) {
-  .content .cycle-forms {
+  .content .doc-types-figure {
     grid-template-columns: minmax(0, 1fr);
-    gap: var(--space-6);
   }
 
-  .cycle-form:not(:last-child)::after {
-    top: 100%;
-    left: 50%;
-    width: 1px;
-    height: calc(var(--space-6) - var(--arrow-head) + 1px);
-  }
-
-  .cycle-form:not(:last-child)::before {
-    top: calc(100% + var(--space-6) - var(--arrow-head));
-    left: 50%;
-    margin-top: 0;
-    margin-left: calc(-1 * var(--arrow-half));
-    border: var(--arrow-half) solid transparent;
-    border-top: var(--arrow-head) solid var(--line-graphic);
-    border-bottom: 0;
-  }
-
-  .content .cycle-loop {
-    display: block;
-  }
-
-  .cycle-loop-path {
-    display: none;
-  }
-
-  .cycle-loop-label {
-    display: block;
-    text-align: left;
-  }
-
-  .start-checks {
-    grid-template-columns: minmax(0, 1fr);
-    gap: var(--space-4);
+  .downloads {
+    padding: var(--space-4);
   }
 
   .start-lead {
     font-size: var(--text-md);
   }
-}
 
-/* Directory rows on a phone: identifier and file link on the first line, the
-   function and condition beneath, so nothing hides in a sideways scroll. */
-@media (max-width: 600px) {
-  .content table.start-documents,
-  .content table.start-examples {
-    display: block;
-    overflow: visible;
-  }
-
-  .start-documents thead,
-  .start-examples thead {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-  }
-
-  .start-documents tbody,
-  .start-examples tbody {
-    display: block;
-  }
-
-  .start-documents tbody tr:not(.start-group),
-  .start-examples tbody tr {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    column-gap: var(--space-4);
-    padding: var(--space-2) 0;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .start-group {
-    display: block;
-  }
-
-  .content .start-documents tbody th,
-  .content .start-documents tbody td,
-  .content .start-examples tbody th,
-  .content .start-examples tbody td {
-    display: block;
-    padding: 0;
-    border: 0;
-  }
-
-  .start-documents td:nth-child(2),
-  .start-documents td:nth-child(3),
-  .start-examples td:nth-child(2),
-  .start-examples td:nth-child(3) {
-    grid-column: 1 / -1;
-  }
-
-  .start-documents td:last-child,
-  .start-examples td:last-child {
-    grid-row: 1;
-    grid-column: 2;
-  }
-
-  .start-documents td:nth-child(3) {
-    color: var(--grey-2);
-  }
-
-  .start-documents td:nth-child(3)::before {
-    content: "Trigger\00a0\00a0";
-    font-weight: 500;
-    color: var(--text);
-  }
-
-  .start-examples td:nth-child(3) {
-    color: var(--grey-2);
-  }
-
-  .content .start-group th {
-    display: block;
-    padding: var(--space-6) 0 var(--space-1);
-    border-bottom: 1px solid var(--border);
+  .start > h2 {
+    margin-top: var(--space-12);
   }
 }
 

@@ -252,13 +252,13 @@ Under `intro/tests/` the introduction page (A47) is held to the outcomes a reade
 
 ### V24. The static start page repeats its sources verbatim
 
-**Claim.** The start page in `index.html` (A48) shows every catalogue template with the function and trigger of `data/promptotyping-documents.json`, a link to its template panel and its Markdown file, the operation table of `skills/promptotyping/SKILL.md`, the two starting prompts as they stand in `_content/tutorial.md`, the three example cases with the addresses of `data/case-studies.json`, and links into Application, Checking, Use Cases, Vault, tutorial, skill and templates.
+**Claim.** The start page in `index.html` (A48) offers every catalogue template with the `mark` of `data/promptotyping-documents.json`, its Markdown file and its template panel, names the skill's seven operations in the order of `skills/promptotyping/SKILL.md`, shows every prompt marked as taken from the tutorial verbatim as `_content/tutorial.md` holds it, names the paper's three cases with the addresses of `data/case-studies.json`, and offers two archives that hold exactly the files of the single links. The Pages workflow builds those archives.
 
-**Why it matters.** The start page is the one place that repeats these sources, and it is static, so a changed trigger, operation or prompt would otherwise stay behind unseen.
+**Why it matters.** The start page is the one place that repeats these sources, and it is static, so a changed condition, operation, prompt or file would otherwise stay behind unseen.
 
-**Procedure.** `check_start_page` in `tools/check_consistency.py` compares the rows, the table, the prompt blocks, the case rows and the links with their sources. Regression cases change a trigger, remove a row, change an operation and shorten a prompt.
+**Procedure.** `check_start_page` and `check_download_archives` in `tools/check_consistency.py` compare entries, names, prompts with whitespace normalised, cases and links with their sources, check the workflow step, and compare a locally built archive with its sources byte for byte. Regression cases change a condition, remove an entry, drop an operation, shorten a prompt and rename an archive link.
 
-**Verdict, 2026-11-10.** Passes. A browser run with Playwright against the assembled Pages tree at 1440 by 900, 820 by 1100, 390 by 844 and 360 by 740, light and dark, and with JavaScript disabled shows no horizontal document scroll and no console error; the in-page jump, a template panel with Escape, the legacy route `#ueberblick`, the skill page and keyboard reach of the copy buttons work. An independent agentic review with a fresh context found eleven points, and the corrections are recorded in the journal of 2026-11-10. Human reading and the operator's acceptance are outstanding.
+**Verdict, 2026-11-10.** Passes. Playwright runs against the page at 1440 by 900, 1280 by 800, 820 by 1100, 390 by 844 and 360 by 740, light and dark through the toggle, and with JavaScript disabled show no horizontal document scroll and no console error. The copy button copies the prompt, the glossary tooltip opens with Enter and closes with Escape, a template panel opens and closes, the header navigation marks its page, every hash link of the start page resolves and the retired routes still show their pages. Two independent agentic reviews with a fresh context were worked in, and their points are in the journal of 2026-11-10. Human reading and the owner's acceptance are outstanding.
 
 ### V23. The withdrawn manuscript stays out of the repository (retired)
 

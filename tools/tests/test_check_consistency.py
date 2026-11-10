@@ -403,22 +403,27 @@ class StartPageTest(CheckCase):
         self.assertEqual(cc.failures, [])
 
     def test_a_drifted_template_condition_fails(self) -> None:
-        self.edit("<td>project has a UI</td>", "<td>project has an interface</td>")
+        self.edit(">the project has a UI</span>", ">the project has an interface</span>")
         cc.check_start_page(self.documents)
-        self.assertIn("row design differs", self.only_failure())
+        self.assertIn("entry design differs", self.only_failure())
 
     def test_a_missing_template_row_fails(self) -> None:
-        self.edit('<tr data-slug="plan">', '<tr data-retired="plan">')
+        self.edit('<li data-slug="plan">', '<li data-retired="plan">')
         cc.check_start_page(self.documents)
-        self.assertIn("no row for template plan", self.only_failure())
+        self.assertIn("no entry for template plan", self.only_failure())
 
     def test_a_drifted_skill_operation_fails(self) -> None:
-        self.edit("<td>a bounded task is ready", "<td>a task is ready")
+        self.edit("Curate, Synthesise, Prune and Hand off", "Curate, Prune and Hand off")
         cc.check_start_page(self.documents)
-        self.assertIn("operation table", self.only_failure())
+        self.assertIn("operations", self.only_failure())
+
+    def test_a_missing_archive_link_fails(self) -> None:
+        self.edit('href="downloads/promptotyping-templates.zip"', 'href="downloads/templates.zip"')
+        cc.check_start_page(self.documents)
+        self.assertIn("promptotyping-templates.zip", self.only_failure())
 
     def test_a_prompt_that_left_the_tutorial_fails(self) -> None:
-        self.edit("Commit the result.</code>", "Commit.</code>")
+        self.edit("and commit the scripts and documents.</code>", "and commit.</code>")
         cc.check_start_page(self.documents)
         self.assertIn("not verbatim in the tutorial", self.only_failure())
 

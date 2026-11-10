@@ -239,6 +239,8 @@
     if (!glossarTooltipEl) {
       glossarTooltipEl = document.createElement("div");
       glossarTooltipEl.className = "glossar-tooltip";
+      glossarTooltipEl.id = "glossar-tooltip";
+      glossarTooltipEl.setAttribute("role", "tooltip");
       // Following a source link out of the tooltip has to close it; the guard
       // in the document listener below keeps clicks inside from closing it.
       glossarTooltipEl.addEventListener("click", function (e) {
@@ -275,6 +277,15 @@
       window.scrollX + document.documentElement.clientWidth - tip.offsetWidth - 8)) + "px";
     tip.style.top = (rect.bottom + window.scrollY + 6) + "px";
     tip.classList.add("visible");
+    // Screen readers hear the definition with the term, and the trigger states
+    // whether its tooltip is open; the tooltip repeats the glossary entry, so it
+    // carries no information of its own.
+    if (activeTrigger && activeTrigger !== trigger) {
+      activeTrigger.setAttribute("aria-expanded", "false");
+      activeTrigger.removeAttribute("aria-describedby");
+    }
+    trigger.setAttribute("aria-expanded", "true");
+    trigger.setAttribute("aria-describedby", "glossar-tooltip");
     activeTrigger = trigger;
   }
 
@@ -285,6 +296,10 @@
     }
     if (glossarTooltipEl) {
       glossarTooltipEl.classList.remove("visible");
+    }
+    if (activeTrigger) {
+      activeTrigger.setAttribute("aria-expanded", "false");
+      activeTrigger.removeAttribute("aria-describedby");
     }
     activeTrigger = null;
   }

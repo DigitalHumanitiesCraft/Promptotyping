@@ -352,7 +352,9 @@ def check_portal_paths() -> None:
 
 def start_page_html() -> str:
     """Return the static start page section of index.html, or an empty string."""
-    match = re.search(r'<section[^>]*id="overview"[^>]*>(.*?)</section>',
+    # The start page holds a nested section (the downloads), so it ends at the
+    # closing tag right before </main>.
+    match = re.search(r'<section[^>]*id="overview"[^>]*>(.*)</section>\s*</main>',
                       read_text(INDEX_HTML), re.S)
     return match.group(1) if match else ""
 
@@ -363,65 +365,116 @@ def plain(fragment: str) -> str:
     return " ".join(text.replace("&amp;", "&").replace("&#39;", "'").split())
 
 
+def normalised(text: str) -> str:
+    """Collapse whitespace, so a prompt wrapped in one place matches another."""
+    return " ".join(text.split())
+
+
 def check_start_page(documents) -> None:
     """The static start page states its sources' current wording.
 
     The start page repeats four things that live elsewhere, so a change at the
-    source must reach it: one row per catalogue template with function and
-    condition, the skill's operation table, the two starting prompts of the
-    tutorial, and the three example cases with their addresses (A48).
+    source must reach it: one entry per catalogue template with its condition
+    and both addresses, the names of the skill's operations, every prompt
+    marked as taken from the tutorial, and the three paper cases with their
+    addresses (A48, A50).
     """
     page = start_page_html()
     if not page:
         fail("start", "index.html carries no static section#overview")
         return
 
-    rows = dict(re.findall(r'<tr data-slug="([^"]+)">(.*?)</tr>', page, re.S))
+    entries = dict(re.findall(r'<li data-slug="([^"]+)">(.*?)</li>', page, re.S))
     for doc in documents:
         slug = doc["slug"]
-        row = rows.pop(slug, None)
-        if row is None:
-            fail("start", "start page lists no row for template %s" % slug)
+        entry = entries.pop(slug, None)
+        if entry is None:
+            fail("start", "start page lists no entry for template %s" % slug)
             continue
-        cells = [plain(c) for c in re.findall(r"<td[^>]*>(.*?)</td>", row, re.S)]
-        if len(cells) < 2 or cells[0] != doc["funktion"] or cells[1] != doc["trigger"]:
-            fail("start", "start page row %s differs from the catalogue" % slug)
+        when = re.search(r'<span class="doc-when[^"]*">(.*?)</span>', entry, re.S)
+        if not when or plain(when.group(1)) != doc.get("mark"):
+            fail("start", "start page entry %s differs from the catalogue" % slug)
         for href in ("#promptotyping-document-%s" % slug,
                      "_content/promptotyping-document/%s.md" % slug):
-            if 'href="%s"' % href not in row:
-                fail("start", "start page row %s misses %s" % (slug, href))
-    for slug in rows:
+            if 'href="%s"' % href not in entry:
+                fail("start", "start page entry %s misses %s" % (slug, href))
+    for slug in entries:
         fail("start", "start page lists %s, which the catalogue does not carry" % slug)
 
     skill = read_text(SKILL_DIR / "SKILL.md")
-    expected = re.findall(r"^\| (Orient|Distil|Implement|Curate|Synthesise|Prune|Hand off) \| (.*?) \|",
-                          skill, re.M)
-    table = re.search(r'<table class="start-skill">(.*?)</table>', page, re.S)
-    shown = re.findall(r'<th scope="row">(.*?)</th><td>(.*?)</td>', table.group(1) if table else "")
-    if [(o, plain(w)) for o, w in shown] != [(o, w) for o, w in expected]:
-        fail("start", "the start page's operation table differs from SKILL.md")
+    operations = re.findall(r"^\| (Orient|Distil|Implement|Curate|Synthesise|Prune|Hand off) \|",
+                            skill, re.M)
+    if len(operations) != 7:
+        fail("start", "SKILL.md no longer carries the seven operations in its table")
+    named = ", ".join(operations[:-1]) + " and " + operations[-1] if operations else ""
+    if named not in plain(page):
+        fail("start", "the start page does not name the skill's operations as SKILL.md orders them")
 
-    tutorial = read_text(TUTORIAL)
-    for block in re.findall(r"<pre><code>(.*?)</code></pre>", page, re.S):
-        if block.startswith("git clone"):
-            continue
-        if block not in tutorial:
-            fail("start", "a start prompt is not verbatim in the tutorial: %s..." % block[:40])
+    tutorial = normalised(read_text(TUTORIAL))
+    sourced = re.findall(r'<figure class="dh-code[^"]*" data-source="tutorial">.*?<pre><code>(.*?)</code></pre>',
+                         page, re.S)
+    if not sourced:
+        fail("start", "the start page shows no prompt taken from the tutorial")
+    for block in sourced:
+        text = normalised(block.replace("&quot;", '"').replace("&amp;", "&"))
+        if text not in tutorial:
+            fail("start", "a start prompt is not verbatim in the tutorial: %s..." % text[:40])
 
     cases = {c["id"]: c for c in load_json(CASES)["caseStudies"]}
-    for case_id, row in re.findall(r'<tr data-case="([^"]+)">(.*?)</tr>', page, re.S):
+    shown = re.findall(r'<span data-case="([^"]+)">(.*?)</span>', page, re.S)
+    if len(shown) != 3:
+        fail("start", "the start page names %d cases of the paper instead of three" % len(shown))
+    for case_id, item in shown:
         case = cases.get(case_id)
         if case is None:
             fail("start", "start page names unknown case %s" % case_id)
             continue
-        for url in (case.get("demo_url"), case.get("repo_url"), "#case-" + case_id):
-            if url and 'href="%s"' % url not in row:
-                fail("start", "start page row %s misses %s" % (case_id, url))
+        for url in (case.get("demo_url"), "#case-" + case_id):
+            if url and 'href="%s"' % url not in item:
+                fail("start", "start page case %s misses %s" % (case_id, url))
 
     for anchor in ("#application", "#use-cases", "#vault", "#tutorial",
-                   "#skills-promptotyping", "#vorlagen", "#verifikation"):
+                   "#skills-promptotyping", "#vorlagen", "#glossar"):
         if 'href="%s"' % anchor not in page:
             fail("start", "start page does not link %s" % anchor)
+
+    check_download_archives(page, documents)
+
+
+def check_download_archives(page: str, documents) -> None:
+    """The archives hold exactly the files the single download links offer.
+
+    The archives are built at delivery by tools/build_downloads.py, so the check
+    holds the builder's member lists against the catalogue and the skill
+    folder, the page's links against the archive names, the Pages workflow
+    against the build step, and a locally built archive against its sources.
+    """
+    import zipfile
+
+    import build_downloads
+
+    members = build_downloads.archive_members()
+    templates = members[build_downloads.TEMPLATES_ZIP]
+    expected = ["promptotyping-templates/%s.md" % d["slug"] for d in documents]
+    if [name for name, _ in templates] != expected:
+        fail("start", "the template archive does not hold one file per catalogue template")
+    skill_names = [name for name, _ in members[build_downloads.SKILL_ZIP]]
+    if "promptotyping/SKILL.md" not in skill_names:
+        fail("start", "the skill archive misses SKILL.md")
+    for name in members:
+        if 'href="downloads/%s"' % name not in page:
+            fail("start", "the start page does not offer downloads/%s" % name)
+    if PAGES_WORKFLOW.is_file() and "tools/build_downloads.py _site/downloads" not in read_text(PAGES_WORKFLOW):
+        fail("start", "the Pages workflow does not build the download archives")
+    built = ROOT / "downloads"
+    for name, listed in members.items():
+        path = built / name
+        if not path.is_file():
+            continue
+        with zipfile.ZipFile(path) as archive:
+            held = {info.filename: archive.read(info) for info in archive.infolist()}
+        if set(held) != {n for n, _ in listed} or any(held[n] != src.read_bytes() for n, src in listed):
+            fail("start", "the local archive %s differs from its sources; rerun tools/build_downloads.py" % name)
 
 
 def check_english_route_contract() -> None:

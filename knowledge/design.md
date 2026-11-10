@@ -225,36 +225,46 @@ The footer carries no destination glyphs since it moved to the shared footer blo
 
 ## Start page
 
-The start page under `#overview` (A48 in [specification.md](specification.md)) answers one question, what a reader needs to reuse the practice, and it is built for scanning. It keeps the portal's design system and adds no hue.
+The start page under `#overview` (A48 in [specification.md](specification.md)) is the reference page of the DHCraft method sites since the owner's review of 2026-11-10. Its structure, colours and downloads follow the brand-assets design document (`web/design.md`, Page structure of a method site, and Decisions of 2026-11-10). This section records how the portal realises them and the owner's feedback of that day as requirements, so that a rebuild keeps them.
 
-### Content and interaction hierarchy
+### Owner feedback of 2026-11-10
 
-| Section | Question it answers | Form |
+- The style goes in the right direction and was a touch unround in the first version.
+- The cards of the four forms were tall and narrow, with empty space and a return path hanging at the lower right. They became prose.
+- Figure 1 of the paper is the main figure, on the shared tokens, as inline SVG with title and description, sourced only as Pollin 2026, Promptotyping, submitted.
+- No heading over the figure, no caption block under it, and no button row beside the abstract.
+- The terms under the figure are two or three short paragraphs of prose with links in the sentences, and the files each form writes stand in the sentence.
+- The document types get a small figure of their own, drawn as code.
+- Files to take away stand in a block of their own with one download control per file and one archive per set, and explanatory prose stays outside the block. The same holds for the skill.
+- Every prompt is checked against skill and specification and kept in step with its source.
+- Copyable fields are set cleanly, with label and copy button in the field's head row.
+- The rehearsal file and the fit check stand where they are needed.
+- A recurring entry has at most three visual levels, the step with its instruction, the field, the result.
+- The four hues of the mark mark categories with a text label, purple stays the action accent, and light is the default whatever the system setting.
+
+### Hierarchy
+
+| Part | Question it answers | Form |
 |---|---|---|
-| Head | What is it, and where do I go first? | H1, a two-sentence lead at 1.1875rem, three actions as buttons, the first filled |
-| Four forms of work | How does the work run? | The diagram below |
-| Starting a first iteration | What do I do now? | Four numbered steps, each a name, one sentence and, for three of them, a copyable block |
-| Documents of the knowledge base | Which documents, and when? | One table, grouped by document type in group rows, with template, function, trigger and a Markdown download |
-| The Promptotyping skill | What does the skill do, and how do I get it? | Operation table and three link buttons |
-| Three kinds of checking | Who checks what? | Three columns, each with what it establishes and who carries it, then the acceptance sentence |
-| Example research artefacts | What has been built this way? | Table of the paper's three cases with live and code links |
-| Citation and licence | How do I cite and reuse it? | Copyable citation and one sentence on DOI, citation file and licences |
+| Title | What is it, and for whom? | H1 and a three-sentence abstract at reading measure |
+| Figure | How does the practice work? | Figure 1 of the paper in a frame on the surface, at the page width |
+| Terms | What do the figure's labels mean? | Three paragraphs of prose with glossary tooltips on promptotype, agentic review, scholarly validation, knowledge curation and project knowledge base, then the document types drawn as three panels of files |
+| Origin | Where does it come from, and what to cite? | One paragraph with the sources as links |
+| Reuse | How do I start? | The fit check as one sentence, three numbered steps, the block of files |
+| Example | What does a round look like? | Eleven numbered steps from Set up to Accept and version, each with instruction, field and result |
+| Limits, licence and citation | What does it not establish, and how is it reused and cited? | Two paragraphs and the citation field |
 
-Headings stay on two levels, H1 and H2. Step names are bold lines inside their list item, since a heading over one step would name a single element.
+### Figure and colours
 
-### Diagram
+The paper's figure is copied from its source and converted at authoring time, colour literals to `currentColor` and `--surface`, ids prefixed with `pf-`, the description equal to the owner's legend, and the curation label rephrased without a colon. The four forms of work carry `--cat-forms` (green), the promptotype frames `--cat-proto` (orange) and the knowledge-base sheets `--cat-base` (blue), each beside the figure's own text label, with a 10 to 12 per cent tint of the hue as fill. The values are the mark's hues where they reach 3:1 against paper and white, `#5c9e4a`, `#4a7ab8` and the darker orange `#b8701a`, and in the dark scheme `#85aede` and `#e39a3b`. In the prose the category stands as a thick underline in its hue under its words. Below 48rem the figure keeps a width of 80rem, at which its lettering reads, and scrolls inside its frame, which takes keyboard focus.
 
-The four forms stand as four outlined boxes in one row with arrows in the gaps, each with number, name, what it does, when it is done and what it writes. A U-shaped return path under the third and fourth box, with its head pointing up into Distillation, carries the label of knowledge curation. A flat `--code-bg` band under the row names the knowledge base. The figure caption states that a first pass runs in order and that each iteration yields a promptotype. Lines and arrowheads use `--line-graphic`, which resolves to `--grey-3` and holds 3:1 against the ground in both themes. Below 700 pixels the boxes stack with downward arrows, and the return path becomes its label under Implementation, which names Distillation as its target in words.
+### Tokens
 
-### Tokens and responsive rules
-
-Every value the start page introduces is a custom property on `:root`, so a shared corporate design across the DHCraft method sites is a swap of values: `--radius` (2px), `--line-graphic`, `--arrow-head` and `--arrow-half` (6px, 4px), `--step-marker` (1.75rem), and the type steps `--text-xs` (0.8125rem), `--text-sm` (0.875rem), `--text-md` (0.9375rem), `--text-lead` (1.1875rem) and `--text-h2-start` (1.5rem). Hairlines stay 1px. `--radius` resolves to `--dh-radius-s`, `--radius-pill` to `--dh-radius-pill`, and the start buttons and focus ring take the shared accent, pill and focus ring.
-
-Below 860 pixels the tree stands after the start page, since the page links every page itself; `showPage` writes the page id to `body[data-page]`, and the static attribute serves the first paint. Below 600 pixels the template and example tables become rows of two lines, identifier and download link on the first, function and trigger beneath. Links in these tables are not underlined at rest and underline on hover and focus. Without JavaScript the empty tree column drops its rule and the theme toggle is hidden.
+Every value the start page introduces is a custom property on `:root`: `--radius`, `--radius-pill`, `--brand-mark`, `--figure-min`, `--step-marker`, the type steps `--text-xs` to `--text-lead` and `--text-h2-start`, and the three category hues. Hairlines stay 1px. Measures and radii of fields, panels and the download block come from the shared tokens.
 
 ### Evidence
 
-On 2026-11-10 Playwright screenshots of the assembled Pages tree were read at 1440 by 900, 820 by 1100, 390 by 844 and 360 by 740, light and dark, and without JavaScript. An independent agentic review with a fresh context checked the page against the user tasks and this document's sources. It found that six rows say always while the text named five functions, that the hash links lead nowhere without JavaScript, that the phone rows read as broken sentences, that the phone arrow pointed at Implementation, that link names repeated, that the action layer and the report do not go into `knowledge/`, that the prompt order differed from the tutorial, and that the step heading addressed the reader. All are corrected. It also questioned "most often into Distillation", which the paper states in section 2.2, so the phrase stays. Three 1600 by 900 screenshots for slides lie in `assets/img/screenshots/`. Human reading and the operator's acceptance are outstanding.
+On 2026-11-10 Playwright screenshots of the page served from the repository were read at 1440 by 900, 820 by 1100, 390 by 844 and 360 by 740, light and dark, and without JavaScript. Two independent agentic reviews with a fresh context checked the page against the user tasks, the shared design document and the sources. Worked in were the always count, the dead links without JavaScript, broken phone rows, a phone arrow without its target, repeated link names, the template destinations, the prompt order, an advisory heading, the long conditions, the catalogue inside one definition, the figure on a phone, the missing acceptance step, a yield that did not match its prompt, the source line of the figure and the citation width. Kept with reasons were the three cases of the paper, which the paper's section 3 names while `data/case-studies.json` marks Klawiter-Rescue as `further`, the phrase that findings return most often to Distillation, which the paper states in section 2.2, and the signature band, which the owner saw and approved. Human reading and the owner's acceptance are outstanding.
 
 ## Introduction page
 

@@ -30,11 +30,9 @@
   function init() {
     A.configureMarked();
     A.mountPages();
-    A.buildNav();
     A.setupSidePanel();
     A.setupThemeToggle();
     A.setupGlossarInteraction(document.getElementById("content"));
-    A.addCodeCopyButtons(document.getElementById("overview") || document.createElement("div"));
 
     // GitHub Pages has no server-side routing, so 404.html catches every
     // subpath, normalises it and hands it over as ?p=. Translating it here,

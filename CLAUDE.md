@@ -67,10 +67,10 @@ Source of values: `knowledge/design.md`. Read it before UI work. The site is cal
 
 ## Site model
 
-- One page is visible at a time; the sidebar tree is the table of contents (operator decision 2026-07-25, A32). The five parts of the specification are sections of one page under `#specification`.
-- `PAGES` in `assets/js/registry.js` is the single source for page hosts, navigation tree and route resolution. Write no navigation markup into `index.html` or `404.html`. When touching a part, check `isPageId`, `hostPage` and `isRouteId`.
+- One page is visible at a time. The header carries a static navigation of Overview, Specification, Templates, Glossary, Use cases and Vault (A50); the tree is retired. The five parts of the specification are sections of one page under `#specification`.
+- `PAGES` in `assets/js/registry.js` is the single source for page hosts and route resolution, and it keeps every page mounted whether or not the header lists it. When touching a part, check `isPageId`, `hostPage` and `isRouteId`.
 - Inactive pages stay in the DOM as `display: none`, so every published anchor resolves. Do not lazy-mount pages.
-- The start page `#overview` is static markup in `index.html` (A48), and `_content/overview.md` is its machine-readable twin. Its template rows, skill operations, prompts and cases repeat their sources; `tools/check_consistency.py` holds them, so change the source and the page together.
+- The start page `#overview` is static markup in `index.html` with the seven parts of a DHCraft method page (A48), and `_content/overview.md` is its machine-readable twin. Its template entries, skill operations, prompts, cases and download archives repeat their sources; `tools/check_consistency.py` holds them, so change the source and the page together. The prompts are canonical in `_content/tutorial.md`. Recurring entries have at most three visual levels.
 - `vault/` is a Grounded Vault instance with its own action layer `vault/CLAUDE.md`, which governs all work there. Its Python tools under `vault/tools/` are the permitted exceptions to the no-build rule. After changing the assertion layer, rerun `vault/tools/build_site_index.py`, which writes the committed `data/vault.json`.
 
 ## URL anchor scheme

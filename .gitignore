@@ -12,3 +12,6 @@ vault/review-batch-*.jsonl
 # Machine-local Claude Code settings and agent memory
 .claude/settings.local.json
 .claude/agent-memory/
+
+# Download archives, built by tools/build_downloads.py at delivery
+downloads/

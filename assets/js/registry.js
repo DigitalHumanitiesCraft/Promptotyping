@@ -1,10 +1,8 @@
 /* Page registry and routing.
 
-   The site is a specification documentation: one page is visible at a time,
-   the sidebar tree is the table of contents, and the hash names the page. The
-   registry PAGES is the single source for the page hosts, the sidebar, the
-   route resolution, so index.html and 404.html carry no navigation markup and
-   cannot drift apart. */
+   One page is visible at a time and the hash names the page. The registry
+   PAGES is the single source for the page hosts and the route resolution; the
+   main navigation is static markup in the header of index.html (A50). */
 
 (function (A) {
   "use strict";
@@ -280,50 +278,11 @@
     showPage(NOT_FOUND_PAGE);
   }
 
-  /* ---- Sidebar tree ---- */
-
-  function subItem(id, number, label) {
-    return '<li><a href="#' + id + '" data-section="' + id + '">' +
-      (number ? '<span class="docs-nav-part">' + A.escapeHtml(number) + "</span>" : "") +
-      A.escapeHtml(label) + "</a></li>";
-  }
-
-  /* The specification carries an inner structure, its five parts, which the
-     registry knows. The subtree stands permanently. Nothing in the tree
-     opens or closes (operator decision 2026-07-29); the only state it holds is
-     which entry the reader is in, and the scrollspy below moves that marker. */
-  function navItem(p) {
-    var parts = partsOf(p.id);
-    var sub = parts.length
-      ? '<ul class="docs-nav-sub" data-subtree="' + p.id + '">' +
-        parts.map(function (s) { return subItem(s.id, s.part, s.label); }).join("") +
-        "</ul>"
-      : "";
-    return '<li><a href="#' + p.id + '" data-page="' + p.id + '">' +
-      A.escapeHtml(p.label) + "</a>" + sub + "</li>";
-  }
-
-  /* One flat list per group run, separated by a gap and carrying no label. Group
-     labels read as more structure than the site has (operator decision
-     2026-07-26), and since the five parts moved into the specification page the
-     heading over them would name a run of two. What the runs do instead is put
-     the pages that answer the same kind of question next to each other. */
-  function buildNav() {
-    var nav = document.getElementById("docs-nav");
-    if (!nav) {
-      return;
-    }
-    var html = "";
-    var group = null;
-    topLevelPages().forEach(function (p) {
-      if (p.group !== group) {
-        html += (group === null ? "" : "</ul>") + '<ul class="docs-nav-run">';
-        group = p.group;
-      }
-      html += navItem(p);
-    });
-    nav.innerHTML = html + (group === null ? "" : "</ul>");
-  }
+  /* ---- Main navigation ----
+     The header carries a static list of the pages that stand on their own
+     (A50), so it reads without JavaScript; the scripts only mark the page in
+     view. The registry still mounts every page, so every published address
+     resolves whether or not the header lists it. */
 
   /* ---- Scrollspy ---- */
 
@@ -518,8 +477,6 @@
         el.classList.toggle("is-active", el.id === page);
       });
       activePage = page;
-      // The narrow layout moves the tree below the start page, which links
-      // every page itself; the stylesheet reads this attribute for that.
       document.body.setAttribute("data-page", page);
       markNavActive(page);
       document.title = pageTitle(page);
@@ -671,7 +628,6 @@
   A.mountPages = mountPages;
   A.foldParts = foldParts;
   A.demoteHeadings = demoteHeadings;
-  A.buildNav = buildNav;
   /* The footer states the version of the specification, which the start page
      already states from its frontmatter. Reading it from the same place keeps
      the two from drifting, as they had by 2026-07-26. */

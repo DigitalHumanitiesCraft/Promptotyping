@@ -11,50 +11,43 @@ machine-url: https://dhcraft.org/Promptotyping/_content/overview.md
 
 # Promptotyping
 
-A working practice for translating research data and their contexts into research artefacts that fit the researchers' questions and ways of working. An AI coding agent builds the artefact from a small project knowledge base that researchers and agent keep in the repository and revise as the work proceeds.
+A working practice for translating research data and their contexts into research artefacts that fit the researchers' questions and ways of working. An AI coding agent builds the artefact from a small project knowledge base that researchers and agent keep in the repository and revise as the work proceeds. It is meant for researchers and project teams with structured data and a concrete question.
 
-This file is the machine-readable twin of the start page at https://dhcraft.org/Promptotyping/, which is static HTML in `index.html`.
+This file is the machine-readable twin of the start page at https://dhcraft.org/Promptotyping/, which is static HTML in `index.html` with the seven parts of a DHCraft method page.
 
-## Four forms of work
+## Forms of work, promptotype and knowledge base
 
-1. Preparation assembles the sources, the data and the research context. It is done when the material is accessible and documented well enough to examine, and it writes `project.md` and the action layer.
-2. Exploration profiles the data with scripts and tests what it can support. It is done when the researchers recognise their material in the account, and it writes `data.md` and profiling scripts.
-3. Distillation turns the findings into maintained knowledge documents. It is done when a fresh agent can continue from the documents alone, and it writes `specification.md`, `design.md` and `INDEX.md`.
-4. Implementation builds small, checked increments from the documents with an agent. It is done when the increment meets the acceptance criteria and its checks, and it writes the artefact and `journal.md`.
+The start page shows Figure 1 of Pollin 2026, Promptotyping, submitted. Researchers direct four recurrent forms of work, shown in the order of a first pass, and assess each promptotype through scholarly validation. A promptotype is the state of an artefact together with its project knowledge base and its research data, and earlier states remain as versions. Distillation maintains the knowledge base, which supplies the context for each task. Verification and agentic review accompany each iteration, and what checking and use reveal returns to the knowledge base through knowledge curation.
 
-A first pass runs through the four forms in order. Afterwards they recur as the work requires. Knowledge curation writes findings back into the project knowledge base, most often into Distillation, and the knowledge base in `knowledge/` with `CLAUDE.md` or `AGENTS.md` is read and revised in every form of work. Each iteration yields a promptotype, the state of an artefact together with the project knowledge and the research data from which it was built. The operational account is in [Application](#application).
+## What it is and where it comes from
 
-## First iteration on your own data
+Promptotyping combines Knowledge Engineering, Context Engineering and Agentic Engineering and is tied to no particular model or tool. It originates in a dissertation at the University of Graz (2025), was first described in blog posts on DHCraft (2025) and L.I.S.A. (2026), and is defined in Pollin 2026, Promptotyping, submitted, with CorrespExplorer, SZD-HTR and Klawiter-Rescue as cases. The documented projects are under [use cases](#use-cases), and the [Vault](#vault) traces the practice's claims to their sources.
 
-1. Install an AI coding agent such as Claude Code or Codex, Git, and Python, and copy the [Promptotyping skill](#skills-promptotyping) into the agent's skills folder.
-2. Prepare. Write the purpose, your question and two or three user stories in your own words, copy your data into `data/`, and give the agent the prompt of step 1 of the [tutorial](#tutorial).
-3. Explore with the prompt of step 2 of the tutorial, then check one claim in `data.md` against the rows it names.
-4. Distil, build and check with steps 3 to 6 of the tutorial.
+## Terms of the figure
 
-To rehearse, use the invented letters of the [introduction](intro/), `intro/example/letters.csv`.
+- Preparation assembles the sources, the data and the research context. Done when the material is accessible and documented well enough to examine.
+- Exploration profiles the data with scripts and tests what they can support. Done when the researchers recognise their material in the account.
+- Distillation turns the findings into maintained knowledge documents. Done when a fresh agent can continue from the documents and the researchers confirm them.
+- Implementation builds small, checked increments from the documents with an agent. Done when the increment meets the acceptance criteria and its checks.
+- A promptotype is what an iteration yields, the state of an artefact together with its project knowledge base and research data.
+- The project knowledge base consists of declarative, process and agent instruction documents. The catalogue of their templates is `data/promptotyping-documents.json`, each template is readable under `_content/promptotyping-document/{slug}.md`, and the [templates page](#vorlagen) renders them.
+- Verification tests conformity to formalised requirements, agentic review lets an agent examine the work against named criteria, and scholarly validation by the researchers decides whether the work is warranted by the sources and fits its purpose. The last is the acceptance of a promptotype for a purpose.
+- Knowledge curation examines and revises the project knowledge in light of what sources, checking and use reveal.
 
-## Documents of the knowledge base
+The full account is in [Application](#application) and the glossary.
 
-Five functions are needed in every project, the charter (`project.md`), the specification, provenance (`journal.md`), the handoff inbox (`handoff.md`) and the agent instructions (`CLAUDE.md` or `AGENTS.md`). The others are added when their condition holds. The catalogue with function, condition and version of every template is `data/promptotyping-documents.json`, each template is readable under `_content/promptotyping-document/{slug}.md`, and the [templates page](#vorlagen) renders them.
+## Reuse
 
-## The Promptotyping skill
+1. Check the fit with the six conditions in [Application](#application).
+2. Install an AI coding agent, Git and Python, and copy the [Promptotyping skill](#skills-promptotyping) from `skills/promptotyping/` into the agent's skills folder.
+3. Work through the prompts of the [tutorial](#tutorial) in order, from Prepare to the mechanical checks, with write-back and rebuild where a check fails.
 
-One `SKILL.md` under `skills/promptotyping/` with seven operations, Orient, Distil, Implement, Curate, Synthesise, Prune and Hand off. Every operation starts with Orient.
+## Example
 
-## Three kinds of checking
+The start page runs the prompts of the tutorial on `intro/example/letters.csv`, an invented family correspondence with partly uncertain dates, and states what each prompt yields. The [introduction](intro/) plays the same round.
 
-- Verification tests conformity to formalised requirements through schemas, tests and reproducible measurements.
-- Agentic review lets an agent, often with a fresh context, examine the work against named criteria. Its findings remain probabilistic evidence.
-- Scholarly validation decides whether representations and requirements are warranted by the sources and adequate to the research purpose. The researchers carry it.
+## Limits, licence and citation
 
-A promptotype is accepted for a purpose when the researchers who will work with it judge that it fits their questions and ways of working.
-
-## Example research artefacts
-
-CorrespExplorer, the SZD-HTR OCR Pipeline and the Klawiter Bibliography Rescue are the three cases of the paper on Promptotyping. The [use cases](#use-cases) list every documented project, and the [Vault](#vault) traces the practice's claims to their sources.
-
-## Citation and licence
+The practice has not been evaluated against other ways of working, and whether it transfers to other people and projects is open. Text, templates and skill are licensed under CC BY 4.0, code under the MIT License.
 
 Pollin, Christopher; Steiner, Christian: Promptotyping. Zenodo. https://doi.org/10.5281/zenodo.14160875
-
-The concept DOI resolves to the latest archived version, and `CITATION.cff` carries the full metadata. Text, templates and skill are licensed under CC BY 4.0, code under the MIT License.
