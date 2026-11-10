@@ -36,11 +36,11 @@ A first iteration is meant for researchers and project teams with structured dat
 
 2. Take the files. The skill lies under [`skills/promptotyping/`](skills/promptotyping/) with seven operations, Orient, Distil, Implement, Curate, Synthesise, Prune and Hand off. The templates for the knowledge base lie under [`_content/promptotyping-document/`](_content/promptotyping-document/), and the page offers each one and both sets as archives.
 
-3. Work through the prompts. Create an empty project folder with your data in `data/`, start the agent there and use the prompts of the [tutorial](_content/tutorial.md) in order, from Prepare to the acceptance.
+3. Work in your own words. Create an empty project folder with your data, start the agent there and name the step you want, from Prepare to the acceptance, as the example on the page and the [tutorial](_content/tutorial.md) do. The skill carries the procedure behind each step. An agent that cannot load skills gets it when you give it [`SKILL.md`](skills/promptotyping/SKILL.md) to read first.
 
 ## Example
 
-The start page runs the same prompts on an invented family correspondence, [`intro/example/letters.csv`](intro/example/letters.csv), and says what each prompt yields, from the first look at the folder to an accepted, versioned timeline. The [introduction](https://dhcraft.org/Promptotyping/intro/) plays the same round beside the project folder.
+The start page works through an invented family correspondence, [`intro/example/letters.csv`](intro/example/letters.csv), from setting up the folder to an accepted, versioned timeline. Each step is one sentence a person says to the agent, such as "Distil the knowledge base for a timeline of the letters, built as a static web page without a build step.", beside the file or state that results. The [introduction](https://dhcraft.org/Promptotyping/intro/) plays the same round beside the project folder.
 
 ## Limits, licence and citation
 
@@ -52,4 +52,4 @@ Cite the practice through [CITATION.cff](CITATION.cff), which GitHub offers unde
 
 ## Working on this repository
 
-The knowledge base of the site itself is in [`knowledge/`](knowledge/INDEX.md), and [CLAUDE.md](CLAUDE.md) is the agent's entry point. The site has no build step. Serve the repository root locally with `python -m http.server 8000`, and run `python tools/build_downloads.py` once to preview the download archives, which the Pages workflow builds at delivery. The checks are `python tools/check_consistency.py` and the test run named in `CLAUDE.md`.
+The knowledge base of the site itself is in [`knowledge/`](knowledge/INDEX.md), and [CLAUDE.md](CLAUDE.md) is the agent's entry point. The site has no build step. Serve the repository root locally with `python -m http.server 8000`, and run `python tools/build_downloads.py` once to preview the download archives, which the Pages workflow builds at delivery. The checks are `python tools/check_consistency.py` and the test run named in `CLAUDE.md`. [`tools/tests/README.md`](tools/tests/README.md) says where the tests lie, how to run them, what they check and how to carry the pattern into your own project.

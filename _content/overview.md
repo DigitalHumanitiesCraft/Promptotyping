@@ -3,8 +3,8 @@ title: Overview
 slug: overview
 status: complete
 language: en
-version: "1.0"
-updated: 2026-11-10
+version: "1.1"
+updated: 2026-11-11
 mirrored: 2026-06-10
 machine-url: https://dhcraft.org/Promptotyping/_content/overview.md
 ---
@@ -40,11 +40,11 @@ The full account is in [Application](#application) and the glossary.
 
 1. Check the fit with the six conditions in [Application](#application).
 2. Install an AI coding agent, Git and Python, and copy the [Promptotyping skill](#skills-promptotyping) from `skills/promptotyping/` into the agent's skills folder.
-3. Work through the prompts of the [tutorial](#tutorial) in order, from Prepare to the mechanical checks, with knowledge curation and rebuild where a check fails.
+3. Work in your own words. Start the agent in a project folder with your data and name the step you want, from Prepare to acceptance, as the example and the [tutorial](#tutorial) do. An agent that cannot load skills reads `skills/promptotyping/SKILL.md` first.
 
 ## Example
 
-The start page runs the prompts of the tutorial on `intro/example/letters.csv`, an invented family correspondence with partly uncertain dates, and states what each prompt yields. The [introduction](intro/) plays the same round.
+The start page works through `intro/example/letters.csv`, an invented family correspondence with partly uncertain dates. For each form of work or skill operation it gives the one sentence a person says to the agent and what results, from Prepare through Explore, Distil, Prune, Orient, Implement, Check, Curate, Rebuild and acceptance to Synthesise and Hand off. The procedure behind each sentence stands in the skill. The [introduction](intro/) plays the same round.
 
 ## Limits, licence and citation
 

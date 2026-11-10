@@ -422,10 +422,10 @@ class StartPageTest(CheckCase):
         cc.check_start_page(self.documents)
         self.assertIn("promptotyping-templates.zip", self.only_failure())
 
-    def test_a_prompt_that_left_the_tutorial_fails(self) -> None:
-        self.edit("and commit the scripts and documents.</code>", "and commit.</code>")
+    def test_an_example_step_without_its_skill_section_fails(self) -> None:
+        self.edit('<li data-skill="Synthesise">', '<li data-skill="Summarise">')
         cc.check_start_page(self.documents)
-        self.assertIn("not verbatim in the tutorial", self.only_failure())
+        self.assertIn("Summarise", self.only_failure())
 
 
 class GalleryTest(CheckCase):

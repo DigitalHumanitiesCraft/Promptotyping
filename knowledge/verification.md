@@ -7,7 +7,7 @@ status: active
 language: en
 version: 0.8
 created: 2026-07-26
-updated: 2026-11-10
+updated: 2026-11-11
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Opus 5)
 method:
@@ -252,11 +252,11 @@ Under `intro/tests/` the introduction page (A47) is held to the outcomes a reade
 
 ### V24. The static start page repeats its sources verbatim
 
-**Claim.** The start page in `index.html` (A48) offers every catalogue template with the `mark` of `data/promptotyping-documents.json`, its Markdown file and its template panel, names the skill's seven operations in the order of `skills/promptotyping/SKILL.md`, shows every prompt marked as taken from the tutorial verbatim as `_content/tutorial.md` holds it, names the paper's three cases with the addresses of `data/case-studies.json`, and offers two archives that hold exactly the files of the single links. The Pages workflow builds those archives.
+**Claim.** The start page in `index.html` (A48) offers every catalogue template with the `mark` of `data/promptotyping-documents.json`, its Markdown file and its template panel, names the skill's seven operations in the order of `skills/promptotyping/SKILL.md`, names for every example step a section that `SKILL.md` carries (A51; until 2026-11-10 the group held the example's prompts verbatim against `_content/tutorial.md`), names the paper's three cases with the addresses of `data/case-studies.json`, and offers two archives that hold exactly the files of the single links. The Pages workflow builds those archives.
 
 **Why it matters.** The start page is the one place that repeats these sources, and it is static, so a changed condition, operation, prompt or file would otherwise stay behind unseen.
 
-**Procedure.** `check_start_page` and `check_download_archives` in `tools/check_consistency.py` compare entries, names, prompts with whitespace normalised, cases and links with their sources, check the workflow step, and compare a locally built archive with its sources byte for byte. Regression cases change a condition, remove an entry, drop an operation, shorten a prompt and rename an archive link.
+**Procedure.** `check_start_page` and `check_download_archives` in `tools/check_consistency.py` compare entries, names, the skill sections of the example steps, cases and links with their sources, check the workflow step, and compare a locally built archive with its sources byte for byte. Regression cases change a condition, remove an entry, drop an operation, name a skill section that does not exist and rename an archive link.
 
 **Verdict, 2026-11-10.** Passes. Playwright runs against the page at 1440 by 900, 1280 by 800, 820 by 1100, 390 by 844 and 360 by 740, light and dark through the toggle, and with JavaScript disabled show no horizontal document scroll and no console error. The copy button copies the prompt, the glossary tooltip opens with Enter and closes with Escape, a template panel opens and closes, the header navigation marks its page, every hash link of the start page resolves and the retired routes still show their pages. Two independent agentic reviews with a fresh context were worked in, and their points are in the journal of 2026-11-10. Human reading and the owner's acceptance are outstanding.
 

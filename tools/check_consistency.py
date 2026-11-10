@@ -365,19 +365,14 @@ def plain(fragment: str) -> str:
     return " ".join(text.replace("&amp;", "&").replace("&#39;", "'").split())
 
 
-def normalised(text: str) -> str:
-    """Collapse whitespace, so a prompt wrapped in one place matches another."""
-    return " ".join(text.split())
-
-
 def check_start_page(documents) -> None:
     """The static start page states its sources' current wording.
 
     The start page repeats four things that live elsewhere, so a change at the
     source must reach it: one entry per catalogue template with its condition
-    and both addresses, the names of the skill's operations, every prompt
-    marked as taken from the tutorial, and the three paper cases with their
-    addresses (A48, A50).
+    and both addresses, the names of the skill's operations, the skill section
+    each example step relies on, and the three paper cases with their
+    addresses (A48, A50, A51).
     """
     page = start_page_html()
     if not page:
@@ -410,15 +405,15 @@ def check_start_page(documents) -> None:
     if named not in plain(page):
         fail("start", "the start page does not name the skill's operations as SKILL.md orders them")
 
-    tutorial = normalised(read_text(TUTORIAL))
-    sourced = re.findall(r'<figure class="dh-code[^"]*" data-source="tutorial">.*?<pre><code>(.*?)</code></pre>',
-                         page, re.S)
-    if not sourced:
-        fail("start", "the start page shows no prompt taken from the tutorial")
-    for block in sourced:
-        text = normalised(block.replace("&quot;", '"').replace("&amp;", "&"))
-        if text not in tutorial:
-            fail("start", "a start prompt is not verbatim in the tutorial: %s..." % text[:40])
+    # Each example step names the skill section that carries its procedure,
+    # because the page shows only the sentence a person says (A51).
+    sections = set(re.findall(r"^## (.+?)\s*$", skill, re.M))
+    steps = re.findall(r'<li data-skill="([^"]+)">', page)
+    if not steps:
+        fail("start", "the start page example names no skill section")
+    for name in steps:
+        if name not in sections:
+            fail("start", "an example step names %s, which SKILL.md does not carry as a section" % name)
 
     cases = {c["id"]: c for c in load_json(CASES)["caseStudies"]}
     shown = re.findall(r'<span data-case="([^"]+)">(.*?)</span>', page, re.S)
