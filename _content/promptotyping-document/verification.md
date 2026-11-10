@@ -59,7 +59,7 @@ Funktion: das geschlossene Ergebnis-Vokabular definieren, mit Konsequenz pro Wer
 
 ### Prüfkette
 
-Funktion: das Stufenmodell der Prüfung von deterministisch nach menschlich dokumentieren. Inhalt: Stufe 1 formale Integrität (Lint, Ankerauflösung, Zitat-Identität, deterministisch per Skript) als Verifikation, Stufe 2 adversariale Maschinenprüfung als agentisches Review, Stufe 3 bindende fachliche Validierung durch den Critical Expert. Nur Stufe 3 erzeugt den höchsten Status. Alle drei Belegprojekte führen diese Kette in vergleichbarer Form.
+Funktion: das Stufenmodell der Prüfung von deterministisch nach menschlich dokumentieren. Inhalt: Stufe 1 formale Integrität (Lint, Ankerauflösung, Zitat-Identität, deterministisch per Skript), Stufe 2 adversariale Maschinenprüfung, Stufe 3 bindende menschliche Verifikation durch den Critical Expert. Nur Stufe 3 erzeugt den höchsten Status. Alle drei Belegprojekte führen diese Kette in vergleichbarer Form. Im Sinn der drei Prüfformen ([Checking](#verifikation)) ist Stufe 1 verification, Stufe 2 agentic review und Stufe 3 scholarly validation. Der Dokumentname `verification.md` und der Funktionsname Verification bleiben Schlüssel.
 
 ### Anti-Anchoring-Protokoll
 

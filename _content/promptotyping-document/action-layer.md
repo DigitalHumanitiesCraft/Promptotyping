@@ -49,13 +49,13 @@ Funktion: den Agenten in einem Absatz verorten. Inhalt: was das Projekt ist (ein
 
 ### Wissensbasis
 
-Der Lesepfad beginnt nach dem Laden des Action-Layers mit `knowledge/INDEX.md`, anschließend `knowledge/handoff.md` und den aufgabenrelevanten Declarative oder Action Documents. `journal.md` wird für Entscheidungsgründe und nachgewiesene Übergänge gelesen. Eine Routing-Tabelle ergänzt den Lesepfad nach den Kriterien der Konvention. Die Verweise führen zu repo-internen Projektquellen, damit die Methodenbasis mit dem Repository verfügbar ist. Liegt eine notwendige Quelle ausschließlich im unerreichbaren Vault, bleibt der davon abhängige Schritt offen.
+Der Lesepfad beginnt nach dem Laden des Action-Layers mit `knowledge/INDEX.md`, anschließend `knowledge/handoff.md` und den aufgabenrelevanten declarative knowledge documents oder agent instruction documents. `journal.md` wird für Entscheidungsgründe und nachgewiesene Übergänge gelesen. Eine Routing-Tabelle ergänzt den Lesepfad nach den Kriterien der Konvention. Die Verweise führen zu repo-internen Projektquellen, damit die Methodenbasis mit dem Repository verfügbar ist. Liegt eine notwendige Quelle ausschließlich im unerreichbaren Vault, bleibt der davon abhängige Schritt offen.
 
 ### Arbeitsregeln
 
 Funktion: der portable Praxiskern als Regelliste. Die Regeln werden projektspezifisch konkretisiert:
 
-- Handoff-Verarbeitung. Bei jedem Sessionstart `knowledge/handoff.md` lesen. Vor der Nutzung eines Punkts Quelle und aktuelles Ziel prüfen, dauerhaften Inhalt zuerst in das zuständige Declarative oder Action Document integrieren, anschließend den Journal-Nachweis schreiben und den Punkt vollständig entfernen.
+- Handoff-Verarbeitung. Bei jedem Sessionstart `knowledge/handoff.md` lesen. Vor der Nutzung eines Punkts Quelle und aktuelles Ziel prüfen, dauerhaften Inhalt zuerst in das zuständige declarative knowledge document oder agent instruction document integrieren, anschließend den Journal-Nachweis schreiben und den Punkt vollständig entfernen.
 - Journal-Provenienz. Ein Eintrag entsteht pro sachlich zusammengehörigem Übergang und führt die zutreffenden Felder der [Vorlage Journal](#promptotyping-document-journal) (Anlass, Befund, Entschieden, Korrigiert, Geändert, Belege). Das Journal führt keinen aktuellen Projektstatus, keine offenen Aufgaben und keine ausführlichen Prüfresultate.
 - Journal-Verdichtung. Verdichten, wenn Wiederholungen, kopiertes Dauerwissen, erledigte Offenlisten, verstreute Entscheidungsgründe oder ein zu teurer regulärer Lesekontext die Provenienzfunktion beeinträchtigen. Die semantische Deckungsprüfung folgt [Vorlage Journal](#promptotyping-document-journal); ein Journal-Archiv wird nicht erzeugt.
 - Verifikation und CEIL. Keine erfundenen Werte, Begriffe oder Zitate; bei fehlendem Wissen nachfragen statt raten. Projektspezifische Checkpoints benennen: was wird wann dem Critical Expert vorgelegt, was läuft nie ohne Freigabe. Wo maschinelle Prüfungen existieren (Tests, Validierungsskripte, Datenverträge), sind sie als Pflichtlauf zu nennen.
@@ -109,7 +109,7 @@ Der folgende Block ist als Template gedacht.
 
 ## Wissensbasis
 
-Die Wissensbasis liegt in `knowledge/`. Lies nach diesem Action-Layer bei jedem Sessionstart zuerst `knowledge/INDEX.md`, anschließend `knowledge/handoff.md` und danach die aufgabenrelevanten Declarative oder Action Documents. Konsultiere `knowledge/journal.md`, wenn Herkunft oder Entscheidungsgründe eines Übergangs benötigt werden.
+Die Wissensbasis liegt in `knowledge/`. Lies nach diesem Action-Layer bei jedem Sessionstart zuerst `knowledge/INDEX.md`, anschließend `knowledge/handoff.md` und danach die aufgabenrelevanten declarative knowledge documents oder agent instruction documents. Konsultiere `knowledge/journal.md`, wenn Herkunft oder Entscheidungsgründe eines Übergangs benötigt werden.
 
 | Aufgabe | Lies zuerst |
 |---|---|

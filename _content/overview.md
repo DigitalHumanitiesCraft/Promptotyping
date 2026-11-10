@@ -40,7 +40,7 @@ The full account is in [Application](#application) and the glossary.
 
 1. Check the fit with the six conditions in [Application](#application).
 2. Install an AI coding agent, Git and Python, and copy the [Promptotyping skill](#skills-promptotyping) from `skills/promptotyping/` into the agent's skills folder.
-3. Work through the prompts of the [tutorial](#tutorial) in order, from Prepare to the mechanical checks, with write-back and rebuild where a check fails.
+3. Work through the prompts of the [tutorial](#tutorial) in order, from Prepare to the mechanical checks, with knowledge curation and rebuild where a check fails.
 
 ## Example
 

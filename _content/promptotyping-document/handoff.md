@@ -27,7 +27,7 @@ Erstens führt die Inbox ausschließlich offene Punkte. Ein Punktstatus und eine
 
 Zweitens besitzt jeder Punkt genau die Pflichtfelder `Received`, `Source`, `Target` und `Context`. `Evidence`, `Next action`, `Blocker` und `Operator point` werden nur geführt, wenn sie Inhalt tragen. Leere optionale Felder werden gelöscht.
 
-Drittens integriert die Bearbeitung dauerhaften Inhalt zuerst in das zuständige Declarative oder Action Document. Danach erhält `knowledge/journal.md` einen knappen Nachweis mit Gegenstand, Quelle, Ziel und Ergebnis oder Verwerfungsgrund. Der bearbeitete Punkt wird anschließend vollständig entfernt.
+Drittens integriert die Bearbeitung dauerhaften Inhalt zuerst in das zuständige declarative knowledge document oder agent instruction document. Danach erhält `knowledge/journal.md` einen knappen Nachweis mit Gegenstand, Quelle, Ziel und Ergebnis oder Verwerfungsgrund. Der bearbeitete Punkt wird anschließend vollständig entfernt.
 
 ## Frontmatter-Schema
 
@@ -45,7 +45,7 @@ Die Sektion enthält entweder den exklusiven Empty State „Keine offenen Handof
 
 ## Was nicht reingehört
 
-- Dauerhaftes Sachwissen, Spezifikationen oder Handlungsregeln. Sie liegen im zuständigen Declarative oder Action Document.
+- Dauerhaftes Sachwissen, Spezifikationen oder Handlungsregeln. Sie liegen im zuständigen declarative knowledge document oder agent instruction document.
 - Angenommene Zukunftsarbeit. Sie liegt in `plan.md`.
 - Erledigte Punkte, Punktstatus und Closed-Sektionen. Den Nachweis führt `journal.md`, frühere Wortlaute bewahrt Git.
 - Datierte außergewöhnliche Übergabe-Snapshots. Sie liegen unter `handoffs/`.
@@ -69,7 +69,7 @@ updated: [YYYY-MM-DD]
 
 # Handoff
 
-Diese Process Inbox führt ausschließlich offene Übergabepunkte. Prüfe vor der Nutzung die Quelle und das aktuelle Ziel. Integriere dauerhaften Inhalt in das zuständige Declarative oder Action Document, dokumentiere Gegenstand, Quelle, Ziel und Ergebnis oder Verwerfungsgrund knapp in `knowledge/journal.md` und entferne den bearbeiteten Punkt anschließend vollständig.
+Diese Process Inbox führt ausschließlich offene Übergabepunkte. Prüfe vor der Nutzung die Quelle und das aktuelle Ziel. Integriere dauerhaften Inhalt in das zuständige declarative knowledge document oder agent instruction document, dokumentiere Gegenstand, Quelle, Ziel und Ergebnis oder Verwerfungsgrund knapp in `knowledge/journal.md` und entferne den bearbeiteten Punkt anschließend vollständig.
 
 ## Offene Handoff-Punkte
 
@@ -80,7 +80,7 @@ Keine offenen Handoff-Punkte.
 
 - Received: [YYYY-MM-DD]
 - Source: [Repo, Lane, Dokument oder Nachricht mit überprüfbarem Verweis]
-- Target: [aktuelles Declarative oder Action Document]
+- Target: [aktuelles declarative knowledge document oder agent instruction document]
 - Context: [für Prüfung und Integration erforderlicher Zusammenhang]
 - Evidence: [optional]
 - Next action: [optional]
@@ -101,9 +101,9 @@ Eine neue Wissensbasis beginnt mit dem Empty State. Eine Übergabe aus einer par
 
 ## Begriffe
 
-- Process Inbox: fortlaufendes Process Document für noch offene, übernommene Deltas.
+- Process Inbox: fortlaufendes process knowledge document für noch offene, übernommene Deltas.
 - Handoff-Punkt: kleinste sachlich zusammengehörige Übergabeeinheit mit überprüfbarer Quelle und aktuellem Ziel.
-- Research-to-Operations-Handoff: dauerhafter Vertrag zwischen Forschung und Betrieb, der als Declarative Integration Document geführt wird.
+- Research-to-Operations-Handoff: dauerhafter Vertrag zwischen Forschung und Betrieb, der als Integrationsdokument und damit als declarative knowledge document geführt wird.
 
 ## Versionshistorie
 

@@ -12,15 +12,15 @@ machine-url: https://dhcraft.org/Promptotyping/_content/glossar.md
 
 Terms of the Promptotyping working practice and of its specification site. The authoritative data source is `data/glossar.json`; this file is generated from it and carries the same content. Each entry gives the kind of thing the term names, a short definition for tooltips, a full definition and its sources. A source that this site holds an address for carries it as a hash anchor; the rest stay text. Terms the paper text does not carry are marked as site vocabulary in their source list.
 
-### Action Document
+### Agent Instruction Document
 
 Kind: Document function
 
-Site name for the knowledge document that translates project knowledge into operational guidance for agents, which the paper calls an agent instruction document.
+Knowledge document that states how agents are to work, with setup, procedures, constraints, required checks and pointers to the relevant knowledge.
 
-Action Document is the site's class name for the knowledge document that translates maintained project knowledge into operational guidance for agentic work. The paper calls this class agent instruction documents. Typical carriers are CLAUDE.md or AGENTS.md, which can fix the technical baseline, the working procedure, the constraints and the checks that an agent's work is held to. Keeping these comparatively volatile instructions separate from more stable accounts of the data and scholarly purpose prevents temporary implementation directives from silently altering the project's maintained understanding. The Konvention Knowledge Documents also assigns the action layer, the testing strategy and, in multi-agent projects, role definitions and orchestration rules to this class, and it supplies the diagnostic rule that formally wrong output sends the reader to the Action Document first.
+An agent instruction document is the specialisation of the knowledge document that states how agents are to work, translating maintained project knowledge into operational guidance for agentic work. Typical carriers are CLAUDE.md or AGENTS.md, which can fix the setup, the working procedure, the constraints, the required checks and the pointers to the relevant knowledge that an agent's work is held to. Keeping these comparatively volatile instructions separate from more stable accounts of the data and scholarly purpose keeps operational changes distinct from revisions of the project's assumptions. The Konvention Knowledge Documents also assigns the action layer, the testing strategy, the technology baseline and, in multi-agent projects, role definitions and orchestration rules to this type, and it supplies the diagnostic rule that formally wrong output sends the reader to the agent instruction document first. Until 10 November 2026 the site called this type Action Document, and the routing heuristic of the convention keeps Action as the short form in its type column.
 
-Source: Site vocabulary, not carried in the paper text; [Konvention Knowledge Documents](#konvention-v0.1)
+Source: [Specification, part 1, Application](#application); [Konvention Knowledge Documents](#konvention-v0.1)
 
 ### Action Layer
 
@@ -38,7 +38,7 @@ Kind: Practice
 
 Aesthetic and behavioural shaping of a coding agent through the composition of design.md and CLAUDE.md.
 
-Agent socialisation denotes the aesthetic and behavioural shaping of a coding agent that arises as a reading effect when an action document in the repository root points at a declarative design document. In that translation the design rationale becomes the equivalent of values in an agent profile, from which the agent decides even in unforeseen situations. Knowledge stays knowledge and action stays action. The socialisation arises from the interplay.
+Agent socialisation denotes the aesthetic and behavioural shaping of a coding agent that arises as a reading effect when an agent instruction document in the repository root points at a declarative design document. In that translation the design rationale becomes the equivalent of values in an agent profile, from which the agent decides even in unforeseen situations. Knowledge stays knowledge and action stays action. The socialisation arises from the interplay.
 
 Source: Site vocabulary, not carried in the paper text; Vault Agent-Sozialisierung
 
@@ -136,7 +136,7 @@ Source: [Specification, part 1, Application](#application); Mei et al. 2025; [Va
 
 Kind: Document function
 
-Division of re-entry context among durable documents, Process Documents and git history.
+Division of re-entry context among durable documents, process knowledge documents and git history.
 
 Context memory denotes the division of re-entry information among durable project knowledge, open received deltas in handoff.md, accepted future work in plan.md, the curated provenance index in journal.md, and earlier wording in git history. This division lets a new session recover current substance, pending inputs, future commitments, and transition grounds from their responsible carriers.
 
@@ -162,15 +162,15 @@ The Critical Expert is the person or group competent and accountable for judging
 
 Source: [Specification, part 5, Checking](#verifikation); knowledge/governance.md; Pollin 2025, Critical Vibing blog (not in the paper's reference list); [Vault: the double reflection loop of the role](#vault-critical-expert-in-the-loop-double-reflection-loop)
 
-### Declarative Document
+### Declarative Knowledge Document
 
 Kind: Document function
 
 Knowledge document that states what the project currently takes to be the case and what the artefact is required to realise.
 
-A Declarative Document is the specialisation of the knowledge document that states what the project currently takes to be the case and what the artefact is required to realise. The paper calls this class declarative knowledge documents. A data.md may describe the structure, semantics, provenance, gaps and uncertainties of the research data, a requirements document connects scholarly practices with expected system behaviour, and a design.md records how the project's modelled distinctions should be represented and made actionable in the artefact. Project contributors curate these documents. The Konvention Knowledge Documents adds further examples such as README.md, project.md, specification.md, architecture.md, editorial guidelines, mapping rules and verification documents, and it supplies the diagnostic rule that factually wrong output sends the reader to the Declarative Document first. The site carried this type under the name Knowledge Document until July 2026, when the name moved to the generic term.
+A declarative knowledge document is the specialisation of the knowledge document that states what the project currently takes to be the case and what the artefact is required to realise. A data.md may describe the structure, semantics, provenance, gaps and uncertainties of the research data, a requirements document connects scholarly practices with expected system behaviour, and a design.md records how the project's modelled distinctions should be represented and made actionable in the artefact. Project contributors curate these documents. The Konvention Knowledge Documents adds further examples such as README.md, project.md, specification.md, architecture.md, editorial guidelines, mapping rules and verification documents, and it supplies the diagnostic rule that factually wrong output sends the reader to the declarative knowledge document first. The site carried this type under the name Knowledge Document until July 2026, when the name moved to the generic term, and then as Declarative Document until 10 November 2026. The routing heuristic of the convention keeps Declarative as the short form in its type column.
 
-Source: [Konvention Knowledge Documents](#konvention-v0.1)
+Source: [Specification, part 1, Application](#application); [Konvention Knowledge Documents](#konvention-v0.1)
 
 ### Demo Repository Reduction
 
@@ -238,7 +238,7 @@ Kind: Form of work
 
 Fourth of Promptotyping's four recurrent forms of work, which turns maintained project knowledge into a working artefact through LLM-supported development in bounded, versioned increments.
 
-Implementation is the fourth of Promptotyping's four recurrent forms of work. It turns maintained project knowledge into a working artefact through LLM-supported development. The work can run as a chat in which contributors pass prompts, code and output back and forth between model and project. Where the agent has to work on project files itself, run code and keep going over several steps, an AI harness serves better. Implementation consists of bounded tasks and proceeds through inspectable and versioned increments, each of which should establish a runnable state that can be compared with the maintained project knowledge. Refactoring and executable checks keep the project state intelligible and testable. A finding has to be attributed before it revises anything. Findings that alter the project's maintained understanding are written back to the relevant documents rather than remaining local corrections in the code, whereas a failure to realise an adequate requirement is corrected in the artefact. Implementation is provisionally sufficient when the artefact state is runnable, inspectable and identifiable through versioning, and that state is not yet a promptotype.
+Implementation is the fourth of Promptotyping's four recurrent forms of work. It turns maintained project knowledge into a working artefact through LLM-supported development. The work can run as a chat in which contributors pass prompts, code and output back and forth between model and project. Where the agent has to work on project files itself, run code and keep going over several steps, an AI harness serves better. Implementation consists of bounded tasks and proceeds through inspectable and versioned increments, each of which should establish a runnable state that can be compared with the maintained project knowledge. Refactoring and executable checks keep the project state intelligible and testable. A finding has to be attributed before it revises anything. Findings that alter the project's maintained understanding enter the relevant documents through knowledge curation rather than remaining local corrections in the code, whereas a failure to realise an adequate requirement is corrected in the artefact. Implementation is provisionally sufficient when the artefact state is runnable, inspectable and identifiable through versioning, and that state is not yet a promptotype.
 
 Source: [Specification, part 1, Application](#application)
 
@@ -278,7 +278,7 @@ Kind: Document function
 
 Structured, inspectable document that carries maintained project knowledge, canonically held as Markdown under knowledge/ in repository-based projects.
 
-A Knowledge Document is a structured, inspectable and revisable carrier of maintained project knowledge. The project knowledge base consists of interrelated documents, bounded representations distilled from fuller research material, maintained for human inspection and revision, and made available for inclusion in agents' task-specific working contexts. Repository-based Promptotyping projects canonically hold these documents as Markdown in a knowledge/ folder, and the practice permits other documentary environments with the same inspectability and revision properties. The class was formerly called Promptotyping Document, and the published template anchors keep that segment. The site divides Knowledge Documents into three classes, Declarative Documents, Process Documents and Action Documents, which the paper calls declarative knowledge documents, process knowledge documents and agent instruction documents. The three types are organisational heuristics and prescribe no file structure. Project contributors curate the documents, and human contributors or LLM-based agents may carry out the documentary work.
+A Knowledge Document is a structured, inspectable and revisable carrier of maintained project knowledge. The project knowledge base consists of interrelated documents, bounded representations distilled from fuller research material, maintained for human inspection and revision, and made available for inclusion in agents' task-specific working contexts. Repository-based Promptotyping projects canonically hold these documents as Markdown in a knowledge/ folder, and the practice permits other documentary environments with the same inspectability and revision properties. The class was formerly called Promptotyping Document, and the published template anchors keep that segment. Knowledge Documents fall into three types, declarative knowledge documents, process knowledge documents and agent instruction documents, which the site called Declarative, Process and Action Documents until 10 November 2026. The three types are organisational heuristics and prescribe no file structure. Project contributors curate the documents, and human contributors or LLM-based agents may carry out the documentary work.
 
 Source: [Vault: the documents are the primary artefact](#vault-promptotyping-documents-are-the-primary-artifact); knowledge/INDEX.md; [Konvention Knowledge Documents](#konvention-v0.1)
 
@@ -298,7 +298,7 @@ Kind: Document function
 
 Structural principle that keeps knowledge and action separate and socialises coding agents through their combination.
 
-The knowledge-action composition is the structural principle by which declarative knowledge and imperative steering stay separate and together socialise a coding agent. Concretely, design.md stays a Declarative Document while CLAUDE.md as an Action Document points at it as a source of values and translates the design stance into imperative principles. The aesthetic and factual steering arises from the composition of two documents rather than from a hybrid type. The same axis separates technical documentation in Diátaxis, action against cognition, knowing how against knowing that (Procida 2024). Two things shift with a machine addressee. That framework's second axis falls away, acquisition against application, because a model loads the documents per session and acquires nothing that persists. And the reason for the separation inverts, since Diátaxis separates so that a reader finds the form their situation calls for, while a knowledge base separates so that a stable description is not overwritten by a volatile instruction.
+The knowledge-action composition is the structural principle by which declarative knowledge and imperative steering stay separate and together socialise a coding agent. Concretely, design.md stays a declarative knowledge document while CLAUDE.md as an agent instruction document points at it as a source of values and translates the design stance into imperative principles. The aesthetic and factual steering arises from the composition of two documents rather than from a hybrid type. The same axis separates technical documentation in Diátaxis, action against cognition, knowing how against knowing that (Procida 2024). Two things shift with a machine addressee. That framework's second axis falls away, acquisition against application, because a model loads the documents per session and acquires nothing that persists. And the reason for the separation inverts, since Diátaxis separates so that a reader finds the form their situation calls for, while a knowledge base separates so that a stable description is not overwritten by a volatile instruction.
 
 Source: Site vocabulary, not carried in the paper text; Procida 2024, Diátaxis (not in the paper's reference list); [Konvention Knowledge Documents](#konvention-v0.1); [Vault: Diátaxis separates along action and cognition](#vault-diataxis-separates-documentation-along-action-and-cognition)
 
@@ -332,15 +332,15 @@ Preparation is the first of Promptotyping's four recurrent forms of work. It gat
 
 Source: [Specification, part 1, Application](#application)
 
-### Process Document
+### Process Knowledge Document
 
 Kind: Document function
 
 Knowledge document that records how the project's understanding changed over time and on what grounds decisions were made.
 
-A Process Document is the specialisation of the knowledge document that records how the project's understanding changed over time and on what grounds decisions were made. The paper calls this class process knowledge documents. A journal.md may record attempted approaches, failures and unresolved questions, and consequential decisions may be retained in dedicated records. Together with version control and informative commit messages, these documents make changes and their rationale traceable. The Konvention Knowledge Documents adds the mandatory handoff.md for open received deltas and plan.md for accepted future work, treats journal.md as the curated backward provenance index, and routes an overlooked input to handoff.md and unclear transition grounds to journal.md.
+A process knowledge document is the specialisation of the knowledge document that records how the project's understanding changed over time and on what grounds decisions were made. A journal.md may record attempted approaches, failures and unresolved questions, and consequential decisions may be retained in dedicated records. Together with version control and informative commit messages, these documents make changes and their rationale traceable. The Konvention Knowledge Documents adds the mandatory handoff.md for open received deltas and plan.md for accepted future work, treats journal.md as the curated backward provenance index, and routes an overlooked input to handoff.md and unclear transition grounds to journal.md. Until 10 November 2026 the site called this type Process Document, and the routing heuristic of the convention keeps Process as the short form in its type column.
 
-Source: [Konvention Knowledge Documents](#konvention-v0.1)
+Source: [Specification, part 1, Application](#application); [Konvention Knowledge Documents](#konvention-v0.1)
 
 ### Project Knowledge Base
 
@@ -348,7 +348,7 @@ Kind: Document function
 
 The persistent set of interrelated knowledge documents that records how a project understands its data, which decisions it took and which questions remain open.
 
-The project knowledge base is the persistent set of interrelated knowledge documents through which a Promptotyping project records how its data are understood, which decisions were taken and which questions remain open. It complements the research data by adding what they do not state, namely their meaning, the conditions of their interpretation and use, and how they are to be operationalised for the project's purpose. In repository-based projects it is a knowledge/ folder of Markdown files versioned with the code and mapped by an INDEX.md, and the practice also permits interlinked notes or a more structured form as long as the knowledge stays inspectable. Its documents fall into three types, declarative knowledge documents, process knowledge documents and agent instruction documents, which the site calls Declarative, Process and Action Documents. Context Engineering keeps the knowledge base apart from an agent's working context, and material that enters a working context becomes project knowledge only once it has been examined and curated. The knowledge base is itself fallible, because its documents drift from the project state and grow as journals fill, and it is therefore examined against the sources and the project state like any other artefact.
+The project knowledge base is the persistent set of interrelated knowledge documents through which a Promptotyping project records how its data are understood, which decisions were taken and which questions remain open. It complements the research data by adding what they do not state, namely their meaning, the conditions of their interpretation and use, and how they are to be operationalised for the project's purpose. In repository-based projects it is a knowledge/ folder of Markdown files versioned with the code and mapped by an INDEX.md, and the practice also permits interlinked notes or a more structured form as long as the knowledge stays inspectable. Its documents fall into three types, declarative knowledge documents, process knowledge documents and agent instruction documents, which the site called Declarative, Process and Action Documents until 10 November 2026. Context Engineering keeps the knowledge base apart from an agent's working context, and material that enters a working context becomes project knowledge only once it has been examined and curated. The knowledge base is itself fallible, because its documents drift from the project state and grow as journals fill, and it is therefore examined against the sources and the project state like any other artefact.
 
 Source: [Konvention Knowledge Documents](#konvention-v0.1); [Specification, part 1, Application](#application)
 
@@ -356,7 +356,7 @@ Source: [Konvention Knowledge Documents](#konvention-v0.1); [Specification, part
 
 Kind: Checking and acceptance
 
-What a Promptotyping iteration yields, an artefact state read in relation to its project knowledge and research data.
+What a Promptotyping iteration yields, the state of an artefact together with the project knowledge and the research data from which it was built.
 
 Every iteration yields a promptotype. Its standing depends on the project knowledge and the research-data state underlying the artefact, and a runnable artefact cut off from them is not yet a promptotype. A promptotype is a means of knowing. Whether the artefact is an ontology, a workflow or an interface, using it reveals which distinctions the data sustain and at which points the work breaks down, and curation feeds what was learned into the next iteration. It is accepted for a purpose, whether as an exploratory interface, an internal workflow, a demonstrator or a public research artefact, when the researchers who will work with it judge that it fits their questions and ways of working. That judgement is its scholarly validation, which verification and agentic review prepare and cannot replace. Until then it remains a state of work in progress, whatever checks it has passed. Re-implementing with another model, harness or project state is a new iteration rather than a reproduction of the earlier promptotype. Until 28 October 2026 this glossary reserved the term for an accepted iteration with documented grounds of acceptance.
 
@@ -368,7 +368,7 @@ Kind: Practice
 
 Iterative, knowledge-driven working practice for developing project-specific digital research artefacts from structured research data and maintained project knowledge through Knowledge Engineering, Context Engineering and Agentic Engineering.
 
-Promptotyping is an iterative, knowledge-driven working practice for developing project-specific digital research artefacts from structured research data and maintained project knowledge through Knowledge Engineering, Context Engineering and Agentic Engineering. Knowledge Engineering elicits, models and curates what researchers and project partners know about domain, data and aims, Context Engineering selects from that knowledge what an agent needs for a given task, and Agentic Engineering organises the work of the agents that act on it. The name joins *prompt* and *prototyping* and keeps what a prototype is for, a provisional implementation on which requirements and design options can be tried out and refined. Its organising structure is an evolving and versioned project knowledge base, held in versioned files, an interlinked note system or another inspectable and revisable form. Project contributors curate this knowledge and define and oversee the bounded tasks that LLM-based agents carry out, and findings from implementation and examination are written back into it. The work proceeds through four recurrent forms, Preparation, Exploration, Distillation and Implementation, and knowledge curation runs across all four. The knowledge base guides implementation without determining a single realisation, so a renewed implementation with another model, harness or project state constitutes a new iteration. Each iteration yields a promptotype.
+Promptotyping is an iterative, knowledge-driven working practice for developing project-specific digital research artefacts from structured research data and maintained project knowledge through Knowledge Engineering, Context Engineering and Agentic Engineering. Knowledge Engineering elicits, models and curates what researchers and project partners know about domain, data and aims, Context Engineering selects from that knowledge what an agent needs for a given task, and Agentic Engineering organises the work of the agents that act on it. The name joins *prompt* and *prototyping* and keeps what a prototype is for, a provisional implementation on which requirements and design options can be tried out and refined. Its organising structure is an evolving and versioned project knowledge base, held in versioned files, an interlinked note system or another inspectable and revisable form. Project contributors curate this knowledge and define and oversee the bounded tasks that LLM-based agents carry out, and findings from implementation and examination return to it through knowledge curation. The work proceeds through four recurrent forms, Preparation, Exploration, Distillation and Implementation, and knowledge curation runs across all four. The knowledge base guides implementation without determining a single realisation, so a renewed implementation with another model, harness or project state constitutes a new iteration. Each iteration yields a promptotype.
 
 Source: [Overview](#overview); [Specification, part 1, Application](#application); knowledge/INDEX.md
 
@@ -518,7 +518,7 @@ Kind: Practice
 
 Practice of generating code through natural language and accepting it without thorough review.
 
-Vibe Coding denotes a practice in which code is generated through instructions in natural language and accepted without thorough review (Karpathy 2025a). Sarkar and Drosos (2025) describe iterative goal-satisfaction cycles and material disengagement. Promptotyping shares the premise that LLMs can generate functional code from natural language. Its additional controls are the upstream forms Preparation and Exploration, persistent documentation, systematic verification, purpose-specific acceptance, and write-back. Vibe Coding survives inside Promptotyping as an exploratory mode.
+Vibe Coding denotes a practice in which code is generated through instructions in natural language and accepted without thorough review (Karpathy 2025a). Sarkar and Drosos (2025) describe iterative goal-satisfaction cycles and material disengagement. Promptotyping shares the premise that LLMs can generate functional code from natural language. Its additional controls are the upstream forms Preparation and Exploration, persistent documentation, systematic verification, purpose-specific acceptance, and knowledge curation. Vibe Coding survives inside Promptotyping as an exploratory mode.
 
 Source: Sarkar and Drosos 2025 (not in the paper's reference list); [Vault: the first empirical study of vibe coding](#vault-sarkar-vibe-coding-material-disengagement); Karpathy 2025a
 
@@ -536,8 +536,8 @@ Source: [Specification, part 1, Application](#application); [Working environment
 
 Kind: Practice
 
-The return path through which consequential findings enter renewed Distillation and maintained project knowledge.
+Former site name for knowledge curation, the return of findings into the maintained project knowledge.
 
-Write-back carries consequential findings from Implementation, assessment, review, and validation into renewed Distillation. Human contributors or LLM-based agents may carry out the resulting documentary work. Within Promptotyping, knowledge refactoring revises the maintained Markdown documents so that they express the current project understanding coherently. Accountable contributors determine which revised knowledge enters the accepted project state. A project-specific revision supports a change to the practice itself when the available evidence warrants a general rule.
+Write-back was the site's name for the return path through which consequential findings from Implementation, assessment, review and validation enter renewed Distillation and the maintained project knowledge. Since 10 November 2026 the site uses the paper's term knowledge curation, which covers this return path and also the correction and removal of statements that have become outdated or unwarranted. The entry remains so that the former name stays traceable.
 
 Source: [Specification, part 1, Application](#application); knowledge/governance.md, Write-back

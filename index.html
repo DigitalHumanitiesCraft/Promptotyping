@@ -294,12 +294,12 @@
         </div>
         <figure class="doc-types-figure" aria-label="The three types of knowledge documents and their files">
           <div class="doc-type">
-            <p class="doc-type-name">Declarative documents</p>
+            <p class="doc-type-name">Declarative knowledge documents</p>
             <p class="doc-type-gloss">what holds</p>
             <ul class="sheets"><li class="sheet"><code>INDEX.md</code></li><li class="sheet"><code>project.md</code></li><li class="sheet"><code>data.md</code></li><li class="sheet"><code>specification.md</code></li><li class="sheet"><code>user-stories.md</code></li><li class="sheet"><code>architecture.md</code></li><li class="sheet"><code>research-methodology.md</code></li><li class="sheet"><code>design.md</code></li><li class="sheet"><code>verification.md</code></li><li class="sheet"><code>report-YYYY-MM-DD.md</code></li><li class="sheet"><code>integration.md</code></li></ul>
           </div>
           <div class="doc-type">
-            <p class="doc-type-name">Process documents</p>
+            <p class="doc-type-name">Process knowledge documents</p>
             <p class="doc-type-gloss">how the understanding developed and what is open</p>
             <ul class="sheets"><li class="sheet"><code>journal.md</code></li><li class="sheet"><code>handoff.md</code></li><li class="sheet"><code>plan.md</code></li></ul>
           </div>
@@ -410,7 +410,7 @@ cp -r Promptotyping/skills/promptotyping ~/.claude/skills/</code></pre>
               <figcaption><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-prompt"></use></svg>Prompt</figcaption>
 <pre><code>Use the Distil operation of the Promptotyping skill if it is installed. Read knowledge/project.md, knowledge/data.md and generated/data-profile.md. Move the provisional user stories from project.md into knowledge/specification.md and turn each into a functional requirement with an acceptance criterion I can test. Create knowledge/design.md for how the data are shown, including how gaps and uncertainty stay visible, knowledge/verification.md for the checks and their evidence, knowledge/INDEX.md as the register and reading order of the documents, knowledge/handoff.md with the empty-state line "Keine offenen Handoff-Punkte.", which the convention keeps in German in every language, and knowledge/journal.md with one entry for this transition. Follow the templates at https://dhcraft.org/Promptotyping/_content/promptotyping-document/NAME.md, where NAME is specification, design, verification, index, handoff or journal, and leave out sections my material does not fill. Finally create CLAUDE.md for Claude Code or AGENTS.md for Codex in the repository root. It tells every session to read knowledge/INDEX.md and knowledge/handoff.md first and fixes the technical baseline, a static web page in HTML, CSS and plain JavaScript without a build step that loads its data from files. Commit the result.</code></pre>
             </figure>
-            <p class="step-result"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-result"></use></svg><span class="visually-hidden">Result. </span>The specification asks for one timeline of all letters, beside design, verification, index, journal, handoff and the action document.</p>
+            <p class="step-result"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-result"></use></svg><span class="visually-hidden">Result. </span>The specification asks for one timeline of all letters, beside design, verification, index, journal, handoff and the agent instruction document.</p>
           </li>
           <li>
             <p class="step-head"><span class="step-name">Propose cuts.</span> Read the proposal and approve only cuts that no user story needs.</p>
@@ -432,7 +432,7 @@ cp -r Promptotyping/skills/promptotyping ~/.claude/skills/</code></pre>
             <p class="step-head"><span class="step-name">Test the documents.</span> Start a new session with no history for this prompt.</p>
             <figure class="dh-code field is-prompt" data-source="tutorial">
               <figcaption><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-prompt"></use></svg>Prompt</figcaption>
-<pre><code>Read the knowledge/ folder and the action document in the root of this repository. Then state in your own words what this project is, what the data afford and where their limits are, and what is to be built in which order. Do not build anything yet.</code></pre>
+<pre><code>Read the knowledge/ folder and the agent instruction document in the root of this repository. Then state in your own words what this project is, what the data afford and where their limits are, and what is to be built in which order. Do not build anything yet.</code></pre>
             </figure>
             <p class="step-result"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-result"></use></svg><span class="visually-hidden">Result. </span>An account of the project from the folder alone. What it misses still lives only in someone's head.</p>
           </li>
@@ -453,10 +453,10 @@ cp -r Promptotyping/skills/promptotyping ~/.claude/skills/</code></pre>
             <p class="step-result"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-result"></use></svg><span class="visually-hidden">Result. </span><code>verification.md</code> separates the mechanical results from the criteria that need a human decision.</p>
           </li>
           <li>
-            <p class="step-head"><span class="step-name">Write back.</span> Paste the finding below the instruction, “Letters dated only to a year, such as 1848, sit on 1 January of that year, as if the day were known.”</p>
+            <p class="step-head"><span class="step-name">Curate.</span> Paste the finding below the instruction, “Letters dated only to a year, such as 1848, sit on 1 January of that year, as if the day were known.”</p>
             <figure class="dh-code field is-prompt" data-source="tutorial">
               <figcaption><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-prompt"></use></svg>Prompt</figcaption>
-<pre><code>I found a fault in the artefact, described below. Do not change the code yet. Decide whether it comes from missing or wrong knowledge about the data, a missing requirement, a design decision or the agent instructions, and correct the responsible document in knowledge/ or the action document. Where a requirement was missing, add it to knowledge/specification.md with a testable acceptance criterion. Record the finding, the failed check and the correction in knowledge/verification.md and knowledge/journal.md, and show me the changed passages before anything is rebuilt.</code></pre>
+<pre><code>I found a fault in the artefact, described below. Do not change the code yet. Decide whether it comes from missing or wrong knowledge about the data, a missing requirement, a design decision or the agent instructions, and correct the responsible document in knowledge/ or the agent instruction document. Where a requirement was missing, add it to knowledge/specification.md with a testable acceptance criterion. Record the finding, the failed check and the correction in knowledge/verification.md and knowledge/journal.md, and show me the changed passages before anything is rebuilt.</code></pre>
             </figure>
             <p class="step-result"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-result"></use></svg><span class="visually-hidden">Result. </span>The specification now requires an uncertain date to be drawn as a span, the design says how it looks, and the journal records why.</p>
           </li>

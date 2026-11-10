@@ -70,7 +70,7 @@ Funktion: die blinden Flecken der Teststrategie explizit machen. Inhalt: pro Lü
 
 ### How to Run
 
-Funktion: einem Dritten ermöglichen, die Tests selbst zu laufen. Inhalt: die konkreten Kommandos in einem Codeblock, je mit einem Kommentar, was sie prüfen und welchen Zielstand sie haben. teiCrafter führt "node test/tools/run_all.mjs" als das eine Regression-Gate plus die Einzel-Proofs mit Zielständen; M3GIM führt "pytest tests/ -m 'not slow'" plus die Determinismus-Variante; co-ocr-htr führt die npm-test-Kommandos. Dazu gehören gegebenenfalls ENV-Overrides für Pfade und Datenquellen (M3GIM und teiCrafter führen beide solche Overrides). Hier ist das Action Document unmittelbar ausführbare Anweisung.
+Funktion: einem Dritten ermöglichen, die Tests selbst zu laufen. Inhalt: die konkreten Kommandos in einem Codeblock, je mit einem Kommentar, was sie prüfen und welchen Zielstand sie haben. teiCrafter führt "node test/tools/run_all.mjs" als das eine Regression-Gate plus die Einzel-Proofs mit Zielständen; M3GIM führt "pytest tests/ -m 'not slow'" plus die Determinismus-Variante; co-ocr-htr führt die npm-test-Kommandos. Dazu gehören gegebenenfalls ENV-Overrides für Pfade und Datenquellen (M3GIM und teiCrafter führen beide solche Overrides). Hier ist das agent instruction document unmittelbar ausführbare Anweisung.
 
 ### Pattern: Test im selben Commit (optional)
 
@@ -95,7 +95,7 @@ Funktion: den Belegstand der Suite zum Stichtag festhalten. Inhalt: eine Tabelle
 ## Was nicht reingehört
 
 - Stack und Architecture. Welche Technologien das System einsetzt und wie es aufgebaut ist, gehört in `architecture.md`. Das Testing-Dokument nennt den Test-Runner als Werkzeug (Vitest, pytest, Node-Harness), nicht den Anwendungs-Stack.
-- Provenienz sachlicher Änderungen. Integrierte, verworfene oder korrigierte Übergänge der Teststrategie werden in `journal.md` nachgewiesen. Das Testing-Dokument trägt als Action Document den aktuellen Garantiestand. Meilenstein-Bezüge in Proof-Namen bleiben als stabile IDs zulässig.
+- Provenienz sachlicher Änderungen. Integrierte, verworfene oder korrigierte Übergänge der Teststrategie werden in `journal.md` nachgewiesen. Das Testing-Dokument trägt als agent instruction document den aktuellen Garantiestand. Meilenstein-Bezüge in Proof-Namen bleiben als stabile IDs zulässig.
 - Anforderungen. Welche Funktionalität das System leisten soll, gehört in `specification.md`. Das Testing-Dokument prüft gegen diese Anforderungen, formuliert sie nicht.
 - Code-Implementation des Testcodes. Wie ein Proof intern aufgebaut ist, gehört in den Testcode (Testnamen, Assertions, Kommentare). Das Dokument trägt die Behauptung pro Proof, nicht ihren Code.
 - CI/CD-Konfiguration. Die Workflow-Datei ist Source of Truth in `architecture.md` oder `.github/workflows/`. Das Testing-Dokument nennt den Auslöser, nicht die Konfiguration.
@@ -227,7 +227,7 @@ Das Fehlmuster aus dem Inhaltsaudit vom Juli (2026-07-19 - Promptotyping-Wissens
 - Teststrategie: das tragende Ordnungsprinzip der Qualitätssicherung, also welche Test-Arten existieren, welche Fehlerklasse jede abdeckt und welche Garantie daraus folgt.
 - Proof: eine einzelne, benannte Garantie mit expliziter Behauptung und binärem oder qualitativem Belegstatus; bei teiCrafter ein headless Check, der eine Engine- oder Feature-Eigenschaft gegen reale Daten zeigt.
 - Acceptance: die Rückbindung der Tests an die Projektziele, pro Ziel mit Frage, Methode, Verifikationsebene und Beleg.
-- Verifikationsebene: die Art der Prüfung in der Promptotyping-Kaskade, automatisch (maschinell), kontextuell (gegen reale Daten und intendierte Änderung), visuell (Browser-Durchlauf durch einen Menschen) oder professionell (Domänenexperten-Review). Die professionelle Ebene gehört zur fachlichen Validierung, die bei den Forschenden liegt, die übrigen Ebenen zur Verifikation.
+- Verifikationsebene: die Art der Prüfung in der Promptotyping-Kaskade, automatisch (maschinell), kontextuell (gegen reale Daten und intendierte Änderung), visuell (Browser-Durchlauf durch einen Menschen) oder professionell (Domänenexperten-Review). Die professionelle Ebene gehört zur scholarly validation, die bei den Forschenden liegt, die übrigen Ebenen zur verification.
 - Lücke: ein bewusst ungeprüfter Bereich der Qualitätssicherung, mit Begründung und Angabe der ersatzweisen Deckung; konstitutiver Bestandteil, nicht Eingeständnis.
 - xfail: ein Test, der absichtlich rot ist, weil die geprüfte Invariante noch nicht implementiert ist; mit strict-Modus bricht die Suite, sobald er grün wird, was die fertige Phase signalisiert.
 

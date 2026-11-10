@@ -9,7 +9,7 @@ machine-url: https://dhcraft.org/Promptotyping/_content/promptotyping-document/j
 ---
 # Vorlage Journal
 
-Diese Vorlage strukturiert den kuratierten rückwärtsgerichteten Provenienzindex einer Promptotyping-Wissensbasis. Das resultierende Dokument heißt `journal.md`, liegt im `knowledge/`-Ordner und weist sachlich zusammengehörige Übergänge nach. Die aktuellen Inhalte bleiben in ihren zuständigen Declarative, Action und Process Documents.
+Diese Vorlage strukturiert den kuratierten rückwärtsgerichteten Provenienzindex einer Promptotyping-Wissensbasis. Das resultierende Dokument heißt `journal.md`, liegt im `knowledge/`-Ordner und weist sachlich zusammengehörige Übergänge nach. Die aktuellen Inhalte bleiben in ihren zuständigen declarative knowledge documents, agent instruction documents und process knowledge documents.
 
 ## Geltungsbereich
 
@@ -21,7 +21,7 @@ Das Journal wird verdichtet, sobald Wiederholungen, kopiertes Dauerwissen, erled
 
 Das Journal beantwortet, welcher sachliche Übergang aus welcher Quelle in welches Ziel führte und welches Ergebnis angenommen, verworfen oder korrigiert wurde. Es ist ein kuratierter Provenienzindex für Menschen und Agents, die Herkunft oder Entscheidungsgrund einer aktuellen Aussage prüfen.
 
-Der aktuelle Projektstatus liegt in der projektspezifischen lebenden Quelle. Dauerhafte Sach- und Handlungsinhalte liegen in Declarative oder Action Documents, angenommene Zukunftsarbeit in `plan.md`, offene Eingänge in `handoff.md` und ausführliche Prüfresultate in `verification.md`. Git bewahrt frühere Wortlaute.
+Der aktuelle Projektstatus liegt in der projektspezifischen lebenden Quelle. Dauerhafte Sach- und Handlungsinhalte liegen in declarative knowledge documents oder agent instruction documents, angenommene Zukunftsarbeit in `plan.md`, offene Eingänge in `handoff.md` und ausführliche Prüfresultate in `verification.md`. Git bewahrt frühere Wortlaute.
 
 ## Strukturprinzipien
 
@@ -82,7 +82,7 @@ Ein `verdichtet`-Eintrag nennt Bereich, Git-Ausgangsstand und Ergebnis. Vorgäng
 - Kopien von dauerhaftem Sachwissen oder Handlungsregeln.
 - Sessionprotokolle, Code-Diffs und vollständige Commit-Messages.
 - Ein Feld für Offenes, nächste Schritte oder Wiedereinstieg, sie liegen in `plan.md` oder `handoff.md`.
-- Phasenübersichten, Architektur- und Datenbeschreibungen, sie liegen in den Declarative Documents oder in `INDEX.md`.
+- Phasenübersichten, Architektur- und Datenbeschreibungen, sie liegen in den declarative knowledge documents oder in `INDEX.md`.
 - Wörtliche Handoffs, sie werden integriert und danach entfernt.
 - Prüfzahlen, Testläufe und Digests, sie liegen in `verification.md` oder in der Commit-Message.
 - Datei- und Diff-Listen sowie Wortlaut-Historie, Git bewahrt sie.

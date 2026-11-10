@@ -54,8 +54,8 @@
           "in the <code>knowledge/</code> folder of a repository covers, from navigation through " +
           "specification and architecture to provenance. It fixes the frontmatter vocabulary with " +
           "which a document declares its origin, its template and its machine address, and assigns " +
-          "each function to one of the three analytical document types Declarative, Process or " +
-          "Action. For every function it names a trigger criterion by which an agent decides " +
+          "each function to one of the three analytical document types, declarative knowledge " +
+          "document, process knowledge document or agent instruction document. For every function it names a trigger criterion by which an agent decides " +
           "whether a given repository needs the document. The template catalogue above is the " +
           "fillable extract of these functions. The full convention stands " +
           '<a href="#konvention-v0.1">further down on this page</a>.</p>' +

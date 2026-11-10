@@ -116,7 +116,7 @@ template:
 
 ## Anwendung als Prompt-Template
 
-Strukturanker beim Aufschreiben einer Baseline. Der Agent erhält den Template-Block und befüllt ihn aus dem, was die Repositorien der Familie faktisch tun, also aus den Stacks, den Abhängigkeitslisten, der Hosting-Form und den vorhandenen `architecture.md`-Dokumenten. Der entscheidende Arbeitsschritt liegt danach und ist nicht delegierbar. Eine Regel, die der Agent aus dem Bestand abliest, ist eine Beobachtung; zur Regel wird sie erst, wenn der Fachverantwortliche sie vertritt. Die Begründungen verlangen deshalb die fachliche Validierung durch den Critical Expert, und die Abweichungskriterien ebenso, weil sie festlegen, wann ein Projekt vom Default abrücken darf.
+Strukturanker beim Aufschreiben einer Baseline. Der Agent erhält den Template-Block und befüllt ihn aus dem, was die Repositorien der Familie faktisch tun, also aus den Stacks, den Abhängigkeitslisten, der Hosting-Form und den vorhandenen `architecture.md`-Dokumenten. Der entscheidende Arbeitsschritt liegt danach und ist nicht delegierbar. Eine Regel, die der Agent aus dem Bestand abliest, ist eine Beobachtung; zur Regel wird sie erst, wenn der Fachverantwortliche sie vertritt. Die Begründungen verlangen deshalb die scholarly validation durch den Critical Expert, und die Abweichungskriterien ebenso, weil sie festlegen, wann ein Projekt vom Default abrücken darf.
 
 Vorgabe an den bauenden Agenten. Die Baseline wird über ihre Maschinenadresse in den Kontext geladen, bevor ein Artefakt der Familie generiert oder regeneriert wird; ihre Regeln sind für den Lauf Constraints. Verweist der Action-Layer eines Projekts auf die Baseline, genügt dort die Adresse und die Nennung der Abweichungen.
 
@@ -128,7 +128,7 @@ Das Methodik-Repo führt `_content/technology-baseline.md` als Baseline für die
 
 ## Begriffe
 
-- Technology Baseline: projektübergreifendes Action Document, das Technologie-Regeln und ihre Begründung für eine Artefaktfamilie trägt und von Projektinstanzen referenziert wird.
+- Technology Baseline: projektübergreifendes agent instruction document, das Technologie-Regeln und ihre Begründung für eine Artefaktfamilie trägt und von Projektinstanzen referenziert wird.
 - Artefaktfamilie: Menge von Forschungsartefakten mit gleicher technischer Grundform (statisches Web-Tool, Datenpipeline), für die dieselben Technologie-Regeln gelten.
 - Abweichungsdokumentation: Pflicht der Projektinstanz, jede Abweichung von der Baseline in der eigenen `architecture.md` mit Begründung zu führen.
 

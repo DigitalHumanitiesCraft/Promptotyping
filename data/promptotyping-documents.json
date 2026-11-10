@@ -8,7 +8,7 @@
       "title": "display name of the template",
       "funktion": "function of the knowledge base that the template addresses (konvention.md, template catalogue)",
       "datei": "recommended file name in the repository",
-      "typ": "analytical document type, Declarative, Process or Action, the three specialisations of the knowledge document by the kind of knowledge held (konvention.md, routing heuristic)",
+      "typ": "analytical document type in short form, Declarative, Process or Action for declarative knowledge document, process knowledge document or agent instruction document, the three specialisations of the knowledge document by the kind of knowledge held (konvention.md, routing heuristic)",
       "version": "template version",
       "status": "maturity of the template",
       "machineUrl": "static .md URL for machine retrieval without JavaScript",
