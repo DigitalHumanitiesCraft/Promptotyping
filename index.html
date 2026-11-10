@@ -72,11 +72,12 @@
         t = localStorage.getItem("promptotyping-theme") || "light";
       } catch (e) {}
       document.documentElement.setAttribute("data-theme", t);
+      document.documentElement.classList.add("js");
     })();
   </script>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="docs">
+<body class="docs" data-page="overview">
 
   <a class="skip-link" href="#content">Skip to content</a>
 
@@ -113,8 +114,200 @@
          404.html cannot drift apart. -->
     <nav class="docs-nav" id="docs-nav" aria-label="Documentation"></nav>
 
-    <!-- One page visible at a time; app.js mounts the page hosts and routes. -->
-    <main class="docs-main content" id="content" tabindex="-1"></main>
+    <!-- One page visible at a time; app.js mounts the page hosts and routes.
+         The start page is static markup so that everything needed to reuse the
+         practice reads without JavaScript; tools/check_consistency.py holds its
+         template rows, skill operations and prompts against their sources. -->
+    <main class="docs-main content" id="content" tabindex="-1">
+      <section class="doc-page is-active start" id="overview" tabindex="-1">
+
+        <div class="start-head">
+          <h1>Promptotyping</h1>
+          <p class="start-lead">A working practice for translating research data and their contexts into research artefacts that fit the researchers' questions and ways of working. An AI coding agent builds the artefact from a small project knowledge base that researchers and agent keep in the repository and revise as the work proceeds.</p>
+          <p class="start-actions">
+            <a class="start-button is-primary" href="#start-steps">First iteration</a>
+            <a class="start-button" href="intro/">Example round</a>
+            <a class="start-button" href="#specification">Specification</a>
+          </p>
+        </div>
+
+        <noscript>
+          <p class="start-note">Without JavaScript the pages linked below stay closed. Their text is readable as Markdown, the <a href="_content/tutorial.md">tutorial</a>, <a href="_content/application.md">Application</a>, <a href="_content/verifikation.md">Checking</a>, the <a href="_content/konvention.md">convention</a> and the <a href="skills/promptotyping/SKILL.md">skill</a>.</p>
+        </noscript>
+
+        <h2 id="start-cycle">Four forms of work</h2>
+        <figure class="cycle">
+          <ol class="cycle-forms">
+            <li class="cycle-form">
+              <span class="cycle-number">1</span>
+              <span class="cycle-name">Preparation</span>
+              <span class="cycle-what">Assemble the sources, the data and the research context.</span>
+              <span class="cycle-done">Done when the material is accessible and documented well enough to examine.</span>
+              <span class="cycle-files">Writes <code>project.md</code> and the action layer</span>
+            </li>
+            <li class="cycle-form">
+              <span class="cycle-number">2</span>
+              <span class="cycle-name">Exploration</span>
+              <span class="cycle-what">Profile the data with scripts and test what it can support.</span>
+              <span class="cycle-done">Done when the researchers recognise their material in the account.</span>
+              <span class="cycle-files">Writes <code>data.md</code> and profiling scripts</span>
+            </li>
+            <li class="cycle-form">
+              <span class="cycle-number">3</span>
+              <span class="cycle-name">Distillation</span>
+              <span class="cycle-what">Turn the findings into maintained knowledge documents.</span>
+              <span class="cycle-done">Done when a fresh agent can continue from the documents and the researchers confirm them.</span>
+              <span class="cycle-files">Writes <code>specification.md</code>, <code>design.md</code> and <code>INDEX.md</code></span>
+            </li>
+            <li class="cycle-form">
+              <span class="cycle-number">4</span>
+              <span class="cycle-name">Implementation</span>
+              <span class="cycle-what">Build small, checked increments from the documents with an agent.</span>
+              <span class="cycle-done">Done when the increment meets the acceptance criteria and its checks.</span>
+              <span class="cycle-files">Writes the artefact and <code>journal.md</code></span>
+            </li>
+          </ol>
+          <p class="cycle-loop"><span class="cycle-loop-path" aria-hidden="true"></span><span class="cycle-loop-label">Knowledge curation writes findings back, most often into Distillation</span></p>
+          <p class="cycle-base">Project knowledge base in <code>knowledge/</code> and <code>CLAUDE.md</code> or <code>AGENTS.md</code>, read and revised in every form of work</p>
+          <figcaption>A first pass runs through the four forms in order. Afterwards they recur as the work requires, and each iteration yields a promptotype, the state of an artefact together with the project knowledge and the research data from which it was built.</figcaption>
+        </figure>
+
+        <h2 id="start-steps">Starting a first iteration</h2>
+        <ol class="start-steps">
+          <li>
+            <span class="start-step-name">Set up the agent and the skill</span>
+            <p>Install an AI coding agent such as Claude Code or Codex, Git, and Python for the small scripts that read your data. Then copy the skill into the agent's skills folder. Codex and agents that read only <code>AGENTS.md</code> are covered on the <a href="#skills-promptotyping">skill page</a>.</p>
+<pre><code>git clone https://github.com/DigitalHumanitiesCraft/Promptotyping.git
+mkdir -p ~/.claude/skills
+cp -r Promptotyping/skills/promptotyping ~/.claude/skills/</code></pre>
+          </li>
+          <li>
+            <span class="start-step-name">Prepare</span>
+            <p>Write the purpose, your question and two or three user stories in your own words. Create an empty folder, start the agent in it and give it this instruction. Paste your purpose, question and stories when the agent asks, and copy your data into <code>data/</code>.</p>
+<pre><code>Create a Git repository in this folder: initialise it, create a data/
+folder and a knowledge/ folder, and add a .gitignore suited to this
+environment. I will place my dataset in data/. Then create
+knowledge/project.md as a minimal charter from the purpose, question,
+and provisional user stories I give you next, keeping my wording and
+marking the stories as provisional. Commit the result.</code></pre>
+          </li>
+          <li>
+            <span class="start-step-name">Explore</span>
+            <p>Let the agent profile the data with scripts. Then check one claim in <code>data.md</code> against the rows it names, and look for a gap in the data that you know as its researcher.</p>
+<pre><code>Read knowledge/project.md. Then analyse all files in data/. Write
+knowledge/data.md as a curated account of their provenance, structure,
+semantics, relations, qualitative gaps, and anomalies. Create small
+profiling scripts under scripts/ and write volatile counts, value
+ranges, cardinalities, and distributions to generated/data-profile.md.
+Reference that report from knowledge/data.md without duplicating its
+numbers. Do not read the full data into model context. Document what
+each script does. Where you infer meaning, state that status explicitly;
+for every non-obvious claim, name the supporting file and rows or
+elements.</code></pre>
+          </li>
+          <li>
+            <span class="start-step-name">Distil, build and check</span>
+            <p>Continue with steps 3 to 6 of the <a href="#tutorial">tutorial</a>, which carry the prompts for Distillation, Implementation and checking. With the skill installed, ask the agent to distil, implement or hand off, and it follows the matching operation.</p>
+          </li>
+        </ol>
+        <p class="start-note">To rehearse first, use the invented letters of the example round, <a href="intro/example/letters.csv" download>letters.csv</a>. Whether a first iteration is responsible for your material is settled by the six conditions of the fit check in <a href="#application">Application</a>.</p>
+
+        <h2 id="start-documents">Documents of the knowledge base</h2>
+        <p>The functions marked always are needed in every project, and <code>user-stories</code> counts with the specification it splits. The others are added when their trigger holds. Each template is a Markdown file for the knowledge base, and the <a href="#konvention-v0.1">convention</a> (<a href="_content/konvention.md">Markdown</a>) sets naming, structure and frontmatter. The <a href="#vorlagen">templates page</a> adds versions and a frontmatter check.</p>
+        <div class="start-table-wrap">
+          <table class="start-documents">
+            <thead>
+              <tr><th scope="col">Template</th><th scope="col">Function</th><th scope="col">Trigger</th><th scope="col"><span class="visually-hidden">Source</span></th></tr>
+            </thead>
+            <tbody>
+              <tr class="start-group"><th scope="rowgroup" colspan="4">Declarative documents state what holds</th></tr>
+              <tr data-slug="project"><th scope="row"><a href="#promptotyping-document-project">project</a></th><td>Charter (possibly also Material and Specification)</td><td>always</td><td><a href="_content/promptotyping-document/project.md" download aria-label="project template as Markdown">.md</a></td></tr>
+              <tr data-slug="specification"><th scope="row"><a href="#promptotyping-document-specification">specification</a></th><td>Specification (formal requirements, epics and user stories, scope, decisions)</td><td>always</td><td><a href="_content/promptotyping-document/specification.md" download aria-label="specification template as Markdown">.md</a></td></tr>
+              <tr data-slug="user-stories"><th scope="row"><a href="#promptotyping-document-user-stories">user-stories</a></th><td>Specification (narrative usage scenarios in a separate file; documented exception only)</td><td>always</td><td><a href="_content/promptotyping-document/user-stories.md" download aria-label="user-stories template as Markdown">.md</a></td></tr>
+              <tr data-slug="index"><th scope="row"><a href="#promptotyping-document-index">index</a></th><td>Navigation plus term lexicon</td><td>knowledge base has more than three documents or several constitutive terms</td><td><a href="_content/promptotyping-document/index.md" download aria-label="index template as Markdown">.md</a></td></tr>
+              <tr data-slug="data"><th scope="row"><a href="#promptotyping-document-data">data</a></th><td>Material</td><td>project processes or produces data</td><td><a href="_content/promptotyping-document/data.md" download aria-label="data template as Markdown">.md</a></td></tr>
+              <tr data-slug="architecture"><th scope="row"><a href="#promptotyping-document-architecture">architecture</a></th><td>Architecture</td><td>system goes beyond a static site</td><td><a href="_content/promptotyping-document/architecture.md" download aria-label="architecture template as Markdown">.md</a></td></tr>
+              <tr data-slug="domain-knowledge"><th scope="row"><a href="#promptotyping-document-domain-knowledge">domain-knowledge</a></th><td>Domain Knowledge (rationale layer and domain rule set)</td><td>research, edition or data project with a domain-methodological prescriptive or theoretical layer</td><td><a href="_content/promptotyping-document/domain-knowledge.md" download aria-label="domain-knowledge template as Markdown">.md</a></td></tr>
+              <tr data-slug="design"><th scope="row"><a href="#promptotyping-document-design">design</a></th><td>Design</td><td>project has a UI</td><td><a href="_content/promptotyping-document/design.md" download aria-label="design template as Markdown">.md</a></td></tr>
+              <tr data-slug="verification"><th scope="row"><a href="#promptotyping-document-verification">verification</a></th><td>Verification (adversarial checking of a project's own claims against the raw data)</td><td>project makes empirical findings or novelty claims that are used externally (paper, report, handover)</td><td><a href="_content/promptotyping-document/verification.md" download aria-label="verification template as Markdown">.md</a></td></tr>
+              <tr data-slug="report"><th scope="row"><a href="#promptotyping-document-report">report</a></th><td>Reporting</td><td>project status report for an external recipient (client, funder, stakeholder); the normal case in commissioned projects</td><td><a href="_content/promptotyping-document/report.md" download aria-label="report template as Markdown">.md</a></td></tr>
+              <tr data-slug="integration"><th scope="row"><a href="#promptotyping-document-integration">integration</a></th><td>Integration (durable cross-project contracts)</td><td>project with a durable cross-project contract for data, formats or responsibilities</td><td><a href="_content/promptotyping-document/integration.md" download aria-label="integration template as Markdown">.md</a></td></tr>
+              <tr class="start-group"><th scope="rowgroup" colspan="4">Process documents state how the understanding developed and what is open</th></tr>
+              <tr data-slug="journal"><th scope="row"><a href="#promptotyping-document-journal">journal</a></th><td>Provenance</td><td>always</td><td><a href="_content/promptotyping-document/journal.md" download aria-label="journal template as Markdown">.md</a></td></tr>
+              <tr data-slug="handoff"><th scope="row"><a href="#promptotyping-document-handoff">handoff</a></th><td>Handoff (live Process Inbox)</td><td>always</td><td><a href="_content/promptotyping-document/handoff.md" download aria-label="handoff template as Markdown">.md</a></td></tr>
+              <tr data-slug="plan"><th scope="row"><a href="#promptotyping-document-plan">plan</a></th><td>Planning (forward-looking)</td><td>project with phases, milestones or sprint control</td><td><a href="_content/promptotyping-document/plan.md" download aria-label="plan template as Markdown">.md</a></td></tr>
+              <tr class="start-group"><th scope="rowgroup" colspan="4">Action documents state how agents are to work</th></tr>
+              <tr data-slug="action-layer"><th scope="row"><a href="#promptotyping-document-action-layer">action-layer</a></th><td>Agent Instructions</td><td>always</td><td><a href="_content/promptotyping-document/action-layer.md" download aria-label="action-layer template as Markdown">.md</a></td></tr>
+              <tr data-slug="testing"><th scope="row"><a href="#promptotyping-document-testing">testing</a></th><td>Quality Assurance</td><td>project with tests, verification or acceptance checks</td><td><a href="_content/promptotyping-document/testing.md" download aria-label="testing template as Markdown">.md</a></td></tr>
+              <tr data-slug="technology"><th scope="row"><a href="#promptotyping-document-technology">technology</a></th><td>Technology Baseline (rules and rationale for a whole artefact family, held centrally)</td><td>several projects build the same artefact type and the stack rationale is reusable</td><td><a href="_content/promptotyping-document/technology.md" download aria-label="technology template as Markdown">.md</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="start-note">The templates are written in German, and a project writes its documents in its own language.</p>
+
+        <h2 id="start-skill">The Promptotyping skill</h2>
+        <p>One <code>SKILL.md</code> gives an agent written procedures for working from the knowledge base. Every operation starts with Orient.</p>
+        <table class="start-skill">
+          <thead>
+            <tr><th scope="col">Operation</th><th scope="col">Use it when</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Orient</th><td>a session enters the repository or switches task</td></tr>
+            <tr><th scope="row">Distil</th><td>material or experience must become maintained knowledge for a purpose</td></tr>
+            <tr><th scope="row">Implement</th><td>a bounded task is ready to build from the knowledge base</td></tr>
+            <tr><th scope="row">Curate</th><td>knowledge must be kept true against the sources and the project state</td></tr>
+            <tr><th scope="row">Synthesise</th><td>several maintained pieces must be connected into something none of them states</td></tr>
+            <tr><th scope="row">Prune</th><td>statements, documents or entries no longer hold or serve anyone</td></tr>
+            <tr><th scope="row">Hand off</th><td>an input from another session, review or partner arrives, or someone else takes over</td></tr>
+          </tbody>
+        </table>
+        <p class="start-actions">
+          <a class="start-button" href="skills/promptotyping/SKILL.md" download>Download SKILL.md</a>
+          <a class="start-button" href="https://github.com/DigitalHumanitiesCraft/Promptotyping/tree/main/skills/promptotyping">Package with eval cases</a>
+          <a class="start-button" href="#skills-promptotyping">Skill page</a>
+        </p>
+
+        <h2 id="start-checking">Three kinds of checking</h2>
+        <dl class="start-checks">
+          <div>
+            <dt>Verification</dt>
+            <dd>Tests conformity to formalised requirements through schemas, tests and reproducible measurements. Its conclusions reach only as far as a check encodes them.</dd>
+            <dd class="start-checks-who">Scripts and agents run it</dd>
+          </div>
+          <div>
+            <dt>Agentic review</dt>
+            <dd>An agent, often with a fresh context, examines the work against named criteria. Its findings remain probabilistic evidence.</dd>
+            <dd class="start-checks-who">Agents carry it out</dd>
+          </div>
+          <div>
+            <dt>Scholarly validation</dt>
+            <dd>Decides whether representations and requirements are warranted by the sources and adequate to the research purpose.</dd>
+            <dd class="start-checks-who">The researchers carry it</dd>
+          </div>
+        </dl>
+        <p>A promptotype is accepted for a purpose when the researchers who will work with it judge that it fits their questions and ways of working. Until then it remains a state of work in progress, whatever checks it has passed. Details are in <a href="#verifikation">Checking</a>.</p>
+
+        <h2 id="start-examples">Example research artefacts</h2>
+        <div class="start-table-wrap">
+          <table class="start-examples">
+            <thead>
+              <tr><th scope="col">Project</th><th scope="col">Artefact</th><th scope="col">Data</th><th scope="col"><span class="visually-hidden">Links</span></th></tr>
+            </thead>
+            <tbody>
+              <tr data-case="corresp-explorer"><th scope="row"><a href="#case-corresp-explorer">CorrespExplorer</a></th><td>Coordinated visualisation views</td><td>CMIF/TEI letter corpus</td><td><a href="https://dhcraft.org/CorrespExplorer" aria-label="CorrespExplorer, live">Live</a> <a href="https://github.com/DigitalHumanitiesCraft/CorrespExplorer" aria-label="CorrespExplorer, code">Code</a></td></tr>
+              <tr data-case="szd-htr"><th scope="row"><a href="#case-szd-htr">SZD-HTR OCR Pipeline</a></th><td>HTR/OCR pipeline with facsimile-text viewer and statistics dashboard</td><td>Digitised estate (correspondence, life documents, works, essay files)</td><td><a href="https://chpollin.github.io/szd-htr-ocr-pipeline/" aria-label="SZD-HTR OCR Pipeline, live">Live</a> <a href="https://github.com/chpollin/szd-htr-ocr-pipeline" aria-label="SZD-HTR OCR Pipeline, code">Code</a></td></tr>
+              <tr data-case="klawiter-rescue"><th scope="row"><a href="#case-klawiter-rescue">Klawiter Bibliography Rescue</a></th><td>JSON-LD bibliography plus static front end (SZD ecosystem)</td><td>MediaWiki SQL/BLOB dump</td><td><a href="https://chpollin.github.io/klawiter-rescue" aria-label="Klawiter Bibliography Rescue, live">Live</a> <a href="https://github.com/chpollin/klawiter-rescue" aria-label="Klawiter Bibliography Rescue, code">Code</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="start-note">These are the three cases of the paper on Promptotyping. The <a href="#use-cases">use cases</a> list every documented project, and the <a href="#vault">Vault</a> traces the practice's claims to their sources.</p>
+
+        <h2 id="start-cite">Citation and licence</h2>
+<pre class="start-citation"><code>Pollin, Christopher; Steiner, Christian: Promptotyping. Zenodo. https://doi.org/10.5281/zenodo.14160875</code></pre>
+        <p>The concept DOI resolves to the latest archived version, and <a href="CITATION.cff">CITATION.cff</a> carries the full metadata. Text, templates and skill are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, code under the <a href="LICENSE">MIT License</a>. The <a href="https://github.com/DigitalHumanitiesCraft/Promptotyping">repository</a> holds everything on this page.</p>
+
+      </section>
+    </main>
 
 
   </div>

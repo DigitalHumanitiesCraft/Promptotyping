@@ -7,7 +7,7 @@ status: active
 language: en
 version: 0.8
 created: 2026-07-26
-updated: 2026-11-04
+updated: 2026-11-10
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Opus 5)
 method:
@@ -249,6 +249,16 @@ Under `intro/tests/` the introduction page (A47) is held to the outcomes a reade
 **Procedure.** `tools/check_consistency.py` reads the registry, content frontmatter, route resolver, page render calls, and CSS contract. It requires the two English sources and addresses, the explicit `ueberblick` and `anwendung` alias map, the absence of the retired source files, and the compact page rules. Regression cases replace the canonical identifiers, remove an alias, point a source line back to German, or reintroduce one of the retired substrates. Browser verification then opens canonical and legacy hashes and subpaths, uses Browser Back, inspects both pages at desktop and narrow widths, and checks the console.
 
 **Verdict, 2026-08-25.** Passes. All four canonical forms and all four legacy forms resolve to the intended English route. The Overview status block ends at 853 pixels in a 1440 by 900 viewport, the Specification retains all five parts, both checked widths avoid horizontal overflow, and the browser console contains no warnings or errors.
+
+### V24. The static start page repeats its sources verbatim
+
+**Claim.** The start page in `index.html` (A48) shows every catalogue template with the function and trigger of `data/promptotyping-documents.json`, a link to its template panel and its Markdown file, the operation table of `skills/promptotyping/SKILL.md`, the two starting prompts as they stand in `_content/tutorial.md`, the three example cases with the addresses of `data/case-studies.json`, and links into Application, Checking, Use Cases, Vault, tutorial, skill and templates.
+
+**Why it matters.** The start page is the one place that repeats these sources, and it is static, so a changed trigger, operation or prompt would otherwise stay behind unseen.
+
+**Procedure.** `check_start_page` in `tools/check_consistency.py` compares the rows, the table, the prompt blocks, the case rows and the links with their sources. Regression cases change a trigger, remove a row, change an operation and shorten a prompt.
+
+**Verdict, 2026-11-10.** Passes. A browser run with Playwright against the assembled Pages tree at 1440 by 900, 820 by 1100, 390 by 844 and 360 by 740, light and dark, and with JavaScript disabled shows no horizontal document scroll and no console error; the in-page jump, a template panel with Escape, the legacy route `#ueberblick`, the skill page and keyboard reach of the copy buttons work. An independent agentic review with a fresh context found eleven points, and the corrections are recorded in the journal of 2026-11-10. Human reading and the operator's acceptance are outstanding.
 
 ### V23. The withdrawn manuscript stays out of the repository (retired)
 

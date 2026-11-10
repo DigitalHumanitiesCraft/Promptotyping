@@ -7,7 +7,7 @@ status: complete
 language: en
 version: "1.0"
 created: 2026-05-09
-updated: 2026-11-05
+updated: 2026-11-10
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Opus 4.8, Claude Opus 5.5)
 method:
@@ -152,7 +152,7 @@ The tree groups the pages under Specification, Reference, Evidence, and Tools an
 
 The header carries the wordmark and the kind marker, with no mark beside it, and the signature band along its foot. Both the DHCraft watercolour and the Promptotyping logo were tried in that slot and dropped, because a chromatic detail image at 22 pixels reads as a smudge and would put a hue on the page that means nothing. The carrier mark stays in the footer and supplies the favicon. The footer's auto-fitting grid currently resolves into four content columns: carrier and licence, addresses and machine access, the state of the specification, and implementation. The implementation column names Digital Humanities Craft, the documented AI harnesses and models, and Promptotyping without repeating the repository link already present in the addresses column.
 
-The start page is the specification front. The title and one-sentence scope lead into three task routes for understanding, evaluating, and applying the practice. A compact operational account and two-column keyed status block complete the page. The block becomes one column below 860px. The permanent navigation subtree is the only five-part index. Overview fits through its status block at a 1440 by 900 CSS-pixel viewport. Informative pages carry their note and status metadata under the title at 0.8125rem. The Specification page carries neither tagline nor standing line; each part retains compact version, date, and source metadata. Spacing and heading weight establish these transitions without horizontal rules.
+The start page is the level from which the practice is reused (A48), described under Start page below. The permanent navigation subtree is the only five-part index. Informative pages carry their note and status metadata under the title at 0.8125rem. The Specification page carries neither tagline nor standing line; each part retains compact version, date, and source metadata. Spacing and heading weight establish these transitions without horizontal rules.
 
 ## Side panels
 
@@ -225,6 +225,39 @@ The only movement animation is the side-panel slide, 200ms `ease-out`. Interacti
 Icons appear only where a control carries no text, currently the theme toggle, the panel close, the copy button, the mark on an outbound link and the repository link in the header. The category marks of the glossary fall outside this rule, since they encode a value rather than name a control; they are specified under Shape that carries meaning. They are inline SVG at 16 pixels with a 1.5-pixel stroke in `currentColor` and no fills, carried in the markup rather than in a font or a sprite file. Navigation entries, headings and groups carry no icons, because there the label is the thing.
 
 A destination mark is the one case that sits beside a label. The GitHub and YouTube glyphs in the footer identify where a link goes, the way the carrier watercolour in the same row does, and they do not stand in for a missing label the way an icon button does. They are set at 14 pixels in `currentColor` and never in the brand colour, which would put two hues on the page that say nothing about epistemic function.
+
+## Start page
+
+The start page under `#overview` (A48 in [specification.md](specification.md)) answers one question, what a reader needs to reuse the practice, and it is built for scanning. It keeps the portal's design system and adds no hue.
+
+### Content and interaction hierarchy
+
+| Section | Question it answers | Form |
+|---|---|---|
+| Head | What is it, and where do I go first? | H1, a two-sentence lead at 1.1875rem, three actions as buttons, the first filled |
+| Four forms of work | How does the work run? | The diagram below |
+| Starting a first iteration | What do I do now? | Four numbered steps, each a name, one sentence and, for three of them, a copyable block |
+| Documents of the knowledge base | Which documents, and when? | One table, grouped by document type in group rows, with template, function, trigger and a Markdown download |
+| The Promptotyping skill | What does the skill do, and how do I get it? | Operation table and three link buttons |
+| Three kinds of checking | Who checks what? | Three columns, each with what it establishes and who carries it, then the acceptance sentence |
+| Example research artefacts | What has been built this way? | Table of the paper's three cases with live and code links |
+| Citation and licence | How do I cite and reuse it? | Copyable citation and one sentence on DOI, citation file and licences |
+
+Headings stay on two levels, H1 and H2. Step names are bold lines inside their list item, since a heading over one step would name a single element.
+
+### Diagram
+
+The four forms stand as four outlined boxes in one row with arrows in the gaps, each with number, name, what it does, when it is done and what it writes. A U-shaped return path under the third and fourth box, with its head pointing up into Distillation, carries the label of knowledge curation. A flat `--code-bg` band under the row names the knowledge base. The figure caption states that a first pass runs in order and that each iteration yields a promptotype. Lines and arrowheads use `--line-graphic`, which resolves to `--grey-3` and holds 3:1 against the ground in both themes. Below 700 pixels the boxes stack with downward arrows, and the return path becomes its label under Implementation, which names Distillation as its target in words.
+
+### Tokens and responsive rules
+
+Every value the start page introduces is a custom property on `:root`, so a shared corporate design across the DHCraft method sites is a swap of values: `--radius` (2px), `--line-graphic`, `--arrow-head` and `--arrow-half` (6px, 4px), `--step-marker` (1.75rem), and the type steps `--text-xs` (0.8125rem), `--text-sm` (0.875rem), `--text-md` (0.9375rem), `--text-lead` (1.1875rem) and `--text-h2-start` (1.5rem). Hairlines stay 1px and focus rings 2px. A shared token file prepared on 2026-11-10 in the brand-assets repository (folder `web/`) proposes the DHCraft palette with Sora and Instrument Sans for all three method sites; adopting it for the portal reverses the decisions in this document and waits for the operator.
+
+Below 860 pixels the tree stands after the start page, since the page links every page itself; `showPage` writes the page id to `body[data-page]`, and the static attribute serves the first paint. Below 600 pixels the template and example tables become rows of two lines, identifier and download link on the first, function and trigger beneath. Links in these tables are not underlined at rest and underline on hover and focus. Without JavaScript the empty tree column drops its rule and the theme toggle is hidden.
+
+### Evidence
+
+On 2026-11-10 Playwright screenshots of the assembled Pages tree were read at 1440 by 900, 820 by 1100, 390 by 844 and 360 by 740, light and dark, and without JavaScript. An independent agentic review with a fresh context checked the page against the user tasks and this document's sources. It found that six rows say always while the text named five functions, that the hash links lead nowhere without JavaScript, that the phone rows read as broken sentences, that the phone arrow pointed at Implementation, that link names repeated, that the action layer and the report do not go into `knowledge/`, that the prompt order differed from the tutorial, and that the step heading addressed the reader. All are corrected. It also questioned "most often into Distillation", which the paper states in section 2.2, so the phrase stays. Three 1600 by 900 screenshots for slides lie in `assets/img/screenshots/`. Human reading and the operator's acceptance are outstanding.
 
 ## Introduction page
 

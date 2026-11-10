@@ -42,6 +42,7 @@ KNOWLEDGE_DIR = ROOT / "knowledge"
 VAULT_SOURCES = ROOT / "vault" / "00_sources"
 JS_DIR = ROOT / "assets" / "js"
 NOT_FOUND = ROOT / "404.html"
+INDEX_HTML = ROOT / "index.html"
 # The canonical skill lives in this repository (A42, revised 2026-11-10) and
 # the Skills page loads it from the same origin.
 SKILL_DIR = ROOT / "skills" / "promptotyping"
@@ -349,6 +350,80 @@ def check_portal_paths() -> None:
         fail("portal", "Use Cases error boundary does not call the shared load-error path")
 
 
+def start_page_html() -> str:
+    """Return the static start page section of index.html, or an empty string."""
+    match = re.search(r'<section[^>]*id="overview"[^>]*>(.*?)</section>',
+                      read_text(INDEX_HTML), re.S)
+    return match.group(1) if match else ""
+
+
+def plain(fragment: str) -> str:
+    """Strip tags and decode the few entities the start page uses."""
+    text = re.sub(r"<[^>]+>", "", fragment)
+    return " ".join(text.replace("&amp;", "&").replace("&#39;", "'").split())
+
+
+def check_start_page(documents) -> None:
+    """The static start page states its sources' current wording.
+
+    The start page repeats four things that live elsewhere, so a change at the
+    source must reach it: one row per catalogue template with function and
+    condition, the skill's operation table, the two starting prompts of the
+    tutorial, and the three example cases with their addresses (A48).
+    """
+    page = start_page_html()
+    if not page:
+        fail("start", "index.html carries no static section#overview")
+        return
+
+    rows = dict(re.findall(r'<tr data-slug="([^"]+)">(.*?)</tr>', page, re.S))
+    for doc in documents:
+        slug = doc["slug"]
+        row = rows.pop(slug, None)
+        if row is None:
+            fail("start", "start page lists no row for template %s" % slug)
+            continue
+        cells = [plain(c) for c in re.findall(r"<td[^>]*>(.*?)</td>", row, re.S)]
+        if len(cells) < 2 or cells[0] != doc["funktion"] or cells[1] != doc["trigger"]:
+            fail("start", "start page row %s differs from the catalogue" % slug)
+        for href in ("#promptotyping-document-%s" % slug,
+                     "_content/promptotyping-document/%s.md" % slug):
+            if 'href="%s"' % href not in row:
+                fail("start", "start page row %s misses %s" % (slug, href))
+    for slug in rows:
+        fail("start", "start page lists %s, which the catalogue does not carry" % slug)
+
+    skill = read_text(SKILL_DIR / "SKILL.md")
+    expected = re.findall(r"^\| (Orient|Distil|Implement|Curate|Synthesise|Prune|Hand off) \| (.*?) \|",
+                          skill, re.M)
+    table = re.search(r'<table class="start-skill">(.*?)</table>', page, re.S)
+    shown = re.findall(r'<th scope="row">(.*?)</th><td>(.*?)</td>', table.group(1) if table else "")
+    if [(o, plain(w)) for o, w in shown] != [(o, w) for o, w in expected]:
+        fail("start", "the start page's operation table differs from SKILL.md")
+
+    tutorial = read_text(TUTORIAL)
+    for block in re.findall(r"<pre><code>(.*?)</code></pre>", page, re.S):
+        if block.startswith("git clone"):
+            continue
+        if block not in tutorial:
+            fail("start", "a start prompt is not verbatim in the tutorial: %s..." % block[:40])
+
+    cases = {c["id"]: c for c in load_json(CASES)["caseStudies"]}
+    for case_id, row in re.findall(r'<tr data-case="([^"]+)">(.*?)</tr>', page, re.S):
+        case = cases.get(case_id)
+        if case is None:
+            fail("start", "start page names unknown case %s" % case_id)
+            continue
+        for url in (case.get("demo_url"), case.get("repo_url"), "#case-" + case_id):
+            if url and 'href="%s"' % url not in row:
+                fail("start", "start page row %s misses %s" % (case_id, url))
+
+    for anchor in ("#application", "#use-cases", "#vault", "#tutorial",
+                   "#skills-promptotyping", "#vorlagen", "#verifikation"):
+        if 'href="%s"' % anchor not in page:
+            fail("start", "start page does not link %s" % anchor)
+
+
 def check_english_route_contract() -> None:
     """Overview and Application own English canonical routes and substrates.
 
@@ -402,7 +477,11 @@ def check_english_route_contract() -> None:
                 "%s does not carry the English machine address %s"
                 % (substrate, expected_machine),
             )
-        marker = 'A.renderMarkdownInto("%s", "_content/%s.md"' % (canonical, canonical)
+        # The start page is static markup in index.html, and app.js reads its
+        # Markdown twin for the frontmatter alone; every other page renders
+        # from its substrate.
+        marker = ('"_content/%s.md"' % canonical if canonical == "overview"
+                  else 'A.renderMarkdownInto("%s", "_content/%s.md"' % (canonical, canonical))
         if marker not in app:
             fail("english-routes", "app.js does not render %s from %s" %
                  (canonical, expected_machine))
@@ -1332,6 +1411,7 @@ def main() -> int:
         check_skill_package,
         check_portal_paths,
         check_english_route_contract,
+        lambda: check_start_page(documents),
     ]
     if "--check-urls" in sys.argv:
         groups.append(lambda: check_urls(cases))

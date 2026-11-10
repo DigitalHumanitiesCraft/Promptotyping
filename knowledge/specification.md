@@ -7,7 +7,7 @@ status: complete
 language: en
 version: "1.0"
 created: 2026-05-09
-updated: 2026-11-05
+updated: 2026-11-10
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Opus 4.8, Claude Opus 5.5)
 method:
@@ -123,6 +123,8 @@ A module in the Vorlagen section with a textarea for the YAML frontmatter of a f
 The site's own `knowledge/` documents carry the `template:` field and each links to its own template URL on the live site, the subpath form in `url:` and the hash form in `alias:`, both canonical (A4). The site demonstrates the practice on itself.
 
 ### A13 — Specification front page
+Superseded in its page content on 2026-11-10 by A48; the address `#overview`, the legacy aliases and the Markdown substrate stay.
+
 Extended on 2026-07-29 by A32. The five numbered parts are sections of one specification page and remain continuously visible in its navigation subtree.
 
 The start page is the specification front, addressed `#overview`. It states what Promptotyping is and routes readers by their goal. Understanding leads to Application, evaluation leads to the use cases and the Vault, and application leads to the tutorial, canonical skill, and templates. A compact operational account and keyed status block complete the page. The five normative parts appear once in the permanent navigation subtree and are not repeated in the page body. Three passages moved away on 2026-07-26, since carrying them twice made the landing page repeat the page behind it. The four forms of work went to part 1, the scaling statement to part 1 under "Two modes", and the document-type classification and the artefact default fell without replacement in favour of parts 3 and 4. Substrate `_content/overview.md`. The overview and its first normative destination use English canonical addresses; `#ueberblick`, `/ueberblick`, `#anwendung`, and `/anwendung` remain route aliases.
@@ -274,7 +276,7 @@ Acceptance criterion. A reader can decide whether a bounded Promptotyping iterat
 
 Overview and Application own the English canonical ids, subpaths, and Markdown substrates `overview`, `/overview`, `_content/overview.md`, `application`, `/application`, and `_content/application.md`. The former `ueberblick` and `anwendung` hash and subpath forms resolve through `LEGACY_ROUTE_ALIASES` and are normalised to the English hash without creating another history entry.
 
-The Overview presents the practice definition, the three goal routes, a compact operational account, and its status block. The five-part index that duplicated the permanent navigation subtree is absent. At a 1440 by 900 CSS-pixel viewport, the bottom of the status block is visible without scrolling. The Specification page carries its title and the five numbered sections; the page tagline, standing line, part taglines, and decorative horizontal rules are absent. Version, date, and source metadata may remain on each part.
+Amended on 2026-11-10 by A48, which replaces the content of the Overview; the route contract of this requirement stands. The Overview presented the practice definition, the three goal routes, a compact operational account, and its status block. The five-part index that duplicated the permanent navigation subtree is absent. At a 1440 by 900 CSS-pixel viewport, the bottom of the status block is visible without scrolling. The Specification page carries its title and the five numbered sections; the page tagline, standing line, part taglines, and decorative horizontal rules are absent. Version, date, and source metadata may remain on each part.
 
 Acceptance criterion. Canonical and legacy Overview and Application routes reach the same content, the address bar shows the English hash after legacy resolution, browser Back returns to the previous page, keyboard navigation reaches the five parts, and desktop and narrow layouts show no horizontal document scroll or console error.
 
@@ -286,6 +288,15 @@ The page answers three questions in three parts. The hero states what Promptotyp
 The example is invented. A family correspondence with partly uncertain dates becomes a timeline. The check finds that letters dated only to a year sit on 1 January, the finding is written into specification, design and journal before the code changes, and the next version draws such dates as spans. It shows the write-back that distinguishes the practice from code generation, and its user story is the one the tutorial uses.
 
 Acceptance criterion. From the page alone, a reader without prior knowledge can say what the practice is, retell the example round including the write-back, and name the first step on their own data, in both languages, on a 1440 by 900 desktop and a 390-pixel phone, with no horizontal scroll and no console error.
+
+### A48 — The start page is the level from which the practice is reused
+Operator commission of 2026-11-10: one entry level from which everything needed to reuse the practice is reached in one or two steps, compact, precise and matter-of-fact, with little running text. The page under `#overview` carries, in this order, the definition with three actions (first iteration, example round, specification), a diagram of the four forms of work with what each does, when it is done and what it writes, the return path of knowledge curation and the knowledge base under all four, four starting steps with the skill installation and the first two tutorial prompts to copy, the template catalogue grouped by document type with function, trigger and a Markdown download per template, the seven operations of the skill with download and package links, the three kinds of checking with who carries each and the acceptance sentence, the three cases of the paper with live and code links, and citation and licence.
+
+The page is static markup in `index.html`, so it reads without JavaScript and its downloads work there too; a `noscript` note names the Markdown files of the pages it links. `registry.js` adopts the existing section as a host, and `app.js` reads only the frontmatter of `_content/overview.md`, which stays the machine-readable twin and the source of the version in the footer. The status block of A46 is retired; version and date stand in the footer, citation and licence in the page's last section. Below 860 pixels the tree stands after the start page, because the page links every page of the tree itself. Headings stay on two levels.
+
+The template rows, the operation table and the two prompts repeat their sources verbatim, and the case rows repeat the gallery data, so `tools/check_consistency.py` holds them against `data/promptotyping-documents.json`, `skills/promptotyping/SKILL.md`, `_content/tutorial.md` and `data/case-studies.json` (V24 in [verification.md](verification.md)).
+
+Acceptance criterion. From the start page alone, a reader reaches the four forms of work, a first iteration, every template, the skill, the checking forms, three examples and the citation in one or two steps, at 1440 by 900 and at 360 pixels, light and dark, with JavaScript and without, without horizontal document scroll or console error. Scholarly adequacy and the operator's acceptance stay open.
 
 ### A26 — The site is English
 Every string the site shows is English, in British spelling (operator decision 2026-07-25, carried out 2026-07-26). That covers the page registry labels, the status line, every control, the nine content pages directly under `_content/`, and the text fields of `data/glossar.json`, `data/case-studies.json` and `data/promptotyping-documents.json`.

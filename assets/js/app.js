@@ -34,6 +34,7 @@
     A.setupSidePanel();
     A.setupThemeToggle();
     A.setupGlossarInteraction(document.getElementById("content"));
+    A.addCodeCopyButtons(document.getElementById("overview") || document.createElement("div"));
 
     // GitHub Pages has no server-side routing, so 404.html catches every
     // subpath, normalises it and hands it over as ?p=. Translating it here,
@@ -62,7 +63,11 @@
     // initial hash against the complete DOM.
     var ready = Promise.all([
       A.renderGlossar(),
-      A.renderMarkdownInto("overview", "_content/overview.md"),
+      // The start page is static markup in index.html. Its Markdown twin stays
+      // the machine address and carries the version the footer states.
+      A.fetchMarkdown("_content/overview.md").then(function (text) {
+        A.pageFrontmatter.overview = A.readFrontmatter(text);
+      }, function () {}),
       A.renderMarkdownInto("application", "_content/application.md"),
       A.renderMarkdownInto("workflow", "_content/workflow.md", function (el) {
         // Part 1 introduces the practice and the four forms of work; it sits with the

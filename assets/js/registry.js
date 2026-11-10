@@ -178,6 +178,11 @@
       return;
     }
     topLevelPages().forEach(function (p) {
+      // The start page stands as static markup in index.html, so it reads
+      // without JavaScript. It is adopted as a host rather than mounted twice.
+      if (document.getElementById(p.id)) {
+        return;
+      }
       var el = document.createElement("section");
       el.className = "doc-page placeholder-section" +
         (REFERENCE_HOSTS.indexOf(p.id) !== -1 ? " is-reference" : "");
@@ -513,6 +518,9 @@
         el.classList.toggle("is-active", el.id === page);
       });
       activePage = page;
+      // The narrow layout moves the tree below the start page, which links
+      // every page itself; the stylesheet reads this attribute for that.
+      document.body.setAttribute("data-page", page);
       markNavActive(page);
       document.title = pageTitle(page);
       // Content that must not load before its page is seen listens here.

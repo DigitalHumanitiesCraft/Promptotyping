@@ -110,6 +110,19 @@
   --space-12: 3rem;   /* 48px */
   --space-16: 4rem;   /* 64px */
 
+  /* Shape, lines and type steps of the start page. Held here so that a shared
+     corporate design across the DHCraft method sites is a swap of values. */
+  --radius: 2px;
+  --line-graphic: var(--grey-3);
+  --arrow-head: 6px;
+  --arrow-half: 4px;
+  --step-marker: 1.75rem;
+  --text-xs: 0.8125rem;
+  --text-sm: 0.875rem;
+  --text-md: 0.9375rem;
+  --text-lead: 1.1875rem;
+  --text-h2-start: 1.5rem;
+
   /* Layout */
   --header-height: 3.25rem;
   --nav-width: 250px;
@@ -420,6 +433,16 @@ a:hover {
   margin-top: var(--space-6);
 }
 
+/* Without JavaScript the tree is never built, so its empty column keeps no rule,
+   and the theme toggle, which needs the script, is not shown. */
+:root:not(.js) #theme-toggle {
+  display: none;
+}
+
+.docs-nav:empty {
+  border-right: 0;
+}
+
 /* ---- Sub-navigation in the tree ----
    The parts of the specification stand permanently under their entry. Nothing opens or closes; the scrollspy moves
    the current marker and changes nothing else. */
@@ -680,34 +703,343 @@ a:hover {
   font-size: 0.75rem;
 }
 
-/* ---- Start page status block ---- */
+/* ---- Start page ----
+   Static markup in index.html: the one level from which everything needed to
+   reuse the practice is reached. Spacing and weight carry the order; lines are
+   kept for the diagram, the table rows and the controls. */
 
-.overview-status {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-2) var(--space-8);
-  margin: 0;
-  font-size: 0.8125rem;
+.start-lead {
+  font-size: var(--text-lead);
+  line-height: 1.5;
+  max-width: 40em;
 }
 
-.overview-status > div {
-  display: grid;
-  grid-template-columns: 9rem minmax(0, 1fr);
-  gap: var(--space-2);
-  min-width: 0;
+.start-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
+  margin: var(--space-6) 0 0;
 }
 
-.overview-status dt {
+.start-button {
+  display: inline-block;
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--text);
+  border-radius: var(--radius);
+  font-size: var(--text-md);
+  font-weight: 500;
+  line-height: 1.4;
+  text-decoration: none;
+  color: var(--text);
+  transition: background 150ms ease-out, color 150ms ease-out;
+}
+
+.start-button:hover {
+  background: var(--code-bg);
+}
+
+.start-button.is-primary {
+  background: var(--text);
+  color: var(--bg);
+}
+
+.start-button.is-primary:hover {
+  background: var(--grey-1);
+}
+
+.start-button:focus-visible,
+.start a:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
+.start > h2 {
+  font-size: var(--text-h2-start);
+  margin-top: var(--space-16);
+}
+
+.start .start-head + h2 {
+  margin-top: var(--space-12);
+}
+
+.start-note {
+  font-size: var(--text-sm);
   color: var(--grey-2);
 }
 
-.overview-status dd {
-  min-width: 0;
+/* The cycle diagram. Four forms of work in a row with arrows between them, a
+   return path from Implementation into Distillation under the row, and the
+   knowledge base as the ground they all read and revise. Lines and arrows use
+   --grey-3, which keeps the 3:1 contrast of graphical objects in both themes. */
+
+.cycle {
+  margin: var(--space-6) 0 0;
+}
+
+.content .cycle-forms {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-6);
+}
+
+.content .cycle-form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin: 0;
+  padding: var(--space-4);
+  border: 1px solid var(--line-graphic);
+  border-radius: var(--radius);
+  line-height: 1.4;
+}
+
+/* Arrow to the next form: a shaft in the gap and a head at its end. */
+.cycle-form:not(:last-child)::after,
+.cycle-form:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+}
+
+.cycle-form:not(:last-child)::after {
+  left: 100%;
+  width: calc(var(--space-6) - var(--arrow-head) + 1px);
+  height: 1px;
+  background: var(--line-graphic);
+}
+
+.cycle-form:not(:last-child)::before {
+  left: calc(100% + var(--space-6) - var(--arrow-head));
+  margin-top: calc(-1 * var(--arrow-half));
+  border: var(--arrow-half) solid transparent;
+  border-left: var(--arrow-head) solid var(--line-graphic);
+  border-right: 0;
+}
+
+.cycle-number {
+  font-size: var(--text-xs);
+  color: var(--grey-2);
+  font-variant-numeric: tabular-nums;
+}
+
+.cycle-name {
+  font-size: 1.0625rem;
+  font-weight: 600;
+}
+
+.cycle-what {
+  font-size: var(--text-md);
+}
+
+.cycle-done,
+.cycle-files {
+  font-size: var(--text-xs);
+  color: var(--grey-2);
+}
+
+.cycle-files {
+  margin-top: auto;
+  padding-top: var(--space-2);
+}
+
+.content .cycle-files code,
+.content .cycle-base code {
+  font-size: var(--text-xs);
+  background: none;
+  padding: 0;
+}
+
+/* The return path spans the third and fourth column. Its verticals stand at the
+   centres of the two boxes, a quarter of the span in from each side less a
+   quarter of the gap, and the head points up into Distillation. */
+.content .cycle-loop {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  column-gap: var(--space-6);
   margin: 0;
 }
 
-#overview > h2 {
-  margin-top: var(--space-8);
+.cycle-loop-path,
+.cycle-loop-label {
+  grid-column: 3 / 5;
+}
+
+.cycle-loop-path {
+  position: relative;
+  height: var(--space-6);
+  margin: 0 calc(25% - var(--space-6) / 4);
+  border: 1px solid var(--line-graphic);
+  border-top: 0;
+}
+
+.cycle-loop-path::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(-1 * var(--arrow-half) - 0.5px);
+  border: var(--arrow-half) solid transparent;
+  border-bottom: var(--arrow-head) solid var(--line-graphic);
+  border-top: 0;
+}
+
+.cycle-loop-label {
+  padding-top: var(--space-2);
+  font-size: var(--text-xs);
+  line-height: 1.4;
+  color: var(--grey-2);
+  text-align: center;
+}
+
+.content .cycle-base {
+  margin: var(--space-4) 0 0;
+  padding: var(--space-2) var(--space-4);
+  background: var(--code-bg);
+  border-radius: var(--radius);
+  font-size: var(--text-sm);
+  text-align: center;
+}
+
+.cycle figcaption {
+  margin-top: var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--grey-2);
+  max-width: 44em;
+}
+
+/* Start steps: numbered, each with its name, a sentence and a copyable block. */
+.content .start-steps {
+  list-style: none;
+  counter-reset: start-step;
+  padding-left: 0;
+}
+
+.content .start-steps > li {
+  counter-increment: start-step;
+  position: relative;
+  margin: 0 0 var(--space-6);
+  padding-left: calc(var(--step-marker) + var(--space-4));
+}
+
+.start-steps > li::before {
+  content: counter(start-step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: var(--step-marker);
+  height: var(--step-marker);
+  border: 1px solid var(--line-graphic);
+  border-radius: 50%;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  line-height: calc(var(--step-marker) - 2px);
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.start-step-name {
+  display: block;
+  font-weight: 600;
+  margin-bottom: var(--space-1);
+}
+
+.start-steps p {
+  margin-bottom: var(--space-2);
+}
+
+.start pre {
+  position: relative;
+}
+
+.content .start pre code {
+  font-size: var(--text-xs);
+}
+
+/* A copy button sits on its block; keep the first line clear of it. */
+.start pre:has(.code-copy) {
+  padding-top: calc(var(--space-8) + var(--space-2));
+}
+
+.start-citation code {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* Directory tables: identifier first, links quiet until hovered or focused. */
+.content .start-documents,
+.content .start-skill,
+.content .start-examples {
+  font-size: var(--text-sm);
+}
+
+.start-documents th[scope="row"],
+.start-skill th[scope="row"],
+.start-examples th[scope="row"] {
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.start-documents tbody a,
+.start-examples tbody a {
+  text-decoration: none;
+}
+
+.start-documents tbody a:hover,
+.start-documents tbody a:focus-visible,
+.start-examples tbody a:hover,
+.start-examples tbody a:focus-visible {
+  text-decoration: underline;
+}
+
+.start-documents td:last-child,
+.start-examples td:last-child {
+  white-space: nowrap;
+  text-align: right;
+}
+
+.start-documents td:last-child a,
+.start-examples td:last-child a {
+  color: var(--grey-2);
+}
+
+.start-examples td:last-child a + a {
+  margin-left: var(--space-4);
+}
+
+.content .start-group th {
+  padding-top: var(--space-6);
+  font-weight: 600;
+}
+
+.start-skill th[scope="row"] {
+  width: 9rem;
+}
+
+/* Three kinds of checking side by side; who carries each stands under it. */
+.start-checks {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-6);
+  margin: var(--space-6) 0;
+}
+
+.start-checks dt {
+  font-weight: 600;
+  margin-bottom: var(--space-1);
+}
+
+.start-checks dd {
+  margin: 0 0 var(--space-2);
+  font-size: var(--text-md);
+  line-height: 1.5;
+}
+
+.start-checks .start-checks-who {
+  font-size: var(--text-xs);
+  color: var(--grey-2);
 }
 
 /* ---- Side panel ----
@@ -1766,6 +2098,155 @@ a:hover {
     border-radius: 2px;
     margin: var(--space-2) auto var(--space-1);
     flex-shrink: 0;
+  }
+}
+
+/* On the start page the tree moves below the content, since the page itself
+   links every page of the tree and a phone would otherwise scroll past the
+   whole tree before the first line. The attribute is set by showPage and
+   stands statically on body for the first paint. */
+@media (max-width: 860px) {
+  body[data-page="overview"] .docs-nav {
+    order: 2;
+    padding-top: var(--space-6);
+    border-bottom: 0;
+    border-top: 1px solid var(--border);
+  }
+
+  body[data-page="overview"] .content {
+    order: 1;
+    padding-top: calc(var(--header-height) + var(--space-8));
+  }
+
+  .start > h2 {
+    margin-top: var(--space-12);
+  }
+}
+
+/* The four forms stack. The drawn return path needs the row, so below this
+   width the return is stated as a line under Implementation instead. */
+@media (max-width: 700px) {
+  .content .cycle-forms {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-6);
+  }
+
+  .cycle-form:not(:last-child)::after {
+    top: 100%;
+    left: 50%;
+    width: 1px;
+    height: calc(var(--space-6) - var(--arrow-head) + 1px);
+  }
+
+  .cycle-form:not(:last-child)::before {
+    top: calc(100% + var(--space-6) - var(--arrow-head));
+    left: 50%;
+    margin-top: 0;
+    margin-left: calc(-1 * var(--arrow-half));
+    border: var(--arrow-half) solid transparent;
+    border-top: var(--arrow-head) solid var(--line-graphic);
+    border-bottom: 0;
+  }
+
+  .content .cycle-loop {
+    display: block;
+  }
+
+  .cycle-loop-path {
+    display: none;
+  }
+
+  .cycle-loop-label {
+    display: block;
+    text-align: left;
+  }
+
+  .start-checks {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-4);
+  }
+
+  .start-lead {
+    font-size: var(--text-md);
+  }
+}
+
+/* Directory rows on a phone: identifier and file link on the first line, the
+   function and condition beneath, so nothing hides in a sideways scroll. */
+@media (max-width: 600px) {
+  .content table.start-documents,
+  .content table.start-examples {
+    display: block;
+    overflow: visible;
+  }
+
+  .start-documents thead,
+  .start-examples thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  .start-documents tbody,
+  .start-examples tbody {
+    display: block;
+  }
+
+  .start-documents tbody tr:not(.start-group),
+  .start-examples tbody tr {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: var(--space-4);
+    padding: var(--space-2) 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .start-group {
+    display: block;
+  }
+
+  .content .start-documents tbody th,
+  .content .start-documents tbody td,
+  .content .start-examples tbody th,
+  .content .start-examples tbody td {
+    display: block;
+    padding: 0;
+    border: 0;
+  }
+
+  .start-documents td:nth-child(2),
+  .start-documents td:nth-child(3),
+  .start-examples td:nth-child(2),
+  .start-examples td:nth-child(3) {
+    grid-column: 1 / -1;
+  }
+
+  .start-documents td:last-child,
+  .start-examples td:last-child {
+    grid-row: 1;
+    grid-column: 2;
+  }
+
+  .start-documents td:nth-child(3) {
+    color: var(--grey-2);
+  }
+
+  .start-documents td:nth-child(3)::before {
+    content: "Trigger\00a0\00a0";
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  .start-examples td:nth-child(3) {
+    color: var(--grey-2);
+  }
+
+  .content .start-group th {
+    display: block;
+    padding: var(--space-6) 0 var(--space-1);
+    border-bottom: 1px solid var(--border);
   }
 }
 

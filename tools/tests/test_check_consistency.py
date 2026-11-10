@@ -383,6 +383,46 @@ class EnglishRouteContractTest(CheckCase):
         self.assertIn("machine address", self.only_failure())
 
 
+class StartPageTest(CheckCase):
+    """The static start page keeps its sources' wording (A48)."""
+
+    def setUp(self) -> None:
+        super().setUp()
+        target = self.tempdir() / "index.html"
+        self.write(target, cc.INDEX_HTML.read_text(encoding="utf-8"))
+        self.patch("INDEX_HTML", target)
+        self.documents = cc.load_catalogue()
+
+    def edit(self, old: str, new: str) -> None:
+        text = cc.INDEX_HTML.read_text(encoding="utf-8")
+        self.assertIn(old, text)
+        cc.INDEX_HTML.write_text(text.replace(old, new, 1), encoding="utf-8")
+
+    def test_the_current_start_page_passes(self) -> None:
+        cc.check_start_page(self.documents)
+        self.assertEqual(cc.failures, [])
+
+    def test_a_drifted_template_condition_fails(self) -> None:
+        self.edit("<td>project has a UI</td>", "<td>project has an interface</td>")
+        cc.check_start_page(self.documents)
+        self.assertIn("row design differs", self.only_failure())
+
+    def test_a_missing_template_row_fails(self) -> None:
+        self.edit('<tr data-slug="plan">', '<tr data-retired="plan">')
+        cc.check_start_page(self.documents)
+        self.assertIn("no row for template plan", self.only_failure())
+
+    def test_a_drifted_skill_operation_fails(self) -> None:
+        self.edit("<td>a bounded task is ready", "<td>a task is ready")
+        cc.check_start_page(self.documents)
+        self.assertIn("operation table", self.only_failure())
+
+    def test_a_prompt_that_left_the_tutorial_fails(self) -> None:
+        self.edit("Commit the result.</code>", "Commit.</code>")
+        cc.check_start_page(self.documents)
+        self.assertIn("not verbatim in the tutorial", self.only_failure())
+
+
 class GalleryTest(CheckCase):
     """V4, the two closed vocabularies whose violation is silent in the browser."""
 
