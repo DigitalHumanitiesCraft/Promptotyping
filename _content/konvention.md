@@ -5,7 +5,7 @@ version: "0.4"
 status: complete
 language: en
 source: Konvention Promptotyping Documents
-updated: 2026-11-10
+updated: 2026-11-11
 mirrored: 2026-08-22
 machine-url: https://dhcraft.org/Promptotyping/_content/konvention.md
 ---
@@ -25,6 +25,8 @@ The convention applies to durable project knowledge under `knowledge/` and to th
 File names carry function before a document is opened. Functional names and subject prefixes are English. The standard form is lowercase kebab-case; `INDEX.md` and `CLAUDE.md` are established exceptions with specific routing roles.
 
 Single carriers use canonical names such as `project.md`, `data.md`, `specification.md`, `architecture.md`, `design.md`, `testing.md`, `verification.md`, `journal.md`, `handoff.md`, `plan.md`, and `governance.md`. Specialisations follow `<subject>-<function>.md`, for example `research-methodology.md`, `character-error-rate-methodology.md`, `data-schema.md`, `output-schema.md`, and `tei-mapping.md`. Terms are written out. Official or constitutive abbreviations are permitted when `INDEX.md` defines them.
+
+A name states the routing question of its document and nothing else. Fixed names by function let an agent or a reader pick the right document from a file listing or a search result in any repository before opening it, and the subject stands before the function so that search results group by both. A project-specific document without a canonical name follows the same pattern, naming its subject and then its function. What other places carry stays out of the name. The document type follows from the function through the routing heuristic below, the project from the repository, status, version and author from the frontmatter and Git, and a date belongs only to reports and snapshots. A name that carries a status or a sequence number, such as `draft-spec.md`, `02-data.md` or `notes-new.md`, ages with the work and misroutes the next session. A rename changes a route, so it is registered in `INDEX.md`, and every link to the old name is updated in the same commit.
 
 Reports and exceptional handoff snapshots identify scope and date: `<scope>-report-YYYY-MM-DD.md` and `<scope>-handoff-YYYY-MM-DD.md`. Every project also carries the live Process Inbox `knowledge/handoff.md`, including when it is empty. Dated snapshots under `handoffs/` supplement this Inbox and never replace it. A document is split when its parts answer independent routing questions or develop different update cycles. The split produces named functions or specialisations and is registered in `INDEX.md`.
 
