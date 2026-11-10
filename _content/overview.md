@@ -3,7 +3,7 @@ title: Overview
 slug: overview
 status: complete
 language: en
-version: "0.11"
+version: "1.0"
 updated: 2026-11-10
 mirrored: 2026-06-10
 machine-url: https://dhcraft.org/Promptotyping/_content/overview.md
@@ -25,11 +25,12 @@ Promptotyping derives implementation from inspectable project knowledge that per
 ## Specification status
 
 <dl class="overview-status">
-  <div><dt>Version</dt><dd>0.11</dd></div>
-  <div><dt>Status</dt><dd>Review draft</dd></div>
-  <div><dt>Last changed</dt><dd>14 October 2026</dd></div>
+  <div><dt>Version</dt><dd>1.0</dd></div>
+  <div><dt>Status</dt><dd>Release candidate</dd></div>
+  <div><dt>Last changed</dt><dd>10 November 2026</dd></div>
   <div><dt>Canonical address</dt><dd><code>https://dhcraft.org/Promptotyping/</code></dd></div>
   <div><dt>Machine address</dt><dd><code>_content/overview.md</code></dd></div>
   <div><dt>Evidence</dt><dd><a href="#use-cases">Documented applications</a></dd></div>
   <div><dt>Licence</dt><dd>Content CC BY 4.0, code MIT</dd></div>
+  <div><dt>Citation</dt><dd><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/CITATION.cff">CITATION.cff</a>, DOI <a href="https://doi.org/10.5281/zenodo.14160875">10.5281/zenodo.14160875</a></dd></div>
 </dl>

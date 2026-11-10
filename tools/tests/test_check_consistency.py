@@ -525,6 +525,28 @@ class RequirementNumberTest(CheckCase):
         self.assertIn("twice", self.only_failure())
 
 
+class ProseSiteUrlTest(CheckCase):
+    """V8, a site address in the README is either a page of its own or an anchor."""
+
+    def urls(self, text: str, page: bool) -> list:
+        root = self.tempdir()
+        if page:
+            self.write(root / "intro" / "index.html", "<!doctype html>\n")
+        readme = self.write(root / "README.md", text)
+        claude = self.write(root / "CLAUDE.md", "")
+        self.patch("ROOT", root)
+        self.patch("README", readme)
+        self.patch("CLAUDE_MD", claude)
+        return list(cc.prose_site_urls())
+
+    def test_a_folder_with_its_own_page_is_not_an_anchor(self) -> None:
+        self.assertEqual(self.urls("https://dhcraft.org/Promptotyping/intro/\n", True), [])
+
+    def test_a_missing_folder_stays_an_address_to_resolve(self) -> None:
+        found = self.urls("https://dhcraft.org/Promptotyping/intro/\n", False)
+        self.assertEqual(found, [("README.md", "dhcraft.org/Promptotyping/intro/")])
+
+
 class RelativeLinkTest(CheckCase):
     """V15, relative Markdown targets across the checked document roots."""
 

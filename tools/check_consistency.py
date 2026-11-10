@@ -937,6 +937,11 @@ def prose_site_urls():
             token = re.sub(r"^https?://", "", token).rstrip(".,;:")
             if "{" in token or "*" in token or token.rstrip("/") == SITE_BASE.rstrip("/"):
                 continue
+            # A path that is a published file or a folder with its own page,
+            # such as intro/, is served as it stands and routes through no anchor.
+            rel = token.split("dhcraft.org/Promptotyping/", 1)[-1].split("#", 1)[0]
+            if rel and ((ROOT / rel).is_file() or (ROOT / rel / "index.html").is_file()):
+                continue
             yield name, token
 
 

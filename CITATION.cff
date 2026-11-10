@@ -1,6 +1,15 @@
 cff-version: 1.2.0
-message: "If you use the Promptotyping working practice, please cite it as below."
+message: "If you use the Promptotyping working practice, its templates or its skill, please cite it as below."
 title: "Promptotyping"
+version: "1.0.0"
+abstract: >-
+  Promptotyping is a working practice for translating research data and their
+  contexts into research artefacts that fit the researchers' questions and ways
+  of working, through Knowledge Engineering, Context Engineering and Agentic
+  Engineering. This repository holds the practice specification, the templates
+  for the project knowledge base, documented use cases, a tutorial, an
+  introduction page and the Promptotyping skill for AI coding agents.
+type: software
 authors:
   - family-names: Pollin
     given-names: Christopher
@@ -20,11 +29,15 @@ identifiers:
   - type: url
     value: "https://unipub.uni-graz.at/obvugrhs/12127700"
     description: "Dissertation in which Promptotyping originates (Pollin 2025, University of Graz)"
-license: MIT
+license:
+  - CC-BY-4.0
+  - MIT
 url: "https://dhcraft.org/Promptotyping/"
 repository-code: "https://github.com/DigitalHumanitiesCraft/Promptotyping"
 keywords:
   - promptotyping
+  - knowledge engineering
   - context engineering
+  - agentic engineering
   - digital humanities
-  - methodology
+  - research software
