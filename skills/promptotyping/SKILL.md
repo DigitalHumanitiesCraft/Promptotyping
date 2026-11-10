@@ -63,7 +63,7 @@ Preparation makes the material and the purpose explicit.
 
 Exploration establishes what the data can and cannot support.
 
-1. Examine the files in `data/` with small, documented scripts under `scripts/` rather than reading them whole.
+1. Read `knowledge/project.md` first, so that the examination follows the purpose and the user stories. Examine the files in `data/` with small, documented scripts under `scripts/` rather than reading them whole.
 2. Let the scripts write the volatile figures, such as counts, value ranges, cardinalities and distributions, to `generated/data-profile.md`.
 3. Write `knowledge/data.md` on provenance, structure, meaning, relations, gaps and anomalies. It points to the profile instead of repeating its numbers, names the file and the rows or elements behind every non-obvious statement, and marks every interpretation as an inference.
 4. Name the three statements in `data.md` you are least sure of, so that the researchers can check them against the data, and commit the scripts and documents.
@@ -85,7 +85,7 @@ Procedure.
 3. Keep each document bounded by one routing question. Link related documents instead of repeating their content.
 4. Mark what the data show, what the agent infers, and what remains open. Name the file and rows or elements behind every non-obvious statement.
 5. Create `knowledge/handoff.md` with `status: active` and, where no open input exists, the empty state `Keine offenen Handoff-Punkte.`, a fixed string of the convention that stays the same in every language. Create `knowledge/journal.md` with one entry for this transition.
-6. Derive or revise the action layer after the knowledge documents, so that it routes into them. It tells every session to read `knowledge/INDEX.md` and `knowledge/handoff.md` first and fixes the technical baseline the user names, for instance a static web page in HTML, CSS and plain JavaScript without a build step that loads its data from files.
+6. Derive or revise the action layer after the knowledge documents, so that it routes into them, and name it for the agent in use, for instance `CLAUDE.md` for Claude Code and `AGENTS.md` for Codex and other agents that read that file. It tells every session to read `knowledge/INDEX.md` and `knowledge/handoff.md` first and fixes the technical baseline the user names, for instance a static web page in HTML, CSS and plain JavaScript without a build step that loads its data from files.
 7. Commit the result.
 
 After. The working basis is a bounded set of documents, each answering one question, and the source material stays where it was.
@@ -172,7 +172,7 @@ Inputs. The candidate items, the current repository state, and a clean Git basel
 Procedure.
 
 1. Start from a clean Git baseline, meaning all current work is committed, so that every removed statement remains recoverable.
-2. Give each candidate a disposition: keep, integrate into its canonical document, reject with a reason, or remove and leave only to Git. Whatever no user story carries is a candidate for removal, however reasonable it looks. Propose the dispositions, change no file until the user has approved them, and apply only the approved ones.
+2. Give each candidate a disposition: keep, integrate into its canonical document, reject with a reason, or remove and leave only to Git. Whatever no user story carries is a candidate for removal, however reasonable it looks. Propose the dispositions, change no file until the user has approved them, apply only the approved ones, and record the reduction with its reasons in the journal.
 3. Before removal, find every link, anchor and restatement that depends on the item and repoint or remove it.
 4. For the journal, protect entries cited elsewhere, decisions by the researchers, corrections, rejected alternatives with their reasons and commit hashes. Fold related entries into one entry per milestone that keeps its date range. Copy commit hashes verbatim, and never write a hash that no entry or `git log` shows. Use no fixed threshold, keep no archive document, and write one compaction entry that names the commit from which the compaction started.
 5. Delete a whole document only with the user's authorisation, and name in the commit where its content now stands.

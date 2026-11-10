@@ -136,6 +136,35 @@ class IntroPageTest(unittest.TestCase):
                 self.assertEqual(len(bottoms), 1, f"panes move between steps: {sorted(bottoms)}")
                 self.assertLessEqual(bottoms.pop(), 900)
 
+    def test_try_steps_give_one_short_sentence_and_its_result(self):
+        # A51 and design.md: with the skill installed each try-it step is one sentence in the
+        # reader's own words, at most two lines at 1280 pixels, followed by what results, and
+        # no step carries a long prompt or a separate self-check line.
+        for lang in ("en", "de"):
+            with self.subTest(lang=lang):
+                page = self.open(lang=lang, width=1280, height=900)
+                page.evaluate("document.fonts.ready")
+                steps = page.locator(".steps > li")
+                self.assertEqual(steps.count(), 7)
+                for index in range(7):
+                    step = steps.nth(index)
+                    self.assertEqual(step.locator(".prompt").count(), 1)
+                    self.assertEqual(step.locator(".result").count(), 1)
+                    self.assertEqual(step.locator(".check").count(), 0)
+                    lines = step.locator(".prompt code").evaluate(
+                        "code => Math.round(code.getBoundingClientRect().height / parseFloat(getComputedStyle(code).lineHeight))")
+                    self.assertLessEqual(lines, 2, f"step {index + 1} sentence runs to {lines} lines")
+
+    def test_own_folder_gains_profile_and_index(self):
+        # The skill writes the counts to generated/data-profile.md and always creates INDEX.md,
+        # so the reader's own folder shows both after Explore and Distil.
+        page = self.open()
+        new = lambda: set(page.locator("#try-folder .file.is-new code").all_inner_texts())
+        page.locator(".steps > li").nth(2).get_by_role("button").focus()
+        self.assertIn("generated/data-profile.md", new())
+        page.locator(".steps > li").nth(3).get_by_role("button").focus()
+        self.assertIn("knowledge/INDEX.md", new())
+
     def test_narrow_screen_keeps_navigation_and_page_inside(self):
         page = self.open(lang="de", width=320, height=700)
         self.assertFalse(page.evaluate("[...document.querySelectorAll('.site-nav a')].some(a => a.getBoundingClientRect().right > innerWidth)"))

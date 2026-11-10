@@ -6,6 +6,9 @@
   "use strict";
 
   const { FILES, TEXT } = window.PromptotypingIntro;
+  // The played example leaves out the generated profile and the index, so that it still fits
+  // the first screen at 1440 by 900 (design.md); the reader's own folder shows every file.
+  const EXAMPLE_FILES = FILES.filter((file) => file !== "generated/data-profile.md" && file !== "knowledge/INDEX.md");
   const STORE = "promptotyping-intro-lang";
   const NAV = ["top", "try", "notes"];
   const SVG = "http://www.w3.org/2000/svg";
@@ -22,12 +25,13 @@
     { actor: "agent", changed: ["index.html"], read: ["CLAUDE.md", "knowledge/specification.md", "knowledge/design.md"], proto: "v2" },
   ];
 
-  // What the reader's own folder holds after each step of the try-it section.
+  // What the reader's own folder holds after each step of the try-it section. Each step shows
+  // one sentence the reader says to the agent with the skill installed, and what results (A51).
   const TRY_STEPS = [
     {},
     { new: ["data/letters.csv", "knowledge/project.md"] },
-    { new: ["knowledge/data.md", "scripts/profile.py"], read: ["data/letters.csv", "knowledge/project.md"] },
-    { new: ["knowledge/specification.md", "knowledge/design.md", "knowledge/verification.md", "knowledge/journal.md", "knowledge/handoff.md", "CLAUDE.md"], read: ["knowledge/project.md", "knowledge/data.md"] },
+    { new: ["knowledge/data.md", "scripts/profile.py", "generated/data-profile.md"], read: ["data/letters.csv", "knowledge/project.md"] },
+    { new: ["knowledge/INDEX.md", "knowledge/specification.md", "knowledge/design.md", "knowledge/verification.md", "knowledge/journal.md", "knowledge/handoff.md", "CLAUDE.md"], read: ["knowledge/project.md", "knowledge/data.md"] },
     { changed: ["knowledge/specification.md", "knowledge/design.md", "knowledge/journal.md"] },
     { new: ["index.html"], read: ["CLAUDE.md", "knowledge/specification.md", "knowledge/design.md", "knowledge/data.md"] },
     { changed: ["knowledge/verification.md", "knowledge/journal.md"], read: ["index.html"] },
@@ -135,11 +139,11 @@
   }
 
   /** The state of every file after a step: absent, new, changed, read or unchanged. */
-  function fileStates(steps, index) {
+  function fileStates(steps, index, files) {
     const exists = new Set();
     for (let i = 0; i < index; i += 1) for (const file of steps[i].new || []) exists.add(file);
     const step = steps[index];
-    return FILES.map((file) => {
+    return files.map((file) => {
       if ((step.new || []).includes(file)) return [file, "new"];
       if (!exists.has(file)) return [file, "absent"];
       if ((step.changed || []).includes(file)) return [file, "changed"];
@@ -148,11 +152,11 @@
     });
   }
 
-  function renderFolder(host, t, index, steps = STEPS, title = t.folder.title) {
+  function renderFolder(host, t, index, steps = STEPS, title = t.folder.title, files = EXAMPLE_FILES) {
     const f = t.folder;
     host.replaceChildren(
       h("h3", { class: "pane-title", text: title }),
-      h("ul", { class: "files" }, ...fileStates(steps, index).map(([file, state]) => {
+      h("ul", { class: "files" }, ...fileStates(steps, index, files).map(([file, state]) => {
         const name = file.split("/");
         return h("li", { class: `file is-${state}` },
           h("code", {}, name.length > 1 ? h("span", { class: "dir", text: `${name[0]}/` }) : null, name.at(-1)),
@@ -333,7 +337,7 @@
   }
 
   function copyButton(t, value) {
-    // Without the Clipboard API the prompt stays selectable text and no button appears.
+    // Without the Clipboard API the sentence stays selectable text and no button appears.
     if (!navigator.clipboard?.writeText) return null;
     const copy = h("button", { type: "button", class: "btn small", text: t.try.copy });
     copy.addEventListener("click", async () => {
@@ -384,7 +388,7 @@
       index === 0 ? assistantWindow(r.window) : null,
       index === 1 ? h("p", {}, h("a", { href: "example/letters.csv", download: "letters.csv", text: r.exampleFile })) : null,
       h("div", { class: "prompt-box" }, h("pre", { class: "prompt" }, h("code", { text: step.prompt })), copyButton(t, step.prompt)),
-      h("p", { class: "check" }, h("strong", { text: `${r.checkLabel}. ` }), step.check)));
+      h("p", { class: "result" }, h("span", { class: "visually-hidden", text: `${r.resultLabel}. ` }), step.result)));
     document.getElementById("try-body").replaceChildren(
       h("h2", { text: r.title }),
       h("p", { class: "intro", text: r.intro }),
@@ -402,7 +406,7 @@
     function grow(index) {
       if (index === current) return;
       current = index;
-      renderFolder(host, t, index, TRY_STEPS, t.try.folderTitle(t.try.steps[index].title));
+      renderFolder(host, t, index, TRY_STEPS, t.try.folderTitle(t.try.steps[index].title), FILES);
       steps.forEach((step, position) => step.classList.toggle("current", position === index));
     }
     const observer = new IntersectionObserver((entries) => {

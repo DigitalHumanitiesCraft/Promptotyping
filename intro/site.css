@@ -243,9 +243,9 @@
   .steps > li { counter-increment: step; display: grid; gap: 0.5rem; padding-block: 1.2rem 1.6rem; }
   .steps h3::before { content: counter(step) "  "; color: var(--accent); font-variant-numeric: tabular-nums; }
   .steps p { color: var(--ink-soft); }
-  .steps .check { font-size: var(--step--1); }
+  .steps .result { color: var(--ink); }
+  .steps .result::before { content: "→ " / ""; color: var(--accent); }
   .step-links { display: flex; flex-wrap: wrap; gap: 0.3rem 1.2rem; font-size: var(--step--1); }
-  .steps .check strong { color: var(--ink); }
   .prompt-box { display: grid; gap: 0.35rem; justify-items: start; }
   .prompt { inline-size: 100%; background: var(--surface); padding: 0.7rem 0.9rem; border-radius: 0.6rem; white-space: pre-wrap; overflow-wrap: anywhere; font-size: var(--step--1); }
   .prompt code { font-size: 1em; }
