@@ -210,7 +210,7 @@ class NamingContractTest(CheckCase):
 
 
 class SkillPackageTest(CheckCase):
-    """V18, the site surface stays connected to the external canonical skill."""
+    """V18, the canonical skill is a portable package the site renders."""
 
     def setUp(self) -> None:
         super().setUp()
@@ -218,35 +218,47 @@ class SkillPackageTest(CheckCase):
         fixtures = {
             "SKILLS_INDEX": cc.SKILLS_INDEX,
             "PAGES_CONTENT": cc.PAGES_CONTENT,
+            "PAGES_WORKFLOW": cc.PAGES_WORKFLOW,
         }
         for name, source in fixtures.items():
             target = root / source.relative_to(cc.ROOT)
             self.write(target, source.read_text(encoding="utf-8"))
             self.patch(name, target)
-        self.patch("SKILL_DIR", root / "skills")
+        skill = root / "skills" / "promptotyping"
+        for source in cc.SKILL_DIR.rglob("*"):
+            if source.is_file():
+                self.write(skill / source.relative_to(cc.SKILL_DIR),
+                           source.read_text(encoding="utf-8"))
+        self.patch("SKILL_DIR", skill)
 
-    def test_the_current_surface_passes(self) -> None:
+    def test_the_current_package_passes(self) -> None:
         cc.check_skill_package()
         self.assertEqual(cc.failures, [])
 
-    def test_a_local_skill_copy_fails(self) -> None:
-        self.write(cc.SKILL_DIR / "promptotyping" / "SKILL.md", "---\nname: promptotyping\n---\n")
+    def test_a_machine_bound_path_fails(self) -> None:
+        path = cc.SKILL_DIR / "SKILL.md"
+        path.write_text(path.read_text(encoding="utf-8")
+                        + "\nRead C:/notes.md first.\n", encoding="utf-8")
         cc.check_skill_package()
-        self.assertIn("lives in", self.only_failure())
+        self.assertIn("machine-bound", self.only_failure())
+
+    def test_a_missing_eval_fixture_fails(self) -> None:
+        (cc.SKILL_DIR / "evals" / "fixtures" / "prune-plan-before.txt").unlink()
+        cc.check_skill_package()
+        self.assertIn("prune-plan", self.only_failure())
 
     def test_a_disconnected_site_surface_fails(self) -> None:
         text = cc.PAGES_CONTENT.read_text(encoding="utf-8").replace(
-            cc.SKILL_SOURCE, "skills/promptotyping/SKILL.md")
+            cc.SKILL_SOURCE, "elsewhere/SKILL.md")
         cc.PAGES_CONTENT.write_text(text, encoding="utf-8")
         cc.check_skill_package()
         self.assertIn("pages-content.js", self.only_failure())
 
-    def test_a_missing_repository_link_fails(self) -> None:
-        text = cc.SKILLS_INDEX.read_text(encoding="utf-8").replace(
-            cc.SKILL_REPOSITORY, "https://example.org/skill")
-        cc.SKILLS_INDEX.write_text(text, encoding="utf-8")
+    def test_an_unpublished_skill_folder_fails(self) -> None:
+        text = cc.PAGES_WORKFLOW.read_text(encoding="utf-8").replace(" skills ", " ")
+        cc.PAGES_WORKFLOW.write_text(text, encoding="utf-8")
         cc.check_skill_package()
-        self.assertIn("Skills index", self.only_failure())
+        self.assertIn("Pages workflow", self.only_failure())
 
 
 class PortalPathsTest(CheckCase):

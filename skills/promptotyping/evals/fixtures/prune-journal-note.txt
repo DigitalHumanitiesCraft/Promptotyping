@@ -1,0 +1,2 @@
+2026-10-12 Timeline view for exact dates built and inspected, commit abc1234.
+2026-10-13 The researcher struck the map: the question concerns time only (specification.md, scope).

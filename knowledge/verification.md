@@ -206,15 +206,15 @@ Under `intro/tests/` the introduction page (A47) is held to the outcomes a reade
 
 **Verdict, 2026-08-21.** Passes after the Handoff template, catalogue entry, current examples, and regression cases were added.
 
-### V18. The canonical skill remains publicly reachable
+### V18. The canonical skill is a portable package the site renders
 
-**Claim.** The Skills page renders the canonical skill from its own repository, `DigitalHumanitiesCraft/promptotyping-skill`, under `#skills-promptotyping`, and the Skills index links that repository. This repository carries no second copy under `skills/`.
+**Claim.** The canonical skill lies under `skills/promptotyping/` with a `SKILL.md` whose frontmatter carries name and description, and with eval cases whose fixtures exist. None of its files names a path or rule bound to one machine. The Skills page renders it under `#skills-promptotyping`, the Skills index links the package, and the Pages workflow publishes `skills/`.
 
-**Why it matters.** The skill is maintained outside this repository (A42). A local copy would drift from it unnoticed, and a disconnected page would leave a plausible description on the site while the installable skill lived elsewhere.
+**Why it matters.** The skill is the installable form of the practice (A42). A machine-bound path would break it on other machines, a missing fixture would leave an eval case that cannot run, and an unpublished folder would leave the Skills page empty.
 
-**Procedure.** Check that `skills/` is absent, that `pages-content.js` carries the public anchor and the raw source address of the canonical `SKILL.md`, and that the Skills index links both the anchor and the skill repository. Regression tests add a local copy, disconnect the rendered source, and remove the repository link. Whether the canonical skill meets the operation contract of A42 is not decidable from this repository; the open deviations stand in [promptotyping-skill#2](https://github.com/DigitalHumanitiesCraft/promptotyping-skill/issues/2).
+**Procedure.** `tools/check_consistency.py` checks the package files, the frontmatter, a list of machine-bound markers, the fixtures named by `evals/cases.json`, the source address in `pages-content.js`, the links of the Skills index and the folder list of the Pages workflow. Regression tests add a machine-bound path, remove a fixture, disconnect the rendered source and drop the folder from the workflow. Whether the operations are sound remains a matter of review, and runs of the eval cases as agent tasks are outside this check.
 
-**Verdict, 2026-10-19.** Passes after the move to the external canonical skill. The contract check of 2026-08-22 against the local package lapsed with that package.
+**Verdict, 2026-11-10.** Passes after the skill moved into this repository. An agentic review with a fresh context read the skill text (journal, 2026-11-10).
 
 ### V19. The three portal scenarios remain connected
 

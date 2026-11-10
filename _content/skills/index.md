@@ -2,25 +2,37 @@
 title: System Prompts und Skills
 slug: skills
 status: complete
-updated: 2026-10-19
+updated: 2026-11-10
 machine-url: https://dhcraft.org/Promptotyping/_content/skills/index.md
 ---
 
 # System Prompts und Skills
 
-System Prompts und Skills sind wiederverwendbare Bausteine der Action-Layer-Praxis im Promptotyping. Die Knowledge Documents eines Repos tragen projektbezogenes Wissen. System Prompts und Skills übersetzen die Arbeitspraxis in wiederholbare Agentenhandlungen über die vier Arbeitsformen, drei Dokumenttypen und die Verifikationsdisziplin.
+System Prompts und Skills sind wiederverwendbare Bausteine der Agent instruction documents im Promptotyping. Die Knowledge Documents eines Repositorys tragen projektbezogenes Wissen. Der Skill und die System Prompts übersetzen die Arbeitspraxis in wiederholbare Handlungen eines Agenten über die vier Arbeitsformen, die drei Dokumenttypen und die Trennung von Verifikation, agentischem Review und fachlicher Validierung.
 
-Im konkreten Repo liegt diese Schicht in `CLAUDE.md`, in benannten wiederholbaren Operationen und im portablen Praxiskern. `CLAUDE.md` wird bei jedem Sessionstart geladen und routet in die Wissensbasis. Der Praxiskern bleibt über Repositories hinweg wiederverwendbar.
-
-Die [Vorlage Action-Layer](#promptotyping-document-action-layer) trennt den portablen Praxiskern aus Wissensbasis-Routing, Handoff-Verarbeitung, Journal-Provenienz, Verifikationsregeln, Designprinzipien und Scope vom austauschbaren Werkzeug-Block.
+Im konkreten Repository liegt diese Schicht im Action-Layer, also in `CLAUDE.md` oder `AGENTS.md`, und im Skill. Der Action-Layer wird bei jedem Sessionstart geladen und routet in die Wissensbasis. Der Skill bleibt über Repositories hinweg wiederverwendbar. Die [Vorlage Action-Layer](#promptotyping-document-action-layer) trennt den portablen Praxiskern vom austauschbaren Werkzeug-Block.
 
 ## Kanonischer Promptotyping-Skill
 
-Der kanonische Promptotyping-Skill wird in einem eigenen Repository gepflegt: [DigitalHumanitiesCraft/promptotyping-skill](https://github.com/DigitalHumanitiesCraft/promptotyping-skill). Er folgt dem Agent-Skills-Standard (agentskills.io), ist für Claude Code geschrieben und mit anderen Agenten lauffähig, die diesen Standard unterstützen. Installiert wird der Ordner `promptotyping` aus diesem Repository in das Skills-Verzeichnis des jeweiligen Agenten.
+Der kanonische Promptotyping-Skill liegt in diesem Repository unter [`skills/promptotyping/`](https://github.com/DigitalHumanitiesCraft/Promptotyping/tree/main/skills/promptotyping). Er folgt dem Agent-Skills-Format, einem Ordner mit einer `SKILL.md`, deren Frontmatter Name und Auslösebeschreibung trägt. Er enthält keine Pfade oder Regeln einer bestimmten Maschine. Die [Skill-Ansicht](#skills-promptotyping) unterhalb dieses Abschnitts rendert die `SKILL.md`. Die Schaltflächen kopieren oder laden die vollständige Datei, und der Paketlink öffnet den Ordner mit den Prüffällen unter `evals/`.
 
-Die [Skill-Ansicht](#skills-promptotyping) direkt unterhalb dieses Abschnitts lädt `promptotyping/SKILL.md` aus dem Skill-Repository und rendert sie. Die Schaltflächen kopieren oder laden die vollständige Datei einschließlich Frontmatter. Die Operationen verweisen auf Referenzdateien im Paket, die nur im Skill-Repository liegen.
+Der Skill trägt sieben Operationen in einer Datei. Orient liest Action-Layer, `INDEX.md` und `handoff.md`. Distil, Curate, Synthesise und Prune sind die vier Operationen der Wissenskuration, also das Destillieren, das Wahrhalten gegen Quellen und Projektstand, das Verbinden mehrerer Stücke zu einer neuen Aussage und das Zurückschneiden dessen, was nicht mehr gilt oder niemand braucht. Prune schließt die Verdichtung des Journals ein. Implement baut ein geprüftes Inkrement, Hand off verarbeitet die Process Inbox. Die Operationen teilen Lesepfad, Gegenstand und Grenzen. Deshalb stehen sie als Abschnitte eines Skills und nicht als getrennte Skills, die dieselben Regeln viermal wiederholen und um denselben Auslöser konkurrieren würden.
 
-Der Vertrag für die Skill-Operationen steht in der Spezifikation: `orient` liest nach dem Action-Layer zuerst `knowledge/INDEX.md`, dann `knowledge/handoff.md`; `handoff` integriert dauerhaften Inhalt vor dem Entfernen eines offenen Deltas; `compact` verdichtet nach der Regel der [Vorlage Journal](#promptotyping-document-journal) ohne Archiv; eine eigene `integrate`-Operation gibt es nicht. Der Skill erfüllt diesen Vertrag in seiner aktuellen Fassung noch nicht vollständig. Die Abweichungen und ihre Klärung führt [promptotyping-skill#2](https://github.com/DigitalHumanitiesCraft/promptotyping-skill/issues/2).
+### Installation
+
+In Claude Code kopieren Sie den Ordner `skills/promptotyping` aus einem Klon dieses Repositorys nach `~/.claude/skills/promptotyping` für alle Projekte oder nach `.claude/skills/promptotyping` im Projektordner für ein einzelnes Projekt.
+
+```sh
+git clone https://github.com/DigitalHumanitiesCraft/Promptotyping.git
+mkdir -p ~/.claude/skills
+cp -r Promptotyping/skills/promptotyping ~/.claude/skills/
+```
+
+Codex liest Skills aus seinem Skills-Verzeichnis, üblicherweise `$CODEX_HOME/skills/`. Eine Umgebung, die nur `AGENTS.md` liest, erhält den Skill über eine Zeile im `AGENTS.md` des Projekts, nachdem der Ordner etwa nach `.agents/skills/promptotyping/` kopiert ist.
+
+```markdown
+Before working in knowledge/, read .agents/skills/promptotyping/SKILL.md and follow the operation that fits the task.
+```
 
 ## System Prompts
 

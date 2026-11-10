@@ -42,12 +42,15 @@ KNOWLEDGE_DIR = ROOT / "knowledge"
 VAULT_SOURCES = ROOT / "vault" / "00_sources"
 JS_DIR = ROOT / "assets" / "js"
 NOT_FOUND = ROOT / "404.html"
-# The canonical skill lives in its own repository (A42, 2026-10-19); this
-# repository links to it and must not grow a second copy.
-SKILL_DIR = ROOT / "skills"
-SKILL_REPOSITORY = "https://github.com/DigitalHumanitiesCraft/promptotyping-skill"
-SKILL_SOURCE = ("https://raw.githubusercontent.com/DigitalHumanitiesCraft/"
-                "promptotyping-skill/main/promptotyping/SKILL.md")
+# The canonical skill lives in this repository (A42, revised 2026-11-10) and
+# the Skills page loads it from the same origin.
+SKILL_DIR = ROOT / "skills" / "promptotyping"
+SKILL_SOURCE = "skills/promptotyping/SKILL.md"
+PAGES_WORKFLOW = ROOT / ".github" / "workflows" / "pages.yml"
+# Fragments that mark a path or rule bound to one machine; the published skill
+# must run on any machine, so none of them may appear in its files.
+SKILL_LOCAL_MARKERS = ("C:\\", "C:/", "/Users/", "\\Users\\", "obsidian",
+                       "Vault Operations", "vault-orient")
 SKILLS_INDEX = CONTENT_DIR / "skills" / "index.md"
 PAGES_CONTENT = JS_DIR / "pages-content.js"
 CASE_FILTER = JS_DIR / "modules" / "case-study-filter.js"
@@ -258,31 +261,55 @@ def check_catalogue_contract(documents):
 
 
 def check_skill_package() -> None:
-    """The site renders and links the canonical skill from its own repository.
+    """The canonical skill is a complete, portable package that the site renders.
 
-    Whether the skill meets the method contract of A42 is not decidable here,
-    since its source lives elsewhere; the open deviations are tracked in
-    promptotyping-skill#2.
+    Whether the skill meets the method contract of A42 is a matter of review;
+    this check decides only its presence, metadata, eval fixtures, portability
+    and its connection to the Skills page and the published tree.
     """
-    required_files = (SKILLS_INDEX, PAGES_CONTENT)
+    required_files = (SKILLS_INDEX, PAGES_CONTENT, SKILL_DIR / "SKILL.md",
+                      SKILL_DIR / "evals" / "cases.json")
     missing = [path for path in required_files if not path.is_file()]
     for path in missing:
-        fail("skill", "%s is missing" % path.relative_to(ROOT).as_posix())
+        fail("skill", "%s is missing" % path.name)
     if missing:
         return
 
-    if SKILL_DIR.exists():
-        fail("skill", "%s/ exists, but the canonical skill lives in %s"
-             % (SKILL_DIR.name, SKILL_REPOSITORY))
+    skill = read_text(SKILL_DIR / "SKILL.md")
+    head = skill.split("---", 2)
+    if len(head) < 3 or "name: promptotyping" not in head[1]             or "description:" not in head[1]:
+        fail("skill", "SKILL.md lacks a frontmatter with name and description")
+    for path in sorted(SKILL_DIR.rglob("*")):
+        if not path.is_file():
+            continue
+        text = path.read_text(encoding="utf-8", errors="replace")
+        for marker in SKILL_LOCAL_MARKERS:
+            if marker in text:
+                fail("skill", "skills/promptotyping/%s carries the machine-bound "
+                     "marker %r" % (path.relative_to(SKILL_DIR).as_posix(), marker))
+
+    try:
+        cases = json.loads(read_text(SKILL_DIR / "evals" / "cases.json"))["cases"]
+    except (ValueError, KeyError) as error:
+        fail("skill", "evals/cases.json is unreadable: %s" % error)
+        cases = []
+    for case in cases:
+        for field in ("input", "source", "reference"):
+            ref = case.get(field)
+            if ref and not (SKILL_DIR / "evals" / ref).is_file():
+                fail("skill", "eval case %s names a missing %s %s"
+                     % (case.get("id"), field, ref))
 
     page = read_text(PAGES_CONTENT)
     for marker in ('id="skills-promptotyping"', '"%s"' % SKILL_SOURCE):
         if marker not in page:
             fail("skill", "pages-content.js misses %s" % marker)
     index = read_text(SKILLS_INDEX)
-    for marker in ("#skills-promptotyping", SKILL_REPOSITORY):
+    for marker in ("#skills-promptotyping", "skills/promptotyping"):
         if marker not in index:
             fail("skill", "the Skills index does not link to %s" % marker)
+    if PAGES_WORKFLOW.is_file() and " skills " not in read_text(PAGES_WORKFLOW):
+        fail("skill", "the Pages workflow does not publish skills/")
 
 
 def check_portal_paths() -> None:

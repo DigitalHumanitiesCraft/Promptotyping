@@ -30,7 +30,7 @@ jobs:
       - name: Assemble the published tree
         run: |
           mkdir _site
-          git ls-files -z -- index.html 404.html LICENSE assets _content data intro schema \
+          git ls-files -z -- index.html 404.html LICENSE CITATION.cff assets _content data intro schema skills \
               vault/LICENSE vault/10_markdown vault/20_distillates vault/references \
             | grep -zvE '^intro/tests/' \
             | xargs -0 cp --parents -t _site

@@ -1,0 +1,21 @@
+---
+title: Plan
+project:
+  name: Scratch letter timeline
+  repository: local-scratch
+method:
+  name: Promptotyping
+  url: https://dhcraft.org/Promptotyping/
+status: active
+created: 2026-10-10
+updated: 2026-10-10
+language: en
+---
+
+# Plan
+
+## Next
+
+1. Build the timeline view for exact dates.
+2. Add a map of letter places.
+3. Draw uncertain dates as spans.

@@ -1,0 +1,1 @@
+Requested contract: continue over invalid observations, record every failure, and return a nonzero exit code on partial failure.

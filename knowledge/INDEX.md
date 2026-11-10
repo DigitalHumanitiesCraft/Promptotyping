@@ -70,7 +70,7 @@ The paper is maintained outside this repository and will be published in the jou
   The [SZD rehearsal preparation record](../snapshots/benchmark-szd-rehearsal-preparation-2026-09-05.md) records the local real-data package and technical input checks, without claiming a completed study.
 - `intro/` contains the introduction page for newcomers (A47), a separate page in the DHCraft design with its own text source for English and German.
 - `_content/` contains authored publication pages and the stable public template mirrors. Generated mirrors such as `_content/glossar.md` are rebuilt from their declared source.
-- The canonical skill is not in this repository. It is maintained in [DigitalHumanitiesCraft/promptotyping-skill](https://github.com/DigitalHumanitiesCraft/promptotyping-skill); the Skills page fetches and renders its `SKILL.md` (A42).
+- `skills/promptotyping/` holds the canonical Promptotyping skill with its eval cases (A42). The Skills page renders its `SKILL.md`.
 - `data/` is the established runtime-data area. Generated members name their producing command in the governing documentation; `data/vault.json` is built by `vault/tools/build_site_index.py`.
 
 ## Reading order

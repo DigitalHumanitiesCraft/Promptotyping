@@ -1,0 +1,5 @@
+# Plan
+
+## Next
+
+1. Draw uncertain dates as spans.

@@ -57,13 +57,14 @@
     A.addCodeCopyButtons(el);
   }
 
-  /* The canonical skill lives in its own repository (operator decision
-     2026-10-19). The page fetches its SKILL.md from there; relative links in
-     that file point into the package and are rebased onto it here, because
-     they would otherwise resolve against this site. */
-  var SKILL_REPOSITORY = "https://github.com/DigitalHumanitiesCraft/promptotyping-skill";
-  var SKILL_PACKAGE = SKILL_REPOSITORY + "/tree/main/promptotyping";
-  var SKILL_SOURCE = "https://raw.githubusercontent.com/DigitalHumanitiesCraft/promptotyping-skill/main/promptotyping/SKILL.md";
+  /* The canonical skill lives in this repository under skills/promptotyping/
+     (operator decision 2026-11-10, superseding A42 of 2026-10-19). The page
+     loads its SKILL.md from the same origin; relative links in that file point
+     into the package and are rebased onto the package on GitHub, because the
+     site publishes SKILL.md but links the package for its other files. */
+  var SKILL_REPOSITORY = "https://github.com/DigitalHumanitiesCraft/Promptotyping";
+  var SKILL_PACKAGE = SKILL_REPOSITORY + "/tree/main/skills/promptotyping";
+  var SKILL_SOURCE = "skills/promptotyping/SKILL.md";
 
   function rebaseSkillLinks(el) {
     el.querySelectorAll("a[href]").forEach(function (link) {
@@ -71,7 +72,7 @@
       if (/^(?:[a-z][a-z0-9+.-]*:|#|\/)/i.test(href)) {
         return;
       }
-      link.href = SKILL_REPOSITORY + "/blob/main/promptotyping/" + href;
+      link.href = SKILL_REPOSITORY + "/blob/main/skills/promptotyping/" + href;
       link.target = "_blank";
       link.rel = "noopener";
     });
@@ -93,8 +94,8 @@
     });
     actions.appendChild(copy);
 
-    /* Browsers ignore the download attribute on a cross-origin link, so the
-       fetched text is offered as a same-origin blob. */
+    /* The fetched text is offered as a blob, so the download carries the
+       file name SKILL.md whatever the serving path. */
     var download = document.createElement("a");
     download.href = URL.createObjectURL(new Blob([text], { type: "text/markdown" }));
     download.download = "SKILL.md";
@@ -128,12 +129,8 @@
       '<div class="skills-block" id="skills-coding"></div>' +
       '<div class="skills-block" id="skills-writing"></div>';
 
-    /* The canonical skill comes from another host. It loads only once the
-       Skills page is shown, so a visitor who never opens it makes no request
-       to raw.githubusercontent.com, and the boot never waits for it: a blocked
-       or slow raw.githubusercontent.com
-       would otherwise hold back folding, module boot and hash resolution on
-       every page. The host element stands already, so #skills-promptotyping
+    /* The skill loads only once the Skills page is shown, so the boot never
+       waits for it. The host element stands already, so #skills-promptotyping
        resolves; a failed fetch shows the shared load error in the block alone. */
     var skillRequested = false;
     function loadSkill() {

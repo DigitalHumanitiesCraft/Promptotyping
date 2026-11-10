@@ -61,7 +61,7 @@ Source of values: `knowledge/design.md`. Read it before UI work. The site is cal
 ## Scope
 
 - The site is English (A26). The templates and the files under `_content/skills/` stay German, and template names and published anchors stay German identifiers. All templates except `technology` are vault mirrors whose translation belongs in a vault session.
-- The canonical skill lives in `DigitalHumanitiesCraft/promptotyping-skill` (A42). Do not keep a copy here.
+- The canonical skill lives in `skills/promptotyping/` (A42, revised 2026-11-10). It is English and portable, so it names no path or rule bound to one machine.
 - No modules beyond the Frontmatter-Inspector, case-study filter, term index and vault view.
 
 ## Site model
@@ -91,7 +91,7 @@ Before dependent steps, check the available tools, runtimes and connections. A m
 - Vanilla HTML5, CSS3 and JavaScript, no framework, no build step, no npm.
 - Core scripts under `assets/js/` are IIFEs extending `window.PromptotypingApp`, no ES modules. `app.js` loads last among the core scripts. `404.html` is a stub that hands the path as `?p=` to `index.html`; the subpath vocabulary lives only in `resolveTemplateUrl`.
 - marked.js and js-yaml are vendored under `assets/vendor/`. No CDN. Custom marked extensions stay in `assets/js/markdown.js`.
-- Routing uses browser-native `location.hash`. GitHub Pages publishes the tree that `.github/workflows/pages.yml` assembles from an explicit folder list; `knowledge/`, this file, `tools/`, tests, `snapshots/`, `research-artefacts/`, `source-material/` and the vault's own knowledge, tools and assertions stay out. A new folder or root file the site loads must be added to that list.
+- Routing uses browser-native `location.hash`. GitHub Pages publishes the tree that `.github/workflows/pages.yml` assembles from an explicit folder list; `skills/` and `CITATION.cff` are published, while `knowledge/`, this file, `tools/`, tests, `snapshots/`, `research-artefacts/`, `source-material/` and the vault's own knowledge, tools and assertions stay out. A new folder or root file the site loads must be added to that list.
 - `assets/promptotyping-logo.png` stays.
 
 ### Checks
