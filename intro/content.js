@@ -90,7 +90,7 @@
         "knowledge/design.md": "how it shows things",
         "knowledge/verification.md": "how it is checked",
         "knowledge/journal.md": "what was decided, and why",
-        "knowledge/handoff.md": "open points for next time",
+        "knowledge/handoff.md": "inputs not yet worked in",
         "CLAUDE.md": "rules the agent reads first",
         "index.html": "the tool itself, a web page",
       },
@@ -114,7 +114,7 @@
     },
     try: {
       title: "Try it on your own data",
-      intro: "One dataset, one question, one small tool. The steps are those of the example, with setting up before them and cutting to size after distilling. They follow the four forms of work of the practice, Preparation, Exploration, Distillation and Implementation, which recur as often as checking sends you back. Each step names what you do, a prompt to paste into the agent's chat and adapt, and how you check the result yourself.",
+      intro: "One dataset, one question, one small tool. The steps are those of the example, with setting up before them and cutting to size after distilling. They follow the four forms of work of the practice. Prepare is Preparation, Explore is Exploration, Distil and Cut to size are Distillation, Build is Implementation, and the forms recur as often as checking sends you back. Each step names what you do, a prompt to paste into the agent's chat and adapt, and how you check the result yourself.",
       toolsLabel: "You need",
       or: "or",
       tools: [
@@ -168,8 +168,8 @@
         },
         {
           title: "Distil",
-          body: "From project.md and data.md the agent drafts the documents the tool is built from, what it must do, how it should look and how it is checked, together with a journal for decisions. The prompt chooses the simplest kind of tool, a web page that opens in your browser and needs no server software.",
-          prompt: "Read knowledge/project.md and knowledge/data.md. Create knowledge/specification.md with requirements I can test, knowledge/design.md including how gaps and uncertainty stay visible, knowledge/verification.md for the checks, knowledge/journal.md with a first entry, knowledge/handoff.md with no open points, and a CLAUDE.md (AGENTS.md for Codex) that tells every conversation to read knowledge/ first. The tool is a static web page in HTML, CSS and JavaScript without a build step.",
+          body: "From project.md and data.md the agent drafts the documents the tool is built from, what it must do, how it should look and how it is checked, together with a journal for decisions. The prompt chooses the simplest kind of tool, a web page that opens in your browser and needs no server software beyond the small local server the agent starts for viewing.",
+          prompt: "Read knowledge/project.md and knowledge/data.md. Create knowledge/specification.md and move the user stories from project.md into it as requirements I can test, knowledge/design.md including how gaps and uncertainty stay visible, knowledge/verification.md for the checks, knowledge/journal.md with a first entry, knowledge/handoff.md with no open points, knowledge/INDEX.md listing the documents, and a CLAUDE.md (AGENTS.md for Codex) that tells every conversation to read knowledge/ first. The tool is a static web page in HTML, CSS and JavaScript without a build step.",
           check: "Take one requirement in specification.md. Could you decide, sitting in front of the finished tool, whether it is met?",
         },
         {
@@ -186,7 +186,7 @@
         },
         {
           title: "Check and accept",
-          body: "The agent runs the checks a machine can decide. Whether the tool is faithful to your material and answers your question, only you can decide, so test it on cases you know well, including one you expect it to get wrong. What you find goes back into the documents, as in the example.",
+          body: "The agent runs the checks a machine can decide. Whether the tool is faithful to your material and answers your question, only you can decide, so test it on cases you know well, including one you expect it to get wrong. When a check fails, write the finding back as in the example, for instance with “Write this finding into the document it belongs to, record it in knowledge/journal.md, then rebuild the view.”",
           prompt: "Run only checks that can be decided mechanically, namely that the page loads without errors and that the figures it shows match the results of the scripts. Write procedure and results to knowledge/verification.md and list every remaining criterion under “Human decision required”. Do not mark anything as accepted.",
           check: "Write your decision and its reasons into verification.md and the journal, then save the state with Git. Could a colleague reconstruct from the folder what you accepted, and why?",
         },
@@ -290,7 +290,7 @@
         "knowledge/design.md": "wie es Dinge darstellt",
         "knowledge/verification.md": "wie es geprüft wird",
         "knowledge/journal.md": "was entschieden wurde und warum",
-        "knowledge/handoff.md": "offene Punkte für das nächste Mal",
+        "knowledge/handoff.md": "noch nicht eingearbeitete Eingänge",
         "CLAUDE.md": "Regeln, die der Agent zuerst liest",
         "index.html": "das Werkzeug selbst, eine Webseite",
       },
@@ -314,7 +314,7 @@
     },
     try: {
       title: "Mit eigenen Daten ausprobieren",
-      intro: "Ein Datensatz, eine Frage, ein kleines Werkzeug. Die Schritte sind die des Beispiels, mit dem Einrichten davor und dem Zuschneiden nach dem Destillieren. Sie folgen den vier Arbeitsformen der Praxis, Preparation, Exploration, Distillation und Implementation, die so oft wiederkehren, wie die Prüfung Sie zurückschickt. Jeder Schritt nennt, was Sie tun, einen Prompt, den Sie in den Chat des Agenten einfügen und anpassen, und wie Sie das Ergebnis selbst prüfen.",
+      intro: "Ein Datensatz, eine Frage, ein kleines Werkzeug. Die Schritte sind die des Beispiels, mit dem Einrichten davor und dem Zuschneiden nach dem Destillieren. Sie folgen den vier Arbeitsformen der Praxis. Vorbereiten ist Preparation, Erkunden ist Exploration, Destillieren und Zuschneiden sind Distillation, Bauen ist Implementation, und die Formen kehren so oft wieder, wie die Prüfung Sie zurückschickt. Jeder Schritt nennt, was Sie tun, einen Prompt, den Sie in den Chat des Agenten einfügen und anpassen, und wie Sie das Ergebnis selbst prüfen.",
       toolsLabel: "Sie brauchen",
       or: "oder",
       tools: [
@@ -368,8 +368,8 @@
         },
         {
           title: "Destillieren",
-          body: "Aus project.md und data.md entwirft der Agent die Dokumente, aus denen das Werkzeug gebaut wird, was es können muss, wie es aussehen soll und wie es geprüft wird, dazu ein Journal für Entscheidungen. Der Prompt wählt die einfachste Art von Werkzeug, eine Webseite, die sich im Browser öffnet und keine Serversoftware braucht.",
-          prompt: "Lies knowledge/project.md und knowledge/data.md. Lege knowledge/specification.md mit Anforderungen an, die ich prüfen kann, knowledge/design.md auch dazu, wie Lücken und Unsicherheit sichtbar bleiben, knowledge/verification.md für die Prüfungen, knowledge/journal.md mit einem ersten Eintrag, knowledge/handoff.md ohne offene Punkte und eine CLAUDE.md (bei Codex AGENTS.md), nach der jedes Gespräch zuerst knowledge/ liest. Das Werkzeug ist eine statische Webseite in HTML, CSS und JavaScript ohne Build-Schritt.",
+          body: "Aus project.md und data.md entwirft der Agent die Dokumente, aus denen das Werkzeug gebaut wird, was es können muss, wie es aussehen soll und wie es geprüft wird, dazu ein Journal für Entscheidungen. Der Prompt wählt die einfachste Art von Werkzeug, eine Webseite, die sich im Browser öffnet und außer dem kleinen lokalen Server, den der Agent zum Ansehen startet, keine Serversoftware braucht.",
+          prompt: "Lies knowledge/project.md und knowledge/data.md. Lege knowledge/specification.md an und übernimm die User Stories aus project.md als Anforderungen, die ich prüfen kann, knowledge/design.md auch dazu, wie Lücken und Unsicherheit sichtbar bleiben, knowledge/verification.md für die Prüfungen, knowledge/journal.md mit einem ersten Eintrag, knowledge/handoff.md ohne offene Punkte, knowledge/INDEX.md mit der Liste der Dokumente und eine CLAUDE.md (bei Codex AGENTS.md), nach der jedes Gespräch zuerst knowledge/ liest. Das Werkzeug ist eine statische Webseite in HTML, CSS und JavaScript ohne Build-Schritt.",
           check: "Nehmen Sie eine Anforderung aus specification.md. Könnten Sie vor dem fertigen Werkzeug entscheiden, ob sie erfüllt ist?",
         },
         {
@@ -386,7 +386,7 @@
         },
         {
           title: "Prüfen und annehmen",
-          body: "Der Agent führt die Prüfungen aus, die eine Maschine entscheiden kann. Ob das Werkzeug Ihrem Material gerecht wird und Ihre Frage beantwortet, können nur Sie entscheiden. Testen Sie es deshalb an Fällen, die Sie gut kennen, auch an einem, bei dem Sie einen Fehler erwarten. Was Sie finden, geht wie im Beispiel zurück in die Dokumente.",
+          body: "Der Agent führt die Prüfungen aus, die eine Maschine entscheiden kann. Ob das Werkzeug Ihrem Material gerecht wird und Ihre Frage beantwortet, können nur Sie entscheiden. Testen Sie es deshalb an Fällen, die Sie gut kennen, auch an einem, bei dem Sie einen Fehler erwarten. Scheitert eine Prüfung, schreiben Sie den Befund wie im Beispiel zurück, etwa mit „Schreibe diesen Befund in das zuständige Dokument, halte ihn in knowledge/journal.md fest und baue die Ansicht dann neu.“",
           prompt: "Führe nur Prüfungen aus, die sich maschinell entscheiden lassen, nämlich ob die Seite ohne Fehler lädt und ob die angezeigten Zahlen mit den Ergebnissen der Skripte übereinstimmen. Schreibe Vorgehen und Ergebnisse in knowledge/verification.md und liste jedes übrige Kriterium unter „Menschliche Entscheidung nötig“. Erkläre nichts für angenommen.",
           check: "Schreiben Sie Ihre Entscheidung und ihre Gründe in verification.md und ins Journal und speichern Sie den Stand mit Git. Könnte eine Kollegin aus dem Ordner nachvollziehen, was Sie angenommen haben und warum?",
         },

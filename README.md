@@ -19,16 +19,16 @@ After a first round you have a versioned repository with a knowledge base that d
 ## Get started
 
 1. Read the [introduction](https://dhcraft.org/Promptotyping/intro/), which plays one synthetic round and gives copyable prompts, or the longer [tutorial](https://dhcraft.org/Promptotyping/#tutorial).
-2. Install an AI coding agent such as Claude Code or Codex, and Git.
+2. Install an AI coding agent such as Claude Code or Codex, Git, and Python, which the agent uses for small scripts that read your data.
 3. Optionally install the Promptotyping skill, so that the agent follows the practice's operations in every session (see [The skill](#the-skill)).
 4. Create an empty project folder, copy your data into `data/`, and write down your purpose, your question and two or three user stories in your own words.
-5. Start the agent in that folder and follow the steps of the introduction, Prepare, Explore, Distil, Cut to size, Build, Check and accept. To rehearse first, use the invented example file [`intro/example/letters.csv`](intro/example/letters.csv).
+5. Start the agent in that folder and follow the steps of the introduction. Prepare is Preparation, Explore is Exploration, Distil and Cut to size are Distillation, Build is Implementation, and Check and accept separates the agent's checks from your own judgement. To rehearse first, use the invented example file [`intro/example/letters.csv`](intro/example/letters.csv).
 
 ## The skill
 
-The Promptotyping skill under [`skills/promptotyping/`](skills/promptotyping/) gives an agent written procedures for working from a knowledge base. It carries seven operations in one `SKILL.md`. Orient reads the action layer and the knowledge base before any work. Distil, Curate, Synthesise and Prune are the operations of knowledge curation, which turn material into maintained knowledge, keep it true against the sources, connect pieces into a new statement and remove what no longer holds. Implement builds a checked increment, and Hand off processes the inbox of received inputs.
+The Promptotyping skill under [`skills/promptotyping/`](skills/promptotyping/) gives an agent written procedures for working from a knowledge base. It carries seven operations in one `SKILL.md`. Orient reads the action layer, the instruction file `CLAUDE.md` or `AGENTS.md` in the repository root that the agent loads first, and then the knowledge base. Distil, Curate, Synthesise and Prune are the operations of knowledge curation, which turn material into maintained knowledge, keep it true against the sources, connect pieces into a new statement and remove what no longer holds. Implement builds a checked increment, and Hand off works in inputs received from other sessions, reviews or partners, which wait in `knowledge/handoff.md`.
 
-For Claude Code, copy the folder into your skills directory, `~/.claude/skills/` for all projects or `.claude/skills/` inside one project.
+For Claude Code, copy the folder into your skills directory, `~/.claude/skills/` for all projects (on Windows `%USERPROFILE%\.claude\skills\`) or `.claude/skills/` inside one project.
 
 ```bash
 git clone https://github.com/DigitalHumanitiesCraft/Promptotyping.git
@@ -182,7 +182,7 @@ Checking is layered. Verification runs `tools/check_consistency.py`, which decid
 
 - The Promptotyping Bench is a draft research programme. Its tooling tests supply engineering evidence and no study result ([knowledge/benchmark-plan.md](knowledge/benchmark-plan.md)).
 - The automatic checks decide consistency between the site's own statements. Whether the practice description is right in substance remains a matter of scholarly judgement.
-- The templates other than `technology` are mirrors of the author's Obsidian vault and stay German.
+- The templates other than `technology` are mirrors of the author's Obsidian vault and stay German. Their names are identifiers, and the documents a project writes from them use the project's own language.
 
 ## Citation and licence
 
