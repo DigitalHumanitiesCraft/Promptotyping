@@ -293,8 +293,9 @@ def check_skill_package() -> None:
                 fail("skill", "skills/promptotyping/%s carries the machine-bound "
                      "marker %r" % (path.relative_to(SKILL_DIR).as_posix(), marker))
 
-    # Whatever lies in the package is copied by every installation and packed
-    # into the download archive, and SKILL.md is read on every invocation.
+    # Whatever lies in the package is copied by an installation with cp -r and
+    # packed into the download archive, and a pointer to the eval cases would
+    # add text to SKILL.md that serves no one who applies the skill.
     if (SKILL_DIR / "evals").exists():
         fail("skill", "skills/promptotyping/evals lies inside the installed "
              "package; the eval cases belong under tools/skill-evals")
