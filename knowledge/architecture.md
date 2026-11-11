@@ -79,7 +79,7 @@ Promptotyping/
 ├── source-material/                # cleaned video transcripts
 ├── snapshots/                      # dated reports and audits
 ├── schema/                         # JSON Schema of the frontmatter core (check group V16)
-├── tools/                          # check_consistency.py, build_glossar.py, tests/
+├── tools/                          # check_consistency.py, build_glossar.py, tests/, skill-evals/
 ├── _content/                       # Markdown content
 │   ├── promptotyping-document/     # one template mirror per slug
 │   ├── case-studies/               # case-study deep pages
