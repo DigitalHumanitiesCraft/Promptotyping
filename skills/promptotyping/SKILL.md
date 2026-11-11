@@ -199,5 +199,3 @@ Accepted future work belongs in `plan.md`, durable cross-project contracts in an
 ## Verification
 
 Inspect the real repository state rather than the documents' claims about it, and run the checks the project defines. State the end state, what was verified and how, what remains uncertain, and which decision needs the researchers. Distinguish a promptotype still in progress from one the researchers have accepted for its purpose.
-
-The cases in [evals/cases.json](evals/cases.json) provide saved inputs and expected outputs for handoff, curation and pruning. Run them as isolated agent tasks in a scratch repository and inspect the resulting files. The fixtures alone prove no passed run.

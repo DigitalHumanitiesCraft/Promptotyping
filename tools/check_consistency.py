@@ -47,6 +47,9 @@ INDEX_HTML = ROOT / "index.html"
 # the Skills page loads it from the same origin.
 SKILL_DIR = ROOT / "skills" / "promptotyping"
 SKILL_SOURCE = "skills/promptotyping/SKILL.md"
+# The eval cases stay beside the tools and outside the package, so that an
+# installation and the download archive carry only what an agent reads.
+SKILL_EVALS = TOOLS / "skill-evals"
 PAGES_WORKFLOW = ROOT / ".github" / "workflows" / "pages.yml"
 # Fragments that mark a path or rule bound to one machine; the published skill
 # must run on any machine, so none of them may appear in its files.
@@ -265,11 +268,12 @@ def check_skill_package() -> None:
     """The canonical skill is a complete, portable package that the site renders.
 
     Whether the skill meets the method contract of A42 is a matter of review;
-    this check decides only its presence, metadata, eval fixtures, portability
-    and its connection to the Skills page and the published tree.
+    this check decides only its presence, metadata, portability, its connection
+    to the Skills page and the published tree, and that the eval cases with
+    their fixtures lie outside the package.
     """
     required_files = (SKILLS_INDEX, PAGES_CONTENT, SKILL_DIR / "SKILL.md",
-                      SKILL_DIR / "evals" / "cases.json")
+                      SKILL_EVALS / "cases.json")
     missing = [path for path in required_files if not path.is_file()]
     for path in missing:
         fail("skill", "%s is missing" % path.name)
@@ -289,15 +293,24 @@ def check_skill_package() -> None:
                 fail("skill", "skills/promptotyping/%s carries the machine-bound "
                      "marker %r" % (path.relative_to(SKILL_DIR).as_posix(), marker))
 
+    # Whatever lies in the package is copied by every installation and packed
+    # into the download archive, and SKILL.md is read on every invocation.
+    if (SKILL_DIR / "evals").exists():
+        fail("skill", "skills/promptotyping/evals lies inside the installed "
+             "package; the eval cases belong under tools/skill-evals")
+    if "evals/" in skill:
+        fail("skill", "SKILL.md points at the eval cases, which are not part "
+             "of the installed package")
+
     try:
-        cases = json.loads(read_text(SKILL_DIR / "evals" / "cases.json"))["cases"]
+        cases = json.loads(read_text(SKILL_EVALS / "cases.json"))["cases"]
     except (ValueError, KeyError) as error:
-        fail("skill", "evals/cases.json is unreadable: %s" % error)
+        fail("skill", "skill-evals/cases.json is unreadable: %s" % error)
         cases = []
     for case in cases:
         for field in ("input", "source", "reference"):
             ref = case.get(field)
-            if ref and not (SKILL_DIR / "evals" / ref).is_file():
+            if ref and not (SKILL_EVALS / ref).is_file():
                 fail("skill", "eval case %s names a missing %s %s"
                      % (case.get("id"), field, ref))
 

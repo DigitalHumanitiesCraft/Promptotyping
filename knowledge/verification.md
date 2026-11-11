@@ -208,13 +208,15 @@ Under `intro/tests/` the introduction page (A47) is held to the outcomes a reade
 
 ### V18. The canonical skill is a portable package the site renders
 
-**Claim.** The canonical skill lies under `skills/promptotyping/` with a `SKILL.md` whose frontmatter carries name and description, and with eval cases whose fixtures exist. None of its files names a path or rule bound to one machine. The Skills page renders it under `#skills-promptotyping`, the Skills index links the package, and the Pages workflow publishes `skills/`.
+**Claim.** The canonical skill lies under `skills/promptotyping/` with a `SKILL.md` whose frontmatter carries name and description, and its eval cases lie outside the package under `tools/skill-evals/` with fixtures that exist. None of the package files names a path or rule bound to one machine, and `SKILL.md` does not point at the eval cases. The Skills page renders it under `#skills-promptotyping`, the Skills index links the package, and the Pages workflow publishes `skills/`.
 
-**Why it matters.** The skill is the installable form of the practice (A42). A machine-bound path would break it on other machines, a missing fixture would leave an eval case that cannot run, and an unpublished folder would leave the Skills page empty.
+**Why it matters.** The skill is the installable form of the practice (A42). A machine-bound path would break it on other machines, a missing fixture would leave an eval case that cannot run, and an unpublished folder would leave the Skills page empty. Eval cases inside the package would be copied by every installation and packed into the download archive, and a pointer to them in `SKILL.md` would be read on every invocation without serving anyone who applies the skill.
 
-**Procedure.** `tools/check_consistency.py` checks the package files, the frontmatter, a list of machine-bound markers, the fixtures named by `evals/cases.json`, the source address in `pages-content.js`, the links of the Skills index and the folder list of the Pages workflow. Regression tests add a machine-bound path, remove a fixture, disconnect the rendered source and drop the folder from the workflow. Whether the operations are sound remains a matter of review, and runs of the eval cases as agent tasks are outside this check.
+**Procedure.** `tools/check_consistency.py` checks the package files, the frontmatter, a list of machine-bound markers, the absence of an `evals` folder in the package and of a pointer to it in `SKILL.md`, the fixtures named by `tools/skill-evals/cases.json`, the source address in `pages-content.js`, the links of the Skills index and the folder list of the Pages workflow. Regression tests add a machine-bound path, remove a fixture, put eval cases into the package, add a pointer to them in `SKILL.md`, disconnect the rendered source and drop the folder from the workflow. Whether the operations are sound remains a matter of review, and runs of the eval cases as agent tasks are outside this check. The cases provide saved inputs and expected outputs for handoff, curation and pruning. A run copies them into a scratch repository as an isolated agent task and inspects the resulting files, and the fixtures alone prove no passed run.
 
 **Verdict, 2026-11-10.** Passes after the skill moved into this repository. An agentic review with a fresh context read the skill text (journal, 2026-11-10).
+
+**Verdict, 2026-11-11.** Passes after the eval cases moved out of the package to `tools/skill-evals/`. No eval case has been run as an agent task.
 
 ### V19. The three portal scenarios remain connected
 

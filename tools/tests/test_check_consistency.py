@@ -230,6 +230,12 @@ class SkillPackageTest(CheckCase):
                 self.write(skill / source.relative_to(cc.SKILL_DIR),
                            source.read_text(encoding="utf-8"))
         self.patch("SKILL_DIR", skill)
+        evals = root / "tools" / "skill-evals"
+        for source in cc.SKILL_EVALS.rglob("*"):
+            if source.is_file():
+                self.write(evals / source.relative_to(cc.SKILL_EVALS),
+                           source.read_text(encoding="utf-8"))
+        self.patch("SKILL_EVALS", evals)
 
     def test_the_current_package_passes(self) -> None:
         cc.check_skill_package()
@@ -243,9 +249,21 @@ class SkillPackageTest(CheckCase):
         self.assertIn("machine-bound", self.only_failure())
 
     def test_a_missing_eval_fixture_fails(self) -> None:
-        (cc.SKILL_DIR / "evals" / "fixtures" / "prune-plan-before.txt").unlink()
+        (cc.SKILL_EVALS / "fixtures" / "prune-plan-before.txt").unlink()
         cc.check_skill_package()
         self.assertIn("prune-plan", self.only_failure())
+
+    def test_eval_cases_inside_the_package_fail(self) -> None:
+        self.write(cc.SKILL_DIR / "evals" / "cases.json", '{"cases": []}\n')
+        cc.check_skill_package()
+        self.assertIn("inside the installed package", self.only_failure())
+
+    def test_a_skill_text_pointing_at_the_eval_cases_fails(self) -> None:
+        path = cc.SKILL_DIR / "SKILL.md"
+        path.write_text(path.read_text(encoding="utf-8")
+                        + "\nSee [the cases](evals/cases.json).\n", encoding="utf-8")
+        cc.check_skill_package()
+        self.assertIn("points at the eval cases", self.only_failure())
 
     def test_a_disconnected_site_surface_fails(self) -> None:
         text = cc.PAGES_CONTENT.read_text(encoding="utf-8").replace(
