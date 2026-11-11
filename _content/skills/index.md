@@ -2,7 +2,7 @@
 title: System Prompts und Skills
 slug: skills
 status: complete
-updated: 2026-11-10
+updated: 2026-11-11
 machine-url: https://dhcraft.org/Promptotyping/_content/skills/index.md
 ---
 
