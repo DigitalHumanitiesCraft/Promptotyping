@@ -71,15 +71,18 @@
   .dh-foot:has(.dh-foot__frame) { display: block; padding: 0; background-color: var(--dh-ink-deep); color: var(--dh-paper); }
   .dh-foot__frame {
     display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: var(--dh-space-4) var(--dh-space-6);
-    max-inline-size: var(--dh-page); margin-inline: auto; padding: var(--dh-space-5) var(--dh-gutter);
+    max-inline-size: var(--dh-page); margin-inline: auto; padding: var(--dh-space-6) var(--dh-gutter) var(--dh-space-5);
   }
   .dh-foot__frame a { color: inherit; }
   .dh-foot__frame a:focus-visible { outline-color: currentColor; }
-  .dh-foot__brand { display: flex; align-items: center; gap: var(--dh-space-3); }
+  .dh-foot__brand { display: flex; align-items: center; gap: var(--dh-space-3); line-height: 1.4; }
+  .dh-foot__brand img { inline-size: auto; block-size: 2.75rem; }
+  .dh-foot__brand strong { font-family: var(--dh-font-display); font-size: var(--dh-step-0); }
   .dh-foot__links { display: flex; flex-wrap: wrap; gap: var(--dh-space-2) var(--dh-space-5); }
   .dh-foot__links a { text-decoration: none; }
   .dh-foot__links a:hover, .dh-foot__links a:focus-visible { text-decoration: underline; }
-  .dh-foot__licence { grid-column: 1 / -1; color: #b6bdd2; }
+  /* A fine line sets the licence apart, as the bar under the footer of dhcraft.org does. */
+  .dh-foot__licence { grid-column: 1 / -1; padding-block-start: var(--dh-space-4); border-block-start: var(--dh-hairline) solid rgb(255 255 255 / 0.14); color: #b6bdd2; }
   @media (max-width: 47.99rem) {
     .dh-foot__frame { grid-template-columns: minmax(0, 1fr); }
   }
