@@ -106,6 +106,9 @@
       </div>
     </section>
 
+    <div class="layout">
+      <div class="layout__main">
+
     <section id="skill">
       <h2>Skill</h2>
       <p class="dh-prose">The skill gives an agent the procedure of the practice. To start, open an agent that can read and write files, such as Claude Code, in the folder with your material, fill in the last two lines of the prompt and paste it.</p>
@@ -206,21 +209,50 @@ My material: [what it is and where it lies, or "none yet"]</code></pre>
         </ul>
     </section>
 
-    <section id="cite">
-      <h2>Cite</h2>
-      <p class="dh-prose">The practice has not yet been evaluated against other ways of working, and whether it transfers to other people and projects is open. Cite it with its concept DOI, which resolves to the latest archived version, and take the full metadata from <a href="CITATION.cff">CITATION.cff</a>.</p>
-      <figure class="dh-code">
-        <figcaption>Citation</figcaption>
+      </div>
+
+      <aside class="cite" id="cite" aria-labelledby="cite-heading">
+        <h2 id="cite-heading">Cite</h2>
+        <figure class="dh-code">
 <pre><code>Pollin, Christopher; Steiner, Christian: Promptotyping. Zenodo. https://doi.org/10.5281/zenodo.14160875</code></pre>
-      </figure>
-    </section>
+        </figure>
+        <ul class="facts">
+          <li><a href="https://doi.org/10.5281/zenodo.14160875">Concept DOI</a><span>resolves to the latest archived version</span></li>
+          <li><a href="CITATION.cff">CITATION.cff</a><span>the full metadata</span></li>
+          <li><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a><span>text and templates, code under <a href="LICENSE">MIT</a></span></li>
+        </ul>
+        <p>The practice has not yet been evaluated against other ways of working, and whether it transfers to other people and projects is open.</p>
+      </aside>
+    </div>
 
   </main>
 
-  <footer class="dh-foot">
-    <p>A site of <a href="https://dhcraft.org">Digital Humanities Craft</a></p>
-    <p>Text and templates <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, code <a href="LICENSE">MIT</a>, shared web files <a href="assets/dhcraft/LICENSE.md">MIT</a>, fonts OFL, DHCraft mark proprietary</p>
-    <p><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping">Source</a> and <a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/CHANGELOG.md">changes</a></p>
+  <footer class="site-foot">
+    <div class="site-foot__frame">
+      <div class="site-foot__brand">
+        <img src="assets/dhcraft/dhcraft-mark-watercolor-128.png" alt="" width="35" height="40">
+        <p>Promptotyping<br>A site of <a href="https://dhcraft.org">Digital Humanities Craft</a></p>
+      </div>
+      <div class="site-foot__group">
+        <p>Project</p>
+        <a href="https://github.com/DigitalHumanitiesCraft/Promptotyping">Source</a>
+        <a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/CHANGELOG.md">Changes</a>
+        <a href="https://github.com/DigitalHumanitiesCraft/promptotyping-skill">Skill</a>
+      </div>
+      <div class="site-foot__group">
+        <p>Licence</p>
+        <span>Text and templates <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>
+        <span>Code <a href="LICENSE">MIT</a></span>
+        <span>Shared web files <a href="assets/dhcraft/LICENSE.md">MIT</a>, fonts OFL</span>
+        <span>DHCraft mark proprietary</span>
+      </div>
+      <div class="site-foot__group">
+        <p>Digital Humanities Craft</p>
+        <a href="https://dhcraft.org">dhcraft.org</a>
+        <a href="https://github.com/DigitalHumanitiesCraft">GitHub</a>
+        <a href="https://dhcraft.org/imprint/">Imprint</a>
+      </div>
+    </div>
   </footer>
 
   <script type="module" src="assets/dhcraft/dhcraft-copy.js"></script>
