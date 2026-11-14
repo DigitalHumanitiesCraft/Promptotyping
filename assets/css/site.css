@@ -13,7 +13,7 @@ section + section { padding-block-start: var(--dh-space-6); border-block-start: 
 h1 { margin: 0 0 var(--dh-space-4); }
 h2 { margin: 0 0 var(--dh-space-3); }
 h3 { margin: var(--dh-space-6) 0 var(--dh-space-2); }
-p { margin: 0 0 var(--dh-space-4); }
+main p { margin: 0 0 var(--dh-space-4); }
 
 /* Text, lists and blocks share one right edge, the text width. Only the figure and the
    lines between sections take the full page width. The shared measure counts in characters
@@ -72,37 +72,16 @@ p { margin: 0 0 var(--dh-space-4); }
 .cite h2 { margin: 0; font-size: var(--dh-step-1); }
 .cite p { margin: 0; }
 /* Inside the panel the citation is plain text with the copy button of the code block. */
-.cite .dh-code { margin: calc(-1 * var(--dh-space-5)) 0 var(--dh-space-4); max-inline-size: none; }
+.cite .dh-code { margin: calc(-1 * var(--dh-space-5)) 0 var(--dh-space-3); max-inline-size: none; }
 .cite .dh-code pre { padding: 0; border: 0; background: none; white-space: pre-wrap; overflow-wrap: anywhere; }
 .cite .dh-code pre, .cite .dh-code code { font-family: inherit; font-size: inherit; }
-.facts { display: grid; gap: var(--dh-space-2); margin: 0 0 var(--dh-space-4); padding: 0; list-style: none; }
-.facts li { display: grid; }
-.facts li > a { font-weight: 600; text-decoration: none; }
-.facts li > a:hover, .facts li > a:focus-visible { text-decoration: underline; }
+.cite__links { display: flex; flex-wrap: wrap; gap: var(--dh-space-2) var(--dh-space-4); font-weight: 600; }
+.cite__links a { text-decoration: none; }
+.cite__links a:hover, .cite__links a:focus-visible { text-decoration: underline; }
 
 @media (max-width: 70rem) {
   .layout { grid-template-columns: minmax(0, 1fr); }
   .cite { position: static; max-inline-size: var(--text-width); box-sizing: border-box; }
-}
-
-/* The footer follows the one of dhcraft.org: a dark band over the full width, its content
-   in the page frame, the mark with the name of the site and three groups of links. The
-   soft colour is the secondary text colour of the dark scheme in the shared tokens. */
-.site-foot { background-color: var(--dh-ink-deep); color: var(--dh-paper); font-size: var(--dh-step--1); }
-.site-foot__frame { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1.5fr) minmax(0, 1.2fr); gap: var(--dh-space-5) var(--dh-space-6); max-inline-size: var(--dh-page); margin-inline: auto; padding: var(--dh-space-6) var(--dh-gutter); }
-.site-foot p { margin: 0; }
-.site-foot a { color: inherit; }
-.site-foot a:focus-visible { outline-color: currentColor; }
-.site-foot__brand { display: flex; align-items: flex-start; gap: var(--dh-space-3); }
-.site-foot__brand p::first-line { font-weight: 600; }
-.site-foot__group { display: grid; align-content: start; gap: var(--dh-space-1); }
-.site-foot__group p { margin-block-end: var(--dh-space-1); color: #b6bdd2; }
-.site-foot__group > a { text-decoration: none; }
-.site-foot__group > a:hover, .site-foot__group > a:focus-visible { text-decoration: underline; }
-
-@media (max-width: 47.99rem) {
-  .site-foot__frame { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
-  .site-foot__brand { grid-column: 1 / -1; }
 }
 
 /* On a narrow screen the repository link stays beside the brand and the section links take

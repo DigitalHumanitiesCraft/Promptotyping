@@ -63,6 +63,31 @@
   .dh-foot p { margin: 0; }
   .dh-foot a { color: var(--dh-link); }
 
+  /* The footer with a frame follows dhcraft.org: a dark band over the full width whose content
+     stands in the page frame, so it lines up with the page. The mark and the name of the site
+     stand left, the links of the project right, and the licence in one quiet line below. The
+     soft colour is the secondary text colour of the dark scheme. A footer of three plain
+     paragraphs keeps the form above. */
+  .dh-foot:has(.dh-foot__frame) { display: block; padding: 0; background-color: var(--dh-ink-deep); color: var(--dh-paper); }
+  .dh-foot__frame {
+    display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: var(--dh-space-4) var(--dh-space-6);
+    max-inline-size: var(--dh-page); margin-inline: auto; padding: var(--dh-space-5) var(--dh-gutter);
+  }
+  .dh-foot__frame a { color: inherit; }
+  .dh-foot__frame a:focus-visible { outline-color: currentColor; }
+  .dh-foot__brand { display: flex; align-items: center; gap: var(--dh-space-3); }
+  .dh-foot__links { display: flex; flex-wrap: wrap; gap: var(--dh-space-2) var(--dh-space-5); }
+  .dh-foot__links a { text-decoration: none; }
+  .dh-foot__links a:hover, .dh-foot__links a:focus-visible { text-decoration: underline; }
+  .dh-foot__licence { grid-column: 1 / -1; color: #b6bdd2; }
+  @media (max-width: 47.99rem) {
+    .dh-foot__frame { grid-template-columns: minmax(0, 1fr); }
+  }
+
+  /* Icon: an inline SVG drawn in lines of the text colour, always beside the word it marks. */
+  .dh-icon { flex: none; inline-size: 1.15em; block-size: 1.15em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .dh-icon-link { display: inline-flex; align-items: center; gap: var(--dh-space-2); }
+
   /* Card: one self-contained object with comparable siblings. No shadow, no nested frame.
      A card that is a link as a whole puts the link on its heading and stretches it. */
   .dh-card {
