@@ -59,7 +59,7 @@ This section carries formal requirements. Narrative scenarios from the perspecti
 
 ### Epics and user stories
 
-This section documents who uses the artefact how and why. It follows Scholar-Centred Design, in which the researchers' knowledge of the sources, their methods and their research agenda enter the development. A persona names a kind of researcher and the analytical approach they bring, such as a social historian who studies community relations. An epic names a large body of work for that persona, such as social networks and community relationships. A user story breaks an epic down in the form "As a ..., I want to ..., so that I can ...", and each story carries an acceptance criterion the researchers can decide in front of the running artefact.
+This section documents who uses the artefact how and why. It follows Scholar-Centred Design, in which what the researchers know about their sources, how they work and what they want to find out all enter the development. A persona names a kind of researcher and the analytical approach they bring, such as a social historian who studies community relations. An epic names a large body of work for that persona, such as social networks and community relationships. A user story breaks an epic down in the form "As a ..., I want to ..., so that I can ...", and each story carries an acceptance criterion the researchers can decide in front of the running artefact.
 
 Four principles hold for the stories.
 

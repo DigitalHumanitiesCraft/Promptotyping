@@ -76,7 +76,7 @@ This section applies when the project carries empirical findings or claims of no
 
 - Each check is an attempt to refute the claim. A claim holds when the attempt fails. Agreement among several checkers is a signal and settles nothing by itself.
 - Each result takes one value from a small closed set of verdicts, and each verdict carries its consequence. A minimal set is holds (use the claim), partly holds (correct the wording before use) and does not hold (withhold the claim).
-- The check runs as a chain. A deterministic check by script comes first (quotations identical with the source, references resolve), then an agentic review, then the scholarly validation by the researchers. A claim is confirmed only by a person whose expertise reaches as far as the decision requires or by a validated deterministic rule, an executable check that runs on all of the real data, has been shown on cases with known answers to fail when it should, and has been adopted by the researchers for a defined kind of decision.
+- The check runs as a chain. A deterministic check by script comes first (quotations identical with the source, references resolve), then an agentic review, then the scholarly validation by the researchers. Only two things confirm a claim, a person whose expertise extends as far as the decision demands, or a validated deterministic rule. A rule of this kind is an executable check that runs over the whole of the real data, has failed where it should on cases whose answers are known, and has been adopted by the researchers for a defined kind of decision.
 - The checker sees the source passage and the claim and does not see the author's reasoning, so that the reasoning cannot anchor the judgement.
 - A claim of novelty is searched with the aim of refuting it, and its entry names the nearest prior work found.
 - What the check cannot decide is listed as open, with the reason it cannot be decided and the person who is to decide it.
@@ -186,7 +186,7 @@ related: [architecture, specification, data]
 
 ## Claims carried outside the project
 
-<!-- Trigger: findings or claims of novelty used in a paper, proposal, report or public site. Per claim: wording, source passage in the data, verdict with its consequence, the last step of the chain that checked it. Claims of novelty name the nearest prior work. The checker sees source passage and claim, not the author's reasoning. Confirmed is set only by a person whose expertise reaches as far as the decision requires or by a validated deterministic rule. -->
+<!-- Trigger: findings or claims of novelty used in a paper, proposal, report or public site. Per claim: wording, source passage in the data, verdict with its consequence, the last step of the chain that checked it. Claims of novelty name the nearest prior work. The checker sees source passage and claim, not the author's reasoning. Confirmed is set by a person whose expertise extends as far as the decision demands, or by a validated deterministic rule, and by nothing else. -->
 
 | Claim | Source passage | Verdict | Checked by |
 |---|---|---|---|

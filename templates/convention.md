@@ -31,7 +31,7 @@ Promptotyping distinguishes three types of knowledge document by the kind of kno
 
 - Declarative knowledge documents state what holds about the subject, the data, the domain, the research context and the work accepted for the project. Examples are `INDEX.md`, `project.md`, `data.md`, `specification.md` with its decisions or a decision record split off from it such as `architecture-decisions.md`, `architecture.md`, `design.md`, `testing.md`, `plan.md`, `governance.md` and the domain knowledge documents. They outlast changes to code, LLM versions and tools.
 - Process knowledge documents state what is open and how the understanding developed and why, in `journal.md`. It carries what is open at its beginning and the record of the work beneath it, and `journal-archive.md` and Git preserve its earlier wording.
-- Agent instruction documents state how agents are to work in the project, with procedures, constraints, the checks to be run and pointers to the relevant knowledge, in the action layer `CLAUDE.md` or `AGENTS.md` in the repository root.
+- Agent instruction documents tell agents how to work in the project. They hold procedures, constraints, the checks to run and pointers to the knowledge a task needs, in the action layer `CLAUDE.md` or `AGENTS.md` in the repository root.
 
 The types are composed and never mixed. `design.md` stays declarative, because it describes design stance, design system and interaction patterns. The action layer names `design.md` as its source of values and carries the imperative design principles derived from it. A stable description is thus never overwritten by a volatile instruction.
 
@@ -218,7 +218,7 @@ Three principles are recognisable in every knowledge document.
 
 ## Distillation
 
-Knowledge documents are distilled. Distillation produces an inspectable, selective representation for a purpose that keeps the distinctions, conditions and uncertainties an adequate implementation requires.
+Knowledge documents are distilled. Distillation produces an inspectable, selective representation for a purpose that keeps every distinction, condition and uncertainty an adequate implementation depends on.
 
 - A document carries one bounded function.
 - Content shared between documents is represented by links, through `related:` and at the point of use.
