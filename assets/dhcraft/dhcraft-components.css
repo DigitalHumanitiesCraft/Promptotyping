@@ -117,27 +117,38 @@
   .dh-btn--primary:hover { background-color: var(--dh-link); border-color: var(--dh-link); color: var(--dh-on-accent); }
   .dh-btn:disabled { opacity: 0.5; cursor: default; }
 
-  /* Code block: a figure.dh-code holding one pre. dhcraft-copy.js adds the copy button only
-     where the Clipboard API exists, so a page without it shows the plain block. */
-  /* Caption and button share the row above the block, so the button never covers code that
-     scrolls sideways on a narrow screen. */
-  .dh-code { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: var(--dh-space-2); margin: var(--dh-space-4) 0; }
+  /* Copy field: a figure.dh-code holding one pre, for a prompt, a command or code. It follows
+     the rule of the design document: a dashed border, slightly indented, the monospace face,
+     and copying as an icon inside the field. dhcraft-copy.js adds the button only where the
+     Clipboard API exists and gives it its name as text, which stays the accessible name
+     while the icon shows. After copying the icon becomes a tick. */
+  .dh-code { display: grid; grid-template-columns: minmax(0, 1fr); margin: var(--dh-space-4) 0 var(--dh-space-4) var(--dh-space-4); }
+  .dh-code figcaption { grid-row: 1; margin-block-end: var(--dh-space-1); color: var(--dh-ink-soft); font-size: var(--dh-step--1); }
   .dh-code pre {
-    grid-column: 1 / -1; grid-row: 2;
-    margin: 0; padding: var(--dh-space-4);
-    overflow-x: auto; background-color: var(--dh-ground-alt); color: var(--dh-ink);
-    border: var(--dh-hairline) solid var(--dh-line); border-radius: var(--dh-radius-m);
+    grid-column: 1; grid-row: 2;
+    margin: 0; padding: var(--dh-space-4); padding-inline-end: calc(var(--dh-space-4) + 2.25rem);
+    overflow-x: auto; background: none; color: var(--dh-ink);
+    border: 0.09375rem dashed var(--dh-line-strong); border-radius: var(--dh-radius-m);
     line-height: 1.5; tab-size: 2;
   }
-  .dh-code figcaption { grid-column: 1; grid-row: 1; color: var(--dh-ink-soft); font-size: var(--dh-step--1); }
   .dh-copy {
-    grid-column: 2; grid-row: 1;
-    min-block-size: 2.25rem; padding: var(--dh-space-1) var(--dh-space-3);
-    border: var(--dh-hairline) solid var(--dh-line-strong); border-radius: var(--dh-radius-pill);
-    background-color: var(--dh-surface); color: var(--dh-ink);
-    font: inherit; font-size: var(--dh-step--1); font-weight: 600; cursor: pointer;
+    grid-column: 1; grid-row: 2; justify-self: end; align-self: start;
+    inline-size: 2.25rem; block-size: 2.25rem; margin: var(--dh-space-1); padding: 0;
+    border: 0; border-radius: var(--dh-radius-s); background: none; color: var(--dh-ink-soft);
+    font-size: 0; cursor: pointer;
   }
-  .dh-copy:hover { border-color: var(--dh-accent); }
+  .dh-copy::before {
+    content: ""; display: block; inline-size: 1.25rem; block-size: 1.25rem; margin: auto; background-color: currentColor;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='9' y='9' width='11' height='11' rx='2'/%3E%3Cpath d='M5 15V6a2 2 0 0 1 2-2h9'/%3E%3C/svg%3E") center / contain no-repeat;
+  }
+  .dh-copy[data-state="copied"] { color: var(--dh-accent); }
+  .dh-copy[data-state="copied"]::before {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 12.5 4.5 4.5L19 7.5'/%3E%3C/svg%3E");
+  }
+  .dh-copy:hover { color: var(--dh-ink); background-color: var(--dh-ground-alt); }
+  /* A failure shows its words, so the reader knows to select the text by hand. */
+  .dh-copy[data-state="failed"] { inline-size: auto; padding-inline: var(--dh-space-2); font-size: var(--dh-step--1); }
+  .dh-copy[data-state="failed"]::before { display: none; }
 
   /* Diagram frame: a figure.dh-figure with an SVG, image or HTML diagram and a caption.
      A diagram wider than the screen scrolls inside the frame, never the page. */

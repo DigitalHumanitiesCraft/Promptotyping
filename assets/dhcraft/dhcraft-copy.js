@@ -33,10 +33,13 @@ function enhance(figure) {
     try {
       await navigator.clipboard.writeText(pre.innerText.replace(/\n$/, ""));
       button.textContent = labels.copied;
-      timer = setTimeout(() => { button.textContent = labels.copy; }, 2000);
+      // The state lets a stylesheet show the confirmation where the button is an icon.
+      button.dataset.state = "copied";
+      timer = setTimeout(() => { button.textContent = labels.copy; delete button.dataset.state; }, 2000);
     } catch {
       // A failure stays visible until the next attempt, so the reader knows to select by hand.
       button.textContent = labels.failed;
+      button.dataset.state = "failed";
     }
   });
   figure.append(button);

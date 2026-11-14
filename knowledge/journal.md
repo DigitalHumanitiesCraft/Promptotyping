@@ -29,12 +29,21 @@ related: [project, specification]
 - GOSSIP, Grounded Vault and Second Brain Vault still carry the earlier footer. Their footers are bilingual through translation keys and their shared files differ from the current ones, so each site takes the footer with a frame at its next update.
 - The operator's acceptance of the page after the layout changes of 2026-11-14 is outstanding.
 - Other repositories carry the addresses published before 2026-11-14 in their `template:` fields. In a browser with JavaScript the not-found page leads the address of a template that still exists to `templates/<slug>.md`, while an agent fetching it receives status 404. The addresses of the six retired templates end on the not-found page, and a repository takes the current name and address at its next substantive update.
+- [practice.md](practice.md), `README.md` and the skill with its README share passages of eight and more words with the manuscript, most of them definitions. Whether they are reworded before the paper appears is the operator's decision, since NFR-06 asks for the site's own words and the terms of the paper bind every text.
 - Promptotyping has not been evaluated with researchers outside the project. Use by external participants, an independently led transfer case, a documented unsuccessful or discontinued path and figures on the resources a project needs remain open. The agent role simulations of 2026-08-22 are a pre-test only.
 - Once the paper is published, the page and [project.md](project.md) cite it.
 
 ## Entries
 
 The entries up to 2026-11-14 are condensed into the milestone entries below, and their full wording stands in the Git history (`git show f211631:knowledge/journal.md`).
+
+### 2026-11-14 The page text checked against the manuscript, copy fields and contrast
+
+- Trigger: the operator asked whether the text of the page agrees in content with the paper without being its text, asked for the core terms to stand out, counted too many borders around the section Skill, found the page too grey and asked for the prompt in a dashed field in a code face, as on his slides.
+- Found: read against section 2 of the master manuscript, the page shortened verification to checks that can fail, where the manuscript defines it as conformity to a standard the project has accepted, and it said that an agentic review examines against named criteria, which the manuscript does not say. Several sentences of the two paragraphs under the figure stood word for word in the manuscript, against NFR-06. A comparison by passages of eight words also finds such passages in `README.md`, in [practice.md](practice.md) and in the skill and its README, most of them the shared definitions. The design document of the shared DHCraft files already asked for copy fields with a dashed border, the monospace face and an icon inside the field, which the code block did not yet follow.
+- Decided: the two paragraphs are rewritten in the page's own words with the content of the manuscript, and each core term stands in bold italics where it is introduced. The code block of the shared files becomes the copy field of their design document. The lines between sections and the frame of the Cite panel are gone, and the page overrides three colour roles for a white ground and darker type. The definition in the lead stays the sentence of the manuscript, as FR-02 requires.
+- Changed: `index.html`, `assets/css/site.css`, the shared files under `assets/dhcraft/`, [design.md](design.md). Part of these changes entered the repository with `1350539`, a commit of a parallel session on the second figure.
+- Evidence: `1350539` and the commit that carries this entry. After the change the page shares three passages of eight words with the manuscript, the definition, and two that end in a list of the four forms and in the alternative text of the figure. The density check of the first screen passes at both widths.
 
 ### 2026-11-14 First run of the start prompt and one text width for the page
 

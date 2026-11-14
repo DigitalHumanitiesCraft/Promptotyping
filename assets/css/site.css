@@ -57,7 +57,7 @@ main p { margin: 0 0 var(--dh-space-4); }
 /* The start prompt is prose a reader copies, so its lines wrap inside the field. It stands
    in Consolas where the system has it, as on the operator's slides. */
 .start-prompt pre { white-space: pre-wrap; overflow-wrap: anywhere; }
-.start-prompt pre, .start-prompt code { font-family: Consolas, var(--dh-font-mono); }
+.start-prompt pre, .start-prompt code { font-family: Consolas, var(--dh-font-mono); font-size: 0.95rem; }
 
 /* A term stands out where the text introduces it, so a reader who scrolls finds it. */
 dfn { font-style: italic; font-weight: 600; }
