@@ -9,6 +9,12 @@ artefact: "A vault that holds the rules by which it grows"
 
 [Video](https://youtu.be/31Y6uRLnkQA)
 
+## Promptotype
+
+- Prototype: shown in the [video](https://youtu.be/31Y6uRLnkQA), no live prototype is linked.
+- Project knowledge base: no public location is given.
+- Research data: no public location is given.
+
 ## Context
 
 A recorded working session that starts with an empty vault and ends with a curated one. The vault built during the session holds knowledge documents on the tooling and on knowledge modelling, and it holds the rules by which it grows, so it documents its own construction. The recording serves as introductory material for a workshop, and a written script exists alongside it as a reading version.

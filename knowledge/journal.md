@@ -39,6 +39,14 @@ related: [project, specification]
 
 The entries up to 2026-11-14 are condensed into the milestone entries below, and their full wording stands in the Git history (`git show f211631:knowledge/journal.md`).
 
+### 2026-11-14 The knowledge base contextualises the data, and the example leads to the running project
+
+- Trigger: the operator confirmed the two statements on context and on research data, asked for FR-09 and FR-10 to be built, and objected that the project knowledge base does more than describe the research data. It contextualises them, and the data are used to produce conclusions and findings that lie in the knowledge base. He found the example good and asked for it to be tied to the project on the page, so that a reader can try CorrespExplorer at once.
+- Decided: the second figure shows two relations between knowledge base and research data, the knowledge base contextualises the data and findings from the data enter the knowledge base. [practice.md](practice.md#the-project-knowledge-base) states it. Under the example the page links the running tool, its knowledge base, its research data and its description. The templates on the page stand under the three types of knowledge document, with the convention after them. Each use case carries a section Promptotype with its three parts.
+- Corrected: the label `describes` in the second figure.
+- Changed: `assets/img/promptotype-example.svg`, `index.html`, `assets/css/site.css`, `README.md`, the files in `case-studies/`, [practice.md](practice.md), [specification.md](specification.md), `CHANGELOG.md`.
+- Evidence: the commit that carries this entry. The section Promptotype of each use case was written from a listing of the linked repository on 2026-11-14. It states whether the repository has a folder `knowledge/`, agent instructions in its root and a folder `data/`, and it does not judge what those folders hold. A use case without a linked repository says that no public location is given.
+
 ### 2026-11-14 What the figures taught, distilled into the practice
 
 - Trigger: the operator asked what the work on the figures had made clearer for the repository and called `distill`.

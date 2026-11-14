@@ -9,6 +9,12 @@ artefact: "Knowledge document, vault entry and an infographic"
 
 [Video](https://youtu.be/aCMDWtCKGNw)
 
+## Promptotype
+
+- Prototype: shown in the [video](https://youtu.be/aCMDWtCKGNw), no live prototype is linked.
+- Project knowledge base: no public location is given.
+- Research data: no public location is given.
+
 ## Context
 
 A recorded workflow that takes a video on the fundamentals of generative AI and carries it through to teaching slides. The content is extracted, verified and synthesised into a knowledge document. An agent then analyses the vault, finds where the document belongs and links it to what is already there. An image model produces an infographic, which is improved iteratively against feedback, and the result goes into slides.

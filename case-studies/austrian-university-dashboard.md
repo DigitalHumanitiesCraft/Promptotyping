@@ -9,6 +9,12 @@ artefact: "Interactive dashboard (teaching baseline)"
 
 [Video](https://youtu.be/hd_a-NBO_S4)
 
+## Promptotype
+
+- Prototype: shown in the [video](https://youtu.be/hd_a-NBO_S4), no live prototype is linked.
+- Project knowledge base: no public location is given.
+- Research data: no public location is given.
+
 ## Context
 
 An interactive dashboard over a corpus of Excel files holding Austrian university statistics, built end to end on video as the didactic baseline of the practice. The recording is part 2 of the introduction to Promptotyping and is the whole record of the case, which has no public repository. The session runs the complete cycle, exploration of the spreadsheet corpus, a data document, knowledge documents for architecture, user interface and user stories, an overengineering check before implementation, a cut back to a minimum viable product, implementation against milestones, and iteration on the interface through screenshot feedback. A redesign in the visual idiom of Dune sits inside the same session.

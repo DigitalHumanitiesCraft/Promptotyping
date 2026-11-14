@@ -106,9 +106,10 @@
       </div>
       <figure class="dh-figure example">
         <div class="dh-figure__canvas" tabindex="0" role="group" aria-label="Figure of a Promptotype, scrolls sideways on a narrow screen">
-          <img src="assets/img/promptotype-example.svg" width="1300" height="720" loading="lazy" alt="A Promptotype opened, with CorrespExplorer as the example. The prototype offers coordinated visualisation views and is built from the research data, correspondence metadata in CMIF-XML. The project knowledge base describes the data and holds declarative documents such as project.md, data.md, specification.md and design.md, the process document journal.md, and the agent instructions in CLAUDE.md.">
+          <img src="assets/img/promptotype-example.svg" width="1300" height="720" loading="lazy" alt="A Promptotype opened, with CorrespExplorer as the example. The prototype offers coordinated visualisation views and is built from the research data, correspondence metadata in CMIF-XML. The project knowledge base contextualises the data, takes up the findings drawn from them and holds declarative documents such as project.md, data.md, specification.md and design.md, the process document journal.md, and the agent instructions in CLAUDE.md.">
         </div>
       </figure>
+      <p class="example-links">The example is a running project. <a href="https://dhcraft.org/CorrespExplorer">Open CorrespExplorer</a> in your browser, read <a href="https://github.com/DigitalHumanitiesCraft/CorrespExplorer/tree/main/knowledge">its knowledge base</a> and <a href="https://github.com/DigitalHumanitiesCraft/CorrespExplorer/tree/main/data">its research data</a>, or start from <a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/case-studies/corresp-explorer.md">its description</a>.</p>
     </section>
 
     <div class="layout">
@@ -140,8 +141,10 @@ My material: [what it is and where it lies, or "none yet"]</code></pre>
         <h2>Templates</h2>
         <a class="dh-btn" href="downloads/promptotyping-templates.zip" download>Download all as archive</a>
       </div>
-      <p class="dh-prose">The project knowledge base is a small set of Markdown files in the folder <code>knowledge/</code> of a repository. Each template says what its document is for, when a project needs it and what does not belong in it.</p>
-      <ul class="rows">
+      <p class="dh-prose">The project knowledge base is a small set of Markdown files in the folder <code>knowledge/</code> of a repository. Each template says what its document is for, when a project needs it and what does not belong in it. The documents are of three types, by the kind of knowledge they hold.</p>
+        <h3>Declarative</h3>
+        <ul class="rows">
+          <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/templates/index.md"><code>index.md</code></a><span>the entry point with the terms that constitute the project</span></li>
           <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/templates/project.md"><code>project.md</code></a><span>what the project is, for whom and with which aim</span></li>
           <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/templates/data.md"><code>data.md</code></a><span>what the research data hold and what they lack</span></li>
           <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/templates/domain-knowledge.md"><code>domain-knowledge.md</code></a><span>the rules of the domain on which the artefact rests</span></li>
@@ -150,11 +153,19 @@ My material: [what it is and where it lies, or "none yet"]</code></pre>
           <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/templates/architecture.md"><code>architecture.md</code></a><span>how the artefact is built and how its parts connect</span></li>
           <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/templates/testing.md"><code>testing.md</code></a><span>what the tests guarantee and how claims are checked</span></li>
           <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/templates/plan.md"><code>plan.md</code></a><span>accepted work that has not begun</span></li>
+        </ul>
+        <h3>Process</h3>
+        <ul class="rows">
           <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/templates/journal.md"><code>journal.md</code></a><span>what is open and how the project reached its state</span></li>
-          <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/templates/index.md"><code>index.md</code></a><span>the entry point with the terms that constitute the project</span></li>
+        </ul>
+        <h3>Agent instructions</h3>
+        <ul class="rows">
           <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/templates/action-layer.md"><code>action-layer.md</code></a><span>the agent instructions in CLAUDE.md or AGENTS.md</span></li>
+        </ul>
+        <h3>Convention</h3>
+        <ul class="rows">
           <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/templates/convention.md"><code>convention.md</code></a><span>names, functions, frontmatter and structure of all documents</span></li>
-      </ul>
+        </ul>
     </section>
 
     <section id="knowledge">

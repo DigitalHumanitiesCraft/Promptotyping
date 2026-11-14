@@ -9,6 +9,12 @@ artefact: "Network dashboard with centrality measures and yearly snapshots"
 
 [Repository](https://github.com/DigitalHumanitiesCraft/wiiw-patent-analysis-demo), [Live](https://dhcraft.org/wiiw-patent-analysis-demo/)
 
+## Promptotype
+
+- Prototype: [live](https://dhcraft.org/wiiw-patent-analysis-demo/).
+- Project knowledge base: [`knowledge/`](https://github.com/DigitalHumanitiesCraft/wiiw-patent-analysis-demo/tree/main/knowledge) with `CLAUDE.md` in the repository.
+- Research data: [`data/`](https://github.com/DigitalHumanitiesCraft/wiiw-patent-analysis-demo/tree/main/data) in the repository.
+
 ## Context and research question
 
 Which firms patent together, across which borders, and how did that pattern move between 2010 and 2018. The question comes from economic research, which is what the case contributes to the record. It was built at an economic research institute in Vienna, and the domain expertise it had to serve was economic.

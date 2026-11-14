@@ -9,6 +9,12 @@ artefact: "Custom GPT without implemented software (2023), browser-based lossles
 
 [Repository](https://github.com/DigitalHumanitiesCraft/teiCrafter), [Live](https://dhcraft.org/teiCrafter/)
 
+## Promptotype
+
+- Prototype: [live](https://dhcraft.org/teiCrafter/).
+- Project knowledge base: [`knowledge/`](https://github.com/DigitalHumanitiesCraft/teiCrafter/tree/main/knowledge) with `CLAUDE.md` in the repository.
+- Research data: the repository has no folder `data/`.
+
 ## Context
 
 teiCrafter of 2023 is the origin point of the practice, and no software was written for it. The artefact was a Custom GPT holding a mapping from plain text to TEI-XML (P5) together with a quality-control instruction, both configured in prose, with the editor in the loop as the checking authority. That is the conception of the practice in the one form the tooling of 2023 afforded. Three functional cores were planned around it, the modular transformation itself, a modelling assistant, and a validation system combining rule-based checks with an LLM-as-a-judge step. The intended position was inside a pipeline running from handwritten-text recognition through the conversion into an edition publication system. The same conception was taken up in 2026 and built as the browser-based lossless TEI editor that carries the name today and remains in active development.

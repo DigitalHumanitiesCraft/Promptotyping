@@ -9,6 +9,12 @@ artefact: "TEI P5 edition with text-image synchronisation, prosopography and met
 
 [Repository](https://github.com/chpollin/diged-neolat), [Live](https://chpollin.github.io/diged-neolat/edition-5/web/), [Video](https://youtu.be/0DtX0pLv4TA)
 
+## Promptotype
+
+- Prototype: [live](https://chpollin.github.io/diged-neolat/edition-5/web/).
+- Project knowledge base: the [repository](https://github.com/chpollin/diged-neolat) has no folder `knowledge/`.
+- Research data: the repository has no folder `data/`, see Data below.
+
 ## Context and research question
 
 A Neo-Latin poetry collection of 1474, held as a manuscript in Madrid, is to be published as a scholarly digital edition. The edition has to do three things at once. It has to present a text whose Latin most readers cannot check against the facsimile unaided, identify the historical persons and places the poems name, and make the metre visible, since metre is evidence in a Neo-Latin corpus. The case asks how far an agentic workflow carries an edition of that kind from a word-processor file.

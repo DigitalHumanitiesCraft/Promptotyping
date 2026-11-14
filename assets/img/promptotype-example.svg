@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 720" width="1300" height="720" role="img" aria-labelledby="pb-t pb-d">
   <title id="pb-t">A Promptotype opened, with CorrespExplorer as the example</title>
-  <desc id="pb-d">A Promptotype is a prototype taken together with the project knowledge base and the research data from which it was built. The example is CorrespExplorer. Its prototype offers coordinated views, among them map, timeline, network and topics. Its research data are correspondence metadata in CMIF-XML and are the basis of building. Its project knowledge base holds declarative documents, project.md, data.md, specification.md and design.md, the process document journal.md, and the agent instructions in CLAUDE.md, and it describes the research data. The files shown are a selection. Each state of the Promptotype is versioned.</desc>
+  <desc id="pb-d">A Promptotype is a prototype taken together with the project knowledge base and the research data from which it was built. The example is CorrespExplorer. Its prototype offers coordinated views, among them map, timeline, network and topics. Its research data are correspondence metadata in CMIF-XML and are the basis of building. Its project knowledge base holds declarative documents, project.md, data.md, specification.md and design.md, the process document journal.md, and the agent instructions in CLAUDE.md, It contextualises the research data, and the findings drawn from the data are written into it. The files shown are a selection. Each state of the Promptotype is versioned.</desc>
   <style>
     svg { color: #1e2749; background: #ffffff; }
     text { fill: #1e2749; font-family: Arial, Helvetica, sans-serif; text-anchor: middle; }
@@ -71,8 +71,10 @@
   <path class="line" d="M894,252 H556" marker-end="url(#pb-arrow)"/>
   <text class="sub" x="725" y="240">the basis of building</text>
 
-  <path class="thin" d="M960,402 V302" stroke-dasharray="5 5" marker-end="url(#pb-arrow)"/>
-  <text class="sub start" x="974" y="358">describes</text>
+  <path class="thin" d="M940,402 V300" stroke-dasharray="5 5" marker-end="url(#pb-arrow)"/>
+  <path class="thin" d="M980,299 V400" stroke-dasharray="5 5" marker-end="url(#pb-arrow)"/>
+  <text class="sub end" x="926" y="358">contextualises</text>
+  <text class="sub start" x="994" y="358">findings</text>
 
   <rect class="kb-frame" x="50" y="402" width="1170" height="216" rx="10"/>
   <text class="head" x="635" y="434">PROJECT KNOWLEDGE BASE</text>

@@ -12,6 +12,12 @@ artefact: "HTR/OCR pipeline with facsimile-text viewer and statistics dashboard"
 
 Transcription and review of the Stefan Zweig estate.
 
+## Promptotype
+
+- Prototype: [live](https://chpollin.github.io/szd-htr-ocr-pipeline/).
+- Project knowledge base: [`knowledge/`](https://github.com/chpollin/szd-htr-ocr-pipeline/tree/main/knowledge) with `CLAUDE.md` in the repository.
+- Research data: [`data/`](https://github.com/chpollin/szd-htr-ocr-pipeline/tree/main/data) in the repository.
+
 ## Context and research question
 
 The pipeline applies handwritten text recognition to the digitised Stefan Zweig estate at the Literaturarchiv Salzburg, a large body of facsimile scans of manuscripts, typescripts and correspondence. The scholarly purpose fixed in Preparation was to make the estate readable and searchable in diplomatic transcription, without normalisation. The paper develops the project as its worked case for checking, and the modelling judgement and the verification judgement lay with the same person there.

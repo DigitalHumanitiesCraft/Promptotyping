@@ -9,6 +9,12 @@ artefact: "Curated TEI-XML edition with verification interfaces"
 
 [Live](https://chpollin.github.io/zbz-ocr-tei/)
 
+## Promptotype
+
+- Prototype: [live](https://chpollin.github.io/zbz-ocr-tei/).
+- Project knowledge base: no public location is given.
+- Research data: no public location is given, see Data below.
+
 ## Context and research question
 
 The ZBZ OCR/TEI pipeline opens up the Jeanne Hersch papers held at the Zentralbibliothek Zürich. The task is to carry a multilingual corpus of mixed document types, monographs, journals and edited volumes, into validated TEI-XML following the DTA base format. In scale, tool integration and documentation density this is the most extensive case in the record.

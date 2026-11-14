@@ -9,6 +9,12 @@ artefact: "Multi-view archive explorer"
 
 [Repository](https://github.com/DigitalHumanitiesCraft/m3gim), [Live](https://dhcraft.org/m3gim)
 
+## Promptotype
+
+- Prototype: [live](https://dhcraft.org/m3gim).
+- Project knowledge base: [`knowledge/`](https://github.com/DigitalHumanitiesCraft/m3gim/tree/main/knowledge) with `AGENTS.md` and `CLAUDE.md` in the repository.
+- Research data: [`data/`](https://github.com/DigitalHumanitiesCraft/m3gim/tree/main/data) in the repository.
+
 ## Context and research question
 
 M3GIM is the digital collection and multi-view exploration of the Ira Malaniuk archive at the University of Music and Performing Arts Graz. The research question concerns the mobility of a singer, how the stations, relations, works and places of a biographical career can be modelled and explored. The project is funded as a feasibility study for a follow-up application.

@@ -9,6 +9,12 @@ artefact: "Room-object visualisation dashboard"
 
 [Repository](https://github.com/chpollin/imareal-room-object), [Live](https://chpollin.github.io/imareal-room-object/)
 
+## Promptotype
+
+- Prototype: [live](https://chpollin.github.io/imareal-room-object/).
+- Project knowledge base: [`knowledge/`](https://github.com/chpollin/imareal-room-object/tree/main/knowledge) in the repository.
+- Research data: [`data/`](https://github.com/chpollin/imareal-room-object/tree/main/data) in the repository.
+
 ## Context
 
 A dashboard that makes medieval room inventories from the REALonline database explorable for research on material culture. The records describe relations between rooms and the objects in them, drawn from late medieval noble households in Austria and northern Italy. The work ran as one Promptotyping iteration, with conceptual passes in a chat interface for close reading of the data and design analysis, and implementation in an agentic coding environment.

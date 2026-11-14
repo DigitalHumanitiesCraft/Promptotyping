@@ -7,6 +7,12 @@ artefact: "Static edition frontend rendered from a pipeline of transformers and 
 
 # Medieval Legal Transactions
 
+## Promptotype
+
+- Prototype: no public location is given.
+- Project knowledge base: no public location is given.
+- Research data: no public location is given, see Data below.
+
 ## Context and research question
 
 The project edits the prosopographic database of medieval Viennese legal transactions, the record of who transacted with whom in the city and under what terms. An edition of that corpus has to hold two things at once, a text faithful to the source and a register of persons that identifies the same individual across documents where spellings differ. The question the case answers is which of those two an agent may do.

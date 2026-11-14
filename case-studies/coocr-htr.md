@@ -9,6 +9,12 @@ artefact: "Browser-based correction workbench"
 
 [Repository](https://github.com/DigitalHumanitiesCraft/co-ocr-htr), [Video](https://youtu.be/VJyhVc_ujeA)
 
+## Promptotype
+
+- Prototype: shown in the [video](https://youtu.be/VJyhVc_ujeA), no live prototype is linked.
+- Project knowledge base: [`knowledge/`](https://github.com/DigitalHumanitiesCraft/co-ocr-htr/tree/main/knowledge) with `CLAUDE.md` in the repository.
+- Research data: [`data/`](https://github.com/DigitalHumanitiesCraft/co-ocr-htr/tree/main/data) in the repository.
+
 ## Context and research question
 
 coOCR-HTR is a browser-based workbench for expert-in-the-loop transcription workflows. The question it answers is whether a particular transcription process holds at all, and the workbench exists to make that process visible and testable. The artefact is a means of addressing the epistemic asymmetry between machine transcription and human correction, and it was never meant as a finished correction tool.

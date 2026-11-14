@@ -34,6 +34,8 @@ main p { margin: 0 0 var(--dh-space-4); }
 .dh-figure__canvas > img { inline-size: 100%; block-size: auto; min-inline-size: 46rem; }
 /* The second figure opens one Promptotype and follows the two paragraphs. */
 .example { margin-block-start: var(--dh-space-5); margin-inline: auto; max-inline-size: 60rem; }
+/* The line under the example starts at the left edge of its figure. */
+.example-links { margin: var(--dh-space-3) auto 0; max-inline-size: 60rem; }
 
 .repo-link { display: inline-flex; align-items: center; gap: var(--dh-space-2); min-block-size: var(--dh-tap); color: var(--dh-ink-soft); text-decoration: none; }
 .repo-link:hover, .repo-link:focus-visible { color: var(--dh-ink); text-decoration: underline; }

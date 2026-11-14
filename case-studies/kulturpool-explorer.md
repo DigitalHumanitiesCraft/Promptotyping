@@ -9,6 +9,12 @@ artefact: "Collection interface (parallel agent orchestration)"
 
 [Repository](https://github.com/chpollin/kulturpool-demo), [Live](https://chpollin.github.io/kulturpool-demo/), [Video](https://youtu.be/tQBaaVhPu5U)
 
+## Promptotype
+
+- Prototype: [live](https://chpollin.github.io/kulturpool-demo/).
+- Project knowledge base: [`knowledge/`](https://github.com/chpollin/kulturpool-demo/tree/main/knowledge) with `CLAUDE.md` in the repository.
+- Research data: [`data/`](https://github.com/chpollin/kulturpool-demo/tree/main/data) in the repository.
+
 ## Context and research question
 
 The Kulturpool Explorer is a static collection interface over the object records that the Austrian Kulturpool aggregation publishes through its API, restricted to the openly licensed holdings of one contributing museum. The run began without prior knowledge of that API, so the first question was empirical, what the aggregation actually returns and which subset of it supports exploratory access. The interface design followed from the answer.

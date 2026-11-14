@@ -10,6 +10,12 @@ artefact: "JSON-LD bibliography plus static front end (SZD ecosystem)"
 
 [Repository](https://github.com/chpollin/klawiter-rescue), [Live](https://chpollin.github.io/klawiter-rescue), [Video](https://youtu.be/KG35VGVctJw)
 
+## Promptotype
+
+- Prototype: [live](https://chpollin.github.io/klawiter-rescue).
+- Project knowledge base: [`knowledge/`](https://github.com/chpollin/klawiter-rescue/tree/main/knowledge) with `CLAUDE.md` in the repository.
+- Research data: [`data/`](https://github.com/chpollin/klawiter-rescue/tree/main/data) in the repository.
+
 ## Context and research question
 
 The project extracts and restructures the Klawiter bibliography, one of the most comprehensive bibliographical resources on Stefan Zweig, out of a decommissioned MediaWiki database. The question is how bibliographical knowledge compiled over decades can be rescued from a legacy system that no longer runs and carried into a sustainable, connectable form. The bibliography belongs to the Stefan Zweig Digital ecosystem, where it serves as the reception layer of the estate ontology.

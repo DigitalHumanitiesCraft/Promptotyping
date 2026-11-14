@@ -9,6 +9,12 @@ artefact: "Layer-toggle edition (text-layer controls, IIIF)"
 
 [Repository](https://github.com/DigitalHumanitiesCraft/notker-edition), [Live](https://dhcraft.org/notker-edition)
 
+## Promptotype
+
+- Prototype: [live](https://dhcraft.org/notker-edition).
+- Project knowledge base: [`knowledge/`](https://github.com/DigitalHumanitiesCraft/notker-edition/tree/main/knowledge) with `CLAUDE.md` in the repository.
+- Research data: [`data/`](https://github.com/DigitalHumanitiesCraft/notker-edition/tree/main/data) in the repository.
+
 ## Context and research question
 
 The Notker Edition is a digital edition of Notker's psalm commentary on Psalm 2, built as a promptotype for a third-party funding application at the Institute of German Studies of the University of Graz. The research question concerns the presentation of interwoven text layers, since the Latin psalm quotation, the Old High German translation and the exegetical commentary each have to become visible and controllable on their own. Editorial decisions stay with the editor, and the execution is machine work.

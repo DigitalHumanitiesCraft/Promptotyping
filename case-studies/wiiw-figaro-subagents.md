@@ -9,6 +9,12 @@ artefact: "Documented multi-agent analysis run under version control"
 
 [Repository](https://github.com/chpollin/wiiw-figaro-nam-demo), [Video](https://youtu.be/21815nd9WMM)
 
+## Promptotype
+
+- Prototype: shown in the [video](https://youtu.be/21815nd9WMM), no live prototype is linked.
+- Project knowledge base: [`knowledge/`](https://github.com/chpollin/wiiw-figaro-nam-demo/tree/main/knowledge) with `CLAUDE.md` in the repository.
+- Research data: the repository has no folder `data/`, see Data below.
+
 ## Context and research question
 
 The Eurostat FIGARO dataset describes production, income, money flows and consumption across European economies, and it is large enough that no single reading of it settles a question. The case was prepared for a workshop at an economic research institute and asks what changes when the analysis is distributed across several agent roles. The comparison is against a single conversation carrying the whole task. The research question driving the run concerns the energy crisis and the recovery after COVID.

@@ -9,6 +9,12 @@ artefact: "Timeline annotation tool as a single page application"
 
 [Repository](https://github.com/DigitalHumanitiesCraft/excellence/tree/main/promptotyping/szd-annotation-timeline), [Live](https://dhcraft.org/excellence/promptotyping/szd-annotation-timeline/)
 
+## Promptotype
+
+- Prototype: [live](https://dhcraft.org/excellence/promptotyping/szd-annotation-timeline/).
+- Project knowledge base: see the [repository](https://github.com/DigitalHumanitiesCraft/excellence/tree/main/promptotyping/szd-annotation-timeline).
+- Research data: see the [repository](https://github.com/DigitalHumanitiesCraft/excellence/tree/main/promptotyping/szd-annotation-timeline).
+
 ## Context
 
 A timeline-based annotation tool over the correspondence metadata of Stefan Zweig Digital, the digital reconstruction of the Zweig estate at the Literaturarchiv Salzburg. The XML metadata carries title, date, creator and contributors, and the tool fetches it directly from the GAMS asset management system in which the project publishes. The artefact is a single-page application without external dependencies. A researcher marks letters with a research status, tags and notes, the annotations are kept in browser storage, and JSON export and import move them between sessions. The prototype was built in about two hours and is the first publicly documented experiment of the working mode that later became the practice, with its account published as a blog post.

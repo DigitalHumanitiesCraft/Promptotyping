@@ -9,6 +9,12 @@ artefact: "Evidence companion plus Obsidian vault"
 
 [Live](https://chpollin.github.io/FemPrompt_SozArb/)
 
+## Promptotype
+
+- Prototype: [live](https://chpollin.github.io/FemPrompt_SozArb/).
+- Project knowledge base: no public location is given.
+- Research data: no public location is given, see Data below.
+
 ## Context and research question
 
 FemPrompt SozArb is a systematic literature review on AI literacy and LLM bias in social work, carried out as a staged pipeline whose own record is published alongside its result. The question the project set itself is about the process. It asks how the transformation a body of literature undergoes in an LLM-supported review can be made inspectable at every step. It is the record's one case outside the digital humanities and its one artefact for the audit function among the interface functions described in [The artefact and its boundary](../knowledge/practice.md#the-artefact-and-its-boundary).

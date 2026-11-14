@@ -9,6 +9,12 @@ artefact: "Annotation tool for stained-glass metadata"
 
 [Repository](https://github.com/chpollin/stained-glass-metadata-annotation-tool), [Live](https://chpollin.github.io/stained-glass-metadata-annotation-tool/docs/version-2/)
 
+## Promptotype
+
+- Prototype: [live](https://chpollin.github.io/stained-glass-metadata-annotation-tool/docs/version-2/).
+- Project knowledge base: the [repository](https://github.com/chpollin/stained-glass-metadata-annotation-tool) has no folder `knowledge/`.
+- Research data: the repository has no folder `data/`.
+
 ## Context
 
 A scholarly annotation tool for medieval stained-glass artefacts from the Corpus Vitrearum Medii Aevi. The metadata sits in the NFDI4Culture knowledge graph and is extracted from it by SPARQL query, then processed from JSON-LD into the payload the static application reads, with Python doing the processing so that the browser does not. The interface filters by period, geographic location, iconographic subject and element type, and lets a researcher annotate an artefact in a fixed set of categories and carry the annotations out again as a file. Two Promptotyping iterations were run, and the published demo is the second.

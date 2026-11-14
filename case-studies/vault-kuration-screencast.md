@@ -9,6 +9,12 @@ artefact: "Curated vault plus the rules extracted from the curation"
 
 [Video](https://youtu.be/CioCSbQWGXw)
 
+## Promptotype
+
+- Prototype: shown in the [video](https://youtu.be/CioCSbQWGXw), no live prototype is linked.
+- Project knowledge base: no public location is given.
+- Research data: no public location is given.
+
 ## Context
 
 A recorded curation of a vault that had grown organically and unevenly. The session analyses it programmatically with Python for statistics, orphaned notes and hub documents, merges two documents that covered the same ground, strips quantities and formulas, and updates the links across the whole vault. A second model with a large context window is then tested on the merged state to see whether new research perspectives can be synthesised from it. The rules for future curation are extracted from the work itself.

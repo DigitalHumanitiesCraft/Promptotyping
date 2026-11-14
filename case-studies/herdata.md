@@ -7,6 +7,12 @@ artefact: "Correspondence map (women in Goethe's correspondence)"
 
 # HerData
 
+## Promptotype
+
+- Prototype: no public location is given.
+- Project knowledge base: no public location is given.
+- Research data: no public location is given, see Data below.
+
 ## Context and research question
 
 HerData is a static web application for the visualisation and prosopographical treatment of Goethe's female correspondents. The question is how women in Goethe's correspondence can be made visible without concealing the representational limits of the source. What marks the case is epistemic visibility, since a map-bias section addresses data completeness and representational limits before the visualisation is used.

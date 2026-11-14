@@ -10,6 +10,12 @@ artefact: "Coordinated visualisation views"
 
 [Repository](https://github.com/DigitalHumanitiesCraft/CorrespExplorer), [Live](https://dhcraft.org/CorrespExplorer)
 
+## Promptotype
+
+- Prototype: [live](https://dhcraft.org/CorrespExplorer).
+- Project knowledge base: [`knowledge/`](https://github.com/DigitalHumanitiesCraft/CorrespExplorer/tree/main/knowledge) with `CLAUDE.md` in the repository.
+- Research data: [`data/`](https://github.com/DigitalHumanitiesCraft/CorrespExplorer/tree/main/data) in the repository.
+
 ## Context and research question
 
 CorrespExplorer is a research tool for the interactive visualisation of correspondence metadata in CMIF format. The question is how FAIR-conformant letter data can be carried onto scholar-centred interfaces. The project began as a fork of an earlier letter project, HerData, and it shows how structured research data and scholar-centred design requirements pass into functional prototypes through context engineering.

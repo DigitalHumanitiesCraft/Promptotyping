@@ -9,6 +9,12 @@ artefact: "Digital archive (search plus spatial exploration)"
 
 [Repository](https://github.com/chpollin/km), [Live](https://chpollin.github.io/km/index.html)
 
+## Promptotype
+
+- Prototype: [live](https://chpollin.github.io/km/index.html).
+- Project knowledge base: the [repository](https://github.com/chpollin/km) has no folder `knowledge/`.
+- Research data: the repository has no folder `data/`, see Data below.
+
 ## Context and research question
 
 The criminological collection of the Hans Gross Kriminalmuseum at the University of Graz holds case records and physical artefacts from the founding period of scientific criminology, dated between 1890 and 1940. The project opens that collection through two access paradigms at once, a conventional search over the records and a canvas-based spatial exploration of the object stock, and it asks what each paradigm makes askable that the other does not reach.

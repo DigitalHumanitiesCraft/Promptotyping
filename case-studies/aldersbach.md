@@ -9,6 +9,12 @@ artefact: "Dashboard for monastic financial data"
 
 [Repository](https://github.com/chpollin/depcha-aldersbach), [Live](https://chpollin.github.io/depcha-aldersbach)
 
+## Promptotype
+
+- Prototype: [live](https://chpollin.github.io/depcha-aldersbach).
+- Project knowledge base: the [repository](https://github.com/chpollin/depcha-aldersbach) has no folder `knowledge/`.
+- Research data: [`data/`](https://github.com/chpollin/depcha-aldersbach/tree/main/data) in the repository.
+
 ## Context
 
 A dashboard for the financial transactions of the Cistercian abbey of Aldersbach in Lower Bavaria in the year 1557. The accounts are encoded to the DEPCHA standard, whose semantic layer is the Bookkeeping Ontology, and reach the application as RDF/XML that the browser parses client-side. The material carries the properties that make the source difficult, a four-unit currency system of florin, schilling, denarius and groschen, grain trade as the dominant income, and transaction descriptions in the German of the period. The artefact is a frontend-only static site in vanilla JavaScript on GitHub Pages, offering filtered views of the transactions, their temporal distribution, their categorisation into income and expenditure, and the persons and places extracted from the descriptions.

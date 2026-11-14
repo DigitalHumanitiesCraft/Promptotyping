@@ -9,6 +9,12 @@ artefact: "Dashboard with a range of visualisation types and a dual-mode analysi
 
 [Repository](https://github.com/DigitalHumanitiesCraft/vetmed-wissensbilanz), [Live](https://dhcraft.org/vetmed-wissensbilanz/)
 
+## Promptotype
+
+- Prototype: [live](https://dhcraft.org/vetmed-wissensbilanz/).
+- Project knowledge base: [`knowledge/`](https://github.com/DigitalHumanitiesCraft/vetmed-wissensbilanz/tree/main/knowledge) in the repository.
+- Research data: the repository has no folder `data/`, see Data below.
+
 ## Context and research question
 
 Austrian universities report their performance annually in an intellectual-capital statement, the Wissensbilanz, and they report it as spreadsheets. The question the dashboard answers is what the sector looks like when those separate returns are read together, across institutions and across years. The project was the first use case of VetMedAI at the University of Veterinary Medicine Vienna, and it was built as a teaching case with an audience present during development.
