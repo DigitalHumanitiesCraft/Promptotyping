@@ -20,6 +20,8 @@ Der Skill hat in Version 2.0.0 fünf Subcommands. `orient` stellt fest, wo das P
 
 ### Installation
 
+Derselbe Skill ist als Repository [promptotyping-skill](https://github.com/DigitalHumanitiesCraft/promptotyping-skill) veröffentlicht, je Version mit einem Tag. Dessen README nennt die Installation für jeden Agenten.
+
 In Claude Code kopieren Sie den Ordner `skills/promptotyping` aus einem Klon dieses Repositorys nach `~/.claude/skills/promptotyping` für alle Projekte oder nach `.claude/skills/promptotyping` im Projektordner für ein einzelnes Projekt.
 
 ```sh

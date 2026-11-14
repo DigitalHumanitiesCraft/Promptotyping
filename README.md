@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14160875.svg)](https://doi.org/10.5281/zenodo.14160875)
 
-Promptotyping is a working practice that translates research data and their contexts into research artefacts that fit the researchers' questions and ways of working. It does so through three forms of engineering. Knowledge Engineering makes explicit and curates what a project knows about its domain, its data and its aims. Context Engineering selects from this knowledge what an agent needs for a task. Agentic Engineering organises the work of the agents that build on it.
+Promptotyping is a working practice that translates research data and their contexts into research artefacts that fit the researchers' purposes and ways of working. It does so through three forms of engineering. Knowledge Engineering makes explicit and curates what a project knows about its domain, its data and its aims. Context Engineering selects from this knowledge what an agent needs for a task. Agentic Engineering organises the work of the agents that build on it.
 
 The site at **https://dhcraft.org/Promptotyping/** presents the practice on one page, with the figure below, the terms, the files to download, a worked example and the citation. This README follows the same order in short form and links the page instead of repeating it.
 
@@ -20,7 +20,7 @@ In the figure, Knowledge Engineering is the project knowledge base and its curat
 
 A first iteration is meant for researchers and project teams with structured data and a concrete question. Check first whether the six conditions of the [fit check](_content/application.md) hold.
 
-1. Install an AI coding agent such as Claude Code or Codex, Git and Python, then copy the skill into the agent's skills folder.
+1. Install an AI coding agent such as Claude Code or Codex, Git and Python, then copy the skill into the agent's skills folder. The same skill is published as the repository [promptotyping-skill](https://github.com/DigitalHumanitiesCraft/promptotyping-skill), tagged per version, whose README gives the installation for each agent.
 
    ```bash
    git clone https://github.com/DigitalHumanitiesCraft/Promptotyping.git
@@ -34,7 +34,7 @@ A first iteration is meant for researchers and project teams with structured dat
    Before working in knowledge/, read .agents/skills/promptotyping/SKILL.md and follow the operation that fits the task.
    ```
 
-2. Take the files. The skill lies under [`skills/promptotyping/`](skills/promptotyping/) with five subcommands, orient, explore, distill, curate and handoff. The same skill is installable from [promptotyping-skill](https://github.com/DigitalHumanitiesCraft/promptotyping-skill). The templates for the knowledge base lie under [`_content/promptotyping-document/`](_content/promptotyping-document/), and the page offers each one and both sets as archives.
+2. Take the files. The skill lies under [`skills/promptotyping/`](skills/promptotyping/) with five subcommands, orient, explore, distill, curate and handoff. The templates for the knowledge base lie under [`_content/promptotyping-document/`](_content/promptotyping-document/), and the page offers each one and both sets as archives.
 
 3. Work in your own words. Create an empty project folder with your data, start the agent there and name the step you want, from Prepare to the acceptance, as the example on the page and the [tutorial](_content/tutorial.md) do. The skill carries the procedure behind each step. An agent that cannot load skills gets it when you give it [`SKILL.md`](skills/promptotyping/SKILL.md) to read first.
 

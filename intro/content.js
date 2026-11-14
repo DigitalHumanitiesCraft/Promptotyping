@@ -208,7 +208,7 @@
       scopeTitle: "What it is and what it is not",
       scope: [
         "Promptotyping is a working practice grown out of documented projects. Its effect has not yet been measured in a study.",
-        "The agent makes mistakes, and the example shows a typical one. The tool is accepted for a purpose only when you, and the researchers who will work with it, judge that it fits your questions and ways of working. Until then it is a state of work in progress, whatever checks it has passed.",
+        "The agent makes mistakes, and the example shows a typical one. The tool is accepted for a purpose only when you, and the researchers who will work with it, judge that it fits your purposes and ways of working. Until then it is a state of work in progress, whatever checks it has passed.",
         "What it produces are prototypes for research. Software that is to run for years, be published or be handed to others needs research software engineering beyond this.",
         "How long a first round takes has not been measured. Rehearse with the example file before you use your own data.",
         "Give the generated code and the documents a licence, as for any project work, and keep confidential material out of a public repository.",

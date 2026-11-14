@@ -108,7 +108,7 @@
       <ul id="docs-nav">
         <li><a href="#start-reuse" data-section="start-reuse">Reuse</a></li>
         <li><a href="#start-downloads" data-section="start-downloads">Downloads</a></li>
-        <li><a href="#start-example" data-section="start-example">Example</a></li>
+        <li><a href="#start-example" data-section="start-example">Skill</a></li>
         <li><a href="#start-limits" data-section="start-limits">Citation</a></li>
         <li><a href="#use-cases" data-page="use-cases">Use cases</a></li>
       </ul>
@@ -143,7 +143,7 @@
 
         <div class="start-head">
           <h1>Promptotyping</h1>
-          <p class="start-lead">Promptotyping is a working practice that translates research data and their contexts into research artefacts that fit the researchers' questions and ways of working. It does so through three forms of engineering. Knowledge Engineering makes explicit and curates what a project knows about its domain, its data and its aims. Context Engineering selects from this knowledge what an agent needs for a task. Agentic Engineering organises the work of the agents that build on it.</p>
+          <p class="start-lead">Promptotyping is a working practice that translates research data and their contexts into research artefacts that fit the researchers' purposes and ways of working. It does so through three forms of engineering. Knowledge Engineering makes explicit and curates what a project knows about its domain, its data and its aims. Context Engineering selects from this knowledge what an agent needs for a task. Agentic Engineering organises the work of the agents that build on it.</p>
         </div>
 
         <noscript>
@@ -327,7 +327,7 @@
         </ul>
         <ol class="steps">
           <li>
-            <p class="step-head"><span class="step-name">Install an agent and the skill.</span> Install an AI coding agent such as Claude Code or Codex, Git and Python, then copy the skill into the agent's skills folder. Codex and agents that read only <code>AGENTS.md</code> are covered on the <a href="#skills-promptotyping">skill page</a>.</p>
+            <p class="step-head"><span class="step-name">Install an agent and the skill.</span> Install an AI coding agent such as Claude Code or Codex, Git and Python, then copy the skill into the agent's skills folder. The same skill is published as the repository <a href="https://github.com/DigitalHumanitiesCraft/promptotyping-skill">promptotyping-skill</a>, tagged per version, whose README gives the installation for each agent. Codex and agents that read only <code>AGENTS.md</code> are covered on the <a href="#skills-promptotyping">skill page</a>.</p>
             <figure class="dh-code field">
               <figcaption><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-terminal"></use></svg>Shell, copies the skill for Claude Code</figcaption>
 <pre><code>git clone https://github.com/DigitalHumanitiesCraft/Promptotyping.git
@@ -339,7 +339,7 @@ cp -r Promptotyping/skills/promptotyping ~/.claude/skills/</code></pre>
             <p class="step-head"><span class="step-name">Take the files.</span> The skill gives an agent the subcommands orient, explore, distill, curate and handoff. Each template is marked with the condition under which a project needs it, given in full on the <a href="#vorlagen">templates page</a>. Skill and templates are in the block below.</p>
           </li>
           <li>
-            <p class="step-head"><span class="step-name">Work in your own words.</span> Create an empty project folder with your data, start the agent there and name the step you want, as the <a href="#start-example">example</a> does from Prepare on. The <a href="#tutorial">tutorial</a> explains each step and its check.</p>
+            <p class="step-head"><span class="step-name">Work in your own words.</span> Create an empty project folder with your data, start the agent there and say what you want, or call one of the five <a href="#start-example">subcommands</a>. The <a href="#tutorial">tutorial</a> explains each step and its check.</p>
           </li>
         </ol>
 
@@ -377,96 +377,23 @@ cp -r Promptotyping/skills/promptotyping ~/.claude/skills/</code></pre>
           </div>
         </section>
 
-        <h2 id="start-example">Example</h2>
-        <p class="start-prose-line">An invented family correspondence of twelve letters, some dated only to a year or a season, becomes a timeline. With the skill installed as in the first step of <a href="#start-reuse">Reuse</a>, each step is one sentence in your own words, and the agent takes the procedure from the skill. An agent that cannot load skills gets the same procedure when you give it the <a href="skills/promptotyping/SKILL.md">skill file</a> to read first. The <a href="intro/">example round</a> plays the steps beside the project folder.</p>
+        <h2 id="start-example">Skill</h2>
+        <p class="start-prose-line">With the skill installed as in the first step of <a href="#start-reuse">Reuse</a>, you say what you want in your own words, and the agent takes the procedure from the skill. Five subcommands name the moments at which you call it directly. Building has no subcommand and follows the rules in the skill. The <a href="#skills-promptotyping">skill page</a> shows the full text, and the <a href="intro/">introduction</a> plays one round on an invented family correspondence.</p>
         <ol class="steps example">
-          <li data-skill="explore">
-            <p class="step-head"><span class="step-name">Prepare.</span> Create an empty folder, download <a href="intro/example/letters.csv" download>letters.csv</a> into it and start the agent there. When it asks, give the purpose “see in which years the family wrote and where the correspondence has gaps”, the question “in which years did the family write, and where are the gaps?” and the user story “As an editor, I want to see all letters whose dating is uncertain next to their date evidence, so that I can decide which datings the edition can assert.”</p>
-            <figure class="dh-code field is-prompt">
-              <figcaption><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-prompt"></use></svg>Sentence for the agent</figcaption>
-<pre><code>Set up this folder as a Promptotyping project for my letters in letters.csv, and ask me for the purpose, the question and the user stories.</code></pre>
-            </figure>
-            <p class="step-result"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-result"></use></svg><span class="visually-hidden">Result. </span>A Git repository with the letters in <code>data/</code> and <code>knowledge/project.md</code>, which holds purpose, question and the provisional user story in your words.</p>
+          <li data-skill="orient">
+            <p class="step-head"><span class="step-name"><code>/promptotyping orient</code></span> starts a session. It establishes where the project stands and changes no file.</p>
           </li>
           <li data-skill="explore">
-            <p class="step-head"><span class="step-name">Explore.</span> Check the statements the agent is least sure of against the rows they name.</p>
-            <figure class="dh-code field is-prompt">
-              <figcaption><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-prompt"></use></svg>Sentence for the agent</figcaption>
-<pre><code>Explore the letters with small scripts and tell me which three statements about them you are least sure of.</code></pre>
-            </figure>
-            <p class="step-result"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-result"></use></svg><span class="visually-hidden">Result. </span><code>knowledge/data.md</code> names its evidence rows and notes that many letters are dated only to a year or a season, such as spring 1848, while the counts stand in <code>generated/data-profile.md</code>.</p>
+            <p class="step-head"><span class="step-name"><code>/promptotyping explore</code></span> establishes what the data can and cannot support and records it with its evidence.</p>
           </li>
           <li data-skill="distill">
-            <p class="step-head"><span class="step-name">Distil.</span> Ask of each acceptance criterion whether you could decide it in front of the finished page.</p>
-            <figure class="dh-code field is-prompt">
-              <figcaption><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-prompt"></use></svg>Sentence for the agent</figcaption>
-<pre><code>Distil the knowledge base for a timeline of the letters, built as a static web page without a build step.</code></pre>
-            </figure>
-            <p class="step-result"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-result"></use></svg><span class="visually-hidden">Result. </span><code>specification.md</code> asks for one timeline of all letters, beside design, verification, index, journal and <code>CLAUDE.md</code> or <code>AGENTS.md</code> in the root.</p>
+            <p class="step-head"><span class="step-name"><code>/promptotyping distill</code></span> models the findings as knowledge documents, with epics and user stories.</p>
           </li>
           <li data-skill="curate">
-            <p class="step-head"><span class="step-name">Cut to size.</span> Approve only cuts that no user story needs.</p>
-            <figure class="dh-code field is-prompt">
-              <figcaption><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-prompt"></use></svg>Sentence for the agent</figcaption>
-<pre><code>Curate the knowledge base down to a first version. Propose the cuts and wait for my approval.</code></pre>
-            </figure>
-            <p class="step-result"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-result"></use></svg><span class="visually-hidden">Result. </span>The map the agent had proposed is struck after your approval, and the journal records the reduction.</p>
-          </li>
-          <li data-skill="orient">
-            <p class="step-head"><span class="step-name">Orient.</span> Start a new session with no history.</p>
-            <figure class="dh-code field is-prompt">
-              <figcaption><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-prompt"></use></svg>Sentence for the agent</figcaption>
-<pre><code>Orient yourself and tell me what this project is, what the data afford and what comes next. Build nothing.</code></pre>
-            </figure>
-            <p class="step-result"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-result"></use></svg><span class="visually-hidden">Result. </span>An account of the project from the folder alone. What it misses still lives only in someone's head, and the agent names it as a gap.</p>
-          </li>
-          <li data-skill="Rules for building">
-            <p class="step-head"><span class="step-name">Implement.</span> Open the address and use the view on letters you know.</p>
-            <figure class="dh-code field is-prompt">
-              <figcaption><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-prompt"></use></svg>Sentence for the agent</figcaption>
-<pre><code>Implement the first milestone and give me the address to open.</code></pre>
-            </figure>
-            <p class="step-result"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-result"></use></svg><span class="visually-hidden">Result. </span>Version 1 shows every letter as a dot on the timeline, each on one day.</p>
-          </li>
-          <li data-skill="Checking">
-            <p class="step-head"><span class="step-name">Check.</span> Decide the remaining criteria yourself.</p>
-            <figure class="dh-code field is-prompt">
-              <figcaption><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-prompt"></use></svg>Sentence for the agent</figcaption>
-<pre><code>Run the checks a rule can decide and list the criteria I have to decide.</code></pre>
-            </figure>
-            <p class="step-result"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-result"></use></svg><span class="visually-hidden">Result. </span><code>verification.md</code> separates the mechanical results from the criteria that need a human decision.</p>
-          </li>
-          <li data-skill="curate">
-            <p class="step-head"><span class="step-name">Curate.</span> Describe the fault you found in your own words.</p>
-            <figure class="dh-code field is-prompt">
-              <figcaption><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-prompt"></use></svg>Sentence for the agent</figcaption>
-<pre><code>Letters dated only to a year sit on 1 January, as if the day were known. Curate the knowledge base before any code changes.</code></pre>
-            </figure>
-            <p class="step-result"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-result"></use></svg><span class="visually-hidden">Result. </span>The specification now requires an uncertain date to be drawn as a span, the design says how it looks, and the journal records why.</p>
-          </li>
-          <li data-skill="Rules for building">
-            <p class="step-head"><span class="step-name">Rebuild.</span> Inspect the new version against the new requirement.</p>
-            <figure class="dh-code field is-prompt">
-              <figcaption><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-prompt"></use></svg>Sentence for the agent</figcaption>
-<pre><code>Bring the timeline in line with the changed documents and give me the address.</code></pre>
-            </figure>
-            <p class="step-result"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-result"></use></svg><span class="visually-hidden">Result. </span>Version 2 draws each letter with an uncertain date as a bar across the period it may come from.</p>
-          </li>
-          <li data-skill="Checking">
-            <p class="step-head"><span class="step-name">Accept and version.</span> Judge version 2 on letters you know and give your judgement in your own words.</p>
-            <figure class="dh-code field is-prompt">
-              <figcaption><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-prompt"></use></svg>Sentence for the agent</figcaption>
-<pre><code>Record my judgement verbatim and commit: I accept version 2 for deciding which datings the edition can assert.</code></pre>
-            </figure>
-            <p class="step-result"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-result"></use></svg><span class="visually-hidden">Result. </span><code>verification.md</code> and <code>journal.md</code> carry the judgement in your words, and one commit holds documents and timeline.</p>
+            <p class="step-head"><span class="step-name"><code>/promptotyping curate</code></span> checks and corrects the knowledge documents, against the project, against outside sources, or through a review with a fresh context.</p>
           </li>
           <li data-skill="handoff">
-            <p class="step-head"><span class="step-name">Hand off.</span> Before another person or session continues the work.</p>
-            <figure class="dh-code field is-prompt">
-              <figcaption><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-prompt"></use></svg>Sentence for the agent</figcaption>
-<pre><code>Hand off the project, so that someone else can continue from the repository.</code></pre>
-            </figure>
-            <p class="step-result"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-result"></use></svg><span class="visually-hidden">Result. </span><code>journal.md</code> opens with what is open, its newest entry names the last step, and everything is committed.</p>
+            <p class="step-head"><span class="step-name"><code>/promptotyping handoff</code></span> ends a session. It writes the journal, states what is open and commits without pushing.</p>
           </li>
         </ol>
 

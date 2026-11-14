@@ -16,9 +16,9 @@ The first numbered release, prepared to accompany the paper on Promptotyping.
 
 ### Changed
 
-- Terms aligned with the paper. A promptotype is accepted for a purpose when the researchers who will work with it judge that it fits their questions and ways of working, which is its scholarly validation, and until then it remains a state of work in progress. Distillation goes beyond summarisation or context compression. The LLM role is called agent, also on the introduction page.
+- Terms aligned with the paper. A promptotype is accepted for a purpose when the researchers who will work with it judge that it fits their purposes and ways of working, which is its scholarly validation, and until then it remains a state of work in progress. Distillation goes beyond summarisation or context compression. The LLM role is called agent, also on the introduction page.
 - The template mirrors re-synchronised with their editorial source and checked against the paper's terms for verification, agentic review and scholarly validation.
 - The convention mirror updated to the current action layer (`CLAUDE.md` or `AGENTS.md`), status vocabulary, structural principles and write-back rule.
 - The README now says what Promptotyping is, for whom, how to start and how to cite it.
-- The Skills page renders the skill from this repository. It replaces the separate skill repository `DigitalHumanitiesCraft/promptotyping-skill` as the canonical place.
+- The Skills page renders the skill from this repository. The repository `DigitalHumanitiesCraft/promptotyping-skill` delivers the same text for installation, tagged per version. Which of the two is the source of the text is not yet settled.
 - The Pages workflow publishes `skills/` and `CITATION.cff`.
