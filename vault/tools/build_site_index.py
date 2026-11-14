@@ -3,7 +3,7 @@
 The Promptotyping site is served straight from the repository with no build
 step at request time. This script is a generator in the same sense as the
 vault's deterministically generated documents: it runs on demand, its output
-`data/vault.json` is committed, and the site fetches that one static file
+`assets/data/vault.json` is committed, and the site fetches that one static file
 instead of the several hundred Markdown files behind it.
 
 Run from the repository root:
@@ -270,7 +270,7 @@ def main() -> int:
         "distillates": distillates,
         "sources": sources,
     }
-    out = root / "data" / "vault.json"
+    out = root / "assets" / "data" / "vault.json"
     out.write_text(json.dumps(index, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     print(f"{out.relative_to(root)}: {len(topics)} topics, {len(assertions)} assertions, "
           f"{len(distillates)} distillates, {len(sources)} sources, "

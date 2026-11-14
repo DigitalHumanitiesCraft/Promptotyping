@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render _content/glossar.md from data/glossar.json.
+"""Render _content/glossar.md from assets/data/glossar.json.
 
 The glossary exists twice: as the data source the site fetches at runtime and as
 the Markdown mirror a reader or a machine retrieves over HTTP. Part 5 of the
@@ -24,7 +24,7 @@ import pathlib
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-SOURCE = ROOT / "data" / "glossar.json"
+SOURCE = ROOT / "assets" / "data" / "glossar.json"
 TARGET = ROOT / "_content" / "glossar.md"
 
 # The non-derivable head of the file, taken verbatim from the mirror. The
@@ -35,14 +35,14 @@ title: Glossary
 slug: glossar
 version: "0.5"
 status: complete
-source: data/glossar.json (authoritative data source); generated, not maintained by hand
+source: assets/data/glossar.json (authoritative data source); generated, not maintained by hand
 mirrored: 2026-09-27
 machine-url: https://dhcraft.org/Promptotyping/_content/glossar.md
 ---
 
 # Glossary
 
-Terms of the Promptotyping working practice and of its specification site. The authoritative data source is `data/glossar.json`; this file is generated from it and carries the same content. Each entry gives the kind of thing the term names, a short definition for tooltips, a full definition and its sources. A source that this site holds an address for carries it as a hash anchor; the rest stay text. Terms the paper text does not carry are marked as site vocabulary in their source list."""
+Terms of the Promptotyping working practice and of its specification site. The authoritative data source is `assets/data/glossar.json`; this file is generated from it and carries the same content. Each entry gives the kind of thing the term names, a short definition for tooltips, a full definition and its sources. A source that this site holds an address for carries it as a hash anchor; the rest stay text. Terms the paper text does not carry are marked as site vocabulary in their source list."""
 
 
 class EntryError(Exception):
@@ -159,11 +159,11 @@ def main() -> int:
 
     difference = first_difference(expected, read_target())
     if difference:
-        print("FAIL: %s is out of date with data/glossar.json"
+        print("FAIL: %s is out of date with assets/data/glossar.json"
               % TARGET.relative_to(ROOT).as_posix(), file=sys.stderr)
         print("      %s" % difference, file=sys.stderr)
         return 1
-    print("OK: %s matches data/glossar.json" % TARGET.relative_to(ROOT).as_posix())
+    print("OK: %s matches assets/data/glossar.json" % TARGET.relative_to(ROOT).as_posix())
     return 0
 
 

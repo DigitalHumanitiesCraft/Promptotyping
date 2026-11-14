@@ -70,7 +70,7 @@ Source of values: `knowledge/design.md`. Read it before UI work. The site is cal
 - `PAGES` in `assets/js/registry.js` is the single source for page hosts and route resolution, and it keeps every page mounted whether or not the header lists it. When touching a part, check `isPageId`, `hostPage` and `isRouteId`.
 - Inactive pages stay in the DOM as `display: none`, so every published anchor resolves. Do not lazy-mount pages.
 - The start page `#overview` is static markup in `index.html` with the seven parts of a DHCraft method page (A48), and `_content/overview.md` is its machine-readable twin. Its template entries, the five skill subcommands with the link to the skill repository, cases and the template archive repeat their sources; `tools/check_consistency.py` holds them, so change the source and the page together. The example shows short sentences in the user's own words (A51), and a procedure belongs in the skill, never in a prompt on the page or in the tutorial. Recurring entries have at most three visual levels.
-- `vault/` is a Grounded Vault instance with its own action layer `vault/CLAUDE.md`, which governs all work there. Its Python tools under `vault/tools/` are the permitted exceptions to the no-build rule. After changing the assertion layer, rerun `vault/tools/build_site_index.py`, which writes the committed `data/vault.json`.
+- `vault/` is a Grounded Vault instance with its own action layer `vault/CLAUDE.md`, which governs all work there. Its Python tools under `vault/tools/` are the permitted exceptions to the no-build rule. After changing the assertion layer, rerun `vault/tools/build_site_index.py`, which writes the committed `assets/data/vault.json`.
 
 ## URL anchor scheme
 
@@ -105,6 +105,6 @@ python tools/check_consistency.py
 python vault/tools/validate.py vault
 ```
 
-Add `--check-urls` to `check_consistency.py` when an address in `data/case-studies.json` changes; it needs the network. What each check covers is in `knowledge/verification.md`.
+Add `--check-urls` to `check_consistency.py` when an address in `assets/data/case-studies.json` changes; it needs the network. What each check covers is in `knowledge/verification.md`.
 
 Local preview: `python -m http.server 8000`.

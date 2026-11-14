@@ -1,4 +1,4 @@
-/* Glossary page. Renders the entries from data/glossar.json, marks the first
+/* Glossary page. Renders the entries from assets/data/glossar.json, marks the first
    occurrence of every term in a rendered section as a trigger and wires the
    hover tooltip. */
 
@@ -23,7 +23,7 @@
   /* ---- Sources ----
      Every carrier of an entry that this site holds an address for renders as a
      link; the ones it holds none for stay text (A34). The anchor comes from the
-     data, so the address families are curated in data/glossar.json rather than
+     data, so the address families are curated in assets/data/glossar.json rather than
      here. */
 
   function sourceHtml(source) {
@@ -48,7 +48,7 @@
      beside it, since neither colour nor shape may be the only carrier of an
      information (WCAG 2.1, 1.4.1). Hue stays reserved for the five epistemic
      functions of A22, so no mark takes one. The vocabulary and its wording are
-     data and live in _meta.kategorien of data/glossar.json; what stands here is
+     data and live in _meta.kategorien of assets/data/glossar.json; what stands here is
      the mark per value, which is presentation. */
 
   var CATEGORY_MARKS = {
@@ -87,7 +87,7 @@
 
   function loadGlossarEntries() {
     if (!glossarLoad) {
-      glossarLoad = A.fetchJson("data/glossar.json").then(function (data) {
+      glossarLoad = A.fetchJson("assets/data/glossar.json").then(function (data) {
         categoryLabels = (data._meta && data._meta.kategorien) || {};
         glossarEntries = (data.eintraege || []).slice().sort(function (a, b) {
           return a.begriff.localeCompare(b.begriff, "de");

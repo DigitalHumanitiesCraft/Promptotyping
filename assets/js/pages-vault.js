@@ -1,5 +1,5 @@
 /* Vault page. The Grounded Vault of the practice, read from the generated
-   index data/vault.json (vault/tools/build_site_index.py). The page lists the
+   index assets/data/vault.json (vault/tools/build_site_index.py). The page lists the
    topic maps with their assertions; an assertion opens in the side panel with its
    statement and its grounding anchors, which link to the distillate Markdown in
    the repository.
@@ -362,7 +362,7 @@
     if (!el) {
       return Promise.resolve();
     }
-    return A.fetchJson("data/vault.json")
+    return A.fetchJson("assets/data/vault.json")
       .then(function (data) {
         (data.assertions || []).forEach(function (c) { vaultAssertionsBySlug[c.slug] = c; });
         (data.distillates || []).forEach(function (d) { vaultDistillatesBySlug[d.slug] = d; });

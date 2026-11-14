@@ -63,7 +63,7 @@ The paper is maintained outside this repository and will be published in the jou
 - `intro/` contains the introduction page for newcomers (A47), a separate page in the DHCraft design with its own text source for English and German.
 - `_content/` contains authored publication pages and the stable public template mirrors. Generated mirrors such as `_content/glossar.md` are rebuilt from their declared source.
 - The Promptotyping skill lives in the repository [promptotyping-skill](https://github.com/DigitalHumanitiesCraft/promptotyping-skill) (A42, revised 2026-11-14), and the start page links it. The Skills page with the skill and the two system prompts is retired, and `_content/skills/` is gone. Eval cases for the skill lie under `tools/skill-evals/`, and no check of this repository runs them.
-- `data/` is the established runtime-data area. Generated members name their producing command in the governing documentation; `data/vault.json` is built by `vault/tools/build_site_index.py`.
+- `data/` is the established runtime-data area. Generated members name their producing command in the governing documentation; `assets/data/vault.json` is built by `vault/tools/build_site_index.py`.
 
 ## Reading order
 

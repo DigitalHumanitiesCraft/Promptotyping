@@ -21,7 +21,7 @@
       part: "1", kind: "normative", note: "" },
     { id: "vorlagen", label: "Templates", group: "Specification", parent: "specification",
       part: "2", kind: "normative", note: "",
-      machine: "data/promptotyping-documents.json" },
+      machine: "assets/data/promptotyping-documents.json" },
     { id: "konvention-v0.1", label: "Convention", group: "Specification", parent: "specification",
       part: "3", kind: "normative", note: "" },
     { id: "artefakt", label: "Artefact and boundary", group: "Specification", parent: "specification",
@@ -31,15 +31,15 @@
 
     { id: "glossar", label: "Glossary", group: "Reference", kind: "informative",
       note: "Every term of the practice defined, with the pages that use it",
-      machine: "data/glossar.json" },
+      machine: "assets/data/glossar.json" },
     { id: "vault", label: "Vault", group: "Reference", kind: "informative",
       note: "The sources under the load-bearing claims of the practice",
-      machine: "data/vault.json" },
+      machine: "assets/data/vault.json" },
 
     { id: "workflow", label: "Worked workflow", group: "Evidence", kind: "informative",
       note: "A completed case narrated through the four forms of work" },
     { id: "use-cases", label: "Use Cases", group: "Evidence", kind: "informative",
-      note: "The projects the practice is documented on", machine: "data/case-studies.json" },
+      note: "The projects the practice is documented on", machine: "assets/data/case-studies.json" },
 
     { id: "tutorial", label: "Tutorial", group: "Tools and practice", kind: "informative",
       note: "Your own first pass, step by step from dataset to promptotype" },

@@ -1,7 +1,7 @@
 /* Case-Study-Filter (ADR-8). Renders case-study cards in blocks by what the case
    argues for, ordering within a block by the epistemic function of its
    interface. One filter runs over those five functions. Reads
-   data/case-studies.json. Each entry carries a #case-{id} anchor and has three
+   assets/data/case-studies.json. Each entry carries a #case-{id} anchor and has three
    levels, its name, one sentence, and one line of function and links; the
    "Details" link opens the side panel with the deep page from
    _content/case-studies/{id}.md (owner review of 2026-11-10). No ES modules;
@@ -229,7 +229,7 @@
     var listHost = rootEl.querySelector(".case-list-host");
     if (!barHost || !listHost) { return; }
 
-    App.fetchJson("data/case-studies.json")
+    App.fetchJson("assets/data/case-studies.json")
       .then(function (data) {
         allStudies = data.caseStudies || [];
         roleLabels = (data._meta && data._meta.role_labels) || {};

@@ -18,7 +18,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-CATALOGUE = ROOT / "data" / "promptotyping-documents.json"
+CATALOGUE = ROOT / "assets" / "data" / "promptotyping-documents.json"
 TEMPLATE_DIR = ROOT / "_content" / "promptotyping-document"
 TEMPLATES_ZIP = "promptotyping-templates.zip"
 # A fixed timestamp keeps the archive byte-identical across builds.

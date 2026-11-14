@@ -17,7 +17,7 @@ The numbering covers the chain and nothing else, and three content folders stand
 
 `knowledge/` steers this vault and is not a second copy of the repository's own knowledge base one level up. It holds the rulebook, the operations playbook, the parameters and settled decisions of this instance, the volatile state, the vault's own journal, and the register of literature sources.
 
-`tools/` holds the read-only scripts. `validate.py` checks the vault against its schema, `review.py` cuts and books the machine-review pairs, and `build_site_index.py` renders the assertion layer into the site's `data/vault.json`. `tests/` holds the suite that proves the validator catches anything at all, with the template's fixtures under `tests/fixtures/`.
+`tools/` holds the read-only scripts. `validate.py` checks the vault against its schema, `review.py` cuts and books the machine-review pairs, and `build_site_index.py` renders the assertion layer into the site's `assets/data/vault.json`. `tests/` holds the suite that proves the validator catches anything at all, with the template's fixtures under `tests/fixtures/`.
 
 ## License
 

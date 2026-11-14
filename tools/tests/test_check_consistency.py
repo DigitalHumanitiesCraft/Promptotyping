@@ -800,7 +800,7 @@ class GlossaryGeneratorTest(unittest.TestCase):
 
     def entry(self):
         data = json.loads(
-            (ROOT / "data" / "glossar.json").read_text(encoding="utf-8"))
+            (ROOT / "assets" / "data" / "glossar.json").read_text(encoding="utf-8"))
         return copy.deepcopy(data["eintraege"][0])
 
     def test_an_entry_without_a_required_field_names_the_entry_and_the_field(self):

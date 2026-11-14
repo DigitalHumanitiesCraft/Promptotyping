@@ -9,7 +9,7 @@ machine-url: https://dhcraft.org/Promptotyping/_content/MANIFEST.md
 
 Provenienz der Spiegelung. Die Inhalte unter `_content/` und `data/` stammen teils aus dem Obsidian-Vault des Autors (nur gelesen), teils sind sie im Repo entstanden. Dieses Dokument hält fest, nach welchen Regeln gespiegelt wird und auf welcher Seite die Source of Truth liegt.
 
-Welche Datei welche Vault-Quelle hat und wann sie zuerst gespiegelt wurde, steht im Frontmatter der Datei selbst, in den Feldern `source` und `mirrored`. Die Versionsstände der Vorlagen führt `data/promptotyping-documents.json`, den Verlauf der Spiegelungssitzungen `knowledge/journal.md`. Dieses Dokument wiederholt beides nicht.
+Welche Datei welche Vault-Quelle hat und wann sie zuerst gespiegelt wurde, steht im Frontmatter der Datei selbst, in den Feldern `source` und `mirrored`. Die Versionsstände der Vorlagen führt `assets/data/promptotyping-documents.json`, den Verlauf der Spiegelungssitzungen `knowledge/journal.md`. Dieses Dokument wiederholt beides nicht.
 
 ## Spiegelungsregeln
 

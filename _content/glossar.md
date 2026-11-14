@@ -3,14 +3,14 @@ title: Glossary
 slug: glossar
 version: "0.5"
 status: complete
-source: data/glossar.json (authoritative data source); generated, not maintained by hand
+source: assets/data/glossar.json (authoritative data source); generated, not maintained by hand
 mirrored: 2026-09-27
 machine-url: https://dhcraft.org/Promptotyping/_content/glossar.md
 ---
 
 # Glossary
 
-Terms of the Promptotyping working practice and of its specification site. The authoritative data source is `data/glossar.json`; this file is generated from it and carries the same content. Each entry gives the kind of thing the term names, a short definition for tooltips, a full definition and its sources. A source that this site holds an address for carries it as a hash anchor; the rest stay text. Terms the paper text does not carry are marked as site vocabulary in their source list.
+Terms of the Promptotyping working practice and of its specification site. The authoritative data source is `assets/data/glossar.json`; this file is generated from it and carries the same content. Each entry gives the kind of thing the term names, a short definition for tooltips, a full definition and its sources. A source that this site holds an address for carries it as a hash anchor; the rest stay text. Terms the paper text does not carry are marked as site vocabulary in their source list.
 
 ### Agent Instruction Document
 

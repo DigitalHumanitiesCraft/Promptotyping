@@ -13,7 +13,7 @@
     if (!el) {
       return Promise.resolve();
     }
-    return A.fetchJson("data/promptotyping-documents.json")
+    return A.fetchJson("assets/data/promptotyping-documents.json")
       .then(function (data) {
         var templateDocs = data.documents || [];
         templateDocs.forEach(function (d) { templateBySlug[d.slug] = d; });

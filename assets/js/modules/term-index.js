@@ -1,5 +1,5 @@
 /* Term index. Builds a register term -> pages at runtime and hangs it on the
-   glossary page: for every entry of data/glossar.json it lists the pages whose
+   glossary page: for every entry of assets/data/glossar.json it lists the pages whose
    rendered text carries the term. This is the site's substitute for a full-text
    search, and it needs no index file and no request of its own: the entries come
    from the glossary page, which fetched and sorted them once, and every page is
@@ -35,7 +35,7 @@
 
   /* The forms an entry is searched under. A long nominal phrase never occurs in
      running text as the word sequence the glossary heads it with, so an entry
-     may carry an optional shorter `suchform` in data/glossar.json; a hit on
+     may carry an optional shorter `suchform` in assets/data/glossar.json; a hit on
      either form counts. Entries without the field behave as before. */
   function searchForms(entry) {
     return [entry.begriff, entry.suchform].map(function (t) {

@@ -30,7 +30,7 @@ Promptotyping combines Knowledge Engineering, Context Engineering and Agentic En
 - Distillation turns the findings into maintained knowledge documents. Done when a fresh agent can continue from the documents and the researchers confirm them.
 - Implementation builds small, checked increments from the documents with an agent. Done when the increment meets the acceptance criteria and its checks.
 - A promptotype is what an iteration yields, the state of an artefact together with its project knowledge base and research data.
-- The project knowledge base consists of declarative, process and agent instruction documents. The catalogue of their templates is `data/promptotyping-documents.json`, each template is readable under `_content/promptotyping-document/{slug}.md`, and the [templates page](#vorlagen) renders them.
+- The project knowledge base consists of declarative, process and agent instruction documents. The catalogue of their templates is `assets/data/promptotyping-documents.json`, each template is readable under `_content/promptotyping-document/{slug}.md`, and the [templates page](#vorlagen) renders them.
 - Verification tests conformity to formalised requirements, agentic review lets an agent examine the work against named criteria, and scholarly validation by the researchers decides whether the work is warranted by the sources and fits its purpose. The last is the acceptance of a promptotype for a purpose.
 - Knowledge curation examines and revises the project knowledge in light of what sources, checking and use reveal.
 
