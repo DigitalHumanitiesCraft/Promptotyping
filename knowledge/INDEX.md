@@ -7,7 +7,7 @@ status: complete
 language: en
 version: 1.1
 created: 2026-05-09
-updated: 2026-11-11
+updated: 2026-11-14
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5, Claude Opus 5, Claude Opus 5.5)
 method:
@@ -28,7 +28,7 @@ related: [project, governance, specification, architecture, design, verification
 The public repository carries the specification of the Promptotyping practice, and the manuscript is maintained outside it. The manuscript left the repository and GitHub Pages on 14 October 2026, and the material bound to it followed on 28 October 2026 (operator decisions). The site carries no paper page and states the definitions it shares with the manuscript in its own words. The rule and its history are in [specification.md](specification.md#manuscript-publication-boundary), and paper work does not happen in this repository. Earlier commits and historical publication records are retained, so the removal does not undo prior public availability. The journal's acceptance of the expose does not establish acceptance of the full manuscript or resolve eligibility of the previously public draft.
 
 
-Navigation and glossary of this repository's durable knowledge base. The repository `DigitalHumanitiesCraft/Promptotyping` is the public site for the specification of the Promptotyping practice at https://dhcraft.org/Promptotyping/. File names and paths are the primary routing signals; this index confirms each function and separates durable project knowledge from Research Artefacts, Source Material, Snapshots, Handoffs, and generated site data.
+Navigation and glossary of this repository's durable knowledge base. The repository `DigitalHumanitiesCraft/Promptotyping` is the public site for the specification of the Promptotyping practice at https://dhcraft.org/Promptotyping/. File names and paths are the primary routing signals; this index confirms each function and separates durable project knowledge from the pages and data the site publishes.
 
 ## Language regime
 
@@ -58,12 +58,11 @@ The paper is maintained outside this repository and will be published in the jou
 ## Artefact areas
 
 - `knowledge/` contains durable Knowledge Documents, including `journal.md` with the open points in its section `## Open`.
-- `snapshots/` contains the final knowledge record of the retired [Promptotyping Agent Interface](../snapshots/promptotyping-agent-interface-final-record-2026-08-22.md).
-  The [historical frontend plan](../snapshots/frontend-plan-history-2026-09-05.md) preserves superseded packages; the [knowledge-refactor audit](../snapshots/project-knowledge-refactor-2026-09-05.md) records the repository-wide inventory, current ownership and verification scope.
-- `intro/` contains the introduction page for newcomers (A47), a separate page in the DHCraft design with its own text source for English and German.
-- `_content/` contains authored publication pages and the stable public template mirrors. Generated mirrors such as `_content/glossar.md` are rebuilt from their declared source.
-- The Promptotyping skill lives in the repository [promptotyping-skill](https://github.com/DigitalHumanitiesCraft/promptotyping-skill) (A42, revised 2026-11-14), and the start page links it. The Skills page with the skill and the two system prompts is retired, and `_content/skills/` is gone. Eval cases for the skill lie under `tools/skill-evals/`, and no check of this repository runs them.
-- `data/` is the established runtime-data area. Generated members name their producing command in the governing documentation; `assets/data/vault.json` is built by `vault/tools/build_site_index.py`.
+- `snapshots/` with its dated records was retired on 2026-11-14 (operator decision). Earlier commits keep the records, and journal entries that link them keep their links as written.
+- `intro/` with the introduction page for newcomers (A47) was withdrawn on 2026-11-14 by operator decision.
+- `_content/` contains authored publication pages and the stable public template mirrors.
+- The Promptotyping skill lives in the repository [promptotyping-skill](https://github.com/DigitalHumanitiesCraft/promptotyping-skill) (A42, revised 2026-11-14), and the start page links it. The Skills page with the skill and the two system prompts is retired, and `_content/skills/` is gone. The eval cases for the skill under `tools/skill-evals/` were retired on 2026-11-14.
+- `assets/data/` holds the runtime data of the site, the template catalogue and the use cases. The glossary data and the Vault index left it on 2026-11-14.
 
 ## Reading order
 
@@ -96,7 +95,7 @@ Terms constitutive for this knowledge base. Canonical definitions live in the li
 
 **Konvention Knowledge Documents.** The description of knowledge-base functions, the frontmatter schema, and the structural principles. Lives in the vault, mirrored on the public site as an external specification. The vault file still carries the earlier name `Konvention Promptotyping Documents.md`, whose renaming the journal entry of 2026-09-27 records as open vault work.
 
-**Anchor schema.** System of permanently stable URL anchors on the site (`#promptotyping-document-data`, `#case-herdata`, `#konzept-eil`). Version snapshots add sub-anchors (`#promptotyping-document-data-v0.1`). Repositories linking via the `template:` field address these anchors; anchors are never renamed. Since the rebuild of 2026-07-25 the site shows one page at a time and holds the inactive pages in the DOM, which is what keeps every published anchor resolvable (`specification.md`, `architecture.md`).
+**Anchor schema.** System of permanently stable URL anchors on the site (`#promptotyping-document-data`, `#case-herdata`, `#konvention-v0.1`). The addresses of retired pages stay resolvable and land on the start page. Version snapshots add sub-anchors (`#promptotyping-document-data-v0.1`). Repositories linking via the `template:` field address these anchors; anchors are never renamed. Since the rebuild of 2026-07-25 the site shows one page at a time and holds the inactive pages in the DOM, which is what keeps every published anchor resolvable (`specification.md`, `architecture.md`).
 
 **Subpath form.** Path form of an address (`/promptotyping-document/data`), canonical on equal terms with the hash anchor (A4) and routed to it via `404.html`, which requires JavaScript. The canonical machine address for HTTP retrieval without JavaScript is the static Markdown URL (`/_content/promptotyping-document/{slug}.md`).
 
@@ -108,11 +107,11 @@ Terms constitutive for this knowledge base. Canonical definitions live in the li
 
 **Phase provenance lane.** Historical design device of the first deploy, removed by operator decision 2026-06-10 (A2, ADR-4). The `{:.phase-*}` tags it read are gone, and the stripper that had covered for them was deleted on 2026-07-27.
 
-**Critical Expert.** The person or group competent and accountable for judging whether the project knowledge adequately represents the research material and whether the artefact suits its stated purpose, and responsible for accepting an iteration. The site formerly called the role Critical Expert in the Loop (EIL), and the anchor `#konzept-eil` keeps that name. In this repository the operator holds the role.
+**Critical Expert.** The person or group competent and accountable for judging whether the project knowledge adequately represents the research material and whether the artefact suits its stated purpose, and responsible for accepting an iteration. The site formerly called the role Critical Expert in the Loop (EIL), and its former glossary anchor `#konzept-eil` lands on the start page since the glossary was retired on 2026-11-14. In this repository the operator holds the role.
 
 **`template:` field.** Frontmatter field pointing to the authoritative template specification on this site. Format `template: { name, version, url, alias }`; `url` is the latest subpath form, `alias` the latest hash anchor.
 
-**Grounded Vault (`vault/`).** Instance of the Grounded Vault template carrying the grounded evidence layer of the practice: sources, distillates, and assertions (until August 2026 claims) with grounding anchors, validated by `vault/tools/validate.py`. Migrated onto the renumbered template chain (`00_sources` to `40_output`) on 2026-08-09. Its own action layer `vault/CLAUDE.md` governs all work there.
+**Grounded Vault (`vault/`).** Retired on 2026-11-14 by operator decision. The folder held an instance of the Grounded Vault template with sources, distillates and assertions, and the Vault view showed it on the site. Both left the repository, and the addresses `#vault` and `#vault-{slug}` land on the start page. The Grounded Vault template itself lives in its own repository, linked from the start page footer.
 
 The separate personal Obsidian vault holds cross-project orientation under `Projects/Promptotyping/`, reached through `Promptotyping MOC.md` and `Project Overview Promptotyping.md`. It is not a second copy of the repository or its evidence chain.
 

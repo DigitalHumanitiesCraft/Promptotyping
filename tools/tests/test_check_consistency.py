@@ -7,8 +7,7 @@ check still speaks when its subject is wrong; a check that has quietly stopped
 deciding anything passes a green run and says nothing.
 
 Written with unittest rather than pytest so that tools/ stays free of
-dependencies, unlike vault/, which is a template instance with its own
-dependency set.
+dependencies.
 
     python -m unittest discover tools/tests
 """
@@ -27,7 +26,6 @@ TESTS = pathlib.Path(__file__).resolve().parent
 ROOT = TESTS.parent.parent
 sys.path.insert(0, str(TESTS.parent))
 
-import build_glossar  # noqa: E402
 import check_consistency as cc  # noqa: E402
 
 
@@ -125,38 +123,6 @@ class CatalogueFilesTest(CheckCase):
         self.assertIn("not published yet", cc.notes[0])
 
 
-class VaultIndexTest(CheckCase):
-    """V14, which passed over exactly the entries the index is least sure of."""
-
-    def doctored_index(self, mutate):
-        index = json.loads(cc.VAULT_JSON.read_text(encoding="utf-8"))
-        mutate(index)
-        path = self.tempdir() / "vault.json"
-        path.write_text(json.dumps(index), encoding="utf-8")
-        self.patch("VAULT_JSON", path)
-
-    def test_the_committed_index_still_resolves(self):
-        cc.check_vault_index_current()
-        self.assertEqual(cc.failures, [])
-
-    def test_an_entry_without_a_path_fails(self):
-        self.doctored_index(lambda index: index["sources"][0].update(path=""))
-        cc.check_vault_index_current()
-        self.assertIn("without a path", self.only_failure())
-
-    def test_a_path_that_is_no_file_fails(self):
-        self.doctored_index(
-            lambda index: index["distillates"][0].update(path="vault/gone.md"))
-        cc.check_vault_index_current()
-        self.assertIn("vault/gone.md", self.only_failure())
-
-    def test_a_renamed_assertion_slug_fails(self):
-        self.doctored_index(
-            lambda index: index["assertions"][0].update(slug="renamed"))
-        cc.check_vault_index_current()
-        self.assertIn("renamed", self.only_failure())
-
-
 class CatalogueTypeTest(CheckCase):
     """V1, the catalogue and the convention on the analytical type."""
 
@@ -249,8 +215,8 @@ class NamingContractTest(CheckCase):
                 self.assertIn(retired, self.only_failure())
 
 
-class RetiredSkillAddressTest(CheckCase):
-    """V18, the addresses of the retired Skills page still land on the start page."""
+class RetiredAddressTest(CheckCase):
+    """V18, the addresses of the retired pages still land on the start page."""
 
     def setUp(self) -> None:
         super().setUp()
@@ -265,18 +231,33 @@ class RetiredSkillAddressTest(CheckCase):
         self.registry.write_text(text.replace(old, new, 1), encoding="utf-8")
 
     def test_the_current_registry_passes(self) -> None:
-        cc.check_retired_skill_addresses()
+        cc.check_retired_addresses()
         self.assertEqual(cc.failures, [])
 
     def test_a_dropped_skill_alias_fails(self) -> None:
         self.edit('"skills-promptotyping": "start-example"', '"skills-promptotyping": "overview"')
-        cc.check_retired_skill_addresses()
+        cc.check_retired_addresses()
         self.assertIn("#skills-promptotyping", self.only_failure())
+
+    def test_a_dropped_vault_alias_fails(self) -> None:
+        self.edit('vault: "overview",', '')
+        cc.check_retired_addresses()
+        self.assertIn("#vault", self.only_failure())
+
+    def test_a_concept_family_off_the_start_page_fails(self) -> None:
+        self.edit('{ prefix: "konzept-", page: "overview", segment: "konzepte" },', '')
+        cc.check_retired_addresses()
+        self.assertIn("#konzept-", self.only_failure())
 
     def test_a_remounted_skills_page_fails(self) -> None:
         self.edit('{ id: "tutorial",', '{ id: "skills", label: "Skills" },\n    { id: "tutorial",')
-        cc.check_retired_skill_addresses()
-        self.assertIn("retired Skills page", self.only_failure())
+        cc.check_retired_addresses()
+        self.assertIn("retired page skills", self.only_failure())
+
+    def test_a_remounted_glossary_fails(self) -> None:
+        self.edit('{ id: "tutorial",', '{ id: "glossar", label: "Glossary" },\n    { id: "tutorial",')
+        cc.check_retired_addresses()
+        self.assertIn("retired page glossar", self.only_failure())
 
 
 class PortalPathsTest(CheckCase):
@@ -498,18 +479,6 @@ class GalleryTest(CheckCase):
         self.assertIn("no _content/case-studies/case.md", self.only_failure())
 
 
-class GlossaryMirrorTest(CheckCase):
-    """V7, the generated glossary and its committed mirror."""
-
-    def test_a_stale_mirror_fails_with_the_difference(self) -> None:
-        self.patch("GLOSSAR_MD", self.write(self.tempdir() / "glossar.md", "old\n"))
-        with mock.patch.object(build_glossar, "build", return_value="new\n"):
-            cc.check_glossar_mirror()
-        failure = self.only_failure()
-        self.assertIn("not what build_glossar.py renders", failure)
-        self.assertIn("line", failure)
-
-
 class BindingTest(CheckCase):
     """V9, prose-to-code bindings used for repository navigation."""
 
@@ -601,12 +570,12 @@ class RequirementNumberTest(CheckCase):
 
 
 class ProseSiteUrlTest(CheckCase):
-    """V8, a site address in the README is either a page of its own or an anchor."""
+    """V8, a site address in the README is either a published file or an anchor."""
 
     def urls(self, text: str, page: bool) -> list:
         root = self.tempdir()
         if page:
-            self.write(root / "intro" / "index.html", "<!doctype html>\n")
+            self.write(root / "_content" / "overview.md", "# Overview\n")
         readme = self.write(root / "README.md", text)
         claude = self.write(root / "CLAUDE.md", "")
         self.patch("ROOT", root)
@@ -614,16 +583,17 @@ class ProseSiteUrlTest(CheckCase):
         self.patch("CLAUDE_MD", claude)
         return list(cc.prose_site_urls())
 
-    def test_a_folder_with_its_own_page_is_not_an_anchor(self) -> None:
-        self.assertEqual(self.urls("https://dhcraft.org/Promptotyping/intro/\n", True), [])
+    def test_a_published_file_is_not_an_anchor(self) -> None:
+        self.assertEqual(
+            self.urls("https://dhcraft.org/Promptotyping/_content/overview.md\n", True), [])
 
     def test_a_quoted_heading_is_not_an_anchor(self) -> None:
         self.assertEqual(self.urls("Read `## Open` first, then `#vorlagen`.\n", True),
                          [("README.md", "#vorlagen")])
 
-    def test_a_missing_folder_stays_an_address_to_resolve(self) -> None:
-        found = self.urls("https://dhcraft.org/Promptotyping/intro/\n", False)
-        self.assertEqual(found, [("README.md", "dhcraft.org/Promptotyping/intro/")])
+    def test_a_missing_file_stays_an_address_to_resolve(self) -> None:
+        found = self.urls("https://dhcraft.org/Promptotyping/_content/overview.md\n", False)
+        self.assertEqual(found, [("README.md", "dhcraft.org/Promptotyping/_content/overview.md")])
 
 
 class RelativeLinkTest(CheckCase):
@@ -656,7 +626,7 @@ class RelativeLinkTest(CheckCase):
 
     def test_authoring_and_historical_document_links_are_checked(self) -> None:
         root = self.repository("# Repository\n")
-        paths = ("snapshots/old-plan.md", "handoffs/transfer.md")
+        paths = ("_content/old-plan.md", "handoffs/transfer.md")
         for path in paths:
             self.write(root / path, "[missing](missing.md)\n")
         cc.check_relative_links()
@@ -666,16 +636,18 @@ class RelativeLinkTest(CheckCase):
 
     def test_a_dated_record_keeps_a_link_into_a_removed_area(self) -> None:
         root = self.repository("# Repository\n")
-        self.write(root / "snapshots/audit.md",
+        self.write(root / "knowledge/audit.md",
                    "---\nstatus: snapshot\n---\n[task](../research-artefacts/bench/README.md)\n")
         cc.check_relative_links()
         self.assertEqual(cc.failures, [])
 
-    def test_a_snapshot_without_frontmatter_keeps_a_link_into_a_removed_area(self) -> None:
+    def test_the_journal_keeps_a_link_into_a_removed_area(self) -> None:
         root = self.repository("# Repository\n")
-        self.write(root / "snapshots/record.md", "[plan](../knowledge/benchmark-plan.md)\n")
+        self.write(root / "knowledge/journal.md",
+                   "[vault](../vault/README.md) and [plan](benchmark-plan.md)\n")
         cc.check_relative_links()
         self.assertEqual(cc.failures, [])
+        self.assertEqual(len(cc.notes), 2)
 
     def test_a_live_document_may_not_link_into_a_removed_area(self) -> None:
         root = self.repository("[task](research-artefacts/bench/README.md)\n")
@@ -684,7 +656,7 @@ class RelativeLinkTest(CheckCase):
 
     def test_a_dated_record_with_a_broken_link_elsewhere_fails(self) -> None:
         root = self.repository("# Repository\n")
-        self.write(root / "snapshots/audit.md",
+        self.write(root / "knowledge/audit.md",
                    "---\nstatus: snapshot\n---\n[gone](../knowledge/missing.md)\n")
         cc.check_relative_links()
         self.assertIn("knowledge/missing.md", self.only_failure())
@@ -692,7 +664,7 @@ class RelativeLinkTest(CheckCase):
     def test_a_document_can_use_portal_root_relative_assets(self) -> None:
         root = self.repository("# Repository\n")
         self.write(root / "assets/figure.svg", "<svg/>\n")
-        self.write(root / "snapshots/report.md", "![Figure](assets/figure.svg)\n")
+        self.write(root / "_content/report.md", "![Figure](assets/figure.svg)\n")
         cc.check_relative_links()
         self.assertEqual(cc.failures, [])
 
@@ -793,34 +765,6 @@ class MainResultTest(CheckCase):
         second, output = self.run_main()
         self.assertEqual(first, 1)
         self.assertEqual(second, 0, output)
-
-
-class GlossaryGeneratorTest(unittest.TestCase):
-    """A1a, the generator that died on a missing field before the check spoke."""
-
-    def entry(self):
-        data = json.loads(
-            (ROOT / "assets" / "data" / "glossar.json").read_text(encoding="utf-8"))
-        return copy.deepcopy(data["eintraege"][0])
-
-    def test_an_entry_without_a_required_field_names_the_entry_and_the_field(self):
-        entry = self.entry()
-        del entry["voll"]
-        with self.assertRaises(build_glossar.EntryError) as caught:
-            build_glossar.render([entry], {})
-        self.assertIn(entry["slug"], str(caught.exception))
-        self.assertIn("voll", str(caught.exception))
-
-    def test_a_source_without_text_names_the_entry(self):
-        entry = self.entry()
-        entry["quellen"] = [{"typ": "text"}]
-        with self.assertRaises(build_glossar.EntryError) as caught:
-            build_glossar.render([entry], {})
-        self.assertIn(entry["slug"], str(caught.exception))
-
-    def test_a_complete_entry_renders(self):
-        rendered = build_glossar.render([self.entry()], {})
-        self.assertIn("### ", rendered)
 
 
 if __name__ == "__main__":

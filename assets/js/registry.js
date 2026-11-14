@@ -29,13 +29,6 @@
     { id: "verifikation", label: "Checking", group: "Specification", parent: "specification",
       part: "5", kind: "normative", note: "" },
 
-    { id: "glossar", label: "Glossary", group: "Reference", kind: "informative",
-      note: "Every term of the practice defined, with the pages that use it",
-      machine: "assets/data/glossar.json" },
-    { id: "vault", label: "Vault", group: "Reference", kind: "informative",
-      note: "The sources under the load-bearing claims of the practice",
-      machine: "assets/data/vault.json" },
-
     { id: "workflow", label: "Worked workflow", group: "Evidence", kind: "informative",
       note: "A completed case narrated through the four forms of work" },
     { id: "use-cases", label: "Use Cases", group: "Evidence", kind: "informative",
@@ -53,19 +46,24 @@
      but resolve onto the English canonical ids before a page is shown. The
      Skills page was retired on 2026-11-14, when the skill moved to its own
      repository; its published addresses land on the start page, the skill
-     anchor on the section headed Skill. */
+     anchor on the section headed Skill. The Vault view and the glossary were
+     retired on the same day, and their published addresses land on the start
+     page as well, as does /intro/ of the withdrawn introduction page. */
   var LEGACY_ROUTE_ALIASES = {
     ueberblick: "overview",
     anwendung: "application",
     skills: "overview",
-    "skills-promptotyping": "start-example"
+    "skills-promptotyping": "start-example",
+    vault: "overview",
+    glossar: "overview",
+    intro: "overview"
   };
 
   var HOME_PAGE = "overview";
   var SPEC_PAGE_ID = "specification";
   /* Host for an address that resolved to nothing. It is a page host like any
      other, but deliberately not a registry entry: it has no place in the
-     sidebar tree, in the specification index or in the term index. */
+     sidebar tree or in the specification index. */
   var NOT_FOUND_PAGE = "not-found";
 
   /* Sub-anchor families. Each carries the anchor prefix, the registry entry that
@@ -80,9 +78,11 @@
     // Retired with the Skills page; /skills/{name} and #skills-{name} land on
     // the start page, and #skills-promptotyping on its Skill section.
     { prefix: "skills-", page: "overview", segment: "skills" },
-    { prefix: "glossar-", page: "glossar", segment: null },
-    { prefix: "konzept-", page: "glossar", segment: "konzepte" },
-    { prefix: "vault-", page: "vault", segment: "vault" },
+    // Retired with the glossary and the Vault view on 2026-11-14; their entry,
+    // concept and assertion addresses land on the start page.
+    { prefix: "glossar-", page: "overview", segment: null },
+    { prefix: "konzept-", page: "overview", segment: "konzepte" },
+    { prefix: "vault-", page: "overview", segment: "vault" },
     { prefix: "promptotyping-document-", page: "vorlagen", segment: "promptotyping-document" },
     { prefix: "konvention-", page: "konvention-v0.1", segment: "konvention" }
   ];
@@ -172,7 +172,7 @@
 
   /* Directories are scanned rather than read, so they are set tighter. The class
      sits on the host of a page and on the section of a part alike. */
-  var REFERENCE_HOSTS = ["glossar", "vault", "vorlagen", "use-cases"];
+  var REFERENCE_HOSTS = ["vorlagen", "use-cases"];
 
   function mountPages() {
     var main = document.getElementById("content");
@@ -497,21 +497,13 @@
     }
   }
 
-  /* Anchor types that do more than reveal a page: a template row opens its
-     panel, a concept alias resolves onto its glossary entry. */
+  /* The anchor type that does more than reveal a page: a template row opens
+     its panel. */
   function handleSpecialAnchor(hash) {
     if (/^promptotyping-document-/.test(hash)) {
       showPage("vorlagen");
       A.openTemplatePanel(hash);
       scrollToAnchor(hash);
-      return true;
-    }
-    if (/^konzept-/.test(hash)) {
-      var slug = A.konzeptSlug(hash.replace(/^konzept-/, ""));
-      showPage("glossar");
-      if (document.getElementById("glossar-" + slug)) {
-        scrollToAnchor("glossar-" + slug);
-      }
       return true;
     }
     return false;
@@ -567,7 +559,7 @@
     rest = rest.replace(/\/$/, "");
     var segments = rest.split("/");
 
-    // Prefixed family: /konzepte/{name}, /vault/{assertion}, ...
+    // Prefixed family: /case-studies/{name}, /praxis/{slug}, ...
     var family = familyForSegment(segments[0]);
     if (family && segments[1]) {
       var anchor = family.prefix + segments[1];
@@ -620,16 +612,6 @@
 
   A.HOME_PAGE = HOME_PAGE;
   A.SITE_BASE = SITE_BASE;
-  /* Copy: the registry stays the single source and is not written from outside.
-     The term index reads this, and it reads the entries a term can be reported
-     on, so a page that holds parts steps back in favour of its parts; naming
-     the whole specification would say less than naming the part. */
-  A.listPages = function () {
-    return PAGES.filter(function (p) { return !partsOf(p.id).length; })
-      .map(function (p) {
-        return { id: p.id, label: p.label, group: p.group };
-      });
-  };
   A.pageForAnchor = pageForAnchor;
   A.mountPages = mountPages;
   A.foldParts = foldParts;

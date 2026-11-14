@@ -1,5 +1,0 @@
-# Specification
-
-## Requirements
-
-The timeline draws a letter with an exact date on its day. A letter dated only to a year or a season is drawn as a span across the period it may come from. The data hold exact days, years and seasons (curate-letters.csv, rows 2 and 3).

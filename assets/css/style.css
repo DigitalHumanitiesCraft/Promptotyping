@@ -48,14 +48,9 @@
   --grey-2: var(--dh-ink-soft);
   --grey-3: var(--dh-line-strong);
 
-  /* Same value as the muted grey, kept as its own name because the glossary
-     underline is a separate decision from the grey scale. */
-  --glossar-underline: var(--grey-3);
-
   /* Floating surfaces. The geometry stays the same in both themes; only the
      shadow colour flips, because black on a dark ground shows nothing. */
   --shadow-panel: -2px 0 12px rgba(0, 0, 0, 0.06);
-  --shadow-tooltip: 0 2px 8px rgba(0, 0, 0, 0.08);
   --backdrop: rgba(0, 0, 0, 0.3);
 
   /* Epistemic function hues. The five interface categories of the artefact
@@ -131,7 +126,6 @@
     --cat-base: #85aede;
     --cat-proto: #e39a3b;
     --shadow-panel: -2px 0 12px rgba(255, 255, 255, 0.06);
-    --shadow-tooltip: 0 2px 8px rgba(255, 255, 255, 0.08);
     --backdrop: rgba(0, 0, 0, 0.6);
     --fn-exploration: #4fbf8f;
     --fn-capture: #b7c94a;
@@ -145,7 +139,6 @@
   --cat-base: #85aede;
   --cat-proto: #e39a3b;
   --shadow-panel: -2px 0 12px rgba(255, 255, 255, 0.06);
-  --shadow-tooltip: 0 2px 8px rgba(255, 255, 255, 0.08);
   --backdrop: rgba(0, 0, 0, 0.6);
   --fn-exploration: #4fbf8f;
   --fn-capture: #b7c94a;
@@ -1170,7 +1163,6 @@ body[data-page="overview"] .content {
 
 .inspector-resolve,
 .panel-copy,
-.skill-copy,
 .code-copy {
   font-family: var(--font-text);
   font-size: 0.875rem;
@@ -1185,388 +1177,9 @@ body[data-page="overview"] .content {
 
 .inspector-resolve:hover,
 .panel-copy:hover,
-.skill-copy:hover,
 .code-copy:hover {
   background: var(--text);
   color: var(--bg);
-}
-
-/* ---- Glossary ---- */
-
-.glossar-trigger {
-  border-bottom: 1px dotted var(--glossar-underline);
-  cursor: help;
-}
-
-.glossar-trigger:hover {
-  background: var(--code-bg);
-}
-
-.glossar-tooltip {
-  position: absolute;
-  z-index: 30;
-  background: var(--bg);
-  border: 1px solid var(--accent);
-  box-shadow: var(--shadow-tooltip);
-  padding: var(--space-2) var(--space-4);
-  font-size: 0.8125rem;
-  max-width: 300px;
-  line-height: 1.45;
-  /* Not clickable while hidden; the visible state takes the events, or the
-     link to the full entry inside it cannot be reached. */
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 150ms ease-out;
-}
-
-.glossar-tooltip.visible {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* Sub-navigation: one quiet link per initial. */
-.glossar-jump {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-  margin: var(--space-6) 0;
-  padding-bottom: var(--space-4);
-}
-
-.glossar-jump a {
-  font-family: var(--font-code);
-  font-size: 0.8125rem;
-  color: var(--grey-2);
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-}
-
-.glossar-jump a:hover,
-.glossar-jump a:focus-visible {
-  color: var(--text);
-  border-bottom-color: var(--glossar-underline);
-}
-
-.glossar-entry {
-  margin: var(--space-6) 0;
-  padding-bottom: var(--space-4);
-}
-
-.glossar-term {
-  margin: 0 0 var(--space-2);
-}
-
-/* Category of an entry: one geometric mark in currentColor plus the category
-   word, which is what carries the information. The mark never takes a hue,
-   because hue on this site means the epistemic function of an artefact. */
-.glossar-kategorie {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  font-size: 0.75rem;
-  letter-spacing: 0.02em;
-  color: var(--grey-2);
-}
-
-.glossar-kategorie-mark {
-  flex: none;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.25;
-  stroke-linejoin: round;
-}
-
-.glossar-entry .glossar-kategorie {
-  margin-bottom: var(--space-2);
-}
-
-.glossar-kurz {
-  font-weight: 500;
-  margin: 0 0 var(--space-2);
-}
-
-.glossar-voll {
-  margin: 0 0 var(--space-2);
-}
-
-.glossar-quelle {
-  font-size: 0.8125rem;
-  color: var(--grey-2);
-  margin: 0;
-}
-
-/* A source line is one grey; the links in it keep the underline as their only
-   mark, so the line does not break into two weights of text. */
-.glossar-quelle a,
-.glossar-tooltip-quelle a {
-  color: inherit;
-}
-
-/* The tooltip carries the whole glossary interaction since the side panel left
-   the reading flow: term, short definition, and the way to the full entry. */
-.glossar-tooltip-term {
-  display: block;
-  font-weight: 600;
-  color: var(--text);
-  margin-bottom: var(--space-1);
-}
-
-/* In the tooltip the category stands on its own line between term and
-   definition; nothing else there is a block. */
-.glossar-tooltip .glossar-kategorie {
-  display: flex;
-  margin-bottom: var(--space-1);
-}
-
-.glossar-tooltip-quelle {
-  margin: var(--space-2) 0 0;
-  font-size: 0.75rem;
-  line-height: 1.4;
-  color: var(--grey-2);
-}
-
-.glossar-tooltip-more {
-  display: block;
-  margin-top: var(--space-2);
-  font-size: 0.8125rem;
-}
-
-/* ---- Term index ----
-   Register term -> pages at the head of the glossary page, built in the
-   browser. The line under it separates the register from the entries. */
-
-.term-index {
-  margin: 0 0 var(--space-12);
-  padding-bottom: var(--space-8);
-  border-bottom: 1px solid var(--border);
-}
-
-.term-index-controls {
-  margin: var(--space-4) 0;
-}
-
-.term-index-filter {
-  width: 100%;
-  max-width: 18rem;
-  padding: var(--space-2);
-  font-family: var(--font-text);
-  font-size: 0.875rem;
-  color: var(--text);
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 0;
-}
-
-.term-index-filter:focus-visible {
-  outline: 2px solid var(--grey-3);
-  outline-offset: 1px;
-}
-
-.term-index-table th[scope="row"] {
-  width: 32%;
-  font-weight: 500;
-}
-
-.term-index-kind {
-  width: 24%;
-}
-
-.term-index-pages a {
-  display: inline-block;
-  margin-right: var(--space-4);
-  color: var(--grey-2);
-}
-
-.term-index-none {
-  color: var(--grey-3);
-}
-
-/* ---- Vault sub-view ----
-   Topic maps with their claims; the claim detail opens in the side panel. */
-
-.vault-topic {
-  margin: var(--space-8) 0;
-  padding-bottom: var(--space-4);
-  border-bottom: 1px solid var(--border);
-}
-
-.vault-topic:last-child {
-  border-bottom: none;
-}
-
-.vault-topic-desc {
-  color: var(--grey-2);
-  margin: 0 0 var(--space-4);
-}
-
-.vault-assertion-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.vault-assertion-item {
-  display: flex;
-  align-items: baseline;
-  gap: var(--space-4);
-  padding: var(--space-2) 0;
-}
-
-.vault-assertion {
-  flex: 1;
-  background: none;
-  border: none;
-  padding: 0;
-  font: inherit;
-  color: var(--text);
-  text-align: left;
-  cursor: pointer;
-  border-bottom: 1px solid transparent;
-}
-
-.vault-assertion:hover,
-.vault-assertion:focus-visible {
-  border-bottom-color: var(--glossar-underline);
-}
-
-.vault-assertion-meta,
-.vault-repo-note {
-  font-size: 0.8125rem;
-  color: var(--grey-3);
-  white-space: nowrap;
-}
-
-.vault-panel-status,
-.vault-panel-contested {
-  font-size: 0.8125rem;
-  color: var(--grey-2);
-  margin: 0 0 var(--space-4);
-}
-
-.vault-anchor-list {
-  padding-left: var(--space-4);
-}
-
-.vault-anchor-list li {
-  margin-bottom: var(--space-2);
-}
-
-.vault-anchor-id {
-  font-family: var(--font-code);
-  font-size: 0.8125rem;
-  color: var(--grey-3);
-}
-
-/* ---- Vault network view ----
-   The secondary view over the same claim layer. Three columns in a static
-   layout, claims to distillates to sources; the container scrolls, and that is
-   the whole of the pan. Unchromatic like the rest of the page, since the one
-   thing hue encodes on this site is the epistemic function of an artefact. */
-
-.vault-view-switch {
-  display: flex;
-  gap: var(--space-2);
-  margin: var(--space-6) 0 var(--space-4);
-}
-
-.vault-graph-topics {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-  margin-bottom: var(--space-4);
-}
-
-.vault-graph-legend,
-.vault-graph-detail {
-  font-size: 0.8125rem;
-  color: var(--grey-2);
-  margin: 0 0 var(--space-2);
-}
-
-/* The detail line is written on hover and on focus, so it must not resize the
-   graph below it when a long title arrives. */
-.vault-graph-detail {
-  min-height: 1.45em;
-  color: var(--grey-3);
-  margin-bottom: var(--space-4);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.vault-graph {
-  overflow: auto;
-  max-width: 100%;
-  max-height: 70vh;
-  border: 1px solid var(--border);
-  padding: var(--space-4);
-}
-
-.vault-graph:focus-visible {
-  outline: 2px solid var(--text);
-  outline-offset: 2px;
-}
-
-.vault-graph-svg {
-  display: block;
-  font-family: var(--font-text);
-}
-
-.vg-head {
-  font-size: 0.75rem;
-  font-weight: 600;
-  fill: var(--grey-2);
-}
-
-.vg-edge {
-  fill: none;
-  stroke: var(--accent);
-  stroke-width: 1;
-}
-
-.vg-node {
-  text-decoration: none;
-}
-
-.vg-node rect {
-  fill: var(--bg);
-  stroke: var(--border);
-  stroke-width: 1;
-}
-
-.vg-node text {
-  font-size: 0.75rem;
-  fill: var(--text);
-}
-
-.vg-node:hover rect,
-.vg-node.is-lit rect {
-  stroke: var(--text);
-}
-
-.vg-node:focus-visible rect {
-  stroke: var(--text);
-  stroke-width: 2;
-}
-
-.vg-node:focus-visible {
-  outline: none;
-}
-
-/* While one node is lit, the rest of the network steps back so the chain under
-   the pointer reads as a chain. A class switch, no transition. */
-.vault-graph-svg.is-lighting .vg-edge {
-  opacity: 0.15;
-}
-
-.vault-graph-svg.is-lighting .vg-edge.is-lit {
-  opacity: 1;
-  stroke: var(--text);
-  stroke-width: 1.5;
-}
-
-.vault-graph-svg.is-lighting .vg-node:not(.is-lit) text {
-  fill: var(--grey-3);
 }
 
 /* ---- Templates hub ----
@@ -1671,17 +1284,8 @@ body[data-page="overview"] .content {
   color: var(--grey-3);
 }
 
-/* ---- Skills: package actions and copy buttons ---- */
+/* ---- Tutorial: copy buttons on the prompts ---- */
 
-.skill-actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--space-4);
-  margin: var(--space-4) 0 var(--space-6);
-}
-
-.skills-block pre,
 #tutorial pre {
   position: relative;
 }
@@ -1718,8 +1322,7 @@ body[data-page="overview"] .content {
   gap: var(--space-2);
 }
 
-.case-chip,
-.vault-chip {
+.case-chip {
   font-family: var(--font-text);
   font-size: var(--text-sm);
   background: none;
@@ -1731,13 +1334,11 @@ body[data-page="overview"] .content {
   transition: background 150ms ease-out, color 150ms ease-out, border-color 150ms ease-out;
 }
 
-.case-chip:hover,
-.vault-chip:hover {
+.case-chip:hover {
   border-color: var(--brand-accent);
 }
 
-.case-chip.active,
-.vault-chip.active {
+.case-chip.active {
   background: var(--text);
   color: var(--bg);
   border-color: var(--text);

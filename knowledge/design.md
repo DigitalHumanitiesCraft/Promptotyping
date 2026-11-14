@@ -61,7 +61,7 @@ The values come from the shared token file `assets/dhcraft/dhcraft-tokens.css`, 
 --brand-accent, --on-brand-accent  primary action and its text
 ```
 
-The glossary underline keeps its own token name, `--glossar-underline`, because it is a separate decision from the grey scale; it resolves to `var(--grey-3)` in both themes and therefore holds no value of its own.
+The glossary underline token `--glossar-underline` and the tooltip shadow `--shadow-tooltip` left the stylesheet on 2026-11-14 with the glossary (A6).
 
 ### Colour that carries meaning
 
@@ -88,11 +88,9 @@ The signature is the counterpart. A prismatic gradient runs as a two-pixel band 
 
 Beyond these two, no element carries a hue.
 
-### Shape that carries meaning
+### Shape that carries meaning (retired)
 
-The glossary classifies every term by the kind of thing it names, and that classification is drawn as a shape (A36, 2026-07-29). Eight values each own one geometric mark, a circle for a form of work, a closed semicircle for a practice, a square for a document function, a triangle for a role, a diamond for an artefact, a hexagon for a checking form, a cross for a failure mode and limit, and three stacked rules for an infrastructure term. They are inline SVG at twelve pixels with a 1.25-pixel stroke in `currentColor`, no fill, and no variation beyond the one form per value.
-
-Shape is the second-best variable here, and it is used because the better one is spent. Bertin classes hue as selective and associative, which is why it encodes the interface typology, and he classes shape as associative without being selective, so a reader recognises a mark but cannot pick every term of one kind out of a list at a glance. The term index answers that with a filter field over its category column, where selection is a matter of the filter. In the entry and in the tooltip the mark stands beside the category word as an aid to recognition, and the word is what states the category, which is the same WCAG 2.1 1.4.1 rule the hue follows.
+The glossary drew the category of each term as an uncoloured geometric mark beside the category word (A36). The marks left with the glossary on 2026-11-14, and no element of the site encodes a value by shape.
 
 ### Dark theme
 
@@ -100,7 +98,7 @@ The stylesheet resolves every colour through a token. The shared roles carry the
 
 The five function hues lighten in the dark theme so they keep their contrast against the dark ground; measured on 2026-11-10 against `#161d38` they reach 5.5:1 to 9.5:1. In light, against `#fdfcf8`, four hues reach 3.7:1 to 6.4:1 and the edition hue `#d0a022` only 2.3:1, below the 3:1 for graphical objects, as it was against white before; the category word beside it carries the meaning, and the hue itself is an open point. The watercolour mark in the header is a transparent raster and stands on both grounds unchanged.
 
-Floating surfaces carry a subtle overlay, and it runs through tokens like every other colour, `--shadow-panel` on the side panel, `--shadow-tooltip` on the tooltip, `--backdrop` behind the open panel. The geometry holds in both themes, `-2px 0 12px` and `0 2px 8px`. The shadow colour flips, because black at six per cent over a dark ground shows nothing; the light theme casts black at six and eight per cent, the dark theme casts white at the same two values. The backdrop deepens from thirty to sixty per cent black, where the dimming shows on the light text it covers. Cards carry no shadow.
+Floating surfaces carry a subtle overlay, and it runs through tokens like every other colour, `--shadow-panel` on the side panel and `--backdrop` behind the open panel. The geometry `-2px 0 12px` holds in both themes. The shadow colour flips, because black at six per cent over a dark ground shows nothing; the light theme casts black at six per cent, the dark theme casts white at the same value. The backdrop deepens from thirty to sixty per cent black, where the dimming shows on the light text it covers. Cards carry no shadow.
 
 ### Typography
 
@@ -123,7 +121,7 @@ Sizes (base `font-size: 16px`):
 
 Line height is 1.6 for body text, 1.4 for code, and 1.3 for headings.
 
-Density is two-tiered (operator decision 2026-07-26). Specification prose keeps the calm setting because it is read. The directories are scanned rather than read, so the four reference pages Glossar, Vault, Vorlagen and Use Cases carry `.is-reference` and set 0.9375rem at line height 1.45, with correspondingly smaller headings and tables.
+Density is two-tiered (operator decision 2026-07-26). Specification prose keeps the calm setting because it is read. The directories are scanned rather than read, so the reference pages Vorlagen and Use Cases (until 2026-11-14 also Glossar and Vault) carry `.is-reference` and set 0.9375rem at line height 1.45, with correspondingly smaller headings and tables.
 
 ### Spacing
 
@@ -157,10 +155,8 @@ The right-hand panel slides in from the right on a trigger.
 
 ### Triggers
 
-- A glossary term in the reading flow (dotted underline, `cursor: help`)
 - A template button in the first cell of each clickable Vorlagen-table row
 - The "More" button of a case-study card
-- An assertion in the vault view
 
 ### Behaviour
 
@@ -184,9 +180,9 @@ Below 860px the panel becomes a bottom sheet: full width, `max-height: 80vh`, a 
 
 ## Interaction patterns
 
-### Glossary trigger
+### Glossary trigger and term index (retired)
 
-Glossary-defined terms render with a dotted grey underline (`1px dotted var(--glossar-underline)`) and `cursor: help`. Hover fills the background with `#f5f5f5`. A tooltip appears after a 400ms delay, handled in `pages-glossar.js`, and carries the term, the short definition and a link to the full entry; a click toggles the same tooltip, which is the only way in on a touch device. The tooltip surface fades in over `opacity 150ms`. The side panel that used to open on click is out of this flow since 2026-07-26 (A29 sits beside this in [specification.md](specification.md), the decision itself is A6).
+The dotted glossary trigger with its tooltip (A6) and the term index at the head of the glossary page (A25) left the site with the glossary on 2026-11-14.
 
 ### Vorlagen table
 
@@ -205,21 +201,17 @@ The use-case gallery renders case-study cards in a responsive grid (`auto-fill, 
 
 Labels are English, in the British spelling the paper uses. A label names the thing and stays as short as it can. The five interface categories keep their English identifiers, and the category still stands as a word beside its hue (WCAG 2.1, 1.4.1).
 
-### Term index
-
-The term index heads the glossary page as a table of term, category and target pages. The filter field above it is a plain input in a `--border` frame with no icon and no placeholder decoration, and it searches all three columns. Target pages are links in the dominant grey, the term links into its own glossary entry, and a term that occurs nowhere outside the glossary says so in words rather than by a symbol. The index carries no colour; the one thing it distinguishes, the kind of thing a term names, is drawn as a shape beside its word.
-
 ## Focus and keyboard
 
 A page change carries the focus into the content, so the reader continues in the page rather than back at the top of the tree. The receiving container is reachable by Tab in no other way, and it therefore shows no focus ring when it takes the focus programmatically. Every element that a keyboard reaches on its own keeps its visible ring, and that ring is not weakened anywhere.
 
 ## Motion and elevation
 
-The only movement animation is the side-panel slide, 200ms `ease-out`. Interactive elements additionally carry short 150ms `ease-out` colour and background transitions as hover feedback (TOC links, tree entries, cards, buttons, chips, the video facade, the tooltip fade). The `CLAUDE.md` rule "only side-panel slide, no others" governs decorative and scroll-linked motion, which stays banned; the 150ms hover transitions are permitted micro-affordances. The scrollspy of A33 moves a class and nothing else, so it adds no motion. When `prefers-reduced-motion: reduce` is active, the stylesheet makes every transition and animation effectively immediate. An icon rotation on a contents toggle stood in this list until 2026-07-29 and named a control the site no longer has.
+The only movement animation is the side-panel slide, 200ms `ease-out`. Interactive elements additionally carry short 150ms `ease-out` colour and background transitions as hover feedback (TOC links, tree entries, cards, buttons, chips, the video facade). The `CLAUDE.md` rule "only side-panel slide, no others" governs decorative and scroll-linked motion, which stays banned; the 150ms hover transitions are permitted micro-affordances. The scrollspy of A33 moves a class and nothing else, so it adds no motion. When `prefers-reduced-motion: reduce` is active, the stylesheet makes every transition and animation effectively immediate. An icon rotation on a contents toggle stood in this list until 2026-07-29 and named a control the site no longer has.
 
 ## Icons
 
-Icons appear only where a control carries no text, currently the theme toggle, the panel close, the copy button, the mark on an outbound link and the repository link in the header. The category marks of the glossary fall outside this rule, since they encode a value rather than name a control; they are specified under Shape that carries meaning. They are inline SVG at 16 pixels with a 1.5-pixel stroke in `currentColor` and no fills, carried in the markup rather than in a font or a sprite file. Navigation entries, headings and groups carry no icons, because there the label is the thing.
+Icons appear only where a control carries no text, currently the theme toggle, the panel close, the copy button, the mark on an outbound link and the repository link in the header. They are inline SVG at 16 pixels with a 1.5-pixel stroke in `currentColor` and no fills, carried in the markup rather than in a font or a sprite file. Navigation entries, headings and groups carry no icons, because there the label is the thing.
 
 The footer carries no destination glyphs since it moved to the shared footer block on 2026-11-10; its links name their targets in words.
 
@@ -259,7 +251,7 @@ The footer is one band on `--code-bg` with three groups of short lines, meant as
 |---|---|---|
 | Title | What is it, and for whom? | H1 and a three-sentence abstract at reading measure |
 | Figure | How does the practice work? | Figure 1 of the paper in a frame on the surface, at the page width |
-| Terms | What do the figure's labels mean? | Three paragraphs of prose with glossary tooltips on promptotype, agentic review, scholarly validation, knowledge curation and project knowledge base, then the document types drawn as three panels of files |
+| Terms | What do the figure's labels mean? | Three paragraphs of prose that define promptotype, agentic review, scholarly validation, knowledge curation and project knowledge base (with glossary tooltips until 2026-11-14), then the document types drawn as three panels of files |
 | Origin | Where does it come from, and what to cite? | One paragraph with the sources as links |
 | Reuse | How do I start? | The fit check as one sentence, three numbered steps, the block of files |
 | Example | What does a round look like? | Eleven numbered steps from Set up to Accept and version, each with instruction, field and result |
@@ -287,57 +279,9 @@ Every value the start page introduces is a custom property on `:root`: `--radius
 
 On 2026-11-10 Playwright screenshots of the page served from the repository were read at 1440 by 900, 820 by 1100, 390 by 844 and 360 by 740, light and dark, and without JavaScript. Two independent agentic reviews with a fresh context checked the page against the user tasks, the shared design document and the sources. Worked in were the always count, the dead links without JavaScript, broken phone rows, a phone arrow without its target, repeated link names, the template destinations, the prompt order, an advisory heading, the long conditions, the catalogue inside one definition, the figure on a phone, the missing acceptance step, a yield that did not match its prompt, the source line of the figure and the citation width. Kept with reasons were the three cases of the paper, which the paper's section 3 names while `assets/data/case-studies.json` marks Klawiter-Rescue as `further`, the phrase that findings return most often to Distillation, which the paper states in section 2.2, and the signature band, which the owner saw and approved. Human reading and the owner's acceptance are outstanding.
 
-## Introduction page
+## Introduction page (withdrawn)
 
-The page under `intro/` (A47 in [specification.md](specification.md)) addresses readers who know neither Git nor coding agents, and it follows the method pages of Second Brain Vault and Grounded Vault instead of the portal. Everything above this section binds the portal; this section alone binds the introduction page.
-
-### Sections
-
-| Section | Question it answers | Form |
-|---|---|---|
-| Hero | What is it, for whom, and how does a round run? | Title, one lead paragraph, the four parts as one line, audience line, two actions, and the playable example |
-| Try it | How do I start on my own data? | Tool line with the skill, seven steps (Set up, then the example's steps with Cut to size after Distil and Check and accept at the end), each on three levels, one paragraph on what the reader does and checks, one sentence in the copy field and the result after an arrow, and on wide screens a sticky project folder titled with the step in view, which also lists the generated profile and the index. Set up carries a schematic agent window |
-| Good to know | What leaves my computer, what is it not, where do I read on? | Three columns of short sentences with source links; citation, templates and cases are linked to the start page, not repeated |
-
-### Example
-
-One synthetic round in seven named steps, Prepare, Explore, Distil, Implement, Check, Curate and Rebuild. Its folder leaves out the generated profile and the index, which the reader's own folder shows, so that it keeps to the first screen. A family correspondence with partly uncertain dates becomes a timeline. The steps are buttons with their names; a done step carries a check mark, the current step is filled, a coming step has a dashed number. The example's title shares its row with the controls Previous, Next and Play. The caption names who acts, the step and the concrete instance, and on wide screens it reserves the height of its longest step, measured on a hidden probe once the web fonts have loaded, so the panes below stay still while the example plays. At 1440 by 900 the whole example fits the first screen in both languages. Below stand two panes. The project folder lists every file of the round with a one-line gloss and a state word, new as a green pill, changed as an ink pill, read with a small arrow, not yet in faint text. The prototype pane shows nothing, version 1, version 1 with the reader's marks, or version 2. In the timeline a letter drawn on one day is a dot, a letter the check marks carries a dashed ring, and a span is a bar, so shape carries the distinction. Orange means only the reader's mark. The Check step says why version 1 failed, since data.md had recorded the uncertain dates and the specification never turned them into a requirement.
-
-The Set up step draws a schematic agent window in HTML with the three places a newcomer uses, the folder chosen at the start of a session, the chat field and the question before a change. Numbered marks in the window match a key below it, and the caption says that it is a schematic and that Claude Code and Codex look different. It is drawn rather than captured, because a screenshot would show the account and sessions of a real installation and would hold for one agent only.
-
-Below 48rem the prototype pane comes first and the folder drops its absent rows and the glosses of untouched files, so the files a step changes stay near the caption. This is the page's one device that hides content, and the hidden rows add nothing the step is about.
-
-### Visual system
-
-DHCraft corporate design, loosely. Tokens follow the dhcraft-site palette in OKLCH and live in the token block of `intro/site.css`; Sora and Instrument Sans are vendored under `intro/assets/fonts/` with their licences; buttons and step markers are pills; the header carries the white DHCraft mark on navy. The hero stands on the navy night ground, the reading sections on paper. At most three text levels, borders only on controls, prompts and the state words, and no box inside a box. Sections are separated by their ground. Text runs on three levels, headings in Sora, body text, and meta text at the smallest step for glosses, states, legends, prompts and notes; the lead paragraph alone is set one step larger. The navigation bar is opaque and wraps on narrow screens instead of scrolling.
-
-### Terms
-
-| English | German |
-|---|---|
-| working practice | Arbeitspraxis |
-| AI coding agent | KI-Coding-Agent |
-| session | Sitzung |
-| project folder | Projektordner |
-| prototype | Prototyp |
-| Prepare, Explore, Distil, Implement, Check, Curate, Rebuild | Vorbereiten, Erkunden, Destillieren, Bauen, Prüfen, Kuratieren, Neu bauen |
-| Set up, Cut to size, Check and accept | Einrichten, Zuschneiden, Prüfen und annehmen |
-| sentence for the agent, result | Satz für den Agenten, Ergebnis |
-| method page | Methodenseite |
-
-### Evidence
-
-On 2026-11-04 three subagents read screenshots and page text in the roles of a historian without Git or agent experience (English, desktop), a research data manager at a university library (German, phone) and the head of a museum digital collections team (English, desktop). A fourth reviewed code, screenshots and the running page against the vault document on interface practice for agent-built frontends. They are model readers, not people.
-
-- All three understood the example's point, that a wrong display is corrected in the documents before the code. Two read version 1's failure as the documents failing, and one read its legend as false. The Check step now names the gap between data.md and the specification, and the legend says what version 1 actually draws.
-- All three would have stopped before the first step, not knowing which program to open or where to type, and stumbled over session, skill, commit and local server. The page now opens the try-it steps with Set up, says in the lead that the assistant forgets between conversations, and explains each of these words where it first appears.
-- Two could not map the example's seven steps onto the tutorial's six. The try-it section now names the relation and carries the same step names.
-- A second reader, an art historian, then retold the round and the reason for version 1's failure correctly. They still missed how to choose the folder in the assistant, whether to install Git and Python, and a file to rehearse with. Set up and Prepare now answer these, and `intro/example/letters.csv` holds the invented letters of the example.
-- The reviewer found lost keyboard focus at the stepper's ends, unreadable absent rows, changed files below the fold on the phone, a clipped navigation at 320 pixels, too many type sizes, rules on non-controls and a translucent header. All are corrected, and the reproducible ones are regression cases under `intro/tests/` ([verification.md](verification.md)).
-
-A check of the providers' pages on the same day corrected two statements. Codex is included in every ChatGPT plan, the free one too, while Claude Code needs the Pro plan or above. Codex in its recommended mode works inside the project folder without asking and asks before it reaches beyond it, so only Claude Code asks before every change. The page now names these plans and modes with their sources, links three documented cases, says that the duration of a round has not been measured, asks for a licence on generated code and documents, and states that fully local work is not covered.
-
-Prices stay off the page because they change (journal, 2026-11-04). On 2026-11-10 the page took over the paper's name for the LLM role, agent instead of assistant, glossed in the lead, named the four forms of work in the try-it section, defined acceptance as the researchers' judgement of fit, and points to the citation file. On 2026-11-11 the try-it steps took the form of the start page's example (A51), short sentences with the skill instead of long prompts, the English step names Build and Cut to size became Implement and Prune as in the skill, and the notes dropped the citation sentence and the case links that the start page carries. Open are whether the workshop covers the setup, a human reading and the operator's acceptance.
+The introduction page under `intro/` (A47) was withdrawn on 2026-11-14 by operator decision, because its text no longer followed the terms of the paper and the start page already shows the five subcommands of the skill. Its design rules left with it and remain in the git history.
 
 ## What the design is not
 

@@ -35,11 +35,7 @@ CASES = ROOT / "assets" / "data" / "case-studies.json"
 CASE_DIR = ROOT / "_content" / "case-studies"
 CONTENT_DIR = ROOT / "_content"
 PRAXIS = CONTENT_DIR / "praxis.md"
-GLOSSAR_JSON = ROOT / "assets" / "data" / "glossar.json"
-GLOSSAR_MD = CONTENT_DIR / "glossar.md"
-VAULT_JSON = ROOT / "assets" / "data" / "vault.json"
 KNOWLEDGE_DIR = ROOT / "knowledge"
-VAULT_SOURCES = ROOT / "vault" / "00_sources"
 JS_DIR = ROOT / "assets" / "js"
 NOT_FOUND = ROOT / "404.html"
 INDEX_HTML = ROOT / "index.html"
@@ -59,10 +55,9 @@ WORKING_ENVIRONMENT = CONTENT_DIR / "arbeitsumgebung.md"
 # The site's own base, as the template: fields and the prose spell it.
 SITE_BASE = "dhcraft.org/Promptotyping/"
 
-# tools/ is a folder of scripts rather than a package, so the generator is
-# reached by path. The mirror check runs it rather than restating its rules.
+# tools/ is a folder of scripts rather than a package, so the archive builder
+# is reached by path. The download check runs it rather than restating its list.
 sys.path.insert(0, str(TOOLS))
-import build_glossar  # noqa: E402
 
 # The five epistemic functions of the site's interface typology (artefact page).
 INTERFACE_TYPES = {"verification", "exploration", "edition", "capture", "audit"}
@@ -102,10 +97,8 @@ NORMATIVE_FILES = (
     README,
     CONVENTION,
     CONTENT_DIR / "application.md",
-    CONTENT_DIR / "glossar.md",
     CONTENT_DIR / "tutorial.md",
     CONTENT_DIR / "workflow.md",
-    GLOSSAR_JSON,
     KNOWLEDGE_DIR / "INDEX.md",
     KNOWLEDGE_DIR / "architecture.md",
     KNOWLEDGE_DIR / "governance.md",
@@ -301,28 +294,52 @@ def check_catalogue_contract(documents):
             fail("naming", "handoff template misses %r" % marker)
 
 
-def check_retired_skill_addresses() -> None:
-    """The addresses of the retired Skills page still land somewhere.
+# Pages retired on 2026-11-14 whose published addresses must still land
+# somewhere. Each bare address maps onto its target, and each family is the
+# (prefix, page, segment) triple ANCHOR_FAMILIES must carry.
+RETIRED_ROUTES = {
+    "skills": "overview",
+    "skills-promptotyping": "start-example",
+    "vault": "overview",
+    "glossar": "overview",
+    "intro": "overview",
+}
+RETIRED_FAMILIES = (
+    ("skills-", "overview", "skills"),
+    ("vault-", "overview", "vault"),
+    ("glossar-", "overview", None),
+    ("konzept-", "overview", "konzepte"),
+)
+RETIRED_PAGES = ("skills", "vault", "glossar")
+
+
+def check_retired_addresses() -> None:
+    """The addresses of the retired pages still land somewhere.
 
     The Skills page was retired on 2026-11-14 together with the copy of the
-    skill (A42). Published pages and repositories may still link
-    #skills-promptotyping, so the registry sends it to the start page's section
-    headed Skill, and #skills, /skills/{name} and the other #skills-{name}
-    anchors to the start page.
+    skill (A42), and the Vault view and the glossary on the same day. Published
+    pages and repositories may still link their addresses, so the registry
+    sends #skills-promptotyping to the start page's section headed Skill, and
+    #skills, #vault, #glossar and the families #skills-, #vault-, #glossar- and
+    #konzept- with their subpaths to the start page.
     """
     registry = read_text(JS_DIR / "registry.js")
     aliases = js_string_map(registry, "LEGACY_ROUTE_ALIASES")
-    expected = {"skills": "overview", "skills-promptotyping": "start-example"}
-    for legacy, target in expected.items():
+    for legacy, target in RETIRED_ROUTES.items():
         if aliases.get(legacy) != target:
-            fail("skill", "the retired address #%s must resolve to #%s" % (legacy, target))
-    if ("skills-", "overview", "skills") not in anchor_families(registry):
-        fail("skill", "the retired family #skills-{name} must land on the start page")
-    if "skills" in registry_pages(registry):
-        fail("skill", "registry.js still mounts the retired Skills page")
+            fail("retired", "the retired address #%s must resolve to #%s" % (legacy, target))
+    families = anchor_families(registry)
+    for family in RETIRED_FAMILIES:
+        if family not in families:
+            fail("retired", "the retired family #%s{name} must land on the start page"
+                 % family[0])
+    mounted = registry_pages(registry)
+    for page in RETIRED_PAGES:
+        if page in mounted:
+            fail("retired", "registry.js still mounts the retired page %s" % page)
     if 'id="start-example"' not in read_text(INDEX_HTML):
-        fail("skill", "index.html lost the section #start-example that "
-                      "#skills-promptotyping resolves to")
+        fail("retired", "index.html lost the section #start-example that "
+                        "#skills-promptotyping resolves to")
 
 
 def check_portal_paths() -> None:
@@ -334,10 +351,10 @@ def check_portal_paths() -> None:
     """
     surfaces = (
         ("overview", OVERVIEW,
-         ("#application", "#use-cases", "#vault", "#tutorial",
+         ("#application", "#use-cases", "#tutorial",
           SKILL_REPOSITORY, "#vorlagen")),
         ("understand", APPLICATION,
-         ("#use-cases", "#vault", "#tutorial",
+         ("#use-cases", "#tutorial",
           SKILL_REPOSITORY, "#vorlagen")),
         ("evaluate", PAGES_CONTENT,
          ("#overview",)),
@@ -433,8 +450,7 @@ def check_start_page(documents) -> None:
             if url and 'href="%s"' % url not in item:
                 fail("start", "start page case %s misses %s" % (case_id, url))
 
-    for anchor in ("#application", "#use-cases", "#tutorial",
-                   "#vorlagen", "#glossar"):
+    for anchor in ("#application", "#use-cases", "#tutorial", "#vorlagen"):
         if 'href="%s"' % anchor not in page:
             fail("start", "start page does not link %s" % anchor)
 
@@ -696,100 +712,6 @@ def check_urls(data):
             fail("urls", "%s %s %s answers %d" % (case_id, field, url, status))
 
 
-def check_glossar_mirror():
-    """_content/glossar.md is what tools/build_glossar.py renders.
-
-    Part 5 states that a generated document is rendered by a script. The mirror
-    was kept by hand until 2026-07-26, which is the one place on the site where
-    that rule was broken; the generator now decides what the file says.
-    """
-    try:
-        expected = build_glossar.build()
-    except build_glossar.EntryError as error:
-        fail("glossar", "the generator cannot render assets/data/glossar.json: %s" % error)
-        return
-    difference = build_glossar.first_difference(expected, read_text(GLOSSAR_MD))
-    if difference:
-        fail("glossar", "_content/glossar.md is not what build_glossar.py renders "
-                        "from assets/data/glossar.json; %s" % difference)
-
-
-# The source types assets/data/glossar.json declares, each with the anchor prefix its
-# addresses carry. A type mapped to None takes no anchor at all.
-SOURCE_PREFIXES = {
-    "vault": "vault-",
-    "page": "",
-    "text": None,
-}
-
-
-def glossar_categories(meta):
-    """The taxonomy vocabulary, and the mark the site draws for each of its values.
-
-    The wording is data and stands in _meta.kategorien; the mark is presentation
-    and stands as CATEGORY_MARKS in pages-glossar.js. A value that carries only
-    one of the two renders as a category without a mark or as a mark nothing
-    names, so the two are held against each other here (A36).
-    """
-    vocabulary = set(meta.get("kategorien") or {})
-    # The values are SVG fragments in single quotes, so only the keys are read.
-    source = js_literal(read_text(JS_DIR / "pages-glossar.js"), "CATEGORY_MARKS")
-    if source is None:
-        fail("glossar", "pages-glossar.js declares no CATEGORY_MARKS table")
-        return vocabulary
-    marks = set(re.findall(r'^\s*"([a-z-]+)":', source, re.M))
-    for value in sorted(vocabulary - marks):
-        fail("glossar", "the category %r has no mark in CATEGORY_MARKS" % value)
-    for value in sorted(marks - vocabulary):
-        fail("glossar", "CATEGORY_MARKS draws %r, which _meta.kategorien does "
-                        "not name" % value)
-    return vocabulary
-
-
-def check_glossar_sources(anchors):
-    """Every glossary entry names its kind and its carriers, and each address holds.
-
-    The source list replaced a free-text field on 2026-07-29 (A34) and the
-    taxonomy field arrived with A36, so the entry now states what kind of thing
-    the term names, which carrier is of which kind, and where each one lives.
-    Four ways this can go wrong silently: a category the render table does not
-    know, a source type outside the declared vocabulary, an anchor under the
-    wrong family, and an anchor nothing on the site declares.
-    """
-    data = load_json(GLOSSAR_JSON)
-    categories = glossar_categories(data["_meta"])
-    for entry in data["eintraege"]:
-        slug = entry["slug"]
-        if entry.get("kategorie") not in categories:
-            fail("glossar", "%s is classified as %r, which _meta.kategorien does "
-                            "not name" % (slug, entry.get("kategorie")))
-        sources = entry.get("quellen") or []
-        if not sources:
-            fail("glossar", "the entry %s names no source" % slug)
-        for source in sources:
-            typ = source.get("typ")
-            anchor = source.get("anker")
-            if typ not in SOURCE_PREFIXES:
-                fail("glossar", "%s carries a source of type %r, which the schema "
-                                "does not declare" % (slug, typ))
-                continue
-            prefix = SOURCE_PREFIXES[typ]
-            if prefix is None:
-                if anchor:
-                    fail("glossar", "%s gives the text source %r an anchor #%s"
-                         % (slug, source.get("text"), anchor))
-                continue
-            if not anchor:
-                fail("glossar", "%s carries a %s source without an anchor" % (slug, typ))
-                continue
-            if not anchor.startswith(prefix):
-                fail("glossar", "%s calls #%s a %s source; those carry the prefix %r"
-                     % (slug, anchor, typ, prefix))
-            if not is_declared(anchor, anchors):
-                fail("glossar", "%s links to #%s; nothing on the site declares that "
-                                "anchor" % (slug, anchor))
-
-
 # ---------------------------------------------------------------------------
 # Anchor resolution
 #
@@ -938,7 +860,7 @@ def plain_inline(text):
 # The script files this group reads its declarations out of. A rename would
 # otherwise end the run in a bare KeyError that says nothing about what is
 # missing or why the check needed it.
-DECLARING_SCRIPTS = ("registry.js", "pages-glossar.js", "pages-content.js")
+DECLARING_SCRIPTS = ("registry.js", "pages-content.js")
 
 
 def declared_anchors(js_texts):
@@ -948,7 +870,6 @@ def declared_anchors(js_texts):
         if name not in by_name:
             sys.exit("FAIL:  assets/js/%s is gone; the anchor checks read the "
                      "declared side of the site out of it" % name)
-    konzept_aliases = js_string_map(by_name["pages-glossar.js"], "KONZEPT_ALIASES")
     praxis_aliases = js_string_map(by_name["pages-content.js"], "PRAXIS_ALIASES")
 
     anchors = set(registry_pages(by_name["registry.js"]))
@@ -959,17 +880,8 @@ def declared_anchors(js_texts):
 
     for doc in load_json(CATALOGUE)["documents"]:
         anchors.add("promptotyping-document-" + doc["slug"])
-    glossar_slugs = [e["slug"] for e in load_json(GLOSSAR_JSON)["eintraege"]]
-    anchors.update("glossar-" + slug for slug in glossar_slugs)
-    # handleSpecialAnchor maps #konzept-x through KONZEPT_ALIASES and falls back
-    # to x itself, so a bare glossary slug is addressable as a concept too.
-    anchors.update("konzept-" + alias for alias in konzept_aliases)
-    anchors.update("konzept-" + slug for slug in glossar_slugs)
     for case in load_json(CASES)["caseStudies"]:
         anchors.add("case-" + case["id"])
-    vault = load_json(VAULT_JSON)
-    anchors.update("vault-" + assertion["slug"] for assertion in vault["assertions"])
-    anchors.update("vault-topic-" + topic["slug"] for topic in vault["topics"])
 
     praxis_ids = ["praxis-" + slugify(plain_inline(h))
                   for h in markdown_headings(PRAXIS, (2, 3))]
@@ -987,10 +899,6 @@ def declared_anchors(js_texts):
         if target not in praxis_ids:
             fail("anchors", "PRAXIS_ALIASES sends %s to #%s; no praxis heading "
                             "carries that anchor" % (alias, target))
-    for alias, target in sorted(konzept_aliases.items()):
-        if target not in glossar_slugs:
-            fail("anchors", "KONZEPT_ALIASES sends konzept-%s to the glossary entry "
-                            "%s, which assets/data/glossar.json does not hold" % (alias, target))
 
     return anchors
 
@@ -1055,10 +963,7 @@ def js_anchor_links(js_texts):
 
 def template_field_urls():
     """The template: url and alias of every frontmatter block that carries one."""
-    paths = sorted(KNOWLEDGE_DIR.glob("*.md"))
-    if VAULT_SOURCES.is_dir():
-        paths += sorted(VAULT_SOURCES.glob("*.md"))
-    for path in paths:
+    for path in sorted(KNOWLEDGE_DIR.glob("*.md")):
         frontmatter = re.match(r"^---\n(.*?)\n---", read_text(path), re.S)
         if not frontmatter:
             continue
@@ -1088,10 +993,10 @@ def prose_site_urls():
             token = re.sub(r"^https?://", "", token).rstrip(".,;:")
             if "{" in token or "*" in token or token.rstrip("/") == SITE_BASE.rstrip("/"):
                 continue
-            # A path that is a published file or a folder with its own page,
-            # such as intro/, is served as it stands and routes through no anchor.
+            # A path that is a published file, such as _content/overview.md, is
+            # served as it stands and routes through no anchor.
             rel = token.split("dhcraft.org/Promptotyping/", 1)[-1].split("#", 1)[0]
-            if rel and ((ROOT / rel).is_file() or (ROOT / rel / "index.html").is_file()):
+            if rel and (ROOT / rel).is_file():
                 continue
             yield name, token
 
@@ -1182,7 +1087,6 @@ def check_anchors():
             fail("anchors", "%s names %s, which resolves to #%s, and nothing declares it"
                  % (where, token, anchor))
 
-    check_glossar_sources(anchors)
     check_subpath_handover(page_ids, families, aliases)
 
 
@@ -1318,39 +1222,6 @@ def check_requirement_numbers():
                  % (name, number))
 
 
-def check_vault_index_current():
-    """Everything assets/data/vault.json points at still exists under vault/.
-
-    The index is generated by vault/tools/build_site_index.py and committed, so
-    a rename or removal in the assertion, distillate or source layer leaves
-    stale entries behind until the generator is re-run, and the site then links
-    into nothing. The reverse direction stays open by construction: an assertion
-    outside every topic map is legitimately absent from the index, so absence
-    proves nothing and is not checked.
-    """
-    vault = load_json(VAULT_JSON)
-    assertion_files = {p.stem for p in (ROOT / "vault" / "30_assertions").glob("*.md")}
-    for assertion in vault["assertions"]:
-        if assertion["slug"] not in assertion_files:
-            fail("vault-index", "assets/data/vault.json lists the assertion %s; "
-                                "vault/30_assertions/ has no such file" % assertion["slug"])
-    for kind in ("distillates", "sources"):
-        for entry in vault[kind]:
-            path = entry.get("path")
-            if not path:
-                # The generator writes an empty path for a source it could not
-                # resolve, so skipping the empty case would pass over exactly
-                # the entries the index is least sure of.
-                fail("vault-index", "assets/data/vault.json carries the %s %s without a "
-                                    "path; the generator leaves it empty where it "
-                                    "could not resolve the entry"
-                     % (kind[:-1], entry["slug"]))
-            elif not (ROOT / path).is_file():
-                fail("vault-index", "assets/data/vault.json points the %s %s at %s, "
-                                    "which is not a file"
-                     % (kind[:-1], entry["slug"], path))
-
-
 CORE_FIELDS = ("title", "project", "method", "status", "created", "updated")
 STATUS_VOCABULARY = ("idea", "draft", "stub", "complete", "reviewed",
                      "archived", "active", "snapshot")
@@ -1440,7 +1311,6 @@ def check_relative_links():
     targets = (list(ROOT.glob("*.md"))
                + list((ROOT / "knowledge").glob("*.md"))
                + list((ROOT / "_content").rglob("*.md"))
-               + list((ROOT / "snapshots").rglob("*.md"))
                + list((ROOT / "handoffs").rglob("*.md")))
     pattern = re.compile(r"\]\((?!https?:|mailto:|#)([^)]+)\)")
     for path in sorted(targets):
@@ -1452,10 +1322,7 @@ def check_relative_links():
             if (path.parent / target).exists() or (ROOT / target).exists():
                 continue
             label = path.relative_to(ROOT).as_posix()
-            # snapshots/ holds dated records by definition, with or without a
-            # frontmatter that says so.
-            dated = label.startswith("snapshots/") or is_dated_record(path)
-            if dated and retired_target(path, target):
+            if is_dated_record(path) and retired_target(path, target):
                 note("%s keeps its dated link to %s, which the repository "
                      "removed" % (label, target))
                 continue
@@ -1466,7 +1333,9 @@ def check_relative_links():
 # them stays as it was written, because a snapshot is correct as of its date;
 # every other document must not link there. Removed on 2026-11-14 by operator
 # decision: the benchmark with its two knowledge documents, the source
-# material, the copy of the skill and the Skills page, and the Process Inbox.
+# material, the copy of the skill and the Skills page, the Process Inbox, the
+# Grounded Vault with its view, the glossary, the dated snapshots and the eval
+# cases of the skill.
 RETIRED_PATHS = (
     "research-artefacts/",
     "source-material/",
@@ -1475,6 +1344,13 @@ RETIRED_PATHS = (
     "knowledge/benchmark-plan.md",
     "knowledge/benchmark-specification.md",
     "knowledge/handoff.md",
+    "vault/",
+    "assets/data/vault.json",
+    "assets/data/glossar.json",
+    "_content/glossar.md",
+    "tools/build_glossar.py",
+    "snapshots/",
+    "tools/skill-evals/",
 )
 
 
@@ -1504,16 +1380,14 @@ def main() -> int:
         lambda: check_naming_contract(documents),
         lambda: check_claude_md_slugs(documents),
         lambda: check_gallery(cases),
-        check_glossar_mirror,
         check_ports,
         check_anchors,
         check_symbol_bindings,
         check_action_layer_pages,
         check_requirement_numbers,
-        check_vault_index_current,
         check_relative_links,
         check_knowledge_frontmatter,
-        check_retired_skill_addresses,
+        check_retired_addresses,
         check_portal_paths,
         check_english_route_contract,
         lambda: check_start_page(documents),

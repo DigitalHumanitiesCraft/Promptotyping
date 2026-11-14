@@ -6,7 +6,7 @@ project:
 status: draft
 language: en
 created: 2026-08-17
-updated: 2026-10-28
+updated: 2026-11-14
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
@@ -109,7 +109,7 @@ Every accepted implementation finding has a named destination:
 - project-wide authority or status rules return to `governance.md`;
 - reusable methodological findings return to the Promptotyping practice knowledge;
 - chronological decisions and failed approaches return to `journal.md`;
-- evidence relations return to the Grounded Vault instance;
+- evidence relations return to a Grounded Vault instance where a project keeps one, which this repository has not done since 2026-11-14;
 - changes relevant to another project cross the boundary through an integration document or explicit handoff.
 
 The implementation report proposes write-backs. The responsible authority confirms those with scholarly or public consequences.

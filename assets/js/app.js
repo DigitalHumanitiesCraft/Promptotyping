@@ -2,37 +2,18 @@
 
    The logic is split by responsibility across core.js, markdown.js,
    registry.js, shell.js and the pages-*.js files; all of them extend the shared
-   namespace window.PromptotypingApp, which is also the helper surface the three
+   namespace window.PromptotypingApp, which is also the helper surface the two
    modules under assets/js/modules/ read. This file is loaded last and owns the
    one thing the split must not scatter, the order in which the site comes up. */
 
 (function (A) {
   "use strict";
 
-  /* Module scripts that the page shell does not declare. Loading them from here
-     keeps index.html and 404.html identical shells, the same reason the page
-     registry owns the navigation markup. The load is awaited before
-     promptotyping:sections-ready, so a module cannot miss its boot event. */
-  var LATE_MODULES = ["assets/js/modules/term-index.js"];
-
-  function loadLateModules() {
-    return Promise.all(LATE_MODULES.map(function (src) {
-      return new Promise(function (resolve) {
-        var s = document.createElement("script");
-        s.src = src;
-        s.onload = resolve;
-        s.onerror = resolve; // a missing module must not stop the page
-        document.body.appendChild(s);
-      });
-    }));
-  }
-
   function init() {
     A.configureMarked();
     A.mountPages();
     A.setupSidePanel();
     A.setupThemeToggle();
-    A.setupGlossarInteraction(document.getElementById("content"));
     A.addFieldCopyButtons(document.getElementById("content"));
 
     // GitHub Pages has no server-side routing, so 404.html catches every
@@ -58,10 +39,9 @@
       A.showPage(A.pageForAnchor(window.location.hash.replace(/^#/, "")) || A.HOME_PAGE);
     }
 
-    // Render the static sections in parallel, then the vault, then resolve the
-    // initial hash against the complete DOM.
+    // Render the static sections in parallel, then resolve the initial hash
+    // against the complete DOM.
     var ready = Promise.all([
-      A.renderGlossar(),
       // The start page is static markup in index.html. Its Markdown twin stays
       // the machine address and carries the version the footer states.
       A.fetchMarkdown("_content/overview.md").then(function (text) {
@@ -95,14 +75,12 @@
     ]);
     A.renderUseCasesHost();
 
-    Promise.all([ready, loadLateModules()]).then(function () {
+    ready.then(function () {
       // The five parts of the specification are rendered; fold them into the
       // one page they are sections of before anything reads the DOM.
       A.foldParts();
       // Host markup for the modules is now in the DOM; let them boot.
       document.dispatchEvent(new Event("promptotyping:sections-ready"));
-      return A.renderVault();
-    }).then(function () {
       A.addPageStatusLines();
       A.fillFooterState();
       // Resolve the initial hash against the fully rendered DOM. An address
@@ -111,7 +89,7 @@
       if (!unresolved) {
         A.handleHash(window.location.hash.replace(/^#/, ""));
       }
-      // Everything addressable is in the DOM now; the term index reads it.
+      // Everything addressable is in the DOM now; the scrollspy reads it.
       document.dispatchEvent(new Event("promptotyping:content-ready"));
     });
 

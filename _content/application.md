@@ -5,14 +5,14 @@ status: complete
 language: en
 version: "0.7"
 created: 2026-07-25
-updated: 2026-11-10
+updated: 2026-11-14
 source: Promptotyping working practice, forms of work and project knowledge base
 machine-url: https://dhcraft.org/Promptotyping/_content/application.md
 ---
 
 # Application
 
-The practice's unit of work is the project knowledge base, a small set of Markdown documents versioned with the code in the project repository. It holds the specification of the artefact as one part of the project knowledge, which is itself examined against the sources. The central loop iterates over these documents, and implementation builds on them. This page resolves the four forms of work into actions, with entry condition, steps, stopping criterion and the documents that arise along the way. The [use cases](#use-cases) and the [Vault](#vault) carry the grounds on which the practice is built this way.
+The practice's unit of work is the project knowledge base, a small set of Markdown documents versioned with the code in the project repository. It holds the specification of the artefact as one part of the project knowledge, which is itself examined against the sources. The central loop iterates over these documents, and implementation builds on them. This page resolves the four forms of work into actions, with entry condition, steps, stopping criterion and the documents that arise along the way. The [use cases](#use-cases) show the projects on which the practice was built this way.
 
 ## Preparation
 
@@ -118,4 +118,4 @@ A positive fit check licenses a bounded trial. It provides no comparative succes
 
 ## Continue from here
 
-To evaluate whether the practice fits a project, compare the [documented use cases](#use-cases), then follow a load-bearing statement through the [Vault](#vault) to its sources. To apply it, continue with the [tutorial](#tutorial), keep later sessions aligned with the [Promptotyping skill](https://github.com/DigitalHumanitiesCraft/promptotyping-skill), and take the required document structures from the [templates](#vorlagen).
+To evaluate whether the practice fits a project, compare the [documented use cases](#use-cases). To apply it, continue with the [tutorial](#tutorial), keep later sessions aligned with the [Promptotyping skill](https://github.com/DigitalHumanitiesCraft/promptotyping-skill), and take the required document structures from the [templates](#vorlagen).

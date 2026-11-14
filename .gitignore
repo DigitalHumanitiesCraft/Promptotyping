@@ -1,13 +1,12 @@
-# Grounded-Vault instance (vault/): originals may be confidential; they never enter version control.
-vault/00_sources/*
-!vault/00_sources/README.md
-vault/.env
+# The Grounded Vault instance under vault/ left the repository on 2026-11-14.
+# A local copy can still hold confidential originals, so the folder stays out
+# of version control.
+vault/
 __pycache__/
 .pytest_cache/
 .venv/
 
 .obsidian/
-vault/review-batch-*.jsonl
 
 # Machine-local Claude Code settings and agent memory
 .claude/settings.local.json

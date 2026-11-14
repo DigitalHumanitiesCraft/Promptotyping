@@ -2,7 +2,7 @@
 
 # Project instructions for the Promptotyping Promptotyping portal
 
-This repository is `DigitalHumanitiesCraft/Promptotyping`, the public portal for Promptotyping. It renders at https://dhcraft.org/Promptotyping/ as the specification documentation of the practice, with glossary, embedded templates, vault view and use-case gallery. The documents in `knowledge/` specify the site, and the implementation follows from them.
+This repository is `DigitalHumanitiesCraft/Promptotyping`, the public portal for Promptotyping. It renders at https://dhcraft.org/Promptotyping/ as the specification documentation of the practice, with embedded templates and use-case gallery. The glossary, the Vault view with the folder `vault/`, the introduction page under `intro/`, the folder `snapshots/` and the eval cases under `tools/skill-evals/` were retired on 2026-11-14. The documents in `knowledge/` specify the site, and the implementation follows from them.
 
 ## Manuscript publication boundary
 
@@ -56,13 +56,12 @@ Source of values: `knowledge/design.md`. Read it before UI work. The site is cal
 - The only movement animation is the side-panel slide (200ms ease-out). Short hover transitions are permitted micro-affordances as `knowledge/design.md` lists them.
 - Nothing collapses (A33). The side panel with its mobile bottom-sheet form and the click-to-load video facade are the only two devices that hide content; add no third.
 - Add no decorative elements.
-- The introduction page under `intro/` (A47) keeps its own copy of the DHCraft tokens and fonts, an English default with `?lang=de`, and its own rules in `knowledge/design.md`, section Introduction page; moving it onto `assets/dhcraft/` is open.
 
 ## Scope
 
 - The site is English (A26). The templates stay German, and template names and published anchors stay German identifiers. All templates except `technology` are vault mirrors whose translation belongs in a vault session.
 - The skill lives in the repository `DigitalHumanitiesCraft/promptotyping-skill` (A42, revised 2026-11-14), its single source. The start page names its five subcommands and links it. The Skills page with the skill and the two system prompts is retired, and neither the skill nor its prompts are published here.
-- No modules beyond the Frontmatter-Inspector, case-study filter, term index and vault view.
+- No modules beyond the Frontmatter-Inspector and the case-study filter.
 
 ## Site model
 
@@ -70,7 +69,6 @@ Source of values: `knowledge/design.md`. Read it before UI work. The site is cal
 - `PAGES` in `assets/js/registry.js` is the single source for page hosts and route resolution, and it keeps every page mounted whether or not the header lists it. When touching a part, check `isPageId`, `hostPage` and `isRouteId`.
 - Inactive pages stay in the DOM as `display: none`, so every published anchor resolves. Do not lazy-mount pages.
 - The start page `#overview` is static markup in `index.html` with the seven parts of a DHCraft method page (A48), and `_content/overview.md` is its machine-readable twin. Its template entries, the five skill subcommands with the link to the skill repository, cases and the template archive repeat their sources; `tools/check_consistency.py` holds them, so change the source and the page together. The example shows short sentences in the user's own words (A51), and a procedure belongs in the skill, never in a prompt on the page or in the tutorial. Recurring entries have at most three visual levels.
-- `vault/` is a Grounded Vault instance with its own action layer `vault/CLAUDE.md`, which governs all work there. Its Python tools under `vault/tools/` are the permitted exceptions to the no-build rule. After changing the assertion layer, rerun `vault/tools/build_site_index.py`, which writes the committed `assets/data/vault.json`.
 
 ## URL anchor scheme
 
@@ -79,9 +77,9 @@ Anchors are not renamed without discussion, because repositories link them as `t
 - Templates: subpath `/promptotyping-document/{slug}` (latest, canonical), equivalent hash `#promptotyping-document-{slug}`; snapshots only on a version change as `#promptotyping-document-{slug}-v{version}`. Slugs: `data`, `index`, `project`, `specification`, `architecture`, `technology`, `design`, `journal`, `handoff`, `user-stories`, `action-layer`, `testing`, `plan`, `report`, `domain-knowledge`, `verification`, `integration`.
 - Machine address (ADR-10): `https://dhcraft.org/Promptotyping/_content/promptotyping-document/{slug}.md`. The Pages workflow publishes `_content/` raw; `.nojekyll` stays for the legacy build.
 - Practice anchors derive from headings at render time. Changing an anchor-bearing heading needs an entry in `PRAXIS_ALIASES` in `assets/js/pages-content.js`.
-- Concepts `#konzept-{name}`, case studies `#case-{name}`, vault `#vault` and `#vault-{assertion-slug}` (subpaths `/vault`, `/vault/{assertion-slug}`).
+- Case studies `#case-{name}`. The retired glossary and Vault addresses `#glossar`, `#glossar-{slug}`, `#konzept-{name}`, `#vault` and `#vault-{slug}` (subpaths `/glossar`, `/konzepte/{name}`, `/vault`, `/vault/{slug}`) land on the start page, as does `/intro/` of the withdrawn introduction page (aliases and anchor families in `registry.js`).
 - Specification `#specification`; its parts `#application` (legacy `#anwendung`), `#vorlagen`, `#konvention-v0.1`, `#artefakt`, `#verifikation`, each with the same subpath.
-- Glossary `#glossar`; overview `#overview` (legacy `#ueberblick`); use cases `#use-cases`; worked workflow `#workflow`; practice `#praxis` and `#praxis-{slug}`; the retired skills addresses `#skills` and `#skills-{slug}` land on the start page, and `#skills-promptotyping` on its Skill section `#start-example` (alias in `registry.js`); working environment `#arbeitsumgebung`; tutorial `#tutorial`.
+- Overview `#overview` (legacy `#ueberblick`); use cases `#use-cases`; worked workflow `#workflow`; practice `#praxis` and `#praxis-{slug}`; the retired skills addresses `#skills` and `#skills-{slug}` land on the start page, and `#skills-promptotyping` on its Skill section `#start-example` (alias in `registry.js`); working environment `#arbeitsumgebung`; tutorial `#tutorial`.
 
 ## Tools
 
@@ -92,7 +90,7 @@ Before dependent steps, check the available tools, runtimes and connections. A m
 - Vanilla HTML5, CSS3 and JavaScript, no framework, no build step, no npm.
 - Core scripts under `assets/js/` are IIFEs extending `window.PromptotypingApp`, no ES modules. `app.js` loads last among the core scripts. `404.html` is a stub that hands the path as `?p=` to `index.html`; the subpath vocabulary lives only in `resolveTemplateUrl`.
 - marked.js and js-yaml are vendored under `assets/vendor/`. No CDN. Custom marked extensions stay in `assets/js/markdown.js`.
-- Routing uses browser-native `location.hash`. GitHub Pages publishes the tree that `.github/workflows/pages.yml` assembles from an explicit folder list; `CITATION.cff` is published, while `knowledge/`, this file, `tools/`, tests, `snapshots/` and the vault's own knowledge, tools and assertions stay out. A new folder or root file the site loads must be added to that list.
+- Routing uses browser-native `location.hash`. GitHub Pages publishes the tree that `.github/workflows/pages.yml` assembles from an explicit folder list; `CITATION.cff` is published, while `knowledge/`, this file, `tools/` and tests stay out. A new folder or root file the site loads must be added to that list.
 - `assets/promptotyping-logo.png` stays.
 
 ### Checks
@@ -100,9 +98,8 @@ Before dependent steps, check the available tools, runtimes and connections. A m
 `python tools/check_consistency.py` runs before every commit that touches the catalogue, convention, template folder or use-case gallery. The combined regression run from the repository root is:
 
 ```sh
-python -m pytest tools/tests vault/tests intro/tests -q -p no:cacheprovider
+python -m pytest tools/tests -q -p no:cacheprovider
 python tools/check_consistency.py
-python vault/tools/validate.py vault
 ```
 
 Add `--check-urls` to `check_consistency.py` when an address in `assets/data/case-studies.json` changes; it needs the network. What each check covers is in `knowledge/verification.md`.

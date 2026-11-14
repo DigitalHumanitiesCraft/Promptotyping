@@ -5,8 +5,8 @@ status: complete
 language: en
 version: "0.2"
 created: 2026-07-25
-updated: 2026-11-10
-source: the two introductory videos, cleaned scripts in the Grounded Vault
+updated: 2026-11-14
+source: the two introductory videos and their cleaned scripts
 machine-url: https://dhcraft.org/Promptotyping/_content/workflow.md
 ---
 

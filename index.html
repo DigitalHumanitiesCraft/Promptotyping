@@ -289,8 +289,8 @@
         <div class="start-prose" id="start-terms">
           <p>In the figure, Knowledge Engineering is the project knowledge base and its curation, Context Engineering is the arrow that carries context to each task, and Agentic Engineering is the cycle of the four forms of work with its checks.</p>
           <p>The work starts with what a project already has, its sources, its data and a question. Researchers direct it throughout, and it runs through four <span class="cat cat-forms">forms of work</span>. In <em>Preparation</em> the material is gathered and described until it can be examined. In <em>Exploration</em> scripts profile the data, and the account that results is one the researchers recognise as their material. <em>Distillation</em> turns what was found into a few maintained documents from which a fresh agent can continue. <em>Implementation</em> then builds in small, checked increments. A first pass follows this order, and afterwards each form returns whenever the work calls for it (<a href="#application">Application</a>).</p>
-          <p>Each iteration yields a <a class="glossar-trigger" data-glossar="promptotype" href="#glossar-promptotype">promptotype</a>, the state of an artefact together with its project knowledge base and its research data, and earlier states remain as versions. Something runs early, so there is always something concrete to look at and to discuss. Verification tests it against formalised requirements, and in <a class="glossar-trigger" data-glossar="agentic-review" href="#glossar-agentic-review">agentic review</a> an agent examines it against named criteria. The decision stays with the researchers. In <a class="glossar-trigger" data-glossar="verification-validation" href="#glossar-verification-validation">scholarly validation</a> they judge whether the work is warranted by the sources and fits their questions (<a href="#verifikation">Checking</a>), and what checking and use reveal flows back into the knowledge base through <a class="glossar-trigger" data-glossar="knowledge-curation" href="#glossar-knowledge-curation">knowledge curation</a>.</p>
-          <p>The <span class="cat cat-base"><a class="glossar-trigger" data-glossar="project-knowledge-base" href="#glossar-project-knowledge-base">project knowledge base</a></span> is a small set of Markdown files in the repository, of the three types shown below. The <a href="#glossar">glossary</a> defines the terms, and the figure is Figure 1 of the paper on the practice (<a href="#start-limits">Pollin 2026, submitted</a>).</p>
+          <p>Each iteration yields a promptotype, the state of an artefact together with its project knowledge base and its research data, and earlier states remain as versions. Something runs early, so there is always something concrete to look at and to discuss. Verification tests it against formalised requirements, and in agentic review an agent examines it against named criteria. The decision stays with the researchers. In scholarly validation they judge whether the work is warranted by the sources and fits their questions (<a href="#verifikation">Checking</a>), and what checking and use reveal flows back into the knowledge base through knowledge curation.</p>
+          <p>The <span class="cat cat-base">project knowledge base</span> is a small set of Markdown files in the repository, of the three types shown below. The figure is Figure 1 of the paper on the practice (<a href="#start-limits">Pollin 2026, submitted</a>).</p>
         </div>
         <figure class="doc-types-figure" aria-label="The three types of knowledge documents and their files">
           <div class="doc-type">
@@ -312,7 +312,7 @@
 
         <h2 id="start-origin">Origin</h2>
         <div class="start-prose">
-          <p>Promptotyping grew out of everyday research software development in the digital humanities. The term first named the generation of project-specific interfaces with LLMs in a <a href="https://unipub.uni-graz.at/obvugrhs/12127700">dissertation at the University of Graz</a> (2025), the practice was described in blog posts on <a href="https://dhcraft.org/excellence/blog/Promptotyping/">DHCraft</a> (2025) and <a href="https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin">L.I.S.A.</a> (2026), and the paper of 2026 traces it through three cases, <span data-case="corresp-explorer"><a href="#case-corresp-explorer">CorrespExplorer</a> (<a href="https://dhcraft.org/CorrespExplorer">live</a>)</span>, <span data-case="szd-htr"><a href="#case-szd-htr">SZD-HTR</a> (<a href="https://chpollin.github.io/szd-htr-ocr-pipeline/">live</a>)</span> and <span data-case="klawiter-rescue"><a href="#case-klawiter-rescue">Klawiter-Rescue</a> (<a href="https://chpollin.github.io/klawiter-rescue">live</a>)</span>. Further projects are documented under <a href="#use-cases">use cases</a>, and the <a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/tree/main/vault">Grounded Vault in the repository</a> traces the practice's claims to their sources.</p>
+          <p>Promptotyping grew out of everyday research software development in the digital humanities. The term first named the generation of project-specific interfaces with LLMs in a <a href="https://unipub.uni-graz.at/obvugrhs/12127700">dissertation at the University of Graz</a> (2025), the practice was described in blog posts on <a href="https://dhcraft.org/excellence/blog/Promptotyping/">DHCraft</a> (2025) and <a href="https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin">L.I.S.A.</a> (2026), and the paper of 2026 traces it through three cases, <span data-case="corresp-explorer"><a href="#case-corresp-explorer">CorrespExplorer</a> (<a href="https://dhcraft.org/CorrespExplorer">live</a>)</span>, <span data-case="szd-htr"><a href="#case-szd-htr">SZD-HTR</a> (<a href="https://chpollin.github.io/szd-htr-ocr-pipeline/">live</a>)</span> and <span data-case="klawiter-rescue"><a href="#case-klawiter-rescue">Klawiter-Rescue</a> (<a href="https://chpollin.github.io/klawiter-rescue">live</a>)</span>. Further projects are documented under <a href="#use-cases">use cases</a>.</p>
         </div>
 
         <h2 id="start-reuse">Reuse</h2>
@@ -377,7 +377,7 @@ cp -r promptotyping-skill/promptotyping ~/.claude/skills/</code></pre>
         </section>
 
         <h2 id="start-example">Skill</h2>
-        <p class="start-prose-line">With the skill installed as in the first step of <a href="#start-reuse">Reuse</a>, you say what you want in your own words, and the agent takes the procedure from the skill. Five subcommands name the moments at which you call it directly. Building has no subcommand and follows the rules in the skill. The repository <a href="https://github.com/DigitalHumanitiesCraft/promptotyping-skill">promptotyping-skill</a> holds the skill with the procedure of each subcommand, and the <a href="intro/">introduction</a> plays one round on an invented family correspondence.</p>
+        <p class="start-prose-line">With the skill installed as in the first step of <a href="#start-reuse">Reuse</a>, you say what you want in your own words, and the agent takes the procedure from the skill. Five subcommands name the moments at which you call it directly. Building has no subcommand and follows the rules in the skill. The repository <a href="https://github.com/DigitalHumanitiesCraft/promptotyping-skill">promptotyping-skill</a> holds the skill with the procedure of each subcommand.</p>
         <ol class="steps example">
           <li>
             <p class="step-head"><span class="step-name"><code>/promptotyping orient</code></span> starts a session. It establishes where the project stands and changes no file.</p>
@@ -447,14 +447,12 @@ cp -r promptotyping-skill/promptotyping ~/.claude/skills/</code></pre>
   <script src="assets/vendor/js-yaml.min.js"></script>
   <!-- The site scripts share one namespace and call across files at call time,
        so only two positions are behaviour-relevant: app.js starts init() and
-       must come last of the nine, and the modules must follow it. -->
+       must come last of the seven, and the modules must follow it. -->
   <script src="assets/js/core.js"></script>
   <script src="assets/js/markdown.js"></script>
   <script src="assets/js/registry.js"></script>
   <script src="assets/js/shell.js"></script>
-  <script src="assets/js/pages-glossar.js"></script>
   <script src="assets/js/pages-vorlagen.js"></script>
-  <script src="assets/js/pages-vault.js"></script>
   <script src="assets/js/pages-content.js"></script>
   <script src="assets/js/app.js"></script>
   <script src="assets/js/modules/frontmatter-inspector.js"></script>

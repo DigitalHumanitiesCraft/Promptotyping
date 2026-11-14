@@ -34,20 +34,19 @@ The V-series below checks portal consistency.
 For a combined local regression run from the repository root:
 
 ```sh
-python -m pytest tools/tests vault/tests intro/tests -q -p no:cacheprovider
+python -m pytest tools/tests -q -p no:cacheprovider
 python tools/check_consistency.py
-python vault/tools/validate.py vault
 ```
 
 The consistency command checks repository contracts; external URL resolution
 requires its separate `--check-urls` option. Dated test totals belong in the journal
 or an audit, so the instructions do not depend on a hand-maintained test count.
 
-`tools/check_consistency.py` exits non-zero on any failure; it resolves every path from its own location, so the directory it is called from does not matter. It reaches for the second script in `tools/`, the glossary generator `build_glossar.py`, rather than restating its rules, so V7 below cannot drift from the generator it guards.
+`tools/check_consistency.py` exits non-zero on any failure; it resolves every path from its own location, so the directory it is called from does not matter. It reaches for the second script in `tools/`, the archive builder `build_downloads.py`, rather than restating its member list, so V24 below cannot drift from the builder it guards. Until 2026-11-14 it also ran the glossary generator for V7.
 
-Under `tools/tests/` the checks are themselves held to their regression cases, run with `python -m unittest discover tools/tests`. Each case takes the repository's own data as its fixture, corrupts one field of a copy, and asserts that the check reports it. The green run before every commit shows that the site is consistent; it does not show that a check still decides anything, and a check that has quietly stopped deciding passes in exactly the same way. The suite uses the standard library alone, so `tools/` keeps needing no dependency; the vault under it is a template instance with its own dependency set and tests its validator with pytest.
+Under `tools/tests/` the checks are themselves held to their regression cases, run with `python -m unittest discover tools/tests`. Each case takes the repository's own data as its fixture, corrupts one field of a copy, and asserts that the check reports it. The green run before every commit shows that the site is consistent; it does not show that a check still decides anything, and a check that has quietly stopped deciding passes in exactly the same way. The suite uses the standard library alone, so `tools/` keeps needing no dependency.
 
-Under `intro/tests/` the introduction page (A47) is held to the outcomes a reader sees, in a browser. The cases serve the repository on a free local port and assert which files each example step creates or changes, that the check marks every uncertain letter and the rebuild draws them as spans, that the keyboard focus stays on the stepper at its ends, that the language switch reaches German, that the try-it folder names the step in view, and that the header and page stay inside a narrow screen. Their expectations come from the page contract in [design.md](design.md#introduction-page). A further case runs `node --check` on the page's scripts. The intro page reads no JSON file, so no data check applies. The browser cases need Python Playwright with Chromium, the syntax case needs Node.js, and each skips without its runtime, so the rule above for `tools/` stays untouched.
+The browser cases under `intro/tests/` left the repository with the introduction page on 2026-11-14 (A47).
 
 ### V1. The catalogue and the convention agree on the document type
 
@@ -99,23 +98,17 @@ Under `intro/tests/` the introduction page (A47) is held to the outcomes a reade
 
 **Verdict, 2026-07-26.** Passes after two corrections the check itself found on its first run. The Kulturpool card pointed at `chpollin/vkm-explorer`, a repository that does not exist; the project lives at `chpollin/kulturpool-demo`, which is public and whose Pages site answers, so the card gained a working demo address as well. The HerData card advertised a demo at `chpollin.github.io/HerData` that answers 404, and the repository behind it is private with no Pages site, so the demo is unpublished rather than misaddressed. The address is removed, since a dead link claims more than no link does. Republishing it is an operator action.
 
-### V7. The glossary mirror is what the generator renders
+### V7. The glossary mirror is what the generator renders (retired)
 
-**Claim.** `_content/glossar.md` is byte for byte the output of `tools/build_glossar.py` over `assets/data/glossar.json`.
-
-**Why it matters.** The glossary stands twice, as the data source the site fetches at run time and as the Markdown file a reader or a machine retrieves under the address the frontmatter publishes. Part 5 requires that a generated document is rendered by a script, and this file was the one place on the site where the rule was broken; the mirror was edited by hand. Two hand-kept copies of the same term diverge quietly, and the tooltip then says something other than the page.
-
-**Procedure.** The generator holds the non-derivable head of the file, meaning the frontmatter, the H1 and the lead paragraph, and renders one block per entry from `begriff`, `kurz`, `voll` and the structured `quellen` list in the order of the JSON array; since A34 the sources render as hash links, which puts the mirror under the anchor check of V8. Any further field in an entry stays in the data and is not rendered. The check calls the generator and reports the first line at which the file on disk departs from it. Writing the file is a separate run of `tools/build_glossar.py` without arguments.
-
-**Verdict, 2026-07-26.** Passes. Both files were byte-identical with the generator output when the generator was written, which is what established that the body is fully derivable.
+**Retired, 2026-11-14.** The glossary left the repository with its data `assets/data/glossar.json`, its generator `tools/build_glossar.py` and its mirror `_content/glossar.md` (operator decision, A6). The group and its regression cases are removed from `tools/check_consistency.py`; their wording lives in the git history.
 
 ### V8. Every anchor a hand-written reference names is one the site mounts
 
-**Claim.** Every anchor named in a `](#…)` link under `_content/`, in a literal `href="#…"` in the site scripts, in a `template:` url or alias in `knowledge/` and `vault/00_sources/`, or in the prose of `CLAUDE.md` and `README.md`, is declared somewhere. Every alias table points at a target that exists. The subpath handover stands, meaning `404.html` writes the parameter `app.js` reads and states no address of its own, and the Python rebuild of the resolver agrees with the declarations it reads.
+**Claim.** Every anchor named in a `](#…)` link under `_content/`, in a literal `href="#…"` in the site scripts, in a `template:` url or alias in `knowledge/`, or in the prose of `CLAUDE.md` and `README.md`, is declared somewhere. Every alias table points at a target that exists. The subpath handover stands, meaning `404.html` writes the parameter `app.js` reads and states no address of its own, and the Python rebuild of the resolver agrees with the declarations it reads.
 
 **Why it matters.** This is the failure class where a value is display text and identifier at once. A heading is translated, a card is renamed, and the anchor moves with it while the sentence that links there stays. Nothing reports it, because both sides read plausibly on their own, and a foreign repository may already carry the old address in a `template:` field. The English pass of 2026-07-26 hit the class three times. The handover checks guard the routing rebuild of the same day. The parameter name is written in `404.html` and read in `app.js`, and a rename on one side sends every subpath to the not-found state; a slug written back into `404.html` restores the duplicate table that had already drifted seven entries apart from the resolver before it was removed.
 
-**Procedure.** The declared side is read out of the tables the site itself reads, `PAGES` and `ANCHOR_FAMILIES` in `assets/js/registry.js`, the slugs of the four data files, the alias tables in `pages-content.js` and `pages-glossar.js`, and the literal block ids in the scripts. `slugify` is ported into the check, and the heading anchors of `_content/praxis.md` are derived with it. Restating any of those tables as a Python literal would create the second copy whose drift the group exists to catch, so each is parsed from its source file. The reference side takes only literal addresses; an href assembled at run time carries no literal to decide. The subpath side is a self-test of that rebuild, holding it against the same declarations, so a rebuild that stops understanding a declaration shows up as a failure instead of turning the checks above into silent passes. Whether the JavaScript resolver agrees is the browser half of the verification and is named among the limits below.
+**Procedure.** The declared side is read out of the tables the site itself reads, `PAGES` and `ANCHOR_FAMILIES` in `assets/js/registry.js`, the slugs of the template catalogue and the case-study data, the alias table in `pages-content.js`, and the literal block ids in the scripts. Until 2026-11-14 the glossary and Vault slugs and the concept aliases of `pages-glossar.js` counted as declared too; since their retirement a link under `#glossar-`, `#konzept-` or `#vault-` fails here, and only the bare retired addresses of V18 stay declared as aliases. `slugify` is ported into the check, and the heading anchors of `_content/praxis.md` are derived with it. Restating any of those tables as a Python literal would create the second copy whose drift the group exists to catch, so each is parsed from its source file. The reference side takes only literal addresses; an href assembled at run time carries no literal to decide. The subpath side is a self-test of that rebuild, holding it against the same declarations, so a rebuild that stops understanding a declaration shows up as a failure instead of turning the checks above into silent passes. Whether the JavaScript resolver agrees is the browser half of the verification and is named among the limits below.
 
 **Verdict, 2026-07-26.** Passes after the one failure of its first run at the real repository was corrected. `_content/promptotyping-document/user-stories.md` linked to `#praxis-user-story-status`, an anchor no practice heading has ever carried; the section is reachable as `#praxis-the-epistemic-status-of-user-stories`, with the pre-English form held alive in `PRAXIS_ALIASES`. The link predates the English pass and survived it, since it was wrong from the start and had nothing to do with a translation, which is the case the group exists for. The subpath comparison against the tables in `404.html` was replaced on the same day by the handover checks, when the routing rebuild removed the tables; the four failure cases of the new form were each provoked once and each reported.
 
@@ -135,15 +128,9 @@ Under `intro/tests/` the introduction page (A47) is held to the outcomes a reade
 
 **Retired, 2026-07-30.** The promotion of the five-chapter text replaced the guarded opening and dissolved the steering document the check also read; every dependent phrase of the declared table left the text with it, so all six pairs fell silent at once. The check was removed from the script rather than kept as dead code. The mechanism, a declared anchor-and-dependent table over the opening, is recorded here and can be redeclared if rewrites of the new opening start dropping load-bearing anchors again. The regression history lives in the git history of `tools/check_consistency.py`.
 
-### V11. The glossary's source layer and taxonomy hold their vocabularies
+### V11. The glossary's source layer and taxonomy hold their vocabularies (retired)
 
-**Claim.** Every glossary entry names at least one source, every source states a type the schema declares, every address sits under the anchor family its type prescribes and is declared on the site, every entry carries a category that `_meta.kategorien` names, and every category has exactly one mark in `CATEGORY_MARKS`.
-
-**Why it matters.** The source layer of A34 and the taxonomy of A36 are curated data whose failure is silent in both directions. A source under the wrong family renders as a link into nothing, a category the render table does not know shows an entry without a mark, and a mark nothing names is dead presentation.
-
-**Amended, 2026-10-28.** The paper and literature source types left with the manuscript; paper sections and reference entries are text sources, and the reference-id rebuild is removed.
-
-**Verdict, 2026-07-29.** Passes, written with the layer itself. The four failure ways were each provoked once during the build of A34 and A36 and each reported, including a bogus paper anchor, a bogus `ref-` id, an unknown category and an orphan vocabulary value. The checks run inside the anchor group of V8.
+**Retired, 2026-11-14.** The glossary with its source layer (A34) and its taxonomy (A36) left the repository (operator decision, A6). The checks, which ran inside the anchor group of V8, and their regression cases are removed from `tools/check_consistency.py`.
 
 ### V12. The action layer names every id the registry mounts
 
@@ -163,21 +150,17 @@ Under `intro/tests/` the introduction page (A47) is held to the outcomes a reade
 
 **Verdict, 2026-07-31.** Passes. The three failure ways were each provoked once and reported, a citation of a number without a heading, a duplicated heading, and the same citation in a document the closed list did not name.
 
-### V14. Everything the vault index points at exists
+### V14. Everything the vault index points at exists (retired)
 
-**Claim.** Every assertion slug in `assets/data/vault.json` is a file under `vault/30_assertions/`, and every distillate and source path the index carries is a file of this repository. An entry whose path is empty fails too, because that is what the generator writes for a source it could not resolve; passing over the empty case would spare exactly the entries the index is least sure of.
-
-**Why it matters.** The index is generated by `vault/tools/build_site_index.py` and committed, so a rename or removal in the vault leaves stale entries behind until the generator is re-run, and the vault page then links into nothing. The reverse direction is open by construction and stays unchecked: a claim outside every topic map is legitimately absent from the index, so absence proves nothing.
-
-**Verdict, 2026-07-29.** Passes. The regression case is renaming a claim slug in a copy of the index, which the check reports.
+**Retired, 2026-11-14.** The Vault view, its index `assets/data/vault.json` and the Grounded Vault instance under `vault/` left the repository (operator decision, A37). The group and its regression cases are removed from `tools/check_consistency.py`, and the vault's own tests and validator left with the folder, so the combined test run no longer names `vault/tests` or `vault/tools/validate.py`.
 
 ### V15. Every relative Markdown link resolves
 
-**Claim.** Every relative Markdown link in the repository root, `knowledge/`, `_content/`, `snapshots/` and `handoffs/` points at a file that exists. External addresses stay out, they belong to the opt-in URL pass of V6; a fragment-only link is an anchor and belongs to V8. Grounded Vault anchors are checked by its own validator; imported source representations retain their original example links.
+**Claim.** Every relative Markdown link in the repository root, `knowledge/`, `_content/` and `handoffs/` points at a file that exists. External addresses stay out, they belong to the opt-in URL pass of V6; a fragment-only link is an anchor and belongs to V8.
 
 **Why it matters.** A consolidation round deletes a document and can leave incoming links behind. The round of 2026-07-29/30 consolidated `paper-writing.md`, `paper-argument-map.md` and `submission-zfdg.md` into the paper specification (removed 2026-10-28); seven links to those three names survived until 2026-07-31. An eighth link in the design template mirror rendered an illustrative path into a file that never existed here. This group detects that failure mode after later consolidations and moves.
 
-**Procedure.** Read Markdown in the named areas, take each link whose target is neither an absolute URL nor a bare fragment, strip the fragment, and require the target to exist relative to the linking file or to the repository root. Root-relative resolution is needed for material rendered by the portal, including the paper figure. The benchmark, snapshots and handoffs were added to this check during the knowledge refactor of 2026-09-05, with regression cases for moved authoring documents and portal assets. The benchmark area left the check on 2026-11-14, when `research-artefacts/` was removed from the repository. Since then a dated record (a file under `snapshots/`, or status `snapshot` or `archived`) keeps its links into the areas removed that day, which `RETIRED_PATHS` in `tools/check_consistency.py` names, and the run lists them as notes; every other document fails on such a link, and a dated record fails on any other missing target. Regression cases hold all three.
+**Procedure.** Read Markdown in the named areas, take each link whose target is neither an absolute URL nor a bare fragment, strip the fragment, and require the target to exist relative to the linking file or to the repository root. Root-relative resolution is needed for material rendered by the portal, including the paper figure. The benchmark, snapshots and handoffs were added to this check during the knowledge refactor of 2026-09-05, with regression cases for moved authoring documents and portal assets. The benchmark area left the check on 2026-11-14, when `research-artefacts/` was removed from the repository. Since then a dated record (the journal, or a document with status `snapshot` or `archived`) keeps its links into the areas removed that day, which `RETIRED_PATHS` in `tools/check_consistency.py` names, and the run lists them as notes; every other document fails on such a link, and a dated record fails on any other missing target. Regression cases hold all three. On the same day `snapshots/` left the repository and the check, and `RETIRED_PATHS` gained `vault/`, `snapshots/`, `tools/skill-evals/` and the files of the glossary and the Vault view.
 
 **Verdict, 2026-07-31.** Passes, after the eight links were repaired. The regression case is a probe link to a non-existent file, which the check reports with file and target.
 
@@ -203,11 +186,11 @@ Under `intro/tests/` the introduction page (A47) is held to the outcomes a reade
 
 **Verdict, 2026-11-14.** Passes after the journal rule of 2026-11-14 was mirrored. The regression cases are a journal entry typed Declarative, a handoff entry triggered always, a catalogue without `handoff`, and a journal template without `## Open`. The template block is now read up to the next level-two heading outside a code fence, because the fenced journal block itself carries `## Open`; a further case holds that.
 
-### V18. The retired skill addresses still land
+### V18. The addresses of the retired pages still land
 
-**Claim, since 2026-11-14.** The skill lives in the repository `DigitalHumanitiesCraft/promptotyping-skill` (A42), and the Skills page with the skill and the two system prompts is retired. `registry.js` mounts no Skills page, sends `#skills` to the start page and `#skills-promptotyping` to the start page's section `#start-example`, and keeps the `skills-` anchor family on the start page, and `index.html` carries `#start-example`.
+**Claim, since 2026-11-14.** The skill lives in the repository `DigitalHumanitiesCraft/promptotyping-skill` (A42), and the Skills page with the skill and the two system prompts is retired. `registry.js` mounts no Skills page, sends `#skills` to the start page and `#skills-promptotyping` to the start page's section `#start-example`, and keeps the `skills-` anchor family on the start page, and `index.html` carries `#start-example`. The glossary and the Vault view were retired on the same day (A6, A37). `registry.js` mounts neither page, sends `#glossar` and `#vault` to the start page, and keeps the families `glossar-`, `konzept-` and `vault-` with their subpaths `/konzepte/{name}` and `/vault/{slug}` on the start page. The address `/intro/` of the introduction page, withdrawn on the same day (A47), lands there too.
 
-**Procedure, since 2026-11-14.** `check_retired_skill_addresses` in `tools/check_consistency.py` reads `LEGACY_ROUTE_ALIASES`, `ANCHOR_FAMILIES` and `PAGES` from `registry.js` and looks for the target id in `index.html`. Regression cases point the alias elsewhere and mount the page again. Whether the skill itself is sound is checked in its own repository; the eval cases under `tools/skill-evals/` are run by no check here.
+**Procedure, since 2026-11-14.** `check_retired_addresses` in `tools/check_consistency.py` reads `LEGACY_ROUTE_ALIASES`, `ANCHOR_FAMILIES` and `PAGES` from `registry.js` against the fixed tables `RETIRED_ROUTES`, `RETIRED_FAMILIES` and `RETIRED_PAGES` and looks for the target id in `index.html`. Regression cases point the skill alias elsewhere, drop the vault alias, drop the concept family, and mount the Skills page and the glossary again. Whether the skill itself is sound is checked in its own repository; the eval cases under `tools/skill-evals/` left this repository on 2026-11-14.
 
 **Verdict, 2026-11-14.** Passes after the local package check and the Skills page were retired. The checks of the local package listed below are retired with the copy.
 
@@ -223,11 +206,11 @@ Under `intro/tests/` the introduction page (A47) is held to the outcomes a reade
 
 ### V19. The three portal scenarios remain connected
 
-**Claim.** The overview routes researchers through Understand, Evaluate, and Apply. Application continues into evidence or first use; Use Cases continues into the Vault or tutorial; the tutorial reaches the canonical skill, templates, and Working environment. The Use Cases data boundary reports a failed load through the shared escaped error surface.
+**Claim.** The overview routes researchers through Understand, Evaluate, and Apply. Application continues into evidence or first use; Use Cases continues into the tutorial, and until 2026-11-14 also into the Vault; the tutorial reaches the canonical skill, templates, and Working environment. The Use Cases data boundary reports a failed load through the shared escaped error surface.
 
 **Why it matters.** Individually valid pages do not form a usable Promptotyping portal when a reader has to reconstruct their order or return to the navigation tree after every step. A disconnected error boundary is worse because it replaces an intelligible data failure with an unrelated JavaScript exception.
 
-**Procedure.** The static group checks the required anchors on the overview, Application, Use Cases host, tutorial, and Working environment, and checks the shared Use Cases error call. Regression cases remove the Vault transition, the skill transition, and the error-boundary call. Browser verification then executes the filters, case panel, Vault grounding panel, skill copy, and template copy at desktop and mobile widths. A controlled HTTP 503 for `assets/data/case-studies.json` exercises the failed-data path.
+**Procedure.** The static group checks the required anchors on the overview, Application, Use Cases host, tutorial, and Working environment, and checks the shared Use Cases error call. Regression cases remove the start-page transition, the skill transition, and the error-boundary call. Browser verification then executes the filters, case panel, skill copy, and template copy at desktop and mobile widths. The Vault transition and the Vault grounding panel left the group on 2026-11-14 with the Vault view. A controlled HTTP 503 for `assets/data/case-studies.json` exercises the failed-data path.
 
 **Verdict, 2026-08-22.** Passes. The normal scenarios complete without console output. The controlled failure renders “Could not load case-studies.json (503).” inside the Use Cases surface and produces no secondary JavaScript error.
 
@@ -237,7 +220,7 @@ Under `intro/tests/` the introduction page (A47) is held to the outcomes a reade
 
 **Why it matters.** A connected interface can still require unrecorded explanations. Separate role simulations expose contradictions in terminology, document routing, responsibility, and evidential scope before an external participant study.
 
-**Procedure.** Assign three fresh instances the roles Understand, Evaluate, and Apply. Understand reads Overview, Application, Glossary, and the paper. Evaluate uses Overview, Use Cases, one deep case, the Vault, and the paper. Apply uses the tutorial, canonical Skill, templates, and Working environment. Each instance answers a fixed task and reports at most five frictions with severity, public evidence, and the smallest correction. Reconcile every finding against the canonical sources before changing the portal.
+**Procedure.** Assign three fresh instances the roles Understand, Evaluate, and Apply. Understand reads Overview, Application, and the paper. Evaluate uses Overview, Use Cases, one deep case, and the paper. The run of 2026-08-22 also gave Understand the Glossary and Evaluate the Vault, both retired on 2026-11-14. Apply uses the tutorial, canonical Skill, templates, and Working environment. Each instance answers a fixed task and reports at most five frictions with severity, public evidence, and the smallest correction. Reconcile every finding against the canonical sources before changing the portal.
 
 **Verdict, 2026-08-22.** The first pass found two major interpretation conflicts and three major first-use conflicts. The portal now aligns Requirements Engineering with the paper, identifies `knowledge/` as the repository convention, adds a fit check, clarifies the interface-function filter, separates provisional stories from their durable specification, separates curated data knowledge from volatile profiles, and defines the Skill and human-judgement branches. Browser follow-up also confirmed and corrected the missing positioning context that stacked the tutorial's eight copy controls under the fixed header. The role simulations establish coherent public guidance. They do not establish human usability, comparative effectiveness, transferability, labour, or maintenance cost. Those questions remain part of Milestone 3.
 
@@ -302,4 +285,4 @@ At desktop width the full Overview orientation and its seven status fields ended
 
 ## Outstanding
 
-The term index reported a set of glossary terms as occurring nowhere outside the glossary, and the reading of 2026-07-26 found the report half an artefact of its own method. Every one of those terms is a long nominal phrase, which never occurs in running prose as the word sequence the glossary heads it with, so the index could not have found them however widely the concept was used. The entries now carry an optional `suchform`, the shorter wording under which the term actually appears, and the index searches it alongside the term. What the index reports after that change is a genuine gap, and no term is currently in that state.
+Nothing outstanding. The finding about glossary terms that the term index reported nowhere outside the glossary ended when the glossary and its index were retired on 2026-11-14.

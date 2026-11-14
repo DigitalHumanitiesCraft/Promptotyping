@@ -11,7 +11,7 @@ machine-url: https://dhcraft.org/Promptotyping/_content/tutorial.md
 
 # Tutorial
 
-This page directs your own first Promptotyping iteration, from a dataset you bring to an accepted, versioned first state. The [worked workflow](#workflow) shows the same loop as a completed case you can watch; here you carry it out yourself. The six steps map onto the practice's four forms of work, Step 1 is Preparation, Step 2 is Exploration, Steps 3 and 4 are [Distillation](#glossar), Step 5 is Implementation, and Step 6 closes the iteration with verification and acceptance. The returns from later steps into earlier documents are knowledge curation, which runs through all four forms of work. Every step names its goal, the concrete action, the state you should then be in, and a check you can decide alone. Where the action addresses the agent, a short sentence names the step in the words a person would use, and the [Promptotyping skill](https://github.com/DigitalHumanitiesCraft/promptotyping-skill) carries the procedure behind it. Say it in the words of your material; the durable substance of the practice is the documents these steps produce.
+This page directs your own first Promptotyping iteration, from a dataset you bring to an accepted, versioned first state. The [worked workflow](#workflow) shows the same loop as a completed case you can watch; here you carry it out yourself. The six steps map onto the practice's four forms of work, Step 1 is Preparation, Step 2 is Exploration, Steps 3 and 4 are Distillation, Step 5 is Implementation, and Step 6 closes the iteration with verification and acceptance. The returns from later steps into earlier documents are knowledge curation, which runs through all four forms of work. Every step names its goal, the concrete action, the state you should then be in, and a check you can decide alone. Where the action addresses the agent, a short sentence names the step in the words a person would use, and the [Promptotyping skill](https://github.com/DigitalHumanitiesCraft/promptotyping-skill) carries the procedure behind it. Say it in the words of your material; the durable substance of the practice is the documents these steps produce.
 
 ## What you need
 
@@ -21,7 +21,7 @@ This page directs your own first Promptotyping iteration, from a dataset you bri
 - **The Promptotyping skill.** Install the [Promptotyping skill](https://github.com/DigitalHumanitiesCraft/promptotyping-skill) from its repository before Step 1. Use Orient whenever a later session enters the repository and Hand off before another session or person takes over. An agent that cannot load skills gets the same procedure when you give it the [skill file](https://github.com/DigitalHumanitiesCraft/promptotyping-skill/blob/main/promptotyping/SKILL.md) to read at the start of each session.
 - **Git.** The iteration ends with an identifiable versioned state, and a repository is the simplest way to have one. You need no Git knowledge beyond letting the agent run it.
 - **Clearance to process the material.** The agent sends what it reads to an external model. Before Step 2, settle that the data may be processed that way, which concerns personal data, copyright, contracts with holding institutions, and the provider's terms. Where that cannot be established, Promptotyping is the wrong instrument for this material, whatever its technical fit.
-- **Your own competence.** You are the [Critical Expert](#glossar) of this pass. The agent will propose mappings, categories, and interfaces; whether they are faithful to your material is a judgement the tutorial cannot make for you.
+- **Your own competence.** You are the Critical Expert of this pass. The agent will propose mappings, categories, and interfaces; whether they are faithful to your material is a judgement the tutorial cannot make for you.
 
 The scope of a first pass is deliberately small. One dataset, one question, one artefact. Everything the pass teaches you is written into documents, so nothing is lost when you throw the artefact away.
 
@@ -131,7 +131,7 @@ Bring the artefact in line with the changed documents and give me the address.
 
 ## Step 6. Verify, accept, version
 
-**Goal.** A first [promptotype](#glossar), the state of the artefact together with the project knowledge and the research data from which it was built, and your judgement whether it fits your purpose.
+**Goal.** A first promptotype, the state of the artefact together with the project knowledge and the research data from which it was built, and your judgement whether it fits your purpose.
 
 **Do this.** Separate the checks by who can decide them. Let the agent run what is deterministically decidable:
 

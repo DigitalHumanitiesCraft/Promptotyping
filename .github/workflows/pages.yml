@@ -1,10 +1,7 @@
 name: Deploy Pages
 
 # Publishes the folders the portal serves and nothing else. The knowledge base,
-# the action layer, tools, tests, snapshots, research artefacts, source
-# material and the Grounded Vault's own knowledge, tools and assertion files
-# stay in the repository. The vault view links distillates, source
-# representations and references, so those three vault layers are published.
+# the action layer, tools and tests stay in the repository.
 # A new top-level folder the site loads must be added to the list below.
 # Requires the Pages source "GitHub Actions".
 
@@ -30,9 +27,7 @@ jobs:
       - name: Assemble the published tree
         run: |
           mkdir _site
-          git ls-files -z -- index.html 404.html LICENSE CITATION.cff assets _content intro schema \
-              vault/LICENSE vault/10_markdown vault/20_distillates vault/references \
-            | grep -zvE '^intro/tests/' \
+          git ls-files -z -- index.html 404.html LICENSE CITATION.cff assets _content schema \
             | xargs -0 cp --parents -t _site
       - name: Build the download archive
         run: python3 tools/build_downloads.py _site/downloads

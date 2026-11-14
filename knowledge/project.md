@@ -7,7 +7,7 @@ status: complete
 language: en
 version: 0.7
 created: 2026-05-09
-updated: 2026-11-05
+updated: 2026-11-14
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Opus 4.8, Claude Opus 5.5)
 method:
@@ -72,9 +72,9 @@ Out of scope:
 
 ## Current state
 
-The repository baseline is complete. The site renders the Promptotyping portal, the templates with side panels and the frontmatter inspector, the curated use-case gallery with its depth pages, the tutorial, the start page's account of the skill with the link to its repository, the Vault evidence layer, and the reference pages. Mobile layout, accessibility behaviour, stable addressing, and search-engine metadata are part of that baseline. What each surface must do and how it is built is owned by [specification.md](specification.md), [architecture.md](architecture.md), and [design.md](design.md); the header and footer use the DHCraft watercolour mark.
+The repository baseline is complete. The site renders the Promptotyping portal, the templates with side panels and the frontmatter inspector, the curated use-case gallery with its depth pages, the tutorial, the start page's account of the skill with the link to its repository, and the reference pages. Mobile layout, accessibility behaviour, stable addressing, and search-engine metadata are part of that baseline. What each surface must do and how it is built is owned by [specification.md](specification.md), [architecture.md](architecture.md), and [design.md](design.md); the header and footer use the DHCraft watercolour mark.
 
-The repository implementation of the three portal scenarios is complete and verified. Understand connects Application to the evidence; Evaluate connects the gallery, case depth pages, and the Vault; Apply connects the tutorial, the skill repository, templates, and Working environment. Three independent agent role simulations tested these paths from public content only. Their agent-owned findings were integrated into the fit check, terminology, document routing, data-profile boundary, and Skill application. The tutorial source is version 0.4 and remains a draft until the operator accepts its text. Human comprehension, scholarly adequacy, comparative effectiveness, resource requirements, and independent transfer belong to the external evaluation of the release candidate.
+The repository implementation of the three portal scenarios is complete and verified. Understand connects Application to the evidence; Evaluate connects the gallery and the case depth pages; Apply connects the tutorial, the skill repository, templates, and Working environment. Three independent agent role simulations tested these paths from public content only. Their agent-owned findings were integrated into the fit check, terminology, document routing, data-profile boundary, and Skill application. The tutorial source is version 0.4 and remains a draft until the operator accepts its text. Human comprehension, scholarly adequacy, comparative effectiveness, resource requirements, and independent transfer belong to the external evaluation of the release candidate.
 
 The public deployment changes only through an explicit release decision under [governance.md](governance.md). The repository and the live site can therefore differ between release decisions without changing which repository sources are canonical.
 
@@ -82,7 +82,7 @@ The phase-provenance lane was removed after the first deploy by operator decisio
 
 The FAIR infrastructure policy is dual licensing, MIT for code and CC BY 4.0 for documentation and Knowledge Documents, with third-party research data exempted per repository under its own rights statement. The repository root carries a MIT `LICENSE` and a `CITATION.cff`; the citation identity is Christopher Pollin, Digital Humanities Craft OG, ORCID 0000-0002-4879-129X.
 
-The `vault/` folder is a Grounded-Vault instance (template `DigitalHumanitiesCraft/grounded-vault`) that anchors the practice's load-bearing claims to sources. Work inside it follows its own action layer `vault/CLAUDE.md`.
+On 2026-11-14 the operator decided to keep the repository lean and retired the glossary, the Vault view with the Grounded Vault instance under `vault/`, the dated records under `snapshots/` and the eval cases under `tools/skill-evals/`. Their published addresses land on the start page.
 
 The chronological course and the lane cuts live in [journal.md](journal.md).
 
@@ -98,7 +98,6 @@ This knowledge base is a **mirror with a life of its own**. The vault templates 
 - Subpath aliases (`/promptotyping-document/data`) serve humans; static Markdown URLs under `_content/` serve as the machine address (ADR-10).
 - Case-study depth pages plus a filterable, curated use-case gallery (A7).
 - The tutorial and canonical skill support a first documented Promptotyping iteration from the same public interface.
-- A glossary that defines every term of the practice and names its sources, each entry under its own address.
 - Repositories can write `template: { url: "https://dhcraft.org/Promptotyping/promptotyping-document/data" }` into their frontmatter and thereby point at the canonical latest specification.
 
 ## Links

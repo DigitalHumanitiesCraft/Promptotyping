@@ -7,8 +7,8 @@ abstract: >-
   contexts into research artefacts that fit the researchers' questions and ways
   of working, through Knowledge Engineering, Context Engineering and Agentic
   Engineering. This repository holds the practice specification, the templates
-  for the project knowledge base, documented use cases, a tutorial, an
-  introduction page and the Promptotyping skill for AI coding agents.
+  for the project knowledge base, documented use cases and a tutorial. The Promptotyping skill for AI coding
+  agents lives in its own repository, promptotyping-skill.
 type: software
 authors:
   - family-names: Pollin

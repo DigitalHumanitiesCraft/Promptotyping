@@ -21,7 +21,7 @@ The start page shows Figure 1 of Pollin 2026, Promptotyping, submitted. Research
 
 ## What it is and where it comes from
 
-Promptotyping combines Knowledge Engineering, Context Engineering and Agentic Engineering and is tied to no particular model or tool. It originates in a dissertation at the University of Graz (2025), was first described in blog posts on DHCraft (2025) and L.I.S.A. (2026), and is defined in Pollin 2026, Promptotyping, submitted, with CorrespExplorer, SZD-HTR and Klawiter-Rescue as cases. The documented projects are under [use cases](#use-cases), and the [Vault](#vault) traces the practice's claims to their sources.
+Promptotyping combines Knowledge Engineering, Context Engineering and Agentic Engineering and is tied to no particular model or tool. It originates in a dissertation at the University of Graz (2025), was first described in blog posts on DHCraft (2025) and L.I.S.A. (2026), and is defined in Pollin 2026, Promptotyping, submitted, with CorrespExplorer, SZD-HTR and Klawiter-Rescue as cases. The documented projects are under [use cases](#use-cases).
 
 ## Terms of the figure
 
@@ -34,7 +34,7 @@ Promptotyping combines Knowledge Engineering, Context Engineering and Agentic En
 - Verification tests conformity to formalised requirements, agentic review lets an agent examine the work against named criteria, and scholarly validation by the researchers decides whether the work is warranted by the sources and fits its purpose. The last is the acceptance of a promptotype for a purpose.
 - Knowledge curation examines and revises the project knowledge in light of what sources, checking and use reveal.
 
-The full account is in [Application](#application) and the glossary.
+The full account is in [Application](#application).
 
 ## Reuse
 
@@ -52,7 +52,7 @@ With the skill installed, a person says what they want in their own words, and t
 - `curate` checks and corrects the knowledge documents, against the project, against outside sources, or through a review with a fresh context.
 - `handoff` ends a session. It writes the journal, states what is open and commits without pushing.
 
-Building has no subcommand and follows the rules in the skill. The repository [promptotyping-skill](https://github.com/DigitalHumanitiesCraft/promptotyping-skill) holds the skill with the procedure of each subcommand. The [introduction](intro/) plays one round on `intro/example/letters.csv`, an invented family correspondence with partly uncertain dates.
+Building has no subcommand and follows the rules in the skill. The repository [promptotyping-skill](https://github.com/DigitalHumanitiesCraft/promptotyping-skill) holds the skill with the procedure of each subcommand.
 
 ## Limits, licence and citation
 
