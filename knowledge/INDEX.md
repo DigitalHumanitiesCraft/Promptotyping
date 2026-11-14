@@ -55,11 +55,11 @@ This knowledge base follows the convention of the Promptotyping Documents in `te
 
 ### Agent instruction document
 
-A document that states how agents are to work, with procedures, constraints, the checks to be run and pointers to the relevant knowledge, in `CLAUDE.md` or `AGENTS.md` in the repository root.
+A document that tells agents how to work. It holds procedures, constraints, the checks to run and pointers to the knowledge a task needs, and it is named `CLAUDE.md` or `AGENTS.md` and lies in the repository root.
 
 ### Agentic review
 
-The examination of code, data or knowledge documents by an agent, often with a fresh context and against named criteria. Its findings are evidence.
+An agent examines code, data or knowledge documents, often with a fresh context and against named criteria. Its findings are evidence.
 
 ### Declarative knowledge document
 
@@ -79,7 +79,7 @@ The form of work that builds the artefact from the knowledge documents in bounde
 
 ### Knowledge curation
 
-The examination and revision of the project knowledge in light of what sources, checking and use reveal. It runs across all four forms of work.
+Examining and revising the project knowledge whenever sources, checking and use bring something to light. It runs across all four forms of work.
 
 ### Knowledge document
 
@@ -103,11 +103,11 @@ The knowledge documents of a project together with its agent instructions, versi
 
 ### Promptotype
 
-What an iteration yields, a prototype that can be used and inspected, together with the project knowledge base and the research data from which it was built, so that each state can be versioned as a whole.
+What an iteration yields. It is a prototype open to use and inspection, and it counts along with the project knowledge base and with the research data it was built from, which lets every state be versioned as one.
 
 ### Promptotyping
 
-A working practice for translating research data and their contexts, with frontier LLM agents, into research artefacts that fit the researchers' purposes and ways of working, as [practice.md](practice.md#the-working-practice) states it.
+A working practice in which research data and their contexts are translated, with the help of frontier LLM agents, into research artefacts that suit the purposes of the researchers and the ways in which they work, as [practice.md](practice.md#the-working-practice) states it.
 
 ### Promptotyping Documents
 
@@ -123,8 +123,8 @@ The people who know the sources and the field and judge whether an artefact fits
 
 ### Scholarly validation
 
-The judgement of people who know the sources and the field on whether a result is warranted by the sources and adequate to the research purpose. For a Promptotype it is its acceptance for a purpose.
+A judgement by people who know the sources and the field. They decide whether the sources warrant a result and whether it is adequate to the research purpose. For a Promptotype it is its acceptance for a purpose.
 
 ### Verification
 
-The check whether a result conforms to a standard the project has accepted, at its strongest through an executable check that can fail.
+The check whether a result meets a standard that the project has adopted, at its strongest as an executable check that can fail.

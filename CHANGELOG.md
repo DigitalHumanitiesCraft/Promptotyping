@@ -4,6 +4,7 @@ Changes to the Promptotyping templates, convention, knowledge base and site, per
 
 ## Unreleased
 
+- The definition of Promptotyping and the passages on the Promptotype, the knowledge documents and the three kinds of checking stand in the repository's own words, so that no passage of eight words is shared with the manuscript of the paper. The terms are unchanged.
 - The figure of the practice is two figures. The first reads from the research data and their contexts through the four forms of work to the Promptotype, shown as one box of prototype, project knowledge base and research data. The second opens a Promptotype with CorrespExplorer as the example and shows the documents of its knowledge base.
 - The page carries a start prompt in the section Skill, which lets an agent install the skill and run `orient`. It replaces the shell block, and the installation by hand stays in the README of the skill repository.
 

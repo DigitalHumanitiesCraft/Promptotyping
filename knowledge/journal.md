@@ -29,7 +29,8 @@ related: [project, specification]
 - GOSSIP, Grounded Vault and Second Brain Vault still carry the earlier footer. Their footers are bilingual through translation keys and their shared files differ from the current ones, so each site takes the footer with a frame at its next update.
 - The operator's acceptance of the page after the layout changes of 2026-11-14 is outstanding.
 - Other repositories carry the addresses published before 2026-11-14 in their `template:` fields. In a browser with JavaScript the not-found page leads the address of a template that still exists to `templates/<slug>.md`, while an agent fetching it receives status 404. The addresses of the six retired templates end on the not-found page, and a repository takes the current name and address at its next substantive update.
-- [practice.md](practice.md), `README.md` and the skill with its README share passages of eight and more words with the manuscript, most of them definitions. Whether they are reworded before the paper appears is the operator's decision, since NFR-06 asks for the site's own words and the terms of the paper bind every text.
+- The references of the skill, the templates `convention`, `specification` and `testing` and one case study still share single passages of eight and more words with the manuscript. The changelogs keep the earlier wording of the definition as history.
+- The operator's acceptance of the reworded definition is outstanding, "a working practice in which research data and their contexts are translated, with the help of frontier LLM agents, into research artefacts that suit the purposes of the researchers and the ways in which they work".
 - Promptotyping has not been evaluated with researchers outside the project. Use by external participants, an independently led transfer case, a documented unsuccessful or discontinued path and figures on the resources a project needs remain open. The agent role simulations of 2026-08-22 are a pre-test only.
 - Once the paper is published, the page and [project.md](project.md) cite it.
 
@@ -46,6 +47,13 @@ The entries up to 2026-11-14 are condensed into the milestone entries below, and
 - Corrected: the first two-figure state, in which the ring kept Preparation on top.
 - Changed: `assets/img/promptotyping-practice.svg`, `assets/img/promptotype-example.svg`, `index.html`, `README.md`, [design.md](design.md), `CHANGELOG.md`.
 - Evidence: `1350539`, `4438eed` and the commit that carries this entry. Both figures were read as rendered images, and the published page was looked at in a wide and a narrow window. The file names in the second figure are a selection from the repository of CorrespExplorer as listed on 2026-11-14, and its prototype window is schematic. No reader outside the project has seen either figure.
+
+### 2026-11-14 The public texts in their own words
+
+- Trigger: the comparison with the manuscript by passages of eight words had found such passages in [practice.md](practice.md), in `README.md` and in the skill with its README, and the operator decided that all four are put into their own words before the paper appears.
+- Decided: every shared passage is reworded with the terms of the paper kept, among them the definition of Promptotyping, the account of the Promptotype, the three types of knowledge documents, the three kinds of checking, the statuses and the second of the three questions, which now reads "Do the sources warrant it?". The definition is the same sentence on the page, in the README, in [practice.md](practice.md), in [INDEX.md](INDEX.md) and in `CITATION.cff`, as FR-02 requires, and the glossary in [INDEX.md](INDEX.md) follows the new wording.
+- Changed: [practice.md](practice.md), [INDEX.md](INDEX.md), `README.md`, `CITATION.cff`, `index.html`, and `promptotyping/SKILL.md` and `README.md` of the skill repository.
+- Evidence: the commit that carries this entry and the commit of the same day in the skill repository. The comparison by passages of eight words reports none for these seven files.
 
 ### 2026-11-14 The page text checked against the manuscript, copy fields and contrast
 
