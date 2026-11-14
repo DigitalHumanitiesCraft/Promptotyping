@@ -25,7 +25,8 @@ related: [project, specification]
 ## Open
 
 - The operator's acceptance of the single page is outstanding.
-- The start prompt has not yet run in a fresh session of an agent without the skill, neither in an agent with a shell nor in an app without one. Its first test with a reader who does not program is outstanding.
+- The start prompt has run once in an agent with a shell and without the skill. It has not run in an app without a shell, nor with the word "briefly" that the test led to, and its first test with a reader who does not program is outstanding.
+- The operator's acceptance of the page after the layout changes of 2026-11-14 is outstanding.
 - Other repositories carry the addresses published before 2026-11-14 in their `template:` fields. In a browser with JavaScript the not-found page leads the address of a template that still exists to `templates/<slug>.md`, while an agent fetching it receives status 404. The addresses of the six retired templates end on the not-found page, and a repository takes the current name and address at its next substantive update.
 - Promptotyping has not been evaluated with researchers outside the project. Use by external participants, an independently led transfer case, a documented unsuccessful or discontinued path and figures on the resources a project needs remain open. The agent role simulations of 2026-08-22 are a pre-test only.
 - Once the paper is published, the page and [project.md](project.md) cite it.
@@ -33,6 +34,14 @@ related: [project, specification]
 ## Entries
 
 The entries up to 2026-11-14 are condensed into the milestone entries below, and their full wording stands in the Git history (`git show f211631:knowledge/journal.md`).
+
+### 2026-11-14 First run of the start prompt and one text width for the page
+
+- Trigger: the operator asked for a test of the start prompt in a fresh session without the skill, and on seeing the page said "Wir sind hier zu viele Querstriche" and asked where things were not yet lined up.
+- Found: the prompt ran once in Claude Code with all customisations switched off, on Claude Opus 5.5, in a folder with an invented table of five letters and the two lines filled in in German. The agent cloned the repository, installed the skill into the project folder, tried to call it and reported that it does not load before a restart. It then followed `orient` from the installed files, changed nothing else, answered in German and in plain words, judged the fit, named the decisions that stay with the user and closed with one question. Its report ran to several hundred words under six headings. The switch that removed the customisations also keeps a newly installed skill from loading, so the run says nothing on whether the skill loads at once in an ordinary session. On the page, a measurement at a width of 1440 pixels found five right edges and sixty elements with a horizontal line, and the start prompt stood in a side column in the monospace.
+- Decided: the prompt asks for a brief explanation. Text, lists, the start prompt and the head of a section share one text width, the lines between rows are gone, the start prompt stands first in its section in the text face, the name column is narrower, a subcommand stands in the regular weight, and the sentence that pointed to the skill repository under the list moved into the sentence before it.
+- Changed: `index.html`, `assets/css/site.css`, [design.md](design.md), and `README.md` of the skill repository.
+- Evidence: the commit that carries this entry. After the change the page has one right edge for text, lists and blocks and a second for the figure, lines only between sections and around the two blocks a reader copies, and no horizontal document scroll at 360 pixels.
 
 ### 2026-11-14 A start prompt for readers who do not program
 

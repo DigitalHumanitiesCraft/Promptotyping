@@ -108,8 +108,17 @@
 
     <section id="skill">
       <h2>Skill</h2>
-      <p class="dh-prose">The skill gives an agent the procedure of the practice. To start, open an agent that can read and write files, such as Claude Code, in the folder with your material, fill in the last two lines of the prompt and paste it. From then on you say what you want in your own words, and five subcommands name the moments at which you call the skill directly.</p>
-      <div class="split">
+      <p class="dh-prose">The skill gives an agent the procedure of the practice. To start, open an agent that can read and write files, such as Claude Code, in the folder with your material, fill in the last two lines of the prompt and paste it.</p>
+      <figure class="dh-code start-prompt">
+        <figcaption>Start prompt</figcaption>
+<pre><code>Install the Promptotyping skill from https://github.com/DigitalHumanitiesCraft/promptotyping-skill as its README describes for the agent you are, and check that it loads. If you cannot install it here, tell me what I have to do myself.
+
+Then run its orient step and explain briefly and in plain words what you found, whether Promptotyping fits my aim, what comes next and what stays my decision. I am new to this, so ask me one question at a time.
+
+I want to: [your aim in one or two sentences]
+My material: [what it is and where it lies, or "none yet"]</code></pre>
+      </figure>
+      <p class="dh-prose">From then on you say what you want in your own words. Five subcommands name the moments at which you call the skill directly, and <a href="https://github.com/DigitalHumanitiesCraft/promptotyping-skill">the repository promptotyping-skill</a> holds their procedure and the installation by hand.</p>
         <ul class="rows calls">
           <li><code>/promptotyping orient</code><span>starts a session, establishes where the project stands and changes no file</span></li>
           <li><code>/promptotyping explore</code><span>establishes what the data can and cannot support and records it with its evidence</span></li>
@@ -117,17 +126,6 @@
           <li><code>/promptotyping curate</code><span>checks and corrects the knowledge documents against the project, against outside sources or with a fresh context</span></li>
           <li><code>/promptotyping handoff</code><span>ends a session, writes the journal with what is open and commits without pushing</span></li>
         </ul>
-        <figure class="dh-code start-prompt">
-          <figcaption>Prompt, lets the agent install the skill and look at your project</figcaption>
-<pre><code>Install the Promptotyping skill from https://github.com/DigitalHumanitiesCraft/promptotyping-skill as its README describes for the agent you are, and check that it loads. If you cannot install it here, tell me what I have to do myself.
-
-Then run its orient step and explain in plain words what you found, whether Promptotyping fits my aim, what comes next and what stays my decision. I am new to this, so ask me one question at a time.
-
-I want to: [your aim in one or two sentences]
-My material: [what it is and where it lies, or "none yet"]</code></pre>
-        </figure>
-      </div>
-      <p class="more"><a href="https://github.com/DigitalHumanitiesCraft/promptotyping-skill">The repository promptotyping-skill</a> holds the skill with the procedure of each subcommand and the installation by hand.</p>
     </section>
 
     <section id="templates">
