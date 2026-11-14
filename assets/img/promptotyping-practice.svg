@@ -1,14 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1672 860" width="1672" height="860" role="img" aria-labelledby="pf-t pf-d">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -14 1672 860" width="1672" height="860" role="img" aria-labelledby="pf-t pf-d">
   <title id="pf-t">The Promptotyping working practice</title>
-  <desc id="pf-d">Researchers and research software developers direct four recurrent forms of work that frontier LLM agents carry out, Preparation, Exploration, Distillation and Implementation, which follow no fixed order. The researchers assess each Promptotype through scholarly validation. A Promptotype is a prototype taken together with the project knowledge base and the research data from which it was built, and earlier states remain as versions. Distillation maintains the knowledge base, which supplies the context for each task, and the modelled research data are the basis of building. Verification and agentic review accompany each iteration, and what checking and use reveal returns to the knowledge base through knowledge curation. Knowledge Engineering is the project knowledge base and its curation, Context Engineering the selection of context for each task, and Agentic Engineering the organisation of the agents' work in the four forms. The files shown are examples.</desc>
+  <desc id="pf-d">Researchers and research software developers direct four recurrent forms of work that frontier LLM agents carry out, Preparation, Exploration, Distillation and Implementation, which follow no fixed order. The researchers assess each Promptotype through scholarly validation. A Promptotype is a prototype taken together with the project knowledge base and the research data from which it was built, and earlier states remain as versions. Distillation maintains the knowledge base, which supplies the context for each task, and the research data are the basis of building. Verification and agentic review accompany each iteration, and what checking and use reveal returns to the knowledge base through knowledge curation. Knowledge Engineering is the project knowledge base and its curation, Context Engineering the selection of context for each task, and Agentic Engineering the organisation of the agents' work in the four forms. The files shown are examples.</desc>
   <style>
     svg { color: #1e2749; background: #ffffff; }
     text { fill: #1e2749; font-family: Arial, Helvetica, sans-serif; text-anchor: middle; }
-    .head { font-size: 19px; font-weight: 700; letter-spacing: 2px; }
-    .sub { font-size: 17px; }
-    .eng { font-size: 16px; font-style: italic; }
-    .mono { font-family: Consolas, "Courier New", monospace; }
+    .head { font-size: 20px; font-weight: 700; letter-spacing: 2.5px; }
+    .title { font-size: 22px; }
+    .sub { font-size: 20px; }
+    .eng { font-size: 20px; font-style: italic; }
+    .mono { font-family: Consolas, Menlo, "DejaVu Sans Mono", "Courier New", monospace; font-size: 18px; }
     .start { text-anchor: start; }
+    .end { text-anchor: end; }
     .line { fill: none; stroke: #1e2749; stroke-width: 1.8; }
     .shape { fill: #ffffff; stroke: #1e2749; stroke-width: 1.8; }
     .thin { fill: none; stroke: #1e2749; stroke-width: 1.3; }
@@ -20,7 +22,7 @@
     .cat-base { stroke: #4a7ab8; fill: #edf2f8; }
     .kb-frame { fill: none; stroke: #4a7ab8; stroke-width: 1.3; stroke-dasharray: 7 6; }
   </style>
-  <rect width="1672" height="860" fill="#ffffff"/>
+  <rect x="0" y="-14" width="1672" height="860" fill="#ffffff"/>
   <defs>
     <marker id="pf-arrow" viewBox="0 0 18 16" refX="17" refY="8" markerWidth="18" markerHeight="16" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
       <path d="M1,1 L17,8 L1,15 Z" class="fill-surface" stroke="currentColor" stroke-width="1.6" stroke-linejoin="miter"/>
@@ -33,6 +35,7 @@
       <path d="M70,0 V24 H94" fill="none"/>
     </g>
   </defs>
+
   <rect class="cat-forms-frame" x="20" y="150" width="640" height="490" rx="14" fill="none" stroke="currentColor" stroke-width="1.300" stroke-dasharray="7 6"/>
   <rect x="824" y="174" width="840" height="570" rx="14" class="shape cat-proto"/>
   <rect x="812" y="162" width="840" height="570" rx="14" class="shape cat-proto"/>
@@ -52,89 +55,91 @@
     <path d="M688,62 H360 Q340,62 340,82 V148"/>
     <path d="M772,62 H1200 Q1220,62 1220,82 V148"/>
   </g>
-  <text class="head" x="730" y="24" style="font-size:17px;letter-spacing:2.500px">RESEARCHERS AND DEVELOPERS</text>
+
+  <text class="head" x="730" y="22">RESEARCHERS AND DEVELOPERS</text>
   <rect class="shape" x="690" y="36" width="80" height="52" rx="26"/>
   <circle class="person" cx="714" cy="55" r="7"/><path class="person" d="M701,77 C701,66 727,66 727,77"/>
   <circle class="person" cx="746" cy="55" r="7"/><path class="person" d="M733,77 C733,66 759,66 759,77"/>
   <text class="sub" x="520" y="50">direct the work</text>
   <text class="sub" x="990" y="50">scholarly validation</text>
-  <text class="head" x="340" y="178" style="font-size:17px;letter-spacing:2.500px">FOUR RECURRENT FORMS OF WORK</text>
+
+  <text class="head" x="340" y="180">FOUR RECURRENT FORMS OF WORK</text>
   <g class="shape cat-forms">
-    <ellipse cx="330" cy="245" rx="124" ry="55"/>
+    <ellipse cx="330" cy="248" rx="124" ry="55"/>
     <ellipse cx="146" cy="400" rx="112" ry="55"/>
     <ellipse cx="514" cy="400" rx="128" ry="58"/>
     <ellipse cx="330" cy="555" rx="124" ry="55"/>
   </g>
-  <text class="eng" x="330" y="380">Agentic</text>
-  <text class="eng" x="330" y="398">Engineering</text>
-  <text class="sub" x="330" y="424" style="font-size:15px">LLM agents</text>
-  <text class="head" x="331" y="240">PREPARATION</text>
-  <text class="sub" x="330" y="264" style="font-size:17px">sources, data, context</text>
-  <text class="head" x="147" y="395" style="font-size:18px">EXPLORATION</text>
-  <text class="sub" x="146" y="419" style="font-size:17px">structure and limits</text>
-  <text class="head" x="515" y="395" style="font-size:18px">IMPLEMENTATION</text>
-  <text class="sub" x="514" y="419" style="font-size:17px">bounded tasks</text>
+  <text class="head" x="331" y="243">PREPARATION</text>
+  <text class="sub" x="330" y="268">sources, data, context</text>
+  <text class="head" x="147" y="395">EXPLORATION</text>
+  <text class="sub" x="146" y="420">structure and limits</text>
+  <text class="head" x="515" y="395">IMPLEMENTATION</text>
+  <text class="sub" x="514" y="420">bounded tasks</text>
   <text class="head" x="331" y="550">DISTILLATION</text>
-  <text class="sub" x="330" y="574" style="font-size:17px">knowledge documents</text>
+  <text class="sub" x="330" y="575">knowledge documents</text>
+  <text class="eng" x="322" y="382">Agentic</text>
+  <text class="eng" x="322" y="404">Engineering</text>
+  <text class="sub" x="322" y="432">LLM agents</text>
 
-  <text class="sub" x="728" y="388" style="font-size:17px">each iteration</text>
-  <text class="sub" x="730" y="424" style="font-size:17px">verification</text>
-  <text class="sub" x="730" y="443" style="font-size:17px">agentic review</text>
-  <text class="eng" x="730" y="551">Context</text>
-  <text class="eng" x="730" y="569">Engineering</text>
-  <text class="sub" x="730" y="591" style="font-size:17px">for each task</text>
-  <text class="sub" x="730" y="678" style="font-size:17px">maintains</text>
-  <text class="head" x="1221" y="190">PROMPTOTYPE</text>
-  <text class="head" x="1221" y="262" style="font-size:17px;letter-spacing:2.500px">PROTOTYPE</text>
-  <svg x="1067" y="274" width="305" height="185" viewBox="995 235 305 185">
-  <g class="shape">
-    <rect x="1000" y="240" width="295" height="175" rx="4"/>
-  </g>
-  <g class="thin">
-    <path d="M1000,253 H1295"/>
-    <circle cx="1009" cy="246.500" r="2.300"/><circle cx="1017" cy="246.500" r="2.300"/><circle cx="1025" cy="246.500" r="2.300"/>
-    <rect x="1012" y="267" width="84" height="135"/>
-    <rect x="1107" y="267" width="84" height="135"/>
-    <rect x="1202" y="267" width="82" height="135"/>
-    <use href="#pf-map" transform="translate(1019,290) scale(0.840,1.240)"/>
-    <circle cx="1037" cy="337" r="3.200"/><circle cx="1071" cy="316" r="3.200"/><circle cx="1054" cy="353" r="3.200"/><circle cx="1078" cy="333" r="3.200"/>
-    <rect x="1113" y="283" width="34" height="8"/><rect x="1117" y="299" width="42" height="8"/><rect x="1124" y="315" width="46" height="8"/><rect x="1131" y="331" width="38" height="8"/><rect x="1138" y="347" width="45" height="8"/><rect x="1143" y="363" width="36" height="8"/><rect x="1129" y="379" width="36" height="8"/>
-    <path d="M1247,299 L1220,331 L1232,353 L1217,367 M1247,299 L1270,335 L1247,367 L1232,353"/>
-    <circle cx="1247" cy="299" r="6" class="fill-surface"/><circle cx="1220" cy="331" r="6" class="fill-surface"/><circle cx="1270" cy="335" r="6" class="fill-surface"/><circle cx="1217" cy="367" r="6" class="fill-surface"/><circle cx="1247" cy="367" r="6" class="fill-surface"/>
-  </g>
+  <text class="sub" x="730" y="388">each iteration</text>
+  <text class="sub" x="730" y="427">verification</text>
+  <text class="sub" x="730" y="450">agentic review</text>
+  <text class="eng" x="730" y="545">Context</text>
+  <text class="eng" x="730" y="567">Engineering</text>
+  <text class="sub" x="730" y="590">for each task</text>
+  <text class="sub" x="730" y="680">maintains</text>
+
+  <text class="head title" x="1221" y="188">PROMPTOTYPE</text>
+  <text class="head" x="1221" y="230">PROTOTYPE</text>
+  <svg x="1067" y="242" width="305" height="185" viewBox="995 235 305 185">
+    <rect class="shape" x="1000" y="240" width="295" height="175" rx="4"/>
+    <g class="thin">
+      <path d="M1000,253 H1295"/>
+      <circle cx="1009" cy="246.500" r="2.300"/><circle cx="1017" cy="246.500" r="2.300"/><circle cx="1025" cy="246.500" r="2.300"/>
+      <rect x="1012" y="267" width="84" height="135"/>
+      <rect x="1107" y="267" width="84" height="135"/>
+      <rect x="1202" y="267" width="82" height="135"/>
+      <use href="#pf-map" transform="translate(1019,290) scale(0.840,1.240)"/>
+      <circle cx="1037" cy="337" r="3.200"/><circle cx="1071" cy="316" r="3.200"/><circle cx="1054" cy="353" r="3.200"/><circle cx="1078" cy="333" r="3.200"/>
+      <rect x="1113" y="283" width="34" height="8"/><rect x="1117" y="299" width="42" height="8"/><rect x="1124" y="315" width="46" height="8"/><rect x="1131" y="331" width="38" height="8"/><rect x="1138" y="347" width="45" height="8"/><rect x="1143" y="363" width="36" height="8"/><rect x="1129" y="379" width="36" height="8"/>
+      <path d="M1247,299 L1220,331 L1232,353 L1217,367 M1247,299 L1270,335 L1247,367 L1232,353"/>
+      <circle cx="1247" cy="299" r="6" class="fill-surface"/><circle cx="1220" cy="331" r="6" class="fill-surface"/><circle cx="1270" cy="335" r="6" class="fill-surface"/><circle cx="1217" cy="367" r="6" class="fill-surface"/><circle cx="1247" cy="367" r="6" class="fill-surface"/>
+    </g>
   </svg>
 
-  <rect class="kb-frame" x="816" y="480" width="496" height="236" rx="10"/>
-  <text class="head" x="1064" y="500" style="font-size:17px;letter-spacing:2.500px">PROJECT KNOWLEDGE BASE</text>
-  <text class="sub" x="919" y="536" style="font-size:17px">declarative</text>
-  <text class="sub" x="1103" y="536" style="font-size:17px">process</text>
-  <text class="sub" x="1223" y="536" style="font-size:17px">agent instructions</text>
+  <rect class="kb-frame" x="816" y="462" width="514" height="250" rx="10"/>
+  <text class="head" x="1073" y="488">PROJECT KNOWLEDGE BASE</text>
+  <text class="sub" x="933" y="533">declarative</text>
+  <text class="sub" x="1155" y="533">process</text>
+  <text class="sub" x="1270" y="511">agent</text>
+  <text class="sub" x="1270" y="533">instructions</text>
   <g class="thin">
-    <path d="M830,552 V545 H1008 V552 M1070,552 V545 H1136 V552 M1190,552 V545 H1256 V552"/>
+    <path d="M832,549 V542 H1035 V549 M1122,549 V542 H1188 V549 M1237,549 V542 H1303 V549"/>
   </g>
   <g class="shape cat-base" stroke-linejoin="miter">
-    <use href="#pf-sheet" transform="translate(830,560) scale(0.700)"/>
-    <use href="#pf-sheet" transform="translate(942,560) scale(0.700)"/>
-    <use href="#pf-sheet" transform="translate(1070,560) scale(0.700)"/>
-    <use href="#pf-sheet" transform="translate(1190,560) scale(0.700)"/>
+    <use href="#pf-sheet" transform="translate(832,556) scale(0.700)"/>
+    <use href="#pf-sheet" transform="translate(969,556) scale(0.700)"/>
+    <use href="#pf-sheet" transform="translate(1122,556) scale(0.700)"/>
+    <use href="#pf-sheet" transform="translate(1237,556) scale(0.700)"/>
   </g>
-  <text class="mono" x="858" y="674" style="font-size:17px">data.md</text>
-  <text class="mono" x="984" y="674" style="font-size:17px">specification.md</text>
-  <text class="mono" x="1127" y="674" style="font-size:17px">journal.md</text>
-  <text class="mono" x="1242" y="674" style="font-size:17px">CLAUDE.md</text>
-  <text class="eng" x="1064" y="702">Knowledge Engineering</text>
+  <text class="mono" x="865" y="670">data.md</text>
+  <text class="mono" x="1002" y="670">specification.md</text>
+  <text class="mono" x="1155" y="670">journal.md</text>
+  <text class="mono" x="1270" y="670">CLAUDE.md</text>
+  <text class="eng" x="1073" y="700">Knowledge Engineering</text>
 
-  <text class="head" x="1471" y="500" style="font-size:17px;letter-spacing:2.500px">RESEARCH DATA</text>
-  <text class="sub" x="1471" y="526" style="font-size:17px">the basis of building</text>
+  <text class="head" x="1500" y="488">RESEARCH DATA</text>
+  <text class="sub" x="1500" y="516">the basis of building</text>
   <g class="shape">
-    <path d="M1408,572 V640 A62,16 0 0 0 1532,640 V572"/>
-    <ellipse cx="1470" cy="572" rx="62" ry="16"/>
+    <path d="M1438,572 V640 A62,16 0 0 0 1562,640 V572"/>
+    <ellipse cx="1500" cy="572" rx="62" ry="16"/>
   </g>
-  <path class="thin" d="M1408,606 A62,16 0 0 0 1532,606"/>
-  <path class="thin" d="M1312,606 H1404" stroke-dasharray="5 5"/>
-  <text class="sub" x="1358" y="596" style="font-size:17px">describes</text>
+  <path class="thin" d="M1438,606 A62,16 0 0 0 1562,606"/>
+  <path class="thin" d="M1330,606 H1436" stroke-dasharray="5 5" marker-end="url(#pf-arrow)"/>
+  <text class="sub" x="1380" y="596">describes</text>
 
-  <text class="sub start" x="1234" y="772" style="font-size:17px">checking and use</text>
-  <text class="sub" x="1664" y="772" style="font-size:17px;text-anchor:end">each state versioned</text>
-  <text class="sub" x="775" y="826">knowledge curation</text>
+  <text class="sub start" x="1234" y="774">checking and use</text>
+  <text class="sub end" x="1664" y="774">each state versioned</text>
+  <text class="sub" x="775" y="828">knowledge curation</text>
 </svg>
