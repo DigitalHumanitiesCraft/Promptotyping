@@ -1,6 +1,6 @@
 ---
 name: promptotyping
-description: Orients, distils, implements, curates, synthesises, prunes and hands off work in Promptotyping repositories, where a maintained knowledge folder guides agents in building research artefacts. Use when a user invokes Promptotyping, asks to create, revise, check, combine or clean up a Promptotyping knowledge base ("Wissensbasis anlegen", "knowledge-Ordner refactoren", "destillieren", "kuratieren", "synthetisieren", "zurückschneiden", "Journal verdichten", "Handoff einarbeiten"), or works in a repository whose action layer routes into a knowledge folder. Not for generic project management in unrelated repositories.
+description: Orients, explores, distils, implements, curates, synthesises, prunes and hands off work in Promptotyping repositories, where a maintained knowledge folder guides agents in building research artefacts. Use when a user invokes Promptotyping, asks to create, revise, check, combine or clean up a Promptotyping knowledge base ("Wissensbasis anlegen", "knowledge-Ordner refactoren", "destillieren", "kuratieren", "synthetisieren", "zurückschneiden", "Journal verdichten", "Handoff einarbeiten"), or works in a repository whose action layer routes into a knowledge folder. Not for generic project management in unrelated repositories.
 license: CC-BY-4.0
 metadata:
   short-description: Work from maintained project knowledge
@@ -27,7 +27,8 @@ Every operation starts with Orient. The table names what each one changes.
 
 | Operation | Use it when | What changes |
 |---|---|---|
-| Orient | a session enters the repository or switches task | nothing; the agent knows the current state |
+| Orient | a session enters the repository or switches task | nothing; the agent knows where the project stands |
+| Explore | the project must learn what its research data can and cannot support | scripts, a data profile and `data.md` record what the examination found |
 | Distil | material or experience must become maintained knowledge for a purpose | a smaller, maintained set of statements replaces scattered material as the working basis |
 | Implement | a bounded task is ready to build from the knowledge base | the artefact gains an inspected increment |
 | Curate | knowledge must be kept true against the sources and the project state | false or outdated statements are corrected in place |
@@ -35,40 +36,62 @@ Every operation starts with Orient. The table names what each one changes.
 | Prune | statements, documents or entries no longer hold or serve anyone | they are removed, and nothing still depends on them |
 | Hand off | an input from another session, review or partner arrives, or someone else takes over | the inbox holds only open points, and processed ones are integrated or rejected |
 
-Distil, Curate, Synthesise and Prune are operations of knowledge curation, the examination and revision of the project knowledge in light of what the sources, checking and work with the artefacts reveal. Distil is also the form of work Distillation. Curation runs through all four forms of work, so these operations are invoked from Preparation, Exploration and Implementation as well. Synthesise and Prune are names this skill gives to two recurring operations of curation.
+Distil, Curate, Synthesise and Prune are operations of knowledge curation, the examination and revision of the project knowledge in light of what the sources, checking and work with the artefacts reveal. Distil is also the form of work Distillation, as Explore is the form of work Exploration. Orient belongs to no form of work. It is the entry that names the one in which the project stands. Curation runs through all four forms of work, so these operations are invoked from Preparation, Exploration and Implementation as well. Synthesise and Prune are names this skill gives to two recurring operations of curation.
 
 ## Orient
+
+Purpose. Establish where the project stands before doing anything. Orient changes no file.
+
+Trigger. A session enters the repository or switches task.
+
+Procedure.
 
 1. Read the action layer in the repository root.
 2. Read `knowledge/INDEX.md` where it exists, then `knowledge/handoff.md`.
 3. Read the documents relevant to the task. Read `knowledge/governance.md` when authority, evidence status, rights, publication or escalation affects the work.
 4. Read `knowledge/journal.md` only when provenance or the ground of a decision is needed.
-5. Inspect the actual repository state, run `git status`, and verify that cited sources and targets exist.
-6. When the user asks for an account, state in a few sentences what the project is, what the data afford and where they end, and what is to be built next, and build nothing. Whatever the account misses exists only outside the documents and belongs in the document that should carry it.
+5. Inspect the actual repository state, run `git status`, and verify that cited sources and targets exist. Look at the research data only on the surface, meaning which files exist, in which formats and of what size. Examining their content is Explore.
+6. Name the state of the project and the step that comes next. A folder with no action layer and no `knowledge/` folder starts with Prepare, whether it is empty or holds raw data. A project with a purpose in `knowledge/project.md` and no account of its data continues with Explore. A project with a knowledge base continues with Implement, or with the operation an open handoff point or a finding calls for.
+7. When the user asks for an account, state in a few sentences what the project is, what the data afford and where they end, and what is to be built next, and build nothing. Whatever the account misses exists only outside the documents and belongs in the document that should carry it.
 
-When the folder has no action layer and no `knowledge/` folder yet, the project starts with Prepare and explore.
+After. No file has changed, and the agent can say in a few sentences what the project is, where it stands and what comes next.
 
 An open handoff point is input awaiting checking, integration or rejection. Verify its source and current target before relying on it. If a source cannot be read, report it and mark the dependent result unverified.
 
-## Prepare and explore
+Distinct from. Orient reads what the project already knows, so that an agent with a fresh context catches up, and it needs no decision from the researchers. Explore examines the material, so that the project learns what it had not yet recorded.
 
-A new project begins with the forms of work Preparation and Exploration, before there is anything to distil.
+## Prepare
 
-Preparation makes the material and the purpose explicit.
+A new project begins with the form of work Preparation, which makes the material and the purpose explicit before there is anything to explore or distil.
 
 1. Initialise a Git repository, create the folders `data/`, `knowledge/` and `scripts/`, and add a `.gitignore` for operating-system and editor files.
 2. Ask for the purpose, the research question and two or three user stories in the researchers' words. Write them into `knowledge/project.md` as a minimal charter, keep the wording, mark the user stories as provisional, and follow the project template only as far as the answers fill it.
 3. A working copy of the research data goes into `data/`, and the originals stay elsewhere. Never change files in `data/`.
 4. Commit `knowledge/` and the `.gitignore`, and ask before committing anything in `data/`.
 
-Exploration establishes what the data can and cannot support.
+Then continue with Explore.
 
-1. Read `knowledge/project.md` first, so that the examination follows the purpose and the user stories. Examine the files in `data/` with small, documented scripts under `scripts/` rather than reading them whole.
+## Explore
+
+Purpose. Establish what the research data can and cannot support, so that the project learns what it had not yet recorded about its material. Explore is the form of work Exploration.
+
+Trigger. A new project after Prepare; new or changed research data; a new question put to the data; a finding from checking or from work with the artefact that contradicts an assumption about the data.
+
+Inputs. The research data in `data/`, the purpose and the user stories in `knowledge/project.md`, and what the researchers know about the material and its context.
+
+Procedure.
+
+1. Read `knowledge/project.md` first, so that the examination follows the purpose and the user stories. Examine the files in `data/` with small, documented scripts under `scripts/` rather than reading them whole, so that only the profile and selected examples enter the context.
 2. Let the scripts write the volatile figures, such as counts, value ranges, cardinalities and distributions, to `generated/data-profile.md`.
-3. Write `knowledge/data.md` on provenance, structure, meaning, relations, gaps and anomalies. It points to the profile instead of repeating its numbers, names the file and the rows or elements behind every non-obvious statement, and marks every interpretation as an inference.
-4. Name the three statements in `data.md` you are least sure of, so that the researchers can check them against the data, and commit the scripts and documents.
+3. Write or revise `knowledge/data.md` on provenance, structure, meaning, relations, gaps and anomalies. It points to the profile instead of repeating its numbers, names the file and the rows or elements behind every non-obvious statement, and marks every interpretation as an inference.
+4. Name the three statements in `data.md` you are least sure of, so that the researchers can check them against the data, and put to them the questions that only knowledge of the domain and the sources can settle.
+5. Commit the scripts and documents.
 
-Exploration is sufficient for the moment once the researchers recognise their material in it. Then continue with Distil.
+After. Scripts, a profile and `data.md` state what the data afford and where they end, and the files in `data/` are unchanged.
+
+Check. Exploration is sufficient for the moment once the researchers recognise their material in it. That judgement is theirs. Then continue with Distil.
+
+Distinct from. Orient reads the state of the project and changes nothing. Distil selects, for a purpose, from what Exploration found. Curate corrects a single statement about the data, and a finding that puts the account of the data as a whole in question returns the project to Explore.
 
 ## Distil
 

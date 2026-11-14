@@ -336,7 +336,7 @@ cp -r Promptotyping/skills/promptotyping ~/.claude/skills/</code></pre>
             </figure>
           </li>
           <li>
-            <p class="step-head"><span class="step-name">Take the files.</span> The skill gives an agent the operations Orient, Distil, Implement, Curate, Synthesise, Prune and Hand off. Each template is marked with the condition under which a project needs it, given in full on the <a href="#vorlagen">templates page</a>. Skill and templates are in the block below.</p>
+            <p class="step-head"><span class="step-name">Take the files.</span> The skill gives an agent the operations Orient, Explore, Distil, Implement, Curate, Synthesise, Prune and Hand off. Each template is marked with the condition under which a project needs it, given in full on the <a href="#vorlagen">templates page</a>. Skill and templates are in the block below.</p>
           </li>
           <li>
             <p class="step-head"><span class="step-name">Work in your own words.</span> Create an empty project folder with your data, start the agent there and name the step you want, as the <a href="#start-example">example</a> does from Prepare on. The <a href="#tutorial">tutorial</a> explains each step and its check.</p>
@@ -348,7 +348,7 @@ cp -r Promptotyping/skills/promptotyping ~/.claude/skills/</code></pre>
           <div class="download-group">
             <p class="download-group-name">Skill</p>
             <ul class="download-list">
-              <li data-file="skill"><a class="file-get" href="skills/promptotyping/SKILL.md" download><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"></use></svg>SKILL.md</a> <span class="doc-when">seven operations</span></li>
+              <li data-file="skill"><a class="file-get" href="skills/promptotyping/SKILL.md" download><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"></use></svg>SKILL.md</a> <span class="doc-when">eight operations</span></li>
             </ul>
             <a class="dh-btn download-all" href="downloads/promptotyping-skill.zip" download><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-archive"></use></svg>Skill package (ZIP)</a>
           </div>
@@ -380,7 +380,7 @@ cp -r Promptotyping/skills/promptotyping ~/.claude/skills/</code></pre>
         <h2 id="start-example">Example</h2>
         <p class="start-prose-line">An invented family correspondence of twelve letters, some dated only to a year or a season, becomes a timeline. With the skill installed as in the first step of <a href="#start-reuse">Reuse</a>, each step is one sentence in your own words, and the agent takes the procedure from the skill. An agent that cannot load skills gets the same procedure when you give it the <a href="skills/promptotyping/SKILL.md">skill file</a> to read first. The <a href="intro/">example round</a> plays the steps beside the project folder.</p>
         <ol class="steps example">
-          <li data-skill="Prepare and explore">
+          <li data-skill="Prepare">
             <p class="step-head"><span class="step-name">Prepare.</span> Create an empty folder, download <a href="intro/example/letters.csv" download>letters.csv</a> into it and start the agent there. When it asks, give the purpose “see in which years the family wrote and where the correspondence has gaps”, the question “in which years did the family write, and where are the gaps?” and the user story “As an editor, I want to see all letters whose dating is uncertain next to their date evidence, so that I can decide which datings the edition can assert.”</p>
             <figure class="dh-code field is-prompt">
               <figcaption><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-prompt"></use></svg>Sentence for the agent</figcaption>
@@ -388,7 +388,7 @@ cp -r Promptotyping/skills/promptotyping ~/.claude/skills/</code></pre>
             </figure>
             <p class="step-result"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-result"></use></svg><span class="visually-hidden">Result. </span>A Git repository with the letters in <code>data/</code> and <code>knowledge/project.md</code>, which holds purpose, question and the provisional user story in your words.</p>
           </li>
-          <li data-skill="Prepare and explore">
+          <li data-skill="Explore">
             <p class="step-head"><span class="step-name">Explore.</span> Check the statements the agent is least sure of against the rows they name.</p>
             <figure class="dh-code field is-prompt">
               <figcaption><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-prompt"></use></svg>Sentence for the agent</figcaption>

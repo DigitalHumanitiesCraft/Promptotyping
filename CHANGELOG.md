@@ -8,7 +8,7 @@ The first numbered release, prepared to accompany the paper on Promptotyping.
 
 ### Added
 
-- The Promptotyping skill under `skills/promptotyping/`, with seven operations in one `SKILL.md`, namely Orient, Distil, Implement, Curate, Synthesise, Prune and Hand off. Distil, Curate, Synthesise and Prune are the operations of knowledge curation, each with purpose, trigger, inputs, procedure, resulting change, check and delimitation.
+- The Promptotyping skill under `skills/promptotyping/`, with eight operations in one `SKILL.md`, namely Orient, Explore, Distil, Implement, Curate, Synthesise, Prune and Hand off. Orient establishes where the project stands and changes no file. Explore is the form of work Exploration as an operation of its own, in which the project learns what its research data can and cannot support. Distil, Curate, Synthesise and Prune are the operations of knowledge curation, each with purpose, trigger, inputs, procedure, resulting change, check and delimitation.
 - Eval cases for the skill under `tools/skill-evals/`, covering handoff, curation and pruning. They lie outside the skill package, so an installation and the download archive carry only `SKILL.md` and the agent metadata.
 - Installation instructions for Claude Code, Codex and environments that read `AGENTS.md`, in the README and on the Skills page.
 - The five practices of Promptotyping on the Application page.

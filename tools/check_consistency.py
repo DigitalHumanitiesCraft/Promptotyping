@@ -411,10 +411,10 @@ def check_start_page(documents) -> None:
         fail("start", "start page lists %s, which the catalogue does not carry" % slug)
 
     skill = read_text(SKILL_DIR / "SKILL.md")
-    operations = re.findall(r"^\| (Orient|Distil|Implement|Curate|Synthesise|Prune|Hand off) \|",
+    operations = re.findall(r"^\| (Orient|Explore|Distil|Implement|Curate|Synthesise|Prune|Hand off) \|",
                             skill, re.M)
-    if len(operations) != 7:
-        fail("start", "SKILL.md no longer carries the seven operations in its table")
+    if len(operations) != 8:
+        fail("start", "SKILL.md no longer carries the eight operations in its table")
     named = ", ".join(operations[:-1]) + " and " + operations[-1] if operations else ""
     if named not in plain(page):
         fail("start", "the start page does not name the skill's operations as SKILL.md orders them")

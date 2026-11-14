@@ -2,7 +2,7 @@
 title: System Prompts und Skills
 slug: skills
 status: complete
-updated: 2026-11-11
+updated: 2026-11-14
 machine-url: https://dhcraft.org/Promptotyping/_content/skills/index.md
 ---
 
@@ -16,7 +16,7 @@ Im konkreten Repository liegt diese Schicht im Action-Layer, also in `CLAUDE.md`
 
 Der kanonische Promptotyping-Skill liegt in diesem Repository unter [`skills/promptotyping/`](https://github.com/DigitalHumanitiesCraft/Promptotyping/tree/main/skills/promptotyping). Er folgt dem Agent-Skills-Format, einem Ordner mit einer `SKILL.md`, deren Frontmatter Name und Auslösebeschreibung trägt. Er enthält keine Pfade oder Regeln einer bestimmten Maschine. Die [Skill-Ansicht](#skills-promptotyping) unterhalb dieses Abschnitts rendert die `SKILL.md`. Die Schaltflächen kopieren oder laden die vollständige Datei, und der Paketlink öffnet den Ordner. Die Prüffälle des Skills liegen außerhalb des Pakets unter `tools/skill-evals/` im Repository.
 
-Der Skill trägt sieben Operationen in einer Datei. Orient liest Action-Layer, `INDEX.md` und `handoff.md`. Distil, Curate, Synthesise und Prune sind die vier Operationen der Wissenskuration, also das Destillieren, das Wahrhalten gegen Quellen und Projektstand, das Verbinden mehrerer Stücke zu einer neuen Aussage und das Zurückschneiden dessen, was nicht mehr gilt oder niemand braucht. Prune schließt die Verdichtung des Journals ein. Implement baut ein geprüftes Inkrement, Hand off verarbeitet die Process Inbox. Die Operationen teilen Lesepfad, Gegenstand und Grenzen. Deshalb stehen sie als Abschnitte eines Skills und nicht als getrennte Skills, die dieselben Regeln viermal wiederholen und um denselben Auslöser konkurrieren würden.
+Der Skill trägt acht Operationen in einer Datei. Orient stellt fest, wo das Projekt steht, liest dafür Action-Layer, `INDEX.md` und `handoff.md` und ändert keine Datei. Explore ist die Arbeitsform Exploration als eigene Operation. Das Projekt lernt dabei, was seine Forschungsdaten tragen und wo sie enden, und hält es in Skripten, Datenprofil und `data.md` fest. Distil, Curate, Synthesise und Prune sind die vier Operationen der Wissenskuration, also das Destillieren, das Wahrhalten gegen Quellen und Projektstand, das Verbinden mehrerer Stücke zu einer neuen Aussage und das Zurückschneiden dessen, was nicht mehr gilt oder niemand braucht. Prune schließt die Verdichtung des Journals ein. Implement baut ein geprüftes Inkrement, Hand off verarbeitet die Process Inbox. Die Operationen teilen Lesepfad, Gegenstand und Grenzen. Deshalb stehen sie als Abschnitte eines Skills und nicht als getrennte Skills, die dieselben Regeln viermal wiederholen und um denselben Auslöser konkurrieren würden.
 
 ### Installation
 

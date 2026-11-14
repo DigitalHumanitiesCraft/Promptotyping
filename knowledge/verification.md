@@ -7,7 +7,7 @@ status: active
 language: en
 version: 0.8
 created: 2026-07-26
-updated: 2026-11-11
+updated: 2026-11-14
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Opus 5)
 method:
@@ -254,7 +254,7 @@ Under `intro/tests/` the introduction page (A47) is held to the outcomes a reade
 
 ### V24. The static start page repeats its sources verbatim
 
-**Claim.** The start page in `index.html` (A48) offers every catalogue template with the `mark` of `data/promptotyping-documents.json`, its Markdown file and its template panel, names the skill's seven operations in the order of `skills/promptotyping/SKILL.md`, names for every example step a section that `SKILL.md` carries (A51; until 2026-11-10 the group held the example's prompts verbatim against `_content/tutorial.md`), names the paper's three cases with the addresses of `data/case-studies.json`, and offers two archives that hold exactly the files of the single links. The Pages workflow builds those archives.
+**Claim.** The start page in `index.html` (A48) offers every catalogue template with the `mark` of `data/promptotyping-documents.json`, its Markdown file and its template panel, names the skill's eight operations in the order of `skills/promptotyping/SKILL.md`, names for every example step a section that `SKILL.md` carries (A51; until 2026-11-10 the group held the example's prompts verbatim against `_content/tutorial.md`), names the paper's three cases with the addresses of `data/case-studies.json`, and offers two archives that hold exactly the files of the single links. The Pages workflow builds those archives.
 
 **Why it matters.** The start page is the one place that repeats these sources, and it is static, so a changed condition, operation, prompt or file would otherwise stay behind unseen.
 
