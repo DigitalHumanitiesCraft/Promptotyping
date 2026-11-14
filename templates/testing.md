@@ -255,7 +255,7 @@ A single named guarantee with an explicit claim and a binary or qualitative evid
 
 ### Acceptance
 
-The binding of the tests back to the project goals, for each goal with question, method, verification level and evidence.
+The binding of the tests back to the project goals, for each goal with question, method, verification level and evidence. It is part of verification. The acceptance of a Promptotype for a purpose is a different thing, the judgement of the researchers who work with it.
 
 ### Verification level
 

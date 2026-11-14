@@ -27,7 +27,7 @@ One document carries one routing question. A small repository may let a canonica
 
 ## Document types
 
-Promptotyping distinguishes three types of knowledge document by the kind of knowledge they hold. The type is an analytical distinction and stands in no frontmatter field. The short forms Declarative, Process and Action are used in the templates. The knowledge documents in `knowledge/` together with the agent instructions in the repository root form the project knowledge base.
+Promptotyping distinguishes three types of knowledge document by the kind of knowledge they hold. The type is an analytical distinction and stands in no frontmatter field. The short forms Declarative, Process and Action are used in the templates. All three types form the project knowledge base, the declarative and process documents in `knowledge/` and the agent instruction documents in the repository root.
 
 - Declarative knowledge documents state what holds about the subject, the data, the domain, the research context and the work accepted for the project. Examples are `INDEX.md`, `project.md`, `data.md`, `specification.md` with its decisions or a decision record split off from it such as `architecture-decisions.md`, `architecture.md`, `design.md`, `testing.md`, `plan.md`, `governance.md` and the domain knowledge documents. They outlast changes to code, LLM versions and tools.
 - Process knowledge documents state what is open and how the understanding developed and why, in `journal.md`. It carries what is open at its beginning and the record of the work beneath it, and `journal-archive.md` and Git preserve its earlier wording.

@@ -53,13 +53,25 @@ This knowledge base follows the convention of the Promptotyping Documents in `te
 
 ## Terms
 
+### Acceptance
+
+The judgement of the researchers who work with a Promptotype that it is good enough for a stated purpose. It is distinct from scholarly validation and from passing checks, and a Promptotype can be in use before most of its data are confirmed.
+
 ### Agent instruction document
 
 A document that tells agents how to work. It holds procedures, constraints, the checks to run and pointers to the knowledge a task needs, and it is named `CLAUDE.md` or `AGENTS.md` and lies in the repository root.
 
+### Agentic Engineering
+
+The organisation of the agents' work, which settles how tasks are cut, how state passes from step to step, at which points the researchers come in and how results are checked.
+
 ### Agentic review
 
-An agent examines code, data or knowledge documents, often with a fresh context and against named criteria. Its findings are evidence.
+An agent examines code, data or knowledge documents, often with a fresh context. Its findings are evidence.
+
+### Context Engineering
+
+Deciding what an agent is given for a task. It selects from the research data and the project knowledge base what the task needs and keeps the rest out of the context.
 
 ### Declarative knowledge document
 
@@ -67,7 +79,7 @@ A knowledge document that states what holds, for instance the purpose of the pro
 
 ### Distillation
 
-The form of work that writes what Exploration taught into the knowledge documents, keeping the distinctions, conditions and uncertainties an implementation needs.
+The form of work that writes what Exploration taught into the knowledge documents, keeping every distinction, condition and uncertainty an adequate implementation depends on.
 
 ### Exploration
 
@@ -85,6 +97,10 @@ Examining and revising the project knowledge whenever sources, checking and use 
 
 A Markdown document of a project knowledge base, of one of three types, declarative, process or agent instruction. Declarative and process knowledge documents lie in the folder `knowledge/`, agent instruction documents in the repository root.
 
+### Knowledge Engineering
+
+Eliciting, modelling and curating the researchers' knowledge of the domain, of the data and of their own aims. Its result is the project knowledge base.
+
 ### Operator
 
 The person who directs this repository and decides on its direction, its definitions, its release and what it publishes.
@@ -99,7 +115,7 @@ A knowledge document that states what is open and how the understanding develope
 
 ### Project knowledge base
 
-The knowledge documents of a project together with its agent instructions, versioned with the code.
+The knowledge documents of a project, its agent instructions among them, versioned with the code.
 
 ### Promptotype
 
@@ -119,11 +135,19 @@ The person who decides workflow, technology and the form of the artefact and rep
 
 ### Researchers
 
-The people who know the sources and the field and judge whether an artefact fits. Confirmation, scholarly validation and acceptance lie with them.
+The people who know the sources and the field and judge whether an artefact fits. Scholarly validation and acceptance lie with them. Confirmation lies with whoever has the expertise a decision requires, or with a validated deterministic rule.
 
 ### Scholarly validation
 
-A judgement by people who know the sources and the field. They decide whether the sources warrant a result and whether it is adequate to the research purpose. For a Promptotype it is its acceptance for a purpose.
+A judgement by people who know the sources and the field. They decide whether the sources warrant a result and whether it is adequate to the research purpose. It is distinct from acceptance.
+
+### Status
+
+One of three states of a result. A proposal is what an agent or an LLM produces. It is doubted once anyone who takes part in the work, an agent included, has marked it as doubtful. It is confirmed by a person whose expertise extends as far as the decision demands, or by a validated deterministic rule. Who or what set a status is recorded with it.
+
+### Validated deterministic rule
+
+An executable check that runs over the whole of the real data, has failed where it should on cases whose answers are known, and has been adopted by the researchers for a defined kind of decision.
 
 ### Verification
 
