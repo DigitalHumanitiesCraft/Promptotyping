@@ -2,13 +2,16 @@
    footer, button, code block, figure frame) come from assets/dhcraft/. This file only lays
    out the page: sections, the one-line rows and the start prompt. */
 
+/* The page raises the contrast of the shared tokens: a white ground and the deepest ink,
+   after the operator found the page too grey on 2026-11-14. */
+:root { --dh-ground: #ffffff; --dh-ink: #161d38; --dh-ink-soft: #454d66; }
+
 html { scroll-behavior: smooth; scroll-padding-block-start: var(--dh-space-5); }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 main { padding-block: var(--dh-space-6) 0; }
 main:focus { outline: none; }
 section { margin-block-end: var(--dh-space-7); }
-section + section { padding-block-start: var(--dh-space-6); border-block-start: var(--dh-hairline) solid var(--dh-line); }
 
 h1 { margin: 0 0 var(--dh-space-4); }
 h2 { margin: 0 0 var(--dh-space-3); }
@@ -28,6 +31,8 @@ main p { margin: 0 0 var(--dh-space-4); }
 /* The figure is drawn on white, so its frame is white in both schemes. */
 .dh-figure__canvas { background-color: #ffffff; }
 .dh-figure__canvas > img { min-inline-size: 46rem; }
+/* The second figure opens one Promptotype and follows the two paragraphs. */
+.example { margin-block-start: var(--dh-space-5); max-inline-size: 60rem; }
 
 .repo-link { display: inline-flex; align-items: center; gap: var(--dh-space-2); min-block-size: var(--dh-tap); color: var(--dh-ink-soft); text-decoration: none; }
 .repo-link:hover, .repo-link:focus-visible { color: var(--dh-ink); text-decoration: underline; }
@@ -49,10 +54,13 @@ main p { margin: 0 0 var(--dh-space-4); }
    semibold weight stays the sign of a link. */
 .calls > li > code { white-space: nowrap; }
 
-/* The start prompt is prose a reader copies, so it stands in the text face and its lines
-   wrap inside the block. */
+/* The start prompt is prose a reader copies, so its lines wrap inside the field. It stands
+   in Consolas where the system has it, as on the operator's slides. */
 .start-prompt pre { white-space: pre-wrap; overflow-wrap: anywhere; }
-.start-prompt pre, .start-prompt code { font-family: inherit; font-size: inherit; }
+.start-prompt pre, .start-prompt code { font-family: Consolas, var(--dh-font-mono); }
+
+/* A term stands out where the text introduces it, so a reader who scrolls finds it. */
+dfn { font-style: italic; font-weight: 600; }
 
 @media (max-width: 40rem) {
   .rows li, #use-cases .rows li { grid-template-columns: minmax(0, 1fr); padding-block: var(--dh-space-3); }
@@ -67,16 +75,18 @@ main p { margin: 0 0 var(--dh-space-4); }
    them, in the column that would otherwise stay empty. The panel stays in view while the
    page scrolls, so citing needs no scrolling. Where both columns do not fit, it follows
    the sections as the last part. */
-.layout { display: grid; grid-template-columns: minmax(0, var(--text-width)) minmax(0, 1fr); gap: var(--dh-space-6); align-items: start; margin-block-end: var(--dh-space-7); padding-block-start: var(--dh-space-6); border-block-start: var(--dh-hairline) solid var(--dh-line); }
+.layout { display: grid; grid-template-columns: minmax(0, var(--text-width)) minmax(0, 1fr); gap: var(--dh-space-6); align-items: start; margin-block-end: var(--dh-space-7); }
 .layout__main > section:last-child { margin-block-end: 0; }
 
-.cite { position: sticky; inset-block-start: var(--dh-space-5); padding: var(--dh-space-4); background-color: var(--dh-surface); border: var(--dh-hairline) solid var(--dh-line); border-radius: var(--dh-radius-m); font-size: var(--dh-step--1); }
-.cite h2 { margin: 0; font-size: var(--dh-step-1); }
+.cite { position: sticky; inset-block-start: var(--dh-space-5); font-size: var(--dh-step--1); }
+.cite h2 { margin: 0 0 var(--dh-space-2); font-size: var(--dh-step-1); }
 .cite p { margin: 0; }
-/* Inside the panel the citation is plain text with the copy button of the code block. */
-.cite .dh-code { margin: calc(-1 * var(--dh-space-5)) 0 var(--dh-space-3); max-inline-size: none; }
-.cite .dh-code pre { padding: 0; border: 0; background: none; white-space: pre-wrap; overflow-wrap: anywhere; }
+/* Beside the sections the citation is plain text without a frame, with the copy icon of
+   the field at its upper right. */
+.cite .dh-code { margin: 0 0 var(--dh-space-3); max-inline-size: none; }
+.cite .dh-code pre { padding: 0; padding-inline-end: 2.5rem; border: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
 .cite .dh-code pre, .cite .dh-code code { font-family: inherit; font-size: inherit; }
+.cite .dh-copy { margin: 0; }
 .cite__links { display: flex; flex-wrap: wrap; gap: var(--dh-space-2) var(--dh-space-4); font-weight: 600; }
 .cite__links a { text-decoration: none; }
 .cite__links a:hover, .cite__links a:focus-visible { text-decoration: underline; }

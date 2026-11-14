@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 720" width="1300" height="720" role="img" aria-labelledby="pb-t pb-d">
+  <title id="pb-t">A Promptotype opened, with CorrespExplorer as the example</title>
+  <desc id="pb-d">A Promptotype is a prototype taken together with the project knowledge base and the research data from which it was built. The example is CorrespExplorer. Its prototype offers coordinated visualisation views. Its research data are correspondence metadata in CMIF-XML and are the basis of building. Its project knowledge base holds declarative documents, project.md, data.md, specification.md and design.md, process documents, journal.md and plan.md, and the agent instructions in CLAUDE.md, and it describes the research data. The files shown are a selection. Each state of the Promptotype is versioned.</desc>
+  <style>
+    svg { color: #1e2749; background: #ffffff; }
+    text { fill: #1e2749; font-family: Arial, Helvetica, sans-serif; text-anchor: middle; }
+    .head { font-size: 20px; font-weight: 700; letter-spacing: 2.5px; }
+    .title { font-size: 22px; }
+    .sub { font-size: 20px; }
+    .mono { font-family: Consolas, Menlo, "DejaVu Sans Mono", "Courier New", monospace; font-size: 18px; }
+    .start { text-anchor: start; }
+    .end { text-anchor: end; }
+    .line { fill: none; stroke: #1e2749; stroke-width: 1.8; }
+    .shape { fill: #ffffff; stroke: #1e2749; stroke-width: 1.8; }
+    .thin { fill: none; stroke: #1e2749; stroke-width: 1.3; }
+    .fill-surface { fill: #ffffff; }
+    .cat-proto { stroke: #b8701a; }
+    .cat-base { stroke: #4a7ab8; fill: #edf2f8; }
+    .kb-frame { fill: none; stroke: #4a7ab8; stroke-width: 1.3; stroke-dasharray: 7 6; }
+  </style>
+  <rect x="0" y="0" width="1300" height="720" fill="#ffffff"/>
+  <defs>
+    <marker id="pb-arrow" viewBox="0 0 18 16" refX="17" refY="8" markerWidth="18" markerHeight="16" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M1,1 L17,8 L1,15 Z" class="fill-surface" stroke="currentColor" stroke-width="1.6" stroke-linejoin="miter"/>
+    </marker>
+    <g id="pb-map">
+      <path d="M22,4 C30,-2 40,6 48,2 C58,-2 62,10 70,12 C80,14 84,26 78,36 C86,46 76,58 66,58 C58,70 44,62 36,68 C26,74 14,66 14,54 C2,50 0,36 8,28 C4,16 12,6 22,4 Z" fill="none"/>
+    </g>
+    <g id="pb-sheet">
+      <path d="M0,0 H70 L94,24 V130 H0 Z" class="fill-surface"/>
+      <path d="M70,0 V24 H94" fill="none"/>
+    </g>
+  </defs>
+
+  <rect x="44" y="44" width="1230" height="620" rx="14" class="shape cat-proto"/>
+  <rect x="32" y="32" width="1230" height="620" rx="14" class="shape cat-proto"/>
+  <rect x="20" y="20" width="1230" height="620" rx="14" class="shape cat-proto"/>
+
+  <text class="head title" x="635" y="60">PROMPTOTYPE</text>
+  <text class="sub" x="635" y="90">example: CorrespExplorer</text>
+
+  <text class="head" x="400" y="146">PROTOTYPE</text>
+  <svg x="248" y="160" width="305" height="185" viewBox="995 235 305 185">
+    <rect class="shape" x="1000" y="240" width="295" height="175" rx="4"/>
+    <g class="thin">
+      <path d="M1000,253 H1295"/>
+      <circle cx="1009" cy="246.500" r="2.300"/><circle cx="1017" cy="246.500" r="2.300"/><circle cx="1025" cy="246.500" r="2.300"/>
+      <rect x="1012" y="267" width="84" height="135"/>
+      <rect x="1107" y="267" width="84" height="135"/>
+      <rect x="1202" y="267" width="82" height="135"/>
+      <use href="#pb-map" transform="translate(1019,290) scale(0.840,1.240)"/>
+      <circle cx="1037" cy="337" r="3.200"/><circle cx="1071" cy="316" r="3.200"/><circle cx="1054" cy="353" r="3.200"/><circle cx="1078" cy="333" r="3.200"/>
+      <rect x="1113" y="283" width="34" height="8"/><rect x="1117" y="299" width="42" height="8"/><rect x="1124" y="315" width="46" height="8"/><rect x="1131" y="331" width="38" height="8"/><rect x="1138" y="347" width="45" height="8"/><rect x="1143" y="363" width="36" height="8"/><rect x="1129" y="379" width="36" height="8"/>
+      <path d="M1247,299 L1220,331 L1232,353 L1217,367 M1247,299 L1270,335 L1247,367 L1232,353"/>
+      <circle cx="1247" cy="299" r="6" class="fill-surface"/><circle cx="1220" cy="331" r="6" class="fill-surface"/><circle cx="1270" cy="335" r="6" class="fill-surface"/><circle cx="1217" cy="367" r="6" class="fill-surface"/><circle cx="1247" cy="367" r="6" class="fill-surface"/>
+    </g>
+  </svg>
+  <text class="sub" x="400" y="374">coordinated visualisation views</text>
+
+  <text class="head" x="960" y="146">RESEARCH DATA</text>
+  <text class="sub" x="960" y="174">correspondence metadata, CMIF-XML</text>
+  <g class="shape">
+    <path d="M898,214 V282 A62,16 0 0 0 1022,282 V214"/>
+    <ellipse cx="960" cy="214" rx="62" ry="16"/>
+  </g>
+  <path class="thin" d="M898,248 A62,16 0 0 0 1022,248"/>
+
+  <path class="line" d="M894,252 H556" marker-end="url(#pb-arrow)"/>
+  <text class="sub" x="725" y="240">the basis of building</text>
+
+  <path class="thin" d="M960,402 V302" stroke-dasharray="5 5" marker-end="url(#pb-arrow)"/>
+  <text class="sub start" x="974" y="358">describes</text>
+
+  <rect class="kb-frame" x="50" y="402" width="1170" height="216" rx="10"/>
+  <text class="head" x="635" y="434">PROJECT KNOWLEDGE BASE</text>
+  <text class="sub" x="446" y="476">declarative</text>
+  <text class="sub" x="845" y="476">process</text>
+  <text class="sub" x="1075" y="476">agent instructions</text>
+  <g class="thin">
+    <path d="M197,492 V485 H696 V492 M740,492 V485 H950 V492 M1030,492 V485 H1120 V492"/>
+  </g>
+  <g class="shape cat-base" stroke-linejoin="miter">
+    <use href="#pb-sheet" transform="translate(223.500,500) scale(0.500)"/>
+    <use href="#pb-sheet" transform="translate(333.500,500) scale(0.500)"/>
+    <use href="#pb-sheet" transform="translate(472.500,500) scale(0.500)"/>
+    <use href="#pb-sheet" transform="translate(622.500,500) scale(0.500)"/>
+    <use href="#pb-sheet" transform="translate(766.500,500) scale(0.500)"/>
+    <use href="#pb-sheet" transform="translate(876.500,500) scale(0.500)"/>
+    <use href="#pb-sheet" transform="translate(1051.500,500) scale(0.500)"/>
+  </g>
+  <text class="mono" x="247" y="596">project.md</text>
+  <text class="mono" x="357" y="596">data.md</text>
+  <text class="mono" x="496" y="596">specification.md</text>
+  <text class="mono" x="646" y="596">design.md</text>
+  <text class="mono" x="790" y="596">journal.md</text>
+  <text class="mono" x="900" y="596">plan.md</text>
+  <text class="mono" x="1075" y="596">CLAUDE.md</text>
+
+  <text class="sub end" x="1274" y="696">each state versioned</text>
+</svg>
