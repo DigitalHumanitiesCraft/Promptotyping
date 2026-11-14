@@ -147,7 +147,7 @@
         </div>
 
         <noscript>
-          <p class="start-note">Without JavaScript the other pages of this site stay closed. Their text is readable as Markdown, the <a href="_content/tutorial.md">tutorial</a>, <a href="_content/application.md">Application</a>, <a href="_content/verifikation.md">Checking</a>, the <a href="_content/konvention.md">convention</a> and the <a href="skills/promptotyping/SKILL.md">skill</a>.</p>
+          <p class="start-note">Without JavaScript the other pages of this site stay closed. Their text is readable as Markdown, the <a href="_content/tutorial.md">tutorial</a>, <a href="_content/application.md">Application</a>, <a href="_content/verifikation.md">Checking</a> and the <a href="_content/konvention.md">convention</a>. The skill lives in the repository <a href="https://github.com/DigitalHumanitiesCraft/promptotyping-skill">promptotyping-skill</a>.</p>
         </noscript>
 
         <figure class="dh-figure practice" id="start-figure">
@@ -301,7 +301,7 @@
           <div class="doc-type">
             <p class="doc-type-name">Process knowledge documents</p>
             <p class="doc-type-gloss">how the understanding developed and what is open</p>
-            <ul class="sheets"><li class="sheet"><code>journal.md</code></li><li class="sheet"><code>handoff.md</code></li><li class="sheet"><code>plan.md</code></li></ul>
+            <ul class="sheets"><li class="sheet"><code>journal.md</code></li><li class="sheet"><code>plan.md</code></li></ul>
           </div>
           <div class="doc-type">
             <p class="doc-type-name">Agent instruction documents</p>
@@ -327,12 +327,12 @@
         </ul>
         <ol class="steps">
           <li>
-            <p class="step-head"><span class="step-name">Install an agent and the skill.</span> Install an AI coding agent such as Claude Code or Codex, Git and Python, then copy the skill into the agent's skills folder. The same skill is published as the repository <a href="https://github.com/DigitalHumanitiesCraft/promptotyping-skill">promptotyping-skill</a>, tagged per version, whose README gives the installation for each agent. Codex and agents that read only <code>AGENTS.md</code> are covered on the <a href="#skills-promptotyping">skill page</a>.</p>
+            <p class="step-head"><span class="step-name">Install an agent and the skill.</span> Install an AI coding agent such as Claude Code or Codex, Git and Python, then copy the skill into the agent's skills folder. The skill lives in the repository <a href="https://github.com/DigitalHumanitiesCraft/promptotyping-skill">promptotyping-skill</a>, tagged per version, whose README gives the installation for each agent and whose changelog records every change.</p>
             <figure class="dh-code field">
               <figcaption><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-terminal"></use></svg>Shell, copies the skill for Claude Code</figcaption>
-<pre><code>git clone https://github.com/DigitalHumanitiesCraft/Promptotyping.git
+<pre><code>git clone https://github.com/DigitalHumanitiesCraft/promptotyping-skill.git
 mkdir -p ~/.claude/skills
-cp -r Promptotyping/skills/promptotyping ~/.claude/skills/</code></pre>
+cp -r promptotyping-skill/promptotyping ~/.claude/skills/</code></pre>
             </figure>
           </li>
           <li>
@@ -348,9 +348,8 @@ cp -r Promptotyping/skills/promptotyping ~/.claude/skills/</code></pre>
           <div class="download-group">
             <p class="download-group-name">Skill</p>
             <ul class="download-list">
-              <li data-file="skill"><a class="file-get" href="skills/promptotyping/SKILL.md" download><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"></use></svg>SKILL.md</a> <span class="doc-when">five subcommands</span></li>
+              <li data-file="skill"><a class="file-get" href="https://github.com/DigitalHumanitiesCraft/promptotyping-skill"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-external"></use></svg>promptotyping-skill</a> <span class="doc-when">five subcommands</span></li>
             </ul>
-            <a class="dh-btn download-all" href="downloads/promptotyping-skill.zip" download><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-archive"></use></svg>Skill package (ZIP)</a>
           </div>
           <div class="download-group">
             <p class="download-group-name">Templates</p>
@@ -360,7 +359,6 @@ cp -r Promptotyping/skills/promptotyping ~/.claude/skills/</code></pre>
             <li data-slug="user-stories"><a class="file-get" href="_content/promptotyping-document/user-stories.md" download><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"></use></svg>user-stories.md</a> <span class="doc-when is-always">always</span> <a class="file-about" href="#promptotyping-document-user-stories" aria-label="About the user-stories template">about</a></li>
             <li data-slug="action-layer"><a class="file-get" href="_content/promptotyping-document/action-layer.md" download><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"></use></svg>action-layer.md</a> <span class="doc-when is-always">always</span> <a class="file-about" href="#promptotyping-document-action-layer" aria-label="About the action-layer template">about</a></li>
             <li data-slug="journal"><a class="file-get" href="_content/promptotyping-document/journal.md" download><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"></use></svg>journal.md</a> <span class="doc-when is-always">always</span> <a class="file-about" href="#promptotyping-document-journal" aria-label="About the journal template">about</a></li>
-            <li data-slug="handoff"><a class="file-get" href="_content/promptotyping-document/handoff.md" download><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"></use></svg>handoff.md</a> <span class="doc-when is-always">always</span> <a class="file-about" href="#promptotyping-document-handoff" aria-label="About the handoff template">about</a></li>
             <li data-slug="index"><a class="file-get" href="_content/promptotyping-document/index.md" download><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"></use></svg>index.md</a> <span class="doc-when">more than three documents</span> <a class="file-about" href="#promptotyping-document-index" aria-label="About the index template">about</a></li>
             <li data-slug="data"><a class="file-get" href="_content/promptotyping-document/data.md" download><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"></use></svg>data.md</a> <span class="doc-when">the project uses data</span> <a class="file-about" href="#promptotyping-document-data" aria-label="About the data template">about</a></li>
             <li data-slug="architecture"><a class="file-get" href="_content/promptotyping-document/architecture.md" download><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"></use></svg>architecture.md</a> <span class="doc-when">more than a static site</span> <a class="file-about" href="#promptotyping-document-architecture" aria-label="About the architecture template">about</a></li>
@@ -372,27 +370,28 @@ cp -r Promptotyping/skills/promptotyping ~/.claude/skills/</code></pre>
             <li data-slug="plan"><a class="file-get" href="_content/promptotyping-document/plan.md" download><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"></use></svg>plan.md</a> <span class="doc-when">phases or milestones</span> <a class="file-about" href="#promptotyping-document-plan" aria-label="About the plan template">about</a></li>
             <li data-slug="report"><a class="file-get" href="_content/promptotyping-document/report.md" download><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"></use></svg>report.md</a> <span class="doc-when">an external status report</span> <a class="file-about" href="#promptotyping-document-report" aria-label="About the report template">about</a></li>
             <li data-slug="integration"><a class="file-get" href="_content/promptotyping-document/integration.md" download><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"></use></svg>integration.md</a> <span class="doc-when">a cross-project contract</span> <a class="file-about" href="#promptotyping-document-integration" aria-label="About the integration template">about</a></li>
+            <li data-slug="handoff"><a class="file-get" href="_content/promptotyping-document/handoff.md" download><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"></use></svg>handoff.md</a> <span class="doc-when">superseded by journal.md</span> <a class="file-about" href="#promptotyping-document-handoff" aria-label="About the handoff template">about</a></li>
             </ul>
             <a class="dh-btn download-all" href="downloads/promptotyping-templates.zip" download><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-archive"></use></svg>All templates (ZIP)</a>
           </div>
         </section>
 
         <h2 id="start-example">Skill</h2>
-        <p class="start-prose-line">With the skill installed as in the first step of <a href="#start-reuse">Reuse</a>, you say what you want in your own words, and the agent takes the procedure from the skill. Five subcommands name the moments at which you call it directly. Building has no subcommand and follows the rules in the skill. The <a href="#skills-promptotyping">skill page</a> shows the full text, and the <a href="intro/">introduction</a> plays one round on an invented family correspondence.</p>
+        <p class="start-prose-line">With the skill installed as in the first step of <a href="#start-reuse">Reuse</a>, you say what you want in your own words, and the agent takes the procedure from the skill. Five subcommands name the moments at which you call it directly. Building has no subcommand and follows the rules in the skill. The repository <a href="https://github.com/DigitalHumanitiesCraft/promptotyping-skill">promptotyping-skill</a> holds the skill with the procedure of each subcommand, and the <a href="intro/">introduction</a> plays one round on an invented family correspondence.</p>
         <ol class="steps example">
-          <li data-skill="orient">
+          <li>
             <p class="step-head"><span class="step-name"><code>/promptotyping orient</code></span> starts a session. It establishes where the project stands and changes no file.</p>
           </li>
-          <li data-skill="explore">
+          <li>
             <p class="step-head"><span class="step-name"><code>/promptotyping explore</code></span> establishes what the data can and cannot support and records it with its evidence.</p>
           </li>
-          <li data-skill="distill">
+          <li>
             <p class="step-head"><span class="step-name"><code>/promptotyping distill</code></span> models the findings as knowledge documents, with epics and user stories.</p>
           </li>
-          <li data-skill="curate">
+          <li>
             <p class="step-head"><span class="step-name"><code>/promptotyping curate</code></span> checks and corrects the knowledge documents, against the project, against outside sources, or through a review with a fresh context.</p>
           </li>
-          <li data-skill="handoff">
+          <li>
             <p class="step-head"><span class="step-name"><code>/promptotyping handoff</code></span> ends a session. It writes the journal, states what is open and commits without pushing.</p>
           </li>
         </ol>

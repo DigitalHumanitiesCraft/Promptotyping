@@ -18,7 +18,7 @@ template:
   version: 0.2
   url: https://dhcraft.org/Promptotyping/promptotyping-document/verification
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-verification
-related: [INDEX, specification, architecture, handoff, journal]
+related: [INDEX, specification, architecture, journal]
 ---
 
 # Verification
@@ -29,17 +29,12 @@ The dividing line is the one part 5 draws. Where a rule decides, a script runs i
 
 ## What is checked automatically
 
-The V-series below checks portal consistency. The benchmark has a separate
-[tooling verification entry point](../research-artefacts/promptotyping-bench/README.md#check-the-existing-tooling).
-Its tests cover fixture packaging, source integrity, scoring, episode retention,
-task fingerprints and explicit study ineligibility. Passing them supplies
-engineering evidence; the benchmark specification owns the distinct functional,
-scholarly and effort assessment needed for a real-data study.
+The V-series below checks portal consistency.
 
 For a combined local regression run from the repository root:
 
 ```sh
-python -m pytest tools/tests vault/tests research-artefacts/promptotyping-bench intro/tests -q -p no:cacheprovider
+python -m pytest tools/tests vault/tests intro/tests -q -p no:cacheprovider
 python tools/check_consistency.py
 python vault/tools/validate.py vault
 ```
@@ -70,7 +65,7 @@ Under `intro/tests/` the introduction page (A47) is held to the outcomes a reade
 
 **Why it matters.** A catalogue entry without a file is a dead address that a foreign repository may already carry in a `template:` field. A file without an entry is either an oversight or a deliberate hold, and only the second is acceptable.
 
-**Verdict, 2026-08-21.** Passes, with seventeen slugs on both sides and nothing held back. `handoff` is the seventeenth mandatory Process slug. The `HELD_BACK` map stays in the script as the mechanism for the next deliberate hold.
+**Verdict, 2026-08-21.** Passes, with seventeen slugs on both sides and nothing held back. `handoff` was then the seventeenth mandatory Process slug and is superseded since 2026-11-14 (V17); it keeps its file and catalogue entry. The `HELD_BACK` map stays in the script as the mechanism for the next deliberate hold.
 
 ### V3. The action layer lists the catalogue's slugs
 
@@ -178,17 +173,17 @@ Under `intro/tests/` the introduction page (A47) is held to the outcomes a reade
 
 ### V15. Every relative Markdown link resolves
 
-**Claim.** Every relative Markdown link in the repository root, `knowledge/`, `_content/`, `research-artefacts/`, `snapshots/` and `handoffs/` points at a file that exists. External addresses stay out, they belong to the opt-in URL pass of V6; a fragment-only link is an anchor and belongs to V8. Grounded Vault anchors are checked by its own validator; imported source representations retain their original example links.
+**Claim.** Every relative Markdown link in the repository root, `knowledge/`, `_content/`, `snapshots/` and `handoffs/` points at a file that exists. External addresses stay out, they belong to the opt-in URL pass of V6; a fragment-only link is an anchor and belongs to V8. Grounded Vault anchors are checked by its own validator; imported source representations retain their original example links.
 
 **Why it matters.** A consolidation round deletes a document and can leave incoming links behind. The round of 2026-07-29/30 consolidated `paper-writing.md`, `paper-argument-map.md` and `submission-zfdg.md` into the paper specification (removed 2026-10-28); seven links to those three names survived until 2026-07-31. An eighth link in the design template mirror rendered an illustrative path into a file that never existed here. This group detects that failure mode after later consolidations and moves.
 
-**Procedure.** Read Markdown in the named areas, take each link whose target is neither an absolute URL nor a bare fragment, strip the fragment, and require the target to exist relative to the linking file or to the repository root. Root-relative resolution is needed for material rendered by the portal, including the paper figure. The benchmark, snapshots and handoffs were added to this check during the knowledge refactor of 2026-09-05, with regression cases for moved authoring documents and portal assets.
+**Procedure.** Read Markdown in the named areas, take each link whose target is neither an absolute URL nor a bare fragment, strip the fragment, and require the target to exist relative to the linking file or to the repository root. Root-relative resolution is needed for material rendered by the portal, including the paper figure. The benchmark, snapshots and handoffs were added to this check during the knowledge refactor of 2026-09-05, with regression cases for moved authoring documents and portal assets. The benchmark area left the check on 2026-11-14, when `research-artefacts/` was removed from the repository. Since then a dated record (a file under `snapshots/`, or status `snapshot` or `archived`) keeps its links into the areas removed that day, which `RETIRED_PATHS` in `tools/check_consistency.py` names, and the run lists them as notes; every other document fails on such a link, and a dated record fails on any other missing target. Regression cases hold all three.
 
 **Verdict, 2026-07-31.** Passes, after the eight links were repaired. The regression case is a probe link to a non-existent file, which the check reports with file and target.
 
 ### V16. Every knowledge document carries the convention's frontmatter core
 
-**Claim.** Every Markdown document under `knowledge/` carries the mandatory frontmatter core of the Knowledge Documents convention (`title`, `project` with `name` and `repository`, `method` with `name` and `url`, `status` from the template vocabulary, `created` and `updated` as ISO dates). The headerless paper is a Research Artefact under `research-artefacts/` and lies outside this check. The published machine form of the vocabulary, `schema/knowledge-document.schema.json`, keeps its `required` list and status enum identical to what this group checks, so schema and check cannot drift apart silently.
+**Claim.** Every Markdown document under `knowledge/` carries the mandatory frontmatter core of the Knowledge Documents convention (`title`, `project` with `name` and `repository`, `method` with `name` and `url`, `status` from the template vocabulary, `created` and `updated` as ISO dates). The published machine form of the vocabulary, `schema/knowledge-document.schema.json`, keeps its `required` list and status enum identical to what this group checks, so schema and check cannot drift apart silently.
 
 **Why it matters.** The site publishes the convention and is its own reference implementation; a Knowledge Document here that ignores the mandatory core undercuts the convention it hosts. The first run found exactly that in the paper specification (removed 2026-10-28), which carried no frontmatter. The schema file also answers the repository issue that the YAML header lacked a machine-readable schema; other repositories can validate against the published address.
 
@@ -198,17 +193,25 @@ Under `intro/tests/` the introduction page (A47) is held to the outcomes a reade
 
 ### V17. The naming and document-type contract stays coherent
 
-**Claim.** The catalogue contains exactly seventeen slugs. `handoff` is present with function Handoff, type Process, trigger always, and a public mirror; `testing` is Action. Current normative surfaces contain none of the retired generic names `pipeline.md`, `engines.md`, `infrastruktur.md`, `decisions.md`, `requirements.md`, `features.md`, `analyse.md`, `exploration.md`, or `JOURNAL.md`.
+**Claim.** The catalogue contains exactly seventeen slugs. `journal` is present with the Provenance function, type Process and trigger always, and its template block opens with `## Open` and "Nothing open." and carries the field Verworfen. `handoff` is present with a public mirror that carries its superseded notice, and its catalogue entry is marked superseded by `journal.md` rather than triggered always; the type comparison with the convention skips it, because no convention row carries its function any more. `testing` is Action. Current normative surfaces contain none of the retired generic names `pipeline.md`, `engines.md`, `infrastruktur.md`, `decisions.md`, `requirements.md`, `features.md`, `analyse.md`, `exploration.md`, or `JOURNAL.md`.
 
-**Why it matters.** These statements form one routing contract. A missing Process Inbox loses open deltas, a declarative Testing classification sends a formal failure to the wrong document, and a generic example reintroduces the filename ambiguity the Naming Contract removed.
+**Why it matters.** These statements form one routing contract. A journal template without `## Open` loses the open points, a superseded template that reads as mandatory sends projects back to the earlier rule, a declarative Testing classification sends a formal failure to the wrong document, and a generic example reintroduces the filename ambiguity the Naming Contract removed.
 
 **Procedure.** Check the catalogue size and required entries, then scan the current convention, template catalogue, README, action layer, and current template blocks. Historical journal entries, dated snapshots, explicit historical evidence paragraphs, and version histories are excluded because they record earlier states.
 
 **Verdict, 2026-08-21.** Passes after the Handoff template, catalogue entry, current examples, and regression cases were added.
 
-### V18. The canonical skill is a portable package the site renders
+**Verdict, 2026-11-14.** Passes after the journal rule of 2026-11-14 was mirrored. The regression cases are a journal entry typed Declarative, a handoff entry triggered always, a catalogue without `handoff`, and a journal template without `## Open`. The template block is now read up to the next level-two heading outside a code fence, because the fenced journal block itself carries `## Open`; a further case holds that.
 
-**Claim.** The canonical skill lies under `skills/promptotyping/` with a `SKILL.md` whose frontmatter carries name and description, and its eval cases lie outside the package under `tools/skill-evals/` with fixtures that exist. None of the package files names a path or rule bound to one machine, and `SKILL.md` does not point at the eval cases. The Skills page renders it under `#skills-promptotyping`, the Skills index links the package, and the Pages workflow publishes `skills/`.
+### V18. The retired skill addresses still land
+
+**Claim, since 2026-11-14.** The skill lives in the repository `DigitalHumanitiesCraft/promptotyping-skill` (A42), and the Skills page with the skill and the two system prompts is retired. `registry.js` mounts no Skills page, sends `#skills` to the start page and `#skills-promptotyping` to the start page's section `#start-example`, and keeps the `skills-` anchor family on the start page, and `index.html` carries `#start-example`.
+
+**Procedure, since 2026-11-14.** `check_retired_skill_addresses` in `tools/check_consistency.py` reads `LEGACY_ROUTE_ALIASES`, `ANCHOR_FAMILIES` and `PAGES` from `registry.js` and looks for the target id in `index.html`. Regression cases point the alias elsewhere and mount the page again. Whether the skill itself is sound is checked in its own repository; the eval cases under `tools/skill-evals/` are run by no check here.
+
+**Verdict, 2026-11-14.** Passes after the local package check and the Skills page were retired. The checks of the local package listed below are retired with the copy.
+
+**Claim until 2026-11-14.** The canonical skill lay under `skills/promptotyping/` with a `SKILL.md` whose frontmatter carries name and description, and its eval cases lie outside the package under `tools/skill-evals/` with fixtures that exist. None of the package files named a path or rule bound to one machine, and `SKILL.md` did not point at the eval cases. The Skills page rendered it under `#skills-promptotyping`, the Skills index linked the package, and the Pages workflow published `skills/`.
 
 **Why it matters.** The skill is the installable form of the practice (A42). A machine-bound path would break it on other machines, a missing fixture would leave an eval case that cannot run, and an unpublished folder would leave the Skills page empty. Eval cases inside the package would be copied by an installation with `cp -r` and packed into the download archive, and a pointer to them in `SKILL.md` would add text to the skill that serves no one who applies it.
 
@@ -254,13 +257,15 @@ Under `intro/tests/` the introduction page (A47) is held to the outcomes a reade
 
 ### V24. The static start page repeats its sources verbatim
 
-**Claim.** The start page in `index.html` (A48) offers every catalogue template with the `mark` of `data/promptotyping-documents.json`, its Markdown file and its template panel, names the skill's five subcommands in the order of `skills/promptotyping/SKILL.md`, names for every example step a section that `SKILL.md` carries (A51; until 2026-11-10 the group held the example's prompts verbatim against `_content/tutorial.md`), names the paper's three cases with the addresses of `data/case-studies.json`, and offers two archives that hold exactly the files of the single links. The Pages workflow builds those archives.
+**Claim.** The start page in `index.html` (A48) offers every catalogue template with the `mark` of `data/promptotyping-documents.json`, its Markdown file and its template panel, names the skill's five subcommands as the fixed list orient, explore, distill, curate and handoff, shows each of them in the Skill section, links the skill repository and points nowhere into `skills/promptotyping`, names the paper's three cases with the addresses of `data/case-studies.json`, and offers a template archive that holds exactly the files of the single links. The Pages workflow builds that archive. Until 2026-11-14 the group held the subcommand names against the table of the local `skills/promptotyping/SKILL.md`, held every example step's `data-skill` against a section or reference file of that skill, and checked a second archive with the skill package; until 2026-11-10 it held the example's prompts verbatim against `_content/tutorial.md`.
 
 **Why it matters.** The start page is the one place that repeats these sources, and it is static, so a changed condition, operation, prompt or file would otherwise stay behind unseen.
 
-**Procedure.** `check_start_page` and `check_download_archives` in `tools/check_consistency.py` compare entries, names, the skill sections of the example steps, cases and links with their sources, check the workflow step, and compare a locally built archive with its sources byte for byte. Regression cases change a condition, remove an entry, drop an operation, name a skill section that does not exist and rename an archive link.
+**Procedure.** `check_start_page` and `check_download_archives` in `tools/check_consistency.py` compare entries, subcommand names, cases and links with their sources, check the workflow step, and compare a locally built archive with its sources byte for byte. Regression cases change a condition, remove an entry, drop a subcommand from the list, rename one in the Skill section, remove the link to the skill repository, add a link into `skills/promptotyping` and rename an archive link.
 
 **Verdict, 2026-11-10.** Passes. Playwright runs against the page at 1440 by 900, 1280 by 800, 820 by 1100, 390 by 844 and 360 by 740, light and dark through the toggle, and with JavaScript disabled show no horizontal document scroll and no console error. The copy button copies the prompt, the glossary tooltip opens with Enter and closes with Escape, a template panel opens and closes, the header navigation marks its page, every hash link of the start page resolves and the retired routes still show their pages. Two independent agentic reviews with a fresh context were worked in, and their points are in the journal of 2026-11-10. Human reading and the owner's acceptance are outstanding.
+
+**Verdict, 2026-11-14.** Passes after the skill moved to its own repository. The group runs without the local skill folder; the rendered page has not been read in a browser.
 
 ### V23. The withdrawn manuscript stays out of the repository (retired)
 

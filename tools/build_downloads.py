@@ -1,9 +1,11 @@
-"""Build the two download archives the start page offers.
+"""Build the template archive the start page offers.
 
-The Pages workflow runs this on the assembled tree, so the archives are made at
+The Pages workflow runs this on the assembled tree, so the archive is made at
 delivery and never committed. Locally it writes into ``downloads/`` (ignored by
 Git) for a preview. ``tools/check_consistency.py`` reuses ``archive_members``
-to hold the archives against the single download links of the start page.
+to hold the archive against the single download links of the start page.
+The skill is not packed here, since it lives in the repository
+promptotyping-skill (2026-11-14).
 
 Usage: python tools/build_downloads.py [output directory]
 """
@@ -18,10 +20,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 CATALOGUE = ROOT / "data" / "promptotyping-documents.json"
 TEMPLATE_DIR = ROOT / "_content" / "promptotyping-document"
-SKILL_DIR = ROOT / "skills" / "promptotyping"
 TEMPLATES_ZIP = "promptotyping-templates.zip"
-SKILL_ZIP = "promptotyping-skill.zip"
-# A fixed timestamp keeps the archives byte-identical across builds.
+# A fixed timestamp keeps the archive byte-identical across builds.
 STAMP = (2026, 1, 1, 0, 0, 0)
 
 
@@ -32,15 +32,8 @@ def template_members() -> list[tuple[str, Path]]:
             for d in documents]
 
 
-def skill_members() -> list[tuple[str, Path]]:
-    """Every file of the skill package, as the repository holds it."""
-    files = sorted(p for p in SKILL_DIR.rglob("*")
-                   if p.is_file() and "__pycache__" not in p.parts)
-    return [("promptotyping/%s" % p.relative_to(SKILL_DIR).as_posix(), p) for p in files]
-
-
 def archive_members() -> dict[str, list[tuple[str, Path]]]:
-    return {TEMPLATES_ZIP: template_members(), SKILL_ZIP: skill_members()}
+    return {TEMPLATES_ZIP: template_members()}
 
 
 def write_archive(target: Path, members: list[tuple[str, Path]]) -> None:

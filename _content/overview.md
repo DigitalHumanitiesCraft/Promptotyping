@@ -39,8 +39,8 @@ The full account is in [Application](#application) and the glossary.
 ## Reuse
 
 1. Check the fit with the six conditions in [Application](#application).
-2. Install an AI coding agent, Git and Python, and copy the [Promptotyping skill](#skills-promptotyping) from `skills/promptotyping/` into the agent's skills folder. The same skill is published as the repository [promptotyping-skill](https://github.com/DigitalHumanitiesCraft/promptotyping-skill), tagged per version, whose README gives the installation for each agent.
-3. Work in your own words. Start the agent in a project folder with your data and say what you want or call a subcommand, as the [tutorial](#tutorial) shows. An agent that cannot load skills reads `skills/promptotyping/SKILL.md` first.
+2. Install an AI coding agent, Git and Python, and copy the Promptotyping skill into the agent's skills folder. The skill lives in the repository [promptotyping-skill](https://github.com/DigitalHumanitiesCraft/promptotyping-skill), tagged per version, whose README gives the installation for each agent and whose changelog records every change.
+3. Work in your own words. Start the agent in a project folder with your data and say what you want or call a subcommand, as the [tutorial](#tutorial) shows. An agent that cannot load skills reads the skill's `SKILL.md` first.
 
 ## Skill
 
@@ -52,7 +52,7 @@ With the skill installed, a person says what they want in their own words, and t
 - `curate` checks and corrects the knowledge documents, against the project, against outside sources, or through a review with a fresh context.
 - `handoff` ends a session. It writes the journal, states what is open and commits without pushing.
 
-Building has no subcommand and follows the rules in the skill. The [introduction](intro/) plays one round on `intro/example/letters.csv`, an invented family correspondence with partly uncertain dates.
+Building has no subcommand and follows the rules in the skill. The repository [promptotyping-skill](https://github.com/DigitalHumanitiesCraft/promptotyping-skill) holds the skill with the procedure of each subcommand. The [introduction](intro/) plays one round on `intro/example/letters.csv`, an invented family correspondence with partly uncertain dates.
 
 ## Limits, licence and citation
 

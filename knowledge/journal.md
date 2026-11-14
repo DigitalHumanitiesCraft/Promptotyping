@@ -7,7 +7,7 @@ status: active
 language: de
 version: 1.1
 created: 2026-05-09
-updated: 2026-11-11
+updated: 2026-11-14
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5, Claude Opus 5.5)
 method:
@@ -18,10 +18,14 @@ template:
   version: 0.4
   url: https://dhcraft.org/Promptotyping/promptotyping-document/journal
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-journal
-related: [INDEX, project, specification, architecture, design, handoff]
+related: [INDEX, project, specification, architecture, design, plan]
 ---
 
 # Journal
+
+## Open
+
+Nothing open.
 
 ## 2026-10-14 Manuskript aus der öffentlichen Auslieferung entfernt
 
@@ -1338,3 +1342,27 @@ Bewusst stehen geblieben sind das Frontmatter-Feld `method` samt Schema und Prü
 - Entschieden: Startseite, README, Übersicht und Skills-Seite nennen das Skill-Repository mit demselben Satz. Der Abschnitt unter `#start-example` heißt Skill und listet die fünf Subcommands mit je einem Satz, das abgespielte Beispiel bleibt auf der Einführungsseite. Die Definition folgt dem Wortlaut des Manuskripts.
 - Geändert: `index.html`, `README.md`, `CHANGELOG.md`, `_content/overview.md`, `_content/skills/index.md`, `_content/glossar.md`, `_content/verifikation.md`, `data/glossar.json`, `intro/content.js`, `knowledge/INDEX.md`, `knowledge/specification.md`.
 - Belege: `python tools/check_consistency.py` mit 18 Prüfgruppen ohne Fehler; Testlauf für `tools/tests` und `intro/tests` grün. Die gerenderte Startseite ist nicht im Browser gelesen.
+
+## 2026-11-14 | Journalregel des Vaults gespiegelt, handoff.md abgelöst
+
+- Anlass: Auftrag der Koordination vom 2026-11-14, die Spiegel der Konvention und der Vorlagen nach der Überarbeitung im Vault (Vault-Commits `f46c4b28` und `a513b114`) nachzuziehen; im Verlauf die Freigabe des Operators, das eigene `knowledge/handoff.md` dieses Repositorys zu entfernen.
+- Befund: Die Spiegel von Journal, Handoff, Action-Layer, Index, Integration und Plan, die englische Konvention, der Katalog, die Startseite, Tutorial, Application-Seite, Glossar, diese Wissensbasis, die Arbeitsregeln in `CLAUDE.md` und die Prüfung V17 trugen noch die Inbox `handoff.md` als Pflichtdokument und ein Journal ohne Offenes und ohne Archiv. `template_fill_block` endete an der ersten Überschrift zweiter Ebene, auch innerhalb des Codeblocks, und hätte den Füllblock der Journal-Vorlage an `## Open` abgeschnitten. Die Anker-Prüfung las den Code-Ausdruck `## Open` in `CLAUDE.md` als Anker.
+- Entschieden: Die Spiegel übernehmen nur die Änderungen der beiden Vault-Commits, mit den Versionen Journal 0.7, Action-Layer 0.7, Index 0.5 und Integration 0.4; `mirrored` bleibt nach der Regel in `_content/MANIFEST.md` beim Datum der Erstspiegelung. Der Callout der Handoff-Vorlage steht als Blockzitat, weil der Renderer keine Callouts kennt. `handoff` bleibt mit seinen Adressen im Katalog, als `superseded by journal.md` markiert, und die Typprüfung gegen die Konvention überspringt abgelöste Vorlagen. Dieses Journal erhält `## Open` am Anfang und behält seine Einträge in alter Form und Reihenfolge, wie die Regel es für bestehende Journale vorsieht. Ob die in `plan.md` vermerkte Migration auf neueste zuerst noch stattfindet, ist offen, weil die neue Regel frühere Einträge in Form und Reihenfolge belässt.
+- Geändert: die sechs Vorlagenspiegel, `_content/konvention.md` (neuer Abschnitt Journal, open points and condensing), `data/promptotyping-documents.json`, `index.html`, `_content/tutorial.md`, `_content/application.md`, `data/glossar.json` und daraus `_content/glossar.md`, `CLAUDE.md`, `tools/check_consistency.py` und Tests, `knowledge/specification.md` (A40, A41, A42), `knowledge/verification.md` (V2, V17, V24), `knowledge/plan.md`, `knowledge/INDEX.md`, `knowledge/project.md`, `knowledge/benchmark-plan.md`, `CHANGELOG.md`.
+- Belege: `python tools/check_consistency.py` mit 18 Prüfgruppen ohne Fehler; Testlauf aus `CLAUDE.md` grün; `vault/tools/validate.py` ohne Fehler mit der deklarierten Warnung; dieselben Läufe in einer Kopie ohne `knowledge/handoff.md` grün. Die gerenderten Seiten sind nicht im Browser gelesen. Nicht committet.
+
+## 2026-11-14 | Skill nur noch im Skill-Repository
+
+- Anlass: Entscheidung des Operators vom 2026-11-14, über die Koordination übermittelt, dass das Repository `DigitalHumanitiesCraft/promptotyping-skill` die einzige Quelle des Skills ist und die Kopie unter `skills/promptotyping/` entfernt wird.
+- Befund: Skills-Seite, Startseite mit Download-Block und Beispielschritten, README, Übersicht, Arbeitsumgebung, Tutorial, Einführungsseite, der Archivbauer, der Pages-Workflow und die Prüfgruppen V18 und V24 hingen an der lokalen Kopie.
+- Entschieden: Die Skills-Seite beschreibt den Skill und verlinkt das Skill-Repository, der Anker `#skills-promptotyping` sitzt auf der ersten Abschnittsüberschrift der Skills-Einleitung. Die Startseite bietet den Skill als Link auf das Repository, ohne `SKILL.md` und ohne Skill-Archiv, und die Attribute `data-skill` entfallen. V18 prüft nur noch Link und Anker, V24 hält die fünf Subcommands als feste Liste. `tools/skill-evals/` bleibt liegen, keine Prüfung nutzt es mehr. Das revidiert A42 vom 2026-11-10.
+- Geändert: `assets/js/pages-content.js`, `_content/skills/index.md`, `index.html`, `_content/overview.md`, `_content/arbeitsumgebung.md`, `_content/tutorial.md`, `intro/content.js`, `README.md`, `CHANGELOG.md`, `CLAUDE.md`, `tools/build_downloads.py`, `tools/check_consistency.py` und Tests, `.github/workflows/pages.yml`, `knowledge/specification.md` (A42, A48, A51), `knowledge/verification.md` (V18, V24), `knowledge/architecture.md`, `knowledge/INDEX.md`, `knowledge/plan.md`.
+- Belege: `python tools/build_downloads.py` baut nur noch das Vorlagenarchiv; die vier Prüfläufe aus `CLAUDE.md` grün, auch in einer Kopie ohne `skills/promptotyping/`, `knowledge/handoff.md` und `downloads/promptotyping-skill.zip`. Die Skills-Seite ist nicht im Browser gelesen. Nicht committet.
+
+## 2026-11-14 | Skills-Seite, Benchmark und Quellmaterial aus dem Repository genommen
+
+- Anlass: Entscheidungen des Operators vom 2026-11-14, über die Koordination übermittelt, die Skills-Seite mit `_content/skills/`, das Verzeichnis `research-artefacts/` mit der Promptotyping Bench, die beiden Benchmark-Dokumente in `knowledge/` und `source-material/` aus dem Repository zu nehmen; die Hauptsitzung löscht die Dateien nach diesem Schritt.
+- Befund: `registry.js`, `pages-content.js` und `app.js` montierten die Skills-Seite, Startseite, Übersicht, Tutorial, Application-Seite und Arbeitsumgebung verlinkten `#skills-promptotyping`, die Prüfung hielt diese Links als Portalpfade fest, und Lesereihenfolge, Index, Plan, Projektbeschreibung, Architektur und Verifikation führten Bench, Benchmark-Dokumente und Transkripte. Datierte Snapshots verlinken in die entfernten Bereiche.
+- Entschieden: `#skills-promptotyping` führt über `LEGACY_ROUTE_ALIASES` auf den Abschnitt `#start-example` der Startseite, `#skills` und die Familie `skills-` landen auf der Startseite. Die Inhaltslinks auf die Skills-Seite zeigen auf das Skill-Repository. V18 prüft diese Weiterleitungen. Ein datierter Datensatz unter `snapshots/` behält seine Links in die am 2026-11-14 entfernten Bereiche, die Prüfung meldet sie als Hinweis; jedes andere Dokument scheitert an einem solchen Link. Die Snapshots selbst bleiben unverändert.
+- Geändert: `assets/js/registry.js`, `assets/js/pages-content.js`, `assets/js/app.js`, `assets/js/markdown.js`, `index.html`, `_content/overview.md`, `_content/tutorial.md`, `_content/application.md`, `_content/arbeitsumgebung.md`, `README.md`, `CHANGELOG.md`, `CLAUDE.md`, `tools/check_consistency.py` und Tests, `tools/tests/README.md`, `knowledge/specification.md` (A15, A17, A42, A50), `knowledge/verification.md` (V15, V18), `knowledge/architecture.md`, `knowledge/INDEX.md`, `knowledge/plan.md`, `knowledge/project.md`.
+- Belege: In einer Kopie ohne `skills/promptotyping/`, `_content/skills/`, `research-artefacts/`, `source-material/`, `knowledge/handoff.md`, `knowledge/benchmark-plan.md`, `knowledge/benchmark-specification.md` und `downloads/promptotyping-skill.zip` laufen `python tools/check_consistency.py` ohne Fehler, die Tests für `tools/tests`, `vault/tests` und `intro/tests` grün und `vault/tools/validate.py` ohne Fehler mit der deklarierten Warnung. Weiterleitungen und Seiten sind nicht im Browser gelesen. Nicht committet.

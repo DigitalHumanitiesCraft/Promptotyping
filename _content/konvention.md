@@ -5,7 +5,7 @@ version: "0.4"
 status: complete
 language: en
 source: Konvention Promptotyping Documents
-updated: 2026-11-11
+updated: 2026-11-14
 mirrored: 2026-08-22
 machine-url: https://dhcraft.org/Promptotyping/_content/konvention.md
 ---
@@ -24,15 +24,15 @@ The convention applies to durable project knowledge under `knowledge/` and to th
 
 File names carry function before a document is opened. Functional names and subject prefixes are English. The standard form is lowercase kebab-case; `INDEX.md` and `CLAUDE.md` are established exceptions with specific routing roles.
 
-Single carriers use canonical names such as `project.md`, `data.md`, `specification.md`, `architecture.md`, `design.md`, `testing.md`, `verification.md`, `journal.md`, `handoff.md`, `plan.md`, and `governance.md`. Specialisations follow `<subject>-<function>.md`, for example `research-methodology.md`, `character-error-rate-methodology.md`, `data-schema.md`, `output-schema.md`, and `tei-mapping.md`. Terms are written out. Official or constitutive abbreviations are permitted when `INDEX.md` defines them.
+Single carriers use canonical names such as `project.md`, `data.md`, `specification.md`, `architecture.md`, `design.md`, `testing.md`, `verification.md`, `journal.md`, `plan.md`, and `governance.md`. Specialisations follow `<subject>-<function>.md`, for example `research-methodology.md`, `character-error-rate-methodology.md`, `data-schema.md`, `output-schema.md`, and `tei-mapping.md`. Terms are written out. Official or constitutive abbreviations are permitted when `INDEX.md` defines them.
 
 A name states the routing question of its document and nothing else. Fixed names by function let an agent or a reader pick the right document from a file listing or a search result in any repository before opening it, and the subject stands before the function so that search results group by both. A project-specific document without a canonical name follows the same pattern, naming its subject and then its function. What other places carry stays out of the name. The document type follows from the function through the routing heuristic below, the project from the repository, status, version and author from the frontmatter and Git, and a date belongs only to reports and snapshots. A name that carries a status or a sequence number, such as `draft-spec.md`, `02-data.md` or `notes-new.md`, ages with the work and misroutes the next session. A rename changes a route, so it is registered in `INDEX.md`, and every link to the old name is updated in the same commit.
 
-Reports and exceptional handoff snapshots identify scope and date: `<scope>-report-YYYY-MM-DD.md` and `<scope>-handoff-YYYY-MM-DD.md`. Every project also carries the live Process Inbox `knowledge/handoff.md`, including when it is empty. Dated snapshots under `handoffs/` supplement this Inbox and never replace it. A document is split when its parts answer independent routing questions or develop different update cycles. The split produces named functions or specialisations and is registered in `INDEX.md`.
+Reports and exceptional handoff snapshots identify scope and date: `<scope>-report-YYYY-MM-DD.md` and `<scope>-handoff-YYYY-MM-DD.md`. What the next session needs stands in the section `## Open` at the beginning of `journal.md`. Dated snapshots under `handoffs/` supplement it at exceptional transfers and never replace it. A document is split when its parts answer independent routing questions or develop different update cycles. The split produces named functions or specialisations and is registered in `INDEX.md`.
 
 | Area | Contents | Lifecycle |
 |---|---|---|
-| `knowledge/` | durable Promptotyping Documents, including the live Process Inbox `handoff.md` | maintained with the project |
+| `knowledge/` | durable Promptotyping Documents | maintained with the project |
 | `research-artefacts/` | papers, articles, talks, and other scholarly outputs | revised according to their publication lifecycle |
 | `source-material/` | transcripts, imports, and supplied material | preserved as input and provenance |
 | `snapshots/` | dated reports and frozen assessments | immutable in scope and date except for corrections |
@@ -57,7 +57,7 @@ One document carries one routing question. A small tool repository may consolida
 
 A knowledge base in the `knowledge/` folder covers a range of functions. Which functions are relevant, and how many files carry them, depends on the project. The convention describes these functions rather than a fixed list of documents, so that an agent setting up a new repository checks the trigger criterion per function and decides which documents to create.
 
-The function names are English (Navigation, Charter, Material, Specification, Architecture, Technology Baseline, Domain Knowledge, Design, Quality Assurance, Verification, Provenance, Handoff, Planning, Governance, Reporting, Integration, Agent Instructions). Template names remain unchanged even where they are German because repositories reference them in `template:` fields and the site anchors rest on them. Template names are stable identifiers.
+The function names are English (Navigation, Charter, Material, Specification, Architecture, Technology Baseline, Domain Knowledge, Design, Quality Assurance, Verification, Provenance, Planning, Governance, Reporting, Integration, Agent Instructions). Template names remain unchanged even where they are German because repositories reference them in `template:` fields and the site anchors rest on them. Template names are stable identifiers.
 
 | Function | Question it answers | Trigger | Typical carrier |
 |---|---|---|---|
@@ -71,8 +71,7 @@ The function names are English (Navigation, Charter, Material, Specification, Ar
 | Design | What does it look like, how does it behave aesthetically? | project has a UI | `design.md` |
 | Quality Assurance | What is guaranteed, what deliberately is not, and how is it checked? | project with tests, verification or acceptance checks | `testing.md` or `<subject>-testing.md`; template [Vorlage Testing](#promptotyping-document-testing) |
 | Verification | Do the project's own empirical and novelty claims survive an adversarial check against the raw data? | project makes empirical findings or novelty claims that are used externally | `verification.md` or `<subject>-verification.md`; template [Vorlage Verification](#promptotyping-document-verification) |
-| Provenance | How did we get here? | always | `journal.md` |
-| Handoff | Which received deltas still await checking, integration, or rejection? | always | `handoff.md`; template [Vorlage Handoff](#promptotyping-document-handoff) |
+| Provenance | How did we get here, and what is open? | always | `journal.md`; template [Vorlage Journal](#promptotyping-document-journal) |
 | Planning | Where does it go next, and in what order? | project with a multi-step sequence | `plan.md` or `<subject>-plan.md`; template [Vorlage Plan](#promptotyping-document-plan) |
 | Governance | Which standing authority, decision, and change rules bind the project? | project with rules beyond the action layer | `governance.md` |
 | Reporting | What was the correct state of a defined scope on date X for an external addressee? | project status report for an external recipient | `snapshots/<scope>-report-YYYY-MM-DD.md`; template [Vorlage Report](#promptotyping-document-report) |
@@ -103,8 +102,8 @@ The current stock is the following.
 | [Vorlage Design](#promptotyping-document-design) | Design | `design.md` |
 | [Vorlage Testing](#promptotyping-document-testing) | Quality Assurance | `testing.md` |
 | [Vorlage Verification](#promptotyping-document-verification) | Verification (adversarial check of a project's own claims against the raw data) | `verification.md` |
-| [Vorlage Journal](#promptotyping-document-journal) | Provenance | `journal.md` |
-| [Vorlage Handoff](#promptotyping-document-handoff) | Handoff (live Process Inbox) | `handoff.md` |
+| [Vorlage Journal](#promptotyping-document-journal) | Provenance (working diary with the open points in the section `## Open` at its beginning, since version 0.7) | `journal.md` |
+| [Vorlage Handoff](#promptotyping-document-handoff) | Handoff, superseded since 14 November 2026. Open points stand in `## Open` of `journal.md`; the template stays addressable for existing `template:` fields | `handoff.md` |
 | [Vorlage Plan](#promptotyping-document-plan) | Planning (forward) | `plan.md`, `<subject>-plan.md` |
 | [Vorlage Report](#promptotyping-document-report) | Reporting | `snapshots/<scope>-report-YYYY-MM-DD.md` |
 | [Vorlage Integration](#promptotyping-document-integration) | Integration (cross-project contracts) | `integration.md`, `<counterpart>-integration.md` |
@@ -115,7 +114,7 @@ Convention change of 2026-05-30: epics and user stories move into `specification
 
 Where a repository covers a function for which no template exists, for instance `character-error-rate-methodology.md` or `personas.md`, the document stays freehand and follows the naming contract and frontmatter vocabulary. A template becomes worthwhile once comparable structures recur.
 
-Verification and Integration were candidate functions from 2026-06-13 and were promoted on 2026-07-19 to full functions with a template of their own, after the content audit confirmed the threshold of two comparable occurrences. Handoff entered the catalogue on 2026-08-21 as the mandatory Process Inbox of every project. All catalogue templates are released (`status: complete`); a draft status would stand visibly in catalogue and template alike.
+Verification and Integration were candidate functions from 2026-06-13 and were promoted on 2026-07-19 to full functions with a template of their own, after the content audit confirmed the threshold of two comparable occurrences. Handoff entered the catalogue on 2026-08-21 as the mandatory Process Inbox of every project and was superseded on 2026-11-14, when the journal took over the open points. Its template stays in the catalogue so that existing `template:` fields keep resolving. All catalogue templates are released (`status: complete`); a draft status would stand visibly in catalogue and template alike.
 
 Governance has been registered as a function since 2026-08-17. Its first developed instance is the draft [`knowledge/governance.md`](https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/knowledge/governance.md) of this repository. The Knowledge, Context and Agentic Engineering teaching project and Research Mission Control are the next intended applications. A general template will be distilled after at least two comparable project instances have been reviewed. Until then, a `governance.md` follows the mandatory frontmatter core and the function definition of this convention without claiming a template address.
 
@@ -139,7 +138,7 @@ The field belongs to the recommended layer and is set as soon as a catalogue tem
 
 ## Action layer in the repository root
 
-The entry points of the action layer lie in the repository root and route into `knowledge/`. File name and loading mechanism follow the environment actually used, such as `CLAUDE.md` for Claude Code and `AGENTS.md` for Codex. With several entry points the rules stay in one maintained place, and derived versions are checked for agreement. A file name alone does not establish that an environment loads it automatically, so without such evidence the agent reads the instruction source explicitly. After the action layer the agent reads `knowledge/INDEX.md`, then `knowledge/handoff.md`, and then the task-relevant declarative knowledge document or agent instruction document. `journal.md` is consulted for provenance and decision grounds. Structure and filling are described by the [Vorlage Action-Layer](#promptotyping-document-action-layer). `RULES.md`, `INSTRUCTIONS.md` and `cloud-commands.md` are specific to the research control-room setup and are no standard for ordinary Promptotyping repositories.
+The entry points of the action layer lie in the repository root and route into `knowledge/`. File name and loading mechanism follow the environment actually used, such as `CLAUDE.md` for Claude Code and `AGENTS.md` for Codex. With several entry points the rules stay in one maintained place, and derived versions are checked for agreement. A file name alone does not establish that an environment loads it automatically, so without such evidence the agent reads the instruction source explicitly. After the action layer the agent reads `knowledge/INDEX.md`, then the beginning of `knowledge/journal.md` with the section `## Open` and the newest entry, and then the task-relevant declarative knowledge document or agent instruction document. Older entries of `journal.md` are consulted for decision grounds and earlier transitions. Structure and filling are described by the [Vorlage Action-Layer](#promptotyping-document-action-layer). `RULES.md`, `INSTRUCTIONS.md` and `cloud-commands.md` are specific to the research control-room setup and are no standard for ordinary Promptotyping repositories.
 
 On the aesthetic layer the Agent Instructions function takes effect through `CLAUDE.md` binding in `design.md` as its source of values, for instance through a section on design principles with imperatively formulated sentences derived from the design stance, or through the instruction to read `design.md` before generating any UI. The `design.md` itself stays a declarative knowledge document, and the imperative translation belongs in the action layer. This division follows the routing heuristic below and prevents a document from changing its analytical type.
 
@@ -149,7 +148,7 @@ Promptotyping distinguishes three document types analytically, declarative knowl
 
 Declarative knowledge documents hold knowledge about the subject matter. They describe what is known about the data, the domain and the research context. Examples are `README.md`, `project.md`, `data.md`, `specification.md`, `architecture.md`, `design.md`, `editorial-guidelines.md`, mapping rules and verification documents. They extend the model's epistemic horizon and outlast, as a curated layer, the changes to code, model versions and tools. Until July 2026 this type was called Knowledge Document here, and the name has since moved to the superordinate term.
 
-Process knowledge documents separate three temporal functions. `handoff.md` contains open received deltas, `plan.md` accepted future work, and `journal.md` the curated backward provenance index. Git preserves earlier wording. These documents form the context memory without duplicating current project knowledge.
+Process knowledge documents hold knowledge about the course of the work. `journal.md` is the working diary. It carries what is open at its beginning and the curated backward provenance index below. `plan.md` carries accepted future work. `journal-archive.md` and Git preserve earlier wording. These documents form the context memory without duplicating current project knowledge.
 
 Agent instruction documents hold knowledge about how to act. They describe what agents may do within the project and how. Examples are `instructions.md`, `rules.md`, `CLAUDE.md`, along with the testing strategy, the technology baseline, and in multi-agent projects the role and orchestration rules. They steer the model's behaviour.
 
@@ -177,8 +176,7 @@ Instead of a `type:` or `function:` field in frontmatter, the file name routes t
 | Design | Declarative | `design.md`, `<subject>-design.md` | UI inconsistency, break in the design system, design stance unclear |
 | Quality Assurance | Action | `testing.md`, `<subject>-testing.md` | guarantee unclear, test missing or failing, acceptance criterion unchecked |
 | Verification | Declarative | `verification.md`, `<subject>-verification.md` | externally used claim unsupported, headline figure not recomputable, novelty claim unchecked |
-| Provenance | Process | `journal.md`, `project-learnings.md` | decision logic unclear, earlier dead ends repeated |
-| Handoff | Process | `handoff.md` | open input overlooked, source or current target unchecked, durable content not yet integrated |
+| Provenance | Process | `journal.md`, `project-learnings.md` | decision logic unclear, earlier dead ends repeated, open point overlooked, work begun not continued |
 | Planning | Process | `plan.md`, `<subject>-plan.md` | order or phase boundary unclear, next step not recognisable |
 | Governance | Action | `governance.md` | standing authority or change rule unclear, a settled rule is bypassed |
 | Reporting | Declarative (snapshot) | `snapshots/<scope>-report-YYYY-MM-DD.md` | external claim about the state unclear or outdated, addressee not recognisable, evidence missing |
@@ -312,16 +310,35 @@ Knowledge Documents follow the distillation principle of the practice as the [Di
 
 Knowledge curation records a durable finding from implementation, checking or use in the document responsible for it, and corrects or removes what has become outdated there. Then the documents that restate the changed statement are read, in the repository and in any mirrored place, and for each one it is decided whether the restatement is brought into step, replaced by a link, or left with a reason. A mirror that does not take over a reversal of its source carries the earlier state on in the present tense.
 
-The live Handoff Inbox is processed before its point is removed: verify source and current target, integrate durable content into the responsible declarative knowledge document or agent instruction document, then add a concise Journal record of subject, source, target, and result or rejection reason. A point has no status; its presence means open.
+## Journal, open points and condensing
 
-Journal compaction is semantic. It begins when repetition, copied durable knowledge, completed open lists, scattered decision grounds, or expensive regular reading impair the provenance function. Every substantive statement receives a disposition against a clean Git baseline: retain, integrate into a canonical target, reject with a reason, or preserve only through Git. Paths, anchors, and hashes are checked before the temporary coverage list is removed and a `verdichtet` record references the predecessor state. Fixed thresholds and a `journal-archive.md` are excluded.
+Since 14 November 2026 `journal.md` also carries the view forward, and `knowledge/handoff.md` is no longer a mandatory document (decision of the operator with the project partner during the work on version 2 of the Promptotyping skill). Two process documents with separate rules for what is open and what is past made the practice harder than their use justified. Until then `handoff.md` was the mandatory Process Inbox, and the journal excluded open points.
+
+`journal.md` is the working diary of the project and has two parts. It begins with the section `## Open`, which holds what the next session needs in order to continue, that is, work begun, unchecked results, questions waiting for the researchers, and work handed to a named recipient. Every handoff at the end of a session rewrites it as the complete current list. A point that is done leaves the section, and an entry below records how it was done. When nothing is open, the section reads "Nothing open." The heading `## Open` and this sentence are fixed strings and stay the same in every language, because agents and tools recognise the section by them.
+
+The entries follow, newest first. An entry covers one substantively coherent step and carries the fields Trigger, Found, Decided, Rejected, Corrected, Changed and Evidence where they have content, in German knowledge bases Anlass, Befund, Entschieden, Verworfen, Korrigiert, Geändert and Belege. Every entry names at least one piece of evidence. Operator judgements stand verbatim, delegated decisions with a statement of origin. The researchers' judgement on a promptotype is an entry of its own in their words. An entry is history and is rewritten only by condensing. Accepted work that has not begun stands in the specification or in `plan.md`. Current project status, detailed check results and copied durable knowledge lie in the documents responsible for them.
+
+A transfer to a named recipient is the same operation. The point under `## Open` names the recipient and what they need to begin, namely source, state and evidence. Where the recipient works in another repository, the point stands in the `## Open` of that repository's journal. Before a transferred point is used, its source and current target are checked, and durable content is integrated into the responsible declarative knowledge document or agent instruction document. Dated snapshots under `handoffs/` remain for exceptional transfers. A durable contract between projects is an integration document.
+
+Condensing begins when the older entries no longer help a reader understand the current state. Triggers are repetition, copied durable knowledge, scattered decision grounds, or an expensive regular reading context. There are no fixed thresholds of lines or entries. Condensing removes only detail from `journal.md`. The full wording of every condensed entry stays in `journal-archive.md` in the same folder and in Git. The procedure is fixed.
+
+1. The starting state is fully committed.
+2. `## Open` and the five newest entries stay unchanged.
+3. The unchanged wording of every older entry is appended to `journal-archive.md`, oldest first and only where it is not already there. The archive is only appended to and never rewritten, and at session start it is read only when a decision ground is needed.
+4. Before any change to `journal.md`, a check confirms that the heading of every entry to be condensed stands in the archive.
+5. Related older entries are folded into one entry per milestone, which carries its period in the heading and preserves decisions with their grounds, corrections, rejected alternatives and commit hashes verbatim. Entries cited outside the journal, operator judgements and statements of origin are retained.
+6. One line points to the archive, an entry of its own records the condensing with the number of archived entries, and the state is committed.
+
+The archive reverses the rule of 21 August 2026, which excluded `journal-archive.md` and a window of the newest entries and left earlier wording to Git alone. Git makes an entry recoverable without making it findable, and a published practice cannot presuppose a clean Git routine among its users.
+
+A repository that still carries `knowledge/handoff.md` switches at its next handoff. Its open points move into `## Open`, and the file is proposed to the operator for removal. A journal without `## Open` receives the section at its next handoff, and its earlier entries keep their form and order. The [Vorlage Handoff](#promptotyping-document-handoff) stays addressable as a superseded template, because existing documents name it in their `template:` field.
 
 ## Application
 
 When setting up a new Promptotyping repository:
 
 1. Check the functions. Which of the functions listed above are relevant to this project (apply the trigger criterion per function)?
-2. Create the always-triggered functions, including `knowledge/handoff.md`. Map the remaining functions onto documents. Merge only while routing question and update cycle remain shared.
+2. Create the always-triggered functions, among them `knowledge/journal.md` with the section `## Open`. Map the remaining functions onto documents. Merge only while routing question and update cycle remain shared.
 3. Copy the matching template block from the catalogue per document and fill it in. Where no template exists, the convention alone serves as the guide.
 
 When refactoring a knowledge folder, checklist:
@@ -333,7 +350,7 @@ When refactoring a knowledge folder, checklist:
 - Are nested fields (`project:`, `method:`, `knowledge-sources:`) cleanly structured, with no flat `method-url:` and the like?
 - Is `knowledge-sources:` used selectively, where external connections carry, and omitted otherwise?
 - Are the three structural principles (separation of content and origin, standards in the main body, no self-description) recognisable, with no section on what is missing and no note that material lies elsewhere?
-- Does `knowledge/handoff.md` exist with `status: active`, and does it contain only open points or the canonical empty state?
+- Does `knowledge/journal.md` begin with the section `## Open`, carrying the complete current list of open points or "Nothing open.", and has a `knowledge/handoff.md` that still exists been moved into it?
 
 ## Note by the site (2026-06-10)
 

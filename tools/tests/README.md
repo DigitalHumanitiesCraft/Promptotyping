@@ -4,11 +4,10 @@ This repository checks its own statements with scripts and test suites that run 
 
 ## Where the tests are
 
-- [`tools/check_consistency.py`](../check_consistency.py) checks that the site's statements agree with their sources: catalogue and templates, convention, skill, start page, glossary, gallery, anchors, links and the frontmatter of the knowledge documents. Each group answers one claim of the V-series in `verification.md`.
+- [`tools/check_consistency.py`](../check_consistency.py) checks that the site's statements agree with their sources: catalogue and templates, convention, the retired skill addresses, start page, glossary, gallery, anchors, links and the frontmatter of the knowledge documents. Each group answers one claim of the V-series in `verification.md`.
 - [`tools/tests/`](.) holds the regression cases for that script. Each case copies the repository's own data, corrupts one field and asserts that the check reports it, because a check that has stopped deciding anything passes a green run as quietly as a correct one.
 - [`vault/tests/`](../../vault/tests/) tests the tools of the Grounded Vault instance (`validate.py`, `review.py`, `build_site_index.py`) against the fixture vaults `minimal`, which must pass clean, and `broken`, which carries one specimen per defect class.
 - [`intro/tests/`](../../intro/tests/) tests the introduction page in a browser against outcomes a reader sees, derived from the page contract in `knowledge/design.md`, and runs a syntax check on its scripts.
-- [`research-artefacts/promptotyping-bench/fixtures/dating-explorer/tests/`](../../research-artefacts/promptotyping-bench/fixtures/dating-explorer/tests/) tests the benchmark tooling on a synthetic fixture, without model calls.
 - [`vault/tools/validate.py`](../../vault/tools/validate.py) validates the vault instance against its schema.
 
 ## How to run them
@@ -16,14 +15,14 @@ This repository checks its own statements with scripts and test suites that run 
 From the repository root:
 
 ```sh
-python -m pytest tools/tests vault/tests research-artefacts/promptotyping-bench intro/tests -q -p no:cacheprovider
+python -m pytest tools/tests vault/tests intro/tests -q -p no:cacheprovider
 python tools/check_consistency.py
 python vault/tools/validate.py vault
 ```
 
-`check_consistency.py` and the cases under `tools/tests/` need only the Python standard library, and `python -m unittest discover tools/tests` runs the cases without pytest. The vault and benchmark suites need pytest. The browser cases under `intro/tests/` need Python Playwright with Chromium and the syntax case needs Node.js, and each skips when its runtime is missing. `python tools/check_consistency.py --check-urls` adds the resolution of external addresses and needs network access. The local download archives that the start-page check compares are rebuilt with `python tools/build_downloads.py`.
+`check_consistency.py` and the cases under `tools/tests/` need only the Python standard library, and `python -m unittest discover tools/tests` runs the cases without pytest. The vault suite needs pytest. The browser cases under `intro/tests/` need Python Playwright with Chromium and the syntax case needs Node.js, and each skips when its runtime is missing. `python tools/check_consistency.py --check-urls` adds the resolution of external addresses and needs network access. The local download archive that the start-page check compares are rebuilt with `python tools/build_downloads.py`.
 
-The consistency check runs before every commit that touches the catalogue, the convention, the template folder, the skill, the start page or the use-case gallery. A failing check names its group and the file to correct.
+The consistency check runs before every commit that touches the catalogue, the convention, the template folder, the start page or the use-case gallery. A failing check names its group and the file to correct.
 
 ## What the tests leave open
 

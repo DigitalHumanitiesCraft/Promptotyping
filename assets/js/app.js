@@ -83,7 +83,7 @@
           "Open the convention as markdown</a>";
         el.insertBefore(note, el.firstChild ? el.firstChild.nextSibling : null);
       }),
-      // Prompts on the tutorial page are copyable like the skills prompts.
+      // Prompts on the tutorial page are copyable.
       // Part 2 demonstrates the practice end to end and belongs to learning it,
       // so it sits here (A8).
       A.renderMarkdownInto("tutorial", "_content/tutorial.md", function (el) {
@@ -91,7 +91,6 @@
         A.insertVideoAfterIntro(el, "hd_a-NBO_S4", "Promptotyping Teil 2 (Claude Code)");
       }),
       A.renderPraxis(),
-      A.renderSkills(),
       A.renderMarkdownInto("arbeitsumgebung", "_content/arbeitsumgebung.md")
     ]);
     A.renderUseCasesHost();

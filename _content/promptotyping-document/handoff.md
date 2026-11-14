@@ -9,6 +9,8 @@ machine-url: https://dhcraft.org/Promptotyping/_content/promptotyping-document/h
 ---
 # Vorlage Handoff
 
+> Überholt seit dem 14.11.2026. `knowledge/handoff.md` ist kein Pflichtdokument mehr. Das Offene steht im Abschnitt `## Open` am Anfang von `journal.md`, und ein Repository mit `handoff.md` überführt dessen Punkte beim nächsten Handoff dorthin, siehe [Vorlage Journal](#promptotyping-document-journal) und [Konvention Promptotyping Documents](#konvention-v0.1), Abschnitt Journal, open points and condensing.
+
 Diese Vorlage strukturiert die verpflichtende Process Inbox eines Promptotyping-Projekts. Das resultierende Dokument heißt `handoff.md`, liegt im `knowledge/`-Ordner und führt ausschließlich offene Übergabepunkte. Ein leerer Zustand bleibt als gültige Inbox bestehen.
 
 ## Geltungsbereich

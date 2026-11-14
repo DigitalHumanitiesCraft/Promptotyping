@@ -23,7 +23,7 @@ knowledge-sources:
   institutions:
     Digital Humanities Craft OG: https://dhcraft.org
     University of Graz: https://www.uni-graz.at
-related: [INDEX, specification, architecture, design, governance, handoff, plan, journal]
+related: [INDEX, specification, architecture, design, governance, plan, journal]
 ---
 
 # Project
@@ -44,7 +44,7 @@ The audiences are ordered by product priority:
 
 ## Material basis
 
-The Promptotyping portal primarily mirrors knowledge. Its material basis is stated compactly here rather than in a root `data.md` (see [journal.md](journal.md), entry 2026-05-09 on the template-trigger correction). The separate [benchmark authoring area](../research-artefacts/promptotyping-bench/README.md) distinguishes real-data task contracts and source manifests under `tasks/` from synthetic tooling material under `fixtures/`.
+The Promptotyping portal primarily mirrors knowledge. Its material basis is stated compactly here rather than in a root `data.md` (see [journal.md](journal.md), entry 2026-05-09 on the template-trigger correction).
 
 Four source types feed the site.
 
@@ -72,9 +72,9 @@ Out of scope:
 
 ## Current state
 
-The repository baseline is complete. The site renders the Promptotyping portal, the templates with side panels and the frontmatter inspector, the curated use-case gallery with its depth pages, the tutorial, the canonical skill, the Vault evidence layer, and the reference pages. Mobile layout, accessibility behaviour, stable addressing, and search-engine metadata are part of that baseline. What each surface must do and how it is built is owned by [specification.md](specification.md), [architecture.md](architecture.md), and [design.md](design.md); the header and footer use the DHCraft watercolour mark.
+The repository baseline is complete. The site renders the Promptotyping portal, the templates with side panels and the frontmatter inspector, the curated use-case gallery with its depth pages, the tutorial, the start page's account of the skill with the link to its repository, the Vault evidence layer, and the reference pages. Mobile layout, accessibility behaviour, stable addressing, and search-engine metadata are part of that baseline. What each surface must do and how it is built is owned by [specification.md](specification.md), [architecture.md](architecture.md), and [design.md](design.md); the header and footer use the DHCraft watercolour mark.
 
-The repository implementation of the three portal scenarios is complete and verified. Understand connects Application to the evidence; Evaluate connects the gallery, case depth pages, and the Vault; Apply connects the tutorial, canonical skill, templates, and Working environment. Three independent agent role simulations tested these paths from public content only. Their agent-owned findings were integrated into the fit check, terminology, document routing, data-profile boundary, and Skill application. The tutorial source is version 0.4 and remains a draft until the operator accepts its text. Human comprehension, scholarly adequacy, comparative effectiveness, resource requirements, and independent transfer belong to the external evaluation of the release candidate.
+The repository implementation of the three portal scenarios is complete and verified. Understand connects Application to the evidence; Evaluate connects the gallery, case depth pages, and the Vault; Apply connects the tutorial, the skill repository, templates, and Working environment. Three independent agent role simulations tested these paths from public content only. Their agent-owned findings were integrated into the fit check, terminology, document routing, data-profile boundary, and Skill application. The tutorial source is version 0.4 and remains a draft until the operator accepts its text. Human comprehension, scholarly adequacy, comparative effectiveness, resource requirements, and independent transfer belong to the external evaluation of the release candidate.
 
 The public deployment changes only through an explicit release decision under [governance.md](governance.md). The repository and the live site can therefore differ between release decisions without changing which repository sources are canonical.
 
@@ -83,19 +83,6 @@ The phase-provenance lane was removed after the first deploy by operator decisio
 The FAIR infrastructure policy is dual licensing, MIT for code and CC BY 4.0 for documentation and Knowledge Documents, with third-party research data exempted per repository under its own rights statement. The repository root carries a MIT `LICENSE` and a `CITATION.cff`; the citation identity is Christopher Pollin, Digital Humanities Craft OG, ORCID 0000-0002-4879-129X.
 
 The `vault/` folder is a Grounded-Vault instance (template `DigitalHumanitiesCraft/grounded-vault`) that anchors the practice's load-bearing claims to sources. Work inside it follows its own action layer `vault/CLAUDE.md`.
-
-The [Promptotyping Bench proposal](../research-artefacts/promptotyping-bench-proposal.md)
-opens a bounded research workstream on small research-artefact implementation tasks.
-Its [specification](benchmark-specification.md) and [plan](benchmark-plan.md) own
-the proposed study; [MOC-Benchmark](../vault/30_assertions/MOC-Benchmark.md) connects
-it to the existing research basis. Every benchmark study task must use real DH
-research data; the synthetic development package serves only as a tooling fixture.
-The operator selected SZD correspondence and dating for the first real-data task;
-its [rehearsal materials](../research-artefacts/promptotyping-bench/tasks/szd-correspondence/README.md)
-now include source selection, participant briefs, an input schema, a local data
-preparer and candidate assessment scenarios. A local author-rehearsal package is
-prepared; independent domain review and measured trials remain outstanding. This
-preparation provides no empirical result or revision of the paper.
 
 The chronological course and the lane cuts live in [journal.md](journal.md).
 

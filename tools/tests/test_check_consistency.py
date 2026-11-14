@@ -168,7 +168,7 @@ class CatalogueTypeTest(CheckCase):
 
 
 class NamingContractTest(CheckCase):
-    """V17, the mandatory Inbox, catalogue size, types, and current names."""
+    """V17, the mandatory journal, the superseded handoff, catalogue size, types, and current names."""
 
     def documents(self):
         return copy.deepcopy(cc.load_catalogue())
@@ -179,13 +179,53 @@ class NamingContractTest(CheckCase):
         cc.check_catalogue_contract(documents)
         self.assertTrue(any("expected 17" in failure for failure in cc.failures))
 
-    def test_handoff_is_the_mandatory_process_slug(self) -> None:
+    def test_the_current_catalogue_and_templates_pass(self) -> None:
+        cc.check_catalogue_contract(self.documents())
+        self.assertEqual(cc.failures, [])
+
+    def test_journal_is_the_mandatory_process_slug(self) -> None:
+        documents = self.documents()
+        journal = next(document for document in documents
+                       if document["slug"] == "journal")
+        journal["typ"] = "Declarative"
+        cc.check_catalogue_contract(documents)
+        self.assertTrue(any("journal typ" in failure for failure in cc.failures))
+
+    def test_handoff_may_not_return_as_an_always_document(self) -> None:
         documents = self.documents()
         handoff = next(document for document in documents
                        if document["slug"] == "handoff")
-        handoff["typ"] = "Declarative"
+        handoff["trigger"] = "always"
+        handoff["mark"] = "always"
         cc.check_catalogue_contract(documents)
-        self.assertTrue(any("handoff typ" in failure for failure in cc.failures))
+        self.assertTrue(any("handoff is superseded" in failure
+                            for failure in cc.failures))
+
+    def test_the_superseded_handoff_keeps_its_slug(self) -> None:
+        documents = [document for document in self.documents()
+                     if document["slug"] != "handoff"]
+        cc.check_catalogue_contract(documents)
+        self.assertTrue(any("superseded slug handoff" in failure
+                            for failure in cc.failures))
+
+    def test_a_journal_template_without_open_is_reported(self) -> None:
+        templates = self.tempdir()
+        self.patch("TEMPLATE_DIR", templates)
+        source = (cc.ROOT / "_content" / "promptotyping-document" / "journal.md")
+        text = source.read_text(encoding="utf-8").replace("\r\n", "\n")
+        self.write(templates / "journal.md",
+                   text.replace("## Open\n\nNothing open.\n", ""))
+        cc.check_catalogue_contract(self.documents())
+        self.assertIn("## Open", self.only_failure())
+
+    def test_a_heading_inside_the_fence_does_not_end_the_fill_block(self) -> None:
+        path = self.write(self.tempdir() / "t.md",
+                          "## Vorlage zum Befüllen\n\n````markdown\n# Journal\n\n"
+                          "## Open\n\nNothing open.\n\n```text\ninner\n```\n"
+                          "- Belege: x\n````\n\n## Anwendung\n\nafter\n")
+        block = cc.template_fill_block(path)
+        self.assertIn("- Belege: x", block)
+        self.assertNotIn("after", block)
 
     def test_testing_is_an_action_document(self) -> None:
         documents = self.documents()
@@ -209,74 +249,34 @@ class NamingContractTest(CheckCase):
                 self.assertIn(retired, self.only_failure())
 
 
-class SkillPackageTest(CheckCase):
-    """V18, the canonical skill is a portable package the site renders."""
+class RetiredSkillAddressTest(CheckCase):
+    """V18, the addresses of the retired Skills page still land on the start page."""
 
     def setUp(self) -> None:
         super().setUp()
         root = self.tempdir()
-        fixtures = {
-            "SKILLS_INDEX": cc.SKILLS_INDEX,
-            "PAGES_CONTENT": cc.PAGES_CONTENT,
-            "PAGES_WORKFLOW": cc.PAGES_WORKFLOW,
-        }
-        for name, source in fixtures.items():
-            target = root / source.relative_to(cc.ROOT)
-            self.write(target, source.read_text(encoding="utf-8"))
-            self.patch(name, target)
-        skill = root / "skills" / "promptotyping"
-        for source in cc.SKILL_DIR.rglob("*"):
-            if source.is_file():
-                self.write(skill / source.relative_to(cc.SKILL_DIR),
-                           source.read_text(encoding="utf-8"))
-        self.patch("SKILL_DIR", skill)
-        evals = root / "tools" / "skill-evals"
-        for source in cc.SKILL_EVALS.rglob("*"):
-            if source.is_file():
-                self.write(evals / source.relative_to(cc.SKILL_EVALS),
-                           source.read_text(encoding="utf-8"))
-        self.patch("SKILL_EVALS", evals)
+        self.registry = root / "assets" / "js" / "registry.js"
+        self.write(self.registry, (cc.JS_DIR / "registry.js").read_text(encoding="utf-8"))
+        self.patch("JS_DIR", self.registry.parent)
 
-    def test_the_current_package_passes(self) -> None:
-        cc.check_skill_package()
+    def edit(self, old: str, new: str) -> None:
+        text = self.registry.read_text(encoding="utf-8")
+        self.assertIn(old, text)
+        self.registry.write_text(text.replace(old, new, 1), encoding="utf-8")
+
+    def test_the_current_registry_passes(self) -> None:
+        cc.check_retired_skill_addresses()
         self.assertEqual(cc.failures, [])
 
-    def test_a_machine_bound_path_fails(self) -> None:
-        path = cc.SKILL_DIR / "SKILL.md"
-        path.write_text(path.read_text(encoding="utf-8")
-                        + "\nRead C:/notes.md first.\n", encoding="utf-8")
-        cc.check_skill_package()
-        self.assertIn("machine-bound", self.only_failure())
+    def test_a_dropped_skill_alias_fails(self) -> None:
+        self.edit('"skills-promptotyping": "start-example"', '"skills-promptotyping": "overview"')
+        cc.check_retired_skill_addresses()
+        self.assertIn("#skills-promptotyping", self.only_failure())
 
-    def test_a_missing_eval_fixture_fails(self) -> None:
-        (cc.SKILL_EVALS / "fixtures" / "prune-plan-before.txt").unlink()
-        cc.check_skill_package()
-        self.assertIn("prune-plan", self.only_failure())
-
-    def test_eval_cases_inside_the_package_fail(self) -> None:
-        self.write(cc.SKILL_DIR / "evals" / "cases.json", '{"cases": []}\n')
-        cc.check_skill_package()
-        self.assertIn("inside the installed package", self.only_failure())
-
-    def test_a_skill_text_pointing_at_the_eval_cases_fails(self) -> None:
-        path = cc.SKILL_DIR / "SKILL.md"
-        path.write_text(path.read_text(encoding="utf-8")
-                        + "\nSee [the cases](evals/cases.json).\n", encoding="utf-8")
-        cc.check_skill_package()
-        self.assertIn("points at the eval cases", self.only_failure())
-
-    def test_a_disconnected_site_surface_fails(self) -> None:
-        text = cc.PAGES_CONTENT.read_text(encoding="utf-8").replace(
-            cc.SKILL_SOURCE, "elsewhere/SKILL.md")
-        cc.PAGES_CONTENT.write_text(text, encoding="utf-8")
-        cc.check_skill_package()
-        self.assertIn("pages-content.js", self.only_failure())
-
-    def test_an_unpublished_skill_folder_fails(self) -> None:
-        text = cc.PAGES_WORKFLOW.read_text(encoding="utf-8").replace(" skills ", " ")
-        cc.PAGES_WORKFLOW.write_text(text, encoding="utf-8")
-        cc.check_skill_package()
-        self.assertIn("Pages workflow", self.only_failure())
+    def test_a_remounted_skills_page_fails(self) -> None:
+        self.edit('{ id: "tutorial",', '{ id: "skills", label: "Skills" },\n    { id: "tutorial",')
+        cc.check_retired_skill_addresses()
+        self.assertIn("retired Skills page", self.only_failure())
 
 
 class PortalPathsTest(CheckCase):
@@ -312,10 +312,10 @@ class PortalPathsTest(CheckCase):
 
     def test_an_apply_route_without_the_skill_fails(self) -> None:
         text = cc.TUTORIAL.read_text(encoding="utf-8").replace(
-            "#skills-promptotyping", "#skills-missing")
+            cc.SKILL_REPOSITORY, "https://example.org/skill")
         cc.TUTORIAL.write_text(text, encoding="utf-8")
         cc.check_portal_paths()
-        self.assertTrue(any("apply" in failure and "#skills-promptotyping" in failure
+        self.assertTrue(any("apply" in failure and cc.SKILL_REPOSITORY in failure
                             for failure in cc.failures))
 
     def test_a_disconnected_use_case_error_boundary_fails(self) -> None:
@@ -440,10 +440,22 @@ class StartPageTest(CheckCase):
         cc.check_start_page(self.documents)
         self.assertIn("promptotyping-templates.zip", self.only_failure())
 
-    def test_an_example_step_without_its_skill_section_fails(self) -> None:
-        self.edit('<li data-skill="orient">', '<li data-skill="Summarise">')
+    def test_a_skill_section_without_a_subcommand_fails(self) -> None:
+        self.edit("<code>/promptotyping explore</code>", "<code>/promptotyping look</code>")
         cc.check_start_page(self.documents)
-        self.assertIn("Summarise", self.only_failure())
+        self.assertIn("does not show explore", self.only_failure())
+
+    def test_a_page_without_the_skill_repository_fails(self) -> None:
+        text = cc.INDEX_HTML.read_text(encoding="utf-8").replace(
+            'href="%s"' % cc.SKILL_REPOSITORY, 'href="#skills"')
+        cc.INDEX_HTML.write_text(text, encoding="utf-8")
+        cc.check_start_page(self.documents)
+        self.assertIn("skill repository", self.only_failure())
+
+    def test_a_link_into_the_removed_skill_folder_fails(self) -> None:
+        self.edit("</ol>", '<a href="skills/promptotyping/SKILL.md">skill</a></ol>')
+        cc.check_start_page(self.documents)
+        self.assertIn("skills/promptotyping", self.only_failure())
 
 
 class GalleryTest(CheckCase):
@@ -605,6 +617,10 @@ class ProseSiteUrlTest(CheckCase):
     def test_a_folder_with_its_own_page_is_not_an_anchor(self) -> None:
         self.assertEqual(self.urls("https://dhcraft.org/Promptotyping/intro/\n", True), [])
 
+    def test_a_quoted_heading_is_not_an_anchor(self) -> None:
+        self.assertEqual(self.urls("Read `## Open` first, then `#vorlagen`.\n", True),
+                         [("README.md", "#vorlagen")])
+
     def test_a_missing_folder_stays_an_address_to_resolve(self) -> None:
         found = self.urls("https://dhcraft.org/Promptotyping/intro/\n", False)
         self.assertEqual(found, [("README.md", "dhcraft.org/Promptotyping/intro/")])
@@ -640,8 +656,7 @@ class RelativeLinkTest(CheckCase):
 
     def test_authoring_and_historical_document_links_are_checked(self) -> None:
         root = self.repository("# Repository\n")
-        paths = ("research-artefacts/bench/tasks/example/README.md",
-                 "snapshots/old-plan.md", "handoffs/transfer.md")
+        paths = ("snapshots/old-plan.md", "handoffs/transfer.md")
         for path in paths:
             self.write(root / path, "[missing](missing.md)\n")
         cc.check_relative_links()
@@ -649,10 +664,35 @@ class RelativeLinkTest(CheckCase):
         for path in paths:
             self.assertTrue(any(path in error for error in cc.failures))
 
-    def test_research_artefact_can_use_portal_root_relative_assets(self) -> None:
+    def test_a_dated_record_keeps_a_link_into_a_removed_area(self) -> None:
+        root = self.repository("# Repository\n")
+        self.write(root / "snapshots/audit.md",
+                   "---\nstatus: snapshot\n---\n[task](../research-artefacts/bench/README.md)\n")
+        cc.check_relative_links()
+        self.assertEqual(cc.failures, [])
+
+    def test_a_snapshot_without_frontmatter_keeps_a_link_into_a_removed_area(self) -> None:
+        root = self.repository("# Repository\n")
+        self.write(root / "snapshots/record.md", "[plan](../knowledge/benchmark-plan.md)\n")
+        cc.check_relative_links()
+        self.assertEqual(cc.failures, [])
+
+    def test_a_live_document_may_not_link_into_a_removed_area(self) -> None:
+        root = self.repository("[task](research-artefacts/bench/README.md)\n")
+        cc.check_relative_links()
+        self.assertIn("research-artefacts", self.only_failure())
+
+    def test_a_dated_record_with_a_broken_link_elsewhere_fails(self) -> None:
+        root = self.repository("# Repository\n")
+        self.write(root / "snapshots/audit.md",
+                   "---\nstatus: snapshot\n---\n[gone](../knowledge/missing.md)\n")
+        cc.check_relative_links()
+        self.assertIn("knowledge/missing.md", self.only_failure())
+
+    def test_a_document_can_use_portal_root_relative_assets(self) -> None:
         root = self.repository("# Repository\n")
         self.write(root / "assets/figure.svg", "<svg/>\n")
-        self.write(root / "research-artefacts/proposal.md", "![Figure](assets/figure.svg)\n")
+        self.write(root / "snapshots/report.md", "![Figure](assets/figure.svg)\n")
         cc.check_relative_links()
         self.assertEqual(cc.failures, [])
 

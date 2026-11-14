@@ -18,7 +18,7 @@ template:
   version: 0.4
   url: https://dhcraft.org/Promptotyping/promptotyping-document/index
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-index
-related: [project, governance, specification, architecture, design, verification, handoff, journal, plan, benchmark-specification, benchmark-plan]
+related: [project, governance, specification, architecture, design, verification, journal, plan]
 ---
 
 # INDEX
@@ -32,7 +32,7 @@ Navigation and glossary of this repository's durable knowledge base. The reposit
 
 ## Language regime
 
-The durable core is English because it specifies the public self-application. `journal.md` remains German as the internal provenance record. The live Process Inbox is `knowledge/handoff.md`; the dated handoff snapshot retains the language of the work it records. The German video transcripts are Source Material. Template names remain German identifiers because public URLs and `template:` fields depend on them.
+The durable core is English because it specifies the public self-application. `journal.md` remains German as the internal provenance record. Open points stand in the section `## Open` at the beginning of `journal.md`, whose heading and empty state "Nothing open." are fixed English strings; the dated handoff snapshot retains the language of the work it records. The German video transcripts are Source Material. Template names remain German identifiers because public URLs and `template:` fields depend on them.
 
 ## Status vocabulary
 
@@ -49,34 +49,26 @@ The durable core is English because it specifies the public self-application. `j
 | [architecture.md](architecture.md) | Architecture | How is the site technically realised? | implementation architecture changes |
 | [design.md](design.md) | Design | How does the site look and behave? | design-system or interaction changes |
 | [verification.md](verification.md) | Verification | Which claims does the site make about itself, and how are they checked? | claim, procedure, or verdict changes |
-| [handoff.md](handoff.md) | Handoff | Which received deltas still require integration or rejection? | a handoff point arrives or is resolved |
-| [journal.md](journal.md) | Provenance | Which transitions were integrated, rejected, or corrected, and from which source? | a substantively coherent transition closes |
+| [journal.md](journal.md) | Provenance | What is open, and which transitions were integrated, rejected, or corrected, from which source? | a substantively coherent transition closes; `## Open` is rewritten at every handoff |
 | [plan.md](plan.md) | Planning | Which accepted work remains and in what dependency order? | accepted scope or completion state changes |
-| [benchmark-specification.md](benchmark-specification.md) | Benchmark Specification (draft) | How will small research-artefact implementation tasks evaluate the practice and human–agent work? | pilot design, task contract, evaluation or calibration decision changes |
-| [benchmark-plan.md](benchmark-plan.md) | Benchmark Planning | What must be reviewed, built and measured before a comparative or human study? | milestone, readiness or integration decision changes |
+
 
 The paper is maintained outside this repository and will be published in the journal; neither its text nor its governing knowledge is part of this knowledge base. A `data.md` does not carry for this repository because [project.md](project.md) holds the material basis.
 
 ## Artefact areas
 
-- `knowledge/` contains durable Knowledge Documents, including `handoff.md` as the live Process Inbox.
-- `research-artefacts/` contains scholarly outputs about the practice, currently the benchmark proposal and its authoring area. The folder name does not mean digital research artefacts in the practice's sense, which are project-specific operational forms such as interfaces, transformations and workflows.
-- `research-artefacts/promptotyping-bench/` is the [benchmark authoring area](../research-artefacts/promptotyping-bench/README.md). Real-data task materials live under `tasks/`, beginning with the [SZD correspondence explorer](../research-artefacts/promptotyping-bench/tasks/szd-correspondence/README.md). Synthetic machinery tests live under [fixtures/dating-explorer](../research-artefacts/promptotyping-bench/fixtures/dating-explorer/README.md) and are excluded from study results. The benchmark specification owns shared requirements; task manifests own data provenance and the plan owns readiness.
-- [research-artefacts/promptotyping-bench-proposal.md](../research-artefacts/promptotyping-bench-proposal.md) is the draft research proposal. Its rationale links to existing grounded findings through [MOC-Benchmark](../vault/30_assertions/MOC-Benchmark.md); the experimental contract and work sequence remain in the two benchmark knowledge documents.
-- `source-material/video-scripts/` contains the cleaned German transcripts [promptotyping-introduction-video-script.md](../source-material/video-scripts/promptotyping-introduction-video-script.md) and [promptotyping-live-demo-video-script.md](../source-material/video-scripts/promptotyping-live-demo-video-script.md).
+- `knowledge/` contains durable Knowledge Documents, including `journal.md` with the open points in its section `## Open`.
 - `snapshots/` contains the final knowledge record of the retired [Promptotyping Agent Interface](../snapshots/promptotyping-agent-interface-final-record-2026-08-22.md).
   The [historical frontend plan](../snapshots/frontend-plan-history-2026-09-05.md) preserves superseded packages; the [knowledge-refactor audit](../snapshots/project-knowledge-refactor-2026-09-05.md) records the repository-wide inventory, current ownership and verification scope.
-  The [SZD data audit](../snapshots/benchmark-szd-data-audit-2026-09-05.md) records the first dated inspection of the SZD data basis for the benchmark.
-  The [SZD rehearsal preparation record](../snapshots/benchmark-szd-rehearsal-preparation-2026-09-05.md) records the local real-data package and technical input checks, without claiming a completed study.
 - `intro/` contains the introduction page for newcomers (A47), a separate page in the DHCraft design with its own text source for English and German.
 - `_content/` contains authored publication pages and the stable public template mirrors. Generated mirrors such as `_content/glossar.md` are rebuilt from their declared source.
-- `skills/promptotyping/` holds the canonical Promptotyping skill (A42). The Skills page renders its `SKILL.md`. Its eval cases lie outside the package under `tools/skill-evals/`.
+- The Promptotyping skill lives in the repository [promptotyping-skill](https://github.com/DigitalHumanitiesCraft/promptotyping-skill) (A42, revised 2026-11-14), and the start page links it. The Skills page with the skill and the two system prompts is retired, and `_content/skills/` is gone. Eval cases for the skill lie under `tools/skill-evals/`, and no check of this repository runs them.
 - `data/` is the established runtime-data area. Generated members name their producing command in the governing documentation; `data/vault.json` is built by `vault/tools/build_site_index.py`.
 
 ## Reading order
 
 1. INDEX (orientation)
-2. handoff.md (which received deltas are open)
+2. journal.md, section `## Open` (what is open)
 3. plan.md (which accepted work remains, in the order `CLAUDE.md` sets for session start)
 4. project.md (what the site is)
 5. governance.md (who has authority and which rules bind changes)
@@ -96,9 +88,9 @@ Terms constitutive for this knowledge base. Canonical definitions live in the li
 
 **Knowledge Document.** Structured Markdown document in a repository's `knowledge/` folder. All of them are Knowledge Documents, specialised by the kind of knowledge they carry into three analytical types named as in the paper, declarative knowledge documents (subject matter), process knowledge documents (workflow state and provenance) and agent instruction documents (imperative). From 2026-09-27 to 2026-11-10 site and convention kept the short names Declarative, Process and Action Document beside the paper's names (operator decision recorded in [journal.md](journal.md), entry of 2026-09-27). Since the operator's decision of 2026-11-10 to align terms with the manuscript, the short forms remain only in the type column of the convention's routing heuristic and in the catalogue field `typ`. Until July 2026 the declarative type itself was called Knowledge Document, and the name then moved to the umbrella term.
 
-**Template (Vorlage).** Fillable structural pattern for one function of a Promptotyping knowledge base. The function names are English: Navigation, Charter, Material, Specification, Architecture, Technology Baseline, Domain Knowledge, Design, Quality Assurance, Verification, Provenance, Handoff, Planning, Governance, Reporting, Integration, and Agent Instructions. The catalogue lives in the vault; the site mirrors the templates as versioned anchors. A template carries only where its trigger holds.
+**Template (Vorlage).** Fillable structural pattern for one function of a Promptotyping knowledge base. The function names are English: Navigation, Charter, Material, Specification, Architecture, Technology Baseline, Domain Knowledge, Design, Quality Assurance, Verification, Provenance, Planning, Governance, Reporting, Integration, and Agent Instructions. The Handoff template stays addressable as superseded since 2026-11-14. The catalogue lives in the vault; the site mirrors the templates as versioned anchors. A template carries only where its trigger holds.
 
-**Naming Contract.** Repository rule that makes the file name and path the primary routing signal. Durable single carriers use canonical function names; specialisations follow `<subject>-<function>.md`. `knowledge/handoff.md` is the live inbox, while exceptional dated Handoff snapshots and Reports include scope and date outside `knowledge/`. `INDEX.md` and `CLAUDE.md` are the registered uppercase exceptions.
+**Naming Contract.** Repository rule that makes the file name and path the primary routing signal. Durable single carriers use canonical function names; specialisations follow `<subject>-<function>.md`. Open points stand in `## Open` of `knowledge/journal.md`, while exceptional dated Handoff snapshots and Reports include scope and date outside `knowledge/`. `INDEX.md` and `CLAUDE.md` are the registered uppercase exceptions.
 
 **ZfdG.** Official abbreviation of *Zeitschrift für digitale Geisteswissenschaften*. [journal.md](journal.md) uses it for the venue decision of 2026-07-23. The dated submission report that also carried it left `snapshots/` on 2026-10-28.
 
@@ -122,7 +114,7 @@ Terms constitutive for this knowledge base. Canonical definitions live in the li
 
 **Grounded Vault (`vault/`).** Instance of the Grounded Vault template carrying the grounded evidence layer of the practice: sources, distillates, and assertions (until August 2026 claims) with grounding anchors, validated by `vault/tools/validate.py`. Migrated onto the renumbered template chain (`00_sources` to `40_output`) on 2026-08-09. Its own action layer `vault/CLAUDE.md` governs all work there.
 
-The embedded Grounded Vault also supplies existing research grounding for the benchmark proposal. The separate personal Obsidian vault holds cross-project orientation under `Projects/Promptotyping/`, reached through `Promptotyping MOC.md` and `Project Overview Promptotyping.md`. It is not a second copy of the repository or its evidence chain; the integration boundary and canonical destinations are in [benchmark-plan.md](benchmark-plan.md#knowledge-integration).
+The separate personal Obsidian vault holds cross-project orientation under `Projects/Promptotyping/`, reached through `Promptotyping MOC.md` and `Project Overview Promptotyping.md`. It is not a second copy of the repository or its evidence chain.
 
 **Project Governance.** The binding project-level rules for authority, source and evidence status, permissions, checking, acceptance, write-back, rights, publication, and escalation. In this repository they live in [governance.md](governance.md) and are applied through the repository action layer.
 

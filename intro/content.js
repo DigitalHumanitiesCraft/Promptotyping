@@ -16,7 +16,7 @@
     claudeModes: "https://code.claude.com/docs/en/permissions",
     git: "https://git-scm.com/downloads",
     python: "https://www.python.org/downloads/",
-    skill: "https://github.com/DigitalHumanitiesCraft/Promptotyping/tree/main/skills/promptotyping",
+    skill: "https://github.com/DigitalHumanitiesCraft/promptotyping-skill",
     repo: "https://github.com/DigitalHumanitiesCraft/Promptotyping",
     secondBrain: "https://github.com/chpollin/second-brain-vault",
     groundedVault: "https://github.com/DigitalHumanitiesCraft/grounded-vault",

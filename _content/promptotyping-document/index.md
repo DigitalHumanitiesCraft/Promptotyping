@@ -1,7 +1,7 @@
 ---
 title: Vorlage Index
 slug: index
-version: "0.4"
+version: "0.5"
 status: complete
 source: Vorlage Index
 mirrored: 2026-08-21
@@ -100,10 +100,10 @@ method:
   url: https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin
 template:
   name: Vorlage Index
-  version: 0.4
+  version: 0.5
   url: https://dhcraft.org/Promptotyping/promptotyping-document/index
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-index
-related: [project, data, specification, architecture, design, handoff, journal]
+related: [project, data, specification, architecture, design, journal]
 ---
 
 <!-- Lead: zwei bis drei Sätze. Wer adressiert wird, was abgedeckt ist, was woanders liegt. -->
@@ -119,14 +119,13 @@ related: [project, data, specification, architecture, design, handoff, journal]
 | [[specification]] | Specification | Was soll das System tun und warum? | bei Anforderungs- oder Entscheidungsänderung |
 | [[architecture]] | Architecture | Wie ist es technisch realisiert? | bei Architekturänderung |
 | [[design]] | Design | Wie sieht es aus und wie verhält es sich? | bei Änderung des Designsystems |
-| [[handoff]] | Handoff | Welche Übergabepunkte sind offen? | bei Eingang oder Verarbeitung eines Handoff-Punkts |
-| [[journal]] | Provenance | Was wurde wann aus welchem Anlass entschieden, korrigiert oder geändert? | nach sachlich zusammengehörigen Übergängen |
+| [[journal]] | Provenance | Was ist offen, und was wurde wann aus welchem Anlass entschieden, verworfen, korrigiert oder geändert? | bei jedem Handoff (`## Open` neu geschrieben) und nach sachlich zusammengehörigen Arbeitsschritten |
 
 <!-- Reihenfolge folgt Funktions-Logik, nicht alphabetisch. Nicht relevante Funktionen weglassen. -->
 
 ## Ablagezonen
 
-- `knowledge/` enthält dauerhaft gepflegte Promptotyping Documents einschließlich `handoff.md` als Process Inbox.
+- `knowledge/` enthält dauerhaft gepflegte Promptotyping Documents einschließlich `journal.md` mit dem Offenen im Abschnitt `## Open`.
 - `research-artefacts/` enthält wissenschaftliche Arbeitsprodukte.
 - `source-material/` enthält übernommene Quellen und Transkripte.
 - `snapshots/` enthält datierte Reports und Audits.
@@ -139,7 +138,7 @@ related: [project, data, specification, architecture, design, handoff, journal]
 
 <!-- Zwei bis vier Pfade. Jeder Pfad mit kurzer Begründung. -->
 
-- Sessionstart: [[INDEX]] → [[handoff]] → [[project]] → [aufgabenrelevantes Dokument].
+- Sessionstart: [[INDEX]] → [[journal#Open]] → [[project]] → [aufgabenrelevantes Dokument].
 - Reproduktion eines Datenexports: [[data]] → [[architecture]] → [[verification]].
 - Verstehen einer Designentscheidung: [[specification]] → [[journal]] → [[design]].
 
@@ -188,6 +187,7 @@ sugw-Edition trägt das Glossar als eigenständiges Dokument `glossar.md` mit zw
 
 ## Versionshistorie
 
+- 0.5 (2026-11-14): `handoff.md` aus Dokumentenmatrix, Ablagezonen, Lesepfaden und `related:` entfernt. Der Sessionstart liest nach dem Index `## Open` am Anfang von `journal.md`, die Journalzeile der Matrix trägt das Offene.
 - 0.4 (2026-08-21): `handoff.md` als verpflichtende Process Inbox in Dokumentenmatrix, Ablagezonen und Lesepfade aufgenommen.
 - 0.3 (2026-08-21): Naming Contract übernommen. Dokumentenmatrix um Pfad, Routing Question und Aktualisierungsanlass erweitert; Ablagezonen und Abkürzungsdefinitionen registriert.
 - 0.2 (2026-07-19): "Was fehlt und warum"-Sektion entfernt (Propagierung der Regeländerung Keine Selbstbeschreibung vom 2026-06-29), Ordnerinhalts-Konsistenz als viertes Strukturprinzip, englisches Funktionsvokabular, Block-Status auf `draft`, Lebenszyklus-Absatz. Migration: bestehende Indexe entfernen die Sektion beim nächsten Anfassen; begründete Lücken wandern ersatzlos, positive Verweise an den Bedarfsort.

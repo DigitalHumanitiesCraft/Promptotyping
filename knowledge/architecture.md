@@ -34,19 +34,9 @@ related: [INDEX, project, specification, design, journal]
 
 # Architecture
 
-The architecture below describes the Promptotyping portal. The separate benchmark
-authoring area is documented in
-[research-artefacts/promptotyping-bench/README.md](../research-artefacts/promptotyping-bench/README.md):
-real-data task materials live in `tasks/`, while `fixtures/dating-explorer/` owns the
-synthetic runner, grader and reference artefact. The SZD preparer reads a pinned
-Git blob, checks its hash and exports selected TEI and JSONL into a fresh local
-directory outside both repositories. It separates initial participant inputs from
-later episodes and facilitator material, without supplying execution isolation or
-model calls. These Python tools run locally for development and do not add a build
-step or runtime dependency to the site.
-The measured study harness remains planned under [benchmark-plan.md](benchmark-plan.md).
+The architecture below describes the Promptotyping portal.
 
-How the site is built. A single HTML page holds the static start page (A48) and empty section shells for every other page; vanilla JavaScript fetches Markdown from `_content/` and JSON from `data/`, plus the canonical skill from its own repository once the Skills page is shown, renders it with a vendored Markdown parser, and drives client-side routing. GitHub Pages publishes a tree that a workflow copies from the repository, with no build step. What the site does is in [specification.md](specification.md); how it looks is in [design.md](design.md).
+How the site is built. A single HTML page holds the static start page (A48) and empty section shells for every other page; vanilla JavaScript fetches Markdown from `_content/` and JSON from `data/`, renders it with a vendored Markdown parser, and drives client-side routing. GitHub Pages publishes a tree that a workflow copies from the repository, with no build step. What the site does is in [specification.md](specification.md); how it looks is in [design.md](design.md).
 
 ## Stack
 
@@ -75,15 +65,12 @@ Promptotyping/
 ├── CLAUDE.md                       # action layer
 ├── CITATION.cff, LICENSE
 ├── knowledge/                      # this knowledge base (specification)
-├── research-artefacts/             # benchmark proposal and benchmark authoring area
-├── source-material/                # cleaned video transcripts
 ├── snapshots/                      # dated reports and audits
 ├── schema/                         # JSON Schema of the frontmatter core (check group V16)
-├── tools/                          # check_consistency.py, build_glossar.py, tests/, skill-evals/
+├── tools/                          # check_consistency.py, build_glossar.py, build_downloads.py, tests/, skill-evals/
 ├── _content/                       # Markdown content
 │   ├── promptotyping-document/     # one template mirror per slug
 │   ├── case-studies/               # case-study deep pages
-│   ├── skills/                     # index, coding, writing
 │   ├── examples/                   # illustrative example files
 │   ├── overview.md, application.md, konvention.md, artefakt.md, verifikation.md
 │   ├── praxis.md, workflow.md, tutorial.md, arbeitsumgebung.md, technology-baseline.md
@@ -144,7 +131,7 @@ Calls across file boundaries go through the namespace at call time, so no load o
 
 **marked configuration** (`markdown.js`)**.** `configureMarked` calls `marked.use` with `gfm: true` and `breaks: false`. The footnote apparatus and the heading-id generator served the paper view alone and left with it on 2026-10-28. A defensive stripper for the `{:.phase-*}` tags of the removed provenance lane stood here until 2026-07-27 and was deleted once a sweep confirmed that no such tag survives under `_content/`. marked.js does not parse the Pandoc-style class syntax `{:.class}`, so any class tag now renders literally. The lane is not to be revived; that decision stands in ADR-4.
 
-**Start page** (`index.html`)**.** The start page stands as a static `section#overview` in `index.html`, so it reads without JavaScript. `mountPages` adopts an existing host instead of mounting a second one, and `app.js` fetches `_content/overview.md` only for its frontmatter, which the footer reads. The copy buttons of its fields come from the shared module `assets/dhcraft/dhcraft-copy.js`, which renders them only where the Clipboard API exists. `showPage` writes the page id to `body[data-page]`, which the stylesheet reads to widen the start page to the page frame. The header navigation is static markup (A50); `markNavActive` and the scrollspy mark its entries. `tools/build_downloads.py` builds the template and skill archives that the page offers; the Pages workflow runs it on the assembled tree, and a local run writes into the ignored folder `downloads/`.
+**Start page** (`index.html`)**.** The start page stands as a static `section#overview` in `index.html`, so it reads without JavaScript. `mountPages` adopts an existing host instead of mounting a second one, and `app.js` fetches `_content/overview.md` only for its frontmatter, which the footer reads. The copy buttons of its fields come from the shared module `assets/dhcraft/dhcraft-copy.js`, which renders them only where the Clipboard API exists. `showPage` writes the page id to `body[data-page]`, which the stylesheet reads to widen the start page to the page frame. The header navigation is static markup (A50); `markNavActive` and the scrollspy mark its entries. `tools/build_downloads.py` builds the template archive that the page offers, and the skill is offered as a link to its repository (A42); the Pages workflow runs it on the assembled tree, and a local run writes into the ignored folder `downloads/`.
 
 **Practice pages** (`app.js` boot)**.** `application`, `workflow`, `artefakt` and `verifikation` are static content rendered by `renderMarkdownInto`. Overview and Application use matching English substrate names. Application, Artefact and Checking are parts of the specification page; `workflow` is a page of its own. Application, Artefact and Checking are the practice accounts; `workflow` walks the video-documented session through the four forms of work and carries the part-1 video.
 
@@ -158,7 +145,7 @@ Calls across file boundaries go through the namespace at call time, so no load o
 
 **Vorlagen hub** (`pages-vorlagen.js`)**.** `renderVorlagen` loads `data/promptotyping-documents.json` (top-level `documents`, each with `slug`, `title`, `funktion`, `datei`, `typ`, `version`, `status`, `machineUrl`), builds the `#vorlagen` section as a hub with four blocks, the quiet sub-navigation over them having been removed on 2026-07-26 (A19): `#vorlagen-katalog` (the clickable template table wired by `wireVorlagenRows`), `#vorlagen-konvention` (a short abstract with a jump to `#konvention-v0.1`), `#vorlagen-maschinenzugriff` (the Frontmatter-Inspector host from `renderInspector` plus the machine-address note), and `#vorlagen-technology-baseline` (the baseline abstract linking `_content/technology-baseline.md`). The sub-anchors are in-page fragments without subpath routing and without an entry in the anchor-family table; a `vorlagen`-prefixed hash resolves through the DOM fallback of `pageForAnchor`, which walks up from the element to its `.doc-page` ancestor. Each row keeps its stable anchor and pointer surface; a native button in its first cell carries the keyboard semantics. Activating either calls `openTemplatePanel`, which fetches `_content/promptotyping-document/{slug}.md`, renders it into the side panel, appends a footer with a copyable `template:` block and a machine-URL link, and caches the result.
 
-**Skills and Praxis** (`pages-content.js`)**.** `renderSkills` builds an intro, the `#skills-promptotyping` package view, and the `#skills-coding` and `#skills-writing` teaching blocks from `_content/skills/`. The package view fetches `skills/promptotyping/SKILL.md`, the canonical skill in this repository (A42), from the same origin. The fetch starts only when the Skills page is first shown, signalled by the `promptotyping:page-shown` event that `showPage` dispatches on every page change, and it stands outside the boot's `ready` promise. `rebaseSkillLinks` points any package-relative link of the file at the package folder on GitHub; the file carries none at present. The view copies the complete source, offers it for download as a blob named `SKILL.md`, and links to the package folder. If the fetch fails, the block shows the shared load error. The block carries `data-term-index-skip`, so the term index leaves its text out (A25). Prompt code blocks retain their own copy controls. `renderPraxis` renders `_content/praxis.md` and gives each heading a stable `#praxis-{slug}` anchor matching the `/praxis/{slug}` route.
+**Praxis** (`pages-content.js`)**.** The Skills page was retired on 2026-11-14 together with the copy of the skill (A42). `registry.js` sends `#skills` and every `#skills-{name}` to the start page through `LEGACY_ROUTE_ALIASES` and the `skills-` anchor family, and `#skills-promptotyping` to the start page's section `#start-example`, so published links still land. `renderPraxis` renders `_content/praxis.md` and gives each heading a stable `#praxis-{slug}` anchor matching the `/praxis/{slug}` route.
 
 **Template URL resolution** (`registry.js`)**.** `resolveTemplateUrl` maps both subpath and hash template URLs onto the canonical hash anchor. It is the one implementation of the subpath vocabulary, called by the boot in `app.js` for the path `404.html` hands over and by the inspector for a pasted address.
 
@@ -177,8 +164,6 @@ Calls across file boundaries go through the namespace at call time, so no load o
 ```
 _content/promptotyping-document/{slug}.md               ← template mirrors, one file per slug
 _content/case-studies/{id}.md                           ← case-study deep pages
-_content/skills/{index,coding,writing}.md               ← skills content
-skills/promptotyping/SKILL.md                           ← canonical skill, with agents/ beside it; its eval cases lie in tools/skill-evals/
 _content/{overview,application,konvention,artefakt,verifikation,praxis,workflow,tutorial,arbeitsumgebung,technology-baseline}.md
 _content/glossar.md                                     ← glossar prose, generated from data/glossar.json
 _content/MANIFEST.md                                    ← mirror provenance
@@ -200,7 +185,6 @@ Serve the repository root over HTTP for local work, for example `python -m http.
 - No backend, no server-side logic, no database, no tracking.
 - YouTube embeds use the `youtube-nocookie.com` variant behind a click-to-load facade, so no connection to YouTube is made before the click.
 - External live-demo iframes carry a `sandbox` attribute where possible.
-- The canonical skill is served from the same origin as every other page source, and its Markdown is rendered without sanitising like them.
 
 ## The `vault/` folder
 

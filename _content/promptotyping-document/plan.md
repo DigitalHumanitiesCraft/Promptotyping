@@ -23,7 +23,7 @@ Lebenszyklus: der Plan entsteht, sobald die Sequenz erkennbar ist, meist nach de
 
 Das Dokument beantwortet "was ist der nächste Schritt, in welcher Reihenfolge bauen die Schritte aufeinander auf, woran erkenne ich, dass ein Schritt abgeschlossen ist, und was muss vorher wahr sein, damit er beginnen kann". Es ist die vorwärts gerichtete Steuerungsschicht der Wissensbasis. Adressiert sind primär der Projekt-Verantwortliche, der die Arbeit taktet und gegen einen Termin priorisiert, und der Coding-Agent, der eine Session aufnimmt und wissen muss, welcher Milestone als Nächstes dran ist und unter welcher Bedingung er ihn als erledigt markieren darf.
 
-Die Abgrenzung gegen die Nachbardokumente definiert die Funktion. `journal.md` ist der kuratierte rückwärtsgerichtete Provenienzindex; `plan.md` führt angenommene Zukunftsarbeit und wird fortgeschrieben. Erledigte Arbeit verlässt den aktiven Plan. Ein Journal-Eintrag entsteht, wenn der Abschluss einen sachlich zusammengehörigen Übergang integriert, verwirft oder korrigiert. `specification.md` hält Anforderungen, Akzeptanzkriterien und Entscheidungen; die Exit-Bedingungen des Plans verweisen darauf.
+Die Abgrenzung gegen die Nachbardokumente definiert die Funktion. `journal.md` ist das Arbeitstagebuch mit dem Offenen der laufenden Arbeit am Anfang und dem rückwärtsgerichteten Nachweis darunter. `plan.md` führt angenommene Zukunftsarbeit, die noch nicht begonnen ist, und wird fortgeschrieben. Erledigte Arbeit verlässt den aktiven Plan. Ein Journal-Eintrag entsteht, wenn der Abschluss einen sachlich zusammengehörigen Übergang integriert, verwirft oder korrigiert. `specification.md` hält Anforderungen, Akzeptanzkriterien und Entscheidungen; die Exit-Bedingungen des Plans verweisen darauf.
 
 ## Strukturprinzipien
 
@@ -179,7 +179,7 @@ Legende: completed, in progress, pending.
 
 ## Anwendung als Prompt-Template
 
-Strukturanker beim Aufsetzen eines Plans. Der Agent erhält den Template-Block und befüllt ihn aus `specification.md` sowie dem aktuellen Repo-Stand. Beim Sessionstart liest er nach `knowledge/INDEX.md` und `knowledge/handoff.md` den Status-Tracker und die Sektion *Offene Entscheidungen und Abhängigkeiten*. Beim Abschluss eines Milestones aktualisiert er Plan und `updated:`-Feld. Ein Journal-Eintrag folgt nur für einen sachlich zusammengehörigen Übergang.
+Strukturanker beim Aufsetzen eines Plans. Der Agent erhält den Template-Block und befüllt ihn aus `specification.md` sowie dem aktuellen Repo-Stand. Beim Sessionstart liest er nach `knowledge/INDEX.md` und dem Abschnitt `## Open` am Anfang von `knowledge/journal.md` den Status-Tracker und die Sektion *Offene Entscheidungen und Abhängigkeiten*. Beim Abschluss eines Milestones aktualisiert er Plan und `updated:`-Feld. Ein Journal-Eintrag folgt nur für einen sachlich zusammengehörigen Übergang.
 
 Review-Folie für einen bestehenden Plan. Ein vorhandenes `plan.md` oder `<subject>-plan.md` wird gegen die Vorlage gehalten. Geprüft werden Entry- und Exit-Bedingungen, ihre Verankerung in der Spezifikation, die Begrenzung volatiler Zahlen auf den Status-Tracker und die Entfernung erledigter Arbeit aus dem aktiven Plan.
 

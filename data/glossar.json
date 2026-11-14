@@ -252,7 +252,7 @@
       "slug": "context-memory",
       "begriff": "Context Memory",
       "kurz": "Division of re-entry context among durable documents, process knowledge documents and git history.",
-      "voll": "Context memory denotes the division of re-entry information among durable project knowledge, open received deltas in handoff.md, accepted future work in plan.md, the curated provenance index in journal.md, and earlier wording in git history. This division lets a new session recover current substance, pending inputs, future commitments, and transition grounds from their responsible carriers.",
+      "voll": "Context memory denotes the division of re-entry information among durable project knowledge, accepted future work in plan.md, journal.md with the open points in its section ## Open and the curated provenance entries below it, and earlier wording in journal-archive.md and git history. This division lets a new session recover current substance, open points, future commitments, and transition grounds from their responsible carriers.",
       "kategorie": "document-function",
       "quellen": [
         {
@@ -648,7 +648,7 @@
       "slug": "process-document",
       "begriff": "Process Knowledge Document",
       "kurz": "Knowledge document that records how the project's understanding changed over time and on what grounds decisions were made.",
-      "voll": "A process knowledge document is the specialisation of the knowledge document that records how the project's understanding changed over time and on what grounds decisions were made. A journal.md may record attempted approaches, failures and unresolved questions, and consequential decisions may be retained in dedicated records. Together with version control and informative commit messages, these documents make changes and their rationale traceable. The Konvention Knowledge Documents adds the mandatory handoff.md for open received deltas and plan.md for accepted future work, treats journal.md as the curated backward provenance index, and routes an overlooked input to handoff.md and unclear transition grounds to journal.md. Until 10 November 2026 the site called this type Process Document, and the routing heuristic of the convention keeps Process as the short form in its type column.",
+      "voll": "A process knowledge document is the specialisation of the knowledge document that records how the project's understanding changed over time and on what grounds decisions were made. A journal.md may record attempted approaches, failures and unresolved questions, and consequential decisions may be retained in dedicated records. Together with version control and informative commit messages, these documents make changes and their rationale traceable. The Konvention Knowledge Documents treats journal.md as the working diary, with the open points in its section ## Open and the curated backward provenance entries below, adds plan.md for accepted future work, and routes an overlooked open point and unclear transition grounds to journal.md. Until 14 November 2026 the convention kept open received deltas in a mandatory handoff.md. Until 10 November 2026 the site called this type Process Document, and the routing heuristic of the convention keeps Process as the short form in its type column.",
       "kategorie": "document-function",
       "quellen": [
         {
@@ -965,7 +965,7 @@
       "slug": "vorlage",
       "begriff": "Template (Knowledge Document)",
       "kurz": "Fillable structural specification for one function of a Promptotyping knowledge base.",
-      "voll": "A template is a fillable structural specification for one function of a Promptotyping knowledge base. Function names and subject prefixes are English, including Navigation, Charter, Material, Specification, Architecture, Technology Baseline, Domain Knowledge, Design, Quality Assurance, Verification, Provenance, Handoff, Planning, Governance, Reporting, Integration and Agent Instructions. A single carrier uses its canonical file name. A specialisation follows <subject>-<function>.md. Template names remain stable public identifiers even where their wording is German. The catalogue is open, and a template applies only where its trigger is met.",
+      "voll": "A template is a fillable structural specification for one function of a Promptotyping knowledge base. Function names and subject prefixes are English, including Navigation, Charter, Material, Specification, Architecture, Technology Baseline, Domain Knowledge, Design, Quality Assurance, Verification, Provenance, Planning, Governance, Reporting, Integration and Agent Instructions. A single carrier uses its canonical file name. A specialisation follows <subject>-<function>.md. Template names remain stable public identifiers even where their wording is German. The catalogue is open, and a template applies only where its trigger is met.",
       "kategorie": "document-function",
       "quellen": [
         {

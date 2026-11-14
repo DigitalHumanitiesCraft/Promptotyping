@@ -45,18 +45,20 @@
       note: "Your own first pass, step by step from dataset to promptotype" },
     { id: "praxis", label: "Best Practices", group: "Tools and practice", kind: "informative",
       note: "Extensions of the practice that grew out of applying it" },
-    { id: "skills", label: "Skills", group: "Tools and practice", kind: "informative",
-      note: "Installable Promptotyping skill and reusable system prompts",
-      machine: "_content/skills/index.md" },
     { id: "arbeitsumgebung", label: "Working environment", group: "Tools and practice", kind: "informative",
       note: "Vault, agent interface and AI harness around the practice" }
   ];
 
   /* Published German routes from the first English-site pass remain accepted,
-     but resolve onto the English canonical ids before a page is shown. */
+     but resolve onto the English canonical ids before a page is shown. The
+     Skills page was retired on 2026-11-14, when the skill moved to its own
+     repository; its published addresses land on the start page, the skill
+     anchor on the section headed Skill. */
   var LEGACY_ROUTE_ALIASES = {
     ueberblick: "overview",
-    anwendung: "application"
+    anwendung: "application",
+    skills: "overview",
+    "skills-promptotyping": "start-example"
   };
 
   var HOME_PAGE = "overview";
@@ -75,7 +77,9 @@
   var ANCHOR_FAMILIES = [
     { prefix: "case-", page: "use-cases", segment: "case-studies" },
     { prefix: "praxis-", page: "praxis", segment: "praxis" },
-    { prefix: "skills-", page: "skills", segment: "skills" },
+    // Retired with the Skills page; /skills/{name} and #skills-{name} land on
+    // the start page, and #skills-promptotyping on its Skill section.
+    { prefix: "skills-", page: "overview", segment: "skills" },
     { prefix: "glossar-", page: "glossar", segment: null },
     { prefix: "konzept-", page: "glossar", segment: "konzepte" },
     { prefix: "vault-", page: "vault", segment: "vault" },
@@ -232,8 +236,7 @@
   }
 
   /* Move every heading in a subtree down one level, attributes and all, so a
-     block merged into a page does not bring a second H1 with it. Exported,
-     because the skills page merges its sub-blocks the same way. */
+     block merged into a page does not bring a second H1 with it. */
   function demoteHeadings(el) {
     var found = Array.prototype.slice.call(el.querySelectorAll("h1, h2, h3, h4, h5"));
     found.forEach(function (heading) {

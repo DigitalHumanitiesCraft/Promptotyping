@@ -1,4 +1,4 @@
-/* The content pages that carry no data source of their own: practice, skills,
+/* The content pages that carry no data source of their own: practice,
    the host markup for the use-case module, and the hue marks of the artefact
    page. */
 
@@ -40,123 +40,6 @@
         target.insertAdjacentElement("beforebegin", anchor);
       });
     });
-  }
-
-  /* ---- Skills ----
-     Index intro, the installable skill package and two system prompts use the
-     stable #skills-promptotyping / #skills-coding / #skills-writing anchors. */
-
-  /* Both sub-block files head their text with an H1, so the merged page would
-     carry three. Their headings move down one level at render time through the
-     same helper foldParts uses on the specification parts. The content files
-     stay untouched and the attributes travel with the heading, so nothing
-     addressable moves; the block anchors sit on the hosts and are unaffected
-     either way. */
-  function renderSkillsBlock(el) {
-    A.demoteHeadings(el);
-    A.addCodeCopyButtons(el);
-  }
-
-  /* The canonical skill lives in this repository under skills/promptotyping/
-     (operator decision 2026-11-10, superseding A42 of 2026-10-19). The page
-     loads its SKILL.md from the same origin; relative links in that file point
-     into the package and are rebased onto the package on GitHub, because the
-     site publishes SKILL.md but links the package for its other files. */
-  var SKILL_REPOSITORY = "https://github.com/DigitalHumanitiesCraft/Promptotyping";
-  var SKILL_PACKAGE = SKILL_REPOSITORY + "/tree/main/skills/promptotyping";
-  var SKILL_SOURCE = "skills/promptotyping/SKILL.md";
-
-  function rebaseSkillLinks(el) {
-    el.querySelectorAll("a[href]").forEach(function (link) {
-      var href = link.getAttribute("href");
-      if (/^(?:[a-z][a-z0-9+.-]*:|#|\/)/i.test(href)) {
-        return;
-      }
-      link.href = SKILL_REPOSITORY + "/blob/main/skills/promptotyping/" + href;
-      link.target = "_blank";
-      link.rel = "noopener";
-    });
-  }
-
-  function renderSkillPackage(el, text) {
-    renderSkillsBlock(el);
-    rebaseSkillLinks(el);
-
-    var actions = document.createElement("div");
-    actions.className = "skill-actions";
-
-    var copy = document.createElement("button");
-    copy.type = "button";
-    copy.className = "skill-copy";
-    copy.textContent = "Copy SKILL.md";
-    copy.addEventListener("click", function () {
-      A.copyText(text, copy, "Copy SKILL.md");
-    });
-    actions.appendChild(copy);
-
-    /* The fetched text is offered as a blob, so the download carries the
-       file name SKILL.md whatever the serving path. */
-    var download = document.createElement("a");
-    download.href = URL.createObjectURL(new Blob([text], { type: "text/markdown" }));
-    download.download = "SKILL.md";
-    download.textContent = "Download SKILL.md";
-    actions.appendChild(download);
-
-    var repository = document.createElement("a");
-    repository.href = SKILL_PACKAGE;
-    repository.target = "_blank";
-    repository.rel = "noopener";
-    repository.textContent = "Open package";
-    actions.appendChild(repository);
-
-    var heading = el.querySelector("h2");
-    if (heading && heading.nextSibling) {
-      el.insertBefore(actions, heading.nextSibling);
-    } else {
-      el.appendChild(actions);
-    }
-  }
-
-  function renderSkills() {
-    var host = document.getElementById("skills");
-    if (!host) {
-      return Promise.resolve();
-    }
-    host.classList.remove("placeholder-section");
-    host.innerHTML =
-      '<div id="skills-intro"></div>' +
-      '<div class="skills-block" id="skills-promptotyping" data-term-index-skip></div>' +
-      '<div class="skills-block" id="skills-coding"></div>' +
-      '<div class="skills-block" id="skills-writing"></div>';
-
-    /* The skill loads only once the Skills page is shown, so the boot never
-       waits for it. The host element stands already, so #skills-promptotyping
-       resolves; a failed fetch shows the shared load error in the block alone. */
-    var skillRequested = false;
-    function loadSkill() {
-      if (skillRequested) {
-        return;
-      }
-      skillRequested = true;
-      document.removeEventListener("promptotyping:page-shown", onPageShown);
-      A.renderMarkdownInto("skills-promptotyping", SKILL_SOURCE, renderSkillPackage);
-    }
-    function onPageShown(event) {
-      if (event.detail && event.detail.page === "skills") {
-        loadSkill();
-      }
-    }
-    if (host.closest(".doc-page.is-active")) {
-      loadSkill();
-    } else {
-      document.addEventListener("promptotyping:page-shown", onPageShown);
-    }
-
-    return Promise.all([
-      A.renderMarkdownInto("skills-intro", "_content/skills/index.md"),
-      A.renderMarkdownInto("skills-coding", "_content/skills/coding.md", renderSkillsBlock),
-      A.renderMarkdownInto("skills-writing", "_content/skills/writing.md", renderSkillsBlock)
-    ]);
   }
 
   /* ---- Use cases (host markup; assets/js/modules/case-study-filter.js renders
@@ -220,7 +103,6 @@
   }
 
   A.renderPraxis = renderPraxis;
-  A.renderSkills = renderSkills;
   A.renderUseCasesHost = renderUseCasesHost;
   A.FUNCTIONS = FUNCTION_SLUGS;
   A.functionVar = functionVar;

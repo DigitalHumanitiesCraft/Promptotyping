@@ -30,11 +30,11 @@ jobs:
       - name: Assemble the published tree
         run: |
           mkdir _site
-          git ls-files -z -- index.html 404.html LICENSE CITATION.cff assets _content data intro schema skills \
+          git ls-files -z -- index.html 404.html LICENSE CITATION.cff assets _content data intro schema \
               vault/LICENSE vault/10_markdown vault/20_distillates vault/references \
             | grep -zvE '^intro/tests/' \
             | xargs -0 cp --parents -t _site
-      - name: Build the download archives
+      - name: Build the download archive
         run: python3 tools/build_downloads.py _site/downloads
       - uses: actions/upload-pages-artifact@v3
         with:

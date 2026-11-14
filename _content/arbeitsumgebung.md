@@ -17,11 +17,11 @@ The Knowledge Documents live in a Markdown vault. The unit of analysis is the va
 
 ## AI harness and skills
 
-Claude Code serves as the AI harness in which the practice scales, the environment in which an agent works on a project over longer stretches, with access to files, tools and execution. The [canonical Promptotyping skill](#skills-promptotyping) maintains the practice's routing and handoff discipline across those sessions; the same section also provides transferable system prompts for coding and writing. Process videos showing the procedure inside the environment are on the [YouTube channel](https://www.youtube.com/@DigitalHumanitiesCraft).
+Claude Code serves as the AI harness in which the practice scales, the environment in which an agent works on a project over longer stretches, with access to files, tools and execution. The [Promptotyping skill](https://github.com/DigitalHumanitiesCraft/promptotyping-skill) maintains the practice's routing and handoff discipline across those sessions. Process videos showing the procedure inside the environment are on the [YouTube channel](https://www.youtube.com/@DigitalHumanitiesCraft).
 
-The skill lies in this repository under `skills/promptotyping/`. Four operating cases determine how it is used.
+The skill lives in the repository [promptotyping-skill](https://github.com/DigitalHumanitiesCraft/promptotyping-skill), whose README gives the installation for each agent. Four operating cases determine how it is used.
 
-- **Claude Code.** Copy the `skills/promptotyping` folder to `~/.claude/skills/promptotyping` for all projects or to `.claude/skills/promptotyping` inside one project, and keep project-specific rules in the repository's `CLAUDE.md`.
+- **Claude Code.** Copy the `promptotyping` folder of that repository to `~/.claude/skills/promptotyping` for all projects or to `.claude/skills/promptotyping` inside one project, and keep project-specific rules in the repository's `CLAUDE.md`.
 - **Codex with skills.** Place the `promptotyping` package in the configured skills directory, usually `$CODEX_HOME/skills/`, and use the repository's `AGENTS.md` or other loaded agent instruction document for project-specific rules.
 - **Another skill-capable harness.** Install the same package through that harness's documented skill mechanism and name the root agent instruction document it actually reads. The portable `SKILL.md` contains no product-specific path.
 - **A harness without skills.** Keep a root agent instruction document and use the six self-contained prompts in the [tutorial](#tutorial). The recurring operations can be issued as ordinary instructions. A chat interface that cannot inspect files, edit the repository, and run checks does not meet the tutorial's harness prerequisite.

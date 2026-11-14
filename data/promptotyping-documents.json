@@ -1,6 +1,6 @@
 {
   "version": "0.4",
-  "generated": "2026-11-10",
+  "generated": "2026-11-14",
   "_meta": {
     "beschreibung": "Structured form of the template table (Knowledge Documents). Generated from the frontmatter of the mirrors under _content/promptotyping-document/ and from the function, file-name and type assignment in _content/konvention.md (template catalogue and routing heuristic). The order follows the template catalogue of the convention. The function names are English; template names remain stable identifiers. The trigger field carries the criterion under which a template applies.",
     "schema": {
@@ -23,7 +23,7 @@
       "funktion": "Navigation plus term lexicon",
       "datei": "INDEX.md",
       "typ": "Declarative",
-      "version": "0.4",
+      "version": "0.5",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/index.md",
       "trigger": "knowledge base has more than three documents or several constitutive terms",
@@ -83,7 +83,7 @@
       "funktion": "Agent Instructions",
       "datei": "CLAUDE.md (repository root)",
       "typ": "Action",
-      "version": "0.6",
+      "version": "0.7",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/action-layer.md",
       "trigger": "always",
@@ -164,10 +164,10 @@
     {
       "slug": "journal",
       "title": "Vorlage Journal",
-      "funktion": "Provenance",
+      "funktion": "Provenance (working diary with the open points in ## Open at its beginning)",
       "datei": "journal.md",
       "typ": "Process",
-      "version": "0.6",
+      "version": "0.7",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/journal.md",
       "trigger": "always",
@@ -176,14 +176,14 @@
     {
       "slug": "handoff",
       "title": "Vorlage Handoff",
-      "funktion": "Handoff (live Process Inbox)",
+      "funktion": "Handoff (superseded since 2026-11-14; open points stand in ## Open of journal.md)",
       "datei": "handoff.md",
       "typ": "Process",
       "version": "0.1",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/handoff.md",
-      "trigger": "always",
-      "mark": "always"
+      "trigger": "superseded since 2026-11-14; no project creates it any more, and a repository that still carries handoff.md moves its open points into ## Open of journal.md at its next handoff",
+      "mark": "superseded by journal.md"
     },
     {
       "slug": "plan",
@@ -215,7 +215,7 @@
       "funktion": "Integration (durable cross-project contracts)",
       "datei": "integration.md",
       "typ": "Declarative",
-      "version": "0.3",
+      "version": "0.4",
       "status": "complete",
       "machineUrl": "https://dhcraft.org/Promptotyping/_content/promptotyping-document/integration.md",
       "trigger": "project with a durable cross-project contract for data, formats or responsibilities",

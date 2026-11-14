@@ -21,7 +21,7 @@
   }
 
   /* Render a content file into its page host (overview, application, practice,
-     skills, convention, artefact, verification, working environment). */
+     convention, artefact, verification, working environment). */
   function renderMarkdownInto(sectionId, file, after) {
     var el = document.getElementById(sectionId);
     if (!el) {

@@ -20,12 +20,12 @@ In the figure, Knowledge Engineering is the project knowledge base and its curat
 
 A first iteration is meant for researchers and project teams with structured data and a concrete question. Check first whether the six conditions of the [fit check](_content/application.md) hold.
 
-1. Install an AI coding agent such as Claude Code or Codex, Git and Python, then copy the skill into the agent's skills folder. The same skill is published as the repository [promptotyping-skill](https://github.com/DigitalHumanitiesCraft/promptotyping-skill), tagged per version, whose README gives the installation for each agent.
+1. Install an AI coding agent such as Claude Code or Codex, Git and Python, then copy the skill into the agent's skills folder. The skill lives in the repository [promptotyping-skill](https://github.com/DigitalHumanitiesCraft/promptotyping-skill), tagged per version, whose README gives the installation for each agent and whose changelog records every change.
 
    ```bash
-   git clone https://github.com/DigitalHumanitiesCraft/Promptotyping.git
+   git clone https://github.com/DigitalHumanitiesCraft/promptotyping-skill.git
    mkdir -p ~/.claude/skills
-   cp -r Promptotyping/skills/promptotyping ~/.claude/skills/
+   cp -r promptotyping-skill/promptotyping ~/.claude/skills/
    ```
 
    Codex reads skills from its skills directory, usually `$CODEX_HOME/skills/`. An agent that reads only `AGENTS.md` gets the skill through one line there, after the folder has been copied, for instance to `.agents/skills/promptotyping/`.
@@ -34,9 +34,9 @@ A first iteration is meant for researchers and project teams with structured dat
    Before working in knowledge/, read .agents/skills/promptotyping/SKILL.md and follow the operation that fits the task.
    ```
 
-2. Take the files. The skill lies under [`skills/promptotyping/`](skills/promptotyping/) with five subcommands, orient, explore, distill, curate and handoff. The templates for the knowledge base lie under [`_content/promptotyping-document/`](_content/promptotyping-document/), and the page offers each one and both sets as archives.
+2. Take the files. The skill has five subcommands, orient, explore, distill, curate and handoff. The templates for the knowledge base lie under [`_content/promptotyping-document/`](_content/promptotyping-document/), and the page offers each one and the whole set as an archive.
 
-3. Work in your own words. Create an empty project folder with your data, start the agent there and name the step you want, from Prepare to the acceptance, as the example on the page and the [tutorial](_content/tutorial.md) do. The skill carries the procedure behind each step. An agent that cannot load skills gets it when you give it [`SKILL.md`](skills/promptotyping/SKILL.md) to read first.
+3. Work in your own words. Create an empty project folder with your data, start the agent there and name the step you want, from Prepare to the acceptance, as the example on the page and the [tutorial](_content/tutorial.md) do. The skill carries the procedure behind each step. An agent that cannot load skills gets it when you give it the skill's [`SKILL.md`](https://github.com/DigitalHumanitiesCraft/promptotyping-skill/blob/main/promptotyping/SKILL.md) to read first.
 
 ## Example
 
@@ -46,7 +46,7 @@ The start page works through an invented family correspondence, [`intro/example/
 
 The practice has not yet been evaluated against other ways of working, and whether it transfers to other people and projects is still open. The automatic checks of this repository decide consistency between its own statements, while whether the description is right in substance remains scholarly judgement. The templates other than `technology` are written in German.
 
-Text, templates and skill (Markdown under [`_content/`](_content/), [`knowledge/`](knowledge/), [`skills/`](skills/) and [`vault/`](vault/)) are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), code under the MIT License in [LICENSE](LICENSE). The shared DHCraft web files under [`assets/dhcraft/`](assets/dhcraft/) carry their own [licence](assets/dhcraft/LICENSE.md), and the DHCraft mark is proprietary. The repository contains no third-party research data.
+Text and templates (Markdown under [`_content/`](_content/), [`knowledge/`](knowledge/) and [`vault/`](vault/)) are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), code under the MIT License in [LICENSE](LICENSE). The shared DHCraft web files under [`assets/dhcraft/`](assets/dhcraft/) carry their own [licence](assets/dhcraft/LICENSE.md), and the DHCraft mark is proprietary. The repository contains no third-party research data.
 
 Cite the practice through [CITATION.cff](CITATION.cff), which GitHub offers under "Cite this repository". The concept DOI resolves to the latest archived version. Changes are listed in [CHANGELOG.md](CHANGELOG.md).
 

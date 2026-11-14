@@ -1,7 +1,7 @@
 ---
 title: Vorlage Integration
 slug: integration
-version: "0.3"
+version: "0.4"
 status: complete
 source: Vorlage Integration
 mirrored: 2026-08-21
@@ -9,7 +9,7 @@ machine-url: https://dhcraft.org/Promptotyping/_content/promptotyping-document/i
 ---
 # Vorlage Integration
 
-Diese Vorlage strukturiert das dauerhaft gepflegte Integration-Dokument einer Promptotyping-Wissensbasis. Ein einzelner Kontrakt heißt `integration.md`; mehrere Schnittstellen werden als `<counterpart>-integration.md` spezialisiert. Das Dokument liegt im `knowledge/`-Ordner und trägt Austauschformat, Zuständigkeiten sowie Abnahmekriterien. Neue Übergabedeltas liegen bis zur fachlichen Verarbeitung in `knowledge/handoff.md`; datierte außergewöhnliche Übergabestände liegen unter `handoffs/`.
+Diese Vorlage strukturiert das dauerhaft gepflegte Integration-Dokument einer Promptotyping-Wissensbasis. Ein einzelner Kontrakt heißt `integration.md`; mehrere Schnittstellen werden als `<counterpart>-integration.md` spezialisiert. Das Dokument liegt im `knowledge/`-Ordner und trägt Austauschformat, Zuständigkeiten sowie Abnahmekriterien. Neue Übergabedeltas stehen bis zur fachlichen Verarbeitung im Abschnitt `## Open` von `knowledge/journal.md`, datierte außergewöhnliche Übergabestände liegen unter `handoffs/`.
 
 ## Geltungsbereich
 
@@ -17,7 +17,7 @@ Die Vorlage trägt, sobald ein Projekt Daten, Formate oder Zuständigkeiten mit 
 
 Das Dokument entsteht mit dem Kontrakt, idealerweise bevor die erste Lieferung fließt, und wird bei jeder Kontraktänderung auf beiden Seiten der Schnittstelle im selben Zug nachgezogen. Wird die Schnittstelle stillgelegt, bleibt der letzte gültige Kontrakt als Erklärung der gelieferten Daten erhalten.
 
-Integration ist von den Nachbarfunktionen Architecture, Handoff und Provenance abgegrenzt. `architecture.md` beschreibt den internen Aufbau des eigenen Projekts. `handoff.md` führt übernommene Deltas bis zu ihrer Integration oder Verwerfung. `journal.md` weist den rückwärts gerichteten Übergang nach. Integration hält den aktuell gültigen Kontrakt an der Projektgrenze. Ein dauerhafter Research-to-Operations-Handoff ist deshalb ein Integrationsdokument und damit ein declarative knowledge document.
+Integration ist von den Nachbarfunktionen Architecture und Provenance abgegrenzt. `architecture.md` beschreibt den internen Aufbau des eigenen Projekts. `journal.md` führt übernommene Deltas in `## Open` bis zu ihrer Integration oder Verwerfung und weist den rückwärts gerichteten Übergang in seinen Einträgen nach. Integration hält den aktuell gültigen Kontrakt an der Projektgrenze. Ein dauerhafter Research-to-Operations-Handoff ist deshalb ein Integrationsdokument und damit ein declarative knowledge document.
 
 Zwei Zuschnitte sind gleichwertig und richten sich nach dem Adressaten. Die Mehrprojekt-Referenz (teiCrafter-Muster) beschreibt ein Mehrprojekt-Geflecht aus einer Hand für alle Beteiligten; das lane-lokale Schnittstellendokument (szd-htr-Muster) beschreibt eine Richtung aus Sicht des eigenen Repos. Beschreiben beide Seiten denselben Kontrakt, muss genau eine Seite als Quelle der Wahrheit deklariert sein und beide müssen aufeinander verweisen; die einseitige Verlinkung war der eine Konsistenzbefund der Extraktion.
 
@@ -40,7 +40,7 @@ Pflichtkern der Konvention (`title`, `project`, `method`, `status`, `created`, `
 - `template:` als Block mit `name: Vorlage Integration`, `version`, `url`, sobald diese Vorlage angewandt wurde.
 - `counterpart:` das Gegenüber als Objekt mit `name` und, falls vorhanden, `repository`.
 - `direction:` `outbound`, `inbound` oder `bidirectional`.
-- `related:` typischerweise `architecture`, `specification`, `handoff`, `journal`.
+- `related:` typischerweise `architecture`, `specification`, `journal`.
 
 ## Abschnitte im Detail
 
@@ -66,7 +66,7 @@ Funktion: die Erfüllung prüfbar machen. Inhalt: die formalen Bedingungen, unte
 
 ### Offene Punkte und Input-Gaps
 
-Funktion: vertragliche Input-Verpflichtungen benennen. Inhalt: pro Verpflichtung, was geliefert werden muss, welche Seite es schuldet und welche Abnahmekriterien gelten. Neu eingegangene, noch ungeprüfte Deltas bleiben bis zur Integration in `knowledge/handoff.md`.
+Funktion: vertragliche Input-Verpflichtungen benennen. Inhalt: pro Verpflichtung, was geliefert werden muss, welche Seite es schuldet und welche Abnahmekriterien gelten. Neu eingegangene, noch ungeprüfte Deltas bleiben bis zur Integration in `## Open` von `knowledge/journal.md`.
 
 ### Korrekturen und Fallgruben
 
@@ -83,7 +83,7 @@ Funktion: die Quellen der Wahrheit auflisten. Inhalt: pro Aspekt des Kontrakts d
 - Detailwissen des Gegenübers. Die Pipeline-Internas des anderen Projekts gehören in dessen Wissensbasis; hier stehen sie nur, soweit der Kontrakt sie braucht, sonst als Verweis.
 - Zeitpläne ohne externe Phase. Meilenstein-Tabellen veralten unmarkiert; sie gehören nur hinein, wenn eine externe Projektphase sie erzwingt, und dann als datierter Snapshot.
 - Wiedereinstiegsstände. Session- und Lane-Übergaben liegen als `<scope>-handoff-YYYY-MM-DD.md` unter `handoffs/` und verweisen auf den gültigen Kontrakt.
-- Ungeprüfte Übergabedeltas. Sie verbleiben bis zur Integration oder Verwerfung in `knowledge/handoff.md`.
+- Ungeprüfte Übergabedeltas. Sie verbleiben bis zur Integration oder Verwerfung in `## Open` von `knowledge/journal.md`.
 
 ## Vorlage zum Befüllen
 
@@ -98,7 +98,7 @@ method:
   url: https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin
 template:
   name: Vorlage Integration
-  version: 0.3
+  version: 0.4
   url: https://dhcraft.org/Promptotyping/promptotyping-document/integration
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-integration
 counterpart:
@@ -110,7 +110,7 @@ language: [de | en]
 version: [Repo-Schema-Version]
 created: [YYYY-MM-DD]
 updated: [YYYY-MM-DD]
-related: [architecture, specification, handoff, journal]
+related: [architecture, specification, journal]
 ---
 
 # Integration: [Gegenüber]
@@ -147,7 +147,7 @@ related: [architecture, specification, handoff, journal]
 
 ## Offene Punkte und Input-Gaps
 
-<!-- Nur vertragliche Input-Verpflichtungen. Neu eingegangene Deltas verbleiben bis zur Integration in knowledge/handoff.md. -->
+<!-- Nur vertragliche Input-Verpflichtungen. Neu eingegangene Deltas verbleiben bis zur Integration in ## Open von knowledge/journal.md. -->
 
 [...]
 
@@ -188,6 +188,7 @@ teiCrafter (`knowledge/integration.md`, "Three-Project Integration Reference") i
 
 ## Versionshistorie
 
+- 0.4 (2026-11-14): Ungeprüfte Übergabedeltas stehen in `## Open` von `journal.md`, weil `handoff.md` als Process Inbox entfällt. `handoff` aus `related:` entfernt, datierte Snapshots unter `handoffs/` und der dauerhafte Kontrakt bleiben unverändert.
 - 0.3 (2026-08-21): Process Inbox, datierte Snapshots und dauerhafter Research-to-Operations-Kontrakt funktional getrennt.
 - 0.2 (2026-08-21): Naming Contract übernommen. Integration bleibt der dauerhafte Kontrakt in `knowledge/`; datierte Wiedereinstiegsstände liegen unter `handoffs/`.
 - 0.1 (2026-07-19): Erstfassung, empirisch extrahiert aus teiCrafter und szd-htr-ocr-pipeline; Wiedereinstiegs-Kontext als ergänzte Sektion. Freigegeben am 2026-07-19.

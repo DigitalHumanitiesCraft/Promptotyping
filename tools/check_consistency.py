@@ -43,19 +43,12 @@ VAULT_SOURCES = ROOT / "vault" / "00_sources"
 JS_DIR = ROOT / "assets" / "js"
 NOT_FOUND = ROOT / "404.html"
 INDEX_HTML = ROOT / "index.html"
-# The canonical skill lives in this repository (A42, revised 2026-11-10) and
-# the Skills page loads it from the same origin.
-SKILL_DIR = ROOT / "skills" / "promptotyping"
-SKILL_SOURCE = "skills/promptotyping/SKILL.md"
-# The eval cases stay beside the tools and outside the package, so that an
-# installation and the download archive carry only what an agent reads.
-SKILL_EVALS = TOOLS / "skill-evals"
+# The skill lives in the repository promptotyping-skill (operator decision of
+# 2026-11-14, revising A42 of 2026-11-10). The site links it and states its five
+# subcommands; it carries no copy, so the names are held here as a fixed list.
+SKILL_REPOSITORY = "https://github.com/DigitalHumanitiesCraft/promptotyping-skill"
+SKILL_SUBCOMMANDS = ("orient", "explore", "distill", "curate", "handoff")
 PAGES_WORKFLOW = ROOT / ".github" / "workflows" / "pages.yml"
-# Fragments that mark a path or rule bound to one machine; the published skill
-# must run on any machine, so none of them may appear in its files.
-SKILL_LOCAL_MARKERS = ("C:\\", "C:/", "/Users/", "\\Users\\", "obsidian",
-                       "Vault Operations", "vault-orient")
-SKILLS_INDEX = CONTENT_DIR / "skills" / "index.md"
 PAGES_CONTENT = JS_DIR / "pages-content.js"
 CASE_FILTER = JS_DIR / "modules" / "case-study-filter.js"
 OVERVIEW = CONTENT_DIR / "overview.md"
@@ -80,6 +73,19 @@ INTERFACE_TYPES = {"verification", "exploration", "edition", "capture", "audit"}
 HELD_BACK = {}
 
 EXPECTED_TEMPLATE_COUNT = 17
+
+# Templates whose function the convention no longer carries, each with the
+# template that took it over. They stay in the catalogue because published
+# template: fields name them, so the slug count and their addresses hold, but
+# no convention row types them any more. Handoff since 2026-11-14, when the
+# section ## Open of the journal took over the open points.
+SUPERSEDED = {"handoff": "journal"}
+SUPERSEDED_MARK = "superseded by journal.md"
+
+# The fixed strings by which agents and tools find the open points of a
+# journal; the convention keeps them the same in every language.
+OPEN_HEADING = "## Open"
+OPEN_EMPTY = "Nothing open."
 RETIRED_GENERIC_NAMES = (
     "pipeline.md",
     "engines.md",
@@ -99,13 +105,10 @@ NORMATIVE_FILES = (
     CONTENT_DIR / "glossar.md",
     CONTENT_DIR / "tutorial.md",
     CONTENT_DIR / "workflow.md",
-    CONTENT_DIR / "skills" / "coding.md",
-    CONTENT_DIR / "skills" / "index.md",
     GLOSSAR_JSON,
     KNOWLEDGE_DIR / "INDEX.md",
     KNOWLEDGE_DIR / "architecture.md",
     KNOWLEDGE_DIR / "governance.md",
-    KNOWLEDGE_DIR / "handoff.md",
     KNOWLEDGE_DIR / "plan.md",
     KNOWLEDGE_DIR / "project.md",
     KNOWLEDGE_DIR / "specification.md",
@@ -180,6 +183,8 @@ def matching_rows(function, conv_types):
 def check_types_agree(documents, conv_types):
     """Every catalogue entry states a type; the convention states it too."""
     for doc in documents:
+        if doc.get("slug") in SUPERSEDED:
+            continue
         function = doc.get("funktion", "").split("(")[0].strip()
         declared = doc.get("typ", "")
         rows = matching_rows(function, conv_types)
@@ -214,7 +219,7 @@ def check_files_exist(documents):
 
 
 def check_catalogue_contract(documents):
-    """The catalogue carries the mandatory Handoff and type invariants."""
+    """The catalogue carries the mandatory journal, the superseded handoff and the type invariants."""
     slugs = [document.get("slug") for document in documents]
     if len(documents) != EXPECTED_TEMPLATE_COUNT:
         fail("naming", "catalogue has %d entries; expected %d"
@@ -223,20 +228,40 @@ def check_catalogue_contract(documents):
         fail("naming", "catalogue slugs are not unique")
 
     by_slug = {document.get("slug"): document for document in documents}
-    handoff = by_slug.get("handoff")
-    if handoff is None:
-        fail("naming", "catalogue misses the mandatory handoff slug")
+    journal = by_slug.get("journal")
+    if journal is None:
+        fail("naming", "catalogue misses the mandatory journal slug")
     else:
         expected = {
-            "funktion": "Handoff (live Process Inbox)",
-            "datei": "handoff.md",
+            "datei": "journal.md",
             "typ": "Process",
             "trigger": "always",
         }
         for field, value in expected.items():
-            if handoff.get(field) != value:
-                fail("naming", "handoff %s is %r; expected %r"
-                     % (field, handoff.get(field), value))
+            if journal.get(field) != value:
+                fail("naming", "journal %s is %r; expected %r"
+                     % (field, journal.get(field), value))
+        if not journal.get("funktion", "").startswith("Provenance"):
+            fail("naming", "journal funktion is %r; expected the Provenance function"
+                 % journal.get("funktion"))
+
+    # A superseded template keeps its slug and address but must not read as a
+    # document every project carries.
+    for slug, successor in SUPERSEDED.items():
+        document = by_slug.get(slug)
+        if document is None:
+            fail("naming", "catalogue misses the superseded slug %s, whose address "
+                           "existing template: fields name" % slug)
+            continue
+        if successor not in by_slug:
+            fail("naming", "%s is superseded by %s, which the catalogue does not carry"
+                 % (slug, successor))
+        if document.get("trigger") == "always" or document.get("mark") != SUPERSEDED_MARK:
+            fail("naming", "%s is superseded; its trigger must not be 'always' and its "
+                           "mark must be %r" % (slug, SUPERSEDED_MARK))
+        if "superseded" not in document.get("funktion", ""):
+            fail("naming", "%s funktion does not say that the template is superseded"
+                 % slug)
 
     testing = by_slug.get("testing")
     if testing is None:
@@ -244,10 +269,22 @@ def check_catalogue_contract(documents):
     elif testing.get("typ") != "Action":
         fail("naming", "testing is %r; expected 'Action'" % testing.get("typ"))
 
+    journal_template = TEMPLATE_DIR / "journal.md"
+    if journal_template.is_file():
+        block = template_fill_block(journal_template)
+        for marker in (OPEN_HEADING + "\n\n" + OPEN_EMPTY, "- Verworfen:",
+                       "- Belege:"):
+            if marker not in block:
+                fail("naming", "journal template block misses %r" % marker)
+        if "journal-archive.md" not in read_text(journal_template):
+            fail("naming", "journal template does not name journal-archive.md")
+
     handoff_template = TEMPLATE_DIR / "handoff.md"
     if not handoff_template.is_file():
         return
     template = read_text(handoff_template)
+    if "Überholt seit dem 14.11.2026" not in template:
+        fail("naming", "handoff template does not carry its superseded notice")
     required_markers = (
         "Keine offenen Handoff-Punkte.",
         "- Received:",
@@ -264,67 +301,28 @@ def check_catalogue_contract(documents):
             fail("naming", "handoff template misses %r" % marker)
 
 
-def check_skill_package() -> None:
-    """The canonical skill is a complete, portable package that the site renders.
+def check_retired_skill_addresses() -> None:
+    """The addresses of the retired Skills page still land somewhere.
 
-    Whether the skill meets the method contract of A42 is a matter of review;
-    this check decides only its presence, metadata, portability, its connection
-    to the Skills page and the published tree, and that the eval cases with
-    their fixtures lie outside the package.
+    The Skills page was retired on 2026-11-14 together with the copy of the
+    skill (A42). Published pages and repositories may still link
+    #skills-promptotyping, so the registry sends it to the start page's section
+    headed Skill, and #skills, /skills/{name} and the other #skills-{name}
+    anchors to the start page.
     """
-    required_files = (SKILLS_INDEX, PAGES_CONTENT, SKILL_DIR / "SKILL.md",
-                      SKILL_EVALS / "cases.json")
-    missing = [path for path in required_files if not path.is_file()]
-    for path in missing:
-        fail("skill", "%s is missing" % path.name)
-    if missing:
-        return
-
-    skill = read_text(SKILL_DIR / "SKILL.md")
-    head = skill.split("---", 2)
-    if len(head) < 3 or "name: promptotyping" not in head[1]             or "description:" not in head[1]:
-        fail("skill", "SKILL.md lacks a frontmatter with name and description")
-    for path in sorted(SKILL_DIR.rglob("*")):
-        if not path.is_file():
-            continue
-        text = path.read_text(encoding="utf-8", errors="replace")
-        for marker in SKILL_LOCAL_MARKERS:
-            if marker in text:
-                fail("skill", "skills/promptotyping/%s carries the machine-bound "
-                     "marker %r" % (path.relative_to(SKILL_DIR).as_posix(), marker))
-
-    # Whatever lies in the package is copied by an installation with cp -r and
-    # packed into the download archive, and a pointer to the eval cases would
-    # add text to SKILL.md that serves no one who applies the skill.
-    if (SKILL_DIR / "evals").exists():
-        fail("skill", "skills/promptotyping/evals lies inside the installed "
-             "package; the eval cases belong under tools/skill-evals")
-    if "evals/" in skill:
-        fail("skill", "SKILL.md points at the eval cases, which are not part "
-             "of the installed package")
-
-    try:
-        cases = json.loads(read_text(SKILL_EVALS / "cases.json"))["cases"]
-    except (ValueError, KeyError) as error:
-        fail("skill", "skill-evals/cases.json is unreadable: %s" % error)
-        cases = []
-    for case in cases:
-        for field in ("input", "source", "reference"):
-            ref = case.get(field)
-            if ref and not (SKILL_EVALS / ref).is_file():
-                fail("skill", "eval case %s names a missing %s %s"
-                     % (case.get("id"), field, ref))
-
-    page = read_text(PAGES_CONTENT)
-    for marker in ('id="skills-promptotyping"', '"%s"' % SKILL_SOURCE):
-        if marker not in page:
-            fail("skill", "pages-content.js misses %s" % marker)
-    index = read_text(SKILLS_INDEX)
-    for marker in ("#skills-promptotyping", "skills/promptotyping"):
-        if marker not in index:
-            fail("skill", "the Skills index does not link to %s" % marker)
-    if PAGES_WORKFLOW.is_file() and " skills " not in read_text(PAGES_WORKFLOW):
-        fail("skill", "the Pages workflow does not publish skills/")
+    registry = read_text(JS_DIR / "registry.js")
+    aliases = js_string_map(registry, "LEGACY_ROUTE_ALIASES")
+    expected = {"skills": "overview", "skills-promptotyping": "start-example"}
+    for legacy, target in expected.items():
+        if aliases.get(legacy) != target:
+            fail("skill", "the retired address #%s must resolve to #%s" % (legacy, target))
+    if ("skills-", "overview", "skills") not in anchor_families(registry):
+        fail("skill", "the retired family #skills-{name} must land on the start page")
+    if "skills" in registry_pages(registry):
+        fail("skill", "registry.js still mounts the retired Skills page")
+    if 'id="start-example"' not in read_text(INDEX_HTML):
+        fail("skill", "index.html lost the section #start-example that "
+                      "#skills-promptotyping resolves to")
 
 
 def check_portal_paths() -> None:
@@ -337,16 +335,16 @@ def check_portal_paths() -> None:
     surfaces = (
         ("overview", OVERVIEW,
          ("#application", "#use-cases", "#vault", "#tutorial",
-          "#skills-promptotyping", "#vorlagen")),
+          SKILL_REPOSITORY, "#vorlagen")),
         ("understand", APPLICATION,
          ("#use-cases", "#vault", "#tutorial",
-          "#skills-promptotyping", "#vorlagen")),
+          SKILL_REPOSITORY, "#vorlagen")),
         ("evaluate", PAGES_CONTENT,
          ("#overview",)),
         ("apply", TUTORIAL,
-         ("#skills-promptotyping", "#vorlagen", "#arbeitsumgebung")),
+         (SKILL_REPOSITORY, "#vorlagen", "#arbeitsumgebung")),
         ("working environment", WORKING_ENVIRONMENT,
-         ("#skills-promptotyping",)),
+         (SKILL_REPOSITORY,)),
     )
     for scenario, path, anchors in surfaces:
         if not path.is_file():
@@ -382,11 +380,11 @@ def plain(fragment: str) -> str:
 def check_start_page(documents) -> None:
     """The static start page states its sources' current wording.
 
-    The start page repeats four things that live elsewhere, so a change at the
+    The start page repeats three things that live elsewhere, so a change at the
     source must reach it: one entry per catalogue template with its condition
-    and both addresses, the names of the skill's operations, the skill section
-    each example step relies on, and the three paper cases with their
-    addresses (A48, A50, A51).
+    and both addresses, the names of the skill's five subcommands with the link
+    to the skill repository, and the three paper cases with their addresses
+    (A48, A50, A51).
     """
     page = start_page_html()
     if not page:
@@ -410,26 +408,17 @@ def check_start_page(documents) -> None:
     for slug in entries:
         fail("start", "start page lists %s, which the catalogue does not carry" % slug)
 
-    skill = read_text(SKILL_DIR / "SKILL.md")
-    operations = re.findall(r"^\| `(orient|explore|distill|curate|handoff)` \|",
-                            skill, re.M)
-    if len(operations) != 5:
-        fail("start", "SKILL.md no longer carries the five subcommands in its table")
-    named = ", ".join(operations[:-1]) + " and " + operations[-1] if operations else ""
+    named = ", ".join(SKILL_SUBCOMMANDS[:-1]) + " and " + SKILL_SUBCOMMANDS[-1]
     if named not in plain(page):
-        fail("start", "the start page does not name the skill's subcommands as SKILL.md orders them")
-
-    # Each example step names the skill section that carries its procedure,
-    # because the page shows only the sentence a person says (A51).
-    sections = set(re.findall(r"^## (.+?)\s*$", skill, re.M))
-    # A subcommand has its procedure in a reference file of its own (skill 2.0.0).
-    sections |= {path.stem for path in (SKILL_DIR / "references").glob("*.md")}
-    steps = re.findall(r'<li data-skill="([^"]+)">', page)
-    if not steps:
-        fail("start", "the start page example names no skill section")
-    for name in steps:
-        if name not in sections:
-            fail("start", "an example step names %s, which the skill carries neither as a section nor as a reference file" % name)
+        fail("start", "the start page does not name the subcommands %s" % named)
+    for name in SKILL_SUBCOMMANDS:
+        if "/promptotyping %s</code>" % name not in page:
+            fail("start", "the Skill section of the start page does not show %s" % name)
+    if 'href="%s"' % SKILL_REPOSITORY not in page:
+        fail("start", "the start page does not link the skill repository")
+    if "skills/promptotyping" in page:
+        fail("start", "the start page points into skills/promptotyping, which this "
+                      "repository no longer carries")
 
     cases = {c["id"]: c for c in load_json(CASES)["caseStudies"]}
     shown = re.findall(r'<span data-case="([^"]+)">(.*?)</span>', page, re.S)
@@ -445,7 +434,7 @@ def check_start_page(documents) -> None:
                 fail("start", "start page case %s misses %s" % (case_id, url))
 
     for anchor in ("#application", "#use-cases", "#tutorial",
-                   "#skills-promptotyping", "#vorlagen", "#glossar"):
+                   "#vorlagen", "#glossar"):
         if 'href="%s"' % anchor not in page:
             fail("start", "start page does not link %s" % anchor)
 
@@ -453,12 +442,12 @@ def check_start_page(documents) -> None:
 
 
 def check_download_archives(page: str, documents) -> None:
-    """The archives hold exactly the files the single download links offer.
+    """The archive holds exactly the files the single download links offer.
 
-    The archives are built at delivery by tools/build_downloads.py, so the check
-    holds the builder's member lists against the catalogue and the skill
-    folder, the page's links against the archive names, the Pages workflow
-    against the build step, and a locally built archive against its sources.
+    The archive is built at delivery by tools/build_downloads.py, so the check
+    holds the builder's member list against the catalogue, the page's links
+    against the archive names, the Pages workflow against the build step, and a
+    locally built archive against its sources.
     """
     import zipfile
 
@@ -469,9 +458,6 @@ def check_download_archives(page: str, documents) -> None:
     expected = ["promptotyping-templates/%s.md" % d["slug"] for d in documents]
     if [name for name, _ in templates] != expected:
         fail("start", "the template archive does not hold one file per catalogue template")
-    skill_names = [name for name, _ in members[build_downloads.SKILL_ZIP]]
-    if "promptotyping/SKILL.md" not in skill_names:
-        fail("start", "the skill archive misses SKILL.md")
     for name in members:
         if 'href="downloads/%s"' % name not in page:
             fail("start", "the start page does not offer downloads/%s" % name)
@@ -552,14 +538,31 @@ def check_english_route_contract() -> None:
 
 
 def template_fill_block(path):
-    """Return the current fillable block, excluding examples and history."""
-    text = read_text(path)
-    match = re.search(
-        r"^## Vorlage zum Befüllen\n(.*?)(?=^## |\Z)",
-        text,
-        re.M | re.S,
-    )
-    return match.group(1) if match else ""
+    """Return the current fillable block, excluding examples and history.
+
+    The section ends at the next level-two heading outside a code fence. The
+    fenced template itself carries level-two headings, such as the journal's
+    ## Open, which must not end the section early.
+    """
+    lines = read_text(path).split("\n")
+    try:
+        start = lines.index("## Vorlage zum Befüllen") + 1
+    except ValueError:
+        return ""
+    block = []
+    fence = None
+    for line in lines[start:]:
+        opener = re.match(r"^\s*(`{3,}|~{3,})", line)
+        if opener:
+            marker = opener.group(1)
+            if fence is None:
+                fence = marker
+            elif marker.startswith(fence) and not line.strip()[len(marker):]:
+                fence = None
+        elif fence is None and line.startswith("## "):
+            break
+        block.append(line)
+    return "\n".join(block) + "\n"
 
 
 def check_normative_names():
@@ -1075,7 +1078,9 @@ def prose_site_urls():
     for path in (CLAUDE_MD, README):
         text = read_text(path)
         name = path.relative_to(ROOT).as_posix()
-        for token in re.findall(r"`(#[^`]+)`", text):
+        # An anchor holds no whitespace, so a Markdown heading quoted in code,
+        # such as the journal's `## Open`, is not taken for one.
+        for token in re.findall(r"`(#[^`\s]+)`", text):
             if "{" not in token:
                 yield name, token
         for token in re.findall(r"(?:https?://)?dhcraft\.org/Promptotyping/[^\s`)\]\"'<>]*",
@@ -1435,7 +1440,6 @@ def check_relative_links():
     targets = (list(ROOT.glob("*.md"))
                + list((ROOT / "knowledge").glob("*.md"))
                + list((ROOT / "_content").rglob("*.md"))
-               + list((ROOT / "research-artefacts").rglob("*.md"))
                + list((ROOT / "snapshots").rglob("*.md"))
                + list((ROOT / "handoffs").rglob("*.md")))
     pattern = re.compile(r"\]\((?!https?:|mailto:|#)([^)]+)\)")
@@ -1447,8 +1451,42 @@ def check_relative_links():
                 continue
             if (path.parent / target).exists() or (ROOT / target).exists():
                 continue
-            fail("links", "%s links to %s, which does not exist"
-                 % (path.relative_to(ROOT).as_posix(), target))
+            label = path.relative_to(ROOT).as_posix()
+            # snapshots/ holds dated records by definition, with or without a
+            # frontmatter that says so.
+            dated = label.startswith("snapshots/") or is_dated_record(path)
+            if dated and retired_target(path, target):
+                note("%s keeps its dated link to %s, which the repository "
+                     "removed" % (label, target))
+                continue
+            fail("links", "%s links to %s, which does not exist" % (label, target))
+
+
+# Areas the repository removed on purpose. A dated record that linked into
+# them stays as it was written, because a snapshot is correct as of its date;
+# every other document must not link there. Removed on 2026-11-14 by operator
+# decision: the benchmark with its two knowledge documents, the source
+# material, the copy of the skill and the Skills page, and the Process Inbox.
+RETIRED_PATHS = (
+    "research-artefacts/",
+    "source-material/",
+    "skills/",
+    "_content/skills/",
+    "knowledge/benchmark-plan.md",
+    "knowledge/benchmark-specification.md",
+    "knowledge/handoff.md",
+)
+
+
+def retired_target(path, target):
+    """Whether a relative link from path points into a removed area."""
+    resolved = (path.parent / target).resolve()
+    try:
+        rel = resolved.relative_to(ROOT.resolve()).as_posix()
+    except ValueError:
+        return False
+    return any(rel == retired.rstrip("/") or rel.startswith(retired)
+               for retired in RETIRED_PATHS)
 
 
 def main() -> int:
@@ -1475,7 +1513,7 @@ def main() -> int:
         check_vault_index_current,
         check_relative_links,
         check_knowledge_frontmatter,
-        check_skill_package,
+        check_retired_skill_addresses,
         check_portal_paths,
         check_english_route_contract,
         lambda: check_start_page(documents),
