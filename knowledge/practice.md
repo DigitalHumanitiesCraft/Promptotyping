@@ -27,9 +27,9 @@ Promptotyping is practised in four forms of work, yields a Promptotype in each i
 
 ## The working practice
 
-Promptotyping is a working practice in which research data and their contexts are translated, with the help of frontier LLM agents, into research artefacts that suit the purposes of the researchers and the ways in which they work. It rests on three forms of engineering. Knowledge Engineering makes explicit and curates what a project knows about its domain, its data and its aims. Context Engineering selects from this knowledge what an agent needs for a task. Agentic Engineering organises the work of the agents that build on it.
+Promptotyping is a working practice in which research data and their contexts are translated into research artefacts with frontier Large Language Model (LLM) agents, so that the artefacts fit the purposes of the researchers and the ways in which they work. It rests on three forms of engineering. Knowledge Engineering makes explicit and curates what a project knows about its domain, its data and its aims. Context Engineering selects from this knowledge what an agent needs for a task. Agentic Engineering organises the work of the agents that build on it.
 
-The agents build prototypes on two foundations, modelled data and a project knowledge base that is curated, and whatever checking and use of a prototype bring to light is curated back into that knowledge base. Whether an artefact fits is decided by the sources and by the research purpose, in the understanding the researchers have of both, so the knowledge documents can themselves be wrong about the material. The artefact may be replaced once what working with it revealed has been curated back.
+The agents build prototypes from modelled data and from a curated project knowledge base, and whatever checking and use of a prototype bring to light is curated back into that knowledge base. Whether an artefact fits is decided by the sources and by the research purpose, as the researchers understand both, so the knowledge documents can themselves be wrong about the material. The artefact may be replaced once what working with it revealed has been curated back.
 
 The practice is called a working practice because the word method would claim an empirical validation that does not yet exist. It is tied to no particular LLM or tool, but it depends on the capability of current frontier LLM agents, and in the documented projects smaller or locally run LLMs did not carry it. The agent has to be able to read the project's files, run scripts and edit the repository, so a chat interface that cannot do this does not carry the practice either.
 
@@ -80,7 +80,7 @@ A single pass through the four forms is the exception. Regenerating an artefact 
 
 ## The Promptotype
 
-A Promptotype is what an iteration yields. It is a prototype open to use and inspection, and it counts along with the project knowledge base and with the research data it was built from, which lets every state be versioned as one. The prototype serves as a means of knowing, since working with it shows which distinctions the data sustain and where the work breaks down. Something runs early, so there is always something concrete to look at and to discuss. The researchers who work with a Promptotype accept it for a purpose once they judge it good enough for that purpose, and until then it remains a state of work in progress, whatever checks it has passed.
+A Promptotype is what an iteration yields. It consists of a prototype open to use and inspection, the research data it was built from and the project knowledge base, so that every state of the three can be versioned as a single whole. The prototype serves as a means of knowing, since working with it shows which distinctions the data sustain and where the work breaks down. Something runs early, so there is always something concrete to look at and to discuss. The researchers who work with a Promptotype accept it for a purpose once they judge it good enough for that purpose, and until then it remains a state of work in progress, whatever checks it has passed.
 
 ## The project knowledge base
 

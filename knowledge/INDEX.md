@@ -103,11 +103,11 @@ The knowledge documents of a project together with its agent instructions, versi
 
 ### Promptotype
 
-What an iteration yields. It is a prototype open to use and inspection, and it counts along with the project knowledge base and with the research data it was built from, which lets every state be versioned as one.
+What an iteration yields. It consists of a prototype open to use and inspection, the research data it was built from and the project knowledge base, so that every state of the three can be versioned as a single whole.
 
 ### Promptotyping
 
-A working practice in which research data and their contexts are translated, with the help of frontier LLM agents, into research artefacts that suit the purposes of the researchers and the ways in which they work, as [practice.md](practice.md#the-working-practice) states it.
+A working practice in which research data and their contexts are translated into research artefacts with frontier Large Language Model (LLM) agents, so that the artefacts fit the purposes of the researchers and the ways in which they work, as [practice.md](practice.md#the-working-practice) states it.
 
 ### Promptotyping Documents
 

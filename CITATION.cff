@@ -5,8 +5,9 @@ version: "1.0.0"
 date-released: "2026-11-14"
 abstract: >-
   Promptotyping is a working practice in which research data and their contexts
-  are translated, with the help of frontier LLM agents, into research artefacts
-  that suit the purposes of the researchers and the ways in which they work. It
+  are translated into research artefacts with frontier Large Language Model
+  (LLM) agents, so that the artefacts fit the purposes of the researchers and
+  the ways in which they work. It
   draws on Knowledge Engineering, Context Engineering and Agentic Engineering. This repository holds the
   templates of the project knowledge base with their convention, the knowledge
   base of the practice itself and documented use cases. The Promptotyping skill
