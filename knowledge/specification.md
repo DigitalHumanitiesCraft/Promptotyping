@@ -88,7 +88,7 @@ Derivation: FR-03, FR-04, FR-05.
 
 ### The web page
 
-Purpose. One page from which the practice can be understood, judged and reused. It is being built after the decision of 2026-11-14, and its section order and markup are the build's own decision within FR-01 to FR-08.
+Purpose. One page from which the practice can be understood, judged and reused. It was built on 2026-11-14 with the sections Skill, Templates, Knowledge, Use cases and Cite.
 
 Data basis. The definition and terms of [practice.md](practice.md), the templates in `templates/`, the use cases in `case-studies/`, this knowledge base and `CITATION.cff`.
 
