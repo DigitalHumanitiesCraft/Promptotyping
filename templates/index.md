@@ -143,7 +143,7 @@ related: [project, data, specification, architecture, design, journal]
 
 ## Convention
 
-This project knowledge base follows the convention for Promptotyping Documents. It governs the Naming Contract, the frontmatter schema, the routing heuristic and the structural principles. See [convention in the vault] or the repository copy at `[path, if present]`.
+This project knowledge base follows the convention for Promptotyping Documents. It governs the Naming Contract, the frontmatter schema, the routing heuristic and the structural principles. See the [convention](https://dhcraft.org/Promptotyping/templates/convention.md).
 
 ## Terms
 

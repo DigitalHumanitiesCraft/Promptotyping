@@ -37,7 +37,7 @@ Three principles carry the document.
 
 The document follows the reduced required core of the current convention, `title`, `project` (object with `name` and `repository`), `method` (object with `name` and `url`), `status`, `created`, `updated`. The file name is the primary routing signal, and the first paragraph confirms the function. There is no field `zweck:` or `function:`.
 
-- `template:` recommended, as a block with `name`, `version`, `url` and optionally `alias`, where this template has been applied. teiCrafter already carries the field canonically with the dhcraft.org URL.
+- `template:` recommended, as a block with `name`, `version` and `url`, where this template has been applied (see the section *Template addressability* of the [convention](convention.md)). teiCrafter already carries the field canonically with the dhcraft.org URL.
 - `status:` means the maturity of the document (`idea`, `draft`, `stub`, `complete`, `reviewed`, `archived`, and since 2026-07-19 also `active` for ongoing process documents and `snapshot` for documents tied to a fixed date). It does not mean the operational state of the project. A testing document with a maintained state block can carry `snapshot` semantics, and the vocabulary of the convention is authoritative.
 - `topics:` typically `[[Software Testing]]`, `[[Regression]]`, `[[Test-Driven Development]]`, `[[Data Validation]]`, `[[Evaluation]]`. Edition and OCR projects add topics close to the domain such as `[[TEI XML]]`. They place the agent in the fields of knowledge in which a test strategy needs reasoning.
 - `version:` consistent across the repository, raised together with the sibling documents.

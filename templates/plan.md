@@ -35,11 +35,11 @@ Three principles carry the document.
 
 ## Frontmatter schema
 
-The document follows the reduced required core of the [convention](convention.md) (state of 2026-06-13), `title`, `project` (object with `name` and `repository`), `method` (object with `name` and `url`), `status`, `created`, `updated`. The purpose lives as the first paragraph under the H1, in one sentence that is understandable without the context of the repository. The template ensures that this first paragraph carries the purpose.
+The document follows the reduced required core of the [convention](convention.md), `title`, `project` (object with `name` and `repository`), `method` (object with `name` and `url`), `status`, `created`, `updated`. The purpose lives as the first paragraph under the H1, in one sentence that is understandable without the context of the repository. The template ensures that this first paragraph carries the purpose.
 
 `status:` means the maturity of the document (`idea`, `draft`, `stub`, `complete`, `reviewed`, `archived`, and since 2026-07-19 also `active` for ongoing process documents and `snapshot` for documents tied to a fixed date), and not the operational state of the project. For a plan that is carried forward continuously, `active` is the fitting value. The operational progress stands in the status tracker and not in the frontmatter.
 
-`template:` is recommended as soon as this template has been applied, as a block with `name`, `version`, `url` and optionally `alias` (see the section *Template addressability* of the convention). Specific to the plan are these fields.
+`template:` is recommended as soon as this template has been applied, as a block with `name`, `version` and `url` (see the section *Template addressability* of the [convention](convention.md)). Specific to the plan are these fields.
 
 - `related:` typically lists `specification` (the yardstick in which the milestones are anchored), `journal` (the retrospective counterpart) and `index`, and where individual milestones build on them also `data` and `architecture`.
 - `topics:` is typically left out. The plan is a process document and carries no thematic placement in a domain. The thematic topics live in the knowledge documents beside it.
