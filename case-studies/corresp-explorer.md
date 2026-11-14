@@ -2,10 +2,13 @@
 title: CorrespExplorer
 id: corresp-explorer
 paper: "4.3, Table 3"
-source: Projects/Promptotyping/Case Studies/corresp-explorer.md
+role: evidence
+artefact: "Coordinated visualisation views"
 ---
 
 # CorrespExplorer
+
+[Repository](https://github.com/DigitalHumanitiesCraft/CorrespExplorer), [Live](https://dhcraft.org/CorrespExplorer)
 
 ## Context and research question
 

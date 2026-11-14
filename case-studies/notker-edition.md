@@ -2,10 +2,13 @@
 title: Notker Edition
 id: notker-edition
 paper: "4.3, Table 3"
-source: Projects/Promptotyping/Case Studies/notker-edition.md
+role: evidence
+artefact: "Layer-toggle edition (text-layer controls, IIIF)"
 ---
 
 # Notker Edition
+
+[Repository](https://github.com/DigitalHumanitiesCraft/notker-edition), [Live](https://dhcraft.org/notker-edition)
 
 ## Context and research question
 

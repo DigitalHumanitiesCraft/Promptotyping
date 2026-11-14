@@ -2,10 +2,13 @@
 title: Klawiter Bibliography Rescue
 id: klawiter-rescue
 paper: none
-source: Projects/Promptotyping/Case Studies/klawiter-rescue.md
+role: further
+artefact: "JSON-LD bibliography plus static front end (SZD ecosystem)"
 ---
 
 # Klawiter Bibliography Rescue
+
+[Repository](https://github.com/chpollin/klawiter-rescue), [Live](https://chpollin.github.io/klawiter-rescue), [Video](https://youtu.be/KG35VGVctJw)
 
 ## Context and research question
 
@@ -27,6 +30,6 @@ This is the paradigmatic case of data rescue and transformation, where a legacy 
 
 The provenance trail per value exists because the values are of mixed origin, and it records that origin without deciding correctness. A field filled by the optional enrichment carries the same weight in the output as a field parsed deterministically, and only the trail distinguishes them.
 
-The LLM-as-a-judge step in the quality assurance ranks below scholarly validation by people for the reasons the [Checking](#verifikation) page gives. The round-trip verification is the stronger of the two, because it decides against the source.
+The LLM-as-a-judge step in the quality assurance ranks below scholarly validation by people for the reasons the [Checking](../knowledge/practice.md) page gives. The round-trip verification is the stronger of the two, because it decides against the source.
 
 Whether the extraction is complete cannot be established from inside the project. The source system is decommissioned, so the pipeline output is compared against the dump and not against the bibliography as its compiler maintained it.

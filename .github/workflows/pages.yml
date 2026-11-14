@@ -1,8 +1,10 @@
 name: Deploy Pages
 
-# Publishes the folders the portal serves and nothing else. The knowledge base,
-# the action layer, tools and tests stay in the repository.
-# A new top-level folder the site loads must be added to the list below.
+# Publishes the paths listed below and nothing else. The agent instructions in
+# CLAUDE.md and the repository's own README and CHANGELOG stay in the repository.
+# knowledge/ is published by an explicit decision of 2026-11-14 recorded in
+# knowledge/specification.md: this project is the worked example of the site.
+# A new top-level folder the site needs must be added to the list below.
 # Requires the Pages source "GitHub Actions".
 
 on:
@@ -27,10 +29,12 @@ jobs:
       - name: Assemble the published tree
         run: |
           mkdir _site
-          git ls-files -z -- index.html 404.html LICENSE CITATION.cff assets _content schema \
+          git ls-files -z -- index.html 404.html LICENSE CITATION.cff assets templates knowledge case-studies \
             | xargs -0 cp --parents -t _site
-      - name: Build the download archive
-        run: python3 tools/build_downloads.py _site/downloads
+      - name: Build the template archive
+        run: |
+          mkdir _site/downloads
+          zip -j _site/downloads/promptotyping-templates.zip templates/*.md LICENSE
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

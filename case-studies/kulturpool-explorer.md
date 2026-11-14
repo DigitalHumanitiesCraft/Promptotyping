@@ -2,10 +2,13 @@
 title: Kulturpool Explorer
 id: kulturpool-explorer
 paper: none
-source: Projects/Promptotyping/Case Studies/kulturpool-explorer.md
+role: further
+artefact: "Collection interface (parallel agent orchestration)"
 ---
 
 # Kulturpool Explorer
+
+[Repository](https://github.com/chpollin/kulturpool-demo), [Live](https://chpollin.github.io/kulturpool-demo/), [Video](https://youtu.be/tQBaaVhPu5U)
 
 ## Context and research question
 

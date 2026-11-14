@@ -1,107 +1,41 @@
-<!-- template: Vorlage Action-Layer v0.5, https://dhcraft.org/Promptotyping/promptotyping-document/action-layer -->
+<!-- template: Action-layer template, https://dhcraft.org/Promptotyping/templates/action-layer.md -->
 
-# Project instructions for the Promptotyping Promptotyping portal
+# Project instructions for the Promptotyping repository
 
-This repository is `DigitalHumanitiesCraft/Promptotyping`, the public portal for Promptotyping. It renders at https://dhcraft.org/Promptotyping/ as the specification documentation of the practice, with embedded templates and use-case gallery. The glossary, the Vault view with the folder `vault/`, the introduction page under `intro/`, the folder `snapshots/` and the eval cases under `tools/skill-evals/` were retired on 2026-11-14. The documents in `knowledge/` specify the site, and the implementation follows from them.
-
-## Manuscript publication boundary
-
-The paper is maintained outside this repository and will be published in the journal. Paper work does not happen here, and manuscript text, its apparatus and paper-specific tooling do not enter the repository. The removal history (14 and 28 October 2026) is recorded in `knowledge/specification.md`, Manuscript publication boundary.
+This repository is `DigitalHumanitiesCraft/Promptotyping`. It is the single source of the templates of the Promptotyping Documents and of their convention, it documents the practice in its own knowledge base, and it publishes one page at https://dhcraft.org/Promptotyping/. The skill lives in the repository `DigitalHumanitiesCraft/promptotyping-skill` and is not kept here. The paper is maintained outside this repository, and manuscript text does not enter it.
 
 ## Knowledge base
 
 At every session start, after this file, read in this order:
 
-1. `knowledge/INDEX.md`, navigation and term lexicon
-2. `knowledge/journal.md`, the section `## Open` at its beginning, the open points; the empty state "Nothing open." is valid
-3. `knowledge/plan.md`, accepted work and its order
-4. `knowledge/governance.md` before changes that affect practice content, evidence, public outputs, permissions or publication
-5. the document relevant to the task:
-   - what the site must do: `knowledge/specification.md`
+1. `knowledge/INDEX.md`, the entry point and the terms
+2. `knowledge/journal.md`, the section `## Open` at its beginning. "Nothing open." is a valid state.
+3. the document the task needs:
+   - what Promptotyping is and what this repository is for: `knowledge/project.md`
+   - the practice itself: `knowledge/practice.md`
+   - what the repository delivers: `knowledge/specification.md`
    - how it is built: `knowledge/architecture.md`
-   - how it looks: `knowledge/design.md`
-   - what is checked and how: `knowledge/verification.md`
-   - where a decision comes from: `knowledge/journal.md`
+   - how the page looks: `knowledge/design.md`
+   - where a decision comes from: `knowledge/journal.md`, older wording in `knowledge/journal-archive.md`
 
 ## Working rules
 
-- Work incrementally, one bounded step after the state documented in the knowledge base, one commit per finished step.
-- Consult the knowledge base before taking a design decision. Ask when scope, order or architecture are unclear.
-- Handoff. Before using an open or transferred point, check its source and current target, and integrate durable content into the responsible document first or reject it with a reason. At the end of a session add the session's journal entries and rewrite `## Open` as the complete current list, or "Nothing open." when nothing is open. A point that is done leaves `## Open`, and an entry records how it was done.
-- Journal. One entry per coherent step with the fields of template 0.7 that have content (Anlass, Befund, Entschieden, Verworfen, Korrigiert, Geändert, Belege) and at least one checkable piece of evidence. Condense when the older entries no longer help a reader understand the current state, keeping `## Open` and the five newest entries, appending the unchanged wording of every older entry to `knowledge/journal-archive.md` and folding related older entries into milestone entries. Until the operator decides on the migration recorded in `knowledge/plan.md`, new entries follow the existing oldest-first order of `knowledge/journal.md`, so its newest entries stand at its end.
-- Do not cite from the operator's vault without a Markdown link. Vault wikilinks mean nothing in the repository.
-- Do not reactivate the old living-paper material of November 2025. Reviving old modules starts a new discussion.
-- No branches. All changes go directly to `main`.
+- Work in bounded steps from the state the knowledge base documents, one commit per finished step, directly on `main`.
+- The terms of the paper bind every text: Promptotyping, Promptotype, project knowledge base, the four forms of work Preparation, Exploration, Distillation and Implementation, verification, agentic review, scholarly validation. A text that uses another word for one of them has drifted and is corrected.
+- A template, the convention and the page say the same thing. Change a rule in the template or the convention first, then every place that restates it, including the list of templates on the page and the skill repository where it names an address.
+- The addresses `https://dhcraft.org/Promptotyping/templates/<name>.md` are stable. Repositories and the skill read them, so a file under `templates/` is not renamed without the operator.
+- Journal. One entry per coherent step under `## Entries`, newest first, with the fields that have content among Trigger, Found, Decided, Rejected, Corrected, Changed and Evidence, and at least one checkable piece of evidence. At the end of a session rewrite `## Open` as the complete current list.
+- `knowledge/` is published on the site by the operator's decision of 2026-11-14. Nothing goes into it that should not be read publicly: no personal names of third parties, no internal notes, no review markers, no material with unresolved rights.
 - Commits with agent involvement end with `Co-Authored-By: Claude <model actually used> <noreply@anthropic.com>`.
 
-## Vault and repository conflicts
+## The page
 
-Vault templates are the source of truth for the templates themselves. When mirroring a template reveals a discrepancy:
+- `index.html` is one hand-written page with the sections Skill, Templates, Knowledge, Use cases and Cite. It has no build step, no framework and no script beyond the copy button of the shared DHCraft files.
+- Colours, type and the shared blocks come unchanged from `assets/dhcraft/`, copied from the brand-assets repository. `assets/css/site.css` only lays out the page. Read `knowledge/design.md` before changing how it looks.
+- Each row has one target. Templates, knowledge documents and case studies open on GitHub, where Markdown renders.
+- A new template, knowledge document or case study gets its row on the page in the same commit.
+- The Pages workflow in `.github/workflows/pages.yml` publishes an explicit list of paths. A new top-level folder the site needs is added there.
 
-1. If the vault template is wrong, correct the vault, then mirror into the repository.
-2. If the repository mirror is wrong, correct the repository; the vault stays.
-3. If it is unclear, ask the operator.
+## Checks
 
-Never let them diverge silently.
-
-## Design principles
-
-Source of values: `knowledge/design.md`. Read it before UI work. The site is calm. Binding:
-
-- The portal stands on the shared DHCraft tokens and building blocks, copied unchanged into `assets/dhcraft/` from the brand-assets repository (folder `web/`) and loaded before `assets/css/style.css` (A49, 2026-11-10). Change a shared value by overriding its custom property in `style.css` and recording it in `knowledge/design.md`; do not edit the copies.
-- Use no colours other than the tokens. Write no hex value outside the token block of `style.css`; the portal's roles resolve onto the `--dh-*` roles, whose `light-dark()` values follow `data-theme`.
-- Beyond the brand roles (accent for the primary action, focus and links), colour means exactly one thing, the epistemic function of an artefact (`--fn-verification`, `--fn-exploration`, `--fn-edition`, `--fn-capture`, `--fn-audit`), on the Artefakt page and the card edge of the use cases only, and always with the category as a word beside it. Do not colour the five parts of the specification.
-- `--signature` is the one loud place, a 2px band at the foot of the header, once per page. Use it nowhere else.
-- Fonts are Sora for headings and the site name, Instrument Sans for text and the system monospace for code, all from `assets/dhcraft/`.
-- The only movement animation is the side-panel slide (200ms ease-out). Short hover transitions are permitted micro-affordances as `knowledge/design.md` lists them.
-- Nothing collapses (A33). The side panel with its mobile bottom-sheet form and the click-to-load video facade are the only two devices that hide content; add no third.
-- Add no decorative elements.
-
-## Scope
-
-- The site is English (A26). The templates stay German, and template names and published anchors stay German identifiers. All templates except `technology` are vault mirrors whose translation belongs in a vault session.
-- The skill lives in the repository `DigitalHumanitiesCraft/promptotyping-skill` (A42, revised 2026-11-14), its single source. The start page names its five subcommands and links it. The Skills page with the skill and the two system prompts is retired, and neither the skill nor its prompts are published here.
-- No modules beyond the Frontmatter-Inspector and the case-study filter.
-
-## Site model
-
-- The start page is the site, and Use cases is the one further page in the navigation (A50). The header carries anchors on the start page and the link to the use cases; the other pages stay mounted and addressable and are reached from links. The five parts of the specification are sections of one page under `#specification`.
-- `PAGES` in `assets/js/registry.js` is the single source for page hosts and route resolution, and it keeps every page mounted whether or not the header lists it. When touching a part, check `isPageId`, `hostPage` and `isRouteId`.
-- Inactive pages stay in the DOM as `display: none`, so every published anchor resolves. Do not lazy-mount pages.
-- The start page `#overview` is static markup in `index.html` with the seven parts of a DHCraft method page (A48), and `_content/overview.md` is its machine-readable twin. Its template entries, the five skill subcommands with the link to the skill repository, cases and the template archive repeat their sources; `tools/check_consistency.py` holds them, so change the source and the page together. The example shows short sentences in the user's own words (A51), and a procedure belongs in the skill, never in a prompt on the page or in the tutorial. Recurring entries have at most three visual levels.
-
-## URL anchor scheme
-
-Anchors are not renamed without discussion, because repositories link them as `template:` URIs. The full scheme and its rationale are in `knowledge/specification.md`, A4, A5 and ADR-2, ADR-3, ADR-10. `tools/check_consistency.py` reads this list.
-
-- Templates: subpath `/promptotyping-document/{slug}` (latest, canonical), equivalent hash `#promptotyping-document-{slug}`; snapshots only on a version change as `#promptotyping-document-{slug}-v{version}`. Slugs: `data`, `index`, `project`, `specification`, `architecture`, `technology`, `design`, `journal`, `handoff`, `user-stories`, `action-layer`, `testing`, `plan`, `report`, `domain-knowledge`, `verification`, `integration`.
-- Machine address (ADR-10): `https://dhcraft.org/Promptotyping/_content/promptotyping-document/{slug}.md`. The Pages workflow publishes `_content/` raw; `.nojekyll` stays for the legacy build.
-- Practice anchors derive from headings at render time. Changing an anchor-bearing heading needs an entry in `PRAXIS_ALIASES` in `assets/js/pages-content.js`.
-- Case studies `#case-{name}`. The retired glossary and Vault addresses `#glossar`, `#glossar-{slug}`, `#konzept-{name}`, `#vault` and `#vault-{slug}` (subpaths `/glossar`, `/konzepte/{name}`, `/vault`, `/vault/{slug}`) land on the start page, as does `/intro/` of the withdrawn introduction page (aliases and anchor families in `registry.js`).
-- Specification `#specification`; its parts `#application` (legacy `#anwendung`), `#vorlagen`, `#konvention-v0.1`, `#artefakt`, `#verifikation`, each with the same subpath.
-- Overview `#overview` (legacy `#ueberblick`); use cases `#use-cases`; worked workflow `#workflow`; practice `#praxis` and `#praxis-{slug}`; the retired skills addresses `#skills` and `#skills-{slug}` land on the start page, and `#skills-promptotyping` on its Skill section `#start-example` (alias in `registry.js`); working environment `#arbeitsumgebung`; tutorial `#tutorial`.
-
-## Tools
-
-Before dependent steps, check the available tools, runtimes and connections. A missing binding rule source holds the dependent change. Name checks you did not run.
-
-### Stack
-
-- Vanilla HTML5, CSS3 and JavaScript, no framework, no build step, no npm.
-- Core scripts under `assets/js/` are IIFEs extending `window.PromptotypingApp`, no ES modules. `app.js` loads last among the core scripts. `404.html` is a stub that hands the path as `?p=` to `index.html`; the subpath vocabulary lives only in `resolveTemplateUrl`.
-- marked.js and js-yaml are vendored under `assets/vendor/`. No CDN. Custom marked extensions stay in `assets/js/markdown.js`.
-- Routing uses browser-native `location.hash`. GitHub Pages publishes the tree that `.github/workflows/pages.yml` assembles from an explicit folder list; `CITATION.cff` is published, while `knowledge/`, this file, `tools/` and tests stay out. A new folder or root file the site loads must be added to that list.
-- `assets/promptotyping-logo.png` stays.
-
-### Checks
-
-`python tools/check_consistency.py` runs before every commit that touches the catalogue, convention, template folder or use-case gallery. The combined regression run from the repository root is:
-
-```sh
-python -m pytest tools/tests -q -p no:cacheprovider
-python tools/check_consistency.py
-```
-
-Add `--check-urls` to `check_consistency.py` when an address in `assets/data/case-studies.json` changes; it needs the network. What each check covers is in `knowledge/verification.md`.
-
-Local preview: `python -m http.server 8000`.
+There is no automated check. Before a commit that changes the page, serve the repository root with `python -m http.server 8000`, open the page at a wide and a narrow width, follow every changed link and read the console. Before a commit that changes a template or the convention, search the repository for the changed term and bring every restatement into line.

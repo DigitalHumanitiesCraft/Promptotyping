@@ -1,0 +1,58 @@
+/* The single page of the Promptotyping site. Colours, type and the shared blocks (header,
+   footer, button, code block, figure frame) come from assets/dhcraft/. This file only lays
+   out the page: sections, the one-line rows and the two-column skill block. */
+
+html { scroll-behavior: smooth; scroll-padding-block-start: var(--dh-space-5); }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+main { padding-block: var(--dh-space-6) 0; }
+main:focus { outline: none; }
+section { margin-block-end: var(--dh-space-7); }
+section + section { padding-block-start: var(--dh-space-6); border-block-start: var(--dh-hairline) solid var(--dh-line); }
+
+h1 { margin: 0 0 var(--dh-space-4); }
+h2 { margin: 0 0 var(--dh-space-3); }
+h3 { margin: var(--dh-space-6) 0 var(--dh-space-2); }
+p { margin: 0 0 var(--dh-space-4); }
+
+.lead { max-inline-size: var(--dh-measure); font-size: var(--dh-step-1); line-height: 1.5; }
+.more { margin-block-start: var(--dh-space-4); color: var(--dh-ink-soft); }
+
+/* The figure is drawn on white, so its frame is white in both schemes. */
+.dh-figure__canvas { background-color: #ffffff; }
+.dh-figure__canvas > img { min-inline-size: 46rem; }
+
+.repo-link { display: inline-flex; align-items: center; gap: var(--dh-space-2); min-block-size: var(--dh-tap); color: var(--dh-ink-soft); text-decoration: none; }
+.repo-link:hover, .repo-link:focus-visible { color: var(--dh-ink); text-decoration: underline; }
+.repo-link svg { inline-size: 1.25rem; block-size: 1.25rem; }
+
+.section-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--dh-space-3); margin-block-end: var(--dh-space-3); }
+.section-head h2 { margin: 0; }
+
+/* One entry per line: its name, which is the link, and half a sentence. Rows are separated
+   by a hairline and carry no frame of their own. */
+.rows { max-inline-size: 60rem; margin: var(--dh-space-4) 0 0; padding: 0; list-style: none; }
+.rows li { display: grid; grid-template-columns: minmax(0, 17rem) minmax(0, 1fr); gap: var(--dh-space-1) var(--dh-space-5); padding-block: var(--dh-space-2); border-block-start: var(--dh-hairline) solid var(--dh-line); }
+.rows li:last-child { border-block-end: var(--dh-hairline) solid var(--dh-line); }
+.rows a { font-weight: 600; text-decoration: none; }
+.rows a:hover, .rows a:focus-visible { text-decoration: underline; }
+.rows span { color: var(--dh-ink-soft); }
+.rows code { font-size: 0.92em; }
+.calls > li > code { font-weight: 600; white-space: nowrap; }
+
+.split { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: var(--dh-space-6); align-items: start; }
+.split .rows, .split .dh-code { margin-block-start: var(--dh-space-4); }
+
+@media (max-width: 55rem) {
+  .split { grid-template-columns: minmax(0, 1fr); gap: var(--dh-space-2); }
+}
+@media (max-width: 40rem) {
+  .rows li { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* On a narrow screen the repository link stays beside the brand and the section links take
+   the second line, so the header keeps two lines. */
+@media (max-width: 47.99rem) {
+  .repo-link { order: 2; margin-inline-start: auto; }
+  .dh-nav { order: 3; }
+}

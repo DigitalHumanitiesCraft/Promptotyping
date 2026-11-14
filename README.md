@@ -2,50 +2,44 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14160875.svg)](https://doi.org/10.5281/zenodo.14160875)
 
-Promptotyping is a working practice that translates research data and their contexts into research artefacts that fit the researchers' purposes and ways of working. It does so through three forms of engineering. Knowledge Engineering makes explicit and curates what a project knows about its domain, its data and its aims. Context Engineering selects from this knowledge what an agent needs for a task. Agentic Engineering organises the work of the agents that build on it.
+Promptotyping is a working practice for translating research data and their contexts, with frontier LLM agents, into research artefacts that fit the researchers' purposes and ways of working. It rests on Knowledge Engineering, Context Engineering and Agentic Engineering and proceeds in four forms of work, Preparation, Exploration, Distillation and Implementation.
 
-The site at **https://dhcraft.org/Promptotyping/** presents the practice on one page, with the figure below, the terms, the files to download, the skill's five subcommands and the citation. This README follows the same order in short form and links the page instead of repeating it.
+![Researchers and research software developers direct four recurrent forms of work, Preparation, Exploration, Distillation and Implementation. Each iteration ends with a Promptotype, a prototype taken together with the project knowledge base and the research data from which it was built. Verification and agentic review check it, the researchers assess it through scholarly validation, and what checking and use reveal returns to the knowledge base through knowledge curation.](assets/img/promptotyping-practice.svg)
 
-![Researchers direct four recurrent forms of work, Preparation, Exploration, Distillation and Implementation, and assess each promptotype through scholarly validation. A promptotype is the state of an artefact together with its project knowledge base and its research data. Verification and agentic review accompany each iteration, and what checking and use reveal returns to the knowledge base through knowledge curation.](assets/img/promptotyping-practice.svg)
+The site at **https://dhcraft.org/Promptotyping/** shows the same on one page.
 
-## What it is and where it comes from
+## What is here
 
-Promptotyping grew out of research software development in the digital humanities. The term first named the generation of project-specific interfaces with LLMs in a dissertation at the University of Graz (2025), the practice was described in blog posts on DHCraft (2025) and L.I.S.A. (2026), and the paper on the practice, Pollin 2026, Promptotyping, submitted, traces it through three cases, CorrespExplorer, SZD-HTR and Klawiter-Rescue. Further projects are on the [use-case page](https://dhcraft.org/Promptotyping/#use-cases).
+- [`templates/`](templates/) holds the templates of the Promptotyping Documents, the knowledge documents of a project, and the [convention](templates/convention.md) they follow. This repository is their single source. Each file is also readable as plain Markdown at `https://dhcraft.org/Promptotyping/templates/<name>.md`.
+- [`knowledge/`](knowledge/INDEX.md) is the knowledge base of this project, written with its own templates. [`practice.md`](knowledge/practice.md) describes the four forms of work, the three kinds of checking and the limits of the artefact, and [`journal.md`](knowledge/journal.md) tells how the practice and the repository came about.
+- [`case-studies/`](case-studies/) describes the projects in which the practice was used, each with its data, its artefact and what it shows.
 
-## Terms
+The skill that gives an agent the procedure of the practice lives in its own repository, [promptotyping-skill](https://github.com/DigitalHumanitiesCraft/promptotyping-skill), with the five subcommands `orient`, `explore`, `distill`, `curate` and `handoff`.
 
-In the figure, Knowledge Engineering is the project knowledge base and its curation, Context Engineering is the arrow that carries context to each task, and Agentic Engineering is the cycle of the four forms of work, Preparation, Exploration, Distillation and Implementation, with its checks. Each iteration yields a promptotype, the state of an artefact together with its project knowledge base and its research data. Verification and agentic review check it, and in scholarly validation the researchers decide whether it is warranted by the sources and fits their questions. The project knowledge base is a small set of Markdown files of three types, declarative, process and agent instruction documents. The [start page](https://dhcraft.org/Promptotyping/) explains the terms in a few paragraphs, and the [specification](https://dhcraft.org/Promptotyping/#specification) gives the full account.
+## Use
 
-## Reuse
+Install an AI coding agent such as Claude Code, then copy the skill into its skills folder. The README of the skill repository gives the installation for other agents.
 
-A first iteration is meant for researchers and project teams with structured data and a concrete question. Check first whether the six conditions of the [fit check](_content/application.md) hold.
+```bash
+git clone https://github.com/DigitalHumanitiesCraft/promptotyping-skill.git
+mkdir -p ~/.claude/skills
+cp -r promptotyping-skill/promptotyping ~/.claude/skills/
+```
 
-1. Install an AI coding agent such as Claude Code or Codex, Git and Python, then copy the skill into the agent's skills folder. The skill lives in the repository [promptotyping-skill](https://github.com/DigitalHumanitiesCraft/promptotyping-skill), tagged per version, whose README gives the installation for each agent and whose changelog records every change.
+Create a project folder with your data, start the agent there and say what you want in your own words. The skill reads the template of a document before it creates it, so the templates need not be copied by hand.
 
-   ```bash
-   git clone https://github.com/DigitalHumanitiesCraft/promptotyping-skill.git
-   mkdir -p ~/.claude/skills
-   cp -r promptotyping-skill/promptotyping ~/.claude/skills/
-   ```
+## Origin
 
-   Codex reads skills from its skills directory, usually `$CODEX_HOME/skills/`. An agent that reads only `AGENTS.md` gets the skill through one line there, after the folder has been copied, for instance to `.agents/skills/promptotyping/`.
-
-   ```markdown
-   Before working in knowledge/, read .agents/skills/promptotyping/SKILL.md and follow the operation that fits the task.
-   ```
-
-2. Take the files. The skill has five subcommands, orient, explore, distill, curate and handoff. The templates for the knowledge base lie under [`_content/promptotyping-document/`](_content/promptotyping-document/), and the page offers each one and the whole set as an archive.
-
-3. Work in your own words. Create an empty project folder with your data, start the agent there and name the step you want, from Prepare to the acceptance, as the [tutorial](_content/tutorial.md) does. The skill carries the procedure behind each step. An agent that cannot load skills gets it when you give it the skill's [`SKILL.md`](https://github.com/DigitalHumanitiesCraft/promptotyping-skill/blob/main/promptotyping/SKILL.md) to read first.
+Promptotyping grew out of research software development in the digital humanities. The term first named the generation of project-specific interfaces with LLMs in a [dissertation at the University of Graz](https://unipub.uni-graz.at/obvugrhs/12127700) (2025), and the practice was described in blog posts on [DHCraft](https://dhcraft.org/excellence/blog/Promptotyping/) (2025) and [L.I.S.A.](https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin) (2026). The paper on the practice (Pollin 2026, Promptotyping, submitted) traces it through three cases, [CorrespExplorer](case-studies/corresp-explorer.md), [SZD-HTR](case-studies/szd-htr.md) and [Klawiter-Rescue](case-studies/klawiter-rescue.md).
 
 ## Limits, licence and citation
 
-The practice has not yet been evaluated against other ways of working, and whether it transfers to other people and projects is still open. The automatic checks of this repository decide consistency between its own statements, while whether the description is right in substance remains scholarly judgement. The templates other than `technology` are written in German.
+The practice has not yet been evaluated against other ways of working, and whether it transfers to other people and projects is open.
 
-Text and templates (Markdown under [`_content/`](_content/) and [`knowledge/`](knowledge/)) are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), code under the MIT License in [LICENSE](LICENSE). The shared DHCraft web files under [`assets/dhcraft/`](assets/dhcraft/) carry their own [licence](assets/dhcraft/LICENSE.md), and the DHCraft mark is proprietary. The repository contains no third-party research data.
+Text and templates are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), code under the MIT License in [LICENSE](LICENSE). The shared DHCraft web files under [`assets/dhcraft/`](assets/dhcraft/) carry their own [licence](assets/dhcraft/LICENSE.md), and the DHCraft mark is proprietary. The repository contains no third-party research data.
 
 Cite the practice through [CITATION.cff](CITATION.cff), which GitHub offers under "Cite this repository". The concept DOI resolves to the latest archived version. Changes are listed in [CHANGELOG.md](CHANGELOG.md).
 
 ## Working on this repository
 
-The knowledge base of the site itself is in [`knowledge/`](knowledge/INDEX.md), and [CLAUDE.md](CLAUDE.md) is the agent's entry point. The site has no build step. Serve the repository root locally with `python -m http.server 8000`, and run `python tools/build_downloads.py` once to preview the download archives, which the Pages workflow builds at delivery. The checks are `python tools/check_consistency.py` and the test run named in `CLAUDE.md`. [`tools/tests/README.md`](tools/tests/README.md) says where the tests lie, how to run them, what they check and how to carry the pattern into your own project.
+[CLAUDE.md](CLAUDE.md) is the agent's entry point. The site is one hand-written page without a build step. Serve the repository root locally with `python -m http.server 8000`. The Pages workflow publishes an explicit list of paths and packs the templates into one archive.

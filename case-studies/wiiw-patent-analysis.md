@@ -2,9 +2,13 @@
 title: wiiw Patent Analysis
 id: wiiw-patent-analysis
 paper: none
+role: further
+artefact: "Network dashboard with centrality measures and yearly snapshots"
 ---
 
 # wiiw Patent Analysis
+
+[Repository](https://github.com/DigitalHumanitiesCraft/wiiw-patent-analysis-demo), [Live](https://dhcraft.org/wiiw-patent-analysis-demo/)
 
 ## Context and research question
 

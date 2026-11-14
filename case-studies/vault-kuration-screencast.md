@@ -2,9 +2,13 @@
 title: Obsidian Vault Curation
 id: vault-kuration-screencast
 paper: "4.3, teaching and collaboration"
+role: teaching
+artefact: "Curated vault plus the rules extracted from the curation"
 ---
 
 # Obsidian Vault Curation
+
+[Video](https://youtu.be/CioCSbQWGXw)
 
 ## Context
 

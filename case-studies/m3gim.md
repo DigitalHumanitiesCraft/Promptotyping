@@ -2,9 +2,13 @@
 title: M3GIM
 id: m3gim
 paper: "4.3, Table 3"
+role: evidence
+artefact: "Multi-view archive explorer"
 ---
 
 # M3GIM
+
+[Repository](https://github.com/DigitalHumanitiesCraft/m3gim), [Live](https://dhcraft.org/m3gim)
 
 ## Context and research question
 

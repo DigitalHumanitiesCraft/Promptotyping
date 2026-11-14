@@ -2,10 +2,13 @@
 title: Hans Gross Kriminalmuseum Digital Archive
 id: km
 paper: none
-source: Projects/Promptotyping/Case Studies/km.md
+role: further
+artefact: "Digital archive (search plus spatial exploration)"
 ---
 
 # Hans Gross Kriminalmuseum Digital Archive
+
+[Repository](https://github.com/chpollin/km), [Live](https://chpollin.github.io/km/index.html)
 
 ## Context and research question
 
@@ -25,7 +28,7 @@ The document set stayed minimal, an action layer recording the state of the work
 
 The case shows one data model carrying two interfaces whose epistemic function differs. The search interface answers a question that is already formed. The canvas explorer addresses the collection before a question exists, and its layout algorithms, categorical by type and period, chronological, radial and clustered, reorder the same objects so that a different property of the stock becomes salient in each.
 
-The explorer also shows how the client-side bound named on the site's [artefact page](#artefakt) is met by rendering strategy. Spatial search runs over a quadtree so that hit testing avoids the full object set, and only the objects inside the current viewport are drawn.
+The explorer also shows how the client-side bound named on the site's [artefact page](../knowledge/practice.md) is met by rendering strategy. Spatial search runs over a quadtree so that hit testing avoids the full object set, and only the objects inside the current viewport are drawn.
 
 ## Limits
 

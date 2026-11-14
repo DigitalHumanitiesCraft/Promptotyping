@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Promptotyping. Specification of the Working Practice</title>
-  <meta name="description" content="Specification documentation of the Promptotyping working practice. Four recurrent forms of work, document set, convention, artefact type and verification, with reference, practice and documented applications.">
+  <title>Promptotyping</title>
+  <meta name="description" content="Promptotyping is a working practice for translating research data and their contexts, with frontier LLM agents, into research artefacts that fit the researchers' purposes and ways of working. The page gives the definition, the skill, the templates of the knowledge documents and documented projects.">
 
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://dhcraft.org/Promptotyping/">
@@ -61,401 +61,167 @@
     "inLanguage": "en"
   }
   </script>
-
-  <script>
-    // Light is the default view (operator decision, 26 July 2026), so the
-    // attribute is always set and the system preference never decides. Applied
-    // before first paint, so a reader who chose dark sees no white flash.
-    (function () {
-      var t = "light";
-      try {
-        t = localStorage.getItem("promptotyping-theme") || "light";
-      } catch (e) {}
-      document.documentElement.setAttribute("data-theme", t);
-      document.documentElement.classList.add("js");
-    })();
-  </script>
   <link rel="stylesheet" href="assets/dhcraft/dhcraft-tokens.css">
   <link rel="stylesheet" href="assets/dhcraft/dhcraft-components.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/site.css">
 </head>
-<body class="docs" data-page="overview">
+<body>
+  <a class="dh-skip" href="#content">Skip to content</a>
 
-  <a class="skip-link" href="#content">Skip to content</a>
-
-  <svg class="icon-set" aria-hidden="true" focusable="false">
-    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19.5h14"/></symbol>
-    <symbol id="i-archive" viewBox="0 0 24 24"><path d="M4.5 5h15v4h-15zM6 9v10h12V9M10 12.5h4"/></symbol>
-    <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 5h5v5m0-5-8.5 8.5M18 14v5H5V6h5"/></symbol>
-    <symbol id="i-terminal" viewBox="0 0 24 24"><path d="m5 7 4.5 4.5L5 16m7 1h7"/></symbol>
-    <symbol id="i-prompt" viewBox="0 0 24 24"><path d="M5 5.5h14v10H10l-4 3.5v-3.5H5z"/></symbol>
-    <symbol id="i-copy" viewBox="0 0 24 24"><path d="M8.5 8.5h10v11h-10zM5.5 15.5v-11h10"/></symbol>
-    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
-    <symbol id="i-result" viewBox="0 0 24 24"><path d="M5 12h13m0 0-4.5-4.5M18 12l-4.5 4.5"/></symbol>
-  </svg>
-
-
-
-
-
-  
-  <header class="docs-header dh-head">
-    <a class="dh-brand" href="#overview">
+  <header class="dh-head">
+    <a class="dh-brand" href="#content">
       <img src="assets/dhcraft/dhcraft-mark-watercolor-128.png" alt="" width="28" height="32">
       Promptotyping
     </a>
-    <nav class="dh-nav" aria-label="Main">
-      <ul id="docs-nav">
-        <li><a href="#start-reuse" data-section="start-reuse">Reuse</a></li>
-        <li><a href="#start-downloads" data-section="start-downloads">Downloads</a></li>
-        <li><a href="#start-example" data-section="start-example">Skill</a></li>
-        <li><a href="#start-limits" data-section="start-limits">Citation</a></li>
-        <li><a href="#use-cases" data-page="use-cases">Use cases</a></li>
+    <nav class="dh-nav" aria-label="Sections">
+      <ul>
+        <li><a href="#skill">Skill</a></li>
+        <li><a href="#templates">Templates</a></li>
+        <li><a href="#knowledge">Knowledge</a></li>
+        <li><a href="#use-cases">Use cases</a></li>
+        <li><a href="#cite">Cite</a></li>
       </ul>
     </nav>
-    <div class="docs-header-tools">
-      <a class="icon-button" href="https://github.com/DigitalHumanitiesCraft/Promptotyping" target="_blank" rel="noopener">
-        <span class="visually-hidden">Repository on GitHub</span>
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/Promptotyping">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
           <path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48l-.01-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.36 1.09 2.94.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85l-.01 2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2z"></path>
         </svg>
-      </a>
-      <button type="button" class="icon-button" id="theme-toggle" aria-live="polite">
-        <span class="visually-hidden">Switch colour scheme</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-             stroke-linecap="round" aria-hidden="true">
-          <circle cx="12" cy="12" r="7"></circle>
-          <path d="M12 5a7 7 0 0 0 0 14z" fill="currentColor" stroke="none"></path>
-        </svg>
-      </button>
-    </div>
+      GitHub
+    </a>
   </header>
 
-  <div class="docs-shell">
+  <main class="dh-page" id="content" tabindex="-1">
 
-
-    <!-- One page visible at a time; app.js mounts the page hosts and routes.
-         The start page is static markup so that everything needed to reuse the
-         practice reads without JavaScript; tools/check_consistency.py holds its
-         template rows, skill operations and prompts against their sources. -->
-    <main class="docs-main content" id="content" tabindex="-1">
-      <section class="doc-page is-active start" id="overview" tabindex="-1">
-
-        <div class="start-head">
-          <h1>Promptotyping</h1>
-          <p class="start-lead">Promptotyping is a working practice that translates research data and their contexts into research artefacts that fit the researchers' purposes and ways of working. It does so through three forms of engineering. Knowledge Engineering makes explicit and curates what a project knows about its domain, its data and its aims. Context Engineering selects from this knowledge what an agent needs for a task. Agentic Engineering organises the work of the agents that build on it.</p>
+    <section class="intro">
+      <h1>Promptotyping</h1>
+      <p class="lead">Promptotyping is a working practice for translating research data and their contexts, with frontier LLM agents, into research artefacts that fit the researchers' purposes and ways of working. It rests on Knowledge Engineering, Context Engineering and Agentic Engineering and proceeds in four forms of work.</p>
+      <figure class="dh-figure">
+        <div class="dh-figure__canvas">
+          <img src="assets/img/promptotyping-practice.svg" width="1672" height="860" alt="Researchers and research software developers direct four recurrent forms of work, Preparation, Exploration, Distillation and Implementation. Each iteration ends with a Promptotype, a prototype taken together with the project knowledge base and the research data from which it was built. Verification and agentic review check it, the researchers assess it through scholarly validation, and what checking and use reveal returns to the knowledge base through knowledge curation.">
         </div>
+      </figure>
+      <div class="dh-prose">
+        <p>Preparation assembles the sources, the data and the research context. Exploration studies the prepared material until the researchers recognise their material in the results. Distillation writes this understanding into the knowledge documents from which building and checking proceed, and Implementation builds the artefact from them in bounded tasks, each small enough that its result can be run and inspected. The four forms recur in no fixed order.</p>
+        <p>An iteration ends with a Promptotype, a prototype that can be used and inspected, taken together with the project knowledge base and the research data from which it was built. Verification runs checks that can fail, in agentic review an agent examines the work against named criteria, and in scholarly validation the researchers judge whether it is warranted by the sources and adequate to their purpose. What checking and use reveal is curated back into the knowledge base.</p>
+      </div>
+    </section>
 
-        <noscript>
-          <p class="start-note">Without JavaScript the other pages of this site stay closed. Their text is readable as Markdown, the <a href="_content/tutorial.md">tutorial</a>, <a href="_content/application.md">Application</a>, <a href="_content/verifikation.md">Checking</a> and the <a href="_content/konvention.md">convention</a>. The skill lives in the repository <a href="https://github.com/DigitalHumanitiesCraft/promptotyping-skill">promptotyping-skill</a>.</p>
-        </noscript>
-
-        <figure class="dh-figure practice" id="start-figure">
-          <div class="dh-figure__canvas" tabindex="0" role="region" aria-label="Figure of the practice, scrolls sideways on narrow screens">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1672 860" class="practice-svg" role="img" aria-labelledby="pf-t pf-d">
-          <title id="pf-t">The Promptotyping working practice</title>
-          <desc id="pf-d">Researchers direct four recurrent forms of work, shown in the order of a first pass, and assess each promptotype through scholarly validation. A promptotype is the state of an artefact together with its project knowledge base and its research data, and earlier states remain as versions. Distillation maintains the knowledge base, which supplies the context for each task. Verification and agentic review accompany each iteration, and what checking and use reveal returns to the knowledge base through knowledge curation. The files shown are examples.</desc>
-          <defs>
-            <marker id="pf-arrow" viewBox="0 0 18 16" refX="17" refY="8" markerWidth="18" markerHeight="16" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
-              <path d="M1,1 L17,8 L1,15 Z" class="fill-surface" stroke="currentColor" stroke-width="1.6" stroke-linejoin="miter"/>
-            </marker>
-            <g id="pf-map">
-              <path d="M22,4 C30,-2 40,6 48,2 C58,-2 62,10 70,12 C80,14 84,26 78,36 C86,46 76,58 66,58 C58,70 44,62 36,68 C26,74 14,66 14,54 C2,50 0,36 8,28 C4,16 12,6 22,4 Z" fill="none"/>
-            </g>
-            <g id="pf-sheet">
-              <path d="M0,0 H70 L94,24 V130 H0 Z" class="fill-surface"/>
-              <path d="M70,0 V24 H94" fill="none"/>
-            </g>
-          </defs>
-          <rect class="cat-forms-frame" x="20" y="150" width="640" height="490" rx="14" fill="none" stroke="currentColor" stroke-width="1.300" stroke-dasharray="7 6"/>
-          <rect x="824" y="174" width="840" height="570" rx="14" class="shape cat-proto"/>
-          <rect x="812" y="162" width="840" height="570" rx="14" class="shape cat-proto"/>
-          <rect x="800" y="150" width="840" height="570" rx="14" class="shape cat-proto"/>
-        
-          <g class="line" marker-end="url(#pf-arrow)">
-            <path d="M210,250 C165,260 142,295 140,343"/>
-            <path d="M138,456 C142,505 165,535 210,546"/>
-            <path d="M450,546 C492,532 512,505 516,460"/>
-            <path d="M518,341 C516,295 496,262 452,250"/>
-            <path d="M643,400 H798"/>
-            <path d="M816,600 H662"/>
-            <path d="M432,588 C470,640 525,655 600,655 H816"/>
-            <path d="M1220,746 V780 Q1220,800 1200,800 H350 Q330,800 330,780 V612"/>
-            <path d="M703,62 H360 Q340,62 340,82 V148"/>
-            <path d="M757,62 H1200 Q1220,62 1220,82 V148"/>
-          </g>
-          <text class="head" x="730" y="24" style="font-size:17px;letter-spacing:2.500px">RESEARCHERS</text>
-          <circle class="shape" cx="730" cy="62" r="26"/>
-          <circle class="person" cx="730" cy="55" r="7"/><path class="person" d="M717,77 C717,66 743,66 743,77"/>
-          <text class="sub" x="520" y="50">direct the work</text>
-          <text class="sub" x="990" y="50">scholarly validation</text>
-          <text class="head" x="340" y="178" style="font-size:17px;letter-spacing:2.500px">FOUR FORMS OF WORK</text>
-          <g class="shape cat-forms">
-            <ellipse cx="330" cy="245" rx="124" ry="55"/>
-            <ellipse cx="146" cy="400" rx="112" ry="55"/>
-            <ellipse cx="514" cy="400" rx="128" ry="58"/>
-            <ellipse cx="330" cy="555" rx="124" ry="55"/>
-          </g>
-          <text class="head" x="331" y="240">PREPARATION</text>
-          <text class="sub" x="330" y="264" style="font-size:17px">sources, data, context</text>
-          <text class="head" x="147" y="395" style="font-size:18px">EXPLORATION</text>
-          <text class="sub" x="146" y="419" style="font-size:17px">structure and limits</text>
-          <text class="head" x="515" y="395" style="font-size:18px">IMPLEMENTATION</text>
-          <text class="sub" x="514" y="419" style="font-size:17px">bounded increments</text>
-          <text class="head" x="331" y="550">DISTILLATION</text>
-          <text class="sub" x="330" y="574" style="font-size:17px">maintained knowledge</text>
-        
-          <text class="sub" x="728" y="388" style="font-size:17px">each iteration</text>
-          <text class="sub" x="730" y="424" style="font-size:17px">verification</text>
-          <text class="sub" x="730" y="443" style="font-size:17px">agentic review</text>
-          <text class="sub" x="730" y="573" style="font-size:17px">context for</text>
-          <text class="sub" x="730" y="591" style="font-size:17px">each task</text>
-          <text class="sub" x="730" y="678" style="font-size:17px">maintains</text>
-          <text class="head" x="1221" y="190">PROMPTOTYPE</text>
-          <text class="sub" x="1220" y="214" style="font-size:17px">the state of an artefact with its project knowledge and research data</text>
-          <text class="head" x="1221" y="262" style="font-size:17px;letter-spacing:2.500px">ARTEFACT</text>
-          <svg x="1067" y="274" width="305" height="185" viewBox="995 235 305 185">
-          <g class="shape">
-            <rect x="751" y="240" width="200" height="175" rx="4"/>
-            <rect x="1000" y="240" width="295" height="175" rx="4"/>
-            <rect x="1344" y="240" width="306" height="175" rx="4"/>
-          </g>
-          <g class="thin">
-            <path d="M751,253 H951 M1000,253 H1295 M1344,253 H1650"/>
-            <circle cx="760" cy="246.500" r="2.300"/><circle cx="768" cy="246.500" r="2.300"/><circle cx="776" cy="246.500" r="2.300"/>
-            <circle cx="1009" cy="246.500" r="2.300"/><circle cx="1017" cy="246.500" r="2.300"/><circle cx="1025" cy="246.500" r="2.300"/>
-            <circle cx="1353" cy="246.500" r="2.300"/><circle cx="1361" cy="246.500" r="2.300"/><circle cx="1369" cy="246.500" r="2.300"/>
-            <use href="#pf-map" transform="translate(778,278) scale(1.72,1.62)"/>
-            <circle cx="806" cy="340" r="4"/><circle cx="863" cy="314" r="4"/><circle cx="880" cy="338" r="4"/><circle cx="833" cy="360" r="4"/><circle cx="902" cy="359" r="4"/>
-            <rect x="1012" y="267" width="84" height="135"/>
-            <rect x="1107" y="267" width="84" height="135"/>
-            <rect x="1202" y="267" width="82" height="135"/>
-            <use href="#pf-map" transform="translate(1019,290) scale(0.840,1.240)"/>
-            <circle cx="1037" cy="337" r="3.200"/><circle cx="1071" cy="316" r="3.200"/><circle cx="1054" cy="353" r="3.200"/><circle cx="1078" cy="333" r="3.200"/>
-            <rect x="1113" y="283" width="34" height="8"/><rect x="1117" y="299" width="42" height="8"/><rect x="1124" y="315" width="46" height="8"/><rect x="1131" y="331" width="38" height="8"/><rect x="1138" y="347" width="45" height="8"/><rect x="1143" y="363" width="36" height="8"/><rect x="1129" y="379" width="36" height="8"/>
-            <path d="M1247,299 L1220,331 L1232,353 L1217,367 M1247,299 L1270,335 L1247,367 L1232,353"/>
-            <circle cx="1247" cy="299" r="6" class="fill-surface"/><circle cx="1220" cy="331" r="6" class="fill-surface"/><circle cx="1270" cy="335" r="6" class="fill-surface"/><circle cx="1217" cy="367" r="6" class="fill-surface"/><circle cx="1247" cy="367" r="6" class="fill-surface"/>
-            <rect x="1356" y="267" width="68" height="135"/>
-            <rect x="1431" y="267" width="59" height="135"/>
-            <rect x="1497" y="267" width="59" height="135"/>
-            <rect x="1563" y="267" width="76" height="135"/>
-            <use href="#pf-map" transform="translate(1361,292) scale(0.700,1.180)"/>
-            <circle cx="1376" cy="335" r="3"/><circle cx="1404" cy="315" r="3"/><circle cx="1390" cy="353" r="3"/><circle cx="1409" cy="333" r="3"/>
-            <rect x="1436" y="283" width="24" height="8"/><rect x="1440" y="299" width="29" height="8"/><rect x="1445" y="315" width="27" height="8"/><rect x="1450" y="331" width="26" height="8"/><rect x="1455" y="347" width="28" height="8"/><rect x="1458" y="363" width="24" height="8"/><rect x="1448" y="379" width="26" height="8"/>
-            <path d="M1530,299 L1512,333 L1521,351 L1512,367 M1530,299 L1545,336 L1530,367 L1521,351"/>
-            <circle cx="1530" cy="299" r="5" class="fill-surface"/><circle cx="1512" cy="333" r="5" class="fill-surface"/><circle cx="1545" cy="336" r="5" class="fill-surface"/><circle cx="1512" cy="367" r="5" class="fill-surface"/><circle cx="1530" cy="367" r="5" class="fill-surface"/>
-            <path d="M1576,285 C1602,285 1604,335 1626,335 M1576,310 C1600,310 1604,295 1626,295 M1576,335 C1602,335 1604,315 1626,315 M1576,360 C1602,360 1604,385 1626,385 M1576,385 C1602,385 1604,355 1626,355 M1576,310 C1602,310 1604,375 1626,375 M1576,360 C1602,360 1604,305 1626,305 M1576,285 C1602,285 1604,355 1626,355"/>
-            <circle cx="1572" cy="285" r="4" class="fill-surface"/><circle cx="1572" cy="310" r="4" class="fill-surface"/><circle cx="1572" cy="335" r="4" class="fill-surface"/><circle cx="1572" cy="360" r="4" class="fill-surface"/><circle cx="1572" cy="385" r="4" class="fill-surface"/>
-            <circle cx="1630" cy="295" r="4" class="fill-surface"/><circle cx="1630" cy="315" r="4" class="fill-surface"/><circle cx="1630" cy="335" r="4" class="fill-surface"/><circle cx="1630" cy="355" r="4" class="fill-surface"/><circle cx="1630" cy="378" r="4" class="fill-surface"/>
-          </g>
-          </svg>
-        
-          <rect class="kb-frame" x="816" y="480" width="484" height="236" rx="10"/>
-          <text class="head" x="1044" y="500" style="font-size:17px;letter-spacing:2.500px">PROJECT KNOWLEDGE BASE</text>
-          <text class="sub" x="919" y="536" style="font-size:17px">declarative</text>
-          <text class="sub" x="1103" y="536" style="font-size:17px">process</text>
-          <text class="sub" x="1223" y="536" style="font-size:17px">agent instructions</text>
-          <g class="thin">
-            <path d="M830,552 V545 H1008 V552 M1070,552 V545 H1136 V552 M1190,552 V545 H1256 V552"/>
-          </g>
-          <g class="shape cat-base" stroke-linejoin="miter">
-            <use href="#pf-sheet" transform="translate(830,560) scale(0.700)"/>
-            <use href="#pf-sheet" transform="translate(942,560) scale(0.700)"/>
-            <use href="#pf-sheet" transform="translate(1070,560) scale(0.700)"/>
-            <use href="#pf-sheet" transform="translate(1190,560) scale(0.700)"/>
-          </g>
-          <text class="mono" x="858" y="674" style="font-size:17px">data.md</text>
-          <text class="mono" x="984" y="674" style="font-size:17px">specification.md</text>
-          <text class="mono" x="1127" y="674" style="font-size:17px">journal.md</text>
-          <text class="mono" x="1242" y="674" style="font-size:17px">CLAUDE.md</text>
-          <text class="sub" x="1044" y="702" style="font-size:17px">example files</text>
-        
-          <text class="head" x="1471" y="500" style="font-size:17px;letter-spacing:2.500px">RESEARCH DATA</text>
-          <g class="shape">
-            <path d="M1408,572 V640 A62,16 0 0 0 1532,640 V572"/>
-            <ellipse cx="1470" cy="572" rx="62" ry="16"/>
-          </g>
-          <path class="thin" d="M1408,606 A62,16 0 0 0 1532,606"/>
-          <path class="thin" d="M1290,606 H1404" stroke-dasharray="5 5"/>
-          <text class="sub" x="1347" y="596" style="font-size:17px">describes</text>
-        
-          <text class="sub start" x="1234" y="772" style="font-size:17px">checking and use</text>
-          <text class="sub" x="1664" y="772" style="font-size:17px;text-anchor:end">each state can be versioned</text>
-          <text class="sub" x="775" y="826">knowledge curation records what was learned and corrects or removes what no longer applies</text>
-        </svg>
-          </div>
-        </figure>
-
-        <div class="start-prose" id="start-terms">
-          <p>In the figure, Knowledge Engineering is the project knowledge base and its curation, Context Engineering is the arrow that carries context to each task, and Agentic Engineering is the cycle of the four forms of work with its checks.</p>
-          <p>The work starts with what a project already has, its sources, its data and a question. Researchers direct it throughout, and it runs through four <span class="cat cat-forms">forms of work</span>. In <em>Preparation</em> the material is gathered and described until it can be examined. In <em>Exploration</em> scripts profile the data, and the account that results is one the researchers recognise as their material. <em>Distillation</em> turns what was found into a few maintained documents from which a fresh agent can continue. <em>Implementation</em> then builds in small, checked increments. A first pass follows this order, and afterwards each form returns whenever the work calls for it (<a href="#application">Application</a>).</p>
-          <p>Each iteration yields a promptotype, the state of an artefact together with its project knowledge base and its research data, and earlier states remain as versions. Something runs early, so there is always something concrete to look at and to discuss. Verification tests it against formalised requirements, and in agentic review an agent examines it against named criteria. The decision stays with the researchers. In scholarly validation they judge whether the work is warranted by the sources and fits their questions (<a href="#verifikation">Checking</a>), and what checking and use reveal flows back into the knowledge base through knowledge curation.</p>
-          <p>The <span class="cat cat-base">project knowledge base</span> is a small set of Markdown files in the repository, of the three types shown below. The figure is Figure 1 of the paper on the practice (<a href="#start-limits">Pollin 2026, submitted</a>).</p>
-        </div>
-        <figure class="doc-types-figure" aria-label="The three types of knowledge documents and their files">
-          <div class="doc-type">
-            <p class="doc-type-name">Declarative knowledge documents</p>
-            <p class="doc-type-gloss">what holds</p>
-            <ul class="sheets"><li class="sheet"><code>INDEX.md</code></li><li class="sheet"><code>project.md</code></li><li class="sheet"><code>data.md</code></li><li class="sheet"><code>specification.md</code></li><li class="sheet"><code>user-stories.md</code></li><li class="sheet"><code>architecture.md</code></li><li class="sheet"><code>research-methodology.md</code></li><li class="sheet"><code>design.md</code></li><li class="sheet"><code>verification.md</code></li><li class="sheet"><code>report-YYYY-MM-DD.md</code></li><li class="sheet"><code>integration.md</code></li></ul>
-          </div>
-          <div class="doc-type">
-            <p class="doc-type-name">Process knowledge documents</p>
-            <p class="doc-type-gloss">how the understanding developed and what is open</p>
-            <ul class="sheets"><li class="sheet"><code>journal.md</code></li><li class="sheet"><code>plan.md</code></li></ul>
-          </div>
-          <div class="doc-type">
-            <p class="doc-type-name">Agent instruction documents</p>
-            <p class="doc-type-gloss">how agents are to work</p>
-            <ul class="sheets"><li class="sheet"><code>CLAUDE.md</code></li><li class="sheet"><code>technology-baseline.md</code></li><li class="sheet"><code>testing.md</code></li></ul>
-          </div>
-        </figure>
-
-        <h2 id="start-origin">Origin</h2>
-        <div class="start-prose">
-          <p>Promptotyping grew out of everyday research software development in the digital humanities. The term first named the generation of project-specific interfaces with LLMs in a <a href="https://unipub.uni-graz.at/obvugrhs/12127700">dissertation at the University of Graz</a> (2025), the practice was described in blog posts on <a href="https://dhcraft.org/excellence/blog/Promptotyping/">DHCraft</a> (2025) and <a href="https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin">L.I.S.A.</a> (2026), and the paper of 2026 traces it through three cases, <span data-case="corresp-explorer"><a href="#case-corresp-explorer">CorrespExplorer</a> (<a href="https://dhcraft.org/CorrespExplorer">live</a>)</span>, <span data-case="szd-htr"><a href="#case-szd-htr">SZD-HTR</a> (<a href="https://chpollin.github.io/szd-htr-ocr-pipeline/">live</a>)</span> and <span data-case="klawiter-rescue"><a href="#case-klawiter-rescue">Klawiter-Rescue</a> (<a href="https://chpollin.github.io/klawiter-rescue">live</a>)</span>. Further projects are documented under <a href="#use-cases">use cases</a>.</p>
-        </div>
-
-        <h2 id="start-reuse">Reuse</h2>
-        <p class="start-prose-line">A first iteration is meant for researchers and project teams with structured data and a concrete question. It is responsible when six conditions hold, and an open one is settled before implementation (<a href="#application">fit check</a>).</p>
-        <ul class="fit-list">
-          <li>The data are accessible, and their provenance and meaning are understood.</li>
-          <li>One purpose and a small first artefact can be named.</li>
-          <li>Someone with domain expertise can check the output against the sources.</li>
-          <li>There is time for verification and scholarly validation.</li>
-          <li>Rights and the model provider's terms permit the processing.</li>
-          <li>The result can be versioned and accepted for a stated purpose.</li>
+    <section id="skill">
+      <h2>Skill</h2>
+      <p class="dh-prose">The skill gives an agent the procedure of the practice. You say what you want in your own words, and five subcommands name the moments at which you call it directly.</p>
+      <div class="split">
+        <ul class="rows calls">
+          <li><code>/promptotyping orient</code><span>starts a session, establishes where the project stands and changes no file</span></li>
+          <li><code>/promptotyping explore</code><span>establishes what the data can and cannot support and records it with its evidence</span></li>
+          <li><code>/promptotyping distill</code><span>models the findings as knowledge documents, with epics and user stories</span></li>
+          <li><code>/promptotyping curate</code><span>checks and corrects the knowledge documents against the project, against outside sources or with a fresh context</span></li>
+          <li><code>/promptotyping handoff</code><span>ends a session, writes the journal with what is open and commits without pushing</span></li>
         </ul>
-        <ol class="steps">
-          <li>
-            <p class="step-head"><span class="step-name">Install an agent and the skill.</span> Install an AI coding agent such as Claude Code or Codex, Git and Python, then copy the skill into the agent's skills folder. The skill lives in the repository <a href="https://github.com/DigitalHumanitiesCraft/promptotyping-skill">promptotyping-skill</a>, tagged per version, whose README gives the installation for each agent and whose changelog records every change.</p>
-            <figure class="dh-code field">
-              <figcaption><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-terminal"></use></svg>Shell, copies the skill for Claude Code</figcaption>
+        <figure class="dh-code">
+          <figcaption>Shell, installs the skill for Claude Code</figcaption>
 <pre><code>git clone https://github.com/DigitalHumanitiesCraft/promptotyping-skill.git
 mkdir -p ~/.claude/skills
 cp -r promptotyping-skill/promptotyping ~/.claude/skills/</code></pre>
-            </figure>
-          </li>
-          <li>
-            <p class="step-head"><span class="step-name">Take the files.</span> The skill gives an agent the subcommands orient, explore, distill, curate and handoff. Each template is marked with the condition under which a project needs it, given in full on the <a href="#vorlagen">templates page</a>. Skill and templates are in the block below.</p>
-          </li>
-          <li>
-            <p class="step-head"><span class="step-name">Work in your own words.</span> Create an empty project folder with your data, start the agent there and say what you want, or call one of the five <a href="#start-example">subcommands</a>. The <a href="#tutorial">tutorial</a> explains each step and its check.</p>
-          </li>
-        </ol>
+        </figure>
+      </div>
+      <p class="more"><a href="https://github.com/DigitalHumanitiesCraft/promptotyping-skill">The repository promptotyping-skill</a> holds the skill with the procedure of each subcommand and the installation for other agents.</p>
+    </section>
 
-        <section class="downloads" id="start-downloads" aria-labelledby="downloads-title">
-          <p class="downloads-title" id="downloads-title">Files to download</p>
-          <div class="download-group">
-            <p class="download-group-name">Skill</p>
-            <ul class="download-list">
-              <li data-file="skill"><a class="file-get" href="https://github.com/DigitalHumanitiesCraft/promptotyping-skill"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-external"></use></svg>promptotyping-skill</a> <span class="doc-when">five subcommands</span></li>
-            </ul>
-          </div>
-          <div class="download-group">
-            <p class="download-group-name">Templates</p>
-            <ul class="download-list">
-            <li data-slug="project"><a class="file-get" href="_content/promptotyping-document/project.md" download><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"></use></svg>project.md</a> <span class="doc-when is-always">always</span> <a class="file-about" href="#promptotyping-document-project" aria-label="About the project template">about</a></li>
-            <li data-slug="specification"><a class="file-get" href="_content/promptotyping-document/specification.md" download><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"></use></svg>specification.md</a> <span class="doc-when is-always">always</span> <a class="file-about" href="#promptotyping-document-specification" aria-label="About the specification template">about</a></li>
-            <li data-slug="user-stories"><a class="file-get" href="_content/promptotyping-document/user-stories.md" download><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"></use></svg>user-stories.md</a> <span class="doc-when is-always">always</span> <a class="file-about" href="#promptotyping-document-user-stories" aria-label="About the user-stories template">about</a></li>
-            <li data-slug="action-layer"><a class="file-get" href="_content/promptotyping-document/action-layer.md" download><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"></use></svg>action-layer.md</a> <span class="doc-when is-always">always</span> <a class="file-about" href="#promptotyping-document-action-layer" aria-label="About the action-layer template">about</a></li>
-            <li data-slug="journal"><a class="file-get" href="_content/promptotyping-document/journal.md" download><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"></use></svg>journal.md</a> <span class="doc-when is-always">always</span> <a class="file-about" href="#promptotyping-document-journal" aria-label="About the journal template">about</a></li>
-            <li data-slug="index"><a class="file-get" href="_content/promptotyping-document/index.md" download><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"></use></svg>index.md</a> <span class="doc-when">more than three documents</span> <a class="file-about" href="#promptotyping-document-index" aria-label="About the index template">about</a></li>
-            <li data-slug="data"><a class="file-get" href="_content/promptotyping-document/data.md" download><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"></use></svg>data.md</a> <span class="doc-when">the project uses data</span> <a class="file-about" href="#promptotyping-document-data" aria-label="About the data template">about</a></li>
-            <li data-slug="architecture"><a class="file-get" href="_content/promptotyping-document/architecture.md" download><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"></use></svg>architecture.md</a> <span class="doc-when">more than a static site</span> <a class="file-about" href="#promptotyping-document-architecture" aria-label="About the architecture template">about</a></li>
-            <li data-slug="technology"><a class="file-get" href="_content/promptotyping-document/technology.md" download><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"></use></svg>technology.md</a> <span class="doc-when">a shared artefact family</span> <a class="file-about" href="#promptotyping-document-technology" aria-label="About the technology template">about</a></li>
-            <li data-slug="domain-knowledge"><a class="file-get" href="_content/promptotyping-document/domain-knowledge.md" download><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"></use></svg>domain-knowledge.md</a> <span class="doc-when">a domain rule set</span> <a class="file-about" href="#promptotyping-document-domain-knowledge" aria-label="About the domain-knowledge template">about</a></li>
-            <li data-slug="design"><a class="file-get" href="_content/promptotyping-document/design.md" download><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"></use></svg>design.md</a> <span class="doc-when">the project has a UI</span> <a class="file-about" href="#promptotyping-document-design" aria-label="About the design template">about</a></li>
-            <li data-slug="testing"><a class="file-get" href="_content/promptotyping-document/testing.md" download><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"></use></svg>testing.md</a> <span class="doc-when">tests or acceptance checks</span> <a class="file-about" href="#promptotyping-document-testing" aria-label="About the testing template">about</a></li>
-            <li data-slug="verification"><a class="file-get" href="_content/promptotyping-document/verification.md" download><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"></use></svg>verification.md</a> <span class="doc-when">claims used externally</span> <a class="file-about" href="#promptotyping-document-verification" aria-label="About the verification template">about</a></li>
-            <li data-slug="plan"><a class="file-get" href="_content/promptotyping-document/plan.md" download><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"></use></svg>plan.md</a> <span class="doc-when">phases or milestones</span> <a class="file-about" href="#promptotyping-document-plan" aria-label="About the plan template">about</a></li>
-            <li data-slug="report"><a class="file-get" href="_content/promptotyping-document/report.md" download><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"></use></svg>report.md</a> <span class="doc-when">an external status report</span> <a class="file-about" href="#promptotyping-document-report" aria-label="About the report template">about</a></li>
-            <li data-slug="integration"><a class="file-get" href="_content/promptotyping-document/integration.md" download><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"></use></svg>integration.md</a> <span class="doc-when">a cross-project contract</span> <a class="file-about" href="#promptotyping-document-integration" aria-label="About the integration template">about</a></li>
-            <li data-slug="handoff"><a class="file-get" href="_content/promptotyping-document/handoff.md" download><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"></use></svg>handoff.md</a> <span class="doc-when">superseded by journal.md</span> <a class="file-about" href="#promptotyping-document-handoff" aria-label="About the handoff template">about</a></li>
-            </ul>
-            <a class="dh-btn download-all" href="downloads/promptotyping-templates.zip" download><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-archive"></use></svg>All templates (ZIP)</a>
-          </div>
-        </section>
+    <section id="templates">
+      <div class="section-head">
+        <h2>Templates</h2>
+        <a class="dh-btn" href="downloads/promptotyping-templates.zip" download>Download all as archive</a>
+      </div>
+      <p class="dh-prose">The project knowledge base is a small set of Markdown files in the folder <code>knowledge/</code> of a repository. Each template says what its document is for, when a project needs it and what does not belong in it.</p>
+      <ul class="rows">
+          <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/templates/project.md"><code>project.md</code></a><span>what the project is, for whom and with which aim</span></li>
+          <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/templates/data.md"><code>data.md</code></a><span>what the research data hold and what they lack</span></li>
+          <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/templates/domain-knowledge.md"><code>domain-knowledge.md</code></a><span>the rules of the domain on which the artefact rests</span></li>
+          <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/templates/specification.md"><code>specification.md</code></a><span>what the artefact must do, with epics and user stories</span></li>
+          <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/templates/design.md"><code>design.md</code></a><span>how the artefact looks and how it is used</span></li>
+          <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/templates/architecture.md"><code>architecture.md</code></a><span>how the artefact is built and how its parts connect</span></li>
+          <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/templates/testing.md"><code>testing.md</code></a><span>what the tests guarantee and how claims are checked</span></li>
+          <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/templates/plan.md"><code>plan.md</code></a><span>accepted work that has not begun</span></li>
+          <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/templates/journal.md"><code>journal.md</code></a><span>what is open and how the project reached its state</span></li>
+          <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/templates/index.md"><code>index.md</code></a><span>the entry point with the terms that constitute the project</span></li>
+          <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/templates/action-layer.md"><code>action-layer.md</code></a><span>the agent instructions in CLAUDE.md or AGENTS.md</span></li>
+          <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/templates/convention.md"><code>convention.md</code></a><span>names, functions, frontmatter and structure of all documents</span></li>
+      </ul>
+    </section>
 
-        <h2 id="start-example">Skill</h2>
-        <p class="start-prose-line">With the skill installed as in the first step of <a href="#start-reuse">Reuse</a>, you say what you want in your own words, and the agent takes the procedure from the skill. Five subcommands name the moments at which you call it directly. Building has no subcommand and follows the rules in the skill. The repository <a href="https://github.com/DigitalHumanitiesCraft/promptotyping-skill">promptotyping-skill</a> holds the skill with the procedure of each subcommand.</p>
-        <ol class="steps example">
-          <li>
-            <p class="step-head"><span class="step-name"><code>/promptotyping orient</code></span> starts a session. It establishes where the project stands and changes no file.</p>
-          </li>
-          <li>
-            <p class="step-head"><span class="step-name"><code>/promptotyping explore</code></span> establishes what the data can and cannot support and records it with its evidence.</p>
-          </li>
-          <li>
-            <p class="step-head"><span class="step-name"><code>/promptotyping distill</code></span> models the findings as knowledge documents, with epics and user stories.</p>
-          </li>
-          <li>
-            <p class="step-head"><span class="step-name"><code>/promptotyping curate</code></span> checks and corrects the knowledge documents, against the project, against outside sources, or through a review with a fresh context.</p>
-          </li>
-          <li>
-            <p class="step-head"><span class="step-name"><code>/promptotyping handoff</code></span> ends a session. It writes the journal, states what is open and commits without pushing.</p>
-          </li>
-        </ol>
+    <section id="knowledge">
+      <h2>Knowledge</h2>
+      <p class="dh-prose">This repository documents itself with its own templates. Its knowledge base describes the practice and how it came about, and it shows what a filled knowledge base looks like.</p>
+      <ul class="rows">
+          <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/knowledge/INDEX.md"><code>INDEX.md</code></a><span>the entry point and the terms</span></li>
+          <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/knowledge/project.md"><code>project.md</code></a><span>what Promptotyping is, for whom, and what this repository is for</span></li>
+          <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/knowledge/practice.md"><code>practice.md</code></a><span>the four forms of work, the three kinds of checking and the limits of the artefact</span></li>
+          <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/knowledge/specification.md"><code>specification.md</code></a><span>what this repository delivers and what was retired</span></li>
+          <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/knowledge/architecture.md"><code>architecture.md</code></a><span>how the repository and this page are built</span></li>
+          <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/knowledge/design.md"><code>design.md</code></a><span>how the page looks and why</span></li>
+          <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/knowledge/journal.md"><code>journal.md</code></a><span>what is open and how the practice and the repository came about</span></li>
+      </ul>
+    </section>
 
-        <h2 id="start-limits">Limits and citation</h2>
-        <div class="start-prose">
-          <p>The practice comes from practice. It has not yet been evaluated against other ways of working, and whether it transfers to other people and projects is still open. The automatic checks of this site decide consistency between its own statements, while whether the description is right in substance remains scholarly judgement. The templates other than <code>technology</code> are written in German, and a project writes its documents in its own language.</p>
-          <p>Cite the practice with its concept DOI, which resolves to the latest archived version, and take the full metadata from <a href="CITATION.cff">CITATION.cff</a>. The paper is Pollin 2026, Promptotyping, submitted.</p>
-        </div>
-            <figure class="dh-code field is-citation">
-              <figcaption>Citation</figcaption>
+    <section id="use-cases">
+      <h2>Use cases</h2>
+      <p class="dh-prose">The practice comes from projects. Each entry names the artefact that was built and opens the description of the project, its data and what it shows.</p>
+        <h3>Evidence</h3>
+        <ul class="rows">
+          <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/case-studies/teicrafter.md">teiCrafter</a><span>Custom GPT without implemented software (2023), browser-based lossless TEI editor (2026)</span></li>
+          <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/case-studies/szd-htr.md">SZD-HTR</a><span>HTR/OCR pipeline with facsimile-text viewer and statistics dashboard</span></li>
+          <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/case-studies/corresp-explorer.md">CorrespExplorer</a><span>Coordinated visualisation views</span></li>
+          <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/case-studies/coocr-htr.md">coOCR-HTR</a><span>Browser-based correction workbench</span></li>
+          <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/case-studies/m3gim.md">M3GIM</a><span>Multi-view archive explorer</span></li>
+          <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/case-studies/zbz-ocr-tei.md">ZBZ OCR/TEI Pipeline</a><span>Curated TEI-XML edition with verification interfaces</span></li>
+          <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/case-studies/notker-edition.md">Notker Edition</a><span>Layer-toggle edition (text-layer controls, IIIF)</span></li>
+        </ul>
+        <h3>Genealogy</h3>
+        <ul class="rows">
+          <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/case-studies/szd.md">Stefan Zweig Digital Annotation Tool</a><span>Timeline annotation tool as a single page application</span></li>
+          <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/case-studies/aldersbach.md">DEPCHA Aldersbach Dashboard</a><span>Dashboard for monastic financial data</span></li>
+          <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/case-studies/stained-glass.md">CVMA Stained Glass Annotation Tool</a><span>Annotation tool for stained-glass metadata</span></li>
+          <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/case-studies/imareal-room-object.md">imareal-room-object</a><span>Room-object visualisation dashboard</span></li>
+        </ul>
+        <h3>Teaching</h3>
+        <ul class="rows">
+          <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/case-studies/austrian-university-dashboard.md">Austrian University Dashboard</a><span>Interactive dashboard (teaching baseline)</span></li>
+          <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/case-studies/wissens-projektmanagement-obsidian-claude-code-screencast.md">Knowledge and Project Management with Obsidian</a><span>A vault that holds the rules by which it grows</span></li>
+          <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/case-studies/vault-kuration-screencast.md">Obsidian Vault Curation</a><span>Curated vault plus the rules extracted from the curation</span></li>
+          <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/case-studies/wissensorganisation-nano-banana.md">Knowledge Organisation across Three Tools</a><span>Knowledge document, vault entry and an infographic</span></li>
+        </ul>
+        <h3>Further projects</h3>
+        <ul class="rows">
+          <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/case-studies/km.md">Hans Gross Kriminalmuseum Digital Archive</a><span>Digital archive (search plus spatial exploration)</span></li>
+          <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/case-studies/herdata.md">HerData</a><span>Correspondence map (women in Goethe&#x27;s correspondence)</span></li>
+          <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/case-studies/vetmedai-wissensbilanz.md">VetMedAI Wissensbilanz</a><span>Dashboard with a range of visualisation types and a dual-mode analysis</span></li>
+          <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/case-studies/kulturpool-explorer.md">Kulturpool Explorer</a><span>Collection interface (parallel agent orchestration)</span></li>
+          <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/case-studies/wiiw-patent-analysis.md">wiiw Patent Analysis</a><span>Network dashboard with centrality measures and yearly snapshots</span></li>
+          <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/case-studies/sugw.md">Medieval Legal Transactions</a><span>Static edition frontend rendered from a pipeline of transformers and validators</span></li>
+          <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/case-studies/klawiter-rescue.md">Klawiter Bibliography Rescue</a><span>JSON-LD bibliography plus static front end (SZD ecosystem)</span></li>
+          <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/case-studies/femprompt-sozarb.md">FemPrompt SozArb</a><span>Evidence companion plus Obsidian vault</span></li>
+          <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/case-studies/diged-neolat.md">Lucina Digital Edition</a><span>TEI P5 edition with text-image synchronisation, prosopography and metrical analysis</span></li>
+          <li><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/case-studies/wiiw-figaro-subagents.md">wiiw FIGARO Subagents</a><span>Documented multi-agent analysis run under version control</span></li>
+        </ul>
+    </section>
+
+    <section id="cite">
+      <h2>Cite</h2>
+      <p class="dh-prose">The practice has not yet been evaluated against other ways of working, and whether it transfers to other people and projects is open. Cite it with its concept DOI, which resolves to the latest archived version, and take the full metadata from <a href="CITATION.cff">CITATION.cff</a>.</p>
+      <figure class="dh-code">
+        <figcaption>Citation</figcaption>
 <pre><code>Pollin, Christopher; Steiner, Christian: Promptotyping. Zenodo. https://doi.org/10.5281/zenodo.14160875</code></pre>
-            </figure>
+      </figure>
+    </section>
 
-      </section>
-    </main>
+  </main>
 
-
-  </div>
-
-  <!-- Reusable side-panel shell (openSidePanel in app.js fills and reveals it) -->
-  <div class="side-panel-backdrop" id="side-panel-backdrop"></div>
-  <aside class="side-panel" id="side-panel" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="side-panel-title">
-    <div class="side-panel-header">
-      <h2 class="side-panel-title" id="side-panel-title"></h2>
-      <button type="button" class="side-panel-close" id="side-panel-close" aria-label="Close panel">&times;</button>
-    </div>
-    <div class="side-panel-body" id="side-panel-body"></div>
-  </aside>
-
-  <footer class="site-footer dh-foot">
-    <div class="foot-group">
-      <p class="foot-title">Promptotyping</p>
-      <p>A method site of <a href="https://dhcraft.org">Digital Humanities Craft</a></p>
-      <p><span id="footer-version">Version 1.0</span>, <span id="footer-updated">Updated 10 November 2026</span></p>
-      <p><a href="#start-limits">Citation</a></p>
-    </div>
-    <div class="foot-group">
-      <p class="foot-title">Licence</p>
-      <p>Text, templates and skill <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, code <a href="LICENSE">MIT</a></p>
-      <p>Shared web files <a href="assets/dhcraft/LICENSE.md">MIT</a>, fonts OFL</p>
-      <p>DHCraft mark proprietary</p>
-    </div>
-    <div class="foot-group">
-      <p class="foot-title">Repository</p>
-      <p><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping">Source</a> and <a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/commits/main">changes</a></p>
-      <p><a href="#specification">Specification</a> and <a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/tree/main/_content">Markdown sources</a></p>
-      <p>Related methods <a href="https://github.com/chpollin/second-brain-vault">Second Brain Vault</a>, <a href="https://github.com/DigitalHumanitiesCraft/grounded-vault">Grounded Vault</a>, <a href="https://github.com/DigitalHumanitiesCraft/research-mission-control">Research Mission Control</a></p>
-    </div>
+  <footer class="dh-foot">
+    <p>A method site of <a href="https://dhcraft.org">Digital Humanities Craft</a></p>
+    <p>Text and templates <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, code <a href="LICENSE">MIT</a>, shared web files <a href="assets/dhcraft/LICENSE.md">MIT</a>, fonts OFL, DHCraft mark proprietary</p>
+    <p><a href="https://github.com/DigitalHumanitiesCraft/Promptotyping">Source</a> and <a href="https://github.com/DigitalHumanitiesCraft/Promptotyping/blob/main/CHANGELOG.md">changes</a></p>
   </footer>
 
-  <script src="assets/vendor/marked.min.js"></script>
-  <script src="assets/vendor/js-yaml.min.js"></script>
-  <!-- The site scripts share one namespace and call across files at call time,
-       so only two positions are behaviour-relevant: app.js starts init() and
-       must come last of the seven, and the modules must follow it. -->
-  <script src="assets/js/core.js"></script>
-  <script src="assets/js/markdown.js"></script>
-  <script src="assets/js/registry.js"></script>
-  <script src="assets/js/shell.js"></script>
-  <script src="assets/js/pages-vorlagen.js"></script>
-  <script src="assets/js/pages-content.js"></script>
-  <script src="assets/js/app.js"></script>
-  <script src="assets/js/modules/frontmatter-inspector.js"></script>
-  <script src="assets/js/modules/case-study-filter.js"></script>
+  <script type="module" src="assets/dhcraft/dhcraft-copy.js"></script>
 </body>
 </html>

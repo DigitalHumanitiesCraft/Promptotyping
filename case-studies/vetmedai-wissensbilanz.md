@@ -2,9 +2,13 @@
 title: VetMedAI Wissensbilanz
 id: vetmedai-wissensbilanz
 paper: none
+role: further
+artefact: "Dashboard with a range of visualisation types and a dual-mode analysis"
 ---
 
 # VetMedAI Wissensbilanz
+
+[Repository](https://github.com/DigitalHumanitiesCraft/vetmed-wissensbilanz), [Live](https://dhcraft.org/vetmed-wissensbilanz/)
 
 ## Context and research question
 

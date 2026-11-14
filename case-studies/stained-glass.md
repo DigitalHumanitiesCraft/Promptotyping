@@ -2,10 +2,13 @@
 title: CVMA Stained Glass Annotation Tool
 id: stained-glass
 paper: none
-source: Projects/Promptotyping/Case Studies/stained-glass.md
+role: genealogy
+artefact: "Annotation tool for stained-glass metadata"
 ---
 
 # CVMA Stained Glass Annotation Tool
+
+[Repository](https://github.com/chpollin/stained-glass-metadata-annotation-tool), [Live](https://chpollin.github.io/stained-glass-metadata-annotation-tool/docs/version-2/)
 
 ## Context
 

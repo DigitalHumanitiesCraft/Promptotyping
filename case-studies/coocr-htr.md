@@ -2,10 +2,13 @@
 title: coOCR-HTR
 id: coocr-htr
 paper: "4.3, Table 3"
-source: Projects/Promptotyping/Case Studies/coocr-htr.md
+role: evidence
+artefact: "Browser-based correction workbench"
 ---
 
 # coOCR-HTR
+
+[Repository](https://github.com/DigitalHumanitiesCraft/co-ocr-htr), [Video](https://youtu.be/VJyhVc_ujeA)
 
 ## Context and research question
 
@@ -27,6 +30,6 @@ The case shows that the step from prototype to production-grade research softwar
 
 The workbench shows where the model was uncertain. Establishing that a transcription is correct stays with the expert, and what the interface adds is a defined place for that judgement.
 
-The LLM-as-a-judge step in the hybrid validation ranks below scholarly validation by people for the reasons the [Checking](#verifikation) page gives, since the documented biases of that arrangement apply here. Everything the deterministic rules cannot reach inherits that caveat.
+The LLM-as-a-judge step in the hybrid validation ranks below scholarly validation by people for the reasons the [Checking](../knowledge/practice.md) page gives, since the documented biases of that arrangement apply here. Everything the deterministic rules cannot reach inherits that caveat.
 
 The case rests on a single expert working in his own domain, so what it shows about the speed of the step to production software is bound to that condition. The record holds no comparable case where the builder lacked the domain competence.

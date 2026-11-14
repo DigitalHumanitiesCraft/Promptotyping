@@ -2,9 +2,13 @@
 title: Lucina Digital Edition
 id: diged-neolat
 paper: none
+role: further
+artefact: "TEI P5 edition with text-image synchronisation, prosopography and metrical analysis"
 ---
 
 # Lucina Digital Edition
+
+[Repository](https://github.com/chpollin/diged-neolat), [Live](https://chpollin.github.io/diged-neolat/edition-5/web/), [Video](https://youtu.be/0DtX0pLv4TA)
 
 ## Context and research question
 

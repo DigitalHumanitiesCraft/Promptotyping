@@ -2,10 +2,13 @@
 title: DEPCHA Aldersbach Dashboard
 id: aldersbach
 paper: none
-source: Projects/Promptotyping/Case Studies/aldersbach.md
+role: genealogy
+artefact: "Dashboard for monastic financial data"
 ---
 
 # DEPCHA Aldersbach Dashboard
+
+[Repository](https://github.com/chpollin/depcha-aldersbach), [Live](https://chpollin.github.io/depcha-aldersbach)
 
 ## Context
 

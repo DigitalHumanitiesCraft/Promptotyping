@@ -2,10 +2,13 @@
 title: ZBZ OCR/TEI Pipeline
 id: zbz-ocr-tei
 paper: "4.3, Table 3"
-source: Projects/Promptotyping/Case Studies/zbz-ocr-tei.md
+role: evidence
+artefact: "Curated TEI-XML edition with verification interfaces"
 ---
 
 # ZBZ OCR/TEI Pipeline
+
+[Live](https://chpollin.github.io/zbz-ocr-tei/)
 
 ## Context and research question
 

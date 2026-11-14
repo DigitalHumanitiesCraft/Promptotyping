@@ -2,10 +2,13 @@
 title: SZD-HTR
 id: szd-htr
 paper: "4.3, Table 3"
-source: Projects/Promptotyping/Case Studies/szd-htr.md
+role: evidence
+artefact: "HTR/OCR pipeline with facsimile-text viewer and statistics dashboard"
 ---
 
 # SZD-HTR
+
+[Repository](https://github.com/chpollin/szd-htr-ocr-pipeline), [Live](https://chpollin.github.io/szd-htr-ocr-pipeline/)
 
 Transcription and review of the Stefan Zweig estate.
 
@@ -27,7 +30,7 @@ Implementation derived the pipeline and the viewer through the agent, from a lay
 
 ## Methodological contribution
 
-Verification runs as a three-status scheme in which human-checked, meaning every page read against the facsimile, ranks above agent-checked, meaning a vision-language model compared image and transcript, which ranks above unchecked. That is the authority ordering of the [Checking](#verifikation) page carried into project practice. Where a human corrects, the machine transcription is preserved in an edit history, so the two layers stay separable after the fact.
+Verification runs as a three-status scheme in which human-checked, meaning every page read against the facsimile, ranks above agent-checked, meaning a vision-language model compared image and transcript, which ranks above unchecked. That is the authority ordering of the [Checking](../knowledge/practice.md) page carried into project practice. Where a human corrects, the machine transcription is preserved in an edit history, so the two layers stay separable after the fact.
 
 The model's own confidence report proved worthless early, since it announced high confidence for clean typescripts and for multi-page Kurrent alike, and the automatic quality signals were built to replace it with a judgement formed outside the transcription step. Their thresholds were recalibrated across several rounds, because the first version flagged so large a share of the corpus that it was useless for triage.
 

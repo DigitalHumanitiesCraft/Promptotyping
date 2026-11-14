@@ -2,7 +2,8 @@
 title: HerData
 id: herdata
 paper: none
-source: Projects/Promptotyping/Case Studies/herdata.md
+role: further
+artefact: "Correspondence map (women in Goethe's correspondence)"
 ---
 
 # HerData

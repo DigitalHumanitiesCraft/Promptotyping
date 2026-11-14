@@ -2,9 +2,13 @@
 title: Knowledge Organisation across Three Tools
 id: wissensorganisation-nano-banana
 paper: "4.3, teaching and collaboration"
+role: teaching
+artefact: "Knowledge document, vault entry and an infographic"
 ---
 
 # Knowledge Organisation across Three Tools
+
+[Video](https://youtu.be/aCMDWtCKGNw)
 
 ## Context
 

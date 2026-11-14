@@ -2,10 +2,13 @@
 title: Austrian University Dashboard
 id: austrian-university-dashboard
 paper: none
-source: Projects/Promptotyping/Case Studies/austrian-university-dashboard.md
+role: teaching
+artefact: "Interactive dashboard (teaching baseline)"
 ---
 
 # Austrian University Dashboard
+
+[Video](https://youtu.be/hd_a-NBO_S4)
 
 ## Context
 
@@ -13,7 +16,7 @@ An interactive dashboard over a corpus of Excel files holding Austrian universit
 
 ## Contribution
 
-The case exists so that the phases can be watched while they happen. Everything the [Application](#application) page states as the practice appears in the recording in the order it actually occurs, including the judgements that a written description conveys least well.
+The case exists so that the phases can be watched while they happen. Everything the [Application](../knowledge/practice.md) page states as the practice appears in the recording in the order it actually occurs, including the judgements that a written description conveys least well.
 
 Two of those judgements are the didactic core. The overengineering check, run as a matrix of what the artefact would have to carry, and the reduction to a minimum viable product that follows it, are both moments in which the session removes scope from a plan the model was willing to build. Watching scope being cut is what distinguishes this material from a walkthrough of a finished result.
 

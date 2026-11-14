@@ -1,59 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Promptotyping. Specification of the Working Practice</title>
+  <title>Page not found. Promptotyping</title>
   <meta name="robots" content="noindex">
-  <link rel="canonical" href="https://dhcraft.org/Promptotyping/">
-  <link rel="icon" href="assets/img/dhcraft-logo-watercolor.png" type="image/png">
-
+  <link rel="icon" href="/Promptotyping/assets/img/dhcraft-logo-watercolor.png" type="image/png">
+  <link rel="stylesheet" href="/Promptotyping/assets/dhcraft/dhcraft-tokens.css">
+  <link rel="stylesheet" href="/Promptotyping/assets/dhcraft/dhcraft-components.css">
+  <link rel="stylesheet" href="/Promptotyping/assets/css/site.css">
   <script>
-    // Light is the default view (operator decision, 26 July 2026), so the
-    // attribute is always set and the system preference never decides. Applied
-    // before first paint, so a reader who chose dark sees no white flash.
+    // Until 14 November 2026 the templates lay under _content/promptotyping-document/.
+    // A reader who follows an old address to a template that still exists lands on it.
     (function () {
-      var t = "light";
-      try {
-        t = localStorage.getItem("promptotyping-theme") || "light";
-      } catch (e) {}
-      document.documentElement.setAttribute("data-theme", t);
-    })();
-  </script>
-  <link rel="stylesheet" href="assets/dhcraft/dhcraft-tokens.css">
-  <link rel="stylesheet" href="assets/dhcraft/dhcraft-components.css">
-  <link rel="stylesheet" href="assets/css/style.css">
-
-  <script>
-    // Subpath handover. GitHub Pages serves 404.html for any path that is not a
-    // real file, which makes this file the only router the site has. It states
-    // no address vocabulary of its own: it normalises the requested path and
-    // hands it to the application as ?p=, and resolveTemplateUrl in
-    // assets/js/registry.js translates it once, from the page registry. The
-    // incoming hash is passed through untouched, because the snapshot form
-    // /promptotyping-document/data#v0.1 carries its version there.
-    (function () {
-      var path = window.location.pathname
-        .replace(/^\/Promptotyping\//, "")
-        .replace(/^\//, "")
-        .replace(/\/$/, "");
-      // Nothing to hand over: the not-found body below stays.
-      if (!path) {
-        return;
+      var kept = ["action-layer", "architecture", "data", "design", "domain-knowledge", "index",
+        "journal", "plan", "project", "specification", "testing"];
+      var m = window.location.pathname.match(/_content\/promptotyping-document\/([a-z-]+)\.md$/);
+      if (m && kept.indexOf(m[1]) !== -1) {
+        window.location.replace("/Promptotyping/templates/" + m[1] + ".md");
+      } else if (/_content\/konvention\.md$/.test(window.location.pathname)) {
+        window.location.replace("/Promptotyping/templates/convention.md");
       }
-      // replace() rather than assign(), so the unresolved subpath leaves no
-      // history entry to return to.
-      window.location.replace("/Promptotyping/?p=" + encodeURIComponent(path) +
-        window.location.hash);
     })();
   </script>
 </head>
-<body class="docs not-found">
-
-  <main class="not-found-body">
+<body>
+  <main class="dh-page">
     <h1>Page not found</h1>
-    <p>This address does not exist. Back to the <a href="/Promptotyping/">start page</a>.</p>
+    <p>This address does not exist. Since November 2026 the site is one page, and the templates lie under <code>templates/</code>. Back to the <a href="/Promptotyping/">start page</a>.</p>
   </main>
-
 </body>
 </html>

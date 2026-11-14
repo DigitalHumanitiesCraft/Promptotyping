@@ -2,9 +2,13 @@
 title: wiiw FIGARO Subagents
 id: wiiw-figaro-subagents
 paper: none
+role: further
+artefact: "Documented multi-agent analysis run under version control"
 ---
 
 # wiiw FIGARO Subagents
+
+[Repository](https://github.com/chpollin/wiiw-figaro-nam-demo), [Video](https://youtu.be/21815nd9WMM)
 
 ## Context and research question
 

@@ -2,10 +2,13 @@
 title: Stefan Zweig Digital Annotation Tool
 id: szd
 paper: none
-source: Projects/Promptotyping/Case Studies/szd.md
+role: genealogy
+artefact: "Timeline annotation tool as a single page application"
 ---
 
 # Stefan Zweig Digital Annotation Tool
+
+[Repository](https://github.com/DigitalHumanitiesCraft/excellence/tree/main/promptotyping/szd-annotation-timeline), [Live](https://dhcraft.org/excellence/promptotyping/szd-annotation-timeline/)
 
 ## Context
 

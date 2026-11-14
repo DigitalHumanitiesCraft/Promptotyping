@@ -2,10 +2,13 @@
 title: teiCrafter
 id: teicrafter
 paper: "4.3, Table 3"
-source: Projects/Promptotyping/Case Studies/teicrafter.md
+role: evidence
+artefact: "Custom GPT without implemented software (2023), browser-based lossless TEI editor (2026)"
 ---
 
 # teiCrafter
+
+[Repository](https://github.com/DigitalHumanitiesCraft/teiCrafter), [Live](https://dhcraft.org/teiCrafter/)
 
 ## Context
 

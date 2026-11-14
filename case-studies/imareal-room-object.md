@@ -2,10 +2,13 @@
 title: Imareal Room-Object Dashboard
 id: imareal-room-object
 paper: none
-source: Projects/Promptotyping/Case Studies/imareal-room-object.md
+role: genealogy
+artefact: "Room-object visualisation dashboard"
 ---
 
 # Imareal Room-Object Dashboard
+
+[Repository](https://github.com/chpollin/imareal-room-object), [Live](https://chpollin.github.io/imareal-room-object/)
 
 ## Context
 

@@ -2,6 +2,8 @@
 title: Medieval Legal Transactions
 id: sugw
 paper: none
+role: further
+artefact: "Static edition frontend rendered from a pipeline of transformers and validators"
 ---
 
 # Medieval Legal Transactions
