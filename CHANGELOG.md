@@ -8,7 +8,7 @@ Changes to the Promptotyping templates, convention, knowledge base and site, per
 
 ## Unreleased
 
-- The figure of the practice names the role of the research data at the research data, attaches both arrows between its halves to the frame of the four forms, shows two figures for the two roles and uses one typeface that renders the same everywhere.
+- The figure of the practice names the role of the research data at the research data, attaches both arrows between its halves to the frame of the four forms, shows two figures for the two roles and uses one typeface that renders the same everywhere. It names Knowledge Engineering at the knowledge base, Context Engineering at the context arrow and Agentic Engineering with frontier LLM agents at the four forms of work.
 
 ## 1.0.0, 2026-11-14
 

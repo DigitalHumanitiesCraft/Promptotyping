@@ -1,11 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1672 860" width="1672" height="860" role="img" aria-labelledby="pf-t pf-d">
   <title id="pf-t">The Promptotyping working practice</title>
-  <desc id="pf-d">Researchers and research software developers direct four recurrent forms of work, Preparation, Exploration, Distillation and Implementation, which follow no fixed order. The researchers assess each Promptotype through scholarly validation. A Promptotype is a prototype taken together with the project knowledge base and the research data from which it was built, and earlier states remain as versions. Distillation maintains the knowledge base, which supplies the context for each task, and the modelled research data are the basis of building. Verification and agentic review accompany each iteration, and what checking and use reveal returns to the knowledge base through knowledge curation. The files shown are examples.</desc>
+  <desc id="pf-d">Researchers and research software developers direct four recurrent forms of work that frontier LLM agents carry out, Preparation, Exploration, Distillation and Implementation, which follow no fixed order. The researchers assess each Promptotype through scholarly validation. A Promptotype is a prototype taken together with the project knowledge base and the research data from which it was built, and earlier states remain as versions. Distillation maintains the knowledge base, which supplies the context for each task, and the modelled research data are the basis of building. Verification and agentic review accompany each iteration, and what checking and use reveal returns to the knowledge base through knowledge curation. Knowledge Engineering is the project knowledge base and its curation, Context Engineering the selection of context for each task, and Agentic Engineering the organisation of the agents' work in the four forms. The files shown are examples.</desc>
   <style>
     svg { color: #1e2749; background: #ffffff; }
     text { fill: #1e2749; font-family: Arial, Helvetica, sans-serif; text-anchor: middle; }
     .head { font-size: 19px; font-weight: 700; letter-spacing: 2px; }
     .sub { font-size: 17px; }
+    .eng { font-size: 16px; font-style: italic; }
     .mono { font-family: Consolas, "Courier New", monospace; }
     .start { text-anchor: start; }
     .line { fill: none; stroke: #1e2749; stroke-width: 1.8; }
@@ -64,6 +65,10 @@
     <ellipse cx="514" cy="400" rx="128" ry="58"/>
     <ellipse cx="330" cy="555" rx="124" ry="55"/>
   </g>
+  <text class="eng" x="330" y="380">Agentic</text>
+  <text class="eng" x="330" y="398">Engineering</text>
+  <text class="sub" x="330" y="422" style="font-size:15px">with frontier</text>
+  <text class="sub" x="330" y="439" style="font-size:15px">LLM agents</text>
   <text class="head" x="331" y="240">PREPARATION</text>
   <text class="sub" x="330" y="264" style="font-size:17px">sources, data, context</text>
   <text class="head" x="147" y="395" style="font-size:18px">EXPLORATION</text>
@@ -76,6 +81,8 @@
   <text class="sub" x="728" y="388" style="font-size:17px">each iteration</text>
   <text class="sub" x="730" y="424" style="font-size:17px">verification</text>
   <text class="sub" x="730" y="443" style="font-size:17px">agentic review</text>
+  <text class="eng" x="730" y="527">Context</text>
+  <text class="eng" x="730" y="545">Engineering</text>
   <text class="sub" x="730" y="573" style="font-size:17px">context for</text>
   <text class="sub" x="730" y="591" style="font-size:17px">each task</text>
   <text class="sub" x="730" y="678" style="font-size:17px">maintains</text>
@@ -119,6 +126,7 @@
   <text class="mono" x="1127" y="674" style="font-size:17px">journal.md</text>
   <text class="mono" x="1242" y="674" style="font-size:17px">CLAUDE.md</text>
   <text class="sub" x="1044" y="702" style="font-size:17px">example files</text>
+  <text class="eng" x="1300" y="702" style="text-anchor:end">Knowledge Engineering</text>
 
   <text class="head" x="1471" y="500" style="font-size:17px;letter-spacing:2.500px">RESEARCH DATA</text>
   <text class="sub" x="1471" y="526" style="font-size:17px">modelled, the basis of building</text>
