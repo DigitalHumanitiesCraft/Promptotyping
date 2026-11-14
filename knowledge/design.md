@@ -50,7 +50,7 @@ Layout. The page uses the shared page frame with a reading measure for prose. Ea
 
 ## Interaction patterns
 
-Nothing on the page opens or closes, a rule of the operator of 2026-07-29. Links name their target in words. Templates, knowledge documents and use cases open on GitHub, where Markdown renders, and the templates can also be taken as one archive through the button beside their heading. A code block sets its text in the monospace and carries a text button "Copy" from the shared DHCraft files, which reads "Copied" after copying, announces the change to screen readers and is left out where the browser offers no clipboard access.
+Nothing on the page opens or closes, a rule of the operator of 2026-07-29. Links name their target in words. Templates, knowledge documents and use cases open on GitHub, where Markdown renders, and the templates can also be taken as one archive through the button beside their heading. A code block sets its text in the monospace and carries a text button "Copy" from the shared DHCraft files, which reads "Copied" after copying, announces the change to screen readers and is left out where the browser offers no clipboard access. The start prompt in the section Skill is such a block, and because it is prose its lines wrap inside the block.
 
 ## Visualisation logic
 

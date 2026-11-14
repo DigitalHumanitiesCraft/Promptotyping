@@ -25,6 +25,7 @@ related: [project, specification]
 ## Open
 
 - The operator's acceptance of the single page is outstanding.
+- The start prompt has not yet run in a fresh session of an agent without the skill, neither in an agent with a shell nor in an app without one. Its first test with a reader who does not program is outstanding.
 - Other repositories carry the addresses published before 2026-11-14 in their `template:` fields. In a browser with JavaScript the not-found page leads the address of a template that still exists to `templates/<slug>.md`, while an agent fetching it receives status 404. The addresses of the six retired templates end on the not-found page, and a repository takes the current name and address at its next substantive update.
 - Promptotyping has not been evaluated with researchers outside the project. Use by external participants, an independently led transfer case, a documented unsuccessful or discontinued path and figures on the resources a project needs remain open. The agent role simulations of 2026-08-22 are a pre-test only.
 - Once the paper is published, the page and [project.md](project.md) cite it.
@@ -32,6 +33,15 @@ related: [project, specification]
 ## Entries
 
 The entries up to 2026-11-14 are condensed into the milestone entries below, and their full wording stands in the Git history (`git show f211631:knowledge/journal.md`).
+
+### 2026-11-14 A start prompt for readers who do not program
+
+- Trigger: the operator explained the start to a reader who directs agents and does not program, and commissioned a prompt that such a reader copies from the page and the README.
+- Found: a first draft of some 230 words repeated what the skill already carries, since `orient` changes no file, handles a project with nothing in it and waits for direction, and the boundaries of the skill cover source material and rights. Anthropic's prompting guidance asks for numbered steps only where order matters, for the reason behind an instruction and for plain wording without emphasis, and published onboarding prompts for agents keep the pasted text to a sentence or two and leave the procedure to a file the agent reads. The installation commands of the skill assume a shell, which an agent in a desktop app may lack.
+- Decided: one prompt of four sentences and two lines to fill in. It names the repository, asks the agent to check that the skill loads and to say what the reader must do where it cannot install, runs `orient` and asks for an explanation in plain words. It stands on the page in place of the shell block and in the README of the skill repository, which keeps the installation by hand and gains the upload route for apps without a shell. The operator's sentence of 2026-11-10, that whoever uses Promptotyping loads the skill and works in their own words, holds, because the prompt covers the moment before the skill is loaded.
+- Rejected: a German version on the page, which NFR-01 excludes, and a start file fetched by a one-line prompt, which would have been a second carrier of the procedure.
+- Changed: `index.html`, `assets/css/site.css`, `README.md`, [specification.md](specification.md) (FR-03, US-03), [design.md](design.md), and `README.md` of the skill repository.
+- Evidence: the commit that carries this entry. The page was read at 1280 and 360 pixels with the prompt wrapping inside its block, and the published tree was checked under NFR-05 and holds no material beyond the listed paths.
 
 ### 2026-11-14 Independent review before the release and version 1.0.0
 

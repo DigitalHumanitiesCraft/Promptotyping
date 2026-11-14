@@ -31,7 +31,7 @@ Since the operator's decision of 2026-11-14 the repository delivers one web page
 
 - FR-01. The repository publishes one web page at https://dhcraft.org/Promptotyping/. Acceptance criterion: the site has no second page in its navigation, and every further content is a Markdown file, the template archive or an external link.
 - FR-02. The page defines Promptotyping in the sentence of [practice.md](practice.md#the-working-practice), shows the figure of the practice, names the four forms of work, the Promptotype and the three kinds of checking, and states that the researchers judge in scholarly validation. Acceptance criterion: the definition on the page, in the README and in `practice.md` is the same sentence.
-- FR-03. The page says how to start, names the five subcommands of the skill (`orient`, `explore`, `distill`, `curate`, `handoff`) with one sentence each and links the skill repository. Acceptance criterion: the page restates no procedure the skill carries.
+- FR-03. The page says how to start, with a start prompt that lets an agent install the skill and run `orient`, names the five subcommands of the skill (`orient`, `explore`, `distill`, `curate`, `handoff`) with one sentence each and links the skill repository. Acceptance criterion: the page restates no procedure the skill carries, and the start prompt on the page and in the README of the skill repository is the same text.
 - FR-04. The page lists the eleven templates and the convention, each with the function of its document and a link to its file, and offers the templates with the licence as one archive. Acceptance criterion: each link resolves.
 - FR-05. Each template and the convention are readable as raw Markdown under `https://dhcraft.org/Promptotyping/templates/<slug>.md`, with the slugs `action-layer`, `architecture`, `data`, `design`, `domain-knowledge`, `index`, `journal`, `plan`, `project`, `specification` and `testing`, and `convention` for the convention. Acceptance criterion: a request without JavaScript returns the Markdown with HTTP status 200.
 - FR-06. The page leads to the documented use cases in `case-studies/`. Acceptance criterion: each case is reachable from the page.
@@ -78,7 +78,7 @@ Derivation: FR-06, [practice.md#fit-check](practice.md#fit-check).
 
 *As a researcher, I want to install the skill and take the templates I need, so that I can start a first iteration with my own data.*
 
-Acceptance criterion: the researcher reaches the skill repository and the file of every template from the page.
+Acceptance criterion: the researcher copies the start prompt from the page and reaches the skill repository and the file of every template from it.
 
 Status: proposal (agent, 2026-11-14), derived from the scenario Apply of 2026-08-22, decided at the operator's acceptance of the page.
 

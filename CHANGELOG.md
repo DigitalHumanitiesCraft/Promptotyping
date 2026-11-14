@@ -2,6 +2,10 @@
 
 Changes to the Promptotyping templates, convention, knowledge base and site, per release. Versions follow the numbering in `CITATION.cff`. The skill has its own changelog in the repository `promptotyping-skill`.
 
+## Unreleased
+
+- The page carries a start prompt in the section Skill, which lets an agent install the skill and run `orient`. It replaces the shell block, and the installation by hand stays in the README of the skill repository.
+
 ## 1.0.0, 2026-11-14
 
 The first numbered release, prepared to accompany the paper on Promptotyping.

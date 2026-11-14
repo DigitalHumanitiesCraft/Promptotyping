@@ -18,15 +18,9 @@ The skill that gives an agent the procedure of the practice lives in its own rep
 
 ## Use
 
-Install an AI coding agent such as Claude Code, then copy the skill into its skills folder. The README of the skill repository gives the installation for other agents.
+Install an AI coding agent such as Claude Code, create a project folder with your data and start the agent there. The [start prompt](https://github.com/DigitalHumanitiesCraft/promptotyping-skill#start-with-a-prompt) lets the agent install the skill and look at your project, and the README of the skill repository also gives the installation by hand.
 
-```bash
-git clone https://github.com/DigitalHumanitiesCraft/promptotyping-skill.git
-mkdir -p ~/.claude/skills
-cp -r promptotyping-skill/promptotyping ~/.claude/skills/
-```
-
-Create a project folder with your data, start the agent there and say what you want in your own words. The skill reads the template of a document before it creates it, so the templates need not be copied by hand.
+From then on you say what you want in your own words. The skill reads the template of a document before it creates it, so the templates need not be copied by hand.
 
 ## Origin
 
