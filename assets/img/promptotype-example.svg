@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 720" width="1300" height="720" role="img" aria-labelledby="pb-t pb-d">
   <title id="pb-t">A Promptotype opened, with CorrespExplorer as the example</title>
-  <desc id="pb-d">A Promptotype is a prototype taken together with the project knowledge base and the research data from which it was built. The example is CorrespExplorer. Its prototype offers coordinated visualisation views. Its research data are correspondence metadata in CMIF-XML and are the basis of building. Its project knowledge base holds declarative documents, project.md, data.md, specification.md and design.md, process documents, journal.md and plan.md, and the agent instructions in CLAUDE.md, and it describes the research data. The files shown are a selection. Each state of the Promptotype is versioned.</desc>
+  <desc id="pb-d">A Promptotype is a prototype taken together with the project knowledge base and the research data from which it was built. The example is CorrespExplorer. Its prototype offers coordinated views, among them map, timeline, network and topics. Its research data are correspondence metadata in CMIF-XML and are the basis of building. Its project knowledge base holds declarative documents, project.md, data.md, specification.md and design.md, process documents, journal.md and plan.md, and the agent instructions in CLAUDE.md, and it describes the research data. The files shown are a selection. Each state of the Promptotype is versioned.</desc>
   <style>
     svg { color: #1e2749; background: #ffffff; }
     text { fill: #1e2749; font-family: Arial, Helvetica, sans-serif; text-anchor: middle; }
@@ -45,17 +45,20 @@
     <g class="thin">
       <path d="M1000,253 H1295"/>
       <circle cx="1009" cy="246.500" r="2.300"/><circle cx="1017" cy="246.500" r="2.300"/><circle cx="1025" cy="246.500" r="2.300"/>
-      <rect x="1012" y="267" width="84" height="135"/>
-      <rect x="1107" y="267" width="84" height="135"/>
-      <rect x="1202" y="267" width="82" height="135"/>
-      <use href="#pb-map" transform="translate(1019,290) scale(0.840,1.240)"/>
-      <circle cx="1037" cy="337" r="3.200"/><circle cx="1071" cy="316" r="3.200"/><circle cx="1054" cy="353" r="3.200"/><circle cx="1078" cy="333" r="3.200"/>
-      <rect x="1113" y="283" width="34" height="8"/><rect x="1117" y="299" width="42" height="8"/><rect x="1124" y="315" width="46" height="8"/><rect x="1131" y="331" width="38" height="8"/><rect x="1138" y="347" width="45" height="8"/><rect x="1143" y="363" width="36" height="8"/><rect x="1129" y="379" width="36" height="8"/>
-      <path d="M1247,299 L1220,331 L1232,353 L1217,367 M1247,299 L1270,335 L1247,367 L1232,353"/>
-      <circle cx="1247" cy="299" r="6" class="fill-surface"/><circle cx="1220" cy="331" r="6" class="fill-surface"/><circle cx="1270" cy="335" r="6" class="fill-surface"/><circle cx="1217" cy="367" r="6" class="fill-surface"/><circle cx="1247" cy="367" r="6" class="fill-surface"/>
+      <rect x="1008" y="267" width="64" height="135"/>
+      <rect x="1081" y="267" width="64" height="135"/>
+      <rect x="1154" y="267" width="64" height="135"/>
+      <rect x="1227" y="267" width="64" height="135"/>
+      <use href="#pb-map" transform="translate(1013,292) scale(0.620,1.160)"/>
+      <circle cx="1027" cy="336" r="3"/><circle cx="1052" cy="318" r="3"/><circle cx="1040" cy="352" r="3"/><circle cx="1057" cy="338" r="3"/>
+      <path d="M1088,386 H1138"/>
+      <rect x="1090" y="362" width="6" height="24"/><rect x="1098" y="340" width="6" height="46"/><rect x="1106" y="312" width="6" height="74"/><rect x="1114" y="328" width="6" height="58"/><rect x="1122" y="296" width="6" height="90"/><rect x="1130" y="350" width="6" height="36"/>
+      <path d="M1189,299 L1165,331 L1176,353 L1162,367 M1189,299 L1210,335 L1189,367 L1176,353"/>
+      <circle cx="1189" cy="299" r="5" class="fill-surface"/><circle cx="1165" cy="331" r="5" class="fill-surface"/><circle cx="1210" cy="335" r="5" class="fill-surface"/><circle cx="1162" cy="367" r="5" class="fill-surface"/><circle cx="1189" cy="367" r="5" class="fill-surface"/>
+      <rect x="1234" y="284" width="34" height="11" rx="5.500"/><rect x="1234" y="302" width="50" height="11" rx="5.500"/><rect x="1234" y="320" width="26" height="11" rx="5.500"/><rect x="1234" y="338" width="44" height="11" rx="5.500"/><rect x="1234" y="356" width="32" height="11" rx="5.500"/><rect x="1234" y="374" width="48" height="11" rx="5.500"/>
     </g>
   </svg>
-  <text class="sub" x="400" y="374">coordinated visualisation views</text>
+  <text class="sub" x="400" y="374">coordinated views: map, timeline, network, topics</text>
 
   <text class="head" x="960" y="146">RESEARCH DATA</text>
   <text class="sub" x="960" y="174">correspondence metadata, CMIF-XML</text>

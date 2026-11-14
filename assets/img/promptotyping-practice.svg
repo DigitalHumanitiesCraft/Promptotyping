@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -14 1600 820" width="1600" height="820" role="img" aria-labelledby="pa-t pa-d">
   <title id="pa-t">The Promptotyping working practice</title>
-  <desc id="pa-d">Research data and their contexts enter four recurrent forms of work, Preparation, Exploration, Distillation and Implementation, which frontier LLM agents carry out in no fixed order and which researchers and research software developers direct. Each iteration yields a Promptotype, a prototype taken together with the project knowledge base and the research data, and each state is versioned. Verification and agentic review accompany each iteration. The project knowledge base supplies the context for each task, and what checking and use reveal returns to it through knowledge curation. The researchers assess the Promptotype through scholarly validation. Agentic Engineering is the organisation of the agents' work in the four forms, Context Engineering the selection of context for each task, and Knowledge Engineering the project knowledge base and its curation.</desc>
+  <desc id="pa-d">Research data and their contexts enter four recurrent forms of work, Preparation, Exploration, Distillation and Implementation, which frontier LLM agents carry out in no fixed order and which researchers and research software developers direct. Each iteration yields a Promptotype, a prototype taken together with the project knowledge base and the research data, and each state is versioned. Verification and agentic review accompany each iteration. Distillation maintains the project knowledge base, which supplies the context for each task, and what checking and use reveal returns to it through knowledge curation. The researchers assess the Promptotype through scholarly validation. Agentic Engineering is the organisation of the agents' work in the four forms, Context Engineering the selection of context for each task, and Knowledge Engineering the project knowledge base and its curation.</desc>
   <style>
     svg { color: #1e2749; background: #ffffff; }
     text { fill: #1e2749; font-family: Arial, Helvetica, sans-serif; text-anchor: middle; }
@@ -52,8 +52,9 @@
 
   <g class="line" marker-end="url(#pa-arrow)">
     <path d="M240,400 H330"/>
-    <path d="M962,270 H1098"/>
-    <path d="M1130,420 H962"/>
+    <path d="M962,250 H1098"/>
+    <path d="M1130,388 H962"/>
+    <path d="M742,575 C820,575 880,432 962,432 H1128"/>
     <path d="M1330,666 V716 Q1330,736 1310,736 H650 Q630,736 630,716 V612"/>
     <path d="M943,62 H660 Q640,62 640,82 V148"/>
     <path d="M1027,62 H1310 Q1330,62 1330,82 V148"/>
@@ -87,21 +88,22 @@
     <text class="sub" x="322" y="432">LLM agents</text>
   </g>
 
-  <text class="sub" x="1030" y="258">each iteration</text>
-  <text class="sub" x="1030" y="297">verification</text>
-  <text class="sub" x="1030" y="320">agentic review</text>
-  <text class="eng" x="1030" y="363">Context</text>
-  <text class="eng" x="1030" y="385">Engineering</text>
-  <text class="sub" x="1030" y="408">for each task</text>
+  <text class="sub" x="1030" y="238">each iteration</text>
+  <text class="sub" x="1030" y="274">verification</text>
+  <text class="sub" x="1030" y="296">agentic review</text>
+  <text class="eng" x="1030" y="332">Context</text>
+  <text class="eng" x="1030" y="354">Engineering</text>
+  <text class="sub" x="1030" y="377">for each task</text>
+  <text class="sub" x="905" y="545">maintains</text>
 
   <text class="head title" x="1331" y="192">PROMPTOTYPE</text>
   <rect class="shape" x="1130" y="225" width="400" height="90" rx="8"/>
-  <rect class="shape cat-base" x="1130" y="345" width="400" height="90" rx="8"/>
-  <rect class="shape" x="1130" y="465" width="400" height="90" rx="8"/>
+  <rect class="shape cat-base" x="1130" y="345" width="400" height="104" rx="8"/>
+  <rect class="shape" x="1130" y="479" width="400" height="90" rx="8"/>
   <text class="head" x="1331" y="277">PROTOTYPE</text>
-  <text class="head" x="1331" y="397">PROJECT KNOWLEDGE BASE</text>
-  <text class="head" x="1331" y="517">RESEARCH DATA</text>
-  <text class="sub" x="1330" y="605">each state versioned</text>
+  <text class="head" x="1331" y="404">PROJECT KNOWLEDGE BASE</text>
+  <text class="head" x="1331" y="531">RESEARCH DATA</text>
+  <text class="sub" x="1330" y="612">each state versioned</text>
 
   <text class="sub start" x="1344" y="702">checking and use</text>
   <text class="eng" x="980" y="766">Knowledge Engineering</text>
