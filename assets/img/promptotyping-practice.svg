@@ -35,10 +35,15 @@
 
   <text class="head" x="150" y="322">RESEARCH DATA</text>
   <g class="shape">
-    <path d="M88,366 V434 A62,16 0 0 0 212,434 V366"/>
-    <ellipse cx="150" cy="366" rx="62" ry="16"/>
+    <path d="M50,368 V432 A50,14 0 0 0 150,432 V368"/>
+    <ellipse cx="100" cy="368" rx="50" ry="14"/>
   </g>
-  <path class="thin" d="M88,400 A62,16 0 0 0 212,400"/>
+  <path class="thin" d="M50,400 A50,14 0 0 0 150,400"/>
+  <g class="shape" stroke-linejoin="miter">
+    <path d="M172,356 H214 L230,372 V444 H172 Z"/>
+    <path d="M214,356 V372 H230" fill="none"/>
+  </g>
+  <path class="thin" d="M182,388 H220 M182,402 H220 M182,416 H220 M182,430 H206"/>
   <text class="sub" x="150" y="486">and their contexts</text>
 
   <rect x="1124" y="174" width="460" height="490" rx="14" class="shape cat-proto"/>
@@ -46,7 +51,7 @@
   <rect x="1100" y="150" width="460" height="490" rx="14" class="shape cat-proto"/>
 
   <g class="line" marker-end="url(#pa-arrow)">
-    <path d="M216,400 H318"/>
+    <path d="M240,400 H330"/>
     <path d="M962,270 H1098"/>
     <path d="M1130,420 H962"/>
     <path d="M1330,666 V716 Q1330,736 1310,736 H650 Q630,736 630,716 V612"/>
@@ -65,14 +70,14 @@
     <text class="head" x="340" y="180">FOUR RECURRENT FORMS OF WORK</text>
     <g class="shape cat-forms">
       <ellipse cx="330" cy="248" rx="124" ry="55"/>
-      <ellipse cx="146" cy="400" rx="112" ry="55"/>
+      <ellipse cx="144" cy="400" rx="114" ry="55"/>
       <ellipse cx="514" cy="400" rx="128" ry="58"/>
       <ellipse cx="330" cy="555" rx="124" ry="55"/>
     </g>
-    <text class="head" x="331" y="243">PREPARATION</text>
-    <text class="sub" x="330" y="268">sources, data, context</text>
-    <text class="head" x="147" y="395">EXPLORATION</text>
-    <text class="sub" x="146" y="420">structure and limits</text>
+    <text class="head" x="331" y="243">EXPLORATION</text>
+    <text class="sub" x="330" y="268">structure and limits</text>
+    <text class="head" x="145" y="395">PREPARATION</text>
+    <text class="sub" x="144" y="420">sources, data, context</text>
     <text class="head" x="515" y="395">IMPLEMENTATION</text>
     <text class="sub" x="514" y="420">bounded tasks</text>
     <text class="head" x="331" y="550">DISTILLATION</text>
