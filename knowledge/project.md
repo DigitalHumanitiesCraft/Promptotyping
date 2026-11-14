@@ -52,7 +52,7 @@ The authors named in `CITATION.cff` are responsible for the practice and the rep
 
 ## Range of functions
 
-The single web page states what Promptotyping is, shows its figure, names the four forms of work, the Promptotype and the three kinds of checking, says how to install the skill and lists its five subcommands, and from there it leads to the templates, the use cases and this knowledge base. Every template and the convention are readable as Markdown under a stable address, so that an agent can fetch them over HTTP without a browser. What the page must contain is stated in [specification.md](specification.md).
+The single web page states what Promptotyping is, shows its two figures, names the four forms of work, the Promptotype and the three kinds of checking, says how to install the skill and lists its five subcommands, and from there it leads to the templates, the use cases and this knowledge base. Every template and the convention are readable as Markdown under a stable address, so that an agent can fetch them over HTTP without a browser. What the page must contain is stated in [specification.md](specification.md).
 
 The page claims no more than the practice has shown. It states that Promptotyping has not been evaluated against other ways of working and that its transfer to other people and projects is open.
 
