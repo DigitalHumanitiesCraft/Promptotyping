@@ -6,7 +6,7 @@ Promptotyping is a working practice in which research data and their contexts ar
 
 ![Research data and their contexts enter four recurrent forms of work, called Preparation, Exploration, Distillation and Implementation, which researchers and research software developers direct and LLM agents carry out. Each iteration yields a Promptotype, which consists of a prototype, the research data and the project knowledge base. Verification and agentic review check it, the researchers assess it through scholarly validation, the knowledge base supplies the context for each task, and what checking and use reveal returns to it through knowledge curation.](assets/img/promptotyping-practice.svg)
 
-![A Promptotype opened, with CorrespExplorer as the example. The prototype offers coordinated visualisation views and is built from the research data, correspondence metadata in CMIF-XML. The project knowledge base describes the data and holds declarative documents such as project.md, data.md, specification.md and design.md, the process documents journal.md and plan.md, and the agent instructions in CLAUDE.md.](assets/img/promptotype-example.svg)
+![A Promptotype opened, with CorrespExplorer as the example. The prototype offers coordinated visualisation views and is built from the research data, correspondence metadata in CMIF-XML. The project knowledge base describes the data and holds declarative documents such as project.md, data.md, specification.md and design.md, the process document journal.md, and the agent instructions in CLAUDE.md.](assets/img/promptotype-example.svg)
 
 The site at https://dhcraft.org/Promptotyping/ shows the same on one page.
 

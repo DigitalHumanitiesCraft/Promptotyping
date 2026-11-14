@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 720" width="1300" height="720" role="img" aria-labelledby="pb-t pb-d">
   <title id="pb-t">A Promptotype opened, with CorrespExplorer as the example</title>
-  <desc id="pb-d">A Promptotype consists of a prototype, the research data it was built from and the project knowledge base. The example is CorrespExplorer. Its prototype offers coordinated views, among them map, timeline, network and topics. Its research data are correspondence metadata in CMIF-XML and are the basis of building. Its project knowledge base holds declarative documents, project.md, data.md, specification.md and design.md, process documents, journal.md and plan.md, and the agent instructions in CLAUDE.md, and it describes the research data. The files shown are a selection. Each state of the Promptotype is versioned.</desc>
+  <desc id="pb-d">A Promptotype is a prototype taken together with the project knowledge base and the research data from which it was built. The example is CorrespExplorer. Its prototype offers coordinated views, among them map, timeline, network and topics. Its research data are correspondence metadata in CMIF-XML and are the basis of building. Its project knowledge base holds declarative documents, project.md, data.md, specification.md and design.md, the process document journal.md, and the agent instructions in CLAUDE.md, and it describes the research data. The files shown are a selection. Each state of the Promptotype is versioned.</desc>
   <style>
     svg { color: #1e2749; background: #ffffff; }
     text { fill: #1e2749; font-family: Arial, Helvetica, sans-serif; text-anchor: middle; }
@@ -76,11 +76,12 @@
 
   <rect class="kb-frame" x="50" y="402" width="1170" height="216" rx="10"/>
   <text class="head" x="635" y="434">PROJECT KNOWLEDGE BASE</text>
+  <g transform="translate(31,0)">
   <text class="sub" x="446" y="476">declarative</text>
-  <text class="sub" x="845" y="476">process</text>
-  <text class="sub" x="1075" y="476">agent instructions</text>
+  <text class="sub" x="790" y="476">process</text>
+  <text class="sub" x="950" y="476">agent instructions</text>
   <g class="thin">
-    <path d="M197,492 V485 H696 V492 M740,492 V485 H950 V492 M1030,492 V485 H1120 V492"/>
+    <path d="M197,492 V485 H696 V492 M740,492 V485 H840 V492 M905,492 V485 H995 V492"/>
   </g>
   <g class="shape cat-base" stroke-linejoin="miter">
     <use href="#pb-sheet" transform="translate(223.500,500) scale(0.500)"/>
@@ -88,16 +89,15 @@
     <use href="#pb-sheet" transform="translate(472.500,500) scale(0.500)"/>
     <use href="#pb-sheet" transform="translate(622.500,500) scale(0.500)"/>
     <use href="#pb-sheet" transform="translate(766.500,500) scale(0.500)"/>
-    <use href="#pb-sheet" transform="translate(876.500,500) scale(0.500)"/>
-    <use href="#pb-sheet" transform="translate(1051.500,500) scale(0.500)"/>
+    <use href="#pb-sheet" transform="translate(926.500,500) scale(0.500)"/>
   </g>
   <text class="mono" x="247" y="596">project.md</text>
   <text class="mono" x="357" y="596">data.md</text>
   <text class="mono" x="496" y="596">specification.md</text>
   <text class="mono" x="646" y="596">design.md</text>
   <text class="mono" x="790" y="596">journal.md</text>
-  <text class="mono" x="900" y="596">plan.md</text>
-  <text class="mono" x="1075" y="596">CLAUDE.md</text>
+  <text class="mono" x="950" y="596">CLAUDE.md</text>
+  </g>
 
   <text class="sub end" x="1274" y="696">each state versioned</text>
 </svg>

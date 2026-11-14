@@ -39,6 +39,15 @@ related: [project, specification]
 
 The entries up to 2026-11-14 are condensed into the milestone entries below, and their full wording stands in the Git history (`git show f211631:knowledge/journal.md`).
 
+### 2026-11-14 What the figures taught, distilled into the practice
+
+- Trigger: the operator asked what the work on the figures had made clearer for the repository and called `distill`.
+- Found: the figures show four things that [practice.md](practice.md) did not say in one place. The translation has a direction, context names the research context and the context of a task, the research data stand at the entry and in the Promptotype, and Distillation and curation differ in reach. Read against the [convention](../templates/convention.md), the second figure had `plan.md` under process, although the convention counts a plan among the declarative documents and names `journal.md` alone as process document.
+- Decided: [practice.md](practice.md) states the four points and how the five subcommands of the skill relate to the four forms of work. Two of the statements are the agent's reading and are marked as proposals. [specification.md](specification.md) carries two proposed requirements, templates grouped by document type and use cases that name the three parts of their Promptotype. Neither is built.
+- Corrected: the second figure shows `journal.md` alone under process and no longer shows `plan.md`.
+- Changed: [practice.md](practice.md), [specification.md](specification.md), `assets/img/promptotype-example.svg`, `index.html`, `README.md`.
+- Evidence: the commit that carries this entry. The relation of subcommands and forms and the reach of `curate` and `distill` are taken from `SKILL.md` and `references/distill.md` of the skill in version 2.0.0. The operator has not yet read the additions.
+
 ### 2026-11-14 The figure of the practice becomes two figures
 
 - Trigger: the operator asked whether the practice could be shown better, chose the split into two figures from three proposals, and then found that the relation between Preparation, Exploration and the research data with their contexts did not fit.

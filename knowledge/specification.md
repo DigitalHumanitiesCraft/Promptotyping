@@ -37,6 +37,8 @@ Since the operator's decision of 2026-11-14 the repository delivers one web page
 - FR-06. The page leads to the documented use cases in `case-studies/`. Acceptance criterion: each case is reachable from the page.
 - FR-07. The page presents `knowledge/` as the worked example, the Promptotyping project documented with its own templates, and links its entry point [INDEX.md](INDEX.md). Acceptance criterion: a reader reaches every document of the knowledge base from the page in two steps.
 - FR-08. The page carries limits, licence and citation. Acceptance criterion: it states that the practice has not been evaluated against other ways of working and that its transfer is open, and it gives the citation of `CITATION.cff`.
+- FR-09 (proposal, agent, 2026-11-14). The page groups the templates by the three types of knowledge document, declarative, process and agent instructions, as the [convention](../templates/convention.md) assigns them. Acceptance criterion: each template stands under the type the convention names for its document.
+- FR-10 (proposal, agent, 2026-11-14). Each use case names the three parts of its Promptotype, the prototype, the project knowledge base and the research data, with a link where the part is public. Acceptance criterion: a reader reaches the three parts of a public case from its description, and a case says which part is not public.
 
 ### Non-functional requirements
 

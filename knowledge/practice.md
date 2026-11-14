@@ -29,6 +29,8 @@ Promptotyping is practised in four forms of work, yields a Promptotype in each i
 
 Promptotyping is a working practice in which research data and their contexts are translated into research artefacts with frontier Large Language Model (LLM) agents, so that the artefacts fit the purposes of the researchers and the ways in which they work. Three kinds of engineering carry it. Knowledge Engineering elicits, models and curates the researchers' knowledge of the domain, of the data and of their own aims. Context Engineering selects from this knowledge what an agent needs for a task. Agentic Engineering organises the work of the agents that build on it.
 
+The translation has a direction. Research data and their contexts enter through Preparation, and each iteration leaves a Promptotype. The word context names two things on this way. The research context is what the researchers bring besides the data, the sources, the standards and data models, the questions and the purpose. The context of a task is what an agent is given to carry out that task. Distillation connects the two, because it writes the research context into the knowledge documents, and Context Engineering selects from them for each task (proposal, agent, 2026-11-14, read from the figure of the practice).
+
 The agents build prototypes from modelled data and from a curated project knowledge base, and whatever checking and use of a prototype bring to light is curated back into that knowledge base. Whether an artefact fits is decided by the sources and by the research purpose, as the researchers understand both, so the knowledge documents can themselves be wrong about the material. The artefact may be replaced once what working with it revealed has been curated back.
 
 It is called a working practice in the sense of editorial practice, a way of doing a particular kind of work that can be described by what it is for, who takes part, what it works with, which forms the work takes, what it yields and how a result is judged. It grew out of doing the work, and the word method is avoided because it would claim an empirical validation that does not yet exist. The description names no feature of a particular LLM or tool. The three projects of the paper were built with a single coding agent and LLMs of a single family, and with others the practice is untried. The agent has to be able to read the project's files, run scripts and edit the repository, so a chat interface that cannot do this does not carry the practice either.
@@ -38,6 +40,8 @@ The researchers know the sources and the field and judge whether an artefact fit
 ## Forms of work
 
 The work takes four forms, which recur in no fixed sequence. A first pass runs through them in the order below, and afterwards each form returns whenever the work calls for it.
+
+The [skill](https://github.com/DigitalHumanitiesCraft/promptotyping-skill) gives two of the four forms a subcommand, `explore` for Exploration and `distill` for Distillation. Preparation is the researchers' work, in which the agent helps as `explore` describes, and Implementation is the agent's ordinary work under the skill's rules for building. `orient` and `handoff` open and close a session, and `curate` is knowledge curation on documents that exist.
 
 ### Preparation
 
@@ -72,6 +76,8 @@ In the documented projects, deliberately requesting a radically different design
 
 Knowledge curation is how each form of work hands its findings back to the project knowledge. That knowledge is revised whenever the sources, checking or work with the artefacts bring something to light, which corrects what has become outdated and removes what has stopped applying. When a result reveals missing or wrong knowledge, the finding is written into the responsible knowledge document first and the code follows. The first question is where the fault arose, in knowledge about the data, in a requirement, in a design decision or in the agent instructions. Re-entry goes into the form of work the new knowledge belongs to.
 
+Curation and Distillation both write the knowledge documents and differ in reach. Curation corrects a statement or a requirement in a document that exists. Distillation models anew when the purpose changes, when a document the project needs is missing or when findings have outgrown the documents that hold them. The figure of the practice therefore draws two lines at Distillation, one on which it maintains the knowledge base and one on which what checking and use reveal returns.
+
 - A wrong artefact sends the work back into Distillation.
 - A finding that the data afford more or less than assumed sends it back into Exploration.
 - Sources that arrive later send it back into Preparation.
@@ -81,6 +87,8 @@ A single pass through the four forms is the exception. Regenerating an artefact 
 ## The Promptotype
 
 A Promptotype is what an iteration yields. It consists of a prototype open to use and inspection, the research data it was built from and the project knowledge base, so that every state of the three can be versioned as a single whole. The prototype serves as a means of knowing, since working with it shows which distinctions the data sustain and where the work breaks down. Something runs early, so there is always something concrete to look at and to discuss. The researchers who work with a Promptotype accept it for a purpose once they judge it good enough for that purpose. Passing checks does not amount to acceptance, and an accepted Promptotype can remain a state of work in progress. One may be in use before most of its data are confirmed, as long as it marks what is confirmed and names who confirmed it.
+
+The research data appear twice in the practice. They enter as source material, which stays unchanged, and they are part of the Promptotype as the state the prototype was built from, which includes the data the project itself produced (proposal, agent, 2026-11-14, inferred from the rule of the skill that source material is never changed and that produced data are versioned with the knowledge base and the artefact).
 
 ## The project knowledge base
 
