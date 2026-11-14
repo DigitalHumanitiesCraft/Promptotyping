@@ -4,11 +4,12 @@ title: "Promptotyping"
 version: "1.0.0"
 abstract: >-
   Promptotyping is a working practice for translating research data and their
-  contexts into research artefacts that fit the researchers' questions and ways
-  of working, through Knowledge Engineering, Context Engineering and Agentic
-  Engineering. This repository holds the practice specification, the templates
-  for the project knowledge base, documented use cases and a tutorial. The Promptotyping skill for AI coding
-  agents lives in its own repository, promptotyping-skill.
+  contexts, with frontier LLM agents, into research artefacts that fit the
+  researchers' purposes and ways of working. It rests on Knowledge Engineering,
+  Context Engineering and Agentic Engineering. This repository holds the
+  templates of the project knowledge base with their convention, the knowledge
+  base of the practice itself and documented use cases. The Promptotyping skill
+  for AI coding agents lives in its own repository, promptotyping-skill.
 type: software
 authors:
   - family-names: Pollin

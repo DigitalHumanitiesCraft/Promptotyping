@@ -1,0 +1,174 @@
+---
+title: Practice
+project:
+  name: Promptotyping specification
+  repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
+method:
+  name: Promptotyping
+  url: https://dhcraft.org/Promptotyping/
+status: complete
+created: 2026-11-14
+updated: 2026-11-14
+template:
+  name: Domain knowledge template
+  version: 0.3
+  url: https://dhcraft.org/Promptotyping/templates/domain-knowledge.md
+language: en
+version: "2.0"
+authors: [Christopher Pollin]
+generated-with: Claude Code (Claude Opus 5.5)
+topics: ["[[Promptotyping]]", "[[Knowledge Engineering]]", "[[Context Engineering]]", "[[Agentic Engineering]]"]
+related: [INDEX, project, specification, journal]
+---
+
+# Practice
+
+This document states how Promptotyping works, as the method and justification layer of this repository. It covers the four forms of work, iteration and re-entry, the Promptotype, the project knowledge base, the three kinds of checking, the artefact and its boundary, and the practices that grew out of the documented projects. The installable procedure lies in the [Promptotyping skill](https://github.com/DigitalHumanitiesCraft/promptotyping-skill), the document structures in the [templates](../templates/), and the history of every rule in the [journal](journal.md).
+
+## The working practice
+
+Promptotyping is a working practice that translates research data and their contexts into research artefacts that fit the researchers' purposes and ways of working. It does so through three forms of engineering. Knowledge Engineering makes explicit and curates what a project knows about its domain, its data and its aims. Context Engineering selects from this knowledge what an agent needs for a task. Agentic Engineering organises the work of the agents that build on it.
+
+Agents build prototypes from modelled data and a curated project knowledge base, and what checking and use of a prototype reveal is curated back into that knowledge base. What decides whether an artefact fits lies in the sources and the research purpose as the researchers understand them, so the knowledge documents can themselves be wrong about the material. The artefact may be replaced once what working with it revealed has been curated back.
+
+The practice is called a working practice because the word method would claim an empirical validation that does not yet exist. It is tied to no particular model or tool, but it depends on the capability of current frontier LLM agents, and in the experience behind it smaller or locally run models do not carry it. The agent has to be able to read the project's files, run scripts and edit the repository, so a chat interface that cannot do this does not carry the practice either.
+
+The researchers know the sources and the field and judge whether an artefact fits. The user is whoever directs the agent, and that person passes on to the researchers what only they can decide. In a small project one person holds both roles.
+
+## Forms of work
+
+The work takes four forms, which recur in no fixed sequence. A first pass runs through them in the order below, and afterwards each form returns whenever the work calls for it.
+
+### Preparation
+
+Preparation assembles the material and the research context. The research data are collected in their original formats, together with the documentation of the standards and data models they follow, the research questions, the provisional purpose and any requirements already present in the working material. The researchers write the purpose, the question and a few user stories in their own words, because these are the criterion against which everything later is checked, and a story written by the model would check the model against itself. Preparation is done when the material is accessible and documented well enough to be examined. Vagueness here cascades, since a vaguely put question yields a vaguely specified artefact and the correction falls due again in every iteration.
+
+### Exploration
+
+Exploration establishes what the data can and cannot support. Small material is read directly. Beyond a few dozen files neither a person nor an agent opens each one, and feeding the whole corpus to the model spends the context on material the model would only summarise, where a count would give an answer. The instrument is a script that traverses the corpus and renders a description of it with four parts.
+
+- A structural inventory of every key, path or element and how often it occurs.
+- A few real examples per field, enough to see the shape of a value.
+- Aggregations such as value ranges, cardinality, empty fields and the distribution over the dimension the question uses.
+- The anomalies, meaning rare fields, values that break the declared schema and places where schema and corpus disagree.
+
+The script can be rerun when the data change, and its output is a generated document that nobody edits by hand. The agent then proposes which fields correspond to which analytical categories, which forms of presentation fit the data and where the data fall short, and the researchers judge these proposals. Every non-obvious statement in `data.md` names the file and rows behind it, so that a researcher can follow one claim to its evidence and test whether a gap known to them is stated. Exploration is done when there is a documented account of what is feasible, what is not and why, and the researchers recognise their material in it. Exploration is not optional, because either the researchers explore their data themselves or whoever builds for them has to. What varies is its depth, and with familiar data it is short.
+
+### Distillation
+
+Distillation writes what Exploration taught into the knowledge documents. It is the foundational form of knowledge curation and goes beyond summarisation or context compression, because it keeps the distinctions, conditions and uncertainties an adequate implementation needs. Each document is brought onto one bounded function, redundancy is resolved by reference, and descriptions that can be rendered from the source data stand beside the curated documents as generated ones. Before Implementation the specification is checked for contradictions and cut to a first scope that is small enough to inspect, and whatever no user story carries goes, however reasonable it looks. Distillation is done when a fresh agent given only the documents and the data can take up the project's logic and continue, and the researchers confirm that the documents describe their material and purpose as they understand them. The encoding decisions taken here are epistemic decisions, because they determine what every later step can know.
+
+### Implementation
+
+Implementation builds the artefact from the knowledge documents in bounded tasks, each small enough that its result can be run and inspected. Each task states the documents it draws on and the assumptions it makes, and its context is selected for it, so that large data are worked on through code and only a profile and selected examples enter the context. Each result is shown to the researchers, because many requirements only become clear in front of a running artefact. Three feedback loops steer the work.
+
+- Deterministic feedback from schema validation, tests and builds.
+- Visual feedback from screenshots of the running artefact, which go back into the agent's context.
+- Expert feedback on whether the output is correct, adequate to the domain and aligned with the question, with faults reported by element identifier and expected behaviour.
+
+Deliberately requesting a radically different design probes the possibility space that the learned conventions of the models otherwise hide. Deferring the check on a milestone is a decision with a price. It is defensible in a first pass whose point is to see something running, and it leaves a verification debt that is recorded and settled before the artefact is used or handed on.
+
+## Iteration and re-entry
+
+When a result reveals missing or wrong knowledge, the finding is written into the responsible knowledge document first and the code follows. The first question is where the fault arose, in knowledge about the data, in a requirement, in a design decision or in the agent instructions. Re-entry goes into the form of work the new knowledge belongs to.
+
+- A wrong artefact sends the work back into Distillation.
+- A finding that the data afford more or less than assumed sends it back into Exploration.
+- Sources that arrive later send it back into Preparation.
+
+A single pass through the four forms is the exception. An artefact regenerated from the documents does not reproduce decisions that never entered them, which is why patching only the code leaves the knowledge base behind and the next session inherits the gap.
+
+## The Promptotype
+
+A Promptotype is what an iteration yields, a prototype that can be used and inspected, together with the project knowledge base and the research data from which it was built, so that each state can be versioned as a whole. The prototype is a means of knowing, since working with it shows which distinctions the data sustain and where the work breaks down. Something runs early, so there is always something concrete to look at and to discuss. A Promptotype is accepted for a purpose when the researchers who work with it judge it good enough for that purpose, and until then it remains a state of work in progress, whatever checks it has passed.
+
+## The project knowledge base
+
+The project knowledge base is the set of knowledge documents in the folder `knowledge/` together with the agent instructions in the repository root, versioned with the code. A folder `docs/` is left to a website published from the repository. The documents are of three types, which distinguish functions and prescribe no file structure.
+
+- Declarative knowledge documents state what holds, for instance the purpose and scope (`project.md`), the structure, meaning, provenance, gaps and uncertainties of the data (`data.md`) and what the artefact is to do (`specification.md`).
+- Process knowledge documents state what is open and how the understanding developed and why, in `journal.md`.
+- Agent instruction documents state how agents are to work, with procedures, constraints, the checks to be run and pointers to the relevant knowledge, in `CLAUDE.md` or `AGENTS.md`.
+
+A description of a project's pipeline is declarative, because it states something about the subject, while the process document holds the work on the project. A project adds a document when it has the function for it, such as `design.md` for an interface or `testing.md` for what its tests guarantee. The file name carries the function before the document is opened, and each document follows its template in this repository, as far as the material fills it.
+
+The journal opens with the section `## Open`, the complete current list of what the next session needs, rewritten at every handoff and reading "Nothing open." when nothing is. Its entries follow newest first, one per coherent step of the work, with evidence. When the older entries no longer help a reader understand the current state, the journal is condensed and their full wording goes to `journal-archive.md`. Accepted work that has not begun belongs in the specification or a plan.
+
+Generated documents are rendered by a named command, marked as such and never edited by hand. Durable documents state quantities that change as the work proceeds qualitatively or point to the source that holds the current figure.
+
+## Checking
+
+Three kinds of checking stay apart, because they differ in what a judgement rests on.
+
+- Verification establishes whether a result conforms to a standard the project has accepted, at its strongest through an executable check that decides whether a stated condition holds. Such a check is itself checked for whether it runs against the code the artefact actually uses, covers all of the real data and can fail. A test fixture confirms nothing about the data.
+- Agentic review is the examination of code, data or knowledge documents by an agent, often with a fresh context and against named criteria. Its findings are evidence, and how much they are worth depends on how the review is delimited, which sources reach the reviewer and when an unresolved case goes to a person.
+- Scholarly validation is the judgement of people who know the sources and the field on whether a result is warranted by the sources and adequate to the research purpose.
+
+A technically correct implementation can still fail validation, because the requirement it realises faithfully may itself be inadequate. A deterministic metric shows the boundary. A character error rate can be computed reproducibly once reference, rules and scope are fixed, yet it measures deviation from a selected reference, and the choice and reading of that reference remain editorial decisions.
+
+A result has one of three statuses. A proposal is what an agent or an LLM produces. A proposal is doubted when anyone taking part, an agent included, has marked it as doubtful. A proposal is confirmed only by a person whose expertise reaches as far as the decision requires, or by a validated deterministic rule that runs on all of the real data, has been shown on cases with known answers to fail when it should, and has been adopted by the researchers for a defined kind of decision. Who or what set a status is recorded with it.
+
+Three questions are put to each Promptotype, and they build on one another. Does it do what it claims? Is it warranted by the sources? Is it adequate to the purpose? An agent can run executable checks for the first, raise doubts for the second and point to gaps for the third. The researchers decide. Agents may assemble evidence, compare materials, investigate discrepancies, run checks and record provisional assessments, but they may not assign verification, validation, approval or acceptance themselves. This rule came from a project in which an agent-screening stage had assigned approval labels that no responsible person had granted. Where a workflow keeps checking states, they stay distinguishable by the procedure that produced them, because a combined confidence score destroys exactly what makes a state readable. Acceptance names its purpose, its criteria, who judged and the known limits, and an artefact can be accepted as an experimental pipeline without being accepted as a publication-ready edition.
+
+Two failure modes of current LLMs make this division necessary. Sycophancy is the tendency to agree with the user instead of challenging assumptions, so the absence of an objection confirms nothing. Confabulation is the generation of plausible but false output that fills a gap instead of reporting it. Checking also extends to what is missing, the questions not asked and the alternatives not generated behind an artefact that looks coherent.
+
+Two kinds of judgement meet in the work and separate as soon as two people hold them. The domain judgement decides whether the artefact answers the research question, whether the data are represented correctly and what a figure needs by way of context before it may be read. The development judgement decides workflow, technology and the form of the artefact, and it reports a fault to the agent in the terms the agent works in. Where one person holds both, the case is hybrid, and where the second is missing lies the boundary of what the practice reaches.
+
+## The artefact and its boundary
+
+A research artefact is bound to one project, and its scholarly standing comes from the distinctions that project's data model carries. Research artefacts include digital editions, interactive visualisations, data workflows, project-specific schemas or ontologies and tools. A schema under revision counts as an artefact and may become infrastructure once it is stabilised and shared.
+
+The default form is a self-contained static web tool, a set of HTML, CSS and JavaScript files with the data embedded or loaded from flat files, runnable from a local folder and on any static host. Three properties carry the default. Agents generate such artefacts in one pass, which keeps the derivation from documents to artefact inspectable. They go online without infrastructure, which matches the resources of the researchers the practice addresses. And artefacts with the fewest moving parts survive longest, without server dependencies or build chains that rot. Repository and artefact together form a research compendium, with data, procedure and output kept apart and the data treated as read-only.
+
+The technical rules for this default follow from these properties.
+
+- The artefact runs without a build step. Cloning it and opening it in a browser over a local web server suffices, since browsers block loading files from `file://` addresses, and package managers, bundlers, transpilers and CSS preprocessors are excluded.
+- JavaScript stays vanilla without a framework, because the browser platform is the most stable runtime for an artefact that may be regenerated from its documents.
+- A single library may be vendored into the repository where a problem is algorithmically deep, provided it lies beyond a reasonable own implementation, works as one file without a build step, has a licence that permits redistribution and has a documented removal path.
+- Heavy computation is precomputed upstream, and the artefact ships derived data, so that deterministic work stays in inspectable scripts.
+- The artefact makes no external calls at runtime and uses no CDN, no third-party web fonts and no analytics, which makes offline use, privacy and security one property. Unavoidable embedded content loads only on click.
+- Input from paste fields, URL parameters and hash fragments is validated before it reaches the page, no secret enters client code or history, and personal data of third parties stay out of delivered and example data.
+- Every artefact declares that it was generated, from which documents, with which LLMs and tools and how it was checked, the way an edition discloses its editorial principles, and the repository carries citation metadata.
+
+Where a step does not run in the browser, it becomes a generated pipeline upstream, and where a description is to be rendered from the data, it becomes a generated document. Client-side processing bounds the data volume, a bound that moves with format and memory, and static artefacts support no collaborative or server-mediated work. Where a project grows beyond the prototype, the obligations change along axes that tip independently, namely maintenance beyond the project's run time, use by third parties expecting support, multi-user operation over shared state, responsibility for data belonging to others, and institutional deployment with a commitment to availability. Where one of them tips, the standards of Research Software Engineering apply, and the knowledge base becomes the handover package with data description, user stories, acceptance criteria, design rationale and process record.
+
+The documented interfaces sort better by the epistemic function they serve than by data format or visualisation technique. Verification interfaces check intermediate results of a pipeline before errors propagate, exploration interfaces open structured data through coordinated views, edition interfaces render scholarly editions, capture interfaces support structured input and thereby reveal what the data model can express, and audit interfaces show the path to the results beside the results. The categories combine within one project, which is why a single dashboard for every case fails.
+
+## Practices that hold
+
+These practices grew out of applying Promptotyping and carried over into further projects.
+
+- Where rules or mappings can process research data, the agent writes a procedure that can be inspected, tested and rerun, and the dividing line runs along unambiguousness rather than complexity. Where an LLM must produce data directly, its raw output is preserved, every item counts as a proposal, and an artefact that shows unconfirmed data shows what has been confirmed and by whom.
+- At verification milestones the process halts and an intermediate result is checked with deterministic tools and scholarly judgement before the work continues, so that checking happens where an error would become expensive.
+- Browser interfaces show intermediate results beside their sources, so that the expert sees where the output is uncertain and has a place to intervene.
+- Subagents with defined permissions enforce a division of labour, while a role simulation inside one session enforces no permission and is weaker for it.
+- A user story stays a proposal until the named users confirm it, and it names the occasion at which that will be decided, because without a team conversation false stories go uncorrected.
+- Empirical or novelty claims used outside the project, in a paper, report or case study, are recomputed from the raw data by an independent agent, searched against with the aim of refutation and used only in the form the project's checks license.
+- Before a design decision the agent proposes alternatives and names what each trades for what.
+- When the agent does not deliver, three moves cover most failures, a fresh session that receives only the repository, a smaller task, and writing the missing fact or rule into its document before asking again when the same mistake recurs.
+- In workshops the demo repository starts with raw data, a short idea and an empty `knowledge/` folder, so that participants build the structure under guidance and understand why it looks as it does.
+
+The practice runs in two modes, distinguished by how the work is organised and not by project size. The default is one researcher with one agent. In complex projects a lead instance coordinates subagents with defined permissions and knowledge zones, and the burden shifts from steering one agent to designing a small team. The documented experience lies mostly with the first mode, and whether sustained multi-agent work holds up is open.
+
+## Fit check
+
+A bounded Promptotyping iteration is responsible only when each condition below can be answered with yes.
+
+- The project has accessible structured or semi-structured research data whose provenance and relevant semantics are sufficiently understood.
+- One scholarly purpose and a limited first artefact can be stated.
+- Researchers can inspect the relation between sources, data, project knowledge, implementation and output.
+- The project has capacity for verification and for the scholarly validation that decides acceptance.
+- Rights, privacy, institutional agreements, infrastructure and the terms of the model provider permit the intended processing, since the agent sends what it reads to an external model.
+- The expected state can be versioned, inspected and accepted for a stated purpose.
+
+An unknown answer is settled before implementation, and a no excludes the iteration in its current form. Public or institutional operation adds expertise in security, accessibility, maintenance, integration and operation. A positive fit check licenses a bounded trial and forecasts no comparative success, because the documented projects are not representative, the total human work is unmeasured and independent transfer has yet to be shown.
+
+## Sources
+
+- The dissertation in which Promptotyping originates, University of Graz, 2025, https://unipub.uni-graz.at/obvugrhs/12127700
+- The first public description on the DHCraft blog, 2025, https://dhcraft.org/excellence/blog/Promptotyping
+- The description on L.I.S.A., 2026, https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin
+- The paper on the practice, Pollin 2026, Promptotyping, submitted, maintained outside this repository.
+- The Promptotyping skill, https://github.com/DigitalHumanitiesCraft/promptotyping-skill
+- Two videos, an introduction to the practice (https://youtu.be/8sUe4Jkh3uQ) and a continuous demonstration that turns a set of spreadsheets into a dashboard (https://youtu.be/hd_a-NBO_S4).
+- The documented projects in [case-studies/](../case-studies/).

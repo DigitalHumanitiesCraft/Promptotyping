@@ -12,5 +12,5 @@ __pycache__/
 .claude/settings.local.json
 .claude/agent-memory/
 
-# Download archives, built by tools/build_downloads.py at delivery
+# The template archive, packed by the Pages workflow at delivery
 downloads/

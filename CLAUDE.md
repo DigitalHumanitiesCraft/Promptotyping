@@ -16,7 +16,7 @@ At every session start, after this file, read in this order:
    - what the repository delivers: `knowledge/specification.md`
    - how it is built: `knowledge/architecture.md`
    - how the page looks: `knowledge/design.md`
-   - where a decision comes from: `knowledge/journal.md`, older wording in `knowledge/journal-archive.md`
+   - where a decision comes from: `knowledge/journal.md`, the wording before 2026-11-14 in the Git history (`git show f211631:knowledge/journal.md`)
 
 ## Working rules
 

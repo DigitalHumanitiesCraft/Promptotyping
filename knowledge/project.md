@@ -1,108 +1,82 @@
 ---
 title: Project
 project:
-  name: Promptotyping Site
+  name: Promptotyping specification
   repository: https://github.com/DigitalHumanitiesCraft/Promptotyping
 status: complete
 language: en
-version: 0.7
+version: "2.0"
 created: 2026-05-09
 updated: 2026-11-14
 authors: [Christopher Pollin]
-generated-with: Claude Code (Claude Opus 4.8, Claude Opus 5.5)
+generated-with: Claude Code (Claude Opus 5.5)
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
 template:
-  name: Vorlage Projekt-Wissensdokument
+  name: Project template
   version: 0.3
-  url: https://dhcraft.org/Promptotyping/promptotyping-document/project
-  alias: https://dhcraft.org/Promptotyping/#promptotyping-document-project
-topics: ["[[Promptotyping]]", "[[Context Engineering]]"]
+  url: https://dhcraft.org/Promptotyping/templates/project.md
 knowledge-sources:
   institutions:
     Digital Humanities Craft OG: https://dhcraft.org
     University of Graz: https://www.uni-graz.at
-related: [INDEX, specification, architecture, design, governance, plan, journal]
+related: [INDEX, practice, specification, architecture, design, journal]
 ---
 
 # Project
 
-This document is the charter for the repository `DigitalHumanitiesCraft/Promptotyping`. The repository renders on https://dhcraft.org/Promptotyping/ as the public portal for Promptotyping. It integrates the practice specification, the case evidence, reusable templates, and the canonical skill. Its machine-readable endpoints resolve the `template:` URIs used by Promptotyping repositories.
-
-This English charter is part of an operator decision from 2026-07-23. The core knowledge documents (INDEX, project, specification, architecture, design) become English so the knowledge base can serve as the public showcase of the practice applied to itself. The journal and the report stay German.
-
-## Identity
-
-The site is the public counterpart to the Promptotyping practice as the vault develops it into systematic knowledge. Its primary user path is Understand, Evaluate, Apply. The specification, case evidence, tutorial, templates, and skill support understanding, assessment and application. The scholarly rationale and evaluation stand in the paper, which is maintained outside this repository and will be published in the journal.
-
-The audiences are ordered by product priority:
-
-- **Researchers and project leads** who want to assess and apply Promptotyping. They enter through the goal-based routes and leave with an executable tutorial, skill, and template set.
-- **Reviewers and reproducers** who check a Promptotyping repository against the practice. They enter through the convention or through a specific template address.
-- **Coding agents** that resolve `template:` URIs from repository frontmatter fields. They enter through versioned anchors and need the templates as a machine-readable endpoint.
+The repository `DigitalHumanitiesCraft/Promptotyping` is the public specification of Promptotyping, published at https://dhcraft.org/Promptotyping/. It holds one web page, the templates of the Promptotyping Documents with their convention, the documented use cases, and this project knowledge base, which describes Promptotyping and how it came about and is itself published as the worked example of the practice.
 
 ## Material basis
 
-The Promptotyping portal primarily mirrors knowledge. Its material basis is stated compactly here rather than in a root `data.md` (see [journal.md](journal.md), entry 2026-05-09 on the template-trigger correction).
+Promptotyping is a working practice that translates research data and their contexts into research artefacts that fit the researchers' purposes and ways of working. It does so through three forms of engineering. Knowledge Engineering makes explicit and curates what a project knows about its domain, its data and its aims. Context Engineering selects from this knowledge what an agent needs for a task. Agentic Engineering organises the work of the agents that build on it. The practice itself is stated in [practice.md](practice.md).
 
-Four source types feed the site.
+This repository processes no research data of its own. Its material is knowledge about the practice, drawn from five sources.
 
-**The paper.** The scholarly text, in its current version titled *Promptotyping. Translating Research Data into Research Artefacts through Knowledge, Context, and Agentic Engineering*, is maintained outside this repository and will be published in the journal. Neither the manuscript nor the material bound to it, its specification, review tooling, figures and audits, belongs to this repository (operator decision 2026-10-28).
+- The documented research software projects of Digital Humanities Craft and its partners, from which the practice was abstracted and which [case-studies/](../case-studies/) describes.
+- The dissertation at the University of Graz (2025) in which Promptotyping originates, and its descriptions on the DHCraft blog (2025) and on L.I.S.A. (2026).
+- The paper on the practice, Pollin 2026, Promptotyping, submitted.
+- The Promptotyping skill, maintained in its own repository.
+- The work on this repository itself, recorded in [journal.md](journal.md).
 
-**Vault templates and convention.** The template catalogue under `Vault Operations/Templates/Promptotyping/` and the convention under `Vault Operations/Konventionen/Konvention Promptotyping Documents.md` are the source of truth in the vault. Function names and subject prefixes are English. The public mirrors preserve their established URLs and anchors while adopting the current naming contract and template versions.
+## Wider context
 
-**The case-study collection.** Documented case studies in the vault under `Projects/Promptotyping/Case Studies/`. Each carries repository URL, live-demo URL where available, status, main claim, and methodological aspects. A curated subset renders as depth pages, the remainder as cards in the gallery. The curation and the exact selection are owned by [specification.md](specification.md) (A7).
+The paper is maintained outside this repository and will be published in a scholarly journal. Neither its manuscript nor the material bound to it, its specification, review tooling, figures and audits, belongs here, and the site states the definitions it shares with the paper in its own words. The [Promptotyping skill](https://github.com/DigitalHumanitiesCraft/promptotyping-skill) is the installable part of the practice and lives in its own repository, which is its single source. This repository describes and links the skill, and the skill reads the templates from here. The repository is a project of Digital Humanities Craft OG.
 
-**Videos on YouTube.**
+## What it is about
 
-- Part 1, explanation of the practice: https://youtu.be/8sUe4Jkh3uQ (the four forms of work, which the video calls phases, distillation, context-window management, Knowledge Documents, EIL, sycophancy)
-- Part 2, live demo with Claude Code: https://youtu.be/hd_a-NBO_S4 (a set of Excel documents turned into a functional dashboard, thinking matrix, context compression, iterative error correction)
+Researchers with structured data and a concrete question increasingly build their own research software with AI coding agents. Promptotyping states how such work stays answerable to the sources and the research purpose. The repository serves three groups of readers.
 
-## Scope
+- Researchers and project teams who want to judge whether the practice fits a project and to start a first iteration.
+- Reviewers who check a Promptotyping repository against the practice and its templates.
+- Coding agents that read a template or the convention from a stable address before they create a document.
 
-The refactor deleted the outdated November 2025 state of the repository (six-phase model, seven old use cases, decorative Living-Paper modules, no addressable template system) and rebuilt the site from the vault knowledge, with the versioned templates as anchors and curated case studies as cards.
+The repository applies the practice to itself. Its knowledge base follows the templates it publishes, so that a reader can see a filled project knowledge base beside the empty structures.
 
-Out of scope:
+## Technical implementation
 
-- **No scholarly paper.** The paper is authored and maintained outside this repository; the site neither mirrors nor renders it.
-- **No refactoring of the practice.** The four forms of work, the three document types, the template catalogue, and the concepts are fixed in the vault. The site mirrors them and does not revise them.
-- **No vault refactor.** Vault corrections happen only when mirroring surfaces a discrepancy, and they are decided in the vault.
-- **No parallel language architecture.** The public pages of the practice and the repository's core Knowledge Documents are English. Established German template mirrors and teaching materials remain bounded exceptions.
+The authors named in `CITATION.cff` are responsible for the practice and the repository, and Digital Humanities Craft OG publishes it. The site and the documents were built with AI coding agents under the practice they describe, with the researchers deciding what is accepted. How the repository is built is stated in [architecture.md](architecture.md).
 
-## Current state
+## Range of functions
 
-The repository baseline is complete. The site renders the Promptotyping portal, the templates with side panels and the frontmatter inspector, the curated use-case gallery with its depth pages, the tutorial, the start page's account of the skill with the link to its repository, and the reference pages. Mobile layout, accessibility behaviour, stable addressing, and search-engine metadata are part of that baseline. What each surface must do and how it is built is owned by [specification.md](specification.md), [architecture.md](architecture.md), and [design.md](design.md); the header and footer use the DHCraft watercolour mark.
+The single web page explains what Promptotyping is, shows its figure, names the terms, says how to start and lists the five subcommands of the skill, and from there it leads to the templates, the use cases and this knowledge base. Every template and the convention are readable as Markdown under a stable address, so that an agent can fetch them over HTTP without a browser. What the page must contain is stated in [specification.md](specification.md).
 
-The repository implementation of the three portal scenarios is complete and verified. Understand connects Application to the evidence; Evaluate connects the gallery and the case depth pages; Apply connects the tutorial, the skill repository, templates, and Working environment. Three independent agent role simulations tested these paths from public content only. Their agent-owned findings were integrated into the fit check, terminology, document routing, data-profile boundary, and Skill application. The tutorial source is version 0.4 and remains a draft until the operator accepts its text. Human comprehension, scholarly adequacy, comparative effectiveness, resource requirements, and independent transfer belong to the external evaluation of the release candidate.
+The page claims no more than the practice has shown. It states that Promptotyping has not been evaluated against other ways of working and that its transfer to other people and projects is open, and it presents the documented projects as cases that form no representative sample.
 
-The public deployment changes only through an explicit release decision under [governance.md](governance.md). The repository and the live site can therefore differ between release decisions without changing which repository sources are canonical.
+## Delimitations
 
-The phase-provenance lane was removed after the first deploy by operator decision (A2 in [specification.md](specification.md)).
+The repository deliberately leaves out the following.
 
-The FAIR infrastructure policy is dual licensing, MIT for code and CC BY 4.0 for documentation and Knowledge Documents, with third-party research data exempted per repository under its own rights statement. The repository root carries a MIT `LICENSE` and a `CITATION.cff`; the citation identity is Christopher Pollin, Digital Humanities Craft OG, ORCID 0000-0002-4879-129X.
+- The paper and any manuscript text, which appear only in the journal publication.
+- The skill, which lives in its own repository.
+- A tutorial, a worked workflow and teaching material, since the skill carries the procedure and the use cases show the practice at work.
+- A glossary page, since the page and [INDEX.md](INDEX.md) define the terms they use.
+- An evidence layer of sources, distillates and assertions, which was retired on 2026-11-14.
+- Research data, tooling for consistency checks and a build step.
 
-On 2026-11-14 the operator decided to keep the repository lean and retired the glossary, the Vault view with the Grounded Vault instance under `vault/`, the dated records under `snapshots/` and the eval cases under `tools/skill-evals/`. Their published addresses land on the start page.
+These boundaries keep one source for each kind of statement, so that the page, the templates and the skill cannot drift apart unnoticed.
 
-The chronological course and the lane cuts live in [journal.md](journal.md).
+## Licence
 
-## Relationship to the vault
-
-This knowledge base is a **mirror with a life of its own**. The vault templates that guide it are source of truth for the templates themselves. What is documented here is the *application* of those templates to this concrete refactor project, which triggers fire, which templates do not apply, which design decisions are made for this project. That is complementary to the vault template, the template describes the structural space and this document carries the filling.
-
-## Expected outcome
-
-- `https://dhcraft.org/Promptotyping/` guides a researcher or project lead through Understand, Evaluate, Apply.
-- The portal names the paper as the scholarly account of the practice and cites it once the journal has published it.
-- The catalogue templates are addressable under latest anchors (`#promptotyping-document-data` and so on), with snapshot sub-anchors added at later version jumps.
-- Subpath aliases (`/promptotyping-document/data`) serve humans; static Markdown URLs under `_content/` serve as the machine address (ADR-10).
-- Case-study depth pages plus a filterable, curated use-case gallery (A7).
-- The tutorial and canonical skill support a first documented Promptotyping iteration from the same public interface.
-- Repositories can write `template: { url: "https://dhcraft.org/Promptotyping/promptotyping-document/data" }` into their frontmatter and thereby point at the canonical latest specification.
-
-## Links
-
-- Vault knowledge document [[Promptotyping]], the conceptual core
-- Vault convention [[Konvention Knowledge Documents]], the structural principles
-- Vault templates [[Vorlagen Knowledge Documents]], the template catalogue
-- Pollin 2026, the paper (maintained outside this repository)
+Text, templates and documentation, including this knowledge base and the case studies, are licensed under CC BY 4.0, and code under the MIT License in `LICENSE`. The shared DHCraft web files carry their own licence (MIT for the files, the SIL Open Font License for the fonts), and the DHCraft mark is proprietary. Cite the practice through `CITATION.cff`, whose concept DOI resolves to the latest archived version.
