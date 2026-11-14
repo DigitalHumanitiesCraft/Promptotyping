@@ -52,12 +52,12 @@
     <path d="M688,62 H360 Q340,62 340,82 V148"/>
     <path d="M772,62 H1200 Q1220,62 1220,82 V148"/>
   </g>
-  <text class="head" x="730" y="24" style="font-size:17px;letter-spacing:2.500px">RESEARCHERS AND RESEARCH SOFTWARE DEVELOPERS</text>
+  <text class="head" x="730" y="24" style="font-size:17px;letter-spacing:2.500px">RESEARCHERS AND DEVELOPERS</text>
   <rect class="shape" x="690" y="36" width="80" height="52" rx="26"/>
   <circle class="person" cx="714" cy="55" r="7"/><path class="person" d="M701,77 C701,66 727,66 727,77"/>
   <circle class="person" cx="746" cy="55" r="7"/><path class="person" d="M733,77 C733,66 759,66 759,77"/>
   <text class="sub" x="520" y="50">direct the work</text>
-  <text class="sub" x="990" y="50">scholarly validation by the researchers</text>
+  <text class="sub" x="990" y="50">scholarly validation</text>
   <text class="head" x="340" y="178" style="font-size:17px;letter-spacing:2.500px">FOUR RECURRENT FORMS OF WORK</text>
   <g class="shape cat-forms">
     <ellipse cx="330" cy="245" rx="124" ry="55"/>
@@ -67,8 +67,7 @@
   </g>
   <text class="eng" x="330" y="380">Agentic</text>
   <text class="eng" x="330" y="398">Engineering</text>
-  <text class="sub" x="330" y="422" style="font-size:15px">with frontier</text>
-  <text class="sub" x="330" y="439" style="font-size:15px">LLM agents</text>
+  <text class="sub" x="330" y="424" style="font-size:15px">LLM agents</text>
   <text class="head" x="331" y="240">PREPARATION</text>
   <text class="sub" x="330" y="264" style="font-size:17px">sources, data, context</text>
   <text class="head" x="147" y="395" style="font-size:18px">EXPLORATION</text>
@@ -81,13 +80,11 @@
   <text class="sub" x="728" y="388" style="font-size:17px">each iteration</text>
   <text class="sub" x="730" y="424" style="font-size:17px">verification</text>
   <text class="sub" x="730" y="443" style="font-size:17px">agentic review</text>
-  <text class="eng" x="730" y="527">Context</text>
-  <text class="eng" x="730" y="545">Engineering</text>
-  <text class="sub" x="730" y="573" style="font-size:17px">context for</text>
-  <text class="sub" x="730" y="591" style="font-size:17px">each task</text>
+  <text class="eng" x="730" y="551">Context</text>
+  <text class="eng" x="730" y="569">Engineering</text>
+  <text class="sub" x="730" y="591" style="font-size:17px">for each task</text>
   <text class="sub" x="730" y="678" style="font-size:17px">maintains</text>
   <text class="head" x="1221" y="190">PROMPTOTYPE</text>
-  <text class="sub" x="1220" y="214" style="font-size:17px">a prototype with the project knowledge base and the research data it was built from</text>
   <text class="head" x="1221" y="262" style="font-size:17px;letter-spacing:2.500px">PROTOTYPE</text>
   <svg x="1067" y="274" width="305" height="185" viewBox="995 235 305 185">
   <g class="shape">
@@ -125,11 +122,10 @@
   <text class="mono" x="984" y="674" style="font-size:17px">specification.md</text>
   <text class="mono" x="1127" y="674" style="font-size:17px">journal.md</text>
   <text class="mono" x="1242" y="674" style="font-size:17px">CLAUDE.md</text>
-  <text class="sub" x="1044" y="702" style="font-size:17px">example files</text>
-  <text class="eng" x="1300" y="702" style="text-anchor:end">Knowledge Engineering</text>
+  <text class="eng" x="1064" y="702">Knowledge Engineering</text>
 
   <text class="head" x="1471" y="500" style="font-size:17px;letter-spacing:2.500px">RESEARCH DATA</text>
-  <text class="sub" x="1471" y="526" style="font-size:17px">modelled, the basis of building</text>
+  <text class="sub" x="1471" y="526" style="font-size:17px">the basis of building</text>
   <g class="shape">
     <path d="M1408,572 V640 A62,16 0 0 0 1532,640 V572"/>
     <ellipse cx="1470" cy="572" rx="62" ry="16"/>
@@ -139,6 +135,6 @@
   <text class="sub" x="1358" y="596" style="font-size:17px">describes</text>
 
   <text class="sub start" x="1234" y="772" style="font-size:17px">checking and use</text>
-  <text class="sub" x="1664" y="772" style="font-size:17px;text-anchor:end">each state can be versioned</text>
-  <text class="sub" x="775" y="826">knowledge curation records what was learned and corrects or removes what no longer applies</text>
+  <text class="sub" x="1664" y="772" style="font-size:17px;text-anchor:end">each state versioned</text>
+  <text class="sub" x="775" y="826">knowledge curation</text>
 </svg>
