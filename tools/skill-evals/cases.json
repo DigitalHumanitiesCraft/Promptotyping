@@ -4,6 +4,7 @@
     {
       "id": "integrate",
       "operation": "hand off",
+      "status": "retired with skill 2.0.0, which drops knowledge/handoff.md",
       "task": "Copy fixtures into an isolated repository and integrate the received contract.",
       "input": "fixtures/handoff-before.txt",
       "source": "fixtures/source-note.txt",
@@ -17,6 +18,7 @@
     {
       "id": "reject",
       "operation": "hand off",
+      "status": "retired with skill 2.0.0, which drops knowledge/handoff.md",
       "task": "Process the same point when the current specification already contains this contract.",
       "expect": [
         "Reasoned rejection as already integrated, no duplicate contract",
@@ -27,6 +29,7 @@
     {
       "id": "missing-source",
       "operation": "hand off",
+      "status": "retired with skill 2.0.0, which drops knowledge/handoff.md",
       "task": "Process the point with its source file absent.",
       "expect": [
         "Dependent integration stops",
@@ -37,6 +40,7 @@
     {
       "id": "missing-target",
       "operation": "hand off",
+      "status": "retired with skill 2.0.0, which drops knowledge/handoff.md",
       "task": "Process the point with current specification absent.",
       "expect": [
         "Dependent integration stops",
@@ -60,7 +64,7 @@
     },
     {
       "id": "prune-plan",
-      "operation": "prune",
+      "operation": "curate",
       "task": "Copy the plan as knowledge/plan.md into an isolated, committed repository and prune it using the journal note as evidence.",
       "input": "fixtures/prune-plan-before.txt",
       "source": "fixtures/prune-journal-note.txt",

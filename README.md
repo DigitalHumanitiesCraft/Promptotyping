@@ -34,7 +34,7 @@ A first iteration is meant for researchers and project teams with structured dat
    Before working in knowledge/, read .agents/skills/promptotyping/SKILL.md and follow the operation that fits the task.
    ```
 
-2. Take the files. The skill lies under [`skills/promptotyping/`](skills/promptotyping/) with eight operations, Orient, Explore, Distil, Implement, Curate, Synthesise, Prune and Hand off. The templates for the knowledge base lie under [`_content/promptotyping-document/`](_content/promptotyping-document/), and the page offers each one and both sets as archives.
+2. Take the files. The skill lies under [`skills/promptotyping/`](skills/promptotyping/) with five subcommands, orient, explore, distill, curate and handoff. The same skill is installable from [promptotyping-skill](https://github.com/DigitalHumanitiesCraft/promptotyping-skill). The templates for the knowledge base lie under [`_content/promptotyping-document/`](_content/promptotyping-document/), and the page offers each one and both sets as archives.
 
 3. Work in your own words. Create an empty project folder with your data, start the agent there and name the step you want, from Prepare to the acceptance, as the example on the page and the [tutorial](_content/tutorial.md) do. The skill carries the procedure behind each step. An agent that cannot load skills gets it when you give it [`SKILL.md`](skills/promptotyping/SKILL.md) to read first.
 

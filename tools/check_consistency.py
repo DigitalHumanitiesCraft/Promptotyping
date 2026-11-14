@@ -411,23 +411,25 @@ def check_start_page(documents) -> None:
         fail("start", "start page lists %s, which the catalogue does not carry" % slug)
 
     skill = read_text(SKILL_DIR / "SKILL.md")
-    operations = re.findall(r"^\| (Orient|Explore|Distil|Implement|Curate|Synthesise|Prune|Hand off) \|",
+    operations = re.findall(r"^\| `(orient|explore|distill|curate|handoff)` \|",
                             skill, re.M)
-    if len(operations) != 8:
-        fail("start", "SKILL.md no longer carries the eight operations in its table")
+    if len(operations) != 5:
+        fail("start", "SKILL.md no longer carries the five subcommands in its table")
     named = ", ".join(operations[:-1]) + " and " + operations[-1] if operations else ""
     if named not in plain(page):
-        fail("start", "the start page does not name the skill's operations as SKILL.md orders them")
+        fail("start", "the start page does not name the skill's subcommands as SKILL.md orders them")
 
     # Each example step names the skill section that carries its procedure,
     # because the page shows only the sentence a person says (A51).
     sections = set(re.findall(r"^## (.+?)\s*$", skill, re.M))
+    # A subcommand has its procedure in a reference file of its own (skill 2.0.0).
+    sections |= {path.stem for path in (SKILL_DIR / "references").glob("*.md")}
     steps = re.findall(r'<li data-skill="([^"]+)">', page)
     if not steps:
         fail("start", "the start page example names no skill section")
     for name in steps:
         if name not in sections:
-            fail("start", "an example step names %s, which SKILL.md does not carry as a section" % name)
+            fail("start", "an example step names %s, which the skill carries neither as a section nor as a reference file" % name)
 
     cases = {c["id"]: c for c in load_json(CASES)["caseStudies"]}
     shown = re.findall(r'<span data-case="([^"]+)">(.*?)</span>', page, re.S)

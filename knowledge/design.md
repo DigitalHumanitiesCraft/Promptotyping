@@ -7,7 +7,7 @@ status: complete
 language: en
 version: "1.0"
 created: 2026-05-09
-updated: 2026-11-10
+updated: 2026-11-14
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Opus 4.8, Claude Opus 5.5)
 method:
@@ -296,7 +296,7 @@ The page under `intro/` (A47 in [specification.md](specification.md)) addresses 
 | Section | Question it answers | Form |
 |---|---|---|
 | Hero | What is it, for whom, and how does a round run? | Title, one lead paragraph, the four parts as one line, audience line, two actions, and the playable example |
-| Try it | How do I start on my own data? | Tool line with the skill, seven steps (Set up, then the example's steps with Prune after Distil and Check and accept at the end), each on three levels, one paragraph on what the reader does and checks, one sentence in the copy field and the result after an arrow, and on wide screens a sticky project folder titled with the step in view, which also lists the generated profile and the index. Set up carries a schematic agent window |
+| Try it | How do I start on my own data? | Tool line with the skill, seven steps (Set up, then the example's steps with Cut to size after Distil and Check and accept at the end), each on three levels, one paragraph on what the reader does and checks, one sentence in the copy field and the result after an arrow, and on wide screens a sticky project folder titled with the step in view, which also lists the generated profile and the index. Set up carries a schematic agent window |
 | Good to know | What leaves my computer, what is it not, where do I read on? | Three columns of short sentences with source links; citation, templates and cases are linked to the start page, not repeated |
 
 ### Example
@@ -321,7 +321,7 @@ DHCraft corporate design, loosely. Tokens follow the dhcraft-site palette in OKL
 | project folder | Projektordner |
 | prototype | Prototyp |
 | Prepare, Explore, Distil, Implement, Check, Curate, Rebuild | Vorbereiten, Erkunden, Destillieren, Bauen, Prüfen, Kuratieren, Neu bauen |
-| Set up, Prune, Check and accept | Einrichten, Zuschneiden, Prüfen und annehmen |
+| Set up, Cut to size, Check and accept | Einrichten, Zuschneiden, Prüfen und annehmen |
 | sentence for the agent, result | Satz für den Agenten, Ergebnis |
 | method page | Methodenseite |
 

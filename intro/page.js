@@ -18,7 +18,7 @@
   const STEPS = [
     { actor: "you", new: ["data/letters.csv", "knowledge/project.md"], proto: "empty" },
     { actor: "agent", new: ["knowledge/data.md", "scripts/profile.py"], read: ["data/letters.csv", "knowledge/project.md"], proto: "empty" },
-    { actor: "both", new: ["knowledge/specification.md", "knowledge/design.md", "knowledge/verification.md", "knowledge/journal.md", "knowledge/handoff.md", "CLAUDE.md"], read: ["knowledge/project.md", "knowledge/data.md"], proto: "empty" },
+    { actor: "both", new: ["knowledge/specification.md", "knowledge/design.md", "knowledge/verification.md", "knowledge/journal.md", "CLAUDE.md"], read: ["knowledge/project.md", "knowledge/data.md"], proto: "empty" },
     { actor: "agent", new: ["index.html"], read: ["CLAUDE.md", "knowledge/specification.md", "knowledge/design.md", "knowledge/data.md"], proto: "v1" },
     { actor: "you", read: ["knowledge/project.md", "knowledge/specification.md", "index.html"], proto: "flagged" },
     { actor: "both", changed: ["knowledge/specification.md", "knowledge/design.md", "knowledge/verification.md", "knowledge/journal.md"], proto: "waiting" },
@@ -31,7 +31,7 @@
     {},
     { new: ["data/letters.csv", "knowledge/project.md"] },
     { new: ["knowledge/data.md", "scripts/profile.py", "generated/data-profile.md"], read: ["data/letters.csv", "knowledge/project.md"] },
-    { new: ["knowledge/INDEX.md", "knowledge/specification.md", "knowledge/design.md", "knowledge/verification.md", "knowledge/journal.md", "knowledge/handoff.md", "CLAUDE.md"], read: ["knowledge/project.md", "knowledge/data.md"] },
+    { new: ["knowledge/INDEX.md", "knowledge/specification.md", "knowledge/design.md", "knowledge/verification.md", "knowledge/journal.md", "CLAUDE.md"], read: ["knowledge/project.md", "knowledge/data.md"] },
     { changed: ["knowledge/specification.md", "knowledge/design.md", "knowledge/journal.md"] },
     { new: ["index.html"], read: ["CLAUDE.md", "knowledge/specification.md", "knowledge/design.md", "knowledge/data.md"] },
     { changed: ["knowledge/verification.md", "knowledge/journal.md"], read: ["index.html"] },

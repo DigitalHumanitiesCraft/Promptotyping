@@ -336,7 +336,7 @@ cp -r Promptotyping/skills/promptotyping ~/.claude/skills/</code></pre>
             </figure>
           </li>
           <li>
-            <p class="step-head"><span class="step-name">Take the files.</span> The skill gives an agent the operations Orient, Explore, Distil, Implement, Curate, Synthesise, Prune and Hand off. Each template is marked with the condition under which a project needs it, given in full on the <a href="#vorlagen">templates page</a>. Skill and templates are in the block below.</p>
+            <p class="step-head"><span class="step-name">Take the files.</span> The skill gives an agent the subcommands orient, explore, distill, curate and handoff. Each template is marked with the condition under which a project needs it, given in full on the <a href="#vorlagen">templates page</a>. Skill and templates are in the block below.</p>
           </li>
           <li>
             <p class="step-head"><span class="step-name">Work in your own words.</span> Create an empty project folder with your data, start the agent there and name the step you want, as the <a href="#start-example">example</a> does from Prepare on. The <a href="#tutorial">tutorial</a> explains each step and its check.</p>
@@ -348,7 +348,7 @@ cp -r Promptotyping/skills/promptotyping ~/.claude/skills/</code></pre>
           <div class="download-group">
             <p class="download-group-name">Skill</p>
             <ul class="download-list">
-              <li data-file="skill"><a class="file-get" href="skills/promptotyping/SKILL.md" download><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"></use></svg>SKILL.md</a> <span class="doc-when">eight operations</span></li>
+              <li data-file="skill"><a class="file-get" href="skills/promptotyping/SKILL.md" download><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"></use></svg>SKILL.md</a> <span class="doc-when">five subcommands</span></li>
             </ul>
             <a class="dh-btn download-all" href="downloads/promptotyping-skill.zip" download><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-archive"></use></svg>Skill package (ZIP)</a>
           </div>
@@ -380,7 +380,7 @@ cp -r Promptotyping/skills/promptotyping ~/.claude/skills/</code></pre>
         <h2 id="start-example">Example</h2>
         <p class="start-prose-line">An invented family correspondence of twelve letters, some dated only to a year or a season, becomes a timeline. With the skill installed as in the first step of <a href="#start-reuse">Reuse</a>, each step is one sentence in your own words, and the agent takes the procedure from the skill. An agent that cannot load skills gets the same procedure when you give it the <a href="skills/promptotyping/SKILL.md">skill file</a> to read first. The <a href="intro/">example round</a> plays the steps beside the project folder.</p>
         <ol class="steps example">
-          <li data-skill="Prepare">
+          <li data-skill="explore">
             <p class="step-head"><span class="step-name">Prepare.</span> Create an empty folder, download <a href="intro/example/letters.csv" download>letters.csv</a> into it and start the agent there. When it asks, give the purpose “see in which years the family wrote and where the correspondence has gaps”, the question “in which years did the family write, and where are the gaps?” and the user story “As an editor, I want to see all letters whose dating is uncertain next to their date evidence, so that I can decide which datings the edition can assert.”</p>
             <figure class="dh-code field is-prompt">
               <figcaption><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-prompt"></use></svg>Sentence for the agent</figcaption>
@@ -388,7 +388,7 @@ cp -r Promptotyping/skills/promptotyping ~/.claude/skills/</code></pre>
             </figure>
             <p class="step-result"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-result"></use></svg><span class="visually-hidden">Result. </span>A Git repository with the letters in <code>data/</code> and <code>knowledge/project.md</code>, which holds purpose, question and the provisional user story in your words.</p>
           </li>
-          <li data-skill="Explore">
+          <li data-skill="explore">
             <p class="step-head"><span class="step-name">Explore.</span> Check the statements the agent is least sure of against the rows they name.</p>
             <figure class="dh-code field is-prompt">
               <figcaption><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-prompt"></use></svg>Sentence for the agent</figcaption>
@@ -396,31 +396,31 @@ cp -r Promptotyping/skills/promptotyping ~/.claude/skills/</code></pre>
             </figure>
             <p class="step-result"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-result"></use></svg><span class="visually-hidden">Result. </span><code>knowledge/data.md</code> names its evidence rows and notes that many letters are dated only to a year or a season, such as spring 1848, while the counts stand in <code>generated/data-profile.md</code>.</p>
           </li>
-          <li data-skill="Distil">
+          <li data-skill="distill">
             <p class="step-head"><span class="step-name">Distil.</span> Ask of each acceptance criterion whether you could decide it in front of the finished page.</p>
             <figure class="dh-code field is-prompt">
               <figcaption><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-prompt"></use></svg>Sentence for the agent</figcaption>
 <pre><code>Distil the knowledge base for a timeline of the letters, built as a static web page without a build step.</code></pre>
             </figure>
-            <p class="step-result"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-result"></use></svg><span class="visually-hidden">Result. </span><code>specification.md</code> asks for one timeline of all letters, beside design, verification, index, journal, an empty handoff and <code>CLAUDE.md</code> or <code>AGENTS.md</code> in the root.</p>
+            <p class="step-result"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-result"></use></svg><span class="visually-hidden">Result. </span><code>specification.md</code> asks for one timeline of all letters, beside design, verification, index, journal and <code>CLAUDE.md</code> or <code>AGENTS.md</code> in the root.</p>
           </li>
-          <li data-skill="Prune">
-            <p class="step-head"><span class="step-name">Prune.</span> Approve only cuts that no user story needs.</p>
+          <li data-skill="curate">
+            <p class="step-head"><span class="step-name">Cut to size.</span> Approve only cuts that no user story needs.</p>
             <figure class="dh-code field is-prompt">
               <figcaption><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-prompt"></use></svg>Sentence for the agent</figcaption>
-<pre><code>Prune the knowledge base to a first version. Propose the cuts and wait for my approval.</code></pre>
+<pre><code>Curate the knowledge base down to a first version. Propose the cuts and wait for my approval.</code></pre>
             </figure>
             <p class="step-result"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-result"></use></svg><span class="visually-hidden">Result. </span>The map the agent had proposed is struck after your approval, and the journal records the reduction.</p>
           </li>
-          <li data-skill="Orient">
+          <li data-skill="orient">
             <p class="step-head"><span class="step-name">Orient.</span> Start a new session with no history.</p>
             <figure class="dh-code field is-prompt">
               <figcaption><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-prompt"></use></svg>Sentence for the agent</figcaption>
 <pre><code>Orient yourself and tell me what this project is, what the data afford and what comes next. Build nothing.</code></pre>
             </figure>
-            <p class="step-result"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-result"></use></svg><span class="visually-hidden">Result. </span>An account of the project from the folder alone. What it misses still lives only in someone's head and goes into the document it belongs to.</p>
+            <p class="step-result"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-result"></use></svg><span class="visually-hidden">Result. </span>An account of the project from the folder alone. What it misses still lives only in someone's head, and the agent names it as a gap.</p>
           </li>
-          <li data-skill="Implement">
+          <li data-skill="Rules for building">
             <p class="step-head"><span class="step-name">Implement.</span> Open the address and use the view on letters you know.</p>
             <figure class="dh-code field is-prompt">
               <figcaption><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-prompt"></use></svg>Sentence for the agent</figcaption>
@@ -428,7 +428,7 @@ cp -r Promptotyping/skills/promptotyping ~/.claude/skills/</code></pre>
             </figure>
             <p class="step-result"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-result"></use></svg><span class="visually-hidden">Result. </span>Version 1 shows every letter as a dot on the timeline, each on one day.</p>
           </li>
-          <li data-skill="Implement">
+          <li data-skill="Checking">
             <p class="step-head"><span class="step-name">Check.</span> Decide the remaining criteria yourself.</p>
             <figure class="dh-code field is-prompt">
               <figcaption><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-prompt"></use></svg>Sentence for the agent</figcaption>
@@ -436,7 +436,7 @@ cp -r Promptotyping/skills/promptotyping ~/.claude/skills/</code></pre>
             </figure>
             <p class="step-result"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-result"></use></svg><span class="visually-hidden">Result. </span><code>verification.md</code> separates the mechanical results from the criteria that need a human decision.</p>
           </li>
-          <li data-skill="Curate">
+          <li data-skill="curate">
             <p class="step-head"><span class="step-name">Curate.</span> Describe the fault you found in your own words.</p>
             <figure class="dh-code field is-prompt">
               <figcaption><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-prompt"></use></svg>Sentence for the agent</figcaption>
@@ -444,7 +444,7 @@ cp -r Promptotyping/skills/promptotyping ~/.claude/skills/</code></pre>
             </figure>
             <p class="step-result"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-result"></use></svg><span class="visually-hidden">Result. </span>The specification now requires an uncertain date to be drawn as a span, the design says how it looks, and the journal records why.</p>
           </li>
-          <li data-skill="Implement">
+          <li data-skill="Rules for building">
             <p class="step-head"><span class="step-name">Rebuild.</span> Inspect the new version against the new requirement.</p>
             <figure class="dh-code field is-prompt">
               <figcaption><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-prompt"></use></svg>Sentence for the agent</figcaption>
@@ -452,7 +452,7 @@ cp -r Promptotyping/skills/promptotyping ~/.claude/skills/</code></pre>
             </figure>
             <p class="step-result"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-result"></use></svg><span class="visually-hidden">Result. </span>Version 2 draws each letter with an uncertain date as a bar across the period it may come from.</p>
           </li>
-          <li data-skill="Implement">
+          <li data-skill="Checking">
             <p class="step-head"><span class="step-name">Accept and version.</span> Judge version 2 on letters you know and give your judgement in your own words.</p>
             <figure class="dh-code field is-prompt">
               <figcaption><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-prompt"></use></svg>Sentence for the agent</figcaption>
@@ -460,21 +460,13 @@ cp -r Promptotyping/skills/promptotyping ~/.claude/skills/</code></pre>
             </figure>
             <p class="step-result"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-result"></use></svg><span class="visually-hidden">Result. </span><code>verification.md</code> and <code>journal.md</code> carry the judgement in your words, and one commit holds documents and timeline.</p>
           </li>
-          <li data-skill="Synthesise">
-            <p class="step-head"><span class="step-name">Synthesise.</span> Ask for an account that the editors can read without the knowledge base.</p>
-            <figure class="dh-code field is-prompt">
-              <figcaption><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-prompt"></use></svg>Sentence for the agent</figcaption>
-<pre><code>Synthesise a short report for the editors on which datings the timeline supports.</code></pre>
-            </figure>
-            <p class="step-result"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-result"></use></svg><span class="visually-hidden">Result. </span>A dated report under <code>snapshots/</code>, each statement of which names the documents or rows it rests on.</p>
-          </li>
-          <li data-skill="Hand off">
+          <li data-skill="handoff">
             <p class="step-head"><span class="step-name">Hand off.</span> Before another person or session continues the work.</p>
             <figure class="dh-code field is-prompt">
               <figcaption><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-prompt"></use></svg>Sentence for the agent</figcaption>
 <pre><code>Hand off the project, so that someone else can continue from the repository.</code></pre>
             </figure>
-            <p class="step-result"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-result"></use></svg><span class="visually-hidden">Result. </span><code>handoff.md</code> holds only open points or its empty state, the journal names the last transition, and everything is committed.</p>
+            <p class="step-result"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-result"></use></svg><span class="visually-hidden">Result. </span><code>journal.md</code> opens with what is open, its newest entry names the last step, and everything is committed.</p>
           </li>
         </ol>
 

@@ -5,7 +5,7 @@ status: draft
 language: en
 version: "0.5"
 created: 2026-07-29
-updated: 2026-11-11
+updated: 2026-11-14
 machine-url: https://dhcraft.org/Promptotyping/_content/tutorial.md
 ---
 
@@ -84,7 +84,7 @@ One sentence in there is a choice you should know you are making. This tutorial 
 **Do this.** Run the scope check as its own move:
 
 ```
-Prune the knowledge base to a first version. Propose the cuts and wait for my approval.
+Curate the knowledge base down to a first version. Propose the cuts and wait for my approval.
 ```
 
 The skill's criterion for cutting is that whatever no user story carries goes, however reasonable it looks, and it looks for contradictions between the documents as well. Approve the cuts you agree with in your own words, and the agent applies only those and records the reduction in the journal.
@@ -155,6 +155,6 @@ The durable grounds of the judgement go into `knowledge/verification.md`. Add on
 
 ## Where this leaves you
 
-The next iteration starts from the documents, and that is the point of having written them. A new requirement, a corrected understanding of the data, or a new source enters the relevant document first, and implementation follows from it. The [canonical skill](#skills-promptotyping) carries this routing into later sessions; its Orient, Curate, Prune and Hand off operations keep the knowledge base true and lean as work continues. The [templates](#vorlagen) give every document you just wrote a fuller, versioned structural pattern; the catalogue is German, and your files map onto it as `project.md` to `project`, `INDEX.md` to `index`, `data.md` to `data`, `specification.md` to `specification`, `design.md` to `design`, `verification.md` to `verification`, `handoff.md` to `handoff`, `journal.md` to `journal`, and the root agent instruction document to `action-layer`. The [working-environment page](#arbeitsumgebung) explains how the vault, agent instruction document, harness, and skill fit together. The [best practices](#praxis) collect the working practices that grew out of documented projects, including the verification milestones and the script-versus-LLM separation you just used. The paper argues why the practice is built this way, with the [documented projects](#use-cases) as its evidence.
+The next iteration starts from the documents, and that is the point of having written them. A new requirement, a corrected understanding of the data, or a new source enters the relevant document first, and implementation follows from it. The [canonical skill](#skills-promptotyping) carries this routing into later sessions; its subcommands `orient`, `curate` and `handoff` keep the knowledge base true and lean as work continues. The [templates](#vorlagen) give every document you just wrote a fuller, versioned structural pattern; the catalogue is German, and your files map onto it as `project.md` to `project`, `INDEX.md` to `index`, `data.md` to `data`, `specification.md` to `specification`, `design.md` to `design`, `verification.md` to `verification`, `handoff.md` to `handoff`, `journal.md` to `journal`, and the root agent instruction document to `action-layer`. The [working-environment page](#arbeitsumgebung) explains how the vault, agent instruction document, harness, and skill fit together. The [best practices](#praxis) collect the working practices that grew out of documented projects, including the verification milestones and the script-versus-LLM separation you just used. The paper argues why the practice is built this way, with the [documented projects](#use-cases) as its evidence.
 
 One honest limit. This tutorial exercised the loop on a bounded first pass. What it cannot establish is that your artefact is scholarly adequate, since that depends on the judgement you brought to Steps 2 and 6, and it does not transfer to material you cannot verify. Where an artefact is to be operated durably, maintained, or handed to third parties, the boundary to Research Software Engineering applies, and the documents you now have are the handover package.

@@ -4,7 +4,7 @@ slug: overview
 status: complete
 language: en
 version: "1.1"
-updated: 2026-11-11
+updated: 2026-11-14
 mirrored: 2026-06-10
 machine-url: https://dhcraft.org/Promptotyping/_content/overview.md
 ---
@@ -44,7 +44,7 @@ The full account is in [Application](#application) and the glossary.
 
 ## Example
 
-The start page works through `intro/example/letters.csv`, an invented family correspondence with partly uncertain dates. For each form of work or skill operation it gives the one sentence a person says to the agent and what results, from Prepare through Explore, Distil, Prune, Orient, Implement, Check, Curate, Rebuild and acceptance to Synthesise and Hand off. The procedure behind each sentence stands in the skill. The [introduction](intro/) plays the same round.
+The start page works through `intro/example/letters.csv`, an invented family correspondence with partly uncertain dates. For each step it gives the one sentence a person says to the agent and what results, from Prepare through Explore, Distil, Cut to size, Orient, Implement, Check, Curate, Rebuild and acceptance to Hand off. The procedure behind each sentence stands in the skill. The [introduction](intro/) plays the same round.
 
 ## Limits, licence and citation
 

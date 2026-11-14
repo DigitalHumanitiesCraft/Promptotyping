@@ -431,9 +431,9 @@ class StartPageTest(CheckCase):
         self.assertIn("no entry for template plan", self.only_failure())
 
     def test_a_drifted_skill_operation_fails(self) -> None:
-        self.edit("Curate, Synthesise, Prune and Hand off", "Curate, Prune and Hand off")
+        self.edit("distill, curate and handoff", "distill and handoff")
         cc.check_start_page(self.documents)
-        self.assertIn("operations", self.only_failure())
+        self.assertIn("subcommands", self.only_failure())
 
     def test_a_missing_archive_link_fails(self) -> None:
         self.edit('href="downloads/promptotyping-templates.zip"', 'href="downloads/templates.zip"')
@@ -441,7 +441,7 @@ class StartPageTest(CheckCase):
         self.assertIn("promptotyping-templates.zip", self.only_failure())
 
     def test_an_example_step_without_its_skill_section_fails(self) -> None:
-        self.edit('<li data-skill="Synthesise">', '<li data-skill="Summarise">')
+        self.edit('<li data-skill="orient">', '<li data-skill="Summarise">')
         cc.check_start_page(self.documents)
         self.assertIn("Summarise", self.only_failure())
 

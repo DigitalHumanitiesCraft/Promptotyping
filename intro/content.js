@@ -35,7 +35,6 @@
     "knowledge/design.md",
     "knowledge/verification.md",
     "knowledge/journal.md",
-    "knowledge/handoff.md",
     "CLAUDE.md",
     "index.html",
   ];
@@ -94,7 +93,6 @@
         "knowledge/design.md": "how it shows things",
         "knowledge/verification.md": "how it is checked",
         "knowledge/journal.md": "what was decided, and why",
-        "knowledge/handoff.md": "inputs not yet worked in",
         "CLAUDE.md": "rules the agent reads first",
         "index.html": "the tool itself, a web page",
       },
@@ -118,7 +116,7 @@
     },
     try: {
       title: "Try it on your own data",
-      intro: "One dataset, one question, one small tool. With the Promptotyping skill installed, each step is one sentence you say to the agent in your own words, and the skill carries the procedure behind it. The steps are those of the example, with Set up before them and Prune after Distil, and they run through the four forms of work, Preparation, Exploration, Distillation and Implementation, as often as checking sends you back.",
+      intro: "One dataset, one question, one small tool. With the Promptotyping skill installed, each step is one sentence you say to the agent in your own words, and the skill carries the procedure behind it. The steps are those of the example, with Set up before them and Cut to size after Distil, and they run through the four forms of work, Preparation, Exploration, Distillation and Implementation, as often as checking sends you back.",
       toolsLabel: "You need",
       or: "or",
       tools: [
@@ -174,12 +172,12 @@
           title: "Distil",
           body: "Take one requirement in specification.md and ask whether you could decide, in front of the finished tool, whether it is met. The sentence chooses the simplest kind of tool, a web page that opens in your browser.",
           prompt: "Distil the knowledge base for a first tool, built as a static web page without a build step.",
-          result: "specification.md with your user stories as requirements you can test, design.md, verification.md, journal.md, an empty handoff.md, INDEX.md and CLAUDE.md (AGENTS.md for Codex), which tells every session to read knowledge/ first. They are the three types of document, declarative knowledge such as the specification, process knowledge such as the journal and agent instructions such as CLAUDE.md.",
+          result: "specification.md with your user stories as requirements you can test, design.md, verification.md, journal.md, INDEX.md and CLAUDE.md (AGENTS.md for Codex), which tells every session to read knowledge/ first. They are the three types of document, declarative knowledge such as the specification, process knowledge such as the journal and agent instructions such as CLAUDE.md.",
         },
         {
-          title: "Prune",
+          title: "Cut to size",
           body: "The agent reads its own documents for contradictions and for what no user story needs, an agentic review whose findings stay proposals. Approve only the cuts you agree with. Then start a new session and ask the agent to orient itself and explain the project from the folder alone. What it misses still lives only in your head and belongs in a document.",
-          prompt: "Prune the knowledge base to a first version. Propose the cuts and wait for my approval.",
+          prompt: "Curate the knowledge base down to a first version. Propose the cuts and wait for my approval.",
           result: "The same documents, reduced to what your user stories need, with the cuts recorded in journal.md.",
         },
         {
@@ -291,7 +289,6 @@
         "knowledge/design.md": "wie es Dinge darstellt",
         "knowledge/verification.md": "wie es geprüft wird",
         "knowledge/journal.md": "was entschieden wurde und warum",
-        "knowledge/handoff.md": "noch nicht eingearbeitete Eingänge",
         "CLAUDE.md": "Regeln, die der Agent zuerst liest",
         "index.html": "das Werkzeug selbst, eine Webseite",
       },
@@ -371,7 +368,7 @@
           title: "Destillieren",
           body: "Nehmen Sie eine Anforderung aus specification.md und fragen Sie, ob Sie vor dem fertigen Werkzeug entscheiden könnten, ob sie erfüllt ist. Der Satz wählt die einfachste Art von Werkzeug, eine Webseite, die sich im Browser öffnet.",
           prompt: "Destilliere die Wissensbasis für ein erstes Werkzeug, gebaut als statische Webseite ohne Build-Schritt.",
-          result: "specification.md mit Ihren User Stories als prüfbaren Anforderungen, design.md, verification.md, journal.md, ein leeres handoff.md, INDEX.md und CLAUDE.md (bei Codex AGENTS.md), nach der jede Sitzung zuerst knowledge/ liest. Das sind die drei Dokumenttypen, deklaratives Wissen wie die Spezifikation, Prozesswissen wie das Journal und Agenteninstruktionen wie CLAUDE.md.",
+          result: "specification.md mit Ihren User Stories als prüfbaren Anforderungen, design.md, verification.md, journal.md, INDEX.md und CLAUDE.md (bei Codex AGENTS.md), nach der jede Sitzung zuerst knowledge/ liest. Das sind die drei Dokumenttypen, deklaratives Wissen wie die Spezifikation, Prozesswissen wie das Journal und Agenteninstruktionen wie CLAUDE.md.",
         },
         {
           title: "Zuschneiden",

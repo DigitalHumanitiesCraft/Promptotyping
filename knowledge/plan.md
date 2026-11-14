@@ -7,7 +7,7 @@ status: active
 language: en
 version: "0.6"
 created: 2026-07-29
-updated: 2026-11-05
+updated: 2026-11-14
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5, Claude Opus 5.5)
 method:
@@ -55,5 +55,7 @@ archived execution order is not an active instruction.
 ## Practice-maintenance lanes
 
 The current `knowledge/journal.md` predates template version 0.6 and remains a narrative, oldest-first project record. A later repository-specific migration will apply the entry fields, newest-first order and semantic compaction rule of version 0.6 against a clean Git baseline, protecting entries cited outside the journal. That migration will preserve every substantive statement through an explicit disposition and will not create `journal-archive.md`.
+
+Since 2026-11-14 the skill is version 2.0.0 with five subcommands and no longer uses `knowledge/handoff.md`. Three things in this repository still describe the earlier state and follow in a vault session, where the templates originate. The convention and the catalogue name `handoff` as a mandatory document. The journal template excludes open points and an archive, while the skill writes a section `## Open` at the beginning of the journal and keeps condensed entries in `journal-archive.md`. And this repository's own knowledge base and its working rules in `CLAUDE.md` still carry `handoff.md`. Until then the paragraph above on the journal migration describes the earlier decision. The four eval cases for processing an inbox are marked as retired, and cases for `orient`, `explore`, `distill` and `handoff` do not exist yet.
 
 The canonical Promptotyping skill lies in this repository under `skills/promptotyping/` since 2026-11-10 (A42). Open are the relation of the earlier skill repository `DigitalHumanitiesCraft/promptotyping-skill` to this package, which the operator settles with the project partner, and runs of the eval cases as isolated agent tasks. Installed copies remain outside repository synchronisation.
