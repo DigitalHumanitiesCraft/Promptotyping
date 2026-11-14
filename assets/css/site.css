@@ -1,10 +1,10 @@
 /* The single page of the Promptotyping site. Colours, type and the shared blocks (header,
-   footer, button, code block, figure frame) come from assets/dhcraft/. This file only lays
-   out the page: sections, the one-line rows and the start prompt. */
+   footer, button, copy field, figure frame) come from assets/dhcraft/. This file lays out
+   the page and overrides a shared value only where knowledge/design.md records it. */
 
 /* The page raises the contrast of the shared tokens: a white ground and the deepest ink,
    after the operator found the page too grey on 2026-11-14. */
-:root { --dh-ground: #ffffff; --dh-ink: #161d38; --dh-ink-soft: #454d66; }
+:root { --dh-ground: #ffffff; --dh-ink: #161d38; --dh-ink-soft: #454d66; --text-width: 52rem; }
 
 html { scroll-behavior: smooth; scroll-padding-block-start: var(--dh-space-5); }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
@@ -18,11 +18,11 @@ h2 { margin: 0 0 var(--dh-space-3); }
 h3 { margin: var(--dh-space-6) 0 var(--dh-space-2); }
 main p { margin: 0 0 var(--dh-space-4); }
 
-/* Text, lists and blocks share one right edge, the text width. Only the figure and the
-   lines between sections take the full page width. The shared measure counts in characters
-   and would give the larger lead its own edge, so the page sets one width in rem. */
-:root { --text-width: 52rem; }
-.lead, .dh-prose, .rows, .section-head, .dh-code { max-inline-size: var(--text-width); }
+/* Text, lists and blocks share one right edge, the text width, which the page sets in rem
+   because the shared measure counts in characters. The copy field is indented, so its
+   width is shorter by its indent and it ends at the same edge. */
+.lead, .dh-prose, .rows, .section-head { max-inline-size: var(--text-width); }
+.dh-code { max-inline-size: calc(var(--text-width) - var(--dh-space-4)); }
 
 /* The lead stands in the size of the body text, so the first screen holds three text styles,
    the title, the text and the name in the header. */
@@ -51,8 +51,8 @@ main p { margin: 0 0 var(--dh-space-4); }
 .rows a { font-weight: 600; text-decoration: none; }
 .rows a:hover, .rows a:focus-visible { text-decoration: underline; }
 .rows code { font-size: 0.92em; }
-/* A subcommand is typed and leads nowhere, so it stands in the regular weight, and the
-   semibold weight stays the sign of a link. */
+/* A subcommand is typed and leads nowhere, so it keeps the regular weight of its face and
+   stays on one line, and the semibold weight stays the sign of a link. */
 .calls > li > code { white-space: nowrap; }
 
 /* The start prompt is prose a reader copies, so its lines wrap inside the field. It stands

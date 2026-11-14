@@ -24,17 +24,20 @@ SOFTWARE.
 
 Dual licensing
 
-The MIT License above covers the code in this repository (HTML, CSS,
-JavaScript, and the Python tooling under vault/tools/).
+The MIT License above covers the code in this repository (HTML, CSS and
+JavaScript).
 
 The content of this repository is licensed under the Creative Commons
 Attribution 4.0 International License (CC BY 4.0):
 https://creativecommons.org/licenses/by/4.0/
 
-This covers the Markdown content under _content/, the knowledge base under
-knowledge/, the Grounded Vault under vault/ (excluding vault/tools/), and the
-prose texts rendered on the site. Attribution: Christopher Pollin, Digital
+This covers the templates and their convention under templates/, the knowledge
+base under knowledge/, the case studies under case-studies/ and the prose texts
+of the site and of the README. Attribution: Christopher Pollin, Digital
 Humanities Craft OG.
+
+The shared DHCraft web files under assets/dhcraft/ carry their own licence in
+assets/dhcraft/LICENSE.md, and the DHCraft mark is proprietary.
 
 This repository contains no third-party research data; no third-party data
 clause applies.

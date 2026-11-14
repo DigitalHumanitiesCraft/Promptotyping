@@ -32,15 +32,15 @@ The repository is a static site without a build step, one HTML page beside folde
 
 ## Stack
 
-The page is HTML and CSS, and its only script is the copy button of the shared DHCraft files. There is no framework, no package manager, no bundler and no runtime CDN, and any library is vendored into `assets/` under the rule for libraries in [practice.md](practice.md#the-artefact-and-its-boundary). Fonts and the shared DHCraft design files lie in `assets/dhcraft/`, unchanged copies from the brand-assets repository. The documents are Markdown with YAML frontmatter, and GitHub renders them for human readers.
+The page is HTML and CSS, and its only script is the copy button of the shared DHCraft files. The page addresses its own stylesheets and this script with a version in the query string, which changes whenever one of them changes, so that a browser does not pair a new page with an older cached file. There is no framework, no package manager, no bundler and no runtime CDN, and any library is vendored into `assets/` under the rule for libraries in [practice.md](practice.md#the-artefact-and-its-boundary). Fonts and the shared DHCraft design files lie in `assets/dhcraft/`, unchanged copies from the brand-assets repository. The documents are Markdown with YAML frontmatter, and GitHub renders them for human readers.
 
 ## Components
 
 | Component | Purpose | Interface |
 |---|---|---|
 | `index.html` | The single page | Static markup that reads without JavaScript |
-| `404.html` | The page GitHub Pages serves for an address that is no file | Static markup |
-| `assets/` | Styles, fonts, the DHCraft mark, the figure and the copy script | Loaded by the page from the same origin |
+| `404.html` | The page GitHub Pages serves for an address that is no file | Static markup with a short inline script that leads the old address of a template to its new one |
+| `assets/` | Styles, fonts, the DHCraft mark, the two figures and the copy script | Loaded by the page from the same origin |
 | `templates/` | The eleven templates and the convention | One Markdown file per slug, `templates/<slug>.md` |
 | `case-studies/` | The documented use cases | One Markdown file per case |
 | `knowledge/` | This project knowledge base, published as the worked example | Markdown files, entry point `INDEX.md` |
@@ -92,7 +92,7 @@ Beside the components above, the repository root holds these files.
 | `README.md` | What Promptotyping is and how to start, for readers on GitHub |
 | `CHANGELOG.md` | Changes per release |
 | `CITATION.cff` | Citation metadata with the concept DOI |
-| `LICENSE` | The MIT licence for code |
+| `LICENSE` | The MIT licence for code and the statement that text and templates stand under CC BY 4.0 |
 | `CLAUDE.md` | The agent instructions of this repository |
 | `.github/workflows/pages.yml` | The publishing workflow |
 
