@@ -15,11 +15,11 @@ This template structures the Specification document of a Promptotyping project k
 
 The template holds for every Promptotyping repository, because the [convention](convention.md) lists the Specification function as always relevant. In very small projects it can be integrated into `project.md`.
 
-The document arises early, typically in Preparation and Exploration, and afterwards lives in three rhythms. The requirements largely stay as they are, the range of functions is refactored for each release, and the decisions grow monotonically at the moment they are taken. The distillation boundary is reached when these rhythms drift apart as rhythms of separate files. The document is then split by Routing Question, for instance into `system-specification.md`, `architecture-decisions.md` and `user-stories.md`.
+The document arises early, typically in Preparation and Exploration, and afterwards lives in three rhythms. The requirements largely stay as they are, the range of functions is refactored for each release, and the decisions grow monotonically at the moment they are taken. The distillation boundary is reached when these rhythms drift apart as rhythms of separate files. The document is then split by Routing Question, for instance into `system-specification.md`, `feature-specification.md` and `architecture-decisions.md`.
 
 Splitting is the norm in larger projects. They regularly divide the Specification function among specialised carriers such as `system-specification.md`, `feature-specification.md` and `architecture-decisions.md`. Independent research questions receive functions tied to their subject, such as `research-analysis.md` or `research-exploration.md`. The division follows independent Routing Questions or update cycles. This template describes the consolidated single carrier `specification.md`. In a split, structural principles and frontmatter schema apply to each file.
 
-Usage scenarios are integrated. User stories from the user's perspective in the format "As [role], who …, I want …, so that …" have belonged in `specification.md` as a section of their own (epics plus user stories) since the change of the convention on 2026-05-30. A separate `user-stories.md` is then no independent document. It is the split-off section on epics and user stories of this specification, a subdocument of the Specification function. It is the documented exception for large projects (typically edition projects) whose Specification function is split anyway. In that case the structural principles of the section Epics and user stories of this template apply to the split-off file, and a pointer remains in its place in `specification.md`. The split is reversible. teiCrafter moved the separate file back into the specification on 2026-06-12 and kept the scenarios as "Acceptance Scenarios" ("a usage scenario is a requirement seen from the user's side"). This in-spec form is an equivalent alternative to the section on epics and user stories.
+Usage scenarios are integrated. User stories in the form "As a ..., I want to ..., so that I can ..." have belonged in `specification.md` as a section of their own (epics plus user stories) since the change of the convention on 2026-05-30. An older project may still keep them in a separate `user-stories.md`. The principles of the section Epics and user stories then apply to that file, a pointer stands in its place in `specification.md`, and the file can be moved back. teiCrafter moved its separate file back into the specification on 2026-06-12 and kept the scenarios as "Acceptance Scenarios" ("a usage scenario is a requirement seen from the user's side"). This in-spec form is an equivalent alternative to the section on epics and user stories.
 
 ## Function of the document
 
@@ -31,7 +31,7 @@ The document addresses three groups of readers. A reviewer checks whether the re
 
 Three principles carry the document.
 
-First, the sections are separated by their rhythm of updating. Requirements are static and rarely rewritten, since they record what was originally wanted. Epics and user stories share this slow rhythm, and only their validation status is updated (hypothesis to validated). The range of functions is refactored for each release, since it describes the current shape of the system. Decisions grow monotonically, since they are added and never overwritten. These rhythms can coexist in one file only if they are kept as separate sections.
+First, the sections are separated by their rhythm of updating. Requirements are static and rarely rewritten, since they record what was originally wanted. Epics and user stories share this slow rhythm, and mainly their status is updated (proposal to confirmed). The range of functions is refactored for each release, since it describes the current shape of the system. Decisions grow monotonically, since they are added and never overwritten. These rhythms can coexist in one file only if they are kept as separate sections.
 
 Second, each decision has four parts, context, choice, justification and effect. A decision without justification is an assumption, and one without an observed effect is a claim. The ADR format (Architecture Decision Record) is the established form for these four parts. It is applied here to all decisions, including those beyond architecture.
 
@@ -43,7 +43,7 @@ The document follows the frontmatter schema of the [convention](convention.md) (
 
 - `topics:` typically holds `[[Requirements Engineering]]`, `[[Decision Records]]` (or `[[ADR]]`) and `[[User Stories]]`. These place the agent in the methodological fields of knowledge that carry formal requirements, usage scenarios and the documentation of decisions.
 - `knowledge-sources:` is rarely used, because the Specification carries knowledge internal to the project and few external connections.
-- `related:` typically holds `project`, `data`, `architecture` and `design`, and additionally `user-stories` where the stories are split off. The Specification is the hub document of the function of the same name and refers in both directions.
+- `related:` typically holds `project`, `data`, `architecture` and `design`. The Specification is the hub document of the function of the same name and refers in both directions.
 
 ## Sections in detail
 
@@ -59,7 +59,18 @@ This section carries formal requirements. Narrative scenarios from the perspecti
 
 ### Epics and user stories
 
-This section documents who uses the system how and why. Epics are thematic bundles of related scenarios (typically three to five, for instance central research operations, scholarly safeguarding, conceptual orientation), and beneath them stand the individual stories in the format "As [role], who [context], I want [goal], so that [benefit]." Each story records its epistemic status (validated by whom and when, or an assumption with the observation point "Effect: to be observed" plus a resolving event) and a derivation as links into the project knowledge base. The derivation names which requirement (FR-NN), which component in `architecture.md` or `design.md` and which terms from `INDEX.md` the story leads to. The structural principles of this section are the three-part form of the story, the separation of the user's perspective from the system's, the obligation to state the derivation, and the epistemic status. If large edition projects split this section off into a separate `user-stories.md` (the documented exception), a pointer remains here.
+This section documents who uses the artefact how and why. It follows Scholar-Centred Design, in which the researchers' knowledge of the sources, their methods and their research agenda enter the development. A persona names a kind of researcher and the analytical approach they bring, such as a social historian who studies community relations. An epic names a large body of work for that persona, such as social networks and community relationships. A user story breaks an epic down in the form "As a ..., I want to ..., so that I can ...", and each story carries an acceptance criterion the researchers can decide in front of the running artefact.
+
+Four principles hold for the stories.
+
+1. A story states what the persona wants and why. What the system provides belongs in the requirements, so that the stories do not turn into feature lists in disguise.
+2. Each story has persona, goal and benefit. A story without a benefit is a wish for a function, and a story without a persona is a generic requirement.
+3. Each story carries a stable identifier (US-NN), to which acceptance criteria, tests and journal entries refer, and a derivation into the knowledge base. The derivation names the requirement (FR-NN), the component in `architecture.md` or `design.md` and the terms from `INDEX.md` the story leads to.
+4. Each story carries its status. Stories are elicited with the researchers at their material and are theirs. A story the agent proposes, or one a proxy wrote for the persona, stays a proposal until the researchers adopt it, and the entry names the occasion at which this will be decided. Priorities are set with the researchers, and what no story carries is left out, however reasonable it looks.
+
+A script can decide whether each story has the story form with persona and goal, contains nothing beyond persona, goal and benefit, concerns exactly one feature, occurs only once, follows the same form as the other stories, and carries an identifier, an acceptance criterion and a status. For the status the script checks presence and leaves its truth open. A person decides whether the goal names a feature and the benefit a reason, whether the story names the problem and leaves its solution open, whether its terms allow only one reading, whether stories contradict each other, whether together they leave no step of the use missing, and whether a story depends on another, in which case the dependency is declared. Whether a story holds for its persona is confirmed only by the researchers, with who confirmed it and when.
+
+Where an older project keeps the stories in a separate `user-stories.md`, a pointer stands here.
 
 ### Range of functions
 
@@ -131,22 +142,26 @@ related: [project, data, architecture, design]
 
 ## Epics and user stories
 
-<!-- Epics as thematic bundles, stories beneath them. Per story: three-part form, validation status, derivation. If user-stories.md is split off (exception for large edition projects), only a pointer here. -->
+<!-- Personas, an epic per large body of work, stories beneath it. Per story: identifier, story sentence, acceptance criterion, status, derivation. -->
 
-### [Epic 1: for example central research operations]
+Persona. [Kind of researcher and the analytical approach they bring.]
 
-#### [Story title]
+### [Epic 1: for example social networks and community relationships]
 
-*As [role], who [context], I want [goal], so that [benefit].*
+#### US-01 [Story title]
 
-Validation: [validated by role/person on YYYY-MM-DD | assumption (proxy: who), Effect: to be observed, Resolution: event]
+*As a [persona], I want to [goal], so that I can [benefit].*
+
+Acceptance criterion: [What the researchers can decide in front of the running artefact.]
+
+Status: [proposal (agent | proxy: who), decided at: occasion | confirmed by role on YYYY-MM-DD]
 
 Derivation:
 - Requirement FR-NN
 - Component [[design#Component]] (or [[architecture#Component]])
 - Terms [[INDEX#Term A]], [[INDEX#Term B]]
 
-### [Epic 2: for example scholarly safeguarding]
+### [Epic 2: for example ...]
 
 #### [Story title]
 
@@ -199,7 +214,7 @@ The template also serves as a yardstick for reviewing an existing Specification.
 
 HerData transferred the formerly separate files `features.md` and `decisions.md` into a consolidated `specification.md`, with drift between the files as the documented reason. The decisions section works with the four-part scheme "context, choice, justification, effect". One example is the decision on the accent colour, which documents as an ADR the change from Forest Green to Academic Blue with a justification based on a conflict. HerData is thus the reference case of the norm of consolidation.
 
-sugw-Edition likewise merged the former `requirements.md` into `specification.md` but still keeps the usage scenarios as a separate `knowledge/user-stories.md` with derivation. It is the reference case for the documented exception of the split-off story file (the section Epics and user stories of this template, change of the convention on 2026-05-30). Both examples were verified against the repositories on 2026-06-09. Further empirical findings on the range of Specification forms are in the study of action layer and journal practice in Promptotyping repositories, 2026-06.
+sugw-Edition likewise merged the former `requirements.md` into `specification.md` but still keeps the usage scenarios as a separate `knowledge/user-stories.md` with derivation. It is the reference case for an older project whose story file predates the change of the convention on 2026-05-30. Both examples were verified against the repositories on 2026-06-09. Further empirical findings on the range of Specification forms are in the study of action layer and journal practice in Promptotyping repositories, 2026-06.
 
 The failure pattern found by the content audit of July (2026-07-19, findings of the content audit of Promptotyping knowledge bases) is the factually outdated specification in an active project knowledge base, a range of functions that describes a superseded state of the system while the code has long moved on. The range of functions is the only section that must be actively updated with each release. If that is neglected, precisely the central document on what the system does becomes the wrong source.
 

@@ -132,14 +132,14 @@ related: [specification, journal, index]
 
 | Phase | Milestones | Quality gate |
 |---|---|---|
-| Phase 0 — [Name] | M1 [Short name] | — |
-| Phase 1 — [Name] | M2 [Short name] | Gate A |
+| Phase 0. [Name] | M1 [Short name] | none |
+| Phase 1. [Name] | M2 [Short name] | Gate A |
 
-### Phase 0 — [Name]
+### Phase 0. [Name]
 
 **Goal:** [One sentence.]
 
-#### Milestone 1 — [Short name]
+#### Milestone 1. [Short name]
 
 **Entry condition:** [What must be true beforehand.]
 
@@ -156,8 +156,8 @@ Status (YYYY-MM-DD): [Where this milestone currently stands.]
 
 | Milestone | Status | Notes |
 |---|---|---|
-| M1 — [Short name] | pending | |
-| M2 — [Short name] | pending | |
+| M1 [Short name] | pending | |
+| M2 [Short name] | pending | |
 
 Legend: completed, in progress, pending.
 

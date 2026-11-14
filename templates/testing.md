@@ -68,7 +68,19 @@ This section makes the blind spots of the test strategy explicit. For each gap i
 
 ### How to Run
 
-This section enables a third party to run the tests. It gives the concrete commands in a code block, each with a comment on what it checks and which target state it has. teiCrafter gives "node test/tools/run_all.mjs" as the one regression gate plus the individual proofs with target states. M3GIM gives "pytest tests/ -m 'not slow'" plus the determinism variant. co-ocr-htr gives the npm test commands. Where needed, environment overrides for paths and data sources belong here (M3GIM and teiCrafter both have such overrides). Here the document acts as an agent instruction document, with instructions that can be executed directly.
+This section enables a third party to run the tests. It gives the concrete commands in a code block, each with a comment on what it checks and which target state it has. teiCrafter gives "node test/tools/run_all.mjs" as the one regression gate plus the individual proofs with target states. M3GIM gives "pytest tests/ -m 'not slow'" plus the determinism variant. co-ocr-htr gives the npm test commands. Where needed, environment overrides for paths and data sources belong here (M3GIM and teiCrafter both have such overrides). The commands are written so that a person or an agent can execute them directly.
+
+### Claims carried outside the project (optional)
+
+This section applies when the project carries empirical findings or claims of novelty outside, in a paper, a proposal, a report or a public site. Such a claim is checked against the research data before it leaves the project and is used outside only in the form the check allows. A project that explores only internally leaves the section out.
+
+- Each check is an attempt to refute the claim. A claim holds when the attempt fails. Agreement among several checkers is a signal and settles nothing by itself.
+- Each result takes one value from a small closed set of verdicts, and each verdict carries its consequence. A minimal set is holds (use the claim), partly holds (correct the wording before use) and does not hold (withhold the claim).
+- The check runs as a chain. A deterministic check by script comes first (quotations identical with the source, references resolve), then an agentic review, then the scholarly validation by the researchers. Only the researchers set the status confirmed.
+- The checker sees the source passage and the claim and does not see the author's reasoning, so that the reasoning cannot anchor the judgement.
+- A claim of novelty is searched with the aim of refuting it, and its entry names the nearest prior work found.
+- What the check cannot decide is listed as open, with the reason it cannot be decided and the person who is to decide it.
+- The section states the limits of the method, for instance that a check without ground truth measures plausibility and cannot establish correctness, and that an error below the checker's threshold of detection passes. A check without stated limits is itself an unchecked claim.
 
 ### Pattern: test in the same commit (optional)
 
@@ -93,7 +105,7 @@ This section records the state of evidence of the suite on a fixed date, in a ta
 ## What does not belong here
 
 - Stack and architecture. Which technologies the system uses and how it is built belongs in `architecture.md`. The testing document names the test runner as a tool (Vitest, pytest, Node harness) and leaves the application stack out.
-- Provenance of substantive changes. Transitions in the test strategy that were integrated, rejected or corrected are recorded in `journal.md`. The testing document, as an agent instruction document, carries the current state of guarantees. References to milestones in proof names remain admissible as stable IDs.
+- Provenance of substantive changes. Transitions in the test strategy that were integrated, rejected or corrected are recorded in `journal.md`. The testing document carries the current state of guarantees. References to milestones in proof names remain admissible as stable IDs.
 - Requirements. Which functionality the system is to provide belongs in `specification.md`. The testing document checks against these requirements and does not formulate them.
 - Implementation of the test code. How a proof is built internally belongs in the test code (test names, assertions, comments). The document carries the claim of each proof and leaves its code out.
 - CI/CD configuration. The workflow file is the source of truth, in `architecture.md` or `.github/workflows/`. The testing document names the trigger and leaves the configuration out.
@@ -171,6 +183,18 @@ related: [architecture, specification, data]
 <!-- ============================================================ -->
 <!-- OPTIONAL SECTIONS: delete those that do not apply before the commit -->
 <!-- ============================================================ -->
+
+## Claims carried outside the project
+
+<!-- Trigger: findings or claims of novelty used in a paper, proposal, report or public site. Per claim: wording, source passage in the data, verdict with its consequence, the last step of the chain that checked it. Claims of novelty name the nearest prior work. The checker sees source passage and claim, not the author's reasoning. Only the researchers set confirmed. -->
+
+| Claim | Source passage | Verdict | Checked by |
+|---|---|---|---|
+| [Wording] | [File, rows or elements] | [holds: use / partly holds: correct / does not hold: withhold] | [script / agentic review / researchers] |
+
+Open: [Claim, why it cannot be decided, who decides.]
+
+Limits: [What the check cannot establish.]
 
 ## Pattern: test in the same commit
 

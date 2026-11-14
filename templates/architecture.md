@@ -49,6 +49,8 @@ The lead names the architectural pattern in two to three sentences. It states th
 
 This section names and justifies the technologies used, meaning languages, frameworks, build tooling and platforms. Each choice receives one sentence of justification unless it is trivial, for instance "Vanilla JavaScript without a framework, because the project is a research frontend and maintenance effort is to be kept minimal". Version information is sparing. The major version is enough, and minor versions stand in `package.json` or `requirements.txt`.
 
+Several projects that build the same kind of artefact, such as static web tools, can share a technology baseline, one document that holds their common technology rules with their justification. A project that follows such a baseline names it here by its address and records only its own stack and its deviations from the baseline, each with its justification. A deviation that this section does not record is a review finding.
+
 ### Components
 
 This section gives the main modules and their responsibility, for each component its purpose, interface and module boundary. A short list or table is usually clearer than extended prose. Components are named at a granularity that tells a developer which file or folder is meant.
@@ -60,6 +62,10 @@ This section shows how data flow from source to display. It gives the pipeline s
 ### External models and services
 
 This section documents all external processing resources the system uses. For each model or service it gives the role in the pipeline, provider, endpoint format, authentication, limits and form of output. The section normally remains in `architecture.md` or `pipeline-architecture.md`. When it has a maintenance cycle of its own, `model-services-architecture.md` comes into being.
+
+### Interfaces to other projects or systems (optional)
+
+This section applies when the project exchanges data, formats or responsibilities with another project or an external system. For each interface it names the counterpart and the direction (the project delivers, receives or both), the exchange format with its required and optional fields and any deliberate omissions, the point at which responsibility passes from one side to the other, and the acceptance criteria, each with the way it is checked. When both sides describe the same contract, exactly one of the two documents is declared the source of truth, and each links to the other.
 
 ### Security
 
@@ -121,7 +127,7 @@ related: [data, specification, design]
 
 ## Stack
 
-<!-- Languages, frameworks, build tooling. One sentence of justification per choice. -->
+<!-- Languages, frameworks, build tooling. One sentence of justification per choice. If the project follows a shared technology baseline, its address, then only the own stack and the deviations with their justification. -->
 
 [...]
 
@@ -146,6 +152,22 @@ related: [data, specification, design]
 | Model/service | Role | Provider | Endpoint |
 |---|---|---|---|
 | [Model] | [Role in the pipeline] | [Provider] | [Endpoint format] |
+
+## Interfaces to other projects or systems
+
+<!-- Optional. One subsection per counterpart. If both sides describe the contract, exactly one is the source of truth and both link to each other. -->
+
+### [Counterpart]
+
+Direction. [delivers | receives | both]
+
+Exchange format. [Schema or field list. Required fields, optional fields, deliberate omissions.]
+
+Responsibility. [Where responsibility passes from one side to the other.]
+
+Acceptance. [Criterion, and how it is checked.]
+
+Source of truth. [This document | link to the counterpart's document], with a link back from the other side.
 
 ## Security
 

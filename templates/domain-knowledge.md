@@ -88,7 +88,7 @@ The lead carries the purpose of the document in one sentence and then the scope 
 - Scope of functions and acceptance criteria. What the system is to achieve belongs in `specification.md` ([specification template](specification.md)). The rule set states by which disciplinary logic markup is done and leaves the features of the frontend to the specification.
 - Technical realisation. Which script executes the mapping and which stack carries the pipeline belongs in `architecture.md` ([architecture template](architecture.md)). The rule set names the function (`chain_cross_verse_hyphens()` implements the cross-verse chaining) and leaves its implementation out.
 - Imperative instructions to agents belong in the action layer according to the [action layer template](action-layer.md). It points to the declarative disciplinary rule set.
-- Research results as statements about the subject matter. What the edition or the analysis shows in substance is a matter for the publications. The document carries the rule and its justification and leaves the result of applying it out. Where empirical findings or claims of novelty drawn from applying the rules are put forward outside the project, the project's `testing.md` ([testing template](testing.md)) checks them.
+- Research results as statements about the subject matter. What the edition or the analysis shows in substance is a matter for the publications. The document carries the rule and its justification and leaves the result of applying it out. Where empirical findings or claims of novelty drawn from applying the rules are put forward outside the project, they are checked in the section *Claims carried outside the project* of the project's `testing.md` ([testing template](testing.md)).
 
 ## Template to fill in
 
@@ -287,7 +287,7 @@ status: draft
 
 ## Related
 
-- [[Related atom]] — [relation in half a sentence]
+- [[Related atom]], [relation in half a sentence]
 ````
 
 ## Use as a prompt template
