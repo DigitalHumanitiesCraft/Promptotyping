@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1672 860" width="1672" height="860" role="img" aria-labelledby="pf-t pf-d">
   <title id="pf-t">The Promptotyping working practice</title>
-  <desc id="pf-d">Researchers direct four recurrent forms of work, shown in the order of a first pass, and assess each promptotype through scholarly validation. A promptotype is the state of an artefact together with its project knowledge base and its research data, and earlier states remain as versions. Distillation maintains the knowledge base, which supplies the context for each task. Verification and agentic review accompany each iteration, and what checking and use reveal returns to the knowledge base through knowledge curation. The files shown are examples.</desc>
+  <desc id="pf-d">Researchers and research software developers direct four recurrent forms of work, Preparation, Exploration, Distillation and Implementation, which follow no fixed order. The researchers assess each Promptotype through scholarly validation. A Promptotype is a prototype taken together with the project knowledge base and the research data from which it was built, and earlier states remain as versions. Distillation maintains the knowledge base, and building proceeds from its context and from the modelled data. Verification and agentic review accompany each iteration, and what checking and use reveal returns to the knowledge base through knowledge curation. The files shown are examples.</desc>
   <style>
     svg { color: #1e2749; background: #ffffff; }
     text { fill: #1e2749; font-family: "Instrument Sans", "Helvetica Neue", Arial, sans-serif; text-anchor: middle; }
@@ -37,11 +37,14 @@
   <rect x="812" y="162" width="840" height="570" rx="14" class="shape cat-proto"/>
   <rect x="800" y="150" width="840" height="570" rx="14" class="shape cat-proto"/>
 
-  <g class="line" marker-end="url(#pf-arrow)">
+  <g class="line">
     <path d="M210,250 C165,260 142,295 140,343"/>
     <path d="M138,456 C142,505 165,535 210,546"/>
     <path d="M450,546 C492,532 512,505 516,460"/>
     <path d="M518,341 C516,295 496,262 452,250"/>
+  </g>
+  <text class="sub" x="330" y="406" style="font-size:17px">recurrent</text>
+  <g class="line" marker-end="url(#pf-arrow)">
     <path d="M643,400 H798"/>
     <path d="M816,600 H662"/>
     <path d="M432,588 C470,640 525,655 600,655 H816"/>
@@ -49,11 +52,11 @@
     <path d="M703,62 H360 Q340,62 340,82 V148"/>
     <path d="M757,62 H1200 Q1220,62 1220,82 V148"/>
   </g>
-  <text class="head" x="730" y="24" style="font-size:17px;letter-spacing:2.500px">RESEARCHERS</text>
+  <text class="head" x="730" y="24" style="font-size:17px;letter-spacing:2.500px">RESEARCHERS AND RESEARCH SOFTWARE DEVELOPERS</text>
   <circle class="shape" cx="730" cy="62" r="26"/>
   <circle class="person" cx="730" cy="55" r="7"/><path class="person" d="M717,77 C717,66 743,66 743,77"/>
   <text class="sub" x="520" y="50">direct the work</text>
-  <text class="sub" x="990" y="50">scholarly validation</text>
+  <text class="sub" x="990" y="50">scholarly validation by the researchers</text>
   <text class="head" x="340" y="178" style="font-size:17px;letter-spacing:2.500px">FOUR FORMS OF WORK</text>
   <g class="shape cat-forms">
     <ellipse cx="330" cy="245" rx="124" ry="55"/>
@@ -66,19 +69,20 @@
   <text class="head" x="147" y="395" style="font-size:18px">EXPLORATION</text>
   <text class="sub" x="146" y="419" style="font-size:17px">structure and limits</text>
   <text class="head" x="515" y="395" style="font-size:18px">IMPLEMENTATION</text>
-  <text class="sub" x="514" y="419" style="font-size:17px">bounded increments</text>
+  <text class="sub" x="514" y="419" style="font-size:17px">bounded tasks</text>
   <text class="head" x="331" y="550">DISTILLATION</text>
-  <text class="sub" x="330" y="574" style="font-size:17px">maintained knowledge</text>
+  <text class="sub" x="330" y="574" style="font-size:17px">knowledge documents</text>
 
   <text class="sub" x="728" y="388" style="font-size:17px">each iteration</text>
   <text class="sub" x="730" y="424" style="font-size:17px">verification</text>
   <text class="sub" x="730" y="443" style="font-size:17px">agentic review</text>
-  <text class="sub" x="730" y="573" style="font-size:17px">context for</text>
-  <text class="sub" x="730" y="591" style="font-size:17px">each task</text>
+  <text class="sub" x="730" y="555" style="font-size:17px">context and</text>
+  <text class="sub" x="730" y="573" style="font-size:17px">modelled data</text>
+  <text class="sub" x="730" y="591" style="font-size:17px">for each task</text>
   <text class="sub" x="730" y="678" style="font-size:17px">maintains</text>
   <text class="head" x="1221" y="190">PROMPTOTYPE</text>
-  <text class="sub" x="1220" y="214" style="font-size:17px">the state of an artefact with its project knowledge and research data</text>
-  <text class="head" x="1221" y="262" style="font-size:17px;letter-spacing:2.500px">ARTEFACT</text>
+  <text class="sub" x="1220" y="214" style="font-size:17px">a prototype with the project knowledge base and the research data it was built from</text>
+  <text class="head" x="1221" y="262" style="font-size:17px;letter-spacing:2.500px">PROTOTYPE</text>
   <svg x="1067" y="274" width="305" height="185" viewBox="995 235 305 185">
   <g class="shape">
     <rect x="751" y="240" width="200" height="175" rx="4"/>
