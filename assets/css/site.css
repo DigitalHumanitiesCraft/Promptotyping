@@ -21,7 +21,9 @@ main p { margin: 0 0 var(--dh-space-4); }
 :root { --text-width: 52rem; }
 .lead, .dh-prose, .rows, .section-head, .dh-code { max-inline-size: var(--text-width); }
 
-.lead { font-size: var(--dh-step-1); line-height: 1.5; }
+/* The lead stands in the size of the body text, so the first screen holds three text styles,
+   the title, the text and the name in the header. */
+.lead { margin-block-end: var(--dh-space-5); }
 
 /* The figure is drawn on white, so its frame is white in both schemes. */
 .dh-figure__canvas { background-color: #ffffff; }
