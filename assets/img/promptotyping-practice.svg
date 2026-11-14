@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1672 860" width="1672" height="860" role="img" aria-labelledby="pf-t pf-d">
   <title id="pf-t">The Promptotyping working practice</title>
-  <desc id="pf-d">Researchers and research software developers direct four recurrent forms of work, Preparation, Exploration, Distillation and Implementation, which follow no fixed order. The researchers assess each Promptotype through scholarly validation. A Promptotype is a prototype taken together with the project knowledge base and the research data from which it was built, and earlier states remain as versions. Distillation maintains the knowledge base, and building proceeds from its context and from the modelled data. Verification and agentic review accompany each iteration, and what checking and use reveal returns to the knowledge base through knowledge curation. The files shown are examples.</desc>
+  <desc id="pf-d">Researchers and research software developers direct four recurrent forms of work, Preparation, Exploration, Distillation and Implementation, which follow no fixed order. The researchers assess each Promptotype through scholarly validation. A Promptotype is a prototype taken together with the project knowledge base and the research data from which it was built, and earlier states remain as versions. Distillation maintains the knowledge base, which supplies the context for each task, and the modelled research data are the basis of building. Verification and agentic review accompany each iteration, and what checking and use reveal returns to the knowledge base through knowledge curation. The files shown are examples.</desc>
   <style>
     svg { color: #1e2749; background: #ffffff; }
-    text { fill: #1e2749; font-family: "Instrument Sans", "Helvetica Neue", Arial, sans-serif; text-anchor: middle; }
-    .head { font-family: "Sora", "Helvetica Neue", Arial, sans-serif; font-size: 19px; font-weight: 700; letter-spacing: 2px; }
+    text { fill: #1e2749; font-family: Arial, Helvetica, sans-serif; text-anchor: middle; }
+    .head { font-size: 19px; font-weight: 700; letter-spacing: 2px; }
     .sub { font-size: 17px; }
     .mono { font-family: Consolas, "Courier New", monospace; }
     .start { text-anchor: start; }
@@ -43,21 +43,21 @@
     <path d="M450,546 C492,532 512,505 516,460"/>
     <path d="M518,341 C516,295 496,262 452,250"/>
   </g>
-  <text class="sub" x="330" y="406" style="font-size:17px">recurrent</text>
   <g class="line" marker-end="url(#pf-arrow)">
-    <path d="M643,400 H798"/>
+    <path d="M662,400 H798"/>
     <path d="M816,600 H662"/>
     <path d="M432,588 C470,640 525,655 600,655 H816"/>
     <path d="M1220,746 V780 Q1220,800 1200,800 H350 Q330,800 330,780 V612"/>
-    <path d="M703,62 H360 Q340,62 340,82 V148"/>
-    <path d="M757,62 H1200 Q1220,62 1220,82 V148"/>
+    <path d="M688,62 H360 Q340,62 340,82 V148"/>
+    <path d="M772,62 H1200 Q1220,62 1220,82 V148"/>
   </g>
   <text class="head" x="730" y="24" style="font-size:17px;letter-spacing:2.500px">RESEARCHERS AND RESEARCH SOFTWARE DEVELOPERS</text>
-  <circle class="shape" cx="730" cy="62" r="26"/>
-  <circle class="person" cx="730" cy="55" r="7"/><path class="person" d="M717,77 C717,66 743,66 743,77"/>
+  <rect class="shape" x="690" y="36" width="80" height="52" rx="26"/>
+  <circle class="person" cx="714" cy="55" r="7"/><path class="person" d="M701,77 C701,66 727,66 727,77"/>
+  <circle class="person" cx="746" cy="55" r="7"/><path class="person" d="M733,77 C733,66 759,66 759,77"/>
   <text class="sub" x="520" y="50">direct the work</text>
   <text class="sub" x="990" y="50">scholarly validation by the researchers</text>
-  <text class="head" x="340" y="178" style="font-size:17px;letter-spacing:2.500px">FOUR FORMS OF WORK</text>
+  <text class="head" x="340" y="178" style="font-size:17px;letter-spacing:2.500px">FOUR RECURRENT FORMS OF WORK</text>
   <g class="shape cat-forms">
     <ellipse cx="330" cy="245" rx="124" ry="55"/>
     <ellipse cx="146" cy="400" rx="112" ry="55"/>
@@ -76,26 +76,19 @@
   <text class="sub" x="728" y="388" style="font-size:17px">each iteration</text>
   <text class="sub" x="730" y="424" style="font-size:17px">verification</text>
   <text class="sub" x="730" y="443" style="font-size:17px">agentic review</text>
-  <text class="sub" x="730" y="555" style="font-size:17px">context and</text>
-  <text class="sub" x="730" y="573" style="font-size:17px">modelled data</text>
-  <text class="sub" x="730" y="591" style="font-size:17px">for each task</text>
+  <text class="sub" x="730" y="573" style="font-size:17px">context for</text>
+  <text class="sub" x="730" y="591" style="font-size:17px">each task</text>
   <text class="sub" x="730" y="678" style="font-size:17px">maintains</text>
   <text class="head" x="1221" y="190">PROMPTOTYPE</text>
   <text class="sub" x="1220" y="214" style="font-size:17px">a prototype with the project knowledge base and the research data it was built from</text>
   <text class="head" x="1221" y="262" style="font-size:17px;letter-spacing:2.500px">PROTOTYPE</text>
   <svg x="1067" y="274" width="305" height="185" viewBox="995 235 305 185">
   <g class="shape">
-    <rect x="751" y="240" width="200" height="175" rx="4"/>
     <rect x="1000" y="240" width="295" height="175" rx="4"/>
-    <rect x="1344" y="240" width="306" height="175" rx="4"/>
   </g>
   <g class="thin">
-    <path d="M751,253 H951 M1000,253 H1295 M1344,253 H1650"/>
-    <circle cx="760" cy="246.500" r="2.300"/><circle cx="768" cy="246.500" r="2.300"/><circle cx="776" cy="246.500" r="2.300"/>
+    <path d="M1000,253 H1295"/>
     <circle cx="1009" cy="246.500" r="2.300"/><circle cx="1017" cy="246.500" r="2.300"/><circle cx="1025" cy="246.500" r="2.300"/>
-    <circle cx="1353" cy="246.500" r="2.300"/><circle cx="1361" cy="246.500" r="2.300"/><circle cx="1369" cy="246.500" r="2.300"/>
-    <use href="#pf-map" transform="translate(778,278) scale(1.72,1.62)"/>
-    <circle cx="806" cy="340" r="4"/><circle cx="863" cy="314" r="4"/><circle cx="880" cy="338" r="4"/><circle cx="833" cy="360" r="4"/><circle cx="902" cy="359" r="4"/>
     <rect x="1012" y="267" width="84" height="135"/>
     <rect x="1107" y="267" width="84" height="135"/>
     <rect x="1202" y="267" width="82" height="135"/>
@@ -104,23 +97,11 @@
     <rect x="1113" y="283" width="34" height="8"/><rect x="1117" y="299" width="42" height="8"/><rect x="1124" y="315" width="46" height="8"/><rect x="1131" y="331" width="38" height="8"/><rect x="1138" y="347" width="45" height="8"/><rect x="1143" y="363" width="36" height="8"/><rect x="1129" y="379" width="36" height="8"/>
     <path d="M1247,299 L1220,331 L1232,353 L1217,367 M1247,299 L1270,335 L1247,367 L1232,353"/>
     <circle cx="1247" cy="299" r="6" class="fill-surface"/><circle cx="1220" cy="331" r="6" class="fill-surface"/><circle cx="1270" cy="335" r="6" class="fill-surface"/><circle cx="1217" cy="367" r="6" class="fill-surface"/><circle cx="1247" cy="367" r="6" class="fill-surface"/>
-    <rect x="1356" y="267" width="68" height="135"/>
-    <rect x="1431" y="267" width="59" height="135"/>
-    <rect x="1497" y="267" width="59" height="135"/>
-    <rect x="1563" y="267" width="76" height="135"/>
-    <use href="#pf-map" transform="translate(1361,292) scale(0.700,1.180)"/>
-    <circle cx="1376" cy="335" r="3"/><circle cx="1404" cy="315" r="3"/><circle cx="1390" cy="353" r="3"/><circle cx="1409" cy="333" r="3"/>
-    <rect x="1436" y="283" width="24" height="8"/><rect x="1440" y="299" width="29" height="8"/><rect x="1445" y="315" width="27" height="8"/><rect x="1450" y="331" width="26" height="8"/><rect x="1455" y="347" width="28" height="8"/><rect x="1458" y="363" width="24" height="8"/><rect x="1448" y="379" width="26" height="8"/>
-    <path d="M1530,299 L1512,333 L1521,351 L1512,367 M1530,299 L1545,336 L1530,367 L1521,351"/>
-    <circle cx="1530" cy="299" r="5" class="fill-surface"/><circle cx="1512" cy="333" r="5" class="fill-surface"/><circle cx="1545" cy="336" r="5" class="fill-surface"/><circle cx="1512" cy="367" r="5" class="fill-surface"/><circle cx="1530" cy="367" r="5" class="fill-surface"/>
-    <path d="M1576,285 C1602,285 1604,335 1626,335 M1576,310 C1600,310 1604,295 1626,295 M1576,335 C1602,335 1604,315 1626,315 M1576,360 C1602,360 1604,385 1626,385 M1576,385 C1602,385 1604,355 1626,355 M1576,310 C1602,310 1604,375 1626,375 M1576,360 C1602,360 1604,305 1626,305 M1576,285 C1602,285 1604,355 1626,355"/>
-    <circle cx="1572" cy="285" r="4" class="fill-surface"/><circle cx="1572" cy="310" r="4" class="fill-surface"/><circle cx="1572" cy="335" r="4" class="fill-surface"/><circle cx="1572" cy="360" r="4" class="fill-surface"/><circle cx="1572" cy="385" r="4" class="fill-surface"/>
-    <circle cx="1630" cy="295" r="4" class="fill-surface"/><circle cx="1630" cy="315" r="4" class="fill-surface"/><circle cx="1630" cy="335" r="4" class="fill-surface"/><circle cx="1630" cy="355" r="4" class="fill-surface"/><circle cx="1630" cy="378" r="4" class="fill-surface"/>
   </g>
   </svg>
 
-  <rect class="kb-frame" x="816" y="480" width="484" height="236" rx="10"/>
-  <text class="head" x="1044" y="500" style="font-size:17px;letter-spacing:2.500px">PROJECT KNOWLEDGE BASE</text>
+  <rect class="kb-frame" x="816" y="480" width="496" height="236" rx="10"/>
+  <text class="head" x="1064" y="500" style="font-size:17px;letter-spacing:2.500px">PROJECT KNOWLEDGE BASE</text>
   <text class="sub" x="919" y="536" style="font-size:17px">declarative</text>
   <text class="sub" x="1103" y="536" style="font-size:17px">process</text>
   <text class="sub" x="1223" y="536" style="font-size:17px">agent instructions</text>
@@ -140,13 +121,14 @@
   <text class="sub" x="1044" y="702" style="font-size:17px">example files</text>
 
   <text class="head" x="1471" y="500" style="font-size:17px;letter-spacing:2.500px">RESEARCH DATA</text>
+  <text class="sub" x="1471" y="526" style="font-size:17px">modelled, the basis of building</text>
   <g class="shape">
     <path d="M1408,572 V640 A62,16 0 0 0 1532,640 V572"/>
     <ellipse cx="1470" cy="572" rx="62" ry="16"/>
   </g>
   <path class="thin" d="M1408,606 A62,16 0 0 0 1532,606"/>
-  <path class="thin" d="M1290,606 H1404" stroke-dasharray="5 5"/>
-  <text class="sub" x="1347" y="596" style="font-size:17px">describes</text>
+  <path class="thin" d="M1312,606 H1404" stroke-dasharray="5 5"/>
+  <text class="sub" x="1358" y="596" style="font-size:17px">describes</text>
 
   <text class="sub start" x="1234" y="772" style="font-size:17px">checking and use</text>
   <text class="sub" x="1664" y="772" style="font-size:17px;text-anchor:end">each state can be versioned</text>

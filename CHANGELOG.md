@@ -6,6 +6,10 @@ Changes to the Promptotyping templates, convention, knowledge base and site, per
 
 - The page carries a start prompt in the section Skill, which lets an agent install the skill and run `orient`. It replaces the shell block, and the installation by hand stays in the README of the skill repository.
 
+## Unreleased
+
+- The figure of the practice names the role of the research data at the research data, attaches both arrows between its halves to the frame of the four forms, shows two figures for the two roles and uses one typeface that renders the same everywhere.
+
 ## 1.0.0, 2026-11-14
 
 The first numbered release, prepared to accompany the paper on Promptotyping.
