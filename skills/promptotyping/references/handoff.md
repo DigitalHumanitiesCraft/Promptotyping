@@ -2,50 +2,15 @@
 
 Closes a session so that the next one can continue from the documents. It is the counterpart of `orient`. What `handoff` writes, the next `orient` reads, whether the next session is the same person with a fresh agent, another agent or another person.
 
-Call it when a session ends, or when a step of the work passes to someone else. Call `handoff deep` before a longer pause, at a milestone, or when the whole work passes to someone else. Text after the subcommand serves as the commit message.
-
-## The journal
-
-`journal.md` in the knowledge folder is the working diary of the project. It looks ahead and it looks back, in two parts.
-
-```
-# Journal
-
-## Open
-
-- Map view does not show the letters dated only to a year. Decide with the
-  researchers whether they appear without a day.
-- Date parser rewritten, tests pass, result not yet compared with data.md.
-
-## 2026-11-14 | Uncertain dates in the timeline
-
-- Trigger: letters that carry only a year (data.md, section Dating).
-- Found: the parser dropped them without a message.
-- Decided: keep them, place them at the start of the year, mark them as uncertain.
-- Rejected: leaving them out of the timeline, since the gaps are what the researchers ask about.
-- Changed: scripts/parse_dates.py, specification.md.
-- Evidence: tests/test_dates.py fails on the old parser and passes on the new one.
-```
-
-`## Open` stands at the beginning and holds what the next session needs to continue. That is unfinished work, results not yet checked, questions that wait for the researchers, and work handed to a named recipient. Each handoff rewrites it as the complete current list. A settled point leaves the section, and an entry below records how it was settled. When nothing is open, the section says "Nothing open."
-
-The entries follow, newest first, one per coherent step of the work, with the fields that have content among Trigger, Found, Decided, Rejected, Corrected, Changed and Evidence, and with at least one piece of evidence. A judgement of the researchers on a Promptotype is an entry of its own, in their words, with its purpose and its known limits. An entry is history and is rewritten only by condensing.
-
-Whichever subcommand first needs the journal creates it in this form. Accepted work that has not begun belongs in the specification or in a `plan.md`, where the project keeps one.
+Call it when a session ends, or when a step of the work passes to someone else. Call `handoff deep` before a longer pause, at a milestone, or when the whole work passes to someone else. Text after the subcommand serves as the commit message. The form of the journal stands in `SKILL.md`, section The journal.
 
 ## Procedure
 
 1. Where the folder is a Git repository, run `git status`. Run the checks the agent instructions name, and report a failing check in the journal entry.
-2. Add entries for the steps of this session that the journal does not yet record, below `## Open`.
+2. Add entries for the steps of this session that the journal does not yet record, below `## Open`. Create the journal where none exists.
 3. Rewrite `## Open`. Be specific enough that the reader can start at once, as in "a quarter of the dates lack a certainty attribute, and how uncertain dates are displayed is undecided".
 4. Commit the knowledge documents, the artefact and the data the project produced together, with a concise message. Do not push. The researchers decide when to push.
 5. Confirm with the hash of that commit and one line on what is open. Copy hashes from Git and never write one from memory.
-
-## Journals and inboxes from earlier versions
-
-At the first handoff on a journal written with version 1, add `## Open` at the beginning and carry the open issues and next steps of the last handoff entry into it. Write new entries below `## Open` and above the earlier ones. The earlier entries keep their form and order, and a section of condensed history stays where it is.
-
-Where the knowledge folder holds a `handoff.md` with open points, as an earlier form of the Promptotyping convention prescribed, carry its open points into `## Open` and propose the removal of the file to the user.
 
 ## Passing a step to someone else
 
@@ -61,7 +26,7 @@ A deep handoff makes sure that the documents carry the project, so that someone 
 
 ## Condensing the journal
 
-Condensing removes detail from `journal.md` only. The full text of every condensed entry stays in `journal-archive.md` and in Git. The call `compact` of version 1 leads here and runs only these steps.
+Condensing removes detail from `journal.md` only. The full text of every condensed entry stays in `journal-archive.md` and in Git. Called on its own, it runs only these steps.
 
 1. Start from a state in which all work is committed.
 2. Leave `## Open` and the five newest entries as they are.

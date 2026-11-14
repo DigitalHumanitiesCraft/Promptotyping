@@ -4,7 +4,7 @@ Models what exploration and checking have shown as the knowledge documents from 
 
 Distillation is a form of modelling, and it reduces and sharpens. It leaves out what the stated purpose does not need, and it makes explicit the distinctions, conditions and uncertainties that the material holds only implicitly and that an adequate implementation requires. Another purpose may call for another distillation. The material itself stays where it is.
 
-Call it in a new project after `explore`, when the purpose changes, when notes or findings have grown past the point where they guide the work, or when a document the project needs is missing. `distil` is the same call.
+Call it in a new project after `explore`, when the purpose changes, when notes or findings have grown past the point where they guide the work, or when a document the project needs is missing.
 
 ## Procedure
 

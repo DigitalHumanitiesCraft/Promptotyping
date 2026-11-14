@@ -12,9 +12,7 @@ metadata:
 
 # Promptotyping
 
-Promptotyping is a working practice for translating research data and their contexts, with frontier Large Language Model (LLM) agents, into research artefacts that fit the researchers' purposes and ways of working. Agents build prototypes from modelled data and a curated project knowledge base. The prototype is a means of knowing. Working with it shows what the data support and what the project needs, and what checking and use reveal is curated back into the project knowledge.
-
-What decides whether an artefact fits lies in the sources and the research purpose as the researchers understand them. The knowledge documents guide the work, and they can themselves be wrong about the material. What accumulates across the iterations is the curated knowledge and the research data. The artefact may be replaced once what working with it revealed has been curated into the project knowledge.
+Promptotyping is a working practice for translating research data and their contexts, with frontier Large Language Model (LLM) agents, into research artefacts that fit the researchers' purposes and ways of working. Agents build prototypes from modelled data and a curated project knowledge base, and what checking and use of a prototype reveal is curated back into that knowledge base. What decides whether an artefact fits lies in the sources and the research purpose as the researchers understand them, so the knowledge documents can themselves be wrong about the material. The artefact may be replaced once what working with it revealed has been curated back.
 
 ## Terms
 
@@ -27,15 +25,15 @@ The work takes four forms, which recur in no fixed sequence.
 
 A Promptotype is what an iteration yields, a prototype that can be used and inspected, together with the project knowledge base and the research data from which it was built, so that each state can be versioned as a whole.
 
-The project knowledge base is a set of documents in natural language together with the agent instructions in the repository root. The documents are of three types, which distinguish functions and prescribe no file structure.
+The project knowledge base is the set of knowledge documents together with the agent instructions in the repository root. The documents are of three types, which distinguish functions and prescribe no file structure.
 
 - Declarative knowledge documents state what holds, for instance the project's purpose and scope (`project.md`), the structure, meaning, provenance, gaps and uncertainties of the data (`data.md`), and what the artefact is to do (`specification.md`).
-- Process knowledge documents state how the understanding developed and why, and what is open, in `journal.md`.
+- Process knowledge documents state what is open and how the understanding developed and why, in `journal.md`.
 - Agent instruction documents state how agents are to work, with procedures, constraints, the checks to be run and pointers to the relevant knowledge, in `CLAUDE.md` or `AGENTS.md`.
 
-The knowledge folder is the folder a project already has for these documents, `knowledge/`, `docs/` or `promptotyping-docs/`. A new project uses `knowledge/`. The file names in this skill are the defaults of a new project and stand for the existing document with that function. A project built with version 1 of this skill keeps its folder and its names, where `knowledge.md` carries what `data.md` and `project.md` carry here and `requirements.md` is the specification. A project adds a document when it has the function for it, such as `design.md` for an artefact with an interface. Templates and the document convention are published at https://dhcraft.org/Promptotyping/.
+The knowledge folder holds the knowledge documents. A new project uses `knowledge/`, and a project that already has a folder for them keeps it. The file names in this skill are the defaults of a new project and stand for the existing document with that function. A project adds a document when it has the function for it, such as `design.md` for an artefact with an interface. Templates and the document convention are published at https://dhcraft.org/Promptotyping/.
 
-Two roles take part, and one person may hold both. The researchers know the sources and the field and judge whether an artefact fits. The research software developer directs the agent and answers for whether the artefact does what it claims. Where this skill says "the user", it means whoever directs the agent, and that person passes on to the researchers what only they can decide.
+The researchers know the sources and the field and judge whether an artefact fits. "The user" is whoever directs the agent, and that person passes on to the researchers what only they can decide.
 
 ## Subcommands
 
@@ -49,13 +47,13 @@ When the skill is invoked with a subcommand, or the user names one during the wo
 | `curate` | the knowledge documents are to be checked, corrected or grounded | [references/curate.md](references/curate.md) |
 | `handoff` | a session ends or work passes to someone else | [references/handoff.md](references/handoff.md) |
 
-A session runs `orient`, then the work, then `handoff`. Not every subcommand is needed in every session. `orient` changes nothing and may be run unasked. `explore`, `distill` and `curate` write files and commit their result, and `handoff` commits the session, so these four run when the user asks for them or agrees. No subcommand pushes.
+A session runs `orient`, then the work, then `handoff`. `orient` changes nothing and may be run unasked. `explore`, `distill` and `curate` write files and commit their result, and `handoff` commits the session, so these four run when the user asks for them or agrees. No subcommand pushes.
 
-Calls from version 1 remain valid. `check` leads to `curate review`, `verify` leads to `curate ground`, `compact` leads to the section Condensing the journal in `references/handoff.md`, and `distil` is the same as `distill`. Text that names no subcommand is a general request under the rules below.
-
-Preparation and Implementation have no subcommand. Preparation is the researchers' work. They assemble the material and name purpose and question, and the agent helps as the section Preparation in a new project of `references/explore.md` describes. Implementation is the agent's ordinary work between `orient` and `handoff` and follows the rules for building.
+Preparation and Implementation have no subcommand. Preparation is the researchers' work, in which the agent helps as [references/explore.md](references/explore.md) describes. Implementation is the agent's ordinary work between `orient` and `handoff` and follows the rules for building. Text that names no subcommand is a general request under those rules.
 
 Where a finding belongs follows from its reach. A single statement or requirement is corrected under rule 3 of building or through `curate`. A changed purpose or a document that is missing calls for `distill`. An account of the data that is in question as a whole calls for `explore`.
+
+Read [references/version-1.md](references/version-1.md) when the project keeps its documents under `docs/` or `promptotyping-docs/`, when its journal has no section `## Open`, when the knowledge folder holds a `handoff.md`, or when the user calls `check`, `verify`, `compact` or `distil`.
 
 ## Rules for building
 
@@ -73,8 +71,8 @@ These rules apply whenever the agent builds, whether or not a subcommand was cal
 
 Three kinds of checking stay apart, because they differ in what a judgement rests on.
 
-- Verification establishes whether a result conforms to a standard the project has accepted. Its strongest form is the executable check, code that decides whether a result meets a stated condition, such as validation against a schema, a unit test or an invariant over all records. An executable check has to be checked itself, for whether it runs against the code the artefact actually uses and over all of the real data, and whether it can fail. A test fixture confirms nothing about the data.
-- Agentic review is the examination of code, data or knowledge documents by an agent, often with a fresh context. Its findings are evidence. A reviewer built on the same model may share its blind spots.
+- Verification establishes whether a result conforms to a standard the project has accepted, at its strongest through an executable check, code that decides whether a result meets a stated condition. An executable check is itself checked for whether it runs against the code the artefact actually uses, covers all of the real data and can fail. A test fixture confirms nothing about the data.
+- Agentic review is the examination of code, data or knowledge documents by an agent, often with a fresh context. Its findings are evidence.
 - Scholarly validation is the judgement of people with knowledge of the sources and the field on whether a result is warranted by the sources and adequate to the research purpose.
 
 A result has one of three statuses, proposal, doubted and confirmed.
@@ -83,7 +81,7 @@ A result has one of three statuses, proposal, doubted and confirmed.
 - A proposal is doubted when anyone taking part in the work, an agent included, has marked it as doubtful.
 - A proposal is confirmed only by a person whose expertise reaches as far as the decision requires or by a validated deterministic rule. Such a rule is an executable check that runs on all of the real data, has been shown on cases with known answers to fail when it should, and has been adopted by the researchers for a defined kind of decision.
 
-For each status, who or what set it is recorded, in the form the project already uses for it. Where the project has none, a short note after the statement serves, such as "(proposal, agent, 2026-11-14)" or "(confirmed by the editor, 2026-11-20)".
+Who or what set a status is recorded in the form the project uses for it, and otherwise in a short note after the statement, such as "(proposal, agent, 2026-11-14)" or "(confirmed by the editor, 2026-11-20)".
 
 Three questions are put to each Promptotype, and they build on one another.
 
@@ -91,7 +89,34 @@ Three questions are put to each Promptotype, and they build on one another.
 2. Is it warranted by the sources?
 3. Is it adequate to the purpose?
 
-An agent can run executable checks and review code for the first question, raise doubts and direct attention for the second, and point to gaps for the third. A Promptotype is accepted for a purpose when the researchers who work with it judge it good enough for that purpose. The agent reports what it built and checked and lists what needs the researchers' decision. Confirmation, scholarly validation and acceptance are recorded only as the judgement of the person who gave it. An agent's account of its own work needs independent confirmation.
+An agent can run executable checks and review code for the first question, raise doubts for the second, and point to gaps for the third. A Promptotype is accepted for a purpose when the researchers who work with it judge it good enough for that purpose. The agent reports what it built and checked and lists what needs the researchers' decision. Confirmation, scholarly validation and acceptance are recorded only as the judgement of the person who gave it, and an agent's account of its own work needs independent confirmation.
+
+## The journal
+
+`journal.md` in the knowledge folder is the working diary of the project. Whichever subcommand first needs it creates it in this form.
+
+```
+# Journal
+
+## Open
+
+- Map view does not show the letters dated only to a year. Decide with the
+  researchers whether they appear without a day.
+- Date parser rewritten, tests pass, result not yet compared with data.md.
+
+## 2026-11-14 | Uncertain dates in the timeline
+
+- Trigger: letters that carry only a year (data.md, section Dating).
+- Found: the parser dropped them without a message.
+- Decided: keep them, place them at the start of the year, mark them as uncertain.
+- Rejected: leaving them out of the timeline, since the gaps are what the researchers ask about.
+- Changed: scripts/parse_dates.py, specification.md.
+- Evidence: tests/test_dates.py fails on the old parser and passes on the new one.
+```
+
+`## Open` stands at the beginning and holds what the next session needs to continue, meaning unfinished work, results not yet checked, questions that wait for the researchers, and work handed to a named recipient. Each handoff rewrites it as the complete current list. A settled point leaves the section, and an entry below records how it was settled. When nothing is open, the section says "Nothing open."
+
+The entries follow, newest first, one per coherent step of the work, with the fields that have content among Trigger, Found, Decided, Rejected, Corrected, Changed and Evidence, and with at least one piece of evidence. Where a journal already groups its entries under a heading of its own, keep that form. A judgement of the researchers on a Promptotype is an entry of its own, in their words, with its purpose and its known limits. An entry is history and is rewritten only by condensing. Accepted work that has not begun belongs in the specification or in a `plan.md`, where the project keeps one.
 
 ## Boundaries
 

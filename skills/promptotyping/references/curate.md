@@ -18,7 +18,7 @@ Compare the documents with the data, the code and the state of the work. This is
 
 ### Grounding
 
-Compare statements with knowledge outside the project, such as the web, the literature or the researchers' own collection of notes. Choose it for URLs, DOIs and bibliographic data, software versions, standards, institutional facts and dates, and above all where an agent wrote those statements. The call `verify` of version 1 leads here.
+Compare statements with knowledge outside the project, such as the web, the literature or the researchers' own collection of notes. Choose it for URLs, DOIs and bibliographic data, software versions, standards, institutional facts and dates, and above all where an agent wrote those statements.
 
 Each statement ends in one of three ways.
 
@@ -30,7 +30,7 @@ These are findings of an agent, and the statement stays a proposal. Where a web 
 
 ### Review
 
-An agent with a fresh context reads the knowledge documents and the artefact critically and reports doubts. It changes nothing. Choose it before a Promptotype goes to the researchers for their judgement, after a larger step of building, and in a deep handoff. The call `check` of version 1 leads here.
+An agent with a fresh context reads the knowledge documents and the artefact critically and reports doubts. It changes nothing. Choose it before a Promptotype goes to the researchers for their judgement, after a larger step of building, and in a deep handoff.
 
 A fresh context is a subagent or a new session that receives the declarative documents, the artefact and the criteria below, and reads the journal only afterwards, so that it does not start from the judgement of the agent that built them. Where the environment offers no subagent, write the review request under `## Open`, tell the user to run `curate review` in a new session, and continue with the other kinds. A review by the agent that built the work is reported as a self-review and does not count as this kind.
 
