@@ -30,7 +30,8 @@ main p { margin: 0 0 var(--dh-space-4); }
 
 /* The figure is drawn on white, so its frame is white in both schemes. */
 .dh-figure__canvas { background-color: #ffffff; }
-.dh-figure__canvas > img { min-inline-size: 46rem; }
+/* Both figures fill their frame, so they end at the same edge whatever their drawn size. */
+.dh-figure__canvas > img { inline-size: 100%; block-size: auto; min-inline-size: 46rem; }
 /* The second figure opens one Promptotype and follows the two paragraphs. */
 .example { margin-block-start: var(--dh-space-5); max-inline-size: 60rem; }
 
@@ -66,10 +67,9 @@ dfn { font-style: italic; font-weight: 600; }
   .rows li, #use-cases .rows li { grid-template-columns: minmax(0, 1fr); padding-block: var(--dh-space-3); }
 }
 
-/* Under the figure the two paragraphs stand side by side at the width of the figure, so
-   figure and text end at the same edge. */
+/* Under the figure the text runs in two columns of equal height at the width of the
+   figure, so figure and text end at the same edges. */
 .intro .dh-prose { max-inline-size: none; columns: 2 24rem; column-gap: var(--dh-space-6); }
-.intro .dh-prose p { break-inside: avoid; }
 
 /* From the first section on, the sections stand in the text column and Cite stands beside
    them, in the column that would otherwise stay empty. The panel stays in view while the
