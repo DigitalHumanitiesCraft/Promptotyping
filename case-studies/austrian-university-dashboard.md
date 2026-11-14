@@ -1,7 +1,6 @@
 ---
 title: Austrian University Dashboard
 id: austrian-university-dashboard
-paper: none
 role: teaching
 artefact: "Interactive dashboard (teaching baseline)"
 ---
@@ -16,7 +15,7 @@ An interactive dashboard over a corpus of Excel files holding Austrian universit
 
 ## Contribution
 
-The case exists so that the phases can be watched while they happen. Everything the [Application](../knowledge/practice.md) page states as the practice appears in the recording in the order it actually occurs, including the judgements that a written description conveys least well.
+The case exists so that the phases can be watched while they happen. Everything the [forms of work](../knowledge/practice.md#forms-of-work) describe appears in the recording in the order it actually occurs, including the judgements that a written description conveys least well.
 
 Two of those judgements are the didactic core. The overengineering check, run as a matrix of what the artefact would have to carry, and the reduction to a minimum viable product that follows it, are both moments in which the session removes scope from a plan the model was willing to build. Watching scope being cut is what distinguishes this material from a walkthrough of a finished result.
 
@@ -24,7 +23,7 @@ The redesign carries a third point. Choosing a visual idiom deliberately, agains
 
 ## Limits
 
-There is no public repository. The documents and the code exist only as they pass across the screen, so nothing about the artefact can be checked independently of the recording. The case therefore stands outside the paper's case set in Table 3 and carries the teaching role in the gallery instead of the evidence role.
+There is no public repository. The documents and the code exist only as they pass across the screen, so nothing about the artefact can be checked independently of the recording. The case therefore stands outside the paper's documented cases and carries the teaching role in this collection instead of the evidence role.
 
 The demonstrator is the author of the practice. The case establishes that the process is demonstrable and settles nothing about whether a scholar who did not develop the practice can carry it through, which remains a question for empirical work.
 

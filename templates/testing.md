@@ -38,7 +38,7 @@ Three principles carry the document.
 The document follows the reduced required core of the current convention, `title`, `project` (object with `name` and `repository`), `method` (object with `name` and `url`), `status`, `created`, `updated`. The file name is the primary routing signal, and the first paragraph confirms the function. There is no field `zweck:` or `function:`.
 
 - `template:` recommended, as a block with `name`, `version` and `url`, where this template has been applied (see the section *Template addressability* of the [convention](convention.md)). teiCrafter already carries the field canonically with the dhcraft.org URL.
-- `status:` means the maturity of the document (`idea`, `draft`, `stub`, `complete`, `reviewed`, `archived`, and since 2026-07-19 also `active` for ongoing process documents and `snapshot` for documents tied to a fixed date). It does not mean the operational state of the project. A testing document with a maintained state block can carry `snapshot` semantics, and the vocabulary of the convention is authoritative.
+- `status:` means the maturity of the document (`idea`, `draft`, `stub`, `complete`, `reviewed`, `archived`, plus `active` for ongoing process documents and `snapshot` for documents tied to a fixed date). It does not mean the operational state of the project. A testing document with a maintained state block can carry `snapshot` semantics, and the vocabulary of the convention is authoritative.
 - `topics:` typically `[[Software Testing]]`, `[[Regression]]`, `[[Test-Driven Development]]`, `[[Data Validation]]`, `[[Evaluation]]`. Edition and OCR projects add topics close to the domain such as `[[TEI XML]]`. They place the agent in the fields of knowledge in which a test strategy needs reasoning.
 - `version:` consistent across the repository, raised together with the sibling documents.
 - `authors:` carries only people, even when an LLM produced the text. `generated-with:` stands beside it in the format `Harness (LLM)`, for instance `Claude Code (Claude Opus 5)`, if the document was produced with LLM support. See the section *Provenance in the frontmatter* of the [convention](convention.md).
@@ -52,7 +52,7 @@ The lead names the core of the test strategy in one to three sentences and there
 
 ### Test strategy and test taxonomy
 
-This section names the architecture of quality assurance, the governing order of the tests. It lists the pillars or levels into which the tests fall, each with the class of error it covers and the others do not see. SuGW has four complementary pillars (pytest for the build code, a verification set for data consistency end to end, JavaScript tests for the browser logic, manual visual inspection). teiCrafter has two layers (headless engine proofs and a validation harness with three levels). co-ocr-htr prioritises logic before interface. The taxonomy is the core of this section, and every recurring kind of test receives a name and a delimited class of error.
+This section names the architecture of quality assurance, the governing order of the tests. It lists the pillars or levels into which the tests fall, each with the class of error it covers and the others do not see. An edition project can have four complementary pillars (pytest for the build code, a verification set for data consistency end to end, JavaScript tests for the browser logic, manual visual inspection). teiCrafter has two layers (headless engine proofs and a validation harness with three levels). co-ocr-htr prioritises logic before interface. The taxonomy is the core of this section, and every recurring kind of test receives a name and a delimited class of error.
 
 ### What is guaranteed (proofs)
 
@@ -64,7 +64,7 @@ This section ties the tests back to the project goals. For each project goal or 
 
 ### What is deliberately not checked (gaps)
 
-This section makes the blind spots of the test strategy explicit. For each gap it states what is not covered, why (cannot be automated, not worth it, separate milestone) and what currently covers it in place of a test. SuGW lists "browser visual regression" (screenshot comparison, separate milestone, currently covered by manual visual inspection), "JavaScript-rendered DOM content" and "stakeholder acceptance". M3GIM lists, under "Delimitations", pipeline internals, Google Sheets content and performance as deliberately untested. co-ocr-htr lists interface components, external dependencies and visual aspects. This section is constitutive, since a guarantee without a named gap is a claim and falls short of a strategy.
+This section makes the blind spots of the test strategy explicit. For each gap it states what is not covered, why (cannot be automated, not worth it, separate milestone) and what currently covers it in place of a test. An edition project may list browser visual regression (screenshot comparison, separate milestone, currently covered by manual visual inspection), JavaScript-rendered DOM content and stakeholder acceptance. M3GIM lists, under "Delimitations", pipeline internals, Google Sheets content and performance as deliberately untested. co-ocr-htr lists interface components, external dependencies and visual aspects. This section is constitutive, since a guarantee without a named gap is a claim and falls short of a strategy.
 
 ### How to Run
 
@@ -76,7 +76,7 @@ This section applies when the project carries empirical findings or claims of no
 
 - Each check is an attempt to refute the claim. A claim holds when the attempt fails. Agreement among several checkers is a signal and settles nothing by itself.
 - Each result takes one value from a small closed set of verdicts, and each verdict carries its consequence. A minimal set is holds (use the claim), partly holds (correct the wording before use) and does not hold (withhold the claim).
-- The check runs as a chain. A deterministic check by script comes first (quotations identical with the source, references resolve), then an agentic review, then the scholarly validation by the researchers. Only the researchers set the status confirmed.
+- The check runs as a chain. A deterministic check by script comes first (quotations identical with the source, references resolve), then an agentic review, then the scholarly validation by the researchers. A claim is confirmed only by a person whose expertise reaches as far as the decision requires or by a validated deterministic rule, an executable check that runs on all of the real data, has been shown on cases with known answers to fail when it should, and has been adopted by the researchers for a defined kind of decision.
 - The checker sees the source passage and the claim and does not see the author's reasoning, so that the reasoning cannot anchor the judgement.
 - A claim of novelty is searched with the aim of refuting it, and its entry names the nearest prior work found.
 - What the check cannot decide is listed as open, with the reason it cannot be decided and the person who is to decide it.
@@ -84,7 +84,7 @@ This section applies when the project carries empirical findings or claims of no
 
 ### Pattern: test in the same commit (optional)
 
-This section records the working principle that every checkable change receives its regression test in the same commit. It states the rule, its justification (tests as an afterthought produce gaps), examples and the declared exception (purely visual polish). SuGW gives this section prominence. It applies when the repository practises test-driven or test-accompanied development. Suites without this principle leave the section out.
+This section records the working principle that every checkable change receives its regression test in the same commit. It states the rule, its justification (tests as an afterthought produce gaps), examples and the declared exception (purely visual polish). It applies when the repository practises test-driven or test-accompanied development. Suites without this principle leave the section out.
 
 ### TDD workflow and anchor strategy (optional)
 
@@ -100,7 +100,7 @@ This section lists the test files and helper tools so that a developer finds the
 
 ### Current state (optional)
 
-This section records the state of evidence of the suite on a fixed date, in a table with pillar or stage, tests and status. SuGW and M3GIM keep such a state block. This is the only place where volatile figures are unproblematic, because the testing document has the character of a snapshot in any case. The table is updated with every substantial state of the suite.
+This section records the state of evidence of the suite on a fixed date, in a table with pillar or stage, tests and status. M3GIM keeps such a state block. This is the only place where volatile figures are unproblematic, because the testing document has the character of a snapshot in any case. The table is updated with every substantial state of the suite.
 
 ## What does not belong here
 
@@ -122,7 +122,7 @@ project:
   repository: [Repository URL]
 method:
   name: Promptotyping
-  url: https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin
+  url: https://dhcraft.org/Promptotyping/
 template:
   name: Testing template
   version: 0.3
@@ -186,7 +186,7 @@ related: [architecture, specification, data]
 
 ## Claims carried outside the project
 
-<!-- Trigger: findings or claims of novelty used in a paper, proposal, report or public site. Per claim: wording, source passage in the data, verdict with its consequence, the last step of the chain that checked it. Claims of novelty name the nearest prior work. The checker sees source passage and claim, not the author's reasoning. Only the researchers set confirmed. -->
+<!-- Trigger: findings or claims of novelty used in a paper, proposal, report or public site. Per claim: wording, source passage in the data, verdict with its consequence, the last step of the chain that checked it. Claims of novelty name the nearest prior work. The checker sees source passage and claim, not the author's reasoning. Confirmed is set only by a person whose expertise reaches as far as the decision requires or by a validated deterministic rule. -->
 
 | Claim | Source passage | Verdict | Checked by |
 |---|---|---|---|
@@ -239,9 +239,9 @@ The template also serves as a review sheet for an existing test strategy. An exi
 
 The canonical carrier of this function is teiCrafter (`knowledge/testing.md`, "Testing and Evaluation Harness", which already carries the `template:` field canonically with the dhcraft.org URL). It is organised testing first. The lead states, in translation, "Testing first. The yardstick is built before the features it judges", together with the two-layer architecture (headless engine proofs in Node and a validation harness in Python/lxml) and the one regression gate `node test/tools/run_all.mjs`. The central claim is the engine proof "read any TEI and save it back without losing a byte", evidenced by `roundtrip_sweep.mjs` (byte-identical across the whole real corpus). The validation harness has three levels (text and word fidelity, schema validity against TEI All RelaxNG plus Schematron, structural invariants). The acceptance section ties five project questions back to method and level (automatic, contextual, visual, professional) and names the visual level as the centre for the question whether the goal has been reached in the project's own sense. The deliberate gap is the browser click-through of the interface, which the headless proofs cannot cover. Named browser check scenarios cover it instead. The How to Run section lists every proof as a command with target state and environment overrides for the data sources.
 
-Three complementary genres show the range. SuGW (`test-strategy.md`) has the four-pillar model (pytest for the build code, a verification set for data consistency end to end in three coverage stages, JavaScript tests for the browser logic, manual visual inspection), the pattern "code plus test in the same commit" with a declared exception for purely visual polish, and an explicit section "Gaps that deliberately remain open" (browser visual regression as a separate milestone, JavaScript-rendered DOM, stakeholder acceptance). M3GIM (`tests.md`) has the principle "validates the output of the pipeline, not the pipeline code", a numbered taxonomy of test stages with deliberate gaps in the IDs, the TDD workflow with strict xfail and the anchor record strategy as living documentation ("cell 123 in Objekte.xlsx becomes this record"), together with a section "Delimitations" listing what is deliberately untested and documented exceptions (PL_07 xfail, NIM_11 skip). co-ocr-htr (`TESTING.md`) prioritises logic before interface, with two explicit lists "What We Test" and "What We Don't Test", and lists under "Known Limitations" a regex lastIndex bug that was concretely caught. All four share the basic figure. Guarantee and gap are kept apart, and the tests are bound back to the project goals instead of being listed for their own sake.
+Three complementary genres show the range. An edition project's `test-strategy.md` has the four-pillar model (pytest for the build code, a verification set for data consistency end to end in three coverage stages, JavaScript tests for the browser logic, manual visual inspection), the pattern "code plus test in the same commit" with a declared exception for purely visual polish, and an explicit section "Gaps that deliberately remain open" (browser visual regression as a separate milestone, JavaScript-rendered DOM, stakeholder acceptance). M3GIM (`tests.md`) has the principle "validates the output of the pipeline, not the pipeline code", a numbered taxonomy of test stages with deliberate gaps in the IDs, the TDD workflow with strict xfail and the anchor record strategy as living documentation ("cell 123 in Objekte.xlsx becomes this record"), together with a section "Delimitations" listing what is deliberately untested and documented exceptions (PL_07 xfail, NIM_11 skip). co-ocr-htr (`TESTING.md`) prioritises logic before interface, with two explicit lists "What We Test" and "What We Don't Test", and lists under "Known Limitations" a regex lastIndex bug that was concretely caught. All four share the basic figure. Guarantee and gap are kept apart, and the tests are bound back to the project goals instead of being listed for their own sake.
 
-The failure pattern found by the content audit of July (2026-07-19 - Promptotyping-Wissensbasen Inhaltsaudit (Befund)) is a test strategy kept twice, once in `architecture.md` and once in `test-strategy.md`, without either being declared the source of truth. Every change to the suite must then reach two places, and in practice one of them is missed.
+A frequent failure pattern is a test strategy kept twice, once in `architecture.md` and once in `test-strategy.md`, without either being declared the source of truth. Every change to the suite must then reach two places, and in practice one of them is missed.
 
 ## Terms
 
@@ -271,8 +271,7 @@ A test that is red on purpose because the invariant it checks is not yet impleme
 
 ## Related
 
-- [Templates of the Promptotyping Documents](./)
-- [Convention](convention.md)
+- [Convention](convention.md), with the list of all templates
 - [Promptotyping](https://dhcraft.org/Promptotyping/)
 - [Architecture template](architecture.md)
 - [Specification template](specification.md)

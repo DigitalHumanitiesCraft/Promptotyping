@@ -2,6 +2,7 @@ cff-version: 1.2.0
 message: "If you use the Promptotyping working practice, its templates or its skill, please cite it as below."
 title: "Promptotyping"
 version: "1.0.0"
+date-released: "2026-11-14"
 abstract: >-
   Promptotyping is a working practice for translating research data and their
   contexts, with frontier LLM agents, into research artefacts that fit the

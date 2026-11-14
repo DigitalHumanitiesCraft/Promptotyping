@@ -1,7 +1,6 @@
 ---
 title: Medieval Legal Transactions
 id: sugw
-paper: none
 role: further
 artefact: "Static edition frontend rendered from a pipeline of transformers and validators"
 ---
@@ -34,4 +33,4 @@ The case is the record's clearest instance of the division of labour the practic
 
 The corpus is not schema-valid, and the project says so. The generated validation report records that a minority of the files validate against the toolbox schema while the majority do not, and it carries the schema errors and referential-integrity findings behind that. The report frames these as residual annotation issues in the source corpus, deliberately surfaced for editorial triage. Read as a defect that is the worst figure in the record. Read as a property it is the point, because the pipeline makes the state of the source visible. A pipeline that suppressed those errors would deliver a clean-looking edition over unclean data.
 
-Nothing about this case is open to inspection. The repository is not public, the test deployment does not answer, and the recorded session is not published either, so every statement on this page rests on the repository's own generated report and on a reading of the source tree. It is the one project in this gallery whose record is closed to outside inspection altogether. Most of the knowledge documents also carry no frontmatter, which puts the knowledge base outside the addressing mechanism the convention describes.
+Nothing about this case is open to inspection. The repository is not public, and neither a deployment nor the recorded session is published, so every statement on this page rests on the repository's own generated report and on a reading of the source tree. It is the one project in this collection whose record is closed to outside inspection altogether. Most of the knowledge documents also carry no frontmatter, which puts the knowledge base outside the addressing mechanism the convention describes.

@@ -2,7 +2,7 @@
 
 Changes to the Promptotyping templates, convention, knowledge base and site, per release. Versions follow the numbering in `CITATION.cff`. The skill has its own changelog in the repository `promptotyping-skill`.
 
-## 1.0.0, unreleased
+## 1.0.0, 2026-11-14
 
 The first numbered release, prepared to accompany the paper on Promptotyping.
 

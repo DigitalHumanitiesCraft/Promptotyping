@@ -1,7 +1,6 @@
 ---
 title: HerData
 id: herdata
-paper: none
 role: further
 artefact: "Correspondence map (women in Goethe's correspondence)"
 ---
@@ -22,11 +21,11 @@ Development ran in three large iterations through Claude Code with changing fron
 
 ## Methodological contribution
 
-Two patterns typical of the practice appear. The knowledge base is the source of truth, since one folder of Knowledge Documents is at once the working basis for the model sessions and the public project documentation, each document carrying machine-readable provenance in its frontmatter. A content layer allows non-technical maintenance, so the data partners edit editorial text without touching code. The core methodological contribution is the map-bias section, which makes the systematic distortion of the data explicit before use instead of hiding it behind the visualisation.
+Two patterns typical of the practice appear. The knowledge base is the source of truth, since one folder of knowledge documents is at once the working basis for the model sessions and the public project documentation, each document carrying machine-readable provenance in its frontmatter. A content layer allows non-technical maintenance, so the data partners edit editorial text without touching code. The core methodological contribution is the map-bias section, which makes the systematic distortion of the data explicit before use instead of hiding it behind the visualisation.
 
 ## Limits
 
-Nothing about this case can be inspected from outside. The repository is closed, and the demo that the site once advertised answers with an error and has been taken down, which the verification record holds as an operator matter. Every statement on this page rests on the local working copy.
+The case is not publicly inspectable. Its repository is not public and no demonstration is online, so every statement on this page rests on the project's own repository.
 
 The curated set is a deliberate restriction and bounds what the visualisation can show. A map built on selected persons carries the selection into every pattern a reader believes to see in it, and the map-bias section names that condition without removing it.
 

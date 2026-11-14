@@ -19,11 +19,11 @@ The template suits the central project knowledge document `knowledge/project.md`
 - They are embedded in an institutional, methodological or technical context that does not explain itself.
 - They have defined functions whose description differs from the description of what is deliberately not provided.
 
-The range of functions is elastic. In small projects this document carries material and substance itself (a brief account of the data and a range of functions). As soon as these receive documents of their own (`data.md`, `specification.md`), it shrinks to the Charter and points to them. This is why the function table of the convention lists the Charter as "possibly also Material and Specification".
+The range of functions is elastic. In small projects this document carries the material itself in a brief account of the data. As soon as the material receives a document of its own (`data.md`), it shrinks to the Charter and points to it, which is why the function table of the convention lists the Charter as possibly also carrying Material. The specification always stands in `specification.md`, and the section Range of functions here stays at the level of design principles.
 
 The template does not hold for task, diary or discussion documents, for which other templates are more suitable. Nor is it meant as a library or tool README, where installation and API documentation come first.
 
-The project description is the first document of the repository and changes rarely afterwards, because it carries the stable identity. An update is triggered by a change of commission, material or institutional frame, and progress of the work is no such trigger. The distillation boundary follows the elasticity described above. As soon as Material or Specification receive documents of their own, the Charter shrinks to pointers and hands over the substance instead of keeping it twice.
+The project description is the first document of the repository and changes rarely afterwards, because it carries the stable identity. An update is triggered by a change of commission, material or institutional frame, and progress of the work is no such trigger. The distillation boundary follows the elasticity described above. As soon as Material receives a document of its own, the Charter shrinks to pointers and hands over the substance instead of keeping it twice.
 
 ## Function of the document
 
@@ -37,7 +37,7 @@ First, the structure consistently separates what the project does, what it does 
 
 Second, data provenance and standards are main structural components and not appendices. This reflects an epistemic stance in which the capacity to connect to external knowledge is part of the project's identity.
 
-Third, the structure explicitly delimits the project's scope. What the project deliberately does not provide is named in the section on delimitations just as what it provides, and this statement of scope is constitutive. It differs from the self-description of the document, which has been prohibited since 2026-06-29 ([convention](convention.md)). "The project exports no RDF" is a permissible design decision. "This document does not cover X, see elsewhere" is an impermissible boundary note.
+Third, the structure explicitly delimits the project's scope. What the project deliberately does not provide is named in the section on delimitations just as what it provides, and this statement of scope is constitutive. It differs from the self-description of the document, which the third structural principle of the [convention](convention.md) excludes. "The project exports no RDF" is a permissible design decision. "This document does not cover X, see elsewhere" is an impermissible boundary note.
 
 ## Structure at a glance
 
@@ -68,7 +68,7 @@ The frontmatter follows the reduced required core of the [convention](convention
 
 Identification comprises `title` as the human-readable title and `project` as a nested field with `name` and `repository`.
 
-Status and versioning comprise `status` as document maturity (`idea`, `draft`, `stub`, `complete`, `reviewed`, `archived`, and since 2026-07-19 also `active` and `snapshot`), which differs from the operational project status kept outside the project knowledge base. They further comprise `language` as a language code, `version` as a version number, and `created` and `updated` as dates in the format `YYYY-MM-DD`.
+Status and versioning comprise `status` as document maturity (`idea`, `draft`, `stub`, `complete`, `reviewed`, `archived`, plus `active` and `snapshot`), which differs from the operational project status kept outside the project knowledge base. They further comprise `language` as a language code, `version` as a version number, and `created` and `updated` as dates in the format `YYYY-MM-DD`.
 
 Responsibility comprises `authors` as a list that holds only people, even when an LLM produced the text, and `generated-with` for harness and LLM in the format `Harness (LLM)`, for example `Claude Code (Claude Opus 5)`, if the document was produced with LLM support. If a command reproduces the document, `output-of` with that command is added. See the section on provenance in the frontmatter of the [convention](convention.md).
 
@@ -78,7 +78,7 @@ Knowledge sources comprise `knowledge-sources` as a nested mapping that holds ex
 
 The field `knowledge-sources` is the structural feature that distinguishes the template from generic READMEs. It makes the document connectable to Linked Open Data, since every listed source is identified unambiguously by a URI and reachable directly when resolved. Where needed, a URI can also serve as a namespace for the semantic markup of other content in the document.
 
-Topics are optional and take the form of wikilinks to vault concepts. In the project description they are typically sparse, for example `[[Scholar-Centered Design]]` or the overarching research field, insofar as it guides filling in the project. If no clear placement holds, leave them out.
+Topics are optional and take the form of wikilinks to concept documents. In the project description they are typically sparse, for example `[[Scholar-Centred Design]]` or the overarching research field, insofar as it guides filling in the project. If no clear placement holds, leave them out.
 
 ## Sections in detail
 
@@ -118,7 +118,7 @@ This section calibrates expectations and marks limits as design decisions. It li
 
 ### Terms
 
-This section secures terminological coherence in the vault. It holds a glossary of terms central to the project, each entry defined in one sentence. Terms that occur in only a single section do not belong in the glossary. The glossary is for terms that are to be used consistently across several vault documents.
+This section secures terminological coherence in the project knowledge base. It holds a glossary of terms central to the project, each entry defined in one sentence. Terms that occur in only a single section do not belong in the glossary. The glossary is for terms that are to be used consistently across several knowledge documents.
 
 ### Licence
 
@@ -150,8 +150,8 @@ updated: [YYYY-MM-DD]
 authors: [Author 1, Author 2]
 generated-with: [Harness (LLM), if relevant]
 method:
-  name: [Method name]
-  url: [Method documentation]
+  name: Promptotyping
+  url: https://dhcraft.org/Promptotyping/
 template:
   name: Project template
   version: 0.3
@@ -224,10 +224,15 @@ The project does not provide:
 
 ## Terms
 
-<!-- Glossary of terms central to the project, consistent across the vault. -->
+<!-- Glossary of terms central to the project, consistent across the knowledge documents. One heading per term, its definition beneath. -->
 
-- [Term]: [Definition].
-- [Term]: [Definition].
+### [Term]
+
+[Definition.]
+
+### [Term]
+
+[Definition.]
 
 ## Licence
 
@@ -248,15 +253,15 @@ In both cases the filling in should proceed iteratively. Generating the whole do
 
 ## Example
 
-HerData is the reference implementation. Its `project.md` carries the lead, the data basis with institutional attribution, the wider context (PROPYLÄEN), standards with a reflective paragraph, the range of functions at the level of design principles and a list of delimitations with a sentence giving the reason. The substance of Material and Specification has been handed over to `data.md` and the specification.
+A reference implementation carries the lead, the data basis with institutional attribution, the wider context (for instance the editorial platform that publishes the source), standards with a reflective paragraph, the range of functions at the level of design principles and a list of delimitations with a sentence giving the reason. The substance of Material and Specification has been handed over to `data.md` and the specification.
 
-The content audit of July (2026-07-19, findings of the content audit of Promptotyping knowledge bases) found two failure patterns. The first is the Charter as a miscellany, a `project.md` that mixes Charter, Material and Planning without separation, so that the stable core of identity is lost in the volatile state of planning. The second is the missing Charter. Several active knowledge bases have no document at all that answers the Charter question, so that every session start has to reconstruct the project context from scattered sources.
+Two failure patterns recur. The first is the Charter as a miscellany, a `project.md` that mixes Charter, Material and Planning without separation, so that the stable core of identity is lost in the volatile state of planning. The second is the missing Charter. A knowledge base may have no document at all that answers the Charter question, so that every session start has to reconstruct the project context from scattered sources.
 
 ## Terms
 
 ### Knowledge document
 
-A Markdown document internal to the vault and condensed in the Promptotyping sense, which provides context for further work with an LLM.
+A structured unit of knowledge distilled from raw material for work shared between people and LLMs, as the [convention](convention.md) defines it.
 
 ### Frontmatter
 
@@ -276,12 +281,11 @@ The conditions under which a template holds, delimited from use cases for which 
 
 ## Licence
 
-The template stands under the licence of the surrounding vault or project and may be adapted freely. Licence notes on concrete projects that use this template belong in the respective project document.
+The template stands under the licence of the Promptotyping repository and may be adapted freely. Licence notes on concrete projects that use this template belong in the respective project document.
 
 ## Related
 
-- Templates of the Promptotyping Documents (this folder)
-- [Convention](convention.md)
+- [Convention](convention.md), with the list of all templates
 - [Promptotyping](https://dhcraft.org/Promptotyping/)
 - [Data template](data.md)
 - [Specification template](specification.md)

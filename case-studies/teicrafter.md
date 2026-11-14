@@ -1,7 +1,6 @@
 ---
 title: teiCrafter
 id: teicrafter
-paper: "4.3, Table 3"
 role: evidence
 artefact: "Custom GPT without implemented software (2023), browser-based lossless TEI editor (2026)"
 ---
@@ -18,7 +17,7 @@ teiCrafter of 2023 is the origin point of the practice, and no software was writ
 
 The case dates a capability. What separates the 2023 artefact from the 2026 editor is the maturity of the agentic tooling, since the conception stayed the same across the interval and became implementable only once the tools carried it. The pair therefore works as a control on the practice's dependence on frontier tooling, which is otherwise asserted from cases that all sit on one side of that threshold.
 
-The shape of the 2023 artefact is the second point. A mapping rule and a quality-control instruction, written in prose and executed by a model, is the working core of what the practice later formalises as a Knowledge Document. The editor who checks each conversion occupies the verifying role that the practice later names.
+The shape of the 2023 artefact is the second point. A mapping rule and a quality-control instruction, written in prose and executed by a model, is the working core of what the practice later formalises as a knowledge document. The editor who checks each conversion occupies the verifying role that the practice later names.
 
 A third observation redirected the work. The risk that a general-purpose provider would absorb a product of this kind was recognised at the time, and the effort moved from building the tool towards the practice and the competences it requires.
 

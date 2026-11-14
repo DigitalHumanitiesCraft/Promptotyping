@@ -1,7 +1,6 @@
 ---
 title: Kulturpool Explorer
 id: kulturpool-explorer
-paper: none
 role: further
 artefact: "Collection interface (parallel agent orchestration)"
 ---
@@ -24,7 +23,7 @@ Exploration ran through the agent as an abstraction layer over the API. The agen
 
 Distillation ran in two agent instances working at the same time on separate knowledge levels. One synthesised the API responses into a data document covering collection areas, object types, metadata structure and the relations between facets. The other simulated an interdisciplinary group of professional roles for the interface concept and researched the current literature on exploratory collection interfaces, producing a design document with principles and reference projects. An explicit consolidation step followed, in which the knowledge folder was read as a whole, its redundancies removed and its structure reduced.
 
-Implementation went from an agent-written plan to harvest, transform and build, as a static page in vanilla JavaScript. The first iteration produced a conventional faceted collection interface; the second, after screenshot feedback, replaced its entry point with coordinated visualisations over a dense image wall.
+Implementation went from an agent-written plan to harvest, transform and build, as a static page in vanilla JavaScript. The first iteration produced a conventional faceted collection interface. The second, after screenshot feedback, replaced its entry point with coordinated visualisations over a dense image wall.
 
 ## Methodological contribution
 
@@ -36,7 +35,7 @@ Verification ran visually. Screenshots of the running artefact were handed back 
 
 ## Limits
 
-Parallel operation is cognitively expensive, and the record judges it unsustainable over longer stretches. It serves for a bounded phase; as a standing working mode it does not hold.
+Parallel operation is cognitively expensive, and the record judges it unsustainable over longer stretches. It serves for a bounded phase and does not hold as a standing working mode.
 
 The first working implementation hung the browser on the real data volume. The generated code was correct and carried no optimisation for the amount of data it would meet, which is the practical shape of the uneven capability profile that makes verification necessary at exactly the points where the output looks finished.
 

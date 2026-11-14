@@ -1,18 +1,17 @@
 ---
 title: FemPrompt SozArb
 id: femprompt-sozarb
-paper: none
 role: further
 artefact: "Evidence companion plus Obsidian vault"
 ---
 
 # FemPrompt SozArb
 
-[Repository](https://github.com/chpollin/FemPrompt_SozArb), [Live](https://chpollin.github.io/FemPrompt_SozArb/)
+[Live](https://chpollin.github.io/FemPrompt_SozArb/)
 
 ## Context and research question
 
-FemPrompt SozArb is a systematic literature review on AI literacy and LLM bias in social work, carried out as a staged pipeline whose own record is published alongside its result. The question the project set itself is about the process. It asks how the transformation a body of literature undergoes in an LLM-supported review can be made inspectable at every step. It is the record's one case outside the digital humanities and its one artefact for the audit function in the [interface typology](../knowledge/practice.md) this site carries.
+FemPrompt SozArb is a systematic literature review on AI literacy and LLM bias in social work, carried out as a staged pipeline whose own record is published alongside its result. The question the project set itself is about the process. It asks how the transformation a body of literature undergoes in an LLM-supported review can be made inspectable at every step. It is the record's one case outside the digital humanities and its one artefact for the audit function among the interface functions described in [The artefact and its boundary](../knowledge/practice.md#the-artefact-and-its-boundary).
 
 ## Data
 
@@ -30,7 +29,7 @@ Verification points sit after every AI-assisted stage and are either human or ru
 
 The divergence between human and machine judgement is treated as a primary research output. The LLM included papers at a markedly higher rate than the human reviewers, the disagreement cases were classified by pattern, and each became a document in the vault, which turns an error term into readable evidence about where machine assessment of scholarly relevance departs from expert assessment.
 
-The vault itself is generated from the pipeline data by a named script, an instance of the generated document that the [Distillation](../knowledge/practice.md) step describes. Its stated obligation runs on three levels, what is the case, how it came about with the prompts and configurations that produced it, and what the process cannot deliver. The published limitations of each pipeline stage therefore sit inside the artefact, one note per stage.
+The vault itself is generated from the pipeline data by a named script, an instance of the generated document that [Distillation](../knowledge/practice.md#distillation) describes. Its stated obligation runs on three levels, what is the case, how it came about with the prompts and configurations that produced it, and what the process cannot deliver. The published limitations of each pipeline stage therefore sit inside the artefact, one note per stage.
 
 The evidence companion renders three views over that infrastructure, the paper corpus as a searchable and filterable set, the concept network extracted from the knowledge documents, and the comparison of human against LLM assessment with its confusion matrix and agreement statistic. That is the audit function in its clearest form, since the path that produced the result is rendered beside the result.
 

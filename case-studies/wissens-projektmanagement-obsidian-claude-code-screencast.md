@@ -1,7 +1,6 @@
 ---
 title: Knowledge and Project Management with Obsidian
 id: wissens-projektmanagement-obsidian-claude-code-screencast
-paper: "4.3, teaching and collaboration"
 role: teaching
 artefact: "A vault that holds the rules by which it grows"
 ---

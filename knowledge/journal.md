@@ -26,13 +26,21 @@ related: [project, specification]
 
 - The operator's acceptance of the single page is outstanding.
 - Other repositories carry the addresses published before 2026-11-14 in their `template:` fields. In a browser with JavaScript the not-found page leads the address of a template that still exists to `templates/<slug>.md`, while an agent fetching it receives status 404. The addresses of the six retired templates end on the not-found page, and a repository takes the current name and address at its next substantive update.
-- The tag `v1.0.0` and `date-released` in `CITATION.cff` wait for the final check of the published page.
 - Promptotyping has not been evaluated with researchers outside the project. Use by external participants, an independently led transfer case, a documented unsuccessful or discontinued path and figures on the resources a project needs remain open. The agent role simulations of 2026-08-22 are a pre-test only.
 - Once the paper is published, the page and [project.md](project.md) cite it.
 
 ## Entries
 
 The entries up to 2026-11-14 are condensed into the milestone entries below, and their full wording stands in the Git history (`git show f211631:knowledge/journal.md`).
+
+### 2026-11-14 Independent review before the release and version 1.0.0
+
+- Trigger: the texts under `knowledge/` and `templates/` had been written and translated by several agents on one day and read as a whole by no one, and the release tag was pending.
+- Found: an agent with a fresh context and no knowledge of the authors' reasoning read the repository against the files and the skill. The knowledge base described parts of a page that was not built, among them a scheme toggle and a retired template archive that the page still offers. The templates carried a retired role name, cited internal notes as evidence and linked repositories that are not public. Several case studies pointed to pages of the retired portal.
+- Decided: the knowledge base describes the page as built, the template archive stays, the skill's terms hold where a template differed, and a published knowledge base may keep the earlier wording of its journal in the Git history alone, which the convention now says. Version 1.0.0 is released on this state.
+- Corrected: the statements of the first rewrite of this knowledge base about the page, the archive and the document types, valid are [design.md](design.md), [architecture.md](architecture.md) and the [convention](../templates/convention.md).
+- Changed: all seven documents of this folder, the twelve files under `templates/`, the case studies, the page's metadata and footer, `README.md`, `CHANGELOG.md` and `CITATION.cff`.
+- Evidence: `196d350` and the commit that carries this entry. The review was read-only and its findings were checked against the files before each correction.
 
 ### 2026-11-14 condensed 2026-05-09–2026-11-14
 

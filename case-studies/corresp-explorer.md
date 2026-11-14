@@ -1,7 +1,7 @@
 ---
 title: CorrespExplorer
 id: corresp-explorer
-paper: "4.3, Table 3"
+paper: documented case
 role: evidence
 artefact: "Coordinated visualisation views"
 ---
@@ -30,6 +30,6 @@ The case yields three observations. FAIR data act as an enabler, since output qu
 
 What the case shows about the ease of the translation holds for data that is standardised, documented and machine-readable. It says nothing about the idiosyncratic spreadsheet or the undocumented database that much research data actually is.
 
-The context rot observation is qualitative. The documentation records that output quality fell inside the advertised window and carries no measurement, no token count and no controlled comparison. It grounds the practice of distillation; about the model it establishes nothing.
+The context rot observation is qualitative. The documentation records that output quality fell inside the advertised window and carries no measurement, no token count and no controlled comparison. It grounds the practice of distillation and establishes nothing about the model.
 
 The sycophancy observation has the same status. It was countered by prompting, and whether the countermeasure worked was judged by the person who wrote the prompt.

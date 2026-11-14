@@ -1,7 +1,6 @@
 ---
 title: wiiw Patent Analysis
 id: wiiw-patent-analysis
-paper: none
 role: further
 artefact: "Network dashboard with centrality measures and yearly snapshots"
 ---

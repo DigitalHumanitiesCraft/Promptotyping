@@ -9,7 +9,7 @@ machine-url: https://dhcraft.org/Promptotyping/templates/design.md
 ---
 # Design template
 
-This template structures the design document of a Promptotyping knowledge base. The resulting `design.md` lies in the `knowledge/` folder and describes the design stance, design system, interaction patterns and visualisation logic. An existing action layer points to this declarative knowledge as its source of values and translates it into instructions for the agent. This coupling is what agent socialisation describes.
+This template structures the design document of a Promptotyping knowledge base. The resulting `design.md` lies in the `knowledge/` folder and describes the design stance, design system, interaction patterns and visualisation logic. An existing action layer points to this declarative knowledge as its source of values and translates it into instructions for the agent.
 
 ## Scope
 
@@ -17,7 +17,7 @@ The template applies as soon as the project has a user interface, meaning visual
 
 The document comes into being once the first iterations of the interface have validated the design stance, since before that the stance is speculative. It is updated on a refactoring of the design system and on the removal of a described view, in the same pass as the removal. A `design.md` that goes on describing a deleted view shares the decay pattern of the architecture document. Token values never go stale here, because they never stand here (second structural principle).
 
-The coupling to the action layer is optional. `design.md` remains a complete declarative document even without such a consumer. An existing action layer translates the design stance into imperatives and names `design.md` as its source of values. Its actual entry path follows the [action layer template](action-layer.md). The empirical evidence base also contains repositories without a `CLAUDE.md` that draws on the design document.
+The coupling to the action layer is optional. `design.md` remains a complete declarative document even without such a consumer. An existing action layer translates the design stance into imperatives and names `design.md` as its source of values. Its actual entry path follows the [action layer template](action-layer.md). Some repositories keep a `design.md` without any `CLAUDE.md` that draws on it.
 
 ## Function of the document
 
@@ -37,7 +37,7 @@ Three principles carry the document.
 
 The document follows the frontmatter schema of the [convention](convention.md) (required core `title, project, method, status, created, updated`). Specific to design are these fields.
 
-- `topics:` typically `[[Information Visualisation]]` and `[[Scholar-Centered Design]]`. They place the agent in the fields of knowledge that give it a hold when generating an interface, with Tufte, Munzner and Bertin as background in place of generic interface patterns. For frontends that are not dominated by visualisation, another field of user experience knowledge such as `[[Human-Centred Design]]` takes the place of `[[Information Visualisation]]`.
+- `topics:` typically `[[Information Visualisation]]` and `[[Scholar-Centred Design]]`. They place the agent in the fields of knowledge that give it a hold when generating an interface, with Tufte, Munzner and Bertin as background in place of generic interface patterns. For frontends that are not dominated by visualisation, another field of user experience knowledge such as `[[Human-Centred Design]]` takes the place of `[[Information Visualisation]]`.
 - `knowledge-sources:` rarely used, because design decisions are mostly taken within the project. When an established design system (Material, Carbon, IBM Design Language) serves as a reference, it is recorded here as a URI.
 - `related:` typically `specification`, `architecture`.
 
@@ -93,12 +93,12 @@ authors: [Author 1, Author 2]
 generated-with: [Harness (LLM), if relevant]
 method:
   name: Promptotyping
-  url: https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin
+  url: https://dhcraft.org/Promptotyping/
 template:
   name: Design template
   version: 0.3
   url: https://dhcraft.org/Promptotyping/templates/design.md
-topics: ["[[Information Visualisation]]", "[[Scholar-Centered Design]]"]
+topics: ["[[Information Visualisation]]", "[[Scholar-Centred Design]]"]
 related: [specification, architecture]
 ---
 
@@ -149,9 +149,9 @@ When an existing `design.md` is checked, the declarative design stance, the actu
 
 ## Example
 
-HerData keeps a `design.md` with lead, design stance, design system, interaction patterns and design principles for the agent. Its lead sentence is characteristic, stating in translation that component detail lies in the code and not in the documentation, because there it goes stale faster than it is of use. This justification carries the second structural principle (pointer to the code as the source of truth) into the lead as an explicit rule.
+A typical `design.md` carries lead, design stance, design system, interaction patterns and design principles for the agent. A characteristic lead sentence states that component detail lies in the code and not in the documentation, because there it goes stale faster than it is of use. Such a justification carries the second structural principle (pointer to the code as the source of truth) into the lead as an explicit rule.
 
-The content audit of July (2026-07-19 - Promptotyping-Wissensbasen Inhaltsaudit (Befund)) found two failure patterns. One is a `design.md` that goes on describing a removed component as active over a third of the document. The other is self-describing sections ("What this document does not contain"), which the rule change of 2026-06-29 prohibits.
+Two failure patterns recur. One is a `design.md` that goes on describing a removed component as active over a large part of the document. The other is self-describing sections ("What this document does not contain"), which the third structural principle of the [convention](convention.md) excludes.
 
 ## Terms
 
@@ -173,10 +173,7 @@ A pointer to the declarative design document together with the translation of it
 
 ## Related
 
-- [Templates of the Promptotyping Documents](./)
-- [Convention](convention.md)
+- [Convention](convention.md), with the list of all templates
 - [Promptotyping](https://dhcraft.org/Promptotyping/)
-- Agent socialisation
-- Scholar-Centered Design
 - [Specification template](specification.md)
 - [Architecture template](architecture.md)

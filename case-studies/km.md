@@ -1,7 +1,6 @@
 ---
 title: Hans Gross Kriminalmuseum Digital Archive
 id: km
-paper: none
 role: further
 artefact: "Digital archive (search plus spatial exploration)"
 ---
@@ -16,7 +15,7 @@ The criminological collection of the Hans Gross Kriminalmuseum at the University
 
 ## Data
 
-Two encodings describe one collection. Criminal case index cards are encoded in TEI and carry crime, suspect, court and legal outcome as structured text; the museum objects are encoded in LIDO and carry materials, measurements, condition reports and digitisation history. Both come from the asset management system of the University of Graz, together with high-resolution images. An extraction script pulls the two encodings into a single index, preserving the full text of the case cards for search. Data fidelity was checked by statistical tests plus a manual verification of a hundred-object sample.
+Two encodings describe one collection. Criminal case index cards are encoded in TEI and carry crime, suspect, court and legal outcome as structured text. The museum objects are encoded in LIDO and carry materials, measurements, condition reports and digitisation history. Both come from the asset management system of the University of Graz, together with high-resolution images. An extraction script pulls the two encodings into a single index, preserving the full text of the case cards for search. Data fidelity was checked by statistical tests plus a manual verification of a hundred-object sample.
 
 ## Approach
 
@@ -28,7 +27,7 @@ The document set stayed minimal, an action layer recording the state of the work
 
 The case shows one data model carrying two interfaces whose epistemic function differs. The search interface answers a question that is already formed. The canvas explorer addresses the collection before a question exists, and its layout algorithms, categorical by type and period, chronological, radial and clustered, reorder the same objects so that a different property of the stock becomes salient in each.
 
-The explorer also shows how the client-side bound named on the site's [artefact page](../knowledge/practice.md) is met by rendering strategy. Spatial search runs over a quadtree so that hit testing avoids the full object set, and only the objects inside the current viewport are drawn.
+The explorer also shows how the client-side bound named in [The artefact and its boundary](../knowledge/practice.md#the-artefact-and-its-boundary) is met by rendering strategy. Spatial search runs over a quadtree so that hit testing avoids the full object set, and only the objects inside the current viewport are drawn.
 
 ## Limits
 

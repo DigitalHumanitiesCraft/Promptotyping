@@ -1,7 +1,7 @@
 ---
 title: SZD-HTR
 id: szd-htr
-paper: "4.3, Table 3"
+paper: documented case
 role: evidence
 artefact: "HTR/OCR pipeline with facsimile-text viewer and statistics dashboard"
 ---
@@ -14,7 +14,7 @@ Transcription and review of the Stefan Zweig estate.
 
 ## Context and research question
 
-The pipeline applies handwritten text recognition to the digitised Stefan Zweig estate at the Literaturarchiv Salzburg, some twenty thousand facsimile scans of manuscripts, typescripts and correspondence. The scholarly purpose fixed in Preparation was to make the estate readable and searchable in diplomatic transcription, without normalisation. The paper develops the project as its worked case for checking, and the modelling judgement and the verification judgement lay with the same person there.
+The pipeline applies handwritten text recognition to the digitised Stefan Zweig estate at the Literaturarchiv Salzburg, a large body of facsimile scans of manuscripts, typescripts and correspondence. The scholarly purpose fixed in Preparation was to make the estate readable and searchable in diplomatic transcription, without normalisation. The paper develops the project as its worked case for checking, and the modelling judgement and the verification judgement lay with the same person there.
 
 ## Data
 
@@ -30,11 +30,11 @@ Implementation derived the pipeline and the viewer through the agent, from a lay
 
 ## Methodological contribution
 
-Verification runs as a three-status scheme in which human-checked, meaning every page read against the facsimile, ranks above agent-checked, meaning a vision-language model compared image and transcript, which ranks above unchecked. That is the authority ordering of the [Checking](../knowledge/practice.md) page carried into project practice. Where a human corrects, the machine transcription is preserved in an edit history, so the two layers stay separable after the fact.
+Verification runs as a three-status scheme in which human-checked, meaning every page read against the facsimile, ranks above agent-checked, meaning a vision-language model compared image and transcript, which ranks above unchecked. That is the authority ordering of the [Checking](../knowledge/practice.md#checking) carried into project practice. Where a human corrects, the machine transcription is preserved in an edit history, so the two layers stay separable after the fact.
 
 The model's own confidence report proved worthless early, since it announced high confidence for clean typescripts and for multi-page Kurrent alike, and the automatic quality signals were built to replace it with a judgement formed outside the transcription step. Their thresholds were recalibrated across several rounds, because the first version flagged so large a share of the corpus that it was useless for triage.
 
-The loop back into the documents is on record. The review scheme itself was consolidated from four tiers to three by an operator decision documented in the knowledge base, and the journal carries the iterations and the models used.
+The loop back into the documents is on record. The review scheme itself was consolidated from four tiers to three by a decision documented in the project's knowledge base, and the journal carries the iterations and the models used.
 
 ## Limits
 
@@ -42,6 +42,6 @@ Vision-language models invent words instead of marking a gap, and across a large
 
 Agent verification is a cross-model check, one model transcribing and a second reading the result against the image. It substitutes for human review at no point. The agent can overlook errors and delivers no exhaustive proof, and handwriting is harder for it than print, which is why agent-checked ranks below human-checked in the scheme.
 
-The annotation protocol sets inter-annotator agreement as its measure of precision, and the record carries that standard while a measurement against it is still outstanding.
+The annotation protocol sets inter-annotator agreement as its measure of precision, and the record carries that standard without a measurement against it.
 
-A FAIR4RS audit of the repository was run on 23 July 2026 and is deposited in the project's own knowledge base. Findability fails throughout, with no persistent identifier and no versioned releases; the machine-readable citation metadata has since been added and the identifier gap stands. The audit was a single pass on one day without a second independent reviewer, and on two of the principles its verdict is an interpretation.
+A FAIR4RS audit of the repository, a check against the FAIR principles for research software, was run on 23 July 2026 and is deposited in the project's own knowledge base. It found findability failing throughout, with no persistent identifier and no versioned releases. The audit was a single pass on one day without a second independent reviewer, and on two of the principles its verdict is an interpretation.

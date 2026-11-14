@@ -9,17 +9,17 @@ machine-url: https://dhcraft.org/Promptotyping/templates/index.md
 ---
 # Index template
 
-This template structures the navigation document of a Promptotyping project knowledge base. The resulting document is called `INDEX.md` and lies in the `knowledge/` folder. Its capitalisation is the justified hub exception of the Naming Contract. Here people and agents find the register of documents, the reading order, the storage zones and the constitutive terms and abbreviations.
+This template structures the navigation document of a Promptotyping project knowledge base. The resulting document is called `INDEX.md` and lies in the `knowledge/` folder. Its capitalisation is the justified hub exception of the naming contract. Here people and agents find the register of documents, the reading order, the storage zones and the constitutive terms and abbreviations.
 
 ## Scope
 
-The template holds as soon as the project knowledge base contains more than three documents. In smaller repositories an index is superfluous and can be integrated into the Charter document (`project.md` or `README.md`). It does not hold for overviews across projects or for MOCs in the vault, for which the document rules of the respective vault apply.
+The template holds as soon as the project knowledge base contains more than three documents. In smaller repositories an index is superfluous and can be integrated into the Charter document (`project.md` or `README.md`). It does not hold for overviews across projects or for hub notes in a personal knowledge system, which follow that system's own rules.
 
 The index arises as soon as the fourth document crosses the threshold. It is maintained with every new, renamed or removed file, alongside the project knowledge base and not only at the end. Consistency with the actual content of the folder is its only obligation to update. An index that loses it is worse than none, because it creates false confidence.
 
 ## Function of the document
 
-The index document addresses a human reviewer, a newly set-up coding agent and the person responsible for the project who returns after weeks. It answers which documents and areas of artefacts exist, which Routing Question each path serves, in which order they are read and which terms or abbreviations are constitutive. It is at once a navigation node and a lexicon of terms.
+The index document addresses a human reviewer, a newly set-up coding agent and the person responsible for the project who returns after weeks. It answers which documents and areas of artefacts exist, which routing question each path serves, in which order they are read and which terms or abbreviations are constitutive. It is at once a navigation node and a lexicon of terms.
 
 ## Structural principles
 
@@ -29,7 +29,7 @@ First, the index points and does not store. Every piece of information summarise
 
 Second, the index provides reading paths in addition to a list. A flat enumeration of the documents is a file overview and gives no guidance for reading. Reading paths order documents by concern ("onboarding", "reproduction", "architecture review") and send the reader through the project knowledge base in an order suited to the task.
 
-Third, the index carries the canonical terms of the project. Terms are defined where they are needed, and the index is the only place where the defining terms are maintained consistently across the vault. Sibling documents link to individual terms (`[[INDEX#Form of indexing]]`) instead of defining them themselves. With very many terms (more than 15 to 20) moving them into a separate `glossary.md` is permitted. As a rule a section in the index suffices.
+Third, the index carries the canonical terms of the project. Terms are defined where they are needed, and the index is the only place where the defining terms are maintained consistently across the project knowledge base. Sibling documents link to individual terms (`[[INDEX#Form of indexing]]`) instead of defining them themselves. With very many terms (more than 15 to 20) moving them into a separate `glossary.md` is permitted. As a rule a section in the index suffices.
 
 Fourth, the index is consistent with the actual content of the folder. Every relevant file is listed, and no entry points to a deleted or planned file. Functions that are not relevant stay out without a written justification.
 
@@ -47,11 +47,11 @@ The index document follows the frontmatter schema of the [convention](convention
 
 ### Lead
 
-The lead makes clear in two to three sentences what the project knowledge base documents, for whom it is written and what it deliberately does not contain. It names the readership, the thematic coverage and points to operational matters (maintenance, workflow of data export) that do not lie in the project knowledge base itself. It contains no marketing sentences.
+The lead makes clear in two to three sentences what the project knowledge base documents and for whom it is written. It names the readership and the thematic coverage and links operational matters (maintenance, workflow of data export) where the reader needs them. It contains no marketing sentences.
 
 ### Document matrix
 
-This section gives a tabular overview of all durable Promptotyping Documents with path, function, Routing Question and occasion for updating. The matrix is the machine-readable form of the structure of the project knowledge base and is the first thing an agent consults. Its order follows the logic of the functions.
+This section gives a tabular overview of all durable Promptotyping Documents with path, function, routing question and occasion for updating. The matrix is the machine-readable form of the structure of the project knowledge base and is the first thing an agent consults. Its order follows the logic of the functions.
 
 ### Storage zones
 
@@ -63,7 +63,7 @@ This section recommends orders for different concerns. It gives two to four path
 
 ### Convention
 
-This section points to the convention by which the project knowledge base is maintained. It holds a link to the [convention](convention.md) or the repository's variant and one sentence stating that it explains the Naming Contract, the frontmatter schema and the routing heuristic.
+This section points to the convention by which the project knowledge base is maintained. It holds a link to the [convention](convention.md) or the repository's variant and one sentence stating that it explains the naming contract, the frontmatter schema and the routing heuristic.
 
 ### Terms
 
@@ -72,9 +72,9 @@ This section gives canonical definitions of the terms constitutive of the projec
 ## What does not belong here
 
 - Transcriptions of content from the siblings. The index points and does not store, the exception being the definitions of terms, which live here canonically.
-- Concrete numbers from the application (coverage, dataset sizes, test counts). These lie in the application itself and in `persons.json#meta` or comparable, and volatile quantities do not stand in knowledge documents.
+- Concrete numbers from the application (coverage, dataset sizes, test counts). These lie in the application itself and in the metadata block of the data file or comparable, and volatile quantities do not stand in knowledge documents.
 - Session logs and narratives of the course of work. Substantive transitions are recorded briefly in `journal.md`.
-- A section "What is missing and why". It was required until the rule change of 2026-06-29 and has been prohibited since. Functions that are not relevant stay out without comment, and pointers to material lying elsewhere stand positively at the place where they are needed.
+- A section "What is missing and why", which the third structural principle of the [convention](convention.md) excludes. Functions that are not relevant stay out without comment, and pointers to material lying elsewhere stand positively at the place where they are needed.
 - Methodological introductions to Promptotyping. The [Promptotyping](https://dhcraft.org/Promptotyping/) overview is responsible for that, and the index only points to it.
 - Definitions of terms that occur in only a single sibling document. These live in the Terms section of that document.
 
@@ -97,7 +97,7 @@ authors: [Author 1, Author 2]
 generated-with: [Harness (LLM), if relevant]
 method:
   name: Promptotyping
-  url: https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin
+  url: https://dhcraft.org/Promptotyping/
 template:
   name: Index template
   version: 0.5
@@ -105,13 +105,13 @@ template:
 related: [project, data, specification, architecture, design, journal]
 ---
 
-<!-- Lead: two to three sentences. Who is addressed, what is covered, what lies elsewhere. -->
+<!-- Lead: two to three sentences. Who is addressed and what is covered. -->
 
 [Lead paragraph]
 
 ## Documents
 
-| Path | Function | Routing Question | Updated |
+| Path | Function | Routing question | Updated |
 |---|---|---|---|
 | [[project]] | Charter | What is this project? | on a change of identity or scope |
 | [[data]] | Material | What is the data basis? | on a data export or a change of schema |
@@ -143,7 +143,7 @@ related: [project, data, specification, architecture, design, journal]
 
 ## Convention
 
-This project knowledge base follows the convention for Promptotyping Documents. It governs the Naming Contract, the frontmatter schema, the routing heuristic and the structural principles. See the [convention](https://dhcraft.org/Promptotyping/templates/convention.md).
+This project knowledge base follows the convention for Promptotyping Documents. It governs the naming contract, the frontmatter schema, the routing heuristic and the structural principles. See the [convention](https://dhcraft.org/Promptotyping/templates/convention.md).
 
 ## Terms
 
@@ -172,17 +172,17 @@ The template also serves as a yardstick for reviewing an existing project knowle
 
 ## Example
 
-HerData keeps `INDEX.md` with a lead, a document matrix, sections on reading paths and a pointer to the convention. Characteristic is the closing sentence of the lead, "Konkrete Zahlen erscheinen ausschliesslich in der Anwendung selbst, in den Stat-Cards der Hauptansichten und im Meta-Block der `persons.json`", which states that concrete numbers appear only in the application itself, in the stat cards of the main views and in the meta block of `persons.json`. This is a positive pointer to the place of truth for volatile numbers and remains permissible after the rule change of 2026-06-29, which abolished written sections on what is missing. HerData does not yet keep the Terms section. The refactoring should add it, because terms such as "Erwähnt", "Erwähnung", "Brief" and "Person" are constitutive of the project and are used consistently in several documents.
+A typical `INDEX.md` carries a lead, a document matrix, sections on reading paths and Terms, and a pointer to the convention. A characteristic lead closes with a positive pointer to the place of truth for volatile numbers, stating that concrete numbers appear only in the application itself, in the stat cards of its main views and in the metadata block of its data file. Such a pointer says where the figures lie and nothing about what the document omits, so the third structural principle of the convention permits it.
 
-The content audit of July (2026-07-19, findings of the content audit of Promptotyping knowledge bases) shows the recurring failure pattern of indexes that drift from the content of the folder. One index lists only half of the documents that actually exist, another leaves three files unregistered, and a third links to a deleted data model. The index is the document of the project knowledge base most prone to drift, because every change to a sibling file affects it indirectly.
+A recurring failure pattern is the index that drifts from the content of the folder, listing only part of the documents that actually exist, leaving files unregistered or linking to a deleted data model. The index is the document of the project knowledge base most prone to drift, because every change to a sibling file affects it indirectly.
 
-sugw-Edition keeps the glossary as an independent document `glossar.md` with twelve terms (Erschließungsform, Event, Faksimile, Gesamtnennung, Individuelle Person, Menschen-Event, Quelle, Quellenkorpus, Rechtsgeschäft, Regest, Rolle, Volltext). This is the variant of moving the glossary out, which the convention recommends above 15 to 20 terms. With twelve, a section in the index would also be permissible. sugw chose to move it out because the glossary serves as the source of interface tooltips in the frontend and is thus also consumed by machines.
+A project can move its glossary into an independent `glossary.md` below the 15 to 20 terms at which this template permits it, when the glossary also serves a machine consumer, for instance as the source of interface tooltips in the frontend.
 
 ## Terms
 
 ### Project knowledge base
 
-The collection of all Markdown documents in the `knowledge/` folder of a Promptotyping repository.
+The knowledge documents in the `knowledge/` folder of a Promptotyping repository together with the agent instructions in the repository root.
 
 ### Reading path
 
@@ -190,12 +190,11 @@ A recommended order of several documents that answers a particular concern most 
 
 ### Document matrix
 
-A tabular overview of the Promptotyping Documents with path, function, Routing Question and occasion for updating.
+A tabular overview of the Promptotyping Documents with path, function, routing question and occasion for updating.
 
 ## Related
 
-- Templates of the Promptotyping Documents (this folder)
-- [Convention](convention.md)
+- [Convention](convention.md), with the list of all templates
 - [Promptotyping](https://dhcraft.org/Promptotyping/)
 - [Project template](project.md)
 - [Journal template](journal.md), including its section `## Open`

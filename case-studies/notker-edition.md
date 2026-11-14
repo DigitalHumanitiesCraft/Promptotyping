@@ -1,7 +1,6 @@
 ---
 title: Notker Edition
 id: notker-edition
-paper: "4.3, Table 3"
 role: evidence
 artefact: "Layer-toggle edition (text-layer controls, IIIF)"
 ---
@@ -28,7 +27,7 @@ The case shows data production as an edition problem with a pronounced layer-tog
 
 ## Limits
 
-The edition rests on a sample page. It shows that the layering of this psalm can be carried from a word-processor file into TEI and made controllable; how the arrangement behaves across the whole commentary lies outside the case.
+The edition rests on a sample page. It shows that the layering of this psalm can be carried from a word-processor file into TEI and made controllable. How the arrangement behaves across the whole commentary lies outside the case.
 
 The artefact is a promptotype for a funding application and argues the feasibility of an edition. The editorial decisions it presents were taken for a demonstration, and an edition of the full commentary would have to take them again under the weight of the whole text.
 

@@ -28,11 +28,11 @@ Durable substantive and procedural content lies in declarative knowledge documen
 1. `## Open` stands at the beginning and holds the complete current list of what is open. This includes unfinished work, unchecked results, questions that wait for the researchers, and work handed to a named recipient. Each handoff rewrites the section as a whole. A settled point leaves it, and an entry beneath records how it was settled. When nothing is open, the section says "Nothing open." The heading `## Open` and this sentence are fixed strings and stay English even in a German journal, because agents and tools recognise the section by them.
 2. One entry is written per substantively connected step of the work. Session boundaries produce no entry of their own unless they conclude such a step.
 3. An entry carries the fields Trigger, Found, Decided, Rejected, Corrected, Changed and Evidence, as far as they have content. Fields without content are omitted. A rejected alternative stands with its reason under Rejected, and a correction stands under Corrected with a pointer to the earlier statement.
-4. Operator judgements stand verbatim in the field Decided, introduced with "Operator:". A delegated decision carries a statement of origin that names who decided under which delegation and that the decision can be revised. The judgement of the researchers on a Promptotype is an entry of its own in their words.
+4. Judgements of the researchers and of the user who directs the work stand verbatim in the field Decided, introduced with the role of the person who gave them, such as "Researchers:". A delegated decision carries a statement of origin that names who decided under which delegation and that the decision can be revised. The judgement of the researchers on a Promptotype is an entry of its own in their words.
 5. Each entry names at least one commit or other checkable piece of evidence in the field Evidence.
 6. An entry is history and is rewritten only by condensing. Before a handed-over or open point is used, its source and current goal are checked, and durable content is integrated into the responsible document or rejected with a reason. The entry is written after that, and the point leaves `## Open`.
-7. Condensing removes only detail from `journal.md`. `## Open` and the five most recent entries remain unchanged, the wording of older entries is appended to `journal-archive.md`, and connected older entries are each folded into one milestone entry. Entries cited externally, for example in a paper, README or case study, as well as operator judgements, statements of origin, corrections, rejected alternatives with their reasons and commit hashes are kept verbatim, and cited headings stay stable as anchors.
-8. A journal without `## Open` receives the section at the next handoff. A `knowledge/handoff.md` that still exists hands its open points over to `## Open`, and the file is proposed to the operator for removal. Earlier entries keep their form and order.
+7. Condensing removes only detail from `journal.md`. `## Open` and the five most recent entries remain unchanged, the wording of older entries is appended to `journal-archive.md`, and connected older entries are each folded into one milestone entry. Entries cited externally, for example in a paper, README or case study, as well as quoted judgements, statements of origin, corrections, rejected alternatives with their reasons and commit hashes are kept verbatim, and cited headings stay stable as anchors.
+8. A journal without `## Open` receives the section at the next handoff. A `knowledge/handoff.md` that still exists hands its open points over to `## Open`, and the file is proposed to the researchers for removal. Earlier entries keep their form and order.
 
 ## Frontmatter schema
 
@@ -53,9 +53,9 @@ The section follows immediately after the H1. Each point is concrete enough for 
 
 The entries stand under `## Entries`, newest first. The heading reads `### YYYY-MM-DD Subject`. A session number or phase remains as an addition only where it is cited outside the journal. An entry carries only the fields that have content.
 
-- Trigger names the open point, review or operator commission in a checkable form.
+- Trigger names the open point, review or commission in a checkable form.
 - Found states what emerged, also when it refutes an earlier statement.
-- Decided states the decision with its reason. Operator judgements stand verbatim, delegated decisions with a statement of origin.
+- Decided states the decision with its reason. Judgements stand verbatim, delegated decisions with a statement of origin.
 - Rejected states the rejected alternative with its reason.
 - Corrected states the earlier statement with its date or entry and the place of the valid version.
 - Changed names the target document and section in one sentence, without an inventory of the diff.
@@ -65,7 +65,7 @@ An entry fits on one screen, and each field comprises a few sentences. Numbers s
 
 ### Condensing and archive
 
-Condensing follows the fixed procedure of the [convention](convention.md), section Journal, open points and condensing. It starts from a fully committed state. The unchanged wording of each older entry is appended to `journal-archive.md`, oldest first and only insofar as it does not already stand there. Before any change to `journal.md`, a check confirms that the heading of each entry to be condensed stands in the archive. A milestone entry carries the period in its heading, for example `### 2026-08-01–2026-09-15 Data model and import path`. One line in the journal points to the archive, and an entry of its own for the condensing names the starting state, the range and the number of archived entries. The archive is only appended to and never rewritten, and at session start it is read only when a reason for a decision is needed.
+Condensing follows the fixed procedure of the [convention](convention.md), section Journal, open points and condensing. It starts from a fully committed state. The unchanged wording of each older entry is appended to `journal-archive.md`, oldest first and only insofar as it does not already stand there. Before any change to `journal.md`, a check confirms that the heading of each entry to be condensed stands in the archive. A milestone entry carries the period in its heading, for example `### 2026-08-01–2026-09-15 Data model and import path`. One line in the journal points to the archive, and an entry of its own for the condensing names the starting state, the range and the number of archived entries. The archive is only appended to and never rewritten, and at session start it is read only when a reason for a decision is needed. A published knowledge base may keep the earlier wording in the Git history alone, as the convention describes.
 
 ## What does not belong here
 
@@ -92,7 +92,7 @@ project:
   repository: [Repository URL]
 method:
   name: Promptotyping
-  url: https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin
+  url: https://dhcraft.org/Promptotyping/
 status: active
 language: [de | en]
 version: [Repository schema version]
@@ -125,11 +125,11 @@ Nothing open.
 
 ### YYYY-MM-DD [Subject]
 
-- Trigger: [open point, review or operator commission]
+- Trigger: [open point, review or commission]
 - Found: [what emerged, also against an earlier statement]
-- Decided: [decision with reason; Operator: "verbatim judgement"; delegated with statement of origin]
+- Decided: [decision with reason, a judgement verbatim after its role such as Researchers: "…", a delegated decision with its statement of origin]
 - Rejected: [alternative, because …]
-- Corrected: [earlier statement with date or entry; place of the valid version]
+- Corrected: [earlier statement with date or entry, and the place of the valid version]
 - Changed: [target document#section in one sentence]
 - Evidence: [commit, report path, test]
 
@@ -172,7 +172,7 @@ A handoff had left open how letters with only an inferred year stand in the sche
 
 - Trigger: open point from the data check of 2026-10-18.
 - Found: some of the letters carry only an inferred year, while the previous schema required a full date.
-- Decided: Operator: "Inferred dates stay marked as such and are never padded to full dates."
+- Decided: Researchers: "Inferred dates stay marked as such and are never padded to full dates."
 - Rejected: padding to 1 January, because it feigns a precision that is not there.
 - Changed: data-schema.md#Dating
 - Evidence: `a1b2c3d`
@@ -202,9 +202,7 @@ An entry folded during condensing from connected older entries, with the period 
 
 ## Related
 
-- Templates of the Promptotyping Documents (this folder)
-- [Convention](convention.md)
+- [Convention](convention.md), with the list of all templates
 - [Promptotyping](https://dhcraft.org/Promptotyping/)
-- Context Engineering
 - [Plan template](plan.md)
 - [Testing template](testing.md)

@@ -28,25 +28,25 @@ The rule set (b) comes into being with the first trial markup and is updated wit
 
 Depending on the subtype, the document answers two interlocking questions. Subtype (a) answers within which theoretical and methodological framework the project works, which research questions guide it, and which literature and disciplinary standards justify its decisions. Subtype (b) answers by which rules the material is marked up, mapped or calculated, how each relevant phenomenon is treated, and which phenomena are still unresolved.
 
-The document addresses three groups of readers. A domain expert (editor, domain scholar, funding officer) checks the methodological soundness and uses the rule set as a reference for manual post-processing and for communication with the client. A reviewer judges whether the decisions are justified and consistent. A coding agent reads the document before generating markup or calculation code. In subtype (b) the mapping rules are the direct specification for the annotation or transformation step, and in subtype (a) theory and sources place the agent in the right field of knowledge. A vague rule layer leads to markup that misses the intended semantics.
+The document addresses three groups of readers. A domain expert (editor, domain scholar, funding officer) checks the methodological soundness and uses the rule set as a reference for manual post-processing and for communication with the researchers. A reviewer judges whether the decisions are justified and consistent. A coding agent reads the document before generating markup or calculation code. In subtype (b) the mapping rules are the direct specification for the annotation or transformation step, and in subtype (a) theory and sources place the agent in the right field of knowledge. A vague rule layer leads to markup that misses the intended semantics.
 
 ## Structural principles
 
 Three principles carry the document.
 
 1. The document separates the rule from the material and from the specification. What the data are and where they come from belongs in `data.md` ([data template](data.md)), and the material is the subject matter. What the system is to do belongs in `specification.md` ([specification template](specification.md)), and the specification is the substance. By which disciplinary rule the material is marked up or the result justified belongs here. This separation is the reason the function exists. The rule set is neither the subject matter nor the scope of functions. It is the scholarly decision between them.
-2. The document gives every decision its justification and makes every gap explicit. In subtype (a) every methodological decision carries its source and its consequence, and a research decision without justification is a mere claim. In subtype (b) every coding rule carries its justification (why this element and not that one) and its delimitation (how which borderline cases are treated). Unresolved phenomena are named in a section of their own for open points and are never passed over in silence. What still has to be clarified with the client stands in the document as an open question.
+2. The document gives every decision its justification and makes every gap explicit. In subtype (a) every methodological decision carries its source and its consequence, and a research decision without justification is a mere claim. In subtype (b) every coding rule carries its justification (why this element and not that one) and its delimitation (how which borderline cases are treated). Unresolved phenomena are named in a section of their own for open points and are never passed over in silence. What still has to be clarified with the researchers stands in the document as an open question.
 3. The document points to the machine-readable source instead of duplicating it. Where a schema carries the formal truth (RelaxNG schema, ODD, JSON Schema, OWL ontology, vocabulary file), the document paraphrases the schema and links the schema file in the repository as the source of truth. The description of the rules is the readable layer and the schema the checkable one. They do not drift apart, because the document interprets the schema and does not retell it.
 
 ## Frontmatter schema
 
-The document follows the reduced required core of the frontmatter in the [convention](convention.md), `title`, `project` (object with `name` and `repository`), `method` (object with `name` and `url`), `status`, `created`, `updated`. The purpose lives as the first paragraph under the H1. `status` means the maturity of the document (`idea`, `draft`, `stub`, `complete`, `reviewed`, `archived`, and since 2026-07-19 also `active` for ongoing process documents and `snapshot` for documents tied to a fixed date), and not the operational state of the project. Recommended are `template` (as a block with `name`, `version` and `url`, where this template has been applied), `language`, `version` (consistent across the repository), `authors` and `generated-with` respectively, `topics` and `related`. `authors` carries only people, even when an LLM produced the text. `generated-with` names harness and LLM in the format `Harness (LLM)`, for instance `Claude Code (Claude Opus 5)`, see the section *Provenance in the frontmatter* of the convention. Specific to domain knowledge are these fields.
+The document follows the reduced required core of the frontmatter in the [convention](convention.md), `title`, `project` (object with `name` and `repository`), `method` (object with `name` and `url`), `status`, `created`, `updated`. The purpose lives as the first paragraph under the H1. `status` means the maturity of the document (`idea`, `draft`, `stub`, `complete`, `reviewed`, `archived`, plus `active` for ongoing process documents and `snapshot` for documents tied to a fixed date), and not the operational state of the project. Recommended are `template` (as a block with `name`, `version` and `url`, where this template has been applied), `language`, `version` (consistent across the repository), `authors` and `generated-with` respectively, `topics` and `related`. `authors` carries only people, even when an LLM produced the text. `generated-with` names harness and LLM in the format `Harness (LLM)`, for instance `Claude Code (Claude Opus 5)`, see the section *Provenance in the frontmatter* of the convention. Specific to domain knowledge are these fields.
 
 - `topics:` places the agent in the disciplinary field of knowledge and carries particular weight here. In subtype (b) typically `[[TEI]]`, `[[Editorial Guidelines]]`, `[[Critical Apparatus]]`, and depending on language and corpus also concepts of language or period (`[[Old High German]]`). In ontology projects `[[RDF]]`, `[[OWL]]` and the vocabulary used (`[[RiC-O]]`, `[[CIDOC CRM]]`). In subtype (a) the theoretical fields (`[[Mobility Studies]]`, `[[Explainable AI]]`, `[[Historical Information]]`).
 - `knowledge-sources:` is central here and should be maintained. At a minimum it holds `standards:` (standards, schemas and guidelines used, with URI, such as TEI P5, ISO codes, WCAG, disciplinary editorial guidelines) and, where applicable, `vocabularies:` (controlled vocabularies, authority files) as well as `datasets:` or `institutions:` for referenced reference projects. In subtype (a) the academic primary sources stand either here as entries under `standards:` or, more tellingly, in the document section `Sources`.
 - `related:` typically `data`, `specification`, `design`, the documents that build on the rule set or use it.
 
-A special case is the vault atom structure. Method and theory documents of subtype (a) that are to remain readable as atomic units of knowledge often follow the vault atom structure from the document rules of the respective vault instead of the Promptotyping frontmatter, with `type: knowledge`, `created`, `tags`, `status` in the frontmatter and `## Summary`, `## Sources`, `## Related` in the body instead of `knowledge-sources:` in the frontmatter. This is no error. It is the appropriate form when the document is read primarily as a knowledge atom and less as agent context in the repository (hist-info-model keeps its theory documents this way). The primary group of readers decides which of the two frontmatter forms applies. Agent-centred repository context takes the Promptotyping frontmatter, and an atomic knowledge document takes the vault atom structure.
+A special case is the atom structure of a knowledge system. Method and theory documents of subtype (a) that are to remain readable as atomic units of knowledge often follow the atom structure of the knowledge system they belong to, as its own document rules define it, instead of the Promptotyping frontmatter, with `type: knowledge`, `created`, `tags`, `status` in the frontmatter and `## Summary`, `## Sources`, `## Related` in the body instead of `knowledge-sources:` in the frontmatter. This is no error. It is the appropriate form when the document is read primarily as a knowledge atom and less as agent context in the repository (hist-info-model keeps its theory documents this way). The primary group of readers decides which of the two frontmatter forms applies. Agent-centred repository context takes the Promptotyping frontmatter, and an atomic knowledge document takes the atom structure.
 
 ## Sections in detail
 
@@ -54,7 +54,7 @@ The section structure differs by subtype. Common to both is the lead paragraph (
 
 ### Lead (both subtypes, required)
 
-The lead carries the purpose of the document in one sentence and then the scope of the rules or of the framework in one to three sentences. It states what the document lays down or justifies, for which corpus or which pipeline stage it applies, and what it serves as a reference for (manual post-processing, scaling to the whole holdings, communication with the client).
+The lead carries the purpose of the document in one sentence and then the scope of the rules or of the framework in one to three sentences. It states what the document lays down or justifies, for which corpus or which pipeline stage it applies, and what it serves as a reference for (manual post-processing, scaling to the whole holdings, communication with the researchers).
 
 ### Subtype (a): method and justification layer
 
@@ -66,7 +66,7 @@ The lead carries the purpose of the document in one sentence and then the scope 
 
 `## Research context` names the concrete field of objects in which the methodology operates. It gives a case study, the institutional or historical frame, the relevant literature and named research gaps. The section is optional and applies where the context does not already stand in the charter document.
 
-`## Sources` gives full evidence of the literature cited. It holds academic references with author, year, title, DOI or URL. In the vault atom structure this section is required and replaces `knowledge-sources:` in the frontmatter.
+`## Sources` gives full evidence of the literature cited. It holds academic references with author, year, title, DOI or URL. In the atom structure this section is required and replaces `knowledge-sources:` in the frontmatter.
 
 ### Subtype (b): domain-specific rule set
 
@@ -78,7 +78,7 @@ The lead carries the purpose of the document in one sentence and then the scope 
 
 `## Header and schema declarations` names the formal decisions in the schema that the rule set presupposes. It gives taxonomies, class declarations, controlled ID lists (textual witnesses, sources, vocabulary IDs), the schema profile and the encoding of variants, with a pointer to the schema file in the repository as the source of truth. The document paraphrases the schema file and does not replace it.
 
-`## Unresolved phenomena` (required where any exist) makes explicit the open points the rule set does not yet decide. It holds a table of phenomenon against status against consequence for the coding, each with the party responsible for clarifying it (typically the client). A question deliberately left undecided stands here and not in a footnote.
+`## Unresolved phenomena` (required where any exist) makes explicit the open points the rule set does not yet decide. It holds a table of phenomenon against status against consequence for the coding, each with the party responsible for clarifying it (typically the researchers). A question deliberately left undecided stands here and not in a footnote.
 
 `## Conventions for the whole project` (optional) prepares the scaling of the rules developed for a pilot or trial segment to the whole holdings. It states how the coding is extended to further units, reference projects and code tables (language codes, siglum systems). The section applies where a prototype scales to larger holdings.
 
@@ -92,7 +92,7 @@ The lead carries the purpose of the document in one sentence and then the scope 
 
 ## Template to fill in
 
-There are two blocks, one per subtype. The first covers the domain-specific rule set (b), the second the method and justification layer (a) in the Promptotyping frontmatter. A variant of the second block shows the vault atom structure for the case in which the document is read primarily as a knowledge atom. Optional sections that do not apply are deleted before the commit and are not left empty. The first paragraph carries the purpose.
+There are two blocks, one per subtype. The first covers the domain-specific rule set (b), the second the method and justification layer (a) in the Promptotyping frontmatter. A variant of the second block shows the atom structure for the case in which the document is read primarily as a knowledge atom. Optional sections that do not apply are deleted before the commit and are not left empty. The first paragraph carries the purpose.
 
 ### Subtype (b): rule set
 
@@ -104,7 +104,7 @@ project:
   repository: [Repository URL]
 method:
   name: Promptotyping
-  url: https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin
+  url: https://dhcraft.org/Promptotyping/
 status: draft
 created: [YYYY-MM-DD]
 updated: [YYYY-MM-DD]
@@ -151,7 +151,7 @@ related: [data, specification, design]
 
 - [Attribute/rule]: [meaning]
 
-**Delimitation:** [Borderline cases and their treatment]
+Delimitation. [Borderline cases and their treatment]
 
 ## Mapping tables
 
@@ -192,7 +192,7 @@ project:
   repository: [Repository URL]
 method:
   name: Promptotyping
-  url: https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin
+  url: https://dhcraft.org/Promptotyping/
 status: draft
 created: [YYYY-MM-DD]
 updated: [YYYY-MM-DD]
@@ -224,9 +224,9 @@ related: [project, data, specification]
 
 <!-- Optional. Numbered questions, where appropriate a hypothesis and a feasibility goal. Left out in pure methodology documents without a question of their own. -->
 
-**RQ1.** [...]
+RQ1. [...]
 
-**Hypothesis.** [...]
+Hypothesis. [...]
 
 ## Research-based decisions
 
@@ -234,11 +234,11 @@ related: [project, data, specification]
 
 ### [No.] [Finding as a title]
 
-**Finding:** [...]
+Finding. [...]
 
-**Source:** [Author, year, title, DOI/URL]
+Source. [Author, year, title, DOI/URL]
 
-**Consequence:** [What is therefore concretely built this way in the project]
+Consequence. [What is therefore concretely built this way in the project]
 
 ---
 
@@ -259,7 +259,7 @@ related: [project, data, specification]
 [...]
 ````
 
-### Variant: vault atom structure (for subtype a, when primarily a knowledge atom)
+### Variant: atom structure (for subtype a, when primarily a knowledge atom)
 
 ````markdown
 ---
@@ -292,7 +292,7 @@ status: draft
 
 ## Use as a prompt template
 
-The template serves as a structural anchor when domain knowledge is set up. First the agent (or the domain expert) decides which subtype applies and whether both are kept separately. The matching template block is copied into a new file in the `knowledge/` folder and filled iteratively. Subtype (b) is filled from the source material that actually exists (trial page, DOCX, schema file, existing reference edition), and the rule for each phenomenon is derived from a real instance and never invented. Subtype (a) is filled from the literature, and every finding needs a checkable primary source with DOI or URL. Since this layer carries disciplinary scholarly decisions, it is the part of the knowledge base that most urgently needs validation in substance by the Critical Expert (Critical-Expert-in-the-Loop). Borderline cases and unresolved phenomena are not smoothed away. They are left standing as open questions to the client. Research sources are checked against the ban on Grokipedia.
+The template serves as a structural anchor when domain knowledge is set up. First the agent (or the domain expert) decides which subtype applies and whether both are kept separately. The matching template block is copied into a new file in the `knowledge/` folder and filled iteratively. Subtype (b) is filled from the source material that actually exists (trial page, DOCX, schema file, existing reference edition), and the rule for each phenomenon is derived from a real instance and never invented. Subtype (a) is filled from the literature, and every finding needs a checkable primary source with DOI or URL. Since this layer carries disciplinary scholarly decisions, it is the part of the knowledge base that most urgently needs scholarly validation by the researchers, and its rules stay proposals until they have given it. Borderline cases and unresolved phenomena are not smoothed away. They are left standing as open questions to the researchers.
 
 The template also serves as a review sheet for an existing domain knowledge document. An existing `editorial-guidelines.md`, `tei-mapping.md`, `research-framework.md` or `research-methodology.md` is checked against the naming contract, the lead, the justifications, the sources and the consequences. The review also checks the delimitation from `data.md` and `specification.md` and the pointer to an authoritative schema file.
 
@@ -302,11 +302,11 @@ notker-edition shows the domain-specific rule set fully worked out (subtype b). 
 
 agentic-edition-pipeline shows the rule set in skeleton form (subtype b, early phase). It splits the rule set into `03_CONTEXT.md` (editorial guidelines with transcription conventions, normalisations, annotation types and authority data) and `04_TEI_MAPPING.md` (TEI profile DTABf with a pointer to `schemas/dtabf.json`, a header mapping and body mapping table of source element against TEI element against rule, annotation rules, registers). Both documents are laid out as fillable skeletons with `[TODO]` markers and show the structure of the mapping tables in pure form. They demonstrate that the rule set function also holds as a scaffold before it is filled.
 
-dia-xai shows the method and justification layer with academic sources (subtype a). It keeps `RESEARCH.md` as its research foundations. The lead carries the purpose ("distilled findings from the research literature that justify our design decisions", in translation) and the structural promise (every finding with a primary source and a concrete consequence). Each of the eleven sections follows the three steps of finding, source and consequence. Anchoring bias in pre-annotation (Berzak et al., EMNLP 2016), for example, leads to the design decision "raw text always visible in the verify view". A closing table of design decisions against their research basis condenses the eleven findings. This is the pure form of subtype (a), a checkable binding of every practical decision to a primary source.
+A research foundations document shows the method and justification layer with academic sources (subtype a). Its lead carries the purpose (distilled findings from the research literature that justify the project's design decisions) and the structural promise (every finding with a primary source and a concrete consequence). Each section follows the three steps of finding, source and consequence, so that a finding on anchoring bias in pre-annotation, for example, leads to the design decision that the raw text stays visible in the verification view. A closing table of design decisions against their research basis condenses the findings. This is the pure form of subtype (a), a checkable binding of every practical decision to a primary source.
 
 The research framework of a study is kept as `research-framework.md`. It carries the theoretical framework, relevant prior work, research gaps and research questions, with sources in a section of their own.
 
-hist-info-model shows the vault atom variant (subtype a as a knowledge atom). It keeps its theory documents in the folder `knowledge/01-theory/` in the vault atom structure instead of the Promptotyping frontmatter. `Historical-Information.md` carries `type: knowledge` plus `tags` and `status: draft` in the frontmatter and, in the body, `## Summary`, then the disciplinary decision (five properties, three primitives, the open question of their relation), then `## Sources` (Pollin, Thaller, Koselleck, Langefors) and `## Related` with annotated wikilinks. This demonstrates the special case of a method and theory document that is read primarily as an atomic unit of knowledge and follows the vault structure instead of the Promptotyping frontmatter.
+hist-info-model shows the atom variant (subtype a as a knowledge atom). It keeps its theory documents in the folder `knowledge/01-theory/` in the atom structure instead of the Promptotyping frontmatter. `Historical-Information.md` carries `type: knowledge` plus `tags` and `status: draft` in the frontmatter and, in the body, `## Summary`, then the disciplinary decision (five properties, three primitives, the open question of their relation), then `## Sources` and `## Related` with annotated wikilinks. This demonstrates the special case of a method and theory document that is read primarily as an atomic unit of knowledge and follows the atom structure instead of the Promptotyping frontmatter.
 
 ## Terms
 
@@ -328,7 +328,7 @@ The systematic assignment of source structure to target structure (source elemen
 
 ### Unresolved phenomenon
 
-A case for which the rule set does not yet carry a decision and which is named explicitly as an open question to be clarified with the client instead of being passed over in silence.
+A case for which the rule set does not yet carry a decision and which is named explicitly as an open question to be clarified with the researchers instead of being passed over in silence.
 
 ### Source of truth (for schemas)
 
@@ -336,10 +336,8 @@ The machine-readable file (RelaxNG schema, ODD, JSON Schema, OWL ontology) that 
 
 ## Related
 
-- [Templates of the Promptotyping Documents](./)
-- [Convention](convention.md)
+- [Convention](convention.md), with the list of all templates
 - [Promptotyping](https://dhcraft.org/Promptotyping/)
 - [Data template](data.md)
 - [Specification template](specification.md)
 - [Architecture template](architecture.md)
-- Critical-Expert-in-the-Loop

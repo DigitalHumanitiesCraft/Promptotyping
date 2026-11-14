@@ -13,7 +13,7 @@ This template structures the architecture document of a Promptotyping knowledge 
 
 ## Scope
 
-The template applies as soon as the system is more than a trivial frontend, that is, as soon as pipeline stages, module boundaries, data flows or security assumptions have to be documented. Single-page static site repositories without a build step do without it, and a short architecture section in `specification.md` is then enough. It does not apply to code documentation at the level of functions or classes, which lies in the code (docstrings, comments, JSDoc).
+The template applies as soon as the system is more than a trivial frontend, that is, as soon as pipeline stages, module boundaries, data flows or security assumptions have to be documented. Single-page static site repositories without a build step may do without it, and a short architecture section in `specification.md` is then enough. It does not apply to code documentation at the level of functions or classes, which lies in the code (docstrings, comments, JSDoc).
 
 The document comes into being once the stack is settled and is updated on a change of stack, a rebuild of components or the removal of a component, in the same pass as the code. The gravest decay pattern in practice is an architecture document that goes on describing a removed component as active. When the pipeline develops a routing question of its own or an update cycle of its own, `pipeline-architecture.md` comes into being.
 
@@ -109,7 +109,7 @@ authors: [Author 1, Author 2]
 generated-with: [Harness (LLM), if relevant]
 method:
   name: Promptotyping
-  url: https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin
+  url: https://dhcraft.org/Promptotyping/
 template:
   name: Architecture template
   version: 0.4
@@ -198,44 +198,17 @@ Source of truth. [This document | link to the counterpart's document], with a li
 
 ## Use as a prompt template
 
-The template serves as a structural anchor when the architecture is set up. The agent receives the template block and fills it from the code organisation that actually exists, from `package.json` or `requirements.txt`, the CI/CD configuration and the build scripts. The security and accessibility sections require domain knowledge and should be checked by the Critical Expert where needed.
+The template serves as a structural anchor when the architecture is set up. The agent receives the template block and fills it from the code organisation that actually exists, from `package.json` or `requirements.txt`, the CI/CD configuration and the build scripts. The security and accessibility sections need expertise beyond the code, so what the agent writes there stays a proposal until a person with that expertise has reviewed it.
 
 The template also serves as a review sheet for an existing architecture. An existing `architecture.md` is held against the template to check whether all sections hold, whether the module boundaries are clean, whether security and accessibility are kept as main components and not as an appendix, and whether no code implementation has grown into the document.
 
 ## Example
 
-HerData is the monolithic case. Its `architecture.md` has the sections Stack, Components, Data flow, Security, Accessibility, Repository structure and Build and deployment. The justification in the lead is characteristic and reads, in translation, "HerData is a static web application with a Python pipeline for data preparation and a Vanilla JavaScript frontend without a framework. This simplicity is chosen deliberately, as it reduces maintenance effort, loading complexity and error risks to the minimum a research frontend needs." The lead carries the essential architectural decision (deliberate simplicity) and its justification in two sentences.
-
-The frontmatter of HerData's `architecture.md`, with the author field replaced by a placeholder, reads as follows.
-
-```yaml
----
-title: Architektur
-project:
-  name: HerData
-  repository: https://github.com/chpollin/HerData
-status: complete
-language: de
-version: 0.2
-tags: [template, promptotyping, vault-operations]
-created: 2026-05-05
-updated: 2026-05-09
-authors: [Author]
-generated-with: Claude Code (Claude Opus 4.7)
-method:
-  name: Promptotyping
-  url: https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin
-knowledge-sources:
-  institutions:
-    Goethe- und Schiller-Archiv: https://www.klassik-stiftung.de/goethe-und-schiller-archiv/
-    PROPYLÄEN: https://goethe-biographica.de
-related: [data, design, features, maintenance]
----
-```
+In the monolithic case one `architecture.md` has the sections Stack, Components, Data flow, Security, Accessibility, Repository structure and Build and deployment. A characteristic lead of a static web application with a Python pipeline for data preparation and a frontend in vanilla JavaScript without a framework states in its second sentence that this simplicity is chosen deliberately, because it keeps maintenance effort, loading complexity and error risks at the minimum a research frontend needs. Such a lead carries the essential architectural decision (deliberate simplicity) and its justification in two sentences.
 
 A large system can divide the architecture function among `pipeline-architecture.md`, `model-services-architecture.md` and `deployment-architecture.md` when these aspects are looked up or maintained independently. A new repository starts with `architecture.md` and divides only at this demonstrated boundary.
 
-The failure pattern found by the content audit of July (2026-07-19 - Promptotyping-Wissensbasen Inhaltsaudit (Befund)) is the outdated architecture in an active knowledge base, an `architecture.md` that describes a component removed weeks earlier as active, because the document was not updated when the component was removed. Architecture goes stale through removal and seldom through growth.
+A frequent failure pattern is the outdated architecture in an active knowledge base, an `architecture.md` that describes a component removed weeks earlier as active, because the document was not updated when the component was removed. Architecture goes stale through removal and seldom through growth.
 
 ## Terms
 
@@ -257,8 +230,7 @@ A processing workflow of several stages that turns a source into a target artefa
 
 ## Related
 
-- [Templates of the Promptotyping Documents](./)
-- [Convention](convention.md)
+- [Convention](convention.md), with the list of all templates
 - [Promptotyping](https://dhcraft.org/Promptotyping/)
 - [Specification template](specification.md)
 - [Data template](data.md)

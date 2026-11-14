@@ -1,7 +1,6 @@
 ---
 title: CVMA Stained Glass Annotation Tool
 id: stained-glass
-paper: none
 role: genealogy
 artefact: "Annotation tool for stained-glass metadata"
 ---
@@ -30,4 +29,4 @@ The knowledge folder holds no journal. The two iterations left their specificati
 
 Annotations leave the tool as exported files. Nothing in the artefact holds a shared store, so annotation by several researchers on one body of material is outside what the tool does.
 
-The paper no longer discusses the formation phase project by project, and it fixes no component of the practice to a single project. The gallery card names this case as the first structured knowledge folder, an attribution that rests on the project record alone.
+The paper no longer discusses the formation phase project by project, and it fixes no component of the practice to a single project. Naming this case as the first structured knowledge folder is an attribution of this collection that rests on the project record alone.

@@ -1,7 +1,6 @@
 ---
 title: Knowledge Organisation across Three Tools
 id: wissensorganisation-nano-banana
-paper: "4.3, teaching and collaboration"
 role: teaching
 artefact: "Knowledge document, vault entry and an infographic"
 ---
@@ -12,7 +11,7 @@ artefact: "Knowledge document, vault entry and an infographic"
 
 ## Context
 
-A recorded workflow that takes a video on the fundamentals of generative AI and carries it through to teaching slides. The content is extracted, verified and synthesised into a knowledge document; an agent then analyses the vault, finds where the document belongs and links it to what is already there; an image model produces an infographic which is improved iteratively against feedback; the result goes into slides.
+A recorded workflow that takes a video on the fundamentals of generative AI and carries it through to teaching slides. The content is extracted, verified and synthesised into a knowledge document. An agent then analyses the vault, finds where the document belongs and links it to what is already there. An image model produces an infographic, which is improved iteratively against feedback, and the result goes into slides.
 
 ## Contribution
 

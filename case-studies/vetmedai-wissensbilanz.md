@@ -1,7 +1,6 @@
 ---
 title: VetMedAI Wissensbilanz
 id: vetmedai-wissensbilanz
-paper: none
 role: further
 artefact: "Dashboard with a range of visualisation types and a dual-mode analysis"
 ---
@@ -20,7 +19,7 @@ The corpus is the set of Excel files under `data/`, covering the Austrian univer
 
 ## Approach
 
-The knowledge base is organised in a numbered hierarchy that separates meta, domain, design, hypotheses, learnings and journal. Two of those categories originate here. The hypotheses category holds numbered statements about what the dashboard is for, which makes assumptions about utility checkable against the interface. The learnings category holds numbered documents that distil transferable insight from the sessions; it is a process document type distinct from the journal, since a journal records what happened and a learning records what to do differently.
+The knowledge base is organised in a numbered hierarchy that separates meta, domain, design, hypotheses, learnings and journal. Two of those categories originate here. The hypotheses category holds numbered statements about what the dashboard is for, which makes assumptions about utility checkable against the interface. The learnings category holds numbered documents that distil transferable insight from the sessions. It is a process document type distinct from the journal, since a journal records what happened and a learning records what to do differently.
 
 The frontend renders the indicators through several visualisation types with a dual-mode analysis, and a tutorial system with badges serves the teaching purpose.
 

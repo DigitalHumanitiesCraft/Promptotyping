@@ -9,7 +9,7 @@ machine-url: https://dhcraft.org/Promptotyping/templates/plan.md
 ---
 # Plan template
 
-This template structures the forward-looking process document of a Promptotyping knowledge base. A single document is called `plan.md`, and separate work streams are specialised as `<subject>-plan.md`. The document lies in the `knowledge/` folder and is the counterpart to the retrospective `journal.md`. It orders the work still outstanding into phases and milestones with entry and exit conditions anchored in `specification.md`. The first paragraph confirms the function, and no separate frontmatter field `zweck:` or `function:` is introduced.
+This template structures the forward-looking document of a Promptotyping knowledge base. A single document is called `plan.md`, and separate work streams are specialised as `<subject>-plan.md`. The document lies in the `knowledge/` folder and is the counterpart to the retrospective `journal.md`. It orders the work still outstanding into phases and milestones with entry and exit conditions anchored in `specification.md`. The first paragraph confirms the function, and no separate frontmatter field `zweck:` or `function:` is introduced.
 
 ## Scope
 
@@ -37,12 +37,12 @@ Three principles carry the document.
 
 The document follows the reduced required core of the [convention](convention.md), `title`, `project` (object with `name` and `repository`), `method` (object with `name` and `url`), `status`, `created`, `updated`. The purpose lives as the first paragraph under the H1, in one sentence that is understandable without the context of the repository. The template ensures that this first paragraph carries the purpose.
 
-`status:` means the maturity of the document (`idea`, `draft`, `stub`, `complete`, `reviewed`, `archived`, and since 2026-07-19 also `active` for ongoing process documents and `snapshot` for documents tied to a fixed date), and not the operational state of the project. For a plan that is carried forward continuously, `active` is the fitting value. The operational progress stands in the status tracker and not in the frontmatter.
+`status:` means the maturity of the document (`idea`, `draft`, `stub`, `complete`, `reviewed`, `archived`, plus `active` for ongoing process documents and `snapshot` for documents tied to a fixed date), and not the operational state of the project. For a plan that is carried forward continuously, `active` is the fitting value. The operational progress stands in the status tracker and not in the frontmatter.
 
 `template:` is recommended as soon as this template has been applied, as a block with `name`, `version` and `url` (see the section *Template addressability* of the [convention](convention.md)). Specific to the plan are these fields.
 
 - `related:` typically lists `specification` (the yardstick in which the milestones are anchored), `journal` (the retrospective counterpart) and `index`, and where individual milestones build on them also `data` and `architecture`.
-- `topics:` is typically left out. The plan is a process document and carries no thematic placement in a domain. The thematic topics live in the knowledge documents beside it.
+- `topics:` is typically left out. The plan orders work and carries no thematic placement in a domain. The thematic topics live in the knowledge documents beside it.
 - `knowledge-sources:` is left out, since the plan carries no external references.
 - `updated:` is updated at every completed milestone. Next to the journal, the field is one of the most frequently changed in the knowledge base.
 - Additionally recommended are `language`, `version` (consistent across the repository), `authors` and `generated-with`, if the document was produced with LLM support. `authors` carries only people, and `generated-with` uses the format `Harness (LLM)`, for instance `Claude Code (Claude Opus 5)`. See the section *Provenance in the frontmatter* of the convention.
@@ -51,11 +51,11 @@ The document follows the reduced required core of the [convention](convention.md
 
 ### Lead
 
-The lead carries the purpose in one sentence and then delimits the function in two to three sentences. It states what the plan steers, positions it explicitly as the forward-looking counterpart to the journal and notes that it is carried forward and not accumulated. The FemPrompt `plan.md` models this self-positioning: "This is a process document; it is updated as phases close (mark done with date), and decisions made along the way go into specification as ADRs, not here." The lead positions the plan against specification and journal. It carries neither the what and why nor the history of how things came about.
+The lead carries the purpose in one sentence and then delimits the function in two to three sentences. It states what the plan steers, positions it explicitly as the forward-looking counterpart to the journal and notes that it is carried forward and not accumulated, with phases marked as done with their date when they close and decisions taken along the way moving into the specification as ADRs. The lead positions the plan against specification and journal. It carries neither the what and why nor the history of how things came about.
 
 ### Target state
 
-This section defines what "done" means before the sequence begins. It states, in two to four points, the conditions under which the project or the planned stage counts as complete. The target state is the fixed point towards which all phases run, and without it the sequence of phases loses its direction. The FemPrompt `plan.md` has this section as "Zielbild (what done means)" with four checkable conditions. In smaller plans the target state can move into the lead, and in projects with several stages it has a section of its own.
+This section defines what "done" means before the sequence begins. It states, in two to four points, the conditions under which the project or the planned stage counts as complete. The target state is the fixed point towards which all phases run, and without it the sequence of phases loses its direction. In smaller plans the target state can move into the lead, and in projects with several stages it has a section of its own.
 
 ### Phases and milestones
 
@@ -67,15 +67,15 @@ Each milestone carries the following.
 - The work states what is to be done, as bullet points or as thematically ordered blocks of commits, concretely enough that an agent can begin without asking.
 - The exit condition states how to recognise that the milestone is complete. It is anchored in an acceptance criterion, a quality gate or a decision in `specification.md` and is formulated as "Done when", never as a declaration of intent.
 
-An optional indented note `Status (YYYY-MM-DD)` per milestone records where the milestone currently stands when the central status tracker is not detailed enough. The FemPrompt `plan.md` uses these indented status blocks per phase extensively.
+An optional indented note `Status (YYYY-MM-DD)` per milestone records where the milestone currently stands when the central status tracker is not detailed enough.
 
 ### Status tracker
 
-This section records the current progress of all milestones at a point in time. It holds a table (milestone, status, notes) that is updated at every completed milestone. Volatile figures are expressly allowed here, such as commit hashes, completed counts and measured values reached, because the tracker freezes exactly this state (snapshot exception). A small legend (`completed`, `in progress`, `pending`) keeps the status values consistent. The `roadmap.md` has this section as "Status Tracker" with commit references in the notes column, and the `IMPLEMENTATION-PLAN.md` solves the same through phase tables with `[x]` markers and a legend.
+This section records the current progress of all milestones at a point in time. It holds a table (milestone, status, notes) that is updated at every completed milestone. Volatile figures are expressly allowed here, such as commit hashes, completed counts and measured values reached, because the tracker freezes exactly this state (snapshot exception). A small legend (`completed`, `in progress`, `pending`) keeps the status values consistent. The `roadmap.md` of the example below has this section as "Status Tracker" with commit references in the notes column, and the `IMPLEMENTATION-PLAN.md` there solves the same through phase tables with `[x]` markers and a legend.
 
 ### Open decisions and dependencies
 
-This section records what remains to be decided and what blocks the sequence. It gives open decision points together with the milestone before which they must be settled ("Decide before P3"), and hard dependencies between milestones or on external events ("TP4 freeze precedes the B2 screening start"). The FemPrompt `plan.md` has both "Open items" and explicit notes on "Hard ordering". This section prevents a phase from being started while its precondition is still unresolved.
+This section records what remains to be decided and what blocks the sequence. It gives open decision points together with the milestone before which they must be settled ("Decide before P3"), and hard dependencies between milestones or on external events ("the data freeze precedes the start of screening"). This section prevents a phase from being started while its precondition is still unresolved.
 
 ### Deviations
 
@@ -108,7 +108,7 @@ authors: [Author 1, Author 2]
 generated-with: [Harness (LLM), if relevant]
 method:
   name: Promptotyping
-  url: https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin
+  url: https://dhcraft.org/Promptotyping/
 template:
   name: Plan template
   version: 0.3
@@ -137,15 +137,15 @@ related: [specification, journal, index]
 
 ### Phase 0. [Name]
 
-**Goal:** [One sentence.]
+Goal. [One sentence.]
 
 #### Milestone 1. [Short name]
 
-**Entry condition:** [What must be true beforehand.]
+Entry condition. [What must be true beforehand.]
 
 [Work to be done as bullet points or blocks of commits.]
 
-**Exit condition (M1):** [Done when ..., anchored in an acceptance criterion or quality gate in specification.md.]
+Exit condition (M1). [Done when ..., anchored in an acceptance criterion or quality gate in specification.md.]
 
 <!-- Optional per milestone: -->
 Status (YYYY-MM-DD): [Where this milestone currently stands.]
@@ -182,13 +182,13 @@ The template also serves as a review sheet for an existing plan. An existing `pl
 
 ## Example
 
-The `plan.md` of FemPrompt SozArb (`knowledge/plan.md`, [chpollin/FemPrompt_SozArb](https://github.com/chpollin/FemPrompt_SozArb)) calls itself "a process document" in its lead and the counterpart to the journal, in which decisions taken along the way "go into specification as ADRs, not here". It carries a "Zielbild (what done means)" with four checkable conditions, divides the work into stages A to C with numbered milestones (P0 to P7), and every milestone closes with a "Done when" exit condition. The indented blocks `Status (2026-06-09)` per milestone carry volatile states such as concrete file paths and differences in counts (the pairing problem of 292 against 291), which are deliberately absent from the running text on future phases.
+A full plan positions itself in its lead as the counterpart to the journal, from which decisions taken along the way go into the specification as ADRs. It carries a target state of a few checkable conditions, divides the work into stages with numbered milestones, and closes every milestone with a "Done when" exit condition. Indented status blocks per milestone carry volatile states such as concrete file paths and differences in counts, which stay absent from the running text on future phases.
 
 The `roadmap.md` of the DH Developer Skriptum (`knowledge/roadmap.md`, [chpollin/Teaching](https://github.com/chpollin/Teaching)) is listed in its `INDEX.md` expressly as a function of its own, "Plan", with the question "What is the sequence of work, what milestones, what is next?". It opens with a table of phases and milestones, anchors every milestone in the "Quality Gates" of `specification.md`, states "No time estimates", and closes with a "Status Tracker" table (commit references such as `28dd38e` in the notes column) and a "Deviations" section, which marks the order of waves as a recommendation and the gates as applying independently.
 
-The `IMPLEMENTATION-PLAN.md` of co-ocr-htr (`knowledge/IMPLEMENTATION-PLAN.md`, [ResearchTools/co-ocr-htr](https://github.com/chpollin/co-ocr-htr)) shows the compact variant, with dense phase tables (feature, status, location) using `[x]`, `[~]` and `[ ]` markers and an explicit legend at the end. It demonstrates that status tracker and phase structure can coincide in a single document carried by tables when the project is small enough. Entry and exit conditions are indented into the phase goals there instead of being spelled out per milestone.
+The `IMPLEMENTATION-PLAN.md` of co-ocr-htr (`knowledge/IMPLEMENTATION-PLAN.md`, [DigitalHumanitiesCraft/co-ocr-htr](https://github.com/DigitalHumanitiesCraft/co-ocr-htr)) shows the compact variant, with dense phase tables (feature, status, location) using `[x]`, `[~]` and `[ ]` markers and an explicit legend at the end. It demonstrates that status tracker and phase structure can coincide in a single document carried by tables when the project is small enough. Entry and exit conditions are indented into the phase goals there instead of being spelled out per milestone.
 
-The failure pattern found by the content audit of July 2026 is the plan as a miscellany, a `plan.md` that mixes charter, specification, status and session record in one document and loses its steering function, because no reader can tell any longer which part looks forward.
+A frequent failure pattern is the plan as a miscellany, a `plan.md` that mixes charter, specification, status and session record in one document and loses its steering function, because no reader can tell any longer which part looks forward.
 
 ## Terms
 
@@ -218,8 +218,7 @@ A checkpoint defined in the specification, made of mechanical and human checks, 
 
 ## Related
 
-- [Templates of the Promptotyping Documents](./)
-- [Convention](convention.md)
+- [Convention](convention.md), with the list of all templates
 - [Promptotyping](https://dhcraft.org/Promptotyping/)
 - [Journal template](journal.md)
 - [Specification template](specification.md)

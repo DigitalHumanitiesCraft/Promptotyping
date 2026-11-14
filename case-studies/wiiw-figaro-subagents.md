@@ -1,7 +1,6 @@
 ---
 title: wiiw FIGARO Subagents
 id: wiiw-figaro-subagents
-paper: none
 role: further
 artefact: "Documented multi-agent analysis run under version control"
 ---
@@ -24,7 +23,7 @@ The repository defines subagent roles for analysis, implementation and synthesis
 
 ## Methodological contribution
 
-The case documents the distance between a designed multi-agent architecture and what a session actually does with it. The repository is laid out as a multi-agent workflow; the recorded session realises it as one model taking the roles in turn. Both states are visible, and that makes the case useful for anyone reading multi-agent orchestration as a settled technique.
+The case documents the distance between a designed multi-agent architecture and what a session actually does with it. The repository is laid out as a multi-agent workflow. The recorded session realises it as one model taking the roles in turn. Both states are visible, and that makes the case useful for anyone reading multi-agent orchestration as a settled technique.
 
 Feeding visualisations back as images is the second contribution. It is a context-management technique, and it buys room in the window without touching the analysis.
 

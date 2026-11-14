@@ -11,13 +11,13 @@ machine-url: https://dhcraft.org/Promptotyping/templates/data.md
 
 This template structures the Material document of a Promptotyping project knowledge base. A single carrier is called `data.md`. Separate data bases are specialised as `<subject>-data.md` or by their more precise function, for example `data-schema.md`. The document lies in the `knowledge/` folder and carries the epistemic responsibility for the material that is processed or produced.
 
-The template was developed from a cross-survey of 19 real `data.md` files from the active Promptotyping repositories. It distinguishes four required sections from six optional sections, each with a trigger criterion.
+The template was derived from the `data.md` files of existing Promptotyping repositories. It distinguishes four required sections from six optional sections, each with a trigger criterion.
 
 ## Scope
 
 The template holds as soon as the project processes or produces data. In repositories that are purely tools, libraries or methods it is omitted, and the Charter document then carries the material basis itself in a compact section. The template does not hold for API documentation, descriptions of database schemas without reference to content, or data examples without provenance.
 
-It holds both for repositories that produce their own data (HerData, klawiter-rescue, notker-edition, sugw-Edition) and for repositories that take external datasets only as input (wiiw-figaro-nam, vetmed-berichtswesen, objekt-bestimmung-workshop). The optional sections distinguish the cases.
+It holds both for repositories that produce their own data (klawiter-rescue, notker-edition) and for repositories that take external datasets only as input (wiiw-figaro-nam-demo, vetmed-berichtswesen, objekt-bestimmung-workshop-2026). The optional sections distinguish the cases.
 
 The document arises as soon as the material is defined, typically with the first export or the first delivery. It is updated with every data export (`updated:` is one of the most active fields of the project knowledge base here) and every change of schema (section Model). A `data.md` whose Model section describes a superseded schema is the most costly pattern of decay of this function, because operational teams work with it. Counts never go out of date here, because they never stand here (third structural principle). Whoever wants to record a state of completion marks it as a dated snapshot or points to the measuring source.
 
@@ -31,9 +31,9 @@ Three principles carry the document.
 
 First, it separates the production of data from their processing. Whoever captured the data (institution, edition team, external source) holds a different kind of authorship from whoever processes them here, and this separation must be named explicitly. Delimiting the project's own work from the production of the data is a basic rule. It is more than a gesture of courtesy.
 
-Second, the document makes the limits of the material explicit. What the material does not cover is named just as what it covers. This statement is carried by the section `Limits` and is constitutive. It is a statement about the material and not about the document. The self-description prohibited since 2026-06-29 ("this document does not cover X") remains excluded here too ([convention](convention.md)).
+Second, the document makes the limits of the material explicit. What the material does not cover is named just as what it covers. This statement is carried by the section `Limits` and is constitutive. It is a statement about the material and not about the document. A self-description such as "this document does not cover X" stays excluded, as the third structural principle of the [convention](convention.md) states.
 
-Third, the document contains no concrete number that changes with the next data export. Coverage values, dataset sizes and distribution statistics lie in the application itself (in `persons.json#meta` or comparable) and in the stat cards of the main views. The document points to these sources without duplicating them.
+Third, the document contains no concrete number that changes with the next data export. Coverage values, dataset sizes and distribution statistics lie in the application itself (in the metadata block of the data file or comparable) and in the stat cards of the main views. The document points to these sources without duplicating them.
 
 ## Frontmatter schema
 
@@ -91,7 +91,7 @@ The trigger is that the material shows recognisable systematic skews relevant to
 
 ### Provenance per value
 
-The trigger is that values arise in several stages, through regular expressions, an LLM, manual annotation, AI correction or hybrid procedures. The section documents the trail of extraction per value, so that a Critical Expert acting as reviewer can decide what to check. For each group of fields it states the method of extraction (regex / llm / manual / missing) and a qualitative statement of coverage, without concrete percentages. It points to a machine-generated quality report file or debug JSON in the repository as the source of truth. For data from a single reliable source (an Excel delivery, a single export) the section is omitted.
+The trigger is that values arise in several stages, through regular expressions, an LLM, manual annotation, AI correction or hybrid procedures. The section documents the trail of extraction per value, so that the researchers can decide which values need their scholarly validation. For each group of fields it states the method of extraction (regex / llm / manual / missing) and a qualitative statement of coverage, without concrete percentages. It points to a machine-generated quality report file or debug JSON in the repository as the source of truth. For data from a single reliable source (an Excel delivery, a single export) the section is omitted.
 
 ### Relation to the external data source
 
@@ -99,7 +99,7 @@ The trigger is that the data are delivered and not produced. The repository take
 
 ### Workflow
 
-The trigger is that a pipeline transforms the source into an application file. The section documents the path from the source to the application file. It states the pipeline stages briefly, with pointers to the scripts in the repository. The implementation of the workflow belongs in `architecture.md`, or in `pipeline-architecture.md` where it has an independent Routing Question. For read-only repositories without transformation the section is omitted.
+The trigger is that a pipeline transforms the source into an application file. The section documents the path from the source to the application file. It states the pipeline stages briefly, with pointers to the scripts in the repository. The implementation of the workflow belongs in `architecture.md`, or in `pipeline-architecture.md` where it has a routing question of its own. For read-only repositories without transformation the section is omitted.
 
 ### Examples
 
@@ -131,7 +131,7 @@ authors: [Author 1, Author 2]
 generated-with: [Harness (LLM), if relevant]
 method:
   name: Promptotyping
-  url: https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin
+  url: https://dhcraft.org/Promptotyping/
 template:
   name: Data template
   version: 0.3
@@ -218,21 +218,21 @@ related: [project, architecture, specification]
 
 ## Use as a prompt template
 
-The template serves as a structural anchor when setting up the data basis. The agent receives the template block and fills it iteratively from the source documents (licence texts, schema files, README of the data's origin). Before filling it in for the first time, the agent decides for each optional section from its trigger whether it holds, and deletes those that do not apply. The section `Biases`, where it holds, requires domain expertise and should be validated in substance by the Critical Expert (Critical-Expert-in-the-Loop).
+The template serves as a structural anchor when setting up the data basis. The agent receives the template block and fills it iteratively from the source documents (licence texts, schema files, README of the data's origin). Before filling it in for the first time, the agent decides for each optional section from its trigger whether it holds, and deletes those that do not apply. The section `Biases`, where it holds, requires domain expertise, and its statements stay proposals until the researchers have validated them.
 
 The template also serves as a yardstick for reviewing an existing data basis. An existing `data.md` is held against the template to check whether the four required sections hold, whether `knowledge-sources:` is maintained in the frontmatter, whether no concrete numbers are duplicated from the application, whether optional sections meet their trigger, and whether sections without a trigger are not carried along out of habit.
 
 ## Example
 
-HerData (own data production with a connection to authority data) carries Subject, Sources, Model, Limits, Authority data and connections, Biases, Provenance per value, Workflow and Examples. Characteristic is the explicit section on map bias, which is made visible in the application itself (onboarding step MapBias). `knowledge-sources` lists the Goethe- und Schiller-Archiv and PROPYLÄEN as institutions and CMIF, GND, GeoNames and AGRELON as standards.
+A project with its own data production and a connection to authority data carries Subject, Sources, Model, Limits, Authority data and connections, Biases, Provenance per value, Workflow and Examples. Characteristic is an explicit section on map bias, which the application itself makes visible during onboarding. `knowledge-sources` lists the archives that produced the data as institutions and CMIF, GND, GeoNames and AGRELON as standards.
 
-notker-edition and sugw-Edition (edition data bound to a standard) carry Subject, Sources, Model (with annotation layers and schema constraints in the section Model), Limits, Authority data and connections (IIIF, GND) and Examples. `Relation to the external data source` and `Provenance per value` are omitted, since there is an editorial data production of their own.
+notker-edition (edition data bound to a standard) carries Subject, Sources, Model (with annotation layers and schema constraints in the section Model), Limits, Authority data and connections (IIIF, GND) and Examples. `Relation to the external data source` and `Provenance per value` are omitted, since the project has an editorial data production of its own.
 
-vetmed-berichtswesen and objekt-bestimmung-workshop (external data source as input) carry Subject, Sources, Model (delivered structure), Limits, Relation to the external data source, Workflow and Examples. `Authority data and connections` and `Biases` are typically omitted.
+vetmed-berichtswesen and objekt-bestimmung-workshop-2026 (external data source as input) carry Subject, Sources, Model (delivered structure), Limits, Relation to the external data source, Workflow and Examples. `Authority data and connections` and `Biases` are typically omitted.
 
 klawiter-rescue (multi-stage reconstruction of data) carries all four required sections together with Authority data and connections, Biases, Provenance per value, Workflow and Examples. This is the full programme, and `Provenance per value` is central here because values are combined from regular expressions, an LLM and Wikidata reconciliation.
 
-The failure patterns found by the content audit of July (2026-07-19, findings of the content audit of Promptotyping knowledge bases) are the unmarked snapshot, a `data.md` that carries counts of the state of capture without a reference date and thus becomes silently wrong from the next export onwards, and the data miscellany, a `data.md` that mixes material, workflow and state of completion without separation.
+Two failure patterns recur. One is the unmarked snapshot, a `data.md` that carries counts of the state of capture without a reference date and thus becomes silently wrong from the next export onwards. The other is the data miscellany, a `data.md` that mixes material, workflow and state of completion without separation.
 
 ## Terms
 
@@ -258,11 +258,8 @@ A fine-grained trail of extraction per data field, recording by which method (re
 
 ## Related
 
-- Templates of the Promptotyping Documents (this folder)
-- [Convention](convention.md)
+- [Convention](convention.md), with the list of all templates
 - [Promptotyping](https://dhcraft.org/Promptotyping/)
-- Epistemic Infrastructure
-- Critical-Expert-in-the-Loop
 - [Project template](project.md)
 - [Specification template](specification.md)
 - [Architecture template](architecture.md)
