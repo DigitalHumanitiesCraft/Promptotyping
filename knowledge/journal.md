@@ -37,6 +37,16 @@ related: [project, specification]
 
 The entries up to 2026-11-14 are condensed into the milestone entries below, and their full wording stands in the Git history (`git show f211631:knowledge/journal.md`).
 
+### 2026-11-14 The figure of the practice becomes two figures
+
+- Trigger: the operator asked whether the practice could be shown better, chose the split into two figures from three proposals, and then found that the relation between Preparation, Exploration and the research data with their contexts did not fit.
+- Found: the single figure showed what exists and how it is connected, and did three jobs at once, the people, the work and the result. It did not show the translation the definition names, from research data and their contexts to an artefact. In the first two-figure state the arrow from the research data ended at the height of Exploration, although [practice.md](practice.md#preparation) has Preparation assemble the material and the research context, and the contexts were only named under a sign for data.
+- Decided: the first figure reads from left to right as the definition does, from the research data and their contexts through the four forms of work to the Promptotype as one box. Preparation stands on the left where the material enters, with one sign for the data and one for their contexts, and Implementation stands on the side of the Promptotype. The second figure opens a Promptotype with CorrespExplorer as the example.
+- Rejected: a timeline of iterations, which reads as a phase model and leaves no place for the three kinds of engineering. It may serve teaching.
+- Corrected: the first two-figure state, in which the ring kept Preparation on top.
+- Changed: `assets/img/promptotyping-practice.svg`, `assets/img/promptotype-example.svg`, `index.html`, `README.md`, [design.md](design.md), `CHANGELOG.md`.
+- Evidence: `1350539`, `4438eed` and the commit that carries this entry. Both figures were read as rendered images, and the published page was looked at in a wide and a narrow window. The file names in the second figure are a selection from the repository of CorrespExplorer as listed on 2026-11-14, and its prototype window is schematic. No reader outside the project has seen either figure.
+
 ### 2026-11-14 The page text checked against the manuscript, copy fields and contrast
 
 - Trigger: the operator asked whether the text of the page agrees in content with the paper without being its text, asked for the core terms to stand out, counted too many borders around the section Skill, found the page too grey and asked for the prompt in a dashed field in a code face, as on his slides.
