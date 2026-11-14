@@ -9,7 +9,7 @@ version: "2.0"
 created: 2026-05-09
 updated: 2026-11-14
 authors: [Christopher Pollin]
-generated-with: Claude Code (Claude Opus 5.5)
+generated-with: Claude Code (Claude Fable 5.2, Claude Opus 5.5)
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
@@ -44,7 +44,7 @@ This knowledge base describes Promptotyping and how it came about, and it is the
 ## Reading paths
 
 - To understand the practice, read [practice.md](practice.md), then [project.md](project.md) for the place of this repository.
-- To understand how the practice came about, read the entries of [journal.md](journal.md) from the bottom up. The full wording of the entries before 2026-11-14 stands in the Git history (`git show f211631:knowledge/journal.md`).
+- To understand how the practice came about, read the entries of [journal.md](journal.md) from the bottom up.
 - To continue work on the repository, read the agent instructions in `CLAUDE.md`, then `## Open` in [journal.md](journal.md), then [specification.md](specification.md) and the document the task touches.
 
 ## Convention
@@ -83,7 +83,11 @@ The examination and revision of the project knowledge in light of what sources, 
 
 ### Knowledge document
 
-A Markdown document in the folder `knowledge/` of a repository, of one of three types, declarative, process or agent instruction.
+A Markdown document of a project knowledge base, of one of three types, declarative, process or agent instruction. Declarative and process knowledge documents lie in the folder `knowledge/`, agent instruction documents in the repository root.
+
+### Operator
+
+The person who directs this repository and decides on its direction, its definitions, its release and what it publishes.
 
 ### Preparation
 
@@ -103,11 +107,15 @@ What an iteration yields, a prototype that can be used and inspected, together w
 
 ### Promptotyping
 
-A working practice that translates research data and their contexts into research artefacts that fit the researchers' purposes and ways of working, through Knowledge Engineering, Context Engineering and Agentic Engineering.
+A working practice for translating research data and their contexts, with frontier LLM agents, into research artefacts that fit the researchers' purposes and ways of working, as [practice.md](practice.md#the-working-practice) states it.
 
 ### Promptotyping Documents
 
 The documents of a project knowledge base as the templates in `templates/` describe them, one template per document function.
+
+### Research software developer
+
+The person who decides workflow, technology and the form of the artefact and reports a fault to the agent in the terms the agent works in. Researchers and research software developers carry out the practice together, or one person holds both roles, and the researchers judge whether an artefact fits.
 
 ### Researchers
 

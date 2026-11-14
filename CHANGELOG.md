@@ -26,4 +26,4 @@ The first numbered release, prepared to accompany the paper on Promptotyping.
 - The glossary with its term index, the Vault view with the Grounded Vault instance, the introduction page, the dated records under `snapshots/`, the benchmark with its planning documents, the video transcripts, the schema file and the consistency tooling with its tests.
 - The earlier wording of the journal, which stays in the Git history.
 
-Addresses of the retired pages end on the start page or the not-found page. An address of a template that still exists is led to its new place.
+Addresses of the retired pages end on the start page or the not-found page. In a browser, an address of a template that still exists is led to its new place by the not-found page. An agent that fetches an old address receives the not-found status and reads the template at its new address.

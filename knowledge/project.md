@@ -9,7 +9,7 @@ version: "2.0"
 created: 2026-05-09
 updated: 2026-11-14
 authors: [Christopher Pollin]
-generated-with: Claude Code (Claude Opus 5.5)
+generated-with: Claude Code (Claude Fable 5.2, Claude Opus 5.5)
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
@@ -26,27 +26,19 @@ related: [INDEX, practice, specification, architecture, design, journal]
 
 # Project
 
-The repository `DigitalHumanitiesCraft/Promptotyping` is the public specification of Promptotyping, published at https://dhcraft.org/Promptotyping/. It holds one web page, the templates of the Promptotyping Documents with their convention, the documented use cases, and this project knowledge base, which describes Promptotyping and how it came about and is itself published as the worked example of the practice.
+The repository `DigitalHumanitiesCraft/Promptotyping` is the public specification of Promptotyping, the working practice that [practice.md](practice.md#the-working-practice) defines, published at https://dhcraft.org/Promptotyping/. It holds one web page, the templates of the Promptotyping Documents with their convention, the documented use cases, and this project knowledge base, which describes Promptotyping and how it came about and is itself published as the worked example of the practice.
 
-## Material basis
+## Data basis
 
-Promptotyping is a working practice that translates research data and their contexts into research artefacts that fit the researchers' purposes and ways of working. It does so through three forms of engineering. Knowledge Engineering makes explicit and curates what a project knows about its domain, its data and its aims. Context Engineering selects from this knowledge what an agent needs for a task. Agentic Engineering organises the work of the agents that build on it. The practice itself is stated in [practice.md](practice.md).
-
-This repository processes no research data of its own. Its material is knowledge about the practice, drawn from five sources.
-
-- The documented research software projects of Digital Humanities Craft and its partners, from which the practice was abstracted and which [case-studies/](../case-studies/) describes.
-- The dissertation at the University of Graz (2025) in which Promptotyping originates, and its descriptions on the DHCraft blog (2025) and on L.I.S.A. (2026).
-- The paper on the practice, Pollin 2026, Promptotyping, submitted.
-- The Promptotyping skill, maintained in its own repository.
-- The work on this repository itself, recorded in [journal.md](journal.md).
+This repository processes no research data of its own. Its material is knowledge about the practice, drawn from the documented research software projects of Digital Humanities Craft and its partners in [case-studies/](../case-studies/), from the dissertation, the published descriptions, the paper and the skill listed under [Sources](practice.md#sources), and from the work on this repository recorded in [journal.md](journal.md).
 
 ## Wider context
 
-The paper is maintained outside this repository and will be published in a scholarly journal. Neither its manuscript nor the material bound to it, its specification, review tooling, figures and audits, belongs here, and the site states the definitions it shares with the paper in its own words. The [Promptotyping skill](https://github.com/DigitalHumanitiesCraft/promptotyping-skill) is the installable part of the practice and lives in its own repository, which is its single source. This repository describes and links the skill, and the skill reads the templates from here. The repository is a project of Digital Humanities Craft OG.
+The paper on the practice is maintained outside this repository and will be published in a scholarly journal ([ADR-10](specification.md#adr-10-the-manuscript-stays-out)), and the site states the definitions it shares with the paper in its own words. The [Promptotyping skill](https://github.com/DigitalHumanitiesCraft/promptotyping-skill) is the installable part of the practice and has its single source in its own repository ([ADR-01](specification.md#adr-01-the-skill-has-one-source)), and it reads the templates from here. The repository is a project of Digital Humanities Craft OG.
 
 ## What it is about
 
-Researchers with structured data and a concrete question increasingly build their own research software with AI coding agents. Promptotyping states how such work stays answerable to the sources and the research purpose. The repository serves three groups of readers.
+In the documented projects, researchers with structured data and a concrete question built their own research software with AI coding agents. Promptotyping states how such work stays answerable to the sources and the research purpose. The repository serves three groups of readers.
 
 - Researchers and project teams who want to judge whether the practice fits a project and to start a first iteration.
 - Reviewers who check a Promptotyping repository against the practice and its templates.
@@ -56,20 +48,18 @@ The repository applies the practice to itself. Its knowledge base follows the te
 
 ## Technical implementation
 
-The authors named in `CITATION.cff` are responsible for the practice and the repository, and Digital Humanities Craft OG publishes it. The site and the documents were built with AI coding agents under the practice they describe, with the researchers deciding what is accepted. How the repository is built is stated in [architecture.md](architecture.md).
+The authors named in `CITATION.cff` are responsible for the practice and the repository, the first author maintains this knowledge base, and Digital Humanities Craft OG publishes it. The site and the documents were built with AI coding agents under the practice they describe, with the operator deciding what is accepted. How the repository is built is stated in [architecture.md](architecture.md).
 
 ## Range of functions
 
-The single web page explains what Promptotyping is, shows its figure, names the terms, says how to start and lists the five subcommands of the skill, and from there it leads to the templates, the use cases and this knowledge base. Every template and the convention are readable as Markdown under a stable address, so that an agent can fetch them over HTTP without a browser. What the page must contain is stated in [specification.md](specification.md).
+The single web page states what Promptotyping is, shows its figure, names the four forms of work, the Promptotype and the three kinds of checking, says how to install the skill and lists its five subcommands, and from there it leads to the templates, the use cases and this knowledge base. Every template and the convention are readable as Markdown under a stable address, so that an agent can fetch them over HTTP without a browser. What the page must contain is stated in [specification.md](specification.md).
 
-The page claims no more than the practice has shown. It states that Promptotyping has not been evaluated against other ways of working and that its transfer to other people and projects is open, and it presents the documented projects as cases that form no representative sample.
+The page claims no more than the practice has shown. It states that Promptotyping has not been evaluated against other ways of working and that its transfer to other people and projects is open.
 
 ## Delimitations
 
 The repository deliberately leaves out the following.
 
-- The paper and any manuscript text, which appear only in the journal publication.
-- The skill, which lives in its own repository.
 - A tutorial, a worked workflow and teaching material, since the skill carries the procedure and the use cases show the practice at work.
 - A glossary page, since the page and [INDEX.md](INDEX.md) define the terms they use.
 - An evidence layer of sources, distillates and assertions, which was retired on 2026-11-14.

@@ -9,7 +9,7 @@ version: "2.0"
 created: 2026-05-09
 updated: 2026-11-14
 authors: [Christopher Pollin]
-generated-with: Claude Code (Claude Opus 5.5)
+generated-with: Claude Code (Claude Fable 5.2, Claude Opus 5.5)
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
@@ -28,11 +28,11 @@ related: [INDEX, specification, design, journal]
 
 # Architecture
 
-This document describes the repository as it stands since the decision of 2026-11-14. The repository is a static site without a build step, one HTML page beside folders of Markdown that GitHub Pages serves as they are. It is deliberately kept this simple, because cloning the repository and starting a static server suffices to run it and no tool chain can decay under it. What the site must do is in [specification.md](specification.md), how it looks in [design.md](design.md).
+The repository is a static site without a build step, one HTML page beside folders of Markdown that GitHub Pages serves as they are. It is kept this simple because cloning the repository and starting a static server suffices to run it and no tool chain can decay under it. What the site must do is in [specification.md](specification.md), how it looks in [design.md](design.md).
 
 ## Stack
 
-The page is HTML and CSS, with vanilla JavaScript only where a control needs it, such as a copy button. There is no framework, no package manager, no bundler and no runtime CDN, and any library is vendored into `assets/` under the rule for libraries in [practice.md](practice.md#the-artefact-and-its-boundary). Fonts and the shared DHCraft design files lie in `assets/dhcraft/`, unchanged copies from the brand-assets repository. The documents are Markdown with YAML frontmatter, and GitHub renders them for human readers.
+The page is HTML and CSS, and its only script is the copy button of the shared DHCraft files. There is no framework, no package manager, no bundler and no runtime CDN, and any library is vendored into `assets/` under the rule for libraries in [practice.md](practice.md#the-artefact-and-its-boundary). Fonts and the shared DHCraft design files lie in `assets/dhcraft/`, unchanged copies from the brand-assets repository. The documents are Markdown with YAML frontmatter, and GitHub renders them for human readers.
 
 ## Components
 
@@ -40,14 +40,14 @@ The page is HTML and CSS, with vanilla JavaScript only where a control needs it,
 |---|---|---|
 | `index.html` | The single page | Static markup that reads without JavaScript |
 | `404.html` | The page GitHub Pages serves for an address that is no file | Static markup |
-| `assets/` | Styles, fonts, the DHCraft mark, the figure and any script the page needs | Loaded by the page from the same origin |
+| `assets/` | Styles, fonts, the DHCraft mark, the figure and the copy script | Loaded by the page from the same origin |
 | `templates/` | The eleven templates and the convention | One Markdown file per slug, `templates/<slug>.md` |
 | `case-studies/` | The documented use cases | One Markdown file per case |
 | `knowledge/` | This project knowledge base, published as the worked example | Markdown files, entry point `INDEX.md` |
 
 ## Data flow
 
-Nothing is generated. The Markdown files are written in the repository, the page links them, and the workflow copies them into the published tree unchanged. Readers open a document through its view on GitHub, which renders it, while the raw file stays addressable on the site at the same path, so that an agent receives the Markdown with HTTP status 200 and without JavaScript.
+The Markdown files are written in the repository, the page links them, and the workflow copies them into the published tree unchanged. The one thing made at delivery is the archive `downloads/promptotyping-templates.zip`, which the workflow packs from the templates, the convention and the licence. Readers open a document through its view on GitHub, which renders it, while the raw file stays addressable on the site at the same path, so that an agent receives the Markdown with HTTP status 200 and without JavaScript.
 
 ## Interfaces to other projects or systems
 
@@ -85,14 +85,10 @@ The page aims at WCAG 2.1 level AA. The minima are stated in [design.md](design.
 
 ## Repository structure
 
+Beside the components above, the repository root holds these files.
+
 | Path | Function |
 |---|---|
-| `index.html` | The single page |
-| `404.html` | The not-found page |
-| `assets/` | Styles, fonts, mark, figure and scripts of the page |
-| `templates/` | Templates and convention of the Promptotyping Documents |
-| `case-studies/` | The documented use cases |
-| `knowledge/` | The project knowledge base |
 | `README.md` | What Promptotyping is and how to start, for readers on GitHub |
 | `CHANGELOG.md` | Changes per release |
 | `CITATION.cff` | Citation metadata with the concept DOI |
@@ -102,4 +98,4 @@ The page aims at WCAG 2.1 level AA. The minima are stated in [design.md](design.
 
 ## Build and deployment
 
-Locally the repository root is served with any static server, for example `python -m http.server 8000`, and opened at `http://localhost:8000`. A push to `main` runs `.github/workflows/pages.yml`, which assembles the published tree from an explicit list of paths and uploads it to GitHub Pages without a build step and without Jekyll processing. The list holds `index.html`, `404.html`, `LICENSE`, `CITATION.cff`, `assets/`, `templates/`, `case-studies/` and `knowledge/`, and a new folder the page links has to be added to it. `README.md`, `CHANGELOG.md`, `CLAUDE.md` and the workflow itself stay in the repository. The workflow file is the source of truth for what is published, and the site is served at https://dhcraft.org/Promptotyping/ through the DHCraft domain.
+Locally the repository root is served with any static server, for example `python -m http.server 8000`, and opened at `http://localhost:8000`. A push to `main` runs `.github/workflows/pages.yml`, which assembles the published tree from an explicit list of paths and uploads it to GitHub Pages without Jekyll processing. The list holds `index.html`, `404.html`, `LICENSE`, `CITATION.cff`, `assets/`, `templates/`, `case-studies/` and `knowledge/`, and a new folder the page links has to be added to it. The workflow then packs `templates/*.md` and `LICENSE` into `downloads/promptotyping-templates.zip`, which the page offers for download and `.gitignore` keeps out of the repository. `README.md`, `CHANGELOG.md`, `CLAUDE.md` and the workflow itself stay in the repository. The workflow file is the source of truth for what is published, and the site is served at https://dhcraft.org/Promptotyping/ through the DHCraft domain.

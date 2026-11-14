@@ -6,7 +6,7 @@ Promptotyping is a working practice for translating research data and their cont
 
 ![Researchers and research software developers direct four recurrent forms of work, Preparation, Exploration, Distillation and Implementation. Each iteration ends with a Promptotype, a prototype taken together with the project knowledge base and the research data from which it was built. Verification and agentic review check it, the researchers assess it through scholarly validation, and what checking and use reveal returns to the knowledge base through knowledge curation.](assets/img/promptotyping-practice.svg)
 
-The site at **https://dhcraft.org/Promptotyping/** shows the same on one page.
+The site at https://dhcraft.org/Promptotyping/ shows the same on one page.
 
 ## What is here
 
